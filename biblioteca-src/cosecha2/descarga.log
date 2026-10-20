@@ -1,0 +1,485 @@
+diversidad-educativa-desarrollo-socioemocional-inteligencia- {'ok': True, 'mb': 1.3, 'paginas': 30, 'sha1': '452fc04fe94db4afafb4e0a4b16f1af3506194a7', 'lote': 'r2'}
+escala-depresion-geriatrica-gds-yesavage {'ok': True, 'mb': 2.3, 'paginas': 6, 'sha1': '39fc71c1b475088871587fb45a11a41455269cce', 'lote': 'r2'}
+inteligencia-emocional-reconceptualizacion-inteligencia-carr {'ok': True, 'mb': 7.6, 'paginas': 11, 'sha1': '9c9fe44853cf42e7561afdbd66528e079fd7b56c', 'lote': 'r2'}
+inteligencia-emocional-entornos-educativos-evidencias-cienti {'ok': True, 'mb': 1.1, 'paginas': 80, 'sha1': 'fed52678ecf711ad4eea8a8a194b389a4c4b31b1', 'lote': 'r2'}
+interruptores-capacidad-atencion {'ok': True, 'mb': 0.7, 'paginas': 31, 'sha1': '31025c8f79f0473535a79d741c10242ae4ae0e67', 'lote': 'r2'}
+mundo-relacional-adolescente-familia-pares-pareja {'ok': False, 'err': 'HTTP Error 401: ', 'definitivo': False}
+es-normal-insomnio-adolescentes-abordaje-insomnio {'ok': True, 'mb': 0.4, 'paginas': 24, 'sha1': '544d52612c0b7105e9606afcf7e81f72015006cd', 'lote': 'r2'}
+proceso-emocional-tras-diagnostico-vih {'ok': True, 'mb': 1.3, 'paginas': 122, 'sha1': 'dcbaf23161ce89f5288748864758b32bedda01a1', 'lote': 'r2'}
+expresion-emociones-hombre-animales {'ok': True, 'mb': 4.4, 'paginas': 271, 'sha1': 'cda9083abfc5d4d00cba9589f808417a966aa0dc', 'lote': 'r2'}
+perspectiva-cognitiva-sobre-emocion {'ok': False, 'err': 'HTTP Error 404: Not Found', 'definitivo': True}
+educacion-emocional-transformacion-escuela-publica {'ok': True, 'mb': 3.1, 'paginas': 16, 'sha1': '45e4e9996cb64b1233c888f351baae2ca99479d1', 'lote': 'r2'}
+vinculo-apego-como-escenario-desarrollo-cognicion {'ok': True, 'mb': 0.4, 'paginas': 22, 'sha1': '6478944c2d34d4f878c9d3dfd1b0a3fa6c4df235', 'lote': 'r2'}
+resiliencia-educacion-emocional-duelo-formacion-futuros {'ok': True, 'mb': 4.7, 'paginas': 248, 'sha1': 'cdae5123b839f176d9daefc3e2e0715cbb5117b3', 'lote': 'r2'}
+aprender-desde-narrativas-resiliencia-educacion-emocional {'ok': True, 'mb': 1.5, 'paginas': 124, 'sha1': 'afec223a4f0a681ddfb3b49b0a95366eef4a73d1', 'lote': 'r2'}
+organizaciones-emocionalmente-inteligentes-experiencias-eval {'ok': True, 'mb': 1.4, 'paginas': 83, 'sha1': '49d080836ffcf58ffd434ff74ead65701ab0b63c', 'lote': 'r2'}
+desarrollo-positivo-adolescente-que-papel-tiene {'ok': True, 'mb': 1.2, 'paginas': 27, 'sha1': '66e81f6d3eeeae411992d95f0ea2e0b4cc7a7d23', 'lote': 'r2'}
+ciencia-sueno {'ok': False, 'err': 'HTTP Error 404: Not Found', 'definitivo': True}
+psicologia-anormal {'ok': False, 'err': 'HTTP Error 404: Not Found', 'definitivo': True}
+mundo-interno-adolescente-identidad-bienestar-sexualidad {'ok': False, 'err': 'HTTP Error 401: ', 'definitivo': False}
+reflexiones-sobre-muerte-duelo {'ok': True, 'mb': 10.6, 'paginas': 68, 'sha1': 'd2866e2438913a03d3956c866c0e8754a6deac57', 'lote': 'r2'}
+atencion-personas-malestar-emocional {'ok': True, 'mb': 1.8, 'paginas': 46, 'sha1': '5c2b12eaef38f093c6c5100ff76cebaca316aa66', 'lote': 'r2'}
+papel-institucion-educativa-educacion-emocional {'ok': True, 'mb': 9.3, 'paginas': 24, 'sha1': '27c8d36ccdfb709c6eefd6c76907168118f32bfe', 'lote': 'r2'}
+propuestas-pedagogicas-educar-emociones {'ok': True, 'mb': 8.7, 'paginas': 21, 'sha1': '5aa21cbf1a33374c416da1fdbee79e727825672b', 'lote': 'r2'}
+manual-participacion-activa-acompanamiento-emocional-busqued {'ok': True, 'mb': 7.6, 'paginas': 53, 'sha1': 'e9a0f52d4f1b359b83aa88659f51e179a5180f89', 'lote': 'r2'}
+vinculos-protectores-apego-padres-e-hijos {'ok': True, 'mb': 1.2, 'paginas': 397, 'sha1': '7f85e15ea178dfd81e7841c387ae095701e7cded', 'lote': 'r2'}
+cognicion-neurociencia-aprendizaje-adolescente-educacion-sup {'ok': True, 'mb': 1.3, 'paginas': 350, 'sha1': 'f5c1e1a86becb0df02cdb75ee4687c8eae52196f', 'lote': 'r2'}
+estres-cronico-salud-mental-perfiles-emocionales {'ok': True, 'mb': 2.2, 'paginas': 53, 'sha1': '05ead9b1e5e1d138839d51d2a7607bf9c1acc9a2', 'lote': 'r2'}
+manual-practicas-motivacion-emocion {'ok': True, 'mb': 1.8, 'paginas': 156, 'sha1': '51eafc45da71d22282fd00c08d913d3b7a40c848', 'lote': 'r2'}
+comunicacion-conflictos-cambio-social {'ok': True, 'mb': 7.8, 'paginas': 348, 'sha1': '7dc0cdda7d056879f85f6924b9d40127405871f4', 'lote': 'r2'}
+pisa-2015-rendimiento-su-relacion-sentimiento {'ok': True, 'mb': 2.5, 'paginas': 28, 'sha1': '9b59a8a983e7f4e7d36afa1c9bd1406839385e11', 'lote': 'r2'}
+adolescentes-vinculo-educativo-esculpir-relaciones-lo {'ok': True, 'mb': 1.9, 'paginas': 194, 'sha1': 'bbdff6fe9dc493dd505cd3abc016029b1d9cafd6', 'lote': 'r2'}
+mi-vida-junto-toc-ansiedad-social {'ok': True, 'mb': 0.4, 'paginas': 21, 'sha1': '73798b5becf556ae986d42ef3c8be55713c9d1f9', 'lote': 'r2'}
+padres-actores-claves-proceso-comunicacion-familiar {'ok': True, 'mb': 6.9, 'paginas': 17, 'sha1': 'ab0b0fa3a1359adfc32718529ceffbe7a3ae85a2', 'lote': 'r2'}
+sobre-filosofia-como-terapia-seneca {'ok': True, 'mb': 0.6, 'paginas': 14, 'sha1': '16984aa15f21e0a76b6d3049e49ffff3e08000c8', 'lote': 'r2'}
+neurodidactica-metodologia-docente-binomio-inclusion {'ok': True, 'mb': 3.0, 'paginas': 19, 'sha1': '00d53066f4b46104986e846461249d8b3e6f852c', 'lote': 'r2'}
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+dificultades-aprendizaje-educacion-infantil {'ok': True, 'mb': 4.1, 'paginas': 410, 'sha1': '6584e87f7531974a4c54182734abfaf4b81bc4c9', 'lote': 'r2'}
+portadas 30 200 v3/portadas-1792497778.json
+muerte-perinatal-ciclon-devastador {'ok': True, 'mb': 1.1, 'paginas': 4, 'sha1': '6748816c309536726e6dc46aecf67fb3840e3394', 'lote': 'r2'}
+estamos-prestando-demasiada-atencion-o-demasiado {'ok': True, 'mb': 2.0, 'paginas': 8, 'sha1': '51097704a78727046c2f77b29d9c3e11340fcd6a', 'lote': 'r2'}
+necesidades-psicologicas-escuela-grados-educacion-infantil {'ok': True, 'mb': 5.1, 'paginas': 198, 'sha1': '9422524fb594d52a8f62fbff416c774eefaf0809', 'lote': 'r2'}
+principios-psicologia-social {'ok': False, 'err': 'HTTP Error 404: Not Found', 'definitivo': True}
+salud-mental-peru-progresos-hacia-desinstitucionalizacion {'ok': True, 'mb': 1.1, 'paginas': 30, 'sha1': '7be29c2be8b2b266aa750fcdea452dad3a48a1a1', 'lote': 'r2'}
+desordenes-conducta-alimentaria-anorexia-bulimia {'ok': True, 'mb': 0.4, 'paginas': 108, 'sha1': '26ed1409a5c95eb77edea185781f64766025c939', 'lote': 'r2'}
+salud-mental-covid-19 {'ok': False, 'err': 'HTTP Error 401: ', 'definitivo': False}
+desarrollo-juicio-moral-complejidad-cognitiva-traves {'ok': True, 'mb': 5.9, 'paginas': 14, 'sha1': 'e180a43fdb92a8201aff4cf3425ac4759469d3ff', 'lote': 'r2'}
+olvido-lo-imprescindible-percepciones-vivencias-cuidadoras {'ok': False, 'err': 'HTTP Error 401: Unauthorized', 'definitivo': False}
+intervencion-psicologia-clinica-salud-programa-material {'ok': True, 'mb': 0.2, 'paginas': 39, 'sha1': '75828242bef1b304b7969257aae42c748d5c60be', 'lote': 'r2'}
+educacion-moral-perspectivas-futuro-tecnicas-trabajo {'ok': False, 'mb': 51.5, 'err': 'supera 45 MB (51.5)', 'definitivo': True}
+escala-afectividad-panas-watson-clark-adultos {'ok': True, 'mb': 2.3, 'paginas': 5, 'sha1': '21b21fbfc991e89c1a9cc29539913df08461252d', 'lote': 'r2'}
+construccion-pruebas-estandarizadas-ambito-medicion-educativ {'ok': True, 'mb': 0.8, 'paginas': 58, 'sha1': 'cc0df14683a1a459b75d2e0b6b9ba146a7c3c4c7', 'lote': 'r2'}
+desarrollo-relaciones-sociales-primera-infancia-poblacion {'ok': True, 'mb': 0.9, 'paginas': 59, 'sha1': '90a924b8ff81cac991eb2ef0fda6f8a47ad5bef0', 'lote': 'r2'}
+practicas-ps1034-evaluacion-e-intervencion-clinica {'ok': True, 'mb': 2.3, 'paginas': 296, 'sha1': '1b06728464106c48da771e91ebf1c85104e3080d', 'lote': 'r2'}
+cuidarnos-ante-adversidad-salud-mental-resiliencia {'ok': True, 'mb': 1.8, 'paginas': 114, 'sha1': '8503cf64407ff3f386d083ca79b7273bd0c1a953', 'lote': 'r2'}
+impacto-musica-desarrollo-cognitivo-neuronal-explorando {'ok': True, 'mb': 3.5, 'paginas': 17, 'sha1': 'dfd35731d8186049b0379ac60b0b2fa32f99c1e2', 'lote': 'r2'}
+tdah-funciones-ejecutivas-desafios-comportamiento-aula {'ok': True, 'mb': 10.9, 'paginas': 113, 'sha1': '4d3c0ec2db9d8965d85ea70d9cf8cd3aa6f143fa', 'lote': 'r2'}
+desarrollo-aprendizaje-adolescencia-master-formacion-profeso {'ok': True, 'mb': 5.7, 'paginas': 66, 'sha1': 'a7c40ffcb377f5faffbb36c10c405424e9a6a552', 'lote': 'r2'}
+cuaderno-orientaciones-familias-docentes {'ok': True, 'mb': 0.5, 'paginas': 24, 'sha1': '0cf680dbd3516e2bc7fffaf26a620e3974b03cbe', 'lote': 'r2'}
+prevencion-integral-ciberacoso-otros-riesgos-violencias {'ok': True, 'mb': 4.7, 'paginas': 272, 'sha1': 'b5358ce174dfe106cfc9ac786a9c7eb57290717a', 'lote': 'r2'}
+manual-neurodivergencias-adaptaciones-razonables-guia-educac {'ok': True, 'mb': 0.8, 'paginas': 54, 'sha1': '6fc2e02e86d9488b2e02555c9ed2de836e689425', 'lote': 'r2'}
+obemat-2-0-programa-tratamiento-obesidad {'ok': True, 'mb': 27.7, 'paginas': 56, 'sha1': 'e7cd0ca14e00bb4bed001239391c4bd03b497e9d', 'lote': 'r2'}
+primera-parte-moral-seneca {'ok': True, 'mb': 29.5, 'paginas': 196, 'sha1': '5b2ad78db4572ac0e3fb1128d667c9809325b08d', 'lote': 'r2'}
+evolucion-atribucion-psicologica-lectura-mentes-metacognicio {'ok': True, 'mb': 0.4, 'paginas': 22, 'sha1': '5c7fb4c4c726b0858ab627f6373130cfeefa7a40', 'lote': 'r2'}
+potencial-que-emerge-cognicion-neurociencia-aprendizaje {'ok': True, 'mb': 0.3, 'paginas': 45, 'sha1': '536d606ddd4cc8c34a33e21a3e1a1b5054e649ad', 'lote': 'r2'}
+sabiduria-melancolia-felicidad-consideraciones-entorno-fisio {'ok': True, 'mb': 6.3, 'paginas': 9, 'sha1': '89ff31a0965ca3d3751ec17409694a8d29b4b12b', 'lote': 'r2'}
+arteterapia-contra-marginacion-social {'ok': True, 'mb': 2.0, 'paginas': 16, 'sha1': 'cdae3c029e3f7ad1bc20efc6a33e28634f696995', 'lote': 'r2'}
+control-inhibitorio-e-interferencia-cognicion {'ok': True, 'mb': 16.7, 'paginas': 25, 'sha1': '5996584702432e784c806116e5bb2f961698316a', 'lote': 'r2'}
+historias-vida-educacion-biografias-contexto {'ok': True, 'mb': 3.1, 'paginas': 179, 'sha1': '4244a0ff6c68eecfd0c6b65425f19606c4adb36e', 'lote': 'r2'}
+padres-ninos-psicoterapia-inclusion-parental-psicoterapia {'ok': True, 'mb': 1.8, 'paginas': 148, 'sha1': 'f800a17a0c3d47e37516b1500bd7621d48743872', 'lote': 'r2'}
+educacion-competencia-socioemocional-institucion-escolar-tra {'ok': True, 'mb': 3.8, 'paginas': 19, 'sha1': 'd80fa10a859ecc7060b7d4bbb44a9a0fdb386455', 'lote': 'r2'}
+manual-prevencion-violencia-genero {'ok': True, 'mb': 2.0, 'paginas': 184, 'sha1': '2df2b5f6915df813bbe3a8e83f57c1887728da5f', 'lote': 'r2'}
+cuando-es-necesario-ayudar-ninos-socializar {'ok': True, 'mb': 2.0, 'paginas': 5, 'sha1': '2f0905ec3d2ad931839ad883546fd2d7989d89b7', 'lote': 'r2'}
+recursos-salud-positiva-estudio-exploratorio-grupos {'ok': True, 'mb': 0.2, 'paginas': 2, 'sha1': '89fb5ddff3dc304ac80da9a5be193dc306ce5204', 'lote': 'r2'}
+bumeran-violencia-adicciones {'ok': True, 'mb': 0.2, 'paginas': 4, 'sha1': 'b8dc28e8b6f8121bba6b583522b188626e205486', 'lote': 'r2'}
+duelo-ficcion-seleccion-textos {'ok': True, 'mb': 0.2, 'paginas': 7, 'sha1': 'f3b74f85b29af5f59e1769e7f01df1801e72b39f', 'lote': 'r2'}
+textos-seleccionados-sobre-perdida-duelo {'ok': False, 'err': 'sin PDF', 'definitivo': True}
+tiempo-elegir-sin-miedo-memorias-astrobiologa {'ok': True, 'mb': 1.1, 'paginas': 178, 'sha1': '771efc4a91f6dd13e8de5dea2fc9d4822e58f668', 'lote': 'r2'}
+ensenar-pensar-sobre-valores-sociales {'ok': True, 'mb': 15.1, 'paginas': 440, 'sha1': 'c4512f77e37a09d218a8a2362478254855cfcba5', 'lote': 'r2'}
+oficios-ciceron-dialogos-vejez-amistad-paradoxas {'ok': True, 'mb': 22.5, 'paginas': 633, 'sha1': '14e4cbcbf8ec65e4bf9b6678f95e9e3d681a5783', 'lote': 'r2'}
+interpretacion-suenos-ii-obras-completas-profesor {'ok': False, 'err': 'demasiado grande', 'definitivo': True}
+introduccion-psicoanalisis-i-actos-fallidos-suenos {'ok': False, 'err': 'demasiado grande', 'definitivo': True}
+interpretacion-suenos-i-obras-completas-profesor {'ok': False, 'err': 'demasiado grande', 'definitivo': True}
+palabra-freud {'ok': True, 'mb': 2.1, 'paginas': 191, 'sha1': '6270c2439aad734d9403f1ec6c75b7833c60e8bc', 'lote': 'r2'}
+portadas 30 200 v3/portadas-1792498467.json
+ayudate-self-help-ejemplos-sobre-caracter {'ok': True, 'mb': 9.6, 'paginas': 408, 'sha1': '5a8db4cbf31cb7d3b66f8823a1ff80c83c46ed4d', 'lote': 'r2'}
+juntos-ciencia-psicologia-social {'ok': False, 'err': 'HTTP Error 404: Not Found', 'definitivo': True}
+psicologia-cognitiva {'ok': False, 'err': 'HTTP Error 404: Not Found', 'definitivo': True}
+desafios-prioridades-salud-mental-adolescentes-jovenes {'ok': True, 'mb': 0.3, 'paginas': 8, 'sha1': '53b44559c5f23e7bad2c977a2d648bc96df8e265', 'lote': 'r2'}
+escenarios-enfermedad-salud-muerte-vida {'ok': True, 'mb': 7.7, 'paginas': 51, 'sha1': 'e45b37a7a3b5ccdc563641f25b9a5ca34fa78aa8', 'lote': 'r2'}
+suenos-amor-encuentros-decisivos-poder-pasion {'ok': True, 'mb': 1.5, 'paginas': 416, 'sha1': '238b2fa2db3b45479af99ae667b3ee36d70fb6e2', 'lote': 'r2'}
+mamitis-traumas-desarrollo-colonia-popular-ciudad {'ok': True, 'mb': 5.9, 'paginas': 29, 'sha1': '11bb897138a5f9a8af3efa6476dd1a73e9675bed', 'lote': 'r2'}
+verguenza-humillacion-aislamiento-social-como-privacion {'ok': True, 'mb': 5.2, 'paginas': 13, 'sha1': '5851a37e2192e2c97070f9f2aaa484dc92f3bb7e', 'lote': 'r2'}
+culpabilidad-responsabilidad {'ok': True, 'mb': 0.4, 'paginas': 23, 'sha1': '85328621c56746c547b13269c56716918ea10584', 'lote': 'r2'}
+psicoanalisis-ciencias-sociales-mundo-popular {'ok': True, 'mb': 0.8, 'paginas': 21, 'sha1': '9e91540899a725579eaea7538d109622729e94ca', 'lote': 'r2'}
+teorias-contemporaneas-motivacion-perspectiva-aplicada {'ok': False, 'mb': 53.5, 'err': 'supera 45 MB (53.5)', 'definitivo': True}
+freud-schopenhauer-voluntad-pulsion-represion {'ok': True, 'mb': 0.2, 'paginas': 17, 'sha1': 'bfeb28060765d4b1785ffcabdd1b1b4df250c7a3', 'lote': 'r2'}
+salud-mental-espacios-educativos-desafios-caminos {'ok': False, 'err': 'HTTP Error 401: ', 'definitivo': False}
+salud-mental-comunitaria-forma-trabajo-basada {'ok': True, 'mb': 0.9, 'paginas': 29, 'sha1': 'a52b7f11de8db20a76c955b1273ca187174675c1', 'lote': 'r2'}
+como-eliges-tu-profesion-motivaciones-factores {'ok': True, 'mb': 2.2, 'paginas': 82, 'sha1': '87199160a13aaaeb91324ab90cbf68db15dd4ec8', 'lote': 'r2'}
+salud-mental-poblaciones-vulnerables-frente-covid {'ok': False, 'err': 'HTTP Error 401: ', 'definitivo': False}
+eventos-estresores-ciclo-vital-percepcion-proceso {'ok': True, 'mb': 7.5, 'paginas': 20, 'sha1': 'b7d37983b5f84616db26e76ad0db90ddcb47eaad', 'lote': 'r2'}
+psicoanalisis-semiotica-linguistica-alianza-conveniente-estu {'ok': True, 'mb': 0.3, 'paginas': 41, 'sha1': '61177576b399af9e3628d7f9a9c5979ef73cb474', 'lote': 'r2'}
+pensamiento-formal-inteligencia-adulta-estudio-realizado {'ok': True, 'mb': 5.1, 'paginas': 12, 'sha1': '07cbec175d06a03b944e3d3d892577f89bb41c71', 'lote': 'r2'}
+nuestros-ninos-son-talentosos-como-reconocer {'ok': True, 'mb': 15.6, 'paginas': 147, 'sha1': '84e8db9c7e7e7801314f0328cd1c8ec625dcbd8f', 'lote': 'r2'}
+conversaciones-libres-ninos-metodo-clinico-piagetiano {'ok': True, 'mb': 0.7, 'paginas': 28, 'sha1': '76ed3dd0e86608c3f2cf71e55df0d14c8f82feb2', 'lote': 'r2'}
+es-satisfaccion-deseos-esencia-suenos-origen {'ok': True, 'mb': 3.2, 'paginas': 19, 'sha1': '6fd203fe085b56f27b86874289151cc4b902d23b', 'lote': 'r2'}
+guia-intervenciones-eficaces-personas-demencia-moderada {'ok': True, 'mb': 0.8, 'paginas': 34, 'sha1': 'c4bf9713640e184dbeaf4be27af59ec98912e88e', 'lote': 'r2'}
+cuidar-quienes-cuidan-investigacion-accion-estrategias {'ok': True, 'mb': 0.4, 'paginas': 6, 'sha1': 'd80f7e59b524ba93f14f35c34322f800eb9d7a3a', 'lote': 'r2'}
+prevencion-acoso-ciberacoso-traves-clases-educacion {'ok': True, 'mb': 5.2, 'paginas': 264, 'sha1': 'c39da1a662ef3ee6bd508ee88dc381368bb1c769', 'lote': 'r2'}
+memorias-movimiento-testimonios-corporales-sobre-diagnostico {'ok': True, 'mb': 1.2, 'paginas': 84, 'sha1': '6215f969201c4183a0dd2220b1b52c9589837765', 'lote': 'r2'}
+relatos-personales-como-objetos-frontera-contextos {'ok': True, 'mb': 1.6, 'paginas': 176, 'sha1': '9f1345cf2831f99af7e79459be47752016cd757c', 'lote': 'r2'}
+educacion-valores-desarrollo-moral-jornadas-celebradas {'ok': True, 'mb': 10.4, 'paginas': 252, 'sha1': '10666487180c25e8dd538cb2aa902a289b040f5c', 'lote': 'r2'}
+inteligencia-maquiavelica-o-social-teoria-mente {'ok': True, 'mb': 4.1, 'paginas': 31, 'sha1': '86e4dab03a4f192e01b0752c6fe050594090ab49', 'lote': 'r2'}
+debates-sobre-psicopatologia-estructuras-clinicas-conexiones {'ok': True, 'mb': 2.0, 'paginas': 166, 'sha1': '636d951da5a825a6921f3668a84adf9dfc8a2928', 'lote': 'r2'}
+maltrato-infantil-teoria-clinica-psicoanalitica {'ok': True, 'mb': 1.3, 'paginas': 263, 'sha1': '3e069e024f62f0f1c0128e2a1194039859860726', 'lote': 'r2'}
+debates-sobre-psicopatologia-estructuras-clinicas-vol {'ok': True, 'mb': 2.8, 'paginas': 164, 'sha1': 'a8f7aabd6001d403d3ae3633b9d1181dca6c985c', 'lote': 'r2'}
+salud-mental-psicologia {'ok': True, 'mb': 1.3, 'paginas': 27, 'sha1': '96daf508b4851854439e22592c8232f8df60a488', 'lote': 'r2'}
+debates-sobre-psicopatologia-estructuras-clinicas-vol-2 {'ok': True, 'mb': 2.5, 'paginas': 155, 'sha1': 'c23154f9e91165cb07ce9ac7b28048e9c2ab7826', 'lote': 'r2'}
+caracteristicas-dificultades-aprendizaje-ninos-8-11 {'ok': True, 'mb': 13.6, 'paginas': 74, 'sha1': '9216ce5e8c5dc8dd77c05b9f30c6e1611276bde9', 'lote': 'r2'}
+cual-salud-mental-hablamos-tiempos-covid {'ok': True, 'mb': 1.3, 'paginas': 16, 'sha1': '7ca1e7da12e8ad3948a9ff52740f6fd1af18d100', 'lote': 'r2'}
+intervencion-breve-basada-psicologia-positiva-potenciar {'ok': True, 'mb': 2.1, 'paginas': 75, 'sha1': '6d3f147fbaeb871a9cf70a6a135f90941141fef6', 'lote': 'r2'}
+estereotipos-sobre-envejecimiento-muestra-universitaria-cien {'ok': True, 'mb': 0.5, 'paginas': 16, 'sha1': '1648de1e5ab86bb2570630642d1122f24e25edec', 'lote': 'r2'}
+valor-humanizar-palabra-lenguaje-etica-cuidados {'ok': True, 'mb': 1.3, 'paginas': 21, 'sha1': '81c142319d63e2ab221db663ae963dc4d97b97f0', 'lote': 'r2'}
+repercusiones-neuronales-cognitivas-formacion-musical {'ok': True, 'mb': 0.8, 'paginas': 28, 'sha1': '2af37977047e40442a4b3b9784c65a290e36fb09', 'lote': 'r2'}
+familia-valores-contra-violencia-escuela {'ok': True, 'mb': 0.2, 'paginas': 19, 'sha1': '7946d851578e79eb5bbc8ba8a806880f84260238', 'lote': 'r2'}
+portadas 30 200 v3/portadas-1792498748.json
+guia-programa-health-friendly-intervencion-disminucion {'ok': True, 'mb': 0.6, 'paginas': 29, 'sha1': 'ec9857fb3ae32928bda47172c22248360b422a60', 'lote': 'r2'}
+confinamiento-salud-mental-mayores-que-hemos {'ok': True, 'mb': 1.9, 'paginas': 5, 'sha1': 'c47c1c57408a2548cebb47341b85e94a5e62c220', 'lote': 'r2'}
+adolescencia-situacion-desamparo-hacia-recursos-residenciale {'ok': True, 'mb': 0.6, 'paginas': 21, 'sha1': 'd61868c0efbfaa067be365bbff9c7b784b9cd651', 'lote': 'r2'}
+psicologia-ciudad {'ok': True, 'mb': 3.1, 'paginas': 184, 'sha1': 'cf90ca3cd2cfcbaeb89da5fcb40ee12e2bbb375a', 'lote': 'r2'}
+cuerpo-salud-comida-aspectos-socioculturales-nutricion {'ok': True, 'mb': 0.9, 'paginas': 180, 'sha1': 'a34b60a576cf3d4e7267155888b09c971d247ba4', 'lote': 'r2'}
+manual-cuidador-familiar-es-tar-demencia {'ok': True, 'mb': 3.8, 'paginas': 100, 'sha1': '14304bcca1e6f841ebf2a7fa44259514a337b30f', 'lote': 'r2'}
+metodo-definitivo-tener-hijos-lectores-consejos {'ok': True, 'mb': 0.9, 'paginas': 28, 'sha1': '563b6e386e7eef1e02b8b66ba6b4616468406717', 'lote': 'r2'}
+fundamentos-moral {'ok': True, 'mb': 9.6, 'paginas': 416, 'sha1': '893bfce20e6afe9d3661dbd96edf3641420bdc38', 'lote': 'r2'}
+historias-que-importan-propuesta-intervencion-acerca {'ok': True, 'mb': 3.9, 'paginas': 36, 'sha1': '88ca3c8c3f9bb3a9bc3b349b3b4c0a08f0e861ce', 'lote': 'r2'}
+trude-sojka-resiliencia-traves-artes {'ok': True, 'mb': 4.7, 'paginas': 100, 'sha1': 'e84004b9610e350f5c72d830a8b5c3bfd739c861', 'lote': 'r2'}
+sintomas-psicoticos-adulto-mayor-definiciones-epidemiologia {'ok': True, 'mb': 0.4, 'paginas': 22, 'sha1': '58610f0eb733c60a54c1d47559c120251de66c67', 'lote': 'r2'}
+solucion-conflictos-estimulacion-pensamiento-ninos-basica {'ok': True, 'mb': 0.3, 'paginas': 19, 'sha1': '1743900014babba94e35d219e9ea95f1d4f356af', 'lote': 'r2'}
+diversidad-respuesta-psicopedagogica-grados-educacion-infant {'ok': True, 'mb': 5.0, 'paginas': 226, 'sha1': '58f20549f2219fa9bc73c00ebfe9d29ebbbb5853', 'lote': 'r2'}
+estereotipos-genero-trabajo {'ok': True, 'mb': 1.0, 'paginas': 233, 'sha1': '10af5b6098373bd1effab788ec4841be9857d2c3', 'lote': 'r2'}
+propaganda-digital-comunicacion-tiempos-desinformacion {'ok': True, 'mb': 5.5, 'paginas': 190, 'sha1': 'ba105cf4be22a559e5b6aa688645dc4848ebfd67', 'lote': 'r2'}
+hombre-mediocre-ensayo-psicologia-moral {'ok': True, 'mb': 1.4, 'paginas': 119, 'sha1': 'ab5568535e386ccc4b1b3b85ebcaa1390d5948db', 'lote': 'r2'}
+tristeza-contemporanea-ensayo-sobre-grandes-corrientes {'ok': True, 'mb': 42.4, 'paginas': 227, 'sha1': 'bd9a880c97f5d1ffcba9d6164704d47ee3c1f7e7', 'lote': 'r2'}
+idea-jeneral-filosofia-positiva-i-sicolojia {'ok': True, 'mb': 23.9, 'paginas': 392, 'sha1': '288906b7b88850c8b62239ede053a4c315a4f280', 'lote': 'r2'}
+mas-alla-diagnostico-viaje-autodescubrimiento-neurodivergenc {'ok': True, 'mb': 5.2, 'paginas': 135, 'sha1': 'fabb1900d489fbd8dcc89c1066b921ae75a2430e', 'lote': 'r2'}
+hipnotismo-sugestion-nociones-generales-historia-sintomatolo {'ok': True, 'mb': 19.6, 'paginas': 230, 'sha1': '8f8872395463ffa17c152ade8c9aa644c2ae2ebe', 'lote': 'r2'}
+cuentos-hombres-que-son-todavia-ninos {'ok': True, 'mb': 2.2, 'paginas': 115, 'sha1': 'f9bce8c9846cc1eafa3ffea141977a3883a5fb6d', 'lote': 'r2'}
+guia-solucion-problemas-orientacion-academico-profesional {'ok': True, 'mb': 0.4, 'paginas': 15, 'sha1': '32fa860ca1731725e031a3027497bde16b0b818c', 'lote': 'r2'}
+modelo-orientacion-como-proceso-educativo-d {'ok': True, 'mb': 4.2, 'paginas': 11, 'sha1': '8c783a5a177afa9390ba0fe7187a664e49a3540e', 'lote': 'r2'}
+ambitos-principios-modelos-orientacion {'ok': True, 'mb': 3.9, 'paginas': 10, 'sha1': 'a2340175e6cff683a37b51a9608012b97ef5d602', 'lote': 'r2'}
+locura-realidad-lectura-psicoantropologica-quijote {'ok': True, 'mb': 0.7, 'paginas': 212, 'sha1': 'f7594461957d90ed378041c309814e7e554f83fa', 'lote': 'r2'}
+Dereference of free object 1885, next object number as offset failed, returning NULL object.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+Dereference of free object 1883, next object number as offset failed, returning NULL object.
+Dereference of free object 1885, next object number as offset failed, returning NULL object.
+Dereference of free object 1996, next object number as offset failed, returning NULL object.
+Dereference of free object 1992, next object number as offset failed, returning NULL object.
+Dereference of free object 1988, next object number as offset failed, returning NULL object.
+Dereference of free object 1982, next object number as offset failed, returning NULL object.
+Dereference of free object 1984, next object number as offset failed, returning NULL object.
+Dereference of free object 1978, next object number as offset failed, returning NULL object.
+Dereference of free object 1974, next object number as offset failed, returning NULL object.
+Dereference of free object 1970, next object number as offset failed, returning NULL object.
+Dereference of free object 1967, next object number as offset failed, returning NULL object.
+Dereference of free object 1963, next object number as offset failed, returning NULL object.
+Dereference of free object 1959, next object number as offset failed, returning NULL object.
+Dereference of free object 1955, next object number as offset failed, returning NULL object.
+Dereference of free object 1938, next object number as offset failed, returning NULL object.
+Dereference of free object 1940, next object number as offset failed, returning NULL object.
+Dereference of free object 1934, next object number as offset failed, returning NULL object.
+Dereference of free object 1930, next object number as offset failed, returning NULL object.
+Dereference of free object 1926, next object number as offset failed, returning NULL object.
+Dereference of free object 1923, next object number as offset failed, returning NULL object.
+Dereference of free object 1919, next object number as offset failed, returning NULL object.
+Dereference of free object 1915, next object number as offset failed, returning NULL object.
+Dereference of free object 1901, next object number as offset failed, returning NULL object.
+Dereference of free object 1898, next object number as offset failed, returning NULL object.
+Dereference of free object 1894, next object number as offset failed, returning NULL object.
+Dereference of free object 1890, next object number as offset failed, returning NULL object.
+Dereference of free object 1881, next object number as offset failed, returning NULL object.
+Dereference of free object 1886, next object number as offset failed, returning NULL object.
+Dereference of free object 1883, next object number as offset failed, returning NULL object.
+GPL Ghostscript 10.02.1: Missing glyph CID=0, glyph=3330 in the font GADRKL+Calibri . The output PDF may fail with some viewers.
+Dereference of free object 1883, next object number as offset failed, returning NULL object.
+Dereference of free object 1883, next object number as offset failed, returning NULL object.
+   **** Error: Page drawing error occurred.
+               Output may be incorrect.
+Dereference of free object 1883, next object number as offset failed, returning NULL object.
+Dereference of free object 1883, next object number as offset failed, returning NULL object.
+Dereference of free object 1883, next object number as offset failed, returning NULL object.
+Dereference of free object 1883, next object number as offset failed, returning NULL object.
+Dereference of free object 1883, next object number as offset failed, returning NULL object.
+Dereference of free object 1883, next object number as offset failed, returning NULL object.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+Dereference of free object 1883, next object number as offset failed, returning NULL object.
+Dereference of free object 1883, next object number as offset failed, returning NULL object.
+Dereference of free object 1883, next object number as offset failed, returning NULL object.
+Dereference of free object 1883, next object number as offset failed, returning NULL object.
+Dereference of free object 1883, next object number as offset failed, returning NULL object.
+Dereference of free object 1883, next object number as offset failed, returning NULL object.
+Dereference of free object 1883, next object number as offset failed, returning NULL object.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+Dereference of free object 1883, next object number as offset failed, returning NULL object.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+Dereference of free object 1883, next object number as offset failed, returning NULL object.
+Dereference of free object 1883, next object number as offset failed, returning NULL object.
+Dereference of free object 1883, next object number as offset failed, returning NULL object.
+Dereference of free object 1883, next object number as offset failed, returning NULL object.
+Dereference of free object 1883, next object number as offset failed, returning NULL object.
+Dereference of free object 1883, next object number as offset failed, returning NULL object.
+Dereference of free object 1883, next object number as offset failed, returning NULL object.
+Dereference of free object 1883, next object number as offset failed, returning NULL object.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+Dereference of free object 1883, next object number as offset failed, returning NULL object.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+Dereference of free object 1883, next object number as offset failed, returning NULL object.
+Dereference of free object 1883, next object number as offset failed, returning NULL object.
+Dereference of free object 2640, next object number as offset failed, returning NULL object.
+Dereference of free object 1883, next object number as offset failed, returning NULL object.
+   **** Error: Page drawing error occurred.
+               Output may be incorrect.
+Dereference of free object 2638, next object number as offset failed, returning NULL object.
+Dereference of free object 1883, next object number as offset failed, returning NULL object.
+   **** Error: Page drawing error occurred.
+               Output may be incorrect.
+Dereference of free object 1883, next object number as offset failed, returning NULL object.
+Dereference of free object 2632, next object number as offset failed, returning NULL object.
+Dereference of free object 2636, next object number as offset failed, returning NULL object.
+Dereference of free object 1883, next object number as offset failed, returning NULL object.
+   **** Error: Page drawing error occurred.
+               Output may be incorrect.
+Dereference of free object 1883, next object number as offset failed, returning NULL object.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+Dereference of free object 2634, next object number as offset failed, returning NULL object.
+Dereference of free object 1885, next object number as offset failed, returning NULL object.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+manual-go-byst-programa-breve-sensibilizacion {'ok': True, 'mb': 3.0, 'paginas': 36, 'sha1': 'a770ebdb1fbb1571cfb55e9297e149f1a2aba31e', 'lote': 'r2'}
+diagnostico-antropologico-1905-avance-clasificacion-ninos {'ok': True, 'mb': 0.9, 'paginas': 13, 'sha1': '88bb973bc88baf8add4a24eed3fd93d13bfdb078', 'lote': 'r2'}
+programas-nacionales-ciudades-comunidades-amigables-personas {'ok': True, 'mb': 6.6, 'paginas': 76, 'sha1': '376b2920edd21cff6b638db45dec8f8264de6ae4', 'lote': 'r2'}
+educador-sombrio {'ok': False, 'err': 'HTTP Error 404: Not Found', 'definitivo': True}
+mente-cuerpo-mundo-fundamentos-ciencia-cognitiva {'ok': False, 'err': 'HTTP Error 404: Not Found', 'definitivo': True}
+psicologia-noba {'ok': False, 'err': 'HTTP Error 404: Not Found', 'definitivo': True}
+descubre-psicologia-breve-texto-introductorio {'ok': False, 'err': 'HTTP Error 404: Not Found', 'definitivo': True}
+psicologia-cognitiva-neurociencia-cognitiva {'ok': False, 'err': 'HTTP Error 404: Not Found', 'definitivo': True}
+psicologia-introductoria-2e {'ok': False, 'err': 'HTTP Error 404: Not Found', 'definitivo': True}
+cartas-fliess-via-diferente-acercamiento-psicoanalisis {'ok': True, 'mb': 7.6, 'paginas': 16, 'sha1': 'f7749177e0b354596444bf6be7278230015ce9f4', 'lote': 'r2'}
+perdon-reconciliacion-justicia {'ok': True, 'mb': 0.3, 'paginas': 25, 'sha1': '35c58e0ccab5276af6590cb97503f812e7a5cfda', 'lote': 'r2'}
+pulsion-muerte-juego-psicoanalisis-ninos {'ok': True, 'mb': 7.9, 'paginas': 17, 'sha1': '732a4f9b26a6a2bc9b7b9f32efda165eef8d4180', 'lote': 'r2'}
+dando-cuenta-estudios-sobre-testimonio-violencia {'ok': True, 'mb': 4.7, 'paginas': 382, 'sha1': '671c688395e50f78623b0eac59fda7909622396f', 'lote': 'r2'}
+rol-filosofia-psicologia-neurociencia {'ok': True, 'mb': 0.3, 'paginas': 23, 'sha1': 'fa3222f7fdc65154aa30fe0e46306d468910cdec', 'lote': 'r2'}
+crisis-persona-busqueda-sentido-vida-contexto {'ok': True, 'mb': 4.4, 'paginas': 37, 'sha1': '619f2633cd19b540a44b9b4fe3a1bdd97cb3b4f6', 'lote': 'r2'}
+familia-perspectiva-ninos-intento-interpretar-ausencias {'ok': True, 'mb': 6.1, 'paginas': 19, 'sha1': 'e48bd79deb6fc33c404bdf977f9321f29e68073a', 'lote': 'r2'}
+compendio-psicologia-educacion-secundaria {'ok': True, 'mb': 10.0, 'paginas': 215, 'sha1': 'e76f06531cf1e8a9b26ee329ebccf8d8036515cf', 'lote': 'r2'}
+desarrollo-nino-via-desarrollo-humano {'ok': True, 'mb': 0.2, 'paginas': 17, 'sha1': '6190e9a8c4d5d83c3621eb6b81e5601e24967245', 'lote': 'r2'}
+luciana-dios-si-me-sacas-adicciones {'ok': True, 'mb': 0.6, 'paginas': 5, 'sha1': '30715d2861ceb13dc07585e0f54e590a41dd0d26', 'lote': 'r2'}
+psicologia-auditiva {'ok': True, 'mb': 0.6, 'paginas': 11, 'sha1': '3b3310224a86bdbb7b6354b5efdbf8916e1fdd95', 'lote': 'r2'}
+portadas 30 200 v3/portadas-1792499515.json
+psicologia-arte {'ok': True, 'mb': 1.0, 'paginas': 15, 'sha1': 'cdfdac1f2e98aa9c241da4abb33319251df69a28', 'lote': 'r2'}
+efectos-psicosociales-victimas-directas-terrorismo-estado {'ok': True, 'mb': 0.9, 'paginas': 74, 'sha1': '0b25595a28ccbd922bb70036940ad2b741e303cb', 'lote': 'r2'}
+cuidarme-cuidarnos-cuidar-tierra-propuesta-didactica {'ok': True, 'mb': 1.8, 'paginas': 35, 'sha1': '0b1e4a6e06a3d11821b36f52118b27e47c2b4f09', 'lote': 'r2'}
+analisis-funcional-modelo-sorck-teoria {'ok': True, 'mb': 0.3, 'paginas': 11, 'sha1': '0520026101247984613773a7550794149bf8a4e0', 'lote': 'r2'}
+historias-vida-educacion-sujeto-dialogo-experiencia {'ok': True, 'mb': 3.1, 'paginas': 254, 'sha1': '99cdcfd9faa7387b147ad77e92888d14ca7567b9', 'lote': 'r2'}
+etica-e-inteligencia-artificial-evaluacion-psicologica {'ok': True, 'mb': 0.2, 'paginas': 15, 'sha1': 'e1cb7eac86972b139e516695409c5115e59d508c', 'lote': 'r2'}
+mediacion-familiar-marco-transformador {'ok': True, 'mb': 1.2, 'paginas': 20, 'sha1': 'e6bc560e7c658de26f7c789c651ca25fb8f4d6fd', 'lote': 'r2'}
+infancia-bajo-amenazade-muerte-ninos-situacion {'ok': True, 'mb': 0.8, 'paginas': 111, 'sha1': '1a6f8ee53660ba63be85bc1608c328ae3794c076', 'lote': 'r2'}
+tejer-como-alternativa-expresion-artistica-terapeutica {'ok': True, 'mb': 1.6, 'paginas': 40, 'sha1': '4eec525b1f5124fb6e7ddcce8a75dd72efc726eb', 'lote': 'r2'}
+evaluacion-potenciacion-psicopedagogica-talentos-habilidades {'ok': True, 'mb': 3.6, 'paginas': 20, 'sha1': '6e522dd4d93e662064bee35c420cb7c2bbfb0d18', 'lote': 'r2'}
+pensamiento-multilateral-desarrolle-su-creatividad-mejore {'ok': True, 'mb': 10.1, 'paginas': 215, 'sha1': '1cd83d1e1141564597606a9372ff054451908922', 'lote': 'r2'}
+ensenanza-habilidades-comunicativas-infancia {'ok': True, 'mb': 2.4, 'paginas': 140, 'sha1': 'b226bd75aa4d8ed19079523fece19b78604db3da', 'lote': 'r2'}
+como-ser-resiliente-ante-adversidad-cuaderno {'ok': True, 'mb': 4.4, 'paginas': 124, 'sha1': 'dbce9b39be4b46087247cfaebed136944656e3a3', 'lote': 'r2'}
+formacion-competencial-docente-estrategias-neurodidactica-de {'ok': True, 'mb': 0.3, 'paginas': 16, 'sha1': '26936fcf480e74e5d74d56733dada1ddec987252', 'lote': 'r2'}
+jornada-comunicacion-pragmatica-neurodiversidad-evidencia-in {'ok': True, 'mb': 1.1, 'paginas': 79, 'sha1': 'ab1c046200c84de7b698354ba10d3c9740224ecf', 'lote': 'r2'}
+trastorno-espectro-autista-conocimientos-esenciales-educacio {'ok': True, 'mb': 5.6, 'paginas': 60, 'sha1': '8a83668836db8524b0677eb4b481c160028b0b1c', 'lote': 'r2'}
+intervencion-psicoeducativa-escuelas-mejorar-convivencia-inc {'ok': True, 'mb': 11.6, 'paginas': 608, 'sha1': '83391ea16c258d739587b2fb46da4c41c1055f1c', 'lote': 'r2'}
+esto-va-respeto-guia-lenguaje-anticapacitista {'ok': True, 'mb': 3.6, 'paginas': 21, 'sha1': '23272ea808f17ca10cabe1e08ca2e7a529f01b2a', 'lote': 'r2'}
+que-papel-juega-autorregulacion-aprendizaje-comportamiento {'ok': True, 'mb': 1.2, 'paginas': 30, 'sha1': '4ca40e2cb3c216ea8d96513c9eeb3e150f65156d', 'lote': 'r2'}
+poder-terapeutico-centrarse-soluciones-no-problemas {'ok': True, 'mb': 0.9, 'paginas': 3, 'sha1': '81724bd1e34adc7a6a91c68c98ac11e77944846e', 'lote': 'r2'}
+terapias-cine-50-peliculas-basicas-torno {'ok': True, 'mb': 1.3, 'paginas': 216, 'sha1': '49aa8a924a3262cde830a8a1e3a2002349495723', 'lote': 'r2'}
+comunicacion-no-verbal-relacion-medico-paciente {'ok': True, 'mb': 1.4, 'paginas': 166, 'sha1': 'c42a9baf1e2f581a52b65bcfdcc1662c4a7044bb', 'lote': 'r2'}
+abuso-influencia-comunicacion-publica-letra-pequena {'ok': True, 'mb': 2.7, 'paginas': 206, 'sha1': '823334f121af1a56ad96f2ffdd7140204929e385', 'lote': 'r2'}
+familias-madres-solas-eleccion-nuevos-contextos {'ok': True, 'mb': 0.3, 'paginas': 18, 'sha1': 'b7ba9f0b468c22aa660d1f38b33ccc17e32f64bf', 'lote': 'r2'}
+inclusion-personas-mayores-planificacion-emergencias-perspec {'ok': True, 'mb': 0.4, 'paginas': 22, 'sha1': '08a25e5e6bcd146f62e03ef9d561a4b5e60cbe97', 'lote': 'r2'}
+fundamentos-trastornos-psicologicos {'ok': False, 'err': 'HTTP Error 404: Not Found', 'definitivo': True}
+ciencia-aplicada-sistemas-desarrollo {'ok': False, 'err': 'HTTP Error 404: Not Found', 'definitivo': True}
+instruccion-evaluacion-funcional {'ok': False, 'err': 'HTTP Error 404: Not Found', 'definitivo': True}
+hablemos-autocuidado-digital {'ok': True, 'mb': 3.6, 'paginas': 2, 'sha1': '76d6d2e7278f7f3454f1175dac2046ef67a686a6', 'lote': 'r2'}
+manual-cuidado-autocuidado {'ok': True, 'mb': 6.1, 'paginas': 176, 'sha1': '288b778bb60babfa8cc2d8b489c25f06b1e8d2b4', 'lote': 'r2'}
+simuladores-talento-luchas-personalidad-vida {'ok': True, 'mb': 2.1, 'paginas': 298, 'sha1': '20b5e1255bedfeea0e3339fc60c4e8ab74939f80', 'lote': 'r2'}
+psicologia-odontologos-partes-vi-vii-relacion {'ok': True, 'mb': 0.8, 'paginas': 80, 'sha1': '82cda69a5159b35ee094d556935e11e425efe013', 'lote': 'r2'}
+generalidades-cuidados-paliativos-pediatricos {'ok': True, 'mb': 1.0, 'paginas': 5, 'sha1': 'f5b99816914e5b3a77e70f0846c41c733f86fd2b', 'lote': 'r2'}
+cultura-psicologia {'ok': False, 'err': 'HTTP Error 404: Not Found', 'definitivo': True}
+introduccion-psicologia {'ok': False, 'err': 'HTTP Error 404: Not Found', 'definitivo': True}
+introduccion-psicologia-comunitaria {'ok': False, 'err': 'HTTP Error 404: Not Found', 'definitivo': True}
+psicologia-como-ciencia-biologica {'ok': False, 'err': 'HTTP Error 404: Not Found', 'definitivo': True}
+metodos-investigacion-psicologia {'ok': False, 'err': 'HTTP Error 404: Not Found', 'definitivo': True}
+teoria-personalidad-contexto-cultural {'ok': False, 'err': 'HTTP Error 404: Not Found', 'definitivo': True}
+gran-felicidad-no-pensar-nada-william {'ok': True, 'mb': 0.3, 'paginas': 14, 'sha1': '11a6429a9ad92a015c4c8cd1ac0e3d6ab7da1534', 'lote': 'r2'}
+estilo-crianza-construccion-autoconcepto-adolescentes {'ok': True, 'mb': 3.9, 'paginas': 27, 'sha1': '236a29faea5aadd9f9b43aa1119c2307f8647c34', 'lote': 'r2'}
+inteligencia-lenguaje-piaget-psicolinguistica-actual {'ok': True, 'mb': 3.2, 'paginas': 20, 'sha1': '000f696aa0d0040cde5a89f3e5d5d62fa0180851', 'lote': 'r2'}
+violencia-hacia-adultos-mayores {'ok': False, 'err': 'HTTP Error 401: ', 'definitivo': False}
+autoaprendizaje-como-desarrollo-personal {'ok': True, 'mb': 9.2, 'paginas': 19, 'sha1': '13e027b25431a5aea853fd720bc8a528a2d0d25f', 'lote': 'r2'}
+habilidades-comunicacion-practica-medica {'ok': True, 'mb': 0.7, 'paginas': 35, 'sha1': 'b22d5c771ec2eb9601801d9535c0a5699d3ccc06', 'lote': 'r2'}
+sombra-migrante-abordaje-psicosocial-familias-migrantes {'ok': True, 'mb': 4.1, 'paginas': 63, 'sha1': '994b636acdc072ee2a9cef13f17fa5f1b4ac9579', 'lote': 'r2'}
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+openjpeg warning: unspec CS. 3 components. Assuming data RGB.
+metodologia-investigacion-lector-divulgador {'ok': True, 'mb': 5.4, 'paginas': 360, 'sha1': '41d028e9164391d57e529a4e80c158a37d5b0554', 'lote': 'r2'}
+vivimos-sociedad-que-promueve-enfermedades-mentales {'ok': True, 'mb': 5.8, 'paginas': 8, 'sha1': '955d265c12995002ffce3559a92080005ad2f8d8', 'lote': 'r2'}
+bienestar-subjetivo-15-anos-repeticion-curso {'ok': True, 'mb': 1.0, 'paginas': 40, 'sha1': '5f6dd7c2402bf0970ccc86aa33a335e2d32e71a1', 'lote': 'r2'}
+fundamentos-terapia-sistemica-breve-septiembre-2020 {'ok': True, 'mb': 0.4, 'paginas': 44, 'sha1': 'b7f1c26e1cdfe9a0f9887041e909a151d9a33b6c', 'lote': 'r2'}
+claves-comunicacion-oral-practicas-orador-afable {'ok': True, 'mb': 0.6, 'paginas': 146, 'sha1': 'e0ce1f701ab22f132ce29a84a8838efa79342875', 'lote': 'r2'}
+portadas 28 200 v3/portadas-1792500006.json
+ok 184 fallos 34
