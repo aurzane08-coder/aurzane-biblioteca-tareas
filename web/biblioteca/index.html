@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Biblioteca | AURZANE</title>
+<meta name="description" content="La biblioteca abierta de psicología en español: cientos de libros con licencia abierta o de dominio público, de universidades y organismos de salud, para leer gratis aquí mismo.">
+<link rel="canonical" href="https://aurzane.com/biblioteca/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Biblioteca | AURZANE">
+<meta property="og:description" content="Libros de psicología en español con licencia abierta. Se leen gratis aquí mismo.">
+<meta property="og:url" content="https://aurzane.com/biblioteca/">
+<meta property="og:site_name" content="AURZANE">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;1,6..96,400&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="biblioteca.css?v=20261021a">
+</head>
+<body class="tienda">
+<header class="cabecera">
+  <div class="wrap cab-fila">
+    <a class="brand" href="https://aurzane.com/" aria-label="AURZANE, inicio">AUR<b>Z</b>ANE <span class="brand-sub">Biblioteca</span></a>
+    <form class="busca" id="busca" role="search">
+      <label for="q" class="vh">Buscar en la biblioteca</label>
+      <input id="q" type="search" placeholder="Título, autor, tema o palabra clave" autocomplete="off">
+      <button type="submit">Buscar</button>
+    </form>
+    <nav class="topnav" aria-label="Principal">
+      <a href="https://aurzane.com/">Inicio</a>
+      <a href="https://aurzane.com/articulos/">Artículos</a>
+      <a href="https://ovp.aurzane.com/">Orientación vocacional</a>
+    </nav>
+  </div>
+  <nav class="deptos" aria-label="Categorías">
+    <div class="wrap deptos-fila" id="deptos"></div>
+  </nav>
+  <div class="mega" id="mega" hidden></div>
+</header>
+
+<main>
+  <!-- Portada de la biblioteca -->
+  <div id="vista-inicio">
+    <section class="banner wrap">
+      <div class="banner-txt">
+        <h1>La biblioteca abierta de psicología en español</h1>
+        <p class="lead">Manuales, guías, clásicos y relatos de vida para entender la mente y cuidarla. Los libros abiertos se leen completos aquí mismo, y de los libros actuales te contamos de qué tratan y dónde conseguirlos.</p>
+        <nav class="tipos" id="tipos" aria-label="Colecciones"></nav>
+        <div class="banner-acc">
+          <a class="btn" href="#v=todo">Ver todo el catálogo</a>
+          <a class="btn sec" href="#temas-todos">Explorar por tema</a>
+        </div>
+      </div>
+      <div class="abanico" id="abanico" aria-hidden="true"></div>
+      <p class="cifras-peq" id="cifras"></p>
+    </section>
+    <div id="estantes"></div>
+    <section class="wrap bloque" id="temas-todos" aria-labelledby="t-temas">
+      <h2 id="t-temas" class="bloque-tit">Explora por tema</h2>
+      <div class="mapa-temas" id="mapa-temas"></div>
+    </section>
+  </div>
+
+  <!-- Resultados con filtros -->
+  <div id="vista-res" hidden>
+    <div class="wrap res-top">
+      <nav class="breadcrumb" aria-label="Ruta" id="miga"></nav>
+      <div class="res-cab">
+        <div>
+          <h1 id="res-titulo">Todos los libros</h1>
+          <p class="res-desc" id="res-desc"></p>
+        </div>
+        <div class="res-herr">
+          <button type="button" class="btn-filtros" id="abrir-filtros">Filtros</button>
+          <label class="orden"><span>Ordenar por</span>
+            <select id="orden">
+              <option value="rel">Recomendados</option>
+              <option value="nuevo">Novedades</option>
+              <option value="az">Título de la A a la Z</option>
+              <option value="za">Título de la Z a la A</option>
+              <option value="reciente">Año más reciente</option>
+              <option value="antiguo">Año más antiguo</option>
+              <option value="largo">Más páginas</option>
+              <option value="corto">Menos páginas</option>
+            </select>
+          </label>
+          <div class="vista-tog" role="group" aria-label="Vista">
+            <button type="button" data-v="grid" aria-pressed="true" title="Cuadrícula">Cuadrícula</button>
+            <button type="button" data-v="lista" aria-pressed="false" title="Lista">Lista</button>
+          </div>
+        </div>
+      </div>
+      <div class="activos" id="activos"></div>
+    </div>
+    <div class="wrap res-cuerpo">
+      <aside class="facetas" id="facetas" aria-label="Filtros">
+        <div class="fac-cab"><h2>Filtros</h2><button type="button" id="cerrar-filtros" class="cerrar">Cerrar</button></div>
+        <div id="facetas-cont"></div>
+        <button type="button" class="btn ver-res" id="ver-res">Ver resultados</button>
+      </aside>
+      <section class="res-lista" aria-live="polite">
+        <div class="grid" id="grid"></div>
+        <div class="vacio" id="vacio" hidden>
+          <h2>No encontramos libros con esos filtros</h2>
+          <p>Prueba a quitar algún filtro o a buscar con otras palabras.</p>
+          <button type="button" class="btn sec" id="limpiar-vacio">Quitar todos los filtros</button>
+        </div>
+        <div class="mas"><button type="button" class="btn sec" id="mas" hidden>Mostrar más libros</button><p class="mas-info" id="mas-info"></p></div>
+      </section>
+    </div>
+  </div>
+
+  <section class="wrap puente">
+    <div>
+      <h2>¿Estás eligiendo carrera?</h2>
+      <p>La orientación vocacional de AURZANE combina tests de intereses, aptitudes, autoconcepto y hábitos de estudio, y te entrega un informe completo.</p>
+    </div>
+    <a class="btn" href="https://ovp.aurzane.com/">Ir a Orientación vocacional</a>
+  </section>
+
+  <section class="wrap aviso-legal">
+    <h2>Sobre los derechos</h2>
+    <p>Solo alojamos libros publicados con licencia Creative Commons o que están en dominio público, obtenidos de repositorios de universidades, organismos de salud y bibliotecas digitales, siempre sin modificarlos y con su autoría, licencia y fuente original visibles. Los libros marcados como <b>Ficha</b> tienen derechos de autor: no los alojamos, solo te contamos de qué tratan y dónde conseguirlos de forma legal. Si eres titular de alguna obra y ves un error, escríbenos y lo corregimos. Las portadas de las fichas de referencia provienen de Open Library.</p>
+  </section>
+</main>
+
+<footer class="site"><div class="wrap"><p>AURZANE · Biblioteca abierta de psicología en español</p></div></footer>
+
+<script src="catalogo.js?v=20261021a"></script>
+<script src="biblioteca.js?v=20261021a"></script>
+</body>
+</html>

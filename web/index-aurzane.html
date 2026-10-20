@@ -1,0 +1,1305 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AURZANE — Un ecosistema, cinco mundos</title>
+<meta name="description" content="AURZANE: ciencia aplicada, no intuición de marketing. Orientación vocacional, tecnología, bienestar, conocimiento y proyectos físicos en un solo ecosistema — MIND, NEXUS, LIVE, LEARN, BUILD.">
+<link rel="canonical" href="https://aurzane.com/">
+<meta property="og:title" content="AURZANE — Un ecosistema, cinco mundos">
+<meta property="og:description" content="Ciencia aplicada, no intuición de marketing. Orientación vocacional, tecnología, bienestar, conocimiento y proyectos físicos en un solo ecosistema.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://aurzane.com/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700;1,6..96,500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"AURZANE","url":"https://aurzane.com/","email":"hola@aurzane.com"}
+</script>
+<style>
+/* ============================================================
+   AURZANE — design tokens
+   Base clara/"vainilla" por defecto (más cálida, más de marketing
+   editorial que de app oscura) — oscuro queda como alternativa
+   vía [data-tema="oscuro"]. La barra superior y el pie siguen
+   siendo navy/dorado oscuro en ambos casos: son el "marco" que
+   sostiene la identidad de todo el ecosistema.
+   ============================================================ */
+:root{
+  --navy-950:#070a14; --navy-900:#0f1530; --navy-800:#161d42; --navy-700:#212b5c;
+  --gold:#c9a24b; --gold-light:#e8cd8f; --gold-deep:#8a6a28;
+  --vanilla:#faf6ec; --paper-ink:#1c1712;
+  --silver:#c7cdd6; --silver-dim:#8b92a0;
+
+  --a-mind:#c9a24b; --a-nexus:#5f74c9; --a-live:#c06a3f; --a-learn:#5f8c6c; --a-build:#9c6b45;
+
+  --radius-lg:18px; --radius-md:12px; --radius-sm:8px;
+  --shadow-card:0 14px 32px -18px rgba(40,30,10,.22);
+  --font-display:"Bodoni Moda","Times New Roman",serif;
+  --font-body:"Instrument Sans",-apple-system,BlinkMacSystemFont,sans-serif;
+
+  --bg:var(--vanilla); --surface:#fffdf9; --surface-2:#f1e8d6;
+  --text:var(--paper-ink); --text-dim:#6b6153; --border:rgba(28,23,18,.13);
+  --accent-text:var(--gold-deep);
+}
+:root[data-tema="oscuro"]{
+  --bg:var(--navy-950); --surface:var(--navy-900); --surface-2:var(--navy-800);
+  --text:var(--vanilla); --text-dim:var(--silver-dim); --border:rgba(199,205,214,.14);
+  --accent-text:var(--gold-light);
+  --shadow-card:0 18px 40px -20px rgba(7,10,20,.55);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-body);line-height:1.6;transition:background .2s,color .2s}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3,h4{font-family:var(--font-display);font-weight:600;text-wrap:balance;margin:0}
+.wrap{max-width:1280px;margin:0 auto;padding:0 20px}
+.eyebrow{font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-text);font-weight:600}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:12px 20px;border-radius:999px;border:1px solid transparent;
+  font-family:var(--font-body);font-weight:600;font-size:.92rem;cursor:pointer;text-decoration:none}
+.btn-gold{background:var(--gold);color:var(--navy-950)}
+.btn-gold:hover{background:var(--gold-deep);color:#fff}
+.btn-ghost{background:transparent;color:var(--text);border-color:var(--border)}
+.btn-ghost:hover{border-color:var(--gold)}
+.section{padding:64px 0}
+.section-head{max-width:640px;margin:0 0 34px}
+.section-head h2{font-size:2rem;margin-top:8px}
+.section-head p{color:var(--text-dim);margin-top:10px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:var(--shadow-card)}
+.chip{display:inline-flex;align-items:center;gap:6px;padding:7px 14px;border-radius:999px;border:1px solid var(--border);
+  background:var(--surface-2);color:var(--text-dim);font-size:.82rem;cursor:pointer;user-select:none;white-space:nowrap}
+.chip.activo{background:var(--gold);border-color:var(--gold);color:var(--navy-950);font-weight:600}
+.visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ---------- utility bar (siempre navy, marco fijo) ---------- */
+.utility{background:var(--navy-950);color:var(--silver-dim);font-size:.78rem;padding:7px 0;border-bottom:1px solid rgba(255,255,255,.06)}
+.utility .wrap{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+.utility a{text-decoration:none;color:inherit}
+.utility a:hover{color:var(--gold-light)}
+.utility-right{display:flex;gap:16px;align-items:center}
+#btnTema{background:none;border:none;color:inherit;cursor:pointer;font-size:.78rem;font-family:inherit;padding:2px}
+
+/* ---------- selector de paleta de acento ---------- */
+.paleta-selector{padding:12px 0 4px}
+.paleta-label{display:block;font-size:.76rem;color:var(--silver-dim);margin-bottom:9px}
+.paleta-swatches{display:flex;gap:9px}
+.paleta-swatch{width:26px;height:26px;border-radius:999px;border:2px solid transparent;cursor:pointer;padding:0;box-shadow:0 0 0 1px rgba(255,255,255,.14)}
+.paleta-swatch.activo{border-color:var(--vanilla)}
+
+/* ---------- mega nav ---------- */
+header.principal{position:sticky;top:0;z-index:50;background:var(--surface);border-bottom:1px solid var(--border);backdrop-filter:blur(6px)}
+.nav-row{display:flex;align-items:center;gap:16px;padding:14px 0}
+.btn-todo{display:flex;align-items:center;gap:8px;background:var(--navy-950);color:var(--vanilla);border:none;
+  padding:10px 16px;border-radius:999px;font-family:var(--font-body);font-weight:600;font-size:.88rem;cursor:pointer;flex-shrink:0}
+.btn-todo:hover{background:var(--navy-800)}
+.logo{font-family:var(--font-display);font-size:1.35rem;letter-spacing:.03em;text-decoration:none;color:var(--text);flex-shrink:0}
+.logo strong{color:var(--gold)}
+nav.mega{display:flex;gap:4px;flex:1}
+.mega-item{position:relative}
+.mega-trigger{background:none;border:none;font-family:var(--font-body);font-size:.92rem;color:var(--text);
+  padding:10px 12px;border-radius:999px;cursor:pointer;display:flex;align-items:center;gap:5px}
+.mega-trigger:hover,.mega-trigger[aria-expanded="true"]{background:var(--surface-2)}
+.mega-panel{display:none;position:absolute;top:calc(100% + 8px);left:0;min-width:300px;background:var(--surface);
+  border:1px solid var(--border);border-radius:var(--radius-md);box-shadow:var(--shadow-card);padding:14px;z-index:60}
+.mega-panel.abierto{display:block}
+.mega-panel a{display:flex;flex-direction:column;gap:1px;padding:9px 10px;border-radius:8px;text-decoration:none;color:var(--text);font-size:.88rem}
+.mega-panel a:hover{background:var(--surface-2)}
+.mega-panel a .desc{color:var(--text-dim);font-size:.76rem}
+.mega-panel .grupo-titulo{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--accent-text);padding:6px 10px 2px}
+.mega-panel .grupo-mundo{display:flex;align-items:center;gap:9px;padding:10px 10px 3px}
+.mega-panel .grupo-mundo img{width:28px;height:28px;border-radius:50%;object-fit:cover;flex-shrink:0}
+.mega-panel .grupo-mundo .grupo-titulo{padding:0;margin:0}
+.mega-panel a.con-icono{flex-direction:row;align-items:center;gap:10px}
+.mega-panel a.con-icono .link-ic{width:28px;height:28px;border-radius:8px;display:flex;align-items:center;justify-content:center;
+  font-size:.92rem;color:#fff;flex-shrink:0}
+.mega-panel a.con-icono .txt{display:flex;flex-direction:column;gap:1px}
+.nav-actions{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.buscador-mini{display:flex;align-items:center;gap:6px;background:var(--surface-2);border:1px solid var(--border);
+  border-radius:999px;padding:7px 12px}
+.buscador-mini input{background:none;border:none;color:var(--text);font-family:var(--font-body);font-size:.85rem;width:150px}
+.buscador-mini input:focus{outline:none}
+.pill-cuenta{display:flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;background:var(--surface-2);
+  border:1px solid var(--border);text-decoration:none;color:var(--text);font-size:.85rem;font-weight:600}
+.pill-cuenta:hover{border-color:var(--gold)}
+@media (max-width:980px){
+  nav.mega,.buscador-mini{display:none}
+}
+
+/* ---------- panel "Todo AURZANE" (sidebar completo, estilo Amazon) ---------- */
+.todo-overlay{position:fixed;inset:0;background:rgba(7,10,20,.55);z-index:200;display:none}
+.todo-overlay.abierto{display:block}
+.todo-panel{position:fixed;top:0;left:0;bottom:0;width:min(360px,88vw);background:var(--navy-950);color:var(--vanilla);
+  z-index:201;transform:translateX(-100%);transition:transform .25s ease;overflow-y:auto;box-shadow:0 0 60px rgba(0,0,0,.4)}
+.todo-panel.abierto{transform:translateX(0)}
+.todo-header{display:flex;justify-content:space-between;align-items:center;padding:18px 20px;border-bottom:1px solid rgba(255,255,255,.1);
+  position:sticky;top:0;background:var(--navy-950);z-index:2}
+.todo-header .quien{font-weight:700;font-size:.98rem}
+.todo-header .quien small{display:block;font-weight:400;color:var(--silver-dim);font-size:.76rem;margin-top:2px}
+.todo-cerrar{background:none;border:1px solid rgba(255,255,255,.2);color:var(--vanilla);border-radius:8px;width:32px;height:32px;cursor:pointer;font-size:1rem}
+.todo-grupo{padding:16px 20px;border-bottom:1px solid rgba(255,255,255,.08)}
+.todo-grupo h5{font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;color:var(--gold-light);margin:0 0 12px}
+.todo-mundo-item{display:flex;align-items:center;gap:12px;padding:9px 0;text-decoration:none;color:var(--vanilla)}
+.todo-mundo-item img{width:44px;height:44px;border-radius:9px;object-fit:cover;flex-shrink:0}
+.todo-mundo-item .t{font-weight:700;font-size:.9rem}
+.todo-mundo-item .s{font-size:.76rem;color:var(--silver-dim)}
+.todo-link{display:flex;align-items:center;gap:10px;padding:8px 0;text-decoration:none;color:var(--vanilla);font-size:.88rem}
+.todo-link:hover{color:var(--gold-light)}
+.todo-link .ic{width:22px;text-align:center;flex-shrink:0}
+
+/* ---------- hero ---------- */
+.hero{padding:56px 0 0;position:relative;overflow:hidden}
+.hero .wrap{position:relative;z-index:1}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+.hero h1{font-size:clamp(2.4rem,5vw,3.6rem);line-height:1.05}
+.hero .lead{color:var(--text-dim);font-size:1.08rem;margin:18px 0 26px;max-width:52ch}
+.hero-ctas{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:26px}
+.picker{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);padding:16px 18px}
+.picker label{display:block;font-size:.8rem;color:var(--text-dim);margin-bottom:8px}
+.picker select{width:100%;padding:10px 12px;border-radius:9px;border:1px solid var(--border);background:var(--surface-2);
+  color:var(--text);font-family:var(--font-body);font-size:.92rem}
+.hero-visual{aspect-ratio:4/5;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-card);position:relative}
+.hero-visual img{width:100%;height:100%;object-fit:cover}
+.hero-visual::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(7,10,20,.75));}
+.hero-visual .caption{position:absolute;left:18px;bottom:16px;right:18px;color:#fff;font-size:.82rem;z-index:1}
+@media (max-width:900px){.hero-grid{grid-template-columns:1fr}.hero-visual{aspect-ratio:16/9}}
+
+/* ---------- franja de confianza (antes "Principios", ahora compacta bajo el hero) ---------- */
+.confianza{background:var(--navy-950);color:var(--vanilla);padding:26px 0;margin-top:44px}
+.confianza .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;align-items:start}
+.confianza-item h4{font-size:.86rem;color:var(--gold-light);margin-bottom:4px}
+.confianza-item p{margin:0;font-size:.78rem;color:var(--silver-dim)}
+.confianza .byline{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.12);padding-top:12px;margin-top:4px;font-size:.78rem;color:var(--silver-dim)}
+@media (max-width:820px){.confianza .wrap{grid-template-columns:repeat(2,1fr)}}
+
+/* ---------- shortcuts rail ---------- */
+.rail{padding:44px 0}
+.nav-biblio{color:var(--accent-text)!important;font-weight:600}
+#navMega > a{white-space:nowrap}
+@media (max-width:1320px){.buscador-mini{display:none}}
+@media (max-width:1180px){.nav-sec{display:none}}
+.nav-nuevo{font-size:.62rem;font-weight:700;letter-spacing:.04em;background:var(--gold);color:var(--navy-950);border-radius:999px;padding:2px 7px;margin-left:4px;vertical-align:2px}
+.biblio-home{background:var(--navy-950);color:var(--vanilla);padding:64px 0;border-top:1px solid rgba(201,162,75,.25);border-bottom:1px solid rgba(201,162,75,.25)}
+.bh-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center}
+.biblio-home .eyebrow{color:var(--gold-light)}
+.biblio-home h2{font-family:var(--font-display);font-weight:500;font-size:clamp(1.9rem,4vw,2.8rem);line-height:1.15;margin:10px 0 14px}
+.bh-lead{color:var(--silver);max-width:560px}
+.bh-cifras{font-size:.78rem;color:var(--silver-dim);margin:16px 0 0}
+.bh-busca{display:flex;max-width:520px;margin-top:22px;border:1px solid rgba(199,205,214,.25);border-radius:999px;overflow:hidden;background:var(--navy-900)}
+.bh-busca:focus-within{border-color:var(--gold)}
+.bh-busca input{flex:1;min-width:0;font:inherit;color:var(--vanilla);background:transparent;border:0;padding:12px 18px}
+.bh-busca input:focus{outline:none}
+.bh-busca input::placeholder{color:var(--silver-dim)}
+.bh-busca button{font:inherit;font-weight:600;background:var(--gold);color:var(--navy-950);border:0;padding:0 22px;cursor:pointer}
+.bh-cats{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 26px}
+.bh-cats a{font-size:.8rem;color:var(--silver);text-decoration:none;border:1px solid rgba(199,205,214,.22);border-radius:999px;padding:5px 12px}
+.bh-cats a:hover{border-color:var(--gold);color:var(--gold-light)}
+.bh-cats a span{color:var(--silver-dim);margin-left:4px}
+.bh-estante{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;transform:rotate(-2deg)}
+.bh-estante a{display:block;aspect-ratio:2/3;border-radius:3px 7px 7px 3px;overflow:hidden;background:var(--navy-800);box-shadow:8px 12px 26px -12px rgba(0,0,0,.9);transition:transform .2s}
+.bh-estante a:nth-child(even){transform:translateY(22px)}
+.bh-estante a:hover{transform:translateY(-6px)}
+.bh-estante img{width:100%;height:100%;object-fit:cover;display:block;background:#fff}
+@media (max-width:900px){.bh-grid{grid-template-columns:1fr}.bh-estante{grid-template-columns:repeat(4,1fr);transform:none}.bh-estante a:nth-child(n+5){display:none}}
+.rail-scroll{display:grid;grid-auto-flow:column;grid-auto-columns:132px;gap:12px;overflow-x:auto;padding:6px 2px 14px;
+  scrollbar-width:thin}
+.rail-item{display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px;text-decoration:none;color:var(--text);
+  background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-md);padding:16px 10px}
+.rail-item:hover{border-color:var(--gold)}
+.rail-icon{width:40px;height:40px;border-radius:50%;background:var(--surface-2);display:flex;align-items:center;justify-content:center;font-size:1.2rem}
+.rail-item .t{font-size:.78rem;font-weight:600;line-height:1.25}
+
+/* ---------- mundos grid ---------- */
+.mundos-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+.mundo-card{overflow:hidden;display:flex;flex-direction:column}
+.mundo-foto{height:172px;position:relative}
+.mundo-foto img{width:100%;height:100%;object-fit:cover}
+.mundo-foto .dot{position:absolute;left:14px;bottom:-11px;width:24px;height:24px;border-radius:50%;border:3px solid var(--surface)}
+.mundo-body{padding:24px;padding-top:22px;display:flex;flex-direction:column;gap:12px;flex:1}
+.mundo-card h3{font-size:1.3rem}
+.mundo-card .tagline{color:var(--text-dim);font-size:.86rem;font-style:italic}
+.mundo-card .desc{font-size:.86rem;color:var(--text-dim)}
+.mundo-card .foco{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
+.mundo-card .foco span{font-size:.72rem;background:var(--surface-2);border-radius:999px;padding:4px 9px;color:var(--text-dim)}
+.mundo-card .links{display:flex;flex-direction:column;gap:6px;margin-top:auto;padding-top:10px;border-top:1px solid var(--border)}
+.mundo-card .links a{font-size:.84rem;font-weight:600;text-decoration:none;color:var(--accent-text)}
+
+/* ---------- explorar (filtros reales) ---------- */
+.explorar-controls{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:flex-end;margin-bottom:22px}
+.grupo-filtros{display:flex;flex-direction:column;gap:8px}
+.grupo-filtros .etiqueta{font-size:.76rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:.06em}
+.chips-fila{display:flex;flex-wrap:wrap;gap:8px}
+.buscador-explorar{display:flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--border);
+  border-radius:999px;padding:10px 16px;min-width:240px}
+.buscador-explorar input{border:none;background:none;font-family:var(--font-body);color:var(--text);width:100%;font-size:.92rem}
+.buscador-explorar input:focus{outline:none}
+.grid-explorar{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}
+.tarjeta-contenido{padding:0;overflow:hidden;display:flex;flex-direction:column;text-decoration:none;color:var(--text);transition:transform .2s,box-shadow .2s}
+.tarjeta-contenido:hover{border-color:var(--gold);transform:translateY(-3px)}
+.tc-foto{position:relative;height:132px;background:linear-gradient(150deg,var(--navy-800),var(--navy-900) 75%)}
+.tc-foto img{width:100%;height:100%;object-fit:cover}
+.tc-icono{position:absolute;left:14px;bottom:-15px;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;
+  justify-content:center;color:#fff;font-size:.95rem;box-shadow:0 0 0 3px var(--surface)}
+.tc-body{padding:24px 20px 20px;display:flex;flex-direction:column;gap:10px;flex:1}
+.tag-row{display:flex;gap:6px;flex-wrap:wrap}
+.tag-mundo{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:3px 9px;border-radius:999px;color:#fff}
+.tag-tipo{font-size:.7rem;color:var(--text-dim);border:1px solid var(--border);padding:3px 9px;border-radius:999px}
+.tarjeta-contenido h4{font-size:1.02rem;font-family:var(--font-body);font-weight:700}
+.tarjeta-contenido p{margin:0;font-size:.85rem;color:var(--text-dim)}
+.tarjeta-contenido .ir{font-size:.82rem;color:var(--accent-text);font-weight:600;margin-top:auto}
+.sin-resultados{padding:40px;text-align:center;color:var(--text-dim);grid-column:1/-1}
+
+/* ---------- connect ---------- */
+.connect-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.connect-step{padding:22px;display:flex;flex-direction:column;gap:10px}
+.connect-step .num{font-family:var(--font-display);font-size:1.6rem;color:var(--accent-text)}
+.connect-fotos{display:flex;gap:6px;margin-top:6px}
+.connect-fotos img{width:100%;height:64px;object-fit:cover;border-radius:8px;flex:1}
+@media (max-width:820px){.connect-steps{grid-template-columns:1fr}}
+
+/* ---------- now strip ---------- */
+.now-strip{display:grid;grid-auto-flow:column;grid-auto-columns:240px;gap:14px;overflow-x:auto;padding-bottom:10px}
+.now-card{padding:0;overflow:hidden;text-decoration:none;color:var(--text);display:flex;flex-direction:column;transition:transform .2s}
+.now-card:hover{transform:translateY(-3px);border-color:var(--gold)}
+.now-card .nc-foto{height:110px;position:relative;background:linear-gradient(150deg,var(--navy-800),var(--navy-900) 75%)}
+.now-card .nc-foto img{width:100%;height:100%;object-fit:cover}
+.now-card .nc-body{padding:14px 16px 16px}
+.now-card .fecha{font-size:.74rem;color:var(--text-dim)}
+.now-card h4{font-size:.94rem;margin:6px 0 0;line-height:1.3}
+
+/* ---------- knowledge / guide / research ---------- */
+.dos-col{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.dos-col.tres-col{grid-template-columns:.85fr 1fr 1fr}
+.kh-visual{border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-card);min-height:220px}
+.kh-visual img{width:100%;height:100%;object-fit:cover}
+@media (max-width:900px){.dos-col{grid-template-columns:1fr}.kh-visual{min-height:160px}}
+.tema-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.tema-tags a{font-size:.82rem;border:1px solid var(--border);border-radius:999px;padding:7px 13px;text-decoration:none;color:var(--text)}
+.tema-tags a:hover{border-color:var(--gold)}
+.fuentes-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:16px}
+.fuente-item{padding:14px;text-align:center;font-size:.82rem;color:var(--text-dim)}
+.fuente-item .fi{font-size:1.3rem;display:block;margin-bottom:6px}
+.fuente-item strong{display:block;color:var(--text);font-size:1rem;font-family:var(--font-display)}
+
+/* ---------- planes ---------- */
+.planes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media (max-width:900px){.planes-grid{grid-template-columns:1fr}}
+.plan-card{padding:26px;display:flex;flex-direction:column;gap:12px}
+.plan-card.destacado{border-color:var(--gold);position:relative}
+.plan-card.destacado::before{content:"Más elegido";position:absolute;top:-11px;left:20px;background:var(--gold);
+  color:var(--navy-950);font-size:.7rem;font-weight:700;padding:3px 10px;border-radius:999px}
+.plan-card h3{font-size:1.2rem}
+.plan-card ul{margin:0;padding-left:18px;font-size:.86rem;color:var(--text-dim);display:flex;flex-direction:column;gap:6px}
+.plan-card .meta{font-size:.78rem;color:var(--text-dim)}
+.plan-card .badge{width:40px;height:40px;border-radius:50%;background:var(--surface-2);display:flex;align-items:center;
+  justify-content:center;font-size:1.15rem;margin-bottom:2px}
+.plan-card.destacado .badge{background:var(--gold);color:var(--navy-950)}
+
+/* ---------- faq ---------- */
+.faq-item{border-bottom:1px solid var(--border)}
+.faq-q{width:100%;text-align:left;background:none;border:none;color:var(--text);font-family:var(--font-body);
+  font-size:.98rem;font-weight:600;padding:18px 0;cursor:pointer;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.faq-icono{transition:transform .2s;flex-shrink:0}
+.faq-q[aria-expanded="true"] .faq-icono{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .25s ease;font-size:.9rem;color:var(--text-dim)}
+.faq-a p{margin:0 0 16px}
+
+/* ---------- footer (siempre navy, marco fijo) ---------- */
+footer.pie{background:var(--navy-950);color:var(--silver-dim);padding:52px 0 28px;margin-top:20px}
+.footer-grid{display:grid;grid-template-columns:1.4fr repeat(4,1fr);gap:28px}
+@media (max-width:900px){.footer-grid{grid-template-columns:repeat(2,1fr)}}
+footer.pie h5{color:var(--gold-light);font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px}
+footer.pie a{display:block;text-decoration:none;color:inherit;font-size:.86rem;padding:4px 0}
+footer.pie a:hover{color:var(--gold-light)}
+.pie-legal{border-top:1px solid rgba(255,255,255,.08);margin-top:36px;padding-top:20px;font-size:.78rem;display:flex;
+  justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+.curso-home .ch-card{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);background:var(--surface);border:1px solid var(--border);border-radius:20px;overflow:hidden;box-shadow:var(--shadow, 0 14px 32px -18px rgba(40,30,10,.22));border-top:4px solid var(--a-learn)}
+.ch-media{position:relative;display:block;background:#070a14}
+.ch-media img{width:100%;height:100%;object-fit:cover;min-height:260px;display:block}
+.ch-sello{position:absolute;left:16px;top:16px;background:var(--a-learn);color:#fff;font-weight:700;font-size:.78rem;padding:4px 12px;border-radius:999px}
+.ch-body{padding:28px 30px;display:flex;flex-direction:column;gap:12px}
+.ch-tipo{font-size:.82rem;font-weight:600;color:var(--a-learn)}
+.ch-body h3{font-size:1.6rem;line-height:1.2;margin:0}
+.ch-body h3 a{color:inherit;text-decoration:none}
+.ch-body p{margin:0;color:var(--text-dim)}
+.ch-datos{list-style:none;margin:0;padding:0;display:flex;gap:10px;flex-wrap:wrap}
+.ch-datos li{background:var(--surface-2);border-radius:12px;padding:8px 14px;font-size:.84rem;color:var(--text-dim)}
+.ch-datos b{display:block;font-size:1.35rem;color:var(--text)}
+.ch-acc{display:flex;gap:10px;flex-wrap:wrap}
+.ch-btn{display:inline-flex;align-items:center;padding:11px 20px;border-radius:999px;background:var(--gold);color:#070a14;font-weight:700;text-decoration:none}
+.ch-btn.sec{background:transparent;color:var(--text);box-shadow:inset 0 0 0 1px var(--border)}
+.curso-home .ch-card + .ch-card{margin-top:20px}
+@media (max-width:820px){.curso-home .ch-card{grid-template-columns:1fr}.ch-media img{min-height:0;aspect-ratio:16/9}}
+.ovp-gratis{display:grid;grid-template-columns:1.1fr 1fr;gap:28px;align-items:center;padding:32px;
+  background:linear-gradient(135deg,rgba(var(--a-mind-rgb,140,90,200),.16),rgba(var(--gold-rgb,201,162,75),.14));border-color:rgba(var(--gold-rgb,201,162,75),.45);}
+.ovp-gratis h3{font-size:1.5rem;margin:10px 0 8px;}
+.ovp-gratis p{color:var(--text-dim);margin:0 0 18px;}
+.og-sello{display:inline-block;padding:5px 12px;border-radius:999px;background:var(--gold-deep);color:#fff;font-weight:700;font-size:.78rem;}
+.og-lista{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.og-lista li{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px 14px;display:flex;flex-direction:column;gap:2px;}
+.og-lista li b{font-size:.92rem;}
+.og-lista li span{font-size:.8rem;color:var(--text-dim);}
+@media(max-width:760px){.ovp-gratis{grid-template-columns:1fr;padding:22px}.og-lista{grid-template-columns:1fr}}
+.ancla-alias{display:block;position:relative;top:-90px;height:0;visibility:hidden;}
+</style>
+</head>
+<body>
+
+<div class="utility">
+  <div class="wrap">
+    <a href="mailto:hola@aurzane.com">hola@aurzane.com</a>
+    <div class="utility-right">
+      <a href="/privacidad.html">Privacidad</a>
+      <button id="btnTema" onclick="alternarTema()">🌓 Tema</button>
+      <span id="pillCuentaUtility"></span>
+    </div>
+  </div>
+</div>
+
+<header class="principal">
+  <div class="wrap nav-row">
+    <button class="btn-todo" onclick="abrirTodo()" aria-haspopup="dialog">☰ Todo AURZANE</button>
+    <a class="logo" href="/index.html">AUR<strong>ZANE</strong></a>
+
+    <nav class="mega" id="navMega">
+      <div class="mega-item">
+        <button class="mega-trigger" aria-expanded="false" onclick="toggleMega(this)">Conocimiento ▾</button>
+        <div class="mega-panel">
+          <a href="/index.html#knowledge-hub"><span>Inicio</span><span class="desc">Punto de partida editorial</span></a>
+          <a href="/index.html#now"><span>Explorar</span><span class="desc">Lo último publicado</span></a>
+          <a href="/articulos/"><span>Artículos</span><span class="desc">Guías con fuentes citadas</span></a>
+          <a href="/temas/"><span>Temas</span><span class="desc">Por categoría</span></a>
+          <a href="/biblioteca/"><span>Biblioteca de libros 📚</span><span class="desc">Libros abiertos de psicología para leer aquí</span></a>
+          <a href="/index.html#research-sources"><span>Research &amp; Fuentes</span><span class="desc">Cómo verificamos cada dato</span></a>
+          <a href="/research.html"><span>Research Hub 🔎</span><span class="desc">Buscar en las 5 bibliotecas a la vez</span></a>
+        </div>
+      </div>
+
+      <div class="mega-item">
+        <button class="mega-trigger" aria-expanded="false" onclick="toggleMega(this)">Mundos ▾</button>
+        <div class="mega-panel" style="min-width:340px">
+          <div class="grupo-mundo">
+            <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?q=80&w=120&auto=format&fit=crop" alt="">
+            <div class="grupo-titulo">MIND — Ciencia de la mente</div>
+          </div>
+          <a href="https://mind.aurzane.com/"><span>Ir a MIND</span></a>
+          <a href="https://mind.aurzane.com/mind-biblioteca.html"><span>Biblioteca MIND</span><span class="desc">5.000 artículos científicos</span></a>
+          <div class="grupo-mundo">
+            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=120&auto=format&fit=crop" alt="">
+            <div class="grupo-titulo">NEXUS — Tecnología</div>
+          </div>
+          <a href="https://nexus.aurzane.com/"><span>Ir a NEXUS</span></a>
+          <a href="https://nexus.aurzane.com/nexus-biblioteca.html"><span>Biblioteca NEXUS</span><span class="desc">5.000 artículos científicos</span></a>
+          <a href="https://nexus.aurzane.com/universidades/buscador.html"><span>Catálogo de Universidades</span></a>
+          <div class="grupo-mundo">
+            <img src="https://images.unsplash.com/photo-1454496522488-7a8e488e8606?q=80&w=120&auto=format&fit=crop" alt="">
+            <div class="grupo-titulo">LIVE — Vida sin límites</div>
+          </div>
+          <a href="https://live.aurzane.com/"><span>Ir a LIVE</span></a>
+          <a href="https://live.aurzane.com/live-biblioteca.html"><span>Biblioteca LIVE</span><span class="desc">5.000 artículos científicos</span></a>
+          <div class="grupo-mundo">
+            <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?q=80&w=120&auto=format&fit=crop" alt="">
+            <div class="grupo-titulo">LEARN — Conocimiento</div>
+          </div>
+          <a href="https://learn.aurzane.com/"><span>Ir a LEARN</span></a>
+          <a href="https://learn.aurzane.com/learn-biblioteca.html"><span>Biblioteca LEARN</span><span class="desc">5.000 artículos científicos</span></a>
+          <div class="grupo-mundo">
+            <img src="https://images.unsplash.com/photo-1461360370896-922624d12aa1?q=80&w=120&auto=format&fit=crop" alt="">
+            <div class="grupo-titulo">BUILD — Imperio físico</div>
+          </div>
+          <a href="https://build.aurzane.com/"><span>Ir a BUILD</span></a>
+          <a href="https://build.aurzane.com/build-biblioteca.html"><span>Biblioteca BUILD</span><span class="desc">5.000 artículos científicos</span></a>
+        </div>
+      </div>
+
+      <div class="mega-item">
+        <button class="mega-trigger" aria-expanded="false" onclick="toggleMega(this)">Herramientas ▾</button>
+        <div class="mega-panel">
+          <a class="con-icono" href="https://ovp.aurzane.com/portal.html"><span class="link-ic" style="background:var(--a-mind)">🎯</span><span class="txt"><span>Sistema OVP</span><span class="desc">Test vocacional</span></span></a>
+          <a class="con-icono" href="https://nexus.aurzane.com/universidades/buscador.html"><span class="link-ic" style="background:var(--a-nexus)">🎓</span><span class="txt"><span>Catálogo de Universidades</span><span class="desc">6,125 instituciones · 23 países</span></span></a>
+          <a class="con-icono" href="/research.html"><span class="link-ic" style="background:var(--a-nexus)">🔎</span><span class="txt"><span>Research Hub</span><span class="desc">Las 5 bibliotecas a la vez</span></span></a>
+          <a class="con-icono" href="https://learn.aurzane.com/cursos.html"><span class="link-ic" style="background:var(--a-learn)">🎓</span><span class="txt"><span>Curso de neuroanatomía</span><span class="desc">Organización morfofuncional del SN</span></span></a>
+          <a class="con-icono" href="https://build.aurzane.com/"><span class="link-ic" style="background:var(--a-build)">🏥</span><span class="txt"><span>Clínicas AURZANE</span><span class="desc">Primer espacio físico</span></span></a>
+          <a class="con-icono" href="https://build.aurzane.com/"><span class="link-ic" style="background:var(--a-build)">🏗️</span><span class="txt"><span>Proyectos inmobiliarios</span></span></a>
+        </div>
+      </div>
+
+      <a class="mega-trigger nav-biblio" href="/biblioteca/" style="text-decoration:none">Biblioteca<span class="nav-nuevo" data-hasta="2026-11-19">Nuevo</span></a>
+      <a class="mega-trigger nav-sec" href="/index.html#sobre" style="text-decoration:none">Sobre AURZANE</a>
+      <a class="mega-trigger nav-sec" href="/index.html#contacto" style="text-decoration:none">Contacto</a>
+    </nav>
+
+    <div class="nav-actions">
+      <div class="buscador-mini">
+        <span aria-hidden="true">🔎</span>
+        <label for="buscadorNav" class="visually-hidden">Buscar en Explorar</label>
+        <input id="buscadorNav" type="text" placeholder="Buscar en AURZANE…" onkeydown="if(event.key==='Enter'){irABuscarExplorar(this.value)}">
+      </div>
+      <a class="pill-cuenta" id="pillCuenta" href="/mi-aurzane.html">👤 Mi AURZANE</a>
+    </div>
+  </div>
+</header>
+
+<!-- ============ PANEL "TODO AURZANE" ============ -->
+<div class="todo-overlay" id="todoOverlay" onclick="cerrarTodo()"></div>
+<aside class="todo-panel" id="todoPanel" role="dialog" aria-modal="true" aria-label="Todo AURZANE">
+  <div class="todo-header">
+    <div class="quien" id="todoQuien">Hola, iniciá sesión<small>Accedé a todo el ecosistema</small></div>
+    <button class="todo-cerrar" onclick="cerrarTodo()" aria-label="Cerrar menú">✕</button>
+  </div>
+
+  <div class="todo-grupo">
+    <h5>Tus atajos</h5>
+    <a class="todo-link" href="/mi-aurzane.html"><span class="ic">👤</span> Mi AURZANE</a>
+    <a class="todo-link" href="/biblioteca/"><span class="ic">📚</span> Biblioteca de libros</a>
+    <a class="todo-link" href="/index.html#explorar"><span class="ic">🔎</span> Explorar todo el ecosistema</a>
+    <a class="todo-link" href="https://nexus.aurzane.com/universidades/buscador.html"><span class="ic">⭐</span> Mis favoritos (Universidades)</a>
+  </div>
+
+  <div class="todo-grupo">
+    <h5>Los cinco mundos</h5>
+    <a class="todo-mundo-item" href="https://mind.aurzane.com/">
+      <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?q=80&w=200&auto=format&fit=crop" alt="">
+      <span><span class="t">MIND</span><br><span class="s">Ciencia de la mente</span></span>
+    </a>
+    <a class="todo-mundo-item" href="https://nexus.aurzane.com/">
+      <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=200&auto=format&fit=crop" alt="">
+      <span><span class="t">NEXUS</span><br><span class="s">Tecnología</span></span>
+    </a>
+    <a class="todo-mundo-item" href="https://live.aurzane.com/">
+      <img src="https://images.unsplash.com/photo-1454496522488-7a8e488e8606?q=80&w=200&auto=format&fit=crop" alt="">
+      <span><span class="t">LIVE</span><br><span class="s">Vida sin límites</span></span>
+    </a>
+    <a class="todo-mundo-item" href="https://learn.aurzane.com/">
+      <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?q=80&w=200&auto=format&fit=crop" alt="">
+      <span><span class="t">LEARN</span><br><span class="s">Conocimiento</span></span>
+    </a>
+    <a class="todo-mundo-item" href="https://build.aurzane.com/">
+      <img src="https://images.unsplash.com/photo-1461360370896-922624d12aa1?q=80&w=200&auto=format&fit=crop" alt="">
+      <span><span class="t">BUILD</span><br><span class="s">Imperio físico</span></span>
+    </a>
+  </div>
+
+  <div class="todo-grupo">
+    <h5>Herramientas</h5>
+    <a class="todo-link" href="https://ovp.aurzane.com/portal.html"><span class="ic">🎯</span> Sistema OVP</a>
+    <a class="todo-link" href="https://nexus.aurzane.com/universidades/buscador.html"><span class="ic">🎓</span> Catálogo de Universidades</a>
+    <a class="todo-link" href="/research.html"><span class="ic">🔎</span> Research Hub</a>
+    <a class="todo-link" href="https://learn.aurzane.com/cursos.html"><span class="ic">🎓</span> AURZANE Academy</a>
+    <a class="todo-link" href="https://build.aurzane.com/"><span class="ic">🏥</span> Clínicas AURZANE</a>
+  </div>
+
+  <div class="todo-grupo">
+    <h5>Conocimiento</h5>
+    <a class="todo-link" href="/articulos/"><span class="ic">📰</span> Artículos</a>
+    <a class="todo-link" href="/temas/"><span class="ic">🏷️</span> Temas</a>
+    <a class="todo-link" href="/index.html#knowledge-hub"><span class="ic">💡</span> Knowledge Hub</a>
+    <a class="todo-link" href="/index.html#research-sources"><span class="ic">📎</span> Research &amp; Fuentes</a>
+  </div>
+
+  <div class="todo-grupo" style="border-bottom:none">
+    <h5>Ayuda y configuración</h5>
+    <a class="todo-link" href="/index.html#sobre"><span class="ic">ℹ️</span> Sobre AURZANE</a>
+    <a class="todo-link" href="/index.html#contacto"><span class="ic">✉️</span> Contacto</a>
+    <a class="todo-link" href="/privacidad.html"><span class="ic">🔒</span> Privacidad</a>
+    <button class="todo-link" style="background:none;border:none;font-family:inherit;cursor:pointer;width:100%;text-align:left" onclick="alternarTema()"><span class="ic">🌓</span> Cambiar tema claro/oscuro</button>
+    <div class="paleta-selector">
+      <span class="paleta-label">Paleta de acento</span>
+      <div class="paleta-swatches" id="paletaSwatches"></div>
+    </div>
+  </div>
+</aside>
+
+<main>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">Un ecosistema, cinco mundos</p>
+        <h1>Your Life,<br>Your Legacy.</h1>
+        <p class="lead">AURZANE conecta mente, tecnología, experiencias, conocimiento y legado físico en un
+          solo ecosistema — construido sobre ciencia aplicada, psicología, neurociencia y datos reales, no
+          intuición de marketing.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-gold" href="#knowledge-hub">Explorar artículos</a>
+          <a class="btn btn-ghost" href="/biblioteca/">📚 Biblioteca de libros</a>
+          <a class="btn btn-ghost" href="#now">Explorar AURZANE</a>
+        </div>
+        <div class="picker">
+          <label for="selectorMundo">¿No sabés por dónde empezar?</label>
+          <select id="selectorMundo" onchange="if(this.value) window.location.href=this.value">
+            <option value="">Elegí un punto de entrada…</option>
+            <option value="https://mind.aurzane.com/">MIND — entender la mente primero</option>
+            <option value="https://nexus.aurzane.com/">NEXUS — la tecnología que conecta todo</option>
+            <option value="https://live.aurzane.com/">LIVE — vivir primero, entender después</option>
+            <option value="https://learn.aurzane.com/">LEARN — el conocimiento que transforma</option>
+            <option value="https://build.aurzane.com/">BUILD — el imperio físico</option>
+          </select>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=1000&auto=format&fit=crop" alt="Retrato editorial en tono oscuro, parte de la estética AURZANE">
+        <p class="caption">Ciencia aplicada. Cinco mundos. Un mismo criterio.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FRANJA DE CONFIANZA (antes "Principios") ============ -->
+  <section class="confianza">
+    <div class="wrap">
+      <div class="confianza-item"><h4>Ciencia aplicada</h4><p>Psicología, neurociencia y datos reales — no intuición de marketing.</p></div>
+      <div class="confianza-item"><h4>Conocimiento primero</h4><p>Una fuente confiable antes de vender ninguna herramienta.</p></div>
+      <div class="confianza-item"><h4>Un ecosistema, no un servicio</h4><p>Cada mundo se sostiene solo, pero está diseñado para conectarse.</p></div>
+      <div class="confianza-item"><h4>Construido para crecer</h4><p>Expandible desde la mente hasta el legado físico.</p></div>
+      <p class="byline">Liderado por Psi. Cl. Adrián Sánchez Samaniego · SENESCYT N.º 1033-2023-2618464</p>
+    </div>
+  </section>
+
+  <!-- ============ BIBLIOTECA DESTACADA ============ -->
+  <section class="biblio-home" id="biblioteca" aria-labelledby="biblioHomeTitulo">
+    <div class="wrap bh-grid">
+      <div class="bh-txt">
+        <p class="eyebrow">Biblioteca AURZANE <span class="nav-nuevo" data-hasta="2026-11-19">Nuevo</span></p>
+        <h2 id="biblioHomeTitulo">Libros para entender la mente y cuidarla</h2>
+        <p class="bh-lead">Manuales, guías, clásicos, relatos de vida y los títulos que hoy se leen sobre emociones, duelo, autoestima, ansiedad, crianza y mucho más. Los libros abiertos se leen completos aquí mismo, gratis y sin registrarte.</p>
+        <div class="bh-cats" id="bhCats"></div>
+        <form class="bh-busca" action="/biblioteca/" onsubmit="event.preventDefault();var v=this.q.value.trim();location.href='/biblioteca/'+(v?'#q='+encodeURIComponent(v):'#v=todo');">
+          <label for="bhQ" class="visually-hidden">Buscar un libro</label>
+          <input id="bhQ" name="q" type="search" placeholder="Busca un libro: ansiedad, apego, memoria…">
+          <button type="submit">Buscar</button>
+        </form>
+        <a class="btn btn-gold" href="/biblioteca/">Entrar a la biblioteca</a>
+        <p class="bh-cifras" id="bhCifras"></p>
+      </div>
+      <div class="bh-estante" id="bhEstante" aria-hidden="true"></div>
+    </div>
+  </section>
+
+  <!-- ============ ATAJOS (rail estilo tienda) ============ -->
+  <section class="rail">
+    <div class="wrap">
+      <div class="rail-scroll" id="railAtajos"></div>
+    </div>
+  </section>
+
+  <!-- ============ MUNDOS ============ -->
+  <section class="section" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Los cinco mundos</p>
+        <h2>Cada uno se sostiene solo — todos están diseñados para conectarse</h2>
+      </div>
+      <div class="mundos-grid">
+
+        <div class="card mundo-card">
+          <div class="mundo-foto"><img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?q=80&w=600&auto=format&fit=crop" alt=""><span class="dot" style="background:var(--a-mind)"></span></div>
+          <div class="mundo-body">
+            <h3>MIND</h3>
+            <p class="tagline">"Ciencia de la mente"</p>
+            <p class="desc">Entendemos cómo funciona la mente para comprender, innovar y transformar: orientación
+              vocacional, evaluación clínica, programas institucionales, hábitos y bienestar mental.</p>
+            <div class="foco"><span>Orientación vocacional</span><span>Evaluación clínica</span><span>Programas institucionales</span></div>
+            <div class="links">
+              <a href="https://mind.aurzane.com/">Explorar MIND →</a>
+              <a href="https://mind.aurzane.com/mind-biblioteca.html">Ver Biblioteca (15,000+) →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card mundo-card">
+          <div class="mundo-foto"><img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=600&auto=format&fit=crop" alt=""><span class="dot" style="background:var(--a-nexus)"></span></div>
+          <div class="mundo-body">
+            <h3>NEXUS</h3>
+            <p class="tagline">"Tecnología"</p>
+            <p class="desc">Conectamos ideas, personas y tecnología para construir las soluciones del mañana:
+              apps activas, inteligencia artificial y dashboards de datos.</p>
+            <div class="foco"><span>Apps propias</span><span>Inteligencia artificial</span><span>Dashboards</span></div>
+            <div class="links">
+              <a href="https://nexus.aurzane.com/">Explorar NEXUS →</a>
+              <a href="https://nexus.aurzane.com/nexus-biblioteca.html">Ver Biblioteca (10,000+) →</a>
+              <a href="https://nexus.aurzane.com/universidades/buscador.html">Catálogo de Universidades →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card mundo-card">
+          <div class="mundo-foto"><img src="https://images.unsplash.com/photo-1454496522488-7a8e488e8606?q=80&w=600&auto=format&fit=crop" alt=""><span class="dot" style="background:var(--a-live)"></span></div>
+          <div class="mundo-body">
+            <h3>LIVE</h3>
+            <p class="tagline">"Vida sin límites"</p>
+            <p class="desc">Vivimos con propósito, equilibrio y pasión — la vida es el proyecto más grande.
+              Historias cinematográficas, tono oscuro y desaturado, en producción activa.</p>
+            <div class="foco"><span>Bienestar</span><span>Aventura</span><span>Ciencia del deporte</span></div>
+            <div class="links">
+              <a href="https://live.aurzane.com/">Explorar LIVE →</a>
+              <a href="https://live.aurzane.com/live-biblioteca.html">Ver Biblioteca (22,000+) →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card mundo-card">
+          <div class="mundo-foto"><img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?q=80&w=600&auto=format&fit=crop" alt=""><span class="dot" style="background:var(--a-learn)"></span></div>
+          <div class="mundo-body">
+            <h3>LEARN</h3>
+            <p class="tagline">"Conocimiento"</p>
+            <p class="desc">Aprendemos sin límites — el conocimiento es la base de todo progreso real. Cursos
+              estructurados, masterclasses y recursos descargables en expansión.</p>
+            <div class="foco"><span>Cursos</span><span>Masterclasses</span><span>Recursos descargables</span></div>
+            <div class="links">
+              <a href="https://learn.aurzane.com/">Explorar LEARN →</a>
+              <a href="https://learn.aurzane.com/cursos.html">Curso: Organización morfofuncional del Sistema Nervioso →</a>
+              <a href="https://learn.aurzane.com/learn-biblioteca.html">Ver Biblioteca (11,000+) →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card mundo-card">
+          <div class="mundo-foto"><img src="https://images.unsplash.com/photo-1461360370896-922624d12aa1?q=80&w=600&auto=format&fit=crop" alt=""><span class="dot" style="background:var(--a-build)"></span></div>
+          <div class="mundo-body">
+            <h3>BUILD</h3>
+            <p class="tagline">"Imperio físico"</p>
+            <p class="desc">Construimos en el mundo real con visión, estrategia y bases sólidas: el primer
+              espacio físico del ecosistema y alianzas institucionales.</p>
+            <div class="foco"><span>Clínicas</span><span>Alianzas institucionales</span><span>Proyectos</span></div>
+            <div class="links">
+              <a href="https://build.aurzane.com/">Explorar BUILD →</a>
+              <a href="https://build.aurzane.com/build-biblioteca.html">Ver Biblioteca (18,000+) →</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============ CURSO DESTACADO ============ -->
+  <span id="cursos" class="ancla-alias" aria-hidden="true"></span>
+  <section class="section curso-home" id="curso" aria-labelledby="cursoHomeTitulo">
+    <div class="wrap">
+      <div class="section-head"><p class="eyebrow">LEARN · Cursos</p><h2 id="cursoHomeTitulo">Nuestro primer curso ya está abierto</h2></div>
+      <article class="ch-card">
+        <a class="ch-media" href="https://learn.aurzane.com/cursos.html" tabindex="-1" aria-hidden="true"><img src="https://learn.aurzane.com/cursos/portada-neuro.webp" alt="" width="1200" height="675" loading="lazy"><span class="ch-sello" data-hasta="2026-11-11">Nuevo</span></a>
+        <div class="ch-body">
+          <span class="ch-tipo">Curso interactivo · Neurociencias</span>
+          <h3><a href="https://learn.aurzane.com/cursos.html">Organización morfofuncional del Sistema Nervioso</a></h3>
+          <p>Del desarrollo y la médula a la corteza y las grandes vías, tema a tema. Cada tema trae lecciones breves, mapa conceptual, esquema, tablas comparativas, tarjetas con repaso espaciado, técnica de Feynman y un test que solo se cierra al acertarlo todo.</p>
+          <ul class="ch-datos"><li><b>13</b>temas</li><li><b>67</b>lecciones</li><li><b>466</b>preguntas</li></ul>
+          <p class="ch-acceso"><strong>Gratis</strong> con tu cuenta AURZANE ID.</p>
+          <div class="ch-acc"><a class="ch-btn" href="https://learn.aurzane.com/cursos.html">Entrar al curso</a><a class="ch-btn sec" href="https://learn.aurzane.com/#cursos">Información del curso</a></div>
+        </div>
+      </article>
+      <article class="ch-card">
+        <a class="ch-media" href="https://learn.aurzane.com/cursos.html?c=metod-300263" tabindex="-1" aria-hidden="true"><img src="https://learn.aurzane.com/cursos/portada-metodologia.webp" alt="" width="1200" height="675" loading="lazy"><span class="ch-sello" data-hasta="2026-11-17">Nuevo</span></a>
+        <div class="ch-body">
+          <span class="ch-tipo">Curso interactivo · Métodos de investigación</span>
+          <h3><a href="https://learn.aurzane.com/cursos.html?c=metod-300263">Metodología y técnicas de investigación en Neurociencias</a></h3>
+          <p>Cómo se investiga el sistema nervioso: estereotaxia, optogenética y terapia celular (células madre, iPSC, CRISPR, CAR-T), con mapa conceptual, tarjetas, técnica de Feynman y tests. Crece con cada bloque de la asignatura.</p>
+          <ul class="ch-datos"><li><b>2</b>temas</li><li><b>9</b>lecciones</li><li><b>61</b>preguntas</li></ul>
+          <p class="ch-acceso"><strong>Gratis</strong> con tu cuenta AURZANE ID.</p>
+          <div class="ch-acc"><a class="ch-btn" href="https://learn.aurzane.com/cursos.html?c=metod-300263">Entrar al curso</a><a class="ch-btn sec" href="https://learn.aurzane.com/#cursos">Información del curso</a></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ EXPLORAR (filtros reales) ============ -->
+  <span id="mundos" class="ancla-alias" aria-hidden="true"></span><span id="temas" class="ancla-alias" aria-hidden="true"></span><span id="herramientas" class="ancla-alias" aria-hidden="true"></span>
+  <section class="section" id="explorar" style="background:var(--surface-2)">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Explorar</p>
+        <h2>Todo el ecosistema, filtrable</h2>
+        <p>Herramientas, bibliotecas y contenido de los cinco mundos en un solo lugar. Filtrá por mundo o por
+          tipo, o buscá directamente.</p>
+      </div>
+
+      <div class="explorar-controls">
+        <div class="grupo-filtros">
+          <span class="etiqueta">Mundo</span>
+          <div class="chips-fila" id="filtrosMundo"></div>
+        </div>
+        <div class="grupo-filtros">
+          <span class="etiqueta">Tipo</span>
+          <div class="chips-fila" id="filtrosTipo"></div>
+        </div>
+        <div class="buscador-explorar">
+          <span aria-hidden="true">🔎</span>
+          <label for="buscadorExplorar" class="visually-hidden">Buscar</label>
+          <input id="buscadorExplorar" type="text" placeholder="Buscar herramienta, biblioteca, contenido…" oninput="renderizarExplorar()">
+        </div>
+      </div>
+
+      <div class="grid-explorar" id="gridExplorar"></div>
+    </div>
+  </section>
+
+  <!-- ============ CÓMO SE CONECTAN ============ -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Cómo se conectan</p>
+        <h2>Un mismo criterio, cinco expresiones</h2>
+      </div>
+      <div class="connect-steps">
+        <div class="card connect-step">
+          <div class="num">01</div>
+          <h4>Empieza en MIND</h4>
+          <p style="color:var(--text-dim);font-size:.88rem">La comprensión mental es la base — entender antes de decidir.</p>
+          <div class="connect-fotos">
+            <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?q=80&w=300&auto=format&fit=crop" alt="MIND">
+          </div>
+        </div>
+        <div class="card connect-step">
+          <div class="num">02</div>
+          <h4>Se conecta con NEXUS y LIVE</h4>
+          <p style="color:var(--text-dim);font-size:.88rem">La tecnología da soporte; la experiencia documenta y da forma.</p>
+          <div class="connect-fotos">
+            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=300&auto=format&fit=crop" alt="NEXUS">
+            <img src="https://images.unsplash.com/photo-1454496522488-7a8e488e8606?q=80&w=300&auto=format&fit=crop" alt="LIVE">
+          </div>
+        </div>
+        <div class="card connect-step">
+          <div class="num">03</div>
+          <h4>Se expande en LEARN y BUILD</h4>
+          <p style="color:var(--text-dim);font-size:.88rem">El conocimiento se convierte en formación y en proyectos físicos.</p>
+          <div class="connect-fotos">
+            <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?q=80&w=300&auto=format&fit=crop" alt="LEARN">
+            <img src="https://images.unsplash.com/photo-1461360370896-922624d12aa1?q=80&w=300&auto=format&fit=crop" alt="BUILD">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ AURZANE NOW ============ -->
+  <section class="section" id="now" style="background:var(--surface-2)">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">AURZANE Now</p>
+        <h2>Lo último del ecosistema</h2>
+        <p>Los artículos más recientes de MIND, NEXUS y LIVE, en vivo desde el ecosistema.</p>
+      </div>
+      <div class="now-strip" id="nowStrip"></div>
+    </div>
+  </section>
+
+  <!-- ============ KNOWLEDGE HUB + GUÍA ============ -->
+  <span id="knowledge" class="ancla-alias" aria-hidden="true"></span>
+  <section class="section" id="knowledge-hub">
+    <div class="wrap dos-col tres-col">
+      <div class="kh-visual">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bookshelves%20at%20the%20library.jpg?width=500" alt="" loading="lazy" onerror="this.parentElement.style.display='none';">
+      </div>
+      <div>
+        <p class="eyebrow">Knowledge Hub</p>
+        <h2 style="font-size:1.7rem">Artículos con fuentes reales, no resúmenes inventados</h2>
+        <p style="color:var(--text-dim);margin-top:12px">Cada artículo y guía cita entre 1 y 3 fuentes reales —
+          papers, metaanálisis, revisiones sistemáticas. Nada se resume por intuición.</p>
+        <div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap">
+          <a class="btn btn-gold" href="/articulos/">Ver artículos</a>
+          <a class="btn btn-ghost" href="/research.html">Research Hub 🔎</a>
+        </div>
+      </div>
+      <div>
+        <p class="eyebrow">Guía para estudiantes</p>
+        <h2 style="font-size:1.7rem">Por dónde empezar si estás eligiendo carrera</h2>
+        <div class="tema-tags">
+          <a href="/temas/">Orientación vocacional</a>
+          <a href="/temas/">Elección de carrera</a>
+          <a href="/temas/">Métodos de estudio</a>
+          <a href="/temas/">Productividad</a>
+          <a href="/temas/">Aprendizaje</a>
+          <a href="/temas/">Personalidad</a>
+          <a href="/temas/">Desarrollo académico</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ RESEARCH & FUENTES ============ -->
+  <span id="research" class="ancla-alias" aria-hidden="true"></span>
+  <section class="section" style="background:var(--surface-2)" id="research-sources">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Research &amp; Fuentes</p>
+        <h2>No inventamos datos — este es el corpus abierto</h2>
+        <p>Todo el corpus de investigación está disponible para que lo verifiques vos mismo. 100% de los
+          artículos citan sus fuentes; todas las licencias son CC BY o CC0 verificadas.</p>
+      </div>
+      <div class="fuentes-grid">
+        <div class="card fuente-item"><span class="fi">🏷️</span><strong>7</strong>temas transversales</div>
+        <div class="card fuente-item"><span class="fi">✅</span><strong>100%</strong>artículos con fuente citada</div>
+        <div class="card fuente-item"><span class="fi">🔬</span><strong>Europe PMC</strong>base de datos</div>
+        <div class="card fuente-item"><span class="fi">🌐</span><strong>OpenAlex</strong>base de datos</div>
+        <div class="card fuente-item"><span class="fi">📖</span><strong>PubMed/PMC</strong>base de datos</div>
+        <div class="card fuente-item"><span class="fi">⚖️</span><strong>CC BY / CC0</strong>licencias verificadas</div>
+      </div>
+      <div style="margin-top:20px"><a class="btn btn-gold" href="/research.html">Buscar en las 5 bibliotecas a la vez →</a></div>
+    </div>
+  </section>
+
+  <!-- ============ PLANES OVP ============ -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Sistema OVP · MIND</p>
+        <h2>Orientación vocacional con datos, no con suerte</h2>
+      </div>
+      <div class="ovp-gratis card">
+        <div class="og-txt">
+          <span class="og-sello">Gratis por lanzamiento</span>
+          <h3>Tu evaluación vocacional completa, sin costo</h3>
+          <p>Seis instrumentos validados y un informe integrador con gráficos que aparece en tu portal apenas terminás. Sin pagos y sin tarjetas.</p>
+          <a class="btn btn-gold" href="https://ovp.aurzane.com/portal.html">Empezar gratis</a>
+        </div>
+        <ul class="og-lista">
+          <li><b>CHASIDE</b><span>Intereses vocacionales</span></li>
+          <li><b>Holland</b><span>Personalidad vocacional (RIASEC)</span></li>
+          <li><b>AF5</b><span>Autoconcepto</span></li>
+          <li><b>Hábitos de estudio</b><span>Cómo estudiás hoy</span></li>
+          <li><b>APT-A y APT-B</b><span>Aptitudes específicas</span></li>
+          <li><b>Informe integrador</b><span>Automático, en tu portal y en PDF</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="section" style="background:var(--surface-2)" id="faq">
+    <div class="wrap" style="max-width:820px">
+      <div class="section-head">
+        <p class="eyebrow">Preguntas frecuentes</p>
+        <h2>Antes de escribirnos</h2>
+      </div>
+      <div id="listaFaq"></div>
+      <p style="margin-top:20px;color:var(--text-dim);font-size:.9rem">¿Tenés una pregunta que no está acá?
+        <a href="mailto:hola@aurzane.com" style="color:var(--accent-text);font-weight:600">Escribinos →</a></p>
+    </div>
+  </section>
+
+  <!-- ============ SOBRE / CONTACTO anclas ============ -->
+  <section class="section" id="sobre">
+    <div class="wrap" style="max-width:720px">
+      <p class="eyebrow">Sobre AURZANE</p>
+      <h2 style="font-size:1.8rem">Un ecosistema construido con criterio clínico</h2>
+      <p style="color:var(--text-dim);margin-top:14px">AURZANE nace de la práctica clínica real de Adrián
+        Sánchez Samaniego (Psi. Cl., SENESCYT N.º 1033-2023-2618464) y se construye mundo por mundo, siempre
+        sobre evidencia verificable antes que sobre intuición de marketing.</p>
+    </div>
+  </section>
+
+  <section class="section" id="contacto" style="padding-top:0">
+    <div class="wrap" style="max-width:720px">
+      <p class="eyebrow">Contacto</p>
+      <h2 style="font-size:1.8rem">Escribinos</h2>
+      <p style="margin-top:14px"><a class="btn btn-gold" href="mailto:hola@aurzane.com">hola@aurzane.com →</a></p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="pie">
+  <div class="wrap footer-grid">
+    <div>
+      <p class="logo" style="font-size:1.2rem;margin-bottom:10px;color:var(--vanilla)">AUR<strong style="color:var(--gold)">ZANE</strong></p>
+      <p style="font-size:.86rem;max-width:34ch">Un ecosistema de cinco mundos construido para que alcances tu
+        máximo potencial en cada dimensión — mente, tecnología, experiencias, conocimiento y legado físico.</p>
+    </div>
+    <div>
+      <h5>Mundos</h5>
+      <a href="https://mind.aurzane.com/">MIND</a>
+      <a href="https://nexus.aurzane.com/">NEXUS</a>
+      <a href="https://live.aurzane.com/">LIVE</a>
+      <a href="https://learn.aurzane.com/">LEARN</a>
+      <a href="https://build.aurzane.com/">BUILD</a>
+    </div>
+    <div>
+      <h5>Herramientas</h5>
+      <a href="https://ovp.aurzane.com/portal.html">Sistema OVP</a>
+      <a href="https://nexus.aurzane.com/universidades/buscador.html">Universidades</a>
+      <a href="/research.html">Research Hub</a>
+    </div>
+    <div>
+      <h5>Conocimiento</h5>
+      <a href="/articulos/">Artículos</a>
+      <a href="/temas/">Temas</a>
+      <a href="/index.html#knowledge-hub">Knowledge Hub</a>
+    </div>
+    <div>
+      <h5>Cuenta</h5>
+      <a href="/mi-aurzane.html">Mi AURZANE</a>
+      <a href="/privacidad.html">Privacidad</a>
+      <a href="mailto:hola@aurzane.com">Contacto</a>
+    </div>
+  </div>
+  <div class="wrap pie-legal">
+    <span>© 2026 AURZANE. Todos los derechos reservados. MIND · NEXUS · LIVE · LEARN · BUILD</span>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/aurzane-id.js"></script>
+<script>
+/* ============================================================
+   Tema claro/oscuro (por defecto claro/vainilla)
+   ============================================================ */
+(function () {
+  const guardado = localStorage.getItem("aurzane-tema");
+  if (guardado === "oscuro") document.documentElement.setAttribute("data-tema", "oscuro");
+})();
+function alternarTema() {
+  const esOscuro = document.documentElement.getAttribute("data-tema") === "oscuro";
+  if (esOscuro) {
+    document.documentElement.removeAttribute("data-tema");
+    try { localStorage.setItem("aurzane-tema", "claro"); } catch (e) {}
+  } else {
+    document.documentElement.setAttribute("data-tema", "oscuro");
+    try { localStorage.setItem("aurzane-tema", "oscuro"); } catch (e) {}
+  }
+}
+
+/* ============================================================
+   Paleta de acento — el "marco" navy/dorado (barra superior, panel
+   Todo AURZANE, franja de confianza, pie de página) es el mismo en
+   los dos temas por diseño; estas 5 variantes lo recolorean sin
+   tocar el resto del sitio, que sigue claro/vainilla por defecto.
+   ============================================================ */
+const PALETAS = {
+  dorado:    { nombre: "Dorado clásico", n950: "#080B17", n900: "#0F1530", n800: "#151C3D", n700: "#1E2650", gold: "#C9A24B", goldLight: "#EACF92", goldDeep: "#8A6A28" },
+  esmeralda: { nombre: "Esmeralda",      n950: "#071510", n900: "#0D1F19", n800: "#132B22", n700: "#1B3A2E", gold: "#4BA97C", goldLight: "#8FE0BB", goldDeep: "#1F6B4A" },
+  purpura:   { nombre: "Púrpura real",   n950: "#0E0A1A", n900: "#171029", n800: "#211640", n700: "#2E1E58", gold: "#9A7DD1", goldLight: "#C9B4EE", goldDeep: "#5B3F94" },
+  grafito:   { nombre: "Grafito plata",  n950: "#0A0A0C", n900: "#131316", n800: "#1B1B20", n700: "#26262C", gold: "#B8BEC7", goldLight: "#E4E7EB", goldDeep: "#6B7078" },
+  cobre:     { nombre: "Cobre rosa",     n950: "#150B0C", n900: "#211215", n800: "#2E181C", n700: "#3D2126", gold: "#C97D6B", goldLight: "#E8AE9F", goldDeep: "#7A4436" },
+};
+function aplicarPaleta(clave) {
+  const p = PALETAS[clave] || PALETAS.dorado;
+  const raiz = document.documentElement.style;
+  raiz.setProperty("--navy-950", p.n950);
+  raiz.setProperty("--navy-900", p.n900);
+  raiz.setProperty("--navy-800", p.n800);
+  raiz.setProperty("--navy-700", p.n700);
+  raiz.setProperty("--gold", p.gold);
+  raiz.setProperty("--gold-light", p.goldLight);
+  raiz.setProperty("--gold-deep", p.goldDeep);
+  try { localStorage.setItem("aurzane-paleta", clave); } catch (e) {}
+  document.querySelectorAll(".paleta-swatch").forEach((sw) => sw.classList.toggle("activo", sw.dataset.clave === clave));
+}
+(function () {
+  const cont = document.getElementById("paletaSwatches");
+  cont.innerHTML = Object.keys(PALETAS).map(
+    (clave) => `<button class="paleta-swatch" data-clave="${clave}" style="background:${PALETAS[clave].gold}" title="${PALETAS[clave].nombre}" aria-label="${PALETAS[clave].nombre}"></button>`
+  ).join("");
+  cont.querySelectorAll(".paleta-swatch").forEach((btn) => {
+    btn.addEventListener("click", () => aplicarPaleta(btn.dataset.clave));
+  });
+  let guardada = "dorado";
+  try { guardada = localStorage.getItem("aurzane-paleta") || "dorado"; } catch (e) {}
+  aplicarPaleta(guardada);
+})();
+
+/* ============================================================
+   Panel "Todo AURZANE"
+   ============================================================ */
+function abrirTodo() {
+  document.getElementById("todoOverlay").classList.add("abierto");
+  document.getElementById("todoPanel").classList.add("abierto");
+  document.body.style.overflow = "hidden";
+}
+function cerrarTodo() {
+  document.getElementById("todoOverlay").classList.remove("abierto");
+  document.getElementById("todoPanel").classList.remove("abierto");
+  document.body.style.overflow = "";
+}
+document.addEventListener("keydown", (e) => { if (e.key === "Escape") cerrarTodo(); });
+
+/* ============================================================
+   Mega-menú accesible (click/teclado, no solo hover)
+   ============================================================ */
+function toggleMega(btn) {
+  const abierto = btn.getAttribute("aria-expanded") === "true";
+  document.querySelectorAll(".mega-trigger[aria-expanded]").forEach((b) => {
+    b.setAttribute("aria-expanded", "false");
+    const p = b.nextElementSibling;
+    if (p && p.classList.contains("mega-panel")) p.classList.remove("abierto");
+  });
+  if (!abierto) {
+    btn.setAttribute("aria-expanded", "true");
+    btn.nextElementSibling.classList.add("abierto");
+  }
+}
+document.addEventListener("click", (e) => {
+  if (!e.target.closest(".mega-item")) {
+    document.querySelectorAll(".mega-trigger[aria-expanded]").forEach((b) => {
+      b.setAttribute("aria-expanded", "false");
+      const p = b.nextElementSibling;
+      if (p && p.classList.contains("mega-panel")) p.classList.remove("abierto");
+    });
+  }
+});
+
+/* ============================================================
+   Atajos (rail) — accesos rápidos reales
+   ============================================================ */
+const ATAJOS = [
+  { icono: "📚", t: "Biblioteca", href: "/biblioteca/" },
+  { icono: "🎯", t: "Sistema OVP", href: "https://ovp.aurzane.com/portal.html" },
+  { icono: "🎓", t: "Universidades", href: "https://nexus.aurzane.com/universidades/buscador.html" },
+  { icono: "🔎", t: "Research Hub", href: "/research.html" },
+  { icono: "🧠", t: "MIND", href: "https://mind.aurzane.com/" },
+  { icono: "⚙️", t: "NEXUS", href: "https://nexus.aurzane.com/" },
+  { icono: "🌄", t: "LIVE", href: "https://live.aurzane.com/" },
+  { icono: "📖", t: "LEARN", href: "https://learn.aurzane.com/" },
+  { icono: "🏛️", t: "BUILD", href: "https://build.aurzane.com/" },
+  { icono: "👤", t: "Mi AURZANE", href: "/mi-aurzane.html" },
+];
+document.getElementById("railAtajos").innerHTML = ATAJOS.map(
+  (a) => `<a class="rail-item" href="${a.href}"><span class="rail-icon">${a.icono}</span><span class="t">${a.t}</span></a>`
+).join("");
+
+/* ============================================================
+   Explorar — contenido real del ecosistema + filtros en vivo
+   ============================================================ */
+const COLOR_MUNDO = { MIND: "var(--a-mind)", NEXUS: "var(--a-nexus)", LIVE: "var(--a-live)", LEARN: "var(--a-learn)", BUILD: "var(--a-build)", "": "var(--gold-deep)" };
+
+const IMG_MUNDO = {
+  MIND: "https://images.unsplash.com/photo-1559757175-5700dde675bc?q=80&w=500&auto=format&fit=crop",
+  NEXUS: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=500&auto=format&fit=crop",
+  LIVE: "https://images.unsplash.com/photo-1454496522488-7a8e488e8606?q=80&w=500&auto=format&fit=crop",
+  LEARN: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?q=80&w=500&auto=format&fit=crop",
+  BUILD: "https://images.unsplash.com/photo-1461360370896-922624d12aa1?q=80&w=500&auto=format&fit=crop",
+};
+const ICONO_TIPO = { Herramienta: "🎯", Biblioteca: "📚", Contenido: "📰", Cuenta: "👤" };
+
+const CONTENIDO = [
+  { mundo: "MIND", tipo: "Herramienta", t: "Sistema OVP — Test vocacional", d: "Seis instrumentos: aptitud, interés, personalidad vocacional, autoconcepto.", href: "https://ovp.aurzane.com/portal.html" },
+  { mundo: "MIND", tipo: "Biblioteca", t: "Biblioteca de libros AURZANE", d: "377 libros completos de psicología en español para leer gratis aquí mismo.", href: "/biblioteca/", img: "/biblioteca/portadas/introduccion-psicologia-cientifica.jpg" },
+  { mundo: "MIND", tipo: "Biblioteca", t: "Biblioteca MIND", d: "5.000 artículos científicos de psicología y neurociencia, con enlace a la fuente.", href: "https://mind.aurzane.com/mind-biblioteca.html" },
+  { mundo: "MIND", tipo: "Contenido", t: "Evaluación psicológica clínica", d: "Para adolescentes, adultos y adultos mayores.", href: "https://mind.aurzane.com/" },
+  { mundo: "NEXUS", tipo: "Herramienta", t: "Catálogo de Universidades", d: "6,125 instituciones en 23 países, con carreras y filtros.", href: "https://nexus.aurzane.com/universidades/buscador.html" },
+  { mundo: "NEXUS", tipo: "Biblioteca", t: "Biblioteca NEXUS", d: "5.000 artículos científicos sobre tecnología, IA y datos.", href: "https://nexus.aurzane.com/nexus-biblioteca.html" },
+  { mundo: "LIVE", tipo: "Biblioteca", t: "Biblioteca LIVE", d: "5.000 artículos científicos sobre bienestar y vida plena.", href: "https://live.aurzane.com/live-biblioteca.html" },
+  { mundo: "LIVE", tipo: "Contenido", t: "Historias que se sienten, no solo se ven", d: "Serie audiovisual cinematográfica en producción activa.", href: "https://live.aurzane.com/" },
+  { mundo: "LEARN", tipo: "Biblioteca", t: "Biblioteca LEARN", d: "5.000 artículos científicos sobre ciencias del aprendizaje.", href: "https://learn.aurzane.com/learn-biblioteca.html" },
+  { mundo: "LEARN", tipo: "Contenido", t: "AURZANE Academy", d: "Cursos estructurados y masterclasses en expansión.", href: "https://learn.aurzane.com/" },
+  { mundo: "BUILD", tipo: "Biblioteca", t: "Biblioteca BUILD", d: "5.000 artículos científicos de historia y civilizaciones.", href: "https://build.aurzane.com/build-biblioteca.html" },
+  { mundo: "BUILD", tipo: "Contenido", t: "Clínicas AURZANE", d: "El primer espacio físico del ecosistema.", href: "https://build.aurzane.com/" },
+  { mundo: "", tipo: "Contenido", t: "Research Hub", d: "Buscá en las 5 bibliotecas del ecosistema a la vez: 25.000 artículos científicos.", href: "/research.html", img: "https://commons.wikimedia.org/wiki/Special:FilePath/Computer%20chips%20circuits%20boards.jpg?width=500" },
+  { mundo: "", tipo: "Contenido", t: "Artículos AURZANE", d: "Guías 100% con fuentes citadas, organizadas por mundo.", href: "/articulos/", img: "https://commons.wikimedia.org/wiki/Special:FilePath/University%20Students%20Studying%20before%20exams.jpg?width=500" },
+  { mundo: "", tipo: "Cuenta", t: "Mi AURZANE", d: "Tu cuenta única para todo el ecosistema (AURZANE ID).", href: "/mi-aurzane.html", img: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=500&auto=format&fit=crop" },
+];
+
+const MUNDOS_FILTRO = ["Todos", "MIND", "NEXUS", "LIVE", "LEARN", "BUILD"];
+const TIPOS_FILTRO = ["Todos", "Herramienta", "Biblioteca", "Contenido", "Cuenta"];
+let filtroMundo = "Todos";
+let filtroTipo = "Todos";
+
+function construirChips(contenedorId, opciones, estado, aplicar) {
+  const cont = document.getElementById(contenedorId);
+  cont.innerHTML = opciones
+    .map((o) => `<button type="button" class="chip${o === estado ? " activo" : ""}" data-valor="${o}">${o}</button>`)
+    .join("");
+  cont.querySelectorAll(".chip").forEach((chip) => {
+    chip.addEventListener("click", () => {
+      aplicar(chip.dataset.valor);
+      renderizarExplorar();
+      construirChips(contenedorId, opciones, chip.dataset.valor, aplicar);
+    });
+  });
+}
+construirChips("filtrosMundo", MUNDOS_FILTRO, filtroMundo, (v) => (filtroMundo = v));
+construirChips("filtrosTipo", TIPOS_FILTRO, filtroTipo, (v) => (filtroTipo = v));
+
+function renderizarExplorar() {
+  const q = (document.getElementById("buscadorExplorar").value || "").toLowerCase().trim();
+  const filtrado = CONTENIDO.filter((c) => {
+    const pasaMundo = filtroMundo === "Todos" || c.mundo === filtroMundo;
+    const pasaTipo = filtroTipo === "Todos" || c.tipo === filtroTipo;
+    const pasaQ = !q || (c.t + " " + c.d).toLowerCase().includes(q);
+    return pasaMundo && pasaTipo && pasaQ;
+  });
+  const grid = document.getElementById("gridExplorar");
+  if (!filtrado.length) {
+    grid.innerHTML = '<div class="sin-resultados">Nada coincide con ese filtro. Probá con otra combinación.</div>';
+    return;
+  }
+  grid.innerHTML = filtrado
+    .map(
+      (c) => `<a class="card tarjeta-contenido" href="${c.href}" target="${c.href.startsWith("/") ? "_self" : "_blank"}" rel="noopener">
+        <div class="tc-foto">
+          <img src="${c.img || IMG_MUNDO[c.mundo] || IMG_MUNDO.MIND}" alt="" loading="lazy">
+          <div class="tc-icono" style="background:${c.mundo ? COLOR_MUNDO[c.mundo] : "var(--gold)"}">${ICONO_TIPO[c.tipo] || "📎"}</div>
+        </div>
+        <div class="tc-body">
+          <div class="tag-row">
+            ${c.mundo ? `<span class="tag-mundo" style="background:${COLOR_MUNDO[c.mundo]}">${c.mundo}</span>` : ""}
+            <span class="tag-tipo">${c.tipo}</span>
+          </div>
+          <h4>${c.t}</h4>
+          <p>${c.d}</p>
+          <span class="ir">Ir →</span>
+        </div>
+      </a>`
+    )
+    .join("");
+}
+renderizarExplorar();
+
+function irABuscarExplorar(valor) {
+  document.getElementById("buscadorExplorar").value = valor;
+  document.getElementById("explorar").scrollIntoView({ behavior: "smooth" });
+  renderizarExplorar();
+}
+
+/* ============================================================
+   AURZANE Now — franja curada (editable a mano por ahora)
+   ============================================================ */
+const NOVEDADES = [
+  { fecha: "Biblioteca", t: "377 libros de psicología para leer gratis", href: "/biblioteca/", img: "/biblioteca/portadas/introduccion-psicologia-cientifica.jpg" },
+  { fecha: "Ecosistema", t: "Catálogo de Universidades — 6,125 instituciones", href: "https://nexus.aurzane.com/universidades/buscador.html", img: IMG_MUNDO.NEXUS },
+  { fecha: "MIND", t: "Sistema OVP: evaluación completa gratis", href: "https://ovp.aurzane.com/portal.html", img: IMG_MUNDO.MIND },
+  { fecha: "Research", t: "25.000 artículos científicos en un solo buscador", href: "/research.html", img: "https://commons.wikimedia.org/wiki/Special:FilePath/Computer%20chips%20circuits%20boards.jpg?width=500" },
+  { fecha: "AURZANE ID", t: "Login único para todo el ecosistema", href: "/mi-aurzane.html", img: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=500&auto=format&fit=crop" },
+];
+document.getElementById("nowStrip").innerHTML = NOVEDADES.map(
+  (n) => `<a class="card now-card" href="${n.href}">
+    <div class="nc-foto"><img src="${n.img}" alt="" loading="lazy"></div>
+    <div class="nc-body"><span class="fecha">${n.fecha}</span><h4>${n.t}</h4></div>
+  </a>`
+).join("");
+
+/* ============================================================
+   FAQ — acordeón accesible
+   ============================================================ */
+const FAQS = [
+  { q: "¿Qué es exactamente AURZANE?", a: "Un ecosistema de cinco mundos — MIND, NEXUS, LIVE, LEARN y BUILD — construido sobre ciencia aplicada, no intuición de marketing. Cada mundo se sostiene solo, pero todos están diseñados para conectarse." },
+  { q: "¿Tengo que usar los cinco mundos?", a: "No. Podés entrar por el que te interese — por ejemplo, solo el Sistema OVP de MIND — sin necesidad de tocar el resto." },
+  { q: "¿Cómo accedo a la evaluación vocacional (OVP)?", a: "Desde el Sistema OVP: creás tu cuenta y activás tu evaluación completa. Por lanzamiento es gratis." },
+  { q: "¿Cuánto dura el proceso completo?", a: "Depende del plan: el Básico es 1 sesión, el Completo 2 sesiones, y el Premium 3 sesiones — presencial o virtual según el plan." },
+  { q: "¿Cuándo recibo mi informe?", a: "Apenas completás la última evaluación. El informe integrado aparece automáticamente en tu portal, con gráficos y resultados de cada instrumento, y lo podés descargar en PDF." },
+  { q: "¿Qué diferencia real hay entre los planes?", a: "Los instrumentos aplicados y el nivel de profundidad: el Premium suma pruebas de aptitudes específicas (APT-A y APT-B) que el Básico y el Completo no incluyen." },
+  { q: "¿Quién interpreta los resultados?", a: "Psi. Cl. Adrián Sánchez Samaniego, SENESCYT N.º 1033-2023-2618464 — no un algoritmo genérico." },
+  { q: "¿Qué pasa con mis datos?", a: "Se explican en detalle, incluyendo retención y consentimiento, en la página de Privacidad.", href: "/privacidad.html" },
+];
+document.getElementById("listaFaq").innerHTML = FAQS.map(
+  (f, i) => `<div class="faq-item">
+    <button class="faq-q" aria-expanded="false" aria-controls="faqA${i}" onclick="toggleFaq(this)">
+      <span>${f.q}</span><span class="faq-icono" aria-hidden="true">+</span>
+    </button>
+    <div class="faq-a" id="faqA${i}"><p>${f.a}${f.href ? ` <a href="${f.href}" style="color:var(--accent-text);font-weight:600">Ver más →</a>` : ""}</p></div>
+  </div>`
+).join("");
+function toggleFaq(btn) {
+  const abierto = btn.getAttribute("aria-expanded") === "true";
+  btn.setAttribute("aria-expanded", String(!abierto));
+  const panel = document.getElementById(btn.getAttribute("aria-controls"));
+  panel.style.maxHeight = abierto ? "0px" : panel.scrollHeight + "px";
+}
+
+/* ============================================================
+   AURZANE ID — estado de sesión en la barra de navegación y en el panel Todo
+   ============================================================ */
+const SUPABASE_URL = "https://chtfpqwrrarfdjcivlad.supabase.co";
+const SUPABASE_ANON_KEY = "sb_publishable___1v6VjDew0l8uGfMyb9Nw_YyCLTPPw";
+let sbId = null;
+try {
+  const clienteAurzaneId = crearClienteAurzaneID(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+  import("https://aurzane.com/core/index.js")
+    .then(({ createIdentityAdapter }) => {
+      sbId = createIdentityAdapter(clienteAurzaneId);
+
+      function reflejarSesion(session) {
+        const pill = document.getElementById("pillCuenta");
+        const quien = document.getElementById("todoQuien");
+        if (session) {
+          const nombre = (session.user.email || "Mi cuenta").split("@")[0];
+          pill.innerHTML = `👤 ${nombre}`;
+          quien.innerHTML = `Hola, ${nombre}<small>Tu cuenta AURZANE ID</small>`;
+        } else {
+          pill.innerHTML = `👤 Mi AURZANE`;
+          quien.innerHTML = `Hola, iniciá sesión<small>Accedé a todo el ecosistema</small>`;
+        }
+      }
+
+      sbId.auth.getSession().then(({ data: { session } }) => reflejarSesion(session));
+      sbId.auth.onAuthStateChange((_e, session) => reflejarSesion(session));
+      cargarAurzaneNow();
+    })
+    .catch((e) => {
+      console.warn("AURZANE ID Core adapter no pudo inicializarse:", e.message);
+    });
+} catch (e) {
+  console.warn("AURZANE ID no pudo inicializarse:", e.message);
+}
+
+/* ============================================================
+   AURZANE Now — feed real desde Supabase (NEXUS + LIVE + MIND).
+   Si falla la carga o todavía no hay artículos publicados, la
+   franja se queda con la selección curada a mano de más arriba.
+   ============================================================ */
+const MUNDO_META_NOW = {
+  nexus: { label: "NEXUS", base: "https://nexus.aurzane.com/nexus.html" },
+  live: { label: "LIVE", base: "https://live.aurzane.com/index.html" },
+  mind: { label: "MIND", base: "https://mind.aurzane.com/index.html" },
+};
+function escapeHtmlNow(s) {
+  return (s || "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+}
+function fechaCortaNow(iso) {
+  try {
+    return new Date(iso).toLocaleDateString("es-EC", { day: "numeric", month: "short", year: "numeric" });
+  } catch (e) {
+    return "";
+  }
+}
+async function cargarAurzaneNow() {
+  if (!sbId) return;
+  try {
+    const cols = "slug,titulo,created_at";
+    const [nexusRes, liveRes, mindRes] = await Promise.allSettled([
+      sbId.from("nexus_articulos").select(cols).order("created_at", { ascending: false }).limit(6),
+      sbId.from("live_articulos").select(cols).order("created_at", { ascending: false }).limit(6),
+      sbId.from("mind_articulos").select(cols).order("created_at", { ascending: false }).limit(6),
+    ]);
+    const datosDe = (r) => (r.status === "fulfilled" && r.value && r.value.data) ? r.value.data : [];
+    const articulos = [
+      ...datosDe(nexusRes).map((a) => ({ ...a, mundo: "nexus" })),
+      ...datosDe(liveRes).map((a) => ({ ...a, mundo: "live" })),
+      ...datosDe(mindRes).map((a) => ({ ...a, mundo: "mind" })),
+    ]
+      .filter((a) => a.titulo)
+      .sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
+      .slice(0, 8);
+
+    if (articulos.length === 0) return;
+
+    document.getElementById("nowStrip").innerHTML = articulos.map((a) => {
+      const meta = MUNDO_META_NOW[a.mundo];
+      const href = meta.base + "#/articulo/" + encodeURIComponent(a.slug);
+      const img = IMG_MUNDO[meta.label] || IMG_MUNDO.MIND;
+      return `<a class="card now-card" href="${href}" target="_blank" rel="noopener">
+        <div class="nc-foto"><img src="${img}" alt="" loading="lazy"></div>
+        <div class="nc-body"><span class="fecha">${meta.label} · ${fechaCortaNow(a.created_at)}</span><h4>${escapeHtmlNow(a.titulo)}</h4></div>
+      </a>`;
+    }).join("");
+  } catch (e) {
+    console.warn("AURZANE Now: no se pudo cargar el feed en vivo, se mantiene la selección curada.", e.message);
+  }
+}
+</script>
+<script src="/biblioteca/resumen.js" defer></script>
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+  var R = window.BIBLIOTECA_RESUMEN; if(!R) return;
+  var esc = function(s){ return String(s).replace(/[&<>"]/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]; }); };
+  document.getElementById("bhCifras").textContent = R.libros + " libros para leer aquí y " + R.fichas + " fichas de libros actuales, en " + R.temas + " temas.";
+  document.getElementById("bhCats").innerHTML = (R.colecciones || R.categorias).map(function(c){ return '<a href="/biblioteca/#' + (R.colecciones ? 'c=' : 'm=') + c.id + '">' + esc(c.nombre) + '</a>'; }).join("");
+  document.getElementById("bhEstante").innerHTML = R.destacados.slice(0, 8).map(function(d){ return '<a href="/biblioteca/leer.html?libro=' + encodeURIComponent(d.id) + '" tabindex="-1" title="' + esc(d.titulo) + '"><img src="/biblioteca/' + d.portada + '" alt="" loading="lazy"></a>'; }).join("");
+});
+</script>
+<script>/* Las etiquetas "Nuevo" desaparecen solas al pasar su fecha (30 días desde el alta). */document.querySelectorAll("[data-hasta]").forEach(function(el){var t=Date.parse(el.getAttribute("data-hasta")+"T23:59:59");if(!isNaN(t)&&Date.now()>t)el.remove();});</script>
+</body>
+</html>

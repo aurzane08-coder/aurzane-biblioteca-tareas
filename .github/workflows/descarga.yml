@@ -1,0 +1,26 @@
+name: Biblioteca descarga ronda 2
+on:
+  push:
+    branches: [main]
+    paths: ['biblioteca-src/cosecha2/seleccion.json']
+permissions:
+  contents: write
+concurrency: biblioteca-descarga2
+jobs:
+  descarga:
+    runs-on: ubuntu-latest
+    timeout-minutes: 340
+    steps:
+      - uses: actions/checkout@v4
+      - name: Herramientas
+        run: sudo apt-get install -y -q qpdf poppler-utils ghostscript > /dev/null && pip install -q pillow
+      - name: Descargar
+        working-directory: biblioteca-src
+        run: DIR=cosecha2 PRESUPUESTO_MB=2500 LOTE=r2 timeout 330m python3 -u descargar.py 2>&1 | tee cosecha2/descarga.log || true
+      - name: Guardar
+        if: always()
+        run: |
+          git config user.name "aurzane-bot"; git config user.email "bot@aurzane.com"
+          git add -A biblioteca-src/cosecha2
+          git commit -m "biblioteca: descarga ronda 2" || exit 0
+          for i in 1 2 3 4 5 6 7 8; do git pull --rebase && git push && break; sleep $((RANDOM % 25 + 5)); done
