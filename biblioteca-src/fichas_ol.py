@@ -24,6 +24,32 @@ def pal(s): return [w for w in norm(s).split() if len(w) > 2]
 def parecido(a, b):
     pa, pb = pal(a.split('.')[0]), set(pal(b))
     return sum(1 for w in pa if w in pb) / max(1, len(pa))
+HISP = ('97884', '97895', '97896', '97897', '978607', '978612', '9789942', '9789978', '9789972', '9789974', '9789992', '9789993', '9789994', '9789996', '9789929', '9789968', '9789945', '9789962')
+def hisp(i):
+    i = re.sub(r'[^0-9X]', '', str(i))
+    if len(i) == 10: i = '978' + i
+    return i.startswith(HISP) and not i.startswith(('97895', '97896', '97897')) or i.startswith(('978950', '978956', '978958', '978959', '978968', '978970', '978980', '978987', '9789500'))
+def ttl(f, autor):
+    # catálogo de Todos tus libros (librerías CEGAL): ediciones a la venta en España
+    import html as H
+    s = get('https://www.todostuslibros.com/busquedas?keyword=' + urllib.parse.quote(f['titulo'].split('.')[0] + ' ' + (pal(autor)[-1] if pal(autor) else '')), raw=True).decode('utf-8', 'replace')
+    for li in re.findall(r'<li\s+class="book-col"(.*?)</li>', s, re.S):
+        t = H.unescape((re.search(r'data-gtm-titulo="([^"]*)"', li) or [None, ''])[1])
+        a = H.unescape(re.sub(r'<[^>]+>', ' ', (re.search(r'<p class="author">(.*?)</p>', li, re.S) or [None, ''])[1]))
+        if parecido(f['titulo'], t) < 0.6 or parecido(t, f['titulo']) < 0.5: continue
+        if not any(w in norm(a) for w in pal(autor)[-1:]): continue
+        isbn = re.sub(r'-', '', (re.search(r'data-gtm-isbn="([^"]*)"', li) or [None, ''])[1])
+        link = (re.search(r'href="(https://www\.todostuslibros\.com/libros/[^"]+)"', li) or [None, ''])[1]
+        img = (re.search(r'<img src="(https://static\.cegal\.es/[^"]+)"', li) or [None, ''])[1]
+        ed = H.unescape((re.search(r'data-gtm-editorial="([^"]*)"', li) or [None, ''])[1])
+        anio = ''
+        try:
+            dt = get(link, raw=True).decode('utf-8', 'replace'); time.sleep(1)
+            m = re.search(r'(?:Fecha de publicaci[oó]n|A[nñ]o de edici[oó]n|Publicaci[oó]n)[^0-9]{0,80}?((?:19|20)\d\d)', re.sub(r'<[^>]+>', ' ', dt))
+            if m: anio = m.group(1)
+        except Exception: pass
+        return dict(edicion='ttl:' + link, titulo_ed=t, isbn=isbn, editorial=ed, anio=anio, cover=img or ('https://covers.openlibrary.org/b/isbn/%s-L.jpg?default=false' % isbn), via='todostuslibros')
+    return None
 def portada(cid):
     try:
         u = cid if str(cid).startswith('http') else 'https://covers.openlibrary.org/b/id/%s-L.jpg?default=false' % cid
@@ -50,12 +76,12 @@ for f in FICHAS3:
         mejor = None
         # 1) búsqueda con ediciones: OL devuelve la edición que mejor encaja (título en español aunque la obra esté en otro idioma)
         try:
-            q0 = urllib.parse.urlencode({'q': '%s %s language:spa' % (f['titulo'].split('.')[0], pal(autor)[-1] if pal(autor) else ''), 'limit': 8,
+            q0 = urllib.parse.urlencode({'q': '%s %s' % (f['titulo'].split('.')[0], pal(autor)[-1] if pal(autor) else ''), 'limit': 8,
                                          'fields': 'key,title,author_name,editions,editions.key,editions.title,editions.subtitle,editions.language,editions.isbn,editions.publisher,editions.publish_date,editions.cover_i'})
             for d in get('https://openlibrary.org/search.json?' + q0).get('docs', []):
                 if not any(w in norm(' '.join(d.get('author_name', []))) for w in pal(autor)[-1:]): continue
                 for e in (d.get('editions') or {}).get('docs', []):
-                    if 'spa' not in (e.get('language') or []): continue
+                    if 'spa' not in (e.get('language') or []) and not any(hisp(i) for i in e.get('isbn', [])): continue
                     if parecido(f['titulo'], e.get('title', '') + ' ' + e.get('subtitle', '')) < 0.6: continue
                     isbn = next((i for i in e.get('isbn', []) if len(i) == 13), '') or (e.get('isbn') or [''])[0]
                     cov = e.get('cover_i') or ('https://covers.openlibrary.org/b/isbn/%s-L.jpg?default=false' % isbn if isbn else None)
@@ -97,6 +123,9 @@ for f in FICHAS3:
                                  cover='https://books.google.com/books/content?id=%s&printsec=frontcover&img=1&zoom=1' % it['id'], via='google'); break
             except Exception as e:
                 print('google', str(e)[:80])
+        if not mejor:
+            try: mejor = ttl(f, autor); time.sleep(1)
+            except Exception as ex: print('ttl', str(ex)[:80])
         if not mejor and docs and docs[0].get('cover_i'):
             mejor = dict(edicion=docs[0]['key'], titulo_ed=docs[0]['title'], isbn='', editorial='', anio='', cover=docs[0]['cover_i'], solo_obra=True)
         if mejor:
