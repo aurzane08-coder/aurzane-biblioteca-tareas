@@ -1,0 +1,890 @@
+{
+"pedagogia-sentidos-epistemologia-afectividad-transformacion-": {
+"ok": true,
+"mb": 4.5,
+"paginas": 178,
+"sha1": "353c9c0c5bc256e1dcb21552e2f7c0a6d612736d",
+"lote": "r3"
+},
+"capitalismo-emocional-eva-illouz-teoricos-biocapitalismo": {
+"ok": false,
+"err": "bundles no JSON: https://gredos.usal.es/server/api/core/items/999d3d7c-5577-47ad-b44a-3 | b'<!doctype html><html lang=\"en\"><head><title>Making sure yo",
+"definitivo": false
+},
+"dolor-cronico-consecuencias-salud-mujeres": {
+"ok": true,
+"mb": 3.0,
+"paginas": 52,
+"sha1": "c91050f95f66925681f9ddcdaa8123d16ae49822",
+"lote": "r3"
+},
+"leer-pensando-introduccion-vision-contemporanea-lectura": {
+"ok": true,
+"mb": 0.6,
+"paginas": 130,
+"sha1": "1fa6a55296b9f15961cc65d7e839bcea231fa11a",
+"lote": "r3"
+},
+"estilistica-educativa-experiencias-investigativas-sobre-esti": {
+"ok": true,
+"mb": 1.4,
+"paginas": 176,
+"sha1": "662c3dc8e2ba96de2ea3ce3c33dc5bef30c66b6f",
+"lote": "r3"
+},
+"violencia-realidad-digital-presencia-difusion-redes": {
+"ok": true,
+"mb": 3.7,
+"paginas": 138,
+"sha1": "b43b4c4afcdc4c2a2bc21fb2dead4b292e67adb1",
+"lote": "r3"
+},
+"ni-amar-ni-odiar-firmeza-cultura": {
+"ok": false,
+"err": "HTTP Error 401: ",
+"definitivo": false
+},
+"justicia-intercultural-bienestar-emocional-restableciendo-vi": {
+"ok": true,
+"mb": 1.1,
+"paginas": 342,
+"sha1": "865adaed8cd8e24024e716327525f3f4af8146b8",
+"lote": "r3"
+},
+"sensibilidades-juego-miradas-multiples-desde-estudios": {
+"ok": true,
+"mb": 1.4,
+"paginas": 257,
+"sha1": "afe71ed8a3fac39f3a05fed38455b02ebb3e02af",
+"lote": "r3"
+},
+"como-mejorar-gestion-emocional-trabajo-colaborativo": {
+"ok": false,
+"err": "no es PDF",
+"definitivo": true
+},
+"representacion-lo-diferente-autismo-narativa-mediatica": {
+"ok": true,
+"mb": 1.5,
+"paginas": 90,
+"sha1": "b412fbf69cde861f6df70050e13e14c98ecc0f62",
+"lote": "r3"
+},
+"emociones-politicas-ninos-ninas": {
+"ok": true,
+"mb": 1.7,
+"paginas": 141,
+"sha1": "b23626d58054d3370ebd2b6bdcea408f0944b801",
+"lote": "r3"
+},
+"subjetividades-emociones-politicas-maestros-maestras": {
+"ok": true,
+"mb": 1.2,
+"paginas": 45,
+"sha1": "a5ae127e47f28a43914dc9e3fa3eea512047de6c",
+"lote": "r3"
+},
+"patio-ciudad-transformar-espacios-entornos-inclusivos": {
+"ok": true,
+"mb": 6.2,
+"paginas": 244,
+"sha1": "4f91ffd41978ee01ac778533b40f63bb99774b86",
+"lote": "r3"
+},
+"manual-practico-patologia-lenguaje-evaluacion-e": {
+"ok": true,
+"mb": 6.0,
+"paginas": 196,
+"sha1": "8c7709b01f4ee5d8b9ff64f53ed4e306e7d4668c",
+"lote": "r3"
+},
+"metacognicion-lectura": {
+"ok": true,
+"mb": 31.6,
+"paginas": 160,
+"sha1": "70dd53a5d2c62f085bcb10a62ee10ad84e795648",
+"lote": "r3"
+},
+"signos-cuerpo-enfoques-multimodales-mente-lenguaje": {
+"ok": true,
+"mb": 2.6,
+"paginas": 412,
+"sha1": "fb18cc84191265c0c2eb5513bdf34b1bbc19000c",
+"lote": "r3"
+},
+"atencion-diversidad-educacion-secundaria": {
+"ok": true,
+"mb": 4.0,
+"paginas": 132,
+"sha1": "b7db08d752a5c7d6b0318881e8fb3d4311ca3438",
+"lote": "r3"
+},
+"receta-es-moverse-ejercicio-fisico-salud": {
+"ok": false,
+"err": "no es PDF",
+"definitivo": true
+},
+"avances-pafd-salud-bienestar-ocio-rendimiento": {
+"ok": true,
+"mb": 3.9,
+"paginas": 114,
+"sha1": "35f5d1d1d84f8804d8d70a08e69e29fee81b760a",
+"lote": "r3"
+},
+"alimentacion-nutricion-adolescencia-contenidos-actividades-p": {
+"ok": true,
+"mb": 4.6,
+"paginas": 54,
+"sha1": "e1f90bca608a6dc34bda1d521b6a4591220394f8",
+"lote": "r3"
+},
+"encontrar-nuestros-hijos-testimonio-madre": {
+"ok": true,
+"mb": 1.6,
+"paginas": 55,
+"sha1": "80c7e481b317923052dd0f03ed094f00ca0582bb",
+"lote": "r3"
+},
+"construyamos-alegrias-version-covid-19": {
+"ok": true,
+"mb": 3.5,
+"paginas": 41,
+"sha1": "a8fff1193c90ea8ce127f000d0525e2797cb21bf",
+"lote": "r3"
+},
+"apoyo-refuerzo-como-estrategia-afectiva-pedagogica": {
+"ok": true,
+"mb": 0.3,
+"paginas": 12,
+"sha1": "9a511177c557030004481e4bff5fd2191bf09ea2",
+"lote": "r3"
+},
+"neuroimagen-como-herramienta-neuropedagogica-neurometodologi": {
+"ok": true,
+"mb": 0.4,
+"paginas": 15,
+"sha1": "64411f1bc6be0dba2032a4a1162dc9f4b374d1d3",
+"lote": "r3"
+},
+"album-ilustrado-desarrollo-lenguaje-educacion-literaria": {
+"ok": true,
+"mb": 1.1,
+"paginas": 133,
+"sha1": "6100dfd8a51586191c9c3b076d0614e014779398",
+"lote": "r3"
+},
+"incomodidad-profesion-docente-estudio-profesores-zacatecas": {
+"ok": true,
+"mb": 1.5,
+"paginas": 202,
+"sha1": "f96e3a2e3156b54d975d00dab038640799e84695",
+"lote": "r3"
+},
+"programa-promocion-salud-mental-positiva-adultos": {
+"ok": true,
+"mb": 6.9,
+"paginas": 64,
+"sha1": "a4044e7ce6fb5da9631f20e4989f3af7347f2ea0",
+"lote": "r3"
+},
+"programa-terapia-asistida-animales-promocion-salud": {
+"ok": true,
+"mb": 0.5,
+"paginas": 20,
+"sha1": "b607e2c7b3ee9e641f25244252752302ca68a603",
+"lote": "r3"
+},
+"doctrina-estoyco-filosofo-epicteto-que-se": {
+"ok": true,
+"mb": 14.0,
+"paginas": 225,
+"sha1": "42e5312827503ec5fdd0838aa33e50879cee6050",
+"lote": "r3"
+},
+"dificultades-lenguaje-trastornos-desarrollo-vol-iii": {
+"ok": true,
+"mb": 3.3,
+"paginas": 240,
+"sha1": "ec5df55e75c0decfa2efe1d0abf9b08c814f8dee",
+"lote": "r3"
+},
+"guia-ayuda-programacion-educativa-alumnos-discapacidades": {
+"ok": false,
+"err": "bundles no JSON: https://gredos.usal.es/server/api/core/items/56068173-6fae-4fd5-975a-0 | b'<!doctype html><html lang=\"en\"><head><title>Making sure yo",
+"definitivo": false
+},
+"cognicion-social-lenguaje-intersubjetividad-evolucion-especi": {
+"ok": true,
+"mb": 3.1,
+"paginas": 548,
+"sha1": "c147c599720cfd314e6dd78259758c703f22eee1",
+"lote": "r3"
+},
+"identidades-masculinas-varones-clase-media-peru": {
+"ok": true,
+"mb": 28.2,
+"paginas": 199,
+"sha1": "45f3a23d49a69ad9d8f6c5c59753e779815a9ed1",
+"lote": "r3"
+},
+"locura-musas-estudio-fenomenologico-sobre-imaginacion": {
+"ok": true,
+"mb": 3.1,
+"paginas": 144,
+"sha1": "77c21359894ca3f29caa19598a2026d9d341f345",
+"lote": "r3"
+},
+"que-significa-intervenir-educativamente-desadaptacion-social": {
+"ok": false,
+"mb": 47.0,
+"err": "supera 45 MB (47.0)",
+"definitivo": true
+},
+"escuelas-aulas-creativas-reflexiones-experiencias": {
+"ok": true,
+"mb": 18.1,
+"paginas": 296,
+"sha1": "21f3cd6dbfbcec3fe0197a390c10b031a537bf3b",
+"lote": "r3"
+},
+"trastorno-especifico-lenguaje-diagnostico-e-intervencion": {
+"ok": true,
+"mb": 1.7,
+"paginas": 202,
+"sha1": "26ea3a5b162abeb51005a721f655ffffa279e1de",
+"lote": "r3"
+},
+"retorica-educacion-expresion-oral-su-aprendizaje": {
+"ok": true,
+"mb": 0.8,
+"paginas": 204,
+"sha1": "4e4b5ec2639987192699513410803a80f20eb402",
+"lote": "r3"
+},
+"escenas-educacion-social": {
+"ok": true,
+"mb": 0.8,
+"paginas": 165,
+"sha1": "6494c4163e7e07eaf293619670cab67f74a5b2a3",
+"lote": "r3"
+},
+"moral-social": {
+"ok": true,
+"mb": 1.5,
+"paginas": 149,
+"sha1": "75f6a50c43a20ae75d5278b07d2108c9ddd611a1",
+"lote": "r3"
+},
+"nueva-filosofia-naturaleza-hombre-no-conocida": {
+"ok": true,
+"mb": 19.1,
+"paginas": 656,
+"sha1": "6518999e50e45de78eac11c6b9b1270eb7d84a6a",
+"lote": "r3"
+},
+"neurosis-estudio-clinico-terapeutico-dispepsia-anemia": {
+"ok": true,
+"mb": 18.3,
+"paginas": 414,
+"sha1": "11da61f08c6d03ff869402b299aa502129409db8",
+"lote": "r3"
+},
+"comunicacion-asistencial-medicos-ii-parte-comunicacion": {
+"ok": true,
+"mb": 0.8,
+"paginas": 76,
+"sha1": "6b8ebe5fbfd0397601835b9d30e463483a346f63",
+"lote": "r3"
+},
+"caracteristicas-evolucion-chicos-chicas-familias-colaborador": {
+"ok": true,
+"mb": 2.5,
+"paginas": 58,
+"sha1": "9cdc893be9da413143148107e53fad8d0f301d49",
+"lote": "r3"
+},
+"antropologia-sexualidad": {
+"ok": true,
+"mb": 1.4,
+"paginas": 332,
+"sha1": "be84444e7240c84adb9f7910ec674bf8b4dbb26d",
+"lote": "r3"
+},
+"ciudadania-alerta-batalla-contra-miedo-desinformacion": {
+"ok": false,
+"err": "HTTP Error 401: ",
+"definitivo": false
+},
+"prohibida-tristeza-resistencia-mujeres-cautiverio-sendero": {
+"ok": false,
+"err": "HTTP Error 401: ",
+"definitivo": false
+},
+"dificil-ser-hombre-nuevas-masculinidades-latinoamericanas": {
+"ok": true,
+"mb": 1.7,
+"paginas": 200,
+"sha1": "9c70235509fc20a34a391ce88098eee4418f9506",
+"lote": "r3"
+},
+"veinticinco-relatos-no-olvidar": {
+"ok": true,
+"mb": 0.6,
+"paginas": 50,
+"sha1": "9955b209a14bce0e3b9f90804016dec01f253e34",
+"lote": "r3"
+},
+"introduccion-linguistica-clinica-aproximaciones-trastornos-c": {
+"ok": true,
+"mb": 2.5,
+"paginas": 446,
+"sha1": "fb155aadfa55cce4e4228de376ce6fbb8988f4f4",
+"lote": "r3"
+},
+"privaciones-libertad-razones-salud-mental-latinoamerica": {
+"ok": true,
+"mb": 4.2,
+"paginas": 390,
+"sha1": "771212f9c10132a6b21996acb48e424103517878",
+"lote": "r3"
+},
+"maria-marimacha-caminos-identidad-femenina": {
+"ok": true,
+"mb": 12.3,
+"paginas": 116,
+"sha1": "b3efdd26cf71c17d0658bab3204ffc742c18e676",
+"lote": "r3"
+},
+"arte-gozar": {
+"ok": true,
+"mb": 0.7,
+"paginas": 76,
+"sha1": "f84dd2b705466db47cd1fcdebc458d54dc7317f1",
+"lote": "r3"
+},
+"elegi-mi-vida-mirada-feminista-sobre": {
+"ok": true,
+"mb": 3.7,
+"paginas": 258,
+"sha1": "2ed7242ff62989dd090918702dffb34ac994252c",
+"lote": "r3"
+},
+"crecimiento-desarrollo-biologia-educacion-salud": {
+"ok": true,
+"mb": 5.9,
+"paginas": 286,
+"sha1": "68cb344cf50370faf1fc2ae133b6721b633a4611",
+"lote": "r3"
+},
+"comprender-abordaje-filosofico-relacion-entre-mente": {
+"ok": true,
+"mb": 2.2,
+"paginas": 142,
+"sha1": "1885938c1c7435c741393b5835235ae4712cafa7",
+"lote": "r3"
+},
+"salud-mental-pandemia-politicas-publicas-sobre": {
+"ok": true,
+"mb": 5.8,
+"paginas": 312,
+"sha1": "704361ad510569548d1c4dc5e917548beb1bab91",
+"lote": "r3"
+},
+"trabajo-subjetividad-indagaciones-clinicas": {
+"ok": true,
+"mb": 4.4,
+"paginas": 157,
+"sha1": "a7f21086f331daee803926cb4c1a1c784a1db09a",
+"lote": "r3"
+},
+"celebrando-diversidad-recurso-que-enriquece-educacion": {
+"ok": true,
+"mb": 2.0,
+"paginas": 53,
+"sha1": "9f1cbb11dcde8e030bb18ce522b19e73de1d4ccf",
+"lote": "r3"
+},
+"envejecer-derechos-participacion-social-adultos-mayores": {
+"ok": true,
+"mb": 1.8,
+"paginas": 110,
+"sha1": "4f925efca3cfbc554440fd09118042d91a27d99a",
+"lote": "r3"
+},
+"engagement-laboral-docente-su-incidencia-estudiante": {
+"ok": true,
+"mb": 2.3,
+"paginas": 74,
+"sha1": "602955be7aa9e567894b944bc4b467e8b786c80b",
+"lote": "r3"
+},
+"metodologias-narrativas-educacion": {
+"ok": true,
+"mb": 1.1,
+"paginas": 242,
+"sha1": "00559853b9c6ad31cdac0c0725af91cc6750c17a",
+"lote": "r3"
+},
+"centro-que-cuida-guia-practica-cuidado": {
+"ok": true,
+"mb": 1.2,
+"paginas": 61,
+"sha1": "a8ea7c6b3e410f01d0cac15af25a4753d2fb2bb2",
+"lote": "r3"
+},
+"memoria-mirada-palabra-chismorreo-limites-comunidad": {
+"ok": true,
+"mb": 4.1,
+"paginas": 77,
+"sha1": "d44f0f4573fd469f35a8d2335e9f1753a052349e",
+"lote": "r3"
+},
+"aprendizaje-motor-precision-toma-decisiones-deporte": {
+"ok": true,
+"mb": 5.2,
+"paginas": 405,
+"sha1": "57cfc0cb6d7e5329eae795f57881afff8dc87848",
+"lote": "r3"
+},
+"programas-salud-infancia-adolescencia-edad-reproductiva": {
+"ok": false,
+"err": "Command '['qpdf', '--empty', '--pages', '/tmp/pdf/programas-salud-infancia-adolescencia-edad-reproductiva-0.pdf', '/tmp/pdf/programas-salud-infancia-a",
+"definitivo": false
+},
+"educacion-como-sistema-bienestar-social-enfoque": {
+"ok": true,
+"mb": 3.0,
+"paginas": 558,
+"sha1": "6bf1f533306cb01340698679d0be9fe54da179d7",
+"lote": "r3"
+},
+"espiritualidad-educacion-social": {
+"ok": true,
+"mb": 0.5,
+"paginas": 146,
+"sha1": "383b23402015ba51dd6e099eb271fa3a7ea4cd1b",
+"lote": "r3"
+},
+"desinserciones-lazo-social-practica-orientada-singularidad": {
+"ok": true,
+"mb": 2.3,
+"paginas": 124,
+"sha1": "412b027a5c86427f53d7a6d448ff18f1aeb3c0dc",
+"lote": "r3"
+},
+"ultimos-avances-intervencion-ambito-educativo": {
+"ok": false,
+"err": "bundles no JSON: https://gredos.usal.es/server/api/core/items/0d8bf810-4e5f-465b-ba96-f | b'<!doctype html><html lang=\"en\"><head><title>Making sure yo",
+"definitivo": false
+},
+"flor-humana-texto-puericultura-elemental-uso": {
+"ok": false,
+"err": "HTTP Error 500: Internal Server Error",
+"definitivo": false
+},
+"moral-teorico-practica-educacion-uso-escuelas": {
+"ok": true,
+"mb": 4.4,
+"paginas": 222,
+"sha1": "94558d0f6f97924c5f716435f217189d4e1504af",
+"lote": "r3"
+},
+"vision-binocular-psicoanalisis-filosofia": {
+"ok": true,
+"mb": 0.9,
+"paginas": 266,
+"sha1": "956365537fd7ee529040040b969c129d620cc920",
+"lote": "r3"
+},
+"filosofia-como-terapia-wittgenstein-combate-terapeutico": {
+"ok": false,
+"err": "HTTP Error 401: ",
+"definitivo": false
+},
+"doctor-su-propio-pueblo-historia-vida": {
+"ok": true,
+"mb": 5.7,
+"paginas": 480,
+"sha1": "78c2f9148616f57e7e5aaa2f0303da4e176dd897",
+"lote": "r3"
+},
+"me-quiere-mucho-poquito-nada-construcciones": {
+"ok": true,
+"mb": 1.0,
+"paginas": 178,
+"sha1": "d743a4c5cd2eba29be937cd7867c25af8cb668b7",
+"lote": "r3"
+},
+"traductologia-neurocognicion-como-se-organiza-sistema": {
+"ok": true,
+"mb": 6.3,
+"paginas": 302,
+"sha1": "9d09e4079c08e0848e1decef4988e3166701500d",
+"lote": "r3"
+},
+"nuevos-tiempos-familias-familias-nuevos-tiempos": {
+"ok": true,
+"mb": 4.3,
+"paginas": 270,
+"sha1": "bffa1711de3a53b40805f8e485fd625193e58dda",
+"lote": "r3"
+},
+"nada-nosotros-sin-nosotros-discapacidades-educacion": {
+"ok": true,
+"mb": 1.9,
+"paginas": 316,
+"sha1": "cd6987bee7ed2313f9d31a4f9177d6313fc76b58",
+"lote": "r3"
+},
+"viaje-iniciatico-ensayos-autobiografia-inconclusa": {
+"ok": true,
+"mb": 5.1,
+"paginas": 64,
+"sha1": "10f0dafe5e61a15f2deb33649c840cd2f5902a31",
+"lote": "r3"
+},
+"curriculo-aprendizaje-socioemocional-case": {
+"ok": true,
+"mb": 24.4,
+"paginas": 1555,
+"sha1": "89cc3468a40cf02e597e1d17e96829c20d6b67c6",
+"lote": "r3"
+},
+"narrativas-trayectorias-educativas-identitarias": {
+"ok": true,
+"mb": 3.2,
+"paginas": 44,
+"sha1": "a5960f53efdf1c46299c6800ec557461567eca84",
+"lote": "r3"
+},
+"educacion-inclusiva-desde-gestos-menores-escenas": {
+"ok": true,
+"mb": 3.2,
+"paginas": 136,
+"sha1": "7c8dd643724f3ed167b6323f9f8a41b44233028a",
+"lote": "r3"
+},
+"prescripcion-dialogo-manual-facilitadores-as-grupos": {
+"ok": true,
+"mb": 1.0,
+"paginas": 98,
+"sha1": "db4e8d9c3bf136457d4d926a9413dec3f106463e",
+"lote": "r3"
+},
+"atencion-comunitaria-rehabilitacion-empleo": {
+"ok": false,
+"err": "bundles no JSON: https://gredos.usal.es/server/api/core/items/043ceffd-ce7f-4c91-bdf8-e | b'<!doctype html><html lang=\"en\"><head><title>Making sure yo",
+"definitivo": false
+},
+"diario-filosofa-embarazada": {
+"ok": false,
+"err": "bundles no JSON: https://gredos.usal.es/server/api/core/items/29b70ec9-9db2-49b6-a239-d | b'<!doctype html><html lang=\"en\"><head><title>Making sure yo",
+"definitivo": false
+},
+"consideraciones-sobre-locura-doble-forma-sus": {
+"ok": false,
+"err": "bundles no JSON: https://gredos.usal.es/server/api/core/items/5da01881-863f-4b64-aeaa-3 | b'<!doctype html><html lang=\"en\"><head><title>Making sure yo",
+"definitivo": false
+},
+"historias-enfermos": {
+"ok": true,
+"mb": 43.7,
+"paginas": 54,
+"sha1": "05c7261358d6f890ae60065b39d64d8fd218081a",
+"lote": "r3"
+},
+"medicina-fantastica-espiritu-espejo-theorico-practico": {
+"ok": true,
+"mb": 3.0,
+"paginas": 72,
+"sha1": "0fe88420b4284901f64a286de9b1d9c57234deae",
+"lote": "r3"
+},
+"cuentos-selva-ninos": {
+"ok": true,
+"mb": 6.2,
+"paginas": 128,
+"sha1": "d43b46fb60afcac8c47a43de88e45cf7c325fea2",
+"lote": "r3"
+},
+"moral-enfermero": {
+"ok": true,
+"mb": 10.5,
+"paginas": 48,
+"sha1": "699aed191a04a70ba8affd0c5e06cd8aaec59c54",
+"lote": "r3"
+},
+"estudio-teorico-practico-tratamiento-moral-locura": {
+"ok": true,
+"mb": 1.9,
+"paginas": 30,
+"sha1": "497955345da1ed5f24fc8935f9b49f9ab9ba6857",
+"lote": "r3"
+},
+"moral-intelectuales": {
+"ok": true,
+"mb": 15.8,
+"paginas": 228,
+"sha1": "fb5943c2978b75feb6c4afd02ef8c263b0673738",
+"lote": "r3"
+},
+"memoria-entendimiento-voluntad-empresas-que-ensenan": {
+"ok": true,
+"mb": 17.0,
+"paginas": 251,
+"sha1": "4a963920630841c01ebf0b5039b4f49d677a8c3c",
+"lote": "r3"
+},
+"plazas-juego-ninos": {
+"ok": true,
+"mb": 1.9,
+"paginas": 83,
+"sha1": "3f12b681995a9ab92c24e6a2a58f7552daa5f5fc",
+"lote": "r3"
+},
+"relaciones-sanas-programa-educativo-prevencion-violencia": {
+"ok": true,
+"mb": 1.7,
+"paginas": 100,
+"sha1": "3e0e541480f71ea1841cedbe507a558ae014ca3c",
+"lote": "r3"
+},
+"desarrollo-positivo-adolescente-activos-que-lo": {
+"ok": true,
+"mb": 1.3,
+"paginas": 152,
+"sha1": "bc8588a150c41809028a3a7d0a00cce9baddd2a5",
+"lote": "r3"
+},
+"orientacion-e-intervencion-familiar-contexto-educativo": {
+"ok": true,
+"mb": 0.3,
+"paginas": 96,
+"sha1": "646a3a98cb12dc7b9b4be758acf56fc697169a16",
+"lote": "r3"
+},
+"cuestion-sexo-que-dice-biologia-acerca": {
+"ok": true,
+"mb": 1.1,
+"paginas": 35,
+"sha1": "67b8cba815c8e0aa795abd486f045e407f9c8756",
+"lote": "r3"
+},
+"costos-invisibles-liderazgo-femenino": {
+"ok": true,
+"mb": 5.3,
+"paginas": 113,
+"sha1": "9f4d137c2f2d8d71cf3aea4501280d69fc414778",
+"lote": "r3"
+},
+"error-o-fraude-enganos-equivocaciones-investigacion": {
+"ok": true,
+"mb": 29.6,
+"paginas": 204,
+"sha1": "9b27250d277544ace97aa9c5fe2bcaec8f5913b9",
+"lote": "r3"
+},
+"ser-viejo-testimonios-reflexiones-primera-persona": {
+"ok": false,
+"err": "HTTP Error 401: ",
+"definitivo": false
+},
+"situacion-poblacion-adulta-mayor-peru-camino": {
+"ok": true,
+"mb": 2.5,
+"paginas": 122,
+"sha1": "f1877e0659724dc5bc4ea49348123a78b6782548",
+"lote": "r3"
+},
+"que-leer-filosofia-hoy": {
+"ok": true,
+"mb": 37.8,
+"paginas": 235,
+"sha1": "0574525c45928f6a338711b587a6ec2a873fd613",
+"lote": "r3"
+},
+"dilemas-femineidad-mujeres-clase-media-peru": {
+"ok": true,
+"mb": 35.1,
+"paginas": 240,
+"sha1": "b7acb4dc4eeb1029d49a9e0f676cc15d5bef01e7",
+"lote": "r3"
+},
+"habia-e-s-i-cuentos-promover": {
+"ok": true,
+"mb": 4.9,
+"paginas": 70,
+"sha1": "35b7c9417a9a1968ca4aaebd55bc31e3c745dfef",
+"lote": "r3"
+},
+"miradas-hacia-educacion-inclusiva-ii-jornada": {
+"ok": true,
+"mb": 1.9,
+"paginas": 255,
+"sha1": "13915a61cba7e8a9aed8962ced0ae5a9476e5175",
+"lote": "r3"
+},
+"hijos-e-hijas-victimas-femicidio-aportes": {
+"ok": true,
+"mb": 2.8,
+"paginas": 99,
+"sha1": "ef6aad5badd88ed1f98f63ef392f9c273e5e851e",
+"lote": "r3"
+},
+"factores-sociodemograficos-nutricionales-relacionados-desarr": {
+"ok": true,
+"mb": 4.0,
+"paginas": 28,
+"sha1": "e36b6072efdf40a50ed6efb7903d5f1841a49134",
+"lote": "r3"
+},
+"codigo-penal-frenopatologia-o-sea-manera": {
+"ok": true,
+"mb": 13.1,
+"paginas": 61,
+"sha1": "d5832c17cb7e78b145040acb2df88df5b5323445",
+"lote": "r3"
+},
+"mas-alla-muerte-hacia-antropologia-memoria": {
+"ok": true,
+"mb": 4.9,
+"paginas": 239,
+"sha1": "8dfe0b8d922a13a31d49e2dadb6001bbe48d4edd",
+"lote": "r3"
+},
+"pedagogias-sensibles-sabores-saberes-cuerpo-educacion": {
+"ok": true,
+"mb": 0.9,
+"paginas": 133,
+"sha1": "882eddbda0f155fb6e2aae2d32c43440ab00de70",
+"lote": "r3"
+},
+"educacion-moral-ensenanza-obligatoria": {
+"ok": false,
+"mb": 50.2,
+"err": "supera 45 MB (50.2)",
+"definitivo": true
+},
+"educacion-revisitada-ensayos-hermeneutica-pedagogica": {
+"ok": true,
+"mb": 2.8,
+"paginas": 490,
+"sha1": "8a03e81fc812952809266a0538cf73b1aec55753",
+"lote": "r3"
+},
+"cartas-cierto-saber-alma-ejercicios-educativos": {
+"ok": true,
+"mb": 13.8,
+"paginas": 450,
+"sha1": "c4c9ef40bc4eecc73f167bbee7aee287619f1131",
+"lote": "r3"
+},
+"lengua-comunicacion-intergrupal": {
+"ok": true,
+"mb": 0.5,
+"paginas": 176,
+"sha1": "c1c4684f1d2ebb321f90df18367aa84a5bf138d0",
+"lote": "r3"
+},
+"aprendizaje-cultura-desarrollo-aproximacion-interdisciplinar": {
+"ok": true,
+"mb": 1.7,
+"paginas": 242,
+"sha1": "43b6f2c2321d62ab02303fa1eda16ec6a412195a",
+"lote": "r3"
+},
+"aplicacion-paradigma-calidad-vida": {
+"ok": false,
+"err": "bundles no JSON: https://gredos.usal.es/server/api/core/items/7a48b95a-c44c-4ed1-b18f-4 | b'<!doctype html><html lang=\"en\"><head><title>Making sure yo",
+"definitivo": false
+},
+"programa-intervencion-familiar-pif-manual-tecnico": {
+"ok": true,
+"mb": 2.6,
+"paginas": 160,
+"sha1": "a57fbd516bdcda501dcee47aa944611efcd6c054",
+"lote": "r3"
+},
+"acogimiento-familiar-andalucia-procesos-familiares-perfiles": {
+"ok": true,
+"mb": 3.2,
+"paginas": 198,
+"sha1": "c4167d9f26eb6440da4938a08e8a5505d33f8aa6",
+"lote": "r3"
+},
+"comunicacion-asistencial-medicos-i-parte-aspectos": {
+"ok": true,
+"mb": 0.7,
+"paginas": 49,
+"sha1": "bb0b0a236c8fdf758c41f2958ae89e4d08195821",
+"lote": "r3"
+},
+"mirada-impactos-psicosociales-personas-refugiadas-migrantes": {
+"ok": true,
+"mb": 2.1,
+"paginas": 48,
+"sha1": "5f532ad50c95dc12a044219107c0f10d31c5e356",
+"lote": "r3"
+},
+"no-estoy-viajando-callado-historia-vida": {
+"ok": true,
+"mb": 2.5,
+"paginas": 400,
+"sha1": "483bd2a3a9217fc6399dd853ec942acb551284fd",
+"lote": "r3"
+},
+"realidad-como-misterio-elogio-asombro-admiracion": {
+"ok": true,
+"mb": 0.9,
+"paginas": 250,
+"sha1": "0a00b1a9bb66b18c90921ae781bf44fb4728be0d",
+"lote": "r3"
+},
+"yo-como-diferente-libro-toda-familia": {
+"ok": true,
+"mb": 19.9,
+"paginas": 104,
+"sha1": "621549e2fc03232f702428bc8a485c71a897e689",
+"lote": "r3"
+},
+"creatividad-generacion-ideas-estudio-practica-creativa": {
+"ok": false,
+"err": "no es PDF",
+"definitivo": true
+},
+"nino-frente-imagen-filmica-ruptura-intento": {
+"ok": true,
+"mb": 12.0,
+"paginas": 122,
+"sha1": "ae6854db900750109cbc10b8814effa6ef9150c8",
+"lote": "r3"
+},
+"bioetica-maternidad-humanizacion-comunicacion-entorno-sanita": {
+"ok": true,
+"mb": 5.3,
+"paginas": 223,
+"sha1": "8655ffd2d40a2a362f1640ef0a2170435e98ff1e",
+"lote": "r3"
+},
+"ensenanza-aprendizaje-conferencias-dadas-casa-pueblo": {
+"ok": true,
+"mb": 20.6,
+"paginas": 131,
+"sha1": "633786975dde512e5fd0eeaaf751d6c4abfea6ae",
+"lote": "r3"
+},
+"familias-tejedoras-futuro-propuesta-investigacion-intervenci": {
+"ok": true,
+"mb": 3.0,
+"paginas": 171,
+"sha1": "e3eea68b69846f0b984ea3fd67268ef76d932c87",
+"lote": "r3"
+},
+"psicoanalisis-dialogo-epistemologia-programa-investigacion": {
+"ok": true,
+"mb": 1.9,
+"paginas": 181,
+"sha1": "075a8ca2fb43140881676caf3f622957018abaca",
+"lote": "r3"
+}
+}
