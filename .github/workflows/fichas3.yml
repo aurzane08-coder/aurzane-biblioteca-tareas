@@ -1,0 +1,35 @@
+name: Biblioteca fichas ronda 3
+on:
+  push:
+    branches: [main]
+    paths: ['biblioteca-src/fichas3.py']
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency: biblioteca-fichas3
+jobs:
+  fichas:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install -q pillow
+      - name: Buscar ediciones y portadas
+        working-directory: biblioteca-src
+        run: mkdir -p cosecha3 && SALIDA=/tmp/fichas python3 -u fichas_ol.py 2>&1 | tee cosecha3/fichas.log || true
+      - name: Publicar portadas en la rama transito-fichas3
+        if: always()
+        run: |
+          [ -d /tmp/fichas ] || exit 0
+          cd /tmp/fichas
+          git init -q -b transito-fichas3
+          git config user.name "aurzane-bot"; git config user.email "bot@aurzane.com"
+          git add -A && git commit -q -m "portadas fichas ronda 3"
+          git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" transito-fichas3
+      - name: Guardar
+        if: always()
+        run: |
+          git config user.name "aurzane-bot"; git config user.email "bot@aurzane.com"
+          git add -A biblioteca-src/cosecha3/fichas-ol.json biblioteca-src/cosecha3/fichas.log
+          git commit -m "biblioteca: fichas ronda 3" || exit 0
+          for i in 1 2 3 4 5 6 7 8; do git pull --rebase && git push && break; sleep $((RANDOM % 25 + 5)); done

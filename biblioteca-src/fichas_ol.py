@@ -1,0 +1,72 @@
+# -*- coding: utf-8 -*-
+"""Busca en Open Library la edición en español de cada ficha (ISBN, editorial, año) y su portada.
+Escribe cosecha3/fichas-ol.json y deja las portadas en $SALIDA/fichas/<id>.jpg. Se ejecuta en GitHub Actions."""
+import json, os, re, time, urllib.request, urllib.parse, unicodedata, io
+from PIL import Image
+from fichas3 import FICHAS3
+UA = {'User-Agent': 'AURZANE-Biblioteca/1.0 (+https://aurzane.com/biblioteca/)'}
+SALIDA = os.environ.get('SALIDA', '/tmp/transito')
+os.makedirs(SALIDA + '/fichas', exist_ok=True)
+def get(u, raw=False):
+    for i in range(3):
+        try:
+            b = urllib.request.urlopen(urllib.request.Request(u, headers=UA), timeout=60).read()
+            return b if raw else json.loads(b)
+        except Exception as e:
+            err = e; time.sleep(2 + 3 * i)
+    raise err
+def norm(s):
+    s = unicodedata.normalize('NFD', str(s or '').lower())
+    return re.sub(r'[^a-z0-9 ]', ' ', ''.join(c for c in s if unicodedata.category(c) != 'Mn'))
+def pal(s): return [w for w in norm(s).split() if len(w) > 2]
+def parecido(a, b):
+    pa, pb = pal(a.split('.')[0]), set(pal(b))
+    return sum(1 for w in pa if w in pb) / max(1, len(pa))
+def portada(cid):
+    try:
+        b = get('https://covers.openlibrary.org/b/id/%s-L.jpg?default=false' % cid, raw=True)
+        im = Image.open(io.BytesIO(b)); im.load()
+        if im.size[0] < 150 or im.size[1] < 200: return None
+        im = im.convert('RGB')
+        if im.size[0] > 420: im = im.resize((420, round(im.size[1] * 420 / im.size[0])), Image.LANCZOS)
+        o = io.BytesIO(); im.save(o, 'JPEG', quality=84, optimize=True); return o.getvalue()
+    except Exception:
+        return None
+res = {}
+for f in FICHAS3:
+    r = {'ok': False}
+    try:
+        autor = f['autores'].split(' y ')[0].split(',')[0]
+        q = urllib.parse.urlencode({'title': f['titulo'].split('.')[0], 'author': autor, 'limit': 10, 'fields': 'key,title,author_name,cover_i,language,edition_count'})
+        docs = get('https://openlibrary.org/search.json?' + q).get('docs', [])
+        docs = [d for d in docs if parecido(f['titulo'], d.get('title', '')) >= 0.6 or parecido(d.get('title', ''), f['titulo']) >= 0.6]
+        docs = [d for d in docs if any(w in norm(' '.join(d.get('author_name', []))) for w in pal(autor)[-1:])]
+        mejor = None
+        for d in docs:
+            eds = get('https://openlibrary.org%s/editions.json?limit=100' % d['key']).get('entries', [])
+            for e in eds:
+                langs = [l.get('key', '') for l in e.get('languages', [])]
+                if '/languages/spa' not in langs or not e.get('covers'): continue
+                if parecido(f['titulo'], e.get('title', '') + ' ' + e.get('subtitle', '')) < 0.6: continue
+                isbn = (e.get('isbn_13') or e.get('isbn_10') or [''])[0]
+                cand = dict(edicion=e.get('key'), titulo_ed=e.get('title'), isbn=isbn, editorial=(e.get('publishers') or [''])[0],
+                            anio=(re.search(r'(1[89]|20)\d\d', e.get('publish_date', '') or '') or [''])[0], cover=e['covers'][0])
+                if not mejor or (isbn and not mejor['isbn']) or (cand['anio'] > mejor['anio'] and bool(isbn) == bool(mejor['isbn'])): mejor = cand
+            time.sleep(0.5)
+        if not mejor and docs and docs[0].get('cover_i'):
+            mejor = dict(edicion=docs[0]['key'], titulo_ed=docs[0]['title'], isbn='', editorial='', anio='', cover=docs[0]['cover_i'], solo_obra=True)
+        if mejor:
+            img = portada(mejor['cover'])
+            if img:
+                open('%s/fichas/%s.jpg' % (SALIDA, f['id']), 'wb').write(img)
+                r = dict(mejor, ok=True)
+            else:
+                r = dict(mejor, ok=False, err='portada no válida')
+        else:
+            r['err'] = 'sin edición en español con portada'
+    except Exception as e:
+        r['err'] = str(e)[:150]
+    res[f['id']] = r; print(f['id'], r, flush=True)
+    time.sleep(0.5)
+json.dump(res, open('cosecha3/fichas-ol.json', 'w'), ensure_ascii=False, indent=1)
+print('ok', sum(1 for v in res.values() if v.get('ok')), 'de', len(res))
