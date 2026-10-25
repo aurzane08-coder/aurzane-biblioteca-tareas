@@ -1,6 +1,7 @@
 User-agent: *
 Disallow: /wp-admin/
 Allow: /wp-admin/admin-ajax.php
+Crawl-delay: 10
 
 Sitemap: https://aurzane.com/sitemap.xml
 Sitemap: https://aurzane.com/sitemap-biblioteca.xml
