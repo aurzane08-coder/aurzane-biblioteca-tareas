@@ -3,7 +3,9 @@
 Escribe cosecha3/fichas-ol.json y deja las portadas en $SALIDA/fichas/<id>.jpg. Se ejecuta en GitHub Actions."""
 import json, os, re, time, urllib.request, urllib.parse, unicodedata, io
 from PIL import Image
-from fichas3 import FICHAS3
+MOD = os.environ.get('FICHAS', 'fichas3')  # fichas3 o fichas4
+FICHAS3 = getattr(__import__(MOD), MOD.upper())
+OUT = {'fichas3': 'cosecha3/fichas-ol.json'}.get(MOD, 'cosecha4/%s-ol.json' % MOD)
 UA = {'User-Agent': 'AURZANE-Biblioteca/1.0 (+https://aurzane.com/biblioteca/)'}
 SALIDA = os.environ.get('SALIDA', '/tmp/transito')
 os.makedirs(SALIDA + '/fichas', exist_ok=True)
@@ -33,7 +35,7 @@ def portada(cid):
         o = io.BytesIO(); im.save(o, 'JPEG', quality=84, optimize=True); return o.getvalue()
     except Exception:
         return None
-PREV = json.load(open('cosecha3/fichas-ol.json')) if os.path.exists('cosecha3/fichas-ol.json') else {}
+PREV = json.load(open(OUT)) if os.path.exists(OUT) else {}
 res = {}
 for f in FICHAS3:
     if PREV.get(f['id'], {}).get('ok') and not PREV[f['id']].get('solo_obra') and os.path.exists('%s/fichas/%s.jpg' % (SALIDA, f['id'])):
@@ -91,5 +93,6 @@ for f in FICHAS3:
         r['err'] = str(e)[:150]
     res[f['id']] = r; print(f['id'], r, flush=True)
     time.sleep(0.5)
-json.dump(res, open('cosecha3/fichas-ol.json', 'w'), ensure_ascii=False, indent=1)
+os.makedirs(os.path.dirname(OUT), exist_ok=True)
+json.dump(res, open(OUT, 'w'), ensure_ascii=False, indent=1)
 print('ok', sum(1 for v in res.values() if v.get('ok')), 'de', len(res))

@@ -1,0 +1,39 @@
+name: Biblioteca fichas ronda 4
+on:
+  push:
+    branches: [main]
+    paths: ['biblioteca-src/fichas4.py']
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency: biblioteca-fichas4
+jobs:
+  fichas:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install -q pillow
+      - name: Recuperar portadas anteriores
+        run: |
+          git clone -q --depth 1 -b transito-fichas4 "https://github.com/${{ github.repository }}.git" /tmp/fichas || mkdir -p /tmp/fichas
+          rm -rf /tmp/fichas/.git
+      - name: Buscar ediciones y portadas
+        working-directory: biblioteca-src
+        run: mkdir -p cosecha4 && FICHAS=fichas4 SALIDA=/tmp/fichas python3 -u fichas_ol.py 2>&1 | tee cosecha4/fichas4.log || true
+      - name: Publicar portadas en la rama transito-fichas4
+        if: always()
+        run: |
+          [ -d /tmp/fichas ] || exit 0
+          cd /tmp/fichas
+          git init -q -b transito-fichas4
+          git config user.name "aurzane-bot"; git config user.email "bot@aurzane.com"
+          git add -A && git commit -q -m "portadas fichas ronda 4"
+          git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" transito-fichas4
+      - name: Guardar
+        if: always()
+        run: |
+          git config user.name "aurzane-bot"; git config user.email "bot@aurzane.com"
+          git add -A biblioteca-src/cosecha4/fichas4-ol.json biblioteca-src/cosecha4/fichas4.log
+          git commit -m "biblioteca: fichas ronda 4" || exit 0
+          for i in 1 2 3 4 5 6 7 8; do git pull --rebase && git push && break; sleep $((RANDOM % 25 + 5)); done
