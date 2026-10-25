@@ -1,0 +1,263 @@
+{
+ "ref-piensa-como-un-monje": {
+  "ok": false,
+  "err": "sin edición en español con portada"
+ },
+ "ref-ama-y-no-sufras": {
+  "edicion": "/books/OL27143293M",
+  "titulo_ed": "Ama y no sufras",
+  "isbn": "9786074006667",
+  "editorial": "EDITORIAL OCEANO DE MEXICO, SA DE CV",
+  "anio": "2012",
+  "cover": 13236634,
+  "ok": true
+ },
+ "ref-cinco-heridas": {
+  "ok": false,
+  "err": "sin edición en español con portada"
+ },
+ "ref-poder-pensamiento-positivo": {
+  "ok": false,
+  "err": "sin edición en español con portada"
+ },
+ "ref-no-te-ahogues-vaso-agua": {
+  "ok": false,
+  "err": "HTTP Error 404: Not Found"
+ },
+ "ref-poder-ser-vulnerable": {
+  "ok": false,
+  "err": "sin edición en español con portada"
+ },
+ "ref-disciplina-positiva": {
+  "ok": false,
+  "err": "HTTP Error 404: Not Found"
+ },
+ "ref-como-hablar-hijos-escuchen": {
+  "ok": false,
+  "err": "sin edición en español con portada"
+ },
+ "ref-tormenta-cerebral": {
+  "edicion": "/works/OL17346112W",
+  "titulo_ed": "Tormenta cerebral",
+  "isbn": "",
+  "editorial": "",
+  "anio": "",
+  "cover": 7425045,
+  "solo_obra": true,
+  "ok": true
+ },
+ "ref-sociedad-del-cansancio": {
+  "ok": false,
+  "err": "sin edición en español con portada"
+ },
+ "ref-mindfulness-guia-practica": {
+  "edicion": "/works/OL19643667W",
+  "titulo_ed": "Mindfulness",
+  "isbn": "",
+  "editorial": "",
+  "anio": "",
+  "cover": 8560757,
+  "solo_obra": true,
+  "ok": true
+ },
+ "ref-comunicacion-no-violenta": {
+  "ok": false,
+  "err": "sin edición en español con portada"
+ },
+ "ref-cinco-lenguajes-amor": {
+  "edicion": "/works/OL26384247W",
+  "titulo_ed": "Los 5 lenguajes del amor",
+  "isbn": "",
+  "editorial": "",
+  "anio": "",
+  "cover": 12331152,
+  "solo_obra": true,
+  "ok": true
+ },
+ "ref-ventajas-de-ser-invisible": {
+  "ok": false,
+  "err": "sin edición en español con portada"
+ },
+ "ref-tortugas-hasta-abajo": {
+  "ok": false,
+  "err": "sin edición en español con portada"
+ },
+ "ref-razones-seguir-viviendo": {
+  "edicion": "/works/OL17366769W",
+  "titulo_ed": "Razones para seguir viviendo",
+  "isbn": "",
+  "editorial": "",
+  "anio": "",
+  "cover": 7444993,
+  "solo_obra": true,
+  "ok": true
+ },
+ "ref-nada-se-opone-noche": {
+  "ok": false,
+  "err": "sin edición en español con portada"
+ },
+ "ref-emocionario": {
+  "edicion": "/works/OL17047885W",
+  "titulo_ed": "Emocionario",
+  "isbn": "",
+  "editorial": "",
+  "anio": "",
+  "cover": 13947520,
+  "solo_obra": true,
+  "ok": true
+ },
+ "ref-monstruo-de-colores": {
+  "edicion": "/works/OL37518834W",
+  "titulo_ed": "EL MONSTRUO DE COLORES DOCTOR EMOCIONES.",
+  "isbn": "",
+  "editorial": "",
+  "anio": "",
+  "cover": 14567182,
+  "solo_obra": true,
+  "ok": true
+ },
+ "ref-educar-en-el-asombro": {
+  "edicion": "/works/OL17052189W",
+  "titulo_ed": "Educar en el asombro",
+  "isbn": "",
+  "editorial": "",
+  "anio": "",
+  "cover": 7295137,
+  "solo_obra": true,
+  "ok": true
+ },
+ "ref-cerebro-nino-padres": {
+  "edicion": "/works/OL17302814W",
+  "titulo_ed": "El cerebro del niño explicado a los padres",
+  "isbn": "",
+  "editorial": "",
+  "anio": "",
+  "cover": 7384685,
+  "solo_obra": true,
+  "ok": true
+ },
+ "ref-neuroeducacion-mora": {
+  "edicion": "/books/OL33884214M",
+  "titulo_ed": "Neuroeducación",
+  "isbn": "9788491047803",
+  "editorial": "Alianza",
+  "anio": "2020",
+  "cover": 11996256,
+  "ok": true
+ },
+ "ref-mito-normalidad": {
+  "ok": false,
+  "err": "sin edición en español con portada"
+ },
+ "ref-cuando-cuerpo-dice-no": {
+  "edicion": "/works/OL34811315W",
+  "titulo_ed": "Cuando el cuerpo dice \"NO\"",
+  "isbn": "",
+  "editorial": "",
+  "anio": "",
+  "cover": 13574832,
+  "solo_obra": true,
+  "ok": true
+ },
+ "ref-lo-que-no-tiene-nombre": {
+  "edicion": "/books/OL26375629M",
+  "titulo_ed": "Lo que no tiene nombre",
+  "isbn": "9789587585339",
+  "editorial": "Alfaguara",
+  "anio": "2013",
+  "cover": 8065374,
+  "ok": true
+ },
+ "ref-bailarina-auschwitz": {
+  "ok": false,
+  "err": "sin edición en español con portada"
+ },
+ "ref-en-auschwitz-no-habia-prozac": {
+  "ok": false,
+  "err": "sin edición en español con portada"
+ },
+ "ref-inquebrantables": {
+  "edicion": "/books/OL27908028M",
+  "titulo_ed": "Inquebrantables",
+  "isbn": "9781400220366",
+  "editorial": "HarperCollins Leadership",
+  "anio": "2019",
+  "cover": 9262620,
+  "ok": true
+ },
+ "ref-miedo-es-de-valientes": {
+  "ok": false,
+  "err": "sin edición en español con portada"
+ },
+ "ref-inteligencia-social": {
+  "edicion": "/books/OL9178814M",
+  "titulo_ed": "Inteligencia Social/Social Intelligence",
+  "isbn": "9789703705627",
+  "editorial": "Planeta",
+  "anio": "2006",
+  "cover": 2295945,
+  "ok": true
+ },
+ "ref-ruido": {
+  "ok": false,
+  "err": "sin edición en español con portada"
+ },
+ "ref-indistraible": {
+  "ok": false,
+  "err": "sin edición en español con portada"
+ },
+ "ref-enfocate": {
+  "ok": false,
+  "err": "sin edición en español con portada"
+ },
+ "ref-minimalismo-digital": {
+  "ok": false,
+  "err": "sin edición en español con portada"
+ },
+ "ref-arte-de-pensar": {
+  "edicion": "/books/OL27227997M",
+  "titulo_ed": "El arte de pensar",
+  "isbn": "9788490702161",
+  "editorial": "",
+  "anio": "2016",
+  "cover": 13163564,
+  "ok": true
+ },
+ "ref-diario-estoicos": {
+  "ok": false,
+  "err": "sin edición en español con portada"
+ },
+ "ref-vivir-sin-miedos": {
+  "edicion": "/works/OL17319313W",
+  "titulo_ed": "Vivir sin miedos",
+  "isbn": "",
+  "editorial": "",
+  "anio": "",
+  "cover": 7887115,
+  "solo_obra": true,
+  "ok": true
+ },
+ "ref-sutil-arte": {
+  "ok": false,
+  "err": "sin edición en español con portada"
+ },
+ "ref-deja-de-ser-tu": {
+  "edicion": "/works/OL45126604W",
+  "titulo_ed": "Deja de ser tú",
+  "isbn": "",
+  "editorial": "",
+  "anio": "",
+  "cover": 15210167,
+  "solo_obra": true,
+  "ok": true
+ },
+ "ref-diario-ana-frank": {
+  "edicion": "/books/OL39814322M",
+  "titulo_ed": "El diario de Ana Frank",
+  "isbn": "9789685146074",
+  "editorial": "Ediciones Leyenda",
+  "anio": "2007",
+  "cover": 14829414,
+  "ok": true
+ }
+}
