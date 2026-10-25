@@ -48,7 +48,25 @@ for f in FICHAS3:
         docs = [d for d in docs if parecido(f['titulo'], d.get('title', '')) >= 0.6 or parecido(d.get('title', ''), f['titulo']) >= 0.6]
         docs = [d for d in docs if any(w in norm(' '.join(d.get('author_name', []))) for w in pal(autor)[-1:])]
         mejor = None
-        for d in docs:
+        # 1) búsqueda con ediciones: OL devuelve la edición que mejor encaja (título en español aunque la obra esté en otro idioma)
+        try:
+            q0 = urllib.parse.urlencode({'q': '%s %s language:spa' % (f['titulo'].split('.')[0], pal(autor)[-1] if pal(autor) else ''), 'limit': 8,
+                                         'fields': 'key,title,author_name,editions,editions.key,editions.title,editions.subtitle,editions.language,editions.isbn,editions.publisher,editions.publish_date,editions.cover_i'})
+            for d in get('https://openlibrary.org/search.json?' + q0).get('docs', []):
+                if not any(w in norm(' '.join(d.get('author_name', []))) for w in pal(autor)[-1:]): continue
+                for e in (d.get('editions') or {}).get('docs', []):
+                    if 'spa' not in (e.get('language') or []): continue
+                    if parecido(f['titulo'], e.get('title', '') + ' ' + e.get('subtitle', '')) < 0.6: continue
+                    isbn = next((i for i in e.get('isbn', []) if len(i) == 13), '') or (e.get('isbn') or [''])[0]
+                    cov = e.get('cover_i') or ('https://covers.openlibrary.org/b/isbn/%s-L.jpg?default=false' % isbn if isbn else None)
+                    if not cov: continue
+                    mejor = dict(edicion=e['key'], titulo_ed=e.get('title'), isbn=isbn, editorial=(e.get('publisher') or [''])[0],
+                                 anio=(re.search(r'(1[89]|20)\d\d', ' '.join(e.get('publish_date') or [])) or [''])[0], cover=cov, via='ediciones-es')
+                    break
+                if mejor: break
+        except Exception as ex:
+            print('ediciones', str(ex)[:80])
+        for d in ([] if mejor else docs):
             eds = get('https://openlibrary.org%s/editions.json?limit=100' % d['key']).get('entries', [])
             for e in eds:
                 langs = [l.get('key', '') for l in e.get('languages', [])]
@@ -70,6 +88,7 @@ for f in FICHAS3:
         if not mejor:  # Google Books, solo ediciones en español
             try:
                 gq = urllib.parse.urlencode({'q': 'intitle:' + f['titulo'].split('.')[0] + ' inauthor:' + pal(autor)[-1], 'langRestrict': 'es', 'maxResults': 10, 'printType': 'books'})
+                time.sleep(2)
                 for it in get('https://www.googleapis.com/books/v1/volumes?' + gq).get('items', []):
                     vi = it['volumeInfo']
                     if vi.get('language') != 'es' or parecido(f['titulo'], vi.get('title', '')) < 0.6 or not vi.get('imageLinks'): continue
