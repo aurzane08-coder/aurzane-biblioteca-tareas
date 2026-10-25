@@ -1,22 +1,22 @@
 {
  "ref-cerebro-idiota": {
-  "edicion": "/works/OL24209363W",
+  "edicion": "/books/OL31982635M",
   "titulo_ed": "El cerebro idiota",
-  "isbn": "",
-  "editorial": "",
-  "anio": "",
+  "isbn": "9788499985404",
+  "editorial": "Ediciones Martínez Roca",
+  "anio": "2016",
   "cover": 10657259,
-  "solo_obra": true,
+  "via": "ediciones-es",
   "ok": true
  },
  "ref-factfulness": {
-  "edicion": "/works/OL17877260W",
+  "edicion": "ttl:https://www.todostuslibros.com/libros/factfulness_978-84-234-2996-7",
   "titulo_ed": "Factfulness",
-  "isbn": "",
-  "editorial": "",
+  "isbn": "9788423429967",
+  "editorial": "Deusto",
   "anio": "",
-  "cover": 8186237,
-  "solo_obra": true,
+  "cover": "https://static.cegal.es/imagenes/marcadas/9788423/978842342996.gif",
+  "via": "todostuslibros",
   "ok": true
  },
  "ref-piensalo-otra-vez": {
@@ -30,17 +30,23 @@
   "ok": true
  },
  "ref-racionalidad": {
-  "ok": false,
-  "err": "sin edición en español con portada"
+  "edicion": "/books/OL43589558M",
+  "titulo_ed": "Racionalidad",
+  "isbn": "9788449338618",
+  "editorial": "Ediciones Paidós",
+  "anio": "2021",
+  "cover": 13029504,
+  "via": "ediciones-es",
+  "ok": true
  },
  "ref-trampa-inteligencia": {
-  "edicion": "/works/OL34870209W",
+  "edicion": "/books/OL47225529M",
   "titulo_ed": "La trampa de la inteligencia",
-  "isbn": "",
-  "editorial": "",
-  "anio": "",
+  "isbn": "9788449336164",
+  "editorial": "Ediciones Paidós",
+  "anio": "2019",
   "cover": 13663340,
-  "solo_obra": true,
+  "via": "ediciones-es",
   "ok": true
  },
  "ref-efecto-expectativa": {
@@ -58,17 +64,23 @@
   "ok": true
  },
  "ref-portarse-mal": {
-  "ok": false,
-  "err": "sin edición en español con portada"
+  "edicion": "/books/OL42895673M",
+  "titulo_ed": "PORTARSE MAL",
+  "isbn": "9789501296525",
+  "editorial": "PAIDOS",
+  "anio": "",
+  "cover": 13480513,
+  "via": "ediciones-es",
+  "ok": true
  },
  "ref-mentimos-especial-nosotros-mismos": {
-  "edicion": "/works/OL24502976W",
+  "edicion": "/books/OL32468892M",
   "titulo_ed": "Por qué mentimos... en especial a nosotros mismos",
-  "isbn": "",
-  "editorial": "",
-  "anio": "",
+  "isbn": "9788434405523",
+  "editorial": "Editorial Ariel",
+  "anio": "2012",
   "cover": 11125682,
-  "solo_obra": true,
+  "via": "ediciones-es",
   "ok": true
  },
  "ref-escasez": {
@@ -106,33 +118,33 @@
   "ok": true
  },
  "ref-decisiones-instintivas": {
-  "edicion": "/works/OL34970111W",
+  "edicion": "/books/OL47332267M",
   "titulo_ed": "Decisiones instintivas",
-  "isbn": "",
-  "editorial": "",
-  "anio": "",
+  "isbn": "9788434429178",
+  "editorial": "Editorial Ariel",
+  "anio": "2018",
   "cover": 13918870,
-  "solo_obra": true,
+  "via": "ediciones-es",
   "ok": true
  },
  "ref-enganos-mente": {
-  "edicion": "/works/OL16808019W",
+  "edicion": "/books/OL25432364M",
   "titulo_ed": "Los engaños de la mente",
-  "isbn": "",
-  "editorial": "",
-  "anio": "",
-  "cover": 7263866,
-  "solo_obra": true,
+  "isbn": "9788467251678",
+  "editorial": "Destino",
+  "anio": "2012",
+  "cover": 7263867,
+  "via": "ediciones-es",
   "ok": true
  },
  "ref-creemos-mierdas": {
-  "edicion": "/works/OL25311028W",
+  "edicion": "/books/OL33897450M",
   "titulo_ed": "Por qué creemos en mierdas",
-  "isbn": "",
-  "editorial": "",
-  "anio": "",
+  "isbn": "9788417248734",
+  "editorial": "Kailas Editorial, S.L.",
+  "anio": "2020",
   "cover": 12008322,
-  "solo_obra": true,
+  "via": "ediciones-es",
   "ok": true
  },
  "ref-desafios-memoria": {
@@ -150,8 +162,14 @@
   "err": "sin edición en español con portada"
  },
  "ref-busca-memoria": {
-  "ok": false,
-  "err": "sin edición en español con portada"
+  "edicion": "ttl:https://www.todostuslibros.com/libros/en-busca-de-la-memoria_978-84-935432-8-0",
+  "titulo_ed": "En busca de la memoria",
+  "isbn": "9788493543280",
+  "editorial": "Katz editores",
+  "anio": "",
+  "cover": "https://static.cegal.es/imagenes/marcadas/9788493/978849354328.gif",
+  "via": "todostuslibros",
+  "ok": true
  },
  "ref-valor-atencion": {
   "edicion": "/books/OL47140038M",
@@ -178,13 +196,13 @@
   "ok": true
  },
  "ref-cerebro-nuestra-historia": {
-  "edicion": "/works/OL17715923W",
+  "edicion": "/books/OL26317299M",
   "titulo_ed": "El cerebro. Nuestra historia",
-  "isbn": "",
-  "editorial": "",
-  "anio": "",
+  "isbn": "9788433964137",
+  "editorial": "Anagrama",
+  "anio": "2017",
   "cover": 7991344,
-  "solo_obra": true,
+  "via": "ediciones-es",
   "ok": true
  },
  "ref-alucinaciones": {
@@ -208,13 +226,13 @@
   "ok": true
  },
  "ref-tu-cerebro-musica": {
-  "edicion": "/works/OL24348498W",
+  "edicion": "/books/OL32240878M",
   "titulo_ed": "Tu cerebro y la musica. Por qué nos gusta la música y por qué disfrutamos con ella",
-  "isbn": "",
-  "editorial": "",
-  "anio": "",
-  "cover": 10872949,
-  "solo_obra": true,
+  "isbn": "9788490569467",
+  "editorial": "RBA Bolsillo",
+  "anio": "2018",
+  "cover": 10872950,
+  "via": "ediciones-es",
   "ok": true
  },
  "ref-proust-calamar": {
@@ -222,8 +240,14 @@
   "err": "sin edición en español con portada"
  },
  "ref-lector-vuelve-casa": {
-  "ok": false,
-  "err": "sin edición en español con portada"
+  "edicion": "ttl:https://www.todostuslibros.com/libros/lector-vuelve-a-casa_978-84-234-3133-5",
+  "titulo_ed": "Lector, vuelve a casa",
+  "isbn": "9788423431335",
+  "editorial": "Deusto",
+  "anio": "",
+  "cover": "https://static.cegal.es/imagenes/marcadas/9788423/978842343133.gif",
+  "via": "todostuslibros",
+  "ok": true
  },
  "ref-vida-secreta-cerebro": {
   "edicion": "/books/OL27100903M",
@@ -236,47 +260,53 @@
   "ok": true
  },
  "ref-siete-lecciones-media-sobre-cerebro": {
-  "edicion": "/works/OL34870166W",
+  "edicion": "/books/OL47225486M",
   "titulo_ed": "Siete lecciones y media sobre el cerebro",
-  "isbn": "",
-  "editorial": "",
-  "anio": "",
+  "isbn": "9788449337963",
+  "editorial": "Ediciones Paidós",
+  "anio": "2021",
   "cover": 13663269,
-  "solo_obra": true,
+  "via": "ediciones-es",
   "ok": true
  },
  "ref-agilidad-emocional": {
-  "edicion": "/works/OL26382932W",
+  "edicion": "/books/OL35622640M",
   "titulo_ed": "AGILIDAD EMOCIONAL",
-  "isbn": "",
-  "editorial": "",
-  "anio": "",
+  "isbn": "9788417030803",
+  "editorial": "Editorial Sirio",
+  "anio": "2018",
   "cover": 12329764,
-  "solo_obra": true,
+  "via": "ediciones-es",
   "ok": true
  },
  "ref-permiso-para-sentir": {
-  "edicion": "/works/OL25902800W",
+  "edicion": "/books/OL34957607M",
   "titulo_ed": "Permiso para sentir",
-  "isbn": "",
-  "editorial": "",
-  "anio": "",
+  "isbn": "9786070772092",
+  "editorial": "Planeta Publishing",
+  "anio": "2021",
   "cover": 12059254,
-  "solo_obra": true,
+  "via": "ediciones-es",
   "ok": true
  },
  "ref-atlas-corazon": {
-  "ok": false,
-  "err": "sin edición en español con portada"
+  "edicion": "ttl:https://www.todostuslibros.com/libros/la-alquimia-del-corazon-n-e_978-84-9111-465-9",
+  "titulo_ed": "La alquimia del corazón (N.E.)",
+  "isbn": "9788491114659",
+  "editorial": "EDICIONES OBELISCO S.L.",
+  "anio": "",
+  "cover": "https://static.cegal.es/imagenes/marcadas/9788491/978849111465.gif",
+  "via": "todostuslibros",
+  "ok": true
  },
  "ref-chachara": {
-  "edicion": "/works/OL34870150W",
+  "edicion": "/books/OL47225469M",
   "titulo_ed": "Cháchara",
-  "isbn": "",
-  "editorial": "",
-  "anio": "",
+  "isbn": "9788449338717",
+  "editorial": "Ediciones Paidós",
+  "anio": "2021",
   "cover": 13663242,
-  "solo_obra": true,
+  "via": "ediciones-es",
   "ok": true
  },
  "ref-anatomia-miedo": {
@@ -321,24 +351,23 @@
   "ok": true
  },
  "ref-me-quiero-te-quiero": {
-  "edicion": "/books/OL52216163M",
-  "titulo_ed": "Me Quiero, Te Quiero. el Cuaderno / I Love Myself, I Love You. the Notebook",
-  "isbn": "9788402429582",
+  "edicion": "/books/OL37801996M",
+  "titulo_ed": "Me quiero, te quiero",
+  "isbn": "9788402424587",
   "editorial": "Bruguera",
-  "anio": "2024",
-  "cover": "https://covers.openlibrary.org/b/isbn/9788402429582-L.jpg?default=false",
+  "anio": "2022",
+  "cover": 12709637,
   "via": "ediciones-es",
-  "ok": false,
-  "err": "portada no válida"
+  "ok": true
  },
  "ref-si-duele-no-es-amor": {
-  "edicion": "/works/OL34804662W",
+  "edicion": "/books/OL47157218M",
   "titulo_ed": "Si duele, no es amor",
-  "isbn": "",
-  "editorial": "",
-  "anio": "",
+  "isbn": "9788408165583",
+  "editorial": "Zenith",
+  "anio": "2017",
   "cover": 13563830,
-  "solo_obra": true,
+  "via": "ediciones-es",
   "ok": true
  },
  "ref-cuando-amar-demasiado-es-depender": {
@@ -362,23 +391,23 @@
   "ok": true
  },
  "ref-sin-miedo": {
-  "edicion": "/works/OL24606552W",
+  "edicion": "/books/OL47548417M",
   "titulo_ed": "Sin miedo",
-  "isbn": "",
-  "editorial": "",
-  "anio": "",
-  "cover": 11272373,
-  "solo_obra": true,
+  "isbn": "9788425363214",
+  "editorial": "GRIJALBO",
+  "anio": "2022",
+  "cover": 14167049,
+  "via": "ediciones-es",
   "ok": true
  },
  "ref-autoestima": {
-  "edicion": "/works/OL15166392W",
+  "edicion": "/books/OL24234005M",
   "titulo_ed": "La autoestima",
-  "isbn": "",
-  "editorial": "",
-  "anio": "",
+  "isbn": "9788467024654",
+  "editorial": "Espasa Calpe",
+  "anio": "2007",
   "cover": 6389942,
-  "solo_obra": true,
+  "via": "ediciones-es",
   "ok": true
  },
  "ref-hombre-light": {
@@ -402,15 +431,14 @@
   "ok": true
  },
  "ref-bienvenido-dolor": {
-  "edicion": "/books/OL36793553M",
-  "titulo_ed": "Bienvenido Dolor",
-  "isbn": "9786070717550",
-  "editorial": "Editorial Planeta, S. A.",
-  "anio": "2013",
-  "cover": "https://covers.openlibrary.org/b/isbn/9786070717550-L.jpg?default=false",
+  "edicion": "/books/OL35626890M",
+  "titulo_ed": "Bienvenido dolor",
+  "isbn": "9789562476010",
+  "editorial": "Planeta",
+  "anio": "2012",
+  "cover": 12333890,
   "via": "ediciones-es",
-  "ok": false,
-  "err": "portada no válida"
+  "ok": true
  },
  "ref-brujula-interior": {
   "edicion": "/books/OL9153350M",
@@ -423,25 +451,24 @@
   "ok": true
  },
  "ref-agilmente": {
-  "edicion": "/works/OL26378568W",
+  "edicion": "/books/OL35617976M",
   "titulo_ed": "AGILMENTE",
-  "isbn": "",
-  "editorial": "",
-  "anio": "",
+  "isbn": "9789877251715",
+  "editorial": "Sudamericana.",
+  "anio": "2014",
   "cover": 12325155,
-  "solo_obra": true,
+  "via": "ediciones-es",
   "ok": true
  },
  "ref-encambio": {
-  "edicion": "/books/OL29794072M",
+  "edicion": "/books/OL47436933M",
   "titulo_ed": "EnCambio",
-  "isbn": "9786073128827",
-  "editorial": "Penguin Random House Grupo Editorial",
-  "anio": "2018",
-  "cover": "https://covers.openlibrary.org/b/isbn/9786073128827-L.jpg?default=false",
+  "isbn": "9788416029396",
+  "editorial": "CONECTA",
+  "anio": "2015",
+  "cover": 14038586,
   "via": "ediciones-es",
-  "ok": false,
-  "err": "portada no válida"
+  "ok": true
  },
  "ref-paradoja-chimpance": {
   "edicion": "/books/OL34101879M",
@@ -454,23 +481,23 @@
   "ok": true
  },
  "ref-sorprendente-verdad-sobre-nos-motiva": {
-  "edicion": "/works/OL34750489W",
+  "edicion": "/books/OL47099770M",
   "titulo_ed": "La sorprendente verdad sobre qué nos motiva",
-  "isbn": "",
-  "editorial": "",
-  "anio": "",
+  "isbn": "9788498750782",
+  "editorial": "Gestion 2000",
+  "anio": "2010",
   "cover": 13473198,
-  "solo_obra": true,
+  "via": "ediciones-es",
   "ok": true
  },
  "ref-cuando": {
-  "edicion": "/works/OL24498390W",
-  "titulo_ed": "¿Cuándo?",
-  "isbn": "",
-  "editorial": "",
-  "anio": "",
-  "cover": 11119098,
-  "solo_obra": true,
+  "edicion": "/books/OL35627793M",
+  "titulo_ed": "CUANDO",
+  "isbn": "9789501297737",
+  "editorial": "PAIDOS",
+  "anio": "2014",
+  "cover": 12334790,
+  "via": "ediciones-es",
   "ok": true
  },
  "ref-cuatro-mil-semanas": {
@@ -494,13 +521,13 @@
   "ok": true
  },
  "ref-secretos-motivacion": {
-  "edicion": "/works/OL17321254W",
+  "edicion": "/books/OL25896801M",
   "titulo_ed": "Los secretos de la motivación",
-  "isbn": "",
-  "editorial": "",
-  "anio": "",
+  "isbn": "9788434413627",
+  "editorial": "Ariel",
+  "anio": "2011",
   "cover": 7400271,
-  "solo_obra": true,
+  "via": "ediciones-es",
   "ok": true
  },
  "ref-amplitud": {
@@ -515,13 +542,13 @@
   "err": "portada no válida"
  },
  "ref-fuera-serie": {
-  "edicion": "/works/OL35105605W",
+  "edicion": "/books/OL47483047M",
   "titulo_ed": "Fuera de serie",
-  "isbn": "",
-  "editorial": "",
-  "anio": "",
+  "isbn": "9788466342438",
+  "editorial": "Debolsillo",
+  "anio": "2018",
   "cover": 14091554,
-  "solo_obra": true,
+  "via": "ediciones-es",
   "ok": true
  },
  "ref-elemento": {
@@ -585,8 +612,14 @@
   "ok": true
  },
  "ref-inteligencia-erotica": {
-  "ok": false,
-  "err": "sin edición en español con portada"
+  "edicion": "ttl:https://www.todostuslibros.com/libros/inteligencia-erotica_978-84-10164-21-5",
+  "titulo_ed": "Inteligencia erótica",
+  "isbn": "9788410164215",
+  "editorial": "Kitsune Books",
+  "anio": "",
+  "cover": "https://static.cegal.es/imagenes/marcadas/9788410/978841016421.gif",
+  "via": "todostuslibros",
+  "ok": true
  },
  "ref-mujeres-corren-con-lobos": {
   "edicion": "/books/OL9894204M",
@@ -599,47 +632,53 @@
   "ok": true
  },
  "ref-buena-vida": {
-  "ok": false,
-  "err": "sin edición en español con portada"
+  "edicion": "ttl:https://www.todostuslibros.com/libros/una-buena-vida_978-84-08-28746-9",
+  "titulo_ed": "Una buena vida",
+  "isbn": "9788408287469",
+  "editorial": "Booket",
+  "anio": "",
+  "cover": "https://static.cegal.es/imagenes/marcadas/9788408/978840828746.gif",
+  "via": "todostuslibros",
+  "ok": true
  },
  "ref-siglo-soledad": {
-  "edicion": "/works/OL34870154W",
+  "edicion": "/books/OL47225473M",
   "titulo_ed": "El siglo de la soledad",
-  "isbn": "",
-  "editorial": "",
-  "anio": "",
+  "isbn": "9788449338458",
+  "editorial": "Ediciones Paidós",
+  "anio": "2021",
   "cover": 13663246,
-  "solo_obra": true,
+  "via": "ediciones-es",
   "ok": true
  },
  "ref-amigos": {
-  "edicion": "/works/OL34870085W",
+  "edicion": "/books/OL47225400M",
   "titulo_ed": "Amigos",
-  "isbn": "",
-  "editorial": "",
-  "anio": "",
+  "isbn": "9788449340611",
+  "editorial": "Ediciones Paidós",
+  "anio": "2023",
   "cover": 13663080,
-  "solo_obra": true,
+  "via": "ediciones-es",
   "ok": true
  },
  "ref-hablar-con-extranos": {
-  "edicion": "/works/OL20656229W",
+  "edicion": "/books/OL35624360M",
   "titulo_ed": "Hablar con extraños",
-  "isbn": "",
-  "editorial": "",
-  "anio": "",
-  "cover": 9312787,
-  "solo_obra": true,
+  "isbn": "9788430623174",
+  "editorial": "TAURUS",
+  "anio": "2020",
+  "cover": 12331433,
+  "via": "ediciones-es",
   "ok": true
  },
  "ref-pre-suasion": {
-  "edicion": "/works/OL17592794W",
-  "titulo_ed": "Pre-Suasion",
-  "isbn": "",
-  "editorial": "",
+  "edicion": "ttl:https://www.todostuslibros.com/libros/pre-suasion_978-84-16029-66-2",
+  "titulo_ed": "Pre-suasión",
+  "isbn": "9788416029662",
+  "editorial": "CONECTA",
   "anio": "",
-  "cover": 7880005,
-  "solo_obra": true,
+  "cover": "https://static.cegal.es/imagenes/marcadas/9788416/978841602966.gif",
+  "via": "todostuslibros",
   "ok": true
  },
  "ref-rompe-barrera-no": {
@@ -663,13 +702,13 @@
   "ok": true
  },
  "ref-defensa-conversacion": {
-  "edicion": "/works/OL17784126W",
+  "edicion": "/books/OL26373525M",
   "titulo_ed": "En defensa de la conversación : el poder de la conversación en la era digital ",
-  "isbn": "",
-  "editorial": "",
-  "anio": "",
+  "isbn": "9788416222278",
+  "editorial": "Ático de los Libros",
+  "anio": "2017",
   "cover": 8062416,
-  "solo_obra": true,
+  "via": "ediciones-es",
   "ok": true
  },
  "ref-mente-justos": {
@@ -683,8 +722,14 @@
   "ok": true
  },
  "ref-contra-empatia": {
-  "ok": false,
-  "err": "sin edición en español con portada"
+  "edicion": "ttl:https://www.todostuslibros.com/libros/contra-la-empatia-argumentos-para-una-compasion-racional_978-607-31-6757-4",
+  "titulo_ed": "CONTRA LA EMPATIA. ARGUMENTOS PARA UNA COMPASION RACIONAL",
+  "isbn": "9786073167574",
+  "editorial": "Grijalbo México",
+  "anio": "",
+  "cover": "https://static.cegal.es/imagenes/marcadas/9786073/978607316757.gif",
+  "via": "todostuslibros",
+  "ok": true
  },
  "ref-dignos-ser-humanos": {
   "edicion": "/books/OL33896396M",
@@ -697,26 +742,44 @@
   "ok": true
  },
  "ref-comportate": {
-  "ok": false,
-  "err": "sin edición en español con portada"
+  "edicion": "/books/OL47670939M",
+  "titulo_ed": "Compórtate",
+  "isbn": "9788494987991",
+  "editorial": "Capitán Swing",
+  "anio": "2019",
+  "cover": 14297382,
+  "via": "ediciones-es",
+  "ok": true
  },
  "ref-decidido": {
-  "ok": false,
-  "err": "sin edición en español con portada"
+  "edicion": "ttl:https://www.todostuslibros.com/libros/decidido_978-84-127798-3-7",
+  "titulo_ed": "Decidido",
+  "isbn": "9788412779837",
+  "editorial": "Capitán Swing Libros",
+  "anio": "",
+  "cover": "https://static.cegal.es/imagenes/marcadas/9788412/978841277983.gif",
+  "via": "todostuslibros",
+  "ok": true
  },
  "ref-efecto-lucifer": {
-  "edicion": "/works/OL17795802W",
-  "titulo_ed": "El efecto lucifer",
-  "isbn": "",
-  "editorial": "",
-  "anio": "",
+  "edicion": "/books/OL26385128M",
+  "titulo_ed": "El efecto Lucifer",
+  "isbn": "9788449306631",
+  "editorial": "Ediciones Paidós",
+  "anio": "2011",
   "cover": 8078397,
-  "solo_obra": true,
+  "via": "ediciones-es",
   "ok": true
  },
  "ref-angeles-llevamos-dentro": {
-  "ok": false,
-  "err": "sin edición en español con portada"
+  "edicion": "/books/OL26493184M",
+  "titulo_ed": "Los ángeles que llevamos dentro",
+  "isbn": "9788449334641",
+  "editorial": "Paidós",
+  "anio": "2018",
+  "cover": 8242758,
+  "via": "ediciones-es",
+  "ok": true
  },
  "ref-tabla-rasa": {
   "edicion": "/books/OL9132825M",
@@ -739,12 +802,24 @@
   "ok": true
  },
  "ref-mono-llevamos-dentro": {
-  "ok": false,
-  "err": "sin edición en español con portada"
+  "edicion": "/books/OL47378862M",
+  "titulo_ed": "El mono que llevamos dentro",
+  "isbn": "9788490665787",
+  "editorial": "Booket",
+  "anio": "2018",
+  "cover": 13973045,
+  "via": "ediciones-es",
+  "ok": true
  },
  "ref-edad-empatia": {
-  "ok": false,
-  "err": "sin edición en español con portada"
+  "edicion": "/books/OL47377922M",
+  "titulo_ed": "La edad de la empatía",
+  "isbn": "9788490660607",
+  "editorial": "Booket",
+  "anio": "2015",
+  "cover": 13971984,
+  "via": "ediciones-es",
+  "ok": true
  },
  "ref-gen-egoista": {
   "edicion": "/books/OL27937136M",
@@ -797,58 +872,63 @@
   "ok": true
  },
  "ref-cerebro-adolescente": {
-  "ok": false,
-  "err": "sin edición en español con portada"
+  "edicion": "/books/OL35636237M",
+  "titulo_ed": "El cerebro adolescente",
+  "isbn": "9788491872436",
+  "editorial": "RBA Bolsillo",
+  "anio": "2019",
+  "cover": 12343167,
+  "via": "ediciones-es",
+  "ok": true
  },
  "ref-disciplina-sin-lagrimas": {
-  "edicion": "/books/OL34402178M",
-  "titulo_ed": "DISCIPLINA SIN LÁGRIMAS",
-  "isbn": "9788490704523",
-  "editorial": "Ediciones B Mexico",
-  "anio": "2018",
-  "cover": "https://covers.openlibrary.org/b/isbn/9788490704523-L.jpg?default=false",
+  "edicion": "/books/OL25651574M",
+  "titulo_ed": "Disciplina sin lágrimas",
+  "isbn": "9788466655873",
+  "editorial": "Ediciones B",
+  "anio": "2015",
+  "cover": 7322107,
   "via": "ediciones-es",
-  "ok": false,
-  "err": "portada no válida"
+  "ok": true
  },
  "ref-poder-presencia": {
-  "edicion": "/works/OL20850835W",
+  "edicion": "/books/OL28230530M",
   "titulo_ed": "El poder de la presencia",
-  "isbn": "",
-  "editorial": "",
-  "anio": "",
+  "isbn": "9788490656471",
+  "editorial": "Alba Editorial",
+  "anio": "2020",
   "cover": 10162498,
-  "solo_obra": true,
+  "via": "ediciones-es",
   "ok": true
  },
  "ref-libro-ojala-tus-padres-hubieran": {
-  "edicion": "/works/OL20914253W",
+  "edicion": "/books/OL28332439M",
   "titulo_ed": "El libro que ojalá tus padres hubieran leído",
-  "isbn": "",
-  "editorial": "",
-  "anio": "",
+  "isbn": "9788408222439",
+  "editorial": "Zenith",
+  "anio": "2020",
   "cover": 10281536,
-  "solo_obra": true,
+  "via": "ediciones-es",
   "ok": true
  },
  "ref-educar-realidad": {
-  "edicion": "/works/OL17782251W",
+  "edicion": "ttl:https://www.todostuslibros.com/libros/educar-en-la-realidad_978-84-16256-56-3",
   "titulo_ed": "Educar en la realidad",
-  "isbn": "",
-  "editorial": "",
+  "isbn": "9788416256563",
+  "editorial": "Plataforma Editorial S.L.",
   "anio": "",
-  "cover": 8059940,
-  "solo_obra": true,
+  "cover": "https://static.cegal.es/imagenes/marcadas/9788416/978841625656.gif",
+  "via": "todostuslibros",
   "ok": true
  },
  "ref-hiperpaternidad": {
-  "edicion": "/works/OL22322319W",
+  "edicion": "/books/OL30401822M",
   "titulo_ed": "Hiperpaternidad",
-  "isbn": "",
-  "editorial": "",
-  "anio": "",
+  "isbn": "9788416620036",
+  "editorial": "Plataforma Editorial S.L.",
+  "anio": "2015",
   "cover": 10453186,
-  "solo_obra": true,
+  "via": "ediciones-es",
   "ok": true
  },
  "ref-besame-mucho": {
@@ -882,33 +962,44 @@
   "ok": true
  },
  "ref-como-aprendemos": {
-  "ok": false,
-  "err": "sin edición en español con portada"
+  "edicion": "ttl:https://www.todostuslibros.com/libros/como-aprendemos_978-84-18058-05-9",
+  "titulo_ed": "¿Cómo aprendemos?",
+  "isbn": "9788418058059",
+  "editorial": "EDITORIAL GRAO",
+  "anio": "",
+  "cover": "https://static.cegal.es/imagenes/marcadas/9788418/978841805805.gif",
+  "via": "todostuslibros",
+  "ok": true
  },
  "ref-como-aprendemos-dehaene": {
-  "ok": false,
-  "err": "sin edición en español con portada"
+  "edicion": "ttl:https://www.todostuslibros.com/libros/como-aprendemos_978-84-323-2065-1",
+  "titulo_ed": "¿Cómo aprendemos?",
+  "isbn": "9788432320651",
+  "editorial": "Siglo XXI de España Editores, S.A.",
+  "anio": "",
+  "cover": "https://static.cegal.es/imagenes/marcadas/9788432/978843232065.gif",
+  "via": "todostuslibros",
+  "ok": true
  },
  "ref-aprender-aprender": {
-  "edicion": "/works/OL34721635W",
-  "titulo_ed": "Aprendendo a Aprender. Como Ter Sucesso em Matemática, Ciências e Qualquer Outra Matéria",
-  "isbn": "",
-  "editorial": "",
+  "edicion": "ttl:https://www.todostuslibros.com/libros/aprender-a-aprender_978-84-9111-744-5",
+  "titulo_ed": "Aprender a aprender",
+  "isbn": "9788491117445",
+  "editorial": "EDICIONES OBELISCO S.L.",
   "anio": "",
-  "cover": 13387593,
-  "solo_obra": true,
+  "cover": "https://static.cegal.es/imagenes/marcadas/9788491/978849111744.gif",
+  "via": "todostuslibros",
   "ok": true
  },
  "ref-inteligencias-multiples": {
-  "edicion": "/books/OL12959385M",
-  "titulo_ed": "Inteligencias Multiples",
-  "isbn": "9789501250121",
-  "editorial": "Ediciones Paidos Iberica",
-  "anio": "2003",
-  "cover": 13617259,
+  "edicion": "/books/OL26458837M",
+  "titulo_ed": "Inteligencias múltiples",
+  "isbn": "9788449325946",
+  "editorial": "Paidós",
+  "anio": "2012",
+  "cover": 8187784,
   "via": "ediciones-es",
-  "ok": false,
-  "err": "portada no válida"
+  "ok": true
  },
  "ref-valor-educar": {
   "edicion": "/books/OL9129374M",
@@ -942,15 +1033,14 @@
   "err": "portada no válida"
  },
  "ref-usar-cerebro": {
-  "edicion": "/books/OL36802157M",
-  "titulo_ed": "Usar el Cerebro",
-  "isbn": "9786079377823",
-  "editorial": "Editorial Planeta, S. A.",
-  "anio": "2015",
-  "cover": "https://covers.openlibrary.org/b/isbn/9786079377823-L.jpg?default=false",
+  "edicion": "/books/OL45617996M",
+  "titulo_ed": "Usar el cerebro",
+  "isbn": "9789584241603",
+  "editorial": "Diana",
+  "anio": "2014",
+  "cover": 13830867,
   "via": "ediciones-es",
-  "ok": false,
-  "err": "portada no válida"
+  "ok": true
  },
  "ref-neurociencia-cuerpo": {
   "edicion": "/books/OL39819702M",
@@ -963,37 +1053,44 @@
   "ok": true
  },
  "ref-espejo-cerebro": {
-  "edicion": "/works/OL27049440W",
+  "edicion": "/books/OL36672789M",
   "titulo_ed": "El espejo del cerebro",
-  "isbn": "",
-  "editorial": "",
-  "anio": "",
+  "isbn": "9788417118853",
+  "editorial": "Editorial La Huerta Grande, S.L.",
+  "anio": "2021",
   "cover": 12560941,
-  "solo_obra": true,
+  "via": "ediciones-es",
   "ok": true
  },
  "ref-cerebro-creo-al-hombre": {
+  "edicion": "/books/OL47108409M",
+  "titulo_ed": "Y el cerebro creo al hombre",
+  "isbn": "9789584225641",
+  "editorial": "Destino",
+  "anio": "2013",
+  "cover": "https://covers.openlibrary.org/b/isbn/9789584225641-L.jpg?default=false",
+  "via": "ediciones-es",
   "ok": false,
-  "err": "sin edición en español con portada"
+  "err": "portada no válida"
  },
  "ref-sentir-saber": {
-  "edicion": "/works/OL26416936W",
+  "edicion": "/books/OL35667682M",
   "titulo_ed": "Sentir y saber",
-  "isbn": "",
-  "editorial": "",
-  "anio": "",
+  "isbn": "9788423360178",
+  "editorial": "Ediciones Destino",
+  "anio": "2021",
   "cover": 12371969,
-  "solo_obra": true,
+  "via": "ediciones-es",
   "ok": true
  },
  "ref-creacion-yo": {
-  "edicion": "/works/OL35156662W",
+  "edicion": "/books/OL47540572M",
   "titulo_ed": "La creación del yo",
-  "isbn": "",
-  "editorial": "",
-  "anio": "",
+  "isbn": "9788419261311",
+  "editorial": "Ensayo",
+  "anio": "2023",
   "cover": 14157730,
-  "solo_obra": true,
+  "via": "ediciones-es",
   "ok": true
  },
  "ref-cerebro-mito-yo": {
@@ -1017,18 +1114,24 @@
   "ok": true
  },
  "ref-somos-nuestro-cerebro": {
-  "edicion": "/works/OL34985456W",
+  "edicion": "/books/OL47349079M",
   "titulo_ed": "Somos nuestro cerebro",
-  "isbn": "",
-  "editorial": "",
-  "anio": "",
+  "isbn": "9788415880769",
+  "editorial": "Plataforma Editorial, S.L.",
+  "anio": "2015",
   "cover": 13939028,
-  "solo_obra": true,
+  "via": "ediciones-es",
   "ok": true
  },
  "ref-neuronas-dios": {
-  "ok": false,
-  "err": "sin edición en español con portada"
+  "edicion": "ttl:https://www.todostuslibros.com/libros/las-neuronas-de-dios_978-987-801-611-5",
+  "titulo_ed": "LAS NEURONAS DE DIOS",
+  "isbn": "9789878016115",
+  "editorial": "SIGLO XXI",
+  "anio": "",
+  "cover": "https://static.cegal.es/imagenes/marcadas/9789878/978987801611.gif",
+  "via": "todostuslibros",
+  "ok": true
  },
  "ref-instinto-lenguaje": {
   "edicion": "/books/OL13192800M",
@@ -1041,41 +1144,59 @@
   "ok": true
  },
  "ref-cebras-no-tienen-ulcera": {
-  "ok": false,
-  "err": "sin edición en español con portada"
+  "edicion": "/books/OL47388070M",
+  "titulo_ed": "¿Por qué las cebras no tienen úlcera?",
+  "isbn": "9788420682518",
+  "editorial": "Alianza Editorial",
+  "anio": "2008",
+  "cover": 13983752,
+  "via": "ediciones-es",
+  "ok": true
  },
  "ref-respira": {
-  "edicion": "/works/OL35011562W",
+  "edicion": "/books/OL32161704M",
   "titulo_ed": "Respira",
-  "isbn": "",
-  "editorial": "",
-  "anio": "",
-  "cover": 13971796,
-  "solo_obra": true,
+  "isbn": "9788408237228",
+  "editorial": "Editorial Planeta",
+  "anio": "2021",
+  "cover": 10828592,
+  "via": "ediciones-es",
   "ok": true
  },
  "ref-ciencia-felicidad": {
+  "edicion": "/books/OL23111948M",
+  "titulo_ed": "La ciencia de la felicidad",
+  "isbn": "9788479536640",
+  "editorial": "Urano",
+  "anio": "",
+  "cover": "https://covers.openlibrary.org/b/isbn/9788479536640-L.jpg?default=false",
+  "via": "ediciones-es",
   "ok": false,
-  "err": "sin edición en español con portada"
+  "err": "portada no válida"
  },
  "ref-mitos-felicidad": {
   "ok": false,
   "err": "sin edición en español con portada"
  },
  "ref-tropezar-con-felicidad": {
-  "ok": false,
-  "err": "sin edición en español con portada"
+  "edicion": "ttl:https://www.todostuslibros.com/libros/tropezar-con-la-felicidad_978-84-344-4022-7",
+  "titulo_ed": "Tropezar con la felicidad",
+  "isbn": "9788434440227",
+  "editorial": "Editorial Ariel",
+  "anio": "",
+  "cover": "https://static.cegal.es/imagenes/marcadas/9788434/978843444022.gif",
+  "via": "todostuslibros",
+  "ok": true
  },
  "ref-conquista-felicidad": {
-  "edicion": "/books/OL49146601M",
-  "titulo_ed": "Conquista de la Felicidad",
-  "isbn": "9798484383795",
-  "editorial": "Independently Published",
-  "anio": "2021",
-  "cover": "https://covers.openlibrary.org/b/isbn/9798484383795-L.jpg?default=false",
+  "edicion": "/books/OL9545313M",
+  "titulo_ed": "La conquista de la felicidad",
+  "isbn": "9788483063040",
+  "editorial": "Debate",
+  "anio": "2000",
+  "cover": 2272085,
   "via": "ediciones-es",
-  "ok": false,
-  "err": "portada no válida"
+  "ok": true
  },
  "ref-silencio-era-ruido": {
   "edicion": "/books/OL27902924M",
@@ -1119,18 +1240,24 @@
   "ok": true
  },
  "ref-tras-grito": {
-  "edicion": "/works/OL34870049W",
+  "edicion": "/books/OL47225364M",
   "titulo_ed": "Tras el grito",
-  "isbn": "",
-  "editorial": "",
-  "anio": "",
+  "isbn": "9788449331251",
+  "editorial": "Ediciones Paidós",
+  "anio": "2015",
   "cover": 13663015,
-  "solo_obra": true,
+  "via": "ediciones-es",
   "ok": true
  },
  "ref-conexiones-perdidas": {
-  "ok": false,
-  "err": "sin edición en español con portada"
+  "edicion": "ttl:https://www.todostuslibros.com/libros/conexiones-perdidas_978-84-127795-5-4",
+  "titulo_ed": "CONEXIONES PERDIDAS",
+  "isbn": "9788412779554",
+  "editorial": "CAPITÁN SWING",
+  "anio": "",
+  "cover": "https://static.cegal.es/imagenes/marcadas/9788412/978841277955.gif",
+  "via": "todostuslibros",
+  "ok": true
  },
  "ref-demonio-depresion": {
   "edicion": "/books/OL13275105M",
@@ -1144,13 +1271,13 @@
   "err": "portada no válida"
  },
  "ref-irresistible": {
-  "edicion": "/works/OL20054368W",
+  "edicion": "ttl:https://www.todostuslibros.com/libros/irresistible_978-84-493-3402-3",
   "titulo_ed": "Irresistible",
-  "isbn": "",
-  "editorial": "",
+  "isbn": "9788449334023",
+  "editorial": "Ediciones Paidós",
   "anio": "",
-  "cover": 15240641,
-  "solo_obra": true,
+  "cover": "https://static.cegal.es/imagenes/marcadas/9788449/978844933402.gif",
+  "via": "todostuslibros",
   "ok": true
  },
  "ref-murmullo-fantasmas": {
@@ -1179,8 +1306,14 @@
   "err": "sin edición en español con portada"
  },
  "ref-neurotribus": {
-  "ok": false,
-  "err": "sin edición en español con portada"
+  "edicion": "ttl:https://www.todostuslibros.com/libros/neurotribus_978-2-88915-617-7",
+  "titulo_ed": "NEUROTRIBUS",
+  "isbn": "9782889156177",
+  "editorial": "Presses Polytechniques Et Univ",
+  "anio": "",
+  "cover": "https://static.cegal.es/imagenes/marcadas/9782889/978288915617.gif",
+  "via": "todostuslibros",
+  "ok": true
  },
  "ref-pensar-con-imagenes": {
   "edicion": "/books/OL13323750M",
@@ -1204,33 +1337,44 @@
   "ok": true
  },
  "ref-dar-recibir": {
-  "edicion": "/books/OL50705318M",
-  "titulo_ed": "Dar y Recibir",
-  "isbn": "9786075574080",
+  "edicion": "/books/OL35622426M",
+  "titulo_ed": "Dar y recibir",
+  "isbn": "9786077354963",
   "editorial": "Editorial Oceano de Mexico",
-  "anio": "2023",
-  "cover": "https://covers.openlibrary.org/b/isbn/9786075574080-L.jpg?default=false",
+  "anio": "2016",
+  "cover": 12329549,
   "via": "ediciones-es",
-  "ok": false,
-  "err": "portada no válida"
+  "ok": true
  },
  "ref-originales": {
-  "ok": false,
-  "err": "sin edición en español con portada"
+  "edicion": "/books/OL35625456M",
+  "titulo_ed": "ORIGINALES",
+  "isbn": "9789501295191",
+  "editorial": "PAIDOS",
+  "anio": "2013",
+  "cover": 12332491,
+  "via": "ediciones-es",
+  "ok": true
  },
  "ref-lideres-comen-al-final": {
-  "edicion": "/works/OL27055569W",
+  "edicion": "/books/OL36686221M",
   "titulo_ed": "Los líderes comen al final",
-  "isbn": "",
-  "editorial": "",
-  "anio": "",
+  "isbn": "9788492921799",
+  "editorial": "Empresa Activa",
+  "anio": "2019",
   "cover": 12568893,
-  "solo_obra": true,
+  "via": "ediciones-es",
   "ok": true
  },
  "ref-organizacion-sin-miedo": {
-  "ok": false,
-  "err": "sin edición en español con portada"
+  "edicion": "ttl:https://www.todostuslibros.com/libros/la-organizacion-sin-miedo_978-84-10313-18-7",
+  "titulo_ed": "La organización sin miedo",
+  "isbn": "9788410313187",
+  "editorial": "Arpa Editores",
+  "anio": "",
+  "cover": "https://static.cegal.es/imagenes/marcadas/9788410/978841031318.gif",
+  "via": "todostuslibros",
+  "ok": true
  },
  "ref-trabajos-mierda": {
   "edicion": "/books/OL47332275M",
@@ -1253,23 +1397,23 @@
   "ok": true
  },
  "ref-diez-razones-para-borrar-tus": {
-  "edicion": "/works/OL17930280W",
+  "edicion": "/books/OL26502428M",
   "titulo_ed": "Diez razones para borrar tus redes sociales de inmediato",
-  "isbn": "",
-  "editorial": "",
-  "anio": "",
+  "isbn": "9788499929170",
+  "editorial": "Debate",
+  "anio": "2018",
   "cover": 8260330,
-  "solo_obra": true,
+  "via": "ediciones-es",
   "ok": true
  },
  "ref-fabrica-cretinos-digitales": {
-  "edicion": "/works/OL29301467W",
+  "edicion": "/books/OL47130600M",
   "titulo_ed": "La fábrica de cretinos digitales",
-  "isbn": "",
-  "editorial": "",
-  "anio": "",
+  "isbn": "9788411000604",
+  "editorial": "Booket",
+  "anio": "2022",
   "cover": 13523169,
-  "solo_obra": true,
+  "via": "ediciones-es",
   "ok": true
  },
  "ref-nexus": {
@@ -1283,8 +1427,15 @@
   "ok": true
  },
  "ref-sociedad-transparencia": {
+  "edicion": "/books/OL37080186M",
+  "titulo_ed": "SOCIEDAD DE LA TRANSPARENCIA, LA",
+  "isbn": "9788425412523",
+  "editorial": "HERDER-ESP.",
+  "anio": "2013",
+  "cover": "https://covers.openlibrary.org/b/isbn/9788425412523-L.jpg?default=false",
+  "via": "ediciones-es",
   "ok": false,
-  "err": "sin edición en español con portada"
+  "err": "portada no válida"
  },
  "ref-tener-o-ser": {
   "edicion": "/books/OL19660471M",
@@ -1349,8 +1500,14 @@
   "ok": true
  },
  "ref-vejez": {
-  "ok": false,
-  "err": "sin edición en español con portada"
+  "edicion": "/books/OL35632054M",
+  "titulo_ed": "La vejez / The Coming of Age",
+  "isbn": "9789875666368",
+  "editorial": "Debolsillo",
+  "anio": "2011",
+  "cover": 12339025,
+  "via": "ediciones-es",
+  "ok": true
  },
  "ref-segundo-sexo": {
   "edicion": "/books/OL26322782M",
@@ -1373,8 +1530,14 @@
   "ok": true
  },
  "ref-tareas-duelo": {
-  "ok": false,
-  "err": "sin edición en español con portada"
+  "edicion": "ttl:https://www.todostuslibros.com/libros/las-tareas-del-duelo_978-84-493-2423-9",
+  "titulo_ed": "Las tareas del duelo",
+  "isbn": "9788449324239",
+  "editorial": "Ediciones Paidós",
+  "anio": "",
+  "cover": "https://static.cegal.es/imagenes/marcadas/9788449/978844932423.gif",
+  "via": "todostuslibros",
+  "ok": true
  },
  "ref-muerte-amanecer": {
   "edicion": "/books/OL6845083M",
@@ -1429,12 +1592,24 @@
   "ok": true
  },
  "ref-hambre": {
-  "ok": false,
-  "err": "sin edición en español con portada"
+  "edicion": "ttl:https://www.todostuslibros.com/libros/hambre-memorias-de-mi-cuerpo_978-84-947408-8-6",
+  "titulo_ed": "Hambre. Memorias de mi cuerpo",
+  "isbn": "9788494740886",
+  "editorial": "Capitán Swing Libros",
+  "anio": "",
+  "cover": "https://static.cegal.es/imagenes/marcadas/9788494/978849474088.gif",
+  "via": "todostuslibros",
+  "ok": true
  },
  "ref-poder-bosque": {
-  "ok": false,
-  "err": "sin edición en español con portada"
+  "edicion": "ttl:https://www.todostuslibros.com/libros/el-poder-del-bosque-shinrin-yoku_978-84-17305-06-2",
+  "titulo_ed": "El poder del bosque. Shinrin-Yoku",
+  "isbn": "9788417305062",
+  "editorial": "Roca Editorial",
+  "anio": "",
+  "cover": "https://static.cegal.es/imagenes/marcadas/9788417/978841730506.gif",
+  "via": "todostuslibros",
+  "ok": true
  },
  "ref-ultimos-ninos-bosque": {
   "ok": false,
