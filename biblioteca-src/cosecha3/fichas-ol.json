@@ -1,7 +1,13 @@
 {
  "ref-piensa-como-un-monje": {
-  "ok": false,
-  "err": "sin edición en español con portada"
+  "edicion": "/books/OL47548584M",
+  "titulo_ed": "Piensa como un monje",
+  "isbn": "9788425358029",
+  "editorial": "Grijalbo",
+  "anio": "2020",
+  "cover": 14167234,
+  "via": "ediciones-es",
+  "ok": true
  },
  "ref-ama-y-no-sufras": {
   "edicion": "/books/OL27143293M",
@@ -17,20 +23,45 @@
   "err": "sin edición en español con portada"
  },
  "ref-poder-pensamiento-positivo": {
-  "ok": false,
-  "err": "sin edición en español con portada"
+  "edicion": "/books/OL26947583M",
+  "titulo_ed": "El poder del pensamiento positivo",
+  "isbn": "9786075271750",
+  "editorial": "Editorial Oceano de Mexico",
+  "anio": "2017",
+  "cover": 14570218,
+  "via": "ediciones-es",
+  "ok": true
  },
  "ref-no-te-ahogues-vaso-agua": {
-  "ok": false,
-  "err": "HTTP Error 404: Not Found"
+  "edicion": "/books/OL9903294M",
+  "titulo_ed": "No Te Ahogues En Un Vaso De Agua",
+  "isbn": "9780307273642",
+  "editorial": "Grijalbo",
+  "anio": "2005",
+  "cover": 5025619,
+  "via": "ediciones-es",
+  "ok": true
  },
  "ref-poder-ser-vulnerable": {
+  "edicion": "/books/OL34047491M",
+  "titulo_ed": "PODER DE SER VULNERABLE",
+  "isbn": "9788479539498",
+  "editorial": "Ediciones Urano S. A.",
+  "anio": "2016",
+  "cover": "https://covers.openlibrary.org/b/isbn/9788479539498-L.jpg?default=false",
+  "via": "ediciones-es",
   "ok": false,
-  "err": "sin edición en español con portada"
+  "err": "portada no válida"
  },
  "ref-disciplina-positiva": {
-  "ok": false,
-  "err": "HTTP Error 404: Not Found"
+  "edicion": "/books/OL32183743M",
+  "titulo_ed": "Cómo educar con firmeza y cariño",
+  "isbn": "9788497990332",
+  "editorial": "MEDICI",
+  "anio": "2007",
+  "cover": 10838623,
+  "via": "ediciones-es",
+  "ok": true
  },
  "ref-como-hablar-hijos-escuchen": {
   "ok": false,
@@ -61,22 +92,35 @@
   "ok": true
  },
  "ref-comunicacion-no-violenta": {
+  "edicion": "/books/OL13314477M",
+  "titulo_ed": "Comunicación No Violenta",
+  "isbn": "9788479533663",
+  "editorial": "Ediciones Urano",
+  "anio": "2000",
+  "cover": "https://covers.openlibrary.org/b/isbn/9788479533663-L.jpg?default=false",
+  "via": "ediciones-es",
   "ok": false,
-  "err": "sin edición en español con portada"
+  "err": "portada no válida"
  },
  "ref-cinco-lenguajes-amor": {
-  "edicion": "/works/OL26384247W",
-  "titulo_ed": "Los 5 lenguajes del amor",
-  "isbn": "",
-  "editorial": "",
-  "anio": "",
-  "cover": 12331152,
-  "solo_obra": true,
+  "edicion": "/books/OL33229270M",
+  "titulo_ed": "Los 5 lenguajes del amor / The 5 Love Languages",
+  "isbn": "9780789923738",
+  "editorial": "Unilit",
+  "anio": "2017",
+  "cover": 11941628,
+  "via": "ediciones-es",
   "ok": true
  },
  "ref-ventajas-de-ser-invisible": {
-  "ok": false,
-  "err": "sin edición en español con portada"
+  "edicion": "/books/OL33040389M",
+  "titulo_ed": "Las ventajas de ser invisible",
+  "isbn": "9786071121639",
+  "editorial": "Alfaguara",
+  "anio": "2014",
+  "cover": 12053717,
+  "via": "ediciones-es",
+  "ok": true
  },
  "ref-tortugas-hasta-abajo": {
   "ok": false,
@@ -93,8 +137,14 @@
   "ok": true
  },
  "ref-nada-se-opone-noche": {
-  "ok": false,
-  "err": "sin edición en español con portada"
+  "edicion": "/books/OL29832831M",
+  "titulo_ed": "Nada se opone a la noche",
+  "isbn": "9788433902481",
+  "editorial": "Anagrama",
+  "anio": "2019",
+  "cover": 15164312,
+  "via": "ediciones-es",
+  "ok": true
  },
  "ref-emocionario": {
   "edicion": "/works/OL17047885W",
@@ -107,13 +157,13 @@
   "ok": true
  },
  "ref-monstruo-de-colores": {
-  "edicion": "/works/OL37518834W",
-  "titulo_ed": "EL MONSTRUO DE COLORES DOCTOR EMOCIONES.",
-  "isbn": "",
-  "editorial": "",
-  "anio": "",
-  "cover": 14567182,
-  "solo_obra": true,
+  "edicion": "/books/OL25651985M",
+  "titulo_ed": "El monstruo de colores",
+  "isbn": "9788493987749",
+  "editorial": "Flamboyant",
+  "anio": "2012",
+  "cover": 7322567,
+  "via": "ediciones-es",
   "ok": true
  },
  "ref-educar-en-el-asombro": {
@@ -169,12 +219,25 @@
   "ok": true
  },
  "ref-bailarina-auschwitz": {
+  "edicion": "/books/OL37776330M",
+  "titulo_ed": "La bailarina de Auschwitz",
+  "isbn": "9786070749001",
+  "editorial": "Planeta Publishing",
+  "anio": "2018",
+  "cover": "https://covers.openlibrary.org/b/isbn/9786070749001-L.jpg?default=false",
+  "via": "ediciones-es",
   "ok": false,
-  "err": "sin edición en español con portada"
+  "err": "portada no válida"
  },
  "ref-en-auschwitz-no-habia-prozac": {
-  "ok": false,
-  "err": "sin edición en español con portada"
+  "edicion": "/books/OL52610078M",
+  "titulo_ed": "En Auschwitz No Había Prozac : 12 Consejos de una Superviviente para Curar Tus Heridas y Vivir en Libertadad / the Gift",
+  "isbn": "9786070772146",
+  "editorial": "Editorial Planeta, S. A.",
+  "anio": "2020",
+  "cover": 15137516,
+  "via": "ediciones-es",
+  "ok": true
  },
  "ref-inquebrantables": {
   "edicion": "/books/OL27908028M",
@@ -199,8 +262,15 @@
   "ok": true
  },
  "ref-ruido": {
+  "edicion": "/books/OL34985224M",
+  "titulo_ed": "Ruido : un Fallo en el Juicio Humano / Noise",
+  "isbn": "9788418006364",
+  "editorial": "Random House Espanol",
+  "anio": "2021",
+  "cover": "https://covers.openlibrary.org/b/isbn/9788418006364-L.jpg?default=false",
+  "via": "ediciones-es",
   "ok": false,
-  "err": "sin edición en español con portada"
+  "err": "portada no válida"
  },
  "ref-indistraible": {
   "ok": false,
@@ -224,31 +294,39 @@
   "ok": true
  },
  "ref-diario-estoicos": {
+  "edicion": "/books/OL34278025M",
+  "titulo_ed": "Diario para Estoicos - Agenda (Daily Stoic Journal Spanish Edition)",
+  "isbn": "9788417963323",
+  "editorial": "Reverte, Editorial S.A.",
+  "anio": "2021",
+  "cover": "https://covers.openlibrary.org/b/isbn/9788417963323-L.jpg?default=false",
+  "via": "ediciones-es",
   "ok": false,
-  "err": "sin edición en español con portada"
+  "err": "portada no válida"
  },
  "ref-vivir-sin-miedos": {
-  "edicion": "/works/OL17319313W",
-  "titulo_ed": "Vivir sin miedos",
-  "isbn": "",
-  "editorial": "",
-  "anio": "",
-  "cover": 7887115,
-  "solo_obra": true,
-  "ok": true
+  "edicion": "/books/OL42676856M",
+  "titulo_ed": "Vivir Sin Miedo",
+  "isbn": "9798439671168",
+  "editorial": "Independently Published",
+  "anio": "2022",
+  "cover": "https://covers.openlibrary.org/b/isbn/9798439671168-L.jpg?default=false",
+  "via": "ediciones-es",
+  "ok": false,
+  "err": "portada no válida"
  },
  "ref-sutil-arte": {
   "ok": false,
   "err": "sin edición en español con portada"
  },
  "ref-deja-de-ser-tu": {
-  "edicion": "/works/OL45126604W",
+  "edicion": "/books/OL25775905M",
   "titulo_ed": "Deja de ser tú",
-  "isbn": "",
-  "editorial": "",
-  "anio": "",
-  "cover": 15210167,
-  "solo_obra": true,
+  "isbn": "9788479538255",
+  "editorial": "Urano",
+  "anio": "2012",
+  "cover": 7371830,
+  "via": "ediciones-es",
   "ok": true
  },
  "ref-diario-ana-frank": {
@@ -279,8 +357,14 @@
   "ok": true
  },
  "ref-rebeca": {
-  "ok": false,
-  "err": "sin edición en español con portada"
+  "edicion": "/books/OL59011752M",
+  "titulo_ed": "Rebeca",
+  "isbn": "",
+  "editorial": "Plaza & Janés",
+  "anio": "1993",
+  "cover": 15246186,
+  "via": "ediciones-es",
+  "ok": true
  },
  "ref-un-monstruo-viene-a-verme": {
   "edicion": "/books/OL25686264M",
@@ -292,8 +376,14 @@
   "ok": true
  },
  "ref-un-hombre-llamado-ove": {
-  "ok": false,
-  "err": "sin edición en español con portada"
+  "edicion": "/books/OL38812210M",
+  "titulo_ed": "Man Called Ove, a un Hombre Llamado Ove",
+  "isbn": "9780063299634",
+  "editorial": "HarperCollins Español",
+  "anio": "2022",
+  "cover": 14389320,
+  "via": "ediciones-es",
+  "ok": true
  },
  "ref-eleanor-oliphant": {
   "edicion": "/books/OL38386032M",
@@ -305,8 +395,14 @@
   "ok": true
  },
  "ref-la-campana-de-cristal": {
-  "ok": false,
-  "err": "sin edición en español con portada"
+  "edicion": "/books/OL62084371M",
+  "titulo_ed": "La campana de cristal",
+  "isbn": "9788435034852",
+  "editorial": "Edhasa",
+  "anio": "2008",
+  "cover": 15227278,
+  "via": "ediciones-es",
+  "ok": true
  },
  "ref-los-renglones-torcidos-de-dios": {
   "edicion": "/books/OL35339896M",
@@ -318,8 +414,14 @@
   "ok": true
  },
  "ref-el-guardian-entre-el-centeno": {
-  "ok": false,
-  "err": "sin edición en español con portada"
+  "edicion": "/books/OL59887262M",
+  "titulo_ed": "El guardián entre el centeno",
+  "isbn": "9788420634098",
+  "editorial": "Alianza",
+  "anio": "1997",
+  "cover": 15115471,
+  "via": "ediciones-es",
+  "ok": true
  },
  "ref-la-tregua": {
   "edicion": "/books/OL26319445M",
@@ -331,26 +433,44 @@
   "ok": true
  },
  "ref-gente-normal": {
-  "ok": false,
-  "err": "sin edición en español con portada"
+  "edicion": "/books/OL29826435M",
+  "titulo_ed": "Gente Normal / Normal People",
+  "isbn": "9788439736318",
+  "editorial": "Penguin Random House Grupo Editorial",
+  "anio": "2020",
+  "cover": 13217759,
+  "via": "ediciones-es",
+  "ok": true
  },
  "ref-wonder": {
-  "ok": false,
-  "err": "sin edición en español con portada"
+  "edicion": "/books/OL25775964M",
+  "titulo_ed": "Wonder: La lección de August",
+  "isbn": "9788415594024",
+  "editorial": "Nube de Tinta",
+  "anio": "2016",
+  "cover": 7371891,
+  "via": "ediciones-es",
+  "ok": true
  },
  "ref-el-curioso-incidente": {
-  "edicion": "/works/OL34864133W",
+  "edicion": "/books/OL35636736M",
   "titulo_ed": "El curioso incidente del perro a medianoche",
-  "isbn": "",
-  "editorial": "",
-  "anio": "",
-  "cover": 13654116,
-  "solo_obra": true,
+  "isbn": "9788498383201",
+  "editorial": "Letras de Bolsillo",
+  "anio": "2010",
+  "cover": 15163269,
+  "via": "ediciones-es",
   "ok": true
  },
  "ref-el-extranjero": {
-  "ok": false,
-  "err": "sin edición en español con portada"
+  "edicion": "/books/OL37828593M",
+  "titulo_ed": "El extranjero",
+  "isbn": "9789687349244",
+  "editorial": "Top Emecé",
+  "anio": "2000",
+  "cover": 15241844,
+  "via": "ediciones-es",
+  "ok": true
  },
  "ref-como-agua-para-chocolate": {
   "edicion": "/books/OL37070776M",
