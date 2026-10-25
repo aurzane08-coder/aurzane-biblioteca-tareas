@@ -1,0 +1,36 @@
+name: Biblioteca descarga ronda 3
+on:
+  push:
+    branches: [main]
+    paths: ['biblioteca-src/cosecha3/seleccion.json']
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency: biblioteca-descarga3
+jobs:
+  descarga:
+    runs-on: ubuntu-latest
+    timeout-minutes: 340
+    steps:
+      - uses: actions/checkout@v4
+      - name: Herramientas
+        run: sudo apt-get install -y -q qpdf poppler-utils ghostscript > /dev/null && pip install -q pillow
+      - name: Descargar
+        working-directory: biblioteca-src
+        run: SALIDA=/tmp/transito DIR=cosecha3 PRESUPUESTO_MB=3000 LOTE=r3 timeout 300m python3 -u descargar.py 2>&1 | tee cosecha3/descarga.log || true
+      - name: Publicar tránsito en la rama transito-r3
+        if: always()
+        run: |
+          [ -d /tmp/transito ] || exit 0
+          cd /tmp/transito
+          git init -q -b transito-r3
+          git config user.name "aurzane-bot"; git config user.email "bot@aurzane.com"
+          git add -A && git commit -q -m "tránsito ronda 3"
+          git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" transito-r3
+      - name: Guardar
+        if: always()
+        run: |
+          git config user.name "aurzane-bot"; git config user.email "bot@aurzane.com"
+          git add -A biblioteca-src/cosecha3
+          git commit -m "biblioteca: descarga ronda 3" || exit 0
+          for i in 1 2 3 4 5 6 7 8; do git pull --rebase && git push && break; sleep $((RANDOM % 25 + 5)); done

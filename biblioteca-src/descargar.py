@@ -21,7 +21,11 @@ def bajar(url, dest):
         except Exception as e:
             err = e; time.sleep(3 + 5 * i)
     raise err
+SALIDA = os.environ.get('SALIDA')  # si existe, el tránsito es una carpeta (luego una rama de git) en vez de Supabase
 def subir(path, datos, tipo):
+    if SALIDA:
+        os.makedirs(os.path.dirname(os.path.join(SALIDA, path)), exist_ok=True)
+        open(os.path.join(SALIDA, path), 'wb').write(datos); return 200
     r = urllib.request.Request(SB + path, data=datos, method='POST', headers={'apikey': KEY, 'authorization': 'Bearer ' + KEY, 'content-type': tipo})
     try: return urllib.request.urlopen(r, timeout=300).status
     except urllib.error.HTTPError as e: return '%s %s' % (e.code, e.read()[:120])
@@ -38,7 +42,8 @@ sel = json.load(open(DIR + '/seleccion.json'))
 hecho = json.load(open(DIR + '/descargas.json')) if os.path.exists(DIR + '/descargas.json') else {}
 INF = DIR + '/portadas-informe.json'
 informe = json.load(open(INF)) if os.path.exists(INF) else {}
-META = {b['id']: b for b in __import__('nuevos2').NUEVOS2} if DIR != 'cosecha' else {}
+_NOM = {'cosecha2': 'nuevos2'}.get(DIR, 'nuevos' + DIR.replace('cosecha', ''))
+META = {b['id']: b for b in getattr(__import__(_NOM), _NOM.upper())} if DIR != 'cosecha' else {}
 def ia_pdf(u):
     m = re.match(r'https://archive\.org/download/([^/]+)/', u)
     if not m: return u
