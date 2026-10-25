@@ -1,0 +1,248 @@
+google HTTP Error 429: Too Many Requests
+ref-cerebro-idiota {'edicion': '/works/OL24209363W', 'titulo_ed': 'El cerebro idiota', 'isbn': '', 'editorial': '', 'anio': '', 'cover': 10657259, 'solo_obra': True, 'ok': True}
+google HTTP Error 429: Too Many Requests
+ref-factfulness {'edicion': '/works/OL17877260W', 'titulo_ed': 'Factfulness', 'isbn': '', 'editorial': '', 'anio': '', 'cover': 8186237, 'solo_obra': True, 'ok': True}
+ref-piensalo-otra-vez {'edicion': '/books/OL36882252M', 'titulo_ed': 'Piénsalo Otra Vez', 'isbn': '9786075691725', 'editorial': 'Editorial Planeta, S. A.', 'anio': '2022', 'cover': 13484415, 'via': 'ediciones-es', 'ok': True}
+google HTTP Error 429: Too Many Requests
+ref-racionalidad {'ok': False, 'err': 'sin edición en español con portada'}
+google HTTP Error 429: Too Many Requests
+ref-trampa-inteligencia {'edicion': '/works/OL34870209W', 'titulo_ed': 'La trampa de la inteligencia', 'isbn': '', 'editorial': '', 'anio': '', 'cover': 13663340, 'solo_obra': True, 'ok': True}
+google HTTP Error 429: Too Many Requests
+ref-efecto-expectativa {'ok': False, 'err': 'sin edición en español con portada'}
+ref-pequeno-empujon {'edicion': '/books/OL39816691M', 'titulo_ed': 'Un pequeño empujón (Nudge)', 'isbn': '9786071101860', 'editorial': 'Santillana Ediciones Generales', 'anio': '2009', 'cover': 12939336, 'via': 'ediciones-es', 'ok': True}
+google HTTP Error 429: Too Many Requests
+ref-portarse-mal {'ok': False, 'err': 'sin edición en español con portada'}
+google HTTP Error 429: Too Many Requests
+ref-mentimos-especial-nosotros-mismos {'edicion': '/works/OL24502976W', 'titulo_ed': 'Por qué mentimos... en especial a nosotros mismos', 'isbn': '', 'editorial': '', 'anio': '', 'cover': 11125682, 'solo_obra': True, 'ok': True}
+google HTTP Error 429: Too Many Requests
+ref-escasez {'ok': False, 'err': 'sin edición en español con portada'}
+ref-psicologia-dinero {'edicion': '/books/OL47106033M', 'titulo_ed': 'La psicología del dinero', 'isbn': '9789584299680', 'editorial': 'Planeta', 'anio': '2022', 'cover': 13482135, 'via': 'ediciones-es', 'ok': True}
+ref-cisne-negro {'edicion': '/books/OL24300308M', 'titulo_ed': 'El cisne negro', 'isbn': '9788467232349', 'editorial': 'Círculo de lectores', 'anio': '2008', 'cover': 6425520, 'via': 'ediciones-es', 'ok': True}
+ref-antifragil {'edicion': '/books/OL47225200M', 'titulo_ed': 'Antifrágil', 'isbn': '9788449328640', 'editorial': 'Ediciones Paidós', 'anio': '2013', 'cover': 13662599, 'via': 'ediciones-es', 'ok': True}
+google HTTP Error 429: Too Many Requests
+ref-decisiones-instintivas {'edicion': '/works/OL34970111W', 'titulo_ed': 'Decisiones instintivas', 'isbn': '', 'editorial': '', 'anio': '', 'cover': 13918870, 'solo_obra': True, 'ok': True}
+google HTTP Error 429: Too Many Requests
+ref-enganos-mente {'edicion': '/works/OL16808019W', 'titulo_ed': 'Los engaños de la mente', 'isbn': '', 'editorial': '', 'anio': '', 'cover': 7263866, 'solo_obra': True, 'ok': True}
+google HTTP Error 429: Too Many Requests
+ref-creemos-mierdas {'edicion': '/works/OL25311028W', 'titulo_ed': 'Por qué creemos en mierdas', 'isbn': '', 'editorial': '', 'anio': '', 'cover': 12008322, 'solo_obra': True, 'ok': True}
+ref-desafios-memoria {'edicion': '/books/OL27139118M', 'titulo_ed': 'Los desafíos de la memoria', 'isbn': '9786070711039', 'editorial': 'Seix Barral', 'anio': '2012', 'cover': 10520665, 'via': 'ediciones-es', 'ok': True}
+google HTTP Error 429: Too Many Requests
+ref-cerebro-se-cambia-si-mismo {'ok': False, 'err': 'sin edición en español con portada'}
+google HTTP Error 429: Too Many Requests
+ref-busca-memoria {'ok': False, 'err': 'sin edición en español con portada'}
+ref-valor-atencion {'edicion': '/books/OL47140038M', 'titulo_ed': 'El valor de la atención', 'isbn': '9788411001298', 'editorial': 'Ediciones Península', 'anio': '2023', 'cover': 15090863, 'via': 'ediciones-es', 'ok': True}
+google HTTP Error 429: Too Many Requests
+ref-mundo-inmenso {'ok': False, 'err': 'sin edición en español con portada'}
+ref-incognito {'edicion': '/books/OL27154045M', 'titulo_ed': 'Incógnito', 'isbn': '9788433963512', 'editorial': 'Editorial Anagrama', 'anio': '2013', 'cover': 15239363, 'via': 'ediciones-es', 'ok': True}
+google HTTP Error 429: Too Many Requests
+ref-cerebro-nuestra-historia {'edicion': '/works/OL17715923W', 'titulo_ed': 'El cerebro. Nuestra historia', 'isbn': '', 'editorial': '', 'anio': '', 'cover': 7991344, 'solo_obra': True, 'ok': True}
+ref-alucinaciones {'edicion': '/books/OL29794221M', 'titulo_ed': 'Alucinaciones', 'isbn': '9788433960290', 'editorial': 'Editorial Anagrama S.A.', 'anio': '2018', 'cover': 13757231, 'via': 'ediciones-es', 'ok': True}
+ref-musicofilia {'edicion': '/books/OL32743608M', 'titulo_ed': 'Musicofilia', 'isbn': '9788433977885', 'editorial': 'Anagrama', 'anio': '2015', 'cover': 11369894, 'via': 'ediciones-es', 'ok': True}
+google HTTP Error 429: Too Many Requests
+ref-tu-cerebro-musica {'edicion': '/works/OL24348498W', 'titulo_ed': 'Tu cerebro y la musica. Por qué nos gusta la música y por qué disfrutamos con ella', 'isbn': '', 'editorial': '', 'anio': '', 'cover': 10872949, 'solo_obra': True, 'ok': True}
+google HTTP Error 429: Too Many Requests
+ref-proust-calamar {'ok': False, 'err': 'sin edición en español con portada'}
+google HTTP Error 429: Too Many Requests
+ref-lector-vuelve-casa {'ok': False, 'err': 'sin edición en español con portada'}
+ref-vida-secreta-cerebro {'edicion': '/books/OL27100903M', 'titulo_ed': 'La vida secreta del cerebro', 'isbn': '9789584268365', 'editorial': 'Ediciones Paidós', 'anio': '2018', 'cover': 8739763, 'via': 'ediciones-es', 'ok': True}
+google HTTP Error 429: Too Many Requests
+ref-siete-lecciones-media-sobre-cerebro {'edicion': '/works/OL34870166W', 'titulo_ed': 'Siete lecciones y media sobre el cerebro', 'isbn': '', 'editorial': '', 'anio': '', 'cover': 13663269, 'solo_obra': True, 'ok': True}
+google HTTP Error 429: Too Many Requests
+ref-agilidad-emocional {'edicion': '/works/OL26382932W', 'titulo_ed': 'AGILIDAD EMOCIONAL', 'isbn': '', 'editorial': '', 'anio': '', 'cover': 12329764, 'solo_obra': True, 'ok': True}
+google HTTP Error 429: Too Many Requests
+ref-permiso-para-sentir {'edicion': '/works/OL25902800W', 'titulo_ed': 'Permiso para sentir', 'isbn': '', 'editorial': '', 'anio': '', 'cover': 12059254, 'solo_obra': True, 'ok': True}
+google HTTP Error 429: Too Many Requests
+ref-atlas-corazon {'ok': False, 'err': 'sin edición en español con portada'}
+google HTTP Error 429: Too Many Requests
+ref-chachara {'edicion': '/works/OL34870150W', 'titulo_ed': 'Cháchara', 'isbn': '', 'editorial': '', 'anio': '', 'cover': 13663242, 'solo_obra': True, 'ok': True}
+ref-anatomia-miedo {'edicion': '/books/OL18019574M', 'titulo_ed': 'Anatomía del miedo', 'isbn': '9788433962508', 'editorial': 'Editorial Anagrama', 'anio': '2007', 'cover': 10723276, 'via': 'ediciones-es', 'ok': True}
+ref-laberinto-sentimental {'edicion': '/books/OL13236440M', 'titulo_ed': 'El Laberinto Sentimental', 'isbn': '9788433966469', 'editorial': 'Anagrama', 'anio': '1999', 'cover': 'https://covers.openlibrary.org/b/isbn/9788433966469-L.jpg?default=false', 'via': 'ediciones-es', 'ok': False, 'err': 'portada no válida'}
+ref-sabiduria-emociones {'edicion': '/books/OL13197790M', 'titulo_ed': 'La Sabiduria De Las Emociones', 'isbn': '9789872060909', 'editorial': 'Debolsillo', 'anio': '2003', 'cover': 5259970, 'via': 'ediciones-es', 'ok': True}
+ref-libro-pequenas-revoluciones {'edicion': '/books/OL25950422M', 'titulo_ed': 'El libro de las pequeñas revoluciones', 'isbn': '9788423350674', 'editorial': 'Editorial Planeta S.A', 'anio': '2016', 'cover': 7449797, 'via': 'ediciones-es', 'ok': True}
+ref-me-quiero-te-quiero {'edicion': '/books/OL52216163M', 'titulo_ed': 'Me Quiero, Te Quiero. el Cuaderno / I Love Myself, I Love You. the Notebook', 'isbn': '9788402429582', 'editorial': 'Bruguera', 'anio': '2024', 'cover': 'https://covers.openlibrary.org/b/isbn/9788402429582-L.jpg?default=false', 'via': 'ediciones-es', 'ok': False, 'err': 'portada no válida'}
+google HTTP Error 429: Too Many Requests
+ref-si-duele-no-es-amor {'edicion': '/works/OL34804662W', 'titulo_ed': 'Si duele, no es amor', 'isbn': '', 'editorial': '', 'anio': '', 'cover': 13563830, 'solo_obra': True, 'ok': True}
+ref-cuando-amar-demasiado-es-depender {'edicion': '/books/OL26735126M', 'titulo_ed': 'Cuando amar demasiado es depender : aprende a superar la dependencia emocional', 'isbn': '9788408136682', 'editorial': 'Zenith Planeta', 'anio': '2015', 'cover': 8392987, 'via': 'ediciones-es', 'ok': True}
+ref-ser-feliz-alaska {'edicion': '/books/OL25950421M', 'titulo_ed': 'Ser feliz en Alaska', 'isbn': '9788425353840', 'editorial': 'Penguin Random House', 'anio': '2016', 'cover': 7449796, 'via': 'ediciones-es', 'ok': True}
+google HTTP Error 429: Too Many Requests
+ref-sin-miedo {'edicion': '/works/OL24606552W', 'titulo_ed': 'Sin miedo', 'isbn': '', 'editorial': '', 'anio': '', 'cover': 11272373, 'solo_obra': True, 'ok': True}
+google HTTP Error 429: Too Many Requests
+ref-autoestima {'edicion': '/works/OL15166392W', 'titulo_ed': 'La autoestima', 'isbn': '', 'editorial': '', 'anio': '', 'cover': 6389942, 'solo_obra': True, 'ok': True}
+ref-hombre-light {'edicion': '/books/OL13325605M', 'titulo_ed': 'El Hombre Light', 'isbn': '9788484602460', 'editorial': 'Planeta Pub Corp', 'anio': '2003', 'cover': 13301744, 'via': 'ediciones-es', 'ok': True}
+ref-viva-diferencia {'edicion': '/books/OL37736792M', 'titulo_ed': '¡Viva la diferencia!', 'isbn': '9786077357735', 'editorial': 'Editorial Océano de México', 'anio': '2015', 'cover': 12652407, 'via': 'ediciones-es', 'ok': True}
+ref-bienvenido-dolor {'edicion': '/books/OL36793553M', 'titulo_ed': 'Bienvenido Dolor', 'isbn': '9786070717550', 'editorial': 'Editorial Planeta, S. A.', 'anio': '2013', 'cover': 'https://covers.openlibrary.org/b/isbn/9786070717550-L.jpg?default=false', 'via': 'ediciones-es', 'ok': False, 'err': 'portada no válida'}
+ref-brujula-interior {'edicion': '/books/OL9153350M', 'titulo_ed': 'La Brujula Interior', 'isbn': '9788495787484', 'editorial': 'Ediciones Urano', 'anio': '2003', 'cover': 1048629, 'via': 'ediciones-es', 'ok': True}
+google HTTP Error 429: Too Many Requests
+ref-agilmente {'edicion': '/works/OL26378568W', 'titulo_ed': 'AGILMENTE', 'isbn': '', 'editorial': '', 'anio': '', 'cover': 12325155, 'solo_obra': True, 'ok': True}
+ref-encambio {'edicion': '/books/OL29794072M', 'titulo_ed': 'EnCambio', 'isbn': '9786073128827', 'editorial': 'Penguin Random House Grupo Editorial', 'anio': '2018', 'cover': 'https://covers.openlibrary.org/b/isbn/9786073128827-L.jpg?default=false', 'via': 'ediciones-es', 'ok': False, 'err': 'portada no válida'}
+ref-paradoja-chimpance {'edicion': '/books/OL34101879M', 'titulo_ed': 'Paradoja Del Chimpance', 'isbn': '9788416622306', 'editorial': 'Books4pocket', 'anio': '2019', 'cover': 13529415, 'via': 'ediciones-es', 'ok': True}
+google HTTP Error 429: Too Many Requests
+ref-sorprendente-verdad-sobre-nos-motiva {'edicion': '/works/OL34750489W', 'titulo_ed': 'La sorprendente verdad sobre qué nos motiva', 'isbn': '', 'editorial': '', 'anio': '', 'cover': 13473198, 'solo_obra': True, 'ok': True}
+google HTTP Error 429: Too Many Requests
+ref-cuando {'edicion': '/works/OL24498390W', 'titulo_ed': '¿Cuándo?', 'isbn': '', 'editorial': '', 'anio': '', 'cover': 11119098, 'solo_obra': True, 'ok': True}
+ref-cuatro-mil-semanas {'edicion': '/books/OL38154955M', 'titulo_ed': 'Cuatro Mil Semanas', 'isbn': '9786070784484', 'editorial': 'Editorial Planeta, S. A.', 'anio': '2022', 'cover': 15126470, 'via': 'ediciones-es', 'ok': True}
+ref-elogio-lentitud {'edicion': '/books/OL9199307M', 'titulo_ed': 'Elogio De La Lentitud', 'isbn': '9789871068746', 'editorial': 'del Nuevo Extremo', 'anio': '2006', 'cover': 1055647, 'via': 'ediciones-es', 'ok': True}
+google HTTP Error 429: Too Many Requests
+ref-secretos-motivacion {'edicion': '/works/OL17321254W', 'titulo_ed': 'Los secretos de la motivación', 'isbn': '', 'editorial': '', 'anio': '', 'cover': 7400271, 'solo_obra': True, 'ok': True}
+ref-amplitud {'edicion': '/books/OL34111225M', 'titulo_ed': 'Amplitud', 'isbn': '9788416997282', 'editorial': 'Empresa Activa', 'anio': '2020', 'cover': 'https://covers.openlibrary.org/b/isbn/9788416997282-L.jpg?default=false', 'via': 'ediciones-es', 'ok': False, 'err': 'portada no válida'}
+google HTTP Error 429: Too Many Requests
+ref-fuera-serie {'edicion': '/works/OL35105605W', 'titulo_ed': 'Fuera de serie', 'isbn': '', 'editorial': '', 'anio': '', 'cover': 14091554, 'solo_obra': True, 'ok': True}
+ref-elemento {'edicion': '/books/OL34397575M', 'titulo_ed': 'Encuentra Tu Elemento', 'isbn': '9788490328132', 'editorial': 'Penguin Random House Grupo Editorial', 'anio': '2019', 'cover': 15085834, 'via': 'ediciones-es', 'ok': True}
+ref-libera-tu-magia {'edicion': '/books/OL47456290M', 'titulo_ed': 'Libera tu magia', 'isbn': '9788466367141', 'editorial': 'DEBOLSILLO', 'anio': '2023', 'cover': 14060613, 'via': 'ediciones-es', 'ok': True}
+ref-camino-artista {'edicion': '/books/OL12961595M', 'titulo_ed': 'El Camino Del Artista En Accion', 'isbn': '9789501603651', 'editorial': 'Troquel Editorial', 'anio': '2001', 'cover': 3346446, 'via': 'ediciones-es', 'ok': True}
+ref-roba-como-artista {'edicion': '/books/OL30247706M', 'titulo_ed': 'Roba Como un Artista', 'isbn': '9781644732922', 'editorial': 'Penguin Random House Grupo Editorial (USA) LLC', 'anio': '2020', 'cover': 15223860, 'via': 'ediciones-es', 'ok': True}
+ref-siete-reglas-oro-para-vivir {'edicion': '/books/OL9857442M', 'titulo_ed': 'Siete Reglas de Oro Para Vivir En Pareja', 'isbn': '9789875661592', 'editorial': 'Debolsillo', 'anio': '2006', 'cover': 2304142, 'via': 'ediciones-es', 'ok': True}
+ref-abrazame-fuerte {'edicion': '/books/OL35715142M', 'titulo_ed': 'Abrázame fuerte', 'isbn': '9788479536947', 'editorial': 'Urano', 'anio': '2009', 'cover': 12450160, 'via': 'ediciones-es', 'ok': True}
+google HTTP Error 429: Too Many Requests
+ref-inteligencia-erotica {'ok': False, 'err': 'sin edición en español con portada'}
+ref-mujeres-corren-con-lobos {'edicion': '/books/OL9894204M', 'titulo_ed': 'Mujeres Que Corren Con Los Lobos', 'isbn': '9788440697455', 'editorial': 'Ediciones B', 'anio': '2002', 'cover': 5024724, 'via': 'ediciones-es', 'ok': True}
+google HTTP Error 429: Too Many Requests
+ref-buena-vida {'ok': False, 'err': 'sin edición en español con portada'}
+google HTTP Error 429: Too Many Requests
+ref-siglo-soledad {'edicion': '/works/OL34870154W', 'titulo_ed': 'El siglo de la soledad', 'isbn': '', 'editorial': '', 'anio': '', 'cover': 13663246, 'solo_obra': True, 'ok': True}
+google HTTP Error 429: Too Many Requests
+ref-amigos {'edicion': '/works/OL34870085W', 'titulo_ed': 'Amigos', 'isbn': '', 'editorial': '', 'anio': '', 'cover': 13663080, 'solo_obra': True, 'ok': True}
+google HTTP Error 429: Too Many Requests
+ref-hablar-con-extranos {'edicion': '/works/OL20656229W', 'titulo_ed': 'Hablar con extraños', 'isbn': '', 'editorial': '', 'anio': '', 'cover': 9312787, 'solo_obra': True, 'ok': True}
+google HTTP Error 429: Too Many Requests
+ref-pre-suasion {'edicion': '/works/OL17592794W', 'titulo_ed': 'Pre-Suasion', 'isbn': '', 'editorial': '', 'anio': '', 'cover': 7880005, 'solo_obra': True, 'ok': True}
+ref-rompe-barrera-no {'edicion': '/books/OL37925314M', 'titulo_ed': 'Rompe la barrera del NO', 'isbn': '9788416029747', 'editorial': 'Conecta', 'anio': '2022', 'cover': 15051981, 'via': 'ediciones-es', 'ok': True}
+ref-conversaciones-cruciales {'edicion': '/books/OL9153345M', 'titulo_ed': 'Conversaciones cruciales', 'isbn': '9788495787392', 'editorial': 'Empresa Activa', 'anio': '2004', 'cover': 2272855, 'via': 'ediciones-es', 'ok': True}
+google HTTP Error 429: Too Many Requests
+ref-defensa-conversacion {'edicion': '/works/OL17784126W', 'titulo_ed': 'En defensa de la conversación : el poder de la conversación en la era digital ', 'isbn': '', 'editorial': '', 'anio': '', 'cover': 8062416, 'solo_obra': True, 'ok': True}
+ref-mente-justos {'edicion': '/books/OL37855741M', 'titulo_ed': 'La mente de los justos', 'isbn': '9789584277923', 'editorial': 'Deusto', 'anio': '2012', 'cover': 12731215, 'via': 'ediciones-es', 'ok': True}
+google HTTP Error 429: Too Many Requests
+ref-contra-empatia {'ok': False, 'err': 'sin edición en español con portada'}
+ref-dignos-ser-humanos {'edicion': '/books/OL33896396M', 'titulo_ed': 'Dignos de ser humanos', 'isbn': '9788433964731', 'editorial': 'Editorial Anagrama', 'anio': '2021', 'cover': 12007392, 'via': 'ediciones-es', 'ok': True}
+google HTTP Error 429: Too Many Requests
+ref-comportate {'ok': False, 'err': 'sin edición en español con portada'}
+google HTTP Error 429: Too Many Requests
+ref-decidido {'ok': False, 'err': 'sin edición en español con portada'}
+google HTTP Error 429: Too Many Requests
+ref-efecto-lucifer {'edicion': '/works/OL17795802W', 'titulo_ed': 'El efecto lucifer', 'isbn': '', 'editorial': '', 'anio': '', 'cover': 8078397, 'solo_obra': True, 'ok': True}
+google HTTP Error 429: Too Many Requests
+ref-angeles-llevamos-dentro {'ok': False, 'err': 'sin edición en español con portada'}
+ref-tabla-rasa {'edicion': '/books/OL9132825M', 'titulo_ed': 'La Tabla Rasa', 'isbn': '9788449314896', 'editorial': 'Ediciones Paidos Iberica', 'anio': '2003', 'cover': 4910429, 'via': 'ediciones-es', 'ok': True}
+ref-sapiens-animales-dioses {'edicion': '/books/OL25881939M', 'titulo_ed': 'Sapiens', 'isbn': '9788499926223', 'editorial': 'Debate', 'anio': '2015', 'cover': 7387235, 'via': 'ediciones-es', 'ok': True}
+google HTTP Error 429: Too Many Requests
+ref-mono-llevamos-dentro {'ok': False, 'err': 'sin edición en español con portada'}
+google HTTP Error 429: Too Many Requests
+ref-edad-empatia {'ok': False, 'err': 'sin edición en español con portada'}
+ref-gen-egoista {'edicion': '/books/OL27937136M', 'titulo_ed': 'El gen egoista', 'isbn': '9788434583634', 'editorial': 'Salvat', 'anio': '1985', 'cover': 9325644, 'via': 'ediciones-es', 'ok': True}
+ref-aporofobia-rechazo-al-pobre {'edicion': '/books/OL26313070M', 'titulo_ed': 'Aporofobia, el rechazo al pobre', 'isbn': '9788449333385', 'editorial': 'Paidós', 'anio': '2017', 'cover': 7986775, 'via': 'ediciones-es', 'ok': True}
+ref-elogio-duda {'edicion': '/books/OL25916881M', 'titulo_ed': 'Elogio de la duda', 'isbn': '9788416601103', 'editorial': 'Arpa Editores', 'anio': '2016', 'cover': 7418800, 'via': 'ediciones-es', 'ok': True}
+ref-etica-para-amador {'edicion': '/books/OL30530119M', 'titulo_ed': 'Ética para Amador', 'isbn': '9789686640373', 'editorial': 'Ariel', 'anio': '1991', 'cover': 10463612, 'via': 'ediciones-es', 'ok': True}
+ref-preguntas-vida {'edicion': '/books/OL22996147M', 'titulo_ed': 'Las preguntas de la vida', 'isbn': '9789709031010', 'editorial': 'Editorial Planeta Mexicana', 'anio': '1999', 'cover': 9260985, 'via': 'ediciones-es', 'ok': True}
+google HTTP Error 429: Too Many Requests
+ref-cerebro-adolescente {'ok': False, 'err': 'sin edición en español con portada'}
+ref-disciplina-sin-lagrimas {'edicion': '/books/OL34402178M', 'titulo_ed': 'DISCIPLINA SIN LÁGRIMAS', 'isbn': '9788490704523', 'editorial': 'Ediciones B Mexico', 'anio': '2018', 'cover': 'https://covers.openlibrary.org/b/isbn/9788490704523-L.jpg?default=false', 'via': 'ediciones-es', 'ok': False, 'err': 'portada no válida'}
+google HTTP Error 429: Too Many Requests
+ref-poder-presencia {'edicion': '/works/OL20850835W', 'titulo_ed': 'El poder de la presencia', 'isbn': '', 'editorial': '', 'anio': '', 'cover': 10162498, 'solo_obra': True, 'ok': True}
+google HTTP Error 429: Too Many Requests
+ref-libro-ojala-tus-padres-hubieran {'edicion': '/works/OL20914253W', 'titulo_ed': 'El libro que ojalá tus padres hubieran leído', 'isbn': '', 'editorial': '', 'anio': '', 'cover': 10281536, 'solo_obra': True, 'ok': True}
+google HTTP Error 429: Too Many Requests
+ref-educar-realidad {'edicion': '/works/OL17782251W', 'titulo_ed': 'Educar en la realidad', 'isbn': '', 'editorial': '', 'anio': '', 'cover': 8059940, 'solo_obra': True, 'ok': True}
+google HTTP Error 429: Too Many Requests
+ref-hiperpaternidad {'edicion': '/works/OL22322319W', 'titulo_ed': 'Hiperpaternidad', 'isbn': '', 'editorial': '', 'anio': '', 'cover': 10453186, 'solo_obra': True, 'ok': True}
+ref-besame-mucho {'edicion': '/books/OL9146184M', 'titulo_ed': 'Besame Mucho', 'isbn': '9788484602620', 'editorial': 'Temas De Hoy', 'anio': '2003', 'cover': 3365513, 'via': 'ediciones-es', 'ok': True}
+ref-pequeno-dictador {'edicion': '/books/OL26233520M', 'titulo_ed': 'El pequeño dictador crece', 'isbn': '9788490603239', 'editorial': 'La Esfera de los Libros', 'anio': '2015', 'cover': 7904396, 'via': 'ediciones-es', 'ok': True}
+ref-te-paso {'edicion': '/books/OL49599628M', 'titulo_ed': '¿Qué Te Pasó?', 'isbn': '9786073905473', 'editorial': 'Editorial Planeta, S. A.', 'anio': '2023', 'cover': 14573134, 'via': 'ediciones-es', 'ok': True}
+google HTTP Error 429: Too Many Requests
+ref-como-aprendemos {'ok': False, 'err': 'sin edición en español con portada'}
+google HTTP Error 429: Too Many Requests
+ref-como-aprendemos-dehaene {'ok': False, 'err': 'sin edición en español con portada'}
+google HTTP Error 429: Too Many Requests
+ref-aprender-aprender {'edicion': '/works/OL34721635W', 'titulo_ed': 'Aprendendo a Aprender. Como Ter Sucesso em Matemática, Ciências e Qualquer Outra Matéria', 'isbn': '', 'editorial': '', 'anio': '', 'cover': 13387593, 'solo_obra': True, 'ok': True}
+ref-inteligencias-multiples {'edicion': '/books/OL12959385M', 'titulo_ed': 'Inteligencias Multiples', 'isbn': '9789501250121', 'editorial': 'Ediciones Paidos Iberica', 'anio': '2003', 'cover': 13617259, 'via': 'ediciones-es', 'ok': False, 'err': 'portada no válida'}
+ref-valor-educar {'edicion': '/books/OL9129374M', 'titulo_ed': 'El Valor de Educar', 'isbn': '9788434444690', 'editorial': 'Ariel', 'anio': '2004', 'cover': 1047359, 'via': 'ediciones-es', 'ok': True}
+ref-vida-secreta-mente {'edicion': '/books/OL26382496M', 'titulo_ed': 'La vida secreta de la mente', 'isbn': '9789588931463', 'editorial': 'Debate', 'anio': '2016', 'cover': 8074889, 'via': 'ediciones-es', 'ok': True}
+ref-poder-palabras {'edicion': '/books/OL39682838M', 'titulo_ed': 'Poder de Las Palabras', 'isbn': '9786073821414', 'editorial': 'Random House Espanol', 'anio': '2023', 'cover': 'https://covers.openlibrary.org/b/isbn/9786073821414-L.jpg?default=false', 'via': 'ediciones-es', 'ok': False, 'err': 'portada no válida'}
+ref-usar-cerebro {'edicion': '/books/OL36802157M', 'titulo_ed': 'Usar el Cerebro', 'isbn': '9786079377823', 'editorial': 'Editorial Planeta, S. A.', 'anio': '2015', 'cover': 'https://covers.openlibrary.org/b/isbn/9786079377823-L.jpg?default=false', 'via': 'ediciones-es', 'ok': False, 'err': 'portada no válida'}
+ref-neurociencia-cuerpo {'edicion': '/books/OL39819702M', 'titulo_ed': 'Neurociencia del cuerpo', 'isbn': '9788499889931', 'editorial': 'Editorial Kairós', 'anio': '2022', 'cover': 13012021, 'via': 'ediciones-es', 'ok': True}
+google HTTP Error 429: Too Many Requests
+ref-espejo-cerebro {'edicion': '/works/OL27049440W', 'titulo_ed': 'El espejo del cerebro', 'isbn': '', 'editorial': '', 'anio': '', 'cover': 12560941, 'solo_obra': True, 'ok': True}
+google HTTP Error 429: Too Many Requests
+ref-cerebro-creo-al-hombre {'ok': False, 'err': 'sin edición en español con portada'}
+google HTTP Error 429: Too Many Requests
+ref-sentir-saber {'edicion': '/works/OL26416936W', 'titulo_ed': 'Sentir y saber', 'isbn': '', 'editorial': '', 'anio': '', 'cover': 12371969, 'solo_obra': True, 'ok': True}
+google HTTP Error 429: Too Many Requests
+ref-creacion-yo {'edicion': '/works/OL35156662W', 'titulo_ed': 'La creación del yo', 'isbn': '', 'editorial': '', 'anio': '', 'cover': 14157730, 'solo_obra': True, 'ok': True}
+ref-cerebro-mito-yo {'edicion': '/books/OL13068984M', 'titulo_ed': 'El Cerebro y El Mito del Yo', 'isbn': '9789580467984', 'editorial': 'Grupo Editorial Norma', 'anio': '2003', 'cover': 5240227, 'via': 'ediciones-es', 'ok': True}
+ref-ladron-cerebros {'edicion': '/books/OL27035677M', 'titulo_ed': 'El ladrón de cerebros', 'isbn': '9788483068892', 'editorial': 'Debate', 'anio': '2011', 'cover': 8644034, 'via': 'ediciones-es', 'ok': True}
+google HTTP Error 429: Too Many Requests
+ref-somos-nuestro-cerebro {'edicion': '/works/OL34985456W', 'titulo_ed': 'Somos nuestro cerebro', 'isbn': '', 'editorial': '', 'anio': '', 'cover': 13939028, 'solo_obra': True, 'ok': True}
+google HTTP Error 429: Too Many Requests
+ref-neuronas-dios {'ok': False, 'err': 'sin edición en español con portada'}
+ref-instinto-lenguaje {'edicion': '/books/OL13192800M', 'titulo_ed': 'Instinto del Lenguaje, El', 'isbn': '9788420667324', 'editorial': 'Alianza', 'anio': '2000', 'cover': 5258581, 'via': 'ediciones-es', 'ok': True}
+google HTTP Error 429: Too Many Requests
+ref-cebras-no-tienen-ulcera {'ok': False, 'err': 'sin edición en español con portada'}
+google HTTP Error 429: Too Many Requests
+ref-respira {'edicion': '/works/OL35011562W', 'titulo_ed': 'Respira', 'isbn': '', 'editorial': '', 'anio': '', 'cover': 13971796, 'solo_obra': True, 'ok': True}
+google HTTP Error 429: Too Many Requests
+ref-ciencia-felicidad {'ok': False, 'err': 'sin edición en español con portada'}
+google HTTP Error 429: Too Many Requests
+ref-mitos-felicidad {'ok': False, 'err': 'sin edición en español con portada'}
+google HTTP Error 429: Too Many Requests
+ref-tropezar-con-felicidad {'ok': False, 'err': 'sin edición en español con portada'}
+ref-conquista-felicidad {'edicion': '/books/OL49146601M', 'titulo_ed': 'Conquista de la Felicidad', 'isbn': '9798484383795', 'editorial': 'Independently Published', 'anio': '2021', 'cover': 'https://covers.openlibrary.org/b/isbn/9798484383795-L.jpg?default=false', 'via': 'ediciones-es', 'ok': False, 'err': 'portada no válida'}
+ref-silencio-era-ruido {'edicion': '/books/OL27902924M', 'titulo_ed': 'El silencio en la era del ruido', 'isbn': '9788430618880', 'editorial': 'Taurus', 'anio': '2017', 'cover': 9256417, 'via': 'ediciones-es', 'ok': True}
+ref-ser-mortal {'edicion': '/books/OL26453011M', 'titulo_ed': 'Ser mortal', 'isbn': '9788416252671', 'editorial': 'Galaxia Gutenberg', 'anio': '2015', 'cover': 8178873, 'via': 'ediciones-es', 'ok': True}
+ref-enfermedad-sus-metaforas {'edicion': '/books/OL12989352M', 'titulo_ed': 'La enfermedad y sus metáforas / El sida y sus metáforas', 'isbn': '9789505118878', 'editorial': 'Taurus', 'anio': '2003', 'cover': 3347409, 'via': 'ediciones-es', 'ok': False, 'err': 'portada no válida'}
+ref-generacion-dopamina {'edicion': '/books/OL62416475M', 'titulo_ed': 'Generación dopamina', 'isbn': '9791387662455', 'editorial': 'Urano', 'anio': '2026', 'cover': 15244307, 'via': 'ediciones-es', 'ok': True}
+google HTTP Error 429: Too Many Requests
+ref-tras-grito {'edicion': '/works/OL34870049W', 'titulo_ed': 'Tras el grito', 'isbn': '', 'editorial': '', 'anio': '', 'cover': 13663015, 'solo_obra': True, 'ok': True}
+google HTTP Error 429: Too Many Requests
+ref-conexiones-perdidas {'ok': False, 'err': 'sin edición en español con portada'}
+ref-demonio-depresion {'edicion': '/books/OL13275105M', 'titulo_ed': 'El Demonio De LA Depresion', 'isbn': '9788466311571', 'editorial': 'Punto de Lectura', 'anio': '2003', 'cover': 13620738, 'via': 'ediciones-es', 'ok': False, 'err': 'portada no válida'}
+google HTTP Error 429: Too Many Requests
+ref-irresistible {'edicion': '/works/OL20054368W', 'titulo_ed': 'Irresistible', 'isbn': '', 'editorial': '', 'anio': '', 'cover': 15240641, 'solo_obra': True, 'ok': True}
+ref-murmullo-fantasmas {'edicion': '/books/OL13281866M', 'titulo_ed': 'El Murmullo de Los Fantasmas', 'isbn': '9788474329872', 'editorial': 'Gedisa Editorial', 'anio': '2004', 'cover': 'https://covers.openlibrary.org/b/isbn/9788474329872-L.jpg?default=false', 'via': 'ediciones-es', 'ok': False, 'err': 'portada no válida'}
+ref-sanar-trauma {'edicion': '/books/OL47163967M', 'titulo_ed': 'Sanar el trauma', 'isbn': '9788484459484', 'editorial': 'Gaia Ediciones', 'anio': '2021', 'cover': 13574572, 'via': 'ediciones-es', 'ok': True}
+google HTTP Error 429: Too Many Requests
+ref-regalo {'ok': False, 'err': 'sin edición en español con portada'}
+google HTTP Error 429: Too Many Requests
+ref-neurotribus {'ok': False, 'err': 'sin edición en español con portada'}
+ref-pensar-con-imagenes {'edicion': '/books/OL13323750M', 'titulo_ed': 'Pensar Con Imagenes', 'isbn': '9788484283065', 'editorial': 'Alba', 'anio': '2006', 'cover': 'https://covers.openlibrary.org/b/isbn/9788484283065-L.jpg?default=false', 'via': 'ediciones-es', 'ok': False, 'err': 'portada no válida'}
+ref-razon-salto {'edicion': '/books/OL39333913M', 'titulo_ed': 'Razón Por la Que Salto/ the Reason I Jump', 'isbn': '9788416240159', 'editorial': 'Penguin Random House Grupo Editorial', 'anio': '2015', 'cover': 14683337, 'via': 'ediciones-es', 'ok': True}
+ref-dar-recibir {'edicion': '/books/OL50705318M', 'titulo_ed': 'Dar y Recibir', 'isbn': '9786075574080', 'editorial': 'Editorial Oceano de Mexico', 'anio': '2023', 'cover': 'https://covers.openlibrary.org/b/isbn/9786075574080-L.jpg?default=false', 'via': 'ediciones-es', 'ok': False, 'err': 'portada no válida'}
+google HTTP Error 429: Too Many Requests
+ref-originales {'ok': False, 'err': 'sin edición en español con portada'}
+google HTTP Error 429: Too Many Requests
+ref-lideres-comen-al-final {'edicion': '/works/OL27055569W', 'titulo_ed': 'Los líderes comen al final', 'isbn': '', 'editorial': '', 'anio': '', 'cover': 12568893, 'solo_obra': True, 'ok': True}
+google HTTP Error 429: Too Many Requests
+ref-organizacion-sin-miedo {'ok': False, 'err': 'sin edición en español con portada'}
+ref-trabajos-mierda {'edicion': '/books/OL47332275M', 'titulo_ed': 'Trabajos de mierda', 'isbn': '9788434428997', 'editorial': 'Editorial Ariel', 'anio': '2018', 'cover': 13918879, 'via': 'ediciones-es', 'ok': True}
+ref-madera-lider {'edicion': '/books/OL13356328M', 'titulo_ed': 'Madera De Lider/leadership Talent', 'isbn': '9788495787637', 'editorial': 'Empresa Activa', 'anio': '2004', 'cover': 3333934, 'via': 'ediciones-es', 'ok': True}
+google HTTP Error 429: Too Many Requests
+ref-diez-razones-para-borrar-tus {'edicion': '/works/OL17930280W', 'titulo_ed': 'Diez razones para borrar tus redes sociales de inmediato', 'isbn': '', 'editorial': '', 'anio': '', 'cover': 8260330, 'solo_obra': True, 'ok': True}
+google HTTP Error 429: Too Many Requests
+ref-fabrica-cretinos-digitales {'edicion': '/works/OL29301467W', 'titulo_ed': 'La fábrica de cretinos digitales', 'isbn': '', 'editorial': '', 'anio': '', 'cover': 13523169, 'solo_obra': True, 'ok': True}
+ref-nexus {'edicion': '/books/OL51352748M', 'titulo_ed': 'Nexus', 'isbn': '9798890981523', 'editorial': 'Random House Espanol', 'anio': '2024', 'cover': 15200266, 'via': 'ediciones-es', 'ok': True}
+google HTTP Error 429: Too Many Requests
+ref-sociedad-transparencia {'ok': False, 'err': 'sin edición en español con portada'}
+ref-tener-o-ser {'edicion': '/books/OL19660471M', 'titulo_ed': 'Tener o ser?', 'isbn': '968', 'editorial': 'Fondo de Cultura Económica', 'anio': '1978', 'cover': 'https://covers.openlibrary.org/b/isbn/968-L.jpg?default=false', 'via': 'ediciones-es', 'ok': True}
+ref-mirar-al-sol {'edicion': '/books/OL27155040M', 'titulo_ed': 'Mirar al sol', 'isbn': '9789875803039', 'editorial': 'Booket', 'anio': '2009', 'cover': 'https://covers.openlibrary.org/b/isbn/9789875803039-L.jpg?default=false', 'via': 'ediciones-es', 'ok': False, 'err': 'portada no válida'}
+ref-verdugo-amor {'edicion': '/books/OL12953302M', 'titulo_ed': 'Verdugo del Amor', 'isbn': '9789500419246', 'editorial': 'Emece Editores', 'anio': '1998', 'cover': 'https://covers.openlibrary.org/b/isbn/9789500419246-L.jpg?default=false', 'via': 'ediciones-es', 'ok': False, 'err': 'portada no válida'}
+ref-don-terapia {'edicion': '/books/OL12953626M', 'titulo_ed': 'El Don de La Terapia', 'isbn': '9789500423748', 'editorial': 'Emece Editores', 'anio': '2002', 'cover': 3344513, 'via': 'ediciones-es', 'ok': True}
+ref-mas-platon-menos-prozac {'edicion': '/books/OL9131426M', 'titulo_ed': 'Mas Platon y menos prozac', 'isbn': '9788440696847', 'editorial': 'Ediciones B', 'anio': '2000', 'cover': 1047572, 'via': 'ediciones-es', 'ok': True}
+ref-como-ser-estoico {'edicion': '/books/OL49111450M', 'titulo_ed': 'Cómo Ser un Estoico', 'isbn': '9786075694573', 'editorial': 'Editorial Planeta, S. A.', 'anio': '2023', 'cover': 15241862, 'via': 'ediciones-es', 'ok': True}
+google HTTP Error 429: Too Many Requests
+ref-vejez {'ok': False, 'err': 'sin edición en español con portada'}
+ref-segundo-sexo {'edicion': '/books/OL26322782M', 'titulo_ed': 'El segundo sexo', 'isbn': '9788437622330', 'editorial': 'Cátedra', 'anio': '2014', 'cover': 7997562, 'via': 'ediciones-es', 'ok': True}
+ref-momo {'edicion': '/books/OL16355412M', 'titulo_ed': 'Momo', 'isbn': '9788466309608', 'editorial': 'Suma de Letras', 'anio': '2003', 'cover': 12498596, 'via': 'ediciones-es', 'ok': True}
+google HTTP Error 429: Too Many Requests
+ref-tareas-duelo {'ok': False, 'err': 'sin edición en español con portada'}
+ref-muerte-amanecer {'edicion': '/books/OL6845083M', 'titulo_ed': 'La muerte', 'isbn': '9788449411311', 'editorial': 'Luciérnaga Oceano', 'anio': '1998', 'cover': 'https://covers.openlibrary.org/b/isbn/9788449411311-L.jpg?default=false', 'via': 'ediciones-es', 'ok': False, 'err': 'portada no válida'}
+ref-psicopata {'edicion': '/books/OL19205713M', 'titulo_ed': 'El psicópata', 'isbn': '9788493138202', 'editorial': 'Algar Editorial', 'anio': '2000', 'cover': 'https://covers.openlibrary.org/b/isbn/9788493138202-L.jpg?default=false', 'via': 'ediciones-es', 'ok': False, 'err': 'portada no válida'}
+ref-amores-matan {'edicion': '/books/OL13353320M', 'titulo_ed': 'Amores que matan', 'isbn': '9788493138271', 'editorial': 'Algar Editorial', 'anio': '2007', 'cover': 10332577, 'via': 'ediciones-es', 'ok': True}
+ref-mindhunter {'edicion': '/books/OL26424729M', 'titulo_ed': 'Mindhunter', 'isbn': '9788417067595', 'editorial': 'Crítica', 'anio': '2017', 'cover': 15217966, 'via': 'ediciones-es', 'ok': True}
+ref-comer-atentos {'edicion': '/books/OL31062254M', 'titulo_ed': 'Comer atentos', 'isbn': '9781611802221', 'editorial': 'Shambhala Español', 'anio': '2015', 'cover': 12754190, 'via': 'ediciones-es', 'ok': True}
+google HTTP Error 429: Too Many Requests
+ref-hambre {'ok': False, 'err': 'sin edición en español con portada'}
+google HTTP Error 429: Too Many Requests
+ref-poder-bosque {'ok': False, 'err': 'sin edición en español con portada'}
+google HTTP Error 429: Too Many Requests
+ref-ultimos-ninos-bosque {'ok': False, 'err': 'sin edición en español con portada'}
+ref-cuerdos-entre-locos {'edicion': '/books/OL13323748M', 'titulo_ed': 'Cuerdos Entre Locos', 'isbn': '9788484283041', 'editorial': 'Alba', 'anio': '2006', 'cover': 'https://covers.openlibrary.org/b/isbn/9788484283041-L.jpg?default=false', 'via': 'ediciones-es', 'ok': False, 'err': 'portada no válida'}
+ref-historias-divan {'edicion': '/books/OL35623667M', 'titulo_ed': 'HISTORIAS DE DIVAN DIEZ RELATOS DE VIDA', 'isbn': '9789504959243', 'editorial': 'PLANETA', 'anio': '2013', 'cover': 12330757, 'via': 'ediciones-es', 'ok': True}
+ok 109 de 167
