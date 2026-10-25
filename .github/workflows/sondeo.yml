@@ -1,0 +1,13 @@
+name: Biblioteca sondeo de fuentes
+on: workflow_dispatch
+permissions:
+  contents: write
+jobs:
+  s:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 biblioteca-src/sondeo/sondeo.py | tee /tmp/sondeo.log; cp /tmp/sondeo.log /tmp/sondeo/log.txt
+      - run: |
+          cd /tmp/sondeo && git init -q -b sondeo && git config user.name aurzane-bot && git config user.email bot@aurzane.com
+          git add -A && git commit -qm sondeo && git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" sondeo
