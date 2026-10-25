@@ -584,5 +584,351 @@ FICHAS3 = [
     "Psicología de la adolescencia"
    ]
   }
+ },
+{
+ "id": "ref-querido-diego",
+ "titulo": "Querido Diego, te abraza Quiela",
+ "autores": "Elena Poniatowska",
+ "resumen": "Novela breve en cartas: la pintora Angelina Beloff escribe desde París a Diego Rivera, que ya no responde. Útil para analizar: dependencia emocional, la espera que no termina, la pérdida de la propia identidad y el duelo amoroso.",
+ "temas": {
+  "39": [
+   "Cartas personales",
+   "Literatura y emociones"
+  ],
+  "11": [
+   "Dependencia emocional"
+  ],
+  "37": [
+   "Duelo amoroso"
+  ]
  }
+},
+{
+ "id": "ref-el-tunel",
+ "titulo": "El túnel",
+ "autores": "Ernesto Sabato",
+ "resumen": "Un pintor relata desde la cárcel cómo su obsesión por una mujer terminó en tragedia. Útil para analizar: celos patológicos, pensamiento obsesivo, aislamiento y control en la pareja.",
+ "temas": {
+  "39": [
+   "Literatura y emociones"
+  ],
+  "11": [
+   "Celos en las relaciones"
+  ],
+  "3": [
+   "Celos",
+   "Soledad emocional"
+  ]
+ }
+},
+{
+ "id": "ref-rebeca",
+ "titulo": "Rebeca",
+ "autores": "Daphne du Maurier",
+ "resumen": "Una joven recién casada llega a una mansión donde todo recuerda a la primera esposa de su marido. Útil para analizar: inseguridad, comparación constante, celos retrospectivos y relaciones de poder.",
+ "temas": {
+  "39": [
+   "Literatura y emociones"
+  ],
+  "38": [
+   "Comparación social",
+   "Confianza en uno mismo"
+  ],
+  "3": [
+   "Celos"
+  ]
+ }
+},
+{
+ "id": "ref-un-monstruo-viene-a-verme",
+ "titulo": "Un monstruo viene a verme",
+ "autores": "Patrick Ness",
+ "resumen": "Conor, de trece años, recibe la visita nocturna de un monstruo mientras su madre está gravemente enferma. Útil para analizar: duelo anticipado, culpa, ira y la necesidad de decir la verdad sobre lo que sentimos.",
+ "temas": {
+  "39": [
+   "Cuentos terapéuticos",
+   "Ficción y empatía"
+  ],
+  "37": [
+   "Duelo en la adolescencia",
+   "Hablar de la muerte con los niños"
+  ],
+  "3": [
+   "Culpa"
+  ]
+ }
+},
+{
+ "id": "ref-un-hombre-llamado-ove",
+ "titulo": "Un hombre llamado Ove",
+ "autores": "Fredrik Backman",
+ "resumen": "Un viudo cascarrabias ve alterada su rutina por unos vecinos nuevos que no lo dejan en paz. Útil para analizar: duelo por la pareja, soledad, rigidez y el poder de los vínculos inesperados.",
+ "temas": {
+  "39": [
+   "Ficción y empatía"
+  ],
+  "37": [
+   "Viudez",
+   "Recuperación tras una pérdida"
+  ],
+  "38": [
+   "Soledad"
+  ]
+ }
+},
+{
+ "id": "ref-eleanor-oliphant",
+ "titulo": "Eleanor Oliphant está perfectamente",
+ "autores": "Gail Honeyman",
+ "resumen": "Una mujer de treinta años con una vida rígida y solitaria empieza a cambiar gracias a una amistad. Útil para analizar: soledad, heridas de la infancia, mecanismos de defensa y el camino hacia pedir ayuda.",
+ "temas": {
+  "39": [
+   "Ficción y empatía"
+  ],
+  "38": [
+   "Soledad"
+  ],
+  "22": [
+   "Trauma infantil"
+  ]
+ }
+},
+{
+ "id": "ref-la-campana-de-cristal",
+ "titulo": "La campana de cristal",
+ "autores": "Sylvia Plath",
+ "resumen": "Esther, una joven brillante, se hunde poco a poco en la depresión durante un verano en Nueva York. Útil para analizar: cómo se vive la depresión desde dentro, presión social sobre las mujeres y la experiencia del tratamiento.",
+ "temas": {
+  "39": [
+   "Narrativa e identidad"
+  ],
+  "8": [
+   "Depresión"
+  ],
+  "10": [
+   "Identidad adolescente"
+  ]
+ }
+},
+{
+ "id": "ref-los-renglones-torcidos-de-dios",
+ "titulo": "Los renglones torcidos de Dios",
+ "autores": "Torcuato Luca de Tena",
+ "resumen": "Alice Gould ingresa en un hospital psiquiátrico asegurando que va a investigar un crimen. Útil para analizar: diagnóstico, credibilidad, la frontera entre cordura y locura, y la vida dentro de una institución.",
+ "temas": {
+  "39": [
+   "Literatura y emociones"
+  ],
+  "8": [
+   "Psicopatología descriptiva"
+  ]
+ }
+},
+{
+ "id": "ref-el-guardian-entre-el-centeno",
+ "titulo": "El guardián entre el centeno",
+ "autores": "J. D. Salinger",
+ "resumen": "Holden Caulfield vaga por Nueva York tras ser expulsado del internado. Útil para analizar: alienación adolescente, duelo no resuelto por un hermano, cinismo como defensa y búsqueda de autenticidad.",
+ "temas": {
+  "39": [
+   "Narrativa e identidad"
+  ],
+  "10": [
+   "Identidad adolescente"
+  ],
+  "37": [
+   "Duelo en la adolescencia"
+  ]
+ }
+},
+{
+ "id": "ref-la-tregua",
+ "titulo": "La tregua",
+ "autores": "Mario Benedetti",
+ "resumen": "El diario de un viudo a punto de jubilarse que vuelve a enamorarse. Útil para analizar: rutina y vacío, una segunda oportunidad afectiva, relaciones con los hijos y la pérdida.",
+ "temas": {
+  "39": [
+   "Diarios personales",
+   "Literatura y emociones"
+  ],
+  "37": [
+   "Duelo amoroso",
+   "Viudez"
+  ],
+  "38": [
+   "Volver a empezar"
+  ]
+ }
+},
+{
+ "id": "ref-gente-normal",
+ "titulo": "Gente normal",
+ "autores": "Sally Rooney",
+ "resumen": "Marianne y Connell se acercan y se alejan durante años, desde el instituto hasta la universidad. Útil para analizar: estilos de apego, dificultades de comunicación, autoestima, clase social y ansiedad.",
+ "temas": {
+  "39": [
+   "Literatura y emociones"
+  ],
+  "11": [
+   "Relaciones románticas",
+   "Apego en las relaciones"
+  ],
+  "38": [
+   "Autoestima"
+  ]
+ }
+},
+{
+ "id": "ref-wonder",
+ "titulo": "La lección de August (Wonder)",
+ "autores": "R. J. Palacio",
+ "resumen": "August, un niño con una diferencia facial, va por primera vez al colegio. Útil para analizar: rechazo, acoso escolar, empatía y el punto de vista de cada personaje.",
+ "temas": {
+  "39": [
+   "Ficción y empatía"
+  ],
+  "14": [
+   "Acoso escolar"
+  ],
+  "11": [
+   "Rechazo social"
+  ]
+ }
+},
+{
+ "id": "ref-el-curioso-incidente",
+ "titulo": "El curioso incidente del perro a medianoche",
+ "autores": "Mark Haddon",
+ "resumen": "Christopher, un adolescente que piensa de forma muy particular, investiga la muerte del perro de su vecina. Útil para analizar: otra forma de percibir el mundo, secretos familiares y la comunicación entre padres e hijos.",
+ "temas": {
+  "39": [
+   "Ficción y empatía"
+  ],
+  "27": [
+   "Autismo"
+  ],
+  "14": [
+   "Conflicto familiar"
+  ]
+ }
+},
+{
+ "id": "ref-el-extranjero",
+ "titulo": "El extranjero",
+ "autores": "Albert Camus",
+ "resumen": "Meursault reacciona con aparente indiferencia a la muerte de su madre y a sus propios actos. Útil para analizar: aplanamiento emocional, juicio social sobre cómo «debemos» sentir y el absurdo.",
+ "temas": {
+  "39": [
+   "Narrativa e identidad"
+  ],
+  "3": [
+   "Conciencia emocional",
+   "Expresión emocional"
+  ]
+ }
+},
+{
+ "id": "ref-como-agua-para-chocolate",
+ "titulo": "Como agua para chocolate",
+ "autores": "Laura Esquivel",
+ "resumen": "Tita no puede casarse por una tradición familiar que la obliga a cuidar de su madre; sus emociones pasan a la comida. Útil para analizar: control materno, emociones reprimidas y amor prohibido.",
+ "temas": {
+  "39": [
+   "Literatura y emociones"
+  ],
+  "14": [
+   "Conflicto familiar"
+  ],
+  "3": [
+   "Supresión emocional"
+  ]
+ }
+},
+{
+ "id": "ref-delirio",
+ "titulo": "Delirio",
+ "autores": "Laura Restrepo",
+ "resumen": "Un hombre vuelve de un viaje y encuentra a su mujer en plena crisis psicótica; intenta entender qué pasó. Útil para analizar: crisis mental, secretos familiares, cuidado de la pareja y contexto social.",
+ "temas": {
+  "39": [
+   "Literatura y emociones"
+  ],
+  "8": [
+   "Psicopatología descriptiva"
+  ],
+  "14": [
+   "Psicología de la familia"
+  ]
+ }
+},
+{
+ "id": "ref-el-amor-en-los-tiempos-del-colera",
+ "titulo": "El amor en los tiempos del cólera",
+ "autores": "Gabriel García Márquez",
+ "resumen": "Florentino Ariza espera más de cincuenta años a Fermina Daza. Útil para analizar: amor idealizado u obsesivo, espera, rechazo y el amor en la vejez.",
+ "temas": {
+  "39": [
+   "Literatura y emociones"
+  ],
+  "11": [
+   "Dependencia emocional",
+   "Rupturas sentimentales"
+  ],
+  "48": [
+   "Cambios emocionales en la vejez"
+  ]
+ }
+},
+{
+ "id": "ref-la-casa-de-bernarda-alba",
+ "titulo": "La casa de Bernarda Alba",
+ "autores": "Federico García Lorca",
+ "resumen": "Tras enviudar, Bernarda impone a sus hijas ocho años de luto encerradas en casa. Útil para analizar: control familiar, represión, rivalidad entre hermanas y duelo convertido en castigo.",
+ "temas": {
+  "39": [
+   "Literatura y emociones"
+  ],
+  "14": [
+   "Conflicto familiar"
+  ],
+  "37": [
+   "Rituales de despedida"
+  ]
+ }
+},
+{
+ "id": "ref-nada-laforet",
+ "titulo": "Nada",
+ "autores": "Carmen Laforet",
+ "resumen": "Andrea llega a Barcelona a estudiar y vive con unos familiares en una casa tensa y hostil. Útil para analizar: familias disfuncionales, violencia en el hogar, soledad y construcción de la identidad.",
+ "temas": {
+  "39": [
+   "Narrativa e identidad"
+  ],
+  "14": [
+   "Conflicto familiar"
+  ],
+  "10": [
+   "Identidad adolescente"
+  ]
+ }
+},
+{
+ "id": "ref-cometas-en-el-cielo",
+ "titulo": "Cometas en el cielo",
+ "autores": "Khaled Hosseini",
+ "resumen": "Amir carga durante años con la culpa de haber traicionado a su mejor amigo de la infancia. Útil para analizar: culpa, vergüenza, relación con el padre y reparación.",
+ "temas": {
+  "39": [
+   "Literatura y emociones"
+  ],
+  "3": [
+   "Culpa",
+   "Vergüenza"
+  ],
+  "11": [
+   "Amistad"
+  ]
+ }
+}
 ]
