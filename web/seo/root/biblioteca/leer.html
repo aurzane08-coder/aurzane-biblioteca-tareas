@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leer | Biblioteca AURZANE</title>
+<meta name="robots" content="noindex, follow">
+<script>(function(){var id=new URLSearchParams(location.search).get('libro');if(id&&/^[a-z0-9-]+$/.test(id))location.replace('libro/'+id+'.html'+location.hash);})();</script>
+<meta name="description" content="Lee gratis libros de psicología en español con licencia abierta.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;1,6..96,400&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="biblioteca.css?v=20261025a">
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="https://aurzane.com/">AUR<b>Z</b>ANE</a>
+    <nav class="topnav" aria-label="Principal">
+      <a href="https://aurzane.com/">Inicio</a>
+      <a href="https://aurzane.com/articulos/">Artículos</a>
+      <a href="https://aurzane.com/biblioteca/" aria-current="page">Biblioteca</a>
+      <a href="https://ovp.aurzane.com/">Orientación vocacional</a>
+    </nav>
+  </div>
+</header>
+<main class="wrap" style="padding-top:28px;">
+  <nav class="breadcrumb" aria-label="Ruta"><a href="https://aurzane.com/">Inicio</a><span class="sep">/</span><a href="./">Biblioteca</a><span class="sep">/</span><span class="current" id="bc-libro">Libro</span></nav>
+  <div id="ficha"></div>
+  <section class="lector" id="lector" hidden>
+    <div class="barra">
+      <div class="grupo"><span id="pag-info">Cargando…</span></div>
+      <div class="grupo">
+        <button type="button" id="menos" aria-label="Reducir tamaño">−</button>
+        <button type="button" id="mas" aria-label="Aumentar tamaño">+</button>
+        <button type="button" id="arriba">Volver arriba</button>
+      </div>
+    </div>
+    <div class="paginas" id="paginas"><p class="cargando">Abriendo el libro…</p></div>
+  </section>
+</main>
+<footer class="site"><div class="wrap"><p>AURZANE · Biblioteca abierta de psicología en español</p></div></footer>
+<script src="catalogo.js?v=20261025a"></script>
+<script type="module" src="leer.js?v=20261025a"></script>
+</body>
+</html>
