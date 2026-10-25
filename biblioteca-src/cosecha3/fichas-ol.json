@@ -19,8 +19,15 @@
   "ok": true
  },
  "ref-cinco-heridas": {
+  "edicion": "/books/OL37850643M",
+  "titulo_ed": "Las Cinco Heridas que Impiden Ser Uno Mismo",
+  "isbn": "9788494182693",
+  "editorial": "Editorial Ob Stare, S. L.",
+  "anio": "2014",
+  "cover": "https://covers.openlibrary.org/b/isbn/9788494182693-L.jpg?default=false",
+  "via": "ediciones-es",
   "ok": false,
-  "err": "sin edición en español con portada"
+  "err": "portada no válida"
  },
  "ref-poder-pensamiento-positivo": {
   "edicion": "/books/OL26947583M",
@@ -68,27 +75,33 @@
   "err": "sin edición en español con portada"
  },
  "ref-tormenta-cerebral": {
-  "edicion": "/works/OL17346112W",
+  "edicion": "/books/OL25923493M",
   "titulo_ed": "Tormenta cerebral",
-  "isbn": "",
-  "editorial": "",
-  "anio": "",
+  "isbn": "9788490650059",
+  "editorial": "Alba",
+  "anio": "2014",
   "cover": 7425045,
-  "solo_obra": true,
+  "via": "ediciones-es",
   "ok": true
  },
  "ref-sociedad-del-cansancio": {
-  "ok": false,
-  "err": "sin edición en español con portada"
+  "edicion": "/books/OL40822490M",
+  "titulo_ed": "La sociedad del cansancio",
+  "isbn": "9788425448126",
+  "editorial": "Herder",
+  "anio": "2022",
+  "cover": 15247673,
+  "via": "ediciones-es",
+  "ok": true
  },
  "ref-mindfulness-guia-practica": {
-  "edicion": "/works/OL19643667W",
-  "titulo_ed": "Mindfulness",
-  "isbn": "",
-  "editorial": "",
+  "edicion": "ttl:https://www.todostuslibros.com/libros/mindfulness_978-0-415-63647-6",
+  "titulo_ed": "MINDFULNESS",
+  "isbn": "9780415636476",
+  "editorial": "ROUTLEDGE BOOKS",
   "anio": "",
-  "cover": 8560757,
-  "solo_obra": true,
+  "cover": "https://static.cegal.es/imagenes/marcadas/9780415/978041563647.gif",
+  "via": "todostuslibros",
   "ok": true
  },
  "ref-comunicacion-no-violenta": {
@@ -127,13 +140,13 @@
   "err": "sin edición en español con portada"
  },
  "ref-razones-seguir-viviendo": {
-  "edicion": "/works/OL17366769W",
+  "edicion": "/books/OL25945563M",
   "titulo_ed": "Razones para seguir viviendo",
-  "isbn": "",
-  "editorial": "",
-  "anio": "",
+  "isbn": "9788432229213",
+  "editorial": "Seix Barral",
+  "anio": "2016",
   "cover": 7444993,
-  "solo_obra": true,
+  "via": "ediciones-es",
   "ok": true
  },
  "ref-nada-se-opone-noche": {
@@ -147,13 +160,13 @@
   "ok": true
  },
  "ref-emocionario": {
-  "edicion": "/works/OL17047885W",
+  "edicion": "/books/OL25617058M",
   "titulo_ed": "Emocionario",
-  "isbn": "",
-  "editorial": "",
-  "anio": "",
-  "cover": 13947520,
-  "solo_obra": true,
+  "isbn": "9788494151309",
+  "editorial": "Palabras aladas",
+  "anio": "2013",
+  "cover": 7289828,
+  "via": "ediciones-es",
   "ok": true
  },
  "ref-monstruo-de-colores": {
@@ -167,23 +180,23 @@
   "ok": true
  },
  "ref-educar-en-el-asombro": {
-  "edicion": "/works/OL17052189W",
+  "edicion": "/books/OL26221743M",
   "titulo_ed": "Educar en el asombro",
-  "isbn": "",
-  "editorial": "",
-  "anio": "",
-  "cover": 7295137,
-  "solo_obra": true,
+  "isbn": "9788415577423",
+  "editorial": "Plataforma editorial",
+  "anio": "2012",
+  "cover": 7897822,
+  "via": "ediciones-es",
   "ok": true
  },
  "ref-cerebro-nino-padres": {
-  "edicion": "/works/OL17302814W",
+  "edicion": "/books/OL25875996M",
   "titulo_ed": "El cerebro del niño explicado a los padres",
-  "isbn": "",
-  "editorial": "",
-  "anio": "",
+  "isbn": "9788416429561",
+  "editorial": "Plataforma editorial",
+  "anio": "2015",
   "cover": 7384685,
-  "solo_obra": true,
+  "via": "ediciones-es",
   "ok": true
  },
  "ref-neuroeducacion-mora": {
@@ -196,17 +209,23 @@
   "ok": true
  },
  "ref-mito-normalidad": {
-  "ok": false,
-  "err": "sin edición en español con portada"
+  "edicion": "ttl:https://www.todostuslibros.com/libros/el-mito-de-la-normalidad_978-84-92917-16-7",
+  "titulo_ed": "El mito de la normalidad",
+  "isbn": "9788492917167",
+  "editorial": "Tendencias",
+  "anio": "",
+  "cover": "https://static.cegal.es/imagenes/marcadas/9788492/978849291716.gif",
+  "via": "todostuslibros",
+  "ok": true
  },
  "ref-cuando-cuerpo-dice-no": {
-  "edicion": "/works/OL34811315W",
+  "edicion": "/books/OL47164123M",
   "titulo_ed": "Cuando el cuerpo dice \"NO\"",
-  "isbn": "",
-  "editorial": "",
-  "anio": "",
+  "isbn": "9788484458296",
+  "editorial": "Gaia Ediciones",
+  "anio": "2020",
   "cover": 13574832,
-  "solo_obra": true,
+  "via": "ediciones-es",
   "ok": true
  },
  "ref-lo-que-no-tiene-nombre": {
@@ -219,15 +238,14 @@
   "ok": true
  },
  "ref-bailarina-auschwitz": {
-  "edicion": "/books/OL37776330M",
+  "edicion": "/books/OL26456888M",
   "titulo_ed": "La bailarina de Auschwitz",
-  "isbn": "9786070749001",
-  "editorial": "Planeta Publishing",
+  "isbn": "9788408180906",
+  "editorial": "Planeta",
   "anio": "2018",
-  "cover": "https://covers.openlibrary.org/b/isbn/9786070749001-L.jpg?default=false",
+  "cover": 8185393,
   "via": "ediciones-es",
-  "ok": false,
-  "err": "portada no válida"
+  "ok": true
  },
  "ref-en-auschwitz-no-habia-prozac": {
   "edicion": "/books/OL52610078M",
@@ -249,8 +267,14 @@
   "ok": true
  },
  "ref-miedo-es-de-valientes": {
-  "ok": false,
-  "err": "sin edición en español con portada"
+  "edicion": "ttl:https://www.todostuslibros.com/libros/el-miedo-es-de-valientes_978-84-1344-109-2",
+  "titulo_ed": "El miedo es de valientes",
+  "isbn": "9788413441092",
+  "editorial": "Alienta Editorial",
+  "anio": "",
+  "cover": "https://static.cegal.es/imagenes/marcadas/9788413/978841344109.gif",
+  "via": "todostuslibros",
+  "ok": true
  },
  "ref-inteligencia-social": {
   "edicion": "/books/OL9178814M",
@@ -262,27 +286,38 @@
   "ok": true
  },
  "ref-ruido": {
-  "edicion": "/books/OL34985224M",
-  "titulo_ed": "Ruido : un Fallo en el Juicio Humano / Noise",
-  "isbn": "9788418006364",
-  "editorial": "Random House Espanol",
-  "anio": "2021",
-  "cover": "https://covers.openlibrary.org/b/isbn/9788418006364-L.jpg?default=false",
+  "edicion": "/books/OL47482638M",
+  "titulo_ed": "Ruido",
+  "isbn": "9788466362184",
+  "editorial": "DEBOLSILLO",
+  "anio": "2023",
+  "cover": 14091062,
   "via": "ediciones-es",
-  "ok": false,
-  "err": "portada no válida"
+  "ok": true
  },
  "ref-indistraible": {
   "ok": false,
   "err": "sin edición en español con portada"
  },
  "ref-enfocate": {
-  "ok": false,
-  "err": "sin edición en español con portada"
+  "edicion": "ttl:https://www.todostuslibros.com/libros/enfocate_978-607-747-342-8",
+  "titulo_ed": "ENFÓCATE",
+  "isbn": "9786077473428",
+  "editorial": "BOOKET PAIDÓS",
+  "anio": "",
+  "cover": "https://static.cegal.es/imagenes/marcadas/9786077/978607747342.gif",
+  "via": "todostuslibros",
+  "ok": true
  },
  "ref-minimalismo-digital": {
-  "ok": false,
-  "err": "sin edición en español con portada"
+  "edicion": "ttl:https://www.todostuslibros.com/libros/minimalismo-digital_978-84-493-3705-5",
+  "titulo_ed": "Minimalismo digital",
+  "isbn": "9788449337055",
+  "editorial": "Ediciones Paidós",
+  "anio": "",
+  "cover": "https://static.cegal.es/imagenes/marcadas/9788449/978844933705.gif",
+  "via": "todostuslibros",
+  "ok": true
  },
  "ref-arte-de-pensar": {
   "edicion": "/books/OL27227997M",
@@ -316,8 +351,14 @@
   "err": "portada no válida"
  },
  "ref-sutil-arte": {
-  "ok": false,
-  "err": "sin edición en español con portada"
+  "edicion": "ttl:https://www.todostuslibros.com/libros/el-sutil-arte-de-que-casi-todo-te-importe-una-mierda_978-84-9139-228-6",
+  "titulo_ed": "El sutil arte de que (casi todo) te importe una mierda",
+  "isbn": "9788491392286",
+  "editorial": "HarperCollins",
+  "anio": "",
+  "cover": "https://static.cegal.es/imagenes/marcadas/9788491/978849139228.gif",
+  "via": "todostuslibros",
+  "ok": true
  },
  "ref-deja-de-ser-tu": {
   "edicion": "/books/OL25775905M",
