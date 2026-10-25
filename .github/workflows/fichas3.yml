@@ -14,6 +14,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: pip install -q pillow
+      - name: Recuperar portadas anteriores
+        run: |
+          git clone -q --depth 1 -b transito-fichas3 "https://github.com/${{ github.repository }}.git" /tmp/fichas || mkdir -p /tmp/fichas
+          rm -rf /tmp/fichas/.git
       - name: Buscar ediciones y portadas
         working-directory: biblioteca-src
         run: mkdir -p cosecha3 && SALIDA=/tmp/fichas python3 -u fichas_ol.py 2>&1 | tee cosecha3/fichas.log || true

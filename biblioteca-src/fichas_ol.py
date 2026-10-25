@@ -24,16 +24,20 @@ def parecido(a, b):
     return sum(1 for w in pa if w in pb) / max(1, len(pa))
 def portada(cid):
     try:
-        b = get('https://covers.openlibrary.org/b/id/%s-L.jpg?default=false' % cid, raw=True)
+        u = cid if str(cid).startswith('http') else 'https://covers.openlibrary.org/b/id/%s-L.jpg?default=false' % cid
+        b = get(u, raw=True)
         im = Image.open(io.BytesIO(b)); im.load()
-        if im.size[0] < 150 or im.size[1] < 200: return None
+        if im.size[0] < 110 or im.size[1] < 160: return None
         im = im.convert('RGB')
         if im.size[0] > 420: im = im.resize((420, round(im.size[1] * 420 / im.size[0])), Image.LANCZOS)
         o = io.BytesIO(); im.save(o, 'JPEG', quality=84, optimize=True); return o.getvalue()
     except Exception:
         return None
+PREV = json.load(open('cosecha3/fichas-ol.json')) if os.path.exists('cosecha3/fichas-ol.json') else {}
 res = {}
 for f in FICHAS3:
+    if PREV.get(f['id'], {}).get('ok') and not PREV[f['id']].get('solo_obra') and os.path.exists('%s/fichas/%s.jpg' % (SALIDA, f['id'])):
+        res[f['id']] = PREV[f['id']]; continue
     r = {'ok': False}
     try:
         autor = f['autores'].split(' y ')[0].split(',')[0]
@@ -53,6 +57,25 @@ for f in FICHAS3:
                             anio=(re.search(r'(1[89]|20)\d\d', e.get('publish_date', '') or '') or [''])[0], cover=e['covers'][0])
                 if not mejor or (isbn and not mejor['isbn']) or (cand['anio'] > mejor['anio'] and bool(isbn) == bool(mejor['isbn'])): mejor = cand
             time.sleep(0.5)
+        if not mejor:  # búsqueda directa de ediciones en español
+            q2 = urllib.parse.urlencode({'q': f['titulo'].split('.')[0] + ' ' + autor, 'language': 'spa', 'limit': 10,
+                                         'fields': 'key,title,author_name,cover_i,cover_edition_key,publisher,first_publish_year,isbn'})
+            for d in get('https://openlibrary.org/search.json?' + q2).get('docs', []):
+                if not d.get('cover_i') or parecido(f['titulo'], d.get('title', '')) < 0.6: continue
+                if not any(w in norm(' '.join(d.get('author_name', []))) for w in pal(autor)[-1:]): continue
+                isbn = next((i for i in d.get('isbn', []) if len(i) == 13 and i.startswith('97884')), '') or next((i for i in d.get('isbn', []) if len(i) == 13), '')
+                mejor = dict(edicion=d['key'], titulo_ed=d['title'], isbn=isbn, editorial=(d.get('publisher') or [''])[0], anio=str(d.get('first_publish_year') or ''), cover=d['cover_i'], via='busqueda-es'); break
+        if not mejor:  # Google Books, solo ediciones en español
+            try:
+                gq = urllib.parse.urlencode({'q': 'intitle:' + f['titulo'].split('.')[0] + ' inauthor:' + pal(autor)[-1], 'langRestrict': 'es', 'maxResults': 10, 'printType': 'books'})
+                for it in get('https://www.googleapis.com/books/v1/volumes?' + gq).get('items', []):
+                    vi = it['volumeInfo']
+                    if vi.get('language') != 'es' or parecido(f['titulo'], vi.get('title', '')) < 0.6 or not vi.get('imageLinks'): continue
+                    isbn = next((x['identifier'] for x in vi.get('industryIdentifiers', []) if x['type'] == 'ISBN_13'), '')
+                    mejor = dict(edicion='gb:' + it['id'], titulo_ed=vi['title'], isbn=isbn, editorial=vi.get('publisher', ''), anio=vi.get('publishedDate', '')[:4],
+                                 cover='https://books.google.com/books/content?id=%s&printsec=frontcover&img=1&zoom=1' % it['id'], via='google'); break
+            except Exception as e:
+                print('google', str(e)[:80])
         if not mejor and docs and docs[0].get('cover_i'):
             mejor = dict(edicion=docs[0]['key'], titulo_ed=docs[0]['title'], isbn='', editorial='', anio='', cover=docs[0]['cover_i'], solo_obra=True)
         if mejor:
