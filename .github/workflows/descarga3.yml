@@ -14,7 +14,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Herramientas
-        run: sudo apt-get install -y -q qpdf poppler-utils ghostscript > /dev/null && pip install -q pillow
+        run: sudo apt-get update -q > /dev/null && sudo apt-get install -y -q qpdf poppler-utils ghostscript > /dev/null && pip install -q pillow
       - name: Descargar
         working-directory: biblioteca-src
         run: SALIDA=/tmp/transito DIR=cosecha3 PRESUPUESTO_MB=3000 LOTE=r3 timeout 300m python3 -u descargar.py 2>&1 | tee cosecha3/descarga.log || true
