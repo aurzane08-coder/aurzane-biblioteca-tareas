@@ -1,0 +1,6 @@
+ttl ok 325395
+gb ERR HTTP Error 429: Too Many Requests
+bne ERR HTTP Error 403: Forbidden
+ol ok 949
+casadellibro ok 920226
+isbnes ok 27052
