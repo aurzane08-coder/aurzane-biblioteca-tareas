@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<script>
+  // Observabilidad de errores frontend (Fase 8-9 P1, ver observabilidad_errores_setup.sql).
+  window.__aurzaneErrBuf = [];
+  window.__aurzaneLogErr = function(msg){
+    var entry = { pagina: location.pathname, mensaje: String(msg == null ? 'Error desconocido' : msg).slice(0,300) };
+    if(window.__aurzaneSb && window.__aurzaneSb.from){
+      window.__aurzaneSb.from('frontend_error_log').insert(entry).then(function(){}, function(){});
+    } else {
+      window.__aurzaneErrBuf.push(entry);
+    }
+  };
+  window.addEventListener('error', function(e){ window.__aurzaneLogErr(e && e.message); });
+  window.addEventListener('unhandledrejection', function(e){
+    var r = e && e.reason;
+    window.__aurzaneLogErr((r && r.message) || (r == null ? null : String(r)) || 'Promise rechazada');
+  });
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aviso de Privacidad — AURZANE</title>
+<meta name="description" content="Qué datos recopila AURZANE OVP, para qué se usan, quién tiene acceso y cuáles son tus derechos sobre tu información.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;1,6..96,400&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#080B17; --navy-2:#0F1530; --navy-3:#151C3D; --navy-4:#1E2650;
+    --gold:#C9A24B; --gold-light:#EACF92; --bronze:#8A6A28;
+    --silver:#C7CDD6; --silver-dim:#8B92A0; --bone:#F5F3EE;
+    --line:rgba(199,205,214,0.13); --line-strong:rgba(201,162,75,0.38);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--navy);color:var(--bone);font-family:'Instrument Sans',sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased;}
+  h1,h2{font-family:'Bodoni Moda',serif;font-weight:500;letter-spacing:-0.01em;}
+  a{color:var(--gold-light);text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  :focus-visible{outline:2px solid var(--gold-light);outline-offset:3px;}
+
+  header{border-bottom:1px solid var(--line);padding:20px 6vw;display:flex;align-items:center;justify-content:space-between;}
+  .logo{font-family:'Bodoni Moda',serif;font-size:1.15rem;letter-spacing:0.04em;}
+  .logo span{color:var(--gold);}
+  header a.back{font-size:0.82rem;color:var(--silver);}
+  header a.back:hover{color:var(--gold-light);}
+
+  main{max-width:760px;margin:0 auto;padding:64px 6vw 100px;}
+  .eyebrow{font-family:'Bodoni Moda',serif;font-style:italic;color:var(--gold-light);font-size:0.9rem;display:block;margin-bottom:14px;}
+  h1{font-size:clamp(1.9rem,4vw,2.6rem);line-height:1.15;margin-bottom:10px;}
+  .updated{color:var(--silver-dim);font-size:0.82rem;margin-bottom:48px;}
+
+  section{margin-bottom:40px;}
+  h2{font-size:1.25rem;color:var(--bone);margin-bottom:14px;padding-top:4px;}
+  section p, section li{color:var(--silver);font-size:0.96rem;}
+  section p + p{margin-top:12px;}
+  ul{padding-left:20px;margin-top:10px;}
+  li{margin-bottom:8px;}
+  li::marker{color:var(--gold);}
+  .callout{background:var(--navy-2);border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:6px;padding:18px 20px;margin-top:16px;}
+  .callout p{color:var(--silver);font-size:0.9rem;}
+  strong{color:var(--bone);font-weight:600;}
+  .toc{background:var(--navy-2);border:1px solid var(--line);border-radius:10px;padding:24px 26px;margin-bottom:48px;}
+  .toc h2{font-size:1rem;text-transform:uppercase;letter-spacing:0.06em;color:var(--silver-dim);margin-bottom:12px;}
+  .toc ol{padding-left:20px;}
+  .toc li{color:var(--silver);font-size:0.9rem;margin-bottom:6px;}
+  .toc a{color:var(--silver);}
+  .toc a:hover{color:var(--gold-light);}
+
+  footer{border-top:1px solid var(--line);padding:32px 6vw;text-align:center;}
+  footer p{color:var(--silver-dim);font-size:0.82rem;}
+  footer a{color:var(--silver);}
+
+  @media(max-width:640px){ main{padding:44px 6vw 72px;} }
+</style>
+</head>
+<body>
+
+<header>
+  <a class="logo" href="https://aurzane.com">AUR<span>Z</span>ANE</a>
+  <a class="back" href="https://ovp.aurzane.com/portal.html">← Volver al portal</a>
+</header>
+
+<main>
+  <span class="eyebrow">AURZANE OVP</span>
+  <h1>Aviso de Privacidad</h1>
+  <p class="updated">Última actualización: octubre de 2026</p>
+
+  <nav class="toc" aria-label="Contenido de esta página">
+    <h2>En esta página</h2>
+    <ol>
+      <li><a href="#responsable">Quién es responsable de tus datos</a></li>
+      <li><a href="#datos">Qué datos recopilamos</a></li>
+      <li><a href="#uso">Para qué los usamos</a></li>
+      <li><a href="#acceso">Quién tiene acceso</a></li>
+      <li><a href="#retencion">Cuánto tiempo los conservamos</a></li>
+      <li><a href="#seguridad">Cómo los protegemos</a></li>
+      <li><a href="#derechos">Tus derechos</a></li>
+      <li><a href="#cookies">Cookies y publicidad</a></li>
+      <li><a href="#menores">Si eres menor de edad</a></li>
+      <li><a href="#cambios">Cambios a este aviso</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ol>
+  </nav>
+
+  <section id="responsable">
+    <h2>1. Quién es responsable de tus datos</h2>
+    <p>AURZANE OVP es un servicio de orientación vocacional-profesional dirigido por <strong>Psi. Cl. Adrian Sánchez Samaniego</strong>, psicólogo clínico (Registro SENESCYT N.º 1033-2023-2618464). Él es quien administra tu proceso, revisa tus resultados y es responsable de la información que compartes al usar esta plataforma.</p>
+  </section>
+
+  <section id="datos">
+    <h2>2. Qué datos recopilamos</h2>
+    <p>Según en qué etapa de tu proceso estés, podemos recopilar:</p>
+    <ul>
+      <li><strong>Datos de contacto y perfil:</strong> nombre, correo electrónico, teléfono, edad, sexo, institución educativa y curso/grado (estos últimos solo si los completas voluntariamente en "Mi Cuenta").</li>
+      <li><strong>Datos del proceso:</strong> el tipo de acceso y las fechas de cada paso de tu proceso (inicio del proceso, evaluaciones completadas e informe).</li>
+      <li><strong>Datos clínicos:</strong> tus respuestas a los instrumentos de evaluación (CHASIDE, Holland-RIASEC, AF5, hábitos de estudio, APT-A, APT-B según tu plan), y las notas y observaciones que el profesional registra sobre tu proceso.</li>
+    </ul>
+    <p>Nunca te pedimos datos financieros (número de tarjeta, cuenta bancaria) a través de esta plataforma — los pagos se coordinan directamente con tu psicólogo, fuera de este sistema.</p>
+  </section>
+
+  <section id="uso">
+    <h2>3. Para qué los usamos</h2>
+    <p>Exclusivamente para llevar a cabo tu proceso de orientación vocacional-profesional: aplicar los instrumentos correspondientes a tu plan, y generar tu informe integrador. No usamos tus datos clínicos con ningún otro fin — no se venden, no se ceden a terceros con fines comerciales, y no se usan para entrenar ningún sistema de inteligencia artificial.</p>
+  </section>
+
+  <section id="acceso">
+    <h2>4. Quién tiene acceso</h2>
+    <p>Tus datos de perfil (nombre, correo, plan, estado del proceso) los puedes ver tú mismo en "Mi Cuenta". Tus respuestas, notas clínicas y observaciones de conducta solo las puede ver el profesional a cargo de tu proceso — el sistema está construido para que, técnicamente, ni siquiera tu propia cuenta pueda leer esas columnas directamente, más allá de lo que se te muestra en tu informe final.</p>
+    <p>Cuando eliges un plan, tu nombre, correo y teléfono se envían de forma automática a una herramienta de notificaciones (Zapier) para avisarle a tu psicólogo que hiciste una solicitud — esa herramienta no recibe ningún dato clínico, solo esos datos de contacto, y el envío está protegido para que solo pueda originarse desde este sistema.</p>
+  </section>
+
+  <section id="retencion">
+    <h2>5. Cuánto tiempo los conservamos</h2>
+    <p>Conservamos tu información mientras tu proceso esté activo y durante un tiempo razonable después, por si necesitas retomar contacto o solicitar tu informe nuevamente. Si en algún momento pides que se elimine tu cuenta, tus datos se marcan para eliminación y quedan recuperables durante 30 días (por si fue un error o cambias de opinión) — pasado ese plazo, se eliminan de forma permanente e irreversible, incluidas tus respuestas a los instrumentos.</p>
+  </section>
+
+  <section id="seguridad">
+    <h2>6. Cómo los protegemos</h2>
+    <p>Tu cuenta solo puede ver su propia información — el sistema aplica esta regla a nivel de base de datos, no solo en lo que se muestra en pantalla. El acceso administrativo (donde se revisan notas y se generan informes) requiere una cuenta de administrador separada, y las ediciones a información clínica sensible quedan registradas internamente (quién, cuándo, qué se modificó) para poder reconstruir el historial si alguna vez hiciera falta.</p>
+  </section>
+
+  <section id="derechos">
+    <h2>7. Tus derechos</h2>
+    <p>Puedes pedirnos en cualquier momento:</p>
+    <ul>
+      <li><strong>Acceso:</strong> una copia de los datos que tenemos sobre ti.</li>
+      <li><strong>Corrección:</strong> que arreglemos algún dato de contacto o perfil que esté mal.</li>
+      <li><strong>Eliminación:</strong> que borremos tu cuenta y tus datos, siguiendo el proceso descrito en la sección anterior.</li>
+    </ul>
+    <p>Para cualquiera de estas solicitudes, escríbenos a <a href="mailto:hola@aurzane.com">hola@aurzane.com</a> desde el mismo correo con el que te registraste.</p>
+  </section>
+
+  <section id="cookies">
+    <h2>8. Cookies y publicidad</h2>
+    <p>Las páginas públicas de AURZANE (aurzane.com y sus mundos MIND, NEXUS, LIVE, LEARN y BUILD, la página del test vocacional y los cursos) muestran anuncios de <strong>Google AdSense</strong>. Para hacerlo, Google y sus socios pueden usar cookies e identificadores para mostrar anuncios, medir su rendimiento y, si lo aceptas, personalizarlos según tus visitas a este y otros sitios.</p>
+    <ul>
+      <li>La primera vez que entras te mostramos un aviso para que aceptes o rechaces las cookies de publicidad. Puedes cambiar tu elección en cualquier momento desde ese mismo aviso.</li>
+      <li>Puedes desactivar los anuncios personalizados en <a href="https://adssettings.google.com" target="_blank" rel="noopener">la configuración de anuncios de Google</a>, y ver cómo usa Google los datos en <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">esta página</a>.</li>
+      <li>No mostramos anuncios en el portal de orientación vocacional, en tus evaluaciones ni en tu informe, y ningún dato clínico se comparte con Google ni con anunciantes.</li>
+      <li>Los libros de la biblioteca con licencia no comercial se leen sin anuncios.</li>
+    </ul>
+  </section>
+
+  <section id="menores">
+    <h2>9. Si eres menor de edad</h2>
+    <p>Si vas a iniciar un proceso de evaluación siendo menor de edad, esto debe hacerse con el conocimiento y la autorización de tu padre, madre o representante legal — especialmente cuando el proceso se coordina a través de tu institución educativa. Si tienes dudas sobre esto, conversa primero con tu psicólogo antes de continuar.</p>
+  </section>
+
+  <section id="cambios">
+    <h2>10. Cambios a este aviso</h2>
+    <p>Si este aviso cambia de forma importante, lo vas a ver reflejado en la fecha de "Última actualización" al inicio de esta página. Si el cambio afecta cómo usamos datos que ya nos diste, te lo haremos saber directamente.</p>
+  </section>
+
+  <section id="contacto">
+    <h2>11. Contacto</h2>
+    <p>¿Preguntas sobre este aviso o sobre tus datos? Escríbenos a <a href="mailto:hola@aurzane.com">hola@aurzane.com</a>.</p>
+  </section>
+</main>
+
+<footer>
+  <p>AURZANE OVP · Psi. Cl. Adrian Sánchez Samaniego · Registro SENESCYT N.º 1033-2023-2618464</p>
+  <p style="margin-top:6px;"><a href="https://aurzane.com">aurzane.com</a></p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+<script>
+  const SUPABASE_URL = 'https://chtfpqwrrarfdjcivlad.supabase.co';
+  const SUPABASE_KEY = 'sb_publishable___1v6VjDew0l8uGfMyb9Nw_YyCLTPPw';
+  const sb = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+  window.__aurzaneSb = sb;
+  if(window.__aurzaneErrBuf.length){ window.__aurzaneErrBuf.forEach(function(en){ sb.from('frontend_error_log').insert(en).then(function(){}, function(){}); }); window.__aurzaneErrBuf.length = 0; }
+</script>
+</body>
+</html>
