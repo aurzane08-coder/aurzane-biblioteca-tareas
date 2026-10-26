@@ -1,0 +1,691 @@
+{
+ "ref-cerebro-dormido": {
+  "ok": false,
+  "err": "sin edición en español con portada"
+ },
+ "ref-reglas-sueno": {
+  "ok": false,
+  "err": "sin edición en español con portada"
+ },
+ "ref-cavernas-palacios": {
+  "edicion": "/books/OL13002601M",
+  "titulo_ed": "Cavernas y Palacios",
+  "isbn": "9789509540316",
+  "editorial": "ADA Korn Editora",
+  "anio": "1999",
+  "cover": "https://covers.openlibrary.org/b/isbn/9789509540316-L.jpg?default=false",
+  "via": "ediciones-es",
+  "ok": true,
+  "sin_portada": true
+ },
+ "ref-cuerpo-humano": {
+  "edicion": "/books/OL27922945M",
+  "titulo_ed": "El cuerpo humano",
+  "isbn": "9788491874805",
+  "editorial": "RBA",
+  "anio": "2020",
+  "cover": 9286187,
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-hambre-emocional": {
+  "ok": false,
+  "err": "sin edición en español con portada"
+ },
+ "ref-comer-sin-miedo": {
+  "edicion": "ttl:https://www.todostuslibros.com/libros/comer-sin-miedo_978-84-233-4886-2",
+  "titulo_ed": "Comer sin miedo",
+  "isbn": "9788423348862",
+  "editorial": "Booket",
+  "anio": "",
+  "cover": "https://static.cegal.es/imagenes/marcadas/9788423/978842334886.gif",
+  "via": "todostuslibros",
+  "ok": true
+ },
+ "ref-correr-para-vivir": {
+  "edicion": "ttl:https://www.todostuslibros.com/libros/correr-comer-vivir_978-84-9998-401-8",
+  "titulo_ed": "Correr, comer, vivir",
+  "isbn": "9788499984018",
+  "editorial": "Booket",
+  "anio": "",
+  "cover": "https://static.cegal.es/imagenes/marcadas/9788499/978849998401.gif",
+  "via": "todostuslibros",
+  "ok": true
+ },
+ "ref-hablo-cuando-hablo-correr": {
+  "edicion": "ttl:https://www.todostuslibros.com/libros/de-que-hablo-cuando-hablo-de-correr_978-84-8383-593-7",
+  "titulo_ed": "De qué hablo cuando hablo de correr",
+  "isbn": "9788483835937",
+  "editorial": "Maxi-Tusquets",
+  "anio": "",
+  "cover": "https://static.cegal.es/imagenes/marcadas/9788483/978848383593.gif",
+  "via": "todostuslibros",
+  "ok": true
+ },
+ "ref-open": {
+  "edicion": "/books/OL47306114M",
+  "titulo_ed": "Open",
+  "isbn": "9788419004437",
+  "editorial": "Duomo ediciones",
+  "anio": "2022",
+  "cover": 13770664,
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-juego-interior-tenis": {
+  "edicion": "/books/OL13310421M",
+  "titulo_ed": "El Juego Interior del Tenis",
+  "isbn": "9788478081738",
+  "editorial": "Editorial Sirio",
+  "anio": "2006",
+  "cover": 3330108,
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-cerebro-musical": {
+  "edicion": "/books/OL35634640M",
+  "titulo_ed": "El cerebro musical",
+  "isbn": "9788491873426",
+  "editorial": "RBA Bolsillo",
+  "anio": "2019",
+  "cover": 12341593,
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-disena-tu-vida": {
+  "ok": false,
+  "err": "sin edición en español con portada"
+ },
+ "ref-color-es-tu-paracaidas": {
+  "edicion": "/books/OL47592006M",
+  "titulo_ed": "¿De qué color es tu paracaídas?",
+  "isbn": "9788498752199",
+  "editorial": "Gestión 2000",
+  "anio": "2013",
+  "cover": 14214967,
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-elogio-ociosidad": {
+  "edicion": "ttl:https://www.todostuslibros.com/libros/elogio-de-la-ociosidad_978-84-350-2707-6",
+  "titulo_ed": "Elogio de la ociosidad",
+  "isbn": "9788435027076",
+  "editorial": "Editora y Distribuidora Hispano Americana, S.A.",
+  "anio": "",
+  "cover": "https://static.cegal.es/imagenes/marcadas/9788435/978843502707.gif",
+  "via": "todostuslibros",
+  "ok": true
+ },
+ "ref-burnout": {
+  "edicion": "ttl:https://www.todostuslibros.com/libros/burnout_978-1-78504-209-6",
+  "titulo_ed": "BURNOUT",
+  "isbn": "9781785042096",
+  "editorial": "EBURY",
+  "anio": "",
+  "cover": "https://static.cegal.es/imagenes/marcadas/9781785/978178504209.gif",
+  "via": "todostuslibros",
+  "ok": true
+ },
+ "ref-arte-envejecer": {
+  "edicion": "/books/OL37769224M",
+  "titulo_ed": "El gran arte de envejecer",
+  "isbn": "9789587152159",
+  "editorial": "San Pablo",
+  "anio": "2008",
+  "cover": 12679036,
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-vejez-ciceron": {
+  "edicion": "ttl:https://www.todostuslibros.com/libros/de-la-vejez_978-84-10206-78-6",
+  "titulo_ed": "De la vejez",
+  "isbn": "9788410206786",
+  "editorial": "Editorial Alma",
+  "anio": "",
+  "cover": "https://static.cegal.es/imagenes/marcadas/9788410/978841020678.gif",
+  "via": "todostuslibros",
+  "ok": true
+ },
+ "ref-siempre-alice": {
+  "edicion": "/books/OL23157206M",
+  "titulo_ed": "Siempre Alice",
+  "isbn": "9788466639125",
+  "editorial": "EDB FICCION",
+  "anio": "2009",
+  "cover": 5721471,
+  "via": "ediciones-es",
+  "ok": true,
+  "portada_de": "ttl:https://www.todostuslibros.com/libros/siempre-alice_978-84-666-3912-5"
+ },
+ "ref-elogio-vejez": {
+  "edicion": "/books/OL47233458M",
+  "titulo_ed": "Elogio de la vejez",
+  "isbn": "9788476699904",
+  "editorial": "El Aleph Editores",
+  "anio": "2011",
+  "cover": 13674771,
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-yonqui": {
+  "edicion": "/books/OL22943242M",
+  "titulo_ed": "Yonqui",
+  "isbn": "9788402074201",
+  "editorial": "Bruguera",
+  "anio": "1980",
+  "cover": "https://covers.openlibrary.org/b/isbn/9788402074201-L.jpg?default=false",
+  "via": "ediciones-es",
+  "ok": true,
+  "portada_de": "ttl:https://www.todostuslibros.com/libros/yonqui_978-84-339-6642-1"
+ },
+ "ref-beautiful-boy": {
+  "edicion": "/works/OL3497270W",
+  "titulo_ed": "Beautiful Boy",
+  "isbn": "9781328974716",
+  "editorial": "Vintage Espanol",
+  "anio": "2007",
+  "cover": 6609387,
+  "via": "busqueda-es",
+  "ok": true
+ },
+ "ref-es-facil-dejar-fumar-si": {
+  "edicion": "/books/OL13219558M",
+  "titulo_ed": "Es Facil Dejar De Fumar, Si Sabes Como",
+  "isbn": "9788423935826",
+  "editorial": "Espasa Calpe Mexicana, S.A.",
+  "anio": "2003",
+  "cover": 5262303,
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-sangre-fria": {
+  "edicion": "/books/OL50551313M",
+  "titulo_ed": "A sangre fria",
+  "isbn": "9788482809151",
+  "editorial": "",
+  "anio": "",
+  "cover": 15182503,
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-don-miedo": {
+  "ok": false,
+  "err": "sin edición en español con portada"
+ },
+ "ref-hombres-no-amaban-mujeres": {
+  "edicion": "/books/OL27290451M",
+  "titulo_ed": "Los hombres que no amaban a las mujeres",
+  "isbn": "9786077000686",
+  "editorial": "Destino",
+  "anio": "2009",
+  "cover": 9274755,
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-hiroshima": {
+  "edicion": "/books/OL27141341M",
+  "titulo_ed": "Hiroshima",
+  "isbn": "9788483468548",
+  "editorial": "Debolsillo",
+  "anio": "2009",
+  "cover": 13716212,
+  "ok": true
+ },
+ "ref-voces-chernobil": {
+  "edicion": "/books/OL61187694M",
+  "titulo_ed": "Voces de Chernóbil",
+  "isbn": "9789569545191",
+  "editorial": "Debate",
+  "anio": "2015",
+  "cover": "https://covers.openlibrary.org/b/isbn/9789569545191-L.jpg?default=false",
+  "via": "ediciones-es",
+  "ok": true,
+  "portada_de": "ttl:https://www.todostuslibros.com/libros/voces-de-chernobil_978-84-9992-626-1"
+ },
+ "ref-guerra-no-tiene-rostro-mujer": {
+  "edicion": "ttl:https://www.todostuslibros.com/libros/la-guerra-no-tiene-rostro-de-mujer_978-84-9992-575-2",
+  "titulo_ed": "La guerra no tiene rostro de mujer",
+  "isbn": "9788499925752",
+  "editorial": "DEBATE",
+  "anio": "",
+  "cover": "https://static.cegal.es/imagenes/marcadas/9788499/978849992575.gif",
+  "via": "todostuslibros",
+  "ok": true
+ },
+ "ref-psicologia-masas": {
+  "edicion": "/books/OL47115544M",
+  "titulo_ed": "Psicología de las masas",
+  "isbn": "9788490746868",
+  "editorial": "Editorial Verbum",
+  "anio": "2018",
+  "cover": 13496748,
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-ser-humano": {
+  "ok": false,
+  "err": "sin edición en español con portada"
+ },
+ "ref-cerebro-argentino": {
+  "edicion": "/books/OL61999251M",
+  "titulo_ed": "El cerebro argentino",
+  "isbn": "9789504944331",
+  "editorial": "Planeta",
+  "anio": "2016",
+  "cover": "https://covers.openlibrary.org/b/isbn/9789504944331-L.jpg?default=false",
+  "via": "ediciones-es",
+  "ok": true,
+  "sin_portada": true
+ },
+ "ref-cuatro-amores": {
+  "edicion": "/books/OL36303765M",
+  "titulo_ed": "Los Cuatro Amores",
+  "isbn": "9780062346988",
+  "editorial": "HarperCollins Publishers",
+  "anio": "2014",
+  "cover": "https://covers.openlibrary.org/b/isbn/9780062346988-L.jpg?default=false",
+  "via": "ediciones-es",
+  "ok": true,
+  "portada_de": "ttl:https://www.todostuslibros.com/libros/los-cuatro-amores_978-84-321-4787-6"
+ },
+ "ref-arte-prudencia": {
+  "edicion": "/books/OL9853447M",
+  "titulo_ed": "El Arte de La Prudencia",
+  "isbn": "9788478803460",
+  "editorial": "Temas de Hoy",
+  "anio": "1994",
+  "cover": 10863198,
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-cartas-joven-poeta": {
+  "edicion": "/books/OL13308404M",
+  "titulo_ed": "Cartas a un joven poeta",
+  "isbn": "9788477205111",
+  "editorial": "Obelisco",
+  "anio": "1996",
+  "cover": 15117348,
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-carta-al-padre": {
+  "edicion": "/books/OL9193366M",
+  "titulo_ed": "Carta Al Padre",
+  "isbn": "9789803540289",
+  "editorial": "Alfadil Ediciones",
+  "anio": "1998",
+  "cover": 4931417,
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-meditaciones": {
+  "edicion": "/books/OL30213421M",
+  "titulo_ed": "Las Meditaciones de Marco Aurelio",
+  "isbn": "9798662855762",
+  "editorial": "Independently Published",
+  "anio": "2020",
+  "cover": "https://covers.openlibrary.org/b/isbn/9798662855762-L.jpg?default=false",
+  "via": "ediciones-es",
+  "ok": true,
+  "portada_de": "ttl:https://www.todostuslibros.com/libros/meditaciones_978-84-206-8846-6"
+ },
+ "ref-sobre-brevedad-vida": {
+  "edicion": "/books/OL47087660M",
+  "titulo_ed": "Sobre la brevedad de la vida",
+  "isbn": "9788417134730",
+  "editorial": "Guillermo Escolar Editor",
+  "anio": "2019",
+  "cover": 13454302,
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-manual-vida": {
+  "edicion": "/books/OL36011218M",
+  "titulo_ed": "Manual de Vida",
+  "isbn": "9788418395307",
+  "editorial": "Editorial Alma",
+  "anio": "2022",
+  "cover": 13843696,
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-temporada-huracanes": {
+  "edicion": "/books/OL58462895M",
+  "titulo_ed": "Temporada de huracanes",
+  "isbn": "9786073810586",
+  "editorial": "Debolsillo",
+  "anio": "2022",
+  "cover": 15253620,
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-distancia-rescate": {
+  "edicion": "/books/OL25891674M",
+  "titulo_ed": "Distancia de rescate",
+  "isbn": "9788439729488",
+  "editorial": "Penguin Random House",
+  "anio": "2015",
+  "cover": 7395966,
+  "ok": true
+ },
+ "ref-ingratos": {
+  "edicion": "/books/OL47377299M",
+  "titulo_ed": "Los ingratos",
+  "isbn": "9788467067514",
+  "editorial": "Booket",
+  "anio": "2022",
+  "cover": 13971287,
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-intemperie": {
+  "edicion": "/books/OL47377490M",
+  "titulo_ed": "Intemperie",
+  "isbn": "9788432235757",
+  "editorial": "Booket",
+  "anio": "2019",
+  "cover": 13971504,
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-ordesa": {
+  "edicion": "/books/OL26424331M",
+  "titulo_ed": "Ordesa",
+  "isbn": "9788420431697",
+  "editorial": "Alfaguara",
+  "anio": "2017",
+  "cover": 8132103,
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-madres-no": {
+  "edicion": "/books/OL32183059M",
+  "titulo_ed": "Las madres no",
+  "isbn": "9788494909559",
+  "editorial": "Editorial Tránsito",
+  "anio": "2019",
+  "cover": 10838281,
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-mejor-ausencia": {
+  "edicion": "/books/OL26376584M",
+  "titulo_ed": "Mejor la ausencia",
+  "isbn": "9788417088125",
+  "editorial": "Galaxia Gutenberg",
+  "anio": "2017",
+  "cover": 8066695,
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-feria": {
+  "edicion": "/books/OL47456347M",
+  "titulo_ed": "Feria",
+  "isbn": "9788466367134",
+  "editorial": "DEBOLSILLO",
+  "anio": "2022",
+  "cover": 14060682,
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-panza-burro": {
+  "edicion": "ttl:https://www.todostuslibros.com/libros/panza-de-burro_978-84-121353-3-6",
+  "titulo_ed": "Panza de burro",
+  "isbn": "9788412135336",
+  "editorial": "Editorial Barrett",
+  "anio": "",
+  "cover": "https://static.cegal.es/imagenes/marcadas/9788412/978841213533.gif",
+  "via": "todostuslibros",
+  "ok": true
+ },
+ "ref-cosas-perdimos-fuego": {
+  "edicion": "/books/OL25894501M",
+  "titulo_ed": "Las cosas que perdimos en el fuego",
+  "isbn": "9788433998064",
+  "editorial": "Anagrama",
+  "anio": "2016",
+  "cover": 14430190,
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-cancion-dulce": {
+  "edicion": "/books/OL57369552M",
+  "titulo_ed": "Canción dulce",
+  "isbn": "9788494443480",
+  "editorial": "Cabaret Voltaire",
+  "anio": "2023",
+  "cover": 14831433,
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-amor": {
+  "edicion": "/books/OL30150634M",
+  "titulo_ed": "Un amor",
+  "isbn": "9788433999030",
+  "editorial": "Anagrama",
+  "anio": "2020",
+  "cover": 10478893,
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-cara-pan": {
+  "edicion": "/books/OL26500178M",
+  "titulo_ed": "Cara de pan",
+  "isbn": "9788433998613",
+  "editorial": "Anagrama",
+  "anio": "2018",
+  "cover": 8256076,
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-elena-sabe": {
+  "edicion": "/books/OL13195207M",
+  "titulo_ed": "Elena sabe",
+  "isbn": "9789870701248",
+  "editorial": "Alfaguara",
+  "anio": "2007",
+  "cover": 3359068,
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-uruguaya": {
+  "edicion": "/books/OL35618251M",
+  "titulo_ed": "La Uruguaya",
+  "isbn": "9789500438209",
+  "editorial": "Planeta",
+  "anio": "2013",
+  "cover": 12325434,
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-enamoramientos": {
+  "edicion": "/books/OL24629967M",
+  "titulo_ed": "Los enamoramientos",
+  "isbn": "9788420407135",
+  "editorial": "Alfaguara",
+  "anio": "2011",
+  "cover": 6718286,
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-tiempo-silencio": {
+  "edicion": "/books/OL28964014M",
+  "titulo_ed": "Tiempo de silencio",
+  "isbn": "9788432215698",
+  "editorial": "Austral",
+  "anio": "2013",
+  "cover": 10367873,
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-plaza-diamante": {
+  "edicion": "/books/OL20100919M",
+  "titulo_ed": "La plaza del diamante",
+  "isbn": "9788485123995",
+  "editorial": "Editorial H.M.B.",
+  "anio": "1982",
+  "cover": "https://covers.openlibrary.org/b/isbn/9788485123995-L.jpg?default=false",
+  "via": "ediciones-es",
+  "ok": true,
+  "portada_de": "ttl:https://www.todostuslibros.com/libros/la-plaza-del-diamante_978-84-350-2261-3"
+ },
+ "ref-primera-memoria": {
+  "edicion": "/books/OL26561806M",
+  "titulo_ed": "Primera memoria",
+  "isbn": "",
+  "editorial": "",
+  "anio": "1964",
+  "cover": 9484893,
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-cronica-muerte-anunciada": {
+  "edicion": "/books/OL9724283M",
+  "titulo_ed": "Crónica de una muerte anunciada",
+  "isbn": "9780801315893",
+  "editorial": "Longman",
+  "anio": "1996",
+  "cover": 8489909,
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-tia-julia-escribidor": {
+  "edicion": "/books/OL4683077M",
+  "titulo_ed": "La tía Julia y el escribidor",
+  "isbn": "9788432203237",
+  "editorial": "Seix Barral",
+  "anio": "1978",
+  "cover": 12524493,
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-estrella-distante": {
+  "edicion": "/books/OL9669370M",
+  "titulo_ed": "Estrella distante",
+  "isbn": "9788433910400",
+  "editorial": "Anagrama",
+  "anio": "1999",
+  "cover": 15106951,
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-todos-nombres": {
+  "edicion": "/books/OL32347071M",
+  "titulo_ed": "Todos los nombres",
+  "isbn": "9788420400419",
+  "editorial": "Alfaguara",
+  "anio": "2003",
+  "cover": 10972418,
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-persepolis": {
+  "edicion": "/books/OL22999046M",
+  "titulo_ed": "Persépolis.",
+  "isbn": "9788484315612",
+  "editorial": "Norma Editorial",
+  "anio": "2004",
+  "cover": "https://covers.openlibrary.org/b/isbn/9788484315612-L.jpg?default=false",
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-arrugas": {
+  "edicion": "/books/OL44618079M",
+  "titulo_ed": "Arrugas",
+  "isbn": "9788415685258",
+  "editorial": "Astiberri",
+  "anio": "2013",
+  "cover": "https://covers.openlibrary.org/b/isbn/9788415685258-L.jpg?default=false",
+  "via": "ediciones-es",
+  "ok": true,
+  "portada_de": "ttl:https://www.todostuslibros.com/libros/arrugas_978-84-96815-39-1"
+ },
+ "ref-maria-yo": {
+  "edicion": "/books/OL25421820M",
+  "titulo_ed": "María y yo",
+  "isbn": "9788496815407",
+  "editorial": "astiberri",
+  "anio": "2007",
+  "cover": 7249747,
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-arte-volar": {
+  "edicion": "/books/OL28286434M",
+  "titulo_ed": "El arte de volar",
+  "isbn": "9788496730373",
+  "editorial": "EDICIONS DE PONENT S.L.",
+  "anio": "2009",
+  "cover": 10211396,
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-nosotros-noche": {
+  "edicion": "/books/OL28847357M",
+  "titulo_ed": "Nosotros en la Noche / Our Souls at Night",
+  "isbn": "9788439731856",
+  "editorial": "Penguin Random House Grupo Editorial",
+  "anio": "2017",
+  "cover": 11704189,
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-stoner": {
+  "edicion": "/books/OL25773123M",
+  "titulo_ed": "Stoner",
+  "isbn": "9788415700616",
+  "editorial": "Baile del Sol",
+  "anio": "2014",
+  "cover": 7369481,
+  "ok": true
+ },
+ "ref-horas": {
+  "edicion": "/books/OL25929124M",
+  "titulo_ed": "Las horas",
+  "isbn": "9788495971432",
+  "editorial": "El Aleph Editores, S.A.",
+  "anio": "2004",
+  "cover": 7429634,
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-hamnet": {
+  "edicion": "/books/OL32414492M",
+  "titulo_ed": "Hamnet",
+  "isbn": "9788417977580",
+  "editorial": "Libros del Asteroide",
+  "anio": "2021",
+  "cover": 11076065,
+  "ok": true
+ },
+ "ref-olive-kitteridge": {
+  "edicion": "ttl:https://www.todostuslibros.com/libros/olive-kitteridge_978-84-204-7938-5",
+  "titulo_ed": "Olive Kitteridge",
+  "isbn": "9788420479385",
+  "editorial": "ALFAGUARA",
+  "anio": "",
+  "cover": "https://static.cegal.es/imagenes/marcadas/9788420/978842047938.gif",
+  "via": "todostuslibros",
+  "ok": true
+ },
+ "ref-me-llamo-lucy-barton": {
+  "edicion": "/books/OL25945997M",
+  "titulo_ed": "Me llamo Lucy Barton",
+  "isbn": "9788416261918",
+  "editorial": "Duomo",
+  "anio": "2016",
+  "cover": 7445274,
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-habitacion-propia": {
+  "edicion": "/books/OL9121040M",
+  "titulo_ed": "Una Habitacion Propia",
+  "isbn": "9788432215216",
+  "editorial": "Seix Barral",
+  "anio": "1997",
+  "cover": 2270068,
+  "via": "ediciones-es",
+  "ok": true
+ }
+}
