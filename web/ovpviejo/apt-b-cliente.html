@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<script>
+  // Observabilidad de errores frontend (Fase 8-9 P1, ver observabilidad_errores_setup.sql).
+  // Se registra ANTES que cualquier otro script (incluido el SDK de Supabase) para
+  // no perderse errores tempranos; si todavía no existe un cliente listo, los junta
+  // en un buffer y los manda apenas el cliente de esta página se crea más abajo.
+  // Nunca incluye datos de usuario -- solo la ruta de la página y un mensaje genérico.
+  window.__aurzaneErrBuf = [];
+  window.__aurzaneLogErr = function(msg){
+    var entry = { pagina: location.pathname, mensaje: String(msg == null ? 'Error desconocido' : msg).slice(0,300) };
+    if(window.__aurzaneSb && window.__aurzaneSb.from){
+      window.__aurzaneSb.from('frontend_error_log').insert(entry).then(function(){}, function(){});
+    } else {
+      window.__aurzaneErrBuf.push(entry);
+    }
+  };
+  window.addEventListener('error', function(e){ window.__aurzaneLogErr(e && e.message); });
+  window.addEventListener('unhandledrejection', function(e){
+    var r = e && e.reason;
+    window.__aurzaneLogErr((r && r.message) || (r == null ? null : String(r)) || 'Promise rechazada');
+  });
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>APT-B — AURZANE MIND</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;1,6..96,400;1,6..96,500&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#080B17; --navy-2:#0F1530; --navy-3:#151C3D; --navy-4:#1E2650;
+    --gold:#C9A24B; --gold-light:#EACF92; --bronze:#8A6A28;
+    --silver:#C7CDD6; --silver-dim:#8B92A0; --bone:#F5F3EE;
+    --line:rgba(199,205,214,0.13); --line-strong:rgba(201,162,75,0.38);
+    --ok:#8faf5f; --err:#c97070;
+    --dur:200ms; --ease:cubic-bezier(.4,0,.2,1);
+    --shadow-lift:0 12px 32px -12px rgba(0,0,0,0.45);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--navy);color:var(--bone);font-family:'Instrument Sans',sans-serif;line-height:1.6;min-height:100vh;-webkit-font-smoothing:antialiased;}
+  h1,h2,h3{font-family:'Bodoni Moda',serif;font-weight:500;letter-spacing:-0.01em;}
+  .mono{font-family:'Bodoni Moda',serif;font-style:italic;font-weight:500;}
+  .brand-link{text-decoration:none;color:inherit;}
+  .bc-trail a{color:var(--silver-dim);text-decoration:none;}
+  .bc-trail a:hover{color:var(--gold-light);}
+  .bc-trail .bc-cur{color:var(--gold-light);}
+  input,select,button{font-family:inherit;}
+  a{color:inherit;}
+  :focus-visible{outline:2px solid var(--gold-light);outline-offset:2px;border-radius:4px;}
+
+  .topbar{position:sticky;top:0;z-index:20;background:rgba(8,11,23,0.92);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);padding:16px 5vw;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;}
+  .brand{font-family:'Bodoni Moda',serif;font-size:1.05rem;letter-spacing:0.06em;}
+  .brand span{color:var(--gold);}
+  .brand .tag{font-family:'Bodoni Moda',serif;font-size:0.68rem;color:var(--silver-dim);display:block;margin-top:2px;letter-spacing:0.02em;}
+  .stepper{display:flex;gap:8px;flex-wrap:wrap;}
+  .step-pill{font-family:'Bodoni Moda',serif;font-size:0.66rem;padding:6px 12px;border-radius:100px;border:1px solid var(--line);color:var(--silver-dim);white-space:nowrap;transition:all var(--dur) var(--ease);}
+  .step-pill.active{border-color:var(--gold);color:var(--gold-light);background:rgba(201,162,75,0.1);}
+  .step-pill.done{border-color:var(--line-strong);color:var(--gold);}
+  .save-indicator{font-family:'Bodoni Moda',serif;font-size:0.68rem;color:var(--silver-dim);white-space:nowrap;}
+  .save-indicator.saving{color:var(--gold-light);}
+
+  .wrap{max-width:900px;margin:0 auto;padding:5vw 6vw 8vw;}
+  .center-msg{max-width:560px;margin:15vh auto;text-align:center;padding:0 20px;}
+  .center-msg h1{font-size:1.6rem;margin-bottom:14px;}
+  .center-msg p{color:var(--silver);font-size:0.95rem;}
+  .spinner{width:28px;height:28px;border:2px solid var(--line);border-top-color:var(--gold);border-radius:50%;
+    animation:spin 0.8s linear infinite;margin:0 auto 20px;}
+  @keyframes spin{to{transform:rotate(360deg);}}
+
+  .intro{margin-bottom:36px;}
+  .eyebrow{font-family:'Bodoni Moda',serif;font-style:italic;font-weight:500;color:var(--gold);font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;}
+  .intro h2{font-size:clamp(1.5rem,3vw,1.9rem);margin:14px 0 12px;}
+  .intro p{color:var(--silver);font-size:0.95rem;max-width:62ch;}
+  .intro p.lead{color:var(--silver-dim);font-size:0.85rem;margin-top:10px;}
+  .intro .example{border:1px solid var(--line-strong);background:rgba(201,162,75,0.06);border-radius:10px;padding:14px 18px;margin-top:16px;font-size:0.88rem;color:var(--silver);}
+
+  .btn-gold{background:linear-gradient(135deg,var(--gold-light),var(--gold));color:var(--navy);
+    padding:13px 26px;border-radius:8px;font-weight:700;font-size:0.86rem;border:none;cursor:pointer;transition:opacity var(--dur) var(--ease), transform var(--dur) var(--ease);}
+  .btn-gold:hover{opacity:0.92;}
+  .btn-gold:active{transform:scale(0.98);}
+  .btn-gold:disabled{opacity:0.4;cursor:not-allowed;}
+  .btn-outline{background:transparent;border:1px solid var(--line-strong);color:var(--gold-light);
+    padding:12px 22px;border-radius:100px;font-family:'Bodoni Moda',serif;font-size:0.82rem;cursor:pointer;text-decoration:none;display:inline-block;transition:all var(--dur) var(--ease);}
+  .btn-outline:hover{background:var(--gold);color:var(--navy);}
+  .actions{display:flex;justify-content:space-between;margin-top:26px;gap:12px;flex-wrap:wrap;}
+
+  .timerbar{position:sticky;top:65px;z-index:19;background:rgba(15,21,48,0.95);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);padding:12px 5vw;display:flex;
+    align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+  .timer{font-family:'Bodoni Moda',serif;font-variant-numeric:tabular-nums;font-weight:700;font-size:1.05rem;color:var(--gold-light);}
+  .timer.warn{color:var(--err);}
+  .progress-count{font-family:'Bodoni Moda',serif;font-size:0.78rem;color:var(--silver-dim);}
+
+  .navigator{display:flex;flex-wrap:wrap;gap:5px;max-height:80px;overflow-y:auto;padding:16px 5vw 0;}
+  .navchip{width:28px;height:28px;font-family:'Bodoni Moda',serif;font-size:0.68rem;border-radius:7px;
+    border:1px solid var(--line);background:var(--navy-2);color:var(--silver-dim);
+    display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all var(--dur) var(--ease);}
+  .navchip.answered{background:rgba(201,162,75,0.12);border-color:var(--line-strong);color:var(--gold-light);}
+
+  /* Ortografía */
+  .oitem{display:flex;align-items:center;justify-content:space-between;gap:14px;
+    padding:14px 6px;border-bottom:1px solid var(--line);}
+  .oitem .word{font-size:0.95rem;}
+  .oitem .num{color:var(--silver-dim);font-family:'Bodoni Moda',serif;font-size:0.72rem;width:26px;display:inline-block;}
+  .ochoice{display:flex;gap:8px;}
+  .ochoice button{font-family:'Bodoni Moda',serif;padding:6px 14px;font-size:0.76rem;border-radius:100px;
+    border:1px solid var(--line);background:transparent;color:var(--silver);cursor:pointer;transition:all var(--dur) var(--ease);}
+  .ochoice button.sel-c{background:var(--gold);color:var(--navy);border-color:var(--gold);font-weight:700;}
+  .ochoice button.sel-i{background:var(--navy-4);color:var(--bone);border-color:var(--silver-dim);}
+  .ogrid{columns:2;column-gap:36px;}
+  @media (max-width:700px){ .ogrid{columns:1;} }
+
+  /* Lenguaje */
+  .litem{padding:20px 4px;border-bottom:1px solid var(--line);}
+  .litem .num{color:var(--silver-dim);font-family:'Bodoni Moda',serif;font-size:0.72rem;}
+  .lsentence{font-size:0.98rem;margin:10px 0 14px;line-height:1.9;}
+  .lsentence .tramo{padding:2px 4px;border-radius:4px;margin-right:2px;}
+  .lsentence .tramo .letra{font-size:0.62rem;vertical-align:super;color:var(--gold);font-weight:700;margin-right:1px;}
+  .lchoices{display:flex;gap:8px;flex-wrap:wrap;}
+  .lchoices button{min-width:34px;height:30px;padding:0 10px;border-radius:7px;border:1px solid var(--line);
+    background:transparent;color:var(--silver);font-weight:700;cursor:pointer;font-size:0.82rem;font-family:'Bodoni Moda',serif;transition:all var(--dur) var(--ease);}
+  .lchoices button.sel{background:var(--gold);color:var(--navy);border-color:var(--gold);}
+
+  /* Relaciones Espaciales */
+  .regrid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:16px;}
+  @media (max-width:800px){ .regrid{grid-template-columns:1fr;} }
+  .reitem{border:1px solid var(--line);border-radius:12px;background:var(--navy-2);padding:16px 16px;}
+  .reitem .num{font-family:'Bodoni Moda',serif;font-size:0.72rem;color:var(--silver-dim);display:block;margin-bottom:8px;}
+  .re-ref{background:#fff;padding:8px;border-radius:8px;margin-bottom:10px;display:inline-block;}
+  .re-lbl{font-family:'Bodoni Moda',serif;font-size:0.66rem;color:var(--silver-dim);display:block;margin:6px 0 4px;}
+  .re-opts{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;}
+  .re-opt{border:2px solid var(--line);border-radius:6px;cursor:pointer;background:#fff;padding:2px;position:relative;transition:border-color var(--dur) var(--ease);}
+  .re-opt svg{display:block;width:100%;height:auto;}
+  .re-opt .k{position:absolute;top:-8px;left:-8px;width:18px;height:18px;border-radius:50%;background:var(--navy-2);
+    border:1px solid var(--line-strong);color:var(--silver-dim);font-family:'Bodoni Moda',serif;font-size:0.62rem;
+    display:flex;align-items:center;justify-content:center;}
+  .re-opt.sel{border-color:var(--gold);}
+  .re-opt.sel .k{background:var(--gold);color:var(--navy);border-color:var(--gold);font-weight:700;}
+
+  /* Velocidad y Precisión */
+  .vpgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px 20px;padding:0;margin-top:16px;}
+  @media (max-width:700px){ .vpgrid{grid-template-columns:1fr;} }
+  .vpitem{border:1px solid var(--line);border-radius:10px;padding:10px 12px;background:var(--navy-2);display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+  .vpitem .num{font-family:'Bodoni Moda',serif;font-size:0.66rem;color:var(--silver-dim);}
+  .vpitem .obj{font-family:'Bodoni Moda',serif;font-size:0.8rem;color:var(--gold-light);font-weight:700;padding:2px 6px;background:rgba(201,162,75,0.1);border-radius:5px;}
+  .vpopts{display:flex;gap:4px;flex-wrap:wrap;}
+  .vpopts button{font-family:'Bodoni Moda',serif;padding:4px 7px;font-size:0.72rem;border-radius:5px;
+    border:1px solid var(--line);background:transparent;color:var(--silver);cursor:pointer;transition:all var(--dur) var(--ease);}
+  .vpopts button.sel{background:var(--gold);color:var(--navy);border-color:var(--gold);}
+
+  .note{background:rgba(201,162,75,0.06);border:1px solid var(--line-strong);border-radius:10px;
+    padding:16px 20px;font-size:0.85rem;color:var(--silver);margin-top:20px;}
+
+  .thanks-box{max-width:520px;margin:12vh auto;text-align:center;padding:0 20px;}
+  .thanks-box .check{width:64px;height:64px;border-radius:50%;background:rgba(143,175,95,0.15);
+    border:1px solid rgba(143,175,95,0.4);display:flex;align-items:center;justify-content:center;margin:0 auto 24px;}
+  .thanks-box h1{font-size:1.7rem;margin-bottom:14px;}
+  .thanks-box p{color:var(--silver);font-size:0.95rem;margin-bottom:30px;}
+</style>
+</head>
+<body>
+
+<main>
+<div id="loadingScreen" class="center-msg">
+  <div class="spinner"></div>
+  <p class="mono" style="color:var(--silver-dim);">Verificando tu acceso...</p>
+</div>
+
+<div id="app" style="display:none;">
+  <div class="topbar">
+    <div class="brand"><a href="https://aurzane.com/" class="brand-link">AUR<span>Z</span>ANE</a> <span class="mono bc-trail" style="font-size:0.7rem;"><a href="https://aurzane.com/mi-aurzane.html">Mi AURZANE</a> / <a href="portal.html">OVP</a> / <span class="bc-cur">APT-B</span></span>
+      <span class="tag">APT-B · Ortografía, Lenguaje, Relaciones Espaciales y Velocidad</span>
+    </div>
+    <div class="stepper" id="stepper"></div>
+    <span class="save-indicator" id="saveIndicator">Guardado</span>
+  </div>
+  <div class="wrap" id="main"></div>
+</div>
+
+<div id="thanksScreen" class="thanks-box" style="display:none;">
+  <div class="check">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#8faf5f" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+  </div>
+  <h1>¡Listo, gracias!</h1>
+  <p>Tus respuestas quedaron registradas correctamente. Tu psicólogo revisará los resultados y los conversará contigo en tu próxima sesión.</p>
+  <a href="portal.html" class="btn-outline">Volver a mi proceso</a>
+</div>
+
+<div id="errorScreen" class="center-msg" style="display:none;">
+  <h1 id="errorTitle">No pudimos verificar tu acceso</h1>
+  <p id="errorMsg"></p>
+  <a href="portal.html" class="btn-outline" style="margin-top:24px;">Volver a mi proceso</a>
+</div>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+<script src="/aurzane-id.js"></script>
+<script>
+/* ============================================================
+   APT-B — Ortografía, Lenguaje, Relaciones Espaciales y Velocidad
+   y Precisión (instrumento propio AURZANE). Construido con la misma
+   lógica y nivel de detalle que una batería de aptitudes de
+   referencia, pero con ítems, figuras y baremos ORIGINALES y de
+   propiedad AURZANE — no es transcripción de ningún instrumento
+   comercial de terceros. Las claves de corrección NO viajan a este
+   archivo cliente.
+   ============================================================ */
+
+let B_O = [];
+let B_L = [];
+let B_RE = [];
+let B_VP1 = [];
+let B_VP2 = [];
+
+const SUPABASE_URL = 'https://chtfpqwrrarfdjcivlad.supabase.co';
+const SUPABASE_KEY = 'sb_publishable___1v6VjDew0l8uGfMyb9Nw_YyCLTPPw';
+// AURZANE ID: sesión compartida entre subdominios (aurzane.com, ovp.aurzane.com, etc.)
+// vía cookie cross-subdominio, en vez de un cliente aislado con storageKey propio.
+const sb = crearClienteAurzaneID(SUPABASE_URL, SUPABASE_KEY);
+  window.__aurzaneSb = sb;
+  if(window.__aurzaneErrBuf.length){ window.__aurzaneErrBuf.forEach(function(en){ sb.from('frontend_error_log').insert(en).then(function(){}, function(){}); }); window.__aurzaneErrBuf.length = 0; }
+
+
+let clienteId = null;
+
+const TIME = { O: 10*60, L: 15*60, RE: 20*60, VP1: 3*60, VP2: 3*60 };
+
+const state = {
+  screen: "intro",
+  oResp:  new Array(B_O.length).fill(null),   // "C" | "I" | null
+  lResp:  new Array(B_L.length).fill(null),   // "A".."E" | null
+  reResp: new Array(B_RE.length).fill(null),  // "A".."D" | null
+  vp1Resp: new Array(B_VP1.length).fill(null), // "A".."E" | null
+  vp2Resp: new Array(B_VP2.length).fill(null),
+  timeLeft: { O: TIME.O, L: TIME.L, RE: TIME.RE, VP1: TIME.VP1, VP2: TIME.VP2 },
+  timerHandle: { O: null, L: null, RE: null, VP1: null, VP2: null },
+  timeUp: { O: false, L: false, RE: false, VP1: false, VP2: false },
+  /* Fase 6.1: momento real (ISO) en que cada subtest arrancó por primera
+     vez, según Supabase (tabla apt_subtest_timers). null = todavía no
+     empezó ese subtest. Se usa para calcular el tiempo restante real al
+     recargar la página, en vez de reiniciar siempre al tiempo completo. */
+  timerStart: { O: null, L: null, RE: null, VP1: null, VP2: null },
+};
+
+/* Pantalla siguiente al finalizar (por tiempo agotado) cada subtest */
+const NEXT_AFTER = { O: 'L-intro', L: 'RE-intro', RE: 'VP1-intro', VP1: 'VP2-intro', VP2: 'final' };
+
+function showScreen(id){
+  ['loadingScreen','app','thanksScreen','errorScreen'].forEach(s=>{
+    document.getElementById(s).style.display = (s === id) ? 'block' : 'none';
+  });
+}
+function showError(msg){
+  document.getElementById('errorMsg').textContent = msg;
+  showScreen('errorScreen');
+}
+function escapeHtml(s){
+  return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+}
+function fmtTime(sec){
+  const m = Math.floor(sec/60), s = sec%60;
+  return String(m).padStart(2,"0")+":"+String(s).padStart(2,"0");
+}
+
+async function guardarRespuesta(subtest, itemNum, valor){
+  const indicator = document.getElementById('saveIndicator');
+  if(indicator){ indicator.textContent = 'Guardando...'; indicator.classList.add('saving'); }
+  let error = null;
+  for(let intento = 1; intento <= 2; intento++){
+    const res = await sb.from('respuestas_apt_b')
+      .upsert({ cliente_id: clienteId, subtest, item_num: itemNum, valor: String(valor) }, { onConflict: 'cliente_id,subtest,item_num' });
+    error = res.error;
+    if(!error) break;
+    if(intento < 2) await new Promise(r => setTimeout(r, 400));
+  }
+  if(indicator){ indicator.classList.remove('saving'); indicator.textContent = error ? 'Error al guardar' : 'Guardado'; }
+}
+
+/* Los 5 bancos de ítems (Ortografía, Lenguaje, Relaciones Espaciales —con
+   figuras SVG, la más pesada— y Velocidad y Precisión I/II) se cargan
+   aparte como JSON, en paralelo con la verificación de sesión, en vez de
+   venir incrustados en el HTML de cada visita a esta página. */
+async function cargarBancosApB(){
+  const [o, l, re, vp1, vp2] = await Promise.all([
+    fetch('datos/apt-b-datos-o.json').then(r=>r.json()),
+    fetch('datos/apt-b-datos-l.json').then(r=>r.json()),
+    fetch('datos/apt-b-datos-re.json').then(r=>r.json()),
+    fetch('datos/apt-b-datos-vp1.json').then(r=>r.json()),
+    fetch('datos/apt-b-datos-vp2.json').then(r=>r.json())
+  ]);
+  B_O = o; B_L = l; B_RE = re; B_VP1 = vp1; B_VP2 = vp2;
+  state.oResp = new Array(B_O.length).fill(null);
+  state.lResp = new Array(B_L.length).fill(null);
+  state.reResp = new Array(B_RE.length).fill(null);
+  state.vp1Resp = new Array(B_VP1.length).fill(null);
+  state.vp2Resp = new Array(B_VP2.length).fill(null);
+}
+
+async function init(){
+  const params = new URLSearchParams(window.location.search);
+  clienteId = params.get('cliente');
+
+  let session;
+  try{
+    const results = await Promise.all([
+      sb.auth.getSession(),
+      cargarBancosApB()
+    ]);
+    session = results[0].data.session;
+  }catch(e){
+    showError('No pudimos cargar el contenido de la prueba. Revisa tu conexión e intenta de nuevo.');
+    return;
+  }
+  if(!session){ showError('Tu sesión expiró o no iniciaste sesión. Vuelve al portal para entrar de nuevo.'); return; }
+  if(!clienteId){ showError('No se encontró tu identificador de proceso. Vuelve al portal e ingresa desde ahí.'); return; }
+
+  const { data: cliente, error } = await sb.from('clientes')
+    .select('*, activaciones(*)').eq('id', clienteId).eq('user_id', session.user.id).maybeSingle();
+
+  if(error || !cliente){ showError('No pudimos verificar que este proceso te pertenece.'); return; }
+
+  const activacion = (cliente.activaciones || []).find(a => a.test_key === 'apt_b');
+  if(!activacion || !activacion.activo){ showError('La prueba APT-B todavía no está activada para tu proceso. Contacta a tu psicólogo.'); return; }
+  if(activacion.completado){
+    showScreen('thanksScreen');
+    document.querySelector('#thanksScreen p').textContent = 'Ya completaste esta prueba anteriormente. Tu psicólogo ya tiene tus resultados.';
+    return;
+  }
+
+  let previas = null;
+  for(let intento = 1; intento <= 2; intento++){
+    const { data, error: errPrevias } = await sb.from('respuestas_apt_b').select('*').eq('cliente_id', clienteId);
+    if(!errPrevias){ previas = data; break; }
+    if(intento < 2) await new Promise(r => setTimeout(r, 400));
+    else console.warn('No se pudo cargar tu progreso previo de APT-B (se muestra como si no hubieras empezado):', errPrevias.message);
+  }
+  (previas || []).forEach(r=>{
+    const n = r.item_num - 1;
+    if(r.subtest === 'O' && n>=0 && n<B_O.length) state.oResp[n] = r.valor;
+    else if(r.subtest === 'L' && n>=0 && n<B_L.length) state.lResp[n] = r.valor;
+    else if(r.subtest === 'RE' && n>=0 && n<B_RE.length) state.reResp[n] = r.valor;
+    else if(r.subtest === 'VP1' && n>=0 && n<B_VP1.length) state.vp1Resp[n] = r.valor;
+    else if(r.subtest === 'VP2' && n>=0 && n<B_VP2.length) state.vp2Resp[n] = r.valor;
+  });
+
+  // Fase 6.1: cargar el momento real de inicio de cada subtest cronometrado
+  // (tabla apt_subtest_timers) para poder calcular el tiempo restante real
+  // si el cliente recarga a mitad de un subtest. Si la tabla todavía no
+  // existe (migración pendiente) o la consulta falla, seguimos sin
+  // bloquear el test: cada subtest arranca con el tiempo completo, igual
+  // que antes de esta mejora.
+  let timerRows = null;
+  for(let intento = 1; intento <= 2; intento++){
+    const { data, error: errTimers } = await sb.from('apt_subtest_timers')
+      .select('*').eq('cliente_id', clienteId).eq('test_key', 'apt_b');
+    if(!errTimers){ timerRows = data; break; }
+    if(intento < 2) await new Promise(r => setTimeout(r, 400));
+  }
+  (timerRows || []).forEach(r=>{
+    if(Object.prototype.hasOwnProperty.call(state.timerStart, r.subtest)) state.timerStart[r.subtest] = r.iniciado_en;
+  });
+
+  navigate('intro');
+  showScreen('app');
+}
+
+function renderStepper(){
+  const stage = state.screen.split('-')[0];
+  const pills = [
+    {key:"intro", label:"Inicio"}, {key:"O", label:"Ortografía"}, {key:"L", label:"Lenguaje"},
+    {key:"RE", label:"Espacial"}, {key:"VP1", label:"Veloc. I"}, {key:"VP2", label:"Veloc. II"},
+  ];
+  const idxCur = pills.findIndex(x=>x.key===stage);
+  document.getElementById("stepper").innerHTML = pills.map((p,idxThis)=>{
+    let cls = "";
+    if(p.key===stage) cls = "active";
+    else if(idxCur>=0 && idxThis < idxCur) cls = "done";
+    return `<span class="step-pill ${cls}">${p.label}</span>`;
+  }).join("");
+}
+
+function renderIntro(){
+  document.getElementById("main").innerHTML = `
+    <div class="intro">
+      <span class="eyebrow">APT-B · Batería complementaria</span>
+      <h2>Antes de comenzar</h2>
+      <p>Esta batería mide cuatro aptitudes distintas mediante cuatro pruebas independientes: Ortografía, Lenguaje, Relaciones Espaciales y Velocidad y Precisión (esta última en dos partes). Cada una tiene su propio tiempo cronometrado — vas a ver un contador en la parte superior de la pantalla.</p>
+      <p>Respondé con calma pero sin detenerte demasiado en un mismo ítem. Podés cambiar tu respuesta en cualquier ítem mientras el tiempo de esa prueba no se haya agotado.</p>
+      <p class="lead">5 secciones · tiempo total aproximado: 60 minutos.</p>
+    </div>
+    <div class="actions">
+      <span></span>
+      <button class="btn-gold" onclick="navigate('O-intro')">Comenzar</button>
+    </div>
+  `;
+}
+
+/* Fase 6.1: sincroniza el tiempo restante real de un subtest contra
+   apt_subtest_timers. Si el subtest ya se había empezado antes (por
+   ejemplo, el cliente recargó la página), calcula cuánto tiempo real pasó
+   desde ese primer inicio y descuenta ese tiempo del contador — en vez de
+   reiniciar siempre al tiempo completo. Si es la primera vez que entra a
+   este subtest, registra el momento de inicio. Si la tabla no existe
+   todavía o la escritura falla, no bloquea nada: sigue con tiempo
+   completo, igual que antes de esta mejora. */
+async function sincronizarTiempoSubtest(key){
+  if(state.timerStart[key]){
+    const transcurrido = (Date.now() - new Date(state.timerStart[key]).getTime()) / 1000;
+    state.timeLeft[key] = Math.max(0, Math.round(TIME[key] - transcurrido));
+    return;
+  }
+  const ahora = new Date().toISOString();
+  try{
+    const { error } = await sb.from('apt_subtest_timers')
+      .upsert({ cliente_id: clienteId, test_key: 'apt_b', subtest: key, iniciado_en: ahora },
+        { onConflict: 'cliente_id,test_key,subtest', ignoreDuplicates: true });
+    if(!error) state.timerStart[key] = ahora;
+  }catch(e){ /* sin conexión u otro error: seguimos sin persistir el inicio */ }
+}
+
+async function startTimed(key, nextScreen){
+  if(!state.timerHandle[key] && !state.timeUp[key]){
+    await sincronizarTiempoSubtest(key);
+    if(state.timeLeft[key] <= 0){
+      state.timeLeft[key] = 0;
+      state.timeUp[key] = true;
+    }
+  }
+  navigate(nextScreen);
+  if(state.timeUp[key]){
+    if(state.screen===nextScreen){ updateTimerDisplay(key); avanzarPorTiempoAgotado(key); }
+    return;
+  }
+  if(!state.timerHandle[key]){
+    state.timerHandle[key] = setInterval(()=>{
+      state.timeLeft[key]--;
+      if(state.timeLeft[key]<=0){
+        clearInterval(state.timerHandle[key]);
+        state.timerHandle[key]=null;
+        state.timeLeft[key]=0;
+        state.timeUp[key]=true;
+        if(state.screen===nextScreen){ updateTimerDisplay(key); avanzarPorTiempoAgotado(key); }
+      } else if(state.screen===nextScreen) updateTimerDisplay(key);
+    },1000);
+  }
+}
+
+function avanzarPorTiempoAgotado(key){
+  const el = document.getElementById("timer-"+key);
+  if(el) el.textContent = "Tiempo agotado";
+  const screenActual = state.screen;
+  const destino = NEXT_AFTER[key];
+  setTimeout(()=>{
+    if(state.screen !== screenActual) return;
+    navigate(destino);
+  }, 1500);
+}
+
+function updateTimerDisplay(key){
+  const el = document.getElementById("timer-"+key);
+  if(!el) return;
+  el.textContent = fmtTime(Math.max(0,state.timeLeft[key]));
+  el.classList.toggle("warn", state.timeLeft[key]<=30);
+}
+
+/* ================== ORTOGRAFÍA ================== */
+
+function renderOIntro(){
+  document.getElementById("main").innerHTML = `
+    <div class="intro">
+      <span class="eyebrow">APT-B · Ortografía — Instrucciones</span>
+      <h2>Ortografía</h2>
+      <p>Vas a ver una lista de palabras. Algunas están escritas correctamente; otras tienen una falta de ortografía. Por cada palabra, marcá si está <strong>Correcta</strong> o <strong>Incorrecta</strong>.</p>
+      <p class="lead">${B_O.length} palabras · Tiempo: 10 minutos.</p>
+    </div>
+    <div class="actions">
+      <button class="btn-outline" onclick="navigate('intro')">← Volver</button>
+      <button class="btn-gold" onclick="startTimed('O','O-test')">Comenzar Ortografía</button>
+    </div>
+  `;
+}
+
+function renderOTest(){
+  const answered = state.oResp.filter(r=>r!==null).length;
+  document.getElementById("main").innerHTML = `
+    <div class="ogrid" id="oList" style="margin-top:20px;"></div>
+    <div class="actions">
+      <button class="btn-outline" onclick="navigate('O-intro')">← Instrucciones</button>
+      <button class="btn-gold" onclick="navigate('L-intro')">Continuar a Lenguaje →</button>
+    </div>
+  `;
+  const bar = document.createElement("div");
+  bar.className = "timerbar";
+  bar.innerHTML = `
+    <div>Tiempo restante: <span class="timer" id="timer-O">${fmtTime(state.timeLeft.O)}</span></div>
+    <div class="progress-count" id="prog-O">${answered} / ${B_O.length} respondidas</div>
+  `;
+  document.getElementById("main").prepend(bar);
+  const nav = document.createElement("div");
+  nav.className = "navigator"; nav.id = "nav-O";
+  document.getElementById("main").insertBefore(nav, document.getElementById("oList"));
+  updateTimerDisplay("O");
+  renderOList();
+  renderNavGeneric("O", B_O.length, state.oResp);
+}
+
+function renderOList(){
+  const html = B_O.map((it,i)=>{
+    const r = state.oResp[i];
+    return `<div class="oitem" id="item-O-${i}">
+      <div><span class="num">${i+1}.</span> <span class="word">${escapeHtml(it.palabra)}</span></div>
+      <div class="ochoice">
+        <button class="${r==='C'?'sel-c':''}" aria-pressed="${r==='C'}" onclick="setO(${i},'C')">Correcta</button>
+        <button class="${r==='I'?'sel-i':''}" aria-pressed="${r==='I'}" onclick="setO(${i},'I')">Incorrecta</button>
+      </div>
+    </div>`;
+  }).join("");
+  document.getElementById("oList").innerHTML = html;
+}
+
+function setO(i, val){
+  if(state.timeUp.O) return;
+  state.oResp[i] = state.oResp[i]===val ? null : val;
+  renderOList();
+  renderNavGeneric("O", B_O.length, state.oResp);
+  const answered = state.oResp.filter(r=>r!==null).length;
+  document.getElementById("prog-O").textContent = `${answered} / ${B_O.length} respondidas`;
+  if(state.oResp[i]!==null) guardarRespuesta('O', i+1, state.oResp[i]);
+}
+
+/* ================== LENGUAJE ================== */
+
+function renderLIntro(){
+  document.getElementById("main").innerHTML = `
+    <div class="intro">
+      <span class="eyebrow">APT-B · Lenguaje — Instrucciones</span>
+      <h2>Lenguaje</h2>
+      <p>Cada oración está dividida en cuatro partes, marcadas <strong>A</strong>, <strong>B</strong>, <strong>C</strong> y <strong>D</strong>. Como máximo una de esas partes tiene un error de gramática, ortografía o expresión. Marcá la letra de la parte con el error, o marcá <strong>E</strong> si toda la oración está bien escrita.</p>
+      <p class="lead">${B_L.length} oraciones · Tiempo: 15 minutos.</p>
+    </div>
+    <div class="actions">
+      <button class="btn-outline" onclick="navigate('O-test')">← Volver</button>
+      <button class="btn-gold" onclick="startTimed('L','L-test')">Comenzar Lenguaje</button>
+    </div>
+  `;
+}
+
+function renderLTest(){
+  const answered = state.lResp.filter(r=>r!==null).length;
+  document.getElementById("main").innerHTML = `
+    <div id="lList" style="margin-top:20px;"></div>
+    <div class="actions">
+      <button class="btn-outline" onclick="navigate('L-intro')">← Instrucciones</button>
+      <button class="btn-gold" onclick="navigate('RE-intro')">Continuar a Relaciones Espaciales →</button>
+    </div>
+  `;
+  const bar = document.createElement("div");
+  bar.className = "timerbar";
+  bar.innerHTML = `
+    <div>Tiempo restante: <span class="timer" id="timer-L">${fmtTime(state.timeLeft.L)}</span></div>
+    <div class="progress-count" id="prog-L">${answered} / ${B_L.length} respondidas</div>
+  `;
+  document.getElementById("main").prepend(bar);
+  const nav = document.createElement("div");
+  nav.className = "navigator"; nav.id = "nav-L";
+  document.getElementById("main").insertBefore(nav, document.getElementById("lList"));
+  updateTimerDisplay("L");
+  renderLList();
+  renderNavGeneric("L", B_L.length, state.lResp);
+}
+
+function renderLList(){
+  const html = B_L.map((it,i)=>{
+    const r = state.lResp[i];
+    const partesHtml = it.partes.map((p,pi)=>{
+      const letra = "ABCD"[pi];
+      const isSel = r===letra;
+      return `<span class="tramo" style="${isSel?'background:rgba(201,162,75,0.18);':''}"><span class="letra">${letra}</span>${escapeHtml(p)}</span>`;
+    }).join(" ");
+    const btns = "ABCDE".split("").map(l=>
+      `<button class="${r===l?'sel':''}" aria-pressed="${r===l}" onclick="setL(${i},'${l}')">${l}</button>`
+    ).join("");
+    return `<div class="litem" id="item-L-${i}">
+      <span class="num">Oración ${i+1}</span>
+      <div class="lsentence">${partesHtml}</div>
+      <div class="lchoices">${btns}</div>
+    </div>`;
+  }).join("");
+  document.getElementById("lList").innerHTML = html;
+}
+
+function setL(i, val){
+  if(state.timeUp.L) return;
+  state.lResp[i] = state.lResp[i]===val ? null : val;
+  renderLList();
+  renderNavGeneric("L", B_L.length, state.lResp);
+  const answered = state.lResp.filter(r=>r!==null).length;
+  document.getElementById("prog-L").textContent = `${answered} / ${B_L.length} respondidas`;
+  if(state.lResp[i]!==null) guardarRespuesta('L', i+1, state.lResp[i]);
+}
+
+/* ================== RELACIONES ESPACIALES ================== */
+
+function renderREIntro(){
+  document.getElementById("main").innerHTML = `
+    <div class="intro">
+      <span class="eyebrow">APT-B · Relaciones Espaciales — Instrucciones</span>
+      <h2>Relaciones Espaciales</h2>
+      <p>En cada ítem vas a ver una figura de referencia. Entre las cuatro opciones (A-D), tenés que elegir la que es <strong>la misma figura, solo girada</strong> (rotada) — no una versión reflejada (como en un espejo).</p>
+      <p class="lead">${B_RE.length} ítems · Tiempo: 20 minutos.</p>
+    </div>
+    <div class="actions">
+      <button class="btn-outline" onclick="navigate('L-test')">← Volver</button>
+      <button class="btn-gold" onclick="startTimed('RE','RE-test')">Comenzar Relaciones Espaciales</button>
+    </div>
+  `;
+}
+
+function renderRETest(){
+  const answered = state.reResp.filter(r=>r!==null).length;
+  document.getElementById("main").innerHTML = `
+    <div class="regrid" id="reList" style="margin-top:20px;"></div>
+    <div class="actions">
+      <button class="btn-outline" onclick="navigate('RE-intro')">← Instrucciones</button>
+      <button class="btn-gold" onclick="navigate('VP1-intro')">Continuar a Velocidad I →</button>
+    </div>
+  `;
+  const bar = document.createElement("div");
+  bar.className = "timerbar";
+  bar.innerHTML = `
+    <div>Tiempo restante: <span class="timer" id="timer-RE">${fmtTime(state.timeLeft.RE)}</span></div>
+    <div class="progress-count" id="prog-RE">${answered} / ${B_RE.length} respondidos</div>
+  `;
+  document.getElementById("main").prepend(bar);
+  const nav = document.createElement("div");
+  nav.className = "navigator"; nav.id = "nav-RE";
+  document.getElementById("main").insertBefore(nav, document.getElementById("reList"));
+  updateTimerDisplay("RE");
+  renderREList();
+  renderNavGeneric("RE", B_RE.length, state.reResp);
+}
+
+function renderREList(){
+  const html = B_RE.map((it,i)=>{
+    const r = state.reResp[i];
+    const opts = Object.keys(it.opciones).map(k=>{
+      const sel = r===k ? "sel" : "";
+      return `<button class="re-opt ${sel}" aria-pressed="${sel==="sel"}" aria-label="Opción ${k}" onclick="setRE(${i},'${k}')"><span class="k">${k}</span>${it.opciones[k]}</button>`;
+    }).join("");
+    return `<div class="reitem" id="item-RE-${i}">
+      <span class="num">Ítem ${i+1}</span>
+      <span class="re-lbl">Referencia</span>
+      <div class="re-ref">${it.referencia}</div>
+      <span class="re-lbl">¿Cuál es la misma figura rotada?</span>
+      <div class="re-opts">${opts}</div>
+    </div>`;
+  }).join("");
+  document.getElementById("reList").innerHTML = html;
+}
+
+function setRE(i, val){
+  if(state.timeUp.RE) return;
+  state.reResp[i] = state.reResp[i]===val ? null : val;
+  renderREList();
+  renderNavGeneric("RE", B_RE.length, state.reResp);
+  const answered = state.reResp.filter(r=>r!==null).length;
+  document.getElementById("prog-RE").textContent = `${answered} / ${B_RE.length} respondidos`;
+  if(state.reResp[i]!==null) guardarRespuesta('RE', i+1, state.reResp[i]);
+}
+
+/* ================== VELOCIDAD Y PRECISIÓN — I / II ================== */
+
+function renderVPIntro(parte){
+  const items = parte===1 ? B_VP1 : B_VP2;
+  document.getElementById("main").innerHTML = `
+    <div class="intro">
+      <span class="eyebrow">APT-B · Velocidad y Precisión — Parte ${parte===1?"I":"II"}</span>
+      <h2>Instrucciones</h2>
+      <p>En cada ítem vas a ver un código de referencia y cinco combinaciones parecidas (A-E). Elegí, entre las cinco, la que sea <strong>exactamente igual</strong> al código de referencia.</p>
+      <p class="lead">${items.length} ítems · Tiempo: 3 minutos.</p>
+    </div>
+    <div class="actions">
+      <button class="btn-outline" onclick="navigate('${parte===1?'RE-test':'VP1-test'}')">← Volver</button>
+      <button class="btn-gold" onclick="startTimed('VP${parte}','VP${parte}-test')">Comenzar Parte ${parte===1?"I":"II"}</button>
+    </div>
+  `;
+}
+
+function renderVPTest(parte){
+  const key = "VP"+parte;
+  const items = parte===1 ? B_VP1 : B_VP2;
+  const resp = parte===1 ? state.vp1Resp : state.vp2Resp;
+  const answered = resp.filter(r=>r!==null).length;
+  const nextBtn = parte===1 ? `onclick="navigate('VP2-intro')"` : `onclick="navigate('final')"`;
+  const nextLabel = parte===1 ? "Continuar a Parte II →" : "Ir a finalizar →";
+  document.getElementById("main").innerHTML = `
+    <div class="vpgrid" id="vpGrid" style="margin-top:0;"></div>
+    <div class="actions">
+      <button class="btn-outline" onclick="navigate('VP${parte}-intro')">← Instrucciones</button>
+      <button class="btn-gold" ${nextBtn}>${nextLabel}</button>
+    </div>
+  `;
+  const bar = document.createElement("div");
+  bar.className = "timerbar";
+  bar.innerHTML = `
+    <div><span class="timer" id="timer-${key}">${fmtTime(state.timeLeft[key])}</span> <span class="mono" style="font-size:0.75rem;color:var(--silver-dim);">tiempo Parte ${parte===1?"I":"II"}</span></div>
+    <div class="progress-count" id="prog-${key}">${answered} / ${items.length} respondidos</div>
+  `;
+  document.getElementById("main").prepend(bar);
+  const nav = document.createElement("div");
+  nav.className = "navigator"; nav.id = "nav-"+key;
+  document.getElementById("main").insertBefore(nav, document.getElementById("vpGrid"));
+  updateTimerDisplay(key);
+  renderVPGrid(parte);
+  renderNavGeneric(key, items.length, resp);
+}
+
+function renderVPGrid(parte){
+  const items = parte===1 ? B_VP1 : B_VP2;
+  const resp = parte===1 ? state.vp1Resp : state.vp2Resp;
+  const html = items.map((it,i)=>{
+    const opts = Object.keys(it.opciones).map(k=>{
+      const sel = resp[i]===k ? "sel" : "";
+      return `<button class="${sel}" aria-pressed="${sel==="sel"}" onclick="setVP(${parte},${i},'${k}')">${k}) ${it.opciones[k]}</button>`;
+    }).join("");
+    return `<div class="vpitem" id="item-VP${parte}-${i}">
+      <span class="num">${i+1}</span>
+      <span class="obj">${it.objetivo}</span>
+      <div class="vpopts">${opts}</div>
+    </div>`;
+  }).join("");
+  document.getElementById("vpGrid").innerHTML = html;
+}
+
+function setVP(parte, i, val){
+  const key = "VP"+parte;
+  if(state.timeUp[key]) return;
+  const resp = parte===1 ? state.vp1Resp : state.vp2Resp;
+  resp[i] = resp[i]===val ? null : val;
+  renderVPGrid(parte);
+  renderNavGeneric(key, resp.length, resp);
+  const answered = resp.filter(r=>r!==null).length;
+  document.getElementById("prog-"+key).textContent = `${answered} / ${resp.length} respondidos`;
+  if(resp[i]!==null) guardarRespuesta(key, i+1, resp[i]);
+}
+
+/* ================== NAVEGADOR GENÉRICO ================== */
+
+function renderNavGeneric(key, n, resp){
+  const el = document.getElementById("nav-"+key);
+  if(!el) return;
+  let html = "";
+  for(let i=0;i<n;i++){
+    const answered = resp[i]!==null;
+    html += `<button class="navchip ${answered?'answered':''}" aria-label="Pregunta ${i+1}${answered?', respondida':', sin responder'}" onclick="scrollToItem('${key}',${i})">${i+1}</button>`;
+  }
+  el.innerHTML = html;
+}
+
+function scrollToItem(key, i){
+  const el = document.getElementById("item-"+key+"-"+i);
+  if(el) el.scrollIntoView({behavior:"smooth", block:"center"});
+}
+
+/* ================== FINALIZAR ================== */
+
+function renderFinal(){
+  const faltO  = state.oResp.filter(r=>r===null).length;
+  const faltL  = state.lResp.filter(r=>r===null).length;
+  const faltRE = state.reResp.filter(r=>r===null).length;
+  const faltV1 = state.vp1Resp.filter(r=>r===null).length;
+  const faltV2 = state.vp2Resp.filter(r=>r===null).length;
+  const total = faltO+faltL+faltRE+faltV1+faltV2;
+  document.getElementById("main").innerHTML = `
+    <div class="intro">
+      <span class="eyebrow">APT-B · Revisión final</span>
+      <h2>¿Todo listo?</h2>
+      <p>Antes de finalizar, revisá que hayas respondido la mayor cantidad de ítems posible en cada prueba. Una vez que finalices, no vas a poder modificar tus respuestas.</p>
+      <div class="note">
+        Ortografía: ${B_O.length-faltO} / ${B_O.length} &nbsp;·&nbsp;
+        Lenguaje: ${B_L.length-faltL} / ${B_L.length} &nbsp;·&nbsp;
+        Espacial: ${B_RE.length-faltRE} / ${B_RE.length} &nbsp;·&nbsp;
+        Veloc. I: ${B_VP1.length-faltV1} / ${B_VP1.length} &nbsp;·&nbsp;
+        Veloc. II: ${B_VP2.length-faltV2} / ${B_VP2.length}
+        ${total>0 ? `<br><br>Te faltan <strong>${total}</strong> ítems en total sin responder.` : `<br><br>Respondiste todos los ítems. ¡Buen trabajo!`}
+      </div>
+    </div>
+    <div class="actions">
+      <button class="btn-outline" onclick="navigate('VP2-test')">← Volver a Velocidad II</button>
+      <button class="btn-gold" id="btnFinalizar" onclick="confirmarFinal()">Finalizar la batería</button>
+    </div>
+  `;
+}
+
+function confirmarFinal(){
+  const total = state.oResp.filter(r=>r===null).length + state.lResp.filter(r=>r===null).length
+    + state.reResp.filter(r=>r===null).length + state.vp1Resp.filter(r=>r===null).length + state.vp2Resp.filter(r=>r===null).length;
+  if(total > 0){
+    const ok = confirm(`Todavía tenés ${total} ítems sin responder en total. ¿Querés finalizar de todas formas?`);
+    if(!ok) return;
+  }
+  finalizarTest();
+}
+
+async function finalizarTest(){
+  ["O","L","RE","VP1","VP2"].forEach(k=>{ if(state.timerHandle[k]) clearInterval(state.timerHandle[k]); });
+  const btn = document.getElementById('btnFinalizar');
+  if(btn) btn.disabled = true;
+
+  const { error } = await sb.from('activaciones')
+    .update({ completado: true, completado_at: new Date().toISOString() })
+    .eq('cliente_id', clienteId).eq('test_key', 'apt_b');
+
+  if(error){
+    alert('Hubo un problema al finalizar: ' + error.message + '. Tus respuestas ya están guardadas, intentá finalizar de nuevo en un momento.');
+    if(btn) btn.disabled = false;
+    return;
+  }
+  showScreen('thanksScreen');
+}
+
+/* ================== NAVEGACIÓN ================== */
+
+function navigate(screen){
+  state.screen = screen;
+  renderStepper();
+  if(screen==="intro") renderIntro();
+  else if(screen==="O-intro") renderOIntro();
+  else if(screen==="O-test") renderOTest();
+  else if(screen==="L-intro") renderLIntro();
+  else if(screen==="L-test") renderLTest();
+  else if(screen==="RE-intro") renderREIntro();
+  else if(screen==="RE-test") renderRETest();
+  else if(screen==="VP1-intro") renderVPIntro(1);
+  else if(screen==="VP1-test") renderVPTest(1);
+  else if(screen==="VP2-intro") renderVPIntro(2);
+  else if(screen==="VP2-test") renderVPTest(2);
+  else if(screen==="final") renderFinal();
+  window.scrollTo({top:0, behavior:"instant"});
+}
+
+init();
+</script>
+</body>
+</html>
