@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<script>
+// Aplica el color elegido antes de pintar la página, para que no se note un "parpadeo"
+// del color por defecto antes de cambiar al guardado.
+(function(){
+  try{
+    var t = localStorage.getItem('aurzane_tema');
+    if(t && t !== 'indigo'){ document.documentElement.setAttribute('data-tema', t); }
+  }catch(e){}
+})();
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://aurzane.com/aurzane-paleta.js"></script>
+<title>Universidades y Carreras del mundo — catálogo AURZANE NEXUS</title>
+<meta name="description" content="Catálogo público de 6.125 universidades e institutos de 23 países, organizado por país y ciudad, con sus carreras y áreas académicas — AURZANE NEXUS.">
+<link rel="canonical" href="https://nexus.aurzane.com/universidades/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Universidades y Carreras del mundo — catálogo AURZANE NEXUS">
+<meta property="og:description" content="Catálogo público de 6.125 universidades e institutos de 23 países, organizado por país y ciudad, con sus carreras y áreas académicas — AURZANE NEXUS.">
+<meta property="og:url" content="https://nexus.aurzane.com/universidades/">
+<meta property="og:site_name" content="AURZANE NEXUS">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;1,6..96,400&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#080B17; --navy-2:#0F1530; --navy-3:#151C3D; --navy-4:#1E2650;
+  --accent:#8A9CF0; --accent-light:#BAC5F7; --accent-dark:#4C58A6; --accent-dim:rgba(138,156,240,0.16);
+  --ovp-gold:#C9A24B; --ovp-gold-light:#EACF92;
+  --silver:#C7CDD6; --silver-dim:#8B92A0; --bone:#F5F3EE;
+  --ok:#7FA968; --ok-bg:rgba(127,169,104,0.12); --ok-line:rgba(127,169,104,0.35);
+  --line:rgba(199,205,214,0.13); --line-strong:rgba(138,156,240,0.4);
+  --dot-americas:#D9A441; --dot-europa:#5FB89C; --dot-asia:#E0785A; --dot-ecuador:var(--accent);
+  --shadow-1:0 1px 2px rgba(0,0,0,0.25), 0 10px 28px -16px rgba(0,0,0,0.65);
+  --shadow-2:0 4px 10px rgba(0,0,0,0.3), 0 24px 56px -20px rgba(0,0,0,0.75);
+  --glow:0 0 0 4px rgba(138,156,240,0.16);
+  --r-sm:8px; --r-md:12px; --r-lg:18px; --maxw:1180px;
+}
+/* ---------- Selector de color (barra de colores) ----------
+   Cambia el color de acento con el que se ve toda la página (enlaces, bordes activos,
+   ficha de Ecuador por ciudad, foco de los campos). El navy de fondo y el dorado de la
+   OVP no cambian: son la identidad fija del sitio. La elección queda guardada en el
+   navegador de quien visita (localStorage), así la próxima vez que entra ve su color. */
+html[data-tema="esmeralda"]{--accent:#4FBF8B; --accent-light:#8FDCB8; --accent-dark:#2C7A57; --accent-dim:rgba(79,191,139,0.16); --line-strong:rgba(79,191,139,0.4); --glow:0 0 0 4px rgba(79,191,139,0.16);}
+html[data-tema="terracota"]{--accent:#D97757; --accent-light:#EFA98C; --accent-dark:#96492E; --accent-dim:rgba(217,119,87,0.16); --line-strong:rgba(217,119,87,0.4); --glow:0 0 0 4px rgba(217,119,87,0.16);}
+html[data-tema="dorado"]{--accent:#D4AF37; --accent-light:#E8CD7A; --accent-dark:#8F7420; --accent-dim:rgba(212,175,55,0.16); --line-strong:rgba(212,175,55,0.4); --glow:0 0 0 4px rgba(212,175,55,0.16);}
+html[data-tema="rosa"]{--accent:#E0699E; --accent-light:#F0A9C8; --accent-dark:#A83E71; --accent-dim:rgba(224,105,158,0.16); --line-strong:rgba(224,105,158,0.4); --glow:0 0 0 4px rgba(224,105,158,0.16);}
+.selector-color{display:flex;align-items:center;gap:9px;margin-bottom:22px;flex-wrap:wrap;}
+.selector-color .etiqueta{font-size:0.78rem;color:var(--silver-dim);margin-right:2px;}
+.swatch-tema{width:22px;height:22px;border-radius:100px;border:2px solid transparent;padding:0;cursor:pointer;position:relative;box-shadow:0 0 0 1px rgba(199,205,214,0.25);transition:transform 0.15s, box-shadow 0.15s;flex-shrink:0;}
+.swatch-tema:hover{transform:scale(1.12);}
+.swatch-tema.activo{border-color:var(--bone);box-shadow:0 0 0 1px var(--bone), 0 0 0 3px rgba(245,243,238,0.18);}
+.swatch-tema:focus-visible{outline:2px solid var(--bone);outline-offset:3px;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--navy);color:var(--bone);font-family:'Instrument Sans',sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;}
+h1,h2,h3{font-family:'Bodoni Moda',serif;font-weight:500;letter-spacing:-0.01em;}
+a{color:var(--accent-light);text-decoration:none;}
+a:hover{text-decoration:underline;}
+:focus-visible{outline:2px solid var(--accent-light);outline-offset:3px;border-radius:4px;}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;}
+
+header{position:sticky;top:0;padding:16px 6vw;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;z-index:50;
+  background:rgba(8,11,23,0.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);box-shadow:0 1px 0 0 rgba(201,162,75,0.25);}
+.logo{font-family:'Bodoni Moda',serif;font-size:1.28rem;letter-spacing:0.04em;color:var(--bone);}
+.logo span{color:var(--ovp-gold);}
+header nav{display:flex;align-items:center;gap:4px;}
+header nav a{font-size:0.82rem;font-weight:500;color:var(--silver);padding:8px 16px;border-radius:100px;transition:color 0.2s, background 0.2s;}
+header nav a:hover{color:var(--accent-light);background:var(--navy-3);text-decoration:none;}
+header nav a.activa{color:var(--navy);background:var(--accent);font-weight:600;}
+header nav a.activa:hover{background:var(--accent-light);}
+
+main{max-width:var(--maxw);margin:0 auto;padding:0 6vw 100px;}
+.breadcrumb{font-size:0.78rem;color:var(--silver-dim);margin:22px 0 0;}
+.breadcrumb a{color:var(--silver-dim);}
+.breadcrumb a:hover{color:var(--accent-light);}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;padding:30px 0 44px;}
+.hero-grid{display:grid;grid-template-columns:1fr 340px;gap:48px;align-items:center;}
+.eyebrow{font-family:'Bodoni Moda',serif;font-style:italic;color:var(--ovp-gold-light);font-size:0.9rem;display:block;margin:18px 0 12px;letter-spacing:0.02em;}
+h1{font-size:clamp(2rem,4.2vw,2.9rem);line-height:1.12;margin-bottom:14px;text-wrap:balance;}
+h1 em{font-style:italic;background:linear-gradient(100deg, var(--accent-light), var(--ovp-gold-light));-webkit-background-clip:text;background-clip:text;color:transparent;}
+.lead{color:var(--silver);font-size:1rem;max-width:600px;margin-bottom:26px;}
+.lead a{white-space:nowrap;}
+
+.search-wrap{position:relative;margin-bottom:16px;max-width:600px;}
+.search-wrap input{width:100%;background:var(--navy-2);border:1px solid var(--line-strong);color:var(--bone);
+  padding:16px 18px 16px 48px;border-radius:var(--r-lg);font-size:0.98rem;transition:border-color 0.2s, background 0.2s, box-shadow 0.2s;box-shadow:var(--shadow-1);}
+.search-wrap input::placeholder{color:var(--silver-dim);}
+.search-wrap input:focus{outline:none;border-color:var(--accent);background:var(--navy-3);box-shadow:var(--glow);}
+.search-wrap svg{position:absolute;left:17px;top:50%;transform:translateY(-50%);color:var(--silver-dim);pointer-events:none;}
+
+.jump-links{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:26px;}
+.jump-links .etiqueta{font-size:0.78rem;color:var(--silver-dim);margin-right:2px;}
+.jump-links a{background:transparent;border:1px solid var(--line-strong);color:var(--accent-light);
+  padding:6px 14px;border-radius:100px;font-size:0.78rem;transition:all 0.2s;}
+.jump-links a:hover{background:var(--accent);border-color:var(--accent);color:var(--navy);text-decoration:none;}
+
+.hero-stats{display:flex;flex-wrap:wrap;gap:0;border-top:1px solid var(--line);padding-top:22px;max-width:560px;}
+.stat-tile{padding-right:28px;margin-right:28px;border-right:1px solid var(--line);}
+.stat-tile:last-child{border-right:none;margin-right:0;padding-right:0;}
+.stat-tile b{display:block;font-family:'Bodoni Moda',serif;font-size:1.6rem;color:var(--ovp-gold-light);line-height:1.15;font-variant-numeric:tabular-nums;}
+.stat-tile span{font-size:0.72rem;color:var(--silver-dim);text-transform:uppercase;letter-spacing:0.05em;}
+
+.hero-photo{position:relative;aspect-ratio:3/4;border-radius:22px;overflow:hidden;box-shadow:var(--shadow-2);border:1px solid var(--line-strong);
+  background:radial-gradient(circle at 30% 20%, rgba(138,156,240,0.35), transparent 55%), linear-gradient(165deg, var(--navy-4), var(--navy-2) 70%);}
+.hero-photo img{width:100%;height:100%;object-fit:cover;display:block;}
+.hero-photo::after{content:'';position:absolute;inset:0;
+  background:linear-gradient(195deg, rgba(8,11,23,0.05) 30%, rgba(8,11,23,0.85) 92%), linear-gradient(15deg, rgba(138,156,240,0.4), transparent 50%);}
+.hero-float{position:absolute;display:flex;align-items:center;gap:10px;background:rgba(15,21,48,0.88);backdrop-filter:blur(10px);
+  border:1px solid var(--line-strong);border-radius:14px;padding:11px 15px;box-shadow:var(--shadow-1);}
+.hero-float b{display:block;font-family:'Bodoni Moda',serif;font-size:1.15rem;color:var(--ovp-gold-light);line-height:1;}
+.hero-float-icon{font-size:1.3rem;}
+.hero-float-label{font-size:0.68rem;color:var(--silver);text-transform:uppercase;letter-spacing:0.04em;}
+.hero-float-top{top:16px;left:16px;}
+.hero-float-bottom{bottom:16px;right:16px;}
+
+/* ---------- Grupos de tablero (países / ciudades) ---------- */
+.board-group{padding:14px 0 8px;}
+.board-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:16px;}
+.board-head h2{font-size:1.35rem;display:flex;align-items:center;gap:10px;}
+.board-head .dot{width:11px;height:11px;border-radius:100px;flex-shrink:0;}
+.board-head .board-count{font-size:0.78rem;color:var(--silver-dim);}
+.dot-americas{background:var(--dot-americas);} .dot-europa{background:var(--dot-europa);} .dot-asia{background:var(--dot-asia);} .dot-ecuador{background:var(--dot-ecuador);}
+
+.tile-grid{display:grid;grid-template-columns:repeat(auto-fill, minmax(180px, 1fr));gap:12px;margin-bottom:38px;}
+.country-tile{position:relative;overflow:hidden;display:flex;flex-direction:column;gap:5px;padding:16px 16px 14px;border-radius:var(--r-md);
+  border:1px solid var(--line);border-top:3px solid var(--tile-accent, var(--accent));
+  background:linear-gradient(150deg, var(--navy-3), var(--navy-2) 85%);
+  transition:transform 0.2s, box-shadow 0.2s, border-color 0.2s;box-shadow:var(--shadow-1);}
+.country-tile:hover{transform:translateY(-3px);box-shadow:var(--shadow-2), 0 14px 28px -18px var(--tile-accent, var(--accent));
+  border-color:var(--tile-accent, var(--accent-light));text-decoration:none;}
+.country-tile .flag{font-size:1.5rem;line-height:1;}
+.country-tile .nombre{font-family:'Bodoni Moda',serif;font-size:0.98rem;color:var(--bone);}
+.country-tile .conteo{font-size:0.76rem;color:var(--tile-accent, var(--silver-dim));font-variant-numeric:tabular-nums;}
+.grupo-americas .country-tile{--tile-accent:var(--dot-americas);}
+.grupo-europa .country-tile{--tile-accent:var(--dot-europa);}
+.grupo-asia .country-tile{--tile-accent:var(--dot-asia);}
+.grupo-ciudades{grid-template-columns:repeat(auto-fill, minmax(148px, 1fr));}
+.grupo-ciudades .country-tile{--tile-accent:var(--dot-ecuador);padding:13px 14px 11px;gap:3px;}
+.grupo-ciudades .country-tile .flag{font-size:1.15rem;}
+.grupo-ciudades .country-tile .nombre{font-size:0.9rem;}
+
+/* Foto simbolica de fondo en las fichas de pais (misma foto/criterio que buscador.html), con velo de
+   color por continente encima para que el nombre y el conteo se sigan leyendo bien. */
+.country-tile.tile-foto{background-size:cover;background-position:center;background-color:var(--navy-3);}
+.country-tile.tile-foto::before{content:'';position:absolute;inset:0;z-index:0;}
+.country-tile.tile-foto>*{position:relative;z-index:1;}
+.country-tile.tile-foto .nombre{text-shadow:0 1px 4px rgba(0,0,0,0.55);}
+.country-tile.tile-foto .conteo{color:rgba(245,243,238,0.92);text-shadow:0 1px 3px rgba(0,0,0,0.5);}
+.tile-foto.americas1::before{background:linear-gradient(150deg, rgba(107,83,38,0.88), rgba(30,26,18,0.92));}
+.tile-foto.americas2::before{background:linear-gradient(150deg, rgba(76,63,42,0.88), rgba(36,28,14,0.92));}
+.tile-foto.europa1::before{background:linear-gradient(150deg, rgba(46,90,84,0.88), rgba(19,31,29,0.92));}
+.tile-foto.europa2::before{background:linear-gradient(150deg, rgba(35,67,62,0.88), rgba(16,26,24,0.92));}
+.tile-foto.asia1::before{background:linear-gradient(150deg, rgba(122,70,50,0.88), rgba(29,21,18,0.92));}
+.tile-foto.asia2::before{background:linear-gradient(150deg, rgba(92,58,42,0.88), rgba(29,21,18,0.92));}
+
+.sin-resultados{display:none;color:var(--silver-dim);font-size:0.9rem;padding:20px 0 30px;}
+
+/* ---------- CTA orientación vocacional ---------- */
+.cta-ovp{margin-top:18px;background:linear-gradient(135deg, rgba(201,162,75,0.1), var(--navy-2));border:1px solid rgba(201,162,75,0.38);border-radius:var(--r-lg);padding:32px;display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between;}
+.cta-ovp h2{font-size:1.3rem;margin-bottom:6px;color:var(--ovp-gold-light);}
+.cta-ovp p{color:var(--silver);font-size:0.92rem;max-width:460px;}
+.btn-primary{background:var(--ovp-gold);border:1px solid var(--ovp-gold);color:var(--navy);font-weight:600;font-size:0.86rem;padding:12px 22px;border-radius:100px;white-space:nowrap;}
+.btn-primary:hover{background:var(--ovp-gold-light);border-color:var(--ovp-gold-light);text-decoration:none;}
+
+footer{border-top:1px solid var(--line);padding:26px 6vw 36px;color:var(--silver-dim);font-size:0.8rem;max-width:var(--maxw);margin:0 auto;}
+footer a{color:var(--silver);}
+
+@media (max-width:860px){
+  .hero-grid{grid-template-columns:1fr;}
+  .hero-photo{aspect-ratio:16/9;max-width:460px;}
+}
+@media (max-width:720px){
+  .cta-ovp{flex-direction:column;align-items:flex-start;}
+  h1{max-width:100%;}
+  .tile-grid{grid-template-columns:repeat(auto-fill, minmax(150px, 1fr));}
+}
+.promo-pau{display:flex;align-items:center;gap:14px;margin:18px 0;padding:16px 18px;border-radius:16px;text-decoration:none;color:#fff;background:radial-gradient(120% 140% at 100% 0%,#2b3fb8,#0b1030)}
+.promo-pau > span:first-child{font-size:1.6rem} .promo-pau b{display:block}
+.promo-pau-cta{margin-left:auto;flex:none;background:linear-gradient(90deg,#35e0d0,#8b7bff);color:#0b1030;font-weight:700;border-radius:10px;padding:8px 14px}
+@media (max-width:560px){.promo-pau{flex-wrap:wrap}.promo-pau-cta{margin-left:0}}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "AURZANE", "item": "https://aurzane.com/"}, {"@type": "ListItem", "position": 2, "name": "NEXUS", "item": "https://nexus.aurzane.com/"}, {"@type": "ListItem", "position": 3, "name": "Universidades", "item": "https://nexus.aurzane.com/universidades/"}]}</script>
+<meta name="google-adsense-account" content="ca-pub-8763758728010451">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8763758728010451" crossorigin="anonymous"></script>
+</head>
+<body>
+<header>
+  <a class="logo" href="https://aurzane.com/">AUR<span>Z</span>ANE</a>
+  <nav>
+    <a href="https://nexus.aurzane.com/">NEXUS</a>
+    <a class="activa" href="https://nexus.aurzane.com/universidades/">Universidades</a>
+    <a href="https://nexus.aurzane.com/universidades/buscador.html">Buscador</a>
+  </nav>
+</header>
+<main>
+
+<p class="breadcrumb"><a href="https://aurzane.com/">AURZANE</a> / <a href="https://nexus.aurzane.com/">NEXUS</a> / Universidades</p>
+
+<section class="hero">
+  <div class="hero-grid">
+    <div class="hero-inner">
+      <span class="eyebrow">AURZANE NEXUS</span>
+      <h1>Universidades y <em>Carreras</em> del mundo</h1>
+      <p class="lead">Explorá 6.125 universidades e institutos de 23 países, organizados por país y, en Ecuador, también por ciudad. Cada página lista las instituciones reales de ese lugar con sus carreras o áreas académicas. ¿Preferís buscar directo por nombre, carrera o ciudad? <a href="https://nexus.aurzane.com/universidades/buscador.html">Abrí el buscador interactivo →</a></p>
+
+      <a class="promo-pau" href="https://nexus.aurzane.com/calculadora-nota-pau/"><span>🧮</span><span><b>¿Vas a estudiar en España?</b> Calcula tu nota de la PAU sobre 14 y mira si te llega para tu carrera.</span><span class="promo-pau-cta">Calcular</span></a>
+
+      <div class="search-wrap">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+        <label for="filtroLocal" class="sr-only">Filtrar países y ciudades del catálogo</label>
+        <input type="text" id="filtroLocal" placeholder="Filtrar por país o ciudad… (ej. Ecuador, Cuenca, Alemania)" autocomplete="off">
+      </div>
+
+      <div class="jump-links">
+        <span class="etiqueta">Ir directo a:</span>
+        <a href="#americas">🌎 Américas</a>
+        <a href="#europa">🏛️ Europa</a>
+        <a href="#asia-oceania">🌏 Asia y Oceanía</a>
+        <a href="#ecuador-ciudades">🇪🇨 Ecuador por ciudad</a>
+      </div>
+
+      <div class="selector-color" role="group" aria-label="Elegí el color con el que ver la página">
+        <span class="etiqueta">Ver la página en:</span>
+        <button type="button" class="swatch-tema activo" data-tema="indigo" style="background:#8A9CF0" title="Índigo (por defecto)" aria-label="Índigo (por defecto)" aria-pressed="true"></button>
+        <button type="button" class="swatch-tema" data-tema="esmeralda" style="background:#4FBF8B" title="Esmeralda" aria-label="Esmeralda" aria-pressed="false"></button>
+        <button type="button" class="swatch-tema" data-tema="terracota" style="background:#D97757" title="Terracota" aria-label="Terracota" aria-pressed="false"></button>
+        <button type="button" class="swatch-tema" data-tema="dorado" style="background:#D4AF37" title="Dorado" aria-label="Dorado" aria-pressed="false"></button>
+        <button type="button" class="swatch-tema" data-tema="rosa" style="background:#E0699E" title="Rosa" aria-label="Rosa" aria-pressed="false"></button>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat-tile"><b>6.125</b><span>Instituciones</span></div>
+        <div class="stat-tile"><b>23</b><span>Países</span></div>
+        <div class="stat-tile"><b>114.716</b><span>Carreras/áreas</span></div>
+      </div>
+    </div>
+
+    <div class="hero-photo">
+      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/College%20graduate%20students.jpg?width=680" alt="Graduados universitarios con birrete y toga en una ceremonia de graduación" loading="eager" onerror="this.style.display='none';">
+      <span class="hero-float hero-float-top"><span class="hero-float-icon">🌎</span><span><b>23</b><span class="hero-float-label">países</span></span></span>
+      <span class="hero-float hero-float-bottom"><span class="hero-float-icon">🎓</span><span><b>6.125</b><span class="hero-float-label">instituciones</span></span></span>
+    </div>
+  </div>
+</section>
+
+<section class="board-group" id="americas">
+  <div class="board-head"><h2><span class="dot dot-americas"></span>Américas</h2><span class="board-count">9 países</span></div>
+  <div class="tile-grid grupo-americas">
+    <a class="country-tile tile-foto americas1" href="pais/argentina.html" data-buscar="argentina" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Puerto_Madero%2C_Buenos_Aires_%2840689219792%29_%28cropped%29.jpg/960px-Puerto_Madero%2C_Buenos_Aires_%2840689219792%29_%28cropped%29.jpg')"><span class="flag">🇦🇷</span><span class="nombre">Argentina</span><span class="conteo">118 instituciones</span></a>
+    <a class="country-tile tile-foto americas2" href="pais/brasil.html" data-buscar="brasil" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Planalto_Central_%28cropped%29.jpg/960px-Planalto_Central_%28cropped%29.jpg')"><span class="flag">🇧🇷</span><span class="nombre">Brasil</span><span class="conteo">161 instituciones</span></a>
+    <a class="country-tile tile-foto americas1" href="pais/canada.html" data-buscar="canada canadá" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Parliament-Ottawa.jpg/960px-Parliament-Ottawa.jpg')"><span class="flag">🇨🇦</span><span class="nombre">Canadá</span><span class="conteo">97 instituciones</span></a>
+    <a class="country-tile tile-foto americas2" href="pais/chile.html" data-buscar="chile" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/CostaneraCenter2016.jpg/960px-CostaneraCenter2016.jpg')"><span class="flag">🇨🇱</span><span class="nombre">Chile</span><span class="conteo">52 instituciones</span></a>
+    <a class="country-tile tile-foto americas1" href="pais/colombia.html" data-buscar="colombia" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Bogota%2C_Colombia_%2836668708290%29.jpg/960px-Bogota%2C_Colombia_%2836668708290%29.jpg')"><span class="flag">🇨🇴</span><span class="nombre">Colombia</span><span class="conteo">86 instituciones</span></a>
+    <a class="country-tile tile-foto americas2" href="pais/ecuador.html" data-buscar="ecuador" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/FACHADA_ASAMBLEA_NACIONAL._QUITO%2C_20_DE_FEBRERO_2020._01.jpg/960px-FACHADA_ASAMBLEA_NACIONAL._QUITO%2C_20_DE_FEBRERO_2020._01.jpg')"><span class="flag">🇪🇨</span><span class="nombre">Ecuador</span><span class="conteo">256 instituciones</span></a>
+    <a class="country-tile tile-foto americas1" href="pais/estados-unidos.html" data-buscar="estados unidos eeuu usa" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/12-07-13-washington-by-RalfR-08.jpg/960px-12-07-13-washington-by-RalfR-08.jpg')"><span class="flag">🇺🇸</span><span class="nombre">Estados Unidos</span><span class="conteo">3.675 instituciones</span></a>
+    <a class="country-tile tile-foto americas2" href="pais/mexico.html" data-buscar="mexico méxico" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Sobrevuelos_CDMX_HJ2A4913_%2825514321687%29_%28cropped%29.jpg/960px-Sobrevuelos_CDMX_HJ2A4913_%2825514321687%29_%28cropped%29.jpg')"><span class="flag">🇲🇽</span><span class="nombre">México</span><span class="conteo">111 instituciones</span></a>
+    <a class="country-tile tile-foto americas1" href="pais/uruguay.html" data-buscar="uruguay" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Mercado_del_puerto_Fachada.JPG/960px-Mercado_del_puerto_Fachada.JPG')"><span class="flag">🇺🇾</span><span class="nombre">Uruguay</span><span class="conteo">7 instituciones</span></a>
+  </div>
+</section>
+
+<section class="board-group" id="europa">
+  <div class="board-head"><h2><span class="dot dot-europa"></span>Europa</h2><span class="board-count">8 países</span></div>
+  <div class="tile-grid grupo-europa">
+    <a class="country-tile tile-foto europa1" href="pais/alemania.html" data-buscar="alemania" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Museumsinsel_Berlin_Juli_2021_1_%28cropped%29_b.jpg/960px-Museumsinsel_Berlin_Juli_2021_1_%28cropped%29_b.jpg')"><span class="flag">🇩🇪</span><span class="nombre">Alemania</span><span class="conteo">388 instituciones</span></a>
+    <a class="country-tile tile-foto europa2" href="pais/espana.html" data-buscar="espana españa" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Gran_V%C3%ADa_%28Madrid%29_1.jpg/960px-Gran_V%C3%ADa_%28Madrid%29_1.jpg')"><span class="flag">🇪🇸</span><span class="nombre">España</span><span class="conteo">5 instituciones</span></a>
+    <a class="country-tile tile-foto europa1" href="pais/francia.html" data-buscar="francia" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/La_Tour_Eiffel_vue_de_la_Tour_Saint-Jacques%2C_Paris_ao%C3%BBt_2014_%282%29.jpg/960px-La_Tour_Eiffel_vue_de_la_Tour_Saint-Jacques%2C_Paris_ao%C3%BBt_2014_%282%29.jpg')"><span class="flag">🇫🇷</span><span class="nombre">Francia</span><span class="conteo">240 instituciones</span></a>
+    <a class="country-tile tile-foto europa2" href="pais/italia.html" data-buscar="italia" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Trevi_Fountain%2C_Rome%2C_Italy_2_-_May_2007.jpg/960px-Trevi_Fountain%2C_Rome%2C_Italy_2_-_May_2007.jpg')"><span class="flag">🇮🇹</span><span class="nombre">Italia</span><span class="conteo">82 instituciones</span></a>
+    <a class="country-tile tile-foto europa1" href="pais/paises-bajos.html" data-buscar="paises bajos países bajos holanda" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Imagen_de_los_canales_conc%C3%A9ntricos_en_%C3%81msterdam.png/960px-Imagen_de_los_canales_conc%C3%A9ntricos_en_%C3%81msterdam.png')"><span class="flag">🇳🇱</span><span class="nombre">Países Bajos</span><span class="conteo">55 instituciones</span></a>
+    <a class="country-tile tile-foto europa2" href="pais/portugal.html" data-buscar="portugal" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Lisboa_-_Portugal_%2852597836992%29.jpg/960px-Lisboa_-_Portugal_%2852597836992%29.jpg')"><span class="flag">🇵🇹</span><span class="nombre">Portugal</span><span class="conteo">42 instituciones</span></a>
+    <a class="country-tile tile-foto europa1" href="pais/reino-unido.html" data-buscar="reino unido inglaterra uk" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/London_Skyline_%28125508655%29.jpeg/960px-London_Skyline_%28125508655%29.jpeg')"><span class="flag">🇬🇧</span><span class="nombre">Reino Unido</span><span class="conteo">150 instituciones</span></a>
+    <a class="country-tile tile-foto europa2" href="pais/suiza.html" data-buscar="suiza" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Bundeshaus_Bern_2009%2C_Flooffy.jpg/960px-Bundeshaus_Bern_2009%2C_Flooffy.jpg')"><span class="flag">🇨🇭</span><span class="nombre">Suiza</span><span class="conteo">16 instituciones</span></a>
+  </div>
+</section>
+
+<section class="board-group" id="asia-oceania">
+  <div class="board-head"><h2><span class="dot dot-asia"></span>Asia y Oceanía</h2><span class="board-count">6 países</span></div>
+  <div class="tile-grid grupo-asia">
+    <a class="country-tile tile-foto asia1" href="pais/australia.html" data-buscar="australia" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Canberra_panorama_from_Mount_Ainslie.jpg/960px-Canberra_panorama_from_Mount_Ainslie.jpg')"><span class="flag">🇦🇺</span><span class="nombre">Australia</span><span class="conteo">42 instituciones</span></a>
+    <a class="country-tile tile-foto asia2" href="pais/china.html" data-buscar="china" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/The_Great_Wall_of_China_at_Jinshanling-edit.jpg/960px-The_Great_Wall_of_China_at_Jinshanling-edit.jpg')"><span class="flag">🇨🇳</span><span class="nombre">China</span><span class="conteo">145 instituciones</span></a>
+    <a class="country-tile tile-foto asia1" href="pais/corea-del-sur.html" data-buscar="corea del sur" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/%EA%B4%91%ED%99%94%EB%AC%B8_%EC%9B%94%EB%8C%80.jpg/960px-%EA%B4%91%ED%99%94%EB%AC%B8_%EC%9B%94%EB%8C%80.jpg')"><span class="flag">🇰🇷</span><span class="nombre">Corea del Sur</span><span class="conteo">96 instituciones</span></a>
+    <a class="country-tile tile-foto asia2" href="pais/india.html" data-buscar="india" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Forecourt%2C_Rashtrapati_Bhavan_-_1.jpg/960px-Forecourt%2C_Rashtrapati_Bhavan_-_1.jpg')"><span class="flag">🇮🇳</span><span class="nombre">India</span><span class="conteo">120 instituciones</span></a>
+    <a class="country-tile tile-foto asia1" href="pais/japon.html" data-buscar="japon japón" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Skyscrapers_of_Shinjuku_2009_January.jpg/960px-Skyscrapers_of_Shinjuku_2009_January.jpg')"><span class="flag">🇯🇵</span><span class="nombre">Japón</span><span class="conteo">129 instituciones</span></a>
+    <a class="country-tile tile-foto asia2" href="pais/rusia.html" data-buscar="rusia" style="background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Saint_Basil%27s_Cathedral_and_the_Red_Square.jpg/960px-Saint_Basil%27s_Cathedral_and_the_Red_Square.jpg')"><span class="flag">🇷🇺</span><span class="nombre">Rusia</span><span class="conteo">52 instituciones</span></a>
+  </div>
+</section>
+
+<section class="board-group" id="ecuador-ciudades">
+  <div class="board-head"><h2><span class="dot dot-ecuador"></span>Ecuador por ciudad</h2><span class="board-count">96 ciudades</span></div>
+  <div class="tile-grid grupo-ciudades">
+    <a class="country-tile" href="ciudad/alausi.html" data-buscar="alausi alausí"><span class="flag">📍</span><span class="nombre">Alausí</span><span class="conteo">1 institución</span></a>
+    <a class="country-tile" href="ciudad/ambato.html" data-buscar="ambato"><span class="flag">📍</span><span class="nombre">Ambato</span><span class="conteo">17 instituciones</span></a>
+    <a class="country-tile" href="ciudad/antonio-ante.html" data-buscar="antonio ante"><span class="flag">📍</span><span class="nombre">Antonio Ante</span><span class="conteo">1 institución</span></a>
+    <a class="country-tile" href="ciudad/arenillas.html" data-buscar="arenillas"><span class="flag">📍</span><span class="nombre">Arenillas</span><span class="conteo">1 institución</span></a>
+    <a class="country-tile" href="ciudad/azogues.html" data-buscar="azogues"><span class="flag">📍</span><span class="nombre">Azogues</span><span class="conteo">3 instituciones</span></a>
+    <a class="country-tile" href="ciudad/babahoyo.html" data-buscar="babahoyo"><span class="flag">📍</span><span class="nombre">Babahoyo</span><span class="conteo">4 instituciones</span></a>
+    <a class="country-tile" href="ciudad/banos-de-agua-santa.html" data-buscar="banos de agua santa baños de agua santa"><span class="flag">📍</span><span class="nombre">Baños de Agua Santa</span><span class="conteo">1 institución</span></a>
+    <a class="country-tile" href="ciudad/bolivar.html" data-buscar="bolivar bolívar"><span class="flag">📍</span><span class="nombre">Bolívar</span><span class="conteo">1 institución</span></a>
+    <a class="country-tile" href="ciudad/calvas.html" data-buscar="calvas"><span class="flag">📍</span><span class="nombre">Calvas</span><span class="conteo">2 instituciones</span></a>
+    <a class="country-tile" href="ciudad/canar.html" data-buscar="canar cañar"><span class="flag">📍</span><span class="nombre">Cañar</span><span class="conteo">2 instituciones</span></a>
+    <a class="country-tile" href="ciudad/catamayo.html" data-buscar="catamayo"><span class="flag">📍</span><span class="nombre">Catamayo</span><span class="conteo">1 institución</span></a>
+    <a class="country-tile" href="ciudad/cayambe.html" data-buscar="cayambe"><span class="flag">📍</span><span class="nombre">Cayambe</span><span class="conteo">4 instituciones</span></a>
+    <a class="country-tile" href="ciudad/chimbo.html" data-buscar="chimbo"><span class="flag">📍</span><span class="nombre">Chimbo</span><span class="conteo">1 institución</span></a>
+    <a class="country-tile" href="ciudad/chone.html" data-buscar="chone"><span class="flag">📍</span><span class="nombre">Chone</span><span class="conteo">3 instituciones</span></a>
+    <a class="country-tile" href="ciudad/colta.html" data-buscar="colta"><span class="flag">📍</span><span class="nombre">Colta</span><span class="conteo">2 instituciones</span></a>
+    <a class="country-tile" href="ciudad/cotacachi.html" data-buscar="cotacachi"><span class="flag">📍</span><span class="nombre">Cotacachi</span><span class="conteo">2 instituciones</span></a>
+    <a class="country-tile" href="ciudad/cuenca.html" data-buscar="cuenca"><span class="flag">📍</span><span class="nombre">Cuenca</span><span class="conteo">15 instituciones</span></a>
+    <a class="country-tile" href="ciudad/cumanda.html" data-buscar="cumanda cumandá"><span class="flag">📍</span><span class="nombre">Cumandá</span><span class="conteo">1 institución</span></a>
+    <a class="country-tile" href="ciudad/daule.html" data-buscar="daule"><span class="flag">📍</span><span class="nombre">Daule</span><span class="conteo">2 instituciones</span></a>
+    <a class="country-tile" href="ciudad/duran.html" data-buscar="duran durán"><span class="flag">📍</span><span class="nombre">Durán</span><span class="conteo">1 institución</span></a>
+    <a class="country-tile" href="ciudad/el-carmen.html" data-buscar="el carmen"><span class="flag">📍</span><span class="nombre">El Carmen</span><span class="conteo">1 institución</span></a>
+    <a class="country-tile" href="ciudad/el-guabo.html" data-buscar="el guabo"><span class="flag">📍</span><span class="nombre">El Guabo</span><span class="conteo">1 institución</span></a>
+    <a class="country-tile" href="ciudad/el-pangui.html" data-buscar="el pangui"><span class="flag">📍</span><span class="nombre">El Pangui</span><span class="conteo">1 institución</span></a>
+    <a class="country-tile" href="ciudad/el-triunfo.html" data-buscar="el triunfo"><span class="flag">📍</span><span class="nombre">El Triunfo</span><span class="conteo">1 institución</span></a>
+    <a class="country-tile" href="ciudad/esmeraldas.html" data-buscar="esmeraldas"><span class="flag">📍</span><span class="nombre">Esmeraldas</span><span class="conteo">3 instituciones</span></a>
+    <a class="country-tile" href="ciudad/espejo.html" data-buscar="espejo"><span class="flag">📍</span><span class="nombre">Espejo</span><span class="conteo">2 instituciones</span></a>
+    <a class="country-tile" href="ciudad/flavio-alfaro.html" data-buscar="flavio alfaro"><span class="flag">📍</span><span class="nombre">Flavio Alfaro</span><span class="conteo">1 institución</span></a>
+    <a class="country-tile" href="ciudad/general-plaza.html" data-buscar="general plaza"><span class="flag">📍</span><span class="nombre">General Plaza</span><span class="conteo">1 institución</span></a>
+    <a class="country-tile" href="ciudad/giron.html" data-buscar="giron girón"><span class="flag">📍</span><span class="nombre">Girón</span><span class="conteo">1 institución</span></a>
+    <a class="country-tile" href="ciudad/guaranda.html" data-buscar="guaranda"><span class="flag">📍</span><span class="nombre">Guaranda</span><span class="conteo">2 instituciones</span></a>
+    <a class="country-tile" href="ciudad/guayaquil.html" data-buscar="guayaquil"><span class="flag">📍</span><span class="nombre">Guayaquil</span><span class="conteo">46 instituciones</span></a>
+    <a class="country-tile" href="ciudad/huaquillas.html" data-buscar="huaquillas"><span class="flag">📍</span><span class="nombre">Huaquillas</span><span class="conteo">1 institución</span></a>
+    <a class="country-tile" href="ciudad/ibarra.html" data-buscar="ibarra"><span class="flag">📍</span><span class="nombre">Ibarra</span><span class="conteo">9 instituciones</span></a>
+    <a class="country-tile" href="ciudad/jaramijo.html" data-buscar="jaramijo jaramijó"><span class="flag">📍</span><span class="nombre">Jaramijó</span><span class="conteo">1 institución</span></a>
+    <a class="country-tile" href="ciudad/jipijapa.html" data-buscar="jipijapa"><span class="flag">📍</span><span class="nombre">Jipijapa</span><span class="conteo">3 instituciones</span></a>
+    <a class="country-tile" href="ciudad/la-concordia.html" data-buscar="la concordia"><span class="flag">📍</span><span class="nombre">La Concordia</span><span class="conteo">2 instituciones</span></a>
+    <a class="country-tile" href="ciudad/la-joya-de-los-sachas.html" data-buscar="la joya de los sachas"><span class="flag">📍</span><span class="nombre">La Joya de los Sachas</span><span class="conteo">2 instituciones</span></a>
+    <a class="country-tile" href="ciudad/la-libertad.html" data-buscar="la libertad"><span class="flag">📍</span><span class="nombre">La Libertad</span><span class="conteo">1 institución</span></a>
+    <a class="country-tile" href="ciudad/la-mana.html" data-buscar="la mana la maná"><span class="flag">📍</span><span class="nombre">La Maná</span><span class="conteo">2 instituciones</span></a>
+    <a class="country-tile" href="ciudad/la-troncal.html" data-buscar="la troncal"><span class="flag">📍</span><span class="nombre">La Troncal</span><span class="conteo">2 instituciones</span></a>
+    <a class="country-tile" href="ciudad/lago-agrio.html" data-buscar="lago agrio"><span class="flag">📍</span><span class="nombre">Lago Agrio</span><span class="conteo">6 instituciones</span></a>
+    <a class="country-tile" href="ciudad/latacunga.html" data-buscar="latacunga"><span class="flag">📍</span><span class="nombre">Latacunga</span><span class="conteo">5 instituciones</span></a>
+    <a class="country-tile" href="ciudad/limon-indanza.html" data-buscar="limon indanza limón indanza"><span class="flag">📍</span><span class="nombre">Limón Indanza</span><span class="conteo">1 institución</span></a>
+    <a class="country-tile" href="ciudad/loja.html" data-buscar="loja"><span class="flag">📍</span><span class="nombre">Loja</span><span class="conteo">11 instituciones</span></a>
+    <a class="country-tile" href="ciudad/machala.html" data-buscar="machala"><span class="flag">📍</span><span class="nombre">Machala</span><span class="conteo">5 instituciones</span></a>
+    <a class="country-tile" href="ciudad/manta.html" data-buscar="manta"><span class="flag">📍</span><span class="nombre">Manta</span><span class="conteo">4 instituciones</span></a>
+    <a class="country-tile" href="ciudad/mejia.html" data-buscar="mejia mejía"><span class="flag">📍</span><span class="nombre">Mejía</span><span class="conteo">2 instituciones</span></a>
+    <a class="country-tile" href="ciudad/mera.html" data-buscar="mera"><span class="flag">📍</span><span class="nombre">Mera</span><span class="conteo">1 institución</span></a>
+    <a class="country-tile" href="ciudad/milagro.html" data-buscar="milagro"><span class="flag">📍</span><span class="nombre">Milagro</span><span class="conteo">3 instituciones</span></a>
+    <a class="country-tile" href="ciudad/montalvo.html" data-buscar="montalvo"><span class="flag">📍</span><span class="nombre">Montalvo</span><span class="conteo">1 institución</span></a>
+    <a class="country-tile" href="ciudad/morona.html" data-buscar="morona"><span class="flag">📍</span><span class="nombre">Morona</span><span class="conteo">2 instituciones</span></a>
+    <a class="country-tile" href="ciudad/naranjal.html" data-buscar="naranjal"><span class="flag">📍</span><span class="nombre">Naranjal</span><span class="conteo">1 institución</span></a>
+    <a class="country-tile" href="ciudad/nobol.html" data-buscar="nobol"><span class="flag">📍</span><span class="nombre">Nobol</span><span class="conteo">1 institución</span></a>
+    <a class="country-tile" href="ciudad/orellana.html" data-buscar="orellana"><span class="flag">📍</span><span class="nombre">Orellana</span><span class="conteo">1 institución</span></a>
+    <a class="country-tile" href="ciudad/otavalo.html" data-buscar="otavalo"><span class="flag">📍</span><span class="nombre">Otavalo</span><span class="conteo">1 institución</span></a>
+    <a class="country-tile" href="ciudad/paltas.html" data-buscar="paltas"><span class="flag">📍</span><span class="nombre">Paltas</span><span class="conteo">1 institución</span></a>
+    <a class="country-tile" href="ciudad/pasaje.html" data-buscar="pasaje"><span class="flag">📍</span><span class="nombre">Pasaje</span><span class="conteo">2 instituciones</span></a>
+    <a class="country-tile" href="ciudad/pastaza.html" data-buscar="pastaza"><span class="flag">📍</span><span class="nombre">Pastaza</span><span class="conteo">5 instituciones</span></a>
+    <a class="country-tile" href="ciudad/patate.html" data-buscar="patate"><span class="flag">📍</span><span class="nombre">Patate</span><span class="conteo">1 institución</span></a>
+    <a class="country-tile" href="ciudad/pedernales.html" data-buscar="pedernales"><span class="flag">📍</span><span class="nombre">Pedernales</span><span class="conteo">1 institución</span></a>
+    <a class="country-tile" href="ciudad/pedro-moncayo.html" data-buscar="pedro moncayo"><span class="flag">📍</span><span class="nombre">Pedro Moncayo</span><span class="conteo">1 institución</span></a>
+    <a class="country-tile" href="ciudad/pichincha.html" data-buscar="pichincha"><span class="flag">📍</span><span class="nombre">Pichincha</span><span class="conteo">1 institución</span></a>
+    <a class="country-tile" href="ciudad/pinas.html" data-buscar="pinas piñas"><span class="flag">📍</span><span class="nombre">Piñas</span><span class="conteo">1 institución</span></a>
+    <a class="country-tile" href="ciudad/playas.html" data-buscar="playas"><span class="flag">📍</span><span class="nombre">Playas</span><span class="conteo">2 instituciones</span></a>
+    <a class="country-tile" href="ciudad/portoviejo.html" data-buscar="portoviejo"><span class="flag">📍</span><span class="nombre">Portoviejo</span><span class="conteo">6 instituciones</span></a>
+    <a class="country-tile" href="ciudad/puebloviejo.html" data-buscar="puebloviejo"><span class="flag">📍</span><span class="nombre">Puebloviejo</span><span class="conteo">1 institución</span></a>
+    <a class="country-tile" href="ciudad/puerto-lopez.html" data-buscar="puerto lopez puerto lópez"><span class="flag">📍</span><span class="nombre">Puerto López</span><span class="conteo">1 institución</span></a>
+    <a class="country-tile" href="ciudad/puerto-quito.html" data-buscar="puerto quito"><span class="flag">📍</span><span class="nombre">Puerto Quito</span><span class="conteo">1 institución</span></a>
+    <a class="country-tile" href="ciudad/pujili.html" data-buscar="pujili pujilí"><span class="flag">📍</span><span class="nombre">Pujilí</span><span class="conteo">1 institución</span></a>
+    <a class="country-tile" href="ciudad/puyo.html" data-buscar="puyo"><span class="flag">📍</span><span class="nombre">Puyo</span><span class="conteo">1 institución</span></a>
+    <a class="country-tile" href="ciudad/quevedo.html" data-buscar="quevedo"><span class="flag">📍</span><span class="nombre">Quevedo</span><span class="conteo">5 instituciones</span></a>
+    <a class="country-tile" href="ciudad/quininde.html" data-buscar="quininde"><span class="flag">📍</span><span class="nombre">Quininde</span><span class="conteo">1 institución</span></a>
+    <a class="country-tile" href="ciudad/quito.html" data-buscar="quito"><span class="flag">📍</span><span class="nombre">Quito</span><span class="conteo">82 instituciones</span></a>
+    <a class="country-tile" href="ciudad/riobamba.html" data-buscar="riobamba"><span class="flag">📍</span><span class="nombre">Riobamba</span><span class="conteo">13 instituciones</span></a>
+    <a class="country-tile" href="ciudad/ruminahui.html" data-buscar="ruminahui rumiñahui"><span class="flag">📍</span><span class="nombre">Rumiñahui</span><span class="conteo">3 instituciones</span></a>
+    <a class="country-tile" href="ciudad/salinas.html" data-buscar="salinas"><span class="flag">📍</span><span class="nombre">Salinas</span><span class="conteo">2 instituciones</span></a>
+    <a class="country-tile" href="ciudad/samborondon.html" data-buscar="samborondon samborondón"><span class="flag">📍</span><span class="nombre">Samborondón</span><span class="conteo">2 instituciones</span></a>
+    <a class="country-tile" href="ciudad/san-cristobal.html" data-buscar="san cristobal"><span class="flag">📍</span><span class="nombre">San Cristobal</span><span class="conteo">3 instituciones</span></a>
+    <a class="country-tile" href="ciudad/san-lorenzo.html" data-buscar="san lorenzo"><span class="flag">📍</span><span class="nombre">San Lorenzo</span><span class="conteo">1 institución</span></a>
+    <a class="country-tile" href="ciudad/san-miguel.html" data-buscar="san miguel"><span class="flag">📍</span><span class="nombre">San Miguel</span><span class="conteo">1 institución</span></a>
+    <a class="country-tile" href="ciudad/san-miguel-de-urcuqui.html" data-buscar="san miguel de urcuqui"><span class="flag">📍</span><span class="nombre">San Miguel de Urcuqui</span><span class="conteo">2 instituciones</span></a>
+    <a class="country-tile" href="ciudad/san-pedro-de-pelileo.html" data-buscar="san pedro de pelileo"><span class="flag">📍</span><span class="nombre">San Pedro de Pelileo</span><span class="conteo">1 institución</span></a>
+    <a class="country-tile" href="ciudad/santa-ana.html" data-buscar="santa ana"><span class="flag">📍</span><span class="nombre">Santa Ana</span><span class="conteo">1 institución</span></a>
+    <a class="country-tile" href="ciudad/santa-cruz.html" data-buscar="santa cruz"><span class="flag">📍</span><span class="nombre">Santa Cruz</span><span class="conteo">2 instituciones</span></a>
+    <a class="country-tile" href="ciudad/santa-elena.html" data-buscar="santa elena"><span class="flag">📍</span><span class="nombre">Santa Elena</span><span class="conteo">2 instituciones</span></a>
+    <a class="country-tile" href="ciudad/santiago-de-pillaro.html" data-buscar="santiago de pillaro"><span class="flag">📍</span><span class="nombre">Santiago de Pillaro</span><span class="conteo">1 institución</span></a>
+    <a class="country-tile" href="ciudad/santo-domingo.html" data-buscar="santo domingo"><span class="flag">📍</span><span class="nombre">Santo Domingo</span><span class="conteo">13 instituciones</span></a>
+    <a class="country-tile" href="ciudad/shushufindi.html" data-buscar="shushufindi"><span class="flag">📍</span><span class="nombre">Shushufindi</span><span class="conteo">1 institución</span></a>
+    <a class="country-tile" href="ciudad/sucre.html" data-buscar="sucre"><span class="flag">📍</span><span class="nombre">Sucre</span><span class="conteo">2 instituciones</span></a>
+    <a class="country-tile" href="ciudad/sucua.html" data-buscar="sucua sucúa"><span class="flag">📍</span><span class="nombre">Sucúa</span><span class="conteo">1 institución</span></a>
+    <a class="country-tile" href="ciudad/tena.html" data-buscar="tena"><span class="flag">📍</span><span class="nombre">Tena</span><span class="conteo">3 instituciones</span></a>
+    <a class="country-tile" href="ciudad/tosagua.html" data-buscar="tosagua"><span class="flag">📍</span><span class="nombre">Tosagua</span><span class="conteo">1 institución</span></a>
+    <a class="country-tile" href="ciudad/tulcan.html" data-buscar="tulcan tulcán"><span class="flag">📍</span><span class="nombre">Tulcán</span><span class="conteo">3 instituciones</span></a>
+    <a class="country-tile" href="ciudad/yantzaza.html" data-buscar="yantzaza"><span class="flag">📍</span><span class="nombre">Yantzaza</span><span class="conteo">2 instituciones</span></a>
+    <a class="country-tile" href="ciudad/zamora.html" data-buscar="zamora"><span class="flag">📍</span><span class="nombre">Zamora</span><span class="conteo">2 instituciones</span></a>
+    <a class="country-tile" href="ciudad/zapotillo.html" data-buscar="zapotillo"><span class="flag">📍</span><span class="nombre">Zapotillo</span><span class="conteo">1 institución</span></a>
+  </div>
+</section>
+
+<p class="sin-resultados" id="sinResultadosLocal">No encontramos ningún país o ciudad que coincida con esa búsqueda. Probá con otro término, o <a href="https://nexus.aurzane.com/universidades/buscador.html">abrí el buscador interactivo</a> para buscar directo por carrera o universidad.</p>
+
+<div class="cta-ovp">
+  <div>
+    <h2>¿Todavía no sabés qué estudiar?</h2>
+    <p>Este catálogo te muestra dónde estudiar. Si primero necesitás descubrir qué carrera va con vos, la Orientación Vocacional AURZANE (OVP) combina pruebas psicológicas estandarizadas con una devolución personal de un psicólogo.</p>
+  </div>
+  <a class="btn-primary" href="https://ovp.aurzane.com/portal.html">Empezar mi orientación vocacional →</a>
+</div>
+
+</main>
+<footer>
+  <p>Catálogo de universidades e institutos mantenido por AURZANE NEXUS a partir de fuentes oficiales (SENESCYT, College Scorecard del Dep. de Educación de EEUU, Hochschulkompass, Ministère de l'Enseignement supérieur de Francia, entre otras) e investigación institución por institución donde no existe un dataset oficial descargable. Es información pública que cambia con el tiempo — confirmá siempre los datos de admisión en el sitio oficial de cada institución. Última actualización: 7 de septiembre de 2026. Buscador completo e interactivo: <a href="https://nexus.aurzane.com/universidades/buscador.html">nexus.aurzane.com/universidades/buscador.html</a>.</p>
+</footer>
+<script>
+(function(){
+  var input = document.getElementById('filtroLocal');
+  if(!input) return;
+  var tiles = Array.prototype.slice.call(document.querySelectorAll('.country-tile'));
+  var grupos = Array.prototype.slice.call(document.querySelectorAll('.board-group'));
+  var vacio = document.getElementById('sinResultadosLocal');
+
+  function normalizar(s){
+    return s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+  }
+
+  input.addEventListener('input', function(){
+    var q = normalizar(input.value.trim());
+    var totalVisibles = 0;
+    grupos.forEach(function(grupo){
+      var tilesDelGrupo = Array.prototype.slice.call(grupo.querySelectorAll('.country-tile'));
+      var visiblesEnGrupo = 0;
+      tilesDelGrupo.forEach(function(t){
+        var match = !q || normalizar(t.dataset.buscar || '').indexOf(q) !== -1;
+        t.style.display = match ? '' : 'none';
+        if(match) visiblesEnGrupo++;
+      });
+      grupo.style.display = (q && visiblesEnGrupo === 0) ? 'none' : '';
+      totalVisibles += visiblesEnGrupo;
+    });
+    if(vacio) vacio.style.display = (q && totalVisibles === 0) ? 'block' : 'none';
+  });
+})();
+</script>
+<script>
+// Selector de color: guarda la elección en este navegador (localStorage) y la aplica
+// a toda la página como atributo data-tema en <html>, que es lo que leen las variables
+// de color del CSS. No manda nada a ningún servidor -- es una preferencia local de quien
+// visita, igual que el modo oscuro de cualquier sitio.
+(function(){
+  var botones = Array.prototype.slice.call(document.querySelectorAll('.swatch-tema'));
+  if(!botones.length) return;
+
+  function marcarActivo(tema){
+    botones.forEach(function(b){
+      var esEste = b.dataset.tema === tema;
+      b.classList.toggle('activo', esEste);
+      b.setAttribute('aria-pressed', esEste ? 'true' : 'false');
+    });
+  }
+
+  var actual = 'indigo';
+  try{ actual = localStorage.getItem('aurzane_tema') || 'indigo'; }catch(e){}
+  marcarActivo(actual);
+
+  botones.forEach(function(b){
+    b.addEventListener('click', function(){
+      var tema = b.dataset.tema;
+      if(tema === 'indigo'){ document.documentElement.removeAttribute('data-tema'); }
+      else{ document.documentElement.setAttribute('data-tema', tema); }
+      try{ localStorage.setItem('aurzane_tema', tema); }catch(e){}
+      marcarActivo(tema);
+    });
+  });
+})();
+</script>
+</body>
+</html>
