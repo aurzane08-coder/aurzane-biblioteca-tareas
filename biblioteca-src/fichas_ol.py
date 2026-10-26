@@ -134,7 +134,16 @@ for f in FICHAS3:
                 open('%s/fichas/%s.jpg' % (SALIDA, f['id']), 'wb').write(img)
                 r = dict(mejor, ok=True)
             else:
-                r = dict(mejor, ok=False, err='portada no válida')
+                alt = None
+                if mejor.get('via') != 'todostuslibros':
+                    try: alt = ttl(f, autor)
+                    except Exception: alt = None
+                img2 = portada(alt['cover']) if alt else None
+                if img2:
+                    open('%s/fichas/%s.jpg' % (SALIDA, f['id']), 'wb').write(img2)
+                    r = dict(mejor, ok=True, portada_de=alt.get('edicion'))
+                else:
+                    r = dict(mejor, ok=True, sin_portada=True)
         else:
             r['err'] = 'sin edición en español con portada'
     except Exception as e:
