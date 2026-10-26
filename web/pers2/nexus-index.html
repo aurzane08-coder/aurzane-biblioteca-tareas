@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<script>
+  // Observabilidad de errores frontend (Fase 8-9 P1, ver observabilidad_errores_setup.sql).
+  // Se registra ANTES que cualquier otro script (incluido el SDK de Supabase) para
+  // no perderse errores tempranos; si todavía no existe un cliente listo, los junta
+  // en un buffer y los manda apenas el cliente de esta página se crea más abajo.
+  // Nunca incluye datos de usuario -- solo la ruta de la página y un mensaje genérico.
+  window.__aurzaneErrBuf = [];
+  window.__aurzaneLogErr = function(msg){
+    var entry = { pagina: location.pathname, mensaje: String(msg == null ? 'Error desconocido' : msg).slice(0,300) };
+    if(window.__aurzaneSb && window.__aurzaneSb.from){
+      window.__aurzaneSb.from('frontend_error_log').insert(entry).then(function(){}, function(){});
+    } else {
+      window.__aurzaneErrBuf.push(entry);
+    }
+  };
+  window.addEventListener('error', function(e){ window.__aurzaneLogErr(e && e.message); });
+  window.addEventListener('unhandledrejection', function(e){
+    var r = e && e.reason;
+    window.__aurzaneLogErr((r && r.message) || (r == null ? null : String(r)) || 'Promise rechazada');
+  });
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AURZANE NEXUS — Tecnología, conocimiento y salud</title>
+<meta name="description" content="El mundo NEXUS de AURZANE: un catálogo de 6.125 universidades de 23 países, artículos originales con fuentes reales y una biblioteca académica de acceso abierto.">
+<link rel="canonical" href="https://nexus.aurzane.com/">
+<meta property="og:title" content="AURZANE NEXUS — Tecnología, conocimiento y salud">
+<meta property="og:description" content="6.125 universidades de 23 países, artículos originales con fuentes reales y una biblioteca académica de acceso abierto.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://nexus.aurzane.com/">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"AURZANE NEXUS","url":"https://nexus.aurzane.com/","email":"hola@aurzane.com"}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700;1,6..96,400;1,6..96,500&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+<style>
+  /* ============================================================
+     AURZANE NEXUS — mismos tokens que aurzane.com / MIND / OVP:
+     claro/vainilla por defecto, navy/dorado como "marco" en los
+     dos temas, paleta de acento compartida vía localStorage.
+     ============================================================ */
+  :root{
+    --navy-950:#070a14; --navy-900:#0f1530; --navy-800:#161d42; --navy-700:#212b5c;
+    --gold:#c9a24b; --gold-light:#e8cd8f; --gold-deep:#8a6a28; --gold-rgb:201,162,75;
+    --vanilla:#faf6ec; --paper-ink:#1c1712;
+    --silver:#c7cdd6; --silver-dim:#8b92a0;
+    --line-strong:rgba(var(--gold-rgb),.38); --line-accent:rgba(var(--gold-rgb),.4);
+    --bg:var(--vanilla); --surface:#fffdf9; --surface-2:#f1e8d6;
+    --text:var(--paper-ink); --text-dim:#6b6153; --border:rgba(28,23,18,.13);
+    --accent-text:var(--gold-deep);
+  }
+  :root[data-tema="oscuro"]{
+    --bg:var(--navy-950); --surface:var(--navy-900); --surface-2:var(--navy-800);
+    --text:var(--vanilla); --text-dim:var(--silver-dim); --border:rgba(199,205,214,.14);
+    --accent-text:var(--gold-light);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg);color:var(--text);font-family:'Instrument Sans',sans-serif;line-height:1.65;min-height:100vh;transition:background .2s,color .2s;}
+  h1,h2,h3{font-family:'Bodoni Moda',serif;font-weight:500;}
+  .mono{font-family:'Bodoni Moda',serif;font-style:italic;font-weight:500;}
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+  ::selection{background:rgba(var(--gold-rgb),0.3);}
+  :focus-visible{outline:2px solid var(--gold-light);outline-offset:2px;}
+
+  /* ===== barra superior (marco navy fijo) ===== */
+  .utility{background:var(--navy-950);color:var(--silver-dim);font-size:.78rem;padding:7px 0;border-bottom:1px solid rgba(255,255,255,.06)}
+  .utility .u-wrap{max-width:1180px;margin:0 auto;padding:0 6vw;display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+  .utility a{text-decoration:none;color:inherit}
+  .utility a:hover{color:var(--gold-light)}
+  .utility-mundos{display:flex;gap:14px;align-items:center}
+  .utility-mundos .activo{color:var(--gold-light);font-weight:600}
+  .utility-right{display:flex;gap:16px;align-items:center}
+  #btnTema{background:none;border:none;color:inherit;cursor:pointer;font-size:.78rem;font-family:inherit;padding:2px}
+
+  /* ===== topbar ===== */
+  .topbar{position:sticky;top:0;z-index:50;background:rgba(250,246,236,0.92);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--border);padding:16px 5vw;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;}
+  :root[data-tema="oscuro"] .topbar{background:rgba(7,10,20,0.92)}
+  .brand{font-family:'Bodoni Moda',serif;font-size:1.05rem;letter-spacing:0.06em;text-decoration:none;display:flex;align-items:center;gap:8px;}
+  .brand .z{color:var(--gold);}
+  .brand .tag{font-family:'Bodoni Moda',serif;font-size:0.68rem;color:var(--text-dim);letter-spacing:0.08em;}
+  .topbar-right{display:flex;align-items:center;gap:16px;}
+  .topbar nav{display:flex;align-items:center;gap:18px;}
+  .topbar nav a.tlink{font-family:'Bodoni Moda',serif;font-size:0.76rem;color:var(--text-dim);text-decoration:none;letter-spacing:0.03em;}
+  .topbar nav a.tlink:hover,.topbar nav a.tlink.active{color:var(--accent-text);}
+  .pill-cuenta{display:flex;align-items:center;gap:6px;border:1px solid var(--border);border-radius:999px;padding:6px 13px;font-size:.78rem;text-decoration:none;color:var(--text);font-family:'Instrument Sans',sans-serif}
+  .pill-cuenta:hover{border-color:var(--gold)}
+  .btn-todo{display:flex;align-items:center;gap:8px;background:var(--navy-950);color:var(--vanilla);border:none;
+    border-radius:999px;padding:8px 14px;font-family:'Instrument Sans',sans-serif;font-weight:600;font-size:.8rem;cursor:pointer}
+  .btn-todo:hover{background:var(--navy-800)}
+  @media(max-width:860px){.topbar nav .tlink{display:none;}}
+
+  /* ===== panel "Todo NEXUS" ===== */
+  .todo-overlay{position:fixed;inset:0;background:rgba(7,10,20,.55);z-index:200;display:none}
+  .todo-overlay.abierto{display:block}
+  .todo-panel{position:fixed;top:0;left:0;bottom:0;width:min(360px,88vw);background:var(--navy-950);color:var(--vanilla);
+    z-index:201;overflow-y:auto;transform:translateX(-100%);transition:transform .25s}
+  .todo-panel.abierto{transform:translateX(0)}
+  .todo-header{display:flex;justify-content:space-between;align-items:center;padding:18px 20px;border-bottom:1px solid rgba(255,255,255,.1);
+    position:sticky;top:0;background:var(--navy-950);z-index:2}
+  .todo-header .quien{font-weight:700;font-size:.98rem;font-family:'Instrument Sans',sans-serif}
+  .todo-header .quien small{display:block;font-weight:400;color:var(--silver-dim);font-size:.76rem;margin-top:2px}
+  .todo-cerrar{background:none;border:1px solid rgba(255,255,255,.2);color:var(--vanilla);border-radius:8px;width:32px;height:32px;cursor:pointer;font-size:1rem}
+  .todo-grupo{padding:16px 20px;border-bottom:1px solid rgba(255,255,255,.08)}
+  .todo-grupo h5{font-family:'Instrument Sans',sans-serif;font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;color:var(--gold-light);margin:0 0 12px}
+  .todo-link{display:flex;align-items:center;gap:10px;padding:8px 0;text-decoration:none;color:var(--vanilla);font-size:.88rem;font-family:'Instrument Sans',sans-serif}
+  .todo-link:hover{color:var(--gold-light)}
+  .todo-link .ic{width:22px;text-align:center;flex-shrink:0}
+  .paleta-selector{padding:12px 0 4px}
+  .paleta-label{display:block;font-size:.76rem;color:var(--silver-dim);margin-bottom:9px;font-family:'Instrument Sans',sans-serif}
+  .paleta-swatches{display:flex;gap:9px}
+  .paleta-swatch{width:26px;height:26px;border-radius:999px;border:2px solid transparent;cursor:pointer;padding:0;box-shadow:0 0 0 1px rgba(255,255,255,.14)}
+  .paleta-swatch.activo{border-color:var(--vanilla)}
+
+  /* ===== hero ===== */
+  .hero{max-width:980px;margin:0 auto;padding:9vh 6vw 4vh;text-align:center;position:relative;overflow:hidden;}
+  .hero::before{content:'';position:absolute;top:-30%;left:50%;transform:translateX(-50%);width:640px;height:400px;
+    background:radial-gradient(ellipse,rgba(var(--gold-rgb),0.16),transparent 70%);pointer-events:none;z-index:0;}
+  .hero-in{position:relative;z-index:1;}
+  .eyebrow{font-family:'Bodoni Moda',serif;font-style:italic;font-weight:500;color:var(--accent-text);font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;}
+  .hero h1{font-size:clamp(2.1rem,4.8vw,3.2rem);margin:16px 0 14px;line-height:1.12;}
+  .hero h1 span{color:var(--accent-text);}
+  .hero p{color:var(--text-dim);font-size:1.02rem;max-width:62ch;margin:0 auto;}
+
+  .stats{display:flex;justify-content:center;gap:38px;flex-wrap:wrap;margin:34px auto 0;font-family:'Bodoni Moda',serif;
+    font-size:0.76rem;color:var(--text-dim);}
+  .stats b{color:var(--accent-text);font-size:0.95rem;}
+
+  /* ===== franja de confianza (marco navy fijo) ===== */
+  .trust-strip{background:var(--navy-950);padding:30px 6vw;margin-top:6vh;}
+  .trust-strip-in{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:28px;}
+  .trust-item h4{font-family:'Bodoni Moda',serif;font-weight:500;font-size:0.92rem;color:var(--gold-light);margin-bottom:7px;}
+  .trust-item p{font-size:0.8rem;color:var(--silver-dim);line-height:1.5;}
+
+  /* ===== accesos rápidos ===== */
+  .accesos-section{max-width:1180px;margin:0 auto;padding:6vh 6vw 0;}
+  .accesos-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;}
+  .acceso-card{border:1px solid var(--border);border-radius:10px;padding:20px 18px;text-decoration:none;background:var(--surface);
+    display:flex;flex-direction:column;gap:7px;transition:border-color .25s,transform .25s;}
+  .acceso-card:hover{border-color:var(--line-accent);transform:translateY(-2px);}
+  .acceso-card .ac-ic{font-size:1.4rem;}
+  .acceso-card h4{font-size:0.9rem;color:var(--text);font-family:'Instrument Sans',sans-serif;font-weight:600;line-height:1.25;}
+  .acceso-card p{font-size:0.74rem;color:var(--text-dim);}
+  @media(max-width:980px){ .accesos-grid{grid-template-columns:repeat(3,1fr);} .trust-strip-in{grid-template-columns:repeat(2,1fr);} }
+  @media(max-width:640px){ .accesos-grid{grid-template-columns:repeat(2,1fr);} .trust-strip-in{grid-template-columns:1fr;} }
+
+  /* ===== secciones / grillas de catálogo ===== */
+  .section{max-width:1180px;margin:0 auto;padding:6vh 6vw;}
+  .section-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:26px;}
+  .section-head h2{font-size:1.5rem;}
+  .section-head p{color:var(--text-dim);font-size:0.86rem;max-width:46ch;}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px;}
+
+  .tile{border:1px solid var(--border);border-radius:10px;overflow:hidden;display:flex;flex-direction:column;
+    background:var(--surface);text-decoration:none;transition:border-color .25s, transform .25s, box-shadow .25s;
+    box-shadow:0 1px 2px rgba(0,0,0,0.06), 0 10px 26px -16px rgba(0,0,0,0.18);}
+  .tile:hover{border-color:var(--line-accent);transform:translateY(-3px);box-shadow:0 4px 10px rgba(0,0,0,0.1), 0 20px 44px -18px rgba(var(--gold-rgb),0.28);}
+  .tile-photo{position:relative;aspect-ratio:16/10;background:linear-gradient(150deg, var(--navy-800), var(--navy-900) 75%);}
+  .tile-photo img{width:100%;height:100%;object-fit:cover;display:block;}
+  .tile-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg, rgba(7,10,20,0.88) 0%, rgba(7,10,20,0.25) 55%, rgba(7,10,20,0.05) 100%);}
+  .tile-icon{position:absolute;bottom:10px;left:12px;z-index:2;width:36px;height:36px;border-radius:50%;
+    background:rgba(7,10,20,0.75);border:1px solid var(--line-strong);display:flex;align-items:center;
+    justify-content:center;font-size:1.05rem;backdrop-filter:blur(4px);}
+  .tile-body{padding:20px 22px 22px;display:flex;flex-direction:column;gap:10px;flex:1;}
+  .tile h3{font-size:1.05rem;line-height:1.35;color:var(--text);}
+  .tile p{color:var(--text-dim);font-size:0.85rem;flex:1;}
+  .tile .tile-foot{font-family:'Bodoni Moda',serif;font-size:0.7rem;color:var(--accent-text);}
+
+  .tile-featured{grid-column:1 / -1;background:linear-gradient(135deg, rgba(var(--gold-rgb),0.09), var(--surface));
+    border-color:var(--line-strong);display:grid;grid-template-columns:280px 1fr;align-items:stretch;padding:0;overflow:hidden;}
+  .tile-featured .featured-photo{position:relative;background:linear-gradient(150deg, var(--navy-800), var(--navy-900) 75%);min-height:180px;}
+  .tile-featured .featured-photo img{width:100%;height:100%;object-fit:cover;display:block;}
+  .tile-featured .featured-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(100deg, rgba(7,10,20,0.15), rgba(7,10,20,0.55) 100%);}
+  .tile-featured .right{padding:30px 32px;display:flex;flex-direction:column;justify-content:center;gap:12px;align-items:flex-start;}
+  .tile-featured h3{font-size:1.35rem;}
+  .tile-featured p{color:var(--text-dim);font-size:0.92rem;}
+  .tile-featured .tile-foot{font-size:0.76rem;}
+  .btn-gold{font-family:'Bodoni Moda',serif;font-size:0.78rem;font-weight:700;color:var(--navy-950);background:var(--gold);
+    padding:12px 24px;border-radius:24px;text-decoration:none;white-space:nowrap;transition:background .2s;}
+  .btn-gold:hover{background:var(--gold-light);}
+  @media (max-width:640px){ .tile-featured{grid-template-columns:1fr;} .tile-featured .featured-photo{min-height:150px;} }
+
+  /* ===== footer ===== */
+  footer.pie-nexus{background:var(--navy-950);color:var(--silver-dim);padding:52px 6vw 26px;margin-top:20px;}
+  footer.pie-nexus .pie-grid{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:28px;}
+  footer.pie-nexus .pie-brand{font-family:'Bodoni Moda',serif;font-size:1.2rem;color:var(--vanilla);margin-bottom:10px;}
+  footer.pie-nexus .pie-brand span{color:var(--gold);}
+  footer.pie-nexus .pie-desc{font-size:0.84rem;max-width:280px;color:var(--silver-dim);margin:0;}
+  footer.pie-nexus h5{color:var(--gold-light);font-size:0.78rem;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:12px;font-family:'Instrument Sans',sans-serif;font-weight:600;}
+  footer.pie-nexus .pie-col a{display:block;color:var(--silver-dim);text-decoration:none;font-size:0.86rem;padding:4px 0;}
+  footer.pie-nexus .pie-col a:hover{color:var(--gold-light);}
+  footer.pie-nexus .pie-legal{max-width:1180px;margin:34px auto 0;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;
+    border-top:1px solid rgba(255,255,255,.1);padding-top:18px;font-size:0.78rem;}
+  footer.pie-nexus .pie-legal a{color:var(--silver-dim);text-decoration:none;}
+  footer.pie-nexus .pie-legal a:hover{color:var(--gold-light);}
+  @media(max-width:900px){footer.pie-nexus .pie-grid{grid-template-columns:1fr 1fr;}}
+</style>
+<meta name="google-adsense-account" content="ca-pub-8763758728010451">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8763758728010451" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div class="utility">
+  <div class="u-wrap">
+    <div class="utility-mundos">
+      <a href="https://aurzane.com/">AURZANE</a>
+      <a href="https://mind.aurzane.com/">MIND</a>
+      <a href="https://ovp.aurzane.com/">OVP</a>
+      <a class="activo" href="https://nexus.aurzane.com/">NEXUS</a>
+      <a href="https://live.aurzane.com/">LIVE</a>
+      <a href="https://learn.aurzane.com/">LEARN</a>
+      <a href="https://build.aurzane.com/">BUILD</a>
+    </div>
+    <div class="utility-right">
+      <button id="btnTema" onclick="alternarTema()">🌓 Tema</button>
+    </div>
+  </div>
+</div>
+
+<div class="topbar">
+  <a href="https://nexus.aurzane.com" class="brand">AUR<span class="z">Z</span>ANE <span class="tag">/ NEXUS</span></a>
+  <div class="topbar-right">
+    <nav>
+      <a class="tlink active" href="index.html">Inicio</a>
+      <a class="tlink" href="universidades/">Universidades</a>
+      <a class="tlink" href="nexus.html">Artículos</a>
+      <a class="tlink" href="nexus-biblioteca.html">Biblioteca</a>
+    </nav>
+    <a class="pill-cuenta" href="https://aurzane.com/mi-aurzane.html" id="pillCuenta">👤 Mi AURZANE</a>
+    <button class="btn-todo" onclick="abrirTodo()" aria-haspopup="dialog">☰ Todo NEXUS</button>
+  </div>
+</div>
+
+<!-- ============ PANEL "TODO NEXUS" ============ -->
+<div class="todo-overlay" id="todoOverlay" onclick="cerrarTodo()"></div>
+<aside class="todo-panel" id="todoPanel" role="dialog" aria-modal="true" aria-label="Todo NEXUS">
+  <div class="todo-header">
+    <div class="quien" id="todoQuien">Hola, iniciá sesión<small>Accedé a todo el ecosistema</small></div>
+    <button class="todo-cerrar" onclick="cerrarTodo()" aria-label="Cerrar menú">✕</button>
+  </div>
+  <div class="todo-grupo">
+    <h5>Catálogos NEXUS</h5>
+    <a class="todo-link" href="universidades/"><span class="ic">🎓</span> Universidades (6.125)</a>
+    <a class="todo-link" href="nexus.html"><span class="ic">📰</span> Artículos y guías</a>
+    <a class="todo-link" href="nexus.html#guardados"><span class="ic">⭐</span> Mis guardados</a>
+    <a class="todo-link" href="nexus-biblioteca.html"><span class="ic">📚</span> Biblioteca NEXUS</a>
+    <a class="todo-link" href="https://aurzane.com/research.html"><span class="ic">🔎</span> Research Hub (5 bibliotecas)</a>
+  </div>
+  <div class="todo-grupo">
+    <h5>Otros mundos</h5>
+    <a class="todo-link" href="https://mind.aurzane.com/test-de-personalidad/"><span class="ic">✨</span> Test de personalidad gratis</a>
+    <a class="todo-link" href="https://mind.aurzane.com/"><span class="ic">🧠</span> MIND — Mente y estudio</a>
+    <a class="todo-link" href="https://live.aurzane.com/"><span class="ic">🌿</span> LIVE — Vida sin límites</a>
+    <a class="todo-link" href="https://learn.aurzane.com/"><span class="ic">🎓</span> LEARN — Conocimiento</a>
+    <a class="todo-link" href="https://build.aurzane.com/"><span class="ic">🏗️</span> BUILD — Imperio físico</a>
+    <a class="todo-link" href="https://aurzane.com/"><span class="ic">🌐</span> Ver todo el ecosistema</a>
+  </div>
+  <div class="todo-grupo" style="border-bottom:none">
+    <h5>Cuenta y ayuda</h5>
+    <a class="todo-link" href="https://aurzane.com/mi-aurzane.html"><span class="ic">👤</span> Mi AURZANE</a>
+    <a class="todo-link" href="mailto:hola@aurzane.com"><span class="ic">✉️</span> Contacto</a>
+    <a class="todo-link" href="https://aurzane.com/privacidad.html"><span class="ic">🔒</span> Privacidad</a>
+    <button class="todo-link" style="background:none;border:none;font-family:inherit;cursor:pointer;width:100%;text-align:left" onclick="alternarTema()"><span class="ic">🌓</span> Cambiar tema claro/oscuro</button>
+    <div class="paleta-selector">
+      <span class="paleta-label">Paleta de acento</span>
+      <div class="paleta-swatches" id="paletaSwatches"></div>
+    </div>
+  </div>
+</aside>
+
+<main>
+
+  <div class="hero">
+    <div class="hero-in">
+      <div class="eyebrow">Mundo 02 — AURZANE NEXUS</div>
+      <h1>Conectamos ideas, personas y <span>tecnología</span></h1>
+      <p>NEXUS es el mundo de AURZANE dedicado a la tecnología: cómo transforma la salud, la mente, la educación y la vida cotidiana. Artículos originales con fuentes reales, y una biblioteca académica abierta para quien quiera ir más a fondo.</p>
+      <div class="stats mono">
+        <span><b>6.125</b> universidades e institutos</span>
+        <span><b id="statArticulos">—</b> artículos originales</span>
+        <span><b id="statBiblioteca">—</b> papers en la Biblioteca</span>
+        <span><b>7</b> temas</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="trust-strip">
+    <div class="trust-strip-in">
+      <div class="trust-item"><h4>Fuentes verificables</h4><p>Cada artículo cita publicaciones reales — nada se inventa ni se resume sin respaldo.</p></div>
+      <div class="trust-item"><h4>Catálogo académico abierto</h4><p>5.000 artículos científicos de acceso abierto, con enlace a la fuente original.</p></div>
+      <div class="trust-item"><h4>6.125 universidades</h4><p>De 23 países, con carreras y áreas académicas para comparar lado a lado.</p></div>
+      <div class="trust-item"><h4>Parte de un ecosistema</h4><p>Conectado con MIND, LIVE, LEARN y BUILD.</p></div>
+    </div>
+  </div>
+
+  <div class="accesos-section">
+    <div class="accesos-grid">
+      <a class="acceso-card" href="universidades/"><span class="ac-ic">🎓</span><h4>Universidades</h4><p>6.125 instituciones de 23 países</p></a>
+      <a class="acceso-card" href="nexus.html"><span class="ac-ic">📰</span><h4>Artículos NEXUS</h4><p id="accesoArticulosCount">Guías con fuentes reales</p></a>
+      <a class="acceso-card" href="nexus-biblioteca.html"><span class="ac-ic">📚</span><h4>Biblioteca NEXUS</h4><p id="accesoBiblioCount">Papers de acceso abierto</p></a>
+      <a class="acceso-card" href="https://aurzane.com/research.html"><span class="ac-ic">🔎</span><h4>Research Hub</h4><p>Las 5 bibliotecas a la vez</p></a>
+      <a class="acceso-card" href="https://aurzane.com/"><span class="ac-ic">🌐</span><h4>Ecosistema AURZANE</h4><p>MIND · LIVE · LEARN · BUILD</p></a>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-head">
+      <h2>Explorá por tema</h2>
+      <p>Cada tema abre directo a los artículos de NEXUS sobre ese tópico.</p>
+    </div>
+    <div class="grid" id="categoriasGrid"></div>
+  </div>
+
+  <div class="section" style="padding-top:0;">
+    <div class="grid">
+      <a class="tile tile-featured" href="universidades/">
+        <div class="featured-photo">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/University%20Students%20Studying%20before%20exams.jpg?width=600" alt="" loading="lazy" onerror="this.style.display='none';">
+        </div>
+        <div class="right">
+          <h3>Catálogo de Universidades y Carreras</h3>
+          <p>6.125 universidades e institutos de 23 países, con sus carreras y áreas académicas. Buscá por carrera, ciudad o país, guardá favoritos y compará instituciones lado a lado.</p>
+          <span class="btn-gold">Explorar catálogo →</span>
+        </div>
+      </a>
+      <a class="tile tile-featured" href="nexus-biblioteca.html">
+        <div class="featured-photo">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bookshelves%20at%20the%20library.jpg?width=600" alt="" loading="lazy" onerror="this.style.display='none';">
+        </div>
+        <div class="right">
+          <h3>Biblioteca Académica</h3>
+          <p>El índice completo: 5.000 artículos científicos de acceso abierto, con título, abstract oficial, autores y enlace directo a la fuente. Sin curar, sin recortar — para consulta y cita académica.</p>
+          <span class="btn-gold">Ver Biblioteca →</span>
+        </div>
+      </a>
+    </div>
+  </div>
+
+</main>
+
+<footer class="pie-nexus">
+  <div class="pie-grid">
+    <div>
+      <p class="pie-brand">AUR<span>ZANE</span> <span style="font-size:0.7rem;color:var(--silver-dim);">NEXUS</span></p>
+      <p class="pie-desc">AURZANE NEXUS resume investigación real en un lenguaje simple. Cada artículo es una síntesis original — no una copia de las fuentes citadas. La Biblioteca Académica indexa papers de acceso abierto tal como fueron publicados, para consulta y cita.</p>
+    </div>
+    <div class="pie-col">
+      <h5>Catálogos</h5>
+      <a href="universidades/">Universidades</a>
+      <a href="nexus.html">Artículos y guías</a>
+      <a href="nexus-biblioteca.html">Biblioteca NEXUS</a>
+    </div>
+    <div class="pie-col">
+      <h5>Ecosistema</h5>
+      <a href="https://aurzane.com/">AURZANE</a>
+      <a href="https://mind.aurzane.com/test-de-personalidad/">Test de personalidad</a>
+      <a href="https://mind.aurzane.com/">MIND</a>
+      <a href="https://live.aurzane.com/">LIVE</a>
+      <a href="https://learn.aurzane.com/">LEARN</a>
+      <a href="https://build.aurzane.com/">BUILD</a>
+    </div>
+    <div class="pie-col">
+      <h5>Cuenta</h5>
+      <a href="https://aurzane.com/mi-aurzane.html">Mi AURZANE</a>
+      <a href="https://aurzane.com/privacidad.html">Privacidad</a>
+      <a href="mailto:hola@aurzane.com">Contacto</a>
+    </div>
+  </div>
+  <div class="pie-legal">
+    <span>© 2026 AURZANE NEXUS. Todos los derechos reservados.</span>
+  </div>
+</footer>
+
+<script src="/aurzane-id.js"></script>
+<script>
+const SUPABASE_URL = 'https://chtfpqwrrarfdjcivlad.supabase.co';
+const SUPABASE_KEY = 'sb_publishable___1v6VjDew0l8uGfMyb9Nw_YyCLTPPw';
+const sb = crearClienteAurzaneID(SUPABASE_URL, SUPABASE_KEY);
+  window.__aurzaneSb = sb;
+  if(window.__aurzaneErrBuf.length){ window.__aurzaneErrBuf.forEach(function(en){ sb.from('frontend_error_log').insert(en).then(function(){}, function(){}); }); window.__aurzaneErrBuf.length = 0; }
+
+/* ============================================================
+   Tema claro/oscuro (comparte localStorage con todo el ecosistema)
+   ============================================================ */
+(function () {
+  const guardado = localStorage.getItem("aurzane-tema");
+  if (guardado === "oscuro") document.documentElement.setAttribute("data-tema", "oscuro");
+})();
+function alternarTema() {
+  const esOscuro = document.documentElement.getAttribute("data-tema") === "oscuro";
+  if (esOscuro) {
+    document.documentElement.removeAttribute("data-tema");
+    try { localStorage.setItem("aurzane-tema", "claro"); } catch (e) {}
+  } else {
+    document.documentElement.setAttribute("data-tema", "oscuro");
+    try { localStorage.setItem("aurzane-tema", "oscuro"); } catch (e) {}
+  }
+}
+
+/* ============================================================
+   Paleta de acento (comparte localStorage con todo el ecosistema)
+   ============================================================ */
+const PALETAS = {
+  dorado:    { nombre: "Dorado clásico", n950: "#080B17", n900: "#0F1530", n800: "#151C3D", n700: "#1E2650", gold: "#C9A24B", goldLight: "#EACF92", goldDeep: "#8A6A28" },
+  esmeralda: { nombre: "Esmeralda",      n950: "#071510", n900: "#0D1F19", n800: "#132B22", n700: "#1B3A2E", gold: "#4BA97C", goldLight: "#8FE0BB", goldDeep: "#1F6B4A" },
+  purpura:   { nombre: "Púrpura real",   n950: "#0E0A1A", n900: "#171029", n800: "#211640", n700: "#2E1E58", gold: "#9A7DD1", goldLight: "#C9B4EE", goldDeep: "#5B3F94" },
+  grafito:   { nombre: "Grafito plata",  n950: "#0A0A0C", n900: "#131316", n800: "#1B1B20", n700: "#26262C", gold: "#B8BEC7", goldLight: "#E4E7EB", goldDeep: "#6B7078" },
+  cobre:     { nombre: "Cobre rosa",     n950: "#150B0C", n900: "#211215", n800: "#2E181C", n700: "#3D2126", gold: "#C97D6B", goldLight: "#E8AE9F", goldDeep: "#7A4436" },
+};
+function hexARgb(hex) {
+  const h = hex.replace("#", "");
+  return [parseInt(h.slice(0, 2), 16), parseInt(h.slice(2, 4), 16), parseInt(h.slice(4, 6), 16)].join(",");
+}
+function aplicarPaleta(clave) {
+  const p = PALETAS[clave] || PALETAS.dorado;
+  const raiz = document.documentElement.style;
+  raiz.setProperty("--navy-950", p.n950);
+  raiz.setProperty("--navy-900", p.n900);
+  raiz.setProperty("--navy-800", p.n800);
+  raiz.setProperty("--navy-700", p.n700);
+  raiz.setProperty("--gold", p.gold);
+  raiz.setProperty("--gold-light", p.goldLight);
+  raiz.setProperty("--gold-deep", p.goldDeep);
+  raiz.setProperty("--gold-rgb", hexARgb(p.gold));
+  try { localStorage.setItem("aurzane-paleta", clave); } catch (e) {}
+  document.querySelectorAll(".paleta-swatch").forEach((sw) => sw.classList.toggle("activo", sw.dataset.clave === clave));
+}
+(function () {
+  const cont = document.getElementById("paletaSwatches");
+  cont.innerHTML = Object.keys(PALETAS).map(
+    (clave) => `<button class="paleta-swatch" data-clave="${clave}" style="background:${PALETAS[clave].gold}" title="${PALETAS[clave].nombre}" aria-label="${PALETAS[clave].nombre}"></button>`
+  ).join("");
+  cont.querySelectorAll(".paleta-swatch").forEach((btn) => {
+    btn.addEventListener("click", () => aplicarPaleta(btn.dataset.clave));
+  });
+  let guardada = "dorado";
+  try { guardada = localStorage.getItem("aurzane-paleta") || "dorado"; } catch (e) {}
+  aplicarPaleta(guardada);
+})();
+
+/* ============================================================
+   Panel "Todo NEXUS"
+   ============================================================ */
+function abrirTodo() {
+  document.getElementById("todoOverlay").classList.add("abierto");
+  document.getElementById("todoPanel").classList.add("abierto");
+  document.body.style.overflow = "hidden";
+}
+function cerrarTodo() {
+  document.getElementById("todoOverlay").classList.remove("abierto");
+  document.getElementById("todoPanel").classList.remove("abierto");
+  document.body.style.overflow = "";
+}
+document.addEventListener("keydown", (e) => { if (e.key === "Escape") cerrarTodo(); });
+
+/* ============================================================
+   AURZANE ID — sesión compartida con el resto del ecosistema
+   ============================================================ */
+function reflejarSesionNexus(session) {
+  const pill = document.getElementById("pillCuenta");
+  const quien = document.getElementById("todoQuien");
+  if (session) {
+    const nombre = (session.user.email || "Mi cuenta").split("@")[0];
+    pill.innerHTML = `👤 ${nombre}`;
+    quien.innerHTML = `Hola, ${nombre}<small>Tu cuenta AURZANE ID</small>`;
+  } else {
+    pill.innerHTML = `👤 Mi AURZANE`;
+    quien.innerHTML = `Hola, iniciá sesión<small>Accedé a todo el ecosistema</small>`;
+  }
+}
+sb.auth.getSession().then(({ data: { session } }) => reflejarSesionNexus(session));
+sb.auth.onAuthStateChange((_e, session) => reflejarSesionNexus(session));
+
+/* ============================================================
+   Catálogo de temas + estadísticas en vivo (Supabase)
+   ============================================================ */
+const CATEGORIAS = [
+  { key: 'salud_mental',  label: 'Salud Mental',  icon: '🧠', desc: 'Terapia digital, bienestar emocional y tecnología aplicada a la mente.',
+    img: 'Counselling%20session.jpg' },
+  { key: 'salud_fisica',  label: 'Salud Física',  icon: '💪', desc: 'Wearables, monitoreo remoto y tecnología que cuida el cuerpo.',
+    img: 'Fitness%20Tracking%20Smartwatch.jpg' },
+  { key: 'alimentacion',  label: 'Alimentación',  icon: '🥗', desc: 'Nutrición, hábitos alimentarios y las herramientas que los transforman.',
+    img: 'Healthy%20Food%20-%20Colourful%20Fruit%20and%20Veg%20-%2050191699151.jpg' },
+  { key: 'educacion',     label: 'Educación',     icon: '🎓', desc: 'Tecnología educativa, tutores inteligentes y nuevas formas de aprender.',
+    img: 'Students%20are%20learning%20in%20the%20classroom.jpg' },
+  { key: 'accesibilidad', label: 'Accesibilidad', icon: '♿', desc: 'Tecnología que abre puertas a personas con discapacidad.',
+    img: 'Wheelchair%20ramp%20sign%20.jpg' },
+  { key: 'longevidad',    label: 'Longevidad',    icon: '⏳', desc: 'Envejecimiento saludable y tecnología para vivir más y mejor.',
+    img: 'The%20hand%20of%20an%2087-year-old%20man.jpg' },
+  { key: 'inteligencia_artificial', label: 'Inteligencia Artificial', icon: '⚙️', desc: 'IA aplicada a diagnóstico, decisiones clínicas y más.',
+    img: 'Computer%20chips%20circuits%20boards.jpg' },
+];
+
+function escapeHtml(s){
+  return (s||'').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+function renderCategorias(){
+  const grid = document.getElementById('categoriasGrid');
+  grid.innerHTML = CATEGORIAS.map(c => `
+    <a class="tile" href="nexus.html#categoria=${encodeURIComponent(c.key)}">
+      <div class="tile-photo">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/${c.img}?width=480" alt="" loading="lazy" onerror="this.style.display='none';">
+        <div class="tile-icon">${c.icon}</div>
+      </div>
+      <div class="tile-body">
+        <h3>${escapeHtml(c.label)}</h3>
+        <p>${escapeHtml(c.desc)}</p>
+        <div class="tile-foot">Ver artículos →</div>
+      </div>
+    </a>
+  `).join('');
+}
+
+async function cargarStats(){
+  try{
+    const [{ count: nArticulos }, { count: nBiblio }] = await Promise.all([
+      sb.from('nexus_articulos').select('id', { count: 'exact', head: true }),
+      sb.from('nexus_biblioteca').select('id', { count: 'exact', head: true }),
+    ]);
+    if(nArticulos != null){
+      document.getElementById('statArticulos').textContent = nArticulos.toLocaleString('es');
+      document.getElementById('accesoArticulosCount').textContent = `${nArticulos.toLocaleString('es')} artículos originales`;
+    }
+    if(nBiblio != null){
+      document.getElementById('statBiblioteca').textContent = nBiblio.toLocaleString('es');
+      document.getElementById('accesoBiblioCount').textContent = `${nBiblio.toLocaleString('es')} papers indexados`;
+    }
+  }catch(e){
+    console.error(e);
+    // Si falla la consulta (ej. conexión), dejamos el guion — no bloquea el resto de la página.
+  }
+}
+
+renderCategorias();
+cargarStats();
+</script>
+
+</body>
+</html>

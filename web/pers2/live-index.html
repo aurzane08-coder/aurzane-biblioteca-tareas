@@ -1,0 +1,1242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<script>
+  // Observabilidad de errores frontend (Fase 8-9 P1, ver observabilidad_errores_setup.sql).
+  // Se registra ANTES que cualquier otro script (incluido el SDK de Supabase) para
+  // no perderse errores tempranos; si todavía no existe un cliente listo, los junta
+  // en un buffer y los manda apenas el cliente de esta página se crea más abajo.
+  // Nunca incluye datos de usuario -- solo la ruta de la página y un mensaje genérico.
+  window.__aurzaneErrBuf = [];
+  window.__aurzaneLogErr = function(msg){
+    var entry = { pagina: location.pathname, mensaje: String(msg == null ? 'Error desconocido' : msg).slice(0,300) };
+    if(window.__aurzaneSb && window.__aurzaneSb.from){
+      window.__aurzaneSb.from('frontend_error_log').insert(entry).then(function(){}, function(){});
+    } else {
+      window.__aurzaneErrBuf.push(entry);
+    }
+  };
+  window.addEventListener('error', function(e){ window.__aurzaneLogErr(e && e.message); });
+  window.addEventListener('unhandledrejection', function(e){
+    var r = e && e.reason;
+    window.__aurzaneLogErr((r && r.message) || (r == null ? null : String(r)) || 'Promise rechazada');
+  });
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AURZANE LIVE — Bienestar, propósito y vida plena</title>
+<meta name="description" content="Artículos breves y con fuentes reales sobre bienestar, propósito, equilibrio vida-trabajo, hábitos, aventura y ciencia del deporte.">
+<link rel="canonical" href="https://live.aurzane.com/">
+<meta property="og:title" content="AURZANE LIVE — Bienestar, propósito y vida plena">
+<meta property="og:description" content="Artículos originales con fuentes reales sobre bienestar, propósito, equilibrio vida-trabajo, hábitos, aventura y ciencia del deporte.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://live.aurzane.com/">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"AURZANE LIVE","url":"https://live.aurzane.com/","email":"hola@aurzane.com"}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;1,6..96,400;1,6..96,500&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+<style>
+  /* ============================================================
+     AURZANE LIVE — mismos tokens que aurzane.com / NEXUS / MIND:
+     claro/vainilla por defecto, navy/dorado como "marco" en los
+     dos temas, paleta de acento compartida vía localStorage.
+     ============================================================ */
+  :root{
+    --navy-950:#070a14; --navy-900:#0f1530; --navy-800:#161d42; --navy-700:#212b5c;
+    --gold:#c9a24b; --gold-light:#e8cd8f; --gold-deep:#8a6a28; --gold-rgb:201,162,75;
+    --vanilla:#faf6ec; --paper-ink:#1c1712;
+    --silver:#c7cdd6; --silver-dim:#8b92a0;
+    --line-strong:rgba(var(--gold-rgb),.38); --line-accent:rgba(var(--gold-rgb),.4);
+    --bg:var(--vanilla); --surface:#fffdf9; --surface-2:#f1e8d6;
+    --text:var(--paper-ink); --text-dim:#6b6153; --border:rgba(28,23,18,.13);
+    --accent-text:var(--gold-deep);
+  }
+  :root[data-tema="oscuro"]{
+    --bg:var(--navy-950); --surface:var(--navy-900); --surface-2:var(--navy-800);
+    --text:var(--vanilla); --text-dim:var(--silver-dim); --border:rgba(199,205,214,.14);
+    --accent-text:var(--gold-light);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg);color:var(--text);font-family:'Instrument Sans',sans-serif;line-height:1.65;min-height:100vh;transition:background .2s,color .2s;}
+  h1,h2,h3{font-family:'Bodoni Moda',serif;font-weight:500;}
+  .mono{font-family:'Bodoni Moda',serif;font-style:italic;font-weight:500;}
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+  ::selection{background:rgba(var(--gold-rgb),0.3);}
+  :focus-visible{outline:2px solid var(--gold-light);outline-offset:2px;}
+  button{font:inherit;}
+
+  .progress-bar{position:fixed;top:0;left:0;height:3px;width:0%;background:linear-gradient(90deg,var(--gold),var(--gold-light));
+    z-index:210;transition:width .1s linear;}
+
+  /* ===== barra superior (marco navy fijo) ===== */
+  .utility{background:var(--navy-950);color:var(--silver-dim);font-size:.78rem;padding:7px 0;border-bottom:1px solid rgba(255,255,255,.06)}
+  .utility .u-wrap{max-width:1200px;margin:0 auto;padding:0 6vw;display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+  .utility a{text-decoration:none;color:inherit}
+  .utility a:hover{color:var(--gold-light)}
+  .utility-mundos{display:flex;gap:14px;align-items:center}
+  .utility-mundos .activo{color:var(--gold-light);font-weight:600}
+  .utility-right{display:flex;gap:16px;align-items:center}
+  #btnTema{background:none;border:none;color:inherit;cursor:pointer;font-size:.78rem;font-family:inherit;padding:2px}
+
+  /* ===== topbar ===== */
+  .topbar{position:sticky;top:0;z-index:50;background:rgba(250,246,236,0.92);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--border);padding:16px 5vw;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;}
+  :root[data-tema="oscuro"] .topbar{background:rgba(7,10,20,0.92)}
+  .brand{font-family:'Bodoni Moda',serif;font-size:1.05rem;letter-spacing:0.06em;text-decoration:none;display:flex;align-items:center;gap:8px;}
+  .brand .z{color:var(--gold);}
+  .brand .tag{font-family:'Bodoni Moda',serif;font-size:0.68rem;color:var(--text-dim);letter-spacing:0.08em;}
+  .topbar-right{display:flex;align-items:center;gap:16px;}
+  .topbar nav{display:flex;gap:18px;align-items:center;}
+  .topbar nav a.tlink{font-family:'Bodoni Moda',serif;font-size:0.76rem;color:var(--text-dim);text-decoration:none;letter-spacing:0.03em;
+    display:flex;align-items:center;gap:5px;}
+  .topbar nav a.tlink:hover, .topbar nav a.tlink.active{color:var(--accent-text);}
+  .saved-count{font-family:'Bodoni Moda',serif;font-size:0.62rem;background:rgba(var(--gold-rgb),.18);color:var(--accent-text);
+    border-radius:10px;padding:1px 6px;}
+  .pill-cuenta{display:flex;align-items:center;gap:6px;border:1px solid var(--border);border-radius:999px;padding:6px 13px;font-size:.78rem;text-decoration:none;color:var(--text);font-family:'Instrument Sans',sans-serif}
+  .pill-cuenta:hover{border-color:var(--gold)}
+  .btn-todo{display:flex;align-items:center;gap:8px;background:var(--navy-950);color:var(--vanilla);border:none;
+    border-radius:999px;padding:8px 14px;font-family:'Instrument Sans',sans-serif;font-weight:600;font-size:.8rem;cursor:pointer}
+  .btn-todo:hover{background:var(--navy-800)}
+  @media(max-width:980px){.topbar nav a.tlink span.label{display:none}}
+  @media(max-width:640px){.topbar nav{gap:10px}}
+
+  /* ===== panel "Todo LIVE" ===== */
+  .todo-overlay{position:fixed;inset:0;background:rgba(7,10,20,.55);z-index:200;display:none}
+  .todo-overlay.abierto{display:block}
+  .todo-panel{position:fixed;top:0;left:0;bottom:0;width:min(360px,88vw);background:var(--navy-950);color:var(--vanilla);
+    z-index:201;overflow-y:auto;transform:translateX(-100%);transition:transform .25s}
+  .todo-panel.abierto{transform:translateX(0)}
+  .todo-header{display:flex;justify-content:space-between;align-items:center;padding:18px 20px;border-bottom:1px solid rgba(255,255,255,.1);
+    position:sticky;top:0;background:var(--navy-950);z-index:2}
+  .todo-header .quien{font-weight:700;font-size:.98rem;font-family:'Instrument Sans',sans-serif}
+  .todo-header .quien small{display:block;font-weight:400;color:var(--silver-dim);font-size:.76rem;margin-top:2px}
+  .todo-cerrar{background:none;border:1px solid rgba(255,255,255,.2);color:var(--vanilla);border-radius:8px;width:32px;height:32px;cursor:pointer;font-size:1rem}
+  .todo-grupo{padding:16px 20px;border-bottom:1px solid rgba(255,255,255,.08)}
+  .todo-grupo h5{font-family:'Instrument Sans',sans-serif;font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;color:var(--gold-light);margin:0 0 12px}
+  .todo-link{display:flex;align-items:center;gap:10px;padding:8px 0;text-decoration:none;color:var(--vanilla);font-size:.88rem;font-family:'Instrument Sans',sans-serif;background:none;border:none;width:100%;text-align:left;cursor:pointer}
+  .todo-link:hover{color:var(--gold-light)}
+  .todo-link .ic{width:22px;text-align:center;flex-shrink:0}
+  .paleta-selector{padding:12px 0 4px}
+  .paleta-label{display:block;font-size:.76rem;color:var(--silver-dim);margin-bottom:9px;font-family:'Instrument Sans',sans-serif}
+  .paleta-swatches{display:flex;gap:9px}
+  .paleta-swatch{width:26px;height:26px;border-radius:999px;border:2px solid transparent;cursor:pointer;padding:0;box-shadow:0 0 0 1px rgba(255,255,255,.14)}
+  .paleta-swatch.activo{border-color:var(--vanilla)}
+
+  /* ===== hero ===== */
+  .world-header{max-width:1200px;margin:0 auto;padding:8vh 6vw 4vh;position:relative;overflow:hidden;}
+  .world-header::before{content:'';position:absolute;top:-30%;right:-10%;width:600px;height:600px;border-radius:48% 52% 60% 40%/50% 45% 55% 50%;
+    background:radial-gradient(circle at 35% 35%, rgba(var(--gold-rgb),0.16), rgba(var(--gold-rgb),0.04) 60%, transparent 78%);
+    filter:blur(6px);pointer-events:none;z-index:0;animation:blob-move 14s ease-in-out infinite;}
+  @keyframes blob-move{0%,100%{transform:translate(0,0) scale(1);}50%{transform:translate(-18px,14px) scale(1.04);}}
+  .world-header-in{position:relative;z-index:1;max-width:760px;}
+  .eyebrow{font-family:'Bodoni Moda',serif;font-style:italic;font-weight:500;color:var(--accent-text);font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;}
+  .world-header h1{font-size:clamp(2.1rem,4.8vw,3.3rem);margin:16px 0 16px;line-height:1.08;}
+  .world-header h1 span{color:var(--accent-text);}
+  .world-header p{color:var(--text-dim);font-size:1.04rem;max-width:58ch;}
+  .world-meta-row{display:flex;gap:26px;margin-top:26px;flex-wrap:wrap;}
+  .world-meta-row .wm{font-family:'Bodoni Moda',serif;font-size:0.72rem;color:var(--text-dim);}
+  .world-meta-row .wm b{color:var(--accent-text);font-size:0.95rem;display:block;font-family:'Bodoni Moda',serif;font-weight:500;margin-bottom:2px;}
+
+  /* ===== franja de confianza (marco navy fijo) ===== */
+  .trust-strip{background:var(--navy-950);padding:30px 6vw;margin-top:2vh;}
+  .trust-strip-in{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:28px;}
+  .trust-item h4{font-family:'Bodoni Moda',serif;font-weight:500;font-size:0.92rem;color:var(--gold-light);margin-bottom:7px;}
+  .trust-item p{font-size:0.8rem;color:var(--silver-dim);line-height:1.5;}
+  @media(max-width:980px){.trust-strip-in{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:640px){.trust-strip-in{grid-template-columns:1fr;}}
+
+  /* ===== accesos rápidos ===== */
+  .accesos-section{max-width:1200px;margin:0 auto;padding:6vh 6vw 0;}
+  .accesos-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;}
+  .acceso-card{border:1px solid var(--border);border-radius:10px;padding:20px 18px;text-decoration:none;background:var(--surface);
+    display:flex;flex-direction:column;gap:7px;transition:border-color .25s,transform .25s;
+    box-shadow:0 1px 2px rgba(0,0,0,0.05),0 8px 20px -14px rgba(0,0,0,0.16);}
+  .acceso-card:hover{border-color:var(--line-accent);transform:translateY(-2px);}
+  .acceso-card .ac-ic{font-size:1.4rem;}
+  .acceso-card h4{font-size:0.9rem;color:var(--text);font-family:'Instrument Sans',sans-serif;font-weight:600;line-height:1.25;}
+  .acceso-card p{font-size:0.74rem;color:var(--text-dim);}
+  @media(max-width:980px){ .accesos-grid{grid-template-columns:repeat(3,1fr);} }
+  @media(max-width:640px){ .accesos-grid{grid-template-columns:repeat(2,1fr);} }
+
+  .search-wrap{max-width:680px;margin:0 auto;}
+  .filter-bar{max-width:1200px;margin:0 auto;padding:0 6vw;display:flex;gap:14px;flex-wrap:wrap;align-items:center;
+    justify-content:space-between;}
+  .filter-chips{display:flex;gap:8px;flex-wrap:wrap;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:4px;}
+  .f-chip{font-family:'Bodoni Moda',serif;font-size:0.72rem;padding:7px 15px;border-radius:20px;white-space:nowrap;
+    border:1px solid var(--border);color:var(--text-dim);cursor:pointer;background:var(--surface);transition:all .2s;}
+  .f-chip:hover{border-color:var(--line-accent);color:var(--accent-text);}
+  .f-chip.active{background:var(--gold);color:var(--navy-950);border-color:var(--gold);font-weight:700;}
+  .f-chip.divider{width:1px;padding:0;border:none;background:var(--border);margin:0 2px;}
+  .search-box{display:flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--border);
+    border-radius:24px;padding:9px 16px;min-width:220px;flex:0 0 auto;}
+  .search-box svg{flex-shrink:0;opacity:0.6;}
+  .search-box input{flex:1;background:none;border:none;outline:none;color:var(--text);font-family:'Instrument Sans',sans-serif;font-size:0.88rem;width:100%;}
+  .search-box input:focus-visible{outline:2px solid var(--gold-light);}
+  .search-box input::placeholder{color:var(--text-dim);}
+
+  .wrap{max-width:1200px;margin:0 auto;padding:5vh 6vw 10vh;}
+  .section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;margin-bottom:26px;flex-wrap:wrap;}
+  .section-head .sh-eyebrow{font-family:'Bodoni Moda',serif;font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent-text);display:block;margin-bottom:6px;}
+  .section-head h2{font-size:clamp(1.4rem,2.6vw,1.9rem);}
+  .section-head .sh-link{font-family:'Bodoni Moda',serif;font-size:0.76rem;color:var(--accent-text);text-decoration:none;white-space:nowrap;}
+  .section-head .sh-link:hover{text-decoration:underline;}
+  .result-count{font-family:'Bodoni Moda',serif;font-size:0.72rem;color:var(--text-dim);margin-bottom:20px;}
+
+  .tipo-tag{font-family:'Bodoni Moda',serif;font-size:0.6rem;letter-spacing:0.09em;text-transform:uppercase;
+    padding:3px 9px;border-radius:3px;display:inline-block;}
+  .tipo-tag.Research{background:#5f74c9;color:#fff;}
+  .tipo-tag.Guide{background:var(--gold);color:var(--navy-950);}
+  .tipo-tag.Analysis{background:#3f8fa6;color:#fff;}
+  .tipo-tag.AURZANE{background:var(--gold-deep);color:#fff;}
+
+  .featured-comp{display:grid;grid-template-columns:1.5fr 1fr;gap:22px;}
+  .f-main{position:relative;border-radius:10px;overflow:hidden;min-height:420px;align-items:flex-end;
+    cursor:pointer;text-decoration:none;display:flex;border:1px solid var(--border);
+    box-shadow:0 1px 2px rgba(0,0,0,0.05),0 14px 32px -18px rgba(0,0,0,0.22);}
+  .f-main img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s ease;background:linear-gradient(150deg,var(--navy-800),var(--navy-900) 75%);}
+  .f-main:hover img{transform:scale(1.045);}
+  .f-main-overlay{position:relative;z-index:1;width:100%;padding:34px 30px;background:linear-gradient(0deg, rgba(7,10,20,0.96) 0%, rgba(7,10,20,0.55) 55%, rgba(7,10,20,0.05) 100%);}
+  .f-main-tags{display:flex;gap:8px;margin-bottom:14px;align-items:center;}
+  .f-main-overlay h3{font-size:clamp(1.4rem,2.6vw,2rem);line-height:1.18;margin-bottom:12px;color:#fff;}
+  .f-main-overlay p{color:var(--silver);font-size:0.92rem;max-width:52ch;margin-bottom:14px;}
+  .f-main-meta{font-family:'Bodoni Moda',serif;font-size:0.72rem;color:var(--silver-dim);display:flex;gap:16px;}
+  .f-side{display:flex;flex-direction:column;gap:18px;}
+  .fs-card{border:1px solid var(--border);border-radius:10px;padding:18px;text-decoration:none;display:flex;gap:14px;
+    flex:1;transition:border-color .25s,transform .25s;background:var(--surface);
+    box-shadow:0 1px 2px rgba(0,0,0,0.05),0 8px 20px -14px rgba(0,0,0,0.16);}
+  .fs-card:hover{border-color:var(--line-accent);transform:translateY(-2px);}
+  .fs-card img{width:84px;height:84px;object-fit:cover;border-radius:8px;flex-shrink:0;background:var(--surface-2);}
+  .fs-card-body{display:flex;flex-direction:column;gap:6px;min-width:0;}
+  .fs-card-body h4{font-size:0.92rem;line-height:1.3;color:var(--text);font-weight:500;font-family:'Bodoni Moda',serif;}
+  .fs-card-body .fs-meta{font-family:'Bodoni Moda',serif;font-size:0.64rem;color:var(--text-dim);}
+
+  .topics-strip{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px;}
+  .topic-tile{position:relative;border-radius:10px;overflow:hidden;height:118px;text-decoration:none;
+    border:1px solid var(--border);transition:border-color .25s,transform .25s;display:block;background:var(--surface-2);}
+  .topic-tile:hover{border-color:var(--line-accent);transform:translateY(-2px);}
+  .topic-tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.7;transition:opacity .25s,transform .4s;}
+  .topic-tile:hover img{opacity:0.85;transform:scale(1.06);}
+  .topic-tile-label{position:absolute;inset:0;display:flex;align-items:flex-end;padding:12px;
+    background:linear-gradient(0deg, rgba(7,10,20,0.9), transparent 65%);}
+  .topic-tile-label span{font-family:'Bodoni Moda',serif;font-size:0.72rem;color:#fff;font-weight:500;}
+  .topic-tile.active{border-color:var(--gold);}
+
+  .editorial-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .e-card{border:1px solid var(--border);border-radius:10px;overflow:hidden;cursor:pointer;text-decoration:none;
+    display:flex;flex-direction:column;transition:border-color .25s,transform .25s;background:var(--surface);
+    box-shadow:0 1px 2px rgba(0,0,0,0.05),0 10px 26px -16px rgba(0,0,0,0.18);}
+  .e-card:hover{border-color:var(--line-accent);transform:translateY(-2px);}
+  .e-card .e-img{width:100%;height:170px;overflow:hidden;position:relative;background:var(--surface-2);}
+  .e-card .e-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;}
+  .e-card:hover .e-img img{transform:scale(1.06);}
+  .e-card .e-tags{position:absolute;top:10px;left:10px;display:flex;gap:6px;}
+  .e-body{padding:18px 20px 20px;display:flex;flex-direction:column;gap:10px;flex:1;}
+  .e-body h3{font-size:1.05rem;line-height:1.32;}
+  .e-body p{color:var(--text-dim);font-size:0.85rem;flex:1;}
+  .e-foot{font-family:'Bodoni Moda',serif;font-size:0.66rem;color:var(--text-dim);
+    display:flex;justify-content:space-between;align-items:center;padding-top:10px;border-top:1px solid var(--border);}
+  .e-card.wide{grid-column:span 3;flex-direction:row;}
+  .e-card.wide .e-img{width:38%;height:auto;}
+  .e-card.wide .e-body{width:62%;justify-content:center;}
+  .e-card.wide .e-body h3{font-size:1.25rem;}
+
+  .load-more-wrap{text-align:center;margin-top:32px;}
+  .btn-outline{font-family:'Bodoni Moda',serif;font-size:0.78rem;color:var(--accent-text);background:none;
+    border:1px solid var(--line-accent);border-radius:24px;padding:11px 28px;cursor:pointer;transition:all .2s;}
+  .btn-outline:hover{border-color:var(--gold);background:rgba(var(--gold-rgb),0.08);}
+
+  .explored-strip{display:flex;gap:16px;overflow-x:auto;padding-bottom:12px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;}
+  .ex-card{flex:0 0 260px;scroll-snap-align:start;border:1px solid var(--border);border-radius:10px;overflow:hidden;
+    text-decoration:none;display:block;transition:border-color .25s,transform .25s;background:var(--surface);
+    box-shadow:0 1px 2px rgba(0,0,0,0.05),0 8px 20px -14px rgba(0,0,0,0.16);}
+  .ex-card:hover{border-color:var(--line-accent);transform:translateY(-2px);}
+  .ex-card .ex-img{height:140px;overflow:hidden;position:relative;background:var(--surface-2);}
+  .ex-card .ex-img img{width:100%;height:100%;object-fit:cover;}
+  .ex-card .ex-num{position:absolute;bottom:8px;left:10px;font-family:'Bodoni Moda',serif;font-size:1.6rem;color:#fff;
+    text-shadow:0 2px 8px rgba(0,0,0,0.6);}
+  .ex-body{padding:14px 16px;}
+  .ex-body h4{font-size:0.9rem;line-height:1.3;margin-top:6px;}
+
+  .research-band{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:10px;overflow:hidden;}
+  .research-stat{background:var(--surface);padding:26px 20px;text-align:center;}
+  .research-stat .rs-num{font-family:'Bodoni Moda',serif;font-size:2.1rem;color:var(--accent-text);}
+  .research-stat .rs-label{font-family:'Bodoni Moda',serif;font-size:0.68rem;color:var(--text-dim);margin-top:6px;}
+  .research-sources{margin-top:18px;font-size:0.86rem;color:var(--text-dim);}
+  .research-sources b{color:var(--accent-text);font-weight:500;}
+  .research-sources a{color:var(--accent-text);text-decoration:none;}
+  .research-sources a:hover{text-decoration:underline;}
+  @media(max-width:980px){.research-band{grid-template-columns:repeat(2,1fr);}}
+
+  .tool-banner{border:1px solid var(--line-strong);border-radius:10px;padding:28px 30px;
+    background:linear-gradient(135deg, rgba(var(--gold-rgb),0.1), var(--surface));
+    display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;text-decoration:none;transition:border-color .2s;}
+  .tool-banner:hover{border-color:var(--gold);}
+  .tool-banner .tb-tag{font-family:'Bodoni Moda',serif;font-size:0.64rem;color:var(--accent-text);text-transform:uppercase;letter-spacing:0.08em;display:block;margin-bottom:8px;}
+  .tool-banner .tb-title{font-family:'Bodoni Moda',serif;font-size:1.15rem;color:var(--text);max-width:60ch;}
+  .tool-banner .tb-arrow{font-family:'Bodoni Moda',serif;color:var(--accent-text);font-size:0.85rem;white-space:nowrap;
+    border:1px solid var(--line-accent);border-radius:20px;padding:10px 20px;}
+
+  .cross-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px;}
+  .cw-card{border:1px solid var(--border);border-radius:10px;padding:18px;text-decoration:none;display:block;
+    transition:border-color .25s,transform .25s;background:var(--surface);}
+  .cw-card:hover{transform:translateY(-2px);}
+  .cw-card .cw-world{font-family:'Bodoni Moda',serif;font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;
+    padding:3px 9px;border-radius:3px;display:inline-block;margin-bottom:10px;}
+  .cw-card.w-mind{border-color:rgba(201,162,75,0.3);}
+  .cw-card.w-mind:hover{border-color:#c9a24b;}
+  .cw-card.w-mind .cw-world{background:rgba(201,162,75,0.16);color:var(--gold-deep);}
+  .cw-card.w-nexus{border-color:rgba(95,116,201,0.3);}
+  .cw-card.w-nexus:hover{border-color:#5f74c9;}
+  .cw-card.w-nexus .cw-world{background:rgba(95,116,201,0.16);color:#5f74c9;}
+  .cw-card h5{font-size:0.94rem;line-height:1.3;color:var(--text);font-weight:500;font-family:'Bodoni Moda',serif;}
+
+  .empty-state, .load-state{max-width:520px;margin:12vh auto;text-align:center;padding:0 20px;color:var(--text-dim);}
+  .spinner{width:28px;height:28px;border:2px solid var(--border);border-top-color:var(--gold);border-radius:50%;
+    animation:spin 0.8s linear infinite;margin:0 auto 20px;}
+  @keyframes spin{to{transform:rotate(360deg);}}
+
+  .article-shell{max-width:1200px;margin:0 auto;padding:4vh 6vw 12vh;display:grid;grid-template-columns:1fr 220px;gap:56px;align-items:start;}
+  .article-wrap{max-width:720px;}
+  .breadcrumb{font-family:'Bodoni Moda',serif;font-size:0.72rem;color:var(--text-dim);display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+  .breadcrumb a{color:var(--text-dim);text-decoration:none;}
+  .breadcrumb a:hover{color:var(--accent-text);}
+  .breadcrumb .sep{opacity:0.4;}
+  .breadcrumb .current{color:var(--accent-text);}
+  .back-link{font-family:'Bodoni Moda',serif;font-size:0.78rem;color:var(--text-dim);text-decoration:none;
+    display:inline-flex;align-items:center;gap:6px;margin-bottom:8px;cursor:pointer;background:none;border:none;}
+  .back-link:hover{color:var(--accent-text);}
+  .article-wrap .cat-badge{margin:18px 0 14px;display:inline-block;}
+  .article-wrap h1{font-size:clamp(1.9rem,3.8vw,2.7rem);margin-bottom:18px;line-height:1.14;}
+  .article-resumen{font-size:1.08rem;color:var(--accent-text);margin-bottom:22px;font-family:'Bodoni Moda',serif;font-weight:400;font-style:italic;line-height:1.5;}
+  .article-meta-row{display:flex;gap:18px;flex-wrap:wrap;align-items:center;font-family:'Bodoni Moda',serif;
+    font-size:0.74rem;color:var(--text-dim);padding-bottom:22px;border-bottom:1px solid var(--border);margin-bottom:26px;}
+  .article-meta-row .am-author{color:var(--text);}
+  .article-hero-img{width:100%;aspect-ratio:16/8;object-fit:cover;border-radius:10px;margin-bottom:30px;background:var(--surface-2);}
+  .action-row{display:flex;gap:10px;margin-bottom:8px;}
+  .action-btn{display:flex;align-items:center;gap:6px;font-family:'Bodoni Moda',serif;font-size:0.72rem;
+    color:var(--text-dim);background:none;border:1px solid var(--border);border-radius:20px;padding:8px 15px;cursor:pointer;transition:all .2s;}
+  .action-btn:hover{border-color:var(--gold-light);color:var(--accent-text);}
+  .action-btn.saved{border-color:var(--gold);color:var(--accent-text);background:rgba(var(--gold-rgb),0.1);}
+  .toc-mobile{display:none;}
+  .cat-badge{font-family:'Bodoni Moda',serif;font-size:0.66rem;letter-spacing:0.1em;text-transform:uppercase;
+    color:var(--accent-text);align-self:flex-start;padding:4px 10px;border:1px solid var(--line-accent);border-radius:12px;}
+  .article-cuerpo{font-size:1.02rem;}
+  .article-cuerpo h2{font-size:1.4rem;margin:34px 0 14px;color:var(--text);}
+  .article-cuerpo h3{font-size:1.15rem;margin:26px 0 10px;color:var(--accent-text);}
+  .article-cuerpo p{color:var(--text);margin-bottom:18px;max-width:65ch;}
+  .article-cuerpo blockquote{border-left:3px solid var(--gold);margin:28px 0;padding:4px 0 4px 22px;
+    font-family:'Bodoni Moda',serif;font-style:italic;font-size:1.2rem;color:var(--accent-text);max-width:60ch;}
+  .tags{display:flex;flex-wrap:wrap;gap:8px;margin:26px 0;}
+  .tag{font-family:'Bodoni Moda',serif;font-size:0.68rem;color:var(--text-dim);border:1px solid var(--border);
+    border-radius:12px;padding:4px 12px;}
+  .fuentes{margin-top:40px;padding:22px 24px;border-radius:10px;background:var(--surface);border:1px solid var(--line-accent);}
+  .fuentes h4{font-family:'Bodoni Moda',serif;font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;
+    color:var(--accent-text);margin-bottom:14px;}
+  .fuentes ol{list-style:none;counter-reset:fu;padding:0;}
+  .fuentes li{font-size:0.87rem;color:var(--text-dim);margin-bottom:12px;padding-left:26px;position:relative;counter-increment:fu;}
+  .fuentes li::before{content:counter(fu);position:absolute;left:0;top:0;font-family:'Bodoni Moda',serif;
+    font-size:0.7rem;color:var(--accent-text);border:1px solid var(--line-accent);border-radius:50%;width:18px;height:18px;
+    display:flex;align-items:center;justify-content:center;}
+  .fuentes a{color:var(--accent-text);text-decoration:none;font-weight:500;}
+  .fuentes a:hover{text-decoration:underline;}
+
+  .related-block{margin-top:44px;padding-top:28px;border-top:1px solid var(--line-accent);}
+  .related-block h4{font-family:'Bodoni Moda',serif;font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;
+    color:var(--accent-text);margin-bottom:16px;}
+  .related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px;}
+  .related-card{border:1px solid var(--border);border-radius:8px;padding:16px;text-decoration:none;display:block;
+    transition:border-color .25s, transform .25s;background:var(--surface);}
+  .related-card:hover{border-color:var(--line-accent);transform:translateY(-2px);}
+  .related-card .cat-badge{margin-bottom:8px;}
+  .related-card h5{font-family:'Bodoni Moda',serif;font-weight:500;font-size:0.92rem;line-height:1.3;color:var(--text);margin-bottom:4px;}
+  .related-card span.rc-meta{font-family:'Bodoni Moda',serif;font-size:0.64rem;color:var(--text-dim);}
+
+  .tool-banner-article{margin-top:26px;}
+
+  .toc-side{position:sticky;top:90px;}
+  .toc-side .toc-label{font-family:'Bodoni Moda',serif;font-size:0.64rem;letter-spacing:0.1em;text-transform:uppercase;
+    color:var(--text-dim);margin-bottom:12px;display:block;}
+  .toc-side ul{list-style:none;border-left:1px solid var(--border);}
+  .toc-side li a{display:block;font-size:0.82rem;color:var(--text-dim);text-decoration:none;padding:6px 0 6px 16px;
+    border-left:2px solid transparent;margin-left:-1px;transition:color .2s,border-color .2s;}
+  .toc-side li a:hover{color:var(--text);}
+  .toc-side li a.active{color:var(--accent-text);border-color:var(--gold);}
+
+  /* ===== footer ===== */
+  footer.pie-live{background:var(--navy-950);color:var(--silver-dim);padding:52px 6vw 26px;margin-top:20px;}
+  footer.pie-live .pie-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:28px;}
+  footer.pie-live .pie-brand{font-family:'Bodoni Moda',serif;font-size:1.2rem;color:var(--vanilla);margin-bottom:10px;}
+  footer.pie-live .pie-brand span{color:var(--gold);}
+  footer.pie-live .pie-desc{font-size:0.84rem;max-width:280px;color:var(--silver-dim);margin:0;}
+  footer.pie-live h5{color:var(--gold-light);font-size:0.78rem;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:12px;font-family:'Instrument Sans',sans-serif;font-weight:600;}
+  footer.pie-live .pie-col a{display:block;color:var(--silver-dim);text-decoration:none;font-size:0.86rem;padding:4px 0;}
+  footer.pie-live .pie-col a:hover{color:var(--gold-light);}
+  footer.pie-live .pie-legal{max-width:1200px;margin:34px auto 0;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;
+    border-top:1px solid rgba(255,255,255,.1);padding-top:18px;font-size:0.78rem;}
+  footer.pie-live .pie-legal a{color:var(--silver-dim);text-decoration:none;}
+  footer.pie-live .pie-legal a:hover{color:var(--gold-light);}
+  @media(max-width:900px){footer.pie-live .pie-grid{grid-template-columns:1fr 1fr;}}
+
+  @media(max-width:980px){
+    .featured-comp{grid-template-columns:1fr;}
+    .f-main{min-height:320px;}
+    .editorial-grid{grid-template-columns:repeat(2,1fr);}
+    .e-card.wide{grid-column:span 2;flex-direction:column;}
+    .e-card.wide .e-img{width:100%;height:170px;}
+    .e-card.wide .e-body{width:100%;}
+    .article-shell{grid-template-columns:1fr;}
+    .toc-side{display:none;}
+    .toc-mobile{display:block;margin-bottom:26px;}
+  }
+  @media(max-width:640px){
+    .editorial-grid{grid-template-columns:1fr;}
+    .e-card.wide{grid-column:span 1;}
+    .filter-bar{flex-direction:column;align-items:stretch;}
+    .search-box{width:100%;}
+    .fs-card{flex-direction:column;}
+    .fs-card img{width:100%;height:120px;}
+  }
+</style>
+<meta name="google-adsense-account" content="ca-pub-8763758728010451">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8763758728010451" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<div class="utility">
+  <div class="u-wrap">
+    <div class="utility-mundos">
+      <a href="https://aurzane.com/">AURZANE</a>
+      <a href="https://mind.aurzane.com/">MIND</a>
+      <a href="https://ovp.aurzane.com/">OVP</a>
+      <a href="https://nexus.aurzane.com/">NEXUS</a>
+      <a class="activo" href="https://live.aurzane.com/">LIVE</a>
+      <a href="https://learn.aurzane.com/">LEARN</a>
+      <a href="https://build.aurzane.com/">BUILD</a>
+    </div>
+    <div class="utility-right">
+      <a href="https://aurzane.com/privacidad.html">Privacidad</a>
+      <button id="btnTema" onclick="alternarTema()">🌓 Tema</button>
+    </div>
+  </div>
+</div>
+
+<div class="topbar">
+  <a href="https://live.aurzane.com" class="brand">AUR<span class="z">Z</span>ANE <span class="tag">/ LIVE</span></a>
+  <div class="topbar-right">
+    <nav>
+      <a class="tlink active" id="navArticulos" href="/"><span class="label">Artículos</span></a>
+      <a class="tlink" id="navGuardados" href="#guardados"><span class="label">Guardados</span> <span class="saved-count mono" id="savedCount" style="display:none;">0</span></a>
+      <a class="tlink" href="live-biblioteca.html"><span class="label">Biblioteca</span></a>
+    </nav>
+    <a class="pill-cuenta" href="https://aurzane.com/mi-aurzane.html" id="pillCuenta">👤 Mi AURZANE</a>
+    <button class="btn-todo" onclick="abrirTodo()" aria-haspopup="dialog">☰ Todo LIVE</button>
+  </div>
+</div>
+
+<!-- ============ PANEL "TODO LIVE" ============ -->
+<div class="todo-overlay" id="todoOverlay" onclick="cerrarTodo()"></div>
+<aside class="todo-panel" id="todoPanel" role="dialog" aria-modal="true" aria-label="Todo LIVE">
+  <div class="todo-header">
+    <div class="quien" id="todoQuien">Hola, iniciá sesión<small>Accedé a todo el ecosistema</small></div>
+    <button class="todo-cerrar" onclick="cerrarTodo()" aria-label="Cerrar menú">✕</button>
+  </div>
+  <div class="todo-grupo">
+    <h5>Catálogos LIVE</h5>
+    <a class="todo-link" href="/"><span class="ic">📰</span> Artículos y guías</a>
+    <a class="todo-link" href="#guardados"><span class="ic">⭐</span> Mis guardados</a>
+    <a class="todo-link" href="live-biblioteca.html"><span class="ic">📚</span> Biblioteca LIVE</a>
+  </div>
+  <div class="todo-grupo">
+    <h5>Otros mundos</h5>
+    <a class="todo-link" href="https://mind.aurzane.com/test-de-personalidad/"><span class="ic">✨</span> Test de personalidad gratis</a>
+    <a class="todo-link" href="https://mind.aurzane.com/"><span class="ic">🧠</span> MIND — Mente y estudio</a>
+    <a class="todo-link" href="https://nexus.aurzane.com/"><span class="ic">🔧</span> NEXUS — Tecnología</a>
+    <a class="todo-link" href="https://learn.aurzane.com/"><span class="ic">🎓</span> LEARN — Conocimiento</a>
+    <a class="todo-link" href="https://build.aurzane.com/"><span class="ic">🏗️</span> BUILD — Imperio físico</a>
+    <a class="todo-link" href="https://aurzane.com/"><span class="ic">🌐</span> Ver todo el ecosistema</a>
+  </div>
+  <div class="todo-grupo" style="border-bottom:none">
+    <h5>Cuenta y ayuda</h5>
+    <a class="todo-link" href="https://aurzane.com/mi-aurzane.html"><span class="ic">👤</span> Mi AURZANE</a>
+    <a class="todo-link" href="mailto:hola@aurzane.com"><span class="ic">✉️</span> Contacto</a>
+    <a class="todo-link" href="https://aurzane.com/privacidad.html"><span class="ic">🔒</span> Privacidad</a>
+    <button class="todo-link" onclick="alternarTema()"><span class="ic">🌓</span> Cambiar tema claro/oscuro</button>
+    <div class="paleta-selector">
+      <span class="paleta-label">Paleta de acento</span>
+      <div class="paleta-swatches" id="paletaSwatches"></div>
+    </div>
+  </div>
+</aside>
+
+<main>
+
+<div id="indexView">
+  <div class="world-header">
+    <div class="world-header-in">
+      <span class="eyebrow">Mundo 03 — AURZANE LIVE</span>
+      <h1>Vivir con <span>propósito y equilibrio</span></h1>
+      <p>Artículos breves y originales sobre bienestar, propósito, equilibrio vida-trabajo, formación de hábitos, aventura y ciencia del deporte — cada uno con fuentes reales que puedes revisar o citar.</p>
+      <div class="world-meta-row" id="worldMetaRow"></div>
+    </div>
+  </div>
+
+  <div class="trust-strip">
+    <div class="trust-strip-in">
+      <div class="trust-item"><h4>Fuentes verificables</h4><p>Cada artículo cita publicaciones reales — nada se inventa ni se resume sin respaldo.</p></div>
+      <div class="trust-item"><h4>Biblioteca abierta</h4><p>5.000 artículos científicos de acceso abierto sobre bienestar, con enlace a la fuente original.</p></div>
+      <div class="trust-item"><h4>6 áreas de bienestar</h4><p>Propósito, equilibrio, hábitos, aventura y ciencia del deporte.</p></div>
+      <div class="trust-item"><h4>Parte de un ecosistema</h4><p>Conectado con MIND, NEXUS, LEARN y BUILD.</p></div>
+    </div>
+  </div>
+
+  <div class="accesos-section">
+    <div class="accesos-grid">
+      <a class="acceso-card" href="#recentSection"><span class="ac-ic">📰</span><h4>Artículos LIVE</h4><p>Guías con fuentes reales</p></a>
+      <a class="acceso-card" href="#guardados"><span class="ac-ic">⭐</span><h4>Mis guardados</h4><p>Tu selección personal</p></a>
+      <a class="acceso-card" href="live-biblioteca.html"><span class="ac-ic">📚</span><h4>Biblioteca LIVE</h4><p>5.000 artículos científicos</p></a>
+      <a class="acceso-card" href="#topicsSection"><span class="ac-ic">🧭</span><h4>Explorar por tema</h4><p>6 categorías de bienestar</p></a>
+      <a class="acceso-card" href="https://aurzane.com/research.html"><span class="ac-ic">🔎</span><h4>Research Hub</h4><p>Las 5 bibliotecas a la vez</p></a>
+      <a class="acceso-card" href="https://aurzane.com/"><span class="ac-ic">🌐</span><h4>Ecosistema AURZANE</h4><p>MIND · NEXUS · LEARN · BUILD</p></a>
+    </div>
+  </div>
+
+  <div class="filter-bar" style="margin-top:6vh;">
+    <div class="filter-chips" id="filterChips"></div>
+    <div class="search-box">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+      <input id="searchInput" type="text" placeholder="Buscar en LIVE...">
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div id="loadState" class="load-state">
+      <div class="spinner"></div>
+      <p class="mono" style="font-size:0.8rem;color:var(--text-dim);">Cargando artículos...</p>
+    </div>
+
+    <div id="contentArea" style="display:none;">
+
+      <section id="featuredSection" style="margin-bottom:60px;">
+        <div class="section-head"><div><span class="sh-eyebrow">Contenido destacado</span><h2>Lo más relevante de LIVE</h2></div></div>
+        <div class="featured-comp" id="featuredComp"></div>
+      </section>
+
+      <section id="topicsSection" style="margin-bottom:60px;">
+        <div class="section-head"><div><span class="sh-eyebrow">Explorar por tema</span><h2>Categorías de LIVE</h2></div></div>
+        <div class="topics-strip" id="topicsStrip"></div>
+      </section>
+
+      <section id="recentSection" style="margin-bottom:60px;">
+        <div class="section-head">
+          <div><span class="sh-eyebrow" id="recentEyebrow">Artículos</span><h2 id="recentTitle">Artículos recientes</h2></div>
+        </div>
+        <div class="result-count mono" id="resultCount"></div>
+        <div class="editorial-grid" id="editorialGrid"></div>
+        <div class="load-more-wrap" id="loadMoreWrap" style="display:none;"><button class="btn-outline" id="loadMoreBtn">Ver más artículos</button></div>
+        <div id="emptyState" class="empty-state" style="display:none;">
+          <p>No encontramos artículos con ese filtro todavía. El catálogo de LIVE sigue creciendo — vuelve pronto.</p>
+        </div>
+      </section>
+
+      <section id="exploredSection" style="margin-bottom:60px;">
+        <div class="section-head"><div><span class="sh-eyebrow">Curaduría editorial</span><h2>Más explorado</h2></div></div>
+        <div class="explored-strip" id="exploredStrip"></div>
+      </section>
+
+      <section id="researchSection" style="margin-bottom:60px;">
+        <div class="section-head"><div><span class="sh-eyebrow">Rigor</span><h2>Investigación y fuentes</h2></div></div>
+        <div class="research-band" id="researchBand"></div>
+        <p class="research-sources" id="researchSources"></p>
+        <p class="research-sources">Explorá el corpus completo en la <a href="live-biblioteca.html">Biblioteca LIVE →</a></p>
+      </section>
+
+      <section id="crossWorldSection" style="margin-bottom:20px;">
+        <div class="section-head"><div><span class="sh-eyebrow">Ecosistema</span><h2>Seguí explorando en otros mundos</h2></div></div>
+        <div class="cross-grid" id="crossGrid"></div>
+      </section>
+
+    </div>
+  </div>
+</div>
+
+<div id="articleView" style="display:none;">
+  <div class="article-shell">
+    <div class="article-wrap" id="articleContent"></div>
+    <aside class="toc-side" id="tocSide" style="display:none;">
+      <span class="toc-label">En este artículo</span>
+      <ul id="tocList"></ul>
+    </aside>
+  </div>
+</div>
+
+</main>
+
+<footer class="pie-live">
+  <div class="pie-grid">
+    <div>
+      <p class="pie-brand">AUR<span>ZANE</span> <span style="font-size:0.7rem;color:var(--silver-dim);">LIVE</span></p>
+      <p class="pie-desc">AURZANE LIVE resume investigación real en un lenguaje simple. Cada artículo es una síntesis original — no una copia de las fuentes citadas — pensada para orientar y para consultar el material original en los enlaces de cada nota.</p>
+    </div>
+    <div class="pie-col">
+      <h5>Catálogos</h5>
+      <a href="/">Artículos y guías</a>
+      <a href="#guardados">Mis guardados</a>
+      <a href="live-biblioteca.html">Biblioteca LIVE</a>
+    </div>
+    <div class="pie-col">
+      <h5>Ecosistema</h5>
+      <a href="https://aurzane.com/">AURZANE</a>
+      <a href="https://mind.aurzane.com/test-de-personalidad/">Test de personalidad</a>
+      <a href="https://mind.aurzane.com/">MIND</a>
+      <a href="https://nexus.aurzane.com/">NEXUS</a>
+      <a href="https://learn.aurzane.com/">LEARN</a>
+      <a href="https://build.aurzane.com/">BUILD</a>
+    </div>
+    <div class="pie-col">
+      <h5>Cuenta</h5>
+      <a href="https://aurzane.com/mi-aurzane.html">Mi AURZANE</a>
+      <a href="https://aurzane.com/privacidad.html">Privacidad</a>
+      <a href="mailto:hola@aurzane.com">Contacto</a>
+    </div>
+  </div>
+  <div class="pie-legal">
+    <span>© 2026 AURZANE LIVE. Todos los derechos reservados.</span>
+  </div>
+</footer>
+
+<script src="/aurzane-id.js"></script>
+<script>
+const SUPABASE_URL = 'https://chtfpqwrrarfdjcivlad.supabase.co';
+const SUPABASE_KEY = 'sb_publishable___1v6VjDew0l8uGfMyb9Nw_YyCLTPPw';
+const sb = crearClienteAurzaneID(SUPABASE_URL, SUPABASE_KEY);
+  window.__aurzaneSb = sb;
+  if(window.__aurzaneErrBuf.length){ window.__aurzaneErrBuf.forEach(function(en){ sb.from('frontend_error_log').insert(en).then(function(){}, function(){}); }); window.__aurzaneErrBuf.length = 0; }
+
+/* ============================================================
+   Tema claro/oscuro (comparte localStorage con todo el ecosistema)
+   ============================================================ */
+(function () {
+  const guardado = localStorage.getItem("aurzane-tema");
+  if (guardado === "oscuro") document.documentElement.setAttribute("data-tema", "oscuro");
+})();
+function alternarTema() {
+  const esOscuro = document.documentElement.getAttribute("data-tema") === "oscuro";
+  if (esOscuro) {
+    document.documentElement.removeAttribute("data-tema");
+    try { localStorage.setItem("aurzane-tema", "claro"); } catch (e) {}
+  } else {
+    document.documentElement.setAttribute("data-tema", "oscuro");
+    try { localStorage.setItem("aurzane-tema", "oscuro"); } catch (e) {}
+  }
+}
+
+/* ============================================================
+   Paleta de acento (comparte localStorage con todo el ecosistema)
+   ============================================================ */
+const PALETAS = {
+  dorado:    { nombre: "Dorado clásico", n950: "#080B17", n900: "#0F1530", n800: "#151C3D", n700: "#1E2650", gold: "#C9A24B", goldLight: "#EACF92", goldDeep: "#8A6A28" },
+  esmeralda: { nombre: "Esmeralda",      n950: "#071510", n900: "#0D1F19", n800: "#132B22", n700: "#1B3A2E", gold: "#4BA97C", goldLight: "#8FE0BB", goldDeep: "#1F6B4A" },
+  purpura:   { nombre: "Púrpura real",   n950: "#0E0A1A", n900: "#171029", n800: "#211640", n700: "#2E1E58", gold: "#9A7DD1", goldLight: "#C9B4EE", goldDeep: "#5B3F94" },
+  grafito:   { nombre: "Grafito plata",  n950: "#0A0A0C", n900: "#131316", n800: "#1B1B20", n700: "#26262C", gold: "#B8BEC7", goldLight: "#E4E7EB", goldDeep: "#6B7078" },
+  cobre:     { nombre: "Cobre rosa",     n950: "#150B0C", n900: "#211215", n800: "#2E181C", n700: "#3D2126", gold: "#C97D6B", goldLight: "#E8AE9F", goldDeep: "#7A4436" },
+};
+function hexARgb(hex) {
+  const h = hex.replace("#", "");
+  return [parseInt(h.slice(0, 2), 16), parseInt(h.slice(2, 4), 16), parseInt(h.slice(4, 6), 16)].join(",");
+}
+function aplicarPaleta(clave) {
+  const p = PALETAS[clave] || PALETAS.dorado;
+  const raiz = document.documentElement.style;
+  raiz.setProperty("--navy-950", p.n950);
+  raiz.setProperty("--navy-900", p.n900);
+  raiz.setProperty("--navy-800", p.n800);
+  raiz.setProperty("--navy-700", p.n700);
+  raiz.setProperty("--gold", p.gold);
+  raiz.setProperty("--gold-light", p.goldLight);
+  raiz.setProperty("--gold-deep", p.goldDeep);
+  raiz.setProperty("--gold-rgb", hexARgb(p.gold));
+  try { localStorage.setItem("aurzane-paleta", clave); } catch (e) {}
+  document.querySelectorAll(".paleta-swatch").forEach((sw) => sw.classList.toggle("activo", sw.dataset.clave === clave));
+}
+(function () {
+  const cont = document.getElementById("paletaSwatches");
+  cont.innerHTML = Object.keys(PALETAS).map(
+    (clave) => `<button class="paleta-swatch" data-clave="${clave}" style="background:${PALETAS[clave].gold}" title="${PALETAS[clave].nombre}" aria-label="${PALETAS[clave].nombre}"></button>`
+  ).join("");
+  cont.querySelectorAll(".paleta-swatch").forEach((btn) => {
+    btn.addEventListener("click", () => aplicarPaleta(btn.dataset.clave));
+  });
+  let guardada = "dorado";
+  try { guardada = localStorage.getItem("aurzane-paleta") || "dorado"; } catch (e) {}
+  aplicarPaleta(guardada);
+})();
+
+/* ============================================================
+   Panel "Todo LIVE"
+   ============================================================ */
+function abrirTodo() {
+  document.getElementById("todoOverlay").classList.add("abierto");
+  document.getElementById("todoPanel").classList.add("abierto");
+  document.body.style.overflow = "hidden";
+}
+function cerrarTodo() {
+  document.getElementById("todoOverlay").classList.remove("abierto");
+  document.getElementById("todoPanel").classList.remove("abierto");
+  document.body.style.overflow = "";
+}
+document.addEventListener("keydown", (e) => { if (e.key === "Escape") cerrarTodo(); });
+
+/* ============================================================
+   AURZANE ID — sesión compartida con el resto del ecosistema
+   ============================================================ */
+function reflejarSesionLive(session) {
+  const pill = document.getElementById("pillCuenta");
+  const quien = document.getElementById("todoQuien");
+  if (session) {
+    const nombre = (session.user.email || "Mi cuenta").split("@")[0];
+    pill.innerHTML = `👤 ${nombre}`;
+    quien.innerHTML = `Hola, ${nombre}<small>Tu cuenta AURZANE ID</small>`;
+  } else {
+    pill.innerHTML = `👤 Mi AURZANE`;
+    quien.innerHTML = `Hola, iniciá sesión<small>Accedé a todo el ecosistema</small>`;
+  }
+}
+sb.auth.getSession().then(({ data: { session } }) => reflejarSesionLive(session));
+sb.auth.onAuthStateChange((_e, session) => reflejarSesionLive(session));
+
+/* ============================================================
+   Catálogo de LIVE — categorías, imágenes, paletas y estado
+   ============================================================ */
+const CATEGORIAS = {
+  bienestar:  'Bienestar',
+  proposito:  'Propósito',
+  equilibrio: 'Equilibrio vida-trabajo',
+  habitos:    'Hábitos',
+  aventura:   'Aventura',
+  deporte:    'Ciencia del deporte'
+};
+
+const CAT_IMG = {
+  bienestar:'https://images.unsplash.com/photo-1666362755385-1856fca1a330?q=80&w=700&h=500&fit=crop&auto=format',
+  proposito:'https://images.unsplash.com/photo-1516864356635-5688f0a3fe31?q=80&w=700&h=500&fit=crop&auto=format',
+  equilibrio:'https://images.unsplash.com/photo-1517960413843-0aee8e2b3285?q=80&w=700&h=500&fit=crop&auto=format',
+  habitos:'https://images.unsplash.com/photo-1506784983877-45594efa4cbe?q=80&w=700&h=500&fit=crop&auto=format',
+  aventura:'https://images.unsplash.com/photo-1613492636024-9430710a84d4?q=80&w=700&h=500&fit=crop&auto=format',
+  deporte:'https://images.unsplash.com/photo-1461896836934-ffe607ba8211?q=80&w=700&h=500&fit=crop&auto=format'
+};
+
+// Sin catálogo de tipo manual todavía para LIVE (12 artículos) — se calcula
+// por heurística en tipoArticulo(). Se puede ampliar TIPO_OVERRIDE con slugs
+// puntuales más adelante si se quiere afinar alguno a mano.
+const TIPO_OVERRIDE = {};
+
+let ARTICULOS = [];
+let CROSS_MIND = [];
+let CROSS_NEXUS = [];
+let filtroCategoria = 'todos';
+let filtroTipo = 'todos';
+let orden = 'recientes';
+let filtroTexto = '';
+let visibleCount = 9;
+let vistaGuardados = false;
+
+function escapeHtml(s){
+  return (s||'').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+function urlSegura(u){
+  try{
+    const parsed = new URL(u, location.href);
+    return (parsed.protocol === 'http:' || parsed.protocol === 'https:') ? parsed.href : '#';
+  }catch(e){
+    return '#';
+  }
+}
+
+function normalizarTexto(s){
+  return (s||'').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+}
+
+function catLabel(cat){ return CATEGORIAS[cat] || cat; }
+function catImg(cat){ return CAT_IMG[cat] || 'https://images.unsplash.com/photo-1500534623283-312aade485b7?q=80&w=700&h=500&fit=crop&auto=format'; }
+
+function tipoArticulo(a){
+  if(TIPO_OVERRIDE[a.slug]) return TIPO_OVERRIDE[a.slug];
+  const n = (a.fuentes||[]).length;
+  if(n === 0) return 'AURZANE';
+  if(n >= 3) return 'Research';
+  return 'Guide';
+}
+
+function tiempoLectura(cuerpo){
+  const palabras = (cuerpo||'').trim().split(/\s+/).filter(Boolean).length;
+  return Math.max(1, Math.round(palabras / 200));
+}
+
+function fechaCorta(iso){
+  try{ return new Date(iso).toLocaleDateString('es-EC', {day:'numeric', month:'short', year:'numeric'}); }
+  catch(e){ return ''; }
+}
+
+function getGuardados(){
+  try{ return JSON.parse(localStorage.getItem('aurzane-live-guardados') || '[]'); }catch(e){ return []; }
+}
+function setGuardados(arr){
+  try{ localStorage.setItem('aurzane-live-guardados', JSON.stringify(arr)); }catch(e){}
+  actualizarContadorGuardados();
+}
+function toggleGuardado(slug){
+  const arr = getGuardados();
+  const i = arr.indexOf(slug);
+  if(i === -1) arr.push(slug); else arr.splice(i,1);
+  setGuardados(arr);
+  return arr.includes(slug);
+}
+function actualizarContadorGuardados(){
+  const n = getGuardados().length;
+  const el = document.getElementById('savedCount');
+  el.style.display = n > 0 ? 'inline-block' : 'none';
+  el.textContent = n;
+}
+
+async function cargarArticulos(){
+  const { data, error } = await sb
+    .from('live_articulos')
+    .select('slug,categoria,titulo,resumen,cuerpo,fuentes,tags,destacado,created_at')
+    .order('created_at', { ascending:false });
+
+  document.getElementById('loadState').style.display = 'none';
+
+  if(error){
+    document.getElementById('contentArea').style.display = 'block';
+    document.getElementById('featuredSection').style.display = 'none';
+    document.getElementById('topicsSection').style.display = 'none';
+    document.getElementById('exploredSection').style.display = 'none';
+    document.getElementById('researchSection').style.display = 'none';
+    document.getElementById('emptyState').style.display='block';
+    document.getElementById('emptyState').innerHTML = '<p>No pudimos cargar el catálogo en este momento. Intenta de nuevo en unos minutos.</p>';
+    console.error(error);
+    return;
+  }
+  ARTICULOS = data || [];
+  document.getElementById('contentArea').style.display = 'block';
+  actualizarContadorGuardados();
+  renderMetaMundo();
+  renderFiltros();
+  renderFeatured();
+  renderTopics();
+  renderExplored();
+  renderResearch();
+  render();
+  cargarCrossWorld();
+}
+
+async function cargarCrossWorld(){
+  try{
+    const [{data:mind}, {data:nexus}] = await Promise.all([
+      sb.from('mind_articulos').select('slug,categoria,titulo,resumen,created_at').order('created_at',{ascending:false}).limit(4),
+      sb.from('nexus_articulos').select('slug,categoria,titulo,resumen,created_at').order('created_at',{ascending:false}).limit(4)
+    ]);
+    CROSS_MIND = mind || [];
+    CROSS_NEXUS = nexus || [];
+    renderCrossWorld();
+  }catch(e){
+    document.getElementById('crossWorldSection').style.display = 'none';
+  }
+}
+
+function renderMetaMundo(){
+  const totalFuentes = ARTICULOS.reduce((s,a)=>s+(a.fuentes||[]).length,0);
+  document.getElementById('worldMetaRow').innerHTML = `
+    <div class="wm"><b>${ARTICULOS.length}</b>artículos publicados</div>
+    <div class="wm"><b>${totalFuentes}</b>fuentes citadas</div>
+    <div class="wm"><b>${Object.keys(CATEGORIAS).length}</b>áreas cubiertas</div>
+  `;
+}
+
+function renderFiltros(){
+  const chipsEl = document.getElementById('filterChips');
+  const tipos = [
+    {key:'todos', label:'Todos', kind:'tipo'},
+    {key:'recientes', label:'Más recientes', kind:'orden'},
+    {key:'explorados', label:'Más explorados', kind:'orden'},
+    {key:'divider'},
+    {key:'Guide', label:'Guías', kind:'tipo'},
+    {key:'Research', label:'Investigación', kind:'tipo'},
+    {key:'Analysis', label:'Análisis', kind:'tipo'}
+  ];
+  chipsEl.innerHTML = tipos.map(t => {
+    if(t.key === 'divider') return '<span class="f-chip divider"></span>';
+    let active = false;
+    if(t.kind === 'orden') active = orden === t.key;
+    if(t.kind === 'tipo') active = filtroTipo === t.key;
+    return `<button class="f-chip ${active?'active':''}" data-key="${t.key}" data-kind="${t.kind}">${t.label}</button>`;
+  }).join('');
+  chipsEl.querySelectorAll('.f-chip[data-key]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if(btn.dataset.kind === 'orden'){ orden = btn.dataset.key; }
+      else { filtroTipo = btn.dataset.key; }
+      vistaGuardados = false;
+      visibleCount = 9;
+      renderFiltros();
+      render();
+    });
+  });
+}
+
+function renderFeatured(){
+  if(ARTICULOS.length === 0){ document.getElementById('featuredSection').style.display = 'none'; return; }
+  const destacados = ARTICULOS.filter(a=>a.destacado);
+  const main = destacados[0] || ARTICULOS[0];
+  const secundarios = ARTICULOS.filter(a=>a.slug !== main.slug).slice(0,3);
+
+  document.getElementById('featuredComp').innerHTML = `
+    <a class="f-main" href="https://aurzane.com/articulos/${escapeHtml(main.slug)}/">
+      <img src="${catImg(main.categoria)}" alt="" loading="lazy">
+      <div class="f-main-overlay">
+        <div class="f-main-tags"><span class="tipo-tag ${tipoArticulo(main)}">${tipoArticulo(main)}</span><span class="cat-badge">${escapeHtml(catLabel(main.categoria))}</span></div>
+        <h3>${escapeHtml(main.titulo)}</h3>
+        <p>${escapeHtml(main.resumen)}</p>
+        <div class="f-main-meta"><span>${fechaCorta(main.created_at)}</span><span>${tiempoLectura(main.cuerpo)} min de lectura</span><span>${(main.fuentes||[]).length} fuentes</span></div>
+      </div>
+    </a>
+    <div class="f-side">
+      ${secundarios.map(a => `
+        <a class="fs-card" href="https://aurzane.com/articulos/${escapeHtml(a.slug)}/">
+          <img src="${catImg(a.categoria)}" alt="" loading="lazy">
+          <div class="fs-card-body">
+            <span class="tipo-tag ${tipoArticulo(a)}">${tipoArticulo(a)}</span>
+            <h4>${escapeHtml(a.titulo)}</h4>
+            <span class="fs-meta">${fechaCorta(a.created_at)} · ${tiempoLectura(a.cuerpo)} min</span>
+          </div>
+        </a>
+      `).join('')}
+    </div>
+  `;
+}
+
+function renderTopics(){
+  const presentes = {};
+  ARTICULOS.forEach(a => { presentes[a.categoria] = (presentes[a.categoria]||0)+1; });
+  const strip = document.getElementById('topicsStrip');
+  const keys = Object.keys(CATEGORIAS).filter(k => presentes[k]);
+  if(keys.length === 0){ document.getElementById('topicsSection').style.display='none'; return; }
+  strip.innerHTML = keys.map(key => `
+    <a class="topic-tile ${filtroCategoria===key?'active':''}" href="#categoria=${key}" data-cat="${key}">
+      <img src="${catImg(key)}" alt="" loading="lazy">
+      <div class="topic-tile-label"><span>${escapeHtml(catLabel(key))} (${presentes[key]})</span></div>
+    </a>
+  `).join('');
+  strip.querySelectorAll('.topic-tile').forEach(t => {
+    t.addEventListener('click', (e) => {
+      e.preventDefault();
+      filtroCategoria = filtroCategoria === t.dataset.cat ? 'todos' : t.dataset.cat;
+      vistaGuardados = false;
+      visibleCount = 9;
+      document.querySelectorAll('.topic-tile').forEach(x=>x.classList.toggle('active', x.dataset.cat===filtroCategoria));
+      render();
+      document.getElementById('recentSection').scrollIntoView({behavior:'smooth', block:'start'});
+    });
+  });
+}
+
+function renderExplored(){
+  const destacados = ARTICULOS.filter(a=>a.destacado).slice(0,6);
+  const lista = destacados.length ? destacados : ARTICULOS.slice(0,4);
+  if(lista.length === 0){ document.getElementById('exploredSection').style.display='none'; return; }
+  document.getElementById('exploredStrip').innerHTML = lista.map((a,i) => `
+    <a class="ex-card" href="https://aurzane.com/articulos/${escapeHtml(a.slug)}/">
+      <div class="ex-img"><img src="${catImg(a.categoria)}" alt="" loading="lazy"><span class="ex-num mono">${String(i+1).padStart(2,'0')}</span></div>
+      <div class="ex-body"><span class="cat-badge">${escapeHtml(catLabel(a.categoria))}</span><h4>${escapeHtml(a.titulo)}</h4></div>
+    </a>
+  `).join('');
+}
+
+function renderResearch(){
+  const totalFuentes = ARTICULOS.reduce((s,a)=>s+(a.fuentes||[]).length,0);
+  const investigacion = ARTICULOS.filter(a=>tipoArticulo(a)==='Research').length;
+  const publicaciones = new Set();
+  ARTICULOS.forEach(a => (a.fuentes||[]).forEach(f => { if(f.publicacion) publicaciones.add(f.publicacion); }));
+  document.getElementById('researchBand').innerHTML = `
+    <div class="research-stat"><div class="rs-num">${ARTICULOS.length}</div><div class="rs-label">Artículos publicados</div></div>
+    <div class="research-stat"><div class="rs-num">${totalFuentes}</div><div class="rs-label">Fuentes citadas</div></div>
+    <div class="research-stat"><div class="rs-num">${investigacion}</div><div class="rs-label">Con base en investigación</div></div>
+    <div class="research-stat"><div class="rs-num">100%</div><div class="rs-label">Con fuente verificable</div></div>
+  `;
+  const listaPub = Array.from(publicaciones).slice(0,6);
+  document.getElementById('researchSources').innerHTML = listaPub.length
+    ? `Publicaciones citadas incluyen: <b>${listaPub.map(escapeHtml).join('</b>, <b>')}</b>, entre otras.`
+    : '';
+}
+
+function renderCrossWorld(){
+  const items = [
+    ...CROSS_MIND.slice(0,2).map(a => ({...a, mundo:'mind'})),
+    ...CROSS_NEXUS.slice(0,2).map(a => ({...a, mundo:'nexus'}))
+  ];
+  if(items.length === 0){ document.getElementById('crossWorldSection').style.display='none'; return; }
+  const label = {mind:'MIND', nexus:'NEXUS'};
+  document.getElementById('crossGrid').innerHTML = items.map(a => `
+    <a class="cw-card w-${a.mundo}" href="https://aurzane.com/articulos/${encodeURIComponent(a.slug)}/" target="_blank" rel="noopener">
+      <span class="cw-world">${label[a.mundo]}</span>
+      <h5>${escapeHtml(a.titulo)}</h5>
+    </a>
+  `).join('');
+}
+
+function listaFiltrada(){
+  let lista = vistaGuardados ? ARTICULOS.filter(a => getGuardados().includes(a.slug)) : ARTICULOS.slice();
+  if(filtroCategoria !== 'todos') lista = lista.filter(a => a.categoria === filtroCategoria);
+  if(filtroTipo !== 'todos') lista = lista.filter(a => tipoArticulo(a) === filtroTipo);
+  if(filtroTexto.trim()){
+    const q = normalizarTexto(filtroTexto);
+    lista = lista.filter(a =>
+      normalizarTexto(a.titulo).includes(q) ||
+      normalizarTexto(a.resumen).includes(q) ||
+      normalizarTexto(a.cuerpo).includes(q) ||
+      (a.tags||[]).some(t => normalizarTexto(t).includes(q))
+    );
+  }
+  if(orden === 'explorados'){
+    lista = lista.slice().sort((a,b) => (b.destacado?1:0)-(a.destacado?1:0) || new Date(b.created_at)-new Date(a.created_at));
+  } else {
+    lista = lista.slice().sort((a,b) => new Date(b.created_at)-new Date(a.created_at));
+  }
+  return lista;
+}
+
+function render(){
+  const lista = listaFiltrada();
+  const grid = document.getElementById('editorialGrid');
+  const emptyState = document.getElementById('emptyState');
+  const loadMoreWrap = document.getElementById('loadMoreWrap');
+  document.getElementById('recentTitle').textContent = vistaGuardados ? 'Tus artículos guardados' : 'Artículos recientes';
+  document.getElementById('recentEyebrow').textContent = vistaGuardados ? 'Tu selección' : 'Artículos';
+
+  if(lista.length === 0){
+    grid.innerHTML = '';
+    loadMoreWrap.style.display = 'none';
+    emptyState.style.display = 'block';
+    emptyState.querySelector('p').textContent = vistaGuardados
+      ? 'Todavía no guardaste ningún artículo. Hacé clic en "Guardar" dentro de un artículo para verlo acá.'
+      : 'No encontramos artículos con ese filtro todavía. El catálogo de LIVE sigue creciendo — vuelve pronto.';
+    return;
+  }
+  emptyState.style.display = 'none';
+
+  document.getElementById('resultCount').textContent = `${lista.length} artículo${lista.length===1?'':'s'}`;
+  const visibles = lista.slice(0, visibleCount);
+  grid.innerHTML = visibles.map((a,i) => `
+    <a class="e-card ${(i%5===0)?'wide':''}" href="https://aurzane.com/articulos/${escapeHtml(a.slug)}/">
+      <div class="e-img">
+        <img src="${catImg(a.categoria)}" alt="" loading="lazy">
+        <div class="e-tags"><span class="tipo-tag ${tipoArticulo(a)}">${tipoArticulo(a)}</span></div>
+      </div>
+      <div class="e-body">
+        <span class="cat-badge">${escapeHtml(catLabel(a.categoria))}</span>
+        <h3>${escapeHtml(a.titulo)}</h3>
+        <p>${escapeHtml(a.resumen)}</p>
+        <div class="e-foot"><span>${fechaCorta(a.created_at)}</span><span>${tiempoLectura(a.cuerpo)} min de lectura</span></div>
+      </div>
+    </a>
+  `).join('');
+  loadMoreWrap.style.display = lista.length > visibleCount ? 'block' : 'none';
+}
+
+document.getElementById('loadMoreBtn').addEventListener('click', () => { visibleCount += 9; render(); });
+
+function articulosRelacionados(a){
+  const otros = ARTICULOS.filter(x => x.slug !== a.slug);
+  const mismaCategoria = otros.filter(x => x.categoria === a.categoria);
+  const resto = otros.filter(x => x.categoria !== a.categoria)
+    .sort((x,y) => new Date(y.created_at||0) - new Date(x.created_at||0));
+  return mismaCategoria.concat(resto).slice(0, 3);
+}
+
+function renderCuerpo(cuerpo){
+  const bloques = (cuerpo||'').split(/\n\s*\n/);
+  const toc = [];
+  let idx = 0;
+  const html = bloques.map(b => {
+    const t = b.trim();
+    if(t.startsWith('## ')){
+      idx++;
+      const texto = t.slice(3).trim();
+      const id = 'sec-' + idx;
+      toc.push({id, texto});
+      return `<h2 id="${id}">${escapeHtml(texto)}</h2>`;
+    }
+    if(t.startsWith('> ')){
+      return `<blockquote>${escapeHtml(t.slice(2).trim())}</blockquote>`;
+    }
+    return `<p>${escapeHtml(t)}</p>`;
+  }).join('');
+  return { html, toc };
+}
+
+function renderArticulo(slug){
+  const a = ARTICULOS.find(x => x.slug === slug);
+  const cont = document.getElementById('articleContent');
+  const tocSide = document.getElementById('tocSide');
+  if(!a){
+    cont.innerHTML = `<button class="back-link" onclick="location.hash=''">← Volver a LIVE</button>
+      <p style="color:var(--text-dim);">No encontramos ese artículo. Puede que se haya movido o renombrado.</p>`;
+    tocSide.style.display = 'none';
+    return;
+  }
+  const { html: cuerpoHtml, toc } = renderCuerpo(a.cuerpo);
+  const fuentesHtml = (a.fuentes||[]).map(f => `
+    <li><a href="${escapeHtml(urlSegura(f.url))}" target="_blank" rel="noopener noreferrer">${escapeHtml(f.titulo)}</a>${f.publicacion ? ' — ' + escapeHtml(f.publicacion) : ''}${f.anio ? ' (' + escapeHtml(String(f.anio)) + ')' : ''}</li>
+  `).join('');
+  const tagsHtml = (a.tags||[]).map(t => `<span class="tag">#${escapeHtml(t)}</span>`).join('');
+  const relacionados = articulosRelacionados(a);
+  const relacionadosHtml = relacionados.map(r => `
+    <a class="related-card" href="https://aurzane.com/articulos/${escapeHtml(r.slug)}/">
+      <span class="cat-badge">${escapeHtml(catLabel(r.categoria))}</span>
+      <h5>${escapeHtml(r.titulo)}</h5>
+      <span class="rc-meta">${(r.fuentes||[]).length} fuente${(r.fuentes||[]).length===1?'':'s'}</span>
+    </a>
+  `).join('');
+  const guardado = getGuardados().includes(a.slug);
+  const tipo = tipoArticulo(a);
+
+  cont.innerHTML = `
+    <button class="back-link" onclick="location.hash=''">← Volver a LIVE</button>
+    <div class="breadcrumb" style="padding:0;margin-bottom:0;">
+      <a href="https://aurzane.com">AURZANE</a><span class="sep">/</span><a href="/">LIVE</a><span class="sep">/</span><span class="current">${escapeHtml(catLabel(a.categoria))}</span>
+    </div>
+    <div style="display:flex;gap:8px;align-items:center;">
+      <span class="cat-badge">${escapeHtml(catLabel(a.categoria))}</span>
+      <span class="tipo-tag ${tipo}">${tipo}</span>
+    </div>
+    <h1>${escapeHtml(a.titulo)}</h1>
+    <div class="article-resumen">${escapeHtml(a.resumen)}</div>
+    <div class="article-meta-row">
+      <span class="am-author">AURZANE LIVE</span>
+      <span>${fechaCorta(a.created_at)}</span>
+      <span>${tiempoLectura(a.cuerpo)} min de lectura</span>
+      <span>${(a.fuentes||[]).length} fuente${(a.fuentes||[]).length===1?'':'s'}</span>
+    </div>
+    <img class="article-hero-img" src="${catImg(a.categoria)}" alt="">
+    <div class="action-row">
+      <button class="action-btn ${guardado?'saved':''}" id="btnGuardar">${guardado ? '✓ Guardado' : '☆ Guardar'}</button>
+      <button class="action-btn" id="btnCompartir">↗ Compartir</button>
+      <button class="action-btn" id="btnCopiar">⎘ Copiar enlace</button>
+    </div>
+    ${toc.length ? `<div class="toc-mobile"><details><summary class="mono" style="cursor:pointer;color:var(--accent-text);font-size:0.78rem;">Índice del artículo</summary>
+      <ul style="list-style:none;margin-top:10px;">${toc.map(t=>`<li style="padding:5px 0;"><a href="#${t.id}" style="color:var(--text-dim);text-decoration:none;font-size:0.85rem;">${escapeHtml(t.texto)}</a></li>`).join('')}</ul>
+    </details></div>` : ''}
+    <div class="article-cuerpo">${cuerpoHtml}</div>
+    ${tagsHtml ? `<div class="tags">${tagsHtml}</div>` : ''}
+    <div class="fuentes">
+      <h4>Fuentes</h4>
+      <ol>${fuentesHtml || '<li>Fuente no especificada.</li>'}</ol>
+    </div>
+    ${relacionadosHtml ? `
+    <div class="related-block">
+      <h4>Sigue explorando en LIVE</h4>
+      <div class="related-grid">${relacionadosHtml}</div>
+    </div>` : ''}
+    <a class="tool-banner tool-banner-article" href="https://aurzane.com/#knowledge-hub" target="_blank" rel="noopener">
+      <div><span class="tb-tag">AURZANE</span><span class="tb-title">Este artículo es parte de un ecosistema más grande — descubre las otras 4 áreas y el resto del Knowledge Hub →</span></div>
+      <span class="tb-arrow">Explorar AURZANE →</span>
+    </a>
+  `;
+
+  document.getElementById('btnGuardar').addEventListener('click', (e) => {
+    const g = toggleGuardado(a.slug);
+    e.target.textContent = g ? '✓ Guardado' : '☆ Guardar';
+    e.target.classList.toggle('saved', g);
+  });
+  document.getElementById('btnCompartir').addEventListener('click', async () => {
+    const url = location.href;
+    if(navigator.share){ try{ await navigator.share({title:a.titulo, url}); }catch(e){} }
+    else { copiarEnlace(url, document.getElementById('btnCompartir')); }
+  });
+  document.getElementById('btnCopiar').addEventListener('click', () => copiarEnlace(location.href, document.getElementById('btnCopiar')));
+
+  if(toc.length){
+    tocSide.style.display = 'block';
+    document.getElementById('tocList').innerHTML = toc.map(t => `<li><a href="#${t.id}" data-id="${t.id}">${escapeHtml(t.texto)}</a></li>`).join('');
+  } else {
+    tocSide.style.display = 'none';
+  }
+
+  window.scrollTo(0,0);
+}
+
+function copiarEnlace(url, btn){
+  const original = btn.textContent;
+  const done = () => { btn.textContent = '✓ Copiado'; setTimeout(()=>{ btn.textContent = original; }, 1800); };
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(url).then(done).catch(()=>{});
+  } else {
+    const ta = document.createElement('textarea');
+    ta.value = url; document.body.appendChild(ta); ta.select();
+    try{ document.execCommand('copy'); done(); }catch(e){}
+    document.body.removeChild(ta);
+  }
+}
+
+window.addEventListener('scroll', () => {
+  const view = document.getElementById('articleView');
+  const bar = document.getElementById('progressBar');
+  if(view.style.display === 'none'){ bar.style.width = '0%'; return; }
+  const h = document.documentElement;
+  const scrolled = h.scrollTop;
+  const max = h.scrollHeight - h.clientHeight;
+  bar.style.width = max > 0 ? Math.min(100, (scrolled/max)*100) + '%' : '0%';
+
+  const headings = document.querySelectorAll('.article-cuerpo h2[id]');
+  let activeId = null;
+  headings.forEach(hd => { if(hd.getBoundingClientRect().top < 140) activeId = hd.id; });
+  document.querySelectorAll('.toc-side li a').forEach(a => a.classList.toggle('active', a.dataset.id === activeId));
+}, {passive:true});
+
+function routear(){
+  const hash = location.hash;
+  const mArt = hash.match(/^#\/articulo\/(.+)$/);
+  const mCat = hash.match(/^#categoria=([a-z_]+)$/);
+  const esGuardados = hash === '#guardados';
+
+  if(mArt){
+    document.getElementById('indexView').style.display = 'none';
+    document.getElementById('articleView').style.display = 'block';
+    renderArticulo(decodeURIComponent(mArt[1]));
+    return;
+  }
+
+  document.getElementById('articleView').style.display = 'none';
+  document.getElementById('indexView').style.display = 'block';
+  document.getElementById('progressBar').style.width = '0%';
+
+  vistaGuardados = esGuardados;
+  document.getElementById('navGuardados').classList.toggle('active', esGuardados);
+  document.getElementById('navArticulos').classList.toggle('active', !esGuardados);
+
+  if(mCat && CATEGORIAS[mCat[1]]){
+    filtroCategoria = mCat[1];
+  }
+  if(ARTICULOS.length){ render(); }
+}
+
+document.getElementById('searchInput').addEventListener('input', (e) => {
+  filtroTexto = e.target.value;
+  visibleCount = 9;
+  render();
+});
+
+window.addEventListener('hashchange', routear);
+
+cargarArticulos().then(routear);
+</script>
+
+</body>
+</html>
