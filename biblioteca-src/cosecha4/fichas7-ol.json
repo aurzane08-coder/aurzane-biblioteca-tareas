@@ -1,0 +1,693 @@
+{
+ "ref-acoso-escolar": {
+  "edicion": "/books/OL35625725M",
+  "titulo_ed": "Prevención del acoso escolar con educación emocional",
+  "isbn": "9788433026927",
+  "editorial": "Desclée De Brouwer",
+  "anio": "2014",
+  "cover": 12332762,
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-como-hablar-para-adolescentes-le": {
+  "ok": false,
+  "err": "sin edición en español con portada"
+ },
+ "ref-queremos-hijos-felices": {
+  "edicion": "ttl:https://www.todostuslibros.com/libros/queremos-hijos-felices_978-84-15131-54-0",
+  "titulo_ed": "Queremos hijos felices",
+  "isbn": "9788415131540",
+  "editorial": "JdeJ Editores",
+  "anio": "",
+  "cover": "https://static.cegal.es/imagenes/marcadas/9788415/978841513154.gif",
+  "via": "todostuslibros",
+  "ok": true
+ },
+ "ref-educar-sin-perder-nervios": {
+  "edicion": "/books/OL32588767M",
+  "titulo_ed": "Educar sin perder los nervios",
+  "isbn": "9788416076864",
+  "editorial": "Vergara",
+  "anio": "2019",
+  "cover": 11228406,
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-metodo-montessori": {
+  "ok": false,
+  "err": "sin edición en español con portada"
+ },
+ "ref-educacion-emocional-bienestar": {
+  "edicion": "/books/OL35631272M",
+  "titulo_ed": "Educación emocional y bienestar",
+  "isbn": "9788471976550",
+  "editorial": "Wolters Kluwer Educación",
+  "anio": "2000",
+  "cover": 12338243,
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-entrenate-para-vida": {
+  "edicion": "/books/OL28332677M",
+  "titulo_ed": "Entrénate para la vida",
+  "isbn": "9788467007848",
+  "editorial": "Espasa",
+  "anio": "2012",
+  "cover": 10281697,
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-inutilidad-sufrimiento": {
+  "edicion": "/books/OL47420028M",
+  "titulo_ed": "La inutilidad del sufrimiento",
+  "isbn": "9788497349420",
+  "editorial": "La Esfera de los Libros",
+  "anio": "2010",
+  "cover": 14019010,
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-amar-sin-sufrir": {
+  "edicion": "/books/OL47420025M",
+  "titulo_ed": "Amar sin sufrir",
+  "isbn": "9788497340694",
+  "editorial": "La Esfera de los Libros",
+  "anio": "2010",
+  "cover": 14019006,
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-inteligencia-emocional-infantil-juvenil": {
+  "edicion": "/books/OL25925160M",
+  "titulo_ed": "Inteligencia emocional infantil y juvenil",
+  "isbn": "9788403099982",
+  "editorial": "Aguilar",
+  "anio": "2009",
+  "cover": 7426636,
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-buen-amor-pareja": {
+  "edicion": "/books/OL35637164M",
+  "titulo_ed": "El buen amor en la pareja",
+  "isbn": "9789504937562",
+  "editorial": "PLANETA",
+  "anio": "2013",
+  "cover": 12344092,
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-donde-estan-monedas": {
+  "edicion": "/books/OL25708244M",
+  "titulo_ed": "¿Donde están las monedas?",
+  "isbn": "9788493670672",
+  "editorial": "Rigden institut gestalt",
+  "anio": "2014",
+  "cover": 7354275,
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-cerebro-buda": {
+  "edicion": "/books/OL47167722M",
+  "titulo_ed": "El cerebro de Buda",
+  "isbn": "9788493755256",
+  "editorial": "Brand: Icaria Editorial",
+  "anio": "2011",
+  "cover": 13579697,
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-cerebro-emocional": {
+  "edicion": "/books/OL12987558M",
+  "titulo_ed": "Cerebro Emocional, El",
+  "isbn": "9789504902713",
+  "editorial": "Ariel Publications",
+  "anio": "1999",
+  "cover": 13662239,
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-conectados": {
+  "edicion": "ttl:https://www.todostuslibros.com/libros/conectados_978-607-11-0443-4",
+  "titulo_ed": "CONECTADOS",
+  "isbn": "9786071104434",
+  "editorial": "SUMA DE LETRAS LATINOAMÉRICA",
+  "anio": "",
+  "cover": "https://static.cegal.es/imagenes/marcadas/9786071/978607110443.gif",
+  "via": "todostuslibros",
+  "ok": true
+ },
+ "ref-espejos-cerebro": {
+  "ok": false,
+  "err": "sin edición en español con portada"
+ },
+ "ref-yo-soy-extrano-bucle": {
+  "edicion": "/books/OL37363849M",
+  "titulo_ed": "Yo Soy un Extrano Bucle",
+  "isbn": "9788483830871",
+  "editorial": "Tusquets Editores",
+  "anio": "2008",
+  "cover": "https://covers.openlibrary.org/b/isbn/9788483830871-L.jpg?default=false",
+  "via": "ediciones-es",
+  "ok": true,
+  "portada_de": "ttl:https://www.todostuslibros.com/libros/yo-soy-un-extrano-bucle_978-84-8383-087-1"
+ },
+ "ref-como-tomar-decisiones": {
+  "ok": false,
+  "err": "sin edición en español con portada"
+ },
+ "ref-arte-amargarse-vida": {
+  "edicion": "/books/OL9119249M",
+  "titulo_ed": "El Arte de Amargarse La Vida",
+  "isbn": "9788425414299",
+  "editorial": "Herder & Herder",
+  "anio": "1995",
+  "cover": 10034524,
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-es-real-realidad": {
+  "edicion": "/books/OL13223746M",
+  "titulo_ed": "Es Real La Realidad?",
+  "isbn": "9788425410826",
+  "editorial": "Herder & Herder",
+  "anio": "1995",
+  "cover": "https://covers.openlibrary.org/b/isbn/9788425410826-L.jpg?default=false",
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-psicoanalisis-sociedad-contemporanea": {
+  "edicion": "/books/OL12992115M",
+  "titulo_ed": "Psicoanalisis de La Sociedad Contemporanea",
+  "isbn": "9789505570928",
+  "editorial": "Fondo de Cultura Economica USA",
+  "anio": "1991",
+  "cover": "https://covers.openlibrary.org/b/isbn/9789505570928-L.jpg?default=false",
+  "via": "ediciones-es",
+  "ok": true,
+  "portada_de": "ttl:https://www.todostuslibros.com/libros/psicoanalisis-de-la-sociedad-contemporanea_978-84-375-0150-5"
+ },
+ "ref-corazon-hombre": {
+  "edicion": "/books/OL13114977M",
+  "titulo_ed": "El Corazon del Hombre",
+  "isbn": "9789681603342",
+  "editorial": "Fondo De Cultura Economica USA",
+  "anio": "2006",
+  "cover": "https://covers.openlibrary.org/b/isbn/9789681603342-L.jpg?default=false",
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-vida-liquida": {
+  "edicion": "/books/OL47224995M",
+  "titulo_ed": "Vida líquida",
+  "isbn": "9788449338496",
+  "editorial": "Ediciones Paidós",
+  "anio": "2021",
+  "cover": 13662231,
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-modernidad-liquida": {
+  "edicion": "/books/OL29066335M",
+  "titulo_ed": "Modernidad líquida",
+  "isbn": "9788437507590",
+  "editorial": "Fondo de Cultura Económica de España",
+  "anio": "2003",
+  "cover": 10373556,
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-era-vacio": {
+  "edicion": "/books/OL9128684M",
+  "titulo_ed": "La Era del Vacio",
+  "isbn": "9788433900838",
+  "editorial": "Anagrama",
+  "anio": "1994",
+  "cover": 8684020,
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-cultura-narcisismo": {
+  "edicion": "/books/OL13351698M",
+  "titulo_ed": "La Cultura del Narcisismo",
+  "isbn": "9788489691971",
+  "editorial": "Andres Bello",
+  "anio": "1999",
+  "cover": "https://covers.openlibrary.org/b/isbn/9788489691971-L.jpg?default=false",
+  "via": "ediciones-es",
+  "ok": true,
+  "portada_de": "ttl:https://www.todostuslibros.com/libros/la-cultura-del-narcisismo_978-84-126198-9-8"
+ },
+ "ref-psicopolitica": {
+  "edicion": "ttl:https://www.todostuslibros.com/libros/psicopolitica_978-84-254-4761-7",
+  "titulo_ed": "Psicopolítica",
+  "isbn": "9788425447617",
+  "editorial": "Herder Editorial",
+  "anio": "",
+  "cover": "https://static.cegal.es/imagenes/marcadas/9788425/978842544761.gif",
+  "via": "todostuslibros",
+  "ok": true
+ },
+ "ref-no-cosas": {
+  "edicion": "ttl:https://www.todostuslibros.com/libros/no-cosas_978-84-306-2434-8",
+  "titulo_ed": "No-cosas",
+  "isbn": "9788430624348",
+  "editorial": "TAURUS",
+  "anio": "",
+  "cover": "https://static.cegal.es/imagenes/marcadas/9788430/978843062434.gif",
+  "via": "todostuslibros",
+  "ok": true
+ },
+ "ref-vida-contemplativa": {
+  "edicion": "/books/OL46523077M",
+  "titulo_ed": "Vida contemplativa",
+  "isbn": "9788430625628",
+  "editorial": "Taurus",
+  "anio": "2023",
+  "cover": 13145414,
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-pequeno-paso-puede-cambiar-tu": {
+  "edicion": "/books/OL9334041M",
+  "titulo_ed": "El camino del Kaizen",
+  "isbn": "9788466624695",
+  "editorial": "Ediciones B",
+  "anio": "2007",
+  "cover": 2271168,
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-pequenos-habitos": {
+  "ok": false,
+  "err": "sin edición en español con portada"
+ },
+ "ref-esencialismo": {
+  "edicion": "/books/OL38466906M",
+  "titulo_ed": "Esencialismo. Logra el Máximo de Resultados con el Mínimo de Esfuerzo / Essentia Lism",
+  "isbn": "9786073815666",
+  "editorial": "Penguin Random House Grupo Editorial",
+  "anio": "2022",
+  "cover": "https://covers.openlibrary.org/b/isbn/9786073815666-L.jpg?default=false",
+  "via": "ediciones-es",
+  "ok": true,
+  "portada_de": "ttl:https://www.todostuslibros.com/libros/esencialismo-el-planner_978-84-18053-91-7"
+ },
+ "ref-ichigo-ichie": {
+  "edicion": "/books/OL34404154M",
+  "titulo_ed": "Ichigo-Ichie",
+  "isbn": "9788403519510",
+  "editorial": "Penguin Random House Grupo Editorial (USA) LLC",
+  "anio": "2019",
+  "cover": "https://covers.openlibrary.org/b/isbn/9788403519510-L.jpg?default=false",
+  "via": "ediciones-es",
+  "ok": true,
+  "portada_de": "ttl:https://www.todostuslibros.com/libros/ichigo-ichie_978-84-03-51951-0"
+ },
+ "ref-pensamiento-caja-negra": {
+  "edicion": "/books/OL25920923M",
+  "titulo_ed": "Pensamiento caja negra",
+  "isbn": "9788492921461",
+  "editorial": "Empresa Activa",
+  "anio": "2016",
+  "cover": 7422451,
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-mente-brillante": {
+  "edicion": "ttl:https://www.todostuslibros.com/libros/una-mente-prodigiosa_978-84-397-0913-8",
+  "titulo_ed": "Una mente prodigiosa",
+  "isbn": "9788439709138",
+  "editorial": "Random House",
+  "anio": "",
+  "cover": "https://static.cegal.es/imagenes/marcadas/9788439/978843970913.gif",
+  "via": "todostuslibros",
+  "ok": true
+ },
+ "ref-querida-ijeawele": {
+  "edicion": "/books/OL35627436M",
+  "titulo_ed": "QUERIDA IJEAWELE",
+  "isbn": "9789873987618",
+  "editorial": "LITERATURA RANDOM HOUSE",
+  "anio": "2017",
+  "cover": 12334432,
+  "via": "ediciones-es",
+  "ok": true,
+  "portada_de": "ttl:https://www.todostuslibros.com/libros/querida-ijeawele-como-educar-en-el-feminismo_978-84-397-3270-9"
+ },
+ "ref-quizas-deberias-hablar-con-alguien": {
+  "ok": false,
+  "err": "sin edición en español con portada"
+ },
+ "ref-breve-historia-locura": {
+  "edicion": "/books/OL47269243M",
+  "titulo_ed": "Breve historia de la locura",
+  "isbn": "9788418428791",
+  "editorial": "Turner",
+  "anio": "2021",
+  "cover": 13723058,
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-tengo-miedo-torero": {
+  "edicion": "/books/OL9149412M",
+  "titulo_ed": "Tengo Miedo Torero",
+  "isbn": "9789562472678",
+  "editorial": "Editorial Planeta Chilena",
+  "anio": "2001",
+  "cover": 4916464,
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-soledad-numeros-primos": {
+  "edicion": "/books/OL27676675M",
+  "titulo_ed": "La soledad de los números primos",
+  "isbn": "9788467236866",
+  "editorial": "Círculo de Lectores",
+  "anio": "2009",
+  "cover": 9118170,
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-vida-pequena": {
+  "ok": false,
+  "err": "sin edición en español con portada"
+ },
+ "ref-todo-lo-nunca-te-dije": {
+  "ok": false,
+  "err": "sin edición en español con portada"
+ },
+ "ref-pequenos-fuegos-todas-partes": {
+  "edicion": "/books/OL46889460M",
+  "titulo_ed": "Pequeños fuegos por todas partes",
+  "isbn": "9788490653500",
+  "editorial": "Alba Editorial",
+  "anio": "2017",
+  "cover": "https://covers.openlibrary.org/b/isbn/9788490653500-L.jpg?default=false",
+  "via": "ediciones-es",
+  "ok": true,
+  "portada_de": "ttl:https://www.todostuslibros.com/libros/pequenos-fuegos-por-todas-partes_978-84-9065-350-0"
+ },
+ "ref-jilguero": {
+  "edicion": "ttl:https://www.todostuslibros.com/libros/el-jilguero_978-84-663-3883-7",
+  "titulo_ed": "El jilguero",
+  "isbn": "9788466338837",
+  "editorial": "Penguin Bolsillo",
+  "anio": "",
+  "cover": "https://static.cegal.es/imagenes/marcadas/9788466/978846633883.gif",
+  "via": "todostuslibros",
+  "ok": true
+ },
+ "ref-conversaciones-entre-amigos": {
+  "edicion": "/books/OL38910854M",
+  "titulo_ed": "Conversaciones entre amigos",
+  "isbn": "9788466353618",
+  "editorial": "Penguin Random House Grupo Editorial",
+  "anio": "2022",
+  "cover": 13313357,
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-mi-ano-descanso-relajacion": {
+  "edicion": "/books/OL32450615M",
+  "titulo_ed": "Mi año de descanso y relajación",
+  "isbn": "9788420434896",
+  "editorial": "Alfaguara",
+  "anio": "2019",
+  "cover": 11109344,
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-hija-oscura": {
+  "edicion": "/books/OL26465176M",
+  "titulo_ed": "La hija oscura ",
+  "isbn": "9788426405289",
+  "editorial": "Lumen",
+  "anio": "2018",
+  "cover": 8197893,
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-dias-abandono": {
+  "edicion": "/books/OL47456685M",
+  "titulo_ed": "Los días del abandono",
+  "isbn": "9788466353571",
+  "editorial": "Debolsillo",
+  "anio": "2021",
+  "cover": 14061046,
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-vegetariana": {
+  "edicion": "/books/OL47162323M",
+  "titulo_ed": "La vegetariana",
+  "isbn": "9788416738120",
+  "editorial": "Rata",
+  "anio": "2017",
+  "cover": 13572043,
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-chica-tren": {
+  "edicion": "/books/OL25891378M",
+  "titulo_ed": "La chica del tren",
+  "isbn": "9788408141471",
+  "editorial": "Planeta",
+  "anio": "2015",
+  "cover": 7395624,
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-perdida": {
+  "edicion": "/books/OL25432230M",
+  "titulo_ed": "Perdida",
+  "isbn": "9788439726821",
+  "editorial": "Roja & Negra",
+  "anio": "2012",
+  "cover": 7263622,
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-tenemos-hablar-kevin": {
+  "edicion": "/books/OL27933673M",
+  "titulo_ed": "Tenemos que hablar de Kevin",
+  "isbn": "9788433973504",
+  "editorial": "Anagrama",
+  "anio": "2013",
+  "cover": 9320559,
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-acontecimiento": {
+  "edicion": "/books/OL13321533M",
+  "titulo_ed": "El acontecimiento",
+  "isbn": "9788483101643",
+  "editorial": "Tusquets",
+  "anio": "2002",
+  "cover": 7961325,
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-mujer": {
+  "edicion": "/books/OL31980884M",
+  "titulo_ed": "Una mujer",
+  "isbn": "9788412175318",
+  "editorial": "Editorial Cabaret Voltaire",
+  "anio": "2020",
+  "cover": 10655972,
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-anos": {
+  "edicion": "/books/OL39813727M",
+  "titulo_ed": "Los años",
+  "isbn": "9788493637729",
+  "editorial": "Herce",
+  "anio": "2008",
+  "cover": 12933460,
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-libro-mi-madre": {
+  "edicion": "/books/OL13236083M",
+  "titulo_ed": "El Libro de Mi Madre",
+  "isbn": "9788433911681",
+  "editorial": "Anagrama",
+  "anio": "1999",
+  "cover": 14099975,
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-mortal-rosa": {
+  "edicion": "/books/OL47330644M",
+  "titulo_ed": "Mortal y rosa",
+  "isbn": "9788408106364",
+  "editorial": "Austral",
+  "anio": "2011",
+  "cover": 13916781,
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-diario-duelo": {
+  "edicion": "ttl:https://www.todostuslibros.com/libros/diario-de-duelo_978-84-493-3794-9",
+  "titulo_ed": "Diario de duelo",
+  "isbn": "9788449337949",
+  "editorial": "Ediciones Paidós",
+  "anio": "",
+  "cover": "https://static.cegal.es/imagenes/marcadas/9788449/978844933794.gif",
+  "via": "todostuslibros",
+  "ok": true
+ },
+ "ref-invencion-soledad": {
+  "edicion": "/books/OL9128906M",
+  "titulo_ed": "La invención de la soledad",
+  "isbn": "9788433920973",
+  "editorial": "Anagrama",
+  "anio": "2006",
+  "cover": 2270165,
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-lectura-facil": {
+  "edicion": "/books/OL28192129M",
+  "titulo_ed": "Lectura fácil",
+  "isbn": "9788433998644",
+  "editorial": "Anagrama",
+  "anio": "2020",
+  "cover": 10540620,
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-mala-costumbre": {
+  "edicion": "/books/OL47645552M",
+  "titulo_ed": "La mala costumbre",
+  "isbn": "9788432242120",
+  "editorial": "Seix Barral",
+  "anio": "2023",
+  "cover": 14271576,
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-besos-pan": {
+  "edicion": "/books/OL25891397M",
+  "titulo_ed": "Los besos en el pan",
+  "isbn": "9788490661918",
+  "editorial": "Tusquets Editores",
+  "anio": "2016",
+  "cover": 7395640,
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-cuento-criada": {
+  "edicion": "/books/OL26640615M",
+  "titulo_ed": "El cuento de la criada",
+  "isbn": "9788498388015",
+  "editorial": "Salamandra",
+  "anio": "2017",
+  "cover": 12511365,
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-klara-sol": {
+  "edicion": "/books/OL62336246M",
+  "titulo_ed": "Klara y el Sol",
+  "isbn": "9788433947666",
+  "editorial": "Anagrama",
+  "anio": "2025",
+  "cover": 15239691,
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-donde-viven-monstruos": {
+  "edicion": "/books/OL25630208M",
+  "titulo_ed": "Donde viven los monstruos",
+  "isbn": "9788484648581",
+  "editorial": "Kalandraka",
+  "anio": "2014",
+  "cover": 7304774,
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-pez-arcoiris": {
+  "edicion": "/books/OL25622843M",
+  "titulo_ed": "El pez Arcoiris descubre el mar profundo",
+  "isbn": "9788448830670",
+  "editorial": "Beascoa",
+  "anio": "2010",
+  "cover": 7296830,
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-choco-encuentra-mama": {
+  "edicion": "/books/OL9149969M",
+  "titulo_ed": "Choco Encuentra Una Mama",
+  "isbn": "9789580425823",
+  "editorial": "Grupo Editorial Norma",
+  "anio": "1994",
+  "cover": 4916421,
+  "via": "ediciones-es",
+  "ok": true,
+  "portada_de": "ttl:https://www.todostuslibros.com/libros/choco-encuentra-una-mama-coleccion-buenas-noches_978-958-04-9392-1"
+ },
+ "ref-orejas-mariposa": {
+  "edicion": "ttl:https://www.todostuslibros.com/libros/orejas-de-mariposa_978-84-96388-72-7",
+  "titulo_ed": "Orejas de mariposa",
+  "isbn": "9788496388727",
+  "editorial": "Kalandraka Editora S.L.",
+  "anio": "",
+  "cover": "https://static.cegal.es/imagenes/marcadas/9788496/978849638872.gif",
+  "via": "todostuslibros",
+  "ok": true
+ },
+ "ref-cazo-lorenzo": {
+  "edicion": "/books/OL25446249M",
+  "titulo_ed": "El cazo de Lorenzo",
+  "isbn": "9788426137814",
+  "editorial": "Juventud",
+  "anio": "2010",
+  "cover": 7281028,
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-arbol-recuerdos": {
+  "edicion": "/books/OL25940161M",
+  "titulo_ed": "El árbol de los recuerdos",
+  "isbn": "9788494379703",
+  "editorial": "Nube Ocho",
+  "anio": "2016",
+  "cover": 7439740,
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-pato-muerte": {
+  "edicion": "/books/OL23107995M",
+  "titulo_ed": "El pato y la muerte",
+  "isbn": "9788493481186",
+  "editorial": "",
+  "anio": "",
+  "cover": 7880665,
+  "via": "ediciones-es",
+  "ok": true
+ },
+ "ref-vacio": {
+  "edicion": "/books/OL39682668M",
+  "titulo_ed": "Vacío",
+  "isbn": "9788448862459",
+  "editorial": "Penguin Random House Grupo Editorial",
+  "anio": "2023",
+  "cover": "https://covers.openlibrary.org/b/isbn/9788448862459-L.jpg?default=false",
+  "via": "ediciones-es",
+  "ok": true,
+  "portada_de": "ttl:https://www.todostuslibros.com/libros/vacio_978-84-264-5159-0"
+ },
+ "ref-te-quiero-casi-siempre": {
+  "edicion": "/books/OL32459470M",
+  "titulo_ed": "Te quiero casi siempre. Contrarios",
+  "isbn": "9788408212935",
+  "editorial": "Timun Mas Infantil",
+  "anio": "2019",
+  "cover": 11117230,
+  "via": "ediciones-es",
+  "ok": true
+ }
+}
