@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<script>
+  // Observabilidad de errores (mismo patrón que el resto de AURZANE): sin datos de usuario.
+  window.__aurzaneErrBuf = [];
+  window.__aurzaneLogErr = function(msg){
+    var entry = { pagina: location.pathname, mensaje: String(msg == null ? 'Error desconocido' : msg).slice(0,300) };
+    if (window.__aurzaneSb && window.__aurzaneSb.from) { window.__aurzaneSb.from('frontend_error_log').insert(entry).then(function(){}, function(){}); }
+    else { window.__aurzaneErrBuf.push(entry); }
+  };
+  window.addEventListener('error', function(e){ window.__aurzaneLogErr(e && e.message); });
+  window.addEventListener('unhandledrejection', function(e){ var r = e && e.reason; window.__aurzaneLogErr((r && r.message) || 'Promise rechazada'); });
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://aurzane.com/aurzane-paleta.js"></script>
+<title>Cursos · AURZANE LEARN</title>
+<meta name="description" content="Cursos interactivos de AURZANE LEARN: lecciones breves, laboratorio visual, evaluaciones por tema y repaso espaciado.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;1,6..96,400&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="cursos/cursos.css?v=f15">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="/aurzane-id.js"></script>
+<meta name="google-adsense-account" content="ca-pub-8763758728010451">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8763758728010451" crossorigin="anonymous"></script>
+</head>
+<body>
+<a href="#main" class="sr-only" style="position:absolute;left:-999px">Saltar al contenido</a>
+<header class="c-top">
+  <button id="menuBtn" aria-controls="rail" aria-label="Abrir el menú del curso">Menú</button>
+  <a class="brand" href="https://learn.aurzane.com/">AUR<b>Z</b>ANE LEARN</a>
+  <span class="curso" id="cursoTitulo"></span>
+  <div class="acc"><button id="btnTema" aria-label="Cambiar entre tema claro y oscuro">Tema</button><a class="pill" href="https://aurzane.com/mi-aurzane.html">Mi AURZANE</a></div>
+</header>
+<div class="c-shell">
+  <aside class="c-rail" id="rail"></aside>
+  <main class="c-main" id="main" tabindex="-1"><p class="muted">Cargando el curso…</p></main>
+</div>
+<div class="toast" id="toast" role="status" hidden></div>
+<script type="module" src="cursos/app.js?v=f15"></script>
+</body>
+</html>

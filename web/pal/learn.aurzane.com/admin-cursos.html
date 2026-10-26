@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<script>
+  window.__aurzaneErrBuf = [];
+  window.__aurzaneLogErr = function(msg){
+    var entry = { pagina: location.pathname, mensaje: String(msg == null ? 'Error desconocido' : msg).slice(0,300) };
+    if (window.__aurzaneSb && window.__aurzaneSb.from) { window.__aurzaneSb.from('frontend_error_log').insert(entry).then(function(){}, function(){}); }
+    else { window.__aurzaneErrBuf.push(entry); }
+  };
+  window.addEventListener('error', function(e){ window.__aurzaneLogErr(e && e.message); });
+  window.addEventListener('unhandledrejection', function(e){ var r = e && e.reason; window.__aurzaneLogErr((r && r.message) || 'Promise rechazada'); });
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://aurzane.com/aurzane-paleta.js"></script>
+<title>Panel de cursos · AURZANE LEARN</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="cursos/cursos.css?v=f15">
+<link rel="stylesheet" href="cursos/admin.css?v=f9">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="/aurzane-id.js"></script>
+</head>
+<body>
+<header class="c-top">
+  <a class="brand" href="cursos.html">AUR<b>Z</b>ANE LEARN</a>
+  <span class="curso">Panel de cursos</span>
+  <div class="acc"><button id="btnTema" aria-label="Cambiar entre tema claro y oscuro">Tema</button><a class="pill" href="cursos.html">Ver el curso</a></div>
+</header>
+<div class="c-shell">
+  <aside class="c-rail" id="rail"></aside>
+  <main class="c-main" id="main" tabindex="-1"><p class="muted">Cargando el panel…</p></main>
+</div>
+<div class="toast" id="toast" role="status" hidden></div>
+<script type="module" src="cursos/admin.js?v=f15"></script>
+</body>
+</html>

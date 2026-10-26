@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<script>
+// Observabilidad de errores frontend (Fase 8-9 P1, ver observabilidad_errores_setup.sql).
+// Se registra ANTES que cualquier otro script (incluido el SDK de Supabase) para
+// no perderse errores tempranos; si todavía no existe un cliente listo, los junta
+// en un buffer y los manda apenas el cliente de esta página se crea más abajo.
+// Nunca incluye datos de usuario -- solo la ruta de la página y un mensaje genérico.
+window.__aurzaneErrBuf = [];
+window.__aurzaneLogErr = function(msg){
+  var entry = { pagina: location.pathname, mensaje: String(msg == null ? 'Error desconocido' : msg).slice(0,300) };
+  if(window.__aurzaneSb && window.__aurzaneSb.from){
+    window.__aurzaneSb.from('frontend_error_log').insert(entry).then(function(){}, function(){});
+  } else {
+    window.__aurzaneErrBuf.push(entry);
+  }
+};
+window.addEventListener('error', function(e){ window.__aurzaneLogErr(e && e.message); });
+window.addEventListener('unhandledrejection', function(e){
+  var r = e && e.reason;
+  window.__aurzaneLogErr((r && r.message) || (r == null ? null : String(r)) || 'Promise rechazada');
+});
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://aurzane.com/aurzane-paleta.js"></script>
+<title>Generar Informe · AURZANE MIND</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;1,6..96,400;1,6..96,500&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!-- Estilos del informe (contenido del reporte) compartidos con portal.html -->
+<link rel="stylesheet" href="informe-shared.css">
+<link rel="stylesheet" href="informe-v2.css?v=20261018b">
+<style>
+:root{
+  --navy:#080B17; --navy-2:#0F1530; --navy-3:#151C3D; --navy-4:#1E2650;
+  --gold:#C9A24B; --gold-light:#EACF92; --bronze:#8A6A28;
+  --silver:#C7CDD6; --silver-dim:#8B92A0; --bone:#F5F3EE;
+  --line:rgba(199,205,214,0.13); --line-strong:rgba(201,162,75,0.38);
+  --dur:200ms; --ease:cubic-bezier(.4,0,.2,1);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--navy);color:var(--bone);font-family:'Instrument Sans',sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;min-height:100vh;}
+h1,h2,h3{font-family:'Bodoni Moda',serif;font-weight:500;}
+a{color:inherit;}
+:focus-visible{outline:2px solid var(--gold-light);outline-offset:2px;border-radius:4px;}
+
+.results{display:block;}
+.center-msg{max-width:560px;margin:15vh auto;text-align:center;padding:0 24px;}
+.center-msg h1{font-family:'Bodoni Moda',serif;font-size:1.6rem;margin-bottom:14px;}
+.center-msg p{color:#C7CDD6;font-size:0.95rem;}
+.spinner{width:28px;height:28px;border:2px solid rgba(199,205,214,0.13);border-top-color:#C9A24B;border-radius:50%;
+  animation:spin 0.8s linear infinite;margin:0 auto 20px;}
+@keyframes spin{to{transform:rotate(360deg);}}
+.toolbar-fixed{position:sticky;top:0;z-index:20;background:#0F1530;border-bottom:1px solid rgba(199,205,214,0.13);
+  padding:14px 5vw;display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;}
+.toolbar-fixed .brand{font-family:'Bodoni Moda',serif;font-size:1.05rem;}
+.toolbar-fixed .brand span{color:#C9A24B;}
+.toolbar-actions{display:flex;gap:10px;flex-wrap:wrap;}
+.brand-link{text-decoration:none;color:inherit;}
+.bc-trail a{color:#8B92A0;text-decoration:none;}
+.bc-trail a:hover{color:#EACF92;}
+.bc-trail .bc-cur{color:#EACF92;}
+.btn-outline{background:transparent;border:1px solid rgba(201,162,75,0.38);color:#EACF92;
+  padding:10px 18px;border-radius:8px;font-family:'Bodoni Moda',serif;font-size:0.8rem;cursor:pointer;text-decoration:none;transition:all var(--dur) var(--ease);}
+.btn-outline:hover:not(:disabled){background:#C9A24B;color:#080B17;}
+.btn-outline:disabled{opacity:0.5;cursor:wait;}
+.aviso-parcial{max-width:940px;margin:18px auto 0;padding:12px 18px;border:1px solid rgba(201,162,75,0.38);border-radius:8px;
+  background:rgba(201,162,75,0.08);color:#EACF92;font-size:0.86rem;}
+.login-wrap{max-width:380px;margin:14vh auto;padding:0 20px;}
+.login-wrap h1{font-family:'Bodoni Moda',serif;font-size:1.5rem;margin-bottom:20px;}
+.login-wrap input{width:100%;background:#0F1530;border:1px solid rgba(199,205,214,0.13);color:#F5F3EE;
+  padding:12px 14px;border-radius:8px;font-size:0.9rem;margin-bottom:12px;transition:border-color var(--dur) var(--ease);}
+.login-wrap input:focus{outline:none;border-color:#C9A24B;}
+.login-wrap button{width:100%;background:linear-gradient(135deg,#EACF92,#C9A24B);color:#080B17;
+  padding:13px;border-radius:8px;font-weight:700;border:none;cursor:pointer;transition:opacity var(--dur) var(--ease);}
+.login-wrap button:hover{opacity:0.9;}
+.opciones-admin{max-width:940px;margin:6px auto 0;padding:0 24px;}
+.opciones-admin .oi-campo span{color:#8B92A0;opacity:1;}
+.opciones-admin select{background:#0F1530;color:#F5F3EE;border:1px solid rgba(199,205,214,0.2);}
+.opciones-admin .oi-estado{color:#8B92A0;opacity:1;}
+@media print{
+  body{background:#fff;}
+  .toolbar-fixed, .aviso-parcial, .opciones-admin{display:none !important;}
+}
+</style>
+</head>
+<body>
+
+<div id="loadingScreen" class="center-msg">
+  <div class="spinner"></div>
+  <p>Cargando informe...</p>
+</div>
+
+<div id="loginScreen" style="display:none;">
+  <div class="login-wrap">
+    <h1>Acceso de administrador</h1>
+    <input type="email" id="loginEmail" placeholder="Correo">
+    <input type="password" id="loginPassword" placeholder="Contraseña">
+    <button id="loginBtn">Iniciar sesión</button>
+    <p id="loginError" style="color:#e0a0a0;font-size:0.82rem;margin-top:10px;"></p>
+  </div>
+</div>
+
+<div id="errorScreen" class="center-msg" style="display:none;">
+  <h1 id="errorTitle">No se pudo generar el informe</h1>
+  <p id="errorMsg"></p>
+  <p style="margin-top:20px;"><a href="https://aurzane.com/admin.html" class="btn-outline">Volver al panel</a></p>
+</div>
+
+<div id="reportScreen" style="display:none;">
+  <div class="toolbar-fixed">
+    <div class="brand"><a href="https://aurzane.com/" class="brand-link">AUR<span>Z</span>ANE</a> <span class="bc-trail" style="font-size:0.7rem;"><a href="https://aurzane.com/admin.html">Panel</a> / <a href="portal.html">OVP</a> / <span class="bc-cur">Informe</span></span></div>
+    <div class="toolbar-actions">
+      <a href="https://aurzane.com/admin.html" class="btn-outline">Volver al panel</a>
+      <button class="btn-outline" id="descargarPdfBtn">Descargar PDF</button>
+      <button class="btn-outline" id="descargarWordBtn">Descargar Word</button>
+      <button class="btn-outline" onclick="registrarEventoInforme('imprimir_informe'); window.print();">Imprimir</button>
+    </div>
+  </div>
+  <div id="opcionesInforme" class="opciones-admin"></div>
+  <div id="avisoParcial"></div>
+  <div class="results">
+    <div class="report aurzane-report" id="reportContent"></div>
+  </div>
+</div>
+
+<!-- Lógica de puntuación e interpretación del informe: compartida con portal.html -->
+<script src="informe-shared.js"></script>
+<script src="informe-opciones.js?v=20261018b"></script>
+<script src="informe-v2.js?v=20261018b"></script>
+<script src="informe-export.js?v=20261018b"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+<script>
+const SUPABASE_URL = 'https://chtfpqwrrarfdjcivlad.supabase.co';
+const SUPABASE_KEY = 'sb_publishable___1v6VjDew0l8uGfMyb9Nw_YyCLTPPw';
+const sb = supabase.createClient(SUPABASE_URL, SUPABASE_KEY, {
+  auth: { persistSession: true, autoRefreshToken: true, storageKey: 'aurzane-admin-auth' }
+});
+window.__aurzaneSb = sb;
+if(window.__aurzaneErrBuf.length){ window.__aurzaneErrBuf.forEach(function(en){ sb.from('frontend_error_log').insert(en).then(function(){}, function(){}); }); window.__aurzaneErrBuf.length = 0; }
+
+function showScreen(id){
+  ['loadingScreen','loginScreen','errorScreen','reportScreen'].forEach(s=>{
+    document.getElementById(s).style.display = (s === id) ? 'block' : 'none';
+  });
+}
+function showError(title, msg){
+  document.getElementById('errorTitle').textContent = title;
+  document.getElementById('errorMsg').textContent = msg;
+  showScreen('errorScreen');
+}
+
+document.getElementById('loginBtn').addEventListener('click', async ()=>{
+  const email = document.getElementById('loginEmail').value.trim();
+  const password = document.getElementById('loginPassword').value;
+  const errBox = document.getElementById('loginError');
+  errBox.textContent = '';
+  if(!email || !password){ errBox.textContent = 'Ingresa tu correo y contraseña.'; return; }
+  const { error } = await sb.auth.signInWithPassword({ email, password });
+  if(error){ errBox.textContent = 'No se pudo iniciar sesión: ' + error.message; return; }
+  init();
+});
+
+// Registro de auditoría mínimo: generar/descargar un informe no es un
+// cambio de fila, así que se inserta a mano y solo después de confirmar
+// es_admin(). Si falla, no interrumpe el informe.
+async function registrarEventoInforme(accion){
+  if(!currentSession || !currentClienteId) return;
+  try {
+    const { error } = await sb.from('audit_log').insert({
+      actor_id: currentSession.user.id,
+      actor_role: 'admin',
+      accion,
+      tabla: 'clientes',
+      registro_id: currentClienteId
+    });
+    if(error) console.warn('audit_log no registró el evento:', error.message);
+  } catch(e){ console.error('No se pudo registrar en audit_log:', e); }
+}
+
+let currentSession = null;
+let currentClienteId = null;
+let initInFlight = null;
+
+async function init(){
+  if(initInFlight) return initInFlight;
+  initInFlight = (async ()=>{
+    showScreen('loadingScreen');
+    const { data: { session } } = await sb.auth.getSession();
+    if(!session){ showScreen('loginScreen'); return; }
+    currentSession = session;
+
+    // La sesión sola no alcanza: hay que confirmar que esta cuenta esté
+    // en "administradores" antes de armar el informe de cualquier cliente.
+    const { data: esAdmin, error: adminErr } = await sb.rpc('es_admin');
+    if(adminErr || !esAdmin){
+      await sb.auth.signOut();
+      showError('Sin acceso de administrador', 'Esta cuenta no tiene permisos para generar informes. Inicia sesión con tu cuenta de administrador.');
+      return;
+    }
+
+    const params = new URLSearchParams(window.location.search);
+    const clienteId = params.get('cliente');
+    if(!clienteId){ showError('Falta el identificador', 'Abre esta página desde el botón "Ver informe" de un cliente en el panel admin.'); return; }
+    currentClienteId = clienteId;
+
+    const { data: cliente, error } = await sb.from('clientes')
+      .select('*, activaciones(*)').eq('id', clienteId).maybeSingle();
+    if(error || !cliente){ showError('Cliente no encontrado', 'No pudimos cargar los datos de este cliente.'); return; }
+
+    // El informe se arma con las evaluaciones completadas (de 1 a 6).
+    const incluidos = ovpTestsDelInforme(cliente);
+    if(incluidos.length === 0){
+      showError('Informe todavía no disponible', (cliente.nombre || 'Este cliente') + ' todavía no completó ninguna evaluación.');
+      return;
+    }
+    const pendientes = (cliente.activaciones || []).filter(a => a.activo && !a.completado).map(a => ovpNombreTest[a.test_key] || a.test_key);
+    document.getElementById('avisoParcial').innerHTML = pendientes.length
+      ? '<div class="aviso-parcial">Informe parcial: incluye ' + incluidos.length + ' evaluación(es) completada(s). Pendientes: ' + pendientes.join(', ') + '.</div>'
+      : '';
+
+    const usa = k => incluidos.includes(k);
+    const vacio = Promise.resolve({ data: [] });
+    const [{data: chaRows}, {data: hollandRows}, {data: af5Rows}, {data: chtRows}, {data: aptBRows}, {data: aptARows}, eleccion] = await Promise.all([
+      usa('chaside') ? sb.from('respuestas_chaside').select('*').eq('cliente_id', clienteId) : vacio,
+      usa('holland') ? sb.from('respuestas_holland').select('*').eq('cliente_id', clienteId) : vacio,
+      usa('af5') ? sb.from('respuestas_af5').select('*').eq('cliente_id', clienteId) : vacio,
+      usa('chte') ? sb.from('respuestas_chte').select('*').eq('cliente_id', clienteId) : vacio,
+      usa('apt_b') ? sb.from('respuestas_apt_b').select('*').eq('cliente_id', clienteId) : vacio,
+      usa('apt_a') ? sb.from('respuestas_apt_a').select('*').eq('cliente_id', clienteId) : vacio,
+      OVPOpciones.resolver(sb, cliente)
+    ]);
+
+    (chaRows||[]).forEach(r => { cha_responses[r.pregunta_num] = r.respuesta; });
+    holland_rows = hollandRows || [];
+    (af5Rows||[]).forEach(r => { af5_responses[r.pregunta_num] = r.valor; });
+    (chtRows||[]).forEach(r => { cht_responses[r.pregunta_num] = r.respuesta; });
+    apt_b_rows = aptBRows || [];
+    apt_a_rows = aptARows || [];
+
+    try {
+      generarInformeOVP(cliente, eleccion.membrete, incluidos, eleccion.profesional);
+      // Membrete (AURZANE por defecto, o COMIL 12) y firma del informe.
+      OVPOpciones.selector(document.getElementById('opcionesInforme'), eleccion, async (cambio) => {
+        const { error } = await sb.from('clientes').update({ membrete_id: cambio.membrete_id, profesional_id: cambio.profesional_id }).eq('id', clienteId);
+        if(error) throw new Error(error.message);
+        cliente.membrete_id = cambio.membrete_id;
+        cliente.profesional_id = cambio.profesional_id;
+        const nueva = await OVPOpciones.resolver(sb, cliente);
+        eleccion.membrete = nueva.membrete; eleccion.profesional = nueva.profesional;
+        generarInformeOVP(cliente, nueva.membrete, incluidos, nueva.profesional);
+        registrarEventoInforme('cambiar_membrete_firma');
+      });
+      showScreen('reportScreen');
+      registrarEventoInforme('generar_informe');
+      sb.from('clientes').update({ informe_generado_at: new Date().toISOString() }).eq('id', clienteId).then(function(){}, function(){});
+    } catch(e){
+      console.error(e);
+      window.__aurzaneLogErr && window.__aurzaneLogErr(e && e.message ? e.message : 'Error en generación de informe');
+      showError('Error al generar el informe', 'No pudimos completar la generación del informe. Revisa la conexión e inténtalo nuevamente.');
+    }
+  })();
+  try { return await initInFlight; } finally { initInFlight = null; }
+}
+
+const cha_responses = {};
+const af5_responses = {};
+const cht_responses = {};
+let apt_b_rows = [];
+let apt_a_rows = [];
+let holland_rows = [];
+
+const btnPdf = document.getElementById('descargarPdfBtn');
+const btnWord = document.getElementById('descargarWordBtn');
+btnPdf.addEventListener('click', () => registrarEventoInforme('descargar_informe_pdf'));
+btnWord.addEventListener('click', () => registrarEventoInforme('descargar_informe_word'));
+OVPExport.conectarBotones(btnPdf, btnWord);
+
+sb.auth.onAuthStateChange((_e, session)=>{ if(_e === 'SIGNED_IN' && session) init(); });
+init();
+</script>
+</body>
+</html>

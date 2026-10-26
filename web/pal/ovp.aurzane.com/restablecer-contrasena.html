@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://aurzane.com/aurzane-paleta.js"></script>
+<title>Restablecer contraseña — AURZANE OVP</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,400&family=Instrument+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+<script src="/aurzane-id.js"></script>
+<style>
+  :root{
+    --navy:#080B17; --navy-2:#0F1530; --gold:#C9A24B; --gold-light:#EACF92;
+    --silver:#C7CDD6; --silver-dim:#8B92A0; --bone:#F5F3EE;
+    --line:rgba(199,205,214,0.13); --line-strong:rgba(201,162,75,0.38); --err:#c97070; --ok:#8faf5f;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--navy);color:var(--bone);font-family:'Instrument Sans',sans-serif;min-height:100vh;}
+  h1{font-family:'Fraunces',serif;font-weight:500;font-size:1.6rem;margin-bottom:8px;}
+  .wrap{max-width:420px;margin:14vh auto;padding:0 20px;}
+  p.sub{color:var(--silver-dim);font-size:0.88rem;margin-bottom:28px;}
+  .field{margin-bottom:16px;}
+  .field label{font-family:'IBM Plex Mono',monospace;font-size:0.7rem;color:var(--silver-dim);
+    text-transform:uppercase;letter-spacing:0.04em;display:block;margin-bottom:8px;}
+  .field input{width:100%;background:var(--navy-2);border:1px solid var(--line);color:var(--bone);
+    padding:12px 14px;border-radius:2px;font-size:0.92rem;}
+  .field input:focus{outline:none;border-color:var(--gold);}
+  .msg-box{padding:12px 14px;border-radius:2px;font-size:0.82rem;margin-bottom:16px;display:none;}
+  .msg-box.show{display:block;}
+  .msg-box.error{background:rgba(201,112,112,0.1);border:1px solid var(--err);color:#e0a0a0;}
+  .msg-box.success{background:rgba(143,175,95,0.1);border:1px solid var(--ok);color:#c8dba0;}
+  .btn-gold{background:linear-gradient(135deg,var(--gold-light),var(--gold));color:var(--navy);
+    padding:13px 24px;border-radius:2px;font-weight:700;font-size:0.86rem;border:none;cursor:pointer;width:100%;}
+  .btn-gold:hover{opacity:0.9;}
+  .btn-gold:disabled{opacity:0.4;cursor:not-allowed;}
+  .btn-outline{display:inline-block;text-align:center;margin-top:18px;background:transparent;border:1px solid var(--line-strong);
+    color:var(--gold-light);padding:12px 24px;border-radius:2px;font-family:'IBM Plex Mono',monospace;font-size:0.82rem;text-decoration:none;width:100%;}
+  .btn-outline:hover{background:var(--gold);color:var(--navy);}
+  .aur-breadcrumb{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-family:'IBM Plex Mono',monospace;
+    font-size:0.7rem;color:var(--silver-dim);margin-bottom:26px;}
+  .aur-breadcrumb a{color:var(--silver-dim);text-decoration:none;}
+  .aur-breadcrumb a:hover{color:var(--gold-light);}
+  .aur-breadcrumb .bc-sep{opacity:.5;}
+  .aur-breadcrumb .bc-cur{color:var(--gold-light);}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <nav class="aur-breadcrumb" aria-label="Ruta de navegación">
+    <a href="https://aurzane.com/">AURZANE</a><span class="bc-sep">/</span>
+    <a href="https://aurzane.com/mi-aurzane.html">Mi AURZANE</a><span class="bc-sep">/</span>
+    <a href="portal.html">OVP</a><span class="bc-sep">/</span>
+    <span class="bc-cur">Restablecer contraseña</span>
+  </nav>
+  <div id="formStage">
+    <h1>Crea tu nueva contraseña</h1>
+    <p class="sub">Escribe una contraseña nueva para tu cuenta.</p>
+    <div class="msg-box" id="msgBox"></div>
+    <div class="field">
+      <label>Nueva contraseña</label>
+      <input type="password" id="newPassword" placeholder="••••••••">
+    </div>
+    <div class="field">
+      <label>Confirmar contraseña</label>
+      <input type="password" id="confirmPassword" placeholder="••••••••">
+    </div>
+    <button class="btn-gold" id="saveBtn">Guardar nueva contraseña</button>
+  </div>
+
+  <div id="doneStage" style="display:none;">
+    <h1>¡Listo!</h1>
+    <p class="sub">Tu contraseña se actualizó correctamente.</p>
+    <a href="portal.html" class="btn-outline">Ir a mi proceso →</a>
+  </div>
+
+  <div id="invalidStage" style="display:none;">
+    <h1>Enlace no válido o vencido</h1>
+    <p class="sub">Este enlace de recuperación ya no es válido. Solicita uno nuevo desde el portal.</p>
+    <a href="portal.html" class="btn-outline">Volver al portal →</a>
+  </div>
+</div>
+
+<script>
+  const SUPABASE_URL = 'https://chtfpqwrrarfdjcivlad.supabase.co';
+  const SUPABASE_KEY = 'sb_publishable___1v6VjDew0l8uGfMyb9Nw_YyCLTPPw';
+  // AURZANE ID: sesión compartida entre subdominios (aurzane.com, ovp.aurzane.com, etc.)
+  // vía cookie cross-subdominio, en vez de un cliente aislado con storageKey propio.
+  const sb = crearClienteAurzaneID(SUPABASE_URL, SUPABASE_KEY);
+
+  function showMsg(text, type){
+    const box = document.getElementById('msgBox');
+    box.textContent = text;
+    box.className = 'msg-box show ' + type;
+  }
+
+  // Supabase procesa automáticamente el token de recuperación que viene en la URL
+  // (parámetros después de #) y dispara el evento PASSWORD_RECOVERY si es válido.
+  let recoveryReady = false;
+  sb.auth.onAuthStateChange((event, session)=>{
+    if(event === 'PASSWORD_RECOVERY'){
+      recoveryReady = true;
+    }
+  });
+
+  // Si después de un momento no se detectó un evento de recuperación válido,
+  // y tampoco hay sesión, el enlace probablemente ya venció o es inválido.
+  setTimeout(async ()=>{
+    if(recoveryReady) return;
+    const { data } = await sb.auth.getSession();
+    if(!data.session){
+      document.getElementById('formStage').style.display = 'none';
+      document.getElementById('invalidStage').style.display = 'block';
+    }
+  }, 1500);
+
+  document.getElementById('saveBtn').addEventListener('click', async ()=>{
+    const btn = document.getElementById('saveBtn');
+    const pass1 = document.getElementById('newPassword').value;
+    const pass2 = document.getElementById('confirmPassword').value;
+
+    if(!pass1 || pass1.length < 6){
+      showMsg('La contraseña debe tener al menos 6 caracteres.', 'error');
+      return;
+    }
+    if(pass1 !== pass2){
+      showMsg('Las contraseñas no coinciden.', 'error');
+      return;
+    }
+
+    btn.disabled = true; btn.textContent = 'Guardando...';
+    const { error } = await sb.auth.updateUser({ password: pass1 });
+    btn.disabled = false; btn.textContent = 'Guardar nueva contraseña';
+
+    if(error){
+      showMsg('No se pudo actualizar la contraseña: ' + error.message, 'error');
+      return;
+    }
+    document.getElementById('formStage').style.display = 'none';
+    document.getElementById('doneStage').style.display = 'block';
+  });
+</script>
+</body>
+</html>

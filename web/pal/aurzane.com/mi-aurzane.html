@@ -1,0 +1,1246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://aurzane.com/aurzane-paleta.js"></script>
+<title>Mi AURZANE — Tu cuenta en el ecosistema</title>
+<meta name="description" content="Iniciá sesión con AURZANE ID: una sola cuenta para MIND, NEXUS, LIVE, LEARN y BUILD.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="https://aurzane.com/mi-aurzane.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700;1,6..96,500&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   Mismos tokens que index.html — claro/vainilla por defecto,
+   navy/dorado como "marco" en los dos temas. --a-mundo-rgb da
+   los 5 colores del ecosistema para tintes translúcidos.
+   Fase 5 — rediseño: mismo sistema de marca, salto de calidad
+   visual (header, hero, iconografía propia en vez de fotos
+   genéricas de stock y emojis, jerarquía tipográfica real).
+   ============================================================ */
+:root{
+  --navy-950:#070a14; --navy-900:#0f1530; --navy-800:#161d42; --navy-700:#212b5c;
+  --gold:#c9a24b; --gold-light:#e8cd8f; --gold-deep:#8a6a28;
+  --vanilla:#faf6ec; --ink:#1c1712;
+  --silver:#c7cdd6; --silver-dim:#8b92a0;
+  --a-mind:#c9a24b; --a-nexus:#5f74c9; --a-live:#c06a3f; --a-learn:#5f8c6c; --a-build:#9c6b45;
+  --a-mind-rgb:201,162,75; --a-nexus-rgb:95,116,201; --a-live-rgb:192,106,63; --a-learn-rgb:95,140,108; --a-build-rgb:156,107,69;
+  --radius:14px; --radius-sm:10px;
+  --shadow: 0 14px 32px -18px rgba(40,30,10,.22);
+  --shadow-lg: 0 26px 60px -24px rgba(7,10,20,.34);
+  --font-display:"Bodoni Moda", "Times New Roman", serif;
+  --font-body:"Instrument Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --bg:var(--vanilla); --surface:#fffdf9; --surface-2:#f1e8d6;
+  --text:var(--ink); --text-dim:#6b6153; --border:rgba(28,23,18,.13);
+  --accent:var(--gold); --accent-text:var(--gold-deep);
+}
+:root[data-tema="oscuro"]{
+  --bg:var(--navy-950); --surface:var(--navy-900); --surface-2:var(--navy-800);
+  --text:var(--vanilla); --text-dim:var(--silver-dim); --border:rgba(199,205,214,.14);
+  --accent-text:var(--gold-light);
+  --shadow: 0 18px 40px -20px rgba(7,10,20,.6);
+  --shadow-lg: 0 30px 70px -26px rgba(0,0,0,.65);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font-body);line-height:1.6;transition:background .2s,color .2s;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-text)}
+img{max-width:100%;display:block}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:var(--font-display);font-weight:600;text-wrap:balance;margin:0}
+.visually-hidden{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+svg{display:block}
+.icn{width:1em;height:1em;flex-shrink:0}
+::selection{background:rgba(var(--a-mind-rgb),.32)}
+
+/* ---------- barra superior: fija, con velo, blasón + etiqueta ---------- */
+header.top{position:sticky;top:0;z-index:50;background:color-mix(in srgb, var(--navy-950) 92%, transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+header.top .wrap{padding:15px 20px;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.brandblock{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.logo{font-family:var(--font-display);font-size:1.3rem;letter-spacing:.03em;color:var(--vanilla);text-decoration:none;font-weight:600}
+.logo span{color:var(--gold)}
+.brand-tag{font-family:var(--font-display);font-style:italic;font-size:.76rem;color:var(--silver-dim);letter-spacing:.02em}
+.top-derecha{display:flex;align-items:center;gap:10px}
+.volver{font-size:.82rem;color:var(--silver);text-decoration:none;display:flex;align-items:center;gap:5px}
+.volver:hover{color:var(--gold-light)}
+#btnTemaMi{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);color:var(--vanilla);
+  border-radius:999px;padding:7px 14px 7px 11px;font-family:var(--font-body);font-size:.8rem;cursor:pointer;
+  display:inline-flex;align-items:center;gap:7px}
+#btnTemaMi:hover{border-color:var(--gold);color:var(--gold-light)}
+.topbar-accent{height:3px;background:linear-gradient(90deg,var(--a-mind),var(--a-nexus),var(--a-live),var(--a-learn),var(--a-build))}
+
+main{padding:0 0 90px}
+.lead{color:var(--text-dim);margin:6px 0 0;font-size:1.02rem;max-width:640px}
+.panel-hide{display:none !important}
+
+#vistaCargando.wrap{min-height:52vh;display:flex;flex-direction:column;justify-content:center;align-items:flex-start}
+.carga-marca{font-family:var(--font-display);font-style:italic;color:var(--accent-text);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:8px}
+
+/* ---------- tarjetas base ---------- */
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow)}
+.btn{padding:11px 20px;border-radius:999px;border:none;font-family:var(--font-body);font-weight:600;
+  font-size:.92rem;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:transform .12s ease}
+.btn:active{transform:scale(.97)}
+.btn-gold{background:var(--gold);color:var(--navy-950)}
+.btn-gold:hover{background:var(--gold-light)}
+.btn-ghost{background:transparent;color:var(--text);border:1px solid var(--border)}
+.btn-ghost:hover{border-color:var(--gold);color:var(--accent-text)}
+.btn-chico{padding:7px 14px;font-size:.8rem}
+form{display:flex;flex-direction:column;gap:13px}
+label{font-size:.8rem;color:var(--text-dim);display:block;margin-bottom:5px}
+input[type=email],input[type=password],input[type=text],select{
+  width:100%;padding:10px 12px;border-radius:9px;border:1px solid var(--border);
+  background:var(--surface-2);color:var(--text);font-family:var(--font-body);font-size:.96rem}
+input:focus,select:focus{outline:2px solid var(--gold);outline-offset:1px}
+.msg{font-size:.86rem;border-radius:9px;padding:10px 12px;display:none}
+.msg.ok{display:block;background:rgba(127,168,138,.14);color:#5c8a67;border:1px solid rgba(127,168,138,.3)}
+:root[data-tema="oscuro"] .msg.ok{color:#a7d3b0}
+.msg.error{display:block;background:rgba(217,139,98,.12);color:#a85b34;border:1px solid rgba(217,139,98,.32)}
+:root[data-tema="oscuro"] .msg.error{color:#e6ab8a}
+.enlace-boton{background:none;border:none;padding:0;font:inherit;color:var(--accent-text);cursor:pointer;text-decoration:underline;font-size:.84rem}
+
+/* ---------- héroes de cuenta: textura de marca, sin fotos de stock ---------- */
+.cuenta-hero{position:relative;overflow:hidden;color:#fff;background:var(--navy-950)}
+.hero-texture{position:absolute;inset:0;z-index:0}
+.cuenta-hero .hero-in{position:relative;z-index:1;padding:58px 0 48px}
+
+.hero-texture{background-size:cover;background-position:center}
+.hero-texture::after{content:'';position:absolute;inset:0}
+.cuenta-hero-invitado .hero-texture{
+  background-image:url('https://images.unsplash.com/photo-1643695211836-1b721438f9e6?q=80&w=1600&auto=format&fit=crop');
+  filter:saturate(.65) brightness(.6);
+}
+.cuenta-hero-invitado .hero-texture::after{
+  background:
+    radial-gradient(640px circle at 86% -18%, rgba(var(--a-mind-rgb),.4), transparent 60%),
+    radial-gradient(520px circle at 2% 118%, rgba(var(--a-nexus-rgb),.3), transparent 58%),
+    linear-gradient(100deg, rgba(7,10,20,.94) 0%, rgba(7,10,20,.68) 52%, rgba(7,10,20,.3) 100%),
+    repeating-linear-gradient(115deg, rgba(255,255,255,.035) 0 1px, transparent 1px 36px);
+}
+.eyebrow-hero{font-family:var(--font-display);font-style:italic;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-light);font-weight:500}
+.cuenta-hero-invitado h1{color:#fff;font-size:clamp(2rem,4.6vw,2.9rem);margin-top:12px;line-height:1.08}
+.cuenta-hero-invitado .lead-hero{color:var(--silver);max-width:56ch;margin:14px 0 0;font-size:1.04rem}
+
+.hero-mundos-row{display:flex;flex-wrap:wrap;gap:9px;margin-top:26px}
+.hero-mundo-chip{display:inline-flex;align-items:center;gap:7px;padding:7px 14px 7px 10px;border-radius:999px;
+  background:rgba(var(--rgb),.18);border:1px solid rgba(var(--rgb),.42);color:#fff;font-size:.8rem;font-weight:600;letter-spacing:.01em}
+.hero-mundo-chip .icn{width:15px;height:15px;color:var(--chipcolor,#fff)}
+
+.cuenta-hero-panel .hero-texture{
+  background:linear-gradient(120deg, var(--a-mind), var(--a-nexus), var(--a-live), var(--a-learn), var(--a-build));
+  opacity:.3;
+}
+.cuenta-hero-panel .hero-texture::after{content:'';position:absolute;inset:0;
+  background:linear-gradient(165deg, rgba(7,10,20,.34), rgba(7,10,20,.88) 76%),
+    repeating-linear-gradient(115deg, rgba(255,255,255,.03) 0 1px, transparent 1px 36px);}
+.cuenta-hero-panel .hero-in{padding:42px 0;display:flex;justify-content:space-between;align-items:flex-end;gap:18px;flex-wrap:wrap}
+.perfil-header{display:flex;align-items:center;gap:16px}
+.avatar{width:56px;height:56px;border-radius:50%;background:var(--gold);color:var(--navy-950);
+  display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:1.4rem;flex-shrink:0;font-weight:600}
+.cuenta-hero-panel .avatar{width:68px;height:68px;font-size:1.75rem;box-shadow:0 0 0 3px rgba(255,255,255,.3)}
+.perfil-nombre{font-size:1.6rem}
+.cuenta-hero-panel .perfil-nombre{color:#fff}
+.perfil-email{color:var(--text-dim);font-size:.9rem;margin:3px 0 0}
+.cuenta-hero-panel .perfil-email{color:var(--silver)}
+.chip-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:9px}
+.chip{background:var(--surface-2);border:1px solid var(--border);border-radius:999px;padding:5px 12px;font-size:.78rem;color:var(--text-dim);display:inline-flex;align-items:center;gap:6px}
+.cuenta-hero-panel .chip{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.22);color:#fff}
+.chip .dot{width:6px;height:6px;border-radius:50%;background:#7fbf8f}
+
+.cuenta-buscador{position:relative;max-width:340px;width:100%}
+.cuenta-buscador .icn{position:absolute;left:13px;top:50%;transform:translateY(-50%);color:var(--text-dim);width:16px;height:16px}
+.cuenta-buscador input{padding-left:37px;background:var(--surface)}
+.cuenta-hero-panel .cuenta-buscador input{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.24);color:#fff}
+.cuenta-hero-panel .cuenta-buscador input::placeholder{color:var(--silver-dim)}
+.cuenta-hero-panel .cuenta-buscador .icn{color:var(--silver)}
+
+main .wrap{padding-top:38px}
+
+/* ---------- vista invitado (login/signup) ---------- */
+.invitado-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:40px;align-items:start}
+.invitado-grid h2{font-size:1.3rem}
+.confianza-nota{margin-top:24px;padding-top:20px;border-top:1px solid var(--border);font-size:.84rem;color:var(--text-dim)}
+.confianza-nota b{color:var(--accent-text)}
+
+.tabs{display:flex;gap:6px;margin-bottom:20px;background:var(--surface-2);border-radius:999px;padding:4px}
+.tab{flex:1;text-align:center;padding:9px 12px;border-radius:999px;cursor:pointer;font-size:.9rem;color:var(--text-dim);user-select:none}
+.tab.activa{background:var(--gold);color:var(--navy-950);font-weight:600}
+.credenciales-nota{margin-top:18px;font-size:.82rem;color:var(--text-dim);border-top:1px solid var(--border);padding-top:14px}
+.auth-card{position:relative;overflow:hidden}
+.auth-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--gold),var(--gold-light))}
+@media (max-width:780px){.invitado-grid{grid-template-columns:1fr}}
+
+/* ---------- grilla de la cuenta ---------- */
+.cuenta-chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 22px}
+.chip-filtro{background:var(--surface);border:1px solid var(--border);border-radius:999px;padding:7px 15px;
+  font-size:.84rem;color:var(--text-dim);cursor:pointer;font-family:var(--font-body)}
+.chip-filtro.activo{background:var(--gold);border-color:var(--gold);color:var(--navy-950);font-weight:600}
+
+.grid-cuenta{display:grid;grid-template-columns:repeat(auto-fill,minmax(272px,1fr));gap:16px;padding-bottom:40px}
+.cuenta-card{position:relative;overflow:hidden;padding-top:24px}
+.cuenta-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px}
+.cuenta-card.acc-mind::before{background:var(--a-mind)}
+.cuenta-card.acc-nexus::before{background:var(--a-nexus)}
+.cuenta-card.acc-live::before{background:var(--a-live)}
+.cuenta-card.acc-learn::before{background:var(--a-learn)}
+.cuenta-card.acc-build::before{background:var(--a-build)}
+.cuenta-card.acc-multi::before{background:linear-gradient(90deg,var(--a-mind),var(--a-nexus),var(--a-live),var(--a-learn),var(--a-build))}
+.cuenta-card h3{font-size:1.04rem;margin-bottom:16px;display:flex;align-items:center;gap:10px;font-weight:600}
+.card-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  background:rgba(var(--tint-rgb),.16);color:var(--tint)}
+.card-ic .icn{width:17px;height:17px}
+.cuenta-card .dato{display:flex;justify-content:space-between;gap:10px;padding:9px 0;border-bottom:1px solid var(--border);font-size:.9rem}
+.cuenta-card .dato:last-of-type{border-bottom:none}
+.cuenta-card .dato .k{color:var(--text-dim)}
+.cuenta-link-lista{display:flex;flex-direction:column;gap:2px}
+.cuenta-link-lista a{display:flex;align-items:center;gap:12px;padding:10px 0;text-decoration:none;
+  color:var(--text);font-size:.9rem;border-bottom:1px solid var(--border)}
+.cuenta-link-lista a:last-child{border-bottom:none}
+.cuenta-link-lista a:hover{color:var(--accent-text)}
+.cuenta-link-lista a:hover .link-ic{transform:translateY(-1px)}
+.cuenta-link-lista .txt{flex:1;display:flex;flex-direction:column}
+.cuenta-link-lista .s{font-size:.76rem;color:var(--text-dim);display:block;margin-top:1px}
+.link-ic{width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#fff;transition:transform .15s ease}
+.link-ic .icn{width:16px;height:16px}
+.flecha{color:var(--text-dim);width:15px;height:15px}
+.mundo-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
+.nota-honesta{background:rgba(var(--a-mind-rgb),.08);border:1px solid rgba(var(--a-mind-rgb),.26);border-radius:10px;padding:12px 14px;
+  margin-top:14px;font-size:.8rem;color:var(--text-dim);display:flex;gap:9px;align-items:flex-start}
+.nota-honesta .icn{width:15px;height:15px;flex-shrink:0;margin-top:2px;color:var(--accent-text)}
+.nota-honesta b{color:var(--accent-text)}
+.form-inline{margin-top:14px;padding-top:14px;border-top:1px solid var(--border)}
+.paleta-swatches{display:flex;gap:9px;margin-top:8px}
+.paleta-swatch{width:27px;height:27px;border-radius:999px;border:2px solid transparent;cursor:pointer;padding:0;box-shadow:0 0 0 1px var(--border)}
+.paleta-swatch.activo{border-color:var(--accent-text)}
+#cuentaSinResultados{color:var(--text-dim);font-size:.9rem;padding:20px 0;display:none}
+
+/* ---------- tarjeta "Tus cinco mundos": foto propia de cada mundo + velo de marca ---------- */
+.mundos-mini-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(122px,1fr));gap:10px;margin-top:2px}
+.mundo-tile{position:relative;border-radius:10px;overflow:hidden;aspect-ratio:4/3;text-decoration:none;
+  display:block;background-size:cover;background-position:center;transition:transform .16s ease;
+  border:1px solid rgba(var(--rgb),.4)}
+.mundo-tile::after{content:'';position:absolute;inset:0;
+  background:linear-gradient(200deg, rgba(var(--rgb),.2) 0%, rgba(6,9,18,.36) 42%, rgba(6,9,18,.88) 100%)}
+.mundo-tile:hover{transform:translateY(-2px)}
+.mundo-tile:hover::after{background:linear-gradient(200deg, rgba(var(--rgb),.3) 0%, rgba(6,9,18,.3) 42%, rgba(6,9,18,.82) 100%)}
+.mundo-tile .tile-ic{position:absolute;z-index:1;top:8px;left:8px;width:28px;height:28px;border-radius:8px;
+  background:rgba(8,11,20,.55);backdrop-filter:blur(4px);color:#fff;
+  display:flex;align-items:center;justify-content:center;box-shadow:inset 0 0 0 1px rgba(255,255,255,.18)}
+.mundo-tile .tile-ic .icn{width:15px;height:15px}
+.mundo-tile span.lbl{position:absolute;z-index:1;left:10px;bottom:9px;color:#fff;font-weight:700;font-size:.8rem;letter-spacing:.03em;text-shadow:0 1px 4px rgba(0,0,0,.6)}
+
+/* ---------- salto de calidad v2: portada con foto + insignia en TODAS las
+   tarjetas, franja de datos reales sobre el hero, grilla tipo bento ---------- */
+.cuenta-card{padding:0;display:flex;flex-direction:column}
+.cuenta-card.acc-multi{grid-column:span 2}
+@media (max-width:820px){.cuenta-card.acc-multi{grid-column:span 1}}
+.card-cover{position:relative;height:132px;flex-shrink:0;background-size:cover;background-position:center}
+.card-cover::after{content:'';position:absolute;inset:0;
+  background:linear-gradient(195deg, rgba(var(--tint-rgb),.22) 0%, rgba(6,9,18,.4) 46%, var(--surface) 100%)}
+.card-cover-badge{position:absolute;z-index:1;bottom:-17px;left:20px;width:42px;height:42px;border-radius:11px;
+  background:var(--surface);border:1px solid var(--border);box-shadow:var(--shadow);color:var(--tint);
+  display:flex;align-items:center;justify-content:center}
+.card-cover-badge .icn{width:20px;height:20px}
+.card-body{padding:30px 24px 24px;flex:1;display:flex;flex-direction:column}
+.card-body h3{font-size:1.04rem;font-weight:600;margin-bottom:4px}
+.card-sub{color:var(--text-dim);font-size:.82rem;margin:0 0 16px;line-height:1.5}
+.cuenta-card.acc-multi .card-body{padding-top:24px}
+.cuenta-card.acc-multi .card-body h3{margin-bottom:3px}
+
+.stats-resumen{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;
+  position:relative;z-index:2;margin:-30px 0 30px}
+.stat-tile{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:14px 16px;
+  display:flex;align-items:center;gap:12px;box-shadow:var(--shadow-lg)}
+.stat-ic{width:38px;height:38px;border-radius:10px;flex-shrink:0;display:flex;align-items:center;justify-content:center}
+.stat-ic .icn{width:18px;height:18px}
+.stat-info{min-width:0}
+.stat-k{display:block;font-size:.72rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:.05em}
+.stat-v{display:block;font-size:.96rem;font-weight:700;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+@media (max-width:640px){.stats-resumen{margin-top:16px}}
+
+/* ---------- beneficios de invitado: tarjetas con foto (antes lista de iconos) ---------- */
+.beneficios-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:22px}
+.beneficio-card{position:relative;overflow:hidden;border-radius:var(--radius-sm);background:var(--surface);
+  border:1px solid var(--border);box-shadow:var(--shadow);display:flex;flex-direction:column}
+.beneficio-card .card-cover{height:88px}
+.beneficio-card .card-cover-badge{width:36px;height:36px;bottom:-14px;left:16px}
+.beneficio-card .card-cover-badge .icn{width:17px;height:17px}
+.beneficio-body{padding:24px 16px 16px}
+.beneficio-body h3{font-size:.92rem;margin:0 0 5px;font-family:var(--font-body);font-weight:700}
+.beneficio-body p{font-size:.8rem;color:var(--text-dim);margin:0;line-height:1.5}
+@media (max-width:560px){.beneficios-grid{grid-template-columns:1fr}}
+
+footer.pie{padding:30px 0 34px;text-align:center;color:var(--text-dim);font-size:.82rem;border-top:1px solid var(--border);margin-top:10px}
+footer.pie .pie-links{display:flex;justify-content:center;gap:16px;margin-bottom:10px;flex-wrap:wrap}
+footer.pie a{color:var(--text-dim);text-decoration:none}
+footer.pie a:hover{color:var(--accent-text)}
+
+@media (max-width:560px){
+  .grid-cuenta{grid-template-columns:1fr}
+  .cuenta-hero-panel .hero-in{flex-direction:column;align-items:flex-start}
+  header.top .wrap{flex-wrap:wrap;row-gap:10px}
+}
+
+/* ============================================================
+   Panel tipo plataforma: lateral con perfil y secciones,
+   bienvenida, cursos con progreso real y tarjetas de cuenta.
+   ============================================================ */
+.dash{display:grid;grid-template-columns:250px minmax(0,1fr);gap:26px;max-width:1320px;margin:0 auto;padding:26px 20px 0;align-items:start}
+.dash-side{position:sticky;top:84px;background:var(--surface);border:1px solid var(--border);border-radius:18px;box-shadow:var(--shadow);padding:22px 14px 14px;display:flex;flex-direction:column;gap:14px}
+.ds-perfil{display:flex;flex-direction:column;align-items:center;text-align:center;gap:4px;padding-bottom:14px;border-bottom:1px solid var(--border)}
+.ds-avatar{width:84px;height:84px;font-size:2.1rem;margin-bottom:6px;box-shadow:0 0 0 4px var(--surface),0 0 0 6px rgba(var(--a-mind-rgb),.55)}
+.ds-perfil strong{font-family:var(--font-display);font-size:1.15rem}
+.ds-email{font-size:.8rem;color:var(--text-dim);word-break:break-all}
+.ds-perfil .chip{margin-top:6px}
+.ds-nav{display:flex;flex-direction:column;gap:2px}
+.ds-nav a{display:flex;align-items:center;gap:11px;padding:9px 12px;border-radius:10px;color:var(--text-dim);text-decoration:none;font-size:.92rem;font-weight:500}
+.ds-nav a .icn{width:18px;height:18px}
+.ds-nav a:hover{background:var(--surface-2);color:var(--text)}
+.ds-nav a.activo{background:rgba(var(--a-mind-rgb),.16);color:var(--text);box-shadow:inset 3px 0 0 var(--gold)}
+.ds-salir{display:flex;align-items:center;gap:11px;padding:9px 12px;border-radius:10px;border:0;background:none;color:var(--text-dim);font:inherit;font-size:.9rem;cursor:pointer;border-top:1px solid var(--border);border-radius:0 0 10px 10px}
+.ds-salir:hover{color:#b2473b}
+.dash-main{min-width:0}
+.dash-main .wrap{max-width:none;padding:0}
+.dash-main .cuenta-hero{border-radius:20px;box-shadow:var(--shadow-lg)}
+.dash-main .cuenta-hero .hero-in{padding:34px 34px}
+.dash-main .cuenta-hero-panel .perfil-header .avatar{display:none}
+.saludo{margin:0;color:var(--gold-light);font-size:.9rem;font-weight:600}
+.dash-main main .wrap,.dash-main > .wrap{padding-top:22px}
+.dash-sec{margin:26px 0 30px}
+.pz-lista{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
+.pz-card{display:flex;gap:14px;align-items:center;padding:16px;border-radius:16px;color:#fff;text-decoration:none;background:linear-gradient(135deg,var(--g1),var(--g2));box-shadow:var(--shadow);text-shadow:0 1px 2px rgba(0,0,0,.25);transition:transform .15s}
+.pz-card:hover{transform:translateY(-3px)}
+.pz-em{width:64px;height:64px;flex:none;filter:drop-shadow(0 6px 10px rgba(0,0,0,.3))}
+.pz-card b{display:block;font-size:1.15rem}
+.pz-card small{display:block;opacity:.95;font-size:.82rem}
+.pz-barras{display:flex;gap:4px;margin-top:7px;align-items:flex-end;height:26px}
+.pz-barras i{width:9px;border-radius:3px 3px 0 0;background:rgba(255,255,255,.85)}
+.pz-vacio{background:var(--surface);border:1px dashed var(--border);border-radius:16px;padding:18px;color:var(--text-dim);margin:0;grid-column:1/-1}
+.pz-vacio a{font-weight:600}
+.dash-sec-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:12px}
+.dash-sec-head h2{font-size:1.45rem}
+.dash-sec-head a{font-size:.86rem;font-weight:600;text-decoration:none}
+.curso-card{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);background:var(--surface);border:1px solid var(--border);border-radius:18px;overflow:hidden;box-shadow:var(--shadow);border-top:4px solid var(--a-learn)}
+.cc-media{position:relative;display:block;background:var(--navy-950)}
+.cc-media img{width:100%;height:100%;object-fit:cover;min-height:230px}
+.cc-sello{position:absolute;left:14px;top:14px;background:var(--a-learn);color:#fff;font-size:.74rem;font-weight:700;padding:4px 11px;border-radius:999px}
+.cc-body{padding:22px 24px;display:flex;flex-direction:column;gap:10px}
+.cc-tipo{font-size:.8rem;font-weight:600;color:var(--a-learn)}
+.cc-body h3{font-size:1.4rem;line-height:1.2}
+.cc-body h3 a{color:inherit;text-decoration:none}
+.cc-body h3 a:hover{color:var(--accent-text)}
+.cc-desc{margin:0;color:var(--text-dim);font-size:.92rem}
+.cc-prog{display:flex;align-items:center;gap:12px;font-size:.84rem;color:var(--text-dim)}
+.cc-barra{flex:1;height:8px;border-radius:999px;background:var(--surface-2);overflow:hidden}
+.cc-barra span{display:block;height:100%;width:0;border-radius:999px;background:linear-gradient(90deg,var(--a-learn),var(--gold));transition:width .6s ease}
+.cc-datos{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.cc-datos li{background:var(--surface-2);border-radius:12px;padding:10px 12px;display:flex;flex-direction:column}
+.cc-datos b{font-family:var(--font-display);font-size:1.5rem;line-height:1.1}
+.cc-datos span{font-size:.76rem;color:var(--text-dim)}
+.cc-ultima{margin:0;font-size:.86rem}
+.cc-acc{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.cc-acc .btn{text-decoration:none}
+@media (max-width:1000px){.dash{grid-template-columns:1fr}.dash-side{position:static;flex-direction:row;flex-wrap:wrap;align-items:center}.ds-perfil{flex-direction:row;border:0;padding:0;text-align:left;gap:10px}.ds-avatar{width:48px;height:48px;font-size:1.3rem;margin:0}.ds-perfil .chip,.ds-email{display:none}.ds-nav{flex-direction:row;overflow-x:auto;flex:1 1 100%}.ds-nav a{white-space:nowrap}.ds-salir{display:none}}
+@media (max-width:760px){.curso-card{grid-template-columns:1fr}.cc-media img{min-height:0;aspect-ratio:16/9}.cc-datos{grid-template-columns:1fr 1fr 1fr}.dash-main .cuenta-hero .hero-in{padding:24px 20px}}
+
+/* ===== color v3: panel más vivo ===== */
+:root{--v-teal:#1f9e99;--v-indigo:#4f5fd6;--v-violeta:#8a5cf0;--v-coral:#e8704a;--v-rosa:#d6457f;--v-verde:#2f9a62;--v-ambar:#e0a32e}
+body{background:
+  radial-gradient(900px 520px at 100% 0%,rgba(79,95,214,.10),transparent 60%),
+  radial-gradient(800px 520px at 0% 35%,rgba(31,158,153,.10),transparent 60%),
+  radial-gradient(800px 520px at 70% 100%,rgba(232,112,74,.09),transparent 60%),var(--bg);background-attachment:fixed}
+.dash-main .cuenta-hero-panel .hero-texture{background:linear-gradient(115deg,#26307e 0%,#5b3bb8 42%,#1c8f99 100%);opacity:1}
+.dash-main .cuenta-hero-panel .hero-texture::after{background:radial-gradient(500px 260px at 85% 20%,rgba(255,180,120,.30),transparent 70%),radial-gradient(420px 240px at 10% 110%,rgba(120,240,220,.25),transparent 70%),repeating-linear-gradient(115deg,rgba(255,255,255,.04) 0 1px,transparent 1px 36px)}
+.dash-main .cuenta-hero-panel .saludo{color:#ffd9a0}
+.dash-main .cuenta-hero-panel .perfil-email{color:rgba(255,255,255,.8)}
+.avatar{background:linear-gradient(135deg,#f3c969,#e8704a)!important;color:#fff!important}
+.ds-avatar{box-shadow:0 0 0 4px var(--surface),0 0 0 7px rgba(138,92,240,.55)}
+.ds-nav a:nth-child(1) .icn{color:var(--v-indigo)}.ds-nav a:nth-child(2) .icn{color:var(--v-teal)}.ds-nav a:nth-child(3) .icn{color:var(--v-violeta)}
+.ds-nav a:nth-child(4) .icn{color:var(--v-coral)}.ds-nav a:nth-child(5) .icn{color:var(--v-ambar)}.ds-nav a:nth-child(6) .icn{color:var(--v-rosa)}
+.ds-nav a:nth-child(7) .icn{color:var(--v-verde)}.ds-nav a:nth-child(8) .icn{color:var(--v-violeta)}.ds-nav a:nth-child(9) .icn{color:var(--v-teal)}
+.ds-nav a.activo{background:linear-gradient(90deg,rgba(79,95,214,.18),rgba(31,158,153,.10));box-shadow:inset 3px 0 0 var(--v-indigo)}
+.ds-nav a:hover{background:rgba(138,92,240,.10)}
+.stats-resumen .stat-tile{border:none}
+.stats-resumen .stat-tile:nth-child(5n+1){--v:var(--v-indigo)}.stats-resumen .stat-tile:nth-child(5n+2){--v:var(--v-coral)}
+.stats-resumen .stat-tile:nth-child(5n+3){--v:var(--v-verde)}.stats-resumen .stat-tile:nth-child(5n+4){--v:var(--v-violeta)}.stats-resumen .stat-tile:nth-child(5n+5){--v:var(--v-teal)}
+.stats-resumen .stat-tile{background:linear-gradient(135deg,color-mix(in srgb,var(--v) 20%,var(--surface)),color-mix(in srgb,var(--v) 5%,var(--surface)))}
+.stats-resumen .stat-ic{background:var(--v)!important;color:#fff!important;box-shadow:0 6px 14px -6px var(--v)}
+.stats-resumen .stat-v{color:color-mix(in srgb,var(--v) 70%,var(--text))}
+.curso-card{border-top:5px solid transparent;border-image:linear-gradient(90deg,var(--v-teal),var(--v-violeta),var(--v-coral)) 1;border-image-slice:1 0 0 0}
+.cc-datos li:nth-child(1){background:color-mix(in srgb,var(--v-teal) 16%,var(--surface))}.cc-datos li:nth-child(1) b{color:var(--v-teal)}
+.cc-datos li:nth-child(2){background:color-mix(in srgb,var(--v-violeta) 16%,var(--surface))}.cc-datos li:nth-child(2) b{color:var(--v-violeta)}
+.cc-datos li:nth-child(3){background:color-mix(in srgb,var(--v-coral) 16%,var(--surface))}.cc-datos li:nth-child(3) b{color:var(--v-coral)}
+#ccContinuar{background:linear-gradient(135deg,#f3c969,#e8704a);border-color:transparent;color:#1a1530}
+.chip-filtro:nth-child(6n+2){--v:var(--v-indigo)}.chip-filtro:nth-child(6n+3){--v:var(--v-teal)}.chip-filtro:nth-child(6n+4){--v:var(--v-coral)}
+.chip-filtro:nth-child(6n+5){--v:var(--v-rosa)}.chip-filtro:nth-child(6n){--v:var(--v-verde)}.chip-filtro:nth-child(6n+1){--v:var(--v-violeta)}
+.chip-filtro{border-color:color-mix(in srgb,var(--v) 45%,transparent);color:color-mix(in srgb,var(--v) 80%,var(--text))}
+.chip-filtro:hover{background:color-mix(in srgb,var(--v) 12%,var(--surface))}
+.chip-filtro.activo{background:var(--v);border-color:var(--v);color:#fff}
+#cardPerfil{--v:var(--v-violeta)}#cardMundos{--v:var(--v-indigo)}#cardProcesoOVP{--v:var(--v-ambar)}#cardHerramientas{--v:var(--v-teal)}
+#cardSeguridad{--v:var(--v-coral)}#cardPreferencias{--v:var(--v-rosa)}#cardAyuda{--v:var(--v-verde)}
+.cuenta-card[id]{background:linear-gradient(170deg,color-mix(in srgb,var(--v) 12%,var(--surface)) 0%,var(--surface) 55%);border-color:color-mix(in srgb,var(--v) 28%,var(--border))}
+.cuenta-card[id]::before{background:var(--v)!important;height:5px}
+.cuenta-card[id] .card-cover::after{background:linear-gradient(195deg,color-mix(in srgb,var(--v) 45%,transparent) 0%,rgba(6,9,18,.25) 46%,color-mix(in srgb,var(--v) 12%,var(--surface)) 100%)}
+.cuenta-card[id] .card-cover-badge{background:var(--v);color:#fff;border:none;box-shadow:0 8px 18px -8px var(--v)}
+.cuenta-card[id] h3{color:color-mix(in srgb,var(--v) 65%,var(--text))}
+.cuenta-card[id] .btn-chico,.cuenta-card[id] .btn-gold{background:var(--v);border-color:var(--v);color:#fff}
+.cc-lista{display:grid;gap:18px}
+</style>
+<meta name="google-adsense-account" content="ca-pub-8763758728010451">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8763758728010451" crossorigin="anonymous"></script>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <div class="brandblock">
+      <a class="logo" href="/index.html">AUR<span>Z</span>ANE</a>
+      <span class="brand-tag">Mi cuenta · Ecosistema AURZANE</span>
+    </div>
+    <div class="top-derecha">
+      <a class="volver" href="/index.html">
+        <svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 5 12l6 7M5 12h14"/></svg>
+        Inicio
+      </a>
+      <button id="btnTemaMi" onclick="alternarTemaMi()" aria-label="Cambiar tema claro/oscuro">
+        <svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13.2A8.2 8.2 0 1110.8 4a6.6 6.6 0 009.2 9.2z"/></svg>
+        Tema
+      </button>
+    </div>
+  </div>
+</header>
+<div class="topbar-accent"></div>
+
+<main>
+
+  <div id="vistaCargando" class="wrap">
+    <p class="carga-marca">AURZANE ID</p>
+    <h1>Mi AURZANE</h1>
+    <p class="lead">Cargando tu sesión…</p>
+  </div>
+
+  <div id="vistaInvitado" class="panel-hide">
+    <section class="cuenta-hero cuenta-hero-invitado">
+      <div class="hero-texture" aria-hidden="true"></div>
+      <div class="wrap hero-in">
+        <p class="eyebrow-hero">AURZANE ID</p>
+        <h1>Una cuenta para todo el ecosistema</h1>
+        <p class="lead-hero">Iniciá sesión una sola vez y accedé a MIND, NEXUS, LIVE, LEARN y BUILD — sin crear una cuenta distinta en cada mundo.</p>
+        <div class="hero-mundos-row">
+          <span class="hero-mundo-chip" style="--rgb:var(--a-mind-rgb)"><svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/></svg>MIND</span>
+          <span class="hero-mundo-chip" style="--rgb:var(--a-nexus-rgb)"><svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2"/><circle cx="18" cy="6" r="2"/><circle cx="12" cy="18" r="2"/><path d="M7.6 7.1 10.6 16M16.4 7.1 13.4 16M8 6h8"/></svg>NEXUS</span>
+          <span class="hero-mundo-chip" style="--rgb:var(--a-live-rgb)"><svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M13 3 5 13.5h5.5L11 21l8-11h-5.5z"/></svg>LIVE</span>
+          <span class="hero-mundo-chip" style="--rgb:var(--a-learn-rgb)"><svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 9.5 12 5l9.5 4.5L12 14z"/><path d="M6.5 11.6v4.4c0 1.4 2.5 2.5 5.5 2.5s5.5-1.1 5.5-2.5v-4.4M21.5 9.5v6"/></svg>LEARN</span>
+          <span class="hero-mundo-chip" style="--rgb:var(--a-build-rgb)"><svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5 21 8.5 12 13.5 3 8.5z"/><path d="M3 13l9 5 9-5M3 17.5l9 5 9-5"/></svg>BUILD</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="wrap">
+      <div class="stats-resumen">
+        <div class="stat-tile"><span class="stat-ic" style="background:rgba(var(--a-mind-rgb),.16);color:var(--a-mind)"><svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.4 2.3 3.7 5.3 3.7 8.5s-1.3 6.2-3.7 8.5c-2.4-2.3-3.7-5.3-3.7-8.5S9.6 5.8 12 3.5z"/></svg></span><div class="stat-info"><span class="stat-k">Mundos conectados</span><span class="stat-v">5 mundos, 1 cuenta</span></div></div>
+        <div class="stat-tile"><span class="stat-ic" style="background:rgba(var(--a-nexus-rgb),.16);color:var(--a-nexus)"><svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.5" cy="15.5" r="4.5"/><path d="M10.6 12.4 20 3m-3 3 2 2m-6-2 2 2"/></svg></span><div class="stat-info"><span class="stat-k">Cuentas que necesitás</span><span class="stat-v">1 sola, para todo</span></div></div>
+        <div class="stat-tile"><span class="stat-ic" style="background:rgba(var(--a-live-rgb),.16);color:var(--a-live)"><svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5.5" y="10.5" width="13" height="9" rx="1.8"/><path d="M8.3 10.5V7.8a3.7 3.7 0 017.4 0v2.7"/></svg></span><div class="stat-info"><span class="stat-k">Tus datos clínicos de OVP</span><span class="stat-v">Aislados y privados</span></div></div>
+      </div>
+      <div class="invitado-grid">
+        <div>
+          <h2>Qué podés hacer con AURZANE ID</h2>
+          <div class="beneficios-grid">
+            <div class="beneficio-card">
+              <div class="card-cover" style="--tint:var(--a-mind);--tint-rgb:var(--a-mind-rgb);background-image:url('https://images.unsplash.com/photo-1677951570313-b0750351c461?q=80&amp;w=500&amp;auto=format&amp;fit=crop')">
+                <span class="card-cover-badge"><svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.5" cy="15.5" r="4.5"/><path d="M10.6 12.4 20 3m-3 3 2 2m-6-2 2 2"/></svg></span>
+              </div>
+              <div class="beneficio-body"><h3>Un solo login</h3><p>Para aurzane.com y cada mundo que ya tenga AURZANE ID conectado — sin crear una cuenta distinta en cada uno.</p></div>
+            </div>
+            <div class="beneficio-card">
+              <div class="card-cover" style="--tint:var(--a-nexus);--tint-rgb:var(--a-nexus-rgb);background-image:url('https://images.unsplash.com/photo-1597945161640-9366e6d4253b?q=80&amp;w=500&amp;auto=format&amp;fit=crop')">
+                <span class="card-cover-badge"><svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5l2.6 5.6 6 .7-4.4 4.2 1.1 6-5.3-3-5.3 3 1.1-6L3.4 9.8l6-.7z"/></svg></span>
+              </div>
+              <div class="beneficio-body"><h3>Tu mundo favorito guardado</h3><p>Para que la página te lleve directo a lo que más usás.</p></div>
+            </div>
+            <div class="beneficio-card">
+              <div class="card-cover" style="--tint:var(--a-live);--tint-rgb:var(--a-live-rgb);background-image:url('https://images.unsplash.com/photo-1567563549378-81212b9631e4?q=80&amp;w=500&amp;auto=format&amp;fit=crop')">
+                <span class="card-cover-badge"><svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/></svg></span>
+              </div>
+              <div class="beneficio-body"><h3>Accesos directos</h3><p>Al Sistema OVP, Universidades, la Biblioteca y el Research Hub, todos desde un mismo panel.</p></div>
+            </div>
+            <div class="beneficio-card">
+              <div class="card-cover" style="--tint:var(--a-learn);--tint-rgb:var(--a-learn-rgb);background-image:url('https://images.unsplash.com/photo-1777846741247-54042e6482a7?q=80&amp;w=500&amp;auto=format&amp;fit=crop')">
+                <span class="card-cover-badge"><svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.8"/><circle cx="12" cy="12" r="1.2" fill="currentColor" stroke="none"/></svg></span>
+              </div>
+              <div class="beneficio-body"><h3>Tu proceso de orientación OVP</h3><p>Con el mismo login: iniciá sesión acá y entrás directo, sin otro formulario.</p></div>
+            </div>
+          </div>
+          <p class="confianza-nota">Ya en uso en <b>MIND</b> (Sistema OVP), <b>NEXUS</b> (Universidades y Carreras), <b>LEARN</b> y <b>BUILD</b> — una sola cuenta abre los cinco mundos.</p>
+        </div>
+
+        <div>
+          <div class="card auth-card">
+            <div class="tabs">
+              <div class="tab activa" id="tabLogin" onclick="mostrarTab('login')">Iniciar sesión</div>
+              <div class="tab" id="tabSignup" onclick="mostrarTab('signup')">Crear cuenta</div>
+            </div>
+
+            <div id="msgAuth" class="msg" role="alert" aria-live="assertive"></div>
+
+            <form id="formLogin">
+              <div>
+                <label for="loginEmail">Correo</label>
+                <input type="email" id="loginEmail" required autocomplete="email">
+              </div>
+              <div>
+                <label for="loginPass">Contraseña</label>
+                <input type="password" id="loginPass" required autocomplete="current-password">
+              </div>
+              <button class="btn btn-gold" type="submit">Entrar</button>
+              <button type="button" class="enlace-boton" style="text-align:left" onclick="mostrarRecuperar()">¿Olvidaste tu contraseña?</button>
+            </form>
+
+            <form id="formRecuperar" class="panel-hide">
+              <p style="font-size:.86rem;color:var(--text-dim);margin:0">Te mandamos un enlace para elegir una contraseña nueva.</p>
+              <div>
+                <label for="recuperarEmail">Correo</label>
+                <input type="email" id="recuperarEmail" required autocomplete="email">
+              </div>
+              <button class="btn btn-gold" type="submit">Enviar enlace</button>
+              <button type="button" class="enlace-boton" style="text-align:left" onclick="mostrarTab('login')">Volver a iniciar sesión</button>
+            </form>
+
+            <form id="formSignup" class="panel-hide">
+              <div>
+                <label for="signupNombre">Nombre</label>
+                <input type="text" id="signupNombre" required autocomplete="name">
+              </div>
+              <div>
+                <label for="signupEmail">Correo</label>
+                <input type="email" id="signupEmail" required autocomplete="email">
+              </div>
+              <div>
+                <label for="signupPass">Contraseña</label>
+                <input type="password" id="signupPass" required minlength="6" autocomplete="new-password">
+              </div>
+              <button class="btn btn-gold" type="submit">Crear mi cuenta</button>
+            </form>
+
+            <p class="credenciales-nota">Este mismo correo y contraseña abren también tu Portal OVP
+              (<a href="https://ovp.aurzane.com/portal.html" target="_blank" rel="noopener">ovp.aurzane.com</a>) — es
+              una sola cuenta AURZANE ID, con un solo inicio de sesión para todo el ecosistema.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="vistaRecuperarPass" class="wrap panel-hide">
+    <h1>Elegí tu nueva contraseña</h1>
+    <p class="lead">Veniste desde el enlace que te mandamos por correo.</p>
+    <div class="card" style="max-width:420px;margin-top:22px">
+      <form id="formNuevaPass">
+        <div>
+          <label for="nuevaPass">Nueva contraseña</label>
+          <input type="password" id="nuevaPass" required minlength="6" autocomplete="new-password">
+        </div>
+        <button class="btn btn-gold" type="submit">Guardar contraseña</button>
+      </form>
+      <div id="msgNuevaPass" class="msg" role="alert" aria-live="assertive" style="margin-top:12px"></div>
+    </div>
+  </div>
+
+  <div id="vistaPanel" class="panel-hide">
+  <div class="dash">
+    <aside class="dash-side" aria-label="Tu cuenta">
+      <div class="ds-perfil">
+        <div class="avatar ds-avatar" id="avatarSide" aria-hidden="true">A</div>
+        <strong id="sideNombre">—</strong>
+        <span class="ds-email" id="sideEmail">—</span>
+        <span class="chip"><span class="dot"></span>AURZANE ID activo</span>
+      </div>
+      <nav class="ds-nav" aria-label="Secciones de tu cuenta"><a href="#vistaPanel" data-nav><svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11.5 12 5l8 6.5V20H4z"/><path d="M10 20v-5h4v5"/></svg><span>Inicio</span></a><a href="#secCursos" data-nav><svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 9.5 12 5l9.5 4.5L12 14z"/><path d="M6.5 11.6v4.4c0 1.4 2.5 2.5 5.5 2.5s5.5-1.1 5.5-2.5v-4.4"/></svg><span>Mis cursos</span></a><a href="#personalidad" data-nav><svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5 20 8v8l-8 4.5L4 16V8z"/><path d="M12 8.5 15.5 10.5v3.5L12 16l-3.5-2v-3.5z"/></svg><span>Personalidad</span></a><a href="#cardProcesoOVP" data-nav><svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.8"/></svg><span>Orientación vocacional</span></a><a href="#cardMundos" data-nav><svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 2.5 14.4 0 17M12 3.5c-2.5 2.6-2.5 14.4 0 17"/></svg><span>Mundos</span></a><a href="#cardHerramientas" data-nav><svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 6.5a4 4 0 0 0-5.3 5.3L4 17l3 3 5.2-5.2a4 4 0 0 0 5.3-5.3l-2.4 2.4-2.6-.4-.4-2.6z"/></svg><span>Herramientas</span></a><a href="#cardPerfil" data-nav><svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.6"/><path d="M5 20c.8-3.6 3.6-5.6 7-5.6s6.2 2 7 5.6"/></svg><span>Perfil</span></a><a href="#cardSeguridad" data-nav><svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="5.5" y="10.5" width="13" height="9" rx="1.8"/><path d="M8.3 10.5V8a3.7 3.7 0 0 1 7.4 0v2.5"/></svg><span>Seguridad</span></a><a href="#cardPreferencias" data-nav><svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5a8.5 8.5 0 1 0 0 17c1 0 1.6-.8 1.6-1.6 0-1.3-1-1.6-1-2.6 0-.9.7-1.6 1.6-1.6h2.1a4.2 4.2 0 0 0 4.2-4.2c0-3.9-3.8-7-8.5-7z"/></svg><span>Preferencias</span></a><a href="#cardAyuda" data-nav><svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5h16v11H9l-4 3.5v-3.5H4z"/></svg><span>Ayuda</span></a></nav>
+      <button type="button" class="ds-salir" onclick="document.getElementById('btnSalir').click()"><svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4H6a2 2 0 00-2 2v12a2 2 0 002 2h3M14 8l4 4-4 4M18 12H9"/></svg><span>Cerrar sesión</span></button>
+    </aside>
+    <div class="dash-main">
+    <section class="cuenta-hero cuenta-hero-panel">
+      <div class="hero-texture" aria-hidden="true"></div>
+      <div class="wrap hero-in">
+        <div class="perfil-header">
+          <div class="avatar" id="avatarInicial">A</div>
+          <div>
+            <p class="saludo" id="panelSaludo">Hola</p><h1 class="perfil-nombre" id="panelNombre">—</h1>
+            <p class="perfil-email" id="panelEmail">—</p>
+            <div class="chip-row">
+              <span class="chip"><span class="dot"></span>AURZANE ID activo</span>
+              <span class="chip" id="chipDesde">—</span>
+            </div>
+          </div>
+        </div>
+        <div class="cuenta-buscador">
+          <svg class="icn" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M20 20l-4.8-4.8"/></svg>
+          <label for="buscadorCuenta" class="visually-hidden">Buscar en tu cuenta</label>
+          <input id="buscadorCuenta" type="text" placeholder="Buscar en tu cuenta…" oninput="filtrarCuenta()">
+        </div>
+      </div>
+    </section>
+
+    <div class="wrap">
+
+      <div class="stats-resumen">
+        <div class="stat-tile"><span class="stat-ic" style="background:rgba(var(--a-mind-rgb),.16);color:var(--a-mind)"><svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="16" rx="2.2"/><path d="M3.5 10h17M8 3.2v3.4M16 3.2v3.4"/></svg></span><div class="stat-info"><span class="stat-k">Miembro desde</span><span class="stat-v" id="statDesde">—</span></div></div>
+        <div class="stat-tile"><span class="stat-ic" style="background:rgba(var(--a-live-rgb),.16);color:var(--a-live)"><svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5.5" y="10.5" width="13" height="9" rx="1.8"/><path d="M8.3 10.5V7.8a3.7 3.7 0 017.4 0v2.7"/></svg></span><div class="stat-info"><span class="stat-k">Correo</span><span class="stat-v" id="statVerificado">—</span></div></div>
+        <div class="stat-tile"><span class="stat-ic" style="background:rgba(var(--a-learn-rgb),.16);color:var(--a-learn)"><svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5l2.6 5.6 6 .7-4.4 4.2 1.1 6-5.3-3-5.3 3 1.1-6L3.4 9.8l6-.7z"/></svg></span><div class="stat-info"><span class="stat-k">Mundo favorito</span><span class="stat-v" id="statMundoFav">—</span></div></div>
+        <div class="stat-tile"><span class="stat-ic" style="background:rgba(var(--a-nexus-rgb),.16);color:var(--a-nexus)"><svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.8"/><circle cx="12" cy="12" r="1.2" fill="currentColor" stroke="none"/></svg></span><div class="stat-info"><span class="stat-k">Proceso OVP</span><span class="stat-v" id="statProceso">—</span></div></div>
+        <div class="stat-tile"><span class="stat-ic" style="background:rgba(var(--a-learn-rgb),.16);color:var(--a-learn)"><svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 9.5 12 5l9.5 4.5L12 14z"/><path d="M6.5 11.6v4.4c0 1.4 2.5 2.5 5.5 2.5s5.5-1.1 5.5-2.5v-4.4"/></svg></span><div class="stat-info"><span class="stat-k">Mis cursos</span><span class="stat-v" id="statCurso">—</span></div></div>
+      </div>
+
+      <section class="dash-sec" id="secCursos" aria-labelledby="tCursos">
+        <div class="dash-sec-head"><h2 id="tCursos">Mis cursos</h2><a href="https://learn.aurzane.com/#cursos">Ver todos los cursos</a></div>
+        <div class="cc-lista" id="ccLista"></div>
+      </section>
+
+      <section class="dash-sec" id="personalidad" aria-labelledby="tPers">
+        <div class="dash-sec-head"><h2 id="tPers">Mis tests de personalidad</h2><a href="https://mind.aurzane.com/test-de-personalidad/">Hacer el test</a></div>
+        <div class="pz-lista" id="pzLista"><p class="pz-vacio">Cargando…</p></div>
+      </section>
+
+      <div class="cuenta-chips" id="cuentaChips"></div>
+
+      <div class="grid-cuenta" id="gridCuenta">
+
+        <div class="card cuenta-card acc-mind" id="cardPerfil" data-categoria="Perfil" data-texto="perfil nombre correo mundo favorito editar datos">
+          <div class="card-cover" style="--tint:var(--a-mind);--tint-rgb:var(--a-mind-rgb);background-image:url('https://images.unsplash.com/photo-1644258676710-ffb99d7d7a1b?q=80&amp;w=600&amp;auto=format&amp;fit=crop')">
+            <span class="card-cover-badge"><svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.6"/><path d="M4.8 20c1-3.6 4-5.6 7.2-5.6s6.2 2 7.2 5.6"/></svg></span>
+          </div>
+          <div class="card-body">
+            <h3>Tu perfil</h3>
+            <p class="card-sub">Cómo te ven los cinco mundos del ecosistema.</p>
+            <div class="dato"><span class="k">Nombre</span><span id="datoNombre">—</span></div>
+            <div class="dato"><span class="k">Correo</span><span id="datoEmail">—</span></div>
+            <div class="dato"><span class="k">Cuenta creada</span><span id="datoCreada">—</span></div>
+            <div class="dato">
+              <span class="k">Mundo favorito</span>
+              <select id="mundoFavorito" style="width:auto;padding:6px 10px">
+                <option value="">Sin elegir</option>
+                <option value="mind">MIND</option>
+                <option value="nexus">NEXUS</option>
+                <option value="live">LIVE</option>
+                <option value="learn">LEARN</option>
+                <option value="build">BUILD</option>
+              </select>
+            </div>
+            <div style="margin-top:14px"><button class="btn btn-ghost btn-chico" id="btnGuardarPerfil">Guardar cambios</button></div>
+            <div id="msgPanel" class="msg" role="alert" aria-live="assertive" style="margin-top:10px"></div>
+          </div>
+        </div>
+
+        <div class="card cuenta-card acc-multi" id="cardMundos" data-categoria="Mundos" data-texto="mundos mind nexus live learn build explorar ecosistema">
+          <div class="card-body">
+          <h3><span class="card-ic" style="--tint:var(--gold);--tint-rgb:var(--a-mind-rgb)"><svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.4 2.3 3.7 5.3 3.7 8.5s-1.3 6.2-3.7 8.5c-2.4-2.3-3.7-5.3-3.7-8.5S9.6 5.8 12 3.5z"/></svg></span>Tus cinco mundos</h3>
+          <p class="card-sub">Un clic te lleva directo, ya con tu sesión activa.</p>
+          <div class="mundos-mini-grid">
+            <a class="mundo-tile" style="--rgb:var(--a-mind-rgb);background-image:url('https://images.unsplash.com/photo-1755210888583-6e0dc16ee35b?q=80&amp;w=600&amp;auto=format&amp;fit=crop')" href="https://mind.aurzane.com/" target="_blank" rel="noopener">
+              <span class="tile-ic"><svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/></svg></span>
+              <span class="lbl">MIND</span>
+            </a>
+            <a class="mundo-tile" style="--rgb:var(--a-nexus-rgb);background-image:url('https://images.unsplash.com/photo-1639322537228-f710d846310a?q=80&amp;w=600&amp;auto=format&amp;fit=crop')" href="https://nexus.aurzane.com/" target="_blank" rel="noopener">
+              <span class="tile-ic"><svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2"/><circle cx="18" cy="6" r="2"/><circle cx="12" cy="18" r="2"/><path d="M7.6 7.1 10.6 16M16.4 7.1 13.4 16M8 6h8"/></svg></span>
+              <span class="lbl">NEXUS</span>
+            </a>
+            <a class="mundo-tile" style="--rgb:var(--a-live-rgb);background-image:url('https://images.unsplash.com/photo-1611080402167-ed75bae6df32?q=80&amp;w=600&amp;auto=format&amp;fit=crop')" href="https://live.aurzane.com/" target="_blank" rel="noopener">
+              <span class="tile-ic"><svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M13 3 5 13.5h5.5L11 21l8-11h-5.5z"/></svg></span>
+              <span class="lbl">LIVE</span>
+            </a>
+            <a class="mundo-tile" style="--rgb:var(--a-learn-rgb);background-image:url('https://images.unsplash.com/photo-1604866830893-c13cafa515d5?q=80&amp;w=600&amp;auto=format&amp;fit=crop')" href="https://learn.aurzane.com/" target="_blank" rel="noopener">
+              <span class="tile-ic"><svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 9.5 12 5l9.5 4.5L12 14z"/><path d="M6.5 11.6v4.4c0 1.4 2.5 2.5 5.5 2.5s5.5-1.1 5.5-2.5v-4.4M21.5 9.5v6"/></svg></span>
+              <span class="lbl">LEARN</span>
+            </a>
+            <a class="mundo-tile" style="--rgb:var(--a-build-rgb);background-image:url('https://images.unsplash.com/photo-1649688066830-a0cf04d1bc41?q=80&amp;w=600&amp;auto=format&amp;fit=crop')" href="https://build.aurzane.com/" target="_blank" rel="noopener">
+              <span class="tile-ic"><svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5 21 8.5 12 13.5 3 8.5z"/><path d="M3 13l9 5 9-5M3 17.5l9 5 9-5"/></svg></span>
+              <span class="lbl">BUILD</span>
+            </a>
+          </div>
+          </div>
+        </div>
+
+        <div class="card cuenta-card acc-mind" id="cardProcesoOVP" data-categoria="Herramientas" data-texto="ovp mind proceso orientacion vocacional evaluaciones plan estado continuar">
+          <div class="card-cover" style="--tint:var(--a-mind);--tint-rgb:var(--a-mind-rgb);background-image:url('https://images.unsplash.com/photo-1687338218396-41ee740d0168?q=80&amp;w=600&amp;auto=format&amp;fit=crop')">
+            <span class="card-cover-badge"><svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.8"/><circle cx="12" cy="12" r="1.2" fill="currentColor" stroke="none"/></svg></span>
+          </div>
+          <div class="card-body">
+            <h3>Mi proceso de orientación</h3>
+            <p class="card-sub">Tu evaluación vocacional, en un solo lugar.</p>
+            <div id="procesoOVPBody">
+              <p style="font-size:.86rem;color:var(--text-dim);margin:0">Cargando el estado de tu proceso…</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card cuenta-card acc-nexus" id="cardHerramientas" data-categoria="Herramientas" data-texto="universidades carreras biblioteca library research hub dashboards herramientas">
+          <div class="card-cover" style="--tint:var(--a-nexus);--tint-rgb:var(--a-nexus-rgb);background-image:url('https://images.unsplash.com/photo-1761824197923-283b689fe7aa?q=80&amp;w=600&amp;auto=format&amp;fit=crop')">
+            <span class="card-cover-badge"><svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/></svg></span>
+          </div>
+          <div class="card-body">
+            <h3>Herramientas y recursos</h3>
+            <p class="card-sub">Todo lo que ya podés usar con tu misma cuenta.</p>
+            <div class="cuenta-link-lista">
+              <a href="https://nexus.aurzane.com/universidades/buscador.html" target="_blank" rel="noopener">
+                <span class="link-ic" style="background:var(--a-nexus)"><svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 9.5 12 5l9.5 4.5L12 14z"/><path d="M6.5 11.6v4.4c0 1.4 2.5 2.5 5.5 2.5s5.5-1.1 5.5-2.5v-4.4M21.5 9.5v6"/></svg></span>
+                <span class="txt">Universidades y Carreras<span class="s">Tus favoritos guardados</span></span>
+                <svg class="icn flecha" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13.5M13 6.5 18.5 12 13 17.5"/></svg>
+              </a>
+              <a href="/research.html">
+                <span class="link-ic" style="background:var(--a-build)"><svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M20 20l-4.8-4.8"/></svg></span>
+                <span class="txt">Research Hub<span class="s">Buscar en las 5 bibliotecas</span></span>
+                <svg class="icn flecha" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13.5M13 6.5 18.5 12 13 17.5"/></svg>
+              </a>
+            </div>
+            <div class="nota-honesta">
+              <svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 11v5.2M12 8v.1"/></svg>
+              <span><b>Qué es real y qué falta:</b> tus favoritos de Universidades todavía viven en NEXUS — por ahora te llevamos directo ahí. Traer esa actividad a este panel es el próximo paso.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card cuenta-card acc-live" id="cardSeguridad" data-categoria="Seguridad" data-texto="seguridad sesion contraseña password cerrar sesion correo verificado ovp login">
+          <div class="card-cover" style="--tint:var(--a-live);--tint-rgb:var(--a-live-rgb);background-image:url('https://images.unsplash.com/photo-1592744254966-58c65cfd2e69?q=80&amp;w=600&amp;auto=format&amp;fit=crop')">
+            <span class="card-cover-badge"><svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5.5" y="10.5" width="13" height="9" rx="1.8"/><path d="M8.3 10.5V7.8a3.7 3.7 0 017.4 0v2.7"/></svg></span>
+          </div>
+          <div class="card-body">
+            <h3>Seguridad y sesión</h3>
+            <p class="card-sub">Una sola contraseña, protegida en todo el ecosistema.</p>
+            <div class="dato"><span class="k">Correo verificado</span><span id="datoVerificado">—</span></div>
+            <div class="dato"><span class="k">Dónde funciona tu sesión</span><span style="text-align:right;max-width:180px;font-size:.82rem;color:var(--text-dim)">aurzane.com y sus mundos conectados, incluido OVP</span></div>
+            <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap">
+              <button class="btn btn-ghost btn-chico" onclick="mostrarCambiarPass()">Cambiar contraseña</button>
+              <button class="btn btn-ghost btn-chico" id="btnSalir">
+                <svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 4H6a2 2 0 00-2 2v12a2 2 0 002 2h3M14 8l4 4-4 4M18 12H9"/></svg>
+                Cerrar sesión
+              </button>
+            </div>
+            <form id="formCambiarPass" class="panel-hide form-inline">
+            <label for="passNueva">Nueva contraseña</label>
+            <input type="password" id="passNueva" minlength="6" required autocomplete="new-password">
+            <button class="btn btn-gold btn-chico" type="submit">Guardar contraseña</button>
+            <div id="msgCambiarPass" class="msg" role="alert" aria-live="assertive"></div>
+          </form>
+            <div class="nota-honesta">
+              <svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5.5" y="10.5" width="13" height="9" rx="1.8"/><path d="M8.3 10.5V7.8a3.7 3.7 0 017.4 0v2.7"/></svg>
+              <span>Este correo y contraseña son tu única cuenta AURZANE ID — el mismo login abre tu Portal OVP.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card cuenta-card acc-learn" id="cardPreferencias" data-categoria="Preferencias" data-texto="preferencias tema claro oscuro paleta color acento apariencia">
+          <div class="card-cover" style="--tint:var(--a-learn);--tint-rgb:var(--a-learn-rgb);background-image:url('https://images.unsplash.com/photo-1600832331197-ad575931911b?q=80&amp;w=600&amp;auto=format&amp;fit=crop')">
+            <span class="card-cover-badge"><svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5a8.5 8.5 0 100 17c1 0 1.7-.8 1.7-1.7 0-.5-.2-.9-.5-1.2-.3-.3-.5-.7-.5-1.2 0-.9.8-1.7 1.7-1.7h1.9a3.4 3.4 0 003.4-3.4C19.7 6.9 16.3 3.5 12 3.5z"/><circle cx="7.6" cy="11.2" r="1" fill="currentColor" stroke="none"/><circle cx="9.8" cy="7.6" r="1" fill="currentColor" stroke="none"/><circle cx="14.3" cy="7.6" r="1" fill="currentColor" stroke="none"/></svg></span>
+          </div>
+          <div class="card-body">
+            <h3>Preferencias</h3>
+            <p class="card-sub">Elegí cómo se ve tu cuenta — se aplica en toda la marca.</p>
+            <div class="dato"><span class="k">Tema</span>
+              <button class="btn btn-ghost btn-chico" onclick="alternarTemaMi()">
+                <svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13.2A8.2 8.2 0 1110.8 4a6.6 6.6 0 009.2 9.2z"/></svg>
+                Claro / oscuro
+              </button>
+            </div>
+            <div style="margin-top:10px">
+              <span class="k" style="font-size:.84rem;color:var(--text-dim)">Paleta de acento</span>
+              <div class="paleta-swatches" id="paletaSwatches"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card cuenta-card acc-build" id="cardAyuda" data-categoria="Ayuda" data-texto="ayuda contacto privacidad soporte sobre aurzane">
+          <div class="card-cover" style="--tint:var(--a-build);--tint-rgb:var(--a-build-rgb);background-image:url('https://images.unsplash.com/photo-1542338332-76971ae8c292?q=80&amp;w=600&amp;auto=format&amp;fit=crop')">
+            <span class="card-cover-badge"><svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5h16v11H9l-4 3.5v-3.5H4z"/></svg></span>
+          </div>
+          <div class="card-body">
+            <h3>Ayuda</h3>
+            <p class="card-sub">Estamos para lo que necesites.</p>
+            <div class="cuenta-link-lista">
+              <a href="mailto:hola@aurzane.com">
+                <span class="link-ic" style="background:var(--a-build)"><svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="1.8"/><path d="M4 6.5l8 6.5 8-6.5"/></svg></span>
+                <span class="txt">Contacto<span class="s">hola@aurzane.com</span></span>
+                <svg class="icn flecha" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13.5M13 6.5 18.5 12 13 17.5"/></svg>
+              </a>
+              <a href="/privacidad.html">
+                <span class="link-ic" style="background:var(--a-live)"><svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5.5" y="10.5" width="13" height="9" rx="1.8"/><path d="M8.3 10.5V7.8a3.7 3.7 0 017.4 0v2.7"/></svg></span>
+                <span class="txt">Privacidad<span class="s">Cómo tratamos tus datos</span></span>
+                <svg class="icn flecha" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13.5M13 6.5 18.5 12 13 17.5"/></svg>
+              </a>
+              <a href="/index.html#sobre">
+                <span class="link-ic" style="background:var(--a-mind)"><svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 11v5.2M12 8v.1"/></svg></span>
+                <span class="txt">Sobre AURZANE<span class="s">Qué es el ecosistema</span></span>
+                <svg class="icn flecha" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13.5M13 6.5 18.5 12 13 17.5"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <p id="cuentaSinResultados">No encontramos nada con ese filtro — probá con otra palabra o elegí "Todos".</p>
+    </div>
+  
+    </div>
+  </div>
+</div>
+</main>
+
+<footer class="pie">
+  <div class="pie-links">
+    <a href="/privacidad.html">Privacidad</a>
+    <a href="mailto:hola@aurzane.com">hola@aurzane.com</a>
+  </div>
+  © 2026 AURZANE
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="/aurzane-id.js"></script>
+<script>
+// ---- Configuración: mismo proyecto Supabase que OVP y la Biblioteca ----
+const SUPABASE_URL = "https://chtfpqwrrarfdjcivlad.supabase.co";
+const SUPABASE_ANON_KEY = "sb_publishable___1v6VjDew0l8uGfMyb9Nw_YyCLTPPw";
+
+const sbId = crearClienteAurzaneID(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+// ---- Fase 5: login único — retorno seguro a "next" (p.ej. portal.html de OVP) ----
+// Solo se acepta un destino https dentro de aurzane.com o sus subdominios;
+// cualquier otro valor (dominio externo, protocolo distinto, URL rota) se ignora
+// y el flujo cae al comportamiento normal (mostrar el panel de Mi AURZANE).
+function obtenerNextSeguro() {
+  const params = new URLSearchParams(window.location.search);
+  const next = params.get("next");
+  if (!next) return null;
+  try {
+    const url = new URL(next, window.location.origin);
+    const hostOk = url.protocol === "https:" && (url.hostname === "aurzane.com" || url.hostname.endsWith(".aurzane.com"));
+    return hostOk ? url.href : null;
+  } catch (e) {
+    return null;
+  }
+}
+const nextDestino = obtenerNextSeguro();
+if (nextDestino) {
+  document.getElementById("vistaCargando").querySelector(".lead").textContent = (/ovp\.aurzane\.com/.test(nextDestino) ? "Te llevamos de vuelta a tu proceso OVP…" : "Te llevamos de vuelta a donde estabas…");
+}
+
+// ---- Tema claro/oscuro (por defecto claro/vainilla, igual que index.html) ----
+(function () {
+  const guardado = localStorage.getItem("aurzane-tema");
+  if (guardado === "oscuro") document.documentElement.setAttribute("data-tema", "oscuro");
+})();
+function alternarTemaMi() {
+  const esOscuro = document.documentElement.getAttribute("data-tema") === "oscuro";
+  if (esOscuro) {
+    document.documentElement.removeAttribute("data-tema");
+    try { localStorage.setItem("aurzane-tema", "claro"); } catch (e) {}
+  } else {
+    document.documentElement.setAttribute("data-tema", "oscuro");
+    try { localStorage.setItem("aurzane-tema", "oscuro"); } catch (e) {}
+  }
+}
+
+// ---- Paleta de acento (misma lógica y mismas 5 opciones que index.html,
+//      comparten localStorage, así que elegir acá también se ve en la home) ----
+/* Paleta de color: la gestiona https://aurzane.com/aurzane-paleta.js (compartida por todo el ecosistema). */
+
+// ---- Tabs de login/signup/recuperar ----
+function mostrarTab(cual) {
+  const esLogin = cual === "login";
+  document.getElementById("tabLogin").classList.toggle("activa", esLogin);
+  document.getElementById("tabSignup").classList.toggle("activa", !esLogin);
+  document.getElementById("formLogin").classList.toggle("panel-hide", !esLogin);
+  document.getElementById("formSignup").classList.toggle("panel-hide", esLogin);
+  document.getElementById("formRecuperar").classList.add("panel-hide");
+  ocultarMsg();
+}
+function mostrarRecuperar() {
+  document.getElementById("formLogin").classList.add("panel-hide");
+  document.getElementById("formSignup").classList.add("panel-hide");
+  document.getElementById("formRecuperar").classList.remove("panel-hide");
+  ocultarMsg();
+}
+
+function mostrarMsg(texto, tipo) {
+  const el = document.getElementById("msgAuth");
+  el.textContent = texto;
+  el.className = "msg " + tipo;
+}
+function ocultarMsg() {
+  const el = document.getElementById("msgAuth");
+  el.className = "msg";
+  el.textContent = "";
+}
+
+function formatearFecha(iso) {
+  if (!iso) return "—";
+  try {
+    return new Date(iso).toLocaleDateString("es-EC", { year: "numeric", month: "long", day: "numeric" });
+  } catch (e) {
+    return iso;
+  }
+}
+
+// ---- Filtro de la grilla "Tu cuenta" (buscador + chips por categoría) ----
+const CUENTA_CATEGORIAS = ["Todos", "Perfil", "Mundos", "Herramientas", "Seguridad", "Preferencias", "Ayuda"];
+let categoriaActivaCuenta = "Todos";
+function renderChipsCuenta() {
+  const cont = document.getElementById("cuentaChips");
+  cont.innerHTML = CUENTA_CATEGORIAS.map(
+    (c) => `<button class="chip-filtro ${c === categoriaActivaCuenta ? "activo" : ""}" data-cat="${c}">${c}</button>`
+  ).join("");
+  cont.querySelectorAll(".chip-filtro").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      categoriaActivaCuenta = btn.dataset.cat;
+      renderChipsCuenta();
+      filtrarCuenta();
+    });
+  });
+}
+function filtrarCuenta() {
+  const q = (document.getElementById("buscadorCuenta").value || "").trim().toLowerCase();
+  let visibles = 0;
+  document.querySelectorAll(".cuenta-card").forEach((card) => {
+    const cat = card.dataset.categoria;
+    const texto = card.dataset.texto || "";
+    const pasaCat = categoriaActivaCuenta === "Todos" || cat === categoriaActivaCuenta;
+    const pasaTexto = !q || texto.includes(q) || card.textContent.toLowerCase().includes(q);
+    const visible = pasaCat && pasaTexto;
+    card.style.display = visible ? "" : "none";
+    if (visible) visibles++;
+  });
+  document.getElementById("cuentaSinResultados").style.display = visibles === 0 ? "block" : "none";
+}
+
+async function cargarPanel(session) {
+  document.getElementById("vistaCargando").classList.add("panel-hide");
+  document.getElementById("vistaInvitado").classList.add("panel-hide");
+  document.getElementById("vistaRecuperarPass").classList.add("panel-hide");
+  document.getElementById("vistaPanel").classList.remove("panel-hide");
+  renderChipsCuenta();
+
+  const email = session.user.email || "";
+  document.getElementById("panelEmail").textContent = email;
+  document.getElementById("datoEmail").textContent = email;
+  document.getElementById("chipDesde").textContent = "Sesión activa";
+  document.getElementById("datoVerificado").textContent = session.user.email_confirmed_at ? "Sí" : "Pendiente";
+
+  const { data: perfil, error } = await sbId
+    .from("perfiles")
+    .select("nombre, mundo_favorito, creado_at")
+    .eq("user_id", session.user.id)
+    .maybeSingle();
+
+  const nombre = (perfil && perfil.nombre) || email.split("@")[0];
+  document.getElementById("panelNombre").textContent = nombre;
+  document.getElementById("datoNombre").textContent = nombre;
+  document.getElementById("avatarInicial").textContent = nombre.slice(0, 1).toUpperCase();
+  document.getElementById("avatarSide").textContent = nombre.slice(0, 1).toUpperCase();
+  document.getElementById("sideNombre").textContent = nombre;
+  document.getElementById("sideEmail").textContent = email;
+  const hora = new Date().getHours();
+  document.getElementById("panelSaludo").textContent = (hora < 13 ? "Buenos días" : hora < 20 ? "Buenas tardes" : "Buenas noches") + ", te damos la bienvenida";
+  document.getElementById("datoCreada").textContent = formatearFecha(perfil && perfil.creado_at);
+  document.getElementById("mundoFavorito").value = (perfil && perfil.mundo_favorito) || "";
+
+  if (error) {
+    console.warn("No se pudo leer public.perfiles todavía (¿corriste aurzane_id_setup.sql?):", error.message);
+  }
+
+  // ---- Franja de resumen sobre el hero (salto de calidad v2): mismos datos
+  //      ya cargados arriba, solo se reflejan también en las tarjetas-stat. ----
+  const MUNDO_LABEL_STAT = { mind: "MIND", nexus: "NEXUS", live: "LIVE", learn: "LEARN", build: "BUILD" };
+  const statDesdeEl = document.getElementById("statDesde");
+  if (statDesdeEl) statDesdeEl.textContent = formatearFecha(perfil && perfil.creado_at);
+  const statVerifEl = document.getElementById("statVerificado");
+  if (statVerifEl) statVerifEl.textContent = session.user.email_confirmed_at ? "Verificado" : "Verificación pendiente";
+  const statMundoEl = document.getElementById("statMundoFav");
+  if (statMundoEl) statMundoEl.textContent = MUNDO_LABEL_STAT[(perfil && perfil.mundo_favorito) || ""] || "Sin elegir";
+
+  cargarProcesoOVP(session);
+  cargarCursos(session);
+  cargarPersonalidad(session);
+  iniciarNavLateral();
+}
+
+// ---- Fase 5: tarjeta "Mi proceso de orientación" — solo estado, nunca
+//      contenido clínico ni resultados (ver clientes_portal, que ya excluye
+//      esas columnas por diseño). ----
+async function cargarProcesoOVP(session) {
+  const cont = document.getElementById("procesoOVPBody");
+  if (!cont) return;
+  const { data: cliente, error } = await sbId
+    .from("clientes_portal")
+    .select("plan, pago_confirmado, activaciones(activo, completado)")
+    .eq("user_id", session.user.id)
+    .maybeSingle();
+
+  const statProcesoEl = document.getElementById("statProceso");
+
+  if (error) {
+    cont.innerHTML = '<p style="font-size:.86rem;color:var(--text-dim);margin:0">No pudimos cargar el estado de tu proceso en este momento.</p>';
+    if (statProcesoEl) statProcesoEl.textContent = "—";
+    return;
+  }
+  if (!cliente) {
+    cont.innerHTML =
+      '<p style="font-size:.86rem;color:var(--text-dim);margin:0 0 12px">Todavía no tenés un proceso de orientación vocacional activo.</p>' +
+      '<a class="btn btn-gold btn-chico" href="https://ovp.aurzane.com/portal.html">Empezar gratis</a>';
+    if (statProcesoEl) statProcesoEl.textContent = "Sin iniciar";
+    return;
+  }
+
+  const activaciones = cliente.activaciones || [];
+  const activas = activaciones.filter((a) => a.activo);
+  const completadas = activas.filter((a) => a.completado);
+  const listo = activas.length > 0 && completadas.length === activas.length;
+  let estadoTxt = "Evaluación gratuita sin activar";
+  if (activas.length) estadoTxt = listo ? "Informe listo" : "Evaluación gratuita en curso";
+  const progresoTxt = activas.length > 0 ? completadas.length + " de " + activas.length + " evaluaciones completadas" : "";
+
+  cont.innerHTML =
+    '<div class="dato"><span class="k">Estado</span><span>' + estadoTxt + "</span></div>" +
+    (progresoTxt ? '<div class="dato"><span class="k">Evaluaciones</span><span>' + progresoTxt + "</span></div>" : "") +
+    '<div style="margin-top:14px"><a class="btn btn-gold btn-chico" href="https://ovp.aurzane.com/portal.html">' + (listo ? "Ver mi informe" : activas.length ? "Continuar evaluación" : "Empezar gratis") + '</a></div>';
+
+  if (statProcesoEl) statProcesoEl.textContent = activas.length ? completadas.length + " de " + activas.length : "Gratis";
+}
+
+
+// ---- Mis cursos: progreso real del alumno en LEARN (mismas tablas que el curso, con RLS) ----
+// ---- Mis cursos: una tarjeta por curso con el progreso real del alumno (mismas tablas que LEARN, con RLS) ----
+const CURSOS_LEARN = [
+  { slug: "neuro-300260", titulo: "Organización morfofuncional del Sistema Nervioso", tipo: "Curso interactivo · Neurociencias", img: "https://learn.aurzane.com/cursos/portada-neuro.webp",
+    desc: "13 temas y 67 lecciones con mapas conceptuales, esquemas, tablas comparativas, tarjetas, técnica de Feynman y tests que se cierran al acertarlo todo." },
+  { slug: "metod-300263", titulo: "Metodología y técnicas de investigación en Neurociencias", tipo: "Curso interactivo · Métodos", img: "https://learn.aurzane.com/cursos/portada-metodologia.webp",
+    desc: "Estereotaxia, optogenética y terapia celular (células madre, iPSC, CRISPR, CAR-T), con nuevos temas a medida que avanza la asignatura." },
+];
+function htmlCurso(c) {
+  const url = "https://learn.aurzane.com/cursos.html?c=" + c.slug;
+  return `<article class="curso-card" data-curso="${c.slug}">
+    <a class="cc-media" href="${url}" tabindex="-1" aria-hidden="true"><img src="${c.img}" alt="" width="1200" height="675" loading="lazy"><span class="cc-sello">LEARN · Curso</span></a>
+    <div class="cc-body">
+      <span class="cc-tipo">${c.tipo}</span>
+      <h3><a href="${url}">${c.titulo}</a></h3>
+      <p class="cc-desc">${c.desc}</p>
+      <div class="cc-prog"><div class="cc-barra" aria-hidden="true"><span data-k="barra"></span></div><span data-k="prog">Cargando tu progreso…</span></div>
+      <ul class="cc-datos">
+        <li><b data-k="lec">—</b><span>lecciones completadas</span></li>
+        <li><b data-k="temas">—</b><span>temas cerrados al 100 %</span></li>
+        <li><b data-k="repaso">—</b><span>preguntas de repaso hoy</span></li>
+      </ul>
+      <p class="cc-ultima" data-k="ultima" hidden></p>
+      <div class="cc-acc"><a class="btn btn-gold" data-k="continuar" href="${url}">Entrar al curso</a><a class="btn btn-ghost" href="${url}#/programa">Programa del curso</a></div>
+    </div>
+  </article>`;
+}
+async function cargarCursos(session) {
+  const lista = document.getElementById("ccLista");
+  if (!lista) return;
+  lista.innerHTML = CURSOS_LEARN.map(htmlCurso).join("");
+  let pctPrincipal = null;
+  try {
+    const [cursos, mods, lecs, prog, rep, ints] = await Promise.all([
+      sbId.from("course_courses").select("id,slug"),
+      sbId.from("course_modules").select("id,slug,course_id").eq("estado", "publicado"),
+      sbId.from("course_lessons").select("id,slug,titulo,module_id").eq("estado", "publicado"),
+      sbId.from("course_progress").select("lesson_id,visitado_at,completado_at"),
+      sbId.from("course_review_queue").select("due_at,question_id"),
+      sbId.from("course_attempts").select("module_id,cerrado_at").not("cerrado_at", "is", null),
+    ]);
+    if (cursos.error || mods.error || lecs.error) throw cursos.error || mods.error || lecs.error;
+    const qs = await sbId.from("course_questions").select("id,course_id").eq("estado", "publicada");
+    const cursoDePregunta = new Map((qs.data || []).map((q) => [q.id, q.course_id]));
+    for (const c of CURSOS_LEARN) {
+      const card = lista.querySelector(`[data-curso="${c.slug}"]`);
+      const k = (n) => card.querySelector(`[data-k="${n}"]`);
+      const cur = (cursos.data || []).find((x) => x.slug === c.slug);
+      if (!cur) { k("prog").textContent = "El curso abrirá pronto"; continue; }
+      const misMods = mods.data.filter((m) => m.course_id === cur.id);
+      const modSlug = new Map(misMods.map((m) => [m.id, m.slug]));
+      const misLecs = lecs.data.filter((l) => modSlug.has(l.module_id));
+      const lecPorId = new Map(misLecs.map((l) => [l.id, l]));
+      const total = misLecs.length;
+      const propias = (prog.data || []).filter((p) => lecPorId.has(p.lesson_id));
+      const hechas = propias.filter((p) => p.completado_at).length;
+      const pct = total ? Math.round((100 * hechas) / total) : 0;
+      if (pctPrincipal === null) pctPrincipal = pct;
+      k("barra").style.width = pct + "%";
+      k("prog").textContent = total ? pct + " % del curso" : "El curso abrirá pronto";
+      k("lec").textContent = hechas + " de " + total;
+      k("temas").textContent = new Set((ints.data || []).filter((a) => modSlug.has(a.module_id)).map((a) => a.module_id)).size + " de " + misMods.length;
+      k("repaso").textContent = String((rep.data || []).filter((r) => cursoDePregunta.get(r.question_id) === cur.id && Date.parse(r.due_at) <= Date.now()).length);
+      const ultima = propias.slice().sort((a, b) => Date.parse(b.visitado_at) - Date.parse(a.visitado_at))[0];
+      if (ultima) {
+        const l = lecPorId.get(ultima.lesson_id);
+        k("ultima").hidden = false; k("ultima").textContent = "Última lección: " + l.titulo;
+        k("continuar").textContent = "Continuar donde lo dejaste";
+        k("continuar").href = "https://learn.aurzane.com/cursos.html?c=" + c.slug + "#/m/" + modSlug.get(l.module_id) + "/l/" + l.slug;
+      }
+    }
+    const st = document.getElementById("statCurso"); if (st) st.textContent = (pctPrincipal ?? 0) + " %";
+  } catch (e) {
+    lista.querySelectorAll('[data-k="prog"]').forEach((el) => { el.textContent = "Entra al curso para empezar"; });
+  }
+}
+// Tests de personalidad guardados desde mind.aurzane.com/test-de-personalidad/
+const PZ_PERFILES = {
+  EA:["Fogata","🔥","#ff7a45","#ffb347"], EC:["Timón","🧭","#ff7a45","#5b7cfa"], ES:["Sol","☀️","#ff7a45","#e3b23c"], EO:["Cometa","☄️","#ff7a45","#a35be0"],
+  AC:["Raíz","🌳","#2fb37f","#5b7cfa"], AS:["Remanso","🌿","#2fb37f","#e3b23c"], AO:["Puente","🌉","#2fb37f","#a35be0"], CS:["Faro","🗼","#5b7cfa","#e3b23c"],
+  CO:["Telescopio","🔭","#5b7cfa","#a35be0"], SO:["Horizonte","🌅","#e3b23c","#a35be0"], PRISMA:["Prisma","💎","#7a5cff","#2fb37f"]
+};
+const PZ_VERSION = { 20: "Exprés", 50: "Clásico", 120: "Completo" };
+async function cargarPersonalidad(session) {
+  const cont = document.getElementById("pzLista");
+  if (!cont) return;
+  const vacio = '<p class="pz-vacio">Aún no has guardado ningún resultado. <a href="https://mind.aurzane.com/test-de-personalidad/">Haz el test de personalidad gratis</a> y pulsa «Guardar en Mi AURZANE» al terminar.</p>';
+  try {
+    const { data, error } = await sbId.from("personalidad_resultados")
+      .select("id,version,rasgos,facetas,perfil,created_at")
+      .eq("user_id", session.user.id).order("created_at", { ascending: false }).limit(12);
+    if (error) throw error;
+    if (!data || !data.length) { cont.innerHTML = vacio; return; }
+    cont.innerHTML = data.map((r) => {
+      const p = PZ_PERFILES[r.perfil] || PZ_PERFILES.PRISMA;
+      const ras = ["E", "A", "C", "S", "O"].map((k) => Math.max(0, Math.min(100, Number(r.rasgos[k]) || 0)));
+      let hash = "r=" + [r.version].concat(ras).join(".");
+      if (Array.isArray(r.facetas) && r.facetas.length === 30) hash += "." + r.facetas.map((x) => Math.round(Number(x) || 0)).join(".");
+      const fecha = new Date(r.created_at).toLocaleDateString("es-ES", { day: "numeric", month: "long", year: "numeric" });
+      const barras = ras.map((x, i) => `<i style="height:${Math.max(3, x * 0.26)}px" title="${["Extraversión","Amabilidad","Responsabilidad","Estabilidad","Apertura"][i]}: ${x}"></i>`).join("");
+      return `<a class="pz-card" style="--g1:${p[2]};--g2:${p[3]}" href="https://mind.aurzane.com/test-de-personalidad/#${hash}&mio=1"><img class="pz-em" src="https://mind.aurzane.com/test-de-personalidad/img/${(PZ_PERFILES[r.perfil] ? r.perfil : "PRISMA").toLowerCase()}.svg" alt="" width="64" height="64" loading="lazy"><span><b>${p[0]}</b><small>Test ${PZ_VERSION[r.version] || ""} · ${fecha}</small><span class="pz-barras" aria-hidden="true">${barras}</span></span></a>`;
+    }).join("");
+  } catch (e) {
+    cont.innerHTML = vacio;
+  }
+}
+
+// navegación lateral: marca la sección visible
+function iniciarNavLateral() {
+  const links = [...document.querySelectorAll(".ds-nav a[data-nav]")];
+  links.forEach((a) => a.addEventListener("click", () => { links.forEach((x) => x.classList.toggle("activo", x === a)); }));
+  if (links[0]) links[0].classList.add("activo");
+}
+
+function mostrarInvitado() {
+  document.getElementById("vistaCargando").classList.add("panel-hide");
+  document.getElementById("vistaPanel").classList.add("panel-hide");
+  document.getElementById("vistaRecuperarPass").classList.add("panel-hide");
+  document.getElementById("vistaInvitado").classList.remove("panel-hide");
+  // Llegada desde OVP tras el cierre automático por inactividad.
+  if (new URLSearchParams(window.location.search).get("inactividad") === "1") {
+    mostrarMsg("Cerramos tu sesión por seguridad después de 30 minutos sin actividad. Inicia sesión de nuevo para continuar; tus respuestas guardadas siguen ahí.", "ok");
+  }
+}
+
+function mostrarRecuperarPass() {
+  document.getElementById("vistaCargando").classList.add("panel-hide");
+  document.getElementById("vistaInvitado").classList.add("panel-hide");
+  document.getElementById("vistaPanel").classList.add("panel-hide");
+  document.getElementById("vistaRecuperarPass").classList.remove("panel-hide");
+}
+
+(async function iniciar() {
+  const { data: { session } } = await sbId.auth.getSession();
+  if (session) {
+    if (nextDestino) { window.location.replace(nextDestino); return; }
+    cargarPanel(session);
+  } else {
+    mostrarInvitado();
+  }
+})();
+
+sbId.auth.onAuthStateChange((evento, session) => {
+  if (evento === "PASSWORD_RECOVERY") {
+    mostrarRecuperarPass();
+    return;
+  }
+  if (session) {
+    if (nextDestino) { window.location.replace(nextDestino); return; }
+    cargarPanel(session);
+  }
+  else mostrarInvitado();
+});
+
+document.getElementById("formLogin").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  ocultarMsg();
+  const email = document.getElementById("loginEmail").value.trim();
+  const password = document.getElementById("loginPass").value;
+  const { error } = await sbId.auth.signInWithPassword({ email, password });
+  if (error) mostrarMsg("No se pudo iniciar sesión: " + error.message, "error");
+});
+
+document.getElementById("formRecuperar").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  ocultarMsg();
+  const email = document.getElementById("recuperarEmail").value.trim();
+  const { error } = await sbId.auth.resetPasswordForEmail(email, {
+    redirectTo: window.location.origin + "/mi-aurzane.html",
+  });
+  if (error) mostrarMsg("No se pudo enviar el enlace: " + error.message, "error");
+  else mostrarMsg("Listo — revisá tu correo para elegir una contraseña nueva.", "ok");
+});
+
+document.getElementById("formSignup").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  ocultarMsg();
+  const nombre = document.getElementById("signupNombre").value.trim();
+  const email = document.getElementById("signupEmail").value.trim();
+  const password = document.getElementById("signupPass").value;
+  const { error } = await sbId.auth.signUp({
+    email,
+    password,
+    options: { data: { nombre } },
+  });
+  if (error) {
+    mostrarMsg("No se pudo crear la cuenta: " + error.message, "error");
+  } else {
+    mostrarMsg("Cuenta creada. Si tu proyecto pide confirmación por correo, revisá tu bandeja.", "ok");
+  }
+});
+
+document.getElementById("formNuevaPass").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const msg = document.getElementById("msgNuevaPass");
+  const nueva = document.getElementById("nuevaPass").value;
+  const { error } = await sbId.auth.updateUser({ password: nueva });
+  msg.className = "msg " + (error ? "error" : "ok");
+  msg.textContent = error ? "No se pudo guardar: " + error.message : "Contraseña actualizada. Ya podés usarla.";
+  if (!error) {
+    const { data: { session } } = await sbId.auth.getSession();
+    if (session) setTimeout(() => cargarPanel(session), 1200);
+  }
+});
+
+document.getElementById("btnSalir").addEventListener("click", async () => {
+  await sbId.auth.signOut();
+});
+
+document.getElementById("btnGuardarPerfil").addEventListener("click", async () => {
+  const msg = document.getElementById("msgPanel");
+  const { data: { session } } = await sbId.auth.getSession();
+  if (!session) return;
+  const mundo = document.getElementById("mundoFavorito").value || null;
+  const { error } = await sbId
+    .from("perfiles")
+    .update({ mundo_favorito: mundo })
+    .eq("user_id", session.user.id);
+  msg.className = "msg " + (error ? "error" : "ok");
+  msg.textContent = error ? "No se pudo guardar: " + error.message : "Guardado.";
+});
+
+function mostrarCambiarPass() {
+  document.getElementById("formCambiarPass").classList.toggle("panel-hide");
+}
+document.getElementById("formCambiarPass").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const msg = document.getElementById("msgCambiarPass");
+  const nueva = document.getElementById("passNueva").value;
+  const { error } = await sbId.auth.updateUser({ password: nueva });
+  msg.className = "msg " + (error ? "error" : "ok");
+  msg.textContent = error ? "No se pudo cambiar: " + error.message : "Contraseña actualizada.";
+  if (!error) document.getElementById("passNueva").value = "";
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<script>
+  // Observabilidad de errores frontend (Fase 8-9 P1, ver observabilidad_errores_setup.sql).
+  window.__aurzaneErrBuf = [];
+  window.__aurzaneLogErr = function(msg){
+    var entry = { pagina: location.pathname, mensaje: String(msg == null ? 'Error desconocido' : msg).slice(0,300) };
+    if(window.__aurzaneSb && window.__aurzaneSb.from){
+      window.__aurzaneSb.from('frontend_error_log').insert(entry).then(function(){}, function(){});
+    } else {
+      window.__aurzaneErrBuf.push(entry);
+    }
+  };
+  window.addEventListener('error', function(e){ window.__aurzaneLogErr(e && e.message); });
+  window.addEventListener('unhandledrejection', function(e){
+    var r = e && e.reason;
+    window.__aurzaneLogErr((r && r.message) || (r == null ? null : String(r)) || 'Promise rechazada');
+  });
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://aurzane.com/aurzane-paleta.js"></script>
+<title>Test de orientación vocacional gratis online, con informe | AURZANE OVP</title>
+<meta name="description" content="Haz gratis un test de orientación vocacional completo y online: intereses (CHASIDE y Holland), autoconcepto, hábitos de estudio y aptitudes, con informe en PDF.">
+<link rel="canonical" href="https://ovp.aurzane.com/">
+<meta property="og:title" content="Test de orientación vocacional gratis, con informe | AURZANE OVP">
+<meta property="og:description" content="Evaluaciones psicológicas estandarizadas, con informe integrador automático y gratis por lanzamiento. No es un test genérico.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ovp.aurzane.com/">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "name": "AURZANE", "url": "https://aurzane.com/", "email": "hola@aurzane.com"}, {"@type": "Service", "name": "Test de orientación vocacional AURZANE OVP", "url": "https://ovp.aurzane.com/", "serviceType": "Orientación vocacional", "inLanguage": "es", "provider": {"@type": "Organization", "name": "AURZANE"}, "isAccessibleForFree": true, "description": "Seis evaluaciones psicológicas estandarizadas (CHASIDE, Holland, AF5, hábitos de estudio, APT-A y APT-B) con informe integrador en PDF, online y gratis."}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿El test vocacional es gratis?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. Durante el lanzamiento, las seis evaluaciones y el informe completo son gratis. No pedimos tarjeta ni pagos."}}, {"@type": "Question", "name": "¿Qué evaluaciones incluye?", "acceptedAnswer": {"@type": "Answer", "text": "CHASIDE (intereses vocacionales), Holland o RIASEC (personalidad vocacional), AF5 (autoconcepto), un cuestionario de hábitos de estudio y las pruebas de aptitudes APT-A y APT-B."}}, {"@type": "Question", "name": "¿Recibo un informe?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. Al terminar la última evaluación, el informe integrador con gráficos e interpretación aparece en tu portal y puedes descargarlo en PDF."}}, {"@type": "Question", "name": "¿Para quién es?", "acceptedAnswer": {"@type": "Answer", "text": "Para estudiantes de bachillerato que van a elegir carrera, para quien ya empezó una carrera y duda, y para cualquier persona que quiera conocer mejor sus intereses y aptitudes."}}, {"@type": "Question", "name": "¿Tengo que hacerlo todo de una vez?", "acceptedAnswer": {"@type": "Answer", "text": "No. Lo haces online y a tu ritmo: puedes pausar y seguir cuando quieras desde tu portal."}}, {"@type": "Question", "name": "¿Mis respuestas son privadas?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. Tus respuestas y tu informe solo se ven desde tu cuenta."}}]}]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700;1,6..96,400;1,6..96,500&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* ============================================================
+     AURZANE OVP — landing pública, mismo sistema de diseño que el
+     resto del ecosistema: claro/vainilla por defecto, navy/dorado
+     como "marco" en los dos temas, paleta compartida.
+     ============================================================ */
+  :root{
+    --navy-950:#070a14; --navy-900:#0f1530; --navy-800:#161d42; --navy-700:#212b5c;
+    --gold:#c9a24b; --gold-light:#e8cd8f; --gold-deep:#8a6a28; --gold-rgb:201,162,75;
+    --vanilla:#faf6ec; --paper-ink:#1c1712;
+    --silver:#c7cdd6; --silver-dim:#8b92a0;
+    --line-strong:rgba(var(--gold-rgb),.38); --line-accent:rgba(var(--gold-rgb),.4);
+    --bg:var(--vanilla); --surface:#fffdf9; --surface-2:#f1e8d6;
+    --text:var(--paper-ink); --text-dim:#6b6153; --border:rgba(28,23,18,.13);
+    --accent-text:var(--gold-deep);
+    --ok:#5f8c6c; --ok-bg:rgba(95,140,108,.12); --ok-line:rgba(95,140,108,.35);
+  }
+  :root[data-tema="oscuro"]{
+    --bg:var(--navy-950); --surface:var(--navy-900); --surface-2:var(--navy-800);
+    --text:var(--vanilla); --text-dim:var(--silver-dim); --border:rgba(199,205,214,.14);
+    --accent-text:var(--gold-light);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg);color:var(--text);font-family:'Instrument Sans',sans-serif;line-height:1.65;min-height:100vh;transition:background .2s,color .2s;}
+  h1,h2,h3,h4{font-family:'Bodoni Moda',serif;font-weight:500;letter-spacing:-0.01em;line-height:1.18;}
+  .mono{font-family:'Bodoni Moda',serif;font-style:italic;font-weight:500;}
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+  ::selection{background:rgba(var(--gold-rgb),0.3);}
+  :focus-visible{outline:2px solid var(--gold-light);outline-offset:2px;border-radius:4px;}
+  .visually-hidden{position:absolute;left:-9999px}
+
+  .eyebrow{font-family:'Bodoni Moda',serif;font-style:italic;font-weight:500;font-size:0.72rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--accent-text);}
+  .h1{font-size:clamp(2rem,4.4vw,3.1rem);}
+  .h2{font-size:clamp(1.5rem,2.8vw,2.1rem);}
+  .text-2{color:var(--text-dim);}
+
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:none;border-radius:999px;
+    font-weight:600;font-size:0.88rem;padding:14px 26px;cursor:pointer;text-decoration:none;
+    transition:transform .2s, opacity .2s, background .2s, border-color .2s, color .2s;white-space:nowrap;}
+  .btn:active{transform:scale(0.98);}
+  .btn-primary{background:linear-gradient(135deg,var(--gold-light),var(--gold));color:var(--navy-950);}
+  .btn-primary:hover{opacity:0.9;}
+  .btn-ghost{background:transparent;color:var(--text);border:1px solid var(--border);}
+  .btn-ghost:hover{border-color:var(--gold);color:var(--accent-text);}
+
+  /* ===== barra superior (marco navy fijo) ===== */
+  .utility{background:var(--navy-950);color:var(--silver-dim);font-size:.78rem;padding:7px 0;border-bottom:1px solid rgba(255,255,255,.06)}
+  .utility .u-wrap{max-width:1180px;margin:0 auto;padding:0 6vw;display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+  .utility a{text-decoration:none;color:inherit}
+  .utility a:hover{color:var(--gold-light)}
+  .utility-mundos{display:flex;gap:14px;align-items:center}
+  .utility-mundos .activo{color:var(--gold-light);font-weight:600}
+  .utility-right{display:flex;gap:16px;align-items:center}
+  #btnTema{background:none;border:none;color:inherit;cursor:pointer;font-size:.78rem;font-family:inherit;padding:2px}
+
+  /* ===== topbar ===== */
+  .topbar{position:sticky;top:0;z-index:50;background:rgba(250,246,236,0.92);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--border);padding:16px 5vw;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;}
+  :root[data-tema="oscuro"] .topbar{background:rgba(7,10,20,0.92)}
+  .brand{font-family:'Bodoni Moda',serif;font-size:1.05rem;letter-spacing:0.06em;text-decoration:none;display:flex;align-items:center;gap:8px;}
+  .brand .z{color:var(--gold);}
+  .brand .tag{font-family:'Bodoni Moda',serif;font-size:0.68rem;color:var(--text-dim);letter-spacing:0.08em;}
+  .topbar-right{display:flex;align-items:center;gap:16px;}
+  .topbar nav{display:flex;align-items:center;gap:20px;}
+  .topbar nav a.tlink{font-family:'Bodoni Moda',serif;font-size:0.76rem;color:var(--text-dim);text-decoration:none;letter-spacing:0.03em;}
+  .topbar nav a.tlink:hover{color:var(--accent-text);}
+  .pill-cuenta{display:flex;align-items:center;gap:6px;border:1px solid var(--border);border-radius:999px;padding:6px 13px;font-size:.78rem;text-decoration:none;color:var(--text);font-family:'Instrument Sans',sans-serif}
+  .pill-cuenta:hover{border-color:var(--gold)}
+  .btn-todo{display:flex;align-items:center;gap:8px;background:var(--navy-950);color:var(--vanilla);border:none;
+    border-radius:999px;padding:8px 14px;font-family:'Instrument Sans',sans-serif;font-weight:600;font-size:.8rem;cursor:pointer}
+  .btn-todo:hover{background:var(--navy-800)}
+  @media(max-width:860px){.topbar nav .tlink{display:none;}}
+
+  /* ===== panel "Todo OVP" ===== */
+  .todo-overlay{position:fixed;inset:0;background:rgba(7,10,20,.55);z-index:200;display:none}
+  .todo-overlay.abierto{display:block}
+  .todo-panel{position:fixed;top:0;left:0;bottom:0;width:min(360px,88vw);background:var(--navy-950);color:var(--vanilla);
+    z-index:201;overflow-y:auto;transform:translateX(-100%);transition:transform .25s}
+  .todo-panel.abierto{transform:translateX(0)}
+  .todo-header{display:flex;justify-content:space-between;align-items:center;padding:18px 20px;border-bottom:1px solid rgba(255,255,255,.1);
+    position:sticky;top:0;background:var(--navy-950);z-index:2}
+  .todo-header .quien{font-weight:700;font-size:.98rem;font-family:'Instrument Sans',sans-serif}
+  .todo-header .quien small{display:block;font-weight:400;color:var(--silver-dim);font-size:.76rem;margin-top:2px}
+  .todo-cerrar{background:none;border:1px solid rgba(255,255,255,.2);color:var(--vanilla);border-radius:8px;width:32px;height:32px;cursor:pointer;font-size:1rem}
+  .todo-grupo{padding:16px 20px;border-bottom:1px solid rgba(255,255,255,.08)}
+  .todo-grupo h5{font-family:'Instrument Sans',sans-serif;font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;color:var(--gold-light);margin:0 0 12px}
+  .todo-link{display:flex;align-items:center;gap:10px;padding:8px 0;text-decoration:none;color:var(--vanilla);font-size:.88rem;font-family:'Instrument Sans',sans-serif}
+  .todo-link:hover{color:var(--gold-light)}
+  .todo-link .ic{width:22px;text-align:center;flex-shrink:0}
+  .paleta-selector{padding:12px 0 4px}
+  .paleta-label{display:block;font-size:.76rem;color:var(--silver-dim);margin-bottom:9px;font-family:'Instrument Sans',sans-serif}
+  .paleta-swatches{display:flex;gap:9px}
+  .paleta-swatch{width:26px;height:26px;border-radius:999px;border:2px solid transparent;cursor:pointer;padding:0;box-shadow:0 0 0 1px rgba(255,255,255,.14)}
+  .paleta-swatch.activo{border-color:var(--vanilla)}
+
+  /* ===== hero ===== */
+  .hero{max-width:1180px;margin:0 auto;padding:9vh 6vw 8vh;position:relative;overflow:hidden;}
+  .hero::before{content:'';position:absolute;top:-10%;right:-6%;width:520px;height:520px;border-radius:50%;
+    background:radial-gradient(circle,rgba(var(--gold-rgb),0.14),transparent 70%);pointer-events:none;z-index:0;}
+  .hero-in{position:relative;z-index:1;max-width:700px;}
+  .hero h1{margin:16px 0 20px;}
+  .hero h1 span{color:var(--accent-text);}
+  .hero p{color:var(--text-dim);font-size:1.05rem;max-width:56ch;}
+  .hero-actions{display:flex;gap:14px;margin-top:32px;flex-wrap:wrap;align-items:center;}
+  .hero-note{font-size:0.78rem;color:var(--text-dim);margin-top:14px;}
+
+  /* ===== secciones genéricas ===== */
+  .section{max-width:1180px;margin:0 auto;padding:6vh 6vw;}
+  .section-head{max-width:640px;margin-bottom:40px;}
+  .section-head p{color:var(--text-dim);margin-top:12px;font-size:0.98rem;}
+
+  /* ===== instrumentos ===== */
+  .instrumentos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:14px;overflow:hidden;}
+  .instrumento{background:var(--surface);padding:28px 24px;}
+  .instrumento .i-sigla{font-family:'Bodoni Moda',serif;font-size:1.1rem;color:var(--accent-text);margin-bottom:8px;}
+  .instrumento p{font-size:0.86rem;color:var(--text-dim);}
+  .como-funciona-nota{background:var(--surface);border:1px solid var(--line-accent);border-radius:14px;padding:32px;margin-top:32px;}
+  .como-funciona-nota .eyebrow{display:block;margin-bottom:10px;}
+  .como-funciona-nota p{color:var(--text-dim);max-width:70ch;font-size:0.96rem;}
+
+  /* ===== cómo funciona: steps ===== */
+  .pasos{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
+  .paso .p-num{font-family:'Bodoni Moda',serif;font-size:1.6rem;color:var(--accent-text);display:block;margin-bottom:12px;}
+  .paso h4{font-size:1rem;margin-bottom:8px;}
+  .paso p{font-size:0.86rem;color:var(--text-dim);}
+
+  /* ===== planes ===== */
+  .ovp-plans{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:14px;overflow:hidden;}
+  .ovp-plan{background:var(--surface);padding:36px 28px;display:flex;flex-direction:column;position:relative;}
+  .ovp-plan.featured{background:var(--surface-2);}
+  .ovp-plan.featured::before{content:"MÁS ELEGIDO";position:absolute;top:0;right:0;background:var(--gold);color:var(--navy-950);
+    font-family:'Bodoni Moda',serif;font-size:0.6rem;padding:6px 12px;letter-spacing:0.1em;}
+  .ovp-plan .tier{font-size:0.78rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--accent-text);font-weight:700;}
+  .ovp-plan .plan-tagline{font-family:'Bodoni Moda',serif;font-style:italic;font-size:1.15rem;margin:14px 0 8px;color:var(--text);}
+  .ovp-plan .plan-for-who{font-size:0.84rem;color:var(--text-dim);margin-bottom:20px;}
+  .ovp-plan ul{list-style:none;flex:1;}
+  .ovp-plan li{font-size:0.86rem;color:var(--text-dim);padding:11px 0;border-top:1px solid var(--border);display:flex;gap:10px;}
+  .ovp-plan li::before{content:"—";color:var(--gold);flex-shrink:0;}
+  .plan-specs{display:flex;flex-direction:column;gap:8px;padding:16px 0;border-top:1px solid var(--border);margin-top:6px;}
+  .plan-specs span{font-size:0.78rem;color:var(--text-dim);}
+  .plan-specs b{color:var(--accent-text);font-weight:600;}
+  .plan-for{margin-top:18px;font-size:0.78rem;color:var(--text-dim);font-family:'Bodoni Moda',serif;}
+  .plan-cta{display:block;text-align:center;margin-top:22px;padding:13px;border:1px solid var(--line-accent);
+    border-radius:8px;font-size:0.84rem;font-weight:600;color:var(--accent-text);text-decoration:none;transition:all .2s;}
+  .plan-cta:hover{background:var(--gold);color:var(--navy-950);}
+  .plan-cta.featured{background:linear-gradient(135deg,var(--gold-light),var(--gold));color:var(--navy-950);border-color:transparent;}
+  .plan-cta.featured:hover{opacity:0.9;}
+  .planes-nota{margin-top:24px;font-size:0.84rem;color:var(--text-dim);max-width:70ch;}
+
+  /* ===== CTA final ===== */
+  .cta-final{max-width:1180px;margin:0 auto;padding:8vh 6vw 10vh;}
+  .cta-card{background:linear-gradient(160deg,var(--navy-900),var(--navy-950));border:1px solid var(--line-strong);
+    border-radius:14px;padding:6vh 6vw;text-align:center;position:relative;overflow:hidden;color:var(--vanilla);}
+  .cta-card::before{content:'';position:absolute;bottom:-30%;left:-8%;width:360px;height:360px;border-radius:50%;
+    background:radial-gradient(circle,rgba(var(--gold-rgb),0.14),transparent 70%);pointer-events:none;}
+  .cta-card h2{position:relative;z-index:1;max-width:640px;margin:0 auto 14px;color:var(--vanilla);}
+  .cta-card p{position:relative;z-index:1;color:var(--silver);max-width:52ch;margin:0 auto 28px;}
+  .cta-card .btn{position:relative;z-index:1;}
+
+  /* ===== footer ===== */
+  footer.pie-ovp{background:var(--navy-950);color:var(--silver-dim);padding:40px 6vw;text-align:center;}
+  footer.pie-ovp p{font-size:0.8rem;color:var(--silver-dim);max-width:640px;margin:0 auto 14px;}
+  footer.pie-ovp .flinks{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;}
+  footer.pie-ovp .flinks a{font-family:'Bodoni Moda',serif;font-size:0.76rem;color:var(--silver);text-decoration:none;}
+  footer.pie-ovp .flinks a:hover{color:var(--gold-light);}
+
+  @media(max-width:900px){
+    .instrumentos-grid{grid-template-columns:1fr;}
+    .pasos{grid-template-columns:1fr 1fr;}
+    .ovp-plans{grid-template-columns:1fr;}
+  }
+  @media(max-width:560px){
+    .pasos{grid-template-columns:1fr;}
+    .hero-actions{flex-direction:column;align-items:stretch;}
+  }
+  .ovp-plans.ovp-plans-uno{grid-template-columns:1fr;max-width:640px;margin:0 auto;}
+  .ovp-plans-uno .ovp-plan.featured::before{content:"GRATIS";}
+  .faq-ovp{max-width:820px;margin:0 auto;display:flex;flex-direction:column;gap:10px;}
+  .faq-ovp details{border:1px solid var(--border);border-radius:12px;padding:14px 18px;background:var(--surface);}
+  .faq-ovp summary{cursor:pointer;font-weight:600;}
+  .faq-ovp details p{margin:10px 0 0;color:var(--text-dim);}
+</style>
+<meta name="google-adsense-account" content="ca-pub-8763758728010451">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8763758728010451" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div class="utility">
+  <div class="u-wrap">
+    <div class="utility-mundos">
+      <a href="https://aurzane.com/">AURZANE</a>
+      <a href="https://mind.aurzane.com/">MIND</a>
+      <a class="activo" href="https://ovp.aurzane.com/">OVP</a>
+      <a href="https://nexus.aurzane.com/">NEXUS</a>
+      <a href="https://live.aurzane.com/">LIVE</a>
+      <a href="https://learn.aurzane.com/">LEARN</a>
+      <a href="https://build.aurzane.com/">BUILD</a>
+    </div>
+    <div class="utility-right">
+      <button id="btnTema" onclick="alternarTema()">🌓 Tema</button>
+    </div>
+  </div>
+</div>
+
+<div class="topbar">
+  <a href="https://ovp.aurzane.com" class="brand">AUR<span class="z">Z</span>ANE <span class="tag">/ OVP</span></a>
+  <div class="topbar-right">
+    <nav>
+      <a class="tlink" href="https://aurzane.com" target="_blank" rel="noopener">Ecosistema AURZANE</a>
+      <a class="tlink" href="https://mind.aurzane.com" target="_blank" rel="noopener">MIND</a>
+      <a class="btn btn-ghost" href="https://ovp.aurzane.com/portal.html">Iniciar sesión</a>
+    </nav>
+    <a class="pill-cuenta" href="https://aurzane.com/mi-aurzane.html" id="pillCuenta">👤 Mi AURZANE</a>
+    <button class="btn-todo" onclick="abrirTodo()" aria-haspopup="dialog">☰ Todo OVP</button>
+  </div>
+</div>
+
+<!-- ============ PANEL "TODO OVP" ============ -->
+<div class="todo-overlay" id="todoOverlay" onclick="cerrarTodo()"></div>
+<aside class="todo-panel" id="todoPanel" role="dialog" aria-modal="true" aria-label="Todo OVP">
+  <div class="todo-header">
+    <div class="quien" id="todoQuien">Hola, iniciá sesión<small>Accedé a todo el ecosistema</small></div>
+    <button class="todo-cerrar" onclick="cerrarTodo()" aria-label="Cerrar menú">✕</button>
+  </div>
+  <div class="todo-grupo">
+    <h5>Sistema OVP</h5>
+    <a class="todo-link" href="#que-es"><span class="ic">🎯</span> Qué es el OVP</a>
+    <a class="todo-link" href="#planes"><span class="ic">🎁</span> Evaluación gratuita</a>
+    <a class="todo-link" href="https://ovp.aurzane.com/portal.html"><span class="ic">🔑</span> Entrar a mi portal OVP</a>
+  </div>
+  <div class="todo-grupo">
+    <h5>Conocimiento</h5>
+    <a class="todo-link" href="https://mind.aurzane.com/"><span class="ic">📖</span> Guías de MIND</a>
+    <a class="todo-link" href="https://mind.aurzane.com/mind-biblioteca.html"><span class="ic">📚</span> Biblioteca MIND</a>
+    <a class="todo-link" href="https://aurzane.com/research.html"><span class="ic">🔎</span> Research Hub</a>
+  </div>
+  <div class="todo-grupo">
+    <h5>Otros mundos</h5>
+    <a class="todo-link" href="https://mind.aurzane.com/test-de-personalidad/"><span class="ic">✨</span> Test de personalidad gratis</a>
+    <a class="todo-link" href="https://nexus.aurzane.com/"><span class="ic">🔧</span> NEXUS — Tecnología</a>
+    <a class="todo-link" href="https://live.aurzane.com/"><span class="ic">🌿</span> LIVE — Vida sin límites</a>
+    <a class="todo-link" href="https://learn.aurzane.com/"><span class="ic">🎓</span> LEARN — Conocimiento</a>
+    <a class="todo-link" href="https://build.aurzane.com/"><span class="ic">🏗️</span> BUILD — Imperio físico</a>
+    <a class="todo-link" href="https://aurzane.com/"><span class="ic">🌐</span> Ver todo el ecosistema</a>
+  </div>
+  <div class="todo-grupo" style="border-bottom:none">
+    <h5>Cuenta y ayuda</h5>
+    <a class="todo-link" href="https://aurzane.com/mi-aurzane.html"><span class="ic">👤</span> Mi AURZANE</a>
+    <a class="todo-link" href="mailto:hola@aurzane.com"><span class="ic">✉️</span> Contacto</a>
+    <a class="todo-link" href="https://aurzane.com/privacidad.html"><span class="ic">🔒</span> Privacidad</a>
+    <button class="todo-link" style="background:none;border:none;font-family:inherit;cursor:pointer;width:100%;text-align:left" onclick="alternarTema()"><span class="ic">🌓</span> Cambiar tema claro/oscuro</button>
+    <div class="paleta-selector">
+      <span class="paleta-label">Paleta de acento</span>
+      <div class="paleta-swatches" id="paletaSwatches"></div>
+    </div>
+  </div>
+</aside>
+
+<main>
+
+  <section class="hero">
+    <div class="hero-in">
+      <span class="eyebrow">Test de orientación vocacional gratis</span>
+      <h1 class="h1">Elegir qué estudiar no debería ser una corazonada. <span>Debería tener evidencia detrás.</span></h1>
+      <p>OVP es el sistema de orientación vocacional de AURZANE: seis evaluaciones psicológicas estandarizadas y un informe integrador con gráficos que recibes en tu portal en cuanto terminas. No es un test genérico de internet que te da una carrera al azar.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://ovp.aurzane.com/portal.html">Empezar gratis</a>
+        <a class="btn btn-ghost" href="#planes">Qué incluye</a>
+      </div>
+      <p class="hero-note">Por lanzamiento, todo el proceso es gratis: las seis evaluaciones y tu informe.</p>
+    </div>
+  </section>
+
+  <div class="section" id="que-es">
+    <div class="section-head">
+      <span class="eyebrow">Qué es OVP</span>
+      <h2 class="h2">Un proceso clínico, no un cuestionario suelto</h2>
+      <p>Tu proceso incluye todos estos instrumentos, cuestionarios y pruebas validados, no preguntas inventadas. Al terminar, el sistema integra los resultados en un informe con gráficos e interpretación.</p>
+    </div>
+    <div class="instrumentos-grid">
+      <div class="instrumento">
+        <div class="i-sigla">CHASIDE</div>
+        <p>Cuestionario de intereses vocacionales: mide hacia qué áreas te inclinas, desde lo administrativo hasta lo artístico o lo asistencial.</p>
+      </div>
+      <div class="instrumento">
+        <div class="i-sigla">Holland (RIASEC)</div>
+        <p>Identifica tu tipo de personalidad vocacional entre seis perfiles, para cruzar tus intereses con la forma en que prefieres trabajar.</p>
+      </div>
+      <div class="instrumento">
+        <div class="i-sigla">AF5</div>
+        <p>Cuestionario de autoconcepto: cómo te percibes a ti mismo en lo académico, social, familiar y emocional, algo clave para decisiones que dependen de la confianza en uno mismo.</p>
+      </div>
+      <div class="instrumento">
+        <div class="i-sigla">CHTE</div>
+        <p>Cuestionario de hábitos de estudio: detecta fortalezas y puntos débiles en cómo estudias hoy, más allá de qué carrera elijas.</p>
+      </div>
+      <div class="instrumento">
+        <div class="i-sigla">APT-A / APT-B</div>
+        <p>Pruebas de aptitudes específicas (razonamiento verbal, numérico y más) para detectar en qué tipo de tareas rindes mejor.</p>
+      </div>
+      <div class="instrumento">
+        <div class="i-sigla">Informe integrador</div>
+        <p>El cierre del proceso: cruza los resultados de todos los instrumentos, los explica con gráficos y te da recomendaciones. Aparece en tu portal y puedes descargarlo en PDF.</p>
+      </div>
+    </div>
+    <div class="como-funciona-nota">
+      <span class="eyebrow">Para quién es</span>
+      <p>Para estudiantes de bachillerato que están por elegir carrera, para quien ya empezó una carrera y no está seguro de haber elegido bien, y para cualquiera que quiera una lectura objetiva de sus intereses y aptitudes antes de decidir, con el respaldo de instrumentos reales, no de un algoritmo de redes sociales.</p>
+    </div>
+  </div>
+
+  <div class="section" id="como-funciona">
+    <div class="section-head">
+      <span class="eyebrow">Cómo funciona</span>
+      <h2 class="h2">De crear tu cuenta a tu informe</h2>
+    </div>
+    <div class="pasos">
+      <div class="paso"><span class="p-num">01</span><h4>Creas tu cuenta</h4><p>Sin costo y sin compromiso. Te lleva un minuto.</p></div>
+      <div class="paso"><span class="p-num">02</span><h4>Activas tu evaluación gratis</h4><p>Un clic y tus seis evaluaciones quedan habilitadas al instante.</p></div>
+      <div class="paso"><span class="p-num">03</span><h4>Completas las evaluaciones</h4><p>Online, a tu ritmo, desde el portal. Puedes pausar y seguir cuando quieras.</p></div>
+      <div class="paso"><span class="p-num">04</span><h4>Recibes tu informe</h4><p>Al terminar la última evaluación, tu informe integrador con gráficos aparece en tu portal, listo para descargar.</p></div>
+    </div>
+  </div>
+
+  <div class="section" id="planes">
+    <div class="section-head">
+      <span class="eyebrow">Gratis por lanzamiento</span>
+      <h2 class="h2">El proceso completo, sin costo</h2>
+      <p>Durante el lanzamiento, cualquier persona puede hacer la batería completa y recibir su informe. Sin pagos, sin tarjetas y sin letra chica.</p>
+    </div>
+    <div class="ovp-plans ovp-plans-uno">
+      <div class="ovp-plan featured">
+        <span class="tier">Evaluación completa</span>
+        <p class="plan-tagline">Seis instrumentos, un informe integrado.</p>
+        <p class="plan-for-who">Para estudiantes que eligen carrera, para quien duda de la que ya empezó y para cualquiera que quiera una lectura objetiva de sus intereses y aptitudes.</p>
+        <ul>
+          <li>CHASIDE: intereses vocacionales</li>
+          <li>Holland (RIASEC): tipos de personalidad vocacional</li>
+          <li>AF5: autoconcepto</li>
+          <li>Cuestionario de hábitos de estudio</li>
+          <li>APT-A y APT-B: aptitudes específicas</li>
+          <li>Informe integrador extendido con gráficos, en tu portal y en PDF</li>
+        </ul>
+        <div class="plan-specs">
+          <span><b>Precio:</b> Gratis</span>
+          <span><b>Modalidad:</b> 100% online, a tu ritmo</span>
+          <span><b>Entrega:</b> Automática al terminar</span>
+        </div>
+        <a href="https://ovp.aurzane.com/portal.html" class="plan-cta featured">Empezar gratis</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="section" id="preguntas">
+    <div class="section-head">
+      <span class="eyebrow">Preguntas frecuentes</span>
+      <h2 class="h2">Lo que suele preguntarse antes de empezar</h2>
+    </div>
+    <div class="faq-ovp">
+      <details><summary>¿El test vocacional es gratis?</summary><p>Sí. Durante el lanzamiento, las seis evaluaciones y el informe completo son gratis. No pedimos tarjeta ni pagos.</p></details>
+      <details><summary>¿Qué evaluaciones incluye?</summary><p>CHASIDE (intereses vocacionales), Holland o RIASEC (personalidad vocacional), AF5 (autoconcepto), un cuestionario de hábitos de estudio y las pruebas de aptitudes APT-A y APT-B.</p></details>
+      <details><summary>¿Recibo un informe?</summary><p>Sí. Al terminar la última evaluación, el informe integrador con gráficos e interpretación aparece en tu portal y puedes descargarlo en PDF.</p></details>
+      <details><summary>¿Para quién es?</summary><p>Para estudiantes de bachillerato que van a elegir carrera, para quien ya empezó una carrera y duda, y para cualquier persona que quiera conocer mejor sus intereses y aptitudes.</p></details>
+      <details><summary>¿Tengo que hacerlo todo de una vez?</summary><p>No. Lo haces online y a tu ritmo: puedes pausar y seguir cuando quieras desde tu portal.</p></details>
+      <details><summary>¿Mis respuestas son privadas?</summary><p>Sí. Tus respuestas y tu informe solo se ven desde tu cuenta.</p></details>
+    </div>
+  </div>
+
+  <div class="cta-final">
+    <div class="cta-card">
+      <h2 class="h2">¿Listo para tener claridad antes de decidir?</h2>
+      <p>Crea tu cuenta y haz tu evaluación completa gratis. Tu informe llega a tu portal en cuanto terminas.</p>
+      <a class="btn btn-primary" href="https://ovp.aurzane.com/portal.html">Empezar gratis</a>
+    </div>
+  </div>
+
+</main>
+
+<footer class="pie-ovp">
+  <p>AURZANE OVP es parte del ecosistema AURZANE MIND: orientación vocacional con respaldo clínico real, no un test genérico. Tus respuestas y tu informe son privados.</p>
+  <div class="flinks">
+    <a href="https://aurzane.com">Ecosistema AURZANE</a>
+    <a href="https://mind.aurzane.com">MIND</a>
+    <a href="https://ovp.aurzane.com/portal.html">Iniciar sesión</a>
+    <a href="https://aurzane.com/privacidad.html">Privacidad</a>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+<script src="/aurzane-id.js"></script>
+<script>
+const SUPABASE_URL = 'https://chtfpqwrrarfdjcivlad.supabase.co';
+const SUPABASE_KEY = 'sb_publishable___1v6VjDew0l8uGfMyb9Nw_YyCLTPPw';
+const sb = crearClienteAurzaneID(SUPABASE_URL, SUPABASE_KEY);
+  window.__aurzaneSb = sb;
+  if(window.__aurzaneErrBuf.length){ window.__aurzaneErrBuf.forEach(function(en){ sb.from('frontend_error_log').insert(en).then(function(){}, function(){}); }); window.__aurzaneErrBuf.length = 0; }
+
+/* ============================================================
+   Tema claro/oscuro (comparte localStorage con todo el ecosistema)
+   ============================================================ */
+(function () {
+  const guardado = localStorage.getItem("aurzane-tema");
+  if (guardado === "oscuro") document.documentElement.setAttribute("data-tema", "oscuro");
+})();
+function alternarTema() {
+  const esOscuro = document.documentElement.getAttribute("data-tema") === "oscuro";
+  if (esOscuro) {
+    document.documentElement.removeAttribute("data-tema");
+    try { localStorage.setItem("aurzane-tema", "claro"); } catch (e) {}
+  } else {
+    document.documentElement.setAttribute("data-tema", "oscuro");
+    try { localStorage.setItem("aurzane-tema", "oscuro"); } catch (e) {}
+  }
+}
+
+/* ============================================================
+   Paleta de acento (comparte localStorage con todo el ecosistema)
+   ============================================================ */
+/* Paleta de color: la gestiona https://aurzane.com/aurzane-paleta.js (compartida por todo el ecosistema). */
+
+/* ============================================================
+   Panel "Todo OVP"
+   ============================================================ */
+function abrirTodo() {
+  document.getElementById("todoOverlay").classList.add("abierto");
+  document.getElementById("todoPanel").classList.add("abierto");
+  document.body.style.overflow = "hidden";
+}
+function cerrarTodo() {
+  document.getElementById("todoOverlay").classList.remove("abierto");
+  document.getElementById("todoPanel").classList.remove("abierto");
+  document.body.style.overflow = "";
+}
+document.addEventListener("keydown", (e) => { if (e.key === "Escape") cerrarTodo(); });
+
+/* ============================================================
+   AURZANE ID — sesión compartida con el resto del ecosistema
+   ============================================================ */
+function reflejarSesionOvp(session) {
+  const pill = document.getElementById("pillCuenta");
+  const quien = document.getElementById("todoQuien");
+  if (session) {
+    const nombre = (session.user.email || "Mi cuenta").split("@")[0];
+    pill.innerHTML = `👤 ${nombre}`;
+    quien.innerHTML = `Hola, ${nombre}<small>Tu cuenta AURZANE ID</small>`;
+  } else {
+    pill.innerHTML = `👤 Mi AURZANE`;
+    quien.innerHTML = `Hola, iniciá sesión<small>Accedé a todo el ecosistema</small>`;
+  }
+}
+sb.auth.getSession().then(({ data: { session } }) => reflejarSesionOvp(session));
+sb.auth.onAuthStateChange((_e, session) => reflejarSesionOvp(session));
+</script>
+</body>
+</html>

@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<script>
+  // Observabilidad de errores frontend (Fase 8-9 P1, ver observabilidad_errores_setup.sql).
+  // Se registra ANTES que cualquier otro script (incluido el SDK de Supabase) para
+  // no perderse errores tempranos; si todavía no existe un cliente listo, los junta
+  // en un buffer y los manda apenas el cliente de esta página se crea más abajo.
+  // Nunca incluye datos de usuario -- solo la ruta de la página y un mensaje genérico.
+  window.__aurzaneErrBuf = [];
+  window.__aurzaneLogErr = function(msg){
+    var entry = { pagina: location.pathname, mensaje: String(msg == null ? 'Error desconocido' : msg).slice(0,300) };
+    if(window.__aurzaneSb && window.__aurzaneSb.from){
+      window.__aurzaneSb.from('frontend_error_log').insert(entry).then(function(){}, function(){});
+    } else {
+      window.__aurzaneErrBuf.push(entry);
+    }
+  };
+  window.addEventListener('error', function(e){ window.__aurzaneLogErr(e && e.message); });
+  window.addEventListener('unhandledrejection', function(e){
+    var r = e && e.reason;
+    window.__aurzaneLogErr((r && r.message) || (r == null ? null : String(r)) || 'Promise rechazada');
+  });
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://aurzane.com/aurzane-paleta.js"></script>
+<title>Biblioteca Académica — AURZANE LIVE</title>
+<meta name="description" content="Índice de investigación abierta sobre bienestar, propósito y vida plena — 5.000 artículos científicos de acceso abierto, con abstract y fuente citable.">
+<link rel="canonical" href="https://live.aurzane.com/live-biblioteca.html">
+<meta property="og:title" content="Biblioteca Académica — AURZANE LIVE">
+<meta property="og:description" content="5.000 artículos científicos de acceso abierto sobre bienestar, propósito y vida plena, con abstract oficial y fuente citable.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://live.aurzane.com/live-biblioteca.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;1,6..96,400;1,6..96,500&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+<style>
+  /* ============================================================
+     AURZANE LIVE — mismos tokens que aurzane.com / NEXUS / MIND:
+     claro/vainilla por defecto, navy/dorado como "marco" en los
+     dos temas, paleta de acento compartida vía localStorage.
+     ============================================================ */
+  :root{
+    --navy-950:#070a14; --navy-900:#0f1530; --navy-800:#161d42; --navy-700:#212b5c;
+    --gold:#c9a24b; --gold-light:#e8cd8f; --gold-deep:#8a6a28; --gold-rgb:201,162,75;
+    --vanilla:#faf6ec; --paper-ink:#1c1712;
+    --silver:#c7cdd6; --silver-dim:#8b92a0;
+    --line-strong:rgba(var(--gold-rgb),.38); --line-accent:rgba(var(--gold-rgb),.4);
+    --bg:var(--vanilla); --surface:#fffdf9; --surface-2:#f1e8d6;
+    --text:var(--paper-ink); --text-dim:#6b6153; --border:rgba(28,23,18,.13);
+    --accent-text:var(--gold-deep);
+  }
+  :root[data-tema="oscuro"]{
+    --bg:var(--navy-950); --surface:var(--navy-900); --surface-2:var(--navy-800);
+    --text:var(--vanilla); --text-dim:var(--silver-dim); --border:rgba(199,205,214,.14);
+    --accent-text:var(--gold-light);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg);color:var(--text);font-family:'Instrument Sans',sans-serif;line-height:1.6;min-height:100vh;transition:background .2s,color .2s;}
+  h1,h2,h3{font-family:'Bodoni Moda',serif;font-weight:500;}
+  .mono{font-family:'Bodoni Moda',serif;font-style:italic;font-weight:500;}
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+  ::selection{background:rgba(var(--gold-rgb),0.3);}
+  :focus-visible{outline:2px solid var(--gold-light);outline-offset:2px;}
+  button{font:inherit;}
+
+  /* ===== barra superior (marco navy fijo) ===== */
+  .utility{background:var(--navy-950);color:var(--silver-dim);font-size:.78rem;padding:7px 0;border-bottom:1px solid rgba(255,255,255,.06)}
+  .utility .u-wrap{max-width:900px;margin:0 auto;padding:0 6vw;display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+  .utility a{text-decoration:none;color:inherit}
+  .utility a:hover{color:var(--gold-light)}
+  .utility-mundos{display:flex;gap:14px;align-items:center}
+  .utility-mundos .activo{color:var(--gold-light);font-weight:600}
+  .utility-right{display:flex;gap:16px;align-items:center}
+  #btnTema{background:none;border:none;color:inherit;cursor:pointer;font-size:.78rem;font-family:inherit;padding:2px}
+
+  /* ===== topbar ===== */
+  .topbar{position:sticky;top:0;z-index:50;background:rgba(250,246,236,0.92);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--border);padding:18px 5vw;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;}
+  :root[data-tema="oscuro"] .topbar{background:rgba(7,10,20,0.92)}
+  .brand{font-family:'Bodoni Moda',serif;font-size:1.05rem;letter-spacing:0.06em;text-decoration:none;display:flex;align-items:center;gap:8px;}
+  .brand .z{color:var(--gold);}
+  .brand .tag{font-family:'Bodoni Moda',serif;font-size:0.68rem;color:var(--text-dim);letter-spacing:0.08em;}
+  .topbar-right{display:flex;align-items:center;gap:16px;}
+  .topbar nav{display:flex;gap:22px;align-items:center;}
+  .topbar nav a.tlink{font-family:'Bodoni Moda',serif;font-size:0.75rem;color:var(--text-dim);text-decoration:none;letter-spacing:0.03em;}
+  .topbar nav a.tlink:hover, .topbar nav a.tlink.active{color:var(--accent-text);}
+  .pill-cuenta{display:flex;align-items:center;gap:6px;border:1px solid var(--border);border-radius:999px;padding:6px 13px;font-size:.78rem;text-decoration:none;color:var(--text);font-family:'Instrument Sans',sans-serif}
+  .pill-cuenta:hover{border-color:var(--gold)}
+  .btn-todo{display:flex;align-items:center;gap:8px;background:var(--navy-950);color:var(--vanilla);border:none;
+    border-radius:999px;padding:8px 14px;font-family:'Instrument Sans',sans-serif;font-weight:600;font-size:.8rem;cursor:pointer}
+  .btn-todo:hover{background:var(--navy-800)}
+  @media(max-width:640px){.topbar nav{gap:12px}}
+
+  /* ===== panel "Todo LIVE" ===== */
+  .todo-overlay{position:fixed;inset:0;background:rgba(7,10,20,.55);z-index:200;display:none}
+  .todo-overlay.abierto{display:block}
+  .todo-panel{position:fixed;top:0;left:0;bottom:0;width:min(360px,88vw);background:var(--navy-950);color:var(--vanilla);
+    z-index:201;overflow-y:auto;transform:translateX(-100%);transition:transform .25s}
+  .todo-panel.abierto{transform:translateX(0)}
+  .todo-header{display:flex;justify-content:space-between;align-items:center;padding:18px 20px;border-bottom:1px solid rgba(255,255,255,.1);
+    position:sticky;top:0;background:var(--navy-950);z-index:2}
+  .todo-header .quien{font-weight:700;font-size:.98rem;font-family:'Instrument Sans',sans-serif}
+  .todo-header .quien small{display:block;font-weight:400;color:var(--silver-dim);font-size:.76rem;margin-top:2px}
+  .todo-cerrar{background:none;border:1px solid rgba(255,255,255,.2);color:var(--vanilla);border-radius:8px;width:32px;height:32px;cursor:pointer;font-size:1rem}
+  .todo-grupo{padding:16px 20px;border-bottom:1px solid rgba(255,255,255,.08)}
+  .todo-grupo h5{font-family:'Instrument Sans',sans-serif;font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;color:var(--gold-light);margin:0 0 12px}
+  .todo-link{display:flex;align-items:center;gap:10px;padding:8px 0;text-decoration:none;color:var(--vanilla);font-size:.88rem;font-family:'Instrument Sans',sans-serif;background:none;border:none;width:100%;text-align:left;cursor:pointer}
+  .todo-link:hover{color:var(--gold-light)}
+  .todo-link .ic{width:22px;text-align:center;flex-shrink:0}
+  .paleta-selector{padding:12px 0 4px}
+  .paleta-label{display:block;font-size:.76rem;color:var(--silver-dim);margin-bottom:9px;font-family:'Instrument Sans',sans-serif}
+  .paleta-swatches{display:flex;gap:9px}
+  .paleta-swatch{width:26px;height:26px;border-radius:999px;border:2px solid transparent;cursor:pointer;padding:0;box-shadow:0 0 0 1px rgba(255,255,255,.14)}
+  .paleta-swatch.activo{border-color:var(--vanilla)}
+
+  .hero{max-width:900px;margin:0 auto;padding:7vh 6vw 4vh;text-align:center;}
+  .eyebrow{font-family:'Bodoni Moda',serif;font-style:italic;font-weight:500;color:var(--accent-text);font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;}
+  .hero h1{font-size:clamp(1.8rem,4vw,2.6rem);margin:14px 0 12px;}
+  .hero h1 span{color:var(--accent-text);}
+  .hero p{color:var(--text-dim);font-size:0.95rem;max-width:62ch;margin:0 auto;}
+  .hero .stat{font-family:'Bodoni Moda',serif;font-size:0.78rem;color:var(--accent-text);margin-top:14px;}
+
+  .search-wrap{max-width:680px;margin:30px auto 0;padding:0 6vw;}
+  .search-box{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--border);
+    border-radius:30px;padding:13px 22px;box-shadow:0 1px 2px rgba(0,0,0,.05),0 8px 20px -14px rgba(0,0,0,.16);}
+  .search-box svg{flex-shrink:0;opacity:0.6;}
+  .search-box input{flex:1;background:none;border:none;outline:none;color:var(--text);font-family:'Instrument Sans',sans-serif;font-size:0.94rem;}
+  .search-box input:focus-visible{outline:2px solid var(--gold-light);}
+  .search-box input::placeholder{color:var(--text-dim);}
+  .search-hint{text-align:center;font-family:'Bodoni Moda',serif;font-size:0.68rem;color:var(--text-dim);margin-top:10px;}
+
+  .filters{max-width:680px;margin:16px auto 0;padding:0 6vw;display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
+  .chip{font-family:'Bodoni Moda',serif;font-size:0.72rem;padding:7px 16px;border-radius:20px;
+    border:1px solid var(--border);color:var(--text-dim);cursor:pointer;background:var(--surface);transition:all .2s;}
+  .chip:hover{border-color:var(--line-accent);color:var(--accent-text);}
+  .chip.active{background:var(--gold);color:var(--navy-950);border-color:var(--gold);font-weight:700;}
+
+  .wrap{max-width:820px;margin:0 auto;padding:5vh 6vw 8vh;}
+  .result-count{font-family:'Bodoni Moda',serif;font-size:0.72rem;color:var(--text-dim);margin-bottom:20px;}
+
+  .paper{border:1px solid var(--border);border-radius:10px;padding:22px 24px;margin-bottom:14px;background:var(--surface);
+    box-shadow:0 1px 2px rgba(0,0,0,.05),0 8px 20px -14px rgba(0,0,0,.16);}
+  .paper-meta{font-family:'Bodoni Moda',serif;font-size:0.68rem;color:var(--text-dim);margin-bottom:8px;display:flex;gap:10px;flex-wrap:wrap;align-items:center;}
+  .badge-oa{color:var(--accent-text);border:1px solid var(--line-accent);border-radius:10px;padding:2px 9px;}
+  .badge-fuente{border:1px solid var(--border);border-radius:10px;padding:2px 9px;color:var(--text-dim);}
+  .paper h3{font-size:1.02rem;line-height:1.4;margin-bottom:8px;color:var(--text);}
+  .paper .autores{font-size:0.82rem;color:var(--text-dim);margin-bottom:10px;}
+  .paper .abstract{font-size:0.87rem;color:var(--text-dim);max-height:4.8em;overflow:hidden;position:relative;}
+  .paper .abstract.expanded{max-height:none;}
+  .paper .toggle-abs{font-family:'Bodoni Moda',serif;font-size:0.72rem;color:var(--accent-text);background:none;border:none;cursor:pointer;
+    margin-top:8px;padding:0;text-decoration:underline;text-underline-offset:3px;}
+  .paper .paper-foot{margin-top:14px;padding-top:12px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;}
+  .paper .paper-foot a{font-family:'Bodoni Moda',serif;font-size:0.74rem;color:var(--accent-text);text-decoration:none;}
+  .paper .paper-foot a:hover{text-decoration:underline;}
+
+  .load-more{display:block;margin:30px auto 0;background:var(--surface);border:1px solid var(--line-accent);color:var(--accent-text);
+    padding:12px 28px;border-radius:24px;font-family:'Bodoni Moda',serif;font-size:0.82rem;cursor:pointer;}
+  .load-more:hover{background:var(--gold);color:var(--navy-950);}
+  .load-more:disabled{opacity:0.4;cursor:default;}
+
+  .empty-state, .load-state{max-width:520px;margin:10vh auto;text-align:center;padding:0 20px;color:var(--text-dim);}
+  .spinner{width:28px;height:28px;border:2px solid var(--border);border-top-color:var(--gold);border-radius:50%;
+    animation:spin 0.8s linear infinite;margin:0 auto 20px;}
+  @keyframes spin{to{transform:rotate(360deg);}}
+
+  /* ===== footer ===== */
+  footer.pie-live{background:var(--navy-950);color:var(--silver-dim);padding:52px 6vw 26px;margin-top:20px;}
+  footer.pie-live .pie-grid{max-width:900px;margin:0 auto;display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:28px;}
+  footer.pie-live .pie-brand{font-family:'Bodoni Moda',serif;font-size:1.2rem;color:var(--vanilla);margin-bottom:10px;}
+  footer.pie-live .pie-brand span{color:var(--gold);}
+  footer.pie-live .pie-desc{font-size:0.84rem;max-width:280px;color:var(--silver-dim);margin:0;}
+  footer.pie-live h5{color:var(--gold-light);font-size:0.78rem;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:12px;font-family:'Instrument Sans',sans-serif;font-weight:600;}
+  footer.pie-live .pie-col a{display:block;color:var(--silver-dim);text-decoration:none;font-size:0.86rem;padding:4px 0;}
+  footer.pie-live .pie-col a:hover{color:var(--gold-light);}
+  footer.pie-live .pie-legal{max-width:900px;margin:34px auto 0;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;
+    border-top:1px solid rgba(255,255,255,.1);padding-top:18px;font-size:0.78rem;}
+  footer.pie-live .pie-legal a{color:var(--silver-dim);text-decoration:none;}
+  footer.pie-live .pie-legal a:hover{color:var(--gold-light);}
+  @media(max-width:900px){footer.pie-live .pie-grid{grid-template-columns:1fr 1fr;}}
+</style>
+<meta name="google-adsense-account" content="ca-pub-8763758728010451">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8763758728010451" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div class="utility">
+  <div class="u-wrap">
+    <div class="utility-mundos">
+      <a href="https://aurzane.com/">AURZANE</a>
+      <a href="https://mind.aurzane.com/">MIND</a>
+      <a href="https://ovp.aurzane.com/">OVP</a>
+      <a href="https://nexus.aurzane.com/">NEXUS</a>
+      <a class="activo" href="https://live.aurzane.com/">LIVE</a>
+      <a href="https://learn.aurzane.com/">LEARN</a>
+      <a href="https://build.aurzane.com/">BUILD</a>
+    </div>
+    <div class="utility-right">
+      <a href="https://aurzane.com/privacidad.html">Privacidad</a>
+      <button id="btnTema" onclick="alternarTema()">🌓 Tema</button>
+    </div>
+  </div>
+</div>
+
+<div class="topbar">
+  <a href="https://live.aurzane.com" class="brand">AUR<span class="z">Z</span>ANE <span class="tag">/ LIVE</span></a>
+  <div class="topbar-right">
+    <nav>
+      <a class="tlink" href="index.html">Inicio</a>
+      <a class="tlink" href="index.html#guardados">Guardados</a>
+      <a class="tlink active" href="live-biblioteca.html">Biblioteca</a>
+    </nav>
+    <a class="pill-cuenta" href="https://aurzane.com/mi-aurzane.html" id="pillCuenta">👤 Mi AURZANE</a>
+    <button class="btn-todo" onclick="abrirTodo()" aria-haspopup="dialog">☰ Todo LIVE</button>
+  </div>
+</div>
+
+<!-- ============ PANEL "TODO LIVE" ============ -->
+<div class="todo-overlay" id="todoOverlay" onclick="cerrarTodo()"></div>
+<aside class="todo-panel" id="todoPanel" role="dialog" aria-modal="true" aria-label="Todo LIVE">
+  <div class="todo-header">
+    <div class="quien" id="todoQuien">Hola, iniciá sesión<small>Accedé a todo el ecosistema</small></div>
+    <button class="todo-cerrar" onclick="cerrarTodo()" aria-label="Cerrar menú">✕</button>
+  </div>
+  <div class="todo-grupo">
+    <h5>Catálogos LIVE</h5>
+    <a class="todo-link" href="index.html"><span class="ic">📰</span> Artículos y guías</a>
+    <a class="todo-link" href="index.html#guardados"><span class="ic">⭐</span> Mis guardados</a>
+    <a class="todo-link" href="live-biblioteca.html"><span class="ic">📚</span> Biblioteca LIVE</a>
+  </div>
+  <div class="todo-grupo">
+    <h5>Otros mundos</h5>
+    <a class="todo-link" href="https://mind.aurzane.com/"><span class="ic">🧠</span> MIND — Mente y estudio</a>
+    <a class="todo-link" href="https://nexus.aurzane.com/"><span class="ic">🔧</span> NEXUS — Tecnología</a>
+    <a class="todo-link" href="https://learn.aurzane.com/"><span class="ic">🎓</span> LEARN — Conocimiento</a>
+    <a class="todo-link" href="https://build.aurzane.com/"><span class="ic">🏗️</span> BUILD — Imperio físico</a>
+    <a class="todo-link" href="https://aurzane.com/"><span class="ic">🌐</span> Ver todo el ecosistema</a>
+  </div>
+  <div class="todo-grupo" style="border-bottom:none">
+    <h5>Cuenta y ayuda</h5>
+    <a class="todo-link" href="https://aurzane.com/mi-aurzane.html"><span class="ic">👤</span> Mi AURZANE</a>
+    <a class="todo-link" href="mailto:hola@aurzane.com"><span class="ic">✉️</span> Contacto</a>
+    <a class="todo-link" href="https://aurzane.com/privacidad.html"><span class="ic">🔒</span> Privacidad</a>
+    <button class="todo-link" onclick="alternarTema()"><span class="ic">🌓</span> Cambiar tema claro/oscuro</button>
+    <div class="paleta-selector">
+      <span class="paleta-label">Paleta de acento</span>
+      <div class="paleta-swatches" id="paletaSwatches"></div>
+    </div>
+  </div>
+</aside>
+
+<div class="hero">
+  <span class="eyebrow">Índice académico</span>
+  <h1>Biblioteca de <span>investigación abierta</span></h1>
+  <p>El catálogo completo de papers reales sobre bienestar, propósito, equilibrio, hábitos, aventura y ciencia del deporte — de Europe PMC y OpenAlex combinados — con título, resumen oficial y enlace directo a la fuente.</p>
+  <div class="stat mono" id="totalStat"></div>
+</div>
+
+<div class="search-wrap">
+  <div class="search-box">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+    <input id="searchInput" type="text" placeholder="Buscar por tema, autor o palabra clave (en inglés funciona mejor)...">
+  </div>
+  <p class="search-hint">Los papers están indexados en su idioma original (mayormente inglés) — probá términos como "wellbeing", "adventure tourism" o "habit formation".</p>
+</div>
+
+<div class="filters" id="filtersOA">
+  <button class="chip active" data-oa="todos">Todos</button>
+  <button class="chip" data-oa="si">Solo acceso abierto</button>
+</div>
+<div class="filters" id="filtersFuente" style="margin-top:10px;">
+  <button class="chip active" data-fuente="todos">Todas las fuentes</button>
+  <button class="chip" data-fuente="Europe PMC">Europe PMC</button>
+  <button class="chip" data-fuente="OpenAlex">OpenAlex</button>
+</div>
+
+<div class="wrap">
+  <div id="loadState" class="load-state">
+    <div class="spinner"></div>
+    <p class="mono" style="font-size:0.8rem;color:var(--text-dim);">Cargando biblioteca...</p>
+  </div>
+  <div id="resultsArea" style="display:none;">
+    <div class="result-count mono" id="resultCount"></div>
+    <div id="list"></div>
+    <button class="load-more" id="loadMoreBtn">Cargar más</button>
+  </div>
+  <div id="emptyState" class="empty-state" style="display:none;">
+    <p>No encontramos papers con esa búsqueda. Probá con otra palabra clave, en inglés.</p>
+  </div>
+</div>
+
+<footer class="pie-live">
+  <div class="pie-grid">
+    <div>
+      <p class="pie-brand">AUR<span>ZANE</span> <span style="font-size:0.7rem;color:var(--silver-dim);">LIVE</span></p>
+      <p class="pie-desc">Esta biblioteca muestra el título y el abstract oficial de cada paper tal como se publicó, sin reescritura — es un índice de referencia, no contenido editorial de AURZANE. Cada resultado enlaza a la fuente original.</p>
+    </div>
+    <div class="pie-col">
+      <h5>Catálogos</h5>
+      <a href="index.html">Artículos y guías</a>
+      <a href="index.html#guardados">Mis guardados</a>
+      <a href="live-biblioteca.html">Biblioteca LIVE</a>
+    </div>
+    <div class="pie-col">
+      <h5>Ecosistema</h5>
+      <a href="https://aurzane.com/">AURZANE</a>
+      <a href="https://mind.aurzane.com/">MIND</a>
+      <a href="https://nexus.aurzane.com/">NEXUS</a>
+      <a href="https://learn.aurzane.com/">LEARN</a>
+      <a href="https://build.aurzane.com/">BUILD</a>
+    </div>
+    <div class="pie-col">
+      <h5>Cuenta</h5>
+      <a href="https://aurzane.com/mi-aurzane.html">Mi AURZANE</a>
+      <a href="https://aurzane.com/privacidad.html">Privacidad</a>
+      <a href="mailto:hola@aurzane.com">Contacto</a>
+    </div>
+  </div>
+  <div class="pie-legal">
+    <span>© 2026 AURZANE LIVE. Todos los derechos reservados.</span>
+    <a href="https://aurzane.com/admin.html">Estado del sistema</a>
+  </div>
+</footer>
+
+<script src="/aurzane-id.js"></script>
+<script>
+const SUPABASE_URL = 'https://chtfpqwrrarfdjcivlad.supabase.co';
+const SUPABASE_KEY = 'sb_publishable___1v6VjDew0l8uGfMyb9Nw_YyCLTPPw';
+const sb = crearClienteAurzaneID(SUPABASE_URL, SUPABASE_KEY);
+  window.__aurzaneSb = sb;
+  if(window.__aurzaneErrBuf.length){ window.__aurzaneErrBuf.forEach(function(en){ sb.from('frontend_error_log').insert(en).then(function(){}, function(){}); }); window.__aurzaneErrBuf.length = 0; }
+
+/* ============================================================
+   Tema claro/oscuro (comparte localStorage con todo el ecosistema)
+   ============================================================ */
+(function () {
+  const guardado = localStorage.getItem("aurzane-tema");
+  if (guardado === "oscuro") document.documentElement.setAttribute("data-tema", "oscuro");
+})();
+function alternarTema() {
+  const esOscuro = document.documentElement.getAttribute("data-tema") === "oscuro";
+  if (esOscuro) {
+    document.documentElement.removeAttribute("data-tema");
+    try { localStorage.setItem("aurzane-tema", "claro"); } catch (e) {}
+  } else {
+    document.documentElement.setAttribute("data-tema", "oscuro");
+    try { localStorage.setItem("aurzane-tema", "oscuro"); } catch (e) {}
+  }
+}
+
+/* ============================================================
+   Paleta de acento (comparte localStorage con todo el ecosistema)
+   ============================================================ */
+/* Paleta de color: la gestiona https://aurzane.com/aurzane-paleta.js (compartida por todo el ecosistema). */
+
+/* ============================================================
+   Panel "Todo LIVE"
+   ============================================================ */
+function abrirTodo() {
+  document.getElementById("todoOverlay").classList.add("abierto");
+  document.getElementById("todoPanel").classList.add("abierto");
+  document.body.style.overflow = "hidden";
+}
+function cerrarTodo() {
+  document.getElementById("todoOverlay").classList.remove("abierto");
+  document.getElementById("todoPanel").classList.remove("abierto");
+  document.body.style.overflow = "";
+}
+document.addEventListener("keydown", (e) => { if (e.key === "Escape") cerrarTodo(); });
+
+/* ============================================================
+   AURZANE ID — sesión compartida con el resto del ecosistema
+   ============================================================ */
+function reflejarSesionLive(session) {
+  const pill = document.getElementById("pillCuenta");
+  const quien = document.getElementById("todoQuien");
+  if (session) {
+    const nombre = (session.user.email || "Mi cuenta").split("@")[0];
+    pill.innerHTML = `👤 ${nombre}`;
+    quien.innerHTML = `Hola, ${nombre}<small>Tu cuenta AURZANE ID</small>`;
+  } else {
+    pill.innerHTML = `👤 Mi AURZANE`;
+    quien.innerHTML = `Hola, iniciá sesión<small>Accedé a todo el ecosistema</small>`;
+  }
+}
+sb.auth.getSession().then(({ data: { session } }) => reflejarSesionLive(session));
+sb.auth.onAuthStateChange((_e, session) => reflejarSesionLive(session));
+
+/* ============================================================
+   Biblioteca — búsqueda, filtros y paginación (Supabase)
+   ============================================================ */
+const PAGE_SIZE = 20;
+let offset = 0;
+let currentQuery = '';
+let soloAcceso = false;
+let filtroFuente = 'todos';
+let totalCargados = 0;
+let cargando = false;
+let searchDebounce = null;
+
+function escapeHtml(s){
+  return (s||'').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+function urlSegura(u){
+  try{
+    const parsed = new URL(u, location.href);
+    return (parsed.protocol === 'http:' || parsed.protocol === 'https:') ? parsed.href : '#';
+  }catch(e){
+    return '#';
+  }
+}
+
+async function cargarTotal(){
+  const { count, error } = await sb.from('live_biblioteca').select('id', { count: 'exact', head: true });
+  if(!error && count != null){
+    document.getElementById('totalStat').textContent = `${count.toLocaleString('es')} papers indexados`;
+  }
+}
+
+function construirQuery(){
+  let q = sb.from('live_biblioteca')
+    .select('pmid,titulo,abstract,autores,anio,licencia,es_acceso_abierto,url_articulo,doi,fuente', { count: 'exact' });
+
+  if(currentQuery.trim()){
+    q = q.textSearch('search_vector', currentQuery.trim(), { type: 'websearch', config: 'english' });
+  }
+  if(soloAcceso){
+    q = q.eq('es_acceso_abierto', true);
+  }
+  if(filtroFuente !== 'todos'){
+    q = q.eq('fuente', filtroFuente);
+  }
+  return q.order('anio', { ascending: false, nullsFirst: false }).range(offset, offset + PAGE_SIZE - 1);
+}
+
+function renderPapers(papers, append){
+  const list = document.getElementById('list');
+  const html = papers.map(p => {
+    const abs = p.abstract ? escapeHtml(p.abstract) : '<em style="color:var(--text-dim);">Sin resumen disponible.</em>';
+    const autores = p.autores ? escapeHtml(p.autores.length > 160 ? p.autores.slice(0,160) + '…' : p.autores) : 'Autores no disponibles';
+    const oa = p.es_acceso_abierto ? `<span class="badge-oa">Acceso abierto</span>` : '';
+    const fuenteBadge = p.fuente ? `<span class="badge-fuente">${escapeHtml(p.fuente)}</span>` : '';
+    const link = p.url_articulo || (p.doi ? (p.doi.startsWith('http') ? p.doi : 'https://doi.org/' + p.doi) : '');
+    return `
+      <div class="paper">
+        <div class="paper-meta">
+          <span>${p.anio || 's/f'}</span>
+          ${oa}
+          ${fuenteBadge}
+          ${p.licencia ? `<span>${escapeHtml(p.licencia.toUpperCase())}</span>` : ''}
+        </div>
+        <h3>${escapeHtml(p.titulo)}</h3>
+        <div class="autores">${autores}</div>
+        <div class="abstract">${abs}</div>
+        ${p.abstract && p.abstract.length > 260 ? `<button class="toggle-abs">Ver abstract completo</button>` : ''}
+        <div class="paper-foot">
+          <span class="mono" style="color:var(--text-dim);">${p.pmid ? 'PMID ' + escapeHtml(p.pmid) : ''}</span>
+          ${link ? `<a href="${escapeHtml(urlSegura(link))}" target="_blank" rel="noopener noreferrer">Ver fuente original →</a>` : ''}
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  if(append){ list.insertAdjacentHTML('beforeend', html); } else { list.innerHTML = html; }
+
+  list.querySelectorAll('.toggle-abs').forEach(btn => {
+    if(btn.dataset.wired) return;
+    btn.dataset.wired = '1';
+    btn.addEventListener('click', () => {
+      const absEl = btn.previousElementSibling;
+      absEl.classList.toggle('expanded');
+      btn.textContent = absEl.classList.contains('expanded') ? 'Ver menos' : 'Ver abstract completo';
+    });
+  });
+}
+
+async function cargarResultados(append){
+  if(cargando) return;
+  cargando = true;
+  const loadMoreBtn = document.getElementById('loadMoreBtn');
+  loadMoreBtn.disabled = true;
+  loadMoreBtn.textContent = 'Cargando...';
+
+  const { data, error, count } = await construirQuery();
+
+  document.getElementById('loadState').style.display = 'none';
+
+  if(error){
+    document.getElementById('resultsArea').style.display = 'none';
+    document.getElementById('emptyState').style.display = 'block';
+    document.getElementById('emptyState').innerHTML = '<p>No pudimos cargar la biblioteca en este momento. Intenta de nuevo en unos minutos.</p>';
+    console.error(error);
+    cargando = false;
+    return;
+  }
+
+  const papers = data || [];
+  if(!append && papers.length === 0){
+    document.getElementById('resultsArea').style.display = 'none';
+    document.getElementById('emptyState').style.display = 'block';
+    cargando = false;
+    return;
+  }
+
+  document.getElementById('resultsArea').style.display = 'block';
+  document.getElementById('emptyState').style.display = 'none';
+
+  renderPapers(papers, append);
+  totalCargados = append ? totalCargados + papers.length : papers.length;
+  offset = totalCargados;
+
+  const totalDisponible = count != null ? count : totalCargados;
+  document.getElementById('resultCount').textContent =
+    `Mostrando ${totalCargados.toLocaleString('es')} de ${totalDisponible.toLocaleString('es')} resultados`;
+
+  loadMoreBtn.style.display = totalCargados < totalDisponible ? 'block' : 'none';
+  loadMoreBtn.disabled = false;
+  loadMoreBtn.textContent = 'Cargar más';
+  cargando = false;
+}
+
+function nuevaBusqueda(){
+  offset = 0;
+  totalCargados = 0;
+  cargarResultados(false);
+}
+
+document.getElementById('searchInput').addEventListener('input', (e) => {
+  clearTimeout(searchDebounce);
+  const val = e.target.value;
+  searchDebounce = setTimeout(() => {
+    currentQuery = val;
+    nuevaBusqueda();
+  }, 400);
+});
+
+document.getElementById('filtersOA').addEventListener('click', (e) => {
+  const btn = e.target.closest('.chip');
+  if(!btn) return;
+  document.querySelectorAll('#filtersOA .chip').forEach(c => c.classList.remove('active'));
+  btn.classList.add('active');
+  soloAcceso = btn.dataset.oa === 'si';
+  nuevaBusqueda();
+});
+
+document.getElementById('filtersFuente').addEventListener('click', (e) => {
+  const btn = e.target.closest('.chip');
+  if(!btn) return;
+  document.querySelectorAll('#filtersFuente .chip').forEach(c => c.classList.remove('active'));
+  btn.classList.add('active');
+  filtroFuente = btn.dataset.fuente;
+  nuevaBusqueda();
+});
+
+document.getElementById('loadMoreBtn').addEventListener('click', () => cargarResultados(true));
+
+cargarTotal();
+cargarResultados(false);
+</script>
+
+</body>
+</html>
