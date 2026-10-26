@@ -1,0 +1,8 @@
+# Cada PDF declara como versión canónica su ficha en la biblioteca.
+# Así Google no los trata como duplicados sin canónica (los mismos PDF existen en sus repositorios de origen).
+<IfModule mod_setenvif.c>
+  SetEnvIf Request_URI "^/biblioteca/pdf/([a-z0-9-]+)\.pdf$" PDF_ID=$1
+</IfModule>
+<IfModule mod_headers.c>
+  Header set Link "<https://aurzane.com/biblioteca/libro/%{PDF_ID}e.html>; rel=\"canonical\"" env=PDF_ID
+</IfModule>
