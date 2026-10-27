@@ -5,6 +5,7 @@ name: Universidades publicar portal
 #   SG_USER  usuario SSH
 #   SG_PORT  puerto SSH (SiteGround usa 18765)
 #   SG_KEY   clave privada SSH generada en Site Tools > Devs > Gestor de claves SSH
+#   SG_PASS  contraseña que se puso al crear esa clave (si se puso)
 # Sin secretos, construye el portal y lo deja como artefacto descargable, sin subir nada.
 on:
   schedule:
@@ -22,6 +23,7 @@ jobs:
       SG_HOST: ${{ secrets.SG_HOST }}
       SG_USER: ${{ secrets.SG_USER }}
       SG_PORT: ${{ secrets.SG_PORT }}
+      SG_PASS: ${{ secrets.SG_PASS }}
     steps:
       - uses: actions/checkout@v4
       - name: Exportar Supabase
@@ -37,7 +39,8 @@ jobs:
       - name: Subir a nexus.aurzane.com
         if: env.SG_KEY != ''
         run: |
-          mkdir -p ~/.ssh && echo "$SG_KEY" > ~/.ssh/id && chmod 600 ~/.ssh/id
+          mkdir -p ~/.ssh && printf '%s\n' "$SG_KEY" | tr -d '\r' > ~/.ssh/id && chmod 600 ~/.ssh/id
+          if [ -n "$SG_PASS" ]; then ssh-keygen -p -P "$SG_PASS" -N "" -f ~/.ssh/id >/dev/null; fi
           SSH="ssh -i ~/.ssh/id -p ${SG_PORT:-18765} -o StrictHostKeyChecking=accept-new"
           DEST="www/nexus.aurzane.com/public_html"
           rsync -az --checksum -e "$SSH" salida/universidades/ "$SG_USER@$SG_HOST:$DEST/universidades/"
