@@ -57,7 +57,7 @@ with cf.ThreadPoolExecutor(16) as ex:
     # los rotos de la semana pasada se vuelven a comprobar siempre
     try:
         for r in json.load(open('enlaces/informe.json'))['rotos']:
-            if r['url'] not in vistos and interno(r['url']):
+            if r['url'] not in vistos and interno(r['url']) and not re.search(r"[\s<>'\"]", r['url']):
                 vistos.add(r['url']); origen[r['url']] = r.get('desde', [])
     except Exception:
         pass
