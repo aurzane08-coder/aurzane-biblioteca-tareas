@@ -1,0 +1,32 @@
+{
+ "paginas": 437,
+ "revisadas": 3564,
+ "rotos": [
+  {
+   "url": "https://aurzane.com/biblioteca/' + d.portada + '",
+   "estado": "ERR URL can't contain control characters. \"/biblioteca/' + d.por",
+   "desde": [
+    "https://aurzane.com/",
+    "https://aurzane.com/index.html",
+    "https://aurzane.com"
+   ]
+  },
+  {
+   "url": "https://aurzane.com/biblioteca/libro/' + encodeURIComponent(d.id) + '.html",
+   "estado": "ERR URL can't contain control characters. \"/biblioteca/libro/' +",
+   "desde": [
+    "https://aurzane.com/",
+    "https://aurzane.com/index.html",
+    "https://aurzane.com"
+   ]
+  },
+  {
+   "url": "https://nexus.aurzane.com/universidades/cuba/universidad-tecnologica-de-la-habana-jose-antonio-echeverria/<urlopen error [Errno -2] Name or service not known>",
+   "estado": "ERR URL can't contain control characters. '/universidades/cuba/u",
+   "desde": [
+    "https://nexus.aurzane.com/universidades/cuba/universidad-tecnologica-de-la-habana-jose-antonio-echeverria/",
+    "https://nexus.aurzane.com/universidades/cuba/universidad-tecnologica-de-la-habana-jose-antonio-echeverria/"
+   ]
+  }
+ ]
+}
