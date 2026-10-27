@@ -5,12 +5,14 @@ from principales import P, ISO
 UA = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/124 Safari/537.36'
 ctx = ssl.create_default_context(); ctx.check_hostname = False; ctx.verify_mode = ssl.CERT_NONE
 def probar(w):
+    err = ''
     for url in [w, w.replace('https://', 'http://')]:
         try:
             r = urllib.request.urlopen(urllib.request.Request(url, headers={'User-Agent': UA}), timeout=25, context=ctx)
             return r.status, r.geturl()
         except urllib.error.HTTPError as e:
             if e.code in (401, 403, 405, 429, 503): return e.code, url  # el sitio existe pero bloquea bots
+            err = 'HTTP %d' % e.code
         except Exception as e:
             err = str(e)[:80]
     return 0, err
