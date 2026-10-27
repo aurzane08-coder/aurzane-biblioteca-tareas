@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<script>
+  // Observabilidad de errores frontend (Fase 8-9 P1, ver observabilidad_errores_setup.sql).
+  // Se registra ANTES que cualquier otro script (incluido el SDK de Supabase) para
+  // no perderse errores tempranos; si todavía no existe un cliente listo, los junta
+  // en un buffer y los manda apenas el cliente de esta página se crea más abajo.
+  // Nunca incluye datos de usuario -- solo la ruta de la página y un mensaje genérico.
+  window.__aurzaneErrBuf = [];
+  window.__aurzaneLogErr = function(msg){
+    var entry = { pagina: location.pathname, mensaje: String(msg == null ? 'Error desconocido' : msg).slice(0,300) };
+    if(window.__aurzaneSb && window.__aurzaneSb.from){
+      window.__aurzaneSb.from('frontend_error_log').insert(entry).then(function(){}, function(){});
+    } else {
+      window.__aurzaneErrBuf.push(entry);
+    }
+  };
+  window.addEventListener('error', function(e){ window.__aurzaneLogErr(e && e.message); });
+  window.addEventListener('unhandledrejection', function(e){
+    var r = e && e.reason;
+    window.__aurzaneLogErr((r && r.message) || (r == null ? null : String(r)) || 'Promise rechazada');
+  });
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://aurzane.com/aurzane-paleta.js"></script>
+<title>Biblioteca Académica — AURZANE NEXUS</title>
+<meta name="description" content="Índice de investigación abierta sobre tecnología y salud — 5.000 artículos científicos de acceso abierto, con abstract y fuente citable.">
+<link rel="canonical" href="https://nexus.aurzane.com/nexus-biblioteca.html">
+<meta property="og:title" content="Biblioteca Académica — AURZANE NEXUS">
+<meta property="og:description" content="5.000 artículos científicos de acceso abierto sobre tecnología y salud, con abstract oficial y enlace directo a la fuente.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://nexus.aurzane.com/nexus-biblioteca.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700;1,6..96,400;1,6..96,500&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* ============================================================
+     AURZANE NEXUS — Biblioteca. Mismos tokens que index.html /
+     MIND / aurzane.com: claro/vainilla por defecto, navy/dorado
+     como "marco" en los dos temas, paleta compartida vía
+     localStorage con el resto del ecosistema.
+     ============================================================ */
+  :root{
+    --navy-950:#070a14; --navy-900:#0f1530; --navy-800:#161d42; --navy-700:#212b5c;
+    --gold:#c9a24b; --gold-light:#e8cd8f; --gold-deep:#8a6a28; --gold-rgb:201,162,75;
+    --vanilla:#faf6ec; --paper-ink:#1c1712;
+    --silver:#c7cdd6; --silver-dim:#8b92a0;
+    --line-strong:rgba(var(--gold-rgb),.38); --line-accent:rgba(var(--gold-rgb),.4);
+    --bg:var(--vanilla); --surface:#fffdf9; --surface-2:#f1e8d6;
+    --text:var(--paper-ink); --text-dim:#6b6153; --border:rgba(28,23,18,.13);
+    --accent-text:var(--gold-deep);
+  }
+  :root[data-tema="oscuro"]{
+    --bg:var(--navy-950); --surface:var(--navy-900); --surface-2:var(--navy-800);
+    --text:var(--vanilla); --text-dim:var(--silver-dim); --border:rgba(199,205,214,.14);
+    --accent-text:var(--gold-light);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--bg);color:var(--text);font-family:'Instrument Sans',sans-serif;line-height:1.65;min-height:100vh;transition:background .2s,color .2s;}
+  h1,h2,h3{font-family:'Bodoni Moda',serif;font-weight:500;}
+  .mono{font-family:'Bodoni Moda',serif;font-style:italic;font-weight:500;}
+  a{color:inherit;}
+  img{max-width:100%;display:block}
+  ::selection{background:rgba(var(--gold-rgb),0.35);}
+  :focus-visible{outline:2px solid var(--gold-light);outline-offset:2px;}
+  button{font:inherit;}
+  .visually-hidden{position:absolute;left:-9999px}
+
+  /* ===== Barra superior (marco navy fijo en los dos temas) ===== */
+  .utility{background:var(--navy-950);color:var(--silver-dim);font-size:.78rem;padding:7px 0;border-bottom:1px solid rgba(255,255,255,.06)}
+  .utility .u-wrap{max-width:1200px;margin:0 auto;padding:0 5vw;display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+  .utility a{text-decoration:none;color:inherit}
+  .utility a:hover{color:var(--gold-light)}
+  .utility-mundos{display:flex;gap:14px;align-items:center}
+  .utility-mundos .activo{color:var(--gold-light);font-weight:600}
+  .utility-right{display:flex;gap:16px;align-items:center}
+  #btnTema{background:none;border:none;color:inherit;cursor:pointer;font-size:.78rem;font-family:inherit;padding:2px}
+
+  /* ===== Topbar ===== */
+  .topbar{position:sticky;top:0;z-index:50;background:rgba(250,246,236,0.92);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--border);padding:16px 5vw;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;}
+  :root[data-tema="oscuro"] .topbar{background:rgba(7,10,20,0.92)}
+  .brand{font-family:'Bodoni Moda',serif;font-size:1.05rem;letter-spacing:0.06em;text-decoration:none;display:flex;align-items:center;gap:8px;}
+  .brand span.z{color:var(--gold)}
+  .brand .world-tag{font-family:'Bodoni Moda',serif;font-size:0.68rem;color:var(--text-dim);letter-spacing:0.08em;}
+  .topbar-right{display:flex;align-items:center;gap:16px;}
+  .topbar nav{display:flex;gap:20px;align-items:center;}
+  .topbar nav a{font-family:'Bodoni Moda',serif;font-size:0.74rem;color:var(--text-dim);text-decoration:none;letter-spacing:0.03em;
+    display:flex;align-items:center;gap:5px;}
+  .topbar nav a:hover, .topbar nav a.active{color:var(--accent-text);}
+  .pill-cuenta{display:flex;align-items:center;gap:6px;border:1px solid var(--border);border-radius:999px;padding:6px 13px;font-size:.78rem;text-decoration:none;color:var(--text);font-family:'Instrument Sans',sans-serif}
+  .pill-cuenta:hover{border-color:var(--gold)}
+  .btn-todo{display:flex;align-items:center;gap:8px;background:var(--navy-950);color:var(--vanilla);border:none;
+    border-radius:999px;padding:8px 14px;font-family:'Instrument Sans',sans-serif;font-weight:600;font-size:.8rem;cursor:pointer}
+  .btn-todo:hover{background:var(--navy-800)}
+
+  /* ===== Panel "Todo NEXUS" ===== */
+  .todo-overlay{position:fixed;inset:0;background:rgba(7,10,20,.55);z-index:200;display:none}
+  .todo-overlay.abierto{display:block}
+  .todo-panel{position:fixed;top:0;left:0;bottom:0;width:min(360px,88vw);background:var(--navy-950);color:var(--vanilla);
+    z-index:201;overflow-y:auto;transform:translateX(-100%);transition:transform .25s}
+  .todo-panel.abierto{transform:translateX(0)}
+  .todo-header{display:flex;justify-content:space-between;align-items:center;padding:18px 20px;border-bottom:1px solid rgba(255,255,255,.1);
+    position:sticky;top:0;background:var(--navy-950);z-index:2}
+  .todo-header .quien{font-weight:700;font-size:.98rem;font-family:'Instrument Sans',sans-serif}
+  .todo-header .quien small{display:block;font-weight:400;color:var(--silver-dim);font-size:.76rem;margin-top:2px}
+  .todo-cerrar{background:none;border:1px solid rgba(255,255,255,.2);color:var(--vanilla);border-radius:8px;width:32px;height:32px;cursor:pointer;font-size:1rem}
+  .todo-grupo{padding:16px 20px;border-bottom:1px solid rgba(255,255,255,.08)}
+  .todo-grupo h5{font-family:'Instrument Sans',sans-serif;font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;color:var(--gold-light);margin:0 0 12px}
+  .todo-link{display:flex;align-items:center;gap:10px;padding:8px 0;text-decoration:none;color:var(--vanilla);font-size:.88rem;font-family:'Instrument Sans',sans-serif}
+  .todo-link:hover{color:var(--gold-light)}
+  .todo-link .ic{width:22px;text-align:center;flex-shrink:0}
+  .paleta-selector{padding:12px 0 4px}
+  .paleta-label{display:block;font-size:.76rem;color:var(--silver-dim);margin-bottom:9px;font-family:'Instrument Sans',sans-serif}
+  .paleta-swatches{display:flex;gap:9px}
+  .paleta-swatch{width:26px;height:26px;border-radius:999px;border:2px solid transparent;cursor:pointer;padding:0;box-shadow:0 0 0 1px rgba(255,255,255,.14)}
+  .paleta-swatch.activo{border-color:var(--vanilla)}
+
+  /* ===== Breadcrumb ===== */
+  .breadcrumb{max-width:1080px;margin:0 auto;padding:16px 5vw 0;font-family:'Bodoni Moda',serif;font-size:0.72rem;
+    color:var(--text-dim);display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+  .breadcrumb a{color:var(--text-dim);text-decoration:none;}
+  .breadcrumb a:hover{color:var(--accent-text);}
+  .breadcrumb .sep{opacity:0.4;}
+  .breadcrumb .current{color:var(--accent-text);}
+
+  /* ===== Encabezado ===== */
+  .world-header{max-width:1080px;margin:0 auto;padding:4vh 5vw 3vh;position:relative;overflow:hidden;text-align:center;}
+  .world-header::before{content:'';position:absolute;top:-30%;left:50%;transform:translateX(-50%);width:640px;height:420px;
+    background:radial-gradient(circle, rgba(var(--gold-rgb),0.16), rgba(var(--gold-rgb),0.03) 55%, transparent 72%);
+    pointer-events:none;z-index:0;}
+  .world-header::after{content:'';position:absolute;inset:0;pointer-events:none;z-index:0;opacity:0.45;
+    background-image:radial-gradient(rgba(var(--gold-rgb),0.4) 1px, transparent 1px);
+    background-size:26px 26px;-webkit-mask-image:radial-gradient(ellipse 620px 260px at 50% 0%, black, transparent 70%);
+    mask-image:radial-gradient(ellipse 620px 260px at 50% 0%, black, transparent 70%);}
+  .world-header-in{position:relative;z-index:1;max-width:780px;margin:0 auto;}
+  .eyebrow{font-family:'Bodoni Moda',serif;font-style:italic;font-weight:500;color:var(--accent-text);font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;}
+  .world-header h1{font-size:clamp(1.9rem,4.4vw,2.9rem);margin:14px 0 14px;line-height:1.1;}
+  .world-header h1 span{color:var(--accent-text);}
+  .world-header p{color:var(--text-dim);font-size:1rem;max-width:66ch;margin:0 auto;}
+
+  /* ===== Banda de estadísticas ===== */
+  .research-band{max-width:1080px;margin:2vh auto 0;padding:0 5vw;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;}
+  .research-stat{background:var(--surface);border:1px solid var(--border);padding:20px 16px;text-align:center;}
+  .research-stat:not(:first-child){border-left:none;}
+  .research-stat .rs-num{font-family:'Bodoni Moda',serif;font-size:1.7rem;color:var(--accent-text);}
+  .research-stat .rs-label{font-family:'Bodoni Moda',serif;font-size:0.66rem;color:var(--text-dim);margin-top:4px;}
+
+  /* ===== Búsqueda + sugerencias ===== */
+  .search-wrap{max-width:680px;margin:5vh auto 0;padding:0 5vw;}
+  .search-box-lg{display:flex;align-items:center;gap:10px;background:var(--surface-2);border:1px solid var(--line-accent);
+    border-radius:30px;padding:13px 22px;}
+  .search-box-lg svg{flex-shrink:0;opacity:0.6;color:var(--text-dim);}
+  .search-box-lg input{flex:1;background:none;border:none;outline:none;color:var(--text);font-family:'Instrument Sans',sans-serif;font-size:0.94rem;}
+  .search-box-lg input::placeholder{color:var(--text-dim);}
+  .search-hint{text-align:center;font-family:'Bodoni Moda',serif;font-size:0.68rem;color:var(--text-dim);margin-top:10px;}
+  .sugeridas{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:14px;}
+  .sug-chip{font-family:'Bodoni Moda',serif;font-size:0.7rem;padding:6px 14px;border-radius:16px;
+    border:1px dashed var(--line-accent);color:var(--text-dim);background:none;cursor:pointer;transition:all .2s;}
+  .sug-chip:hover{border-style:solid;border-color:var(--gold);color:var(--accent-text);}
+
+  /* ===== Filtros ===== */
+  .filter-bar{max-width:1080px;margin:22px auto 0;padding:0 5vw;display:flex;gap:14px;flex-wrap:wrap;align-items:center;justify-content:center;}
+  .f-chip{font-family:'Bodoni Moda',serif;font-size:0.72rem;padding:7px 15px;border-radius:20px;white-space:nowrap;
+    border:1px solid var(--line-accent);color:var(--text-dim);cursor:pointer;background:transparent;transition:all .2s;}
+  .f-chip:hover{border-color:var(--accent-text);color:var(--accent-text);}
+  .f-chip.active{background:var(--gold);color:var(--navy-950);border-color:var(--gold);font-weight:700;}
+  .f-chip.divider{width:1px;padding:0;border:none;background:var(--border);margin:0 2px;align-self:stretch;}
+  .filtros-grupo{display:flex;gap:8px;flex-wrap:wrap;align-items:center;}
+
+  .wrap{max-width:1080px;margin:0 auto;padding:5vh 5vw 10vh;}
+  .result-count{font-family:'Bodoni Moda',serif;font-size:0.72rem;color:var(--text-dim);margin-bottom:20px;}
+
+  /* ===== Tarjetas de papers ===== */
+  .paper{border:1px solid var(--border);border-radius:8px;padding:22px 24px;margin-bottom:14px;background:var(--surface);transition:border-color .2s;}
+  .paper:hover{border-color:var(--line-accent);}
+  .paper-meta{font-family:'Bodoni Moda',serif;font-size:0.68rem;color:var(--text-dim);margin-bottom:8px;display:flex;gap:10px;flex-wrap:wrap;align-items:center;}
+  .badge-oa{color:var(--accent-text);border:1px solid var(--line-accent);border-radius:10px;padding:2px 9px;}
+  .paper h3{font-size:1.02rem;line-height:1.4;margin-bottom:8px;color:var(--text);}
+  .paper .autores{font-size:0.82rem;color:var(--text-dim);margin-bottom:10px;}
+  .paper .abstract{font-size:0.87rem;color:var(--text-dim);max-height:4.8em;overflow:hidden;position:relative;}
+  .paper .abstract.expanded{max-height:none;}
+  .paper .toggle-abs{font-family:'Bodoni Moda',serif;font-size:0.72rem;color:var(--accent-text);background:none;border:none;cursor:pointer;
+    margin-top:8px;padding:0;text-decoration:underline;text-underline-offset:3px;}
+  .paper .paper-foot{margin-top:14px;padding-top:12px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;}
+  .paper .paper-foot a{font-family:'Bodoni Moda',serif;font-size:0.74rem;color:var(--accent-text);text-decoration:none;}
+  .paper .paper-foot a:hover{text-decoration:underline;}
+
+  .load-more-wrap{text-align:center;margin-top:32px;}
+  .btn-outline{font-family:'Bodoni Moda',serif;font-size:0.78rem;color:var(--accent-text);background:none;
+    border:1px solid var(--line-accent);border-radius:24px;padding:11px 28px;cursor:pointer;transition:all .2s;}
+  .btn-outline:hover{border-color:var(--gold);background:rgba(var(--gold-rgb),0.08);}
+  .btn-outline:disabled{opacity:0.4;cursor:default;}
+
+  .empty-state, .load-state{max-width:520px;margin:10vh auto;text-align:center;padding:0 20px;color:var(--text-dim);}
+  .spinner{width:28px;height:28px;border:2px solid var(--border);border-top-color:var(--gold);border-radius:50%;
+    animation:spin 0.8s linear infinite;margin:0 auto 20px;}
+  @keyframes spin{to{transform:rotate(360deg);}}
+
+  footer.pie-nexus{border-top:1px solid var(--border);padding:34px 5vw;text-align:center;background:var(--bg)}
+  footer.pie-nexus p{font-size:0.76rem;color:var(--text-dim);max-width:640px;margin:0 auto;}
+
+  @media(max-width:900px){
+    .research-band{grid-template-columns:repeat(2,1fr);}
+    .research-stat:nth-child(2){border-left:1px solid var(--border);}
+    .research-stat:nth-child(3){border-left:none;}
+  }
+  @media(max-width:640px){
+    .topbar nav{gap:12px;}
+    .topbar nav a span.label{display:none;}
+    .filter-bar{gap:8px;}
+    .f-chip.divider{display:none;}
+  }
+</style>
+<meta name="google-adsense-account" content="ca-pub-8763758728010451">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8763758728010451" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div class="utility">
+  <div class="u-wrap">
+    <div class="utility-mundos">
+      <a href="https://aurzane.com/">AURZANE</a>
+      <a href="https://mind.aurzane.com/">MIND</a>
+      <a href="https://ovp.aurzane.com/">OVP</a>
+      <a class="activo" href="https://nexus.aurzane.com/">NEXUS</a>
+      <a href="https://live.aurzane.com/">LIVE</a>
+      <a href="https://learn.aurzane.com/">LEARN</a>
+      <a href="https://build.aurzane.com/">BUILD</a>
+    </div>
+    <div class="utility-right">
+      <a href="https://aurzane.com/admin.html">Estado del sistema</a>
+      <button id="btnTema" onclick="alternarTema()">🌓 Tema</button>
+    </div>
+  </div>
+</div>
+
+<header class="topbar">
+  <a href="https://nexus.aurzane.com/" class="brand">AUR<span class="z">Z</span>ANE <span class="world-tag">/ NEXUS</span></a>
+  <div class="topbar-right">
+    <nav>
+      <a href="index.html"><span class="label">Inicio</span></a>
+      <a href="nexus.html"><span class="label">Artículos</span></a>
+      <a href="universidades/"><span class="label">Universidades</span></a>
+      <a href="nexus-biblioteca.html" class="active" id="navBiblioteca"><span class="label">Biblioteca</span></a>
+    </nav>
+    <a class="pill-cuenta" href="https://aurzane.com/mi-aurzane.html" id="pillCuenta">👤 Mi AURZANE</a>
+    <button class="btn-todo" onclick="abrirTodo()" aria-haspopup="dialog">☰ Todo NEXUS</button>
+  </div>
+</header>
+
+<!-- ============ PANEL "TODO NEXUS" ============ -->
+<div class="todo-overlay" id="todoOverlay" onclick="cerrarTodo()"></div>
+<aside class="todo-panel" id="todoPanel" role="dialog" aria-modal="true" aria-label="Todo NEXUS">
+  <div class="todo-header">
+    <div class="quien" id="todoQuien">Hola, iniciá sesión<small>Accedé a todo el ecosistema</small></div>
+    <button class="todo-cerrar" onclick="cerrarTodo()" aria-label="Cerrar menú">✕</button>
+  </div>
+  <div class="todo-grupo">
+    <h5>Catálogos NEXUS</h5>
+    <a class="todo-link" href="universidades/"><span class="ic">🎓</span> Universidades (6.409)</a>
+    <a class="todo-link" href="nexus.html"><span class="ic">📰</span> Artículos y guías</a>
+    <a class="todo-link" href="nexus.html#guardados"><span class="ic">⭐</span> Mis guardados</a>
+    <a class="todo-link" href="nexus-biblioteca.html"><span class="ic">📚</span> Biblioteca NEXUS</a>
+  </div>
+  <div class="todo-grupo">
+    <h5>Lo que NEXUS construye</h5>
+    <a class="todo-link" href="https://aurzane.com/research.html"><span class="ic">🔎</span> Research Hub (5 bibliotecas)</a>
+  </div>
+  <div class="todo-grupo">
+    <h5>Otros mundos</h5>
+    <a class="todo-link" href="https://mind.aurzane.com/"><span class="ic">🧠</span> MIND — Mente y estudio</a>
+    <a class="todo-link" href="https://live.aurzane.com/"><span class="ic">🌿</span> LIVE — Vida sin límites</a>
+    <a class="todo-link" href="https://learn.aurzane.com/"><span class="ic">🎓</span> LEARN — Conocimiento</a>
+    <a class="todo-link" href="https://build.aurzane.com/"><span class="ic">🏗️</span> BUILD — Imperio físico</a>
+    <a class="todo-link" href="https://aurzane.com/"><span class="ic">🌐</span> Ver todo el ecosistema</a>
+  </div>
+  <div class="todo-grupo" style="border-bottom:none">
+    <h5>Cuenta y ayuda</h5>
+    <a class="todo-link" href="https://aurzane.com/mi-aurzane.html"><span class="ic">👤</span> Mi AURZANE</a>
+    <a class="todo-link" href="mailto:hola@aurzane.com"><span class="ic">✉️</span> Contacto</a>
+    <a class="todo-link" href="https://aurzane.com/privacidad.html"><span class="ic">🔒</span> Privacidad</a>
+    <button class="todo-link" style="background:none;border:none;font-family:inherit;cursor:pointer;width:100%;text-align:left" onclick="alternarTema()"><span class="ic">🌓</span> Cambiar tema claro/oscuro</button>
+    <div class="paleta-selector">
+      <span class="paleta-label">Paleta de acento</span>
+      <div class="paleta-swatches" id="paletaSwatches"></div>
+    </div>
+  </div>
+</aside>
+
+<main>
+
+<div class="breadcrumb"><a href="https://aurzane.com">AURZANE</a><span class="sep">/</span><a href="index.html">NEXUS</a><span class="sep">/</span><span class="current">Biblioteca</span></div>
+
+<div class="world-header">
+  <div class="world-header-in">
+    <span class="eyebrow">Índice académico</span>
+    <h1>Biblioteca de <span>investigación abierta</span></h1>
+    <p>El catálogo completo de papers reales sobre tecnología y salud — salud mental, salud física, alimentación, educación, accesibilidad, longevidad e inteligencia artificial — con título, resumen oficial y enlace directo a la fuente, para consulta y cita académica.</p>
+  </div>
+</div>
+
+<div class="research-band" id="statsBand">
+  <div class="research-stat"><div class="rs-num" id="statTotal">—</div><div class="rs-label">Papers indexados</div></div>
+  <div class="research-stat"><div class="rs-num" id="statOa">—</div><div class="rs-label">Acceso abierto</div></div>
+  <div class="research-stat"><div class="rs-num" id="statAbs">—</div><div class="rs-label">Con abstract</div></div>
+  <div class="research-stat"><div class="rs-num" id="statOaPct">—</div><div class="rs-label">% acceso abierto</div></div>
+</div>
+
+<div class="search-wrap">
+  <div class="search-box-lg">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+    <label for="searchInput" class="visually-hidden">Buscar en la biblioteca</label>
+    <input id="searchInput" type="text" placeholder="Buscar por tema, autor o palabra clave (en inglés funciona mejor)...">
+  </div>
+  <p class="search-hint">Los papers están indexados en su idioma original (mayormente inglés) — probá términos como "wearable", "telemedicine" o "mental health".</p>
+  <div class="sugeridas" id="sugeridas">
+    <button class="sug-chip" data-q="wearable devices">wearable devices</button>
+    <button class="sug-chip" data-q="telemedicine">telemedicine</button>
+    <button class="sug-chip" data-q="artificial intelligence health">artificial intelligence health</button>
+    <button class="sug-chip" data-q="digital accessibility">digital accessibility</button>
+    <button class="sug-chip" data-q="mental health technology">mental health technology</button>
+  </div>
+</div>
+
+<div class="filter-bar">
+  <div class="filtros-grupo" id="filtersOA">
+    <button class="f-chip active" data-oa="todos">Todos</button>
+    <button class="f-chip" data-oa="si">Solo acceso abierto</button>
+  </div>
+  <div class="f-chip divider"></div>
+  <div class="filtros-grupo" id="filtersOrden">
+    <button class="f-chip active" data-orden="desc">Más recientes primero</button>
+    <button class="f-chip" data-orden="asc">Más antiguos primero</button>
+  </div>
+</div>
+
+<div class="wrap">
+  <div id="loadState" class="load-state">
+    <div class="spinner"></div>
+    <p class="mono" style="font-size:0.8rem;">Cargando biblioteca...</p>
+  </div>
+  <div id="resultsArea" style="display:none;">
+    <div class="result-count mono" id="resultCount"></div>
+    <div id="list"></div>
+    <div class="load-more-wrap">
+      <button class="btn-outline" id="loadMoreBtn">Cargar más</button>
+    </div>
+  </div>
+  <div id="emptyState" class="empty-state" style="display:none;">
+    <p>No encontramos papers con esa búsqueda. Probá con otra palabra clave, en inglés.</p>
+  </div>
+</div>
+
+</main>
+
+<footer class="pie-nexus">
+  <p>Esta biblioteca muestra el título y el abstract oficial de cada paper tal como se publicó, sin reescritura — es un índice de referencia, no contenido editorial de AURZANE. Cada resultado enlaza a la fuente original.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+<script src="/aurzane-id.js"></script>
+<script>
+const SUPABASE_URL = 'https://chtfpqwrrarfdjcivlad.supabase.co';
+const SUPABASE_KEY = 'sb_publishable___1v6VjDew0l8uGfMyb9Nw_YyCLTPPw';
+const sb = crearClienteAurzaneID(SUPABASE_URL, SUPABASE_KEY);
+  window.__aurzaneSb = sb;
+  if(window.__aurzaneErrBuf.length){ window.__aurzaneErrBuf.forEach(function(en){ sb.from('frontend_error_log').insert(en).then(function(){}, function(){}); }); window.__aurzaneErrBuf.length = 0; }
+
+/* ============================================================
+   Tema claro/oscuro (comparte localStorage con todo el ecosistema)
+   ============================================================ */
+(function () {
+  const guardado = localStorage.getItem("aurzane-tema");
+  if (guardado === "oscuro") document.documentElement.setAttribute("data-tema", "oscuro");
+})();
+function alternarTema() {
+  const esOscuro = document.documentElement.getAttribute("data-tema") === "oscuro";
+  if (esOscuro) {
+    document.documentElement.removeAttribute("data-tema");
+    try { localStorage.setItem("aurzane-tema", "claro"); } catch (e) {}
+  } else {
+    document.documentElement.setAttribute("data-tema", "oscuro");
+    try { localStorage.setItem("aurzane-tema", "oscuro"); } catch (e) {}
+  }
+}
+
+/* ============================================================
+   Paleta de acento (comparte localStorage con todo el ecosistema)
+   ============================================================ */
+/* Paleta de color: la gestiona https://aurzane.com/aurzane-paleta.js (compartida por todo el ecosistema). */
+
+/* ============================================================
+   Panel "Todo NEXUS"
+   ============================================================ */
+function abrirTodo() {
+  document.getElementById("todoOverlay").classList.add("abierto");
+  document.getElementById("todoPanel").classList.add("abierto");
+  document.body.style.overflow = "hidden";
+}
+function cerrarTodo() {
+  document.getElementById("todoOverlay").classList.remove("abierto");
+  document.getElementById("todoPanel").classList.remove("abierto");
+  document.body.style.overflow = "";
+}
+document.addEventListener("keydown", (e) => { if (e.key === "Escape") cerrarTodo(); });
+
+/* ============================================================
+   AURZANE ID — sesión compartida con el resto del ecosistema
+   ============================================================ */
+function reflejarSesionNexus(session) {
+  const pill = document.getElementById("pillCuenta");
+  const quien = document.getElementById("todoQuien");
+  if (session) {
+    const nombre = (session.user.email || "Mi cuenta").split("@")[0];
+    pill.innerHTML = `👤 ${nombre}`;
+    quien.innerHTML = `Hola, ${nombre}<small>Tu cuenta AURZANE ID</small>`;
+  } else {
+    pill.innerHTML = `👤 Mi AURZANE`;
+    quien.innerHTML = `Hola, iniciá sesión<small>Accedé a todo el ecosistema</small>`;
+  }
+}
+sb.auth.getSession().then(({ data: { session } }) => reflejarSesionNexus(session));
+sb.auth.onAuthStateChange((_e, session) => reflejarSesionNexus(session));
+
+/* ============================================================
+   Biblioteca — misma lógica real de búsqueda/paginación que la
+   versión original (construirQuery/renderPapers/cargarResultados),
+   con un toggle de orden y una banda de estadísticas en vivo
+   agregados sobre esa base. nexus_biblioteca no tiene columna de
+   "fuente" (a diferencia de mind_biblioteca), así que el filtro
+   acá es solo por acceso abierto.
+   ============================================================ */
+const PAGE_SIZE = 20;
+let offset = 0;
+let currentQuery = '';
+let soloAcceso = false;
+let ordenAsc = false;
+let totalCargados = 0;
+let cargando = false;
+let searchDebounce = null;
+
+function escapeHtml(s){
+  return (s||'').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+function urlSegura(u){
+  try{
+    const parsed = new URL(u, location.href);
+    return (parsed.protocol === 'http:' || parsed.protocol === 'https:') ? parsed.href : '#';
+  }catch(e){
+    return '#';
+  }
+}
+
+async function cargarStats(){
+  try{
+    const [{count: total}, {count: oa}, {count: abs}] = await Promise.all([
+      sb.from('nexus_biblioteca').select('id', { count: 'exact', head: true }),
+      sb.from('nexus_biblioteca').select('id', { count: 'exact', head: true }).eq('es_acceso_abierto', true),
+      sb.from('nexus_biblioteca').select('id', { count: 'exact', head: true }).not('abstract', 'is', null)
+    ]);
+    if(total != null) document.getElementById('statTotal').textContent = total.toLocaleString('es');
+    if(oa != null) document.getElementById('statOa').textContent = oa.toLocaleString('es');
+    if(abs != null) document.getElementById('statAbs').textContent = abs.toLocaleString('es');
+    if(total && oa != null) document.getElementById('statOaPct').textContent = Math.round((oa/total)*100) + '%';
+  }catch(e){ console.warn('No se pudieron cargar las estadísticas de la biblioteca', e); }
+}
+
+function construirQuery(){
+  let q = sb.from('nexus_biblioteca')
+    .select('pmid,titulo,abstract,autores,anio,licencia,es_acceso_abierto,url_articulo,doi', { count: 'exact' });
+
+  if(currentQuery.trim()){
+    q = q.textSearch('search_vector', currentQuery.trim(), { type: 'websearch', config: 'english' });
+  }
+  if(soloAcceso){
+    q = q.eq('es_acceso_abierto', true);
+  }
+  return q.order('anio', { ascending: ordenAsc, nullsFirst: false }).range(offset, offset + PAGE_SIZE - 1);
+}
+
+function renderPapers(papers, append){
+  const list = document.getElementById('list');
+  const html = papers.map(p => {
+    const abs = p.abstract ? escapeHtml(p.abstract) : '<em style="color:var(--text-dim);">Sin resumen disponible.</em>';
+    const autores = p.autores ? escapeHtml(p.autores.length > 160 ? p.autores.slice(0,160) + '…' : p.autores) : 'Autores no disponibles';
+    const oa = p.es_acceso_abierto ? `<span class="badge-oa">Acceso abierto</span>` : '';
+    const link = p.url_articulo || (p.doi ? (p.doi.startsWith('http') ? p.doi : 'https://doi.org/' + p.doi) : '');
+    return `
+      <div class="paper">
+        <div class="paper-meta">
+          <span>${p.anio || 's/f'}</span>
+          ${oa}
+          ${p.licencia ? `<span>${escapeHtml(p.licencia.toUpperCase())}</span>` : ''}
+        </div>
+        <h3>${escapeHtml(p.titulo)}</h3>
+        <div class="autores">${autores}</div>
+        <div class="abstract">${abs}</div>
+        ${p.abstract && p.abstract.length > 260 ? `<button class="toggle-abs">Ver abstract completo</button>` : ''}
+        <div class="paper-foot">
+          <span class="mono" style="color:var(--text-dim);">${p.pmid ? 'PMID ' + escapeHtml(p.pmid) : ''}</span>
+          ${link ? `<a href="${escapeHtml(urlSegura(link))}" target="_blank" rel="noopener noreferrer">Ver fuente original →</a>` : ''}
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  if(append){ list.insertAdjacentHTML('beforeend', html); } else { list.innerHTML = html; }
+
+  list.querySelectorAll('.toggle-abs').forEach(btn => {
+    if(btn.dataset.wired) return;
+    btn.dataset.wired = '1';
+    btn.addEventListener('click', () => {
+      const absEl = btn.previousElementSibling;
+      absEl.classList.toggle('expanded');
+      btn.textContent = absEl.classList.contains('expanded') ? 'Ver menos' : 'Ver abstract completo';
+    });
+  });
+}
+
+async function cargarResultados(append){
+  if(cargando) return;
+  cargando = true;
+  const loadMoreBtn = document.getElementById('loadMoreBtn');
+  loadMoreBtn.disabled = true;
+  loadMoreBtn.textContent = 'Cargando...';
+
+  const { data, error, count } = await construirQuery();
+
+  document.getElementById('loadState').style.display = 'none';
+
+  if(error){
+    document.getElementById('resultsArea').style.display = 'none';
+    document.getElementById('emptyState').style.display = 'block';
+    document.getElementById('emptyState').innerHTML = '<p>No pudimos cargar la biblioteca en este momento. Intenta de nuevo en unos minutos.</p>';
+    console.error(error);
+    cargando = false;
+    return;
+  }
+
+  const papers = data || [];
+  if(!append && papers.length === 0){
+    document.getElementById('resultsArea').style.display = 'none';
+    document.getElementById('emptyState').style.display = 'block';
+    cargando = false;
+    return;
+  }
+
+  document.getElementById('resultsArea').style.display = 'block';
+  document.getElementById('emptyState').style.display = 'none';
+
+  renderPapers(papers, append);
+  totalCargados = append ? totalCargados + papers.length : papers.length;
+  offset = totalCargados;
+
+  const totalDisponible = count != null ? count : totalCargados;
+  document.getElementById('resultCount').textContent =
+    `Mostrando ${totalCargados.toLocaleString('es')} de ${totalDisponible.toLocaleString('es')} resultados`;
+
+  loadMoreBtn.style.display = totalCargados < totalDisponible ? 'block' : 'none';
+  loadMoreBtn.disabled = false;
+  loadMoreBtn.textContent = 'Cargar más';
+  cargando = false;
+}
+
+function nuevaBusqueda(){
+  offset = 0;
+  totalCargados = 0;
+  cargarResultados(false);
+}
+
+document.getElementById('searchInput').addEventListener('input', (e) => {
+  clearTimeout(searchDebounce);
+  const val = e.target.value;
+  searchDebounce = setTimeout(() => {
+    currentQuery = val;
+    nuevaBusqueda();
+  }, 400);
+});
+
+document.getElementById('sugeridas').addEventListener('click', (e) => {
+  const chip = e.target.closest('.sug-chip');
+  if(!chip) return;
+  const q = chip.dataset.q;
+  document.getElementById('searchInput').value = q;
+  currentQuery = q;
+  nuevaBusqueda();
+});
+
+document.getElementById('filtersOA').addEventListener('click', (e) => {
+  const btn = e.target.closest('.f-chip');
+  if(!btn) return;
+  document.querySelectorAll('#filtersOA .f-chip').forEach(c => c.classList.remove('active'));
+  btn.classList.add('active');
+  soloAcceso = btn.dataset.oa === 'si';
+  nuevaBusqueda();
+});
+
+document.getElementById('filtersOrden').addEventListener('click', (e) => {
+  const btn = e.target.closest('.f-chip');
+  if(!btn) return;
+  document.querySelectorAll('#filtersOrden .f-chip').forEach(c => c.classList.remove('active'));
+  btn.classList.add('active');
+  ordenAsc = btn.dataset.orden === 'asc';
+  nuevaBusqueda();
+});
+
+document.getElementById('loadMoreBtn').addEventListener('click', () => cargarResultados(true));
+
+cargarStats();
+cargarResultados(false);
+</script>
+
+</body>
+</html>
