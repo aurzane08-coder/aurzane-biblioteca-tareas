@@ -1,16 +1,16 @@
 #!/bin/bash
-# Sondeo: RUCT y Supabase (solo lectura)
+# Sondeo 2: RUCT consulta de grados de una universidad, ficha de universidad y de título
 set -x
 O=univ/sondeo; mkdir -p $O
 UA="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/124 Safari/537.36"
-curl -sSL -A "$UA" -c /tmp/ck -b /tmp/ck "https://www.educacion.gob.es/ruct/home" -o $O/ruct_home.html
-curl -sSL -A "$UA" -c /tmp/ck -b /tmp/ck "https://www.educacion.gob.es/ruct/listauniversidades" -o $O/ruct_univ.html
-curl -sSL -A "$UA" -c /tmp/ck -b /tmp/ck "https://www.educacion.gob.es/ruct/listaestudios" -o $O/ruct_estudios.html
-curl -sSL -A "$UA" -c /tmp/ck -b /tmp/ck "https://www.educacion.gob.es/ruct/listacentros" -o $O/ruct_centros.html
-U=https://chtfpqwrrarfdjcivlad.supabase.co; K=sb_publishable___1v6VjDew0l8uGfMyb9Nw_YyCLTPPw
-curl -sS "$U/rest/v1/universidades?select=*&limit=3" -H "apikey: $K" -H "Authorization: Bearer $K" -o $O/sb_univ.json
-curl -sS "$U/rest/v1/carreras?select=*&limit=3" -H "apikey: $K" -H "Authorization: Bearer $K" -o $O/sb_carr.json
-curl -sS -X POST "$U/rest/v1/rpc/buscar_universidades" -H "apikey: $K" -H "Authorization: Bearer $K" -H "Content-Type: application/json" -d '{"p_q":"madrid"}' -o $O/sb_buscar.json
-curl -sS -X POST "$U/rest/v1/rpc/facetas_universidades" -H "apikey: $K" -H "Authorization: Bearer $K" -H "Content-Type: application/json" -d '{}' -o $O/sb_facetas.json
-curl -sS "$U/rest/v1/" -H "apikey: $K" -H "Authorization: Bearer $K" -o $O/sb_openapi.json
+B="https://www.educacion.gob.es/ruct"
+C="-sSL -A $UA -c /tmp/ck -b /tmp/ck"
+curl $C "$B/consultaestudios?actual=estudios" -o /dev/null
+curl $C -X POST "$B/consultaestudios.action?actual=estudios" --data "consulta=1&codigoEstudio=&codigoUniversidad=014&descripcionEstudio=&codigoTipo=G&codigoSubTipo=&codigoRama=&ambito=&codigoEstado=&situacion=" -o $O/r2_lista014.html
+curl $C "$B/universidad.action?codigoUniversidad=014&actual=universidades" -o $O/r2_univ014.html
+COD=$(grep -o 'estudio.action?codigoCiclo=[^"&]*&amp;codigoTipo=[^"&]*&amp;CodigoEstudio=[0-9]*' $O/r2_lista014.html | head -1 | sed 's/&amp;/\&/g')
+echo "COD=$COD"
+[ -n "$COD" ] && curl $C "$B/$COD&actual=estudios" -o $O/r2_estudio.html
+grep -o 'href="[^"]*estudio[^"]*"' $O/r2_lista014.html | head -20 > $O/r2_links.txt
+grep -o 'href="[^"]*d-[0-9]*-[pe]=[^"]*"' $O/r2_lista014.html | head -20 >> $O/r2_links.txt
 ls -la $O
