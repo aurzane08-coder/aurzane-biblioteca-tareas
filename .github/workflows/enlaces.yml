@@ -1,0 +1,22 @@
+name: Revisar enlaces AURZANE
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['enlaces/revisar.py']
+permissions:
+  contents: write
+jobs:
+  revisar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -u enlaces/revisar.py
+      - name: Guardar
+        if: always()
+        run: |
+          git config user.name "aurzane-bot"; git config user.email "bot@aurzane.com"
+          git add -A enlaces
+          git commit -m "enlaces: informe" || exit 0
+          for i in 1 2 3 4 5; do git pull --rebase && git push && break; sleep 7; done
