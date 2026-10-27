@@ -1,41 +1,5 @@
 {
- "paginas": 0,
- "revisadas": 7,
- "rotos": [
-  {
-   "url": "https://aurzane.com/",
-   "estado": 202,
-   "desde": []
-  },
-  {
-   "url": "https://build.aurzane.com/",
-   "estado": 202,
-   "desde": []
-  },
-  {
-   "url": "https://learn.aurzane.com/",
-   "estado": 202,
-   "desde": []
-  },
-  {
-   "url": "https://live.aurzane.com/",
-   "estado": 202,
-   "desde": []
-  },
-  {
-   "url": "https://mind.aurzane.com/",
-   "estado": 202,
-   "desde": []
-  },
-  {
-   "url": "https://nexus.aurzane.com/",
-   "estado": 202,
-   "desde": []
-  },
-  {
-   "url": "https://ovp.aurzane.com/",
-   "estado": 202,
-   "desde": []
-  }
- ]
+ "paginas": 442,
+ "revisadas": 3776,
+ "rotos": []
 }
