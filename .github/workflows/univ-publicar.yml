@@ -1,0 +1,64 @@
+name: Universidades publicar portal
+# Cada noche: exporta Supabase (lo que se edita en el admin), regenera el portal y lo sube a nexus.
+# La subida necesita estos secretos del repositorio (Settings > Secrets and variables > Actions):
+#   SG_HOST  servidor SSH de SiteGround (p. ej. ssh.aurzane.com o la IP que indica Site Tools > Devs > SSH)
+#   SG_USER  usuario SSH
+#   SG_PORT  puerto SSH (SiteGround usa 18765)
+#   SG_KEY   clave privada SSH generada en Site Tools > Devs > Gestor de claves SSH
+# Sin secretos, construye el portal y lo deja como artefacto descargable, sin subir nada.
+on:
+  schedule:
+    - cron: '17 3 * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency: univ-publicar
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      SG_KEY: ${{ secrets.SG_KEY }}
+      SG_HOST: ${{ secrets.SG_HOST }}
+      SG_USER: ${{ secrets.SG_USER }}
+      SG_PORT: ${{ secrets.SG_PORT }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Exportar Supabase
+        run: python3 -u univ/exportar.py
+      - name: Generar portal
+        run: python3 -u univ/gen/gen.py univ/data salida/universidades
+      - name: Lista de archivos y retirados
+        run: |
+          (cd salida/universidades && find . -type f | sort) > univ/manifiesto-nuevo.txt
+          touch univ/manifiesto.txt
+          comm -23 univ/manifiesto.txt univ/manifiesto-nuevo.txt > retirados.txt || true
+          echo "Retirados: $(wc -l < retirados.txt)"
+      - name: Subir a nexus.aurzane.com
+        if: env.SG_KEY != ''
+        run: |
+          mkdir -p ~/.ssh && echo "$SG_KEY" > ~/.ssh/id && chmod 600 ~/.ssh/id
+          SSH="ssh -i ~/.ssh/id -p ${SG_PORT:-18765} -o StrictHostKeyChecking=accept-new"
+          DEST="www/nexus.aurzane.com/public_html"
+          rsync -az --checksum -e "$SSH" salida/universidades/ "$SG_USER@$SG_HOST:$DEST/universidades/"
+          rsync -az -e "$SSH" salida/sitemap-universidades.xml "$SG_USER@$SG_HOST:$DEST/sitemap-universidades.xml"
+          # lo que ya no existe no se borra: se mueve a la carpeta eliminar (fuera de la web)
+          if [ -s retirados.txt ]; then
+            FECHA=$(date +%Y%m%d)
+            sed 's#^\./##' retirados.txt | $SSH "$SG_USER@$SG_HOST" "cd www/nexus.aurzane.com && while read f; do [ -f public_html/universidades/\$f ] && mkdir -p \"eliminar/universidades-$FECHA/\$(dirname \$f)\" && mv \"public_html/universidades/\$f\" \"eliminar/universidades-$FECHA/\$f\"; done; true"
+          fi
+          cp univ/manifiesto-nuevo.txt univ/manifiesto.txt
+      - name: Guardar portal como artefacto
+        if: env.SG_KEY == ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: portal-universidades
+          path: salida/
+          retention-days: 7
+      - name: Guardar datos
+        run: |
+          rm -f univ/manifiesto-nuevo.txt
+          git config user.name "aurzane-bot"; git config user.email "bot@aurzane.com"
+          git add -A univ/data univ/manifiesto.txt
+          git commit -m "univ: publicación automática" || exit 0
+          for i in 1 2 3 4 5; do git pull --rebase && git push && break; sleep 7; done

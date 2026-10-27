@@ -39,7 +39,7 @@ with cf.ThreadPoolExecutor(16) as ex:
             paginas += 1
             for m in re.finditer(r'(?:href|src)\s*=\s*"([^"#]+)', body):
                 h = html.unescape(m.group(1)).strip()
-                if h.startswith(('mailto:', 'tel:', 'javascript:', 'data:')) or '${' in h or '{{' in h:
+                if h.startswith(('mailto:', 'tel:', 'javascript:', 'data:')) or '${' in h or '{{' in h or "' +" in h or '" +' in h or '<' in h:
                     continue
                 v = urllib.parse.urljoin(final, h).split('#')[0]
                 if not interno(v):
@@ -54,6 +54,13 @@ with cf.ThreadPoolExecutor(16) as ex:
                 if es_pag and not muestra(p):
                     continue
                 cola.append(v)
+    # los rotos de la semana pasada se vuelven a comprobar siempre
+    try:
+        for r in json.load(open('enlaces/informe.json'))['rotos']:
+            if r['url'] not in vistos and interno(r['url']):
+                vistos.add(r['url']); origen[r['url']] = r.get('desde', [])
+    except Exception:
+        pass
     # recursos y páginas pendientes sin rastrear: solo estado
     pend = [v for v in vistos if v not in estado]
     for v, (st, _, _) in zip(pend, ex.map(get, pend)):
@@ -63,3 +70,15 @@ for u, st in estado.items():
         roto.append({'url': u, 'estado': st, 'desde': origen.get(u, [])})
 json.dump({'paginas': paginas, 'revisadas': len(estado), 'rotos': sorted(roto, key=lambda x: x['url'])}, open('enlaces/informe.json', 'w'), ensure_ascii=False, indent=1)
 print(paginas, len(estado), len(roto))
+
+# Enviar al buzón de reportes de AURZANE (admin > Reportes). Cierra solo los que ya funcionan.
+K = 'sb_publishable___1v6VjDew0l8uGfMyb9Nw_YyCLTPPw'
+reales = [{'url': r['url'], 'estado': str(r['estado'])[:40], 'desde': (r['desde'] or [''])[0]} for r in roto
+          if re.match(r'^https://([a-z]+\.)?aurzane\.com/', r['url'])][:400]
+try:
+    req = urllib.request.Request('https://chtfpqwrrarfdjcivlad.supabase.co/rest/v1/rpc/reportes_robot', method='POST',
+                                 data=json.dumps({'p_rotos': reales}).encode(),
+                                 headers={'apikey': K, 'Authorization': 'Bearer ' + K, 'Content-Type': 'application/json'})
+    print('buzón:', urllib.request.urlopen(req, timeout=60).read()[:200])
+except Exception as e:
+    print('buzón: no se pudo enviar', e)
