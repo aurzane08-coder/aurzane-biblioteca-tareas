@@ -1,10 +1,11 @@
 """Revisa enlaces internos de todos los sitios AURZANE. Salida: enlaces/informe.json"""
-import re, json, random, urllib.request, urllib.parse, html, concurrent.futures as cf, threading, collections
+import re, json, time, random, urllib.request, urllib.parse, html, concurrent.futures as cf, threading, collections
 SITIOS = ['https://aurzane.com/', 'https://mind.aurzane.com/', 'https://ovp.aurzane.com/', 'https://nexus.aurzane.com/',
           'https://live.aurzane.com/', 'https://learn.aurzane.com/', 'https://build.aurzane.com/']
 UA = 'Mozilla/5.0 (compatible; AurzaneLinkCheck/1.0)'
 estado, lock = {}, threading.Lock()
 def get(u):
+    time.sleep(0.25)
     try:
         r = urllib.request.urlopen(urllib.request.Request(u, headers={'User-Agent': UA}), timeout=30)
         ct = r.headers.get('content-type', '')
@@ -27,7 +28,7 @@ def muestra(path):
 paginas, cola, vistos = 0, list(SITIOS), set(SITIOS)
 roto = []
 origen = collections.defaultdict(list)
-with cf.ThreadPoolExecutor(16) as ex:
+with cf.ThreadPoolExecutor(4) as ex:
     while cola and paginas < 2500:
         lote, cola = cola[:64], cola[64:]
         for u, (st, final, body) in zip(lote, ex.map(get, lote)):
@@ -71,6 +72,12 @@ for u, st in estado.items():
 json.dump({'paginas': paginas, 'revisadas': len(estado), 'rotos': sorted(roto, key=lambda x: x['url'])}, open('enlaces/informe.json', 'w'), ensure_ascii=False, indent=1)
 print(paginas, len(estado), len(roto))
 
+# Si SiteGround nos frena (202/429 = verificación anti-robots), el informe no es fiable: no se envía nada.
+bloqueado = sum(1 for u in SITIOS if estado.get(u) != 200)
+roto = [r for r in roto if str(r['estado']) not in ('202', '429')]
+if bloqueado >= 2:
+    print('Revisión no fiable: SiteGround pidió verificación anti-robots en', bloqueado, 'portadas. No se envía al buzón.')
+    raise SystemExit(0)
 # Enviar al buzón de reportes de AURZANE (admin > Reportes). Cierra solo los que ya funcionan.
 K = 'sb_publishable___1v6VjDew0l8uGfMyb9Nw_YyCLTPPw'
 reales = [{'url': r['url'], 'estado': str(r['estado'])[:40], 'desde': (r['desde'] or [''])[0]} for r in roto
