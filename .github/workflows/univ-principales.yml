@@ -1,0 +1,21 @@
+name: Universidades principales verificar webs
+on:
+  push:
+    branches: [main]
+    paths: ['univ/principales.py', 'univ/verificar_webs.py']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  v:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - run: mkdir -p univ/data && python3 -u univ/verificar_webs.py | tee univ/data/principales.log
+      - name: Guardar
+        run: |
+          git config user.name "aurzane-bot"; git config user.email "bot@aurzane.com"
+          git add -A univ/data/principales.json univ/data/principales.log
+          git commit -m "univ: webs principales" || exit 0
+          for i in 1 2 3 4 5; do git pull --rebase && git push && break; sleep 7; done
