@@ -1,0 +1,1870 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<script>
+  // Observabilidad de errores frontend (Fase 8-9 P1, ver observabilidad_errores_setup.sql).
+  // Se registra ANTES que cualquier otro script (incluido el SDK de Supabase) para
+  // no perderse errores tempranos; si todavía no existe un cliente listo, los junta
+  // en un buffer y los manda apenas el cliente de esta página se crea más abajo.
+  // Nunca incluye datos de usuario -- solo la ruta de la página y un mensaje genérico.
+  window.__aurzaneErrBuf = [];
+  window.__aurzaneLogErr = function(msg){
+    var entry = { pagina: location.pathname, mensaje: String(msg == null ? 'Error desconocido' : msg).slice(0,300) };
+    if(window.__aurzaneSb && window.__aurzaneSb.from){
+      window.__aurzaneSb.from('frontend_error_log').insert(entry).then(function(){}, function(){});
+    } else {
+      window.__aurzaneErrBuf.push(entry);
+    }
+  };
+  window.addEventListener('error', function(e){ window.__aurzaneLogErr(e && e.message); });
+  window.addEventListener('unhandledrejection', function(e){
+    var r = e && e.reason;
+    window.__aurzaneLogErr((r && r.message) || (r == null ? null : String(r)) || 'Promise rechazada');
+  });
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://aurzane.com/aurzane-paleta.js"></script>
+<title>Mi Proceso — AURZANE OVP</title>
+<meta name="description" content="Tu proceso de orientación vocacional AURZANE OVP: evaluaciones gratuitas e informe automático en un solo lugar.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;1,6..96,400;1,6..96,500&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   AURZANE OVP — SISTEMA DE DISEÑO COMPARTIDO (v2)
+   Portal del estudiante / cliente
+   ============================================================ */
+:root{
+  /* superficies */
+  --navy:#080B17; --navy-2:#0F1530; --navy-3:#151C3D; --navy-4:#1E2650;
+  /* texto */
+  --ink:#F5F3EE; --ink-2:#C7CDD6; --ink-3:#8B92A0;
+  /* acento */
+  --gold:#C9A24B; --gold-light:#EACF92; --bronze:#8A6A28;
+  /* semánticos */
+  --ok:#7FA968; --ok-bg:rgba(127,169,104,0.12); --ok-line:rgba(127,169,104,0.35);
+  --err:#C97070; --err-bg:rgba(201,112,112,0.1); --err-line:rgba(201,112,112,0.38);
+  --warn:#C9A24B; --warn-bg:rgba(201,162,75,0.1); --warn-line:rgba(201,162,75,0.38);
+  --info:#7C93C9; --info-bg:rgba(124,147,201,0.1); --info-line:rgba(124,147,201,0.35);
+  /* líneas */
+  --line:rgba(199,205,214,0.09); --line-2:rgba(199,205,214,0.16); --line-gold:rgba(201,162,75,0.35);
+  /* espaciado (base 4px) */
+  --sp-1:4px; --sp-2:8px; --sp-3:12px; --sp-4:16px; --sp-5:20px; --sp-6:24px; --sp-7:32px; --sp-8:40px; --sp-9:56px; --sp-10:72px;
+  /* radios */
+  --r-sm:8px; --r-md:10px; --r-lg:14px; --r-btn:8px; --r-pill:100px;
+  /* movimiento */
+  --dur:200ms; --dur-slow:320ms; --ease:cubic-bezier(.4,0,.2,1);
+  /* sombra (uso extremadamente moderado) */
+  --shadow-lift:0 12px 32px -12px rgba(0,0,0,0.45);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;}
+body{background:var(--navy);color:var(--ink);font-family:'Instrument Sans',sans-serif;line-height:1.6;min-height:100vh;font-size:15px;-webkit-font-smoothing:antialiased;}
+h1,h2,h3,h4{font-family:'Bodoni Moda',serif;font-weight:500;letter-spacing:-0.01em;line-height:1.2;}
+.mono{font-family:'Bodoni Moda',serif;font-style:italic;font-weight:500;}
+input,select,button,textarea{font-family:inherit;color:inherit;}
+a{color:inherit;}
+button{cursor:pointer;}
+::selection{background:rgba(201,162,75,0.3);}
+:focus-visible{outline:2px solid var(--gold-light);outline-offset:2px;border-radius:4px;}
+img{max-width:100%;display:block;}
+
+/* ===== tipografía escala ===== */
+.h1{font-size:clamp(1.9rem,3.4vw,2.5rem);}
+.h2{font-size:clamp(1.5rem,2.4vw,1.85rem);}
+.h3{font-size:clamp(1.1rem,1.6vw,1.3rem);}
+.eyebrow{font-family:'Bodoni Moda',serif;font-style:italic;font-weight:500;font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);}
+.text-dim{color:var(--ink-3);}
+.text-2{color:var(--ink-2);}
+
+/* ===== botones ===== */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:none;border-radius:var(--r-btn);
+  font-weight:600;font-size:0.86rem;padding:12px 22px;cursor:pointer;text-decoration:none;transition:transform var(--dur) var(--ease), opacity var(--dur) var(--ease), background var(--dur) var(--ease), border-color var(--dur) var(--ease);
+  white-space:nowrap;}
+.btn:active{transform:scale(0.98);}
+.btn:disabled{opacity:0.4;cursor:not-allowed;transform:none;}
+.btn-primary{background:linear-gradient(135deg,var(--gold-light),var(--gold));color:var(--navy);}
+.btn-primary:hover:not(:disabled){opacity:0.92;}
+.btn-secondary{background:var(--navy-4);color:var(--ink);border:1px solid var(--line-2);}
+.btn-secondary:hover:not(:disabled){border-color:var(--gold-light);color:var(--gold-light);}
+.btn-ghost{background:transparent;color:var(--ink-2);border:1px solid var(--line-2);}
+.btn-ghost:hover:not(:disabled){border-color:var(--gold-light);color:var(--gold-light);}
+.btn-danger{background:transparent;color:#e0a0a0;border:1px solid var(--err-line);}
+.btn-danger:hover:not(:disabled){background:var(--err);color:var(--navy);}
+.btn-block{width:100%;}
+.btn-sm{padding:9px 16px;font-size:0.8rem;}
+.btn-spinner{width:14px;height:14px;border:2px solid rgba(255,255,255,0.35);border-top-color:currentColor;border-radius:50%;animation:spin .7s linear infinite;}
+@keyframes spin{to{transform:rotate(360deg);}}
+
+/* ===== inputs ===== */
+.field{margin-bottom:var(--sp-4);}
+.field label{font-family:'Bodoni Moda',serif;font-size:0.68rem;color:var(--ink-3);
+  text-transform:uppercase;letter-spacing:0.05em;display:block;margin-bottom:8px;}
+.field input,.field select{width:100%;background:var(--navy-3);border:1px solid var(--line-2);color:var(--ink);
+  padding:12px 14px;border-radius:var(--r-sm);font-size:0.92rem;transition:border-color var(--dur) var(--ease), background var(--dur) var(--ease);}
+.field input:hover,.field select:hover{border-color:rgba(199,205,214,0.28);}
+.field input:focus,.field select:focus{outline:none;border-color:var(--gold);background:var(--navy-4);}
+.field.err input{border-color:var(--err);}
+.field .field-err{font-size:0.76rem;color:#e0a0a0;margin-top:6px;display:none;}
+.field.err .field-err{display:block;}
+.field .field-hint{font-size:0.74rem;color:var(--ink-3);margin-top:6px;}
+.pw-reqs{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:8px;}
+.pw-req{font-size:0.72rem;color:var(--ink-3);display:flex;align-items:center;gap:5px;}
+.pw-req.ok{color:var(--ok);}
+.pw-req .dot{width:5px;height:5px;border-radius:50%;background:currentColor;flex-shrink:0;}
+
+/* ===== mensajes ===== */
+.msg-box{padding:13px 16px;border-radius:var(--r-sm);font-size:0.84rem;margin-bottom:var(--sp-4);display:none;align-items:flex-start;gap:10px;line-height:1.5;}
+.msg-box.show{display:flex;}
+.msg-box.error{background:var(--err-bg);border:1px solid var(--err-line);color:#e0a0a0;}
+.msg-box.success{background:var(--ok-bg);border:1px solid var(--ok-line);color:#c8dba0;}
+.msg-box.info{background:var(--info-bg);border:1px solid var(--info-line);color:#b7c4e8;}
+
+/* ===== badges / status ===== */
+.badge{font-family:'Bodoni Moda',serif;font-size:0.66rem;padding:4px 10px;border-radius:var(--r-pill);
+  display:inline-flex;align-items:center;gap:6px;text-transform:uppercase;letter-spacing:0.03em;white-space:nowrap;}
+.badge .dot{width:6px;height:6px;border-radius:50%;background:currentColor;flex-shrink:0;}
+.badge-ok{background:var(--ok-bg);color:var(--ok);border:1px solid var(--ok-line);}
+.badge-warn{background:var(--warn-bg);color:var(--gold-light);border:1px solid var(--warn-line);}
+.badge-info{background:var(--info-bg);color:#a9bce8;border:1px solid var(--info-line);}
+.badge-neutral{background:transparent;color:var(--ink-3);border:1px solid var(--line-2);}
+.badge-err{background:var(--err-bg);color:#e0a0a0;border:1px solid var(--err-line);}
+
+/* ===== tarjetas / paneles ===== */
+.card{background:var(--navy-2);border:1px solid var(--line);border-radius:var(--r-lg);}
+.panel{background:var(--navy-2);border:1px solid var(--line);border-radius:var(--r-lg);margin-bottom:var(--sp-6);overflow:hidden;}
+.panel-head{padding:18px 24px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;}
+.panel-head h3{font-size:1rem;}
+.panel-body{padding:24px;}
+
+/* ===== progreso ===== */
+.progress-track{height:6px;background:var(--navy-4);border-radius:4px;overflow:hidden;}
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--bronze),var(--gold-light));border-radius:4px;
+  transition:width .5s var(--ease);}
+
+/* ===== indicador de proceso (steps) ===== */
+.step-flow{display:flex;align-items:flex-start;gap:0;margin:var(--sp-6) 0 var(--sp-7);overflow-x:auto;padding-bottom:4px;}
+.step-flow::-webkit-scrollbar{height:4px;}
+.step-item{display:flex;flex-direction:column;align-items:center;gap:8px;flex:1;min-width:84px;position:relative;}
+.step-item .s-line{position:absolute;top:13px;left:calc(-50% + 13px);right:calc(50% + 13px);height:2px;background:var(--line-2);z-index:0;}
+.step-item:first-child .s-line{display:none;}
+.step-item.done .s-line{background:var(--gold);}
+.step-dot{width:26px;height:26px;border-radius:50%;background:var(--navy-3);border:2px solid var(--line-2);
+  display:flex;align-items:center;justify-content:center;z-index:1;transition:all var(--dur-slow) var(--ease);flex-shrink:0;}
+.step-item.done .step-dot{background:var(--gold);border-color:var(--gold);color:var(--navy);}
+.step-item.current .step-dot{border-color:var(--gold-light);background:var(--navy-4);box-shadow:0 0 0 4px rgba(201,162,75,0.14);}
+.step-lbl{font-size:0.68rem;color:var(--ink-3);text-align:center;line-height:1.3;max-width:96px;}
+.step-item.done .step-lbl{color:var(--ink-2);}
+.step-item.current .step-lbl{color:var(--gold-light);font-weight:600;}
+
+/* ===== tarjeta "siguiente paso" ===== */
+.next-card{background:linear-gradient(160deg,var(--navy-3),var(--navy-2));border:1px solid var(--line-gold);
+  border-radius:var(--r-lg);padding:var(--sp-7);margin-bottom:var(--sp-7);position:relative;overflow:hidden;}
+.next-card::before{content:'';position:absolute;top:-40%;right:-10%;width:280px;height:280px;border-radius:50%;
+  background:radial-gradient(circle,rgba(201,162,75,0.08),transparent 70%);pointer-events:none;}
+.next-card .nc-eyebrow{position:relative;z-index:1;}
+.next-card h2{margin:12px 0 10px;position:relative;z-index:1;}
+.next-card p{color:var(--ink-2);max-width:60ch;position:relative;z-index:1;font-size:0.94rem;}
+.next-card .nc-actions{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap;position:relative;z-index:1;}
+
+/* ===== skeleton ===== */
+.skel{background:linear-gradient(90deg,var(--navy-3) 25%,var(--navy-4) 50%,var(--navy-3) 75%);background-size:200% 100%;
+  animation:shimmer 1.6s ease-in-out infinite;border-radius:var(--r-sm);}
+@keyframes shimmer{0%{background-position:200% 0;}100%{background-position:-200% 0;}}
+.skel-line{height:14px;margin-bottom:8px;}
+.skel-card{height:110px;border-radius:var(--r-lg);margin-bottom:14px;}
+
+/* ===== estado vacío ===== */
+.empty-state{padding:56px 24px;text-align:center;}
+.empty-state .es-icon{width:48px;height:48px;margin:0 auto 18px;opacity:0.35;}
+.empty-state h4{font-size:1rem;margin-bottom:8px;color:var(--ink-2);}
+.empty-state p{color:var(--ink-3);font-size:0.86rem;max-width:38ch;margin:0 auto;}
+
+/* ===== toast ===== */
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(12px);background:var(--navy-3);
+  border:1px solid var(--line-gold);padding:13px 20px;border-radius:var(--r-md);font-size:0.85rem;opacity:0;
+  transition:opacity var(--dur-slow) var(--ease), transform var(--dur-slow) var(--ease);z-index:200;max-width:360px;
+  pointer-events:none;box-shadow:var(--shadow-lift);}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+.toast.error{border-color:var(--err-line);color:#e0a0a0;}
+
+/* ===== modal de consentimiento (Fase 8-9 P1) ===== */
+.consent-modal{position:fixed;inset:0;z-index:300;display:none;align-items:center;justify-content:center;padding:5vw 4vw;}
+.consent-modal.open{display:flex;}
+.consent-modal-backdrop{position:absolute;inset:0;background:rgba(4,6,14,0.82);backdrop-filter:blur(6px);}
+.consent-modal-panel{position:relative;z-index:1;background:var(--navy-2);border:1px solid var(--line-strong, var(--line-2));
+  border-radius:var(--r-lg);padding:36px 32px;max-width:460px;width:100%;box-shadow:var(--shadow-lift);}
+.consent-modal-panel h3{font-family:'Bodoni Moda',serif;font-weight:500;font-size:1.3rem;margin-bottom:14px;}
+.consent-modal-panel p{color:var(--ink-2);font-size:0.9rem;line-height:1.55;}
+.consent-check{display:flex;align-items:flex-start;gap:10px;margin-top:22px;cursor:pointer;}
+.consent-check input{margin-top:3px;width:16px;height:16px;flex-shrink:0;accent-color:var(--gold);}
+.consent-check span{font-size:0.85rem;color:var(--ink-2);}
+.consent-check a{color:var(--gold-light);}
+.consent-actions{display:flex;justify-content:flex-end;gap:10px;margin-top:26px;}
+.consent-actions .btn-primary:disabled{opacity:0.45;cursor:not-allowed;}
+
+/* ===== notificaciones ===== */
+.notif-wrap{position:relative;}
+.notif-btn{background:none;border:1px solid var(--line-2);color:var(--ink-2);width:36px;height:36px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;position:relative;transition:border-color var(--dur) var(--ease), color var(--dur) var(--ease);}
+.notif-btn:hover{border-color:var(--gold-light);color:var(--gold-light);}
+.notif-count{position:absolute;top:-4px;right:-4px;background:var(--gold);color:var(--navy);font-family:'Bodoni Moda',serif;
+  font-size:0.6rem;font-weight:700;min-width:16px;height:16px;border-radius:8px;display:flex;align-items:center;justify-content:center;padding:0 3px;}
+.notif-pop{position:absolute;top:46px;right:0;width:320px;max-width:88vw;background:var(--navy-2);border:1px solid var(--line-gold);
+  border-radius:var(--r-md);opacity:0;pointer-events:none;transform:translateY(-6px);transition:all var(--dur) var(--ease);
+  box-shadow:var(--shadow-lift);z-index:60;max-height:400px;overflow-y:auto;}
+.notif-wrap.open .notif-pop{opacity:1;pointer-events:all;transform:translateY(0);}
+.notif-pop-head{padding:14px 18px;border-bottom:1px solid var(--line);font-family:'Bodoni Moda',serif;font-size:0.68rem;
+  text-transform:uppercase;letter-spacing:0.06em;color:var(--ink-3);}
+.notif-item{padding:13px 18px;border-bottom:1px solid var(--line);font-size:0.83rem;display:flex;gap:10px;}
+.notif-item:last-child{border-bottom:none;}
+.notif-item .ni-dot{width:7px;height:7px;border-radius:50%;background:var(--gold);margin-top:6px;flex-shrink:0;}
+.notif-item.read .ni-dot{background:var(--line-2);}
+.notif-item p{color:var(--ink-2);line-height:1.45;}
+
+/* ============================================================
+   AUTH — pantalla dividida
+   ============================================================ */
+.auth-shell{display:flex;min-height:100vh;}
+.auth-side{flex:0 0 44%;background:linear-gradient(165deg,var(--navy-3),var(--navy) 70%);position:relative;
+  padding:60px 56px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;}
+.auth-side::before{content:'';position:absolute;bottom:-20%;left:-10%;width:420px;height:420px;border-radius:50%;
+  background:radial-gradient(circle,rgba(201,162,75,0.09),transparent 68%);pointer-events:none;}
+.auth-side::after{content:'';position:absolute;inset:0;background-image:
+  linear-gradient(rgba(201,162,75,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(201,162,75,0.05) 1px, transparent 1px);
+  background-size:46px 46px; -webkit-mask-image:linear-gradient(to bottom, transparent, black 30%, black 70%, transparent);
+  mask-image:linear-gradient(to bottom, transparent, black 30%, black 70%, transparent); pointer-events:none;}
+.auth-brand{font-family:'Bodoni Moda',serif;font-size:1.3rem;letter-spacing:0.08em;position:relative;z-index:1;}
+.auth-brand span{color:var(--gold);}
+.auth-tag{font-family:'Bodoni Moda',serif;font-size:0.72rem;color:var(--ink-3);letter-spacing:0.1em;margin-top:4px;position:relative;z-index:1;}
+.auth-quote{position:relative;z-index:1;}
+.auth-quote h2{font-size:clamp(1.5rem,2.6vw,2rem);font-style:italic;font-weight:400;line-height:1.35;margin-bottom:16px;}
+.auth-quote p{color:var(--ink-2);font-size:0.92rem;max-width:42ch;}
+.auth-foot{font-family:'Bodoni Moda',serif;font-size:0.68rem;color:var(--ink-3);position:relative;z-index:1;}
+
+.auth-form-col{flex:1;display:flex;align-items:center;justify-content:center;padding:40px 24px;}
+.auth-wrap{max-width:400px;width:100%;}
+.auth-wrap h1{font-size:1.6rem;margin-bottom:8px;}
+.auth-wrap p.sub{color:var(--ink-3);font-size:0.88rem;margin-bottom:28px;}
+.tabs{display:flex;gap:4px;background:var(--navy-3);border-radius:var(--r-sm);padding:4px;margin-bottom:28px;}
+.tab{flex:1;text-align:center;padding:10px;border-radius:6px;cursor:pointer;font-size:0.84rem;color:var(--ink-3);
+  transition:all var(--dur) var(--ease);}
+.tab.active{background:var(--navy-4);color:var(--gold-light);}
+.auth-link{text-align:center;margin-top:18px;font-size:0.82rem;color:var(--ink-3);}
+.auth-link a{color:var(--gold-light);text-decoration:none;}
+.auth-link a:hover{text-decoration:underline;}
+
+@media(max-width:860px){
+  .auth-side{display:none;}
+  .auth-form-col{padding:32px 20px;}
+}
+
+/* ============================================================
+   SELECCIÓN DE PLAN
+   ============================================================ */
+.plan-shell{max-width:1040px;margin:0 auto;padding:7vh 6vw 10vh;}
+.plan-head{max-width:640px;margin-bottom:var(--sp-8);}
+.plan-head h2{margin-bottom:10px;}
+.plan-head p{color:var(--ink-2);font-size:0.96rem;}
+.plans-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp-5);margin-bottom:var(--sp-7);}
+.plan-card{background:var(--navy-2);border:1.5px solid var(--line-2);border-radius:var(--r-lg);padding:var(--sp-6);
+  display:flex;flex-direction:column;cursor:pointer;transition:border-color var(--dur-slow) var(--ease), transform var(--dur-slow) var(--ease), background var(--dur-slow) var(--ease);
+  position:relative;}
+.plan-card:hover{border-color:var(--line-gold);transform:translateY(-2px);}
+.plan-card.recommended{border-color:var(--line-gold);background:linear-gradient(165deg,var(--navy-3),var(--navy-2));}
+.plan-card.selected{border-color:var(--gold);background:var(--navy-3);box-shadow:0 0 0 1px var(--gold), var(--shadow-lift);}
+.plan-ribbon{position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,var(--gold-light),var(--gold));
+  color:var(--navy);font-family:'Bodoni Moda',serif;font-size:0.62rem;font-weight:700;letter-spacing:0.08em;
+  padding:5px 14px;border-radius:var(--r-pill);text-transform:uppercase;white-space:nowrap;}
+.plan-card .p-tier{font-family:'Bodoni Moda',serif;font-size:0.72rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--gold-light);font-weight:600;}
+.plan-card .p-tag{font-family:'Bodoni Moda',serif;font-style:italic;font-size:1.1rem;margin:10px 0 6px;}
+.plan-card .p-for{font-size:0.78rem;color:var(--ink-3);margin-bottom:18px;}
+.plan-card ul{list-style:none;flex:1;font-size:0.84rem;color:var(--ink-2);}
+.plan-card li{padding:8px 0;border-top:1px solid var(--line);display:flex;gap:9px;align-items:flex-start;}
+.plan-card li:first-child{border-top:none;}
+.plan-card li svg{flex-shrink:0;margin-top:2px;color:var(--gold);}
+.plan-select-row{margin-top:18px;display:flex;align-items:center;gap:10px;font-family:'Bodoni Moda',serif;font-size:0.78rem;
+  color:var(--ink-3);padding-top:16px;border-top:1px solid var(--line);}
+.plan-radio{width:18px;height:18px;border-radius:50%;border:1.5px solid var(--line-2);position:relative;flex-shrink:0;transition:border-color var(--dur) var(--ease);}
+.plan-card.selected .plan-radio{border-color:var(--gold);}
+.plan-card.selected .plan-radio::after{content:"";position:absolute;inset:3px;border-radius:50%;background:var(--gold);}
+
+.free-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:var(--sp-5);margin-bottom:var(--sp-6);}
+.free-card{cursor:default;}
+.free-card:hover{transform:none;}
+.free-card small{color:var(--ink-3);font-size:0.78rem;}
+.free-steps{counter-reset:paso;list-style:none;font-size:0.88rem;color:var(--ink-2);}
+.free-steps li{display:block;counter-increment:paso;position:relative;padding:12px 0 12px 42px;border-top:1px solid var(--line);}
+.free-steps li:first-child{border-top:none;}
+.free-steps li::before{content:counter(paso);position:absolute;left:0;top:10px;width:28px;height:28px;border-radius:50%;
+  background:linear-gradient(135deg,var(--gold-light),var(--gold));color:var(--navy);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:0.8rem;}
+@media(max-width:860px){ .free-grid{grid-template-columns:1fr;} }
+
+/* ===== Selector de evaluaciones (1 a 6) ===== */
+.sel-tests{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;}
+.sel-test{display:grid;grid-template-columns:22px 1fr auto;gap:14px;align-items:start;background:var(--navy-2);border:1.5px solid var(--line-2);
+  border-radius:var(--r-md);padding:16px 18px;cursor:pointer;transition:border-color var(--dur) var(--ease), background var(--dur) var(--ease);}
+.sel-test:hover{border-color:var(--line-gold);}
+.sel-test input{position:absolute;opacity:0;pointer-events:none;}
+.sel-test .sel-box{width:22px;height:22px;border-radius:6px;border:1.5px solid var(--line-2);display:flex;align-items:center;justify-content:center;margin-top:1px;transition:all var(--dur) var(--ease);}
+.sel-test.on{border-color:var(--gold);background:var(--navy-3);}
+.sel-test.on .sel-box{background:var(--gold);border-color:var(--gold);}
+.sel-test.on .sel-box::after{content:"";width:6px;height:11px;border:solid var(--navy);border-width:0 2.5px 2.5px 0;transform:rotate(45deg) translate(-1px,-1px);}
+.sel-test:focus-within{outline:2px solid var(--gold-light);outline-offset:2px;}
+.sel-test .sel-body b{display:block;font-size:0.95rem;}
+.sel-test .sel-body small{display:block;color:var(--ink-2);font-size:0.8rem;margin-top:2px;line-height:1.45;}
+.sel-test .sel-meta{display:block;color:var(--ink-3);font-size:0.74rem;margin-top:6px;}
+.sel-test .sel-state{font-family:'Bodoni Moda',serif;font-size:0.66rem;color:var(--ink-3);white-space:nowrap;}
+.sel-test.locked{cursor:default;opacity:0.85;}
+.sel-test.locked .sel-state{color:var(--ok);}
+.sel-test.locked .sel-box{background:var(--ok);border-color:var(--ok);}
+.sel-resumen{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin:18px 0 22px;font-size:0.86rem;color:var(--ink-2);}
+.sel-resumen .sel-atajos{display:flex;gap:8px;flex-wrap:wrap;}
+.sel-hint{font-size:0.8rem;color:var(--ink-3);margin-top:10px;}
+.inst-aviso{display:flex;gap:12px;align-items:center;background:rgba(245,196,0,0.1);border:1px solid rgba(245,196,0,0.4);color:#F5E7B0;
+  border-radius:var(--r-md);padding:12px 16px;font-size:0.86rem;margin-bottom:20px;}
+.inst-aviso .inst-franja{width:10px;align-self:stretch;border-radius:4px;background:#F5C400;flex-shrink:0;}
+@media(max-width:760px){ .sel-tests{grid-template-columns:1fr;} }
+.payment-section{background:var(--navy-2);border:1px solid var(--line);border-radius:var(--r-lg);padding:var(--sp-7);margin-bottom:var(--sp-6);}
+.payment-section h3{font-size:1.05rem;margin-bottom:6px;}
+.payment-section > p.hint{color:var(--ink-3);font-size:0.84rem;margin-bottom:20px;}
+.payment-opts{display:flex;gap:14px;margin-bottom:0;flex-wrap:wrap;}
+.payment-opt{flex:1;min-width:220px;border:1.5px solid var(--line-2);padding:20px 22px;cursor:pointer;
+  border-radius:var(--r-md);transition:all var(--dur) var(--ease);}
+.payment-opt:hover{border-color:var(--line-gold);}
+.payment-opt.selected{border-color:var(--gold);background:var(--navy-3);}
+.payment-opt h4{font-size:0.94rem;margin-bottom:6px;display:flex;align-items:center;gap:8px;}
+.payment-opt p{font-size:0.8rem;color:var(--ink-3);}
+
+.checkout-summary{background:var(--navy-3);border:1px solid var(--line-gold);border-radius:var(--r-lg);padding:var(--sp-6);
+  margin-bottom:var(--sp-6);}
+.checkout-summary h4{font-family:'Bodoni Moda',serif;font-size:0.68rem;text-transform:uppercase;letter-spacing:0.06em;
+  color:var(--ink-3);margin-bottom:14px;}
+.cs-row{display:flex;justify-content:space-between;padding:9px 0;font-size:0.86rem;border-top:1px solid var(--line);}
+.cs-row:first-of-type{border-top:none;}
+.cs-row .cs-lbl{color:var(--ink-3);}
+.cs-row .cs-val{font-weight:600;}
+
+@media(max-width:860px){
+  .plans-grid{grid-template-columns:1fr;}
+  .plan-shell{padding:6vh 5vw 8vh;}
+}
+
+/* ============================================================
+   SHELL (app)
+   ============================================================ */
+.shell{display:none;min-height:100vh;}
+.shell.show{display:flex;}
+.sidebar{width:236px;flex-shrink:0;border-right:1px solid var(--line);background:var(--navy-2);
+  display:flex;flex-direction:column;position:sticky;top:0;height:100vh;}
+.sidebar-brand{padding:24px 24px 20px;}
+.sidebar-brand a{font-family:'Bodoni Moda',serif;font-size:1.1rem;letter-spacing:0.06em;display:block;text-decoration:none;}
+.sidebar-brand span{color:var(--gold);}
+.sidebar-brand .tag{font-family:'Bodoni Moda',serif;font-size:0.64rem;color:var(--ink-3);display:block;margin-top:3px;}
+.nav-items{flex:1;padding:8px 12px;overflow-y:auto;}
+.nav-item{display:flex;align-items:center;gap:12px;padding:11px 14px;border-radius:var(--r-sm);cursor:pointer;
+  color:var(--ink-2);font-size:0.87rem;margin-bottom:2px;transition:all var(--dur) var(--ease);}
+.nav-item:hover{background:var(--navy-3);color:var(--ink);}
+.nav-item.active{background:var(--navy-4);color:var(--gold-light);}
+.nav-item svg{flex-shrink:0;opacity:0.85;}
+.nav-item .nav-badge{margin-left:auto;font-family:'Bodoni Moda',serif;font-size:0.6rem;
+  background:var(--gold);color:var(--navy);border-radius:10px;padding:2px 7px;font-weight:700;}
+.sidebar-footer{padding:16px;border-top:1px solid var(--line);}
+.sidebar-footer .email{font-family:'Bodoni Moda',serif;font-size:0.68rem;color:var(--ink-3);
+  display:block;margin-bottom:10px;word-break:break-all;}
+
+.topbar-mobile{display:none;}
+.main{flex:1;min-width:0;}
+.main-inner{padding:40px 48px 80px;max-width:1040px;}
+.page{display:none;}
+.page.active{display:block;animation:fadein var(--dur-slow) var(--ease);}
+@keyframes fadein{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:none;}}
+.page-head{margin-bottom:var(--sp-7);display:flex;justify-content:space-between;align-items:flex-start;gap:20px;flex-wrap:wrap;}
+.page-head h2{margin-bottom:6px;}
+.page-head p{color:var(--ink-3);font-size:0.88rem;}
+.topbar-actions{display:none;}
+.aur-breadcrumb{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-family:'Bodoni Moda',serif;
+  font-size:0.72rem;color:var(--ink-3);margin-bottom:22px;}
+.aur-breadcrumb a{color:var(--ink-3);text-decoration:none;}
+.aur-breadcrumb a:hover{color:var(--gold-light);}
+.aur-breadcrumb .bc-sep{opacity:.5;}
+.aur-breadcrumb .bc-cur{color:var(--gold-light);}
+
+/* ===== Resumen ===== */
+.hi-line{font-size:0.92rem;color:var(--ink-2);margin-top:2px;}
+.evals-progress-list{display:flex;flex-direction:column;gap:12px;}
+.eval-row{display:flex;align-items:center;gap:16px;padding:16px 20px;border:1px solid var(--line);border-radius:var(--r-md);
+  transition:border-color var(--dur) var(--ease);}
+.eval-row:hover{border-color:var(--line-2);}
+.eval-row .er-icon{width:38px;height:38px;border-radius:50%;background:var(--navy-3);display:flex;align-items:center;
+  justify-content:center;flex-shrink:0;color:var(--ink-3);}
+.eval-row.done .er-icon{background:var(--ok-bg);color:var(--ok);}
+.eval-row.active .er-icon{background:var(--warn-bg);color:var(--gold-light);}
+.eval-row .er-info{flex:1;min-width:0;}
+.eval-row .er-info h4{font-size:0.9rem;margin-bottom:2px;}
+.eval-row .er-info p{font-size:0.78rem;color:var(--ink-3);}
+
+/* ===== Mis evaluaciones (tarjetas ricas) ===== */
+.filtros-tests{display:flex;gap:8px;flex-wrap:wrap;}
+.chip-test{font-family:'Bodoni Moda',serif;font-size:0.78rem;padding:8px 16px;border-radius:999px;
+  border:1px solid var(--line-2);color:var(--ink-3);cursor:pointer;background:transparent;transition:all .2s;}
+.chip-test:hover{border-color:var(--line-gold);color:var(--ink-2);}
+.chip-test.active{background:var(--gold);color:var(--navy);border-color:var(--gold);font-weight:700;}
+.tests-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:var(--sp-5);}
+.test-card{background:var(--navy-2);border:1px solid var(--line);border-radius:var(--r-lg);padding:var(--sp-6);
+  display:flex;flex-direction:column;transition:border-color var(--dur) var(--ease), transform var(--dur) var(--ease);}
+.test-card:hover{border-color:var(--line-2);}
+.test-card.done{border-color:var(--ok-line);}
+.test-card .tc-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:14px;}
+.test-card h3{font-size:1.08rem;}
+.test-card .tc-purpose{font-size:0.83rem;color:var(--ink-2);margin-bottom:16px;flex:1;}
+.test-card .tc-meta{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:18px;}
+.tc-meta-item{font-size:0.74rem;color:var(--ink-3);display:flex;align-items:center;gap:6px;}
+.tc-meta-item svg{opacity:0.7;flex-shrink:0;}
+.test-card .tc-dates{font-family:'Bodoni Moda',serif;font-size:0.68rem;color:var(--ink-3);margin-bottom:14px;}
+.test-card .tc-progress{margin-bottom:16px;}
+.test-card .tc-progress .progress-track{height:4px;}
+.test-card .tc-progress-lbl{font-size:0.7rem;color:var(--ink-3);margin-top:6px;font-family:'Bodoni Moda',serif;}
+
+/* ===== Mi Plan ===== */
+.plan-summary-card{background:linear-gradient(160deg,var(--navy-3),var(--navy-2));border:1px solid var(--line-gold);
+  border-radius:var(--r-lg);padding:var(--sp-7);margin-bottom:var(--sp-6);}
+.plan-summary-card .ps-tier{font-family:'Bodoni Moda',serif;font-size:0.7rem;color:var(--gold);text-transform:uppercase;letter-spacing:0.1em;}
+.plan-summary-card h2{margin:10px 0 16px;}
+.includes-list{display:flex;flex-direction:column;gap:10px;margin-top:8px;}
+.inc-item{display:flex;align-items:center;gap:12px;font-size:0.88rem;}
+.inc-item .inc-icon{width:20px;height:20px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;}
+.inc-item.yes .inc-icon{background:var(--ok-bg);color:var(--ok);}
+.inc-item.no .inc-icon{background:var(--navy-4);color:var(--ink-3);}
+.inc-item.no{color:var(--ink-3);}
+.next-steps-timeline{display:flex;flex-direction:column;gap:0;}
+.nst-item{display:flex;gap:16px;padding-bottom:22px;position:relative;}
+.nst-item:last-child{padding-bottom:0;}
+.nst-item::before{content:'';position:absolute;left:13px;top:28px;bottom:0;width:1px;background:var(--line-2);}
+.nst-item:last-child::before{display:none;}
+.nst-num{width:28px;height:28px;border-radius:50%;background:var(--navy-4);border:1px solid var(--line-2);
+  display:flex;align-items:center;justify-content:center;font-family:'Bodoni Moda',serif;font-size:0.74rem;
+  color:var(--ink-2);flex-shrink:0;z-index:1;}
+.nst-item.done .nst-num{background:var(--ok);border-color:var(--ok);color:var(--navy);}
+.nst-item.current .nst-num{background:var(--gold);border-color:var(--gold);color:var(--navy);}
+.nst-body h4{font-size:0.9rem;margin-bottom:3px;}
+.nst-body p{font-size:0.8rem;color:var(--ink-3);}
+.pay-link-btn{display:inline-flex;margin-top:14px;background:#0070ba;color:#fff;padding:12px 22px;
+  border-radius:var(--r-btn);font-size:0.85rem;font-weight:600;align-items:center;gap:8px;text-decoration:none;transition:opacity var(--dur) var(--ease);}
+.pay-link-btn:hover{opacity:0.88;}
+
+/* ===== Mi Informe / Devolución ===== */
+.opciones-wrap{padding:0 var(--sp-6) var(--sp-3);border-top:1px solid var(--line);}
+.opciones-wrap:empty{display:none;}
+.opciones-wrap .oi-campo span{color:var(--ink-3);opacity:1;}
+.opciones-wrap select{background:var(--navy-3);color:var(--ink);border:1px solid var(--line-2);border-radius:var(--r-sm);}
+.opciones-wrap select:focus-visible{outline:2px solid var(--gold);outline-offset:1px;}
+.opciones-wrap .oi-estado{color:var(--ink-3);opacity:1;}
+.report-state{display:flex;align-items:center;gap:20px;padding:var(--sp-6);flex-wrap:wrap;}
+.report-state .rs-icon{width:52px;height:52px;border-radius:50%;background:var(--navy-3);display:flex;align-items:center;
+  justify-content:center;flex-shrink:0;color:var(--ink-3);}
+.report-state.ready .rs-icon{background:var(--ok-bg);color:var(--ok);}
+.report-state .rs-body h4{font-size:1rem;margin-bottom:4px;}
+.report-state .rs-body p{font-size:0.85rem;color:var(--ink-3);}
+
+/* Al descargar el informe en PDF (window.print) solo debe imprimirse el
+   informe en sí — el resto del portal (sidebar, barra superior, tarjetas
+   de estado) se oculta. */
+@media print{
+  body{background:#fff;}
+  .utility, .topbar-mobile, .sidebar, .topbar-actions, .report-state, .panel-head{display:none !important;}
+  .main, .main-inner{margin:0 !important;padding:0 !important;max-width:100% !important;}
+  .page{display:none !important;}
+  .page.active{display:block !important;}
+  .panel{border:none !important;background:transparent !important;padding:0 !important;}
+}
+
+/* ===== Mi Cuenta ===== */
+.profile-meter{display:flex;align-items:center;gap:14px;margin-bottom:var(--sp-6);}
+.pm-ring{width:44px;height:44px;flex-shrink:0;}
+.pm-body p{font-size:0.82rem;color:var(--ink-3);}
+.pm-body strong{color:var(--ink);}
+.account-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;padding:var(--sp-6);}
+.account-item .a-lbl{font-family:'Bodoni Moda',serif;font-size:0.64rem;color:var(--ink-3);text-transform:uppercase;letter-spacing:0.04em;}
+.account-item .a-val{font-size:0.94rem;margin-top:6px;}
+#profileForm.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:24px;}
+#profileForm .field.full{grid-column:1/-1;}
+.save-msg{font-size:0.8rem;margin-left:14px;color:var(--ok);display:none;align-items:center;}
+.save-msg.show{display:inline-flex;}
+
+/* ===== responsive del shell ===== */
+/* ===== barra superior del ecosistema (solo antes de entrar al panel) ===== */
+.utility{background:var(--navy);color:var(--ink-3);font-size:.78rem;padding:7px 0;border-bottom:1px solid rgba(255,255,255,.06)}
+.utility .u-wrap{max-width:1180px;margin:0 auto;padding:0 5vw;display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+.utility a{text-decoration:none;color:inherit}
+.utility a:hover{color:var(--gold-light)}
+.utility-mundos{display:flex;gap:14px;align-items:center}
+.utility-mundos .activo{color:var(--gold-light);font-weight:600}
+.utility-right{display:flex;gap:16px;align-items:center}
+.paleta-selector-auth{display:flex;align-items:center;gap:8px}
+.paleta-swatches{display:flex;gap:7px}
+.paleta-swatch{width:16px;height:16px;border-radius:50%;border:1.5px solid transparent;cursor:pointer;padding:0;box-shadow:0 0 0 1px rgba(255,255,255,.18)}
+.paleta-swatch.activo{border-color:#fff}
+
+/* ===== ecosistema dentro del sidebar ===== */
+.sidebar-eco{padding:8px 12px 4px;border-top:1px solid var(--line);}
+.sidebar-eco-label{font-family:'Bodoni Moda',serif;font-size:.62rem;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-3);padding:10px 14px 4px;}
+.sidebar-paleta{padding:10px 14px 4px;}
+.sidebar-paleta .paleta-swatches{gap:8px;}
+.sidebar-paleta .paleta-swatch{width:20px;height:20px;}
+
+@media(max-width:900px){
+  .utility{display:none;}
+  .sidebar{display:none;}
+  .shell.show{flex-direction:column;}
+  .topbar-mobile{display:flex;position:sticky;top:0;z-index:40;background:rgba(8,11,23,0.94);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);padding:14px 18px;align-items:center;justify-content:space-between;gap:12px;}
+  .topbar-mobile .brand{font-family:'Bodoni Moda',serif;font-size:1rem;}
+  .topbar-mobile .brand span{color:var(--gold);}
+  .mobile-menu-btn{background:none;border:1px solid var(--line-2);color:var(--ink-2);width:36px;height:36px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;}
+  .mobile-nav-sheet{position:fixed;inset:0;background:rgba(4,6,14,0.7);z-index:80;display:none;}
+  .mobile-nav-sheet.show{display:block;}
+  .mobile-nav-inner{position:absolute;bottom:0;left:0;right:0;background:var(--navy-2);border-top:1px solid var(--line-gold);
+    border-radius:20px 20px 0 0;padding:20px 16px calc(20px + env(safe-area-inset-bottom));}
+  .mobile-nav-inner .nav-item{font-size:0.95rem;padding:14px;}
+  .mobile-nav-footer{padding:14px 4px 4px;margin-top:6px;border-top:1px solid var(--line);}
+  .mobile-nav-footer .email{font-family:'Bodoni Moda',serif;font-size:0.68rem;color:var(--ink-3);
+    display:block;margin-bottom:10px;word-break:break-all;}
+  .main-inner{padding:24px 18px 100px;}
+  .page-head{flex-direction:column;}
+  .tests-grid{grid-template-columns:1fr;}
+  .account-grid{grid-template-columns:1fr;}
+  #profileForm.form-grid{grid-template-columns:1fr;}
+  .step-lbl{max-width:70px;font-size:0.62rem;}
+  .step-dot{width:22px;height:22px;}
+}
+</style>
+<!-- Estilos del informe integrado: compartidos con generar-informe.html (ver informe-shared.css) -->
+<link rel="stylesheet" href="informe-shared.css">
+<link rel="stylesheet" href="informe-v2.css?v=20261018b">
+</head>
+<body>
+
+<div class="utility" id="utilityBar">
+  <div class="u-wrap">
+    <div class="utility-mundos">
+      <a href="https://aurzane.com/">AURZANE</a>
+      <a href="https://mind.aurzane.com/">MIND</a>
+      <a class="activo" href="https://ovp.aurzane.com/">OVP</a>
+      <a href="https://nexus.aurzane.com/">NEXUS</a>
+      <a href="https://live.aurzane.com/">LIVE</a>
+      <a href="https://learn.aurzane.com/">LEARN</a>
+      <a href="https://build.aurzane.com/">BUILD</a>
+    </div>
+    <div class="utility-right">
+      <div class="paleta-selector-auth">
+        <span>Paleta</span>
+        <div class="paleta-swatches" id="paletaSwatchesAuth"></div>
+      </div>
+      <a href="https://aurzane.com/mi-aurzane.html">Mi AURZANE</a>
+    </div>
+  </div>
+</div>
+
+<main>
+<!-- ============ AUTH ============ -->
+<div class="auth-shell" id="authWrap">
+  <div class="auth-side">
+    <div>
+      <div class="auth-brand">AUR<span>Z</span>ANE</div>
+      <div class="auth-tag">MIND · OVP</div>
+    </div>
+    <div class="auth-quote">
+      <h2>Orientación vocacional basada en una evaluación integral.</h2>
+      <p>Un proceso para comprender tus intereses, aptitudes, autoconcepto y hábitos de estudio — con un profesional acompañándote en cada paso.</p>
+    </div>
+    <div class="auth-foot">AURZANE MIND / OVP</div>
+  </div>
+  <div class="auth-form-col">
+    <div class="auth-wrap" style="text-align:center;">
+      <h1>Redirigiendo…</h1>
+      <p class="sub">Te llevamos a iniciar sesión con tu cuenta AURZANE para continuar tu proceso.</p>
+      <div class="btn-spinner" style="margin:18px auto 0;width:20px;height:20px;border-color:rgba(255,255,255,.2);border-top-color:var(--gold-light);"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ INICIO GRATUITO: ELEGIR EVALUACIONES ============ -->
+<div class="plan-shell" id="planWrap" style="display:none;">
+  <div class="plan-head">
+    <span class="eyebrow">Acceso gratuito</span>
+    <h2 class="h2" style="margin-top:10px;">Elige tus evaluaciones</h2>
+    <p>AURZANE OVP es gratis. Elige cuántas evaluaciones quieres hacer: con una ya obtienes tu informe, y cada evaluación que añadas lo vuelve más completo. Puedes sumar más cuando quieras desde «Mi Proceso».</p>
+  </div>
+  <div id="instAvisoInicio"></div>
+  <div class="sel-tests" id="selectorInicio"></div>
+  <div class="sel-resumen">
+    <span id="selectorInicioResumen"></span>
+    <span class="sel-atajos">
+      <button type="button" class="btn btn-ghost btn-sm" data-atajo="todas" data-selector="selectorInicio">Elegir las seis</button>
+      <button type="button" class="btn btn-ghost btn-sm" data-atajo="ninguna" data-selector="selectorInicio">Quitar todas</button>
+    </span>
+  </div>
+  <p class="sel-hint">Si buscas una orientación de carrera, incluye CHASIDE u Holland: son los que señalan áreas y carreras afines.</p>
+  <div style="margin-top:22px;"><button class="btn btn-primary" id="submitPlanBtn" disabled>Comenzar con las evaluaciones elegidas</button></div>
+</div>
+
+<!-- ============ SHELL ============ -->
+<div class="shell" id="shell">
+  <div class="topbar-mobile">
+    <a href="portal.html" class="brand">AUR<span>Z</span>ANE</a>
+    <div style="display:flex;align-items:center;gap:10px;">
+      <div class="notif-wrap" id="notifWrapMobile">
+        <button class="notif-btn" id="notifBtnMobile" aria-label="Notificaciones">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 8a6 6 0 00-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>
+          <span class="notif-count" id="notifCountMobile" style="display:none;">0</span>
+        </button>
+        <div class="notif-pop" id="notifPopMobile"></div>
+      </div>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menú" aria-expanded="false" aria-controls="mobileNavSheet">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="sidebar">
+    <div class="sidebar-brand">
+      <a href="portal.html">AUR<span>Z</span>ANE</a>
+      <span class="tag">Mi Proceso OVP</span>
+    </div>
+    <div class="nav-items" id="navItems">
+      <div class="nav-item active" data-page="resumen">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg>
+        <span class="nav-label">Resumen</span>
+      </div>
+      <div class="nav-item" data-page="tests">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+        <span class="nav-label">Mis Evaluaciones</span>
+        <span class="nav-badge" id="navTestsBadge" style="display:none;"></span>
+      </div>
+      <div class="nav-item" data-page="plan">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 15h4"/></svg>
+        <span class="nav-label">Mi Proceso</span>
+      </div>
+      <div class="nav-item" data-page="informe">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h6"/></svg>
+        <span class="nav-label">Mi Informe</span>
+      </div>
+      <a class="nav-item" href="https://nexus.aurzane.com/universidades/" target="_blank" rel="noopener" style="text-decoration:none;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1.66 2.69 3 6 3s6-1.34 6-3v-5"/></svg>
+        <span class="nav-label">Universidades ↗</span>
+      </a>
+      <div class="nav-item" data-page="cuenta">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+        <span class="nav-label">Mi Cuenta</span>
+      </div>
+    </div>
+    <div class="sidebar-eco">
+      <div class="sidebar-eco-label">Ecosistema AURZANE</div>
+      <a class="nav-item" href="https://aurzane.com/mi-aurzane.html" style="text-decoration:none;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+        <span class="nav-label">Mi AURZANE ↗</span>
+      </a>
+      <a class="nav-item" href="https://mind.aurzane.com/" style="text-decoration:none;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2a7 7 0 00-4 12.7V17h8v-2.3A7 7 0 0012 2z"/><path d="M9 21h6"/></svg>
+        <span class="nav-label">MIND ↗</span>
+      </a>
+      <div class="sidebar-paleta">
+        <div class="sidebar-eco-label" style="padding:0 0 8px;">Paleta de acento</div>
+        <div class="paleta-swatches" id="paletaSwatchesShell"></div>
+      </div>
+    </div>
+    <div class="sidebar-footer">
+      <span class="email" id="userEmail"></span>
+      <button class="btn btn-ghost btn-block btn-sm" id="logoutBtn">Cerrar sesión</button>
+    </div>
+  </div>
+
+  <div class="main">
+    <div class="main-inner">
+
+      <div class="topbar-actions" style="display:flex;justify-content:flex-end;margin-bottom:8px;">
+        <div class="notif-wrap" id="notifWrap">
+          <button class="notif-btn" id="notifBtn" aria-label="Notificaciones">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 8a6 6 0 00-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>
+            <span class="notif-count" id="notifCount" style="display:none;">0</span>
+          </button>
+          <div class="notif-pop" id="notifPop"></div>
+        </div>
+      </div>
+
+      <nav class="aur-breadcrumb" aria-label="Ruta de navegación">
+        <a href="https://aurzane.com/">AURZANE</a><span class="bc-sep">/</span>
+        <a href="https://aurzane.com/mi-aurzane.html">Mi AURZANE</a><span class="bc-sep">/</span>
+        <span>OVP</span><span class="bc-sep">/</span>
+        <span class="bc-cur" id="bcCurrent">Resumen</span>
+      </nav>
+
+      <!-- RESUMEN -->
+      <div class="page active" id="page-resumen">
+        <div class="page-head"><div><h2>Hola, <span id="clienteNombre"></span>.</h2><p class="hi-line">Este es tu recorrido de orientación vocacional.</p></div></div>
+        <div class="step-flow" id="stepFlow"></div>
+        <div id="nextStepWrap"></div>
+        <div class="panel">
+          <div class="panel-head"><h3>Tu proceso</h3></div>
+          <div class="panel-body"><div class="evals-progress-list" id="evalsProgressList"></div></div>
+        </div>
+      </div>
+
+      <!-- MIS EVALUACIONES -->
+      <div class="page" id="page-tests">
+        <div class="page-head"><div><h2>Mis Evaluaciones</h2><p>Completa tus evaluaciones a tu ritmo. Con cada evaluación que terminas, tu informe en «Mi Informe» se actualiza.</p></div></div>
+        <div class="filtros-tests" id="filtrosTests" style="display:none;margin-bottom:18px;">
+          <button class="chip-test active" data-filtro="todos">Todos</button>
+          <button class="chip-test" data-filtro="pendiente">Pendientes</button>
+          <button class="chip-test" data-filtro="completado">Completados</button>
+        </div>
+        <div class="tests-grid" id="testsGrid"></div>
+      </div>
+
+      <!-- MI PLAN -->
+      <div class="page" id="page-plan">
+        <div class="page-head"><div><h2>Mi Proceso</h2><p>Qué incluye tu evaluación gratuita y qué sigue.</p></div></div>
+        <div id="planSummaryWrap"></div>
+        <div class="panel" id="panelElegir">
+          <div class="panel-head"><h3>Elegir o añadir evaluaciones</h3></div>
+          <div class="panel-body">
+            <p class="text-2" style="font-size:0.88rem;margin-bottom:16px;">Marca las evaluaciones que quieres hacer. Las que ya completaste siguen en tu informe; las pendientes que desmarques se quitan de tu lista (lo que ya respondiste se guarda por si vuelves a elegirlas).</p>
+            <div class="sel-tests" id="selectorProceso"></div>
+            <div class="sel-resumen">
+              <span id="selectorProcesoResumen"></span>
+              <span class="sel-atajos">
+                <button type="button" class="btn btn-ghost btn-sm" data-atajo="todas" data-selector="selectorProceso">Elegir las seis</button>
+                <button type="button" class="btn btn-primary btn-sm" id="guardarSeleccionBtn">Guardar cambios</button>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="panel">
+          <div class="panel-head"><h3>¿Qué ocurre después?</h3></div>
+          <div class="panel-body"><div class="next-steps-timeline" id="afterTimeline"></div></div>
+        </div>
+      </div>
+
+      <!-- MI INFORME -->
+      <div class="page" id="page-informe">
+        <div class="page-head"><div><h2>Mi Informe</h2><p>El resultado integrado de tu proceso de evaluación.</p></div></div>
+        <div class="panel"><div id="reportStateWrap"></div></div>
+      </div>
+
+      <!-- MI CUENTA -->
+      <div class="page" id="page-cuenta">
+        <div class="page-head"><div><h2>Mi Cuenta</h2><p>Tus datos de registro y seguridad.</p></div></div>
+
+        <div class="panel">
+          <div class="panel-head"><h3>Perfil</h3></div>
+          <div class="panel-body">
+            <div class="profile-meter" id="profileMeter"></div>
+            <div class="account-grid" id="accountGrid" style="padding:0;"></div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head"><h3>Completa tu perfil</h3></div>
+          <div class="form-grid" id="profileForm">
+            <div class="field"><label for="pfEdad">Edad</label><input type="number" id="pfEdad" min="1" max="120"></div>
+            <div class="field">
+              <label for="pfSexo">Sexo</label>
+              <select id="pfSexo"><option value="">Seleccionar...</option><option value="F">Femenino</option><option value="M">Masculino</option></select>
+            </div>
+            <div class="field"><label for="pfInstitucion">Institución educativa</label><input type="text" id="pfInstitucion"></div>
+            <div class="field"><label for="pfCurso">Curso / Grado</label><input type="text" id="pfCurso"></div>
+            <div class="field full"><button class="btn btn-primary" id="saveProfileBtn">Guardar cambios</button><span class="save-msg" id="profileSaveMsg">✓ Guardado</span></div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head"><h3>Proceso</h3></div>
+          <div class="account-grid" id="processGrid"></div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head"><h3>Seguridad</h3></div>
+          <div class="panel-body">
+            <p class="text-dim" style="font-size:0.84rem;margin-bottom:16px;">¿Quieres cambiar tu contraseña? Te enviamos un enlace a tu correo para hacerlo de forma segura.</p>
+            <button class="btn btn-ghost" id="changePasswordBtn">Cambiar contraseña</button>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-head"><h3>Privacidad</h3></div>
+          <div class="panel-body">
+            <p class="text-dim" style="font-size:0.84rem;margin-bottom:16px;" id="privacyStatusText">Puedes leer en cualquier momento qué datos recopilamos y para qué los usamos.</p>
+            <a class="btn btn-ghost" href="https://aurzane.com/privacidad.html" target="_blank" rel="noopener">Ver aviso de privacidad →</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+</main>
+
+<div class="mobile-nav-sheet" id="mobileNavSheet">
+  <div class="mobile-nav-inner" id="mobileNavInner">
+    <div id="mobileNavItemsBody"></div>
+    <div class="mobile-nav-footer">
+      <span class="email" id="userEmailMobile"></span>
+      <button class="btn btn-ghost btn-block btn-sm" id="logoutBtnMobile" type="button">Cerrar sesión</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="alert" aria-live="assertive"></div>
+
+<div class="consent-modal" id="consentModal" role="dialog" aria-modal="true" aria-labelledby="consentModalTitle">
+  <div class="consent-modal-backdrop"></div>
+  <div class="consent-modal-panel">
+    <h3 id="consentModalTitle">Antes de empezar tu evaluación</h3>
+    <p>Para continuar necesitamos que leas y aceptes nuestro aviso de privacidad — explica qué datos recopilamos durante tu proceso, para qué los usamos y quién tiene acceso a ellos.</p>
+    <label class="consent-check">
+      <input type="checkbox" id="consentCheckbox">
+      <span>He leído el <a href="https://aurzane.com/privacidad.html" target="_blank" rel="noopener">aviso de privacidad</a> y acepto que se recopile y use mi información tal como se describe ahí.</span>
+    </label>
+    <div class="consent-actions">
+      <button class="btn btn-ghost" id="consentCancelBtn">Ahora no</button>
+      <button class="btn btn-primary" id="consentAcceptBtn" disabled>Continuar</button>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+<script src="/aurzane-id.js"></script>
+<!-- Lógica de puntuación e interpretación del informe: compartida con generar-informe.html (ver informe-shared.js) -->
+<script src="informe-shared.js"></script>
+<!-- Informe con las evaluaciones elegidas y completadas + descargas PDF/Word -->
+<script src="informe-opciones.js?v=20261018b"></script>
+<script src="informe-v2.js?v=20261018b"></script>
+<script src="informe-export.js?v=20261018b"></script>
+<script>
+  const SUPABASE_URL = 'https://chtfpqwrrarfdjcivlad.supabase.co';
+  const SUPABASE_KEY = 'sb_publishable___1v6VjDew0l8uGfMyb9Nw_YyCLTPPw';
+  // AURZANE ID: mismo cliente/cookie de sesión que aurzane.com, mi-aurzane.html
+  // y MIND, para que iniciar sesión acá también valga en el resto del
+  // ecosistema. Antes este portal usaba su propio storageKey
+  // ('aurzane-client-auth') aislado — por eso el mismo correo/contraseña no
+  // "conectaba" con otros apartados. Ojo: clientes que ya tenían sesión
+  // iniciada con el sistema viejo van a tener que iniciar sesión una vez más
+  // después de este cambio (sus datos no se pierden, solo la sesión activa).
+  const sb = crearClienteAurzaneID(SUPABASE_URL, SUPABASE_KEY);
+  window.__aurzaneSb = sb;
+  if(window.__aurzaneErrBuf.length){ window.__aurzaneErrBuf.forEach(function(en){ sb.from('frontend_error_log').insert(en).then(function(){}, function(){}); }); window.__aurzaneErrBuf.length = 0; }
+
+  /* ============================================================
+     Paleta de acento (comparte localStorage con todo el ecosistema).
+     El portal usa sus propios nombres de variable (--navy/-2/-3/-4,
+     --gold/--gold-light/--bronze) en vez de los del resto del sitio
+     (--navy-950 etc.) para no tocar las ~1500 líneas de CSS ya
+     existentes — así que acá se mapean a esos mismos nombres.
+     ============================================================ */
+  /* Paleta de color: la gestiona https://aurzane.com/aurzane-paleta.js (compartida por todo el ecosistema). */
+
+
+
+  // Metadatos reales de cada instrumento — usados para las tarjetas de
+  // "Mis Evaluaciones" y el resumen. Los números (preguntas/tiempo) son
+  // los reales de cada archivo de test, no estimaciones inventadas.
+  const TEST_INFO = {
+    chaside:  { nombre:'CHASIDE',  proposito:'Intereses y aptitudes vocacionales.', preguntas:98,  tiempoMin:20, url:'chaside-cliente.html' },
+    holland:  { nombre:'Holland',  proposito:'Intereses vocacionales (RIASEC).',    preguntas:60,  tiempoMin:15, url:'holland-cliente.html' },
+    af5:      { nombre:'AF5',      proposito:'Autoconcepto.',                       preguntas:30,  tiempoMin:8,  url:'af5-cliente.html' },
+    chte:     { nombre:'Hábitos de Estudio', proposito:'Hábitos y técnicas de estudio.', preguntas:56, tiempoMin:12, url:'chte-cliente.html' },
+    apt_b:    { nombre:'APT-B',    proposito:'Ortografía, lenguaje, relaciones espaciales y velocidad y precisión.', preguntas:410, tiempoMin:51, url:'apt-b-cliente.html' },
+    apt_a:    { nombre:'APT-A',    proposito:'Aptitudes: verbal, numérico, abstracto y mecánico.', preguntas:160, tiempoMin:90, url:'apt-a-cliente.html' }
+  };
+  const PLAN_NAMES = { basico:'Básico', completo:'Completo', premium:'Premium' };
+  const PLAN_TESTS = {
+    basico: ['chaside','holland','chte'],
+    completo: ['chaside','holland','af5','chte'],
+    premium: ['chaside','holland','af5','apt_b','apt_a','chte']
+  };
+  const ALL_TEST_KEYS = Object.keys(TEST_INFO);
+
+  let modo = 'signup';
+  let currentClienteId = null;
+  let planFromURL = null;
+  // Enlace institucional (?inst=codigo): asigna el membrete de esa
+  // institución al informe, por ejemplo ?inst=comil12.
+  let instFromURL = null;
+  let instIntentado = false;
+  let clienteCache = null;
+  let sessionCache = null;
+  // Test que el cliente ya empezó a responder (al menos 1 fila guardada en
+  // su tabla respuestas_*), derivado de datos reales — no existe un campo
+  // `iniciado_at` en `activaciones`, así que "empezado" se calcula así.
+  let startedTestKeys = new Set();
+  const RESPUESTAS_TABLE = {
+    chaside:'respuestas_chaside', holland:'respuestas_holland', af5:'respuestas_af5',
+    chte:'respuestas_chte', apt_a:'respuestas_apt_a', apt_b:'respuestas_apt_b'
+  };
+
+  /* ===================== utilidades ===================== */
+
+  function escapeHtml(s){
+    return (s==null?'':String(s)).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  }
+
+  function showToast(msg, type){
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.className = 'toast show' + (type==='error' ? ' error' : '');
+    clearTimeout(showToast._h);
+    showToast._h = setTimeout(()=> t.classList.remove('show'), 3400);
+  }
+
+  // Traduce mensajes técnicos de Supabase/Auth a algo humano. Cualquier
+  // mensaje no reconocido cae en un genérico — nunca se muestra el string
+  // técnico crudo al usuario.
+  function humanizeAuthError(raw){
+    const m = (raw || '').toLowerCase();
+    if(m.includes('user already registered') || m.includes('already registered')) return 'Ya existe una cuenta con ese correo. Intenta iniciar sesión.';
+    if(m.includes('invalid login credentials')) return 'Correo o contraseña incorrectos.';
+    if(m.includes('password') && m.includes('6')) return 'La contraseña debe tener al menos 6 caracteres.';
+    if(m.includes('email') && m.includes('valid')) return 'Ese correo no parece válido.';
+    if(m.includes('rate limit')) return 'Demasiados intentos — espera un minuto y vuelve a intentar.';
+    if(m.includes('network') || m.includes('fetch')) return 'No pudimos conectar. Revisa tu conexión e inténtalo de nuevo.';
+    return 'Ocurrió un problema. Inténtalo de nuevo en un momento.';
+  }
+
+  (function leerPlanDeURL(){
+    const params = new URLSearchParams(window.location.search);
+    planFromURL = params.get('plan');
+    const inst = (params.get('inst') || '').trim().toLowerCase();
+    instFromURL = /^[a-z0-9-]{2,40}$/.test(inst) ? inst : null;
+  })();
+
+  /* ===================== AUTH (Fase 5: login único vía mi-aurzane.html) =====================
+     portal.html ya no tiene su propio formulario de registro/login. Si no hay
+     sesión, redirige a mi-aurzane.html?next=<esta URL>, que valida el destino
+     (solo https y dentro de aurzane.com/sus subdominios) y devuelve al usuario
+     acá mismo apenas inicia sesión o crea su cuenta — sin perder el plan u
+     otro parámetro con el que haya llegado. ===================== */
+
+  function esDestinoInternoSeguro(url){
+    try{
+      const u = new URL(url, window.location.origin);
+      return u.protocol === 'https:' && (u.hostname === 'aurzane.com' || u.hostname.endsWith('.aurzane.com'));
+    }catch(e){ return false; }
+  }
+
+  function irALoginConRetorno(){
+    const actual = window.location.href; // conserva ?plan=... y cualquier otro parámetro
+    if(!esDestinoInternoSeguro(actual)) { window.location.replace('https://aurzane.com/mi-aurzane.html'); return; }
+    window.location.replace('https://aurzane.com/mi-aurzane.html?next=' + encodeURIComponent(actual));
+  }
+
+  // Primera vez que este AURZANE ID llega a OVP: crea o enlaza su fila en
+  // `clientes` (mismo mecanismo que ya existía para un signup nuevo, solo que
+  // ahora corre para cualquier sesión sin proceso vinculado todavía, venga de
+  // un registro nuevo o de un login existente). Nunca crea una segunda fila
+  // para un mismo user_id.
+  async function asegurarClienteVinculado(session){
+    const email = session.user.email;
+    const { data: yaTiene } = await sb.from('clientes').select('id').eq('user_id', session.user.id).maybeSingle();
+    if(yaTiene) return;
+
+    const { data: existente } = await sb.from('clientes')
+      .select('id').eq('email', email).is('user_id', null).maybeSingle();
+    if(existente){
+      await sb.from('clientes').update({ user_id: session.user.id }).eq('id', existente.id);
+      return;
+    }
+    const { data: perfil } = await sb.from('perfiles').select('nombre').eq('user_id', session.user.id).maybeSingle();
+    const nombre = (perfil && perfil.nombre) || email.split('@')[0];
+    const { error } = await sb.from('clientes').insert({ nombre, email, user_id: session.user.id });
+    if(error) console.error('No se pudo crear el proceso OVP:', humanizeAuthError(error.message));
+  }
+
+  let cerrandoSesionManual = false;
+  // Fase 6.1: única función de logout, reutilizada por el botón de escritorio
+  // (sidebar) y por el botón del menú móvil — no se duplica la lógica de
+  // cierre de sesión, solo se reutiliza desde dos disparadores distintos.
+  async function cerrarSesion(){
+    cerrandoSesionManual = true;
+    await sb.auth.signOut();
+    window.location.href = 'https://aurzane.com/mi-aurzane.html';
+  }
+  document.getElementById('logoutBtn').addEventListener('click', cerrarSesion);
+  document.getElementById('logoutBtnMobile').addEventListener('click', async ()=>{
+    closeMobileNav();
+    await cerrarSesion();
+  });
+  document.getElementById('changePasswordBtn').addEventListener('click', async ()=>{
+    if(!sessionCache) return;
+    const redirectTo = window.location.origin + window.location.pathname.replace('portal.html', 'restablecer-contrasena.html');
+    const { error } = await sb.auth.resetPasswordForEmail(sessionCache.user.email, { redirectTo });
+    showToast(error ? 'No pudimos enviar el correo. Intenta de nuevo.' : 'Te enviamos un enlace a tu correo para cambiar la contraseña.', error?'error':undefined);
+  });
+
+  /* ===================== NAVEGACIÓN SIDEBAR / MÓVIL ===================== */
+
+  const BC_PAGE_LABELS = { resumen:'Resumen', tests:'Mis Evaluaciones', plan:'Mi Proceso', informe:'Mi Informe', cuenta:'Mi Cuenta' };
+  function goToPage(key){
+    document.querySelectorAll('.nav-item').forEach(i=>i.classList.toggle('active', i.dataset.page===key));
+    document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active', p.id === 'page-'+key));
+    const bcCur = document.getElementById('bcCurrent');
+    if(bcCur) bcCur.textContent = BC_PAGE_LABELS[key] || 'Resumen';
+    window.scrollTo({top:0, behavior:'instant'});
+    closeMobileNav();
+  }
+  document.getElementById('navItems').addEventListener('click', (e)=>{
+    const item = e.target.closest('.nav-item');
+    if(item) goToPage(item.dataset.page);
+  });
+
+  function renderMobileNav(){
+    document.getElementById('mobileNavItemsBody').innerHTML = document.getElementById('navItems').innerHTML;
+  }
+  document.getElementById('mobileNavItemsBody').addEventListener('click', (e)=>{
+    const item = e.target.closest('.nav-item');
+    if(item) goToPage(item.dataset.page);
+  });
+  document.getElementById('mobileMenuBtn').addEventListener('click', ()=>{
+    document.getElementById('mobileNavSheet').classList.add('show');
+    document.getElementById('mobileMenuBtn').setAttribute('aria-expanded', 'true');
+  });
+  document.getElementById('mobileNavSheet').addEventListener('click', (e)=>{
+    if(e.target.id === 'mobileNavSheet') closeMobileNav();
+  });
+  function closeMobileNav(){
+    document.getElementById('mobileNavSheet').classList.remove('show');
+    document.getElementById('mobileMenuBtn').setAttribute('aria-expanded', 'false');
+  }
+
+  /* ===================== NOTIFICACIONES ===================== */
+  // Centro de notificaciones derivado del estado real del cliente (no hay
+  // todavía una tabla de notificaciones persistente en Supabase — se deja
+  // preparada la estructura de datos e interfaz para conectarla después).
+  // El estado leído/no-leído se guarda por cliente en localStorage.
+
+  function computeNotifications(cliente){
+    const notifs = [];
+    const activos = (cliente.activaciones || []).filter(a => a.activo);
+    const pendientes = activos.filter(a => !a.completado);
+    if(activos.length > 0){
+      notifs.push({ id:'evals-activas', text: `Tienes ${activos.length === 1 ? 'una evaluación activa' : activos.length + ' evaluaciones activas'}, gratis.` });
+    }
+    if(pendientes.length > 0){
+      notifs.push({ id:'pendientes', text: `Te quedan ${pendientes.length} evaluación(es) pendiente(s).` });
+    }
+    const completas = activos.filter(a => a.completado).length;
+    if(activos.length > 0 && pendientes.length === 0){
+      notifs.push({ id:'completadas-' + completas, text:'Completaste todas las evaluaciones que elegiste. Tu informe ya está en «Mi Informe».' });
+    } else if(completas > 0){
+      notifs.push({ id:'informe-parcial-' + completas, text:`Tu informe ya está disponible con ${completas} ${completas === 1 ? 'evaluación completada' : 'evaluaciones completadas'}.` });
+    }
+    return notifs;
+  }
+  function notifReadKey(){ return 'aurzane-ovp-notif-read-' + currentClienteId; }
+  function renderNotifications(cliente){
+    const notifs = computeNotifications(cliente);
+    let read = [];
+    try{ read = JSON.parse(localStorage.getItem(notifReadKey()) || '[]'); }catch(e){}
+    const unread = notifs.filter(n => !read.includes(n.id));
+
+    [['notifCount','notifPop'],['notifCountMobile','notifPopMobile']].forEach(([countId, popId])=>{
+      const countEl = document.getElementById(countId);
+      countEl.style.display = unread.length > 0 ? 'flex' : 'none';
+      countEl.textContent = unread.length;
+      const popEl = document.getElementById(popId);
+      if(notifs.length === 0){
+        popEl.innerHTML = `<div class="notif-pop-head">Notificaciones</div><div class="empty-state" style="padding:32px 20px;"><p>No tienes notificaciones todavía.</p></div>`;
+      } else {
+        popEl.innerHTML = `<div class="notif-pop-head">Notificaciones</div>` + notifs.map(n=>`
+          <div class="notif-item ${read.includes(n.id)?'read':''}"><span class="ni-dot"></span><p>${escapeHtml(n.text)}</p></div>
+        `).join('');
+      }
+    });
+  }
+  function markNotifsRead(cliente){
+    const notifs = computeNotifications(cliente);
+    try{ localStorage.setItem(notifReadKey(), JSON.stringify(notifs.map(n=>n.id))); }catch(e){}
+  }
+  [['notifWrap','notifBtn'],['notifWrapMobile','notifBtnMobile']].forEach(([wrapId, btnId])=>{
+    const wrap = document.getElementById(wrapId), btn = document.getElementById(btnId);
+    btn.addEventListener('click', (e)=>{
+      e.stopPropagation();
+      const willOpen = !wrap.classList.contains('open');
+      document.querySelectorAll('.notif-wrap').forEach(w=>w.classList.remove('open'));
+      if(willOpen){ wrap.classList.add('open'); if(clienteCache) markNotifsRead(clienteCache); renderNotifications(clienteCache); }
+    });
+  });
+  document.addEventListener('click', ()=> document.querySelectorAll('.notif-wrap').forEach(w=>w.classList.remove('open')));
+
+  /* ===================== ELEGIR EVALUACIONES (1 a 6) ===================== */
+
+  // La persona elige cuántas y cuáles evaluaciones hace. La función del
+  // servidor valida la sesión, activa las elegidas y quita de la lista las
+  // pendientes que se desmarcan (las completadas nunca se tocan).
+  async function elegirTests(tests){
+    const { error } = await sb.rpc('ovp_elegir_tests', { p_tests: tests, p_codigo: instFromURL });
+    if(error){ console.error('ovp_elegir_tests:', error.message); }
+    return !error;
+  }
+
+  function formatoMinutos(min){
+    if(min < 60) return min + ' min';
+    const h = Math.floor(min / 60), m = min % 60;
+    return h + ' h' + (m ? ' ' + m + ' min' : '');
+  }
+
+  function estadoTest(cliente, k){
+    const a = ((cliente && cliente.activaciones) || []).find(x => x.test_key === k);
+    if(!a) return 'nuevo';
+    if(a.completado) return 'completado';
+    if(a.activo) return 'activo';
+    return 'inactivo';
+  }
+
+  function renderSelector(id, cliente){
+    const cont = document.getElementById(id);
+    if(!cont) return;
+    cont.innerHTML = ALL_TEST_KEYS.map(k => {
+      const info = TEST_INFO[k];
+      const st = estadoTest(cliente, k);
+      const on = st === 'completado' || st === 'activo';
+      const locked = st === 'completado';
+      const stLbl = locked ? 'Completado' : (st === 'activo' ? 'En tu lista' : '');
+      return `<label class="sel-test ${on ? 'on' : ''} ${locked ? 'locked' : ''}">
+        <input type="checkbox" value="${k}" ${on ? 'checked' : ''} ${locked ? 'disabled' : ''} aria-label="${escapeHtml(info.nombre)}">
+        <span class="sel-box" aria-hidden="true"></span>
+        <span class="sel-body"><b>${escapeHtml(info.nombre)}</b><small>${escapeHtml(info.proposito)}</small>
+          <span class="sel-meta">${info.preguntas} preguntas · unos ${formatoMinutos(info.tiempoMin)}</span></span>
+        <span class="sel-state">${stLbl}</span>
+      </label>`;
+    }).join('');
+    actualizarResumenSelector(id);
+  }
+
+  function leerSeleccion(id){
+    return Array.from(document.querySelectorAll('#' + id + ' input:checked')).map(i => i.value);
+  }
+
+  function actualizarResumenSelector(id){
+    const elegidas = leerSeleccion(id);
+    const min = elegidas.reduce((t, k) => t + (TEST_INFO[k] ? TEST_INFO[k].tiempoMin : 0), 0);
+    const res = document.getElementById(id + 'Resumen');
+    if(res){
+      res.textContent = elegidas.length === 0
+        ? 'Elige al menos una evaluación.'
+        : `${elegidas.length} ${elegidas.length === 1 ? 'evaluación elegida' : 'evaluaciones elegidas'} · unos ${formatoMinutos(min)} en total`;
+    }
+    if(id === 'selectorInicio'){
+      const b = document.getElementById('submitPlanBtn');
+      if(b) b.disabled = elegidas.length === 0;
+    }
+  }
+
+  document.addEventListener('change', (e) => {
+    const inp = e.target;
+    if(!inp.matches || !inp.matches('.sel-test input')) return;
+    inp.closest('.sel-test').classList.toggle('on', inp.checked);
+    actualizarResumenSelector(inp.closest('.sel-tests').id);
+  });
+  document.addEventListener('click', (e) => {
+    const b = e.target.closest('[data-atajo]');
+    if(!b) return;
+    const id = b.dataset.selector;
+    document.querySelectorAll('#' + id + ' input:not(:disabled)').forEach(i => {
+      i.checked = b.dataset.atajo === 'todas';
+      i.closest('.sel-test').classList.toggle('on', i.checked);
+    });
+    actualizarResumenSelector(id);
+  });
+
+  // Aviso del membrete institucional cuando se llega con ?inst=codigo.
+  async function mostrarAvisoInstitucion(){
+    const cont = document.getElementById('instAvisoInicio');
+    if(!cont || !instFromURL) return;
+    const { data } = await sb.from('membretes').select('nombre_marca,subtitulo').ilike('codigo', instFromURL).maybeSingle();
+    if(!data) return;
+    cont.innerHTML = `<div class="inst-aviso"><span class="inst-franja"></span><span>Entraste con el enlace de <b>${escapeHtml(data.nombre_marca)}${data.subtitulo ? ' ' + escapeHtml(data.subtitulo) : ''}</b>. Tu informe llevará su membrete.</span></div>`;
+  }
+
+  function mostrarSelectorInicio(cliente){
+    document.getElementById('planWrap').style.display = 'block';
+    renderSelector('selectorInicio', cliente);
+    mostrarAvisoInstitucion().catch(() => {});
+  }
+
+  document.getElementById('submitPlanBtn').addEventListener('click', async ()=>{
+    const btn = document.getElementById('submitPlanBtn');
+    const tests = leerSeleccion('selectorInicio');
+    if(!tests.length){ showToast('Elige al menos una evaluación.', 'error'); return; }
+    btn.disabled = true; btn.innerHTML = '<span class="btn-spinner"></span>';
+    const ok = await elegirTests(tests);
+    if(!ok){ showToast('No pudimos activar tus evaluaciones. Intenta de nuevo.', 'error'); btn.disabled = false; btn.textContent = 'Comenzar con las evaluaciones elegidas'; return; }
+    instIntentado = true;
+    mostrarShell();
+  });
+
+  document.getElementById('guardarSeleccionBtn').addEventListener('click', async ()=>{
+    const btn = document.getElementById('guardarSeleccionBtn');
+    const tests = leerSeleccion('selectorProceso');
+    if(!tests.length){ showToast('Elige al menos una evaluación.', 'error'); return; }
+    btn.disabled = true; btn.innerHTML = '<span class="btn-spinner"></span>';
+    const ok = await elegirTests(tests);
+    btn.disabled = false; btn.textContent = 'Guardar cambios';
+    if(!ok){ showToast('No pudimos guardar tu selección. Intenta de nuevo.', 'error'); return; }
+    showToast('Guardamos tu selección de evaluaciones.');
+    await mostrarShell();
+    goToPage('plan');
+  });
+
+  /* ===================== CARGA PRINCIPAL ===================== */
+
+  async function cargarApp(session){
+    sessionCache = session;
+    const SELECT_CLIENTE = 'id,nombre,email,user_id,plan,metodo_pago,plan_solicitado_at,pago_confirmado,edad,sexo,institucion,curso,consentimiento_at,fecha_nacimiento,motivo_consulta,expectativas,dudas_iniciales,entrevista_realizada,grupo_normativo,membrete_id,profesional_id,activaciones(*)';
+    let { data: cliente, error } = await sb.from('clientes_portal')
+      .select(SELECT_CLIENTE).eq('user_id', session.user.id).maybeSingle();
+
+    if(!cliente && !error){
+      // Primera vez que este AURZANE ID entra a OVP (recién creado o recién
+      // vinculado desde mi-aurzane.html) — crear/enlazar y reintentar una vez.
+      await asegurarClienteVinculado(session);
+      ({ data: cliente, error } = await sb.from('clientes_portal')
+        .select(SELECT_CLIENTE).eq('user_id', session.user.id).maybeSingle());
+    }
+
+    if(error || !cliente){
+      showToast('No pudimos preparar tu proceso. Intenta de nuevo o contacta a tu psicólogo.', 'error');
+      return;
+    }
+    currentClienteId = cliente.id;
+
+    document.getElementById('authWrap').style.display = 'none';
+
+    const tieneActivas = (cliente.activaciones || []).some(a => a.activo || a.completado);
+    if(!cliente.plan || !cliente.pago_confirmado || !tieneActivas){
+      // Primera vez (o quien había pedido un plan de pago antes de la
+      // gratuidad): elige qué evaluaciones quiere hacer.
+      mostrarSelectorInicio(cliente);
+    } else {
+      await mostrarShell();
+    }
+  }
+
+  // Placeholders de carga (skeleton) — se muestran de inmediato al abrir el
+  // panel, mientras los datos reales todavía viajan desde Supabase, para
+  // que nunca se vea un hueco vacío en blanco.
+  function mostrarSkeletons(){
+    const skelCard = '<div class="skel skel-card"></div>';
+    const nextStep = document.getElementById('nextStepWrap');
+    if(nextStep) nextStep.innerHTML = `<div class="skel skel-card" style="height:180px;"></div>`;
+    const evalsList = document.getElementById('evalsProgressList');
+    if(evalsList) evalsList.innerHTML = skelCard.repeat(3);
+    const grid = document.getElementById('testsGrid');
+    if(grid) grid.innerHTML = skelCard.repeat(3);
+  }
+
+  async function mostrarShell(){
+    document.getElementById('authWrap').style.display = 'none';
+    document.getElementById('planWrap').style.display = 'none';
+    document.getElementById('shell').classList.add('show');
+    const utilityBar = document.getElementById('utilityBar');
+    if(utilityBar) utilityBar.style.display = 'none';
+    mostrarSkeletons();
+
+    const { data: { session } } = await sb.auth.getSession();
+    sessionCache = session;
+    let { data: cliente } = await sb.from('clientes_portal').select('id,nombre,email,user_id,plan,metodo_pago,plan_solicitado_at,pago_confirmado,edad,sexo,institucion,curso,consentimiento_at,fecha_nacimiento,motivo_consulta,expectativas,dudas_iniciales,entrevista_realizada,grupo_normativo,membrete_id,profesional_id,activaciones(*)').eq('user_id', session.user.id).maybeSingle();
+    if(!cliente) return;
+
+    // Enlace institucional para alguien que ya tenía su proceso: asigna el
+    // membrete sin cambiar sus evaluaciones (una sola vez por visita).
+    if(instFromURL && !instIntentado && !cliente.membrete_id){
+      instIntentado = true;
+      const actuales = (cliente.activaciones || []).filter(a => a.activo || a.completado).map(a => a.test_key);
+      if(actuales.length && await elegirTests(actuales)){
+        const { data: c2 } = await sb.from('clientes_portal').select('id,nombre,email,user_id,plan,metodo_pago,plan_solicitado_at,pago_confirmado,edad,sexo,institucion,curso,consentimiento_at,fecha_nacimiento,motivo_consulta,expectativas,dudas_iniciales,entrevista_realizada,grupo_normativo,membrete_id,profesional_id,activaciones(*)').eq('user_id', session.user.id).maybeSingle();
+        if(c2) cliente = c2;
+      }
+    }
+    clienteCache = cliente;
+
+    document.getElementById('clienteNombre').textContent = (cliente.nombre || '').split(' ')[0];
+    document.getElementById('userEmail').textContent = session.user.email;
+    document.getElementById('userEmailMobile').textContent = session.user.email;
+
+    // Fase 10 (fix bug crítico "portal congelado"): cada paso de render corre
+    // de forma independiente y con su propio try/catch. Antes, si cualquiera
+    // de estas llamadas lanzaba una excepción (p.ej. por un 503 transitorio
+    // de Supabase durante la ráfaga de consultas de la carga inicial), el
+    // resto de la lista NUNCA se ejecutaba — dejando cosas como la tarjeta de
+    // "Comenzar evaluación" (renderNextStep) permanentemente en su estado de
+    // skeleton/placeholder, sin ningún botón real en el DOM, aunque los
+    // demás controles de la página (sidebar, cerrar sesión) sí funcionaran.
+    // Ahora un fallo en cualquier paso queda aislado y registrado, y el resto
+    // del panel igual se termina de construir.
+    const pasosRender = [
+      ['progreso iniciado', () => cargarProgresoIniciado(cliente)],
+      ['step flow', () => renderStepFlow(cliente)],
+      ['siguiente paso', () => renderNextStep(cliente)],
+      ['evaluaciones (resumen)', () => renderEvalsProgress(cliente)],
+      ['evaluaciones (grid)', () => renderTestsGrid(cliente)],
+      ['mi plan', () => renderPlanPage(cliente)],
+      ['elegir evaluaciones', () => renderSelector('selectorProceso', cliente)],
+      ['mi informe', () => renderInformePage(cliente)],
+      ['mi cuenta', () => renderCuenta(cliente, session)],
+      ['notificaciones', () => renderNotifications(cliente)],
+      ['nav móvil', () => renderMobileNav()],
+    ];
+    for(const [nombrePaso, fn] of pasosRender){
+      try{
+        await fn();
+      }catch(e){
+        console.error('Error renderizando "' + nombrePaso + '":', e);
+        window.__aurzaneLogErr('mostrarShell/' + nombrePaso + ': ' + (e && e.message));
+      }
+    }
+  }
+
+  /* ===================== ESTADO / PROGRESO (derivado, sin inventar campos) ===================== */
+
+  function getEvalStats(cliente){
+    const activaciones = cliente.activaciones || [];
+    const activos = activaciones.filter(a => a.activo);
+    const completados = activos.filter(a => a.completado);
+    const pendientes = activos.filter(a => !a.completado);
+    return { activaciones, activos, completados, pendientes };
+  }
+
+  // Pasos del proceso — cada uno se calcula a partir de campos reales de
+  // `clientes`/`activaciones`, nunca de un porcentaje fijo o inventado.
+  function computeProcessSteps(cliente){
+    const { activos, completados, pendientes } = getEvalStats(cliente);
+    const steps = [
+      { key:'cuenta', label:'Cuenta creada', done:true },
+      { key:'evals-activas', label:'Evaluaciones elegidas', done: activos.length > 0 },
+      { key:'informe', label:'Informe disponible', done: completados.length > 0 },
+      { key:'evals-completas', label:'Evaluaciones completadas', done: activos.length > 0 && pendientes.length === 0 },
+    ];
+    let currentIdx = steps.findIndex(s => !s.done);
+    if(currentIdx === -1) currentIdx = steps.length - 1;
+    return { steps, currentIdx };
+  }
+
+  function renderStepFlow(cliente){
+    const { steps, currentIdx } = computeProcessSteps(cliente);
+    document.getElementById('stepFlow').innerHTML = steps.map((s,i)=>`
+      <div class="step-item ${s.done?'done':''} ${i===currentIdx?'current':''}">
+        <span class="s-line"></span>
+        <div class="step-dot">${s.done ? '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>' : (i+1)}</div>
+        <span class="step-lbl">${s.label}</span>
+      </div>
+    `).join('');
+  }
+
+  // Consulta, para cada evaluación activa y no completada, si ya existe al
+  // menos una respuesta guardada — así distinguimos "Comenzar" de
+  // "Continuar" sin depender de un campo que no existe en la base de datos.
+  //
+  // Fase 10 (fix bug crítico "portal congelado") — diagnóstico confirmado con
+  // evidencia real de red (misma cuenta, misma sesión, mismo cliente Supabase
+  // -- window.__aurzaneSb === window.__aurzaneIdClient, se comprobó en vivo):
+  //
+  //   1. Estas 6 consultas fallaban con 503 SIEMPRE durante la carga inicial
+  //      del portal, tanto disparadas en paralelo como una por una en
+  //      secuencia -- correrlas secuencialmente NO elimina el 503 por sí
+  //      solo (se probó explícitamente). No es (solo) una ráfaga de
+  //      concurrencia.
+  //   2. Las consultas de `clientes_portal` que corren justo antes, con el
+  //      mismo cliente/sesión/token, sí responden 200 siempre. Eso descarta
+  //      un problema de autenticación/sesión: el token es el mismo y ya
+  //      funciona en la petición anterior.
+  //   3. La MISMA consulta a `respuestas_*`, ejecutada manualmente un
+  //      instante después (ya con la página estable), responde 200 siempre.
+  //   4. Comparando en el mismo instante la consulta que usa el portal
+  //      (`select(...).head(true)` con `count:'exact'`, que obliga a
+  //      Postgres a hacer un COUNT(*) evaluando la política RLS fila por
+  //      fila) contra un `select('cliente_id').limit(1)` normal sobre la
+  //      misma tabla, la versión HEAD/count fue medida más lenta (402ms vs
+  //      307ms) incluso ya con la conexión "caliente".
+  //
+  //   Diagnóstico más probable: el HEAD con count:'exact' es la consulta más
+  //   cara de las que dispara el portal al cargar, y es justo la que falla
+  //   -- consistente con que el proyecto de Supabase (o el pool de
+  //   conexiones/plan de consulta) todavía no está "caliente" apenas se abre
+  //   la página, y ese COUNT(*) con RLS es lo primero que se cae bajo esa
+  //   presión mientras los SELECT simples ya funcionan. Esto es un
+  //   diagnóstico de frontend con la evidencia disponible desde acá (no hay
+  //   acceso desde el navegador a los logs de Postgres/Supabase con el
+  //   detalle exacto del 503) -- para confirmarlo al 100% hace falta revisar
+  //   los logs del proyecto en el dashboard de Supabase (Logs → Postgres /
+  //   API) en el rango horario de estas pruebas.
+  //
+  //   Corrección aplicada (no es solo "tragarse el error"): se reemplaza el
+  //   HEAD+count por un SELECT acotado con limit(1) -- el mismo dato que se
+  //   necesita ("¿existe al menos una fila?") con una consulta más liviana,
+  //   sin forzar un COUNT(*) completo. Además: consulta secuencial (no
+  //   Promise.all), con un reintento si falla, y esta función sigue sin
+  //   lanzar nunca una excepción hacia afuera -- si de verdad no se puede
+  //   verificar, se registra el aviso y se sigue con "sin verificar" (nunca
+  //   se inventa que un test está completado ni que está pendiente).
+  async function cargarProgresoIniciado(cliente){
+    startedTestKeys = new Set();
+    const { pendientes } = getEvalStats(cliente);
+    for(const a of pendientes){
+      const tabla = RESPUESTAS_TABLE[a.test_key];
+      if(!tabla) continue;
+      for(let intento = 1; intento <= 2; intento++){
+        try{
+          const { data, error } = await sb.from(tabla).select('cliente_id').eq('cliente_id', cliente.id).limit(1);
+          if(error) throw error;
+          if(data && data.length > 0) startedTestKeys.add(a.test_key);
+          break;
+        }catch(e){
+          if(intento >= 2){
+            console.warn('No se pudo verificar si ya se empezó "' + a.test_key + '" (se muestra "Comenzar" por defecto):', e && e.message);
+          } else {
+            await new Promise(r => setTimeout(r, 400));
+          }
+        }
+      }
+    }
+  }
+
+  function renderNextStep(cliente){
+    const { activos, completados, pendientes } = getEvalStats(cliente);
+    const wrap = document.getElementById('nextStepWrap');
+    let eyebrow = 'Tu siguiente paso', title = '', body = '', actions = '';
+
+    if(activos.length === 0){
+      title = 'Elige tus evaluaciones';
+      body = 'Tu acceso es gratuito. Elige cuántas evaluaciones quieres hacer; con una ya obtienes tu informe.';
+      actions = `<button class="btn btn-primary" onclick="goToPage('plan')">Elegir evaluaciones</button>`;
+    } else if(pendientes.length > 0){
+      title = `Tienes ${pendientes.length} ${pendientes.length===1?'evaluación':'evaluaciones'} por completar`;
+      const first = pendientes[0];
+      const info = TEST_INFO[first.test_key];
+      body = (info ? `Sigue con «${info.nombre}»: ${info.proposito}` : 'Ve a «Mis Evaluaciones» para continuar.') +
+        (completados.length > 0 ? ` Tu informe ya está disponible con ${completados.length === 1 ? 'la evaluación que completaste' : 'las ' + completados.length + ' que completaste'} y se actualiza con cada nueva.` : '');
+      actions = `<button class="btn btn-primary" onclick="irAlTest('${info ? info.url : '#'}')">${startedTestKeys.has(first.test_key) ? 'Continuar evaluación' : 'Comenzar evaluación'} →</button>
+                 ${completados.length > 0 ? `<button class="btn btn-secondary" onclick="goToPage('informe')">Ver mi informe</button>` : ''}
+                 <button class="btn btn-ghost" onclick="goToPage('tests')">Ver todas mis evaluaciones</button>`;
+    } else {
+      title = 'Tu informe está listo';
+      body = `Completaste ${completados.length === 1 ? 'la evaluación que elegiste' : 'las ' + completados.length + ' evaluaciones que elegiste'}. Puedes leer tu informe y descargarlo en PDF o Word.` +
+        (activos.length < ALL_TEST_KEYS.length ? ' Si quieres un informe más completo, puedes añadir más evaluaciones.' : '');
+      actions = `<button class="btn btn-primary" onclick="goToPage('informe')">Ver mi informe</button>` +
+        (activos.length < ALL_TEST_KEYS.length ? `<button class="btn btn-ghost" onclick="goToPage('plan')">Añadir evaluaciones</button>` : '');
+    }
+
+    wrap.innerHTML = `
+      <div class="next-card">
+        <span class="eyebrow nc-eyebrow">${eyebrow}</span>
+        <h2 class="h2">${title}</h2>
+        <p>${body}</p>
+        ${actions ? `<div class="nc-actions">${actions}</div>` : ''}
+      </div>
+    `;
+  }
+
+
+  function renderEvalsProgress(cliente){
+    const { activos } = getEvalStats(cliente);
+    const list = document.getElementById('evalsProgressList');
+    if(activos.length === 0){
+      list.innerHTML = `<div class="empty-state">
+        <h4>Todavía no elegiste evaluaciones</h4>
+        <p>Elígelas en «Mi Proceso»; el acceso es gratuito.</p>
+      </div>`;
+      return;
+    }
+    list.innerHTML = activos.map(a=>{
+      const info = TEST_INFO[a.test_key] || { nombre:a.test_key, proposito:'' };
+      return `<div class="eval-row ${a.completado?'done':'active'}">
+        <div class="er-icon">${a.completado
+          ? '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>'
+          : '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>'}</div>
+        <div class="er-info"><h4>${escapeHtml(info.nombre)}</h4><p>${escapeHtml(info.proposito)}</p></div>
+        <span class="badge ${a.completado?'badge-ok':'badge-warn'}"><span class="dot"></span>${a.completado?'Completado':'Pendiente'}</span>
+      </div>`;
+    }).join('');
+  }
+
+  // Filtro Amazon-style (Todos/Pendientes/Completados) sobre las
+  // evaluaciones ya activadas. Es puramente de presentación — no cambia
+  // qué evaluaciones existen, solo cuáles se muestran en la grilla.
+  let testsGridActivos = [];
+  let filtroTests = 'todos';
+
+  document.getElementById('filtrosTests').addEventListener('click', (e)=>{
+    const chip = e.target.closest('.chip-test');
+    if(!chip) return;
+    document.querySelectorAll('.chip-test').forEach(c=>c.classList.remove('active'));
+    chip.classList.add('active');
+    filtroTests = chip.dataset.filtro;
+    pintarTestsGrid();
+  });
+
+  function pintarTestsGrid(){
+    const grid = document.getElementById('testsGrid');
+    const lista = filtroTests === 'todos' ? testsGridActivos
+      : filtroTests === 'pendiente' ? testsGridActivos.filter(a=>!a.completado)
+      : testsGridActivos.filter(a=>a.completado);
+
+    if(lista.length === 0){
+      grid.innerHTML = `<div class="empty-state" style="grid-column:1/-1;">
+        <h4>${filtroTests === 'todos' ? 'Todavía no tienes evaluaciones activadas' : 'No hay evaluaciones en este filtro'}</h4>
+        <p>${filtroTests === 'todos' ? 'Elígelas en «Mi Proceso»; el acceso es gratuito.' : 'Prueba con otro filtro arriba.'}</p>
+      </div>`;
+      return;
+    }
+    grid.innerHTML = lista.map(a=>{
+      const info = TEST_INFO[a.test_key] || { nombre:a.test_key, proposito:'', preguntas:'—', tiempoMin:null, url:'#' };
+      const done = a.completado;
+      const started = !done && startedTestKeys.has(a.test_key);
+      const fechaFin = a.completado_at ? new Date(a.completado_at).toLocaleDateString('es-EC',{day:'2-digit',month:'short'}) : null;
+      const tiempoLbl = info.tiempoMin ? (info.tiempoMin >= 60 ? Math.round(info.tiempoMin/60*10)/10 + ' h' : info.tiempoMin + ' min') : '—';
+      return `
+        <div class="test-card ${done?'done':''}">
+          <div class="tc-top">
+            <h3>${escapeHtml(info.nombre)}</h3>
+            <span class="badge ${done?'badge-ok':'badge-warn'}"><span class="dot"></span>${done?'Completado':'Pendiente'}</span>
+          </div>
+          <p class="tc-purpose">${escapeHtml(info.proposito)}</p>
+          <div class="tc-meta">
+            <span class="tc-meta-item"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/></svg> ${info.preguntas} preguntas</span>
+            <span class="tc-meta-item"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg> ~${tiempoLbl}</span>
+          </div>
+          ${started ? `<div class="tc-dates">Ya empezaste esta evaluación</div>` : ''}
+          ${fechaFin ? `<div class="tc-dates">Completado ${fechaFin}</div>` : ''}
+          <button class="btn ${done?'btn-secondary':'btn-primary'} btn-block" ${done?'disabled':''} onclick="irAlTest('${info.url}')">
+            ${done ? 'Completado ✓' : (started ? 'Continuar evaluación →' : 'Comenzar evaluación →')}
+          </button>
+        </div>
+      `;
+    }).join('');
+  }
+
+  function renderTestsGrid(cliente){
+    const { activos } = getEvalStats(cliente);
+    testsGridActivos = activos;
+    const badge = document.getElementById('navTestsBadge');
+    const pendCount = activos.filter(a=>!a.completado).length;
+    if(pendCount > 0){ badge.style.display='inline-block'; badge.textContent = pendCount; }
+    else { badge.style.display = 'none'; }
+    document.getElementById('filtrosTests').style.display = activos.length > 0 ? 'flex' : 'none';
+    filtroTests = 'todos';
+    document.querySelectorAll('.chip-test').forEach(c=>c.classList.toggle('active', c.dataset.filtro==='todos'));
+    pintarTestsGrid();
+  }
+
+  function renderPlanPage(cliente){
+    const wrap = document.getElementById('planSummaryWrap');
+    if(!cliente.plan){ wrap.innerHTML = ''; return; }
+    const testKeys = ALL_TEST_KEYS.filter(k => (cliente.activaciones||[]).some(a => a.test_key === k && (a.activo || a.completado)));
+    const fecha = cliente.plan_solicitado_at ? new Date(cliente.plan_solicitado_at).toLocaleDateString('es-EC', {day:'2-digit',month:'long',year:'numeric'}) : '—';
+
+    wrap.innerHTML = `
+      <div class="plan-summary-card">
+        <span class="ps-tier">Acceso gratuito</span>
+        <h2 class="h2">Tu proceso OVP</h2>
+        <p class="text-2" style="font-size:0.86rem;margin:-6px 0 14px;">${testKeys.length} de ${ALL_TEST_KEYS.length} evaluaciones elegidas.</p>
+        <span class="badge badge-ok"><span class="dot"></span>Gratis</span>
+        <div class="includes-list">
+          ${testKeys.map(k=>{ const info = TEST_INFO[k]; return `<div class="inc-item yes"><span class="inc-icon"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>${info?escapeHtml(info.nombre):k}</div>`; }).join('')}
+          <div class="inc-item yes"><span class="inc-icon"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg></span>Informe integrador automático con gráficos</div>
+        </div>
+        <p class="text-dim" style="margin-top:16px;font-size:0.78rem;">Iniciado el ${fecha}</p>
+      </div>
+    `;
+
+    const { activos, pendientes, completados } = getEvalStats(cliente);
+    const steps = [
+      { done: completados.length > 0, title:'Tu informe se arma solo', body:'Con la primera evaluación que completes, tu informe aparece en «Mi Informe» y se actualiza con cada una que terminas.' },
+      { done: activos.length > 0 && pendientes.length === 0, title:'Completa las evaluaciones que elegiste', body: activos.length===0 ? 'Elígelas arriba; el acceso es gratuito.' : (pendientes.length===0 ? 'Ya completaste todas las que elegiste.' : `Te quedan ${pendientes.length} por completar.`) },
+      { done:false, title:'Lee y descarga tu informe', body:'Revísalo con calma, compártelo con tu familia y descárgalo en PDF o en Word cuando quieras.' },
+    ];
+    let curIdx = steps.findIndex(s=>!s.done);
+    if(curIdx === -1) curIdx = steps.length;
+    document.getElementById('afterTimeline').innerHTML = steps.map((s,i)=>`
+      <div class="nst-item ${s.done?'done':''} ${i===curIdx?'current':''}">
+        <div class="nst-num">${s.done?'✓':i+1}</div>
+        <div class="nst-body"><h4>${escapeHtml(s.title)}</h4><p>${escapeHtml(s.body)}</p></div>
+      </div>
+    `).join('');
+  }
+
+  // ===================== MI INFORME (entrega automática) =====================
+  // El informe se arma con las evaluaciones que la persona eligió y ya
+  // completó: con una sola ya hay informe, y se vuelve a armar cada vez que
+  // termina otra. Usa la misma lógica de puntuación que la vista del
+  // profesional (informe-shared.js + informe-v2.js).
+  let informeRenderizado = '';
+
+  const ICONO_PDF = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/><path d="M12 12v6M9 15l3 3 3-3"/></svg>';
+
+  function renderInformePage(cliente){
+    const { activos, pendientes, completados } = getEvalStats(cliente);
+    const wrap = document.getElementById('reportStateWrap');
+    const incluidos = ovpTestsDelInforme(cliente);
+    const ready = incluidos.length > 0;
+
+    if(!ready){
+      informeRenderizado = '';
+      wrap.innerHTML = `
+        <div class="report-state">
+          <div class="rs-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+          <div class="rs-body">
+            <h4>Todavía no hay informe</h4>
+            <p>${activos.length === 0 ? 'Elige tus evaluaciones en «Mi Proceso». Con la primera que completes, tu informe aparece aquí.' : 'Tu informe aparece aquí apenas completes tu primera evaluación.'}</p>
+          </div>
+        </div>
+      `;
+      return;
+    }
+
+    const nombres = incluidos.map(k => (TEST_INFO[k] ? TEST_INFO[k].nombre : k));
+    const pendNombres = pendientes.map(a => (TEST_INFO[a.test_key] ? TEST_INFO[a.test_key].nombre : a.test_key));
+    wrap.innerHTML = `
+      <div class="report-state ready">
+        <div class="rs-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/></svg></div>
+        <div class="rs-body"><h4>Tu informe está listo</h4>
+          <p>Incluye ${nombres.length === 1 ? 'tu evaluación' : 'tus ' + nombres.length + ' evaluaciones'}: ${escapeHtml(nombres.join(', '))}.${pendNombres.length ? ' Se actualizará cuando completes ' + escapeHtml(pendNombres.join(', ')) + '.' : ''}</p></div>
+        <div class="descargas-informe">
+          <button class="btn btn-primary btn-sm" id="descargarPdfBtn">${ICONO_PDF} Descargar PDF</button>
+          <button class="btn btn-secondary btn-sm" id="descargarWordBtn">${ICONO_PDF} Descargar Word</button>
+        </div>
+      </div>
+      <div id="opcionesInforme" class="opciones-wrap"></div>
+      <div id="clientReportWrap" style="border-top:1px solid var(--line);"></div>
+    `;
+    OVPExport.conectarBotones(document.getElementById('descargarPdfBtn'), document.getElementById('descargarWordBtn'));
+
+    const clave = incluidos.join(',') + '|' + (cliente.membrete_id || '') + '|' + (cliente.profesional_id || '');
+    informeRenderizado = clave;
+    renderClientReport(cliente, incluidos).catch(e => {
+      informeRenderizado = '';
+      const rc = document.getElementById('clientReportWrap');
+      if(rc) rc.innerHTML = '<p style="padding:28px;color:var(--err);font-size:0.9rem;">No pudimos preparar tu informe en este momento. Intenta de nuevo más tarde.</p>';
+      window.__aurzaneLogErr && window.__aurzaneLogErr(e && e.message ? e.message : 'Error al renderizar el informe del cliente');
+    });
+  }
+
+  // Trae las respuestas de las evaluaciones completadas (mismas tablas que
+  // usa la vista del profesional, filtradas al propio cliente_id) y arma
+  // el informe solo con ellas.
+  async function renderClientReport(cliente, incluidos){
+    const clienteId = cliente.id;
+    const usa = k => incluidos.includes(k);
+    const vacio = Promise.resolve({ data: [] });
+
+    const [{data: chaRows}, {data: hollandRows}, {data: af5Rows}, {data: chtRows}, {data: aptBRows}, {data: aptARows}, eleccion] = await Promise.all([
+      usa('chaside') ? sb.from('respuestas_chaside').select('*').eq('cliente_id', clienteId) : vacio,
+      usa('holland') ? sb.from('respuestas_holland').select('*').eq('cliente_id', clienteId) : vacio,
+      usa('af5') ? sb.from('respuestas_af5').select('*').eq('cliente_id', clienteId) : vacio,
+      usa('chte') ? sb.from('respuestas_chte').select('*').eq('cliente_id', clienteId) : vacio,
+      usa('apt_b') ? sb.from('respuestas_apt_b').select('*').eq('cliente_id', clienteId) : vacio,
+      usa('apt_a') ? sb.from('respuestas_apt_a').select('*').eq('cliente_id', clienteId) : vacio,
+      OVPOpciones.resolver(sb, cliente)
+    ]);
+
+    cha_responses = {}; (chaRows||[]).forEach(r => { cha_responses[r.pregunta_num] = r.respuesta; });
+    holland_rows = hollandRows || [];
+    af5_responses = {}; (af5Rows||[]).forEach(r => { af5_responses[r.pregunta_num] = r.valor; });
+    cht_responses = {}; (chtRows||[]).forEach(r => { cht_responses[r.pregunta_num] = r.respuesta; });
+    apt_b_rows = aptBRows || [];
+    apt_a_rows = aptARows || [];
+
+    const clientReportWrap = document.getElementById('clientReportWrap');
+    clientReportWrap.innerHTML = '<div class="report aurzane-report" id="reportContent"></div>';
+    const pintar = (el) => {
+      generarInformeOVP(cliente, el.membrete, incluidos, el.profesional);
+      quitarDevolucionDelInforme(document.getElementById('reportContent'));
+    };
+    pintar(eleccion);
+
+    // Membrete (AURZANE o COMIL 12) y firma, elegibles desde aquí mismo.
+    const opc = document.getElementById('opcionesInforme');
+    if(opc) OVPOpciones.selector(opc, eleccion, async (cambio) => {
+      const { error } = await sb.rpc('ovp_elegir_membrete', { p_membrete: cambio.membrete_id, p_profesional: cambio.profesional_id });
+      if(error) throw new Error(error.message);
+      cliente.membrete_id = cambio.membrete_id;
+      cliente.profesional_id = cambio.profesional_id;
+      informeRenderizado = incluidos.join(',') + '|' + (cliente.membrete_id || '') + '|' + (cliente.profesional_id || '');
+      const nueva = await OVPOpciones.resolver(sb, cliente);
+      eleccion.membrete = nueva.membrete; eleccion.profesional = nueva.profesional;
+      pintar(nueva);
+    });
+  }
+
+  // El informe compartido menciona una sesión de devolución que por ahora
+  // no se ofrece; en la vista del cliente esas frases se ajustan.
+  function quitarDevolucionDelInforme(raiz){
+    if(!raiz) return;
+    raiz.querySelectorAll('li, p').forEach(el=>{
+      if(/^\s*Agendar la sesión de devolución/.test(el.textContent)) el.remove();
+    });
+    const cambios = [
+      [/ que más conviene abordar en la sesión de devolución\./g, ' que más conviene atender.'],
+      [/ en la devolución antes de /g, ' antes de '],
+      [/Vale la pena explorar en la devolución si/g, 'Vale la pena explorar si'],
+      [/Vale la pena confirmarla en la devolución conversando ambos resultados juntos\./g, 'Vale la pena confirmarla considerando ambos resultados juntos.'],
+      [/ al conversarlo directamente en una sesión de devolución personalizada, donde cada hallazgo pueda contextualizarse/g, ' al leerlo con calma y conversarlo en familia, para que cada hallazgo pueda contextualizarse'],
+      [/ en la (sesión de )?devolución/g, ''],
+    ];
+    const w = document.createTreeWalker(raiz, NodeFilter.SHOW_TEXT);
+    let n;
+    while((n = w.nextNode())){
+      let t = n.nodeValue;
+      if(!/devoluci/i.test(t)) continue;
+      cambios.forEach(([re, r]) => { t = t.replace(re, r); });
+      n.nodeValue = t;
+    }
+  }
+
+  // Estado global que consume informe-shared.js (mismo patrón que
+  // generar-informe.html: las funciones compute* de la librería compartida
+  // los leen por nombre al momento de ejecutarse, no al definirse).
+  let cha_responses = {};
+  let af5_responses = {};
+  let cht_responses = {};
+  let apt_b_rows = [];
+  let apt_a_rows = [];
+  let holland_rows = [];
+
+  function renderCuenta(cliente, session){
+    document.getElementById('accountGrid').innerHTML = `
+      <div class="account-item"><div class="a-lbl">Nombre</div><div class="a-val">${escapeHtml(cliente.nombre)}</div></div>
+      <div class="account-item"><div class="a-lbl">Correo</div><div class="a-val">${escapeHtml(session.user.email)}</div></div>
+    `;
+    document.getElementById('processGrid').innerHTML = `
+      <div class="account-item"><div class="a-lbl">Acceso</div><div class="a-val">Gratuito</div></div>
+      <div class="account-item"><div class="a-lbl">Evaluaciones activas</div><div class="a-val">${(cliente.activaciones||[]).filter(a=>a.activo).length}</div></div>
+      <div class="account-item"><div class="a-lbl">Fecha de inicio</div><div class="a-val">${cliente.plan_solicitado_at ? new Date(cliente.plan_solicitado_at).toLocaleDateString('es-EC',{day:'2-digit',month:'long',year:'numeric'}) : '—'}</div></div>
+    `;
+
+    const fields = ['edad','sexo','institucion','curso'];
+    const filled = fields.filter(f => cliente[f] !== null && cliente[f] !== undefined && cliente[f] !== '').length;
+    const pct = Math.round((filled/fields.length)*100);
+    document.getElementById('profileMeter').innerHTML = `
+      <svg class="pm-ring" viewBox="0 0 44 44">
+        <circle cx="22" cy="22" r="18" fill="none" stroke="var(--navy-4)" stroke-width="4"/>
+        <circle cx="22" cy="22" r="18" fill="none" stroke="var(--gold)" stroke-width="4" stroke-linecap="round"
+          stroke-dasharray="${2*Math.PI*18}" stroke-dashoffset="${2*Math.PI*18*(1-pct/100)}" transform="rotate(-90 22 22)"/>
+      </svg>
+      <div class="pm-body"><p><strong>${pct}%</strong> de tu perfil está completo${pct<100?' — completa los datos abajo para que tu psicólogo te conozca mejor.':'.'}</p></div>
+    `;
+
+    document.getElementById('pfEdad').value = cliente.edad || '';
+    document.getElementById('pfSexo').value = cliente.sexo || '';
+    document.getElementById('pfInstitucion').value = cliente.institucion || '';
+    document.getElementById('pfCurso').value = cliente.curso || '';
+
+    const privacyText = document.getElementById('privacyStatusText');
+    if(privacyText){
+      privacyText.textContent = cliente.consentimiento_at
+        ? 'Aceptaste el aviso de privacidad el ' + new Date(cliente.consentimiento_at).toLocaleDateString('es-EC',{day:'2-digit',month:'long',year:'numeric'}) + '.'
+        : 'Puedes leer en cualquier momento qué datos recopilamos y para qué los usamos.';
+    }
+  }
+
+  document.getElementById('saveProfileBtn').addEventListener('click', async ()=>{
+    const btn = document.getElementById('saveProfileBtn');
+    const edad = document.getElementById('pfEdad').value || null;
+    const sexo = document.getElementById('pfSexo').value || null;
+    const institucion = document.getElementById('pfInstitucion').value.trim();
+    const curso = document.getElementById('pfCurso').value.trim();
+
+    btn.disabled = true; btn.innerHTML = '<span class="btn-spinner"></span>';
+    const { error } = await sb.from('clientes')
+      .update({ edad, sexo, institucion, curso }).eq('id', currentClienteId);
+    btn.disabled = false; btn.textContent = 'Guardar cambios';
+
+    if(error){ showToast('No se pudo guardar. Intenta de nuevo.', 'error'); return; }
+    const msg = document.getElementById('profileSaveMsg');
+    if(msg){ msg.classList.add('show'); setTimeout(()=>msg.classList.remove('show'), 2500); }
+    // refrescar el medidor de perfil sin recargar todo
+    const { data: cliente } = await sb.from('clientes_portal').select('id,nombre,email,user_id,plan,metodo_pago,plan_solicitado_at,pago_confirmado,edad,sexo,institucion,curso,consentimiento_at,fecha_nacimiento,motivo_consulta,expectativas,dudas_iniciales,entrevista_realizada,grupo_normativo,membrete_id,profesional_id,activaciones(*)').eq('id', currentClienteId).maybeSingle();
+    if(cliente){ clienteCache = cliente; renderCuenta(cliente, sessionCache); }
+  });
+
+  // ===================== CONSENTIMIENTO (Fase 8-9 P1) =====================
+  // irAlTest() es el único punto por el que se navega a cualquier test (tanto
+  // desde el CTA de "siguiente paso" como desde cada tarjeta del grid), así
+  // que es el lugar correcto para exigir el consentimiento una sola vez, sin
+  // duplicar la verificación en varios sitios.
+  let pendingTestUrl = null;
+  const consentModal = document.getElementById('consentModal');
+  const consentCheckbox = document.getElementById('consentCheckbox');
+  const consentAcceptBtn = document.getElementById('consentAcceptBtn');
+
+  function irAlTest(url){
+    if(!url || url === '#'){ showToast('Este instrumento todavía no está disponible en el sistema.', 'error'); return; }
+    if(!clienteCache || !clienteCache.consentimiento_at){
+      pendingTestUrl = url;
+      consentCheckbox.checked = false;
+      consentAcceptBtn.disabled = true;
+      consentModal.classList.add('open');
+      return;
+    }
+    window.location.href = url + '?cliente=' + currentClienteId;
+  }
+
+  function closeConsentModal(){
+    consentModal.classList.remove('open');
+    pendingTestUrl = null;
+  }
+
+  consentCheckbox.addEventListener('change', ()=>{
+    consentAcceptBtn.disabled = !consentCheckbox.checked;
+  });
+  document.getElementById('consentCancelBtn').addEventListener('click', closeConsentModal);
+  document.querySelector('.consent-modal-backdrop').addEventListener('click', closeConsentModal);
+  document.addEventListener('keydown', (e)=>{
+    if(e.key === 'Escape' && consentModal.classList.contains('open')) closeConsentModal();
+  });
+
+  consentAcceptBtn.addEventListener('click', async ()=>{
+    if(!consentCheckbox.checked || !pendingTestUrl) return;
+    consentAcceptBtn.disabled = true;
+    consentAcceptBtn.innerHTML = '<span class="btn-spinner"></span>';
+    const ahora = new Date().toISOString();
+    const { error } = await sb.from('clientes').update({ consentimiento_at: ahora }).eq('id', currentClienteId);
+    if(error){
+      consentAcceptBtn.disabled = false;
+      consentAcceptBtn.textContent = 'Continuar';
+      showToast('No se pudo registrar tu aceptación. Intenta de nuevo.', 'error');
+      return;
+    }
+    if(clienteCache) clienteCache.consentimiento_at = ahora;
+    const url = pendingTestUrl;
+    closeConsentModal();
+    window.location.href = url + '?cliente=' + currentClienteId;
+  });
+
+  sb.auth.getSession().then(({data})=>{
+    if(data.session){
+      // Fase 10: red de seguridad adicional — si cargarApp() llegara a
+      // rechazar por una excepción no prevista (p.ej. un error de red real,
+      // no un 503 de Supabase ya manejado más abajo), no se deja al usuario
+      // mirando la pantalla de "Redirigiendo…" para siempre sin ninguna
+      // explicación.
+      cargarApp(data.session).catch((e)=>{
+        console.error('Error cargando el portal:', e);
+        window.__aurzaneLogErr('cargarApp: ' + (e && e.message));
+        showToast('No pudimos cargar tu proceso. Intenta recargar la página.', 'error');
+      });
+    }
+    else { irALoginConRetorno(); }
+  });
+
+  sb.auth.onAuthStateChange((evento, session)=>{
+    if(evento === 'SIGNED_OUT' && !cerrandoSesionManual){
+      // Sesión invalidada/expirada en otro lado (no un logout manual acá):
+      // vuelve al login único y de ahí devuelve al usuario a este mismo lugar.
+      irALoginConRetorno();
+    }
+  });
+</script>
+</body>
+</html>
