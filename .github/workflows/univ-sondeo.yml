@@ -1,0 +1,21 @@
+name: Universidades sondeo
+on:
+  push:
+    branches: [main]
+    paths: ['univ/sondeo.sh']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  sondeo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - run: bash univ/sondeo.sh || true
+      - name: Guardar
+        run: |
+          git config user.name "aurzane-bot"; git config user.email "bot@aurzane.com"
+          git add -A univ/sondeo
+          git commit -m "univ: sondeo" || exit 0
+          for i in 1 2 3 4 5; do git pull --rebase && git push && break; sleep 7; done
