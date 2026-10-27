@@ -1,0 +1,1902 @@
+[
+ {
+  "pais": "Perú",
+  "iso": "pe",
+  "nombre": "Universidad Nacional Mayor de San Marcos",
+  "ciudad": "Lima",
+  "tipo": "Pública",
+  "web": "https://www.unmsm.edu.pe",
+  "estado_web": 200,
+  "web_final": "https://www.unmsm.edu.pe"
+ },
+ {
+  "pais": "Perú",
+  "iso": "pe",
+  "nombre": "Pontificia Universidad Católica del Perú",
+  "ciudad": "Lima",
+  "tipo": "Privada",
+  "web": "https://www.pucp.edu.pe",
+  "estado_web": 200,
+  "web_final": "https://www.pucp.edu.pe"
+ },
+ {
+  "pais": "Perú",
+  "iso": "pe",
+  "nombre": "Universidad Peruana Cayetano Heredia",
+  "ciudad": "Lima",
+  "tipo": "Privada",
+  "web": "https://www.cayetano.edu.pe",
+  "estado_web": 200,
+  "web_final": "https://cayetano.edu.pe/"
+ },
+ {
+  "pais": "Perú",
+  "iso": "pe",
+  "nombre": "Universidad Nacional de Ingeniería",
+  "ciudad": "Lima",
+  "tipo": "Pública",
+  "web": "https://www.uni.edu.pe",
+  "estado_web": 200,
+  "web_final": "https://portal.uni.edu.pe/"
+ },
+ {
+  "pais": "Perú",
+  "iso": "pe",
+  "nombre": "Universidad de Lima",
+  "ciudad": "Lima",
+  "tipo": "Privada",
+  "web": "https://www.ulima.edu.pe",
+  "estado_web": 200,
+  "web_final": "https://www.ulima.edu.pe"
+ },
+ {
+  "pais": "Perú",
+  "iso": "pe",
+  "nombre": "Universidad del Pacífico",
+  "ciudad": "Lima",
+  "tipo": "Privada",
+  "web": "https://www.up.edu.pe",
+  "estado_web": 403,
+  "web_final": "https://www.up.edu.pe"
+ },
+ {
+  "pais": "Perú",
+  "iso": "pe",
+  "nombre": "Universidad Nacional Agraria La Molina",
+  "ciudad": "Lima",
+  "tipo": "Pública",
+  "web": "https://www.lamolina.edu.pe",
+  "estado_web": 200,
+  "web_final": "https://www.lamolina.edu.pe"
+ },
+ {
+  "pais": "Perú",
+  "iso": "pe",
+  "nombre": "Universidad Peruana de Ciencias Aplicadas",
+  "ciudad": "Lima",
+  "tipo": "Privada",
+  "web": "https://www.upc.edu.pe",
+  "estado_web": 200,
+  "web_final": "https://www.upc.edu.pe"
+ },
+ {
+  "pais": "Perú",
+  "iso": "pe",
+  "nombre": "Universidad de Piura",
+  "ciudad": "Piura",
+  "tipo": "Privada",
+  "web": "https://www.udep.edu.pe",
+  "estado_web": 200,
+  "web_final": "https://www.udep.edu.pe"
+ },
+ {
+  "pais": "Perú",
+  "iso": "pe",
+  "nombre": "Universidad Nacional de San Agustín de Arequipa",
+  "ciudad": "Arequipa",
+  "tipo": "Pública",
+  "web": "https://www.unsa.edu.pe",
+  "estado_web": 200,
+  "web_final": "https://www.unsa.edu.pe"
+ },
+ {
+  "pais": "Perú",
+  "iso": "pe",
+  "nombre": "Universidad Nacional de San Antonio Abad del Cusco",
+  "ciudad": "Cusco",
+  "tipo": "Pública",
+  "web": "https://www.unsaac.edu.pe",
+  "estado_web": 200,
+  "web_final": "https://www.unsaac.edu.pe"
+ },
+ {
+  "pais": "Perú",
+  "iso": "pe",
+  "nombre": "Universidad Nacional de Trujillo",
+  "ciudad": "Trujillo",
+  "tipo": "Pública",
+  "web": "https://www.unitru.edu.pe",
+  "estado_web": 200,
+  "web_final": "https://www.unitru.edu.pe"
+ },
+ {
+  "pais": "Bolivia",
+  "iso": "bo",
+  "nombre": "Universidad Mayor de San Andrés",
+  "ciudad": "La Paz",
+  "tipo": "Pública",
+  "web": "https://www.umsa.bo",
+  "estado_web": 200,
+  "web_final": "https://www.umsa.bo"
+ },
+ {
+  "pais": "Bolivia",
+  "iso": "bo",
+  "nombre": "Universidad Mayor de San Simón",
+  "ciudad": "Cochabamba",
+  "tipo": "Pública",
+  "web": "https://www.umss.edu.bo",
+  "estado_web": 200,
+  "web_final": "https://www.umss.edu.bo"
+ },
+ {
+  "pais": "Bolivia",
+  "iso": "bo",
+  "nombre": "Universidad Autónoma Gabriel René Moreno",
+  "ciudad": "Santa Cruz de la Sierra",
+  "tipo": "Pública",
+  "web": "https://www.uagrm.edu.bo",
+  "estado_web": 200,
+  "web_final": "https://www.uagrm.edu.bo"
+ },
+ {
+  "pais": "Bolivia",
+  "iso": "bo",
+  "nombre": "Universidad Mayor, Real y Pontificia de San Francisco Xavier de Chuquisaca",
+  "ciudad": "Sucre",
+  "tipo": "Pública",
+  "web": "https://www.usfx.bo",
+  "estado_web": 200,
+  "web_final": "https://usfx.bo/"
+ },
+ {
+  "pais": "Bolivia",
+  "iso": "bo",
+  "nombre": "Universidad Católica Boliviana San Pablo",
+  "ciudad": "La Paz",
+  "tipo": "Privada",
+  "web": "https://www.ucb.edu.bo",
+  "estado_web": 200,
+  "web_final": "https://www.ucb.edu.bo"
+ },
+ {
+  "pais": "Bolivia",
+  "iso": "bo",
+  "nombre": "Universidad Privada Boliviana",
+  "ciudad": "Cochabamba",
+  "tipo": "Privada",
+  "web": "https://www.upb.edu",
+  "estado_web": 200,
+  "web_final": "https://www.upb.edu"
+ },
+ {
+  "pais": "Bolivia",
+  "iso": "bo",
+  "nombre": "Universidad Privada de Santa Cruz de la Sierra",
+  "ciudad": "Santa Cruz de la Sierra",
+  "tipo": "Privada",
+  "web": "https://www.upsa.edu.bo",
+  "estado_web": 200,
+  "web_final": "https://www.upsa.edu.bo"
+ },
+ {
+  "pais": "Bolivia",
+  "iso": "bo",
+  "nombre": "Universidad Técnica de Oruro",
+  "ciudad": "Oruro",
+  "tipo": "Pública",
+  "web": "https://www.uto.edu.bo",
+  "estado_web": 200,
+  "web_final": "https://www.uto.edu.bo"
+ },
+ {
+  "pais": "Venezuela",
+  "iso": "ve",
+  "nombre": "Universidad Central de Venezuela",
+  "ciudad": "Caracas",
+  "tipo": "Pública",
+  "web": "http://www.ucv.ve",
+  "estado_web": 200,
+  "web_final": "http://www.ucv.ve"
+ },
+ {
+  "pais": "Venezuela",
+  "iso": "ve",
+  "nombre": "Universidad Simón Bolívar",
+  "ciudad": "Caracas",
+  "tipo": "Pública",
+  "web": "https://www.usb.ve",
+  "estado_web": 0,
+  "web_final": "<urlopen error [Errno -3] Temporary failure in name resolution>"
+ },
+ {
+  "pais": "Venezuela",
+  "iso": "ve",
+  "nombre": "Universidad de Los Andes",
+  "ciudad": "Mérida",
+  "tipo": "Pública",
+  "web": "http://www.ula.ve",
+  "estado_web": 200,
+  "web_final": "http://www.ula.ve"
+ },
+ {
+  "pais": "Venezuela",
+  "iso": "ve",
+  "nombre": "Universidad del Zulia",
+  "ciudad": "Maracaibo",
+  "tipo": "Pública",
+  "web": "http://www.luz.edu.ve",
+  "estado_web": 200,
+  "web_final": "http://www.luz.edu.ve"
+ },
+ {
+  "pais": "Venezuela",
+  "iso": "ve",
+  "nombre": "Universidad de Carabobo",
+  "ciudad": "Valencia",
+  "tipo": "Pública",
+  "web": "http://www.uc.edu.ve",
+  "estado_web": 0,
+  "web_final": "<urlopen error timed out>"
+ },
+ {
+  "pais": "Venezuela",
+  "iso": "ve",
+  "nombre": "Universidad Católica Andrés Bello",
+  "ciudad": "Caracas",
+  "tipo": "Privada",
+  "web": "https://www.ucab.edu.ve",
+  "estado_web": 200,
+  "web_final": "https://www.ucab.edu.ve"
+ },
+ {
+  "pais": "Venezuela",
+  "iso": "ve",
+  "nombre": "Universidad Metropolitana",
+  "ciudad": "Caracas",
+  "tipo": "Privada",
+  "web": "https://www.unimet.edu.ve",
+  "estado_web": 200,
+  "web_final": "https://www.unimet.edu.ve"
+ },
+ {
+  "pais": "Venezuela",
+  "iso": "ve",
+  "nombre": "Universidad de Oriente",
+  "ciudad": "Cumaná",
+  "tipo": "Pública",
+  "web": "http://www.udo.edu.ve",
+  "estado_web": 200,
+  "web_final": "http://www.udo.edu.ve"
+ },
+ {
+  "pais": "Paraguay",
+  "iso": "py",
+  "nombre": "Universidad Nacional de Asunción",
+  "ciudad": "San Lorenzo",
+  "tipo": "Pública",
+  "web": "https://www.una.py",
+  "estado_web": 200,
+  "web_final": "https://www.una.py"
+ },
+ {
+  "pais": "Paraguay",
+  "iso": "py",
+  "nombre": "Universidad Católica Nuestra Señora de la Asunción",
+  "ciudad": "Asunción",
+  "tipo": "Privada",
+  "web": "https://www.universidadcatolica.edu.py",
+  "estado_web": 200,
+  "web_final": "https://universidadcatolica.edu.py/"
+ },
+ {
+  "pais": "Paraguay",
+  "iso": "py",
+  "nombre": "Universidad Autónoma de Asunción",
+  "ciudad": "Asunción",
+  "tipo": "Privada",
+  "web": "https://www.uaa.edu.py",
+  "estado_web": 200,
+  "web_final": "https://www.uaa.edu.py"
+ },
+ {
+  "pais": "Paraguay",
+  "iso": "py",
+  "nombre": "Universidad Americana",
+  "ciudad": "Asunción",
+  "tipo": "Privada",
+  "web": "https://www.americana.edu.py",
+  "estado_web": 200,
+  "web_final": "https://www.americana.edu.py"
+ },
+ {
+  "pais": "Paraguay",
+  "iso": "py",
+  "nombre": "Universidad Columbia del Paraguay",
+  "ciudad": "Asunción",
+  "tipo": "Privada",
+  "web": "https://www.columbia.edu.py",
+  "estado_web": 200,
+  "web_final": "https://www.columbia.edu.py"
+ },
+ {
+  "pais": "Paraguay",
+  "iso": "py",
+  "nombre": "Universidad Nacional del Este",
+  "ciudad": "Ciudad del Este",
+  "tipo": "Pública",
+  "web": "https://www.une.edu.py",
+  "estado_web": 200,
+  "web_final": "https://www.une.edu.py"
+ },
+ {
+  "pais": "Costa Rica",
+  "iso": "cr",
+  "nombre": "Universidad de Costa Rica",
+  "ciudad": "San José",
+  "tipo": "Pública",
+  "web": "https://www.ucr.ac.cr",
+  "estado_web": 200,
+  "web_final": "https://www.ucr.ac.cr"
+ },
+ {
+  "pais": "Costa Rica",
+  "iso": "cr",
+  "nombre": "Instituto Tecnológico de Costa Rica",
+  "ciudad": "Cartago",
+  "tipo": "Pública",
+  "web": "https://www.tec.ac.cr",
+  "estado_web": 200,
+  "web_final": "https://www.tec.ac.cr"
+ },
+ {
+  "pais": "Costa Rica",
+  "iso": "cr",
+  "nombre": "Universidad Nacional",
+  "ciudad": "Heredia",
+  "tipo": "Pública",
+  "web": "https://www.una.ac.cr",
+  "estado_web": 200,
+  "web_final": "https://www.una.ac.cr"
+ },
+ {
+  "pais": "Costa Rica",
+  "iso": "cr",
+  "nombre": "Universidad Estatal a Distancia",
+  "ciudad": "San José",
+  "tipo": "Pública",
+  "web": "https://www.uned.ac.cr",
+  "estado_web": 200,
+  "web_final": "https://validate.perfdrive.com/1d5e7db86bd0fac59bd8e505e4ee4c41/?ssa=323b3456-30bc-46ac-bbb5-b764da9fc55a&ssb=77269229070&ssc=https%3A%2F%2Fwww.uned.ac.cr%2F&ssi=ab5fe3c9-cywq-48a9-b88a-a64fea59864f&ssk=botmanager_support@radware.com&ssm=08151137017904465105754962841833&ssn=6de426422622af4dac7cb352f4a904bb194d575933c0-4896-492c-ab154a&sso=7cf4b82c-cc426c1064df3a4c515622ab49fa99845d67bf5572ee8a54&ssp=38535926391793057342179304408956346&ssq=01371078859812692084888598718923709638901&ssr=MjAuODMuNTMuNTA=&sst=Mozilla/5.0%20(X11;%20Linux%20x86_64)%20AppleWebKit/537.36%20Chrome/124%20Safari/537.36&ssu=&ssv=&ssw=&ssx=eyJfX3V6bWYiOiI3ZjkwMDA1NzU5MzNjMC00ODk2LTQ5MmMtYTgyYy1jYzQyNmMxMDY0ZGYxLTE3OTMwODg1OTg5NTYwLTAwNTJlNzFhNDkwYWRlNjcxYzkxMCIsInV6bXgiOiI3ZmMwMDBmODEwNWQzOC0zMTdmLTQ0OGEtOTY3ZS04ODA3MDVmODZjYjkxLTE3OTMwODg1OTg5NTUwLTAwYmMwMjcyNGVlNDdlNDc3ZTYxMCIsInJkIjoidW5lZC5hYy5jciJ9"
+ },
+ {
+  "pais": "Costa Rica",
+  "iso": "cr",
+  "nombre": "Universidad Técnica Nacional",
+  "ciudad": "Alajuela",
+  "tipo": "Pública",
+  "web": "https://www.utn.ac.cr",
+  "estado_web": 200,
+  "web_final": "https://www.utn.ac.cr"
+ },
+ {
+  "pais": "Costa Rica",
+  "iso": "cr",
+  "nombre": "Universidad Latina de Costa Rica",
+  "ciudad": "San José",
+  "tipo": "Privada",
+  "web": "https://www.ulatina.ac.cr",
+  "estado_web": 200,
+  "web_final": "https://www.ulatina.ac.cr"
+ },
+ {
+  "pais": "Panamá",
+  "iso": "pa",
+  "nombre": "Universidad de Panamá",
+  "ciudad": "Ciudad de Panamá",
+  "tipo": "Pública",
+  "web": "https://www.up.ac.pa",
+  "estado_web": 200,
+  "web_final": "https://www.up.ac.pa"
+ },
+ {
+  "pais": "Panamá",
+  "iso": "pa",
+  "nombre": "Universidad Tecnológica de Panamá",
+  "ciudad": "Ciudad de Panamá",
+  "tipo": "Pública",
+  "web": "https://utp.ac.pa",
+  "estado_web": 200,
+  "web_final": "https://utp.ac.pa"
+ },
+ {
+  "pais": "Panamá",
+  "iso": "pa",
+  "nombre": "Universidad Católica Santa María La Antigua",
+  "ciudad": "Ciudad de Panamá",
+  "tipo": "Privada",
+  "web": "https://www.usma.ac.pa",
+  "estado_web": 200,
+  "web_final": "https://usma.ac.pa/"
+ },
+ {
+  "pais": "Panamá",
+  "iso": "pa",
+  "nombre": "Universidad Autónoma de Chiriquí",
+  "ciudad": "David",
+  "tipo": "Pública",
+  "web": "https://www.unachi.ac.pa",
+  "estado_web": 200,
+  "web_final": "https://www.unachi.ac.pa"
+ },
+ {
+  "pais": "Panamá",
+  "iso": "pa",
+  "nombre": "Universidad Latina de Panamá",
+  "ciudad": "Ciudad de Panamá",
+  "tipo": "Privada",
+  "web": "https://www.ulatina.edu.pa",
+  "estado_web": 200,
+  "web_final": "https://www.ulatina.edu.pa"
+ },
+ {
+  "pais": "Guatemala",
+  "iso": "gt",
+  "nombre": "Universidad de San Carlos de Guatemala",
+  "ciudad": "Ciudad de Guatemala",
+  "tipo": "Pública",
+  "web": "https://www.usac.edu.gt",
+  "estado_web": 0,
+  "web_final": "<urlopen error timed out>"
+ },
+ {
+  "pais": "Guatemala",
+  "iso": "gt",
+  "nombre": "Universidad Rafael Landívar",
+  "ciudad": "Ciudad de Guatemala",
+  "tipo": "Privada",
+  "web": "https://www.url.edu.gt",
+  "estado_web": 200,
+  "web_final": "https://www.url.edu.gt"
+ },
+ {
+  "pais": "Guatemala",
+  "iso": "gt",
+  "nombre": "Universidad del Valle de Guatemala",
+  "ciudad": "Ciudad de Guatemala",
+  "tipo": "Privada",
+  "web": "https://www.uvg.edu.gt",
+  "estado_web": 200,
+  "web_final": "https://www.uvg.edu.gt"
+ },
+ {
+  "pais": "Guatemala",
+  "iso": "gt",
+  "nombre": "Universidad Francisco Marroquín",
+  "ciudad": "Ciudad de Guatemala",
+  "tipo": "Privada",
+  "web": "https://www.ufm.edu",
+  "estado_web": 403,
+  "web_final": "https://www.ufm.edu"
+ },
+ {
+  "pais": "Guatemala",
+  "iso": "gt",
+  "nombre": "Universidad Mariano Gálvez de Guatemala",
+  "ciudad": "Ciudad de Guatemala",
+  "tipo": "Privada",
+  "web": "https://www.umg.edu.gt",
+  "estado_web": 200,
+  "web_final": "https://www.umg.edu.gt"
+ },
+ {
+  "pais": "Guatemala",
+  "iso": "gt",
+  "nombre": "Universidad Galileo",
+  "ciudad": "Ciudad de Guatemala",
+  "tipo": "Privada",
+  "web": "https://www.galileo.edu",
+  "estado_web": 403,
+  "web_final": "https://www.galileo.edu"
+ },
+ {
+  "pais": "Honduras",
+  "iso": "hn",
+  "nombre": "Universidad Nacional Autónoma de Honduras",
+  "ciudad": "Tegucigalpa",
+  "tipo": "Pública",
+  "web": "https://www.unah.edu.hn",
+  "estado_web": 200,
+  "web_final": "https://www.unah.edu.hn"
+ },
+ {
+  "pais": "Honduras",
+  "iso": "hn",
+  "nombre": "Universidad Tecnológica Centroamericana",
+  "ciudad": "Tegucigalpa",
+  "tipo": "Privada",
+  "web": "https://www.unitec.edu",
+  "estado_web": 200,
+  "web_final": "https://www.unitec.edu"
+ },
+ {
+  "pais": "Honduras",
+  "iso": "hn",
+  "nombre": "Universidad Católica de Honduras",
+  "ciudad": "Tegucigalpa",
+  "tipo": "Privada",
+  "web": "https://www.unicah.edu",
+  "estado_web": 200,
+  "web_final": "https://www.unicah.edu"
+ },
+ {
+  "pais": "Honduras",
+  "iso": "hn",
+  "nombre": "Universidad Pedagógica Nacional Francisco Morazán",
+  "ciudad": "Tegucigalpa",
+  "tipo": "Pública",
+  "web": "https://www.upnfm.edu.hn",
+  "estado_web": 200,
+  "web_final": "https://www.upnfm.edu.hn"
+ },
+ {
+  "pais": "Honduras",
+  "iso": "hn",
+  "nombre": "Escuela Agrícola Panamericana Zamorano",
+  "ciudad": "Valle del Yeguare",
+  "tipo": "Privada",
+  "web": "https://www.zamorano.edu",
+  "estado_web": 200,
+  "web_final": "https://zamorano.edu/"
+ },
+ {
+  "pais": "El Salvador",
+  "iso": "sv",
+  "nombre": "Universidad de El Salvador",
+  "ciudad": "San Salvador",
+  "tipo": "Pública",
+  "web": "https://www.ues.edu.sv",
+  "estado_web": 200,
+  "web_final": "https://www.ues.edu.sv"
+ },
+ {
+  "pais": "El Salvador",
+  "iso": "sv",
+  "nombre": "Universidad Centroamericana José Simeón Cañas",
+  "ciudad": "Antiguo Cuscatlán",
+  "tipo": "Privada",
+  "web": "https://www.uca.edu.sv",
+  "estado_web": 200,
+  "web_final": "https://uca.edu.sv/"
+ },
+ {
+  "pais": "El Salvador",
+  "iso": "sv",
+  "nombre": "Universidad Tecnológica de El Salvador",
+  "ciudad": "San Salvador",
+  "tipo": "Privada",
+  "web": "https://www.utec.edu.sv",
+  "estado_web": 200,
+  "web_final": "https://www.utec.edu.sv"
+ },
+ {
+  "pais": "El Salvador",
+  "iso": "sv",
+  "nombre": "Universidad Don Bosco",
+  "ciudad": "Soyapango",
+  "tipo": "Privada",
+  "web": "https://www.udb.edu.sv",
+  "estado_web": 200,
+  "web_final": "https://www.udb.edu.sv/udb/"
+ },
+ {
+  "pais": "El Salvador",
+  "iso": "sv",
+  "nombre": "Universidad Francisco Gavidia",
+  "ciudad": "San Salvador",
+  "tipo": "Privada",
+  "web": "https://www.ufg.edu.sv",
+  "estado_web": 200,
+  "web_final": "https://ufg.edu.sv/"
+ },
+ {
+  "pais": "Nicaragua",
+  "iso": "ni",
+  "nombre": "Universidad Nacional Autónoma de Nicaragua, Managua",
+  "ciudad": "Managua",
+  "tipo": "Pública",
+  "web": "https://www.unan.edu.ni",
+  "estado_web": 200,
+  "web_final": "https://www.unan.edu.ni"
+ },
+ {
+  "pais": "Nicaragua",
+  "iso": "ni",
+  "nombre": "Universidad Nacional de Ingeniería",
+  "ciudad": "Managua",
+  "tipo": "Pública",
+  "web": "https://www.uni.edu.ni",
+  "estado_web": 200,
+  "web_final": "https://www.uni.edu.ni"
+ },
+ {
+  "pais": "Nicaragua",
+  "iso": "ni",
+  "nombre": "Universidad Nacional Autónoma de Nicaragua, León",
+  "ciudad": "León",
+  "tipo": "Pública",
+  "web": "https://www.unanleon.edu.ni",
+  "estado_web": 200,
+  "web_final": "https://www.unanleon.edu.ni"
+ },
+ {
+  "pais": "Nicaragua",
+  "iso": "ni",
+  "nombre": "Universidad Nacional Agraria",
+  "ciudad": "Managua",
+  "tipo": "Pública",
+  "web": "https://www.una.edu.ni",
+  "estado_web": 200,
+  "web_final": "https://www.una.edu.ni"
+ },
+ {
+  "pais": "Nicaragua",
+  "iso": "ni",
+  "nombre": "Universidad Americana",
+  "ciudad": "Managua",
+  "tipo": "Privada",
+  "web": "https://www.uam.edu.ni",
+  "estado_web": 200,
+  "web_final": "https://www.uam.edu.ni"
+ },
+ {
+  "pais": "Cuba",
+  "iso": "cu",
+  "nombre": "Universidad de La Habana",
+  "ciudad": "La Habana",
+  "tipo": "Pública",
+  "web": "http://www.uh.cu",
+  "estado_web": 0,
+  "web_final": "HTTP 502"
+ },
+ {
+  "pais": "Cuba",
+  "iso": "cu",
+  "nombre": "Universidad Tecnológica de La Habana José Antonio Echeverría",
+  "ciudad": "La Habana",
+  "tipo": "Pública",
+  "web": "https://www.cujae.edu.cu",
+  "estado_web": 0,
+  "web_final": "<urlopen error [Errno -2] Name or service not known>"
+ },
+ {
+  "pais": "Cuba",
+  "iso": "cu",
+  "nombre": "Universidad Central Marta Abreu de Las Villas",
+  "ciudad": "Santa Clara",
+  "tipo": "Pública",
+  "web": "https://www.uclv.edu.cu",
+  "estado_web": 200,
+  "web_final": "https://www.uclv.edu.cu"
+ },
+ {
+  "pais": "Cuba",
+  "iso": "cu",
+  "nombre": "Universidad de Oriente",
+  "ciudad": "Santiago de Cuba",
+  "tipo": "Pública",
+  "web": "https://www.uo.edu.cu",
+  "estado_web": 200,
+  "web_final": "https://www.uo.edu.cu"
+ },
+ {
+  "pais": "Cuba",
+  "iso": "cu",
+  "nombre": "Universidad de Ciencias Médicas de La Habana",
+  "ciudad": "La Habana",
+  "tipo": "Pública",
+  "web": "https://instituciones.sld.cu/ucmh/",
+  "estado_web": 0,
+  "web_final": "HTTP 410"
+ },
+ {
+  "pais": "República Dominicana",
+  "iso": "do",
+  "nombre": "Universidad Autónoma de Santo Domingo",
+  "ciudad": "Santo Domingo",
+  "tipo": "Pública",
+  "web": "https://uasd.edu.do",
+  "estado_web": 200,
+  "web_final": "https://uasd.edu.do"
+ },
+ {
+  "pais": "República Dominicana",
+  "iso": "do",
+  "nombre": "Pontificia Universidad Católica Madre y Maestra",
+  "ciudad": "Santiago de los Caballeros",
+  "tipo": "Privada",
+  "web": "https://www.pucmm.edu.do",
+  "estado_web": 200,
+  "web_final": "https://pucmm.edu.do/"
+ },
+ {
+  "pais": "República Dominicana",
+  "iso": "do",
+  "nombre": "Instituto Tecnológico de Santo Domingo",
+  "ciudad": "Santo Domingo",
+  "tipo": "Privada",
+  "web": "https://www.intec.edu.do",
+  "estado_web": 200,
+  "web_final": "https://www.intec.edu.do"
+ },
+ {
+  "pais": "República Dominicana",
+  "iso": "do",
+  "nombre": "Universidad Iberoamericana",
+  "ciudad": "Santo Domingo",
+  "tipo": "Privada",
+  "web": "https://www.unibe.edu.do",
+  "estado_web": 200,
+  "web_final": "https://www.unibe.edu.do"
+ },
+ {
+  "pais": "República Dominicana",
+  "iso": "do",
+  "nombre": "Universidad APEC",
+  "ciudad": "Santo Domingo",
+  "tipo": "Privada",
+  "web": "https://unapec.edu.do",
+  "estado_web": 200,
+  "web_final": "https://unapec.edu.do"
+ },
+ {
+  "pais": "República Dominicana",
+  "iso": "do",
+  "nombre": "Universidad Nacional Pedro Henríquez Ureña",
+  "ciudad": "Santo Domingo",
+  "tipo": "Privada",
+  "web": "https://www.unphu.edu.do",
+  "estado_web": 403,
+  "web_final": "https://www.unphu.edu.do"
+ },
+ {
+  "pais": "Puerto Rico",
+  "iso": "pr",
+  "nombre": "Universidad de Puerto Rico, Recinto de Río Piedras",
+  "ciudad": "San Juan",
+  "tipo": "Pública",
+  "web": "https://www.uprrp.edu",
+  "estado_web": 200,
+  "web_final": "https://www.uprrp.edu"
+ },
+ {
+  "pais": "Puerto Rico",
+  "iso": "pr",
+  "nombre": "Universidad de Puerto Rico, Recinto Universitario de Mayagüez",
+  "ciudad": "Mayagüez",
+  "tipo": "Pública",
+  "web": "https://www.uprm.edu",
+  "estado_web": 0,
+  "web_final": "<urlopen error timed out>"
+ },
+ {
+  "pais": "Puerto Rico",
+  "iso": "pr",
+  "nombre": "Universidad de Puerto Rico, Recinto de Ciencias Médicas",
+  "ciudad": "San Juan",
+  "tipo": "Pública",
+  "web": "https://www.rcm.upr.edu",
+  "estado_web": 200,
+  "web_final": "https://rcm1.rcm.upr.edu/"
+ },
+ {
+  "pais": "Puerto Rico",
+  "iso": "pr",
+  "nombre": "Pontificia Universidad Católica de Puerto Rico",
+  "ciudad": "Ponce",
+  "tipo": "Privada",
+  "web": "https://www.pucpr.edu",
+  "estado_web": 200,
+  "web_final": "https://www.pucpr.edu"
+ },
+ {
+  "pais": "Puerto Rico",
+  "iso": "pr",
+  "nombre": "Universidad Interamericana de Puerto Rico",
+  "ciudad": "San Juan",
+  "tipo": "Privada",
+  "web": "https://www.inter.edu",
+  "estado_web": 200,
+  "web_final": "https://www.inter.edu"
+ },
+ {
+  "pais": "Puerto Rico",
+  "iso": "pr",
+  "nombre": "Universidad del Sagrado Corazón",
+  "ciudad": "San Juan",
+  "tipo": "Privada",
+  "web": "https://www.sagrado.edu",
+  "estado_web": 200,
+  "web_final": "https://www.sagrado.edu"
+ },
+ {
+  "pais": "Bélgica",
+  "iso": "be",
+  "nombre": "KU Leuven",
+  "ciudad": "Lovaina",
+  "tipo": "Pública",
+  "web": "https://www.kuleuven.be",
+  "estado_web": 200,
+  "web_final": "https://www.kuleuven.be/kuleuven/"
+ },
+ {
+  "pais": "Bélgica",
+  "iso": "be",
+  "nombre": "Universidad de Gante",
+  "ciudad": "Gante",
+  "tipo": "Pública",
+  "web": "https://www.ugent.be",
+  "estado_web": 200,
+  "web_final": "https://www.ugent.be"
+ },
+ {
+  "pais": "Bélgica",
+  "iso": "be",
+  "nombre": "Universidad Católica de Lovaina",
+  "ciudad": "Louvain-la-Neuve",
+  "tipo": "Pública",
+  "web": "https://uclouvain.be",
+  "estado_web": 200,
+  "web_final": "https://uclouvain.be/fr"
+ },
+ {
+  "pais": "Bélgica",
+  "iso": "be",
+  "nombre": "Universidad Libre de Bruselas",
+  "ciudad": "Bruselas",
+  "tipo": "Pública",
+  "web": "https://www.ulb.be",
+  "estado_web": 200,
+  "web_final": "https://www.ulb.be"
+ },
+ {
+  "pais": "Bélgica",
+  "iso": "be",
+  "nombre": "Universidad de Amberes",
+  "ciudad": "Amberes",
+  "tipo": "Pública",
+  "web": "https://www.uantwerpen.be",
+  "estado_web": 200,
+  "web_final": "https://www.uantwerpen.be/nl/"
+ },
+ {
+  "pais": "Bélgica",
+  "iso": "be",
+  "nombre": "Universidad de Lieja",
+  "ciudad": "Lieja",
+  "tipo": "Pública",
+  "web": "https://www.uliege.be",
+  "estado_web": 200,
+  "web_final": "https://www.uliege.be/cms/c_8699436/fr/uliege"
+ },
+ {
+  "pais": "Bélgica",
+  "iso": "be",
+  "nombre": "Vrije Universiteit Brussel",
+  "ciudad": "Bruselas",
+  "tipo": "Pública",
+  "web": "https://www.vub.be",
+  "estado_web": 200,
+  "web_final": "https://www.vub.be/nl"
+ },
+ {
+  "pais": "Irlanda",
+  "iso": "ie",
+  "nombre": "Trinity College Dublin",
+  "ciudad": "Dublín",
+  "tipo": "Pública",
+  "web": "https://www.tcd.ie",
+  "estado_web": 200,
+  "web_final": "https://www.tcd.ie"
+ },
+ {
+  "pais": "Irlanda",
+  "iso": "ie",
+  "nombre": "University College Dublin",
+  "ciudad": "Dublín",
+  "tipo": "Pública",
+  "web": "https://www.ucd.ie",
+  "estado_web": 200,
+  "web_final": "https://www.ucd.ie"
+ },
+ {
+  "pais": "Irlanda",
+  "iso": "ie",
+  "nombre": "University College Cork",
+  "ciudad": "Cork",
+  "tipo": "Pública",
+  "web": "https://www.ucc.ie",
+  "estado_web": 200,
+  "web_final": "https://www.ucc.ie/en/"
+ },
+ {
+  "pais": "Irlanda",
+  "iso": "ie",
+  "nombre": "Universidad de Galway",
+  "ciudad": "Galway",
+  "tipo": "Pública",
+  "web": "https://www.universityofgalway.ie",
+  "estado_web": 200,
+  "web_final": "https://www.universityofgalway.ie"
+ },
+ {
+  "pais": "Irlanda",
+  "iso": "ie",
+  "nombre": "Dublin City University",
+  "ciudad": "Dublín",
+  "tipo": "Pública",
+  "web": "https://www.dcu.ie",
+  "estado_web": 200,
+  "web_final": "https://www.dcu.ie"
+ },
+ {
+  "pais": "Irlanda",
+  "iso": "ie",
+  "nombre": "Universidad de Limerick",
+  "ciudad": "Limerick",
+  "tipo": "Pública",
+  "web": "https://www.ul.ie",
+  "estado_web": 200,
+  "web_final": "https://www.ul.ie"
+ },
+ {
+  "pais": "Austria",
+  "iso": "at",
+  "nombre": "Universidad de Viena",
+  "ciudad": "Viena",
+  "tipo": "Pública",
+  "web": "https://www.univie.ac.at",
+  "estado_web": 200,
+  "web_final": "https://www.univie.ac.at"
+ },
+ {
+  "pais": "Austria",
+  "iso": "at",
+  "nombre": "Universidad Técnica de Viena",
+  "ciudad": "Viena",
+  "tipo": "Pública",
+  "web": "https://www.tuwien.at",
+  "estado_web": 200,
+  "web_final": "https://www.tuwien.at"
+ },
+ {
+  "pais": "Austria",
+  "iso": "at",
+  "nombre": "Universidad de Innsbruck",
+  "ciudad": "Innsbruck",
+  "tipo": "Pública",
+  "web": "https://www.uibk.ac.at",
+  "estado_web": 200,
+  "web_final": "https://www.uibk.ac.at/de/"
+ },
+ {
+  "pais": "Austria",
+  "iso": "at",
+  "nombre": "Universidad de Graz",
+  "ciudad": "Graz",
+  "tipo": "Pública",
+  "web": "https://www.uni-graz.at",
+  "estado_web": 200,
+  "web_final": "https://www.uni-graz.at/de/"
+ },
+ {
+  "pais": "Austria",
+  "iso": "at",
+  "nombre": "Universidad Médica de Viena",
+  "ciudad": "Viena",
+  "tipo": "Pública",
+  "web": "https://www.meduniwien.ac.at",
+  "estado_web": 200,
+  "web_final": "https://www.meduniwien.ac.at/web/"
+ },
+ {
+  "pais": "Austria",
+  "iso": "at",
+  "nombre": "Universidad Técnica de Graz",
+  "ciudad": "Graz",
+  "tipo": "Pública",
+  "web": "https://www.tugraz.at",
+  "estado_web": 0,
+  "web_final": "[Errno 104] Connection reset by peer"
+ },
+ {
+  "pais": "Austria",
+  "iso": "at",
+  "nombre": "Universidad de Economía de Viena",
+  "ciudad": "Viena",
+  "tipo": "Pública",
+  "web": "https://www.wu.ac.at",
+  "estado_web": 200,
+  "web_final": "https://www.wu.ac.at"
+ },
+ {
+  "pais": "Suecia",
+  "iso": "se",
+  "nombre": "Instituto Karolinska",
+  "ciudad": "Estocolmo",
+  "tipo": "Pública",
+  "web": "https://ki.se",
+  "estado_web": 200,
+  "web_final": "https://ki.se"
+ },
+ {
+  "pais": "Suecia",
+  "iso": "se",
+  "nombre": "Universidad de Lund",
+  "ciudad": "Lund",
+  "tipo": "Pública",
+  "web": "https://www.lu.se",
+  "estado_web": 200,
+  "web_final": "https://www.lu.se"
+ },
+ {
+  "pais": "Suecia",
+  "iso": "se",
+  "nombre": "Universidad de Upsala",
+  "ciudad": "Upsala",
+  "tipo": "Pública",
+  "web": "https://www.uu.se",
+  "estado_web": 200,
+  "web_final": "https://www.uu.se"
+ },
+ {
+  "pais": "Suecia",
+  "iso": "se",
+  "nombre": "Instituto Real de Tecnología (KTH)",
+  "ciudad": "Estocolmo",
+  "tipo": "Pública",
+  "web": "https://www.kth.se",
+  "estado_web": 200,
+  "web_final": "https://www.kth.se"
+ },
+ {
+  "pais": "Suecia",
+  "iso": "se",
+  "nombre": "Universidad de Estocolmo",
+  "ciudad": "Estocolmo",
+  "tipo": "Pública",
+  "web": "https://www.su.se",
+  "estado_web": 200,
+  "web_final": "https://www.su.se"
+ },
+ {
+  "pais": "Suecia",
+  "iso": "se",
+  "nombre": "Universidad de Gotemburgo",
+  "ciudad": "Gotemburgo",
+  "tipo": "Pública",
+  "web": "https://www.gu.se",
+  "estado_web": 200,
+  "web_final": "https://www.gu.se"
+ },
+ {
+  "pais": "Suecia",
+  "iso": "se",
+  "nombre": "Universidad Tecnológica Chalmers",
+  "ciudad": "Gotemburgo",
+  "tipo": "Privada",
+  "web": "https://www.chalmers.se",
+  "estado_web": 200,
+  "web_final": "https://www.chalmers.se"
+ },
+ {
+  "pais": "Dinamarca",
+  "iso": "dk",
+  "nombre": "Universidad de Copenhague",
+  "ciudad": "Copenhague",
+  "tipo": "Pública",
+  "web": "https://www.ku.dk",
+  "estado_web": 200,
+  "web_final": "https://www.ku.dk"
+ },
+ {
+  "pais": "Dinamarca",
+  "iso": "dk",
+  "nombre": "Universidad de Aarhus",
+  "ciudad": "Aarhus",
+  "tipo": "Pública",
+  "web": "https://www.au.dk",
+  "estado_web": 200,
+  "web_final": "https://www.au.dk"
+ },
+ {
+  "pais": "Dinamarca",
+  "iso": "dk",
+  "nombre": "Universidad Técnica de Dinamarca",
+  "ciudad": "Kongens Lyngby",
+  "tipo": "Pública",
+  "web": "https://www.dtu.dk",
+  "estado_web": 200,
+  "web_final": "https://www.dtu.dk"
+ },
+ {
+  "pais": "Dinamarca",
+  "iso": "dk",
+  "nombre": "Universidad de Aalborg",
+  "ciudad": "Aalborg",
+  "tipo": "Pública",
+  "web": "https://www.aau.dk",
+  "estado_web": 200,
+  "web_final": "https://www.aau.dk"
+ },
+ {
+  "pais": "Dinamarca",
+  "iso": "dk",
+  "nombre": "Universidad del Sur de Dinamarca",
+  "ciudad": "Odense",
+  "tipo": "Pública",
+  "web": "https://www.sdu.dk",
+  "estado_web": 200,
+  "web_final": "https://www.sdu.dk/da"
+ },
+ {
+  "pais": "Dinamarca",
+  "iso": "dk",
+  "nombre": "Copenhagen Business School",
+  "ciudad": "Frederiksberg",
+  "tipo": "Pública",
+  "web": "https://www.cbs.dk",
+  "estado_web": 200,
+  "web_final": "https://www.cbs.dk"
+ },
+ {
+  "pais": "Noruega",
+  "iso": "no",
+  "nombre": "Universidad de Oslo",
+  "ciudad": "Oslo",
+  "tipo": "Pública",
+  "web": "https://www.uio.no",
+  "estado_web": 200,
+  "web_final": "https://www.uio.no"
+ },
+ {
+  "pais": "Noruega",
+  "iso": "no",
+  "nombre": "Universidad Noruega de Ciencia y Tecnología",
+  "ciudad": "Trondheim",
+  "tipo": "Pública",
+  "web": "https://www.ntnu.edu",
+  "estado_web": 200,
+  "web_final": "https://www.ntnu.edu"
+ },
+ {
+  "pais": "Noruega",
+  "iso": "no",
+  "nombre": "Universidad de Bergen",
+  "ciudad": "Bergen",
+  "tipo": "Pública",
+  "web": "https://www.uib.no",
+  "estado_web": 200,
+  "web_final": "https://www4.uib.no/"
+ },
+ {
+  "pais": "Noruega",
+  "iso": "no",
+  "nombre": "Universidad Ártica de Noruega",
+  "ciudad": "Tromsø",
+  "tipo": "Pública",
+  "web": "https://uit.no",
+  "estado_web": 200,
+  "web_final": "https://uit.no"
+ },
+ {
+  "pais": "Noruega",
+  "iso": "no",
+  "nombre": "Escuela Noruega de Economía",
+  "ciudad": "Bergen",
+  "tipo": "Pública",
+  "web": "https://www.nhh.no",
+  "estado_web": 200,
+  "web_final": "https://www.nhh.no"
+ },
+ {
+  "pais": "Finlandia",
+  "iso": "fi",
+  "nombre": "Universidad de Helsinki",
+  "ciudad": "Helsinki",
+  "tipo": "Pública",
+  "web": "https://www.helsinki.fi",
+  "estado_web": 200,
+  "web_final": "https://www.helsinki.fi/en"
+ },
+ {
+  "pais": "Finlandia",
+  "iso": "fi",
+  "nombre": "Universidad Aalto",
+  "ciudad": "Espoo",
+  "tipo": "Pública",
+  "web": "https://www.aalto.fi",
+  "estado_web": 200,
+  "web_final": "https://www.aalto.fi/fi"
+ },
+ {
+  "pais": "Finlandia",
+  "iso": "fi",
+  "nombre": "Universidad de Turku",
+  "ciudad": "Turku",
+  "tipo": "Pública",
+  "web": "https://www.utu.fi",
+  "estado_web": 200,
+  "web_final": "https://www.utu.fi/fi"
+ },
+ {
+  "pais": "Finlandia",
+  "iso": "fi",
+  "nombre": "Universidad de Tampere",
+  "ciudad": "Tampere",
+  "tipo": "Pública",
+  "web": "https://www.tuni.fi",
+  "estado_web": 200,
+  "web_final": "https://www.tuni.fi/fi"
+ },
+ {
+  "pais": "Finlandia",
+  "iso": "fi",
+  "nombre": "Universidad de Oulu",
+  "ciudad": "Oulu",
+  "tipo": "Pública",
+  "web": "https://www.oulu.fi",
+  "estado_web": 200,
+  "web_final": "https://www.oulu.fi/fi"
+ },
+ {
+  "pais": "Finlandia",
+  "iso": "fi",
+  "nombre": "Universidad de Jyväskylä",
+  "ciudad": "Jyväskylä",
+  "tipo": "Pública",
+  "web": "https://www.jyu.fi",
+  "estado_web": 200,
+  "web_final": "https://www.jyu.fi/fi"
+ },
+ {
+  "pais": "Polonia",
+  "iso": "pl",
+  "nombre": "Universidad de Varsovia",
+  "ciudad": "Varsovia",
+  "tipo": "Pública",
+  "web": "https://www.uw.edu.pl",
+  "estado_web": 200,
+  "web_final": "https://www.uw.edu.pl"
+ },
+ {
+  "pais": "Polonia",
+  "iso": "pl",
+  "nombre": "Universidad Jaguelónica",
+  "ciudad": "Cracovia",
+  "tipo": "Pública",
+  "web": "https://www.uj.edu.pl",
+  "estado_web": 200,
+  "web_final": "https://www.uj.edu.pl"
+ },
+ {
+  "pais": "Polonia",
+  "iso": "pl",
+  "nombre": "Universidad Politécnica de Varsovia",
+  "ciudad": "Varsovia",
+  "tipo": "Pública",
+  "web": "https://www.pw.edu.pl",
+  "estado_web": 200,
+  "web_final": "https://www.pw.edu.pl"
+ },
+ {
+  "pais": "Polonia",
+  "iso": "pl",
+  "nombre": "Universidad AGH de Ciencia y Tecnología",
+  "ciudad": "Cracovia",
+  "tipo": "Pública",
+  "web": "https://www.agh.edu.pl",
+  "estado_web": 200,
+  "web_final": "https://www.agh.edu.pl"
+ },
+ {
+  "pais": "Polonia",
+  "iso": "pl",
+  "nombre": "Universidad Adam Mickiewicz",
+  "ciudad": "Poznań",
+  "tipo": "Pública",
+  "web": "https://amu.edu.pl",
+  "estado_web": 200,
+  "web_final": "https://amu.edu.pl"
+ },
+ {
+  "pais": "Polonia",
+  "iso": "pl",
+  "nombre": "Universidad de Breslavia",
+  "ciudad": "Breslavia",
+  "tipo": "Pública",
+  "web": "https://uwr.edu.pl",
+  "estado_web": 200,
+  "web_final": "https://uwr.edu.pl"
+ },
+ {
+  "pais": "Grecia",
+  "iso": "gr",
+  "nombre": "Universidad Nacional y Kapodistríaca de Atenas",
+  "ciudad": "Atenas",
+  "tipo": "Pública",
+  "web": "https://www.uoa.gr",
+  "estado_web": 200,
+  "web_final": "https://www.uoa.gr"
+ },
+ {
+  "pais": "Grecia",
+  "iso": "gr",
+  "nombre": "Universidad Aristóteles de Tesalónica",
+  "ciudad": "Tesalónica",
+  "tipo": "Pública",
+  "web": "https://www.auth.gr",
+  "estado_web": 200,
+  "web_final": "https://www.auth.gr"
+ },
+ {
+  "pais": "Grecia",
+  "iso": "gr",
+  "nombre": "Universidad Técnica Nacional de Atenas",
+  "ciudad": "Atenas",
+  "tipo": "Pública",
+  "web": "https://www.ntua.gr",
+  "estado_web": 200,
+  "web_final": "https://www.ntua.gr/el/"
+ },
+ {
+  "pais": "Grecia",
+  "iso": "gr",
+  "nombre": "Universidad de Creta",
+  "ciudad": "Heraclión",
+  "tipo": "Pública",
+  "web": "https://www.uoc.gr",
+  "estado_web": 403,
+  "web_final": "https://www.uoc.gr"
+ },
+ {
+  "pais": "Grecia",
+  "iso": "gr",
+  "nombre": "Universidad de Patras",
+  "ciudad": "Patras",
+  "tipo": "Pública",
+  "web": "https://www.upatras.gr",
+  "estado_web": 200,
+  "web_final": "https://www.upatras.gr"
+ },
+ {
+  "pais": "Chequia",
+  "iso": "cz",
+  "nombre": "Universidad Carolina",
+  "ciudad": "Praga",
+  "tipo": "Pública",
+  "web": "https://cuni.cz",
+  "estado_web": 200,
+  "web_final": "https://cuni.cz"
+ },
+ {
+  "pais": "Chequia",
+  "iso": "cz",
+  "nombre": "Universidad Técnica Checa de Praga",
+  "ciudad": "Praga",
+  "tipo": "Pública",
+  "web": "https://www.cvut.cz",
+  "estado_web": 200,
+  "web_final": "https://www.cvut.cz"
+ },
+ {
+  "pais": "Chequia",
+  "iso": "cz",
+  "nombre": "Universidad Masaryk",
+  "ciudad": "Brno",
+  "tipo": "Pública",
+  "web": "https://www.muni.cz",
+  "estado_web": 200,
+  "web_final": "https://www.muni.cz"
+ },
+ {
+  "pais": "Chequia",
+  "iso": "cz",
+  "nombre": "Universidad Tecnológica de Brno",
+  "ciudad": "Brno",
+  "tipo": "Pública",
+  "web": "https://www.vut.cz",
+  "estado_web": 200,
+  "web_final": "https://www.vut.cz"
+ },
+ {
+  "pais": "Chequia",
+  "iso": "cz",
+  "nombre": "Universidad de Economía y Empresa de Praga",
+  "ciudad": "Praga",
+  "tipo": "Pública",
+  "web": "https://www.vse.cz",
+  "estado_web": 200,
+  "web_final": "https://www.vse.cz"
+ },
+ {
+  "pais": "Nueva Zelanda",
+  "iso": "nz",
+  "nombre": "Universidad de Auckland",
+  "ciudad": "Auckland",
+  "tipo": "Pública",
+  "web": "https://www.auckland.ac.nz",
+  "estado_web": 200,
+  "web_final": "https://www.auckland.ac.nz/en.html"
+ },
+ {
+  "pais": "Nueva Zelanda",
+  "iso": "nz",
+  "nombre": "Universidad de Otago",
+  "ciudad": "Dunedin",
+  "tipo": "Pública",
+  "web": "https://www.otago.ac.nz",
+  "estado_web": 403,
+  "web_final": "https://www.otago.ac.nz"
+ },
+ {
+  "pais": "Nueva Zelanda",
+  "iso": "nz",
+  "nombre": "Universidad Victoria de Wellington",
+  "ciudad": "Wellington",
+  "tipo": "Pública",
+  "web": "https://www.wgtn.ac.nz",
+  "estado_web": 200,
+  "web_final": "https://www.wgtn.ac.nz"
+ },
+ {
+  "pais": "Nueva Zelanda",
+  "iso": "nz",
+  "nombre": "Universidad de Canterbury",
+  "ciudad": "Christchurch",
+  "tipo": "Pública",
+  "web": "https://www.canterbury.ac.nz",
+  "estado_web": 200,
+  "web_final": "https://www.canterbury.ac.nz"
+ },
+ {
+  "pais": "Nueva Zelanda",
+  "iso": "nz",
+  "nombre": "Universidad Massey",
+  "ciudad": "Palmerston North",
+  "tipo": "Pública",
+  "web": "https://www.massey.ac.nz",
+  "estado_web": 200,
+  "web_final": "https://www.massey.ac.nz"
+ },
+ {
+  "pais": "Nueva Zelanda",
+  "iso": "nz",
+  "nombre": "Universidad de Waikato",
+  "ciudad": "Hamilton",
+  "tipo": "Pública",
+  "web": "https://www.waikato.ac.nz",
+  "estado_web": 200,
+  "web_final": "https://www.waikato.ac.nz"
+ },
+ {
+  "pais": "Singapur",
+  "iso": "sg",
+  "nombre": "Universidad Nacional de Singapur",
+  "ciudad": "Singapur",
+  "tipo": "Pública",
+  "web": "https://www.nus.edu.sg",
+  "estado_web": 200,
+  "web_final": "https://www.nus.edu.sg"
+ },
+ {
+  "pais": "Singapur",
+  "iso": "sg",
+  "nombre": "Universidad Tecnológica de Nanyang",
+  "ciudad": "Singapur",
+  "tipo": "Pública",
+  "web": "https://www.ntu.edu.sg",
+  "estado_web": 200,
+  "web_final": "https://www.ntu.edu.sg"
+ },
+ {
+  "pais": "Singapur",
+  "iso": "sg",
+  "nombre": "Universidad de Gestión de Singapur",
+  "ciudad": "Singapur",
+  "tipo": "Pública",
+  "web": "https://www.smu.edu.sg",
+  "estado_web": 200,
+  "web_final": "https://www.smu.edu.sg"
+ },
+ {
+  "pais": "Singapur",
+  "iso": "sg",
+  "nombre": "Universidad de Tecnología y Diseño de Singapur",
+  "ciudad": "Singapur",
+  "tipo": "Pública",
+  "web": "https://www.sutd.edu.sg",
+  "estado_web": 200,
+  "web_final": "https://www.sutd.edu.sg"
+ },
+ {
+  "pais": "Israel",
+  "iso": "il",
+  "nombre": "Universidad Hebrea de Jerusalén",
+  "ciudad": "Jerusalén",
+  "tipo": "Pública",
+  "web": "https://en.huji.ac.il",
+  "estado_web": 200,
+  "web_final": "https://en.huji.ac.il"
+ },
+ {
+  "pais": "Israel",
+  "iso": "il",
+  "nombre": "Universidad de Tel Aviv",
+  "ciudad": "Tel Aviv",
+  "tipo": "Pública",
+  "web": "https://www.tau.ac.il",
+  "estado_web": 200,
+  "web_final": "https://www.tau.ac.il"
+ },
+ {
+  "pais": "Israel",
+  "iso": "il",
+  "nombre": "Technion, Instituto Tecnológico de Israel",
+  "ciudad": "Haifa",
+  "tipo": "Pública",
+  "web": "https://www.technion.ac.il",
+  "estado_web": 200,
+  "web_final": "https://www.technion.ac.il"
+ },
+ {
+  "pais": "Israel",
+  "iso": "il",
+  "nombre": "Instituto Weizmann de Ciencias",
+  "ciudad": "Rehovot",
+  "tipo": "Pública",
+  "web": "https://www.weizmann.ac.il",
+  "estado_web": 200,
+  "web_final": "https://www.weizmann.ac.il/pages/"
+ },
+ {
+  "pais": "Israel",
+  "iso": "il",
+  "nombre": "Universidad Ben-Gurión del Néguev",
+  "ciudad": "Beerseba",
+  "tipo": "Pública",
+  "web": "https://www.bgu.ac.il",
+  "estado_web": 200,
+  "web_final": "https://www.bgu.ac.il"
+ },
+ {
+  "pais": "Turquía",
+  "iso": "tr",
+  "nombre": "Universidad Técnica de Oriente Medio",
+  "ciudad": "Ankara",
+  "tipo": "Pública",
+  "web": "https://www.metu.edu.tr",
+  "estado_web": 200,
+  "web_final": "https://www.metu.edu.tr"
+ },
+ {
+  "pais": "Turquía",
+  "iso": "tr",
+  "nombre": "Universidad del Bósforo",
+  "ciudad": "Estambul",
+  "tipo": "Pública",
+  "web": "https://bogazici.edu.tr",
+  "estado_web": 200,
+  "web_final": "https://bogazici.edu.tr"
+ },
+ {
+  "pais": "Turquía",
+  "iso": "tr",
+  "nombre": "Universidad Técnica de Estambul",
+  "ciudad": "Estambul",
+  "tipo": "Pública",
+  "web": "https://www.itu.edu.tr",
+  "estado_web": 200,
+  "web_final": "https://www.itu.edu.tr"
+ },
+ {
+  "pais": "Turquía",
+  "iso": "tr",
+  "nombre": "Universidad de Estambul",
+  "ciudad": "Estambul",
+  "tipo": "Pública",
+  "web": "https://www.istanbul.edu.tr",
+  "estado_web": 200,
+  "web_final": "https://www.istanbul.edu.tr/tr"
+ },
+ {
+  "pais": "Turquía",
+  "iso": "tr",
+  "nombre": "Universidad Koç",
+  "ciudad": "Estambul",
+  "tipo": "Privada",
+  "web": "https://www.ku.edu.tr",
+  "estado_web": 403,
+  "web_final": "https://www.ku.edu.tr"
+ },
+ {
+  "pais": "Turquía",
+  "iso": "tr",
+  "nombre": "Universidad Sabancı",
+  "ciudad": "Estambul",
+  "tipo": "Privada",
+  "web": "https://www.sabanciuniv.edu",
+  "estado_web": 200,
+  "web_final": "https://www.sabanciuniv.edu/tr"
+ },
+ {
+  "pais": "Turquía",
+  "iso": "tr",
+  "nombre": "Universidad Bilkent",
+  "ciudad": "Ankara",
+  "tipo": "Privada",
+  "web": "https://w3.bilkent.edu.tr",
+  "estado_web": 200,
+  "web_final": "https://w3.bilkent.edu.tr/www/"
+ },
+ {
+  "pais": "Sudáfrica",
+  "iso": "za",
+  "nombre": "Universidad de Ciudad del Cabo",
+  "ciudad": "Ciudad del Cabo",
+  "tipo": "Pública",
+  "web": "https://www.uct.ac.za",
+  "estado_web": 200,
+  "web_final": "https://www.uct.ac.za"
+ },
+ {
+  "pais": "Sudáfrica",
+  "iso": "za",
+  "nombre": "Universidad del Witwatersrand",
+  "ciudad": "Johannesburgo",
+  "tipo": "Pública",
+  "web": "https://www.wits.ac.za",
+  "estado_web": 200,
+  "web_final": "https://www.wits.ac.za"
+ },
+ {
+  "pais": "Sudáfrica",
+  "iso": "za",
+  "nombre": "Universidad de Stellenbosch",
+  "ciudad": "Stellenbosch",
+  "tipo": "Pública",
+  "web": "https://www.sun.ac.za",
+  "estado_web": 403,
+  "web_final": "https://www.sun.ac.za"
+ },
+ {
+  "pais": "Sudáfrica",
+  "iso": "za",
+  "nombre": "Universidad de Pretoria",
+  "ciudad": "Pretoria",
+  "tipo": "Pública",
+  "web": "https://www.up.ac.za",
+  "estado_web": 403,
+  "web_final": "https://www.up.ac.za"
+ },
+ {
+  "pais": "Sudáfrica",
+  "iso": "za",
+  "nombre": "Universidad de KwaZulu-Natal",
+  "ciudad": "Durban",
+  "tipo": "Pública",
+  "web": "https://ukzn.ac.za",
+  "estado_web": 200,
+  "web_final": "https://ukzn.ac.za"
+ },
+ {
+  "pais": "Sudáfrica",
+  "iso": "za",
+  "nombre": "Universidad de Johannesburgo",
+  "ciudad": "Johannesburgo",
+  "tipo": "Pública",
+  "web": "https://www.uj.ac.za",
+  "estado_web": 403,
+  "web_final": "https://www.uj.ac.za"
+ },
+ {
+  "pais": "Marruecos",
+  "iso": "ma",
+  "nombre": "Universidad Mohammed V de Rabat",
+  "ciudad": "Rabat",
+  "tipo": "Pública",
+  "web": "https://www.um5.ac.ma",
+  "estado_web": 200,
+  "web_final": "https://www.um5.ac.ma"
+ },
+ {
+  "pais": "Marruecos",
+  "iso": "ma",
+  "nombre": "Universidad Hassan II de Casablanca",
+  "ciudad": "Casablanca",
+  "tipo": "Pública",
+  "web": "https://www.univh2c.ma",
+  "estado_web": 200,
+  "web_final": "https://www.univh2c.ma"
+ },
+ {
+  "pais": "Marruecos",
+  "iso": "ma",
+  "nombre": "Universidad Cadi Ayyad",
+  "ciudad": "Marrakech",
+  "tipo": "Pública",
+  "web": "https://www.uca.ma",
+  "estado_web": 200,
+  "web_final": "https://www.uca.ma/fr"
+ },
+ {
+  "pais": "Marruecos",
+  "iso": "ma",
+  "nombre": "Universidad Al Akhawayn",
+  "ciudad": "Ifrane",
+  "tipo": "Pública",
+  "web": "https://www.aui.ma",
+  "estado_web": 200,
+  "web_final": "https://aui.ma/"
+ },
+ {
+  "pais": "Marruecos",
+  "iso": "ma",
+  "nombre": "Universidad Abdelmalek Essaadi",
+  "ciudad": "Tetuán",
+  "tipo": "Pública",
+  "web": "https://www.uae.ac.ma",
+  "estado_web": 200,
+  "web_final": "https://www.uae.ac.ma"
+ },
+ {
+  "pais": "Egipto",
+  "iso": "eg",
+  "nombre": "Universidad de El Cairo",
+  "ciudad": "Guiza",
+  "tipo": "Pública",
+  "web": "https://cu.edu.eg",
+  "estado_web": 200,
+  "web_final": "https://cu.edu.eg"
+ },
+ {
+  "pais": "Egipto",
+  "iso": "eg",
+  "nombre": "Universidad Americana de El Cairo",
+  "ciudad": "Nuevo Cairo",
+  "tipo": "Privada",
+  "web": "https://www.aucegypt.edu",
+  "estado_web": 200,
+  "web_final": "https://www.aucegypt.edu"
+ },
+ {
+  "pais": "Egipto",
+  "iso": "eg",
+  "nombre": "Universidad Ain Shams",
+  "ciudad": "El Cairo",
+  "tipo": "Pública",
+  "web": "https://www.asu.edu.eg",
+  "estado_web": 0,
+  "web_final": "HTTP 302"
+ },
+ {
+  "pais": "Egipto",
+  "iso": "eg",
+  "nombre": "Universidad de Alejandría",
+  "ciudad": "Alejandría",
+  "tipo": "Pública",
+  "web": "https://alexu.edu.eg",
+  "estado_web": 200,
+  "web_final": "https://alexu.edu.eg"
+ },
+ {
+  "pais": "Egipto",
+  "iso": "eg",
+  "nombre": "Universidad Al-Azhar",
+  "ciudad": "El Cairo",
+  "tipo": "Pública",
+  "web": "https://www.azhar.edu.eg",
+  "estado_web": 200,
+  "web_final": "https://azhar.edu.eg/"
+ },
+ {
+  "pais": "Emiratos Árabes Unidos",
+  "iso": "ae",
+  "nombre": "Universidad de los Emiratos Árabes Unidos",
+  "ciudad": "Al Ain",
+  "tipo": "Pública",
+  "web": "https://www.uaeu.ac.ae",
+  "estado_web": 200,
+  "web_final": "https://www.uaeu.ac.ae/ar/"
+ },
+ {
+  "pais": "Emiratos Árabes Unidos",
+  "iso": "ae",
+  "nombre": "Universidad Khalifa",
+  "ciudad": "Abu Dabi",
+  "tipo": "Pública",
+  "web": "https://www.ku.ac.ae",
+  "estado_web": 200,
+  "web_final": "https://www.ku.ac.ae"
+ },
+ {
+  "pais": "Emiratos Árabes Unidos",
+  "iso": "ae",
+  "nombre": "Universidad Americana de Sharjah",
+  "ciudad": "Sharjah",
+  "tipo": "Privada",
+  "web": "https://www.aus.edu",
+  "estado_web": 200,
+  "web_final": "https://www.aus.edu"
+ },
+ {
+  "pais": "Emiratos Árabes Unidos",
+  "iso": "ae",
+  "nombre": "Universidad de Nueva York Abu Dabi",
+  "ciudad": "Abu Dabi",
+  "tipo": "Privada",
+  "web": "https://nyuad.nyu.edu",
+  "estado_web": 200,
+  "web_final": "https://nyuad.nyu.edu/en/"
+ },
+ {
+  "pais": "Emiratos Árabes Unidos",
+  "iso": "ae",
+  "nombre": "Universidad Zayed",
+  "ciudad": "Dubái",
+  "tipo": "Pública",
+  "web": "https://www.zu.ac.ae",
+  "estado_web": 200,
+  "web_final": "https://www.zu.ac.ae/main/en/index"
+ },
+ {
+  "pais": "Filipinas",
+  "iso": "ph",
+  "nombre": "Universidad de Filipinas Diliman",
+  "ciudad": "Quezon City",
+  "tipo": "Pública",
+  "web": "https://upd.edu.ph",
+  "estado_web": 200,
+  "web_final": "https://upd.edu.ph"
+ },
+ {
+  "pais": "Filipinas",
+  "iso": "ph",
+  "nombre": "Universidad Ateneo de Manila",
+  "ciudad": "Quezon City",
+  "tipo": "Privada",
+  "web": "https://www.ateneo.edu",
+  "estado_web": 200,
+  "web_final": "https://www.ateneo.edu"
+ },
+ {
+  "pais": "Filipinas",
+  "iso": "ph",
+  "nombre": "Universidad De La Salle",
+  "ciudad": "Manila",
+  "tipo": "Privada",
+  "web": "https://www.dlsu.edu.ph",
+  "estado_web": 200,
+  "web_final": "https://www.dlsu.edu.ph"
+ },
+ {
+  "pais": "Filipinas",
+  "iso": "ph",
+  "nombre": "Universidad de Santo Tomás",
+  "ciudad": "Manila",
+  "tipo": "Privada",
+  "web": "https://www.ust.edu.ph",
+  "estado_web": 0,
+  "web_final": "The read operation timed out"
+ }
+]
