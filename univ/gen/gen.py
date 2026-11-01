@@ -235,9 +235,8 @@ for u in UNIS:
     hit = IMG_DOM[iso].get(d) or (IMG_DOM[iso].get(d.split('.', 1)[1]) if d.count('.') >= 2 else None) or IMG_NOM[iso].get(_n(u['nombre']))
     foto, logo = hit if hit else ('', '')
     u['foto_archivo'], u['foto_tipo'] = foto, 'u' if foto else ''
-    if not foto:
-        fc = IMG.get('c', {}).get(iso, {}).get(_n(u['ciudad']))
-        if fc: u['foto_archivo'], u['foto_tipo'] = fc, 'c'
+    fc = IMG.get('c', {}).get(iso, {}).get(_n(u['ciudad']))
+    u['foto_ciudad'] = fc or ''  # para la cabecera de la ficha; en las tarjetas se usa foto propia o de ambiente para no repetir
     if logo and not u.get('logo'): u['logo'] = commons(logo, 120)
     n_foto += u['foto_tipo'] == 'u'; n_ciudad += u['foto_tipo'] == 'c'
     u['foto'] = commons(u['foto_archivo'])
@@ -667,8 +666,8 @@ def ficha(u, vecinas):
     if u['extra'].get('anio'): meta.append(f'<li>📜 Creada en {e(u["extra"]["anio"])}</li>')
     if n: meta.append(f'<li>📚 {fmt(n)} {palabra}</li>')
     tit = f'{u["nombre"]}: ' + (f'{fmt(n)} {palabra}' if n else 'carreras, ciudad y web') + f' | Universidades de {p}'
-    hf, cred = hero_foto(u.get('foto_archivo'), 'Foto' if u.get('foto_tipo') == 'u' else 'Foto de ' + (u['ciudad'] or p))
-    h = cabeza(tit, desc_meta, url, og_img=commons(u['foto_archivo'], 1200) if u.get('foto_archivo') else None, jsonld=jl) + topbar('espana' if es_es else 'paises') + f'''
+    hf, cred = hero_foto(u.get('foto_archivo') or u.get('foto_ciudad'), 'Foto' if u.get('foto_tipo') == 'u' else 'Foto de ' + (u['ciudad'] or p))
+    h = cabeza(tit, desc_meta, url, og_img=commons(u.get('foto_archivo') or u.get('foto_ciudad'), 1200) if (u.get('foto_archivo') or u.get('foto_ciudad')) else None, jsonld=jl) + topbar('espana' if es_es else 'paises') + f'''
 <main><section class="hero ficha-h{' con-foto' if hf else ''}"{hf}><div class="wrap">{migas(("Universidades", BASE), (p, f"{BASE}{ps}/"), *([(u["ciudad"], f"{BASE}{ps}/ciudad/{slug(u['ciudad'])}/")] if u["ciudad"] and vecinas and p != "Estados Unidos" else []), (u["nombre"], ""))}
 <div class="fila" style="margin-top:16px"><span class="mono" aria-hidden="true">{e(u["extra"].get("acronimo") or iniciales(u["nombre"]))[:5]}</span><div><h1 style="margin:0">{e(u["nombre"])}</h1></div></div>
 <ul class="meta">{''.join(meta)}</ul>{f'<p class="lead" style="margin-top:14px">{e(u["descripcion"])}</p>' if u["descripcion"] else ''}
