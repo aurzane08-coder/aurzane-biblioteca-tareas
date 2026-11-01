@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://aurzane.com/aurzane-paleta.js"></script>
+<title>Calculadora de hipoteca 2026 con gastos e impuestos | AURZANE BUILD</title>
+<meta name="description" content="Calcula tu cuota de hipoteca fija o variable con el euríbor actual, los impuestos de tu comunidad (ITP o IVA y AJD), los gastos y el ahorro que necesitas. Incluye comparador alquilar o comprar.">
+<link rel="canonical" href="https://build.aurzane.com/calculadora-hipoteca/">
+<meta property="og:title" content="Calculadora de hipoteca 2026: cuota, impuestos y ahorro necesario">
+<meta property="og:description" content="Cuota fija o variable con el euríbor actual, ITP de tu comunidad, gastos y si te sale mejor alquilar o comprar.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://build.aurzane.com/calculadora-hipoteca/">
+<meta property="og:image" content="https://build.aurzane.com/calculadora-hipoteca/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://build.aurzane.com/calculadora-hipoteca/og.jpg">
+<meta name="theme-color" content="#1d1915">
+<script>(function(){ try { if (localStorage.getItem('aurzane-tema') === 'oscuro') document.documentElement.setAttribute('data-tema','oscuro'); } catch(e){} })();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebApplication", "name": "Calculadora de hipoteca AURZANE", "url": "https://build.aurzane.com/calculadora-hipoteca/", "applicationCategory": "FinanceApplication", "operatingSystem": "Web", "inLanguage": "es", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "publisher": {"@type": "Organization", "name": "AURZANE", "url": "https://aurzane.com/"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Cuánto dinero ahorrado necesito para comprar una casa?", "acceptedAnswer": {"@type": "Answer", "text": "Como norma general los bancos financian hasta el 80% del precio, así que necesitas el 20% de entrada más entre un 8% y un 12% para impuestos y gastos. En total, alrededor del 30% del precio de la vivienda."}}, {"@type": "Question", "name": "¿Qué cuota de hipoteca me puedo permitir?", "acceptedAnswer": {"@type": "Answer", "text": "Los bancos suelen pedir que la cuota no supere el 30% al 35% de los ingresos netos del hogar."}}, {"@type": "Question", "name": "¿Cuánto está el euríbor?", "acceptedAnswer": {"@type": "Answer", "text": "El euríbor a 12 meses cerró septiembre de 2026 en el 3,247%, según el Banco de España. La calculadora usa ese valor por defecto y puedes cambiarlo."}}]}]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@500;700&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<meta name="google-adsense-account" content="ca-pub-8763758728010451">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8763758728010451" crossorigin="anonymous"></script>
+<style>
+:root{
+  --navy-950:#070a14; --gold:#c9a24b; --gold-light:#e8cd8f; --gold-deep:#8a6a28;
+  --ok:#1f8a5e; --medio:#c27c12; --warn:#c2462e;
+  --bg:#f6f3ec; --surface:#ffffff; --surface-2:#f0ebe3; --text:#1d1915; --text-dim:#655b50; --border:rgba(29,25,21,.12);
+  --serif:'Bodoni Moda',Georgia,serif; --sans:'Instrument Sans',system-ui,-apple-system,sans-serif;
+  --sombra:0 14px 36px -18px rgba(29,25,21,.32);
+  --n1:#0f1823;--n2:#1d3349;--n3:#2f5d7c;--cian:#f2b544;--violeta:#ff8a4c;--acc-rgb:47,93,124;--acento-texto:#255070;
+}
+:root[data-tema="oscuro"]{
+  --bg:#0b0d14; --surface:#141824; --surface-2:#1c2131; --text:#f3f1ea; --text-dim:#a9adbd; --border:rgba(199,205,214,.14);
+  --sombra:0 14px 36px -18px rgba(0,0,0,.7); --ok:#3ccf95; --medio:#f2b544; --warn:#ff8f7a;
+  --acento-texto:#f2b544;
+}
+*{box-sizing:border-box} [hidden]{display:none!important}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);font-size:16.5px;line-height:1.6;overflow-x:hidden}
+a{color:var(--acento-texto)}
+:focus-visible{outline:3px solid var(--cian);outline-offset:2px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 16px}
+.num{font-variant-numeric:tabular-nums}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+.utility{background:var(--navy-950);color:#8b92a0;font-size:.78rem;padding:7px 0}
+.utility .wrap{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.utility .eco{overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+.utility a{color:inherit;text-decoration:none;margin-right:13px} .utility a:hover,.utility .activo{color:var(--gold-light)}
+.utility button{background:none;border:1px solid rgba(255,255,255,.2);color:inherit;border-radius:999px;padding:3px 10px;font:inherit;cursor:pointer;white-space:nowrap}
+.topbar{background:var(--n1);color:#fff;border-bottom:1px solid rgba(255,255,255,.08)}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:13px;padding-bottom:13px;gap:10px}
+.brand{font-family:var(--serif);font-weight:700;font-size:1.3rem;letter-spacing:.06em;color:#fff;text-decoration:none;white-space:nowrap}
+.brand .z{color:var(--gold)} .brand small{font-family:var(--sans);font-size:.72rem;color:rgba(255,255,255,.65);letter-spacing:.1em;margin-left:6px}
+.topbar nav{display:flex;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+.topbar nav a{color:rgba(255,255,255,.78);text-decoration:none;margin-left:16px;font-size:.9rem;white-space:nowrap} .topbar nav a:hover,.topbar nav a[aria-current]{color:#fff}
+.topbar .cuenta{border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:5px 12px}
+
+.hero{position:relative;overflow:hidden;color:#fff;background:radial-gradient(110% 120% at 90% 0%,var(--n3) 0%,var(--n2) 40%,var(--n1) 100%);padding:42px 0 118px}
+.hero::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.09) 1px,transparent 1.2px);background-size:22px 22px;mask-image:linear-gradient(180deg,#000 10%,transparent 90%)}
+.hero .wrap{position:relative}
+.migas{font-size:.85rem;color:rgba(255,255,255,.7);margin:0 0 14px} .migas a{color:inherit;text-decoration:none} .migas a:hover{color:#fff} .migas span{margin:0 6px;opacity:.6}
+.pre{display:inline-flex;gap:8px;align-items:center;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:5px 13px;font-size:.85rem;color:rgba(255,255,255,.88)}
+.hero h1{font-family:var(--serif);font-weight:700;font-size:clamp(2.1rem,5.4vw,3.5rem);line-height:1.06;margin:16px 0 12px;max-width:17em}
+.hero h1 span{background:linear-gradient(90deg,var(--cian),var(--violeta));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p.lead{font-size:1.1rem;color:rgba(255,255,255,.82);max-width:38em;margin:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 0;padding:0;list-style:none}
+.chips li{font-size:.85rem;color:rgba(255,255,255,.88);background:rgba(255,255,255,.09);border-radius:999px;padding:5px 12px}
+
+.app{position:relative;margin-top:-86px;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.95fr);gap:22px;align-items:start}
+.app.una{grid-template-columns:minmax(0,1fr);max-width:820px;margin-left:auto;margin-right:auto}
+.panel{background:var(--surface);border:1px solid var(--border);border-radius:22px;box-shadow:var(--sombra)}
+.panel-cab{padding:18px 22px 6px}
+.panel-cab h2{margin:0;font-size:1.15rem}
+.panel-cab p{margin:4px 0 0;color:var(--text-dim);font-size:.9rem}
+
+/* cuestionarios */
+.progreso{display:flex;align-items:center;gap:12px;padding:16px 22px 0}
+.progreso .barra{flex:1;height:8px;border-radius:99px;background:var(--surface-2);overflow:hidden}
+.progreso .barra i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--n3),var(--cian));transition:width .35s}
+.progreso span{font-size:.82rem;color:var(--text-dim);font-variant-numeric:tabular-nums;white-space:nowrap}
+.pregunta{padding:18px 22px;border-top:1px solid var(--border)}
+.pregunta:first-of-type{border-top:0}
+.pregunta h3{margin:0 0 4px;font-size:1.06rem;line-height:1.35;display:flex;gap:10px}
+.pregunta h3 .n{flex:none;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font-size:.8rem;color:#fff;background:linear-gradient(135deg,var(--n3),var(--n2))}
+.pregunta .ayuda{font-size:.86rem;color:var(--text-dim);margin:0 0 10px 36px}
+.opciones{display:grid;gap:8px;margin-left:36px}
+.opciones.fila{grid-template-columns:repeat(auto-fit,minmax(132px,1fr))}
+.op{display:flex;align-items:center;gap:10px;text-align:left;border:1.5px solid var(--border);background:var(--surface);color:var(--text);border-radius:12px;padding:10px 12px;font:500 .93rem var(--sans);cursor:pointer;transition:border-color .15s,background .15s}
+.op:hover{border-color:var(--n3)}
+.op i{flex:none;width:18px;height:18px;border-radius:50%;border:2px solid var(--border);display:grid;place-items:center}
+.op[aria-pressed="true"]{border-color:var(--n3);background:rgba(var(--acc-rgb),.09);font-weight:600}
+.op[aria-pressed="true"] i{border-color:var(--n3);background:radial-gradient(circle,var(--n3) 45%,transparent 50%)}
+.pregunta.falta{background:rgba(194,70,46,.06)}
+.pregunta.falta h3::after{content:"Responde esta pregunta";margin-left:auto;font-size:.75rem;color:var(--warn);font-weight:600;white-space:nowrap}
+
+/* formularios */
+.bloque-form{padding:16px 22px;border-top:1px solid var(--border)}
+.bloque-form:first-of-type{border-top:0}
+.bloque-form h3{margin:0 0 10px;font-size:1.02rem}
+.campos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.campos.tres{grid-template-columns:repeat(3,minmax(0,1fr))}
+.campo{min-width:0}
+.campo label{display:block;font-size:.86rem;font-weight:600;margin-bottom:5px}
+.campo small{display:block;font-size:.78rem;color:var(--text-dim);margin-top:3px}
+.entrada{position:relative}
+.entrada span{position:absolute;right:12px;top:50%;transform:translateY(-50%);color:var(--text-dim);font-size:.9rem;pointer-events:none}
+input[type=number],input[type=text],select{width:100%;font:500 1rem var(--sans);color:var(--text);background:var(--surface-2);border:1.5px solid transparent;border-radius:12px;padding:11px 12px;transition:border-color .15s}
+input[type=number]{font-variant-numeric:tabular-nums;font-weight:600}
+.entrada input{padding-right:42px}
+input:focus,select:focus{outline:none;border-color:var(--n3);background:var(--surface)}
+input[type=range]{width:100%;accent-color:var(--n3)}
+.seg{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:5px;background:var(--surface-2);padding:5px;border-radius:13px}
+.seg button{border:0;background:transparent;border-radius:9px;padding:9px 6px;font:600 .9rem var(--sans);color:var(--text-dim);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--surface);color:var(--text);box-shadow:0 2px 8px rgba(0,0,0,.1)}
+.check{display:flex;align-items:flex-start;gap:10px;padding:10px 12px;border:1.5px solid var(--border);border-radius:12px;cursor:pointer;margin-bottom:8px}
+.check input{width:18px;height:18px;margin-top:3px;accent-color:var(--n3);flex:none}
+.check b{display:block;font-size:.94rem} .check small{color:var(--text-dim);font-size:.82rem}
+.check:has(input:checked){border-color:var(--n3);background:rgba(var(--acc-rgb),.06)}
+.check .mini{margin-left:auto;display:flex;align-items:center;gap:6px;font-size:.82rem;color:var(--text-dim)}
+.check .mini input{width:64px;padding:6px 8px;margin:0}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:12px;padding:12px 20px;font:700 .96rem var(--sans);cursor:pointer;text-decoration:none}
+.btn-luz{background:linear-gradient(90deg,var(--cian),var(--violeta));color:#1d130c}
+.btn-osc{background:var(--n2);color:#fff}
+.btn-linea{background:transparent;color:var(--acento-texto);border:1.5px solid var(--border)}
+.btn-linea:hover{border-color:var(--n3)}
+.btn[disabled]{opacity:.55;cursor:not-allowed}
+.acciones{display:flex;gap:8px;flex-wrap:wrap;padding:16px 22px 22px}
+
+/* resultado */
+.res{overflow:hidden}
+.sticky{position:sticky;top:14px}
+.res-top{position:relative;color:#fff;padding:20px 22px 18px;background:radial-gradient(120% 100% at 100% 0%,var(--n3),var(--n1))}
+.res-top h2{font-size:.95rem;font-weight:600;margin:0;color:rgba(255,255,255,.75)}
+.medidor{position:relative;width:100%;max-width:300px;margin:4px auto 0}
+.medidor svg{width:100%;height:auto;display:block}
+.medidor .valor{position:absolute;left:0;right:0;bottom:5%;text-align:center}
+.medidor .valor b{display:block;font-family:var(--serif);font-size:3.4rem;line-height:1;font-variant-numeric:tabular-nums}
+.medidor .valor span{font-size:.85rem;color:rgba(255,255,255,.75)}
+.grande{font-family:var(--serif);font-size:clamp(2.4rem,6vw,3.3rem);line-height:1.05;font-variant-numeric:tabular-nums;margin:6px 0 2px}
+.res-top .sub2{color:rgba(255,255,255,.78);font-size:.9rem;margin:0}
+.nivel{display:inline-flex;align-items:center;gap:8px;margin-top:10px;font-weight:700;font-size:.95rem;background:rgba(255,255,255,.12);border-radius:999px;padding:6px 14px}
+.nivel i{width:10px;height:10px;border-radius:50%;background:#bbb}
+.nivel.ok i{background:#5ee0a8;box-shadow:0 0 0 4px rgba(94,224,168,.25)} .nivel.medio i{background:#ffc35a;box-shadow:0 0 0 4px rgba(255,195,90,.25)} .nivel.mal i{background:#ff8f7a;box-shadow:0 0 0 4px rgba(255,143,122,.25)}
+.res-cuerpo{padding:16px 22px 6px}
+.linea{display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-bottom:1px dashed var(--border);font-size:.93rem}
+.linea:last-child{border-bottom:0} .linea b{font-variant-numeric:tabular-nums;text-align:right}
+.linea.total{font-size:1.04rem;border-bottom:0;padding-top:10px}
+.area{margin:10px 0 14px}
+.area-cab{display:flex;justify-content:space-between;font-size:.92rem;font-weight:600;margin-bottom:5px}
+.area-cab span{color:var(--text-dim);font-weight:500;font-variant-numeric:tabular-nums}
+.barra-a{height:10px;border-radius:99px;background:var(--surface-2);overflow:hidden}
+.barra-a i{display:block;height:100%;border-radius:99px;transition:width .6s cubic-bezier(.2,.8,.2,1)}
+.barra-a i.ok{background:linear-gradient(90deg,#2aa577,#5ee0a8)} .barra-a i.medio{background:linear-gradient(90deg,#d9921d,#ffc35a)} .barra-a i.mal{background:linear-gradient(90deg,#c2462e,#ff8f7a)}
+.apilada{display:flex;height:16px;border-radius:99px;overflow:hidden;background:var(--surface-2);margin:8px 0 4px}
+.apilada i{display:block;height:100%}
+.leyenda{display:flex;flex-wrap:wrap;gap:12px;font-size:.8rem;color:var(--text-dim)}
+.leyenda b{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:5px;vertical-align:-1px}
+.consejos{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.consejos li{background:var(--surface-2);border-radius:14px;padding:12px 14px;font-size:.93rem}
+.consejos li b{display:block;margin-bottom:2px}
+.aviso{margin:12px 22px 0;padding:14px 16px;border-radius:14px;background:rgba(194,70,46,.08);border:1px solid rgba(194,70,46,.25);font-size:.92rem}
+.aviso.suave{background:var(--surface-2);border-color:var(--border)}
+.aviso b{display:block;margin-bottom:3px} .aviso a b{display:inline;margin:0}
+.vacio{padding:26px 22px;text-align:center;color:var(--text-dim)}
+.vacio .e{font-size:2.2rem;display:block;margin-bottom:6px}
+.historial{padding:0 22px 6px;font-size:.88rem;color:var(--text-dim)}
+.historial ol{list-style:none;padding:0;margin:6px 0 0;display:flex;gap:6px;flex-wrap:wrap}
+.historial li{background:var(--surface-2);border-radius:10px;padding:4px 10px;font-variant-numeric:tabular-nums}
+.msg{font-size:.85rem;color:var(--text-dim);min-height:1.2em;padding:0 22px 14px;margin:-6px 0 0}
+table.tabla{width:100%;border-collapse:collapse;font-size:.88rem;font-variant-numeric:tabular-nums}
+table.tabla th,table.tabla td{padding:7px 8px;border-bottom:1px solid var(--border);text-align:right}
+table.tabla th:first-child,table.tabla td:first-child{text-align:left}
+table.tabla th{font-size:.78rem;color:var(--text-dim);font-weight:600}
+.scroll{overflow-x:auto}
+.grafico svg{width:100%;height:auto;display:block}
+
+.movil-barra{display:none}
+body:not(.hecho) .movil-barra{display:none!important}
+section.bloque{padding:56px 0 0}
+h2.t{font-family:var(--serif);font-size:clamp(1.6rem,3.6vw,2.2rem);line-height:1.15;margin:0 0 10px}
+.sub{color:var(--text-dim);margin:0 0 22px;max-width:46em}
+.tarjetas{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.tcard{background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:20px;box-shadow:var(--sombra)}
+.tcard h3{margin:0 0 6px;font-size:1.05rem}
+.tcard p{margin:0;color:var(--text-dim);font-size:.93rem}
+.tcard .big{font-family:var(--serif);font-size:1.5rem;color:var(--acento-texto);margin:4px 0 6px}
+.siguiente{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.scard{display:block;text-decoration:none;color:#fff;border-radius:18px;padding:22px;min-height:150px;box-shadow:var(--sombra);transition:transform .2s}
+.scard:hover{transform:translateY(-4px)}
+.scard b{display:block;font-size:1.15rem;margin:8px 0 4px} .scard span{font-size:.92rem;opacity:.92} .scard .e{font-size:1.8rem}
+details.faq{border-bottom:1px solid var(--border);padding:14px 0}
+details.faq summary{cursor:pointer;font-weight:600}
+details.faq p{margin:8px 0 0;color:var(--text-dim)}
+.revisor{display:flex;gap:16px;align-items:center;margin:40px 0 0;padding:18px 20px;border:1px solid var(--border);border-radius:18px;background:var(--surface)}
+.revisor .ini{flex:none;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;font-family:var(--serif);font-size:1.3rem;color:#fff;background:linear-gradient(135deg,var(--n3),var(--n1))}
+.revisor p{margin:0;font-size:.92rem;color:var(--text-dim)} .revisor b{color:var(--text);font-size:1rem}
+.creditos{font-size:.84rem;color:var(--text-dim);border-top:1px solid var(--border);margin-top:28px;padding-top:14px}
+.creditos li{margin:4px 0}
+footer{background:var(--navy-950);color:#8b92a0;font-size:.85rem;padding:26px 0;margin-top:56px}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+footer a{color:#8b92a0;margin-right:16px}
+
+@media (max-width:920px){
+  .app{grid-template-columns:1fr;margin-top:-80px}
+  .sticky{position:static}
+  .tarjetas,.siguiente{grid-template-columns:1fr}
+  .movil-barra{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:50;align-items:center;justify-content:space-between;gap:10px;background:var(--n1);color:#fff;border-radius:16px;padding:10px 14px 10px 18px;box-shadow:0 14px 30px -10px rgba(0,0,0,.5);transform:translateY(140%);transition:transform .25s}
+  .movil-barra.ver{transform:none}
+  .movil-barra b{font-family:var(--serif);font-size:1.45rem;font-variant-numeric:tabular-nums}
+  .movil-barra span{font-size:.8rem;color:rgba(255,255,255,.75);display:block}
+  .movil-barra a{background:linear-gradient(90deg,var(--cian),var(--violeta));color:#1d130c;font-weight:700;text-decoration:none;border-radius:10px;padding:9px 12px;font-size:.88rem}
+}
+@media (max-width:560px){
+  body{font-size:16px}
+  .topbar nav a:not(.cuenta){display:none}
+  .pregunta,.bloque-form{padding:16px}
+  .opciones{margin-left:0}
+  .pregunta .ayuda{margin-left:0}
+  .campos.tres{grid-template-columns:1fr 1fr}
+  .hero{padding:32px 0 108px}
+}
+@media print{.utility,.topbar,.hero::before,footer,.acciones,.movil-barra,.azp-btn,.azr-btn{display:none!important} .hero{padding:20px 0;background:none;color:#000} .hero p.lead{color:#333} .app{margin-top:0}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<div class="utility"><div class="wrap"><div class="eco"><a href="https://aurzane.com/">AURZANE</a><a href="https://mind.aurzane.com/">MIND</a><a href="https://ovp.aurzane.com/">OVP</a><a href="https://nexus.aurzane.com/">NEXUS</a><a href="https://live.aurzane.com/">LIVE</a><a href="https://learn.aurzane.com/">LEARN</a><a class=activo href="https://build.aurzane.com/">BUILD</a></div><button type="button" id="btnTema">🌓 Tema</button></div></div>
+<header class="topbar"><div class="wrap">
+<a class="brand" href="https://build.aurzane.com/">AUR<span class="z">Z</span>ANE<small>/ BUILD</small></a>
+<nav aria-label="BUILD"><a href="/calculadora-hipoteca/" aria-current="page">Calculadora de hipoteca</a><a href="/calculadora-reforma/">Calculadora de reforma</a><a class="cuenta" href="https://aurzane.com/mi-aurzane.html">👤 Mi AURZANE</a></nav>
+</div></header>
+<section class="hero"><div class="wrap">
+<p class="migas"><a href="https://build.aurzane.com/">BUILD</a><span>/</span>Calculadora de hipoteca</p>
+<span class="pre">🏠 Datos actualizados a octubre de 2026</span>
+<h1>Tu hipoteca, con <span>todos los gastos</span> a la vista</h1>
+<p class="lead">Cuota fija o variable con el euríbor actual, los impuestos de tu comunidad, los gastos de compra y el ahorro real que necesitas. Y si dudas, compara alquilar o comprar.</p>
+<ul class="chips"><li>📈 Euríbor 3,247%</li><li>🗺️ Impuestos de las 17 comunidades</li><li>⚖️ Alquilar o comprar</li></ul>
+</div></section>
+
+<div class="wrap">
+<div class="app">
+  <div class="panel">
+    <div class="bloque-form"><div class="seg" role="group" aria-label="Calculadora"><button type="button" data-tab="hip" aria-pressed="true">Mi hipoteca</button><button type="button" data-tab="alq" aria-pressed="false">¿Alquilar o comprar?</button></div></div>
+
+    <div class="bloque-form">
+      <h3>La vivienda</h3>
+      <div class="campos">
+        <div class="campo"><label for="precio">Precio de compra</label><div class="entrada"><input type="number" id="precio" value="220000" min="10000" step="1000" inputmode="numeric"><span>€</span></div></div>
+        <div class="campo"><label for="ccaa">Comunidad autónoma</label><select id="ccaa"></select></div>
+        <div class="campo"><label>Tipo de vivienda</label><div class="seg" id="segNueva"><button type="button" data-v="usada" aria-pressed="true">Segunda mano</button><button type="button" data-v="nueva" aria-pressed="false">Obra nueva</button></div></div>
+        <div class="campo"><label for="entrada">Entrada que aportas</label><div class="entrada"><input type="number" id="entrada" value="44000" min="0" step="1000" inputmode="numeric"><span>€</span></div><small id="entradaPct"></small></div>
+      </div>
+    </div>
+
+    <div class="bloque-form">
+      <h3>El préstamo</h3>
+      <div class="campos">
+        <div class="campo" style="grid-column:1/-1"><label>Tipo de interés</label><div class="seg" id="segTipo"><button type="button" data-v="fijo" aria-pressed="true">Fijo</button><button type="button" data-v="variable" aria-pressed="false">Variable</button></div></div>
+        <div class="campo" id="cFijo"><label for="tin">Interés fijo (TIN)</label><div class="entrada"><input type="number" id="tin" value="2.80" min="0" max="15" step="0.05"><span>%</span></div><small>Media de nuevas hipotecas: 3,01% (INE, julio 2026)</small></div>
+        <div class="campo" id="cEur" hidden><label for="euribor">Euríbor 12 meses</label><div class="entrada"><input type="number" id="euribor" value="3.247" min="-1" max="10" step="0.01"><span>%</span></div><small>Último dato oficial: septiembre 2026</small></div>
+        <div class="campo" id="cDif" hidden><label for="dif">Diferencial</label><div class="entrada"><input type="number" id="dif" value="0.60" min="0" max="5" step="0.05"><span>%</span></div><small>Habitual hoy: entre 0,5% y 1%</small></div>
+        <div class="campo" style="grid-column:1/-1"><label for="plazo">Plazo: <b id="plazoTxt">30 años</b></label><input type="range" id="plazo" min="5" max="40" value="30"><small>Plazo medio en España: 26 años</small></div>
+        <div class="campo"><label for="ingresos">Ingresos netos del hogar al mes</label><div class="entrada"><input type="number" id="ingresos" value="3000" min="0" step="100" inputmode="numeric"><span>€</span></div><small>Opcional, para ver tu tasa de esfuerzo</small></div>
+      </div>
+    </div>
+
+    <div class="bloque-form" id="bloqueAlq" hidden>
+      <h3>Si alquilaras en su lugar</h3>
+      <div class="campos">
+        <div class="campo"><label for="alquiler">Alquiler de una vivienda similar</label><div class="entrada"><input type="number" id="alquiler" value="900" min="0" step="25"><span>€/mes</span></div></div>
+        <div class="campo"><label for="anios">Años que piensas vivir allí</label><div class="entrada"><input type="number" id="anios" value="10" min="1" max="40"><span>años</span></div></div>
+        <div class="campo"><label for="subAlq">Subida anual del alquiler</label><div class="entrada"><input type="number" id="subAlq" value="3" step="0.5"><span>%</span></div></div>
+        <div class="campo"><label for="reval">Revalorización anual de la vivienda</label><div class="entrada"><input type="number" id="reval" value="2" step="0.5"><span>%</span></div></div>
+        <div class="campo"><label for="rent">Rentabilidad si inviertes tus ahorros</label><div class="entrada"><input type="number" id="rent" value="3" step="0.5"><span>%</span></div><small>Neta de comisiones, por ejemplo un fondo indexado conservador</small></div>
+        <div class="campo"><label for="gProp">Gastos anuales de propietario</label><div class="entrada"><input type="number" id="gProp" value="1" step="0.1"><span>%</span></div><small>IBI, comunidad, seguro y mantenimiento sobre el precio</small></div>
+      </div>
+    </div>
+  </div>
+
+  <aside class="panel res sticky" id="resultado" aria-live="polite">
+    <div class="res-top" id="topHip"><h2>Cuota mensual</h2><div class="grande" id="cuota">–</div><p class="sub2" id="cuotaSub"></p><span class="nivel" id="esfuerzo"><i></i><span></span></span></div>
+    <div class="res-top" id="topAlq" hidden><h2>A los <span id="aniosTxt">10</span> años te sale mejor</h2><div class="grande" id="ganador">–</div><p class="sub2" id="ganadorSub"></p></div>
+    <div class="res-cuerpo" id="cuerpoHip">
+      <div class="linea"><span>Importe del préstamo</span><b id="rPrestamo"></b></div>
+      <div class="linea"><span>Financiación sobre el precio</span><b id="rFin"></b></div>
+      <div class="linea"><span>Intereses totales</span><b id="rIntereses"></b></div>
+      <div class="linea"><span>Total a devolver al banco</span><b id="rTotal"></b></div>
+      <h3 style="font-size:1rem;margin:16px 0 4px">Ahorro que necesitas</h3>
+      <div class="linea"><span>Entrada</span><b id="rEntrada"></b></div>
+      <div class="linea"><span id="rImpLbl">Impuestos</span><b id="rImp"></b></div>
+      <div class="linea"><span>Notaría, registro, gestoría y tasación</span><b id="rGastos"></b></div>
+      <div class="linea total"><span><b>Total ahorro necesario</b></span><b id="rAhorro"></b></div>
+      <div class="apilada" id="apilada"></div>
+      <div class="leyenda"><span><b style="background:var(--n3)"></b>Capital</span><span><b style="background:var(--violeta)"></b>Intereses</span><span><b style="background:var(--cian)"></b>Impuestos y gastos</span></div>
+      <p id="escenario" style="font-size:.88rem;color:var(--text-dim);margin:12px 0 0"></p>
+    </div>
+    <div class="res-cuerpo" id="cuerpoAlq" hidden>
+      <div class="linea"><span>Tu patrimonio si compras</span><b id="aCompra"></b></div>
+      <div class="linea"><span>Tu patrimonio si alquilas e inviertes</span><b id="aAlquila"></b></div>
+      <div class="linea"><span>Año a partir del que compensa comprar</span><b id="aCruce"></b></div>
+      <div class="grafico" id="grafAlq"></div>
+      <p style="font-size:.85rem;color:var(--text-dim);margin:8px 0 0">Comparamos lo que tendrías en cada caso: el valor de la casa menos lo que debes al banco y un 3% de gastos de venta, frente a tus ahorros invertidos más la diferencia de pagos de cada mes.</p>
+    </div>
+    <div id="avisos"></div>
+    <div class="acciones"><button class="btn btn-osc" id="compartir" type="button">Compartir este cálculo</button><button class="btn btn-linea" type="button" onclick="window.print()">Guardar en PDF</button></div>
+    <p class="msg" id="msg"></p>
+  </aside>
+</div>
+
+<section class="bloque" id="secAmort">
+  <h2 class="t">Cómo pagas tu hipoteca año a año</h2>
+  <p class="sub">Al principio la mayor parte de la cuota son intereses. Por eso amortizar anticipadamente en los primeros años es lo que más ahorra.</p>
+  <div class="panel" style="padding:18px 20px"><div class="grafico" id="grafAmort"></div><div class="leyenda" style="margin-top:6px"><span><b style="background:var(--n3)"></b>Capital pagado en el año</span><span><b style="background:var(--violeta)"></b>Intereses pagados en el año</span></div>
+  <details style="margin-top:12px"><summary style="cursor:pointer;font-weight:600">Ver la tabla de amortización</summary><div class="scroll"><table class="tabla" id="tabla"></table></div></details></div>
+</section>
+
+<section class="bloque">
+  <h2 class="t">Lo que cuesta comprar en cada comunidad</h2>
+  <p class="sub">En segunda mano pagas el Impuesto de Transmisiones Patrimoniales (ITP). En obra nueva, IVA del 10% (IGIC en Canarias) más Actos Jurídicos Documentados (AJD). Tipos generales de 2026; hay rebajas para jóvenes, familias numerosas y viviendas de bajo precio en casi todas las comunidades.</p>
+  <div class="panel" style="padding:8px 20px"><div class="scroll"><table class="tabla" id="tablaCCAA"></table></div></div>
+</section>
+
+<section class="bloque">
+  <h2 class="t">Más herramientas para tu casa</h2>
+  <div class="siguiente">
+    <a class="scard" style="background:linear-gradient(150deg,#3d6f8f,#132433)" href="/calculadora-reforma/"><span class="e">🛠️</span><b>Calculadora de reforma</b><span>Cuánto cuesta reformar tu piso partida a partida.</span></a>
+    <a class="scard" style="background:linear-gradient(150deg,#24506e,#0c1620)" href="https://build.aurzane.com/build-biblioteca.html"><span class="e">📐</span><b>Biblioteca BUILD</b><span>Guías de vivienda, obra y construcción.</span></a>
+    <a class="scard" style="background:linear-gradient(150deg,#24506e,#0c1620)" href="https://build.aurzane.com/"><span class="e">🏗️</span><b>AURZANE BUILD</b><span>Todo sobre construir, comprar y reformar.</span></a>
+  </div>
+</section>
+
+<section class="bloque">
+  <h2 class="t">Preguntas frecuentes</h2>
+  <details class="faq"><summary>¿Cuánto dinero ahorrado necesito para comprar una casa?</summary><p>Los bancos suelen financiar como máximo el 80% del precio de tasación. Necesitas el 20% de entrada más entre un 8% y un 12% para impuestos y gastos: en total, alrededor del 30% del precio.</p></details>
+  <details class="faq"><summary>¿Qué cuota me puedo permitir?</summary><p>La regla que usan los bancos es que todas tus deudas no superen entre el 30% y el 35% de tus ingresos netos. Por encima del 40% es difícil que te concedan la hipoteca.</p></details>
+  <details class="faq"><summary>¿Fija o variable?</summary><p>La fija te da una cuota estable toda la vida del préstamo. La variable suele empezar más barata pero sube o baja con el euríbor cada 6 o 12 meses. En julio de 2026, el 62% de las hipotecas nuevas fueron a tipo fijo.</p></details>
+  <details class="faq"><summary>¿Quién paga la notaría y el registro?</summary><p>Desde la ley hipotecaria de 2019, el banco paga la notaría, el registro y la gestoría de la escritura de hipoteca, y el AJD de la hipoteca. Tú pagas la tasación y los gastos de la escritura de compraventa, que son los que incluye esta calculadora.</p></details>
+  <ul class="creditos">
+    <li>Euríbor a 12 meses: Banco de España, serie mensual 2026 (septiembre 3,247%).</li>
+    <li>Tipo medio, plazo e importe de las hipotecas: INE, Estadística de Hipotecas, julio 2026.</li>
+    <li>Tipos de ITP y AJD: normativa autonómica vigente en 2026, tipos generales. Consulta tu comunidad para bonificaciones.</li>
+    <li>Cálculo con sistema de amortización francés, cuota constante. Resultado orientativo: tu banco te dará la oferta vinculante (FEIN).</li>
+  </ul>
+</section>
+</div>
+<div class="movil-barra" id="movilBarra"><div><span id="movilLbl">Cuota mensual</span><b id="movilValor">–</b></div><a href="#resultado">Ver detalle</a></div>
+
+<footer><div class="wrap"><span>© 2026 AURZANE BUILD · Herramienta gratuita y orientativa</span><span><a href="https://build.aurzane.com/">BUILD</a><a href="https://aurzane.com/">AURZANE</a><a href="https://aurzane.com/privacidad.html">Privacidad</a></span></div></footer>
+<script>
+(function(){
+  var b=document.getElementById('btnTema');
+  if(b) b.addEventListener('click',function(){var o=document.documentElement.getAttribute('data-tema')==='oscuro';if(o)document.documentElement.removeAttribute('data-tema');else document.documentElement.setAttribute('data-tema','oscuro');try{localStorage.setItem('aurzane-tema',o?'claro':'oscuro');}catch(e){}});
+})();
+window.AZ={
+  fmt:function(n,d){return Number(n).toLocaleString('es-ES',{minimumFractionDigits:d||0,maximumFractionDigits:d||0,useGrouping:'always'});},
+  eur:function(n){return AZ.fmt(Math.round(n))+' €';},
+  ls:function(k,v){try{if(v===undefined)return JSON.parse(localStorage.getItem(k)||'null');localStorage.setItem(k,JSON.stringify(v));}catch(e){return null;}},
+  medidor:function(el,valor,max,texto,sub){
+    var p=Math.max(0,Math.min(1,valor/max)),a0=Math.PI,a=a0-p*Math.PI,r=88,cx=110,cy=110;
+    var x=cx+r*Math.cos(a),y=cy-r*Math.sin(a),large=0;
+    var ticks='';for(var i=0;i<=10;i++){var t=a0-i/10*Math.PI;ticks+='<line x1="'+(cx+(r-22)*Math.cos(t)).toFixed(1)+'" y1="'+(cy-(r-22)*Math.sin(t)).toFixed(1)+'" x2="'+(cx+(r-15)*Math.cos(t)).toFixed(1)+'" y2="'+(cy-(r-15)*Math.sin(t)).toFixed(1)+'" stroke="rgba(255,255,255,.35)" stroke-width="2"/>';}
+    el.innerHTML='<svg viewBox="0 0 220 128" aria-hidden="true"><defs><linearGradient id="gm" x1="0" x2="1"><stop offset="0" stop-color="var(--cian)"/><stop offset="1" stop-color="var(--violeta)"/></linearGradient></defs>'+
+      '<path d="M22 110 A88 88 0 0 1 198 110" fill="none" stroke="rgba(255,255,255,.14)" stroke-width="16" stroke-linecap="round"/>'+
+      (p>0.001?'<path d="M22 110 A88 88 0 '+large+' 1 '+x.toFixed(1)+' '+y.toFixed(1)+'" fill="none" stroke="url(#gm)" stroke-width="16" stroke-linecap="round"/>':'')+ticks+'</svg>'+
+      '<div class="valor"><b>'+texto+'</b><span>'+sub+'</span></div>';
+  },
+  compartir:function(titulo,texto,msgEl){
+    var url=location.href;
+    if(navigator.share){navigator.share({title:titulo,text:texto,url:url}).catch(function(){});return;}
+    if(navigator.clipboard){navigator.clipboard.writeText(texto+' '+url).then(function(){if(msgEl)msgEl.textContent='Enlace copiado. Pégalo donde quieras compartirlo.';},function(){if(msgEl)msgEl.textContent=url;});}
+    else if(msgEl) msgEl.textContent=url;
+  },
+  // Pinta preguntas de opción única. preguntas: [{id,t,ayuda?,fila?,ops:[[valor,texto],...]}]
+  cuestionario:function(cont,preguntas,resp,alCambiar){
+    var h='';
+    preguntas.forEach(function(p,i){
+      h+='<div class="pregunta" id="p-'+p.id+'" role="group" aria-labelledby="t-'+p.id+'"><h3 id="t-'+p.id+'"><span class="n">'+(i+1)+'</span><span>'+p.t+'</span></h3>'+(p.ayuda?'<p class="ayuda">'+p.ayuda+'</p>':'')+'<div class="opciones'+(p.fila?' fila':'')+'">';
+      p.ops.forEach(function(o){h+='<button type="button" class="op" data-p="'+p.id+'" data-v="'+o[0]+'" aria-pressed="'+(resp[p.id]===o[0]?'true':'false')+'"><i></i><span>'+o[1]+'</span></button>';});
+      h+='</div></div>';
+    });
+    cont.innerHTML=h;
+    cont.addEventListener('click',function(e){
+      var b=e.target.closest('.op');if(!b)return;
+      var id=b.getAttribute('data-p'),v=b.getAttribute('data-v'),num=Number(v);resp[id]=isNaN(num)?v:num;
+      cont.querySelectorAll('.op[data-p="'+id+'"]').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});
+      var caja=document.getElementById('p-'+id);caja.classList.remove('falta');
+      var idx=preguntas.findIndex(function(p){return p.id===id;}),sig=preguntas[idx+1];
+      if(sig&&resp[sig.id]===undefined&&window.innerWidth<920){var el=document.getElementById('p-'+sig.id);setTimeout(function(){el.scrollIntoView({behavior:'smooth',block:'center'});},160);}
+      alCambiar&&alCambiar();
+    });
+  },
+  faltan:function(preguntas,resp){
+    var f=preguntas.filter(function(p){return resp[p.id]===undefined;});
+    f.forEach(function(p){document.getElementById('p-'+p.id).classList.add('falta');});
+    if(f.length)document.getElementById('p-'+f[0].id).scrollIntoView({behavior:'smooth',block:'center'});
+    return f.length;
+  },
+  // Imagen 1080x1350 del resultado para compartir. r={titulo,valor,max,unidad,nivel,frase,c1,c2}
+  imagen:function(r,msgEl){
+    var W=1080,H=1350,c=document.createElement('canvas');c.width=W;c.height=H;var x=c.getContext('2d');
+    var cs=getComputedStyle(document.documentElement),c1=r.c1||cs.getPropertyValue('--n1').trim(),c2=r.c2||cs.getPropertyValue('--n3').trim(),a1=cs.getPropertyValue('--cian').trim(),a2=cs.getPropertyValue('--violeta').trim();
+    var g=x.createRadialGradient(W*.9,0,50,W*.6,H*.4,H);g.addColorStop(0,c2);g.addColorStop(1,c1);x.fillStyle=g;x.fillRect(0,0,W,H);
+    x.fillStyle='rgba(255,255,255,.07)';for(var i=0;i<W;i+=36)for(var j=0;j<H;j+=36){x.beginPath();x.arc(i,j,2,0,7);x.fill();}
+    var serif='"Bodoni Moda",Georgia,serif',sans='"Instrument Sans",system-ui,sans-serif';
+    x.fillStyle='#fff';x.font='700 44px '+serif;x.fillText('AURZANE',80,120);
+    x.fillStyle='rgba(255,255,255,.8)';x.font='600 38px '+sans;x.fillText(r.titulo,80,230);
+    var cx=W/2,cy=720,rad=300,p=Math.max(0,Math.min(1,r.valor/r.max));
+    x.lineCap='round';x.lineWidth=56;x.strokeStyle='rgba(255,255,255,.15)';x.beginPath();x.arc(cx,cy,rad,Math.PI,2*Math.PI);x.stroke();
+    var lg=x.createLinearGradient(cx-rad,0,cx+rad,0);lg.addColorStop(0,a1);lg.addColorStop(1,a2);x.strokeStyle=lg;
+    if(p>0){x.beginPath();x.arc(cx,cy,rad,Math.PI,Math.PI+p*Math.PI);x.stroke();}
+    x.textAlign='center';x.fillStyle='#fff';x.font='700 210px '+serif;x.fillText(r.valor,cx,cy-20);
+    x.font='500 40px '+sans;x.fillStyle='rgba(255,255,255,.75)';x.fillText(r.unidad||('sobre '+r.max),cx,cy+50);
+    x.font='700 54px '+sans;x.fillStyle='#fff';x.fillText(r.nivel,cx,cy+170);
+    if(r.frase){x.font='400 36px '+sans;x.fillStyle='rgba(255,255,255,.82)';var pal=r.frase.split(' '),l='',y=cy+250;pal.forEach(function(w){if(x.measureText(l+w).width>860){x.fillText(l.trim(),cx,y);y+=50;l='';}l+=w+' ';});x.fillText(l.trim(),cx,y);}
+    x.font='600 31px '+sans;x.fillStyle=a1;x.fillText('Haz el tuyo gratis: '+location.host+location.pathname,cx,H-90);
+    c.toBlob(function(b){
+      var f=new File([b],'mi-resultado-aurzane.png',{type:'image/png'});
+      if(navigator.canShare&&navigator.canShare({files:[f]})){navigator.share({files:[f],title:r.titulo,text:'Mi resultado en '+r.titulo+'. Haz el tuyo gratis: '+location.href.split('#')[0]}).catch(function(){});}
+      else{var a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='mi-resultado-aurzane.png';a.click();if(msgEl)msgEl.textContent='Imagen descargada. Súbela a tus historias o envíala por WhatsApp.';}
+    },'image/png');
+  },
+  barraMovil:function(objetivo,barra){
+    if(!('IntersectionObserver' in window)||!objetivo||!barra)return;
+    new IntersectionObserver(function(es){es.forEach(function(e){barra.classList.toggle('ver',!e.isIntersecting&&window.scrollY>300);});},{threshold:0.05}).observe(objetivo);
+    window.addEventListener('scroll',function(){if(window.scrollY<300)barra.classList.remove('ver');},{passive:true});
+  }
+};
+</script>
+<script>(function(){
+// [nombre, ITP segunda mano %, AJD obra nueva %, impuesto indirecto obra nueva %]
+var CCAA=[['Andalucía',7,1.2,10],['Aragón',8,1.5,10],['Asturias',8,1.2,10],['Islas Baleares',8,1.5,10],['Canarias',6.5,1,6.5],['Cantabria',10,1.5,10],['Castilla-La Mancha',9,1.5,10],['Castilla y León',8,1.5,10],['Cataluña',10,1.5,10],['Comunidad de Madrid',6,0.75,10],['Comunidad Valenciana',10,1.5,10],['Extremadura',8,1.5,10],['Galicia',10,1.5,10],['La Rioja',7,1,10],['Navarra',6,0.5,10],['País Vasco',4,0.5,10],['Región de Murcia',8,1.5,10],['Ceuta',6,0.5,0.5],['Melilla',6,0.5,0.5]];
+var GASTOS=[['Notaría compraventa',800],['Registro',500],['Gestoría',350],['Tasación',400]];
+var $=function(id){return document.getElementById(id);};
+var st={nueva:'usada',tipo:'fijo',tab:'hip'};
+$('ccaa').innerHTML=CCAA.map(function(c,i){return '<option value="'+i+'"'+(i===9?' selected':'')+'>'+c[0]+'</option>';}).join('');
+$('tablaCCAA').innerHTML='<tr><th>Comunidad</th><th>Segunda mano (ITP)</th><th>Obra nueva (IVA o IGIC + AJD)</th></tr>'+CCAA.map(function(c){return '<tr><td>'+c[0]+'</td><td>'+AZ.fmt(c[1],1)+'%</td><td>'+AZ.fmt(c[3],1)+'% + '+AZ.fmt(c[2],2)+'%</td></tr>';}).join('');
+// estado desde la URL
+(function(){var q=new URLSearchParams(location.hash.slice(1));['precio','entrada','tin','euribor','dif','plazo','ingresos','alquiler','anios'].forEach(function(k){if(q.has(k))$(k).value=q.get(k);});if(q.has('ccaa'))$('ccaa').value=q.get('ccaa');if(q.get('nueva'))st.nueva=q.get('nueva');if(q.get('tipo'))st.tipo=q.get('tipo');if(q.get('tab'))st.tab=q.get('tab');})();
+function seg(id,clave){var el=$(id);el.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;st[clave]=b.getAttribute('data-v');calcular();});}
+seg('segNueva','nueva');seg('segTipo','tipo');
+document.querySelector('[data-tab]').parentNode.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;st.tab=b.getAttribute('data-tab');calcular();});
+document.querySelectorAll('input,select').forEach(function(el){el.addEventListener('input',calcular);});
+var n=function(id){var v=parseFloat($(id).value);return isNaN(v)?0:v;};
+function cuotaDe(P,iAnual,meses){var i=iAnual/100/12;return i===0?P/meses:P*i/(1-Math.pow(1+i,-meses));}
+function calcular(){
+  document.querySelectorAll('#segNueva button').forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('data-v')===st.nueva);});
+  document.querySelectorAll('#segTipo button').forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('data-v')===st.tipo);});
+  document.querySelectorAll('[data-tab]').forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('data-tab')===st.tab);});
+  var alq=st.tab==='alq';
+  $('bloqueAlq').hidden=!alq;$('topAlq').hidden=!alq;$('cuerpoAlq').hidden=!alq;$('topHip').hidden=alq;$('cuerpoHip').hidden=alq;
+  $('cFijo').hidden=st.tipo!=='fijo';$('cEur').hidden=$('cDif').hidden=st.tipo==='fijo';
+  var precio=n('precio'),entrada=Math.min(n('entrada'),precio),plazo=n('plazo'),c=CCAA[$('ccaa').value];
+  $('plazoTxt').textContent=plazo+' años';
+  $('entradaPct').textContent=precio?AZ.fmt(entrada/precio*100,1)+'% del precio':'';
+  var interes=st.tipo==='fijo'?n('tin'):n('euribor')+n('dif');
+  var P=Math.max(precio-entrada,0),meses=plazo*12,cuota=cuotaDe(P,interes,meses),total=cuota*meses,intereses=total-P;
+  var imp,impLbl;
+  if(st.nueva==='usada'){imp=precio*c[1]/100;impLbl='ITP '+AZ.fmt(c[1],1)+'% ('+c[0]+')';}
+  else{imp=precio*(c[3]+c[2])/100;impLbl=(c[0]==='Canarias'?'IGIC ':c[3]<1?'IPSI ':'IVA ')+AZ.fmt(c[3],1)+'% + AJD '+AZ.fmt(c[2],2)+'%';}
+  var gastos=GASTOS.reduce(function(s,g){return s+g[1];},0),ahorro=entrada+imp+gastos,fin=precio?P/precio*100:0;
+  $('cuota').textContent=AZ.eur(cuota);
+  $('cuotaSub').textContent='al '+AZ.fmt(interes,2)+'% '+(st.tipo==='fijo'?'fijo':'(euríbor + diferencial)')+' durante '+plazo+' años';
+  $('rPrestamo').textContent=AZ.eur(P);$('rFin').textContent=AZ.fmt(fin,1)+'%';$('rIntereses').textContent=AZ.eur(intereses);$('rTotal').textContent=AZ.eur(total);
+  $('rEntrada').textContent=AZ.eur(entrada);$('rImpLbl').textContent=impLbl;$('rImp').textContent=AZ.eur(imp);$('rGastos').textContent=AZ.eur(gastos);$('rAhorro').textContent=AZ.eur(ahorro);
+  var tot=precio+intereses+imp+gastos;
+  $('apilada').innerHTML='<i style="width:'+(precio/tot*100)+'%;background:var(--n3)"></i><i style="width:'+(intereses/tot*100)+'%;background:var(--violeta)"></i><i style="width:'+((imp+gastos)/tot*100)+'%;background:var(--cian)"></i>';
+  var ing=n('ingresos'),esf=ing?cuota/ing*100:0,e=$('esfuerzo');
+  if(ing){e.hidden=false;e.className='nivel '+(esf<=30?'ok':esf<=35?'medio':'mal');e.querySelector('span').textContent='Esfuerzo: '+AZ.fmt(esf,0)+'% de tus ingresos';}else e.hidden=true;
+  if(st.tipo==='variable'){var c1=cuotaDe(P,interes+1,meses),c2=cuotaDe(P,Math.max(interes-1,0),meses);$('escenario').textContent='Si el euríbor sube un punto, tu cuota pasaría a '+AZ.eur(c1)+' ('+(c1-cuota>0?'+':'')+AZ.eur(c1-cuota)+'). Si baja un punto, a '+AZ.eur(c2)+'.';}
+  else $('escenario').textContent='Con tipo fijo tu cuota será de '+AZ.eur(cuota)+' todos los meses hasta el final.';
+  var av=[];
+  if(fin>80)av.push('<b>Financias más del 80%</b>La mayoría de bancos no prestan más del 80% del valor de tasación salvo avales o programas para jóvenes (aval ICO). Prueba con más entrada.');
+  if(ing&&esf>35)av.push('<b>Tasa de esfuerzo alta</b>Tu cuota supera el 35% de tus ingresos. Los bancos podrían denegarla y te dejaría poco margen ante imprevistos.');
+  if(plazo>30)av.push('<b>Plazo largo</b>Pasar de 30 a '+plazo+' años baja la cuota pero dispara los intereses. Muchos bancos limitan la edad al terminar a 70 o 75 años.');
+  $('avisos').innerHTML=av.map(function(a){return '<div class="aviso suave">'+a+'</div>';}).join('');
+  // amortización anual
+  var i=interes/100/12,saldo=P,filas=[],maxA=0;
+  for(var a=1;a<=plazo;a++){var ci=0,cc=0;for(var m=0;m<12;m++){var int=saldo*i,cap=cuota-int;ci+=int;cc+=cap;saldo-=cap;}filas.push([a,cc,ci,Math.max(saldo,0)]);maxA=Math.max(maxA,cc+ci);}
+  $('tabla').innerHTML='<tr><th>Año</th><th>Capital</th><th>Intereses</th><th>Pendiente</th></tr>'+filas.map(function(f){return '<tr><td>'+f[0]+'</td><td>'+AZ.eur(f[1])+'</td><td>'+AZ.eur(f[2])+'</td><td>'+AZ.eur(f[3])+'</td></tr>';}).join('');
+  var W=720,H=220,bw=W/plazo;
+  var svg='<svg viewBox="0 0 '+W+' '+(H+22)+'" role="img" aria-label="Capital e intereses pagados cada año">';
+  filas.forEach(function(f,k){var hc=f[1]/maxA*H,hi=f[2]/maxA*H,x=k*bw+bw*.15,w=bw*.7;svg+='<rect x="'+x.toFixed(1)+'" y="'+(H-hc-hi).toFixed(1)+'" width="'+w.toFixed(1)+'" height="'+hi.toFixed(1)+'" fill="var(--violeta)" rx="1.5"><title>Año '+f[0]+': '+AZ.eur(f[2])+' de intereses</title></rect><rect x="'+x.toFixed(1)+'" y="'+(H-hc).toFixed(1)+'" width="'+w.toFixed(1)+'" height="'+hc.toFixed(1)+'" fill="var(--n3)" rx="1.5"><title>Año '+f[0]+': '+AZ.eur(f[1])+' de capital</title></rect>';if(f[0]===1||f[0]%5===0)svg+='<text x="'+(x+w/2).toFixed(1)+'" y="'+(H+16)+'" font-size="11" text-anchor="middle" fill="currentColor" opacity=".6">'+f[0]+'</text>';});
+  $('grafAmort').innerHTML=svg+'</svg>';
+  $('movilLbl').textContent=alq?'Te sale mejor':'Cuota mensual';
+  $('movilValor').textContent=alq?'':AZ.eur(cuota);
+  if(alq)alquilar(precio,entrada,imp+gastos,P,interes,cuota);
+  var q=new URLSearchParams();['precio','entrada','tin','euribor','dif','plazo','ingresos','alquiler','anios'].forEach(function(k){q.set(k,$(k).value);});q.set('ccaa',$('ccaa').value);q.set('nueva',st.nueva);q.set('tipo',st.tipo);q.set('tab',st.tab);
+  history.replaceState(null,'','#'+q.toString());
+}
+function alquilar(precio,entrada,costes,P,interes,cuota){
+  var anios=Math.max(1,Math.round(n('anios'))),alq=n('alquiler'),sub=n('subAlq')/100,rev=n('reval')/100,r=n('rent')/100/12,gp=n('gProp')/100;
+  var i=interes/100/12,saldo=P,cartera=entrada+costes,valor=precio,renta=alq,serie=[],cruce=null,meses=anios*12,plazoM=n('plazo')*12;
+  for(var m=1;m<=meses;m++){
+    var pagoHip=m<=plazoM?cuota:0;if(m<=plazoM){saldo-=(cuota-saldo*i);}saldo=Math.max(saldo,0);
+    var pagoComprador=pagoHip+valor*gp/12;
+    cartera=cartera*(1+r)+(pagoComprador-renta);
+    valor*=Math.pow(1+rev,1/12);
+    if(m%12===0){renta*=1+sub;var pc=valor-saldo-valor*0.03;serie.push([m/12,pc,cartera]);if(cruce===null&&pc>cartera)cruce=m/12;}
+  }
+  var ult=serie[serie.length-1],compra=ult[1],alqui=ult[2];
+  $('aniosTxt').textContent=anios;
+  $('ganador').textContent=compra>alqui?'Comprar':'Alquilar';
+  $('ganadorSub').textContent='Diferencia a favor: '+AZ.eur(Math.abs(compra-alqui))+(compra>alqui?' frente a alquilar e invertir.':' frente a comprar.');
+  $('movilValor').textContent=compra>alqui?'Comprar':'Alquilar';
+  $('aCompra').textContent=AZ.eur(compra);$('aAlquila').textContent=AZ.eur(alqui);$('aCruce').textContent=cruce?'Año '+cruce:'No compensa en '+anios+' años';
+  var W=420,H=170,mx=Math.max.apply(null,serie.map(function(s){return Math.max(s[1],s[2]);})),mn=Math.min(0,Math.min.apply(null,serie.map(function(s){return Math.min(s[1],s[2]);}))),
+      X=function(a){return 30+(a-1)/Math.max(anios-1,1)*(W-40);},Y=function(v){return 10+(mx-v)/(mx-mn||1)*(H-20);};
+  var lin=function(k){return serie.map(function(s,j){return (j?'L':'M')+X(s[0]).toFixed(1)+' '+Y(s[k]).toFixed(1);}).join('');};
+  $('grafAlq').innerHTML='<svg viewBox="0 0 '+W+' '+(H+18)+'" role="img" aria-label="Patrimonio comprando frente a alquilando"><line x1="30" x2="'+(W-10)+'" y1="'+Y(0).toFixed(1)+'" y2="'+Y(0).toFixed(1)+'" stroke="currentColor" opacity=".2"/><path d="'+lin(1)+'" fill="none" stroke="var(--n3)" stroke-width="3"/><path d="'+lin(2)+'" fill="none" stroke="var(--violeta)" stroke-width="3" stroke-dasharray="6 4"/><text x="30" y="'+(H+15)+'" font-size="11" fill="currentColor" opacity=".6">Año 1</text><text x="'+(W-10)+'" y="'+(H+15)+'" font-size="11" text-anchor="end" fill="currentColor" opacity=".6">Año '+anios+'</text></svg><div class="leyenda"><span><b style="background:var(--n3)"></b>Comprar</span><span><b style="background:var(--violeta)"></b>Alquilar e invertir</span></div>';
+}
+calcular();document.body.classList.add('hecho');
+$('compartir').addEventListener('click',function(){AZ.compartir('Mi cálculo de hipoteca','Mira este cálculo de hipoteca con impuestos y gastos:',$('msg'));});
+AZ.barraMovil($('resultado'),$('movilBarra'));
+})();
+</script>
+</body>
+</html>
