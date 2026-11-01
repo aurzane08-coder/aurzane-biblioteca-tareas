@@ -9,22 +9,22 @@ AQUI = os.path.dirname(os.path.abspath(__file__))
 SALIDA = sys.argv[1]
 src = open(os.path.join(AQUI, 'gen.py'), encoding='utf-8').read()
 bloque = src[src.index('PAISES = {'):src.index('}', src.index('PAISES = {'))]
-ISOS = sorted(set(re.findall(r"\('([a-z]{2})'", bloque)))
+ISOS = list(dict.fromkeys(re.findall(r"\('([a-z]{2})'", bloque)))
 print(len(ISOS), 'países')
 
 EP = 'https://query.wikidata.org/sparql'
 UA = 'AURZANE-catalogo/1.0 (https://nexus.aurzane.com/universidades/; hola@aurzane.com)'
 
 
-def q(sparql, intentos=3):
+def q(sparql, intentos=2):
     url = EP + '?' + urllib.parse.urlencode({'query': sparql, 'format': 'json'})
     for i in range(intentos):
         try:
             req = urllib.request.Request(url, headers={'User-Agent': UA, 'Accept': 'application/sparql-results+json'})
-            with urllib.request.urlopen(req, timeout=90) as r:
+            with urllib.request.urlopen(req, timeout=55) as r:
                 return json.load(r)['results']['bindings']
         except Exception as ex:
-            print('  reintento', i + 1, str(ex)[:120]); time.sleep(8 * (i + 1))
+            print('  reintento', i + 1, str(ex)[:120]); time.sleep(5)
     return []
 
 
@@ -68,8 +68,9 @@ for iso in ISOS:
         n = norm(f.get('cLabel', {}).get('value'))
         if n and n not in mapa: mapa[n] = archivo(f['img']['value'])
     out['c'][iso] = mapa
-    print(iso, len(us), 'universidades con imagen,', len(mapa), 'ciudades')
-    time.sleep(1.5)
+    print(iso, len(us), 'universidades con imagen,', len(mapa), 'ciudades', flush=True)
+    json.dump(out, open(SALIDA, 'w', encoding='utf-8'), ensure_ascii=False, separators=(',', ':'))  # guarda el avance
+    time.sleep(1)
 
 json.dump(out, open(SALIDA, 'w', encoding='utf-8'), ensure_ascii=False, separators=(',', ':'))
 print('OK', sum(len(v) for v in out['u'].values()), 'universidades,', sum(len(v) for v in out['c'].values()), 'ciudades')
