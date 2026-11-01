@@ -1,0 +1,19 @@
+name: Descargar documentos (revisión)
+on:
+  push:
+    paths: ['herramientas/descargar.txt']
+permissions:
+  contents: write
+jobs:
+  bajar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          mkdir -p herramientas/descargas
+          while read url nombre; do [ -n "$url" ] && curl -sL -A "Mozilla/5.0 AURZANE-revision" "$url" -o "herramientas/descargas/$nombre" || true; done < herramientas/descargar.txt
+          ls -la herramientas/descargas
+      - run: |
+          git config user.name "aurzane-bot"; git config user.email "bot@aurzane.com"
+          git add herramientas/descargas; git commit -m "descargas" || exit 0
+          for i in 1 2 3; do git pull --rebase && git push && break; sleep 5; done
