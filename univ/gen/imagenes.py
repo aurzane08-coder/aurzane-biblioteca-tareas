@@ -43,23 +43,46 @@ def archivo(v):
 
 
 CLASES = 'wd:Q3918 wd:Q38723 wd:Q902104 wd:Q875538 wd:Q15936437 wd:Q1371037 wd:Q189004 wd:Q23002054 wd:Q1664720 wd:Q4671277 wd:Q2467461 wd:Q62078547'
+# Si ya hay datos de una pasada anterior, se conservan y solo se repiten los países vacíos.
 out = {'u': {}, 'c': {}}
+if os.path.exists(SALIDA):
+    try: out = json.load(open(SALIDA, encoding='utf-8'))
+    except Exception: pass
+
+
+def unis_por_clase(I):
+    # para países grandes: una consulta por clase, más ligera
+    res = []
+    for cl in CLASES.split():
+        res += q(f'''SELECT ?item ?itemLabel ?web ?img ?logo WHERE {{
+  ?pais wdt:P297 "{I}". ?item wdt:P31 {cl}; wdt:P17 ?pais.
+  OPTIONAL {{ ?item wdt:P856 ?web }} OPTIONAL {{ ?item wdt:P18 ?img }} OPTIONAL {{ ?item wdt:P154 ?logo }}
+  FILTER(BOUND(?img) || BOUND(?logo))
+  SERVICE wikibase:label {{ bd:serviceParam wikibase:language "es,en". }} }}''')
+        time.sleep(1)
+    return res
+
+
 for iso in ISOS:
+    if out['u'].get(iso) and out['c'].get(iso):
+        continue
     I = iso.upper()
     filas = q(f'''SELECT ?item ?itemLabel ?web ?img ?logo WHERE {{
   ?pais wdt:P297 "{I}". ?item wdt:P17 ?pais; wdt:P31/wdt:P279? ?cl. VALUES ?cl {{ {CLASES} }}
   OPTIONAL {{ ?item wdt:P856 ?web }} OPTIONAL {{ ?item wdt:P18 ?img }} OPTIONAL {{ ?item wdt:P154 ?logo }}
   FILTER(BOUND(?img) || BOUND(?logo))
-  SERVICE wikibase:label {{ bd:serviceParam wikibase:language "es,en". }} }}''')
+  SERVICE wikibase:label {{ bd:serviceParam wikibase:language "es,en". }} }}''') if not out['u'].get(iso) else []
+    if not filas and not out['u'].get(iso):
+        filas = unis_por_clase(I)
     vistos, us = set(), []
     for f in filas:
         it = f['item']['value']
         if it in vistos: continue
         vistos.add(it)
         us.append([f.get('itemLabel', {}).get('value', ''), dominio(f.get('web', {}).get('value')), archivo(f.get('img', {}).get('value')), archivo(f.get('logo', {}).get('value'))])
-    out['u'][iso] = us
+    if us or not out['u'].get(iso): out['u'][iso] = us
     time.sleep(1.5)
-    cs = q(f'''SELECT ?c ?cLabel ?img ?pop WHERE {{
+    cs = [] if out['c'].get(iso) else q(f'''SELECT ?c ?cLabel ?img ?pop WHERE {{
   ?pais wdt:P297 "{I}". ?c wdt:P17 ?pais; wdt:P18 ?img; wdt:P1082 ?pop. FILTER(?pop > 15000)
   ?c wdt:P31/wdt:P279? ?t. VALUES ?t {{ wd:Q515 wd:Q1549591 wd:Q486972 wd:Q3957 wd:Q1637706 wd:Q5119 wd:Q2074737 wd:Q747074 wd:Q15284 wd:Q1093829 }}
   SERVICE wikibase:label {{ bd:serviceParam wikibase:language "es,en". }} }}''')
@@ -67,7 +90,14 @@ for iso in ISOS:
     for f in sorted(cs, key=lambda f: -float(f.get('pop', {}).get('value') or 0)):
         n = norm(f.get('cLabel', {}).get('value'))
         if n and n not in mapa: mapa[n] = archivo(f['img']['value'])
-    out['c'][iso] = mapa
+    if not cs and not out['c'].get(iso):
+        cs = q(f'''SELECT ?c ?cLabel ?img ?pop WHERE {{
+  ?pais wdt:P297 "{I}". ?c wdt:P31 wd:Q515; wdt:P17 ?pais; wdt:P18 ?img; wdt:P1082 ?pop. FILTER(?pop > 50000)
+  SERVICE wikibase:label {{ bd:serviceParam wikibase:language "es,en". }} }}''')
+        for f in sorted(cs, key=lambda f: -float(f.get('pop', {}).get('value') or 0)):
+            n = norm(f.get('cLabel', {}).get('value'))
+            if n and n not in mapa: mapa[n] = archivo(f['img']['value'])
+    if mapa or not out['c'].get(iso): out['c'][iso] = mapa
     print(iso, len(us), 'universidades con imagen,', len(mapa), 'ciudades', flush=True)
     json.dump(out, open(SALIDA, 'w', encoding='utf-8'), ensure_ascii=False, separators=(',', ':'))  # guarda el avance
     time.sleep(1)
