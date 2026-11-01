@@ -519,8 +519,9 @@ def pagina_pais(p):
         tit = f'Universidades de España: las {len(us)} universidades y sus {fmt(nc)} grados | AURZANE NEXUS'
         lead = f'Las {len(us)} universidades del sistema universitario español con sus {fmt(nc)} grados oficiales vigentes, según el Registro de Universidades, Centros y Títulos (RUCT). Filtra por comunidad autónoma, rama, ciudad o tipo.'
     elif nivel == 'basico':
-        tit = f'Mejores universidades de {p}: las principales | AURZANE NEXUS'
-        lead = f'Las universidades principales de {p}, con su ciudad, tipo y web oficial.'
+        nombres = [u['nombre'] for u in us[:3]]
+        tit = f'Universidades en {p}: las {len(us)} principales y dónde están (2026)'
+        lead = f'Las {len(us)} universidades principales de {p}' + (f', como {", ".join(nombres[:-1])} y {nombres[-1]}' if len(nombres) > 1 else '') + '. Consulta su ciudad, si son públicas o privadas y su web oficial para estudiar en ' + p + '.'
     else:
         tit = f'Universidades en {p}: {fmt(len(us))} instituciones{" y " + fmt(nc) + " carreras" if nivel == "programas" else ""} | AURZANE NEXUS'
         lead = f'{fmt(len(us))} universidades e institutos de educación superior en {p}' + (f', con {fmt(nc)} carreras.' if nivel == 'programas' else '.') + ' Filtra por ciudad, tipo y área.'
