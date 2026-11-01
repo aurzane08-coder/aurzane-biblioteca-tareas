@@ -1,0 +1,51 @@
+name: Desplegar archivos a SiteGround
+# Sube a la web todo lo que se deje en publicar/<dominio>/... (misma estructura que su public_html).
+#   publicar/aurzane.com/index.html          -> www/aurzane.com/public_html/index.html
+#   publicar/live.aurzane.com/test-x/...     -> www/live.aurzane.com/public_html/test-x/...
+# Nunca borra nada: si un archivo ya existía, la versión anterior se guarda en
+# www/<dominio>/eliminar/despliegue-FECHA/. Después vacía la caché dinámica y mueve
+# lo publicado a publicado/FECHA/ dentro de este repositorio, como historial.
+# Usa los mismos secretos que univ-publicar.yml (SG_KEY, SG_PASS, SG_HOST, SG_USER, SG_PORT).
+on:
+  push:
+    paths: ['publicar/**']
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency: desplegar
+jobs:
+  desplegar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      SG_KEY: ${{ secrets.SG_KEY }}
+      SG_HOST: ${{ secrets.SG_HOST }}
+      SG_USER: ${{ secrets.SG_USER }}
+      SG_PORT: ${{ secrets.SG_PORT }}
+      SG_PASS: ${{ secrets.SG_PASS }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Subir
+        run: |
+          [ -d publicar ] || { echo "Nada que publicar"; exit 0; }
+          mkdir -p ~/.ssh && printf '%s\n' "$SG_KEY" | tr -d '\r' > ~/.ssh/id && chmod 600 ~/.ssh/id
+          if [ -n "$SG_PASS" ]; then ssh-keygen -p -P "$SG_PASS" -N "" -f ~/.ssh/id >/dev/null; fi
+          SSH="ssh -i $HOME/.ssh/id -p ${SG_PORT:-18765} -o StrictHostKeyChecking=accept-new"
+          FECHA=$(date +%Y%m%d-%H%M)
+          for d in publicar/*/; do
+            dom=$(basename "$d")
+            case "$dom" in aurzane.com|*.aurzane.com) ;; *) echo "Dominio no permitido: $dom"; continue;; esac
+            echo "== $dom"
+            rsync -rlz --checksum --itemize-changes --backup --backup-dir="../eliminar/despliegue-$FECHA" \
+              -e "$SSH" "$d" "$SG_USER@$SG_HOST:www/$dom/public_html/"
+            # vaciar la caché dinámica de ese dominio (no bloquea si falla)
+            $SSH "$SG_USER@$SG_HOST" "curl -s -o /dev/null -w '%{http_code}' -X PURGE -H 'Host: $dom' 'http://127.0.0.1/(.*)' ; echo ' purge $dom'" || true
+          done
+          echo "FECHA=$FECHA" >> $GITHUB_ENV
+      - name: Archivar lo publicado
+        run: |
+          [ -d publicar ] || exit 0
+          mkdir -p publicado && git mv publicar "publicado/$FECHA"
+          git config user.name "aurzane-bot"; git config user.email "bot@aurzane.com"
+          git commit -m "despliegue $FECHA publicado" || exit 0
+          for i in 1 2 3 4 5; do git pull --rebase && git push && break; sleep 7; done
