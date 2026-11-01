@@ -520,13 +520,36 @@ def fuente_pais(p):
 
 def pagina_ciudad(p, c, us):
     iso = PAISES[p][0]
-    tit = f'Universidades en {c} ({p}): {len(us)} instituciones | AURZANE NEXUS'
-    lead = f'Las {len(us)} universidades e institutos con sede en {c}, {p}' + (f', con {fmt(sum(u["n"] for u in us))} carreras.' if any(u['n'] for u in us) else '.')
-    h = cabeza(tit, lead, f'{SITIO}{BASE}{PSLUG[p]}/ciudad/{slug(c)}/') + topbar('espana' if p == 'España' else 'paises') + f'''
+    us = sorted(us, key=lambda u: -(u['n'] or 0))
+    N, nc = len(us), sum(u['n'] or 0 for u in us)
+    npub = sum(1 for u in us if u['tipo'] == 'Pública'); npriv = N - npub
+    corto = lambda u: u['extra'].get('acronimo') or u['nombre']
+    nombres = [corto(u) for u in us[:3]]
+    lista = ', '.join(nombres[:-1]) + (' y ' + nombres[-1] if len(nombres) > 1 else nombres[0]) + (' y más' if N > 3 else '')
+    partes = []
+    if npub: partes.append(f'{npub} pública' + ('s' if npub > 1 else ''))
+    if npriv: partes.append(f'{npriv} privada' + ('s' if npriv > 1 else ''))
+    reparto = ' y '.join(partes)
+    palabra = 'grados' if p == 'España' else 'carreras'
+    tit = f'Universidades en {c}: {N} opciones' + (f' y {fmt(nc)} {palabra}' if nc else ', públicas y privadas') + ' (2026)'
+    desc = f'¿Cuántas universidades hay en {c}? Hay {N} ({reparto}): {lista}.' + (f' Compara sus {fmt(nc)} {palabra}, modalidades y web oficial.' if nc else ' Compara tipo, ubicación y web oficial.')
+    lead = f'En {c} hay {N} universidades e institutos de educación superior ({reparto})' + (f', con {fmt(nc)} {palabra} en total.' if nc else '.') + ' Filtra por tipo o área y entra en cada una para ver su oferta y su web oficial.'
+    respuesta = f'En {c} ({p}) hay {N} instituciones de educación superior: {reparto}. ' + ('Las que más ' + palabra + ' ofrecen son ' + ', '.join(f'{u["nombre"]} ({fmt(u["n"])})' for u in us[:3] if u['n']) + '.' if nc else 'Entre ellas están ' + ', '.join(u['nombre'] for u in us[:3]) + '.')
+    canon = f'{SITIO}{BASE}{PSLUG[p]}/ciudad/{slug(c)}/'
+    jsonld = {'@context': 'https://schema.org', '@graph': [
+        {'@type': 'FAQPage', 'mainEntity': [{'@type': 'Question', 'name': f'¿Cuántas universidades hay en {c}?', 'acceptedAnswer': {'@type': 'Answer', 'text': respuesta}}]},
+        {'@type': 'ItemList', 'name': f'Universidades en {c}', 'numberOfItems': N, 'itemListElement': [
+            {'@type': 'ListItem', 'position': k + 1, 'name': u['nombre'], 'url': f'{SITIO}{BASE}{PSLUG[p]}/{u["slug"]}/'} for k, u in enumerate(us[:30])]},
+        {'@type': 'BreadcrumbList', 'itemListElement': [
+            {'@type': 'ListItem', 'position': 1, 'name': 'Universidades', 'item': f'{SITIO}{BASE}'},
+            {'@type': 'ListItem', 'position': 2, 'name': p, 'item': f'{SITIO}{BASE}{PSLUG[p]}/'},
+            {'@type': 'ListItem', 'position': 3, 'name': c, 'item': canon}]}]}
+    h = cabeza(tit, desc, canon, jsonld=jsonld) + topbar('espana' if p == 'España' else 'paises') + f'''
 <main><section class="hero" style="padding-bottom:40px"><div class="wrap">{migas(("Universidades", BASE), (p, f"{BASE}{PSLUG[p]}/"), (c, ""))}
 <h1>{bandera(iso, "g")} Universidades en <em>{e(c)}</em></h1><p class="lead">{e(lead)}</p></div></section>
 {panel_listado(p, us, ciudad_fija=c)}
-<div class="wrap"><p class="fuente">{fuente_pais(p)}</p></div></main>''' + pie()
+<div class="wrap"><section class="card" style="margin-top:28px"><h2>¿Cuántas universidades hay en {e(c)}?</h2><p>{e(respuesta)}</p></section>
+<p class="fuente">{fuente_pais(p)}</p></div></main>''' + pie()
     escribir(f'{PSLUG[p]}/ciudad/{slug(c)}/index.html', h)
     URLS.append((f'{SITIO}{BASE}{PSLUG[p]}/ciudad/{slug(c)}/', '0.6'))
 
