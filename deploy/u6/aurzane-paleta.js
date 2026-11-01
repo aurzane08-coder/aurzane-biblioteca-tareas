@@ -38,7 +38,7 @@
   function leer() {
     var c = leerCookie();
     if (!c) { try { c = localStorage.getItem(CLAVE); } catch (e) {} }
-    return PALETAS[c] ? c : 'moca';
+    return PALETAS[c] ? c : 'dorado';
   }
   function rgb(hex) {
     var h = hex.replace('#', '');
@@ -89,12 +89,13 @@
     '@media print{.azp-btn,.azp-pop{display:none!important}}'
   ].join('\n');
 
-  // Fondos claros en tono moca (todas las paletas) y un único color de acción en la paleta Moca.
-  // Solo se activa en páginas claras (clase az-claro, que se decide al cargar) y nunca en modo oscuro.
+  // El blanco no se queda solo: en modo claro con la paleta por defecto (o con Moca), los fondos y textos
+  // se combinan con el tono moca #5F5044. Con las demás paletas y en modo oscuro todo queda como siempre.
+  // Solo en páginas claras (clase az-claro, que se decide al cargar); el test de personalidad conserva sus colores.
   var cssBase = [
-    'html.az-claro:not([data-tema="oscuro"]){--vanilla:#F6F0E8;--bg:#F6F0E8;--surface:#FFFCF8;--surface-2:#EEE5DA;--surface-3:#E6DBCE;--text:#2E2620;--paper-ink:#2E2620;--ink:#2E2620;--text-dim:#6E6257;--border:rgba(95,80,68,.18);--line:rgba(95,80,68,.16)}',
+    'html.az-claro:is(.paleta-dorado,.paleta-moca):not([data-tema="oscuro"]){--vanilla:#F6F0E8;--bg:#F6F0E8;--surface:#FFFCF8;--surface-2:#EEE5DA;--surface-3:#E6DBCE;--text:#2E2620;--paper-ink:#2E2620;--ink:#2E2620;--text-dim:#6E6257;--border:rgba(95,80,68,.18);--line:rgba(95,80,68,.16)}',
     'html[class*="paleta-"]:not(.paleta-dorado){--n1:var(--navy-900);--n2:var(--navy-700);--n3:var(--gold-deep);--cian:var(--gold-light);--violeta:var(--gold)}',
-    'html.paleta-moca.az-claro:not([data-tema="oscuro"]){--accent-text:#5F5044}',
+    'html.az-claro:is(.paleta-dorado,.paleta-moca):not([data-tema="oscuro"]){--accent-text:#5F5044}',
     'html.paleta-moca:not([data-tema="oscuro"]) :is(.btn-gold,.btn.btn-gold,.btn-primary,.btn.btn-primary,.btn-luz,.btn-osc,.cta-final){background:#1F7A70!important;color:#fff!important;border-color:transparent!important;box-shadow:0 10px 24px -12px rgba(31,122,112,.65)}',
     'html.paleta-moca:not([data-tema="oscuro"]) :is(.btn-gold,.btn-primary,.btn-luz,.btn-osc,.cta-final):hover{background:#17655C!important}'
   ].join('\n');
@@ -102,6 +103,7 @@
 
   // ¿Es una página clara? (tiene modo claro/oscuro, o su fondo es claro)
   function detectarClaro() {
+    if (/\/test-de-personalidad\//.test(location.pathname) || d.querySelector('[data-sin-moca]')) { html.classList.remove('az-claro'); return; }
     var tieneTema = false;
     try {
       for (var i = 0; i < d.styleSheets.length && !tieneTema; i++) {
