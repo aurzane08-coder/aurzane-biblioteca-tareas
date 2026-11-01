@@ -222,6 +222,8 @@ def _dom(w):
 def commons(f, ancho=640):
     return 'https://commons.wikimedia.org/wiki/Special:FilePath/' + urllib.parse.quote(f.replace(' ', '_')) + f'?width={ancho}' if f else ''
 IMG_DOM, IMG_NOM = collections.defaultdict(dict), collections.defaultdict(dict)
+GEN_UNIV = ['1541339907198-e08756dedf3f', '1562774053-701939374585', '1592280771190-3e2e4d571952', '1607237138185-eedd9c632b0b', '1576495199011-eb94736d05d6', '1606761568499-6d2451b23c66', '1427504494785-3a9ca7044f45']
+GEN_INST = ['1580582932707-520aed937b7b', '1524178232363-1fb2b075b655', '1523240795612-9a054b0db644', '1541829070764-84a7d30dd3f3', '1517486808906-6ca8b3f04846', '1498243691581-b145c3f54a5a']
 for iso, lst in IMG.get('u', {}).items():
     for nom, dom, foto, logo in lst:
         if dom: IMG_DOM[iso].setdefault(dom, (foto, logo))
@@ -239,6 +241,9 @@ for u in UNIS:
     if logo and not u.get('logo'): u['logo'] = commons(logo, 120)
     n_foto += u['foto_tipo'] == 'u'; n_ciudad += u['foto_tipo'] == 'c'
     u['foto'] = commons(u['foto_archivo'])
+    if not u['foto']:  # foto genérica de ambiente universitario (Unsplash, uso libre), estable por institución
+        pool = GEN_INST if re.match(r'^(instituto|escuela|conservatorio|centro)', (u['tipo_ies'] or '') + ' ' + u['nombre'], re.I) and not re.match(r'^universi', u['nombre'], re.I) else GEN_UNIV
+        u['foto'] = 'https://images.unsplash.com/photo-' + pool[int(hashlib.md5(u['nombre'].encode()).hexdigest(), 16) % len(pool)] + '?w=640&q=70&auto=format&fit=crop'
 print('Imágenes:', n_foto, 'fotos propias,', n_ciudad, 'fotos de su ciudad')
 for p, us in por_pais.items():
     usados = collections.Counter()
