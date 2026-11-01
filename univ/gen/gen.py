@@ -9,7 +9,7 @@ Salida: carpeta lista para subir a nexus.aurzane.com/universidades/
 
 Uso: python3 gen.py DATOS SALIDA
 """
-import json, gzip, re, os, sys, html, unicodedata, collections, shutil, datetime
+import json, gzip, re, os, sys, html, unicodedata, collections, shutil, datetime, urllib.parse
 
 DATOS, SALIDA = sys.argv[1], sys.argv[2]
 AQUI = os.path.dirname(os.path.abspath(__file__))
@@ -210,6 +210,36 @@ for u in UNIS:
 for u in UNIS:
     if u['web'] and not re.match(r'^https?://[^\s<>]+$', u['web']):
         u['web'] = ''
+
+# --- imágenes de Wikimedia Commons (univ/data/imagenes.json, lo genera imagenes.py desde Wikidata)
+IMG = cargar_json('imagenes.json') or {'u': {}, 'c': {}}
+def _n(t):
+    t = unicodedata.normalize('NFKD', t or '').encode('ascii', 'ignore').decode().lower()
+    return re.sub(r'[^a-z0-9]+', ' ', t).strip()
+def _dom(w):
+    w = re.sub(r'^https?://', '', (w or '').lower()).split('/')[0]
+    return re.sub(r'^www\d?\.', '', w)
+def commons(f, ancho=640):
+    return 'https://commons.wikimedia.org/wiki/Special:FilePath/' + urllib.parse.quote(f.replace(' ', '_')) + f'?width={ancho}' if f else ''
+IMG_DOM, IMG_NOM = collections.defaultdict(dict), collections.defaultdict(dict)
+for iso, lst in IMG.get('u', {}).items():
+    for nom, dom, foto, logo in lst:
+        if dom: IMG_DOM[iso].setdefault(dom, (foto, logo))
+        IMG_NOM[iso].setdefault(_n(nom), (foto, logo))
+n_foto = n_ciudad = 0
+for u in UNIS:
+    iso = PAISES.get(u['pais'], ('',))[0]
+    d = _dom(u['web'])
+    hit = IMG_DOM[iso].get(d) or (IMG_DOM[iso].get(d.split('.', 1)[1]) if d.count('.') >= 2 else None) or IMG_NOM[iso].get(_n(u['nombre']))
+    foto, logo = hit if hit else ('', '')
+    u['foto_archivo'], u['foto_tipo'] = foto, 'u' if foto else ''
+    if not foto:
+        fc = IMG.get('c', {}).get(iso, {}).get(_n(u['ciudad']))
+        if fc: u['foto_archivo'], u['foto_tipo'] = fc, 'c'
+    if logo and not u.get('logo'): u['logo'] = commons(logo, 120)
+    n_foto += u['foto_tipo'] == 'u'; n_ciudad += u['foto_tipo'] == 'c'
+    u['foto'] = commons(u['foto_archivo'])
+print('Imágenes:', n_foto, 'fotos propias,', n_ciudad, 'fotos de su ciudad')
 for p, us in por_pais.items():
     usados = collections.Counter()
     for u in sorted(us, key=lambda x: (-x['n'], x['nombre'])):
@@ -334,7 +364,7 @@ def datos():
         filas, carr = [], []
         for i, u in enumerate(us):
             ua = sorted({ai[c['area']] for c in u['carreras'] if c['area']})
-            filas.append([u['slug'], u['nombre'], u['ciudad'], u['region'], u['tipo'], u['tipo_ies'], u['n'], u['nivel'], ua, u['extra'].get('acronimo', ''), u['logo']])
+            filas.append([u['slug'], u['nombre'], u['ciudad'], u['region'], u['tipo'], u['tipo_ies'], u['n'], u['nivel'], ua, u['extra'].get('acronimo', ''), u['logo'], u.get('foto', '')])
             for c in u['carreras']:
                 if u['nivel'] == 'programas':
                     carr.append([i, c['n'], ai.get(c['area'], -1)])
@@ -344,13 +374,21 @@ def datos():
 
 
 # ---------------------------------------------------------------- tarjeta estática (SEO, antes del JS)
+def hero_foto(archivo, tipo_txt):
+    if not archivo: return '', ''
+    estilo = f' style="--foto:url(\'{commons(archivo, 1600)}\')"'
+    credito = f'<a class="credito-foto" href="https://commons.wikimedia.org/wiki/File:{urllib.parse.quote(archivo.replace(" ", "_"))}" target="_blank" rel="noopener">📷 {e(tipo_txt)}: Wikimedia Commons</a>'
+    return estilo, credito
+
+
 def tarjeta(u):
     p = PSLUG[u['pais']]
     url = f'{BASE}{p}/{u["slug"]}/'
     tipo = f'<span class="etq {"pub" if u["tipo"] == "Pública" else "priv"}">{e(u["tipo"])}</span>' if u['tipo'] else ''
     lugar = ', '.join(x for x in [u['ciudad'], u['region']] if x) or u['pais']
     cnt = f'<b>{fmt(u["n"])}</b> {"áreas" if u["nivel"] == "areas" else ("grados" if u["pais"] == "España" else "carreras")}' if u['n'] else 'Carreras en su web'
-    return (f'<article class="uc"><div class="top"><span class="mono" aria-hidden="true">{e(iniciales(u["nombre"]))}</span><div style="min-width:0;flex:1"><h3><a href="{url}">{e(u["nombre"])}</a></h3>'
+    foto = f'<div class="uc-foto"><img src="{e(u["foto"])}" alt="" loading="lazy" onerror="this.parentNode.classList.add(\'sin\');this.remove()"><span>{e(iniciales(u["nombre"]))}</span></div>' if u.get('foto') else f'<div class="uc-foto sin"><span>{e(iniciales(u["nombre"]))}</span></div>'
+    return (f'<article class="uc">{foto}<div class="top"><span class="mono" aria-hidden="true">{e(iniciales(u["nombre"]))}</span><div style="min-width:0;flex:1"><h3><a href="{url}">{e(u["nombre"])}</a></h3>'
             f'<p class="lugar">📍 {e(lugar)}</p></div><button class="guardar" type="button" data-guardar data-id="{p}/{u["slug"]}" data-n="{e(u["nombre"])}" data-url="{url}" aria-pressed="false">☆</button></div>'
             f'<div class="etqs">{tipo}<span class="etq">{e(u["tipo_ies"])}</span></div><div class="pie"><span>{cnt}</span><span aria-hidden="true">→</span></div></article>')
 
@@ -487,7 +525,7 @@ def pagina_pais(p):
     ciudades_html = ''
     if top_c and p not in ('Estados Unidos',):
         ciudades_html = '<section class="bloque"><h2 class="t">Universidades por ciudad</h2><div class="paises">' + ''.join(
-            f'<a class="pais" href="{BASE}{PSLUG[p]}/ciudad/{slug(c)}/"><span><b>{e(c)}</b><small>{ciudades[c]} instituciones</small></span></a>' for c in top_c) + '</div></section>'
+            (lambda fc: f'<a class="pais ciudad{" con-foto" if fc else ""}" href="{BASE}{PSLUG[p]}/ciudad/{slug(c)}/"' + (f' style="--foto:url(\'{commons(fc, 480)}\')"' if fc else '') + f'><span><b>{e(c)}</b><small>{ciudades[c]} instituciones</small></span></a>')(IMG.get('c', {}).get(PAISES[p][0], {}).get(_n(c))) for c in top_c) + '</div></section>'
     todas = ''
     if len(us) <= 600:
         todas = '<details class="todas"><summary>Todas las instituciones de ' + e(p) + ' (A-Z)</summary><ul>' + ''.join(f'<li><a href="{BASE}{PSLUG[p]}/{u["slug"]}/">{e(u["nombre"])}</a></li>' for u in us) + '</ul></details>'
@@ -544,9 +582,11 @@ def pagina_ciudad(p, c, us):
             {'@type': 'ListItem', 'position': 1, 'name': 'Universidades', 'item': f'{SITIO}{BASE}'},
             {'@type': 'ListItem', 'position': 2, 'name': p, 'item': f'{SITIO}{BASE}{PSLUG[p]}/'},
             {'@type': 'ListItem', 'position': 3, 'name': c, 'item': canon}]}]}
-    h = cabeza(tit, desc, canon, jsonld=jsonld) + topbar('espana' if p == 'España' else 'paises') + f'''
-<main><section class="hero" style="padding-bottom:40px"><div class="wrap">{migas(("Universidades", BASE), (p, f"{BASE}{PSLUG[p]}/"), (c, ""))}
-<h1>{bandera(iso, "g")} Universidades en <em>{e(c)}</em></h1><p class="lead">{e(lead)}</p></div></section>
+    fc = IMG.get('c', {}).get(iso, {}).get(_n(c))
+    hf, cred = hero_foto(fc, 'Foto de ' + c)
+    h = cabeza(tit, desc, canon, og_img=commons(fc, 1200) if fc else None, jsonld=jsonld) + topbar('espana' if p == 'España' else 'paises') + f'''
+<main><section class="hero{' con-foto' if hf else ''}" style="padding-bottom:40px"{hf}><div class="wrap">{migas(("Universidades", BASE), (p, f"{BASE}{PSLUG[p]}/"), (c, ""))}
+<h1>{bandera(iso, "g")} Universidades en <em>{e(c)}</em></h1><p class="lead">{e(lead)}</p>{cred}</div></section>
 {panel_listado(p, us, ciudad_fija=c)}
 <div class="wrap"><section class="card" style="margin-top:28px"><h2>¿Cuántas universidades hay en {e(c)}?</h2><p>{e(respuesta)}</p></section>
 <p class="fuente">{fuente_pais(p)}</p></div></main>''' + pie()
@@ -621,12 +661,13 @@ def ficha(u, vecinas):
     if u['extra'].get('anio'): meta.append(f'<li>📜 Creada en {e(u["extra"]["anio"])}</li>')
     if n: meta.append(f'<li>📚 {fmt(n)} {palabra}</li>')
     tit = f'{u["nombre"]}: ' + (f'{fmt(n)} {palabra}' if n else 'carreras, ciudad y web') + f' | Universidades de {p}'
-    h = cabeza(tit, desc_meta, url, jsonld=jl) + topbar('espana' if es_es else 'paises') + f'''
-<main><section class="hero ficha-h"><div class="wrap">{migas(("Universidades", BASE), (p, f"{BASE}{ps}/"), *([(u["ciudad"], f"{BASE}{ps}/ciudad/{slug(u['ciudad'])}/")] if u["ciudad"] and vecinas and p != "Estados Unidos" else []), (u["nombre"], ""))}
+    hf, cred = hero_foto(u.get('foto_archivo'), 'Foto' if u.get('foto_tipo') == 'u' else 'Foto de ' + (u['ciudad'] or p))
+    h = cabeza(tit, desc_meta, url, og_img=commons(u['foto_archivo'], 1200) if u.get('foto_archivo') else None, jsonld=jl) + topbar('espana' if es_es else 'paises') + f'''
+<main><section class="hero ficha-h{' con-foto' if hf else ''}"{hf}><div class="wrap">{migas(("Universidades", BASE), (p, f"{BASE}{ps}/"), *([(u["ciudad"], f"{BASE}{ps}/ciudad/{slug(u['ciudad'])}/")] if u["ciudad"] and vecinas and p != "Estados Unidos" else []), (u["nombre"], ""))}
 <div class="fila" style="margin-top:16px"><span class="mono" aria-hidden="true">{e(u["extra"].get("acronimo") or iniciales(u["nombre"]))[:5]}</span><div><h1 style="margin:0">{e(u["nombre"])}</h1></div></div>
 <ul class="meta">{''.join(meta)}</ul>{f'<p class="lead" style="margin-top:14px">{e(u["descripcion"])}</p>' if u["descripcion"] else ''}
 <div class="acc">{f'<a class="btn btn-luz" href="{e(u["web"])}" target="_blank" rel="noopener nofollow">Web oficial ↗</a>' if u["web"] else ''}<button type="button" class="btn btn-claro" data-guardar data-id="{ps}/{u["slug"]}" data-n="{e(u["nombre"])}" data-url="{BASE}{ps}/{u["slug"]}/" aria-pressed="false">☆ Guardar</button>{'<a class="btn btn-claro" href="#carreras">Ver ' + palabra + '</a>' if n else ''}</div>
-</div></section>
+{cred}</div></section>
 <div class="wrap"><div class="ficha"><div>{bloque_c}</div>
 <aside><section class="card"><h2>Datos</h2>{datos_html}</section>{cta}{cerca}</aside></div>
 <p class="fuente">{fuente_pais(p)} </p>
