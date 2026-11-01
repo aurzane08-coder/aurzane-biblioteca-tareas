@@ -1,0 +1,16 @@
+name: Hoja de fotos (revisión)
+on:
+  push:
+    paths: ['herramientas/fotos.txt', 'herramientas/hoja_fotos.py']
+permissions:
+  contents: write
+jobs:
+  hoja:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install pillow -q && python3 herramientas/hoja_fotos.py herramientas/fotos.txt herramientas/hoja.jpg
+      - run: |
+          git config user.name "aurzane-bot"; git config user.email "bot@aurzane.com"
+          git add herramientas/hoja.jpg; git commit -m "hoja de fotos" || exit 0
+          for i in 1 2 3; do git pull --rebase && git push && break; sleep 5; done
