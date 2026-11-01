@@ -1,0 +1,25 @@
+name: Universidades imágenes (Wikidata)
+# Cada semana busca en Wikidata fotos y logos de universidades y fotos de ciudades.
+# Guarda univ/data/imagenes.json, que usa el generador del portal.
+on:
+  schedule:
+    - cron: '23 2 * * 0'
+  push:
+    paths: ['univ/gen/imagenes.py']
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency: univ-imagenes
+jobs:
+  imagenes:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -u univ/gen/imagenes.py univ/data/imagenes.json
+      - name: Guardar
+        run: |
+          git config user.name "aurzane-bot"; git config user.email "bot@aurzane.com"
+          git add univ/data/imagenes.json
+          git commit -m "univ: imágenes de Wikidata" || exit 0
+          for i in 1 2 3 4 5; do git pull --rebase && git push && break; sleep 7; done
