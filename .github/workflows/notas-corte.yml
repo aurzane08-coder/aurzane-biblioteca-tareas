@@ -1,0 +1,20 @@
+name: Notas de corte (QEDU)
+# Cada lunes descarga las notas de corte oficiales; si cambian, se guarda y el portal se regenera.
+on:
+  schedule:
+    - cron: '43 5 * * 1'
+  push:
+    paths: ['univ/notas_corte.py']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  notas:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -u univ/notas_corte.py
+      - run: |
+          git config user.name "aurzane-bot"; git config user.email "bot@aurzane.com"
+          git add univ/data/notas_corte.json; git commit -m "univ: notas de corte QEDU" || exit 0
+          for i in 1 2 3 4 5; do git pull --rebase && git push && break; sleep 7; done
