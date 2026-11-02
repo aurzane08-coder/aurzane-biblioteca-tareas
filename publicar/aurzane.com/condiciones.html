@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<script>
+  // Observabilidad de errores frontend (Fase 8-9 P1, ver observabilidad_errores_setup.sql).
+  window.__aurzaneErrBuf = [];
+  window.__aurzaneLogErr = function(msg){
+    var entry = { pagina: location.pathname, mensaje: String(msg == null ? 'Error desconocido' : msg).slice(0,300) };
+    if(window.__aurzaneSb && window.__aurzaneSb.from){
+      window.__aurzaneSb.from('frontend_error_log').insert(entry).then(function(){}, function(){});
+    } else {
+      window.__aurzaneErrBuf.push(entry);
+    }
+  };
+  window.addEventListener('error', function(e){ window.__aurzaneLogErr(e && e.message); });
+  window.addEventListener('unhandledrejection', function(e){
+    var r = e && e.reason;
+    window.__aurzaneLogErr((r && r.message) || (r == null ? null : String(r)) || 'Promise rechazada');
+  });
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://aurzane.com/aurzane-paleta.js"></script>
+<title>Condiciones de uso · AURZANE</title>
+<meta name="description" content="Qué datos recopila AURZANE OVP, para qué se usan, quién tiene acceso y cuáles son tus derechos sobre tu información.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;1,6..96,400&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#080B17; --navy-2:#0F1530; --navy-3:#151C3D; --navy-4:#1E2650;
+    --gold:#C9A24B; --gold-light:#EACF92; --bronze:#8A6A28;
+    --silver:#C7CDD6; --silver-dim:#8B92A0; --bone:#F5F3EE;
+    --line:rgba(199,205,214,0.13); --line-strong:rgba(201,162,75,0.38);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--navy);color:var(--bone);font-family:'Instrument Sans',sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased;}
+  h1,h2{font-family:'Bodoni Moda',serif;font-weight:500;letter-spacing:-0.01em;}
+  a{color:var(--gold-light);text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  :focus-visible{outline:2px solid var(--gold-light);outline-offset:3px;}
+
+  header{border-bottom:1px solid var(--line);padding:20px 6vw;display:flex;align-items:center;justify-content:space-between;}
+  .logo{font-family:'Bodoni Moda',serif;font-size:1.15rem;letter-spacing:0.04em;}
+  .logo span{color:var(--gold);}
+  header a.back{font-size:0.82rem;color:var(--silver);}
+  header a.back:hover{color:var(--gold-light);}
+
+  main{max-width:760px;margin:0 auto;padding:64px 6vw 100px;}
+  .eyebrow{font-family:'Bodoni Moda',serif;font-style:italic;color:var(--gold-light);font-size:0.9rem;display:block;margin-bottom:14px;}
+  h1{font-size:clamp(1.9rem,4vw,2.6rem);line-height:1.15;margin-bottom:10px;}
+  .updated{color:var(--silver-dim);font-size:0.82rem;margin-bottom:48px;}
+
+  section{margin-bottom:40px;}
+  h2{font-size:1.25rem;color:var(--bone);margin-bottom:14px;padding-top:4px;}
+  section p, section li{color:var(--silver);font-size:0.96rem;}
+  section p + p{margin-top:12px;}
+  ul{padding-left:20px;margin-top:10px;}
+  li{margin-bottom:8px;}
+  li::marker{color:var(--gold);}
+  .callout{background:var(--navy-2);border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:6px;padding:18px 20px;margin-top:16px;}
+  .callout p{color:var(--silver);font-size:0.9rem;}
+  strong{color:var(--bone);font-weight:600;}
+  .toc{background:var(--navy-2);border:1px solid var(--line);border-radius:10px;padding:24px 26px;margin-bottom:48px;}
+  .toc h2{font-size:1rem;text-transform:uppercase;letter-spacing:0.06em;color:var(--silver-dim);margin-bottom:12px;}
+  .toc ol{padding-left:20px;}
+  .toc li{color:var(--silver);font-size:0.9rem;margin-bottom:6px;}
+  .toc a{color:var(--silver);}
+  .toc a:hover{color:var(--gold-light);}
+
+  footer{border-top:1px solid var(--line);padding:32px 6vw;text-align:center;}
+  footer p{color:var(--silver-dim);font-size:0.82rem;}
+  footer a{color:var(--silver);}
+
+  @media(max-width:640px){ main{padding:44px 6vw 72px;} }
+</style>
+</head>
+<body>
+
+<header>
+  <a class="logo" href="https://aurzane.com">AUR<span>Z</span>ANE</a>
+  <a class="back" href="https://ovp.aurzane.com/portal.html">← Volver al portal</a>
+</header>
+
+<main>
+  <h1>Condiciones de uso</h1>
+  <p class="updated">Última actualización: noviembre de 2026</p>
+  <section><h2>1. Quién ofrece este sitio</h2><p>aurzane.com y sus subdominios son un proyecto personal de divulgación en psicología, bienestar y aprendizaje de Adrián Mauricio Sánchez Samaniego, psicólogo clínico. Contacto: <a href="mailto:hola@aurzane.com">hola@aurzane.com</a>.</p></section>
+  <section><h2>2. Uso del contenido</h2><p>Los tests, calculadoras, cursos y materiales son gratuitos y orientativos. No sustituyen una evaluación, un diagnóstico ni un tratamiento profesional. Los libros de la biblioteca mantienen la licencia indicada en cada ficha.</p></section>
+  <section><h2>3. Redes sociales y YouTube</h2><p>Publicamos contenido propio en nuestras cuentas de redes sociales, incluido nuestro canal de YouTube, mediante la herramienta interna AURZANE Publica, que usa los Servicios de API de YouTube. Al ver ese contenido en YouTube aceptas las <a href="https://www.youtube.com/t/terms" target="_blank" rel="noopener">Condiciones del Servicio de YouTube</a>. Los datos se tratan según nuestro <a href="/privacidad.html">aviso de privacidad</a> y la <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de Privacidad de Google</a>.</p></section>
+  <section><h2>4. Imágenes y vídeos de terceros</h2><p>Las fotos y vídeos de fondo de nuestras publicaciones proceden de Pexels y se usan según su licencia, que permite el uso comercial gratuito.</p></section>
+  <section><h2>5. Cambios</h2><p>Si estas condiciones cambian, se actualizará la fecha de esta página.</p></section>
+</main>
+<footer>
+  <p>AURZANE OVP · Psi. Cl. Adrian Sánchez Samaniego · Registro SENESCYT N.º 1033-2023-2618464</p>
+  <p style="margin-top:6px;"><a href="https://aurzane.com">aurzane.com</a> · <a href="/condiciones.html">Condiciones de uso</a></p>
+</footer>
+</body>
+</html>
