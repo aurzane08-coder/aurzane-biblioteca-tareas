@@ -3,29 +3,37 @@ on:
   push:
     paths: ['.github/workflows/prueba-modelos.yml']
 permissions:
-  models: read
   contents: read
 jobs:
   p:
     runs-on: ubuntu-latest
     steps:
-      - env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
+      - run: |
           python3 - <<'PY'
-          import json, os, urllib.request
-          for m in ['openai/gpt-4.1-mini']:
-              req = urllib.request.Request('https://models.github.ai/inference/chat/completions', data=json.dumps({'model': m, 'messages': [{'role': 'user', 'content': 'Escribe una frase de 10 palabras sobre la calma.'}], 'max_tokens': 60}).encode(), headers={'Authorization': 'Bearer ' + os.environ['GITHUB_TOKEN'], 'Content-Type': 'application/json'})
-              try:
-                  r = urllib.request.urlopen(req, timeout=60); d = json.load(r)
-                  print('::notice title=Modelos::' + m + ' => ' + d['choices'][0]['message']['content'].replace('\n', ' ')[:200] + ' | limite restante: ' + str(r.headers.get('x-ratelimit-remaining-requests')))
-              except Exception as e:
-                  print('::notice title=Modelos::' + m + ' ERROR ' + repr(e)[:200] + ' ' + (e.read().decode()[:200] if hasattr(e, 'read') else ''))
+          import json, urllib.request, urllib.parse
+          def g(u):
+              return json.load(urllib.request.urlopen(urllib.request.Request(u, headers={'User-Agent': 'Mozilla/5.0 aurzane'}), timeout=60))
           try:
-            u = 'https://api.openalex.org/works?filter=type:book,is_oa:true,primary_topic.field.id:32,from_publication_date:2025-01-01&sort=publication_date:desc&per-page=3&mailto=hola@aurzane.com'
-            d = json.load(urllib.request.urlopen(urllib.request.Request(u, headers={'User-Agent': 'Mozilla/5.0 aurzane'}), timeout=60))
+            d = g('https://api.openalex.org/works?filter=type:book,is_oa:true,primary_topic.field.id:32,from_publication_date:2024-06-01&sort=publication_date:desc&per-page=6&mailto=hola@aurzane.com')
+            print('::notice title=P::total ' + str(d['meta']['count']))
             for w in d['results']:
-              print('::notice title=Modelos::libro ' + (w.get('title') or '')[:80] + ' | ' + str((w.get('best_oa_location') or {}).get('pdf_url')) + ' | ' + str((w.get('primary_location') or {}).get('license')))
-          except Exception as e:
-            print('::notice title=Modelos::openalex ERROR ' + repr(e)[:200])
+              b = w.get('best_oa_location') or {}; p = w.get('primary_location') or {}
+              print('::notice title=P::' + (w.get('title') or '')[:70] + ' | lang=' + str(w.get('language')) + ' | land=' + str(b.get('landing_page_url')) + ' | pdf=' + str(b.get('pdf_url')) + ' | lic=' + str(b.get('license')) + ' | src=' + str((b.get('source') or {}).get('display_name')) + ' | ids=' + json.dumps(w.get('ids'))[:160] + ' | abs=' + str(bool(w.get('abstract_inverted_index'))))
+          except Exception as e: print('::notice title=P::oa ERR ' + repr(e)[:200])
+          try:
+            q = 'OPEN_ACCESS:y AND (PUB_TYPE:"review" OR PUB_TYPE:"systematic-review") AND (TITLE:"anxiety" OR TITLE:"depression" OR TITLE:"psychotherapy" OR TITLE:"mindfulness" OR TITLE:"burnout") AND FIRST_PDATE:[2026-10-01 TO 2026-11-02]'
+            d = g('https://www.ebi.ac.uk/europepmc/webservices/rest/search?' + urllib.parse.urlencode({'query': q, 'format': 'json', 'pageSize': 4, 'resultType': 'core', 'sort': 'CITED desc'}))
+            print('::notice title=P::epmc total ' + str(d.get('hitCount')))
+            for r in d['resultList']['result']:
+              print('::notice title=P::' + r.get('title','')[:80] + ' | ' + str(r.get('journalInfo',{}).get('journal',{}).get('title')) + ' | lic=' + str(r.get('license')) + ' | doi=' + str(r.get('doi')) + ' | pmcid=' + str(r.get('pmcid')) + ' | abs=' + str(len(r.get('abstractText',''))))
+          except Exception as e: print('::notice title=P::epmc ERR ' + repr(e)[:200])
+          try:
+            q = 'OPEN_ACCESS:y AND LANG:spa AND (TITLE:"ansiedad" OR TITLE:"depresión" OR TITLE:"psicoterapia" OR TITLE:"estrés") AND FIRST_PDATE:[2026-01-01 TO 2026-11-02]'
+            d = g('https://www.ebi.ac.uk/europepmc/webservices/rest/search?' + urllib.parse.urlencode({'query': q, 'format': 'json', 'pageSize': 3}))
+            print('::notice title=P::epmc es total ' + str(d.get('hitCount')) + ' ' + ' || '.join(r.get('title','')[:60] for r in d['resultList']['result']))
+          except Exception as e: print('::notice title=P::epmc es ERR ' + repr(e)[:200])
+          for u in ['https://covers.openlibrary.org/b/isbn/9781800643000-M.jpg?default=false', 'https://www.bing.com/indexnow?url=https://aurzane.com/&key=x']:
+            try:
+              r = urllib.request.urlopen(urllib.request.Request(u, headers={'User-Agent': 'Mozilla/5.0'}), timeout=30); print('::notice title=P::' + u[:40] + ' ' + str(r.status))
+            except Exception as e: print('::notice title=P::' + u[:40] + ' ' + repr(e)[:120])
           PY
