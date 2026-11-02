@@ -15,7 +15,7 @@ on:
     paths: ['marketing/fijos.py', 'marketing/mk.py', 'marketing/tarjeta.js', 'marketing/frases.py', 'marketing/web/**', '.github/workflows/marketing.yml']
   workflow_dispatch:
     inputs:
-      accion: {description: 'planificar | 1 | 2', default: 'planificar'}
+      accion: {description: 'planificar | 1 | 2 | 3 | verificar', default: 'planificar'}
 permissions:
   contents: write
 concurrency: marketing
@@ -67,6 +67,9 @@ jobs:
           sudo apt-get install -y -qq fonts-noto-color-emoji >/dev/null
           mkdir -p /tmp/f && cd /tmp/f && npm init -y >/dev/null && npm i -s playwright@1.48.2 @fontsource/bodoni-moda@5 @fontsource/instrument-sans@5 && npx playwright install chromium
           cd $GITHUB_WORKSPACE && NODE_PATH=/tmp/f/node_modules node marketing/tarjeta.js /tmp/tarjetas.json /tmp/f/node_modules/@fontsource
+      - name: Comprobar redes
+        if: env.ACCION == 'verificar' || env.ACCION == 'planificar'
+        run: python3 marketing/mk.py verificar | sed 's/^/::notice title=Redes::/'
       - name: Publicar franja
         if: env.ACCION == '1' || env.ACCION == '2' || env.ACCION == '3'
         run: python3 marketing/mk.py publicar "$ACCION"

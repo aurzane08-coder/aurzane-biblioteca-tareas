@@ -126,3 +126,29 @@ def x(texto, img_url, img_local, enlace, p):
 
 def publicar(r, texto, img_url, img_local, enlace, p):
     return globals()[r](texto, img_url, img_local, enlace, p)
+
+
+def verificar():
+    """Comprueba las credenciales sin publicar nada."""
+    out = {}
+    if configurada('telegram'):
+        try:
+            T = E('TELEGRAM_TOKEN'); me = pedir(f'https://api.telegram.org/bot{T}/getMe')['result']
+            m = pedir(f'https://api.telegram.org/bot{T}/getChatMember?' + urllib.parse.urlencode({'chat_id': E('TELEGRAM_CANAL'), 'user_id': me['id']}))['result']
+            out['telegram'] = f"bot @{me['username']} en {E('TELEGRAM_CANAL')}: {m['status']}" + (' (puede publicar)' if m.get('can_post_messages') else ' (NO puede publicar: hazlo administrador)')
+        except Exception as e: out['telegram'] = 'ERROR ' + str(e)[:200]
+    if configurada('bluesky'):
+        try:
+            s = pedir('https://bsky.social/xrpc/com.atproto.server.createSession', {'identifier': E('BSKY_USUARIO'), 'password': E('BSKY_CLAVE_APP')}, {'Content-Type': 'application/json'})
+            out['bluesky'] = 'ok ' + s['handle']
+        except Exception as e: out['bluesky'] = 'ERROR ' + str(e)[:200]
+    if configurada('mastodon'):
+        try:
+            base = E('MASTODON_SERVIDOR').rstrip('/'); base = base if base.startswith('http') else 'https://' + base
+            a = pedir(base + '/api/v1/apps/verify_credentials', cab={'Authorization': 'Bearer ' + E('MASTODON_TOKEN')})
+            out['mastodon'] = 'ok app ' + a['name']
+        except Exception as e: out['mastodon'] = 'ERROR ' + str(e)[:200]
+    for r in SECRETOS:
+        out.setdefault(r, 'sin configurar' if not configurada(r) else out.get(r))
+    for k, v in out.items(): print(f'{k}: {v}')
+    return out
