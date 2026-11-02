@@ -1,0 +1,31 @@
+name: Caché de los scripts compartidos
+# Los scripts compartidos (aurzane-paleta.js, aurzane-idiomas.js, aurzane-id.js…) se cargan sin número de versión,
+# así que el navegador debe comprobar siempre si hay una versión nueva (no-cache = revalida con ETag, apenas cuesta).
+# Añade la regla al .htaccess de aurzane.com, guardando antes una copia en eliminar/.
+on:
+  push:
+    paths: ['.github/workflows/parche-htaccess-js.yml']
+jobs:
+  parche:
+    runs-on: ubuntu-latest
+    env:
+      SG_KEY: ${{ secrets.SG_KEY }}
+      SG_HOST: ${{ secrets.SG_HOST }}
+      SG_USER: ${{ secrets.SG_USER }}
+      SG_PORT: ${{ secrets.SG_PORT }}
+      SG_PASS: ${{ secrets.SG_PASS }}
+    steps:
+      - run: |
+          mkdir -p ~/.ssh && printf '%s\n' "$SG_KEY" | tr -d '\r' > ~/.ssh/id && chmod 600 ~/.ssh/id
+          if [ -n "$SG_PASS" ]; then ssh-keygen -p -P "$SG_PASS" -N "" -f ~/.ssh/id >/dev/null; fi
+          SSH="ssh -i $HOME/.ssh/id -p ${SG_PORT:-18765} -o StrictHostKeyChecking=accept-new"
+          $SSH "$SG_USER@$SG_HOST" 'bash -s' <<'R' | sed 's/^/::notice title=htaccess::/'
+          cd www/aurzane.com/public_html
+          if grep -q 'scripts-compartidos-aurzane' .htaccess; then echo "ya estaba"; else
+            mkdir -p ../eliminar/htaccess-$(date +%Y%m%d-%H%M) && cp -p .htaccess ../eliminar/htaccess-$(date +%Y%m%d-%H%M)/
+            printf '\n# scripts-compartidos-aurzane: el navegador revalida siempre los scripts compartidos\n<IfModule mod_headers.c>\n<FilesMatch "^aurzane-.*\\.(js|css)$">\nHeader set Cache-Control "no-cache, must-revalidate"\n</FilesMatch>\n</IfModule>\n' >> .htaccess
+            echo "añadido"; fi
+          tail -7 .htaccess | tr '\n' ' '; echo
+          site-tools-client domain-all update id=aurzane.com flush_cache=1 | tr '\n' ' '; echo
+          echo "cabecera: $(curl -s -I https://aurzane.com/aurzane-paleta.js | grep -i cache-control | tr -d '\r')"
+          R
