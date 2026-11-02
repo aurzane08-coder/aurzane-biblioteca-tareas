@@ -760,13 +760,77 @@ def notas_de_corte():
 <main><section class="hero" style="padding-bottom:40px"><div class="wrap">{migas(("Universidades", BASE), ("España", BASE + "espana/"), ("Notas de corte", ""))}
 <h1>Notas de corte <em>{NC_CURSO}</em></h1><p class="lead">{e(desc)}</p>
 <div class="busca" style="max-width:560px"><input type="search" id="ncBusca" placeholder="Busca una carrera: psicología, medicina, enfermería…" aria-label="Buscar carrera"></div>
-<div class="acc" style="margin-top:14px"><a class="btn btn-luz" href="/calculadora-nota-pau/">🧮 Calcula tu nota sobre 14</a></div></div></section>
+<div class="acc" style="margin-top:14px"><a class="btn btn-luz" href="{BASE}que-puedo-estudiar/">🎯 ¿Qué puedo estudiar con mi nota?</a><a class="btn btn-claro" href="/calculadora-nota-pau/">🧮 Calcula tu nota sobre 14</a></div></div></section>
 <div class="wrap"><section class="card" style="margin-top:24px"><ul class="nc-lista" id="ncLista">{top}</ul></section>
 <p class="fuente">Fuente: QEDU, Ministerio de Ciencia, Innovación y Universidades. Actualización automática semanal.</p></div></main>
 <script>(function(){{var i=document.getElementById('ncBusca'),l=document.querySelectorAll('#ncLista li');var n=function(t){{return t.normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-');}};i.addEventListener('input',function(){{var q=n(i.value);l.forEach(function(x){{x.hidden=q&&x.getAttribute('data-n').indexOf(q)<0;}});}});}})();</script>""" + pie()
     escribir('notas-de-corte/index.html', h)
     URLS.append((f'{SITIO}{BASE}notas-de-corte/', '0.9'))
     print('Notas de corte:', len(idx), 'páginas de carrera')
+
+
+def que_puedo_estudiar():
+    """Buscador inverso: con tu nota de admisión, qué grados y universidades públicas te habrían admitido el último curso."""
+    filas = [f for f in NC['filas'] if f.get('nota')]
+    if not filas: return
+    tit_l, uni_l, cc_l, ix = [], [], [], {}
+    def idx(lista, v, k):
+        if (k, v) not in ix: ix[(k, v)] = len(lista); lista.append(v)
+        return ix[(k, v)]
+    datos = []
+    for f in filas:
+        nombre = limpiar_titulo(f['titulo'])
+        if f.get('nivel') == 'GRADOD': nombre = 'Doble grado: ' + nombre
+        datos.append([idx(tit_l, nombre, 't'), idx(uni_l, f['universidad'], 'u'), idx(cc_l, f.get('ccaa') or '', 'c'), round(f['nota'], 3)])
+    datos.sort(key=lambda x: -x[3])
+    js_datos = json.dumps({'t': tit_l, 'u': uni_l, 'c': cc_l, 'd': datos}, ensure_ascii=False, separators=(',', ':'))
+    opc = ''.join(f'<option>{e(c)}</option>' for c in sorted(c for c in cc_l if c))
+    tit = f'¿Qué carrera puedo estudiar con mi nota? Buscador {NC_CURSO}'
+    desc = f'Pon tu nota de admisión sobre 14 y descubre en qué grados y universidades públicas de España habrías entrado con las notas de corte oficiales del curso {NC_CURSO}. Filtra por comunidad autónoma y carrera.'
+    canon = f'{SITIO}{BASE}que-puedo-estudiar/'
+    jl = {'@context': 'https://schema.org', '@graph': [{'@type': 'WebApplication', 'name': '¿Qué puedo estudiar con mi nota?', 'url': canon, 'applicationCategory': 'EducationalApplication', 'operatingSystem': 'Web', 'inLanguage': 'es', 'isAccessibleForFree': True},
+          {'@type': 'FAQPage', 'mainEntity': [
+              {'@type': 'Question', 'name': '¿Qué carreras puedo estudiar con un 8?', 'acceptedAnswer': {'@type': 'Answer', 'text': 'Con una nota de admisión de 8 sobre 14 se entra en muchos grados de ciencias sociales, humanidades, ingenierías y educación en universidades públicas. Pon tu nota en el buscador para ver la lista exacta según las notas de corte del último curso.'}},
+              {'@type': 'Question', 'name': '¿Qué nota se pone, la de acceso o la de admisión?', 'acceptedAnswer': {'@type': 'Answer', 'text': 'La nota de admisión, sobre 14: la de acceso (60% Bachillerato y 40% fase general) más las ponderaciones de la fase específica para cada grado. Si no la sabes, calcúlala con la calculadora de nota de la PAU.'}}]}]}
+    h = cabeza(tit + ' | AURZANE NEXUS', desc, canon, jsonld=jl) + topbar('espana') + f"""
+<main><section class="hero" style="padding-bottom:40px"><div class="wrap">{migas(("Universidades", BASE), ("España", BASE + "espana/"), ("Notas de corte", BASE + "notas-de-corte/"), ("¿Qué puedo estudiar?", ""))}
+<h1>¿Qué puedo estudiar <em>con mi nota</em>?</h1><p class="lead">{e(desc)}</p>
+<div class="qpe-form">
+<label>Tu nota de admisión<span><input type="number" id="qNota" min="5" max="14" step="0.001" value="9" inputmode="decimal"><b>/ 14</b></span></label>
+<label>Comunidad<span><select id="qCc"><option value="">Toda España</option>{opc}</select></span></label>
+<label>Carrera (opcional)<span><input type="search" id="qTxt" placeholder="psicología, enfermería, ingeniería…"></span></label>
+</div>
+<div class="acc" style="margin-top:14px"><a class="btn btn-claro" href="/calculadora-nota-pau/">🧮 No sé mi nota: calcúlala</a></div></div></section>
+<div class="wrap"><section class="card" style="margin-top:24px">
+<div class="qpe-res" id="qRes" aria-live="polite"></div>
+<div class="seg qpe-tabs" id="qTab"><button type="button" data-v="si" aria-pressed="true">Te llega la nota</button><button type="button" data-v="casi" aria-pressed="false">Te falta poco (menos de 0,5)</button></div>
+<div class="scroll"><table class="tnc"><thead><tr><th>Grado</th><th>Universidad</th><th>Nota de corte</th></tr></thead><tbody id="qTabla"></tbody></table></div>
+<button class="btn" id="qMas" type="button" hidden style="margin-top:14px;border:1px solid var(--border);color:var(--text)">Ver más</button>
+<p class="aviso" style="margin-top:14px">Notas de corte finales del curso {NC_CURSO}, convocatoria ordinaria y cupo general, en universidades públicas. Cada año cambian según plazas y solicitudes, así que tómalo como orientación. Las privadas no publican nota de corte.</p></section>
+<p class="fuente">Fuente: QEDU, Ministerio de Ciencia, Innovación y Universidades. Actualización automática semanal.</p></div></main>
+<style>.qpe-form{{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:22px;max-width:900px}}
+.qpe-form label{{display:block;font-size:.85rem;font-weight:600;opacity:.9}}.qpe-form span{{display:flex;align-items:center;gap:8px;margin-top:6px;background:#fff;border-radius:14px;padding:4px 12px;box-shadow:0 14px 30px -14px rgba(0,0,0,.45)}}
+.qpe-form input,.qpe-form select{{flex:1;width:100%;border:0;background:transparent;font:600 1.05rem var(--sans);color:#1d1915;padding:10px 0;min-width:0}}.qpe-form b{{color:#655b50}}
+#qNota{{font:700 1.5rem var(--serif,Georgia,serif)}}
+.qpe-res{{font-size:1.05rem;margin-bottom:14px}}.qpe-res b{{font:700 1.6rem var(--serif,Georgia,serif);color:var(--accent-text)}}
+.qpe-tabs{{display:inline-flex;gap:6px;margin-bottom:12px}}.qpe-tabs button{{border:1px solid var(--border);background:transparent;border-radius:99px;padding:8px 14px;font:600 .9rem var(--sans);color:var(--text-dim);cursor:pointer}}
+.qpe-tabs button[aria-pressed="true"]{{background:var(--accent-text);color:#fff;border-color:transparent}}
+@media (max-width:760px){{.qpe-form{{grid-template-columns:1fr}}}}</style>
+<script>(function(){{var D={js_datos};
+var $=function(i){{return document.getElementById(i);}},tab='si',lim=150,n=function(t){{return t.normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase();}};
+var nt=D.t.map(n),f=function(x){{return x.toLocaleString('es-ES',{{maximumFractionDigits:3}});}};
+function pintar(){{var nota=parseFloat(String($('qNota').value).replace(',','.'))||0,cc=$('qCc').value,q=n($('qTxt').value.trim());
+var si=[],casi=[],grados={{}};D.d.forEach(function(r){{if(cc&&D.c[r[2]]!==cc)return;if(q&&nt[r[0]].indexOf(q)<0)return;if(r[3]<=nota){{si.push(r);grados[r[0]]=1;}}else if(r[3]-nota<=0.5)casi.push(r);}});
+$('qRes').innerHTML='Con un <b>'+f(nota)+'</b> habrías entrado en <b>'+si.length.toLocaleString('es-ES')+'</b> '+(si.length===1?'opción':'opciones')+' ('+Object.keys(grados).length.toLocaleString('es-ES')+(Object.keys(grados).length===1?' grado':' grados distintos')+')'+(cc?' en '+cc:'')+'. Te faltó poco en '+casi.length.toLocaleString('es-ES')+'.';
+var l=(tab==='si'?si:casi.slice().reverse()),h='';l.slice(0,lim).forEach(function(r){{h+='<tr><td><b>'+D.t[r[0]]+'</b></td><td>'+D.u[r[1]]+'<small>'+D.c[r[2]]+'</small></td><td class="nota">'+f(r[3])+'</td></tr>';}});
+$('qTabla').innerHTML=h||'<tr><td colspan="3">No hay resultados con estos filtros.</td></tr>';$('qMas').hidden=l.length<=lim;}}
+['qNota','qCc','qTxt'].forEach(function(i){{$(i).addEventListener('input',function(){{lim=150;pintar();}});}});
+$('qTab').addEventListener('click',function(e){{var b=e.target.closest('button');if(!b)return;tab=b.getAttribute('data-v');lim=150;$('qTab').querySelectorAll('button').forEach(function(x){{x.setAttribute('aria-pressed',x===b);}});pintar();}});
+$('qMas').addEventListener('click',function(){{lim+=150;pintar();}});
+var u=new URLSearchParams(location.search);if(u.get('nota'))$('qNota').value=u.get('nota');pintar();}})();</script>""" + pie()
+    escribir('que-puedo-estudiar/index.html', h)
+    URLS.append((canon, '0.9'))
+    print('Qué puedo estudiar:', len(datos), 'filas')
 
 
 def mi_lista():
@@ -837,6 +901,7 @@ for p in ORDEN_P:
         vec = [v for v in sorted(por_ciudad[u['ciudad']], key=lambda v: -v['n']) if v is not u] if u['ciudad'] else []
         ficha(u, vec)
 notas_de_corte()
+que_puedo_estudiar()
 mi_lista()
 acerca()
 sitemap()
