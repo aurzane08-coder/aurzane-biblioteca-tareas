@@ -1,0 +1,674 @@
+{
+ "articulos": {
+  "pid": "7241677",
+  "q": "reading tablet coffee",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/7241677/",
+  "src": "https://images.pexels.com/photos/7241677/pexels-photo-7241677.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "biblio-build": {
+  "pid": "30508599",
+  "q": "ancient architecture columns",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/30508599/",
+  "src": "https://images.pexels.com/photos/30508599/pexels-photo-30508599.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "biblio-learn": {
+  "pid": "34162715",
+  "q": "students learning classroom",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/34162715/",
+  "src": "https://images.pexels.com/photos/34162715/pexels-photo-34162715.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "biblio-live": {
+  "pid": "13911188",
+  "q": "wellness nature yoga",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/13911188/",
+  "src": "https://images.pexels.com/photos/13911188/pexels-photo-13911188.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "biblio-mind": {
+  "pid": "40550188",
+  "q": "psychology books",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/40550188/",
+  "src": "https://images.pexels.com/photos/40550188/pexels-photo-40550188.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "biblio-nexus": {
+  "pid": "5203849",
+  "q": "technology data network",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/5203849/",
+  "src": "https://images.pexels.com/photos/5203849/pexels-photo-5203849.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "biblioteca": {
+  "pid": "11222031",
+  "q": "library bookshelves",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/11222031/",
+  "src": "https://images.pexels.com/photos/11222031/pexels-photo-11222031.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "calc-calorias": {
+  "pid": "10506640",
+  "q": "healthy meal plate vegetables",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/10506640/",
+  "src": "https://images.pexels.com/photos/10506640/pexels-photo-10506640.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "calc-embarazo": {
+  "pid": "8365431",
+  "q": "pregnant woman sunlight",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/8365431/",
+  "src": "https://images.pexels.com/photos/8365431/pexels-photo-8365431.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "calc-hipoteca": {
+  "pid": "7578992",
+  "q": "house keys new home",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/7578992/",
+  "src": "https://images.pexels.com/photos/7578992/pexels-photo-7578992.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "calc-pau": {
+  "pid": "7092515",
+  "q": "student studying exam desk",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/7092515/",
+  "src": "https://images.pexels.com/photos/7092515/pexels-photo-7092515.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "calc-reforma": {
+  "pid": "5691527",
+  "q": "apartment renovation interior",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/5691527/",
+  "src": "https://images.pexels.com/photos/5691527/pexels-photo-5691527.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "calc-sueldo": {
+  "pid": "7111588",
+  "q": "calculator coins desk",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/7111588/",
+  "src": "https://images.pexels.com/photos/7111588/pexels-photo-7111588.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "curso-metod": {
+  "pid": "8770719",
+  "q": "scientist microscope laboratory",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/8770719/",
+  "src": "https://images.pexels.com/photos/8770719/pexels-photo-8770719.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "curso-neuro": {
+  "pid": "5723875",
+  "q": "brain anatomy model",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/5723875/",
+  "src": "https://images.pexels.com/photos/5723875/pexels-photo-5723875.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "frase-71831c29": {
+  "pid": "10533388",
+  "q": "forest path light",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/10533388/",
+  "src": "https://images.pexels.com/photos/10533388/pexels-photo-10533388.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "frase-89686e7c": {
+  "pid": "16303259",
+  "q": "sunrise mountains",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/16303259/",
+  "src": "https://images.pexels.com/photos/16303259/pexels-photo-16303259.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "frase-8ddc6e9a": {
+  "pid": "27638159",
+  "q": "starry night sky",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/27638159/",
+  "src": "https://images.pexels.com/photos/27638159/pexels-photo-27638159.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "frase-9b2daa33": {
+  "pid": "12190785",
+  "q": "misty lake morning",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/12190785/",
+  "src": "https://images.pexels.com/photos/12190785/pexels-photo-12190785.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "frase-b424a195": {
+  "pid": "27843530",
+  "q": "golden hour meadow",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/27843530/",
+  "src": "https://images.pexels.com/photos/27843530/pexels-photo-27843530.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "frase-c5f24133": {
+  "pid": "8757627",
+  "q": "green leaves sunlight",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/8757627/",
+  "src": "https://images.pexels.com/photos/8757627/pexels-photo-8757627.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "frase-fee27969": {
+  "pid": "36156275",
+  "q": "rain drops window",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/36156275/",
+  "src": "https://images.pexels.com/photos/36156275/pexels-photo-36156275.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "libro-abuso-explotacion-sexual-adolescentes-violencia-sexual": {
+  "pid": "34025116",
+  "q": "open book reading",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/34025116/",
+  "src": "https://images.pexels.com/photos/34025116/pexels-photo-34025116.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "libro-agentes-cambio-educacion-emocional-educadoras-tecnicos": {
+  "pid": "32095570",
+  "q": "emotions face portrait",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/32095570/",
+  "src": "https://images.pexels.com/photos/32095570/pexels-photo-32095570.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "libro-antropologia-sexualidad": {
+  "pid": "39919265",
+  "q": "couple holding hands",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/39919265/",
+  "src": "https://images.pexels.com/photos/39919265/pexels-photo-39919265.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "libro-aplicacion-paradigma-calidad-vida-intervencion-personas": {
+  "pid": "8037024",
+  "q": "sleep night",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/8037024/",
+  "src": "https://images.pexels.com/photos/8037024/pexels-photo-8037024.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "libro-bienestar-subjetivo-15-anos-repeticion-curso": {
+  "pid": "6541080",
+  "q": "sleep night",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/6541080/",
+  "src": "https://images.pexels.com/photos/6541080/pexels-photo-6541080.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "libro-caso-practico-alumno-riesgo-presentar-dificultades": {
+  "pid": "8553899",
+  "q": "student reading notes",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/8553899/",
+  "src": "https://images.pexels.com/photos/8553899/pexels-photo-8553899.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "libro-construyendo-estrategias-promocion-salud-mental-prevencion": {
+  "pid": "6541063",
+  "q": "sleep night",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/6541063/",
+  "src": "https://images.pexels.com/photos/6541063/pexels-photo-6541063.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "libro-delincuencia-drogas-estudio-grupo-marginado-respuestas": {
+  "pid": "3007370",
+  "q": "open book reading",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/3007370/",
+  "src": "https://images.pexels.com/photos/3007370/pexels-photo-3007370.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "libro-docencia-universitaria-clave-neuroeducativa-viejos-problemas": {
+  "pid": "8378740",
+  "q": "brain illustration",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/8378740/",
+  "src": "https://images.pexels.com/photos/8378740/pexels-photo-8378740.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "libro-doctrina-estoyco-filosofo-epicteto-que-se": {
+  "pid": "36699725",
+  "q": "philosophy statue",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/36699725/",
+  "src": "https://images.pexels.com/photos/36699725/pexels-photo-36699725.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "libro-educacion-valores-desarrollo-moral-jornadas-celebradas": {
+  "pid": "32058717",
+  "q": "family generations",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/32058717/",
+  "src": "https://images.pexels.com/photos/32058717/pexels-photo-32058717.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "libro-emociones-politicas-ninos-ninas": {
+  "pid": "38074344",
+  "q": "emotions face portrait",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/38074344/",
+  "src": "https://images.pexels.com/photos/38074344/pexels-photo-38074344.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "libro-encontrar-nuestros-hijos-testimonio-madre": {
+  "pid": "34292518",
+  "q": "open book reading",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/34292518/",
+  "src": "https://images.pexels.com/photos/34292518/pexels-photo-34292518.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "libro-estilo-crianza-construccion-autoconcepto-adolescentes": {
+  "pid": "1382924",
+  "q": "portrait thoughtful",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/1382924/",
+  "src": "https://images.pexels.com/photos/1382924/pexels-photo-1382924.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "libro-esto-va-respeto-guia-lenguaje-anticapacitista": {
+  "pid": "34774312",
+  "q": "conversation",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/34774312/",
+  "src": "https://images.pexels.com/photos/34774312/pexels-photo-34774312.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "libro-etica-del-psicologo": {
+  "pid": "4069090",
+  "q": "open book reading",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/4069090/",
+  "src": "https://images.pexels.com/photos/4069090/pexels-photo-4069090.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "libro-evaluacion-clinica-adultos": {
+  "pid": "6712693",
+  "q": "therapist office",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/6712693/",
+  "src": "https://images.pexels.com/photos/6712693/pexels-photo-6712693.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "libro-evaluacion-demencias-recurso-general-alumnos-master": {
+  "pid": "28124384",
+  "q": "open book reading",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/28124384/",
+  "src": "https://images.pexels.com/photos/28124384/pexels-photo-28124384.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "libro-fundamentos-psicologia-salud": {
+  "pid": "8187446",
+  "q": "health wellbeing",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/8187446/",
+  "src": "https://images.pexels.com/photos/8187446/pexels-photo-8187446.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "libro-idea-jeneral-filosofia-positiva-i-sicolojia": {
+  "pid": "39619049",
+  "q": "philosophy statue",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/39619049/",
+  "src": "https://images.pexels.com/photos/39619049/pexels-photo-39619049.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "libro-impacto-lo-digital-comunicacion-relaciones-adolescentes": {
+  "pid": "5239561",
+  "q": "open book reading",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/5239561/",
+  "src": "https://images.pexels.com/photos/5239561/pexels-photo-5239561.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "libro-inclusion-personas-mayores-planificacion-emergencias-perspec": {
+  "pid": "5425688",
+  "q": "open book reading",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/5425688/",
+  "src": "https://images.pexels.com/photos/5425688/pexels-photo-5425688.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "libro-maltrato-infantil-teoria-clinica-psicoanalitica": {
+  "pid": "6274722",
+  "q": "child playing parent",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/6274722/",
+  "src": "https://images.pexels.com/photos/6274722/pexels-photo-6274722.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "libro-manual-go-byst-programa-breve-sensibilizacion": {
+  "pid": "39588399",
+  "q": "open book reading",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/39588399/",
+  "src": "https://images.pexels.com/photos/39588399/pexels-photo-39588399.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "libro-metodo-definitivo-tener-hijos-lectores-consejos": {
+  "pid": "1132577",
+  "q": "open book reading",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/1132577/",
+  "src": "https://images.pexels.com/photos/1132577/pexels-photo-1132577.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "libro-mi-vida-junto-toc-ansiedad-social": {
+  "pid": "6231802",
+  "q": "friends talking",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/6231802/",
+  "src": "https://images.pexels.com/photos/6231802/pexels-photo-6231802.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "libro-organizaciones-emocionalmente-inteligentes-experiencias-eval": {
+  "pid": "39842764",
+  "q": "emotions face portrait",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/39842764/",
+  "src": "https://images.pexels.com/photos/39842764/pexels-photo-39842764.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "libro-prevencion-acoso-ciberacoso-traves-clases-educacion": {
+  "pid": "28426413",
+  "q": "open book reading",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/28426413/",
+  "src": "https://images.pexels.com/photos/28426413/pexels-photo-28426413.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "libro-profesionales-salud-eficientes-siglo-xxi-competencias": {
+  "pid": "2380263",
+  "q": "student reading notes",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/2380263/",
+  "src": "https://images.pexels.com/photos/2380263/pexels-photo-2380263.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "libro-programas-nacionales-ciudades-comunidades-amigables-personas": {
+  "pid": "3007370",
+  "q": "open book reading",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/3007370/",
+  "src": "https://images.pexels.com/photos/3007370/pexels-photo-3007370.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "libro-promocion-parentalidad-positiva-durante-preparacion-nacimien": {
+  "pid": "6541075",
+  "q": "sleep night",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/6541075/",
+  "src": "https://images.pexels.com/photos/6541075/pexels-photo-6541075.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "libro-psicologia-desarrollo-mundo-adolescente": {
+  "pid": "17066489",
+  "q": "family generations",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/17066489/",
+  "src": "https://images.pexels.com/photos/17066489/pexels-photo-17066489.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "libro-psicologia-educacional": {
+  "pid": "28426413",
+  "q": "open book reading",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/28426413/",
+  "src": "https://images.pexels.com/photos/28426413/pexels-photo-28426413.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "libro-psicologia-psicoanalitica-psicoanalisis-educacion": {
+  "pid": "28426413",
+  "q": "open book reading",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/28426413/",
+  "src": "https://images.pexels.com/photos/28426413/pexels-photo-28426413.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "libro-psicologia-pueblo-charro-segun-obras-don": {
+  "pid": "39588399",
+  "q": "open book reading",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/39588399/",
+  "src": "https://images.pexels.com/photos/39588399/pexels-photo-39588399.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "libro-psicologo-crisis-de-la-vida": {
+  "pid": "39588399",
+  "q": "open book reading",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/39588399/",
+  "src": "https://images.pexels.com/photos/39588399/pexels-photo-39588399.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "libro-reglas-y-consejos-cajal": {
+  "pid": "8036315",
+  "q": "research papers",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/8036315/",
+  "src": "https://images.pexels.com/photos/8036315/pexels-photo-8036315.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "libro-salud-mental-peru-progresos-hacia-desinstitucionalizacion": {
+  "pid": "6668702",
+  "q": "health wellbeing",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/6668702/",
+  "src": "https://images.pexels.com/photos/6668702/pexels-photo-6668702.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "libro-sentido-vida-mental": {
+  "pid": "28426413",
+  "q": "open book reading",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/28426413/",
+  "src": "https://images.pexels.com/photos/28426413/pexels-photo-28426413.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "libro-servicios-salud-mental-momentos-crisis-promover": {
+  "pid": "7530606",
+  "q": "health wellbeing",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/7530606/",
+  "src": "https://images.pexels.com/photos/7530606/pexels-photo-7530606.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "libro-sindromes-clinicos": {
+  "pid": "3007370",
+  "q": "open book reading",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/3007370/",
+  "src": "https://images.pexels.com/photos/3007370/pexels-photo-3007370.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "libro-soltar-amarras-introduccion-salud-mental-colectiva": {
+  "pid": "6815701",
+  "q": "health wellbeing",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/6815701/",
+  "src": "https://images.pexels.com/photos/6815701/pexels-photo-6815701.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "libro-su-unico-hijo": {
+  "pid": "39588399",
+  "q": "open book reading",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/39588399/",
+  "src": "https://images.pexels.com/photos/39588399/pexels-photo-39588399.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "libro-subjetividades-emociones-politicas-maestros-maestras": {
+  "pid": "30048912",
+  "q": "emotions face portrait",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/30048912/",
+  "src": "https://images.pexels.com/photos/30048912/pexels-photo-30048912.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "libro-traductologia-neurocognicion-como-se-organiza-sistema": {
+  "pid": "9228382",
+  "q": "brain illustration",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/9228382/",
+  "src": "https://images.pexels.com/photos/9228382/pexels-photo-9228382.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "libro-tristeza-contemporanea-ensayo-sobre-grandes-corrientes": {
+  "pid": "1132577",
+  "q": "open book reading",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/1132577/",
+  "src": "https://images.pexels.com/photos/1132577/pexels-photo-1132577.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "libro-verguenza-humillacion-aislamiento-social-como-privacion": {
+  "pid": "14894505",
+  "q": "friends talking",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/14894505/",
+  "src": "https://images.pexels.com/photos/14894505/pexels-photo-14894505.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "nc-bellas-artes": {
+  "pid": "8199142",
+  "q": "university lecture hall",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/8199142/",
+  "src": "https://images.pexels.com/photos/8199142/pexels-photo-8199142.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "nc-biologia": {
+  "pid": "6129872",
+  "q": "biology laboratory",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/6129872/",
+  "src": "https://images.pexels.com/photos/6129872/pexels-photo-6129872.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "nc-ciencia-y-tecnologia-de-los-alimentos": {
+  "pid": "8199146",
+  "q": "university lecture hall",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/8199146/",
+  "src": "https://images.pexels.com/photos/8199146/pexels-photo-8199146.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "nc-ciencias-ambientales": {
+  "pid": "29534728",
+  "q": "university lecture hall",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/29534728/",
+  "src": "https://images.pexels.com/photos/29534728/pexels-photo-29534728.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "nc-derecho": {
+  "pid": "8731042",
+  "q": "law books",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/8731042/",
+  "src": "https://images.pexels.com/photos/8731042/pexels-photo-8731042.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "nc-educacion-primaria": {
+  "pid": "5212667",
+  "q": "teacher classroom",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/5212667/",
+  "src": "https://images.pexels.com/photos/5212667/pexels-photo-5212667.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "nc-enfermeria": {
+  "pid": "6129686",
+  "q": "nurse hospital",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/6129686/",
+  "src": "https://images.pexels.com/photos/6129686/pexels-photo-6129686.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "nc-estudios-ingleses": {
+  "pid": "10246141",
+  "q": "university lecture hall",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/10246141/",
+  "src": "https://images.pexels.com/photos/10246141/pexels-photo-10246141.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "nc-ingenieria-en-tecnologias-industriales": {
+  "pid": "8470864",
+  "q": "engineering blueprint",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/8470864/",
+  "src": "https://images.pexels.com/photos/8470864/pexels-photo-8470864.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "nc-ingenieria-mecanica": {
+  "pid": "29502895",
+  "q": "engineering blueprint",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/29502895/",
+  "src": "https://images.pexels.com/photos/29502895/pexels-photo-29502895.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "nc-odontologia": {
+  "pid": "37458081",
+  "q": "dentist clinic",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/37458081/",
+  "src": "https://images.pexels.com/photos/37458081/pexels-photo-37458081.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "nc-pedagogia": {
+  "pid": "8197541",
+  "q": "university lecture hall",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/8197541/",
+  "src": "https://images.pexels.com/photos/8197541/pexels-photo-8197541.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "nc-relaciones-laborales-y-recursos-humanos": {
+  "pid": "30105084",
+  "q": "university lecture hall",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/30105084/",
+  "src": "https://images.pexels.com/photos/30105084/pexels-photo-30105084.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "nc-terapia-ocupacional": {
+  "pid": "39134581",
+  "q": "university lecture hall",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/39134581/",
+  "src": "https://images.pexels.com/photos/39134581/pexels-photo-39134581.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "notas-corte": {
+  "pid": "37882792",
+  "q": "university students campus",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/37882792/",
+  "src": "https://images.pexels.com/photos/37882792/pexels-photo-37882792.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "ovp": {
+  "pid": "32751600",
+  "q": "young student thinking future",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/32751600/",
+  "src": "https://images.pexels.com/photos/32751600/pexels-photo-32751600.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "test-ansiedad": {
+  "pid": "7665859",
+  "q": "calm woman breathing nature",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/7665859/",
+  "src": "https://images.pexels.com/photos/7665859/pexels-photo-7665859.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "test-autocompasion": {
+  "pid": "6793881",
+  "q": "hands holding warm light",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/6793881/",
+  "src": "https://images.pexels.com/photos/6793881/pexels-photo-6793881.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "test-autoestima": {
+  "pid": "24205642",
+  "q": "confident woman portrait smile",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/24205642/",
+  "src": "https://images.pexels.com/photos/24205642/pexels-photo-24205642.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "test-bienestar": {
+  "pid": "20359824",
+  "q": "morning sunlight coffee calm",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/20359824/",
+  "src": "https://images.pexels.com/photos/20359824/pexels-photo-20359824.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "test-depresion": {
+  "pid": "4581380",
+  "q": "person rainy window",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/4581380/",
+  "src": "https://images.pexels.com/photos/4581380/pexels-photo-4581380.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "test-habitos": {
+  "pid": "18368851",
+  "q": "healthy breakfast fruit",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/18368851/",
+  "src": "https://images.pexels.com/photos/18368851/pexels-photo-18368851.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "test-personalidad": {
+  "pid": "6311760",
+  "q": "person thinking window light",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/6311760/",
+  "src": "https://images.pexels.com/photos/6311760/pexels-photo-6311760.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "test-satisfaccion": {
+  "pid": "8919875",
+  "q": "happy person sunset field",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/8919875/",
+  "src": "https://images.pexels.com/photos/8919875/pexels-photo-8919875.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "test-sueno": {
+  "pid": "10912447",
+  "q": "cozy bed sleeping",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/10912447/",
+  "src": "https://images.pexels.com/photos/10912447/pexels-photo-10912447.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "test-tdah": {
+  "pid": "6991824",
+  "q": "busy desk sticky notes",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/6991824/",
+  "src": "https://images.pexels.com/photos/6991824/pexels-photo-6991824.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "universidades": {
+  "pid": "36363665",
+  "q": "university building campus",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/36363665/",
+  "src": "https://images.pexels.com/photos/36363665/pexels-photo-36363665.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ }
+}
