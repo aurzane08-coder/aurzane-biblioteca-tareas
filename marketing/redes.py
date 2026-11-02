@@ -100,14 +100,35 @@ IG = 'https://graph.instagram.com/v21.0/'
 def instagram(texto, img_url, img_local, enlace, p):
     """Instagram API con inicio de sesión de Instagram (cuenta profesional, sin página de Facebook)."""
     tk = E('IG_TOKEN')
-    ig = E('IG_USUARIO_ID') or pedir(IG + 'me?' + urllib.parse.urlencode({'fields': 'user_id', 'access_token': tk}))['user_id']
-    c = pedir(IG + f'{ig}/media', {'image_url': img_url, 'caption': texto[:2200], 'access_token': tk})
+    base = ig_base(tk)
+    ig = ig_cuenta(tk)
+    c = pedir(base + f'{ig}/media', {'image_url': img_url, 'caption': texto[:2200], 'access_token': tk})
     for _ in range(12):
-        s = pedir(IG + c['id'] + '?' + urllib.parse.urlencode({'fields': 'status_code', 'access_token': tk}))
+        s = pedir(base + c['id'] + '?' + urllib.parse.urlencode({'fields': 'status_code', 'access_token': tk}))
         if s.get('status_code') == 'FINISHED': break
         if s.get('status_code') == 'ERROR': raise RuntimeError('Instagram rechazó la imagen')
         time.sleep(5)
-    return pedir(IG + f'{ig}/media_publish', {'creation_id': c['id'], 'access_token': tk})['id']
+    return pedir(base + f'{ig}/media_publish', {'creation_id': c['id'], 'access_token': tk})['id']
+
+
+def ig_base(tk):
+    # token de Instagram Login (empieza por IG) -> graph.instagram.com; token de usuario del sistema de Meta (EAA...) -> graph.facebook.com
+    return IG if tk.startswith('IG') else GRAPH
+
+
+def ig_cuenta(tk):
+    if E('IG_USUARIO_ID'): return E('IG_USUARIO_ID')
+    if tk.startswith('IG'):
+        return pedir(IG + 'me?' + urllib.parse.urlencode({'fields': 'user_id', 'access_token': tk}))['user_id']
+    # usuario del sistema: busca la cuenta de Instagram asignada a través de sus cuentas o del porfolio
+    neg = pedir(GRAPH + 'me/businesses?' + urllib.parse.urlencode({'access_token': tk})).get('data', [])
+    for b in neg:
+        for campo in ('owned_instagram_accounts', 'instagram_accounts'):
+            try:
+                d = pedir(GRAPH + f"{b['id']}/{campo}?" + urllib.parse.urlencode({'fields': 'id,username', 'access_token': tk})).get('data', [])
+                if d: return d[0]['id']
+            except Exception: pass
+    raise RuntimeError('No encuentro la cuenta de Instagram asignada al usuario del sistema')
 
 
 def renovar_instagram():
@@ -155,8 +176,9 @@ def verificar():
         except Exception as e: out['bluesky'] = 'ERROR ' + str(e)[:200]
     if configurada('instagram'):
         try:
-            me = pedir(IG + 'me?' + urllib.parse.urlencode({'fields': 'user_id,username,account_type', 'access_token': E('IG_TOKEN')}))
-            out['instagram'] = f"ok @{me.get('username')} ({me.get('account_type')})"
+            tk = E('IG_TOKEN'); ig = ig_cuenta(tk)
+            me = pedir(ig_base(tk) + ig + '?' + urllib.parse.urlencode({'fields': 'username', 'access_token': tk}))
+            out['instagram'] = f"ok @{me.get('username')} (cuenta {ig})"
         except Exception as e: out['instagram'] = 'ERROR ' + str(e)[:200]
     if configurada('mastodon'):
         try:
