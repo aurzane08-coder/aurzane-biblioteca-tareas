@@ -71,6 +71,7 @@ jobs:
         if: env.SG_KEY != ''
         run: |
           R="$SG_USER@$SG_HOST:www/aurzane.com"
+          $SSH "$SG_USER@$SG_HOST" "mkdir -p www/aurzane.com/public_html/marketing/img www/aurzane.com/public_html/ir"
           if [ "$ACCION" = planificar ]; then
             rsync -rlz --ignore-existing -e "$SSH" marketing/img/ "$R/public_html/marketing/img/"
             rsync -rlz --checksum -e "$SSH" marketing/web/ir/ marketing/salida/ir/ "$R/public_html/ir/"
