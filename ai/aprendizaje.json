@@ -25,15 +25,15 @@
  ],
  "ed:De Gruyter": [
   0,
-  2
+  3
  ],
  "ed:Common Ground Research Networks eBooks": [
   0,
-  4
+  6
  ],
  "ed:IntechOpen": [
   0,
-  2
+  3
  ],
  "ed:Frontiers in psychiatry": [
   0,
@@ -84,6 +84,34 @@
   1
  ],
  "ed:Frontiers in digital health": [
+  0,
+  1
+ ],
+ "ed:Diseases (Basel, Switzerland)": [
+  0,
+  1
+ ],
+ "ed:Healthcare (Basel, Switzerland)": [
+  0,
+  1
+ ],
+ "ed:Neurobiology of sleep and circadian rhythms": [
+  0,
+  1
+ ],
+ "ed:Frontiers in plant science": [
+  0,
+  1
+ ],
+ "ed:Journal of clinical medicine": [
+  0,
+  2
+ ],
+ "ed:Frontiers in global women's health": [
+  0,
+  1
+ ],
+ "ed:Depression and anxiety": [
   0,
   1
  ]

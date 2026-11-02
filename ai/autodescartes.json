@@ -1,75 +1,87 @@
 [
  {
   "fecha": "2026-11-02",
-  "id": "pmc-PMC13655533",
+  "id": "pmc-PMC13706237",
   "tipo": "estudio",
-  "titulo": "A scoping review of generative AI and digital twins in tackling loneliness during hospital-to-home transitions",
-  "url": "https://europepmc.org/article/PMC/PMC13655533",
-  "motivo": "No tiene un PDF libre que se pueda descargar"
+  "titulo": "Perioperative Anxiety in Total Knee Arthroplasty: Clinical Consequences, Potential Mechanisms, and Management-A Narrative Review",
+  "url": "https://europepmc.org/article/PMC/PMC13706237",
+  "motivo": "No tiene un PDF libre que se pueda descargar",
+  "probados": [
+   "HTTP Error 403: Forbidden https://doi.org/10.3390/jcm15208140"
+  ]
  },
  {
   "fecha": "2026-11-02",
-  "id": "pmc-PMC13720594",
+  "id": "pmc-PMC13695868",
   "tipo": "estudio",
-  "titulo": "Insomnia and medication overuse headache: neurobiological links, reciprocal interactions, and integrated therapeutic strategies",
-  "url": "https://europepmc.org/article/PMC/PMC13720594",
-  "motivo": "No tiene un PDF libre que se pueda descargar"
+  "titulo": "Depression and Heart Failure With Preserved Ejection Fraction: An Inflammatory Perspective",
+  "url": "https://europepmc.org/article/PMC/PMC13695868",
+  "motivo": "No tiene un PDF libre que se pueda descargar",
+  "probados": [
+   "HTTP Error 403: Forbidden https://doi.org/10.1155/da/7169650"
+  ]
  },
  {
   "fecha": "2026-11-02",
-  "id": "pmc-PMC13653765",
+  "id": "pmc-PMC13720362",
   "tipo": "estudio",
-  "titulo": "Psychotherapy and Teletherapy in U.S. Latinx Populations: A Narrative Review",
-  "url": "https://europepmc.org/article/PMC/PMC13653765",
-  "motivo": "No tiene un PDF libre que se pueda descargar"
+  "titulo": "Mental health, resilience, and culturally congruent care among Muslim and Arab American women in the United States: a scoping review",
+  "url": "https://europepmc.org/article/PMC/PMC13720362",
+  "motivo": "No tiene un PDF libre que se pueda descargar",
+  "probados": []
  },
  {
   "fecha": "2026-11-02",
-  "id": "pmc-PMC13660419",
+  "id": "pmc-PMC13706483",
   "tipo": "estudio",
-  "titulo": "Does exercise environment moderate the effects of Tai Chi on depression and anxiety? A systematic review and meta-analysis of indoor vs. outdoor practice settin",
-  "url": "https://europepmc.org/article/PMC/PMC13660419",
-  "motivo": "No tiene un PDF libre que se pueda descargar"
+  "titulo": "Intensive Interventions for Burnout, Stress and Occupational Well-Being: A Critical Review and a Delivery-Format Framework",
+  "url": "https://europepmc.org/article/PMC/PMC13706483",
+  "motivo": "No tiene un PDF libre que se pueda descargar",
+  "probados": [
+   "HTTP Error 403: Forbidden https://doi.org/10.3390/jcm15207887"
+  ]
  },
  {
   "fecha": "2026-11-02",
-  "id": "pmc-PMC13660362",
+  "id": "pmc-PMC13691542",
   "tipo": "estudio",
-  "titulo": "Social prescribing for anxiety and depression in older adults: mechanistic pathways, implementation requirements, and limitations of current evidence",
-  "url": "https://europepmc.org/article/PMC/PMC13660362",
-  "motivo": "No tiene un PDF libre que se pueda descargar"
+  "titulo": "Microplastic contamination in agricultural systems: impacts on plant productivity, economic losses, and supply chain resilience",
+  "url": "https://europepmc.org/article/PMC/PMC13691542",
+  "motivo": "No tiene un PDF libre que se pueda descargar",
+  "probados": []
  },
  {
   "fecha": "2026-11-02",
-  "id": "pmc-PMC13714471",
+  "id": "pmc-PMC13694880",
   "tipo": "estudio",
-  "titulo": "What the Controlled-Vocabulary Layer Cannot Say About Where a Depression Biomarker Was Measured: A Meta Research Analysis of MeSH Sampling-Compartment Coding, J",
-  "url": "https://europepmc.org/article/PMC/PMC13714471",
-  "motivo": "No tiene un PDF libre que se pueda descargar"
+  "titulo": "Intrinsically photosensitive retinal ganglion cells: Context-Dependent resilience and vulnerability",
+  "url": "https://europepmc.org/article/PMC/PMC13694880",
+  "motivo": "No tiene un PDF libre que se pueda descargar",
+  "probados": [
+   "200 text/html;charset=UT https://doi.org/10.1016/j.nbscr.2026.100153"
+  ]
  },
  {
   "fecha": "2026-11-02",
-  "id": "pmc-PMC13613012",
+  "id": "pmc-PMC13704590",
   "tipo": "estudio",
-  "titulo": "Effects of Aromatherapy on Stress and Anxiety Among Intensive Care Unit Nurses: A Systematic Review",
-  "url": "https://europepmc.org/article/PMC/PMC13613012",
-  "motivo": "No tiene un PDF libre que se pueda descargar"
+  "titulo": "Work Demands, Burnout, and Withdrawal Behaviors Among Healthcare Workers: A Systematic Review and Meta-Analysis",
+  "url": "https://europepmc.org/article/PMC/PMC13704590",
+  "motivo": "No tiene un PDF libre que se pueda descargar",
+  "probados": [
+   "HTTP Error 403: Forbidden https://doi.org/10.3390/healthcare14203542"
+  ]
  },
  {
   "fecha": "2026-11-02",
-  "id": "pmc-PMC13714477",
+  "id": "pmc-PMC13703274",
   "tipo": "estudio",
-  "titulo": "Maternal Depression and Its Relationship With Cognitive Development in Children Aged 0 to 36 Months: A Systematic Review",
-  "url": "https://europepmc.org/article/PMC/PMC13714477",
-  "motivo": "No tiene un PDF libre que se pueda descargar"
- },
- {
-  "fecha": "2026-11-02",
-  "id": "pmc-PMC13661500",
-  "tipo": "estudio",
-  "titulo": "Efficacy of acupuncture, Chinese herbal medicine, combined acupuncture-herbal therapy, and western medication for adult chronic insomnia: a network meta-analysi",
-  "url": "https://europepmc.org/article/PMC/PMC13661500",
-  "motivo": "No tiene un PDF libre que se pueda descargar"
+  "titulo": "Relationship Between Social Isolation, Loneliness, and Systemic Inflammation: A Scoping Review of Biological Signatures and Clinical Outcomes",
+  "url": "https://europepmc.org/article/PMC/PMC13703274",
+  "motivo": "No tiene un PDF libre que se pueda descargar",
+  "probados": [
+   "HTTP Error 403: Forbidden https://doi.org/10.3390/diseases14100388"
+  ]
  },
  {
   "fecha": "2026-11-02",
@@ -77,7 +89,8 @@
   "tipo": "libro",
   "titulo": "Revealing Care",
   "url": "https://doi.org/10.18848/hlthbi/b5",
-  "motivo": "No tiene un PDF libre que se pueda descargar"
+  "motivo": "No tiene un PDF libre que se pueda descargar",
+  "probados": []
  },
  {
   "fecha": "2026-11-02",
@@ -85,7 +98,8 @@
   "tipo": "libro",
   "titulo": "Learning by Design",
   "url": "https://doi.org/10.18848/lrnrbi/b65",
-  "motivo": "No tiene un PDF libre que se pueda descargar"
+  "motivo": "No tiene un PDF libre que se pueda descargar",
+  "probados": []
  },
  {
   "fecha": "2026-11-02",
@@ -93,7 +107,8 @@
   "tipo": "libro",
   "titulo": "The Evolving Landscape of Workplace - Challenges and Opportunities [Working Title]",
   "url": "https://doi.org/10.5772/intechopen.1014436",
-  "motivo": "No tiene un PDF libre que se pueda descargar"
+  "motivo": "No tiene un PDF libre que se pueda descargar",
+  "probados": []
  },
  {
   "fecha": "2026-11-02",
@@ -101,6 +116,7 @@
   "tipo": "libro",
   "titulo": "Ontology and Time 1: A Foundation for Temporal Reality",
   "url": "https://doi.org/10.1515/9783112233795",
-  "motivo": "No tiene un PDF libre que se pueda descargar"
+  "motivo": "No tiene un PDF libre que se pueda descargar",
+  "probados": []
  }
 ]
