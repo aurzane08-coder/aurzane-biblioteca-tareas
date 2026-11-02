@@ -1,0 +1,14 @@
+name: Prueba musica
+on:
+  push:
+    paths: ['.github/workflows/prueba-musica.yml']
+jobs:
+  p:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          UA='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36'
+          for n in "Meditation Impromptu 01" "Meditation Impromptu 02" "Meditation Impromptu 03" "Peaceful Desolation" "Healing" "Dreamer" "Clean Soul" "Floating Cities" "Carefree" "Wholesome" "Inspired" "Lasting Hope" "Easy Lemon" "Hidden Agenda" "Long Note One" "Ambient Bongos" "Relaxing Piano Music" "Touching Moments Two - Higher" "Bittersweet" "Fireflies and Stardust" "Amazing Plan" "Heartwarming" "Perspectives" "Sincerely" "Hope"; do
+            u="https://incompetech.com/music/royalty-free/mp3-royaltyfree/$(python3 -c "import urllib.parse,sys;print(urllib.parse.quote(sys.argv[1]))" "$n").mp3"
+            echo "::notice title=M::$(curl -s -L -A "$UA" -r 0-3 -o /tmp/x -w '%{http_code} %{content_type}' "$u") $(head -c3 /tmp/x | tr -cd '[:print:]') $n"
+          done
