@@ -13,7 +13,7 @@ const fuentes = `@font-face{font-family:B;src:url(file://${F}/bodoni-moda/files/
 
 // Portadas: [nombre, ancho, alto, ancho de la zona segura centrada, alto zona segura, foto]
 const PORTADAS = [
-  ['portada-youtube', 2560, 1440, 1546, 423, 'lago'],
+  ['portada-youtube', 2560, 1440, 1546, 360, 'lago'],
   ['portada-facebook', 1640, 624, 1100, 480, 'lago'],
   ['portada-bluesky-mastodon', 1500, 500, 1300, 360, 'lago'],
   ['portada-pinterest', 1600, 900, 1200, 600, 'lago'],
