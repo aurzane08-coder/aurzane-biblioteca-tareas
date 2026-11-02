@@ -17,10 +17,7 @@ jobs:
           if [ -n "$SG_PASS" ]; then ssh-keygen -p -P "$SG_PASS" -N "" -f ~/.ssh/id >/dev/null; fi
           SSH="ssh -i $HOME/.ssh/id -p ${SG_PORT:-18765} -o StrictHostKeyChecking=accept-new"
           $SSH "$SG_USER@$SG_HOST" 'bash -s' <<'R' | sed 's/^/::notice title=Cache::/'
-          echo "purge exacto: $(curl -s -o /dev/null -w '%{http_code}' -X PURGE -H 'Host: aurzane.com' http://127.0.0.1/aurzane-paleta.js)"
-          echo "purge regex: $(curl -s -o /dev/null -w '%{http_code}' -X PURGE -H 'Host: aurzane.com' 'http://127.0.0.1/(.*)')"
-          echo "cabeceras: $(curl -s -I -H 'Host: aurzane.com' http://127.0.0.1/aurzane-paleta.js | tr '\r\n' '  ' | cut -c1-400)"
-          echo "https: $(curl -s -I https://aurzane.com/aurzane-paleta.js | tr '\r\n' '  ' | cut -c1-400)"
-          ls site-tools-client 2>/dev/null; which site-tools-client wp 2>/dev/null | tr '\n' ' '
-          echo "htaccess: $(grep -i -c 'cache' www/aurzane.com/public_html/.htaccess)"; grep -i -n 'cache\|expires' www/aurzane.com/public_html/.htaccess | head -12 | tr '\n' ' '
+          site-tools-client domain-all list -j 2>&1 | tr '\n' ' ' | cut -c1-900; echo
+          site-tools-client -h 2>&1 | tr '\n' ' ' | cut -c1-900; echo
+          for e in 'gzip' 'br' 'gzip, deflate, br'; do echo "enc $e: $(curl -s -o /dev/null -w '%{size_download} %header{x-proxy-cache}' -H "Accept-Encoding: $e" https://aurzane.com/aurzane-paleta.js)"; done
           R
