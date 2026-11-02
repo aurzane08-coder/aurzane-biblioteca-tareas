@@ -98,7 +98,7 @@ jobs:
       - name: Token de TikTok (rota solo y se guarda fuera de la web)
         run: |
           T=""
-          if [ -n "$SSH" ]; then T=$($SSH "$SG_USER@$SG_HOST" "cat privado/tiktok_refresh 2>/dev/null" || true); fi
+          if [ -n "$SSH" ]; then T=$($SSH "$SG_USER@$SG_HOST" "cat www/aurzane.com/privado-tiktok/refresh 2>/dev/null || cat privado/tiktok_refresh 2>/dev/null" || true); fi
           T=${T:-$TIKTOK_REFRESH_INICIAL}
           [ -z "$T" ] && exit 0
           echo "::add-mask::$T"; echo "TIKTOK_REFRESH_TOKEN=$T" >> $GITHUB_ENV
@@ -113,7 +113,13 @@ jobs:
         run: |
           R="$SG_USER@$SG_HOST:www/aurzane.com"
           $SSH "$SG_USER@$SG_HOST" "mkdir -p www/aurzane.com/public_html/marketing/img www/aurzane.com/public_html/marketing/video www/aurzane.com/public_html/ir"
-          if [ -s /tmp/tiktok_refresh ]; then cat /tmp/tiktok_refresh | $SSH "$SG_USER@$SG_HOST" "mkdir -p privado && chmod 700 privado && cat > privado/tiktok_refresh && chmod 600 privado/tiktok_refresh"; fi
+          P=www/aurzane.com/privado-tiktok
+          if [ -s /tmp/tiktok_refresh ]; then cat /tmp/tiktok_refresh | $SSH "$SG_USER@$SG_HOST" "mkdir -p $P && chmod 700 $P && cat > $P/refresh && chmod 600 $P/refresh"; fi
+          if [ -n "$TIKTOK_CLIENT_KEY" ] && [ -n "$TIKTOK_CLIENT_SECRET" ]; then
+            python3 -c 'import json,os;print(json.dumps({"client_key":os.environ["TIKTOK_CLIENT_KEY"],"client_secret":os.environ["TIKTOK_CLIENT_SECRET"]}))' | $SSH "$SG_USER@$SG_HOST" "mkdir -p $P && chmod 700 $P && cat > $P/app.json && chmod 600 $P/app.json"
+          fi
+          $SSH "$SG_USER@$SG_HOST" "mkdir -p www/aurzane.com/public_html/tiktok"
+          rsync -rlz --checksum -e "$SSH" marketing/web/tiktok/ "$R/public_html/tiktok/"
           if [ "$ACCION" = planificar ]; then
             rsync -rlz --ignore-existing -e "$SSH" marketing/img/ "$R/public_html/marketing/img/"
             [ -d marketing/salida/video ] && rsync -rlz --ignore-existing -e "$SSH" marketing/salida/video/ "$R/public_html/marketing/video/" || true
