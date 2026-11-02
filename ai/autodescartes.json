@@ -1,6 +1,97 @@
 [
  {
   "fecha": "2026-11-02",
+  "id": "oa-W7222589970",
+  "tipo": "libro",
+  "titulo": "The Arrow That Cuts Both Ways: Strong Causality, Causal Reversibility, and the Dissolution of the Philosophical Zombie",
+  "url": "https://philarchive.org/rec/NIUTAT",
+  "motivo": "No tiene un PDF libre que se pueda descargar",
+  "probados": []
+ },
+ {
+  "fecha": "2026-11-02",
+  "id": "oa-W7222479563",
+  "tipo": "libro",
+  "titulo": "The Scrutiny That Does Not Land: Strong Causality as Infinite Regressive Audit and the Wuji-Dissolution of Chalmers's Ideal Conceivability",
+  "url": "https://philarchive.org/rec/NIUTST",
+  "motivo": "No tiene un PDF libre que se pueda descargar",
+  "probados": []
+ },
+ {
+  "fecha": "2026-11-02",
+  "id": "oa-W7222831854",
+  "tipo": "libro",
+  "titulo": "Recursive Ontology and the Limits of First-Philosophy: A Unified Account of Auditing, Self-Destruction, and Quantum Indeterminacy",
+  "url": "https://philarchive.org/rec/NIUROA",
+  "motivo": "No tiene un PDF libre que se pueda descargar",
+  "probados": []
+ },
+ {
+  "fecha": "2026-11-02",
+  "id": "oa-W7222785401",
+  "tipo": "libro",
+  "titulo": "Four Tasks After the End: From the Triangle-Circle Series to the Display Device",
+  "url": "https://philarchive.org/rec/NIUFTA",
+  "motivo": "No tiene un PDF libre que se pueda descargar",
+  "probados": []
+ },
+ {
+  "fecha": "2026-11-02",
+  "id": "oa-W7221202880",
+  "tipo": "libro",
+  "titulo": "Adverse childhood experiences in the European Union, Iceland and Norway: characteristics, consequences and costs",
+  "url": "https://orcid.org/0000-0001-6980-1963",
+  "motivo": "No tiene un PDF libre que se pueda descargar",
+  "probados": [
+   "HTTP Error 404: Not Found https://researchonline.ljmu.ac.uk/id/eprint/29617/1/WHO-EURO-2026-13288-53062-82856-eng%20PUBLISHED%20VERSION%"
+  ]
+ },
+ {
+  "fecha": "2026-11-02",
+  "id": "ia-el-peso-de-la-sombra",
+  "tipo": "libro",
+  "titulo": "EL PESO DE LA SOMBRA",
+  "url": "https://archive.org/details/el-peso-de-la-sombra",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 22 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/el-peso-de-la-sombra/EL%20PESO%20DE%20LA%20SOMBRA.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-02",
+  "id": "oa-W7170057220",
+  "tipo": "libro",
+  "titulo": "Estudiar las violencias en y desde América Latina. Retos metodológicos y dilemas éticos",
+  "url": "https://doi.org/10.59950/im.161",
+  "motivo": "No tiene un PDF libre que se pueda descargar",
+  "probados": [
+   "<urlopen error timed out> https://publicaciones.institutomora.edu.mx/omp/index.php/EIM/catalog/download/161/179/2706"
+  ]
+ },
+ {
+  "fecha": "2026-11-02",
+  "id": "oa-W7202246480",
+  "tipo": "libro",
+  "titulo": "REPRESENTACIONES SOCIALES EMERGENTES DE LAS TRAYECTORIAS ESTUDIANTILES EN LA UNIVERSIDAD MAYOR DE SAN SIMÓN",
+  "url": "https://doi.org/10.47993/umss37",
+  "motivo": "No tiene un PDF libre que se pueda descargar",
+  "probados": [
+   "<urlopen error [SSL: CERTIFICATE_VERIFY_ https://libros.umss.edu.bo/index.php/omp-umss/catalog/download/37/31/637"
+  ]
+ },
+ {
+  "fecha": "2026-11-02",
+  "id": "oa-W7223011075",
+  "tipo": "libro",
+  "titulo": "¡Vive la U!",
+  "url": "https://doi.org/10.30554/978-958-5468-81-8",
+  "motivo": "No tiene un PDF libre que se pueda descargar",
+  "probados": [
+   "200 text/html https://ridum.umanizales.edu.co/bitstreams/01a15a69-1fa1-4150-9677-6501d0f55f2b/download"
+  ]
+ },
+ {
+  "fecha": "2026-11-02",
   "id": "pmc-PMC13452183",
   "tipo": "estudio",
   "titulo": "Beyond self-care: Digital interventions for healthcare professionals' well-being]",
