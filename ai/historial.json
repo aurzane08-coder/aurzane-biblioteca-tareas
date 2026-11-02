@@ -6,5 +6,13 @@
   "arreglos": 1,
   "errores_24h": 0,
   "redes_ok_24h": 17
+ },
+ {
+  "fecha": "2026-11-02T19:38",
+  "estado": "medio",
+  "avisos": 1,
+  "arreglos": 1,
+  "errores_24h": 0,
+  "redes_ok_24h": 17
  }
 ]
