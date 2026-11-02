@@ -1,0 +1,23 @@
+name: Kit de marca para redes
+# Crea la foto de perfil y las portadas (marketing/marca/) cuando cambia marketing/marca.js.
+on:
+  push:
+    paths: ['marketing/marca.js', '.github/workflows/marca.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  marca:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Generar imágenes
+        run: |
+          mkdir -p /tmp/f && cd /tmp/f && npm init -y >/dev/null && npm i -s playwright@1.48.2 @fontsource/bodoni-moda@5 @fontsource/instrument-sans@5 && npx playwright install chromium
+          cd $GITHUB_WORKSPACE && NODE_PATH=/tmp/f/node_modules node marketing/marca.js /tmp/f/node_modules/@fontsource
+      - name: Guardar
+        run: |
+          git config user.name "aurzane-bot"; git config user.email "bot@aurzane.com"
+          git add marketing/marca && git commit -qm "marca: perfil y portadas para redes" || exit 0
+          for i in 1 2 3 4 5; do git pull --rebase -q && git push -q && break; sleep 7; done
