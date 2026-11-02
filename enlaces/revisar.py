@@ -2,7 +2,7 @@
 import re, json, time, random, urllib.request, urllib.parse, html, concurrent.futures as cf, threading, collections
 SITIOS = ['https://aurzane.com/', 'https://mind.aurzane.com/', 'https://ovp.aurzane.com/', 'https://nexus.aurzane.com/',
           'https://live.aurzane.com/', 'https://learn.aurzane.com/', 'https://build.aurzane.com/']
-UA = 'Mozilla/5.0 (compatible; AurzaneLinkCheck/1.0)'
+UA = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36 AurzaneLinkCheck/1.0'
 estado, lock = {}, threading.Lock()
 def get(u):
     time.sleep(0.25)

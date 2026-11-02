@@ -190,7 +190,7 @@ if os.environ.get('DIARIO') == '1':
 # ---------- 10. Resumen ----------
 nivel = 'mal' if any(p['nivel'] == 'mal' for p in problemas) else ('medio' if problemas else 'ok')
 lineas = [f'Revisé {len(HOSTS)} sitios, {len(CLAVE)} páginas clave, {len(autos)} automatizaciones y las publicaciones en redes.',
-          'Todo funciona bien.' if nivel == 'ok' else f'Hay {len(problemas)} avisos: ' + '; '.join(p['texto'] for p in problemas[:4]) + ('…' if len(problemas) > 4 else '.'),
+          'Todo funciona bien.' if nivel == 'ok' else f'Hay {len(problemas)} avisos: ' + '; '.join(p['texto'].rstrip('.') for p in problemas[:4]) + ('…' if len(problemas) > 4 else '.'),
           f'Redes: {mk["ok_24h"]} publicaciones en 24 h' + (f' y {mk["fallos_24h"]} fallos.' if mk['fallos_24h'] else ', sin fallos.'),
           f'Errores de visitantes: {errores["total_24h"]} en 24 h.' if log else 'Errores de visitantes: el registro empieza a contar desde ahora.',
           (f'Arreglé sola {len(acciones)} cosas.' if acciones else 'No hizo falta arreglar nada.'),
