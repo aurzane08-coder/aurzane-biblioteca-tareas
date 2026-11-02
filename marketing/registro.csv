@@ -22,3 +22,4 @@
 2026-11-02,4,youtube,frase-2144e317,ok,https://youtu.be/c7Z5ePRbLcw
 2026-11-02,4,tiktok,calc-pau,error,400 {"error":{"code":"invalid_params" "message":"The request source info is empty or incorrect" "log_id":"202611030418554B6B6EF5C5D6B1FB2516"}}
 2026-11-02,4,telegram,test-autoestima,ok,7
+2026-11-02,4,tiktok,calc-pau,error,400 {"error":{"code":"invalid_params" "message":"The request source info is empty or incorrect" "log_id":"2026110305411101F3F818847033258B5D"}}
