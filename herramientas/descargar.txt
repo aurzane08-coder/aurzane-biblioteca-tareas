@@ -1,1 +1,2 @@
-https://labs.psychology.illinois.edu/~ediener/Documents/SWLS.html swls.html
+https://labs.psychology.illinois.edu/~ediener/Documents/SWLS_Spanish.doc swls_es.doc
+https://labs.psychology.illinois.edu/~ediener/Documents/Understanding%20SWLS%20Scores.pdf swls_scores.pdf
