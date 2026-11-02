@@ -239,7 +239,7 @@ if os.environ.get('DIARIO') == '1' or len(pend) < 8:
             lic = loc.get('license') or ''
             if not lic.startswith('cc') or not doi or src.get('type') == 'repository' or not (doi.startswith(BUENAS) or src.get('type') in ('book series', 'ebook platform')): continue
             pid = 'oa-' + w['id'].rsplit('/', 1)[1]
-            if pid in ya or not w.get('title'): continue
+            if pid in ya or not w.get('title') or re.search(r'resumos|anais|actas|proceedings|abstracts|congres|cadernos|libro de resúmenes|memorias del', w['title'], re.I): continue
             ya.add(pid); res = texto_inv(w.get('abstract_inverted_index'))
             nuevos.append({'id': pid, 'tipo': 'libro', 'titulo': w['title'].strip(), 'autores': ', '.join(a['author']['display_name'] for a in (w.get('authorships') or [])[:3]),
                 'anio': w.get('publication_year'), 'editorial': src.get('host_organization_name') or src.get('display_name') or '', 'url': loc.get('landing_page_url') or ('https://doi.org/' + doi),
