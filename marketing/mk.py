@@ -322,3 +322,31 @@ if __name__ == '__main__':
         cat = {p['id']: p for p in leer('catalogo.json')['productos']}
         p = cat[sys.argv[2]]
         for n, r in enumerate(REDES): print(f'===== {r} ({len(texto(r, p, n))})\n{texto(r, p, n)}\n')
+
+
+# ------------------------------------------------------------------ IndexNow (Bing, Yandex, Seznam, Naver): aviso inmediato de páginas nuevas
+def indexnow():
+    clave = open(os.path.join(D, 'indexnow.key')).read().strip()
+    enviados = set(leer('indexnow.json', []))
+    urls = set()
+    for sm in ['https://aurzane.com/sitemap.xml', 'https://aurzane.com/sitemap-biblioteca.xml', 'https://nexus.aurzane.com/sitemap-universidades.xml']:
+        try: urls |= set(re.findall(r'<loc>([^<]+)</loc>', get(sm)))
+        except Exception as e: print('Sitemap', sm, e)
+    nuevos = sorted(urls - enviados)
+    por_host = collections.defaultdict(list)
+    for u in nuevos: por_host[urllib.parse.urlparse(u).netloc].append(u)
+    for h, lista in por_host.items():
+        for k in range(0, len(lista), 9000):
+            cuerpo = json.dumps({'host': h, 'key': clave, 'urlList': lista[k:k + 9000]}).encode()
+            req = urllib.request.Request('https://api.indexnow.org/indexnow', data=cuerpo, headers={'Content-Type': 'application/json; charset=utf-8'})
+            try:
+                cod = urllib.request.urlopen(req, timeout=60).status
+            except urllib.error.HTTPError as e:
+                cod = e.code
+            print('IndexNow', h, len(lista[k:k + 9000]), cod)
+            if cod in (200, 202): enviados |= set(lista[k:k + 9000])
+    guardar('indexnow.json', sorted(enviados))
+
+
+if __name__ == '__main__' and sys.argv[1] == 'indexnow':
+    indexnow()

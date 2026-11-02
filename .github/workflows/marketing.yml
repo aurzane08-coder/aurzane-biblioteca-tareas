@@ -60,6 +60,7 @@ jobs:
           python3 marketing/fijos.py
           python3 marketing/mk.py catalogo
           python3 marketing/mk.py planificar
+          python3 marketing/mk.py indexnow || true
           sudo apt-get install -y -qq fonts-noto-color-emoji >/dev/null
           mkdir -p /tmp/f && cd /tmp/f && npm init -y >/dev/null && npm i -s playwright@1.48.2 @fontsource/bodoni-moda@5 @fontsource/instrument-sans@5 && npx playwright install chromium
           cd $GITHUB_WORKSPACE && NODE_PATH=/tmp/f/node_modules node marketing/tarjeta.js /tmp/tarjetas.json /tmp/f/node_modules/@fontsource
