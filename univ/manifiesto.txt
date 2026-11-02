@@ -6920,6 +6920,7 @@
 ./puerto-rico/universidad-de-puerto-rico-recinto-universitario-de-mayaguez/index.html
 ./puerto-rico/universidad-del-sagrado-corazon/index.html
 ./puerto-rico/universidad-interamericana-de-puerto-rico/index.html
+./que-puedo-estudiar/index.html
 ./reino-unido/abertay-university/index.html
 ./reino-unido/aberystwyth-university/index.html
 ./reino-unido/anglia-ruskin-university/index.html
