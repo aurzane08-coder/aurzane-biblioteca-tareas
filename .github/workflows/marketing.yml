@@ -10,7 +10,7 @@ on:
     - cron: '37 8 * * *'
     - cron: '41 17 * * *'
   push:
-    paths: ['marketing/fijos.py', 'marketing/mk.py', 'marketing/tarjeta.js', 'marketing/web/**']
+    paths: ['marketing/fijos.py', 'marketing/mk.py', 'marketing/tarjeta.js', 'marketing/web/**', '.github/workflows/marketing.yml']
   workflow_dispatch:
     inputs:
       accion: {description: 'planificar | 1 | 2', default: 'planificar'}
