@@ -26,8 +26,14 @@ def guardar(n, d):
 
 
 def get(url, t=60):
-    r = urllib.request.Request(url, headers={'User-Agent': 'AURZANE-marketing/1.0'})
-    return urllib.request.urlopen(r, timeout=t).read().decode('utf-8', 'replace')
+    ua = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36'
+    for intento in range(3):
+        try:
+            r = urllib.request.Request(url, headers={'User-Agent': ua, 'Accept': '*/*'})
+            return urllib.request.urlopen(r, timeout=t).read().decode('utf-8', 'replace')
+        except Exception:
+            if intento == 2: raise
+            import time; time.sleep(5)
 
 
 def recorta(t, n):
@@ -69,7 +75,8 @@ def catalogo():
                             hashtags=['LibrosGratis'] + [c for c in (camel(t) for t in tn if t) if c], aviso='', img=None, emoji='📖',
                             alta=l.get('alta', '')))
     except Exception as e:
-        print('Biblioteca no disponible:', e)
+        print('Biblioteca no disponible, uso la copia anterior:', e)
+        out += [p for p in prev.values() if p.get('tipo') == 'libro']
     # notas de corte: carreras con muchas universidades
     try:
         NC = json.load(open(os.path.join(D, '..', 'univ', 'data', 'notas_corte.json'), encoding='utf-8'))
