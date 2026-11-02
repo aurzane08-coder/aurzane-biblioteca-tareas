@@ -11,12 +11,37 @@ const T = {
   learn: ['#13281d', '#24513a', '#4a8a66', '#c8e6a0', '#f2d16b'],
   aurzane: ['#141226', '#2a2450', '#55479e', '#e8cd8f', '#c9a24b'],
 };
+async function frase(pg, x, t) {
+  if (x.foto && x.foto.startsWith('/')) fs.copyFileSync(x.foto, '/tmp/foto.jpg');
+  else if (x.foto) { const r = await fetch(x.foto); if (r.ok) fs.writeFileSync('/tmp/foto.jpg', Buffer.from(await r.arrayBuffer())); else x.foto = ''; }
+  const n = x.frase.length, tam = n > 110 ? 66 : n > 75 ? 78 : n > 45 ? 92 : 108;
+  const fondo = x.foto ? `url(file:///tmp/foto.jpg?${Date.now()}) center/cover` : `radial-gradient(120% 90% at 80% 10%,${t[2]} 0%,${t[1]} 50%,${t[0]} 100%)`;
+  const html = `<html><head><meta charset="utf-8"><style>
+@font-face{font-family:B;src:url(file://${F}/bodoni-moda/files/bodoni-moda-latin-700-normal.woff2)}
+@font-face{font-family:I;src:url(file://${F}/instrument-sans/files/instrument-sans-latin-500-normal.woff2)}
+*{box-sizing:border-box}body{margin:0;width:1080px;height:1350px;color:#fff;font-family:I;background:${fondo};position:relative;overflow:hidden}
+body:before{content:"";position:absolute;inset:0;background:${x.foto ? `radial-gradient(90% 60% at 50% 50%,${t[0]}b3 0%,${t[0]}80 55%,${t[0]}40 100%)` : 'none'}}
+.w{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:0 110px;text-align:center}
+.c{font-family:B;font-size:180px;line-height:.6;color:${t[4]};opacity:.9;height:90px}
+h1{font-family:B;font-size:${tam}px;line-height:1.12;margin:20px 0 0;text-shadow:0 4px 30px rgba(0,0,0,.35)}
+.a{margin-top:40px;font-size:30px;color:${t[3]};letter-spacing:.02em}
+.l{width:90px;height:3px;background:${t[4]};margin:46px auto 0;border-radius:3px}
+.top{position:absolute;top:70px;left:0;right:0;text-align:center;font-family:B;font-size:36px;letter-spacing:.1em}.top span{color:${t[4]}}
+.pie{position:absolute;bottom:64px;left:0;right:0;text-align:center;font-size:26px;opacity:.85}
+.cred{position:absolute;bottom:24px;right:30px;font-size:17px;opacity:.6}
+</style></head><body><div class="top">AUR<span>Z</span>ANE</div><div class="w"><div class="c">“</div><h1>${esc(x.frase)}</h1>${x.autor ? `<div class="a">${esc(x.autor)}</div>` : '<div class="l"></div>'}</div>
+<div class="pie">aurzane.com · psicología y bienestar</div>${x.credito ? `<div class="cred">${esc(x.credito)}</div>` : ''}</body></html>`;
+  fs.writeFileSync('/tmp/tarjeta.html', html); await pg.goto('file:///tmp/tarjeta.html'); await pg.waitForTimeout(250);
+  await pg.screenshot({path: x.salida, type: 'jpeg', quality: 88});
+}
 const esc = s => String(s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;');
 (async () => {
   const L = JSON.parse(fs.readFileSync(LISTA, 'utf8'));
   const b = await chromium.launch(); const pg = await b.newPage({viewport: {width: 1080, height: 1350}});
   for (const x of L) {
-    const t = T[x.mundo] || T.aurzane; const largo = (x.titulo || '').length;
+    const t = T[x.mundo] || T.aurzane;
+    if (x.frase) { await frase(pg, x, t); console.log(x.salida); continue; }
+    const largo = (x.titulo || '').length;
     const fs1 = largo > 90 ? 64 : largo > 60 ? 76 : largo > 38 ? 92 : 108;
     if (x.foto && x.foto.startsWith('/')) fs.copyFileSync(x.foto, '/tmp/foto.jpg');
     else if (x.foto) { const r = await fetch(x.foto); if (r.ok) { fs.writeFileSync('/tmp/foto.jpg', Buffer.from(await r.arrayBuffer())); } else x.foto = ''; }

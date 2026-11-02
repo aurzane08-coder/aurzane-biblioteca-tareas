@@ -38,7 +38,8 @@ def recorta(t, n):
 
 def camel(s):
     s = re.sub(r'[^\wáéíóúñü ]', ' ', s, flags=re.I)
-    return ''.join(w[:1].upper() + w[1:] for w in s.split() if len(w) > 2)[:30]
+    t = ''.join(w[:1].upper() + w[1:] for w in s.split() if len(w) > 2)
+    return t if len(t) <= 24 else ''
 
 
 # ------------------------------------------------------------------ catálogo
@@ -63,7 +64,7 @@ def catalogo():
                             url=f"https://aurzane.com/biblioteca/libro/{l['id']}.html", titulo=tit,
                             ganchos=[f'Libro gratis: {tit}', f'{tit}, de {aut}' if aut else tit, f'Para leer hoy: {tit}'],
                             texto=recorta(l.get('resumen'), 230), autor=aut, paginas=l.get('paginas'), licencia=l['licencia'],
-                            hashtags=['LibrosGratis'] + [camel(t) for t in tn if t], aviso='', img=None, emoji='📖',
+                            hashtags=['LibrosGratis'] + [c for c in (camel(t) for t in tn if t) if c], aviso='', img=None, emoji='📖',
                             alta=l.get('alta', '')))
     except Exception as e:
         print('Biblioteca no disponible:', e)
@@ -88,6 +89,17 @@ def catalogo():
                             hashtags=['NotasDeCorte', 'PAU', camel(t)], aviso='', img=None, emoji='📊'))
     except Exception as e:
         print('Notas de corte no disponibles:', e)
+    # frases de superación (sobre todo para Instagram)
+    import frases
+    lista = [(t, 'AURZANE') for t in frases.ORIGINALES] + list(frases.CLASICAS)
+    mundos = ['mind', 'live', 'learn', 'aurzane', 'nexus', 'build']
+    for t, a in lista:
+        fid = 'frase-' + hashlib.md5(t.encode()).hexdigest()[:8]
+        out.append(dict(id=fid, tipo='frase', mundo=mundos[int(fid[-2:], 16) % len(mundos)], origen='frases',
+                        url='https://mind.aurzane.com/', titulo=t, autor=a, ganchos=[t, t, t], texto=t,
+                        hashtags=['FrasesMotivadoras', 'Superación', 'SaludMental', 'CrecimientoPersonal', 'Psicología', 'Bienestar', 'Motivación', 'FrasesDeLaVida'],
+                        aviso='', img=None, emoji='',
+                        foto_q=frases.FOTOS[int(fid[6:12], 16) % len(frases.FOTOS)]))
     # páginas nuevas del sitemap que aún no están: entran solas
     urls = {p['url'].rstrip('/') for p in out}
     try:
@@ -123,7 +135,7 @@ def catalogo():
 # franja 1 (mañana): herramientas; franja 2 (tarde): rota entre libros, creatividades, notas y secciones
 TARDE = ['libro', 'creativo', 'notas', 'libro', 'seccion', 'creativo', 'libro']
 GRUPO = {'test': 'herr', 'calculadora': 'herr', 'curso': 'herr', 'libro': 'libro', 'creativo': 'creativo',
-         'notas': 'notas', 'seccion': 'seccion'}
+         'notas': 'notas', 'seccion': 'seccion', 'frase': 'frase'}
 
 
 def planificar(dias=14):
@@ -143,12 +155,13 @@ def planificar(dias=14):
         f = (HOY + datetime.timedelta(days=d)).isoformat()
         if f in cal and d > 0: continue
         dia = cal.setdefault(f, {})
-        for fr in ('1', '2'):
+        for fr in ('1', '2', '3'):
             if fr in dia and all(i in cat for i in dia[fr].values()): continue
-            grupo = 'herr' if fr == '1' else TARDE[datetime.date.fromisoformat(f).toordinal() % len(TARDE)]
+            grupo = 'herr' if fr == '1' else 'frase' if fr == '3' else TARDE[datetime.date.fromisoformat(f).toordinal() % len(TARDE)]
             usados = set(); dia[fr] = {}
             for r in REDES:
                 if r == 'pinterest' and fr == '1': continue
+                if r == 'x' and fr == '3': continue
                 cand = [p for p in cat.values() if GRUPO.get(p['tipo']) == grupo and p['id'] not in usados]
                 if r in ('instagram', 'pinterest'): cand = [p for p in cand if p['tipo'] != 'notas' or True]
                 if not cand: cand = [p for p in cat.values() if p['id'] not in usados]
@@ -173,6 +186,10 @@ def planificar(dias=14):
                 'notas': 'Notas de corte 2025-2026', 'seccion': 'Gratis en AURZANE'}.get(p['tipo'], 'AURZANE')
         sub = (f"{p.get('autor')} · {p.get('paginas')} páginas · {p.get('licencia')}" if p['tipo'] == 'libro'
                else recorta(p['texto'], 150))
+        if p['tipo'] == 'frase':
+            lista.append(dict(id=i, mundo=p['mundo'], frase=p['titulo'], autor='' if p['autor'] == 'AURZANE' else p['autor'], salida=sal,
+                              foto=foto['src'] if foto else '', credito=f"Foto: {foto['autor']} · Pexels" if foto else ''))
+            continue
         lista.append(dict(id=i, mundo=p['mundo'], kicker=kick, titulo=p['titulo'] if p['tipo'] in ('libro',) else p['ganchos'][0],
                           sub=sub, pie=pie_de(p['url']), emoji='' if foto else p.get('emoji', ''), salida=sal,
                           foto=foto['src'] if foto else '', credito=f"Foto: {foto['autor']} · Pexels" if foto else ''))
@@ -216,6 +233,7 @@ LIBRO_Q = [('duelo', 'grief candle'), ('sueño', 'sleep night'), ('infantil', 'c
 
 
 def consulta_foto(p):
+    if p.get('foto_q'): return p['foto_q']
     if p['id'] in FOTO_Q: return FOTO_Q[p['id']]
     if p['tipo'] == 'notas':
         t = p['titulo'].lower()
@@ -274,8 +292,9 @@ def feed():
     items = []
     for f, fr in sorted(est['calendario'].items(), reverse=True):
         if f > HOY.isoformat(): continue
-        i = fr.get('2', {}).get('pinterest')
-        if i and i in cat: items.append((f, cat[i]))
+        for k in ('3', '2'):
+            i = fr.get(k, {}).get('pinterest')
+            if i and i in cat: items.append((f, cat[i]))
         if len(items) >= 60: break
     x = ['<?xml version="1.0" encoding="UTF-8"?>', '<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/"><channel>',
          '<title>AURZANE: tests, calculadoras y libros gratis</title><link>https://aurzane.com/</link>',
@@ -283,6 +302,12 @@ def feed():
     for f, p in items:
         img = SITIO_IMG + imagen_de(p)
         d = datetime.datetime.combine(datetime.date.fromisoformat(f), datetime.time(17, 0)).strftime('%a, %d %b %Y %H:%M:%S +0000')
+        if p['tipo'] == 'frase':
+            x.append(f'<item><title>{html.escape(p["titulo"])}</title><link>{IR}{codigo("pinterest", p["id"])}</link>'
+                     f'<guid isPermaLink="false">{f}-{p["id"]}</guid><pubDate>{d}</pubDate>'
+                     f'<description>{html.escape(p["titulo"] + " Más recursos gratis para tu bienestar en AURZANE.")}</description>'
+                     f'<enclosure url="{img}" type="image/jpeg" length="0"/><media:content url="{img}" medium="image"/></item>')
+            continue
         x.append(f'<item><title>{html.escape(p["ganchos"][0])}</title><link>{IR}{codigo("pinterest", p["id"])}</link>'
                  f'<guid isPermaLink="false">{f}-{p["id"]}</guid><pubDate>{d}</pubDate>'
                  f'<description>{html.escape(p["texto"])}</description><enclosure url="{img}" type="image/jpeg" length="0"/>'
@@ -293,7 +318,28 @@ def feed():
 
 
 # ------------------------------------------------------------------ textos por red
+PREGUNTAS = ['¿Qué te dice esta frase hoy?', 'Guárdala para cuando la necesites.', 'Compártela con alguien que la necesite hoy.',
+             '¿Con qué parte te quedas?', 'Escríbela donde la veas cada mañana.', 'Etiqueta a quien te recuerda esto.']
+
+
+def texto_frase(r, p, n):
+    t = p['titulo'] + ('' if p['autor'] == 'AURZANE' else f"\n\n{p['autor']}")
+    q = PREGUNTAS[(int(p['id'][-4:], 16) + n) % len(PREGUNTAS)]
+    url = IR + codigo(r, p['id'])
+    if r == 'instagram':
+        tags = ' '.join('#' + h for h in p['hashtags'] + ['AURZANE', 'PsicologíaPositiva', 'Autoestima', 'Resiliencia'])
+        return f'{t}\n\n{q}\n\n🧠 Tests de bienestar y lecturas de psicología gratis: enlace en la bio.\n\n{tags}'
+    if r == 'telegram':
+        return f'<b>{html.escape(p["titulo"])}</b>' + ('' if p['autor'] == 'AURZANE' else f'\n<i>{html.escape(p["autor"])}</i>') + f'\n\n{q}\n\n🧠 Más para tu bienestar: {url}'
+    if r == 'bluesky':
+        return f'{t}\n\n{q} #FrasesMotivadoras'
+    if r == 'facebook':
+        return f'{t}\n\n{q}\n\nTests de bienestar y lecturas de psicología gratis 👉 {url}'
+    return f'{t}\n\n{q}\n\n{url}\n\n#FrasesMotivadoras #Superación #SaludMental #Psicología'
+
+
 def texto(r, p, n):
+    if p['tipo'] == 'frase': return texto_frase(r, p, n)
     g = p['ganchos'][n % len(p['ganchos'])]
     url = IR + codigo(r, p['id'])
     tags = ' '.join('#' + h for h in p.get('hashtags', [])[:4])

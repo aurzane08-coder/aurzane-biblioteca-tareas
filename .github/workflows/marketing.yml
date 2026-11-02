@@ -2,15 +2,17 @@ name: Marketing automático
 # Publica cada día en las cuentas propias de AURZANE (nunca en grupos de terceros).
 #  - 05:13 UTC  planifica 14 días, crea las tarjetas, sube imágenes, feed RSS y enlaces cortos a aurzane.com
 #  - 08:37 UTC  franja de mañana (herramientas)       = 09:37 en España (10:37 en verano)
+#  - 12:13 UTC  frase de superación con foto (sobre todo Instagram) = 13:13 en España
 #  - 17:41 UTC  franja de tarde (libros, notas, etc.)  = 18:41 en España
 # Cada red se activa sola cuando existen sus secretos (ver marketing/README.md). Sin secretos no publica nada.
 on:
   schedule:
     - cron: '13 5 * * *'
     - cron: '37 8 * * *'
+    - cron: '13 12 * * *'
     - cron: '41 17 * * *'
   push:
-    paths: ['marketing/fijos.py', 'marketing/mk.py', 'marketing/tarjeta.js', 'marketing/web/**', '.github/workflows/marketing.yml']
+    paths: ['marketing/fijos.py', 'marketing/mk.py', 'marketing/tarjeta.js', 'marketing/frases.py', 'marketing/web/**', '.github/workflows/marketing.yml']
   workflow_dispatch:
     inputs:
       accion: {description: 'planificar | 1 | 2', default: 'planificar'}
@@ -47,7 +49,7 @@ jobs:
       - name: Qué toca
         run: |
           A="${{ github.event.inputs.accion }}"
-          case "${{ github.event.schedule }}" in '37 8 * * *') A=1;; '41 17 * * *') A=2;; '13 5 * * *') A=planificar;; esac
+          case "${{ github.event.schedule }}" in '37 8 * * *') A=1;; '41 17 * * *') A=2;; '13 12 * * *') A=3;; '13 5 * * *') A=planificar;; esac
           echo "ACCION=${A:-planificar}" >> $GITHUB_ENV; echo "Acción: ${A:-planificar}"
       - name: SSH
         if: env.SG_KEY != ''
@@ -66,7 +68,7 @@ jobs:
           mkdir -p /tmp/f && cd /tmp/f && npm init -y >/dev/null && npm i -s playwright@1.48.2 @fontsource/bodoni-moda@5 @fontsource/instrument-sans@5 && npx playwright install chromium
           cd $GITHUB_WORKSPACE && NODE_PATH=/tmp/f/node_modules node marketing/tarjeta.js /tmp/tarjetas.json /tmp/f/node_modules/@fontsource
       - name: Publicar franja
-        if: env.ACCION == '1' || env.ACCION == '2'
+        if: env.ACCION == '1' || env.ACCION == '2' || env.ACCION == '3'
         run: python3 marketing/mk.py publicar "$ACCION"
       - name: Subir a aurzane.com y leer clics
         if: env.SG_KEY != ''
