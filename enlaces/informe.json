@@ -1,5 +1,41 @@
 {
- "paginas": 442,
- "revisadas": 3776,
- "rotos": []
+ "paginas": 0,
+ "revisadas": 7,
+ "rotos": [
+  {
+   "url": "https://aurzane.com/",
+   "estado": "ERR Remote end closed connection without response",
+   "desde": []
+  },
+  {
+   "url": "https://build.aurzane.com/",
+   "estado": "ERR Remote end closed connection without response",
+   "desde": []
+  },
+  {
+   "url": "https://learn.aurzane.com/",
+   "estado": "ERR Remote end closed connection without response",
+   "desde": []
+  },
+  {
+   "url": "https://live.aurzane.com/",
+   "estado": "ERR Remote end closed connection without response",
+   "desde": []
+  },
+  {
+   "url": "https://mind.aurzane.com/",
+   "estado": "ERR Remote end closed connection without response",
+   "desde": []
+  },
+  {
+   "url": "https://nexus.aurzane.com/",
+   "estado": "ERR Remote end closed connection without response",
+   "desde": []
+  },
+  {
+   "url": "https://ovp.aurzane.com/",
+   "estado": "ERR Remote end closed connection without response",
+   "desde": []
+  }
+ ]
 }
