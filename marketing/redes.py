@@ -286,7 +286,9 @@ def _tiktok_token():
 def video_tiktok(texto, url, local, enlace, p):
     tk = _tiktok_token(); cab = {'Authorization': 'Bearer ' + tk, 'Content-Type': 'application/json; charset=UTF-8'}
     info = pedir('https://open.tiktokapis.com/v2/post/publish/creator_info/query/', {}, cab)['data']
-    priv = 'PUBLIC_TO_EVERYONE' if 'PUBLIC_TO_EVERYONE' in info.get('privacy_level_options', []) else info['privacy_level_options'][0]
+    # Hasta que TikTok apruebe la app, solo se puede publicar en privado (SELF_ONLY). Tras la aprobación: variable TIKTOK_PUBLICO=1.
+    opciones = info.get('privacy_level_options', [])
+    priv = 'PUBLIC_TO_EVERYONE' if E('TIKTOK_PUBLICO') == '1' and 'PUBLIC_TO_EVERYONE' in opciones else ('SELF_ONLY' if 'SELF_ONLY' in opciones else opciones[0])
     datos = open(local, 'rb').read()
     titulo = (p['titulo'] if p['tipo'] == 'frase' else p['ganchos'][0]) + ' ' + ' '.join('#' + h for h in p.get('hashtags', [])[:4]) + ' #AURZANE'
     ini = pedir('https://open.tiktokapis.com/v2/post/publish/video/init/', {
