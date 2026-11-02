@@ -203,10 +203,12 @@ def jremoto(f, d):
     t = remoto(f'cat www/aurzane.com/privado-ai/{f} 2>/dev/null')
     try: return json.loads(t) if t.strip() else d
     except Exception: return d
+INTENTOS = []
 def descargar(u, dest, maxmb=80):
     try:
         req = urllib.request.Request(u, headers={'User-Agent': UA, 'Accept': 'application/pdf,*/*'})
         with urllib.request.urlopen(req, timeout=90) as r, open(dest, 'wb') as f:
+            INTENTOS.append(f'{r.status} {r.headers.get("Content-Type", "")[:20]} {u[:110]}')
             n = 0
             while True:
                 b = r.read(1 << 16)
@@ -215,7 +217,7 @@ def descargar(u, dest, maxmb=80):
                 if n > maxmb * 1048576: return 'grande'
                 f.write(b)
         return 'ok' if open(dest, 'rb').read(5) == b'%PDF-' else 'nopdf'
-    except Exception: return 'error'
+    except Exception as e: INTENTOS.append(f'{str(e)[:40]} {u[:110]}'); return 'error'
 def paginas_pdf(f):
     try:
         out = subprocess.run(['pdfinfo', f], capture_output=True, text=True, timeout=60).stdout
@@ -247,7 +249,7 @@ def candidatos_pdf(p):
     return list(dict.fromkeys(c))
 def verificar(p, guardar_pdf=False):
     """Devuelve (ok, motivo). Rellena p['paginas'], p['portada'] y, si se pide, deja el PDF listo para publicar."""
-    dest = f'{TMP}/{p["id"]}.pdf'; estado = 'nopdf'
+    dest = f'{TMP}/{p["id"]}.pdf'; estado = 'nopdf'; INTENTOS.clear()
     paginas_ed = ([p['url']] if p['tipo'] == 'libro' else []) + ([f'https://doi.org/{p["doi"]}'] if p.get('doi') else [])
     for u in list(dict.fromkeys(candidatos_pdf(p) + [x for w in paginas_ed for x in pdf_en_pagina(w)]))[:10]:
         estado = descargar(u, dest)
@@ -265,7 +267,7 @@ def verificar(p, guardar_pdf=False):
         except Exception: pass
     return True, ''
 def descartar_solo(p, motivo):
-    vistos.add(p['id']); autodesc.insert(0, {'fecha': HOY, 'id': p['id'], 'tipo': p['tipo'], 'titulo': p['titulo'][:160], 'url': p['url'], 'motivo': motivo})
+    vistos.add(p['id']); autodesc.insert(0, {'fecha': HOY, 'id': p['id'], 'tipo': p['tipo'], 'titulo': p['titulo'][:160], 'url': p['url'], 'motivo': motivo, 'probados': INTENTOS[:6]})
     for k in ('ed:' + (p.get('editorial') or ''),):
         a = apr.setdefault(k, [0, 0]); a[1] += 1
 
