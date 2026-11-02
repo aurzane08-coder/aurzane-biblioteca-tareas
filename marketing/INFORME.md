@@ -5,8 +5,8 @@ Actualizado: 2026-11-02. Clics de personas (sin bots ni vistas previas) que entr
 | Red | Publicaciones | Clics |
 |---|---|---|
 | telegram | 1 | 4 |
-| bluesky | 1 | 2 |
-| mastodon | 1 | 0 |
+| bluesky | 1 | 4 |
+| mastodon | 1 | 1 |
 | instagram | 1 | 0 |
 | facebook | 0 | 0 |
 | threads | 0 | 0 |
@@ -17,4 +17,5 @@ Actualizado: 2026-11-02. Clics de personas (sin bots ni vistas previas) que entr
 | Producto | Clics |
 |---|---|
 | test-tdah | 4 |
-| calc-sueldo | 2 |
+| calc-sueldo | 4 |
+| test-sueno | 1 |
