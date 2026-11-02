@@ -27,6 +27,7 @@ jobs:
       SG_USER: ${{ secrets.SG_USER }}
       SG_PORT: ${{ secrets.SG_PORT }}
       SG_PASS: ${{ secrets.SG_PASS }}
+      PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
       TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
       TELEGRAM_CANAL: ${{ secrets.TELEGRAM_CANAL }}
       BSKY_USUARIO: ${{ secrets.BSKY_USUARIO }}

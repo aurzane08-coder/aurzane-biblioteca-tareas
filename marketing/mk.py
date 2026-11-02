@@ -162,17 +162,21 @@ def planificar(dias=14):
     necesarios = {i for f, fr in cal.items() if f >= HOY.isoformat() for x in fr.values() for i in x.values()}
     lista = []
     os.makedirs(os.path.join(D, 'img', 'auto'), exist_ok=True)
+    fotos = leer('fotos.json', {}); usadas = {f['pid'] for f in fotos.values()}
     for i in sorted(necesarios):
         p = cat[i]
         if p.get('img'): continue
-        sal = os.path.join(D, 'img', 'auto', i + '.jpg')
+        foto = foto_para(p, fotos, usadas)
+        sal = os.path.join(D, imagen_de(p, fotos))
         if os.path.exists(sal): continue
         kick = {'test': 'Test gratis', 'calculadora': 'Calculadora gratis', 'curso': 'Curso gratis', 'libro': 'Libro gratis · licencia abierta',
                 'notas': 'Notas de corte 2025-2026', 'seccion': 'Gratis en AURZANE'}.get(p['tipo'], 'AURZANE')
         sub = (f"{p.get('autor')} · {p.get('paginas')} páginas · {p.get('licencia')}" if p['tipo'] == 'libro'
                else recorta(p['texto'], 150))
         lista.append(dict(id=i, mundo=p['mundo'], kicker=kick, titulo=p['titulo'] if p['tipo'] in ('libro',) else p['ganchos'][0],
-                          sub=sub, pie=pie_de(p['url']), emoji=p.get('emoji', ''), salida=sal))
+                          sub=sub, pie=pie_de(p['url']), emoji='' if foto else p.get('emoji', ''), salida=sal,
+                          foto=foto['src'] if foto else '', credito=f"Foto: {foto['autor']} · Pexels" if foto else ''))
+    guardar('fotos.json', fotos)
     json.dump(lista, open('/tmp/tarjetas.json', 'w'), ensure_ascii=False)
     print('Tarjetas por generar:', len(lista))
     enlaces()
@@ -182,6 +186,64 @@ def pie_de(u):
     h, _, ruta = re.sub(r'^https?://', '', u).partition('/')
     seg = re.sub(r'\?.*$|\.html$', '', ruta.split('/')[0])
     return h + ('/' + seg if seg else '')
+
+
+# ------------------------------------------------------------------ fotos de Pexels (licencia libre, uso comercial permitido)
+FOTO_Q = {
+ 'test-personalidad': 'person thinking window light', 'test-ansiedad': 'calm woman breathing nature', 'test-depresion': 'person rainy window',
+ 'test-autoestima': 'confident woman portrait smile', 'test-tdah': 'busy desk sticky notes', 'test-autocompasion': 'hands holding warm light',
+ 'test-satisfaccion': 'happy person sunset field', 'test-bienestar': 'morning sunlight coffee calm', 'test-sueno': 'cozy bed sleeping',
+ 'test-habitos': 'healthy breakfast fruit', 'calc-calorias': 'healthy meal plate vegetables', 'calc-embarazo': 'pregnant woman sunlight',
+ 'calc-hipoteca': 'house keys new home', 'calc-sueldo': 'calculator coins desk', 'calc-reforma': 'apartment renovation interior',
+ 'calc-pau': 'student studying exam desk', 'notas-corte': 'university students campus', 'universidades': 'university building campus',
+ 'ovp': 'young student thinking future', 'biblioteca': 'library bookshelves', 'articulos': 'reading tablet coffee',
+ 'curso-neuro': 'brain anatomy model', 'curso-metod': 'scientist microscope laboratory', 'biblio-mind': 'psychology books',
+ 'biblio-live': 'wellness nature yoga', 'biblio-nexus': 'technology data network', 'biblio-learn': 'students learning classroom',
+ 'biblio-build': 'ancient architecture columns',
+}
+NC_Q = {'medicina': 'medical students stethoscope', 'enfermer': 'nurse hospital', 'psicolog': 'therapy session', 'derecho': 'law books',
+        'ingenier': 'engineering blueprint', 'odontolog': 'dentist clinic', 'biolog': 'biology laboratory', 'fisioterap': 'physiotherapy',
+        'farmacia': 'pharmacy', 'veterinar': 'veterinarian dog', 'arquitect': 'architecture model', 'magisterio': 'teacher classroom children',
+        'educaci': 'teacher classroom', 'econom': 'economics charts', 'empresa': 'business meeting', 'periodis': 'journalist microphone',
+        'química': 'chemistry lab', 'matem': 'mathematics blackboard', 'física': 'physics experiment', 'historia': 'historical archive',
+        'informática': 'programmer code screen', 'datos': 'data analysis screen', 'deporte': 'athletics track', 'turismo': 'travel tourism'}
+LIBRO_Q = [('duelo', 'grief candle'), ('sueño', 'sleep night'), ('infantil', 'child playing parent'), ('aprendizaje', 'student reading notes'),
+           ('neuro', 'brain illustration'), ('trauma', 'resilience sunrise'), ('mindfulness', 'meditation'), ('filosof', 'philosophy statue'),
+           ('adicci', 'recovery support group'), ('laboral', 'office team'), ('deport', 'athlete training'), ('emoci', 'emotions face portrait'),
+           ('social', 'friends talking'), ('personalidad', 'portrait thoughtful'), ('salud', 'health wellbeing'), ('clínica', 'therapist office'),
+           ('vocacional', 'career path'), ('sexualidad', 'couple holding hands'), ('jurídica', 'courthouse'), ('música', 'music instrument'),
+           ('lenguaje', 'conversation'), ('desarrollo', 'family generations'), ('investigaci', 'research papers'), ('historia', 'old books')]
+
+
+def consulta_foto(p):
+    if p['id'] in FOTO_Q: return FOTO_Q[p['id']]
+    if p['tipo'] == 'notas':
+        t = p['titulo'].lower()
+        return next((q for k, q in NC_Q.items() if k in t), 'university lecture hall')
+    if p['tipo'] == 'libro':
+        t = (' '.join(p.get('hashtags', [])) + ' ' + p['titulo']).lower()
+        return next((q for k, q in LIBRO_Q if k in t), 'open book reading')
+    return {'test': 'person reflecting', 'calculadora': 'desk planning notebook'}.get(p['tipo'], 'books learning')
+
+
+def foto_para(p, fotos, usadas):
+    """Devuelve la foto (dict) de Pexels para el producto; la busca una vez y la guarda en fotos.json."""
+    if p['id'] in fotos: return fotos[p['id']]
+    clave = os.environ.get('PEXELS_API_KEY')
+    if not clave: return None
+    q = consulta_foto(p)
+    try:
+        req = urllib.request.Request('https://api.pexels.com/v1/search?' + urllib.parse.urlencode({'query': q, 'orientation': 'portrait', 'per_page': 40}),
+                                     headers={'Authorization': clave, 'User-Agent': 'AURZANE-marketing/1.0'})
+        res = json.loads(urllib.request.urlopen(req, timeout=40).read())['photos']
+    except Exception as e:
+        print('Pexels:', e); return None
+    libres = [f for f in res if f['id'] not in usadas] or res
+    if not libres: return None
+    f = libres[int(hashlib.md5(p['id'].encode()).hexdigest(), 16) % min(len(libres), 12)]
+    fotos[p['id']] = {'pid': f['id'], 'src': f['src']['large2x'], 'autor': f['photographer'], 'url': f['url'], 'q': q}
+    usadas.add(f['id'])
+    return fotos[p['id']]
 
 
 def codigo(r, i):
@@ -199,8 +261,10 @@ def enlaces():
     json.dump(mapa, open(os.path.join(D, 'salida', 'ir', 'mapa.json'), 'w'), separators=(',', ':'))
 
 
-def imagen_de(p):
-    return p['img'] if p.get('img') else f'img/auto/{p["id"]}.jpg'
+def imagen_de(p, fotos=None):
+    if p.get('img'): return p['img']
+    fotos = leer('fotos.json', {}) if fotos is None else fotos
+    return f'img/auto/{p["id"]}' + ('-f' if p['id'] in fotos else '') + '.jpg'
 
 
 def feed():

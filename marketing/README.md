@@ -32,6 +32,10 @@ Crea la cuenta tú y añade los secretos en GitHub: repositorio `aurzane-bibliot
 | X | `X_API_KEY`, `X_API_SECRET`, `X_ACCESS_TOKEN`, `X_ACCESS_SECRET` | developer.x.com, plan gratuito, app con permisos Read and write. Solo texto con enlace (la tarjeta sale de la página). |
 | Pinterest | ninguno | Cuenta de empresa > Ajustes > Publicación masiva > Conectar RSS: `https://aurzane.com/marketing/feed.xml`. |
 
+## Fotos de las tarjetas
+
+Con el secreto `PEXELS_API_KEY` (gratis en pexels.com/api), cada tarjeta usa una foto de [Pexels](https://www.pexels.com) elegida por el tema del producto, con la publicidad compuesta encima y el crédito del fotógrafo. La licencia de Pexels permite el uso comercial gratis. La foto elegida para cada producto queda en `fotos.json`; para cambiarla, borra su línea y se busca otra. Pinterest no se usa como fuente de imágenes: sus imágenes son de sus autores.
+
 ## Añadir o cambiar productos
 
 - Productos fijos y textos: `marketing/fijos.py`.
