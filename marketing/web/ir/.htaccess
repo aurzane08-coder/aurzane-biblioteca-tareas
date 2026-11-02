@@ -1,0 +1,6 @@
+RewriteEngine On
+RewriteBase /ir/
+RewriteRule ^([a-f0-9]{6})/?$ index.php?c=$1 [L,QSA]
+<Files "mapa.json">
+  Require all denied
+</Files>

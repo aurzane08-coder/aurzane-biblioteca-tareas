@@ -1,0 +1,85 @@
+name: Marketing automático
+# Publica cada día en las cuentas propias de AURZANE (nunca en grupos de terceros).
+#  - 05:13 UTC  planifica 14 días, crea las tarjetas, sube imágenes, feed RSS y enlaces cortos a aurzane.com
+#  - 08:37 UTC  franja de mañana (herramientas)       = 09:37 en España (10:37 en verano)
+#  - 17:41 UTC  franja de tarde (libros, notas, etc.)  = 18:41 en España
+# Cada red se activa sola cuando existen sus secretos (ver marketing/README.md). Sin secretos no publica nada.
+on:
+  schedule:
+    - cron: '13 5 * * *'
+    - cron: '37 8 * * *'
+    - cron: '41 17 * * *'
+  push:
+    paths: ['marketing/fijos.py', 'marketing/mk.py', 'marketing/tarjeta.js', 'marketing/web/**']
+  workflow_dispatch:
+    inputs:
+      accion: {description: 'planificar | 1 | 2', default: 'planificar'}
+permissions:
+  contents: write
+concurrency: marketing
+jobs:
+  marketing:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      SG_KEY: ${{ secrets.SG_KEY }}
+      SG_HOST: ${{ secrets.SG_HOST }}
+      SG_USER: ${{ secrets.SG_USER }}
+      SG_PORT: ${{ secrets.SG_PORT }}
+      SG_PASS: ${{ secrets.SG_PASS }}
+      TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+      TELEGRAM_CANAL: ${{ secrets.TELEGRAM_CANAL }}
+      BSKY_USUARIO: ${{ secrets.BSKY_USUARIO }}
+      BSKY_CLAVE_APP: ${{ secrets.BSKY_CLAVE_APP }}
+      MASTODON_SERVIDOR: ${{ secrets.MASTODON_SERVIDOR }}
+      MASTODON_TOKEN: ${{ secrets.MASTODON_TOKEN }}
+      FB_PAGINA_ID: ${{ secrets.FB_PAGINA_ID }}
+      FB_PAGINA_TOKEN: ${{ secrets.FB_PAGINA_TOKEN }}
+      IG_USUARIO_ID: ${{ secrets.IG_USUARIO_ID }}
+      THREADS_TOKEN: ${{ secrets.THREADS_TOKEN }}
+      X_API_KEY: ${{ secrets.X_API_KEY }}
+      X_API_SECRET: ${{ secrets.X_API_SECRET }}
+      X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
+      X_ACCESS_SECRET: ${{ secrets.X_ACCESS_SECRET }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Qué toca
+        run: |
+          A="${{ github.event.inputs.accion }}"
+          case "${{ github.event.schedule }}" in '37 8 * * *') A=1;; '41 17 * * *') A=2;; '13 5 * * *') A=planificar;; esac
+          echo "ACCION=${A:-planificar}" >> $GITHUB_ENV; echo "Acción: ${A:-planificar}"
+      - name: SSH
+        if: env.SG_KEY != ''
+        run: |
+          mkdir -p ~/.ssh && printf '%s\n' "$SG_KEY" | tr -d '\r' > ~/.ssh/id && chmod 600 ~/.ssh/id
+          if [ -n "$SG_PASS" ]; then ssh-keygen -p -P "$SG_PASS" -N "" -f ~/.ssh/id >/dev/null; fi
+          echo "SSH=ssh -i $HOME/.ssh/id -p ${SG_PORT:-18765} -o StrictHostKeyChecking=accept-new" >> $GITHUB_ENV
+      - name: Catálogo, calendario y tarjetas
+        if: env.ACCION == 'planificar'
+        run: |
+          python3 marketing/fijos.py
+          python3 marketing/mk.py catalogo
+          python3 marketing/mk.py planificar
+          sudo apt-get install -y -qq fonts-noto-color-emoji >/dev/null
+          mkdir -p /tmp/f && cd /tmp/f && npm init -y >/dev/null && npm i -s playwright@1.48.2 @fontsource/bodoni-moda@5 @fontsource/instrument-sans@5 && npx playwright install chromium
+          cd $GITHUB_WORKSPACE && NODE_PATH=/tmp/f/node_modules node marketing/tarjeta.js /tmp/tarjetas.json /tmp/f/node_modules/@fontsource
+      - name: Publicar franja
+        if: env.ACCION == '1' || env.ACCION == '2'
+        run: python3 marketing/mk.py publicar "$ACCION"
+      - name: Subir a aurzane.com y leer clics
+        if: env.SG_KEY != ''
+        run: |
+          R="$SG_USER@$SG_HOST:www/aurzane.com"
+          if [ "$ACCION" = planificar ]; then
+            rsync -rlz --ignore-existing -e "$SSH" marketing/img/ "$R/public_html/marketing/img/"
+            rsync -rlz --checksum -e "$SSH" marketing/web/ir/ marketing/salida/ir/ "$R/public_html/ir/"
+            $SSH "$SG_USER@$SG_HOST" "cat www/aurzane.com/ir-clics.log 2>/dev/null" > /tmp/clics.log || true
+            python3 marketing/mk.py clics /tmp/clics.log
+          fi
+          rsync -rlz --checksum -e "$SSH" marketing/salida/feed.xml "$R/public_html/marketing/feed.xml"
+      - name: Guardar estado
+        run: |
+          git config user.name "aurzane-bot"; git config user.email "bot@aurzane.com"
+          git add -A marketing
+          git commit -qm "marketing: $ACCION $(date +%F)" || exit 0
+          for i in 1 2 3 4 5; do git pull --rebase -q && git push -q && break; sleep 7; done

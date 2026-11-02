@@ -1,0 +1,324 @@
+# Marketing automático de AURZANE (0 €).
+#   python3 marketing/mk.py catalogo     -> catalogo.json (fijos + libros abiertos + notas de corte + páginas nuevas del sitemap)
+#   python3 marketing/mk.py planificar   -> calendario de los próximos 14 días, tarjetas que falten, enlaces cortos y feed
+#   python3 marketing/mk.py publicar N   -> publica la franja N (1 mañana, 2 tarde) de hoy en las redes con secretos configurados
+#   python3 marketing/mk.py clics LOG    -> suma los clics del registro del servidor a clics.csv
+# Reglas: cada red recibe un producto distinto en cada franja y recorre todo el catálogo antes de repetir;
+# los productos nuevos salen primero; nada se publica en grupos ni comunidades de terceros.
+import json, os, re, sys, hashlib, datetime, collections, urllib.request, urllib.parse, html, csv
+
+D = os.path.dirname(os.path.abspath(__file__))
+REDES = ['telegram', 'bluesky', 'mastodon', 'facebook', 'instagram', 'threads', 'x', 'pinterest']
+SITIO_IMG = 'https://aurzane.com/marketing/'
+IR = 'https://aurzane.com/ir/'
+HOY = datetime.date.today()
+
+
+def leer(n, defecto=None):
+    p = os.path.join(D, n)
+    return json.load(open(p, encoding='utf-8')) if os.path.exists(p) else defecto
+
+
+def guardar(n, d):
+    json.dump(d, open(os.path.join(D, n), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+
+
+def get(url, t=60):
+    r = urllib.request.Request(url, headers={'User-Agent': 'AURZANE-marketing/1.0'})
+    return urllib.request.urlopen(r, timeout=t).read().decode('utf-8', 'replace')
+
+
+def recorta(t, n):
+    t = re.sub(r'\s+', ' ', t or '').strip()
+    if len(t) <= n: return t
+    c = t[:n]
+    m = max(c.rfind('. '), c.rfind('? '), c.rfind('! '))
+    return c[:m + 1] if m > n * .5 else c[:c.rfind(' ')].rstrip(',;:') + '…'
+
+
+def camel(s):
+    s = re.sub(r'[^\wáéíóúñü ]', ' ', s, flags=re.I)
+    return ''.join(w[:1].upper() + w[1:] for w in s.split() if len(w) > 2)[:30]
+
+
+# ------------------------------------------------------------------ catálogo
+def catalogo():
+    fijos = leer('fijos.json')['productos']
+    prev = {p['id']: p for p in (leer('catalogo.json', {'productos': []})['productos'])}
+    out = []
+    for p in fijos: out.append(dict(p, origen='fijo'))
+    # libros con lectura directa (licencia abierta y PDF propio)
+    try:
+        src = os.environ.get('CATALOGO_JS') or 'https://aurzane.com/biblioteca/catalogo.js'
+        js = open(src, encoding='utf-8').read() if os.path.exists(src) else get(src)
+        B = json.loads(js[js.index('{'):js.rstrip().rstrip(';').rindex('}') + 1])
+        temas = {str(t.get('n', t.get('id'))): t['nombre'] for t in B['temas']}
+        for l in B['libros']:
+            if not l.get('pdf') or not l.get('licencia'): continue
+            aut = (l.get('autores') or '').split(';')[0].strip()
+            if ',' in aut: a, b = aut.split(',', 1); aut = f'{b.strip()} {a.strip()}'
+            tit = l['titulo'].strip()
+            tn = [temas.get(k) for k in (l.get('temas') or {})][:2]
+            out.append(dict(id='libro-' + l['id'], tipo='libro', mundo='aurzane', origen='biblioteca',
+                            url=f"https://aurzane.com/biblioteca/libro/{l['id']}.html", titulo=tit,
+                            ganchos=[f'Libro gratis: {tit}', f'{tit}, de {aut}' if aut else tit, f'Para leer hoy: {tit}'],
+                            texto=recorta(l.get('resumen'), 230), autor=aut, paginas=l.get('paginas'), licencia=l['licencia'],
+                            hashtags=['LibrosGratis'] + [camel(t) for t in tn if t], aviso='', img=None, emoji='📖',
+                            alta=l.get('alta', '')))
+    except Exception as e:
+        print('Biblioteca no disponible:', e)
+    # notas de corte: carreras con muchas universidades
+    try:
+        NC = json.load(open(os.path.join(D, '..', 'univ', 'data', 'notas_corte.json'), encoding='utf-8'))
+        g = collections.defaultdict(list)
+        for f in NC['filas']:
+            if f.get('nota') and f.get('nivel') == 'GRADO':
+                t = re.sub(r'^Grado (Universitario )?(en|de) ', '', f['titulo'].strip(), flags=re.I)
+                t = re.sub(r'\s*/\s*(Bachelor|Degree).*$', '', t, flags=re.I)
+                g[t[:1].upper() + t[1:]].append(f)
+        for t, fs in g.items():
+            if len(fs) < 10: continue
+            s = re.sub(r'[^a-z0-9]+', '-', t.lower().translate(str.maketrans('áéíóúüñ', 'aeiouun'))).strip('-')
+            mx = max(fs, key=lambda f: f['nota']); mn = min(fs, key=lambda f: f['nota'])
+            nota = lambda x: f"{x:.3f}".rstrip('0').rstrip('.').replace('.', ',')
+            out.append(dict(id='nc-' + s, tipo='notas', mundo='nexus', origen='notas',
+                            url=f'https://nexus.aurzane.com/universidades/notas-de-corte/{s}/', titulo=f'Nota de corte de {t}',
+                            ganchos=[f'¿Qué nota piden para {t}?', f'Nota de corte de {t}: de {nota(mn["nota"])} a {nota(mx["nota"])}', f'{t}: las notas de corte de {len(fs)} universidades'],
+                            texto=f'Curso {fs[0].get("curso", "")}: la más alta es {nota(mx["nota"])} en la {mx["universidad"]}. Consulta las {len(fs)} universidades públicas ordenadas por nota, con datos oficiales.',
+                            hashtags=['NotasDeCorte', 'PAU', camel(t)], aviso='', img=None, emoji='📊'))
+    except Exception as e:
+        print('Notas de corte no disponibles:', e)
+    # páginas nuevas del sitemap que aún no están: entran solas
+    urls = {p['url'].rstrip('/') for p in out}
+    try:
+        sm = get('https://aurzane.com/sitemap.xml')
+        for u in re.findall(r'<loc>([^<]+)</loc>', sm):
+            if u.rstrip('/') in urls or re.search(r'/(biblioteca|universidades)/|\.html$|portal|aurzane\.com/$', u): continue
+            pid = 'auto-' + re.sub(r'[^a-z0-9]+', '-', u.split('//')[1].lower()).strip('-')
+            if pid in prev: out.append(prev[pid]); continue
+            try:
+                h = get(u)
+                meta = lambda k: html.unescape((re.search(rf'<meta[^>]+(?:property|name)="{k}"[^>]+content="([^"]*)"', h) or [None, ''])[1])
+                tit = meta('og:title') or html.unescape((re.search(r'<title>([^<|]*)', h) or [None, u])[1]).strip()
+                desc = meta('og:description') or meta('description')
+                mundo = (re.match(r'https://(\w+)\.aurzane', u) or [None, 'aurzane'])[1]
+                tipo = 'test' if '/test-' in u else 'calculadora' if '/calculadora-' in u else 'seccion'
+                out.append(dict(id=pid, tipo=tipo, mundo=mundo, origen='sitemap', url=u, titulo=tit,
+                                ganchos=[tit, tit, tit], texto=recorta(desc, 230), hashtags=['AURZANE'],
+                                aviso='No es un diagnóstico: es una orientación.' if tipo == 'test' else '', img=None,
+                                emoji='🧠' if mundo == 'mind' else '✨', alta=HOY.isoformat()))
+                print('Nuevo producto detectado:', u)
+            except Exception as e:
+                print('No se pudo leer', u, e)
+    except Exception as e:
+        print('Sitemap no disponible:', e)
+    for p in out:
+        p.setdefault('alta', (prev.get(p['id']) or {}).get('alta') or p.get('alta') or HOY.isoformat())
+        if p['id'] in prev and prev[p['id']].get('alta'): p['alta'] = prev[p['id']]['alta']
+    guardar('catalogo.json', {'generado': HOY.isoformat(), 'productos': out})
+    print('Catálogo:', len(out), dict(collections.Counter(p['tipo'] for p in out)))
+
+
+# ------------------------------------------------------------------ planificación
+# franja 1 (mañana): herramientas; franja 2 (tarde): rota entre libros, creatividades, notas y secciones
+TARDE = ['libro', 'creativo', 'notas', 'libro', 'seccion', 'creativo', 'libro']
+GRUPO = {'test': 'herr', 'calculadora': 'herr', 'curso': 'herr', 'libro': 'libro', 'creativo': 'creativo',
+         'notas': 'notas', 'seccion': 'seccion'}
+
+
+def planificar(dias=14):
+    cat = {p['id']: p for p in leer('catalogo.json')['productos']}
+    est = leer('estado.json', {'calendario': {}, 'historial': {}})
+    cal, hist = est['calendario'], est['historial']
+    # quitar del calendario futuro lo que ya no existe
+    for f in list(cal):
+        if f < (HOY - datetime.timedelta(days=60)).isoformat(): del cal[f]
+    ultimo = collections.defaultdict(dict)  # red -> id -> fecha
+    for r, h in hist.items():
+        for f, i in h: ultimo[r][i] = max(ultimo[r].get(i, ''), f)
+    for f, franjas in sorted(cal.items()):
+        for fr, por_red in franjas.items():
+            for r, i in por_red.items(): ultimo[r][i] = max(ultimo[r].get(i, ''), f)
+    for d in range(dias):
+        f = (HOY + datetime.timedelta(days=d)).isoformat()
+        if f in cal and d > 0: continue
+        dia = cal.setdefault(f, {})
+        for fr in ('1', '2'):
+            if fr in dia and all(i in cat for i in dia[fr].values()): continue
+            grupo = 'herr' if fr == '1' else TARDE[datetime.date.fromisoformat(f).toordinal() % len(TARDE)]
+            usados = set(); dia[fr] = {}
+            for r in REDES:
+                if r == 'pinterest' and fr == '1': continue
+                cand = [p for p in cat.values() if GRUPO.get(p['tipo']) == grupo and p['id'] not in usados]
+                if r in ('instagram', 'pinterest'): cand = [p for p in cand if p['tipo'] != 'notas' or True]
+                if not cand: cand = [p for p in cat.values() if p['id'] not in usados]
+                # nuevos primero (alta en los últimos 14 días y nunca publicados en esa red), luego el que lleva más sin salir
+                nuevo = lambda p: p.get('alta', '') >= (HOY - datetime.timedelta(days=14)).isoformat() and p['id'] not in ultimo[r]
+                desempate = lambda p: hashlib.md5((r + p['id']).encode()).hexdigest()
+                p = min(cand, key=lambda p: (not nuevo(p), ultimo[r].get(p['id'], ''), desempate(p)))
+                dia[fr][r] = p['id']; usados.add(p['id']); ultimo[r][p['id']] = f
+    guardar('estado.json', est)
+    # tarjetas que faltan y enlaces cortos
+    necesarios = {i for f, fr in cal.items() if f >= HOY.isoformat() for x in fr.values() for i in x.values()}
+    lista = []
+    os.makedirs(os.path.join(D, 'img', 'auto'), exist_ok=True)
+    for i in sorted(necesarios):
+        p = cat[i]
+        if p.get('img'): continue
+        sal = os.path.join(D, 'img', 'auto', i + '.jpg')
+        if os.path.exists(sal): continue
+        kick = {'test': 'Test gratis', 'calculadora': 'Calculadora gratis', 'curso': 'Curso gratis', 'libro': 'Libro gratis · licencia abierta',
+                'notas': 'Notas de corte 2025-2026', 'seccion': 'Gratis en AURZANE'}.get(p['tipo'], 'AURZANE')
+        sub = (f"{p.get('autor')} · {p.get('paginas')} páginas · {p.get('licencia')}" if p['tipo'] == 'libro'
+               else recorta(p['texto'], 150))
+        lista.append(dict(id=i, mundo=p['mundo'], kicker=kick, titulo=p['titulo'] if p['tipo'] in ('libro',) else p['ganchos'][0],
+                          sub=sub, pie=pie_de(p['url']), emoji=p.get('emoji', ''), salida=sal))
+    json.dump(lista, open('/tmp/tarjetas.json', 'w'), ensure_ascii=False)
+    print('Tarjetas por generar:', len(lista))
+    enlaces()
+
+
+def pie_de(u):
+    h, _, ruta = re.sub(r'^https?://', '', u).partition('/')
+    seg = re.sub(r'\?.*$|\.html$', '', ruta.split('/')[0])
+    return h + ('/' + seg if seg else '')
+
+
+def codigo(r, i):
+    return hashlib.sha1(f'{r}:{i}'.encode()).hexdigest()[:6]
+
+
+def enlaces():
+    cat = {p['id']: p for p in leer('catalogo.json')['productos']}
+    mapa = {}
+    for r in REDES:
+        for i, p in cat.items():
+            sep = '&' if '?' in p['url'] else '?'
+            mapa[codigo(r, i)] = p['url'] + f'{sep}utm_source={r}&utm_medium=social&utm_campaign={p["tipo"]}'
+    os.makedirs(os.path.join(D, 'salida', 'ir'), exist_ok=True)
+    json.dump(mapa, open(os.path.join(D, 'salida', 'ir', 'mapa.json'), 'w'), separators=(',', ':'))
+
+
+def imagen_de(p):
+    return p['img'] if p.get('img') else f'img/auto/{p["id"]}.jpg'
+
+
+def feed():
+    """RSS con imagen para Pinterest (pinea solo desde el feed) y lectores RSS."""
+    cat = {p['id']: p for p in leer('catalogo.json')['productos']}
+    est = leer('estado.json')
+    items = []
+    for f, fr in sorted(est['calendario'].items(), reverse=True):
+        if f > HOY.isoformat(): continue
+        i = fr.get('2', {}).get('pinterest')
+        if i and i in cat: items.append((f, cat[i]))
+        if len(items) >= 60: break
+    x = ['<?xml version="1.0" encoding="UTF-8"?>', '<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/"><channel>',
+         '<title>AURZANE: tests, calculadoras y libros gratis</title><link>https://aurzane.com/</link>',
+         '<description>Lo nuevo de AURZANE cada día: tests psicológicos, calculadoras y libros de psicología gratis.</description><language>es</language>']
+    for f, p in items:
+        img = SITIO_IMG + imagen_de(p)
+        d = datetime.datetime.combine(datetime.date.fromisoformat(f), datetime.time(17, 0)).strftime('%a, %d %b %Y %H:%M:%S +0000')
+        x.append(f'<item><title>{html.escape(p["ganchos"][0])}</title><link>{IR}{codigo("pinterest", p["id"])}</link>'
+                 f'<guid isPermaLink="false">{f}-{p["id"]}</guid><pubDate>{d}</pubDate>'
+                 f'<description>{html.escape(p["texto"])}</description><enclosure url="{img}" type="image/jpeg" length="0"/>'
+                 f'<media:content url="{img}" medium="image"/></item>')
+    x.append('</channel></rss>')
+    os.makedirs(os.path.join(D, 'salida'), exist_ok=True)
+    open(os.path.join(D, 'salida', 'feed.xml'), 'w', encoding='utf-8').write('\n'.join(x))
+
+
+# ------------------------------------------------------------------ textos por red
+def texto(r, p, n):
+    g = p['ganchos'][n % len(p['ganchos'])]
+    url = IR + codigo(r, p['id'])
+    tags = ' '.join('#' + h for h in p.get('hashtags', [])[:4])
+    av = p.get('aviso', '')
+    tx = p['texto']
+    if p['tipo'] == 'libro': tx = f"{p['texto']}\n\n{p.get('paginas')} páginas · {p.get('licencia')} · lectura directa y gratis"
+    if r == 'telegram':
+        return f'<b>{html.escape(g)}</b>\n\n{html.escape(tx)}' + (f'\n\n<i>{html.escape(av)}</i>' if av else '') + f'\n\n👉 {url}'
+    if r in ('bluesky', 'x'):
+        lim = 300 if r == 'bluesky' else 280
+        base = f'{g}\n\n'; cola = f'\n\n{url}'
+        t2 = tags.split(' ')[0] if tags else ''
+        if p['tipo'] == 'test': cola = '\n\nNo es un diagnóstico.' + cola
+        cuerpo = recorta(p['texto'], lim - len(base) - len(cola) - len(t2) - 8 - (23 - len(url) if r == 'x' else 0))
+        return f'{base}{cuerpo}{cola} {t2}'.strip()
+    if r in ('mastodon', 'threads'):
+        s = f'{g}\n\n{tx}' + (f'\n\n{av}' if av else '') + f'\n\n{url}\n\n{tags}'
+        return s if len(s) <= 500 else f'{g}\n\n{recorta(p["texto"], 500 - len(g) - len(url) - len(tags) - 12)}\n\n{url}\n\n{tags}'
+    if r == 'facebook':
+        return f'{g}\n\n{tx}' + (f'\n\n{av}' if av else '') + f'\n\n👉 {url}'
+    if r == 'instagram':
+        dom = re.sub(r'^https?://|/$|\?.*$', '', p['url'])
+        mas = ' '.join('#' + h for h in (p.get('hashtags', []) + ['AURZANE', 'Gratis'])[:8])
+        return f'{g}\n\n{tx}' + (f'\n\n{av}' if av else '') + f'\n\n🔗 Enlace en la bio o en {dom}\n\n{mas}'
+    return f'{g}\n\n{tx}\n\n{url}'
+
+
+# ------------------------------------------------------------------ publicación
+def publicar(franja):
+    import redes
+    cat = {p['id']: p for p in leer('catalogo.json')['productos']}
+    est = leer('estado.json')
+    hoy = HOY.isoformat()
+    plan = est['calendario'].get(hoy, {}).get(franja, {})
+    hist = est.setdefault('historial', {})
+    reg = open(os.path.join(D, 'registro.csv'), 'a', encoding='utf-8')
+    for n, r in enumerate(REDES):
+        i = plan.get(r)
+        if not i or i not in cat: continue
+        if any(f == hoy and x == i for f, x in hist.get(r, [])): continue
+        if r == 'pinterest':  # sale solo en el feed
+            hist.setdefault(r, []).append([hoy, i]); reg.write(f'{hoy},{franja},{r},{i},feed,\n'); continue
+        if not redes.configurada(r): continue
+        p = cat[i]
+        img_url = SITIO_IMG + imagen_de(p)
+        img_local = os.path.join(D, imagen_de(p))
+        if not os.path.exists(img_local):
+            os.makedirs(os.path.dirname(img_local), exist_ok=True)
+            urllib.request.urlretrieve(img_url, img_local)
+        try:
+            ref = redes.publicar(r, texto(r, p, n + int(franja)), img_url, img_local, IR + codigo(r, i), p)
+            hist.setdefault(r, []).append([hoy, i]); reg.write(f'{hoy},{franja},{r},{i},ok,{ref}\n'); print('OK', r, i, ref)
+        except Exception as e:
+            reg.write(f'{hoy},{franja},{r},{i},error,{str(e)[:150].replace(",", " ")}\n'); print('ERROR', r, i, e)
+    for r in hist: hist[r] = hist[r][-800:]
+    guardar('estado.json', est)
+    feed()
+
+
+def clics(log):
+    cat = leer('catalogo.json')['productos']
+    inv = {codigo(r, p['id']): (r, p['id']) for r in REDES for p in cat}
+    cuenta = collections.Counter()
+    for l in open(log, encoding='utf-8', errors='replace'):
+        c = l.rstrip('\n').split('\t')
+        if len(c) >= 3 and c[2] == 'h' and c[1] in inv: cuenta[(c[0][:10],) + inv[c[1]]] += 1
+    with open(os.path.join(D, 'clics.csv'), 'w', encoding='utf-8', newline='') as f:
+        w = csv.writer(f); w.writerow(['fecha', 'red', 'producto', 'clics'])
+        for k, v in sorted(cuenta.items()): w.writerow(list(k) + [v])
+    por_red = collections.Counter(); por_prod = collections.Counter()
+    for (f, r, i), v in cuenta.items(): por_red[r] += v; por_prod[i] += v
+    pub = collections.Counter(l.split(',')[2] for l in open(os.path.join(D, 'registro.csv'), encoding='utf-8') if ',ok,' in l or ',feed,' in l) if os.path.exists(os.path.join(D, 'registro.csv')) else {}
+    md = ['# Informe de marketing', '', f'Actualizado: {HOY.isoformat()}. Clics de personas (sin bots ni vistas previas) que entraron por los enlaces de las publicaciones.', '',
+          '| Red | Publicaciones | Clics |', '|---|---|---|']
+    md += [f'| {r} | {pub.get(r, 0)} | {por_red.get(r, 0)} |' for r in REDES]
+    md += ['', '## Productos con más clics', '', '| Producto | Clics |', '|---|---|']
+    md += [f'| {i} | {v} |' for i, v in por_prod.most_common(25)]
+    open(os.path.join(D, 'INFORME.md'), 'w', encoding='utf-8').write('\n'.join(md) + '\n')
+    print('Clics:', sum(cuenta.values()))
+
+
+if __name__ == '__main__':
+    sys.path.insert(0, D)
+    a = sys.argv[1]
+    if a == 'catalogo': catalogo()
+    elif a == 'planificar': planificar(); feed()
+    elif a == 'publicar': publicar(sys.argv[2])
+    elif a == 'clics': clics(sys.argv[2])
+    elif a == 'muestra':
+        cat = {p['id']: p for p in leer('catalogo.json')['productos']}
+        p = cat[sys.argv[2]]
+        for n, r in enumerate(REDES): print(f'===== {r} ({len(texto(r, p, n))})\n{texto(r, p, n)}\n')

@@ -1,0 +1,998 @@
+{
+ "productos": [
+  {
+   "id": "test-personalidad",
+   "tipo": "test",
+   "mundo": "mind",
+   "url": "https://mind.aurzane.com/test-de-personalidad/",
+   "titulo": "Test de personalidad",
+   "ganchos": [
+    "¿Eres Fogata, Faro o Telescopio?",
+    "Tu personalidad, en 20, 50 o 120 preguntas",
+    "Conoce tus fortalezas y las carreras que encajan contigo"
+   ],
+   "texto": "Test de los Cinco Grandes con 11 perfiles y 30 facetas. Eliges la versión corta, media o larga y ves tu resultado al momento. Gratis y sin registro.",
+   "hashtags": [
+    "TestDePersonalidad",
+    "Psicología",
+    "Autoconocimiento",
+    "BigFive"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "🧠"
+  },
+  {
+   "id": "test-ansiedad",
+   "tipo": "test",
+   "mundo": "mind",
+   "url": "https://mind.aurzane.com/test-de-ansiedad/",
+   "titulo": "Test de ansiedad GAD-7",
+   "ganchos": [
+    "¿Es estrés normal o es ansiedad?",
+    "7 preguntas para saber cómo está tu ansiedad",
+    "El cuestionario de ansiedad que usan médicos y psicólogos"
+   ],
+   "texto": "El GAD-7 en español: 7 preguntas, 2 minutos y tu resultado explicado al instante, con qué hacer después. Gratis y anónimo.",
+   "hashtags": [
+    "Ansiedad",
+    "SaludMental",
+    "Psicología",
+    "Bienestar"
+   ],
+   "aviso": "No es un diagnóstico: es una orientación. Si te preocupa, habla con un profesional.",
+   "img": null,
+   "emoji": "😮‍💨"
+  },
+  {
+   "id": "test-depresion",
+   "tipo": "test",
+   "mundo": "mind",
+   "url": "https://mind.aurzane.com/test-de-depresion/",
+   "titulo": "Test de depresión PHQ-9",
+   "ganchos": [
+    "¿Cómo está de verdad tu estado de ánimo?",
+    "Llevas semanas sin ganas de nada. ¿Y si lo miras?",
+    "El PHQ-9, en 3 minutos y gratis"
+   ],
+   "texto": "9 preguntas del cuestionario que usan médicos y psicólogos, con tu resultado explicado y dónde pedir ayuda si la necesitas. Anónimo.",
+   "hashtags": [
+    "SaludMental",
+    "EstadoDeÁnimo",
+    "Psicología"
+   ],
+   "aviso": "No es un diagnóstico: es una orientación. Si te preocupa, habla con un profesional. En España, 024 atiende las 24 horas.",
+   "img": null,
+   "emoji": "🌧️"
+  },
+  {
+   "id": "test-autoestima",
+   "tipo": "test",
+   "mundo": "mind",
+   "url": "https://mind.aurzane.com/test-de-autoestima/",
+   "titulo": "Test de autoestima de Rosenberg",
+   "ganchos": [
+    "¿Cómo está tu autoestima?",
+    "10 frases para saber cómo te ves",
+    "La escala de autoestima más usada del mundo, en 2 minutos"
+   ],
+   "texto": "La escala de Rosenberg: 10 frases, tu puntuación explicada y consejos concretos para cuidarla. Gratis y anónimo.",
+   "hashtags": [
+    "Autoestima",
+    "Psicología",
+    "Bienestar",
+    "Autoconocimiento"
+   ],
+   "aviso": "No es un diagnóstico: es una orientación. Si te preocupa, habla con un profesional.",
+   "img": null,
+   "emoji": "🪞"
+  },
+  {
+   "id": "test-tdah",
+   "tipo": "test",
+   "mundo": "mind",
+   "url": "https://mind.aurzane.com/test-de-tdah/",
+   "titulo": "Cribado de TDAH en adultos",
+   "ganchos": [
+    "¿Despistes o TDAH?",
+    "6 preguntas de la OMS sobre TDAH en adultos",
+    "Te cuesta terminar lo que empiezas. ¿Podría ser TDAH?"
+   ],
+   "texto": "El cribado ASRS de la OMS para adultos: 6 preguntas, resultado al momento y qué hacer si sale positivo. Gratis y anónimo.",
+   "hashtags": [
+    "TDAH",
+    "TDAHAdultos",
+    "Neurodiversidad",
+    "Psicología"
+   ],
+   "aviso": "No es un diagnóstico: es una orientación. Si te preocupa, habla con un profesional.",
+   "img": null,
+   "emoji": "⚡"
+  },
+  {
+   "id": "test-autocompasion",
+   "tipo": "test",
+   "mundo": "mind",
+   "url": "https://mind.aurzane.com/test-de-autocompasion/",
+   "titulo": "Test de autocompasión",
+   "ganchos": [
+    "¿Te hablas como hablarías a un amigo?",
+    "Cómo te tratas cuando las cosas van mal",
+    "La escala de autocompasión de Kristin Neff, en español"
+   ],
+   "texto": "12 frases de la escala de Neff validada en español y tu resultado explicado: amabilidad contigo, humanidad compartida y atención plena.",
+   "hashtags": [
+    "Autocompasión",
+    "Mindfulness",
+    "Psicología",
+    "Bienestar"
+   ],
+   "aviso": "No es un diagnóstico: es una orientación. Si te preocupa, habla con un profesional.",
+   "img": null,
+   "emoji": "🤍"
+  },
+  {
+   "id": "test-satisfaccion",
+   "tipo": "test",
+   "mundo": "mind",
+   "url": "https://mind.aurzane.com/test-de-satisfaccion-con-la-vida/",
+   "titulo": "Test de satisfacción con la vida",
+   "ganchos": [
+    "¿Qué tan satisfecho estás con tu vida?",
+    "5 frases y 1 minuto para medir tu satisfacción vital",
+    "La escala de Ed Diener, en 1 minuto"
+   ],
+   "texto": "La escala de satisfacción con la vida de Ed Diener: 5 frases y tu resultado explicado al momento. Gratis y anónimo.",
+   "hashtags": [
+    "Felicidad",
+    "Bienestar",
+    "PsicologíaPositiva"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "😊"
+  },
+  {
+   "id": "test-bienestar",
+   "tipo": "test",
+   "mundo": "live",
+   "url": "https://live.aurzane.com/test-de-bienestar/",
+   "titulo": "Test de bienestar WHO-5",
+   "ganchos": [
+    "¿Cómo está tu bienestar esta semana?",
+    "5 preguntas de la OMS, 1 minuto",
+    "Tu bienestar de 0 a 100"
+   ],
+   "texto": "El índice WHO-5 de la OMS: 5 preguntas, tu resultado de 0 a 100 y consejos claros. Gratis y anónimo.",
+   "hashtags": [
+    "Bienestar",
+    "SaludMental",
+    "OMS"
+   ],
+   "aviso": "No es un diagnóstico: es una orientación. Si te preocupa, habla con un profesional.",
+   "img": null,
+   "emoji": "🌤️"
+  },
+  {
+   "id": "test-sueno",
+   "tipo": "test",
+   "mundo": "live",
+   "url": "https://live.aurzane.com/test-de-sueno/",
+   "titulo": "Chequeo de sueño",
+   "ganchos": [
+    "¿Duermes bien de verdad?",
+    "Te despiertas cansado aunque duermas 8 horas",
+    "Tu sueño de 0 a 100 y un plan de 7 días"
+   ],
+   "texto": "11 preguntas sobre tu descanso, tu puntuación de sueño y un plan de 7 días hecho para ti. Gratis y anónimo.",
+   "hashtags": [
+    "Sueño",
+    "Insomnio",
+    "Descanso",
+    "Salud"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "🌙"
+  },
+  {
+   "id": "test-habitos",
+   "tipo": "test",
+   "mundo": "live",
+   "url": "https://live.aurzane.com/test-de-habitos/",
+   "titulo": "Test de hábitos de vida",
+   "ganchos": [
+    "¿Qué tan sano es tu estilo de vida?",
+    "Tu estilo de vida en una nota de 0 a 10",
+    "Qué hábito cambiar primero"
+   ],
+   "texto": "Alimentación, ejercicio, alcohol, tabaco y estrés: tu nota de 0 a 10 y qué cambiar primero. 2 minutos, gratis.",
+   "hashtags": [
+    "HábitosSaludables",
+    "VidaSana",
+    "Salud"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "🥗"
+  },
+  {
+   "id": "calc-calorias",
+   "tipo": "calculadora",
+   "mundo": "live",
+   "url": "https://live.aurzane.com/calculadora-calorias/",
+   "titulo": "Calculadora de calorías e IMC",
+   "ganchos": [
+    "¿Cuántas calorías necesitas al día?",
+    "Calorías, IMC, proteína y agua en 1 minuto",
+    "Deja de adivinar cuánto comer"
+   ],
+   "texto": "Tus calorías diarias con la fórmula Mifflin-St Jeor, tu IMC y cuánta proteína y agua tomar. Gratis.",
+   "hashtags": [
+    "Nutrición",
+    "Calorías",
+    "IMC",
+    "Salud"
+   ],
+   "aviso": "Orientativo. Si tienes una condición de salud, consulta con un profesional.",
+   "img": null,
+   "emoji": "🍽️"
+  },
+  {
+   "id": "calc-embarazo",
+   "tipo": "calculadora",
+   "mundo": "live",
+   "url": "https://live.aurzane.com/calculadora-embarazo/",
+   "titulo": "Calculadora de embarazo",
+   "ganchos": [
+    "¿De cuántas semanas estás?",
+    "Fecha probable de parto en 10 segundos",
+    "Tu calendario de ecografías y pruebas"
+   ],
+   "texto": "Semanas de embarazo, fecha probable de parto y calendario de ecografías y pruebas, ajustado a tu ciclo. Gratis.",
+   "hashtags": [
+    "Embarazo",
+    "Maternidad",
+    "FechaDeParto"
+   ],
+   "aviso": "Orientativo: tu matrona o ginecólogo confirma las fechas.",
+   "img": null,
+   "emoji": "🤰"
+  },
+  {
+   "id": "calc-hipoteca",
+   "tipo": "calculadora",
+   "mundo": "build",
+   "url": "https://build.aurzane.com/calculadora-hipoteca/",
+   "titulo": "Calculadora de hipoteca 2026",
+   "ganchos": [
+    "¿Alquilar o comprar? Haz la cuenta",
+    "Tu cuota, impuestos y ahorro necesario",
+    "¿Amortizar plazo o cuota? Mira cuánto ahorras"
+   ],
+   "texto": "Cuota fija o variable con el euríbor actual, ITP de tu comunidad, gastos, si te sale mejor alquilar o comprar y cuánto ahorras amortizando.",
+   "hashtags": [
+    "Hipoteca",
+    "Vivienda",
+    "FinanzasPersonales",
+    "Euríbor"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "🏠"
+  },
+  {
+   "id": "calc-sueldo",
+   "tipo": "calculadora",
+   "mundo": "build",
+   "url": "https://build.aurzane.com/calculadora-sueldo-neto/",
+   "titulo": "Calculadora de sueldo neto 2026",
+   "ganchos": [
+    "¿Cuánto cobrarás en neto?",
+    "De bruto a neto con el IRPF de 2026",
+    "30.000 € brutos, ¿cuánto son al mes?"
+   ],
+   "texto": "Retención de IRPF y Seguridad Social de 2026, 12 o 14 pagas, hijos y edad. Resultado al instante y gratis.",
+   "hashtags": [
+    "Sueldo",
+    "IRPF",
+    "Nómina",
+    "FinanzasPersonales"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "💶"
+  },
+  {
+   "id": "calc-reforma",
+   "tipo": "calculadora",
+   "mundo": "build",
+   "url": "https://build.aurzane.com/calculadora-reforma/",
+   "titulo": "Calculadora de reforma",
+   "ganchos": [
+    "¿Cuánto cuesta reformar tu piso?",
+    "Presupuesto de reforma partida a partida",
+    "Antes de pedir presupuesto, haz tu cálculo"
+   ],
+   "texto": "Presupuesto orientativo con precios de mercado de 2026, IVA e imprevistos incluidos. Cocina, baño, suelos y más.",
+   "hashtags": [
+    "Reforma",
+    "Vivienda",
+    "Presupuesto"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "🛠️"
+  },
+  {
+   "id": "calc-pau",
+   "tipo": "calculadora",
+   "mundo": "nexus",
+   "url": "https://nexus.aurzane.com/calculadora-nota-pau/",
+   "titulo": "Calculadora de nota PAU",
+   "ganchos": [
+    "¿Te llega la nota para tu carrera?",
+    "Tu nota de admisión sobre 14, con ponderaciones",
+    "Selectividad: calcula lo que te falta"
+   ],
+   "texto": "Nota de acceso, nota de admisión sobre 14 con ponderaciones y lo que te falta para la nota de corte. Gratis.",
+   "hashtags": [
+    "PAU",
+    "Selectividad",
+    "EBAU",
+    "Universidad"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "🧮"
+  },
+  {
+   "id": "notas-corte",
+   "tipo": "seccion",
+   "mundo": "nexus",
+   "url": "https://nexus.aurzane.com/universidades/notas-de-corte/",
+   "titulo": "Notas de corte 2025-2026",
+   "ganchos": [
+    "Notas de corte oficiales de 275 carreras",
+    "¿Qué nota piden para tu carrera?",
+    "Medicina, Psicología, Enfermería… todas las notas de corte"
+   ],
+   "texto": "Las notas de corte oficiales del Ministerio, por carrera y por universidad pública, ordenadas de mayor a menor.",
+   "hashtags": [
+    "NotasDeCorte",
+    "PAU",
+    "Universidad",
+    "Selectividad"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "📊"
+  },
+  {
+   "id": "universidades",
+   "tipo": "seccion",
+   "mundo": "nexus",
+   "url": "https://nexus.aurzane.com/universidades/",
+   "titulo": "Buscador de universidades",
+   "ganchos": [
+    "Más de 6.000 universidades en 55 países",
+    "Encuentra tu universidad y tu carrera",
+    "¿Dónde estudiar? Compara universidades"
+   ],
+   "texto": "Universidades y carreras de España, Latinoamérica y el mundo, con filtros por ciudad, tipo y carrera. Gratis.",
+   "hashtags": [
+    "Universidad",
+    "Estudiar",
+    "Carreras"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "🎓"
+  },
+  {
+   "id": "ovp",
+   "tipo": "test",
+   "mundo": "nexus",
+   "url": "https://ovp.aurzane.com/",
+   "titulo": "Orientación vocacional OVP",
+   "ganchos": [
+    "¿No sabes qué estudiar?",
+    "Seis instrumentos y un informe para elegir carrera",
+    "Elige carrera con más criterio"
+   ],
+   "texto": "Evaluaciones psicológicas estandarizadas de intereses, aptitudes y personalidad, con informe integrador en PDF. Puedes pausar y seguir cuando quieras.",
+   "hashtags": [
+    "OrientaciónVocacional",
+    "QuéEstudiar",
+    "Universidad"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "🧭"
+  },
+  {
+   "id": "biblioteca",
+   "tipo": "seccion",
+   "mundo": "aurzane",
+   "url": "https://aurzane.com/biblioteca/",
+   "titulo": "Biblioteca AURZANE",
+   "ganchos": [
+    "Libros de psicología para leer gratis online",
+    "Más de 700 libros con licencia abierta",
+    "Tu próxima lectura de psicología, gratis"
+   ],
+   "texto": "Manuales, ensayos e investigaciones con licencia abierta para leer en el navegador, ordenados por temas.",
+   "hashtags": [
+    "LibrosGratis",
+    "Psicología",
+    "Lectura"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "📚"
+  },
+  {
+   "id": "articulos",
+   "tipo": "seccion",
+   "mundo": "aurzane",
+   "url": "https://aurzane.com/articulos/",
+   "titulo": "Artículos AURZANE",
+   "ganchos": [
+    "Lo que dice la ciencia, explicado claro",
+    "Artículos con sus fuentes citadas",
+    "Divulgación con fuentes, no opiniones"
+   ],
+   "texto": "Artículos ordenados por mundo, con las fuentes científicas citadas para que puedas comprobarlo todo.",
+   "hashtags": [
+    "Divulgación",
+    "Ciencia",
+    "Psicología"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "📰"
+  },
+  {
+   "id": "curso-neuro",
+   "tipo": "curso",
+   "mundo": "learn",
+   "url": "https://learn.aurzane.com/cursos.html?c=neuro-300260",
+   "titulo": "Curso de neuroanatomía",
+   "ganchos": [
+    "Aprende el sistema nervioso tema a tema",
+    "Neuroanatomía con lecciones, esquemas y repaso",
+    "Del desarrollo a la corteza"
+   ],
+   "texto": "Curso interactivo de organización morfofuncional del sistema nervioso: temas, lecciones, mapas y preguntas de repaso.",
+   "hashtags": [
+    "Neurociencia",
+    "Neuroanatomía",
+    "Estudiantes"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "🧬"
+  },
+  {
+   "id": "curso-metod",
+   "tipo": "curso",
+   "mundo": "learn",
+   "url": "https://learn.aurzane.com/cursos.html?c=metod-300263",
+   "titulo": "Curso de técnicas en neurociencias",
+   "ganchos": [
+    "¿Cómo se investiga el cerebro?",
+    "Estereotaxia, electrofisiología y más",
+    "Técnicas de investigación en neurociencias"
+   ],
+   "texto": "Curso interactivo de metodología y técnicas de investigación en neurociencias, de la estereotaxia a la neurofarmacología.",
+   "hashtags": [
+    "Neurociencia",
+    "Investigación",
+    "Estudiantes"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "🔬"
+  },
+  {
+   "id": "biblio-mind",
+   "tipo": "seccion",
+   "mundo": "mind",
+   "url": "https://mind.aurzane.com/mind-biblioteca.html",
+   "titulo": "Biblioteca MIND",
+   "ganchos": [
+    "Biblioteca MIND: psicología y neurociencia",
+    "Psicología y neurociencia: investigación para leer",
+    "Explora la biblioteca de psicología y neurociencia"
+   ],
+   "texto": "Literatura científica sobre psicología y neurociencia, con referencias para ir a las fuentes originales.",
+   "hashtags": [
+    "Investigación",
+    "Ciencia"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "🧠"
+  },
+  {
+   "id": "biblio-live",
+   "tipo": "seccion",
+   "mundo": "live",
+   "url": "https://live.aurzane.com/live-biblioteca.html",
+   "titulo": "Biblioteca LIVE",
+   "ganchos": [
+    "Biblioteca LIVE: salud y bienestar",
+    "Salud y bienestar: investigación para leer",
+    "Explora la biblioteca de salud y bienestar"
+   ],
+   "texto": "Literatura científica sobre salud y bienestar, con referencias para ir a las fuentes originales.",
+   "hashtags": [
+    "Investigación",
+    "Ciencia"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "🌿"
+  },
+  {
+   "id": "biblio-nexus",
+   "tipo": "seccion",
+   "mundo": "nexus",
+   "url": "https://nexus.aurzane.com/nexus-biblioteca.html",
+   "titulo": "Biblioteca NEXUS",
+   "ganchos": [
+    "Biblioteca NEXUS: tecnología, ia y datos",
+    "Tecnología, IA y datos: investigación para leer",
+    "Explora la biblioteca de tecnología, ia y datos"
+   ],
+   "texto": "Literatura científica sobre tecnología, ia y datos, con referencias para ir a las fuentes originales.",
+   "hashtags": [
+    "Investigación",
+    "Ciencia"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "🌐"
+  },
+  {
+   "id": "biblio-learn",
+   "tipo": "seccion",
+   "mundo": "learn",
+   "url": "https://learn.aurzane.com/learn-biblioteca.html",
+   "titulo": "Biblioteca LEARN",
+   "ganchos": [
+    "Biblioteca LEARN: ciencias del aprendizaje",
+    "Ciencias del aprendizaje: investigación para leer",
+    "Explora la biblioteca de ciencias del aprendizaje"
+   ],
+   "texto": "Literatura científica sobre ciencias del aprendizaje, con referencias para ir a las fuentes originales.",
+   "hashtags": [
+    "Investigación",
+    "Ciencia"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "📖"
+  },
+  {
+   "id": "biblio-build",
+   "tipo": "seccion",
+   "mundo": "build",
+   "url": "https://build.aurzane.com/build-biblioteca.html",
+   "titulo": "Biblioteca BUILD",
+   "ganchos": [
+    "Biblioteca BUILD: historia, vivienda y civilizaciones",
+    "Historia, vivienda y civilizaciones: investigación para leer",
+    "Explora la biblioteca de historia, vivienda y civilizaciones"
+   ],
+   "texto": "Literatura científica sobre historia, vivienda y civilizaciones, con referencias para ir a las fuentes originales.",
+   "hashtags": [
+    "Investigación",
+    "Ciencia"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "🏛️"
+  },
+  {
+   "id": "crea-l05-01",
+   "tipo": "creativo",
+   "mundo": "aurzane",
+   "url": "https://aurzane.com/biblioteca/tema/neuropsicologia-y-funcionamiento-cerebral.html",
+   "titulo": "El cerebro también se entrena",
+   "ganchos": [
+    "El cerebro también se entrena",
+    "El cerebro también se entrena, gratis",
+    "El cerebro también se entrena"
+   ],
+   "texto": "Libros abiertos de neuropsicología para entender cómo funciona tu mente y tu rendimiento.",
+   "hashtags": [
+    "Neurociencia",
+    "LibrosGratis"
+   ],
+   "aviso": "",
+   "img": "img/lote05-01.jpg",
+   "emoji": ""
+  },
+  {
+   "id": "crea-l05-02",
+   "tipo": "creativo",
+   "mundo": "aurzane",
+   "url": "https://aurzane.com/biblioteca/tema/psicobiologia-y-bases-biologicas-de-la-conducta.html",
+   "titulo": "Neurociencia para todos",
+   "ganchos": [
+    "Neurociencia para todos",
+    "Neurociencia para todos, gratis",
+    "Neurociencia para todos"
+   ],
+   "texto": "Lecturas gratis sobre las bases biológicas de la conducta, explicadas con rigor.",
+   "hashtags": [
+    "Neurociencia",
+    "Divulgación"
+   ],
+   "aviso": "",
+   "img": "img/lote05-02.jpg",
+   "emoji": ""
+  },
+  {
+   "id": "crea-l05-03",
+   "tipo": "creativo",
+   "mundo": "aurzane",
+   "url": "https://aurzane.com/biblioteca/tema/aprendizaje-y-psicologia-educativa.html",
+   "titulo": "Educación y cerebro",
+   "ganchos": [
+    "Educación y cerebro",
+    "Educación y cerebro, gratis",
+    "Educación y cerebro"
+   ],
+   "texto": "Libros abiertos de psicología educativa para aprender a enseñar y a aprender mejor.",
+   "hashtags": [
+    "Educación",
+    "Neuroeducación"
+   ],
+   "aviso": "",
+   "img": "img/lote05-03.jpg",
+   "emoji": ""
+  },
+  {
+   "id": "crea-l05-04",
+   "tipo": "creativo",
+   "mundo": "aurzane",
+   "url": "https://aurzane.com/biblioteca/tema/psicologia-digital-y-tecnologia.html",
+   "titulo": "Salud mental en la era digital",
+   "ganchos": [
+    "Salud mental en la era digital",
+    "Salud mental en la era digital, gratis",
+    "Salud mental en la era digital"
+   ],
+   "texto": "Lecturas gratis sobre cómo la tecnología influye en la mente y cómo cuidarte en un mundo conectado.",
+   "hashtags": [
+    "SaludMental",
+    "Tecnología"
+   ],
+   "aviso": "",
+   "img": "img/lote05-04.jpg",
+   "emoji": ""
+  },
+  {
+   "id": "crea-l05-05",
+   "tipo": "creativo",
+   "mundo": "aurzane",
+   "url": "https://ovp.aurzane.com/",
+   "titulo": "Descubre tu vocación",
+   "ganchos": [
+    "Descubre tu vocación",
+    "Descubre tu vocación, gratis",
+    "Descubre tu vocación"
+   ],
+   "texto": "Explora tus intereses, aptitudes y personalidad con la orientación vocacional de AURZANE y recibe tu informe.",
+   "hashtags": [
+    "OrientaciónVocacional",
+    "QuéEstudiar"
+   ],
+   "aviso": "",
+   "img": "img/lote05-05.jpg",
+   "emoji": ""
+  },
+  {
+   "id": "crea-l05-08",
+   "tipo": "creativo",
+   "mundo": "aurzane",
+   "url": "https://aurzane.com/research.html",
+   "titulo": "Research Hub",
+   "ganchos": [
+    "Research Hub",
+    "Research Hub, gratis",
+    "Research Hub"
+   ],
+   "texto": "Un punto de entrada para buscar investigación en varias bibliotecas científicas a la vez.",
+   "hashtags": [
+    "Investigación",
+    "Ciencia"
+   ],
+   "aviso": "",
+   "img": "img/lote05-08.jpg",
+   "emoji": ""
+  },
+  {
+   "id": "crea-l05-09",
+   "tipo": "creativo",
+   "mundo": "aurzane",
+   "url": "https://aurzane.com/biblioteca/",
+   "titulo": "Biblioteca digital",
+   "ganchos": [
+    "Biblioteca digital",
+    "Biblioteca digital, gratis",
+    "Biblioteca digital"
+   ],
+   "texto": "Más de 700 libros con licencia abierta para leer gratis en línea, cuando quieras.",
+   "hashtags": [
+    "LibrosGratis",
+    "Lectura"
+   ],
+   "aviso": "",
+   "img": "img/lote05-09.jpg",
+   "emoji": ""
+  },
+  {
+   "id": "crea-l05-11",
+   "tipo": "creativo",
+   "mundo": "aurzane",
+   "url": "https://mind.aurzane.com/",
+   "titulo": "MIND: cuida tu mente",
+   "ganchos": [
+    "MIND: cuida tu mente",
+    "MIND: cuida tu mente, gratis",
+    "MIND: cuida tu mente"
+   ],
+   "texto": "Tests, guías y lecturas de psicología para cuidar tu bienestar, todo gratis.",
+   "hashtags": [
+    "SaludMental",
+    "Psicología"
+   ],
+   "aviso": "",
+   "img": "img/lote05-11.jpg",
+   "emoji": ""
+  },
+  {
+   "id": "crea-l06-01",
+   "tipo": "creativo",
+   "mundo": "aurzane",
+   "url": "https://aurzane.com/biblioteca/",
+   "titulo": "El poder de la lectura",
+   "ganchos": [
+    "El poder de la lectura",
+    "El poder de la lectura, gratis",
+    "El poder de la lectura"
+   ],
+   "texto": "Libros que inspiran y enseñan, de lectura directa y gratis en la Biblioteca AURZANE.",
+   "hashtags": [
+    "Lectura",
+    "LibrosGratis"
+   ],
+   "aviso": "",
+   "img": "img/lote06-01.jpg",
+   "emoji": ""
+  },
+  {
+   "id": "crea-l06-02",
+   "tipo": "creativo",
+   "mundo": "aurzane",
+   "url": "https://aurzane.com/biblioteca/tema/filosofia-aplicada-a-la-vida.html",
+   "titulo": "Filosofía para la vida",
+   "ganchos": [
+    "Filosofía para la vida",
+    "Filosofía para la vida, gratis",
+    "Filosofía para la vida"
+   ],
+   "texto": "Lecturas para pensar mejor: filosofía aplicada a las decisiones de cada día.",
+   "hashtags": [
+    "Filosofía",
+    "PensamientoCrítico"
+   ],
+   "aviso": "",
+   "img": "img/lote06-02.jpg",
+   "emoji": ""
+  },
+  {
+   "id": "crea-l06-03",
+   "tipo": "creativo",
+   "mundo": "aurzane",
+   "url": "https://aurzane.com/biblioteca/tema/emociones-y-regulacion-emocional.html",
+   "titulo": "Neurociencia y emoción",
+   "ganchos": [
+    "Neurociencia y emoción",
+    "Neurociencia y emoción, gratis",
+    "Neurociencia y emoción"
+   ],
+   "texto": "Libros abiertos sobre emociones y regulación emocional para entenderte mejor.",
+   "hashtags": [
+    "Emociones",
+    "Psicología"
+   ],
+   "aviso": "",
+   "img": "img/lote06-03.jpg",
+   "emoji": ""
+  },
+  {
+   "id": "crea-l06-05",
+   "tipo": "creativo",
+   "mundo": "aurzane",
+   "url": "https://aurzane.com/biblioteca/tema/aprendizaje-y-psicologia-educativa.html",
+   "titulo": "Planifica tu aprendizaje",
+   "ganchos": [
+    "Planifica tu aprendizaje",
+    "Planifica tu aprendizaje, gratis",
+    "Planifica tu aprendizaje"
+   ],
+   "texto": "Lecturas sobre métodos de estudio, gestión del tiempo y cómo aprender de forma más eficaz.",
+   "hashtags": [
+    "Estudiar",
+    "TécnicasDeEstudio"
+   ],
+   "aviso": "",
+   "img": "img/lote06-05.jpg",
+   "emoji": ""
+  },
+  {
+   "id": "crea-l06-08",
+   "tipo": "creativo",
+   "mundo": "aurzane",
+   "url": "https://aurzane.com/research.html",
+   "titulo": "Research Hub",
+   "ganchos": [
+    "Research Hub",
+    "Research Hub, gratis",
+    "Research Hub"
+   ],
+   "texto": "Investiga y descubre publicaciones científicas desde un único buscador.",
+   "hashtags": [
+    "Investigación",
+    "Ciencia"
+   ],
+   "aviso": "",
+   "img": "img/lote06-08.jpg",
+   "emoji": ""
+  },
+  {
+   "id": "crea-l06-14",
+   "tipo": "creativo",
+   "mundo": "aurzane",
+   "url": "https://aurzane.com/articulos/",
+   "titulo": "Artículos y guías",
+   "ganchos": [
+    "Artículos y guías",
+    "Artículos y guías, gratis",
+    "Artículos y guías"
+   ],
+   "texto": "Información rigurosa y con fuentes citadas, al alcance de todos.",
+   "hashtags": [
+    "Divulgación",
+    "Ciencia"
+   ],
+   "aviso": "",
+   "img": "img/lote06-14.jpg",
+   "emoji": ""
+  },
+  {
+   "id": "crea-l06-16",
+   "tipo": "creativo",
+   "mundo": "aurzane",
+   "url": "https://aurzane.com/biblioteca/",
+   "titulo": "Conocimiento abierto",
+   "ganchos": [
+    "Conocimiento abierto",
+    "Conocimiento abierto, gratis",
+    "Conocimiento abierto"
+   ],
+   "texto": "Libros con licencia abierta: accede, aprende y comparte sin barreras.",
+   "hashtags": [
+    "AccesoAbierto",
+    "LibrosGratis"
+   ],
+   "aviso": "",
+   "img": "img/lote06-16.jpg",
+   "emoji": ""
+  },
+  {
+   "id": "crea-l07-01",
+   "tipo": "creativo",
+   "mundo": "aurzane",
+   "url": "https://aurzane.com/biblioteca/tema/aprendizaje-y-psicologia-educativa.html",
+   "titulo": "El cerebro en la educación",
+   "ganchos": [
+    "El cerebro en la educación",
+    "El cerebro en la educación, gratis",
+    "El cerebro en la educación"
+   ],
+   "texto": "Memoria, atención y concentración: lecturas abiertas sobre cómo aprende el cerebro.",
+   "hashtags": [
+    "Neuroeducación",
+    "Educación"
+   ],
+   "aviso": "",
+   "img": "img/lote07-01.jpg",
+   "emoji": ""
+  },
+  {
+   "id": "crea-l07-03",
+   "tipo": "creativo",
+   "mundo": "aurzane",
+   "url": "https://aurzane.com/biblioteca/tema/sueno-estres-y-bienestar.html",
+   "titulo": "Mente sana, vida plena",
+   "ganchos": [
+    "Mente sana, vida plena",
+    "Mente sana, vida plena, gratis",
+    "Mente sana, vida plena"
+   ],
+   "texto": "Lecturas gratis sobre bienestar emocional, gestión del estrés y hábitos saludables.",
+   "hashtags": [
+    "Bienestar",
+    "Estrés"
+   ],
+   "aviso": "",
+   "img": "img/lote07-03.jpg",
+   "emoji": ""
+  },
+  {
+   "id": "crea-l07-04",
+   "tipo": "creativo",
+   "mundo": "aurzane",
+   "url": "https://aurzane.com/biblioteca/tema/psicologia-digital-y-tecnologia.html",
+   "titulo": "El futuro de la tecnología",
+   "ganchos": [
+    "El futuro de la tecnología",
+    "El futuro de la tecnología, gratis",
+    "El futuro de la tecnología"
+   ],
+   "texto": "Cómo la tecnología cambia nuestra mente: lecturas abiertas de psicología digital.",
+   "hashtags": [
+    "Tecnología",
+    "Psicología"
+   ],
+   "aviso": "",
+   "img": "img/lote07-04.jpg",
+   "emoji": ""
+  },
+  {
+   "id": "crea-l07-08",
+   "tipo": "creativo",
+   "mundo": "aurzane",
+   "url": "https://aurzane.com/research.html",
+   "titulo": "Investiga sin fronteras",
+   "ganchos": [
+    "Investiga sin fronteras",
+    "Investiga sin fronteras, gratis",
+    "Investiga sin fronteras"
+   ],
+   "texto": "Busca artículos y publicaciones en varias fuentes académicas desde un solo lugar.",
+   "hashtags": [
+    "Investigación",
+    "Ciencia"
+   ],
+   "aviso": "",
+   "img": "img/lote07-08.jpg",
+   "emoji": ""
+  },
+  {
+   "id": "crea-l07-14",
+   "tipo": "creativo",
+   "mundo": "aurzane",
+   "url": "https://aurzane.com/articulos/",
+   "titulo": "Artículos y guías",
+   "ganchos": [
+    "Artículos y guías",
+    "Artículos y guías, gratis",
+    "Artículos y guías"
+   ],
+   "texto": "Información práctica y con fuentes para tu día a día.",
+   "hashtags": [
+    "Divulgación",
+    "Guías"
+   ],
+   "aviso": "",
+   "img": "img/lote07-14.jpg",
+   "emoji": ""
+  }
+ ]
+}
