@@ -1,16 +1,19 @@
 name: AURZANE AI Manager
 # Cada 6 horas revisa todo el ecosistema, arregla lo seguro, anuncia las novedades, prepara la cola de propuestas y actualiza el panel (aurzane.com/admin.html, sección AURZANE AI).
-# La revisión de las 06:23 UTC es la diaria (mide PageSpeed y manda el resumen por Telegram).
+# Cada 10 minutos mira (en segundos) si toca: revisión completa si pasaron 6 horas, o al momento si en el admin pulsaste
+# «Revisar ahora» o aprobaste algo. La primera revisión de cada día desde las 06 UTC es la diaria (PageSpeed y resumen por Telegram).
 on:
   schedule:
-    - cron: '23 0,6,12,18 * * *'
+    - cron: '*/10 * * * *'
   push:
     paths: ['ai/manager.py', '.github/workflows/ai-manager.yml']
   workflow_dispatch:
 permissions:
   contents: write
   actions: write
-concurrency: ai-manager
+concurrency:
+  group: ai-manager
+  cancel-in-progress: false
 jobs:
   manager:
     runs-on: ubuntu-latest
@@ -33,13 +36,25 @@ jobs:
           if [ -n "$SG_PASS" ]; then ssh-keygen -p -P "$SG_PASS" -N "" -f ~/.ssh/id >/dev/null; fi
           echo "SSH=ssh -i $HOME/.ssh/id -p ${SG_PORT:-18765} -o StrictHostKeyChecking=accept-new" >> $GITHUB_ENV
           echo "SG_DEST=$SG_USER@$SG_HOST" >> $GITHUB_ENV
-      - name: Revisar y arreglar
+      - name: ¿Toca revisar?
+        id: toca
         run: |
-          [ "$(date -u +%H)" = "06" ] && export DIARIO=1
+          T=0
+          [ "${{ github.event_name }}" != "schedule" ] && T=1
+          if [ -n "$SSH" ] && $SSH "$SG_DEST" "test -f www/aurzane.com/privado-ai/revisar_ya && rm -f www/aurzane.com/privado-ai/revisar_ya" 2>/dev/null; then T=1; echo "Pedida desde el admin"; fi
+          V=$(python3 -c "import json,datetime as d;h=json.load(open('ai/historial.json'));print(1 if not h or (d.datetime.utcnow()-d.datetime.fromisoformat(h[-1]['fecha'])).total_seconds()>21000 else 0)" 2>/dev/null || echo 1)
+          [ "$V" = "1" ] && T=1
+          echo "si=$T" >> $GITHUB_OUTPUT; echo "Toca revisar: $T"
+      - name: Herramientas PDF
+        if: steps.toca.outputs.si == '1'
+        run: command -v pdftoppm >/dev/null || (sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils)
+      - name: Revisar y arreglar
+        if: steps.toca.outputs.si == '1'
+        run: |
           [ "${{ github.event_name }}" = "push" ] && export DIARIO=1
           python3 -u ai/manager.py
       - name: Subir informe y novedades
-        if: env.SG_KEY != ''
+        if: env.SG_KEY != '' && steps.toca.outputs.si == '1'
         run: |
           $SSH "$SG_DEST" "mkdir -p www/aurzane.com/privado-ai www/aurzane.com/public_html/novedades www/aurzane.com/public_html/biblioteca/recientes && chmod 700 www/aurzane.com/privado-ai"
           cat /tmp/ai/informe.json | $SSH "$SG_DEST" "cat > www/aurzane.com/privado-ai/informe.json && chmod 600 www/aurzane.com/privado-ai/informe.json"
@@ -48,6 +63,7 @@ jobs:
           rsync -rlz --checksum -e "$SSH" /tmp/ai/recientes/ "$SG_DEST:www/aurzane.com/public_html/biblioteca/recientes/"
           $SSH "$SG_DEST" "site-tools-client domain-all update id=aurzane.com flush_cache=1 >/dev/null" || true
       - name: Guardar historial
+        if: steps.toca.outputs.si == '1'
         run: |
           git config user.name "aurzane-bot"; git config user.email "bot@aurzane.com"
           git add ai/*.json

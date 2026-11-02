@@ -18,6 +18,8 @@ CLAVE = ['https://aurzane.com/', 'https://mind.aurzane.com/', 'https://mind.aurz
 COMPARTIDOS = ['https://aurzane.com/aurzane-paleta.js', 'https://aurzane.com/aurzane-idiomas.js', 'https://aurzane.com/aurzane-id.js']
 SSH = os.environ.get('SSH', ''); DEST = os.environ.get('SG_DEST', '')
 problemas, acciones = [], []
+ESTADO = json.load(open(os.path.join(D, 'estado.json'), encoding='utf-8')) if os.path.exists(os.path.join(D, 'estado.json')) else {}
+DIARIO = os.environ.get('DIARIO') == '1' or (ESTADO.get('diario') != HOY and AHORA.hour >= 6)
 
 def aviso(nivel, texto): problemas.append({'nivel': nivel, 'texto': texto}); print('::notice title=AI::' + nivel + ' · ' + texto)
 def leer(n, d):
@@ -174,7 +176,7 @@ pagina_novedades()
 
 # ---------- 9. Velocidad (PageSpeed Insights, gratis), una vez al día ----------
 ps = leer('pagespeed.json', [])
-if os.environ.get('DIARIO') == '1':
+if DIARIO:
     ps = []
     for u in ['https://aurzane.com/', 'https://mind.aurzane.com/test-de-ansiedad/', 'https://nexus.aurzane.com/universidades/', 'https://live.aurzane.com/calculadora-imc/']:
         q = 'https://www.googleapis.com/pagespeedonline/v5/runPagespeed?' + urllib.parse.urlencode([('url', u), ('strategy', 'mobile'), ('category', 'performance'), ('category', 'seo'), ('category', 'accessibility')])
@@ -188,47 +190,125 @@ if os.environ.get('DIARIO') == '1':
     if ps: guardar('pagespeed.json', ps)
 
 # ---------- 12. Cola de propuestas: libros abiertos y estudios recientes (aprende de tus decisiones) ----------
+# Cada propuesta se comprueba antes de llegar a la cola: tiene que tener un PDF libre que se pueda descargar,
+# y si dice ser un libro tiene que tener al menos 50 páginas. Si no, la IA la descarta sola y lo apunta.
+# Al aprobarla, descarga el PDF, saca la portada de la primera página y publica una ficha con lector propio.
 INDEXNOW = 'bb5a4930b6afe5c8301aeafd1c898d44'
+REC = OUT + '/recientes'; os.makedirs(REC + '/portadas', exist_ok=True); os.makedirs(REC + '/pdf', exist_ok=True)
+TMP = '/tmp/ai/pdf'; os.makedirs(TMP, exist_ok=True)
 vistos = set(leer('vistos.json', [])); aprob = leer('aprobados.json', []); apr = leer('aprendizaje.json', {})
+autodesc = leer('autodescartes.json', [])
+ALOJABLE = lambda lic: lic in ('cc-by', 'cc-by-sa', 'cc-by-nd', 'cc0', 'public-domain', 'pd')
 def jremoto(f, d):
     t = remoto(f'cat www/aurzane.com/privado-ai/{f} 2>/dev/null')
     try: return json.loads(t) if t.strip() else d
     except Exception: return d
+def descargar(u, dest, maxmb=80):
+    try:
+        req = urllib.request.Request(u, headers={'User-Agent': UA, 'Accept': 'application/pdf,*/*'})
+        with urllib.request.urlopen(req, timeout=90) as r, open(dest, 'wb') as f:
+            n = 0
+            while True:
+                b = r.read(1 << 16)
+                if not b: break
+                n += len(b)
+                if n > maxmb * 1048576: return 'grande'
+                f.write(b)
+        return 'ok' if open(dest, 'rb').read(5) == b'%PDF-' else 'nopdf'
+    except Exception: return 'error'
+def paginas_pdf(f):
+    try:
+        out = subprocess.run(['pdfinfo', f], capture_output=True, text=True, timeout=60).stdout
+        m = re.search(r'Pages:\s+(\d+)', out); return int(m.group(1)) if m else 0
+    except Exception: return 0
+def portada_pdf(f, dest):
+    try:
+        subprocess.run(['pdftoppm', '-jpeg', '-jpegopt', 'quality=82', '-f', '1', '-l', '1', '-scale-to', '600', '-singlefile', f, dest[:-4]], capture_output=True, timeout=90)
+        return os.path.exists(dest) and os.path.getsize(dest) > 3000
+    except Exception: return False
+def pdf_en_pagina(u):
+    st, b, _, _ = get(u, t=25)
+    if st != 200: return []
+    t = b[:400000].decode('utf-8', 'replace'); base = u
+    c = re.findall(r'<meta[^>]+name=["\']citation_pdf_url["\'][^>]+content=["\']([^"\']+)', t)
+    c += [urllib.parse.urljoin(base, x) for x in re.findall(r'href=["\']([^"\']+(?:\.pdf|/download|bitstream/[^"\']+))["\']', t, re.I)][:6]
+    return [html.unescape(x) for x in c]
+def candidatos_pdf(p):
+    c = [x for x in [p.get('pdf')] + p.get('pdfs', []) if x]
+    doi = p.get('doi') or ''
+    if doi.startswith('10.1007/'): c.append(f'https://link.springer.com/content/pdf/{doi}.pdf')
+    if p['tipo'] == 'estudio': c.append(f'https://europepmc.org/articles/{p["id"][4:]}?pdf=render')
+    return list(dict.fromkeys(c))
+def verificar(p, guardar_pdf=False):
+    """Devuelve (ok, motivo). Rellena p['paginas'], p['portada'] y, si se pide, deja el PDF listo para publicar."""
+    dest = f'{TMP}/{p["id"]}.pdf'; estado = 'nopdf'
+    for u in candidatos_pdf(p) + (pdf_en_pagina(p['url']) if p['tipo'] == 'libro' else []):
+        estado = descargar(u, dest)
+        if estado == 'ok': p['pdf_origen'] = u; break
+    if estado == 'grande': return False, 'el PDF pesa más de 80 MB'
+    if estado != 'ok': return False, 'no tiene un PDF libre que se pueda descargar'
+    n = paginas_pdf(dest); p['paginas'] = n
+    if p['tipo'] == 'libro' and n < 50: return False, f'dice ser un libro pero el PDF solo tiene {n} páginas (es un capítulo, artículo o resumen)'
+    if n < 3: return False, f'el PDF solo tiene {n} páginas'
+    if portada_pdf(dest, f'{REC}/portadas/{p["id"]}.jpg'): p['portada'] = f'https://aurzane.com/biblioteca/recientes/portadas/{p["id"]}.jpg'
+    if guardar_pdf and ALOJABLE(p.get('lic', '')):
+        os.replace(dest, f'{REC}/pdf/{p["id"]}.pdf'); p['pdf_local'] = f'https://aurzane.com/biblioteca/recientes/pdf/{p["id"]}.pdf'
+    else:
+        try: os.remove(dest)
+        except Exception: pass
+    return True, ''
+def descartar_solo(p, motivo):
+    vistos.add(p['id']); autodesc.insert(0, {'fecha': HOY, 'id': p['id'], 'tipo': p['tipo'], 'titulo': p['titulo'][:160], 'url': p['url'], 'motivo': motivo})
+    for k in ('ed:' + (p.get('editorial') or ''),):
+        a = apr.setdefault(k, [0, 0]); a[1] += 1
+
 decis = jremoto('decisiones.json', {}); pend = jremoto('propuestas.json', [])
 canal, TGT = os.environ.get('TELEGRAM_CANAL', ''), os.environ.get('TELEGRAM_TOKEN', '')
-nuevos_pub = []
+nuevos_pub, corregidas = [], 0
 for p in pend:
     d = (decis.get(p['id']) or {}).get('d')
     if d not in ('aprobar', 'descartar'): continue
     vistos.add(p['id'])
     for k in (p.get('tema') or '', 'ed:' + (p.get('editorial') or ''), 'tipo:' + p['tipo']):
         a = apr.setdefault(k, [0, 0]); a[0 if d == 'aprobar' else 1] += 1
-    if d == 'aprobar':
-        p = dict(p, publicado=HOY); aprob.insert(0, p); nuevos_pub.append(p)
-        nov.insert(0, {'fecha': HOY, 'url': 'https://aurzane.com/biblioteca/recientes/#' + p['id'], 'titulo': ('Libro abierto: ' if p['tipo'] == 'libro' else 'Estudio reciente: ') + p['titulo'][:110]})
+    if d != 'aprobar': continue
+    p = dict(p); ok, motivo = verificar(p, guardar_pdf=True)
+    if not ok:
+        descartar_solo(p, 'Aprobada, pero al publicarla ' + motivo); corregidas += 1; continue
+    p['publicado'] = HOY; aprob.insert(0, p); nuevos_pub.append(p)
+    nov.insert(0, {'fecha': HOY, 'url': f'https://aurzane.com/biblioteca/recientes/{p["id"]}/', 'titulo': ('Libro abierto: ' if p['tipo'] == 'libro' else 'Estudio reciente: ') + p['titulo'][:110]})
+if corregidas: acciones.append(f'Frené {corregidas} aprobaciones porque al publicarlas no cumplían (sin PDF o no eran libros completos).')
 if nuevos_pub:
-    acciones.append(f'Publiqué {len(nuevos_pub)} propuestas que aprobaste en aurzane.com/biblioteca/recientes.')
+    acciones.append(f'Publiqué {len(nuevos_pub)} propuestas que aprobaste, con portada y lector propio en aurzane.com/biblioteca/recientes.')
     if TGT and canal:
         for p in nuevos_pub[:5]:
-            txt = ('📚 Libro abierto y gratuito' if p['tipo'] == 'libro' else '🔬 Estudio reciente en acceso abierto') + f'\n\n<b>{html.escape(p["titulo"])}</b>\n{html.escape(p.get("autores") or "")} ({p.get("anio") or ""})\n\nLéelo gratis: {p.get("pdf") or p["url"]}\nMás en https://aurzane.com/biblioteca/recientes/'
-            get(f'https://api.telegram.org/bot{TGT}/sendMessage', {'Content-Type': 'application/json'}, datos=json.dumps({'chat_id': canal, 'text': txt, 'parse_mode': 'HTML'}).encode(), metodo='POST'); time.sleep(2)
+            txt = ('📚 Libro abierto y gratuito' if p['tipo'] == 'libro' else '🔬 Estudio reciente en acceso abierto') + f'\n\n<b>{html.escape(p["titulo"])}</b>\n{html.escape(p.get("autores") or "")} ({p.get("anio") or ""})\n\nLéelo gratis en AURZANE: https://aurzane.com/biblioteca/recientes/{p["id"]}/'
+            if p.get('portada'):
+                get(f'https://api.telegram.org/bot{TGT}/sendPhoto', {'Content-Type': 'application/json'}, datos=json.dumps({'chat_id': canal, 'photo': p['portada'], 'caption': txt[:1000], 'parse_mode': 'HTML'}).encode(), metodo='POST')
+            else:
+                get(f'https://api.telegram.org/bot{TGT}/sendMessage', {'Content-Type': 'application/json'}, datos=json.dumps({'chat_id': canal, 'text': txt, 'parse_mode': 'HTML'}).encode(), metodo='POST')
+            time.sleep(2)
 pend = [p for p in pend if p['id'] not in vistos]
+revisadas = []
+for p in pend:
+    if 'paginas' in p: revisadas.append(p); continue
+    ok, motivo = verificar(p)
+    if ok: revisadas.append(p)
+    else: descartar_solo(p, motivo[0].upper() + motivo[1:])
+if len(revisadas) < len(pend): acciones.append(f'Revisé de nuevo la cola y saqué {len(pend) - len(revisadas)} propuestas que no tenían PDF o no eran libros completos.')
+pend = revisadas
 def puntos(p):
     s = 1.0
     for k in (p.get('tema') or '', 'ed:' + (p.get('editorial') or ''), 'tipo:' + p['tipo']):
         a = apr.get(k, [0, 0]); s *= (a[0] + 1) / (a[0] + a[1] + 2) * 2
-    return s * (1.3 if p.get('idioma') == 'es' else 1)
-def og_imagen(u):
-    st, b, _, _ = get(u, t=15)
-    if st != 200: return ''
-    m = re.search(rb'<meta[^>]+(?:property|name)=["\']og:image["\'][^>]+content=["\']([^"\']+)', b[:200000]) or re.search(rb'<meta[^>]+content=["\']([^"\']+)["\'][^>]+(?:property|name)=["\']og:image', b[:200000])
-    x = html.unescape(m.group(1).decode('utf-8', 'replace')) if m else ''
-    return x if x.startswith('https://') and not re.search(r'logo|favicon|default', x, re.I) else ''
+    return s * (1.3 if p.get('idioma') == 'es' else 1) * (1.2 if ALOJABLE(p.get('lic', '')) else 1)
 def texto_inv(ii):
     if not ii: return ''
     pos = sorted((i, w) for w, l in ii.items() for i in l); return ' '.join(w for _, w in pos)
 ya = {p['id'] for p in pend} | vistos | {p['id'] for p in aprob}
-if os.environ.get('DIARIO') == '1' or len(pend) < 8:
+BASURA = r'resumos|anais|actas|proceedings|abstracts|congres|cadernos|libro de resúmenes|memorias del|book of abstracts|programa|boletín|newsletter|editorial board|front matter|índice'
+nuevos_auto = 0
+if DIARIO or len(pend) < 8:
     nuevos = []
     BUENAS = ('10.11647', '10.5334', '10.1007', '10.4324', '10.14361', '10.1515', '10.1093', '10.1017', '10.3389', '10.26530', '10.4000', '10.5772', '10.3726', '10.1201', '10.12657', '10.18148', '10.3998', '10.36253', '10.46692', '10.21827', '10.5117', '10.33776', '10.47909', '10.2478')
     desde = (AHORA - datetime.timedelta(days=730)).date().isoformat()
@@ -239,12 +319,15 @@ if os.environ.get('DIARIO') == '1' or len(pend) < 8:
             lic = loc.get('license') or ''
             if not lic.startswith('cc') or not doi or src.get('type') == 'repository' or not (doi.startswith(BUENAS) or src.get('type') in ('book series', 'ebook platform')): continue
             pid = 'oa-' + w['id'].rsplit('/', 1)[1]
-            if pid in ya or not w.get('title') or re.search(r'resumos|anais|actas|proceedings|abstracts|congres|cadernos|libro de resúmenes|memorias del', w['title'], re.I): continue
-            ya.add(pid); res = texto_inv(w.get('abstract_inverted_index'))
-            nuevos.append({'id': pid, 'tipo': 'libro', 'titulo': w['title'].strip(), 'autores': ', '.join(a['author']['display_name'] for a in (w.get('authorships') or [])[:3]),
-                'anio': w.get('publication_year'), 'editorial': src.get('host_organization_name') or src.get('display_name') or '', 'url': loc.get('landing_page_url') or ('https://doi.org/' + doi),
-                'pdf': loc.get('pdf_url') or '', 'lic': lic, 'idioma': idioma, 'tema': (w.get('primary_topic') or {}).get('display_name', ''), 'resumen': res[:900],
-                'motivo': 'Libro de psicología en acceso abierto con licencia ' + lic.upper() + ', de ' + (src.get('host_organization_name') or 'una editorial académica') + '.'})
+            if pid in ya or not w.get('title'): continue
+            ya.add(pid)
+            base = {'id': pid, 'tipo': 'libro', 'titulo': w['title'].strip(), 'url': loc.get('landing_page_url') or ('https://doi.org/' + doi)}
+            if re.search(BASURA, w['title'], re.I): descartar_solo(base, 'el título indica actas, resúmenes o material que no es un libro'); nuevos_auto += 1; continue
+            nuevos.append(dict(base, autores=', '.join(a['author']['display_name'] for a in (w.get('authorships') or [])[:3]),
+                anio=w.get('publication_year'), editorial=src.get('host_organization_name') or src.get('display_name') or '', doi=doi,
+                pdf=loc.get('pdf_url') or '', pdfs=[l.get('pdf_url') for l in (w.get('locations') or []) if l.get('pdf_url')][:4], lic=lic, idioma=idioma,
+                tema=(w.get('primary_topic') or {}).get('display_name', ''), resumen=texto_inv(w.get('abstract_inverted_index'))[:900],
+                motivo='Libro de psicología en acceso abierto con licencia ' + lic.upper() + ', de ' + (src.get('host_organization_name') or 'una editorial académica') + '.'))
         time.sleep(1)
     for q, idioma, dias in (('(TITLE:"ansiedad" OR TITLE:"depresión" OR TITLE:"psicoterapia" OR TITLE:"estrés" OR TITLE:"salud mental" OR TITLE:"bienestar")', 'es', 120),
                             ('(TITLE:"anxiety" OR TITLE:"depression" OR TITLE:"psychotherapy" OR TITLE:"mindfulness" OR TITLE:"burnout" OR TITLE:"insomnia" OR TITLE:"loneliness" OR TITLE:"resilience" OR TITLE:"self-esteem") AND (PUB_TYPE:"review" OR PUB_TYPE:"systematic-review" OR PUB_TYPE:"meta-analysis")', 'en', 21)):
@@ -258,52 +341,94 @@ if os.environ.get('DIARIO') == '1' or len(pend) < 8:
             ya.add(pid); revista = ((r.get('journalInfo') or {}).get('journal') or {}).get('title', '')
             au = (r.get('authorString') or '').rstrip('.').split(', '); au = ', '.join(au[:3]) + (' y otros' if len(au) > 3 else '')
             nuevos.append({'id': pid, 'tipo': 'estudio', 'titulo': html.unescape(re.sub('<[^>]+>', '', r.get('title', ''))).strip().strip('[]').rstrip('.'), 'autores': au,
-                'anio': r.get('pubYear'), 'editorial': revista, 'url': 'https://europepmc.org/article/PMC/' + r['pmcid'], 'pdf': f'https://europepmc.org/articles/{r["pmcid"]}?pdf=render',
+                'anio': r.get('pubYear'), 'editorial': revista, 'doi': r.get('doi') or '', 'url': 'https://europepmc.org/article/PMC/' + r['pmcid'], 'pdf': '',
                 'lic': lic, 'idioma': idioma, 'tema': 'estudio:' + idioma, 'resumen': html.unescape(re.sub('<[^>]+>', ' ', r.get('abstractText', ''))).strip()[:900],
                 'motivo': ('Revisión científica' if idioma == 'en' else 'Artículo') + f' en acceso abierto publicado en {revista} hace poco.'})
         time.sleep(1)
     nuevos.sort(key=puntos, reverse=True)
-    lib = [x for x in nuevos if x['tipo'] == 'libro'][:12]; est = [x for x in nuevos if x['tipo'] == 'estudio'][:12]
-    for x in lib: x['portada'] = og_imagen(x['url'])
-    pend += lib + est
+    lib = [x for x in nuevos if x['tipo'] == 'libro'][:14]; est = [x for x in nuevos if x['tipo'] == 'estudio'][:10]
+    for x in lib + est:
+        ok, motivo = verificar(x)
+        if ok: pend.append(x)
+        else: descartar_solo(x, motivo[0].upper() + motivo[1:]); nuevos_auto += 1
+if nuevos_auto: acciones.append(f'Descarté sola {nuevos_auto} propuestas que no servían (sin PDF, capítulos sueltos o actas). Están en el admin por si quieres revisarlas.')
 pend.sort(key=puntos, reverse=True); pend = pend[:60]
-print('::notice title=AI::Cola ' + str(len(pend)) + ' propuestas (' + str(sum(1 for x in pend if x['tipo'] == 'libro')) + ' libros, ' + str(sum(1 for x in pend if x.get('portada'))) + ' con portada): ' + ' | '.join(x['titulo'][:50] for x in pend[:6]))
+print('::notice title=AI::Cola ' + str(len(pend)) + ' propuestas (' + str(sum(1 for x in pend if x['tipo'] == 'libro')) + ' libros, ' + str(sum(1 for x in pend if x.get('portada'))) + ' con portada), ' + str(nuevos_auto) + ' descartadas solas')
 json.dump(pend, open(OUT + '/propuestas.json', 'w', encoding='utf-8'), ensure_ascii=False)
-guardar('vistos.json', sorted(vistos)[-3000:]); guardar('aprobados.json', aprob[:400]); guardar('aprendizaje.json', apr)
+guardar('vistos.json', sorted(vistos)[-4000:]); guardar('aprobados.json', aprob[:400]); guardar('aprendizaje.json', apr); guardar('autodescartes.json', autodesc[:300])
 nov = nov[:120]; guardar('novedades.json', nov); pagina_novedades()
 
+# ---------- Páginas públicas: índice de recientes y una ficha con lector para cada obra ----------
+E = html.escape
+LIC_TXT = {'cc-by': 'CC BY', 'cc-by-sa': 'CC BY-SA', 'cc-by-nd': 'CC BY-ND', 'cc-by-nc': 'CC BY-NC', 'cc-by-nc-sa': 'CC BY-NC-SA', 'cc-by-nc-nd': 'CC BY-NC-ND', 'cc0': 'CC0'}
+LIC_URL = lambda l: 'https://creativecommons.org/publicdomain/zero/1.0/deed.es' if l == 'cc0' else f'https://creativecommons.org/licenses/{l[3:]}/4.0/deed.es'
+CSS = ('body{margin:0;background:var(--bg,#F6F0E8);color:var(--text,#2E2620);font:16px/1.6 "Instrument Sans",system-ui,sans-serif}'
+       '.h{background:#0F1530;color:#F5F3EE;padding:46px 20px 40px}.w{max-width:960px;margin:0 auto}h1{font:700 clamp(1.7rem,4vw,2.3rem)/1.15 "Bodoni Moda",serif;margin:8px 0}.h a{color:#EACF92}'
+       'main{padding:24px 20px 60px}.t{display:grid;grid-template-columns:120px 1fr;gap:20px;padding:22px 0;border-bottom:1px solid rgba(95,80,68,.16)}'
+       '.p{width:120px;aspect-ratio:2/3;border-radius:6px;overflow:hidden;background:linear-gradient(160deg,#1C2550,#3B2F6B);position:relative;box-shadow:0 8px 22px -10px rgba(0,0,0,.4);display:block}'
+       '.p img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}.p span{position:absolute;inset:12px;color:#F5F3EE;font:600 .8rem/1.3 "Bodoni Moda",serif}.p img+span{display:none}'
+       '.k{font-size:.8rem;color:#6E6257}.i{margin-left:8px;padding:1px 8px;border-radius:99px;background:rgba(95,80,68,.1)}h2{font:700 1.2rem/1.3 "Bodoni Moda",serif;margin:4px 0}h2 a{color:inherit;text-decoration:none}.a{margin:0;color:#5F5044;font-size:.92rem}'
+       '.r{font-size:.92rem;margin:8px 0}.b a{color:inherit;font-weight:600;margin-right:14px}.lee{display:inline-block;background:#0F1530;color:#F5F3EE!important;padding:9px 18px;border-radius:99px;text-decoration:none}'
+       '.ficha{display:grid;grid-template-columns:200px 1fr;gap:28px;align-items:start}.ficha .p{width:200px}.cred{font-size:.84rem;background:rgba(95,80,68,.07);border-radius:10px;padding:12px 14px;margin:14px 0}'
+       '#lector{margin-top:28px;background:#2A2E3A;border-radius:14px;padding:12px;position:relative}#lector .bar{display:flex;gap:8px;align-items:center;flex-wrap:wrap;color:#E8E6F0;font-size:.88rem;padding:4px 4px 12px}'
+       '#lector button,#lector .bar a{background:#454B5E;color:#fff;border:0;border-radius:8px;padding:7px 12px;font:600 .85rem sans-serif;cursor:pointer;text-decoration:none}#lector .pg{flex:1}'
+       '#hojas{height:min(80vh,1100px);overflow:auto;border-radius:8px;background:#3A3F4E}#hojas canvas{display:block;margin:0 auto 10px;background:#fff;box-shadow:0 4px 14px rgba(0,0,0,.35);max-width:100%;height:auto}'
+       '#lector:fullscreen #hojas{height:calc(100vh - 70px)}.ext{color:#E8E6F0;padding:30px;text-align:center}.ext a{color:#EACF92}'
+       '@media(max-width:640px){.t{grid-template-columns:80px 1fr;gap:14px}.p{width:80px}.ficha{grid-template-columns:1fr}.ficha .p{width:150px}}')
+CAB = lambda titulo, desc, canon, img: ('<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">'
+    '<script src="https://aurzane.com/aurzane-paleta.js"></script>'
+    f'<title>{E(titulo)}</title><meta name="description" content="{E(desc[:158])}"><link rel="canonical" href="{canon}">'
+    f'<meta property="og:title" content="{E(titulo)}"><meta property="og:description" content="{E(desc[:200])}"><meta property="og:url" content="{canon}">' + (f'<meta property="og:image" content="{E(img)}">' if img else '') +
+    '<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@600;700&family=Instrument+Sans:wght@400;600&display=swap" rel="stylesheet">'
+    f'<style>{CSS}</style></head><body>')
+def portada_html(p): return (f'<img src="{E(p["portada"])}" alt="Portada de {E(p["titulo"][:80])}" loading="lazy" onerror="this.remove()">' if p.get('portada') else '') + f'<span>{E(p["titulo"][:70])}</span>'
+def datos(p): return ', '.join(str(v) for v in (p.get('autores'), p.get('anio'), p.get('editorial')) if v)
 def pagina_recientes():
-    os.makedirs(OUT + '/recientes', exist_ok=True)
-    E = html.escape
     def tarjeta(p):
-        port = f'<img src="{E(p["portada"])}" alt="" loading="lazy" onerror="this.parentNode.classList.add(\'sin\');this.remove()">' if p.get('portada') else ''
         idi = '' if p.get('idioma') == 'es' else '<span class="i">En inglés</span>'
-        datos = ', '.join(str(v) for v in (p.get('autores'), p.get('anio'), p.get('editorial')) if v)
-        res = f'<p class="r">{E(p["resumen"][:520])}{"…" if len(p["resumen"]) > 520 else ""}</p>' if p.get('resumen') else ''
-        return (f'<article id="{E(p["id"])}" class="t"><div class="p{"" if port else " sin"}">{port}<span>{E(p["titulo"][:70])}</span></div><div class="x">'
-                f'<div class="k">{"Libro abierto" if p["tipo"] == "libro" else "Estudio reciente"} · {E(p.get("lic", "").upper())}{idi}</div><h2>{E(p["titulo"])}</h2>'
-                f'<p class="a">{E(datos)}</p>{res}'
-                f'<p class="b"><a class="lee" href="{E(p.get("pdf") or p["url"])}" target="_blank" rel="noopener">Leer gratis</a> <a href="{E(p["url"])}" target="_blank" rel="noopener">Ficha original</a></p></div></article>')
+        res = f'<p class="r">{E(p["resumen"][:420])}{"…" if len(p["resumen"]) > 420 else ""}</p>' if p.get('resumen') else ''
+        f = f'/biblioteca/recientes/{p["id"]}/'
+        return (f'<article class="t"><a class="p" href="{f}">{portada_html(p)}</a><div>'
+                f'<div class="k">{"Libro abierto" if p["tipo"] == "libro" else "Estudio reciente"} · {LIC_TXT.get(p.get("lic"), p.get("lic", "").upper())}' + (f' · {p["paginas"]} páginas' if p.get('paginas') else '') + f'{idi}</div>'
+                f'<h2><a href="{f}">{E(p["titulo"])}</a></h2><p class="a">{E(datos(p))}</p>{res}<p class="b"><a class="lee" href="{f}">Leer en AURZANE</a></p></div></article>')
     cuerpo = ''.join(tarjeta(p) for p in aprob[:200]) or '<p>Muy pronto verás aquí libros abiertos y estudios recientes seleccionados.</p>'
-    css = ('body{margin:0;background:var(--bg,#F6F0E8);color:var(--text,#2E2620);font:16px/1.6 "Instrument Sans",system-ui,sans-serif}'
-           '.h{background:#0F1530;color:#F5F3EE;padding:46px 20px 40px}.w{max-width:920px;margin:0 auto}h1{font:700 2.2rem/1.15 "Bodoni Moda",serif;margin:8px 0}.h a{color:#EACF92}'
-           'main{padding:24px 20px 60px}.t{display:grid;grid-template-columns:120px 1fr;gap:20px;padding:22px 0;border-bottom:1px solid rgba(95,80,68,.16);scroll-margin-top:20px}'
-           '.p{width:120px;aspect-ratio:2/3;border-radius:6px;overflow:hidden;background:linear-gradient(160deg,#1C2550,#3B2F6B);position:relative;box-shadow:0 8px 22px -10px rgba(0,0,0,.4)}'
-           '.p img{width:100%;height:100%;object-fit:cover;display:block}.p span{display:none}.p.sin span{display:block;position:absolute;inset:12px;color:#F5F3EE;font:600 .8rem/1.3 "Bodoni Moda",serif}'
-           '.k{font-size:.8rem;color:#6E6257}.i{margin-left:8px;padding:1px 8px;border-radius:99px;background:rgba(95,80,68,.1)}h2{font:700 1.2rem/1.3 "Bodoni Moda",serif;margin:4px 0}.a{margin:0;color:#5F5044;font-size:.92rem}'
-           '.r{font-size:.92rem;margin:8px 0}.b a{color:inherit;font-weight:600;margin-right:14px}.b .lee{display:inline-block;background:#0F1530;color:#F5F3EE;padding:8px 16px;border-radius:99px;text-decoration:none}'
-           '@media(max-width:600px){.t{grid-template-columns:80px 1fr;gap:14px}.p{width:80px}}')
-    pag = ('<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">'
-           '<script src="https://aurzane.com/aurzane-paleta.js"></script>'
-           '<title>Libros abiertos y estudios recientes de psicología | AURZANE</title>'
-           '<meta name="description" content="Libros de psicología en acceso abierto y estudios recientes con licencia libre, seleccionados por AURZANE. Gratis y legales para leer y descargar.">'
-           '<link rel="canonical" href="https://aurzane.com/biblioteca/recientes/"><meta property="og:title" content="Libros abiertos y estudios recientes de psicología">'
-           '<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@600;700&family=Instrument+Sans:wght@400;600&display=swap" rel="stylesheet">'
-           f'<style>{css}</style></head><body>'
-           '<div class="h"><div class="w"><a href="https://aurzane.com/biblioteca/">Biblioteca AURZANE</a><h1>Libros abiertos y estudios recientes</h1>'
-           '<p>Selección de psicología en acceso abierto: libros con licencia libre y revisiones científicas recién publicadas. Todo es legal y gratuito. <a href="https://aurzane.com/novedades/">Ver todas las novedades</a>.</p></div></div>'
-           f'<main class="w">{cuerpo}</main></body></html>')
-    open(OUT + '/recientes/index.html', 'w', encoding='utf-8').write(pag)
+    open(REC + '/index.html', 'w', encoding='utf-8').write(CAB('Libros abiertos y estudios recientes de psicología | AURZANE', 'Libros de psicología en acceso abierto y estudios recientes con licencia libre, seleccionados por AURZANE. Gratis y legales, para leer en la web.', 'https://aurzane.com/biblioteca/recientes/', aprob[0].get('portada', '') if aprob else '') +
+        '<div class="h"><div class="w"><a href="https://aurzane.com/biblioteca/">Biblioteca AURZANE</a><h1>Libros abiertos y estudios recientes</h1>'
+        '<p>Psicología en acceso abierto: libros con licencia libre y revisiones científicas recién publicadas, para leer aquí mismo. Todo es legal y gratuito. <a href="https://aurzane.com/novedades/">Ver todas las novedades</a>.</p></div></div>'
+        f'<main class="w">{cuerpo}</main></body></html>')
+    mapa = ''.join(f'<url><loc>https://aurzane.com/biblioteca/recientes/{p["id"]}/</loc><lastmod>{p.get("publicado", HOY)}</lastmod></url>' for p in aprob[:400])
+    open(REC + '/sitemap.xml', 'w', encoding='utf-8').write('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://aurzane.com/biblioteca/recientes/</loc></url>' + mapa + '</urlset>')
+    for p in aprob[:400]:
+        d = f'{REC}/{p["id"]}'; os.makedirs(d, exist_ok=True)
+        lic = p.get('lic', ''); lt = LIC_TXT.get(lic, lic.upper())
+        pdf = p.get('pdf_local') or ''
+        lector = ('<div id="lector"><div class="bar"><span class="pg" id="pg">Cargando el libro…</span><button id="menos" aria-label="Reducir">−</button><button id="mas" aria-label="Ampliar">+</button>'
+                  f'<button id="full">Pantalla completa</button><a href="{E(pdf)}" download>Descargar PDF</a></div><div id="hojas" tabindex="0" aria-label="Páginas del documento"></div></div>'
+                  '<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script><script>'
+                  "(function(){var L=window.pdfjsLib;if(!L){document.getElementById('pg').textContent='No se pudo cargar el lector. Puedes descargar el PDF.';return;}"
+                  "L.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';"
+                  "var H=document.getElementById('hojas'),pg=document.getElementById('pg'),esc=1,doc,obs,hechas={};"
+                  "function ancho(){return Math.min(H.clientWidth-16,1000);}"
+                  "function pinta(c){var n=+c.dataset.n;if(hechas[n]===esc)return;hechas[n]=esc;doc.getPage(n).then(function(p){var v=p.getViewport({scale:1}),s=ancho()*esc/v.width*(window.devicePixelRatio||1),vp=p.getViewport({scale:s});c.width=vp.width;c.height=vp.height;c.style.width=(ancho()*esc)+'px';p.render({canvasContext:c.getContext('2d'),viewport:vp});});}"
+                  "function monta(){H.innerHTML='';hechas={};if(obs)obs.disconnect();obs=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){pinta(e.target);pg.textContent='Página '+e.target.dataset.n+' de '+doc.numPages;}});},{root:H,rootMargin:'600px 0px'});"
+                  "doc.getPage(1).then(function(p){var v=p.getViewport({scale:1}),h=ancho()*esc*v.height/v.width;for(var i=1;i<=doc.numPages;i++){var c=document.createElement('canvas');c.dataset.n=i;c.style.width=(ancho()*esc)+'px';c.style.height=h+'px';c.setAttribute('aria-label','Página '+i);H.appendChild(c);obs.observe(c);}});}"
+                  f"L.getDocument({json.dumps(pdf)}).promise.then(function(d){{doc=d;pg.textContent=d.numPages+' páginas';monta();}}).catch(function(){{pg.textContent='No se pudo abrir el PDF aquí. Usa Descargar PDF.';}});"
+                  "document.getElementById('mas').onclick=function(){esc=Math.min(esc+.25,3);monta();};document.getElementById('menos').onclick=function(){esc=Math.max(esc-.25,.5);monta();};"
+                  "document.getElementById('full').onclick=function(){var l=document.getElementById('lector');(document.fullscreenElement?document.exitFullscreen():l.requestFullscreen&&l.requestFullscreen());};"
+                  "})();</script>") if pdf else (
+                  f'<div id="lector"><div class="ext">Esta obra tiene licencia {E(lt)} (uso no comercial), así que la enlazamos en su sitio original en lugar de alojarla.<br><br>'
+                  f'<a class="lee" href="{E(p.get("pdf_origen") or p["url"])}" target="_blank" rel="noopener">Leer gratis en el sitio original</a></div></div>')
+        desc = (p.get('resumen') or f'{p["titulo"]}. {datos(p)}. Gratis y en acceso abierto.')
+        ld = json.dumps({'@context': 'https://schema.org', '@type': 'Book' if p['tipo'] == 'libro' else 'ScholarlyArticle', 'name': p['titulo'], 'author': [{'@type': 'Person', 'name': a} for a in (p.get('autores') or '').split(', ') if a and a != 'y otros'],
+                         'datePublished': str(p.get('anio') or ''), 'publisher': p.get('editorial') or None, 'license': LIC_URL(lic) if lic.startswith('cc') else None, 'isAccessibleForFree': True, 'image': p.get('portada') or None, 'url': f'https://aurzane.com/biblioteca/recientes/{p["id"]}/'}, ensure_ascii=False)
+        open(d + '/index.html', 'w', encoding='utf-8').write(CAB(f'{p["titulo"][:90]} | Leer gratis en AURZANE', desc, f'https://aurzane.com/biblioteca/recientes/{p["id"]}/', p.get('portada', '')) +
+            f'<script type="application/ld+json">{ld}</script>'
+            f'<div class="h"><div class="w"><a href="/biblioteca/recientes/">Libros abiertos y estudios recientes</a></div></div><main class="w"><div class="ficha"><div class="p">{portada_html(p)}</div><div>'
+            f'<div class="k">{"Libro abierto" if p["tipo"] == "libro" else "Estudio reciente"} · {E(lt)}' + (f' · {p["paginas"]} páginas' if p.get('paginas') else '') + ('' if p.get('idioma') == 'es' else '<span class="i">En inglés</span>') + '</div>'
+            f'<h1 style="color:inherit">{E(p["titulo"])}</h1><p class="a">{E(datos(p))}</p>' + (f'<p class="r">{E(p["resumen"])}</p>' if p.get('resumen') else '') +
+            f'<div class="cred">Obra de {E(p.get("autores") or "sus autores")}' + (f', publicada por {E(p["editorial"])}' if p.get('editorial') else '') + f' con licencia <a href="{LIC_URL(lic)}" target="_blank" rel="noopener license">{E(lt)}</a>. '
+            f'AURZANE la ofrece sin modificaciones. <a href="{E(p["url"])}" target="_blank" rel="noopener">Ficha original</a>.</div>'
+            f'<p class="b"><a class="lee" href="#lector">Empezar a leer</a></p></div></div>{lector}</main></body></html>')
 pagina_recientes()
 
 # ---------- 13. IndexNow: avisa a Bing, Yandex y otros buscadores de las páginas nuevas (gratis) ----------
@@ -314,7 +439,29 @@ if nuevas:
     for h, us in por_host.items():
         st, _, _, _ = get('https://api.indexnow.org/indexnow', {'Content-Type': 'application/json; charset=utf-8'}, datos=json.dumps({'host': h, 'key': INDEXNOW, 'keyLocation': f'https://{h}/{INDEXNOW}.txt', 'urlList': sorted(us)[:1000]}).encode(), metodo='POST')
         print('::notice title=AI::IndexNow ' + h + ' ' + str(st))
-        if st in (200, 202): acciones.append(f'Avisé a los buscadores (IndexNow) de {len(us)} páginas nuevas en {h}.')
+
+# ---------- 14. Dominio, seguridad y SEO básico (gratis) ----------
+dominio = {}
+st, b, _, _ = get('https://rdap.org/domain/aurzane.com', t=30)
+try:
+    ev = {e['eventAction']: e['eventDate'] for e in json.loads(b).get('events', [])} if st == 200 else {}
+    if ev.get('expiration'):
+        fin = datetime.datetime.fromisoformat(ev['expiration'].replace('Z', '+00:00')); dominio = {'caduca': fin.date().isoformat(), 'dias': (fin - AHORA).days}
+        if dominio['dias'] < 30: aviso('mal' if dominio['dias'] < 10 else 'medio', f'El dominio aurzane.com caduca en {dominio["dias"]} días. Renuévalo.')
+except Exception as e: print('rdap', e)
+seguridad = []
+CABS = [('strict-transport-security', 'Obliga a usar HTTPS (HSTS)'), ('x-content-type-options', 'Evita que el navegador adivine tipos de archivo'), ('referrer-policy', 'Controla qué datos de origen se comparten'), ('x-frame-options', 'Impide que otras webs incrusten la tuya')]
+for h in HOSTS[:6]:
+    st, _, _, cab = get(f'https://{h}/')
+    faltan = [d for k, d in CABS if not (cab or {}).get(k)] if st == 200 else []
+    seguridad.append({'host': h, 'faltan': faltan, 'nivel': 'ok' if not faltan else ('medio' if len(faltan) < 3 else 'mal')})
+seo = []
+for u in CLAVE:
+    st, b, _, _ = get(u); t = b.decode('utf-8', 'replace') if st == 200 else ''
+    if not t: continue
+    m = re.search(r'<title>([^<]*)</title>', t); tl = len(html.unescape(m.group(1))) if m else 0
+    f = [x for x, ok in (('imagen para redes (og:image)', 'og:image' in t), ('un título H1', re.search(r'<h1[\s>]', t)), ('URL canónica', 'rel="canonical"' in t), ('título de longitud correcta', 15 <= tl <= 70)) if not ok]
+    seo.append({'url': u, 'faltan': f, 'nivel': 'ok' if not f else 'medio'})
 
 # ---------- 10. Resumen ----------
 nivel = 'mal' if any(p['nivel'] == 'mal' for p in problemas) else ('medio' if problemas else 'ok')
@@ -325,14 +472,16 @@ lineas = [f'Revisé {len(HOSTS)} sitios, {len(CLAVE)} páginas clave, {len(autos
           (f'Arreglé sola {len(acciones)} cosas.' if acciones else 'No hizo falta arreglar nada.'),
           (f'Novedades anunciadas hoy: {sum(1 for n in nov if n["fecha"] == HOY)}.'),
           (f'Cola: {len(pend)} propuestas por revisar en el admin.' if pend else 'Cola de propuestas vacía.')]
-informe = {'fecha': AHORA.isoformat(), 'estado': nivel, 'resumen': '\n'.join(lineas), 'resumen_fuente': 'automático', 'problemas': problemas, 'acciones': acciones,
-           'sitios': sitios, 'paginas': paginas, 'errores': errores, 'automatizaciones': autos, 'enlaces': enlaces, 'marketing': mk, 'novedades': nov[:30], 'pagespeed': ps, 'cola': len(pend), 'aprobados_total': len(aprob)}
-json.dump(informe, open(OUT + '/informe.json', 'w', encoding='utf-8'), ensure_ascii=False)
-
-# historial público, solo con cifras (el repositorio es público)
 hist = leer('historial.json', [])
-hist.append({'fecha': AHORA.isoformat()[:16], 'estado': nivel, 'avisos': len(problemas), 'arreglos': len(acciones), 'errores_24h': errores['total_24h'], 'redes_ok_24h': mk['ok_24h']})
+hist.append({'fecha': AHORA.isoformat()[:16], 'estado': nivel, 'avisos': len(problemas), 'arreglos': len(acciones), 'errores_24h': errores['total_24h'], 'redes_ok_24h': mk['ok_24h'], 'cola': len(pend), 'publicados': len(aprob)})
 guardar('historial.json', hist[-400:])
+if DIARIO: ESTADO['diario'] = HOY
+guardar('estado.json', ESTADO)
+informe = {'fecha': AHORA.isoformat(), 'estado': nivel, 'resumen': '\n'.join(lineas), 'resumen_fuente': 'automático', 'problemas': problemas, 'acciones': acciones,
+           'sitios': sitios, 'paginas': paginas, 'errores': errores, 'automatizaciones': autos, 'enlaces': enlaces, 'marketing': mk, 'novedades': nov[:30], 'pagespeed': ps,
+           'cola': len(pend), 'aprobados_total': len(aprob), 'publicados': [{k: x.get(k) for k in ('id', 'tipo', 'titulo', 'portada', 'publicado', 'paginas', 'lic', 'pdf_local')} for x in aprob[:40]],
+           'autodescartes': autodesc[:60], 'dominio': dominio, 'seguridad': seguridad, 'seo': seo, 'historial': hist[-120:], 'diario': DIARIO}
+json.dump(informe, open(OUT + '/informe.json', 'w', encoding='utf-8'), ensure_ascii=False)
 
 # ---------- 11. Aviso por Telegram (cuando Adrián escribe /aurzane al bot por privado) ----------
 TG = os.environ.get('TELEGRAM_TOKEN', '')
@@ -345,7 +494,7 @@ if TG:
             if m.get('chat', {}).get('type') == 'private' and (m.get('text') or '').strip().lower().startswith('/aurzane'):
                 chat = str(m['chat']['id']); remoto(f'mkdir -p www/aurzane.com/privado-ai && echo {chat} > www/aurzane.com/privado-ai/telegram_chat')
                 break
-    if chat and (problemas or acciones or os.environ.get('DIARIO') == '1'):
+    if chat and (problemas or acciones or DIARIO):
         txt = '🤖 AURZANE AI Manager\n' + ('✅ ' if nivel == 'ok' else '⚠️ ') + '\n'.join(lineas) + '\n\nPanel: https://aurzane.com/admin.html'
         get(f'https://api.telegram.org/bot{TG}/sendMessage', {'Content-Type': 'application/json'}, datos=json.dumps({'chat_id': chat, 'text': txt[:3900], 'disable_web_page_preview': True}).encode(), metodo='POST')
 print('::notice title=AI::' + lineas[1])
