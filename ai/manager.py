@@ -267,6 +267,7 @@ if os.environ.get('DIARIO') == '1' or len(pend) < 8:
     for x in lib: x['portada'] = og_imagen(x['url'])
     pend += lib + est
 pend.sort(key=puntos, reverse=True); pend = pend[:60]
+print('::notice title=AI::Cola ' + str(len(pend)) + ' propuestas (' + str(sum(1 for x in pend if x['tipo'] == 'libro')) + ' libros, ' + str(sum(1 for x in pend if x.get('portada'))) + ' con portada): ' + ' | '.join(x['titulo'][:50] for x in pend[:6]))
 json.dump(pend, open(OUT + '/propuestas.json', 'w', encoding='utf-8'), ensure_ascii=False)
 guardar('vistos.json', sorted(vistos)[-3000:]); guardar('aprobados.json', aprob[:400]); guardar('aprendizaje.json', apr)
 nov = nov[:120]; guardar('novedades.json', nov); pagina_novedades()
