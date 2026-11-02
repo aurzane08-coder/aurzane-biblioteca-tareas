@@ -1,0 +1,29 @@
+name: Prueba PDF
+on:
+  push:
+    paths: ['.github/workflows/prueba-pdf.yml']
+jobs:
+  p:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          python3 - <<'PY'
+          import urllib.request, json
+          UA='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36'
+          def t(u):
+              try:
+                  r=urllib.request.urlopen(urllib.request.Request(u,headers={'User-Agent':UA,'Accept':'application/pdf,*/*'}),timeout=60); b=r.read(2000000)
+                  print('::notice title=P::'+u[:90]+' -> '+str(r.status)+' '+r.headers.get('Content-Type','')+' '+str(b[:5])+' final='+r.geturl()[:90])
+              except Exception as e: print('::notice title=P::'+u[:90]+' ERR '+repr(e)[:100])
+          t('https://europepmc.org/articles/PMC13721388?pdf=render')
+          t('https://pmc.ncbi.nlm.nih.gov/articles/PMC13721388/pdf/')
+          t('https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13721388/fullTextXML')
+          for d in ['10.1186/s42358-026-00591-7','10.11647/obp.0400']:
+              try:
+                  j=json.load(urllib.request.urlopen('https://api.unpaywall.org/v2/'+d+'?email=hola@aurzane.com',timeout=60)); bl=j.get('best_oa_location') or {}
+                  print('::notice title=P::unpaywall '+d+' pdf='+str(bl.get('url_for_pdf'))+' lic='+str(bl.get('license')))
+                  if bl.get('url_for_pdf'): t(bl['url_for_pdf'])
+              except Exception as e: print('::notice title=P::unpaywall ERR '+repr(e)[:100])
+          t('https://link.springer.com/content/pdf/10.1007/978-3-031-61120-5.pdf')
+          t('https://library.oapen.org/bitstream/handle/20.500.12657/90000/9781040016305.pdf')
+          PY
