@@ -337,6 +337,7 @@ def topbar(actual=''):
 {a(BASE, 'Universidades', 'inicio')}
 {a(BASE + 'espana/', 'España', 'espana')}
 {a(BASE + 'paises/', 'Países', 'paises')}
+{a(BASE + 'notas-de-corte/', 'Notas de corte', 'nc')}
 {a('/calculadora-nota-pau/', 'Nota PAU', 'pau')}
 {a(BASE + 'mi-lista/', 'Mi lista <span class="lista-n" hidden>0</span>', 'lista')}
 <a class="cuenta" href="https://aurzane.com/mi-aurzane.html">👤 Mi AURZANE</a>
@@ -488,6 +489,7 @@ def portada():
 
 <section class="bloque"><h2 class="t">Antes de elegir universidad</h2><p class="sub">Herramientas gratuitas de AURZANE para decidir mejor.</p>
 <div class="tres">
+<a class="scard" href="{BASE}notas-de-corte/" style="background:linear-gradient(135deg,#3a50c4,#0f1538)"><span class="e">📊</span><b>Notas de corte 2025-2026</b><span>La nota oficial de cada carrera en cada universidad pública, ordenada.</span></a>
 <a class="scard" href="/calculadora-nota-pau/" style="background:linear-gradient(135deg,#2b3fb8,#0b1030)"><span class="e">🧮</span><b>Calculadora de nota PAU</b><span>Tu nota de acceso y de admisión sobre 14, y si te llega para tu carrera.</span></a>
 <a class="scard" href="https://ovp.aurzane.com/" style="background:linear-gradient(135deg,#2b3fb8,#8b7bff)"><span class="e">🧭</span><b>Test vocacional gratis</b><span>Seis instrumentos y un informe con las carreras que encajan contigo.</span></a>
 <a class="scard" href="https://mind.aurzane.com/test-de-personalidad/" style="background:linear-gradient(135deg,#ff7a45,#a35be0)"><span class="e">🧠</span><b>Test de personalidad</b><span>Descubre tu perfil entre 11 y las carreras afines a él.</span></a>
