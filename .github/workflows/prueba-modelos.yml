@@ -19,10 +19,13 @@ jobs:
               try:
                   r = urllib.request.urlopen(req, timeout=60); d = json.load(r)
                   print('::notice title=Modelos::' + m + ' => ' + d['choices'][0]['message']['content'].replace('\n', ' ')[:200] + ' | limite restante: ' + str(r.headers.get('x-ratelimit-remaining-requests')))
-              except urllib.error.HTTPError as e:
-                  print('::notice title=Modelos::' + m + ' HTTP ' + str(e.code) + ' ' + e.read().decode()[:200])
-          u = 'https://api.openalex.org/works?filter=type:book,is_oa:true,primary_topic.field.id:32,from_publication_date:2025-01-01&sort=publication_date:desc&per-page=3&mailto=hola@aurzane.com'
-          d = json.load(urllib.request.urlopen(u, timeout=60))
-          for w in d['results']:
+              except Exception as e:
+                  print('::notice title=Modelos::' + m + ' ERROR ' + repr(e)[:200] + ' ' + (e.read().decode()[:200] if hasattr(e, 'read') else ''))
+          try:
+            u = 'https://api.openalex.org/works?filter=type:book,is_oa:true,primary_topic.field.id:32,from_publication_date:2025-01-01&sort=publication_date:desc&per-page=3&mailto=hola@aurzane.com'
+            d = json.load(urllib.request.urlopen(urllib.request.Request(u, headers={'User-Agent': 'Mozilla/5.0 aurzane'}), timeout=60))
+            for w in d['results']:
               print('::notice title=Modelos::libro ' + (w.get('title') or '')[:80] + ' | ' + str((w.get('best_oa_location') or {}).get('pdf_url')) + ' | ' + str((w.get('primary_location') or {}).get('license')))
+          except Exception as e:
+            print('::notice title=Modelos::openalex ERROR ' + repr(e)[:200])
           PY
