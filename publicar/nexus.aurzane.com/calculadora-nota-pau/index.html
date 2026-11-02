@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://aurzane.com/aurzane-paleta.js"></script>
+<title>Calculadora nota PAU 2026: nota de acceso y de admisión (selectividad) | AURZANE NEXUS</title>
+<meta name="description" content="Calcula gratis tu nota de la PAU 2026 (selectividad, EBAU o EvAU): nota de acceso, nota de admisión sobre 14 con ponderaciones y qué nota necesitas para llegar a la nota de corte de tu carrera. También para FP de Grado Superior.">
+<link rel="canonical" href="https://nexus.aurzane.com/calculadora-nota-pau/">
+<meta property="og:title" content="Calculadora de nota PAU 2026: ¿te llega para tu carrera?">
+<meta property="og:description" content="Nota de acceso, nota de admisión sobre 14 con ponderaciones y lo que te falta para la nota de corte. Gratis y al instante.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://nexus.aurzane.com/calculadora-nota-pau/">
+<meta property="og:image" content="https://nexus.aurzane.com/calculadora-nota-pau/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://nexus.aurzane.com/calculadora-nota-pau/og.jpg">
+<meta name="theme-color" content="#0b1030">
+<script>(function(){ try { if (localStorage.getItem('aurzane-tema') === 'oscuro') document.documentElement.setAttribute('data-tema','oscuro'); } catch(e){} })();</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"WebApplication","name":"Calculadora de nota de la PAU","url":"https://nexus.aurzane.com/calculadora-nota-pau/","applicationCategory":"EducationalApplication","operatingSystem":"Cualquiera (navegador web)","inLanguage":"es","isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"publisher":{"@type":"Organization","name":"AURZANE NEXUS","url":"https://nexus.aurzane.com/"}},
+ {"@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"¿Cómo se calcula la nota de acceso de la PAU?","acceptedAnswer":{"@type":"Answer","text":"La nota de acceso es el 60 % de la nota media de Bachillerato más el 40 % de la media de los exámenes de la fase de acceso. La media de la fase de acceso debe ser de al menos 4 y la nota de acceso de al menos 5. Su máximo es 10."}},
+  {"@type":"Question","name":"¿Cómo se calcula la nota de admisión sobre 14?","acceptedAnswer":{"@type":"Answer","text":"A la nota de acceso se le suman las dos materias que más puntos aporten multiplicadas por su ponderación, que puede ser 0,1 o 0,2 según la carrera y la universidad. Solo ponderan las materias aprobadas. El máximo es 14."}},
+  {"@type":"Question","name":"¿La materia de modalidad de la fase de acceso pondera?","acceptedAnswer":{"@type":"Answer","text":"Sí. La materia específica obligatoria de la modalidad cuenta para la media de la fase de acceso y, si está aprobada, también puede ponderar en la nota de admisión sin repetir el examen."}},
+  {"@type":"Question","name":"¿Cómo calculo la nota si vengo de FP de Grado Superior?","acceptedAnswer":{"@type":"Answer","text":"Tu base es la nota media del ciclo formativo de Grado Superior. A esa nota se suman las dos materias de la fase de admisión que más puntos aporten con su ponderación, hasta un máximo de 14."}},
+  {"@type":"Question","name":"¿Cuánto tiempo valen las notas de la PAU?","acceptedAnswer":{"@type":"Answer","text":"La nota de acceso no caduca. Las notas de las materias que ponderan valen durante los dos cursos académicos siguientes al de la prueba, es decir, tres cursos en total."}}
+ ]}
+]}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,700;1,6..96,500&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<meta name="google-adsense-account" content="ca-pub-8763758728010451">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8763758728010451" crossorigin="anonymous"></script>
+<style>
+  :root{
+    --navy-950:#070a14; --gold:#c9a24b; --gold-light:#e8cd8f; --gold-deep:#8a6a28; --gold-rgb:201,162,75;
+    --n1:#0b1030; --n2:#14206a; --n3:#2b3fb8; --cian:#35e0d0; --violeta:#8b7bff; --rosa:#ff7a9c; --ambar:#ffb347;
+    --ok:#1f9d6b; --warn:#c2462e;
+    --bg:#f6f4ee; --surface:#ffffff; --surface-2:#eef0f7; --text:#141a33; --text-dim:#5b6380; --border:rgba(20,26,51,.12);
+    --accent-text:#2b3fb8;
+    --serif:'Bodoni Moda',Georgia,serif; --sans:'Instrument Sans',system-ui,-apple-system,sans-serif;
+    --sombra:0 14px 36px -18px rgba(20,26,51,.35);
+  }
+  :root[data-tema="oscuro"]{
+    --bg:#070a14; --surface:#0f1530; --surface-2:#161d42; --text:#f3f1ea; --text-dim:#a3a9c2; --border:rgba(199,205,214,.14);
+    --accent-text:#8fb1ff; --sombra:0 14px 36px -18px rgba(0,0,0,.7); --ok:#3ccf95; --warn:#ff8f7a;
+  }
+  *{box-sizing:border-box} [hidden]{display:none!important}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);font-size:16.5px;line-height:1.6;overflow-x:hidden}
+  a{color:var(--accent-text)}
+  :focus-visible{outline:3px solid var(--cian);outline-offset:2px}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 16px}
+  .num{font-variant-numeric:tabular-nums}
+
+  .utility{background:var(--navy-950);color:#8b92a0;font-size:.78rem;padding:7px 0}
+  .utility .wrap{display:flex;justify-content:space-between;align-items:center;gap:10px}
+  .utility .eco{overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+  .utility a{color:inherit;text-decoration:none;margin-right:13px} .utility a:hover,.utility .activo{color:var(--gold-light)}
+  .utility button{background:none;border:1px solid rgba(255,255,255,.2);color:inherit;border-radius:999px;padding:3px 10px;font:inherit;cursor:pointer;white-space:nowrap}
+  .topbar{background:var(--n1);color:#fff;border-bottom:1px solid rgba(255,255,255,.08)}
+  .topbar .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:13px;padding-bottom:13px;gap:10px}
+  .brand{font-family:var(--serif);font-weight:700;font-size:1.3rem;letter-spacing:.06em;color:#fff;text-decoration:none;white-space:nowrap}
+  .brand .z{color:var(--gold)} .brand small{font-family:var(--sans);font-size:.72rem;color:#aab3e6;letter-spacing:.1em;margin-left:6px}
+  .topbar nav{display:flex;align-items:center}
+  .topbar nav a{color:#c9d0f2;text-decoration:none;margin-left:16px;font-size:.9rem;white-space:nowrap} .topbar nav a:hover{color:#fff}
+  .topbar .cuenta{border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:5px 12px}
+
+  .hero{position:relative;overflow:hidden;color:#fff;background:radial-gradient(110% 120% at 90% 0%,var(--n3) 0%,var(--n2) 38%,var(--n1) 100%);padding:44px 0 120px}
+  .hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:44px 44px;mask-image:linear-gradient(180deg,#000 20%,transparent 95%)}
+  .hero .wrap{position:relative}
+  .pre{display:inline-flex;gap:8px;align-items:center;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:5px 13px;font-size:.85rem;color:#dfe5ff}
+  .hero h1{font-family:var(--serif);font-weight:700;font-size:clamp(2.2rem,5.6vw,3.7rem);line-height:1.05;margin:16px 0 12px;max-width:16em}
+  .hero h1 span{background:linear-gradient(90deg,var(--cian),var(--violeta));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero p{font-size:1.1rem;color:#d3daf7;max-width:38em;margin:0}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 0;padding:0;list-style:none}
+  .chips li{font-size:.85rem;color:#dfe5ff;background:rgba(255,255,255,.08);border-radius:999px;padding:5px 12px}
+
+  .app{position:relative;margin-top:-88px;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.95fr);gap:22px;align-items:start}
+  .panel{background:var(--surface);border:1px solid var(--border);border-radius:22px;box-shadow:var(--sombra)}
+  .form{padding:8px 0}
+  .modo{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:14px 22px 6px;background:var(--surface-2);padding:5px;border-radius:14px}
+  .modo button{border:0;background:transparent;border-radius:10px;padding:10px 8px;font:600 .95rem var(--sans);color:var(--text-dim);cursor:pointer}
+  .modo button[aria-pressed="true"]{background:var(--surface);color:var(--text);box-shadow:0 2px 8px rgba(20,26,51,.12)}
+  .paso{padding:18px 22px;border-top:1px solid var(--border)}
+  .paso:first-of-type{border-top:0}
+  .paso-cab{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+  .paso-n{flex:none;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-weight:700;font-size:.9rem;color:#fff;background:linear-gradient(135deg,var(--n3),var(--violeta))}
+  .paso h2{font-size:1.12rem;margin:0;line-height:1.25}
+  .paso-cab p{margin:2px 0 0;font-size:.88rem;color:var(--text-dim)}
+  .campos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .campo label{display:block;font-size:.86rem;font-weight:600;margin-bottom:5px}
+  .campo small{display:block;font-size:.78rem;color:var(--text-dim);margin-top:3px}
+  input[type=number],select{width:100%;font:500 1rem var(--sans);color:var(--text);background:var(--surface-2);border:1.5px solid transparent;border-radius:12px;padding:11px 12px;transition:border-color .15s}
+  input[type=number]{font-variant-numeric:tabular-nums;font-weight:600}
+  input[type=number]:focus,select:focus{outline:none;border-color:var(--n3);background:var(--surface)}
+  input.mal{border-color:var(--warn)}
+  .fila-hist{display:flex;gap:6px;margin-bottom:5px}
+  .fila-hist{min-width:0} .fila-hist select{padding:6px 8px 6px 0;font-size:.84rem;font-weight:600;background:transparent;border:0;width:100%;max-width:100%;color:var(--text);text-overflow:ellipsis}
+  .campo{min-width:0}
+  .cooficial{display:flex;align-items:center;gap:8px;margin-top:12px;font-size:.9rem;color:var(--text-dim)}
+  .cooficial input{width:18px;height:18px;accent-color:var(--n3)}
+  .mat{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,.8fr) minmax(0,.9fr) 36px;gap:8px;align-items:center;margin-bottom:8px}
+  .mat .x{border:0;background:none;color:var(--text-dim);font-size:1.3rem;cursor:pointer;border-radius:8px;height:40px}
+  .mat .x:hover{background:var(--surface-2);color:var(--warn)}
+  .mat-cab{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,.8fr) minmax(0,.9fr) 36px;gap:8px;font-size:.76rem;color:var(--text-dim);font-weight:600;margin-bottom:5px}
+  .mat.auto{background:linear-gradient(90deg,rgba(53,224,208,.12),transparent);border-radius:12px;padding:6px;margin-left:-6px;margin-right:-6px}
+  .mat .etq{font-size:.88rem;font-weight:600;padding-left:4px}
+  .mat .etq small{display:block;font-weight:500;color:var(--text-dim);font-size:.74rem}
+  .presets{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 14px}
+  .presets span{font-size:.82rem;color:var(--text-dim);align-self:center;margin-right:2px}
+  .chip{border:1.5px solid var(--border);background:var(--surface);color:var(--text);border-radius:999px;padding:6px 12px;font:600 .82rem var(--sans);cursor:pointer}
+  .chip:hover{border-color:var(--n3)} .chip[aria-pressed="true"]{background:var(--n2);color:#fff;border-color:var(--n2)}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:12px;padding:11px 18px;font:700 .95rem var(--sans);cursor:pointer;text-decoration:none}
+  .btn-linea{background:transparent;color:var(--accent-text);border:1.5px dashed var(--border)}
+  .btn-linea:hover{border-color:var(--n3)}
+  .btn-luz{background:linear-gradient(90deg,var(--cian),var(--violeta));color:#0b1030}
+  .btn-osc{background:var(--n2);color:#fff}
+  .ayuda{font-size:.85rem;color:var(--text-dim);margin:8px 0 0}
+  details.media{margin-top:10px;font-size:.9rem}
+  details.media summary{cursor:pointer;color:var(--accent-text);font-weight:600}
+  .media-filas{display:grid;grid-template-columns:repeat(auto-fill,minmax(92px,1fr));gap:8px;margin:10px 0}
+  .media-filas input{padding:8px 10px}
+  .media-res{font-weight:700}
+
+  /* resultado */
+  .res{position:sticky;top:14px;overflow:hidden}
+  .res-top{position:relative;color:#fff;padding:20px 22px 18px;background:radial-gradient(120% 100% at 100% 0%,var(--n3),var(--n1))}
+  .res-top h2{font-size:.95rem;font-weight:600;margin:0;color:#c9d0f2}
+  .medidor{position:relative;width:100%;max-width:320px;margin:4px auto 0}
+  .medidor svg{width:100%;height:auto;display:block}
+  .medidor .valor{position:absolute;left:0;right:0;bottom:6%;text-align:center}
+  .medidor .valor b{display:block;font-family:var(--serif);font-size:3.6rem;line-height:1;font-variant-numeric:tabular-nums}
+  .medidor .valor span{font-size:.85rem;color:#c9d0f2}
+  .estado{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:8px;font-weight:600;font-size:.92rem;text-align:center}
+  .estado i{width:10px;height:10px;border-radius:50%;background:#9aa3c7;flex:none}
+  .estado.ok i{background:var(--cian);box-shadow:0 0 0 4px rgba(53,224,208,.25)}
+  .estado.mal i{background:#ff8f7a;box-shadow:0 0 0 4px rgba(255,143,122,.25)}
+  .desglose{padding:16px 22px 6px}
+  .linea{display:flex;justify-content:space-between;gap:10px;padding:7px 0;border-bottom:1px dashed var(--border);font-size:.93rem}
+  .linea:last-child{border-bottom:0}
+  .linea b{font-variant-numeric:tabular-nums}
+  .linea.total{font-size:1.02rem;border-bottom:0;padding-top:10px}
+  .barra14{height:12px;border-radius:99px;background:var(--surface-2);overflow:hidden;display:flex;margin:6px 0 2px}
+  .barra14 i{display:block;height:100%;transition:width .6s cubic-bezier(.2,.8,.2,1)}
+  .barra14 .b1{background:linear-gradient(90deg,var(--n3),var(--violeta))} .barra14 .b2{background:linear-gradient(90deg,var(--cian),#7ff0e6)}
+  .escala14{display:flex;justify-content:space-between;font-size:.72rem;color:var(--text-dim)}
+  .objetivo{margin:10px 22px 0;padding:16px;border-radius:16px;background:var(--surface-2)}
+  .objetivo h3{margin:0 0 8px;font-size:1rem}
+  .objetivo .fila{display:flex;gap:8px;align-items:center}
+  .objetivo input{max-width:120px}
+  .veredicto{margin-top:12px;font-size:.93rem}
+  .veredicto b{font-variant-numeric:tabular-nums}
+  .pill{display:inline-block;border-radius:999px;padding:3px 10px;font-weight:700;font-size:.85rem}
+  .pill.ok{background:rgba(31,157,107,.15);color:var(--ok)} .pill.mal{background:rgba(194,70,46,.12);color:var(--warn)}
+  .pasos-falta{margin:8px 0 0;padding-left:18px} .pasos-falta li{margin:4px 0}
+  .acciones{display:flex;gap:8px;flex-wrap:wrap;padding:16px 22px 22px}
+  .msg{font-size:.85rem;color:var(--text-dim);min-height:1.2em;padding:0 22px 14px;margin:-8px 0 0}
+
+  .movil-barra{display:none}
+
+  section.bloque{padding:56px 0 0}
+  h2.t{font-family:var(--serif);font-size:clamp(1.6rem,3.6vw,2.2rem);line-height:1.15;margin:0 0 10px}
+  .sub{color:var(--text-dim);margin:0 0 22px;max-width:46em}
+  .formula{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .fcard{background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:20px;box-shadow:var(--sombra)}
+  .fcard h3{margin:0 0 6px;font-size:1.05rem}
+  .fcard .eq{font-family:var(--serif);font-size:1.25rem;margin:8px 0;color:var(--accent-text)}
+  .fcard p{margin:0;color:var(--text-dim);font-size:.93rem}
+  .siguiente{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .scard{display:block;text-decoration:none;color:#fff;border-radius:18px;padding:22px;min-height:150px;box-shadow:var(--sombra);transition:transform .2s}
+  .scard:hover{transform:translateY(-4px)}
+  .scard b{display:block;font-size:1.15rem;margin:8px 0 4px} .scard span{font-size:.92rem;opacity:.92} .scard .e{font-size:1.8rem}
+  details.faq{border-bottom:1px solid var(--border);padding:14px 0}
+  details.faq summary{cursor:pointer;font-weight:600}
+  details.faq p{margin:8px 0 0;color:var(--text-dim)}
+  .creditos{font-size:.84rem;color:var(--text-dim);border-top:1px solid var(--border);margin-top:28px;padding-top:14px}
+  footer{background:var(--navy-950);color:#8b92a0;font-size:.85rem;padding:26px 0;margin-top:56px}
+  footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  footer a{color:#8b92a0;margin-right:16px}
+  .vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+  @media (max-width:920px){
+    .app{grid-template-columns:1fr;margin-top:-80px}
+    .res{position:static}
+    .formula,.siguiente{grid-template-columns:1fr}
+    .movil-barra{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:50;align-items:center;justify-content:space-between;gap:10px;background:var(--n1);color:#fff;border-radius:16px;padding:10px 14px 10px 18px;box-shadow:0 14px 30px -10px rgba(0,0,0,.5);transform:translateY(140%);transition:transform .25s}
+    .movil-barra.ver{transform:none}
+    .movil-barra b{font-family:var(--serif);font-size:1.6rem;font-variant-numeric:tabular-nums}
+    .movil-barra span{font-size:.8rem;color:#c9d0f2;display:block}
+    .movil-barra a{background:linear-gradient(90deg,var(--cian),var(--violeta));color:#0b1030;font-weight:700;text-decoration:none;border-radius:10px;padding:9px 12px;font-size:.88rem}
+  }
+  @media (max-width:560px){
+    body{font-size:16px}
+    .topbar nav a:not(.cuenta){display:none}
+    .campos{grid-template-columns:1fr 1fr}
+    .paso{padding:16px}
+    .modo{margin:12px 16px 4px}
+    .mat,.mat-cab{grid-template-columns:minmax(0,1.4fr) minmax(0,.8fr) minmax(0,.9fr) 30px;gap:6px}
+    .mat select,.mat input{padding:10px 8px;font-size:.92rem}
+    .hero{padding:34px 0 110px}
+  }
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<div class="utility">
+  <div class="wrap">
+    <div class="eco"><a href="https://aurzane.com/">AURZANE</a><a href="https://mind.aurzane.com/">MIND</a><a href="https://ovp.aurzane.com/">OVP</a><a class="activo" href="https://nexus.aurzane.com/">NEXUS</a><a href="https://live.aurzane.com/">LIVE</a><a href="https://learn.aurzane.com/">LEARN</a><a href="https://build.aurzane.com/">BUILD</a></div>
+    <button type="button" id="btnTema">🌓 Tema</button>
+  </div>
+</div>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="https://nexus.aurzane.com/">AUR<span class="z">Z</span>ANE<small>/ NEXUS</small></a>
+    <nav aria-label="NEXUS">
+      <a href="https://nexus.aurzane.com/universidades/">Universidades</a>
+      <a href="https://ovp.aurzane.com/">Test vocacional</a>
+      <a href="https://mind.aurzane.com/test-de-personalidad/">Test de personalidad</a>
+      <a class="cuenta" href="https://aurzane.com/mi-aurzane.html">👤 Mi AURZANE</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <span class="pre">🎓 PAU 2026 · selectividad, EBAU o EvAU</span>
+      <h1>Calcula tu nota de la PAU y descubre <span>si te llega para tu carrera</span></h1>
+      <p>Nota de acceso, nota de admisión sobre 14 con ponderaciones y lo que te falta para la nota de corte. Al instante, gratis y sin registro.</p>
+      <ul class="chips"><li>📐 Fórmula oficial actualizada</li><li>🎯 Te dice qué nota necesitas</li><li>🛠️ También para FP de Grado Superior</li></ul>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="app">
+      <form class="panel form" id="form" novalidate onsubmit="return false">
+        <div class="modo" role="group" aria-label="Cómo accedes a la universidad">
+          <button type="button" data-modo="bach" aria-pressed="true">🎒 Bachillerato + PAU</button>
+          <button type="button" data-modo="fp" aria-pressed="false">🛠️ FP de Grado Superior</button>
+        </div>
+
+        <!-- Paso 1 -->
+        <div class="paso" id="pasoBase">
+          <div class="paso-cab"><span class="paso-n">1</span><div><h2 id="tBase">Tu nota media de Bachillerato</h2><p id="pBase">Es la media de todas las materias de 1º y 2º.</p></div></div>
+          <div class="campos">
+            <div class="campo"><label for="base" id="lBase">Nota media</label><input type="number" id="base" min="5" max="10" step="0.01" inputmode="decimal" placeholder="Ej. 7,85"><small>De 5 a 10</small></div>
+          </div>
+          <details class="media" id="mediaBox">
+            <summary>¿No sabes tu media? Calcúlala aquí</summary>
+            <p class="ayuda">Escribe la nota final de cada materia de 1º y 2º de Bachillerato.</p>
+            <div class="media-filas" id="mediaFilas"></div>
+            <button type="button" class="chip" id="masMedia">+ Añadir materia</button>
+            <p class="ayuda">Tu media: <span class="media-res num" id="mediaRes">—</span> <button type="button" class="chip" id="usarMedia" disabled>Usar esta media</button></p>
+          </details>
+        </div>
+
+        <!-- Paso 2 -->
+        <div class="paso" id="pasoAcceso">
+          <div class="paso-cab"><span class="paso-n">2</span><div><h2>Fase de acceso (obligatoria)</h2><p>Los cuatro exámenes comunes. Su media debe ser al menos 4.</p></div></div>
+          <div class="campos">
+            <div class="campo"><label for="a1">Lengua Castellana y Literatura II</label><input type="number" id="a1" min="0" max="10" step="0.01" inputmode="decimal" placeholder="0 a 10"></div>
+            <div class="campo"><div class="fila-hist"><label for="a2" class="vh">Historia</label><select id="histSel" aria-label="Materia de historia"><option>Historia de España</option><option>Historia de la Filosofía</option></select></div><input type="number" id="a2" min="0" max="10" step="0.01" inputmode="decimal" placeholder="0 a 10" aria-label="Nota de historia"></div>
+            <div class="campo"><label for="a3">Lengua extranjera II</label><input type="number" id="a3" min="0" max="10" step="0.01" inputmode="decimal" placeholder="0 a 10"></div>
+            <div class="campo"><div class="fila-hist"><label for="a4" class="vh">Materia de modalidad</label><select id="modSel" aria-label="Materia específica de modalidad"></select></div><input type="number" id="a4" min="0" max="10" step="0.01" inputmode="decimal" placeholder="0 a 10" aria-label="Nota de la materia de modalidad"></div>
+          </div>
+          <label class="cooficial"><input type="checkbox" id="coof"> Mi comunidad tiene lengua cooficial (Cataluña, Galicia, País Vasco, Comunidad Valenciana, Baleares o Navarra)</label>
+          <div class="campos" id="coofBox" hidden style="margin-top:10px">
+            <div class="campo"><label for="a5">Lengua cooficial y Literatura II</label><input type="number" id="a5" min="0" max="10" step="0.01" inputmode="decimal" placeholder="0 a 10"></div>
+          </div>
+        </div>
+
+        <!-- Paso 3 -->
+        <div class="paso">
+          <div class="paso-cab"><span class="paso-n" id="nAdm">3</span><div><h2>Fase de admisión (materias que ponderan)</h2><p>Suben tu nota hasta 14. Cuentan las dos que más puntos te den.</p></div></div>
+          <div class="presets" role="group" aria-label="Ponderaciones típicas por rama">
+            <span>Ponderaciones típicas:</span>
+            <button type="button" class="chip" data-rama="salud">🩺 Salud</button>
+            <button type="button" class="chip" data-rama="ing">⚙️ Ingeniería y Arquitectura</button>
+            <button type="button" class="chip" data-rama="ciencias">🔬 Ciencias</button>
+            <button type="button" class="chip" data-rama="sociales">⚖️ Sociales y Jurídicas</button>
+            <button type="button" class="chip" data-rama="artes">🎭 Artes y Humanidades</button>
+          </div>
+          <div class="mat-cab" aria-hidden="true"><span>Materia</span><span>Nota</span><span>Pondera</span><span></span></div>
+          <div id="mats"></div>
+          <button type="button" class="btn btn-linea" id="masMat">+ Añadir materia</button>
+          <p class="ayuda">Cada universidad publica sus ponderaciones (0,1 o 0,2) para cada grado. Las típicas son orientativas: compruébalas en la web de tu universidad. Solo ponderan las materias aprobadas.</p>
+        </div>
+      </form>
+
+      <aside class="panel res" aria-labelledby="tRes">
+        <div class="res-top">
+          <h2 id="tRes">Tu nota de admisión</h2>
+          <div class="medidor">
+            <svg viewBox="0 0 320 190" id="medidor" aria-hidden="true"></svg>
+            <div class="valor"><b id="vTotal" class="num">0,00</b><span>sobre 14</span></div>
+          </div>
+          <p class="estado" id="estado" role="status"><i></i><span>Rellena tus notas para empezar</span></p>
+        </div>
+        <div class="desglose">
+          <div class="linea"><span id="lb1">Nota de Bachillerato (60 %)</span><b id="d1">—</b></div>
+          <div class="linea" id="filaAcc"><span>Media fase de acceso (40 %)</span><b id="d2">—</b></div>
+          <div class="linea"><span id="lb3">Nota de acceso</span><b id="d3">—</b></div>
+          <div class="linea"><span id="lb4">Materias que ponderan</span><b id="d4">—</b></div>
+          <div class="barra14" aria-hidden="true"><i class="b1" id="bb1" style="width:0"></i><i class="b2" id="bb2" style="width:0"></i></div>
+          <div class="escala14" aria-hidden="true"><span>0</span><span>5</span><span>10</span><span>14</span></div>
+        </div>
+        <div class="objetivo">
+          <h3>🎯 ¿Te llega para tu carrera?</h3>
+          <div class="fila"><label for="corte" class="vh">Nota de corte</label><input type="number" id="corte" min="5" max="14" step="0.001" inputmode="decimal" placeholder="Ej. 12,5"><span class="ayuda" style="margin:0">Escribe la nota de corte del año pasado</span></div>
+          <div class="veredicto" id="veredicto">Cada universidad publica sus notas de corte en su web al acabar la admisión de cada verano. Busca la del grado que te interesa y escríbela aquí.</div>
+        </div>
+        <div class="acciones">
+          <button type="button" class="btn btn-luz" id="btnCompartir">Compartir mi nota</button>
+          <button type="button" class="btn btn-osc" id="btnReset">Empezar de nuevo</button>
+        </div>
+        <p class="msg" id="msg" role="status"></p>
+      </aside>
+    </div>
+
+    <section class="bloque" aria-labelledby="tFormula">
+      <h2 class="t" id="tFormula">Cómo se calcula tu nota</h2>
+      <p class="sub">Así funciona la PAU desde 2025, según el Real Decreto 534/2024. En algunas comunidades se sigue llamando EBAU, EvAU o PEvAU, pero las fórmulas son las mismas.</p>
+      <div class="formula">
+        <div class="fcard"><h3>1. Nota de acceso</h3><p class="eq">0,6 × Bachillerato + 0,4 × fase de acceso</p><p>La media de los exámenes de la fase de acceso tiene que ser al menos 4, y la nota de acceso al menos 5. Llega hasta 10 y no caduca.</p></div>
+        <div class="fcard"><h3>2. Materias que ponderan</h3><p class="eq">nota × 0,1 o 0,2</p><p>Cada universidad decide cuánto pondera cada materia para cada grado. Solo ponderan si están aprobadas. La materia de modalidad de la fase de acceso también puede ponderar.</p></div>
+        <div class="fcard"><h3>3. Nota de admisión</h3><p class="eq">acceso + las 2 mejores</p><p>Se suman las dos materias que más puntos aportan a ese grado, no las de nota más alta. El máximo es 14. Las notas que ponderan valen tres cursos.</p></div>
+      </div>
+    </section>
+
+    <section class="bloque" aria-labelledby="tSig">
+      <h2 class="t" id="tSig">¿Y ahora qué carrera eliges?</h2>
+      <p class="sub">Tu nota es una parte. Tus intereses, tu personalidad y la universidad que encaja contigo, también.</p>
+      <div class="siguiente">
+        <a class="scard" href="https://ovp.aurzane.com/" style="background:linear-gradient(135deg,#2b3fb8,#8b7bff)"><span class="e">🧭</span><b>Test vocacional gratis</b><span>Seis instrumentos y un informe con las carreras que encajan contigo.</span></a>
+        <a class="scard" href="https://mind.aurzane.com/test-de-personalidad/" style="background:linear-gradient(135deg,#ff7a45,#a35be0)"><span class="e">🧠</span><b>Test de personalidad</b><span>Descubre tu perfil entre 11 y las carreras afines a él.</span></a>
+        <a class="scard" href="https://nexus.aurzane.com/universidades/que-puedo-estudiar/" style="background:linear-gradient(135deg,#2b3fb8,#14206a)"><span class="e">🎯</span><b>¿Qué puedo estudiar con mi nota?</b><span>Grados y universidades públicas a tu alcance.</span></a>
+        <a class="scard" href="https://nexus.aurzane.com/universidades/" style="background:linear-gradient(135deg,#0f8f86,#2b3fb8)"><span class="e">🏛️</span><b>Catálogo de universidades</b><span>Más de 6.000 universidades de 23 países, con sus carreras.</span></a>
+      </div>
+    </section>
+
+    <section class="bloque" aria-labelledby="tFaq" style="max-width:780px">
+      <h2 class="t" id="tFaq">Preguntas frecuentes</h2>
+      <details class="faq"><summary>¿Cómo se calcula la nota de acceso de la PAU?</summary><p>Es el 60 % de tu nota media de Bachillerato más el 40 % de la media de los exámenes de la fase de acceso. Para que cuente, la media de la fase de acceso debe ser de al menos 4 y la nota de acceso de al menos 5.</p></details>
+      <details class="faq"><summary>¿Cómo se calcula la nota de admisión sobre 14?</summary><p>A tu nota de acceso se le suman las dos materias que más puntos aporten, multiplicadas por su ponderación (0,1 o 0,2). Así puedes sumar hasta 4 puntos más.</p></details>
+      <details class="faq"><summary>¿La materia de modalidad de la fase de acceso pondera?</summary><p>Sí. Matemáticas II, Matemáticas Aplicadas a las Ciencias Sociales II, Latín II y el resto de materias de modalidad cuentan para la media de la fase de acceso y, si están aprobadas, también pueden ponderar sin repetir el examen.</p></details>
+      <details class="faq"><summary>¿Qué pasa si tengo lengua cooficial?</summary><p>En las comunidades con lengua cooficial, la fase de acceso incluye también un examen de esa lengua, y la media se calcula con los cinco exámenes.</p></details>
+      <details class="faq"><summary>¿Cómo calculo la nota si vengo de FP de Grado Superior?</summary><p>Tu base es la nota media del ciclo formativo. Puedes presentarte solo a la fase de admisión y sumar hasta dos materias con su ponderación, hasta un máximo de 14.</p></details>
+      <details class="faq"><summary>¿Dónde consulto las ponderaciones y las notas de corte?</summary><p>Cada universidad publica en su web las tablas de ponderaciones y las notas de corte de cada grado, normalmente en la sección de acceso o admisión. Las notas de corte cambian cada año, así que usa las del último curso como referencia.</p></details>
+      <p class="creditos">Calculadora orientativa basada en el Real Decreto 534/2024 y en las guías de la PAU 2026 de las universidades. Las ponderaciones y notas de corte reales dependen de cada universidad y de cada año: compruébalas siempre en la fuente oficial. Tus notas se quedan en tu dispositivo.</p>
+    </section>
+  </div>
+</main>
+
+<div class="movil-barra" id="movilBarra" aria-hidden="true"><div><span>Tu nota de admisión</span><b id="mbTotal">0,00</b></div><a href="#tRes">Ver detalle</a></div>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 AURZANE NEXUS</span>
+    <span><a href="https://aurzane.com/">AURZANE</a><a href="https://nexus.aurzane.com/universidades/">Universidades</a><a href="https://aurzane.com/privacidad.html">Privacidad</a></span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+  var $ = function (id) { return document.getElementById(id); };
+  var MODALIDAD = ['Matemáticas II', 'Matemáticas Aplicadas a las CCSS II', 'Latín II', 'Ciencias Generales', 'Dibujo Artístico II', 'Análisis Musical II', 'Artes Escénicas II'];
+  var MATERIAS = ['Matemáticas II', 'Matemáticas Aplicadas a las CCSS II', 'Física', 'Química', 'Biología', 'Geología y Ciencias Ambientales', 'Dibujo Técnico II', 'Tecnología e Ingeniería II', 'Ciencias Generales', 'Latín II', 'Griego II', 'Historia del Arte', 'Geografía', 'Empresa y Diseño de Modelos de Negocio', 'Literatura Dramática', 'Movimientos Culturales y Artísticos', 'Dibujo Artístico II', 'Diseño', 'Técnicas de Expresión Gráfico-Plástica', 'Análisis Musical II', 'Artes Escénicas II', 'Historia de la Música y de la Danza', 'Coro y Técnica Vocal II', 'Segunda lengua extranjera'];
+  // Ponderaciones típicas (orientativas). Las reales las fija cada universidad para cada grado.
+  var RAMAS = {
+    salud: { 'Biología': .2, 'Química': .2, 'Física': .2, 'Matemáticas II': .2, 'Geología y Ciencias Ambientales': .1, 'Matemáticas Aplicadas a las CCSS II': .1, 'Ciencias Generales': .1 },
+    ing: { 'Matemáticas II': .2, 'Física': .2, 'Dibujo Técnico II': .2, 'Tecnología e Ingeniería II': .2, 'Química': .2, 'Biología': .1, 'Geología y Ciencias Ambientales': .1, 'Ciencias Generales': .1 },
+    ciencias: { 'Matemáticas II': .2, 'Física': .2, 'Química': .2, 'Biología': .2, 'Geología y Ciencias Ambientales': .2, 'Dibujo Técnico II': .1, 'Tecnología e Ingeniería II': .1, 'Ciencias Generales': .2 },
+    sociales: { 'Matemáticas Aplicadas a las CCSS II': .2, 'Empresa y Diseño de Modelos de Negocio': .2, 'Geografía': .2, 'Matemáticas II': .2, 'Historia del Arte': .1, 'Latín II': .1, 'Griego II': .1, 'Segunda lengua extranjera': .1, 'Biología': .1 },
+    artes: { 'Latín II': .2, 'Griego II': .2, 'Historia del Arte': .2, 'Geografía': .2, 'Literatura Dramática': .2, 'Movimientos Culturales y Artísticos': .2, 'Segunda lengua extranjera': .2, 'Dibujo Artístico II': .2, 'Matemáticas Aplicadas a las CCSS II': .1 }
+  };
+  var CLAVE = 'aurzane-calc-pau';
+  var st = { modo: 'bach', mats: [], rama: '' };
+
+  function fmt(n, d) { return (n == null || isNaN(n)) ? '—' : n.toLocaleString('es-ES', { minimumFractionDigits: d == null ? 2 : d, maximumFractionDigits: d == null ? 2 : d }); }
+  function num(el) { var v = String(el.value).replace(',', '.').trim(); if (v === '') return null; var n = parseFloat(v); return isNaN(n) ? NaN : n; }
+  function valida(el, min, max) { var n = num(el); var mal = n !== null && (isNaN(n) || n < min || n > max); el.classList.toggle('mal', mal); el.setAttribute('aria-invalid', mal ? 'true' : 'false'); return mal || n === null ? null : n; }
+  function opts(lista, sel) { return lista.map(function (m) { return '<option' + (m === sel ? ' selected' : '') + '>' + m + '</option>'; }).join(''); }
+
+  /* ---------- materias de la fase de admisión ---------- */
+  function filaMat(m, i) {
+    return '<div class="mat" data-i="' + i + '">' +
+      '<select aria-label="Materia ' + (i + 1) + '" data-k="n">' + opts(MATERIAS, m.n) + '</select>' +
+      '<input type="number" aria-label="Nota de ' + m.n + '" data-k="v" min="0" max="10" step="0.01" inputmode="decimal" placeholder="Nota" value="' + (m.v == null ? '' : m.v) + '">' +
+      '<select aria-label="Ponderación de ' + m.n + '" data-k="p">' + [0, .1, .2].map(function (p) { return '<option value="' + p + '"' + (p === m.p ? ' selected' : '') + '>' + (p ? '× ' + fmt(p, 1) : 'No pondera') + '</option>'; }).join('') + '</select>' +
+      '<button type="button" class="x" aria-label="Quitar ' + m.n + '" data-k="x">×</button></div>';
+  }
+  function filaModalidad() {
+    if (st.modo !== 'bach') return '';
+    var n = $('modSel').value, v = num($('a4'));
+    return '<div class="mat auto"><span class="etq">' + n + '<small>De tu fase de acceso: ' + (v == null || isNaN(v) ? 'sin nota' : fmt(v)) + '</small></span><span></span>' +
+      '<select aria-label="Ponderación de ' + n + ' de la fase de acceso" id="pMod">' + [0, .1, .2].map(function (p) { return '<option value="' + p + '"' + (p === (st.pMod || 0) ? ' selected' : '') + '>' + (p ? '× ' + fmt(p, 1) : 'No pondera') + '</option>'; }).join('') + '</select><span></span></div>';
+  }
+  function pintarMats() {
+    $('mats').innerHTML = filaModalidad() + st.mats.map(filaMat).join('');
+    $('masMat').hidden = st.mats.length >= 4;
+  }
+
+  /* ---------- cálculo ---------- */
+  function calcular() {
+    var r = { modo: st.modo, ok: false, avisos: [] };
+    if (st.modo === 'bach') {
+      r.bach = valida($('base'), 5, 10);
+      var ids = ['a1', 'a2', 'a3', 'a4'].concat($('coof').checked ? ['a5'] : []);
+      var notas = ids.map(function (id) { return valida($(id), 0, 10); });
+      r.completoAcc = notas.every(function (n) { return n !== null; });
+      r.mediaAcc = r.completoAcc ? notas.reduce(function (a, b) { return a + b; }, 0) / notas.length : null;
+      if (r.bach !== null && r.completoAcc) {
+        r.acceso = Math.round((0.6 * r.bach + 0.4 * r.mediaAcc) * 1000) / 1000;
+        if (r.mediaAcc < 4) r.avisos.push('La media de la fase de acceso (' + fmt(r.mediaAcc) + ') no llega a 4: la PAU no se supera.');
+        else if (r.acceso < 5) r.avisos.push('Tu nota de acceso no llega a 5: aún no tendrías acceso.');
+        else r.ok = true;
+      }
+    } else {
+      r.bach = valida($('base'), 5, 10);
+      if (r.bach !== null) { r.acceso = r.bach; r.ok = true; }
+    }
+    // candidatas a ponderar (aprobadas). La misma materia solo cuenta una vez, con su mejor resultado.
+    var cand = {};
+    function add(n, v, p) { if (v == null || isNaN(v) || v < 5 || !p) return; var pts = v * p; if (!cand[n] || cand[n].pts < pts) cand[n] = { n: n, v: v, p: p, pts: pts }; }
+    if (st.modo === 'bach') add($('modSel').value, num($('a4')), st.pMod || 0);
+    st.mats.forEach(function (m) { add(m.n, m.v, m.p); });
+    var lista = Object.keys(cand).map(function (k) { return cand[k]; }).sort(function (a, b) { return b.pts - a.pts; });
+    r.mejores = lista.slice(0, 2);
+    r.extra = r.mejores.reduce(function (a, m) { return a + m.pts; }, 0);
+    st.mats.forEach(function (m) { if (m.v != null && !isNaN(m.v) && m.v < 5 && m.p) r.avisos.push(m.n + ' no pondera porque no está aprobada.'); });
+    r.total = r.ok ? Math.min(14, r.acceso + r.extra) : null;
+    return r;
+  }
+
+  /* ---------- medidor ---------- */
+  function arco(cx, cy, rad, a0, a1) {
+    var p0 = [cx + rad * Math.cos(a0), cy + rad * Math.sin(a0)], p1 = [cx + rad * Math.cos(a1), cy + rad * Math.sin(a1)];
+    return 'M' + p0[0].toFixed(2) + ' ' + p0[1].toFixed(2) + ' A' + rad + ' ' + rad + ' 0 ' + (a1 - a0 > Math.PI ? 1 : 0) + ' 1 ' + p1[0].toFixed(2) + ' ' + p1[1].toFixed(2);
+  }
+  function medidor(acceso, total, corte) {
+    var cx = 160, cy = 168, R = 132, A0 = Math.PI, A1 = 2 * Math.PI;
+    var ang = function (v) { return A0 + (Math.max(0, Math.min(14, v)) / 14) * (A1 - A0); };
+    var h = '<defs><linearGradient id="g1" x1="0" x2="1"><stop offset="0" stop-color="#2b3fb8"/><stop offset="1" stop-color="#8b7bff"/></linearGradient><linearGradient id="g2" x1="0" x2="1"><stop offset="0" stop-color="#35e0d0"/><stop offset="1" stop-color="#9ff7ee"/></linearGradient></defs>';
+    h += '<path d="' + arco(cx, cy, R, A0, A1) + '" stroke="rgba(255,255,255,.12)" stroke-width="22" fill="none" stroke-linecap="round"/>';
+    for (var i = 0; i <= 14; i++) {
+      var a = ang(i), r1 = R - 20, r2 = R - (i % 5 === 0 || i === 14 ? 30 : 25);
+      h += '<line x1="' + (cx + r1 * Math.cos(a)).toFixed(1) + '" y1="' + (cy + r1 * Math.sin(a)).toFixed(1) + '" x2="' + (cx + r2 * Math.cos(a)).toFixed(1) + '" y2="' + (cy + r2 * Math.sin(a)).toFixed(1) + '" stroke="rgba(255,255,255,' + (i % 5 === 0 || i === 14 ? '.6' : '.25') + ')" stroke-width="2"/>';
+      if (i === 0 || i === 5 || i === 10 || i === 14) { var rt = R - 44; h += '<text x="' + (cx + rt * Math.cos(a)).toFixed(1) + '" y="' + (cy + rt * Math.sin(a) + 4).toFixed(1) + '" fill="rgba(255,255,255,.65)" font-size="11" font-weight="700" text-anchor="middle" font-family="Instrument Sans,sans-serif">' + i + '</text>'; }
+    }
+    if (acceso > 0) h += '<path d="' + arco(cx, cy, R, A0, ang(acceso) - 0.0001) + '" stroke="url(#g1)" stroke-width="22" fill="none" stroke-linecap="round"/>';
+    if (total > acceso + 0.01) h += '<path d="' + arco(cx, cy, R, ang(acceso), ang(total)) + '" stroke="url(#g2)" stroke-width="22" fill="none" stroke-linecap="round"/>';
+    if (corte) { var ac = ang(corte), r1c = R - 16, r2c = R + 16; h += '<line x1="' + (cx + r1c * Math.cos(ac)).toFixed(1) + '" y1="' + (cy + r1c * Math.sin(ac)).toFixed(1) + '" x2="' + (cx + r2c * Math.cos(ac)).toFixed(1) + '" y2="' + (cy + r2c * Math.sin(ac)).toFixed(1) + '" stroke="#ffb347" stroke-width="4" stroke-linecap="round"/><circle cx="' + (cx + (R + 22) * Math.cos(ac)).toFixed(1) + '" cy="' + (cy + (R + 22) * Math.sin(ac)).toFixed(1) + '" r="5" fill="#ffb347"/>'; }
+    $('medidor').innerHTML = h;
+  }
+
+  /* ---------- pintar resultado ---------- */
+  var mostrado = 0;
+  function animarNumero(dest) {
+    var desde = mostrado, t0 = null, dur = 500;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { mostrado = dest; $('vTotal').textContent = fmt(dest); return; }
+    function paso(t) { if (!t0) t0 = t; var k = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - k, 3); var v = desde + (dest - desde) * e; $('vTotal').textContent = fmt(v); if (k < 1) requestAnimationFrame(paso); else mostrado = dest; }
+    requestAnimationFrame(paso);
+  }
+  function pintar() {
+    var r = calcular(), corte = valida($('corte'), 5, 14);
+    var esBach = r.modo === 'bach';
+    $('d1').textContent = r.bach == null ? '—' : fmt(r.bach);
+    $('d2').textContent = r.mediaAcc == null ? '—' : fmt(r.mediaAcc);
+    $('d3').textContent = r.acceso == null ? '—' : fmt(r.acceso, 3);
+    $('d4').textContent = r.mejores.length ? '+ ' + fmt(r.extra, 3) : '—';
+    $('lb4').textContent = r.mejores.length ? 'Ponderan: ' + r.mejores.map(function (m) { return m.n + ' (' + fmt(m.v) + ' × ' + fmt(m.p, 1) + ')'; }).join(' y ') : 'Materias que ponderan';
+    var total = r.total == null ? (r.acceso || 0) : r.total;
+    $('bb1').style.width = ((r.acceso || 0) / 14 * 100) + '%';
+    $('bb2').style.width = (r.total ? Math.max(0, r.total - r.acceso) / 14 * 100 : 0) + '%';
+    medidor(r.acceso || 0, total, corte);
+    animarNumero(r.total == null ? 0 : r.total);
+    $('mbTotal').textContent = r.total == null ? '—' : fmt(r.total);
+    st.hayTotal = r.total != null; barraMovil();
+
+    var est = $('estado'), txt;
+    est.classList.remove('ok', 'mal');
+    if (r.avisos.length && !r.ok) { est.classList.add('mal'); txt = r.avisos[0]; }
+    else if (r.ok) { est.classList.add('ok'); txt = esBach ? 'PAU superada: tienes acceso a la universidad' : 'Con tu ciclo tienes acceso a la universidad'; }
+    else txt = esBach ? 'Rellena tu media y las notas de la fase de acceso' : 'Escribe la nota media de tu ciclo';
+    est.querySelector('span').textContent = txt;
+
+    // objetivo
+    var v = $('veredicto');
+    if (corte != null && r.ok) {
+      var dif = r.total - corte;
+      if (dif >= 0) {
+        v.innerHTML = '<span class="pill ok">Te llega ✓</span> Superas la nota de corte por <b>' + fmt(dif, 3) + '</b> puntos.';
+      } else {
+        var falta = -dif, sug = [];
+        // 1) con dos materias ponderadas a 0,2
+        var nec2 = (corte - r.acceso) / 0.4;
+        if (nec2 <= 10 && nec2 >= 5) sug.push('Sacar una media de <b>' + fmt(nec2) + '</b> en dos materias que ponderen × 0,2.');
+        else if (nec2 < 5) sug.push('Aprobar dos materias que ponderen × 0,2: con un 5 en cada una ya sumas 2 puntos.');
+        // 2) subiendo la fase de acceso (solo Bachillerato, nota de acceso máx 10)
+        if (esBach) {
+          var necAcc = (corte - r.extra - 0.6 * r.bach) / 0.4;
+          if (necAcc <= 10 && necAcc > r.mediaAcc) sug.push((sug.length ? 'O, con' : 'Con') + ' tus ponderaciones actuales, subir la media de la fase de acceso a <b>' + fmt(necAcc) + '</b>.');
+        }
+        if (!sug.length) sug.push('Es una nota de corte muy alta para tu nota de acceso. Valora otras universidades u otros grados afines.');
+        v.innerHTML = '<span class="pill mal">Te faltan ' + fmt(falta, 3) + '</span><ul class="pasos-falta"><li>' + sug.join('</li><li>') + '</li></ul>';
+      }
+    } else if (corte != null) {
+      v.textContent = 'Completa tus notas para compararlas con la nota de corte.';
+    }
+    guardar();
+  }
+
+  /* ---------- media de Bachillerato ---------- */
+  function filaMedia(val) { var i = document.createElement('input'); i.type = 'number'; i.min = 0; i.max = 10; i.step = '0.01'; i.inputMode = 'decimal'; i.placeholder = 'Nota'; i.setAttribute('aria-label', 'Nota de una materia'); if (val != null) i.value = val; $('mediaFilas').appendChild(i); }
+  function calcMedia() {
+    var ns = Array.prototype.map.call($('mediaFilas').querySelectorAll('input'), function (i) { return num(i); }).filter(function (n) { return n !== null && !isNaN(n) && n >= 0 && n <= 10; });
+    var m = ns.length ? ns.reduce(function (a, b) { return a + b; }, 0) / ns.length : null;
+    $('mediaRes').textContent = m == null ? '—' : fmt(m, 2) + ' (' + ns.length + ' materias)';
+    $('usarMedia').disabled = m == null || m < 5;
+    $('usarMedia').dataset.v = m == null ? '' : (Math.round(m * 100) / 100);
+  }
+
+  /* ---------- modo ---------- */
+  function setModo(m) {
+    st.modo = m;
+    Array.prototype.forEach.call(document.querySelectorAll('[data-modo]'), function (b) { b.setAttribute('aria-pressed', String(b.dataset.modo === m)); });
+    var bach = m === 'bach';
+    $('pasoAcceso').hidden = !bach; $('mediaBox').hidden = !bach; $('filaAcc').hidden = !bach;
+    $('tBase').textContent = bach ? 'Tu nota media de Bachillerato' : 'Tu nota media del ciclo de Grado Superior';
+    $('pBase').textContent = bach ? 'Es la media de todas las materias de 1º y 2º.' : 'Aparece en tu certificado académico del ciclo formativo.';
+    $('lb1').textContent = bach ? 'Nota de Bachillerato (60 %)' : 'Nota media del ciclo';
+    $('lb3').textContent = bach ? 'Nota de acceso' : 'Tu base (media del ciclo)';
+    $('nAdm').textContent = bach ? '3' : '2';
+    pintarMats(); pintar();
+  }
+
+  /* ---------- persistencia ---------- */
+  function guardar() {
+    try {
+      var d = { modo: st.modo, mats: st.mats, pMod: st.pMod || 0, coof: $('coof').checked, hist: $('histSel').value, mod: $('modSel').value };
+      ['base', 'a1', 'a2', 'a3', 'a4', 'a5', 'corte'].forEach(function (id) { d[id] = $(id).value; });
+      localStorage.setItem(CLAVE, JSON.stringify(d));
+    } catch (e) {}
+  }
+  function cargar() {
+    var d = null; try { d = JSON.parse(localStorage.getItem(CLAVE) || 'null'); } catch (e) {}
+    if (!d) return;
+    ['base', 'a1', 'a2', 'a3', 'a4', 'a5', 'corte'].forEach(function (id) { if (d[id] != null) $(id).value = d[id]; });
+    $('coof').checked = !!d.coof; $('coofBox').hidden = !d.coof;
+    if (d.hist) $('histSel').value = d.hist; if (d.mod) $('modSel').value = d.mod;
+    st.mats = Array.isArray(d.mats) ? d.mats.slice(0, 4) : []; st.pMod = d.pMod || 0;
+    if (d.modo) st.modo = d.modo;
+  }
+
+  /* ---------- compartir ---------- */
+  function compartir() {
+    var r = calcular();
+    if (r.total == null) { $('msg').textContent = 'Primero completa tus notas.'; return; }
+    var txt = 'Mi nota de admisión de la PAU es ' + fmt(r.total) + ' sobre 14. Calcula la tuya gratis:';
+    var url = 'https://nexus.aurzane.com/calculadora-nota-pau/';
+    if (navigator.share) { navigator.share({ title: 'Calculadora de nota PAU', text: txt, url: url }).catch(function () {}); return; }
+    (navigator.clipboard ? navigator.clipboard.writeText(txt + ' ' + url) : Promise.reject()).then(function () { $('msg').textContent = 'Copiado. Pégalo donde quieras.'; }, function () { window.prompt('Copia este texto:', txt + ' ' + url); });
+  }
+
+  var resVisible = false;
+  function barraMovil() { $('movilBarra').classList.toggle('ver', !!st.hayTotal && !resVisible); }
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (es) { resVisible = es[0].isIntersecting; barraMovil(); }, { threshold: 0.15 }).observe(document.querySelector('.res'));
+  }
+
+  /* ---------- arranque ---------- */
+  $('modSel').innerHTML = opts(MODALIDAD, 'Matemáticas II');
+  cargar();
+  if (!st.mats.length) st.mats = [{ n: 'Física', v: null, p: 0 }, { n: 'Química', v: null, p: 0 }];
+  for (var i = 0; i < 8; i++) filaMedia();
+  setModo(st.modo);
+
+  $('form').addEventListener('input', function (e) {
+    var t = e.target, fila = t.closest('.mat[data-i]');
+    if (fila) {
+      var m = st.mats[+fila.dataset.i], k = t.dataset.k;
+      if (k === 'v') m.v = num(t); else if (k === 'p') m.p = parseFloat(t.value); else if (k === 'n') { m.n = t.value; }
+      st.rama = ''; marcarRama();
+    }
+    if (t.id === 'pMod') { st.pMod = parseFloat(t.value); st.rama = ''; marcarRama(); }
+    if (t.id === 'a4' || t.id === 'modSel') { var s = $('pMod') ? $('pMod').value : 0; pintarMats(); if ($('pMod')) $('pMod').value = s; }
+    if (t.closest('#mediaFilas')) calcMedia();
+    pintar();
+  });
+  $('form').addEventListener('change', function (e) { if (e.target.closest('.mat[data-i]') && e.target.dataset.k === 'n') pintarMats(); });
+  $('form').addEventListener('click', function (e) {
+    var x = e.target.closest('[data-k="x"]');
+    if (x) { st.mats.splice(+x.closest('.mat').dataset.i, 1); pintarMats(); pintar(); }
+  });
+  $('corte').addEventListener('input', pintar);
+  $('coof').addEventListener('change', function () { $('coofBox').hidden = !this.checked; pintar(); });
+  $('masMat').addEventListener('click', function () {
+    var usadas = st.mats.map(function (m) { return m.n; }); var libre = MATERIAS.filter(function (m) { return usadas.indexOf(m) < 0; })[0];
+    st.mats.push({ n: libre, v: null, p: RAMAS[st.rama] ? (RAMAS[st.rama][libre] || 0) : 0 }); pintarMats(); pintar();
+    var ult = $('mats').querySelector('.mat[data-i="' + (st.mats.length - 1) + '"] select'); if (ult) ult.focus();
+  });
+  Array.prototype.forEach.call(document.querySelectorAll('[data-modo]'), function (b) { b.addEventListener('click', function () { setModo(b.dataset.modo); }); });
+  function marcarRama() { Array.prototype.forEach.call(document.querySelectorAll('[data-rama]'), function (b) { b.setAttribute('aria-pressed', String(b.dataset.rama === st.rama)); }); }
+  Array.prototype.forEach.call(document.querySelectorAll('[data-rama]'), function (b) {
+    b.addEventListener('click', function () {
+      var t = RAMAS[b.dataset.rama]; st.rama = b.dataset.rama;
+      st.mats.forEach(function (m) { m.p = t[m.n] || 0; });
+      st.pMod = t[$('modSel').value] || 0;
+      // si no hay materias, sugiere las dos más típicas de la rama
+      if (!st.mats.some(function (m) { return m.v != null; })) {
+        var top = Object.keys(t).filter(function (k) { return t[k] === .2 && k !== $('modSel').value; }).slice(0, 2);
+        st.mats = top.map(function (n) { return { n: n, v: null, p: .2 }; });
+      }
+      marcarRama(); pintarMats(); pintar();
+    });
+  });
+  $('masMedia').addEventListener('click', function () { filaMedia(); });
+  $('usarMedia').addEventListener('click', function () { $('base').value = this.dataset.v; pintar(); $('base').focus(); });
+  $('btnCompartir').addEventListener('click', compartir);
+  $('btnReset').addEventListener('click', function () {
+    try { localStorage.removeItem(CLAVE); } catch (e) {}
+    ['base', 'a1', 'a2', 'a3', 'a4', 'a5', 'corte'].forEach(function (id) { $(id).value = ''; $(id).classList.remove('mal'); });
+    st.mats = [{ n: 'Física', v: null, p: 0 }, { n: 'Química', v: null, p: 0 }]; st.pMod = 0; st.rama = ''; marcarRama();
+    $('veredicto').innerHTML = 'Cada universidad publica sus notas de corte en su web al acabar la admisión de cada verano. Busca la del grado que te interesa y escríbela aquí.';
+    pintarMats(); pintar(); window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+  $('btnTema').addEventListener('click', function () {
+    var osc = document.documentElement.getAttribute('data-tema') === 'oscuro';
+    if (osc) document.documentElement.removeAttribute('data-tema'); else document.documentElement.setAttribute('data-tema', 'oscuro');
+    try { localStorage.setItem('aurzane-tema', osc ? 'claro' : 'oscuro'); } catch (e) {}
+  });
+  window.__calcPau = { calcular: calcular };
+})();
+</script>
+</body>
+</html>
