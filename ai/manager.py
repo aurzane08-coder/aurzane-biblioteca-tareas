@@ -631,8 +631,11 @@ if conexiones['fuera_sitemap']:
     open(OUT + '/sitemap-ai.xml', 'w', encoding='utf-8').write('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + ''.join(f'<url><loc>{E(u)}</loc></url>' for u in conexiones['fuera_sitemap']) + '</urlset>')
 # reparación de enlaces internos rotos con redirección 301 a la página más parecida
 rotos_int = [r for r in enl_inf.get('rotos', []) if str(r.get('estado')) == '404' and re.match(r'^https://([a-z]+\.)?aurzane\.com/', r['url'])]
+malas = [r for r in conexiones['redirecciones'] if r['desde'].rstrip('/') == r['hacia'].rstrip('/')]
+conexiones['redirecciones'] = [r for r in conexiones['redirecciones'] if r not in malas]
 ya_red = {r['desde'] for r in conexiones['redirecciones']}
 nuevas_red = collections.defaultdict(list)
+for r in malas: nuevas_red[urllib.parse.urlparse(r['desde']).hostname]
 for r in rotos_int[:40]:
     u = r['url']; h = urllib.parse.urlparse(u).hostname; ruta = urllib.parse.urlparse(u).path
     if u in ya_red or not ruta or ruta == '/' or re.search(r'[\s"\'<>]', ruta) or re.search(r'\.(js|css|png|jpe?g|webp|svg|pdf|mp4)$', ruta): continue
@@ -640,7 +643,8 @@ for r in rotos_int[:40]:
     mejor = max(cands, key=lambda x: difflib.SequenceMatcher(None, ruta, urllib.parse.urlparse(x).path).ratio(), default=None)
     if not mejor: continue
     ratio = difflib.SequenceMatcher(None, ruta, urllib.parse.urlparse(mejor).path).ratio()
-    if ratio >= 0.82 and get(mejor)[0] == 200: nuevas_red[h].append((ruta, mejor, round(ratio, 2)))
+    if mejor.rstrip('/') == u.rstrip('/') or urllib.parse.urlparse(mejor).path.rstrip('/') == ruta.rstrip('/'): continue
+    if ratio >= 0.82 and get(u)[0] == 404 and get(mejor)[0] == 200: nuevas_red[h].append((ruta, mejor, round(ratio, 2)))
 for h, lista in nuevas_red.items():
     reglas = [x for x in conexiones['redirecciones'] if urllib.parse.urlparse(x['desde']).hostname == h] + [{'desde': f'https://{h}{a}', 'hacia': b, 'parecido': c, 'fecha': HOY} for a, b, c in lista]
     bloque = '# BEGIN AURZANE-AI redirecciones (las escribe el AI Manager; no editar a mano)\n' + ''.join(
@@ -655,7 +659,8 @@ for h, lista in nuevas_red.items():
         remoto(f'cp {ht}.ai-copia {ht}'); aviso('medio', f'Intenté redirigir enlaces rotos en {h} pero la web dejó de responder; lo deshice.')
         continue
     conexiones['redirecciones'] = reglas + [x for x in conexiones['redirecciones'] if urllib.parse.urlparse(x['desde']).hostname != h]
-    acciones.append(f'Reparé {len(lista)} enlaces rotos en {h} redirigiéndolos a la página correcta.')
+    if lista: acciones.append(f'Reparé {len(lista)} enlaces rotos en {h} redirigiéndolos a la página correcta.')
+    else: acciones.append(f'Limpié redirecciones que ya no hacían falta en {h}.')
 guardar('redirecciones.json', conexiones['redirecciones'][-300:])
 
 # ---------- 10. Resumen ----------
