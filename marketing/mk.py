@@ -1,4 +1,4 @@
-# Marketing automático de AURZANE (0 €).
+# Marketing automático de AURZANE (0 €). Redes: Telegram, Bluesky, Mastodon, Instagram, Facebook, YouTube, TikTok, Pinterest.
 #   python3 marketing/mk.py catalogo     -> catalogo.json (fijos + libros abiertos + notas de corte + páginas nuevas del sitemap)
 #   python3 marketing/mk.py planificar   -> calendario de los próximos 14 días, tarjetas que falten, enlaces cortos y feed
 #   python3 marketing/mk.py publicar N   -> publica la franja N (1 mañana, 2 tarde) de hoy en las redes con secretos configurados
