@@ -43,7 +43,7 @@ async function descargar(id, w, h) {
     const f = await descargar(id, w, h);
     await pg.setViewportSize({width: w, height: h});
     const k = sh / 423;  // escala de letra según la zona segura
-    await pg.setContent(`<html><head><meta charset="utf-8"><style>${fuentes}
+    const html = `<html><head><meta charset="utf-8"><style>${fuentes}
     body{margin:0;width:${w}px;height:${h}px;position:relative;overflow:hidden;color:#fff;font-family:I;
     background:url(file://${f}) center/cover}
     body:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,${C.fondo}e6 0%,${C.fondo}b3 45%,${C.fondo}40 100%)}
@@ -55,8 +55,9 @@ async function descargar(id, w, h) {
     </style></head><body><div class="z"><div class="l">AUR<span>Z</span>ANE</div>
     <div class="s">Psicología, bienestar y aprendizaje</div>
     <div class="d">Tests, calculadoras, cursos y libros gratis, creados por un psicólogo clínico</div>
-    <div class="u">aurzane.com</div></div></body></html>`);
-    await pg.waitForTimeout(500); await pg.screenshot({path: path.join(OUT, n + '.jpg'), type: 'jpeg', quality: 90});
+    <div class="u">aurzane.com</div></div></body></html>`;
+    fs.writeFileSync('/tmp/marca.html', html); await pg.goto('file:///tmp/marca.html');
+    await pg.waitForTimeout(800); await pg.screenshot({path: path.join(OUT, n + '.jpg'), type: 'jpeg', quality: 90});
     console.log('::notice title=Marca::' + n + ' ' + w + 'x' + h);
   }
   await b.close();
