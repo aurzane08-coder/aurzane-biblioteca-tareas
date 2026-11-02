@@ -40,7 +40,7 @@ with cf.ThreadPoolExecutor(4) as ex:
             paginas += 1
             for m in re.finditer(r'(?:href|src)\s*=\s*"([^"#]+)', body):
                 h = html.unescape(m.group(1)).strip()
-                if h.startswith(('mailto:', 'tel:', 'javascript:', 'data:')) or '${' in h or '{{' in h or "' +" in h or '" +' in h or '<' in h:
+                if h.startswith(('mailto:', 'tel:', 'javascript:', 'data:')) or '${' in h or '{{' in h or "' +" in h or '" +' in h or "'+" in h or '<' in h:
                     continue
                 v = urllib.parse.urljoin(final, h).split('#')[0]
                 if not interno(v):
