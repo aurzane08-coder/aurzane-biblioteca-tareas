@@ -1,41 +1,13 @@
 {
- "paginas": 0,
- "revisadas": 7,
+ "paginas": 495,
+ "revisadas": 4032,
  "rotos": [
   {
-   "url": "https://aurzane.com/",
-   "estado": "ERR Remote end closed connection without response",
-   "desde": []
-  },
-  {
-   "url": "https://build.aurzane.com/",
-   "estado": "ERR Remote end closed connection without response",
-   "desde": []
-  },
-  {
-   "url": "https://learn.aurzane.com/",
-   "estado": "ERR Remote end closed connection without response",
-   "desde": []
-  },
-  {
-   "url": "https://live.aurzane.com/",
-   "estado": "ERR Remote end closed connection without response",
-   "desde": []
-  },
-  {
-   "url": "https://mind.aurzane.com/",
-   "estado": "ERR Remote end closed connection without response",
-   "desde": []
-  },
-  {
-   "url": "https://nexus.aurzane.com/",
-   "estado": "ERR Remote end closed connection without response",
-   "desde": []
-  },
-  {
-   "url": "https://ovp.aurzane.com/",
-   "estado": "ERR Remote end closed connection without response",
-   "desde": []
+   "url": "https://live.aurzane.com/test-de-bienestar/'+p.enlace+'",
+   "estado": 404,
+   "desde": [
+    "https://live.aurzane.com/test-de-bienestar/"
+   ]
   }
  ]
 }
