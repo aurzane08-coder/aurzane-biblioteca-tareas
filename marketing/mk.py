@@ -157,7 +157,7 @@ def planificar(dias=14):
                 ultimo[r][i] = max(ultimo[r].get(i, ''), f)
     for d in range(dias):
         f = (HOY + datetime.timedelta(days=d)).isoformat()
-        if f in cal and d > 0: continue
+        pass  # cada franja se completa abajo si falta
         dia = cal.setdefault(f, {})
         for fr in ('1', '2', '3', '4'):
             if fr in dia and all(i in cat for i in dia[fr].values()) and set(dia[fr]) >= set(REDES_VIDEO if fr == '4' else [x for x in REDES if not (x == 'pinterest' and fr == '1')]): continue
