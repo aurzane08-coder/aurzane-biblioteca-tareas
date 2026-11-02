@@ -17,7 +17,7 @@ jobs:
           if [ -n "$SG_PASS" ]; then ssh-keygen -p -P "$SG_PASS" -N "" -f ~/.ssh/id >/dev/null; fi
           SSH="ssh -i $HOME/.ssh/id -p ${SG_PORT:-18765} -o StrictHostKeyChecking=accept-new"
           $SSH "$SG_USER@$SG_HOST" 'bash -s' <<'R' | sed 's/^/::notice title=Cache::/'
-          site-tools-client domain-all list -j 2>&1 | tr '\n' ' ' | cut -c1-900; echo
-          site-tools-client -h 2>&1 | tr '\n' ' ' | cut -c1-900; echo
-          for e in 'gzip' 'br' 'gzip, deflate, br'; do echo "enc $e: $(curl -s -o /dev/null -w '%{size_download} %header{x-proxy-cache}' -H "Accept-Encoding: $e" https://aurzane.com/aurzane-paleta.js)"; done
+          for id in $(site-tools-client -x -f id domain-all list 2>/dev/null); do echo "flush $id: $(site-tools-client domain-all update id=$id flush_cache=1 2>&1 | tr '\n' ' ' | cut -c1-150)"; done
+          sleep 5
+          for e in 'gzip' 'br'; do echo "enc $e: $(curl -s -o /dev/null -w '%{size_download} %header{x-proxy-cache}' -H "Accept-Encoding: $e" https://aurzane.com/aurzane-paleta.js)"; done
           R
