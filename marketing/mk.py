@@ -397,6 +397,17 @@ def publicar_video():
     guardar('estado.json', est)
 
 
+HORAS = {'1': (8, 37), '3': (12, 13), '2': (17, 41), '4': (19, 29)}  # UTC
+
+
+def pendientes():
+    """Publica las franjas de hoy cuya hora ya pasó y aún no salieron (por si GitHub retrasa o salta un cron)."""
+    ahora = datetime.datetime.now(datetime.timezone.utc)
+    for fr, (h, m) in sorted(HORAS.items(), key=lambda x: x[1]):
+        if (ahora.hour, ahora.minute) >= (h, m):
+            print('Franja', fr); publicar(fr)
+
+
 def publicar(franja):
     if franja == '4': return publicar_video()
     import redes
@@ -457,6 +468,7 @@ if __name__ == '__main__':
     if a == 'catalogo': catalogo()
     elif a == 'planificar': planificar(); feed()
     elif a == 'publicar': publicar(sys.argv[2])
+    elif a == 'pendientes': pendientes()
     elif a == 'clics': clics(sys.argv[2])
     elif a == 'renovar-ig':
         import redes; print(redes.renovar_instagram())

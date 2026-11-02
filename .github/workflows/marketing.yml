@@ -13,8 +13,9 @@ on:
     - cron: '13 12 * * *'
     - cron: '41 17 * * *'
     - cron: '29 19 * * *'
+    - cron: '7 10,14,16,21 * * *'  # repaso: publica lo que se haya quedado atrás
   push:
-    paths: ['marketing/fijos.py', 'marketing/mk.py', 'marketing/tarjeta.js', 'marketing/frases.py', 'marketing/web/**', '.github/workflows/marketing.yml']
+    paths: ['marketing/*.py', 'marketing/*.js', 'marketing/biblioteca_*.json', 'marketing/web/**', '.github/workflows/marketing.yml']
   workflow_dispatch:
     inputs:
       accion: {description: 'planificar | 1 | 2 | 3 | 4 | verificar', default: 'planificar'}
@@ -104,9 +105,9 @@ jobs:
       - name: Comprobar redes
         if: env.ACCION == 'verificar' || env.ACCION == 'planificar'
         run: python3 marketing/mk.py verificar | sed 's/^/::notice title=Redes::/'
-      - name: Publicar franja
-        if: env.ACCION == '1' || env.ACCION == '2' || env.ACCION == '3' || env.ACCION == '4'
-        run: python3 marketing/mk.py publicar "$ACCION"
+      - name: Publicar lo que toque
+        if: env.ACCION != 'verificar'
+        run: python3 marketing/mk.py pendientes
       - name: Subir a aurzane.com y leer clics
         if: env.SG_KEY != ''
         run: |
