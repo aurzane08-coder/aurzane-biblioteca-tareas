@@ -1,0 +1,299 @@
+{
+ "calendario": {
+  "2026-11-02": {
+   "1": {
+    "telegram": "curso-metod",
+    "bluesky": "calc-sueldo",
+    "mastodon": "test-sueno",
+    "facebook": "test-autoestima",
+    "instagram": "calc-reforma",
+    "threads": "test-satisfaccion",
+    "x": "test-bienestar"
+   },
+   "2": {
+    "telegram": "crea-l05-01",
+    "bluesky": "crea-l05-04",
+    "mastodon": "crea-l05-03",
+    "facebook": "crea-l06-14",
+    "instagram": "crea-l06-03",
+    "threads": "crea-l05-02",
+    "x": "crea-l06-02",
+    "pinterest": "crea-l07-04"
+   }
+  },
+  "2026-11-03": {
+   "1": {
+    "telegram": "calc-embarazo",
+    "bluesky": "curso-metod",
+    "mastodon": "test-tdah",
+    "facebook": "calc-sueldo",
+    "instagram": "test-personalidad",
+    "threads": "curso-neuro",
+    "x": "test-depresion"
+   },
+   "2": {
+    "telegram": "nc-odontologia",
+    "bluesky": "nc-ingenieria-en-tecnologias-industriales",
+    "mastodon": "nc-ingenieria-mecanica",
+    "facebook": "nc-biologia",
+    "instagram": "nc-pedagogia",
+    "threads": "nc-relaciones-laborales-y-recursos-humanos",
+    "x": "nc-derecho",
+    "pinterest": "nc-enfermeria"
+   }
+  },
+  "2026-11-04": {
+   "1": {
+    "telegram": "calc-sueldo",
+    "bluesky": "curso-neuro",
+    "mastodon": "test-autocompasion",
+    "facebook": "test-bienestar",
+    "instagram": "calc-embarazo",
+    "threads": "curso-metod",
+    "x": "test-ansiedad"
+   },
+   "2": {
+    "telegram": "libro-prevencion-acoso-ciberacoso-traves-clases-educacion",
+    "bluesky": "libro-psicologia-educacional",
+    "mastodon": "libro-profesionales-salud-eficientes-siglo-xxi-competencias",
+    "facebook": "libro-sindromes-clinicos",
+    "instagram": "libro-caso-practico-alumno-riesgo-presentar-dificultades",
+    "threads": "libro-psicologia-psicoanalitica-psicoanalisis-educacion",
+    "x": "libro-manual-go-byst-programa-breve-sensibilizacion",
+    "pinterest": "libro-evaluacion-demencias-recurso-general-alumnos-master"
+   }
+  },
+  "2026-11-05": {
+   "1": {
+    "telegram": "test-bienestar",
+    "bluesky": "test-sueno",
+    "mastodon": "test-personalidad",
+    "facebook": "ovp",
+    "instagram": "calc-hipoteca",
+    "threads": "test-autocompasion",
+    "x": "calc-pau"
+   },
+   "2": {
+    "telegram": "biblio-build",
+    "bluesky": "biblio-nexus",
+    "mastodon": "biblio-live",
+    "facebook": "biblio-mind",
+    "instagram": "articulos",
+    "threads": "universidades",
+    "x": "biblio-learn",
+    "pinterest": "notas-corte"
+   }
+  },
+  "2026-11-06": {
+   "1": {
+    "telegram": "test-autocompasion",
+    "bluesky": "ovp",
+    "mastodon": "test-habitos",
+    "facebook": "calc-calorias",
+    "instagram": "test-autoestima",
+    "threads": "test-personalidad",
+    "x": "test-sueno"
+   },
+   "2": {
+    "telegram": "crea-l06-03",
+    "bluesky": "crea-l05-08",
+    "mastodon": "crea-l05-02",
+    "facebook": "crea-l05-04",
+    "instagram": "crea-l07-04",
+    "threads": "crea-l06-05",
+    "x": "crea-l06-08",
+    "pinterest": "crea-l06-14"
+   }
+  },
+  "2026-11-07": {
+   "1": {
+    "telegram": "test-depresion",
+    "bluesky": "test-ansiedad",
+    "mastodon": "calc-reforma",
+    "facebook": "test-satisfaccion",
+    "instagram": "test-habitos",
+    "threads": "test-sueno",
+    "x": "test-autocompasion"
+   },
+   "2": {
+    "telegram": "libro-traductologia-neurocognicion-como-se-organiza-sistema",
+    "bluesky": "libro-agentes-cambio-educacion-emocional-educadoras-tecnicos",
+    "mastodon": "libro-soltar-amarras-introduccion-salud-mental-colectiva",
+    "facebook": "libro-subjetividades-emociones-politicas-maestros-maestras",
+    "instagram": "libro-esto-va-respeto-guia-lenguaje-anticapacitista",
+    "threads": "libro-inclusion-personas-mayores-planificacion-emergencias-perspec",
+    "x": "libro-su-unico-hijo",
+    "pinterest": "libro-reglas-y-consejos-cajal"
+   }
+  },
+  "2026-11-08": {
+   "1": {
+    "telegram": "test-sueno",
+    "bluesky": "test-habitos",
+    "mastodon": "calc-embarazo",
+    "facebook": "test-autocompasion",
+    "instagram": "ovp",
+    "threads": "test-ansiedad",
+    "x": "curso-neuro"
+   },
+   "2": {
+    "telegram": "libro-metodo-definitivo-tener-hijos-lectores-consejos",
+    "bluesky": "libro-abuso-explotacion-sexual-adolescentes-violencia-sexual",
+    "mastodon": "libro-evaluacion-clinica-adultos",
+    "facebook": "libro-mi-vida-junto-toc-ansiedad-social",
+    "instagram": "libro-maltrato-infantil-teoria-clinica-psicoanalitica",
+    "threads": "libro-encontrar-nuestros-hijos-testimonio-madre",
+    "x": "libro-salud-mental-peru-progresos-hacia-desinstitucionalizacion",
+    "pinterest": "libro-fundamentos-psicologia-salud"
+   }
+  },
+  "2026-11-09": {
+   "1": {
+    "telegram": "test-tdah",
+    "bluesky": "test-satisfaccion",
+    "mastodon": "calc-pau",
+    "facebook": "curso-neuro",
+    "instagram": "test-autocompasion",
+    "threads": "calc-reforma",
+    "x": "test-habitos"
+   },
+   "2": {
+    "telegram": "crea-l07-08",
+    "bluesky": "crea-l06-02",
+    "mastodon": "crea-l06-08",
+    "facebook": "crea-l05-01",
+    "instagram": "crea-l06-01",
+    "threads": "crea-l05-08",
+    "x": "crea-l07-01",
+    "pinterest": "crea-l07-14"
+   }
+  },
+  "2026-11-10": {
+   "1": {
+    "telegram": "calc-hipoteca",
+    "bluesky": "test-autocompasion",
+    "mastodon": "calc-sueldo",
+    "facebook": "test-tdah",
+    "instagram": "test-sueno",
+    "threads": "test-depresion",
+    "x": "calc-calorias"
+   },
+   "2": {
+    "telegram": "nc-enfermeria",
+    "bluesky": "nc-bellas-artes",
+    "mastodon": "nc-educacion-primaria",
+    "facebook": "nc-ingenieria-en-tecnologias-industriales",
+    "instagram": "nc-ciencias-ambientales",
+    "threads": "nc-terapia-ocupacional",
+    "x": "nc-estudios-ingleses",
+    "pinterest": "nc-ciencia-y-tecnologia-de-los-alimentos"
+   }
+  },
+  "2026-11-11": {
+   "1": {
+    "telegram": "calc-reforma",
+    "bluesky": "calc-calorias",
+    "mastodon": "curso-neuro",
+    "facebook": "test-personalidad",
+    "instagram": "test-bienestar",
+    "threads": "ovp",
+    "x": "calc-sueldo"
+   },
+   "2": {
+    "telegram": "libro-organizaciones-emocionalmente-inteligentes-experiencias-eval",
+    "bluesky": "libro-psicologia-desarrollo-mundo-adolescente",
+    "mastodon": "libro-docencia-universitaria-clave-neuroeducativa-viejos-problemas",
+    "facebook": "libro-verguenza-humillacion-aislamiento-social-como-privacion",
+    "instagram": "libro-promocion-parentalidad-positiva-durante-preparacion-nacimien",
+    "threads": "libro-estilo-crianza-construccion-autoconcepto-adolescentes",
+    "x": "libro-doctrina-estoyco-filosofo-epicteto-que-se",
+    "pinterest": "libro-programas-nacionales-ciudades-comunidades-amigables-personas"
+   }
+  },
+  "2026-11-12": {
+   "1": {
+    "telegram": "test-satisfaccion",
+    "bluesky": "test-tdah",
+    "mastodon": "test-bienestar",
+    "facebook": "calc-pau",
+    "instagram": "test-ansiedad",
+    "threads": "test-habitos",
+    "x": "calc-hipoteca"
+   },
+   "2": {
+    "telegram": "notas-corte",
+    "bluesky": "biblio-mind",
+    "mastodon": "biblio-build",
+    "facebook": "biblio-live",
+    "instagram": "biblioteca",
+    "threads": "biblio-learn",
+    "x": "biblio-nexus",
+    "pinterest": "articulos"
+   }
+  },
+  "2026-11-13": {
+   "1": {
+    "telegram": "curso-neuro",
+    "bluesky": "calc-hipoteca",
+    "mastodon": "curso-metod",
+    "facebook": "calc-reforma",
+    "instagram": "calc-calorias",
+    "threads": "test-tdah",
+    "x": "test-personalidad"
+   },
+   "2": {
+    "telegram": "crea-l05-09",
+    "bluesky": "crea-l06-05",
+    "mastodon": "crea-l06-02",
+    "facebook": "crea-l05-02",
+    "instagram": "crea-l06-08",
+    "threads": "crea-l07-04",
+    "x": "crea-l07-14",
+    "pinterest": "crea-l05-05"
+   }
+  },
+  "2026-11-14": {
+   "1": {
+    "telegram": "calc-calorias",
+    "bluesky": "calc-reforma",
+    "mastodon": "calc-hipoteca",
+    "facebook": "test-habitos",
+    "instagram": "test-tdah",
+    "threads": "calc-pau",
+    "x": "curso-metod"
+   },
+   "2": {
+    "telegram": "libro-construyendo-estrategias-promocion-salud-mental-prevencion",
+    "bluesky": "libro-tristeza-contemporanea-ensayo-sobre-grandes-corrientes",
+    "mastodon": "libro-impacto-lo-digital-comunicacion-relaciones-adolescentes",
+    "facebook": "libro-educacion-valores-desarrollo-moral-jornadas-celebradas",
+    "instagram": "libro-emociones-politicas-ninos-ninas",
+    "threads": "libro-antropologia-sexualidad",
+    "x": "libro-sentido-vida-mental",
+    "pinterest": "libro-aplicacion-paradigma-calidad-vida-intervencion-personas"
+   }
+  },
+  "2026-11-15": {
+   "1": {
+    "telegram": "test-autoestima",
+    "bluesky": "calc-embarazo",
+    "mastodon": "test-satisfaccion",
+    "facebook": "calc-hipoteca",
+    "instagram": "curso-neuro",
+    "threads": "calc-calorias",
+    "x": "test-tdah"
+   },
+   "2": {
+    "telegram": "libro-idea-jeneral-filosofia-positiva-i-sicolojia",
+    "bluesky": "libro-bienestar-subjetivo-15-anos-repeticion-curso",
+    "mastodon": "libro-psicologia-pueblo-charro-segun-obras-don",
+    "facebook": "libro-etica-del-psicologo",
+    "instagram": "libro-psicologo-crisis-de-la-vida",
+    "threads": "libro-tristeza-contemporanea-ensayo-sobre-grandes-corrientes",
+    "x": "libro-servicios-salud-mental-momentos-crisis-promover",
+    "pinterest": "libro-delincuencia-drogas-estudio-grupo-marginado-respuestas"
+   }
+  }
+ },
+ "historial": {}
+}
