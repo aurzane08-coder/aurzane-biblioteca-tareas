@@ -1,13 +1,5 @@
 {
- "paginas": 495,
- "revisadas": 4032,
- "rotos": [
-  {
-   "url": "https://live.aurzane.com/test-de-bienestar/'+p.enlace+'",
-   "estado": 404,
-   "desde": [
-    "https://live.aurzane.com/test-de-bienestar/"
-   ]
-  }
- ]
+ "paginas": 504,
+ "revisadas": 4363,
+ "rotos": []
 }
