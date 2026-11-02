@@ -60,7 +60,9 @@ def generar(dias=2):
         i = p['id']; dur = DUR.get(p['tipo'], 15)
         src = f'/tmp/fondo-{i}.mp4'
         try:
-            urllib.request.urlretrieve(fondo(p), src)
+            req = urllib.request.Request(fondo(p), headers={'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36',
+                                                             'Referer': 'https://www.pexels.com/', 'Accept': 'video/mp4,*/*'})
+            open(src, 'wb').write(urllib.request.urlopen(req, timeout=120).read())
         except Exception as e:
             print('::notice title=Videos::sin fondo', i, e); continue
         sal = os.path.join(D, 'salida', 'video', i + '.mp4')
