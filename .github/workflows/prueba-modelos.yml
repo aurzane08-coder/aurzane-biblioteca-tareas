@@ -12,9 +12,17 @@ jobs:
       - env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          for m in openai/gpt-4.1-mini openai/gpt-4.1; do
-            R=$(curl -s -w ' HTTP%{http_code}' https://models.github.ai/inference/chat/completions -H "Authorization: Bearer $GITHUB_TOKEN" -H 'Content-Type: application/json' -d "{\"model\":\"$m\",\"messages\":[{\"role\":\"user\",\"content\":\"Responde solo: hola desde $m\"}],\"max_tokens\":20}")
-            echo "::notice title=Modelos::$m -> $(echo "$R" | tr -d "\n" | head -c 400)"
-          done
-          echo "::notice title=Modelos::doab $(curl -s -A 'Mozilla/5.0 (X11; Linux x86_64) Chrome/130.0' -o /dev/null -w '%{http_code}' 'https://directory.doabooks.org/rest/search?query=psicolog%C3%ADa&expand=metadata&limit=1')"
-          echo "::notice title=Modelos::oapen $(curl -s -A 'Mozilla/5.0 (X11; Linux x86_64) Chrome/130.0' -o /dev/null -w '%{http_code}' 'https://library.oapen.org/rest/search?query=psychology&expand=metadata,bitstreams&limit=1')"
+          python3 - <<'PY'
+          import json, os, urllib.request
+          for m in ['openai/gpt-4.1-mini']:
+              req = urllib.request.Request('https://models.github.ai/inference/chat/completions', data=json.dumps({'model': m, 'messages': [{'role': 'user', 'content': 'Escribe una frase de 10 palabras sobre la calma.'}], 'max_tokens': 60}).encode(), headers={'Authorization': 'Bearer ' + os.environ['GITHUB_TOKEN'], 'Content-Type': 'application/json'})
+              try:
+                  r = urllib.request.urlopen(req, timeout=60); d = json.load(r)
+                  print('::notice title=Modelos::' + m + ' => ' + d['choices'][0]['message']['content'].replace('\n', ' ')[:200] + ' | limite restante: ' + str(r.headers.get('x-ratelimit-remaining-requests')))
+              except urllib.error.HTTPError as e:
+                  print('::notice title=Modelos::' + m + ' HTTP ' + str(e.code) + ' ' + e.read().decode()[:200])
+          u = 'https://api.openalex.org/works?filter=type:book,is_oa:true,primary_topic.field.id:32,from_publication_date:2025-01-01&sort=publication_date:desc&per-page=3&mailto=hola@aurzane.com'
+          d = json.load(urllib.request.urlopen(u, timeout=60))
+          for w in d['results']:
+              print('::notice title=Modelos::libro ' + (w.get('title') or '')[:80] + ' | ' + str((w.get('best_oa_location') or {}).get('pdf_url')) + ' | ' + str((w.get('primary_location') or {}).get('license')))
+          PY
