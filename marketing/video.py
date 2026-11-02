@@ -53,7 +53,7 @@ def generar(dias=2):
         capas.append(dict(capa_de(p), id=i, capa=True, mundo=p['mundo'], salida=f'/tmp/capa-{i}.png'))
         pend.append(p)
     if not pend:
-        print('Vídeos: nada nuevo'); return
+        print('::notice title=Videos::nada nuevo', ids); return
     json.dump(capas, open('/tmp/capas.json', 'w'), ensure_ascii=False)
     subprocess.run(['node', os.path.join(D, 'tarjeta.js'), '/tmp/capas.json', os.environ.get('FUENTES', '/tmp/f/node_modules/@fontsource')], check=True)
     for p in pend:
@@ -62,7 +62,7 @@ def generar(dias=2):
         try:
             urllib.request.urlretrieve(fondo(p), src)
         except Exception as e:
-            print('No se pudo bajar el fondo de', i, e); continue
+            print('::notice title=Videos::sin fondo', i, e); continue
         sal = os.path.join(D, 'salida', 'video', i + '.mp4')
         filtro = ('[0:v]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,setsar=1,fps=30,eq=brightness=-0.05:saturation=1.05[b];'
                   '[1:v]format=rgba,fade=in:st=0.3:d=0.9:alpha=1[c];[b][c]overlay=0:0,format=yuv420p[v]')
@@ -71,8 +71,11 @@ def generar(dias=2):
                '-t', str(dur), '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '23', '-profile:v', 'high', '-c:a', 'aac', '-b:a', '96k',
                '-movflags', '+faststart', sal]
         r = subprocess.run(cmd)
-        print('Vídeo', i, 'ok' if r.returncode == 0 else 'ERROR', round(os.path.getsize(sal) / 1e6, 1) if os.path.exists(sal) else '', 'MB')
+        print('::notice title=Videos::', i, 'ok' if r.returncode == 0 else 'ERROR', round(os.path.getsize(sal) / 1e6, 1) if os.path.exists(sal) else '', 'MB')
 
 
 if __name__ == '__main__':
-    generar()
+    try:
+        generar()
+    except Exception as e:
+        import traceback; print('::notice title=Videos::ERROR', repr(e)[:300]); traceback.print_exc()
