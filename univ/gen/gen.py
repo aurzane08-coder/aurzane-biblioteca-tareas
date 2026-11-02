@@ -137,11 +137,12 @@ for u in SBU:
         cred = (str(int(cred)) if float(cred) == int(float(cred)) else str(cred)) if cred not in (None, '') else ''
         if k in vistos:
             x = vistos[k]
+            x.setdefault('cods', []).append(c.get('codigo_externo') or '')
             if c.get('modalidad') and c['modalidad'] not in x['mod']: x['mod'].append(c['modalidad'])
             for sd in sedes_c:
                 if sd not in x['sedes']: x['sedes'].append(sd)
             continue
-        x = {'n': nom, 'area': area, 'grupo': grupo or 'Grado', 'campo': c.get('campo_amplio') if c.get('rama') else '', 'mod': [c['modalidad']] if c.get('modalidad') else [], 'sedes': sedes_c, 'cred': cred, 'prof': c.get('profesion_regulada') or ''}
+        x = {'n': nom, 'area': area, 'grupo': grupo or 'Grado', 'campo': c.get('campo_amplio') if c.get('rama') else '', 'mod': [c['modalidad']] if c.get('modalidad') else [], 'sedes': sedes_c, 'cred': cred, 'prof': c.get('profesion_regulada') or '', 'cods': [c.get('codigo_externo') or '']}
         vistos[k] = x
         carreras.append(x)
     UNIS.append({
@@ -210,6 +211,20 @@ for u in UNIS:
 for u in UNIS:
     if u['web'] and not re.match(r'^https?://[^\s<>]+$', u['web']):
         u['web'] = ''
+
+# --- notas de corte oficiales (QEDU) para grados de universidades españolas
+NC = cargar_json('notas_corte.json') or {'filas': []}
+NC_COD = collections.defaultdict(list)  # (cod_univ, cod_titulo) -> filas
+for f in NC['filas']:
+    NC_COD[(f.get('cod_univ') or '', f.get('cod_titulo') or '')].append(f)
+NC_CURSO = next((f['curso'] for f in NC['filas'] if f.get('curso')), '')
+for u in UNIS:
+    if u['pais'] != 'España': continue
+    cu = u['extra'].get('cod', '')
+    for c in u['carreras']:
+        notas = [f['nota'] for cd in c.get('cods', []) for f in NC_COD.get((cu, cd), []) if f.get('nota')]
+        if notas: c['nota'] = min(notas)
+print('Notas de corte:', sum(1 for u in UNIS for c in u['carreras'] if c.get('nota')), 'grados con nota', NC_CURSO)
 
 # --- imágenes de Wikimedia Commons (univ/data/imagenes.json, lo genera imagenes.py desde Wikidata)
 IMG = cargar_json('imagenes.json') or {'u': {}, 'c': {}}
@@ -600,6 +615,10 @@ def pagina_ciudad(p, c, us):
 
 
 # ---------------------------------------------------------------- ficha de universidad
+def fmt_nota(x):
+    return f'{x:.3f}'.rstrip('0').rstrip('.').replace('.', ',')
+
+
 def ficha(u, vecinas):
     p = u['pais']; iso = PAISES[p][0]; ps = PSLUG[p]
     url = f'{SITIO}{BASE}{ps}/{u["slug"]}/'
@@ -628,6 +647,7 @@ def ficha(u, vecinas):
             if c.get('mod'): der.append(' · '.join(c['mod']))
             if c.get('sedes') and (len(c['sedes']) > 1 or (c['sedes'][0] != u['ciudad'])): der.append(', '.join(c['sedes'][:4]) + ('…' if len(c['sedes']) > 4 else ''))
             prof = f'<em class="prof">Habilita para: {e(c["prof"])}</em>' if c.get('prof') else ''
+            if c.get('nota'): der.insert(0, f'Nota de corte {fmt_nota(c["nota"])}')
             items += f'<li><span>{e(c["n"])}{prof}{"<small>" + e(" · ".join(det)) + "</small>" if det else ""}</span>{"<small>" + e(" · ".join(der)) + "</small>" if der else ""}</li>'
         lis += f'<div class="grupo" data-area="{e(g)}"><h3><span>{e(g)}</span><span>{len(grupos[g])}</span></h3><ul class="carreras">{items}</ul></div>'
     if n:
@@ -680,6 +700,71 @@ def ficha(u, vecinas):
 </main>''' + pie()
     escribir(f'{ps}/{u["slug"]}/index.html', h)
     URLS.append((url, '0.7' if n else '0.5'))
+
+
+def limpiar_titulo(t):
+    t = re.sub(r'\s+', ' ', t or '').strip()
+    t = re.sub(r'^(Doble )?Grado (Universitario )?(en|de) ', '', t, flags=re.I)
+    t = re.sub(r'\s*/\s*(Bachelor|Degree|Double).*$', '', t, flags=re.I)
+    t = re.sub(r'\s*\((Bachelor|Degree)[^)]*\)', '', t, flags=re.I)
+    t = re.sub(r'\s+(por|de) la Universidad.*$', '', t, flags=re.I)
+    return t[:1].upper() + t[1:]
+
+
+def notas_de_corte():
+    filas = [f for f in NC['filas'] if f.get('nota')]
+    if not filas: return
+    u_cod = {u['extra'].get('cod'): u for u in por_pais.get('España', []) if u['extra'].get('cod')}
+    grupos = collections.defaultdict(list)
+    for f in filas:
+        nombre = limpiar_titulo(f['titulo'])
+        if f.get('nivel') == 'GRADOD' or ' y ' in nombre and f['titulo'].lower().startswith('doble'):
+            nombre = 'Doble grado: ' + nombre
+        grupos[slug(nombre)].append((nombre, f))
+    idx = []
+    for k, lst in grupos.items():
+        if len(lst) < 2: continue
+        nombre = collections.Counter(n for n, _ in lst).most_common(1)[0][0]
+        lst = sorted((f for _, f in lst), key=lambda f: -f['nota'])
+        notas = [f['nota'] for f in lst]
+        idx.append((nombre, k, len(lst), max(notas), min(notas)))
+        filas_html = ''
+        for i, f in enumerate(lst):
+            u = u_cod.get(f.get('cod_univ'))
+            uni = f'<a href="{BASE}espana/{u["slug"]}/">{e(f["universidad"])}</a>' if u else e(f['universidad'])
+            filas_html += f'<tr><td class="num">{i + 1}</td><td><b>{uni}</b><small>{e(f["centro"] or "")}{" · centro adscrito" if f.get("tipo_centro") == "Adscrito" else ""}</small></td><td>{e(f["provincia"] or "")}<small>{e(f["ccaa"] or "")}</small></td><td class="nota">{fmt_nota(f["nota"])}</td></tr>'
+        mx, mn = lst[0], lst[-1]
+        tit = f'Nota de corte de {nombre} {NC_CURSO}: {len(lst)} universidades'
+        desc = f'Notas de corte de {nombre} en {len(lst)} universidades públicas de España (curso {NC_CURSO}): la más alta es {fmt_nota(mx["nota"])} en la {mx["universidad"]} y la más baja {fmt_nota(mn["nota"])}. Datos oficiales del Ministerio.'
+        resp = f'En el curso {NC_CURSO}, la nota de corte de {nombre} va de {fmt_nota(mn["nota"])} ({mn["universidad"]}) a {fmt_nota(mx["nota"])} ({mx["universidad"]}), sobre 14, en la convocatoria ordinaria y por el cupo general.'
+        canon = f'{SITIO}{BASE}notas-de-corte/{k}/'
+        jl = {'@context': 'https://schema.org', '@graph': [{'@type': 'FAQPage', 'mainEntity': [{'@type': 'Question', 'name': f'¿Cuál es la nota de corte de {nombre}?', 'acceptedAnswer': {'@type': 'Answer', 'text': resp}}]},
+              {'@type': 'Dataset', 'name': tit, 'description': desc, 'url': canon, 'creator': {'@type': 'Organization', 'name': 'Ministerio de Ciencia, Innovación y Universidades'}, 'temporalCoverage': NC_CURSO, 'isAccessibleForFree': True}]}
+        h = cabeza(tit, desc, canon, jsonld=jl) + topbar('espana') + f"""
+<main><section class="hero" style="padding-bottom:40px"><div class="wrap">{migas(("Universidades", BASE), ("España", BASE + "espana/"), ("Notas de corte", BASE + "notas-de-corte/"), (nombre, ""))}
+<h1>Nota de corte de <em>{e(nombre)}</em></h1><p class="lead">{e(resp)}</p>
+<div class="acc"><a class="btn btn-luz" href="/calculadora-nota-pau/">🧮 Calcula tu nota sobre 14</a><a class="btn btn-claro" href="{BASE}notas-de-corte/">Todas las notas de corte</a></div></div></section>
+<div class="wrap"><section class="card" style="margin-top:24px"><h2>{len(lst)} universidades ordenadas por nota</h2>
+<div class="scroll"><table class="tnc"><thead><tr><th>#</th><th>Universidad y centro</th><th>Provincia</th><th>Nota</th></tr></thead><tbody>{filas_html}</tbody></table></div>
+<p class="aviso" style="margin-top:14px">Nota de corte final del curso {NC_CURSO} en la convocatoria ordinaria y el cupo general: la nota de admisión del último estudiante que entró. Cambia cada año según plazas y solicitudes. Las universidades privadas no publican nota de corte.</p></section>
+<p class="fuente">Fuente: QEDU, Ministerio de Ciencia, Innovación y Universidades. Se actualiza automáticamente cada semana.</p></div></main>""" + pie()
+        escribir(f'notas-de-corte/{k}/index.html', h)
+        URLS.append((canon, '0.8'))
+    idx.sort(key=lambda x: (-x[2], x[0]))
+    top = ''.join(f'<li data-n="{e(slug(n))}"><a href="{BASE}notas-de-corte/{k}/">{e(n)}</a><small>{c} universidades · de {fmt_nota(mn)} a {fmt_nota(mx)}</small></li>' for n, k, c, mx, mn in idx)
+    tit = f'Notas de corte {NC_CURSO} de todas las carreras en España'
+    desc = f'Consulta las notas de corte oficiales del curso {NC_CURSO} de {len(idx)} grados en las universidades públicas de España: Medicina, Psicología, Enfermería, Derecho y más. Busca tu carrera y compara.'
+    h = cabeza(tit, desc, f'{SITIO}{BASE}notas-de-corte/') + topbar('espana') + f"""
+<main><section class="hero" style="padding-bottom:40px"><div class="wrap">{migas(("Universidades", BASE), ("España", BASE + "espana/"), ("Notas de corte", ""))}
+<h1>Notas de corte <em>{NC_CURSO}</em></h1><p class="lead">{e(desc)}</p>
+<div class="busca" style="max-width:560px"><input type="search" id="ncBusca" placeholder="Busca una carrera: psicología, medicina, enfermería…" aria-label="Buscar carrera"></div>
+<div class="acc" style="margin-top:14px"><a class="btn btn-luz" href="/calculadora-nota-pau/">🧮 Calcula tu nota sobre 14</a></div></div></section>
+<div class="wrap"><section class="card" style="margin-top:24px"><ul class="nc-lista" id="ncLista">{top}</ul></section>
+<p class="fuente">Fuente: QEDU, Ministerio de Ciencia, Innovación y Universidades. Actualización automática semanal.</p></div></main>
+<script>(function(){{var i=document.getElementById('ncBusca'),l=document.querySelectorAll('#ncLista li');var n=function(t){{return t.normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-');}};i.addEventListener('input',function(){{var q=n(i.value);l.forEach(function(x){{x.hidden=q&&x.getAttribute('data-n').indexOf(q)<0;}});}});}})();</script>""" + pie()
+    escribir('notas-de-corte/index.html', h)
+    URLS.append((f'{SITIO}{BASE}notas-de-corte/', '0.9'))
+    print('Notas de corte:', len(idx), 'páginas de carrera')
 
 
 def mi_lista():
@@ -749,6 +834,7 @@ for p in ORDEN_P:
     for u in us:
         vec = [v for v in sorted(por_ciudad[u['ciudad']], key=lambda v: -v['n']) if v is not u] if u['ciudad'] else []
         ficha(u, vec)
+notas_de_corte()
 mi_lista()
 acerca()
 sitemap()

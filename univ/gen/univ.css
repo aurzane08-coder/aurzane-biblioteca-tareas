@@ -294,3 +294,16 @@ html.paleta-aurora{ --cian:#FFB347; --violeta:#FF7A9C; }
 .credito-foto:hover{color:#fff;text-decoration:underline}
 .pais.ciudad.con-foto{position:relative;min-height:110px;align-items:flex-end;color:#fff;border:0;background-image:linear-gradient(180deg,rgba(11,16,48,.05) 20%,rgba(11,16,48,.85)),var(--foto);background-size:cover;background-position:center}
 .pais.ciudad.con-foto small{color:rgba(255,255,255,.82)}
+
+/* notas de corte */
+table.tnc{width:100%;border-collapse:collapse;font-size:.95rem}
+table.tnc th,table.tnc td{padding:10px 8px;border-bottom:1px solid var(--border);text-align:left;vertical-align:top}
+table.tnc th{font-size:.78rem;color:var(--text-dim);font-weight:600}
+table.tnc td small{display:block;color:var(--text-dim);font-size:.8rem}
+table.tnc td.nota{font:700 1.15rem var(--serif,Georgia,serif);color:var(--accent-text);text-align:right;white-space:nowrap}
+table.tnc th:last-child{text-align:right}
+table.tnc td.num{color:var(--text-dim);width:32px}
+.nc-lista{list-style:none;margin:0;padding:0;columns:2 320px;column-gap:28px}
+.nc-lista li{break-inside:avoid;padding:9px 0;border-bottom:1px dashed var(--border)}
+.nc-lista li a{font-weight:600;text-decoration:none;color:var(--text)} .nc-lista li a:hover{color:var(--accent-text)}
+.nc-lista li small{display:block;color:var(--text-dim);font-size:.8rem}
