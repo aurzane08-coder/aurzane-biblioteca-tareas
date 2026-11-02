@@ -242,6 +242,17 @@ def pdf_en_pagina(u):
     return [urllib.parse.urljoin(base, html.unescape(x)) for x in c]
 def candidatos_pdf(p):
     c = [x for x in [p.get('pdf')] + p.get('pdfs', []) if x and 'europepmc.org/articles' not in x and 'ncbi.nlm.nih.gov' not in x]
+    if p['tipo'] == 'estudio' and p['id'].startswith('pmc-'):
+        st, b, _, _ = get('https://pmc-oa-opendata.s3.amazonaws.com/?list-type=2&prefix=' + p['id'][4:] + '.', t=30)
+        ks = sorted(re.findall(r'<Key>([^<]+\.pdf)</Key>', b.decode('utf-8', 'replace'))) if st == 200 else []
+        if ks: c.insert(0, 'https://pmc-oa-opendata.s3.amazonaws.com/' + ks[-1])
+    if p.get('ia'):
+        st, b, _, _ = get('https://archive.org/metadata/' + p['ia'], t=30)
+        try:
+            fs = [f for f in json.loads(b).get('files', []) if f.get('name', '').lower().endswith('.pdf')]
+            fs.sort(key=lambda f: (f.get('format') != 'Text PDF', -int(f.get('size') or 0)))
+            if fs: c.insert(0, f'https://archive.org/download/{p["ia"]}/' + urllib.parse.quote(fs[0]['name']))
+        except Exception: pass
     doi = p.get('doi') or ''
     if doi.startswith('10.1007/') or doi.startswith('10.1186/'): c.append(f'https://link.springer.com/content/pdf/{doi}.pdf')
     if doi.startswith('10.3389/'): c.append(f'https://www.frontiersin.org/articles/{doi}/pdf')
@@ -250,7 +261,7 @@ def candidatos_pdf(p):
 def verificar(p, guardar_pdf=False):
     """Devuelve (ok, motivo). Rellena p['paginas'], p['portada'] y, si se pide, deja el PDF listo para publicar."""
     dest = f'{TMP}/{p["id"]}.pdf'; estado = 'nopdf'; INTENTOS.clear()
-    paginas_ed = ([p['url']] if p['tipo'] == 'libro' else []) + ([f'https://doi.org/{p["doi"]}'] if p.get('doi') else [])
+    paginas_ed = ([p['url']] + p.get('landings', []) if p['tipo'] == 'libro' and not p.get('ia') else []) + ([f'https://doi.org/{p["doi"]}'] if p.get('doi') and not p.get('ia') else [])
     for u in list(dict.fromkeys(candidatos_pdf(p) + [x for w in paginas_ed for x in pdf_en_pagina(w)]))[:10]:
         estado = descargar(u, dest)
         if estado == 'ok': p['pdf_origen'] = u; break
@@ -272,9 +283,9 @@ def descartar_solo(p, motivo):
         a = apr.setdefault(k, [0, 0]); a[1] += 1
 
 decis = jremoto('decisiones.json', {}); pend = jremoto('propuestas.json', [])
-if not ESTADO.get('reintento_pdf_1'):
+if ESTADO.get('reintento_pdf_1') != 'v3':
     otra = {a['id'] for a in autodesc if a['motivo'].startswith('No tiene un PDF')}
-    vistos -= otra; autodesc = [a for a in autodesc if a['id'] not in otra]; ESTADO['reintento_pdf_1'] = HOY
+    vistos -= otra; autodesc = [a for a in autodesc if a['id'] not in otra]; ESTADO['reintento_pdf_1'] = 'v3'
 
 canal, TGT = os.environ.get('TELEGRAM_CANAL', ''), os.environ.get('TELEGRAM_TOKEN', '')
 nuevos_pub, corregidas = [], 0
@@ -324,23 +335,52 @@ nuevos_auto = 0
 if DIARIO or len(pend) < 8:
     nuevos = []
     BUENAS = ('10.11647', '10.5334', '10.1007', '10.4324', '10.14361', '10.1515', '10.1093', '10.1017', '10.3389', '10.26530', '10.4000', '10.5772', '10.3726', '10.1201', '10.12657', '10.18148', '10.3998', '10.36253', '10.46692', '10.21827', '10.5117', '10.33776', '10.47909', '10.2478')
-    desde = (AHORA - datetime.timedelta(days=730)).date().isoformat()
+    desde = (AHORA - datetime.timedelta(days=5 * 365)).date().isoformat()
+    MALOS = ('zenodo.org', 'figshare', 'osf.io', 'researchgate', 'academia.edu', 'preprints.org', 'ssrn.com', 'scribd')
+    BIEN_HOST = re.compile(r'(\.edu(\.[a-z]{2})?|\.ac\.[a-z]{2}|uji\.es|ub\.edu|us\.es|uoc\.edu|ucm\.es|uam\.es|usal\.es|unam\.mx|uba\.ar|clacso|scielo|archive\.org|libretexts|oapen|doabooks|openedition|repositori|repositorio|ruc\.udc|digibug|riull|rua\.ua|addi\.ehu|eprints|dspace)', re.I)
+    def loc_buena(l):
+        u = (l.get('pdf_url') or l.get('landing_page_url') or '').lower()
+        return u and not any(m in u for m in MALOS) and (l.get('pdf_url') or BIEN_HOST.search(u))
     for idioma in ('es', 'en'):
-        st, b, _, _ = get('https://api.openalex.org/works?' + urllib.parse.urlencode({'filter': f'type:book,is_oa:true,primary_topic.field.id:32,language:{idioma},from_publication_date:{desde}', 'sort': 'publication_date:desc', 'per-page': 100, 'mailto': 'hola@aurzane.com'}), t=60)
-        for w in (json.loads(b).get('results', []) if st == 200 else []):
-            loc = w.get('best_oa_location') or {}; src = loc.get('source') or {}; doi = (w.get('doi') or '').replace('https://doi.org/', '')
-            lic = loc.get('license') or ''
-            if not lic.startswith('cc') or not doi or src.get('type') == 'repository' or not (doi.startswith(BUENAS) or src.get('type') in ('book series', 'ebook platform')): continue
-            pid = 'oa-' + w['id'].rsplit('/', 1)[1]
-            if pid in ya or not w.get('title'): continue
-            ya.add(pid)
-            base = {'id': pid, 'tipo': 'libro', 'titulo': w['title'].strip(), 'url': loc.get('landing_page_url') or ('https://doi.org/' + doi)}
-            if re.search(BASURA, w['title'], re.I): descartar_solo(base, 'el título indica actas, resúmenes o material que no es un libro'); nuevos_auto += 1; continue
-            nuevos.append(dict(base, autores=', '.join(a['author']['display_name'] for a in (w.get('authorships') or [])[:3]),
-                anio=w.get('publication_year'), editorial=src.get('host_organization_name') or src.get('display_name') or '', doi=doi,
-                pdf=loc.get('pdf_url') or '', pdfs=[l.get('pdf_url') for l in (w.get('locations') or []) if l.get('pdf_url')][:4], lic=lic, idioma=idioma,
-                tema=(w.get('primary_topic') or {}).get('display_name', ''), resumen=texto_inv(w.get('abstract_inverted_index'))[:900],
-                motivo='Libro de psicología en acceso abierto con licencia ' + lic.upper() + ', de ' + (src.get('host_organization_name') or 'una editorial académica') + '.'))
+        for pag in (1, 2):
+            st, b, _, _ = get('https://api.openalex.org/works?' + urllib.parse.urlencode({'filter': f'type:book,is_oa:true,primary_topic.field.id:32,language:{idioma},from_publication_date:{desde}', 'sort': 'publication_date:desc', 'per-page': 100, 'page': pag, 'mailto': 'hola@aurzane.com'}), t=60)
+            for w in (json.loads(b).get('results', []) if st == 200 else []):
+                doi = (w.get('doi') or '').replace('https://doi.org/', '')
+                locs = [l for l in (w.get('locations') or []) if (l.get('license') or '').startswith('cc') or ((w.get('best_oa_location') or {}).get('license') or '').startswith('cc')]
+                editorial_ok = doi.startswith(BUENAS) and not doi.startswith('10.5281')
+                buenas = [l for l in locs if loc_buena(l)] or ([w['best_oa_location']] if editorial_ok and w.get('best_oa_location') else [])
+                if not buenas: continue
+                loc = buenas[0]; src = loc.get('source') or {}
+                lic = loc.get('license') or (w.get('best_oa_location') or {}).get('license') or ''
+                if not lic.startswith('cc'): continue
+                pid = 'oa-' + w['id'].rsplit('/', 1)[1]
+                if pid in ya or not w.get('title'): continue
+                ya.add(pid)
+                base = {'id': pid, 'tipo': 'libro', 'titulo': w['title'].strip(), 'url': loc.get('landing_page_url') or ('https://doi.org/' + doi)}
+                if re.search(BASURA, w['title'], re.I): descartar_solo(base, 'el título indica actas, resúmenes o material que no es un libro'); nuevos_auto += 1; continue
+                nuevos.append(dict(base, autores=', '.join(a['author']['display_name'] for a in (w.get('authorships') or [])[:3]),
+                    anio=w.get('publication_year'), editorial=(w.get('primary_location') or {}).get('source', {}) and ((w['primary_location'].get('source') or {}).get('host_organization_name') or '') or src.get('display_name') or '', doi=doi,
+                    pdf=loc.get('pdf_url') or '', pdfs=[l.get('pdf_url') for l in buenas if l.get('pdf_url')][:4], landings=[l.get('landing_page_url') for l in buenas if l.get('landing_page_url')][:3], lic=lic, idioma=idioma,
+                    tema=(w.get('primary_topic') or {}).get('display_name', ''), resumen=texto_inv(w.get('abstract_inverted_index'))[:900],
+                    motivo='Libro de psicología en acceso abierto con licencia ' + lic.upper() + ', de ' + (src.get('display_name') or 'una editorial académica') + '.'))
+            time.sleep(1)
+    # Internet Archive: libros de psicología con licencia Creative Commons (descargas fiables)
+    for lang in ('spa', 'eng'):
+        q = f'mediatype:texts AND licenseurl:*creativecommons* AND (subject:psicolog* OR subject:psychology) AND language:{lang} AND year:[2010 TO 2030]'
+        st, b, _, _ = get('https://archive.org/advancedsearch.php?' + urllib.parse.urlencode([('q', q), ('fl[]', 'identifier'), ('fl[]', 'title'), ('fl[]', 'creator'), ('fl[]', 'year'), ('fl[]', 'licenseurl'), ('fl[]', 'publisher'), ('fl[]', 'description'), ('sort[]', 'addeddate desc'), ('rows', '60'), ('output', 'json')]), t=60)
+        for d in (json.loads(b).get('response', {}).get('docs', []) if st == 200 else []):
+            pid = 'ia-' + re.sub(r'[^A-Za-z0-9._-]', '', d['identifier'])[:80]
+            if pid in ya: continue
+            ya.add(pid); lu = d.get('licenseurl') or ''
+            m = re.search(r'licenses/([a-z-]+)/', lu); lic = ('cc-' + m.group(1)) if m else ('cc0' if 'zero' in lu or 'publicdomain' in lu else '')
+            if not lic: continue
+            t = d.get('title') if isinstance(d.get('title'), str) else (d.get('title') or [''])[0]
+            if not t or re.search(BASURA, t, re.I): continue
+            cr = d.get('creator') or ''; cr = ', '.join(cr[:3]) if isinstance(cr, list) else cr
+            ds = d.get('description') or ''; ds = ' '.join(ds) if isinstance(ds, list) else ds
+            nuevos.append({'id': pid, 'tipo': 'libro', 'titulo': t.strip(), 'autores': cr, 'anio': d.get('year'), 'editorial': (d.get('publisher') if isinstance(d.get('publisher'), str) else '') or 'Internet Archive',
+                'url': 'https://archive.org/details/' + d['identifier'], 'ia': d['identifier'], 'pdf': '', 'lic': lic, 'idioma': 'es' if lang == 'spa' else 'en', 'tema': 'archive:psicologia',
+                'resumen': html.unescape(re.sub('<[^>]+>', ' ', ds)).strip()[:900], 'motivo': f'Libro de psicología con licencia {lic.upper()} conservado en Internet Archive.'})
         time.sleep(1)
     for q, idioma, dias in (('(TITLE:"ansiedad" OR TITLE:"depresión" OR TITLE:"psicoterapia" OR TITLE:"estrés" OR TITLE:"salud mental" OR TITLE:"bienestar")', 'es', 120),
                             ('(TITLE:"anxiety" OR TITLE:"depression" OR TITLE:"psychotherapy" OR TITLE:"mindfulness" OR TITLE:"burnout" OR TITLE:"insomnia" OR TITLE:"loneliness" OR TITLE:"resilience" OR TITLE:"self-esteem") AND (PUB_TYPE:"review" OR PUB_TYPE:"systematic-review" OR PUB_TYPE:"meta-analysis")', 'en', 21)):
@@ -360,7 +400,7 @@ if DIARIO or len(pend) < 8:
                 'motivo': ('Revisión científica' if idioma == 'en' else 'Artículo') + f' en acceso abierto publicado en {revista} hace poco.'})
         time.sleep(1)
     nuevos.sort(key=puntos, reverse=True)
-    lib = [x for x in nuevos if x['tipo'] == 'libro'][:14]; est = [x for x in nuevos if x['tipo'] == 'estudio'][:10]
+    lib = [x for x in nuevos if x['tipo'] == 'libro'][:22]; est = [x for x in nuevos if x['tipo'] == 'estudio'][:12]
     for x in lib + est:
         ok, motivo = verificar(x)
         if ok: pend.append(x)
