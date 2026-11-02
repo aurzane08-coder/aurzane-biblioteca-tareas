@@ -2,7 +2,7 @@ name: Kit de marca para redes
 # Crea la foto de perfil y las portadas (marketing/marca/) cuando cambia marketing/marca.js.
 on:
   push:
-    paths: ['marketing/marca.js', '.github/workflows/marca.yml']
+    paths: ['marketing/marca.js', 'marketing/perfiles.json', '.github/workflows/marca.yml']
   workflow_dispatch:
 permissions:
   contents: write
@@ -16,6 +16,13 @@ jobs:
         run: |
           mkdir -p /tmp/f && cd /tmp/f && npm init -y >/dev/null && npm i -s playwright@1.48.2 @fontsource/bodoni-moda@5 @fontsource/instrument-sans@5 && npx playwright install chromium
           cd $GITHUB_WORKSPACE && NODE_PATH=/tmp/f/node_modules node marketing/marca.js /tmp/f/node_modules/@fontsource
+      - name: Poner perfil, portada y descripción (redes con API)
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          TELEGRAM_CANAL: ${{ secrets.TELEGRAM_CANAL }}
+          BSKY_USUARIO: ${{ secrets.BSKY_USUARIO }}
+          BSKY_CLAVE_APP: ${{ secrets.BSKY_CLAVE_APP }}
+        run: python3 marketing/mk.py perfiles | sed 's/^/::notice title=Perfiles::/'
       - name: Guardar
         run: |
           git config user.name "aurzane-bot"; git config user.email "bot@aurzane.com"

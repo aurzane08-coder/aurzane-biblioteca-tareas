@@ -479,6 +479,9 @@ if __name__ == '__main__':
     elif a == 'clics': clics(sys.argv[2])
     elif a == 'renovar-ig':
         import redes; print(redes.renovar_instagram())
+    elif a == 'perfiles':
+        import redes
+        for r, v in redes.perfiles().items(): print(f'{r}: {v}')
     elif a == 'verificar':
         import redes; redes.verificar()
     elif a == 'muestra':

@@ -297,3 +297,35 @@ def video_tiktok(texto, url, local, enlace, p):
     pedir(ini['upload_url'], crudo=datos, metodo='PUT', t=600,
           cab={'Content-Type': 'video/mp4', 'Content-Range': f'bytes 0-{len(datos) - 1}/{len(datos)}'})
     return ini['publish_id'] + ('' if priv == 'PUBLIC_TO_EVERYONE' else ' (privado hasta la auditoría de TikTok)')
+
+
+def perfiles():
+    """Pone foto de perfil, portada y descripción en las redes que lo permiten por API (Bluesky y Telegram).
+    Imágenes de marketing/marca/ (marca.js) y textos de marketing/perfiles.json."""
+    D = os.path.dirname(os.path.abspath(__file__)); M = os.path.join(D, 'marca')
+    txt = json.load(open(os.path.join(D, 'perfiles.json'), encoding='utf-8')); out = {}
+    if configurada('bluesky'):
+        try:
+            S = 'https://bsky.social/xrpc/'
+            s = pedir(S + 'com.atproto.server.createSession', {'identifier': E('BSKY_USUARIO'), 'password': E('BSKY_CLAVE_APP')}, {'Content-Type': 'application/json'})
+            auth = {'Authorization': 'Bearer ' + s['accessJwt']}
+            av = pedir(S + 'com.atproto.repo.uploadBlob', crudo=open(os.path.join(M, 'perfil.png'), 'rb').read(), cab=dict(auth, **{'Content-Type': 'image/png'}))['blob']
+            ba = pedir(S + 'com.atproto.repo.uploadBlob', crudo=open(os.path.join(M, 'portada-bluesky-mastodon.jpg'), 'rb').read(), cab=dict(auth, **{'Content-Type': 'image/jpeg'}))['blob']
+            try: rec = pedir(S + 'com.atproto.repo.getRecord?' + urllib.parse.urlencode({'repo': s['did'], 'collection': 'app.bsky.actor.profile', 'rkey': 'self'}), cab=auth)['value']
+            except Exception: rec = {'$type': 'app.bsky.actor.profile'}
+            rec.update({'displayName': txt['nombre'], 'description': txt['bluesky'][:256], 'avatar': av, 'banner': ba})
+            pedir(S + 'com.atproto.repo.putRecord', {'repo': s['did'], 'collection': 'app.bsky.actor.profile', 'rkey': 'self', 'record': rec},
+                  dict(auth, **{'Content-Type': 'application/json'}))
+            out['bluesky'] = 'ok perfil, portada y descripción'
+        except Exception as e: out['bluesky'] = 'ERROR ' + str(e)[:200]
+    if configurada('telegram'):
+        try:
+            T = 'https://api.telegram.org/bot' + E('TELEGRAM_TOKEN') + '/'
+            cuerpo, cab = multipart({'chat_id': E('TELEGRAM_CANAL')}, ('photo', os.path.join(M, 'perfil.png')))
+            pedir(T + 'setChatPhoto', crudo=cuerpo, cab=cab)
+            try: pedir(T + 'setChatDescription', {'chat_id': E('TELEGRAM_CANAL'), 'description': txt['telegram'][:255]})
+            except RuntimeError as e:
+                if 'not modified' not in str(e): raise
+            out['telegram'] = 'ok foto y descripción'
+        except Exception as e: out['telegram'] = 'ERROR ' + str(e)[:200]
+    return out
