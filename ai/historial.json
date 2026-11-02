@@ -46,5 +46,15 @@
   "arreglos": 5,
   "errores_24h": 0,
   "redes_ok_24h": 17
+ },
+ {
+  "fecha": "2026-11-02T21:55",
+  "estado": "mal",
+  "avisos": 1,
+  "arreglos": 3,
+  "errores_24h": 0,
+  "redes_ok_24h": 21,
+  "cola": 3,
+  "publicados": 0
  }
 ]
