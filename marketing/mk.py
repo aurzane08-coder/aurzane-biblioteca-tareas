@@ -8,7 +8,7 @@
 import json, os, re, sys, hashlib, datetime, collections, urllib.request, urllib.parse, html, csv
 
 D = os.path.dirname(os.path.abspath(__file__))
-REDES = ['telegram', 'bluesky', 'mastodon', 'facebook', 'instagram', 'threads', 'x', 'pinterest']
+REDES = ['telegram', 'bluesky', 'mastodon', 'instagram', 'threads', 'pinterest']  # facebook y x desactivadas: no se usan (X cobra por publicar)
 SITIO_IMG = 'https://aurzane.com/marketing/'
 IR = 'https://aurzane.com/ir/'
 HOY = datetime.date.today()
