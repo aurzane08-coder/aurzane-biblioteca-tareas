@@ -27,6 +27,7 @@ def muestra(path):
     return True
 paginas, cola, vistos = 0, list(SITIOS), set(SITIOS)
 roto = []
+paginas_ok = []
 origen = collections.defaultdict(list)
 with cf.ThreadPoolExecutor(4) as ex:
     while cola and paginas < 2500:
@@ -38,6 +39,7 @@ with cf.ThreadPoolExecutor(4) as ex:
             if not body:
                 continue
             paginas += 1
+            paginas_ok.append(final)
             for m in re.finditer(r'(?:href|src)\s*=\s*"([^"#]+)', body):
                 h = html.unescape(m.group(1)).strip()
                 if h.startswith(('mailto:', 'tel:', 'javascript:', 'data:')) or '${' in h or '{{' in h or "' +" in h or '" +' in h or "'+" in h or '<' in h:
@@ -69,7 +71,8 @@ with cf.ThreadPoolExecutor(4) as ex:
 for u, st in estado.items():
     if st != 200:
         roto.append({'url': u, 'estado': st, 'desde': origen.get(u, [])})
-json.dump({'paginas': paginas, 'revisadas': len(estado), 'rotos': sorted(roto, key=lambda x: x['url'])}, open('enlaces/informe.json', 'w'), ensure_ascii=False, indent=1)
+json.dump({'paginas': paginas, 'revisadas': len(estado), 'rotos': sorted(roto, key=lambda x: x['url']), 'paginas_ok': sorted(set(paginas_ok)),
+           'enlazadas': sorted(u for u in origen if any(o.split('#')[0].rstrip('/') != u.rstrip('/') for o in origen[u]))}, open('enlaces/informe.json', 'w'), ensure_ascii=False, indent=1)
 print(paginas, len(estado), len(roto))
 
 # Si SiteGround nos frena (202/429 = verificación anti-robots), el informe no es fiable: no se envía nada.

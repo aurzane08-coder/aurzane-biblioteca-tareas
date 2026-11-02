@@ -109,6 +109,17 @@ def catalogo():
                         hashtags=['FrasesMotivadoras', 'Superación', 'SaludMental', 'CrecimientoPersonal', 'Psicología', 'Bienestar', 'Motivación', 'FrasesDeLaVida'],
                         aviso='', img=None, emoji='',
                         foto_q=frases.FOTOS[int(fid[6:12], 16) % len(frases.FOTOS)]))
+    # frases de libros de la biblioteca que la IA propuso y Adrián aprobó en el admin (ai/citas.json)
+    try:
+        for c in json.load(open(os.path.join(os.path.dirname(D), 'ai', 'citas.json'), encoding='utf-8')):
+            fid = 'frase-' + hashlib.md5(c['texto'].encode()).hexdigest()[:8]
+            out.append(dict(id=fid, tipo='frase', mundo='aurzane', origen='citas', url=c['url'], titulo=c['texto'],
+                            autor=', '.join(x for x in (c.get('autor'), c.get('libro')) if x) or 'AURZANE', libro=c.get('libro') or '',
+                            ganchos=[c['texto']] * 3, texto=c['texto'],
+                            hashtags=['FrasesDeLibros', 'Lectura', 'LibrosGratis', 'Psicología', 'Motivación', 'Bienestar', 'CrecimientoPersonal', 'Frases'],
+                            aviso='', img=None, emoji='', foto_q=frases.FOTOS[int(fid[6:12], 16) % len(frases.FOTOS)]))
+    except FileNotFoundError: pass
+    except Exception as e: print('citas', e)
     # páginas nuevas del sitemap que aún no están: entran solas
     urls = {p['url'].rstrip('/') for p in out}
     try:
@@ -337,6 +348,7 @@ PREGUNTAS = ['¿Qué te dice esta frase hoy?', 'Guárdala para cuando la necesit
 def texto_frase(r, p, n):
     t = p['titulo'] + ('' if p['autor'] == 'AURZANE' else f"\n\n{p['autor']}")
     q = PREGUNTAS[(int(p['id'][-4:], 16) + n) % len(PREGUNTAS)]
+    if p.get('libro'): q += f"\n\n📖 Del libro «{p['libro'][:90]}», gratis en la Biblioteca AURZANE."
     url = IR + codigo(r, p['id'])
     if r == 'instagram':
         tags = ' '.join('#' + h for h in p['hashtags'] + ['AURZANE', 'PsicologíaPositiva', 'Autoestima', 'Resiliencia'])

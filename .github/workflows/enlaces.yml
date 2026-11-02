@@ -1,7 +1,7 @@
 name: Revisar enlaces AURZANE
 on:
   schedule:
-    - cron: '41 4 * * 1'
+    - cron: '41 4 * * 1,4'
   workflow_dispatch:
   push:
     branches: [main]

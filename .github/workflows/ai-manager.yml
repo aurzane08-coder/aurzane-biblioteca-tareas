@@ -61,6 +61,9 @@ jobs:
           cat /tmp/ai/propuestas.json | $SSH "$SG_DEST" "cat > www/aurzane.com/privado-ai/propuestas.json && chmod 600 www/aurzane.com/privado-ai/propuestas.json"
           rsync -rlz --checksum -e "$SSH" /tmp/ai/novedades/ "$SG_DEST:www/aurzane.com/public_html/novedades/"
           rsync -rlz --checksum -e "$SSH" /tmp/ai/recientes/ "$SG_DEST:www/aurzane.com/public_html/biblioteca/recientes/"
+          $SSH "$SG_DEST" "mkdir -p www/aurzane.com/public_html/mapa"
+          rsync -rlz --checksum -e "$SSH" /tmp/ai/mapa/ "$SG_DEST:www/aurzane.com/public_html/mapa/"
+          [ -f /tmp/ai/sitemap-ai.xml ] && cat /tmp/ai/sitemap-ai.xml | $SSH "$SG_DEST" "cat > www/aurzane.com/public_html/sitemap-ai.xml" || true
           $SSH "$SG_DEST" "site-tools-client domain-all update id=aurzane.com flush_cache=1 >/dev/null" || true
       - name: Guardar historial
         if: steps.toca.outputs.si == '1'

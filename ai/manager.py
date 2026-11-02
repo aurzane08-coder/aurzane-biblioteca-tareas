@@ -4,7 +4,7 @@ Revisa el ecosistema, arregla solo lo seguro, anuncia las novedades y deja un in
 Lo ejecuta .github/workflows/ai-manager.yml cada 6 horas (la medición de PageSpeed, una vez al día).
 Entradas por entorno: GITHUB_TOKEN, GITHUB_REPOSITORY, SSH (orden ssh lista), SG_DEST (usuario@host), TELEGRAM_TOKEN, DIARIO=1.
 Salidas: /tmp/ai/informe.json, /tmp/ai/novedades/ (página y RSS), ai/historial.json y ai/urls.json en el repositorio."""
-import json, os, re, ssl, socket, time, datetime, subprocess, urllib.request, urllib.parse, html, gzip, collections, csv
+import json, os, re, ssl, socket, time, datetime, subprocess, urllib.request, urllib.parse, html, gzip, collections, csv, hashlib
 
 D = os.path.dirname(os.path.abspath(__file__)); RAIZ = os.path.dirname(D)
 OUT = '/tmp/ai'; os.makedirs(OUT + '/novedades', exist_ok=True)
@@ -167,7 +167,7 @@ def pagina_novedades():
 ul{{list-style:none;padding:0;margin:28px 0}}li{{display:grid;grid-template-columns:100px 80px 1fr;gap:10px;padding:12px 0;border-bottom:1px solid rgba(95,80,68,.16);align-items:baseline}}
 .f{{color:#6E6257;font-size:.88rem}}.m{{font-size:.75rem;font-weight:700;letter-spacing:.06em;color:#5F5044}}li a{{color:inherit;font-weight:600;text-decoration:none}}li a:hover{{text-decoration:underline}}
 @media(max-width:600px){{li{{grid-template-columns:1fr}}}}</style></head><body>
-<div class="h"><div class="w"><a href="https://aurzane.com/">AURZANE</a><h1>Novedades</h1><p>Todo lo nuevo del ecosistema, en cuanto se publica. <a href="/novedades/feed.xml">Suscríbete por RSS</a>.</p></div></div>
+<div class="h"><div class="w"><a href="https://aurzane.com/">AURZANE</a><h1>Novedades</h1><p>Todo lo nuevo del ecosistema, en cuanto se publica. <a href="/novedades/feed.xml">Suscríbete por RSS</a> · <a href="/mapa/">Mapa del sitio</a>.</p></div></div>
 <main class="w" style="padding:0 20px">{vacio}<ul>{items}</ul></main></body></html>'''
     open(OUT + '/novedades/index.html', 'w', encoding='utf-8').write(pag)
     rss = ''.join(f'<item><title>{html.escape(n["titulo"])}</title><link>{html.escape(n["url"])}</link><guid>{html.escape(n["url"])}</guid><pubDate>{datetime.datetime.fromisoformat(n["fecha"]).strftime("%a, %d %b %Y 08:00:00 +0000")}</pubDate></item>' for n in nov[:40])
@@ -196,6 +196,7 @@ if DIARIO:
 INDEXNOW = 'bb5a4930b6afe5c8301aeafd1c898d44'
 REC = OUT + '/recientes'; os.makedirs(REC + '/portadas', exist_ok=True); os.makedirs(REC + '/pdf', exist_ok=True)
 TMP = '/tmp/ai/pdf'; os.makedirs(TMP, exist_ok=True)
+def norm(t): return re.sub(r'[^a-z0-9áéíóúñ]+', ' ', (t or '').lower()).strip()
 vistos = set(leer('vistos.json', [])); aprob = leer('aprobados.json', []); apr = leer('aprendizaje.json', {})
 autodesc = leer('autodescartes.json', [])
 ALOJABLE = lambda lic: lic in ('cc-by', 'cc-by-sa', 'cc-by-nd', 'cc0', 'public-domain', 'pd')
@@ -289,12 +290,18 @@ if ESTADO.get('reintento_pdf_1') != 'v3':
 
 canal, TGT = os.environ.get('TELEGRAM_CANAL', ''), os.environ.get('TELEGRAM_TOKEN', '')
 nuevos_pub, corregidas = [], 0
+citas_ok = leer('citas.json', []); nuevas_citas = 0
 for p in pend:
     d = (decis.get(p['id']) or {}).get('d')
     if d not in ('aprobar', 'descartar'): continue
     vistos.add(p['id'])
     for k in (p.get('tema') or '', 'ed:' + (p.get('editorial') or ''), 'tipo:' + p['tipo']):
         a = apr.setdefault(k, [0, 0]); a[0 if d == 'aprobar' else 1] += 1
+    if p['tipo'] == 'cita':
+        if d == 'aprobar':
+            citas_ok.insert(0, {'id': p['id'], 'texto': p['titulo'], 'autor': p.get('autores') or '', 'libro': p.get('libro') or '', 'url': p['url'], 'lic': p.get('lic') or '', 'fecha': HOY})
+            nuevas_citas += 1
+        continue
     if d != 'aprobar': continue
     p = dict(p); ok, motivo = verificar(p, guardar_pdf=True)
     if not ok:
@@ -315,7 +322,7 @@ if nuevos_pub:
 pend = [p for p in pend if p['id'] not in vistos]
 revisadas = []
 for p in pend:
-    if 'paginas' in p: revisadas.append(p); continue
+    if 'paginas' in p or p['tipo'] == 'cita': revisadas.append(p); continue
     ok, motivo = verificar(p)
     if ok: revisadas.append(p)
     else: descartar_solo(p, motivo[0].upper() + motivo[1:])
@@ -406,7 +413,75 @@ if DIARIO or len(pend) < 8:
         if ok: pend.append(x)
         else: descartar_solo(x, motivo[0].upper() + motivo[1:]); nuevos_auto += 1
 if nuevos_auto: acciones.append(f'Descarté sola {nuevos_auto} propuestas que no servían (sin PDF, capítulos sueltos o actas). Están en el admin por si quieres revisarlas.')
-pend.sort(key=puntos, reverse=True); pend = pend[:60]
+# ---------- 15. Frases de libros para redes: la IA lee los libros (dominio público y licencias libres) y propone citas ----------
+# Solo libros con permiso para citar y compartir: dominio público, CC BY, CC BY-SA y CC BY-ND, más los libros abiertos aprobados.
+# Cada pasada lee unos pocos libros, saca las frases con más fuerza y las manda a la cola del admin. Las que apruebas pasan
+# a ai/citas.json y el marketing las convierte en vídeos e imágenes con el enlace al libro en AURZANE.
+citas_ok = leer('citas.json', []); leidos = set(leer('citas_leidos.json', []))
+CLAVES = ('vida', 'alma', 'mente', 'corazón', 'amor', 'miedo', 'felicidad', 'feliz', 'tiempo', 'hombre', 'humano', 'sufr', 'dolor', 'esperanza', 'libertad',
+          'verdad', 'aprend', 'cambi', 'voluntad', 'pensa', 'emoci', 'sentir', 'soledad', 'valor', 'coraje', 'paz', 'calma', 'sabi', 'alegr', 'triste',
+          'carácter', 'hábito', 'destino', 'educa', 'conoc', 'fuerza', 'ánimo', 'espíritu', 'alma', 'bien', 'virtud', 'paciencia', 'trabajo', 'sueño', 'deseo')
+GENERAL = ('siempre', 'nunca', 'nadie', 'todo', 'quien ', 'el que ', 'la que ', 'los que ', 'cada ', 'nada ')
+ANAFORA = re.compile(r'^(y|e|pero|mas|por eso|por tanto|esto|este|esta|estos|estas|eso|ese|esa|ello|él|ella|ellos|ellas|así|también|además|sin embargo|entonces|luego|aquí|allí|dijo|respondió|contestó|exclamó|en este|en esta|en el capítulo|como hemos|como vimos|como se|véase|cf|en efecto|por ejemplo|asimismo|finalmente|primero|segundo)\b', re.I)
+RUIDO = re.compile(r'\d|http|www\.|@|\bet al\b|\bcap\.|\bpág|\bfig|\btabla\b|\bISBN|\bvol\.|\bed\.|[()\[\]{}<>«»"“”—–_/\\|=+*#]|\.\.|;.*;', re.I)
+def es_espanol(t):
+    w = re.findall(r'[a-záéíóúñ]+', t.lower()); return len(w) > 50 and sum(x in ('el', 'la', 'de', 'que', 'y', 'en', 'los', 'se', 'las', 'por', 'un', 'una', 'con', 'no') for x in w) / len(w) > 0.18
+def frases_de(texto):
+    texto = re.sub(r'-\n(?=[a-záéíóúñ])', '', texto); texto = re.sub(r'\s+', ' ', texto)
+    out = []
+    for f in re.split(r'(?<=[.!?])\s+(?=[A-ZÁÉÍÓÚÑ¿¡])', texto):
+        f = f.strip()
+        if not (55 <= len(f) <= 170) or not f.endswith(('.', '!', '?')) or RUIDO.search(f) or ANAFORA.match(f) or f.isupper(): continue
+        pal = f.split()
+        if not (8 <= len(pal) <= 28): continue
+        propios = sum(1 for x in pal[1:] if x[:1].isupper())
+        if propios > 1: continue
+        b = f.lower(); s = sum(2 for k in CLAVES if k in b) + sum(1 for k in GENERAL if k in b) + (1 if re.search(r'\b(es|son|está|hay)\b', b) else 0)
+        s -= propios * 2 + (2 if re.search(r'\b(yo|me|mi|nosotros|usted|señor|señora|don|doña)\b', b) else 0)
+        if s >= 5: out.append((s, f))
+    out.sort(reverse=True); vistas, res = set(), []
+    for s, f in out:
+        k = norm(f)[:60]
+        if k in vistas: continue
+        vistas.add(k); res.append((s, f))
+    return res
+libros_citables = []
+st, b, _, _ = get('https://aurzane.com/biblioteca/catalogo.js', t=60)
+try:
+    txt = b.decode('utf-8', 'replace'); cat = json.loads(txt[txt.index('{'):txt.rstrip().rstrip(';').rindex('}') + 1])
+    for L in cat.get('libros', []):
+        lic = (L.get('licencia') or '').lower()
+        if L.get('pdf') and ('dominio público' in lic or (lic.startswith('cc') and 'nc' not in lic)):
+            libros_citables.append({'id': L['id'], 'titulo': L['titulo'], 'autores': L.get('autores') or '', 'lic': L.get('licencia') or '',
+                                    'pdf': 'https://aurzane.com/biblioteca/' + L['pdf'].lstrip('/'), 'url': f'https://aurzane.com/biblioteca/libro/{L["id"]}.html',
+                                    'portada': f'https://aurzane.com/biblioteca/portadas/{L["id"]}.jpg'})
+except Exception as e: print('catálogo biblioteca', e)
+for p in aprob:
+    if p.get('pdf_local') and p['tipo'] == 'libro' and p.get('idioma') == 'es':
+        libros_citables.append({'id': p['id'], 'titulo': p['titulo'], 'autores': p.get('autores', ''), 'lic': (p.get('lic') or '').upper(), 'pdf': p['pdf_local'],
+                                'url': f'https://aurzane.com/biblioteca/recientes/{p["id"]}/', 'portada': p.get('portada', '')})
+n_citas = 0; pend_citas = sum(1 for p in pend if p['tipo'] == 'cita')
+if pend_citas < 25:
+    for L in [x for x in libros_citables if x['id'] not in leidos][:5]:
+        leidos.add(L['id']); dest = f'{TMP}/cita-{L["id"]}.pdf'
+        if descargar(L['pdf'], dest) != 'ok': continue
+        try: texto = subprocess.run(['pdftotext', '-enc', 'UTF-8', '-f', '4', '-l', '220', dest, '-'], capture_output=True, text=True, timeout=120).stdout
+        except Exception: texto = ''
+        try: os.remove(dest)
+        except Exception: pass
+        if not es_espanol(texto[:20000]): continue
+        for s, f in frases_de(texto)[:4]:
+            cid = 'cita-' + hashlib.md5(f.encode()).hexdigest()[:10]
+            if cid in ya or cid in vistos: continue
+            ya.add(cid); n_citas += 1
+            pend.append({'id': cid, 'tipo': 'cita', 'titulo': f, 'autores': L['autores'], 'libro': L['titulo'], 'url': L['url'], 'portada': L['portada'], 'lic': L['lic'],
+                         'tema': 'cita', 'idioma': 'es', 'motivo': f'Frase de «{L["titulo"][:80]}» ({L["lic"]}). Puntuación {s}: tiene fuerza y se entiende sin contexto.'})
+    if n_citas: acciones.append(f'Leí libros de la biblioteca y propuse {n_citas} frases para redes.')
+guardar('citas_leidos.json', sorted(leidos))
+
+if nuevas_citas: acciones.append(f'Pasé {nuevas_citas} frases aprobadas al marketing: saldrán en vídeos e imágenes con enlace al libro.')
+guardar('citas.json', citas_ok[:2000])
+pend.sort(key=lambda p: puntos(p) * (0.9 if p['tipo'] == 'cita' else 1), reverse=True); pend = pend[:90]
 print('::notice title=AI::Cola ' + str(len(pend)) + ' propuestas (' + str(sum(1 for x in pend if x['tipo'] == 'libro')) + ' libros, ' + str(sum(1 for x in pend if x.get('portada'))) + ' con portada), ' + str(nuevos_auto) + ' descartadas solas')
 json.dump(pend, open(OUT + '/propuestas.json', 'w', encoding='utf-8'), ensure_ascii=False)
 guardar('vistos.json', sorted(vistos)[-4000:]); guardar('aprobados.json', aprob[:400]); guardar('aprendizaje.json', apr); guardar('autodescartes.json', autodesc[:300])
@@ -517,6 +592,72 @@ for u in CLAVE:
     f = [x for x, ok in (('imagen para redes (og:image)', 'og:image' in t), ('un título H1', re.search(r'<h1[\s>]', t)), ('URL canónica', 'rel="canonical"' in t), ('título de longitud correcta', 15 <= tl <= 70)) if not ok]
     seo.append({'url': u, 'faltan': f, 'nivel': 'ok' if not f else 'medio'})
 
+# ---------- 16. Conexiones: páginas huérfanas, páginas fuera del sitemap y reparación de enlaces rotos ----------
+# Huérfana = está en el sitemap pero ninguna página enlaza a ella (los visitantes no llegan). Se conectan todas desde
+# aurzane.com/mapa/ (enlazado desde Novedades y el pie). Lo que el revisor encuentra y no está en el sitemap va a
+# aurzane.com/sitemap-ai.xml. Los enlaces internos rotos con una página parecida se arreglan con una redirección 301
+# en el .htaccess del sitio (con copia de seguridad y vuelta atrás si la portada deja de responder).
+import difflib
+conexiones = {'huerfanas': [], 'fuera_sitemap': [], 'redirecciones': leer('redirecciones.json', [])}
+enl_inf = leer('../enlaces/informe.json', {})
+enlazadas = set(u.rstrip('/') for u in enl_inf.get('enlazadas', []))
+vistas_ok = [u for u in enl_inf.get('paginas_ok', [])]
+MASIVAS = re.compile(r'/(biblioteca/libro|universidades/[^/]+/[^/]+|articulos|temas|notas-de-corte/[^/]+)/')
+if enlazadas and urls:
+    conexiones['huerfanas'] = [u for u in urls if u.rstrip('/') not in enlazadas and not MASIVAS.search(u) and u.rstrip('/') not in [h.rstrip('/') for h in ('https://' + x for x in HOSTS)]][:200]
+    smap = {u.rstrip('/') for u in urls}
+    conexiones['fuera_sitemap'] = sorted({u for u in vistas_ok if u.rstrip('/') not in smap and not MASIVAS.search(u) and not re.search(r'admin|privado|generar-informe|mi-aurzane|\?|/ai/|/tiktok/|portal|login', u)})[:300]
+    if conexiones['huerfanas']: aviso('medio', f'{len(conexiones["huerfanas"])} páginas del sitemap no tenían ningún enlace que llevara a ellas; ya están conectadas desde aurzane.com/mapa/.')
+# página de mapa: todas las páginas del sitemap por mundo
+os.makedirs(OUT + '/mapa', exist_ok=True)
+grupos = collections.defaultdict(list)
+for u in sorted(set(urls) | set(conexiones['fuera_sitemap'])):
+    if MASIVAS.search(u): continue
+    h = urllib.parse.urlparse(u).hostname or ''; grupos[h.split('.')[0].upper() if h != 'aurzane.com' else 'AURZANE'].append(u)
+def nombre_url(u):
+    p = urllib.parse.urlparse(u).path.strip('/').split('/')[-1].replace('.html', '')
+    return (p.replace('-', ' ').capitalize() if p else (urllib.parse.urlparse(u).hostname or u))
+mapa_html = ''.join(f'<section><h2>{E(g)}</h2><ul>' + ''.join(f'<li><a href="{E(u)}">{E(nombre_url(u))}</a></li>' for u in us) + '</ul></section>' for g, us in sorted(grupos.items()))
+open(OUT + '/mapa/index.html', 'w', encoding='utf-8').write(
+    '<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><script src="https://aurzane.com/aurzane-paleta.js"></script>'
+    '<title>Mapa de AURZANE: todas las páginas</title><meta name="description" content="Todas las páginas de AURZANE en un solo lugar: tests, calculadoras, ejercicios, universidades, cursos y biblioteca.">'
+    '<link rel="canonical" href="https://aurzane.com/mapa/"><link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@600;700&family=Instrument+Sans:wght@400;600&display=swap" rel="stylesheet">'
+    '<style>body{margin:0;background:var(--bg,#F6F0E8);color:var(--text,#2E2620);font:16px/1.6 "Instrument Sans",system-ui,sans-serif}.h{background:#0F1530;color:#F5F3EE;padding:40px 20px}.h a{color:#EACF92}'
+    '.w{max-width:1000px;margin:0 auto}h1{font:700 2.1rem "Bodoni Moda",serif;margin:6px 0}main{padding:10px 20px 60px;columns:2 300px;column-gap:40px}section{break-inside:avoid;margin:18px 0}'
+    'h2{font:700 1.1rem "Instrument Sans",sans-serif;letter-spacing:.04em;color:#5F5044;margin:0 0 6px}ul{list-style:none;padding:0;margin:0}li a{color:inherit;text-decoration:none;display:block;padding:4px 0;border-bottom:1px solid rgba(95,80,68,.12)}li a:hover{text-decoration:underline}</style></head><body>'
+    '<div class="h"><div class="w"><a href="https://aurzane.com/">AURZANE</a><h1>Mapa del sitio</h1><p>Todas las páginas del ecosistema. <a href="https://aurzane.com/novedades/">Ver novedades</a> · <a href="https://aurzane.com/biblioteca/">Biblioteca</a></p></div></div>'
+    f'<main class="w">{mapa_html}</main></body></html>')
+if conexiones['fuera_sitemap']:
+    open(OUT + '/sitemap-ai.xml', 'w', encoding='utf-8').write('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + ''.join(f'<url><loc>{E(u)}</loc></url>' for u in conexiones['fuera_sitemap']) + '</urlset>')
+# reparación de enlaces internos rotos con redirección 301 a la página más parecida
+rotos_int = [r for r in enl_inf.get('rotos', []) if str(r.get('estado')) == '404' and re.match(r'^https://([a-z]+\.)?aurzane\.com/', r['url'])]
+ya_red = {r['desde'] for r in conexiones['redirecciones']}
+nuevas_red = collections.defaultdict(list)
+for r in rotos_int[:40]:
+    u = r['url']; h = urllib.parse.urlparse(u).hostname; ruta = urllib.parse.urlparse(u).path
+    if u in ya_red or not ruta or ruta == '/' or re.search(r'[\s"\'<>]', ruta) or re.search(r'\.(js|css|png|jpe?g|webp|svg|pdf|mp4)$', ruta): continue
+    cands = [x for x in urls + vistas_ok if urllib.parse.urlparse(x).hostname == h]
+    mejor = max(cands, key=lambda x: difflib.SequenceMatcher(None, ruta, urllib.parse.urlparse(x).path).ratio(), default=None)
+    if not mejor: continue
+    ratio = difflib.SequenceMatcher(None, ruta, urllib.parse.urlparse(mejor).path).ratio()
+    if ratio >= 0.82 and get(mejor)[0] == 200: nuevas_red[h].append((ruta, mejor, round(ratio, 2)))
+for h, lista in nuevas_red.items():
+    reglas = [x for x in conexiones['redirecciones'] if urllib.parse.urlparse(x['desde']).hostname == h] + [{'desde': f'https://{h}{a}', 'hacia': b, 'parecido': c, 'fecha': HOY} for a, b, c in lista]
+    bloque = '# BEGIN AURZANE-AI redirecciones (las escribe el AI Manager; no editar a mano)\n' + ''.join(
+        f'Redirect 301 {urllib.parse.urlparse(x["desde"]).path} {x["hacia"]}\n' for x in reglas) + '# END AURZANE-AI redirecciones\n'
+    ht = f'www/{h}/public_html/.htaccess'
+    script = ('python3 - <<\'PYX\'\nimport re,os,shutil,time\np=' + repr(ht) + '\ns=open(p).read() if os.path.exists(p) else ""\n'
+              'shutil.copy(p, p+".ai-copia") if os.path.exists(p) else None\nb=' + repr(bloque) + '\n'
+              's=re.sub(r"# BEGIN AURZANE-AI redirecciones.*?# END AURZANE-AI redirecciones\\n","",s,flags=re.S)\nopen(p,"w").write(b+s)\nprint("ok")\nPYX')
+    if 'ok' not in remoto(script): continue
+    time.sleep(3)
+    if get(f'https://{h}/')[0] != 200:
+        remoto(f'cp {ht}.ai-copia {ht}'); aviso('medio', f'Intenté redirigir enlaces rotos en {h} pero la web dejó de responder; lo deshice.')
+        continue
+    conexiones['redirecciones'] = reglas + [x for x in conexiones['redirecciones'] if urllib.parse.urlparse(x['desde']).hostname != h]
+    acciones.append(f'Reparé {len(lista)} enlaces rotos en {h} redirigiéndolos a la página correcta.')
+guardar('redirecciones.json', conexiones['redirecciones'][-300:])
+
 # ---------- 10. Resumen ----------
 nivel = 'mal' if any(p['nivel'] == 'mal' for p in problemas) else ('medio' if problemas else 'ok')
 lineas = [f'Revisé {len(HOSTS)} sitios, {len(CLAVE)} páginas clave, {len(autos)} automatizaciones y las publicaciones en redes.',
@@ -534,7 +675,7 @@ guardar('estado.json', ESTADO)
 informe = {'fecha': AHORA.isoformat(), 'estado': nivel, 'resumen': '\n'.join(lineas), 'resumen_fuente': 'automático', 'problemas': problemas, 'acciones': acciones,
            'sitios': sitios, 'paginas': paginas, 'errores': errores, 'automatizaciones': autos, 'enlaces': enlaces, 'marketing': mk, 'novedades': nov[:30], 'pagespeed': ps,
            'cola': len(pend), 'aprobados_total': len(aprob), 'publicados': [{k: x.get(k) for k in ('id', 'tipo', 'titulo', 'portada', 'publicado', 'paginas', 'lic', 'pdf_local')} for x in aprob[:40]],
-           'autodescartes': autodesc[:60], 'dominio': dominio, 'seguridad': seguridad, 'seo': seo, 'historial': hist[-120:], 'diario': DIARIO}
+           'autodescartes': autodesc[:60], 'citas_aprobadas': len(citas_ok), 'conexiones': {'huerfanas': conexiones['huerfanas'][:80], 'n_huerfanas': len(conexiones['huerfanas']), 'fuera_sitemap': conexiones['fuera_sitemap'][:80], 'n_fuera': len(conexiones['fuera_sitemap']), 'redirecciones': conexiones['redirecciones'][-40:]}, 'dominio': dominio, 'seguridad': seguridad, 'seo': seo, 'historial': hist[-120:], 'diario': DIARIO}
 json.dump(informe, open(OUT + '/informe.json', 'w', encoding='utf-8'), ensure_ascii=False)
 
 # ---------- 11. Aviso por Telegram (cuando Adrián escribe /aurzane al bot por privado) ----------
