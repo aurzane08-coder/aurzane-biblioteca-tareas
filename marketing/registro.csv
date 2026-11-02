@@ -23,3 +23,4 @@
 2026-11-02,4,tiktok,calc-pau,error,400 {"error":{"code":"invalid_params" "message":"The request source info is empty or incorrect" "log_id":"202611030418554B6B6EF5C5D6B1FB2516"}}
 2026-11-02,4,telegram,test-autoestima,ok,7
 2026-11-02,4,tiktok,calc-pau,error,400 {"error":{"code":"invalid_params" "message":"The request source info is empty or incorrect" "log_id":"2026110305411101F3F818847033258B5D"}}
+2026-11-02,4,tiktok,calc-pau,error,403 {"error":{"code":"unaudited_client_can_only_post_to_private_accounts" "message":"Please review our integration guidelines at https://developers.ti
