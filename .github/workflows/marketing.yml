@@ -116,7 +116,7 @@ jobs:
           P=www/aurzane.com/privado-tiktok
           if [ -s /tmp/tiktok_refresh ]; then cat /tmp/tiktok_refresh | $SSH "$SG_USER@$SG_HOST" "mkdir -p $P && chmod 700 $P && cat > $P/refresh && chmod 600 $P/refresh"; fi
           if [ -n "$TIKTOK_CLIENT_KEY" ] && [ -n "$TIKTOK_CLIENT_SECRET" ]; then
-            python3 -c 'import json,os;print(json.dumps({"client_key":os.environ["TIKTOK_CLIENT_KEY"],"client_secret":os.environ["TIKTOK_CLIENT_SECRET"]}))' | $SSH "$SG_USER@$SG_HOST" "mkdir -p $P && chmod 700 $P && cat > $P/app.json && chmod 600 $P/app.json"
+            python3 -c 'import json,os;print(json.dumps({"client_key":os.environ["TIKTOK_CLIENT_KEY"].strip(),"client_secret":os.environ["TIKTOK_CLIENT_SECRET"].strip()}))' | $SSH "$SG_USER@$SG_HOST" "mkdir -p $P && chmod 700 $P && cat > $P/app.json && chmod 600 $P/app.json"
           fi
           $SSH "$SG_USER@$SG_HOST" "mkdir -p www/aurzane.com/public_html/tiktok"
           rsync -rlz --checksum -e "$SSH" marketing/web/tiktok/ "$R/public_html/tiktok/"

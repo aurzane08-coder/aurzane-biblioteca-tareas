@@ -2,7 +2,9 @@
 # Cada red se activa sola cuando existen sus secretos en GitHub (Settings > Secrets and variables > Actions).
 import os, json, time, uuid, urllib.request, urllib.parse, hmac, hashlib, base64, datetime, re
 
-E = os.environ.get
+def E(k, d=None):
+    v = os.environ.get(k, d)
+    return v.strip() if isinstance(v, str) else v
 SECRETOS = {
     'telegram': ['TELEGRAM_TOKEN', 'TELEGRAM_CANAL'],
     'bluesky': ['BSKY_USUARIO', 'BSKY_CLAVE_APP'],

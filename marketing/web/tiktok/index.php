@@ -8,6 +8,7 @@ header('Content-Type: text/html; charset=utf-8');
 $dir = dirname(__DIR__, 2) . '/privado-tiktok';
 @mkdir($dir, 0700, true);
 $app = json_decode(@file_get_contents("$dir/app.json"), true) ?: [];
+$app = array_map(fn($v) => trim((string)$v), $app);
 $redir = 'https://aurzane.com/tiktok/';
 function fin($t) { echo "<!doctype html><meta name=viewport content='width=device-width'><body style='font-family:sans-serif;padding:40px;max-width:560px;margin:auto'><h1>TikTok · AURZANE</h1><p>$t</p></body>"; exit; }
 if (empty($app['client_key']) || empty($app['client_secret'])) fin('Aún no están los datos de la app. Añade los secretos TIKTOK_CLIENT_KEY y TIKTOK_CLIENT_SECRET en GitHub y espera a la siguiente ejecución del flujo de marketing.');
