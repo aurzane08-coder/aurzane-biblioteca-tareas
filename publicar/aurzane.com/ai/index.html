@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<meta name="aurzane-idiomas" content="no">
+<title>AURZANE AI Manager</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@500;700&family=Instrument+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0E0B1C;--card:#171230;--card2:#1F1940;--text:#F3EFE8;--dim:#A9A1C2;--line:rgba(255,255,255,.1);--ok:#2FB37F;--medio:#E3B23C;--mal:#E5584F;--oro:#E2AE55}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:400 15px/1.5 "Instrument Sans",system-ui,sans-serif}
+header{padding:28px 20px 10px;max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+h1{font:700 1.9rem "Bodoni Moda",Georgia,serif;margin:0}h1 span{color:var(--oro)}
+.sub{color:var(--dim);margin:2px 0 0}
+main{max-width:1200px;margin:0 auto;padding:10px 20px 60px;display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+.c{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px 20px;grid-column:span 6;min-width:0}
+.c.w{grid-column:span 12}.c.t{grid-column:span 4}
+.c h2{font:700 1.05rem "Instrument Sans",sans-serif;margin:0 0 12px;display:flex;justify-content:space-between;gap:8px}
+.c h2 small{color:var(--dim);font-weight:500}
+table{width:100%;border-collapse:collapse;font-size:.88rem}td,th{padding:7px 6px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;overflow-wrap:anywhere}th{color:var(--dim);font-weight:600;font-size:.78rem}
+.pill{display:inline-block;border-radius:99px;padding:2px 9px;font-size:.78rem;font-weight:700}.ok{background:rgba(47,179,127,.18);color:#7fe0b6}.medio{background:rgba(227,178,60,.18);color:#f2d38a}.mal{background:rgba(229,88,79,.2);color:#ffaaa3}
+.big{font:700 2.4rem "Bodoni Moda",serif;line-height:1}
+.resumen{white-space:pre-wrap;line-height:1.6}
+.vacio{color:var(--dim)}
+.login{max-width:520px;margin:60px auto;text-align:center;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:28px}
+.btn{display:inline-block;background:var(--oro);color:#1B1408;border:0;border-radius:99px;padding:11px 20px;font:700 .95rem sans-serif;text-decoration:none;cursor:pointer}
+@media (max-width:860px){.c,.c.t{grid-column:span 12}}
+</style>
+</head>
+<body>
+<header><div><h1>AURZANE <span>AI</span> Manager</h1><p class="sub" id="cuando">Cargando…</p></div><a class="btn" href="https://aurzane.com/admin.html">Volver al admin</a></header>
+<div id="app"></div>
+<script src="https://unpkg.com/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="/aurzane-id.js"></script>
+<script>
+(async function(){
+var app=document.getElementById('app'),E=function(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});};
+function login(msg){app.innerHTML='<div class="login"><h2>'+msg+'</h2><p class="sub">El panel de la IA es solo para el equipo de AURZANE.</p><p><a class="btn" href="https://aurzane.com/mi-aurzane.html">Iniciar sesión con AURZANE ID</a></p></div>';document.getElementById('cuando').textContent='';}
+var sb;try{sb=crearClienteAurzaneID('https://chtfpqwrrarfdjcivlad.supabase.co','sb_publishable___1v6VjDew0l8uGfMyb9Nw_YyCLTPPw');}catch(e){return login('No se pudo cargar el inicio de sesión');}
+var s=(await sb.auth.getSession()).data.session;if(!s)return login('Inicia sesión para ver el panel');
+var r=await fetch('/ai/api.php',{headers:{Authorization:'Bearer '+s.access_token},cache:'no-store'});
+if(r.status!==200){var j={};try{j=await r.json();}catch(e){}return login(j.error||'No tienes acceso');}
+var D=await r.json(),I=D.informe||{};
+document.getElementById('cuando').textContent=I.fecha?'Última revisión: '+new Date(I.fecha).toLocaleString('es-ES')+' · se revisa sola cada 6 horas':'Todavía no hay ninguna revisión';
+var pill=function(n){return '<span class="pill '+n+'">'+({ok:'Bien',medio:'Revisar',mal:'Problema'}[n]||n)+'</span>';};
+var h='';
+h+='<section class="c w"><h2>Resumen <small>'+E(I.resumen_fuente||'')+'</small></h2><div class="resumen">'+E(I.resumen||'Sin datos todavía.')+'</div></section>';
+var g=I.estado||'medio';
+h+='<section class="c t"><h2>Estado general</h2><div class="big">'+pill(g)+'</div><p class="sub">'+E((I.problemas||[]).length)+' avisos</p></section>';
+h+='<section class="c t"><h2>Errores en la web <small>24 h</small></h2><div class="big">'+E((I.errores||{}).total_24h||0)+'</div><p class="sub">en '+E((I.errores||{}).paginas_24h||0)+' páginas</p></section>';
+h+='<section class="c t"><h2>Publicaciones en redes <small>24 h</small></h2><div class="big">'+E((I.marketing||{}).ok_24h||0)+'</div><p class="sub">'+E((I.marketing||{}).fallos_24h||0)+' fallos</p></section>';
+if((I.problemas||[]).length)h+='<section class="c w"><h2>Avisos</h2><table>'+I.problemas.map(function(p){return '<tr><td>'+pill(p.nivel)+'</td><td>'+E(p.texto)+'</td></tr>';}).join('')+'</table></section>';
+if((I.acciones||[]).length)h+='<section class="c w"><h2>Lo que la IA arregló sola</h2><table>'+I.acciones.map(function(a){return '<tr><td>'+E(a)+'</td></tr>';}).join('')+'</table></section>';
+h+='<section class="c"><h2>Sitios</h2><table><tr><th>Sitio</th><th>Estado</th><th>Respuesta</th><th>Certificado</th></tr>'+(I.sitios||[]).map(function(x){return '<tr><td>'+E(x.host)+'</td><td>'+pill(x.nivel)+' '+E(x.codigo)+'</td><td>'+E(x.ms)+' ms</td><td>'+E(x.ssl_dias)+' días</td></tr>';}).join('')+'</table></section>';
+h+='<section class="c"><h2>Velocidad en móvil <small>PageSpeed</small></h2><table><tr><th>Página</th><th>Rendimiento</th><th>SEO</th><th>Accesibilidad</th></tr>'+(I.pagespeed||[]).map(function(x){return '<tr><td>'+E(x.url.replace(/^https:\/\//,''))+'</td><td>'+E(x.rendimiento)+'</td><td>'+E(x.seo)+'</td><td>'+E(x.accesibilidad)+'</td></tr>';}).join('')+'</table>'+((I.pagespeed||[]).length?'':'<p class="vacio">Se mide una vez al día.</p>')+'</section>';
+h+='<section class="c"><h2>Páginas clave</h2><table>'+(I.paginas||[]).map(function(x){return '<tr><td>'+E(x.url.replace(/^https:\/\//,''))+'</td><td>'+pill(x.nivel)+' '+E(x.codigo)+'</td><td>'+E(x.ms)+' ms</td></tr>';}).join('')+'</table></section>';
+h+='<section class="c"><h2>Automatizaciones <small>GitHub, 24 h</small></h2><table>'+(I.automatizaciones||[]).map(function(x){return '<tr><td>'+E(x.nombre)+'</td><td>'+pill(x.nivel)+'</td><td>'+E(x.detalle)+'</td></tr>';}).join('')+'</table></section>';
+h+='<section class="c"><h2>Redes sociales <small>24 h</small></h2><table>'+Object.keys((I.marketing||{}).por_red||{}).map(function(k){var v=I.marketing.por_red[k];return '<tr><td>'+E(k)+'</td><td>'+E(v.ok)+' publicadas</td><td>'+(v.fallos?'<span class="pill mal">'+v.fallos+' fallos</span>':'')+'</td></tr>';}).join('')+'</table></section>';
+h+='<section class="c"><h2>Enlaces rotos <small>revisión semanal</small></h2><div class="big">'+E((I.enlaces||{}).rotos||0)+'</div><p class="sub">de '+E((I.enlaces||{}).revisadas||0)+' enlaces revisados</p>'+((I.enlaces||{}).ejemplos||[]).map(function(x){return '<div class="sub">'+E(x)+'</div>';}).join('')+'</section>';
+h+='<section class="c w"><h2>Novedades publicadas <small>se anuncian solas en aurzane.com/novedades</small></h2><table>'+(I.novedades||[]).slice(0,15).map(function(x){return '<tr><td>'+E(x.fecha)+'</td><td><a style="color:var(--oro)" href="'+E(x.url)+'">'+E(x.titulo)+'</a></td></tr>';}).join('')+'</table></section>';
+var errs=D.errores||[],grupos={};errs.forEach(function(e){var k=e[4]+' · '+e[5];grupos[k]=grupos[k]||{n:0,ej:e};grupos[k].n++;});
+h+='<section class="c w"><h2>Errores de JavaScript recientes <small>agrupados</small></h2>'+(Object.keys(grupos).length?'<table><tr><th>Veces</th><th>Error</th><th>Página</th><th>Último</th></tr>'+Object.keys(grupos).sort(function(a,b){return grupos[b].n-grupos[a].n;}).slice(0,30).map(function(k){var e=grupos[k].ej;return '<tr><td>'+grupos[k].n+'</td><td>'+E(e[4])+'<br><small class="sub">'+E(e[5])+':'+E(e[6])+'</small></td><td>'+E(e[1]+e[2])+'</td><td>'+E(e[0])+'</td></tr>';}).join('')+'</table>':'<p class="vacio">Sin errores registrados.</p>')+'</section>';
+app.innerHTML='<main>'+h+'</main>';
+})();
+</script>
+</body>
+</html>
