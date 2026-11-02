@@ -1,6 +1,110 @@
 [
  {
   "fecha": "2026-11-02",
+  "id": "ia-el-perdo-n-col-perlas-de-psicologia-1",
+  "tipo": "libro",
+  "titulo": "EL PERDÓ N Col Perlas De Psicología 1",
+  "url": "https://archive.org/details/el-perdo-n-col-perlas-de-psicologia-1",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 48 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/el-perdo-n-col-perlas-de-psicologia-1/EL%20PERD%C3%93N%20Col%20Perlas%20de%20Psic"
+  ]
+ },
+ {
+  "fecha": "2026-11-02",
+  "id": "oa-W7223856432",
+  "tipo": "libro",
+  "titulo": "Ideal Matter",
+  "url": "https://doi.org/10.1515/9783689243821",
+  "motivo": "No tiene un PDF libre que se pueda descargar",
+  "probados": []
+ },
+ {
+  "fecha": "2026-11-02",
+  "id": "oa-W7223023150",
+  "tipo": "libro",
+  "titulo": "The Evolving Landscape of Workplace - Challenges and Opportunities [Working Title]",
+  "url": "https://doi.org/10.5772/intechopen.1014436",
+  "motivo": "No tiene un PDF libre que se pueda descargar",
+  "probados": []
+ },
+ {
+  "fecha": "2026-11-02",
+  "id": "oa-W7204509156",
+  "tipo": "libro",
+  "titulo": "Ontology and Time 1: A Foundation for Temporal Reality",
+  "url": "https://doi.org/10.1515/9783112233795",
+  "motivo": "No tiene un PDF libre que se pueda descargar",
+  "probados": []
+ },
+ {
+  "fecha": "2026-11-02",
+  "id": "ia-piloto-la-forma-signed_202605",
+  "tipo": "libro",
+  "titulo": "Piloto La Forma Signed",
+  "url": "https://archive.org/details/piloto-la-forma-signed_202605",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 22 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/piloto-la-forma-signed_202605/Piloto-La_forma-signed.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-02",
+  "id": "ia-martin-f-echeverria-actualidad-de-la-psicologia-de-santo-tomas-2025",
+  "tipo": "libro",
+  "titulo": "Martín F Echeverría, Actualidad De La Psicologia De Santo Tomás, 2025",
+  "url": "https://archive.org/details/martin-f-echeverria-actualidad-de-la-psicologia-de-santo-tomas-2025",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 31 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/martin-f-echeverria-actualidad-de-la-psicologia-de-santo-tomas-2025/Mart%C3%ADn%2"
+  ]
+ },
+ {
+  "fecha": "2026-11-02",
+  "id": "ia-2015-10-05-la-politica-es-guerra-jose-lopez",
+  "tipo": "libro",
+  "titulo": "La política es guerra - José López",
+  "url": "https://archive.org/details/2015-10-05-la-politica-es-guerra-jose-lopez",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 8 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/2015-10-05-la-politica-es-guerra-jose-lopez/2015-10-05-la-politica-es-guerra-jose"
+  ]
+ },
+ {
+  "fecha": "2026-11-02",
+  "id": "ia-2022-02-10-la-timidez-de-la-izquierda-jose-lopez",
+  "tipo": "libro",
+  "titulo": "La timidez de la izquierda - José López",
+  "url": "https://archive.org/details/2022-02-10-la-timidez-de-la-izquierda-jose-lopez",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 4 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/2022-02-10-la-timidez-de-la-izquierda-jose-lopez/2022-02-10-la-timidez-de-la-izqu"
+  ]
+ },
+ {
+  "fecha": "2026-11-02",
+  "id": "ia-anexo-tipo-de-parafilias-articulo-de-wikipedia",
+  "tipo": "libro",
+  "titulo": "Anexo: Tipo de parafilias (artículo de Wikipedia)",
+  "url": "https://archive.org/details/anexo-tipo-de-parafilias-articulo-de-wikipedia",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 6 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/anexo-tipo-de-parafilias-articulo-de-wikipedia/Anexo_Tipos_de_parafilias.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-02",
+  "id": "ia-psico-prubfinal",
+  "tipo": "libro",
+  "titulo": "Psicología del Color",
+  "url": "https://archive.org/details/psico-prubfinal",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 9 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/psico-prubfinal/PSICO_PRUBFINAL.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-02",
   "id": "oa-W7222589970",
   "tipo": "libro",
   "titulo": "The Arrow That Cuts Both Ways: Strong Causality, Causal Reversibility, and the Dissolution of the Philosophical Zombie",
