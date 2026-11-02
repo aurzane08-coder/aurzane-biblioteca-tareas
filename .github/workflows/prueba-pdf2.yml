@@ -1,0 +1,25 @@
+name: Prueba PDF 2
+on:
+  push:
+    paths: ['.github/workflows/prueba-pdf2.yml']
+jobs:
+  p:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          python3 - <<'PY'
+          import urllib.request, re
+          UA='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36'
+          def t(u, n=400):
+              try:
+                  r=urllib.request.urlopen(urllib.request.Request(u,headers={'User-Agent':UA}),timeout=60); b=r.read(3000000)
+                  print('::notice title=P::'+u[:80]+' -> '+str(r.status)+' '+r.headers.get('Content-Type','')[:25]+' '+str(b[:5])+' final='+r.geturl()[:80]); return b
+              except Exception as e: print('::notice title=P::'+u[:80]+' ERR '+repr(e)[:80]); return b''
+          b=t('https://www.ncbi.nlm.nih.gov/pmc/utils/oa/oa.fcgi?id=PMC13721388')
+          print('::notice title=P::'+b.decode()[:400].replace('\n',' '))
+          for m in re.findall(rb'href="([^"]+)"', b):
+              t(m.decode().replace('ftp://','https://'))
+          for u in ['https://doi.org/10.5772/intechopen.1014436','https://doi.org/10.1515/9783112233795','https://doi.org/10.11647/obp.0400']:
+              h=t(u).decode('utf-8','replace')
+              print('::notice title=P::  pdflinks '+' | '.join(re.findall(r'(?:citation_pdf_url"[^>]*content="[^"]+|href="[^"]*(?:pdf|download)[^"]*")', h, re.I)[:5])[:400])
+          PY
