@@ -116,5 +116,15 @@
   "redes_ok_24h": 22,
   "cola": 90,
   "publicados": 0
+ },
+ {
+  "fecha": "2026-11-02T23:43",
+  "estado": "medio",
+  "avisos": 1,
+  "arreglos": 5,
+  "errores_24h": 0,
+  "redes_ok_24h": 22,
+  "cola": 45,
+  "publicados": 20
  }
 ]

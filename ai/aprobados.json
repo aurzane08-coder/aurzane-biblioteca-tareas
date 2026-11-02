@@ -1,1 +1,499 @@
-[]
+[
+ {
+  "id": "oa-W7163523463",
+  "tipo": "libro",
+  "titulo": "Manual práctico del juego como ocupación y herramienta terapéutica",
+  "url": "https://doi.org/10.70577/tbr20f13/acacfesa.editorial",
+  "autores": "Angela Lucero Ramos Zapata",
+  "anio": 2026,
+  "editorial": "",
+  "doi": "10.70577/tbr20f13/acacfesa.editorial",
+  "pdf": "https://acacfesa.com/editorial/index.php/1/catalog/download/63/53/216",
+  "pdfs": [
+   "https://acacfesa.com/editorial/index.php/1/catalog/download/63/53/216"
+  ],
+  "landings": [
+   "https://doi.org/10.70577/tbr20f13/acacfesa.editorial"
+  ],
+  "lic": "cc-by-nc-sa",
+  "idioma": "es",
+  "tema": "Child Therapy and Development",
+  "resumen": "La infancia es, sin lugar a dudas, el territorio más rico y más frágil del desarrollo humano. En ella se construyen los cimientos de la motricidad, la cognición, la emoción y la participación social; y es precisamente en ese territorio donde el juego reina como lenguaje universal, como ocupación primaria y como herramienta terapéutica de extraordinario poder. Este libro nace de esa convicción profunda: que el juego no es un lujo ni un pasatiempo, sino el medio más genuino a través del cual el niño aprende a ser, a estar y a hacer en el mundo. El Manual Práctico del Juego como Ocupación y Herramienta Terapéutica: Una mirada desde la terapia ocupacional infantil se sitúa en el centro de un debate contemporáneo y urgente: cómo acompañar el desarrollo infantil desde una perspectiva rigurosa, ética y profundamente humana. Esta obra no se limita a describir actividades lúdicas, sino que propon",
+  "motivo": "Libro de psicología en acceso abierto con licencia CC-BY-NC-SA, de una editorial académica.",
+  "pdf_origen": "https://acacfesa.com/editorial/index.php/1/catalog/download/63/53/216",
+  "paginas": 156,
+  "portada": "https://aurzane.com/biblioteca/recientes/portadas/oa-W7163523463.jpg",
+  "publicado": "2026-11-02"
+ },
+ {
+  "id": "oa-W7164312832",
+  "tipo": "libro",
+  "titulo": "Actividades recreativas en el desarrollo socioemocional en estudiantes con altas capacidades",
+  "url": "https://doi.org/10.59764/ceo.154",
+  "autores": "Joselyn Antonella Cevallos Chilan, Byron Breyner Rodríguez Ramírez, María Luisa Merchán Gavilánez",
+  "anio": 2026,
+  "editorial": "",
+  "doi": "10.59764/ceo.154",
+  "pdf": "https://editorialceo.ceocapacitacionestrategias.com/index.php/editorial/catalog/download/154/205/609",
+  "pdfs": [
+   "https://editorialceo.ceocapacitacionestrategias.com/index.php/editorial/catalog/download/154/205/609"
+  ],
+  "landings": [
+   "https://doi.org/10.59764/ceo.154"
+  ],
+  "lic": "cc-by-nc-sa",
+  "idioma": "es",
+  "tema": "Education, Achievement, and Giftedness",
+  "resumen": "El presente libro, “Actividades Recreativas y Desarrollo Socioemocional en Estudiantes con Altas Capacidades”, nace de la necesidad de comprender y atender de manera integral a una población estudiantil que, pese a poseer un elevado potencial intelectual, muchas veces enfrenta desafíos emocionales, sociales y educativos invisibilizados dentro de los contextos escolares. A lo largo de estas páginas, el lector descubrirá que las altas capacidades no solo implican habilidades cognitivas sobresalientes, sino también profundas necesidades afectivas, sociales y humanas que requieren acompañamiento, comprensión y estrategias pedagógicas innovadoras. En este sentido, la recreación y el ocio dejan de ser concebidos únicamente como espacios de entretenimiento para convertirse en escenarios de aprendizaje significativo, expresión emocional y construcción de bienestar. Las actividades recreativas pr",
+  "motivo": "Libro de psicología en acceso abierto con licencia CC-BY-NC-SA, de una editorial académica.",
+  "pdf_origen": "https://editorialceo.ceocapacitacionestrategias.com/index.php/editorial/catalog/download/154/205/609",
+  "paginas": 94,
+  "portada": "https://aurzane.com/biblioteca/recientes/portadas/oa-W7164312832.jpg",
+  "publicado": "2026-11-02"
+ },
+ {
+  "id": "oa-W7172032037",
+  "tipo": "libro",
+  "titulo": "El desarrollo socio emocional en los Niños menores de 6 Años",
+  "url": "https://doi.org/10.70577/8hg51186/acacfesa.editorial",
+  "autores": "Andrea Alejandra Cevallos Goyes, Diana Catalina Ayala Gavilánes, Alejandra Estefanía Flor Gavilanes",
+  "anio": 2026,
+  "editorial": "",
+  "doi": "10.70577/8hg51186/acacfesa.editorial",
+  "pdf": "https://acacfesa.com/editorial/index.php/1/catalog/download/69/72/254",
+  "pdfs": [
+   "https://acacfesa.com/editorial/index.php/1/catalog/download/69/72/254"
+  ],
+  "landings": [
+   "https://doi.org/10.70577/8hg51186/acacfesa.editorial"
+  ],
+  "lic": "cc-by-nc-sa",
+  "idioma": "es",
+  "tema": "Child and Adolescent Psychosocial and Emotional Development",
+  "resumen": "\"Preguntamos con mucha frecuencia qué aprenden los niños pequeños. Deberíamos preguntarnos, con igual urgencia, en qué tipo de relaciones lo aprenden.\" Suzanne Denham, Emotion Development Laboratory, George Mason University Hay una paradoja que acompaña la producción académica sobre primera infancia desde hace al menos treinta años: mientras la evidencia científica sobre el desarrollo socioemocional temprano ha crecido a un ritmo sin precedentes, la distancia entre esa evidencia y quienes crían y educan niños menores de seis años permanece obstinadamente amplia. Los hallazgos se acumulan en revistas especializadas, se debaten en congresos internacionales y se sintetizan en reportes técnicos de organismos multilaterales. Los padres, entretanto, navegan en un océano de información inconsistente, atravesado por recomendaciones contradictorias, narrativas simplificadas y, con demasiada frecu",
+  "motivo": "Libro de psicología en acceso abierto con licencia CC-BY-NC-SA, de una editorial académica.",
+  "pdf_origen": "https://acacfesa.com/editorial/index.php/1/catalog/download/69/72/254",
+  "paginas": 169,
+  "portada": "https://aurzane.com/biblioteca/recientes/portadas/oa-W7172032037.jpg",
+  "publicado": "2026-11-02"
+ },
+ {
+  "id": "oa-W7207662261",
+  "tipo": "libro",
+  "titulo": "Voces que nacen II",
+  "url": "https://doi.org/10.70577/awcqvw11/acacfesa.editorial",
+  "autores": "Marta Inés Villa",
+  "anio": 2026,
+  "editorial": "",
+  "doi": "10.70577/awcqvw11/acacfesa.editorial",
+  "pdf": "https://acacfesa.com/editorial/index.php/1/catalog/download/78/82/287",
+  "pdfs": [
+   "https://acacfesa.com/editorial/index.php/1/catalog/download/78/82/287"
+  ],
+  "landings": [
+   "https://doi.org/10.70577/awcqvw11/acacfesa.editorial"
+  ],
+  "lic": "cc-by-nc-sa",
+  "idioma": "es",
+  "tema": "Reading and Literacy Development",
+  "resumen": "La adquisición del lenguaje se convierte en un proceso básico para el desarrollo de las personas a través de la infancia ya que, mediante el lenguaje, los niños van construyendo significados, van expresando necesidades e ideas, van interaccionando con otras personas e, poco a poco, van ocupando su lugar en distintas prácticas sociales y educativas. La práctica de la lectura y de la escritura no es, por tanto, solo un aprendizaje instrumental que va más allá de las características sociales y educativas; asumen el lenguaje como medio para la comunicación o el pensamiento, el lenguaje como medio para compartir la creatividad o el lenguaje como instrumento para interactuar con el entorno. Comprender cómo se desarrollan estas capacidades y cómo acompañarlas desde la educación es una tarea educativa especialmente relevante para los docentes, para las familias y para los profesionales que asuma",
+  "motivo": "Libro de psicología en acceso abierto con licencia CC-BY-NC-SA, de una editorial académica.",
+  "pdf_origen": "https://acacfesa.com/editorial/index.php/1/catalog/download/78/82/368",
+  "paginas": 225,
+  "portada": "https://aurzane.com/biblioteca/recientes/portadas/oa-W7207662261.jpg",
+  "publicado": "2026-11-02"
+ },
+ {
+  "id": "oa-W7165478086",
+  "tipo": "libro",
+  "titulo": "Voces desde la Investigación",
+  "url": "https://doi.org/10.58210/ecds10",
+  "autores": "Rosa Isela Navarro Salinas, María Eugenia López Caamal, Roxana del Carmen Vargas Pacheco",
+  "anio": 2026,
+  "editorial": "",
+  "doi": "10.58210/ecds10",
+  "pdf": "https://books.cuadernosdesofia.com/index.php/ecds/catalog/download/7/7/77",
+  "pdfs": [
+   "https://books.cuadernosdesofia.com/index.php/ecds/catalog/download/7/7/77"
+  ],
+  "landings": [
+   "https://doi.org/10.58210/ecds10"
+  ],
+  "lic": "cc-by",
+  "idioma": "es",
+  "tema": "Student Stress and Coping",
+  "resumen": "Voces desde la Investigación: Desafíos en Salud, Educación y Trabajo Social es una obra colectiva que reúne diez investigaciones empíricas en torno a una premisa común: la salud, la educación y el trabajo social constituyen dimensiones interdependientes del bienestar humano y deben analizarse de manera articulada. Coordinado por el Cuerpo Académico Consolidado «Desarrollo Humano» de la Universidad Autónoma de Campeche, el volumen examina problemáticas contemporáneas que atraviesan principalmente la vida universitaria en contextos mexicanos: la salud mental y sexual de jóvenes estudiantes, el estrés académico y las estrategias de afrontamiento, la autorregulación emocional y las competencias socioemocionales, la empatía en la evaluación, las habilidades sociales y cognitivas en el aprendizaje, así como el uso de tecnologías de la información en la vejez. Metodológicamente, la obra integra",
+  "motivo": "Libro de psicología en acceso abierto con licencia CC-BY, de una editorial académica.",
+  "pdf_origen": "https://books.cuadernosdesofia.com/index.php/ecds/catalog/download/7/7/77",
+  "paginas": 168,
+  "portada": "https://aurzane.com/biblioteca/recientes/portadas/oa-W7165478086.jpg",
+  "pdf_local": "https://aurzane.com/biblioteca/recientes/pdf/oa-W7165478086.pdf",
+  "publicado": "2026-11-02"
+ },
+ {
+  "id": "oa-W7202277567",
+  "tipo": "libro",
+  "titulo": "Estrategias Metacognitivas Vivenciales y Transformación de la Calidad Académica en la Educación Superior",
+  "url": "https://doi.org/10.56275/qmbhrk11",
+  "autores": "Anais Gabriela Vásquez Salazar, Carlos Enrique Moreno Huamán, Waldo Morales Paredes",
+  "anio": 2026,
+  "editorial": "",
+  "doi": "10.56275/qmbhrk11",
+  "pdf": "https://fondoeditorial.unidx.edu.pe/index.php/feunidx/catalog/download/16/16/54",
+  "pdfs": [
+   "https://fondoeditorial.unidx.edu.pe/index.php/feunidx/catalog/download/16/16/54"
+  ],
+  "landings": [
+   "https://doi.org/10.56275/qmbhrk11"
+  ],
+  "lic": "cc-by",
+  "idioma": "es",
+  "tema": "Innovative Teaching and Learning Methods",
+  "resumen": "El libro Estrategias Metacognitivas Vivenciales y Transformación de la Calidad Académica en la Educación Superior analiza cómo la metacognición fortalece la calidad académica al desarrollar estudiantes capaces de planificar, monitorear y evaluar su propio aprendizaje. Expone los fundamentos psicológicos y pedagógicos de la metacognición, su relación con el aprendizaje autorregulado, la resiliencia, la autoeficacia y el pensamiento crítico, así como su integración con tecnologías educativas e inteligencia artificial. Además, propone estrategias metacognitivas vivenciales que vinculan la reflexión con experiencias de aprendizaje significativas, favoreciendo la autonomía, la innovación y la mejora continua en la educación superior, con el propósito de formar profesionales preparados para responder a los desafíos de la sociedad del conocimiento.",
+  "motivo": "Libro de psicología en acceso abierto con licencia CC-BY, de una editorial académica.",
+  "pdf_origen": "https://fondoeditorial.unidx.edu.pe/index.php/feunidx/catalog/download/16/16/54",
+  "paginas": 62,
+  "portada": "https://aurzane.com/biblioteca/recientes/portadas/oa-W7202277567.jpg",
+  "pdf_local": "https://aurzane.com/biblioteca/recientes/pdf/oa-W7202277567.pdf",
+  "publicado": "2026-11-02"
+ },
+ {
+  "id": "oa-W7204200500",
+  "tipo": "libro",
+  "titulo": "Teoría de engramas en las ciencias cognitivas, el concepto dinámico",
+  "url": "https://doi.org/10.22402/ed.leed.978.970.96343.1.0l",
+  "autores": "Miguel Ángel Muñoz López, María del Rocío Hernández Pozo",
+  "anio": 2026,
+  "editorial": "",
+  "doi": "10.22402/ed.leed.978.970.96343.1.0l",
+  "pdf": "https://leedpress.com.mx/index.php/envios/catalog/download/29/29/728?inline=1",
+  "pdfs": [
+   "https://leedpress.com.mx/index.php/envios/catalog/download/29/29/728?inline=1"
+  ],
+  "landings": [
+   "https://doi.org/10.22402/ed.leed.978.970.96343.1.0l"
+  ],
+  "lic": "cc-by",
+  "idioma": "es",
+  "tema": "Philosophy and Theoretical Science",
+  "resumen": "",
+  "motivo": "Libro de psicología en acceso abierto con licencia CC-BY, de una editorial académica.",
+  "pdf_origen": "https://leedpress.com.mx/index.php/envios/catalog/download/29/29/746?inline=1",
+  "paginas": 95,
+  "portada": "https://aurzane.com/biblioteca/recientes/portadas/oa-W7204200500.jpg",
+  "pdf_local": "https://aurzane.com/biblioteca/recientes/pdf/oa-W7204200500.pdf",
+  "publicado": "2026-11-02"
+ },
+ {
+  "id": "oa-W7223568817",
+  "tipo": "libro",
+  "titulo": "Leer el territorio: alfabetización, lenguaje y comprensión lectora en escuelas rurales",
+  "url": "https://doi.org/10.67461/utebooks.11",
+  "autores": "Tatiana Casas Palacios, Liliana Patricia Saldarriaga Hincapié, Leidy Johana Garzón Jiménez",
+  "anio": 2026,
+  "editorial": "",
+  "doi": "10.67461/utebooks.11",
+  "pdf": "https://books.uted.us/index.php/feute/catalog/download/11/31/95",
+  "pdfs": [
+   "https://books.uted.us/index.php/feute/catalog/download/11/31/95"
+  ],
+  "landings": [
+   "https://doi.org/10.67461/utebooks.11"
+  ],
+  "lic": "cc-by",
+  "idioma": "es",
+  "tema": "Reading and Literacy Development",
+  "resumen": "Este libro reúne reflexiones y análisis sobre la relación entre el territorio, la alfabetización, el lenguaje y la comprensión lectora en el contexto de las escuelas rurales. A partir de distintas perspectivas, se examinan temas como las prácticas letradas situadas, la lectura del entorno socioambiental como texto vivo, el desarrollo de habilidades lingüísticas en aulas multigrado y la vinculación entre la oralidad comunitaria y la comprensión de textos escritos. Asimismo, se abordan las percepciones docentes frente a los procesos de lectoescritura, las tensiones entre los diseños curriculares estandarizados y las realidades del campo, y la incorporación de enfoques críticos que valoran la cultura local como eje fundamental del aprendizaje. En conjunto, los capítulos muestran que la mejora educativa no depende únicamente de la aplicación de métodos genéricos, sino de promover una mediaci",
+  "motivo": "Libro de psicología en acceso abierto con licencia CC-BY, de una editorial académica.",
+  "pdf_origen": "https://books.uted.us/index.php/feute/catalog/download/11/31/95",
+  "paginas": 129,
+  "portada": "https://aurzane.com/biblioteca/recientes/portadas/oa-W7223568817.jpg",
+  "pdf_local": "https://aurzane.com/biblioteca/recientes/pdf/oa-W7223568817.pdf",
+  "publicado": "2026-11-02"
+ },
+ {
+  "id": "oa-W7223561213",
+  "tipo": "libro",
+  "titulo": "Aprender con sentido: currículo, metodologías activas y didácticas contextualizadas",
+  "url": "https://doi.org/10.67461/utebooks.10",
+  "autores": "Yusty Carolina Restrepo Segura, Fernando Alfredo Medina Peña, Judith Esther Hernández Barros",
+  "anio": 2026,
+  "editorial": "",
+  "doi": "10.67461/utebooks.10",
+  "pdf": "https://books.uted.us/index.php/feute/catalog/download/10/30/94",
+  "pdfs": [
+   "https://books.uted.us/index.php/feute/catalog/download/10/30/94"
+  ],
+  "landings": [
+   "https://doi.org/10.67461/utebooks.10"
+  ],
+  "lic": "cc-by",
+  "idioma": "es",
+  "tema": "Educational methodologies and cognitive development",
+  "resumen": "Este libro reúne análisis sobre la transformación de los procesos de enseñanza y aprendizaje a partir de la articulación entre el currículo, las metodologías activas y las didácticas contextualizadas. A partir de distintas perspectivas, se examinan temas como el diseño de experiencias de aprendizaje significativas, la implementación del aprendizaje basado en proyectos y problemas, la integración crítica de saberes locales y globales en el aula, y el papel de la evaluación formativa como motor del desarrollo competencial. Asimismo, se abordan las percepciones y desafíos docentes frente a la innovación curricular, la flexibilidad didáctica en diversos escenarios educativos y la necesidad de superar los modelos memorísticos en favor de un enfoque participativo. En conjunto, los capítulos muestran que la verdadera innovación educativa no depende únicamente de la adopción de nuevas técnicas p",
+  "motivo": "Libro de psicología en acceso abierto con licencia CC-BY, de una editorial académica.",
+  "pdf_origen": "https://books.uted.us/index.php/feute/catalog/download/10/30/94",
+  "paginas": 145,
+  "portada": "https://aurzane.com/biblioteca/recientes/portadas/oa-W7223561213.jpg",
+  "pdf_local": "https://aurzane.com/biblioteca/recientes/pdf/oa-W7223561213.pdf",
+  "publicado": "2026-11-02"
+ },
+ {
+  "id": "oa-W7214959401",
+  "tipo": "libro",
+  "titulo": "Certificación de competencias profesionales en salud: factores asociados, evidencia y desafíos",
+  "url": "https://doi.org/10.56275/3ae6mq59",
+  "autores": "Elsa Regina Vigo Ayasta",
+  "anio": 2026,
+  "editorial": "",
+  "doi": "10.56275/3ae6mq59",
+  "pdf": "https://fondoeditorial.unidx.edu.pe/index.php/feunidx/catalog/download/23/23/73",
+  "pdfs": [
+   "https://fondoeditorial.unidx.edu.pe/index.php/feunidx/catalog/download/23/23/73"
+  ],
+  "landings": [
+   "https://doi.org/10.56275/3ae6mq59"
+  ],
+  "lic": "cc-by",
+  "idioma": "es",
+  "tema": "Competency Development and Evaluation",
+  "resumen": "La certificación de competencias profesionales en salud constituye un mecanismo de reconocimiento de las capacidades mostradas en el ejercicio profesional y se relaciona con la actualización permanente, el desarrollo profesional y el fortalecimiento de la calidad de la atención de los servicios de salud. La aplicabilidad, sin embargo, no depende únicamente de las normas o de los procedimientos de las distintas instituciones sino de las circunstancias personales, laborales, sociales e institucionales que pueden incidir en la decisión de los profesionales para participar en sistemas de certificación. El presente libro analiza los factores asociados a la certificación de competencias en profesionales de la salud de la región Lambayeque, combinando los principales fundamentos conceptuales situados en este libro sobre certificación profesional y el enfoque por competencias con los resultados ",
+  "motivo": "Libro de psicología en acceso abierto con licencia CC-BY, de una editorial académica.",
+  "pdf_origen": "https://fondoeditorial.unidx.edu.pe/index.php/feunidx/catalog/download/23/23/73",
+  "paginas": 97,
+  "portada": "https://aurzane.com/biblioteca/recientes/portadas/oa-W7214959401.jpg",
+  "pdf_local": "https://aurzane.com/biblioteca/recientes/pdf/oa-W7214959401.pdf",
+  "publicado": "2026-11-02"
+ },
+ {
+  "id": "pmc-PMC13695868",
+  "tipo": "estudio",
+  "titulo": "Depression and Heart Failure With Preserved Ejection Fraction: An Inflammatory Perspective",
+  "autores": "Chen H, Zhang N, Feng Y y otros",
+  "anio": "2026",
+  "editorial": "Depression and anxiety",
+  "doi": "10.1155/da/7169650",
+  "url": "https://europepmc.org/article/PMC/PMC13695868",
+  "pdf": "",
+  "pdfs": [
+   "https://doi.org/10.1155/da/7169650"
+  ],
+  "lic": "cc-by",
+  "idioma": "en",
+  "tema": "estudio:en",
+  "resumen": "Depression is a common comorbidity in patients with heart failure with preserved ejection fraction (HFpEF), suggesting potential epidemiological and pathophysiological connections between these two age-related chronic diseases. Extensive clinical evidence demonstrates that depression is closely associated with both the incidence and prognosis of HFpEF. It is currently believed that depression may contribute to the pathogenesis of HFpEF through various interconnected mechanisms, including intestinal dysfunction, endothelial dysfunction, disturbances in fat and energy metabolism, autonomic nervous system dysfunction, hypothalamic-pituitary-adrenal (HPA) axis imbalance, and sex differences. Both conditions often share common comorbidities and genetic predispositions. Notably, inflammation is implicated in all these mechanisms and processes, playing a key role at different stages and facilit",
+  "motivo": "Revisión científica en acceso abierto publicado en Depression and anxiety hace poco.",
+  "pdf_origen": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13695868.1/PMC13695868.1.pdf",
+  "paginas": 20,
+  "portada": "https://aurzane.com/biblioteca/recientes/portadas/pmc-PMC13695868.jpg",
+  "pdf_local": "https://aurzane.com/biblioteca/recientes/pdf/pmc-PMC13695868.pdf",
+  "publicado": "2026-11-02"
+ },
+ {
+  "id": "pmc-PMC13720362",
+  "tipo": "estudio",
+  "titulo": "Mental health, resilience, and culturally congruent care among Muslim and Arab American women in the United States: a scoping review",
+  "autores": "Mohammad L",
+  "anio": null,
+  "editorial": "Frontiers in global women's health",
+  "doi": "",
+  "url": "https://europepmc.org/article/PMC/PMC13720362",
+  "pdf": "",
+  "pdfs": [],
+  "lic": "cc-by",
+  "idioma": "en",
+  "tema": "estudio:en",
+  "resumen": "",
+  "motivo": "Revisión científica en acceso abierto publicado en Frontiers in global women's health hace poco.",
+  "pdf_origen": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13720362.1/Supplementaryfile2.pdf",
+  "paginas": 13,
+  "portada": "https://aurzane.com/biblioteca/recientes/portadas/pmc-PMC13720362.jpg",
+  "pdf_local": "https://aurzane.com/biblioteca/recientes/pdf/pmc-PMC13720362.pdf",
+  "publicado": "2026-11-02"
+ },
+ {
+  "id": "pmc-PMC13704590",
+  "tipo": "estudio",
+  "titulo": "Work Demands, Burnout, and Withdrawal Behaviors Among Healthcare Workers: A Systematic Review and Meta-Analysis",
+  "autores": "Jorquera-Gutiérrez R, Durán-Lara K, Moyano-Díaz E",
+  "anio": "2026",
+  "editorial": "Healthcare (Basel, Switzerland)",
+  "doi": "10.3390/healthcare14203542",
+  "url": "https://europepmc.org/article/PMC/PMC13704590",
+  "pdf": "",
+  "pdfs": [
+   "https://doi.org/10.3390/healthcare14203542"
+  ],
+  "lic": "cc-by",
+  "idioma": "en",
+  "tema": "estudio:en",
+  "resumen": "Objectives This study aimed to determine whether work demands-specifically work overload and mental workload-are associated with burnout and withdrawal behaviors among healthcare workers, and to estimate the magnitude of these associations. Method A systematic review with meta-analysis and exploratory structural meta-analytic modeling was conducted, following the PRISMA 2020 guidelines. The search covered Web of Science, Scopus, and PubMed/MEDLINE with no restrictions on publication year, yielding 34 studies. Of these, five studies providing six independent samples with comparable data were included in three bivariate random-effects meta-analyses using REML and Fisher's z-transformation, as well as a two-stage TSSEM to explore the statistical indirect association involving burnout. Results This review identified heterogeneity in the constructs and instruments used, as well as consistent ",
+  "motivo": "Revisión científica en acceso abierto publicado en Healthcare (Basel, Switzerland) hace poco.",
+  "pdf_origen": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13704590.1/PMC13704590.1.pdf",
+  "paginas": 38,
+  "portada": "https://aurzane.com/biblioteca/recientes/portadas/pmc-PMC13704590.jpg",
+  "pdf_local": "https://aurzane.com/biblioteca/recientes/pdf/pmc-PMC13704590.pdf",
+  "publicado": "2026-11-02"
+ },
+ {
+  "id": "oa-W7221653582",
+  "tipo": "libro",
+  "titulo": "Gender, Sexuality and Mental Health",
+  "url": "https://doi.org/10.3390/books978-3-7258-9088-0",
+  "autores": "",
+  "anio": 2026,
+  "editorial": "MDPI eBooks",
+  "doi": "10.3390/books978-3-7258-9088-0",
+  "pdf": "https://mdpi-res.com/bookfiles/book/13472/Gender_Sexuality_and_Mental_Health.pdf?v=1791914495",
+  "pdfs": [
+   "https://mdpi-res.com/bookfiles/book/13472/Gender_Sexuality_and_Mental_Health.pdf?v=1791914495"
+  ],
+  "landings": [
+   "https://doi.org/10.3390/books978-3-7258-9088-0"
+  ],
+  "lic": "cc-by-nc-nd",
+  "idioma": "en",
+  "tema": "LGBTQ Health, Identity, and Policy",
+  "resumen": "This Reprint collects the editorial and the twelve peer-reviewed articles published in the Special Issue Gender, Sexuality and Mental Health of the journal Healthcare. Its starting point is a distinction that matters for both research and care: gender identity and sexual orientation do not, by themselves, produce psychological distress. The excess burden documented among sexual and gender minorities comes from the social conditions attached to these identities (prejudice, discrimination, violence, microaggressions) and from the internalization of that hostility, as described by the process minority stress theory. All twelve of these works stem from this premise. Quantitative studies address depressive symptoms and childhood maltreatment in transgender and gender-diverse adults, suicidality attributed to anti-LGBTQ legislative debates, well-being among sexual minority university students,",
+  "motivo": "Libro de psicología en acceso abierto con licencia CC-BY-NC-ND, de MDPI eBooks.",
+  "pdf_origen": "https://mdpi-res.com/bookfiles/book/13472/Gender_Sexuality_and_Mental_Health.pdf?v=1791914495",
+  "paginas": 242,
+  "portada": "https://aurzane.com/biblioteca/recientes/portadas/oa-W7221653582.jpg",
+  "publicado": "2026-11-02"
+ },
+ {
+  "id": "pmc-PMC13710501",
+  "tipo": "estudio",
+  "titulo": "Plant resilience: harnessing bioactive compounds for sustainable disease protection",
+  "autores": "Latif MZ, Deng M, Asghar N y otros",
+  "anio": "2026",
+  "editorial": "Stress biology",
+  "doi": "10.1007/s44154-026-00343-z",
+  "url": "https://europepmc.org/article/PMC/PMC13710501",
+  "pdf": "",
+  "pdfs": [
+   "https://doi.org/10.1007/s44154-026-00343-z"
+  ],
+  "lic": "cc-by",
+  "idioma": "en",
+  "tema": "estudio:en",
+  "resumen": "Plants have evolved complex phytochemical and immune defense mechanisms in response to pathogen invasion. Plants deploy phytochemical defense system-signaling molecules, secondary metabolites, antimicrobial proteins and peptides-to mitigate the pathogens they encounter. Pathogens have developed strategies-effector proteins, efflux pumps and detoxification mechanisms-to manipulate or overcome plant defenses. This review offers insights into how these bioactive compounds are biosynthesized and activated following pathogen recognition. We provide an overview of the dynamic crosstalk between PTI and ETI and their role in optimizing plant defense. Additionally, we discuss the potential of advanced genetic engineering approaches, nanocarrier-mediated elicitor delivery, and microbiome engineering to enhance these natural defenses. Finally, we address the technical bottlenecks of engineering pla",
+  "motivo": "Revisión científica en acceso abierto publicado en Stress biology hace poco.",
+  "pdf_origen": "https://pmc-oa-opendata.s3.amazonaws.com/PMC13710501.1/PMC13710501.1.pdf",
+  "paginas": 25,
+  "portada": "https://aurzane.com/biblioteca/recientes/portadas/pmc-PMC13710501.jpg",
+  "pdf_local": "https://aurzane.com/biblioteca/recientes/pdf/pmc-PMC13710501.pdf",
+  "publicado": "2026-11-02"
+ },
+ {
+  "id": "oa-W7213484712",
+  "tipo": "libro",
+  "titulo": "La metáfora en la creación científica como inteligencia natural y comunicativa y el nexo matemática-realidad",
+  "url": "https://hdl.handle.net/2133/33972",
+  "autores": "Humberto Manuel Magnasco",
+  "anio": 2026,
+  "editorial": "National University of Rosario",
+  "doi": "",
+  "pdf": "https://rephip.unr.edu.ar/bitstreams/b86489ac-37d3-467b-8db9-d0b3eb1e3541/download",
+  "pdfs": [
+   "https://rephip.unr.edu.ar/bitstreams/b86489ac-37d3-467b-8db9-d0b3eb1e3541/download"
+  ],
+  "landings": [
+   "https://hdl.handle.net/2133/33972"
+  ],
+  "lic": "cc-by-nc-sa",
+  "idioma": "es",
+  "tema": "Language, Metaphor, and Cognition",
+  "resumen": "Analizo aquí la incidencia de la metáfora en el pensamiento de las mentes más brillantes que sentaron las bases de la ciencia moderna y contemporánea. Su presencia inocultable nos susurra que el pensamiento parece regirse por procesos metafóricos. De modo interdisciplinario fundamentamos aquí esta presencia un tanto oculta latiendo bajo los modelos lógico matemáticos. Este latido metafórico recuperado, por un lado sugiere un proceso de inteligencia natural y por otro aporta fecundidad y vivacidad cognoscitiva a lo que usualmente es ofrecido en los libros de ciencia como reconstrucción artificial lógico-matemática. Concomitantemente, la metáfora como “inteligencia natural” plantea una distinción sustantiva respecto de la IA (en su estado actual), mientras que su revestimiento matemático por parte de la ciencia problematiza el nexo matemática-realidad. Ofrezco aquí parte de las reflexiones",
+  "motivo": "Libro de psicología en acceso abierto con licencia CC-BY-NC-SA, de Repositorio Hipermedial UNR (Universidad Nacional de Rosario).",
+  "pdf_origen": "https://rephip.unr.edu.ar/bitstreams/b86489ac-37d3-467b-8db9-d0b3eb1e3541/download",
+  "paginas": 741,
+  "portada": "https://aurzane.com/biblioteca/recientes/portadas/oa-W7213484712.jpg",
+  "publicado": "2026-11-02"
+ },
+ {
+  "id": "oa-W7204769197",
+  "tipo": "libro",
+  "titulo": "Ciudades que suenan, memorias que vibran",
+  "autores": "Verónika Diaz Abrahan, Verónica Alejandra Cannarozzo",
+  "anio": 2026,
+  "editorial": "Universidad Nacional de La Plata (UNLP) eBooks",
+  "url": "https://doi.org/10.35537/10915/198057",
+  "pdf": "http://sedici.unlp.edu.ar/bitstream/handle/10915/198057/Documento_completo.pdf?sequence=1",
+  "lic": "cc-by-nc-sa",
+  "idioma": "es",
+  "tema": "Sound Studies and Aurality",
+  "resumen": "El libro es el resultado del ciclo de actividades “Una Ciudad que Suena”, organizado por la catedra Libre Musicoterapia y el instituto IPCSH-CENPAT y realizado en abril de 2025. En el marco de este ciclo se llevó a cabo una jornada virtual de alcance latinoamericano, que contó con expositoras/es de Argentina, Chile, Uruguay y Colombia, quienes problematizaron los usos sociales y políticos de la música y el sonido en distintos contextos urbanos y culturales. Los trabajos presentados durante la jornada fueron posteriormente compilados en el libro que aquí se presenta.",
+  "motivo": "Libro de psicología en acceso abierto con licencia CC-BY-NC-SA, de una editorial académica.",
+  "portada": "https://aurzane.com/biblioteca/recientes/portadas/oa-W7204769197.jpg",
+  "pdf_origen": "http://sedici.unlp.edu.ar/bitstream/handle/10915/198057/Documento_completo.pdf?sequence=1",
+  "paginas": 143,
+  "publicado": "2026-11-02"
+ },
+ {
+  "id": "oa-W7222967332",
+  "tipo": "libro",
+  "titulo": "Criterios para el diseño de programas de formación en Atención Primaria sobre Salud Mental y prevención del Suicidio en infancia y adolescencia",
+  "autores": "",
+  "anio": 2026,
+  "editorial": "Instituto Aragonés de Ciencias de la Salud (IACS) eBooks",
+  "url": "https://doi.org/10.46994/ets_51",
+  "pdf": "https://doi.org/10.46994/ets_51",
+  "lic": "cc-by-nc-sa",
+  "idioma": "es",
+  "tema": "Suicide and Self-Harm Studies",
+  "resumen": "Zaragoza, por la colaboración prestada en la revisión del cuestionario utilizado para el grupo de discusión de este trabajo. IntroducciónLa adolescencia constituye una etapa clave en la formación de hábitos sociales y emocionales esenciales para el bienestar mental, estrechamente relacionada con los determinantes sociales de la salud mental.A nivel global, la depresión, la ansiedad y los trastornos del comportamiento se encuentran entre las principales causas de enfermedad y discapacidad en los adolescentes siendo el suicidio la tercera causa de defunción en las personas de 15 a 29 años 1 .El suicidio constituye un importante problema de salud pública y representa una de las principales causas de mortalidad prematura en el mundo.De acuerdo con datos recientes de la Organización Mundial de la Salud (OMS), cada año más de 720.000 personas fallecen por suicidio, y muchas más realizan intent",
+  "motivo": "Libro de psicología en acceso abierto con licencia CC-BY-NC-SA, de una editorial académica.",
+  "portada": "https://aurzane.com/biblioteca/recientes/portadas/oa-W7222967332.jpg",
+  "pdf_origen": "https://doi.org/10.46994/ets_51",
+  "paginas": 116,
+  "publicado": "2026-11-02"
+ },
+ {
+  "id": "oa-W7167058661",
+  "tipo": "libro",
+  "titulo": "Manual de Conductas Adictivas Sin Sustancia",
+  "url": "https://iris.unil.ch/handle/iris/283982",
+  "autores": "Joël Billieux, Antonio Rial Boubeta, Abel Nogueira López",
+  "anio": 2026,
+  "editorial": "IRIS",
+  "doi": "10.5281/zenodo.21135339",
+  "pdf": "https://iris.unil.ch/bitstreams/0bf34af5-566b-4e64-b8ed-013b5ca2bcb9/download",
+  "pdfs": [
+   "https://iris.unil.ch/bitstreams/0bf34af5-566b-4e64-b8ed-013b5ca2bcb9/download"
+  ],
+  "landings": [
+   "https://iris.unil.ch/handle/iris/283982"
+  ],
+  "lic": "cc-by",
+  "idioma": "es",
+  "tema": "Gambling Behavior and Treatments",
+  "resumen": "El “Manual de conductas adictivas sin sustancia” ofrece una visión integral y basada en la evidencia sobre las denominadas adicciones sin sustancia. A lo largo de sus 27 capítulos, estructurados en cuatro grandes bloques temáticos, analiza la conceptualización y medición de estas conductas, los avances en epidemiología, los principales modelos teóricos y el debate sobre la patologización de la vida cotidiana.",
+  "motivo": "Libro de psicología en acceso abierto con licencia CC-BY, de IRIS.",
+  "pdf_origen": "https://zenodo.org/records/21135340/files/HN-SAB_ESP%20doi.pdf",
+  "paginas": 726,
+  "portada": "https://aurzane.com/biblioteca/recientes/portadas/oa-W7167058661.jpg",
+  "pdf_local": "https://aurzane.com/biblioteca/recientes/pdf/oa-W7167058661.pdf",
+  "publicado": "2026-11-02"
+ },
+ {
+  "id": "oa-W7208741774",
+  "tipo": "libro",
+  "titulo": "Cadernos de Artigos Científicos, Resumos Expandidos e Simples: IV Jornada de Pesquisa de Psicologia",
+  "autores": "",
+  "anio": 2026,
+  "editorial": "AYA Editora eBooks",
+  "url": "https://doi.org/10.47573/aya.6228.2.531",
+  "pdf": "",
+  "lic": "cc-by",
+  "idioma": "es",
+  "tema": "Psychology Research and Bibliometrics",
+  "resumen": "",
+  "motivo": "Libro de psicología en acceso abierto con licencia CC-BY, de una editorial académica.",
+  "portada": "https://aurzane.com/biblioteca/recientes/portadas/oa-W7208741774.jpg",
+  "pdf_origen": "https://ayaeditora.com.br/livros/L1076.pdf",
+  "paginas": 429,
+  "pdf_local": "https://aurzane.com/biblioteca/recientes/pdf/oa-W7208741774.pdf",
+  "publicado": "2026-11-02"
+ }
+]

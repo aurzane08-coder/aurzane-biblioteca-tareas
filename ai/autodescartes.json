@@ -1,6 +1,51 @@
 [
  {
   "fecha": "2026-11-02",
+  "id": "oa-W7221517314",
+  "tipo": "libro",
+  "titulo": "A Recursive-Ontological Critique of Chalmers' Hard Problem, Philosophical Zombies, and Subjectivity Privilege: AI Consciousness Ethics, Qualia, and Scientific G",
+  "url": "https://philarchive.org/rec/NIUARC",
+  "motivo": "No tiene un PDF libre que se pueda descargar",
+  "probados": []
+ },
+ {
+  "fecha": "2026-11-02",
+  "id": "oa-W7221627898",
+  "tipo": "libro",
+  "titulo": "Recursive Ontology, Causal Continuity, and the Redundancy of the Philosophical Zombie: A Systematic Challenge to David Chalmers's Conceivability Argument",
+  "url": "https://philarchive.org/rec/NIUROC",
+  "motivo": "No tiene un PDF libre que se pueda descargar",
+  "probados": []
+ },
+ {
+  "fecha": "2026-11-02",
+  "id": "oa-W7221597883",
+  "tipo": "libro",
+  "titulo": "The Topology of Thinking and Being: Transparent Puzzles, Recursive Ontology, and the Critique of Fictional Entities",
+  "url": "https://philarchive.org/rec/NIUTTO",
+  "motivo": "No tiene un PDF libre que se pueda descargar",
+  "probados": []
+ },
+ {
+  "fecha": "2026-11-02",
+  "id": "oa-W7221770257",
+  "tipo": "libro",
+  "titulo": "Unified Expression, Semantic Dimensions, and Ontological Commitment: A Recursive-Ontological Challenge to Two-Dimensional Semantics and the Philosophical Zombie",
+  "url": "https://philarchive.org/rec/NIUUES",
+  "motivo": "No tiene un PDF libre que se pueda descargar",
+  "probados": []
+ },
+ {
+  "fecha": "2026-11-02",
+  "id": "oa-W7222685128",
+  "tipo": "libro",
+  "titulo": "Who Grants Logic the Right to Judge Reality? Strong Causality, Strong Logical Conceivability, and the Ontological Possibility of Philosophical Zombies",
+  "url": "https://philarchive.org/rec/NIUWGL",
+  "motivo": "No tiene un PDF libre que se pueda descargar",
+  "probados": []
+ },
+ {
+  "fecha": "2026-11-02",
   "id": "ia-el-perdo-n-col-perlas-de-psicologia-1",
   "tipo": "libro",
   "titulo": "EL PERDÓ N Col Perlas De Psicología 1",

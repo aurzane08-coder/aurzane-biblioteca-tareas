@@ -13,7 +13,7 @@
  ],
  "ed:Revista medica del Instituto Mexicano del Seguro Social": [
   0,
-  3
+  6
  ],
  "ed:Atencion primaria": [
   0,
@@ -21,7 +21,7 @@
  ],
  "ed:Dementia & neuropsychologia": [
   0,
-  1
+  2
  ],
  "ed:De Gruyter": [
   0,
@@ -41,91 +41,91 @@
  ],
  "ed:Advances in rheumatology (London, England)": [
   0,
-  1
+  2
  ],
  "ed:Brain and behavior": [
   0,
-  1
+  2
  ],
  "ed:Frontiers in psychology": [
   0,
-  3
+  7
  ],
  "ed:Frontiers in sleep": [
   0,
-  1
+  2
  ],
  "ed:Frontiers in medicine": [
   0,
-  1
+  2
  ],
  "ed:Actas espanolas de psiquiatria": [
   0,
-  2
+  4
  ],
  "ed:Nursing in critical care": [
   0,
-  1
+  2
  ],
  "ed:Frontiers in public health": [
   0,
-  1
+  2
  ],
  "ed:Frontiers in sports and active living": [
   0,
-  1
+  2
  ],
  "ed:Cureus": [
   0,
-  1
+  3
  ],
  "ed:Frontiers in pain research (Lausanne, Switzerland)": [
   0,
-  1
+  2
  ],
  "ed:Frontiers in digital health": [
   0,
-  1
+  2
  ],
  "ed:Diseases (Basel, Switzerland)": [
   0,
-  1
+  2
  ],
  "ed:Healthcare (Basel, Switzerland)": [
-  0,
+  1,
   1
  ],
  "ed:Neurobiology of sleep and circadian rhythms": [
   0,
-  1
+  2
  ],
  "ed:Frontiers in plant science": [
   0,
-  1
+  3
  ],
  "ed:Journal of clinical medicine": [
   0,
-  2
+  4
  ],
  "ed:Frontiers in global women's health": [
-  0,
+  1,
   1
  ],
  "ed:Depression and anxiety": [
-  0,
+  1,
   1
  ],
  "ed:PhilPapers (PhilPapers Foundation)": [
   0,
-  6
+  11
  ],
  "ed:Internet Archive": [
   0,
   11
  ],
  "ed:": [
-  0,
-  3
+  38,
+  9
  ],
  "ed:undefined": [
   0,
@@ -134,5 +134,181 @@
  "ed:Liverpool John Moores University": [
   0,
   1
+ ],
+ "Psychology Research and Bibliometrics": [
+  1,
+  0
+ ],
+ "ed:AYA Editora eBooks": [
+  1,
+  0
+ ],
+ "tipo:libro": [
+  16,
+  9
+ ],
+ "Gambling Behavior and Treatments": [
+  1,
+  0
+ ],
+ "ed:IRIS": [
+  1,
+  0
+ ],
+ "Suicide and Self-Harm Studies": [
+  1,
+  0
+ ],
+ "ed:Instituto Aragonés de Ciencias de la Salud (IACS) eBooks": [
+  1,
+  0
+ ],
+ "Sound Studies and Aurality": [
+  1,
+  0
+ ],
+ "ed:Universidad Nacional de La Plata (UNLP) eBooks": [
+  1,
+  0
+ ],
+ "Second Language Acquisition and Learning": [
+  0,
+  1
+ ],
+ "ed:Universidad Complutense de Madrid": [
+  0,
+  1
+ ],
+ "Language, Metaphor, and Cognition": [
+  1,
+  0
+ ],
+ "ed:National University of Rosario": [
+  1,
+  0
+ ],
+ "estudio:en": [
+  4,
+  29
+ ],
+ "ed:Frontiers in dental medicine": [
+  0,
+  1
+ ],
+ "tipo:estudio": [
+  4,
+  33
+ ],
+ "ed:Stress biology": [
+  1,
+  0
+ ],
+ "ed:Frontiers in nutrition": [
+  0,
+  1
+ ],
+ "ed:Animals : an open access journal from MDPI": [
+  0,
+  1
+ ],
+ "ed:Nursing reports (Pavia, Italy)": [
+  0,
+  1
+ ],
+ "Outdoor and Experiential Education": [
+  0,
+  1
+ ],
+ "ed:Springer Nature": [
+  0,
+  1
+ ],
+ "Memory, Trauma, and Testimony": [
+  0,
+  1
+ ],
+ "ed:Transcript Verlag": [
+  0,
+  1
+ ],
+ "estudio:es": [
+  0,
+  4
+ ],
+ "ed:Inflammation and regeneration": [
+  0,
+  1
+ ],
+ "ed:Neuropsychiatric disease and treatment": [
+  0,
+  1
+ ],
+ "LGBTQ Health, Identity, and Policy": [
+  1,
+  0
+ ],
+ "ed:MDPI eBooks": [
+  1,
+  0
+ ],
+ "Academic and Historical Perspectives in Psychology": [
+  0,
+  1
+ ],
+ "Competency Development and Evaluation": [
+  1,
+  0
+ ],
+ "Educational methodologies and cognitive development": [
+  1,
+  0
+ ],
+ "Reading and Literacy Development": [
+  2,
+  0
+ ],
+ "Philosophy and Theoretical Science": [
+  1,
+  0
+ ],
+ "Innovative Teaching and Learning Methods": [
+  1,
+  0
+ ],
+ "Education, Achievement, and Giftedness": [
+  1,
+  1
+ ],
+ "Student Stress and Coping": [
+  1,
+  0
+ ],
+ "Educational Games and Gamification": [
+  0,
+  2
+ ],
+ "Resilience and Mental Health": [
+  0,
+  1
+ ],
+ "Child and Adolescent Psychosocial and Emotional Development": [
+  1,
+  0
+ ],
+ "Child Therapy and Development": [
+  1,
+  0
+ ],
+ "Language Acquisition and Education": [
+  0,
+  1
+ ],
+ "cita": [
+  28,
+  0
+ ],
+ "tipo:cita": [
+  28,
+  0
  ]
 }
