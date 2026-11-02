@@ -1,5 +1,5 @@
 name: AURZANE AI Manager
-# Cada 6 horas revisa todo el ecosistema, arregla lo seguro, anuncia las novedades y actualiza el panel aurzane.com/ai/.
+# Cada 6 horas revisa todo el ecosistema, arregla lo seguro, anuncia las novedades, prepara la cola de propuestas y actualiza el panel (aurzane.com/admin.html, sección AURZANE AI).
 # La revisión de las 06:23 UTC es la diaria (mide PageSpeed y manda el resumen por Telegram).
 on:
   schedule:
@@ -22,6 +22,7 @@ jobs:
       SG_PORT: ${{ secrets.SG_PORT }}
       SG_PASS: ${{ secrets.SG_PASS }}
       TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+      TELEGRAM_CANAL: ${{ secrets.TELEGRAM_CANAL }}
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - uses: actions/checkout@v4
@@ -40,9 +41,11 @@ jobs:
       - name: Subir informe y novedades
         if: env.SG_KEY != ''
         run: |
-          $SSH "$SG_DEST" "mkdir -p www/aurzane.com/privado-ai www/aurzane.com/public_html/novedades && chmod 700 www/aurzane.com/privado-ai"
+          $SSH "$SG_DEST" "mkdir -p www/aurzane.com/privado-ai www/aurzane.com/public_html/novedades www/aurzane.com/public_html/biblioteca/recientes && chmod 700 www/aurzane.com/privado-ai"
           cat /tmp/ai/informe.json | $SSH "$SG_DEST" "cat > www/aurzane.com/privado-ai/informe.json && chmod 600 www/aurzane.com/privado-ai/informe.json"
+          cat /tmp/ai/propuestas.json | $SSH "$SG_DEST" "cat > www/aurzane.com/privado-ai/propuestas.json && chmod 600 www/aurzane.com/privado-ai/propuestas.json"
           rsync -rlz --checksum -e "$SSH" /tmp/ai/novedades/ "$SG_DEST:www/aurzane.com/public_html/novedades/"
+          rsync -rlz --checksum -e "$SSH" /tmp/ai/recientes/ "$SG_DEST:www/aurzane.com/public_html/biblioteca/recientes/"
           $SSH "$SG_DEST" "site-tools-client domain-all update id=aurzane.com flush_cache=1 >/dev/null" || true
       - name: Guardar historial
         run: |
