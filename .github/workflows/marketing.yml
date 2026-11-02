@@ -38,7 +38,7 @@ jobs:
       MASTODON_TOKEN: ${{ secrets.MASTODON_TOKEN }}
       FB_PAGINA_ID: ${{ secrets.FB_PAGINA_ID }}
       FB_PAGINA_TOKEN: ${{ secrets.FB_PAGINA_TOKEN }}
-      IG_USUARIO_ID: ${{ secrets.IG_USUARIO_ID }}
+      IG_USUARIO_ID: "17841437879824682"  # @aurzane (identificador público)
       IG_TOKEN_INICIAL: ${{ secrets.IG_TOKEN }}
       THREADS_TOKEN: ${{ secrets.THREADS_TOKEN }}
       X_API_KEY: ${{ secrets.X_API_KEY }}
