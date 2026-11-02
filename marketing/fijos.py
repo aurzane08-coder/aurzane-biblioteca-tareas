@@ -140,7 +140,7 @@ C = [  # (lote, imagen, url, titulo, texto, tags)
  ('07', 14, W + '/articulos/', 'Artículos y guías', 'Información práctica y con fuentes para tu día a día.', ['Divulgación', 'Guías']),
 ]
 for lote, n, url, tit, tx, tags in C:
-    p(f'crea-l{lote}-{n:02d}', 'creativo', 'aurzane', url, tit, [tit, tit + ', gratis', tit], tx, tags, img=f'img/lote{lote}-{n:02d}.jpg')
+    p(f'crea-l{lote}-{n:02d}', 'creativo', 'aurzane', url, tit, [tit, tit + ', gratis', tit], tx, tags, img=f'img/lote{lote}-{n:02d}-v.jpg')
 
 json.dump({'productos': P}, open(os.path.join(os.path.dirname(__file__), 'fijos.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
 print(len(P), 'productos fijos')
