@@ -513,5 +513,30 @@
    }
   }
  },
- "historial": {}
+ "historial": {
+  "telegram": [
+   [
+    "2026-11-02",
+    "curso-metod"
+   ]
+  ],
+  "bluesky": [
+   [
+    "2026-11-02",
+    "calc-sueldo"
+   ]
+  ],
+  "mastodon": [
+   [
+    "2026-11-02",
+    "test-sueno"
+   ]
+  ],
+  "instagram": [
+   [
+    "2026-11-02",
+    "calc-reforma"
+   ]
+  ]
+ }
 }
