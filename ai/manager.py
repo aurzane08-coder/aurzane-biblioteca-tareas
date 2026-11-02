@@ -227,22 +227,29 @@ def portada_pdf(f, dest):
         return os.path.exists(dest) and os.path.getsize(dest) > 3000
     except Exception: return False
 def pdf_en_pagina(u):
-    st, b, _, _ = get(u, t=25)
-    if st != 200: return []
-    t = b[:400000].decode('utf-8', 'replace'); base = u
-    c = re.findall(r'<meta[^>]+name=["\']citation_pdf_url["\'][^>]+content=["\']([^"\']+)', t)
-    c += [urllib.parse.urljoin(base, x) for x in re.findall(r'href=["\']([^"\']+(?:\.pdf|/download|bitstream/[^"\']+))["\']', t, re.I)][:6]
-    return [html.unescape(x) for x in c]
+    """Busca el PDF dentro de la página del editor (meta citation_pdf_url y enlaces de descarga), siguiendo redirecciones."""
+    if not u: return []
+    try:
+        req = urllib.request.Request(u, headers={'User-Agent': UA, 'Accept': 'text/html,*/*'})
+        with urllib.request.urlopen(req, timeout=30) as r: base = r.geturl(); b = r.read(600000)
+    except Exception: return []
+    if b[:5] == b'%PDF-': return [base]
+    t = b.decode('utf-8', 'replace')
+    c = re.findall(r'<meta[^>]+name=["\']citation_pdf_url["\'][^>]+content=["\']([^"\']+)', t) + re.findall(r'<meta[^>]+content=["\']([^"\']+)["\'][^>]+name=["\']citation_pdf_url', t)
+    c += re.findall(r'href=["\']([^"\']+(?:\.pdf(?:\?[^"\']*)?|/download/[^"\']*|bitstream/[^"\']+|/pdf/?|/epdf/?))["\']', t, re.I)[:8]
+    return [urllib.parse.urljoin(base, html.unescape(x)) for x in c]
 def candidatos_pdf(p):
-    c = [x for x in [p.get('pdf')] + p.get('pdfs', []) if x]
+    c = [x for x in [p.get('pdf')] + p.get('pdfs', []) if x and 'europepmc.org/articles' not in x and 'ncbi.nlm.nih.gov' not in x]
     doi = p.get('doi') or ''
-    if doi.startswith('10.1007/'): c.append(f'https://link.springer.com/content/pdf/{doi}.pdf')
-    if p['tipo'] == 'estudio': c.append(f'https://europepmc.org/articles/{p["id"][4:]}?pdf=render')
+    if doi.startswith('10.1007/') or doi.startswith('10.1186/'): c.append(f'https://link.springer.com/content/pdf/{doi}.pdf')
+    if doi.startswith('10.3389/'): c.append(f'https://www.frontiersin.org/articles/{doi}/pdf')
+    if doi.startswith('10.1371/'): c.append(f'https://journals.plos.org/plosone/article/file?id={doi}&type=printable')
     return list(dict.fromkeys(c))
 def verificar(p, guardar_pdf=False):
     """Devuelve (ok, motivo). Rellena p['paginas'], p['portada'] y, si se pide, deja el PDF listo para publicar."""
     dest = f'{TMP}/{p["id"]}.pdf'; estado = 'nopdf'
-    for u in candidatos_pdf(p) + (pdf_en_pagina(p['url']) if p['tipo'] == 'libro' else []):
+    paginas_ed = ([p['url']] if p['tipo'] == 'libro' else []) + ([f'https://doi.org/{p["doi"]}'] if p.get('doi') else [])
+    for u in list(dict.fromkeys(candidatos_pdf(p) + [x for w in paginas_ed for x in pdf_en_pagina(w)]))[:10]:
         estado = descargar(u, dest)
         if estado == 'ok': p['pdf_origen'] = u; break
     if estado == 'grande': return False, 'el PDF pesa más de 80 MB'
@@ -263,6 +270,10 @@ def descartar_solo(p, motivo):
         a = apr.setdefault(k, [0, 0]); a[1] += 1
 
 decis = jremoto('decisiones.json', {}); pend = jremoto('propuestas.json', [])
+if not ESTADO.get('reintento_pdf_1'):
+    otra = {a['id'] for a in autodesc if a['motivo'].startswith('No tiene un PDF')}
+    vistos -= otra; autodesc = [a for a in autodesc if a['id'] not in otra]; ESTADO['reintento_pdf_1'] = HOY
+
 canal, TGT = os.environ.get('TELEGRAM_CANAL', ''), os.environ.get('TELEGRAM_TOKEN', '')
 nuevos_pub, corregidas = [], 0
 for p in pend:
@@ -342,6 +353,7 @@ if DIARIO or len(pend) < 8:
             au = (r.get('authorString') or '').rstrip('.').split(', '); au = ', '.join(au[:3]) + (' y otros' if len(au) > 3 else '')
             nuevos.append({'id': pid, 'tipo': 'estudio', 'titulo': html.unescape(re.sub('<[^>]+>', '', r.get('title', ''))).strip().strip('[]').rstrip('.'), 'autores': au,
                 'anio': r.get('pubYear'), 'editorial': revista, 'doi': r.get('doi') or '', 'url': 'https://europepmc.org/article/PMC/' + r['pmcid'], 'pdf': '',
+                'pdfs': [f['url'] for f in ((r.get('fullTextUrlList') or {}).get('fullTextUrl') or []) if f.get('documentStyle') == 'pdf' and f.get('site') not in ('Europe_PMC', 'PubMedCentral')][:3] + [f['url'] for f in ((r.get('fullTextUrlList') or {}).get('fullTextUrl') or []) if f.get('documentStyle') == 'doi'][:1],
                 'lic': lic, 'idioma': idioma, 'tema': 'estudio:' + idioma, 'resumen': html.unescape(re.sub('<[^>]+>', ' ', r.get('abstractText', ''))).strip()[:900],
                 'motivo': ('Revisión científica' if idioma == 'en' else 'Artículo') + f' en acceso abierto publicado en {revista} hace poco.'})
         time.sleep(1)
