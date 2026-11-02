@@ -40,6 +40,10 @@ jobs:
               -e "$SSH" "$d" "$SG_USER@$SG_HOST:www/$dom/public_html/"
             # vaciar la caché dinámica de ese dominio (no bloquea si falla)
             $SSH "$SG_USER@$SG_HOST" "curl -s -o /dev/null -w '%{http_code}' -X PURGE -H 'Host: $dom' 'http://127.0.0.1/(.*)' ; echo ' purge $dom'" || true
+            # y además cada archivo subido por separado (la caché de SiteGround no siempre suelta los .js y .css con el comodín)
+            (cd "$d" && find . -type f | sed 's|^\./|/|') > /tmp/rutas.txt
+            sed 's|/index\.html$|/|' /tmp/rutas.txt > /tmp/rutas2.txt
+            sort -u /tmp/rutas.txt /tmp/rutas2.txt | $SSH "$SG_USER@$SG_HOST" "while read r; do curl -s -o /dev/null -X PURGE -H 'Host: $dom' \"http://127.0.0.1\$r\"; done; echo ' purge por archivo $dom'" || true
           done
           echo "FECHA=$FECHA" >> $GITHUB_ENV
       - name: Archivar lo publicado
