@@ -9,7 +9,7 @@ import json, os, re, ssl, socket, time, datetime, subprocess, urllib.request, ur
 D = os.path.dirname(os.path.abspath(__file__)); RAIZ = os.path.dirname(D)
 OUT = '/tmp/ai'; os.makedirs(OUT + '/novedades', exist_ok=True)
 AHORA = datetime.datetime.now(datetime.timezone.utc); HOY = AHORA.date().isoformat()
-UA = 'Mozilla/5.0 (compatible; AurzaneAIManager/1.0; +https://aurzane.com/)'
+UA = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36 AurzaneAIManager/1.0'
 HOSTS = ['aurzane.com', 'mind.aurzane.com', 'nexus.aurzane.com', 'live.aurzane.com', 'learn.aurzane.com', 'build.aurzane.com', 'ovp.aurzane.com']
 CLAVE = ['https://aurzane.com/', 'https://mind.aurzane.com/', 'https://mind.aurzane.com/ejercicios/', 'https://mind.aurzane.com/test-de-ansiedad/',
          'https://nexus.aurzane.com/universidades/', 'https://nexus.aurzane.com/universidades/que-puedo-estudiar/', 'https://nexus.aurzane.com/calculadora-nota-pau/',
