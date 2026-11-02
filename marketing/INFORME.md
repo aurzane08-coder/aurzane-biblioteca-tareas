@@ -6,7 +6,7 @@ Actualizado: 2026-11-02. Clics de personas (sin bots ni vistas previas) que entr
 |---|---|---|
 | telegram | 2 | 4 |
 | bluesky | 2 | 4 |
-| mastodon | 2 | 2 |
+| mastodon | 2 | 3 |
 | instagram | 2 | 0 |
 | facebook | 2 | 5 |
 | threads | 0 | 0 |
@@ -21,3 +21,4 @@ Actualizado: 2026-11-02. Clics de personas (sin bots ni vistas previas) que entr
 | test-autoestima | 3 |
 | test-sueno | 2 |
 | frase-fee27969 | 2 |
+| frase-b424a195 | 1 |
