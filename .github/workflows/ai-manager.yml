@@ -1,0 +1,52 @@
+name: AURZANE AI Manager
+# Cada 6 horas revisa todo el ecosistema, arregla lo seguro, anuncia las novedades y actualiza el panel aurzane.com/ai/.
+# La revisión de las 06:23 UTC es la diaria (mide PageSpeed y manda el resumen por Telegram).
+on:
+  schedule:
+    - cron: '23 0,6,12,18 * * *'
+  push:
+    paths: ['ai/manager.py', '.github/workflows/ai-manager.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: write
+concurrency: ai-manager
+jobs:
+  manager:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      SG_KEY: ${{ secrets.SG_KEY }}
+      SG_HOST: ${{ secrets.SG_HOST }}
+      SG_USER: ${{ secrets.SG_USER }}
+      SG_PORT: ${{ secrets.SG_PORT }}
+      SG_PASS: ${{ secrets.SG_PASS }}
+      TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: SSH
+        if: env.SG_KEY != ''
+        run: |
+          mkdir -p ~/.ssh && printf '%s\n' "$SG_KEY" | tr -d '\r' > ~/.ssh/id && chmod 600 ~/.ssh/id
+          if [ -n "$SG_PASS" ]; then ssh-keygen -p -P "$SG_PASS" -N "" -f ~/.ssh/id >/dev/null; fi
+          echo "SSH=ssh -i $HOME/.ssh/id -p ${SG_PORT:-18765} -o StrictHostKeyChecking=accept-new" >> $GITHUB_ENV
+          echo "SG_DEST=$SG_USER@$SG_HOST" >> $GITHUB_ENV
+      - name: Revisar y arreglar
+        run: |
+          [ "$(date -u +%H)" = "06" ] && export DIARIO=1
+          [ "${{ github.event_name }}" = "push" ] && export DIARIO=1
+          python3 -u ai/manager.py
+      - name: Subir informe y novedades
+        if: env.SG_KEY != ''
+        run: |
+          $SSH "$SG_DEST" "mkdir -p www/aurzane.com/privado-ai www/aurzane.com/public_html/novedades && chmod 700 www/aurzane.com/privado-ai"
+          cat /tmp/ai/informe.json | $SSH "$SG_DEST" "cat > www/aurzane.com/privado-ai/informe.json && chmod 600 www/aurzane.com/privado-ai/informe.json"
+          rsync -rlz --checksum -e "$SSH" /tmp/ai/novedades/ "$SG_DEST:www/aurzane.com/public_html/novedades/"
+          $SSH "$SG_DEST" "site-tools-client domain-all update id=aurzane.com flush_cache=1 >/dev/null" || true
+      - name: Guardar historial
+        run: |
+          git config user.name "aurzane-bot"; git config user.email "bot@aurzane.com"
+          git add ai/*.json
+          git commit -qm "ai: revisión $(date -u +%F' '%H:%M)" || exit 0
+          for i in 1 2 3 4 5; do git pull --rebase -q && git push -q && break; sleep 7; done
