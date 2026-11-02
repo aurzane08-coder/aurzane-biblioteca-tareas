@@ -17,3 +17,8 @@
 2026-11-02,2,instagram,crea-l06-03,ok,18105110492638027
 2026-11-02,2,facebook,crea-l06-14,ok,1411384405395087_122104408665526868
 2026-11-02,2,pinterest,crea-l07-04,feed,
+2026-11-02,4,instagram,frase-1a4c614c,ok,18200690305375692
+2026-11-02,4,facebook,frase-7c565d26,ok,1662526618716939
+2026-11-02,4,youtube,frase-2144e317,ok,https://youtu.be/c7Z5ePRbLcw
+2026-11-02,4,tiktok,calc-pau,error,400 {"error":{"code":"invalid_params" "message":"The request source info is empty or incorrect" "log_id":"202611030418554B6B6EF5C5D6B1FB2516"}}
+2026-11-02,4,telegram,test-autoestima,ok,7
