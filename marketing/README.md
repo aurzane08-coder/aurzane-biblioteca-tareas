@@ -34,7 +34,7 @@ Crea la cuenta tú y añade los secretos en GitHub: repositorio `aurzane-bibliot
 
 ## Fotos de las tarjetas
 
-Con el secreto `PEXELS_API_KEY` (gratis en pexels.com/api), cada tarjeta usa una foto de [Pexels](https://www.pexels.com) elegida por el tema del producto, con la publicidad compuesta encima y el crédito del fotógrafo. La licencia de Pexels permite el uso comercial gratis. La foto elegida para cada producto queda en `fotos.json`; para cambiarla, borra su línea y se busca otra. Pinterest no se usa como fuente de imágenes: sus imágenes son de sus autores.
+Cada tarjeta usa una foto de [Pexels](https://www.pexels.com) elegida por el tema del producto (biblioteca de casi 1.000 fotos en `biblioteca_fotos.json`), con la publicidad compuesta encima. La licencia de Pexels permite el uso comercial gratis. La foto elegida para cada producto queda en `fotos.json`; para cambiarla, borra su línea y se busca otra. Pinterest no se usa como fuente de imágenes: sus imágenes son de sus autores.
 
 ## Añadir o cambiar productos
 

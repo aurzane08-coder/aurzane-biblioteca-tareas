@@ -175,7 +175,7 @@ def planificar(dias=14):
     necesarios = {i for f, fr in cal.items() if f >= HOY.isoformat() for x in fr.values() for i in x.values()}
     lista = []
     os.makedirs(os.path.join(D, 'img', 'auto'), exist_ok=True)
-    fotos = leer('fotos.json', {}); usadas = {f['pid'] for f in fotos.values()}
+    fotos = leer('fotos.json', {}); usadas = {str(f['pid']) for f in fotos.values()}
     for i in sorted(necesarios):
         p = cat[i]
         if p.get('img'): continue
@@ -188,11 +188,11 @@ def planificar(dias=14):
                else recorta(p['texto'], 150))
         if p['tipo'] == 'frase':
             lista.append(dict(id=i, mundo=p['mundo'], frase=p['titulo'], autor='' if p['autor'] == 'AURZANE' else p['autor'], salida=sal,
-                              foto=foto['src'] if foto else '', credito=f"Foto: {foto['autor']} · Pexels" if foto else ''))
+                              foto=foto['src'] if foto else '', credito='Foto: Pexels' if foto else ''))
             continue
         lista.append(dict(id=i, mundo=p['mundo'], kicker=kick, titulo=p['titulo'] if p['tipo'] in ('libro',) else p['ganchos'][0],
                           sub=sub, pie=pie_de(p['url']), emoji='' if foto else p.get('emoji', ''), salida=sal,
-                          foto=foto['src'] if foto else '', credito=f"Foto: {foto['autor']} · Pexels" if foto else ''))
+                          foto=foto['src'] if foto else '', credito='Foto: Pexels' if foto else ''))
     guardar('fotos.json', fotos)
     json.dump(lista, open('/tmp/tarjetas.json', 'w'), ensure_ascii=False)
     print('Tarjetas por generar:', len(lista))
@@ -245,22 +245,20 @@ def consulta_foto(p):
 
 
 def foto_para(p, fotos, usadas):
-    """Devuelve la foto (dict) de Pexels para el producto; la busca una vez y la guarda en fotos.json."""
+    """Foto de Pexels (licencia Pexels: uso comercial gratis, sin atribución obligatoria) para el producto.
+    Sale de biblioteca_fotos.json (fotos elegidas por tema en pexels.com); se guarda en fotos.json para no cambiarla."""
     if p['id'] in fotos: return fotos[p['id']]
-    clave = os.environ.get('PEXELS_API_KEY')
-    if not clave: return None
+    lib = leer('biblioteca_fotos.json', {})
     q = consulta_foto(p)
-    try:
-        req = urllib.request.Request('https://api.pexels.com/v1/search?' + urllib.parse.urlencode({'query': q, 'orientation': 'portrait', 'per_page': 40}),
-                                     headers={'Authorization': clave, 'User-Agent': 'AURZANE-marketing/1.0'})
-        res = json.loads(urllib.request.urlopen(req, timeout=40).read())['photos']
-    except Exception as e:
-        print('Pexels:', e); return None
-    libres = [f for f in res if f['id'] not in usadas] or res
+    ids = lib.get(q) or lib.get('open book reading') or []
+    libres = [i for i in ids if i.split('.')[0] not in usadas] or ids
     if not libres: return None
-    f = libres[int(hashlib.md5(p['id'].encode()).hexdigest(), 16) % min(len(libres), 12)]
-    fotos[p['id']] = {'pid': f['id'], 'src': f['src']['large2x'], 'autor': f['photographer'], 'url': f['url'], 'q': q}
-    usadas.add(f['id'])
+    sel = libres[int(hashlib.md5(p['id'].encode()).hexdigest(), 16) % len(libres)]
+    pid, _, ext = sel.partition('.')
+    ext = ext or 'jpeg'
+    fotos[p['id']] = {'pid': pid, 'q': q, 'autor': 'Pexels', 'url': f'https://www.pexels.com/photo/{pid}/',
+                      'src': f'https://images.pexels.com/photos/{pid}/pexels-photo-{pid}.{ext}?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop'}
+    usadas.add(pid)
     return fotos[p['id']]
 
 
