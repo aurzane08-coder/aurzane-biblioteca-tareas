@@ -44,7 +44,7 @@ jobs:
       IG_TOKEN_INICIAL: ${{ secrets.IG_TOKEN }}
       THREADS_TOKEN: ${{ secrets.THREADS_TOKEN }}
       FB_PAGINA_ID: "1411384405395087"  # página Aurzane (identificador público)
-      YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+      YT_CLIENT_ID: "5296096526-v4h7ddqrv6stn3b251rbccguj63hpda3.apps.googleusercontent.com"  # identificador público del cliente
       YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
       YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
       TIKTOK_CLIENT_KEY: ${{ secrets.TIKTOK_CLIENT_KEY }}
