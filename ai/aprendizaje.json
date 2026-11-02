@@ -25,15 +25,15 @@
  ],
  "ed:De Gruyter": [
   0,
-  1
+  2
  ],
  "ed:Common Ground Research Networks eBooks": [
   0,
-  2
+  4
  ],
  "ed:IntechOpen": [
   0,
-  1
+  2
  ],
  "ed:Frontiers in psychiatry": [
   0,
@@ -52,6 +52,38 @@
   3
  ],
  "ed:Frontiers in sleep": [
+  0,
+  1
+ ],
+ "ed:Frontiers in medicine": [
+  0,
+  1
+ ],
+ "ed:Actas espanolas de psiquiatria": [
+  0,
+  2
+ ],
+ "ed:Nursing in critical care": [
+  0,
+  1
+ ],
+ "ed:Frontiers in public health": [
+  0,
+  1
+ ],
+ "ed:Frontiers in sports and active living": [
+  0,
+  1
+ ],
+ "ed:Cureus": [
+  0,
+  1
+ ],
+ "ed:Frontiers in pain research (Lausanne, Switzerland)": [
+  0,
+  1
+ ],
+ "ed:Frontiers in digital health": [
   0,
   1
  ]
