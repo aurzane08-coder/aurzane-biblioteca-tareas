@@ -5,3 +5,9 @@
 2026-11-02,1,facebook,test-autoestima,error,400 {"error":{"message":"(#100) Object does not exist  cannot be loaded due to missing permission or reviewable feature  or does not support this oper
 2026-11-02,1,facebook,test-autoestima,error,400 {"error":{"message":"(#100) Object does not exist  cannot be loaded due to missing permission or reviewable feature  or does not support this oper
 2026-11-02,1,facebook,test-autoestima,ok,1411384405395087_122104129509526868
+2026-11-02,3,telegram,frase-8ddc6e9a,ok,3
+2026-11-02,3,bluesky,frase-c5f24133,ok,at://did:plc:6ovoiudj7dkxgrzd2zkyn77y/app.bsky.feed.post/3mzdcg3moe22d
+2026-11-02,3,mastodon,frase-b424a195,ok,https://mastodon.social/@auzane/117546791849858035
+2026-11-02,3,instagram,frase-9b2daa33,ok,18093440315212608
+2026-11-02,3,facebook,frase-fee27969,ok,1411384405395087_122104132155526868
+2026-11-02,3,pinterest,frase-71831c29,feed,
