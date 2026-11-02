@@ -426,6 +426,8 @@ if __name__ == '__main__':
     elif a == 'planificar': planificar(); feed()
     elif a == 'publicar': publicar(sys.argv[2])
     elif a == 'clics': clics(sys.argv[2])
+    elif a == 'renovar-ig':
+        import redes; print(redes.renovar_instagram())
     elif a == 'verificar':
         import redes; redes.verificar()
     elif a == 'muestra':

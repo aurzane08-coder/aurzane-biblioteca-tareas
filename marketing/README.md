@@ -26,10 +26,10 @@ Crea la cuenta tú y añade los secretos en GitHub: repositorio `aurzane-bibliot
 | Telegram | `TELEGRAM_TOKEN`, `TELEGRAM_CANAL` | Crea un canal público. Habla con @BotFather, `/newbot`, copia el token. Añade el bot como administrador del canal. Canal = `@nombre_del_canal`. |
 | Bluesky | `BSKY_USUARIO`, `BSKY_CLAVE_APP` | Usuario = `aurzane.bsky.social` (o el tuyo). Settings > Privacy and security > App passwords > Add. |
 | Mastodon | `MASTODON_SERVIDOR`, `MASTODON_TOKEN` | Servidor, p. ej. `mastodon.social`. Preferencias > Desarrollo > Nueva aplicación con permisos `write:statuses` y `write:media`. Copia el token de acceso. |
-| Facebook | `FB_PAGINA_ID`, `FB_PAGINA_TOKEN` | Página de Facebook. En developers.facebook.com crea una app, en Graph API Explorer pide `pages_manage_posts`, `pages_read_engagement`, `instagram_basic`, `instagram_content_publish`, cambia a token largo y saca el token de la página (no caduca). |
-| Instagram | `IG_USUARIO_ID` (+ `FB_PAGINA_TOKEN`) | Cuenta profesional de Instagram vinculada a la página. El ID sale en Graph API Explorer: `me/accounts?fields=instagram_business_account`. |
+| Facebook (desactivada) | `FB_PAGINA_ID`, `FB_PAGINA_TOKEN` | Página de Facebook. En developers.facebook.com crea una app, en Graph API Explorer pide `pages_manage_posts`, `pages_read_engagement`, `instagram_basic`, `instagram_content_publish`, cambia a token largo y saca el token de la página (no caduca). |
+| Instagram | `IG_TOKEN` | Cuenta profesional de Instagram (sin página de Facebook). App de Meta con el caso de uso "API de Instagram con inicio de sesión de Instagram", permiso `instagram_business_content_publish`, token largo generado en el panel de la app. Se renueva solo cada día y se guarda en el servidor, fuera de la web (`privado/ig_token`). |
 | Threads | `THREADS_TOKEN` | App de Meta con el caso de uso Threads API, permisos `threads_basic` y `threads_content_publish`. El token largo dura 60 días: hay que renovarlo. |
-| X | `X_API_KEY`, `X_API_SECRET`, `X_ACCESS_TOKEN`, `X_ACCESS_SECRET` | developer.x.com, plan gratuito, app con permisos Read and write. Solo texto con enlace (la tarjeta sale de la página). |
+| X (desactivada: cobra por publicar) | `X_API_KEY`, `X_API_SECRET`, `X_ACCESS_TOKEN`, `X_ACCESS_SECRET` | developer.x.com, plan gratuito, app con permisos Read and write. Solo texto con enlace (la tarjeta sale de la página). |
 | Pinterest | ninguno | Cuenta de empresa > Ajustes > Publicación masiva > Conectar RSS: `https://aurzane.com/marketing/feed.xml`. |
 
 ## Fotos de las tarjetas

@@ -39,6 +39,7 @@ jobs:
       FB_PAGINA_ID: ${{ secrets.FB_PAGINA_ID }}
       FB_PAGINA_TOKEN: ${{ secrets.FB_PAGINA_TOKEN }}
       IG_USUARIO_ID: ${{ secrets.IG_USUARIO_ID }}
+      IG_TOKEN_INICIAL: ${{ secrets.IG_TOKEN }}
       THREADS_TOKEN: ${{ secrets.THREADS_TOKEN }}
       X_API_KEY: ${{ secrets.X_API_KEY }}
       X_API_SECRET: ${{ secrets.X_API_SECRET }}
@@ -67,6 +68,22 @@ jobs:
           sudo apt-get install -y -qq fonts-noto-color-emoji >/dev/null
           mkdir -p /tmp/f && cd /tmp/f && npm init -y >/dev/null && npm i -s playwright@1.48.2 @fontsource/bodoni-moda@5 @fontsource/instrument-sans@5 && npx playwright install chromium
           cd $GITHUB_WORKSPACE && NODE_PATH=/tmp/f/node_modules node marketing/tarjeta.js /tmp/tarjetas.json /tmp/f/node_modules/@fontsource
+      - name: Token de Instagram (se renueva solo y se guarda fuera de la web)
+        run: |
+          T=""
+          if [ -n "$SSH" ]; then T=$($SSH "$SG_USER@$SG_HOST" "cat privado/ig_token 2>/dev/null" || true); fi
+          T=${T:-$IG_TOKEN_INICIAL}
+          [ -z "$T" ] && exit 0
+          echo "::add-mask::$T"
+          if [ "$ACCION" = planificar ] && [ -n "$SSH" ]; then
+            N=$(IG_TOKEN="$T" python3 marketing/mk.py renovar-ig 2>/dev/null | tail -1 || true)
+            if [ -n "$N" ] && [ ${#N} -gt 50 ]; then
+              echo "::add-mask::$N"; T="$N"
+              printf '%s' "$T" | $SSH "$SG_USER@$SG_HOST" "mkdir -p privado && chmod 700 privado && cat > privado/ig_token && chmod 600 privado/ig_token"
+              echo "Token de Instagram renovado"
+            fi
+          fi
+          echo "IG_TOKEN=$T" >> $GITHUB_ENV
       - name: Comprobar redes
         if: env.ACCION == 'verificar' || env.ACCION == 'planificar'
         run: python3 marketing/mk.py verificar | sed 's/^/::notice title=Redes::/'

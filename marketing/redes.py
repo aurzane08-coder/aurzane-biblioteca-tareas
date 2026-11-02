@@ -8,7 +8,7 @@ SECRETOS = {
     'bluesky': ['BSKY_USUARIO', 'BSKY_CLAVE_APP'],
     'mastodon': ['MASTODON_SERVIDOR', 'MASTODON_TOKEN'],
     'facebook': ['FB_PAGINA_ID', 'FB_PAGINA_TOKEN'],
-    'instagram': ['IG_USUARIO_ID', 'FB_PAGINA_TOKEN'],
+    'instagram': ['IG_TOKEN'],
     'threads': ['THREADS_TOKEN'],
     'x': ['X_API_KEY', 'X_API_SECRET', 'X_ACCESS_TOKEN', 'X_ACCESS_SECRET'],
 }
@@ -94,15 +94,26 @@ def facebook(texto, img_url, img_local, enlace, p):
     return r.get('post_id') or r.get('id')
 
 
+IG = 'https://graph.instagram.com/v21.0/'
+
+
 def instagram(texto, img_url, img_local, enlace, p):
-    ig, tk = E('IG_USUARIO_ID'), E('FB_PAGINA_TOKEN')
-    c = pedir(GRAPH + ig + '/media', {'image_url': img_url, 'caption': texto[:2200], 'access_token': tk})
+    """Instagram API con inicio de sesión de Instagram (cuenta profesional, sin página de Facebook)."""
+    tk = E('IG_TOKEN')
+    ig = E('IG_USUARIO_ID') or pedir(IG + 'me?' + urllib.parse.urlencode({'fields': 'user_id', 'access_token': tk}))['user_id']
+    c = pedir(IG + f'{ig}/media', {'image_url': img_url, 'caption': texto[:2200], 'access_token': tk})
     for _ in range(12):
-        s = pedir(GRAPH + c['id'] + '?' + urllib.parse.urlencode({'fields': 'status_code', 'access_token': tk}))
+        s = pedir(IG + c['id'] + '?' + urllib.parse.urlencode({'fields': 'status_code', 'access_token': tk}))
         if s.get('status_code') == 'FINISHED': break
         if s.get('status_code') == 'ERROR': raise RuntimeError('Instagram rechazó la imagen')
         time.sleep(5)
-    return pedir(GRAPH + ig + '/media_publish', {'creation_id': c['id'], 'access_token': tk})['id']
+    return pedir(IG + f'{ig}/media_publish', {'creation_id': c['id'], 'access_token': tk})['id']
+
+
+def renovar_instagram():
+    """Renueva el token largo (dura 60 días). Imprime el nuevo para guardarlo en el servidor."""
+    r = pedir('https://graph.instagram.com/refresh_access_token?' + urllib.parse.urlencode({'grant_type': 'ig_refresh_token', 'access_token': E('IG_TOKEN')}))
+    return r['access_token']
 
 
 def threads(texto, img_url, img_local, enlace, p):
@@ -142,6 +153,11 @@ def verificar():
             s = pedir('https://bsky.social/xrpc/com.atproto.server.createSession', {'identifier': E('BSKY_USUARIO'), 'password': E('BSKY_CLAVE_APP')}, {'Content-Type': 'application/json'})
             out['bluesky'] = 'ok ' + s['handle']
         except Exception as e: out['bluesky'] = 'ERROR ' + str(e)[:200]
+    if configurada('instagram'):
+        try:
+            me = pedir(IG + 'me?' + urllib.parse.urlencode({'fields': 'user_id,username,account_type', 'access_token': E('IG_TOKEN')}))
+            out['instagram'] = f"ok @{me.get('username')} ({me.get('account_type')})"
+        except Exception as e: out['instagram'] = 'ERROR ' + str(e)[:200]
     if configurada('mastodon'):
         try:
             base = E('MASTODON_SERVIDOR').rstrip('/'); base = base if base.startswith('http') else 'https://' + base
