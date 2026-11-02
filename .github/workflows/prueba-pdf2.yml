@@ -17,8 +17,15 @@ jobs:
           if [ -n "$SG_PASS" ]; then ssh-keygen -p -P "$SG_PASS" -N "" -f ~/.ssh/id >/dev/null; fi
           SSH="ssh -i $HOME/.ssh/id -p ${SG_PORT:-18765} -o StrictHostKeyChecking=accept-new $SG_USER@$SG_HOST"
           UA='Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36'
-          for u in "https://pmc-oa-opendata.s3.amazonaws.com/PMC13721388.1/PMC13721388.1.pdf" "https://europepmc.org/articles/PMC13721388?pdf=render" "https://www.mdpi.com/2077-0383/15/20/8140/pdf" "https://library.oapen.org/bitstream/handle/20.500.12657/90000/9781040016305.pdf" "https://www.openbookpublishers.com/books/10.11647/obp.0400" "https://link.springer.com/content/pdf/10.1186/s42358-026-00591-7.pdf"; do
+          python3 -c "
+          import json,urllib.request
+          d=json.load(urllib.request.urlopen('https://api.openalex.org/works?filter=type:book,is_oa:true,primary_topic.field.id:32,from_publication_date:2024-01-01,locations.source.id:S4306402567|S4210205521&per-page=8&select=title,locations&mailto=hola@aurzane.com'))
+          print('N',d['meta']['count'])
+          for w in d['results']:
+            for l in w['locations']:
+              if l.get('pdf_url'): print(l['pdf_url'])
+          " > /tmp/u.txt 2>&1; cat /tmp/u.txt | head -12
+          for u in $(grep http /tmp/u.txt | head -4) "https://library.oapen.org/rest/search?query=psychology&expand=bitstreams&limit=1" "https://directory.doabooks.org/rest/search?query=psicolog%C3%ADa&expand=metadata&limit=1"; do
             echo "::notice title=GH::$(curl -s -L -A "$UA" -r 0-4 -o /tmp/x -w '%{http_code} %{content_type}' "$u") $(head -c5 /tmp/x | tr -cd '[:print:]') $u"
             echo "::notice title=SG::$($SSH "curl -s -L -A '$UA' -r 0-4 -o /tmp/x -w '%{http_code} %{content_type}' '$u'; head -c5 /tmp/x | tr -cd '[:print:]'") $u"
           done
-          curl -s "https://pmc-oa-opendata.s3.amazonaws.com/?list-type=2&prefix=PMC13721388" | head -c 600; echo
