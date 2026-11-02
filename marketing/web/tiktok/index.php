@@ -1,5 +1,5 @@
 <?php
-// Redirección registrada en TikTok for Developers (Login Kit, Sandbox y Production): https://aurzane.com/tiktok/
+// Redirección registrada en TikTok for Developers (Login Kit): https://aurzane.com/tiktok/ . Claves de Sandbox empiezan por sb.
 // Conexión de la cuenta de TikTok de AURZANE (una sola vez).
 // aurzane.com/tiktok/?inicio=1 -> TikTok pide permiso -> vuelve aquí con ?code= -> se canjea en el servidor
 // y el token de actualización se guarda fuera de la web (privado-tiktok/refresh). Nunca se muestra.
