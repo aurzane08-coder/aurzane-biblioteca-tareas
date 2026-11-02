@@ -1,0 +1,10 @@
+name: Prueba mapa
+on:
+  push:
+    paths: ['.github/workflows/prueba-mapa.yml']
+jobs:
+  p:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          for u in https://aurzane.com/mapa/ https://aurzane.com/ https://aurzane.com/biblioteca/recientes/ https://aurzane.com/sitemap-ai.xml; do echo "::notice title=M::$(curl -s -o /tmp/x -w '%{http_code} %{redirect_url}' -A 'Mozilla/5.0 Chrome/130' $u) $(grep -o '<title>[^<]*' /tmp/x | head -1) $u"; done
