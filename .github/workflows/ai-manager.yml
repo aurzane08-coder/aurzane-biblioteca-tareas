@@ -26,6 +26,7 @@ jobs:
       SG_PASS: ${{ secrets.SG_PASS }}
       TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
       TELEGRAM_CANAL: ${{ secrets.TELEGRAM_CANAL }}
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - uses: actions/checkout@v4
@@ -58,6 +59,7 @@ jobs:
         run: |
           $SSH "$SG_DEST" "mkdir -p www/aurzane.com/privado-ai www/aurzane.com/public_html/novedades www/aurzane.com/public_html/biblioteca/recientes && chmod 700 www/aurzane.com/privado-ai"
           cat /tmp/ai/informe.json | $SSH "$SG_DEST" "cat > www/aurzane.com/privado-ai/informe.json && chmod 600 www/aurzane.com/privado-ai/informe.json"
+          cat /tmp/ai/reparaciones.json | $SSH "$SG_DEST" "cat > www/aurzane.com/privado-ai/reparaciones.json && chmod 600 www/aurzane.com/privado-ai/reparaciones.json"
           cat /tmp/ai/propuestas.json | $SSH "$SG_DEST" "cat > www/aurzane.com/privado-ai/propuestas.json && chmod 600 www/aurzane.com/privado-ai/propuestas.json"
           rsync -rlz --checksum -e "$SSH" /tmp/ai/novedades/ "$SG_DEST:www/aurzane.com/public_html/novedades/"
           rsync -rlz --checksum -e "$SSH" /tmp/ai/recientes/ "$SG_DEST:www/aurzane.com/public_html/biblioteca/recientes/"

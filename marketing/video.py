@@ -1,7 +1,7 @@
 # Vídeos verticales 1080x1920 (Reels, Shorts, TikTok) hechos solos:
 # fondo = vídeo de Pexels (licencia Pexels: uso comercial gratis), encima la frase o el producto con la marca.
 # Uso: python3 marketing/video.py generar  (lo llama el flujo después de planificar)
-import json, os, sys, hashlib, subprocess, urllib.request, urllib.parse, datetime
+import json, os, re, sys, hashlib, subprocess, urllib.request, urllib.parse, datetime
 D = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, D)
 import mk
@@ -19,6 +19,33 @@ MUSICA_ALEGRE = ['Carefree', 'Easy Lemon', 'Wholesome', 'Inspired', 'Amazing Pla
 def musica_de(p):
     lista = MUSICA_CALMA if p['tipo'] == 'frase' else MUSICA_ALEGRE
     return lista[int(hashlib.md5((p['id'] + 'm').encode()).hexdigest(), 16) % len(lista)]
+
+
+def jamendo(p):
+    """Si hay JAMENDO_CLIENT_ID (gratis en devportal.jamendo.com), elige un tema CC BY o CC BY-SA (sin NC ni ND:
+    se puede usar en vídeos monetizados citando al autor). Devuelve (ruta_mp3, crédito) o None."""
+    cid = os.environ.get('JAMENDO_CLIENT_ID', '')
+    if not cid: return None
+    tags = 'ambient+piano+relaxation' if p['tipo'] == 'frase' else 'happy+acoustic+upbeat'
+    try:
+        u = 'https://api.jamendo.com/v3.0/tracks/?' + urllib.parse.urlencode({'client_id': cid, 'format': 'json', 'limit': 50, 'fuzzytags': tags, 'include': 'licenses',
+                                                                             'audioformat': 'mp32', 'ccnc': 'false', 'ccnd': 'false', 'order': 'popularity_month', 'vocalinstrumental': 'instrumental'})
+        res = json.load(urllib.request.urlopen(u, timeout=60)).get('results', [])
+        res = [t for t in res if t.get('audiodownload_allowed', True) and (t.get('audiodownload') or t.get('audio')) and '-nc' not in (t.get('license_ccurl') or '') and '-nd' not in (t.get('license_ccurl') or '')]
+        if not res: return None
+        t = res[int(hashlib.md5((p['id'] + 'j').encode()).hexdigest(), 16) % len(res)]
+        dest = f'/tmp/jamendo-{t["id"]}.mp3'
+        open(dest, 'wb').write(urllib.request.urlopen(urllib.request.Request(t.get('audiodownload') or t['audio'], headers={'User-Agent': 'Mozilla/5.0'}), timeout=120).read())
+        lic = re.search(r'licenses/([a-z-]+)/', t.get('license_ccurl') or ''); lic = ('CC ' + lic.group(1).upper()) if lic else 'Creative Commons'
+        return dest, f'«{t["name"]}», {t["artist_name"]} (Jamendo), {lic}'
+    except Exception as e:
+        print('::notice title=Videos::Jamendo no disponible', str(e)[:120]); return None
+
+
+def credito(p):
+    """Crédito de la música del vídeo de p (lo guarda generar en musica_usada.json)."""
+    c = mk.leer('musica_usada.json', {}).get(p['id'])
+    return c or f'«{musica_de(p)}», Kevin MacLeod (incompetech.com), CC BY 4.0'
 
 
 def bajar_musica(nombre):
@@ -89,7 +116,9 @@ def generar(dias=2):
         except Exception as e:
             print('::notice title=Videos::sin fondo', i, e); continue
         sal = os.path.join(D, 'salida', 'video', V + i + '.mp4')
-        mus = bajar_musica(musica_de(p))
+        jm = jamendo(p)
+        mus, cred = jm if jm else (bajar_musica(musica_de(p)), f'«{musica_de(p)}», Kevin MacLeod (incompetech.com), CC BY 4.0')
+        usada = mk.leer('musica_usada.json', {}); usada[i] = cred; mk.guardar('musica_usada.json', usada)
         filtro = ('[0:v]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,setsar=1,fps=30,eq=brightness=-0.05:saturation=1.05[b];'
                   '[1:v]format=rgba,fade=in:st=0.3:d=0.9:alpha=1[c];[b][c]overlay=0:0,format=yuv420p[v]')
         if mus:

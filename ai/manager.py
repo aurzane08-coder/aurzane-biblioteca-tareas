@@ -21,7 +21,9 @@ problemas, acciones = [], []
 ESTADO = json.load(open(os.path.join(D, 'estado.json'), encoding='utf-8')) if os.path.exists(os.path.join(D, 'estado.json')) else {}
 DIARIO = os.environ.get('DIARIO') == '1' or (ESTADO.get('diario') != HOY and AHORA.hour >= 6)
 
-def aviso(nivel, texto): problemas.append({'nivel': nivel, 'texto': texto}); print('::notice title=AI::' + nivel + ' · ' + texto)
+def aviso(nivel, texto, tipo='', dato=''):
+    problemas.append({'nivel': nivel, 'texto': texto, 'tipo': tipo, 'dato': dato, 'clave': hashlib.md5((tipo + '|' + str(dato) + '|' + ('' if tipo else texto)).encode()).hexdigest()[:10]})
+    print('::notice title=AI::' + nivel + ' · ' + texto)
 def leer(n, d):
     try: return json.load(open(os.path.join(D, n), encoding='utf-8'))
     except Exception: return d
@@ -58,9 +60,9 @@ for h in HOSTS:
     d = dias_ssl(h)
     nivel = 'ok' if st == 200 and ms < 3000 and (d or 0) > 14 else ('mal' if st != 200 or (d is not None and d < 7) else 'medio')
     sitios.append({'host': h, 'codigo': st, 'ms': ms, 'ssl_dias': d, 'nivel': nivel})
-    if st != 200: aviso('mal', f'{h} no responde bien ({st}).')
-    elif ms >= 3000: aviso('medio', f'{h} tarda {ms} ms en responder.')
-    if d is not None and d < 14: aviso('mal' if d < 7 else 'medio', f'El certificado de {h} caduca en {d} días.')
+    if st != 200: aviso('mal', f'{h} no responde bien ({st}).', 'sitio_caido', h)
+    elif ms >= 3000: aviso('medio', f'{h} tarda {ms} ms en responder.', 'sitio_lento', h)
+    if d is not None and d < 14: aviso('mal' if d < 7 else 'medio', f'El certificado de {h} caduca en {d} días.', 'ssl', h)
 
 # ---------- 2. Páginas clave ----------
 paginas = []
@@ -70,15 +72,15 @@ for u in CLAVE:
     falta = [] if st != 200 else [x for x, ok in (('título', '<title>' in txt), ('descripción', 'name="description"' in txt)) if not ok]
     nivel = 'ok' if st == 200 and not falta else ('mal' if st != 200 else 'medio')
     paginas.append({'url': u, 'codigo': st, 'ms': ms, 'nivel': nivel})
-    if st != 200: aviso('mal', f'La página {u} devuelve {st}.')
-    elif falta: aviso('medio', f'A {u} le falta: {", ".join(falta)}.')
+    if st != 200: aviso('mal', f'La página {u} devuelve {st}.', 'pagina_error', u)
+    elif falta: aviso('medio', f'A {u} le falta: {", ".join(falta)}.', 'pagina_seo', u)
 
 # ---------- 3. Scripts compartidos: si la caché sirve una versión vieja, se vacía ----------
 viejos = []
 for u in COMPARTIDOS:
     a = get(u, {'Accept-Encoding': 'identity'}); b = get(u, {'Accept-Encoding': 'gzip'})
     if a[0] == 200 and b[0] == 200 and a[1] != b[1]: viejos.append(u)
-    elif a[0] != 200: aviso('mal', f'El script compartido {u} no carga ({a[0]}).')
+    elif a[0] != 200: aviso('mal', f'El script compartido {u} no carga ({a[0]}).', 'script_caido', u)
 if viejos:
     r = remoto('site-tools-client domain-all update id=aurzane.com flush_cache=1')
     acciones.append(f'Vacié la caché de aurzane.com: servía una versión antigua de {", ".join(x.rsplit("/", 1)[1] for x in viejos)}.' + ('' if 'OK' in r else ' (sin confirmación del servidor)'))
@@ -94,7 +96,7 @@ if log:
     c = collections.Counter((f[4], f[5], f[1] + f[2]) for f in rec)
     errores['top'] = [{'mensaje': m, 'archivo': s, 'pagina': p, 'veces': n} for (m, s, p), n in c.most_common(10)]
     for (m, s, p), n in c.most_common(3):
-        if n >= 5: aviso('medio', f'Error repetido {n} veces en {p}: {m[:120]}')
+        if n >= 5: aviso('medio', f'Error repetido {n} veces en {p}: {m[:120]}', 'js_error', json.dumps([m[:300], s, p]))
 
 # ---------- 5. Automatizaciones (GitHub Actions): fallos y reintento automático ----------
 autos = []
@@ -117,14 +119,14 @@ if GT and REPO:
                 s2, _, _, _ = get(f'https://api.github.com/repos/{REPO}/actions/runs/{ult["id"]}/rerun-failed-jobs', cab, datos=b'', metodo='POST')
                 acciones.append(f'Reintenté «{nombre}», que había fallado' + (' (en marcha).' if s2 in (201, 204) else f' (no se pudo: {s2}).'))
             else:
-                aviso('mal', f'La automatización «{nombre}» falla y el reintento no lo arregló.')
+                aviso('mal', f'La automatización «{nombre}» falla y el reintento no lo arregló.', 'automatizacion', nombre)
 
 # ---------- 6. Enlaces rotos (revisión semanal) ----------
 enl = leer('../enlaces/informe.json', {})
 rotos = enl.get('rotos', []) if isinstance(enl, dict) else []
 enlaces = {'rotos': len(rotos), 'revisadas': enl.get('revisadas', 0) if isinstance(enl, dict) else 0,
            'ejemplos': [(r.get('url') if isinstance(r, dict) else str(r))[:140] for r in rotos[:5]]}
-if len(rotos) > 0: aviso('medio', f'Hay {len(rotos)} enlaces rotos en la última revisión semanal.')
+if len(rotos) > 0: aviso('medio', f'Hay {len(rotos)} enlaces rotos en la última revisión semanal.', 'enlaces_rotos', 'todos')
 
 # ---------- 7. Redes sociales ----------
 mk = {'ok_24h': 0, 'fallos_24h': 0, 'por_red': {}}
@@ -136,7 +138,7 @@ try:
         if f[4] in ('ok', 'feed'): r['ok'] += 1; mk['ok_24h'] += 1
         else: r['fallos'] += 1; mk['fallos_24h'] += 1
     for red, v in mk['por_red'].items():
-        if v['fallos'] and not v['ok']: aviso('mal', f'{red}: todas las publicaciones de las últimas 24 h han fallado.')
+        if v['fallos'] and not v['ok']: aviso('mal', f'{red}: todas las publicaciones de las últimas 24 h han fallado.', 'red_fallos', red)
 except Exception as e: print('marketing', e)
 
 # ---------- 8. Novedades: páginas nuevas del sitemap, anunciadas solas ----------
@@ -185,7 +187,7 @@ if DIARIO:
         c = json.loads(b).get('lighthouseResult', {}).get('categories', {})
         f = lambda k: round((c.get(k, {}).get('score') or 0) * 100)
         ps.append({'url': u, 'rendimiento': f('performance'), 'seo': f('seo'), 'accesibilidad': f('accessibility')})
-        if f('performance') < 50: aviso('medio', f'{u} va lenta en móvil (rendimiento {f("performance")}/100).')
+        if f('performance') < 50: aviso('medio', f'{u} va lenta en móvil (rendimiento {f("performance")}/100).', 'lenta_movil', u)
         time.sleep(3)
     if ps: guardar('pagespeed.json', ps)
 
@@ -663,6 +665,165 @@ for h, lista in nuevas_red.items():
     else: acciones.append(f'Limpié redirecciones que ya no hacían falta en {h}.')
 guardar('redirecciones.json', conexiones['redirecciones'][-300:])
 
+# ---------- 17. Taller de reparaciones: arregla sola, verifica, registra y aprende ----------
+# Cada aviso tiene un tipo. Para cada tipo hay recetas (vaciar caché, reintentar una automatización, relanzar un revisor,
+# diagnóstico con IA). La IA prueba primero la receta que mejor le ha funcionado antes (ai/aprendizaje_reparaciones.json),
+# comprueba si el problema desapareció y lo anota. Si nada funciona, te lo deja en el admin con lo que probó y una sugerencia.
+# Desde el admin puedes pedir una reparación concreta o describir un problema con su URL.
+GEM = os.environ.get('GEMINI_API_KEY', '')
+gem_estado = 'sin clave'
+def gemini(prompt, maxt=700):
+    global gem_estado
+    if not GEM: return ''
+    cuerpo = json.dumps({'contents': [{'parts': [{'text': prompt}]}], 'generationConfig': {'temperature': 0.3, 'maxOutputTokens': maxt}}).encode()
+    for modelo in ('gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-flash-latest'):
+        st, b, _, _ = get(f'https://generativelanguage.googleapis.com/v1beta/models/{modelo}:generateContent', {'Content-Type': 'application/json', 'x-goog-api-key': GEM}, datos=cuerpo, metodo='POST', t=90)
+        if st == 200:
+            try:
+                gem_estado = 'ok ' + modelo
+                return ''.join(x.get('text', '') for x in json.loads(b)['candidates'][0]['content']['parts']).strip()
+            except Exception: pass
+        gem_estado = f'error {st}'
+        if st in (400, 401, 403): break
+    return ''
+REP = jremoto('reparaciones.json', []); APR = leer('aprendizaje_reparaciones.json', {}); SOL = jremoto('solicitudes.json', [])
+hechas_sol = set(ESTADO.get('solicitudes_hechas', []))
+claves_ahora = {p['clave']: p for p in problemas}
+def anotar(clave, tipo, problema, receta, resultado, detalle='', sugerencia=''):
+    REP.insert(0, {'id': hashlib.md5(f'{AHORA.isoformat()}{clave}{receta}'.encode()).hexdigest()[:10], 'fecha': AHORA.isoformat()[:16], 'clave': clave, 'tipo': tipo,
+                   'problema': problema[:300], 'receta': receta, 'resultado': resultado, 'detalle': detalle[:600], 'sugerencia': sugerencia[:2500]})
+def aprender(tipo, receta, ok):
+    a = APR.setdefault(f'{tipo}|{receta}', [0, 0]); a[0 if ok else 1] += 1
+def tasa(tipo, receta):
+    a = APR.get(f'{tipo}|{receta}', [0, 0]); return (a[0] + 1) / (a[0] + a[1] + 2)
+NOMBRES = {'vaciar_cache': 'Vaciar la caché del sitio', 'reintentar_flujo': 'Reintentar la automatización', 'relanzar_marketing': 'Relanzar las publicaciones',
+           'relanzar_enlaces': 'Volver a revisar los enlaces', 'diagnostico_ia': 'Diagnóstico con IA', 'avisar': 'Avisarte'}
+RECETAS = {'sitio_caido': ['vaciar_cache', 'diagnostico_ia'], 'sitio_lento': ['vaciar_cache', 'diagnostico_ia'], 'pagina_error': ['vaciar_cache', 'diagnostico_ia'],
+           'script_caido': ['vaciar_cache', 'diagnostico_ia'], 'js_error': ['vaciar_cache', 'diagnostico_ia'], 'automatizacion': ['reintentar_flujo', 'diagnostico_ia'],
+           'red_fallos': ['relanzar_marketing', 'diagnostico_ia'], 'enlaces_rotos': ['relanzar_enlaces'], 'lenta_movil': ['diagnostico_ia'],
+           'pagina_seo': ['diagnostico_ia'], 'ssl': ['avisar']}
+def host_de(p):
+    d = p.get('dato') or ''
+    if p['tipo'] == 'js_error':
+        try: d = json.loads(d)[2]
+        except Exception: d = ''
+    if d.startswith('http'): return urllib.parse.urlparse(d).hostname or 'aurzane.com'
+    return d if d.endswith('aurzane.com') else 'aurzane.com'
+def sigue_mal(p):
+    t, d = p['tipo'], p.get('dato') or ''
+    if t in ('sitio_caido', 'sitio_lento'):
+        st, _, ms, _ = get('https://' + d + '/'); return st != 200 or (t == 'sitio_lento' and ms >= 3000)
+    if t in ('pagina_error', 'script_caido'): return get(d)[0] != 200
+    return None   # no se puede comprobar al momento: se verá en la próxima revisión
+def disparar(flujo):
+    if not (GT and REPO): return False
+    st, _, _, _ = get(f'https://api.github.com/repos/{REPO}/actions/workflows/{flujo}/dispatches', {'Authorization': 'Bearer ' + GT, 'Accept': 'application/vnd.github+json', 'Content-Type': 'application/json'}, datos=b'{"ref":"main"}', metodo='POST')
+    return st == 204
+def contexto_de(p):
+    t, d = p['tipo'], p.get('dato') or ''; c = ''
+    if t == 'red_fallos':
+        try: c = '\n'.join(','.join(f) for f in csv.reader(open(os.path.join(RAIZ, 'marketing', 'registro.csv'), encoding='utf-8')) if len(f) > 5 and f[2] == d and f[4] == 'error')[-1500:]
+        except Exception: pass
+    elif t == 'js_error':
+        try:
+            m, s, pg = json.loads(d); st, b, _, _ = get(s, t=20)
+            c = f'Mensaje: {m}\nArchivo: {s}\nPágina: {pg}\n' + (b.decode('utf-8', 'replace')[:3000] if st == 200 else '')
+        except Exception: pass
+    elif t == 'automatizacion' and GT and REPO:
+        cab = {'Authorization': 'Bearer ' + GT, 'Accept': 'application/vnd.github+json'}
+        st, b, _, _ = get(f'https://api.github.com/repos/{REPO}/actions/runs?per_page=30&status=failure', cab)
+        for r in (json.loads(b).get('workflow_runs', []) if st == 200 else []):
+            if r['name'] == d:
+                s2, b2, _, _ = get(r['jobs_url'], cab)
+                for j in (json.loads(b2).get('jobs', []) if s2 == 200 else []):
+                    c += f"Trabajo {j['name']}: " + ', '.join(f"{x['name']}={x['conclusion']}" for x in j.get('steps', []) if x.get('conclusion') == 'failure') + '\n'
+                break
+    elif d.startswith('http'):
+        st, b, ms, _ = get(d, t=30); c = f'Estado {st}, {ms} ms. HTML inicial:\n' + b.decode('utf-8', 'replace')[:2500]
+    return c
+def aplicar(receta, p):
+    t, h = p['tipo'], host_de(p)
+    if receta == 'vaciar_cache':
+        r = remoto(f'site-tools-client domain-all update id={h} flush_cache=1'); time.sleep(6)
+        mal = sigue_mal(p)
+        return ('pendiente' if mal is None else 'fallo' if mal else 'ok'), f'Caché de {h} vaciada' + ('' if 'OK' in r or not r else ' (sin confirmación)')
+    if receta == 'reintentar_flujo':
+        if not (GT and REPO): return 'fallo', 'Sin acceso a GitHub'
+        cab = {'Authorization': 'Bearer ' + GT, 'Accept': 'application/vnd.github+json'}
+        st, b, _, _ = get(f'https://api.github.com/repos/{REPO}/actions/runs?per_page=30', cab)
+        for r in (json.loads(b).get('workflow_runs', []) if st == 200 else []):
+            if r['name'] == p['dato'] and r['conclusion'] == 'failure':
+                s2, _, _, _ = get(f'https://api.github.com/repos/{REPO}/actions/runs/{r["id"]}/rerun', cab, datos=b'', metodo='POST')
+                return ('pendiente' if s2 in (201, 204) else 'fallo'), f'Relancé la ejecución {r["id"]}'
+        return 'pendiente', 'No había ejecución fallida reciente que relanzar'
+    if receta == 'relanzar_marketing': return ('pendiente' if disparar('marketing.yml') else 'fallo'), 'Relancé el marketing automático'
+    if receta == 'relanzar_enlaces': return ('pendiente' if disparar('enlaces.yml') else 'fallo'), 'Relancé la revisión de enlaces'
+    if receta == 'diagnostico_ia':
+        previas = [x for x in REP if x['tipo'] == t and x['resultado'] == 'ok'][:5]
+        memoria = '\n'.join(f"- {x['problema'][:120]} → se arregló con «{NOMBRES.get(x['receta'], x['receta'])}»" for x in previas)
+        sug = gemini('Eres el ingeniero de mantenimiento de AURZANE, una web de psicología en SiteGround (HTML/PHP estático, subdominios mind, nexus, live, learn, build, ovp) '
+                     'con automatizaciones en GitHub Actions y Supabase. Responde en español, sin rayas largas, en máximo 8 líneas: 1) causa más probable, '
+                     '2) cómo arreglarlo paso a paso, 3) si es seguro hacerlo automáticamente.\n\nProblema: ' + p['texto'] + '\n\nContexto:\n' + contexto_de(p)[:5000] +
+                     ('\n\nCasos parecidos que se arreglaron antes:\n' + memoria if memoria else ''))
+        return ('escalado' if sug else 'fallo'), ('Diagnóstico de Gemini listo' if sug else f'Sin diagnóstico ({gem_estado})'), sug
+    return 'escalado', 'Necesita que lo revises tú'
+# 1) verificar lo pendiente de revisiones anteriores
+for x in REP:
+    if x['resultado'] == 'pendiente' and x['fecha'] < AHORA.isoformat()[:16]:
+        ok = x['clave'] not in claves_ahora
+        x['resultado'] = 'ok' if ok else 'fallo'; x['detalle'] += ' · verificado en la revisión siguiente: ' + ('ya no aparece' if ok else 'sigue pasando')
+        aprender(x['tipo'], x['receta'], ok)
+# 2) solicitudes desde el admin
+pedidas = set()
+for s_ in SOL:
+    if s_.get('id') in hechas_sol: continue
+    hechas_sol.add(s_.get('id'))
+    if s_.get('clave') in claves_ahora: pedidas.add(s_['clave']); continue
+    u = (s_.get('url') or '').strip(); txt = (s_.get('texto') or '').strip()
+    p = {'tipo': 'peticion', 'dato': u, 'texto': txt or ('Revisar ' + u), 'clave': 'sol-' + str(s_.get('id'))}
+    pasos = []
+    if u.startswith('https://') and re.search(r'(^|\.)aurzane\.com$', urllib.parse.urlparse(u).hostname or ''):
+        h = urllib.parse.urlparse(u).hostname
+        st, b, ms, _ = get(u); pasos.append(f'La página responde {st} en {ms} ms')
+        remoto(f'site-tools-client domain-all update id={h} flush_cache=1'); pasos.append(f'Vacié la caché de {h}')
+        t = b.decode('utf-8', 'replace')
+        enl = list(dict.fromkeys(urllib.parse.urljoin(u, html.unescape(m)) for m in re.findall(r'href="([^"#]+)"', t) if not m.startswith(('mailto:', 'tel:', 'javascript:'))))[:60]
+        rotos_p = [x for x in enl if re.match(r'^https://([a-z]+\.)?aurzane\.com/', x) and get(x, t=20)[0] != 200]
+        pasos.append(f'Revisé {len(enl)} enlaces de la página: {len(rotos_p)} rotos' + (': ' + ', '.join(rotos_p[:5]) if rotos_p else ''))
+        errs = [l for l in (remoto('tail -n 2000 www/aurzane.com/privado-ai/errores.log 2>/dev/null') or '').splitlines() if urllib.parse.urlparse(u).path in l and h in l][-10:]
+        pasos.append(f'{len(errs)} errores de JavaScript registrados en esa página')
+    ctx = '\n'.join(pasos)
+    sug = gemini('Eres el ingeniero de mantenimiento de AURZANE (web de psicología en SiteGround, HTML/PHP, GitHub Actions, Supabase). Adrián, el dueño, pide: '
+                 + (txt or 'revisar la página') + (f'\nURL: {u}' if u else '') + '\n\nLo que ya comprobé:\n' + ctx +
+                 '\n\nResponde en español, sin rayas largas, en máximo 10 líneas: qué pasa y cómo se arregla, paso a paso.')
+    anotar(p['clave'], 'peticion', p['texto'], 'revision_pedida', 'escalado' if sug or pasos else 'fallo', ctx, sug)
+    acciones.append('Atendí tu petición de reparación: ' + (txt[:80] or u[:80]) + '.')
+# 3) reparar los avisos de ahora
+hechos = 0; necesita = []
+for p in problemas:
+    t = p.get('tipo')
+    if t not in RECETAS or hechos >= 8: continue
+    hist_c = [x for x in REP if x['clave'] == p['clave']]
+    if any(x['resultado'] == 'pendiente' for x in hist_c): continue
+    probadas = {x['receta'] for x in hist_c if x['fecha'][:10] >= (AHORA - datetime.timedelta(days=3)).date().isoformat()}
+    orden = sorted([r for r in RECETAS[t] if r != 'diagnostico_ia'], key=lambda r: -tasa(t, r)) + [r for r in RECETAS[t] if r == 'diagnostico_ia']
+    siguiente = next((r for r in orden if r not in probadas), None)
+    if siguiente is None:
+        if p['clave'] in pedidas: siguiente = orden[0]
+        else: necesita.append(p); continue
+    res = aplicar(siguiente, p); hechos += 1
+    resultado, detalle = res[0], res[1]; sug = res[2] if len(res) > 2 else ''
+    anotar(p['clave'], t, p['texto'], siguiente, resultado, detalle, sug)
+    if resultado in ('ok', 'fallo') and siguiente != 'diagnostico_ia': aprender(t, siguiente, resultado == 'ok')
+    if resultado == 'ok': acciones.append(f'Reparado: {p["texto"].rstrip(".")} ({NOMBRES.get(siguiente, siguiente).lower()}).')
+    if resultado == 'escalado': necesita.append(p)
+if necesita: acciones.append(f'Te dejé {len(necesita)} problemas en Reparaciones del admin con lo que probé' + (' y el diagnóstico de la IA.' if GEM else '.'))
+REP = REP[:500]
+json.dump(REP, open(OUT + '/reparaciones.json', 'w', encoding='utf-8'), ensure_ascii=False)
+guardar('aprendizaje_reparaciones.json', APR); ESTADO['solicitudes_hechas'] = sorted(hechas_sol)[-500:]
+reparaciones_inf = {'log': REP[:80], 'aprendizaje': {k: v for k, v in APR.items()}, 'nombres': NOMBRES, 'gemini': gem_estado if GEM else 'sin clave',
+                    'pendientes_solicitud': sum(1 for x in SOL if x.get('id') not in hechas_sol)}
+
 # ---------- 10. Resumen ----------
 nivel = 'mal' if any(p['nivel'] == 'mal' for p in problemas) else ('medio' if problemas else 'ok')
 lineas = [f'Revisé {len(HOSTS)} sitios, {len(CLAVE)} páginas clave, {len(autos)} automatizaciones y las publicaciones en redes.',
@@ -680,7 +841,7 @@ guardar('estado.json', ESTADO)
 informe = {'fecha': AHORA.isoformat(), 'estado': nivel, 'resumen': '\n'.join(lineas), 'resumen_fuente': 'automático', 'problemas': problemas, 'acciones': acciones,
            'sitios': sitios, 'paginas': paginas, 'errores': errores, 'automatizaciones': autos, 'enlaces': enlaces, 'marketing': mk, 'novedades': nov[:30], 'pagespeed': ps,
            'cola': len(pend), 'aprobados_total': len(aprob), 'publicados': [{k: x.get(k) for k in ('id', 'tipo', 'titulo', 'portada', 'publicado', 'paginas', 'lic', 'pdf_local')} for x in aprob[:40]],
-           'autodescartes': autodesc[:60], 'citas_aprobadas': len(citas_ok), 'conexiones': {'huerfanas': conexiones['huerfanas'][:80], 'n_huerfanas': len(conexiones['huerfanas']), 'fuera_sitemap': conexiones['fuera_sitemap'][:80], 'n_fuera': len(conexiones['fuera_sitemap']), 'redirecciones': conexiones['redirecciones'][-40:]}, 'dominio': dominio, 'seguridad': seguridad, 'seo': seo, 'historial': hist[-120:], 'diario': DIARIO}
+           'autodescartes': autodesc[:60], 'citas_aprobadas': len(citas_ok), 'reparaciones': reparaciones_inf, 'conexiones': {'huerfanas': conexiones['huerfanas'][:80], 'n_huerfanas': len(conexiones['huerfanas']), 'fuera_sitemap': conexiones['fuera_sitemap'][:80], 'n_fuera': len(conexiones['fuera_sitemap']), 'redirecciones': conexiones['redirecciones'][-40:]}, 'dominio': dominio, 'seguridad': seguridad, 'seo': seo, 'historial': hist[-120:], 'diario': DIARIO}
 json.dump(informe, open(OUT + '/informe.json', 'w', encoding='utf-8'), ensure_ascii=False)
 
 # ---------- 11. Aviso por Telegram (cuando Adrián escribe /aurzane al bot por privado) ----------

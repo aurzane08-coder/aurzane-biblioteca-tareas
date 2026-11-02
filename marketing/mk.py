@@ -410,7 +410,7 @@ def publicar_video():
         try:
             if not os.path.exists(local):
                 os.makedirs(os.path.dirname(local), exist_ok=True); urllib.request.urlretrieve(url, local)
-            tx = texto(r if r in REDES else 'mastodon', p, n + 4) + f'\n\n🎵 «{_v.musica_de(p)}», Kevin MacLeod (incompetech.com), CC BY 4.0'
+            tx = texto(r if r in REDES else 'mastodon', p, n + 4) + f'\n\n🎵 {_v.credito(p)}'
             ref = redes.publicar_video(r, tx, url, local, IR + codigo(r, i), p)
             hist.setdefault(h, []).append([hoy, i]); reg.write(f'{hoy},4,{r},{i},ok,{ref}\n'); print('OK vídeo', r, i, ref)
         except Exception as e:
