@@ -5,7 +5,7 @@
  ],
  "ed:Open respiratory archives": [
   0,
-  1
+  2
  ],
  "ed:European journal of psychotraumatology": [
   0,
@@ -17,7 +17,7 @@
  ],
  "ed:Atencion primaria": [
   0,
-  1
+  2
  ],
  "ed:Dementia & neuropsychologia": [
   0,
@@ -114,5 +114,13 @@
  "ed:Depression and anxiety": [
   0,
   1
+ ],
+ "ed:PhilPapers (PhilPapers Foundation)": [
+  0,
+  2
+ ],
+ "ed:Internet Archive": [
+  0,
+  4
  ]
 }

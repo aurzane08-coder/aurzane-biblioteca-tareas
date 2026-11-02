@@ -1,122 +1,90 @@
 [
  {
   "fecha": "2026-11-02",
-  "id": "pmc-PMC13706237",
+  "id": "pmc-PMC13452183",
   "tipo": "estudio",
-  "titulo": "Perioperative Anxiety in Total Knee Arthroplasty: Clinical Consequences, Potential Mechanisms, and Management-A Narrative Review",
-  "url": "https://europepmc.org/article/PMC/PMC13706237",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
+  "titulo": "Beyond self-care: Digital interventions for healthcare professionals' well-being]",
+  "url": "https://europepmc.org/article/PMC/PMC13452183",
+  "motivo": "El PDF solo tiene 2 páginas",
   "probados": [
-   "HTTP Error 403: Forbidden https://doi.org/10.3390/jcm15208140"
+   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13452183.1/PMC13452183.1.pdf"
   ]
  },
  {
   "fecha": "2026-11-02",
-  "id": "pmc-PMC13695868",
+  "id": "pmc-PMC13683845",
   "tipo": "estudio",
-  "titulo": "Depression and Heart Failure With Preserved Ejection Fraction: An Inflammatory Perspective",
-  "url": "https://europepmc.org/article/PMC/PMC13695868",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
+  "titulo": "Anxiety and Depression: The Underecognized Dark Side of Bronchiectasis",
+  "url": "https://europepmc.org/article/PMC/PMC13683845",
+  "motivo": "El PDF solo tiene 2 páginas",
   "probados": [
-   "HTTP Error 403: Forbidden https://doi.org/10.1155/da/7169650"
+   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13683845.1/PMC13683845.1.pdf"
   ]
  },
  {
   "fecha": "2026-11-02",
-  "id": "pmc-PMC13720362",
-  "tipo": "estudio",
-  "titulo": "Mental health, resilience, and culturally congruent care among Muslim and Arab American women in the United States: a scoping review",
-  "url": "https://europepmc.org/article/PMC/PMC13720362",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": []
- },
- {
-  "fecha": "2026-11-02",
-  "id": "pmc-PMC13706483",
-  "tipo": "estudio",
-  "titulo": "Intensive Interventions for Burnout, Stress and Occupational Well-Being: A Critical Review and a Delivery-Format Framework",
-  "url": "https://europepmc.org/article/PMC/PMC13706483",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": [
-   "HTTP Error 403: Forbidden https://doi.org/10.3390/jcm15207887"
-  ]
- },
- {
-  "fecha": "2026-11-02",
-  "id": "pmc-PMC13691542",
-  "tipo": "estudio",
-  "titulo": "Microplastic contamination in agricultural systems: impacts on plant productivity, economic losses, and supply chain resilience",
-  "url": "https://europepmc.org/article/PMC/PMC13691542",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": []
- },
- {
-  "fecha": "2026-11-02",
-  "id": "pmc-PMC13694880",
-  "tipo": "estudio",
-  "titulo": "Intrinsically photosensitive retinal ganglion cells: Context-Dependent resilience and vulnerability",
-  "url": "https://europepmc.org/article/PMC/PMC13694880",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": [
-   "200 text/html;charset=UT https://doi.org/10.1016/j.nbscr.2026.100153"
-  ]
- },
- {
-  "fecha": "2026-11-02",
-  "id": "pmc-PMC13704590",
-  "tipo": "estudio",
-  "titulo": "Work Demands, Burnout, and Withdrawal Behaviors Among Healthcare Workers: A Systematic Review and Meta-Analysis",
-  "url": "https://europepmc.org/article/PMC/PMC13704590",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": [
-   "HTTP Error 403: Forbidden https://doi.org/10.3390/healthcare14203542"
-  ]
- },
- {
-  "fecha": "2026-11-02",
-  "id": "pmc-PMC13703274",
-  "tipo": "estudio",
-  "titulo": "Relationship Between Social Isolation, Loneliness, and Systemic Inflammation: A Scoping Review of Biological Signatures and Clinical Outcomes",
-  "url": "https://europepmc.org/article/PMC/PMC13703274",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": [
-   "HTTP Error 403: Forbidden https://doi.org/10.3390/diseases14100388"
-  ]
- },
- {
-  "fecha": "2026-11-02",
-  "id": "oa-W7222822385",
+  "id": "ia-httpsonomazein.letras.uc.clindex.phponomarticleview60165",
   "tipo": "libro",
-  "titulo": "Revealing Care",
-  "url": "https://doi.org/10.18848/hlthbi/b5",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": []
+  "titulo": "Acción, Actitud, Valor y Contexto en el Texto de la Ilíada",
+  "url": "https://archive.org/details/httpsonomazein.letras.uc.clindex.phponomarticleview60165",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 24 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/httpsonomazein.letras.uc.clindex.phponomarticleview60165/Accion_actitud_valor_y_c"
+  ]
  },
  {
   "fecha": "2026-11-02",
-  "id": "oa-W2342411991",
+  "id": "ia-embarazo-nacimiento",
   "tipo": "libro",
-  "titulo": "Learning by Design",
-  "url": "https://doi.org/10.18848/lrnrbi/b65",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": []
+  "titulo": "Embarazo Nacimiento",
+  "url": "https://archive.org/details/embarazo-nacimiento",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 8 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/embarazo-nacimiento/Embarazo%20nacimiento.pdf"
+  ]
  },
  {
   "fecha": "2026-11-02",
-  "id": "oa-W7223023150",
+  "id": "ia-triptico-lo-mas-profundo",
   "tipo": "libro",
-  "titulo": "The Evolving Landscape of Workplace - Challenges and Opportunities [Working Title]",
-  "url": "https://doi.org/10.5772/intechopen.1014436",
+  "titulo": "Triptico: Lo Más Profundo",
+  "url": "https://archive.org/details/triptico-lo-mas-profundo",
   "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": []
+  "probados": [
+   "HTTP Error 500: Internal Server Error https://archive.org/download/triptico-lo-mas-profundo/Triptico%20Lo%20M%C3%A1s%20Profundo.pdf"
+  ]
  },
  {
   "fecha": "2026-11-02",
-  "id": "oa-W7204509156",
+  "id": "ia-ensayo-sexto-sentido",
   "tipo": "libro",
-  "titulo": "Ontology and Time 1: A Foundation for Temporal Reality",
-  "url": "https://doi.org/10.1515/9783112233795",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": []
+  "titulo": "ENSAYO SEXTO SENTIDO: Sexto sentido, corazonadas y profecías - un análisis crítico desde la neurociencia",
+  "url": "https://archive.org/details/ensayo-sexto-sentido",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 21 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/ensayo-sexto-sentido/ENSAYO%20SEXTO%20SENTIDO%20.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-02",
+  "id": "oa-W7162558100",
+  "tipo": "libro",
+  "titulo": "La esencia del ser humano más allá del humanismo: una lectura crítica de Heidegger",
+  "url": "https://philarchive.org/rec/MARLED-52",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 11 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/octet-st https://zenodo.org/records/20415449/files/TAREA%205.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-02",
+  "id": "oa-W7170377164",
+  "tipo": "libro",
+  "titulo": "Ignición versión canónica",
+  "url": "https://philarchive.org/rec/LPEIVC",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 21 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/octet-st https://zenodo.org/records/21537938/files/Ignicion_versi%C3%B3n_can%C3%B3nica_v2.pdf"
+  ]
  }
 ]
