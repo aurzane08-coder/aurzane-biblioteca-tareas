@@ -4,13 +4,13 @@ Actualizado: 2026-11-02. Clics de personas (sin bots ni vistas previas) que entr
 
 | Red | Publicaciones | Clics |
 |---|---|---|
-| telegram | 2 | 4 |
-| bluesky | 2 | 4 |
-| mastodon | 2 | 3 |
-| instagram | 2 | 0 |
-| facebook | 2 | 5 |
+| telegram | 3 | 4 |
+| bluesky | 3 | 5 |
+| mastodon | 3 | 3 |
+| instagram | 3 | 0 |
+| facebook | 3 | 7 |
 | threads | 0 | 0 |
-| pinterest | 1 | 0 |
+| pinterest | 2 | 0 |
 
 ## Productos con más clics
 
@@ -21,4 +21,6 @@ Actualizado: 2026-11-02. Clics de personas (sin bots ni vistas previas) que entr
 | test-autoestima | 3 |
 | test-sueno | 2 |
 | frase-fee27969 | 2 |
+| crea-l06-14 | 2 |
 | frase-b424a195 | 1 |
+| crea-l05-04 | 1 |
