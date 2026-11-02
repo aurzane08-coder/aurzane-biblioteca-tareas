@@ -1,0 +1,20 @@
+name: Prueba IA gratis
+on:
+  push:
+    paths: ['.github/workflows/prueba-modelos.yml']
+permissions:
+  models: read
+  contents: read
+jobs:
+  p:
+    runs-on: ubuntu-latest
+    steps:
+      - env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          for m in openai/gpt-4.1-mini openai/gpt-4o-mini meta/Llama-3.3-70B-Instruct; do
+            R=$(curl -s -w ' HTTP%{http_code}' https://models.github.ai/inference/chat/completions -H "Authorization: Bearer $GITHUB_TOKEN" -H 'Content-Type: application/json' -d "{\"model\":\"$m\",\"messages\":[{\"role\":\"user\",\"content\":\"Responde solo: hola desde $m\"}],\"max_tokens\":20}")
+            echo "::notice title=Modelos::$m -> $(echo "$R" | tail -c 300)"
+          done
+          echo "::notice title=Modelos::doab $(curl -s -o /dev/null -w '%{http_code}' 'https://directory.doabooks.org/rest/search?query=psicolog%C3%ADa&expand=metadata&limit=1')"
+          echo "::notice title=Modelos::oapen $(curl -s -o /dev/null -w '%{http_code}' 'https://library.oapen.org/rest/search?query=psychology&expand=metadata,bitstreams&limit=1')"
