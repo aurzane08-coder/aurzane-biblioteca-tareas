@@ -392,12 +392,14 @@ def publicar_video():
         if not i or i not in cat or not redes.configurada(r): continue
         if any(f == hoy and x == i for f, x in hist.get(h, [])): continue
         p = cat[i]
-        url = SITIO_IMG + f'video/{i}.mp4'
-        local = os.path.join(D, 'salida', 'video', i + '.mp4')
+        import video as _v
+        url = SITIO_IMG + f'video/{_v.V}{i}.mp4'
+        local = os.path.join(D, 'salida', 'video', _v.V + i + '.mp4')
         try:
             if not os.path.exists(local):
                 os.makedirs(os.path.dirname(local), exist_ok=True); urllib.request.urlretrieve(url, local)
-            ref = redes.publicar_video(r, texto(r if r in REDES else 'mastodon', p, n + 4), url, local, IR + codigo(r, i), p)
+            tx = texto(r if r in REDES else 'mastodon', p, n + 4) + f'\n\n🎵 «{_v.musica_de(p)}», Kevin MacLeod (incompetech.com), CC BY 4.0'
+            ref = redes.publicar_video(r, tx, url, local, IR + codigo(r, i), p)
             hist.setdefault(h, []).append([hoy, i]); reg.write(f'{hoy},4,{r},{i},ok,{ref}\n'); print('OK vídeo', r, i, ref)
         except Exception as e:
             reg.write(f'{hoy},4,{r},{i},error,{str(e)[:150].replace(",", " ")}\n'); print('ERROR vídeo', r, i, e)

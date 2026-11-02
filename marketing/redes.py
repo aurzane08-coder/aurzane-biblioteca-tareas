@@ -26,7 +26,7 @@ def pedir(url, datos=None, cab=None, metodo=None, crudo=None, t=60):
     cab = dict(cab or {})
     cuerpo = crudo
     if datos is not None and crudo is None:
-        if cab.get('Content-Type') == 'application/json': cuerpo = json.dumps(datos).encode()
+        if (cab.get('Content-Type') or '').startswith('application/json'): cuerpo = json.dumps(datos).encode()
         else:
             cuerpo = urllib.parse.urlencode(datos, doseq=True).encode(); cab.setdefault('Content-Type', 'application/x-www-form-urlencoded')
     req = urllib.request.Request(url, data=cuerpo, headers=cab, method=metodo or ('POST' if cuerpo is not None else 'GET'))
@@ -291,6 +291,7 @@ def video_tiktok(texto, url, local, enlace, p):
     priv = 'PUBLIC_TO_EVERYONE' if E('TIKTOK_PUBLICO') == '1' and 'PUBLIC_TO_EVERYONE' in opciones else ('SELF_ONLY' if 'SELF_ONLY' in opciones else opciones[0])
     datos = open(local, 'rb').read()
     titulo = (p['titulo'] if p['tipo'] == 'frase' else p['ganchos'][0]) + ' ' + ' '.join('#' + h for h in p.get('hashtags', [])[:4]) + ' #AURZANE'
+    if '🎵' in texto: titulo += '\n' + texto[texto.index('🎵'):]
     ini = pedir('https://open.tiktokapis.com/v2/post/publish/video/init/', {
         'post_info': {'title': titulo[:2200], 'privacy_level': priv, 'disable_comment': False, 'disable_duet': False, 'disable_stitch': False},
         'source_info': {'source': 'FILE_UPLOAD', 'video_size': len(datos), 'chunk_size': len(datos), 'total_chunk_count': 1}}, cab)['data']
