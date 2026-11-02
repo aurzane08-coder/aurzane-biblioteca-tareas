@@ -7,7 +7,9 @@ SECRETOS = {
     'telegram': ['TELEGRAM_TOKEN', 'TELEGRAM_CANAL'],
     'bluesky': ['BSKY_USUARIO', 'BSKY_CLAVE_APP'],
     'mastodon': ['MASTODON_SERVIDOR', 'MASTODON_TOKEN'],
-    'facebook': ['FB_PAGINA_ID', 'FB_PAGINA_TOKEN'],
+    'facebook': ['FB_PAGINA_ID', 'IG_TOKEN'],
+    'youtube': ['YT_CLIENT_ID', 'YT_CLIENT_SECRET', 'YT_REFRESH_TOKEN'],
+    'tiktok': ['TIKTOK_CLIENT_KEY', 'TIKTOK_CLIENT_SECRET', 'TIKTOK_REFRESH_TOKEN'],
     'instagram': ['IG_TOKEN'],
     'threads': ['THREADS_TOKEN'],
     'x': ['X_API_KEY', 'X_API_SECRET', 'X_ACCESS_TOKEN', 'X_ACCESS_SECRET'],
@@ -89,8 +91,19 @@ def mastodon(texto, img_url, img_local, enlace, p):
 GRAPH = 'https://graph.facebook.com/v21.0/'
 
 
+_PT = {}
+
+
+def pagina_token():
+    """Token de la página AURZANE sacado del token del usuario del sistema (no caduca)."""
+    if E('FB_PAGINA_TOKEN'): return E('FB_PAGINA_TOKEN')
+    if 'tk' not in _PT:
+        _PT['tk'] = pedir(GRAPH + E('FB_PAGINA_ID') + '?' + urllib.parse.urlencode({'fields': 'access_token', 'access_token': E('IG_TOKEN')}))['access_token']
+    return _PT['tk']
+
+
 def facebook(texto, img_url, img_local, enlace, p):
-    r = pedir(GRAPH + E('FB_PAGINA_ID') + '/photos', {'url': img_url, 'message': texto, 'access_token': E('FB_PAGINA_TOKEN')})
+    r = pedir(GRAPH + E('FB_PAGINA_ID') + '/photos', {'url': img_url, 'message': texto, 'access_token': pagina_token()})
     return r.get('post_id') or r.get('id')
 
 
@@ -186,7 +199,97 @@ def verificar():
             a = pedir(base + '/api/v1/apps/verify_credentials', cab={'Authorization': 'Bearer ' + E('MASTODON_TOKEN')})
             out['mastodon'] = 'ok app ' + a['name']
         except Exception as e: out['mastodon'] = 'ERROR ' + str(e)[:200]
+    if configurada('facebook'):
+        try:
+            n = pedir(GRAPH + E('FB_PAGINA_ID') + '?' + urllib.parse.urlencode({'fields': 'name', 'access_token': pagina_token()}))
+            out['facebook'] = 'ok página ' + n.get('name', '')
+        except Exception as e: out['facebook'] = 'ERROR ' + str(e)[:200]
+    if configurada('youtube'):
+        try:
+            tk = _google_token(); c = pedir('https://www.googleapis.com/youtube/v3/channels?part=snippet&mine=true', cab={'Authorization': 'Bearer ' + tk})
+            out['youtube'] = 'ok canal ' + c['items'][0]['snippet']['title']
+        except Exception as e: out['youtube'] = 'ERROR ' + str(e)[:200]
+    if configurada('tiktok'):
+        try:
+            tk = _tiktok_token(); i = pedir('https://open.tiktokapis.com/v2/post/publish/creator_info/query/', {}, {'Authorization': 'Bearer ' + tk, 'Content-Type': 'application/json; charset=UTF-8'})['data']
+            out['tiktok'] = 'ok @' + i.get('creator_username', '') + ' privacidad ' + ','.join(i.get('privacy_level_options', []))
+        except Exception as e: out['tiktok'] = 'ERROR ' + str(e)[:200]
     for r in SECRETOS:
         out.setdefault(r, 'sin configurar' if not configurada(r) else out.get(r))
     for k, v in out.items(): print(f'{k}: {v}')
     return out
+
+
+
+# ---------------------------------------------------------------- vídeos verticales (franja 4)
+def publicar_video(r, texto, video_url, video_local, enlace, p):
+    return globals()['video_' + r](texto, video_url, video_local, enlace, p)
+
+
+def video_telegram(texto, url, local, enlace, p):
+    cuerpo, cab = multipart({'chat_id': E('TELEGRAM_CANAL'), 'caption': texto[:1024], 'parse_mode': 'HTML', 'supports_streaming': 'true'}, None)
+    b = cab['Content-Type'].split('boundary=')[1]
+    cuerpo = cuerpo[:-len(f'--{b}--\r\n')] + f'--{b}\r\nContent-Disposition: form-data; name="video"; filename="v.mp4"\r\nContent-Type: video/mp4\r\n\r\n'.encode() + open(local, 'rb').read() + f'\r\n--{b}--\r\n'.encode()
+    return pedir(f"https://api.telegram.org/bot{E('TELEGRAM_TOKEN')}/sendVideo", crudo=cuerpo, cab=cab, t=180)['result']['message_id']
+
+
+def video_instagram(texto, url, local, enlace, p):
+    tk = E('IG_TOKEN'); base = ig_base(tk); ig = ig_cuenta(tk)
+    c = pedir(base + f'{ig}/media', {'media_type': 'REELS', 'video_url': url, 'caption': texto[:2200], 'share_to_feed': 'true', 'access_token': tk})
+    for _ in range(36):
+        time.sleep(10)
+        s = pedir(base + c['id'] + '?' + urllib.parse.urlencode({'fields': 'status_code,status', 'access_token': tk}))
+        if s.get('status_code') == 'FINISHED': break
+        if s.get('status_code') == 'ERROR': raise RuntimeError('Instagram rechazó el vídeo: ' + str(s.get('status')))
+    return pedir(base + f'{ig}/media_publish', {'creation_id': c['id'], 'access_token': tk})['id']
+
+
+def video_facebook(texto, url, local, enlace, p):
+    r = pedir(GRAPH + E('FB_PAGINA_ID') + '/videos', {'file_url': url, 'description': texto, 'access_token': pagina_token()}, t=300)
+    return r.get('id')
+
+
+def _google_token():
+    r = pedir('https://oauth2.googleapis.com/token', {'client_id': E('YT_CLIENT_ID'), 'client_secret': E('YT_CLIENT_SECRET'),
+                                                     'refresh_token': E('YT_REFRESH_TOKEN'), 'grant_type': 'refresh_token'})
+    return r['access_token']
+
+
+def video_youtube(texto, url, local, enlace, p):
+    tk = _google_token()
+    titulo = (p['titulo'] if p['tipo'] == 'frase' else p['ganchos'][0])[:90] + ' #Shorts'
+    desc = texto + '\n\nAURZANE: tests psicológicos, calculadoras y libros gratis. https://aurzane.com'
+    meta = {'snippet': {'title': titulo, 'description': desc[:4900], 'tags': [h for h in p.get('hashtags', [])][:10] + ['AURZANE', 'Shorts'],
+                        'categoryId': '27', 'defaultLanguage': 'es', 'defaultAudioLanguage': 'es'},
+            'status': {'privacyStatus': 'public', 'selfDeclaredMadeForKids': False}}
+    datos = open(local, 'rb').read()
+    req = urllib.request.Request('https://www.googleapis.com/upload/youtube/v3/videos?uploadType=resumable&part=snippet,status',
+                                 data=json.dumps(meta).encode(), method='POST',
+                                 headers={'Authorization': 'Bearer ' + tk, 'Content-Type': 'application/json; charset=UTF-8',
+                                          'X-Upload-Content-Type': 'video/mp4', 'X-Upload-Content-Length': str(len(datos))})
+    sesion = urllib.request.urlopen(req, timeout=60).headers['Location']
+    r = pedir(sesion, crudo=datos, cab={'Authorization': 'Bearer ' + tk, 'Content-Type': 'video/mp4'}, metodo='PUT', t=600)
+    return 'https://youtu.be/' + r['id']
+
+
+def _tiktok_token():
+    rt = E('TIKTOK_REFRESH_TOKEN')
+    r = pedir('https://open.tiktokapis.com/v2/oauth/token/', {'client_key': E('TIKTOK_CLIENT_KEY'), 'client_secret': E('TIKTOK_CLIENT_SECRET'),
+                                                             'grant_type': 'refresh_token', 'refresh_token': rt})
+    if r.get('refresh_token') and r['refresh_token'] != rt:
+        open('/tmp/tiktok_refresh', 'w').write(r['refresh_token'])  # el flujo lo guarda en el servidor
+    return r['access_token']
+
+
+def video_tiktok(texto, url, local, enlace, p):
+    tk = _tiktok_token(); cab = {'Authorization': 'Bearer ' + tk, 'Content-Type': 'application/json; charset=UTF-8'}
+    info = pedir('https://open.tiktokapis.com/v2/post/publish/creator_info/query/', {}, cab)['data']
+    priv = 'PUBLIC_TO_EVERYONE' if 'PUBLIC_TO_EVERYONE' in info.get('privacy_level_options', []) else info['privacy_level_options'][0]
+    datos = open(local, 'rb').read()
+    titulo = (p['titulo'] if p['tipo'] == 'frase' else p['ganchos'][0]) + ' ' + ' '.join('#' + h for h in p.get('hashtags', [])[:4]) + ' #AURZANE'
+    ini = pedir('https://open.tiktokapis.com/v2/post/publish/video/init/', {
+        'post_info': {'title': titulo[:2200], 'privacy_level': priv, 'disable_comment': False, 'disable_duet': False, 'disable_stitch': False},
+        'source_info': {'source': 'FILE_UPLOAD', 'video_size': len(datos), 'chunk_size': len(datos), 'total_chunk_count': 1}}, cab)['data']
+    pedir(ini['upload_url'], crudo=datos, metodo='PUT', t=600,
+          cab={'Content-Type': 'video/mp4', 'Content-Range': f'bytes 0-{len(datos) - 1}/{len(datos)}'})
+    return ini['publish_id'] + ('' if priv == 'PUBLIC_TO_EVERYONE' else ' (privado hasta la auditoría de TikTok)')

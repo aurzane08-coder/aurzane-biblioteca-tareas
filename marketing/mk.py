@@ -8,7 +8,9 @@
 import json, os, re, sys, hashlib, datetime, collections, urllib.request, urllib.parse, html, csv
 
 D = os.path.dirname(os.path.abspath(__file__))
-REDES = ['telegram', 'bluesky', 'mastodon', 'instagram', 'threads', 'pinterest']  # facebook y x desactivadas: no se usan (X cobra por publicar)
+REDES = ['telegram', 'bluesky', 'mastodon', 'instagram', 'facebook', 'threads', 'pinterest']  # X desactivada: cobra por publicar
+REDES_VIDEO = ['instagram', 'facebook', 'youtube', 'tiktok', 'telegram']  # franja 4: vídeo vertical
+TIPOS_VIDEO = ('frase', 'test', 'calculadora')
 SITIO_IMG = 'https://aurzane.com/marketing/'
 IR = 'https://aurzane.com/ir/'
 HOY = datetime.date.today()
@@ -150,29 +152,34 @@ def planificar(dias=14):
         for f, i in h: ultimo[r][i] = max(ultimo[r].get(i, ''), f)
     for f, franjas in sorted(cal.items()):
         for fr, por_red in franjas.items():
-            for r, i in por_red.items(): ultimo[r][i] = max(ultimo[r].get(i, ''), f)
+            for r, i in por_red.items():
+                r = r + '-video' if fr == '4' else r
+                ultimo[r][i] = max(ultimo[r].get(i, ''), f)
     for d in range(dias):
         f = (HOY + datetime.timedelta(days=d)).isoformat()
         if f in cal and d > 0: continue
         dia = cal.setdefault(f, {})
-        for fr in ('1', '2', '3'):
-            if fr in dia and all(i in cat for i in dia[fr].values()): continue
-            grupo = 'herr' if fr == '1' else 'frase' if fr == '3' else TARDE[datetime.date.fromisoformat(f).toordinal() % len(TARDE)]
+        for fr in ('1', '2', '3', '4'):
+            if fr in dia and all(i in cat for i in dia[fr].values()) and set(dia[fr]) >= set(REDES_VIDEO if fr == '4' else [x for x in REDES if not (x == 'pinterest' and fr == '1')]): continue
+            grupo = 'herr' if fr == '1' else 'frase' if fr == '3' else 'video' if fr == '4' else TARDE[datetime.date.fromisoformat(f).toordinal() % len(TARDE)]
             usados = set(); dia[fr] = {}
-            for r in REDES:
-                if r == 'pinterest' and fr == '1': continue
-                if r == 'x' and fr == '3': continue
-                cand = [p for p in cat.values() if GRUPO.get(p['tipo']) == grupo and p['id'] not in usados]
+            for r0 in (REDES_VIDEO if fr == '4' else REDES):
+                if r0 == 'pinterest' and fr == '1': continue
+                r = r0 + '-video' if fr == '4' else r0
+                if grupo == 'video':
+                    cand = [p for p in cat.values() if p['tipo'] in TIPOS_VIDEO and p['id'] not in usados]
+                else:
+                    cand = [p for p in cat.values() if GRUPO.get(p['tipo']) == grupo and p['id'] not in usados]
                 if r in ('instagram', 'pinterest'): cand = [p for p in cand if p['tipo'] != 'notas' or True]
                 if not cand: cand = [p for p in cat.values() if p['id'] not in usados]
                 # nuevos primero (alta en los últimos 14 días y nunca publicados en esa red), luego el que lleva más sin salir
                 nuevo = lambda p: p.get('alta', '') >= (HOY - datetime.timedelta(days=14)).isoformat() and p['id'] not in ultimo[r]
                 desempate = lambda p: hashlib.md5((r + p['id']).encode()).hexdigest()
                 p = min(cand, key=lambda p: (not nuevo(p), ultimo[r].get(p['id'], ''), desempate(p)))
-                dia[fr][r] = p['id']; usados.add(p['id']); ultimo[r][p['id']] = f
+                dia[fr][r0] = p['id']; usados.add(p['id']); ultimo[r][p['id']] = f
     guardar('estado.json', est)
     # tarjetas que faltan y enlaces cortos
-    necesarios = {i for f, fr in cal.items() if f >= HOY.isoformat() for x in fr.values() for i in x.values()}
+    necesarios = {i for f, fr in cal.items() if f >= HOY.isoformat() for k, x in fr.items() if k != '4' for i in x.values()}
     lista = []
     os.makedirs(os.path.join(D, 'img', 'auto'), exist_ok=True)
     fotos = leer('fotos.json', {}); usadas = {str(f['pid']) for f in fotos.values()}
@@ -269,7 +276,7 @@ def codigo(r, i):
 def enlaces():
     cat = {p['id']: p for p in leer('catalogo.json')['productos']}
     mapa = {}
-    for r in REDES:
+    for r in sorted(set(REDES) | set(REDES_VIDEO)):
         for i, p in cat.items():
             sep = '&' if '?' in p['url'] else '?'
             mapa[codigo(r, i)] = p['url'] + f'{sep}utm_source={r}&utm_medium=social&utm_campaign={p["tipo"]}'
@@ -366,7 +373,32 @@ def texto(r, p, n):
 
 
 # ------------------------------------------------------------------ publicación
+def publicar_video():
+    import redes
+    cat = {p['id']: p for p in leer('catalogo.json')['productos']}
+    est = leer('estado.json'); hoy = HOY.isoformat()
+    plan = est['calendario'].get(hoy, {}).get('4', {})
+    hist = est.setdefault('historial', {})
+    reg = open(os.path.join(D, 'registro.csv'), 'a', encoding='utf-8')
+    for n, r in enumerate(REDES_VIDEO):
+        i = plan.get(r); h = r + '-video'
+        if not i or i not in cat or not redes.configurada(r): continue
+        if any(f == hoy and x == i for f, x in hist.get(h, [])): continue
+        p = cat[i]
+        url = SITIO_IMG + f'video/{i}.mp4'
+        local = os.path.join(D, 'salida', 'video', i + '.mp4')
+        try:
+            if not os.path.exists(local):
+                os.makedirs(os.path.dirname(local), exist_ok=True); urllib.request.urlretrieve(url, local)
+            ref = redes.publicar_video(r, texto(r if r in REDES else 'mastodon', p, n + 4), url, local, IR + codigo(r, i), p)
+            hist.setdefault(h, []).append([hoy, i]); reg.write(f'{hoy},4,{r},{i},ok,{ref}\n'); print('OK vídeo', r, i, ref)
+        except Exception as e:
+            reg.write(f'{hoy},4,{r},{i},error,{str(e)[:150].replace(",", " ")}\n'); print('ERROR vídeo', r, i, e)
+    guardar('estado.json', est)
+
+
 def publicar(franja):
+    if franja == '4': return publicar_video()
     import redes
     cat = {p['id']: p for p in leer('catalogo.json')['productos']}
     est = leer('estado.json')

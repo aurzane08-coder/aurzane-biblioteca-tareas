@@ -3,6 +3,7 @@ name: Marketing automático
 #  - 05:13 UTC  planifica 14 días, crea las tarjetas, sube imágenes, feed RSS y enlaces cortos a aurzane.com
 #  - 08:37 UTC  franja de mañana (herramientas)       = 09:37 en España (10:37 en verano)
 #  - 12:13 UTC  frase de superación con foto (sobre todo Instagram) = 13:13 en España
+#  - 19:29 UTC  vídeo vertical (Reels, Facebook, YouTube Shorts, TikTok, Telegram) = 20:29 en España
 #  - 17:41 UTC  franja de tarde (libros, notas, etc.)  = 18:41 en España
 # Cada red se activa sola cuando existen sus secretos (ver marketing/README.md). Sin secretos no publica nada.
 on:
@@ -11,11 +12,12 @@ on:
     - cron: '37 8 * * *'
     - cron: '13 12 * * *'
     - cron: '41 17 * * *'
+    - cron: '29 19 * * *'
   push:
     paths: ['marketing/fijos.py', 'marketing/mk.py', 'marketing/tarjeta.js', 'marketing/frases.py', 'marketing/web/**', '.github/workflows/marketing.yml']
   workflow_dispatch:
     inputs:
-      accion: {description: 'planificar | 1 | 2 | 3 | verificar', default: 'planificar'}
+      accion: {description: 'planificar | 1 | 2 | 3 | 4 | verificar', default: 'planificar'}
 permissions:
   contents: write
 concurrency: marketing
@@ -41,6 +43,13 @@ jobs:
       IG_USUARIO_ID: "17841437879824682"  # @aurzane (identificador público)
       IG_TOKEN_INICIAL: ${{ secrets.IG_TOKEN }}
       THREADS_TOKEN: ${{ secrets.THREADS_TOKEN }}
+      FB_PAGINA_ID: "61595806065060"  # página Aurzane (identificador público)
+      YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+      YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+      YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+      TIKTOK_CLIENT_KEY: ${{ secrets.TIKTOK_CLIENT_KEY }}
+      TIKTOK_CLIENT_SECRET: ${{ secrets.TIKTOK_CLIENT_SECRET }}
+      TIKTOK_REFRESH_INICIAL: ${{ secrets.TIKTOK_REFRESH_TOKEN }}
       X_API_KEY: ${{ secrets.X_API_KEY }}
       X_API_SECRET: ${{ secrets.X_API_SECRET }}
       X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
@@ -50,7 +59,7 @@ jobs:
       - name: Qué toca
         run: |
           A="${{ github.event.inputs.accion }}"
-          case "${{ github.event.schedule }}" in '37 8 * * *') A=1;; '41 17 * * *') A=2;; '13 12 * * *') A=3;; '13 5 * * *') A=planificar;; esac
+          case "${{ github.event.schedule }}" in '37 8 * * *') A=1;; '41 17 * * *') A=2;; '13 12 * * *') A=3;; '29 19 * * *') A=4;; '13 5 * * *') A=planificar;; esac
           echo "ACCION=${A:-planificar}" >> $GITHUB_ENV; echo "Acción: ${A:-planificar}"
       - name: SSH
         if: env.SG_KEY != ''
@@ -68,6 +77,8 @@ jobs:
           sudo apt-get install -y -qq fonts-noto-color-emoji >/dev/null
           mkdir -p /tmp/f && cd /tmp/f && npm init -y >/dev/null && npm i -s playwright@1.48.2 @fontsource/bodoni-moda@5 @fontsource/instrument-sans@5 && npx playwright install chromium
           cd $GITHUB_WORKSPACE && NODE_PATH=/tmp/f/node_modules node marketing/tarjeta.js /tmp/tarjetas.json /tmp/f/node_modules/@fontsource
+          which ffmpeg || sudo apt-get install -y -qq ffmpeg >/dev/null
+          NODE_PATH=/tmp/f/node_modules FUENTES=/tmp/f/node_modules/@fontsource python3 marketing/video.py || echo "::warning::Vídeos no generados"
       - name: Token de Instagram (se renueva solo y se guarda fuera de la web)
         run: |
           T=""
@@ -84,19 +95,28 @@ jobs:
             fi
           fi
           echo "IG_TOKEN=$T" >> $GITHUB_ENV
+      - name: Token de TikTok (rota solo y se guarda fuera de la web)
+        run: |
+          T=""
+          if [ -n "$SSH" ]; then T=$($SSH "$SG_USER@$SG_HOST" "cat privado/tiktok_refresh 2>/dev/null" || true); fi
+          T=${T:-$TIKTOK_REFRESH_INICIAL}
+          [ -z "$T" ] && exit 0
+          echo "::add-mask::$T"; echo "TIKTOK_REFRESH_TOKEN=$T" >> $GITHUB_ENV
       - name: Comprobar redes
         if: env.ACCION == 'verificar' || env.ACCION == 'planificar'
         run: python3 marketing/mk.py verificar | sed 's/^/::notice title=Redes::/'
       - name: Publicar franja
-        if: env.ACCION == '1' || env.ACCION == '2' || env.ACCION == '3'
+        if: env.ACCION == '1' || env.ACCION == '2' || env.ACCION == '3' || env.ACCION == '4'
         run: python3 marketing/mk.py publicar "$ACCION"
       - name: Subir a aurzane.com y leer clics
         if: env.SG_KEY != ''
         run: |
           R="$SG_USER@$SG_HOST:www/aurzane.com"
-          $SSH "$SG_USER@$SG_HOST" "mkdir -p www/aurzane.com/public_html/marketing/img www/aurzane.com/public_html/ir"
+          $SSH "$SG_USER@$SG_HOST" "mkdir -p www/aurzane.com/public_html/marketing/img www/aurzane.com/public_html/marketing/video www/aurzane.com/public_html/ir"
+          if [ -s /tmp/tiktok_refresh ]; then cat /tmp/tiktok_refresh | $SSH "$SG_USER@$SG_HOST" "mkdir -p privado && chmod 700 privado && cat > privado/tiktok_refresh && chmod 600 privado/tiktok_refresh"; fi
           if [ "$ACCION" = planificar ]; then
             rsync -rlz --ignore-existing -e "$SSH" marketing/img/ "$R/public_html/marketing/img/"
+            [ -d marketing/salida/video ] && rsync -rlz --ignore-existing -e "$SSH" marketing/salida/video/ "$R/public_html/marketing/video/" || true
             rsync -rlz --checksum -e "$SSH" marketing/web/ir/ marketing/salida/ir/ "$R/public_html/ir/"
             $SSH "$SG_USER@$SG_HOST" "cat www/aurzane.com/ir-clics.log 2>/dev/null" > /tmp/clics.log || true
             python3 marketing/mk.py clics /tmp/clics.log
