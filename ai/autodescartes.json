@@ -1,6 +1,14 @@
 [
  {
   "fecha": "2026-11-03",
+  "id": "cita-ac2cd3d043",
+  "tipo": "cita",
+  "titulo": "Hay tantas cosas que simplemente son, más allá de nuestro control y nuestros deseos; aunque uno se esfuerza por darles sentido, por explicarlas y comprenderlas.",
+  "url": "https://aurzane.com/biblioteca/libro/tiempo-elegir-sin-miedo-memorias-astrobiologa.html",
+  "motivo": "Gemini le dio 7/10: no tiene fuerza suficiente para redes"
+ },
+ {
+  "fecha": "2026-11-03",
   "id": "cita-236ecb93f2",
   "tipo": "cita",
   "titulo": "Hay que situar el centro de interés en el grado de satisfacción de necesidades y de bienestar realmente alcanzado por sus diferentes integrantes.",
