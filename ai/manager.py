@@ -847,6 +847,34 @@ for h, lista in nuevas_red.items():
     else: acciones.append(f'Limpié redirecciones que ya no hacían falta en {h}.')
 guardar('redirecciones.json', conexiones['redirecciones'][-300:])
 
+# ---------- 16a. Contenido desactualizado y diagnóstico detallado para la revisión ----------
+ANIO = AHORA.year
+viejos = []
+CLAVE_DATOS = r'(datos|curso|precios?|tipos?|tarifas?|IRPF|eur[ií]bor|SMI|salario m[ií]nimo|notas? de corte|plazas|cuotas?|cotizaci[oó]n|actualizad[oa]|vigente|este año|convocatoria|PAU|EBAU|matr[ií]cula)'
+muestra_v = [u for u in urls if not re.search(r'/(biblioteca|universidades/[^/]+/[^/]+|articulos|temas)/', u)][:90]
+for u in muestra_v:
+    st, b, _, _ = get(u, t=20)
+    if st != 200: continue
+    t = re.sub(r'<script.*?</script>|<style.*?</style>', ' ', b.decode('utf-8', 'replace'), flags=re.S)
+    t = html.unescape(re.sub(r'<[^>]+>', ' ', t)); t = re.sub(r'\s+', ' ', t)
+    halla = []
+    for m in re.finditer(r'[^.]{0,80}\b(20[12]\d)\b[^.]{0,60}', t):
+        y = int(m.group(1)); frase = m.group(0).strip()
+        if y <= ANIO - 1 and re.search(CLAVE_DATOS, frase, re.I) and not re.search(r'ISBN|SENESCYT|Real Decreto|Ley|ley |validaci|publicad|edici|revista|journal|et al|\(\d{4}\)|Resoluci|BOE|DOI', frase, re.I):
+            halla.append(frase[:170])
+    m2 = re.search(r'©\s*(20\d\d)', t)
+    if m2 and int(m2.group(1)) < ANIO: halla.append(f'Pie con © {m2.group(1)}')
+    if halla: viejos.append({'url': u, 'frases': halla[:4]})
+if viejos:
+    aviso('medio', f'{len(viejos)} páginas mencionan datos de años anteriores; revisa si hay que actualizarlas (detalle en Salud de la web).', 'contenido_viejo', 'varias')
+    for v_ in viejos[:15]: print('::notice title=Viejo::' + v_['url'] + ' · ' + ' | '.join(v_['frases'])[:300])
+for x_ in seo:
+    if x_['faltan']: print('::notice title=SEO::' + x_['url'] + ' · ' + ', '.join(x_['faltan']))
+for x_ in seguridad:
+    if x_['faltan']: print('::notice title=Seguridad::' + x_['host'] + ' · ' + ', '.join(x_['faltan']))
+for e_ in errores.get('top', [])[:8]: print('::notice title=ErrorJS::' + str(e_['veces']) + ' · ' + e_['pagina'][:80] + ' · ' + e_['mensaje'][:140] + ' · ' + e_['archivo'][:80])
+for x_ in ps: print('::notice title=PageSpeed::' + x_['url'] + f" rend {x_['rendimiento']} seo {x_['seo']} acc {x_['accesibilidad']}")
+
 # ---------- 16b. Pruebas funcionales (ai/pruebas.js con navegador real) y servicios de AURZANE ID ----------
 pruebas = {}
 try: pruebas = json.load(open(OUT + '/pruebas.json', encoding='utf-8'))
@@ -906,7 +934,7 @@ def tasa(tipo, receta):
     a = APR.get(f'{tipo}|{receta}', [0, 0]); return (a[0] + 1) / (a[0] + a[1] + 2)
 NOMBRES = {'aprender': 'Aprender algo nuevo', 'vaciar_cache': 'Vaciar la caché del sitio', 'reintentar_flujo': 'Reintentar la automatización', 'relanzar_marketing': 'Relanzar las publicaciones',
            'relanzar_enlaces': 'Volver a revisar los enlaces', 'diagnostico_ia': 'Diagnóstico con IA', 'avisar': 'Avisarte'}
-RECETAS = {'prueba_fallida': ['vaciar_cache', 'diagnostico_ia'], 'servicio_caido': ['avisar'], 'sitio_caido': ['vaciar_cache', 'diagnostico_ia'], 'sitio_lento': ['vaciar_cache', 'diagnostico_ia'], 'pagina_error': ['vaciar_cache', 'diagnostico_ia'],
+RECETAS = {'contenido_viejo': ['diagnostico_ia'], 'prueba_fallida': ['vaciar_cache', 'diagnostico_ia'], 'servicio_caido': ['avisar'], 'sitio_caido': ['vaciar_cache', 'diagnostico_ia'], 'sitio_lento': ['vaciar_cache', 'diagnostico_ia'], 'pagina_error': ['vaciar_cache', 'diagnostico_ia'],
            'script_caido': ['vaciar_cache', 'diagnostico_ia'], 'js_error': ['vaciar_cache', 'diagnostico_ia'], 'automatizacion': ['reintentar_flujo', 'diagnostico_ia'],
            'red_fallos': ['relanzar_marketing', 'diagnostico_ia'], 'enlaces_rotos': ['relanzar_enlaces'], 'lenta_movil': ['diagnostico_ia'],
            'pagina_seo': ['diagnostico_ia'], 'ssl': ['avisar']}
@@ -1068,7 +1096,7 @@ guardar('estado.json', ESTADO)
 informe = {'fecha': AHORA.isoformat(), 'estado': nivel, 'resumen': '\n'.join(lineas), 'resumen_fuente': 'automático', 'problemas': problemas, 'acciones': acciones,
            'sitios': sitios, 'paginas': paginas, 'errores': errores, 'automatizaciones': autos, 'enlaces': enlaces, 'marketing': mk, 'novedades': nov[:30], 'pagespeed': ps,
            'cola': len(pend), 'aprobados_total': len(aprob), 'publicados': [{k: x.get(k) for k in ('id', 'tipo', 'titulo', 'portada', 'publicado', 'paginas', 'lic', 'pdf_local')} for x in aprob[:40]],
-           'autodescartes': autodesc[:60], 'citas_aprobadas': len(citas_ok), 'pruebas': pruebas, 'servicios': servicios, 'reparaciones': reparaciones_inf, 'conexiones': {'huerfanas': conexiones['huerfanas'][:80], 'n_huerfanas': len(conexiones['huerfanas']), 'fuera_sitemap': conexiones['fuera_sitemap'][:80], 'n_fuera': len(conexiones['fuera_sitemap']), 'redirecciones': conexiones['redirecciones'][-40:]}, 'dominio': dominio, 'seguridad': seguridad, 'seo': seo, 'historial': hist[-120:], 'diario': DIARIO}
+           'autodescartes': autodesc[:60], 'citas_aprobadas': len(citas_ok), 'contenido_viejo': viejos, 'pruebas': pruebas, 'servicios': servicios, 'reparaciones': reparaciones_inf, 'conexiones': {'huerfanas': conexiones['huerfanas'][:80], 'n_huerfanas': len(conexiones['huerfanas']), 'fuera_sitemap': conexiones['fuera_sitemap'][:80], 'n_fuera': len(conexiones['fuera_sitemap']), 'redirecciones': conexiones['redirecciones'][-40:]}, 'dominio': dominio, 'seguridad': seguridad, 'seo': seo, 'historial': hist[-120:], 'diario': DIARIO}
 json.dump(informe, open(OUT + '/informe.json', 'w', encoding='utf-8'), ensure_ascii=False)
 
 # ---------- 11. Aviso por Telegram (cuando Adrián escribe /aurzane al bot por privado) ----------
