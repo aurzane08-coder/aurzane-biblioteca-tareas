@@ -293,12 +293,16 @@ if ESTADO.get('reintento_pdf_1') != 'v3':
 canal, TGT = os.environ.get('TELEGRAM_CANAL', ''), os.environ.get('TELEGRAM_TOKEN', '')
 nuevos_pub, corregidas = [], 0
 citas_ok = leer('citas.json', []); nuevas_citas = 0
+curios_ok = leer('curiosidades.json', []); nuevas_curios = 0
 for p in pend:
     d = (decis.get(p['id']) or {}).get('d')
     if d not in ('aprobar', 'descartar'): continue
     vistos.add(p['id'])
     for k in (p.get('tema') or '', 'ed:' + (p.get('editorial') or ''), 'tipo:' + p['tipo']):
         a = apr.setdefault(k, [0, 0]); a[0 if d == 'aprobar' else 1] += 1
+    if p['tipo'] == 'curiosidad':
+        if d == 'aprobar': curios_ok.insert(0, dict(p, fecha=HOY)); nuevas_curios += 1
+        continue
     if p['tipo'] == 'cita':
         if d == 'aprobar':
             citas_ok.insert(0, {'id': p['id'], 'texto': p['titulo'], 'autor': p.get('autores') or '', 'libro': p.get('libro') or '', 'url': p['url'], 'lic': p.get('lic') or '', 'fecha': HOY})
@@ -324,7 +328,7 @@ if nuevos_pub:
 pend = [p for p in pend if p['id'] not in vistos]
 revisadas = []
 for p in pend:
-    if 'paginas' in p or p['tipo'] == 'cita': revisadas.append(p); continue
+    if 'paginas' in p or p['tipo'] in ('cita', 'curiosidad'): revisadas.append(p); continue
     ok, motivo = verificar(p)
     if ok: revisadas.append(p)
     else: descartar_solo(p, motivo[0].upper() + motivo[1:])
@@ -551,11 +555,42 @@ if sin_nota and os.environ.get('GEMINI_API_KEY'):
         for c, n_ in zip(sin_nota, notas): c['nota'] = n_
 malas_c = [c for c in citas_ok if not calidad_frase(c['texto']) or c.get('nota', 10) < 7]
 if malas_c:
-    citas_ok = [c for c in citas_ok if calidad_frase(c['texto'])]
+    citas_ok = [c for c in citas_ok if c not in malas_c]
     acciones.append(f'Retiré {len(malas_c)} frases aprobadas que tenían restos de escaneo o eran técnicas; no saldrán en redes.')
     autodesc[:0] = [{'fecha': HOY, 'id': c['id'], 'tipo': 'cita', 'titulo': c['texto'][:160], 'url': c['url'], 'motivo': 'Frase con restos de escaneo o demasiado técnica para redes'} for c in malas_c]
 if nuevas_citas: acciones.append(f'Pasé {nuevas_citas} frases aprobadas al marketing: saldrán en vídeos e imágenes con enlace al libro.')
 guardar('citas.json', citas_ok[:2000])
+# ---------- 18. Curiosidades para Shorts y Reels: Gemini escribe guiones cortos y rigurosos; tú los apruebas ----------
+TEMAS_CUR = ['un sesgo cognitivo', 'un experimento clásico de la historia de la psicología', 'cómo funciona la memoria', 'el sueño y el cerebro', 'las emociones',
+             'los hábitos', 'la atención y la concentración', 'la ansiedad', 'la autoestima', 'el estrés', 'la neuroplasticidad', 'la motivación', 'el aprendizaje', 'la soledad', 'la felicidad']
+if nuevas_curios: acciones.append(f'Pasé {nuevas_curios} curiosidades aprobadas a YouTube, Reels y TikTok.')
+guardar('curiosidades.json', curios_ok[:1000])
+if os.environ.get('GEMINI_API_KEY') and sum(1 for p in pend if p['tipo'] == 'curiosidad') < 10 and ESTADO.get('curiosidades') != HOY:
+    usados = {c.get('fuente_id') for c in curios_ok} | {p.get('fuente_id') for p in pend}
+    fuentes = [('estudio', x) for x in aprob if x['tipo'] == 'estudio' and x['id'] not in usados][:2]
+    dia = AHORA.timetuple().tm_yday
+    fuentes += [('tema', {'id': f'tema-{dia}-{k}', 'titulo': TEMAS_CUR[(dia * 3 + k) % len(TEMAS_CUR)]}) for k in range(4 - len(fuentes))]
+    hechas_c = 0
+    for clase, f in fuentes:
+        base = (f'Basándote SOLO en este estudio publicado:\nTítulo: {f["titulo"]}\nRevista: {f.get("editorial", "")}\nResumen: {f.get("resumen", "")[:1500]}'
+                if clase == 'estudio' else f'Tema: {f["titulo"]}. Usa solo hechos bien establecidos en psicología, citando de dónde salen (autor y año o el experimento).')
+        r = gemini_base('Escribe una curiosidad para un vídeo corto (YouTube Shorts, Reels y TikTok) de AURZANE, divulgación de psicología en español de España, '
+                        'sin rayas largas, sin exagerar y sin consejos médicos. ' + base + '\nResponde SOLO con JSON: {"gancho": "<pregunta o dato que enganche, máximo 70 caracteres>", '
+                        '"dato": "<la curiosidad, máximo 150 caracteres>", "explicacion": "<2 o 3 frases claras, máximo 300 caracteres>", "fuente": "<autor y año, o revista>", '
+                        '"hashtags": ["<4 hashtags sin #>"]}', 700, 0.4)
+        m = re.search(r'\{.*\}', r, re.S)
+        try: j = json.loads(m.group(0)) if m else {}
+        except Exception: j = {}
+        if not (j.get('gancho') and j.get('dato')): continue
+        cid = 'cur-' + hashlib.md5((j['gancho'] + j['dato']).encode()).hexdigest()[:10]
+        if cid in ya or cid in vistos: continue
+        ya.add(cid); hechas_c += 1
+        pend.append({'id': cid, 'tipo': 'curiosidad', 'titulo': j['gancho'][:90], 'dato': j['dato'][:200], 'resumen': (j['dato'] + ' ' + j.get('explicacion', ''))[:520],
+                     'fuente': str(j.get('fuente', ''))[:140], 'hashtags': [re.sub(r'\W', '', str(h)) for h in (j.get('hashtags') or [])][:4], 'fuente_id': f['id'],
+                     'url': ('https://aurzane.com/biblioteca/recientes/' + f['id'] + '/') if clase == 'estudio' else 'https://mind.aurzane.com/', 'portada': f.get('portada', ''), 'tema': 'curiosidad', 'idioma': 'es',
+                     'autores': str(j.get('fuente', ''))[:140], 'motivo': 'Guion escrito por Gemini a partir de ' + ('un estudio que aprobaste' if clase == 'estudio' else 'un tema de psicología') + '. Revisa que el dato sea correcto antes de aprobar.'})
+    ESTADO['curiosidades'] = HOY
+    if hechas_c: acciones.append(f'Escribí {hechas_c} curiosidades para vídeos cortos; están en la cola del admin.')
 pend.sort(key=lambda p: puntos(p) * (0.9 if p['tipo'] == 'cita' else 1), reverse=True); pend = pend[:90]
 print('::notice title=AI::Cola ' + str(len(pend)) + ' propuestas (' + str(sum(1 for x in pend if x['tipo'] == 'libro')) + ' libros, ' + str(sum(1 for x in pend if x.get('portada'))) + ' con portada), ' + str(nuevos_auto) + ' descartadas solas')
 json.dump(pend, open(OUT + '/propuestas.json', 'w', encoding='utf-8'), ensure_ascii=False)

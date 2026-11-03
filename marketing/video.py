@@ -6,7 +6,7 @@ D = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, D)
 import mk
 
-DUR = {'frase': 12}
+DUR = {'frase': 12, 'curiosidad': 14}
 V = 'm1-'  # versión de los vídeos: m1 = con música de fondo
 # Música de fondo: Kevin MacLeod (incompetech.com), licencia CC BY 4.0. Uso comercial y monetización permitidos citando el tema,
 # por eso cada publicación de vídeo lleva el crédito (mk.credito_musica). Calma para frases, más alegre para tests y calculadoras.
@@ -17,7 +17,7 @@ MUSICA_ALEGRE = ['Carefree', 'Easy Lemon', 'Wholesome', 'Inspired', 'Amazing Pla
 
 
 def musica_de(p):
-    lista = MUSICA_CALMA if p['tipo'] == 'frase' else MUSICA_ALEGRE
+    lista = MUSICA_CALMA if p['tipo'] in ('frase', 'curiosidad') else MUSICA_ALEGRE
     return lista[int(hashlib.md5((p['id'] + 'm').encode()).hexdigest(), 16) % len(lista)]
 
 
@@ -70,7 +70,7 @@ NATURALEZA = ['calm nature', 'ocean waves', 'forest light', 'sunrise sky', 'clou
 
 def fondo(p):
     lib = mk.leer('biblioteca_videos.json', {})
-    q = VQ.get(p['id']) or (NATURALEZA[int(hashlib.md5(p['id'].encode()).hexdigest(), 16) % len(NATURALEZA)] if p['tipo'] == 'frase' else 'calm nature')
+    q = VQ.get(p['id']) or (NATURALEZA[int(hashlib.md5(p['id'].encode()).hexdigest(), 16) % len(NATURALEZA)] if p['tipo'] in ('frase', 'curiosidad') else 'calm nature')
     lista = lib.get(q) or lib['calm nature']
     return lista[int(hashlib.md5((p['id'] + 'v').encode()).hexdigest(), 16) % len(lista)]
 
@@ -78,6 +78,8 @@ def fondo(p):
 def capa_de(p):
     if p['tipo'] == 'frase':
         return dict(titulo=p['titulo'], cita=True, autor='' if p.get('autor') == 'AURZANE' else p.get('autor'), pie='aurzane.com · psicología y bienestar')
+    if p['tipo'] == 'curiosidad':
+        return dict(kicker='¿Sabías que…?', titulo=p['titulo'], sub=mk.recorta(p.get('dato') or p['texto'], 150), pie='aurzane.com · psicología')
     kick = {'test': 'Test gratis', 'calculadora': 'Calculadora gratis', 'curso': 'Curso gratis'}.get(p['tipo'], 'Gratis')
     return dict(kicker=kick, titulo=p['ganchos'][0], sub=mk.recorta(p['texto'], 120), pie=mk.pie_de(p['url']))
 

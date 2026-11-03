@@ -10,7 +10,7 @@ import json, os, re, sys, hashlib, datetime, collections, urllib.request, urllib
 D = os.path.dirname(os.path.abspath(__file__))
 REDES = ['telegram', 'bluesky', 'mastodon', 'instagram', 'facebook', 'threads', 'pinterest']  # X desactivada: cobra por publicar
 REDES_VIDEO = ['instagram', 'facebook', 'youtube', 'tiktok', 'telegram']  # franja 4: vídeo vertical
-TIPOS_VIDEO = ('frase', 'test', 'calculadora')
+TIPOS_VIDEO = ('frase', 'test', 'calculadora', 'curiosidad')
 SITIO_IMG = 'https://aurzane.com/marketing/'
 IR = 'https://aurzane.com/ir/'
 HOY = datetime.date.today()
@@ -121,6 +121,14 @@ def catalogo():
                             aviso='', img=None, emoji='', foto_q=frases.FOTOS[int(fid[6:12], 16) % len(frases.FOTOS)]))
     except FileNotFoundError: pass
     except Exception as e: print('citas', e)
+    # curiosidades escritas por la IA (Gemini) y aprobadas en el admin (ai/curiosidades.json): vídeos cortos para YouTube, Reels y TikTok
+    try:
+        for c in json.load(open(os.path.join(os.path.dirname(D), 'ai', 'curiosidades.json'), encoding='utf-8')):
+            out.append(dict(id=c['id'], tipo='curiosidad', mundo='mind', origen='curiosidades', url=c['url'], titulo=c['titulo'],
+                            ganchos=[c['titulo'], c['titulo'] + ' 🧠', c['dato'][:90]], texto=c['resumen'] + (f"\n\nFuente: {c['fuente']}" if c.get('fuente') else ''),
+                            hashtags=(c.get('hashtags') or []) + ['Psicología', 'Curiosidades'], aviso='', img=None, emoji='🧠', dato=c['dato']))
+    except FileNotFoundError: pass
+    except Exception as e: print('curiosidades', e)
     # páginas nuevas del sitemap que aún no están: entran solas
     urls = {p['url'].rstrip('/') for p in out}
     try:
