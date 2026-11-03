@@ -29,9 +29,9 @@ def jamendo(p):
     tags = 'ambient+piano+relaxation' if p['tipo'] == 'frase' else 'happy+acoustic+upbeat'
     try:
         u = 'https://api.jamendo.com/v3.0/tracks/?' + urllib.parse.urlencode({'client_id': cid, 'format': 'json', 'limit': 50, 'fuzzytags': tags, 'include': 'licenses',
-                                                                             'audioformat': 'mp32', 'ccnc': 'false', 'ccnd': 'false', 'order': 'popularity_month', 'vocalinstrumental': 'instrumental'})
+                                                                             'audioformat': 'mp32', 'ccnc': 'false', 'order': 'popularity_month', 'vocalinstrumental': 'instrumental'})
         res = json.load(urllib.request.urlopen(u, timeout=60)).get('results', [])
-        res = [t for t in res if t.get('audiodownload_allowed', True) and (t.get('audiodownload') or t.get('audio')) and '-nc' not in (t.get('license_ccurl') or '') and '-nd' not in (t.get('license_ccurl') or '')]
+        res = [t for t in res if t.get('audiodownload_allowed', True) and (t.get('audiodownload') or t.get('audio')) and 'creativecommons.org/licenses/by' in (t.get('license_ccurl') or '') and '-nc' not in t['license_ccurl'] and '-nd' not in t['license_ccurl']]
         if not res: return None
         t = res[int(hashlib.md5((p['id'] + 'j').encode()).hexdigest(), 16) % len(res)]
         dest = f'/tmp/jamendo-{t["id"]}.mp3'
