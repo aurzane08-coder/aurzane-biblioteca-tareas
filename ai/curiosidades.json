@@ -1,1 +1,102 @@
-[]
+[
+ {
+  "id": "cur-cadc144101",
+  "tipo": "curiosidad",
+  "titulo": "¿Por qué tu ansiedad te engaña en el peor momento?",
+  "dato": "Tu cerebro confunde estrés con peligro real por un sesgo evolutivo.",
+  "resumen": "Tu cerebro confunde estrés con peligro real por un sesgo evolutivo. Según la Asociación Americana de Psicología, la amígdala activa la respuesta de lucha o huida ante amenazas abstractas igual que ante depredadores físicos. Esto genera síntomas intensos aunque no corras peligro real.",
+  "fuente": "APA, 2020",
+  "hashtags": [
+   "psicologia",
+   "ansiedad",
+   "saludmental",
+   "aurzane"
+  ],
+  "fuente_id": "tema-307-1",
+  "url": "https://mind.aurzane.com/",
+  "portada": "",
+  "tema": "curiosidad",
+  "idioma": "es",
+  "autores": "APA, 2020",
+  "motivo": "Guion escrito por Gemini a partir de un tema de psicología. Revisa que el dato sea correcto antes de aprobar.",
+  "verificada": "2026-11-03",
+  "fecha": "2026-11-03",
+  "auto": true,
+  "verificacion": "Explica con precisión científica y sin exageraciones el funcionamiento de la amígdala ante estresores abstractos."
+ },
+ {
+  "id": "cur-ea27fcda45",
+  "tipo": "curiosidad",
+  "titulo": "¿Por qué pierdes la concentración tan rápido?",
+  "dato": "Tardamos más de 20 minutos en recuperar la concentración profunda tras cada interrupción.",
+  "resumen": "Tardamos más de 20 minutos en recuperar la concentración profunda tras cada interrupción. Cada vez que miras el móvil o cambias de pestaña, tu cerebro sufre un coste de cambio. Gloria Mark demostró que este esfuerzo acumulado reduce drásticamente nuestra productividad diaria.",
+  "fuente": "Gloria Mark, 2008",
+  "hashtags": [
+   "psicologia",
+   "atencion",
+   "productividad",
+   "aurzane"
+  ],
+  "fuente_id": "tema-307-0",
+  "url": "https://mind.aurzane.com/",
+  "portada": "",
+  "tema": "curiosidad",
+  "idioma": "es",
+  "autores": "Gloria Mark, 2008",
+  "motivo": "Guion escrito por Gemini a partir de un tema de psicología. Revisa que el dato sea correcto antes de aprobar.",
+  "verificada": "2026-11-03",
+  "fecha": "2026-11-03",
+  "auto": true,
+  "verificacion": "La investigación de Gloria Mark respalda que toma en promedio unos 23 minutos retomar el foco tras una interrupción."
+ },
+ {
+  "id": "cur-51017ffc8d",
+  "tipo": "curiosidad",
+  "titulo": "¿Influye la cultura en nuestra salud mental?",
+  "dato": "Cuidar la salud mental de mujeres musulmanas y árabes en EE.UU. requiere una atención adaptada a su cultura.",
+  "resumen": "Cuidar la salud mental de mujeres musulmanas y árabes en EE.UU. requiere una atención adaptada a su cultura. Un estudio analiza cómo la resiliencia y el bienestar de estas mujeres están profundamente conectados con sus valores culturales y religiosos. Por ello, la atención psicológica debe ser congruente con su identidad para ser eficaz.",
+  "fuente": "Frontiers in global women's health",
+  "hashtags": [
+   "psicologia",
+   "saludmental",
+   "cultura",
+   "aurzane"
+  ],
+  "fuente_id": "pmc-PMC13720362",
+  "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13720362/",
+  "portada": "https://aurzane.com/biblioteca/recientes/portadas/pmc-PMC13720362.jpg",
+  "tema": "curiosidad",
+  "idioma": "es",
+  "autores": "Frontiers in global women's health",
+  "motivo": "Guion escrito por Gemini a partir de un estudio que aprobaste. Revisa que el dato sea correcto antes de aprobar.",
+  "verificada": "2026-11-03",
+  "fecha": "2026-11-03",
+  "auto": true,
+  "verificacion": "El texto refleja fielmente la premisa de la investigación intercultural en salud mental basada en evidencia científica."
+ },
+ {
+  "id": "cur-ed1744a3b5",
+  "tipo": "curiosidad",
+  "titulo": "¿Sabías que la depresión y el corazón están conectados?",
+  "dato": "La depresión y un tipo común de insuficiencia cardíaca comparten una raíz inflamatoria común.",
+  "resumen": "La depresión y un tipo común de insuficiencia cardíaca comparten una raíz inflamatoria común. Un estudio reciente muestra que la depresión y los problemas del corazón están vinculados por mecanismos biológicos compartidos. La inflamación juega un papel clave en ambas condiciones y en sus procesos relacionados.",
+  "fuente": "Depression and Anxiety",
+  "hashtags": [
+   "psicologia",
+   "salud",
+   "ciencia",
+   "divulgacion"
+  ],
+  "fuente_id": "pmc-PMC13695868",
+  "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13695868/",
+  "portada": "https://aurzane.com/biblioteca/recientes/portadas/pmc-PMC13695868.jpg",
+  "tema": "curiosidad",
+  "idioma": "es",
+  "autores": "Depression and Anxiety",
+  "motivo": "Guion escrito por Gemini a partir de un estudio que aprobaste. Revisa que el dato sea correcto antes de aprobar.",
+  "verificada": "2026-11-03",
+  "fecha": "2026-11-03",
+  "auto": true,
+  "verificacion": "La conexión inflamatoria entre depresión e insuficiencia cardíaca está respaldada por la psiconeuroinmunología y literatura científica actual."
+ }
+]
