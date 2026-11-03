@@ -1,0 +1,26 @@
+name: Prueba Gemini
+on:
+  push:
+    paths: ['.github/workflows/prueba-gemini.yml']
+jobs:
+  p:
+    runs-on: ubuntu-latest
+    env:
+      K: ${{ secrets.GEMINI_API_KEY }}
+    steps:
+      - run: |
+          python3 - <<'PY'
+          import os, json, urllib.request
+          k = os.environ.get('K', '').strip()
+          print('::notice title=G::longitud', len(k), 'empieza', k[:3] == 'AIz' and 'AIza' or k[:3] == 'AQ.' and 'AQ.' or 'otro', 'espacios', k != os.environ.get('K', ''))
+          def q(u, data=None, h=None):
+              try:
+                  r = urllib.request.urlopen(urllib.request.Request(u, data=data, headers=h or {}), timeout=60); return r.status, r.read()[:300]
+              except urllib.error.HTTPError as e: return e.code, e.read()[:300]
+              except Exception as e: return 'ERR', str(e)[:200].encode()
+          st, b = q('https://generativelanguage.googleapis.com/v1beta/models?pageSize=5', h={'x-goog-api-key': k}); print('::notice title=G::models', st, b.decode('utf-8','replace').replace('\n',' ')[:250])
+          body = json.dumps({'contents': [{'parts': [{'text': 'Di hola'}]}]}).encode()
+          for m in ['gemini-2.5-flash', 'gemini-2.5-flash-lite', 'gemini-2.0-flash', 'gemini-2.0-flash-lite', 'gemini-flash-latest']:
+              st, b = q(f'https://generativelanguage.googleapis.com/v1beta/models/{m}:generateContent', body, {'Content-Type': 'application/json', 'x-goog-api-key': k})
+              print('::notice title=G::', m, st, b.decode('utf-8','replace').replace('\n',' ')[:200])
+          PY
