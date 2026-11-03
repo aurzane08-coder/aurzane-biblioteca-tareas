@@ -69,10 +69,32 @@ NATURALEZA = ['calm nature', 'ocean waves', 'forest light', 'sunrise sky', 'clou
 
 
 def fondo(p):
+    if os.environ.get('PIXABAY_KEY') and int(hashlib.md5((p['id'] + 'px').encode()).hexdigest(), 16) % 2 == 0:
+        q0 = VQ.get(p['id']) or (NATURALEZA[int(hashlib.md5(p['id'].encode()).hexdigest(), 16) % len(NATURALEZA)] if p['tipo'] in ('frase', 'curiosidad') else 'calm nature')
+        u = pixabay(q0, p['id'])
+        if u: return u
     lib = mk.leer('biblioteca_videos.json', {})
     q = VQ.get(p['id']) or (NATURALEZA[int(hashlib.md5(p['id'].encode()).hexdigest(), 16) % len(NATURALEZA)] if p['tipo'] in ('frase', 'curiosidad') else 'calm nature')
     lista = lib.get(q) or lib['calm nature']
     return lista[int(hashlib.md5((p['id'] + 'v').encode()).hexdigest(), 16) % len(lista)]
+
+
+def pixabay(q, semilla):
+    """Si hay PIXABAY_KEY, busca un vídeo de fondo en Pixabay (licencia de Pixabay: uso comercial gratis, sin atribución obligatoria).
+    Prefiere vídeos verticales y de calidad media. Devuelve la URL o None."""
+    k = os.environ.get('PIXABAY_KEY', '').strip()
+    if not k: return None
+    try:
+        u = 'https://pixabay.com/api/videos/?' + urllib.parse.urlencode({'key': k, 'q': q, 'per_page': 50, 'safesearch': 'true', 'video_type': 'film'})
+        hits = json.load(urllib.request.urlopen(urllib.request.Request(u, headers={'User-Agent': 'Mozilla/5.0'}), timeout=60)).get('hits', [])
+        cands = []
+        for h in hits:
+            v = h.get('videos', {}); m = v.get('medium') or v.get('small') or {}
+            if m.get('url') and 8 <= h.get('duration', 0) <= 60: cands.append((m.get('height', 0) > m.get('width', 1), m['url']))
+        vert = [u for e, u in cands if e]; lista = vert or [u for _, u in cands]
+        return lista[int(hashlib.md5(semilla.encode()).hexdigest(), 16) % len(lista)] if lista else None
+    except Exception as e:
+        print('::notice title=Videos::Pixabay no disponible', str(e)[:100]); return None
 
 
 def capa_de(p):
