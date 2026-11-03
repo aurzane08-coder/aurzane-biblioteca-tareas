@@ -869,6 +869,9 @@ if necesita: acciones.append(f'Te dejé {len(necesita)} problemas en Reparacione
 REP = REP[:500]
 json.dump(REP, open(OUT + '/reparaciones.json', 'w', encoding='utf-8'), ensure_ascii=False)
 guardar('aprendizaje_reparaciones.json', APR); ESTADO['solicitudes_hechas'] = sorted(hechas_sol)[-500:]
+if GEM and gem_estado == 'sin clave':
+    gemini('Responde solo: ok', 10)
+print('::notice title=AI::Gemini: ' + (gem_estado if GEM else 'sin clave'))
 reparaciones_inf = {'log': REP[:80], 'aprendizaje': {k: v for k, v in APR.items()}, 'nombres': NOMBRES, 'gemini': gem_estado if GEM else 'sin clave',
                     'pendientes_solicitud': sum(1 for x in SOL if x.get('id') not in hechas_sol)}
 
