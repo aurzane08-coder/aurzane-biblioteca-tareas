@@ -435,13 +435,37 @@ def calidad_frase(f):
     if not pal or sum(len(x) > 18 for x in pal) or sum(len(x) <= 2 for x in pal) / len(pal) > 0.45: return False
     if re.match(r'^(vana|como|cuando|donde|aunque|porque|si|sino|mientras|pues|que)\b', f, re.I): return False
     return True
-def gemini_rapido(prompt):
-    k = os.environ.get('GEMINI_API_KEY', '')
+GEM_MODELOS = []
+GEM_INFO = {'estado': 'sin clave', 'modelo': ''}
+def gemini_base(prompt, maxt=700, temp=0.3):
+    """Llama a Gemini eligiendo sola el modelo vigente (Google retira modelos: se consulta la lista), con reintentos si está saturado."""
+    k = os.environ.get('GEMINI_API_KEY', '').strip()
     if not k: return ''
-    st, b, _, _ = get('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent', {'Content-Type': 'application/json', 'x-goog-api-key': k},
-                      datos=json.dumps({'contents': [{'parts': [{'text': prompt}]}], 'generationConfig': {'temperature': 0, 'maxOutputTokens': 200}}).encode(), metodo='POST', t=60)
-    try: return ''.join(x.get('text', '') for x in json.loads(b)['candidates'][0]['content']['parts']) if st == 200 else ''
-    except Exception: return ''
+    cab = {'Content-Type': 'application/json', 'x-goog-api-key': k}
+    if not GEM_MODELOS:
+        st, b, _, _ = get('https://generativelanguage.googleapis.com/v1beta/models?pageSize=200', cab, t=60)
+        try:
+            ms = [m for m in json.loads(b).get('models', []) if 'generateContent' in m.get('supportedGenerationMethods', []) and 'flash' in m['name']
+                  and not re.search(r'image|tts|audio|live|embed|thinking|exp|preview', m['name'])]
+            def ver(m): return [int(x) for x in re.findall(r'\d+', m['name'].split('/')[-1])[:3]]
+            ms.sort(key=lambda m: (('lite' in m['name']), [-x for x in ver(m)]))
+            GEM_MODELOS.extend(m['name'].split('/')[-1] for m in ms[:4])
+        except Exception: pass
+        if not GEM_MODELOS: GEM_INFO['estado'] = f'no pude listar modelos ({st})'; return ''
+    cuerpo = json.dumps({'contents': [{'parts': [{'text': prompt}]}], 'generationConfig': {'temperature': temp, 'maxOutputTokens': maxt}}).encode()
+    for modelo in GEM_MODELOS:
+        for intento in range(3):
+            st, b, _, _ = get(f'https://generativelanguage.googleapis.com/v1beta/models/{modelo}:generateContent', cab, datos=cuerpo, metodo='POST', t=120)
+            if st == 200:
+                try:
+                    GEM_INFO.update(estado='ok', modelo=modelo)
+                    return ''.join(x.get('text', '') for x in json.loads(b)['candidates'][0]['content']['parts']).strip()
+                except Exception: break
+            GEM_INFO['estado'] = f'error {st} en {modelo}'
+            if st in (429, 500, 503) or str(st).startswith('ERR'): time.sleep(8 * (intento + 1)); continue
+            break
+    return ''
+def gemini_rapido(prompt): return gemini_base(prompt, 300, 0)
 def es_espanol(t):
     w = re.findall(r'[a-záéíóúñ]+', t.lower()); return len(w) > 50 and sum(x in ('el', 'la', 'de', 'que', 'y', 'en', 'los', 'se', 'las', 'por', 'un', 'una', 'con', 'no') for x in w) / len(w) > 0.18
 def frases_de(texto):
@@ -720,31 +744,39 @@ guardar('redirecciones.json', conexiones['redirecciones'][-300:])
 # Desde el admin puedes pedir una reparación concreta o describir un problema con su URL.
 GEM = os.environ.get('GEMINI_API_KEY', '')
 gem_estado = 'sin clave'
-def gemini(prompt, maxt=700):
+def gemini(prompt, maxt=900):
     global gem_estado
-    if not GEM: return ''
-    cuerpo = json.dumps({'contents': [{'parts': [{'text': prompt}]}], 'generationConfig': {'temperature': 0.3, 'maxOutputTokens': maxt}}).encode()
-    for modelo in ('gemini-2.5-flash', 'gemini-2.0-flash', 'gemini-flash-latest'):
-        st, b, _, _ = get(f'https://generativelanguage.googleapis.com/v1beta/models/{modelo}:generateContent', {'Content-Type': 'application/json', 'x-goog-api-key': GEM}, datos=cuerpo, metodo='POST', t=90)
-        if st == 200:
-            try:
-                gem_estado = 'ok ' + modelo
-                return ''.join(x.get('text', '') for x in json.loads(b)['candidates'][0]['content']['parts']).strip()
-            except Exception: pass
-        gem_estado = f'error {st}'
-        if st in (400, 401, 403): break
-    return ''
+    r = gemini_base(prompt, maxt); gem_estado = GEM_INFO['estado'] + (' · ' + GEM_INFO['modelo'] if GEM_INFO['modelo'] else ''); return r
+CONOC = leer('conocimiento.json', {})
+SEGURAS = ['vaciar_cache', 'reintentar_flujo', 'relanzar_marketing', 'relanzar_enlaces', 'avisar']
+def firma_de(p): return (p.get('tipo') or 'desconocido') + '|' + re.sub(r'https?://\S+|\d+', '#', p['texto'].lower())[:140]
+def aprender_desconocido(p, f_, probadas=()):
+    """Problema nuevo o que no se arregla con lo conocido: Gemini elige una acción SEGURA de la lista y explica por qué.
+    Queda en ai/conocimiento.json; si la acción falla 3 veces sin ningún acierto, se olvida y vuelve a preguntar."""
+    opciones = [r for r in SEGURAS if r not in probadas] or SEGURAS
+    previos = '\n'.join(f"- {k.split('|', 1)[1][:90]} -> {v['receta']} ({v['ok']} aciertos, {v['fallo']} fallos)" for k, v in list(CONOC.items())[-12:])
+    r = gemini('Eres el sistema de mantenimiento de AURZANE (web de psicología en SiteGround con subdominios, automatizaciones en GitHub Actions, redes sociales). '
+               'Apareció este problema: «' + p['texto'] + '». Contexto:\n' + contexto_de(p)[:3000] +
+               '\n\nAcciones que puedes ordenar (solo estas): ' + ', '.join(f'{x} = {NOMBRES.get(x, x)}' for x in opciones) +
+               ('\n\nLo que has aprendido antes:\n' + previos if previos else '') +
+               '\n\nResponde SOLO con JSON: {"receta": "<una de las acciones>", "motivo": "<una frase en español>", "explicacion": "<causa probable y cómo arreglarlo a mano si la acción no basta, máximo 6 líneas, sin rayas largas>"}', 700)
+    m = re.search(r'\{.*\}', r, re.S)
+    try: j = json.loads(m.group(0)) if m else {}
+    except Exception: j = {}
+    if j.get('receta') not in opciones: return None
+    CONOC[f_] = {'receta': j['receta'], 'motivo': str(j.get('motivo', ''))[:300], 'explicacion': str(j.get('explicacion', ''))[:1500], 'ok': 0, 'fallo': 0, 'fecha': HOY, 'ejemplo': p['texto'][:200]}
+    return CONOC[f_]
 REP = jremoto('reparaciones.json', []); APR = leer('aprendizaje_reparaciones.json', {}); SOL = jremoto('solicitudes.json', [])
 hechas_sol = set(ESTADO.get('solicitudes_hechas', []))
 claves_ahora = {p['clave']: p for p in problemas}
-def anotar(clave, tipo, problema, receta, resultado, detalle='', sugerencia=''):
-    REP.insert(0, {'id': hashlib.md5(f'{AHORA.isoformat()}{clave}{receta}'.encode()).hexdigest()[:10], 'fecha': AHORA.isoformat()[:16], 'clave': clave, 'tipo': tipo,
+def anotar(clave, tipo, problema, receta, resultado, detalle='', sugerencia='', firma=''):
+    REP.insert(0, {'firma': firma, 'id': hashlib.md5(f'{AHORA.isoformat()}{clave}{receta}'.encode()).hexdigest()[:10], 'fecha': AHORA.isoformat()[:16], 'clave': clave, 'tipo': tipo,
                    'problema': problema[:300], 'receta': receta, 'resultado': resultado, 'detalle': detalle[:600], 'sugerencia': sugerencia[:2500]})
 def aprender(tipo, receta, ok):
     a = APR.setdefault(f'{tipo}|{receta}', [0, 0]); a[0 if ok else 1] += 1
 def tasa(tipo, receta):
     a = APR.get(f'{tipo}|{receta}', [0, 0]); return (a[0] + 1) / (a[0] + a[1] + 2)
-NOMBRES = {'vaciar_cache': 'Vaciar la caché del sitio', 'reintentar_flujo': 'Reintentar la automatización', 'relanzar_marketing': 'Relanzar las publicaciones',
+NOMBRES = {'aprender': 'Aprender algo nuevo', 'vaciar_cache': 'Vaciar la caché del sitio', 'reintentar_flujo': 'Reintentar la automatización', 'relanzar_marketing': 'Relanzar las publicaciones',
            'relanzar_enlaces': 'Volver a revisar los enlaces', 'diagnostico_ia': 'Diagnóstico con IA', 'avisar': 'Avisarte'}
 RECETAS = {'sitio_caido': ['vaciar_cache', 'diagnostico_ia'], 'sitio_lento': ['vaciar_cache', 'diagnostico_ia'], 'pagina_error': ['vaciar_cache', 'diagnostico_ia'],
            'script_caido': ['vaciar_cache', 'diagnostico_ia'], 'js_error': ['vaciar_cache', 'diagnostico_ia'], 'automatizacion': ['reintentar_flujo', 'diagnostico_ia'],
@@ -821,6 +853,7 @@ for x in REP:
         ok = x['clave'] not in claves_ahora
         x['resultado'] = 'ok' if ok else 'fallo'; x['detalle'] += ' · verificado en la revisión siguiente: ' + ('ya no aparece' if ok else 'sigue pasando')
         aprender(x['tipo'], x['receta'], ok)
+        if x.get('firma') in CONOC: CONOC[x['firma']]['ok' if ok else 'fallo'] += 1
 # 2) solicitudes desde el admin
 pedidas = set()
 for s_ in SOL:
@@ -847,32 +880,46 @@ for s_ in SOL:
     anotar(p['clave'], 'peticion', p['texto'], 'revision_pedida', 'escalado' if sug or pasos else 'fallo', ctx, sug)
     acciones.append('Atendí tu petición de reparación: ' + (txt[:80] or u[:80]) + '.')
 # 3) reparar los avisos de ahora
-hechos = 0; necesita = []
+hechos = 0; necesita = []; aprendidas = 0
 for p in problemas:
-    t = p.get('tipo')
-    if t not in RECETAS or hechos >= 8: continue
+    t = p.get('tipo') or 'desconocido'
+    if hechos >= 8: continue
     hist_c = [x for x in REP if x['clave'] == p['clave']]
-    if any(x['resultado'] == 'pendiente' for x in hist_c): continue
     probadas = {x['receta'] for x in hist_c if x['fecha'][:10] >= (AHORA - datetime.timedelta(days=3)).date().isoformat()}
-    orden = sorted([r for r in RECETAS[t] if r != 'diagnostico_ia'], key=lambda r: -tasa(t, r)) + [r for r in RECETAS[t] if r == 'diagnostico_ia']
+    f_ = firma_de(p); con = CONOC.get(f_)
+    agotadas = t in RECETAS and all(r in probadas for r in RECETAS[t])
+    if (t not in RECETAS or agotadas) and (not con or con['fallo'] >= 3 and con['ok'] == 0) and GEM and not any(x.get('firma') == f_ and x['receta'] == 'aprender' and x['fecha'][:10] == HOY for x in REP):
+        con = aprender_desconocido(p, f_, probadas)
+        if con: aprendidas += 1; anotar(p['clave'], t, p['texto'], 'aprender', 'ok', 'Aprendí qué hacer con este problema nuevo: ' + NOMBRES.get(con['receta'], con['receta']) + '. ' + con['motivo'], con.get('explicacion', ''), f_)
+    lista_r = list(RECETAS.get(t, []))
+    if con and con['receta'] not in lista_r and not (con['fallo'] >= 3 and con['ok'] == 0): lista_r.insert(0, con['receta'])
+    if not lista_r and GEM: lista_r = ['diagnostico_ia']
+    if not lista_r: continue
+    p['_firma'] = f_; RECETAS_P = lista_r
+    if any(x['resultado'] == 'pendiente' for x in hist_c): continue
+    orden = sorted([r for r in RECETAS_P if r != 'diagnostico_ia'], key=lambda r: -tasa(t, r)) + [r for r in RECETAS_P if r == 'diagnostico_ia']
     siguiente = next((r for r in orden if r not in probadas), None)
     if siguiente is None:
         if p['clave'] in pedidas: siguiente = orden[0]
         else: necesita.append(p); continue
     res = aplicar(siguiente, p); hechos += 1
     resultado, detalle = res[0], res[1]; sug = res[2] if len(res) > 2 else ''
-    anotar(p['clave'], t, p['texto'], siguiente, resultado, detalle, sug)
-    if resultado in ('ok', 'fallo') and siguiente != 'diagnostico_ia': aprender(t, siguiente, resultado == 'ok')
+    anotar(p['clave'], t, p['texto'], siguiente, resultado, detalle, sug, f_)
+    if resultado in ('ok', 'fallo') and siguiente != 'diagnostico_ia':
+        aprender(t, siguiente, resultado == 'ok')
+        if f_ in CONOC and CONOC[f_]['receta'] == siguiente: CONOC[f_]['ok' if resultado == 'ok' else 'fallo'] += 1
     if resultado == 'ok': acciones.append(f'Reparado: {p["texto"].rstrip(".")} ({NOMBRES.get(siguiente, siguiente).lower()}).')
     if resultado == 'escalado': necesita.append(p)
 if necesita: acciones.append(f'Te dejé {len(necesita)} problemas en Reparaciones del admin con lo que probé' + (' y el diagnóstico de la IA.' if GEM else '.'))
 REP = REP[:500]
 json.dump(REP, open(OUT + '/reparaciones.json', 'w', encoding='utf-8'), ensure_ascii=False)
-guardar('aprendizaje_reparaciones.json', APR); ESTADO['solicitudes_hechas'] = sorted(hechas_sol)[-500:]
+guardar('aprendizaje_reparaciones.json', APR); guardar('conocimiento.json', CONOC);
+if aprendidas: acciones.append(f'Aprendí a tratar {aprendidas} problemas que no conocía; lo anoté en Reparaciones.')
+ESTADO['solicitudes_hechas'] = sorted(hechas_sol)[-500:]
 if GEM and gem_estado == 'sin clave':
     gemini('Responde solo: ok', 10)
 print('::notice title=AI::Gemini: ' + (gem_estado if GEM else 'sin clave'))
-reparaciones_inf = {'log': REP[:80], 'aprendizaje': {k: v for k, v in APR.items()}, 'nombres': NOMBRES, 'gemini': gem_estado if GEM else 'sin clave',
+reparaciones_inf = {'conocimiento': [dict(v, firma=k.split('|', 1)[1][:120]) for k, v in list(CONOC.items())[-40:]], 'log': REP[:80], 'aprendizaje': {k: v for k, v in APR.items()}, 'nombres': NOMBRES, 'gemini': gem_estado if GEM else 'sin clave',
                     'pendientes_solicitud': sum(1 for x in SOL if x.get('id') not in hechas_sol)}
 
 # ---------- 10. Resumen ----------
