@@ -42,3 +42,5 @@
 2026-11-03,2,instagram,nc-pedagogia,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"ARC41sXmrgxAh1Bs5Cm35Wb"}}
 2026-11-03,2,facebook,nc-biologia,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"A5rkzP-X9pcb0XnFMBGK0HX"}}
 2026-11-03,2,pinterest,nc-enfermeria,feed,
+2026-11-03,2,instagram,nc-pedagogia,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"AearkfZPzXx7-pbs8ZuB6LL"}}
+2026-11-03,2,facebook,nc-biologia,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"AQZQoWOwLWRMgIXcFmh5ojh"}}
