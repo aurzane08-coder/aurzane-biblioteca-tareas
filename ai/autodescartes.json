@@ -1,5 +1,93 @@
 [
  {
+  "fecha": "2026-11-03",
+  "id": "ia-las-maldiciones-humanas-rtf_202607",
+  "tipo": "libro",
+  "titulo": "Las Maldiciones Humanas Rtf",
+  "url": "https://archive.org/details/las-maldiciones-humanas-rtf_202607",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 45 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/las-maldiciones-humanas-rtf_202607/Las%20Maldiciones%20Humanas_rtf.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-03",
+  "id": "ia-el-amanecer-que-no-se-rompe",
+  "tipo": "libro",
+  "titulo": "EL AMANECER QUE NO SE ROMPE",
+  "url": "https://archive.org/details/el-amanecer-que-no-se-rompe",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 30 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/el-amanecer-que-no-se-rompe/EL%20AMANECER%20QUE%20NO%20SE%20ROMPE.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-03",
+  "id": "ia-la-disolucion-de-un-paradigma",
+  "tipo": "libro",
+  "titulo": "La disolución de un paradigma",
+  "url": "https://archive.org/details/la-disolucion-de-un-paradigma",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 10 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/la-disolucion-de-un-paradigma/La%20Disoluci%C3%B3n%20de%20un%20Paradigma.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-03",
+  "id": "ia-httpscuhso.uct.clindex.phpcuhsoesarticleview397",
+  "tipo": "libro",
+  "titulo": "Orígenes de la Psicologia Discursiva y su Desarrollo hacia una Psicología Cultural Postmoderna",
+  "url": "https://archive.org/details/httpscuhso.uct.clindex.phpcuhsoesarticleview397",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 15 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/httpscuhso.uct.clindex.phpcuhsoesarticleview397/Origenes_de_la_Psicologia_Discurs"
+  ]
+ },
+ {
+  "fecha": "2026-11-03",
+  "id": "ia-quie-n-soy-yo",
+  "tipo": "libro",
+  "titulo": "QUIÉ N SOY YO",
+  "url": "https://archive.org/details/quie-n-soy-yo",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 23 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/quie-n-soy-yo/QUI%C3%89N%20SOY%20YO.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-03",
+  "id": "ia-conectividad-total",
+  "tipo": "libro",
+  "titulo": "CONECTIVIDAD TOTAL",
+  "url": "https://archive.org/details/conectividad-total",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 20 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/conectividad-total/CONECTIVIDAD%20TOTAL.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-03",
+  "id": "ia-ego-contumaz",
+  "tipo": "libro",
+  "titulo": "Ego Contumaz",
+  "url": "https://archive.org/details/ego-contumaz",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 2 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/ego-contumaz/Ego%20contumaz.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-03",
+  "id": "ia-la-venta-de-garaje",
+  "tipo": "libro",
+  "titulo": "LA VENTA DE GARAJE",
+  "url": "https://archive.org/details/la-venta-de-garaje",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 42 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/la-venta-de-garaje/LA%20VENTA%20DE%20GARAJE.pdf"
+  ]
+ },
+ {
   "fecha": "2026-11-02",
   "id": "oa-W7221517314",
   "tipo": "libro",
