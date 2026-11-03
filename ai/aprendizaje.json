@@ -120,7 +120,7 @@
   11
  ],
  "ed:Internet Archive": [
-  0,
+  2,
   62
  ],
  "ed:": [
@@ -144,7 +144,7 @@
   0
  ],
  "tipo:libro": [
-  16,
+  18,
   9
  ],
  "Gambling Behavior and Treatments": [
@@ -309,6 +309,10 @@
  ],
  "tipo:cita": [
   28,
+  0
+ ],
+ "archive:psicologia": [
+  2,
   0
  ]
 }
