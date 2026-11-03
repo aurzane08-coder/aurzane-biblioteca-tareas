@@ -248,5 +248,40 @@
 "url": "https://aurzane.com/novedades/",
 "tipo": "pagina",
 "nombre": "https://aurzane.com/novedades/"
+},
+{
+"url": "https://mind.aurzane.com/test-de-personalidad/",
+"tipo": "personalidad",
+"nombre": "https://mind.aurzane.com/test-de-personalidad/"
+},
+{
+"url": "https://ovp.aurzane.com/af5-cliente.html",
+"tipo": "portal",
+"nombre": "https://ovp.aurzane.com/af5-cliente.html"
+},
+{
+"url": "https://ovp.aurzane.com/apt-a-cliente.html",
+"tipo": "portal",
+"nombre": "https://ovp.aurzane.com/apt-a-cliente.html"
+},
+{
+"url": "https://ovp.aurzane.com/apt-b-cliente.html",
+"tipo": "portal",
+"nombre": "https://ovp.aurzane.com/apt-b-cliente.html"
+},
+{
+"url": "https://ovp.aurzane.com/chaside-cliente.html",
+"tipo": "portal",
+"nombre": "https://ovp.aurzane.com/chaside-cliente.html"
+},
+{
+"url": "https://ovp.aurzane.com/chte-cliente.html",
+"tipo": "portal",
+"nombre": "https://ovp.aurzane.com/chte-cliente.html"
+},
+{
+"url": "https://ovp.aurzane.com/holland-cliente.html",
+"tipo": "portal",
+"nombre": "https://ovp.aurzane.com/holland-cliente.html"
 }
 ]

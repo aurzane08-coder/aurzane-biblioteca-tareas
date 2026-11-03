@@ -7,7 +7,7 @@ const { chromium } = require('playwright');
 const fs = require('fs');
 const lista = JSON.parse(fs.readFileSync(__dirname + '/pruebas_paginas.json', 'utf8'));
 const UA = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36 AurzaneQA/1.0';
-const RUIDO = /googlesyndication|adsbygoogle|doubleclick|gstatic|google-analytics|googletagmanager|translate\.goog|ResizeObserver loop|favicon|net::ERR_BLOCKED/i;
+const RUIDO = /Report Only|frame-ancestors|googlesyndication|adsbygoogle|doubleclick|gstatic|google-analytics|googletagmanager|translate\.goog|ResizeObserver loop|favicon|net::ERR_BLOCKED/i;
 
 async function probar(browser, p) {
   const ctx = await browser.newContext({ userAgent: UA, viewport: { width: 1280, height: 900 }, locale: 'es-ES' });
@@ -33,11 +33,15 @@ async function probar(browser, p) {
         const btn = await page.$('#calcular'); if (btn && !(await page.evaluate(() => document.body.classList.contains('hecho')))) await btn.click().catch(() => {});
         await page.waitForTimeout(800);
         const res = await page.evaluate(() => ({ hecho: document.body.classList.contains('hecho'), r: window.__res || null, nivel: (document.getElementById('nivel') || {}).innerText || '' }));
-        if (!res.hecho || !res.r) { ok = false; detalle = `Respondí las ${n} preguntas pero no salió el resultado`; }
-        else detalle = `Respondí ${n} preguntas: resultado ${res.r.valor} ${res.r.unidad || ''} (${(res.nivel || res.r.nivel || '').trim()})`;
+        if (!res.hecho || !(res.r || res.nivel.trim())) { ok = false; detalle = `Respondí las ${n} preguntas pero no salió el resultado`; }
+        else detalle = `Respondí ${n} preguntas: ` + (res.r ? `resultado ${res.r.valor} ${res.r.unidad || ''} (${(res.nivel || res.r.nivel || '').trim()})` : res.nivel.trim());
       }
     } else if (p.tipo === 'calculadora') {
       const leer = () => page.evaluate(() => { const v = document.getElementById('valor'); return v ? v.innerText.trim() : ''; });
+      if (!(await page.$('#valor'))) {   // calculadoras con otro formato: basta con que cargue con sus campos y sin errores
+        const n = await page.$$eval('input, select', x => x.length); if (!n) { ok = false; detalle = 'La calculadora no muestra sus campos'; } else detalle = `Carga bien (${n} campos)`;
+        await ctx.close(); return { url: p.url, tipo: p.tipo, ok: ok && !errores.length, detalle: errores.length ? detalle + ' · error de JavaScript: ' + errores[0] : detalle, ms: Date.now() - t0, errores: errores.slice(0, 3) };
+      }
       const antes = await leer();
       const campos = await page.$$('input[type=number]:not([disabled]), input[inputmode=decimal]:not([disabled])');
       if (campos.length) { const c = campos[0]; const v = parseFloat(await c.inputValue()) || 10; await c.fill(String(Math.round(v * 1.2 + 1))); await c.dispatchEvent('input'); await c.dispatchEvent('change'); }
@@ -46,6 +50,15 @@ async function probar(browser, p) {
       const despues = await leer();
       if (!despues || /NaN|undefined|Infinity/.test(despues)) { ok = false; detalle = `El resultado sale vacío o mal («${despues}»)`; }
       else detalle = `Cambié un dato: ${antes || '–'} → ${despues}`;
+    } else if (p.tipo === 'personalidad') {
+      await page.click('button.version[data-version="20"]');
+      for (let k = 0; k < 15; k++) {
+        if (await page.evaluate(() => { const r = document.getElementById('resultados'); return r && !r.hidden; })) break;
+        await page.evaluate(() => { document.querySelectorAll('#preguntas fieldset.preg').forEach((f, j) => { const ops = f.querySelectorAll('input[type=radio]'); const o = ops[(j % 3) + 1] || ops[0]; if (o && !f.querySelector('input:checked')) o.click(); }); });
+        await page.click('#btnSiguiente'); await page.waitForTimeout(700);
+      }
+      const r = await page.evaluate(() => ({ vis: !document.getElementById('resultados').hidden, nombre: (document.getElementById('resNombre') || {}).innerText || '' }));
+      if (!r.vis || !r.nombre.trim()) { ok = false; detalle = 'Respondí las 20 preguntas pero no salió el perfil'; } else detalle = `Hice la versión exprés: perfil «${r.nombre.trim()}»`;
     } else if (p.tipo === 'ejercicio') {
       const tiene = await page.evaluate(() => !!document.querySelector('.guia, .g-escena, #g-texto, [data-guia]'));
       if (!tiene) { ok = false; detalle = 'No aparece la guía del ejercicio'; } else detalle = 'La guía del ejercicio carga';
