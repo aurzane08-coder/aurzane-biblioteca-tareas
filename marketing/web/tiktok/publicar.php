@@ -87,8 +87,10 @@ label{display:block;font-weight:600;margin:14px 0 6px}select,textarea{width:100%
 <script>
 (async function(){
   const app = document.getElementById('app'), E = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-  let sb; try { sb = crearClienteAurzaneID('https://chtfpqwrrarfdjcivlad.supabase.co', 'sb_publishable___1v6VjDew0l8uGfMyb9Nw_YyCLTPPw'); } catch(e) {}
-  const s = sb && (await sb.auth.getSession()).data.session;
+  const U = 'https://chtfpqwrrarfdjcivlad.supabase.co', K = 'sb_publishable___1v6VjDew0l8uGfMyb9Nw_YyCLTPPw';
+  let s = null;
+  try { s = (await supabase.createClient(U, K, { auth:{ persistSession:true, autoRefreshToken:true, storageKey:'aurzane-admin-auth' } }).auth.getSession()).data.session; } catch(e) {}
+  if(!s){ try { s = (await crearClienteAurzaneID(U, K).auth.getSession()).data.session; } catch(e) {} }
   if(!s){ app.innerHTML = 'Inicia sesión en <a style="color:var(--acc)" href="https://aurzane.com/admin.html">AURZANE Admin</a> y vuelve a esta página.'; return; }
   const api = async (a, opt) => { const r = await fetch('?api=' + a, Object.assign({ headers:{ Authorization:'Bearer ' + s.access_token, 'Content-Type':'application/json' }, cache:'no-store' }, opt||{})); const j = await r.json().catch(()=>({})); if(!r.ok) throw new Error(j.error || ('Error ' + r.status)); return j; };
   let cr, vids;
