@@ -419,7 +419,7 @@ if nuevos_auto: acciones.append(f'Descarté sola {nuevos_auto} propuestas que no
 # Solo libros con permiso para citar y compartir: dominio público, CC BY, CC BY-SA y CC BY-ND, más los libros abiertos aprobados.
 # Cada pasada lee unos pocos libros, saca las frases con más fuerza y las manda a la cola del admin. Las que apruebas pasan
 # a ai/citas.json y el marketing las convierte en vídeos e imágenes con el enlace al libro en AURZANE.
-citas_ok = leer('citas.json', []); leidos = set(leer('citas_leidos.json', []))
+leidos = set(leer('citas_leidos.json', []))
 CLAVES = ('vida', 'alma', 'mente', 'corazón', 'amor', 'miedo', 'felicidad', 'feliz', 'tiempo', 'hombre', 'humano', 'sufr', 'dolor', 'esperanza', 'libertad',
           'verdad', 'aprend', 'cambi', 'voluntad', 'pensa', 'emoci', 'sentir', 'soledad', 'valor', 'coraje', 'paz', 'calma', 'sabi', 'alegr', 'triste',
           'carácter', 'hábito', 'destino', 'educa', 'conoc', 'fuerza', 'ánimo', 'espíritu', 'alma', 'bien', 'virtud', 'paciencia', 'trabajo', 'sueño', 'deseo')
@@ -463,6 +463,20 @@ for p in aprob:
         libros_citables.append({'id': p['id'], 'titulo': p['titulo'], 'autores': p.get('autores', ''), 'lic': (p.get('lic') or '').upper(), 'pdf': p['pdf_local'],
                                 'url': f'https://aurzane.com/biblioteca/recientes/{p["id"]}/', 'portada': p.get('portada', '')})
 n_citas = 0; pend_citas = sum(1 for p in pend if p['tipo'] == 'cita')
+if ESTADO.get('recuperar_citas') != 'v1':
+    # una sola vez: recupera las frases aprobadas que se perdieron por un fallo (se vuelven a leer sus libros)
+    aprobadas_ids = {k for k, v in decis.items() if k.startswith('cita-') and (v or {}).get('d') == 'aprobar'} - {c['id'] for c in citas_ok}
+    for L in [x for x in libros_citables if x['id'] in leidos] if aprobadas_ids else []:
+        dest = f'{TMP}/cita-{L["id"]}.pdf'
+        if descargar(L['pdf'], dest) != 'ok': continue
+        try: texto = subprocess.run(['pdftotext', '-enc', 'UTF-8', '-f', '4', '-l', '220', dest, '-'], capture_output=True, text=True, timeout=120).stdout
+        except Exception: texto = ''
+        for s_, f in frases_de(texto)[:4]:
+            cid = 'cita-' + hashlib.md5(f.encode()).hexdigest()[:10]
+            if cid in aprobadas_ids:
+                citas_ok.append({'id': cid, 'texto': f, 'autor': L['autores'], 'libro': L['titulo'], 'url': L['url'], 'lic': L['lic'], 'fecha': HOY}); aprobadas_ids.discard(cid)
+    print('::notice title=AI::Citas recuperadas ' + str(len(citas_ok)) + ', sin recuperar ' + str(len(aprobadas_ids)))
+    ESTADO['recuperar_citas'] = 'v1'
 if pend_citas < 25:
     for L in [x for x in libros_citables if x['id'] not in leidos][:5]:
         leidos.add(L['id']); dest = f'{TMP}/cita-{L["id"]}.pdf'
