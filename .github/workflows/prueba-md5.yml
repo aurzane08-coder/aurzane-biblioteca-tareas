@@ -1,0 +1,22 @@
+name: Prueba md5
+on:
+  push:
+    paths: ['.github/workflows/prueba-md5.yml']
+jobs:
+  p:
+    runs-on: ubuntu-latest
+    env:
+      SG_KEY: ${{ secrets.SG_KEY }}
+      SG_HOST: ${{ secrets.SG_HOST }}
+      SG_USER: ${{ secrets.SG_USER }}
+      SG_PORT: ${{ secrets.SG_PORT }}
+      SG_PASS: ${{ secrets.SG_PASS }}
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          mkdir -p ~/.ssh && printf '%s\n' "$SG_KEY" | tr -d '\r' > ~/.ssh/id && chmod 600 ~/.ssh/id
+          if [ -n "$SG_PASS" ]; then ssh-keygen -p -P "$SG_PASS" -N "" -f ~/.ssh/id >/dev/null; fi
+          SSH="ssh -i $HOME/.ssh/id -p ${SG_PORT:-18765} -o StrictHostKeyChecking=accept-new $SG_USER@$SG_HOST"
+          for f in www/mind.aurzane.com/public_html/index.html www/live.aurzane.com/public_html/index.html www/learn.aurzane.com/public_html/index.html www/build.aurzane.com/public_html/index.html www/aurzane.com/public_html/biblioteca/index.html www/aurzane.com/public_html/index.html www/aurzane.com/public_html/privacidad.html; do
+            $SSH "cat $f" > /tmp/x.html; echo "::notice title=M::$(python3 eliminar/norm-temporal.py /tmp/x.html | cut -c1-32) $f"
+          done

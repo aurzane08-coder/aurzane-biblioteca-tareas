@@ -19,7 +19,12 @@ async function probar(browser, p) {
   try {
     const r = await page.goto(p.url, { waitUntil: 'domcontentloaded', timeout: 45000 });
     // SiteGround a veces pide una verificación anti-robots: el navegador la resuelve solo, se espera a que vuelva la página
-    for (let k = 0; k < 6 && /sgcaptcha/.test(page.url() + (await page.content()).slice(0, 2000)); k++) await page.waitForTimeout(3000);
+    let bloqueado = true;
+    for (let k = 0; k < 25; k++) {   // espera a que el navegador pase la verificación de SiteGround (hasta ~25 s)
+      try { const h = await page.content(); if (!/sgcaptcha/.test(page.url() + h.slice(0, 3000))) { bloqueado = false; break; } } catch (e) { }
+      await page.waitForTimeout(1000);
+    }
+    if (bloqueado) { await ctx.close(); return { url: p.url, tipo: p.tipo, ok: null, detalle: 'SiteGround pidió verificación anti-robots y no se pudo pasar', ms: Date.now() - t0, errores: [] }; }
     await page.waitForLoadState('networkidle', { timeout: 20000 }).catch(() => {});
     const st = r ? r.status() : 0;
     if (st >= 400) { ok = false; detalle = 'La página devuelve ' + st; }
@@ -78,9 +83,9 @@ async function probar(browser, p) {
 (async () => {
   const browser = await chromium.launch();
   const out = [];
-  for (const p of lista) { const r = await probar(browser, p); out.push(r); console.log((r.ok ? 'OK   ' : 'FALLO') + ' ' + p.url + ' · ' + r.detalle); }
+  for (const p of lista) { const r = await probar(browser, p); out.push(r); console.log((r.ok ? 'OK   ' : r.ok === null ? 'BLOQ ' : 'FALLO') + ' ' + p.url + ' · ' + r.detalle); }
   await browser.close();
   fs.mkdirSync('/tmp/ai', { recursive: true });
   fs.writeFileSync('/tmp/ai/pruebas.json', JSON.stringify({ fecha: new Date().toISOString(), resultados: out }));
-  console.log(`::notice title=Pruebas::${out.filter(x => x.ok).length} de ${out.length} páginas funcionan`);
+  console.log(`::notice title=Pruebas::${out.filter(x => x.ok).length} de ${out.length} páginas funcionan, ${out.filter(x => x.ok === null).length} sin poder comprobar por el filtro anti-robots`);
 })();

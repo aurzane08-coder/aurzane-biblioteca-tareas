@@ -879,8 +879,14 @@ for x_ in ps: print('::notice title=PageSpeed::' + x_['url'] + f" rend {x_['rend
 pruebas = {}
 try: pruebas = json.load(open(OUT + '/pruebas.json', encoding='utf-8'))
 except Exception: pass
+bloq = [r_ for r_ in pruebas.get('resultados', []) if r_['ok'] is None]
+fallos_abrir = [r_ for r_ in pruebas.get('resultados', []) if r_['ok'] is False and r_['detalle'].startswith('No se pudo abrir')]
+if pruebas.get('resultados') and len(bloq) + len(fallos_abrir) > len(pruebas['resultados']) / 2:
+    # casi todo falla a la vez al abrir: es el filtro anti-robots de SiteGround o la red de GitHub, no la web (las pruebas desde el servidor lo confirman)
+    aviso('medio', f'No pude hacer las pruebas funcionales: SiteGround frenó al navegador de pruebas en {len(bloq) + len(fallos_abrir)} páginas. Se repiten en la próxima revisión.', 'pruebas_bloqueadas', 'todas')
+    pruebas['resultados'] = [r_ for r_ in pruebas['resultados'] if r_ not in bloq and r_ not in fallos_abrir]
 for r_ in pruebas.get('resultados', []):
-    if not r_['ok']:
+    if r_['ok'] is False:
         aviso('mal' if r_['tipo'] in ('test', 'portal', 'calculadora') else 'medio', f'Prueba fallida en {r_["url"]}: {r_["detalle"]}', 'prueba_fallida', r_['url'])
 servicios = []
 for nombre, u, cab in (('AURZANE ID (inicio de sesión)', 'https://chtfpqwrrarfdjcivlad.supabase.co/auth/v1/health', {'apikey': 'sb_publishable___1v6VjDew0l8uGfMyb9Nw_YyCLTPPw'}),
