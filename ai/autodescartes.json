@@ -1,6 +1,221 @@
 [
  {
   "fecha": "2026-11-03",
+  "id": "cita-938ea1e98e",
+  "tipo": "cita",
+  "titulo": "Vana ilusión sin duda, pero capaz de remover montañas y de impulsar ardientemente la humanidad hacia la verdad y el bien.",
+  "url": "https://aurzane.com/biblioteca/libro/reglas-y-consejos-cajal.html",
+  "motivo": "Frase con restos de escaneo o demasiado técnica para redes"
+ },
+ {
+  "fecha": "2026-11-03",
+  "id": "cita-b7df1289a4",
+  "tipo": "cita",
+  "titulo": "Algunas semanas de solaz y de silencio en el campo, traerán la calma y la frescura a nuestro espíritu.",
+  "url": "https://aurzane.com/biblioteca/libro/reglas-y-consejos-cajal.html",
+  "motivo": "Frase con restos de escaneo o demasiado técnica para redes"
+ },
+ {
+  "fecha": "2026-11-03",
+  "id": "cita-39f07916f9",
+  "tipo": "cita",
+  "titulo": "Saber, pero trans¬ formar ; conocer, pero obrar: tal es la norma del verdadero hombre de ciencia.",
+  "url": "https://aurzane.com/biblioteca/libro/reglas-y-consejos-cajal.html",
+  "motivo": "Frase con restos de escaneo o demasiado técnica para redes"
+ },
+ {
+  "fecha": "2026-11-03",
+  "id": "cita-61dc7b2a50",
+  "tipo": "cita",
+  "titulo": "Los valores atípicos son puntos de los datos que se encuentran anormalmente lejos de otros puntos.",
+  "url": "https://aurzane.com/biblioteca/libro/jasp-estadistica.html",
+  "motivo": "Frase con restos de escaneo o demasiado técnica para redes"
+ },
+ {
+  "fecha": "2026-11-03",
+  "id": "cita-0ce14d2f19",
+  "tipo": "cita",
+  "titulo": "La prueba t paramétrica para una muestra única determina si la media de la muestra es estadísticamente diferente de la media conocida o hipotética de la poblaci",
+  "url": "https://aurzane.com/biblioteca/libro/jasp-estadistica.html",
+  "motivo": "Frase con restos de escaneo o demasiado técnica para redes"
+ },
+ {
+  "fecha": "2026-11-03",
+  "id": "cita-f56f321795",
+  "tipo": "cita",
+  "titulo": "El valor de p es la probabilidad de obtener un resultado en una muestra, suponiendo que el valor definido en la hipótesis nula es verdadero.",
+  "url": "https://aurzane.com/biblioteca/libro/jasp-estadistica.html",
+  "motivo": "Frase con restos de escaneo o demasiado técnica para redes"
+ },
+ {
+  "fecha": "2026-11-03",
+  "id": "cita-c023bf6c1e",
+  "tipo": "cita",
+  "titulo": "Porque ¿qué cosa puedes sufrir con paciencia? que ¿es ruindad los hombres?",
+  "url": "https://aurzane.com/biblioteca/libro/moralistas-griegos.html",
+  "motivo": "Frase con restos de escaneo o demasiado técnica para redes"
+ },
+ {
+  "fecha": "2026-11-03",
+  "id": "cita-aa50036636",
+  "tipo": "cita",
+  "titulo": "¿Pero queremos verdaderamente que acabe la vida con el dolor, o mas bien ansiamos que cese el dolor conservan¬ do la vida?",
+  "url": "https://aurzane.com/biblioteca/libro/charlas-de-cafe.html",
+  "motivo": "Frase con restos de escaneo o demasiado técnica para redes"
+ },
+ {
+  "fecha": "2026-11-03",
+  "id": "cita-e5919120ac",
+  "tipo": "cita",
+  "titulo": "Sin duda que el tiempo cica¬ triza algo las heridas del amor propio y encalma las borras¬ cas de la pasión.",
+  "url": "https://aurzane.com/biblioteca/libro/charlas-de-cafe.html",
+  "motivo": "Frase con restos de escaneo o demasiado técnica para redes"
+ },
+ {
+  "fecha": "2026-11-03",
+  "id": "cita-8eb76ba650",
+  "tipo": "cita",
+  "titulo": "Quien se sienta débil y desee conservar brillantes las facetas de manso su espíritu, recójase prontamente en el re¬ de la soledad.",
+  "url": "https://aurzane.com/biblioteca/libro/charlas-de-cafe.html",
+  "motivo": "Frase con restos de escaneo o demasiado técnica para redes"
+ },
+ {
+  "fecha": "2026-11-03",
+  "id": "cita-e99c91ac04",
+  "tipo": "cita",
+  "titulo": "No se conservan varias amistades íntimas sin culti¬ varlas asiduamente, y este cultivo resulta incompatible con una vida de concentración intensa y de trabajo a",
+  "url": "https://aurzane.com/biblioteca/libro/charlas-de-cafe.html",
+  "motivo": "Frase con restos de escaneo o demasiado técnica para redes"
+ },
+ {
+  "fecha": "2026-11-03",
+  "id": "cita-d459d1de58",
+  "tipo": "cita",
+  "titulo": "Cuando su hija llegue a la etapa en la que contempla el problema y quiere cambiar, es normal que se sienta insegura y tenga miedo.",
+  "url": "https://aurzane.com/biblioteca/libro/relaciones-sanas-guia-dirigida-familias-prevencion.html",
+  "motivo": "Frase con restos de escaneo o demasiado técnica para redes"
+ },
+ {
+  "fecha": "2026-11-03",
+  "id": "ia-the-war-against-whites-the-racial-psychology-behind-the-anti-white-hatred-sweepi",
+  "tipo": "libro",
+  "titulo": "The War Against Whites: The Racial Psychology Behind The Anti White Hatred Sweeping The West (2020) - Arthur Kemp",
+  "url": "https://archive.org/details/the-war-against-whites-the-racial-psychology-behind-the-anti-white-hatred-sweepi_202610",
+  "motivo": "El PDF pesa más de 80 MB",
+  "probados": [
+   "200 application/pdf https://archive.org/download/the-war-against-whites-the-racial-psychology-behind-the-anti-white-hatred-sweepi_"
+  ]
+ },
+ {
+  "fecha": "2026-11-03",
+  "id": "ia-good-loving-king-rosie",
+  "tipo": "libro",
+  "titulo": "Good Loving King Rosie",
+  "url": "https://archive.org/details/good-loving-king-rosie",
+  "motivo": "El PDF pesa más de 80 MB",
+  "probados": [
+   "200 application/pdf https://archive.org/download/good-loving-king-rosie/Good%20Loving%20King%20Rosie.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-03",
+  "id": "ia-0.-all-research-simplified-with-medical-format-and-pilot",
+  "tipo": "libro",
+  "titulo": "0. ALL RESEARCH SIMPLIFIED WITH MEDICAL FORMAT AND PILOT",
+  "url": "https://archive.org/details/0.-all-research-simplified-with-medical-format-and-pilot",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 26 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/0.-all-research-simplified-with-medical-format-and-pilot/0.%20ALL%20RESEARCH%20SI"
+  ]
+ },
+ {
+  "fecha": "2026-11-03",
+  "id": "ia-addressing-increased-personality-disorders-in-men-1-apub",
+  "tipo": "libro",
+  "titulo": "Addressing Increased Personality Disorders In Men",
+  "url": "https://archive.org/details/addressing-increased-personality-disorders-in-men-1-apub",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 5 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/addressing-increased-personality-disorders-in-men-1-apub/Addressing%20Increased%2"
+  ]
+ },
+ {
+  "fecha": "2026-11-03",
+  "id": "ia-the-unified-framework",
+  "tipo": "libro",
+  "titulo": "[Parapsychology & Phonetics] - The Unified Framework of Behavioral and Phonetic Scaling A Methodological Manual for Linguistic Deconstruction",
+  "url": "https://archive.org/details/the-unified-framework",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 5 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/the-unified-framework/RUN%20DMC%201%20-%20%5BParapsychology%20%26%20Phonetics%5D%"
+  ]
+ },
+ {
+  "fecha": "2026-11-03",
+  "id": "ia-on-historical-sundown-towns-and-racial-bias",
+  "tipo": "libro",
+  "titulo": "On Historical Sundown Towns And Racial Bias(preprint)",
+  "url": "https://archive.org/details/on-historical-sundown-towns-and-racial-bias",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 35 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/on-historical-sundown-towns-and-racial-bias/On%20Historical%20Sundown%20Towns%20a"
+  ]
+ },
+ {
+  "fecha": "2026-11-03",
+  "id": "ia-moral-injury-in-combat-drone-remotely-piloted-aircraft-operators-versus-classic-",
+  "tipo": "libro",
+  "titulo": "Moral Injury In Combat Drone (remotely Piloted Aircraft) Operators Versus Classic PTSD A Distinctive Symptom Profile And Its Implications For Psychological Sele",
+  "url": "https://archive.org/details/moral-injury-in-combat-drone-remotely-piloted-aircraft-operators-versus-classic-",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 16 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/moral-injury-in-combat-drone-remotely-piloted-aircraft-operators-versus-classic-/"
+  ]
+ },
+ {
+  "fecha": "2026-11-03",
+  "id": "ia-the-psychology-of-luxury-how-hospitality-spaces-influence-guest-perception",
+  "tipo": "libro",
+  "titulo": "The Psychology of Luxury: How Hospitality Spaces Influence Guest Perception",
+  "url": "https://archive.org/details/the-psychology-of-luxury-how-hospitality-spaces-influence-guest-perception",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 7 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/the-psychology-of-luxury-how-hospitality-spaces-influence-guest-perception/IRJAEH"
+  ]
+ },
+ {
+  "fecha": "2026-11-03",
+  "id": "ia-about_20261027",
+  "tipo": "libro",
+  "titulo": "about",
+  "url": "https://archive.org/details/about_20261027",
+  "motivo": "No tiene un PDF libre que se pueda descargar",
+  "probados": []
+ },
+ {
+  "fecha": "2026-11-03",
+  "id": "ia-hacia-una-psicologia-ecosistemica-del-acto_202606",
+  "tipo": "libro",
+  "titulo": "Hacia una psicología ecosistémica del acto",
+  "url": "https://archive.org/details/hacia-una-psicologia-ecosistemica-del-acto_202606",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 16 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/hacia-una-psicologia-ecosistemica-del-acto_202606/Hacia%20una%20psicolog%C3%ADa%2"
+  ]
+ },
+ {
+  "fecha": "2026-11-03",
+  "id": "ia-El-Umbral-del-Rubi",
+  "tipo": "libro",
+  "titulo": "EL UMBRAL DEL RUBÍ",
+  "url": "https://archive.org/details/El-Umbral-del-Rubi",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 30 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/El-Umbral-del-Rubi/EL%20UMBRAL%20DEL%20RUB%C3%8D.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-03",
   "id": "ia-las-maldiciones-humanas-rtf_202607",
   "tipo": "libro",
   "titulo": "Las Maldiciones Humanas Rtf",

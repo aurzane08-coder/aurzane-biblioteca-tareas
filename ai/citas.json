@@ -1,14 +1,5 @@
 [
  {
-  "id": "cita-938ea1e98e",
-  "texto": "Vana ilusión sin duda, pero capaz de remover montañas y de impulsar ardientemente la humanidad hacia la verdad y el bien.",
-  "autor": "Santiago Ramón y Cajal",
-  "libro": "Reglas y consejos sobre investigación científica (Los tónicos de la voluntad)",
-  "url": "https://aurzane.com/biblioteca/libro/reglas-y-consejos-cajal.html",
-  "lic": "Dominio público",
-  "fecha": "2026-11-03"
- },
- {
   "id": "cita-8b4c049edd",
   "texto": "Por donde se una seriación cae en la cuenta de que jerárquica bien entendida de los conocimientos humanos representa verdadero árbol un genealógico.",
   "autor": "Santiago Ramón y Cajal",
@@ -18,53 +9,8 @@
   "fecha": "2026-11-03"
  },
  {
-  "id": "cita-b7df1289a4",
-  "texto": "Algunas semanas de solaz y de silencio en el campo, traerán la calma y la frescura a nuestro espíritu.",
-  "autor": "Santiago Ramón y Cajal",
-  "libro": "Reglas y consejos sobre investigación científica (Los tónicos de la voluntad)",
-  "url": "https://aurzane.com/biblioteca/libro/reglas-y-consejos-cajal.html",
-  "lic": "Dominio público",
-  "fecha": "2026-11-03"
- },
- {
-  "id": "cita-39f07916f9",
-  "texto": "Saber, pero trans¬ formar ; conocer, pero obrar: tal es la norma del verdadero hombre de ciencia.",
-  "autor": "Santiago Ramón y Cajal",
-  "libro": "Reglas y consejos sobre investigación científica (Los tónicos de la voluntad)",
-  "url": "https://aurzane.com/biblioteca/libro/reglas-y-consejos-cajal.html",
-  "lic": "Dominio público",
-  "fecha": "2026-11-03"
- },
- {
-  "id": "cita-61dc7b2a50",
-  "texto": "Los valores atípicos son puntos de los datos que se encuentran anormalmente lejos de otros puntos.",
-  "autor": "Mark A. Goss-Sampson (trad. y adapt. Julio Meneses y otros)",
-  "libro": "Análisis estadístico con JASP: una guía para estudiantes",
-  "url": "https://aurzane.com/biblioteca/libro/jasp-estadistica.html",
-  "lic": "CC BY-SA 3.0 ES",
-  "fecha": "2026-11-03"
- },
- {
-  "id": "cita-0ce14d2f19",
-  "texto": "La prueba t paramétrica para una muestra única determina si la media de la muestra es estadísticamente diferente de la media conocida o hipotética de la población.",
-  "autor": "Mark A. Goss-Sampson (trad. y adapt. Julio Meneses y otros)",
-  "libro": "Análisis estadístico con JASP: una guía para estudiantes",
-  "url": "https://aurzane.com/biblioteca/libro/jasp-estadistica.html",
-  "lic": "CC BY-SA 3.0 ES",
-  "fecha": "2026-11-03"
- },
- {
   "id": "cita-8b8c9919a9",
   "texto": "La mayoría de las pruebas paramétricas son muy sensibles a los valores atípicos, mientras que las no paramétricas generalmente no lo son.",
-  "autor": "Mark A. Goss-Sampson (trad. y adapt. Julio Meneses y otros)",
-  "libro": "Análisis estadístico con JASP: una guía para estudiantes",
-  "url": "https://aurzane.com/biblioteca/libro/jasp-estadistica.html",
-  "lic": "CC BY-SA 3.0 ES",
-  "fecha": "2026-11-03"
- },
- {
-  "id": "cita-f56f321795",
-  "texto": "El valor de p es la probabilidad de obtener un resultado en una muestra, suponiendo que el valor definido en la hipótesis nula es verdadero.",
   "autor": "Mark A. Goss-Sampson (trad. y adapt. Julio Meneses y otros)",
   "libro": "Análisis estadístico con JASP: una guía para estudiantes",
   "url": "https://aurzane.com/biblioteca/libro/jasp-estadistica.html",
@@ -90,56 +36,11 @@
   "fecha": "2026-11-03"
  },
  {
-  "id": "cita-c023bf6c1e",
-  "texto": "Porque ¿qué cosa puedes sufrir con paciencia? que ¿es ruindad los hombres?",
-  "autor": "Marco Aurelio, Epicteto, Teofrasto, Cebes",
-  "libro": "Obras de los moralistas griegos: Marco Aurelio, Teofrasto, Epicteto, Cebes",
-  "url": "https://aurzane.com/biblioteca/libro/moralistas-griegos.html",
-  "lic": "Dominio público",
-  "fecha": "2026-11-03"
- },
- {
   "id": "cita-2a05ffb2be",
   "texto": "En el espíritu de un hombre muy moderado y cándido nada hallarás corrompido, contaminado ni ocultamente lisiado.",
   "autor": "Marco Aurelio, Epicteto, Teofrasto, Cebes",
   "libro": "Obras de los moralistas griegos: Marco Aurelio, Teofrasto, Epicteto, Cebes",
   "url": "https://aurzane.com/biblioteca/libro/moralistas-griegos.html",
-  "lic": "Dominio público",
-  "fecha": "2026-11-03"
- },
- {
-  "id": "cita-aa50036636",
-  "texto": "¿Pero queremos verdaderamente que acabe la vida con el dolor, o mas bien ansiamos que cese el dolor conservan¬ do la vida?",
-  "autor": "Santiago Ramón y Cajal",
-  "libro": "Charlas de café",
-  "url": "https://aurzane.com/biblioteca/libro/charlas-de-cafe.html",
-  "lic": "Dominio público",
-  "fecha": "2026-11-03"
- },
- {
-  "id": "cita-e5919120ac",
-  "texto": "Sin duda que el tiempo cica¬ triza algo las heridas del amor propio y encalma las borras¬ cas de la pasión.",
-  "autor": "Santiago Ramón y Cajal",
-  "libro": "Charlas de café",
-  "url": "https://aurzane.com/biblioteca/libro/charlas-de-cafe.html",
-  "lic": "Dominio público",
-  "fecha": "2026-11-03"
- },
- {
-  "id": "cita-8eb76ba650",
-  "texto": "Quien se sienta débil y desee conservar brillantes las facetas de manso su espíritu, recójase prontamente en el re¬ de la soledad.",
-  "autor": "Santiago Ramón y Cajal",
-  "libro": "Charlas de café",
-  "url": "https://aurzane.com/biblioteca/libro/charlas-de-cafe.html",
-  "lic": "Dominio público",
-  "fecha": "2026-11-03"
- },
- {
-  "id": "cita-e99c91ac04",
-  "texto": "No se conservan varias amistades íntimas sin culti¬ varlas asiduamente, y este cultivo resulta incompatible con una vida de concentración intensa y de trabajo austero.",
-  "autor": "Santiago Ramón y Cajal",
-  "libro": "Charlas de café",
-  "url": "https://aurzane.com/biblioteca/libro/charlas-de-cafe.html",
   "lic": "Dominio público",
   "fecha": "2026-11-03"
  },
@@ -173,15 +74,6 @@
  {
   "id": "cita-6718c8c7f8",
   "texto": "Las relaciones fallidas, especialmente si no han sido sanas, pueden dejar heridas emocionales que requieren tiempo y atención para sanar.",
-  "autor": "Lara Vázquez, Laura; Providell, Lesliee; Mora, Denise",
-  "libro": "Relaciones sanas: Guía dirigida a familias para la prevención de la violencia en las relaciones de pareja joven",
-  "url": "https://aurzane.com/biblioteca/libro/relaciones-sanas-guia-dirigida-familias-prevencion.html",
-  "lic": "CC BY-SA 4.0",
-  "fecha": "2026-11-03"
- },
- {
-  "id": "cita-d459d1de58",
-  "texto": "Cuando su hija llegue a la etapa en la que contempla el problema y quiere cambiar, es normal que se sienta insegura y tenga miedo.",
   "autor": "Lara Vázquez, Laura; Providell, Lesliee; Mora, Denise",
   "libro": "Relaciones sanas: Guía dirigida a familias para la prevención de la violencia en las relaciones de pareja joven",
   "url": "https://aurzane.com/biblioteca/libro/relaciones-sanas-guia-dirigida-familias-prevencion.html",
