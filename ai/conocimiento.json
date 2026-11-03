@@ -1,1 +1,11 @@
-{}
+{
+ "contenido_viejo|# páginas mencionan datos de años anteriores; revisa si hay que actualizarlas (detalle en salud de la web).": {
+  "receta": "avisar",
+  "motivo": "Se han detectado referencias a años anteriores en contenidos publicados.",
+  "explicacion": "El aviso indica que al menos una página de AURZane contiene fechas o datos desactualizados que requieren intervención humana para mantener la vigencia de la información psicológica. Como el sistema automático no puede determinar el contexto clínico o temporal exacto de esos datos, es necesario revisar manualmente el contenido en WordPress, actualizar las referencias temporales y guardar los cambios. Tras la edición, limpia la caché del sitio para reflejar la actualización.",
+  "ok": 0,
+  "fallo": 0,
+  "fecha": "2026-11-03",
+  "ejemplo": "1 páginas mencionan datos de años anteriores; revisa si hay que actualizarlas (detalle en Salud de la web)."
+ }
+}
