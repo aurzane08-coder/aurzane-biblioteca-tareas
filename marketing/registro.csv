@@ -44,3 +44,10 @@
 2026-11-03,2,pinterest,nc-enfermeria,feed,
 2026-11-03,2,instagram,nc-pedagogia,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"AearkfZPzXx7-pbs8ZuB6LL"}}
 2026-11-03,2,facebook,nc-biologia,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"AQZQoWOwLWRMgIXcFmh5ojh"}}
+2026-11-03,2,instagram,nc-pedagogia,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"AdVJ4-Kd1r599-DxFGKKmCV"}}
+2026-11-03,2,facebook,nc-biologia,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"A1Zr2DSZZZBRZwSDtRqkgtD"}}
+2026-11-03,4,instagram,frase-58140cf6,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"AMyiWAb6PYnjSd52BXFFvIQ"}}
+2026-11-03,4,facebook,frase-fc524221,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"As46T3dJJaQsy1-I8cNECVs"}}
+2026-11-03,4,youtube,frase-b424a195,ok,https://youtu.be/Edr7J3fTtyM
+2026-11-03,4,tiktok,frase-7419f1c4,ok,v_inbox_file~v2.7704076148955875380 (borrador en la bandeja de TikTok: añade un sonido y publica)
+2026-11-03,4,telegram,frase-e99ed1e3,ok,18
