@@ -112,6 +112,7 @@ def catalogo():
     # frases de libros de la biblioteca que la IA propuso y Adrián aprobó en el admin (ai/citas.json)
     try:
         for c in json.load(open(os.path.join(os.path.dirname(D), 'ai', 'citas.json'), encoding='utf-8')):
+            if c.get('nota', 0) < 7: continue   # solo frases revisadas por la IA (Gemini) con nota 7 o más
             fid = 'frase-' + hashlib.md5(c['texto'].encode()).hexdigest()[:8]
             out.append(dict(id=fid, tipo='frase', mundo='aurzane', origen='citas', url=c['url'], titulo=c['texto'],
                             autor=', '.join(x for x in (c.get('autor'), c.get('libro')) if x) or 'AURZANE', libro=c.get('libro') or '',

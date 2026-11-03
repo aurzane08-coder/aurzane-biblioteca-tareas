@@ -426,6 +426,22 @@ CLAVES = ('vida', 'alma', 'mente', 'corazón', 'amor', 'miedo', 'felicidad', 'fe
 GENERAL = ('siempre', 'nunca', 'nadie', 'todo', 'quien ', 'el que ', 'la que ', 'los que ', 'cada ', 'nada ')
 ANAFORA = re.compile(r'^(y|e|pero|mas|por eso|por tanto|esto|este|esta|estos|estas|eso|ese|esa|ello|él|ella|ellos|ellas|así|también|además|sin embargo|entonces|luego|aquí|allí|dijo|respondió|contestó|exclamó|en este|en esta|en el capítulo|como hemos|como vimos|como se|véase|cf|en efecto|por ejemplo|asimismo|finalmente|primero|segundo)\b', re.I)
 RUIDO = re.compile(r'\d|http|www\.|@|\bet al\b|\bcap\.|\bpág|\bfig|\btabla\b|\bISBN|\bvol\.|\bed\.|[()\[\]{}<>«»"“”—–_/\\|=+*#]|\.\.|;.*;', re.I)
+TECNICO = re.compile(r'estad[ií]stic|muestra|media\b|mediana|prueba t|hip[oó]tesis|variable|correlaci|regresi|varianza|desviaci|p-valor|datos|gr[aá]fico|tabla|software|programa\b|algoritmo|metodolog|procedimiento|cap[ií]tulo|apartado|secci[oó]n|art[ií]culo|ley\b|decreto|norma\b|resoluci[oó]n|participantes|encuesta|instrumento|[ií]tem|escala\b|puntuaci', re.I)
+def calidad_frase(f):
+    """True si la frase sirve para redes: sin restos de OCR, sin jerga técnica y con palabras reales."""
+    if re.search(r'[¬•■□�]|\s[;,:.]|\s{2,}|\b[b-df-hj-np-tv-xz]\b', f, re.I): return False
+    if TECNICO.search(f): return False
+    pal = re.findall(r'[A-Za-záéíóúñÁÉÍÓÚÑü]+', f)
+    if not pal or sum(len(x) > 18 for x in pal) or sum(len(x) <= 2 for x in pal) / len(pal) > 0.45: return False
+    if re.match(r'^(vana|como|cuando|donde|aunque|porque|si|sino|mientras|pues|que)\b', f, re.I): return False
+    return True
+def gemini_rapido(prompt):
+    k = os.environ.get('GEMINI_API_KEY', '')
+    if not k: return ''
+    st, b, _, _ = get('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent', {'Content-Type': 'application/json', 'x-goog-api-key': k},
+                      datos=json.dumps({'contents': [{'parts': [{'text': prompt}]}], 'generationConfig': {'temperature': 0, 'maxOutputTokens': 200}}).encode(), metodo='POST', t=60)
+    try: return ''.join(x.get('text', '') for x in json.loads(b)['candidates'][0]['content']['parts']) if st == 200 else ''
+    except Exception: return ''
 def es_espanol(t):
     w = re.findall(r'[a-záéíóúñ]+', t.lower()); return len(w) > 50 and sum(x in ('el', 'la', 'de', 'que', 'y', 'en', 'los', 'se', 'las', 'por', 'un', 'una', 'con', 'no') for x in w) / len(w) > 0.18
 def frases_de(texto):
@@ -433,7 +449,7 @@ def frases_de(texto):
     out = []
     for f in re.split(r'(?<=[.!?])\s+(?=[A-ZÁÉÍÓÚÑ¿¡])', texto):
         f = f.strip()
-        if not (55 <= len(f) <= 170) or not f.endswith(('.', '!', '?')) or RUIDO.search(f) or ANAFORA.match(f) or f.isupper(): continue
+        if not (55 <= len(f) <= 170) or not f.endswith(('.', '!', '?')) or RUIDO.search(f) or ANAFORA.match(f) or f.isupper() or not calidad_frase(f): continue
         pal = f.split()
         if not (8 <= len(pal) <= 28): continue
         propios = sum(1 for x in pal[1:] if x[:1].isupper())
@@ -486,7 +502,13 @@ if pend_citas < 25:
         try: os.remove(dest)
         except Exception: pass
         if not es_espanol(texto[:20000]): continue
-        for s, f in frases_de(texto)[:4]:
+        cands = frases_de(texto)[:8]
+        if os.environ.get('GEMINI_API_KEY') and cands:
+            r_ = gemini_rapido('Puntúa de 1 a 10 cada frase para publicarla sola en redes como frase inspiradora (se entiende sin contexto, sin errores, tiene fuerza). '
+                               'Responde solo con los números separados por comas, en el mismo orden.\n' + '\n'.join(f'{k + 1}. {f}' for k, (_, f) in enumerate(cands)))
+            notas = [int(x) for x in re.findall(r'\d+', r_)][:len(cands)]
+            if len(notas) == len(cands): cands = [(n_, f) for n_, (_, f) in zip(notas, cands) if n_ >= 7]
+        for s, f in cands[:4]:
             cid = 'cita-' + hashlib.md5(f.encode()).hexdigest()[:10]
             if cid in ya or cid in vistos: continue
             ya.add(cid); n_citas += 1
@@ -495,6 +517,18 @@ if pend_citas < 25:
     if n_citas: acciones.append(f'Leí libros de la biblioteca y propuse {n_citas} frases para redes.')
 guardar('citas_leidos.json', sorted(leidos))
 
+sin_nota = [c for c in citas_ok if 'nota' not in c][:30]
+if sin_nota and os.environ.get('GEMINI_API_KEY'):
+    r_ = gemini_rapido('Puntúa de 1 a 10 cada frase para publicarla sola en redes como frase inspiradora de un libro (se entiende sin contexto, sin errores de escaneo, '
+                       'no es técnica ni narra hechos de un personaje). Responde solo con los números separados por comas, en el mismo orden.\n' + '\n'.join(f'{k + 1}. {c["texto"]}' for k, c in enumerate(sin_nota)))
+    notas = [int(x) for x in re.findall(r'\d+', r_)]
+    if len(notas) == len(sin_nota):
+        for c, n_ in zip(sin_nota, notas): c['nota'] = n_
+malas_c = [c for c in citas_ok if not calidad_frase(c['texto']) or c.get('nota', 10) < 7]
+if malas_c:
+    citas_ok = [c for c in citas_ok if calidad_frase(c['texto'])]
+    acciones.append(f'Retiré {len(malas_c)} frases aprobadas que tenían restos de escaneo o eran técnicas; no saldrán en redes.')
+    autodesc[:0] = [{'fecha': HOY, 'id': c['id'], 'tipo': 'cita', 'titulo': c['texto'][:160], 'url': c['url'], 'motivo': 'Frase con restos de escaneo o demasiado técnica para redes'} for c in malas_c]
 if nuevas_citas: acciones.append(f'Pasé {nuevas_citas} frases aprobadas al marketing: saldrán en vídeos e imágenes con enlace al libro.')
 guardar('citas.json', citas_ok[:2000])
 pend.sort(key=lambda p: puntos(p) * (0.9 if p['tipo'] == 'cita' else 1), reverse=True); pend = pend[:90]
