@@ -436,34 +436,35 @@ def calidad_frase(f):
     if re.match(r'^(vana|como|cuando|donde|aunque|porque|si|sino|mientras|pues|que)\b', f, re.I): return False
     return True
 GEM_MODELOS = []
-GEM_INFO = {'estado': 'sin clave', 'modelo': ''}
+GEM_INFO = {'estado': 'sin clave', 'modelo': '', 'fallos': 0, 'segundos': 0.0}
 def gemini_base(prompt, maxt=700, temp=0.3):
-    """Llama a Gemini eligiendo sola el modelo vigente (Google retira modelos: se consulta la lista), con reintentos si está saturado."""
+    """Llama a Gemini con el modelo vigente: primero los alias «-latest» (Google los mantiene al día), luego la versión flash más nueva.
+    Si está saturado prueba el siguiente; tras 6 fallos o 4 minutos en una revisión deja de insistir para no bloquear al resto."""
     k = os.environ.get('GEMINI_API_KEY', '').strip()
-    if not k: return ''
+    if not k or GEM_INFO['fallos'] >= 6 or GEM_INFO['segundos'] > 240: return ''
     cab = {'Content-Type': 'application/json', 'x-goog-api-key': k}
     if not GEM_MODELOS:
-        st, b, _, _ = get('https://generativelanguage.googleapis.com/v1beta/models?pageSize=200', cab, t=60)
+        st, b, _, _ = get('https://generativelanguage.googleapis.com/v1beta/models?pageSize=200', cab, t=40)
         try:
-            ms = [m for m in json.loads(b).get('models', []) if 'generateContent' in m.get('supportedGenerationMethods', []) and 'flash' in m['name']
-                  and not re.search(r'image|tts|audio|live|embed|thinking|exp|preview', m['name'])]
-            def ver(m): return [int(x) for x in re.findall(r'\d+', m['name'].split('/')[-1])[:3]]
-            ms.sort(key=lambda m: (('lite' in m['name']), [-x for x in ver(m)]))
-            GEM_MODELOS.extend(m['name'].split('/')[-1] for m in ms[:4])
+            ns = [m['name'].split('/')[-1] for m in json.loads(b).get('models', []) if 'generateContent' in m.get('supportedGenerationMethods', [])]
+            vers = [n for n in ns if re.match(r'^gemini-\d[\d.]*-flash(-lite)?$', n)]
+            vers.sort(key=lambda n: ('lite' in n, [-int(x) for x in re.findall(r'\d+', n)]))
+            GEM_MODELOS.extend([n for n in ('gemini-flash-latest', 'gemini-flash-lite-latest') if n in ns] + vers[:3])
         except Exception: pass
-        if not GEM_MODELOS: GEM_INFO['estado'] = f'no pude listar modelos ({st})'; return ''
-    cuerpo = json.dumps({'contents': [{'parts': [{'text': prompt}]}], 'generationConfig': {'temperature': temp, 'maxOutputTokens': maxt}}).encode()
+        if not GEM_MODELOS: GEM_INFO['estado'] = f'no pude listar modelos ({st})'; GEM_INFO['fallos'] += 3; return ''
+    cuerpo = json.dumps({'contents': [{'parts': [{'text': prompt}]}], 'generationConfig': {'temperature': temp, 'maxOutputTokens': max(maxt * 3, 2048)}}).encode()
     for modelo in GEM_MODELOS:
-        for intento in range(3):
-            st, b, _, _ = get(f'https://generativelanguage.googleapis.com/v1beta/models/{modelo}:generateContent', cab, datos=cuerpo, metodo='POST', t=120)
-            if st == 200:
-                try:
-                    GEM_INFO.update(estado='ok', modelo=modelo)
-                    return ''.join(x.get('text', '') for x in json.loads(b)['candidates'][0]['content']['parts']).strip()
-                except Exception: break
-            GEM_INFO['estado'] = f'error {st} en {modelo}'
-            if st in (429, 500, 503) or str(st).startswith('ERR'): time.sleep(8 * (intento + 1)); continue
-            break
+        t0 = time.time()
+        st, b, _, _ = get(f'https://generativelanguage.googleapis.com/v1beta/models/{modelo}:generateContent', cab, datos=cuerpo, metodo='POST', t=60)
+        GEM_INFO['segundos'] += time.time() - t0
+        if st == 200:
+            try:
+                txt = ''.join(x.get('text', '') for x in json.loads(b)['candidates'][0]['content'].get('parts', [])).strip()
+                if txt: GEM_INFO.update(estado='ok', modelo=modelo); return txt
+            except Exception: pass
+        GEM_INFO['estado'] = f'error {st} en {modelo}'; GEM_INFO['fallos'] += 1
+        if GEM_INFO['fallos'] >= 6 or GEM_INFO['segundos'] > 240: break
+        if st in (429, 503): time.sleep(3)
     return ''
 def gemini_rapido(prompt): return gemini_base(prompt, 300, 0)
 def es_espanol(t):

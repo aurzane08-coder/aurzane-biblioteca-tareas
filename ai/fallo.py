@@ -21,13 +21,13 @@ if k:
     try:
         cab = {'Content-Type': 'application/json', 'x-goog-api-key': k}
         ms = json.load(urllib.request.urlopen(urllib.request.Request('https://generativelanguage.googleapis.com/v1beta/models?pageSize=200', headers=cab), timeout=60)).get('models', [])
-        ms = [m['name'].split('/')[-1] for m in ms if 'generateContent' in m.get('supportedGenerationMethods', []) and 'flash' in m['name'] and not re.search(r'image|tts|audio|live|embed|exp|preview|lite', m['name'])]
-        ms.sort(key=lambda x: [-int(v) for v in re.findall(r'\d+', x)[:3]])
+        ns = [m['name'].split('/')[-1] for m in ms if 'generateContent' in m.get('supportedGenerationMethods', [])]
+        ms = [n for n in ('gemini-flash-latest', 'gemini-flash-lite-latest') if n in ns] + sorted([n for n in ns if re.match(r'^gemini-\d[\d.]*-flash$', n)], key=lambda x: [-int(v) for v in re.findall(r'\d+', x)])
         cuerpo = json.dumps({'contents': [{'parts': [{'text': 'El script de mantenimiento AI Manager (Python) de la web AURZANE se ha roto. Explica en español, sin rayas largas y en máximo 8 líneas, '
-                 'la causa y el cambio exacto de código que lo arregla.\n\nError:\n' + traza + '\n\nCódigo alrededor de la línea ' + linea + ':\n' + codigo}]}], 'generationConfig': {'temperature': 0.2, 'maxOutputTokens': 900}}).encode()
-        for m in ms[:2]:
+                 'la causa y el cambio exacto de código que lo arregla.\n\nError:\n' + traza + '\n\nCódigo alrededor de la línea ' + linea + ':\n' + codigo}]}], 'generationConfig': {'temperature': 0.2, 'maxOutputTokens': 3000}}).encode()
+        for m in ms[:3]:
             try:
-                r = json.load(urllib.request.urlopen(urllib.request.Request(f'https://generativelanguage.googleapis.com/v1beta/models/{m}:generateContent', data=cuerpo, headers=cab), timeout=120))
+                r = json.load(urllib.request.urlopen(urllib.request.Request(f'https://generativelanguage.googleapis.com/v1beta/models/{m}:generateContent', data=cuerpo, headers=cab), timeout=90))
                 sug = ''.join(x.get('text', '') for x in r['candidates'][0]['content']['parts']).strip(); break
             except Exception: continue
     except Exception: pass
