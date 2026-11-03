@@ -1,0 +1,10 @@
+name: Prueba tiktok
+on:
+  push:
+    paths: ['.github/workflows/prueba-tiktok.yml']
+jobs:
+  p:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          for u in https://aurzane.com/tiktok/publicar.php "https://aurzane.com/tiktok/publicar.php?api=creador" https://aurzane.com/privacidad.html https://aurzane.com/condiciones.html; do echo "::notice title=T::$(curl -s -o /tmp/x -w '%{http_code}' -A 'Mozilla/5.0 Chrome/130' "$u") $(head -c 120 /tmp/x | tr -d '\n') $u"; done
