@@ -1,0 +1,21 @@
+name: Prueba claves
+on:
+  push:
+    paths: ['.github/workflows/prueba-claves.yml']
+jobs:
+  p:
+    runs-on: ubuntu-latest
+    env:
+      PIXABAY_KEY: ${{ secrets.PIXABAY_KEY }}
+      JAMENDO_CLIENT_ID: ${{ secrets.JAMENDO_CLIENT_ID }}
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          cd marketing && python3 - <<'PY'
+          import os, sys
+          sys.path.insert(0, '.')
+          import video
+          print('::notice title=C::Pixabay clave', 'sí' if os.environ.get('PIXABAY_KEY') else 'no', '->', (video.pixabay('calm nature', 'x') or 'sin resultado')[:60])
+          r = video.jamendo({'id': 'frase-prueba', 'tipo': 'frase'})
+          print('::notice title=C::Jamendo clave', 'sí' if os.environ.get('JAMENDO_CLIENT_ID') else 'no', '->', (r[1] if r else 'sin resultado'), (os.path.getsize(r[0]) if r else 0), 'bytes')
+          PY
