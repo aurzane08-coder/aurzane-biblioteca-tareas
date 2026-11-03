@@ -766,8 +766,27 @@ seguridad = []
 CABS = [('strict-transport-security', 'Obliga a usar HTTPS (HSTS)'), ('x-content-type-options', 'Evita que el navegador adivine tipos de archivo'), ('referrer-policy', 'Controla qué datos de origen se comparten'), ('x-frame-options', 'Impide que otras webs incrusten la tuya')]
 for h in HOSTS[:6]:
     st, _, _, cab = get(f'https://{h}/')
-    faltan = [d for k, d in CABS if not (cab or {}).get(k)] if st == 200 else []
+    csp = ((cab or {}).get('content-security-policy') or '')
+    faltan = [d for k, d in CABS if not ((cab or {}).get(k) or (k == 'x-frame-options' and 'frame-ancestors' in csp))] if st == 200 else []
     seguridad.append({'host': h, 'faltan': faltan, 'nivel': 'ok' if not faltan else ('medio' if len(faltan) < 3 else 'mal')})
+# arreglo automático y seguro: cabeceras de seguridad en el .htaccess de cada sitio (con copia y vuelta atrás si algo falla)
+CAB_BLOQUE = ('# BEGIN AURZANE-AI cabeceras (las escribe el AI Manager)\n<IfModule mod_headers.c>\n'
+              'Header always set Strict-Transport-Security "max-age=31536000"\nHeader always set X-Content-Type-Options "nosniff"\n'
+              'Header always set Referrer-Policy "strict-origin-when-cross-origin"\n'
+              'Header always set Content-Security-Policy "frame-ancestors \'self\' https://aurzane.com https://*.aurzane.com"\n</IfModule>\n# END AURZANE-AI cabeceras\n')
+for x_ in seguridad:
+    if not x_['faltan'] or not SSH: continue
+    h = x_['host']; ht = f'www/{h}/public_html/.htaccess'
+    script = ('python3 - <<\'PYX\'\nimport re,os,shutil\np=' + repr(ht) + '\ns=open(p).read() if os.path.exists(p) else ""\n'
+              'shutil.copy(p, p+".ai-copia-cab") if os.path.exists(p) else None\n'
+              's=re.sub(r"# BEGIN AURZANE-AI cabeceras.*?# END AURZANE-AI cabeceras\\n","",s,flags=re.S)\nopen(p,"w").write(' + repr(CAB_BLOQUE) + '+s)\nprint("ok")\nPYX')
+    if 'ok' not in remoto(script): continue
+    time.sleep(3)
+    st2, _, _, cab2 = get(f'https://{h}/')
+    if st2 != 200:
+        remoto(f'cp {ht}.ai-copia-cab {ht}'); aviso('medio', f'Intenté poner las cabeceras de seguridad en {h} pero la web dejó de responder; lo deshice.'); continue
+    acciones.append(f'Puse las cabeceras de seguridad que faltaban en {h} (HTTPS obligatorio, protección de tipos, privacidad del origen e incrustación).')
+    x_['faltan'] = []; x_['nivel'] = 'ok'
 seo = []
 for u in CLAVE:
     st, b, _, _ = get(u); t = b.decode('utf-8', 'replace') if st == 200 else ''
@@ -858,8 +877,10 @@ for u in muestra_v:
     t = re.sub(r'<script.*?</script>|<style.*?</style>', ' ', b.decode('utf-8', 'replace'), flags=re.S)
     t = html.unescape(re.sub(r'<[^>]+>', ' ', t)); t = re.sub(r'\s+', ' ', t)
     halla = []
-    for m in re.finditer(r'[^.]{0,80}\b(20[12]\d)\b[^.]{0,60}', t):
+    for m in re.finditer(r'[^.]{0,80}\b(20[12]\d)\b([-/–](?:20)?\d{2})?[^.]{0,60}', t):
         y = int(m.group(1)); frase = m.group(0).strip()
+        if m.group(2):   # rangos como 2025-2026 o 2025/26: cuenta el último año
+            y2 = int(re.sub(r'\D', '', m.group(2))); y = max(y, y2 + 2000 if y2 < 100 else y2)
         if y <= ANIO - 1 and re.search(CLAVE_DATOS, frase, re.I) and not re.search(r'ISBN|SENESCYT|Real Decreto|Ley|ley |validaci|publicad|edici|revista|journal|et al|\(\d{4}\)|Resoluci|BOE|DOI', frase, re.I):
             halla.append(frase[:170])
     m2 = re.search(r'©\s*(20\d\d)', t)
