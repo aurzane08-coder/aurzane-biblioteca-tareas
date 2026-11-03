@@ -36,3 +36,9 @@
 2026-11-03,3,instagram,frase-4a49bc6d,ok,18169982026468709
 2026-11-03,3,facebook,frase-ff372591,ok,1411384405395087_122105339703526868
 2026-11-03,3,pinterest,frase-f6e7b225,feed,
+2026-11-03,2,telegram,nc-odontologia,ok,15
+2026-11-03,2,bluesky,nc-ingenieria-en-tecnologias-industriales,ok,at://did:plc:6ovoiudj7dkxgrzd2zkyn77y/app.bsky.feed.post/3mzgfgxwmpi2r
+2026-11-03,2,mastodon,nc-ingenieria-mecanica,ok,https://mastodon.social/@auzane/117553760291462845
+2026-11-03,2,instagram,nc-pedagogia,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"ARC41sXmrgxAh1Bs5Cm35Wb"}}
+2026-11-03,2,facebook,nc-biologia,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"A5rkzP-X9pcb0XnFMBGK0HX"}}
+2026-11-03,2,pinterest,nc-enfermeria,feed,
