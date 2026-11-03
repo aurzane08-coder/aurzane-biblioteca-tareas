@@ -507,7 +507,7 @@ for p in aprob:
     if p.get('pdf_local') and p['tipo'] == 'libro' and p.get('idioma') == 'es':
         libros_citables.append({'id': p['id'], 'titulo': p['titulo'], 'autores': p.get('autores', ''), 'lic': (p.get('lic') or '').upper(), 'pdf': p['pdf_local'],
                                 'url': f'https://aurzane.com/biblioteca/recientes/{p["id"]}/', 'portada': p.get('portada', '')})
-n_citas = 0; pend_citas = sum(1 for p in pend if p['tipo'] == 'cita')
+n_citas = 0; auto_citas = 0; pend_citas = sum(1 for p in pend if p['tipo'] == 'cita')
 if ESTADO.get('recuperar_citas') != 'v1':
     # una sola vez: recupera las frases aprobadas que se perdieron por un fallo (se vuelven a leer sus libros)
     aprobadas_ids = {k for k, v in decis.items() if k.startswith('cita-') and (v or {}).get('d') == 'aprobar'} - {c['id'] for c in citas_ok}
@@ -540,10 +540,29 @@ if pend_citas < 25:
         for s, f in cands[:4]:
             cid = 'cita-' + hashlib.md5(f.encode()).hexdigest()[:10]
             if cid in ya or cid in vistos: continue
-            ya.add(cid); n_citas += 1
+            ya.add(cid)
+            if os.environ.get('GEMINI_API_KEY') and s >= 8:   # nota de Gemini 8 o más: se aprueba sola y va directa a redes
+                vistos.add(cid); citas_ok.insert(0, {'id': cid, 'texto': f, 'autor': L['autores'], 'libro': L['titulo'], 'url': L['url'], 'lic': L['lic'], 'fecha': HOY, 'nota': s, 'auto': True})
+                auto_citas += 1; continue
+            n_citas += 1
             pend.append({'id': cid, 'tipo': 'cita', 'titulo': f, 'autores': L['autores'], 'libro': L['titulo'], 'url': L['url'], 'portada': L['portada'], 'lic': L['lic'],
                          'tema': 'cita', 'idioma': 'es', 'motivo': f'Frase de «{L["titulo"][:80]}» ({L["lic"]}). Puntuación {s}: tiene fuerza y se entiende sin contexto.'})
     if n_citas: acciones.append(f'Leí libros de la biblioteca y propuse {n_citas} frases para redes.')
+# las frases que ya esperaban en la cola: Gemini las puntúa; con 8 o más se aprueban solas, con menos se descartan solas
+cola_c = [p for p in pend if p['tipo'] == 'cita'][:40]
+if cola_c and os.environ.get('GEMINI_API_KEY'):
+    r_ = gemini_rapido('Puntúa de 1 a 10 cada frase para publicarla sola en redes como frase inspiradora de un libro (se entiende sin contexto, sin errores de escaneo, '
+                       'no es técnica ni narra hechos de un personaje). Responde solo con los números separados por comas, en el mismo orden.\n' + '\n'.join(f'{k + 1}. {c["titulo"]}' for k, c in enumerate(cola_c)))
+    notas = [int(x) for x in re.findall(r'\d+', r_)]
+    if len(notas) == len(cola_c):
+        for c, n_ in zip(cola_c, notas):
+            vistos.add(c['id'])
+            if n_ >= 8 and calidad_frase(c['titulo']):
+                citas_ok.insert(0, {'id': c['id'], 'texto': c['titulo'], 'autor': c.get('autores') or '', 'libro': c.get('libro') or '', 'url': c['url'], 'lic': c.get('lic') or '', 'fecha': HOY, 'nota': n_, 'auto': True}); auto_citas += 1
+            else:
+                autodesc.insert(0, {'fecha': HOY, 'id': c['id'], 'tipo': 'cita', 'titulo': c['titulo'][:160], 'url': c['url'], 'motivo': f'Gemini le dio {n_}/10: no tiene fuerza suficiente para redes'})
+        pend = [p for p in pend if p['id'] not in vistos]
+if auto_citas: acciones.append(f'Aprobé sola {auto_citas} frases de libros con nota 8 o más; salen en redes sin que tengas que revisarlas.')
 guardar('citas_leidos.json', sorted(leidos))
 
 sin_nota = [c for c in citas_ok if 'nota' not in c][:30]
@@ -565,12 +584,31 @@ TEMAS_CUR = ['un sesgo cognitivo', 'un experimento clásico de la historia de la
              'los hábitos', 'la atención y la concentración', 'la ansiedad', 'la autoestima', 'el estrés', 'la neuroplasticidad', 'la motivación', 'el aprendizaje', 'la soledad', 'la felicidad']
 if nuevas_curios: acciones.append(f'Pasé {nuevas_curios} curiosidades aprobadas a YouTube, Reels y TikTok.')
 guardar('curiosidades.json', curios_ok[:1000])
+def verificar_cur(c):
+    rev = gemini_base('Eres verificador de divulgación científica. ¿Es correcta, verificable y no exagerada esta curiosidad de psicología? '
+                      f'Gancho: {c["titulo"]}\nTexto: {c.get("resumen", "")}\nFuente: {c.get("fuente", "")}\n'
+                      'Responde SOLO con JSON: {"correcta": true o false, "confianza": <1 a 10>, "motivo": "<una frase>"}', 300, 0)
+    mv = re.search(r'\{.*\}', rev, re.S)
+    try: return json.loads(mv.group(0)) if mv else {}
+    except Exception: return {}
+if os.environ.get('GEMINI_API_KEY'):
+    auto_c2 = 0
+    for c in [p for p in pend if p['tipo'] == 'curiosidad' and not p.get('verificada')][:6]:
+        v_ = verificar_cur(c); c['verificada'] = HOY
+        if v_.get('correcta') is True and int(v_.get('confianza') or 0) >= 9:
+            vistos.add(c['id']); curios_ok.insert(0, dict(c, fecha=HOY, auto=True, verificacion=str(v_.get('motivo', ''))[:200])); auto_c2 += 1
+        elif v_.get('correcta') is False:
+            vistos.add(c['id']); autodesc.insert(0, {'fecha': HOY, 'id': c['id'], 'tipo': 'curiosidad', 'titulo': c['titulo'][:160], 'url': c['url'], 'motivo': 'La verificación encontró un error: ' + str(v_.get('motivo', ''))[:200]})
+        elif v_: c['motivo'] = 'Gemini no está del todo seguro (' + str(v_.get('motivo', ''))[:160] + '). Revísala tú.'
+    pend = [p for p in pend if p['id'] not in vistos]
+    if auto_c2: acciones.append(f'Verifiqué y publiqué sola {auto_c2} curiosidades que estaban en la cola.')
+    guardar('curiosidades.json', curios_ok[:1000])
 if os.environ.get('GEMINI_API_KEY') and sum(1 for p in pend if p['tipo'] == 'curiosidad') < 10 and ESTADO.get('curiosidades') != HOY:
     usados = {c.get('fuente_id') for c in curios_ok} | {p.get('fuente_id') for p in pend}
     fuentes = [('estudio', x) for x in aprob if x['tipo'] == 'estudio' and x['id'] not in usados][:2]
     dia = AHORA.timetuple().tm_yday
     fuentes += [('tema', {'id': f'tema-{dia}-{k}', 'titulo': TEMAS_CUR[(dia * 3 + k) % len(TEMAS_CUR)]}) for k in range(4 - len(fuentes))]
-    hechas_c = 0
+    hechas_c = 0; auto_cur = 0
     for clase, f in fuentes:
         base = (f'Basándote SOLO en este estudio publicado:\nTítulo: {f["titulo"]}\nRevista: {f.get("editorial", "")}\nResumen: {f.get("resumen", "")[:1500]}'
                 if clase == 'estudio' else f'Tema: {f["titulo"]}. Usa solo hechos bien establecidos en psicología, citando de dónde salen (autor y año o el experimento).')
@@ -585,12 +623,26 @@ if os.environ.get('GEMINI_API_KEY') and sum(1 for p in pend if p['tipo'] == 'cur
         cid = 'cur-' + hashlib.md5((j['gancho'] + j['dato']).encode()).hexdigest()[:10]
         if cid in ya or cid in vistos: continue
         ya.add(cid); hechas_c += 1
+        rev = gemini_base('Eres verificador de divulgación científica. ¿Es correcta, verificable y no exagerada esta curiosidad de psicología? '
+                          f'Gancho: {j["gancho"]}\nDato: {j["dato"]}\nExplicación: {j.get("explicacion", "")}\nFuente: {j.get("fuente", "")}\n'
+                          'Responde SOLO con JSON: {"correcta": true o false, "confianza": <1 a 10>, "motivo": "<una frase>"}', 300, 0)
+        mv = re.search(r'\{.*\}', rev, re.S)
+        try: v_ = json.loads(mv.group(0)) if mv else {}
+        except Exception: v_ = {}
+        if v_.get('correcta') is True and int(v_.get('confianza') or 0) >= 9:
+            vistos.add(cid); curios_ok.insert(0, {'id': cid, 'tipo': 'curiosidad', 'titulo': j['gancho'][:90], 'dato': j['dato'][:200], 'resumen': (j['dato'] + ' ' + j.get('explicacion', ''))[:520],
+                'fuente': str(j.get('fuente', ''))[:140], 'hashtags': [re.sub(r'\W', '', str(h)) for h in (j.get('hashtags') or [])][:4], 'fuente_id': f['id'],
+                'url': ('https://aurzane.com/biblioteca/recientes/' + f['id'] + '/') if clase == 'estudio' else 'https://mind.aurzane.com/', 'fecha': HOY, 'auto': True, 'verificacion': str(v_.get('motivo', ''))[:200]})
+            auto_cur += 1; continue
+        if v_.get('correcta') is False:
+            autodesc.insert(0, {'fecha': HOY, 'id': cid, 'tipo': 'curiosidad', 'titulo': j['gancho'][:160], 'url': 'https://mind.aurzane.com/', 'motivo': 'La verificación encontró un error: ' + str(v_.get('motivo', ''))[:200]}); vistos.add(cid); continue
         pend.append({'id': cid, 'tipo': 'curiosidad', 'titulo': j['gancho'][:90], 'dato': j['dato'][:200], 'resumen': (j['dato'] + ' ' + j.get('explicacion', ''))[:520],
                      'fuente': str(j.get('fuente', ''))[:140], 'hashtags': [re.sub(r'\W', '', str(h)) for h in (j.get('hashtags') or [])][:4], 'fuente_id': f['id'],
                      'url': ('https://aurzane.com/biblioteca/recientes/' + f['id'] + '/') if clase == 'estudio' else 'https://mind.aurzane.com/', 'portada': f.get('portada', ''), 'tema': 'curiosidad', 'idioma': 'es',
                      'autores': str(j.get('fuente', ''))[:140], 'motivo': 'Guion escrito por Gemini a partir de ' + ('un estudio que aprobaste' if clase == 'estudio' else 'un tema de psicología') + '. Revisa que el dato sea correcto antes de aprobar.'})
     ESTADO['curiosidades'] = HOY
-    if hechas_c: acciones.append(f'Escribí {hechas_c} curiosidades para vídeos cortos; están en la cola del admin.')
+    if hechas_c: acciones.append(f'Escribí {hechas_c} curiosidades para vídeos cortos: {auto_cur} verificadas y publicadas solas, el resto en la cola por si quieres revisarlas.')
+    guardar('curiosidades.json', curios_ok[:1000])
 pend.sort(key=puntos, reverse=True)
 _esp = [x for x in pend if x['tipo'] in ('cita', 'curiosidad')][:40]; pend = _esp + [x for x in pend if x['tipo'] not in ('cita', 'curiosidad')][:90 - len(_esp)]
 print('::notice title=AI::Cola ' + str(len(pend)) + ' propuestas: ' + ', '.join(f'{k} {v}' for k, v in collections.Counter(x['tipo'] for x in pend).items()) + ' · ' + str(nuevos_auto) + ' descartadas solas')
