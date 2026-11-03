@@ -21,25 +21,72 @@ def musica_de(p):
     return lista[int(hashlib.md5((p['id'] + 'm').encode()).hexdigest(), 16) % len(lista)]
 
 
+# Variedad: cada vídeo elige un estilo distinto (rotando por día y por publicación) y nunca repite un tema reciente.
+ESTILOS_CALMA = ['indie+acoustic', 'piano+melancholic', 'dreampop', 'lofi+chill', 'cinematic+emotional', 'folk+acoustic', 'ambient+piano',
+                 'singer+songwriter', 'soft+pop', 'chillout', 'neoclassical', 'indie+folk']
+ESTILOS_ALEGRE = ['indie+pop', 'upbeat+pop', 'electropop', 'funk+groove', 'happy+acoustic', 'synthpop', 'pop+rock', 'tropical+house', 'feelgood']
+BANCO = 'musica_banco.json'   # temas ya usados que se guardan en aurzane.com/marketing/musica/ como reserva si Jamendo falla
+
+
 def jamendo(p):
-    """Si hay JAMENDO_CLIENT_ID (gratis en devportal.jamendo.com), elige un tema CC BY o CC BY-SA (sin NC ni ND:
-    se puede usar en vídeos monetizados citando al autor). Devuelve (ruta_mp3, crédito) o None."""
-    cid = os.environ.get('JAMENDO_CLIENT_ID', '')
+    """Si hay JAMENDO_CLIENT_ID, elige un tema CC BY o CC BY-SA (sin NC ni ND: se puede usar en vídeos monetizados citando al autor),
+    de un estilo distinto cada vez y sin repetir los últimos 80. Devuelve (ruta_mp3, crédito, id) o None."""
+    cid = os.environ.get('JAMENDO_CLIENT_ID', '').strip()
     if not cid: return None
-    tags = 'ambient+piano+relaxation' if p['tipo'] == 'frase' else 'happy+acoustic+upbeat'
+    calma = p['tipo'] in ('frase', 'curiosidad')
+    h = int(hashlib.md5((p['id'] + mk.HOY.isoformat()).encode()).hexdigest(), 16)
+    estilos = ESTILOS_CALMA if calma else ESTILOS_ALEGRE
+    usados = set(mk.leer('musica_ids.json', [])[-80:])
+    for k in range(3):
+        tags = estilos[(h + k) % len(estilos)]
+        try:
+            q = {'client_id': cid, 'format': 'json', 'limit': 80, 'fuzzytags': tags, 'include': 'licenses musicinfo', 'audioformat': 'mp32', 'ccnc': 'false',
+                 'order': ['popularity_month', 'popularity_week', 'popularity_total'][(h + k) % 3], 'audiodlformat': 'mp32'}
+            if (h >> 3) % 3 == 0: q['vocalinstrumental'] = 'instrumental'
+            res = json.load(urllib.request.urlopen('https://api.jamendo.com/v3.0/tracks/?' + urllib.parse.urlencode(q), timeout=60)).get('results', [])
+            res = [t for t in res if t.get('audiodownload_allowed', True) and (t.get('audiodownload') or t.get('audio')) and str(t['id']) not in usados
+                   and 'creativecommons.org/licenses/by' in (t.get('license_ccurl') or '') and '-nc' not in t['license_ccurl'] and '-nd' not in t['license_ccurl']
+                   and 60 <= int(t.get('duration') or 0) <= 420]
+            if not res: continue
+            t = res[(h >> 5) % len(res)]
+            dest = f'/tmp/jamendo-{t["id"]}.mp3'
+            open(dest, 'wb').write(urllib.request.urlopen(urllib.request.Request(t.get('audiodownload') or t['audio'], headers={'User-Agent': 'Mozilla/5.0'}), timeout=120).read())
+            lic = re.search(r'licenses/([a-z-]+)/', t.get('license_ccurl') or ''); lic = ('CC ' + lic.group(1).upper()) if lic else 'Creative Commons'
+            cred = f'«{t["name"]}», {t["artist_name"]} (Jamendo), {lic}'
+            ids = mk.leer('musica_ids.json', []); ids.append(str(t['id'])); mk.guardar('musica_ids.json', ids[-300:])
+            banco = mk.leer(BANCO, [])
+            if len(banco) < 120 and str(t['id']) not in {b_['id'] for b_ in banco}:   # se guarda como reserva (se sube al servidor en el flujo)
+                os.makedirs(os.path.join(D, 'salida', 'musica'), exist_ok=True)
+                import shutil; shutil.copy(dest, os.path.join(D, 'salida', 'musica', f'{t["id"]}.mp3'))
+                banco.append({'id': str(t['id']), 'credito': cred, 'calma': calma, 'estilo': tags}); mk.guardar(BANCO, banco)
+            return dest, cred, str(t['id'])
+        except Exception as e:
+            print('::notice title=Videos::Jamendo no disponible', str(e)[:120])
+    return None
+
+
+def de_banco(p):
+    """Reserva: un tema del banco propio (aurzane.com/marketing/musica/), distinto de los últimos usados."""
+    calma = p['tipo'] in ('frase', 'curiosidad')
+    banco = [b_ for b_ in mk.leer(BANCO, []) if b_['calma'] == calma] or mk.leer(BANCO, [])
+    if not banco: return None
+    usados = mk.leer('musica_ids.json', [])[-40:]
+    libres = [b_ for b_ in banco if b_['id'] not in usados] or banco
+    b_ = libres[int(hashlib.md5((p['id'] + 'b').encode()).hexdigest(), 16) % len(libres)]
+    dest = f'/tmp/banco-{b_["id"]}.mp3'
     try:
-        u = 'https://api.jamendo.com/v3.0/tracks/?' + urllib.parse.urlencode({'client_id': cid, 'format': 'json', 'limit': 50, 'fuzzytags': tags, 'include': 'licenses',
-                                                                             'audioformat': 'mp32', 'ccnc': 'false', 'order': 'popularity_month', 'vocalinstrumental': 'instrumental'})
-        res = json.load(urllib.request.urlopen(u, timeout=60)).get('results', [])
-        res = [t for t in res if t.get('audiodownload_allowed', True) and (t.get('audiodownload') or t.get('audio')) and 'creativecommons.org/licenses/by' in (t.get('license_ccurl') or '') and '-nc' not in t['license_ccurl'] and '-nd' not in t['license_ccurl']]
-        if not res: return None
-        t = res[int(hashlib.md5((p['id'] + 'j').encode()).hexdigest(), 16) % len(res)]
-        dest = f'/tmp/jamendo-{t["id"]}.mp3'
-        open(dest, 'wb').write(urllib.request.urlopen(urllib.request.Request(t.get('audiodownload') or t['audio'], headers={'User-Agent': 'Mozilla/5.0'}), timeout=120).read())
-        lic = re.search(r'licenses/([a-z-]+)/', t.get('license_ccurl') or ''); lic = ('CC ' + lic.group(1).upper()) if lic else 'Creative Commons'
-        return dest, f'«{t["name"]}», {t["artist_name"]} (Jamendo), {lic}'
+        if not os.path.exists(dest):
+            open(dest, 'wb').write(urllib.request.urlopen(urllib.request.Request(mk.SITIO_IMG + f'musica/{b_["id"]}.mp3', headers={'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) Chrome/130.0 Safari/537.36'}), timeout=120).read())
+        return dest, b_['credito'], b_['id']
     except Exception as e:
-        print('::notice title=Videos::Jamendo no disponible', str(e)[:120]); return None
+        print('::notice title=Videos::banco de música no disponible', str(e)[:100]); return None
+
+
+def elegir_musica(p):
+    """Jamendo (variado) → banco propio → Kevin MacLeod como último recurso."""
+    r = jamendo(p) or de_banco(p)
+    if r: return r[0], r[1]
+    return bajar_musica(musica_de(p)), f'«{musica_de(p)}», Kevin MacLeod (incompetech.com), CC BY 4.0'
 
 
 def credito(p):
@@ -140,8 +187,7 @@ def generar(dias=2):
         except Exception as e:
             print('::notice title=Videos::sin fondo', i, e); continue
         sal = os.path.join(D, 'salida', 'video', V + i + '.mp4')
-        jm = jamendo(p)
-        mus, cred = jm if jm else (bajar_musica(musica_de(p)), f'«{musica_de(p)}», Kevin MacLeod (incompetech.com), CC BY 4.0')
+        mus, cred = elegir_musica(p)
         usada = mk.leer('musica_usada.json', {}); usada[i] = cred; mk.guardar('musica_usada.json', usada)
         filtro = ('[0:v]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,setsar=1,fps=30,eq=brightness=-0.05:saturation=1.05[b];'
                   '[1:v]format=rgba,fade=in:st=0.3:d=0.9:alpha=1[c];[b][c]overlay=0:0,format=yuv420p[v]')
@@ -158,7 +204,44 @@ def generar(dias=2):
         print('::notice title=Videos::', i, 'ok' if r.returncode == 0 else 'ERROR', round(os.path.getsize(sal) / 1e6, 1) if os.path.exists(sal) else '', 'MB')
 
 
+def generar_imagenes(dias=2):
+    """Las publicaciones de imagen de Instagram y Facebook salen como Reel de 9 s con música: la imagen con un zoom lento
+    sobre su propio fondo desenfocado. Se preparan con 2 días de margen para que ya estén en aurzane.com al publicar."""
+    cat = {p['id']: p for p in mk.leer('catalogo.json')['productos']}
+    est = mk.leer('estado.json'); hoy = mk.HOY
+    ids = sorted({x[r] for d in range(dias) for fr, x in est['calendario'].get((hoy + datetime.timedelta(days=d)).isoformat(), {}).items() if fr != '4'
+                  for r in ('instagram', 'facebook') if r in x})
+    hechos = 0
+    for i in ids:
+        if i not in cat or hechos >= 8: continue
+        p = cat[i]; nombre = V + 'img-' + i
+        try:
+            urllib.request.urlopen(urllib.request.Request(mk.SITIO_IMG + f'video/{nombre}.mp4', method='HEAD'), timeout=20); continue
+        except Exception: pass
+        img = os.path.join(D, mk.imagen_de(p))
+        if not os.path.exists(img):
+            try: os.makedirs(os.path.dirname(img), exist_ok=True); urllib.request.urlretrieve(mk.SITIO_IMG + mk.imagen_de(p), img)
+            except Exception as e: print('::notice title=Videos::sin imagen', i, e); continue
+        mus, cred = elegir_musica(p)
+        usada = mk.leer('musica_usada.json', {}); usada['img-' + i] = cred; mk.guardar('musica_usada.json', usada)
+        sal = os.path.join(D, 'salida', 'video', nombre + '.mp4'); os.makedirs(os.path.dirname(sal), exist_ok=True)
+        dur = 9
+        filtro = ('[0:v]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,boxblur=28:2,eq=brightness=-0.12[bg];'
+                  f"[0:v]scale=1000:-2,zoompan=z='min(zoom+0.0006,1.06)':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d={dur * 30}:s=1000x1250:fps=30[fg];"
+                  '[bg][fg]overlay=(W-w)/2:(H-h)/2,format=yuv420p[v]')
+        audio_in = ['-ss', str(3 + int(hashlib.md5(i.encode()).hexdigest(), 16) % 20), '-i', mus] if mus else ['-f', 'lavfi', '-i', 'anullsrc=r=44100:cl=stereo']
+        filtro += f';[1:a]volume=0.6,afade=t=in:st=0:d=1,afade=t=out:st={dur - 2}:d=2[a]'
+        cmd = ['ffmpeg', '-y', '-loglevel', 'error', '-loop', '1', '-i', img] + audio_in + ['-filter_complex', filtro, '-map', '[v]', '-map', '[a]',
+               '-t', str(dur), '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '23', '-c:a', 'aac', '-b:a', '128k', '-ar', '44100', '-movflags', '+faststart', sal]
+        r = subprocess.run(cmd); hechos += 1
+        print('::notice title=Videos::Reel de imagen', i, 'ok' if r.returncode == 0 else 'ERROR')
+
+
 if __name__ == '__main__':
+    try:
+        generar_imagenes()
+    except Exception as e:
+        import traceback; print('::notice title=Videos::ERROR imágenes', repr(e)[:300]); traceback.print_exc()
     try:
         generar()
     except Exception as e:

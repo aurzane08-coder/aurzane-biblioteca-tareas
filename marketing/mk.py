@@ -461,6 +461,17 @@ def publicar(franja):
             os.makedirs(os.path.dirname(img_local), exist_ok=True)
             urllib.request.urlretrieve(img_url, img_local)
         try:
+            if r in ('instagram', 'facebook'):   # Reel con música si ya está preparado en aurzane.com (video.generar_imagenes)
+                import video as _v
+                vurl = SITIO_IMG + f'video/{_v.V}img-{i}.mp4'; vlocal = os.path.join(D, 'salida', 'video', f'{_v.V}img-{i}.mp4')
+                try:
+                    urllib.request.urlopen(urllib.request.Request(vurl, method='HEAD'), timeout=20)
+                    if not os.path.exists(vlocal): os.makedirs(os.path.dirname(vlocal), exist_ok=True); urllib.request.urlretrieve(vurl, vlocal)
+                    cred = _v.mk.leer('musica_usada.json', {}).get('img-' + i, '')
+                    ref = redes.publicar_video(r, texto(r, p, n + int(franja)) + (f'\n\n🎵 {cred}' if cred else ''), vurl, vlocal, IR + codigo(r, i), p)
+                    hist.setdefault(r, []).append([hoy, i]); reg.write(f'{hoy},{franja},{r},{i},ok,{ref}\n'); print('OK reel', r, i, ref); continue
+                except Exception as e_:
+                    print('Reel no disponible, sale como imagen', r, i, str(e_)[:120])
             ref = redes.publicar(r, texto(r, p, n + int(franja)), img_url, img_local, IR + codigo(r, i), p)
             hist.setdefault(r, []).append([hoy, i]); reg.write(f'{hoy},{franja},{r},{i},ok,{ref}\n'); print('OK', r, i, ref)
         except Exception as e:

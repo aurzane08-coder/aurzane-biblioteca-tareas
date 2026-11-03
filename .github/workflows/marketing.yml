@@ -127,6 +127,7 @@ jobs:
           if [ "$ACCION" = planificar ]; then
             rsync -rlz --ignore-existing -e "$SSH" marketing/img/ "$R/public_html/marketing/img/"
             [ -d marketing/salida/video ] && rsync -rlz --ignore-existing -e "$SSH" marketing/salida/video/ "$R/public_html/marketing/video/" || true
+            [ -d marketing/salida/musica ] && $SSH "$SG_USER@$SG_HOST" "mkdir -p www/aurzane.com/public_html/marketing/musica" && rsync -rlz --ignore-existing -e "$SSH" marketing/salida/musica/ "$R/public_html/marketing/musica/" || true
             rsync -rlz --checksum -e "$SSH" marketing/web/ir/ marketing/salida/ir/ "$R/public_html/ir/"
             $SSH "$SG_USER@$SG_HOST" "cat www/aurzane.com/ir-clics.log 2>/dev/null" > /tmp/clics.log || true
             python3 marketing/mk.py clics /tmp/clics.log
