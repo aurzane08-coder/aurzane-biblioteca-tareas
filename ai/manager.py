@@ -847,6 +847,24 @@ for h, lista in nuevas_red.items():
     else: acciones.append(f'Limpié redirecciones que ya no hacían falta en {h}.')
 guardar('redirecciones.json', conexiones['redirecciones'][-300:])
 
+# ---------- 16b. Pruebas funcionales (ai/pruebas.js con navegador real) y servicios de AURZANE ID ----------
+pruebas = {}
+try: pruebas = json.load(open(OUT + '/pruebas.json', encoding='utf-8'))
+except Exception: pass
+for r_ in pruebas.get('resultados', []):
+    if not r_['ok']:
+        aviso('mal' if r_['tipo'] in ('test', 'portal', 'calculadora') else 'medio', f'Prueba fallida en {r_["url"]}: {r_["detalle"]}', 'prueba_fallida', r_['url'])
+servicios = []
+for nombre, u, cab in (('AURZANE ID (inicio de sesión)', 'https://chtfpqwrrarfdjcivlad.supabase.co/auth/v1/health', {'apikey': 'sb_publishable___1v6VjDew0l8uGfMyb9Nw_YyCLTPPw'}),
+                       ('Base de datos (Supabase REST)', 'https://chtfpqwrrarfdjcivlad.supabase.co/rest/v1/', {'apikey': 'sb_publishable___1v6VjDew0l8uGfMyb9Nw_YyCLTPPw'})):
+    st, _, ms, _ = get(u, cab, t=20)
+    bien = st in (200, 401) if 'rest' in u else st == 200
+    servicios.append({'nombre': nombre, 'codigo': st, 'ms': ms, 'nivel': 'ok' if bien else 'mal'})
+    if not bien: aviso('mal', f'{nombre} no responde ({st}): Mi AURZANE, OVP y el admin pueden fallar.', 'servicio_caido', nombre)
+if pruebas.get('resultados'):
+    n_ok = sum(1 for x in pruebas['resultados'] if x['ok'])
+    print('::notice title=AI::Pruebas funcionales: ' + str(n_ok) + ' de ' + str(len(pruebas['resultados'])) + ' bien')
+
 # ---------- 17. Taller de reparaciones: arregla sola, verifica, registra y aprende ----------
 # Cada aviso tiene un tipo. Para cada tipo hay recetas (vaciar caché, reintentar una automatización, relanzar un revisor,
 # diagnóstico con IA). La IA prueba primero la receta que mejor le ha funcionado antes (ai/aprendizaje_reparaciones.json),
@@ -888,7 +906,7 @@ def tasa(tipo, receta):
     a = APR.get(f'{tipo}|{receta}', [0, 0]); return (a[0] + 1) / (a[0] + a[1] + 2)
 NOMBRES = {'aprender': 'Aprender algo nuevo', 'vaciar_cache': 'Vaciar la caché del sitio', 'reintentar_flujo': 'Reintentar la automatización', 'relanzar_marketing': 'Relanzar las publicaciones',
            'relanzar_enlaces': 'Volver a revisar los enlaces', 'diagnostico_ia': 'Diagnóstico con IA', 'avisar': 'Avisarte'}
-RECETAS = {'sitio_caido': ['vaciar_cache', 'diagnostico_ia'], 'sitio_lento': ['vaciar_cache', 'diagnostico_ia'], 'pagina_error': ['vaciar_cache', 'diagnostico_ia'],
+RECETAS = {'prueba_fallida': ['vaciar_cache', 'diagnostico_ia'], 'servicio_caido': ['avisar'], 'sitio_caido': ['vaciar_cache', 'diagnostico_ia'], 'sitio_lento': ['vaciar_cache', 'diagnostico_ia'], 'pagina_error': ['vaciar_cache', 'diagnostico_ia'],
            'script_caido': ['vaciar_cache', 'diagnostico_ia'], 'js_error': ['vaciar_cache', 'diagnostico_ia'], 'automatizacion': ['reintentar_flujo', 'diagnostico_ia'],
            'red_fallos': ['relanzar_marketing', 'diagnostico_ia'], 'enlaces_rotos': ['relanzar_enlaces'], 'lenta_movil': ['diagnostico_ia'],
            'pagina_seo': ['diagnostico_ia'], 'ssl': ['avisar']}
@@ -1043,14 +1061,14 @@ lineas = [f'Revisé {len(HOSTS)} sitios, {len(CLAVE)} páginas clave, {len(autos
           (f'Novedades anunciadas hoy: {sum(1 for n in nov if n["fecha"] == HOY)}.'),
           (f'Cola: {len(pend)} propuestas por revisar en el admin.' if pend else 'Cola de propuestas vacía.')]
 hist = leer('historial.json', [])
-hist.append({'fecha': AHORA.isoformat()[:16], 'estado': nivel, 'avisos': len(problemas), 'arreglos': len(acciones), 'errores_24h': errores['total_24h'], 'redes_ok_24h': mk['ok_24h'], 'cola': len(pend), 'publicados': len(aprob)})
+hist.append({'fecha': AHORA.isoformat()[:16], 'estado': nivel, 'avisos': len(problemas), 'arreglos': len(acciones), 'errores_24h': errores['total_24h'], 'redes_ok_24h': mk['ok_24h'], 'cola': len(pend), 'publicados': len(aprob), 'pruebas_ok': sum(1 for x in pruebas.get('resultados', []) if x['ok']), 'pruebas_total': len(pruebas.get('resultados', []))})
 guardar('historial.json', hist[-400:])
 if DIARIO: ESTADO['diario'] = HOY
 guardar('estado.json', ESTADO)
 informe = {'fecha': AHORA.isoformat(), 'estado': nivel, 'resumen': '\n'.join(lineas), 'resumen_fuente': 'automático', 'problemas': problemas, 'acciones': acciones,
            'sitios': sitios, 'paginas': paginas, 'errores': errores, 'automatizaciones': autos, 'enlaces': enlaces, 'marketing': mk, 'novedades': nov[:30], 'pagespeed': ps,
            'cola': len(pend), 'aprobados_total': len(aprob), 'publicados': [{k: x.get(k) for k in ('id', 'tipo', 'titulo', 'portada', 'publicado', 'paginas', 'lic', 'pdf_local')} for x in aprob[:40]],
-           'autodescartes': autodesc[:60], 'citas_aprobadas': len(citas_ok), 'reparaciones': reparaciones_inf, 'conexiones': {'huerfanas': conexiones['huerfanas'][:80], 'n_huerfanas': len(conexiones['huerfanas']), 'fuera_sitemap': conexiones['fuera_sitemap'][:80], 'n_fuera': len(conexiones['fuera_sitemap']), 'redirecciones': conexiones['redirecciones'][-40:]}, 'dominio': dominio, 'seguridad': seguridad, 'seo': seo, 'historial': hist[-120:], 'diario': DIARIO}
+           'autodescartes': autodesc[:60], 'citas_aprobadas': len(citas_ok), 'pruebas': pruebas, 'servicios': servicios, 'reparaciones': reparaciones_inf, 'conexiones': {'huerfanas': conexiones['huerfanas'][:80], 'n_huerfanas': len(conexiones['huerfanas']), 'fuera_sitemap': conexiones['fuera_sitemap'][:80], 'n_fuera': len(conexiones['fuera_sitemap']), 'redirecciones': conexiones['redirecciones'][-40:]}, 'dominio': dominio, 'seguridad': seguridad, 'seo': seo, 'historial': hist[-120:], 'diario': DIARIO}
 json.dump(informe, open(OUT + '/informe.json', 'w', encoding='utf-8'), ensure_ascii=False)
 
 # ---------- 11. Aviso por Telegram (cuando Adrián escribe /aurzane al bot por privado) ----------

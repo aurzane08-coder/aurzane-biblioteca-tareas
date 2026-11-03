@@ -1,0 +1,252 @@
+[
+{
+"url": "https://build.aurzane.com/calculadora-hipoteca/",
+"tipo": "pagina",
+"nombre": "build-hipoteca"
+},
+{
+"url": "https://build.aurzane.com/calculadora-reforma/",
+"tipo": "pagina",
+"nombre": "build-reforma"
+},
+{
+"url": "https://build.aurzane.com/calculadora-sueldo-neto/",
+"tipo": "pagina",
+"nombre": "build-sueldo"
+},
+{
+"url": "https://live.aurzane.com/calculadora-agua/",
+"tipo": "calculadora",
+"nombre": "live-agua"
+},
+{
+"url": "https://live.aurzane.com/test-de-bienestar/",
+"tipo": "test",
+"nombre": "live-bienestar"
+},
+{
+"url": "https://live.aurzane.com/calculadora-calorias/",
+"tipo": "pagina",
+"nombre": "live-calorias"
+},
+{
+"url": "https://live.aurzane.com/calculadora-dias-entre-fechas/",
+"tipo": "calculadora",
+"nombre": "live-dias"
+},
+{
+"url": "https://live.aurzane.com/calculadora-edad/",
+"tipo": "calculadora",
+"nombre": "live-edad"
+},
+{
+"url": "https://live.aurzane.com/calculadora-embarazo/",
+"tipo": "pagina",
+"nombre": "live-embarazo"
+},
+{
+"url": "https://live.aurzane.com/test-de-habitos/",
+"tipo": "test",
+"nombre": "live-habitos"
+},
+{
+"url": "https://live.aurzane.com/calculadora-imc/",
+"tipo": "calculadora",
+"nombre": "live-imc"
+},
+{
+"url": "https://live.aurzane.com/calculadora-interes-compuesto/",
+"tipo": "calculadora",
+"nombre": "live-interes"
+},
+{
+"url": "https://live.aurzane.com/calculadora-porcentajes/",
+"tipo": "calculadora",
+"nombre": "live-porcentaje"
+},
+{
+"url": "https://live.aurzane.com/test-de-sueno/",
+"tipo": "test",
+"nombre": "live-sueno"
+},
+{
+"url": "https://mind.aurzane.com/test-de-ansiedad/",
+"tipo": "test",
+"nombre": "mind-ansiedad"
+},
+{
+"url": "https://mind.aurzane.com/test-de-autocompasion/",
+"tipo": "test",
+"nombre": "mind-autocompasion"
+},
+{
+"url": "https://mind.aurzane.com/test-de-autoeficacia/",
+"tipo": "test",
+"nombre": "mind-autoeficacia"
+},
+{
+"url": "https://mind.aurzane.com/test-de-autoestima/",
+"tipo": "test",
+"nombre": "mind-autoestima"
+},
+{
+"url": "https://mind.aurzane.com/test-de-burnout/",
+"tipo": "test",
+"nombre": "mind-burnout"
+},
+{
+"url": "https://mind.aurzane.com/test-de-depresion/",
+"tipo": "test",
+"nombre": "mind-depresion"
+},
+{
+"url": "https://mind.aurzane.com/ejercicios/atencion-a-la-respiracion/",
+"tipo": "ejercicio",
+"nombre": "mind-ej-atencion-a-la-respiracion"
+},
+{
+"url": "https://mind.aurzane.com/ejercicios/coherencia-cardiaca/",
+"tipo": "ejercicio",
+"nombre": "mind-ej-coherencia-cardiaca"
+},
+{
+"url": "https://mind.aurzane.com/ejercicios/escaneo-corporal/",
+"tipo": "ejercicio",
+"nombre": "mind-ej-escaneo-corporal"
+},
+{
+"url": "https://mind.aurzane.com/ejercicios/lugar-seguro/",
+"tipo": "ejercicio",
+"nombre": "mind-ej-lugar-seguro"
+},
+{
+"url": "https://mind.aurzane.com/ejercicios/pausa-de-autocompasion/",
+"tipo": "ejercicio",
+"nombre": "mind-ej-pausa-de-autocompasion"
+},
+{
+"url": "https://mind.aurzane.com/ejercicios/relajacion-muscular-progresiva/",
+"tipo": "ejercicio",
+"nombre": "mind-ej-relajacion-muscular-progresiva"
+},
+{
+"url": "https://mind.aurzane.com/ejercicios/respiracion-4-7-8/",
+"tipo": "ejercicio",
+"nombre": "mind-ej-respiracion-4-7-8"
+},
+{
+"url": "https://mind.aurzane.com/ejercicios/respiracion-alterna/",
+"tipo": "ejercicio",
+"nombre": "mind-ej-respiracion-alterna"
+},
+{
+"url": "https://mind.aurzane.com/ejercicios/respiracion-cuadrada/",
+"tipo": "ejercicio",
+"nombre": "mind-ej-respiracion-cuadrada"
+},
+{
+"url": "https://mind.aurzane.com/ejercicios/respiracion-diafragmatica/",
+"tipo": "ejercicio",
+"nombre": "mind-ej-respiracion-diafragmatica"
+},
+{
+"url": "https://mind.aurzane.com/ejercicios/suspiro-ciclico/",
+"tipo": "ejercicio",
+"nombre": "mind-ej-suspiro-ciclico"
+},
+{
+"url": "https://mind.aurzane.com/ejercicios/tecnica-5-4-3-2-1/",
+"tipo": "ejercicio",
+"nombre": "mind-ej-tecnica-5-4-3-2-1"
+},
+{
+"url": "https://mind.aurzane.com/ejercicios/tecnica-stop/",
+"tipo": "ejercicio",
+"nombre": "mind-ej-tecnica-stop"
+},
+{
+"url": "https://mind.aurzane.com/ejercicios/",
+"tipo": "pagina",
+"nombre": "mind-ejercicios"
+},
+{
+"url": "https://mind.aurzane.com/test-de-estres/",
+"tipo": "test",
+"nombre": "mind-estres"
+},
+{
+"url": "https://mind.aurzane.com/test-de-resiliencia/",
+"tipo": "test",
+"nombre": "mind-resiliencia"
+},
+{
+"url": "https://mind.aurzane.com/test-de-satisfaccion-con-la-vida/",
+"tipo": "test",
+"nombre": "mind-satisfaccion"
+},
+{
+"url": "https://mind.aurzane.com/test-de-soledad/",
+"tipo": "test",
+"nombre": "mind-soledad"
+},
+{
+"url": "https://mind.aurzane.com/test-de-tdah/",
+"tipo": "test",
+"nombre": "mind-tdah"
+},
+{
+"url": "https://aurzane.com/mi-aurzane.html",
+"tipo": "portal",
+"nombre": "https://aurzane.com/mi-aurzane.html"
+},
+{
+"url": "https://ovp.aurzane.com/",
+"tipo": "portal",
+"nombre": "https://ovp.aurzane.com/"
+},
+{
+"url": "https://ovp.aurzane.com/portal.html",
+"tipo": "portal",
+"nombre": "https://ovp.aurzane.com/portal.html"
+},
+{
+"url": "https://aurzane.com/biblioteca/",
+"tipo": "pagina",
+"nombre": "https://aurzane.com/biblioteca/"
+},
+{
+"url": "https://aurzane.com/biblioteca/recientes/",
+"tipo": "pagina",
+"nombre": "https://aurzane.com/biblioteca/recientes/"
+},
+{
+"url": "https://nexus.aurzane.com/universidades/",
+"tipo": "pagina",
+"nombre": "https://nexus.aurzane.com/universidades/"
+},
+{
+"url": "https://nexus.aurzane.com/universidades/que-puedo-estudiar/",
+"tipo": "pagina",
+"nombre": "https://nexus.aurzane.com/universidades/que-puedo-estudiar/"
+},
+{
+"url": "https://nexus.aurzane.com/calculadora-nota-pau/",
+"tipo": "calculadora",
+"nombre": "https://nexus.aurzane.com/calculadora-nota-pau/"
+},
+{
+"url": "https://aurzane.com/",
+"tipo": "pagina",
+"nombre": "https://aurzane.com/"
+},
+{
+"url": "https://learn.aurzane.com/",
+"tipo": "pagina",
+"nombre": "https://learn.aurzane.com/"
+},
+{
+"url": "https://aurzane.com/novedades/",
+"tipo": "pagina",
+"nombre": "https://aurzane.com/novedades/"
+}
+]

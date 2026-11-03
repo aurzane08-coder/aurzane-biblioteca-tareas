@@ -49,6 +49,12 @@ jobs:
       - name: Herramientas PDF
         if: steps.toca.outputs.si == '1'
         run: command -v pdftoppm >/dev/null || (sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils)
+      - name: Probar la web como una persona (tests, calculadoras, portales)
+        if: steps.toca.outputs.si == '1'
+        continue-on-error: true
+        timeout-minutes: 15
+        run: |
+          mkdir -p /tmp/ai /tmp/pw && W=$PWD && cd /tmp/pw && npm init -y >/dev/null && npm i --silent playwright@1.48.2 >/dev/null 2>&1 && npx playwright install --with-deps chromium >/dev/null 2>&1 && NODE_PATH=/tmp/pw/node_modules node $W/ai/pruebas.js | tail -70
       - name: Revisar y arreglar
         if: steps.toca.outputs.si == '1'
         run: |
