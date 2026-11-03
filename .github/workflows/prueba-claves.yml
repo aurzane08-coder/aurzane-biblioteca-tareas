@@ -6,16 +6,17 @@ jobs:
   p:
     runs-on: ubuntu-latest
     env:
-      PIXABAY_KEY: ${{ secrets.PIXABAY_KEY }}
-      JAMENDO_CLIENT_ID: ${{ secrets.JAMENDO_CLIENT_ID }}
+      J: ${{ secrets.JAMENDO_CLIENT_ID }}
     steps:
-      - uses: actions/checkout@v4
       - run: |
-          cd marketing && python3 - <<'PY'
-          import os, sys
-          sys.path.insert(0, '.')
-          import video
-          print('::notice title=C::Pixabay clave', 'sí' if os.environ.get('PIXABAY_KEY') else 'no', '->', (video.pixabay('calm nature', 'x') or 'sin resultado')[:60])
-          r = video.jamendo({'id': 'frase-prueba', 'tipo': 'frase'})
-          print('::notice title=C::Jamendo clave', 'sí' if os.environ.get('JAMENDO_CLIENT_ID') else 'no', '->', (r[1] if r else 'sin resultado'), (os.path.getsize(r[0]) if r else 0), 'bytes')
+          python3 - <<'PY'
+          import os, json, urllib.request, urllib.parse
+          j = os.environ['J'].strip()
+          print('::notice title=C::longitud', len(j))
+          for extra in [{}, {'fuzzytags': 'ambient+piano'}, {'ccnc': 'false'}, {'ccnd': 'false'}, {'include': 'licenses', 'audioformat': 'mp32'}]:
+              q = dict({'client_id': j, 'format': 'json', 'limit': 50}, **extra)
+              d = json.load(urllib.request.urlopen('https://api.jamendo.com/v3.0/tracks/?' + urllib.parse.urlencode(q), timeout=60))
+              h = d.get('headers', {}); r = d.get('results', [])
+              lic = sorted({(t.get('license_ccurl') or '').split('licenses/')[-1][:12] for t in r})[:6]
+              print('::notice title=C::', json.dumps(extra), h.get('status'), h.get('error_message', '')[:80], len(r), 'dl:', sum(1 for t in r if t.get('audiodownload_allowed')), lic)
           PY
