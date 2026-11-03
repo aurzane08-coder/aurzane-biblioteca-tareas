@@ -6,5 +6,13 @@
  "automatizacion|reintentar_flujo": [
   1,
   0
+ ],
+ "sitio_caido|vaciar_cache": [
+  0,
+  7
+ ],
+ "pagina_error|vaciar_cache": [
+  0,
+  1
  ]
 }

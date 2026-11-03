@@ -1,6 +1,17 @@
 [
  {
   "fecha": "2026-11-03",
+  "id": "ia-little-me-big-dreams",
+  "tipo": "libro",
+  "titulo": "Little Me, Big Dreams: A Childhood Story",
+  "url": "https://archive.org/details/little-me-big-dreams",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 16 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/little-me-big-dreams/Little-Me-Big-Dreams.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-03",
   "id": "cita-27c26f9451",
   "tipo": "cita",
   "titulo": "A través de la radio se puede pensar también la educación y la ciudadanía; asumiéndola crítica y propositivamente.",
