@@ -591,8 +591,9 @@ if os.environ.get('GEMINI_API_KEY') and sum(1 for p in pend if p['tipo'] == 'cur
                      'autores': str(j.get('fuente', ''))[:140], 'motivo': 'Guion escrito por Gemini a partir de ' + ('un estudio que aprobaste' if clase == 'estudio' else 'un tema de psicología') + '. Revisa que el dato sea correcto antes de aprobar.'})
     ESTADO['curiosidades'] = HOY
     if hechas_c: acciones.append(f'Escribí {hechas_c} curiosidades para vídeos cortos; están en la cola del admin.')
-pend.sort(key=lambda p: puntos(p) * (0.9 if p['tipo'] == 'cita' else 1), reverse=True); pend = pend[:90]
-print('::notice title=AI::Cola ' + str(len(pend)) + ' propuestas (' + str(sum(1 for x in pend if x['tipo'] == 'libro')) + ' libros, ' + str(sum(1 for x in pend if x.get('portada'))) + ' con portada), ' + str(nuevos_auto) + ' descartadas solas')
+pend.sort(key=puntos, reverse=True)
+_esp = [x for x in pend if x['tipo'] in ('cita', 'curiosidad')][:40]; pend = _esp + [x for x in pend if x['tipo'] not in ('cita', 'curiosidad')][:90 - len(_esp)]
+print('::notice title=AI::Cola ' + str(len(pend)) + ' propuestas: ' + ', '.join(f'{k} {v}' for k, v in collections.Counter(x['tipo'] for x in pend).items()) + ' · ' + str(nuevos_auto) + ' descartadas solas')
 json.dump(pend, open(OUT + '/propuestas.json', 'w', encoding='utf-8'), ensure_ascii=False)
 guardar('vistos.json', sorted(vistos)[-4000:]); guardar('aprobados.json', aprob[:400]); guardar('aprendizaje.json', apr); guardar('autodescartes.json', autodesc[:300])
 nov = nov[:120]; guardar('novedades.json', nov); pagina_novedades()
