@@ -14,5 +14,9 @@
  "pagina_error|vaciar_cache": [
   0,
   1
+ ],
+ "prueba_fallida|vaciar_cache": [
+  3,
+  0
  ]
 }
