@@ -25,3 +25,14 @@
 2026-11-02,4,tiktok,calc-pau,error,400 {"error":{"code":"invalid_params" "message":"The request source info is empty or incorrect" "log_id":"2026110305411101F3F818847033258B5D"}}
 2026-11-02,4,tiktok,calc-pau,error,403 {"error":{"code":"unaudited_client_can_only_post_to_private_accounts" "message":"Please review our integration guidelines at https://developers.ti
 2026-11-02,4,tiktok,calc-pau,ok,v_inbox_file~v2.7703702458429655092 (borrador en la bandeja de TikTok: añade un sonido y publica)
+2026-11-03,1,telegram,calc-embarazo,ok,13
+2026-11-03,1,bluesky,curso-metod,ok,at://did:plc:6ovoiudj7dkxgrzd2zkyn77y/app.bsky.feed.post/3mzfusys5uj2u
+2026-11-03,1,mastodon,test-tdah,ok,https://mastodon.social/@auzane/117552590511728949
+2026-11-03,1,instagram,test-personalidad,ok,18103185107383509
+2026-11-03,1,facebook,calc-sueldo,ok,1411384405395087_122105339313526868
+2026-11-03,3,telegram,frase-2144e317,ok,14
+2026-11-03,3,bluesky,frase-c2d56190,ok,at://did:plc:6ovoiudj7dkxgrzd2zkyn77y/app.bsky.feed.post/3mzfutsuay52z
+2026-11-03,3,mastodon,frase-7f46c133,ok,https://mastodon.social/@auzane/117552592316852680
+2026-11-03,3,instagram,frase-4a49bc6d,ok,18169982026468709
+2026-11-03,3,facebook,frase-ff372591,ok,1411384405395087_122105339703526868
+2026-11-03,3,pinterest,frase-f6e7b225,feed,
