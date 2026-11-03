@@ -1,6 +1,149 @@
 [
  {
   "fecha": "2026-11-03",
+  "id": "ia-JPR_Vol4_Issue1_2020",
+  "tipo": "libro",
+  "titulo": "Journal of Pedagogical Research, Volume 4, Issue 1 (2020)",
+  "url": "https://archive.org/details/JPR_Vol4_Issue1_2020",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 14 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/JPR_Vol4_Issue1_2020/introducing-captaining-how-to-best-combine-group-work-with-i"
+  ]
+ },
+ {
+  "fecha": "2026-11-03",
+  "id": "ia-JPR_Vol3_Issue3_2019",
+  "tipo": "libro",
+  "titulo": "Journal of Pedagogical Research, Volume 3, Issue 3 (2019)",
+  "url": "https://archive.org/details/JPR_Vol3_Issue3_2019",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 12 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/JPR_Vol3_Issue3_2019/determination-of-differantial-item-functioning-dif-according"
+  ]
+ },
+ {
+  "fecha": "2026-11-03",
+  "id": "ia-JPR_Vol3_Issue2_2019",
+  "tipo": "libro",
+  "titulo": "Journal of Pedagogical Research, Volume 3, Issue 2 (2019)",
+  "url": "https://archive.org/details/JPR_Vol3_Issue2_2019",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 11 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/JPR_Vol3_Issue2_2019/diversity-consciousness-in-the-classroom-a-case-for-opening-"
+  ]
+ },
+ {
+  "fecha": "2026-11-03",
+  "id": "ia-JPR_Vol3_Issue1_2019",
+  "tipo": "libro",
+  "titulo": "Journal of Pedagogical Research, Volume 3, Issue 1 (2019)",
+  "url": "https://archive.org/details/JPR_Vol3_Issue1_2019",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 20 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/JPR_Vol3_Issue1_2019/the-development-of-teacher-academic-emotions-tae-scale-6397."
+  ]
+ },
+ {
+  "fecha": "2026-11-03",
+  "id": "ia-JPR_Vol2_Issue3_2018",
+  "tipo": "libro",
+  "titulo": "Journal of Pedagogical Research, Volume 2, Issue 3 (2018)",
+  "url": "https://archive.org/details/JPR_Vol2_Issue3_2018",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 22 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/JPR_Vol2_Issue3_2018/for-whom-is-the-feedback-intended-a-student-focused-critical"
+  ]
+ },
+ {
+  "fecha": "2026-11-03",
+  "id": "ia-JPR_Vol2_Issue2_2018",
+  "tipo": "libro",
+  "titulo": "Journal of Pedagogical Research, Volume 2, Issue 2 (2018)",
+  "url": "https://archive.org/details/JPR_Vol2_Issue2_2018",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 10 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/JPR_Vol2_Issue2_2018/research-perspectives-of-initial-geometry-education-6382.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-03",
+  "id": "ia-JPSP_Vol5_Issue4_2023",
+  "tipo": "libro",
+  "titulo": "Journal of Pedagogical Sociology and Psychology, Volume 5, Issue 4 (2023)",
+  "url": "https://archive.org/details/JPSP_Vol5_Issue4_2023",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 12 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/JPSP_Vol5_Issue4_2023/the-impact-of-the-self-empowerment-journey-in-supporting-st"
+  ]
+ },
+ {
+  "fecha": "2026-11-03",
+  "id": "ia-bypasser",
+  "tipo": "libro",
+  "titulo": "bypasser",
+  "url": "https://archive.org/details/bypasser",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 35 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/bypasser/bypasser.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-03",
+  "id": "ia-emotions-as-navigation-synthesis-ean",
+  "tipo": "libro",
+  "titulo": "Emotions As Navigation Synthesis (EaN)",
+  "url": "https://archive.org/details/emotions-as-navigation-synthesis-ean",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 41 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/emotions-as-navigation-synthesis-ean/Emotions%20as%20Navigation%20Synthesis%20%28"
+  ]
+ },
+ {
+  "fecha": "2026-11-03",
+  "id": "ia-fr-3-b-9-e-1",
+  "tipo": "libro",
+  "titulo": "Emotional Numbness and Disconnection: A Short Emotional Awareness Guide",
+  "url": "https://archive.org/details/fr-3-b-9-e-1",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 4 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/fr-3-b-9-e-1/FR3B9E~1.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-03",
+  "id": "ia-emotions-as-navigation-synthesis-ean_202609",
+  "tipo": "libro",
+  "titulo": "Emotions As Navigation Synthesis (EaN)",
+  "url": "https://archive.org/details/emotions-as-navigation-synthesis-ean_202609",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 41 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/emotions-as-navigation-synthesis-ean_202609/Emotions%20as%20Navigation%20Synthesi"
+  ]
+ },
+ {
+  "fecha": "2026-11-03",
+  "id": "ia-14-21825-ijict",
+  "tipo": "libro",
+  "titulo": "Classroom behavior mining in adolescents: a cognitive and data-driven approach using BEHAVE_Apriori",
+  "url": "https://archive.org/details/14-21825-ijict",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 8 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/14-21825-ijict/14%2021825%20IJICT.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-03",
+  "id": "ia-ampph-2024-26-36_202610",
+  "tipo": "libro",
+  "titulo": "Dropping out of School: A Psychosocial Approach",
+  "url": "https://archive.org/details/ampph-2024-26-36_202610",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 11 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/ampph-2024-26-36_202610/AMPPH_2024_26_36.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-03",
   "id": "cita-938ea1e98e",
   "tipo": "cita",
   "titulo": "Vana ilusión sin duda, pero capaz de remover montañas y de impulsar ardientemente la humanidad hacia la verdad y el bien.",

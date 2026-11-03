@@ -2,5 +2,9 @@
  "enlaces_rotos|relanzar_enlaces": [
   1,
   0
+ ],
+ "automatizacion|reintentar_flujo": [
+  1,
+  0
  ]
 }
