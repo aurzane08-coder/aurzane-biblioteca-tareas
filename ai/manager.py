@@ -28,7 +28,7 @@ def leer(n, d):
     try: return json.load(open(os.path.join(D, n), encoding='utf-8'))
     except Exception: return d
 def guardar(n, v): json.dump(v, open(os.path.join(D, n), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
-def get(url, cab=None, t=30, datos=None, metodo=None):
+def _get_directo(url, cab=None, t=30, datos=None, metodo=None):
     h = {'User-Agent': UA}; h.update(cab or {})
     req = urllib.request.Request(url, headers=h, data=datos, method=metodo)
     t0 = time.time()
@@ -41,6 +41,27 @@ def get(url, cab=None, t=30, datos=None, metodo=None):
         return e.code, e.read() if e.fp else b'', int((time.time() - t0) * 1000), e.headers
     except Exception as e:
         return 'ERR ' + str(e)[:80], b'', int((time.time() - t0) * 1000), {}
+class _Cab(dict):
+    def get(self, k, d=None): return dict.get(self, k.lower(), d)
+CAPTCHA = {'n': 0, 'servidor_ok': 0}
+def get(url, cab=None, t=30, datos=None, metodo=None):
+    """Como _get_directo, pero si SiteGround responde con su verificación anti-robots (202 sgcaptcha) a GitHub,
+    vuelve a comprobar la página desde el propio servidor por SSH, para no confundir el filtro con una caída."""
+    r = _get_directo(url, cab, t, datos, metodo)
+    if r[0] == 202 and b'sgcaptcha' in r[1][:3000] and datos is None and re.match(r'^https://([a-z0-9-]+\.)?aurzane\.com/', url) and SSH and DEST:
+        CAPTCHA['n'] += 1
+        try:
+            t0 = time.time()
+            o = subprocess.run(SSH.split() + [DEST, "curl -s -i -m 30 --compressed -A " + json.dumps(UA) + " " + json.dumps(url)], capture_output=True, timeout=60).stdout
+            ms = int((time.time() - t0) * 1000)
+            cabeza, _, cuerpo = o.partition(b'\r\n\r\n')
+            lineas = cabeza.decode('latin-1').split('\r\n')
+            st = int(lineas[0].split()[1]) if lineas and len(lineas[0].split()) > 1 else 'ERR'
+            hd = _Cab((l.split(':', 1)[0].strip().lower(), l.split(':', 1)[1].strip()) for l in lineas[1:] if ':' in l)
+            if st == 200 and b'sgcaptcha' not in cuerpo[:3000]: CAPTCHA['servidor_ok'] += 1
+            return st, cuerpo, ms, hd
+        except Exception: return r
+    return r
 def remoto(orden):
     if not SSH or not DEST: return ''
     try: return subprocess.run(SSH.split() + [DEST, orden], capture_output=True, text=True, timeout=120).stdout
@@ -1011,6 +1032,7 @@ print('::notice title=AI::Gemini: ' + (gem_estado if GEM else 'sin clave'))
 reparaciones_inf = {'conocimiento': [dict(v, firma=k.split('|', 1)[1][:120]) for k, v in list(CONOC.items())[-40:]], 'log': REP[:80], 'aprendizaje': {k: v for k, v in APR.items()}, 'nombres': NOMBRES, 'gemini': gem_estado if GEM else 'sin clave',
                     'pendientes_solicitud': sum(1 for x in SOL if x.get('id') not in hechas_sol)}
 
+if CAPTCHA['n']: print('::notice title=AI::SiteGround pidió verificación anti-robots ' + str(CAPTCHA['n']) + ' veces; comprobado desde el servidor (' + str(CAPTCHA['servidor_ok']) + ' bien).')
 # ---------- 10. Resumen ----------
 nivel = 'mal' if any(p['nivel'] == 'mal' for p in problemas) else ('medio' if problemas else 'ok')
 lineas = [f'Revisé {len(HOSTS)} sitios, {len(CLAVE)} páginas clave, {len(autos)} automatizaciones y las publicaciones en redes.',
