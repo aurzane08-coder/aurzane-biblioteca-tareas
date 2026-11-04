@@ -66,3 +66,13 @@
 2026-11-04,1,facebook,test-bienestar,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"Ax9Lqy6n2M3n-VEV7UwoRes"}}
 2026-11-04,3,instagram,frase-27cf2927,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"AxlKp0lfseCFGrrt8Od4TYy"}}
 2026-11-04,3,facebook,frase-f56e3629,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"AVrDQWCL2pxcUJF783TPcNh"}}
+2026-11-04,1,instagram,calc-embarazo,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"Afk5zmJy4e3xkV54s5_FFla"}}
+2026-11-04,1,facebook,test-bienestar,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"AxApm0UyYbMXB_zqwJ8kklQ"}}
+2026-11-04,3,instagram,frase-27cf2927,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"AWoW3meEdehSaMgaJRgmbgi"}}
+2026-11-04,3,facebook,frase-f56e3629,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"A4dMO3Geyw32lzXyVc1B5dO"}}
+2026-11-04,2,telegram,nc-biotecnologia,ok,22
+2026-11-04,2,bluesky,nc-sociologia,ok,at://did:plc:6ovoiudj7dkxgrzd2zkyn77y/app.bsky.feed.post/3mziwlmyn6v2a
+2026-11-04,2,mastodon,nc-maestro-en-educacion-infantil,ok,https://mastodon.social/@auzane/117559470446215070
+2026-11-04,2,instagram,nc-comunicacion-audiovisual,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"AkvFvIMh2GzAs88f3w0NtCG"}}
+2026-11-04,2,facebook,nc-traduccion-e-interpretacion,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"AISLk8MtP3YD1yeZtixh0kg"}}
+2026-11-04,2,pinterest,nc-filologia-hispanica,feed,

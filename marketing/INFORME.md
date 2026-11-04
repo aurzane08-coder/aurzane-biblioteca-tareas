@@ -4,13 +4,13 @@ Actualizado: 2026-11-04. Clics de personas (sin bots ni vistas previas) que entr
 
 | Red | Publicaciones | Clics |
 |---|---|---|
-| telegram | 10 | 4 |
-| bluesky | 8 | 18 |
-| mastodon | 8 | 17 |
+| telegram | 11 | 4 |
+| bluesky | 9 | 22 |
+| mastodon | 9 | 19 |
 | instagram | 6 | 0 |
 | facebook | 6 | 19 |
 | threads | 0 | 0 |
-| pinterest | 5 | 0 |
+| pinterest | 6 | 0 |
 
 ## Productos con más clics
 
@@ -22,6 +22,7 @@ Actualizado: 2026-11-04. Clics de personas (sin bots ni vistas previas) que entr
 | crea-l05-04 | 4 |
 | curso-metod | 4 |
 | nc-ingenieria-en-tecnologias-industriales | 4 |
+| curso-neuro | 4 |
 | test-autoestima | 3 |
 | crea-l05-03 | 3 |
 | frase-2144e317 | 3 |
@@ -30,6 +31,8 @@ Actualizado: 2026-11-04. Clics de personas (sin bots ni vistas previas) que entr
 | frase-fee27969 | 2 |
 | crea-l06-14 | 2 |
 | frase-7c565d26 | 2 |
-| curso-neuro | 2 |
+| nc-sociologia | 2 |
 | frase-7f46c133 | 1 |
 | nc-ingenieria-mecanica | 1 |
+| test-autocompasion | 1 |
+| frase-b0b292c5 | 1 |
