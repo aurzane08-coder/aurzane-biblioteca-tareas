@@ -76,3 +76,14 @@
 2026-11-04,2,instagram,nc-comunicacion-audiovisual,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"AkvFvIMh2GzAs88f3w0NtCG"}}
 2026-11-04,2,facebook,nc-traduccion-e-interpretacion,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"AISLk8MtP3YD1yeZtixh0kg"}}
 2026-11-04,2,pinterest,nc-filologia-hispanica,feed,
+2026-11-04,1,instagram,calc-embarazo,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"ACP6SzqRBcyULaiEFbiQgt4"}}
+2026-11-04,1,facebook,test-bienestar,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"AWbXyjNjuAPTFBRbj5tVmOy"}}
+2026-11-04,3,instagram,frase-27cf2927,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"AoyAgkvllzo_Z9bwBNFDclH"}}
+2026-11-04,3,facebook,frase-f56e3629,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"A_FudCFLSZ9T2f4aFl4_Yx9"}}
+2026-11-04,2,instagram,nc-comunicacion-audiovisual,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"AVSv4uF1ELrfEO_cSBc-rXB"}}
+2026-11-04,2,facebook,nc-traduccion-e-interpretacion,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"A8Ih8WY_4PPSMPGjNf3RW6m"}}
+2026-11-04,4,instagram,calc-reforma,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"AOLMQ50mRs1fVHO0JltYc_n"}}
+2026-11-04,4,facebook,frase-bfc5dc8d,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"A3OgiYy9UxIDrp-7C9w6nkl"}}
+2026-11-04,4,youtube,frase-f56e3629,ok,https://youtu.be/BHC7GJQ50GE
+2026-11-04,4,tiktok,frase-30698848,ok,v_inbox_file~v2.7704403617746814997 (borrador en la bandeja de TikTok: añade un sonido y publica)
+2026-11-04,4,telegram,test-personalidad,ok,23
