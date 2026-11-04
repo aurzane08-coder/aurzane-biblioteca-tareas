@@ -62,3 +62,7 @@
 2026-11-04,3,instagram,frase-27cf2927,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"AibcCPmbHWfnEDFLE6YWObZ"}}
 2026-11-04,3,facebook,frase-f56e3629,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"AZjAKnUHAN3Oar482Q0ePcH"}}
 2026-11-04,3,pinterest,frase-df97ed9a,feed,
+2026-11-04,1,instagram,calc-embarazo,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"AwRadEh9yg2e_ikqeoGO9Gn"}}
+2026-11-04,1,facebook,test-bienestar,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"Ax9Lqy6n2M3n-VEV7UwoRes"}}
+2026-11-04,3,instagram,frase-27cf2927,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"AxlKp0lfseCFGrrt8Od4TYy"}}
+2026-11-04,3,facebook,frase-f56e3629,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"AVrDQWCL2pxcUJF783TPcNh"}}
