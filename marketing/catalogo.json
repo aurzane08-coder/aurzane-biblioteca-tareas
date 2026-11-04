@@ -1,5 +1,5 @@
 {
- "generado": "2026-11-03",
+ "generado": "2026-11-04",
  "productos": [
   {
    "id": "test-personalidad",
@@ -24097,6 +24097,68 @@
    "emoji": "",
    "foto_q": "quiet beach sunrise",
    "alta": "2026-11-02"
+  },
+  {
+   "id": "frase-069c1b0c",
+   "tipo": "frase",
+   "mundo": "aurzane",
+   "origen": "citas",
+   "url": "https://aurzane.com/biblioteca/libro/apoyo-refuerzo-como-estrategia-afectiva-pedagogica.html",
+   "titulo": "No hay pensamiento crítico allí donde el miedo regula la palabra.",
+   "autor": "Gavín-Chocano, Óscar, Apoyo y refuerzo como estrategia afectiva y pedagógica en educación superior",
+   "libro": "Apoyo y refuerzo como estrategia afectiva y pedagógica en educación superior",
+   "ganchos": [
+    "No hay pensamiento crítico allí donde el miedo regula la palabra.",
+    "No hay pensamiento crítico allí donde el miedo regula la palabra.",
+    "No hay pensamiento crítico allí donde el miedo regula la palabra."
+   ],
+   "texto": "No hay pensamiento crítico allí donde el miedo regula la palabra.",
+   "hashtags": [
+    "FrasesDeLibros",
+    "Lectura",
+    "LibrosGratis",
+    "Psicología",
+    "Motivación",
+    "Bienestar",
+    "CrecimientoPersonal",
+    "Frases"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "",
+   "foto_q": "green leaves sunlight",
+   "alta": "2026-11-04"
+  },
+  {
+   "id": "frase-36357ac7",
+   "tipo": "frase",
+   "mundo": "aurzane",
+   "origen": "citas",
+   "url": "https://aurzane.com/biblioteca/libro/pedagogia-sentidos-epistemologia-afectividad-transformacion-.html",
+   "titulo": "La evidencia científica confirma que aprender implica necesariamente emoción.",
+   "autor": "Gavín-Chocano, Óscar; Checa Domene, Lara; Granado de la Cruz, Elena; Payá Gómez, Marcos Alfonso, PEDAGOGÍA CON SENTIDOS. EPISTEMOLOGÍA, AFECTIVIDAD Y TRANSFORMACIÓN DEL APRENDIZAJE",
+   "libro": "PEDAGOGÍA CON SENTIDOS. EPISTEMOLOGÍA, AFECTIVIDAD Y TRANSFORMACIÓN DEL APRENDIZAJE",
+   "ganchos": [
+    "La evidencia científica confirma que aprender implica necesariamente emoción.",
+    "La evidencia científica confirma que aprender implica necesariamente emoción.",
+    "La evidencia científica confirma que aprender implica necesariamente emoción."
+   ],
+   "texto": "La evidencia científica confirma que aprender implica necesariamente emoción.",
+   "hashtags": [
+    "FrasesDeLibros",
+    "Lectura",
+    "LibrosGratis",
+    "Psicología",
+    "Motivación",
+    "Bienestar",
+    "CrecimientoPersonal",
+    "Frases"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "",
+   "foto_q": "cherry blossom",
+   "alta": "2026-11-04"
   },
   {
    "id": "frase-c7631e83",
