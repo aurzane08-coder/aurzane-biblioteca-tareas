@@ -1,5 +1,59 @@
 [
  {
+  "fecha": "2026-11-04",
+  "id": "cita-2060a8d04d",
+  "tipo": "cita",
+  "titulo": "Los pensamientos promueven el crecimiento emocional, intelectual y personal para hacer posible la regulación de las emociones en las situaciones de la vida.",
+  "url": "https://aurzane.com/biblioteca/libro/curriculo-aprendizaje-socioemocional-case.html",
+  "motivo": "Gemini le dio 2/10: no tiene fuerza suficiente para redes"
+ },
+ {
+  "fecha": "2026-11-04",
+  "id": "cita-4f538cd514",
+  "tipo": "cita",
+  "titulo": "La modernidad, en cambio, corresponde a un proceso cultural que comprende el respeto por los derechos humanos, una vida democrática y el fin del patriarcado.",
+  "url": "https://aurzane.com/biblioteca/libro/dificil-ser-hombre-nuevas-masculinidades-latinoamericanas.html",
+  "motivo": "Gemini le dio 3/10: no tiene fuerza suficiente para redes"
+ },
+ {
+  "fecha": "2026-11-04",
+  "id": "ia-the-architecture-of-the-human-mind",
+  "tipo": "libro",
+  "titulo": "THE ARCHITECTURE OF THE HUMAN MIND [2026]",
+  "url": "https://archive.org/details/the-architecture-of-the-human-mind",
+  "motivo": "No tiene un PDF libre que se pueda descargar",
+  "probados": []
+ },
+ {
+  "fecha": "2026-11-04",
+  "id": "ia-the-architecture-of-the-human-mind_202611",
+  "tipo": "libro",
+  "titulo": "THE ARCHITECTURE OF THE HUMAN MIND",
+  "url": "https://archive.org/details/the-architecture-of-the-human-mind_202611",
+  "motivo": "No tiene un PDF libre que se pueda descargar",
+  "probados": []
+ },
+ {
+  "fecha": "2026-11-04",
+  "id": "ia-the-architecture-of-the-human-mind-1",
+  "tipo": "libro",
+  "titulo": "THE ARCHITECTURE OF THE HUMAN MIND [2027]",
+  "url": "https://archive.org/details/the-architecture-of-the-human-mind-1",
+  "motivo": "No tiene un PDF libre que se pueda descargar",
+  "probados": []
+ },
+ {
+  "fecha": "2026-11-04",
+  "id": "ia-the-architecture-of-the-human-mind-",
+  "tipo": "libro",
+  "titulo": "THE ARCHITECTURE OF THE HUMAN MIND",
+  "url": "https://archive.org/details/the-architecture-of-the-human-mind-",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 24 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/the-architecture-of-the-human-mind-/THE_ARCHITECTURE_OF_THE_HUMAN_MIND_repaired.p"
+  ]
+ },
+ {
   "fecha": "2026-11-03",
   "id": "cita-ac2cd3d043",
   "tipo": "cita",
