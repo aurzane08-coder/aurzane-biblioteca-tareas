@@ -1,5 +1,30 @@
 [
  {
+  "id": "cur-5b579f7f14",
+  "tipo": "curiosidad",
+  "titulo": "¿Sobrecarga laboral en sanidad?",
+  "dato": "Las exigencias excesivas en el trabajo sanitario aumentan significativamente el agotamiento y las conductas de retirada.",
+  "resumen": "Las exigencias excesivas en el trabajo sanitario aumentan significativamente el agotamiento y las conductas de retirada. Una revisión sistemática y metaanálisis analizó cómo la sobrecarga laboral y mental afecta al personal sanitario. Los resultados muestran una conexión clara entre estas demandas, el agotamiento profesional y las conductas de distanciamiento del puesto.",
+  "fuente": "Healthcare, 2024",
+  "hashtags": [
+   "psicologia",
+   "salud",
+   "trabajo",
+   "divulgacion"
+  ],
+  "fuente_id": "pmc-PMC13704590",
+  "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13704590/",
+  "portada": "https://aurzane.com/biblioteca/recientes/portadas/pmc-PMC13704590.jpg",
+  "tema": "curiosidad",
+  "idioma": "es",
+  "autores": "Healthcare, 2024",
+  "motivo": "Guion escrito por Gemini a partir de un estudio que aprobaste. Revisa que el dato sea correcto antes de aprobar.",
+  "verificada": "2026-11-04",
+  "fecha": "2026-11-04",
+  "auto": true,
+  "verificacion": "La afirmación describe fielmente las conclusiones habituales de los metaanálisis sobre el burnout y la sobrecarga en personal sanitario sin exageraciones."
+ },
+ {
   "id": "cur-cadc144101",
   "tipo": "curiosidad",
   "titulo": "¿Por qué tu ansiedad te engaña en el peor momento?",
