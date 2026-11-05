@@ -1,5 +1,49 @@
 [
  {
+  "id": "cita-523e964c6f",
+  "texto": "Resumiendo: todo hombre humano lleva dentro de sí las siete virtudes capitales y sus siete vicios opuestos, y con ellos es capaz de crear agonistas de todas clases.",
+  "autor": "Miguel de Unamuno",
+  "libro": "Tres novelas ejemplares y un prólogo",
+  "url": "https://aurzane.com/biblioteca/libro/tres-novelas-ejemplares-unamuno.html",
+  "lic": "Dominio público",
+  "fecha": "2026-11-05",
+  "nota": 10,
+  "auto": true
+ },
+ {
+  "id": "cita-29b7b81d74",
+  "texto": "Probablemente no nace el amor sino al nacer los celos; son los celos los que nos revelan el amor.",
+  "autor": "Miguel de Unamuno",
+  "libro": "Niebla",
+  "url": "https://aurzane.com/biblioteca/libro/niebla.html",
+  "lic": "Dominio público",
+  "fecha": "2026-11-05",
+  "nota": 8,
+  "auto": true
+ },
+ {
+  "id": "cita-8f83d66dac",
+  "texto": "Cada cosa de estas que ve u oye un niño es una semilla en su alma, que luego echa tallo y da fruto.",
+  "autor": "Miguel de Unamuno",
+  "libro": "La tía Tula",
+  "url": "https://aurzane.com/biblioteca/libro/la-tia-tula.html",
+  "lic": "Dominio público",
+  "fecha": "2026-11-05",
+  "nota": 9,
+  "auto": true
+ },
+ {
+  "id": "cita-f9af086c9d",
+  "texto": "Hay un cariño santo, puro y tranquilo, que nace del corazón, que se apodera del alma y llega á ser el alma misma.",
+  "autor": "Benito Pérez Galdós",
+  "libro": "Miau",
+  "url": "https://aurzane.com/biblioteca/libro/miau.html",
+  "lic": "Dominio público",
+  "fecha": "2026-11-05",
+  "nota": 9,
+  "auto": true
+ },
+ {
   "id": "cita-3549c7e9ff",
   "texto": "Busca aquellos dones preciosos, cultívalos, y cuando los veas bien grandes y florecidos, no temas; ese afán que sientes se calmará.",
   "autor": "Benito Pérez Galdós",
