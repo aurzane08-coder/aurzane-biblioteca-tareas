@@ -1,5 +1,56 @@
 [
  {
+  "fecha": "2026-11-05",
+  "id": "oa-W7203507838",
+  "tipo": "libro",
+  "titulo": "Ontología del rompecabezas: La constitución fragmentaria del sujeto y la transmutación del sufrimiento",
+  "url": "https://philarchive.org/rec/MARODR-2",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 16 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/octet-st https://zenodo.org/records/21864310/files/Ontolog%C3%ADa%20del%20rompecabezas%20La%20constituci%C3%B3n%20fragm"
+  ]
+ },
+ {
+  "fecha": "2026-11-05",
+  "id": "ia-no_puedes_anadir_una_hora",
+  "tipo": "libro",
+  "titulo": "No puedes añadir una hora",
+  "url": "https://archive.org/details/no_puedes_anadir_una_hora",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 9 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/no_puedes_anadir_una_hora/no_puedes_anadir_una_hora.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-05",
+  "id": "oa-W7225202889",
+  "tipo": "libro",
+  "titulo": "Radiance, Appearance, and Illusion",
+  "url": "https://doi.org/10.1515/9783112250907",
+  "motivo": "No tiene un PDF libre que se pueda descargar",
+  "probados": []
+ },
+ {
+  "fecha": "2026-11-05",
+  "id": "oa-W4412208882",
+  "tipo": "libro",
+  "titulo": "Autism’s Configurations",
+  "url": "https://doi.org/10.1515/9783112246351",
+  "motivo": "No tiene un PDF libre que se pueda descargar",
+  "probados": []
+ },
+ {
+  "fecha": "2026-11-05",
+  "id": "oa-W7222923186",
+  "tipo": "libro",
+  "titulo": "Existential Dis/Connections: An Improvised Polyphony (The first verse, Autumn 2026)",
+  "url": "https://oro.open.ac.uk/112552/10/Polyphony%20Final%20with%20DOI.pdf",
+  "motivo": "No tiene un PDF libre que se pueda descargar",
+  "probados": [
+   "HTTP Error 403: Forbidden https://oro.open.ac.uk/112552/10/Polyphony%20Final%20with%20DOI.pdf"
+  ]
+ },
+ {
   "fecha": "2026-11-04",
   "id": "cita-2060a8d04d",
   "tipo": "cita",
