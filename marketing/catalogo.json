@@ -1,5 +1,5 @@
 {
- "generado": "2026-11-04",
+ "generado": "2026-11-05",
  "productos": [
   {
    "id": "test-personalidad",
@@ -24099,6 +24099,68 @@
    "alta": "2026-11-02"
   },
   {
+   "id": "frase-4a87d0e7",
+   "tipo": "frase",
+   "mundo": "aurzane",
+   "origen": "citas",
+   "url": "https://aurzane.com/biblioteca/libro/estudio-teorico-practico-tratamiento-moral-locura.html",
+   "titulo": "Es suficiente que les cante para que el enfermo recobre la perfecta salud, con los cuales procura el olvido del dolor, apacigua la cólera y comprime los deseos.",
+   "autor": "Alvarez, José M., active 1880, author, Estudio teorico-practico del tratamiento moral de la locura : tésis para el exámen profesional de medicina y cirujía",
+   "libro": "Estudio teorico-practico del tratamiento moral de la locura : tésis para el exámen profesional de medicina y cirujía",
+   "ganchos": [
+    "Es suficiente que les cante para que el enfermo recobre la perfecta salud, con los cuales procura el olvido del dolor, apacigua la cólera y comprime los deseos.",
+    "Es suficiente que les cante para que el enfermo recobre la perfecta salud, con los cuales procura el olvido del dolor, apacigua la cólera y comprime los deseos.",
+    "Es suficiente que les cante para que el enfermo recobre la perfecta salud, con los cuales procura el olvido del dolor, apacigua la cólera y comprime los deseos."
+   ],
+   "texto": "Es suficiente que les cante para que el enfermo recobre la perfecta salud, con los cuales procura el olvido del dolor, apacigua la cólera y comprime los deseos.",
+   "hashtags": [
+    "FrasesDeLibros",
+    "Lectura",
+    "LibrosGratis",
+    "Psicología",
+    "Motivación",
+    "Bienestar",
+    "CrecimientoPersonal",
+    "Frases"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "",
+   "foto_q": "starry night sky",
+   "alta": "2026-11-05"
+  },
+  {
+   "id": "frase-f259550b",
+   "tipo": "frase",
+   "mundo": "aurzane",
+   "origen": "citas",
+   "url": "https://aurzane.com/biblioteca/libro/medicina-fantastica-espiritu-espejo-theorico-practico.html",
+   "titulo": "Al hombre de bien fácil es engañarle; porque nunca baxezas piensa de nadie.",
+   "autor": "Damian de Cosme, Medicina fantastica del espiritu, y espejo theorico-practico, en que se miran las enfermedades reynantes desde la niñéz, hasta la decrepitud: con recetas y aforismos, que suministra la moral, escrita en metro joco-serio y prosa",
+   "libro": "Medicina fantastica del espiritu, y espejo theorico-practico, en que se miran las enfermedades reynantes desde la niñéz, hasta la decrepitud: con recetas y aforismos, que suministra la moral, escrita en metro joco-serio y prosa",
+   "ganchos": [
+    "Al hombre de bien fácil es engañarle; porque nunca baxezas piensa de nadie.",
+    "Al hombre de bien fácil es engañarle; porque nunca baxezas piensa de nadie.",
+    "Al hombre de bien fácil es engañarle; porque nunca baxezas piensa de nadie."
+   ],
+   "texto": "Al hombre de bien fácil es engañarle; porque nunca baxezas piensa de nadie.",
+   "hashtags": [
+    "FrasesDeLibros",
+    "Lectura",
+    "LibrosGratis",
+    "Psicología",
+    "Motivación",
+    "Bienestar",
+    "CrecimientoPersonal",
+    "Frases"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "",
+   "foto_q": "clouds above",
+   "alta": "2026-11-05"
+  },
+  {
    "id": "frase-49783ca9",
    "tipo": "frase",
    "mundo": "aurzane",
@@ -24562,6 +24624,33 @@
    "emoji": "",
    "foto_q": "sunrise mountains",
    "alta": "2026-11-03"
+  },
+  {
+   "id": "cur-5b579f7f14",
+   "tipo": "curiosidad",
+   "mundo": "mind",
+   "origen": "curiosidades",
+   "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13704590/",
+   "titulo": "¿Sobrecarga laboral en sanidad?",
+   "ganchos": [
+    "¿Sobrecarga laboral en sanidad?",
+    "¿Sobrecarga laboral en sanidad? 🧠",
+    "Las exigencias excesivas en el trabajo sanitario aumentan significativamente el agotamient"
+   ],
+   "texto": "Las exigencias excesivas en el trabajo sanitario aumentan significativamente el agotamiento y las conductas de retirada. Una revisión sistemática y metaanálisis analizó cómo la sobrecarga laboral y mental afecta al personal sanitario. Los resultados muestran una conexión clara entre estas demandas, el agotamiento profesional y las conductas de distanciamiento del puesto.\n\nFuente: Healthcare, 2024",
+   "hashtags": [
+    "psicologia",
+    "salud",
+    "trabajo",
+    "divulgacion",
+    "Psicología",
+    "Curiosidades"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "🧠",
+   "dato": "Las exigencias excesivas en el trabajo sanitario aumentan significativamente el agotamiento y las conductas de retirada.",
+   "alta": "2026-11-05"
   },
   {
    "id": "cur-cadc144101",
