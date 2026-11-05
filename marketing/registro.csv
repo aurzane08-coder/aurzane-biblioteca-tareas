@@ -132,3 +132,12 @@
 2026-11-05,4,youtube,frase-4a49bc6d,ok,https://youtu.be/HEjnzOzFSgw
 2026-11-05,4,tiktok,frase-d1181cb8,error,500 null
 2026-11-05,4,telegram,frase-646c8777,ok,27
+2026-11-05,1,instagram,calc-hipoteca,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"ARJKs7xSThM-P4jFy3zLZUc"}}
+2026-11-05,1,facebook,ovp,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"ACJ_fBn00Ml-pl-Jrtor8hd"}}
+2026-11-05,3,instagram,frase-7dcb9ff1,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"A369qat_G9wYi1dJ32m28ER"}}
+2026-11-05,3,facebook,frase-f6e7b225,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"ADUUwjbNM3QmrqPCi3a1syd"}}
+2026-11-05,2,instagram,articulos,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"AGsctzeW-GJ9D3ByHNhZqMs"}}
+2026-11-05,2,facebook,biblio-mind,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"AXiBBMo9Y5JgmQSxUWtjDnP"}}
+2026-11-05,4,instagram,frase-27b51444,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"A-qz8SpVMi1jkao5lL7tnLA"}}
+2026-11-05,4,facebook,frase-27cf2927,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"AKQinz8rm9frmWndX-MRLb0"}}
+2026-11-05,4,tiktok,frase-d1181cb8,ok,v_inbox_file~v2.7704823683085142024 (borrador en la bandeja de TikTok: añade un sonido y publica)
