@@ -106,3 +106,8 @@
 2026-11-05,3,instagram,frase-7dcb9ff1,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"AXfM1blZcdG8gFys_OKdJil"}}
 2026-11-05,3,facebook,frase-f6e7b225,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"AOmy4iVsfq3CN-y8mbDct81"}}
 2026-11-05,3,pinterest,frase-4a49bc6d,feed,
+2026-11-05,1,instagram,calc-hipoteca,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"ArD3cmZSYj1_nEyLf1MC9yG"}}
+2026-11-05,1,facebook,ovp,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"AvLxRwsFBGq0fLlwVAD6bB2"}}
+2026-11-05,3,telegram,frase-231d1749,ok,25
+2026-11-05,3,instagram,frase-7dcb9ff1,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"AFade9uG4IdVUfAqiQxG7yu"}}
+2026-11-05,3,facebook,frase-f6e7b225,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"AZ97gJL-LJakCuOIftHhnLC"}}
