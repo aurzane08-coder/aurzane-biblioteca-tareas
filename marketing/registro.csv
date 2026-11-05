@@ -111,3 +111,13 @@
 2026-11-05,3,telegram,frase-231d1749,ok,25
 2026-11-05,3,instagram,frase-7dcb9ff1,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"AFade9uG4IdVUfAqiQxG7yu"}}
 2026-11-05,3,facebook,frase-f6e7b225,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"AZ97gJL-LJakCuOIftHhnLC"}}
+2026-11-05,1,instagram,calc-hipoteca,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"AX83TlOighRmeA9Dg_vXoE6"}}
+2026-11-05,1,facebook,ovp,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"AtzG9jfrU5gUMu1bqZQfk_K"}}
+2026-11-05,3,instagram,frase-7dcb9ff1,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"A2EtW3TTP0qC54-q_mEeILs"}}
+2026-11-05,3,facebook,frase-f6e7b225,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"AQ1r7uatdvJiwl3IL4rW4pk"}}
+2026-11-05,2,telegram,biblio-build,ok,26
+2026-11-05,2,bluesky,biblio-nexus,ok,at://did:plc:6ovoiudj7dkxgrzd2zkyn77y/app.bsky.feed.post/3mzlh3daq252p
+2026-11-05,2,mastodon,biblio-live,ok,https://mastodon.social/@auzane/117565134461736798
+2026-11-05,2,instagram,articulos,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"AmhSihaCPdJCnkxysfOrww0"}}
+2026-11-05,2,facebook,biblio-mind,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"A9lBgXUKtYDkgTg8Ya5MTR1"}}
+2026-11-05,2,pinterest,notas-corte,feed,

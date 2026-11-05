@@ -4,22 +4,22 @@ Actualizado: 2026-11-05. Clics de personas (sin bots ni vistas previas) que entr
 
 | Red | Publicaciones | Clics |
 |---|---|---|
-| telegram | 13 | 4 |
-| bluesky | 11 | 26 |
-| mastodon | 11 | 23 |
+| telegram | 15 | 4 |
+| bluesky | 12 | 30 |
+| mastodon | 12 | 25 |
 | instagram | 6 | 0 |
 | facebook | 6 | 19 |
 | threads | 0 | 0 |
-| pinterest | 7 | 0 |
+| pinterest | 8 | 0 |
 
 ## Productos con más clics
 
 | Producto | Clics |
 |---|---|
 | calc-sueldo | 11 |
+| test-sueno | 6 |
 | frase-b424a195 | 6 |
 | test-tdah | 5 |
-| test-sueno | 4 |
 | crea-l05-04 | 4 |
 | curso-metod | 4 |
 | nc-ingenieria-en-tecnologias-industriales | 4 |
@@ -33,8 +33,11 @@ Actualizado: 2026-11-05. Clics de personas (sin bots ni vistas previas) que entr
 | frase-fee27969 | 2 |
 | crea-l06-14 | 2 |
 | frase-7c565d26 | 2 |
+| biblio-nexus | 2 |
 | frase-7f46c133 | 1 |
 | nc-ingenieria-mecanica | 1 |
 | test-autocompasion | 1 |
 | frase-b0b292c5 | 1 |
 | nc-maestro-en-educacion-infantil | 1 |
+| test-personalidad | 1 |
+| frase-ebed20dc | 1 |
