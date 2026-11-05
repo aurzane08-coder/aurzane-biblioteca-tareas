@@ -95,3 +95,14 @@
 2026-11-04,2,facebook,nc-traduccion-e-interpretacion,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"Ano-LdHfII7ors42WvJ6Ps1"}}
 2026-11-04,4,instagram,calc-reforma,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"A_ft8RDLvTdgq0xWkIA9v_1"}}
 2026-11-04,4,facebook,frase-bfc5dc8d,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"AEMia5SFQv3Nm3aYUYSsZ7b"}}
+2026-11-05,1,telegram,test-bienestar,ok,24
+2026-11-05,1,bluesky,test-sueno,ok,at://did:plc:6ovoiudj7dkxgrzd2zkyn77y/app.bsky.feed.post/3mzkwvukbf52d
+2026-11-05,1,mastodon,test-personalidad,ok,https://mastodon.social/@auzane/117563996511362132
+2026-11-05,1,instagram,calc-hipoteca,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"AGCiGkFRfW9NCSfRANgB2Bt"}}
+2026-11-05,1,facebook,ovp,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"AtrfHyneLznP6gefdDyRq_3"}}
+2026-11-05,3,telegram,frase-231d1749,error,<urlopen error [Errno 104] Connection reset by peer>
+2026-11-05,3,bluesky,frase-7610e3a4,ok,at://did:plc:6ovoiudj7dkxgrzd2zkyn77y/app.bsky.feed.post/3mzkww7clmf2t
+2026-11-05,3,mastodon,frase-ebed20dc,ok,https://mastodon.social/@auzane/117563997258075720
+2026-11-05,3,instagram,frase-7dcb9ff1,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"AXfM1blZcdG8gFys_OKdJil"}}
+2026-11-05,3,facebook,frase-f6e7b225,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"AOmy4iVsfq3CN-y8mbDct81"}}
+2026-11-05,3,pinterest,frase-4a49bc6d,feed,
