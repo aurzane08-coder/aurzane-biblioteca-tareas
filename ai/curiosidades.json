@@ -1,5 +1,43 @@
 [
  {
+  "id": "cur-d8c8e23130",
+  "tipo": "curiosidad",
+  "titulo": "¿Por qué crees que todo el mundo te mira?",
+  "dato": "El efecto foco nos hace sobreestimar cuánto notan los demás nuestros fallos.",
+  "resumen": "El efecto foco nos hace sobreestimar cuánto notan los demás nuestros fallos. Thomas Gilovich demostró en 2000 que creemos ser el centro de atención mucho más de lo que ocurre en realidad. Los demás están demasiado ocupados pensando en sí mismos como para fijarse en nuestros pequeños detalles.",
+  "fuente": "Gilovich et al., 2000",
+  "hashtags": [
+   "psicologia",
+   "sesgoscognitivos",
+   "aurzane",
+   "curiosidades"
+  ],
+  "fuente_id": "tema-310-0",
+  "url": "https://mind.aurzane.com/",
+  "fecha": "2026-11-06",
+  "auto": true,
+  "verificacion": "El concepto, el autor, el año y la explicación son científicamente precisos y están libres de exageración."
+ },
+ {
+  "id": "cur-2b9bfbd041",
+  "tipo": "curiosidad",
+  "titulo": "¿Sabías que las plantas tienen sistema inmune?",
+  "dato": "Las plantas desarrollan compuestos defensivos y señales químicas para frenar la invasión de patógenos.",
+  "resumen": "Las plantas desarrollan compuestos defensivos y señales químicas para frenar la invasión de patógenos. Igual que nosotros, las plantas detectan amenazas y activan mecanismos de defensa complejos. Este sistema dinámico les ayuda a sobrevivir en su entorno.",
+  "fuente": "Stress biology",
+  "hashtags": [
+   "psicologia",
+   "ciencia",
+   "curiosidades",
+   "aurzane"
+  ],
+  "fuente_id": "pmc-PMC13710501",
+  "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13710501/",
+  "fecha": "2026-11-06",
+  "auto": true,
+  "verificacion": "El dato es científicamente preciso y describe de forma adecuada la inmunidad vegetal sin caer en exageraciones."
+ },
+ {
   "id": "cur-5b579f7f14",
   "tipo": "curiosidad",
   "titulo": "¿Sobrecarga laboral en sanidad?",

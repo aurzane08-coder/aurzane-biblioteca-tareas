@@ -1,5 +1,71 @@
 [
  {
+  "id": "cita-000bd88a85",
+  "texto": "¿Acaso, al creer que veo su alma, no es la mía la que veo?",
+  "autor": "Juan Valera",
+  "libro": "Pepita Jiménez",
+  "url": "https://aurzane.com/biblioteca/libro/pepita-jimenez.html",
+  "lic": "Dominio público",
+  "fecha": "2026-11-06",
+  "nota": 9,
+  "auto": true
+ },
+ {
+  "id": "cita-e85c2c958d",
+  "texto": "Comprendía, sí, que no cabe vivir sin mancharse y que aquella mancha era inocentísima, pero los cimientos de su espíritu se conmovían dolorosamente con ello.",
+  "autor": "Miguel de Unamuno",
+  "libro": "La tía Tula",
+  "url": "https://aurzane.com/biblioteca/libro/la-tia-tula.html",
+  "lic": "Dominio público",
+  "fecha": "2026-11-06",
+  "nota": 8,
+  "auto": true
+ },
+ {
+  "id": "cita-e6d409ecd2",
+  "texto": "Aprendió cada uno de ellos a conocerse conociendo al otro.",
+  "autor": "Miguel de Unamuno",
+  "libro": "Abel Sánchez",
+  "url": "https://aurzane.com/biblioteca/libro/abel-sanchez.html",
+  "lic": "Dominio público",
+  "fecha": "2026-11-06",
+  "nota": 8,
+  "auto": true
+ },
+ {
+  "id": "cita-897e85d579",
+  "texto": "Su corazón se inflamó en un cariñazo que bien podría llamarse místico, por lo incorpóreo y puramente soñado del ser que tales afectos movía.",
+  "autor": "Benito Pérez Galdós",
+  "libro": "Tristana",
+  "url": "https://aurzane.com/biblioteca/libro/tristana.html",
+  "lic": "Dominio público",
+  "fecha": "2026-11-06",
+  "nota": 9,
+  "auto": true
+ },
+ {
+  "id": "cita-5082d522c7",
+  "texto": "Viviré con holgura decorosa, sin ligarme eternamente a nadie, ni al hombre que amo y amaré siempre.",
+  "autor": "Benito Pérez Galdós",
+  "libro": "Tristana",
+  "url": "https://aurzane.com/biblioteca/libro/tristana.html",
+  "lic": "Dominio público",
+  "fecha": "2026-11-06",
+  "nota": 8,
+  "auto": true
+ },
+ {
+  "id": "cita-4d8853e9eb",
+  "texto": "Tú eres la misma bondad; tu alma y la mía están unidas por un lazo misterioso y divino: no se pueden separar, ¿verdad?",
+  "autor": "Benito Pérez Galdós",
+  "libro": "Marianela",
+  "url": "https://aurzane.com/biblioteca/libro/marianela.html",
+  "lic": "Dominio público",
+  "fecha": "2026-11-06",
+  "nota": 9,
+  "auto": true
+ },
+ {
   "id": "cita-8fbe6d2422",
   "texto": "La idea de que no pudiera Nina enterarse de tanta felicidad, enturbió la que en aquel momento inundaba su alma.",
   "autor": "Benito Pérez Galdós",

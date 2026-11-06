@@ -1,6 +1,6 @@
 {
  "enlaces_rotos|relanzar_enlaces": [
-  1,
+  2,
   0
  ],
  "automatizacion|reintentar_flujo": [
@@ -21,6 +21,6 @@
  ],
  "red_fallos|relanzar_marketing": [
   0,
-  2
+  4
  ]
 }
