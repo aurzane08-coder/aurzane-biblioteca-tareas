@@ -1,5 +1,5 @@
 {
- "generado": "2026-11-05",
+ "generado": "2026-11-06",
  "productos": [
   {
    "id": "test-personalidad",
@@ -24097,6 +24097,130 @@
    "emoji": "",
    "foto_q": "quiet beach sunrise",
    "alta": "2026-11-02"
+  },
+  {
+   "id": "frase-523e964c",
+   "tipo": "frase",
+   "mundo": "aurzane",
+   "origen": "citas",
+   "url": "https://aurzane.com/biblioteca/libro/tres-novelas-ejemplares-unamuno.html",
+   "titulo": "Resumiendo: todo hombre humano lleva dentro de sí las siete virtudes capitales y sus siete vicios opuestos, y con ellos es capaz de crear agonistas de todas clases.",
+   "autor": "Miguel de Unamuno, Tres novelas ejemplares y un prólogo",
+   "libro": "Tres novelas ejemplares y un prólogo",
+   "ganchos": [
+    "Resumiendo: todo hombre humano lleva dentro de sí las siete virtudes capitales y sus siete vicios opuestos, y con ellos es capaz de crear agonistas de todas clases.",
+    "Resumiendo: todo hombre humano lleva dentro de sí las siete virtudes capitales y sus siete vicios opuestos, y con ellos es capaz de crear agonistas de todas clases.",
+    "Resumiendo: todo hombre humano lleva dentro de sí las siete virtudes capitales y sus siete vicios opuestos, y con ellos es capaz de crear agonistas de todas clases."
+   ],
+   "texto": "Resumiendo: todo hombre humano lleva dentro de sí las siete virtudes capitales y sus siete vicios opuestos, y con ellos es capaz de crear agonistas de todas clases.",
+   "hashtags": [
+    "FrasesDeLibros",
+    "Lectura",
+    "LibrosGratis",
+    "Psicología",
+    "Motivación",
+    "Bienestar",
+    "CrecimientoPersonal",
+    "Frases"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "",
+   "foto_q": "sunrise mountains",
+   "alta": "2026-11-06"
+  },
+  {
+   "id": "frase-29b7b81d",
+   "tipo": "frase",
+   "mundo": "aurzane",
+   "origen": "citas",
+   "url": "https://aurzane.com/biblioteca/libro/niebla.html",
+   "titulo": "Probablemente no nace el amor sino al nacer los celos; son los celos los que nos revelan el amor.",
+   "autor": "Miguel de Unamuno, Niebla",
+   "libro": "Niebla",
+   "ganchos": [
+    "Probablemente no nace el amor sino al nacer los celos; son los celos los que nos revelan el amor.",
+    "Probablemente no nace el amor sino al nacer los celos; son los celos los que nos revelan el amor.",
+    "Probablemente no nace el amor sino al nacer los celos; son los celos los que nos revelan el amor."
+   ],
+   "texto": "Probablemente no nace el amor sino al nacer los celos; son los celos los que nos revelan el amor.",
+   "hashtags": [
+    "FrasesDeLibros",
+    "Lectura",
+    "LibrosGratis",
+    "Psicología",
+    "Motivación",
+    "Bienestar",
+    "CrecimientoPersonal",
+    "Frases"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "",
+   "foto_q": "starry night sky",
+   "alta": "2026-11-06"
+  },
+  {
+   "id": "frase-8f83d66d",
+   "tipo": "frase",
+   "mundo": "aurzane",
+   "origen": "citas",
+   "url": "https://aurzane.com/biblioteca/libro/la-tia-tula.html",
+   "titulo": "Cada cosa de estas que ve u oye un niño es una semilla en su alma, que luego echa tallo y da fruto.",
+   "autor": "Miguel de Unamuno, La tía Tula",
+   "libro": "La tía Tula",
+   "ganchos": [
+    "Cada cosa de estas que ve u oye un niño es una semilla en su alma, que luego echa tallo y da fruto.",
+    "Cada cosa de estas que ve u oye un niño es una semilla en su alma, que luego echa tallo y da fruto.",
+    "Cada cosa de estas que ve u oye un niño es una semilla en su alma, que luego echa tallo y da fruto."
+   ],
+   "texto": "Cada cosa de estas que ve u oye un niño es una semilla en su alma, que luego echa tallo y da fruto.",
+   "hashtags": [
+    "FrasesDeLibros",
+    "Lectura",
+    "LibrosGratis",
+    "Psicología",
+    "Motivación",
+    "Bienestar",
+    "CrecimientoPersonal",
+    "Frases"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "",
+   "foto_q": "forest path light",
+   "alta": "2026-11-06"
+  },
+  {
+   "id": "frase-f9af086c",
+   "tipo": "frase",
+   "mundo": "aurzane",
+   "origen": "citas",
+   "url": "https://aurzane.com/biblioteca/libro/miau.html",
+   "titulo": "Hay un cariño santo, puro y tranquilo, que nace del corazón, que se apodera del alma y llega á ser el alma misma.",
+   "autor": "Benito Pérez Galdós, Miau",
+   "libro": "Miau",
+   "ganchos": [
+    "Hay un cariño santo, puro y tranquilo, que nace del corazón, que se apodera del alma y llega á ser el alma misma.",
+    "Hay un cariño santo, puro y tranquilo, que nace del corazón, que se apodera del alma y llega á ser el alma misma.",
+    "Hay un cariño santo, puro y tranquilo, que nace del corazón, que se apodera del alma y llega á ser el alma misma."
+   ],
+   "texto": "Hay un cariño santo, puro y tranquilo, que nace del corazón, que se apodera del alma y llega á ser el alma misma.",
+   "hashtags": [
+    "FrasesDeLibros",
+    "Lectura",
+    "LibrosGratis",
+    "Psicología",
+    "Motivación",
+    "Bienestar",
+    "CrecimientoPersonal",
+    "Frases"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "",
+   "foto_q": "quiet beach sunrise",
+   "alta": "2026-11-06"
   },
   {
    "id": "frase-3549c7e9",
