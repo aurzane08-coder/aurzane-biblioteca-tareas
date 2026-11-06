@@ -152,3 +152,7 @@
 2026-11-06,3,instagram,frase-d4003054,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"ASJNDfTSaUpIYhsMiEIPoo5"}}
 2026-11-06,3,facebook,frase-1b0cda1a,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"A3yVEsRy1TCt3Z5K_yuWgd1"}}
 2026-11-06,3,pinterest,frase-d1181cb8,feed,
+2026-11-06,1,instagram,test-autoestima,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"ATYnM0ts76bDbFQcPDpRyZm"}}
+2026-11-06,1,facebook,calc-calorias,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"Aq7GjMa8JvpGKzQdBRjAEFL"}}
+2026-11-06,3,instagram,frase-d4003054,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"ANYNoQkvI2HhXRnz7cwIRL-"}}
+2026-11-06,3,facebook,frase-1b0cda1a,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"AYLQ8wE3W2-vFhoLr8j6gRg"}}
