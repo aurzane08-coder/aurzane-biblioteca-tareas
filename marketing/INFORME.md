@@ -4,13 +4,13 @@ Actualizado: 2026-11-06. Clics de personas (sin bots ni vistas previas) que entr
 
 | Red | Publicaciones | Clics |
 |---|---|---|
-| telegram | 16 | 4 |
-| bluesky | 12 | 32 |
-| mastodon | 12 | 29 |
+| telegram | 18 | 4 |
+| bluesky | 14 | 34 |
+| mastodon | 14 | 29 |
 | instagram | 6 | 0 |
 | facebook | 6 | 19 |
 | threads | 0 | 0 |
-| pinterest | 8 | 0 |
+| pinterest | 9 | 0 |
 
 ## Productos con más clics
 
@@ -35,9 +35,9 @@ Actualizado: 2026-11-06. Clics de personas (sin bots ni vistas previas) que entr
 | frase-fee27969 | 2 |
 | crea-l06-14 | 2 |
 | frase-7c565d26 | 2 |
+| ovp | 2 |
 | frase-7f46c133 | 1 |
 | nc-ingenieria-mecanica | 1 |
 | test-autocompasion | 1 |
 | frase-b0b292c5 | 1 |
 | nc-maestro-en-educacion-infantil | 1 |
-| test-personalidad | 1 |

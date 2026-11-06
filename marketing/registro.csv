@@ -141,3 +141,14 @@
 2026-11-05,4,instagram,frase-27b51444,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"A-qz8SpVMi1jkao5lL7tnLA"}}
 2026-11-05,4,facebook,frase-27cf2927,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"AKQinz8rm9frmWndX-MRLb0"}}
 2026-11-05,4,tiktok,frase-d1181cb8,ok,v_inbox_file~v2.7704823683085142024 (borrador en la bandeja de TikTok: añade un sonido y publica)
+2026-11-06,1,telegram,test-autocompasion,ok,28
+2026-11-06,1,bluesky,ovp,ok,at://did:plc:6ovoiudj7dkxgrzd2zkyn77y/app.bsky.feed.post/3mzngkyuqdi2t
+2026-11-06,1,mastodon,test-habitos,ok,https://mastodon.social/@auzane/117569602159883201
+2026-11-06,1,instagram,test-autoestima,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"ASDVU563tgYNVFVgQz4Md0d"}}
+2026-11-06,1,facebook,calc-calorias,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"Abi2cgnUJFk2Cwv28r3LEp4"}}
+2026-11-06,3,telegram,frase-3807580d,ok,29
+2026-11-06,3,bluesky,frase-7dcb9ff1,ok,at://did:plc:6ovoiudj7dkxgrzd2zkyn77y/app.bsky.feed.post/3mznglha7ej2d
+2026-11-06,3,mastodon,frase-e61fa160,ok,https://mastodon.social/@auzane/117569603145556754
+2026-11-06,3,instagram,frase-d4003054,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"ASJNDfTSaUpIYhsMiEIPoo5"}}
+2026-11-06,3,facebook,frase-1b0cda1a,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"A3yVEsRy1TCt3Z5K_yuWgd1"}}
+2026-11-06,3,pinterest,frase-d1181cb8,feed,
