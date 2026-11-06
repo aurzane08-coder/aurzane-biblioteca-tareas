@@ -1,5 +1,38 @@
 [
  {
+  "id": "cita-721800af33",
+  "texto": "A los que mucho amaron se les podrá perdonar; pero envidiarles, sería no conocer la vida.",
+  "autor": "Emilia Pardo Bazán",
+  "libro": "Cuentos de amor",
+  "url": "https://aurzane.com/biblioteca/libro/cuentos-de-amor-pardo-bazan.html",
+  "lic": "Dominio público",
+  "fecha": "2026-11-06",
+  "nota": 9,
+  "auto": true
+ },
+ {
+  "id": "cita-b1cb546558",
+  "texto": "Los deseos de su alma también se difundían y apagaban en la inmensa alegría que la embargaba.",
+  "autor": "Armando Palacio Valdés",
+  "libro": "Marta y María",
+  "url": "https://aurzane.com/biblioteca/libro/marta-y-maria.html",
+  "lic": "Dominio público",
+  "fecha": "2026-11-06",
+  "nota": 8,
+  "auto": true
+ },
+ {
+  "id": "cita-507a213291",
+  "texto": "Las luchas, las alegrías, los dolores de estos pobres diablos que nos movemos por la tierra, ¡qué valor tienen, qué significan ante la paz augusta de los cielos!",
+  "autor": "Armando Palacio Valdés",
+  "libro": "Marta y María",
+  "url": "https://aurzane.com/biblioteca/libro/marta-y-maria.html",
+  "lic": "Dominio público",
+  "fecha": "2026-11-06",
+  "nota": 9,
+  "auto": true
+ },
+ {
   "id": "cita-000bd88a85",
   "texto": "¿Acaso, al creer que veo su alma, no es la mía la que veo?",
   "autor": "Juan Valera",

@@ -7,5 +7,14 @@
   "fallo": 0,
   "fecha": "2026-11-03",
   "ejemplo": "1 páginas mencionan datos de años anteriores; revisa si hay que actualizarlas (detalle en Salud de la web)."
+ },
+ "red_fallos|instagram: todas las publicaciones de las últimas # h han fallado.": {
+  "receta": "avisar",
+  "motivo": "Bloqueo de la API de Meta/Instagram detectado en las automatizaciones.",
+  "explicacion": "El error OAuthException indica que Meta ha bloqueado el acceso a la API por razones de seguridad, cambio de contraseña o permisos caducados. Debe entrar manualmente en Meta Business Suite o Facebook Developers para renovar el token de acceso y verificar el estado de la aplicación.",
+  "ok": 0,
+  "fallo": 0,
+  "fecha": "2026-11-06",
+  "ejemplo": "instagram: todas las publicaciones de las últimas 24 h han fallado."
  }
 }
