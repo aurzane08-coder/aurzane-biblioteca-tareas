@@ -156,3 +156,7 @@
 2026-11-06,1,facebook,calc-calorias,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"Aq7GjMa8JvpGKzQdBRjAEFL"}}
 2026-11-06,3,instagram,frase-d4003054,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"ANYNoQkvI2HhXRnz7cwIRL-"}}
 2026-11-06,3,facebook,frase-1b0cda1a,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"AYLQ8wE3W2-vFhoLr8j6gRg"}}
+2026-11-06,1,instagram,test-autoestima,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"AQKx-Qu2WZpYMRcomSRGyB7"}}
+2026-11-06,1,facebook,calc-calorias,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"A1axvBpSuzVGnNjj92nYYLX"}}
+2026-11-06,3,instagram,frase-d4003054,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"AAJ8f-5eTPSshSmldNReTPm"}}
+2026-11-06,3,facebook,frase-1b0cda1a,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"AeIY_P8F51-h7fNwRRArGND"}}

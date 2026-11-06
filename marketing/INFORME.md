@@ -5,8 +5,8 @@ Actualizado: 2026-11-06. Clics de personas (sin bots ni vistas previas) que entr
 | Red | Publicaciones | Clics |
 |---|---|---|
 | telegram | 18 | 4 |
-| bluesky | 14 | 34 |
-| mastodon | 14 | 29 |
+| bluesky | 14 | 36 |
+| mastodon | 14 | 31 |
 | instagram | 6 | 0 |
 | facebook | 6 | 19 |
 | threads | 0 | 0 |
@@ -26,6 +26,7 @@ Actualizado: 2026-11-06. Clics de personas (sin bots ni vistas previas) que entr
 | curso-neuro | 4 |
 | nc-sociologia | 4 |
 | biblio-nexus | 4 |
+| ovp | 4 |
 | test-autoestima | 3 |
 | crea-l05-03 | 3 |
 | frase-2144e317 | 3 |
@@ -35,7 +36,6 @@ Actualizado: 2026-11-06. Clics de personas (sin bots ni vistas previas) que entr
 | frase-fee27969 | 2 |
 | crea-l06-14 | 2 |
 | frase-7c565d26 | 2 |
-| ovp | 2 |
 | frase-7f46c133 | 1 |
 | nc-ingenieria-mecanica | 1 |
 | test-autocompasion | 1 |
