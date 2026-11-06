@@ -181,3 +181,11 @@
 2026-11-06,4,youtube,test-personalidad,ok,https://youtu.be/rkMQq2uh6kY
 2026-11-06,4,tiktok,frase-43816409,ok,v_inbox_file~v2.7705187344583985158 (borrador en la bandeja de TikTok: añade un sonido y publica)
 2026-11-06,4,telegram,frase-1b0cda1a,ok,31
+2026-11-06,1,instagram,test-autoestima,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"A5v0PILQHlM6DOusyJ4B1gy"}}
+2026-11-06,1,facebook,calc-calorias,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"APIiTNkFurKyUsdShja3Cv9"}}
+2026-11-06,3,instagram,frase-d4003054,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"AfFCckvos0fpyqFoOhiH0Xb"}}
+2026-11-06,3,facebook,frase-1b0cda1a,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"ApN1fzcaotz0umONm388ZHi"}}
+2026-11-06,2,instagram,crea-l07-04,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"AbcjetlO-HxC1xu2sGNgaxE"}}
+2026-11-06,2,facebook,crea-l05-04,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"Aw0-O7DQVsHWrC9oEXmdUp-"}}
+2026-11-06,4,instagram,frase-d1181cb8,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"AwoOxox62zdEjeN88aDvQYN"}}
+2026-11-06,4,facebook,frase-6d32afc7,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"AfU3GXk8pdTh2-aRYYwOgnh"}}
