@@ -194,3 +194,11 @@
 2026-11-07,1,mastodon,calc-reforma,ok,https://mastodon.social/@auzane/117574979483966088
 2026-11-07,1,instagram,test-habitos,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"ALS8Euuprtsdq7qMdm50JtA"}}
 2026-11-07,1,facebook,test-satisfaccion,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"ABsCHWfmQ_aUWnayT8Jy3zd"}}
+2026-11-07,1,instagram,test-habitos,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"AL2zsgHZ2qqC93_mRqN8mfq"}}
+2026-11-07,1,facebook,test-satisfaccion,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"AEkFiPgU5zNR5XdrKowRmeX"}}
+2026-11-07,3,telegram,frase-635de3a7,ok,33
+2026-11-07,3,bluesky,frase-207b157c,ok,at://did:plc:6ovoiudj7dkxgrzd2zkyn77y/app.bsky.feed.post/3mzq66s7m5x2q
+2026-11-07,3,mastodon,frase-a0b3ac46,ok,https://mastodon.social/@auzane/117575767761281574
+2026-11-07,3,instagram,frase-3807580d,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"AO_4JyQW0yja2WRGSn6Mk4x"}}
+2026-11-07,3,facebook,frase-d4003054,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"AGeTjjWIIajU-66CVVmaUgJ"}}
+2026-11-07,3,pinterest,frase-288e4856,feed,
