@@ -120,11 +120,11 @@
   12
  ],
  "ed:Internet Archive": [
-  3,
+  5,
   69
  ],
  "ed:": [
-  38,
+  39,
   10
  ],
  "ed:undefined": [
@@ -144,7 +144,7 @@
   0
  ],
  "tipo:libro": [
-  19,
+  23,
   9
  ],
  "Gambling Behavior and Treatments": [
@@ -312,7 +312,7 @@
   0
  ],
  "archive:psicologia": [
-  3,
+  5,
   0
  ],
  "ed:The Open University": [
@@ -338,5 +338,17 @@
  "ed:OAPEN (The OAPEN Foundation)": [
   0,
   1
+ ],
+ "Psychological Well-being and Life Satisfaction": [
+  1,
+  0
+ ],
+ "Psychology and Mental Health": [
+  1,
+  0
+ ],
+ "ed:Instituto Tecnológico y de Estudios Superiores de Occidente": [
+  1,
+  0
  ]
 }
