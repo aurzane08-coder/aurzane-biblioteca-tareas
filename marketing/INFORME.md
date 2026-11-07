@@ -1,16 +1,16 @@
 # Informe de marketing
 
-Actualizado: 2026-11-06. Clics de personas (sin bots ni vistas previas) que entraron por los enlaces de las publicaciones.
+Actualizado: 2026-11-07. Clics de personas (sin bots ni vistas previas) que entraron por los enlaces de las publicaciones.
 
 | Red | Publicaciones | Clics |
 |---|---|---|
-| telegram | 18 | 4 |
-| bluesky | 14 | 36 |
-| mastodon | 14 | 31 |
+| telegram | 20 | 4 |
+| bluesky | 15 | 42 |
+| mastodon | 15 | 35 |
 | instagram | 6 | 0 |
 | facebook | 6 | 19 |
 | threads | 0 | 0 |
-| pinterest | 9 | 0 |
+| pinterest | 10 | 0 |
 
 ## Productos con más clics
 
@@ -19,12 +19,14 @@ Actualizado: 2026-11-06. Clics de personas (sin bots ni vistas previas) que entr
 | calc-sueldo | 11 |
 | test-sueno | 6 |
 | frase-b424a195 | 6 |
+| crea-l05-08 | 6 |
 | test-tdah | 5 |
 | crea-l05-04 | 4 |
 | curso-metod | 4 |
 | nc-ingenieria-en-tecnologias-industriales | 4 |
 | curso-neuro | 4 |
 | nc-sociologia | 4 |
+| test-personalidad | 4 |
 | biblio-nexus | 4 |
 | ovp | 4 |
 | test-autoestima | 3 |
@@ -39,5 +41,3 @@ Actualizado: 2026-11-06. Clics de personas (sin bots ni vistas previas) que entr
 | frase-7f46c133 | 1 |
 | nc-ingenieria-mecanica | 1 |
 | test-autocompasion | 1 |
-| frase-b0b292c5 | 1 |
-| nc-maestro-en-educacion-infantil | 1 |

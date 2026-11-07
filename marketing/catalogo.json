@@ -1,5 +1,5 @@
 {
- "generado": "2026-11-06",
+ "generado": "2026-11-07",
  "productos": [
   {
    "id": "test-personalidad",
@@ -24097,6 +24097,99 @@
    "emoji": "",
    "foto_q": "quiet beach sunrise",
    "alta": "2026-11-02"
+  },
+  {
+   "id": "frase-721800af",
+   "tipo": "frase",
+   "mundo": "aurzane",
+   "origen": "citas",
+   "url": "https://aurzane.com/biblioteca/libro/cuentos-de-amor-pardo-bazan.html",
+   "titulo": "A los que mucho amaron se les podrá perdonar; pero envidiarles, sería no conocer la vida.",
+   "autor": "Emilia Pardo Bazán, Cuentos de amor",
+   "libro": "Cuentos de amor",
+   "ganchos": [
+    "A los que mucho amaron se les podrá perdonar; pero envidiarles, sería no conocer la vida.",
+    "A los que mucho amaron se les podrá perdonar; pero envidiarles, sería no conocer la vida.",
+    "A los que mucho amaron se les podrá perdonar; pero envidiarles, sería no conocer la vida."
+   ],
+   "texto": "A los que mucho amaron se les podrá perdonar; pero envidiarles, sería no conocer la vida.",
+   "hashtags": [
+    "FrasesDeLibros",
+    "Lectura",
+    "LibrosGratis",
+    "Psicología",
+    "Motivación",
+    "Bienestar",
+    "CrecimientoPersonal",
+    "Frases"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "",
+   "foto_q": "quiet beach sunrise",
+   "alta": "2026-11-07"
+  },
+  {
+   "id": "frase-b1cb5465",
+   "tipo": "frase",
+   "mundo": "aurzane",
+   "origen": "citas",
+   "url": "https://aurzane.com/biblioteca/libro/marta-y-maria.html",
+   "titulo": "Los deseos de su alma también se difundían y apagaban en la inmensa alegría que la embargaba.",
+   "autor": "Armando Palacio Valdés, Marta y María",
+   "libro": "Marta y María",
+   "ganchos": [
+    "Los deseos de su alma también se difundían y apagaban en la inmensa alegría que la embargaba.",
+    "Los deseos de su alma también se difundían y apagaban en la inmensa alegría que la embargaba.",
+    "Los deseos de su alma también se difundían y apagaban en la inmensa alegría que la embargaba."
+   ],
+   "texto": "Los deseos de su alma también se difundían y apagaban en la inmensa alegría que la embargaba.",
+   "hashtags": [
+    "FrasesDeLibros",
+    "Lectura",
+    "LibrosGratis",
+    "Psicología",
+    "Motivación",
+    "Bienestar",
+    "CrecimientoPersonal",
+    "Frases"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "",
+   "foto_q": "forest path light",
+   "alta": "2026-11-07"
+  },
+  {
+   "id": "frase-507a2132",
+   "tipo": "frase",
+   "mundo": "aurzane",
+   "origen": "citas",
+   "url": "https://aurzane.com/biblioteca/libro/marta-y-maria.html",
+   "titulo": "Las luchas, las alegrías, los dolores de estos pobres diablos que nos movemos por la tierra, ¡qué valor tienen, qué significan ante la paz augusta de los cielos!",
+   "autor": "Armando Palacio Valdés, Marta y María",
+   "libro": "Marta y María",
+   "ganchos": [
+    "Las luchas, las alegrías, los dolores de estos pobres diablos que nos movemos por la tierra, ¡qué valor tienen, qué significan ante la paz augusta de los cielos!",
+    "Las luchas, las alegrías, los dolores de estos pobres diablos que nos movemos por la tierra, ¡qué valor tienen, qué significan ante la paz augusta de los cielos!",
+    "Las luchas, las alegrías, los dolores de estos pobres diablos que nos movemos por la tierra, ¡qué valor tienen, qué significan ante la paz augusta de los cielos!"
+   ],
+   "texto": "Las luchas, las alegrías, los dolores de estos pobres diablos que nos movemos por la tierra, ¡qué valor tienen, qué significan ante la paz augusta de los cielos!",
+   "hashtags": [
+    "FrasesDeLibros",
+    "Lectura",
+    "LibrosGratis",
+    "Psicología",
+    "Motivación",
+    "Bienestar",
+    "CrecimientoPersonal",
+    "Frases"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "",
+   "foto_q": "calm ocean waves",
+   "alta": "2026-11-07"
   },
   {
    "id": "frase-000bd88a",
