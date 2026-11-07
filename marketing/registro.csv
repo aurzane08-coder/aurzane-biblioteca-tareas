@@ -189,3 +189,8 @@
 2026-11-06,2,facebook,crea-l05-04,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"Aw0-O7DQVsHWrC9oEXmdUp-"}}
 2026-11-06,4,instagram,frase-d1181cb8,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"AwoOxox62zdEjeN88aDvQYN"}}
 2026-11-06,4,facebook,frase-6d32afc7,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"AfU3GXk8pdTh2-aRYYwOgnh"}}
+2026-11-07,1,telegram,test-depresion,ok,32
+2026-11-07,1,bluesky,test-ansiedad,ok,at://did:plc:6ovoiudj7dkxgrzd2zkyn77y/app.bsky.feed.post/3mzpsycya2c2u
+2026-11-07,1,mastodon,calc-reforma,ok,https://mastodon.social/@auzane/117574979483966088
+2026-11-07,1,instagram,test-habitos,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"ALS8Euuprtsdq7qMdm50JtA"}}
+2026-11-07,1,facebook,test-satisfaccion,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"ABsCHWfmQ_aUWnayT8Jy3zd"}}

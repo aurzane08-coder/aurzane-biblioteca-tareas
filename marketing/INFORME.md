@@ -4,9 +4,9 @@ Actualizado: 2026-11-07. Clics de personas (sin bots ni vistas previas) que entr
 
 | Red | Publicaciones | Clics |
 |---|---|---|
-| telegram | 20 | 4 |
-| bluesky | 15 | 42 |
-| mastodon | 15 | 35 |
+| telegram | 21 | 4 |
+| bluesky | 16 | 44 |
+| mastodon | 16 | 35 |
 | instagram | 6 | 0 |
 | facebook | 6 | 19 |
 | threads | 0 | 0 |
@@ -38,6 +38,6 @@ Actualizado: 2026-11-07. Clics de personas (sin bots ni vistas previas) que entr
 | frase-fee27969 | 2 |
 | crea-l06-14 | 2 |
 | frase-7c565d26 | 2 |
+| test-ansiedad | 2 |
 | frase-7f46c133 | 1 |
 | nc-ingenieria-mecanica | 1 |
-| test-autocompasion | 1 |
