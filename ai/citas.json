@@ -1,5 +1,93 @@
 [
  {
+  "id": "cita-6184ed6ca8",
+  "texto": "Ten calma, soporta el hecho, y búscale solución de la manera más práctica.",
+  "autor": "Benito Pérez Galdós",
+  "libro": "Realidad",
+  "url": "https://aurzane.com/biblioteca/libro/realidad-galdos.html",
+  "lic": "Dominio público",
+  "fecha": "2026-11-07",
+  "nota": 9,
+  "auto": true
+ },
+ {
+  "id": "cita-92a42a9679",
+  "texto": "Tranquilízate, hazte dueño de tu voluntad, y te sentirás bien.",
+  "autor": "Benito Pérez Galdós",
+  "libro": "Realidad",
+  "url": "https://aurzane.com/biblioteca/libro/realidad-galdos.html",
+  "lic": "Dominio público",
+  "fecha": "2026-11-07",
+  "nota": 8,
+  "auto": true
+ },
+ {
+  "id": "cita-bc4536662c",
+  "texto": "Declaro que hay dentro de mí, allá en una de las cuevas más escondidas del alma, una tendencia á enamorarme de lo que no es común ni regular.",
+  "autor": "Benito Pérez Galdós",
+  "libro": "Realidad",
+  "url": "https://aurzane.com/biblioteca/libro/realidad-galdos.html",
+  "lic": "Dominio público",
+  "fecha": "2026-11-07",
+  "nota": 8,
+  "auto": true
+ },
+ {
+  "id": "cita-cc1605b9c0",
+  "texto": "Todos tenemos nuestros dos mundos, todos labramos nuestra esfera oculta, donde desmentimos el carácter y las virtudes que nos informan en la vida oficial y descubierta.",
+  "autor": "Benito Pérez Galdós",
+  "libro": "Realidad",
+  "url": "https://aurzane.com/biblioteca/libro/realidad-galdos.html",
+  "lic": "Dominio público",
+  "fecha": "2026-11-07",
+  "nota": 9,
+  "auto": true
+ },
+ {
+  "id": "cita-e9fc5c0382",
+  "texto": "Se fué de la vida, sin conocer de ella más que el apetito y el dolor.",
+  "autor": "Benito Pérez Galdós",
+  "libro": "Lo prohibido",
+  "url": "https://aurzane.com/biblioteca/libro/lo-prohibido.html",
+  "lic": "Dominio público",
+  "fecha": "2026-11-07",
+  "nota": 10,
+  "auto": true
+ },
+ {
+  "id": "cita-23d99c1d9c",
+  "texto": "Un pobre hombre que pregonaba café hasta muy tarde con perezosa y obscura voz, me hacía pensar en la enormísima diversidad de los destinos humanos.",
+  "autor": "Benito Pérez Galdós",
+  "libro": "Lo prohibido",
+  "url": "https://aurzane.com/biblioteca/libro/lo-prohibido.html",
+  "lic": "Dominio público",
+  "fecha": "2026-11-07",
+  "nota": 9,
+  "auto": true
+ },
+ {
+  "id": "cita-3ea9160588",
+  "texto": "Por un instante pensé que la felicidad es volar de aquí para allí, viendo cosas distintas cada minuto, y recibiendo impresiones diferentes.",
+  "autor": "Benito Pérez Galdós",
+  "libro": "Torquemada en la hoguera",
+  "url": "https://aurzane.com/biblioteca/libro/torquemada-en-la-hoguera.html",
+  "lic": "Dominio público",
+  "fecha": "2026-11-07",
+  "nota": 8,
+  "auto": true
+ },
+ {
+  "id": "cita-578d160811",
+  "texto": "No estaba mejor, bien es verdad que tampoco había empeorado, lo cual al fin y al cabo, siempre es un consuelo.",
+  "autor": "Benito Pérez Galdós",
+  "libro": "La de Bringas",
+  "url": "https://aurzane.com/biblioteca/libro/la-de-bringas.html",
+  "lic": "Dominio público",
+  "fecha": "2026-11-07",
+  "nota": 8,
+  "auto": true
+ },
+ {
   "id": "cita-721800af33",
   "texto": "A los que mucho amaron se les podrá perdonar; pero envidiarles, sería no conocer la vida.",
   "autor": "Emilia Pardo Bazán",
