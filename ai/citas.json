@@ -1,5 +1,82 @@
 [
  {
+  "id": "cita-06fbf0c15e",
+  "texto": "Una cosa es hablar y otra pasar por los casos de la vida de un hombre.",
+  "autor": "Emilia Pardo Bazán",
+  "libro": "La piedra angular",
+  "url": "https://aurzane.com/biblioteca/libro/la-piedra-angular.html",
+  "lic": "Dominio público",
+  "fecha": "2026-11-07",
+  "nota": 8,
+  "auto": true
+ },
+ {
+  "id": "cita-6707199de9",
+  "texto": "¡De cuán endeble contextura es la hebra del destino humano!",
+  "autor": "Emilia Pardo Bazán",
+  "libro": "La piedra angular",
+  "url": "https://aurzane.com/biblioteca/libro/la-piedra-angular.html",
+  "lic": "Dominio público",
+  "fecha": "2026-11-07",
+  "nota": 8,
+  "auto": true
+ },
+ {
+  "id": "cita-522f188754",
+  "texto": "Hay momentos en que se corre la cortina, se sorprende el alma desnuda, y se contemplan sus formas misteriosas, por muy aprisa que las quiera cubrir.",
+  "autor": "Emilia Pardo Bazán",
+  "libro": "Una cristiana",
+  "url": "https://aurzane.com/biblioteca/libro/una-cristiana.html",
+  "lic": "Dominio público",
+  "fecha": "2026-11-07",
+  "nota": 8,
+  "auto": true
+ },
+ {
+  "id": "cita-be36076915",
+  "texto": "La paz del alma es un bien real entre los muchos bienes falsos que ofrece el mundo.",
+  "autor": "Emilia Pardo Bazán",
+  "libro": "Una cristiana",
+  "url": "https://aurzane.com/biblioteca/libro/una-cristiana.html",
+  "lic": "Dominio público",
+  "fecha": "2026-11-07",
+  "nota": 9,
+  "auto": true
+ },
+ {
+  "id": "cita-70998f0d22",
+  "texto": "La palabra de Agustín, nutrida, segura, se vierte sobre mi espíritu dolorido, magullado de la caída, como un bálsamo calmante.",
+  "autor": "Emilia Pardo Bazán",
+  "libro": "Dulce dueño",
+  "url": "https://aurzane.com/biblioteca/libro/dulce-dueno.html",
+  "lic": "Dominio público",
+  "fecha": "2026-11-07",
+  "nota": 9,
+  "auto": true
+ },
+ {
+  "id": "cita-bc31c68f62",
+  "texto": "Hoy pienso en que eres fuerte y sabia y en que el hombre á quien recibas puede descansar en ti para la voluntad y el consejo.",
+  "autor": "Emilia Pardo Bazán",
+  "libro": "Dulce dueño",
+  "url": "https://aurzane.com/biblioteca/libro/dulce-dueno.html",
+  "lic": "Dominio público",
+  "fecha": "2026-11-07",
+  "nota": 8,
+  "auto": true
+ },
+ {
+  "id": "cita-f288d9b7c3",
+  "texto": "Me has hecho mucho bien: estoy ahora triste del todo, y mi alma es como una estancia bañada por la luna.",
+  "autor": "Emilia Pardo Bazán",
+  "libro": "La Quimera",
+  "url": "https://aurzane.com/biblioteca/libro/la-quimera.html",
+  "lic": "Dominio público",
+  "fecha": "2026-11-07",
+  "nota": 8,
+  "auto": true
+ },
+ {
   "id": "cita-88b46a08ce",
   "texto": "¿Por qué no dijo, como era la verdad, que el amor al mirarse en la fuente no se había conocido?",
   "autor": "Leopoldo Alas «Clarín»",
