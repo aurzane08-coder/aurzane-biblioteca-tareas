@@ -25,7 +25,7 @@
  ],
  "ed:De Gruyter": [
   0,
-  7
+  9
  ],
  "ed:Common Ground Research Networks eBooks": [
   0,
@@ -33,7 +33,7 @@
  ],
  "ed:IntechOpen": [
   0,
-  4
+  7
  ],
  "ed:Frontiers in psychiatry": [
   0,
@@ -121,11 +121,11 @@
  ],
  "ed:Internet Archive": [
   3,
-  68
+  69
  ],
  "ed:": [
   38,
-  9
+  10
  ],
  "ed:undefined": [
   0,
@@ -320,6 +320,22 @@
   1
  ],
  "ed:University of Michigan": [
+  0,
+  1
+ ],
+ "ed:Universidad Autónoma de Aguascalientes eBooks": [
+  0,
+  1
+ ],
+ "ed:Routledge": [
+  0,
+  2
+ ],
+ "ed:Airlangga University Press": [
+  0,
+  1
+ ],
+ "ed:OAPEN (The OAPEN Foundation)": [
   0,
   1
  ]

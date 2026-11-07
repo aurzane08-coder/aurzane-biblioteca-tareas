@@ -1,5 +1,123 @@
 [
  {
+  "fecha": "2026-11-07",
+  "id": "oa-W7225192117",
+  "tipo": "libro",
+  "titulo": "Bouncing Forward",
+  "url": "https://doi.org/10.1515/9783111698915",
+  "motivo": "No tiene un PDF libre que se pueda descargar",
+  "probados": []
+ },
+ {
+  "fecha": "2026-11-07",
+  "id": "oa-W7211937226",
+  "tipo": "libro",
+  "titulo": "Relatives of People with Disabilities",
+  "url": "https://directory.doabooks.org/handle/20.500.12854/183336",
+  "motivo": "No tiene un PDF libre que se pueda descargar",
+  "probados": []
+ },
+ {
+  "fecha": "2026-11-07",
+  "id": "ia-musica-conciencia-y-autorregulacion-khem-qai",
+  "tipo": "libro",
+  "titulo": "Musica, Conciencia Y Autorregulacion KHEM & QAI",
+  "url": "https://archive.org/details/musica-conciencia-y-autorregulacion-khem-qai",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 4 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/musica-conciencia-y-autorregulacion-khem-qai/Musica%2C%20Conciencia%20y%20Autorre"
+  ]
+ },
+ {
+  "fecha": "2026-11-07",
+  "id": "oa-W7213301067",
+  "tipo": "libro",
+  "titulo": "Quality of Life Across the Adult Lifespan [Working Title]",
+  "url": "https://doi.org/10.5772/intechopen.1014434",
+  "motivo": "No tiene un PDF libre que se pueda descargar",
+  "probados": []
+ },
+ {
+  "fecha": "2026-11-07",
+  "id": "oa-W7214164410",
+  "tipo": "libro",
+  "titulo": "Social Norms - Foundations, Dynamics, and Contemporary Transformations [Working Title]",
+  "url": "https://doi.org/10.5772/intechopen.1013905",
+  "motivo": "No tiene un PDF libre que se pueda descargar",
+  "probados": []
+ },
+ {
+  "fecha": "2026-11-07",
+  "id": "oa-W7214939298",
+  "tipo": "libro",
+  "titulo": "Global Perspectives on Child Abuse and Neglect - Research, Policy, and Practice [Working Title]",
+  "url": "https://doi.org/10.5772/intechopen.1016537",
+  "motivo": "No tiene un PDF libre que se pueda descargar",
+  "probados": []
+ },
+ {
+  "fecha": "2026-11-07",
+  "id": "oa-W7211896839",
+  "tipo": "libro",
+  "titulo": "The Paradox of International Sign",
+  "url": "https://library.oapen.org/handle/20.500.12657/117635",
+  "motivo": "No tiene un PDF libre que se pueda descargar",
+  "probados": []
+ },
+ {
+  "fecha": "2026-11-07",
+  "id": "oa-W7213909026",
+  "tipo": "libro",
+  "titulo": "Caring for Music",
+  "url": "https://doi.org/10.4324/9781003685708",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 25 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://api.taylorfrancis.com/content/books/mono/download?identifierName=doi&identifierValue=10.4324/978100368"
+  ]
+ },
+ {
+  "fecha": "2026-11-07",
+  "id": "oa-W7221799758",
+  "tipo": "libro",
+  "titulo": "Flourishing Self Help",
+  "url": "https://doi.org/10.20473/aup.1683",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 26 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://omp.unair.ac.id/aup/catalog/download/1683/1329/9919"
+  ]
+ },
+ {
+  "fecha": "2026-11-07",
+  "id": "oa-W7214090800",
+  "tipo": "libro",
+  "titulo": "Bullying and the Developing Brain",
+  "url": "https://doi.org/10.4324/9781003771777",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 36 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://api.taylorfrancis.com/content/books/mono/download?identifierName=doi&identifierValue=10.4324/978100377"
+  ]
+ },
+ {
+  "fecha": "2026-11-07",
+  "id": "oa-W7131391325",
+  "tipo": "libro",
+  "titulo": "Contra el olvido: Recuperando la memoria de varones adultos mayores homosexuales de Aguascalientes",
+  "url": "https://doi.org/10.33064/uaa/978-607-2638-84-6",
+  "motivo": "No tiene un PDF libre que se pueda descargar",
+  "probados": [
+   "<urlopen error timed out> https://libros.uaa.mx/uaa/catalog/download/368/339/3150"
+  ]
+ },
+ {
+  "fecha": "2026-11-07",
+  "id": "oa-W7131674165",
+  "tipo": "libro",
+  "titulo": "Programa de gamificación para mejorar el pensamiento crítico de los estudiantes de básica media en una institución educativa",
+  "url": "https://doi.org/10.59764/ceo.143",
+  "motivo": "el título indica actas, resúmenes o material que no es un libro",
+  "probados": []
+ },
+ {
   "fecha": "2026-11-06",
   "id": "cita-349116fe3c",
   "tipo": "cita",
