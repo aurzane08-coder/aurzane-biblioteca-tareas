@@ -216,3 +216,14 @@
 2026-11-07,2,instagram,nc-biotecnologia,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"AxyoiUJXgN506wAtQAs6vAv"}}
 2026-11-07,2,facebook,nc-finanzas-y-contabilidad,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"A6sG_iuigpzNdDcAzWR1uzD"}}
 2026-11-07,2,pinterest,calc-pau,feed,
+2026-11-07,1,instagram,test-habitos,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"AOSXFc8aIg_0ko5BPxXoJZO"}}
+2026-11-07,1,facebook,test-satisfaccion,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"AZq4qz42toFM4TKOCBq4TDB"}}
+2026-11-07,3,instagram,frase-3807580d,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"Ak7Ck8-6PF2clDGAoNBp5S9"}}
+2026-11-07,3,facebook,frase-d4003054,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"A7O3pYLbHNDfiGbmiNPfplQ"}}
+2026-11-07,2,instagram,nc-biotecnologia,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"AwMtk5vgX4QBgNetcyFG-MZ"}}
+2026-11-07,2,facebook,nc-finanzas-y-contabilidad,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"AMYhRVN-5Qpie-9bcJIT_oQ"}}
+2026-11-07,4,instagram,frase-fc524221,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"AwjeqhnHaw2feIrN3pWfvA-"}}
+2026-11-07,4,facebook,frase-653787df,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"Ahy_UToQyoovRyp_-M-Dfuy"}}
+2026-11-07,4,youtube,frase-7610e3a4,ok,https://youtu.be/ZXgocEk4zJI
+2026-11-07,4,tiktok,frase-ff2df6ab,ok,v_inbox_file~v2.7705537806000556039 (borrador en la bandeja de TikTok: añade un sonido y publica)
+2026-11-07,4,telegram,frase-81d54602,ok,39
