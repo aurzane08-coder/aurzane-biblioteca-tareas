@@ -730,6 +730,35 @@ MUNDOS_A = {'mind': ('MIND', 'mind.aurzane.com', 'salud mental, emociones, perso
             'nexus': ('NEXUS', 'nexus.aurzane.com', 'universidades, carreras, orientación vocacional, tecnología, inteligencia artificial, ciencia aplicada'),
             'build': ('BUILD', 'build.aurzane.com', 'vivienda, trabajo, dinero, emprendimiento, ciudades, proyectos')}
 art_hechos = leer('articulos_ai.json', [])
+# Tests de AURZANE a los que puede llevar un artículo (atraen gente desde Google y la llevan a hacer el test)
+TESTS_A = {'ansiedad': ('https://mind.aurzane.com/test-de-ansiedad/', 'Test de ansiedad (GAD-7)'), 'depresion': ('https://mind.aurzane.com/test-de-depresion/', 'Test de depresión (PHQ-9)'),
+           'autoestima': ('https://mind.aurzane.com/test-de-autoestima/', 'Test de autoestima (Rosenberg)'), 'autocompasion': ('https://mind.aurzane.com/test-de-autocompasion/', 'Test de autocompasión'),
+           'autoeficacia': ('https://mind.aurzane.com/test-de-autoeficacia/', 'Test de autoeficacia'), 'burnout': ('https://mind.aurzane.com/test-de-burnout/', 'Test de burnout'),
+           'estres': ('https://mind.aurzane.com/test-de-estres/', 'Test de estrés (DASS-21)'), 'resiliencia': ('https://mind.aurzane.com/test-de-resiliencia/', 'Test de resiliencia'),
+           'satisfaccion': ('https://mind.aurzane.com/test-de-satisfaccion-con-la-vida/', 'Test de satisfacción con la vida'), 'soledad': ('https://mind.aurzane.com/test-de-soledad/', 'Test de soledad'),
+           'tdah': ('https://mind.aurzane.com/test-de-tdah/', 'Test de TDAH en adultos (ASRS)'), 'personalidad': ('https://mind.aurzane.com/test-de-personalidad/', 'Test de personalidad'),
+           'bienestar': ('https://live.aurzane.com/test-de-bienestar/', 'Test de bienestar (OMS-5)'), 'habitos': ('https://live.aurzane.com/test-de-habitos/', 'Test de hábitos'),
+           'sueno': ('https://live.aurzane.com/test-de-sueno/', 'Test de sueño'), 'vocacional': ('https://ovp.aurzane.com/portal.html', 'Test vocacional OVP')}
+# Guías prácticas que la gente busca en Google, cada una ligada a su test (una de los dos artículos diarios es una guía)
+GUIAS_A = [('Cómo calmar la ansiedad en el momento: técnicas con respaldo científico', 'ansiedad', 'mind'), ('Diferencia entre estrés y ansiedad y cómo saber cuál tienes', 'ansiedad', 'mind'),
+           ('Señales de depresión que a menudo pasan desapercibidas', 'depresion', 'mind'), ('Qué hacer cuando no tienes ganas de nada', 'depresion', 'mind'),
+           ('Cómo mejorar la autoestima con hábitos diarios', 'autoestima', 'mind'), ('Autoestima baja en adultos: de dónde viene y cómo se trabaja', 'autoestima', 'mind'),
+           ('Cómo dejar de ser tan duro contigo mismo: la autocompasión explicada', 'autocompasion', 'mind'), ('Confiar en tus capacidades: qué es la autoeficacia y cómo reforzarla', 'autoeficacia', 'mind'),
+           ('Síntomas de burnout y cómo recuperarte', 'burnout', 'mind'), ('Agotamiento por los estudios: cómo detectarlo a tiempo', 'burnout', 'learn'),
+           ('Cómo reducir el estrés en el trabajo con cambios pequeños', 'estres', 'mind'), ('Qué le hace el estrés crónico a tu cuerpo', 'estres', 'live'),
+           ('Cómo ser más resiliente después de una mala racha', 'resiliencia', 'mind'), ('Qué hace que una persona se sienta satisfecha con su vida', 'satisfaccion', 'mind'),
+           ('Cómo superar la soledad cuando vives en una ciudad nueva', 'soledad', 'mind'), ('Sentirse solo rodeado de gente: por qué pasa', 'soledad', 'mind'),
+           ('TDAH en adultos: síntomas que confundimos con despiste', 'tdah', 'mind'), ('Trucos de concentración que funcionan si te distraes con facilidad', 'tdah', 'learn'),
+           ('Los cinco grandes rasgos de personalidad explicados sin tecnicismos', 'personalidad', 'mind'), ('Cómo medir tu bienestar emocional y por qué conviene hacerlo', 'bienestar', 'live'),
+           ('Hábitos diarios que más mejoran el ánimo según la evidencia', 'habitos', 'live'), ('Cómo crear un hábito y que dure', 'habitos', 'live'),
+           ('Cuántas horas hay que dormir según tu edad', 'sueno', 'live'), ('Insomnio: qué hacer cuando no puedes dormir', 'sueno', 'live'),
+           ('Cómo elegir carrera si no sabes qué estudiar', 'vocacional', 'nexus'), ('Tests vocacionales: qué miden y para qué sirven de verdad', 'vocacional', 'nexus')]
+def caja_test(clave):
+    if clave not in TESTS_A: return ''
+    u, n = TESTS_A[clave]
+    return (f'\n      <aside class="az-cta-test" style="margin:34px 0;padding:22px 24px;border-radius:18px;background:linear-gradient(150deg,#2a1f63,#5B43B8);color:#fff">'
+            f'<p style="margin:0 0 4px;font-size:.8rem;font-weight:700;letter-spacing:.05em;opacity:.8">PONLO A PRUEBA</p><p style="margin:0 0 14px;font-size:1.15rem;font-weight:600;line-height:1.35">Haz el {html.escape(n)}: gratis, anónimo y con tu resultado explicado al momento.</p>'
+            f'<a href="{u}" style="display:inline-block;background:#FFD9A0;color:#1b1440;font-weight:700;text-decoration:none;padding:11px 20px;border-radius:99px">Hacer el test</a></aside>')
 def md_html(t):
     """Markdown sencillo a HTML (títulos, listas, negrita, cursiva y enlaces), escapando el resto."""
     def linea(x):
@@ -760,7 +789,7 @@ def pagina_articulo(a):
            '{{JSONLD}}': jl.replace('</', '<\\/'), '{{HOST}}': host, '{{MUNDO}}': nombre, '{{TITULO_CORTO}}': html.escape(a['titulo'][:60] + ('…' if len(a['titulo']) > 60 else '')),
            '{{CATEGORIA}}': html.escape(a.get('categoria') or 'Divulgación'), '{{MINUTOS}}': str(max(2, round(len(cuerpo.split()) / 200))), '{{FECHA}}': html.escape(a['fecha']),
            '{{HERO}}': f'<div class="art-hero"><img src="{html.escape(a["imagen"])}" alt="{html.escape(a.get("categoria") or "")}" loading="lazy"></div>' if a.get('imagen') else '',
-           '{{CUERPO}}': md_html(cuerpo), '{{FUENTES}}': fuentes}
+           '{{CUERPO}}': md_html(cuerpo) + caja_test(a.get('test', '')), '{{FUENTES}}': fuentes}
     h_ = open(os.path.join(D, 'plantilla_articulo.html'), encoding='utf-8').read()
     for k_, v_ in rep.items(): h_ = h_.replace(k_, v_)
     os.makedirs(f'{OUT}/articulos-ai/{a["slug"]}', exist_ok=True)
@@ -770,15 +799,23 @@ _ah = {HOY: _ah.get(HOY, {'hechos': 0, 'intentos': 0})}; ESTADO['art_dia'] = _ah
 # hasta 2 artículos al día; si la IA falla (cupo, nota baja) se reintenta en la siguiente revisión, máximo 6 intentos al día
 if (os.environ.get('GEMINI_API_KEY') or os.environ.get('GITHUB_TOKEN')) and _ah[HOY]['hechos'] < 2 and _ah[HOY]['intentos'] < 6:
     usados_a = {a.get('fuente_id') for a in art_hechos} | {a.get('fuente_id') for a in autodesc if a.get('tipo') == 'articulo'}
-    fuentes_a = ([('estudio', x) for x in aprob if x['tipo'] == 'estudio' and x['id'] not in usados_a and x.get('resumen')][:2] +
-                 [('curiosidad', x) for x in curios_ok if x['id'] not in usados_a][:1])
+    guias_libres = [('guia', {'id': 'guia-' + hashlib.md5(t.encode()).hexdigest()[:8], 'titulo': t, 'test': k, 'mundo': m}) for t, k, m in GUIAS_A
+                    if 'guia-' + hashlib.md5(t.encode()).hexdigest()[:8] not in usados_a]
+    otras_a = ([('estudio', x) for x in aprob if x['tipo'] == 'estudio' and x['id'] not in usados_a and x.get('resumen')][:2] +
+               [('curiosidad', x) for x in curios_ok if x['id'] not in usados_a][:1])
+    # el primer artículo del día sale de un estudio; el segundo es una guía práctica ligada a un test
+    fuentes_a = (otras_a + guias_libres[:2]) if _ah[HOY]['hechos'] == 0 else (guias_libres[:2] + otras_a)
     titulos_previos = '; '.join(a['titulo'] for a in art_hechos[:30])
     for clase, f in fuentes_a:
         if _ah[HOY]['intentos'] >= 6 or _ah[HOY]['hechos'] >= 2: break
         _ah[HOY]['intentos'] += 1
         enlace_f = f'https://aurzane.com/biblioteca/recientes/{f["id"]}/' if clase == 'estudio' else (f.get('url') or '')
         base = (f'Estudio publicado en acceso abierto:\nTítulo: {f["titulo"]}\nAutores: {f.get("autores", "")}\nRevista: {f.get("editorial", "")} ({f.get("anio", "")})\nResumen: {f.get("resumen", "")[:2500]}'
-                if clase == 'estudio' else f'Curiosidad verificada: {f["titulo"]}. {f.get("resumen", "")} Fuente: {f.get("fuente", "")}')
+                if clase == 'estudio' else
+                (f'Guía práctica sobre: {f["titulo"]}. No hay una fuente única: usa solo conocimiento científico muy establecido (guías clínicas, consensos), sin cifras inventadas. '
+                 f'El mundo es {f["mundo"]}. Menciona de forma natural, una sola vez, que en AURZANE hay un test gratuito para orientarse ({TESTS_A[f["test"]][1]}).')
+                if clase == 'guia' else f'Curiosidad verificada: {f["titulo"]}. {f.get("resumen", "")} Fuente: {f.get("fuente", "")}')
+        if clase == 'guia': enlace_f = ''
         r = gemini_base('Eres redactor de AURZANE, una web de divulgación de psicología dirigida por un psicólogo clínico. Escribe un artículo original en español de España, '
                         'cálido y riguroso, de 600 a 900 palabras, sin rayas largas, sin diagnosticar ni recomendar medicación, para personas sin formación. '
                         'Usa SOLO lo que dice la fuente y conocimiento muy establecido; no inventes cifras. Estructura en Markdown: introducción, 3 o 4 secciones con "## " '
@@ -787,7 +824,7 @@ if (os.environ.get('GEMINI_API_KEY') or os.environ.get('GITHUB_TOKEN')) and _ah[
                         '\nElige el mundo de AURZANE que corresponde por tema: ' + '; '.join(f'{k}: {v[2]}' for k, v in MUNDOS_A.items()) +
                         ('\nNo repitas temas ya publicados: ' + titulos_previos if titulos_previos else '') +
                         '\nResponde SOLO con JSON: {"titulo": "<máx 70 caracteres>", "resumen": "<máx 155 caracteres>", "slug": "<palabras-con-guiones>", '
-                        '"mundo": "mind|live|learn|nexus|build", "categoria": "<una o dos palabras>", "cuerpo": "<markdown>"}', 2600, 0.5)
+                        '"mundo": "mind|live|learn|nexus|build", "categoria": "<una o dos palabras>", "test": "<' + '|'.join(TESTS_A) + '|ninguno: el test de AURZANE más relacionado>", "cuerpo": "<markdown>"}', 2600, 0.5)
         m = re.search(r'\{.*\}', r, re.S)
         try: j = json.loads(m.group(0)) if m else {}
         except Exception: j = {}
@@ -796,6 +833,8 @@ if (os.environ.get('GEMINI_API_KEY') or os.environ.get('GITHUB_TOKEN')) and _ah[
         j['slug'] = re.sub(r'[^a-z0-9-]+', '-', j.get('slug', '').lower()).strip('-')[:70] or hashlib.md5(j['titulo'].encode()).hexdigest()[:10]
         if any(a['slug'] == j['slug'] for a in art_hechos) or get(f'https://aurzane.com/articulos/{j["slug"]}/')[0] == 200: j['slug'] += '-' + HOY[5:].replace('-', '')
         j['mundo'] = j.get('mundo') if j.get('mundo') in MUNDOS_A else 'mind'
+        if clase == 'guia': j['mundo'] = f['mundo']; j['test'] = f['test']
+        j['test'] = j.get('test') if j.get('test') in TESTS_A else ''
         rv = gemini_base('Eres el revisor científico de AURZANE. Puntúa de 1 a 10 este artículo de divulgación: exactitud respecto a la fuente, ausencia de exageraciones, '
                          'utilidad para el lector, claridad y que no diagnostique ni sustituya a un profesional. Fuente:\n' + base[:2500] + '\n\nArtículo:\n' + j['cuerpo'][:7000] +
                          '\nResponde SOLO con JSON: {"nota": <1-10>, "motivo": "<una frase>"}', 300, 0)
@@ -808,7 +847,7 @@ if (os.environ.get('GEMINI_API_KEY') or os.environ.get('GITHUB_TOKEN')) and _ah[
             autodesc.insert(0, {'fecha': HOY, 'id': aid, 'tipo': 'articulo', 'fuente_id': f['id'], 'titulo': j['titulo'][:160], 'url': '', 'motivo': f'La revisión le dio {nota_a or "sin nota"}/10: ' + str(v_.get('motivo', ''))[:200]})
             continue
         a = {'id': aid, 'slug': j['slug'], 'mundo': j['mundo'], 'titulo': j['titulo'][:120], 'resumen': j.get('resumen', '')[:200], 'categoria': str(j.get('categoria', ''))[:40],
-             'cuerpo': j['cuerpo'], 'fecha': HOY, 'nota': nota_a, 'fuente_id': f['id'], 'imagen': f.get('portada') or '',
+             'cuerpo': j['cuerpo'], 'fecha': HOY, 'nota': nota_a, 'fuente_id': f['id'], 'imagen': f.get('portada') or '', 'test': j.get('test', ''),
              'fuentes': [{'titulo': f['titulo'][:200], 'url': enlace_f, 'meta': ' · '.join(str(x) for x in (f.get('autores', '')[:120], f.get('editorial', ''), f.get('anio', '')) if x) or str(f.get('fuente', ''))}] if enlace_f else []}
         art_hechos.insert(0, a); _ah[HOY]['hechos'] += 1
         nov.insert(0, {'fecha': HOY, 'url': f'https://aurzane.com/articulos/{a["slug"]}/', 'titulo': 'Artículo: ' + a['titulo']})
@@ -828,7 +867,7 @@ try:
     for a in art_hechos:
         if a.get('cuerpo'): pagina_articulo(a)
     os.makedirs(OUT + '/articulos-ai', exist_ok=True)
-    lista_ai = [{k: a[k] for k in ('slug', 'mundo', 'titulo', 'resumen', 'categoria', 'fecha', 'imagen') if k in a} for a in art_hechos if a.get('cuerpo')][:300]
+    lista_ai = [{k: a[k] for k in ('slug', 'mundo', 'titulo', 'resumen', 'categoria', 'fecha', 'imagen', 'test') if k in a} for a in art_hechos if a.get('cuerpo')][:300]
     open(OUT + '/articulos-ai/ai.js', 'w', encoding='utf-8').write('window.__azArticulos=' + json.dumps(lista_ai, ensure_ascii=False).replace('</', '<\\/') + ';')
 except Exception as e: print('::notice title=AI::páginas de artículos', str(e)[:150])
 pend.sort(key=puntos, reverse=True)
