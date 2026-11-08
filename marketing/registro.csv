@@ -258,3 +258,4 @@
 2026-11-08,4,telegram,test-satisfaccion,ok,44
 2026-11-08,4,tiktok,frase-276319e1,error,400 {"error":{"code":"spam_risk_too_many_pending_share" "message":"spam_risk_too_many_pending_share" "log_id":"2026110903335975108DD2EFB320EBF312"}}
 2026-11-08,4,tiktok,frase-276319e1,error,400 {"error":{"code":"spam_risk_too_many_pending_share" "message":"spam_risk_too_many_pending_share" "log_id":"2026110903423910271BDF3BF3C4E2687F"}}
+2026-11-08,4,tiktok,frase-276319e1,error,400 {"error":{"code":"spam_risk_too_many_pending_share" "message":"spam_risk_too_many_pending_share" "log_id":"20261109035210CFFB90EA2BA01DE76370"}}
