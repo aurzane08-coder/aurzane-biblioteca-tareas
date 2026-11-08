@@ -1,5 +1,38 @@
 [
  {
+  "id": "cita-aeed06f001",
+  "texto": "¿Cómo es posible pensar en la alegría y la paz aquí donde nada permanece, donde todo está sujeto a un cambio irresistible?",
+  "autor": "Armando Palacio Valdés",
+  "libro": "Tristán o el pesimismo",
+  "url": "https://aurzane.com/biblioteca/libro/tristan-o-el-pesimismo.html",
+  "lic": "Dominio público",
+  "fecha": "2026-11-08",
+  "nota": 9,
+  "auto": true
+ },
+ {
+  "id": "cita-8b63194c59",
+  "texto": "La verdad es que tiene el alma humana repliegues estrambóticos.",
+  "autor": "Miguel de Unamuno",
+  "libro": "El espejo de la muerte",
+  "url": "https://aurzane.com/biblioteca/libro/el-espejo-de-la-muerte.html",
+  "lic": "Dominio público",
+  "fecha": "2026-11-08",
+  "nota": 8,
+  "auto": true
+ },
+ {
+  "id": "cita-f8eecd6fc1",
+  "texto": "Mucho más amor era menester aún para reflejarlas en el espejo del alma con mayor hermosura de la que tienen.",
+  "autor": "Juan Valera",
+  "libro": "Las ilusiones del doctor Faustino",
+  "url": "https://aurzane.com/biblioteca/libro/las-ilusiones-del-doctor-faustino.html",
+  "lic": "Dominio público",
+  "fecha": "2026-11-08",
+  "nota": 8,
+  "auto": true
+ },
+ {
   "id": "cita-135f7dd988",
   "texto": "El alma volaba tras de su negrura y misterio ansiando anegarse en un sueño feliz.",
   "autor": "Armando Palacio Valdés",
