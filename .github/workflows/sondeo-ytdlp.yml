@@ -1,0 +1,22 @@
+name: Sondeo descarga en servidor
+on: workflow_dispatch
+jobs:
+  s:
+    runs-on: ubuntu-latest
+    env:
+      SG_KEY: ${{ secrets.SG_KEY }}
+      SG_HOST: ${{ secrets.SG_HOST }}
+      SG_USER: ${{ secrets.SG_USER }}
+      SG_PORT: ${{ secrets.SG_PORT }}
+      SG_PASS: ${{ secrets.SG_PASS }}
+    steps:
+      - run: |
+          mkdir -p ~/.ssh && printf '%s\n' "$SG_KEY" | tr -d '\r' > ~/.ssh/id && chmod 600 ~/.ssh/id
+          if [ -n "$SG_PASS" ]; then ssh-keygen -p -P "$SG_PASS" -N "" -f ~/.ssh/id >/dev/null; fi
+          ssh -i ~/.ssh/id -p ${SG_PORT:-18765} -o StrictHostKeyChecking=accept-new "$SG_USER@$SG_HOST" 'bash -s' <<'R'
+          mkdir -p herramientas && cd herramientas
+          [ -x yt-dlp ] || curl -sSL -o yt-dlp https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp_linux && chmod +x yt-dlp
+          ./yt-dlp --version
+          timeout 120 ./yt-dlp -F "https://www.youtube.com/watch?v=n9dVlkDB9xo" 2>&1 | tail -8
+          python3 --version; df -h ~ | tail -1
+          R
