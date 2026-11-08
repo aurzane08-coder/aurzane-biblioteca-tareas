@@ -675,34 +675,80 @@ if os.environ.get('GEMINI_API_KEY') and sum(1 for p in pend if p['tipo'] == 'cur
     ESTADO['curiosidades'] = HOY
     if hechas_c: acciones.append(f'Escribí {hechas_c} curiosidades para vídeos cortos: {auto_cur} verificadas y publicadas solas, el resto en la cola por si quieres revisarlas.')
     guardar('curiosidades.json', curios_ok[:1000])
-# ---------- 15b. Artículos para la sección Contenido (tabla articulos de Supabase) escritos por Gemini ----------
-# Uno al día como mucho, a partir de estudios en acceso abierto ya publicados en la biblioteca o de curiosidades verificadas.
-# Gemini lo escribe y otra pasada lo revisa (precisión, utilidad, sin diagnósticos). Con nota 9 o más y la clave de servicio
-# de Supabase (secreto SUPABASE_SERVICE_KEY) se publica solo; si no, queda en la cola del admin y al aprobarlo se guarda en Contenido.
-SB_URL = 'https://chtfpqwrrarfdjcivlad.supabase.co'; SB_PUB = 'sb_publishable___1v6VjDew0l8uGfMyb9Nw_YyCLTPPw'
+# ---------- 15b. Artículos escritos por Gemini, publicados solos en su mundo según el tema ----------
+# Uno al día a partir de estudios en acceso abierto de la biblioteca o de curiosidades verificadas. Gemini lo escribe, elige
+# el mundo que le corresponde por tema (MIND, LIVE, LEARN, NEXUS o BUILD) y otra pasada lo revisa. Con nota 8 o más se publica
+# sin esperar aprobación en aurzane.com/articulos/<slug>/ (con el diseño de los demás artículos), aparece en la portada de su
+# mundo y en el índice de artículos; si existe el secreto SUPABASE_SERVICE_KEY también se guarda en Contenido del admin.
+SB_URL = 'https://chtfpqwrrarfdjcivlad.supabase.co'
 SB_SRV = os.environ.get('SUPABASE_SERVICE_KEY', '').strip()
+MUNDOS_A = {'mind': ('MIND', 'mind.aurzane.com', 'salud mental, emociones, personalidad, relaciones, estrés, ansiedad, autoestima, psicología'),
+            'live': ('LIVE', 'live.aurzane.com', 'bienestar físico, hábitos, sueño, alimentación, ejercicio, longevidad, equilibrio vida-trabajo'),
+            'learn': ('LEARN', 'learn.aurzane.com', 'aprendizaje, memoria, métodos de estudio, enseñanza, motivación para aprender'),
+            'nexus': ('NEXUS', 'nexus.aurzane.com', 'universidades, carreras, orientación vocacional, tecnología, inteligencia artificial, ciencia aplicada'),
+            'build': ('BUILD', 'build.aurzane.com', 'vivienda, trabajo, dinero, emprendimiento, ciudades, proyectos')}
 art_hechos = leer('articulos_ai.json', [])
-if os.environ.get('GEMINI_API_KEY') and ESTADO.get('articulo') != HOY and sum(1 for p in pend if p['tipo'] == 'articulo') < 5:
-    usados_a = {a.get('fuente_id') for a in art_hechos} | {p.get('fuente_id') for p in pend if p['tipo'] == 'articulo'}
+def md_html(t):
+    """Markdown sencillo a HTML (títulos, listas, negrita, cursiva y enlaces), escapando el resto."""
+    def linea(x):
+        x = html.escape(x, quote=False)
+        x = re.sub(r'\[([^\]]+)\]\((https?://[^)\s]+)\)', r'<a href="\2" target="_blank" rel="noopener">\1</a>', x)
+        x = re.sub(r'\*\*([^*]+)\*\*', r'<strong>\1</strong>', x); x = re.sub(r'(?<!\*)\*([^*]+)\*(?!\*)', r'<em>\1</em>', x)
+        return x
+    out, lista = [], []
+    for bl in re.split(r'\n\s*\n', t.strip()):
+        ls = [l.strip() for l in bl.strip().split('\n') if l.strip()]
+        if not ls: continue
+        if ls[0].startswith('#'):
+            out.append('<h2>' + linea(ls[0].lstrip('#').strip()) + '</h2>'); ls = ls[1:]
+            if not ls: continue
+        if all(re.match(r'^([-*•]|\d+[.)])\s+', l) for l in ls):
+            out.append('<ul>' + ''.join('<li>' + linea(re.sub(r'^([-*•]|\d+[.)])\s+', '', l)) + '</li>' for l in ls) + '</ul>')
+        else: out.append('<p>' + linea(' '.join(ls)) + '</p>')
+    return '\n'.join('      ' + x for x in out)
+def pagina_articulo(a):
+    nombre, host, _ = MUNDOS_A[a['mundo']]
+    url = f'https://aurzane.com/articulos/{a["slug"]}/'
+    cuerpo = re.sub(r'\n*Fuente:.*$', '', a['cuerpo'].strip(), flags=re.S)
+    fuentes = ''.join(f'<div class="source-item"><a href="{html.escape(f_["url"])}" target="_blank" rel="noopener">{html.escape(f_["titulo"])}</a><div class="src-meta">{html.escape(f_.get("meta", ""))}</div></div>' for f_ in a.get('fuentes', []))
+    jl = json.dumps({'@context': 'https://schema.org', '@type': 'Article', 'headline': a['titulo'], 'description': a['resumen'], 'datePublished': a['fecha'], 'inLanguage': 'es',
+                     'articleSection': a.get('categoria', ''), 'publisher': {'@type': 'Organization', 'name': 'AURZANE'}, 'author': {'@type': 'Organization', 'name': 'AURZANE'},
+                     'mainEntityOfPage': {'@type': 'WebPage', '@id': url}}, ensure_ascii=False)
+    rep = {'{{TITULO}}': html.escape(a['titulo']), '{{RESUMEN}}': html.escape(a['resumen']), '{{URL}}': url, '{{IMAGEN}}': html.escape(a.get('imagen') or 'https://aurzane.com/og-portada.jpg'),
+           '{{JSONLD}}': jl.replace('</', '<\\/'), '{{HOST}}': host, '{{MUNDO}}': nombre, '{{TITULO_CORTO}}': html.escape(a['titulo'][:60] + ('…' if len(a['titulo']) > 60 else '')),
+           '{{CATEGORIA}}': html.escape(a.get('categoria') or 'Divulgación'), '{{MINUTOS}}': str(max(2, round(len(cuerpo.split()) / 200))), '{{FECHA}}': html.escape(a['fecha']),
+           '{{HERO}}': f'<div class="art-hero"><img src="{html.escape(a["imagen"])}" alt="{html.escape(a.get("categoria") or "")}" loading="lazy"></div>' if a.get('imagen') else '',
+           '{{CUERPO}}': md_html(cuerpo), '{{FUENTES}}': fuentes}
+    h_ = open(os.path.join(D, 'plantilla_articulo.html'), encoding='utf-8').read()
+    for k_, v_ in rep.items(): h_ = h_.replace(k_, v_)
+    os.makedirs(f'{OUT}/articulos-ai/{a["slug"]}', exist_ok=True)
+    open(f'{OUT}/articulos-ai/{a["slug"]}/index.html', 'w', encoding='utf-8').write(h_)
+if os.environ.get('GEMINI_API_KEY') and ESTADO.get('articulo') != HOY:
+    usados_a = {a.get('fuente_id') for a in art_hechos} | {a.get('fuente_id') for a in autodesc if a.get('tipo') == 'articulo'}
     fuentes_a = [('estudio', x) for x in aprob if x['tipo'] == 'estudio' and x['id'] not in usados_a and x.get('resumen')][:1] or \
                 [('curiosidad', x) for x in curios_ok if x['id'] not in usados_a][:1]
+    titulos_previos = '; '.join(a['titulo'] for a in art_hechos[:30])
     for clase, f in fuentes_a:
-        base = (f'Estudio publicado en acceso abierto:\nTítulo: {f["titulo"]}\nAutores: {f.get("autores", "")}\nRevista: {f.get("editorial", "")} ({f.get("anio", "")})\nResumen: {f.get("resumen", "")[:2500]}\nEnlace: https://aurzane.com/biblioteca/recientes/{f["id"]}/'
+        enlace_f = f'https://aurzane.com/biblioteca/recientes/{f["id"]}/' if clase == 'estudio' else (f.get('url') or '')
+        base = (f'Estudio publicado en acceso abierto:\nTítulo: {f["titulo"]}\nAutores: {f.get("autores", "")}\nRevista: {f.get("editorial", "")} ({f.get("anio", "")})\nResumen: {f.get("resumen", "")[:2500]}'
                 if clase == 'estudio' else f'Curiosidad verificada: {f["titulo"]}. {f.get("resumen", "")} Fuente: {f.get("fuente", "")}')
         r = gemini_base('Eres redactor de AURZANE, una web de divulgación de psicología dirigida por un psicólogo clínico. Escribe un artículo original en español de España, '
-                        'cálido y riguroso, de 600 a 900 palabras, sin rayas largas, sin diagnosticar ni recomendar medicación, para personas sin formación en psicología. '
-                        'Usa SOLO lo que dice la fuente y conocimiento muy establecido; no inventes cifras. Estructura en Markdown: una introducción, 3 o 4 secciones con "## " '
-                        'y una sección final "## Qué puedes hacer hoy" con 3 ideas prácticas en lista. Termina con "Fuente: " y el enlace en Markdown. '
-                        'Si el tema toca malestar intenso, añade que si lo necesitas puedes llamar al 024 (España). ' + base +
+                        'cálido y riguroso, de 600 a 900 palabras, sin rayas largas, sin diagnosticar ni recomendar medicación, para personas sin formación. '
+                        'Usa SOLO lo que dice la fuente y conocimiento muy establecido; no inventes cifras. Estructura en Markdown: introducción, 3 o 4 secciones con "## " '
+                        'y una sección final "## Qué puedes hacer hoy" con 3 ideas prácticas en lista. No incluyas la fuente en el cuerpo. '
+                        'Si el tema toca malestar intenso, añade que puedes llamar al 024 (España). ' + base +
+                        '\nElige el mundo de AURZANE que corresponde por tema: ' + '; '.join(f'{k}: {v[2]}' for k, v in MUNDOS_A.items()) +
+                        ('\nNo repitas temas ya publicados: ' + titulos_previos if titulos_previos else '') +
                         '\nResponde SOLO con JSON: {"titulo": "<máx 70 caracteres>", "resumen": "<máx 155 caracteres>", "slug": "<palabras-con-guiones>", '
-                        '"mundo": "mind" o "live" o "learn", "categoria": "<una palabra>", "cuerpo": "<markdown>"}', 2600, 0.5)
+                        '"mundo": "mind|live|learn|nexus|build", "categoria": "<una o dos palabras>", "cuerpo": "<markdown>"}', 2600, 0.5)
         m = re.search(r'\{.*\}', r, re.S)
         try: j = json.loads(m.group(0)) if m else {}
         except Exception: j = {}
         if not (j.get('titulo') and len(j.get('cuerpo', '')) > 1500): continue
         j['cuerpo'] = j['cuerpo'].replace('—', ',').replace('–', ',')
         j['slug'] = re.sub(r'[^a-z0-9-]+', '-', j.get('slug', '').lower()).strip('-')[:70] or hashlib.md5(j['titulo'].encode()).hexdigest()[:10]
-        j['mundo'] = j.get('mundo') if j.get('mundo') in ('mind', 'live', 'learn') else 'mind'
+        if any(a['slug'] == j['slug'] for a in art_hechos) or get(f'https://aurzane.com/articulos/{j["slug"]}/')[0] == 200: j['slug'] += '-' + HOY[5:].replace('-', '')
+        j['mundo'] = j.get('mundo') if j.get('mundo') in MUNDOS_A else 'mind'
         rv = gemini_base('Eres el revisor científico de AURZANE. Puntúa de 1 a 10 este artículo de divulgación: exactitud respecto a la fuente, ausencia de exageraciones, '
                          'utilidad para el lector, claridad y que no diagnostique ni sustituya a un profesional. Fuente:\n' + base[:2500] + '\n\nArtículo:\n' + j['cuerpo'][:7000] +
                          '\nResponde SOLO con JSON: {"nota": <1-10>, "motivo": "<una frase>"}', 300, 0)
@@ -711,25 +757,34 @@ if os.environ.get('GEMINI_API_KEY') and ESTADO.get('articulo') != HOY and sum(1 
         except Exception: v_ = {}
         nota_a = int(v_.get('nota') or 0)
         aid = 'art-' + hashlib.md5(j['slug'].encode()).hexdigest()[:10]
-        fila = {'mundo': j['mundo'], 'slug': j['slug'], 'titulo': j['titulo'][:120], 'resumen': j.get('resumen', '')[:200], 'cuerpo': j['cuerpo'],
-                'categoria': str(j.get('categoria', ''))[:40] or None, 'estado': 'publicado', 'publicado_at': AHORA.isoformat()}
-        if nota_a >= 9 and SB_SRV:
+        if nota_a < 8:
+            autodesc.insert(0, {'fecha': HOY, 'id': aid, 'tipo': 'articulo', 'fuente_id': f['id'], 'titulo': j['titulo'][:160], 'url': '', 'motivo': f'La revisión le dio {nota_a or "sin nota"}/10: ' + str(v_.get('motivo', ''))[:200]})
+            continue
+        a = {'id': aid, 'slug': j['slug'], 'mundo': j['mundo'], 'titulo': j['titulo'][:120], 'resumen': j.get('resumen', '')[:200], 'categoria': str(j.get('categoria', ''))[:40],
+             'cuerpo': j['cuerpo'], 'fecha': HOY, 'nota': nota_a, 'fuente_id': f['id'], 'imagen': f.get('portada') or '',
+             'fuentes': [{'titulo': f['titulo'][:200], 'url': enlace_f, 'meta': ' · '.join(str(x) for x in (f.get('autores', '')[:120], f.get('editorial', ''), f.get('anio', '')) if x) or str(f.get('fuente', ''))}] if enlace_f else []}
+        art_hechos.insert(0, a)
+        nov.insert(0, {'fecha': HOY, 'url': f'https://aurzane.com/articulos/{a["slug"]}/', 'titulo': 'Artículo: ' + a['titulo']})
+        acciones.append(f'Publiqué el artículo «{a["titulo"]}» en {MUNDOS_A[a["mundo"]][0]} (revisión {nota_a}/10).')
+        if SB_SRV:
+            fila = {'mundo': a['mundo'], 'slug': a['slug'], 'titulo': a['titulo'], 'resumen': a['resumen'], 'cuerpo': a['cuerpo'], 'categoria': a['categoria'] or None,
+                    'estado': 'publicado', 'publicado_at': AHORA.isoformat()}
             st_a, b_a, _, _ = get(SB_URL + '/rest/v1/articulos', {'apikey': SB_SRV, 'Authorization': 'Bearer ' + SB_SRV, 'Content-Type': 'application/json', 'Prefer': 'return=minimal'},
                                   datos=json.dumps(fila).encode(), metodo='POST', t=30)
-            if st_a in (200, 201, 204):
-                art_hechos.insert(0, {'id': aid, 'slug': j['slug'], 'mundo': j['mundo'], 'titulo': j['titulo'], 'fuente_id': f['id'], 'fecha': HOY, 'via': 'ia', 'nota': nota_a})
-                acciones.append(f'Publiqué en Contenido el artículo «{j["titulo"]}» (revisión {nota_a}/10).'); continue
-            aviso('medio', f'No pude guardar el artículo en Contenido ({st_a}): {b_a[:120]!r}', 'articulo_fallido', 'supabase')
-        if nota_a and nota_a < 6:
-            autodesc.insert(0, {'fecha': HOY, 'id': aid, 'tipo': 'articulo', 'titulo': j['titulo'][:160], 'url': '', 'motivo': f'La revisión le dio {nota_a}/10: ' + str(v_.get('motivo', ''))[:200]}); continue
-        pend.append(dict(fila, id=aid, tipo='articulo', fuente_id=f['id'], nota=nota_a, url=f'https://{j["mundo"]}.aurzane.com/articulo.html?mundo={j["mundo"]}&slug={j["slug"]}',
-                         motivo=f'Artículo escrito por Gemini a partir de {"un estudio en acceso abierto" if clase == "estudio" else "una curiosidad verificada"}; revisión {nota_a or "?"}/10: {str(v_.get("motivo", ""))[:160]}' +
-                         ('' if SB_SRV else ' Al aprobarlo se guarda en Contenido y se publica.')))
-        acciones.append(f'Escribí el artículo «{j["titulo"]}» para Contenido; está en la cola para que lo apruebes.')
+            if st_a not in (200, 201, 204): print('::notice title=AI::no se guardó en Contenido', st_a, b_a[:120])
     ESTADO['articulo'] = HOY
     guardar('articulos_ai.json', art_hechos[:2000])
+# todas las páginas de artículos de la IA se regeneran en cada revisión (así un cambio de diseño llega a todas)
+try:
+    for a in art_hechos:
+        if a.get('cuerpo'): pagina_articulo(a)
+    os.makedirs(OUT + '/articulos-ai', exist_ok=True)
+    lista_ai = [{k: a[k] for k in ('slug', 'mundo', 'titulo', 'resumen', 'categoria', 'fecha', 'imagen') if k in a} for a in art_hechos if a.get('cuerpo')][:300]
+    open(OUT + '/articulos-ai/ai.js', 'w', encoding='utf-8').write('window.__azArticulos=' + json.dumps(lista_ai, ensure_ascii=False).replace('</', '<\\/') + ';')
+except Exception as e: print('::notice title=AI::páginas de artículos', str(e)[:150])
 pend.sort(key=puntos, reverse=True)
-_esp = [x for x in pend if x['tipo'] in ('cita', 'curiosidad', 'articulo')][:45]; pend = _esp + [x for x in pend if x['tipo'] not in ('cita', 'curiosidad', 'articulo')][:90 - len(_esp)]
+pend = [x for x in pend if x['tipo'] != 'articulo']
+_esp = [x for x in pend if x['tipo'] in ('cita', 'curiosidad')][:40]; pend = _esp + [x for x in pend if x['tipo'] not in ('cita', 'curiosidad')][:90 - len(_esp)]
 print('::notice title=AI::Cola ' + str(len(pend)) + ' propuestas: ' + ', '.join(f'{k} {v}' for k, v in collections.Counter(x['tipo'] for x in pend).items()) + ' · ' + str(nuevos_auto) + ' descartadas solas')
 json.dump(pend, open(OUT + '/propuestas.json', 'w', encoding='utf-8'), ensure_ascii=False)
 guardar('vistos.json', sorted(vistos)[-4000:]); guardar('aprobados.json', aprob[:400]); guardar('aprendizaje.json', apr); guardar('autodescartes.json', autodesc[:300])
