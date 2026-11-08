@@ -134,7 +134,7 @@ def main():
     for f in fuentes:
         if hoy_n >= MAX_DIA: break
         fid = hashlib.md5(f['url'].encode()).hexdigest()[:10]
-        ya = [h for h in hechos if h['fuente'] == fid]
+        ya = [h for h in hechos if h['fuente'] == fid and (h.get('youtube') or h.get('tiktok'))]   # los que no se subieron se rehacen
         if len(ya) >= int(f.get('max_clips', 5)): continue
         video = f'/tmp/clips/{fid}.mp4'
         if not os.path.exists(video):
@@ -145,6 +145,8 @@ def main():
         else:
             segs, _ = transcribir(video); os.makedirs(os.path.dirname(cache), exist_ok=True); json.dump(segs, open(cache, 'w', encoding='utf-8'), ensure_ascii=False)
         usados = [(h['inicio'], h['fin']) for h in ya]
+        if not (E('CLIPS_YT_REFRESH_TOKEN') or E('CLIPS_TIKTOK_REFRESH_TOKEN')):
+            print('::notice title=Clips::Transcrito', f['titulo'][:60], '(se publicará cuando conectes Clips-All o TikTok)'); continue
         for m in elegir_momentos(segs, f, int(f.get('max_clips', 5)) - len(ya) + 2):
             if hoy_n >= MAX_DIA: break
             ini, fin = float(m['inicio']), float(m['fin'])
@@ -163,7 +165,8 @@ def main():
             if E('CLIPS_TIKTOK_REFRESH_TOKEN'):
                 try: h['tiktok'] = subir_tiktok(sal)
                 except Exception as e: h['error_tiktok'] = str(e)[:200]
-            hechos.append(h); usados.append((ini, fin)); hoy_n += 1 if h.get('youtube') else 0
+            if h.get('youtube') or h.get('tiktok'): hechos.append(h)
+            usados.append((ini, fin)); hoy_n += 1 if h.get('youtube') else 0
             print('::notice title=Clips::', json.dumps(h, ensure_ascii=False)[:300])
             guardar('hechos.json', hechos)
 
