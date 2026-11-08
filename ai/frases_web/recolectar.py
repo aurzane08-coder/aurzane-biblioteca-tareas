@@ -6,7 +6,8 @@ española para autores muertos antes de 1987) y refranes o proverbios tradiciona
 Gemini puntúa cada frase (0-10) por lo que aporta a quien la lee; las de 7 o más quedan listas (ok) y AURZANE AI las va
 publicando poco a poco (3 al día) en aurzane.com/frases/, en «Hoy en AURZANE» y en las redes.
 Salida: ai/frases_web.json"""
-import json, os, re, time, html, hashlib, datetime, urllib.request, urllib.robotparser
+import json, os, re, time, html, hashlib, datetime, socket, urllib.request, urllib.robotparser
+socket.setdefaulttimeout(40)
 
 D = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DEST = os.path.join(D, 'frases_web.json')
@@ -52,11 +53,11 @@ def gemini(prompt):
     k = os.environ.get('GEMINI_API_KEY', '').strip()
     if not k: return ''
     cuerpo = json.dumps({'contents': [{'parts': [{'text': prompt}]}], 'generationConfig': {'temperature': 0, 'maxOutputTokens': 4096}}).encode()
-    for m in ('gemini-flash-latest', 'gemini-flash-lite-latest'):
+    for m in ('gemini-flash-lite-latest', 'gemini-flash-latest'):
         try:
             req = urllib.request.Request(f'https://generativelanguage.googleapis.com/v1beta/models/{m}:generateContent', data=cuerpo,
                                          headers={'Content-Type': 'application/json', 'x-goog-api-key': k})
-            r = json.loads(urllib.request.urlopen(req, timeout=90).read())
+            r = json.loads(urllib.request.urlopen(req, timeout=60).read())
             t = ''.join(x.get('text', '') for x in r['candidates'][0]['content'].get('parts', []))
             if t.strip(): return t
         except Exception as e: print('gemini', m, str(e)[:120]); time.sleep(4)
@@ -82,8 +83,10 @@ for u in paginas:
     time.sleep(5)
 
 # revisión con Gemini: ¿aporta algo bueno a quien la lee hoy? (sin violencia, sin desprecio, sin ideas dañinas)
-for i in range(0, len(nuevas), 25):
-    lote = nuevas[i:i + 25]
+t_gem = time.time()
+for i in range(0, len(nuevas), 30):
+    if time.time() - t_gem > 300: print('Tiempo de revisión agotado; el resto se puntúa en la próxima vuelta'); break
+    lote = nuevas[i:i + 30]
     r = gemini('Eres editor de AURZANE, una web de psicología y bienestar. Puntúa de 0 a 10 cada frase según lo que aporta a una persona '
                'que la lea hoy en redes (inspira, consuela, hace pensar, es clara y actual). Baja la nota si es machista, cruel, religiosa '
                'de forma excluyente, fatalista, confusa o anticuada. Responde SOLO un JSON: [{"n": número, "nota": 0-10}].\n\n' +
@@ -94,8 +97,8 @@ for i in range(0, len(nuevas), 25):
     except Exception: print('Gemini no puntuó este lote; se revisará en la próxima vuelta')
 datos.extend(nuevas)
 # frases que quedaron sin nota en vueltas anteriores: se reintentan
-pend = [f for f in datos if 'nota' not in f][:25]
-if pend and not nuevas:
+pend = [f for f in datos if 'nota' not in f][:30]
+if pend and time.time() - t_gem < 300:
     r = gemini('Puntúa de 0 a 10 cada frase para una web de psicología y bienestar (inspira, consuela o hace pensar; baja la nota si es cruel, '
                'machista, fatalista o confusa). Responde SOLO un JSON: [{"n": número, "nota": 0-10}].\n\n' + '\n'.join(f'{j}. «{f["texto"]}» ({f["autor"]})' for j, f in enumerate(pend)))
     try:

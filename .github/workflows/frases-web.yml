@@ -13,7 +13,7 @@ concurrency: frases-web
 jobs:
   r:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 25
     env:
       GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
       PAGINAS: ${{ github.event.inputs.paginas || '6' }}
