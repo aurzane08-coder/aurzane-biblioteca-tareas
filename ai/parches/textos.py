@@ -18,3 +18,15 @@ for rel, pares in CAMBIOS.items():
     web = rel.split('/')[0]; copia = os.path.join(base, web, 'eliminar', 'textos-' + hoy, os.path.basename(f))
     os.makedirs(os.path.dirname(copia), exist_ok=True); shutil.copy2(f, copia)
     open(f, 'w', encoding='utf-8').write(t); print('corregido', rel)
+
+# El índice de artículos no cargaba la capa común (buscador, filtros, artículos de la IA): se añade si falta
+import re
+f = os.path.join(base, 'aurzane.com/public_html/articulos/index.html')
+try:
+    s = open(f, encoding='utf-8').read()
+    if 'aurzane-paleta.js' not in s:
+        copia = os.path.join(base, 'aurzane.com', 'eliminar', 'textos-' + hoy, 'articulos-index.html'); os.makedirs(os.path.dirname(copia), exist_ok=True); shutil.copy2(f, copia)
+        s = re.sub(r'(<meta name="viewport"[^>]*>)', r'\1\n<script src="https://aurzane.com/aurzane-paleta.js"></script>', s, count=1)
+        open(f, 'w', encoding='utf-8').write(s); print('paleta añadida al índice de artículos')
+    else: print('el índice de artículos ya tenía la paleta')
+except Exception as e: print('índice de artículos', e)
