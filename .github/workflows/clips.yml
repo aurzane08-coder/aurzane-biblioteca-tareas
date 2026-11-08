@@ -2,7 +2,7 @@ name: Clips (Clips-All)
 # Recorta vídeos autorizados de campañas de clipping (clips/fuentes.json) en Shorts verticales con subtítulos y los sube a Clips-All y a TikTok.
 on:
   schedule:
-    - cron: '17 7,11,15,19,22 * * *'
+    - cron: '17 8,13,19 * * *'   # 9:17, 14:17 y 20:17 en España: un clip en cada pasada
   push:
     paths: ['clips/fuentes.json', '.github/workflows/clips.yml', 'marketing/web/youtube/**']
   workflow_dispatch:

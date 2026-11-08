@@ -17,7 +17,8 @@ import json, os, re, subprocess, time, hashlib, urllib.request, urllib.parse, da
 D = os.path.dirname(os.path.abspath(__file__))
 E = lambda k: os.environ.get(k, '').strip()
 HOY = datetime.date.today().isoformat()
-MAX_DIA = int(E('CLIPS_MAX_DIA') or '6')          # el cupo gratis de la API de YouTube da para unas 6 subidas al día por proyecto
+MAX_DIA = int(E('CLIPS_MAX_DIA') or '3')            # 3 clips al día, uno por pasada (mañana, tarde y noche)
+POR_PASADA = int(E('CLIPS_POR_PASADA') or '1')          # el cupo gratis de la API de YouTube da para unas 6 subidas al día por proyecto
 def leer(n, d):
     try: return json.load(open(os.path.join(D, n), encoding='utf-8'))
     except Exception: return d
@@ -122,10 +123,14 @@ def subir_tiktok(ruta):
     r = pedir('https://open.tiktokapis.com/v2/oauth/token/', {'client_key': E('TIKTOK_CLIENT_KEY'), 'client_secret': E('TIKTOK_CLIENT_SECRET'), 'grant_type': 'refresh_token', 'refresh_token': rt})
     if r.get('refresh_token') and r['refresh_token'] != rt: open('/tmp/clips_tiktok_refresh', 'w').write(r['refresh_token'])
     cab = {'Authorization': 'Bearer ' + r['access_token'], 'Content-Type': 'application/json; charset=UTF-8'}
+    yo = pedir('https://open.tiktokapis.com/v2/user/info/?fields=open_id,display_name', cab={'Authorization': 'Bearer ' + r['access_token']}).get('data', {}).get('user', {})
+    nombre = yo.get('display_name', '')
+    if 'aurzane' in nombre.lower():
+        raise RuntimeError(f'El TikTok conectado para clips es «{nombre}» (AURZANE), no la cuenta de clips: vuelve a conectarla con @clipsall16')
     datos = open(ruta, 'rb').read()
     ini = pedir('https://open.tiktokapis.com/v2/post/publish/inbox/video/init/', {'source_info': {'source': 'FILE_UPLOAD', 'video_size': len(datos), 'chunk_size': len(datos), 'total_chunk_count': 1}}, cab)['data']
     pedir(ini['upload_url'], crudo=datos, metodo='PUT', t=600, cab={'Content-Type': 'video/mp4', 'Content-Range': f'bytes 0-{len(datos) - 1}/{len(datos)}'})
-    return ini['publish_id'] + ' (borrador en la bandeja de TikTok)'
+    return ini['publish_id'] + f' (enviado a la bandeja de TikTok de «{nombre}»)'
 
 def main():
     fuentes = [f for f in leer('fuentes.json', []) if f.get('autorizado') is True and f.get('url')]
@@ -134,9 +139,9 @@ def main():
     if not fuentes: print('::notice title=Clips::No hay vídeos autorizados en clips/fuentes.json'); return
     if not E('CLIPS_YT_REFRESH_TOKEN'): print('::notice title=Clips::Falta el secreto CLIPS_YT_REFRESH_TOKEN (permiso del canal Clips-All)')
     os.makedirs('/tmp/clips', exist_ok=True)
-    nuevas_tr = 0
+    nuevas_tr = 0; subidos = 0
     for f in fuentes:
-        if hoy_n >= MAX_DIA: break
+        if hoy_n >= MAX_DIA or subidos >= POR_PASADA: break
         fid = hashlib.md5(f['url'].encode()).hexdigest()[:10]
         ya = [h for h in hechos if h['fuente'] == fid and (h.get('youtube') or h.get('tiktok'))]   # los que no se subieron se rehacen
         if len(ya) >= int(f.get('max_clips', 5)): continue
@@ -159,7 +164,7 @@ def main():
         if not (E('CLIPS_YT_REFRESH_TOKEN') or E('CLIPS_TIKTOK_REFRESH_TOKEN')):
             print('::notice title=Clips::Transcrito', f['titulo'][:60], '(se publicará cuando conectes Clips-All o TikTok)'); continue
         for m in elegir_momentos(segs, f, int(f.get('max_clips', 5)) - len(ya) + 2):
-            if hoy_n >= MAX_DIA: break
+            if hoy_n >= MAX_DIA or subidos >= POR_PASADA or len(ya) >= int(f.get('max_clips', 5)): break
             ini, fin = float(m['inicio']), float(m['fin'])
             if not (15 <= fin - ini <= 60) or any(not (fin <= a or ini >= b) for a, b in usados): continue
             cid = f'{fid}-{int(ini)}'; sal = f'/tmp/clips/{cid}.mp4'; ass = f'/tmp/clips/{cid}.ass'
@@ -178,6 +183,7 @@ def main():
                 except Exception as e: h['error_tiktok'] = str(e)[:200]
             if h.get('youtube') or h.get('tiktok'): hechos.append(h)
             usados.append((ini, fin)); hoy_n += 1 if h.get('youtube') else 0
+            if h.get('youtube') or h.get('tiktok'): subidos += 1; ya.append(h)
             print('::notice title=Clips::', json.dumps(h, ensure_ascii=False)[:300])
             guardar('hechos.json', hechos)
 

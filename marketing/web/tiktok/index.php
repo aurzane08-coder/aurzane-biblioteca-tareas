@@ -18,7 +18,7 @@ if (isset($_GET['inicio'])) {
     $st = bin2hex(random_bytes(16));
     file_put_contents("$dir/state", $st . "\t" . time() . "\t" . $cuenta);
     $q = http_build_query(['client_key' => $app['client_key'], 'scope' => 'user.info.basic,video.upload,video.publish',
-        'response_type' => 'code', 'redirect_uri' => $redir, 'state' => $st]);
+        'response_type' => 'code', 'redirect_uri' => $redir, 'state' => $st] + ($cuenta === 'clips' ? ['disable_auto_auth' => 1] : []));
     header('Location: https://www.tiktok.com/v2/auth/authorize/?' . $q, true, 302); exit;
 }
 if (isset($_GET['error'])) fin('TikTok no dio permiso: ' . htmlspecialchars($_GET['error_description'] ?? $_GET['error']));
