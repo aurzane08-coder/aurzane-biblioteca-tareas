@@ -1,0 +1,9 @@
+200 https://proverbia.net/robots.txt
+200 https://proverbia.net/
+200 https://proverbia.net/frase-del-dia
+200 https://proverbia.net/autores
+404 https://proverbia.net/temas
+200 https://www.mundifrases.com/robots.txt
+200 https://www.mundifrases.com/
+200 https://www.frasesypensamientos.com.ar/robots.txt
+200 https://www.frasesypensamientos.com.ar/
