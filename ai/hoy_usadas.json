@@ -1,0 +1,36 @@
+{
+ "frases": [
+  "cita-2a05ffb2be"
+ ],
+ "dias": {
+  "2026-11-08": {
+   "fecha": "2026-11-08",
+   "frase": {
+    "texto": "En el espíritu de un hombre muy moderado y cándido nada hallarás corrompido, contaminado ni ocultamente lisiado.",
+    "autor": "Marco Aurelio, Epicteto, Teofrasto, Cebes",
+    "obra": "Obras de los moralistas griegos: Marco Aurelio, Teofrasto, Epicteto, Cebes",
+    "url": "https://aurzane.com/biblioteca/libro/moralistas-griegos.html",
+    "fuente": ""
+   },
+   "curiosidad": {
+    "titulo": "¿Influye la cultura en nuestra salud mental?",
+    "texto": "Cuidar la salud mental de mujeres musulmanas y árabes en EE.UU. requiere una atención adaptada a su cultura. Un estudio analiza cómo la resiliencia y el bienestar de estas mujeres están profundamente conectados con sus valores culturales y religiosos. Por ello, la atención psicológica debe ser congruente con su identidad para ser eficaz.",
+    "fuente": "Frontiers in global women's health",
+    "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13720362/"
+   },
+   "ejercicio": {
+    "titulo": "Respiración 4-7-8 guiada para dormir y calmar la ansiedad",
+    "url": "https://mind.aurzane.com/ejercicios/respiracion-4-7-8/"
+   },
+   "test": {
+    "titulo": "Test de satisfacción con la vida (felicidad) gratis",
+    "url": "https://mind.aurzane.com/test-de-satisfaccion-con-la-vida/"
+   },
+   "mas_frases": false,
+   "musica": {
+    "url": "https://aurzane.com/marketing/musica/1288634.mp3",
+    "credito": "«Too Soft To Touch», Blindmoore (Jamendo), CC BY"
+   }
+  }
+ }
+}
