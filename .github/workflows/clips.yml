@@ -51,6 +51,15 @@ jobs:
         run: |
           sudo apt-get -qq update >/dev/null && sudo apt-get -qq install -y ffmpeg fonts-dejavu-core >/dev/null
           pip install -q --break-system-packages faster-whisper yt-dlp
+      - name: Material descargado en el ordenador (rama material-clips, en trozos de menos de 100 MB)
+        if: steps.hay.outputs.si == '1'
+        run: |
+          mkdir -p /tmp/material
+          if git fetch -q --depth=1 origin material-clips 2>/dev/null; then
+            git archive FETCH_HEAD | tar -x -C /tmp/material
+            for d in /tmp/material/*/; do [ -d "$d" ] && cat "$d"parte-* > "/tmp/material/$(basename "$d").mp4" && rm -rf "$d"; done
+            ls -la /tmp/material
+          fi
       - name: Hacer y subir clips
         if: steps.hay.outputs.si == '1'
         run: python3 -u clips/clips.py
