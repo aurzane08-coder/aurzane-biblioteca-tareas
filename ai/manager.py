@@ -617,9 +617,11 @@ auto_lib = auto_lib_no = 0
 if cand:
     r_ = gemini_rapido('Eres el editor de la biblioteca gratuita de psicología AURZANE (lectores hispanohablantes, público general y estudiantes). '
                        'Puntúa de 1 a 10 si vale la pena publicar cada obra: tema de psicología o salud mental útil, obra seria y completa, no actas, '
-                       'no catálogos ni boletines, no temas ajenos. Responde solo con los números separados por comas, en el mismo orden.\n'
+                       'no catálogos ni boletines, no temas ajenos. Responde SOLO con una lista JSON de enteros, una nota por obra y en el mismo orden, por ejemplo [8, 5, 9].\n'
                        + '\n'.join(f'{k + 1}. [{c["tipo"]}, {c.get("idioma")}, {c.get("paginas")} págs] {c["titulo"][:160]} · {(c.get("editorial") or "")[:60]} · {(c.get("resumen") or "")[:220]}' for k, c in enumerate(cand)))
-    notas = [int(x) for x in re.findall(r'\b\d{1,2}\b', r_)]
+    try: notas = [int(x) for x in json.loads(re.search(r'\[[\d,\s]*\]', r_).group(0))]
+    except Exception: notas = []
+    print(f'::notice title=AI::Libros y estudios: {len(cand)} por decidir, la IA devolvió {len(notas)} notas')
     if len(notas) == len(cand):
         for c, n_ in zip(cand, notas):
             vistos.add(c['id'])
