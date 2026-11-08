@@ -837,6 +837,75 @@ open(OUT + '/mapa/index.html', 'w', encoding='utf-8').write(
     'h2{font:700 1.1rem "Instrument Sans",sans-serif;letter-spacing:.04em;color:#5F5044;margin:0 0 6px}ul{list-style:none;padding:0;margin:0}li a{color:inherit;text-decoration:none;display:block;padding:4px 0;border-bottom:1px solid rgba(95,80,68,.12)}li a:hover{text-decoration:underline}</style></head><body>'
     '<div class="h"><div class="w"><a href="https://aurzane.com/">AURZANE</a><h1>Mapa del sitio</h1><p>Todas las páginas del ecosistema. <a href="https://aurzane.com/novedades/">Ver novedades</a> · <a href="https://aurzane.com/biblioteca/">Biblioteca</a></p></div></div>'
     f'<main class="w">{mapa_html}</main></body></html>')
+# «Hoy en AURZANE»: frase, curiosidad, ejercicio, test y música tranquila del día para la portada (aurzane.com/hoy/hoy.json)
+try:
+    os.makedirs(OUT + '/hoy', exist_ok=True)
+    usadas = leer('hoy_usadas.json', {'frases': [], 'dias': {}})
+    # frases célebres recogidas de Proverbia (ai/frases_web/recolectar.py): se publican poco a poco, 3 nuevas al día
+    fw = leer('frases_web.json', [])
+    if fw and not any(f.get('publicada') == HOY for f in fw):
+        listas = sorted([f for f in fw if f.get('ok') and not f.get('publicada')], key=lambda f: -f.get('nota', 0))
+        for f in listas[:3]: f['publicada'] = HOY
+        if listas: guardar('frases_web.json', fw); acciones.append(f'Publiqué {min(3, len(listas))} frases célebres nuevas en aurzane.com/frases/ (quedan {max(0, len(listas) - 3)} en cola).')
+    pub = sorted([f for f in fw if f.get('publicada')], key=lambda f: (f['publicada'], f.get('nota', 0)), reverse=True)
+    for f in pub: f['url'] = 'https://aurzane.com/frases/#' + f['id']
+    os.makedirs(OUT + '/frases', exist_ok=True)
+    if pub:
+        temas_ = collections.Counter(f['tema'] for f in pub)
+        lista_ = ''.join(f'<figure id="{E(f["id"])}" data-tema="{E(f["tema"])}"><blockquote>{E(f["texto"])}</blockquote><figcaption><strong>{E(f["autor"])}</strong>'
+                         + (f' ({E(f["vida"])})' if f.get('vida') else '') + (f'. {E(f["descripcion"])}' if f.get('descripcion') else '')
+                         + f' <span class="f">Vía <a href="{E(f["url_fuente"])}" rel="nofollow noopener">{E(f["fuente"])}</a> · {E(f["publicada"])}</span></figcaption></figure>' for f in pub)
+        open(OUT + '/frases/index.html', 'w', encoding='utf-8').write(
+            '<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><script src="https://aurzane.com/aurzane-paleta.js"></script>'
+            f'<title>Frases célebres para pensar y sentirte mejor | AURZANE</title><meta name="description" content="{len(pub)} frases célebres de autores clásicos sobre la vida, la esperanza, la calma y la superación. Cada día, frases nuevas seleccionadas por AURZANE.">'
+            '<link rel="canonical" href="https://aurzane.com/frases/"><meta property="og:image" content="https://aurzane.com/og-portada.jpg"><link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@500;700&family=Instrument+Sans:wght@400;600&display=swap" rel="stylesheet">'
+            '<style>body{margin:0;background:var(--bg,#F6F0E8);color:var(--text,#2E2620);font:16px/1.6 "Instrument Sans",system-ui,sans-serif}.h{background:#0F1530;color:#F5F3EE;padding:40px 20px}.h a{color:#EACF92}'
+            '.w{max-width:860px;margin:0 auto}h1{font:700 2.1rem "Bodoni Moda",serif;margin:6px 0}main{padding:10px 20px 60px}.t{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0}'
+            '.t button{min-height:40px;border:1px solid rgba(95,80,68,.3);background:transparent;color:inherit;border-radius:99px;padding:0 14px;font:inherit;cursor:pointer}.t button[aria-pressed=true]{background:#0F1530;color:#fff}'
+            'figure{margin:0;padding:22px 0;border-bottom:1px solid rgba(95,80,68,.15)}blockquote{margin:0;font:500 1.35rem/1.35 "Bodoni Moda",serif}figcaption{margin-top:8px;color:#6b6153;font-size:.93rem}.f{display:block;font-size:.8rem}figcaption a{color:inherit}</style></head><body>'
+            '<div class="h"><div class="w"><a href="https://aurzane.com/">AURZANE</a><h1>Frases célebres</h1><p>Palabras de autores clásicos para pensar, consolarte o tomar impulso. Cada día añadimos frases nuevas. '
+            '<a href="https://aurzane.com/#hoy">Ver la frase de hoy</a> · <a href="https://aurzane.com/biblioteca/">Biblioteca</a></p></div></div><main class="w">'
+            '<div class="t" role="group" aria-label="Filtrar por tema"><button type="button" aria-pressed="true" data-t="">Todas</button>'
+            + ''.join(f'<button type="button" aria-pressed="false" data-t="{E(t)}">{E(t.replace("-", " ").capitalize())}</button>' for t, _ in temas_.most_common(14)) + '</div>'
+            + lista_ + '<p style="font-size:.85rem;color:#6b6153;margin-top:24px">Solo publicamos frases de autores en dominio público y refranes tradicionales, con su autor y la fuente donde las encontramos.</p></main>'
+            '<script>document.querySelectorAll(".t button").forEach(function(b){b.onclick=function(){var t=b.dataset.t;document.querySelectorAll(".t button").forEach(function(x){x.setAttribute("aria-pressed",x===b)});'
+            'document.querySelectorAll("figure").forEach(function(f){f.hidden=t&&f.dataset.tema!==t})}})</script></body></html>')
+    if usadas.get('dias', {}).get(HOY):
+        hoy = usadas['dias'][HOY]
+    else:
+        pool = [c for c in leer('citas.json', []) if c.get('nota', 0) >= 8] + [dict(c, obra='', fuente=c.get('fuente', '')) for c in pub]
+        libres = [c for c in pool if c['id'] not in usadas['frases'][-300:]] or pool
+        sem = int(hashlib.md5(HOY.encode()).hexdigest(), 16)
+        fr = libres[sem % len(libres)] if libres else None
+        curs = [c for c in leer('curiosidades.json', []) if c.get('auto') or c.get('aprobada', True)]
+        cur = curs[sem % len(curs)] if curs else None
+        pags = leer('pruebas_paginas.json', [])
+        ejs = [p['url'] for p in pags if p['tipo'] == 'ejercicio']; tests = [p['url'] for p in pags if p['tipo'] == 'test']
+        musica = [b_ for b_ in leer(os.path.join('..', 'marketing', 'musica_banco.json'), []) if b_.get('calma')]
+        mu = musica[(sem // 7) % len(musica)] if musica else None
+        def titulo_url(u):   # el título real de la página (con tildes); si no se puede leer, el de la dirección
+            try:
+                m_ = re.search(rb'<title>(.*?)</title>', get(u)[1][:20000], re.S)
+                if m_: return html.unescape(re.split(r'\s[|·–—-]\s|:', m_.group(1).decode('utf-8', 'ignore'))[0]).strip()
+            except Exception: pass
+            return urllib.parse.urlparse(u).path.strip('/').split('/')[-1].replace('-', ' ').capitalize()
+        hoy = {'fecha': HOY,
+               'frase': {'texto': fr['texto'], 'autor': fr.get('autor', ''), 'obra': fr.get('libro') or fr.get('obra', ''), 'url': fr.get('url', ''), 'fuente': fr.get('fuente', '')} if fr else None,
+               'curiosidad': {'titulo': cur['titulo'], 'texto': cur['resumen'], 'fuente': cur.get('fuente', ''), 'url': cur.get('url', '')} if cur else None,
+               'ejercicio': {'titulo': titulo_url(ejs[sem % len(ejs)]), 'url': ejs[sem % len(ejs)]} if ejs else None,
+               'test': {'titulo': titulo_url(tests[(sem // 3) % len(tests)]), 'url': tests[(sem // 3) % len(tests)]} if tests else None,
+               'mas_frases': bool(pub),
+               'musica': {'url': f'https://aurzane.com/marketing/musica/{mu["id"]}.mp3', 'credito': mu['credito']} if mu else None}
+        if mu:   # solo se ofrece la música si el archivo está de verdad en el servidor
+            st_ = get(hoy['musica']['url'], metodo='HEAD')[0]
+            if st_ != 200: hoy['musica'] = None
+        if fr: usadas['frases'] = (usadas['frases'] + [fr['id']])[-400:]
+        usadas['dias'] = {k: v for k, v in usadas.get('dias', {}).items() if k >= (AHORA.date() - datetime.timedelta(days=30)).isoformat()}
+        usadas['dias'][HOY] = hoy; guardar('hoy_usadas.json', usadas)
+        acciones.append('Preparé «Hoy en AURZANE» para la portada: frase, curiosidad, ejercicio, test y música del día.')
+    json.dump(hoy, open(OUT + '/hoy/hoy.json', 'w', encoding='utf-8'), ensure_ascii=False)
+except Exception as e:
+    aviso('bajo', 'No pude preparar «Hoy en AURZANE»: ' + str(e)[:120], 'hoy', 'hoy')
 if conexiones['fuera_sitemap']:
     open(OUT + '/sitemap-ai.xml', 'w', encoding='utf-8').write('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + ''.join(f'<url><loc>{E(u)}</loc></url>' for u in conexiones['fuera_sitemap']) + '</urlset>')
 # reparación de enlaces internos rotos con redirección 301 a la página más parecida

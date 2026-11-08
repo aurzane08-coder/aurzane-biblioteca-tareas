@@ -1,0 +1,27 @@
+name: Frases célebres (recolector)
+# Cada día lee con calma unas pocas temáticas de Proverbia.net (respetando robots.txt), guarda solo frases de autores en
+# dominio público y refranes, y Gemini las puntúa. AURZANE AI las publica después, 3 al día, en aurzane.com/frases/.
+on:
+  schedule:
+    - cron: '23 3 * * *'
+  workflow_dispatch:
+    inputs:
+      paginas: { description: 'Páginas a leer', default: '6' }
+permissions:
+  contents: write
+concurrency: frases-web
+jobs:
+  r:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      PAGINAS: ${{ github.event.inputs.paginas || '6' }}
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 ai/frases_web/recolectar.py
+      - run: |
+          git config user.name "aurzane-bot"; git config user.email "bot@aurzane.com"
+          git add ai/frases_web.json ai/frases_web.json.estado
+          git commit -qm "frases: recolección $(date +%F)" || exit 0
+          for i in 1 2 3 4 5; do git pull --rebase -q && git push -q && break; sleep 7; done

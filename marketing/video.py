@@ -165,7 +165,7 @@ def generar(dias=2):
     cat = {p['id']: p for p in mk.leer('catalogo.json')['productos']}
     est = mk.leer('estado.json')
     hoy = mk.HOY
-    ids = sorted({i for d in range(dias) for i in est['calendario'].get((hoy + datetime.timedelta(days=d)).isoformat(), {}).get('4', {}).values()})
+    ids = sorted({i for d in range(dias) for i in est['calendario'].get((hoy + datetime.timedelta(days=d)).isoformat(), {}).get('4', {}).values()} | {i for d in range(dias) for i in est['calendario'].get((hoy + datetime.timedelta(days=d)).isoformat(), {}).get('5', {}).values()})
     os.makedirs(os.path.join(D, 'salida', 'video'), exist_ok=True)
     capas, pend = [], []
     for i in ids:
@@ -209,7 +209,7 @@ def generar_imagenes(dias=2):
     sobre su propio fondo desenfocado. Se preparan con 2 días de margen para que ya estén en aurzane.com al publicar."""
     cat = {p['id']: p for p in mk.leer('catalogo.json')['productos']}
     est = mk.leer('estado.json'); hoy = mk.HOY
-    ids = sorted({x[r] for d in range(dias) for fr, x in est['calendario'].get((hoy + datetime.timedelta(days=d)).isoformat(), {}).items() if fr != '4'
+    ids = sorted({x[r] for d in range(dias) for fr, x in est['calendario'].get((hoy + datetime.timedelta(days=d)).isoformat(), {}).items() if fr not in ('4', '5')
                   for r in ('instagram', 'facebook') if r in x})
     hechos = 0
     for i in ids:
