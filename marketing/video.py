@@ -146,9 +146,9 @@ def pixabay(q, semilla):
 
 def capa_de(p):
     if p['tipo'] == 'frase':
-        return dict(titulo=p['titulo'], cita=True, autor='' if p.get('autor') == 'AURZANE' else p.get('autor'), pie='aurzane.com · psicología y bienestar')
+        return dict(titulo=p['titulo'], cita=True, autor='' if p.get('autor') == 'AURZANE' else p.get('autor'))
     if p['tipo'] == 'curiosidad':
-        return dict(kicker='¿Sabías que…?', titulo=p['titulo'], sub=mk.recorta(p.get('dato') or p['texto'], 150), pie='aurzane.com · psicología')
+        return dict(kicker='¿Sabías que…?', titulo=p['titulo'], sub=mk.recorta(p.get('dato') or p['texto'], 150))
     kick = {'test': 'Test gratis', 'calculadora': 'Calculadora gratis', 'curso': 'Curso gratis'}.get(p['tipo'], 'Gratis')
     return dict(kicker=kick, titulo=p['ganchos'][0], sub=mk.recorta(p['texto'], 120), pie=mk.pie_de(p['url']))
 
