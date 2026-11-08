@@ -612,7 +612,7 @@ if cola_c and os.environ.get('GEMINI_API_KEY'):
 if auto_citas: acciones.append(f'Aprobé sola {auto_citas} frases de libros con nota 8 o más; salen en redes sin que tengas que revisarlas.')
 # La IA decide sola los libros y estudios ya verificados (PDF descargable y completo): con 7 o más se publican, con menos se descartan.
 # Si la IA no responde se quedan para la siguiente pasada; nunca se publican sin nota.
-cand = [p for p in pend if p['tipo'] in ('libro', 'estudio') and p.get('paginas')][:30]
+cand = [p for p in pend if p['tipo'] in ('libro', 'estudio') and p.get('paginas')][:60]
 auto_lib = auto_lib_no = 0
 if cand:
     r_ = gemini_rapido('Eres el editor de la biblioteca gratuita de psicología AURZANE (lectores hispanohablantes, público general y estudiantes). '
@@ -625,7 +625,7 @@ if cand:
     if len(notas) == len(cand):
         for c, n_ in zip(cand, notas):
             vistos.add(c['id'])
-            if n_ >= 7 and auto_lib < 12:
+            if n_ >= 7 and auto_lib < 15:
                 c = dict(c); ok, motivo = verificar(c, guardar_pdf=True)
                 if not ok: descartar_solo(c, 'Al publicarla ' + motivo); continue
                 c.update(publicado=HOY, nota=n_, auto=True); aprob.insert(0, c); nuevos_pub.append(c); auto_lib += 1
