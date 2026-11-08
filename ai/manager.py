@@ -765,12 +765,17 @@ def pagina_articulo(a):
     for k_, v_ in rep.items(): h_ = h_.replace(k_, v_)
     os.makedirs(f'{OUT}/articulos-ai/{a["slug"]}', exist_ok=True)
     open(f'{OUT}/articulos-ai/{a["slug"]}/index.html', 'w', encoding='utf-8').write(h_)
-if os.environ.get('GEMINI_API_KEY') and ESTADO.get('articulo') != HOY:
+_ah = ESTADO.get('art_dia', {}) if isinstance(ESTADO.get('art_dia'), dict) else {}
+_ah = {HOY: _ah.get(HOY, {'hechos': 0, 'intentos': 0})}; ESTADO['art_dia'] = _ah
+# hasta 2 artículos al día; si la IA falla (cupo, nota baja) se reintenta en la siguiente revisión, máximo 6 intentos al día
+if (os.environ.get('GEMINI_API_KEY') or os.environ.get('GITHUB_TOKEN')) and _ah[HOY]['hechos'] < 2 and _ah[HOY]['intentos'] < 6:
     usados_a = {a.get('fuente_id') for a in art_hechos} | {a.get('fuente_id') for a in autodesc if a.get('tipo') == 'articulo'}
-    fuentes_a = [('estudio', x) for x in aprob if x['tipo'] == 'estudio' and x['id'] not in usados_a and x.get('resumen')][:1] or \
-                [('curiosidad', x) for x in curios_ok if x['id'] not in usados_a][:1]
+    fuentes_a = ([('estudio', x) for x in aprob if x['tipo'] == 'estudio' and x['id'] not in usados_a and x.get('resumen')][:2] +
+                 [('curiosidad', x) for x in curios_ok if x['id'] not in usados_a][:1])
     titulos_previos = '; '.join(a['titulo'] for a in art_hechos[:30])
     for clase, f in fuentes_a:
+        if _ah[HOY]['intentos'] >= 6 or _ah[HOY]['hechos'] >= 2: break
+        _ah[HOY]['intentos'] += 1
         enlace_f = f'https://aurzane.com/biblioteca/recientes/{f["id"]}/' if clase == 'estudio' else (f.get('url') or '')
         base = (f'Estudio publicado en acceso abierto:\nTítulo: {f["titulo"]}\nAutores: {f.get("autores", "")}\nRevista: {f.get("editorial", "")} ({f.get("anio", "")})\nResumen: {f.get("resumen", "")[:2500]}'
                 if clase == 'estudio' else f'Curiosidad verificada: {f["titulo"]}. {f.get("resumen", "")} Fuente: {f.get("fuente", "")}')
@@ -805,7 +810,7 @@ if os.environ.get('GEMINI_API_KEY') and ESTADO.get('articulo') != HOY:
         a = {'id': aid, 'slug': j['slug'], 'mundo': j['mundo'], 'titulo': j['titulo'][:120], 'resumen': j.get('resumen', '')[:200], 'categoria': str(j.get('categoria', ''))[:40],
              'cuerpo': j['cuerpo'], 'fecha': HOY, 'nota': nota_a, 'fuente_id': f['id'], 'imagen': f.get('portada') or '',
              'fuentes': [{'titulo': f['titulo'][:200], 'url': enlace_f, 'meta': ' · '.join(str(x) for x in (f.get('autores', '')[:120], f.get('editorial', ''), f.get('anio', '')) if x) or str(f.get('fuente', ''))}] if enlace_f else []}
-        art_hechos.insert(0, a)
+        art_hechos.insert(0, a); _ah[HOY]['hechos'] += 1
         nov.insert(0, {'fecha': HOY, 'url': f'https://aurzane.com/articulos/{a["slug"]}/', 'titulo': 'Artículo: ' + a['titulo']})
         acciones.append(f'Publiqué el artículo «{a["titulo"]}» en {MUNDOS_A[a["mundo"]][0]} (revisión {nota_a}/10).')
         if SB_SRV:
@@ -814,7 +819,9 @@ if os.environ.get('GEMINI_API_KEY') and ESTADO.get('articulo') != HOY:
             st_a, b_a, _, _ = get(SB_URL + '/rest/v1/articulos', {'apikey': SB_SRV, 'Authorization': 'Bearer ' + SB_SRV, 'Content-Type': 'application/json', 'Prefer': 'return=minimal'},
                                   datos=json.dumps(fila).encode(), metodo='POST', t=30)
             if st_a not in (200, 201, 204): print('::notice title=AI::no se guardó en Contenido', st_a, b_a[:120])
+        break   # uno por revisión
     ESTADO['articulo'] = HOY
+    print(f'::notice title=AI::Artículos hoy: {_ah[HOY]["hechos"]} publicados en {_ah[HOY]["intentos"]} intentos')
     guardar('articulos_ai.json', art_hechos[:2000])
 # todas las páginas de artículos de la IA se regeneran en cada revisión (así un cambio de diseño llega a todas)
 try:
