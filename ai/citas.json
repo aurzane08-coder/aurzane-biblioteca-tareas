@@ -1,5 +1,71 @@
 [
  {
+  "id": "cita-d51185a647",
+  "texto": "Todo el que aguarda sabe que la victoria es suya; porque la vida es larga y el arte es un juguete.",
+  "autor": "Antonio Machado",
+  "libro": "Poesías completas",
+  "url": "https://aurzane.com/biblioteca/libro/poesias-completas-machado.html",
+  "lic": "Dominio público",
+  "fecha": "2026-11-08",
+  "nota": 8,
+  "auto": true
+ },
+ {
+  "id": "cita-0235aa1eab",
+  "texto": "¡Alma, que en vano quisiste ser más joven cada día, arranca tu flor, la humilde flor de la melancolía!",
+  "autor": "Antonio Machado",
+  "libro": "Poesías completas",
+  "url": "https://aurzane.com/biblioteca/libro/poesias-completas-machado.html",
+  "lic": "Dominio público",
+  "fecha": "2026-11-08",
+  "nota": 8,
+  "auto": true
+ },
+ {
+  "id": "cita-195c2ee91a",
+  "texto": "El amor y el dolor elevan el alma, y Dios se revela a los mártires de todo culto puro y noble.",
+  "autor": "Gertrudis Gómez de Avellaneda",
+  "libro": "Sab",
+  "url": "https://aurzane.com/biblioteca/libro/sab.html",
+  "lic": "Dominio público",
+  "fecha": "2026-11-08",
+  "nota": 8,
+  "auto": true
+ },
+ {
+  "id": "cita-98faa37a9f",
+  "texto": "Hay en los afectos de las almas ardientes y apasionadas como una fuerza magnética, que conmueve y domina todo cuanto se les acerca.",
+  "autor": "Gertrudis Gómez de Avellaneda",
+  "libro": "Sab",
+  "url": "https://aurzane.com/biblioteca/libro/sab.html",
+  "lic": "Dominio público",
+  "fecha": "2026-11-08",
+  "nota": 8,
+  "auto": true
+ },
+ {
+  "id": "cita-a0f8643516",
+  "texto": "Espectáculo de la bóveda estrellada, siempre el mismo y nunca monótono para el humano en meditación: ¿qué mérito mayor podía atribuirte que el de consolar mis tristezas?",
+  "autor": "Leopoldo Lugones",
+  "libro": "Las fuerzas extrañas",
+  "url": "https://aurzane.com/biblioteca/libro/las-fuerzas-extranas.html",
+  "lic": "Dominio público",
+  "fecha": "2026-11-08",
+  "nota": 8,
+  "auto": true
+ },
+ {
+  "id": "cita-cb3970d4e2",
+  "texto": "Su antigüedad formada por el transcurso de todos los tiempos, era, no obstante, ligera como un aroma; su profundidad estaba serena como un sueño en paz.",
+  "autor": "Leopoldo Lugones",
+  "libro": "Las fuerzas extrañas",
+  "url": "https://aurzane.com/biblioteca/libro/las-fuerzas-extranas.html",
+  "lic": "Dominio público",
+  "fecha": "2026-11-08",
+  "nota": 9,
+  "auto": true
+ },
+ {
   "id": "cita-8cc5cf88c0",
   "texto": "Las humanas vidas con todos sus pasos, con todas sus horas, promovían resonancias eternas que sellaba la muerte con un círculo de infinitas responsabilidades.",
   "autor": "Ramón del Valle-Inclán",

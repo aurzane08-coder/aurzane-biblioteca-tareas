@@ -7,20 +7,16 @@
   1,
   0
  ],
- "sitio_caido|vaciar_cache": [
-  0,
-  7
- ],
  "pagina_error|vaciar_cache": [
   0,
   1
  ],
  "prueba_fallida|vaciar_cache": [
-  13,
+  19,
   3
  ],
- "red_fallos|relanzar_marketing": [
+ "red_manual|reintentar_flujo": [
   0,
-  4
+  2
  ]
 }

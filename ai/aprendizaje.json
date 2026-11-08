@@ -125,7 +125,7 @@
  ],
  "ed:": [
   39,
-  10
+  12
  ],
  "ed:undefined": [
   0,
@@ -350,5 +350,9 @@
  "ed:Instituto Tecnológico y de Estudios Superiores de Occidente": [
   1,
   0
+ ],
+ "ed:University of Huddersfield": [
+  0,
+  1
  ]
 }

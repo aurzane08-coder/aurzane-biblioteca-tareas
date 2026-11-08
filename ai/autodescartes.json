@@ -1,6 +1,39 @@
 [
  {
   "fecha": "2026-11-08",
+  "id": "oa-W7222577669",
+  "tipo": "libro",
+  "titulo": "Early Years Talk: Toolkit for Families",
+  "url": "https://pure.hud.ac.uk/en/publications/05bb99a0-3aad-4f5b-9a3b-f9f977dfcf45",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 22 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "HTTP Error 403: Forbidden https://pure.hud.ac.uk/files/145274400/Family_Toolkit_Online_Version.pdf",
+   "HTTP Error 403: Forbidden https://pure.hud.ac.uk/files/145274398/Family_Toolkit_Activity_Pages_Printable_A3.pdf",
+   "200 application/pdf https://www.hud.ac.uk/media/policydocuments/Data-Protection-Policy.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-08",
+  "id": "oa-W7221825766",
+  "tipo": "libro",
+  "titulo": "Communication and Presence in Higher Education",
+  "url": "https://doi.org/10.56365/mhf0r164",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 19 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://press.scientia.international/press/en/catalog/download/19/10/71?inline=1"
+  ]
+ },
+ {
+  "fecha": "2026-11-08",
+  "id": "art-687f96d66e",
+  "tipo": "articulo",
+  "titulo": "Depresión e insuficiencia cardiaca: el vínculo inflamatorio",
+  "url": "https://live.aurzane.com/articulo.html?mundo=live&slug=depresion-e-insuficiencia-cardiaca-inflamacion",
+  "motivo": "No tiene un PDF libre que se pueda descargar",
+  "probados": []
+ },
+ {
+  "fecha": "2026-11-08",
   "id": "cita-2af1009745",
   "tipo": "cita",
   "titulo": "Los más negros pensamientos caían sobre su alma, como se abate sobre un cadáver famélica bandada de grajos y a picotazos le destrozan y le comen.",
