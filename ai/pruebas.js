@@ -83,7 +83,12 @@ async function probar(browser, p) {
 (async () => {
   const browser = await chromium.launch();
   const out = [];
-  for (const p of lista) { const r = await probar(browser, p); out.push(r); console.log((r.ok ? 'OK   ' : r.ok === null ? 'BLOQ ' : 'FALLO') + ' ' + p.url + ' · ' + r.detalle); }
+  let seguidos = 0;
+  for (const p of lista) {
+    if (seguidos >= 4) { out.push({ url: p.url, tipo: p.tipo, ok: null, detalle: 'Sin comprobar: SiteGround está frenando al navegador de pruebas', ms: 0, errores: [] }); continue; }
+    const r = await probar(browser, p); out.push(r); seguidos = r.ok === null ? seguidos + 1 : 0;
+    console.log((r.ok ? 'OK   ' : r.ok === null ? 'BLOQ ' : 'FALLO') + ' ' + p.url + ' · ' + r.detalle);
+  }
   await browser.close();
   fs.mkdirSync('/tmp/ai', { recursive: true });
   fs.writeFileSync('/tmp/ai/pruebas.json', JSON.stringify({ fecha: new Date().toISOString(), resultados: out }));
