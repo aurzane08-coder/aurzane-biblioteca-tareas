@@ -5,6 +5,7 @@
 #   python3 marketing/mk.py clics LOG    -> suma los clics del registro del servidor a clics.csv
 # Reglas: cada red recibe un producto distinto en cada franja y recorre todo el catálogo antes de repetir;
 # los productos nuevos salen primero; nada se publica en grupos ni comunidades de terceros.
+import socket; socket.setdefaulttimeout(90)   # ninguna descarga puede colgar la ejecución
 import time
 import json, os, re, sys, hashlib, datetime, collections, urllib.request, urllib.parse, html, csv
 

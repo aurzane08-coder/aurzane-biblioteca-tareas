@@ -134,7 +134,7 @@ jobs:
             $SSH "$SG_USER@$SG_HOST" "cat www/aurzane.com/ir-clics.log 2>/dev/null" > /tmp/clics.log || true
             python3 marketing/mk.py clics /tmp/clics.log
           fi
-          rsync -rlz --checksum -e "$SSH" marketing/salida/feed.xml "$R/public_html/marketing/feed.xml"
+          [ -f marketing/salida/feed.xml ] && rsync -rlz --checksum -e "$SSH" marketing/salida/feed.xml "$R/public_html/marketing/feed.xml" || true
       - name: Guardar estado
         run: |
           git config user.name "aurzane-bot"; git config user.email "bot@aurzane.com"
