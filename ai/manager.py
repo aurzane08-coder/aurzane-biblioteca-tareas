@@ -166,7 +166,8 @@ try:
     for red, v in mk['por_red'].items():
         if v['fallos'] and not v['ok']:
             causa = next((t for pat, t in CONOCIDOS if re.search(pat, v.get('ultimo_error', ''), re.I)), '')
-            aviso('mal', f'{red}: todas las publicaciones de las últimas 24 h han fallado.' + (f' {causa}' if causa else f' Último error: {v.get("ultimo_error", "")[:120]}'), 'red_fallos', red)
+            # con causa conocida que solo se arregla a mano, la IA no reintenta (empeoraría el bloqueo): solo te avisa con los pasos
+            aviso('mal', f'{red}: todas las publicaciones de las últimas 24 h han fallado.' + (f' {causa}' if causa else f' Último error: {v.get("ultimo_error", "")[:120]}'), 'red_manual' if causa and 'a mano' in causa or 'volver a conectar' in causa else 'red_fallos', red)
 except Exception as e: print('marketing', e)
 
 # ---------- 8. Novedades: páginas nuevas del sitemap, anunciadas solas ----------
@@ -1119,7 +1120,12 @@ NOMBRES = {'aprender': 'Aprender algo nuevo', 'vaciar_cache': 'Vaciar la caché 
 RECETAS = {'contenido_viejo': ['diagnostico_ia'], 'prueba_fallida': ['vaciar_cache', 'diagnostico_ia'], 'servicio_caido': ['avisar'], 'sitio_caido': ['vaciar_cache', 'diagnostico_ia'], 'sitio_lento': ['vaciar_cache', 'diagnostico_ia'], 'pagina_error': ['vaciar_cache', 'diagnostico_ia'],
            'script_caido': ['vaciar_cache', 'diagnostico_ia'], 'js_error': ['vaciar_cache', 'diagnostico_ia'], 'automatizacion': ['reintentar_flujo', 'diagnostico_ia'],
            'red_fallos': ['relanzar_marketing', 'diagnostico_ia'], 'enlaces_rotos': ['relanzar_enlaces'], 'lenta_movil': ['diagnostico_ia'],
-           'pagina_seo': ['diagnostico_ia'], 'ssl': ['avisar']}
+           'pagina_seo': ['diagnostico_ia'], 'ssl': ['avisar'], 'red_manual': ['avisar']}
+# lecciones de la revisión del 8-11-2026: los «sitio caído» eran el filtro anti-robots de SiteGround (ya se comprueba desde el servidor)
+# y los fallos de Instagram y Facebook, el bloqueo de Meta; esos intentos no enseñan nada sobre las recetas, se olvidan una vez
+if not ESTADO.get('leccion_20261108'):
+    for k_ in ('sitio_caido|vaciar_cache', 'red_fallos|relanzar_marketing'): APR.pop(k_, None)
+    ESTADO['leccion_20261108'] = HOY
 def host_de(p):
     d = p.get('dato') or ''
     if p['tipo'] == 'js_error':
