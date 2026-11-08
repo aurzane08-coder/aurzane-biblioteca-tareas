@@ -68,6 +68,14 @@ with cf.ThreadPoolExecutor(4) as ex:
     pend = [v for v in vistos if v not in estado]
     for v, (st, _, _) in zip(pend, ex.map(get, pend)):
         estado[v] = st
+# SiteGround frena las ráfagas con 202 (verificación anti-robots): esas URL se vuelven a probar despacio, una a una
+frenadas = [u for u, st in estado.items() if str(st) in ('202', '429')]
+random.shuffle(frenadas)
+for u in frenadas[:250]:
+    time.sleep(2.5)
+    st, _, _ = get(u)
+    if str(st) not in ('202', '429'): estado[u] = st
+print('reintentadas despacio:', min(250, len(frenadas)), 'de', len(frenadas), '· siguen frenadas:', sum(1 for u in frenadas if str(estado[u]) in ('202', '429')))
 for u, st in estado.items():
     if st != 200:
         roto.append({'url': u, 'estado': st, 'desde': origen.get(u, [])})
