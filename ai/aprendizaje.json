@@ -120,12 +120,12 @@
   12
  ],
  "ed:Internet Archive": [
-  5,
-  70
+  10,
+  83
  ],
  "ed:": [
-  39,
-  12
+  43,
+  14
  ],
  "ed:undefined": [
   0,
@@ -144,7 +144,7 @@
   0
  ],
  "tipo:libro": [
-  23,
+  34,
   9
  ],
  "Gambling Behavior and Treatments": [
@@ -220,8 +220,8 @@
   1
  ],
  "ed:Springer Nature": [
-  0,
-  1
+  1,
+  2
  ],
  "Memory, Trauma, and Testimony": [
   0,
@@ -276,7 +276,7 @@
   0
  ],
  "Education, Achievement, and Giftedness": [
-  1,
+  2,
   1
  ],
  "Student Stress and Coping": [
@@ -312,7 +312,7 @@
   0
  ],
  "archive:psicologia": [
-  5,
+  10,
   0
  ],
  "ed:The Open University": [
@@ -328,7 +328,7 @@
   1
  ],
  "ed:Routledge": [
-  0,
+  1,
   2
  ],
  "ed:Airlangga University Press": [
@@ -354,5 +354,37 @@
  "ed:University of Huddersfield": [
   0,
   1
+ ],
+ "Bullying, Victimization, and Aggression": [
+  1,
+  0
+ ],
+ "ed:amazon españa": [
+  0,
+  1
+ ],
+ "Behavioral and Psychological Studies": [
+  1,
+  0
+ ],
+ "Technostress in Professional Settings": [
+  1,
+  0
+ ],
+ "ed:Directory of Open access Books (OAPEN Foundation)": [
+  0,
+  1
+ ],
+ "ed:Institutional Repository University of Extremadura (University of Extremadura)": [
+  0,
+  1
+ ],
+ "Anxiety, Depression, Psychometrics, Treatment, Cognitive Processes": [
+  1,
+  0
+ ],
+ "Cognitive Functions and Memory": [
+  1,
+  0
  ]
 }

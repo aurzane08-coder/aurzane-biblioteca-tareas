@@ -1,6 +1,215 @@
 [
  {
   "fecha": "2026-11-08",
+  "id": "ia-los-secretos-del-club-del-debate-rangel_202610",
+  "tipo": "libro",
+  "titulo": "LOS SECRETOS DEL CLUB DEL DEBATE",
+  "url": "https://archive.org/details/los-secretos-del-club-del-debate-rangel_202610",
+  "motivo": "La IA le dio 6/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/el-laboratorio-de-las-mentiras/EL%20LABORATORIO%20DE%20LAS%20MENTIRAS.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-08",
+  "id": "ia-justicia-o-venganza_202610",
+  "tipo": "libro",
+  "titulo": "JUSTICIA O VENGANZA",
+  "url": "https://archive.org/details/justicia-o-venganza_202610",
+  "motivo": "La IA le dio 3/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/lo-que-queda_202610-rangel/LO%20QUE%20QUEDA.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-08",
+  "id": "ia-La-Cola-del-diablo_202610",
+  "tipo": "libro",
+  "titulo": "LA COLA DEL DIABLO",
+  "url": "https://archive.org/details/La-Cola-del-diablo_202610",
+  "motivo": "La IA le dio 3/10: no encaja en la biblioteca",
+  "probados": [
+   "HTTP Error 500: Internal Server Error https://archive.org/download/conceptos-sobre-el-amor/Conceptos_sobre_el_amor.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-08",
+  "id": "ia-crimen-y-cartilago",
+  "tipo": "libro",
+  "titulo": "Crímen Y Cartílago",
+  "url": "https://archive.org/details/crimen-y-cartilago",
+  "motivo": "La IA le dio 4/10: no encaja en la biblioteca",
+  "probados": [
+   "HTTP Error 500: Internal Server Error https://archive.org/download/conceptos-sobre-el-amor/Conceptos_sobre_el_amor.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-08",
+  "id": "ia-manual-del-guia-bufon_202611",
+  "tipo": "libro",
+  "titulo": "Manual Del Guía Bufón",
+  "url": "https://archive.org/details/manual-del-guia-bufon_202611",
+  "motivo": "La IA le dio 5/10: no encaja en la biblioteca",
+  "probados": [
+   "HTTP Error 500: Internal Server Error https://archive.org/download/conceptos-sobre-el-amor/Conceptos_sobre_el_amor.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-08",
+  "id": "ia-lluvia-de-mayo",
+  "tipo": "libro",
+  "titulo": "Lluvia De Mayo",
+  "url": "https://archive.org/details/lluvia-de-mayo",
+  "motivo": "La IA le dio 3/10: no encaja en la biblioteca",
+  "probados": [
+   "HTTP Error 500: Internal Server Error https://archive.org/download/conceptos-sobre-el-amor/Conceptos_sobre_el_amor.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-08",
+  "id": "ia-guia-tecnica-herramientas-2026",
+  "tipo": "libro",
+  "titulo": "GUIA TECNICA HERRAMIENTAS 2026",
+  "url": "https://archive.org/details/guia-tecnica-herramientas-2026",
+  "motivo": "La IA le dio 5/10: no encaja en la biblioteca",
+  "probados": [
+   "HTTP Error 500: Internal Server Error https://archive.org/download/conceptos-sobre-el-amor/Conceptos_sobre_el_amor.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-08",
+  "id": "ia-jenny_202604",
+  "tipo": "libro",
+  "titulo": "Jenny",
+  "url": "https://archive.org/details/jenny_202604",
+  "motivo": "La IA le dio 4/10: no encaja en la biblioteca",
+  "probados": [
+   "HTTP Error 500: Internal Server Error https://archive.org/download/conceptos-sobre-el-amor/Conceptos_sobre_el_amor.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-08",
+  "id": "ia-estudios-psicoemocionales-ebook",
+  "tipo": "libro",
+  "titulo": "Estudios Psicoemocionales Ebook",
+  "url": "https://archive.org/details/estudios-psicoemocionales-ebook",
+  "motivo": "La IA le dio 6/10: no encaja en la biblioteca",
+  "probados": [
+   "HTTP Error 500: Internal Server Error https://archive.org/download/conceptos-sobre-el-amor/Conceptos_sobre_el_amor.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-08",
+  "id": "ia-conceptos-sobre-el-amor",
+  "tipo": "libro",
+  "titulo": "Conceptos sobre el amor en sus distintas formas y dimensiones a través de las culturas",
+  "url": "https://archive.org/details/conceptos-sobre-el-amor",
+  "motivo": "Al publicarla no tiene un PDF libre que se pueda descargar",
+  "probados": [
+   "HTTP Error 500: Internal Server Error https://archive.org/download/conceptos-sobre-el-amor/Conceptos_sobre_el_amor.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-08",
+  "id": "ia-vectores-de-desvio-teoria-de-la-interferencia-adaptativa-2.1",
+  "tipo": "libro",
+  "titulo": "Vectores de Desvío — Teoría de la Interferencia Adaptativa",
+  "url": "https://archive.org/details/vectores-de-desvio-teoria-de-la-interferencia-adaptativa-2.1",
+  "motivo": "La IA le dio 4/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://api.taylorfrancis.com/content/books/mono/download?identifierName=doi&identifierValue=10.4324/978100379"
+  ]
+ },
+ {
+  "fecha": "2026-11-08",
+  "id": "ia-5-manual-de-aprendizaje-acuerdo-praxico",
+  "tipo": "libro",
+  "titulo": "5 Manual De Aprendizaje Acuerdo Praxico",
+  "url": "https://archive.org/details/5-manual-de-aprendizaje-acuerdo-praxico",
+  "motivo": "La IA le dio 6/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://api.taylorfrancis.com/content/books/mono/download?identifierName=doi&identifierValue=10.4324/978100379"
+  ]
+ },
+ {
+  "fecha": "2026-11-08",
+  "id": "ia-el-parentesco-cosmico",
+  "tipo": "libro",
+  "titulo": "El parentesco cósmico: una ética basada en el ahimsa",
+  "url": "https://archive.org/details/el-parentesco-cosmico",
+  "motivo": "La IA le dio 5/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://api.taylorfrancis.com/content/books/mono/download?identifierName=doi&identifierValue=10.4324/978100379"
+  ]
+ },
+ {
+  "fecha": "2026-11-08",
+  "id": "oa-W7220980014",
+  "tipo": "libro",
+  "titulo": "Ergonomics in Robotics: Advances and Innovations",
+  "url": "https://doi.org/10.1007/978-3-032-19374-2",
+  "motivo": "La IA le dio 3/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://link.springer.com/content/pdf/10.1007/978-3-662-74450-5.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-08",
+  "id": "oa-W7160546937",
+  "tipo": "libro",
+  "titulo": "Hacia un modelo institucional de mentoría",
+  "url": "https://hdl.handle.net/10662/43944",
+  "motivo": "La IA le dio 2/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://books.omeditorial.com/index.php/inicio/catalog/download/8/7/28"
+  ]
+ },
+ {
+  "fecha": "2026-11-08",
+  "id": "oa-W7149429299",
+  "tipo": "libro",
+  "titulo": "Mujeres y su impacto en la ciencia y tecnología latinoamericana",
+  "url": "https://www.highrateco.com/publicaciones/mujeres-y-su-impacto",
+  "motivo": "La IA le dio 5/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://books.omeditorial.com/index.php/inicio/catalog/download/8/7/28"
+  ]
+ },
+ {
+  "fecha": "2026-11-08",
+  "id": "oa-W7215991963",
+  "tipo": "libro",
+  "titulo": "Fortalecimiento y liderazgo de la mujer en las Ciencias Agropecuarias",
+  "url": "https://doi.org/10.61728/ae26002453",
+  "motivo": "La IA le dio 3/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://plagcis.org/book/index.php/editorial/catalog/download/44/121/192"
+  ]
+ },
+ {
+  "fecha": "2026-11-08",
+  "id": "ia-los-ruidos-del-ser-15-24-x-22-86-cm-6-x-9-tapa-blanda",
+  "tipo": "libro",
+  "titulo": "LOS RUIDOS DEL SER - Gretam Del Só",
+  "url": "https://archive.org/details/los-ruidos-del-ser-15-24-x-22-86-cm-6-x-9-tapa-blanda",
+  "motivo": "La IA le dio 4/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://plagcis.org/book/index.php/editorial/catalog/download/44/121/192"
+  ]
+ },
+ {
+  "fecha": "2026-11-08",
+  "id": "oa-W7214640051",
+  "tipo": "libro",
+  "titulo": "Tópicos selectos sobre juventudes universitarias, bienestar y convivencia en la educación superior",
+  "url": "https://doi.org/10.61728/ae26001302",
+  "motivo": "La IA le dio 6/10: no encaja en la biblioteca",
+  "probados": [
+   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13435862.1/PMC13435862.1.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-08",
   "id": "cita-d9344062cb",
   "tipo": "cita",
   "titulo": "Según esta perspectiva, casi todo lo que hacen los humanos está motivado por la búsqueda de una recompensa.",
