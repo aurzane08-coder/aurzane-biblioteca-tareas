@@ -8,7 +8,7 @@
   2
  ],
  "ed:European journal of psychotraumatology": [
-  3,
+  11,
   17
  ],
  "ed:Revista medica del Instituto Mexicano del Seguro Social": [
@@ -16,7 +16,7 @@
   6
  ],
  "ed:Atencion primaria": [
-  0,
+  1,
   2
  ],
  "ed:Dementia & neuropsychologia": [
@@ -120,7 +120,7 @@
   12
  ],
  "ed:Internet Archive": [
-  18,
+  23,
   115
  ],
  "ed:": [
@@ -144,7 +144,7 @@
   0
  ],
  "tipo:libro": [
-  42,
+  47,
   9
  ],
  "Gambling Behavior and Treatments": [
@@ -196,7 +196,7 @@
   1
  ],
  "tipo:estudio": [
-  19,
+  29,
   33
  ],
  "ed:Stress biology": [
@@ -232,7 +232,7 @@
   1
  ],
  "estudio:es": [
-  15,
+  25,
   4
  ],
  "ed:Inflammation and regeneration": [
@@ -312,7 +312,7 @@
   0
  ],
  "archive:psicologia": [
-  18,
+  23,
   0
  ],
  "ed:The Open University": [
@@ -386,5 +386,13 @@
  "Cognitive Functions and Memory": [
   1,
   0
+ ],
+ "ed:Cadernos de saude publica": [
+  1,
+  0
+ ],
+ "ed:PloS one": [
+  0,
+  1
  ]
 }

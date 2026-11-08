@@ -1,6 +1,17 @@
 [
  {
   "fecha": "2026-11-08",
+  "id": "pmc-PMC13686495",
+  "tipo": "estudio",
+  "titulo": "Occupational health risks from climate-related and infectious-disease stressors: A scoping review of worker safety and resilience",
+  "url": "https://europepmc.org/article/PMC/PMC13686495",
+  "motivo": "La IA le dio 6/10: no encaja en la biblioteca",
+  "probados": [
+   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13693427.1/PMC13693427.1.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-08",
   "id": "ia-fantasy-giants",
   "tipo": "libro",
   "titulo": "Fantasy Giants",
