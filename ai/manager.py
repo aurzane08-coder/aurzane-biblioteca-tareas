@@ -979,7 +979,7 @@ try:
             '<a href="https://aurzane.com/#hoy">Ver la frase de hoy</a> · <a href="https://aurzane.com/biblioteca/">Biblioteca</a></p></div></div><main class="w">'
             '<div class="t" role="group" aria-label="Filtrar por tema"><button type="button" aria-pressed="true" data-t="">Todas</button>'
             + ''.join(f'<button type="button" aria-pressed="false" data-t="{E(t)}">{E(t.replace("-", " ").capitalize())}</button>' for t, _ in temas_.most_common(14)) + '</div>'
-            + lista_ + '<p style="font-size:.85rem;color:#6b6153;margin-top:24px">Solo publicamos frases de autores en dominio público y refranes tradicionales, con su autor y la fuente donde las encontramos.</p></main>'
+            + lista_ + '<p style="font-size:.85rem;color:#6b6153;margin-top:24px">Solo publicamos frases de autores en dominio público y refranes tradicionales, con su autor y la fuente donde las encontramos. ¿Te gustan? <a href="https://ko-fi.com/adriansan7" target="_blank" rel="noopener">Invítanos a un café en Ko-fi</a>.</p></main>'
             '<script>document.querySelectorAll(".t button").forEach(function(b){b.onclick=function(){var t=b.dataset.t;document.querySelectorAll(".t button").forEach(function(x){x.setAttribute("aria-pressed",x===b)});'
             'document.querySelectorAll("figure").forEach(function(f){f.hidden=t&&f.dataset.tema!==t})}})</script></body></html>')
     if usadas.get('dias', {}).get(HOY):
