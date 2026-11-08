@@ -35,7 +35,7 @@
     '.utility .eco a.activo,.utility a[aria-current]{color:var(--mundo)!important}' +
     'html[data-tema="oscuro"] .utility .eco a.activo{color:#fff!important;text-decoration:underline;text-decoration-color:var(--mundo);text-underline-offset:4px}' +
     /* cabecera de cada mundo: color propio y emblema en lugar de la mancha dorada */
-    '.world-header,main>.hero{position:relative;background-image:linear-gradient(180deg,var(--mundo-suave),transparent 85%)!important}' +
+    'main>.hero{position:relative}.world-header{position:relative;background-image:linear-gradient(180deg,var(--mundo-suave),transparent 85%)!important}' +
     '.world-header::before,main>.hero::before{background:' + svg(C[0]) + ' center/contain no-repeat!important;opacity:.55;filter:none!important}' +
     '.world-header .eyebrow,main>.hero .eyebrow{color:var(--mundo)!important}' +
     '.world-header h1 span{color:var(--mundo-osc)}html[data-tema="oscuro"] .world-header h1 span{color:inherit}' +
@@ -43,7 +43,7 @@
     '.filter-bar button.active,.filter-bar .activo,.chip.active{background:var(--mundo)!important;color:#fff!important;border-color:var(--mundo)!important}' +
     'a:focus-visible,button:focus-visible{outline:2px solid var(--mundo);outline-offset:2px}' +
     /* panel «Empieza por aquí» a la derecha de la cabecera */
-    '.az-empieza{position:absolute;right:max(28px,calc((100% - 1200px)/2));top:50%;transform:translateY(-50%);width:340px;z-index:2;background:var(--surface,#fffdf9);border:1px solid rgba(60,45,30,.12);border-radius:18px;padding:18px 18px 10px;box-shadow:0 24px 50px -30px rgba(30,20,10,.45)}' +
+    '.az-empieza{position:absolute;right:max(28px,calc((100% - 1200px)/2));top:50%;transform:translateY(-50%);width:340px;z-index:2;background:var(--surface,#fffdf9);border:1px solid rgba(60,45,30,.12);border-radius:18px;padding:18px 18px 10px;box-shadow:0 24px 50px -30px rgba(30,20,10,.45);text-align:left}' +
     'html[data-tema="oscuro"] .az-empieza{background:#151a33;border-color:rgba(255,255,255,.12)}' +
     '.az-empieza h2{font:600 1.05rem/1.3 "Instrument Sans",system-ui,sans-serif;margin:0 0 4px;color:inherit}' +
     '.az-empieza p{margin:0 0 10px;font-size:.86rem;opacity:.75}' +
@@ -77,7 +77,7 @@
     var it = FIJOS[m] || [];
     if (!it.length) Array.prototype.slice.call(d.querySelectorAll('.az-herr a'), 0, 3).forEach(function (a) {
       var e = a.querySelector('.e'), b = a.querySelector('b'), s = a.querySelector('span:not(.e)');
-      if (b) it.push([e ? e.textContent.trim() : '•', b.textContent.trim(), s ? corto(s.textContent.trim().split(/[.:]/)[0]) : '', a.getAttribute('href')]);
+      if (b) it.push([e ? e.textContent.trim() : '•', b.textContent.trim(), s ? corto(s.textContent.trim().split(/[.:,;(]/)[0]) : '', a.getAttribute('href')]);
     });
     if (it.length < 2) return;
     var esc = function (t) { return String(t).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
