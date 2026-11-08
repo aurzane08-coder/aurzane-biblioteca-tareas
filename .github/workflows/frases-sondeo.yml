@@ -1,0 +1,13 @@
+name: Frases sondeo de fuentes
+on: workflow_dispatch
+permissions:
+  contents: write
+jobs:
+  s:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: bash ai/frases_web/sondeo.sh
+      - run: |
+          cd /tmp/sf && git init -q -b sondeo-frases && git config user.name aurzane-bot && git config user.email bot@aurzane.com
+          git add -A && git commit -qm sondeo && git push -q -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" sondeo-frases
