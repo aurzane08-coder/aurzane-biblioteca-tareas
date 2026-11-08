@@ -260,7 +260,7 @@ def _google_token():
 def video_youtube(texto, url, local, enlace, p):
     tk = _google_token()
     titulo = (p['titulo'] if p['tipo'] == 'frase' else p['ganchos'][0])[:90] + ' #Shorts'
-    desc = texto + '\n\nAURZANE: tests psicológicos, calculadoras y libros gratis. https://aurzane.com'
+    desc = texto + '\n\nAURZANE: tests psicológicos, calculadoras y libros gratis en https://aurzane.com\n🔔 Suscríbete para una dosis diaria de psicología.\n\n#Shorts #Psicología #SaludMental #AURZANE'
     meta = {'snippet': {'title': titulo, 'description': desc[:4900], 'tags': [h for h in p.get('hashtags', [])][:10] + ['AURZANE', 'Shorts'],
                         'categoryId': '27', 'defaultLanguage': 'es', 'defaultAudioLanguage': 'es'},
             'status': {'privacyStatus': 'public', 'selfDeclaredMadeForKids': False}}

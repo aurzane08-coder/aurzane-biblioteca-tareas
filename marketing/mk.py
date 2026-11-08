@@ -11,7 +11,9 @@ D = os.path.dirname(os.path.abspath(__file__))
 REDES = ['telegram', 'bluesky', 'mastodon', 'instagram', 'facebook', 'threads', 'pinterest']  # X desactivada: cobra por publicar
 REDES_VIDEO = ['instagram', 'facebook', 'youtube', 'tiktok', 'telegram']  # franja 4: vídeo vertical
 TIPOS_VIDEO = ('frase', 'test', 'calculadora', 'curiosidad')
-VID = ('4', '5')   # franjas de vídeo vertical: 4 (tarde, de todo) y 5 (mañana, frases y curiosidades)
+VID = ('4', '5', '6')   # franjas de vídeo vertical: 4 (tarde, de todo), 5 (mañana, frases y curiosidades) y 6 (media tarde, solo YouTube y TikTok)
+REDES_V6 = ['youtube', 'tiktok']
+def redes_de(fr): return REDES_V6 if fr == '6' else REDES_VIDEO
 SITIO_IMG = 'https://aurzane.com/marketing/'
 IR = 'https://aurzane.com/ir/'
 HOY = datetime.date.today()
@@ -198,15 +200,15 @@ def planificar(dias=14):
         f = (HOY + datetime.timedelta(days=d)).isoformat()
         pass  # cada franja se completa abajo si falta
         dia = cal.setdefault(f, {})
-        for fr in ('1', '2', '3', '4', '5'):
-            if fr in dia and all(i in cat for i in dia[fr].values()) and set(dia[fr]) >= set(REDES_VIDEO if fr in VID else [x for x in REDES if not (x == 'pinterest' and fr == '1')]): continue
-            grupo = 'herr' if fr == '1' else 'frase' if fr == '3' else 'video' if fr == '4' else 'video5' if fr == '5' else TARDE[datetime.date.fromisoformat(f).toordinal() % len(TARDE)]
+        for fr in ('1', '2', '3', '4', '5', '6'):
+            if fr in dia and all(i in cat for i in dia[fr].values()) and set(dia[fr]) >= set(redes_de(fr) if fr in VID else [x for x in REDES if not (x == 'pinterest' and fr == '1')]): continue
+            grupo = 'herr' if fr == '1' else 'frase' if fr == '3' else 'video' if fr in ('4', '6') else 'video5' if fr == '5' else TARDE[datetime.date.fromisoformat(f).toordinal() % len(TARDE)]
             usados = set(); dia[fr] = {}
-            for r0 in (REDES_VIDEO if fr in VID else REDES):
+            for r0 in (redes_de(fr) if fr in VID else REDES):
                 if r0 == 'pinterest' and fr == '1': continue
                 r = r0 + '-video' if fr in VID else r0
                 if grupo == 'video':
-                    cand = [p for p in cat.values() if p['tipo'] in TIPOS_VIDEO and p['id'] not in usados and p['id'] not in dia.get('5', {}).values()]
+                    cand = [p for p in cat.values() if p['tipo'] in TIPOS_VIDEO and p['id'] not in usados and p['id'] not in dia.get('5', {}).values() and p['id'] not in dia.get('4' if fr == '6' else '6', {}).values()]
                 elif grupo == 'video5':
                     cand = [p for p in cat.values() if p['tipo'] in ('frase', 'curiosidad') and p['id'] not in usados and p['id'] not in dia.get('4', {}).values()]
                 else:
@@ -451,7 +453,7 @@ def publicar_video(franja='4'):
     guardar('estado.json', est)
 
 
-HORAS = {'1': (8, 37), '5': (10, 47), '3': (12, 13), '2': (17, 41), '4': (19, 29)}  # UTC
+HORAS = {'1': (8, 37), '5': (10, 47), '3': (12, 13), '6': (15, 23), '2': (17, 41), '4': (19, 29)}  # UTC
 
 
 def pendientes():

@@ -14,6 +14,7 @@ on:
     - cron: '41 17 * * *'
     - cron: '29 19 * * *'
     - cron: '47 10 * * *'  # segundo vídeo del día (frases y curiosidades)
+    - cron: '23 15 * * *'  # tercer vídeo del día (solo YouTube y TikTok)
     - cron: '7 10,14,16,21 * * *'  # repaso: publica lo que se haya quedado atrás
   push:
     paths: ['marketing/*.py', 'marketing/*.js', 'marketing/biblioteca_*.json', 'marketing/web/**', '.github/workflows/marketing.yml']
@@ -63,7 +64,7 @@ jobs:
       - name: Qué toca
         run: |
           A="${{ github.event.inputs.accion }}"
-          case "${{ github.event.schedule }}" in '37 8 * * *') A=1;; '41 17 * * *') A=2;; '13 12 * * *') A=3;; '29 19 * * *') A=4;; '47 10 * * *') A=5;; '13 5 * * *') A=planificar;; esac
+          case "${{ github.event.schedule }}" in '37 8 * * *') A=1;; '41 17 * * *') A=2;; '13 12 * * *') A=3;; '29 19 * * *') A=4;; '47 10 * * *') A=5;; '23 15 * * *') A=6;; '13 5 * * *') A=planificar;; esac
           echo "ACCION=${A:-planificar}" >> $GITHUB_ENV; echo "Acción: ${A:-planificar}"
       - name: SSH
         if: env.SG_KEY != ''
