@@ -2,7 +2,9 @@ name: Clips (Clips-All)
 # Recorta vídeos autorizados de campañas de clipping (clips/fuentes.json) en Shorts verticales con subtítulos y los sube a Clips-All y a TikTok.
 on:
   schedule:
-    - cron: '17 7,13,19 * * *'
+    - cron: '17 7,11,15,19,22 * * *'
+  push:
+    paths: ['clips/fuentes.json', '.github/workflows/clips.yml', 'marketing/web/youtube/**']
   workflow_dispatch:
 permissions:
   contents: write
@@ -20,9 +22,27 @@ jobs:
       CLIPS_YT_REFRESH_TOKEN: ${{ secrets.CLIPS_YT_REFRESH_TOKEN }}
       TIKTOK_CLIENT_KEY: ${{ secrets.TIKTOK_CLIENT_KEY }}
       TIKTOK_CLIENT_SECRET: ${{ secrets.TIKTOK_CLIENT_SECRET }}
-      CLIPS_TIKTOK_REFRESH_TOKEN: ${{ secrets.CLIPS_TIKTOK_REFRESH_TOKEN }}
+      SG_KEY: ${{ secrets.SG_KEY }}
+      SG_HOST: ${{ secrets.SG_HOST }}
+      SG_USER: ${{ secrets.SG_USER }}
+      SG_PORT: ${{ secrets.SG_PORT }}
+      SG_PASS: ${{ secrets.SG_PASS }}
     steps:
       - uses: actions/checkout@v4
+      - name: Páginas de conexión y tokens (guardados fuera de la web)
+        run: |
+          mkdir -p ~/.ssh && printf '%s\n' "$SG_KEY" | tr -d '\r' > ~/.ssh/id && chmod 600 ~/.ssh/id
+          if [ -n "$SG_PASS" ]; then ssh-keygen -p -P "$SG_PASS" -N "" -f ~/.ssh/id >/dev/null; fi
+          SSH="ssh -i $HOME/.ssh/id -p ${SG_PORT:-18765} -o StrictHostKeyChecking=accept-new"; echo "SSH=$SSH" >> $GITHUB_ENV
+          W=www/aurzane.com; P=$W/privado-youtube
+          python3 -c 'import json,os;print(json.dumps({"client_id":os.environ["YT_CLIENT_ID"],"client_secret":os.environ["YT_CLIENT_SECRET"].strip()}))' | $SSH "$SG_USER@$SG_HOST" "mkdir -p $P && chmod 700 $P && cat > $P/app.json && chmod 600 $P/app.json"
+          $SSH "$SG_USER@$SG_HOST" "mkdir -p $W/public_html/youtube"
+          rsync -rlz --checksum -e "$SSH" marketing/web/youtube/ "$SG_USER@$SG_HOST:$W/public_html/youtube/"
+          T=$($SSH "$SG_USER@$SG_HOST" "cat $P/refresh_clips 2>/dev/null" || true)
+          [ -n "$T" ] && { echo "::add-mask::$T"; echo "CLIPS_YT_REFRESH_TOKEN=$T" >> $GITHUB_ENV; }
+          T=$($SSH "$SG_USER@$SG_HOST" "cat $W/privado-tiktok/refresh_clips 2>/dev/null" || true)
+          [ -n "$T" ] && { echo "::add-mask::$T"; echo "CLIPS_TIKTOK_REFRESH_TOKEN=$T" >> $GITHUB_ENV; }
+          echo "::notice title=Clips::YouTube Clips-All $([ -n "$(grep -c CLIPS_YT $GITHUB_ENV)" ] && echo conectado || echo sin conectar)"
       - name: ¿Hay vídeos autorizados?
         id: hay
         run: python3 -c "import json;print('si=' + ('1' if any(f.get('autorizado') is True for f in json.load(open('clips/fuentes.json'))) else '0'))" >> $GITHUB_OUTPUT
@@ -37,6 +57,7 @@ jobs:
       - name: Guardar registro
         if: steps.hay.outputs.si == '1'
         run: |
+          [ -s /tmp/clips_tiktok_refresh ] && cat /tmp/clips_tiktok_refresh | $SSH "$SG_USER@$SG_HOST" "cat > www/aurzane.com/privado-tiktok/refresh_clips && chmod 600 www/aurzane.com/privado-tiktok/refresh_clips" || true
           git config user.name "aurzane-bot"; git config user.email "bot@aurzane.com"
           git add clips
           git commit -qm "clips: $(date +%F' '%H:%M)" || exit 0
