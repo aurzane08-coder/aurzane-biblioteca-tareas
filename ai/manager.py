@@ -968,21 +968,21 @@ try:
                           {'apikey': 'sb_publishable___1v6VjDew0l8uGfMyb9Nw_YyCLTPPw', 'Authorization': 'Bearer sb_publishable___1v6VjDew0l8uGfMyb9Nw_YyCLTPPw'}, t=30)
     arts = json.loads(b_l) if st_l == 200 else []
     if arts:
-        os.makedirs(OUT + '/articulos', exist_ok=True)
+        os.makedirs(OUT + '/articulos-recientes', exist_ok=True)
         url_a = lambda a: f'https://{a["mundo"]}.aurzane.com/articulo.html?mundo={a["mundo"]}&slug={urllib.parse.quote(a["slug"])}'
         lis_a = ''.join(f'<article><p class="k">{E(a["mundo"].upper())}{" · " + E(a["categoria"]) if a.get("categoria") else ""} · {E((a.get("publicado_at") or "")[:10])}</p>'
                         f'<h2><a href="{E(url_a(a))}">{E(a["titulo"])}</a></h2><p>{E(a.get("resumen") or "")}</p></article>' for a in arts)
-        open(OUT + '/articulos/index.html', 'w', encoding='utf-8').write(
+        open(OUT + '/articulos-recientes/index.html', 'w', encoding='utf-8').write(
             '<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><script src="https://aurzane.com/aurzane-paleta.js"></script>'
-            f'<title>Artículos de psicología y bienestar | AURZANE</title><meta name="description" content="Artículos de divulgación de psicología, bienestar y aprendizaje basados en estudios científicos en acceso abierto.">'
-            '<link rel="canonical" href="https://aurzane.com/articulos/"><meta property="og:image" content="https://aurzane.com/og-portada.jpg"><link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@600;700&family=Instrument+Sans:wght@400;600&display=swap" rel="stylesheet">'
+            f'<title>Artículos recientes de psicología y bienestar | AURZANE</title><meta name="description" content="Artículos de divulgación de psicología, bienestar y aprendizaje basados en estudios científicos en acceso abierto.">'
+            '<link rel="canonical" href="https://aurzane.com/articulos/recientes/"><meta property="og:image" content="https://aurzane.com/og-portada.jpg"><link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@600;700&family=Instrument+Sans:wght@400;600&display=swap" rel="stylesheet">'
             '<style>body{margin:0;background:var(--bg,#F6F0E8);color:var(--text,#2E2620);font:16px/1.6 "Instrument Sans",system-ui,sans-serif}.h{background:#0F1530;color:#F5F3EE;padding:40px 20px}.h a{color:#EACF92}'
             '.w{max-width:860px;margin:0 auto}h1{font:700 2.1rem "Bodoni Moda",serif;margin:6px 0}main{padding:10px 20px 60px}article{padding:20px 0;border-bottom:1px solid rgba(95,80,68,.15)}'
             'h2{font:700 1.3rem/1.3 "Bodoni Moda",serif;margin:2px 0 6px}h2 a{color:inherit;text-decoration:none}h2 a:hover{text-decoration:underline}.k{margin:0;font-size:.8rem;color:#6b6153}article p{margin:0}</style></head><body>'
-            '<div class="h"><div class="w"><a href="https://aurzane.com/">AURZANE</a><h1>Artículos</h1><p>Psicología, bienestar y aprendizaje explicados con claridad y con su fuente. '
-            '<a href="https://aurzane.com/novedades/">Novedades</a> · <a href="https://aurzane.com/frases/">Frases</a> · <a href="https://aurzane.com/biblioteca/">Biblioteca</a></p></div></div>'
+            '<div class="h"><div class="w"><a href="https://aurzane.com/">AURZANE</a><h1>Artículos recientes</h1><p>Psicología, bienestar y aprendizaje explicados con claridad y con su fuente. '
+            '<a href="https://aurzane.com/articulos/">Todos los artículos</a> · <a href="https://aurzane.com/novedades/">Novedades</a> · <a href="https://aurzane.com/frases/">Frases</a> · <a href="https://aurzane.com/biblioteca/">Biblioteca</a></p></div></div>'
             f'<main class="w">{lis_a}</main></body></html>')
-        conexiones['fuera_sitemap'] = sorted(set(conexiones['fuera_sitemap']) | {url_a(a) for a in arts} | {'https://aurzane.com/articulos/'} | ({'https://aurzane.com/frases/'} if os.path.exists(OUT + '/frases/index.html') else set()))
+        conexiones['fuera_sitemap'] = sorted(set(conexiones['fuera_sitemap']) | {url_a(a) for a in arts} | {'https://aurzane.com/articulos/recientes/'} | ({'https://aurzane.com/frases/'} if os.path.exists(OUT + '/frases/index.html') else set()))
 except Exception as e:
     print('::notice title=AI::índice de artículos no generado', str(e)[:120])
 if conexiones['fuera_sitemap']:

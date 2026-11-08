@@ -77,7 +77,7 @@ jobs:
           rsync -rlz --checksum -e "$SSH" /tmp/ai/mapa/ "$SG_DEST:www/aurzane.com/public_html/mapa/"
           [ -f /tmp/ai/hoy/hoy.json ] && rsync -rlz --checksum -e "$SSH" /tmp/ai/hoy/ "$SG_DEST:www/aurzane.com/public_html/hoy/" || true
           [ -f /tmp/ai/frases/index.html ] && rsync -rlz --checksum -e "$SSH" /tmp/ai/frases/ "$SG_DEST:www/aurzane.com/public_html/frases/" || true
-          [ -f /tmp/ai/articulos/index.html ] && rsync -rlz --checksum -e "$SSH" /tmp/ai/articulos/ "$SG_DEST:www/aurzane.com/public_html/articulos/" || true
+          [ -f /tmp/ai/articulos-recientes/index.html ] && $SSH "$SG_DEST" "mkdir -p www/aurzane.com/public_html/articulos/recientes" && rsync -rlz --checksum -e "$SSH" /tmp/ai/articulos-recientes/ "$SG_DEST:www/aurzane.com/public_html/articulos/recientes/" || true
           [ -f /tmp/ai/sitemap-ai.xml ] && cat /tmp/ai/sitemap-ai.xml | $SSH "$SG_DEST" "cat > www/aurzane.com/public_html/sitemap-ai.xml" || true
           $SSH "$SG_DEST" "site-tools-client domain-all update id=aurzane.com flush_cache=1 >/dev/null" || true
       - name: Guardar historial
