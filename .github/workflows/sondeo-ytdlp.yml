@@ -15,8 +15,8 @@ jobs:
           if [ -n "$SG_PASS" ]; then ssh-keygen -p -P "$SG_PASS" -N "" -f ~/.ssh/id >/dev/null; fi
           ssh -i ~/.ssh/id -p ${SG_PORT:-18765} -o StrictHostKeyChecking=accept-new "$SG_USER@$SG_HOST" 'bash -s' <<'R'
           mkdir -p herramientas && cd herramientas
-          [ -x yt-dlp ] || curl -sSL -o yt-dlp https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp_linux && chmod +x yt-dlp
-          ./yt-dlp --version
-          timeout 120 ./yt-dlp -F "https://www.youtube.com/watch?v=n9dVlkDB9xo" 2>&1 | tail -8
+          curl -sSL -o yt-dlp.pyz https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp
+          python3 yt-dlp.pyz --version
+          timeout 120 python3 yt-dlp.pyz -F "https://www.youtube.com/watch?v=n9dVlkDB9xo" 2>&1 | tail -8
           python3 --version; df -h ~ | tail -1
           R
