@@ -54,32 +54,53 @@ def transcribir(video):
 def elegir_momentos(segs, fuente, n):
     texto = '\n'.join(f'[{s["i"]:.1f}-{s["f"]:.1f}] {s["t"]}' for s in segs)[:60000]
     r = gemini(f'Eres editor de clips virales para TikTok y YouTube Shorts. Vídeo: «{fuente.get("titulo", "")}» de {fuente.get("creador", "")}. '
-               f'Reglas de la campaña: {fuente.get("reglas", "ninguna especial")}. A partir de la transcripción con tiempos, elige los {n} mejores momentos '
+               f'Reglas de la campaña: {fuente.get("reglas", "ninguna especial")}. Protagonista que debe hablar en el clip: {fuente.get("protagonista", "el invitado principal")}. A partir de la transcripción con tiempos, elige los {n} mejores momentos '
                'que funcionen solos: empiezan con un gancho fuerte en los 2 primeros segundos, tienen una idea completa y duran entre 20 y 55 segundos. '
                'Evita insultos, temas sensibles sin contexto y cortes a mitad de frase. Responde SOLO un JSON: '
-               '[{"inicio": segundos, "fin": segundos, "titulo": "<título corto y llamativo, sin clickbait falso>", "hashtags": ["<4 hashtags sin #>"]}]\n\n' + texto)
+               '[{"inicio": segundos, "fin": segundos, "titulo": "<título corto y llamativo, sin clickbait falso>", "gancho": "<cartel de 3 a 7 palabras que despierte curiosidad>", "hashtags": ["<4 hashtags sin #>"]}]\n\n' + texto)
     try: return json.loads(re.search(r'\[.*\]', r, re.S).group(0))[:n]
     except Exception: return []
 
-def ass_subtitulos(segs, ini, fin, ruta):
+def ass_subtitulos(segs, ini, fin, ruta, gancho=''):
     """Subtítulos grandes por grupos de 3 palabras, centrados en el tercio inferior (estilo Shorts)."""
     palabras = [w for s in segs for w in s['w'] if w[0] >= ini - 0.05 and w[1] <= fin + 0.05]
     cab = ('[Script Info]\nScriptType: v4.00+\nPlayResX: 1080\nPlayResY: 1920\n\n[V4+ Styles]\nFormat: Name, Fontname, Fontsize, PrimaryColour, OutlineColour, BackColour, Bold, '
-           'Alignment, MarginV, Outline, Shadow\nStyle: S,DejaVu Sans,78,&H00FFFFFF,&H00000000,&H80000000,1,2,560,6,2\n\n[Events]\nFormat: Layer, Start, End, Style, Text\n')
+           'Alignment, MarginV, Outline, Shadow\nStyle: S,DejaVu Sans,78,&H00FFFFFF,&H00000000,&H80000000,1,2,560,6,2\n'
+           'Style: G,DejaVu Sans,64,&H0000E5FF,&H00000000,&HC0000000,1,8,260,5,3\n\n[Events]\nFormat: Layer, Start, End, Style, Text\n')
     ts = lambda x: f'{int(x // 3600)}:{int(x % 3600 // 60):02d}:{x % 60:05.2f}'
     lineas = []
     for k in range(0, len(palabras), 3):
         g = palabras[k:k + 3]
         txt = ' '.join(w[2].strip() for w in g).upper().replace('{', '').replace('}', '')
         lineas.append(f'Dialogue: 0,{ts(g[0][0] - ini)},{ts(g[-1][1] - ini)},S,{txt}')
+    if gancho:   # cartel de gancho arriba durante los primeros segundos (lo piden las campañas)
+        g = re.sub(r'[{}]', '', gancho.upper())[:70]
+        lineas.insert(0, f'Dialogue: 1,0:00:00.00,0:00:03.80,G,{g}')
     open(ruta, 'w', encoding='utf-8').write(cab + '\n'.join(lineas) + '\n')
 
-def cortar(video, ini, fin, ass, sal):
+def cortar(video, ini, fin, ass, sal, musica=None):
     filtro = ('[0:v]split[a][b];[a]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,boxblur=20:2[f];'
               '[b]scale=1080:-2[p];[f][p]overlay=(W-w)/2:(H-h)/2,ass=' + ass + '[v]')
-    subprocess.run(['ffmpeg', '-y', '-loglevel', 'error', '-ss', str(ini), '-to', str(fin), '-i', video, '-filter_complex', filtro,
-                    '-map', '[v]', '-map', '0:a?', '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '21', '-c:a', 'aac', '-b:a', '128k',
-                    '-movflags', '+faststart', sal], check=True)
+    ent = ['-ss', str(ini), '-to', str(fin), '-i', video]
+    if musica:   # música de fondo suave bajo la voz
+        ent += ['-stream_loop', '-1', '-i', musica]
+        filtro += f';[1:a]volume=0.10,afade=t=out:st={max(1, fin - ini - 2)}:d=2[m];[0:a][m]amix=inputs=2:duration=first:dropout_transition=0[au]'; amap = '[au]'
+    else: amap = '0:a?'
+    subprocess.run(['ffmpeg', '-y', '-loglevel', 'error'] + ent + ['-filter_complex', filtro, '-map', '[v]', '-map', amap, '-shortest',
+                    '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '21', '-c:a', 'aac', '-b:a', '128k', '-movflags', '+faststart', sal], check=True)
+
+BANCO = 'https://aurzane.com/marketing/musica/'
+def musica_fondo(cid):
+    """Pista CC BY tranquila del banco de AURZANE (Jamendo); devuelve (ruta, crédito)."""
+    try:
+        banco = [b for b in json.load(open(os.path.join(os.path.dirname(D), 'marketing', 'musica_banco.json'), encoding='utf-8')) if b.get('calma')]
+        b = banco[int(hashlib.md5(cid.encode()).hexdigest(), 16) % len(banco)]
+        ruta = f'/tmp/clips/m-{b["id"]}.mp3'
+        if not os.path.exists(ruta):
+            open(ruta, 'wb').write(urllib.request.urlopen(urllib.request.Request(BANCO + b['id'] + '.mp3', headers={'User-Agent': 'Mozilla/5.0'}), timeout=60).read())
+        return ruta, b.get('credito', '')
+    except Exception as e:
+        print('música', str(e)[:100]); return None, ''
 
 def subir_youtube(ruta, titulo, desc, tags):
     tk = pedir('https://oauth2.googleapis.com/token', {'client_id': E('CLIPS_YT_CLIENT_ID') or E('YT_CLIENT_ID'), 'client_secret': E('CLIPS_YT_CLIENT_SECRET') or E('YT_CLIENT_SECRET'),
@@ -129,9 +150,12 @@ def main():
             ini, fin = float(m['inicio']), float(m['fin'])
             if not (15 <= fin - ini <= 60) or any(not (fin <= a or ini >= b) for a, b in usados): continue
             cid = f'{fid}-{int(ini)}'; sal = f'/tmp/clips/{cid}.mp4'; ass = f'/tmp/clips/{cid}.ass'
-            ass_subtitulos(segs, ini, fin, ass); cortar(video, ini, fin, ass, sal)
-            desc = (m.get('titulo', '') + '\n\nClip de ' + f.get('creador', '') + (' · Original: ' + f['original'] if f.get('original') else '') +
-                    '\n' + ' '.join('#' + h for h in m.get('hashtags', [])[:4]) + ' #Shorts')
+            ass_subtitulos(segs, ini, fin, ass, m.get('gancho') or m.get('titulo', ''))
+            mus, cred = musica_fondo(cid) if f.get('musica', True) else (None, '')
+            cortar(video, ini, fin, ass, sal, mus)
+            desc = (m.get('titulo', '') + ' ' + f.get('mencion_tiktok', '') + '\n\nClip de ' + f.get('creador', '') + (' · Original: ' + f['original'] if f.get('original') else '') +
+                    ('\n🎵 ' + cred if cred else '') + '\n' + ' '.join('#' + h for h in m.get('hashtags', [])[:4]) + ' #Shorts')
+            m['titulo'] = (m.get('titulo', 'Clip')[:70] + ' ' + f.get('mencion_youtube', '')).strip()
             h = {'id': cid, 'fuente': fid, 'campana': f.get('campana', ''), 'inicio': ini, 'fin': fin, 'titulo': m.get('titulo', ''), 'fecha': HOY}
             if E('CLIPS_YT_REFRESH_TOKEN'):
                 try: h['youtube'] = subir_youtube(sal, m.get('titulo', 'Clip'), desc, m.get('hashtags', []))
