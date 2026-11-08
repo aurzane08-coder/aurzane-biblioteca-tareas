@@ -1,5 +1,16 @@
 [
  {
+  "fecha": "2026-11-08",
+  "id": "ia-httpsssarpublishers.comssarjahss",
+  "tipo": "libro",
+  "titulo": "EFFECT OF MENTAL IMAGERY AND SELF-TALK TRAINING ON THE ATTENTIONAL READINESS OF ATHLETES IN THE UNIVERSITY OF PORT HARCOURT",
+  "url": "https://archive.org/details/httpsssarpublishers.comssarjahss",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 7 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/httpsssarpublishers.comssarjahss/189-2024-SSARJAHSS.pdf"
+  ]
+ },
+ {
   "fecha": "2026-11-07",
   "id": "oa-W7225192117",
   "tipo": "libro",
