@@ -138,6 +138,8 @@ def main():
         ya = [h for h in hechos if h['fuente'] == fid and (h.get('youtube') or h.get('tiktok'))]   # los que no se subieron se rehacen
         if len(ya) >= int(f.get('max_clips', 5)): continue
         video = f'/tmp/clips/{fid}.mp4'
+        if not os.path.exists(video) and f.get('archivo'):   # vídeo descargado en el ordenador de Adrián y subido a GitHub (YouTube bloquea los servidores)
+            subprocess.run(['curl', '-sSL', '--fail', '-o', video, f['archivo']], check=False)
         if not os.path.exists(video):
             subprocess.run(['yt-dlp', '-f', 'bv*[height<=1080]+ba/b', '--merge-output-format', 'mp4', '-o', video, f['url']], check=False)
         if not os.path.exists(video): print('::warning title=Clips::no se pudo descargar', f['url']); continue
