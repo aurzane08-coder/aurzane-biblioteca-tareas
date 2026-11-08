@@ -450,6 +450,31 @@ if DIARIO or len(pend) < 8:
         ok, motivo = verificar(x)
         if ok: pend.append(x)
         else: descartar_solo(x, motivo[0].upper() + motivo[1:]); nuevos_auto += 1
+# La IA decide sola los libros y estudios ya verificados (PDF descargable y completo): con 7 o más se publican, con menos se descartan.
+# Si la IA no responde se quedan para la siguiente pasada; nunca se publican sin nota.
+cand = [p for p in pend if p['tipo'] in ('libro', 'estudio') and p.get('paginas')][:30]
+auto_lib = auto_lib_no = 0
+if cand:
+    r_ = gemini_rapido('Eres el editor de la biblioteca gratuita de psicología AURZANE (lectores hispanohablantes, público general y estudiantes). '
+                       'Puntúa de 1 a 10 si vale la pena publicar cada obra: tema de psicología o salud mental útil, obra seria y completa, no actas, '
+                       'no catálogos ni boletines, no temas ajenos. Responde solo con los números separados por comas, en el mismo orden.\n'
+                       + '\n'.join(f'{k + 1}. [{c["tipo"]}, {c.get("idioma")}, {c.get("paginas")} págs] {c["titulo"][:160]} · {(c.get("editorial") or "")[:60]} · {(c.get("resumen") or "")[:220]}' for k, c in enumerate(cand)))
+    notas = [int(x) for x in re.findall(r'\b\d{1,2}\b', r_)]
+    if len(notas) == len(cand):
+        for c, n_ in zip(cand, notas):
+            vistos.add(c['id'])
+            if n_ >= 7 and auto_lib < 12:
+                c = dict(c); ok, motivo = verificar(c, guardar_pdf=True)
+                if not ok: descartar_solo(c, 'Al publicarla ' + motivo); continue
+                c.update(publicado=HOY, nota=n_, auto=True); aprob.insert(0, c); nuevos_pub.append(c); auto_lib += 1
+                for k in (c.get('tema') or '', 'ed:' + (c.get('editorial') or ''), 'tipo:' + c['tipo']):
+                    a = apr.setdefault(k, [0, 0]); a[0] += 1
+                nov.insert(0, {'fecha': HOY, 'url': f'https://aurzane.com/biblioteca/recientes/{c["id"]}/', 'titulo': ('Libro abierto: ' if c['tipo'] == 'libro' else 'Estudio reciente: ') + c['titulo'][:110]})
+            elif n_ < 7:
+                descartar_solo(c, f'La IA le dio {n_}/10: no encaja en la biblioteca'); auto_lib_no += 1
+            else: vistos.discard(c['id'])
+        pend = [p for p in pend if p['id'] not in vistos]
+if auto_lib or auto_lib_no: acciones.append(f'Revisé sola la cola de libros y estudios: publiqué {auto_lib} con nota 7 o más y descarté {auto_lib_no}.')
 if nuevos_auto: acciones.append(f'Descarté sola {nuevos_auto} propuestas que no servían (sin PDF, capítulos sueltos o actas). Están en el admin por si quieres revisarlas.')
 # ---------- 15. Frases de libros para redes: la IA lee los libros (dominio público y licencias libres) y propone citas ----------
 # Solo libros con permiso para citar y compartir: dominio público, CC BY, CC BY-SA y CC BY-ND, más los libros abiertos aprobados.
@@ -501,6 +526,21 @@ def gemini_base(prompt, maxt=700, temp=0.3):
         GEM_INFO['estado'] = f'error {st} en {modelo}'; GEM_INFO['fallos'] += 1
         if GEM_INFO['fallos'] >= 6 or GEM_INFO['segundos'] > 240: break
         if st in (429, 503): time.sleep(3)
+    return ia_respaldo(prompt, maxt, temp)
+def ia_respaldo(prompt, maxt=700, temp=0.3):
+    """Si Gemini agotó su cupo gratuito, usa los modelos gratuitos de GitHub (con el token del propio flujo)."""
+    tk = os.environ.get('GITHUB_TOKEN', '').strip()
+    if not tk or GEM_INFO.get('resp_fallos', 0) >= 4: return ''
+    for modelo in ('openai/gpt-4.1-mini', 'openai/gpt-4o-mini', 'meta/Llama-4-Scout-17B-16E-Instruct'):
+        st, b, _, _ = get('https://models.github.ai/inference/chat/completions', {'Content-Type': 'application/json', 'Authorization': 'Bearer ' + tk},
+                          datos=json.dumps({'model': modelo, 'messages': [{'role': 'user', 'content': prompt}], 'temperature': temp, 'max_tokens': max(maxt * 2, 1024)}).encode(), metodo='POST', t=90)
+        if st == 200:
+            try:
+                txt = json.loads(b)['choices'][0]['message']['content'].strip()
+                if txt: GEM_INFO.update(estado='ok (respaldo GitHub)', modelo=modelo); return txt
+            except Exception: pass
+        GEM_INFO['resp_fallos'] = GEM_INFO.get('resp_fallos', 0) + 1
+        if GEM_INFO['resp_fallos'] >= 4: break
     return ''
 def gemini_rapido(prompt): return gemini_base(prompt, 300, 0)
 def es_espanol(t):

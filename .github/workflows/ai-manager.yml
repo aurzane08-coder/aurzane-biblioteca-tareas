@@ -13,6 +13,7 @@ on:
 permissions:
   contents: write
   actions: write
+  models: read
 concurrency:
   group: ai-manager
   cancel-in-progress: false

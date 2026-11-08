@@ -41,6 +41,13 @@ def gemini(prompt):
             t = ''.join(x.get('text', '') for x in r['candidates'][0]['content']['parts'])
             if t.strip(): return t
         except Exception as e: print('gemini', m, str(e)[:120]); time.sleep(5)
+    for m in ('openai/gpt-4.1-mini', 'openai/gpt-4o-mini'):   # respaldo gratuito: modelos de GitHub con el token del flujo
+        try:
+            r = pedir('https://models.github.ai/inference/chat/completions', crudo=json.dumps({'model': m, 'messages': [{'role': 'user', 'content': prompt}], 'temperature': 0.4, 'max_tokens': 4000}).encode(),
+                      cab={'Content-Type': 'application/json', 'Authorization': 'Bearer ' + E('GITHUB_TOKEN')}, t=120)
+            t = r['choices'][0]['message']['content']
+            if t.strip(): print('IA de respaldo:', m); return t
+        except Exception as e: print('respaldo', m, str(e)[:120])
     return ''
 
 def transcribir(video):
@@ -109,6 +116,9 @@ def musica_fondo(cid):
 def subir_youtube(ruta, titulo, desc, tags):
     tk = pedir('https://oauth2.googleapis.com/token', {'client_id': E('CLIPS_YT_CLIENT_ID') or E('YT_CLIENT_ID'), 'client_secret': E('CLIPS_YT_CLIENT_SECRET') or E('YT_CLIENT_SECRET'),
                                                         'refresh_token': E('CLIPS_YT_REFRESH_TOKEN'), 'grant_type': 'refresh_token'})['access_token']
+    canal = (pedir('https://www.googleapis.com/youtube/v3/channels?part=snippet&mine=true', cab={'Authorization': 'Bearer ' + tk}).get('items') or [{}])[0].get('snippet', {}).get('title', '')
+    if not canal or 'aurzane' in canal.lower():   # identificador de destino: los clips nunca van al canal de AURZANE
+        raise RuntimeError(f'El YouTube conectado para clips es «{canal or "desconocido"}», no Clips-All: vuelve a conectarlo en aurzane.com/youtube/')
     meta = {'snippet': {'title': (titulo[:90] + ' #Shorts'), 'description': desc[:4900], 'tags': tags[:10] + ['Shorts', 'clips'], 'categoryId': '24'},
             'status': {'privacyStatus': 'public', 'selfDeclaredMadeForKids': False}}
     datos = open(ruta, 'rb').read()
@@ -116,7 +126,7 @@ def subir_youtube(ruta, titulo, desc, tags):
                                  headers={'Authorization': 'Bearer ' + tk, 'Content-Type': 'application/json; charset=UTF-8', 'X-Upload-Content-Type': 'video/mp4', 'X-Upload-Content-Length': str(len(datos))})
     sesion = urllib.request.urlopen(req, timeout=60).headers['Location']
     r = pedir(sesion, crudo=datos, cab={'Authorization': 'Bearer ' + tk, 'Content-Type': 'video/mp4'}, metodo='PUT', t=600)
-    return 'https://youtube.com/shorts/' + r['id']
+    return 'https://youtube.com/shorts/' + r['id'] + f' (canal «{canal}»)'
 
 def subir_tiktok(ruta):
     rt = E('CLIPS_TIKTOK_REFRESH_TOKEN')

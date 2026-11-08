@@ -259,6 +259,9 @@ def _google_token():
 
 def video_youtube(texto, url, local, enlace, p):
     tk = _google_token()
+    canal = (pedir('https://www.googleapis.com/youtube/v3/channels?part=snippet&mine=true', cab={'Authorization': 'Bearer ' + tk}).get('items') or [{}])[0].get('snippet', {}).get('title', '')
+    if 'aurzane' not in canal.lower():   # identificador de destino: los vídeos de AURZANE solo van al canal de AURZANE
+        raise RuntimeError(f'El YouTube conectado es «{canal or "desconocido"}», no el canal de AURZANE')
     titulo = (p['titulo'] if p['tipo'] == 'frase' else p['ganchos'][0])[:90] + ' #Shorts'
     desc = texto + '\n\nAURZANE: tests psicológicos, calculadoras y libros gratis en https://aurzane.com\n🔔 Suscríbete para una dosis diaria de psicología.\n\n#Shorts #Psicología #SaludMental #AURZANE'
     meta = {'snippet': {'title': titulo, 'description': desc[:4900], 'tags': [h for h in p.get('hashtags', [])][:10] + ['AURZANE', 'Shorts'],
@@ -285,6 +288,9 @@ def _tiktok_token():
 
 def video_tiktok(texto, url, local, enlace, p):
     tk = _tiktok_token(); cab = {'Authorization': 'Bearer ' + tk, 'Content-Type': 'application/json; charset=UTF-8'}
+    nombre = pedir('https://open.tiktokapis.com/v2/user/info/?fields=open_id,display_name', cab={'Authorization': 'Bearer ' + tk}).get('data', {}).get('user', {}).get('display_name', '')
+    if 'clip' in nombre.lower():   # identificador de destino: lo de AURZANE nunca va a la cuenta de clips
+        raise RuntimeError(f'El TikTok conectado es «{nombre}» (clips), no el de AURZANE')
     info = pedir('https://open.tiktokapis.com/v2/post/publish/creator_info/query/', {}, cab)['data']
     # Hasta que TikTok apruebe la app, solo se puede publicar en privado (SELF_ONLY). Tras la aprobación: variable TIKTOK_PUBLICO=1.
     opciones = info.get('privacy_level_options', [])

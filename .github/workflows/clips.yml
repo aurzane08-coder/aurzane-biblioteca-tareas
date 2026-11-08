@@ -8,6 +8,7 @@ on:
   workflow_dispatch:
 permissions:
   contents: write
+  models: read
 concurrency: clips
 jobs:
   c:
@@ -15,6 +16,7 @@ jobs:
     timeout-minutes: 120
     env:
       GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       YT_CLIENT_ID: "5296096526-v4h7ddqrv6stn3b251rbccguj63hpda3.apps.googleusercontent.com"
       YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
       CLIPS_YT_CLIENT_ID: ${{ secrets.CLIPS_YT_CLIENT_ID }}
