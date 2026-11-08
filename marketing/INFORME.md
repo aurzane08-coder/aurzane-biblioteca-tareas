@@ -1,16 +1,16 @@
 # Informe de marketing
 
-Actualizado: 2026-11-07. Clics de personas (sin bots ni vistas previas) que entraron por los enlaces de las publicaciones.
+Actualizado: 2026-11-08. Clics de personas (sin bots ni vistas previas) que entraron por los enlaces de las publicaciones.
 
 | Red | Publicaciones | Clics |
 |---|---|---|
-| telegram | 22 | 4 |
-| bluesky | 17 | 46 |
-| mastodon | 17 | 37 |
+| telegram | 24 | 4 |
+| bluesky | 18 | 51 |
+| mastodon | 18 | 41 |
 | instagram | 6 | 0 |
 | facebook | 6 | 19 |
 | threads | 0 | 0 |
-| pinterest | 11 | 0 |
+| pinterest | 12 | 0 |
 
 ## Productos con más clics
 
@@ -21,17 +21,18 @@ Actualizado: 2026-11-07. Clics de personas (sin bots ni vistas previas) que entr
 | frase-b424a195 | 6 |
 | crea-l05-08 | 6 |
 | test-tdah | 5 |
+| curso-neuro | 5 |
 | crea-l05-04 | 4 |
+| crea-l05-03 | 4 |
 | curso-metod | 4 |
 | nc-ingenieria-en-tecnologias-industriales | 4 |
-| curso-neuro | 4 |
 | nc-sociologia | 4 |
 | test-personalidad | 4 |
 | biblio-nexus | 4 |
 | ovp | 4 |
 | test-ansiedad | 4 |
+| nc-criminologia | 4 |
 | test-autoestima | 3 |
-| crea-l05-03 | 3 |
 | frase-2144e317 | 3 |
 | frase-ff372591 | 3 |
 | frase-f56e3629 | 3 |
@@ -39,5 +40,4 @@ Actualizado: 2026-11-07. Clics de personas (sin bots ni vistas previas) que entr
 | frase-fee27969 | 2 |
 | crea-l06-14 | 2 |
 | frase-7c565d26 | 2 |
-| frase-7f46c133 | 1 |
-| nc-ingenieria-mecanica | 1 |
+| frase-7610e3a4 | 2 |
