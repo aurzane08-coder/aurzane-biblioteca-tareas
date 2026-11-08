@@ -253,3 +253,6 @@
 2026-11-08,2,bluesky,nc-educacion-infantil,ok,at://did:plc:6ovoiudj7dkxgrzd2zkyn77y/app.bsky.feed.post/3mzszehgror2d
 2026-11-08,2,mastodon,nc-periodismo,ok,https://mastodon.social/@auzane/117582183772969191
 2026-11-08,2,pinterest,calc-calorias,feed,
+2026-11-08,4,youtube,frase-fe3fa4a3,ok,https://youtu.be/pl5PR_-Sjbg
+2026-11-08,4,tiktok,frase-276319e1,error,400 {"error":{"code":"spam_risk_too_many_pending_share" "message":"spam_risk_too_many_pending_share" "log_id":"2026110903295143AE4B52DA156D0F93F4"}}
+2026-11-08,4,telegram,test-satisfaccion,ok,44
