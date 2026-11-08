@@ -139,7 +139,7 @@ def main():
         if len(ya) >= int(f.get('max_clips', 5)): continue
         video = f'/tmp/clips/{fid}.mp4'
         yt = re.search(r'(?:v=|youtu\.be/)([\w-]{11})', f['url'])
-        local = f'/tmp/material/{yt.group(1)}.mp4' if yt else ''
+        local = f'/tmp/material/{f.get("material") or (yt.group(1) if yt else "")}.mp4'
         if not os.path.exists(video) and local and os.path.exists(local): os.replace(local, video)   # descargado en el ordenador de Adrián (rama material-clips)
         if not os.path.exists(video) and f.get('archivo'):   # vídeo descargado en el ordenador de Adrián y subido a GitHub (YouTube bloquea los servidores)
             subprocess.run(['curl', '-sSL', '--fail', '-o', video, f['archivo']], check=False)
