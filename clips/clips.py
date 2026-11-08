@@ -45,7 +45,10 @@ def gemini(prompt):
 def transcribir(video):
     from faster_whisper import WhisperModel
     modelo = WhisperModel(E('WHISPER') or 'base', device='cpu', compute_type='int8')
-    segs, info = modelo.transcribe(video, vad_filter=True, word_timestamps=True)
+    import numpy as np   # el audio se decodifica con ffmpeg (evita incompatibilidades de PyAV)
+    pcm = subprocess.run(['ffmpeg', '-loglevel', 'error', '-i', video, '-f', 's16le', '-ac', '1', '-ar', '16000', '-'], capture_output=True, check=True).stdout
+    audio = np.frombuffer(pcm, np.int16).astype(np.float32) / 32768.0
+    segs, info = modelo.transcribe(audio, vad_filter=True, word_timestamps=True, language=E('IDIOMA') or 'es')
     out = []
     for s in segs:
         out.append({'i': round(s.start, 2), 'f': round(s.end, 2), 't': s.text.strip(), 'w': [(round(w.start, 2), round(w.end, 2), w.word) for w in (s.words or [])]})

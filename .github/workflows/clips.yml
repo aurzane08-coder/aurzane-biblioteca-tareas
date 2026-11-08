@@ -50,7 +50,7 @@ jobs:
         if: steps.hay.outputs.si == '1'
         run: |
           sudo apt-get -qq update >/dev/null && sudo apt-get -qq install -y ffmpeg fonts-dejavu-core >/dev/null
-          pip install -q --break-system-packages faster-whisper "av<15" yt-dlp
+          pip install -q --break-system-packages faster-whisper yt-dlp
       - name: Material descargado en el ordenador (rama material-clips, en trozos de menos de 100 MB)
         if: steps.hay.outputs.si == '1'
         run: |
