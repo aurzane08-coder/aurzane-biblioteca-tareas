@@ -42,7 +42,7 @@ jobs:
           [ -n "$T" ] && { echo "::add-mask::$T"; echo "CLIPS_YT_REFRESH_TOKEN=$T" >> $GITHUB_ENV; }
           T=$($SSH "$SG_USER@$SG_HOST" "cat $W/privado-tiktok/refresh_clips 2>/dev/null" || true)
           [ -n "$T" ] && { echo "::add-mask::$T"; echo "CLIPS_TIKTOK_REFRESH_TOKEN=$T" >> $GITHUB_ENV; }
-          echo "::notice title=Clips::YouTube Clips-All $([ -n "$(grep -c CLIPS_YT $GITHUB_ENV)" ] && echo conectado || echo sin conectar)"
+          echo "::notice title=Clips::YouTube Clips-All: $(grep -q '^CLIPS_YT_REFRESH_TOKEN=' $GITHUB_ENV && echo conectado || echo sin conectar) · TikTok clips: $(grep -q '^CLIPS_TIKTOK_REFRESH_TOKEN=' $GITHUB_ENV && echo conectado || echo sin conectar)"
       - name: ¿Hay vídeos autorizados?
         id: hay
         run: python3 -c "import json;print('si=' + ('1' if any(f.get('autorizado') is True for f in json.load(open('clips/fuentes.json'))) else '0'))" >> $GITHUB_OUTPUT
