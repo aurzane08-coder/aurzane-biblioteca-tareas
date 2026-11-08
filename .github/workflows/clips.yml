@@ -12,7 +12,7 @@ concurrency: clips
 jobs:
   c:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 120
     env:
       GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
       YT_CLIENT_ID: "5296096526-v4h7ddqrv6stn3b251rbccguj63hpda3.apps.googleusercontent.com"

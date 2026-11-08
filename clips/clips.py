@@ -44,7 +44,7 @@ def gemini(prompt):
 
 def transcribir(video):
     from faster_whisper import WhisperModel
-    modelo = WhisperModel(E('WHISPER') or 'small', device='cpu', compute_type='int8')
+    modelo = WhisperModel(E('WHISPER') or 'base', device='cpu', compute_type='int8')
     segs, info = modelo.transcribe(video, vad_filter=True, word_timestamps=True)
     out = []
     for s in segs:
@@ -131,6 +131,7 @@ def main():
     if not fuentes: print('::notice title=Clips::No hay vídeos autorizados en clips/fuentes.json'); return
     if not E('CLIPS_YT_REFRESH_TOKEN'): print('::notice title=Clips::Falta el secreto CLIPS_YT_REFRESH_TOKEN (permiso del canal Clips-All)')
     os.makedirs('/tmp/clips', exist_ok=True)
+    nuevas_tr = 0
     for f in fuentes:
         if hoy_n >= MAX_DIA: break
         fid = hashlib.md5(f['url'].encode()).hexdigest()[:10]
@@ -143,6 +144,8 @@ def main():
         cache = os.path.join(D, 'transcripciones', fid + '.json')
         if os.path.exists(cache): segs = json.load(open(cache, encoding='utf-8'))
         else:
+            if nuevas_tr >= 1: continue   # una transcripción nueva por pasada para no pasar del tiempo límite
+            nuevas_tr += 1
             segs, _ = transcribir(video); os.makedirs(os.path.dirname(cache), exist_ok=True); json.dump(segs, open(cache, 'w', encoding='utf-8'), ensure_ascii=False)
         usados = [(h['inicio'], h['fin']) for h in ya]
         if not (E('CLIPS_YT_REFRESH_TOKEN') or E('CLIPS_TIKTOK_REFRESH_TOKEN')):
