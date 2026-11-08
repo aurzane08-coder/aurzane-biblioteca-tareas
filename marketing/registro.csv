@@ -240,3 +240,7 @@
 2026-11-08,1,mastodon,calc-embarazo,ok,https://mastodon.social/@auzane/117580698983098319
 2026-11-08,1,instagram,ovp,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"AWIxEGKeV4asYyPk43z8svP"}}
 2026-11-08,1,facebook,test-autocompasion,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"AXs9wWZGY3ets92Mcmwn5Gn"}}
+2026-11-08,3,telegram,frase-8e70072e,ok,41
+2026-11-08,3,bluesky,frase-90740468,ok,at://did:plc:6ovoiudj7dkxgrzd2zkyn77y/app.bsky.feed.post/3mzsici4juh2s
+2026-11-08,3,mastodon,frase-7b28d25e,ok,https://mastodon.social/@auzane/117580983177483796
+2026-11-08,3,pinterest,frase-fe3fa4a3,feed,
