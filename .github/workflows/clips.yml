@@ -1,0 +1,43 @@
+name: Clips (Clips-All)
+# Recorta vídeos autorizados de campañas de clipping (clips/fuentes.json) en Shorts verticales con subtítulos y los sube a Clips-All y a TikTok.
+on:
+  schedule:
+    - cron: '17 7,13,19 * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency: clips
+jobs:
+  c:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      YT_CLIENT_ID: "5296096526-v4h7ddqrv6stn3b251rbccguj63hpda3.apps.googleusercontent.com"
+      YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+      CLIPS_YT_CLIENT_ID: ${{ secrets.CLIPS_YT_CLIENT_ID }}
+      CLIPS_YT_CLIENT_SECRET: ${{ secrets.CLIPS_YT_CLIENT_SECRET }}
+      CLIPS_YT_REFRESH_TOKEN: ${{ secrets.CLIPS_YT_REFRESH_TOKEN }}
+      TIKTOK_CLIENT_KEY: ${{ secrets.TIKTOK_CLIENT_KEY }}
+      TIKTOK_CLIENT_SECRET: ${{ secrets.TIKTOK_CLIENT_SECRET }}
+      CLIPS_TIKTOK_REFRESH_TOKEN: ${{ secrets.CLIPS_TIKTOK_REFRESH_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: ¿Hay vídeos autorizados?
+        id: hay
+        run: python3 -c "import json;print('si=' + ('1' if any(f.get('autorizado') is True for f in json.load(open('clips/fuentes.json'))) else '0'))" >> $GITHUB_OUTPUT
+      - name: Herramientas
+        if: steps.hay.outputs.si == '1'
+        run: |
+          sudo apt-get -qq update >/dev/null && sudo apt-get -qq install -y ffmpeg fonts-dejavu-core >/dev/null
+          pip install -q --break-system-packages faster-whisper yt-dlp
+      - name: Hacer y subir clips
+        if: steps.hay.outputs.si == '1'
+        run: python3 -u clips/clips.py
+      - name: Guardar registro
+        if: steps.hay.outputs.si == '1'
+        run: |
+          git config user.name "aurzane-bot"; git config user.email "bot@aurzane.com"
+          git add clips
+          git commit -qm "clips: $(date +%F' '%H:%M)" || exit 0
+          for i in 1 2 3 4 5; do git pull --rebase -q && git push -q && break; sleep 7; done
