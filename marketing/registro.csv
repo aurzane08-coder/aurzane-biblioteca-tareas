@@ -235,3 +235,8 @@
 2026-11-07,2,facebook,nc-finanzas-y-contabilidad,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"AgFHFPZAIOlU-XBeCMdlfWL"}}
 2026-11-07,4,instagram,frase-fc524221,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"Arap7wROluGgpnJZLIrdCY0"}}
 2026-11-07,4,facebook,frase-653787df,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"AA3ce5iOJjbansJ4CBpEruM"}}
+2026-11-08,1,telegram,test-sueno,ok,40
+2026-11-08,1,bluesky,test-habitos,ok,at://did:plc:6ovoiudj7dkxgrzd2zkyn77y/app.bsky.feed.post/3mzsebbl6i326
+2026-11-08,1,mastodon,calc-embarazo,ok,https://mastodon.social/@auzane/117580698983098319
+2026-11-08,1,instagram,ovp,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"AWIxEGKeV4asYyPk43z8svP"}}
+2026-11-08,1,facebook,test-autocompasion,error,400 {"error":{"message":"API access blocked." "type":"OAuthException" "code":200 "fbtrace_id":"AXs9wWZGY3ets92Mcmwn5Gn"}}

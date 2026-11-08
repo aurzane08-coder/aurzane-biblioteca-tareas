@@ -4,9 +4,9 @@ Actualizado: 2026-11-08. Clics de personas (sin bots ni vistas previas) que entr
 
 | Red | Publicaciones | Clics |
 |---|---|---|
-| telegram | 24 | 4 |
-| bluesky | 18 | 51 |
-| mastodon | 18 | 41 |
+| telegram | 25 | 4 |
+| bluesky | 19 | 53 |
+| mastodon | 19 | 41 |
 | instagram | 6 | 0 |
 | facebook | 6 | 19 |
 | threads | 0 | 0 |
@@ -37,7 +37,7 @@ Actualizado: 2026-11-08. Clics de personas (sin bots ni vistas previas) que entr
 | frase-ff372591 | 3 |
 | frase-f56e3629 | 3 |
 | frase-4a49bc6d | 3 |
+| test-habitos | 3 |
 | frase-fee27969 | 2 |
 | crea-l06-14 | 2 |
 | frase-7c565d26 | 2 |
-| frase-7610e3a4 | 2 |
