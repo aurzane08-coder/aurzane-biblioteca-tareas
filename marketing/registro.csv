@@ -263,3 +263,4 @@
 2026-11-08,4,tiktok,frase-276319e1,error,400 {"error":{"code":"spam_risk_too_many_pending_share" "message":"spam_risk_too_many_pending_share" "log_id":"202611090437283AE548707F24731903F4"}}
 2026-11-08,4,tiktok,frase-276319e1,error,400 {"error":{"code":"spam_risk_too_many_pending_share" "message":"spam_risk_too_many_pending_share" "log_id":"202611090445061A2EAA2C5BEB780FD902"}}
 2026-11-08,4,tiktok,frase-276319e1,error,400 {"error":{"code":"spam_risk_too_many_pending_share" "message":"spam_risk_too_many_pending_share" "log_id":"202611090522406F544E873BD930186DA0"}}
+2026-11-08,4,tiktok,frase-276319e1,error,400 {"error":{"code":"spam_risk_too_many_pending_share" "message":"spam_risk_too_many_pending_share" "log_id":"202611090528009BFEEC46F1A881F4CEC2"}}
