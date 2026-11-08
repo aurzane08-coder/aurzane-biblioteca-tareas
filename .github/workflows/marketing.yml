@@ -140,4 +140,4 @@ jobs:
           git config user.name "aurzane-bot"; git config user.email "bot@aurzane.com"
           git add -A marketing
           git commit -qm "marketing: $ACCION $(date +%F)" || exit 0
-          for i in 1 2 3 4 5; do git pull --rebase -q && git push -q && break; sleep 7; done
+          for i in 1 2 3 4 5 6; do git pull --rebase -X theirs -q && git push -q && break; git rebase --abort 2>/dev/null; sleep $((RANDOM % 20 + 5)); done   # en conflicto gana lo de esta ejecución
