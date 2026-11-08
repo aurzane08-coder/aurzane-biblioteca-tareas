@@ -219,7 +219,12 @@ def planificar(dias=14):
                 # nuevos primero (alta en los últimos 14 días y nunca publicados en esa red), luego el que lleva más sin salir
                 nuevo = lambda p: p.get('alta', '') >= (HOY - datetime.timedelta(days=14)).isoformat() and p['id'] not in ultimo[r]
                 desempate = lambda p: hashlib.md5((r + p['id']).encode()).hexdigest()
-                p = min(cand, key=lambda p: (not nuevo(p), ultimo[r].get(p['id'], ''), desempate(p)))
+                # aprende de los clics: lo que más clics trajo vuelve antes (hasta 3 semanas antes que el resto)
+                def antig(p):
+                    u = ultimo[r].get(p['id'], '')
+                    if not u: return ''
+                    return (datetime.date.fromisoformat(u[:10]) - datetime.timedelta(days=min(21, 3 * EXITO.get(p['id'], 0)))).isoformat()
+                p = min(cand, key=lambda p: (not nuevo(p), antig(p), -EXITO.get(p['id'], 0), desempate(p)))
                 dia[fr][r0] = p['id']; usados.add(p['id']); ultimo[r][p['id']] = f
     guardar('estado.json', est)
     # tarjetas que faltan y enlaces cortos
@@ -455,6 +460,18 @@ def publicar_video(franja='4'):
 
 
 HORAS = {'1': (8, 37), '5': (10, 47), '3': (12, 13), '6': (15, 23), '2': (17, 41), '4': (19, 29)}  # UTC
+
+
+def _exito():
+    """Clics de los últimos 60 días por producto (marketing/clics.csv): el plan da más salida a lo que funciona."""
+    out = collections.Counter()
+    try:
+        lim = (HOY - datetime.timedelta(days=60)).isoformat()
+        for f in csv.DictReader(open(os.path.join(D, 'clics.csv'), encoding='utf-8')):
+            if f.get('fecha', '') >= lim: out[f['producto']] += int(f.get('clics') or 0)
+    except Exception: pass
+    return out
+EXITO = _exito()
 
 
 def pendientes():
