@@ -45,7 +45,18 @@ jobs:
       - name: Archivar lo publicado
         run: |
           [ -d publicar ] || exit 0
-          mkdir -p publicado && git mv publicar "publicado/$FECHA"
+          # Solo se archiva lo que de verdad se subió: si mientras tanto alguien dejó una versión nueva de un archivo
+          # en publicar/, esa se queda para el siguiente despliegue (antes se archivaba sin subirse).
           git config user.name "aurzane-bot"; git config user.email "bot@aurzane.com"
-          git commit -m "despliegue $FECHA publicado" || exit 0
-          for i in 1 2 3 4 5; do git pull --rebase && git push && break; sleep 7; done
+          rm -rf /tmp/subido && cp -r publicar /tmp/subido
+          for i in 1 2 3 4 5; do
+            git fetch -q origin main && git checkout -q -B archivo origin/main
+            mkdir -p "publicado/$FECHA" && cp -r /tmp/subido/. "publicado/$FECHA/"
+            (cd /tmp/subido && find . -type f) | while read -r f; do
+              if [ -f "publicar/$f" ] && cmp -s "/tmp/subido/$f" "publicar/$f"; then git rm -q "publicar/$f"; fi
+            done
+            git add "publicado/$FECHA"
+            git commit -qm "despliegue $FECHA publicado" || exit 0
+            git push -q origin archivo:main && break
+            sleep 7
+          done
