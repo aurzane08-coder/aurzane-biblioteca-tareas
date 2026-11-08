@@ -3,8 +3,7 @@
 Lee con calma (una página cada pocos segundos) las temáticas de Proverbia.net que encajan con la psicología y el bienestar,
 respetando su robots.txt. Solo guarda frases de autores en dominio público (fallecidos hace más de 80 años, como pide la ley
 española para autores muertos antes de 1987) y refranes o proverbios tradicionales, siempre citando autor y fuente.
-Gemini puntúa cada frase (0-10) por lo que aporta a quien la lee; las de 7 o más quedan listas (ok) y AURZANE AI las va
-publicando poco a poco (3 al día) en aurzane.com/frases/, en «Hoy en AURZANE» y en las redes.
+Todas quedan listas (ok) sin revisión y AURZANE AI las publica en aurzane.com/frases/, en «Hoy en AURZANE» y en las redes.
 Salida: ai/frases_web.json"""
 import json, os, re, time, html, hashlib, datetime, socket, urllib.request, urllib.robotparser
 socket.setdefaulttimeout(40)
@@ -18,7 +17,7 @@ TEMAS = ['esperanza', 'adversidad', 'perseverancia', 'tolerancia', 'felicidad', 
          'valor', 'paciencia', 'sabiduria', 'alegria', 'soledad', 'animo', 'exito', 'fracaso', 'dolor', 'bondad', 'gratitud',
          'calma', 'conocimiento', 'esfuerzo', 'humildad', 'optimismo', 'superacion', 'mente', 'pensamiento', 'carácter',
          'educacion', 'confianza', 'serenidad', 'tristeza', 'libertad', 'naturaleza', 'trabajo', 'perdon', 'voluntad', 'verdad']
-POR_VEZ = int(os.environ.get('PAGINAS', '6'))
+POR_VEZ = int(os.environ.get('PAGINAS', '14'))
 
 def bajar(url):
     req = urllib.request.Request(url, headers={'User-Agent': UA, 'Accept-Language': 'es-ES,es;q=0.9'})
@@ -46,7 +45,7 @@ def extraer(pagina, url, tema):
         if not (25 <= len(texto) <= 230) or texto.count('"') > 2: continue
         out.append({'id': 'fw-' + hashlib.md5(texto.lower().encode()).hexdigest()[:10], 'texto': texto, 'autor': autor,
                     'vida': f'{vida.group(1)}-{vida.group(2)}' if vida else '', 'descripcion': limpiar(vida.group(3)) if vida else '',
-                    'tema': tema, 'fuente': 'Proverbia.net', 'url_fuente': url, 'recogida': datetime.date.today().isoformat()})
+                    'tema': (re.search(r'href="/frases-de-([a-z0-9-]+)"', b) or [None, tema])[1], 'fuente': 'Proverbia.net', 'url_fuente': url, 'recogida': datetime.date.today().isoformat()})
     return out
 
 def gemini(prompt):
@@ -68,42 +67,39 @@ vistos = {x['id'] for x in datos}
 estado = json.load(open(DEST + '.estado', encoding='utf-8')) if os.path.exists(DEST + '.estado') else {'i': 0}
 nuevas = []
 paginas = ['https://proverbia.net/frase-del-dia']
-for k in range(POR_VEZ - 1):
+N_TEMAS = 4
+for k in range(N_TEMAS):
     paginas.append('https://proverbia.net/frases-de-' + TEMAS[(estado['i'] + k) % len(TEMAS)].replace('á', 'a').replace('ó', 'o').replace('ú', 'u'))
-estado['i'] = (estado['i'] + POR_VEZ - 1) % len(TEMAS)
+estado['i'] = (estado['i'] + N_TEMAS) % len(TEMAS)
+# además, autor por autor: se recorre el índice de autores (46 páginas) y se visitan sus páginas poco a poco
+estado.setdefault('cola', []); estado.setdefault('autores_vistos', []); estado.setdefault('pag_autores', 1)
+if len(estado['cola']) < POR_VEZ:
+    u_ix = 'https://proverbia.net/autores' + (f'?page={estado["pag_autores"]}' if estado['pag_autores'] > 1 else '')
+    if permitido(u_ix):
+        try:
+            _, ix = bajar(u_ix); time.sleep(4)
+            nuevos_a = [a for a in dict.fromkeys(re.findall(r'href="(/autor/frases-de-[^"]+)"', ix)) if a not in estado['autores_vistos']]
+            estado['cola'] += nuevos_a; estado['pag_autores'] = estado['pag_autores'] % 46 + 1
+        except Exception as e: print('índice de autores', str(e)[:100])
+for a in estado['cola'][:max(0, POR_VEZ - N_TEMAS - 1)]:
+    paginas.append('https://proverbia.net' + a); estado['autores_vistos'].append(a)
+estado['cola'] = estado['cola'][max(0, POR_VEZ - N_TEMAS - 1):]
+estado['autores_vistos'] = estado['autores_vistos'][-5000:]
 for u in paginas:
     if not permitido(u): print('robots.txt no lo permite:', u); continue
     try:
         st, pag = bajar(u)
-        tema = u.rsplit('frases-de-', 1)[-1] if 'frases-de-' in u else 'frase del día'
+        tema = 'autor' if '/autor/' in u else u.rsplit('frases-de-', 1)[-1] if 'frases-de-' in u else 'frase del día'
         fr = [f for f in extraer(pag, u, tema) if f['id'] not in vistos]
         for f in fr: vistos.add(f['id']); nuevas.append(f)
         print(f'{st} {u}: {len(fr)} frases nuevas de dominio público')
     except Exception as e: print('no se pudo leer', u, str(e)[:100])
     time.sleep(5)
 
-# revisión con Gemini: ¿aporta algo bueno a quien la lee hoy? (sin violencia, sin desprecio, sin ideas dañinas)
-t_gem = time.time()
-for i in range(0, len(nuevas), 30):
-    if time.time() - t_gem > 300: print('Tiempo de revisión agotado; el resto se puntúa en la próxima vuelta'); break
-    lote = nuevas[i:i + 30]
-    r = gemini('Eres editor de AURZANE, una web de psicología y bienestar. Puntúa de 0 a 10 cada frase según lo que aporta a una persona '
-               'que la lea hoy en redes (inspira, consuela, hace pensar, es clara y actual). Baja la nota si es machista, cruel, religiosa '
-               'de forma excluyente, fatalista, confusa o anticuada. Responde SOLO un JSON: [{"n": número, "nota": 0-10}].\n\n' +
-               '\n'.join(f'{j}. «{f["texto"]}» ({f["autor"]})' for j, f in enumerate(lote)))
-    try:
-        for x in json.loads(re.search(r'\[.*\]', r, re.S).group(0)):
-            f = lote[int(x['n'])]; f['nota'] = int(x['nota']); f['ok'] = f['nota'] >= 7
-    except Exception: print('Gemini no puntuó este lote; se revisará en la próxima vuelta')
+# frases de autores en dominio público y refranes: entran todas sin revisión (decisión de Adrián, 8-11-2026)
+for f in nuevas: f['ok'] = True
 datos.extend(nuevas)
-# frases que quedaron sin nota en vueltas anteriores: se reintentan
-pend = [f for f in datos if 'nota' not in f][:30]
-if pend and time.time() - t_gem < 300:
-    r = gemini('Puntúa de 0 a 10 cada frase para una web de psicología y bienestar (inspira, consuela o hace pensar; baja la nota si es cruel, '
-               'machista, fatalista o confusa). Responde SOLO un JSON: [{"n": número, "nota": 0-10}].\n\n' + '\n'.join(f'{j}. «{f["texto"]}» ({f["autor"]})' for j, f in enumerate(pend)))
-    try:
-        for x in json.loads(re.search(r'\[.*\]', r, re.S).group(0)): f = pend[int(x['n'])]; f['nota'] = int(x['nota']); f['ok'] = f['nota'] >= 7
-    except Exception: pass
+for f in datos: f['ok'] = True
 json.dump(datos, open(DEST, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
 json.dump(estado, open(DEST + '.estado', 'w', encoding='utf-8'))
 print(f'::notice title=Frases::{len(nuevas)} nuevas, {sum(1 for f in datos if f.get("ok"))} listas en total, {sum(1 for f in datos if f.get("publicada"))} ya publicadas')

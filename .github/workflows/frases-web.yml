@@ -6,7 +6,7 @@ on:
     - cron: '23 3 * * *'
   workflow_dispatch:
     inputs:
-      paginas: { description: 'Páginas a leer', default: '6' }
+      paginas: { description: 'Páginas a leer', default: '14' }
 permissions:
   contents: write
 concurrency: frases-web
@@ -16,7 +16,7 @@ jobs:
     timeout-minutes: 25
     env:
       GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-      PAGINAS: ${{ github.event.inputs.paginas || '6' }}
+      PAGINAS: ${{ github.event.inputs.paginas || '14' }}
     steps:
       - uses: actions/checkout@v4
       - run: python3 ai/frases_web/recolectar.py

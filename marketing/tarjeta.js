@@ -30,7 +30,7 @@ h1{font-family:B;font-size:${tam}px;line-height:1.12;margin:20px 0 0;text-shadow
 .pie{position:absolute;bottom:64px;left:0;right:0;text-align:center;font-size:26px;opacity:.85}
 .cred{position:absolute;bottom:24px;right:30px;font-size:17px;opacity:.6}
 </style></head><body><div class="top">AUR<span>Z</span>ANE</div><div class="w"><div class="c">“</div><h1>${esc(x.frase)}</h1>${x.autor ? `<div class="a">${esc(x.autor)}</div>` : '<div class="l"></div>'}</div>
-<div class="pie">aurzane.com · psicología y bienestar</div>${x.credito ? `<div class="cred">${esc(x.credito)}</div>` : ''}</body></html>`;
+${x.credito ? `<div class="cred">${esc(x.credito)}</div>` : ''}</body></html>`;
   fs.writeFileSync('/tmp/tarjeta.html', html); await pg.goto('file:///tmp/tarjeta.html'); await pg.waitForTimeout(250);
   await pg.screenshot({path: x.salida, type: 'jpeg', quality: 88});
 }
@@ -54,7 +54,7 @@ p{font-size:40px;line-height:1.35;margin:30px 0 0;opacity:.92}
 .cta b{display:inline-block;font-size:36px;color:${t[0]};background:linear-gradient(90deg,${t[3]},${t[4]});padding:18px 40px;border-radius:99px}
 </style></head><body><div class="v"></div><div class="top">AUR<span>Z</span>ANE</div>
 <div class="w">${x.kicker ? `<div class="k">${esc(x.kicker)}</div>` : ''}<h1>${x.cita ? '“' : ''}${esc(x.titulo)}${x.cita ? '”' : ''}</h1>${x.autor ? `<div class="a">${esc(x.autor)}</div>` : ''}${x.sub ? `<p>${esc(x.sub)}</p>` : ''}</div>
-<div class="cta"><b>${esc(x.pie || 'aurzane.com')}</b></div></body></html>`;
+</body></html>`;
   fs.writeFileSync('/tmp/capa.html', html); await pg.goto('file:///tmp/capa.html'); await pg.waitForTimeout(250);
   await pg.screenshot({path: x.salida, type: 'png', omitBackground: true});
   await pg.setViewportSize({width: 1080, height: 1350});
@@ -92,7 +92,7 @@ p{font-size:36px;line-height:1.38;margin:30px 0 0;opacity:.88;max-width:900px}
 .g{font-size:26px;font-weight:700;color:${t[0]};background:linear-gradient(90deg,${t[3]},${t[4]});padding:14px 30px;border-radius:99px;white-space:nowrap}
 </style></head><body>${x.credito ? `<div class="cred">${esc(x.credito)}</div>` : ''}<div class="w${x.foto ? ' f' : ''}"><div class="top">AUR<span>Z</span>ANE<small>/ ${esc((x.mundo || '').toUpperCase())}</small></div>
 ${x.emoji ? `<div class="e">${x.emoji}</div>` : ''}<div class="k">${esc(x.kicker)}</div><h1>${esc(x.titulo)}</h1>${x.sub ? `<p>${esc(x.sub)}</p>` : ''}
-<div class="pie"><div class="url">${esc(x.pie)}</div><div class="g">Gratis</div></div></div></body></html>`;
+<div class="pie"><div class="url"></div><div class="g">Gratis</div></div></div></body></html>`;
     fs.writeFileSync('/tmp/tarjeta.html', html); await pg.goto('file:///tmp/tarjeta.html'); await pg.waitForTimeout(250);
     await pg.screenshot({path: x.salida, type: 'jpeg', quality: 86}); console.log(x.salida);
   }

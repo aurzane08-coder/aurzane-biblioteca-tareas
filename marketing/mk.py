@@ -328,7 +328,7 @@ def enlaces():
 def imagen_de(p, fotos=None):
     if p.get('img'): return p['img']
     fotos = leer('fotos.json', {}) if fotos is None else fotos
-    return f'img/auto/{p["id"]}' + ('-f' if p['id'] in fotos else '') + '.jpg'
+    return f'img/auto/{p["id"]}' + ('-f' if p['id'] in fotos else '') + '-s.jpg'   # -s: sin la dirección web en el pie (va en la descripción)
 
 
 def feed():
@@ -375,11 +375,12 @@ def texto_frase(r, p, n):
     url = IR + codigo(r, p['id'])
     if r == 'instagram':
         tags = ' '.join('#' + h for h in p['hashtags'] + ['AURZANE', 'PsicologíaPositiva', 'Autoestima', 'Resiliencia'])
-        return f'{t}\n\n{q}\n\n🧠 Tests de bienestar y lecturas de psicología gratis: enlace en la bio.\n\n{tags}'
+        return f'{t}\n\n{q}\n\n🧠 Tests de bienestar y lecturas de psicología gratis en aurzane.com (enlace en la bio).\n\n{tags}'
     if r == 'telegram':
         return f'<b>{html.escape(p["titulo"])}</b>' + ('' if p['autor'] == 'AURZANE' else f'\n<i>{html.escape(p["autor"])}</i>') + f'\n\n{q}\n\n🧠 Más para tu bienestar: {url}'
     if r == 'bluesky':
-        return f'{t}\n\n{q} #FrasesMotivadoras'
+        s_ = f'{t}\n\n{q}\n\n{url} #FrasesMotivadoras'
+        return s_ if len(s_) <= 300 else f'{t}\n\n{url}'[:300]
     if r == 'facebook':
         return f'{t}\n\n{q}\n\nTests de bienestar y lecturas de psicología gratis 👉 {url}'
     return f'{t}\n\n{q}\n\n{url}\n\n#FrasesMotivadoras #Superación #SaludMental #Psicología'

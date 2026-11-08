@@ -900,10 +900,10 @@ try:
     usadas = leer('hoy_usadas.json', {'frases': [], 'dias': {}})
     # frases célebres recogidas de Proverbia (ai/frases_web/recolectar.py): se publican poco a poco, 3 nuevas al día
     fw = leer('frases_web.json', [])
-    if fw and not any(f.get('publicada') == HOY for f in fw):
-        listas = sorted([f for f in fw if f.get('ok') and not f.get('publicada')], key=lambda f: -f.get('nota', 0))
-        for f in listas[:3]: f['publicada'] = HOY
-        if listas: guardar('frases_web.json', fw); acciones.append(f'Publiqué {min(3, len(listas))} frases célebres nuevas en aurzane.com/frases/ (quedan {max(0, len(listas) - 3)} en cola).')
+    if fw:
+        listas = [f for f in fw if f.get('ok') and not f.get('publicada')]
+        for f in listas: f['publicada'] = HOY   # frases de autores clásicos: se publican todas en cuanto llegan
+        if listas: guardar('frases_web.json', fw); acciones.append(f'Publiqué {len(listas)} frases célebres nuevas en aurzane.com/frases/.')
     pub = sorted([f for f in fw if f.get('publicada')], key=lambda f: (f['publicada'], f.get('nota', 0)), reverse=True)
     for f in pub: f['url'] = 'https://aurzane.com/frases/#' + f['id']
     os.makedirs(OUT + '/frases', exist_ok=True)

@@ -10,7 +10,7 @@
   "url_fuente": "https://proverbia.net/frase-del-dia",
   "recogida": "2026-11-08",
   "nota": 6,
-  "ok": false
+  "ok": true
  },
  {
   "id": "fw-a01e521566",
@@ -36,7 +36,7 @@
   "url_fuente": "https://proverbia.net/frases-de-esperanza",
   "recogida": "2026-11-08",
   "nota": 6,
-  "ok": false
+  "ok": true
  },
  {
   "id": "fw-9dbcf1b9d9",
@@ -62,7 +62,7 @@
   "url_fuente": "https://proverbia.net/frases-de-esperanza",
   "recogida": "2026-11-08",
   "nota": 3,
-  "ok": false
+  "ok": true
  },
  {
   "id": "fw-0ea5294706",
@@ -88,7 +88,7 @@
   "url_fuente": "https://proverbia.net/frases-de-esperanza",
   "recogida": "2026-11-08",
   "nota": 5,
-  "ok": false
+  "ok": true
  },
  {
   "id": "fw-7ceeea6bdb",
@@ -101,7 +101,7 @@
   "url_fuente": "https://proverbia.net/frases-de-esperanza",
   "recogida": "2026-11-08",
   "nota": 4,
-  "ok": false
+  "ok": true
  },
  {
   "id": "fw-21bc324a77",
@@ -114,7 +114,7 @@
   "url_fuente": "https://proverbia.net/frases-de-esperanza",
   "recogida": "2026-11-08",
   "nota": 5,
-  "ok": false
+  "ok": true
  },
  {
   "id": "fw-ce55bd3ceb",
@@ -127,7 +127,7 @@
   "url_fuente": "https://proverbia.net/frases-de-esperanza",
   "recogida": "2026-11-08",
   "nota": 4,
-  "ok": false
+  "ok": true
  },
  {
   "id": "fw-f51805dde4",
@@ -153,7 +153,7 @@
   "url_fuente": "https://proverbia.net/frases-de-esperanza",
   "recogida": "2026-11-08",
   "nota": 5,
-  "ok": false
+  "ok": true
  },
  {
   "id": "fw-6291dd5f42",
@@ -166,7 +166,7 @@
   "url_fuente": "https://proverbia.net/frases-de-esperanza",
   "recogida": "2026-11-08",
   "nota": 6,
-  "ok": false
+  "ok": true
  },
  {
   "id": "fw-154911e362",
@@ -192,7 +192,7 @@
   "url_fuente": "https://proverbia.net/frases-de-esperanza",
   "recogida": "2026-11-08",
   "nota": 6,
-  "ok": false
+  "ok": true
  },
  {
   "id": "fw-36ff0afac0",
@@ -218,7 +218,7 @@
   "url_fuente": "https://proverbia.net/frases-de-esperanza",
   "recogida": "2026-11-08",
   "nota": 3,
-  "ok": false
+  "ok": true
  },
  {
   "id": "fw-e10926dbcb",
@@ -270,7 +270,7 @@
   "url_fuente": "https://proverbia.net/frases-de-adversidad",
   "recogida": "2026-11-08",
   "nota": 4,
-  "ok": false
+  "ok": true
  },
  {
   "id": "fw-1dcc08205b",
@@ -296,7 +296,7 @@
   "url_fuente": "https://proverbia.net/frases-de-adversidad",
   "recogida": "2026-11-08",
   "nota": 5,
-  "ok": false
+  "ok": true
  },
  {
   "id": "fw-1d2c493670",
@@ -322,7 +322,7 @@
   "url_fuente": "https://proverbia.net/frases-de-adversidad",
   "recogida": "2026-11-08",
   "nota": 4,
-  "ok": false
+  "ok": true
  },
  {
   "id": "fw-9924997f29",
@@ -335,7 +335,7 @@
   "url_fuente": "https://proverbia.net/frases-de-adversidad",
   "recogida": "2026-11-08",
   "nota": 6,
-  "ok": false
+  "ok": true
  },
  {
   "id": "fw-2d1d45fa94",
@@ -348,7 +348,7 @@
   "url_fuente": "https://proverbia.net/frases-de-adversidad",
   "recogida": "2026-11-08",
   "nota": 5,
-  "ok": false
+  "ok": true
  },
  {
   "id": "fw-31fbc00be1",
@@ -452,7 +452,7 @@
   "url_fuente": "https://proverbia.net/frases-de-perseverancia",
   "recogida": "2026-11-08",
   "nota": 6,
-  "ok": false
+  "ok": true
  },
  {
   "id": "fw-fdf29f9040",
@@ -491,7 +491,7 @@
   "url_fuente": "https://proverbia.net/frases-de-perseverancia",
   "recogida": "2026-11-08",
   "nota": 6,
-  "ok": false
+  "ok": true
  },
  {
   "id": "fw-0b7a2062b5",
@@ -543,7 +543,7 @@
   "url_fuente": "https://proverbia.net/frases-de-perseverancia",
   "recogida": "2026-11-08",
   "nota": 6,
-  "ok": false
+  "ok": true
  },
  {
   "id": "fw-29ea709366",
@@ -647,7 +647,7 @@
   "url_fuente": "https://proverbia.net/frases-de-tolerancia",
   "recogida": "2026-11-08",
   "nota": 6,
-  "ok": false
+  "ok": true
  },
  {
   "id": "fw-cba107601c",
@@ -673,7 +673,7 @@
   "url_fuente": "https://proverbia.net/frases-de-tolerancia",
   "recogida": "2026-11-08",
   "nota": 6,
-  "ok": false
+  "ok": true
  },
  {
   "id": "fw-0df25487f3",
@@ -686,7 +686,7 @@
   "url_fuente": "https://proverbia.net/frases-de-tolerancia",
   "recogida": "2026-11-08",
   "nota": 1,
-  "ok": false
+  "ok": true
  },
  {
   "id": "fw-f3740875ad",
@@ -738,7 +738,7 @@
   "url_fuente": "https://proverbia.net/frases-de-tolerancia",
   "recogida": "2026-11-08",
   "nota": 5,
-  "ok": false
+  "ok": true
  },
  {
   "id": "fw-b97314065f",
@@ -816,7 +816,7 @@
   "url_fuente": "https://proverbia.net/frases-de-felicidad",
   "recogida": "2026-11-08",
   "nota": 2,
-  "ok": false
+  "ok": true
  },
  {
   "id": "fw-1b16cb4eff",
@@ -855,7 +855,7 @@
   "url_fuente": "https://proverbia.net/frases-de-felicidad",
   "recogida": "2026-11-08",
   "nota": 6,
-  "ok": false
+  "ok": true
  },
  {
   "id": "fw-fd5bd82b4a",
@@ -998,7 +998,7 @@
   "url_fuente": "https://proverbia.net/frases-de-amistad",
   "recogida": "2026-11-08",
   "nota": 6,
-  "ok": false
+  "ok": true
  },
  {
   "id": "fw-f2c5b0683b",
@@ -1011,7 +1011,7 @@
   "url_fuente": "https://proverbia.net/frases-de-amistad",
   "recogida": "2026-11-08",
   "nota": 3,
-  "ok": false
+  "ok": true
  },
  {
   "id": "fw-084fcf01a1",
@@ -1024,7 +1024,7 @@
   "url_fuente": "https://proverbia.net/frases-de-amistad",
   "recogida": "2026-11-08",
   "nota": 5,
-  "ok": false
+  "ok": true
  },
  {
   "id": "fw-41655d534c",
@@ -1050,7 +1050,7 @@
   "url_fuente": "https://proverbia.net/frases-de-amistad",
   "recogida": "2026-11-08",
   "nota": 6,
-  "ok": false
+  "ok": true
  },
  {
   "id": "fw-ce64b5dcbe",
@@ -1076,7 +1076,7 @@
   "url_fuente": "https://proverbia.net/frases-de-amistad",
   "recogida": "2026-11-08",
   "nota": 4,
-  "ok": false
+  "ok": true
  },
  {
   "id": "fw-4693ccad34",
@@ -1089,7 +1089,7 @@
   "url_fuente": "https://proverbia.net/frases-de-amistad",
   "recogida": "2026-11-08",
   "nota": 2,
-  "ok": false
+  "ok": true
  },
  {
   "id": "fw-de92de2ad5",
@@ -1115,7 +1115,7 @@
   "url_fuente": "https://proverbia.net/frases-de-amor",
   "recogida": "2026-11-08",
   "nota": 6,
-  "ok": false
+  "ok": true
  },
  {
   "id": "fw-d690214135",
@@ -1128,7 +1128,7 @@
   "url_fuente": "https://proverbia.net/frases-de-amor",
   "recogida": "2026-11-08",
   "nota": 4,
-  "ok": false
+  "ok": true
  },
  {
   "id": "fw-3fbddff129",
@@ -1141,7 +1141,7 @@
   "url_fuente": "https://proverbia.net/frases-de-amor",
   "recogida": "2026-11-08",
   "nota": 1,
-  "ok": false
+  "ok": true
  },
  {
   "id": "fw-2bd44c249f",
@@ -1154,7 +1154,7 @@
   "url_fuente": "https://proverbia.net/frases-de-amor",
   "recogida": "2026-11-08",
   "nota": 5,
-  "ok": false
+  "ok": true
  },
  {
   "id": "fw-bd052d2f9e",
@@ -1180,7 +1180,7 @@
   "url_fuente": "https://proverbia.net/frases-de-amor",
   "recogida": "2026-11-08",
   "nota": 4,
-  "ok": false
+  "ok": true
  },
  {
   "id": "fw-0ff7af18a9",
@@ -1206,7 +1206,7 @@
   "url_fuente": "https://proverbia.net/frases-de-amor",
   "recogida": "2026-11-08",
   "nota": 5,
-  "ok": false
+  "ok": true
  },
  {
   "id": "fw-31561917e1",
@@ -1219,7 +1219,7 @@
   "url_fuente": "https://proverbia.net/frases-de-amor",
   "recogida": "2026-11-08",
   "nota": 5,
-  "ok": false
+  "ok": true
  },
  {
   "id": "fw-69a6781402",
@@ -1284,7 +1284,7 @@
   "url_fuente": "https://proverbia.net/frases-de-vida",
   "recogida": "2026-11-08",
   "nota": 4,
-  "ok": false
+  "ok": true
  },
  {
   "id": "fw-e0c1dd6fba",
@@ -1297,7 +1297,7 @@
   "url_fuente": "https://proverbia.net/frases-de-vida",
   "recogida": "2026-11-08",
   "nota": 6,
-  "ok": false
+  "ok": true
  },
  {
   "id": "fw-7ffb12e7ad",
@@ -1310,7 +1310,7 @@
   "url_fuente": "https://proverbia.net/frases-de-vida",
   "recogida": "2026-11-08",
   "nota": 6,
-  "ok": false
+  "ok": true
  },
  {
   "id": "fw-1e00781ca1",
@@ -1375,7 +1375,7 @@
   "url_fuente": "https://proverbia.net/frases-de-tiempo",
   "recogida": "2026-11-08",
   "nota": 5,
-  "ok": false
+  "ok": true
  },
  {
   "id": "fw-58aa9e956f",
@@ -1388,7 +1388,7 @@
   "url_fuente": "https://proverbia.net/frases-de-tiempo",
   "recogida": "2026-11-08",
   "nota": 3,
-  "ok": false
+  "ok": true
  },
  {
   "id": "fw-150555c362",
@@ -1440,7 +1440,7 @@
   "url_fuente": "https://proverbia.net/frases-de-tiempo",
   "recogida": "2026-11-08",
   "nota": 3,
-  "ok": false
+  "ok": true
  },
  {
   "id": "fw-bbc656de57",
@@ -1453,7 +1453,7 @@
   "url_fuente": "https://proverbia.net/frases-de-tiempo",
   "recogida": "2026-11-08",
   "nota": 1,
-  "ok": false
+  "ok": true
  },
  {
   "id": "fw-a6f28f92e5",
@@ -1466,7 +1466,7 @@
   "url_fuente": "https://proverbia.net/frases-de-tiempo",
   "recogida": "2026-11-08",
   "nota": 6,
-  "ok": false
+  "ok": true
  },
  {
   "id": "fw-0ec14abd20",
@@ -1479,7 +1479,7 @@
   "url_fuente": "https://proverbia.net/frases-de-tiempo",
   "recogida": "2026-11-08",
   "nota": 3,
-  "ok": false
+  "ok": true
  },
  {
   "id": "fw-5084fbad09",
@@ -1518,7 +1518,7 @@
   "url_fuente": "https://proverbia.net/frases-de-tiempo",
   "recogida": "2026-11-08",
   "nota": 6,
-  "ok": false
+  "ok": true
  },
  {
   "id": "fw-94e8fb3de3",
@@ -1544,7 +1544,7 @@
   "url_fuente": "https://proverbia.net/frases-de-miedo",
   "recogida": "2026-11-08",
   "nota": 5,
-  "ok": false
+  "ok": true
  },
  {
   "id": "fw-375551ce39",
@@ -1570,7 +1570,7 @@
   "url_fuente": "https://proverbia.net/frases-de-miedo",
   "recogida": "2026-11-08",
   "nota": 6,
-  "ok": false
+  "ok": true
  },
  {
   "id": "fw-b375832fa5",
@@ -1583,7 +1583,7 @@
   "url_fuente": "https://proverbia.net/frases-de-miedo",
   "recogida": "2026-11-08",
   "nota": 6,
-  "ok": false
+  "ok": true
  },
  {
   "id": "fw-778b83f25a",
@@ -1596,7 +1596,7 @@
   "url_fuente": "https://proverbia.net/frases-de-miedo",
   "recogida": "2026-11-08",
   "nota": 4,
-  "ok": false
+  "ok": true
  },
  {
   "id": "fw-8b5254a9e8",
@@ -1609,7 +1609,7 @@
   "url_fuente": "https://proverbia.net/frases-de-miedo",
   "recogida": "2026-11-08",
   "nota": 2,
-  "ok": false
+  "ok": true
  },
  {
   "id": "fw-38fb4ae13b",
@@ -1622,7 +1622,7 @@
   "url_fuente": "https://proverbia.net/frases-de-miedo",
   "recogida": "2026-11-08",
   "nota": 5,
-  "ok": false
+  "ok": true
  },
  {
   "id": "fw-dd5b7bf4f1",
@@ -1635,7 +1635,7 @@
   "url_fuente": "https://proverbia.net/frases-de-miedo",
   "recogida": "2026-11-08",
   "nota": 6,
-  "ok": false
+  "ok": true
  },
  {
   "id": "fw-52d6256bfc",
@@ -1687,7 +1687,7 @@
   "url_fuente": "https://proverbia.net/frases-de-valor",
   "recogida": "2026-11-08",
   "nota": 4,
-  "ok": false
+  "ok": true
  },
  {
   "id": "fw-855b81c2b6",
@@ -1700,7 +1700,7 @@
   "url_fuente": "https://proverbia.net/frases-de-valor",
   "recogida": "2026-11-08",
   "nota": 6,
-  "ok": false
+  "ok": true
  },
  {
   "id": "fw-7d3f0345d1",
@@ -1713,7 +1713,7 @@
   "url_fuente": "https://proverbia.net/frases-de-valor",
   "recogida": "2026-11-08",
   "nota": 3,
-  "ok": false
+  "ok": true
  },
  {
   "id": "fw-a083afee57",
@@ -1726,7 +1726,7 @@
   "url_fuente": "https://proverbia.net/frases-de-valor",
   "recogida": "2026-11-08",
   "nota": 4,
-  "ok": false
+  "ok": true
  },
  {
   "id": "fw-c95ac01fa1",
@@ -1739,7 +1739,7 @@
   "url_fuente": "https://proverbia.net/frases-de-valor",
   "recogida": "2026-11-08",
   "nota": 6,
-  "ok": false
+  "ok": true
  },
  {
   "id": "fw-eda46d2f27",
@@ -1765,7 +1765,7 @@
   "url_fuente": "https://proverbia.net/frases-de-valor",
   "recogida": "2026-11-08",
   "nota": 5,
-  "ok": false
+  "ok": true
  },
  {
   "id": "fw-caf1f48f5b",
@@ -1791,7 +1791,7 @@
   "url_fuente": "https://proverbia.net/frases-de-valor",
   "recogida": "2026-11-08",
   "nota": 3,
-  "ok": false
+  "ok": true
  },
  {
   "id": "fw-3aaf0a2ec9",
@@ -1804,7 +1804,7 @@
   "url_fuente": "https://proverbia.net/frases-de-valor",
   "recogida": "2026-11-08",
   "nota": 3,
-  "ok": false
+  "ok": true
  },
  {
   "id": "fw-6fc786ebe1",
@@ -1830,7 +1830,7 @@
   "url_fuente": "https://proverbia.net/frases-de-valor",
   "recogida": "2026-11-08",
   "nota": 5,
-  "ok": false
+  "ok": true
  },
  {
   "id": "fw-aca2c636ac",
@@ -1856,7 +1856,7 @@
   "url_fuente": "https://proverbia.net/frases-de-paciencia",
   "recogida": "2026-11-08",
   "nota": 4,
-  "ok": false
+  "ok": true
  },
  {
   "id": "fw-aacd892cfb",
@@ -1869,7 +1869,7 @@
   "url_fuente": "https://proverbia.net/frases-de-paciencia",
   "recogida": "2026-11-08",
   "nota": 5,
-  "ok": false
+  "ok": true
  },
  {
   "id": "fw-6c33c48092",
@@ -1882,7 +1882,7 @@
   "url_fuente": "https://proverbia.net/frases-de-paciencia",
   "recogida": "2026-11-08",
   "nota": 5,
-  "ok": false
+  "ok": true
  },
  {
   "id": "fw-b9da63e07a",
@@ -1908,7 +1908,7 @@
   "url_fuente": "https://proverbia.net/frases-de-paciencia",
   "recogida": "2026-11-08",
   "nota": 6,
-  "ok": false
+  "ok": true
  },
  {
   "id": "fw-04bf4fc5fa",
@@ -1960,7 +1960,7 @@
   "url_fuente": "https://proverbia.net/frases-de-paciencia",
   "recogida": "2026-11-08",
   "nota": 4,
-  "ok": false
+  "ok": true
  },
  {
   "id": "fw-c77299b8ec",
@@ -2038,7 +2038,7 @@
   "url_fuente": "https://proverbia.net/frases-de-paciencia",
   "recogida": "2026-11-08",
   "nota": 6,
-  "ok": false
+  "ok": true
  },
  {
   "id": "fw-2d69e30497",
@@ -2051,7 +2051,7 @@
   "url_fuente": "https://proverbia.net/frases-de-paciencia",
   "recogida": "2026-11-08",
   "nota": 6,
-  "ok": false
+  "ok": true
  },
  {
   "id": "fw-133f207b10",
@@ -2064,7 +2064,7 @@
   "url_fuente": "https://proverbia.net/frases-de-paciencia",
   "recogida": "2026-11-08",
   "nota": 5,
-  "ok": false
+  "ok": true
  },
  {
   "id": "fw-d6535d3833",
@@ -2077,7 +2077,7 @@
   "url_fuente": "https://proverbia.net/frases-de-paciencia",
   "recogida": "2026-11-08",
   "nota": 6,
-  "ok": false
+  "ok": true
  },
  {
   "id": "fw-d15558d562",
@@ -2194,7 +2194,7 @@
   "url_fuente": "https://proverbia.net/frases-de-sabiduria",
   "recogida": "2026-11-08",
   "nota": 5,
-  "ok": false
+  "ok": true
  },
  {
   "id": "fw-9ff2a7629b",
@@ -2259,7 +2259,7 @@
   "url_fuente": "https://proverbia.net/frases-de-sabiduria",
   "recogida": "2026-11-08",
   "nota": 5,
-  "ok": false
+  "ok": true
  },
  {
   "id": "fw-4b8787dd4a",
@@ -2272,6 +2272,6 @@
   "url_fuente": "https://proverbia.net/frases-de-sabiduria",
   "recogida": "2026-11-08",
   "nota": 5,
-  "ok": false
+  "ok": true
  }
 ]

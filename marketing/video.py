@@ -7,7 +7,7 @@ sys.path.insert(0, D)
 import mk
 
 DUR = {'frase': 12, 'curiosidad': 14}
-V = 'm1-'  # versión de los vídeos: m1 = con música de fondo
+V = 'm2-'  # versión de los vídeos: m2 = con música y solo la marca arriba (la dirección web va en la descripción)
 # Música de fondo: Kevin MacLeod (incompetech.com), licencia CC BY 4.0. Uso comercial y monetización permitidos citando el tema,
 # por eso cada publicación de vídeo lleva el crédito (mk.credito_musica). Calma para frases, más alegre para tests y calculadoras.
 MUSICA_CALMA = ['Meditation Impromptu 01', 'Meditation Impromptu 02', 'Meditation Impromptu 03', 'Peaceful Desolation', 'Healing', 'Dreamer',
