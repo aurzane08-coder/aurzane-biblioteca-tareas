@@ -55,13 +55,14 @@
     '@media(min-width:1100px){html.az-con-panel main>.hero .hero-in{text-align:left!important}html.az-con-panel main>.hero .hero-in>*{margin-left:0!important;justify-content:flex-start!important}' +
     'html.az-con-panel .world-header::before,html.az-con-panel main>.hero::before{opacity:.18}}' +
     '@media(max-width:1099px){.az-empieza{display:none}.world-header::before,main>.hero::before{opacity:.12!important}}' +
-    '.az-portada{position:absolute;top:44px;right:16px;width:330px;border-radius:24px;overflow:hidden;color:#fff;background:linear-gradient(165deg,rgba(28,22,60,.72),rgba(12,10,30,.82));border:1px solid rgba(255,255,255,.16);box-shadow:0 30px 60px -30px rgba(0,0,0,.65);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);z-index:2}' +
+    '.az-portada{position:absolute;top:44px;right:16px;width:330px;border-radius:24px;overflow:hidden;color:#fff;background:linear-gradient(165deg,rgba(28,22,60,.72),rgba(12,10,30,.82));background:linear-gradient(165deg,color-mix(in srgb,var(--mundo-osc) 60%,rgba(10,8,24,.7)),rgba(10,8,24,.85));border:1px solid rgba(255,255,255,.16);box-shadow:0 30px 60px -30px rgba(0,0,0,.65);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);z-index:2}' +
     '.az-portada .ilu{height:200px;background-repeat:no-repeat;background-position:center;background-size:88% auto,100% 100%;border-bottom:1px solid rgba(255,255,255,.1)}' +
     '.az-portada .dat{padding:16px 20px 18px}.az-portada .esc{display:inline-block;font-size:.76rem;font-weight:700;letter-spacing:.03em;background:rgba(255,217,160,.16);color:#FFD9A0;border-radius:99px;padding:3px 10px;margin-bottom:10px}' +
     '.az-portada b{display:block;font-size:.95rem;margin-bottom:2px}.az-portada p{margin:0 0 12px;font-size:.9rem;line-height:1.45;opacity:.85}' +
     '.az-portada ul{display:flex;gap:8px;list-style:none;margin:0;padding:0}.az-portada li{flex:1;text-align:center;font-size:.72rem;opacity:.85;background:rgba(255,255,255,.07);border-radius:12px;padding:8px 4px}' +
-    '.az-portada li i{display:block;font-style:normal;font-family:"Bodoni Moda",Georgia,serif;font-size:1.25rem;font-weight:700;opacity:1;color:#fff}' +
+    '.az-portada li i{display:block;font-style:normal;font-family:"Bodoni Moda",Georgia,serif;font-size:1.15rem;font-weight:700;opacity:1;color:#fff}' +
     '@media(min-width:1100px){html.az-con-portada .hero>.wrap>h1,html.az-con-portada .hero>.wrap>.lead,html.az-con-portada .hero>.wrap>.chips,html.az-con-portada #azEng{max-width:calc(100% - 380px)!important}}' +
+    '.az-portada.compacta .ilu{height:130px}.az-portada.compacta p,.az-portada.compacta ul,.az-portada.compacta b{display:none}.az-portada.compacta .esc{margin:0}'+
     '@media(max-width:1099px){.az-portada{position:relative;top:auto;right:auto;width:auto;max-width:520px;margin:22px 0 0;display:grid;grid-template-columns:150px 1fr}.az-portada .ilu{height:auto;min-height:150px;border-bottom:0;border-right:1px solid rgba(255,255,255,.1);background-size:96% auto,100% 100%}}' +
     '@media(max-width:520px){.az-portada{grid-template-columns:1fr}.az-portada .ilu{height:140px;border-right:0;border-bottom:1px solid rgba(255,255,255,.1)}}' +
     '@media print{.az-empieza,.az-portada{display:none}}';
@@ -154,12 +155,22 @@
     var datos = [];
     if (preg) datos.push('<li><i>' + preg + '</i>preguntas</li>');
     if (min) datos.push('<li><i>' + min + '</i>minutos</li>');
-    datos.push('<li><i>0 €</i>sin registro</li>');
+    datos.push('<li><i>Gratis</i>sin registro</li>');
     var a = d.createElement('aside'); a.className = 'az-portada'; a.setAttribute('aria-label', 'Sobre este ' + (/^test/.test(slug) ? 'test' : 'cálculo'));
     a.innerHTML = '<div class="ilu" role="img" aria-label="Ilustración de ' + esc(escala) + '" style="background-image:' + img.replace(/"/g, '&quot;') + ',radial-gradient(70% 80% at 50% 45%,rgba(255,217,160,.2),transparent 70%)"></div>' +
       '<div class="dat"><span class="esc">' + esc(escala) + '</span>' + (MIDE[slug] ? '<b>Qué mide</b><p>' + esc(MIDE[slug]) + '</p>' : '<p>Resultado al instante, calculado en tu navegador.</p>') +
       '<ul>' + datos.join('') + '</ul></div>';
     wrap.style.position = 'relative'; wrap.appendChild(a); html.classList.add('az-con-portada');
+    /* si la cabecera es baja (calculadoras), la portada se compacta o se quita para no tapar nada */
+    function encaje() {
+      a.classList.remove('compacta'); a.style.display = '';
+      if (w.innerWidth < 1100) return;
+      var hero = wrap.parentElement, sig = hero.nextElementSibling, lim = hero.getBoundingClientRect().bottom;
+      if (sig) lim = Math.min(lim, sig.getBoundingClientRect().top); lim -= 16;
+      if (a.getBoundingClientRect().bottom > lim) a.classList.add('compacta');
+      if (a.getBoundingClientRect().bottom > lim) a.style.display = 'none';
+    }
+    encaje(); w.addEventListener('resize', encaje); if (d.fonts && d.fonts.ready) d.fonts.ready.then(encaje); setTimeout(encaje, 1500);
   }
   /* la barra de mundos no debe aparecer en los resultados de Google como texto («AURZANEMINDOVP…») */
   function sinFragmento() { Array.prototype.forEach.call(d.querySelectorAll('.utility,.topbar,.todo-panel'), function (e) { e.setAttribute('data-nosnippet', ''); }); }

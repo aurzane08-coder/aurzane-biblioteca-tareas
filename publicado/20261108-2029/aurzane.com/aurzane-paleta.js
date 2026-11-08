@@ -252,6 +252,6 @@
 (function (d) {
   if (window.AurzaneEstilo || d.querySelector('script[data-azest]')) return;
   var s = d.createElement('script');
-  s.src = 'https://aurzane.com/aurzane-estilo.js?v=5'; s.defer = true; s.setAttribute('data-azest', '1');
+  s.src = 'https://aurzane.com/aurzane-estilo.js?v=6'; s.defer = true; s.setAttribute('data-azest', '1');
   (d.head || d.documentElement).appendChild(s);
 })(document);
