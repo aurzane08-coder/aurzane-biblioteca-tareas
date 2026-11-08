@@ -1,14 +1,14 @@
 {
  "ed:Revista brasileira de enfermagem": [
-  0,
-  13
+  12,
+  15
  ],
  "ed:Open respiratory archives": [
   0,
   2
  ],
  "ed:European journal of psychotraumatology": [
-  0,
+  3,
   17
  ],
  "ed:Revista medica del Instituto Mexicano del Seguro Social": [
@@ -49,7 +49,7 @@
  ],
  "ed:Frontiers in psychology": [
   0,
-  7
+  8
  ],
  "ed:Frontiers in sleep": [
   0,
@@ -121,7 +121,7 @@
  ],
  "ed:Internet Archive": [
   18,
-  105
+  115
  ],
  "ed:": [
   43,
@@ -196,7 +196,7 @@
   1
  ],
  "tipo:estudio": [
-  4,
+  19,
   33
  ],
  "ed:Stress biology": [
@@ -232,7 +232,7 @@
   1
  ],
  "estudio:es": [
-  0,
+  15,
   4
  ],
  "ed:Inflammation and regeneration": [

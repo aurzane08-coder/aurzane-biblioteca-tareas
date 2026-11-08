@@ -1,6 +1,149 @@
 [
  {
   "fecha": "2026-11-08",
+  "id": "ia-fantasy-giants",
+  "tipo": "libro",
+  "titulo": "Fantasy Giants",
+  "url": "https://archive.org/details/fantasy-giants",
+  "motivo": "La IA le dio 6/10: no encaja en la biblioteca",
+  "probados": [
+   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13686194.1/ZEPT_A_2735202_SM8460.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-08",
+  "id": "ia-the-kitties-guide-for-dummies-maxim-fedorov-sergey-fedorov-eng-1",
+  "tipo": "libro",
+  "titulo": "The Kitties' Guide for Dummies",
+  "url": "https://archive.org/details/the-kitties-guide-for-dummies-maxim-fedorov-sergey-fedorov-eng-1",
+  "motivo": "La IA le dio 2/10: no encaja en la biblioteca",
+  "probados": [
+   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13686194.1/ZEPT_A_2735202_SM8460.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-08",
+  "id": "ia-boat-354-the-death-of-the-unquestioned-self",
+  "tipo": "libro",
+  "titulo": "BOAT 354 THE DEATH OF THE UNQUESTIONED SELF",
+  "url": "https://archive.org/details/boat-354-the-death-of-the-unquestioned-self",
+  "motivo": "La IA le dio 3/10: no encaja en la biblioteca",
+  "probados": [
+   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13686194.1/ZEPT_A_2735202_SM8460.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-08",
+  "id": "ia-approachesto-understanding-contemporary-islam-20260712-231045-0000_202610",
+  "tipo": "libro",
+  "titulo": "Approaches+to+ Understanding+ Contemporary+ Islam 20260712 231045 0000",
+  "url": "https://archive.org/details/approachesto-understanding-contemporary-islam-20260712-231045-0000_202610",
+  "motivo": "La IA le dio 5/10: no encaja en la biblioteca",
+  "probados": [
+   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13686194.1/ZEPT_A_2735202_SM8460.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-08",
+  "id": "ia-my-beloved-friend-dear-zul-there-are-things-about-you-that-i-have-never-qu-20261",
+  "tipo": "libro",
+  "titulo": "My Beloved Friend Dear Zul, There Are Things About You That I Have Never Qu 20261017 134537 0000",
+  "url": "https://archive.org/details/my-beloved-friend-dear-zul-there-are-things-about-you-that-i-have-never-qu-20261017-134537-0000",
+  "motivo": "La IA le dio 6/10: no encaja en la biblioteca",
+  "probados": [
+   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13686194.1/ZEPT_A_2735202_SM8460.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-08",
+  "id": "ia-boat-373-chasing-money",
+  "tipo": "libro",
+  "titulo": "BOAT 373 CHASING MONEY",
+  "url": "https://archive.org/details/boat-373-chasing-money",
+  "motivo": "La IA le dio 2/10: no encaja en la biblioteca",
+  "probados": [
+   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13686194.1/ZEPT_A_2735202_SM8460.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-08",
+  "id": "ia-the-aesthetic-pleasure-of-deviation_202611",
+  "tipo": "libro",
+  "titulo": "The Aesthetic Pleasure Of Deviation",
+  "url": "https://archive.org/details/the-aesthetic-pleasure-of-deviation_202611",
+  "motivo": "La IA le dio 6/10: no encaja en la biblioteca",
+  "probados": [
+   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13686194.1/ZEPT_A_2735202_SM8460.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-08",
+  "id": "ia-against-satanism-13-the-mind-virus",
+  "tipo": "libro",
+  "titulo": "Against Satanism 13 The Mind Virus",
+  "url": "https://archive.org/details/against-satanism-13-the-mind-virus",
+  "motivo": "La IA le dio 1/10: no encaja en la biblioteca",
+  "probados": [
+   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13686194.1/ZEPT_A_2735202_SM8460.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-08",
+  "id": "ia-surviving-2050-doi-260918-update",
+  "tipo": "libro",
+  "titulo": "Surviving 2050 ( DOI 260918) Update",
+  "url": "https://archive.org/details/surviving-2050-doi-260918-update",
+  "motivo": "La IA le dio 3/10: no encaja en la biblioteca",
+  "probados": [
+   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13686194.1/ZEPT_A_2735202_SM8460.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-08",
+  "id": "ia-ijpsc-journal_v1_i1",
+  "tipo": "libro",
+  "titulo": "IJPSC Journal",
+  "url": "https://archive.org/details/ijpsc-journal_v1_i1",
+  "motivo": "La IA le dio 5/10: no encaja en la biblioteca",
+  "probados": [
+   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13686194.1/ZEPT_A_2735202_SM8460.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-08",
+  "id": "pmc-PMC13403638",
+  "tipo": "estudio",
+  "titulo": "Tereza de Jesus Sena: reformer of psychiatric and mental health nursing education and practice",
+  "url": "https://europepmc.org/article/PMC/PMC13403638",
+  "motivo": "La IA le dio 5/10: no encaja en la biblioteca",
+  "probados": [
+   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13403642.1/PMC13403642.1.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-08",
+  "id": "pmc-PMC13427022",
+  "tipo": "estudio",
+  "titulo": "Anxiety in mothers of children with COVID-19 based on the State-Trait Anxiety Inventory",
+  "url": "https://europepmc.org/article/PMC/PMC13427022",
+  "motivo": "La IA le dio 6/10: no encaja en la biblioteca",
+  "probados": [
+   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13427021.1/PMC13427021.1.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-08",
+  "id": "pmc-PMC13668738",
+  "tipo": "estudio",
+  "titulo": "Music as a tool for personal and social resilience: a three-level conceptual model",
+  "url": "https://europepmc.org/article/PMC/PMC13668738",
+  "motivo": "La IA le dio 6/10: no encaja en la biblioteca",
+  "probados": [
+   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13724535.1/PMC13724535.1.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-08",
   "id": "ia-ijpsc_issue2_cc",
   "tipo": "libro",
   "titulo": "IJPSC Volume 01, Issue 02 (2025)",

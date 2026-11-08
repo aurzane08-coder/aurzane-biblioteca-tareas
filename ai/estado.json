@@ -13,5 +13,11 @@
  "recuperar_citas": "v1",
  "curiosidades": "2026-11-08",
  "articulo": "2026-11-08",
- "leccion_20261108": "2026-11-08"
+ "leccion_20261108": "2026-11-08",
+ "art_dia": {
+  "2026-11-08": {
+   "hechos": 1,
+   "intentos": 1
+  }
+ }
 }
