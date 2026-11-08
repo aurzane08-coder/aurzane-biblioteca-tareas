@@ -9,7 +9,7 @@
  ],
  "ed:European journal of psychotraumatology": [
   11,
-  17
+  24
  ],
  "ed:Revista medica del Instituto Mexicano del Seguro Social": [
   0,
@@ -37,7 +37,7 @@
  ],
  "ed:Frontiers in psychiatry": [
   0,
-  4
+  8
  ],
  "ed:Advances in rheumatology (London, England)": [
   0,
@@ -49,7 +49,7 @@
  ],
  "ed:Frontiers in psychology": [
   0,
-  8
+  9
  ],
  "ed:Frontiers in sleep": [
   0,
@@ -105,7 +105,7 @@
  ],
  "ed:Journal of clinical medicine": [
   0,
-  4
+  5
  ],
  "ed:Frontiers in global women's health": [
   1,
@@ -113,7 +113,7 @@
  ],
  "ed:Depression and anxiety": [
   1,
-  1
+  2
  ],
  "ed:PhilPapers (PhilPapers Foundation)": [
   0,
@@ -392,6 +392,14 @@
   0
  ],
  "ed:PloS one": [
+  0,
+  1
+ ],
+ "ed:Endocrinology, diabetes & metabolism": [
+  0,
+  1
+ ],
+ "ed:Frontiers in neuroscience": [
   0,
   1
  ]
