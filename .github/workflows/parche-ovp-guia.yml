@@ -1,0 +1,39 @@
+name: OVP guía de rutas
+# Añade la guía «¿Qué evaluaciones hacer?» (ovp-guia.js: rutas Básica, Estándar y Premium) a la portada y al portal de OVP
+# directamente en el servidor, sin sustituir los archivos. Antes guarda copia en www/ovp.aurzane.com/eliminar/parche-guia-FECHA/.
+on:
+  push:
+    paths: ['.github/workflows/parche-ovp-guia.yml']
+  workflow_dispatch:
+jobs:
+  parche:
+    runs-on: ubuntu-latest
+    env:
+      SG_KEY: ${{ secrets.SG_KEY }}
+      SG_HOST: ${{ secrets.SG_HOST }}
+      SG_USER: ${{ secrets.SG_USER }}
+      SG_PORT: ${{ secrets.SG_PORT }}
+      SG_PASS: ${{ secrets.SG_PASS }}
+    steps:
+      - name: Esperar al despliegue de ovp-guia.js
+        run: sleep 90
+      - name: Insertar script
+        run: |
+          mkdir -p ~/.ssh && printf '%s\n' "$SG_KEY" | tr -d '\r' > ~/.ssh/id && chmod 600 ~/.ssh/id
+          if [ -n "$SG_PASS" ]; then ssh-keygen -p -P "$SG_PASS" -N "" -f ~/.ssh/id >/dev/null; fi
+          SSH="ssh -i $HOME/.ssh/id -p ${SG_PORT:-18765} -o StrictHostKeyChecking=accept-new"
+          $SSH "$SG_USER@$SG_HOST" 'bash -s' <<'REMOTO'
+          set -e
+          cd www/ovp.aurzane.com/public_html
+          ls -la ovp-guia.js || { echo "falta ovp-guia.js"; exit 1; }
+          B=../eliminar/parche-guia-$(date +%Y%m%d-%H%M); mkdir -p "$B"
+          for f in index.html portal.html; do
+            [ -f "$f" ] || { echo "falta $f"; continue; }
+            if grep -q 'ovp-guia.js' "$f"; then echo "ya estaba: $f"; continue; fi
+            cp -p "$f" "$B/"
+            sed -i '0,/<\/body>/s|</body>|<script src="/ovp-guia.js?v=1" defer></script>\n</body>|' "$f"
+            grep -c 'ovp-guia.js' "$f" | sed "s|^|$f: |"
+            grep -c 'id="preguntas"\|selectorInicio' "$f" | sed "s|^|$f anclas: |"
+          done
+          site-tools-client domain-all update id=ovp.aurzane.com flush_cache=1 >/dev/null || true
+          REMOTO
