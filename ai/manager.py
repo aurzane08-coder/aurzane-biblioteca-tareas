@@ -450,31 +450,6 @@ if DIARIO or len(pend) < 8:
         ok, motivo = verificar(x)
         if ok: pend.append(x)
         else: descartar_solo(x, motivo[0].upper() + motivo[1:]); nuevos_auto += 1
-# La IA decide sola los libros y estudios ya verificados (PDF descargable y completo): con 7 o más se publican, con menos se descartan.
-# Si la IA no responde se quedan para la siguiente pasada; nunca se publican sin nota.
-cand = [p for p in pend if p['tipo'] in ('libro', 'estudio') and p.get('paginas')][:30]
-auto_lib = auto_lib_no = 0
-if cand:
-    r_ = gemini_rapido('Eres el editor de la biblioteca gratuita de psicología AURZANE (lectores hispanohablantes, público general y estudiantes). '
-                       'Puntúa de 1 a 10 si vale la pena publicar cada obra: tema de psicología o salud mental útil, obra seria y completa, no actas, '
-                       'no catálogos ni boletines, no temas ajenos. Responde solo con los números separados por comas, en el mismo orden.\n'
-                       + '\n'.join(f'{k + 1}. [{c["tipo"]}, {c.get("idioma")}, {c.get("paginas")} págs] {c["titulo"][:160]} · {(c.get("editorial") or "")[:60]} · {(c.get("resumen") or "")[:220]}' for k, c in enumerate(cand)))
-    notas = [int(x) for x in re.findall(r'\b\d{1,2}\b', r_)]
-    if len(notas) == len(cand):
-        for c, n_ in zip(cand, notas):
-            vistos.add(c['id'])
-            if n_ >= 7 and auto_lib < 12:
-                c = dict(c); ok, motivo = verificar(c, guardar_pdf=True)
-                if not ok: descartar_solo(c, 'Al publicarla ' + motivo); continue
-                c.update(publicado=HOY, nota=n_, auto=True); aprob.insert(0, c); nuevos_pub.append(c); auto_lib += 1
-                for k in (c.get('tema') or '', 'ed:' + (c.get('editorial') or ''), 'tipo:' + c['tipo']):
-                    a = apr.setdefault(k, [0, 0]); a[0] += 1
-                nov.insert(0, {'fecha': HOY, 'url': f'https://aurzane.com/biblioteca/recientes/{c["id"]}/', 'titulo': ('Libro abierto: ' if c['tipo'] == 'libro' else 'Estudio reciente: ') + c['titulo'][:110]})
-            elif n_ < 7:
-                descartar_solo(c, f'La IA le dio {n_}/10: no encaja en la biblioteca'); auto_lib_no += 1
-            else: vistos.discard(c['id'])
-        pend = [p for p in pend if p['id'] not in vistos]
-if auto_lib or auto_lib_no: acciones.append(f'Revisé sola la cola de libros y estudios: publiqué {auto_lib} con nota 7 o más y descarté {auto_lib_no}.')
 if nuevos_auto: acciones.append(f'Descarté sola {nuevos_auto} propuestas que no servían (sin PDF, capítulos sueltos o actas). Están en el admin por si quieres revisarlas.')
 # ---------- 15. Frases de libros para redes: la IA lee los libros (dominio público y licencias libres) y propone citas ----------
 # Solo libros con permiso para citar y compartir: dominio público, CC BY, CC BY-SA y CC BY-ND, más los libros abiertos aprobados.
@@ -635,6 +610,31 @@ if cola_c and os.environ.get('GEMINI_API_KEY'):
                 autodesc.insert(0, {'fecha': HOY, 'id': c['id'], 'tipo': 'cita', 'titulo': c['titulo'][:160], 'url': c['url'], 'motivo': f'Gemini le dio {n_}/10: no tiene fuerza suficiente para redes'})
         pend = [p for p in pend if p['id'] not in vistos]
 if auto_citas: acciones.append(f'Aprobé sola {auto_citas} frases de libros con nota 8 o más; salen en redes sin que tengas que revisarlas.')
+# La IA decide sola los libros y estudios ya verificados (PDF descargable y completo): con 7 o más se publican, con menos se descartan.
+# Si la IA no responde se quedan para la siguiente pasada; nunca se publican sin nota.
+cand = [p for p in pend if p['tipo'] in ('libro', 'estudio') and p.get('paginas')][:30]
+auto_lib = auto_lib_no = 0
+if cand:
+    r_ = gemini_rapido('Eres el editor de la biblioteca gratuita de psicología AURZANE (lectores hispanohablantes, público general y estudiantes). '
+                       'Puntúa de 1 a 10 si vale la pena publicar cada obra: tema de psicología o salud mental útil, obra seria y completa, no actas, '
+                       'no catálogos ni boletines, no temas ajenos. Responde solo con los números separados por comas, en el mismo orden.\n'
+                       + '\n'.join(f'{k + 1}. [{c["tipo"]}, {c.get("idioma")}, {c.get("paginas")} págs] {c["titulo"][:160]} · {(c.get("editorial") or "")[:60]} · {(c.get("resumen") or "")[:220]}' for k, c in enumerate(cand)))
+    notas = [int(x) for x in re.findall(r'\b\d{1,2}\b', r_)]
+    if len(notas) == len(cand):
+        for c, n_ in zip(cand, notas):
+            vistos.add(c['id'])
+            if n_ >= 7 and auto_lib < 12:
+                c = dict(c); ok, motivo = verificar(c, guardar_pdf=True)
+                if not ok: descartar_solo(c, 'Al publicarla ' + motivo); continue
+                c.update(publicado=HOY, nota=n_, auto=True); aprob.insert(0, c); nuevos_pub.append(c); auto_lib += 1
+                for k in (c.get('tema') or '', 'ed:' + (c.get('editorial') or ''), 'tipo:' + c['tipo']):
+                    a = apr.setdefault(k, [0, 0]); a[0] += 1
+                nov.insert(0, {'fecha': HOY, 'url': f'https://aurzane.com/biblioteca/recientes/{c["id"]}/', 'titulo': ('Libro abierto: ' if c['tipo'] == 'libro' else 'Estudio reciente: ') + c['titulo'][:110]})
+            elif n_ < 7:
+                descartar_solo(c, f'La IA le dio {n_}/10: no encaja en la biblioteca'); auto_lib_no += 1
+            else: vistos.discard(c['id'])
+        pend = [p for p in pend if p['id'] not in vistos]
+if auto_lib or auto_lib_no: acciones.append(f'Revisé sola la cola de libros y estudios: publiqué {auto_lib} con nota 7 o más y descarté {auto_lib_no}.')
 guardar('citas_leidos.json', sorted(leidos))
 
 sin_nota = [c for c in citas_ok if 'nota' not in c][:30]
