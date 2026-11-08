@@ -157,9 +157,16 @@ try:
         if len(f) < 5 or f[0] < ayer: continue
         r = mk['por_red'].setdefault(f[2], {'ok': 0, 'fallos': 0})
         if f[4] in ('ok', 'feed'): r['ok'] += 1; mk['ok_24h'] += 1
-        else: r['fallos'] += 1; mk['fallos_24h'] += 1
+        else: r['fallos'] += 1; mk['fallos_24h'] += 1; r['ultimo_error'] = ','.join(f[5:])[:300]
+    # errores conocidos de las redes: la IA explica qué pasa y qué hacer en lugar de reintentar a ciegas
+    CONOCIDOS = [(r'API access blocked|account.*(restricted|disabled)|unusual activity', 'Meta ha bloqueado el acceso de la app por "actividad inusual". Solo se arregla a mano: entra en developers.facebook.com con tu cuenta, pulsa "Confirmar cuenta" y completa la verificación. Mientras tanto Instagram y Facebook quedan en pausa para no empeorarlo.'),
+                 (r'Error validating access token|Session has expired|invalid_grant|token.*expired', 'El permiso de la red ha caducado. Hay que volver a conectar la cuenta (renovar el token).'),
+                 (r'unaudited_client_can_only_post_to_private', 'TikTok aún no ha aprobado la app: los vídeos van como borrador a tu bandeja.'),
+                 (r'rate limit|Too Many|429', 'La red ha limitado las publicaciones por exceso de envíos; se reanuda sola.')]
     for red, v in mk['por_red'].items():
-        if v['fallos'] and not v['ok']: aviso('mal', f'{red}: todas las publicaciones de las últimas 24 h han fallado.', 'red_fallos', red)
+        if v['fallos'] and not v['ok']:
+            causa = next((t for pat, t in CONOCIDOS if re.search(pat, v.get('ultimo_error', ''), re.I)), '')
+            aviso('mal', f'{red}: todas las publicaciones de las últimas 24 h han fallado.' + (f' {causa}' if causa else f' Último error: {v.get("ultimo_error", "")[:120]}'), 'red_fallos', red)
 except Exception as e: print('marketing', e)
 
 # ---------- 8. Novedades: páginas nuevas del sitemap, anunciadas solas ----------
@@ -938,7 +945,7 @@ def aprender_desconocido(p, f_, probadas=()):
     Queda en ai/conocimiento.json; si la acción falla 3 veces sin ningún acierto, se olvida y vuelve a preguntar."""
     opciones = [r for r in SEGURAS if r not in probadas] or SEGURAS
     previos = '\n'.join(f"- {k.split('|', 1)[1][:90]} -> {v['receta']} ({v['ok']} aciertos, {v['fallo']} fallos)" for k, v in list(CONOC.items())[-12:])
-    r = gemini('Eres el sistema de mantenimiento de AURZANE (web de psicología en SiteGround con subdominios, automatizaciones en GitHub Actions, redes sociales). '
+    r = gemini('Eres el sistema de mantenimiento de AURZANE (web de psicología en SiteGround con subdominios, HTML y PHP propios, NO usa WordPress, automatizaciones en GitHub Actions, redes sociales por API). '
                'Apareció este problema: «' + p['texto'] + '». Contexto:\n' + contexto_de(p)[:3000] +
                '\n\nAcciones que puedes ordenar (solo estas): ' + ', '.join(f'{x} = {NOMBRES.get(x, x)}' for x in opciones) +
                ('\n\nLo que has aprendido antes:\n' + previos if previos else '') +
@@ -1024,7 +1031,7 @@ def aplicar(receta, p):
     if receta == 'diagnostico_ia':
         previas = [x for x in REP if x['tipo'] == t and x['resultado'] == 'ok'][:5]
         memoria = '\n'.join(f"- {x['problema'][:120]} → se arregló con «{NOMBRES.get(x['receta'], x['receta'])}»" for x in previas)
-        sug = gemini('Eres el ingeniero de mantenimiento de AURZANE, una web de psicología en SiteGround (HTML/PHP estático, subdominios mind, nexus, live, learn, build, ovp) '
+        sug = gemini('Eres el ingeniero de mantenimiento de AURZANE, una web de psicología en SiteGround (HTML y PHP propios, NO usa WordPress; subdominios mind, nexus, live, learn, build, ovp; despliegue con GitHub Actions; marketing automático en redes con sus APIs) '
                      'con automatizaciones en GitHub Actions y Supabase. Responde en español, sin rayas largas, en máximo 8 líneas: 1) causa más probable, '
                      '2) cómo arreglarlo paso a paso, 3) si es seguro hacerlo automáticamente.\n\nProblema: ' + p['texto'] + '\n\nContexto:\n' + contexto_de(p)[:5000] +
                      ('\n\nCasos parecidos que se arreglaron antes:\n' + memoria if memoria else ''))

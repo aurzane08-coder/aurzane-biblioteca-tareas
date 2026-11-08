@@ -401,6 +401,14 @@ def texto(r, p, n):
 
 
 # ------------------------------------------------------------------ publicación
+def bloqueada(r):
+    """Meta (Instagram y Facebook) puede bloquear el acceso a la API. Si los 2 últimos intentos de esa red fallaron por bloqueo,
+    se pausa el resto del día para no insistir (insistir empeora la revisión de Meta); al día siguiente se prueba una vez."""
+    try: L = [l.split(',') for l in open(os.path.join(D, 'registro.csv'), encoding='utf-8') if f',{r},' in l][-2:]
+    except Exception: return False
+    return len(L) == 2 and all('access blocked' in ','.join(x).lower() or 'temporarily blocked' in ','.join(x).lower() for x in L) and L[-1][0] == HOY.isoformat()
+
+
 def publicar_video():
     import redes
     cat = {p['id']: p for p in leer('catalogo.json')['productos']}
@@ -411,6 +419,7 @@ def publicar_video():
     for n, r in enumerate(REDES_VIDEO):
         i = plan.get(r); h = r + '-video'
         if not i or i not in cat or not redes.configurada(r): continue
+        if bloqueada(r): print('Pausada (bloqueo de Meta):', r); continue
         if any(f == hoy and x == i for f, x in hist.get(h, [])): continue
         p = cat[i]
         import video as _v
@@ -454,6 +463,7 @@ def publicar(franja):
         if r == 'pinterest':  # sale solo en el feed
             hist.setdefault(r, []).append([hoy, i]); reg.write(f'{hoy},{franja},{r},{i},feed,\n'); continue
         if not redes.configurada(r): continue
+        if bloqueada(r): print('Pausada (bloqueo de Meta):', r); continue
         p = cat[i]
         img_url = SITIO_IMG + imagen_de(p)
         img_local = os.path.join(D, imagen_de(p))
