@@ -8,6 +8,8 @@ on:
   push:
     paths: ['ai/manager.py', '.github/workflows/ai-manager.yml']
   workflow_dispatch:
+    inputs:
+      ligero: {description: '1 = solo mirar si toca (lo usa el latido)', default: ''}
 permissions:
   contents: write
   actions: write
@@ -42,9 +44,9 @@ jobs:
         id: toca
         run: |
           T=0
-          [ "${{ github.event_name }}" != "schedule" ] && T=1
+          [ "${{ github.event_name }}" != "schedule" ] && [ "${{ github.event.inputs.ligero }}" != "1" ] && T=1
           if [ -n "$SSH" ] && $SSH "$SG_DEST" "test -f www/aurzane.com/privado-ai/revisar_ya && rm -f www/aurzane.com/privado-ai/revisar_ya" 2>/dev/null; then T=1; echo "Pedida desde el admin"; fi
-          V=$(python3 -c "import json,datetime as d;h=json.load(open('ai/historial.json'));print(1 if not h or (d.datetime.utcnow()-d.datetime.fromisoformat(h[-1]['fecha'])).total_seconds()>21000 else 0)" 2>/dev/null || echo 1)
+          V=$(python3 -c "import json,datetime as d;h=json.load(open('ai/historial.json'));print(1 if not h or (d.datetime.utcnow()-d.datetime.fromisoformat(h[-1]['fecha'])).total_seconds()>10500 else 0)" 2>/dev/null || echo 1)
           [ "$V" = "1" ] && T=1
           echo "si=$T" >> $GITHUB_OUTPUT; echo "Toca revisar: $T"
       - name: Herramientas PDF

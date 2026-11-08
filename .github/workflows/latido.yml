@@ -1,0 +1,35 @@
+name: Latido (mantiene viva la IA y el marketing)
+# GitHub retrasa o se salta muchos crons gratuitos (la IA pasaba horas sin revisar). Este flujo se queda despierto ~5 h 40 min,
+# lanza la revisión de AURZANE AI cada 20 minutos y el repaso de publicaciones pendientes cada hora, y al final se relanza solo.
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '7 */6 * * *'   # respaldo por si la cadena se corta
+permissions:
+  actions: write
+  contents: read
+concurrency:
+  group: latido
+  cancel-in-progress: false
+jobs:
+  latido:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    env:
+      GH_TOKEN: ${{ github.token }}
+      R: ${{ github.repository }}
+    steps:
+      - name: Latir
+        run: |
+          fin=$(( $(date +%s) + 340*60 ))
+          n=0
+          while [ $(date +%s) -lt $fin ]; do
+            gh workflow run ai-manager.yml -R "$R" -f ligero=1 && echo "$(date -u +%H:%M) revisión de la IA lanzada" || echo "no se pudo lanzar la IA"
+            if [ $((n % 3)) -eq 0 ]; then
+              gh workflow run marketing.yml -R "$R" -f accion=pendientes && echo "$(date -u +%H:%M) repaso de publicaciones lanzado" || true
+            fi
+            n=$((n+1)); sleep 1200
+          done
+      - name: Relanzarse
+        if: always()
+        run: gh workflow run latido.yml -R "$R"

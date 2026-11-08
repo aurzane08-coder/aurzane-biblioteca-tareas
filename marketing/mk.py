@@ -5,6 +5,7 @@
 #   python3 marketing/mk.py clics LOG    -> suma los clics del registro del servidor a clics.csv
 # Reglas: cada red recibe un producto distinto en cada franja y recorre todo el catálogo antes de repetir;
 # los productos nuevos salen primero; nada se publica en grupos ni comunidades de terceros.
+import time
 import json, os, re, sys, hashlib, datetime, collections, urllib.request, urllib.parse, html, csv
 
 D = os.path.dirname(os.path.abspath(__file__))
@@ -484,9 +485,13 @@ def publicar(franja):
         p = cat[i]
         img_url = SITIO_IMG + imagen_de(p)
         img_local = os.path.join(D, imagen_de(p))
-        if not os.path.exists(img_local):
+        if not os.path.exists(img_local):   # si aurzane.com tarda, se reintenta y, si no, se salta esta red sin tumbar las demás
             os.makedirs(os.path.dirname(img_local), exist_ok=True)
-            urllib.request.urlretrieve(img_url, img_local)
+            for k_ in range(3):
+                try: urllib.request.urlretrieve(img_url, img_local); break
+                except Exception as e_img: print('imagen no disponible', i, e_img); time.sleep(10)
+            if not os.path.exists(img_local):
+                reg.write(f'{hoy},{franja},{r},{i},error,imagen no disponible\n'); continue
         try:
             if r in ('instagram', 'facebook'):   # Reel con música si ya está preparado en aurzane.com (video.generar_imagenes)
                 import video as _v
