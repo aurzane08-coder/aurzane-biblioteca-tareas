@@ -1,0 +1,55 @@
+{
+ "titulo": "Guía del test de autoeficacia: confianza y retos",
+ "intro": "La confianza en nuestras propias capacidades marca la diferencia entre ver los problemas como obstáculos insuperables o como retos que podemos gestionar. Desde la perspectiva de la psicología clínica, este recurso de cribado permite examinar cómo valoramos nuestros propios recursos internos ante la incertidumbre cotidiana, el estrés laboral o los momentos de cambio vital.\n\nEste test no pretende catalogar tu personalidad ni emitir un diagnóstico clínico definitivo. Funciona como una herramienta de autoconocimiento orientativa que te invita a reflexionar sobre tu seguridad personal, ayudándote a identificar áreas de mejora para cuidar tu bienestar psicológico y tu salud mental de forma práctica.",
+ "alt": "Persona reflexionando con calma frente a una ventana mientras completa un test digital en su ordenador.",
+ "secciones": [
+  {
+   "titulo": "¿Qué medimos exactamente con esta escala?",
+   "texto": "La autoeficacia general hace referencia a la expectativa estable de poder manejar con éxito una amplia variedad de situaciones difíciles. A diferencia de la confianza puntual en una tarea concreta, este constructo evalúa tu creencia global en la resiliencia personal y en la capacidad de esfuerzo continuado.\n\nCuando respondes a las diez frases del cuestionario, pones el foco en cómo reaccionas ante los imprevistos. No mide tus habilidades reales ni tus conocimientos técnicos, sino la percepción subjetiva que tienes sobre tu propio potencial para adaptarte cuando las circunstancias se vuelven adversas."
+  },
+  {
+   "titulo": "Cómo interpretar tus resultados con perspectiva",
+   "texto": "Obtener una puntuación baja, media o alta en este test refleja simplemente una fotografía de tu momento actual. Las circunstancias vitales, el cansancio acumulado o una racha complicada de estrés pueden hacer que tu percepción de autoeficacia fluctúe de manera temporal.\n- Puntuación baja: Indica que quizás dudas de tus recursos actuales o atraviesas un momento de desgaste donde todo cuesta más.\n- Puntuación media: Representa el nivel habitual en la población general, combinando momentos de seguridad con dudas lógicas.\n- Puntuación alta: Muestra una sólida confianza en la capacidad personal para planificar soluciones y persistir.\n\nRecuerda que ninguna puntuación es una etiqueta inamovible. La autoeficacia es una habilidad psicológica que se puede entrenar, fortalecer y desarrollar a lo largo de toda la vida mediante pequeñas acciones cotidianas."
+  },
+  {
+   "titulo": "Estrategias prácticas para potenciar tu confianza",
+   "texto": "Si al ver tu resultado sientes que te falta seguridad para afrontar tus metas, existen enfoques basados en la evidencia clínica para impulsar la autoeficacia de forma gradual y realista.\n- Divide los grandes objetivos en metas pequeñas y alcanzables para acumular experiencias de éxito.\n- Observa a personas de tu entorno que superen situaciones similares para aprender de sus estrategias.\n- Cuida tu diálogo interno, reduciendo la autocrítica excesiva y enfocándote en lo que sí puedes controlar.\n- Celebra cada pequeño avance, por insignificante que parezca, para reforzar tu sensación de competencia."
+  },
+  {
+   "titulo": "Límites de las herramientas de cribado online",
+   "texto": "Las pruebas gratuitas disponibles en la red son excelentes puntos de partida para la reflexión personal y el autoconocimiento, pero poseen limitaciones evidentes. No sustituyen en ningún caso una evaluación exhaustiva realizada por un profesional de la psicología.\n\nUn cuestionario breve no puede capturar la complejidad completa de tu historia vital, tu contexto social o tu estado emocional profundo. Utiliza este test como una brújula orientativa para conocerte mejor, nunca como una sentencia definitiva sobre lo que eres capaz de lograr."
+  },
+  {
+   "titulo": "Cuándo y cómo buscar ayuda profesional",
+   "texto": "A veces, la falta de confianza o la sensación de no poder con todo van de la mano de un malestar emocional persistente, ansiedad elevada o tristeza profunda que interfiere con la vida diaria. En esos casos, acudir a un psicólogo clínico es la decisión más sensata.\n\nSi en algún momento experimentas pensamientos de hacerte daño o sientes que la situación te desborda por completo, recuerda que en España dispones de recursos públicos y gratuitos de ayuda inmediata, como el teléfono 024 de atención a la conducta suicida, disponible las veinticuatro horas del día."
+  }
+ ],
+ "faq": [
+  {
+   "p": "¿Qué diferencia hay entre autoestima y autoeficacia?",
+   "r": "La autoestima se refiere al afecto y la valoración general que sientes hacia ti mismo como persona. La autoeficacia, en cambio, mide específicamente cuánto confías en tu capacidad para ejecutar acciones concretas y resolver problemas."
+  },
+  {
+   "p": "¿Se puede mejorar la autoeficacia con el tiempo?",
+   "r": "Sí, totalmente. Al igual que cualquier otra habilidad psicológica, la confianza en tus recursos se fortalece mediante la práctica constante, la superación de pequeños retos y un cambio gradual en la manera en que interpretas los errores."
+  },
+  {
+   "p": "¿Es fiable este test gratuito para saber si tengo un problema?",
+   "r": "Este test ofrece una orientación general basada en escalas ampliamente utilizadas en investigación, pero no constituye un diagnóstico clínico. Sirve para reflexionar, no para etiquetar tu salud mental."
+  },
+  {
+   "p": "¿Por qué mi puntuación cambia según el día?",
+   "r": "Nuestra percepción de control está muy influida por el estado de ánimo actual, el nivel de fatiga física y los acontecimientos recientes. Es completamente normal que la puntuación varíe si realizas el test en momentos distintos."
+  },
+  {
+   "p": "¿Cuándo debo acudir a un psicólogo?",
+   "r": "Debes consultar con un profesional sanitario si la falta de confianza, el estrés o la apatía se mantienen en el tiempo y dificultan tu trabajo, tus relaciones personales o tu bienestar cotidiano."
+  }
+ ],
+ "fuentes": [
+  "Organización Mundial de la Salud (OMS)",
+  "Guías clínicas del Ministerio de Sanidad de España",
+  "Colegio Oficial de Psicólogos de España"
+ ],
+ "fecha": "2026-11-09"
+}

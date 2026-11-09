@@ -1,0 +1,55 @@
+{
+ "titulo": "Guía del Test de Satisfacción con la Vida AURZANE",
+ "intro": "Bienvenido a la guía complementaria de nuestro test de satisfacción vital, un espacio diseñado desde la psicología clínica para ayudarte a reflexionar sobre tu bienestar global sin juicios ni etiquetas definitivas. A menudo buscamos la felicidad en pequeños momentos diarios, pero detenernos a evaluar nuestra vida en su conjunto nos permite entender qué dirección estamos tomando y qué áreas necesitan nuestra atención prioritaria.\n\nEsta herramienta de cribado no busca diagnosticar ningún trastorno ni catalogar tu felicidad de forma rígida, sino ofrecerte una instantánea honesta de tu momento actual. A continuación, te explicamos con rigor y cercanía qué mide exactamente este cuestionario, cómo interpretar tus resultados y qué pasos puedes dar para mejorar tu bienestar de manera realista.",
+ "alt": "Persona sonriendo frente a una ventana mientras reflexiona sobre su bienestar y sus metas personales.",
+ "secciones": [
+  {
+   "titulo": "¿Qué mide exactamente este test psicológico?",
+   "texto": "Este cuestionario evalúa la satisfacción vital desde una perspectiva cognitiva y reflexiva, diferenciándose de las pruebas que solo miden emociones pasajeras. No se centra en si hoy has tenido un buen o mal día, sino en una valoración global de tu trayectoria.\n\n- Compara tus circunstancias actuales con el ideal que tenías para tu vida.\n- Valora el grado en que sientes que tus expectativas principales se han cumplido.\n- Analiza si, en términos generales, volverías a tomar las mismas decisiones o si sientes que tu vida merece la pena.\n- Ofrece una perspectiva madura sobre el bienestar que trasciende los altibajos emocionales cotidianos."
+  },
+  {
+   "titulo": "Cómo interpretar tus resultados con perspectiva clínica",
+   "texto": "Cuando completes el test, obtendrás una puntuación numérica que se sitúa en un rango determinado. Es fundamental entender que estos números no son notas académicas ni definen tu valor como persona, sino una brújula orientativa.\n- Puntuaciones altas indican que percibes una fuerte coherencia entre tus metas y tu realidad actual.\n- Puntuaciones moderadas o bajas suelen señalar que existen áreas específicas, como el ámbito laboral, las relaciones o el propósito personal, que están generando fricción o malestar.\n- Una puntuación baja no es un fracaso, sino una señal útil de que ha llegado el momento de replantearse ciertos hábitos, límites o prioridades.\n- Recuerda que el bienestar es un proceso dinámico y cambiante, por lo que tu puntuación de hoy puede ser diferente a la de hace seis meses."
+  },
+  {
+   "titulo": "Limitaciones de las herramientas de cribado online",
+   "texto": "Las pruebas gratuitas de autoevaluación son recursos excelentes para fomentar la introspección y el autoconocimiento, pero presentan limitaciones obvias que conviene tener siempre presentes.\n\n- Un test online ofrece una visión estática y simplificada de una realidad psicológica compleja.\n- No sustituyen en ningún caso una entrevista clínica personalizada con un profesional de la salud mental.\n- Las respuestas pueden verse influenciadas por el estado de ánimo puntual del día en que realizas el test, distorsionando ligeramente la perspectiva global.\n- Utiliza esta herramienta como un punto de partida para pensar en ti, nunca como una sentencia definitiva sobre tu capacidad de ser feliz."
+  },
+  {
+   "titulo": "Pasos prácticos para mejorar tu satisfacción vital",
+   "texto": "Si al ver tu resultado notas que hay aspectos que cojean, puedes poner en marcha pequeñas acciones basadas en la evidencia psicológica para recuperar el equilibrio.\n\n- Identifica de forma concreta qué área de tu vida genera mayor insatisfacción en lugar de pensar que todo va mal.\n- Establece metas pequeñas y alcanzables que dependan exclusivamente de ti y no de factores externos.\n- Cuida tus vínculos sociales y dedica tiempo de calidad a aquellas relaciones que te aportan seguridad y afecto.\n- Practica la autocompasión y reduce la exigencia desmedida cuando las cosas no salgan como esperabas."
+  },
+  {
+   "titulo": "Cuándo y cómo buscar ayuda profesional",
+   "texto": "A veces, el malestar acumulado supera nuestros recursos de afrontamiento y es necesario contar con el acompañamiento de un psicólogo clínico o un médico especialista.\n\n- Si la insatisfacción se convierte en apatía persistente, tristeza profunda o ansiedad que interfiere en tu día a día, es momento de pedir ayuda.\n- No esperes a tocar fondo para acudir a consulta; la terapia es una herramienta eficaz de bienestar y prevención.\n- Si en algún momento experimentas pensamientos de hacerte daño o sientes que no puedes más, recuerda que en España dispones de recursos públicos y gratuitos como el teléfono 024 de atención a la conducta suicida, disponible las veinticuatro horas."
+  }
+ ],
+ "faq": [
+  {
+   "p": "¿Por qué es importante medir la satisfacción con la vida?",
+   "r": "Permite evaluar nuestro bienestar global más allá de las emociones pasajeras del día a día. Ayuda a identificar áreas de mejora y fomenta la toma de decisiones conscientes hacia una vida más plena."
+  },
+  {
+   "p": "¿Qué diferencia hay entre felicidad y satisfacción vital?",
+   "r": "La felicidad suele asociarse al equilibrio emocional diario, mientras que la satisfacción es un juicio cognitivo y reflexivo sobre cómo valoramos nuestra trayectoria y nuestros logros generales."
+  },
+  {
+   "p": "¿Es normal que mi puntuación cambie con el tiempo?",
+   "r": "Sí, totalmente. Las circunstancias vitales, los momentos de crisis, los cambios laborales o las pérdidas afectan a nuestra percepción, haciendo que el bienestar fluctúe a lo largo de los años."
+  },
+  {
+   "p": "¿Este test online sirve para diagnosticar depresión?",
+   "r": "No. Es una herramienta de cribado orientativo y psicoeducativo. No tiene validez diagnóstica y nunca debe utilizarse para sustituir la valoración de un profesional sanitario."
+  },
+  {
+   "p": "¿Qué debo hacer si mi resultado es bajo?",
+   "r": "Lo primero es tomártelo como una señal para reflexionar sin culpa. Valora hacer cambios en aquellas áreas que te pesan y, si el malestar persiste, considera acudir a un psicólogo clínico."
+  }
+ ],
+ "fuentes": [
+  "Organización Mundial de la Salud: Guías de salud mental y bienestar",
+  "Colegio Oficial de Psicólogos de España: Pautas de evaluación psicológica",
+  "Literatura científica sobre la escala de satisfacción vital en psicología"
+ ],
+ "fecha": "2026-11-09"
+}

@@ -1,0 +1,55 @@
+{
+ "titulo": "Guía del Test de Rosenberg: Entiende tu autoestima",
+ "intro": "La forma en que nos percibimos a nosotros mismos condiciona cada decisión que tomamos, desde las relaciones personales hasta el rendimiento laboral o académico. En AURZANE MIND sabemos que la salud mental comienza por el autoconocimiento honesto y libre de juicios, por lo que utilizar herramientas de cribado validadas es un primer paso excelente para entender nuestro momento vital actual.\n\nEsta guía complementa nuestra herramienta interactiva profundizando en qué significa realmente medir el autoconcepto, cómo interpretar los matices de la escala de Rosenberg y de qué manera puedes empezar a transitar hacia una relación más compasiva contigo mismo, recordando siempre que un número en una pantalla es solo una brújula y nunca una etiqueta definitiva.",
+ "alt": "Persona mirando su reflejo en el espejo con una actitud reflexiva y tranquila",
+ "secciones": [
+  {
+   "titulo": "Qué mide exactamente la escala de Rosenberg",
+   "texto": "La escala diseñada por Morris Rosenberg en 1965 evalúa lo que denominamos autoestima global, es decir, el valor general que una persona se atribuye a sí misma como objeto de su propia aprobación.\n\nA diferencia de la autoconfianza puntual en una tarea concreta, este cuestionario analiza un sentimiento profundo de valía personal y de aceptación general.\n\n- Mide tanto la aceptación positiva como la negativa de uno mismo.\n- Consta de diez afirmaciones sencillas sobre la satisfacción personal.\n- Refleja una actitud evaluativa que se mantiene relativamente estable en el tiempo.\n- Sirve como herramienta de cribado clínico y de autoconocimiento general."
+  },
+  {
+   "titulo": "Cómo interpretar los rangos de puntuación sin caer en trampas",
+   "texto": "Cuando completas el test, el resultado se sitúa en un abanico numérico que va desde los diez hasta los cuarenta puntos, divididos habitualmente en tres grandes bloques descriptivos.\n\nEs fundamental entender que estos cortes no son compartimentos estancos, sino un continuo que refleja cómo te tratas en tu día a día.\n\n- Puntuación alta (entre treinta y cuarenta): Indica una valoración generalmente sana y realista, capaz de aceptar aciertos y limitaciones.\n- Puntuación media (entre veintiséis y veintinueve): Muestra una base aceptable pero acompañada de dudas recurrentes ante la crítica o el error.\n- Puntuación baja (diez a veinticinco): Sugiere que el diálogo interno es exigente y punitivo, por lo que merece la pena trabajar la autocompasión."
+  },
+  {
+   "titulo": "Limitaciones importantes de los test online de cribado",
+   "texto": "Las herramientas digitales de acceso libre son magníficas para tomar conciencia y reflexionar, pero poseen limitaciones metodológicas evidentes que conviene tener siempre presentes.\n\nUn cuestionario responde a cómo te sientes en un momento muy concreto, el cual puede estar condicionado por un mal día, el cansancio o una situación de estrés laboral reciente.\n\n- No constituyen en ningún caso un diagnóstico clínico formal.\n- Dependen enteramente de la sinceridad y autopercepción del momento.\n- Simplifican constructos psicológicos complejos en una cifra numérica.\n- Deben complementarse con la observación propia y el criterio profesional si generan malestar."
+  },
+  {
+   "titulo": "Cuándo y cómo buscar el apoyo de un profesional de la salud",
+   "texto": "Reconocer que necesitamos ayuda forma parte de una valoración realista y madura de nuestras propias capacidades, lejos de cualquier idea de debilidad.\n\nSi tu puntuación es baja y, sobre todo, si esa baja autoestima interfiere de forma continuada en tu bienestar, tus relaciones o tus estudios, acudir a terapia psicológica es la mejor decisión.\n\n- Cuando el diálogo interno negativo genera un sufrimiento diario persistente.\n- Si notas síntomas asociados como ansiedad constante o tristeza profunda.\n- En España, recuerda que dispones de recursos públicos y de urgencia como el teléfono 024 de atención a la conducta suicida si atraviesas momentos críticos."
+  },
+  {
+   "titulo": "Primeros pasos prácticos para cultivar una mirada más amable",
+   "texto": "Mejorar la forma en que nos valoramos no requiere grandes transformaciones milagrosas, sino la práctica constante de pequeños hábitos de respeto hacia uno mismo.\n\nLa evidencia clínica en psicología destaca la importancia de la autocompasión frente a la autoexigencia desmedida como motor de cambio sostenible.\n\n- Observa cómo te hablas cuando cometes un error y cámbialo por un tono constructivo.\n- Evita compararte constantemente con ideales irrelevantes que ves en redes sociales.\n- Reconoce tus logros cotidianos por pequeños que parezcan.\n- Permítete aprender de los procesos sin castigarte por los resultados imperfectos."
+  }
+ ],
+ "faq": [
+  {
+   "p": "¿Qué es exactamente el test de Rosenberg y por qué es tan famoso?",
+   "r": "Es el cuestionario psicológico más empleado a nivel mundial desde hace décadas para medir la autoestima global de forma rápida y sencilla mediante diez frases cotidianas."
+  },
+  {
+   "p": "Si obtengo una puntuación baja en el test, ¿significa que tengo un problema grave?",
+   "r": "No necesariamente. Significa que en este momento atraviesas una etapa de dudas o alta autocrítica, lo cual es muy común y totalmente reversible trabajando en terapia o autocompasión."
+  },
+  {
+   "p": "Puedo cambiar mi nivel de autoestima con los años?",
+   "r": "Sí, la autoestima no es un rasgo genético fijo. Evoluciona con nuestras experiencias vitales, los vínculos que establecemos y el tipo de relación que cultivamos con nosotros mismos."
+  },
+  {
+   "p": "Este test online gratuito de AURZANE sustituye a un psicólogo?",
+   "r": "De ninguna manera. Es una herramienta orientativa de cribado y autoconocimiento pensada para la reflexión personal, pero nunca reemplaza una valoración clínica profesional."
+  },
+  {
+   "p": "Qué debo hacer si noto que mi baja autoestima me paraliza?",
+   "r": "Lo recomendable es acudir a un psicólogo clínico para iniciar un proceso de terapia adaptado a tus necesidades y, si experimentas ideas de autolesión, utilizar servicios de ayuda inmediata como el 024 en España."
+  }
+ ],
+ "fuentes": [
+  "Organización Mundial de la Salud - Guías de salud mental",
+  "Colegio Oficial de Psicólogos de España",
+  "Literatura científica sobre validación de la Escala de Autoestima de Rosenberg"
+ ],
+ "fecha": "2026-11-09"
+}

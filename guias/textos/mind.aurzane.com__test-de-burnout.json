@@ -1,0 +1,55 @@
+{
+ "titulo": "Guía del test de burnout: comprende tu desgaste laboral",
+ "intro": "El ritmo actual del mercado laboral y de los estudios a menudo nos empuja a superar nuestros propios límites de forma silenciosa. Con frecuencia, confundimos el cansancio habitual de una semana dura con un problema menor que se resolverá con un simple fin de descanso, dejando pasar semanas o meses hasta que el malestar se instala por completo en nuestra rutina diaria.\n\nEsta guía complementa el test de cribado basado en el Copenhagen Burnout Inventory disponible en AURZane Mind. Su objetivo principal es ofrecerte herramientas de análisis y reflexión para que puedas identificar las señales tempranas de agotamiento, comprender qué significan los rangos de puntuación y saber cuándo es el momento adecuado para buscar apoyo especializado sin caer en alarmismos.",
+ "alt": "Persona reflexionando frente al ordenador en una oficina con iluminación suave y tonos relajados",
+ "secciones": [
+  {
+   "titulo": "Qué mide exactamente este test de cribado",
+   "texto": "El cuestionario evalúa el desgaste físico y emocional acumulado a lo largo del tiempo debido a las exigencias del entorno laboral o académico. No busca poner etiquetas médicas ni ofrecer un diagnóstico definitivo, sino actuar como un termómetro fiable para medir tu nivel de fatiga actual.\n\nLa herramienta se centra en indagar sobre la frecuencia con la que experimentas agotamiento emocional, sensación de saturación mental y una marcada falta de energía para afrontar las tareas del día a día. Al responder con sinceridad, obtienes una fotografía instantánea de tu estado psicológico actual que te ayuda a tomar conciencia antes de llegar a un colapso mayor."
+  },
+  {
+   "titulo": "Cómo interpretar los resultados y rangos de la escala",
+   "texto": "Los puntos de corte establecidos por la literatura científica y las adaptaciones del cuestionario se dividen en tres grandes bloques que facilitan la toma de decisiones:\n\n- De 0 a 49 puntos: Sin burnout o con un desgaste dentro de lo esperable. Refleja el cansancio normal del día a día que se recupera con el descanso habitual.\n- De 50 a 74 puntos: Burnout moderado. Indica que la situación empieza a sobrepasar tus recursos de afrontamiento y conviene actuar de inmediato introduciendo cambios en tu rutina.\n- De 75 a 100 puntos: Burnout alto. Señala un nivel de desgaste severo que aconseja pedir ayuda profesional para evitar complicaciones mayores en tu salud física y mental."
+  },
+  {
+   "titulo": "Señales de alerta que no debes ignorar",
+   "texto": "El desgaste profesional rara vez aparece de la noche a la mañana; suele manifestarse a través de un goteo constante de síntomas físicos, cognitivos y conductuales que conviene aprender a detectar a tiempo.\n\n- Fatiga crónica que no desaparece ni siquiera tras disfrutar de las vacaciones o de un fin de semana completo de desconexión total.\n- Cinismo, desapego o una creciente sensación de irritabilidad y apatía hacia las tareas que antes te resultaban motivadoras o satisfactorias.\n- Descenso notable del rendimiento, fallos frecuentes de concentración, olvidos cotidianos y sensación de estar permanentemente desbordado por pequeñas exigencias."
+  },
+  {
+   "titulo": "Limitaciones de las herramientas de cribado online",
+   "texto": "Es fundamental recordar que este tipo de cuestionarios gratuitos tienen una función meramente orientativa y divulgativa. No sustituyen en ningún caso una valoración clínica exhaustiva realizada por un profesional de la psicología o de la salud.\n\nUn test online no puede valorar el contexto personal, familiar o médico completo que rodea a cada individuo. Por tanto, tómalo como una valiosa brújula de autoconocimiento para reflexionar sobre tu bienestar, pero nunca como una sentencia definitiva sobre tu salud mental."
+  },
+  {
+   "titulo": "Cuándo y cómo pedir ayuda profesional en España",
+   "texto": "Si tu puntuación en la prueba es elevada o si notas que el malestar interfiere de forma continuada en tus relaciones personales y en tu capacidad para trabajar, es el momento de dar el paso y consultar con un psicólogo clínico.\n\nEn España dispones de recursos públicos a través de la atención primaria y de la red de salud mental. Asimismo, si en algún momento experimentas una situación de angustia extrema con ideas de hacerte daño, recuerda que puedes llamar de forma gratuita, confidencial y disponible veinticuatro horas al 024, la línea de atención a la conducta suicida."
+  }
+ ],
+ "faq": [
+  {
+   "p": "¿Qué diferencia hay entre estrés laboral y burnout?",
+   "r": "El estrés se caracteriza por una sobreactivación y un exceso de urgencia donde la persona aún siente que si pudiera con todo saldría adelante. El burnout, en cambio, implica un vaciamiento total, apatía, sensación de impotencia y la creencia de que nada de lo que se haga va a cambiar la situación."
+  },
+  {
+   "p": "Puedo hacer el test si soy estudiante en lugar de trabajador?",
+   "r": "Sí, perfectamente. La escala del Copenhagen Burnout Inventory cuenta con una versión adaptada para el ámbito académico. Al responder las preguntas, simplemente debes enfocar tus respuestas hacia las exigencias, exámenes y tareas de tus estudios."
+  },
+  {
+   "p": "¿Es un diagnóstico clínico oficial?",
+   "r": "No. Se trata de un test de cribado de libre uso que ofrece una orientación sobre tu nivel de desgaste actual. Solo un profesional sanitario colegiado puede emitir un diagnóstico clínico tras una entrevista en profundidad."
+  },
+  {
+   "p": "Qué debo hacer si obtengo una puntuación moderada o alta?",
+   "r": "Lo aconsejable es revisar tus límites actuales, reducir la carga de exigencia si es posible, priorizar el descanso de calidad y valorar acudir a un psicólogo para que te proporcione pautas de gestión emocional adaptadas a tu caso."
+  },
+  {
+   "p": "Qué organismo internacional reconoce el burnout?",
+   "r": "La Organización Mundial de la Salud incluye el desgaste ocupacional en la undécima revisión de la Clasificación Internacional de Enfermedades CIE-11. Lo define como un fenómeno derivado del estrés crónico en el lugar de trabajo que no ha sido gestionado con éxito."
+  }
+ ],
+ "fuentes": [
+  "Organización Mundial de la Salud CIE-11",
+  "Estudios de validación del Copenhagen Burnout Inventory",
+  "Guías clínicas de salud laboral y Ministerio de Sanidad de España"
+ ],
+ "fecha": "2026-11-09"
+}

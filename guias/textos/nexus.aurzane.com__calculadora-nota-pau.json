@@ -1,0 +1,55 @@
+{
+ "titulo": "Calcula tu nota de la PAU 2026 y descubre tu futuro",
+ "intro": "Enfrentarse a la Prueba de Acceso a la Universidad genera una mezcla intensa de incertidumbre y expectativas. Como psicólogo clínico, veo a diario cómo la presión por alcanzar una nota de corte concreta puede nublar el bienestar emocional de los estudiantes, convirtiendo un proceso académico en una fuente desmedida de ansiedad.\n\nEsta guía complementa nuestra herramienta de cálculo para ofrecerte una perspectiva realista y útil sobre cómo interpretar tus calificaciones, gestionar las expectativas y entender los límites de estos números sin perder de vista tu salud mental ni tus verdaderas opciones profesionales.",
+ "alt": "Estudiante calculando su nota de la PAU frente al ordenador con expresión de concentración",
+ "secciones": [
+  {
+   "titulo": "Cómo funciona la fórmula de la calculadora en detalle",
+   "texto": "Nuestra calculadora traduce el Real Decreto vigente en un proceso matemático claro para que no pierdas tiempo con operaciones manuales complejas. La base principal se divide en dos grandes bloques que miden el rendimiento acumulado en tu etapa académica previa y tu desempeño puntual en los exámenes oficiales.\n\nPara obtener la nota de acceso sobre 10, el sistema pondera el esfuerzo constante de tus dos cursos de Bachillerato con un peso del sesenta por ciento, combinándolo con el cuarenta por ciento restante obtenido en la media aritmética de los exámenes obligatorios de la fase de acceso.\n- Recuerda que la media de esta fase obligatoria debe alcanzar al menos un cuatro para que la fórmula tenga validez legal.\n- La nota resultante no caduca jamás, lo que te otorga una base sólida sobre la cual construir tus opciones futuras.\n\nPor otro lado, la fase de admisión añade hasta cuatro puntos extra sobre diez mediante las dos materias que mejor puntúen para tu grado deseado. Es crucial entender que la calculadora selecciona de manera automática aquellas asignaturas que maximizan tu puntuación, utilizando ponderaciones estándar de cero coma uno o cero coma dos según la directriz de cada universidad."
+  },
+  {
+   "titulo": "Cómo usar bien la herramienta y evitar errores comunes",
+   "texto": "Para que el resultado que arroje la calculadora se acerque al máximo a la realidad del distrito único universitario, debes introducir tus datos con absoluta precisión. Un error frecuente consiste en confundir las asignaturas que realmente ponderan para la rama de conocimiento de la carrera que te interesa.\n\nTe recomendamos tener a mano el boletín con las calificaciones provisionales o definitivas de tus centros educativos y consultar previamente las tablas de ponderaciones oficiales publicadas por las universidades donde deseas solicitar plaza.\n- Introduce todas las materias cursadas en Bachillerato si vas a calcular tu media desde cero con nuestro asistente.\n- Comprueba que las materias de modalidad seleccionadas en la fase de admisión superen el aprobado de cinco, ya que las suspensas no suman.\n- Utiliza las notas de corte del curso anterior únicamente como una referencia orientativa y flexible, nunca como una verdad absoluta e inamovible."
+  },
+  {
+   "titulo": "Ejemplos sencillos para entender el cálculo final",
+   "texto": "Imaginemos un caso práctico para visualizar cómo se suman los diferentes componentes hasta alcanzar la nota máxima de catorce puntos. Supongamos que obtienes un notable alto, es decir, un ocho y medio como nota media final en tu etapa de Bachillerato.\n\nSi en los cuatro exámenes obligatorios de la fase de acceso logras una media idéntica de ocho y medio, tu nota de acceso se calculará multiplicando cero coma seis por ocho y medio, y sumándole cero coma cuatro por el mismo valor, lo que da exactamente un ocho y medio.\n- A partir de esa base de ocho y medio, añadimos la fase de admisión.\n- Si te presentas a dos materias de modalidad vinculadas a tu carrera y en ambas sacas un nueve, y la universidad les otorga una ponderación máxima de cero coma dos, sumarás tres puntos enteros.\n- El resultado final de tu nota de admisión será la suma de tu nota de acceso más esos tres puntos extra, situándote en once con cincuenta sobre catorce."
+  },
+  {
+   "titulo": "Límites de la calculadora y variabilidad de las notas de corte",
+   "texto": "Es fundamental comprender las limitaciones inherentes a cualquier simulación numérica en el ámbito del acceso universitario. Nuestra calculadora ofrece una estimación muy precisa basada en la normativa estatal, pero el escenario real depende de factores externos que cambian cada año.\n\nLas notas de corte no son una característica fija de las titulaciones, sino el resultado dinámico de la oferta de plazas públicas y la demanda de los estudiantes en un proceso concreto de preinscripción.\n- Una bajada en el número de solicitudes para un grado puede reducir su nota de corte respecto al año anterior, incluso si el nivel de dificultad de los exámenes aumenta.\n- Las universidades autonómicas pueden aplicar criterios específicos en la asignación de dobles grados o en las ponderaciones de asignaturas limítrofes.\n- Utiliza esta herramienta para orientar tus decisiones estratégicas, pero mantén siempre abiertas varias alternativas de estudio por si las fluctuaciones superan tus previsiones."
+  },
+  {
+   "titulo": "Gestión emocional ante la incertidumbre de la nota",
+   "texto": "La presión social asociada a la selectividad puede desencadenar niveles elevados de estrés, insomnio y pensamientos autocríticos negativos entre los jóvenes. Como profesionales de la salud mental, insistimos en que una nota académica no define tu valía personal ni delimita de forma permanente tu capacidad de éxito profesional.\n\nSi notas que la ansiedad bloquea tu concentración o afecta a tu descanso durante las semanas previas a los exámenes, es importante que establezcas pausas activas, mantengas rutinas de sueño estables y compartas tus preocupaciones con tu entorno cercano o con un profesional.\n- Si en algún momento experimentas angustia extrema, desesperanza profunda o ideas de hacerte daño, recuerda que en España dispones de ayuda inmediata y confidencial llamando al teléfono 024 de atención a la conducta suicida.\n- Ningún resultado académico justifica poner en riesgo tu bienestar psicológico; existen múltiples vías formativas y alternativas de acceso a lo largo de la vida."
+  }
+ ],
+ "faq": [
+  {
+   "p": "¿Qué diferencia hay entre la nota de acceso y la nota de admisión?",
+   "r": "La nota de acceso se calcula combinando tu expediente de Bachillerato y la fase obligatoria, alcanzando un máximo de diez puntos y sin caducar nunca. La nota de admisión suma a esa base los puntos extra de las materias específicas que ponderan, permitiéndote llegar hasta los catorce puntos necesarios para los grados más competidos."
+  },
+  {
+   "p": "¿Qué pasa si suspendo una asignatura en la fase de acceso?",
+   "r": "Para superar la fase obligatoria y que se pueda calcular tu nota de acceso, la media aritmética de todos los exámenes de dicha fase debe ser al menos de cuatro. Si suspendes una materia pero la media general alcanza ese mínimo y la nota final de acceso llega a cinco, la prueba se considera superada."
+  },
+  {
+   "p": "¿Las notas de la fase de admisión caducan?",
+   "r": "Sí, las calificaciones obtenidas en las materias de la fase de admisión para subir nota tienen una validez limitada de dos cursos académicos tras el año en el que te examinaste. Por el contrario, la nota de acceso obtenida con Bachillerato y la fase obligatoria permanece vigente de manera indefinida."
+  },
+  {
+   "p": "Si repito la selectividad para subir nota, ¿puedo elegir la mejor calificación?",
+   "r": "Las universidades públicas de distrito único en España suelen conservar la nota más favorable de entre las diferentes convocatorias en las que te hayas presentado dentro de los plazos de vigencia de cada materia. Es recomendable consultar la normativa específica de la comunidad autónoma donde realices la prueba."
+  },
+  {
+   "p": "¿Puedo acceder a la universidad desde un ciclo formativo de FP?",
+   "r": "Sí, las personas procedentes de un ciclo formativo de Grado Superior pueden utilizar su nota media del título como base de acceso sobre diez. Además, tienen la opción de presentarse exclusivamente a la fase de admisión de la PAU para sumar hasta cuatro puntos adicionales mediante las materias que ponderen."
+  }
+ ],
+ "fuentes": [
+  "Ministerio de Educación, Formación Profesional y Deportes",
+  "Real Decreto regulador de las condiciones de acceso a la universidad",
+  "Comisión Organizadora de las Pruebas de Acceso a la Universidad"
+ ],
+ "fecha": "2026-11-09"
+}

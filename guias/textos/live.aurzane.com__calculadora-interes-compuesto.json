@@ -1,0 +1,55 @@
+{
+ "titulo": "Calculadora de interés compuesto: haz crecer tus ahorros",
+ "intro": "El bienestar financiero es un pilar fundamental para la tranquilidad mental y la reducción del estrés cotidiano. Desde una perspectiva psicológica, tomar el control de nuestras finanzas personales y planificar el futuro aporta una valiosa sensación de agencia y seguridad que impacta positivamente en nuestra calidad de vida.\n\nEsta guía complementa nuestra herramienta gratuita para ayudarte a comprender cómo funciona el crecimiento del dinero a largo plazo. Aprenderás a utilizar la calculadora de manera realista, evitando expectativas mágicas y enfocándote en los hábitos de ahorro sostenibles que realmente dependen de ti.",
+ "alt": "Persona utilizando una calculadora de interés compuesto digital en una pantalla limpia y moderna.",
+ "secciones": [
+  {
+   "titulo": "Cómo funciona la fórmula en palabras sencillas",
+   "texto": "El interés compuesto se basa en una mecánica muy sencilla pero extraordinariamente potente que podemos explicar sin recurrir a matemáticas complejas. En esencia, consiste en reinvertir las ganancias obtenidas para que estas generen a su vez nuevos rendimientos en los periodos siguientes.\n\nPara calcularlo, la herramienta combina cuatro variables principales que debes introducir con cuidado:\n- El capital inicial del que partes hoy mismo.\n- La aportación mensual que eres capaz de mantener de forma constante.\n- La rentabilidad anual estimada de tus inversiones.\n- El horizonte temporal o número de años que dejarás trabajar al dinero.\n\nA diferencia del interés simple, donde solo generas ganancias sobre el dinero depositado inicialmente, aquí el efecto bola de nieve acelera el crecimiento a medida que pasa el tiempo. Cuanto más dejes avanzar los años, mayor será el peso de los intereses acumulados frente al esfuerzo de tus propias aportaciones."
+  },
+  {
+   "titulo": "Cómo utilizar bien la calculadora sin engañarte",
+   "texto": "Para que una simulación financiera sea útil y no genere frustración, es necesario utilizarla con los pies en la tierra y un enfoque conservador. Lo prudente al rellenar los campos es no sobreestimar la rentabilidad ni asumir que podrás ahorrar cada mes una cantidad que comprometa tu bienestar actual.\n\nSigue estas pautas para un uso realista:\n- Utiliza estimaciones de rentabilidad moderadas y basadas en datos históricos amplios, huyendo de promesas de enriquecimiento rápido.\n- Introduce una aportación mensual que puedas mantener incluso en meses con imprevistos, priorizando la constancia sobre la cantidad.\n- Revisa la simulación de forma anual para adaptarla a tus cambios vitales reales, como un aumento de sueldo o un gasto imprevisto.\n\nRecuerda que la herramienta es una radiografía orientativa del futuro y no una garantía. El objetivo principal es visualizar el impacto del hábito del ahorro continuado frente a la inacción."
+  },
+  {
+   "titulo": "Ejemplos prácticos de la curva del tiempo",
+   "texto": "Para entender el poder real del interés compuesto, nada mejor que observar cómo se comportan dos escenarios diferentes con los mismos parámetros económicos básicos. Imagina a dos personas que deciden destinar una pequeña cantidad mensual a un fondo de inversión moderado a lo largo de su vida laboral.\n\nLa primera persona comienza a ahorrar una cantidad fija a una edad temprana y mantiene el hábito durante treinta años sin realizar grandes esfuerzos extraordinarios. Gracias al factor temporal, los intereses acumulados superan con creces el dinero total que aportó de su propio bolsillo.\n\nLa segunda persona espera una década antes de empezar, viéndose obligada a duplicar su aportación mensual para intentar alcanzar el mismo capital final que la primera. A pesar de poner mucho más dinero propio, el menor tiempo disponible impide que la magia del interés compuesto actúe con la misma intensidad, demostrando que empezar antes siempre pesa más que aportar grandes sumas tarde."
+  },
+  {
+   "titulo": "Límites y realidades que la calculadora no muestra",
+   "texto": "Ninguna herramienta digital puede predecir el futuro con exactitud ni sustituir a un análisis financiero riguroso y personalizado. Es fundamental conocer las limitaciones de estas simulaciones para no tomar decisiones basadas en datos incompletos o demasiado optimistas.\n\nExisten tres factores cruciales del mundo real que una calculadora básica suele obviar en su cálculo directo:\n- Los impuestos aplicados sobre las ganancias obtenidas, que reducirán el capital final disponible al retirar el dinero.\n- Las comisiones de custodia, gestión o mantenimiento asociadas a los productos de inversión que elijas.\n- La inflación, que erosiona el poder adquisitivo del dinero con el paso de los años, exigiendo una rentabilidad real superior al IPC.\n\nPor todo ello, los resultados deben interpretarse como una guía orientativa para motivar el ahorro y la planificación, nunca como una promesa matemática inalterable."
+  },
+  {
+   "titulo": "Cuándo y cómo buscar orientación financiera profesional",
+   "texto": "Tomar decisiones sobre el ahorro a largo plazo y la inversión puede generar dudas legítimas e incluso ansiedad si no se cuenta con la formación adecuada. Es completamente normal sentir abrumación ante la gran cantidad de opciones y conceptos complejos que existen en el mercado actual.\n\nEs aconsejable buscar el apoyo de un asesor financiero cualificado e independiente cuando te encuentres en alguna de estas situaciones:\n- Tienes un capital importante ahorrado y no sabes cómo distribuirlo de forma equilibrada para minimizar riesgos.\n- Te cuesta mantener la constancia en el ahorro debido a factores psicológicos o emocionales relacionados con la gestión del dinero.\n- Afrontas cambios vitales drásticos, como una herencia, un cambio laboral importante o la planificación cercana de la jubilación.\n\nRecuerda que cuidar tu salud financiera es también cuidar tu salud mental. Si en algún momento la preocupación por el dinero genera malestar persistente, ansiedad o interferencias en tu día a día, busca el apoyo de un profesional de la psicología."
+  }
+ ],
+ "faq": [
+  {
+   "p": "¿Qué diferencia hay entre interés simple y compuesto?",
+   "r": "El interés simple calcula los beneficios únicamente sobre el dinero inicial aportado. El interés compuesto calcula los beneficios sobre el capital inicial y también sobre los intereses acumulados anteriormente, haciendo que el crecimiento se acelere de forma notable con el tiempo."
+  },
+  {
+   "p": "¿Qué rentabilidad media debo poner en la calculadora?",
+   "r": "Depende exclusivamente del tipo de activo donde decidas colocar tus ahorros. Las cuentas remuneradas ofrecen porcentajes bajos pero seguros, mientras que los fondos de inversión globales pueden ofrecer historiales más altos a largo plazo, siempre sujetos a la volatilidad y al riesgo de mercado."
+  },
+  {
+   "p": "¿Tiene en cuenta los impuestos y las comisiones bancarias?",
+   "r": "No de forma automática. Las simulaciones estándar calculan el crecimiento bruto, por lo que en la realidad deberás restar las comisiones del producto contratado y los impuestos correspondientes a las ganancias patrimoniales al realizar tu declaración."
+  },
+  {
+   "p": "¿Es mejor ahorrar mucho tarde o poco desde joven?",
+   "r": "El factor temporal es el elemento más determinante en el interés compuesto. Empezar a ahorrar pequeñas cantidades desde una edad temprana suele ser mucho más eficaz que realizar grandes aportaciones cuando queda poco tiempo para alcanzar tus objetivos."
+  },
+  {
+   "p": "¿Es esta calculadora un consejo de inversión oficial?",
+   "r": "No, se trata estrictamente de una herramienta educativa y de simulación orientativa. Las rentabilidades pasadas no garantizan los comportamientos futuros y ningún cálculo online constituye un asesoramiento financiero personalizado."
+  }
+ ],
+ "fuentes": [
+  "Banco de España, sección de Educación Financiera",
+  "Comisión Nacional del Mercado de Valores, guías del inversor",
+  "Ministerio de Asuntos Económicos y Transformación Digital"
+ ],
+ "fecha": "2026-11-09"
+}
