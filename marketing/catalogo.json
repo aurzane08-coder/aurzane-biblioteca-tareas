@@ -19435,6 +19435,56 @@
    "alta": "2026-11-09"
   },
   {
+   "id": "lectura-el-director-david-jimenez",
+   "tipo": "lectura",
+   "mundo": "aurzane",
+   "origen": "tienda",
+   "url": "https://aurzane.com/libros/el-director-david-jimenez/",
+   "titulo": "El director",
+   "autor": "David Jiménez",
+   "ganchos": [
+    "Libro recomendado: El director",
+    "El director, de David Jiménez",
+    "¿Qué leer este mes? El director"
+   ],
+   "texto": "Este libro es para quienes sienten curiosidad por los entresijos del periodismo y el poder desde dentro de una gran redacción. Aporta el relato en primera persona de la experiencia de David Jiménez al frente del diario El Mundo.",
+   "hashtags": [
+    "LibrosRecomendados",
+    "QueLeer",
+    "Lectura",
+    "Libros"
+   ],
+   "aviso": "Contiene enlace de afiliado.",
+   "img": null,
+   "emoji": "📚",
+   "alta": "2026-11-09"
+  },
+  {
+   "id": "lectura-la-buena-cocina-karlos-arguinano",
+   "tipo": "lectura",
+   "mundo": "aurzane",
+   "origen": "tienda",
+   "url": "https://aurzane.com/libros/la-buena-cocina-karlos-arguinano/",
+   "titulo": "La buena cocina",
+   "autor": "Karlos Arguiñano",
+   "ganchos": [
+    "Libro recomendado: La buena cocina",
+    "La buena cocina, de Karlos Arguiñano",
+    "¿Qué leer este mes? La buena cocina"
+   ],
+   "texto": "Este libro es para cualquier persona que quiera disfrutar de la cocina casera y tradicional con recetas accesibles y explicadas con cercanía.",
+   "hashtags": [
+    "LibrosRecomendados",
+    "QueLeer",
+    "Lectura",
+    "Libros"
+   ],
+   "aviso": "Contiene enlace de afiliado.",
+   "img": null,
+   "emoji": "📚",
+   "alta": "2026-11-09"
+  },
+  {
    "id": "lectura-como-hacer-que-te-pasen-cosas-buenas-marian-rojas-estape",
    "tipo": "lectura",
    "mundo": "aurzane",
@@ -20373,6 +20423,56 @@
     "¿Qué leer este mes? Independízate de papá estado"
    ],
    "texto": "Este libro es para quienes buscan tomar las riendas de su futuro financiero sin depender de las ayudas públicas. Aporta una guía práctica para entender la inversión y construir una verdadera libertad económica desde cero.",
+   "hashtags": [
+    "LibrosRecomendados",
+    "QueLeer",
+    "Lectura",
+    "Libros"
+   ],
+   "aviso": "Contiene enlace de afiliado.",
+   "img": null,
+   "emoji": "📚",
+   "alta": "2026-11-09"
+  },
+  {
+   "id": "lectura-educar-con-inteligencia-emocional-maurice-j-elias",
+   "tipo": "lectura",
+   "mundo": "aurzane",
+   "origen": "tienda",
+   "url": "https://aurzane.com/libros/educar-con-inteligencia-emocional-maurice-j-elias/",
+   "titulo": "Educar con inteligencia emocional",
+   "autor": "Maurice J. Elias",
+   "ganchos": [
+    "Libro recomendado: Educar con inteligencia emocional",
+    "Educar con inteligencia emocional, de Maurice J. Elias",
+    "¿Qué leer este mes? Educar con inteligencia emocional"
+   ],
+   "texto": "Este libro es para madres, padres y docentes que buscan guiar el desarrollo afectivo y social de los niños en su día a día.",
+   "hashtags": [
+    "LibrosRecomendados",
+    "QueLeer",
+    "Lectura",
+    "Libros"
+   ],
+   "aviso": "Contiene enlace de afiliado.",
+   "img": null,
+   "emoji": "📚",
+   "alta": "2026-11-09"
+  },
+  {
+   "id": "lectura-disciplina-sin-lagrimas-daniel-j-siegel",
+   "tipo": "lectura",
+   "mundo": "aurzane",
+   "origen": "tienda",
+   "url": "https://aurzane.com/libros/disciplina-sin-lagrimas-daniel-j-siegel/",
+   "titulo": "Disciplina sin lágrimas",
+   "autor": "Daniel J. Siegel",
+   "ganchos": [
+    "Libro recomendado: Disciplina sin lágrimas",
+    "Disciplina sin lágrimas, de Daniel J. Siegel",
+    "¿Qué leer este mes? Disciplina sin lágrimas"
+   ],
+   "texto": "Este libro es para familias que desean educar a sus hijos desde el respeto mutuo y la comprensión de su desarrollo cerebral.",
    "hashtags": [
     "LibrosRecomendados",
     "QueLeer",
@@ -37907,6 +38007,90 @@
     "Self-efficacy test (General Self-Efficacy Scale): free online questionnaire | AURZANE"
    ],
    "texto": "Take the General Self-Efficacy Scale (Schwarzer and Jerusalem): how confident you are in handling difficult situations. 10 statements, instant result. Free and anonymous.",
+   "hashtags": [
+    "AURZANE"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "🧠",
+   "alta": "2026-11-09"
+  },
+  {
+   "id": "auto-mind-aurzane-com-en-stress-test-dass-21",
+   "tipo": "seccion",
+   "mundo": "mind",
+   "origen": "sitemap",
+   "url": "https://mind.aurzane.com/en/stress-test-dass-21/",
+   "titulo": "Stress test (DASS-21 stress scale): free online questionnaire | AURZANE",
+   "ganchos": [
+    "Stress test (DASS-21 stress scale): free online questionnaire | AURZANE",
+    "Stress test (DASS-21 stress scale): free online questionnaire | AURZANE",
+    "Stress test (DASS-21 stress scale): free online questionnaire | AURZANE"
+   ],
+   "texto": "Take the stress scale of the DASS-21, a widely used and validated questionnaire. 7 statements about the past week, instant result. Free and anonymous.",
+   "hashtags": [
+    "AURZANE"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "🧠",
+   "alta": "2026-11-09"
+  },
+  {
+   "id": "auto-mind-aurzane-com-en-wellbeing-test-who-5",
+   "tipo": "seccion",
+   "mundo": "mind",
+   "origen": "sitemap",
+   "url": "https://mind.aurzane.com/en/wellbeing-test-who-5/",
+   "titulo": "Wellbeing test (WHO-5): free online questionnaire | AURZANE",
+   "ganchos": [
+    "Wellbeing test (WHO-5): free online questionnaire | AURZANE",
+    "Wellbeing test (WHO-5): free online questionnaire | AURZANE",
+    "Wellbeing test (WHO-5): free online questionnaire | AURZANE"
+   ],
+   "texto": "Take the WHO-5 Well-Being Index from the World Health Organization. 5 statements about the last two weeks, score from 0 to 100. Free and anonymous.",
+   "hashtags": [
+    "AURZANE"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "🧠",
+   "alta": "2026-11-09"
+  },
+  {
+   "id": "auto-mind-aurzane-com-en-burnout-test-cbi",
+   "tipo": "seccion",
+   "mundo": "mind",
+   "origen": "sitemap",
+   "url": "https://mind.aurzane.com/en/burnout-test-cbi/",
+   "titulo": "Work burnout test (Copenhagen Burnout Inventory): free online questionnaire | AURZANE",
+   "ganchos": [
+    "Work burnout test (Copenhagen Burnout Inventory): free online questionnaire | AURZANE",
+    "Work burnout test (Copenhagen Burnout Inventory): free online questionnaire | AURZANE",
+    "Work burnout test (Copenhagen Burnout Inventory): free online questionnaire | AURZANE"
+   ],
+   "texto": "Take the work-related scale of the Copenhagen Burnout Inventory, a free and validated burnout questionnaire. 7 questions, instant result. Free and anonymous.",
+   "hashtags": [
+    "AURZANE"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "🧠",
+   "alta": "2026-11-09"
+  },
+  {
+   "id": "auto-mind-aurzane-com-en-self-compassion-test-scs-sf",
+   "tipo": "seccion",
+   "mundo": "mind",
+   "origen": "sitemap",
+   "url": "https://mind.aurzane.com/en/self-compassion-test-scs-sf/",
+   "titulo": "Self-compassion test (Neff, short form): free online questionnaire | AURZANE",
+   "ganchos": [
+    "Self-compassion test (Neff, short form): free online questionnaire | AURZANE",
+    "Self-compassion test (Neff, short form): free online questionnaire | AURZANE",
+    "Self-compassion test (Neff, short form): free online questionnaire | AURZANE"
+   ],
+   "texto": "Take the Self-Compassion Scale short form by Kristin Neff. 12 statements, instant result with an explanation. Free and anonymous.",
    "hashtags": [
     "AURZANE"
    ],
