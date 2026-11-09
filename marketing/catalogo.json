@@ -19410,6 +19410,31 @@
    "alta": "2026-11-09"
   },
   {
+   "id": "lectura-la-chica-del-tren-paula-hawkins",
+   "tipo": "lectura",
+   "mundo": "aurzane",
+   "origen": "tienda",
+   "url": "https://aurzane.com/libros/la-chica-del-tren-paula-hawkins/",
+   "titulo": "La chica del tren",
+   "autor": "Paula Hawkins",
+   "ganchos": [
+    "Libro recomendado: La chica del tren",
+    "La chica del tren, de Paula Hawkins",
+    "¿Qué leer este mes? La chica del tren"
+   ],
+   "texto": "Es para quienes disfrutan de los thrillers psicológicos absorbentes centrados en la intriga vecinal y la memoria fragmentada.",
+   "hashtags": [
+    "LibrosRecomendados",
+    "QueLeer",
+    "Lectura",
+    "Libros"
+   ],
+   "aviso": "Contiene enlace de afiliado.",
+   "img": null,
+   "emoji": "📚",
+   "alta": "2026-11-09"
+  },
+  {
    "id": "lectura-como-hacer-que-te-pasen-cosas-buenas-marian-rojas-estape",
    "tipo": "lectura",
    "mundo": "aurzane",
