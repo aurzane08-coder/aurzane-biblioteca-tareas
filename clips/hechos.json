@@ -64,5 +64,16 @@
   "fecha": "2026-11-08",
   "youtube": "https://youtube.com/shorts/9veTUw219Hs",
   "error_tiktok": "HTTP Error 400: Bad Request"
+ },
+ {
+  "id": "d377dd28c4-444",
+  "fuente": "d377dd28c4",
+  "campana": "Clipeamos: Reental (Eric Sanchez) - Podcasts, 0,72 $ CPM",
+  "inicio": 444.0,
+  "fin": 464.0,
+  "titulo": "Cómo funciona la tokenización de edificios @reentaltv",
+  "fecha": "2026-11-09",
+  "youtube": "https://youtube.com/shorts/UqLPuYr_ylc (canal «Clips-All»)",
+  "tiktok": "v_inbox_file~v2.7706160652699584515 (enviado a la bandeja de TikTok de @clipsall16)"
  }
 ]
