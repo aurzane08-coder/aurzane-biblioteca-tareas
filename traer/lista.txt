@@ -1,3 +1,2 @@
-aurzane.com/privacidad.html
-aurzane.com/aviso-legal.html
-aurzane.com/cookies.html
+aurzane.com/sobre-aurzane.html
+aurzane.com/condiciones.html
