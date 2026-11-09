@@ -292,3 +292,9 @@
 2026-11-09,6,youtube,frase-b81b4c76,ok,https://youtu.be/ztvqUEAI1DA
 2026-11-09,6,tiktok,frase-490a3e90,error,400 {"error":{"code":"spam_risk_too_many_pending_share" "message":"spam_risk_too_many_pending_share" "log_id":"20261109233026CB1FB4EAF5C52E72B902"}}
 2026-11-09,6,tiktok,frase-490a3e90,ok,v_inbox_file~v2.7706209733103093761 (borrador en la bandeja de TikTok: añade un sonido y publica)
+2026-11-09,2,telegram,crea-l07-08,ok,65
+2026-11-09,2,bluesky,crea-l06-02,ok,at://did:plc:6ovoiudj7dkxgrzd2zkyn77y/app.bsky.feed.post/3mzvmklxgy326
+2026-11-09,2,mastodon,crea-l06-08,ok,https://mastodon.social/@auzane/117588037869992792
+2026-11-09,2,instagram,crea-l06-01,ok,18233896969329799
+2026-11-09,2,facebook,crea-l05-01,ok,2047102510010557
+2026-11-09,2,pinterest,crea-l07-14,feed,
