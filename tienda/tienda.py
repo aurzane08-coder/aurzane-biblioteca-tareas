@@ -20,12 +20,13 @@ os.makedirs(OUT, exist_ok=True)
 
 
 def get(url, datos=None, cab=None, t=40):
+    err = ''
     for i in range(3):
         try:
             rq = urllib.request.Request(url, data=datos, headers={'User-Agent': 'AURZANE-tienda/1.0', **(cab or {})})
             with urllib.request.urlopen(rq, timeout=t) as r: return r.status, r.read().decode('utf-8', 'replace')
         except urllib.error.HTTPError as e:
-            if e.code in (429, 503): time.sleep(4 * (i + 1)); continue
+            if e.code in (429, 503): err = f'HTTP {e.code}'; time.sleep(6 * (i + 1)); continue
             return e.code, e.read().decode('utf-8', 'replace')
         except Exception as e:
             err = str(e); time.sleep(3)
@@ -59,6 +60,20 @@ def verificar(titulo, autor):
                     'anio': (v.get('publishedDate') or '')[:4], 'editorial': v.get('publisher', ''), 'idioma': v.get('language', ''),
                     'resumen': re.sub(r'<[^>]+>', ' ', v.get('description', '') or '')[:420].strip()}
         time.sleep(1)
+    return verificar_ol(titulo, autor, pal, ape)
+
+
+def verificar_ol(titulo, autor, pal, ape):
+    """Respaldo: Open Library (si Google Books limita las consultas)."""
+    st, b = get('https://openlibrary.org/search.json?' + urllib.parse.urlencode({'title': titulo, 'author': autor, 'limit': 8, 'fields': 'title,author_name,isbn,cover_i,first_publish_year,publisher,language'}))
+    if st != 200: return None
+    for v in json.loads(b).get('docs', []):
+        tv, av = set(norm(v.get('title', ''))), set(norm(' '.join(v.get('author_name', []))))
+        if not pal or not all(w in tv for w in pal[:3]) or (ape and not any(a in av for a in ape)): continue
+        isbns = v.get('isbn') or []
+        isbn = next((i for i in isbns if len(i) == 13 and i.startswith(('97884', '97884', '97898', '97895', '97896', '97897'))), '') or next((i for i in isbns if len(i) == 13), '')
+        return {'isbn': isbn, 'portada': f'https://covers.openlibrary.org/b/id/{v["cover_i"]}-M.jpg' if v.get('cover_i') else '',
+                'anio': str(v.get('first_publish_year', '')), 'editorial': (v.get('publisher') or [''])[0], 'idioma': 'spa' if 'spa' in (v.get('language') or []) else '', 'resumen': ''}
     return None
 
 
