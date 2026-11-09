@@ -157,13 +157,18 @@ try:
         if len(f) < 5 or f[0] < ayer: continue
         r = mk['por_red'].setdefault(f[2], {'ok': 0, 'fallos': 0})
         if f[4] in ('ok', 'feed'): r['ok'] += 1; mk['ok_24h'] += 1
-        else: r['fallos'] += 1; mk['fallos_24h'] += 1; r['ultimo_error'] = ','.join(f[5:])[:300]
+        else: r['fallos'] += 1; mk['fallos_24h'] += 1; r['ultimo_error'] = ','.join(f[5:])[:300]; r['ultimo_fallo'] = max(r.get('ultimo_fallo', ''), f[0])
     # errores conocidos de las redes: la IA explica qué pasa y qué hacer en lugar de reintentar a ciegas
     CONOCIDOS = [(r'API access blocked|account.*(restricted|disabled)|unusual activity', 'Meta ha bloqueado el acceso de la app por "actividad inusual". Solo se arregla a mano: entra en developers.facebook.com con tu cuenta, pulsa "Confirmar cuenta" y completa la verificación. Mientras tanto Instagram y Facebook quedan en pausa para no empeorarlo.'),
                  (r'Error validating access token|Session has expired|invalid_grant|token.*expired', 'El permiso de la red ha caducado. Hay que volver a conectar la cuenta (renovar el token).'),
                  (r'unaudited_client_can_only_post_to_private', 'TikTok aún no ha aprobado la app: los vídeos van como borrador a tu bandeja.'),
                  (r'rate limit|Too Many|429', 'La red ha limitado las publicaciones por exceso de envíos; se reanuda sola.')]
+    verif = leer('../marketing/verificacion.json', {})
     for red, v in mk['por_red'].items():
+        # si una comprobación posterior a los fallos dice que la red ya funciona, no se avisa: se confirmará con la próxima publicación
+        if v['fallos'] and not v['ok'] and str((verif.get('redes') or {}).get(red, '')).startswith('ok') and verif.get('fecha', '') >= v.get('ultimo_fallo', ''):
+            print(f'::notice title=AI::{red}: falló en las últimas 24 h pero la comprobación posterior dice que ya funciona; sin aviso')
+            continue
         if v['fallos'] and not v['ok']:
             causa = next((t for pat, t in CONOCIDOS if re.search(pat, v.get('ultimo_error', ''), re.I)), '')
             # con causa conocida que solo se arregla a mano, la IA no reintenta (empeoraría el bloqueo): solo te avisa con los pasos
