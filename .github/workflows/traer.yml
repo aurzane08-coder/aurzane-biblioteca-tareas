@@ -1,0 +1,40 @@
+name: Traer archivos del servidor
+# Copia al repositorio (traer/servidor/<dominio>/...) los archivos listados en traer/lista.txt,
+# tal como están publicados en SiteGround. Solo lee: no cambia nada en la web.
+on:
+  push:
+    paths: ['traer/lista.txt']
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency: traer
+jobs:
+  traer:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      SG_KEY: ${{ secrets.SG_KEY }}
+      SG_HOST: ${{ secrets.SG_HOST }}
+      SG_USER: ${{ secrets.SG_USER }}
+      SG_PORT: ${{ secrets.SG_PORT }}
+      SG_PASS: ${{ secrets.SG_PASS }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Copiar
+        run: |
+          mkdir -p ~/.ssh && printf '%s\n' "$SG_KEY" | tr -d '\r' > ~/.ssh/id && chmod 600 ~/.ssh/id
+          if [ -n "$SG_PASS" ]; then ssh-keygen -p -P "$SG_PASS" -N "" -f ~/.ssh/id >/dev/null; fi
+          SSH="ssh -i $HOME/.ssh/id -p ${SG_PORT:-18765} -o StrictHostKeyChecking=accept-new"
+          grep -v '^\s*$' traer/lista.txt | while read -r f; do
+            dom="${f%%/*}"; ruta="${f#*/}"
+            case "$dom" in aurzane.com|*.aurzane.com) ;; *) echo "no permitido: $f"; continue;; esac
+            case "$ruta" in *..*|privado*) echo "no permitido: $f"; continue;; esac
+            mkdir -p "traer/servidor/$dom/$(dirname "$ruta")"
+            rsync -az -e "$SSH" "$SG_USER@$SG_HOST:www/$dom/public_html/$ruta" "traer/servidor/$dom/$ruta" && echo "ok $f" || echo "falta $f"
+          done
+      - name: Guardar
+        run: |
+          git config user.name "aurzane-bot"; git config user.email "bot@aurzane.com"
+          git add traer/servidor
+          git commit -qm "traer: copia de archivos del servidor" || exit 0
+          for i in 1 2 3 4 5; do git pull -q --rebase -X theirs && git push -q && break; sleep 7; done

@@ -1,0 +1,10 @@
+ovp.aurzane.com/portal.html
+ovp.aurzane.com/generar-informe.html
+ovp.aurzane.com/informe-v2.js
+ovp.aurzane.com/informe-v2.css
+ovp.aurzane.com/informe-opciones.js
+ovp.aurzane.com/informe-export.js
+ovp.aurzane.com/index.html
+ovp.aurzane.com/ovp-guia.js
+aurzane.com/admin.html
+aurzane.com/mi-aurzane.html
