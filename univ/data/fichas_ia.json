@@ -1,0 +1,26 @@
+{
+ "https://nexus.aurzane.com/universidades/estados-unidos/ecpi-university/": {
+  "titulo": "Guia de orientacion vocacional para ECPI University",
+  "parrafos": [
+   "ECPI University es una institucion privada con fines de lucro ubicada en Virginia Beach, Virginia, Estados Unidos, enfocada en ofrecer programas academicos practicos y orientados al mercado laboral actual. Su oferta incluye un total de 21 carreras divididas en 11 programas de grado y 10 opciones de nivel tecnico y tecnologico superior. Entre sus areas de estudio destacan especialidades en ciencias de la computacion, administracion de empresas, ingenieria, tecnologia y diversas disciplinas relacionadas con la salud y los servicios medicos.",
+   "El sistema de educacion superior en Estados Unidos se caracteriza por su flexibilidad y diversidad de opciones de acceso, donde los estudiantes suelen postular directamente a la universidad presentando su historial academico y cumpliendo con los requisitos de admision especificos de cada programa. Para elegir la carrera ideal, es fundamental evaluar tus intereses personales, fortalezas y metas profesionales a largo plazo, contrastandolas con la oferta academica disponible y las demandas del mercado laboral.",
+   "Para confirmar los requisitos exactos de admision, costos de matricula, fechas limites y detalles de los programas, es indispensable visitar el sitio web oficial de la institucion en ecpi.edu o consultar directamente con su departamento de admisiones. La planificacion anticipada te permitira reunir toda la documentacion necesaria y conocer las opciones de ayuda financiera o becas a las que puedas ser elegible segun las regulaciones federales e institucionales de Estados Unidos.",
+   "Estudiar en Virginia Beach ofrece un entorno costero dinamico y atractivo para la vida estudiantil, combinando el desarrollo academico con actividades al aire libre y una comunidad diversa. Vivir en esta region de Virginia permite a los estudiantes disfrutar de un balance saludable entre sus responsabilidades universitarias y el tiempo libre, en una zona con multiples servicios, opciones de vivienda y oportunidades de integracion social."
+  ],
+  "faq": [
+   {
+    "p": "Que tipo de programas ofrece ECPI University?",
+    "r": "La institucion ofrece un total de 21 carreras que incluyen 11 programas de grado y 10 opciones de nivel tecnico y tecnologico superior. Las areas de estudio abarcan tecnologia, computacion, salud, administracion y negocios."
+   },
+   {
+    "p": "Donde puedo consultar los requisitos de admision de ECPI University?",
+    "r": "Puedes revisar todos los detalles sobre admisiones, admision internacional y procesos de postulacion directamente en su sitio web oficial en ecpi.edu. Se recomienda contactar al area de admisiones para obtener informacion actualizada."
+   },
+   {
+    "p": "Donde esta ubicada ECPI University?",
+    "r": "El campus principal de la institucion se encuentra localizado en la ciudad de Virginia Beach, en el estado de Virginia, Estados Unidos. Esta ubicacion ofrece un entorno costero propicio para la vida estudiantil."
+   }
+  ],
+  "fecha": "2026-11-09"
+ }
+}
