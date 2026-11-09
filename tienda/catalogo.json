@@ -842,5 +842,23 @@
   "idioma": "spa",
   "resumen": "",
   "porque": "Es para cualquier persona agotada por el ritmo de vida actual que necesita recuperar su bienestar físico y mental. Aporta un método estructurado para entender el descanso real y transformar los hábitos de sueño y desconexión."
+ },
+ {
+  "id": "independizate-de-papa-estado-carlos-galan",
+  "titulo": "Independízate de papá estado",
+  "autor": "Carlos Galán",
+  "temas": [
+   "finanzas",
+   "vivienda"
+  ],
+  "origen": "crecer",
+  "fecha": "2026-11-09",
+  "isbn": "9798484730667",
+  "portada": "https://covers.openlibrary.org/b/id/10453026-M.jpg?default=false",
+  "anio": "2015",
+  "editorial": "Independently Published",
+  "idioma": "spa",
+  "resumen": "",
+  "porque": "Este libro es para quienes buscan tomar las riendas de su futuro financiero sin depender de las ayudas públicas. Aporta una guía práctica para entender la inversión y construir una verdadera libertad económica desde cero."
  }
 ]
