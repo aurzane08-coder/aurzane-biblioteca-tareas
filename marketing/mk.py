@@ -11,7 +11,9 @@ import json, os, re, sys, hashlib, datetime, collections, urllib.request, urllib
 
 D = os.path.dirname(os.path.abspath(__file__))
 REDES = ['telegram', 'bluesky', 'mastodon', 'instagram', 'facebook', 'threads', 'pinterest']  # X desactivada: cobra por publicar
-REDES_VIDEO = ['instagram', 'facebook', 'youtube', 'tiktok', 'telegram']  # franja 4: vídeo vertical
+REDES_VIDEO = ['instagram', 'facebook', 'youtube', 'telegram']  # franjas 4 y 5: vídeo vertical
+# TikTok solo en la franja 6 (16:23 en España): un vídeo al día, siempre a la misma hora, para que en la app no se mezclen
+# los avisos y Adrián le ponga música de TikTok antes de publicarlo.
 TIPOS_VIDEO = ('frase', 'test', 'calculadora', 'curiosidad')
 VID = ('4', '5', '6')   # franjas de vídeo vertical: 4 (tarde, de todo), 5 (mañana, frases y curiosidades) y 6 (media tarde, solo YouTube y TikTok)
 REDES_V6 = ['youtube', 'tiktok']
@@ -339,7 +341,7 @@ def codigo(r, i):
 def enlaces():
     cat = {p['id']: p for p in leer('catalogo.json')['productos']}
     mapa = {}
-    for r in sorted(set(REDES) | set(REDES_VIDEO)):
+    for r in sorted(set(REDES) | set(REDES_VIDEO) | set(REDES_V6)):
         for i, p in cat.items():
             sep = '&' if '?' in p['url'] else '?'
             mapa[codigo(r, i)] = p['url'] + f'{sep}utm_source={r}&utm_medium=social&utm_campaign={p["tipo"]}'
@@ -456,7 +458,7 @@ def publicar_video(franja='4'):
     plan = est['calendario'].get(hoy, {}).get(franja, {})
     hist = est.setdefault('historial', {})
     reg = open(os.path.join(D, 'registro.csv'), 'a', encoding='utf-8')
-    for n, r in enumerate(REDES_VIDEO):
+    for n, r in enumerate(redes_de(franja)):
         i = plan.get(r); h = r + '-video'
         if not i or i not in cat or not redes.configurada(r): continue
         if bloqueada(r): print('Pausada (bloqueo de Meta):', r); continue
