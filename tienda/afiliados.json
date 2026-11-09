@@ -40,6 +40,21 @@
    "nombre": "Myprotein",
    "donde": "nutricion",
    "url": "https://www.myprotein.es/"
+  },
+  "128603": {
+   "nombre": "Learning Heroes",
+   "donde": "cursos",
+   "url": "https://www.learningheroes.com/"
+  },
+  "25372": {
+   "nombre": "What the Sleep! (Pikolin)",
+   "donde": "sueno",
+   "url": "https://whatthesleep.shop/"
+  },
+  "92005": {
+   "nombre": "Bookshop.org (EE. UU.)",
+   "donde": "libros",
+   "busqueda": "https://bookshop.org/search?keywords={q}"
   }
  }
 }
