@@ -119,25 +119,24 @@
   "porque": "Es para los lectores preocupados por el medio ambiente y el futuro del planeta a través del diálogo cercano entre un abuelo y su nieto. Aporta una reflexión honesta y urgente sobre cómo la acción humana daña los ecosistemas y la necesidad de protegerlos."
  },
  {
-  "id": "invicto-logra-mas-sufre-menos-marcos-vazquez",
-  "titulo": "Invicto: Logra más, sufre menos",
-  "autor": "Marcos Vázquez",
+  "id": "el-dia-que-se-perdio-la-cordura-javier-castillo",
+  "titulo": "El día que se perdió la cordura",
+  "autor": "Javier Castillo",
   "temas": [
-   "resiliencia",
-   "habitos",
-   "autoeficacia"
+   "novela",
+   "emociones"
   ],
   "origen": "tendencia",
   "fecha": "2026-11-09",
-  "isbn": "9786073808897",
-  "portada": "",
-  "anio": "2022",
-  "editorial": "Penguin Random House Grupo Editorial",
+  "isbn": "9788466348997",
+  "portada": "https://covers.openlibrary.org/b/id/8212251-M.jpg?default=false",
+  "anio": "2014",
+  "editorial": "CreateSpace Independent Publishing Platform",
   "idioma": "spa",
   "resumen": "",
-  "tendencia": "Filosofía estoica aplicada al bienestar mental para encarar la recta final del año y los nuevos propósitos.",
+  "tendencia": "Novela negra de gran éxito en España perfecta para las tardes largas de noviembre.",
   "tendencia_fecha": "2026-11-09",
-  "porque": "Es para quienes buscan alcanzar sus metas personales manteniendo la calma interior en el día a día. Aporta una guía práctica basada en el estoicismo para reducir el sufrimiento innecesario y enfocar la energía en lo que de verdad importa."
+  "porque": "Es para quienes disfrutan con los thrillers de suspense psicológico ambientados en Boston y llenos de giros inesperados. Aporta una investigación trepidante sobre crímenes desconcertantes que explora los límites de la mente humana."
  },
  {
   "id": "como-hacer-que-te-pasen-cosas-buenas-marian-rojas-estape",
