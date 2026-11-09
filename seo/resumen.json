@@ -1,5 +1,411 @@
 {
  "fecha": "2026-11-09",
- "conectado": false,
- "aviso": "Search Console sin conectar: entra en aurzane.com/youtube/?cuenta=gsc y autoriza con tu cuenta de Google."
+ "conectado": true,
+ "periodo": [
+  "2026-10-10",
+  "2026-11-06"
+ ],
+ "clics": 21,
+ "impresiones": 7726,
+ "consultas": [
+  [
+   "ecpi university",
+   0,
+   119,
+   7.7
+  ],
+  [
+   "volar sobre el pantano",
+   0,
+   103,
+   9.7
+  ],
+  [
+   "recuerda que vas a morir",
+   0,
+   67,
+   6.2
+  ],
+  [
+   "facultades",
+   0,
+   52,
+   21.9
+  ],
+  [
+   "carl rogers el proceso de convertirse en persona",
+   0,
+   50,
+   9.8
+  ],
+  [
+   "texas a",
+   0,
+   46,
+   9.7
+  ],
+  [
+   "los dones de la imperfeccion",
+   0,
+   39,
+   12.0
+  ],
+  [
+   "cuantas universidades hay en cuenca",
+   0,
+   38,
+   6.6
+  ],
+  [
+   "la tía tula pdf",
+   0,
+   38,
+   9.2
+  ],
+  [
+   "dejame que te cuente",
+   0,
+   37,
+   10.4
+  ],
+  [
+   "los medios de comunicación y la familia",
+   0,
+   37,
+   18.1
+  ],
+  [
+   "el niño el topo el zorro y el caballo",
+   0,
+   33,
+   11.6
+  ],
+  [
+   "universidades en pachuca",
+   0,
+   30,
+   74.5
+  ],
+  [
+   "recuerda que vas a morir vive",
+   0,
+   29,
+   6.4
+  ],
+  [
+   "site:instagram.com \"universidade mogi das cruzes\" são paulo",
+   0,
+   29,
+   7.0
+  ],
+  [
+   "universidades italia",
+   0,
+   29,
+   59.5
+  ],
+  [
+   "universidades en utrecht holanda",
+   0,
+   28,
+   44.7
+  ],
+  [
+   "universidad en canarias",
+   0,
+   27,
+   83.1
+  ],
+  [
+   "universidades",
+   0,
+   26,
+   22.2
+  ],
+  [
+   "universidades en manta",
+   2,
+   24,
+   8.2
+  ],
+  [
+   "romancero gitano pdf",
+   0,
+   24,
+   9.6
+  ],
+  [
+   "universidades en alemania",
+   0,
+   24,
+   74.5
+  ],
+  [
+   "universidades en parís",
+   0,
+   24,
+   57.2
+  ],
+  [
+   "el don de la terapia",
+   0,
+   23,
+   11.2
+  ],
+  [
+   "universidades en españa",
+   0,
+   23,
+   70.3
+  ],
+  [
+   "universidades en holanda",
+   0,
+   23,
+   39.0
+  ],
+  [
+   "esperanza bausela herreras",
+   0,
+   22,
+   5.5
+  ],
+  [
+   "universidades en francia",
+   0,
+   22,
+   52.5
+  ],
+  [
+   "universidad en amsterdam",
+   0,
+   20,
+   66.3
+  ],
+  [
+   "universidades en riobamba",
+   0,
+   20,
+   12.1
+  ]
+ ],
+ "paginas": [
+  [
+   "https://aurzane.com/biblioteca/libro/ref-proceso-convertirse-persona.html",
+   2,
+   96,
+   9.0
+  ],
+  [
+   "https://nexus.aurzane.com/universidades/ecuador/ciudad/manta/",
+   2,
+   25,
+   6.1
+  ],
+  [
+   "https://aurzane.com/biblioteca/libro/la-de-bringas.html",
+   2,
+   12,
+   7.6
+  ],
+  [
+   "https://aurzane.com/biblioteca/leer.html?libro=ref-recuerda-que-vas-a-morir",
+   1,
+   106,
+   6.3
+  ],
+  [
+   "https://aurzane.com/biblioteca/libro/tormento.html",
+   1,
+   21,
+   6.9
+  ],
+  [
+   "https://aurzane.com/biblioteca/libro/marianela.html",
+   1,
+   16,
+   12.6
+  ],
+  [
+   "https://aurzane.com/biblioteca/libro/ref-nuestra-mente-nos-engana.html",
+   1,
+   13,
+   9.2
+  ],
+  [
+   "https://aurzane.com/biblioteca/libro/ref-creacion-yo.html",
+   1,
+   11,
+   5.5
+  ],
+  [
+   "https://aurzane.com/biblioteca/libro/ref-amarse-ojos-abiertos.html",
+   1,
+   9,
+   14.3
+  ],
+  [
+   "https://aurzane.com/biblioteca/libro/ref-grito-desesperado.html",
+   1,
+   9,
+   8.3
+  ],
+  [
+   "https://aurzane.com/biblioteca/libro/amor-y-pedagogia.html",
+   1,
+   5,
+   9.0
+  ],
+  [
+   "https://aurzane.com/biblioteca/libro/ref-valor-atencion.html",
+   1,
+   5,
+   11.0
+  ],
+  [
+   "https://aurzane.com/biblioteca/leer.html?libro=ref-grito-desesperado",
+   1,
+   5,
+   6.2
+  ],
+  [
+   "https://aurzane.com/biblioteca/libro/misericordia.html",
+   1,
+   4,
+   10.5
+  ],
+  [
+   "https://aurzane.com/biblioteca/libro/ref-universo-emociones.html",
+   1,
+   4,
+   9.0
+  ],
+  [
+   "https://nexus.aurzane.com/universidades/notas-de-corte/trabajo-social/",
+   1,
+   3,
+   17.0
+  ],
+  [
+   "https://nexus.aurzane.com/universidades/estados-unidos/ensign-college/",
+   1,
+   2,
+   6.0
+  ],
+  [
+   "https://aurzane.com/biblioteca/libro/ref-tu-cerebro-musica.html",
+   1,
+   1,
+   30.0
+  ],
+  [
+   "https://nexus.aurzane.com/universidades/estados-unidos/ecpi-university/",
+   0,
+   126,
+   10.3
+  ],
+  [
+   "https://aurzane.com/biblioteca/libro/ref-volar-sobre-pantano.html",
+   0,
+   116,
+   11.1
+  ],
+  [
+   "https://nexus.aurzane.com/universidades/paises-bajos/universiteit-van-amsterdam-uva/",
+   0,
+   105,
+   50.0
+  ],
+  [
+   "https://nexus.aurzane.com/universidades/paises-bajos/",
+   0,
+   91,
+   54.7
+  ],
+  [
+   "https://nexus.aurzane.com/universidades/ciudad/cuenca.html",
+   0,
+   84,
+   9.9
+  ],
+  [
+   "https://nexus.aurzane.com/universidades/paises-bajos/ciudad/utrecht/",
+   0,
+   80,
+   48.4
+  ],
+  [
+   "https://aurzane.com/biblioteca/libro/ref-nino-topo-zorro-caballo.html",
+   0,
+   76,
+   11.2
+  ],
+  [
+   "https://nexus.aurzane.com/universidades/estados-unidos/columbia-university-in-the-city-of-new-york/",
+   0,
+   75,
+   41.2
+  ],
+  [
+   "https://nexus.aurzane.com/universidades/italia/ciudad/roma/",
+   0,
+   74,
+   37.0
+  ],
+  [
+   "https://nexus.aurzane.com/universidades/reino-unido/ciudad/glasgow/",
+   0,
+   71,
+   60.1
+  ],
+  [
+   "https://nexus.aurzane.com/universidades/italia/sapienza-universita-di-roma/",
+   0,
+   66,
+   52.7
+  ],
+  [
+   "https://nexus.aurzane.com/universidades/espana/",
+   0,
+   62,
+   68.0
+  ]
+ ],
+ "cambios_titulos": [
+  [
+   "2026-11-09",
+   "https://nexus.aurzane.com/universidades/estados-unidos/ecpi-university/",
+   "ECPI University: 21 carreras | Universidades de Estados Unidos",
+   "ECPI University: carreras y programas | AURZANE",
+   null,
+   0.0
+  ]
+ ],
+ "temas_nuevos": [
+  [
+   "2026-11-09",
+   "los medios de comunicación y la familia",
+   "Influencia de los medios de comunicación en la familia"
+  ],
+  [
+   "2026-11-09",
+   "doble grado en derecho y ade notas de corte",
+   "Doble Grado en Derecho y ADE: Notas de corte y salidas"
+  ],
+  [
+   "2026-11-09",
+   "universidades en holanda",
+   "Universidades en Holanda: Carreras y vida estudiantil"
+  ],
+  [
+   "2026-11-09",
+   "universidades italia",
+   "Estudiar en Italia: Universidades, requisitos y trámites"
+  ],
+  [
+   "2026-11-09",
+   "universidades en pachuca",
+   "Universidades en Pachuca: Guía de oferta académica y costos"
+  ]
+ ]
 }
