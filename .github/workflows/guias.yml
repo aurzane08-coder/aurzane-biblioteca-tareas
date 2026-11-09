@@ -1,0 +1,42 @@
+name: Guías en tests y calculadoras
+# Añade una guía completa (900-1.300 palabras, preguntas frecuentes e imagen) a cada test, calculadora y ejercicio.
+# Detalle en guias/guias.py. Las guías se guardan en guias/textos para poder reponerlas sin gastar IA.
+on:
+  schedule:
+    - cron: '17 3 * * *'
+  push:
+    paths: ['guias/guias.py', '.github/workflows/guias.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+  models: read
+concurrency: guias
+jobs:
+  guias:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      SG_KEY: ${{ secrets.SG_KEY }}
+      SG_HOST: ${{ secrets.SG_HOST }}
+      SG_USER: ${{ secrets.SG_USER }}
+      SG_PORT: ${{ secrets.SG_PORT }}
+      SG_PASS: ${{ secrets.SG_PASS }}
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      LIMITE: '8'
+    steps:
+      - uses: actions/checkout@v4
+      - name: SSH
+        run: |
+          mkdir -p ~/.ssh && printf '%s\n' "$SG_KEY" | tr -d '\r' > ~/.ssh/id && chmod 600 ~/.ssh/id
+          if [ -n "$SG_PASS" ]; then ssh-keygen -p -P "$SG_PASS" -N "" -f ~/.ssh/id >/dev/null; fi
+          echo "SSH=ssh -i $HOME/.ssh/id -p ${SG_PORT:-18765} -o StrictHostKeyChecking=accept-new" >> $GITHUB_ENV
+          echo "SG_DEST=$SG_USER@$SG_HOST" >> $GITHUB_ENV
+      - name: Escribir y poner guías
+        run: python3 -u guias/guias.py
+      - name: Guardar textos
+        run: |
+          git config user.name "aurzane-bot"; git config user.email "bot@aurzane.com"
+          git add guias/textos
+          git commit -qm "guías: textos nuevos" || exit 0
+          for i in 1 2 3 4 5; do git pull -q --rebase -X theirs && git push -q && break; sleep 7; done
