@@ -126,6 +126,19 @@ def leer(n, d):
 
 
 semilla = leer('semilla.json', {})
+AF = leer('afiliados.json', {'programas': {}, 'awin_publicador': 0})
+activos = set(leer('awin_activos.json', []))
+if os.environ.get('AWIN_TOKEN'):
+    st_a, b_a = get(f'https://api.awin.com/publishers/{AF["awin_publicador"]}/programmes?relationship=joined', cab={'Authorization': 'Bearer ' + os.environ['AWIN_TOKEN']})
+    if st_a == 200:
+        try:
+            activos = {str(x.get('id')) for x in json.loads(b_a)} & set(AF['programas'])
+            json.dump(sorted(activos), open(os.path.join(D, 'awin_activos.json'), 'w'), indent=1)
+            print('::notice title=Tienda::Programas de Awin aceptados: ' + (', '.join(AF['programas'][i]['nombre'] for i in activos) or 'ninguno todavía'))
+        except Exception as e: print('awin', e)
+    else: print('awin: la API respondió', st_a)
+def awin(mid, destino):
+    return 'https://www.awin1.com/cread.php?' + urllib.parse.urlencode({'awinmid': mid, 'awinaffid': AF['awin_publicador'], 'ued': destino})
 SECC = semilla['secciones']
 cat = {x['id']: x for x in leer('catalogo.json', [])}
 descartes = set(leer('descartes.json', []))
@@ -215,6 +228,7 @@ pub = [{'id': x['id'], 't': x['titulo'], 'a': x['autor'], 'temas': x['temas'], '
         'u': amazon(x), 'f': f'https://aurzane.com/libros/{x["id"]}/', 'r': (x.get('resumen') or '')[:220], 'y': x.get('anio', ''), 'd': x['fecha'],
         'tend': x.get('tendencia', '') if x.get('tendencia_fecha', '') >= hace35 else ''} for x in lista]
 json.dump(pub, open(os.path.join(OUT, 'libros.json'), 'w', encoding='utf-8'), ensure_ascii=False, separators=(',', ':'))
+open(os.path.join(OUT, 'afiliados.js'), 'w', encoding='utf-8').write('window.__azAfil=' + json.dumps({k: {'n': v['nombre'], 'd': v['donde'], 'u': awin(k, v['url'])} for k, v in AF['programas'].items() if k in activos and v.get('url')}, ensure_ascii=False) + ';')
 # versión .js para que los tests y artículos de los subdominios la carguen sin problemas de CORS
 open(os.path.join(OUT, 'libros.js'), 'w', encoding='utf-8').write('window.__azLibros=' + json.dumps(pub, ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/') + ';')
 
@@ -270,7 +284,9 @@ for x, c in zip(pub, lista):
     datos = ' · '.join(v for v in (x['y'], c.get('editorial', ''), ('ISBN ' + c['isbn']) if c.get('isbn') else '') if v)
     jl = json.dumps({'@context': 'https://schema.org', '@type': 'Book', 'name': x['t'], 'author': {'@type': 'Person', 'name': x['a']}, 'isbn': c.get('isbn') or None,
                      'image': x['img'] or None, 'datePublished': x['y'] or None, 'publisher': c.get('editorial') or None, 'inLanguage': 'es', 'url': x['f']}, ensure_ascii=False)
-    rep = {'{{T}}': E(x['t']), '{{A}}': E(x['a']), '{{URL}}': x['f'], '{{AMZ}}': E(x['u']), '{{SECCION}}': E(x['s']), '{{DATOS}}': E(datos),
+    rep = {'{{T}}': E(x['t']), '{{A}}': E(x['a']), '{{URL}}': x['f'], '{{AMZ}}': E(x['u']),
+           '{{OTRAS}}': ''.join(f'<a class="btn2" href="{E(awin(k, v["busqueda"].replace("{q}", urllib.parse.quote(c.get("isbn") or (x["t"] + " " + x["a"])))))}" target="_blank" rel="sponsored nofollow noopener">Comprar en {E(v["nombre"])}</a>'
+                                for k, v in AF['programas'].items() if k in activos and v.get('busqueda')), '{{SECCION}}': E(x['s']), '{{DATOS}}': E(datos),
            '{{IMG}}': (f'<img src="{E(x["img"])}" alt="Portada de {E(x["t"])}" width="260" height="390">' if x['img'] else f'<span class="sin">{E(x["t"])}</span>'),
            '{{OG}}': E(x['img'] or 'https://aurzane.com/og-portada.jpg'), '{{DESC}}': E((c.get('porque') or x['r'] or f'{x["t"]}, de {x["a"]}.')[:155]),
            '{{PORQUE}}': (f'<h2>Por qué lo recomendamos</h2><p>{E(c["porque"])}</p>' if c.get('porque') else ''),

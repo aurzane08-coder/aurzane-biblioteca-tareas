@@ -16,6 +16,7 @@ jobs:
     timeout-minutes: 45
     env:
       GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      AWIN_TOKEN: ${{ secrets.AWIN_TOKEN }}
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       SG_KEY: ${{ secrets.SG_KEY }}
       SG_HOST: ${{ secrets.SG_HOST }}
@@ -38,6 +39,6 @@ jobs:
       - name: Guardar catálogo
         run: |
           git config user.name "aurzane-bot"; git config user.email "bot@aurzane.com"
-          git add tienda/catalogo.json tienda/descartes.json
+          git add tienda/catalogo.json tienda/descartes.json tienda/awin_activos.json 2>/dev/null; git add tienda/catalogo.json tienda/descartes.json
           git commit -qm "Tienda: catálogo actualizado" || exit 0
           for i in 1 2 3 4 5 6; do git pull --rebase -X theirs -q && git push -q && break; git rebase --abort 2>/dev/null || true; sleep $((RANDOM % 20 + 5)); done

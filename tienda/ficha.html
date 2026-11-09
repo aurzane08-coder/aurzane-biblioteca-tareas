@@ -30,7 +30,7 @@ header.top nav{margin-left:auto;font-size:.92rem}header.top nav a{text-decoratio
 h1{font:700 clamp(1.9rem,4.4vw,2.8rem)/1.12 "Bodoni Moda",serif;margin:0 0 6px}.au{font-size:1.1rem;color:var(--sua);margin:0 0 4px}.datos{font-size:.85rem;color:var(--sua);margin:0 0 20px}
 .comprar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;padding:18px;border-radius:16px;background:var(--sup);border:1px solid var(--lin);margin:0 0 24px}
 .comprar a.btn{display:inline-block;background:var(--oro);color:#1b1440;font-weight:700;text-decoration:none;padding:13px 26px;border-radius:99px}
-.comprar small{color:var(--sua);font-size:.8rem;flex:1 1 220px}
+.comprar a.btn2{display:inline-block;border:1px solid var(--oro);color:var(--oro);font-weight:700;text-decoration:none;padding:12px 20px;border-radius:99px}.comprar small{color:var(--sua);font-size:.8rem;flex:1 1 220px}
 h2{font:700 1.35rem "Bodoni Moda",serif;margin:26px 0 8px}.ficha p{margin:0 0 12px}
 .tend{color:#FFD9A0}.test{margin:24px 0 0;padding:16px 18px;border-radius:14px;background:linear-gradient(150deg,#2a1f63,#5B43B8)}.test a{color:#FFD9A0;font-weight:700}
 .rel{padding:34px 0 50px;border-top:1px solid var(--lin);margin-top:30px}.rel h2{margin-top:0}
@@ -54,7 +54,7 @@ h2{font:700 1.35rem "Bodoni Moda",serif;margin:26px 0 8px}.ficha p{margin:0 0 12
       <p class="au">{{A}}</p>
       <p class="datos">{{DATOS}}</p>
       {{TEND}}
-      <div class="comprar"><a class="btn" href="{{AMZ}}" target="_blank" rel="sponsored nofollow noopener">Ver precio en Amazon</a><small>Enlace de afiliado: si lo compras, AURZANE recibe una pequeña comisión y a ti no te cuesta más.</small></div>
+      <div class="comprar"><a class="btn" href="{{AMZ}}" target="_blank" rel="sponsored nofollow noopener">Ver precio en Amazon</a>{{OTRAS}}<small>Enlaces de afiliado: si lo compras, AURZANE recibe una pequeña comisión y a ti no te cuesta más.</small></div>
       {{PORQUE}}
       {{RESUMEN}}
       {{TEST}}

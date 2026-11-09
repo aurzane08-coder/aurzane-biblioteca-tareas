@@ -1,0 +1,11 @@
+{
+ "awin_publicador": 3149553,
+ "programas": {
+  "21491": {"nombre": "Casa del Libro", "donde": "libros", "busqueda": "https://www.casadellibro.com/busqueda-generica?busqueda={q}"},
+  "77630": {"nombre": "Fnac", "donde": "libros", "busqueda": "https://www.fnac.es/SearchResult/ResultList.aspx?Search={q}"},
+  "131482": {"nombre": "Eurekakids", "donde": "crianza", "url": "https://www.eurekakids.es/"},
+  "125672": {"nombre": "H2B Hipotecas", "donde": "hipoteca", "url": "https://www.h2b.es/"},
+  "19145": {"nombre": "Habitissimo", "donde": "reforma", "url": "https://www.habitissimo.es/presupuestos"},
+  "26313": {"nombre": "Uniplaces", "donde": "universidades", "url": "https://www.uniplaces.com/es"}
+ }
+}
