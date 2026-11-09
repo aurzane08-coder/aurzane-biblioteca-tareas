@@ -1,0 +1,118 @@
+/* =====================================================================
+   informe-v2.css — AURZANE OVP
+   Complementos del informe v2 (se carga después de informe-shared.css):
+   franja de color del membrete institucional, guía de lectura,
+   interpretación por dimensión, fortalezas y aspectos a trabajar, y
+   ajustes para la exportación a PDF.
+   ===================================================================== */
+
+/* ----- membrete con franja de color (p. ej. COMIL 12: amarillo, 2,7 cm) ----- */
+.aurzane-report .report-head.rh-banda{
+  background:var(--banda,#F5C400);background-image:none;color:var(--banda-texto,#14213D);
+  height:2.8cm;box-sizing:border-box;display:flex;flex-direction:column;justify-content:center;
+  padding:10px 40px 12px;
+}
+.aurzane-report .report-head.rh-banda .rh-sub{margin-top:6px;}
+.aurzane-report .report-head.rh-banda .rh-brand{color:var(--banda-texto,#14213D);font-size:1.55rem;letter-spacing:0.02em;font-weight:600;line-height:1.15;}
+.aurzane-report .report-head .rh-brand-sub{font-family:'Bodoni Moda',serif;font-size:1rem;margin-top:4px;letter-spacing:0.12em;color:rgba(234,207,146,0.85);}
+.aurzane-report .report-head.rh-banda .rh-brand-sub{color:var(--banda-texto,#14213D);font-weight:600;}
+.aurzane-report .report-head.rh-banda .rh-meta .rh-meta-lbl,
+.aurzane-report .report-head.rh-banda .rh-meta .rh-meta-val,
+.aurzane-report .report-head.rh-banda .rh-sub{color:var(--banda-texto,#14213D);}
+.aurzane-report .report-head.rh-banda .rh-meta .rh-meta-lbl{opacity:0.75;}
+.aurzane-report .report-head.rh-banda .rh-rule{background:var(--banda-texto,#14213D);height:4px;}
+.aurzane-report .report-head.rh-banda .rh-rule::after{display:none;}
+
+/* ----- escudo institucional junto al nombre de la marca ----- */
+.aurzane-report .report-head .rh-id{display:flex;align-items:center;gap:14px;}
+.aurzane-report .report-head .rh-escudo{height:60px;width:auto;max-width:96px;object-fit:contain;flex-shrink:0;}
+.aurzane-report .report-head .rh-top:has(.rh-escudo){align-items:center;}
+.aurzane-report .report-head.rh-banda .rh-escudo{height:46px;max-width:74px;}
+.aurzane-report .report-head.rh-banda .rh-brand-sub{margin-top:2px;line-height:1.2;}
+
+/* ----- selectores de membrete y firma (fuera del informe) ----- */
+.opciones-informe{display:flex;flex-wrap:wrap;gap:12px 18px;align-items:flex-end;padding:14px 0 4px;}
+.opciones-informe .oi-campo{display:flex;flex-direction:column;gap:5px;font-size:0.78rem;min-width:220px;flex:1 1 220px;max-width:360px;}
+.opciones-informe .oi-campo span{opacity:0.75;}
+.opciones-informe select{font:inherit;font-size:0.88rem;padding:9px 10px;border-radius:8px;border:1px solid rgba(128,128,128,0.35);background:inherit;color:inherit;}
+.opciones-informe .oi-estado{font-size:0.78rem;opacity:0.75;min-height:1em;padding-bottom:10px;}
+
+/* ----- datos de la persona: la institución suele ser larga ----- */
+.aurzane-report .applicant-box .a-item:nth-child(4){flex:1.7;}
+
+/* ----- cómo leer ----- */
+.aurzane-report .como-leer{font-size:0.84rem;line-height:1.7;color:#3f3f3c;background:var(--wash);border:1px solid var(--hair);padding:16px 20px;margin:0 0 30px;}
+.aurzane-report .como-leer .nivel{font-family:'Bodoni Moda',serif;font-size:0.68rem;padding:2px 8px;border-radius:10px;white-space:nowrap;}
+.aurzane-report .nivel.high{background:#e3ead0;color:#5f7a3f;}
+.aurzane-report .nivel.medium{background:#EADFC0;color:#8A6A28;}
+.aurzane-report .nivel.low{background:#f0dcdc;color:#a15353;}
+.aurzane-report .reco-band.high{background:#e3ead0;color:#5f7a3f;}
+
+/* ----- interpretación por dimensión ----- */
+.aurzane-report .interp-list{display:grid;gap:12px;margin-bottom:34px;}
+.aurzane-report .interp-item{border:1px solid var(--hair);background:var(--paper);padding:16px 20px;page-break-inside:avoid;}
+.aurzane-report .interp-item h4{font-size:1rem;display:flex;align-items:center;gap:10px;margin-bottom:6px;}
+.aurzane-report .interp-item .reco-band{font-family:'Bodoni Moda',serif;font-size:0.6rem;padding:3px 9px;border-radius:10px;}
+.aurzane-report .interp-item p{font-size:0.87rem;line-height:1.7;}
+.aurzane-report .interp-item .interp-def{color:var(--ink-dim);font-style:italic;font-size:0.82rem;margin-bottom:6px;}
+
+/* ----- fortalezas y aspectos a trabajar ----- */
+.aurzane-report .balance-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:8px 0 38px;}
+.aurzane-report .balance-col{padding:18px 22px;border:1px solid var(--hair);page-break-inside:avoid;}
+.aurzane-report .balance-col.fuerte{background:#F0F5E6;border-color:#B8C89A;}
+.aurzane-report .balance-col.reforzar{background:#F8ECEC;border-color:#E3C4C4;}
+.aurzane-report .balance-col h4{font-size:1.02rem;margin-bottom:10px;}
+.aurzane-report .balance-col.fuerte h4{color:#4f6634;}
+.aurzane-report .balance-col.reforzar h4{color:#8f4747;}
+.aurzane-report .balance-col ul{padding-left:18px;}
+.aurzane-report .balance-col li{font-size:0.86rem;line-height:1.6;margin-bottom:6px;}
+
+.aurzane-report .reco-list.reco-box{border:1px solid var(--hair);background:var(--wash);margin-bottom:30px;}
+
+/* ----- fichas de instrumentos en dos columnas ----- */
+.aurzane-report .career-grid.fichas-grid{grid-template-columns:1fr 1fr;}
+.aurzane-report .fichas-grid .career-card{padding:16px 20px;}
+.aurzane-report .fichas-grid .career-card h4{font-size:1.02rem;}
+.aurzane-report .fichas-grid .career-list{font-size:0.84rem;line-height:1.6;margin-bottom:8px;}
+
+/* ----- exportación a PDF: copia fuera de pantalla, el membrete va como
+   franja en cada página ----- */
+.aurzane-report.exportando-pdf{max-width:none;padding:0 !important;background:#FBF9F3;}
+.aurzane-report.exportando-pdf .report-head,
+.aurzane-report.exportando-pdf .report-footer{display:none !important;}
+.aurzane-report.exportando-pdf .applicant-box{display:grid;grid-template-columns:1.3fr 0.7fr 1fr;row-gap:14px;margin:4px 0 30px;}
+.aurzane-report.exportando-pdf .a-item{border-top:none;padding:0 14px;border-left:1px solid var(--hair);}
+.aurzane-report.exportando-pdf .a-item:first-child,
+.aurzane-report.exportando-pdf .a-item:nth-child(4){border-left:none;padding-left:0;}
+.aurzane-report.exportando-pdf .a-item:nth-child(4){grid-column:1 / 3;}
+.aurzane-report.exportando-pdf .balance-grid,
+.aurzane-report.exportando-pdf .career-grid.fichas-grid{grid-template-columns:1fr 1fr;}
+.aurzane-report.exportando-pdf .module-divider{margin:30px 0 22px;}
+.aurzane-report.exportando-pdf .career-grid{gap:10px;margin-bottom:24px;}
+.aurzane-report.exportando-pdf .career-card{padding:16px 20px;}
+.aurzane-report.exportando-pdf .dim-row{padding:9px 0;}
+.aurzane-report.exportando-pdf .dim-list{margin-bottom:24px;}
+.aurzane-report.exportando-pdf .chart-box{padding:14px;margin-bottom:16px;}
+.aurzane-report.exportando-pdf .brief-row{margin-bottom:24px;padding-bottom:18px;}
+.aurzane-report.exportando-pdf .section-note{margin-bottom:16px;}
+.aurzane-report.exportando-pdf .signature-block{margin-top:36px;}
+
+/* ----- botones de descarga ----- */
+.descargas-informe{display:flex;gap:10px;flex-wrap:wrap;margin-left:auto;}
+.descargas-informe button{display:inline-flex;align-items:center;gap:8px;}
+.descargas-informe button svg{flex-shrink:0;}
+
+@media print{
+  .aurzane-report .report-head.rh-banda{height:2.8cm;}
+}
+@media(max-width:760px){
+  .aurzane-report .balance-grid,
+  .aurzane-report .career-grid.fichas-grid{grid-template-columns:1fr;}
+  .aurzane-report:not(.exportando-pdf) .exec-summary{grid-template-columns:1fr !important;}
+  .aurzane-report .report-head.rh-banda{height:auto;min-height:2.8cm;padding:14px 22px 14px;}
+  .aurzane-report .report-head.rh-banda .rh-top{flex-direction:column;gap:10px;align-items:flex-start;}
+  .aurzane-report .report-head.rh-banda .rh-meta{text-align:left;}
+}
+
+/* firma manuscrita del profesional predeterminado */
+.signature-block .sig-img{display:block;width:240px;max-width:60%;height:auto;margin:0 0 6px;border-bottom:1px solid rgba(28,23,18,.25);padding-bottom:6px}
