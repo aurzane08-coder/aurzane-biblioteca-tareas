@@ -36,6 +36,6 @@ jobs:
       - name: Guardar
         run: |
           git config user.name "aurzane-bot"; git config user.email "bot@aurzane.com"
-          git add seo/*.json univ/data/gsc_titulos.json 2>/dev/null || git add seo/*.json
+          git add seo/*.json univ/data/gsc_titulos.json univ/data/fichas_ia.json 2>/dev/null || git add seo/*.json
           git commit -qm "SEO: búsquedas de Search Console" || exit 0
           for i in 1 2 3 4 5; do git pull -q --rebase -X theirs && git push -q && break; sleep 7; done

@@ -298,6 +298,20 @@ try: GSC_T = json.load(open(os.path.join(DATOS, 'gsc_titulos.json'), encoding='u
 except Exception: GSC_T = {}
 
 
+# textos ampliados escritos por la IA para las fichas que la gente ve en Google (seo/seo.py)
+try: FICHAS_IA = json.load(open(os.path.join(DATOS, 'fichas_ia.json'), encoding='utf-8'))
+except Exception: FICHAS_IA = {}
+
+
+def bloque_ia(url):
+    g = FICHAS_IA.get(url)
+    if not g: return ''
+    par = ''.join(f'<p>{e(x)}</p>' for x in g.get('parrafos', []))
+    faq = ''.join(f'<details><summary>{e(f["p"])}</summary><p>{e(f["r"])}</p></details>' for f in g.get('faq', []))
+    return (f'<section class="card guia-ia"><h2>{e(g.get("titulo") or "Guía para futuros estudiantes")}</h2>{par}'
+            + (f'<h3>Preguntas frecuentes</h3>{faq}' if faq else '') + '<p class="sub" style="font-size:.85rem">Texto orientativo elaborado por AURZANE a partir de los datos de esta ficha. Confirma requisitos, plazos y precios en la web oficial de la institución.</p></section>')
+
+
 def cabeza(titulo_pag, desc, canon, og_img=None, jsonld=None, robots=None):
     _o = GSC_T.get(canon) or {}
     titulo_pag = _o.get('titulo') or titulo_pag; desc = _o.get('desc') or desc
@@ -702,7 +716,7 @@ def ficha(u, vecinas):
 <ul class="meta">{''.join(meta)}</ul>{f'<p class="lead" style="margin-top:14px">{e(u["descripcion"])}</p>' if u["descripcion"] else ''}
 <div class="acc">{f'<a class="btn btn-luz" href="{e(u["web"])}" target="_blank" rel="noopener nofollow">Web oficial ↗</a>' if u["web"] else ''}<button type="button" class="btn btn-claro" data-guardar data-id="{ps}/{u["slug"]}" data-n="{e(u["nombre"])}" data-url="{BASE}{ps}/{u["slug"]}/" aria-pressed="false">☆ Guardar</button>{'<a class="btn btn-claro" href="#carreras">Ver ' + palabra + '</a>' if n else ''}</div>
 {cred}</div></section>
-<div class="wrap"><div class="ficha"><div>{bloque_c}</div>
+<div class="wrap"><div class="ficha"><div>{bloque_c}{bloque_ia(url)}</div>
 <aside><section class="card"><h2>Datos</h2>{datos_html}</section>{cta}{cerca}</aside></div>
 <p class="fuente">{fuente_pais(p)} </p>
 <div class="reportar"><span>¿Algún dato no es correcto o un enlace no funciona?</span><button type="button" class="btn btn-borde" data-reportar data-tipo="dato" data-ref="{e(u["nombre"] + " (" + p + ")")}">⚑ Reportar un error</button></div></div>

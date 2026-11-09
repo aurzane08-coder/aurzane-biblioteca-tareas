@@ -224,6 +224,32 @@ for c in elegidos:
 res['paises_trabajados'] = [[t['fecha'], t['pais_nombre'], t['titulo']] for t in temas if t.get('pais')][-12:][::-1]
 guardar('temas.json', temas[-200:])
 
+# ---------------------------------------------------------------- 3c. fichas de universidades más completas
+# Las fichas que ya aparecen en Google pero tienen poco texto reciben una guía (unas 400 palabras y preguntas frecuentes)
+# escrita solo con los datos de la propia ficha y lo general del país; el generador del portal la añade (univ/data/fichas_ia.json).
+fi_ruta = os.path.join(R, 'univ', 'data', 'fichas_ia.json')
+fichas = json.load(open(fi_ruta, encoding='utf-8')) if os.path.exists(fi_ruta) else {}
+cand_u = sorted([(a[1], p) for p, a in por_p.items() if re.match(r'https://nexus\.aurzane\.com/universidades/[a-z0-9-]+/[a-z0-9-]+/$', p)
+                 and '/ciudad/' not in p and p not in fichas and a[1] >= 5], reverse=True)[:6]
+for imp_, p in cand_u:
+    u_ = urllib.parse.urlparse(p)
+    fuente = remoto(f'cat www/nexus.aurzane.com/public_html{u_.path}index.html 2>/dev/null')
+    if not fuente: continue
+    texto = re.sub(r'\s+', ' ', html.unescape(re.sub(r'<[^>]+>', ' ', re.sub(r'<script.*?</script>|<style.*?</style>|<header.*?</header>|<footer.*?</footer>', ' ', fuente, flags=re.S))))[:4000]
+    qs = [f['q'] for f in sorted((f for f in filas if f['p'] == p), key=lambda x: -x['i'])[:8]]
+    j = ia('Eres orientador vocacional de AURZANE. Escribe una guía en español para futuros estudiantes interesados en esta institución, usando SOLO los datos de su ficha '
+           'y conocimiento general y estable sobre el sistema universitario de su país. Prohibido inventar datos concretos de la institución (rankings, precios, notas, fechas, premios, número de alumnos). '
+           f'Datos de la ficha:\n{texto}\n\nBúsquedas reales con las que la gente llega: {", ".join(qs)}\n\n'
+           'Formato JSON: {"titulo": "máx. 70 caracteres", "parrafos": ["4 o 5 párrafos: qué tipo de institución es y qué se puede estudiar según su listado, '
+           'cómo suele ser el acceso a la universidad en ese país, cómo elegir carrera y dónde confirmar requisitos, vida de estudiante en la ciudad en términos generales"], '
+           '"faq": [{"p": "pregunta que la gente busca", "r": "respuesta de 2 o 3 frases sin datos inventados"}] (3 o 4)}. Sin rayas largas.')
+    if isinstance(j, dict) and j.get('parrafos') and len(' '.join(j['parrafos']).split()) >= 250:
+        fichas[p] = {'titulo': str(j.get('titulo', ''))[:90], 'parrafos': [str(x).replace('—', ',') for x in j['parrafos']][:6],
+                     'faq': [{'p': str(f.get('p', '')), 'r': str(f.get('r', '')).replace('—', ',')} for f in j.get('faq', [])[:5] if isinstance(f, dict)], 'fecha': HOY.isoformat()}
+        print('ficha ampliada', p)
+json.dump(fichas, open(fi_ruta, 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+res['fichas_ampliadas'] = len(fichas)
+
 res['cambios_titulos'] = [[c['fecha'], c['url'], c['antes']['titulo'], c['despues']['titulo'], (c.get('ahora') or {}).get('ctr'), c['antes']['ctr']] for c in cambios[-15:]][::-1]
 res['temas_nuevos'] = [[t['fecha'], t['consulta'], t['titulo']] for t in temas[-10:]][::-1]
 guardar('resumen.json', res)
