@@ -18,5 +18,9 @@
  "red_manual|reintentar_flujo": [
   0,
   2
+ ],
+ "desconocido|relanzar_enlaces": [
+  1,
+  0
  ]
 }

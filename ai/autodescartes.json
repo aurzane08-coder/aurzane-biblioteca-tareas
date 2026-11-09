@@ -1,6 +1,17 @@
 [
  {
   "fecha": "2026-11-09",
+  "id": "pmc-PMC13736625",
+  "tipo": "estudio",
+  "titulo": "Managing generative-AI health information resilience: human resource capabilities and multilevel public health governance",
+  "url": "https://europepmc.org/article/PMC/PMC13736625",
+  "motivo": "La IA le dio 3/10: no encaja en la biblioteca",
+  "probados": [
+   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13729381.1/PMC13729381.1.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-09",
   "id": "pmc-PMC13736238",
   "tipo": "estudio",
   "titulo": "Functional resilience strategies for environmental destabilization of antagonistic yeast metabolite-mediated postharvest biocontrol management",
@@ -2819,17 +2830,6 @@
   "motivo": "Dice ser un libro pero el PDF solo tiene 6 páginas (es un capítulo, artículo o resumen)",
   "probados": [
    "200 application/pdf https://archive.org/download/anexo-tipo-de-parafilias-articulo-de-wikipedia/Anexo_Tipos_de_parafilias.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-02",
-  "id": "ia-psico-prubfinal",
-  "tipo": "libro",
-  "titulo": "Psicología del Color",
-  "url": "https://archive.org/details/psico-prubfinal",
-  "motivo": "Dice ser un libro pero el PDF solo tiene 9 páginas (es un capítulo, artículo o resumen)",
-  "probados": [
-   "200 application/pdf https://archive.org/download/psico-prubfinal/PSICO_PRUBFINAL.pdf"
   ]
  }
 ]
