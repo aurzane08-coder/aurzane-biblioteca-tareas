@@ -4,24 +4,24 @@ Actualizado: 2026-11-09. Clics de personas (sin bots ni vistas previas) que entr
 
 | Red | Publicaciones | Clics |
 |---|---|---|
-| telegram | 29 | 4 |
-| bluesky | 21 | 59 |
-| mastodon | 21 | 51 |
-| instagram | 6 | 0 |
-| facebook | 6 | 19 |
+| telegram | 32 | 4 |
+| bluesky | 23 | 67 |
+| mastodon | 23 | 55 |
+| instagram | 9 | 0 |
+| facebook | 9 | 27 |
 | threads | 0 | 0 |
-| pinterest | 14 | 0 |
+| pinterest | 15 | 0 |
 
 ## Productos con más clics
 
 | Producto | Clics |
 |---|---|
 | calc-sueldo | 11 |
+| curso-neuro | 7 |
 | test-sueno | 6 |
 | frase-b424a195 | 6 |
 | crea-l05-08 | 6 |
 | test-tdah | 5 |
-| curso-neuro | 5 |
 | test-personalidad | 5 |
 | test-habitos | 5 |
 | crea-l05-04 | 4 |
@@ -34,10 +34,10 @@ Actualizado: 2026-11-09. Clics de personas (sin bots ni vistas previas) que entr
 | test-ansiedad | 4 |
 | nc-criminologia | 4 |
 | nc-educacion-infantil | 4 |
+| test-satisfaccion | 4 |
+| frase-8e70072e | 4 |
 | test-autoestima | 3 |
 | frase-2144e317 | 3 |
 | frase-ff372591 | 3 |
 | frase-f56e3629 | 3 |
 | frase-4a49bc6d | 3 |
-| frase-fe3fa4a3 | 3 |
-| frase-fee27969 | 2 |

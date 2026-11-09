@@ -278,3 +278,10 @@
 2026-11-09,5,tiktok,frase-6718c8c7,error,400 {"error":{"code":"spam_risk_too_many_pending_share" "message":"spam_risk_too_many_pending_share" "log_id":"2026110918503674409FABB517441638B9"}}
 2026-11-09,5,telegram,frase-89e9ad64,ok,63
 2026-11-09,5,tiktok,frase-6718c8c7,error,400 {"error":{"code":"spam_risk_too_many_pending_share" "message":"spam_risk_too_many_pending_share" "log_id":"2026110919494832853926D3BDA321C0FC"}}
+2026-11-09,5,tiktok,frase-6718c8c7,error,400 {"error":{"code":"spam_risk_too_many_pending_share" "message":"spam_risk_too_many_pending_share" "log_id":"20261109201456A34CFF1F186B162564D8"}}
+2026-11-09,3,telegram,frase-2235d4e7,ok,64
+2026-11-09,3,bluesky,frase-8e70072e,ok,at://did:plc:6ovoiudj7dkxgrzd2zkyn77y/app.bsky.feed.post/3mzuvoo4iub26
+2026-11-09,3,mastodon,frase-bdd8ece2,ok,https://mastodon.social/@auzane/117586428318543597
+2026-11-09,3,instagram,frase-a50f640f,ok,18114488690272392
+2026-11-09,3,facebook,frase-5e3e2ae7,ok,1411608604357169
+2026-11-09,3,pinterest,frase-a166927d,feed,
