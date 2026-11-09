@@ -2,7 +2,7 @@ name: Tienda de libros
 # Cada lunes y jueves: comprueba libros en Google Books, añade los de las tendencias de búsqueda en España y publica aurzane.com/libros/
 on:
   schedule:
-    - cron: '41 5 * * 1,4'
+    - cron: '41 5 * * *'   # cada día: la tienda crece poco a poco
   push:
     paths: ['tienda/semilla.json', 'tienda/tienda.py', 'tienda/plantilla.html', '.github/workflows/tienda.yml']
   workflow_dispatch:
@@ -13,7 +13,7 @@ concurrency: tienda
 jobs:
   t:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 45
     env:
       GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

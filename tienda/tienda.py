@@ -21,12 +21,12 @@ os.makedirs(OUT, exist_ok=True)
 
 def get(url, datos=None, cab=None, t=40):
     err = ''
-    for i in range(3):
+    for i in range(2):
         try:
             rq = urllib.request.Request(url, data=datos, headers={'User-Agent': 'AURZANE-tienda/1.0', **(cab or {})})
             with urllib.request.urlopen(rq, timeout=t) as r: return r.status, r.read().decode('utf-8', 'replace')
         except urllib.error.HTTPError as e:
-            if e.code in (429, 503): err = f'HTTP {e.code}'; time.sleep(6 * (i + 1)); continue
+            if e.code in (429, 503): err = f'HTTP {e.code}'; time.sleep(3); continue
             return e.code, e.read().decode('utf-8', 'replace')
         except Exception as e:
             err = str(e); time.sleep(3)
@@ -42,9 +42,17 @@ def slug(t): return '-'.join(norm(t))[:70]
 
 
 def verificar(titulo, autor):
-    """Busca el libro en Google Books; devuelve sus datos si el título y el autor coinciden de verdad."""
+    """Busca el libro en Open Library y, si no, en Google Books; devuelve sus datos si el título y el autor coinciden de verdad."""
     ape = [w for w in norm(autor) if len(w) > 3 and w not in ('y', 'and')]
     pal = [w for w in norm(titulo) if len(w) > 2][:4]
+    v = verificar_ol(titulo, autor, pal, ape)
+    if v and v.get('portada'): return v
+    g = verificar_gb(titulo, autor, pal, ape)
+    if g and not g.get('portada') and v: g['portada'] = v['portada']
+    return g or v
+
+
+def verificar_gb(titulo, autor, pal, ape):
     for lang in ('&langRestrict=es', ''):
         q = urllib.parse.quote(f'intitle:{titulo} inauthor:{" ".join(ape[-1:]) or autor}')
         st, b = get(f'https://www.googleapis.com/books/v1/volumes?q={q}&maxResults=8&printType=books{lang}')
@@ -60,7 +68,7 @@ def verificar(titulo, autor):
                     'anio': (v.get('publishedDate') or '')[:4], 'editorial': v.get('publisher', ''), 'idioma': v.get('language', ''),
                     'resumen': re.sub(r'<[^>]+>', ' ', v.get('description', '') or '')[:420].strip()}
         time.sleep(1)
-    return verificar_ol(titulo, autor, pal, ape)
+    return None
 
 
 def verificar_ol(titulo, autor, pal, ape):
@@ -111,11 +119,12 @@ descartes = set(leer('descartes.json', []))
 nuevos = []
 
 # 1) semilla
-for l in semilla['libros']:
+INICIO = time.time()
+pendientes_s = [l for l in semilla['libros'] if slug(l['titulo'] + ' ' + l['autor']) not in cat]
+for l in pendientes_s[:25]:
     i = slug(l['titulo'] + ' ' + l['autor'])
-    if i in cat or i in descartes: continue
-    v = verificar(l['titulo'], l['autor']); time.sleep(0.6)
-    if not v: descartes.add(i); print('sin verificar:', l['titulo']); continue
+    v = verificar(l['titulo'], l['autor']); time.sleep(0.4)
+    if not v: print('sin verificar (se reintenta en la próxima pasada):', l['titulo']); continue
     cat[i] = {'id': i, 'titulo': l['titulo'], 'autor': l['autor'], 'temas': l['temas'], 'origen': 'semilla', 'fecha': HOY, **v}; nuevos.append(i)
 
 # 2) tendencias de búsqueda + secciones con pocos libros
@@ -142,6 +151,7 @@ try: prop = json.loads(re.search(r'\{.*\}', r, re.S).group(0)) if r else {}
 except Exception: prop = {}
 for tipo in ('tendencia', 'crecer'):
     for l in (prop.get(tipo) or [])[:10]:
+        if time.time() - INICIO > 900: break
         if not l.get('titulo') or not l.get('autor'): continue
         i = slug(l['titulo'] + ' ' + l['autor'])
         if i in cat:
