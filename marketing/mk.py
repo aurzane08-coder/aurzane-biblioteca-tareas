@@ -11,9 +11,10 @@ import json, os, re, sys, hashlib, datetime, collections, urllib.request, urllib
 
 D = os.path.dirname(os.path.abspath(__file__))
 REDES = ['telegram', 'bluesky', 'mastodon', 'instagram', 'facebook', 'threads', 'pinterest']  # X desactivada: cobra por publicar
-REDES_VIDEO = ['instagram', 'facebook', 'youtube', 'telegram']  # franjas 4 y 5: vídeo vertical
-# TikTok solo en la franja 6 (16:23 en España): un vídeo al día, siempre a la misma hora, para que en la app no se mezclen
-# los avisos y Adrián le ponga música de TikTok antes de publicarlo.
+REDES_VIDEO = ['instagram', 'facebook', 'youtube', 'tiktok', 'telegram']  # franjas 4 y 5: vídeo vertical
+# TikTok: tres vídeos al día, cada uno en su franja (11:47, 16:23 y 20:29 en España), para que los avisos no se mezclen
+# y Adrián les ponga música de TikTok antes de publicarlos. YouTube no admite más: la cuota diaria de la API (10.000 unidades,
+# 1.600 por vídeo) ya la usan estos 3 vídeos y los 3 clips diarios de Clips-All.
 TIPOS_VIDEO = ('frase', 'test', 'calculadora', 'curiosidad')
 VID = ('4', '5', '6')   # franjas de vídeo vertical: 4 (tarde, de todo), 5 (mañana, frases y curiosidades) y 6 (media tarde, solo YouTube y TikTok)
 REDES_V6 = ['youtube', 'tiktok']
