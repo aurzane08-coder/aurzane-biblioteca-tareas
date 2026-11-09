@@ -289,3 +289,5 @@
 2026-11-09,5,tiktok,frase-6718c8c7,error,400 {"error":{"code":"spam_risk_too_many_pending_share" "message":"spam_risk_too_many_pending_share" "log_id":"20261109210017872405E78EBB59154CC1"}}
 2026-11-09,5,tiktok,frase-6718c8c7,error,400 {"error":{"code":"spam_risk_too_many_pending_share" "message":"spam_risk_too_many_pending_share" "log_id":"20261109211509CAC23D904580BE5E7324"}}
 2026-11-09,5,tiktok,frase-6718c8c7,ok,v_inbox_file~v2.7706163355786184712 (borrador en la bandeja de TikTok: añade un sonido y publica)
+2026-11-09,6,youtube,frase-b81b4c76,ok,https://youtu.be/ztvqUEAI1DA
+2026-11-09,6,tiktok,frase-490a3e90,error,400 {"error":{"code":"spam_risk_too_many_pending_share" "message":"spam_risk_too_many_pending_share" "log_id":"20261109233026CB1FB4EAF5C52E72B902"}}
