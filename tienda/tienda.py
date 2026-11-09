@@ -236,7 +236,14 @@ open(os.path.join(OUT, 'libros.js'), 'w', encoding='utf-8').write('window.__azLi
 todo = [{'t': x['t'], 'a': x['a'], 'img': x['img'], 'f': x['f'], 'c': x['u'], 'p': 'p', 's': x['s'], 'd': x['d'], 'tend': x['tend'], 'y': x['y'], 'top': 1} for x in pub]
 clave = lambda t: ' '.join([w for w in norm(t) if len(w) > 2][:3])
 vistos = {clave(x['t']) for x in todo}
-st, js = get('https://aurzane.com/biblioteca/catalogo.js', t=90)
+st, js = 0, ''
+for _ in range(3):   # SiteGround a veces frena a GitHub con su verificación (202): se reintenta y, si no, se usa la última copia buena
+    st, js = get('https://aurzane.com/biblioteca/catalogo.js', t=90)
+    if st == 200 and js.lstrip().startswith(('window', 'var', 'const', '{', '/*')) and '"libros"' in js: break
+    st = 0; time.sleep(20)
+CACHE_B = os.path.join(D, 'biblioteca_cache.js')
+if st == 200: open(CACHE_B, 'w', encoding='utf-8').write(js)
+elif os.path.exists(CACHE_B): js = open(CACHE_B, encoding='utf-8').read(); st = 200; print('biblioteca: se usa la última copia guardada')
 n_gratis = n_ref = 0
 if st == 200:
     try:
