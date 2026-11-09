@@ -1,4 +1,3 @@
-mind.aurzane.com/test-de-estres/index.html
-mind.aurzane.com/test-de-autocompasion/index.html
-mind.aurzane.com/test-de-burnout/index.html
-live.aurzane.com/test-de-bienestar/index.html
+aurzane.com/privacidad.html
+aurzane.com/aviso-legal.html
+aurzane.com/cookies.html
