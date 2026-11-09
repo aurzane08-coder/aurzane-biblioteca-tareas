@@ -119,6 +119,27 @@
   "porque": "Es para los lectores preocupados por el medio ambiente y el futuro del planeta a través del diálogo cercano entre un abuelo y su nieto. Aporta una reflexión honesta y urgente sobre cómo la acción humana daña los ecosistemas y la necesidad de protegerlos."
  },
  {
+  "id": "invicto-logra-mas-sufre-menos-marcos-vazquez",
+  "titulo": "Invicto: Logra más, sufre menos",
+  "autor": "Marcos Vázquez",
+  "temas": [
+   "resiliencia",
+   "habitos",
+   "autoeficacia"
+  ],
+  "origen": "tendencia",
+  "fecha": "2026-11-09",
+  "isbn": "9786073808897",
+  "portada": "",
+  "anio": "2022",
+  "editorial": "Penguin Random House Grupo Editorial",
+  "idioma": "spa",
+  "resumen": "",
+  "tendencia": "Filosofía estoica aplicada al bienestar mental para encarar la recta final del año y los nuevos propósitos.",
+  "tendencia_fecha": "2026-11-09",
+  "porque": "Es para quienes buscan alcanzar sus metas personales manteniendo la calma interior en el día a día. Aporta una guía práctica basada en el estoicismo para reducir el sufrimiento innecesario y enfocar la energía en lo que de verdad importa."
+ },
+ {
   "id": "como-hacer-que-te-pasen-cosas-buenas-marian-rojas-estape",
   "titulo": "Cómo hacer que te pasen cosas buenas",
   "autor": "Marian Rojas Estapé",
@@ -803,5 +824,24 @@
   "idioma": "spa",
   "resumen": "",
   "porque": "Ayuda a quienes necesitan aprender a decir no y cuidar su bienestar emocional en las relaciones personales y profesionales. Aporta pautas prácticas y psicológicas para establecer barreras sanas y asumir la responsabilidad de la propia vida."
+ },
+ {
+  "id": "aprende-a-descansar-jana-fernandez",
+  "titulo": "Aprende a descansar",
+  "autor": "Jana Fernández",
+  "temas": [
+   "sueno",
+   "bienestar",
+   "habitos"
+  ],
+  "origen": "crecer",
+  "fecha": "2026-11-09",
+  "isbn": "9788418285646",
+  "portada": "https://covers.openlibrary.org/b/id/13454904-M.jpg?default=false",
+  "anio": "2021",
+  "editorial": "Plataforma Editorial SL",
+  "idioma": "spa",
+  "resumen": "",
+  "porque": "Es para cualquier persona agotada por el ritmo de vida actual que necesita recuperar su bienestar físico y mental. Aporta un método estructurado para entender el descanso real y transformar los hábitos de sueño y desconexión."
  }
 ]
