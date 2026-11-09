@@ -1,5 +1,62 @@
 [
  {
+  "id": "cur-2fc91ef243",
+  "tipo": "curiosidad",
+  "titulo": "¿El estrés bloquea tu mente?",
+  "dato": "Yerkes y Dodson demostraron en 1908 que el estrés moderado mejora el rendimiento, pero en exceso lo destruye.",
+  "resumen": "Yerkes y Dodson demostraron en 1908 que el estrés moderado mejora el rendimiento, pero en exceso lo destruye. Esta ley muestra que necesitamos cierta activación para rendir bien. Sin embargo, cuando la ansiedad supera nuestro límite, la memoria de trabajo colapsa y nuestra capacidad de resolución de problemas cae en picado.",
+  "fuente": "Yerkes y Dodson, 1908",
+  "hashtags": [
+   "psicologia",
+   "estres",
+   "curiosidades",
+   "ciencia"
+  ],
+  "fuente_id": "tema-313-0",
+  "url": "https://mind.aurzane.com/",
+  "fecha": "2026-11-09",
+  "auto": true,
+  "verificacion": "Describe con precisión histórica y científica la Ley de Yerkes-Dodson sin caer en exageraciones."
+ },
+ {
+  "id": "cur-fa08043f6f",
+  "tipo": "curiosidad",
+  "titulo": "¿El TDAH vulnera ante traumas?",
+  "dato": "Un estudio analiza cómo los adolescentes con TDAH experimentan y responden a situaciones traumáticas y problemas de salud mental.",
+  "resumen": "Un estudio analiza cómo los adolescentes con TDAH experimentan y responden a situaciones traumáticas y problemas de salud mental. La investigación compara a jóvenes con y sin TDAH para entender mejor sus reacciones específicas frente al trauma, la ansiedad y la depresión. Así, la ciencia busca diferenciar estas respuestas de otros síntomas internos y mejorar la comprensión psicológica.",
+  "fuente": "European journal of psychotraumatology",
+  "hashtags": [
+   "aurzane",
+   "psicologia",
+   "tdah",
+   "divulgacion"
+  ],
+  "fuente_id": "pmc-PMC13463518",
+  "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13463518/",
+  "fecha": "2026-11-09",
+  "auto": true,
+  "verificacion": "El planteamiento es riguroso, refleja fielmente la investigación científica citada y evita sensacionalismos."
+ },
+ {
+  "id": "cur-7d8fdd8c97",
+  "tipo": "curiosidad",
+  "titulo": "¿Puede el racismo repetido causar un trauma psicológico propio?",
+  "dato": "La exposición continua a situaciones racistas puede desencadenar en personas migrantes lo que la psicología define como trauma racial.",
+  "resumen": "La exposición continua a situaciones racistas puede desencadenar en personas migrantes lo que la psicología define como trauma racial. Según la teoría del estrés traumático por raza, estos sucesos dañan la seguridad, el sentido de pertenencia y la dignidad. Esto provoca respuestas fisiológicas y psicológicas de estrés relacionadas con la aparición de síntomas de ansiedad, depresión o estrés postraumático.",
+  "fuente": "European Journal of Psychotraumatology",
+  "hashtags": [
+   "psicologia",
+   "traumaracial",
+   "saludmental",
+   "aurzane"
+  ],
+  "fuente_id": "pmc-PMC13693427",
+  "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13693427/",
+  "fecha": "2026-11-09",
+  "auto": true,
+  "verificacion": "El dato está científicamente respaldado por la literatura sobre trauma racial y salud mental en migrantes."
+ },
+ {
   "id": "cur-d8c8e23130",
   "tipo": "curiosidad",
   "titulo": "¿Por qué crees que todo el mundo te mira?",

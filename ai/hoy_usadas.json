@@ -1,6 +1,7 @@
 {
  "frases": [
-  "cita-2a05ffb2be"
+  "cita-2a05ffb2be",
+  "fw-dd5b7bf4f1"
  ],
  "dias": {
   "2026-11-08": {
@@ -30,6 +31,35 @@
    "musica": {
     "url": "https://aurzane.com/marketing/musica/1288634.mp3",
     "credito": "«Too Soft To Touch», Blindmoore (Jamendo), CC BY"
+   }
+  },
+  "2026-11-09": {
+   "fecha": "2026-11-09",
+   "frase": {
+    "texto": "Los tímidos tienen miedo antes del peligro; los cobardes, durante el mismo; los valientes, después.",
+    "autor": "Jean Paul",
+    "obra": "",
+    "url": "https://aurzane.com/frases/#fw-dd5b7bf4f1",
+    "fuente": "Proverbia.net"
+   },
+   "curiosidad": {
+    "titulo": "¿Sabías que las plantas tienen sistema inmune?",
+    "texto": "Las plantas desarrollan compuestos defensivos y señales químicas para frenar la invasión de patógenos. Igual que nosotros, las plantas detectan amenazas y activan mecanismos de defensa complejos. Este sistema dinámico les ayuda a sobrevivir en su entorno.",
+    "fuente": "Stress biology",
+    "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13710501/"
+   },
+   "ejercicio": {
+    "titulo": "Respiración diafragmática o abdominal guiada",
+    "url": "https://mind.aurzane.com/ejercicios/respiracion-diafragmatica/"
+   },
+   "test": {
+    "titulo": "Test de depresión PHQ-9 gratis y online",
+    "url": "https://mind.aurzane.com/test-de-depresion/"
+   },
+   "mas_frases": true,
+   "musica": {
+    "url": "https://aurzane.com/marketing/musica/744747.mp3",
+    "credito": "«Built To Last», Fall Walk Run (Jamendo), CC BY-SA"
    }
   }
  }
