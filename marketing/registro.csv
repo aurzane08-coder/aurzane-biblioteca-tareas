@@ -267,3 +267,8 @@
 2026-11-08,4,tiktok,frase-276319e1,error,400 {"error":{"code":"spam_risk_too_many_pending_share" "message":"spam_risk_too_many_pending_share" "log_id":"202611090628073AE64B98DC9311F505DD"}}
 2026-11-08,4,tiktok,frase-276319e1,error,400 {"error":{"code":"spam_risk_too_many_pending_share" "message":"spam_risk_too_many_pending_share" "log_id":"20261109070212545DBBFB09E32B2D3FD1"}}
 2026-11-08,4,tiktok,frase-276319e1,error,400 {"error":{"code":"spam_risk_too_many_pending_share" "message":"spam_risk_too_many_pending_share" "log_id":"202611090728124D0E96159F719FEC7940"}}
+2026-11-09,1,telegram,test-tdah,ok,61
+2026-11-09,1,bluesky,test-satisfaccion,ok,at://did:plc:6ovoiudj7dkxgrzd2zkyn77y/app.bsky.feed.post/3mzuk77ff3i2r
+2026-11-09,1,mastodon,calc-pau,ok,https://mastodon.social/@auzane/117585620317462104
+2026-11-09,1,instagram,test-autocompasion,ok,17888506380690334
+2026-11-09,1,facebook,curso-neuro,ok,1626732782256226
