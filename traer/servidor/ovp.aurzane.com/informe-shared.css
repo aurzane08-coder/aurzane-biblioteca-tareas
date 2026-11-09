@@ -1,0 +1,161 @@
+/* ===================================================================
+   informe-shared.css — AURZANE MIND
+   Estilos del informe integrado de OVP, compartidos entre la vista
+   admin (generar-informe.html) y la vista del cliente (portal.html).
+   Todo queda bajo el selector .aurzane-report para no chocar con los
+   estilos propios de cada página que lo incluye — las variables se
+   redeclaran localmente porque --ink, --paper, --hair, --wash y
+   --line-strong no existen (o significan otra cosa) fuera de aquí.
+   =================================================================== */
+
+.aurzane-report{
+  --navy:#080B17; --navy-2:#0F1530; --navy-3:#151C3D; --navy-4:#1E2650;
+  --gold:#C9A24B; --gold-light:#EACF92; --bronze:#8A6A28;
+  --line-strong:rgba(201,162,75,0.38);
+  --paper:#FBF9F3; --ink:#1C1B18; --ink-dim:#5B584F; --hair:#E4DECC; --wash:#F3EFE2;
+
+  background:var(--paper); color:var(--ink); margin:0 auto; max-width:940px;
+  font-family:'Instrument Sans',sans-serif;
+}
+.aurzane-report h1,.aurzane-report h2,.aurzane-report h3,.aurzane-report h4{font-family:'Bodoni Moda',serif;font-weight:500;}
+.aurzane-report .mono{font-family:'Bodoni Moda',serif;font-style:italic;font-weight:500;}
+
+.aurzane-report.report, .aurzane-report .report{padding:66px 70px 60px;position:relative;}
+
+/* ----- encabezado del informe: bloque navy/gold, no tinta-sobre-papel ----- */
+.aurzane-report .report-head{
+  position:relative;background:var(--navy);color:var(--gold-light);
+  padding:34px 40px 30px;margin:-66px -70px 38px;
+  background-image:linear-gradient(135deg, var(--navy) 0%, var(--navy-2) 100%);
+}
+.aurzane-report .report-head .rh-top{display:flex;justify-content:space-between;align-items:baseline;}
+.aurzane-report .report-head .rh-brand{font-family:'Bodoni Moda',serif;font-size:1.9rem;letter-spacing:0.14em;font-weight:500;color:var(--gold-light);}
+.aurzane-report .report-head .rh-meta{text-align:right;}
+.aurzane-report .report-head .rh-meta .rh-meta-lbl{font-family:'Bodoni Moda',serif;font-size:0.6rem;color:rgba(234,207,146,0.65);letter-spacing:0.06em;text-transform:uppercase;}
+.aurzane-report .report-head .rh-meta .rh-meta-val{font-family:'Bodoni Moda',serif;font-size:0.85rem;font-weight:600;margin-top:3px;color:var(--gold-light);}
+.aurzane-report .report-head .rh-sub{font-family:'Bodoni Moda',serif;font-size:0.7rem;color:rgba(234,207,146,0.75);margin-top:10px;letter-spacing:0.1em;text-transform:uppercase;}
+.aurzane-report .report-head .rh-rule{position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 55%, var(--gold) 100%);}
+.aurzane-report .report-head .rh-rule::after{content:"";position:absolute;right:40px;bottom:-3px;width:6px;height:6px;border-radius:50%;background:var(--gold-light);}
+
+.aurzane-report .applicant-box{display:flex;margin-bottom:38px;}
+.aurzane-report .a-item{flex:1;padding:0 22px;border-left:1px solid var(--hair);}
+.aurzane-report .a-item:first-child{border-left:none;padding-left:0;flex:1.4;}
+.aurzane-report .a-item .a-lbl{font-family:'Bodoni Moda',serif;font-size:0.6rem;color:var(--ink-dim);text-transform:uppercase;letter-spacing:0.08em;}
+.aurzane-report .a-item .a-val{font-family:'Bodoni Moda',serif;font-size:1.05rem;margin-top:6px;}
+.aurzane-report .a-item:first-child .a-val{font-size:1.25rem;font-weight:500;}
+
+.aurzane-report .brief-row{display:grid;grid-template-columns:1fr 1fr;gap:36px;margin-bottom:42px;padding-bottom:32px;border-bottom:1px solid var(--hair);}
+.aurzane-report .brief-col h4{font-family:'Bodoni Moda',serif;font-size:0.66rem;text-transform:uppercase;letter-spacing:0.08em;color:#8A6A28;margin-bottom:10px;}
+.aurzane-report .brief-col p{font-size:0.87rem;line-height:1.75;color:#3a3934;}
+
+.aurzane-report h2.section-title{font-size:1.4rem;margin-bottom:6px;letter-spacing:-0.01em;display:flex;align-items:baseline;gap:10px;}
+.aurzane-report h2.section-title .st-num{font-family:'Bodoni Moda',serif;font-size:0.7rem;color:#8A6A28;}
+.aurzane-report h3.sub-title{font-size:1.1rem;margin:28px 0 6px;color:#4a4638;}
+.aurzane-report .section-note{font-size:0.83rem;color:var(--ink-dim);margin-bottom:24px;}
+.aurzane-report .module-divider{margin:56px 0 40px;text-align:center;position:relative;}
+.aurzane-report .module-divider span{background:var(--paper);padding:0 18px;font-family:'Bodoni Moda',serif;font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;color:#8A6A28;position:relative;z-index:1;}
+.aurzane-report .module-divider::before{content:"";position:absolute;top:50%;left:0;right:0;height:1px;background:var(--hair);}
+
+.aurzane-report .dim-list{margin-bottom:40px;}
+.aurzane-report .chart-box{background:var(--wash);border:1px solid var(--hair);padding:24px 20px;margin-bottom:24px;}
+.aurzane-report .summary-table{width:100%;border-collapse:collapse;margin-top:24px;font-size:0.85rem;}
+.aurzane-report .summary-table th{text-align:left;font-family:'Bodoni Moda',serif;font-size:0.66rem;text-transform:uppercase;
+  letter-spacing:0.04em;color:#8A6A28;padding:10px 14px;border-bottom:2px solid var(--ink);}
+.aurzane-report .summary-table td{padding:12px 14px;border-bottom:1px solid var(--hair);}
+.aurzane-report .summary-table tr:last-child td{border-bottom:none;}
+.aurzane-report .summary-table tr:nth-child(even){background:var(--wash);}
+.aurzane-report .dim-row{padding:14px 0;border-bottom:1px solid var(--hair);}
+.aurzane-report .dim-row .dim-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px;}
+.aurzane-report .dim-row .dim-name{font-size:0.94rem;font-weight:600;}
+.aurzane-report .dim-row.high .dim-name{color:#6b7a3f;}
+.aurzane-report .dim-row.low .dim-name{color:#a15353;}
+.aurzane-report .dim-row .dim-pd{font-family:'Bodoni Moda',serif;font-size:0.8rem;color:var(--ink-dim);}
+.aurzane-report .dim-bar-track{height:6px;background:#eae4d3;border-radius:4px;overflow:hidden;}
+.aurzane-report .dim-bar-fill{height:100%;background:linear-gradient(90deg,#8A6A28,#C9A24B);}
+.aurzane-report .dim-row.low .dim-bar-fill{background:linear-gradient(90deg,#a15353,#c98a8a);}
+.aurzane-report .dim-row.high .dim-bar-fill{background:linear-gradient(90deg,#5f7a3f,#8faf5f);}
+.aurzane-report .dim-tag{font-family:'Bodoni Moda',serif;font-size:0.6rem;padding:3px 9px;border-radius:10px;margin-left:10px;}
+.aurzane-report .dim-row.high .dim-tag{background:#e3ead0;color:#5f7a3f;}
+.aurzane-report .dim-row.low .dim-tag{background:#f0dcdc;color:#a15353;}
+.aurzane-report .dim-row.medium .dim-tag{background:#EADFC0;color:#8A6A28;}
+
+.aurzane-report .finding-block{margin-bottom:22px;page-break-inside:avoid;}
+.aurzane-report .finding-block .fb-head{display:flex;align-items:center;gap:12px;padding:14px 22px;border-radius:2px 2px 0 0;background:#2A2115;}
+.aurzane-report .finding-block.high .fb-head{background:#3a4326;}
+.aurzane-report .finding-block.low .fb-head{background:#3d2a2a;}
+.aurzane-report .finding-block .fb-head h4{font-family:'Bodoni Moda',serif;font-size:1.08rem;color:#F5EFDF;flex:1;}
+.aurzane-report .finding-block .fb-head .fb-total{font-family:'Bodoni Moda',serif;font-size:0.65rem;padding:4px 10px;border-radius:10px;font-weight:700;background:var(--gold-light);color:#2A2115;}
+.aurzane-report .finding-block.high .fb-total{background:#c8dba0;color:#3a4326;}
+.aurzane-report .finding-block.low .fb-total{background:#e3b3b3;color:#3d2a2a;}
+.aurzane-report .finding-block .fb-body{border:1px solid var(--hair);border-top:none;padding:18px 22px;background:var(--wash);}
+.aurzane-report .finding-block p{font-size:0.88rem;margin-bottom:9px;line-height:1.65;}
+
+.aurzane-report .career-grid{display:grid;grid-template-columns:1fr;gap:16px;margin-bottom:36px;}
+.aurzane-report .career-card{border:1px solid #d8c9a0;background:#FBF6E8;padding:22px 26px;page-break-inside:avoid;}
+.aurzane-report .career-card h4{font-family:'Bodoni Moda',serif;font-size:1.15rem;color:#6b4f14;margin-bottom:10px;}
+.aurzane-report .career-card .career-list{font-size:0.92rem;line-height:1.8;margin-bottom:12px;}
+.aurzane-report .career-card .career-note{font-size:0.85rem;color:#5c5546;border-top:1px dashed #d8c9a0;padding-top:10px;margin-top:10px;}
+
+.aurzane-report .reco-area{margin-bottom:26px;border:1px solid var(--hair);page-break-inside:avoid;}
+.aurzane-report .reco-area-head{padding:14px 22px;background:var(--wash);border-bottom:1px solid var(--hair);display:flex;align-items:center;gap:12px;}
+.aurzane-report .reco-area-head h4{font-family:'Bodoni Moda',serif;font-size:1rem;}
+.aurzane-report .reco-area-head .reco-band{margin-left:auto;font-family:'Bodoni Moda',serif;font-size:0.62rem;padding:4px 10px;border-radius:10px;}
+.aurzane-report .reco-area-head .reco-band.low{background:#f0dcdc;color:#a15353;}
+.aurzane-report .reco-area-head .reco-band.medium{background:#EADFC0;color:#8A6A28;}
+.aurzane-report .reco-list{list-style:none;padding:16px 22px;}
+.aurzane-report .reco-list li{display:grid;grid-template-columns:20px 1fr;gap:12px;padding:8px 0;font-size:0.86rem;line-height:1.6;border-bottom:1px solid var(--hair);}
+.aurzane-report .reco-list li:last-child{border-bottom:none;}
+.aurzane-report .reco-list li .reco-mark{color:#8A6A28;font-family:'Bodoni Moda',serif;font-style:italic;}
+.aurzane-report .reco-list li b{color:var(--ink);}
+
+.aurzane-report .conclusion-box{background:var(--wash);border-left:3px solid #8A6A28;padding:24px 28px;margin-bottom:36px;}
+.aurzane-report .conclusion-box p{font-size:0.92rem;line-height:1.8;margin-bottom:14px;}
+.aurzane-report .conclusion-box p:last-child{margin-bottom:0;}
+
+.aurzane-report .exec-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--hair);border:1px solid var(--hair);margin-bottom:44px;}
+.aurzane-report .exec-card{background:var(--paper);padding:22px 20px;}
+.aurzane-report .exec-card .ec-lbl{font-family:'Bodoni Moda',serif;font-size:0.62rem;text-transform:uppercase;letter-spacing:0.06em;color:#8A6A28;margin-bottom:10px;}
+.aurzane-report .exec-card .ec-val{font-family:'Bodoni Moda',serif;font-size:1.15rem;line-height:1.3;}
+
+.aurzane-report .methodology{font-size:0.85rem;color:#3f3f3c;background:var(--wash);padding:22px 26px;border-left:3px solid #8A6A28;margin:14px 0 50px;line-height:1.75;page-break-inside:avoid;}
+.aurzane-report .interpretive-disclaimer{font-size:0.82rem;color:#3f3f3c;background:#F7F1DF;padding:18px 22px;border:1px solid #D8C9A0;border-left:3px solid #8A6A28;margin:18px 0 34px;line-height:1.7;page-break-inside:avoid;}
+.aurzane-report .interpretive-disclaimer strong{color:var(--ink);}
+.aurzane-report .data-status{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 26px;}
+.aurzane-report .data-status span{font-size:0.68rem;padding:5px 9px;border:1px solid var(--hair);background:var(--paper);color:var(--ink-dim);border-radius:12px;}
+.aurzane-report .data-status .complete{border-color:#B8C89A;color:#52673A;background:#F0F5E6;}
+.aurzane-report .methodology b{color:var(--ink);}
+
+.aurzane-report .signature-block{margin-top:60px;text-align:center;page-break-inside:avoid;}
+.aurzane-report .sig-line{font-family:'Bodoni Moda',serif;font-style:italic;font-size:1.7rem;color:var(--ink);border-bottom:1px solid var(--ink);display:inline-block;padding:0 30px 10px;}
+.aurzane-report .sig-name{font-family:'Bodoni Moda',serif;font-size:0.82rem;font-weight:600;margin-top:14px;}
+.aurzane-report .sig-title{font-size:0.78rem;color:var(--ink-dim);margin-top:2px;}
+.aurzane-report .sig-reg{font-family:'Bodoni Moda',serif;font-size:0.68rem;color:var(--ink-dim);margin-top:6px;}
+
+.aurzane-report .report-footer{margin-top:50px;padding-top:16px;border-top:1px solid var(--hair);display:flex;justify-content:space-between;
+  font-family:'Bodoni Moda',serif;font-size:0.62rem;color:#a19c8c;letter-spacing:0.04em;}
+
+@media print{
+  /* Chrome (y otros navegadores) quitan por defecto los fondos de color al
+     imprimir, para "ahorrar tinta" -- así se pierde el bloque navy del
+     encabezado y el resto de los fondos del informe (career-card,
+     finding-block, chart-box, etc.), dejando recuadros en blanco. Esto lo
+     fuerza a mantener los colores tal como se ven en pantalla. */
+  .aurzane-report, .aurzane-report *{
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+  body{background:#fff;}
+  .aurzane-report{max-width:100%;}
+  .aurzane-report.report, .aurzane-report .report{padding:20px 36px;}
+  .aurzane-report .report-head{margin:-20px -36px 30px;padding:26px 36px 24px;}
+}
+@media(max-width:760px){
+  .aurzane-report .applicant-box{flex-direction:column;gap:16px;}
+  .aurzane-report .a-item{border-left:none;padding-left:0;border-top:1px solid var(--hair);padding-top:12px;}
+  .aurzane-report .a-item:first-child{border-top:none;padding-top:0;}
+  .aurzane-report .brief-row{grid-template-columns:1fr;gap:24px;}
+  .aurzane-report.report, .aurzane-report .report{padding:40px 22px;}
+  .aurzane-report .report-head{margin:-40px -22px 30px;padding:26px 22px 22px;}
+  .aurzane-report .exec-summary{grid-template-columns:1fr;}
+}
