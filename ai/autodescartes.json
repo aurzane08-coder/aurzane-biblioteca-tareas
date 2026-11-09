@@ -1,6 +1,17 @@
 [
  {
   "fecha": "2026-11-09",
+  "id": "ia-5.-barrism-making-sense-of-how-we-make-sense",
+  "tipo": "libro",
+  "titulo": "5. BARRISM Making Sense Of How We Make Sense",
+  "url": "https://archive.org/details/5.-barrism-making-sense-of-how-we-make-sense",
+  "motivo": "La IA le dio 4/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/5.-barrism-making-sense-of-how-we-make-sense/5.%20BARRISM%20Making%20Sense%20of%2"
+  ]
+ },
+ {
+  "fecha": "2026-11-09",
   "id": "pmc-PMC13736625",
   "tipo": "estudio",
   "titulo": "Managing generative-AI health information resilience: human resource capabilities and multilevel public health governance",
@@ -2819,17 +2830,6 @@
   "motivo": "Dice ser un libro pero el PDF solo tiene 4 páginas (es un capítulo, artículo o resumen)",
   "probados": [
    "200 application/pdf https://archive.org/download/2022-02-10-la-timidez-de-la-izquierda-jose-lopez/2022-02-10-la-timidez-de-la-izqu"
-  ]
- },
- {
-  "fecha": "2026-11-02",
-  "id": "ia-anexo-tipo-de-parafilias-articulo-de-wikipedia",
-  "tipo": "libro",
-  "titulo": "Anexo: Tipo de parafilias (artículo de Wikipedia)",
-  "url": "https://archive.org/details/anexo-tipo-de-parafilias-articulo-de-wikipedia",
-  "motivo": "Dice ser un libro pero el PDF solo tiene 6 páginas (es un capítulo, artículo o resumen)",
-  "probados": [
-   "200 application/pdf https://archive.org/download/anexo-tipo-de-parafilias-articulo-de-wikipedia/Anexo_Tipos_de_parafilias.pdf"
   ]
  }
 ]

@@ -1,6 +1,41 @@
 [
  {
   "fecha": "2026-11-09",
+  "url": "https://aurzane.com/articulos/estres-laboral-academico-argentina-act/",
+  "titulo": "Artículo: Estrés laboral y académico: guía práctica con ACT"
+ },
+ {
+  "fecha": "2026-11-09",
+  "url": "https://aurzane.com/privacidad.html",
+  "titulo": "Aviso de Privacidad: AURZANE"
+ },
+ {
+  "fecha": "2026-11-09",
+  "url": "https://aurzane.com/aviso-legal.html",
+  "titulo": "Aviso legal de AURZANE"
+ },
+ {
+  "fecha": "2026-11-09",
+  "url": "https://aurzane.com/condiciones.html",
+  "titulo": "Condiciones de uso · AURZANE"
+ },
+ {
+  "fecha": "2026-11-09",
+  "url": "https://aurzane.com/sobre-aurzane.html",
+  "titulo": "Sobre AURZANE: quiénes somos y cómo trabajamos"
+ },
+ {
+  "fecha": "2026-11-09",
+  "url": "https://aurzane.com/politica-editorial.html",
+  "titulo": "Política editorial de AURZANE"
+ },
+ {
+  "fecha": "2026-11-09",
+  "url": "https://aurzane.com/contacto.html",
+  "titulo": "Contacto"
+ },
+ {
+  "fecha": "2026-11-09",
   "url": "https://aurzane.com/articulos/influencia-medios-comunicacion-familia/",
   "titulo": "Artículo: Pantallas y vínculos: cómo los medios influyen en la familia"
  },
@@ -563,40 +598,5 @@
   "fecha": "2026-11-02",
   "url": "https://mind.aurzane.com/test-de-resiliencia/",
   "titulo": "Test de resiliencia gratis (Brief Resilience Scale)"
- },
- {
-  "fecha": "2026-11-02",
-  "url": "https://mind.aurzane.com/test-de-soledad/",
-  "titulo": "Test de soledad gratis: ¿te sientes solo/a?"
- },
- {
-  "fecha": "2026-11-02",
-  "url": "https://mind.aurzane.com/test-de-autoeficacia/",
-  "titulo": "Test de autoeficacia gratis (escala de Schwarzer)"
- },
- {
-  "fecha": "2026-11-02",
-  "url": "https://live.aurzane.com/calculadora-imc/",
-  "titulo": "Calculadora de IMC gratis: índice de masa corporal"
- },
- {
-  "fecha": "2026-11-02",
-  "url": "https://live.aurzane.com/calculadora-agua/",
-  "titulo": "Cuánta agua beber al día: calculadora gratis"
- },
- {
-  "fecha": "2026-11-02",
-  "url": "https://live.aurzane.com/calculadora-dias-entre-fechas/",
-  "titulo": "Calculadora de días entre fechas gratis"
- },
- {
-  "fecha": "2026-11-02",
-  "url": "https://live.aurzane.com/calculadora-edad/",
-  "titulo": "Calculadora de edad exacta gratis"
- },
- {
-  "fecha": "2026-11-02",
-  "url": "https://live.aurzane.com/calculadora-interes-compuesto/",
-  "titulo": "Calculadora de interés compuesto gratis"
  }
 ]
