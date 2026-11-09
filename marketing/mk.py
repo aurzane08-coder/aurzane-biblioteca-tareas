@@ -443,6 +443,9 @@ def bloqueada(r):
     se pausa el resto del día para no insistir (insistir empeora la revisión de Meta); al día siguiente se prueba una vez."""
     try: L = [l.split(',') for l in open(os.path.join(D, 'registro.csv'), encoding='utf-8') if f',{r},' in l][-2:]
     except Exception: return False
+    # TikTok: con la app sin auditar los vídeos llegan como borradores a la bandeja; si hay demasiados sin publicar
+    # responde spam_risk_too_many_pending_share. Se espera al día siguiente en vez de reintentar cada hora.
+    if r == 'tiktok' and any(x[0] == HOY.isoformat() and 'spam_risk' in ','.join(x) for x in L): return True
     return len(L) == 2 and all('access blocked' in ','.join(x).lower() or 'temporarily blocked' in ','.join(x).lower() for x in L) and L[-1][0] == HOY.isoformat()
 
 
