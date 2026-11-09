@@ -1,5 +1,60 @@
 [
  {
+  "fecha": "2026-11-09",
+  "id": "pmc-PMC13736238",
+  "tipo": "estudio",
+  "titulo": "Functional resilience strategies for environmental destabilization of antagonistic yeast metabolite-mediated postharvest biocontrol management",
+  "url": "https://europepmc.org/article/PMC/PMC13736238",
+  "motivo": "La IA le dio 1/10: no encaja en la biblioteca",
+  "probados": [
+   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13738223.1/PMC13738223.1.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-09",
+  "id": "pmc-PMC13731281",
+  "tipo": "estudio",
+  "titulo": "Programming plant resilience with CRISPR/dCas9 epigenome editing: from proof of concept to crop deployment",
+  "url": "https://europepmc.org/article/PMC/PMC13731281",
+  "motivo": "La IA le dio 1/10: no encaja en la biblioteca",
+  "probados": [
+   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13740361.1/PMC13740361.1.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-09",
+  "id": "pmc-PMC13733228",
+  "tipo": "estudio",
+  "titulo": "Engineering the plant holobiont for enhanced abiotic stress resilience: current insights and future directions",
+  "url": "https://europepmc.org/article/PMC/PMC13733228",
+  "motivo": "La IA le dio 1/10: no encaja en la biblioteca",
+  "probados": [
+   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13740361.1/PMC13740361.1.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-09",
+  "id": "pmc-PMC13741095",
+  "tipo": "estudio",
+  "titulo": "Efficacy and safety of commercial Chinese polyherbal preparations combined with biomedicine for elderly patients with primary insomnia: a systematic review and ",
+  "url": "https://europepmc.org/article/PMC/PMC13741095",
+  "motivo": "La IA le dio 3/10: no encaja en la biblioteca",
+  "probados": [
+   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13735106.1/PMC13735106.1.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-09",
+  "id": "pmc-PMC13738637",
+  "tipo": "estudio",
+  "titulo": "Dental Anxiety in Periodontal Patients attending a University Clinic in northeastern Mexico",
+  "url": "https://europepmc.org/article/PMC/PMC13738637",
+  "motivo": "La IA le dio 3/10: no encaja en la biblioteca",
+  "probados": [
+   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13735106.1/PMC13735106.1.pdf"
+  ]
+ },
+ {
   "fecha": "2026-11-08",
   "id": "pmc-PMC13724535",
   "tipo": "estudio",
@@ -2775,53 +2830,6 @@
   "motivo": "Dice ser un libro pero el PDF solo tiene 9 páginas (es un capítulo, artículo o resumen)",
   "probados": [
    "200 application/pdf https://archive.org/download/psico-prubfinal/PSICO_PRUBFINAL.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-02",
-  "id": "oa-W7222589970",
-  "tipo": "libro",
-  "titulo": "The Arrow That Cuts Both Ways: Strong Causality, Causal Reversibility, and the Dissolution of the Philosophical Zombie",
-  "url": "https://philarchive.org/rec/NIUTAT",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": []
- },
- {
-  "fecha": "2026-11-02",
-  "id": "oa-W7222479563",
-  "tipo": "libro",
-  "titulo": "The Scrutiny That Does Not Land: Strong Causality as Infinite Regressive Audit and the Wuji-Dissolution of Chalmers's Ideal Conceivability",
-  "url": "https://philarchive.org/rec/NIUTST",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": []
- },
- {
-  "fecha": "2026-11-02",
-  "id": "oa-W7222831854",
-  "tipo": "libro",
-  "titulo": "Recursive Ontology and the Limits of First-Philosophy: A Unified Account of Auditing, Self-Destruction, and Quantum Indeterminacy",
-  "url": "https://philarchive.org/rec/NIUROA",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": []
- },
- {
-  "fecha": "2026-11-02",
-  "id": "oa-W7222785401",
-  "tipo": "libro",
-  "titulo": "Four Tasks After the End: From the Triangle-Circle Series to the Display Device",
-  "url": "https://philarchive.org/rec/NIUFTA",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": []
- },
- {
-  "fecha": "2026-11-02",
-  "id": "oa-W7221202880",
-  "tipo": "libro",
-  "titulo": "Adverse childhood experiences in the European Union, Iceland and Norway: characteristics, consequences and costs",
-  "url": "https://orcid.org/0000-0001-6980-1963",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": [
-   "HTTP Error 404: Not Found https://researchonline.ljmu.ac.uk/id/eprint/29617/1/WHO-EURO-2026-13288-53062-82856-eng%20PUBLISHED%20VERSION%"
   ]
  }
 ]

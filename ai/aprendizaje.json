@@ -68,7 +68,7 @@
   2
  ],
  "ed:Frontiers in public health": [
-  0,
+  1,
   2
  ],
  "ed:Frontiers in sports and active living": [
@@ -188,7 +188,7 @@
   0
  ],
  "estudio:en": [
-  4,
+  11,
   29
  ],
  "ed:Frontiers in dental medicine": [
@@ -196,7 +196,7 @@
   1
  ],
  "tipo:estudio": [
-  29,
+  36,
   33
  ],
  "ed:Stress biology": [
@@ -205,7 +205,7 @@
  ],
  "ed:Frontiers in nutrition": [
   0,
-  1
+  2
  ],
  "ed:Animals : an open access journal from MDPI": [
   0,
@@ -402,5 +402,45 @@
  "ed:Frontiers in neuroscience": [
   0,
   1
+ ],
+ "ed:Revista cientifica odontologica (Universidad Cientifica del Sur)": [
+  0,
+  1
+ ],
+ "ed:Frontiers in pharmacology": [
+  0,
+  1
+ ],
+ "ed:Frontiers in immunology": [
+  1,
+  0
+ ],
+ "ed:Integrative psychological & behavioral science": [
+  1,
+  0
+ ],
+ "ed:Nursing open": [
+  1,
+  0
+ ],
+ "ed:Plant signaling & behavior": [
+  0,
+  1
+ ],
+ "ed:Frontiers in genome editing": [
+  0,
+  1
+ ],
+ "ed:Journal of medical Internet research": [
+  1,
+  0
+ ],
+ "ed:Journal of multidisciplinary healthcare": [
+  1,
+  0
+ ],
+ "ed:Drug design, development and therapy": [
+  1,
+  0
  ]
 }
