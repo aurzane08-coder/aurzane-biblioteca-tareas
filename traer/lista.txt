@@ -9,3 +9,4 @@ ovp.aurzane.com/ovp-guia.js
 aurzane.com/admin.html
 aurzane.com/mi-aurzane.html
 ovp.aurzane.com/informe-shared.js
+ovp.aurzane.com/informe-shared.css
