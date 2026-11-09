@@ -1,6 +1,51 @@
 [
  {
   "fecha": "2026-11-09",
+  "url": "https://aurzane.com/articulos/influencia-medios-comunicacion-familia/",
+  "titulo": "Artículo: Pantallas y vínculos: cómo los medios influyen en la familia"
+ },
+ {
+  "fecha": "2026-11-09",
+  "url": "https://mind.aurzane.com/pt/teste-de-bem-estar-who-5/",
+  "titulo": "Teste de bem-estar (WHO-5): questionário grátis online"
+ },
+ {
+  "fecha": "2026-11-09",
+  "url": "https://mind.aurzane.com/pt/teste-de-depressao-phq-9/",
+  "titulo": "Teste de depressão (PHQ-9): questionário grátis online"
+ },
+ {
+  "fecha": "2026-11-09",
+  "url": "https://mind.aurzane.com/pt/teste-de-ansiedade-gad-7/",
+  "titulo": "Teste de ansiedade (GAD-7): questionário grátis online"
+ },
+ {
+  "fecha": "2026-11-09",
+  "url": "https://mind.aurzane.com/pt/",
+  "titulo": "Testes psicológicos grátis em português"
+ },
+ {
+  "fecha": "2026-11-09",
+  "url": "https://mind.aurzane.com/en/self-compassion-test-scs-sf/",
+  "titulo": "Self-compassion test (Neff, short form): free online questionnaire"
+ },
+ {
+  "fecha": "2026-11-09",
+  "url": "https://mind.aurzane.com/en/burnout-test-cbi/",
+  "titulo": "Work burnout test (Copenhagen Burnout Inventory): free online questionnaire"
+ },
+ {
+  "fecha": "2026-11-09",
+  "url": "https://mind.aurzane.com/en/wellbeing-test-who-5/",
+  "titulo": "Wellbeing test (WHO-5): free online questionnaire"
+ },
+ {
+  "fecha": "2026-11-09",
+  "url": "https://mind.aurzane.com/en/stress-test-dass-21/",
+  "titulo": "Stress test (DASS-21 stress scale): free online questionnaire"
+ },
+ {
+  "fecha": "2026-11-09",
   "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13729381/",
   "titulo": "Estudio reciente: The application of transcranial magnetic stimulation in treatment-resistant depression: insights from omics"
  },
@@ -553,50 +598,5 @@
   "fecha": "2026-11-02",
   "url": "https://live.aurzane.com/calculadora-interes-compuesto/",
   "titulo": "Calculadora de interés compuesto gratis"
- },
- {
-  "fecha": "2026-11-02",
-  "url": "https://live.aurzane.com/calculadora-porcentajes/",
-  "titulo": "Calculadora de porcentajes gratis: descuentos y aumentos"
- },
- {
-  "fecha": "2026-11-02",
-  "url": "https://mind.aurzane.com/ejercicios/",
-  "titulo": "13 ejercicios de relajación y respiración guiados gratis"
- },
- {
-  "fecha": "2026-11-02",
-  "url": "https://mind.aurzane.com/ejercicios/atencion-a-la-respiracion/",
-  "titulo": "Meditación guiada de 5 minutos: atención a la respiración"
- },
- {
-  "fecha": "2026-11-02",
-  "url": "https://mind.aurzane.com/ejercicios/coherencia-cardiaca/",
-  "titulo": "Coherencia cardiaca guiada: respiración 365 de 5 minutos"
- },
- {
-  "fecha": "2026-11-02",
-  "url": "https://mind.aurzane.com/ejercicios/escaneo-corporal/",
-  "titulo": "Escaneo corporal (body scan) guiado de 7 minutos"
- },
- {
-  "fecha": "2026-11-02",
-  "url": "https://mind.aurzane.com/ejercicios/lugar-seguro/",
-  "titulo": "Visualización guiada del lugar seguro (5 min)"
- },
- {
-  "fecha": "2026-11-02",
-  "url": "https://mind.aurzane.com/ejercicios/pausa-de-autocompasion/",
-  "titulo": "Pausa de autocompasión guiada de Kristin Neff"
- },
- {
-  "fecha": "2026-11-02",
-  "url": "https://mind.aurzane.com/ejercicios/relajacion-muscular-progresiva/",
-  "titulo": "Relajación muscular progresiva de Jacobson guiada (8 min)"
- },
- {
-  "fecha": "2026-11-02",
-  "url": "https://mind.aurzane.com/ejercicios/respiracion-4-7-8/",
-  "titulo": "Respiración 4-7-8 guiada para dormir y calmar la ansiedad"
  }
 ]
