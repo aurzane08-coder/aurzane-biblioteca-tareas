@@ -584,6 +584,13 @@ if __name__ == '__main__':
         # se guarda para que la IA sepa que una red ya funciona aunque las últimas publicaciones fallaran
         json.dump({'fecha': datetime.datetime.utcnow().isoformat(timespec='minutes'), 'redes': {k: str(v)[:160] for k, v in out.items()}},
                   open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'verificacion.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+    elif a == 'seguidores':
+        import redes; hoy = datetime.date.today().isoformat()
+        f = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'seguidores.json')
+        h = json.load(open(f, encoding='utf-8')) if os.path.exists(f) else {}
+        h[hoy] = {k: v for k, v in redes.seguidores().items()}
+        h = dict(sorted(h.items())[-400:])
+        json.dump(h, open(f, 'w', encoding='utf-8'), ensure_ascii=False, indent=1); print('Seguidores', h[hoy])
     elif a == 'muestra':
         cat = {p['id']: p for p in leer('catalogo.json')['productos']}
         p = cat[sys.argv[2]]

@@ -223,6 +223,40 @@ def verificar():
 
 
 
+def _x_get(url):
+    o = {'oauth_consumer_key': E('X_API_KEY'), 'oauth_nonce': uuid.uuid4().hex, 'oauth_signature_method': 'HMAC-SHA1',
+         'oauth_timestamp': str(int(time.time())), 'oauth_token': E('X_ACCESS_TOKEN'), 'oauth_version': '1.0'}
+    q = lambda s: urllib.parse.quote(str(s), safe='')
+    u, _, qs = url.partition('?'); params = dict(urllib.parse.parse_qsl(qs)); todo = dict(o, **params)
+    base = 'GET&' + q(u) + '&' + q('&'.join(f'{q(k)}={q(v)}' for k, v in sorted(todo.items())))
+    o['oauth_signature'] = base64.b64encode(hmac.new((q(E('X_API_SECRET')) + '&' + q(E('X_ACCESS_SECRET'))).encode(), base.encode(), hashlib.sha1).digest()).decode()
+    return pedir(url, cab={'Authorization': 'OAuth ' + ', '.join(f'{q(k)}="{q(v)}"' for k, v in sorted(o.items()))})
+
+
+def seguidores():
+    """Seguidores de cada cuenta propia (solo lectura). Lo que una red no permite leer con los permisos actuales queda en None."""
+    out = {}
+    def intento(r, fn):
+        if not configurada(r): return
+        try: out[r] = int(fn())
+        except Exception as e: out[r] = None; print('seguidores', r, str(e)[:160])
+    T = E('TELEGRAM_TOKEN')
+    intento('telegram', lambda: pedir(f'https://api.telegram.org/bot{T}/getChatMemberCount?' + urllib.parse.urlencode({'chat_id': E('TELEGRAM_CANAL')}))['result'])
+    intento('bluesky', lambda: pedir('https://public.api.bsky.app/xrpc/app.bsky.actor.getProfile?' + urllib.parse.urlencode({'actor': E('BSKY_USUARIO')}))['followersCount'])
+    def masto():
+        base = E('MASTODON_SERVIDOR').rstrip('/'); base = base if base.startswith('http') else 'https://' + base
+        return pedir(base + '/api/v1/accounts/verify_credentials', cab={'Authorization': 'Bearer ' + E('MASTODON_TOKEN')})['followers_count']
+    intento('mastodon', masto)
+    intento('facebook', lambda: (lambda d: d.get('followers_count') or d.get('fan_count') or 0)(pedir(GRAPH + E('FB_PAGINA_ID') + '?' + urllib.parse.urlencode({'fields': 'followers_count,fan_count', 'access_token': pagina_token()}))))
+    def insta():
+        tk = E('IG_TOKEN'); return pedir(ig_base(tk) + ig_cuenta(tk) + '?' + urllib.parse.urlencode({'fields': 'followers_count', 'access_token': tk}))['followers_count']
+    intento('instagram', insta)
+    intento('threads', lambda: pedir('https://graph.threads.net/v1.0/me/threads_insights?' + urllib.parse.urlencode({'metric': 'followers_count', 'access_token': E('THREADS_TOKEN')}))['data'][0]['total_value']['value'])
+    intento('youtube', lambda: pedir('https://www.googleapis.com/youtube/v3/channels?part=statistics&mine=true', cab={'Authorization': 'Bearer ' + _google_token()})['items'][0]['statistics']['subscriberCount'])
+    intento('x', lambda: _x_get('https://api.x.com/2/users/me?user.fields=public_metrics')['data']['public_metrics']['followers_count'])
+    return out
+
+
 # ---------------------------------------------------------------- vídeos verticales (franja 4)
 def publicar_video(r, texto, video_url, video_local, enlace, p):
     return globals()['video_' + r](texto, video_url, video_local, enlace, p)

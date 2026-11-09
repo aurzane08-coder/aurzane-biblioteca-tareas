@@ -109,7 +109,7 @@ jobs:
           echo "::add-mask::$T"; echo "TIKTOK_REFRESH_TOKEN=$T" >> $GITHUB_ENV
       - name: Comprobar redes
         if: env.ACCION == 'verificar' || env.ACCION == 'planificar'
-        run: python3 marketing/mk.py verificar | sed 's/^/::notice title=Redes::/'
+        run: python3 marketing/mk.py verificar | sed 's/^/::notice title=Redes::/'; python3 marketing/mk.py seguidores || true
       - name: Publicar lo que toque
         if: env.ACCION != 'verificar'
         run: python3 marketing/mk.py pendientes
