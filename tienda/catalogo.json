@@ -57,6 +57,25 @@
   "tendencia_fecha": "2026-11-09"
  },
  {
+  "id": "mamba-mentality-kobe-bryant",
+  "titulo": "Mamba Mentality",
+  "autor": "Kobe Bryant",
+  "temas": [
+   "productividad",
+   "autoeficacia"
+  ],
+  "origen": "tendencia",
+  "fecha": "2026-11-09",
+  "isbn": "9780374201234",
+  "portada": "https://covers.openlibrary.org/b/id/9261036-M.jpg",
+  "anio": "2005",
+  "editorial": "MCD, Farrar, Strauss, and Giroux",
+  "idioma": "",
+  "resumen": "",
+  "tendencia": "Ideal para los aficionados al baloncesto que buscan la mentalidad de superación de las estrellas de la NBA.",
+  "tendencia_fecha": "2026-11-09"
+ },
+ {
   "id": "como-hacer-que-te-pasen-cosas-buenas-marian-rojas-estape",
   "titulo": "Cómo hacer que te pasen cosas buenas",
   "autor": "Marian Rojas Estapé",
@@ -392,6 +411,170 @@
   "anio": "2012",
   "editorial": "Plataforma Editorial",
   "idioma": "",
+  "resumen": ""
+ },
+ {
+  "id": "los-cinco-lenguajes-del-amor-gary-chapman",
+  "titulo": "Los cinco lenguajes del amor",
+  "autor": "Gary Chapman",
+  "temas": [
+   "relaciones"
+  ],
+  "origen": "semilla",
+  "fecha": "2026-11-09",
+  "isbn": "9780789912916",
+  "portada": "https://covers.openlibrary.org/b/id/12846037-M.jpg",
+  "anio": "2006",
+  "editorial": "Editorial Unilit",
+  "idioma": "spa",
+  "resumen": ""
+ },
+ {
+  "id": "encuentra-tu-persona-vitamina-marian-rojas-estape",
+  "titulo": "Encuentra tu persona vitamina",
+  "autor": "Marian Rojas Estapé",
+  "temas": [
+   "relaciones",
+   "soledad"
+  ],
+  "origen": "semilla",
+  "fecha": "2026-11-09",
+  "isbn": "9788467062212",
+  "portada": "https://covers.openlibrary.org/b/id/11822433-M.jpg",
+  "anio": "2021",
+  "editorial": "Editorial Planeta, S. A.",
+  "idioma": "spa",
+  "resumen": ""
+ },
+ {
+  "id": "el-elemento-ken-robinson",
+  "titulo": "El elemento",
+  "autor": "Ken Robinson",
+  "temas": [
+   "vocacional"
+  ],
+  "origen": "semilla",
+  "fecha": "2026-11-09",
+  "isbn": "9789502804965",
+  "portada": "https://covers.openlibrary.org/b/id/12344388-M.jpg",
+  "anio": "2010",
+  "editorial": "GRIJALBO",
+  "idioma": "",
+  "resumen": ""
+ },
+ {
+  "id": "mindset-carol-s-dweck",
+  "titulo": "Mindset",
+  "autor": "Carol S. Dweck",
+  "temas": [
+   "vocacional",
+   "autoeficacia"
+  ],
+  "origen": "semilla",
+  "fecha": "2026-11-09",
+  "isbn": "9789650715748",
+  "portada": "https://covers.openlibrary.org/b/id/746414-M.jpg",
+  "anio": "2006",
+  "editorial": "Keter",
+  "idioma": "spa",
+  "resumen": ""
+ },
+ {
+  "id": "el-valor-de-la-atencion-johann-hari",
+  "titulo": "El valor de la atención",
+  "autor": "Johann Hari",
+  "temas": [
+   "tdah",
+   "productividad"
+  ],
+  "origen": "semilla",
+  "fecha": "2026-11-09",
+  "isbn": "9788411001298",
+  "portada": "https://covers.openlibrary.org/b/id/13537621-M.jpg",
+  "anio": "2023",
+  "editorial": "Ediciones Península",
+  "idioma": "spa",
+  "resumen": ""
+ },
+ {
+  "id": "el-gen-egoista-richard-dawkins",
+  "titulo": "El gen egoísta",
+  "autor": "Richard Dawkins",
+  "temas": [
+   "ciencia"
+  ],
+  "origen": "semilla",
+  "fecha": "2026-11-09",
+  "isbn": "",
+  "portada": "",
+  "anio": "1993",
+  "editorial": "Salvat",
+  "idioma": "",
+  "resumen": ""
+ },
+ {
+  "id": "cosmos-carl-sagan",
+  "titulo": "Cosmos",
+  "autor": "Carl Sagan",
+  "temas": [
+   "ciencia"
+  ],
+  "origen": "semilla",
+  "fecha": "2026-11-09",
+  "isbn": "9789752107830",
+  "portada": "https://covers.openlibrary.org/b/id/8283901-M.jpg",
+  "anio": "1980",
+  "editorial": "Altın Kitaplar",
+  "idioma": "spa",
+  "resumen": ""
+ },
+ {
+  "id": "el-infinito-en-un-junco-irene-vallejo",
+  "titulo": "El infinito en un junco",
+  "autor": "Irene Vallejo",
+  "temas": [
+   "ensayo"
+  ],
+  "origen": "semilla",
+  "fecha": "2026-11-09",
+  "isbn": "9788466358293",
+  "portada": "https://covers.openlibrary.org/b/id/9689877-M.jpg",
+  "anio": "2020",
+  "editorial": "Xerais",
+  "idioma": "spa",
+  "resumen": ""
+ },
+ {
+  "id": "cien-anos-de-soledad-gabriel-garcia-marquez",
+  "titulo": "Cien años de soledad",
+  "autor": "Gabriel García Márquez",
+  "temas": [
+   "novela"
+  ],
+  "origen": "semilla",
+  "fecha": "2026-11-09",
+  "isbn": "9788422656777",
+  "portada": "https://covers.openlibrary.org/b/id/12627383-M.jpg",
+  "anio": "1967",
+  "editorial": "Penguin Modern Classics",
+  "idioma": "spa",
+  "resumen": ""
+ },
+ {
+  "id": "dinero-feliz-ken-honda",
+  "titulo": "Dinero feliz",
+  "autor": "Ken Honda",
+  "temas": [
+   "finanzas",
+   "habitos"
+  ],
+  "origen": "crecer",
+  "fecha": "2026-11-09",
+  "isbn": "9788416788354",
+  "portada": "https://covers.openlibrary.org/b/id/13164853-M.jpg",
+  "anio": "2019",
+  "editorial": "Kitsune Books",
+  "idioma": "spa",
   "resumen": ""
  }
 ]
