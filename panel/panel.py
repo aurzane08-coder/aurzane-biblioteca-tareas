@@ -161,7 +161,11 @@ def contenido():
     except Exception: pass
 
 
-for paso in (visitas, boletin, compras, redes, contenido):
+def seo():
+    P['seo'] = leer('seo/resumen.json', {})
+
+
+for paso in (visitas, boletin, compras, redes, contenido, seo):
     try: paso()
     except Exception as e: P['avisos'].append(f'{paso.__name__}: {str(e)[:160]}'); print('ERROR', paso.__name__, e)
 

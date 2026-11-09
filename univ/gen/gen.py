@@ -293,7 +293,14 @@ def iniciales(n):
     return (''.join(x[0] for x in w[:2]) or n[:2]).upper()
 
 
+# títulos y descripciones reescritos a partir de lo que la gente busca en Google (seo/seo.py, Search Console)
+try: GSC_T = json.load(open(os.path.join(DATOS, 'gsc_titulos.json'), encoding='utf-8'))
+except Exception: GSC_T = {}
+
+
 def cabeza(titulo_pag, desc, canon, og_img=None, jsonld=None, robots=None):
+    _o = GSC_T.get(canon) or {}
+    titulo_pag = _o.get('titulo') or titulo_pag; desc = _o.get('desc') or desc
     og_img = og_img or f'{SITIO}/universidades/og.jpg'
     return f'''<!DOCTYPE html>
 <html lang="es" data-v="{V}">

@@ -16,10 +16,11 @@ if (isset($_GET['inicio'])) {
     $st = bin2hex(random_bytes(16));
     file_put_contents("$dir/state", $st . "\t" . time() . "\t" . $cuenta);
     $q = http_build_query(['client_id' => $app['client_id'], 'redirect_uri' => $redir, 'response_type' => 'code', 'access_type' => 'offline',
-        'prompt' => 'consent select_account', 'scope' => 'https://www.googleapis.com/auth/youtube.upload https://www.googleapis.com/auth/youtube.readonly', 'state' => $st]);
+        'prompt' => 'consent select_account', 'scope' => $cuenta === 'gsc' ? 'https://www.googleapis.com/auth/webmasters.readonly' : 'https://www.googleapis.com/auth/youtube.upload https://www.googleapis.com/auth/youtube.readonly', 'state' => $st]);
     header('Location: https://accounts.google.com/o/oauth2/v2/auth?' . $q, true, 302); exit;
 }
 if (isset($_GET['error'])) fin('Google no dio permiso: ' . htmlspecialchars($_GET['error']));
+if (!isset($_GET['code']) && ($_GET['cuenta'] ?? '') === 'gsc') fin('Conecta Search Console para que la IA de AURZANE mejore títulos y artículos según lo que la gente busca. Elige la cuenta de Google con la que verificaste aurzane.com. El permiso es solo de lectura.<br><br><a href="?inicio=1&cuenta=gsc" style="display:inline-block;background:#C9A24B;color:#080B17;padding:13px 24px;border-radius:99px;font-weight:700;text-decoration:none">Conectar Search Console</a>');
 if (!isset($_GET['code'])) fin('Conecta el canal Clips-All. Al elegir cuenta, escoge el canal <b>Clips-All</b>.<br><br><a href="?inicio=1&cuenta=clips" style="display:inline-block;background:#FF0033;color:#fff;padding:13px 24px;border-radius:99px;font-weight:700;text-decoration:none">Conectar Clips-All</a>');
 [$st, $t0, $cuenta] = array_pad(explode("\t", @file_get_contents("$dir/state")), 3, '');
 @unlink("$dir/state");
@@ -30,6 +31,14 @@ curl_setopt_array($ch, [CURLOPT_POST => true, CURLOPT_RETURNTRANSFER => true, CU
         'code' => $_GET['code'], 'grant_type' => 'authorization_code', 'redirect_uri' => $redir])]);
 $r = json_decode(curl_exec($ch), true) ?: [];
 if (empty($r['refresh_token'])) fin('No se pudo completar: ' . htmlspecialchars($r['error_description'] ?? $r['error'] ?? 'respuesta vacía'));
+if ($cuenta === 'gsc') {
+    $ch = curl_init('https://www.googleapis.com/webmasters/v3/sites');
+    curl_setopt_array($ch, [CURLOPT_RETURNTRANSFER => true, CURLOPT_TIMEOUT => 20, CURLOPT_HTTPHEADER => ['Authorization: Bearer ' . $r['access_token']]]);
+    $sites = json_decode(curl_exec($ch), true) ?: [];
+    file_put_contents("$dir/refresh_gsc", $r['refresh_token']); chmod("$dir/refresh_gsc", 0600);
+    $n = count($sites['siteEntry'] ?? []);
+    fin($n ? "Search Console conectado: $n propiedades. Desde mañana la IA usará las búsquedas reales para mejorar títulos y artículos." : 'Conectado, pero esta cuenta no tiene acceso a ninguna propiedad de Search Console' . (isset($sites['error']) ? ' (' . htmlspecialchars($sites['error']['message'] ?? '') . ')' : '') . '. <a style="color:#EACF92" href="?inicio=1&cuenta=gsc">Prueba con otra cuenta</a>.');
+}
 $canal = '';
 $ch = curl_init('https://www.googleapis.com/youtube/v3/channels?part=snippet&mine=true');
 curl_setopt_array($ch, [CURLOPT_RETURNTRANSFER => true, CURLOPT_TIMEOUT => 20, CURLOPT_HTTPHEADER => ['Authorization: Bearer ' . $r['access_token']]]);

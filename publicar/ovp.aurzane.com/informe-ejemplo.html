@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, follow">
+<script src="https://aurzane.com/aurzane-paleta.js"></script>
+<title>Informe de ejemplo · AURZANE OVP</title>
+<meta name="description" content="Ejemplo completo, con datos ficticios, del informe de orientación vocacional que AURZANE OVP entrega a cada estudiante.">
+<link rel="canonical" href="https://ovp.aurzane.com/informe-ejemplo.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;1,6..96,400;1,6..96,500&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="informe-shared.css">
+<link rel="stylesheet" href="informe-v2.css?v=20261101a">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:#080B17;color:#F5F3EE;font-family:'Instrument Sans',sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;}
+a{color:inherit;}
+:focus-visible{outline:2px solid #EACF92;outline-offset:2px;border-radius:4px;}
+.barra{position:sticky;top:0;z-index:20;background:#0F1530;border-bottom:1px solid rgba(199,205,214,0.13);padding:12px 5vw;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;}
+.barra .marca{font-family:'Bodoni Moda',serif;font-size:1.05rem;text-decoration:none;}
+.barra .marca span{color:#C9A24B;}
+.acciones{display:flex;gap:8px;flex-wrap:wrap;}
+.btn{background:transparent;border:1px solid rgba(201,162,75,0.38);color:#EACF92;padding:9px 16px;border-radius:8px;font:600 0.82rem 'Instrument Sans',sans-serif;cursor:pointer;text-decoration:none;}
+.btn[aria-pressed="true"],.btn:hover{background:#C9A24B;color:#080B17;}
+.btn.oro{background:linear-gradient(135deg,#EACF92,#C9A24B);color:#080B17;border:0;}
+.aviso{max-width:940px;margin:18px auto 0;padding:12px 18px;border:1px solid rgba(201,162,75,0.38);border-radius:8px;background:rgba(201,162,75,0.08);color:#EACF92;font-size:0.88rem;}
+@media print{body{background:#fff;}.barra,.aviso{display:none !important;}}
+</style>
+</head>
+<body>
+<div class="barra">
+  <a class="marca" href="https://aurzane.com/colegios/">AUR<span>Z</span>ANE · Informe de ejemplo</a>
+  <div class="acciones" role="group" aria-label="Versión del informe">
+    <button class="btn" id="vNormal" aria-pressed="true">Colegio</button>
+    <button class="btn" id="vMilitar" aria-pressed="false">Colegio militar</button>
+    <button class="btn" onclick="window.print()">Imprimir o guardar PDF</button>
+    <a class="btn oro" href="https://aurzane.com/colegios/#contacto">Quiero esto para mi colegio</a>
+  </div>
+</div>
+<p class="aviso">Ejemplo con <b>datos ficticios</b>. Así recibe cada estudiante su informe en su portal, generado automáticamente al terminar sus evaluaciones. La versión «colegio militar» añade una sección sobre la ESMIL y la ESFORSE.</p>
+<div class="results"><div class="report aurzane-report" id="reportContent"></div></div>
+
+<script>window.cha_responses = {}; window.af5_responses = {}; window.cht_responses = {}; window.holland_rows = [];</script>
+<script src="informe-shared.js"></script>
+<script src="informe-opciones.js?v=20261018b"></script>
+<script src="informe-v2.js?v=20261109b"></script>
+<script>
+(function(){
+  // Perfiles ficticios y fijos (siempre salen igual)
+  var PERFILES = {
+    normal: { cha: ['S', 'I'], extra: 4, holland: ['I', 'S', 'A'], af5: { academico: 88, social: 90, emocional: 55, familiar: 92, fisico: 70 }, chteNo: [3, 4],
+      cliente: { nombre: 'Lucía Andrade', edad: 17, sexo: 'F', curso: '3.º de Bachillerato' },
+      membrete: { nombre_marca: 'Unidad Educativa de Ejemplo', subtitulo: 'Departamento de Consejería Estudiantil', color_banda: '#2E5AAC', color_texto_banda: '#FFFFFF', institucion: 'Unidad Educativa de Ejemplo' } },
+    militar: { cha: ['D', 'I'], extra: 5, holland: ['R', 'E', 'S'], af5: { academico: 85, social: 92, emocional: 75, familiar: 90, fisico: 96 }, chteNo: [4],
+      cliente: { nombre: 'Mateo Villacís', edad: 17, sexo: 'M', curso: '3.º de Bachillerato' },
+      membrete: { nombre_marca: 'Colegio Militar de Ejemplo', subtitulo: "Consejería Estudiantil", color_banda: "#F5C400", color_texto_banda: '#14213D', institucion: 'Colegio Militar de Ejemplo', enfoque: 'militar' } }
+  };
+  function mostrar(tipo){
+    var P = PERFILES[tipo], k, i;
+    window.cha_responses = {}; window.af5_responses = {}; window.cht_responses = {}; window.holland_rows = [];
+    var fuertes = [].concat(CHA_KEY_INTERESES[P.cha[0]], CHA_KEY_APTITUDES[P.cha[0]]).slice(1, 13);
+    var segundas = [].concat(CHA_KEY_INTERESES[P.cha[1]], CHA_KEY_APTITUDES[P.cha[1]]).slice(0, 10);
+    for(i = 1; i <= 98; i++) cha_responses[i] = (fuertes.indexOf(i) !== -1 || segundas.indexOf(i) !== -1 || i % 17 === 0) ? 'si' : 'no';
+    for(i = 1; i <= 60; i++){
+      var dim = HOLLAND_KEY[i - 1], pos = P.holland.indexOf(dim);
+      holland_rows.push({ item_num: i, valor: (pos === 0 || (pos === 1 && i % 5) || (pos === 2 && i % 2)) ? 'Si' : 'No' });
+    }
+    for(k in AF5_DIMENSIONS) AF5_DIMENSIONS[k].items.forEach(function(n){ var v = P.af5[k]; if(AF5_DIMENSIONS[k].collectiveReversal) v = 100 - v; if(AF5_REVERSED_ITEMS.indexOf(n) !== -1) v = 100 - v; af5_responses[n] = v; });
+    var c = 0, areaIdx = 0;
+    Object.keys(CHT_AREAS).forEach(function(key){
+      CHT_AREAS[key].items.forEach(function(_, j){ c++; cht_responses[c] = (P.chteNo.indexOf(areaIdx) !== -1 ? j % 3 === 0 : j % 4 !== 3) ? 'si' : 'no'; });
+      areaIdx++;
+    });
+    var tests = ['chaside', 'holland', 'af5', 'chte'];
+    var cliente = Object.assign({ activaciones: tests.map(function(t){ return { test_key: t, activo: true, completado: true, completado_at: '2026-10-20T10:00:00Z' }; }) }, P.cliente);
+    generarInformeOVP(cliente, P.membrete, tests, null);
+    document.getElementById('vNormal').setAttribute('aria-pressed', tipo === 'normal');
+    document.getElementById('vMilitar').setAttribute('aria-pressed', tipo === 'militar');
+  }
+  document.getElementById('vNormal').onclick = function(){ mostrar('normal'); history.replaceState(null, '', '?'); };
+  document.getElementById('vMilitar').onclick = function(){ mostrar('militar'); history.replaceState(null, '', '?tipo=militar'); };
+  mostrar(/tipo=militar/.test(location.search) ? 'militar' : 'normal');
+})();
+</script>
+</body>
+</html>

@@ -758,6 +758,10 @@ GUIAS_A = [('Cómo calmar la ansiedad en el momento: técnicas con respaldo cien
            ('Hábitos diarios que más mejoran el ánimo según la evidencia', 'habitos', 'live'), ('Cómo crear un hábito y que dure', 'habitos', 'live'),
            ('Cuántas horas hay que dormir según tu edad', 'sueno', 'live'), ('Insomnio: qué hacer cuando no puedes dormir', 'sueno', 'live'),
            ('Cómo elegir carrera si no sabes qué estudiar', 'vocacional', 'nexus'), ('Tests vocacionales: qué miden y para qué sirven de verdad', 'vocacional', 'nexus')]
+# temas que la gente busca en Google y donde AURZANE sale lejos (seo/seo.py, Search Console): van primero
+try:
+    GUIAS_A = [(t['titulo'], t['test'] if t.get('test') in TESTS_A else '', t['mundo']) for t in json.load(open(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'seo', 'temas.json'), encoding='utf-8'))][::-1] + GUIAS_A
+except Exception: pass
 def caja_test(clave):
     if clave not in TESTS_A: return ''
     u, n = TESTS_A[clave]
@@ -818,7 +822,7 @@ if (os.environ.get('GEMINI_API_KEY') or os.environ.get('GITHUB_TOKEN')) and _ah[
         base = (f'Estudio publicado en acceso abierto:\nTítulo: {f["titulo"]}\nAutores: {f.get("autores", "")}\nRevista: {f.get("editorial", "")} ({f.get("anio", "")})\nResumen: {f.get("resumen", "")[:2500]}'
                 if clase == 'estudio' else
                 (f'Guía práctica sobre: {f["titulo"]}. No hay una fuente única: usa solo conocimiento científico muy establecido (guías clínicas, consensos), sin cifras inventadas. '
-                 f'El mundo es {f["mundo"]}. Menciona de forma natural, una sola vez, que en AURZANE hay un test gratuito para orientarse ({TESTS_A[f["test"]][1]}).')
+                 f'El mundo es {f["mundo"]}. ' + (f'Menciona de forma natural, una sola vez, que en AURZANE hay un test gratuito para orientarse ({TESTS_A[f["test"]][1]}).' if f.get('test') in TESTS_A else ''))
                 if clase == 'guia' else f'Curiosidad verificada: {f["titulo"]}. {f.get("resumen", "")} Fuente: {f.get("fuente", "")}')
         if clase == 'guia': enlace_f = ''
         r = gemini_base('Eres redactor de AURZANE, una web de divulgación de psicología dirigida por un psicólogo clínico. Escribe un artículo original en español de España, '
