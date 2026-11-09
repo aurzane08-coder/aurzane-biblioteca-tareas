@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Panel de resultados · AURZANE</title>
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500&family=Instrument+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#080B17;--sup:#0F1530;--sup2:#151C3D;--txt:#F5F3EE;--sua:#9AA1B2;--oro:#C9A24B;--oro2:#EACF92;--lin:rgba(199,205,214,.13);--ok:#8CC084;--mal:#E39B9B;--s1:#7FA7E8;--s2:#C9A24B}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--txt);font:15px/1.55 "Instrument Sans",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--oro2)}
+.w{max-width:1180px;margin:0 auto;padding:0 18px}
+header{border-bottom:1px solid var(--lin)}header .w{display:flex;align-items:center;gap:16px;height:60px}
+.logo{font:500 1.1rem "Bodoni Moda",serif;letter-spacing:.06em;text-decoration:none;color:var(--txt)}.logo span{color:var(--oro)}
+header small{color:var(--sua);margin-left:auto}
+h1{font:500 1.7rem "Bodoni Moda",serif;margin:26px 0 4px}
+h2{font:500 1.15rem "Bodoni Moda",serif;margin-bottom:12px}
+.sub{color:var(--sua);margin-bottom:22px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:12px;margin-bottom:22px}
+.kpi{background:var(--sup);border:1px solid var(--lin);border-radius:14px;padding:14px 16px}
+.kpi b{display:block;font-size:1.65rem;font-variant-numeric:tabular-nums;line-height:1.2}
+.kpi span{color:var(--sua);font-size:.84rem}
+.kpi i{font-style:normal;font-size:.8rem;margin-left:6px}.sube{color:var(--ok)}.baja{color:var(--mal)}
+.rej{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.caja{background:var(--sup);border:1px solid var(--lin);border-radius:14px;padding:18px;min-width:0}
+.caja.ancha{grid-column:1/-1}
+table{width:100%;border-collapse:collapse;font-size:.88rem}
+td,th{padding:6px 4px;border-bottom:1px solid var(--lin);text-align:left;vertical-align:top}
+th{color:var(--sua);font-weight:600}
+td.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+td.url{word-break:break-all}
+.vacio{color:var(--sua);font-size:.9rem}
+.aviso{background:rgba(201,162,75,.1);border:1px solid rgba(201,162,75,.35);color:var(--oro2);border-radius:10px;padding:10px 14px;margin-bottom:14px;font-size:.9rem}
+.leyenda{display:flex;gap:16px;font-size:.82rem;color:var(--sua);margin-bottom:6px}.leyenda i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;vertical-align:middle}
+svg text{fill:var(--sua);font-size:11px}
+.centro{max-width:460px;margin:16vh auto;text-align:center;padding:0 20px}
+.centro p{color:var(--sua);margin-top:10px}
+.btn{display:inline-block;margin-top:18px;background:linear-gradient(135deg,var(--oro2),var(--oro));color:var(--bg);padding:11px 20px;border-radius:99px;font-weight:700;text-decoration:none}
+.barra{height:8px;border-radius:4px;background:var(--sup2);position:relative;min-width:60px}.barra i{position:absolute;inset:0;width:var(--v);background:var(--oro);border-radius:4px}
+@media(max-width:800px){.rej{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header><div class="w"><a class="logo" href="https://aurzane.com/">AUR<span>Z</span>ANE</a><small id="fecha"></small></div></header>
+<main class="w" id="app"><div class="centro"><p>Cargando el panel…</p></div></main>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="/aurzane-id.js"></script>
+<script>
+(async function(){
+  var app = document.getElementById('app');
+  var E = function(s){ return String(s == null ? '' : s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); };
+  var N = function(n){ return n == null ? '—' : Number(n).toLocaleString('es-ES'); };
+  function centro(t, p, btn){ app.innerHTML = '<div class="centro"><h1>' + E(t) + '</h1><p>' + E(p) + '</p>' + (btn || '') + '</div>'; }
+  var sb = crearClienteAurzaneID('https://chtfpqwrrarfdjcivlad.supabase.co', 'sb_publishable___1v6VjDew0l8uGfMyb9Nw_YyCLTPPw');
+  var ses = (await sb.auth.getSession()).data.session;
+  if(!ses){ centro('Panel de resultados', 'Entra con tu cuenta de AURZANE para verlo.', '<a class="btn" href="https://aurzane.com/mi-aurzane.html?next=' + encodeURIComponent(location.href) + '">Iniciar sesión</a>'); return; }
+  var r = await fetch('datos.php', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ token: ses.access_token }) });
+  var P = await r.json().catch(function(){ return { error: 'No se pudo leer el panel.' }; });
+  if(P.error){ centro('Panel de resultados', P.error); return; }
+  document.getElementById('fecha').textContent = 'Actualizado: ' + new Date(P.generado).toLocaleString('es-ES');
+
+  function tabla(filas, cab, fmt){
+    if(!filas || !filas.length) return '<p class="vacio">Sin datos todavía.</p>';
+    var max = Math.max.apply(null, filas.map(function(f){ return +f[1] || 0; })) || 1;
+    return '<table><tr>' + cab.map(function(c, i){ return '<th' + (i ? ' style="text-align:right"' : '') + '>' + E(c) + '</th>'; }).join('') + '</tr>' + filas.map(function(f){
+      return '<tr><td class="url">' + (fmt ? fmt(f[0]) : E(f[0])) + '</td>' + f.slice(1).map(function(v, i){ return '<td class="n">' + (i === 0 && typeof v === 'number' ? N(v) : E(v)) + '</td>'; }).join('') + '</tr>';
+    }).join('') + '</table>';
+  }
+  function enlace(u){ return '<a href="https://' + E(u) + '" target="_blank" rel="noopener">' + E(u.replace(/^aurzane\.com/, '')) + '</a>'; }
+  function grafica(dias){
+    if(!dias || dias.length < 2) return '<p class="vacio">Hacen falta al menos dos días de registros.</p>';
+    var W = 1000, H = 220, pl = 40, pb = 24, max = Math.max.apply(null, dias.map(function(d){ return d.paginas; })) || 1;
+    var x = function(i){ return pl + i * (W - pl - 10) / (dias.length - 1); }, y = function(v){ return H - pb - v / max * (H - pb - 12); };
+    var linea = function(k){ return dias.map(function(d, i){ return (i ? 'L' : 'M') + x(i).toFixed(1) + ' ' + y(d[k]).toFixed(1); }).join(''); };
+    var marcas = [0, Math.round(max / 2), max].map(function(v){ return '<line x1="' + pl + '" x2="' + W + '" y1="' + y(v) + '" y2="' + y(v) + '" stroke="rgba(199,205,214,.1)"/><text x="' + (pl - 6) + '" y="' + (y(v) + 4) + '" text-anchor="end">' + N(v) + '</text>'; }).join('');
+    var et = dias.map(function(d, i){ return (i % Math.ceil(dias.length / 8) === 0 || i === dias.length - 1) ? '<text x="' + x(i) + '" y="' + (H - 6) + '" text-anchor="' + (i === dias.length - 1 ? 'end' : 'middle') + '">' + d.dia.slice(8) + '/' + d.dia.slice(5, 7) + '</text>' : ''; }).join('');
+    var puntos = dias.map(function(d, i){ return '<circle cx="' + x(i) + '" cy="' + y(d.visitantes) + '" r="3" fill="var(--s1)"><title>' + d.dia + ': ' + d.visitantes + ' visitantes, ' + d.paginas + ' páginas</title></circle>'; }).join('');
+    return '<div class="leyenda"><span><i style="background:var(--s1)"></i>Visitantes</span><span><i style="background:var(--s2)"></i>Páginas vistas</span></div>' +
+      '<svg viewBox="0 0 ' + W + ' ' + H + '" width="100%" role="img" aria-label="Visitantes y páginas vistas por día">' + marcas + et +
+      '<path d="' + linea('paginas') + '" fill="none" stroke="var(--s2)" stroke-width="2"/><path d="' + linea('visitantes') + '" fill="none" stroke="var(--s1)" stroke-width="2.5"/>' + puntos + '</svg>';
+  }
+
+  var V = P.visitas || {}, dias = V.por_dia || [];
+  var suma = function(a, k){ return a.reduce(function(s, d){ return s + (d[k] || 0); }, 0); };
+  var u7 = suma(dias.slice(-7), 'visitantes'), u7p = suma(dias.slice(-14, -7), 'visitantes');
+  var cambio = function(a, b){ if(!b) return ''; var p = Math.round((a - b) / b * 100); return '<i class="' + (p >= 0 ? 'sube' : 'baja') + '">' + (p >= 0 ? '+' : '') + p + ' %</i>'; };
+  var seg = (P.seguidores && P.seguidores.redes) || [];
+  var totalSeg = seg.reduce(function(s, r){ return s + (r[1] || 0); }, 0);
+  var B = P.boletin || {}, CC = P.clics_compra || {}, AW = P.awin || {}, CR = P.clics_redes || {}, COL = P.colegios || {};
+
+  var h = '<h1>Panel de resultados</h1><p class="sub">Todo lo que mide AURZANE, en un solo sitio. Se actualiza cada mañana.</p>';
+  (P.avisos || []).forEach(function(a){ h += '<p class="aviso">' + E(a) + '</p>'; });
+  h += '<div class="kpis">' +
+    '<div class="kpi"><b>' + N(u7) + cambio(u7, u7p) + '</b><span>Visitantes, últimos 7 días</span></div>' +
+    '<div class="kpi"><b>' + N(suma(dias.slice(-30), 'paginas')) + '</b><span>Páginas vistas, 30 días</span></div>' +
+    '<div class="kpi"><b>' + N(B.suscritos) + '</b><span>Suscriptores del boletín' + (B.pendientes ? ' (' + N(B.pendientes) + ' sin confirmar)' : '') + '</span></div>' +
+    '<div class="kpi"><b>' + N(CC.total_30_dias) + '</b><span>Clics hacia tiendas, 30 días</span></div>' +
+    '<div class="kpi"><b>' + (AW.error ? '—' : N(AW.ventas_30_dias)) + '</b><span>Ventas Awin, 30 días' + (AW.comision_30_dias ? ' · ' + N(AW.comision_30_dias) + ' €' : '') + '</span></div>' +
+    '<div class="kpi"><b>' + N(totalSeg) + '</b><span>Seguidores en redes</span></div>' +
+    '<div class="kpi"><b>' + N(CR.total_30_dias) + '</b><span>Clics desde redes, 30 días</span></div>' +
+    '<div class="kpi"><b>' + N(COL.solicitudes) + '</b><span>Solicitudes de colegios' + (COL.nuevas ? ' (' + COL.nuevas + ' nuevas)' : '') + '</span></div>' +
+  '</div>';
+  h += '<div class="rej"><div class="caja ancha"><h2>Visitas por día</h2>' + grafica(dias) + '</div>' +
+    '<div class="caja"><h2>Páginas más vistas, 7 días</h2>' + tabla(V.top_7_dias, ['Página', 'Vistas'], enlace) + '</div>' +
+    '<div class="caja"><h2>Páginas más vistas, 30 días</h2>' + tabla(V.top_30_dias, ['Página', 'Vistas'], enlace) + '</div>' +
+    '<div class="caja"><h2>Visitantes por sitio</h2>' + tabla(V.por_dominio, ['Sitio', 'Visitantes']) + '</div>' +
+    '<div class="caja"><h2>Boletín: altas por mes</h2>' + tabla((B.altas_por_mes || []).slice().reverse(), ['Mes', 'Altas']) + '</div>' +
+    '<div class="caja"><h2>Clics hacia tiendas</h2>' + tabla(CC.por_tienda, ['Tienda', 'Clics']) + '<p class="vacio" style="margin-top:10px">' + E((P.amazon || {}).nota || '') + '</p></div>' +
+    '<div class="caja"><h2>Páginas que más venden (clics)</h2>' + tabla(CC.paginas, ['Página', 'Clics'], enlace) + '</div>' +
+    '<div class="caja"><h2>Ventas en Awin, 30 días</h2>' + (AW.error ? '<p class="vacio">' + E(AW.error) + '</p>' : tabla((AW.por_tienda || []).map(function(t){ return [t[0], t[1], N(t[2]) + ' ' + E(t[3])]; }), ['Tienda', 'Ventas', 'Comisión'])) +
+      (AW.programas_activos != null ? '<p class="vacio" style="margin-top:10px">Programas de Awin aprobados: ' + N(AW.programas_activos) + '</p>' : '') + '</div>' +
+    '<div class="caja"><h2>Seguidores por red</h2>' + tabla(seg.map(function(r){ return [r[0], r[1] == null ? 'sin permiso de lectura' : r[1], r[2] == null ? '' : (r[2] >= 0 ? '+' : '') + r[2]]; }), ['Red', 'Seguidores', '30 días']) + '</div>' +
+    '<div class="caja"><h2>Clics desde redes por red</h2>' + tabla(CR.por_red, ['Red', 'Clics']) + '</div>' +
+    '<div class="caja"><h2>Publicaciones con más clics</h2>' + tabla(CR.contenidos, ['Contenido', 'Clics']) + '</div>' +
+    '<div class="caja ancha"><h2>Solicitudes de colegios</h2>' + tabla((COL.ultimas || []).map(function(c){ return [c[1] + ' · ' + c[2], c[3], c[0]]; }), ['Colegio', 'Cargo', 'Fecha']) + '</div>' +
+    '<div class="caja ancha"><h2>Contenido</h2><table><tr><td>Libros en la tienda</td><td class="n">' + N(P.tienda_libros) + '</td></tr><tr><td>Libros publicados en Telegram</td><td class="n">' + N(P.telegram_libros) + ' de 365</td></tr></table></div>' +
+  '</div>';
+  app.innerHTML = h;
+})().catch(function(e){ document.getElementById('app').innerHTML = '<div class="centro"><p>No se pudo cargar el panel. Recarga la página.</p></div>'; console.error(e); });
+</script>
+</body>
+</html>
