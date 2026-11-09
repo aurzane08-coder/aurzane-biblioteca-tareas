@@ -288,9 +288,9 @@ def _tiktok_token():
 
 def video_tiktok(texto, url, local, enlace, p):
     tk = _tiktok_token(); cab = {'Authorization': 'Bearer ' + tk, 'Content-Type': 'application/json; charset=UTF-8'}
-    nombre = pedir('https://open.tiktokapis.com/v2/user/info/?fields=open_id,display_name', cab={'Authorization': 'Bearer ' + tk}).get('data', {}).get('user', {}).get('display_name', '')
-    if 'clip' in nombre.lower():   # identificador de destino: lo de AURZANE nunca va a la cuenta de clips
-        raise RuntimeError(f'El TikTok conectado es «{nombre}» (clips), no el de AURZANE')
+    nombre = pedir('https://open.tiktokapis.com/v2/post/publish/creator_info/query/', {}, cab).get('data', {}).get('creator_username', '')
+    if not nombre or 'clip' in nombre.lower():   # identificador de destino: lo de AURZANE nunca va a la cuenta de clips
+        raise RuntimeError(f'El TikTok conectado es @{nombre or "desconocido"}, no el de AURZANE')
     info = pedir('https://open.tiktokapis.com/v2/post/publish/creator_info/query/', {}, cab)['data']
     # Hasta que TikTok apruebe la app, solo se puede publicar en privado (SELF_ONLY). Tras la aprobación: variable TIKTOK_PUBLICO=1.
     opciones = info.get('privacy_level_options', [])

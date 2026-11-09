@@ -39,10 +39,13 @@ $r = json_decode(curl_exec($ch), true) ?: [];
 if (empty($r['refresh_token'])) fin('No se pudo completar: ' . htmlspecialchars($r['error_description'] ?? $r['error'] ?? 'respuesta vacía'));
 // Identificador de cuenta: se mira qué cuenta dio permiso y su token va solo al sitio que le toca
 // (clips si el nombre o el usuario tiene «clip», AURZANE en otro caso). Así las dos quedan conectadas a la vez.
-$ch2 = curl_init('https://open.tiktokapis.com/v2/user/info/?fields=open_id,display_name');
-curl_setopt_array($ch2, [CURLOPT_RETURNTRANSFER => true, CURLOPT_TIMEOUT => 20, CURLOPT_HTTPHEADER => ['Authorization: Bearer ' . ($r['access_token'] ?? '')]]);
-$yo = (json_decode(curl_exec($ch2), true) ?: [])['data']['user'] ?? [];
-$nombre = trim((string)($yo['display_name'] ?? ''));
+// se usa el usuario (@...), no el nombre visible: el de AURZANE se llama «🇪🇸Aur» y no sirve para distinguir
+$ch2 = curl_init('https://open.tiktokapis.com/v2/post/publish/creator_info/query/');
+curl_setopt_array($ch2, [CURLOPT_RETURNTRANSFER => true, CURLOPT_TIMEOUT => 20, CURLOPT_POST => true, CURLOPT_POSTFIELDS => '{}',
+    CURLOPT_HTTPHEADER => ['Authorization: Bearer ' . ($r['access_token'] ?? ''), 'Content-Type: application/json; charset=UTF-8']]);
+$yo = (json_decode(curl_exec($ch2), true) ?: [])['data'] ?? [];
+$nombre = trim((string)($yo['creator_username'] ?? ''));
+if ($nombre !== '') $nombre = '@' . $nombre;
 $es_clips = stripos($nombre, 'clip') !== false;
 if ($nombre === '') $es_clips = ($cuenta === 'clips');
 $fich = $es_clips ? "$dir/refresh_clips" : "$dir/refresh";

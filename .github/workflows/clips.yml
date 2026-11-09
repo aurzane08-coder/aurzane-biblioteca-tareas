@@ -6,6 +6,10 @@ on:
   push:
     paths: ['clips/fuentes.json', '.github/workflows/clips.yml', 'marketing/web/youtube/**']
   workflow_dispatch:
+    inputs:
+      verificar:
+        description: 'Solo comprobar a qué cuentas van los clips (1)'
+        default: ''
 permissions:
   contents: write
   models: read
@@ -64,7 +68,7 @@ jobs:
           fi
       - name: Hacer y subir clips
         if: steps.hay.outputs.si == '1'
-        run: python3 -u clips/clips.py
+        run: SOLO_VERIFICAR='${{ inputs.verificar }}' python3 -u clips/clips.py
       - name: Guardar registro
         if: steps.hay.outputs.si == '1'
         run: |

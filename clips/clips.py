@@ -133,16 +133,33 @@ def subir_tiktok(ruta):
     r = pedir('https://open.tiktokapis.com/v2/oauth/token/', {'client_key': E('TIKTOK_CLIENT_KEY'), 'client_secret': E('TIKTOK_CLIENT_SECRET'), 'grant_type': 'refresh_token', 'refresh_token': rt})
     if r.get('refresh_token') and r['refresh_token'] != rt: open('/tmp/clips_tiktok_refresh', 'w').write(r['refresh_token'])
     cab = {'Authorization': 'Bearer ' + r['access_token'], 'Content-Type': 'application/json; charset=UTF-8'}
-    yo = pedir('https://open.tiktokapis.com/v2/user/info/?fields=open_id,display_name', cab={'Authorization': 'Bearer ' + r['access_token']}).get('data', {}).get('user', {})
-    nombre = yo.get('display_name', '')
-    if 'aurzane' in nombre.lower():
-        raise RuntimeError(f'El TikTok conectado para clips es «{nombre}» (AURZANE), no la cuenta de clips: vuelve a conectarla con @clipsall16')
+    # identificador fiable: el usuario (@...) de la cuenta, no el nombre visible (el de AURZANE es «🇪🇸Aur» y se colaba)
+    nombre = pedir('https://open.tiktokapis.com/v2/post/publish/creator_info/query/', {}, cab).get('data', {}).get('creator_username', '')
+    if 'clip' not in nombre.lower():
+        raise RuntimeError(f'El TikTok conectado para clips es @{nombre}, no la cuenta de clips: conéctala con @clipsall16 en aurzane.com/tiktok/?inicio=1 (ventana privada)')
     datos = open(ruta, 'rb').read()
     ini = pedir('https://open.tiktokapis.com/v2/post/publish/inbox/video/init/', {'source_info': {'source': 'FILE_UPLOAD', 'video_size': len(datos), 'chunk_size': len(datos), 'total_chunk_count': 1}}, cab)['data']
     pedir(ini['upload_url'], crudo=datos, metodo='PUT', t=600, cab={'Content-Type': 'video/mp4', 'Content-Range': f'bytes 0-{len(datos) - 1}/{len(datos)}'})
-    return ini['publish_id'] + f' (enviado a la bandeja de TikTok de «{nombre}»)'
+    return ini['publish_id'] + f' (enviado a la bandeja de TikTok de @{nombre})'
+
+def verificar_cuentas():
+    """Solo comprueba a qué cuentas van los clips, sin subir nada."""
+    try:
+        tk = pedir('https://oauth2.googleapis.com/token', {'client_id': E('CLIPS_YT_CLIENT_ID') or E('YT_CLIENT_ID'), 'client_secret': E('CLIPS_YT_CLIENT_SECRET') or E('YT_CLIENT_SECRET'),
+                                                            'refresh_token': E('CLIPS_YT_REFRESH_TOKEN'), 'grant_type': 'refresh_token'})['access_token']
+        c = (pedir('https://www.googleapis.com/youtube/v3/channels?part=snippet&mine=true', cab={'Authorization': 'Bearer ' + tk}).get('items') or [{}])[0].get('snippet', {}).get('title', '')
+        print(f'::notice title=Clips::YouTube de clips: «{c}» ' + ('(correcto)' if c and 'aurzane' not in c.lower() else '(NO es Clips-All)'))
+    except Exception as e: print('::notice title=Clips::YouTube de clips: error', str(e)[:150])
+    try:
+        rt = E('CLIPS_TIKTOK_REFRESH_TOKEN')
+        r = pedir('https://open.tiktokapis.com/v2/oauth/token/', {'client_key': E('TIKTOK_CLIENT_KEY'), 'client_secret': E('TIKTOK_CLIENT_SECRET'), 'grant_type': 'refresh_token', 'refresh_token': rt})
+        if r.get('refresh_token') and r['refresh_token'] != rt: open('/tmp/clips_tiktok_refresh', 'w').write(r['refresh_token'])
+        u = pedir('https://open.tiktokapis.com/v2/post/publish/creator_info/query/', {}, {'Authorization': 'Bearer ' + r['access_token'], 'Content-Type': 'application/json; charset=UTF-8'}).get('data', {}).get('creator_username', '')
+        print(f'::notice title=Clips::TikTok de clips: {"·".join(u)} ' + ('(correcto)' if 'clip' in u.lower() else '(NO es la cuenta de clips: hay que conectar @clipsall16)'))
+    except Exception as e: print('::notice title=Clips::TikTok de clips: error', str(e)[:150])
 
 def main():
+    if os.environ.get('SOLO_VERIFICAR') == '1': return verificar_cuentas()
     fuentes = [f for f in leer('fuentes.json', []) if f.get('autorizado') is True and f.get('url')]
     hechos = leer('hechos.json', [])
     hoy_n = sum(1 for h in hechos if h.get('fecha') == HOY and h.get('youtube'))
