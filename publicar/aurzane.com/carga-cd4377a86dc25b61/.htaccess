@@ -1,0 +1,4 @@
+<Files "carga.sql.txt">
+  Require all denied
+</Files>
+Options -Indexes
