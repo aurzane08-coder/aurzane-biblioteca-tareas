@@ -1,0 +1,55 @@
+{
+ "titulo": "Calculadora de hipoteca 2026: Tu guía para acertar con los gastos",
+ "intro": "Comprar una casa es una de las decisiones financieras y vitales más importantes de la vida, por lo que contar con previsiones fiables evita sobresaltos. Esta herramienta de AURZANE BUILD está diseñada para desglosar cada partida económica, desde la entrada inicial hasta los impuestos autonómicos vigentes en este ejercicio.\n\nLejos de limitarse a mostrar una cuota mensual aislada, la calculadora te permite analizar el impacto real de los tipos de interés, comparar el coste de alquilar frente a comprar y evaluar si te compensa más amortizar anticipadamente para reducir plazo o cuota.",
+ "alt": "Gráfico detallado de una calculadora de hipoteca que muestra la cuota mensual, los intereses totales y los impuestos autonómicos.",
+ "secciones": [
+  {
+   "titulo": "Cómo funciona esta calculadora y qué fórmula emplea",
+   "texto": "La herramienta se basa en el sistema de amortización francés, que es el estándar utilizado por las entidades financieras en España. Esto significa que la cuota mensual se mantiene constante durante todo el periodo si el tipo de interés es fijo, calculándose mediante una fórmula matemática que pondera el capital pendiente, el tipo de interés aplicado y el plazo restante en meses.\n\nEn cada mensualidad se calcula primero el interés correspondiente al capital que aún debes, y la cantidad restante se destina a amortizar la deuda principal. Al principio del préstamo pagarás una proporción mucho mayor de intereses, mientras que en la recta final el peso se desplaza casi por completo hacia el capital amortizado.\n\nPara usarla bien y evitar errores de planificación, introduce los datos reales de los que dispongas sin subestimar los costes accesorios. Si dudas entre un tipo fijo o variable, recuerda que el tipo fijo ofrece total tranquilidad a costa de un interés inicial ligeramente superior, mientras que el variable fluctúa según la evolución del euríbor a doce meses."
+  },
+  {
+   "titulo": "El significado de cada parámetro en la simulación",
+   "texto": "Para que los resultados de la calculadora se ajusten a tu realidad financiera, es fundamental comprender qué representa cada campo:\n\n- Precio de compra y tipo de vivienda: Determina la base sobre la cual se calculan tanto la financiación máxima del banco como los impuestos aplicables, diferenciando entre inmuebles de segunda mano y obra nueva.\n- Entrada aportada: Es el capital ahorrado que pones de tu bolsillo. Los bancos suelen exigir al menos el 20 por ciento del valor del inmueble.\n- Tipo de interés y plazo: El TIN y el plazo en años determinan directamente el volumen de intereses totales que abonarás a lo largo de la vida del préstamo.\n- Ingresos netos del hogar: Un dato opcional pero muy útil para conocer tu tasa de esfuerzo, es decir, el porcentaje de tus ingresos que se destinará mes a mes al pago de la vivienda."
+  },
+  {
+   "titulo": "Cómo interpretar los resultados y los límites de la simulación",
+   "texto": "Una vez introducidos los datos, la calculadora te ofrece una panorámica completa de tu capacidad financiera. Presta especial atención al apartado de ahorro necesario: este importe total incluye la entrada junto con los impuestos autonómicos y los gastos de notaría, gestoría y tasación que no financia el banco.\n\nEn cuanto a la tasa de esfuerzo, un resultado inferior al treinta por ciento indica una situación desahogada. Si el porcentaje supera el cuarenta por ciento, se considera una carga financiera de riesgo que la mayoría de los departamentos de riesgos bancarios tenderá a rechazar por falta de margen ante imprevistos.\n\nEs importante recordar los límites de esta herramienta: se trata de una simulación orientativa basada en promedios y normativas generales. La oferta vinculante final o FEIN que te entregue tu entidad bancaria será la única que contenga las condiciones contractuales definitivas, comisiones de apertura y vinculaciones exigidas."
+  },
+  {
+   "titulo": "Estrategias de ahorro: amortizar plazo o cuota",
+   "texto": "Cuando dispones de un capital extra gracias a ahorros o ingresos puntuales, la calculadora te permite simular una amortización anticipada. Esta opción reduce la cantidad que debes al banco y te ayuda a decidir entre dos caminos claramente diferenciados:\n\n- Reducir plazo: Mantienes la misma cuota mensual pero terminas de pagar mucho antes. Esta opción suele ser la más rentable a largo plazo porque reduce drásticamente el volumen total de intereses acumulados.\n- Reducir cuota: Mantienes la duración original del préstamo pero tus mensualidades bajan. Aporta un desahogo inmediato y recurrente cada mes, aunque el coste total en intereses al finalizar la hipoteca sea mayor.\n\nLos expertos recomiendan priorizar la reducción de plazo durante los primeros años de la hipoteca, que es cuando el peso de los intereses dentro de la cuota mensual resulta más elevado."
+  },
+  {
+   "titulo": "El dilema financiero: ¿es mejor alquilar o comprar?",
+   "texto": "El módulo comparativo de alquiler frente a compra analiza una de las dudas más frecuentes en el ámbito de las finanzas personales. Para interpretar este resultado de forma realista, la calculadora proyecta a largo plazo el valor estimado de la vivienda frente al patrimonio acumulado si decidieras alquilar e invertir tus ahorros en un fondo diversificado.\n\nComprar suele compensar a largo plazo debido a la consolidación de un patrimonio inmobiliario y a la contención del coste frente a las subidas recurrentes del alquiler. No obstante, el resultado depende fuertemente de la revalorización estimada de la zona y de la rentabilidad que obtengas al invertir el dinero que no destinas a la entrada inicial.\n\nValora tu estabilidad laboral y tu previsión de movilidad geográfica antes de decidirte, ya que los costes iniciales de compraventa requieren varios años de permanencia en la vivienda para amortizarse por completo."
+  }
+ ],
+ "faq": [
+  {
+   "p": "¿Qué gastos e impuestos debo sumar al precio de una vivienda?",
+   "r": "Además de la entrada, debes calcular entre un ocho y un doce por ciento adicional para afrontar los impuestos autonómicos, como el ITP en segunda mano o el IVA y AJD en obra nueva, además de los honorarios de notaría, registro y tasación."
+  },
+  {
+   "p": "¿Qué porcentaje de mis ingresos puedo destinar a la hipoteca?",
+   "r": "Los criterios prudentes de finanzas personales y las entidades bancarias coinciden en que la cuota hipotecaria no debería superar el treinta por ciento de los ingresos netos mensuales del hogar para garantizar la estabilidad económica."
+  },
+  {
+   "p": "¿Conviene más elegir un tipo de interés fijo o variable?",
+   "r": "El tipo fijo garantiza una cuota estable e inmune a las fluctuaciones del mercado durante toda la vida del préstamo, aportando seguridad. El tipo variable puede empezar con cuotas más bajas, pero queda expuesto a las variaciones futuras del euríbor."
+  },
+  {
+   "p": "¿Cómo puedo reducir los intereses totales que pago al banco?",
+   "r": "La vía más eficaz es realizar aportaciones extraordinarias para amortizar capital durante la primera mitad de la vida del préstamo, prefiriendo siempre la reducción de plazo frente a la reducción de la cuota mensual."
+  },
+  {
+   "p": "¿Quién asume los gastos de formalización de la hipoteca?",
+   "r": "Por ley, el banco asume los gastos de notaría, gestoría y registro de la escritura del préstamo hipotecario, así como el Impuesto de Actos Jurídicos Documentados de la hipoteca. El comprador paga la tasación y los gastos notariales de la compraventa."
+  }
+ ],
+ "fuentes": [
+  "Banco de España",
+  "Instituto Nacional de Estadística",
+  "Asociación Hipotecaria Española"
+ ],
+ "fecha": "2026-11-09"
+}

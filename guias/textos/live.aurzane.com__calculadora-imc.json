@@ -1,0 +1,55 @@
+{
+ "titulo": "Calculadora de IMC: descubre tu peso saludable en AURZANE",
+ "intro": "El bienestar físico y mental forman un tándem inseparable en nuestra vida cotidiana. Cuando nos preocupamos por cuidar nuestra alimentación y nuestro nivel de actividad, a menudo buscamos referencias sencillas para saber si vamos por el buen camino. Aquí es donde entra en juego una herramienta tan clásica como útil.\n\nEn esta guía desarrollada por nuestro equipo de psicología clínica y salud en AURZANE, te explicamos cómo interpretar este indicador sin caer en obsesiones ni mitos. Comprender qué significan estos números te ayudará a tomar decisiones informadas sobre tus hábitos diarios, siempre desde una perspectiva amable y realista.",
+ "alt": "Persona sonriendo mientras consulta su índice de masa corporal en una tablet luminosa junto a una cinta métrica y fruta fresca.",
+ "secciones": [
+  {
+   "titulo": "Qué hay detrás del cálculo de tu índice",
+   "texto": "Para entender qué mide exactamente esta fórmula matemática, debemos pensar en ella como una balanza orientativa entre dos variables principales: los kilogramos que marca tu peso y los metros de tu altura.\n\nLa lógica detrás de la fórmula consiste en dividir tu peso total entre tu estatura multiplicada por sí misma. El resultado ofrece una proporción general que ayuda a los especialistas a categorizar la masa corporal dentro de unos márgenes estandarizados a nivel internacional.\n\n- El peso se mide siempre en kilogramos limpios.\n- La altura se expresa en metros, por ejemplo uno con setenta y cinco.\n- El resultado final es un número adimensional que sirve de punto de partida para una revisión médica."
+  },
+  {
+   "titulo": "Cómo utilizar esta herramienta con cabeza",
+   "texto": "Para que el uso de nuestra calculadora te aporte valor real y no ansiedad, es fundamental medirte en las condiciones adecuadas. Recomendamos hacerlo por la mañana en ayunas, con ropa ligera y utilizando siempre la misma báscula para mantener la coherencia en el seguimiento.\n\nEvita obsesionarte con las variaciones diarias de un par de días, ya que el cuerpo humano retiene líquidos de forma natural debido al estrés, la sal o los cambios hormonales. Lo verdaderamente importante es la tendencia general a medio y largo plazo.\n\n- Pésate una vez a la semana como máximo para evitar microobsesiones.\n- Anota los datos en un cuaderno o aplicación para observar patrones.\n- Combina el número con cómo te sientes de energía y vitalidad."
+  },
+  {
+   "titulo": "Ejemplos prácticos para entender los resultados",
+   "texto": "Imaginemos a una persona adulta que mide uno con setenta metros y pesa sesenta y cinco kilos. Al aplicar la operación matemática, obtenemos un valor que se sitúa cómodamente dentro del rango considerado normativo por las autoridades sanitarias.\n\nOtro ejemplo sería alguien con una altura de uno con ochenta metros y noventa kilogramos. En este caso, el número resultante cruza la barrera hacia el sobrepeso, lo que indica que pequeños ajustes en la dieta o en el movimiento diario pueden marcar una gran diferencia.\n- Los números son solo señales de aviso temprano, no condenas.\n- Un cambio del cinco por ciento en el peso ya mejora la salud metabólica.\n- Cada cuerpo responde de manera única a los estímulos del ejercicio."
+  },
+  {
+   "titulo": "Límites importantes que debes conocer",
+   "texto": "Es vital recordar que este indicador matemático tiene limitaciones evidentes. No distingue entre el peso procedente de la grasa corporal y el que corresponde a la masa muscular, el agua o la densidad ósea.\n\nPor este motivo, los deportistas de fuerza, las personas musculadas, las mujeres embarazadas o los adultos mayores pueden obtener resultados alterados que no reflejan un problema real de salud.\n\n- No evalúa la distribución de la grasa abdominal, que es clave.\n- No sirve para menores de edad en pleno crecimiento.\n- Debe complementarse con análisis clínicos y valoraciones profesionales."
+  },
+  {
+   "titulo": "Cuándo pedir ayuda y cuidar tu salud mental",
+   "texto": "La relación con la comida y con la propia imagen corporal puede volverse frágil en determinados momentos vitales. Si notas que el control del peso genera culpa, ansiedad constante, restricciones severas o pensamientos intrusivos, es el momento de frenar y buscar apoyo psicológico.\n\nEn España disponemos de recursos públicos y gratuitos de asistencia telefónica como el teléfono 024 para la prevención de la conducta suicida, o el teléfono 016 para la violencia de género. Cuidar de tu mente es tan importante como cuidar de tu cuerpo.\n\n- Habla con un psicólogo clínico si la báscula condiciona tu estado de ánimo.\n- Prioriza el descanso, la gestión del estrés y el autocuidado emocional.\n- Nunca emprendas dietas extremas sin supervisión médica."
+  }
+ ],
+ "faq": [
+  {
+   "p": "¿Cada cuánto tiempo debo calcular mi índice?",
+   "r": "Con una vez al mes es más que suficiente para observar tendencias reales. Las mediciones diarias solo generan ruido y frustración innecesaria debido a las fluctuaciones normales de líquidos."
+  },
+  {
+   "p": "¿Por qué los deportistas tienen un IMC alto si están sanos?",
+   "r": "Porque el músculo pesa más que la grasa ocupando menos volumen. Como la fórmula solo calcula peso entre altura al cuadrado, no diferencia el tejido muscular del tejido adiposo."
+  },
+  {
+   "p": "¿Qué hago si mi resultado indica sobrepeso?",
+   "r": "No te alarmes, ya que es una llamada de atención para revisar hábitos cotidianos. Pequeños cambios sostenibles en la alimentación y caminar más cada día suelen ser suficientes para mejorar."
+  },
+  {
+   "p": "¿Sirve esta calculadora para adolescentes?",
+   "r": "No, los menores de dieciocho años se encuentran en etapa de desarrollo físico constante. Sus valores deben ser evaluados por un pediatra mediante percentiles específicos para su edad."
+  },
+  {
+   "p": "¿Un IMC bajo es peligroso?",
+   "r": "Sí, estar por debajo del rango normal puede indicar desnutrición, problemas de absorción o trastornos de la conducta alimentaria. Conviene consultarlo con un médico para descartar carencias."
+  }
+ ],
+ "fuentes": [
+  "Organización Mundial de la Salud - Directrices sobre obesidad y sobrepeso",
+  "Ministerio de Sanidad de España - Guías de hábitos saludables",
+  "Sociedad Española para el Estudio de la Obesidad"
+ ],
+ "fecha": "2026-11-09"
+}

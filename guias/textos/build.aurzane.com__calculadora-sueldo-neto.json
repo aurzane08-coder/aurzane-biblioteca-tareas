@@ -1,0 +1,51 @@
+{
+ "titulo": "De bruto a neto: lo que de verdad cobras en 2026",
+ "intro": "Cuando firmamos un contrato de trabajo, la cifra que brilla en el papel suele ser el salario bruto. Sin embargo, el dinero que de verdad ingresamos en nuestra cuenta cada mes es el neto, una cantidad que a menudo genera sorpresa y confusión. Comprender el trayecto que va desde el bruto hasta el neto nos permite tomar el control real de nuestras finanzas personales y evitar desajustes en el presupuesto familiar.\n\nEn esta guía práctica profundizamos en los mecanismos que transforman tu sueldo en 2026. Analizaremos con claridad cómo se aplican las deducciones obligatorias, por qué cambian las retenciones según cada situación personal y qué pautas seguir para exprimir al máximo tu planificación económica sin sorpresas fiscales de última hora.",
+ "alt": "Persona revisando los datos de su nómina y su sueldo neto en la pantalla de un ordenador.",
+ "secciones": [
+  {
+   "titulo": "Cómo funciona nuestra calculadora de sueldo neto",
+   "texto": "La fórmula matemática que opera tras nuestra herramienta parte de tu salario bruto anual y aplica de forma secuencial las deducciones legales vigentes. En primer lugar, se descuentan las aportaciones obligatorias a la Seguridad Social en función de tu tipo de contrato y base de cotización. A continuación, sobre la cantidad restante, se calcula el tipo de retención de IRPF aplicable según tus ingresos y tu situación personal.\n\nPara utilizar la calculadora de forma eficaz, introduce tu salario bruto anual tal y como figura en tu nómina o contrato. Selecciona el número de pagas que prefieras, ya sea con el prorrateo mensual clásico de 12 mensualidades o el formato tradicional de 14 pagas incluyendo verano y Navidad. No olvides ajustar los datos sobre tu edad y el número de hijos a tu cargo, ya que estos factores modifican de manera directa el mínimo personal y familiar.\n\nEs importante tener presente que el resultado que ofrece la herramienta es una estimación muy precisa para el territorio común en régimen general, pero cuenta con ciertos límites. No contempla situaciones especiales como discapacidad reconocida, pensiones compensatorias, rentas irregulares o regímenes forales específicos de Navarra y País Vasco, por lo que debe tomarse como una sólida guía orientativa para tu planificación."
+  },
+  {
+   "titulo": "El destino de tu dinero: la Seguridad Social",
+   "texto": "Antes de que Hacienda aplique sus impuestos, la nómina sufre una primera minoración destinada a sostener el sistema público de protección social. Estas cotizaciones no son un impuesto arbitrario, sino aportaciones finalistas que cubren contingencias fundamentales para nuestra estabilidad laboral y vital.\n\n- Contingencias comunes: un 4,70 por ciento destinado a financiar jubilación, incapacidad temporal por enfermedad común y prestaciones ordinarias.\n- Desempleo: un 1,55 por ciento para contratos indefinidos y un 1,60 por ciento para los temporales, destinado a la cobertura por pérdida de empleo.\n- Formación profesional: un pequeño porcentaje del 0,10 por ciento enfocado al reciclaje y la mejora continua de las cualificaciones.\n- Mecanismo de Equidad Intergeneracional: un 0,15 por ciento adicional introducido para reforzar la sostenibilidad de las pensiones futuras.\n\nEstas deducciones se aplican de forma automática sobre tu base de cotización, la cual cuenta con topes máximos y mínimos establecidos cada año. Su correcta comprensión te ayuda a ver que cada euro descontado en este concepto constituye una red de seguridad directa para tu futuro laboral."
+  },
+  {
+   "titulo": "El laberinto del IRPF y el mínimo personal",
+   "texto": "El Impuesto sobre la Renta de las Personas Físicas es un tributo progresivo que grava la renta mundial de las personas físicas. En tu nómina mensual, la empresa no te cobra el impuesto definitivo, sino que aplica una retención a cuenta basada en una previsión de lo que ganarás a lo largo de todo el año natural.\n\nPara calcular esa retención, la normativa fiscal parte de tus ingresos íntegros, resta las cotizaciones a la Seguridad Social y aplica una reducción por obtención de rendimientos del trabajo. A esa base se le aplica la escala de gravamen correspondiente, teniendo muy en cuenta el mínimo personal y familiar, que es la cuantía que el Estado considera indispensable para satisfacer las necesidades básicas de la vida y por la cual no se paga impuesto.\n\nEse mínimo personal aumenta con la edad, especialmente a partir de los 65 y los 75 años, y se incrementa significativamente por cada hijo que tengas a tu cargo. Esta es la razón principal por la que dos compañeros con idéntico sueldo bruto pueden cobrar un neto mensual diferente, ya que sus circunstancias familiares y personales modifican el tipo de retención aplicable."
+  },
+  {
+   "titulo": "Estrategias para optimizar tu planificación financiera",
+   "texto": "Gestionar bien tu dinero no consiste únicamente en buscar un aumento de sueldo bruto, sino en optimizar la gestión de lo que percibes. Conocer al detalle tu sueldo neto te permite trazar un presupuesto realista basado en ingresos reales y no en cifras teóricas que nunca llegan a pisar tu cuenta bancaria.\n\nSi experimentas cambios significativos en tu vida, como el nacimiento de un hijo, un matrimonio o una modificación en tus ingresos, resulta fundamental comunicarlo a la empresa mediante el modelo oficial correspondiente. Esto evita que la empresa te retenga de más durante meses o que te lleves una desagradable sorpresa con una cuota a pagar muy elevada en la campaña de la renta.\n\nAsimismo, mantener un fondo de emergencia equivalente a varios meses de tus gastos fijos netos te aportará una tranquilidad psicológica incalculable. La estabilidad financiera reduce de forma drástica los niveles de estrés cotidiano, permitiéndote tomar decisiones laborales y vitales desde la calma y la seguridad."
+  }
+ ],
+ "faq": [
+  {
+   "p": "¿Por qué mi sueldo neto cambia cada mes si mi contrato es fijo?",
+   "r": "Aunque tu sueldo bruto sea fijo, el neto puede variar ligeramente debido al número de días laborables del mes en algunas pagas, o si la empresa ajusta las retenciones a mitad de año. También puede deberse a modificaciones en tus circunstancias personales que la empresa haya actualizado de forma sobrevenida."
+  },
+  {
+   "p": "¿Es mejor cobrar en 12 o en 14 pagas anuales?",
+   "r": "A nivel puramente económico y anual, cobras exactamente la misma cantidad de dinero. La única diferencia radica en la liquidez mensual: con 14 pagas recibes menos cada mes y dos picos de ingresos en verano y Navidad, mientras que con 12 pagas el dinero se reparte de forma homogénea durante todo el año."
+  },
+  {
+   "p": "¿Qué pasa si mi empresa me retiene menos IRPF del que me corresponde?",
+   "r": "Si la empresa aplica una retención inferior a la que dictan tus ingresos reales, al hacer la declaración de la renta anual lo notarás. En lugar de salir a devolver o quedar a cero, te tocará pagar la diferencia acumulada a la Agencia Tributaria."
+  },
+  {
+   "p": "¿Sirve esta calculadora para autónomos o regímenes especiales?",
+   "r": "No, esta herramienta y sus cálculos están diseñados exclusivamente para trabajadores por cuenta ajena bajo el régimen general de la Seguridad Social en territorio común. Los autónomos y los regímenes especiales se rigen por normativas fiscales y de cotización completamente diferentes."
+  },
+  {
+   "p": "¿Cómo puedo cambiar las retenciones de mi nómina si tengo un hijo?",
+   "r": "Debes comunicarlo formalmente a tu departamento de recursos humanos o administración utilizando el modelo 145 de la Agencia Tributaria. Al actualizar tus datos familiares, la empresa recalculará el tipo de retención y empezarás a notar un sueldo neto mayor en los meses siguientes."
+  }
+ ],
+ "fuentes": [
+  "Agencia Tributaria, Ministerio de Hacienda, Gobierno de España",
+  "Seguridad Social, Ministerio de Inclusión, Seguridad Social y Migraciones",
+  "Reglamento del Impuesto sobre la Renta de las Personas Físicas"
+ ],
+ "fecha": "2026-11-09"
+}

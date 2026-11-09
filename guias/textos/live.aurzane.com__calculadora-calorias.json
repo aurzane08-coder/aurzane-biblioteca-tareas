@@ -1,0 +1,55 @@
+{
+ "titulo": "Calculadora de calorías e IMC: guía y uso correcto",
+ "intro": "Entender cuánta energía necesita nuestro cuerpo cada día es el primer paso para cuidar de nuestra salud sin caer en restricciones absurdas ni en mitos nutricionales. Muchas personas empiezan a comer menos o a entrenar de forma caótica sin saber qué cantidad de nutrientes requiere su organismo para funcionar con equilibrio.\n\nEn AURZANE abordamos el bienestar desde la evidencia clínica y la cercanía, ayudándote a interpretar tus datos sin obsesiones. Esta guía te explica cómo sacar el máximo partido a nuestra calculadora para alinear tu energía, tu peso y tus hábitos con tus metas reales.",
+ "alt": "Persona consultando su gasto calórico diario y su índice de masa corporal en una pantalla digital.",
+ "secciones": [
+  {
+   "titulo": "Cómo funciona nuestra calculadora por dentro",
+   "texto": "Nuestra herramienta se basa en estimar dos conceptos clave: el metabolismo basal, que es la energía que tu cuerpo consume solo por mantenerse vivo en reposo, y el gasto total, que añade la actividad física y el movimiento diario.\n\nPara calcularlo con precisión empleamos algoritmos validados internacionalmente que cruzan tu edad, altura, peso y nivel de movimiento. De este modo, obtienes un punto de partida fiable para saber cuánta energía entra y sale de tu organismo cada día."
+  },
+  {
+   "titulo": "Cómo usar la calculadora para tus objetivos",
+   "texto": "El uso correcto de una calculadora de calorías depende de tener claro hacia dónde quieres dirigir tu estilo de vida en este momento:\n- Si tu meta es mantener, busca el equilibrio entre lo que gastas y lo que consumes.\n- Si buscas perder peso, un ajuste moderado es la clave para no poner en riesgo tu salud física ni mental.\n- Si quieres ganar músculo, un ligero superávit acompañado de entrenamiento de fuerza facilitará el proceso.\n\nRecuerda que los cambios drásticos suelen generar un efecto rebote y aumentan la ansiedad con la comida, algo que en psicología clínica intentamos evitar siempre."
+  },
+  {
+   "titulo": "Límites del IMC y las calorías",
+   "texto": "Tanto el índice de masa corporal como las fórmulas de gasto energético son estimaciones orientativas y muy útiles, pero tienen limitaciones que conviene conocer para no caer en errores de interpretación.\n- El IMC no diferencia entre masa muscular y tejido adiposo, por lo que personas muy deportistas pueden dar valores elevados sin tener sobrepeso real.\n- Las calorías calculadas son una media estadística; tu metabolismo diario puede variar según el estrés, el descanso o las hormonas.\n\nPor ello, lo ideal es usar estos números como una brújula flexible y no como una ley absoluta que determine tu valor personal."
+  },
+  {
+   "titulo": "La importancia de la proteína y la hidratación",
+   "texto": "Más allá de las calorías totales, la calidad de lo que ingieres marca la diferencia en tu energía diaria y en tu bienestar general.\n- La proteína ayuda a preservar la masa muscular y aumenta la sensación de saciedad, algo muy útil si buscas regular el apetito.\n- El agua participa en prácticamente todas las funciones celulares y regula la fatiga, mejorando el rendimiento mental y físico.\n\nIntegra estos dos pilares de forma natural en tus comidas principales sin necesidad de pesar cada gramo de manera obsesiva."
+  },
+  {
+   "titulo": "Cuándo pedir ayuda profesional",
+   "texto": "Si notas que el control de la comida, el peso o las calorías genera en ti una ansiedad constante, culpa o conductas restrictivas extremas, es fundamental que consultes con un profesional de la salud.\n\nLa relación con nuestro cuerpo debe ser una herramienta de cuidado y nunca una fuente de sufrimiento. Si en algún momento experimentas malestar emocional profundo o ideas de hacerte daño, recuerda que en España dispones de recursos gratuitos y confidenciales como el teléfono 024 de atención a la conducta suicida."
+  }
+ ],
+ "faq": [
+  {
+   "p": "¿Por qué mi peso fluctúa cada día si mantengo las calorías?",
+   "r": "El peso corporal cambia de forma natural debido a la retención de líquidos, los cambios hormonales, el tránsito intestinal o el estrés. Es completamente normal ver variaciones de uno o dos kilos de un día para otro sin que eso signifique pérdida o ganancia de grasa."
+  },
+  {
+   "p": "¿Es fiable el IMC en deportistas?",
+   "r": "No siempre. El IMC es una medida estándar para la población general, pero dado que el músculo pesa más que la grasa en el mismo volumen, las personas con alta masa muscular pueden aparecer en rangos de sobrepeso teniendo un porcentaje de grasa saludable."
+  },
+  {
+   "p": "¿Qué pasa si un día como más calorías de las calculadas?",
+   "r": "No pasa absolutamente nada. El metabolismo funciona por balances a lo largo de la semana y los excesos puntuales forman parte de una vida social y flexible. Lo importante es el patrón general de tus hábitos y no una comida aislada."
+  },
+  {
+   "p": "¿Debo pesar los alimentos siempre para ver resultados?",
+   "r": "Pesar la comida puede ser útil al principio para aprender tamaño de porciones, pero no es obligatorio ni recomendable a largo plazo si genera obsesión. Escuchar tus señales de hambre y saciedad suele ser más sostenible para la salud mental."
+  },
+  {
+   "p": "¿A partir de qué edad cambian las necesidades calóricas?",
+   "r": "A medida que envejecemos, el metabolismo basal tiende a reducirse de forma gradual debido a la pérdida progresiva de masa muscular y a los cambios hormonales. Ajustar la actividad física ayuda a contrarrestar este descenso de manera saludable."
+  }
+ ],
+ "fuentes": [
+  "Organización Mundial de la Salud",
+  "Autoridad Europea de Seguridad Alimentaria",
+  "Academia de Nutrición y Dietética de Estados Unidos"
+ ],
+ "fecha": "2026-11-09"
+}

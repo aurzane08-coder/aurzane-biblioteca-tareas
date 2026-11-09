@@ -1,0 +1,55 @@
+{
+ "titulo": "Calculadora de agua diaria: cuánta beber",
+ "intro": "Mantener una hidratación adecuada es uno de los pilares más sencillos y a la vez olvidados para cuidar nuestra salud física y mental. A menudo pasamos por alto que el cerebro y los músculos dependen de un aporte constante de líquidos para rendir al máximo, lo que impacta directamente en nuestra concentración, nuestro estado de ánimo y nuestros niveles de energía a lo largo de la jornada.\n\nEn AURZANE creemos que entender tus necesidades reales de hidratación debe ser un proceso práctico y sin complicaciones. Por ello, más allá de la clásica norma general de los dos litros, esta guía te ayuda a comprender cómo utilizar nuestra calculadora gratuita para adaptar el consumo de agua a tu peso, tu actividad física y la temperatura ambiental de forma rigurosa.",
+ "alt": "Vaso de agua fresca junto a una botella reutilizable sobre una mesa de madera iluminada por luz natural",
+ "secciones": [
+  {
+   "titulo": "¿Cómo funciona la fórmula de nuestra calculadora?",
+   "texto": "Nuestra herramienta digital se basa en las directrices de la Autoridad Europea de Seguridad Alimentaria para estimar un volumen de referencia adaptado a tus características personales. Partiendo de una base que valora el peso corporal, el algoritmo ajusta el resultado sumando un aporte extra cuando practicas ejercicio físico y cuando te encuentras en entornos con temperaturas elevadas.\n\nPara aplicar esta lógica en tu día a día de forma intuitiva, la calculadora traduce el total en litros exactos y en su equivalente en vasos convencionales de doscientos cincuenta mililitros. Así puedes planificar tus tomas de agua desde la mañana hasta la noche sin necesidad de hacer cuentas complejas en mitad de tu rutina laboral o de estudio.\n\n- Introduces tu peso actual en kilogramos para calcular la base hídrica.\n- Añades los minutos de ejercicio diario para sumar el extra por sudoración.\n- Marcas si la temperatura supera los treinta grados para ajustar el impacto del calor."
+  },
+  {
+   "titulo": "Cómo utilizar la calculadora correctamente y ejemplos prácticos",
+   "texto": "Para sacar el máximo partido a la herramienta, lo ideal es introducir datos reales y honestos sobre tu nivel de actividad cotidiana y el clima de tu zona. No sirve de nada sobreestimar el ejercicio que planeas hacer la próxima semana; debes reflejar lo que te mueves hoy para que la cifra de agua sea realista y asumible para tus riñones.\n\nImagina una persona que pesa setenta kilos, practica treinta minutos de ejercicio moderado y vive en una zona calurosa. La herramienta sumará la base correspondiente a su masa corporal, añadirá el extra por el esfuerzo físico y compensará el factor térmico, devolviendo una cifra total que le permitirá saber cuántos vasos necesita sin correr el riesgo de beber en exceso.\n\n- Utiliza siempre tu peso en ayunas o una media aproximada.\n- Cuenta únicamente la actividad física efectiva que eleva tus pulsaciones.\n- Distribuye los vasos calculados a lo largo de las horas de luz en lugar de beber de golpe."
+  },
+  {
+   "titulo": "Límites de la herramienta y situaciones especiales",
+   "texto": "Es fundamental recordar que esta calculadora ofrece una estimación orientativa dirigida a adultos sanos y no sustituye una pauta médica personalizada. Existen múltiples variables individuales, como la composición corporal, el tipo de metabolismo o la ropa que llevas puesta, que pueden alterar ligeramente tus requerimientos reales de líquidos.\n\nAdemás, determinadas circunstancias vitales o patologías exigen un control médico estricto de la ingesta de agua. Si presentas problemas renales, insuficiencia cardíaca, retención de líquidos o sigues tratamientos farmacológicos con diuréticos, debes ignorar las recomendaciones estándar y seguir estrictamente las indicaciones de tu especialista sanitario.\n\n- Los resultados no son aplicables a menores de edad ni a mujeres embarazadas o en periodo de lactancia.\n- Las personas mayores pueden perder sensibilidad a la sed, por lo que deben beber pautadamente.\n- Ante cualquier duda sobre tu salud, consulta siempre a un profesional de la medicina."
+  },
+  {
+   "titulo": "Señales de alerta y el bienestar psicológico de la hidratación",
+   "texto": "La deshidratación leve, incluso antes de que aparezca una sensación clara de sed, puede provocar fatiga mental, irritabilidad, dolores de cabeza y una caída notable en la capacidad de concentración. Cuidar tu consumo de agua es, por tanto, una estrategia directa de bienestar psicológico y rendimiento cognitivo.\n\nSi notas que tu estado de ánimo decae sin motivo aparente o te cuesta mantener la atención en tus tareas de estudio o trabajo, revisa cuántos vasos has bebido hoy. Observar el color de tu orina es el indicador físico más fiable: un tono amarillo pálido o transparente indica una buena hidratación, mientras que los tonos oscuros exigen beber agua de inmediato.\n\n- El dolor de cabeza vespertino suele estar ligado a una falta de líquidos acumulada.\n- La sequedad en los labios y la boca son avisos tardíos de que el cuerpo necesita agua.\n- Mantener una botella visible en tu mesa facilita el hábito sin esfuerzo consciente."
+  },
+  {
+   "titulo": "Cuándo pedir ayuda profesional y recursos de apoyo en España",
+   "texto": "En ocasiones, la desatención del autocuidado, la falta de apetencia por los líquidos o el descuido extremo de las rutinas diarias pueden ser síntomas superficiales de malestar emocional profundo, ansiedad o estados depresivos que requieren atención especializada por parte de un psicólogo clínico.\n\nSi sientes que el malestar te desborda, experimentas desesperanza o atraviesas una crisis personal grave, recuerda que en España dispones de recursos públicos y gratuitos de ayuda inmediata, como la línea telefónica 024 de atención a la conducta suicida, disponible las veinticuatro horas del día para escucharte sin juicios.\n\n- Llama al 024 si tienes pensamientos de hacerte daño o necesitas apoyo emocional urgente.\n- Contacta con tu centro de salud para solicitar derivación a salud mental.\n- Prioriza tu cuidado integral entendiendo que cuerpo y mente funcionan como un todo."
+  }
+ ],
+ "faq": [
+  {
+   "p": "¿Cuántos litros de agua hay que beber al día exactamente?",
+   "r": "Las guías oficiales recomiendan unos dos litros de agua total diaria para mujeres y dos litros y medio para hombres. Alrededor del veinte por ciento proviene de los alimentos sólidos, por lo que la cantidad a beber se sitúa entre uno coma seis y dos litros."
+  },
+  {
+   "p": "¿El café, el té y las infusiones cuentan como agua para la hidratación?",
+   "r": "Sí, las bebidas sin alcohol a base de agua contribuyen a tu hidratación diaria. No obstante, el agua pura debe ser siempre la fuente principal, evitando abusar de azúcares añadidos o excitantes en exceso."
+  },
+  {
+   "p": "¿Cómo puedo saber si estoy bebiendo poca agua durante el día?",
+   "r": "El indicador más claro es el color de tu orina, que debe ser amarillo claro. Si es oscura, acompañada de sequedad en la boca, dolor de cabeza o sensación de fatiga, tu cuerpo te está pidiendo más líquidos."
+  },
+  {
+   "p": "Si no tengo sed, ¿debo obligarme a beber agua igualmente?",
+   "r": "No es necesario forzarse a beber grandes cantidades sin gana, pero sí es útil establecer pequeñas rutinas con la calculadora para asegurar un aporte constante, especialmente en personas mayores o durante los meses de calor."
+  },
+  {
+   "p": "La calculadora me pide datos de ejercicio, ¿qué cuenta como actividad física?",
+   "r": "Se considera ejercicio moderado cualquier movimiento que eleve tu ritmo cardíaco y te haga sudar ligeramente, como caminar a paso ligero, correr, montar en bicicleta o entrenar fuerza en el gimnasio durante al menos treinta minutos."
+  }
+ ],
+ "fuentes": [
+  "Autoridad Europea de Seguridad Alimentaria EFSA",
+  "Organización Mundial de la Salud OMS",
+  "Ministerio de Sanidad del Gobierno de España"
+ ],
+ "fecha": "2026-11-09"
+}

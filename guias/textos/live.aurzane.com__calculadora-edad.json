@@ -1,0 +1,55 @@
+{
+ "titulo": "Calculadora de edad exacta: descubre el valor del tiempo",
+ "intro": "Desde el punto de vista de la psicología del bienestar, nuestra relación con el tiempo y con la forma en que medimos nuestra propia biografía influye directamente en nuestro equilibrio emocional. Saber con precisión cuántos días llevamos transitados en este mundo no es una simple curiosidad matemática, sino una herramienta para conectar con nuestra propia historia vital.\n\nEn AURZANE sabemos que reflexionar sobre el paso de los años ayuda a dar perspectiva a las etapas de cambio personal, estudio o gestión de proyectos vitales. Esta guía te explica cómo interpretar las métricas temporales de nuestra herramienta gratuita para reconciliarte con tu propio ritmo evolutivo sin prisa ni presión.",
+ "alt": "Persona sonriendo frente a una pantalla digital mientras utiliza la calculadora de edad exacta de AURZANE LIVE.",
+ "secciones": [
+  {
+   "titulo": "¿Cómo funciona la fórmula de la edad exacta?",
+   "texto": "Para calcular el tiempo transcurrido desde tu nacimiento, nuestra herramienta desglosa la operación en bloques temporales muy sencillos basados en el calendario gregoriano estándar que utilizamos en España.\n- Primero, calcula los años completos transcurridos restando el año actual al de tu nacimiento, ajustando el valor si tu cumpleaños de este año todavía no ha llegado.\n- Después, mide los meses y días exactos que han pasado desde ese último aniversario.\n- Por último, multiplica los años por 365,25 días para estimar el total acumulado incluyendo los años bisiestos."
+  },
+  {
+   "titulo": "Cómo utilizar la herramienta para planificar tus metas",
+   "texto": "Conocer los días exactos que llevas vividos te permite estructurar tus objetivos personales y profesionales con mayor realismo y compasión hacia ti mismo. A veces medimos nuestra valía solo en grandes bloques de años, olvidando el valor de los pequeños progresos diarios.\n- Selecciona tu fecha de nacimiento real en el selector de la interfaz.\n- Utiliza la opción de cambiar la fecha de referencia si necesitas saber cuántos años tenías en un momento clave del pasado o cuántos tendrás en un hito futuro.\n- Guarda el resultado en formato PDF si deseas incluirlo en tu diario de desarrollo personal o análisis de finanzas y proyectos a largo plazo."
+  },
+  {
+   "titulo": "Ejemplos prácticos para entender los hitos temporales",
+   "texto": "Para visualizar mejor cómo se acumulan los días en nuestra biografía, resulta útil observar algunos ejemplos cotidianos que maneja nuestra calculadora.\n- Si una persona cumple 27 años y 4 meses, la herramienta desglosa automáticamente que ya ha superado la cifra redonda de los 10.000 días de vivencias y aprendizajes.\n- En el caso de haber nacido en un año bisiesto, concretamente el 29 de febrero, los cálculos se ajustan automáticamente al 1 de marzo durante los años comunes para mantener la coherencia legal y cronológica.\n- Estos detalles evitan confusiones habituales al rellenar formularios oficiales o calcular plazos legales entre fechas concretas."
+  },
+  {
+   "titulo": "Límites del cálculo cronológico frente a la madurez psicológica",
+   "texto": "Es fundamental recordar que la edad cronológica expresada en días o años es solo un marcador formal y administrativo, muy alejado de la verdadera madurez emocional o psicológica de cada individuo.\n- Cada persona atraviesa los ciclos vitales a un ritmo único influido por su contexto familiar, social y sus propias experiencias de aprendizaje.\n- No existe una única forma correcta de cumplir objetivos a una edad determinada, por lo que comparar nuestros días vividos con los de los demás suele generar una presión innecesaria.\n- La psicología clínica recuerda que el bienestar depende de la calidad de los vínculos y la gestión del presente, más que del número exacto de aniversarios celebrados."
+  },
+  {
+   "titulo": "Cuándo pedir apoyo psicológico ante la angustia por el paso del tiempo",
+   "texto": "A veces, al calcular los años o enfrentarnos a hitos como un cumpleaños significativo, podemos sentir una intensa sensación de vacío, ansiedad o miedo ante el envejecimiento y la finitud de la vida.\n- Si esta preocupación por el paso del tiempo interfiere de forma continuada en tu sueño, tu trabajo o tus relaciones personales, es aconsejable consultar con un profesional de la psicología.\n- Un espacio terapéutico ayuda a procesar los duelos vitales y a rediseñar una perspectiva de futuro más adaptativa y serena.\n- Si en algún momento experimentas ideas de hacerte daño o desesperanza extrema, recuerda que en España dispones de ayuda inmediata y confidencial llamando al teléfono 024 de atención a la conducta suicida."
+  }
+ ],
+ "faq": [
+  {
+   "p": "¿Por qué la calculadora usa una media de 365,25 días por año?",
+   "r": "Utilizamos esta cifra decimal para compensar de forma matemática el efecto de los años bisiestos que ocurren cada cuatro años. De esta manera, el cálculo total de días vividos ofrece un resultado ajustado a la realidad del calendario astronómico."
+  },
+  {
+   "p": "¿Qué ocurre si nací un 29 de febrero?",
+   "r": "Durante los años que no son bisiestos y no tienen este día en el calendario, la herramienta toma de forma automática el 1 de marzo como fecha de referencia para tu cumpleaños. Esto respeta los criterios administrativos habituales en España."
+  },
+  {
+   "p": "¿Puedo saber qué edad tenía en una fecha pasada?",
+   "r": "Sí, solo tienes que modificar la fecha de referencia en la calculadora para que el sistema compute exactamente los años, meses y días transcurridos hasta ese día concreto en lugar de usar la fecha de hoy."
+  },
+  {
+   "p": "¿Se guardan mis datos personales al usar la herramienta?",
+   "r": "No, la calculadora funciona de manera local y segura sin almacenar ningún tipo de información sobre tu fecha de nacimiento en servidores externos. Tus datos privados permanecen completamente protegidos."
+  },
+  {
+   "p": "¿Para qué sirve conocer los días exactos vividos?",
+   "r": "A nivel de desarrollo personal y autoconocimiento, aporta una perspectiva diferente sobre el tiempo transcurrido y ayuda a valorar las etapas superadas con mayor claridad y motivación."
+  }
+ ],
+ "fuentes": [
+  "Organización Mundial de la Salud",
+  "Ministerio de Sanidad del Gobierno de España",
+  "Colegio Oficial de Psicólogos"
+ ],
+ "fecha": "2026-11-09"
+}

@@ -1,0 +1,55 @@
+{
+ "titulo": "Calculadora de días entre fechas: Guía práctica",
+ "intro": "Calcular con precisión el tiempo que transcurre entre dos momentos de nuestra vida es una tarea más habitual de lo que parece. Ya sea para organizar unas próximas vacaciones, calcular el plazo de entrega de un trabajo o medir el tiempo que falta para un examen importante, conocer los días exactos nos ayuda a gestionar mejor nuestras prioridades.\n\nEn esta guía de AURZANE exploramos por qué medir el tiempo de forma concreta beneficia nuestra salud mental, reduciendo la incertidumbre y facilitando la planificación personal. Veremos cómo sacar el máximo partido a nuestra herramienta y por qué la gestión temporal es clave para el bienestar cotidiano.",
+ "alt": "Persona utilizando una calculadora digital de días entre fechas en su ordenador portátil sobre una mesa de trabajo ordenada.",
+ "secciones": [
+  {
+   "titulo": "¿Cómo funciona el cálculo temporal en nuestra herramienta?",
+   "texto": "Para entender el resultado de cualquier contador de tiempo, conviene repasar la lógica matemática que hay detrás. Nuestra calculadora se basa en el calendario gregoriano, el estándar civil utilizado en la mayor parte del mundo. El proceso consiste en restar el valor numérico de la fecha inicial al de la fecha final, ajustando los meses de distinta duración y los años bisiestos.\n\nLa herramienta desglosa automáticamente este periodo en diferentes unidades para que te resulte útil según tus necesidades:\n- Días naturales: todos los días del calendario, sin excepción.\n- Días laborables: de lunes a viernes, ideal para trámites administrativos o plazos profesionales.\n- Semanas y meses: para tener una perspectiva global de estancias largas o proyectos a medio plazo."
+  },
+  {
+   "titulo": "La importancia psicológica de medir el tiempo con claridad",
+   "texto": "Desde el punto de vista de la psicología aplicada, la incertidumbre temporal es una de las principales fuentes de estrés y ansiedad en el día a día. Cuando no sabemos exactamente cuánto falta para un evento o cuánto margen tenemos para realizar una tarea, nuestro cerebro tiende a magnificar la dificultad, imaginando escenarios peor de lo que son.\n\nSaber el número exacto de días entre dos fechas actúa como un ancla cognitiva. Nos devuelve la sensación de control y nos permite fragmentar grandes objetivos en metas diarias más pequeñas y manejables. Esta estrategia es fundamental tanto en el ámbito académico como en la gestión de proyectos personales."
+  },
+  {
+   "titulo": "Ejemplos prácticos para organizar tu agenda y tus plazos",
+   "texto": "Para aprovechar al máximo esta calculadora, veamos algunos casos cotidianos en los que resulta especialmente útil:\n- Opositores y estudiantes: calcular los días exactos hasta el examen permite diseñar un calendario de estudio realista, asignando temas concretos a cada semana.\n- Viajes y estancias: si vas a alquilar un alojamiento o planificar un viaje, contar correctamente los días naturales evita confusiones con las reservas y las cancelaciones.\n- Metas financieras: medir el tiempo hasta fin de mes o hasta una fecha de ahorro ayuda a visualizar el esfuerzo diario necesario para alcanzar tus objetivos económicos."
+  },
+  {
+   "titulo": "Límites del cálculo automático y excepciones a tener en cuenta",
+   "texto": "Aunque las matemáticas son exactas, la realidad social y administrativa tiene matices que ninguna herramienta digital puede adivinar por completo. Al utilizar nuestra calculadora, es importante recordar sus limitaciones principales:\n- Los días laborables que ofrece la herramienta excluyen los fines de semana, pero no los días festivos nacionales, autonómicos o locales, que varían según tu municipio.\n- La inclusión o no del último día depende de la naturaleza de tu trámite; por ejemplo, en los plazos legales a menudo se cuenta de forma distinta a una estancia hotelera.\n- Los cambios horarios estacionales no afectan al cómputo por días completos, pero conviene recordarlos para eventos específicos."
+  },
+  {
+   "titulo": "Consejos para reducir la ansiedad por el paso del tiempo",
+   "texto": "A veces, ver que quedan muy pocos días para un evento importante o demasiados para una meta lejana puede generar agobio. Para mantener un equilibrio saludable, te recomendamos aplicar estas pautas sencillas:\n- Concéntrate en el bloque actual: en lugar de mirar los meses que faltan, utiliza la vista por semanas o días para centrarte solo en el momento presente.\n- Establece hitos intermedios: divide los grandes plazos en pequeñas recompensas cada pocos días para mantener la motivación alta.\n- Si sientes que la carga temporal o la presión te superan y necesitas apoyo emocional en España, recuerda que tienes a tu disposición recursos gratuitos y confidenciales como la línea 024 de atención a la conducta suicida."
+  }
+ ],
+ "faq": [
+  {
+   "p": "¿Se deben contar el primer y el último día en el cálculo?",
+   "r": "Por defecto, la calculadora mide la diferencia exacta entre las fechas, sin incluir la última jornada. Sin embargo, puedes marcar la casilla correspondiente si necesitas sumar ambos extremos, algo muy útil para estancias en hoteles o plazos que exigen incluir el día de finalización."
+  },
+  {
+   "p": "¿La opción de días laborables incluye los festivos locales?",
+   "r": "No. El contador de días laborables discrimina únicamente los fines de semana, es decir, calcula de lunes a viernes. Los días festivos varían enormemente según la comunidad autónoma y el municipio, por lo que debes descontarlos de forma manual si tu trámite lo requiere."
+  },
+  {
+   "p": "¿Puedo utilizar esta herramienta para hacer una cuenta atrás?",
+   "r": "Sí, perfectamente. Solo tienes que seleccionar la fecha de hoy en el primer campo y el día del evento que estás esperando en el segundo campo. Obtendrás de forma inmediata los días exactos que faltan para la fecha señalada."
+  },
+  {
+   "p": "¿Qué diferencia hay entre días naturales y días hábiles?",
+   "r": "Los días naturales engloban todos los días del calendario sin excepción, incluidos sábados, domingos y festivos. Los días hábiles o laborables, en cambio, suelen excluir los fines de semana y se utilizan habitualmente para plazos administrativos y judiciales."
+  },
+  {
+   "p": "¿El cálculo tiene en cuenta los años bisiestos?",
+   "r": "Sí, la herramienta emplea el calendario gregoriano oficial, por lo que reconoce y calcula correctamente los años bisiestos añadiendo de forma automática el 29 de febrero cuando el intervalo lo incluye."
+  }
+ ],
+ "fuentes": [
+  "Real Academia Española (Normas de cronología y calendario)",
+  "Organización Mundial de la Salud (Guías sobre bienestar y gestión del estrés)",
+  "Ministerio de la Presidencia, Justicia y Relaciones con las Cortes (Cómputo de plazos administrativos en España)"
+ ],
+ "fecha": "2026-11-09"
+}

@@ -1,0 +1,56 @@
+{
+ "titulo": "Cuánto te va a costar tu reforma , partida a partida",
+ "intro": "Afrontar una reforma en casa genera ilusión pero también una notable incertidumbre económica debido a los imprevistos habituales y a la dificultad de comparar presupuestos dispares. Desde AURZANE BUILD te ofrecemos esta guía complementaria a nuestra calculadora para que aprendas a desglosar cada coste real y a gestionar el proceso sin sobresaltos financieros.\n\nEl objetivo de este contenido no es darte una cifra exacta, ya que cada vivienda es un mundo, sino dotarte de criterio técnico y financiero para que tomes el control de la obra. Analizamos cómo funciona nuestra herramienta de cálculo, qué partidas ocultan los mayores sobrecostes y cómo proteger tu salud mental durante el proceso.",
+ "alt": "Plano técnico y muestras de materiales de construcción sobre una mesa de madera lista para una reforma.",
+ "secciones": [
+  {
+   "titulo": "Cómo funciona la fórmula de nuestra calculadora y cómo interpretarla",
+   "texto": "Nuestra calculadora de AURZANE BUILD se basa en una fórmula sencilla pero muy precisa que multiplica los metros útiles de tu vivienda por el precio medio de mercado actual según la calidad elegida. A ese subtotal se le suma automáticamente una partida del diez por ciento destinada a imprevistos y el impuesto correspondiente.\n\nPara usarla bien, introduce los metros reales de suelo pisable y sé sincero con el estado inicial de la vivienda; si las tuberías tienen más de treinta años, el coste base se disparará inevitablemente en la fase de demolición.\n- Multiplica la superficie útil por el módulo de calidad básico, medio o alto.\n- Añade el margen de imprevistos para evitar sorpresas financieras en mitad de la obra.\n- Aplica el tipo impositivo correcto según si es tu vivienda habitual o un inmueble destinado al alquiler."
+  },
+  {
+   "titulo": "El impacto psicológico de una obra en casa y cómo gestionarlo",
+   "texto": "Vivir una reforma o estar expuesto al polvo, al ruido y a la pérdida de intimidad genera un estrés considerable que afecta al bienestar diario y a la convivencia familiar. Es muy habitual experimentar irritabilidad, fatiga decisional ante tantos acabados por elegir y ansiedad por el control del dinero.\n\nPara cuidar tu salud mental durante estos meses, te recomendamos establecer una rutina de desconexión fuera de la zona de obra y designar un único interlocutor con el jefe de obra. Si sientes que la situación te supera y la ansiedad interfiere gravemente con tu descanso o tus relaciones, recuerda que en España dispones de recursos gratuitos y confidenciales de apoyo psicológico.\n- Si experimentas un malestar emocional muy intenso, ansiedad desbordante o pensamientos autolesivos, puedes llamar de forma gratuita al teléfono 024 de atención a la conducta suicida.\n- Apóyate en profesionales sanitarios de la psicología si notas que el estrés de la casa afecta a tu bienestar general."
+  },
+  {
+   "titulo": "Desglose por partidas: dónde se va realmente el dinero",
+   "texto": "Cuando analizas un presupuesto detallado, comprobarás que los acabados visibles como la pintura o los sanitarios suponen un porcentaje menor en comparación con lo que no se ve. Las instalaciones de fontanería, electricidad y la albañilería estructural concentran la mayor parte del esfuerzo económico de cualquier proyecto.\n\nUna cocina y un baño completos exigen rozas, impermeabilizaciones y boletines oficiales que encarecen el metro cuadrado frente a un dormitorio o un salón. Por eso, recortar en aislamiento o en la calidad de las tuberías para gastar en grifería de diseño es un error técnico que lamentarás a medio plazo."
+  },
+  {
+   "titulo": "Límites de la herramienta y factores que alteran el presupuesto",
+   "texto": "Ninguna calculadora digital puede sustituir la visita in situ de un arquitecto técnico o un contratista de confianza que compruebe el estado real de los muros de carga y la plana de los techos. Nuestra herramienta ofrece una estimación de mercado orientativa pero no constituye un presupuesto vinculante ni un proyecto de ejecución.\n\nExisten varios factores geográficos y estructurales que alteran notablemente el resultado final:\n- La ubicación del inmueble, ya que los costes de mano de obra y transporte varían significativamente entre grandes ciudades y zonas rurales.\n- La accesibilidad a la vivienda, siendo más costoso subir materiales a pisos altos sin ascensor.\n- La existencia de elementos protegidos o normativas urbanísticas restrictivas en edificios antiguos."
+  },
+  {
+   "titulo": "Pasos recomendados antes de firmar cualquier contrato de obra",
+   "texto": "Antes de entregar la primera señal económica a una empresa constructora, debes exigir una serie de garantías documentales que protejan tus derechos como consumidor y eviten los abandonos de obra o los incrementos de última hora.\n- Solicita siempre un desglose por capítulos y mediciones reales en lugar de un precio único global.\n- Comprueba que la empresa dispone de seguro de responsabilidad civil vigente.\n- Asegúrate de que los plazos de ejecución y las penalizaciones por retraso queden reflejados por escrito en el contrato."
+  }
+ ],
+ "faq": [
+  {
+   "p": "¿Cuánto cuesta de media una reforma integral en España?",
+   "r": "Una reforma integral de calidad media se sitúa habitualmente entre los setecientos y los novecientos cincuenta euros por metro cuadrado. El importe final depende en gran medida de la ciudad, el estado previo de las instalaciones y los materiales elegidos."
+  },
+  {
+   "p": "¿Qué tipo de IVA se aplica a una reforma de vivienda?",
+   "r": "Se aplica un tipo reducido del diez por ciento siempre que se trate de una vivienda destinada a uso particular, el contratista aporte los materiales que no superen el cuarenta por ciento de la base imponible y hayan pasado al menos dos años desde su construcción."
+  },
+  {
+   "p": "¿Es obligatorio pedir licencia de obra al ayuntamiento?",
+   "r": "Sí, cualquier intervención que afecte a la distribución interior mediante derribo de tabiques, modificación de fachadas o renovación integral de instalaciones requiere una licencia urbanística o una declaración responsable según la normativa local."
+  },
+  {
+   "p": "¿Cuánto tiempo dura de media la reforma de un piso?",
+   "r": "Una reforma integral de un piso de tamaño medio suele prolongarse entre dos y cuatro meses, a lo que debes sumar las semanas previas de tramitación de licencias y la elección de proveedores y materiales."
+  },
+  {
+   "p": "¿Qué debo hacer si la obra sufre retrasos o surgen sobrecostes imprevistos?",
+   "r": "Revisa el contrato firmado para comprobar las cláusulas de penalización y plazos. Habla de forma transparente con el responsable para exigir un anexo presupuestado y firmado antes de aceptar cualquier gasto adicional que no estuviera previsto."
+  }
+ ],
+ "fuentes": [
+  "Ley 37/1992 del Impuesto sobre el Valor Añadido",
+  "Código Técnico de la Edificación (CTE)",
+  "Instituto Nacional de Estadística (INE)",
+  "Ministerio de Vivienda y Agenda Urbana"
+ ],
+ "fecha": "2026-11-09"
+}
