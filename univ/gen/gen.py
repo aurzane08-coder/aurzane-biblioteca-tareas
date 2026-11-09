@@ -303,6 +303,39 @@ try: FICHAS_IA = json.load(open(os.path.join(DATOS, 'fichas_ia.json'), encoding=
 except Exception: FICHAS_IA = {}
 
 
+from acceso import acceso as _acceso, ELEGIR as _ELEGIR
+
+
+def bloque_auto(u, orden_g, grupos):
+    """Texto propio de cada ficha a partir de sus datos y del sistema universitario de su país (sin datos inventados)."""
+    p, n = u['pais'], u['n']
+    lugar = ', '.join(x for x in [u['ciudad'], u['region']] if x) or p
+    tipo = (u['tipo_txt'] or '').lower()
+    ies = (u['tipo_ies'] or 'institución de educación superior').lower()
+    palabra = 'grados' if p == 'España' else 'carreras'
+    top = [g for g in orden_g if g and g not in ('Otras', 'Grado', 'Posgrado', 'Máster', 'Doctorado', 'Técnico y tecnológico superior', 'Tecnológico', 'Técnico')][:3]
+    masc = re.match(r'(instituto|conservatorio|centro|colegio|seminario|campus)', ies) or 'college' in ies
+    tipo_g = (re.sub(r'a$', 'o', tipo) if masc and tipo in ('pública', 'privada', 'cofinanciada') else tipo)
+    intro = f'{u["nombre"]} es {"un" if masc else "una"} {ies}' + (f' {tipo_g}' if tipo_g and tipo_g != '-' else '') + f' con sede en {lugar}.'
+    if n:
+        intro += (f' En el catálogo de AURZANE {"figura 1 " + palabra[:-1] + (" suyo" if palabra == "grados" else " suya") if n == 1 else "figuran " + fmt(n) + " " + palabra + (" suyos" if palabra == "grados" else " suyas")}'
+                  + ((f', sobre todo en las áreas de {", ".join(top[:-1])} y {top[-1]}' if len(top) > 1 else f', en el área de {top[0]}') if top else '') + '.')
+        intro += f' Puedes buscar dentro de la lista por nombre o filtrar por área para ver todas las opciones.'
+    else:
+        intro += f' Todavía no tenemos su listado de {palabra}; puedes consultarlo en su web oficial.'
+    if u['extra'].get('anio'): intro += f' Fue creada en {u["extra"]["anio"]}.'
+    if u['extra'].get('en_linea'): intro += ' Ofrece estudios en línea, lo que permite estudiar sin mudarse a la ciudad.'
+    acc = ''.join(f'<p>{e(x)}</p>' for x in _acceso(p))
+    faq = [(f'¿{u["nombre"]} es pública o privada?', f'Según los datos oficiales que recogemos, es una institución {tipo}.' if tipo and tipo != '-' else 'No consta en nuestros datos; consúltalo en su web oficial.'),
+           (f'¿Dónde está {u["nombre"]}?', f'Su sede está en {lugar}.' + (' También ofrece estudios en línea.' if u['extra'].get('en_linea') else '')),
+           (f'¿Qué se puede estudiar en {u["nombre"]}?', (f'En nuestro catálogo tiene {fmt(n)} {palabra if n > 1 else palabra[:-1]}' + (f', con más oferta en {", ".join(top)}' if top and n > 1 else '') + '. La lista completa está más arriba.') if n else 'Consulta su oferta completa en su web oficial.'),
+           (f'¿Cómo se entra a la universidad en {p}?', _acceso(p)[0])]
+    faq_h = ''.join(f'<details><summary>{e(q)}</summary><p>{e(r)}</p></details>' for q, r in faq)
+    return (f'<section class="card guia-auto"><h2>Sobre {e(u["nombre"])}</h2><p>{e(intro)}</p>'
+            f'<h3>Cómo es el acceso a la universidad en {e(p)}</h3>{acc}<h3>Cómo elegir carrera</h3><p>{e(_ELEGIR)}</p>'
+            f'<h3>Preguntas frecuentes</h3>{faq_h}</section>')
+
+
 def bloque_ia(url):
     g = FICHAS_IA.get(url)
     if not g: return ''
@@ -582,6 +615,7 @@ def pagina_pais(p):
 </div></section>
 {panel_listado(p, us)}
 <div class="wrap">{ciudades_html}{todas}
+<section class="card guia-auto" style="margin-top:24px"><h2>Cómo es el acceso a la universidad en {e(p)}</h2>{''.join('<p>' + e(x) + '</p>' for x in _acceso(p))}<h3>Cómo elegir universidad y carrera</h3><p>{e(_ELEGIR)}</p></section>
 <p class="fuente">{fuente_pais(p)}</p></div>
 </main>''' + pie()
     escribir(f'{PSLUG[p]}/index.html', h)
@@ -716,7 +750,7 @@ def ficha(u, vecinas):
 <ul class="meta">{''.join(meta)}</ul>{f'<p class="lead" style="margin-top:14px">{e(u["descripcion"])}</p>' if u["descripcion"] else ''}
 <div class="acc">{f'<a class="btn btn-luz" href="{e(u["web"])}" target="_blank" rel="noopener nofollow">Web oficial ↗</a>' if u["web"] else ''}<button type="button" class="btn btn-claro" data-guardar data-id="{ps}/{u["slug"]}" data-n="{e(u["nombre"])}" data-url="{BASE}{ps}/{u["slug"]}/" aria-pressed="false">☆ Guardar</button>{'<a class="btn btn-claro" href="#carreras">Ver ' + palabra + '</a>' if n else ''}</div>
 {cred}</div></section>
-<div class="wrap"><div class="ficha"><div>{bloque_c}{bloque_ia(url)}</div>
+<div class="wrap"><div class="ficha"><div>{bloque_c}{bloque_ia(url) or bloque_auto(u, orden_g, grupos)}</div>
 <aside><section class="card"><h2>Datos</h2>{datos_html}</section>{cta}{cerca}</aside></div>
 <p class="fuente">{fuente_pais(p)} </p>
 <div class="reportar"><span>¿Algún dato no es correcto o un enlace no funciona?</span><button type="button" class="btn btn-borde" data-reportar data-tipo="dato" data-ref="{e(u["nombre"] + " (" + p + ")")}">⚑ Reportar un error</button></div></div>
