@@ -96,6 +96,16 @@ res = {'fecha': HOY.isoformat(), 'conectado': True, 'periodo': [ini, fin], 'clic
        'consultas': [[q, a[0], a[1], pos(a)] for q, a in sorted(por_q.items(), key=lambda z: -z[1][1])[:30]],
        'paginas': [[p, a[0], a[1], pos(a)] for p, a in sorted(por_p.items(), key=lambda z: -z[1][0] * 1000 - z[1][1])[:30]]}
 
+# países desde los que llegan las búsquedas
+paises = []
+for s_ in sitios:
+    try:
+        r = pedir('https://www.googleapis.com/webmasters/v3/sites/' + urllib.parse.quote(s_, safe='') + '/searchAnalytics/query',
+                  {'startDate': ini, 'endDate': fin, 'dimensions': ['country'], 'rowLimit': 60}, AUT)
+        paises += [[x['keys'][0].upper(), x['clicks'], x['impressions'], round(x['position'], 1)] for x in r.get('rows', [])]
+    except Exception as e: print('paises', e)
+res['paises'] = sorted(paises, key=lambda z: -z[2])[:30]
+
 # ---------------------------------------------------------------- 2. títulos y descripciones
 cambios = leer('cambios.json', [])
 hace45 = (HOY - datetime.timedelta(days=45)).isoformat()
