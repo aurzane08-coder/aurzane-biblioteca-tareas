@@ -258,7 +258,8 @@ def pagina(t):
         {'@type': 'WebApplication', 'name': t['name'], 'url': url, 'applicationCategory': 'HealthApplication', 'operatingSystem': 'Web', 'inLanguage': 'en', 'isAccessibleForFree': True,
          'offers': {'@type': 'Offer', 'price': '0', 'priceCurrency': 'EUR'}, 'publisher': {'@type': 'Organization', 'name': 'AURZANE', 'url': 'https://aurzane.com/'}},
         {'@type': 'FAQPage', 'mainEntity': [{'@type': 'Question', 'name': a, 'acceptedAnswer': {'@type': 'Answer', 'text': b}} for a, b in faq]}]}
-    alt = f'<link rel="alternate" hreflang="en" href="{url}"><link rel="alternate" hreflang="es" href="{t["es"]}"><link rel="alternate" hreflang="x-default" href="{t["es"]}">'
+    PT = {'anxiety-test-gad-7': 'teste-de-ansiedade-gad-7', 'depression-test-phq-9': 'teste-de-depressao-phq-9', 'wellbeing-test-who-5': 'teste-de-bem-estar-who-5'}
+    alt = f'<link rel="alternate" hreflang="en" href="{url}">' + (f'<link rel="alternate" hreflang="pt-BR" href="https://mind.aurzane.com/pt/{PT[t["slug"]]}/">' if t['slug'] in PT else '') + f'<link rel="alternate" hreflang="es" href="{t["es"]}"><link rel="alternate" hreflang="x-default" href="{t["es"]}">'
     h = HEAD.format(title=E(t['name'] + ': free online questionnaire | AURZANE'), desc=E(t['desc']), url=url, alt=alt, og=t['es'] + 'og.jpg',
                     ld=json.dumps(ld, ensure_ascii=False).replace('</', '<\\/'), css=CSS, base=BASE, es=t['es'])
     h += f'''<main class="w">

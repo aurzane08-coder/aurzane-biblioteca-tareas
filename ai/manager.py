@@ -759,9 +759,13 @@ GUIAS_A = [('Cómo calmar la ansiedad en el momento: técnicas con respaldo cien
            ('Cuántas horas hay que dormir según tu edad', 'sueno', 'live'), ('Insomnio: qué hacer cuando no puedes dormir', 'sueno', 'live'),
            ('Cómo elegir carrera si no sabes qué estudiar', 'vocacional', 'nexus'), ('Tests vocacionales: qué miden y para qué sirven de verdad', 'vocacional', 'nexus')]
 # temas que la gente busca en Google y donde AURZANE sale lejos (seo/seo.py, Search Console): van primero
+# cada tema puede ir dirigido a un país (motor de crecimiento por países de seo/seo.py)
+PAIS_GUIA = {}
 try:
-    GUIAS_A = [(t['titulo'], t['test'] if t.get('test') in TESTS_A else '', t['mundo']) for t in json.load(open(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'seo', 'temas.json'), encoding='utf-8'))][::-1] + GUIAS_A
-except Exception: pass
+    _temas_seo = json.load(open(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'seo', 'temas.json'), encoding='utf-8'))
+    PAIS_GUIA = {t['titulo']: t for t in _temas_seo if t.get('pais')}
+    GUIAS_A = [(t['titulo'], t['test'] if t.get('test') in TESTS_A else '', t['mundo']) for t in _temas_seo][::-1] + GUIAS_A
+except Exception: _temas_seo = []
 def caja_test(clave):
     if clave not in TESTS_A: return ''
     u, n = TESTS_A[clave]
@@ -806,17 +810,20 @@ def pagina_articulo(a):
 _ah = ESTADO.get('art_dia', {}) if isinstance(ESTADO.get('art_dia'), dict) else {}
 _ah = {HOY: _ah.get(HOY, {'hechos': 0, 'intentos': 0})}; ESTADO['art_dia'] = _ah
 # hasta 2 artículos al día; si la IA falla (cupo, nota baja) se reintenta en la siguiente revisión, máximo 6 intentos al día
-if (os.environ.get('GEMINI_API_KEY') or os.environ.get('GITHUB_TOKEN')) and _ah[HOY]['hechos'] < 2 and _ah[HOY]['intentos'] < 6:
+# 2 artículos al día, y hasta 2 más si hay temas pendientes de lo que la gente busca en Google (por país)
+_usados_prev = {a.get('fuente_id') for a in art_hechos} | {a.get('fuente_id') for a in autodesc if a.get('tipo') == 'articulo'}
+LIMITE_A = 2 + min(2, sum(1 for t in _temas_seo if 'guia-' + hashlib.md5(t['titulo'].encode()).hexdigest()[:8] not in _usados_prev))
+if (os.environ.get('GEMINI_API_KEY') or os.environ.get('GITHUB_TOKEN')) and _ah[HOY]['hechos'] < LIMITE_A and _ah[HOY]['intentos'] < LIMITE_A * 3:
     usados_a = {a.get('fuente_id') for a in art_hechos} | {a.get('fuente_id') for a in autodesc if a.get('tipo') == 'articulo'}
     guias_libres = [('guia', {'id': 'guia-' + hashlib.md5(t.encode()).hexdigest()[:8], 'titulo': t, 'test': k, 'mundo': m}) for t, k, m in GUIAS_A
                     if 'guia-' + hashlib.md5(t.encode()).hexdigest()[:8] not in usados_a]
     otras_a = ([('estudio', x) for x in aprob if x['tipo'] == 'estudio' and x['id'] not in usados_a and x.get('resumen')][:2] +
                [('curiosidad', x) for x in curios_ok if x['id'] not in usados_a][:1])
     # el primer artículo del día sale de un estudio; el segundo es una guía práctica ligada a un test
-    fuentes_a = (otras_a + guias_libres[:2]) if _ah[HOY]['hechos'] == 0 else (guias_libres[:2] + otras_a)
+    fuentes_a = (otras_a + guias_libres[:4]) if _ah[HOY]['hechos'] == 0 else (guias_libres[:4] + otras_a)
     titulos_previos = '; '.join(a['titulo'] for a in art_hechos[:30])
     for clase, f in fuentes_a:
-        if _ah[HOY]['intentos'] >= 6 or _ah[HOY]['hechos'] >= 2: break
+        if _ah[HOY]['intentos'] >= LIMITE_A * 3 or _ah[HOY]['hechos'] >= LIMITE_A: break
         _ah[HOY]['intentos'] += 1
         enlace_f = f'https://aurzane.com/biblioteca/recientes/{f["id"]}/' if clase == 'estudio' else (f.get('url') or '')
         base = (f'Estudio publicado en acceso abierto:\nTítulo: {f["titulo"]}\nAutores: {f.get("autores", "")}\nRevista: {f.get("editorial", "")} ({f.get("anio", "")})\nResumen: {f.get("resumen", "")[:2500]}'
@@ -825,11 +832,15 @@ if (os.environ.get('GEMINI_API_KEY') or os.environ.get('GITHUB_TOKEN')) and _ah[
                  f'El mundo es {f["mundo"]}. ' + (f'Menciona de forma natural, una sola vez, que en AURZANE hay un test gratuito para orientarse ({TESTS_A[f["test"]][1]}).' if f.get('test') in TESTS_A else ''))
                 if clase == 'guia' else f'Curiosidad verificada: {f["titulo"]}. {f.get("resumen", "")} Fuente: {f.get("fuente", "")}')
         if clase == 'guia': enlace_f = ''
-        r = gemini_base('Eres redactor de AURZANE, una web de divulgación de psicología dirigida por un psicólogo clínico. Escribe un artículo original en español de España, '
+        _pg = PAIS_GUIA.get(f.get('titulo')) if clase == 'guia' else None
+        _variante = (f'español neutro y natural para lectores de {_pg["pais_nombre"]}, con los términos, instituciones y exámenes propios de ese país cuando vengan al caso (sin inventar datos concretos como fechas o precios)'
+                     if _pg and _pg.get('pais_nombre') and _pg.get('pais') != 'ESP' else 'español de España')
+        _crisis = (_pg or {}).get('crisis') or 'Si el tema toca malestar intenso, añade que puedes llamar al 024 (España). '
+        r = gemini_base('Eres redactor de AURZANE, una web de divulgación de psicología dirigida por un psicólogo clínico. Escribe un artículo original en ' + _variante + ', '
                         'cálido y riguroso, de 600 a 900 palabras, sin rayas largas, sin diagnosticar ni recomendar medicación, para personas sin formación. '
                         'Usa SOLO lo que dice la fuente y conocimiento muy establecido; no inventes cifras. Estructura en Markdown: introducción, 3 o 4 secciones con "## " '
                         'y una sección final "## Qué puedes hacer hoy" con 3 ideas prácticas en lista. No incluyas la fuente en el cuerpo. '
-                        'Si el tema toca malestar intenso, añade que puedes llamar al 024 (España). ' + base +
+                        + _crisis + base +
                         '\nElige el mundo de AURZANE que corresponde por tema: ' + '; '.join(f'{k}: {v[2]}' for k, v in MUNDOS_A.items()) +
                         ('\nNo repitas temas ya publicados: ' + titulos_previos if titulos_previos else '') +
                         '\nResponde SOLO con JSON: {"titulo": "<máx 70 caracteres>", "resumen": "<máx 155 caracteres>", "slug": "<palabras-con-guiones>", '

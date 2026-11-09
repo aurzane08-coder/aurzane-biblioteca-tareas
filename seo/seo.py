@@ -180,6 +180,48 @@ if lejos:
     for t in (j if isinstance(j, list) else []):
         if isinstance(t, dict) and t.get('consulta') in dict(lejos) and t.get('mundo') in ('mind', 'live', 'learn', 'nexus', 'build') and 15 <= len(t.get('titulo', '')) <= 100:
             temas.append({'consulta': t['consulta'], 'titulo': t['titulo'].replace('—', ','), 'mundo': t['mundo'], 'test': t.get('test') or '', 'fecha': HOY.isoformat()})
+
+# ---------------------------------------------------------------- 3b. motor de crecimiento por países
+# Cada día elige hasta 3 países (los que más aparecen sin recibir clics y, por turnos, países hispanohablantes donde casi no
+# estamos) y la IA estudia qué busca allí la gente para proponer artículos adaptados a ese país y a sus productos.
+PAISES = {'ESP': 'España', 'MEX': 'México', 'COL': 'Colombia', 'ARG': 'Argentina', 'PER': 'Perú', 'CHL': 'Chile', 'ECU': 'Ecuador', 'VEN': 'Venezuela',
+          'BOL': 'Bolivia', 'GTM': 'Guatemala', 'DOM': 'República Dominicana', 'CRI': 'Costa Rica', 'PRY': 'Paraguay', 'URY': 'Uruguay', 'PAN': 'Panamá',
+          'HND': 'Honduras', 'SLV': 'El Salvador', 'NIC': 'Nicaragua', 'PRI': 'Puerto Rico', 'CUB': 'Cuba', 'USA': 'Estados Unidos (hispanohablantes)'}
+CRISIS = {'ESP': 'llamar al 024 (España, gratis, 24 horas)', 'MEX': 'llamar a la Línea de la Vida, 800 911 2000 (México, gratis, 24 horas)',
+          'ARG': 'llamar al 135 (Argentina, Centro de Asistencia al Suicida)', 'CHL': 'llamar al *4141 (Chile, gratis, 24 horas)',
+          'PER': 'llamar al 113, opción 5 (Perú)', 'USA': 'llamar o escribir al 988 (Estados Unidos, también en español)'}
+pq = collections.defaultdict(list)
+for s_ in sitios:
+    try:
+        r = pedir('https://www.googleapis.com/webmasters/v3/sites/' + urllib.parse.quote(s_, safe='') + '/searchAnalytics/query',
+                  {'startDate': ini, 'endDate': fin, 'dimensions': ['country', 'query'], 'rowLimit': 25000}, AUT)
+        for x in r.get('rows', []): pq[x['keys'][0].upper()].append((x['keys'][1], x['impressions'], x['clicks'], x['position']))
+    except Exception as e: print('pais-consulta', e)
+hace7 = (HOY - datetime.timedelta(days=7)).isoformat()
+recientes_p = {t.get('pais') for t in temas if t.get('pais') and t.get('fecha', '') >= hace7}
+imp = {p_[0]: (p_[2], p_[1]) for p_ in res.get('paises', [])}
+def prioridad(c):
+    i_, cl = imp.get(c, (0, 0))
+    return i_ * (1 - min(cl / max(i_, 1) * 10, 0.9)) + (400 if i_ < 100 else 0)   # los países donde casi no estamos también tienen turno
+elegidos = sorted([c for c in PAISES if c not in recientes_p], key=prioridad, reverse=True)[:3]
+for c in elegidos:
+    consultas = sorted(pq.get(c, []), key=lambda z: -z[1])[:25]
+    lista = '\n'.join(f'- «{q}»: {i_} impresiones, posición {p_:.0f}' for q, i_, cl, p_ in consultas) or '(todavía casi no aparecemos en este país)'
+    j = ia(f'Eres el estratega de crecimiento de AURZANE, una web en español de psicología y bienestar (mind, live), estudio y aprendizaje (learn), '
+           f'universidades y orientación vocacional (nexus) y trabajo y dinero (build), con tests gratuitos, una tienda de libros y un buscador de universidades de 23 países. '
+           f'Queremos más visitas desde {PAISES[c]}. Búsquedas reales de ese país con las que aparece la web:\n{lista}\n\n'
+           'Propón 2 artículos que la gente de ese país busque de verdad y que podamos escribir con rigor, adaptados a su realidad (sus exámenes de ingreso, sistema educativo, '
+           'palabras locales), evitando temas de noticias, marcas, personas concretas, contenido adulto o datos que cambian cada año. Para cada uno indica qué le ofreceremos para que '
+           f'siga en la web: un test, libros de la tienda o el buscador de universidades. Títulos de máximo 80 caracteres que incluyan el país cuando tenga sentido. '
+           'Mundo: mind, live, learn, nexus o build. Test relacionado de esta lista o "": ansiedad, depresion, autoestima, autocompasion, autoeficacia, burnout, estres, resiliencia, '
+           'satisfaccion, soledad, tdah, personalidad, bienestar, habitos, sueno, vocacional. Responde JSON: [{"consulta": "búsqueda principal", "titulo": "...", "mundo": "...", "test": "...", "oferta": "test|libros|universidades"}]')
+    for t in (j if isinstance(j, list) else [])[:2]:
+        if isinstance(t, dict) and t.get('mundo') in ('mind', 'live', 'learn', 'nexus', 'build') and 15 <= len(t.get('titulo', '')) <= 100 and t['titulo'] not in {x['titulo'] for x in temas}:
+            temas.append({'consulta': t.get('consulta') or t['titulo'], 'titulo': t['titulo'].replace('—', ','), 'mundo': t['mundo'], 'test': t.get('test') or '',
+                          'oferta': t.get('oferta', ''), 'pais': c, 'pais_nombre': PAISES[c],
+                          'crisis': f'Si el tema toca malestar intenso, añade que se puede {CRISIS.get(c, "llamar al número de emergencias del país")}. ', 'fecha': HOY.isoformat()})
+    print('país', c, PAISES[c], len(consultas), 'búsquedas')
+res['paises_trabajados'] = [[t['fecha'], t['pais_nombre'], t['titulo']] for t in temas if t.get('pais')][-12:][::-1]
 guardar('temas.json', temas[-200:])
 
 res['cambios_titulos'] = [[c['fecha'], c['url'], c['antes']['titulo'], c['despues']['titulo'], (c.get('ahora') or {}).get('ctr'), c['antes']['ctr']] for c in cambios[-15:]][::-1]

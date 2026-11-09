@@ -3,7 +3,7 @@ name: Marketing automático
 #  - 05:13 UTC  planifica 14 días, crea las tarjetas, sube imágenes, feed RSS y enlaces cortos a aurzane.com
 #  - 08:37 UTC  franja de mañana (herramientas)       = 09:37 en España (10:37 en verano)
 #  - 12:13 UTC  frase de superación con foto (sobre todo Instagram) = 13:13 en España
-#  - 19:29 UTC  vídeo vertical (Reels, Facebook, YouTube Shorts, TikTok, Telegram) = 20:29 en España
+#  - 23:29 UTC  vídeo vertical (Reels, Facebook, YouTube Shorts, TikTok, Telegram) = tarde en América (18:29 Ecuador)
 #  - 17:41 UTC  franja de tarde (libros, notas, etc.)  = 18:41 en España
 # Cada red se activa sola cuando existen sus secretos (ver marketing/README.md). Sin secretos no publica nada.
 on:
@@ -12,7 +12,7 @@ on:
     - cron: '37 8 * * *'
     - cron: '13 12 * * *'
     - cron: '41 17 * * *'
-    - cron: '29 19 * * *'
+    - cron: '29 23 * * *'
     - cron: '47 10 * * *'  # segundo vídeo del día (frases y curiosidades)
     - cron: '23 15 * * *'  # tercer vídeo del día (solo YouTube y TikTok)
     - cron: '7 10,14,16,21 * * *'  # repaso: publica lo que se haya quedado atrás

@@ -479,7 +479,7 @@ def publicar_video(franja='4'):
     guardar('estado.json', est)
 
 
-HORAS = {'1': (8, 37), '5': (10, 47), '3': (12, 13), '6': (15, 23), '2': (17, 41), '4': (19, 29)}  # UTC
+HORAS = {'1': (8, 37), '5': (10, 47), '3': (12, 13), '6': (15, 23), '2': (17, 41), '4': (23, 29)}  # UTC; la franja 4 sale a la hora de la tarde en América (18:29 en Ecuador, Colombia y Perú; 17:29 en México; 20:29 en Argentina)
 
 
 def _exito():
