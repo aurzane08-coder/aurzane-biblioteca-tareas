@@ -38,3 +38,7 @@ jobs:
           echo "::notice title=Panel::actualizado"
       - name: Recordatorios de Mi AURZANE (un mes después del último test)
         run: $SSH "$SG_DEST" "php www/aurzane.com/public_html/mi/enviar.php 2>&1 || true" | sed 's/^/::notice title=Mi AURZANE::/'
+      - name: Vídeo del día (lista de vídeos publicados en YouTube)
+        run: |
+          python3 panel/videos.py
+          $SSH "$SG_DEST" "cat > www/aurzane.com/public_html/videos.js" < /tmp/videos.js
