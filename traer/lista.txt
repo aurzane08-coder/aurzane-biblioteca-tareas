@@ -10,3 +10,4 @@ aurzane.com/admin.html
 aurzane.com/mi-aurzane.html
 ovp.aurzane.com/informe-shared.js
 ovp.aurzane.com/informe-shared.css
+aurzane.com/sitemap.xml
