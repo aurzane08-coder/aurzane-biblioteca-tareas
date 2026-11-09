@@ -272,3 +272,8 @@
 2026-11-09,1,mastodon,calc-pau,ok,https://mastodon.social/@auzane/117585620317462104
 2026-11-09,1,instagram,test-autocompasion,ok,17888506380690334
 2026-11-09,1,facebook,curso-neuro,ok,1626732782256226
+2026-11-09,5,instagram,frase-d3ca2ed4,ok,18002492013010014
+2026-11-09,5,facebook,frase-b629d12e,ok,1836015357597452
+2026-11-09,5,youtube,frase-b1cb5465,ok,https://youtu.be/zFrVPQKFVHM
+2026-11-09,5,tiktok,frase-6718c8c7,error,400 {"error":{"code":"spam_risk_too_many_pending_share" "message":"spam_risk_too_many_pending_share" "log_id":"2026110918503674409FABB517441638B9"}}
+2026-11-09,5,telegram,frase-89e9ad64,ok,63
