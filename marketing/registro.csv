@@ -277,3 +277,4 @@
 2026-11-09,5,youtube,frase-b1cb5465,ok,https://youtu.be/zFrVPQKFVHM
 2026-11-09,5,tiktok,frase-6718c8c7,error,400 {"error":{"code":"spam_risk_too_many_pending_share" "message":"spam_risk_too_many_pending_share" "log_id":"2026110918503674409FABB517441638B9"}}
 2026-11-09,5,telegram,frase-89e9ad64,ok,63
+2026-11-09,5,tiktok,frase-6718c8c7,error,400 {"error":{"code":"spam_risk_too_many_pending_share" "message":"spam_risk_too_many_pending_share" "log_id":"2026110919494832853926D3BDA321C0FC"}}
