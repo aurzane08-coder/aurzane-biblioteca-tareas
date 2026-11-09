@@ -1339,6 +1339,56 @@ def aplicar(receta, p):
                      ('\n\nCasos parecidos que se arreglaron antes:\n' + memoria if memoria else ''))
         return ('escalado' if sug else 'fallo'), ('Diagnóstico de Gemini listo' if sug else f'Sin diagnóstico ({gem_estado})'), sug
     return 'escalado', 'Necesita que lo revises tú'
+# ---------- 16c. Tienda de libros, librero IA, boletín y libro del día en Telegram: vigila, repara y aprende de los avisos ----------
+try:
+    st_t, b_t, _, _ = get('https://aurzane.com/libros/', t=40)
+    html_t = b_t.decode('utf-8', 'replace') if st_t == 200 else ''
+    if st_t != 200:
+        aviso('alto', f'La tienda de libros no responde ({st_t}). Relancé su actualización.', 'tienda', 'caida'); disparar('tienda.yml')
+    else:
+        fa = (re.search(r'Actualizada el (\d{4}-\d{2}-\d{2})', html_t) or [None, ''])[1]
+        dias_t = (AHORA.date() - datetime.date.fromisoformat(fa)).days if fa else 99
+        if dias_t >= 2:
+            ok_d = disparar('tienda.yml'); acciones.append(f'La tienda llevaba {dias_t} días sin actualizarse: relancé su actualización.' if ok_d else '')
+            if dias_t >= 4: aviso('medio', f'La tienda de libros lleva {dias_t} días sin actualizarse aunque la relancé.', 'tienda', 'vieja')
+    st_l, b_l, _, _ = get('https://aurzane.com/libros/libros.json', t=40)
+    libros_t = json.loads(b_l) if st_l == 200 else []
+    if len(libros_t) < 20: aviso('medio', f'El catálogo de libros de pago tiene solo {len(libros_t)} libros o no se pudo leer ({st_l}).', 'tienda', 'catalogo')
+    # muestras: fichas que abren, enlaces de Amazon con la etiqueta de afiliado y portadas que cargan
+    import random as _r
+    malos = []
+    for x in _r.sample(libros_t, min(4, len(libros_t))):
+        if 'tag=z5464099v-21' not in x.get('u', ''): malos.append(f'sin etiqueta de afiliado: {x["t"]}')
+        if get(x['f'], t=30)[0] != 200: malos.append(f'ficha que no abre: {x["f"]}')
+        if x.get('img') and get(x['img'], t=20)[0] not in (200, 302): malos.append(f'portada rota: {x["t"]}')
+    if malos: aviso('bajo', 'Tienda: ' + '; '.join(malos[:4]), 'tienda', 'muestras')
+    if get('https://aurzane.com/boletin/', t=30)[0] != 200: aviso('medio', 'La página del boletín no abre.', 'boletin', 'pagina')
+    # libro del día en Telegram: si hoy no salió y ya pasó su hora, se relanza
+    tl = leer('../marketing/telegram_libros.json', {})
+    if tl.get('enviados') and AHORA.hour >= 18 and not (tl.get('dias') or {}).get(HOY) and len(tl['enviados']) < 365:
+        if disparar('telegram-libros.yml'): acciones.append('El libro del día de Telegram no había salido: lo relancé.')
+    # avisos que dejan los visitantes con «¿Algo no funciona?» en la tienda y la biblioteca
+    crudo = remoto('cat www/aurzane.com/privado-ai/incidencias.json 2>/dev/null')
+    inc = json.loads(crudo) if crudo.strip().startswith('[') else []
+    nuevas = [x for x in inc if x.get('estado') == 'nuevo']
+    vistas = set(ESTADO.get('incidencias_vistas', []))
+    for x in nuevas:
+        k = hashlib.md5((x.get('fecha', '') + x.get('hora', '') + x.get('texto', '')).encode()).hexdigest()[:10]
+        if k in vistas: continue
+        vistas.add(k)
+        pg = x.get('pagina', '')
+        ok_pg = get(pg, t=30)[0] == 200 if pg.startswith('https://') and 'aurzane.com' in pg else None
+        diag = gemini_rapido('Un visitante de AURZANE avisa de este problema en ' + pg + ': «' + x.get('texto', '')[:400] + '». La página responde ' +
+                             ('bien' if ok_pg else 'con error' if ok_pg is False else 'sin comprobar') + '. En una frase en español: qué puede ser y qué hay que revisar.')
+        aviso('medio' if ok_pg is False else 'bajo', f'Aviso de un visitante en {pg or "la tienda"}: «{x.get("texto", "")[:160]}»' + (f' · Diagnóstico IA: {diag.strip()[:200]}' if diag else ''), 'visitante', k)
+    ESTADO['incidencias_vistas'] = list(vistas)[-500:]
+    # uso del librero (para aprender qué se busca)
+    crudo2 = remoto(f'cat www/aurzane.com/privado-ai/librero-{HOY}.json 2>/dev/null')
+    if crudo2.strip().startswith('{'): print('::notice title=AI::Librero IA: ' + str(json.loads(crudo2).get('total', 0)) + ' preguntas hoy')
+    acciones[:] = [a for a in acciones if a]
+except Exception as e:
+    print('::notice title=AI::Revisión de la tienda con un fallo:', str(e)[:200])
+
 # 1) verificar lo pendiente de revisiones anteriores
 for x in REP:
     if x['resultado'] == 'pendiente' and x['fecha'] < AHORA.isoformat()[:16]:
