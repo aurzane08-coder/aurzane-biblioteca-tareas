@@ -287,3 +287,4 @@
 2026-11-09,3,pinterest,frase-a166927d,feed,
 2026-11-09,5,tiktok,frase-6718c8c7,error,400 {"error":{"code":"spam_risk_too_many_pending_share" "message":"spam_risk_too_many_pending_share" "log_id":"20261109202958A08A110729466B2214A2"}}
 2026-11-09,5,tiktok,frase-6718c8c7,error,400 {"error":{"code":"spam_risk_too_many_pending_share" "message":"spam_risk_too_many_pending_share" "log_id":"20261109210017872405E78EBB59154CC1"}}
+2026-11-09,5,tiktok,frase-6718c8c7,error,400 {"error":{"code":"spam_risk_too_many_pending_share" "message":"spam_risk_too_many_pending_share" "log_id":"20261109211509CAC23D904580BE5E7324"}}

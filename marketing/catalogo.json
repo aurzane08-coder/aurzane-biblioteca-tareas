@@ -36037,6 +36037,153 @@
    "img": null,
    "emoji": "✨",
    "alta": "2026-11-09"
+  },
+  {
+   "id": "auto-mind-aurzane-com-en",
+   "tipo": "seccion",
+   "mundo": "mind",
+   "origen": "sitemap",
+   "url": "https://mind.aurzane.com/en/",
+   "titulo": "Free psychological tests in English | AURZANE",
+   "ganchos": [
+    "Free psychological tests in English | AURZANE",
+    "Free psychological tests in English | AURZANE",
+    "Free psychological tests in English | AURZANE"
+   ],
+   "texto": "Validated psychological questionnaires in their original English version: anxiety, depression, self-esteem, life satisfaction, resilience and self-efficacy. Free and anonymous.",
+   "hashtags": [
+    "AURZANE"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "🧠",
+   "alta": "2026-11-09"
+  },
+  {
+   "id": "auto-mind-aurzane-com-en-anxiety-test-gad-7",
+   "tipo": "seccion",
+   "mundo": "mind",
+   "origen": "sitemap",
+   "url": "https://mind.aurzane.com/en/anxiety-test-gad-7/",
+   "titulo": "Anxiety test (GAD-7): free online questionnaire | AURZANE",
+   "ganchos": [
+    "Anxiety test (GAD-7): free online questionnaire | AURZANE",
+    "Anxiety test (GAD-7): free online questionnaire | AURZANE",
+    "Anxiety test (GAD-7): free online questionnaire | AURZANE"
+   ],
+   "texto": "Take the GAD-7, the most widely used anxiety questionnaire in primary care. 7 questions, instant score with a clear explanation. Free and anonymous.",
+   "hashtags": [
+    "AURZANE"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "🧠",
+   "alta": "2026-11-09"
+  },
+  {
+   "id": "auto-mind-aurzane-com-en-depression-test-phq-9",
+   "tipo": "seccion",
+   "mundo": "mind",
+   "origen": "sitemap",
+   "url": "https://mind.aurzane.com/en/depression-test-phq-9/",
+   "titulo": "Depression test (PHQ-9): free online questionnaire | AURZANE",
+   "ganchos": [
+    "Depression test (PHQ-9): free online questionnaire | AURZANE",
+    "Depression test (PHQ-9): free online questionnaire | AURZANE",
+    "Depression test (PHQ-9): free online questionnaire | AURZANE"
+   ],
+   "texto": "Take the PHQ-9, the standard depression screening questionnaire used by doctors. 9 questions, instant score and what to do next. Free and anonymous.",
+   "hashtags": [
+    "AURZANE"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "🧠",
+   "alta": "2026-11-09"
+  },
+  {
+   "id": "auto-mind-aurzane-com-en-self-esteem-test-rosenberg",
+   "tipo": "seccion",
+   "mundo": "mind",
+   "origen": "sitemap",
+   "url": "https://mind.aurzane.com/en/self-esteem-test-rosenberg/",
+   "titulo": "Self-esteem test (Rosenberg): free online questionnaire | AURZANE",
+   "ganchos": [
+    "Self-esteem test (Rosenberg): free online questionnaire | AURZANE",
+    "Self-esteem test (Rosenberg): free online questionnaire | AURZANE",
+    "Self-esteem test (Rosenberg): free online questionnaire | AURZANE"
+   ],
+   "texto": "Take the Rosenberg Self-Esteem Scale, the most used self-esteem questionnaire in the world. 10 statements, instant result with an explanation. Free and anonymous.",
+   "hashtags": [
+    "AURZANE"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "🧠",
+   "alta": "2026-11-09"
+  },
+  {
+   "id": "auto-mind-aurzane-com-en-life-satisfaction-test-swls",
+   "tipo": "seccion",
+   "mundo": "mind",
+   "origen": "sitemap",
+   "url": "https://mind.aurzane.com/en/life-satisfaction-test-swls/",
+   "titulo": "Life satisfaction test (SWLS): free online questionnaire | AURZANE",
+   "ganchos": [
+    "Life satisfaction test (SWLS): free online questionnaire | AURZANE",
+    "Life satisfaction test (SWLS): free online questionnaire | AURZANE",
+    "Life satisfaction test (SWLS): free online questionnaire | AURZANE"
+   ],
+   "texto": "Take the Satisfaction With Life Scale (Diener), the classic measure of how satisfied you are with your life. 5 statements, instant result. Free and anonymous.",
+   "hashtags": [
+    "AURZANE"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "🧠",
+   "alta": "2026-11-09"
+  },
+  {
+   "id": "auto-mind-aurzane-com-en-resilience-test-brs",
+   "tipo": "seccion",
+   "mundo": "mind",
+   "origen": "sitemap",
+   "url": "https://mind.aurzane.com/en/resilience-test-brs/",
+   "titulo": "Resilience test (Brief Resilience Scale): free online questionnaire | AURZANE",
+   "ganchos": [
+    "Resilience test (Brief Resilience Scale): free online questionnaire | AURZANE",
+    "Resilience test (Brief Resilience Scale): free online questionnaire | AURZANE",
+    "Resilience test (Brief Resilience Scale): free online questionnaire | AURZANE"
+   ],
+   "texto": "Take the Brief Resilience Scale (Smith et al.), which measures your ability to bounce back from stress. 6 statements, instant result. Free and anonymous.",
+   "hashtags": [
+    "AURZANE"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "🧠",
+   "alta": "2026-11-09"
+  },
+  {
+   "id": "auto-mind-aurzane-com-en-self-efficacy-test-gse",
+   "tipo": "seccion",
+   "mundo": "mind",
+   "origen": "sitemap",
+   "url": "https://mind.aurzane.com/en/self-efficacy-test-gse/",
+   "titulo": "Self-efficacy test (General Self-Efficacy Scale): free online questionnaire | AURZANE",
+   "ganchos": [
+    "Self-efficacy test (General Self-Efficacy Scale): free online questionnaire | AURZANE",
+    "Self-efficacy test (General Self-Efficacy Scale): free online questionnaire | AURZANE",
+    "Self-efficacy test (General Self-Efficacy Scale): free online questionnaire | AURZANE"
+   ],
+   "texto": "Take the General Self-Efficacy Scale (Schwarzer and Jerusalem): how confident you are in handling difficult situations. 10 statements, instant result. Free and anonymous.",
+   "hashtags": [
+    "AURZANE"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "🧠",
+   "alta": "2026-11-09"
   }
  ]
 }
