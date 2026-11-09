@@ -36,3 +36,5 @@ jobs:
           [ -s /tmp/panel.json ] || exit 1
           $SSH "$SG_DEST" "mkdir -p www/aurzane.com/privado-ai && cat > www/aurzane.com/privado-ai/panel.json && chmod 600 www/aurzane.com/privado-ai/panel.json" < /tmp/panel.json
           echo "::notice title=Panel::actualizado"
+      - name: Recordatorios de Mi AURZANE (un mes después del último test)
+        run: $SSH "$SG_DEST" "php www/aurzane.com/public_html/mi/enviar.php 2>&1 || true" | sed 's/^/::notice title=Mi AURZANE::/'
