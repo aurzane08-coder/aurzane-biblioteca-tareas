@@ -1,0 +1,15 @@
+name: Awin buscar programas
+on:
+  push:
+    paths: ['tienda/awin_buscar.py']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  b:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 tienda/awin_buscar.py
+        env:
+          AWIN_TOKEN: ${{ secrets.AWIN_TOKEN }}
