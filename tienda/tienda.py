@@ -287,3 +287,33 @@ for k, v in {'{{N}}': f'{len(todo):,}'.replace(',', '.'), '{{NG}}': f'{n_gratis:
     pag = pag.replace(k, v)
 open(os.path.join(OUT, 'index.html'), 'w', encoding='utf-8').write(pag)
 print(f'::notice title=Tienda::{len(todo)} libros en la tienda ({len(pub)} elegidos, {n_ref} de la biblioteca con Amazon, {n_gratis} gratis); {len(nuevos)} nuevos esta vez ({sum(1 for i in nuevos if cat[i]["origen"] == "tendencia")} por tendencias)')
+
+# 4) guía de regalos de temporada (Navidad, Reyes, Sant Jordi, verano...): ideas por tipo de persona, con los libros elegidos
+mes_n = datetime.date.today().month
+OCASION = ('Navidad y Reyes' if mes_n in (11, 12, 1) else 'Sant Jordi y el Día del Libro' if mes_n in (3, 4) else 'el verano' if mes_n in (6, 7, 8) else 'regalar')
+PARA = [('Para quien vive con estrés o ansiedad', 'Emociones, ansiedad y estrés'), ('Para quien quiere cambiar de hábitos', 'Hábitos, salud y productividad'),
+        ('Para quien está en un momento de cambio', 'Autoestima y desarrollo personal'), ('Para padres, madres y parejas', 'Relaciones y familia'),
+        ('Para quien empieza la universidad o duda qué estudiar', 'Estudiar y aprender'), ('Para curiosos de la mente', 'Mente y personalidad'),
+        ('Para quien disfruta de una buena novela', 'Novela y relatos'), ('Para quien quiere entender el mundo', 'Ciencia y tecnología'),
+        ('Para quien quiere ordenar sus finanzas', 'Dinero y vivienda'), ('Para quien está atravesando una pérdida', 'Duelo y pérdidas')]
+bloques = []
+for titulo_b, s_ in PARA:
+    ls = [x for x in pub if x['s'] == s_ and x['img']][:4]
+    if ls: bloques.append(f'<section class="sec"><h2>{E(titulo_b)}</h2><div class="rejilla">{"".join(tarjeta(x) for x in ls)}</div></section>')
+if bloques:
+    reg = open(os.path.join(D, 'plantilla.html'), encoding='utf-8').read()
+    ini, fin = reg.index('<main class="w">'), reg.index('</main>')
+    cuerpo = (f'<main class="w"><div class="hero" style="grid-template-columns:1fr"><div><h1>Libros para regalar en {E(OCASION)}</h1>'
+              f'<p>Ideas según la persona: libros que se leen con gusto y ayudan de verdad, elegidos por AURZANE. Pulsa uno para ver de qué trata y su precio.</p></div></div>'
+              + ''.join(bloques) + '<p><a class="mas" style="display:inline-block" href="/libros/">Ver toda la tienda de libros</a></p>'
+              '<p class="aviso">Enlaces de afiliado de Amazon: si compras, AURZANE recibe una pequeña comisión y a ti no te cuesta más.</p>')
+    reg = reg[:ini] + cuerpo + reg[fin:]
+    reg = re.sub(r'<script src="/libros/tienda.js" defer></script>\s*<script>.*?</script>', '', reg, flags=re.S)
+    reg = reg.replace('<title>Tienda de libros: gratis y de pago, psicología, novela y más | AURZANE</title>', f'<title>Libros para regalar en {E(OCASION)}: ideas por persona | AURZANE</title>')
+    reg = reg.replace('<link rel="canonical" href="https://aurzane.com/libros/">', '<link rel="canonical" href="https://aurzane.com/libros/regalar/">')
+    reg = re.sub(r'<meta name="description" content="[^"]*">', f'<meta name="description" content="Ideas de libros para regalar en {E(OCASION)}: para quien vive con estrés, para estudiantes, para amantes de la novela, para padres y más.">', reg)
+    for k, v in {'{{N}}': '', '{{NG}}': '', '{{NP}}': '', '{{MES}}': MES, '{{FECHA}}': HOY, '{{JSONLD}}': '{}'}.items(): reg = reg.replace(k, v)
+    os.makedirs(os.path.join(OUT, 'regalar'), exist_ok=True)
+    open(os.path.join(OUT, 'regalar', 'index.html'), 'w', encoding='utf-8').write(reg)
+    sm = open(os.path.join(OUT, 'sitemap.xml'), encoding='utf-8').read().replace('</urlset>', f'<url><loc>https://aurzane.com/libros/regalar/</loc><lastmod>{HOY}</lastmod></url></urlset>')
+    open(os.path.join(OUT, 'sitemap.xml'), 'w', encoding='utf-8').write(sm)
