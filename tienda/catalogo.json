@@ -99,6 +99,26 @@
   "porque": "Es para amantes de la novela negra y los misterios complejos de resolver. Aporta una trama absorbente con una investigación en profundidad sobre secretos familiares oscuros y violencia de género."
  },
  {
+  "id": "la-tierra-herida-miguel-delibes",
+  "titulo": "La tierra herida",
+  "autor": "Miguel Delibes",
+  "temas": [
+   "ensayo",
+   "ciencia"
+  ],
+  "origen": "tendencia",
+  "fecha": "2026-11-09",
+  "isbn": "9788423338467",
+  "portada": "https://covers.openlibrary.org/b/id/10724511-M.jpg?default=false",
+  "anio": "2005",
+  "editorial": "Ediciones Destino",
+  "idioma": "spa",
+  "resumen": "",
+  "tendencia": "Un homenaje implícito a la literatura castellana y al periodismo de El Norte de Castilla.",
+  "tendencia_fecha": "2026-11-09",
+  "porque": "Es para los lectores preocupados por el medio ambiente y el futuro del planeta a través del diálogo cercano entre un abuelo y su nieto. Aporta una reflexión honesta y urgente sobre cómo la acción humana daña los ecosistemas y la necesidad de protegerlos."
+ },
+ {
   "id": "como-hacer-que-te-pasen-cosas-buenas-marian-rojas-estape",
   "titulo": "Cómo hacer que te pasen cosas buenas",
   "autor": "Marian Rojas Estapé",
@@ -558,7 +578,8 @@
   "anio": "1993",
   "editorial": "Salvat",
   "idioma": "",
-  "resumen": ""
+  "resumen": "",
+  "porque": "Es para quienes sienten curiosidad por la biología evolutiva y desean comprender la vida desde la perspectiva de la genómica. Aporta una explicación rigurosa y fascinante sobre cómo los genes actúan como unidades de supervivencia y selección."
  },
  {
   "id": "cosmos-carl-sagan",
@@ -574,7 +595,8 @@
   "anio": "1980",
   "editorial": "Altın Kitaplar",
   "idioma": "spa",
-  "resumen": ""
+  "resumen": "",
+  "porque": "Va dirigido a cualquier lector apasionado por la ciencia que quiera mirar al cielo con nuevos ojos y comprender nuestro lugar en el universo. Aporta un recorrido amivo y poético por la historia de la astronomía y la ciencia moderna."
  },
  {
   "id": "el-infinito-en-un-junco-irene-vallejo",
@@ -590,7 +612,8 @@
   "anio": "2020",
   "editorial": "Xerais",
   "idioma": "spa",
-  "resumen": ""
+  "resumen": "",
+  "porque": "Es ideal para los amantes de la lectura y la historia que disfrutan descubriendo el largo viaje de los libros a través del tiempo. Aporta un relato apasionante y cercano sobre cómo el ser humano ha protegido y transmitido la palabra escrita."
  },
  {
   "id": "cien-anos-de-soledad-gabriel-garcia-marquez",
@@ -606,7 +629,8 @@
   "anio": "1967",
   "editorial": "Penguin Modern Classics",
   "idioma": "spa",
-  "resumen": ""
+  "resumen": "",
+  "porque": "Es perfecto para quienes buscan perderse en la magia de la literatura hispanoamericana a través de varias generaciones de la familia Buendía. Aporta una inmersión inolvidable en el realismo mágico y en la historia mítica de Macondo."
  },
  {
   "id": "sobre-el-duelo-y-el-dolor-elisabeth-kubler-ross",
@@ -623,7 +647,8 @@
   "anio": "2006",
   "editorial": "Luciernaga",
   "idioma": "spa",
-  "resumen": ""
+  "resumen": "",
+  "porque": "Está pensado para quienes atraviesan un proceso de pérdida y buscan comprensión y apoyo en momentos difíciles. Aporta herramientas humanas y sabias basadas en la experiencia clínica para transitar las distintas etapas del dolor."
  },
  {
   "id": "la-sombra-del-viento-carlos-ruiz-zafon",
@@ -639,7 +664,8 @@
   "anio": "2001",
   "editorial": "Insel Verlag",
   "idioma": "spa",
-  "resumen": ""
+  "resumen": "",
+  "porque": "Es para los lectores que disfrutan de las novelas de misterio ambientadas en callejones góticos y librerías secretas. Aporta una trama envolvente y muy visual que rinde homenaje al amor por los libros en la Barcelona de posguerra."
  },
  {
   "id": "1984-george-orwell",
@@ -655,7 +681,8 @@
   "anio": "2003",
   "editorial": "Pearson Education",
   "idioma": "",
-  "resumen": ""
+  "resumen": "",
+  "porque": "Resulta esencial para quienes se interesan por la política y la defensa de las libertades fundamentales frente al poder totalitario. Aporta una advertencia atemporal sobre el peligro de la manipulación de la verdad y la vigilancia extrema."
  },
  {
   "id": "el-principito-antoine-de-saint-exupery",
@@ -671,7 +698,8 @@
   "anio": "2018",
   "editorial": "Editorial Verbum, S.L.",
   "idioma": "spa",
-  "resumen": ""
+  "resumen": "",
+  "porque": "Es una lectura imprescindible tanto para niños como para adultos que desean reconectar con la esencia de la vida. Aporta enseñanzas entrañables y profundas sobre la amistad, el amor y la importancia de mirar con el corazón."
  },
  {
   "id": "patria-fernando-aramburu",
@@ -687,7 +715,8 @@
   "anio": "2014",
   "editorial": "Εκδόσεις Πατάκη",
   "idioma": "spa",
-  "resumen": ""
+  "resumen": "",
+  "porque": "Va dirigido a quienes buscan comprender el impacto humano y social del terrorismo en el País Vasco a través de vidas cotidianas. Aporta una mirada compleja y empática sobre la ruptura y la posible reconciliación de dos familias antes unidas."
  },
  {
   "id": "la-casa-de-los-espiritus-isabel-allende",
@@ -703,7 +732,8 @@
   "anio": "1982",
   "editorial": "Plaza & Janes",
   "idioma": "spa",
-  "resumen": ""
+  "resumen": "",
+  "porque": "Es para lectores que aprecian las sagas familiares intensas marcadas por la pasión, la política y el realismo mágico. Aporta un fresco vibrante de la historia de Chile a través de las vivencias y los secretos de las mujeres de la familia Trueba."
  },
  {
   "id": "los-pilares-de-la-tierra-ken-follett",
@@ -719,7 +749,8 @@
   "anio": "2020",
   "editorial": "PLAZA & JANES",
   "idioma": "",
-  "resumen": ""
+  "resumen": "",
+  "porque": "Atrae a quienes disfrutan de las novelas históricas monumentales repletas de intrigas, pasiones y luchas de poder en la Edad Media. Aporta un relato fascinante sobre la construcción de una catedral y el destino entrelazado de sus protagonistas."
  },
  {
   "id": "reina-roja-juan-gomez-jurado",
@@ -735,7 +766,8 @@
   "anio": "2018",
   "editorial": "B (Ediciones B)",
   "idioma": "spa",
-  "resumen": ""
+  "resumen": "",
+  "porque": "Es para los aficionados a los thrillers vertiginosos que buscan un ritmo ágil y personajes llenos de contrastes en Madrid. Aporta una investigación criminal adictiva protagonizada por una mente brillante y un policía muy peculiar."
  },
  {
   "id": "don-quijote-de-la-mancha-miguel-de-cervantes",
@@ -751,7 +783,8 @@
   "anio": "1600",
   "editorial": "R. Bemporad & Figlio.",
   "idioma": "spa",
-  "resumen": ""
+  "resumen": "",
+  "porque": "Es para cualquier lector dispuesto a disfrutar de la obra cumbre de nuestra literatura y de la universal pareja de la locura y la cordura. Aporta una mezcla inigualable de humor, aventura y reflexión sobre los ideales humanos."
  },
  {
   "id": "limites-henry-cloud",
@@ -768,6 +801,7 @@
   "anio": "2009",
   "editorial": "Vida Publishers",
   "idioma": "spa",
-  "resumen": ""
+  "resumen": "",
+  "porque": "Ayuda a quienes necesitan aprender a decir no y cuidar su bienestar emocional en las relaciones personales y profesionales. Aporta pautas prácticas y psicológicas para establecer barreras sanas y asumir la responsabilidad de la propia vida."
  }
 ]
