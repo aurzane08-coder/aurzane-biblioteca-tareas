@@ -1,0 +1,38 @@
+name: Panel de resultados
+# Cada mañana junta visitas, boletín, clics de compra, ventas de Awin y seguidores en
+# www/aurzane.com/privado-ai/panel.json (fuera de la web). Se ve en aurzane.com/panel/ (solo administradores).
+on:
+  schedule:
+    - cron: '23 6 * * *'
+  push:
+    paths: ['panel/**', '.github/workflows/panel.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency: panel
+jobs:
+  panel:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      SG_KEY: ${{ secrets.SG_KEY }}
+      SG_HOST: ${{ secrets.SG_HOST }}
+      SG_USER: ${{ secrets.SG_USER }}
+      SG_PORT: ${{ secrets.SG_PORT }}
+      SG_PASS: ${{ secrets.SG_PASS }}
+      AWIN_TOKEN: ${{ secrets.AWIN_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: SSH
+        run: |
+          mkdir -p ~/.ssh && printf '%s\n' "$SG_KEY" | tr -d '\r' > ~/.ssh/id && chmod 600 ~/.ssh/id
+          if [ -n "$SG_PASS" ]; then ssh-keygen -p -P "$SG_PASS" -N "" -f ~/.ssh/id >/dev/null; fi
+          echo "SSH=ssh -i $HOME/.ssh/id -p ${SG_PORT:-18765} -o StrictHostKeyChecking=accept-new" >> $GITHUB_ENV
+          echo "SG_DEST=$SG_USER@$SG_HOST" >> $GITHUB_ENV
+      - name: Calcular
+        run: python3 -u panel/panel.py
+      - name: Guardar en el servidor
+        run: |
+          [ -s /tmp/panel.json ] || exit 1
+          $SSH "$SG_DEST" "mkdir -p www/aurzane.com/privado-ai && cat > www/aurzane.com/privado-ai/panel.json && chmod 600 www/aurzane.com/privado-ai/panel.json" < /tmp/panel.json
+          echo "::notice title=Panel::actualizado"
