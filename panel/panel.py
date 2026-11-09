@@ -28,7 +28,7 @@ def leer(ruta, d):
     except Exception: return d
 
 
-P = {'generado': datetime.datetime.utcnow().isoformat(timespec='minutes') + 'Z', 'avisos': []}
+P = {'generado': datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%MZ'), 'avisos': []}
 
 # ---------------------------------------------------------------- visitas (registros de acceso)
 # Se procesa en el servidor y solo baja el recuento: día, dominio y página.
@@ -147,6 +147,8 @@ def redes():
 def contenido():
     try: P['tienda_libros'] = len(json.loads(remoto('cat www/aurzane.com/public_html/libros/libros.json 2>/dev/null') or '[]'))
     except Exception: P['tienda_libros'] = None
+    try: P['tienda_total'] = int((remoto("grep -o '\"p\":\"' www/aurzane.com/public_html/libros/tienda.js 2>/dev/null | wc -l") or '0').strip())
+    except Exception: P['tienda_total'] = None
     t = remoto('cat www/aurzane.com/privado-colegios/solicitudes.json 2>/dev/null')
     try:
         s = json.loads(t) if t.strip() else []
