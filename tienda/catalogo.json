@@ -158,6 +158,46 @@
   "porque": "Es para quienes disfrutan de los thrillers psicológicos absorbentes centrados en la intriga vecinal y la memoria fragmentada. Aporta una trama de suspense narrada desde múltiples perspectivas femeninas que explora el alcoholismo y la obsesión."
  },
  {
+  "id": "el-director-david-jimenez",
+  "titulo": "El director",
+  "autor": "David Jiménez",
+  "temas": [
+   "ensayo",
+   "bienestar"
+  ],
+  "origen": "tendencia",
+  "fecha": "2026-11-09",
+  "isbn": "9788417678081",
+  "portada": "https://covers.openlibrary.org/b/id/10511916-M.jpg?default=false",
+  "anio": "2019",
+  "editorial": "Libros del K.O.",
+  "idioma": "spa",
+  "resumen": "",
+  "tendencia": "Conecta directamente con el interés actual en la figura del autor y el periodismo de investigación.",
+  "tendencia_fecha": "2026-11-09",
+  "porque": "Este libro es para quienes sienten curiosidad por los entresijos del periodismo y el poder desde dentro de una gran redacción. Aporta el relato en primera persona de la experiencia de David Jiménez al frente del diario El Mundo."
+ },
+ {
+  "id": "la-buena-cocina-karlos-arguinano",
+  "titulo": "La buena cocina",
+  "autor": "Karlos Arguiñano",
+  "temas": [
+   "bienestar",
+   "habitos"
+  ],
+  "origen": "tendencia",
+  "fecha": "2026-11-09",
+  "isbn": "9788408234555",
+  "portada": "https://covers.openlibrary.org/b/id/10513734-M.jpg?default=false",
+  "anio": "2020",
+  "editorial": "Editorial Planeta",
+  "idioma": "",
+  "resumen": "",
+  "tendencia": "Un clásico infaltable para regalar y disfrutar en los hogares conforme se acerca el invierno.",
+  "tendencia_fecha": "2026-11-09",
+  "porque": "Este libro es para cualquier persona que quiera disfrutar de la cocina casera y tradicional con recetas accesibles y explicadas con cercanía. Aporta el estilo inconfundible de Karlos Arguiñano para hacer fáciles platos sabrosos del día a día."
+ },
+ {
   "id": "como-hacer-que-te-pasen-cosas-buenas-marian-rojas-estape",
   "titulo": "Cómo hacer que te pasen cosas buenas",
   "autor": "Marian Rojas Estapé",
@@ -879,5 +919,41 @@
   "idioma": "spa",
   "resumen": "",
   "porque": "Este libro es para quienes buscan tomar las riendas de su futuro financiero sin depender de las ayudas públicas. Aporta una guía práctica para entender la inversión y construir una verdadera libertad económica desde cero."
+ },
+ {
+  "id": "educar-con-inteligencia-emocional-maurice-j-elias",
+  "titulo": "Educar con inteligencia emocional",
+  "autor": "Maurice J. Elias",
+  "temas": [
+   "crianza",
+   "emociones"
+  ],
+  "origen": "crecer",
+  "fecha": "2026-11-09",
+  "isbn": "9788499089232",
+  "portada": "https://covers.openlibrary.org/b/id/7272935-M.jpg?default=false",
+  "anio": "2014",
+  "editorial": "DEBOLSILLO",
+  "idioma": "spa",
+  "resumen": "",
+  "porque": "Este libro es para madres, padres y docentes que buscan guiar el desarrollo afectivo y social de los niños en su día a día. Aporta herramientas prácticas y comprensibles para ayudar a los menores a gestionar sus emociones con empatía."
+ },
+ {
+  "id": "disciplina-sin-lagrimas-daniel-j-siegel",
+  "titulo": "Disciplina sin lágrimas",
+  "autor": "Daniel J. Siegel",
+  "temas": [
+   "crianza",
+   "relaciones"
+  ],
+  "origen": "crecer",
+  "fecha": "2026-11-09",
+  "isbn": "9788466655873",
+  "portada": "https://covers.openlibrary.org/b/id/7322107-M.jpg?default=false",
+  "anio": "2015",
+  "editorial": "Ediciones B",
+  "idioma": "",
+  "resumen": "",
+  "porque": "Este libro es para familias que desean educar a sus hijos desde el respeto mutuo y la comprensión de su desarrollo cerebral. Aporta pautas respetuosas para afrontar las rabietas y establecer límites sin recurrir a los gritos ni a los castigos."
  }
 ]
