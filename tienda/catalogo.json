@@ -16,7 +16,8 @@
   "idioma": "spa",
   "resumen": "",
   "tendencia": "Ideal para conectar con la concentración y el rendimiento mental inspirado en la temporada de baloncesto y deporte de élite.",
-  "tendencia_fecha": "2026-11-09"
+  "tendencia_fecha": "2026-11-09",
+  "porque": "Es para quienes practican tenis o cualquier otra disciplina y desean superar los bloqueos mentales. Aporta herramientas prácticas para confiar en uno mismo y mejorar el rendimiento deportivo acallando al juez interno."
  },
  {
   "id": "invisible-eloy-moreno",
@@ -35,7 +36,8 @@
   "idioma": "spa",
   "resumen": "",
   "tendencia": "Una novela muy buscada en otoño sobre la empatía y la visibilidad social en entornos cotidianos y escolares.",
-  "tendencia_fecha": "2026-11-09"
+  "tendencia_fecha": "2026-11-09",
+  "porque": "Es para lectores interesados en historias emotivas sobre el acoso escolar desde la perspectiva de los más jóvenes. Aporta una mirada sincera y cercana a la empatía, invitando a reflexionar sobre la importancia de no mirar hacia otro lado."
  },
  {
   "id": "mentalidad-mamba-kobe-bryant",
@@ -54,7 +56,8 @@
   "idioma": "spa",
   "resumen": "",
   "tendencia": "Perfecto para regalar o leer en noviembre, buscando la disciplina y la superación personal a través del deporte.",
-  "tendencia_fecha": "2026-11-09"
+  "tendencia_fecha": "2026-11-09",
+  "porque": "Es para seguidores del baloncesto y admiradores de la ética de trabajo del legendario Kobe Bryant. Aporta una visión íntima sobre su mentalidad competitiva, el esfuerzo diario y la pasión por la excelencia a través de sus propias palabras y fotografías."
  },
  {
   "id": "el-caballero-de-la-armadura-oxidada-robert-fisher",
@@ -73,7 +76,8 @@
   "idioma": "spa",
   "resumen": "",
   "tendencia": "Un clásico de crecimiento personal ideal para regalar con la llegada del frío de noviembre.",
-  "tendencia_fecha": "2026-11-09"
+  "tendencia_fecha": "2026-11-09",
+  "porque": "Es para cualquier persona que busque un viaje de autodescubrimiento y crecimiento personal a través de la fábula. Aporta una reflexión entrañable sobre la necesidad de quitarnos las corazas emocionales para aprender a querernos y comunicarnos de verdad."
  },
  {
   "id": "los-hombres-que-no-amaban-a-las-mujeres-stieg-larsson",
@@ -91,7 +95,8 @@
   "idioma": "spa",
   "resumen": "",
   "tendencia": "La lectura de misterio perfecta para las tardes largas y oscuras de noviembre.",
-  "tendencia_fecha": "2026-11-09"
+  "tendencia_fecha": "2026-11-09",
+  "porque": "Es para los amantes de la novela negra y los thrillers absorbentes llenos de misterio. Aporta una trama compleja de secretos familiares y corrupción en Suecia, protagonizada por el periodista Mikael Blomkvist y la investigadora Lisbeth Salander."
  },
  {
   "id": "como-hacer-que-te-pasen-cosas-buenas-marian-rojas-estape",
@@ -109,7 +114,8 @@
   "anio": "2018",
   "editorial": "Planeta",
   "idioma": "spa",
-  "resumen": ""
+  "resumen": "",
+  "porque": "Es para quienes buscan comprender mejor su propia mente y gestionar el estrés cotidiano. Aporta consejos basados en la psiquiatría para enfocar la atención, cuidar la salud emocional y encontrar un equilibrio vital saludable."
  },
  {
   "id": "el-arte-de-no-amargarse-la-vida-rafael-santandreu",
@@ -127,7 +133,8 @@
   "anio": "2018",
   "editorial": "Grijalbo",
   "idioma": "spa",
-  "resumen": ""
+  "resumen": "",
+  "porque": "Es para personas que desean superar sus miedos y dejar atrás la queja constante en el día a día. Aporta pautas desde la psicología cognitiva para transformar las creencias irracionales y conseguir una vida emocionalmente más fuerte."
  },
  {
   "id": "vivir-con-plenitud-las-crisis-jon-kabat-zinn",
@@ -144,7 +151,8 @@
   "anio": "2005",
   "editorial": "Editorial Kairos",
   "idioma": "spa",
-  "resumen": ""
+  "resumen": "",
+  "porque": "Es para quienes atraviesan momentos difíciles o episodios de dolor y buscan herramientas de aceptación. Aporta los principios de la práctica de mindfulness para reducir el sufrimiento y afrontar los retos cotidianos con mayor calma."
  },
  {
   "id": "el-poder-del-ahora-eckhart-tolle",
@@ -161,7 +169,8 @@
   "anio": "2013",
   "editorial": "Gaia Ediciones",
   "idioma": "spa",
-  "resumen": ""
+  "resumen": "",
+  "porque": "Es para buscadores espirituales y personas que sufren por culpa de la ansiedad del pasado o del futuro. Aporta una guía clara para conectar con el momento presente, liberando la mente de pensamientos innecesarios y encontrando la paz interior."
  },
  {
   "id": "sentirse-bien-david-d-burns",
@@ -178,7 +187,8 @@
   "anio": "1989",
   "editorial": "Zhang lao shi wen hua shi ye gu fen you xian gong si",
   "idioma": "spa",
-  "resumen": ""
+  "resumen": "",
+  "porque": "Es para quienes sufren bajones anímicos y buscan técnicas probadas para mejorar su bienestar emocional. Aporta métodos basados en la terapia cognitivo-conductual para identificar distorsiones cognitivas y elevar el estado de ánimo."
  },
  {
   "id": "los-seis-pilares-de-la-autoestima-nathaniel-branden",
@@ -194,7 +204,8 @@
   "anio": "1996",
   "editorial": "Ediciones Paidos Iberica",
   "idioma": "spa",
-  "resumen": ""
+  "resumen": "",
+  "porque": "Es para cualquier persona que desee construir una base sólida de confianza y respeto hacia uno mismo. Aporta un análisis profundo y práctico sobre los componentes esenciales que forman una autoestima sana y duradera."
  },
  {
   "id": "se-amable-contigo-mismo-kristin-neff",
@@ -211,7 +222,8 @@
   "anio": "2016",
   "editorial": "Ediciones Paidós",
   "idioma": "spa",
-  "resumen": ""
+  "resumen": "",
+  "porque": "Es para quienes se exigen demasiado y necesitan aprender a tratarse con más compasión en los momentos duros. Aporta ejercicios y reflexiones basados en la autocompasión para calmar la autocrítica y abrazar la imperfección humana."
  },
  {
   "id": "las-gafas-de-la-felicidad-rafael-santandreu",
@@ -228,7 +240,8 @@
   "anio": "2014",
   "editorial": "Grijalbo",
   "idioma": "",
-  "resumen": ""
+  "resumen": "",
+  "porque": "Es para lectores que desean entrenar su mente para ver el lado positivo de las situaciones cotidianas. Aporta un método accesible para cambiar el enfoque mental y fortalecer el optimismo frente a la adversidad."
  },
  {
   "id": "habitos-atomicos-james-clear",
@@ -246,7 +259,8 @@
   "anio": "2026",
   "editorial": "Editorial Planeta Mexicana",
   "idioma": "spa",
-  "resumen": ""
+  "resumen": "",
+  "porque": "Es para quienes quieren transformar su día a día mediante pequeños cambios sostenibles en el tiempo. Aporta un sistema claro y basado en la ciencia para crear buenos hábitos, romper los malos y alcanzar metas duraderas."
  },
  {
   "id": "el-poder-de-los-habitos-charles-duhigg",
@@ -262,7 +276,8 @@
   "anio": "2023",
   "editorial": "VERGARA",
   "idioma": "spa",
-  "resumen": ""
+  "resumen": "",
+  "porque": "Es para mentes curiosas que desean entender por qué hacemos lo que hacemos en nuestra rutina. Aporta una explicación fascinante sobre el funcionamiento neurológico de las costumbres y cómo modificarlas tanto a nivel personal como en los negocios."
  },
  {
   "id": "los-7-habitos-de-la-gente-altamente-efectiva-stephen-r-covey",
@@ -592,6 +607,134 @@
   "portada": "https://covers.openlibrary.org/b/id/3333343-M.jpg?default=false",
   "anio": "2006",
   "editorial": "Luciernaga",
+  "idioma": "spa",
+  "resumen": ""
+ },
+ {
+  "id": "la-sombra-del-viento-carlos-ruiz-zafon",
+  "titulo": "La sombra del viento",
+  "autor": "Carlos Ruiz Zafón",
+  "temas": [
+   "novela"
+  ],
+  "origen": "semilla",
+  "fecha": "2026-11-09",
+  "isbn": "9789703702428",
+  "portada": "https://covers.openlibrary.org/b/id/10107644-M.jpg?default=false",
+  "anio": "2001",
+  "editorial": "Insel Verlag",
+  "idioma": "spa",
+  "resumen": ""
+ },
+ {
+  "id": "1984-george-orwell",
+  "titulo": "1984",
+  "autor": "George Orwell",
+  "temas": [
+   "novela"
+  ],
+  "origen": "semilla",
+  "fecha": "2026-11-09",
+  "isbn": "9780582777316",
+  "portada": "https://covers.openlibrary.org/b/id/8745958-M.jpg?default=false",
+  "anio": "2003",
+  "editorial": "Pearson Education",
+  "idioma": "",
+  "resumen": ""
+ },
+ {
+  "id": "el-principito-antoine-de-saint-exupery",
+  "titulo": "El principito",
+  "autor": "Antoine de Saint-Exupéry",
+  "temas": [
+   "novela"
+  ],
+  "origen": "semilla",
+  "fecha": "2026-11-09",
+  "isbn": "9788490746783",
+  "portada": "https://covers.openlibrary.org/b/id/13499066-M.jpg?default=false",
+  "anio": "2018",
+  "editorial": "Editorial Verbum, S.L.",
+  "idioma": "spa",
+  "resumen": ""
+ },
+ {
+  "id": "patria-fernando-aramburu",
+  "titulo": "Patria",
+  "autor": "Fernando Aramburu",
+  "temas": [
+   "novela"
+  ],
+  "origen": "semilla",
+  "fecha": "2026-11-09",
+  "isbn": "9788490663196",
+  "portada": "https://covers.openlibrary.org/b/id/12334964-M.jpg?default=false",
+  "anio": "2014",
+  "editorial": "Εκδόσεις Πατάκη",
+  "idioma": "spa",
+  "resumen": ""
+ },
+ {
+  "id": "la-casa-de-los-espiritus-isabel-allende",
+  "titulo": "La casa de los espíritus",
+  "autor": "Isabel Allende",
+  "temas": [
+   "novela"
+  ],
+  "origen": "semilla",
+  "fecha": "2026-11-09",
+  "isbn": "9788401371783",
+  "portada": "https://covers.openlibrary.org/b/id/3205226-M.jpg?default=false",
+  "anio": "1982",
+  "editorial": "Plaza & Janes",
+  "idioma": "spa",
+  "resumen": ""
+ },
+ {
+  "id": "los-pilares-de-la-tierra-ken-follett",
+  "titulo": "Los pilares de la Tierra",
+  "autor": "Ken Follett",
+  "temas": [
+   "novela"
+  ],
+  "origen": "semilla",
+  "fecha": "2026-11-09",
+  "isbn": "9789506445393",
+  "portada": "https://covers.openlibrary.org/b/id/12331263-M.jpg?default=false",
+  "anio": "2020",
+  "editorial": "PLAZA & JANES",
+  "idioma": "",
+  "resumen": ""
+ },
+ {
+  "id": "reina-roja-juan-gomez-jurado",
+  "titulo": "Reina roja",
+  "autor": "Juan Gómez-Jurado",
+  "temas": [
+   "novela"
+  ],
+  "origen": "semilla",
+  "fecha": "2026-11-09",
+  "isbn": "9788466667937",
+  "portada": "https://covers.openlibrary.org/b/id/9256100-M.jpg?default=false",
+  "anio": "2018",
+  "editorial": "B (Ediciones B)",
+  "idioma": "spa",
+  "resumen": ""
+ },
+ {
+  "id": "don-quijote-de-la-mancha-miguel-de-cervantes",
+  "titulo": "Don Quijote de la Mancha",
+  "autor": "Miguel de Cervantes",
+  "temas": [
+   "novela"
+  ],
+  "origen": "semilla",
+  "fecha": "2026-11-09",
+  "isbn": "9788480637473",
+  "portada": "https://covers.openlibrary.org/b/id/14428305-M.jpg?default=false",
+  "anio": "1600",
+  "editorial": "R. Bemporad & Figlio.",
   "idioma": "spa",
   "resumen": ""
  }
