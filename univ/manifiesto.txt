@@ -1465,6 +1465,7 @@
 ./datos/francia.json
 ./datos/grecia.json
 ./datos/guatemala.json
+./datos/honduras-carreras.json
 ./datos/honduras.json
 ./datos/india.json
 ./datos/indice.json
@@ -1539,7 +1540,9 @@
 ./ecuador/conservatorio-superior-la-merced/index.html
 ./ecuador/conservatorio-superior-nacional-de-musica/index.html
 ./ecuador/conservatorio-superior-salvador-bustamante-celi/index.html
+./ecuador/escuela-de-formacion-de-soldados-del-ejercito-vencedores-del-cenepa-esforse/index.html
 ./ecuador/escuela-politecnica-nacional/index.html
+./ecuador/escuela-superior-militar-eloy-alfaro-esmil/index.html
 ./ecuador/escuela-superior-politecnica-agropecuaria-de-manabi/index.html
 ./ecuador/escuela-superior-politecnica-de-chimborazo/index.html
 ./ecuador/escuela-superior-politecnica-del-litoral/index.html
