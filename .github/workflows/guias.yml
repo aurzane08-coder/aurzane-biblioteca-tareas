@@ -14,7 +14,7 @@ concurrency: guias
 jobs:
   guias:
     runs-on: ubuntu-latest
-    timeout-minutes: 40
+    timeout-minutes: 120
     env:
       SG_KEY: ${{ secrets.SG_KEY }}
       SG_HOST: ${{ secrets.SG_HOST }}
@@ -23,7 +23,7 @@ jobs:
       SG_PASS: ${{ secrets.SG_PASS }}
       GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      LIMITE: '8'
+      LIMITE: '30'
     steps:
       - uses: actions/checkout@v4
       - name: SSH
