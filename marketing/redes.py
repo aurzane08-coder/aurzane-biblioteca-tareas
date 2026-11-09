@@ -214,7 +214,7 @@ def verificar():
     if configurada('tiktok'):
         try:
             tk = _tiktok_token(); i = pedir('https://open.tiktokapis.com/v2/post/publish/creator_info/query/', {}, {'Authorization': 'Bearer ' + tk, 'Content-Type': 'application/json; charset=UTF-8'})['data']
-            out['tiktok'] = 'ok @' + i.get('creator_username', '') + ' privacidad ' + ','.join(i.get('privacy_level_options', []))
+            out['tiktok'] = 'ok @' + i.get('creator_username', '') + ' (' + '·'.join(i.get('creator_username', '')) + ', nombre «' + i.get('creator_nickname', '') + '») privacidad ' + ','.join(i.get('privacy_level_options', []))
         except Exception as e: out['tiktok'] = 'ERROR ' + str(e)[:200]
     for r in SECRETOS:
         out.setdefault(r, 'sin configurar' if not configurada(r) else out.get(r))
