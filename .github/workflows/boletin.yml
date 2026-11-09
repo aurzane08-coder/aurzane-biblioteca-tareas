@@ -1,0 +1,44 @@
+name: Boletín semanal
+# Domingo por la mañana: compone el boletín y lo envía a los suscritos confirmados. Con push solo sube la página de alta.
+on:
+  schedule:
+    - cron: '17 8 * * 0'
+  push:
+    paths: ['boletin/web/**', '.github/workflows/boletin.yml']
+  workflow_dispatch:
+    inputs:
+      enviar:
+        description: 'Enviar el boletín ahora (1)'
+        default: ''
+permissions:
+  contents: read
+concurrency: boletin
+jobs:
+  b:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      SG_KEY: ${{ secrets.SG_KEY }}
+      SG_HOST: ${{ secrets.SG_HOST }}
+      SG_USER: ${{ secrets.SG_USER }}
+      SG_PORT: ${{ secrets.SG_PORT }}
+      SG_PASS: ${{ secrets.SG_PASS }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Componer
+        run: python3 boletin/componer.py
+      - name: Subir y enviar
+        run: |
+          mkdir -p ~/.ssh && printf '%s\n' "$SG_KEY" | tr -d '\r' > ~/.ssh/id && chmod 600 ~/.ssh/id
+          if [ -n "$SG_PASS" ]; then ssh-keygen -p -P "$SG_PASS" -N "" -f ~/.ssh/id >/dev/null; fi
+          SSH="ssh -i $HOME/.ssh/id -p ${SG_PORT:-18765} -o StrictHostKeyChecking=accept-new"
+          $SSH "$SG_USER@$SG_HOST" "mkdir -p www/aurzane.com/public_html/boletin www/aurzane.com/privado-boletin && chmod 700 www/aurzane.com/privado-boletin"
+          rsync -rlz --checksum -e "$SSH" boletin/web/ "$SG_USER@$SG_HOST:www/aurzane.com/public_html/boletin/"
+          rsync -z -e "$SSH" /tmp/boletin/boletin.html /tmp/boletin/asunto.txt "$SG_USER@$SG_HOST:www/aurzane.com/privado-boletin/"
+          if [ "${{ github.event_name }}" = "schedule" ] || [ "${{ inputs.enviar }}" = "1" ]; then
+            R=$($SSH "$SG_USER@$SG_HOST" "cd www/aurzane.com/public_html/boletin && php enviar.php")
+            echo "::notice title=Boletín::$R"
+          else
+            N=$($SSH "$SG_USER@$SG_HOST" "php -r 'echo count(json_decode(@file_get_contents(\"www/aurzane.com/privado-boletin/suscritos.json\"),true)?:[]);'" || echo 0)
+            echo "::notice title=Boletín::página de alta actualizada; suscritos: $N"
+          fi

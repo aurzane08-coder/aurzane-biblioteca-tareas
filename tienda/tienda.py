@@ -19,6 +19,19 @@ MES = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto',
 os.makedirs(OUT, exist_ok=True)
 
 
+def ocasion(f):
+    """La guía cambia sola de nombre según la fecha: cuando acaba Navidad pasa a la siguiente ocasión."""
+    md = (f.month, f.day)
+    for ini, fin, nombre, primero in [((11, 1), (12, 31), 'Navidad y Reyes', None), ((1, 1), (1, 6), 'Reyes', None), ((2, 1), (2, 14), 'San Valentín', 'Relaciones y familia'),
+                                      ((3, 8), (3, 19), 'el Día del Padre', 'Relaciones y familia'), ((4, 1), (4, 23), 'Sant Jordi y el Día del Libro', 'Novela y relatos'),
+                                      ((4, 24), (5, 3), 'el Día de la Madre', 'Relaciones y familia'), ((6, 15), (8, 31), 'el verano', 'Novela y relatos'),
+                                      ((9, 1), (9, 30), 'la vuelta a clase', 'Estudiar y aprender')]:
+        if ini <= md <= fin: return nombre, primero
+    return 'cualquier ocasión', None
+OCASION, PRIMERA = ocasion(datetime.date.today())
+
+
+
 def get(url, datos=None, cab=None, t=40):
     err = ''
     for i in range(2):
@@ -283,19 +296,19 @@ for k, v in {'{{N}}': f'{len(todo):,}'.replace(',', '.'), '{{NG}}': f'{n_gratis:
                               f'<span class="dat"><small>LIBRO DE LA SEMANA</small><b>{E(estrella["t"])}</b><span class="au">{E(estrella["a"])}</span>'
                               f'<span class="txt">{E(estrella["tend"] or (cat.get(estrella["id"], {}).get("porque") or estrella["r"])[:200])}</span><span class="ver">Ver el libro</span></span></a>' if estrella else ''),
              '{{TENDENCIA}}': (f'<section class="sec destacada"><h2>Lo más buscado en {MES}</h2><p class="nota">Elegidos a partir de lo que más se busca en España estas semanas.</p><div class="rejilla">{"".join(tarjeta(x) for x in tendencia)}</div></section>' if tendencia else ''),
-             '{{ESTATICO}}': ''.join(tarjeta(x) for x in pub)}.items():
+             '{{ESTATICO}}': ''.join(tarjeta(x) for x in pub), '{{OCASION}}': OCASION}.items():
     pag = pag.replace(k, v)
 open(os.path.join(OUT, 'index.html'), 'w', encoding='utf-8').write(pag)
 print(f'::notice title=Tienda::{len(todo)} libros en la tienda ({len(pub)} elegidos, {n_ref} de la biblioteca con Amazon, {n_gratis} gratis); {len(nuevos)} nuevos esta vez ({sum(1 for i in nuevos if cat[i]["origen"] == "tendencia")} por tendencias)')
 
 # 4) guía de regalos de temporada (Navidad, Reyes, Sant Jordi, verano...): ideas por tipo de persona, con los libros elegidos
-mes_n = datetime.date.today().month
-OCASION = ('Navidad y Reyes' if mes_n in (11, 12, 1) else 'Sant Jordi y el Día del Libro' if mes_n in (3, 4) else 'el verano' if mes_n in (6, 7, 8) else 'regalar')
+
 PARA = [('Para quien vive con estrés o ansiedad', 'Emociones, ansiedad y estrés'), ('Para quien quiere cambiar de hábitos', 'Hábitos, salud y productividad'),
         ('Para quien está en un momento de cambio', 'Autoestima y desarrollo personal'), ('Para padres, madres y parejas', 'Relaciones y familia'),
         ('Para quien empieza la universidad o duda qué estudiar', 'Estudiar y aprender'), ('Para curiosos de la mente', 'Mente y personalidad'),
         ('Para quien disfruta de una buena novela', 'Novela y relatos'), ('Para quien quiere entender el mundo', 'Ciencia y tecnología'),
         ('Para quien quiere ordenar sus finanzas', 'Dinero y vivienda'), ('Para quien está atravesando una pérdida', 'Duelo y pérdidas')]
+if PRIMERA: PARA.sort(key=lambda x: x[1] != PRIMERA)   # en cada ocasión va primero lo que más se regala
 bloques = []
 for titulo_b, s_ in PARA:
     ls = [x for x in pub if x['s'] == s_ and x['img']][:4]
@@ -312,7 +325,7 @@ if bloques:
     reg = reg.replace('<title>Tienda de libros: gratis y de pago, psicología, novela y más | AURZANE</title>', f'<title>Libros para regalar en {E(OCASION)}: ideas por persona | AURZANE</title>')
     reg = reg.replace('<link rel="canonical" href="https://aurzane.com/libros/">', '<link rel="canonical" href="https://aurzane.com/libros/regalar/">')
     reg = re.sub(r'<meta name="description" content="[^"]*">', f'<meta name="description" content="Ideas de libros para regalar en {E(OCASION)}: para quien vive con estrés, para estudiantes, para amantes de la novela, para padres y más.">', reg)
-    for k, v in {'{{N}}': '', '{{NG}}': '', '{{NP}}': '', '{{MES}}': MES, '{{FECHA}}': HOY, '{{JSONLD}}': '{}'}.items(): reg = reg.replace(k, v)
+    for k, v in {'{{N}}': '', '{{NG}}': '', '{{NP}}': '', '{{MES}}': MES, '{{FECHA}}': HOY, '{{JSONLD}}': '{}', '{{OCASION}}': OCASION}.items(): reg = reg.replace(k, v)
     os.makedirs(os.path.join(OUT, 'regalar'), exist_ok=True)
     open(os.path.join(OUT, 'regalar', 'index.html'), 'w', encoding='utf-8').write(reg)
     sm = open(os.path.join(OUT, 'sitemap.xml'), encoding='utf-8').read().replace('</urlset>', f'<url><loc>https://aurzane.com/libros/regalar/</loc><lastmod>{HOY}</lastmod></url></urlset>')
