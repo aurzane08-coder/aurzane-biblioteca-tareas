@@ -118,7 +118,7 @@ svg text{fill:var(--sua);font-size:11px}
     '<div class="caja"><h2>Clics desde redes por red</h2>' + tabla(CR.por_red, ['Red', 'Clics']) + '</div>' +
     '<div class="caja"><h2>Publicaciones con más clics</h2>' + tabla(CR.contenidos, ['Contenido', 'Clics']) + '</div>' +
     '<div class="caja ancha"><h2>Solicitudes de colegios</h2>' + tabla((COL.ultimas || []).map(function(c){ return [c[1] + ' · ' + c[2], c[3], c[0]]; }), ['Colegio', 'Cargo', 'Fecha']) + '</div>' +
-    '<div class="caja ancha"><h2>Contenido</h2><table><tr><td>Libros en la tienda</td><td class="n">' + N(P.tienda_libros) + '</td></tr><tr><td>Libros publicados en Telegram</td><td class="n">' + N(P.telegram_libros) + ' de 365</td></tr></table></div>' +
+    '<div class="caja ancha"><h2>Contenido</h2><table><tr><td>Libros en la tienda</td><td class="n">' + N(P.tienda_total) + '</td></tr><tr><td>Libros de pago elegidos</td><td class="n">' + N(P.tienda_libros) + '</td></tr><tr><td>Libros publicados en Telegram</td><td class="n">' + N(P.telegram_libros) + ' de 365</td></tr></table></div>' +
   '</div>';
   app.innerHTML = h;
 })().catch(function(e){ document.getElementById('app').innerHTML = '<div class="centro"><p>No se pudo cargar el panel. Recarga la página.</p></div>'; console.error(e); });
