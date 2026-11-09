@@ -1,0 +1,43 @@
+name: Tienda de libros
+# Cada lunes y jueves: comprueba libros en Google Books, añade los de las tendencias de búsqueda en España y publica aurzane.com/libros/
+on:
+  schedule:
+    - cron: '41 5 * * 1,4'
+  push:
+    paths: ['tienda/semilla.json', 'tienda/tienda.py', 'tienda/plantilla.html', '.github/workflows/tienda.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+  models: read
+concurrency: tienda
+jobs:
+  t:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      SG_KEY: ${{ secrets.SG_KEY }}
+      SG_HOST: ${{ secrets.SG_HOST }}
+      SG_USER: ${{ secrets.SG_USER }}
+      SG_PORT: ${{ secrets.SG_PORT }}
+      SG_PASS: ${{ secrets.SG_PASS }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Preparar la tienda
+        run: OUT=/tmp/tienda python3 -u tienda/tienda.py
+      - name: Subir a aurzane.com/libros
+        if: env.SG_KEY != ''
+        run: |
+          mkdir -p ~/.ssh && printf '%s\n' "$SG_KEY" | tr -d '\r' > ~/.ssh/id && chmod 600 ~/.ssh/id
+          if [ -n "$SG_PASS" ]; then ssh-keygen -p -P "$SG_PASS" -N "" -f ~/.ssh/id >/dev/null; fi
+          SSH="ssh -i $HOME/.ssh/id -p ${SG_PORT:-18765} -o StrictHostKeyChecking=accept-new"
+          $SSH "$SG_USER@$SG_HOST" "mkdir -p www/aurzane.com/public_html/libros"
+          rsync -rlz --checksum -e "$SSH" /tmp/tienda/ "$SG_USER@$SG_HOST:www/aurzane.com/public_html/libros/"
+          $SSH "$SG_USER@$SG_HOST" "site-tools-client domain-all update id=aurzane.com flush_cache=1 >/dev/null 2>&1" || true
+      - name: Guardar catálogo
+        run: |
+          git config user.name "aurzane-bot"; git config user.email "bot@aurzane.com"
+          git add tienda/catalogo.json tienda/descartes.json
+          git commit -qm "Tienda: catálogo actualizado" || exit 0
+          for i in 1 2 3 4 5 6; do git pull --rebase -X theirs -q && git push -q && break; git rebase --abort 2>/dev/null || true; sleep $((RANDOM % 20 + 5)); done

@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://aurzane.com/aurzane-paleta.js"></script>
+<title>Tienda de libros: psicología, bienestar, novela y más | AURZANE</title>
+<meta name="description" content="{{N}} libros elegidos por AURZANE: psicología, bienestar, hábitos, novela, ciencia y lo más buscado en {{MES}}. Cada libro lleva a Amazon.">
+<link rel="canonical" href="https://aurzane.com/libros/">
+<meta property="og:title" content="Tienda de libros AURZANE">
+<meta property="og:description" content="Libros de psicología, bienestar, novela y ciencia, y lo más buscado este mes.">
+<meta property="og:image" content="https://aurzane.com/og-portada.jpg">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@500;700&family=Instrument+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">{{JSONLD}}</script>
+<style>
+:root{--bg:#0b0e1d;--sup:#141a33;--txt:#f3efe6;--sua:#b9b3a6;--oro:#E2BF6A;--lin:rgba(255,255,255,.1)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--txt);font:16px/1.6 "Instrument Sans",system-ui,sans-serif}
+a{color:inherit}.w{max-width:1180px;margin:0 auto;padding:0 20px}
+header.top{border-bottom:1px solid var(--lin)}header.top .w{display:flex;align-items:center;gap:18px;height:64px}
+.marca{font:700 1.15rem "Bodoni Moda",serif;letter-spacing:.06em;text-decoration:none}.marca span{color:var(--oro)}
+header.top nav{margin-left:auto;display:flex;gap:18px;font-size:.92rem}header.top nav a{text-decoration:none;opacity:.85}
+.hero{padding:54px 0 26px}.hero h1{font:700 clamp(2rem,5vw,3.2rem)/1.1 "Bodoni Moda",serif;margin:0 0 12px;max-width:16ch}
+.hero p{max-width:60ch;color:var(--sua);margin:0 0 22px}
+.buscar{width:100%;max-width:560px;padding:14px 18px;border-radius:99px;border:1px solid var(--lin);background:var(--sup);color:var(--txt);font:inherit}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 0}.chips button{cursor:pointer;border-radius:99px;padding:7px 14px;border:1px solid var(--lin);background:transparent;color:var(--txt);font:600 .85rem inherit}
+.chips button[aria-pressed="true"]{background:var(--oro);border-color:var(--oro);color:#1b1440}
+.sec{padding:26px 0 8px}.sec h2{font:700 1.5rem "Bodoni Moda",serif;margin:0 0 14px}.sec h2 small{font:600 .8rem "Instrument Sans";color:var(--sua);margin-left:6px}
+.destacada{background:linear-gradient(160deg,#2a1f63,#141a33);border-radius:24px;padding:26px 24px 18px;margin-top:10px}.nota{color:var(--sua);margin:-6px 0 14px;font-size:.92rem}
+.rejilla{display:grid;grid-template-columns:repeat(auto-fill,minmax(165px,1fr));gap:18px}
+.libro{display:flex;flex-direction:column;text-decoration:none;border-radius:16px;padding:12px;background:var(--sup);border:1px solid var(--lin);transition:transform .2s,border-color .2s}
+.libro:hover{transform:translateY(-3px);border-color:rgba(226,191,106,.5)}
+.por{display:grid;place-items:center;height:210px;border-radius:10px;background:#0f1430;overflow:hidden;margin-bottom:10px}
+.por img{height:100%;width:auto;max-width:100%;object-fit:contain;box-shadow:0 12px 26px -12px rgba(0,0,0,.8)}
+.sin{padding:16px;text-align:center;font:700 1rem "Bodoni Moda",serif}
+.dat b{display:block;font-size:.95rem;line-height:1.3}.au{display:block;font-size:.82rem;color:var(--sua);margin:3px 0 8px}
+.tend{display:block;font-size:.78rem;color:#FFD9A0;margin-bottom:8px;line-height:1.35}
+.ver{display:inline-block;font-size:.8rem;font-weight:700;color:#1b1440;background:var(--oro);border-radius:99px;padding:5px 12px}
+.oculto{display:none!important}.aviso{color:var(--sua);font-size:.85rem;border-top:1px solid var(--lin);margin-top:40px;padding:22px 0 50px}
+@media (prefers-reduced-motion:reduce){.libro{transition:none}}
+</style>
+</head>
+<body>
+<header class="top"><div class="w"><a class="marca" href="https://aurzane.com/">AUR<span>Z</span>ANE</a><nav><a href="/biblioteca/">Biblioteca gratis</a><a href="/articulos/">Artículos</a><a href="https://mind.aurzane.com/">Tests</a></nav></div></header>
+<main class="w">
+  <div class="hero">
+    <h1>Tienda de libros</h1>
+    <p>{{N}} libros elegidos por AURZANE: psicología y bienestar, hábitos, relaciones, ciencia, novela y lo que más se busca este mes. Cada libro se comprueba antes de entrar y te lleva a Amazon para comprarlo.</p>
+    <input class="buscar" type="search" placeholder="Busca un título, autor o tema" aria-label="Buscar libros">
+    <div class="chips"><button type="button" data-f="" aria-pressed="true">Todos</button>{{CHIPS}}</div>
+  </div>
+  {{TENDENCIA}}
+  {{SECCIONES}}
+  <p class="aviso">Como afiliado de Amazon, AURZANE obtiene ingresos por las compras adscritas que cumplen los requisitos aplicables. A ti no te cuesta nada más y ayuda a mantener gratis los tests y la biblioteca. Actualizada el {{FECHA}}. ¿Buscas libros para leer gratis? Están en la <a href="/biblioteca/">biblioteca abierta</a>.</p>
+</main>
+<script>
+(function(){
+  var q='',f='',inp=document.querySelector('.buscar');
+  function sinT(t){return (t||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');}
+  function aplicar(){
+    document.querySelectorAll('.sec').forEach(function(s){
+      var vis=0;s.querySelectorAll('.libro').forEach(function(l){var ok=(!f||l.dataset.s===f)&&(!q||l.dataset.q.indexOf(q)>=0);l.classList.toggle('oculto',!ok);if(ok)vis++;});
+      s.classList.toggle('oculto',!vis);
+    });
+  }
+  inp.addEventListener('input',function(){q=sinT(inp.value.trim());aplicar();});
+  document.querySelector('.chips').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;f=b.dataset.f;
+    this.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});aplicar();});
+})();
+</script>
+</body>
+</html>
