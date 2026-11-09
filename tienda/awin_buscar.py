@@ -5,6 +5,7 @@ CLAVES = ['edx', 'coursera', 'udemy', 'domestika', 'babbel', 'busuu', 'preply', 
           'emagister', 'campus', 'escuela', 'academy', 'academia', 'curso', 'course', 'learning', 'school', 'universi', 'educa', 'study', 'language',
           'libro', 'book', 'storytel', 'audible', 'kobo', 'nubico', 'bookbeo', 'mindful', 'calm', 'headspace', 'yoga', 'meditat', 'sleep', 'psicolog',
           'therapy', 'terapia', 'student', 'estudiant', 'notebook', 'papeler', 'office', 'lamy', 'moleskine']
+if os.environ.get('CLAVES'): CLAVES = [c.strip() for c in os.environ['CLAVES'].split(',') if c.strip()]
 out = []
 for rel in ('notjoined', 'pending', 'joined', 'rejected'):
     rq = urllib.request.Request(f'https://api.awin.com/publishers/{pid}/programmes?relationship={rel}', headers={'Authorization': 'Bearer ' + tk})

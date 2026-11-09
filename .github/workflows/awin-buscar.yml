@@ -3,6 +3,10 @@ on:
   push:
     paths: ['tienda/awin_buscar.py']
   workflow_dispatch:
+    inputs:
+      claves:
+        description: 'Palabras separadas por comas (vacío = las de siempre)'
+        default: ''
 permissions:
   contents: read
 jobs:
@@ -13,3 +17,4 @@ jobs:
       - run: python3 tienda/awin_buscar.py
         env:
           AWIN_TOKEN: ${{ secrets.AWIN_TOKEN }}
+          CLAVES: ${{ github.event.inputs.claves || 'hipotec,mortgage,banco,bank,cuenta,n26,revolut,wise,finanz,financ,invest,inversi,broker,seguro,insurance,assur,prestamo,préstamo,loan,credit,crédito,tarjeta,myinvestor,indexa,bnext,renta,taxdown,impuesto,holded,factur,quaderno,iahorro,helpmycash,kelisto,rastreator,acierto,idealista,fotocasa,habitissimo,reforma,energ,luz,holaluz,ahorro,saving,money,dinero,pension,pensión,nomina,nómina,autonom,freelance,divisa,currency,transfer' }}
