@@ -4,11 +4,11 @@ Actualizado: 2026-11-09. Clics de personas (sin bots ni vistas previas) que entr
 
 | Red | Publicaciones | Clics |
 |---|---|---|
-| telegram | 33 | 4 |
+| telegram | 34 | 4 |
 | bluesky | 24 | 71 |
-| mastodon | 24 | 58 |
-| instagram | 10 | 0 |
-| facebook | 10 | 31 |
+| mastodon | 24 | 62 |
+| instagram | 11 | 0 |
+| facebook | 11 | 34 |
 | threads | 0 | 0 |
 | pinterest | 16 | 0 |
 
@@ -18,6 +18,7 @@ Actualizado: 2026-11-09. Clics de personas (sin bots ni vistas previas) que entr
 |---|---|
 | calc-sueldo | 11 |
 | curso-neuro | 7 |
+| test-ansiedad | 7 |
 | test-sueno | 6 |
 | frase-b424a195 | 6 |
 | crea-l05-08 | 6 |
@@ -31,7 +32,6 @@ Actualizado: 2026-11-09. Clics de personas (sin bots ni vistas previas) que entr
 | nc-sociologia | 4 |
 | biblio-nexus | 4 |
 | ovp | 4 |
-| test-ansiedad | 4 |
 | nc-criminologia | 4 |
 | nc-educacion-infantil | 4 |
 | test-satisfaccion | 4 |
