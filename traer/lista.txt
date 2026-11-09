@@ -1,2 +1,9 @@
-aurzane.com/sobre-aurzane.html
-aurzane.com/condiciones.html
+learn.aurzane.com/cursos.html
+learn.aurzane.com/cursos/app.js
+learn.aurzane.com/cursos/admin.js
+learn.aurzane.com/cursos/data-supabase.js
+learn.aurzane.com/cursos/store-supabase.js
+learn.aurzane.com/index.html
+learn.aurzane.com/admin-cursos.html
+aurzane.com/index.html
+aurzane.com/mi-aurzane.html
