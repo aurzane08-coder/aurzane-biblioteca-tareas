@@ -1,0 +1,397 @@
+[
+ {
+  "id": "el-juego-interior-del-tenis-w-timothy-gallwey",
+  "titulo": "El juego interior del tenis",
+  "autor": "W. Timothy Gallwey",
+  "temas": [
+   "habitos",
+   "productividad"
+  ],
+  "origen": "tendencia",
+  "fecha": "2026-11-09",
+  "isbn": "9788478081738",
+  "portada": "https://covers.openlibrary.org/b/id/3330108-M.jpg",
+  "anio": "2006",
+  "editorial": "Editorial Sirio",
+  "idioma": "spa",
+  "resumen": "",
+  "tendencia": "Ideal para conectar con la concentración y el rendimiento mental inspirado en la temporada de baloncesto y deporte de élite.",
+  "tendencia_fecha": "2026-11-09"
+ },
+ {
+  "id": "invisible-eloy-moreno",
+  "titulo": "Invisible",
+  "autor": "Eloy Moreno",
+  "temas": [
+   "novela",
+   "emociones"
+  ],
+  "origen": "tendencia",
+  "fecha": "2026-11-09",
+  "isbn": "9788418050428",
+  "portada": "https://covers.openlibrary.org/b/id/11171586-M.jpg",
+  "anio": "2020",
+  "editorial": "Nube de Tinta",
+  "idioma": "spa",
+  "resumen": "",
+  "tendencia": "Una novela muy buscada en otoño sobre la empatía y la visibilidad social en entornos cotidianos y escolares.",
+  "tendencia_fecha": "2026-11-09"
+ },
+ {
+  "id": "mentalidad-mamba-kobe-bryant",
+  "titulo": "Mentalidad Mamba",
+  "autor": "Kobe Bryant",
+  "temas": [
+   "habitos",
+   "autoeficacia"
+  ],
+  "origen": "tendencia",
+  "fecha": "2026-11-09",
+  "isbn": "9786070767302",
+  "portada": "",
+  "anio": "2020",
+  "editorial": "Editorial Planeta, S. A.",
+  "idioma": "spa",
+  "resumen": "",
+  "tendencia": "Perfecto para regalar o leer en noviembre, buscando la disciplina y la superación personal a través del deporte.",
+  "tendencia_fecha": "2026-11-09"
+ },
+ {
+  "id": "como-hacer-que-te-pasen-cosas-buenas-marian-rojas-estape",
+  "titulo": "Cómo hacer que te pasen cosas buenas",
+  "autor": "Marian Rojas Estapé",
+  "temas": [
+   "ansiedad",
+   "estres",
+   "bienestar"
+  ],
+  "origen": "semilla",
+  "fecha": "2026-11-09",
+  "isbn": "9788467053302",
+  "portada": "https://covers.openlibrary.org/b/id/12015208-M.jpg",
+  "anio": "2018",
+  "editorial": "Planeta",
+  "idioma": "spa",
+  "resumen": ""
+ },
+ {
+  "id": "el-arte-de-no-amargarse-la-vida-rafael-santandreu",
+  "titulo": "El arte de no amargarse la vida",
+  "autor": "Rafael Santandreu",
+  "temas": [
+   "ansiedad",
+   "depresion",
+   "emociones"
+  ],
+  "origen": "semilla",
+  "fecha": "2026-11-09",
+  "isbn": "9788425355868",
+  "portada": "https://covers.openlibrary.org/b/id/8142113-M.jpg",
+  "anio": "2018",
+  "editorial": "Grijalbo",
+  "idioma": "spa",
+  "resumen": ""
+ },
+ {
+  "id": "vivir-con-plenitud-las-crisis-jon-kabat-zinn",
+  "titulo": "Vivir con plenitud las crisis",
+  "autor": "Jon Kabat-Zinn",
+  "temas": [
+   "estres",
+   "ansiedad"
+  ],
+  "origen": "semilla",
+  "fecha": "2026-11-09",
+  "isbn": "9788472455672",
+  "portada": "https://covers.openlibrary.org/b/id/5269850-M.jpg",
+  "anio": "2005",
+  "editorial": "Editorial Kairos",
+  "idioma": "spa",
+  "resumen": ""
+ },
+ {
+  "id": "el-poder-del-ahora-eckhart-tolle",
+  "titulo": "El poder del ahora",
+  "autor": "Eckhart Tolle",
+  "temas": [
+   "estres",
+   "bienestar"
+  ],
+  "origen": "semilla",
+  "fecha": "2026-11-09",
+  "isbn": "9788484454663",
+  "portada": "https://covers.openlibrary.org/b/id/12335770-M.jpg",
+  "anio": "2013",
+  "editorial": "Gaia Ediciones",
+  "idioma": "spa",
+  "resumen": ""
+ },
+ {
+  "id": "sentirse-bien-david-d-burns",
+  "titulo": "Sentirse bien",
+  "autor": "David D. Burns",
+  "temas": [
+   "depresion",
+   "autoestima"
+  ],
+  "origen": "semilla",
+  "fecha": "2026-11-09",
+  "isbn": "9788449307928",
+  "portada": "https://covers.openlibrary.org/b/id/296187-M.jpg",
+  "anio": "1989",
+  "editorial": "Zhang lao shi wen hua shi ye gu fen you xian gong si",
+  "idioma": "spa",
+  "resumen": ""
+ },
+ {
+  "id": "los-seis-pilares-de-la-autoestima-nathaniel-branden",
+  "titulo": "Los seis pilares de la autoestima",
+  "autor": "Nathaniel Branden",
+  "temas": [
+   "autoestima"
+  ],
+  "origen": "semilla",
+  "fecha": "2026-11-09",
+  "isbn": "9789688533130",
+  "portada": "https://covers.openlibrary.org/b/id/8085871-M.jpg",
+  "anio": "1996",
+  "editorial": "Ediciones Paidos Iberica",
+  "idioma": "spa",
+  "resumen": ""
+ },
+ {
+  "id": "se-amable-contigo-mismo-kristin-neff",
+  "titulo": "Sé amable contigo mismo",
+  "autor": "Kristin Neff",
+  "temas": [
+   "autocompasion",
+   "autoestima"
+  ],
+  "origen": "semilla",
+  "fecha": "2026-11-09",
+  "isbn": "9788449331985",
+  "portada": "https://covers.openlibrary.org/b/id/13662061-M.jpg",
+  "anio": "2016",
+  "editorial": "Ediciones Paidós",
+  "idioma": "spa",
+  "resumen": ""
+ },
+ {
+  "id": "las-gafas-de-la-felicidad-rafael-santandreu",
+  "titulo": "Las gafas de la felicidad",
+  "autor": "Rafael Santandreu",
+  "temas": [
+   "bienestar",
+   "depresion"
+  ],
+  "origen": "semilla",
+  "fecha": "2026-11-09",
+  "isbn": "9788490624555",
+  "portada": "https://covers.openlibrary.org/b/id/7276390-M.jpg",
+  "anio": "2014",
+  "editorial": "Grijalbo",
+  "idioma": "",
+  "resumen": ""
+ },
+ {
+  "id": "habitos-atomicos-james-clear",
+  "titulo": "Hábitos atómicos",
+  "autor": "James Clear",
+  "temas": [
+   "habitos",
+   "autoeficacia",
+   "productividad"
+  ],
+  "origen": "semilla",
+  "fecha": "2026-11-09",
+  "isbn": "9786075691251",
+  "portada": "",
+  "anio": "2026",
+  "editorial": "Editorial Planeta Mexicana",
+  "idioma": "spa",
+  "resumen": ""
+ },
+ {
+  "id": "el-poder-de-los-habitos-charles-duhigg",
+  "titulo": "El poder de los hábitos",
+  "autor": "Charles Duhigg",
+  "temas": [
+   "habitos"
+  ],
+  "origen": "semilla",
+  "fecha": "2026-11-09",
+  "isbn": "9789501532845",
+  "portada": "https://covers.openlibrary.org/b/id/15102653-M.jpg",
+  "anio": "2023",
+  "editorial": "VERGARA",
+  "idioma": "spa",
+  "resumen": ""
+ },
+ {
+  "id": "los-7-habitos-de-la-gente-altamente-efectiva-stephen-r-covey",
+  "titulo": "Los 7 hábitos de la gente altamente efectiva",
+  "autor": "Stephen R. Covey",
+  "temas": [
+   "productividad",
+   "autoeficacia"
+  ],
+  "origen": "semilla",
+  "fecha": "2026-11-09",
+  "isbn": "9788449331152",
+  "portada": "https://covers.openlibrary.org/b/id/1051915-M.jpg",
+  "anio": "1992",
+  "editorial": "Paidos",
+  "idioma": "spa",
+  "resumen": ""
+ },
+ {
+  "id": "los-patitos-feos-boris-cyrulnik",
+  "titulo": "Los patitos feos",
+  "autor": "Boris Cyrulnik",
+  "temas": [
+   "resiliencia"
+  ],
+  "origen": "semilla",
+  "fecha": "2026-11-09",
+  "isbn": "9788474329261",
+  "portada": "https://covers.openlibrary.org/b/id/13463972-M.jpg",
+  "anio": "2002",
+  "editorial": "Gedisa",
+  "idioma": "",
+  "resumen": ""
+ },
+ {
+  "id": "el-siglo-de-la-soledad-noreena-hertz",
+  "titulo": "El siglo de la soledad",
+  "autor": "Noreena Hertz",
+  "temas": [
+   "soledad"
+  ],
+  "origen": "semilla",
+  "fecha": "2026-11-09",
+  "isbn": "9788449338458",
+  "portada": "https://covers.openlibrary.org/b/id/13663246-M.jpg",
+  "anio": "2021",
+  "editorial": "Ediciones Paidós",
+  "idioma": "",
+  "resumen": ""
+ },
+ {
+  "id": "el-poder-de-los-introvertidos-susan-cain",
+  "titulo": "El poder de los introvertidos",
+  "autor": "Susan Cain",
+  "temas": [
+   "personalidad",
+   "soledad"
+  ],
+  "origen": "semilla",
+  "fecha": "2026-11-09",
+  "isbn": "9788491879961",
+  "portada": "https://covers.openlibrary.org/b/id/14211672-M.jpg",
+  "anio": "2020",
+  "editorial": "RBA Bolsillo",
+  "idioma": "spa",
+  "resumen": ""
+ },
+ {
+  "id": "inteligencia-emocional-daniel-goleman",
+  "titulo": "Inteligencia emocional",
+  "autor": "Daniel Goleman",
+  "temas": [
+   "emociones",
+   "personalidad"
+  ],
+  "origen": "semilla",
+  "fecha": "2026-11-09",
+  "isbn": "",
+  "portada": "https://covers.openlibrary.org/b/id/14532869-M.jpg",
+  "anio": "2012",
+  "editorial": "Objetiva",
+  "idioma": "",
+  "resumen": ""
+ },
+ {
+  "id": "la-conquista-de-la-felicidad-bertrand-russell",
+  "titulo": "La conquista de la felicidad",
+  "autor": "Bertrand Russell",
+  "temas": [
+   "satisfaccion",
+   "ensayo"
+  ],
+  "origen": "semilla",
+  "fecha": "2026-11-09",
+  "isbn": "9788483063040",
+  "portada": "https://covers.openlibrary.org/b/id/2272085-M.jpg",
+  "anio": "2000",
+  "editorial": "Debate",
+  "idioma": "",
+  "resumen": ""
+ },
+ {
+  "id": "la-rueda-de-la-vida-elisabeth-kubler-ross",
+  "titulo": "La rueda de la vida",
+  "autor": "Elisabeth Kübler-Ross",
+  "temas": [
+   "duelo",
+   "resiliencia"
+  ],
+  "origen": "semilla",
+  "fecha": "2026-11-09",
+  "isbn": "9788466617093",
+  "portada": "https://covers.openlibrary.org/b/id/2270498-M.jpg",
+  "anio": "2003",
+  "editorial": "Ediciones B",
+  "idioma": "spa",
+  "resumen": ""
+ },
+ {
+  "id": "el-error-de-descartes-antonio-damasio",
+  "titulo": "El error de Descartes",
+  "autor": "Antonio Damasio",
+  "temas": [
+   "ciencia"
+  ],
+  "origen": "crecer",
+  "fecha": "2026-11-09",
+  "isbn": "9788423361458",
+  "portada": "https://covers.openlibrary.org/b/id/10723987-M.jpg",
+  "anio": "2006",
+  "editorial": "Editorial Crítica",
+  "idioma": "",
+  "resumen": ""
+ },
+ {
+  "id": "una-breve-historia-de-casi-todo-bill-bryson",
+  "titulo": "Una breve historia de casi todo",
+  "autor": "Bill Bryson",
+  "temas": [
+   "ciencia",
+   "ensayo"
+  ],
+  "origen": "crecer",
+  "fecha": "2026-11-09",
+  "isbn": "9788427223493",
+  "portada": "https://covers.openlibrary.org/b/id/14058009-M.jpg",
+  "anio": "2021",
+  "editorial": "Molino",
+  "idioma": "",
+  "resumen": ""
+ },
+ {
+  "id": "educar-en-el-asombro-catherine-l-ecuyer",
+  "titulo": "Educar en el asombro",
+  "autor": "Catherine L'Ecuyer",
+  "temas": [
+   "crianza",
+   "emociones"
+  ],
+  "origen": "crecer",
+  "fecha": "2026-11-09",
+  "isbn": "9788415577423",
+  "portada": "https://covers.openlibrary.org/b/id/7295137-M.jpg",
+  "anio": "2012",
+  "editorial": "Plataforma Editorial",
+  "idioma": "",
+  "resumen": ""
+ }
+]
