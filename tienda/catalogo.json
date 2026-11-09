@@ -294,7 +294,8 @@
   "anio": "1992",
   "editorial": "Paidos",
   "idioma": "spa",
-  "resumen": ""
+  "resumen": "",
+  "porque": "Este libro es para quienes buscan transformar su eficacia personal y profesional desde la responsabilidad y el liderazgo interior. Aporta un marco práctico de principios universales para cambiar nuestros hábitos y mejorar las relaciones con los demás."
  },
  {
   "id": "los-patitos-feos-boris-cyrulnik",
@@ -310,7 +311,8 @@
   "anio": "2002",
   "editorial": "Gedisa",
   "idioma": "",
-  "resumen": ""
+  "resumen": "",
+  "porque": "Es una lectura muy adecuada para quienes atraviesan momentos de dolor y desean comprender cómo reconstruir su vida tras un trauma. Aporta una mirada esperanzadora sobre la resiliencia humana y la capacidad de superar las heridas emocionales."
  },
  {
   "id": "el-siglo-de-la-soledad-noreena-hertz",
@@ -326,7 +328,8 @@
   "anio": "2021",
   "editorial": "Ediciones Paidós",
   "idioma": "",
-  "resumen": ""
+  "resumen": "",
+  "porque": "Va dirigido a cualquier persona preocupada por el aislamiento social y la desconexión en las ciudades modernas. Aporta un análisis profundo sobre cómo hemos llegado a esta situación y propone vías para recuperar la empatía y la comunidad."
  },
  {
   "id": "el-poder-de-los-introvertidos-susan-cain",
@@ -343,7 +346,8 @@
   "anio": "2020",
   "editorial": "RBA Bolsillo",
   "idioma": "spa",
-  "resumen": ""
+  "resumen": "",
+  "porque": "Este libro es ideal para introvertidos que quieren entender su propia naturaleza y para quienes viven o trabajan con ellos. Aporta herramientas para valorar la reflexión y la calma en un mundo que premia constantemente la extroversión."
  },
  {
   "id": "inteligencia-emocional-daniel-goleman",
@@ -360,7 +364,8 @@
   "anio": "2012",
   "editorial": "Objetiva",
   "idioma": "",
-  "resumen": ""
+  "resumen": "",
+  "porque": "Es para quienes desean mejorar su bienestar comprendiendo y gestionando mejor sus propias emociones y las de su entorno. Aporta claves científicas y prácticas para desarrollar la empatía y la madurez emocional en el día a día."
  },
  {
   "id": "la-conquista-de-la-felicidad-bertrand-russell",
@@ -377,7 +382,8 @@
   "anio": "2000",
   "editorial": "Debate",
   "idioma": "",
-  "resumen": ""
+  "resumen": "",
+  "porque": "Va dirigido a quienes buscan reflexionar sobre las causas cotidianas del descontento y desean encontrar una vida más plena. Aporta una sabiduría accesible y cercana para superar las preocupaciones innecesarias y conectar con el mundo."
  },
  {
   "id": "la-rueda-de-la-vida-elisabeth-kubler-ross",
@@ -394,7 +400,8 @@
   "anio": "2003",
   "editorial": "Ediciones B",
   "idioma": "spa",
-  "resumen": ""
+  "resumen": "",
+  "porque": "Este libro es para quienes se enfrentan al dolor, la vejez o el proceso de la muerte con dudas y temores. Aporta las valiosas enseñanzas vitales de una psiquiatra que acompañó a numerosos pacientes terminales."
  },
  {
   "id": "el-error-de-descartes-antonio-damasio",
@@ -410,7 +417,8 @@
   "anio": "2006",
   "editorial": "Editorial Crítica",
   "idioma": "",
-  "resumen": ""
+  "resumen": "",
+  "porque": "Es una lectura perfecta para mentes curiosas interesadas en la relación entre el cerebro, la razón y los sentimientos. Aporta una perspectiva neurocientífica que demuestra cómo las emociones son indispensables para tomar buenas decisiones."
  },
  {
   "id": "una-breve-historia-de-casi-todo-bill-bryson",
@@ -427,7 +435,8 @@
   "anio": "2021",
   "editorial": "Molino",
   "idioma": "",
-  "resumen": ""
+  "resumen": "",
+  "porque": "Va dirigido a cualquier lector curioso que quiera entender la ciencia y el universo de forma amena y divertida. Aporta un recorrido fascinante por los grandes descubrimientos científicos contado con cercanía y sentido del humor."
  },
  {
   "id": "educar-en-el-asombro-catherine-l-ecuyer",
@@ -444,7 +453,8 @@
   "anio": "2012",
   "editorial": "Plataforma Editorial",
   "idioma": "",
-  "resumen": ""
+  "resumen": "",
+  "porque": "Este libro es para padres y educadores que sienten que los niños reciben demasiados estímulos y prisas. Aporta una reflexión necesaria sobre la importancia de proteger la capacidad de asombro y el ritmo natural de la infancia."
  },
  {
   "id": "los-cinco-lenguajes-del-amor-gary-chapman",
@@ -460,7 +470,8 @@
   "anio": "2006",
   "editorial": "Editorial Unilit",
   "idioma": "spa",
-  "resumen": ""
+  "resumen": "",
+  "porque": "Es para parejas que desean mejorar su comunicación y conectar de una manera más profunda y sincera. Aporta un método sencillo para descubrir y expresar el afecto según las necesidades emocionales de cada uno."
  },
  {
   "id": "encuentra-tu-persona-vitamina-marian-rojas-estape",
@@ -477,7 +488,8 @@
   "anio": "2021",
   "editorial": "Editorial Planeta, S. A.",
   "idioma": "spa",
-  "resumen": ""
+  "resumen": "",
+  "porque": "Va dirigido a quienes desean entender sus vínculos afectivos y aprender a relacionarse con personas que aportan bienestar. Aporta explicaciones claras sobre el apego, el cerebro y las claves para sanar nuestras relaciones."
  },
  {
   "id": "el-elemento-ken-robinson",
@@ -493,7 +505,8 @@
   "anio": "2010",
   "editorial": "GRIJALBO",
   "idioma": "",
-  "resumen": ""
+  "resumen": "",
+  "porque": "Este libro es para quienes sienten que no encajan en los moldes tradicionales y buscan su verdadera vocación. Aporta inspiración y ejemplos para conectar con las propias pasiones y talentos naturales."
  },
  {
   "id": "mindset-carol-s-dweck",
@@ -510,7 +523,8 @@
   "anio": "2006",
   "editorial": "Keter",
   "idioma": "spa",
-  "resumen": ""
+  "resumen": "",
+  "porque": "Es ideal para estudiantes, profesionales y educadores interesados en el desarrollo personal y el aprendizaje continuo. Aporta la diferencia clave entre la mentalidad fija y la de crecimiento para afrontar los retos con confianza."
  },
  {
   "id": "el-valor-de-la-atencion-johann-hari",
@@ -527,7 +541,8 @@
   "anio": "2023",
   "editorial": "Ediciones Península",
   "idioma": "spa",
-  "resumen": ""
+  "resumen": "",
+  "porque": "Va dirigido a quienes sienten que han perdido la capacidad de concentrarse debido al ritmo digital actual. Aporta una investigación exhaustiva sobre las causas reales de la pérdida de atención y cómo empezar a recuperarla."
  },
  {
   "id": "el-gen-egoista-richard-dawkins",
