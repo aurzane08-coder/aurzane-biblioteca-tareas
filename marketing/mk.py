@@ -82,6 +82,19 @@ def catalogo():
     except Exception as e:
         print('Biblioteca no disponible, uso la copia anterior:', e)
         out += [p for p in prev.values() if p.get('tipo') == 'libro']
+    # libros de la tienda (de pago, con ficha propia en aurzane.com/libros/): entran en la rotación de libros para dar a conocer la tienda
+    try:
+        for x in json.load(open(os.path.join(os.path.dirname(D), 'tienda', 'catalogo.json'), encoding='utf-8')):
+            if not x.get('portada'): continue
+            gancho_t = (x.get('tendencia') or '').strip()
+            out.append(dict(id='lectura-' + x['id'], tipo='lectura', mundo='aurzane', origen='tienda', url=f'https://aurzane.com/libros/{x["id"]}/',
+                            titulo=x['titulo'], autor=x['autor'],
+                            ganchos=[f'Libro recomendado: {x["titulo"]}', f'{x["titulo"]}, de {x["autor"]}', f'¿Qué leer este mes? {x["titulo"]}'],
+                            texto=recorta(x.get('porque') or gancho_t or x.get('resumen') or f'{x["titulo"]}, de {x["autor"]}.', 230),
+                            hashtags=['LibrosRecomendados', 'QueLeer', 'Lectura', 'Libros'], aviso='Contiene enlace de afiliado.', img=None, emoji='📚',
+                            alta=x.get('fecha', '')))
+    except FileNotFoundError: pass
+    except Exception as e: print('tienda', e)
     # notas de corte: carreras con muchas universidades
     try:
         NC = json.load(open(os.path.join(D, '..', 'univ', 'data', 'notas_corte.json'), encoding='utf-8'))
@@ -179,7 +192,7 @@ def catalogo():
 # ------------------------------------------------------------------ planificación
 # franja 1 (mañana): herramientas; franja 2 (tarde): rota entre libros, creatividades, notas y secciones
 TARDE = ['libro', 'creativo', 'notas', 'libro', 'seccion', 'creativo', 'libro']
-GRUPO = {'test': 'herr', 'calculadora': 'herr', 'curso': 'herr', 'libro': 'libro', 'creativo': 'creativo',
+GRUPO = {'test': 'herr', 'calculadora': 'herr', 'curso': 'herr', 'libro': 'libro', 'lectura': 'libro', 'creativo': 'creativo',
          'notas': 'notas', 'seccion': 'seccion', 'frase': 'frase'}
 
 
@@ -240,14 +253,14 @@ def planificar(dias=14):
         sal = os.path.join(D, imagen_de(p, fotos))
         if os.path.exists(sal): continue
         kick = {'test': 'Test gratis', 'calculadora': 'Calculadora gratis', 'curso': 'Curso gratis', 'libro': 'Libro gratis · licencia abierta',
-                'notas': 'Notas de corte 2025-2026', 'seccion': 'Gratis en AURZANE'}.get(p['tipo'], 'AURZANE')
-        sub = (f"{p.get('autor')} · {p.get('paginas')} páginas · {p.get('licencia')}" if p['tipo'] == 'libro'
+                'notas': 'Notas de corte 2025-2026', 'seccion': 'Gratis en AURZANE', 'lectura': 'Libro recomendado'}.get(p['tipo'], 'AURZANE')
+        sub = (f"{p.get('autor')} · {p.get('paginas')} páginas · {p.get('licencia')}" if p['tipo'] == 'libro' else p.get('autor', '') if p['tipo'] == 'lectura'
                else recorta(p['texto'], 150))
         if p['tipo'] == 'frase':
             lista.append(dict(id=i, mundo=p['mundo'], frase=p['titulo'], autor='' if p['autor'] == 'AURZANE' else p['autor'], salida=sal,
                               foto=foto['src'] if foto else '', credito='Foto: Pexels' if foto else ''))
             continue
-        lista.append(dict(id=i, mundo=p['mundo'], kicker=kick, titulo=p['titulo'] if p['tipo'] in ('libro',) else p['ganchos'][0],
+        lista.append(dict(id=i, mundo=p['mundo'], kicker=kick, titulo=p['titulo'] if p['tipo'] in ('libro', 'lectura') else p['ganchos'][0],
                           sub=sub, pie=pie_de(p['url']), emoji='' if foto else p.get('emoji', ''), salida=sal,
                           foto=foto['src'] if foto else '', credito='Foto: Pexels' if foto else ''))
     guardar('fotos.json', fotos)
@@ -295,7 +308,7 @@ def consulta_foto(p):
     if p['tipo'] == 'notas':
         t = p['titulo'].lower()
         return next((q for k, q in NC_Q.items() if k in t), 'university lecture hall')
-    if p['tipo'] == 'libro':
+    if p['tipo'] in ('libro', 'lectura'):
         t = (' '.join(p.get('hashtags', [])) + ' ' + p['titulo']).lower()
         return next((q for k, q in LIBRO_Q if k in t), 'open book reading')
     return {'test': 'person reflecting', 'calculadora': 'desk planning notebook'}.get(p['tipo'], 'books learning')

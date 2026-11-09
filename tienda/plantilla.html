@@ -4,74 +4,128 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="https://aurzane.com/aurzane-paleta.js"></script>
-<title>Tienda de libros: psicología, bienestar, novela y más | AURZANE</title>
-<meta name="description" content="{{N}} libros elegidos por AURZANE: psicología, bienestar, hábitos, novela, ciencia y lo más buscado en {{MES}}. Cada libro lleva a Amazon.">
+<title>Tienda de libros: gratis y de pago, psicología, novela y más | AURZANE</title>
+<meta name="description" content="{{N}} libros: {{NG}} gratis para leer aquí y {{NP}} para comprar. Psicología, bienestar, hábitos, novela, ciencia y lo más buscado en {{MES}}.">
 <link rel="canonical" href="https://aurzane.com/libros/">
 <meta property="og:title" content="Tienda de libros AURZANE">
-<meta property="og:description" content="Libros de psicología, bienestar, novela y ciencia, y lo más buscado este mes.">
+<meta property="og:description" content="Libros gratis y de pago: psicología, bienestar, novela, ciencia y lo más buscado este mes.">
 <meta property="og:image" content="https://aurzane.com/og-portada.jpg">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@500;700&family=Instrument+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 <script type="application/ld+json">{{JSONLD}}</script>
 <style>
-:root{--bg:#0b0e1d;--sup:#141a33;--txt:#f3efe6;--sua:#b9b3a6;--oro:#E2BF6A;--lin:rgba(255,255,255,.1)}
+:root{--bg:#0b0e1d;--sup:#141a33;--txt:#f3efe6;--sua:#b9b3a6;--oro:#E2BF6A;--verde:#7fd6a8;--lin:rgba(255,255,255,.1)}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--txt);font:16px/1.6 "Instrument Sans",system-ui,sans-serif}
-a{color:inherit}.w{max-width:1180px;margin:0 auto;padding:0 20px}
+a{color:inherit}.w{max-width:1200px;margin:0 auto;padding:0 20px}
 header.top{border-bottom:1px solid var(--lin)}header.top .w{display:flex;align-items:center;gap:18px;height:64px}
 .marca{font:700 1.15rem "Bodoni Moda",serif;letter-spacing:.06em;text-decoration:none}.marca span{color:var(--oro)}
 header.top nav{margin-left:auto;display:flex;gap:18px;font-size:.92rem}header.top nav a{text-decoration:none;opacity:.85}
-.hero{padding:54px 0 26px}.hero h1{font:700 clamp(2rem,5vw,3.2rem)/1.1 "Bodoni Moda",serif;margin:0 0 12px;max-width:16ch}
-.hero p{max-width:60ch;color:var(--sua);margin:0 0 22px}
-.buscar{width:100%;max-width:560px;padding:14px 18px;border-radius:99px;border:1px solid var(--lin);background:var(--sup);color:var(--txt);font:inherit}
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 0}.chips button{cursor:pointer;border-radius:99px;padding:7px 14px;border:1px solid var(--lin);background:transparent;color:var(--txt);font:600 .85rem inherit}
-.chips button[aria-pressed="true"]{background:var(--oro);border-color:var(--oro);color:#1b1440}
-.sec{padding:26px 0 8px}.sec h2{font:700 1.5rem "Bodoni Moda",serif;margin:0 0 14px}.sec h2 small{font:600 .8rem "Instrument Sans";color:var(--sua);margin-left:6px}
-.destacada{background:linear-gradient(160deg,#2a1f63,#141a33);border-radius:24px;padding:26px 24px 18px;margin-top:10px}.nota{color:var(--sua);margin:-6px 0 14px;font-size:.92rem}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:34px;align-items:center;padding:46px 0 22px}
+.hero h1{font:700 clamp(2rem,5vw,3.1rem)/1.1 "Bodoni Moda",serif;margin:0 0 12px}.hero p{color:var(--sua);margin:0 0 18px;max-width:56ch}
+.cifras{display:flex;gap:22px;flex-wrap:wrap;font-size:.9rem;color:var(--sua)}.cifras b{display:block;font:700 1.5rem "Bodoni Moda",serif;color:var(--txt)}
+.estrella{display:grid;grid-template-columns:150px 1fr;gap:20px;text-decoration:none;background:linear-gradient(160deg,#2a1f63,#141a33);border-radius:22px;padding:20px;border:1px solid var(--lin)}
+.estrella .por{height:225px}.estrella small{font-weight:700;letter-spacing:.08em;color:#FFD9A0;font-size:.72rem}.estrella b{display:block;font:700 1.35rem/1.2 "Bodoni Moda",serif;margin:6px 0 4px}
+.estrella .txt{display:block;color:var(--sua);font-size:.9rem;margin:8px 0 12px}
+.barra{position:sticky;top:0;z-index:5;background:var(--bg);padding:14px 0;border-bottom:1px solid var(--lin);margin-bottom:8px}
+.fila{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.buscar{flex:1 1 280px;padding:12px 18px;border-radius:99px;border:1px solid var(--lin);background:var(--sup);color:var(--txt);font:inherit}
+.seg{display:inline-flex;border:1px solid var(--lin);border-radius:99px;overflow:hidden}.seg button{border:0;background:transparent;color:var(--txt);padding:9px 14px;font:600 .86rem inherit;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--oro);color:#1b1440}
+select{background:var(--sup);color:var(--txt);border:1px solid var(--lin);border-radius:99px;padding:9px 14px;font:600 .86rem inherit}
+.chips{display:flex;gap:8px;overflow-x:auto;margin-top:10px;padding-bottom:4px;scrollbar-width:thin}
+.chips button{flex:none;cursor:pointer;border-radius:99px;padding:7px 14px;border:1px solid var(--lin);background:transparent;color:var(--txt);font:600 .84rem inherit}
+.chips button[aria-pressed="true"]{background:var(--txt);color:var(--bg)}
+.sec{padding:22px 0 8px}.sec h2{font:700 1.45rem "Bodoni Moda",serif;margin:0 0 14px}
+.destacada{background:linear-gradient(160deg,#2a1f63,#141a33);border-radius:24px;padding:24px 22px 16px;margin-top:10px}.nota{color:var(--sua);margin:-6px 0 14px;font-size:.92rem}
+.resumen{color:var(--sua);font-size:.9rem;margin:6px 0 14px}
 .rejilla{display:grid;grid-template-columns:repeat(auto-fill,minmax(165px,1fr));gap:18px}
-.libro{display:flex;flex-direction:column;text-decoration:none;border-radius:16px;padding:12px;background:var(--sup);border:1px solid var(--lin);transition:transform .2s,border-color .2s}
+.libro{position:relative;display:flex;flex-direction:column;text-decoration:none;border-radius:16px;padding:12px;background:var(--sup);border:1px solid var(--lin);transition:transform .2s,border-color .2s}
 .libro:hover{transform:translateY(-3px);border-color:rgba(226,191,106,.5)}
 .por{display:grid;place-items:center;height:210px;border-radius:10px;background:#0f1430;overflow:hidden;margin-bottom:10px}
 .por img{height:100%;width:auto;max-width:100%;object-fit:contain;box-shadow:0 12px 26px -12px rgba(0,0,0,.8)}
-.sin{padding:16px;text-align:center;font:700 1rem "Bodoni Moda",serif}
-.dat b{display:block;font-size:.95rem;line-height:1.3}.au{display:block;font-size:.82rem;color:var(--sua);margin:3px 0 8px}
-.tend{display:block;font-size:.78rem;color:#FFD9A0;margin-bottom:8px;line-height:1.35}
-.ver{display:inline-block;font-size:.8rem;font-weight:700;color:#1b1440;background:var(--oro);border-radius:99px;padding:5px 12px}
-.oculto{display:none!important}.aviso{color:var(--sua);font-size:.85rem;border-top:1px solid var(--lin);margin-top:40px;padding:22px 0 50px}
+.sin{padding:14px;text-align:center;font:700 .95rem/1.25 "Bodoni Moda",serif}
+.et{display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.04em;border-radius:6px;padding:2px 7px;margin-bottom:6px}
+.et.pago{background:rgba(226,191,106,.16);color:var(--oro)}.et.gratis{background:rgba(127,214,168,.16);color:var(--verde)}
+.dat b{display:block;font-size:.93rem;line-height:1.3}.au{display:block;font-size:.8rem;color:var(--sua);margin:3px 0 6px}
+.tend{display:block;font-size:.76rem;color:#FFD9A0;line-height:1.35}
+.fav{position:absolute;top:18px;right:18px;width:34px;height:34px;border-radius:50%;border:0;background:rgba(11,14,29,.75);color:#fff;font-size:1rem;cursor:pointer}
+.fav[aria-pressed="true"]{color:#ff8fa3}
+.ver{display:inline-block;font-size:.8rem;font-weight:700;color:#1b1440;background:var(--oro);border-radius:99px;padding:6px 14px}
+.mas{display:block;margin:26px auto 0;cursor:pointer;border-radius:99px;padding:12px 26px;border:1px solid var(--lin);background:var(--sup);color:var(--txt);font:600 .95rem inherit}
+.vacio{color:var(--sua);padding:30px 0}.oculto{display:none!important}
+.aviso{color:var(--sua);font-size:.85rem;border-top:1px solid var(--lin);margin-top:40px;padding:22px 0 50px}
+@media(max-width:820px){.hero{grid-template-columns:1fr}.estrella{grid-template-columns:110px 1fr}.estrella .por{height:165px}}
 @media (prefers-reduced-motion:reduce){.libro{transition:none}}
 </style>
 </head>
 <body>
-<header class="top"><div class="w"><a class="marca" href="https://aurzane.com/">AUR<span>Z</span>ANE</a><nav><a href="/biblioteca/">Biblioteca gratis</a><a href="/articulos/">Artículos</a><a href="https://mind.aurzane.com/">Tests</a></nav></div></header>
+<header class="top"><div class="w"><a class="marca" href="https://aurzane.com/">AUR<span>Z</span>ANE</a><nav><a href="/biblioteca/">Biblioteca</a><a href="/articulos/">Artículos</a><a href="https://mind.aurzane.com/">Tests</a></nav></div></header>
 <main class="w">
   <div class="hero">
-    <h1>Tienda de libros</h1>
-    <p>{{N}} libros elegidos por AURZANE: psicología y bienestar, hábitos, relaciones, ciencia, novela y lo que más se busca este mes. Cada libro se comprueba antes de entrar y te lleva a Amazon para comprarlo.</p>
-    <input class="buscar" type="search" placeholder="Busca un título, autor o tema" aria-label="Buscar libros">
-    <div class="chips"><button type="button" data-f="" aria-pressed="true">Todos</button>{{CHIPS}}</div>
+    <div>
+      <h1>Tienda de libros</h1>
+      <p>Libros gratis para leer aquí mismo y libros para comprar, elegidos por AURZANE: psicología, bienestar, hábitos, relaciones, ciencia, novela y lo más buscado este mes.</p>
+      <div class="cifras"><span><b>{{N}}</b>libros</span><span><b>{{NG}}</b>gratis</span><span><b>{{NP}}</b>para comprar</span></div>
+    </div>
+    {{ESTRELLA}}
   </div>
   {{TENDENCIA}}
-  {{SECCIONES}}
-  <p class="aviso">Como afiliado de Amazon, AURZANE obtiene ingresos por las compras adscritas que cumplen los requisitos aplicables. A ti no te cuesta nada más y ayuda a mantener gratis los tests y la biblioteca. Actualizada el {{FECHA}}. ¿Buscas libros para leer gratis? Están en la <a href="/biblioteca/">biblioteca abierta</a>.</p>
+  <div class="barra">
+    <div class="fila">
+      <input class="buscar" type="search" placeholder="Busca un título, autor o tema" aria-label="Buscar libros">
+      <div class="seg" role="group" aria-label="Precio"><button type="button" data-p="" aria-pressed="true">Todos</button><button type="button" data-p="g">Gratis</button><button type="button" data-p="p">De pago</button><button type="button" data-p="fav">♥ Mi lista</button></div>
+      <select aria-label="Ordenar"><option value="top">Destacados</option><option value="nuevo">Novedades</option><option value="az">Título A-Z</option><option value="anio">Más recientes por año</option></select>
+    </div>
+    <div class="chips" aria-label="Secciones"></div>
+  </div>
+  <p class="resumen" aria-live="polite"></p>
+  <div class="rejilla" id="lista">{{ESTATICO}}</div>
+  <button class="mas oculto" type="button">Ver más libros</button>
+  <p class="aviso">Los libros gratis tienen licencia abierta o están en dominio público y se leen completos en la biblioteca. En los de pago, como afiliado de Amazon AURZANE obtiene ingresos por las compras adscritas que cumplen los requisitos aplicables: a ti no te cuesta más y ayuda a mantener gratis los tests y la biblioteca. Actualizada el {{FECHA}}.</p>
 </main>
+<script src="/libros/tienda.js" defer></script>
 <script>
-(function(){
-  function sinPortada(img){var a=img.closest('.libro');var s=document.createElement('span');s.className='sin';s.textContent=a.querySelector('b').textContent;img.replaceWith(s);}
-  document.querySelectorAll('.por img').forEach(function(i){if(i.complete&&i.naturalWidth<20)sinPortada(i);else i.addEventListener('error',function(){sinPortada(i);});i.addEventListener('load',function(){if(i.naturalWidth<20)sinPortada(i);});});
-})();
-(function(){
-  var q='',f='',inp=document.querySelector('.buscar');
-  function sinT(t){return (t||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');}
-  function aplicar(){
-    document.querySelectorAll('.sec').forEach(function(s){
-      var vis=0;s.querySelectorAll('.libro').forEach(function(l){var ok=(!f||l.dataset.s===f)&&(!q||l.dataset.q.indexOf(q)>=0);l.classList.toggle('oculto',!ok);if(ok)vis++;});
-      s.classList.toggle('oculto',!vis);
-    });
+document.addEventListener('DOMContentLoaded',function(){
+  var T=window.__azTienda||[],SECC={{SECCIONES_JS}},lista=document.getElementById('lista'),mas=document.querySelector('.mas'),res=document.querySelector('.resumen');
+  if(!T.length)return;
+  var fav={};try{fav=JSON.parse(localStorage.getItem('azFavLibros')||'{}');}catch(e){}
+  var st={q:'',p:'',s:'',o:'top',n:36};
+  function sinT(t){return String(t||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');}
+  function e(t){return String(t==null?'':t).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  T.forEach(function(x,i){x.i=i;x.q=sinT(x.t+' '+x.a+' '+x.s);});
+  var chips=document.querySelector('.chips');
+  chips.innerHTML='<button type="button" data-s="" aria-pressed="true">Todas las secciones</button>'+SECC.filter(function(s){return T.some(function(x){return x.s===s;});}).map(function(s){return '<button type="button" data-s="'+e(s)+'" aria-pressed="false">'+e(s)+'</button>';}).join('');
+  function tarjeta(x){
+    var img=x.img?'<img src="'+e(x.img)+'" alt="Portada de '+e(x.t)+'" loading="lazy" width="128" height="192">':'<span class="sin">'+e(x.t)+'</span>';
+    return '<a class="libro" href="'+e(x.f)+'"><span class="por">'+img+'</span><span class="dat"><span class="et '+(x.p==='g'?'gratis">Gratis · leer aquí':'pago">Amazon')+'</span><b>'+e(x.t)+'</b><span class="au">'+e(x.a)+'</span>'+(x.tend?'<span class="tend">'+e(x.tend)+'</span>':'')+'</span>'+
+      '<button class="fav" type="button" data-i="'+x.i+'" aria-pressed="'+(fav[x.f]?'true':'false')+'" aria-label="Guardar en mi lista">♥</button></a>';
   }
-  inp.addEventListener('input',function(){q=sinT(inp.value.trim());aplicar();});
-  document.querySelector('.chips').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;f=b.dataset.f;
-    this.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});aplicar();});
-})();
+  function filtrar(){
+    var l=T.filter(function(x){return (!st.p||(st.p==='fav'?fav[x.f]:x.p===st.p))&&(!st.s||x.s===st.s)&&(!st.q||x.q.indexOf(st.q)>=0);});
+    var o={top:function(a,b){return (b.top||0)-(a.top||0)||(b.img?1:0)-(a.img?1:0)||(b.tend?1:0)-(a.tend?1:0)||a.i-b.i;},nuevo:function(a,b){return String(b.d).localeCompare(String(a.d));},
+      az:function(a,b){return a.t.localeCompare(b.t,'es');},anio:function(a,b){return (parseInt(b.y)||0)-(parseInt(a.y)||0);}}[st.o];
+    return l.sort(o);
+  }
+  function pintar(){
+    var l=filtrar();
+    lista.innerHTML=l.length?l.slice(0,st.n).map(tarjeta).join(''):'<p class="vacio">'+(st.p==='fav'?'Aún no has guardado libros. Pulsa el corazón de cualquier libro para tenerlo aquí.':'No hay libros con esa búsqueda. Prueba con otra palabra o quita algún filtro.')+'</p>';
+    mas.classList.toggle('oculto',l.length<=st.n);
+    var g=l.filter(function(x){return x.p==='g';}).length;res.textContent=l.length+' libros · '+g+' gratis · '+(l.length-g)+' de pago';
+    lista.querySelectorAll('.por img').forEach(function(i){function q(){var s=document.createElement('span');s.className='sin';s.textContent=i.alt.replace(/^Portada de /,'');i.replaceWith(s);}
+      i.addEventListener('error',q);i.addEventListener('load',function(){if(i.naturalWidth<20)q();});});
+  }
+  function grupo(sel,attr,clave){document.querySelector(sel).addEventListener('click',function(ev){var b=ev.target.closest('button['+attr+']');if(!b)return;st[clave]=b.getAttribute(attr);st.n=36;
+    this.querySelectorAll('button['+attr+']').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});pintar();});}
+  grupo('.seg','data-p','p');grupo('.chips','data-s','s');
+  document.querySelector('select').addEventListener('change',function(){st.o=this.value;pintar();});
+  var inp=document.querySelector('.buscar');inp.addEventListener('input',function(){st.q=sinT(inp.value.trim());st.n=36;pintar();});
+  mas.addEventListener('click',function(){st.n+=36;pintar();});
+  lista.addEventListener('click',function(ev){var b=ev.target.closest('.fav');if(!b)return;ev.preventDefault();var x=T[+b.dataset.i];
+    if(fav[x.f])delete fav[x.f];else fav[x.f]=1;try{localStorage.setItem('azFavLibros',JSON.stringify(fav));}catch(e){}b.setAttribute('aria-pressed',fav[x.f]?'true':'false');if(st.p==='fav')pintar();});
+  var h=new URLSearchParams(location.search);if(h.get('q')){inp.value=h.get('q');st.q=sinT(h.get('q'));}if(h.get('precio')==='gratis')document.querySelector('.seg [data-p="g"]').click();
+  pintar();
+});
 </script>
 </body>
 </html>
