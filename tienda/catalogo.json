@@ -139,6 +139,25 @@
   "porque": "Es para quienes disfrutan con los thrillers de suspense psicológico ambientados en Boston y llenos de giros inesperados. Aporta una investigación trepidante sobre crímenes desconcertantes que explora los límites de la mente humana."
  },
  {
+  "id": "la-chica-del-tren-paula-hawkins",
+  "titulo": "La chica del tren",
+  "autor": "Paula Hawkins",
+  "temas": [
+   "novela"
+  ],
+  "origen": "tendencia",
+  "fecha": "2026-11-09",
+  "isbn": "9788408141471",
+  "portada": "https://covers.openlibrary.org/b/id/10597595-M.jpg?default=false",
+  "anio": "2015",
+  "editorial": "Editorial Planeta, S.A. (Planeta Internacional)",
+  "idioma": "spa",
+  "resumen": "",
+  "tendencia": "Un thriller psicológico absorbente perfecto para las tardes de lectura otoñales.",
+  "tendencia_fecha": "2026-11-09",
+  "porque": "Es para quienes disfrutan de los thrillers psicológicos absorbentes centrados en la intriga vecinal y la memoria fragmentada. Aporta una trama de suspense narrada desde múltiples perspectivas femeninas que explora el alcoholismo y la obsesión."
+ },
+ {
   "id": "como-hacer-que-te-pasen-cosas-buenas-marian-rojas-estape",
   "titulo": "Cómo hacer que te pasen cosas buenas",
   "autor": "Marian Rojas Estapé",
