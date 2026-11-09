@@ -52,7 +52,7 @@ for l in pend:
     cab = f'📖 <b>{tit}</b>' + (f'\n✍️ {re.sub(r"[<>&]", "", aut)}' if aut else '') + (f'\n🏷 {tema}' if tema else '') + (f' · {l["paginas"]} páginas' if l.get('paginas') else '')
     resumen = re.sub(r'[<>&]', '', (l.get('resumen') or ''))[:400]
     pie = (f'\n\n📜 Licencia: {l.get("licencia")}. Fuente: {re.sub(r"[<>&]", "", l.get("fuente") or l.get("repo") or "")[:120]}'
-           f'\n\n👉 Ficha y lectura online: {ficha}\n📚 Más de 700 libros gratis: https://aurzane.com/biblioteca/\n\n#LibroDelDía #LibrosGratis #Psicología')
+           f'\n\n👉 Ficha y lectura online: {ficha}\n📚 Más de 700 libros gratis: https://aurzane.com/biblioteca/\n✉️ Un libro recomendado cada semana en tu correo: https://aurzane.com/boletin/\n\n#LibroDelDía #LibrosGratis #Psicología')
     if libre(l.get('licencia')):
         r = tg('sendDocument', {'chat_id': CANAL, 'document': f'https://aurzane.com/biblioteca/{l["pdf"]}', 'parse_mode': 'HTML',
                                 'caption': (cab + '\n\n' + resumen)[:700] + pie[:320]})
