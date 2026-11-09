@@ -34,7 +34,7 @@ libros = [l for l in B['libros'] if l.get('tipo') == 'pdf' and l.get('pdf')]
 CERCA = ('Autoestima', 'Emoc', 'Estrés', 'Ansiedad', 'Hábito', 'Duelo', 'Relaci', 'Bienestar', 'Sueño', 'Motivación', 'Felicidad', 'Resiliencia', 'Relatos', 'Familia', 'Aprend')
 def puntos(l):
     t = temas.get(str(l.get('principal')), '')
-    return (-(1 if l.get('portada') else 0), -(1 if any(c in t for c in CERCA) else 0), -(1 if 20 <= (l.get('paginas') or 0) <= 400 else 0), l['id'])
+    return (-(1 if l.get('portada') else 0), -(1 if any(c in t for c in CERCA) else 0), -(1 if 20 <= (l.get('paginas') or 0) <= 400 else 0), __import__('hashlib').md5(l['id'].encode()).hexdigest())   # mezcla temas en vez de orden alfabético
 libros.sort(key=puntos)
 
 est = json.load(open(EST, encoding='utf-8')) if os.path.exists(EST) else {'enviados': [], 'dias': {}}
