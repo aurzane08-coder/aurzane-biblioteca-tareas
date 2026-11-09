@@ -33,5 +33,49 @@
   "mundo": "mind",
   "test": "",
   "fecha": "2026-11-09"
+ },
+ {
+  "consulta": "universidades en cuenca",
+  "titulo": "Guía de universidades en Cuenca y oferta académica en Ecuador",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "oferta": "universidades",
+  "pais": "ECU",
+  "pais_nombre": "Ecuador",
+  "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al número de emergencias del país. ",
+  "fecha": "2026-11-09"
+ },
+ {
+  "consulta": "volar sobre el pantano",
+  "titulo": "Análisis psicológico y lecciones de Volar sobre el pantano",
+  "mundo": "mind",
+  "test": "resiliencia",
+  "oferta": "libros",
+  "pais": "ECU",
+  "pais_nombre": "Ecuador",
+  "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al número de emergencias del país. ",
+  "fecha": "2026-11-09"
+ },
+ {
+  "consulta": "universidades en puebla",
+  "titulo": "Universidades en Puebla: Guía de carreras y opciones en México",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "oferta": "universidades",
+  "pais": "MEX",
+  "pais_nombre": "México",
+  "crisis": "Si el tema toca malestar intenso, añade que se puede llamar a la Línea de la Vida, 800 911 2000 (México, gratis, 24 horas). ",
+  "fecha": "2026-11-09"
+ },
+ {
+  "consulta": "el arte de amargarse la vida",
+  "titulo": "Cómo superar el arte de amargarse la vida: Claves psicológicas",
+  "mundo": "mind",
+  "test": "ansiedad",
+  "oferta": "libros",
+  "pais": "MEX",
+  "pais_nombre": "México",
+  "crisis": "Si el tema toca malestar intenso, añade que se puede llamar a la Línea de la Vida, 800 911 2000 (México, gratis, 24 horas). ",
+  "fecha": "2026-11-09"
  }
 ]
