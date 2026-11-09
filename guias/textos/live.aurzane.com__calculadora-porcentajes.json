@@ -1,0 +1,55 @@
+{
+ "titulo": "Calculadora de porcentajes: domina tus cuentas sin estrés",
+ "intro": "Entender los porcentajes es una habilidad práctica que usamos a diario, desde las rebajas en el supermercado hasta la organización de nuestras finanzas personales y el ahorro. Sin embargo, a muchas personas se les atragantan las matemáticas cuando toca calcular un descuento rápido o averiguar cuánto ha subido la factura de la luz.\n\nEn AURZANE creemos que dominar estas operaciones básicas aporta tranquilidad mental y evita errores al tomar decisiones económicas. Esta guía te explica de forma sencilla cómo funciona nuestra herramienta gratuita, qué fórmulas hay detrás y cómo aplicar estos cálculos en tu día a día.",
+ "alt": "Persona utilizando una calculadora digital en un ordenador portátil junto a una libreta con apuntes financieros.",
+ "secciones": [
+  {
+   "titulo": "Cómo funciona nuestra calculadora y qué fórmulas utiliza",
+   "texto": "Nuestra herramienta está diseñada para resolver en segundos cuatro operaciones matemáticas muy habituales sin que tengas que hacer cuentas mentales complejas. Cada modo de cálculo responde a una lógica matemática sencilla pero muy útil.\n\n- El porcentaje de una cantidad: Multiplica el número total por el porcentaje que buscas y divide el resultado entre cien.\n- Qué porcentaje es un número de otro: Divide la cantidad parcial entre el total y multiplica por cien para obtener la proporción exacta.\n- Precio con descuento o subida: Aplica directamente la rebaja restando el porcentaje al cien por cien o sumando el incremento en caso de subida.\n- Variación entre dos valores: Mide la diferencia absoluta entre un valor inicial y uno final, dividiendo esa diferencia entre el valor de partida."
+  },
+  {
+   "titulo": "Trucos mentales para calcular porcentajes sin calculadora",
+   "texto": "Aunque nuestra herramienta online te ahorra tiempo, conocer algunos atajos matemáticos agiliza mucho las decisiones cotidianas, como cuando estás de compras y quieres saber rápido si una oferta merece la pena.\n\n- El truco del diez por ciento: Solo tienes que mover la coma decimal un lugar hacia la izquierda. El diez por ciento de ochenta y cinco es ocho con cincuenta.\n- El cincuenta por ciento y el veinticinco por ciento: Calcular la mitad es tan fácil como dividir entre dos, y para el veinticinco por ciento basta con dividir el total entre cuatro.\n- El cálculo inverso: A veces es más fácil dar la vuelta a los números. Calcular el ocho por ciento de cincuenta es exactamente lo mismo que calcular el cincuenta por ciento de ocho, que es cuatro."
+  },
+  {
+   "titulo": "Aplicaciones prácticas en la vida diaria y el ahorro",
+   "texto": "Los números forman parte de nuestra gestión del bienestar y la tranquilidad económica. Saber interpretar las cifras nos ayuda a mantener el control sobre nuestros recursos y a evitar compras impulsivas o errores de cálculo.\n\n- Al planificar un presupuesto mensual, usar porcentajes te permite repartir los ingresos de forma equilibrada entre gastos fijos, ocio y ahorro.\n- Cuando analizas las rebajas, comparar el precio final con el descuento anunciado te muestra el ahorro real más allá del reclamo comercial.\n- En el ámbito laboral o de autónomos, calcular correctamente los márgenes de ganancia y los impuestos evita sorpresas desagradables a final de año."
+  },
+  {
+   "titulo": "Límites de las herramientas automáticas y errores comunes",
+   "texto": "Aunque las calculadoras son infalibles en sus operaciones aritméticas, el ser humano a veces introduce los datos de manera incorrecta. Conviene repasar siempre los números antes de dar por buena una operación importante.\n- Un error muy frecuente es confundir el orden de los factores en los descuentos sucesivos, donde un descuento del veinte por ciento seguido de otro del diez no equivale a un treinta por ciento global.\n- Recuerda que las herramientas digitales no sustituyen al criterio propio; son una ayuda para agilizar procesos, pero la interpretación final de tus finanzas siempre depende de ti."
+  },
+  {
+   "titulo": "Cómo cuidar tu bienestar financiero paso a paso",
+   "texto": "La relación con el dinero y las matemáticas a veces genera ansiedad o bloqueos. Simplificar las tareas cotidianas mediante herramientas accesibles reduce esa carga mental y fomenta una actitud más calmada hacia la economía personal.\n\n- Empieza por revisar tus gastos pequeños utilizando los porcentajes para ver qué peso real tienen en tu mes a mes.\n- No intentes controlar cada céntimo desde el primer día; busca un equilibrio sostenible que te aporte claridad sin obsesiones.\n- Utiliza recursos gratuitos y fiables siempre que necesites hacer comprobaciones rápidas para tomar decisiones informadas."
+  }
+ ],
+ "faq": [
+  {
+   "p": "¿Cómo se calcula el porcentaje de una cantidad de forma manual?",
+   "r": "Debes multiplicar la cantidad total por el número del porcentaje y dividir el resultado entre cien. Por ejemplo, para calcular el quince por ciento de ochenta, multiplicas ochenta por quince y lo divides entre cien, obteniendo doce."
+  },
+  {
+   "p": "¿Cuál es la fórmula para saber qué porcentaje representa un número respecto a otro?",
+   "r": "Se divide la cantidad parcial entre la cantidad total y el resultado se multiplica por cien. Esto te da exactamente la proporción que ocupa ese valor dentro del conjunto."
+  },
+  {
+   "p": "¿Cómo se aplica correctamente un descuento en una compra?",
+   "r": "Multiplicas el precio original por el porcentaje restante tras la rebaja. Si un artículo tiene un veinte por ciento de descuento, pagas el ochenta por ciento de su valor, lo que equivale a multiplicar el precio por cero con ochenta."
+  },
+  {
+   "p": "¿Qué es la variación porcentual y para qué sirve?",
+   "r": "Es una medida que calcula cuánto ha crecido o disminuido un valor respecto a su cifra inicial en términos porcentuales. Se usa mucho para comparar precios, ingresos o consumos entre dos periodos diferentes."
+  },
+  {
+   "p": "¿Qué debo hacer si calcular mis finanzas me genera demasiada ansiedad?",
+   "r": "Es recomendable simplificar los procesos usando herramientas automáticas y abordar los números de forma gradual y sin exigencias desmedidas. Si notas que la preocupación por el dinero interfiere de forma continuada con tu descanso o tu bienestar diario, busca el apoyo de un profesional de la psicología para gestionar el estrés."
+  }
+ ],
+ "fuentes": [
+  "Instituto Nacional de Estadística",
+  "Ministerio de Consumo",
+  "Guías de educación financiera del Banco de España"
+ ],
+ "fecha": "2026-11-09"
+}

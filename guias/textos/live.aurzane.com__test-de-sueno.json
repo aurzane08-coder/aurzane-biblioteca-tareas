@@ -1,0 +1,55 @@
+{
+ "titulo": "Entiende tu descanso con nuestro test de sueño gratuito",
+ "intro": "Dormir bien no es solo una cuestión de cerrar los ojos y esperar a que amanezca, sino el pilar invisible que sostiene nuestra salud mental, emocional y física cada día. En consulta, muchas personas llegan agotadas pensando que su fatiga se debe exclusivamente al estrés laboral o a las preocupaciones cotidianas, pasando por alto que sus hábitos nocturnos y su higiene del sueño están pidiendo un cambio urgente. Este chequeo rápido te ayuda a ponerle números y claridad a tu descanso, permitiéndote identificar con precisión qué áreas están fallando para que puedas actuar antes de que el cansancio se convierta en una constante en tu vida.\n\nAunque un test online gratuito no sustituye una valoración clínica formal, constituye una herramienta de autoconocimiento muy potente para reflexionar sobre tus rutinas recientes sin juicios. A lo largo de esta guía complementaria te explicamos qué medimos exactamente con las once preguntas del test, cómo interpretar tus resultados de forma realista, qué limitaciones tiene esta herramienta y en qué momentos concretos es fundamental dar el paso y consultar con un profesional sanitario en España.",
+ "alt": "Persona relajada descansando plácidamente en una cama cómoda con luz suave",
+ "secciones": [
+  {
+   "titulo": "Qué mide exactamente este test de sueño",
+   "texto": "Nuestro chequeo rápido analiza cuatro dimensiones fundamentales que los organismos oficiales de medicina del sueño consideran clave para un descanso reparador y saludable.\n- Cantidad: evalúa si las horas totales que pasas durmiendo se ajustan a lo que tu etapa vital y tu organismo necesitan realmente.\n- Regularidad: comprueba si mantienes horarios estables para acostarte y despertarte, o si varían drásticamente entre la semana y los días libres.\n- Calidad: valora cómo percibes el sueño, midiendo los desperfectos nocturnos, los despertares precoces y la sensación de haber descansado de verdad al levantarte.\n- Hábitos: revisa factores cotidianos previos a meterte en la cama, como el uso de pantallas, el consumo de estimulantes o la desconexión mental del día."
+  },
+  {
+   "titulo": "Cómo interpretar tus resultados y el plan de acción",
+   "texto": "Al terminar las once preguntas, el sistema genera una puntuación global y desglosada que te muestra qué área específica necesita más atención por tu parte.\n- Puntuación óptima: indica que tus hábitos son sólidos y respetas los ritmos biológicos básicos de tu cuerpo; mantén lo que haces.\n- Puntuación moderada: señala desajustes puntuales, como acostarte tarde ciertos días o usar el móvil en la cama, que puedes corregir fácilmente.\n- Puntuación baja: refleja un desgaste evidente en varios frentes que requiere aplicar cuanto antes el plan de siete días propuesto.\n- El plan asociado está diseñado para introducir un único cambio acumulativo cada jornada, empezando siempre por lo que reportará un beneficio más inmediato a tu bienestar."
+  },
+  {
+   "titulo": "Limitaciones importantes de un test online",
+   "texto": "Es fundamental entender la naturaleza orientativa de esta herramienta digital para evitar falsas alarmas o interpretaciones erróneas sobre tu estado de salud.\n- Este chequeo no realiza diagnósticos médicos ni psicológicos de trastornos específicos como el insomnio crónico, la apnea o las parasomnias.\n- Se basa exclusivamente en tu percepción subjetiva del último mes, la cual puede estar sesgada por momentos puntuales de estrés o ansiedad transitoria.\n- No sustituye en ningún caso una entrevista clínica en profundidad ni cuestionarios validados internacionalmente que debe administrar un especialista cualificado.\n- Su objetivo principal es actuar como un espejo preventivo para fomentar la higiene del sueño y motivar cambios saludables en tu día a día."
+  },
+  {
+   "titulo": "Cuándo debes pedir ayuda profesional",
+   "texto": "Existen señales de alerta claras que indican que el problema supera la simple falta de buenos hábitos y requiere la intervención de la sanidad especializada.\n- Si tardas sistemáticamente más de treinta minutos en dormirte o te despiertas repetidas veces sin poder retomar el sueño durante varios meses.\n- Si experimentas ronquidos muy intensos, apneas presenciadas por otra persona o sensación de ahogo repentino durante la noche.\n- Si la somnolencia diurna es tan extrema que interfiere de forma peligrosa en tu concentración, tu trabajo o la conducción de vehículos.\n- Recuerda que en España cuentas con recursos públicos de atención primaria y con líneas de apoyo emocional como el teléfono 024 si atraviesas momentos de angustia o ideas de hacerte daño."
+  },
+  {
+   "titulo": "Claves para una buena higiene de descanso",
+   "texto": "Más allá del resultado del test, incorporar pautas básicas respaldadas por la ciencia médica protege tu salud a corto y largo plazo de manera eficaz.\n- Exponte a la luz natural del sol durante las primeras horas de la mañana para ayudar a sincronizar correctamente tu reloj biológico interno.\n- Evita el consumo de café, té, bebidas energéticas y alcohol en las horas previas al momento de irte a la cama.\n- Desconecta de pantallas y dispositivos electrónicos al menos una hora antes de dormir para reducir la estimulación cerebral y visual.\n- Mantén tu dormitorio fresco, oscuro y silencioso, reservándolo casi en exclusiva para el descanso y la intimidad."
+  }
+ ],
+ "faq": [
+  {
+   "p": "¿Es normal despertarse una vez durante la noche?",
+   "r": "Sí, los seres humanos experimentamos microdespertares naturales al finalizar cada ciclo de sueño de unos noventa minutos. Lo habitual es volver a dormirse en pocos minutos sin apenas recordarlo por la mañana, siempre que no se convierta en un patrón de insomnio."
+  },
+  {
+   "p": "¿Sirve de algo recuperar el sueño perdido el fin de semana?",
+   "r": "Dormir más el sábado y el domingo ayuda a aliviar la fatiga acumulada temporalmente, pero altera tu ritmo circadiano. Este cambio brusco genera un fenómeno similar al jet lag que dificulta conciliar el sueño el domingo por la noche, siendo preferible mantener horarios regulares."
+  },
+  {
+   "p": "¿Cuánto tiempo debo tardar en dormirme desde que apago la luz?",
+   "r": "Lo saludable es quedarse dormido en un intervalo de entre diez y treinta minutos. Quedarse frito en menos de cinco minutos todas las noches no es una virtud, sino un indicador claro de que vas acumulando una importante deuda de sueño."
+  },
+  {
+   "p": "¿Qué papel juega la melatonina sin receta para dormir mejor?",
+   "r": "La melatonina es una hormona que regula nuestros ciclos, pero su uso como suplemento debe considerarse con precaución y preferiblemente bajo recomendación profesional. No soluciona los malos hábitos de higiene nocturna ni sustituye una evaluación médica si el problema persiste."
+  },
+  {
+   "p": "¿Influye la actividad física en la calidad del descanso nocturno?",
+   "r": "El ejercicio regular realizado durante la mañana o la tarde mejora notablemente la profundidad y calidad del sueño. Sin embargo, se aconseja evitar entrenamientos intensos justo antes de acostarse para no elevar la temperatura corporal y la activación fisiológica."
+  }
+ ],
+ "fuentes": [
+  "National Sleep Foundation sleep duration recommendations",
+  "American Academy of Sleep Medicine clinical guidelines",
+  "Organización Mundial de la Salud y pautas de bienestar"
+ ],
+ "fecha": "2026-11-09"
+}

@@ -1,0 +1,51 @@
+{
+ "titulo": "Guía práctica del test WHO-5: mide tu bienestar emocional",
+ "intro": "Detenernos a observar cómo nos sentimos suele ser lo primero que dejamos de hacer cuando el ritmo diario se acelera. En la vorágine de las obligaciones laborales, los estudios y las preocupaciones cotidianas, tendríamos que buscar un momento para mirar hacia dentro y comprobar si estamos funcionando en piloto automático o si realmente nos encontramos bien. \n\nEsta guía complementa la herramienta de cribado que tienes disponible en AURZANE para ofrecerte contexto clínico sobre lo que miden estos indicadores de la Organización Mundial de la Salud. Nuestro objetivo desde la psicología clínica es ayudarte a traducir una puntuación numérica en autoconocimiento útil y en pasos sencillos para cuidar tu salud mental.",
+ "alt": "Persona reflexionando tranquilamente junto a una ventana con la luz de la mañana",
+ "secciones": [
+  {
+   "titulo": "¿Qué mide exactamente este índice de la OMS?",
+   "texto": "El cuestionario WHO-5 no busca etiquetar trastornos ni colgar etiquetas médicas a lo que te pasa. Lo que evalúa es tu bienestar psicológico subjetivo reciente, centrándose en aspectos positivos como la vitalidad, el interés por las cosas y la sensación de calma durante las últimas dos semanas.\n\nDesde el punto de vista clínico, medir la presencia de bienestar es tan importante como evaluar el malestar. A veces no cumplimos criterios para un diagnóstico formal, pero acumulamos un desgaste sutil que merma nuestra energía diaria y nuestra capacidad de disfrute.\n\n- Observa tu estado de ánimo general sin juzgarlo.\n- Valora tu nivel de energía al afrontar el día.\n- Comprueba tu capacidad de interés por las actividades cotidianas.\n- Revisa la calidad de tu descanso y tu sensación de relajación."
+  },
+  {
+   "titulo": "Cómo interpretar los resultados sin caer en alarmismos",
+   "texto": "Cuando obtienes tu porcentaje de cero a cien, es fundamental entender que se trata de una fotografía fija del momento actual, no de una sentencia definitiva sobre quién eres. Las fluctuaciones forman parte de la vida y responder a este test periódicamente te ayuda a detectar tendencias antes de que se conviertan en problemas mayores.\n\nSi tu puntuación se sitúa en el rango de bienestar adecuado, significa que cuentas con recursos suficientes y que las cosas marchan por buen camino. Si el resultado refleja un bienestar bajo, nos indica que las últimas semanas han supuesto una carga pesada y que convendría revisar qué está drenando tu energía.\n\n- Una puntuación muy baja es una señal clara de que necesitas apoyo externo.\n- Recuerda que no tienes la obligación de cargar con todo en solitario.\n- Un cambio de diez puntos entre una medición y otra ya resulta clínicamente significativo.\n- Utiliza esta información como un punto de partida para cuidarte más y mejor."
+  },
+  {
+   "titulo": "Limitaciones del cribado y cuándo buscar ayuda profesional",
+   "texto": "Es necesario recordar que este tipo de cuestionarios online son herramientas de orientación y autoconocimiento, nunca sustitutos de una valoración clínica personalizada. Un test breve no puede capturar la complejidad de tu historia personal, tus circunstancias socioeconómicas ni tus vivencias recientes.\n\nSi notas que tu malestar persiste, interfiere de manera notable en tu trabajo, tus estudios o tus relaciones, o si experimentas un sufrimiento insostenible, el siguiente paso lógico es acudir a un profesional de la salud mental en tu centro de salud o mediante consulta privada.\n\n- En España, si atraviesas un momento de crisis aguda con ideas de hacerte daño, tienes a tu disposición el teléfono 024 de atención a la conducta suicida, gratuito, confidencial y disponible veinticuatro horas.\n- Apoyarte en la sanidad pública o en recursos especializados es un acto de responsabilidad hacia ti mismo.\n- Ningún test sustituye la escucha experta y empática de un psicólogo clínico o médico."
+  },
+  {
+   "titulo": "Ideas prácticas para acompañar tu proceso de bienestar",
+   "texto": "Una vez que conoces tu puntuación, el verdadero valor reside en las pequeñas acciones cotidianas que decidas poner en marcha para mejorar tu calidad de vida. No se trata de hacer cambios drásticos imposibles de mantener, sino de introducir ajustes sostenibles en tus rutinas.\n\nEl autocuidado psicológico se compone de hábitos sencillos y constantes que protegen tu equilibrio emocional frente al estrés continuado de la vida moderna.\n\n- Establece límites claros entre tus obligaciones y tus momentos de descanso real.\n- Mantén contacto regular con personas que te aporten seguridad y afecto.\n- Cuida los fundamentos biológicos básicos como el sueño y la alimentación.\n- Permítete parar cuando notes que la fatiga mental empieza a acumularse."
+  }
+ ],
+ "faq": [
+  {
+   "p": "¿Por qué el test pregunta específicamente por las últimas dos semanas?",
+   "r": "Ese plazo temporal es el estándar clínico internacional para valorar estados de ánimo recientes sin que influyan demasiado los altibajos puntuales de un solo día. Permite capturar una tendencia real de cómo nos hemos estado sintiendo de manera continuada."
+  },
+  {
+   "p": "¿Puedo usar este test para evaluar a un familiar o amigo?",
+   "r": "No. El WHO-5 está diseñado estrictamente para la autoevaluación subjetiva. Intentar responderlo desde lo que crees que siente otra persona arrojaría datos erróneos y poco fiables."
+  },
+  {
+   "p": "Si mi puntuación baja mucho de un mes para otro, ¿debo preocuparme?",
+   "r": "Una bajada significativa suele reflejar que has atravesado semanas complicadas de estrés, cambios o conflictos. Si se mantiene en el tiempo, es recomendable consultar con un profesional para entender qué está ocurriendo."
+  },
+  {
+   "p": "¿Mis respuestas se quedan guardadas en algún servidor externo?",
+   "r": "No. Todo el procesamiento de las respuestas se realiza de manera local en tu propio dispositivo por motivos de privacidad y seguridad, sin que nadie más tenga acceso a tus datos personales."
+  },
+  {
+   "p": "¿Con qué frecuencia debo repetir el test?",
+   "r": "Lo ideal es hacerlo cada dos o cuatro semanas si quieres monitorizar tu evolución personal. Repetirlo a diario no tiene utilidad clínica porque los estados de ánimo menores cambian constantemente."
+  }
+ ],
+ "fuentes": [
+  "Organización Mundial de la Salud - Índice de Bienestar WHO-5",
+  "Guias clínicas de práctica médica en atención primaria sobre salud mental",
+  "Ministerio de Sanidad de España - Recursos de atención a la salud mental y línea 024"
+ ],
+ "fecha": "2026-11-09"
+}
