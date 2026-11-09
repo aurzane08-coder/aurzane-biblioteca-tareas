@@ -80,7 +80,7 @@ def verificar_ol(titulo, autor, pal, ape):
         if not pal or not all(w in tv for w in pal[:3]) or (ape and not any(a in av for a in ape)): continue
         isbns = v.get('isbn') or []
         isbn = next((i for i in isbns if len(i) == 13 and i.startswith(('97884', '97884', '97898', '97895', '97896', '97897'))), '') or next((i for i in isbns if len(i) == 13), '')
-        return {'isbn': isbn, 'portada': f'https://covers.openlibrary.org/b/id/{v["cover_i"]}-M.jpg' if v.get('cover_i') else '',
+        return {'isbn': isbn, 'portada': f'https://covers.openlibrary.org/b/id/{v["cover_i"]}-M.jpg?default=false' if v.get('cover_i') else '',
                 'anio': str(v.get('first_publish_year', '')), 'editorial': (v.get('publisher') or [''])[0], 'idioma': 'spa' if 'spa' in (v.get('language') or []) else '', 'resumen': ''}
     return None
 

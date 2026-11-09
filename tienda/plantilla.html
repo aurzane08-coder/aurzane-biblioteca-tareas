@@ -56,6 +56,10 @@ header.top nav{margin-left:auto;display:flex;gap:18px;font-size:.92rem}header.to
 </main>
 <script>
 (function(){
+  function sinPortada(img){var a=img.closest('.libro');var s=document.createElement('span');s.className='sin';s.textContent=a.querySelector('b').textContent;img.replaceWith(s);}
+  document.querySelectorAll('.por img').forEach(function(i){if(i.complete&&i.naturalWidth<20)sinPortada(i);else i.addEventListener('error',function(){sinPortada(i);});i.addEventListener('load',function(){if(i.naturalWidth<20)sinPortada(i);});});
+})();
+(function(){
   var q='',f='',inp=document.querySelector('.buscar');
   function sinT(t){return (t||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');}
   function aplicar(){
