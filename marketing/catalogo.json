@@ -20335,6 +20335,31 @@
    "alta": "2026-11-09"
   },
   {
+   "id": "lectura-independizate-de-papa-estado-carlos-galan",
+   "tipo": "lectura",
+   "mundo": "aurzane",
+   "origen": "tienda",
+   "url": "https://aurzane.com/libros/independizate-de-papa-estado-carlos-galan/",
+   "titulo": "Independízate de papá estado",
+   "autor": "Carlos Galán",
+   "ganchos": [
+    "Libro recomendado: Independízate de papá estado",
+    "Independízate de papá estado, de Carlos Galán",
+    "¿Qué leer este mes? Independízate de papá estado"
+   ],
+   "texto": "Este libro es para quienes buscan tomar las riendas de su futuro financiero sin depender de las ayudas públicas. Aporta una guía práctica para entender la inversión y construir una verdadera libertad económica desde cero.",
+   "hashtags": [
+    "LibrosRecomendados",
+    "QueLeer",
+    "Lectura",
+    "Libros"
+   ],
+   "aviso": "Contiene enlace de afiliado.",
+   "img": null,
+   "emoji": "📚",
+   "alta": "2026-11-09"
+  },
+  {
    "id": "nc-medicina",
    "tipo": "notas",
    "mundo": "nexus",
@@ -35991,6 +36016,27 @@
    "img": null,
    "emoji": "✨",
    "alta": "2026-11-08"
+  },
+  {
+   "id": "auto-aurzane-com-colegios",
+   "tipo": "seccion",
+   "mundo": "aurzane",
+   "origen": "sitemap",
+   "url": "https://aurzane.com/colegios/",
+   "titulo": "Orientación vocacional para colegios | AURZANE OVP",
+   "ganchos": [
+    "Orientación vocacional para colegios | AURZANE OVP",
+    "Orientación vocacional para colegios | AURZANE OVP",
+    "Orientación vocacional para colegios | AURZANE OVP"
+   ],
+   "texto": "Cada estudiante hace sus evaluaciones en línea y recibe su informe con el membrete del colegio. Para DECE, orientadores y rectores.",
+   "hashtags": [
+    "AURZANE"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "✨",
+   "alta": "2026-11-09"
   }
  ]
 }

@@ -8,7 +8,7 @@ Actualizado: 2026-11-09. Clics de personas (sin bots ni vistas previas) que entr
 | bluesky | 23 | 67 |
 | mastodon | 23 | 55 |
 | instagram | 9 | 0 |
-| facebook | 9 | 27 |
+| facebook | 9 | 28 |
 | threads | 0 | 0 |
 | pinterest | 15 | 0 |
 
@@ -36,8 +36,8 @@ Actualizado: 2026-11-09. Clics de personas (sin bots ni vistas previas) que entr
 | nc-educacion-infantil | 4 |
 | test-satisfaccion | 4 |
 | frase-8e70072e | 4 |
+| frase-5e3e2ae7 | 4 |
 | test-autoestima | 3 |
 | frase-2144e317 | 3 |
 | frase-ff372591 | 3 |
 | frase-f56e3629 | 3 |
-| frase-4a49bc6d | 3 |
