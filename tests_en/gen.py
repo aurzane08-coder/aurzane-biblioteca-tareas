@@ -103,6 +103,64 @@ TESTS = [
       ref='Schwarzer R, Jerusalem M. Generalized Self-Efficacy scale. In: Weinman J, Wright S, Johnston M, eds. Measures in health psychology. NFER-NELSON; 1995:35-37. Free to use.'),
 ]
 
+FREQ_CBI = [[100, 'Always'], [75, 'Often'], [50, 'Sometimes'], [25, 'Seldom'], [0, 'Never or almost never']]
+TESTS += [
+ dict(slug='stress-test-dass-21', es='https://mind.aurzane.com/test-de-estres/', clave='estres', short='Stress', name='Stress test (DASS-21 stress scale)', scale='DASS-21 (stress)',
+      desc='Take the stress scale of the DASS-21, a widely used and validated questionnaire. 7 statements about the past week, instant result. Free and anonymous.',
+      stem='Please read each statement and indicate how much the statement applied to you over the past week.',
+      ops=[[0, 'Did not apply to me at all'], [1, 'Applied to me to some degree, or some of the time'], [2, 'Applied to me to a considerable degree, or a good part of time'], [3, 'Applied to me very much, or most of the time']], inv=[], mult=2,
+      items=['I found it hard to wind down', 'I tended to over-react to situations', 'I felt that I was using a lot of nervous energy', 'I found myself getting agitated',
+             'I found it difficult to relax', 'I was intolerant of anything that kept me from getting on with what I was doing', 'I felt that I was rather touchy'],
+      min=0, max=42, levels=[[0, 14, 'ok', 'Normal stress', 'Your stress level is within the usual range. Some tense days are normal.'],
+                             [15, 18, 'mid', 'Mild stress', 'You are under some stress. Look after rest and breaks before it builds up.'],
+                             [19, 25, 'mid', 'Moderate stress', 'Your stress is noticeably high. It is worth reviewing your workload and finding ways to switch off.'],
+                             [26, 33, 'high', 'Severe stress', 'Your stress level is high. If it has lasted for weeks, talking to a professional can help a lot.'],
+                             [34, 42, 'high', 'Extremely severe stress', 'Your stress level is very high. We recommend talking to your doctor or a psychologist soon.']],
+      tips=[['Protect a daily switch-off time', 'Thirty minutes without screens or obligations lowers physical tension.'], ['Move your body', 'Exercise is one of the most effective ways to discharge accumulated stress.'],
+            ['Write down what worries you', 'Putting it on paper and listing the next step reduces mental load.'], ['Sleep comes first', 'Lack of sleep makes everything feel more stressful.']],
+      ref='Lovibond SH, Lovibond PF. Manual for the Depression Anxiety Stress Scales. 2nd ed. Sydney: Psychology Foundation; 1995. The DASS is in the public domain.'),
+ dict(slug='wellbeing-test-who-5', es='https://live.aurzane.com/test-de-bienestar/', clave='bienestar', short='Wellbeing', name='Wellbeing test (WHO-5)', scale='WHO-5',
+      desc='Take the WHO-5 Well-Being Index from the World Health Organization. 5 statements about the last two weeks, score from 0 to 100. Free and anonymous.',
+      stem='Please indicate for each of the five statements which is closest to how you have been feeling over the last two weeks.',
+      ops=[[5, 'All of the time'], [4, 'Most of the time'], [3, 'More than half of the time'], [2, 'Less than half of the time'], [1, 'Some of the time'], [0, 'At no time']], inv=[], mult=4,
+      items=['I have felt cheerful and in good spirits', 'I have felt calm and relaxed', 'I have felt active and vigorous', 'I woke up feeling fresh and rested', 'My daily life has been filled with things that interest me'],
+      min=0, max=100, levels=[[0, 28, 'high', 'Low wellbeing', 'Your score is low. It may be worth checking your mood with a professional, especially if it has lasted for weeks.'],
+                              [29, 50, 'mid', 'Reduced wellbeing', 'Your wellbeing is below the usual range. Small changes in rest, activity and contact with people can help.'],
+                              [51, 100, 'ok', 'Good wellbeing', 'Your wellbeing over the last two weeks is good.']],
+      tips=[['Plan one enjoyable thing a day', 'Wellbeing grows with small pleasant moments you actually schedule.'], ['Get morning light', 'A short walk early in the day improves energy and sleep.'],
+            ['Keep a regular sleep time', 'Waking up rested is one of the five questions for a reason.'], ['Stay connected', 'Contact with people you trust is a strong protector of wellbeing.']],
+      ref='World Health Organization. WHO-5 Well-Being Index. 1998. Free to use; see Topp CW et al. Psychother Psychosom. 2015;84(3):167-176.'),
+ dict(slug='burnout-test-cbi', es='https://mind.aurzane.com/test-de-burnout/', clave='burnout', short='Burnout', name='Work burnout test (Copenhagen Burnout Inventory)', scale='CBI (work-related)',
+      desc='Take the work-related scale of the Copenhagen Burnout Inventory, a free and validated burnout questionnaire. 7 questions, instant result. Free and anonymous.',
+      stem='Answer each question about your work.',
+      ops=[[100, 'To a very high degree'], [75, 'To a high degree'], [50, 'Somewhat'], [25, 'To a low degree'], [0, 'To a very low degree']], ops2=FREQ_CBI, ops2items=[3, 4, 5, 6], inv=[6], invBase=100, media=True,
+      items=['Is your work emotionally exhausting?', 'Do you feel burnt out because of your work?', 'Does your work frustrate you?', 'Do you feel worn out at the end of the working day?',
+             'Are you exhausted in the morning at the thought of another day at work?', 'Do you feel that every working hour is tiring for you?', 'Do you have enough energy for family and friends during leisure time?'],
+      min=0, max=100, levels=[[0, 49.99, 'ok', 'No burnout', 'Your level of work exhaustion is below the cut-off. Keep protecting your rest.'],
+                              [50, 74.99, 'mid', 'Moderate burnout', 'Your work is wearing you down. It is a good moment to adjust workload, breaks and boundaries.'],
+                              [75, 99.99, 'high', 'High burnout', 'Your level of work exhaustion is high. Talk to your doctor or a psychologist, and to your employer if possible.'],
+                              [100, 100, 'high', 'Severe burnout', 'Your answers show severe work exhaustion. Please seek professional support soon.']],
+      tips=[['Set a clear end to the working day', 'Closing tasks and notifications at a fixed time helps you recover.'], ['Take real breaks', 'Short breaks away from the screen during the day reduce exhaustion.'],
+            ['Talk about workload', 'Burnout comes from the job as much as from you: raising it is legitimate.'], ['Recover energy outside work', 'Sleep, exercise and time with people refill what work drains.']],
+      ref='Kristensen TS, Borritz M, Villadsen E, Christensen KB. The Copenhagen Burnout Inventory: a new tool for the assessment of burnout. Work & Stress. 2005;19(3):192-207. Free to use.'),
+ dict(slug='self-compassion-test-scs-sf', es='https://mind.aurzane.com/test-de-autocompasion/', clave='autocompasion', short='Self-compassion', name='Self-compassion test (Neff, short form)', scale='SCS-SF',
+      desc='Take the Self-Compassion Scale short form by Kristin Neff. 12 statements, instant result with an explanation. Free and anonymous.',
+      stem='How I typically act towards myself in difficult times. Indicate how often you behave in the stated manner.',
+      ops=[[1, 'Almost never'], [2, 'Rarely'], [3, 'Sometimes'], [4, 'Often'], [5, 'Almost always']], inv=[0, 3, 7, 8, 10, 11], invBase=6, media=True,
+      items=['When I fail at something important to me I become consumed by feelings of inadequacy.', "I try to be understanding and patient towards those aspects of my personality I don't like.",
+             'When something painful happens I try to take a balanced view of the situation.', "When I'm feeling down, I tend to feel like most other people are probably happier than I am.",
+             'I try to see my failings as part of the human condition.', "When I'm going through a very hard time, I give myself the caring and tenderness I need.",
+             'When something upsets me I try to keep my emotions in balance.', "When I fail at something that's important to me, I tend to feel alone in my failure.",
+             "When I'm feeling down I tend to obsess and fixate on everything that's wrong.", 'When I feel inadequate in some way, I try to remind myself that feelings of inadequacy are shared by most people.',
+             "I'm disapproving and judgmental about my own flaws and inadequacies.", "I'm intolerant and impatient towards those aspects of my personality I don't like."],
+      min=1, max=5, levels=[[1, 2.49, 'mid', 'Low self-compassion', 'You tend to be hard on yourself in difficult moments. Self-compassion can be learned with practice.'],
+                            [2.5, 3.5, 'ok', 'Moderate self-compassion', 'You treat yourself with kindness in some situations and are harder on yourself in others.'],
+                            [3.51, 5, 'ok', 'High self-compassion', 'You usually treat yourself with kindness and understanding when things go wrong.']],
+      tips=[['Talk to yourself like a good friend', 'Notice harsh inner criticism and answer it with the words you would use with someone you love.'], ['Remember you are not alone', 'Difficulties are part of being human, not proof that something is wrong with you.'],
+            ['Use a soothing gesture', 'A hand on your chest and a few slow breaths calm the body in hard moments.'], ['Take a self-compassion break', 'Name the moment as difficult, remember others feel this too, and offer yourself kindness.']],
+      ref='Raes F, Pommier E, Neff KD, Van Gucht D. Construction and factorial validation of a short form of the Self-Compassion Scale. Clin Psychol Psychother. 2011;18(3):250-255. Free to use.'),
+]
+
 CSS = '''
 :root{--bg:#0B0E1D;--sup:#141A33;--txt:#F3EFE6;--sua:#B9B3A6;--oro:#E2BF6A;--lin:rgba(255,255,255,.1);--ok:#8CC084;--mid:#E2BF6A;--high:#E39B9B}
 *{box-sizing:border-box;margin:0;padding:0}body{background:var(--bg);color:var(--txt);font:17px/1.65 "Instrument Sans",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
@@ -158,7 +216,7 @@ var CFG = %s;
   var q = '';
   CFG.items.forEach(function(t, i){
     q += '<fieldset class="q"><legend class="sr" style="position:absolute;left:-9999px">' + (i + 1) + '</legend><p><b>' + (i + 1) + '.</b>' + t + '</p><div class="ops">' +
-      CFG.ops.map(function(o){ return '<label><input type="radio" name="i' + i + '" value="' + o[0] + '"><span>' + o[1] + '</span></label>'; }).join('') + '</div></fieldset>';
+      ((CFG.ops2items || []).indexOf(i) >= 0 ? CFG.ops2 : CFG.ops).map(function(o){ return '<label><input type="radio" name="i' + i + '" value="' + o[0] + '"><span>' + o[1] + '</span></label>'; }).join('') + '</div></fieldset>';
   });
   $('items').innerHTML = q;
   $('items').addEventListener('change', function(e){
@@ -171,6 +229,7 @@ var CFG = %s;
     $('msg').textContent = '';
     var total = 0; CFG.items.forEach(function(_, i){ var v = R['i' + i]; total += CFG.inv.indexOf(i) >= 0 ? (CFG.invBase - v) : v; });
     if (CFG.media) total = Math.round(total / CFG.items.length * 100) / 100;
+    if (CFG.mult) total = total * CFG.mult;
     var nv = CFG.levels.filter(function(x){ return total >= x[0] && total <= x[1] + 0.0001; })[0] || CFG.levels[CFG.levels.length - 1];
     var shown = CFG.media ? total.toFixed(2) : total;
     var h = '<div class="score">' + shown + ' <small>out of ' + CFG.max + '</small></div><span class="lvl ' + nv[2] + '">' + nv[3] + '</span><p>' + nv[4] + '</p>';
@@ -189,7 +248,7 @@ var CFG = %s;
 def pagina(t):
     url = BASE + t['slug'] + '/'
     cfg = {k: t.get(k) for k in ['items', 'ops', 'inv', 'min', 'max', 'levels', 'tips', 'clave']}
-    cfg.update({'invBase': t.get('invBase', 0), 'media': bool(t.get('media')), 'crisis': t.get('crisis'), 'titulo': t['name']})
+    cfg.update({'mult': t.get('mult'), 'ops2': t.get('ops2'), 'ops2items': t.get('ops2items'), 'invBase': t.get('invBase', 0), 'media': bool(t.get('media')), 'crisis': t.get('crisis'), 'titulo': t['name']})
     cfg['clave'] = t['clave'] + '-en'
     lv = '; '.join(f"{l[0]} to {l[1]}: {l[3].lower()}" for l in t['levels'])
     faq = [(f"What is the {t['scale']}?", f"It is a validated questionnaire. Source: {t['ref']}"),

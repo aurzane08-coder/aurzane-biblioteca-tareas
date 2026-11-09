@@ -1,8 +1,4 @@
-mind.aurzane.com/sitemap.xml
-mind.aurzane.com/test-de-ansiedad/index.html
-mind.aurzane.com/test-de-depresion/index.html
-mind.aurzane.com/test-de-autoestima/index.html
-mind.aurzane.com/test-de-satisfaccion-con-la-vida/index.html
-mind.aurzane.com/test-de-resiliencia/index.html
-mind.aurzane.com/test-de-autoeficacia/index.html
-mind.aurzane.com/robots.txt
+mind.aurzane.com/test-de-estres/index.html
+mind.aurzane.com/test-de-autocompasion/index.html
+mind.aurzane.com/test-de-burnout/index.html
+live.aurzane.com/test-de-bienestar/index.html
