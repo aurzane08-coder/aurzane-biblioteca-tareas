@@ -1,0 +1,38 @@
+{
+ "fecha": "2026-11-10",
+ "cursos": [
+  {
+   "slug": "ansiedad-dia-a-dia",
+   "titulo": "Gestionar la ansiedad en el día a día",
+   "temas": 4,
+   "lecciones": 12,
+   "preguntas": 48,
+   "horas": 4.0,
+   "certificado": true,
+   "estado": "ok",
+   "problemas": []
+  },
+  {
+   "slug": "tecnicas-neurociencias",
+   "titulo": "Metodología y técnicas de investigación en Neurociencias",
+   "temas": 2,
+   "lecciones": 9,
+   "preguntas": 61,
+   "horas": 4.0,
+   "certificado": false,
+   "estado": "ok",
+   "problemas": []
+  },
+  {
+   "slug": "neuroanatomia-funcional",
+   "titulo": "Organización morfofuncional del Sistema Nervioso",
+   "temas": 13,
+   "lecciones": 67,
+   "preguntas": 466,
+   "horas": 24.0,
+   "certificado": false,
+   "estado": "ok",
+   "problemas": []
+  }
+ ]
+}

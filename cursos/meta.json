@@ -1,5 +1,44 @@
 {
- "ansiedad-dia-a-dia": {"area": "Psicología y bienestar", "publico": "Cualquier persona que quiera entender y manejar mejor su ansiedad en la vida diaria.", "etiquetas": ["ansiedad", "estrés", "nervios", "preocupación", "respiración", "relajación", "ataques de pánico", "terapia cognitivo conductual"]},
- "neuroanatomia-funcional": {"area": "Neurociencias", "publico": "Estudiantes de psicología, medicina, enfermería y neurociencias, y cualquier persona con base científica.", "etiquetas": ["neuroanatomía", "sistema nervioso", "cerebro", "médula espinal", "vías nerviosas", "corteza cerebral", "neurociencia", "anatomía"]},
- "tecnicas-neurociencias": {"area": "Neurociencias", "publico": "Estudiantes de grado y posgrado en neurociencias, biología, psicología o medicina.", "etiquetas": ["técnicas de neurociencia", "optogenética", "estereotaxia", "células madre", "crispr", "electrofisiología", "investigación", "neurociencia"]}
+ "ansiedad-dia-a-dia": {
+  "area": "Psicología y bienestar",
+  "publico": "Cualquier persona que quiera entender y manejar mejor su ansiedad en la vida diaria.",
+  "etiquetas": [
+   "ansiedad",
+   "estrés",
+   "nervios",
+   "preocupación",
+   "respiración",
+   "relajación",
+   "ataques de pánico",
+   "terapia cognitivo conductual"
+  ]
+ },
+ "neuroanatomia-funcional": {
+  "area": "Neurociencias",
+  "publico": "Estudiantes de psicología, medicina, enfermería y neurociencias, y cualquier persona con base científica.",
+  "etiquetas": [
+   "neuroanatomía",
+   "sistema nervioso",
+   "cerebro",
+   "médula espinal",
+   "vías nerviosas",
+   "corteza cerebral",
+   "neurociencia",
+   "anatomía"
+  ]
+ },
+ "tecnicas-neurociencias": {
+  "area": "Neurociencias",
+  "publico": "Estudiantes de grado y posgrado en neurociencias, biología, psicología o medicina.",
+  "etiquetas": [
+   "técnicas de neurociencia",
+   "optogenética",
+   "estereotaxia",
+   "células madre",
+   "crispr",
+   "electrofisiología",
+   "investigación",
+   "neurociencia"
+  ]
+ }
 }

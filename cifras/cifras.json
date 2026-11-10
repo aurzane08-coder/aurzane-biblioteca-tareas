@@ -1,0 +1,34 @@
+{
+ "fecha": "2026-11-10",
+ "articulos": {
+  "mind": 5000,
+  "nexus": 5000,
+  "live": 5000,
+  "learn": 5000,
+  "build": 5000
+ },
+ "articulos_total": 25000,
+ "universidades": 6411,
+ "paises": 55,
+ "libros": 1324,
+ "cursos": {
+  "ansiedad-dia-a-dia": {
+   "temas": 4,
+   "lecciones": 12,
+   "preguntas": 48,
+   "tipos": 6
+  },
+  "tecnicas-neurociencias": {
+   "temas": 2,
+   "lecciones": 9,
+   "preguntas": 61,
+   "tipos": 6
+  },
+  "neuroanatomia-funcional": {
+   "temas": 13,
+   "lecciones": 67,
+   "preguntas": 466,
+   "tipos": 6
+  }
+ }
+}
