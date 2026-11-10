@@ -1,3 +1,1 @@
-learn.aurzane.com/cursos/portada-ansiedad.webp
-learn.aurzane.com/cursos/portada-neuro.webp
-learn.aurzane.com/cursos/portada-metodologia.webp
+aurzane.com/core/index.js
