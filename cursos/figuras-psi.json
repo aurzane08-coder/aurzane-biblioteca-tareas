@@ -1,0 +1,526 @@
+[
+{
+"clave": "psi-1-2",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58263/Fig_1.1.2.png"
+},
+{
+"clave": "psi-1-4",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58261/fig_1.2.3.png"
+},
+{
+"clave": "psi-1-6",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58259/fig_1.2.5.png"
+},
+{
+"clave": "psi-1-7",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58258/fig_1.2.6.png"
+},
+{
+"clave": "psi-1-11",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58269/fig_1.3.2.png"
+},
+{
+"clave": "psi-1-15",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58265/fig_1.3.6.png"
+},
+{
+"clave": "psi-1-16",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58264/fig_1.3.7.png"
+},
+{
+"clave": "psi-2-2",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58279/fig_2.1.1.png"
+},
+{
+"clave": "psi-2-5",
+"src": "https://openstax.org/resources/d961aca4fe0109c144b2cf02d83d988fe8fcd4b6"
+},
+{
+"clave": "psi-2-8",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58283/fig_2.2.2.png"
+},
+{
+"clave": "psi-2-12",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58292/fig_2.3.1.png"
+},
+{
+"clave": "psi-2-14",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58290/fig_2.3.3.png"
+},
+{
+"clave": "psi-2-17",
+"src": "https://openstax.org/resources/3ed53f2c8245f1be744fba606c5a34c734c9a157"
+},
+{
+"clave": "psi-2-16",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58288/fig_2.3.5.png"
+},
+{
+"clave": "psi-3-2",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58306/fig_3.1.1.png"
+},
+{
+"clave": "psi-3-8",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58311/fig_3.2.1.png"
+},
+{
+"clave": "psi-3-11",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58308/fig_3.2.4.png"
+},
+{
+"clave": "psi-3-12",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58307/fig_3.2.5.png"
+},
+{
+"clave": "psi-3-14",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58312/fig_3.3.2.png"
+},
+{
+"clave": "psi-3-18",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58325/fig_3.4.4.png"
+},
+{
+"clave": "psi-3-19",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58324/fig_3.4.5.png"
+},
+{
+"clave": "psi-3-21",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58322/fig_3.4.7.png"
+},
+{
+"clave": "psi-3-23",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58320/fig_3.4.9.png"
+},
+{
+"clave": "psi-3-27",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58316/fig_3.4.13.png"
+},
+{
+"clave": "psi-3-30",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58329/fig_3.5.1.png"
+},
+{
+"clave": "psi-4-2",
+"src": "https://openstax.org/resources/d2da772dbc0592c5fa2e39d56b50ba466a82bf60"
+},
+{
+"clave": "psi-4-6",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58336/fig_4.2.2.png"
+},
+{
+"clave": "psi-4-9",
+"src": "https://openstax.org/resources/be62c72cc7c508782dbd58c526c48af8749ab353"
+},
+{
+"clave": "psi-4-12",
+"src": "https://openstax.org/resources/2dbbf4dfa4b03e90919100228b968f4dc7bcc678"
+},
+{
+"clave": "psi-4-13",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58345/fig_4.4.1.png"
+},
+{
+"clave": "psi-4-16",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58349/fig_4.5.4.png"
+},
+{
+"clave": "psi-4-21",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58353/fig_4.6.2.png"
+},
+{
+"clave": "psi-5-2",
+"src": "https://openstax.org/resources/1b006097c67b6af1baf4f215c9b6f15090f715eb"
+},
+{
+"clave": "psi-5-7",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58361/fig_5.2.3.png"
+},
+{
+"clave": "psi-5-11",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58369/fig_5.3.2.png"
+},
+{
+"clave": "psi-5-13",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58367/fig_5.3.4.png"
+},
+{
+"clave": "psi-5-16",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58365/fig_5.3.6.png"
+},
+{
+"clave": "psi-5-17",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58364/fig_5.3.7.png"
+},
+{
+"clave": "psi-5-18",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58373/fig_5.4.1.png"
+},
+{
+"clave": "psi-5-9",
+"src": "https://openstax.org/resources/255ec68e0303670d7d90ced1985b7a4f83cf1373"
+},
+{
+"clave": "psi-5-21",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58377/fig_5.5.1.png"
+},
+{
+"clave": "psi-5-25",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58383/fig_5.6.1.png"
+},
+{
+"clave": "psi-5-26",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58382/fig_5.6.2.png"
+},
+{
+"clave": "psi-5-4",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58357/fig_5.1.2.png"
+},
+{
+"clave": "psi-6-2",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58386/fig_6.1.1.png"
+},
+{
+"clave": "psi-6-3",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58393/fig_6.2.1.png"
+},
+{
+"clave": "psi-6-4",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58392/fig_6.2.2.png"
+},
+{
+"clave": "psi-6-7",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58389/fig_6.2.5.png"
+},
+{
+"clave": "psi-6-9",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58387/fig_6.2.7.png"
+},
+{
+"clave": "psi-6-10",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58399/CNX_Psych_06_03_Skinnerbox_n.jpg"
+},
+{
+"clave": "psi-6-11",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58398/CNX_Psych_06_03_Stickers.jpg"
+},
+{
+"clave": "psi-6-14",
+"src": "https://openstax.org/resources/2f99896f9fd61dffafd6747b45a601e9522e704d"
+},
+{
+"clave": "psi-6-15",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58396/CNX_Psych_06_03_Ratmaze.jpg"
+},
+{
+"clave": "psi-6-17",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58401/fig_6.4.2.png"
+},
+{
+"clave": "psi-7-4",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58406/fig_7.1.4.png"
+},
+{
+"clave": "psi-7-7",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58414/fig_7.3.1.png"
+},
+{
+"clave": "psi-7-10",
+"src": "https://openstax.org/resources/bbe68e72de6eec39cffa48530b41d9714bfd92ab"
+},
+{
+"clave": "psi-7-12",
+"src": "https://openstax.org/resources/d55d80f6c322d23d0bb7d62c394ca25e4690ba0f"
+},
+{
+"clave": "psi-7-13",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58418/fig_7.5.1.png"
+},
+{
+"clave": "psi-7-15",
+"src": "https://openstax.org/resources/87dba6aac07b342c4ce36005429a170fed2cc4cd"
+},
+{
+"clave": "psi-7-16",
+"src": "https://openstax.org/resources/efa718079e4870947db09ab86bd8c77a80af8bb3"
+},
+{
+"clave": "psi-8-2",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58429/fig_8.1.1.png"
+},
+{
+"clave": "psi-8-4",
+"src": "https://openstax.org/resources/b3ae35b1846a6f37760f34b80d0b878c0b9a2883"
+},
+{
+"clave": "psi-8-6",
+"src": "https://openstax.org/resources/ded29a1426df305956b730f4683d5048e0c0ffd7"
+},
+{
+"clave": "psi-8-8",
+"src": "https://openstax.org/resources/ea9b2d0fcd8506c48d06546c88fb35f4d2f71429"
+},
+{
+"clave": "psi-8-10",
+"src": "https://openstax.org/resources/11ecb8087aa101ba137394a40f7e5890fedafcd1"
+},
+{
+"clave": "psi-8-14",
+"src": "https://openstax.org/resources/0c237b989aa8d57da376b147c8965832694bc214"
+},
+{
+"clave": "psi-8-12",
+"src": "https://openstax.org/resources/014ae75d56e48f6a3c06cc87c21e17f7137531fa"
+},
+{
+"clave": "psi-8-17",
+"src": "https://openstax.org/resources/7d6665c6c8ce3383997e75c3cc2ad5460088f1cf"
+},
+{
+"clave": "psi-8-19",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58440/fig_8.4.2.png"
+},
+{
+"clave": "psi-9-4",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58448/fig_9.2.1.png"
+},
+{
+"clave": "psi-9-5",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58447/fig_9.2.2.png"
+},
+{
+"clave": "psi-9-6",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58446/fig_9.2.3.png"
+},
+{
+"clave": "psi-9-8",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58461/fig_9.3.2.png"
+},
+{
+"clave": "psi-9-10",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58459/9.3.4.png"
+},
+{
+"clave": "psi-9-11",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58458/9.3.5.png"
+},
+{
+"clave": "psi-9-16",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58453/fig_9.3.10.png"
+},
+{
+"clave": "psi-9-20",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58449/fig_9.3.14.png"
+},
+{
+"clave": "psi-10-7",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58468/fig_10.1.6.png"
+},
+{
+"clave": "psi-10-8",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58467/fig_10.1.7.png"
+},
+{
+"clave": "psi-10-9",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58478/fig_10.2.1.png"
+},
+{
+"clave": "psi-10-16",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58482/fig_10.3.3.png"
+},
+{
+"clave": "psi-10-21",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58488/fig_10.4.2.png"
+},
+{
+"clave": "psi-10-22",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58487/fig_10.4.3.png"
+},
+{
+"clave": "psi-10-24",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58485/fig_10.4.5.png"
+},
+{
+"clave": "psi-11-2",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58499/fig_11.1.1.png"
+},
+{
+"clave": "psi-11-3",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58498/fig_11.1.2.png"
+},
+{
+"clave": "psi-11-5",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58502/fig_11.2.1.png"
+},
+{
+"clave": "psi-11-7",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58500/fig_11.2.3.png"
+},
+{
+"clave": "psi-11-9",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58503/fig_11.3.2.png"
+},
+{
+"clave": "psi-11-10",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58506/fig_11.4.1.png"
+},
+{
+"clave": "psi-11-13",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58509/fig_11.7.2.png"
+},
+{
+"clave": "psi-11-14",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58508/fig_11.7.3.png"
+},
+{
+"clave": "psi-11-18",
+"src": "https://socialsci.libretexts.org/@api/deki/files/101249/11.18.jpg"
+},
+{
+"clave": "psi-12-7",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58520/fig_12.1.6.png"
+},
+{
+"clave": "psi-12-9",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58527/fig_12.2.2.png"
+},
+{
+"clave": "psi-12-11",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58534/fig_12.3.1.png"
+},
+{
+"clave": "psi-12-14",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58531/fig_12.3.4.png"
+},
+{
+"clave": "psi-12-17",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58539/fig_12.4.1.png"
+},
+{
+"clave": "psi-12-20",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58536/fig_12.4.4.png"
+},
+{
+"clave": "psi-12-26",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58549/fig_12.7.1.png"
+},
+{
+"clave": "psi-12-28",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58547/fig_12.7.3.png"
+},
+{
+"clave": "psi-13-2",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58557/fig_13.1.1.png"
+},
+{
+"clave": "psi-13-6",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58553/fig_13.1.5.png"
+},
+{
+"clave": "psi-13-7",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58552/fig_13.1.6.png"
+},
+{
+"clave": "psi-13-4",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58555/fig_13.1.3.png"
+},
+{
+"clave": "psi-13-9",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58562/fig_13.2.1.png"
+},
+{
+"clave": "psi-13-15",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58564/fig_13.4.1.png"
+},
+{
+"clave": "psi-14-3",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58575/fig_14.1.2.png"
+},
+{
+"clave": "psi-14-8",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58570/fig_14.1.7.png"
+},
+{
+"clave": "psi-14-10",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58568/fig_14.1.9.png"
+},
+{
+"clave": "psi-14-11",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58567/fig_14.1.10.png"
+},
+{
+"clave": "psi-14-13",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58578/fig_14.2.2.png"
+},
+{
+"clave": "psi-14-17",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58584/fig_14.3.3.png"
+},
+{
+"clave": "psi-14-22",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58589/fig_14.4.1.png"
+},
+{
+"clave": "psi-14-24",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58587/fig_14.4.3.png"
+},
+{
+"clave": "psi-14-25",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58593/fig_14.5.1.png"
+},
+{
+"clave": "psi-15-6",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58602/fig_15.3.1.png"
+},
+{
+"clave": "psi-15-8",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58600/fig_15.3.3.png"
+},
+{
+"clave": "psi-15-9",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58603/fig_15.4.1.png"
+},
+{
+"clave": "psi-15-11",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58607/fig_15.5.1.png"
+},
+{
+"clave": "psi-15-14",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58608/fig_15.6.1.png"
+},
+{
+"clave": "psi-15-15",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58612/fig_15.7.1.png"
+},
+{
+"clave": "psi-15-16",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58611/fig_15.7.2.png"
+},
+{
+"clave": "psi-16-4",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58621/fig_16.1.3.png"
+},
+{
+"clave": "psi-16-5",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58620/fig_16.1.4.png"
+},
+{
+"clave": "psi-16-6",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58619/fig_16.1.5.png"
+},
+{
+"clave": "psi-16-9",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58628/fig_16.2.1.png"
+},
+{
+"clave": "psi-16-11",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58626/fig_16.2.3.png"
+},
+{
+"clave": "psi-16-15",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58631/fig_16.3.2.png"
+},
+{
+"clave": "psi-16-16",
+"src": "https://socialsci.libretexts.org/@api/deki/files/58630/fig_16.3.3.png"
+}
+]

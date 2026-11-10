@@ -1,0 +1,35 @@
+name: Figuras de cursos
+# Descarga las figuras con licencia libre de cada curso, las convierte a webp y las sube a learn.aurzane.com/cursos/img/.
+on:
+  push:
+    paths: ['cursos/figuras-*.json', 'cursos/figuras_subir.py', '.github/workflows/figuras.yml', '!cursos/figuras-*-tam.json']
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency: figuras
+jobs:
+  figuras:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      SG_KEY: ${{ secrets.SG_KEY }}
+      SG_HOST: ${{ secrets.SG_HOST }}
+      SG_USER: ${{ secrets.SG_USER }}
+      SG_PORT: ${{ secrets.SG_PORT }}
+      SG_PASS: ${{ secrets.SG_PASS }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: SSH
+        run: |
+          mkdir -p ~/.ssh && printf '%s\n' "$SG_KEY" | tr -d '\r' > ~/.ssh/id && chmod 600 ~/.ssh/id
+          if [ -n "$SG_PASS" ]; then ssh-keygen -p -P "$SG_PASS" -N "" -f ~/.ssh/id >/dev/null; fi
+          echo "SSH=ssh -i $HOME/.ssh/id -p ${SG_PORT:-18765} -o StrictHostKeyChecking=accept-new" >> $GITHUB_ENV
+          echo "SG_DEST=$SG_USER@$SG_HOST" >> $GITHUB_ENV
+      - run: pip install pillow
+      - name: Figuras
+        run: for f in cursos/figuras-*.json; do case "$f" in *-tam.json) continue;; esac; LISTA=$f python3 -u cursos/figuras_subir.py; done
+      - name: Guardar
+        run: |
+          git config user.name "aurzane-bot"; git config user.email "bot@aurzane.com"
+          git add cursos/figuras-*-tam.json; git commit -qm "figuras: tamaños" || exit 0
+          for i in 1 2 3 4 5; do git pull -q --rebase -X theirs && git push -q && break; sleep 7; done
