@@ -1,1 +1,2 @@
-aurzane.com/core/services/library.js
+aurzane.com/core/config/defaults.js
+aurzane.com/core/data/supabase.js
