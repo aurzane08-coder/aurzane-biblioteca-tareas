@@ -19,9 +19,12 @@ def enlaces(pagina, base):
         if u.startswith(base + '/') and u not in hijos and '/' not in u[len(base) + 1:].strip('/'): hijos.append(u)
     return hijos
 def contenido(pagina):
-    m = re.search(r'<div[^>]+class="[^"]*mt-content-container[^"]*"[^>]*>(.*?)<footer', pagina, re.S)
-    t = m.group(1) if m else ''
+    # el texto va entre el contenedor principal y su pie (antes se cortaba en otro <footer> y salía vacío)
+    i = pagina.find('class="mt-content-container"')
+    k = pagina.find('class="mt-content-footer"', i)
+    t = pagina[pagina.find('>', i) + 1:k] if i >= 0 else ''
     t = re.sub(r'<script.*?</script>|<style.*?</style>', '', t, flags=re.S)
+    t = re.sub(r'\\\([^)]*?newcommand[\s\S]*?\\\)', '', t)
     return t
 if os.environ.get('CRUDO'):
     # diagnóstico: guarda una página tal cual para ver dónde está el texto
