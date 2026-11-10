@@ -1,9 +1,4 @@
-learn.aurzane.com/cursos.html
-learn.aurzane.com/cursos/app.js
-learn.aurzane.com/cursos/admin.js
-learn.aurzane.com/cursos/data-supabase.js
-learn.aurzane.com/cursos/store-supabase.js
-learn.aurzane.com/index.html
-learn.aurzane.com/admin-cursos.html
-aurzane.com/index.html
-aurzane.com/mi-aurzane.html
+learn.aurzane.com/robots.txt
+learn.aurzane.com/sitemap.xml
+aurzane.com/robots.txt
+aurzane.com/sitemap.xml
