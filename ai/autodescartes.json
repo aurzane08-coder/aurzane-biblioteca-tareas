@@ -1,5 +1,16 @@
 [
  {
+  "fecha": "2026-11-10",
+  "id": "ia-command-responsibility-beyond-hierarchy-sergio-pommier-gallo-ph-d",
+  "tipo": "libro",
+  "titulo": "Command Responsibility Beyond Hierarchy: Organizational Knowledge, Effective Control, and the Evidentiary Reconstruction of Superior Omission in International C",
+  "url": "https://archive.org/details/command-responsibility-beyond-hierarchy-sergio-pommier-gallo-ph-d",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 30 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/command-responsibility-beyond-hierarchy-sergio-pommier-gallo-ph-d/Command%20Respo"
+  ]
+ },
+ {
   "fecha": "2026-11-09",
   "id": "ia-5.-barrism-making-sense-of-how-we-make-sense",
   "tipo": "libro",
@@ -2819,17 +2830,6 @@
   "motivo": "Dice ser un libro pero el PDF solo tiene 8 páginas (es un capítulo, artículo o resumen)",
   "probados": [
    "200 application/pdf https://archive.org/download/2015-10-05-la-politica-es-guerra-jose-lopez/2015-10-05-la-politica-es-guerra-jose"
-  ]
- },
- {
-  "fecha": "2026-11-02",
-  "id": "ia-2022-02-10-la-timidez-de-la-izquierda-jose-lopez",
-  "tipo": "libro",
-  "titulo": "La timidez de la izquierda - José López",
-  "url": "https://archive.org/details/2022-02-10-la-timidez-de-la-izquierda-jose-lopez",
-  "motivo": "Dice ser un libro pero el PDF solo tiene 4 páginas (es un capítulo, artículo o resumen)",
-  "probados": [
-   "200 application/pdf https://archive.org/download/2022-02-10-la-timidez-de-la-izquierda-jose-lopez/2022-02-10-la-timidez-de-la-izqu"
   ]
  }
 ]
