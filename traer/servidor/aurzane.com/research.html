@@ -25,8 +25,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://aurzane.com/aurzane-paleta.js"></script>
-<title>Research Hub — AURZANE</title>
-<meta name="description" content="Un solo buscador para las cinco bibliotecas académicas de AURZANE — 25.000 artículos científicos de acceso abierto de Mind, Nexus, Live, Learn y Build, con abstract y fuente citable.">
+<title>Research Hub | AURZANE</title>
+<meta name="description" content="Un solo buscador para las cinco bibliotecas académicas de AURZANE: 25.000 artículos científicos de acceso abierto de Mind, Nexus, Live, Learn y Build, con abstract y fuente citable.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;1,6..96,400;1,6..96,500&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -106,6 +106,17 @@
 
   footer{border-top:1px solid var(--line);padding:34px 6vw;text-align:center;}
   footer p{font-size:0.76rem;color:var(--silver-dim);max-width:640px;margin:0 auto;}
+
+  .sugerencias{max-width:760px;margin:16px auto 0;padding:0 6vw;display:flex;gap:8px;justify-content:center;flex-wrap:wrap;align-items:center;}
+  .sugerencias .lbl{font-size:0.72rem;color:var(--silver-dim);margin-right:4px;}
+  a.chip{text-decoration:none;display:inline-block;}
+  a.chip small{color:var(--silver-dim);margin-left:6px;}
+  .nota-oa{text-align:center;padding:0 6vw;font-size:0.72rem;color:var(--silver-dim);margin-top:12px;}
+  .nota-oa b{color:var(--gold-light);font-weight:600;}
+  .traduccion{font-size:0.74rem;color:var(--silver-dim);margin:-6px 0 14px;}
+  .aviso-error{margin-top:14px;text-align:center;font-size:0.8rem;color:var(--silver-dim);}
+  .btn-sec{margin-top:14px;font-family:inherit;font-size:0.78rem;padding:8px 18px;border-radius:20px;border:1px solid var(--line-strong);background:transparent;color:var(--gold-light);cursor:pointer;}
+  .empty-state .sugerencias{padding:0;margin-top:16px;}
 </style>
 <meta name="google-adsense-account" content="ca-pub-8763758728010451">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8763758728010451" crossorigin="anonymous"></script>
@@ -124,16 +135,16 @@
 <div class="hero">
   <span class="eyebrow">Índice académico unificado</span>
   <h1>Un solo buscador para <span>toda la investigación de AURZANE</span></h1>
-  <p>Las cinco bibliotecas académicas de AURZANE (Mind, Nexus, Live, Learn y Build) en un solo lugar — título, resumen oficial y enlace directo a la fuente de cada paper, sin tener que saber de antemano en qué mundo buscar.</p>
-  <div class="stat mono" id="totalStat"></div>
+  <p>Las cinco bibliotecas académicas de AURZANE (Mind, Nexus, Live, Learn y Build) en un solo lugar: título, resumen oficial y enlace directo a la fuente de cada paper, sin tener que saber de antemano en qué mundo buscar.</p>
+  <div class="stat mono" id="totalStat"><!--az-pre-->25.000 papers indexados en los 5 mundos<!--/az-pre--></div>
 </div>
 
 <div class="search-wrap">
   <div class="search-box">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-    <input id="searchInput" type="text" placeholder="Buscar por tema, autor o palabra clave (en inglés funciona mejor)...">
+    <input id="searchInput" type="search" aria-label="Buscar papers" placeholder="Busca por tema, autor o palabra clave">
   </div>
-  <p class="search-hint">Los papers están indexados en su idioma original (mayormente inglés) — prueba términos como "mental health", "climate" o "ancient Egypt".</p>
+  <p class="search-hint">Los papers están en su idioma original, casi siempre inglés. Si buscas en español, también buscamos la traducción.</p>
 </div>
 
 <div class="filters" id="worldFilters">
@@ -144,28 +155,31 @@
   <button class="chip" data-mundo="learn" style="--chip-c:var(--learn);"><span class="chip-dot"></span>Learn</button>
   <button class="chip" data-mundo="build" style="--chip-c:var(--build);"><span class="chip-dot"></span>Build</button>
 </div>
-<div class="filters" id="filters">
-  <button class="chip active" data-oa="todos">Todos los papers</button>
-  <button class="chip" data-oa="si">Solo acceso abierto</button>
+<div class="filters" id="filters" aria-label="Año de publicación">
+  <button class="chip active" data-desde="">Cualquier año</button>
+  <button class="chip" data-desde="2025">Desde 2025</button>
+  <button class="chip" data-desde="2023">Desde 2023</button>
 </div>
+<p class="nota-oa" id="oaNota"><!--az-pre-->Todos los papers son de <b>acceso abierto</b>: puedes leerlos completos en su fuente original.<!--/az-pre--></p>
+<div class="sugerencias" id="sugerencias"><!--az-pre--><span class="lbl">Búsquedas populares:</span><a class="chip" href="?q=mental+health" data-q="mental health">Salud mental<small>2.202</small></a><a class="chip" href="?q=anxiety" data-q="anxiety">Ansiedad<small>1.407</small></a><a class="chip" href="?q=sleep" data-q="sleep">Sueño<small>635</small></a><a class="chip" href="?q=education" data-q="education">Educación<small>7.335</small></a><a class="chip" href="?q=artificial+intelligence" data-q="artificial intelligence">Inteligencia artificial<small>1.584</small></a><a class="chip" href="?q=climate+change" data-q="climate change">Cambio climático<small>262</small></a><a class="chip" href="?q=nutrition" data-q="nutrition">Nutrición<small>381</small></a><a class="chip" href="?q=adolescents" data-q="adolescents">Adolescentes<small>1.133</small></a><a class="chip" href="?q=exercise" data-q="exercise">Ejercicio<small>831</small></a><a class="chip" href="?q=archaeology" data-q="archaeology">Arqueología<small>1.528</small></a><!--/az-pre--></div>
 
 <div class="wrap">
-  <div id="loadState" class="load-state">
+  <div id="loadState" class="load-state" style="display:none;">
     <div class="spinner"></div>
-    <p class="mono" style="font-size:0.8rem;color:var(--silver-dim);">Cargando Research Hub...</p>
+    <p class="mono" style="font-size:0.8rem;color:var(--silver-dim);"></p>
   </div>
-  <div id="resultsArea" style="display:none;">
-    <div class="result-count mono" id="resultCount"></div>
-    <div id="list"></div>
+  <div id="resultsArea">
+    <div class="result-count mono" id="resultCount"><!--az-pre-->Novedades de los cinco mundos: 20 de 25.000 papers<!--/az-pre--></div>
+    <div class="traduccion" id="traduccion" style="display:none;"></div>
+    <div id="list" data-total="25000"><!--az-pre--><div class="paper" style="--mundo-c:var(--mind);"><div class="paper-meta"><span class="badge-mundo">Mind</span><span>2026</span><span class="badge-oa">Acceso abierto</span><span>CC BY</span></div><h3>A Prospective Comparative Study for the Evaluation of Digital Learning as an Academic Tool for MBBS Phase III Students.</h3><div class="autores">Anuranjani L; Kumar A; Khan A</div><div class="abstract">&lt;h4&gt;Introduction&lt;/h4&gt; This project seeks to redefine teaching and learning methods for MBBS students by integrating digital learning as an academic tool. The primary objective of this study was to enhance revision and promote audiovisual learning among students to improve their comprehension and understanding of the subject matter.&lt;h4&gt;Materials and methods&lt;/h4&gt;The study involved 120 students who attended a 90-minute traditional lecture, delivered in two sessions, on a specific competency &quot;Labour&quot;. Labour was chosen as it was a part of the core competency according to the NMC (National Medical Commission) curriculum. Following the lecture, a pre-test consisting of 20 multiple-choice questions (MCQs) was administered via Google Forms to assess knowledge acquisition after the traditional learning session. Subsequently, the students were divided into two groups of 60 each based on their odd- or even-numbered roll numbers assigned by the university. The roll numbers of students were allotted as per their names in alphabetical order; roll numbers had no relation to the academic performance of the students. One group received a digital learning module designed as a visual escape room, with quiz-mode MCQs administered via Google Forms. Students advanced to the next question only upon correctly answering the previous one, and additional information on the topic was provided for each correct response. The other group continued their learning traditionally. A second assessment was conducted one month later for all students using a post-test comprising 20 MCQs. The pre- and post-test scores of both groups were then analysed statistically. An unpaired Student&#x27;s t-test was employed to analyse the results. A p-value &lt; 0.05 was considered statistically significant.&lt;h4&gt;Results&lt;/h4&gt;The group that followed the traditional teaching method achieved an average score of 15.9 out of 20, while the group utilising digital learning tools attained an average score of 17.3 out of 20. The increase in mean scores for the group using digital learning tools was statistically significant (p=0.002). Feedback from the digital group indicated that the digital learning approach was both acceptable and useful to students. These findings suggest that such modules can also serve as effective tools for formative assessment.&lt;h4&gt;Conclusion&lt;/h4&gt;This study highlights the importance of innovative methods in facilitating repeated revision and improving recall. Given the extensive medical curriculum, limited time is allocated for effective student revision. The digital module supplements the learning experience and can be tailored to meet the needs of both students and teachers, providing a personalised, adaptable approach that can be repeated across various question types to address multiple domains of learning. A combination of traditional teaching and digital learning may yield better outcomes, thereby enhancing students&#x27; knowledge and skill acquisition.</div><button class="toggle-abs">Ver abstract completo</button><div class="paper-foot"><span class="mono" style="color:var(--silver-dim);">Mind</span><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC13321692/" target="_blank" rel="noopener noreferrer">Ver fuente original</a></div></div><div class="paper" style="--mundo-c:var(--nexus);"><div class="paper-meta"><span class="badge-mundo">Nexus</span><span>2026</span><span class="badge-oa">Acceso abierto</span><span>CC BY</span></div><h3>IQ-TREE 3: phylogenomic inference software using complex evolutionary models.</h3><div class="autores">Wong TKF; Ly-Trong N; Ren H; Demotte P; Baños H; Roger AJ; Susko E; Bielow C; De Maio N; Goldman N; Hahn MW; Dos Reis M; Vinh LS; Huttley G; Lanfear R; Minh BQ</div><div class="abstract">IQ-TREE (https://iqtree.github.io/) is a widely used open-source software tool for efficiently inferring phylogenetic trees under maximum likelihood. Here, we present IQ-TREE version 3, the third major release of the software. IQ-TREE 3 significantly extends version 2 with new features, including mixture models as an alternative to partitioned models, gene and site concordance factors to quantify discordance between genomic regions, integration with phylogenomic divergence time estimation, and a fully featured sequence simulator. The IQ-TREE 3 source code is available at https://github.com/iqtree/iqtree3.</div><button class="toggle-abs">Ver abstract completo</button><div class="paper-foot"><span class="mono" style="color:var(--silver-dim);">Nexus</span><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC13191116/" target="_blank" rel="noopener noreferrer">Ver fuente original</a></div></div><div class="paper" style="--mundo-c:var(--live);"><div class="paper-meta"><span class="badge-mundo">Live</span><span>2026</span><span class="badge-oa">Acceso abierto</span><span>CC-BY</span></div><h3>A systematic review and network meta-analysis of randomized controlled trials of well-being-focused interventions</h3><div class="autores">Lowri Wilkie; Zoe Fisher; Antonia Geidel; Isabel Goodall; Shannon Kamil; Elen Davies; Andrew H. Kemp</div><div class="abstract">Improving population well-being is increasingly recognized as a global priority, yet evidence on the comparative effectiveness of well-being-focused interventions in adults is fragmented. Here we conduct a preregistered systematic review and network meta-analysis (PROSPERO CRD42023403480) of randomized controlled trials evaluating well-being interventions in adults without diagnosed conditions. Searches of MEDLINE, PsycINFO, CENTRAL and Scopus (to March 2023) identified 183 trials (n = 22,811). Interventions included mindfulness-based, compassion-based, acceptance and commitment therapy and positive psychology interventions, as well as exercise, yoga, educational, nature-based programmes and combined exercise-psychological approaches. Risk of bias was assessed using RoB 2, and data were synthesized using random-effects network meta-analysis. Most interventions improved well-being compared with inactive controls. Combined exercise-psychological interventions produced the largest effect (standardized mean difference of 0.73, 95% confidence interval 0.27 to 1.20). Mindfulness, compassion, single positive psychology, yoga and exercise interventions demonstrated moderate, consistent effects (standardized mean difference of 0.41-0.49), with no significant differences between interventions. Nature-based interventions were not significantly more effective than controls, but evidence was limited by conceptual and methodological heterogeneity. Risk of bias was frequently moderate to high, and funnel plot asymmetry suggested potential publication bias. However, multiple sensitivity analyses (including grey literature, excluding studies with high risk of bias and small studies) supported the robustness of overall conclusions. Most comparisons (71%) were rated as moderate in certainty of evidence using CINEMA. These findings provide an integrated synthesis of the well-being intervention literature and highlight priority areas for future interdisciplinary, methodologically robust research. No external funding was received.</div><button class="toggle-abs">Ver abstract completo</button><div class="paper-foot"><span class="mono" style="color:var(--silver-dim);">Live</span><a href="https://doi.org/10.1038/s41562-025-02369-1" target="_blank" rel="noopener noreferrer">Ver fuente original</a></div></div><div class="paper" style="--mundo-c:var(--learn);"><div class="paper-meta"><span class="badge-mundo">Learn</span><span>2026</span><span class="badge-oa">Acceso abierto</span><span>CC BY</span></div><h3>Active learning meets metadynamics: automated workflow for reactive machine learning interatomic potentials.</h3><div class="autores">Vitartas V; Zhang H; Juraskova V; Johnston-Wood T; Duarte F</div><div class="abstract">Atomistic simulations driven by machine-learned interatomic potentials (MLIPs) are a cost-effective alternative to &lt;i&gt;ab initio&lt;/i&gt; molecular dynamics (AIMD). Yet, their broad applicability in reaction modelling remains hindered, in part, by the need for large training datasets that adequately sample the relevant potential energy surface, including high-energy transition state (TS) regions. To optimise dataset generation and extend the use of MLIPs for reaction modelling, we present a data-efficient and fully automated workflow for MLIP training that requires only a small number (typically five to ten) of initial configurations and no prior knowledge of the TS. The approach combines automated active learning with well-tempered metadynamics to iteratively and selectively explore chemically relevant regions of configuration space. Using data-efficient architectures, such as the linear Atomic Cluster Expansion, we illustrate the performance of this strategy in various organic reactions where the environment is described at different levels, including the S&lt;sub&gt;N&lt;/sub&gt;2 reaction between fluoride and chloromethane in implicit water, the methyl shift of 2,2-dimethylisoindene in the gas phase, and a glycosylation reaction in explicit dichloromethane solution, where competitive pathways exist. The proposed training strategy yields accurate and stable MLIPs for all three cases, highlighting its versatility for modelling reactive processes.</div><button class="toggle-abs">Ver abstract completo</button><div class="paper-foot"><span class="mono" style="color:var(--silver-dim);">Learn</span><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12642453/" target="_blank" rel="noopener noreferrer">Ver fuente original</a></div></div><div class="paper" style="--mundo-c:var(--build);"><div class="paper-meta"><span class="badge-mundo">Build</span><span>2026</span><span class="badge-oa">Acceso abierto</span><span>CC-BY</span></div><h3>On the Bioethical Thought of the Yangming School in Ming Dynasty China</h3><div class="autores">Zheng Zang</div><div class="abstract">Abstract: The bioethical thought of the Yangming School is a crystallization of ideas responding to the crisis of life alienation in the Ming Dynasty. With “Liangzhi (innate moral consciousness)” as the noumenon, “Zhi Liangzhi (extending innate moral consciousness)” as the practice, and “Wan Wu Yi Ti Zhi Ren (the benevolence of all things as one)” as the realm, it constructs a complete system integrating individual awakening, moral practice, and social ideals. Its core connotations are reflected in three aspects: Firstly, Liangzhi (innate moral consciousness), as the homologous noumenon of the universe and individuals, endows life with intrinsic value and equality, embodying dual connotations of rational principles and moral emotions. Secondly, “Zhi Liangzhi (extending innate moral consciousness)” guides life to return to its true nature from the obscuration of selfish desires through specific paths such as establishing aspirations, contemplating in tranquility, self-examination and overcoming desires, and tempering oneself in matters, combined with the principle of “Zhi Xing He Yi (the unity of knowledge and action)”. Thirdly, “Wan Wu Yi Ti Zhi Ren (the benevolence of all things as one)” breaks the subject-object opposition, expands ethical care from individuals to all things, and points to the social ideal of “the world is like one family”. This thought upholds the subjectivity of life, establishes the equality of life, and advocates a practice-oriented approach, but it also has limitations such as mystical tendencies, the risk of extreme individualism, and the feudal ethics constrained by its era. In the contemporary era, it provides important enlightenment for resolving the loss of life meaning, healing the division of body and mind, strengthening moral self-discipline, and building a community of life, serving as a significant resource for the creative transformation of traditional ethical thought.</div><button class="toggle-abs">Ver abstract completo</button><div class="paper-foot"><span class="mono" style="color:var(--silver-dim);">Build</span><a href="https://openalex.org/W7203801415" target="_blank" rel="noopener noreferrer">Ver fuente original</a></div></div><div class="paper" style="--mundo-c:var(--mind);"><div class="paper-meta"><span class="badge-mundo">Mind</span><span>2026</span><span class="badge-oa">Acceso abierto</span><span>CC BY</span></div><h3>Impact of Stress on the Oral Cavity: A Cross-Sectional Study Among Dental Students.</h3><div class="autores">Rahmaoui M; Elgasmi FE; Nouara F; Badre B</div><div class="abstract">Background Psychological stress is an important concern in dental education, as it may negatively affect students&#x27; well-being, academic performance, and health-related behaviors. Beyond its general impact, stress may also be associated with oral health through behavioral and physiological pathways. Methodology A descriptive cross-sectional study was conducted among fourth- and fifth-year dental students at the Faculty of Dental Medicine of Casablanca. Data were collected using an anonymous self-administered questionnaire distributed during clinical rotations. The questionnaire explored sociodemographic characteristics, sources of academic stress related to dental training, self-perceived associations between stress and oral health, coping strategies adopted by students, and proposed measures to reduce stress within the academic environment. Results A total of 323 students participated in the survey, corresponding to a response rate of 94.16%. The findings indicate that a substantial proportion of students report experiencing considerable academic stress, particularly during examination periods and within demanding clinical departments. Participants self-reported several oral health complaints, including gingival bleeding, aphthous ulcers, tooth pain, and bruxism, which they perceived as being exacerbated during periods of increased stress. Students also described a variety of coping strategies, ranging from adaptive approaches, such as social support, physical activity, planning, and spiritual practices, to less adaptive behaviors, including procrastination and avoidance. Conclusions This study aimed to identify the main sources of academic stress among dental students, explore their perceived associations with oral health, and describe coping strategies to provide recommendations for improving student well-being and the educational environment.</div><button class="toggle-abs">Ver abstract completo</button><div class="paper-foot"><span class="mono" style="color:var(--silver-dim);">Mind</span><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC13322222/" target="_blank" rel="noopener noreferrer">Ver fuente original</a></div></div><div class="paper" style="--mundo-c:var(--nexus);"><div class="paper-meta"><span class="badge-mundo">Nexus</span><span>2026</span><span class="badge-oa">Acceso abierto</span><span>CC BY-NC-ND</span></div><h3>Genome modelling and design across all domains of life with Evo 2.</h3><div class="autores">Brixi G; Durrant MG; Ku J; Naghipourfar M; Poli M; Sun G; Brockman G; Chang D; Fanton A; Gonzalez GA; King SH; Li DB; Merchant AT; Nguyen E; Ricci-Tam C; Romero…</div><div class="abstract">All of life encodes information with DNA. Although tools for genome sequencing, synthesis and editing have transformed biological research, we still lack sufficient understanding of the immense complexity encoded by genomes to predict the effects of many classes of genomic changes or to intelligently compose new biological systems. Artificial intelligence models that learn information from genomic sequences across diverse organisms have increasingly advanced prediction and design capabilities&lt;sup&gt;1,2&lt;/sup&gt;. Here we introduce Evo 2, a biological foundation model trained on 9 trillion DNA base pairs from a highly curated genomic atlas spanning all domains of life to have a 1 million token context window with single-nucleotide resolution. Evo 2 learns to accurately predict the functional impacts of genetic variation-from noncoding pathogenic mutations to clinically significant BRCA1 variants-without task-specific fine-tuning. Mechanistic interpretability analyses reveal that Evo 2 learns representations associated with biological features, including exon-intron boundaries, transcription factor binding sites, protein structural elements and prophage genomic regions. The generative abilities of Evo 2 produce mitochondrial, prokaryotic and eukaryotic sequences at genome scale with greater naturalness and coherence than previous methods. Evo 2 also generates experimentally validated chromatin accessibility patterns when guided by predictive models&lt;sup&gt;3,4&lt;/sup&gt; and inference-time search. We have made Evo 2 fully open, including model parameters, training code&lt;sup&gt;5&lt;/sup&gt;, inference code and the OpenGenome2 dataset, to accelerate the exploration and design of biological complexity.</div><button class="toggle-abs">Ver abstract completo</button><div class="paper-foot"><span class="mono" style="color:var(--silver-dim);">Nexus</span><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC13128491/" target="_blank" rel="noopener noreferrer">Ver fuente original</a></div></div><div class="paper" style="--mundo-c:var(--live);"><div class="paper-meta"><span class="badge-mundo">Live</span><span>2025</span><span class="badge-oa">Acceso abierto</span><span>CC-BY</span></div><h3>Interventions to Teacher Well-Being and Burnout A Scoping Review</h3><div class="autores">Pauliina Avola; Tiina Soini; Anne Jyrkiäinen; Viivi Pentikäinen</div><div class="abstract">Abstract Teacher burnout, stress, and turnover are increasing globally, underscoring the need to explore ways to reduce burnout and support teacher well-being. This scoping review identifies the contents, characteristics, and results of interventions to increase teacher well-being and reduce burnout. The search was conducted using two databases (Education Research Complete and ERIC). Out of 958 studies, 46 addressed interventions to support teacher well-being or reduce teacher burnout. The data covered 7369 participants in 15 countries. Of the 46 studies, 14 used mixed methods, four qualitative approaches, and 28 used quantitative approaches. The content of the interventions primarily focused on improving individual well-being, with some interventions incorporating communal activities. The qualitative content analysis revealed a broad spectrum of intervention activities, including physical activity, mindfulness and meditation, professional development, therapy-based techniques, gratitude practices, and a mix of multiple activities. The PERMA-H model of positive psychology is applied to unify the heterogeneous field of teacher well-being intervention research. The PERMA-H model&#x27;s contents were broadly consistent with the intervention&#x27;s contents, emphasising engagement (E), positive emotions (P), relationships (R), and health (H). The gratitude interventions, therapy-based interventions, physical activity interventions, and most mindfulness and meditation interventions, professional development and mixed activities interventions positively contributed to teacher well-being. Overall, the review highlights the diverse methods and theoretical frameworks employed to address teacher well-being, which the PERMA-H model can unify.</div><button class="toggle-abs">Ver abstract completo</button><div class="paper-foot"><span class="mono" style="color:var(--silver-dim);">Live</span><a href="https://doi.org/10.1007/s10648-025-09986-2" target="_blank" rel="noopener noreferrer">Ver fuente original</a></div></div><div class="paper" style="--mundo-c:var(--learn);"><div class="paper-meta"><span class="badge-mundo">Learn</span><span>2026</span><span class="badge-oa">Acceso abierto</span><span>CC BY</span></div><h3>Reactive oxygen species/hypoxia dual-responsive polymers combined with melatonin inhibited PANoptosis of retinal ganglion cells for acute glaucoma treatment.</h3><div class="autores">Meng S; Fang W; Wu Y; Xia Z; Chou T; Xia Y; Ding L; Zhou X; Xia X</div><div class="abstract">&lt;b&gt;Rationale:&lt;/b&gt; Acute glaucoma is triggered by sudden spikes in intraocular pressure, which induces retinal ischemia/reperfusion (RI/R), leading to hypoxia, oxidative stress, and ultimately PANoptosis in retinal ganglion cells (RGCs). Developing a therapeutic approach that simultaneously targets these events may offer a promising strategy for reducing secondary neuronal damage in acute glaucoma. &lt;b&gt;Methods:&lt;/b&gt; We developed a reactive oxygen species (ROS)/hypoxia dual-responsive, biodegradable nanoparticle system (NPs) containing azo and thioketal bonds, designed to encapsulate melatonin (MT), a known endogenous antioxidant and PANoptosis inhibitor. The biocompatibility, biosafety, and therapeutic efficacy of MT-NPs were evaluated &lt;i&gt;in vitro&lt;/i&gt; using an oxygen-glucose deprivation/reperfusion (OGD/R) R28 cell model and &lt;i&gt;in vivo&lt;/i&gt; using a RI/R rat model. &lt;b&gt;Results:&lt;/b&gt; The NPs efficiently released encapsulated MT in response to hypoxic conditions and the presence of ROS. This controlled-release system improved both the biocompatibility and long-term retention of MT in the retina. MT-NPs effectively alleviated hypoxia, cleared excess ROS, and inhibited PANoptosis in RGCs following acute glaucomatous injury. Compared to direct MT administration, MT-NPs were more effective at protecting RGC axons and somas and facilitating restoration of visual function in rats with acute glaucoma. &lt;b&gt;Conclusion:&lt;/b&gt; This simplified but multifunctional delivery system leveraged the widely available and safe compound melatonin in a highly efficient nanoparticle platform. This system offers potent neuroprotective effects to the retina preventing injury caused by acute glaucoma, and thereby providing a promising clinically translatable strategy for the treatment of glaucoma.</div><button class="toggle-abs">Ver abstract completo</button><div class="paper-foot"><span class="mono" style="color:var(--silver-dim);">Learn</span><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12674935/" target="_blank" rel="noopener noreferrer">Ver fuente original</a></div></div><div class="paper" style="--mundo-c:var(--build);"><div class="paper-meta"><span class="badge-mundo">Build</span><span>2026</span><span class="badge-oa">Acceso abierto</span><span>CC-BY-SA</span></div><h3>Ancient Egyptian Women&#x27;s Database</h3><div class="autores">Susan Kelly</div><div class="abstract">This dataset is the csv file of the data used to create the primary digital outcome of the Marie Skłodowska-Curie Actions (MSCA) Postdoctoral Fellowship project, “The Impact of Political and Climate Change on Women’s Agency: A Social Power Analysis” (IPOCCWWA - Grant No. 101148700). It comprises of a legacy archive containing women&#x27;s biographical records with bibliographical data used for the online database: Ancient Egyptian Women&#x27;s Database (AEWD). The link is: https://ancientegyptianwomensdatabase.cegu.ff.cuni.cz/. The database is licensed as open-access CC BY 4.0. The project was hosted at the Czech Institute of Egyptology, Charles University in Prague from June 2024 to June 2026. While the core fellowship focused intensively on the social power of women during the First Intermediate Period (FIP), the final dataset comprises a total of 2,165 individual records tracking women across the early historical phases of ancient Egypt (Dynasties 1-11). The dataset is the culmination of a long-term, multi-stage research trajectory spanning more than a decade of academic investigation into the social power of ancient Egyptian women: • Early Dynastic Core (Dynasties 1–3): The foundation of this data originated during the author’s master’s research focusing on women’s funerary monuments, which was subsequently expanded during the MSCA fellowship research to include a wider corpus of identified material culture. • Epigraphic Augmentation: The Early Dynastic records have been significantly enriched through the systematic inclusion of sealings, drawing primarily upon the foundational corpus and documentation established by Eva-Marie Engel. • Old Kingdom to FIP Reassessments (Dynasties 4–6 to 7–11): To ensure maximum chronological precision, records originally published in the author’s 2024 monograph underwent a rigorous audit. Several entries previously designated as Old Kingdom have been removed from those historic blocks and reintegrated with revised, more accurate attributions placing them securely within the First Intermediate Period. Legacy record numbers from the existing monograph: Kelly, Sue. 2024. Unveiling Female Social Power in Early Egypt, Oxford were deleted and replaced with new, standardized database identifiers. My research interdisciplinary methodology employs specific modes of operation across data collection, theoretical framework, and modeling. The data collection retrieved from funerary artefacts is collected in the same manner as any other blind study. I collect as many women as possible in the given timeframe, creating individual records, irrelevant if they hold any functional titles or what I call engagement titles. The reason for this is two-fold. Firstly, data regarding women without titles; even these null quantities add to the veracity of the statistical analysis that provides greater insight into the culture. Secondly, these women are often overlooked in traditional title studies, where research starts with the title and not the women. Each woman&#x27;s record contains the data necessary for my research and forms the basis of the database. I consult primary sources in person where possible in museums and secondary sources. In particular, Melanie Pitkin’s seminal corpus of False Doors and stelae, and period specific works such as Edward Brovarski’s analysis of the Nag ed-Der material. Navigation of the data can be accessed via women&#x27;s names, titles, geographical findspots, modern museum locations, artefact typology, and the source material and references.</div><button class="toggle-abs">Ver abstract completo</button><div class="paper-foot"><span class="mono" style="color:var(--silver-dim);">Build</span><a href="https://openalex.org/W7170126550" target="_blank" rel="noopener noreferrer">Ver fuente original</a></div></div><div class="paper" style="--mundo-c:var(--mind);"><div class="paper-meta"><span class="badge-mundo">Mind</span><span>2026</span><span class="badge-oa">Acceso abierto</span><span>CC BY</span></div><h3>A Systematic Review Evaluating the Use of Mixed Reality Technologies Within Undergraduate Medical Anatomical Teaching.</h3><div class="autores">Kakonge JSN</div><div class="abstract">Technological advances have shifted undergraduate medical education toward computer-assisted learning (CBL). The recent increase in CBL has most noticeably influenced anatomical curricula. Virtual reality (VR) and augmented reality (AR) are emerging computer technologies that modify reality and stimulate senses through contrasting methods. VR submerges individuals within a virtually constructed pseudo-reality using specialist headsets (head-mounted devices). AR merges digitalised images into our natural visual fields, altering reality without a complete digitalised environment. VR and AR can be collectively referred to as mixed reality technologies (MRT). Both technologies are extensions of gaming technologies, which have been increasingly modified to fit into non-gaming applications through a process of &#x27;gamification.&#x27; Technological progression and increased commercial accessibility of MRT have furthered the interest in incorporating these technologies within medical education, with an interest in gross anatomical teaching, as visualisation is a compound element of this area of medical science. With technology becoming a great focus within education, there is potential for a paradigm shift, changing how anatomical teaching is delivered. A systematic review was conducted to assess current applications of MRT in undergraduate gross anatomy teaching and whether the use of MRT within gross anatomical teaching influences academic performance. Four databases, MEDLINE, Scopus, Web of Science and ERIC, were searched for educational scientific papers. A total of 608 papers were selected to undergo title and abstract screening, out of which seven eligible papers were identified for full analysis and review. The outcome of this review was that VR and AR are as effective as traditional teaching modalities. Three out of the seven studies reported statistically significantly higher academic scores with MRT use, whilst the rest reported no statistically significant difference between the use of MRTs and traditional modalities. There is strong evidence for the use of MRTs as supplementary teaching modalities in undergraduate gross anatomical teaching.</div><button class="toggle-abs">Ver abstract completo</button><div class="paper-foot"><span class="mono" style="color:var(--silver-dim);">Mind</span><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC13322452/" target="_blank" rel="noopener noreferrer">Ver fuente original</a></div></div><div class="paper" style="--mundo-c:var(--nexus);"><div class="paper-meta"><span class="badge-mundo">Nexus</span><span>2026</span><span class="badge-oa">Acceso abierto</span><span>CC BY-NC-ND</span></div><h3>Atomically accurate de novo design of antibodies with RFdiffusion.</h3><div class="autores">Bennett NR; Watson JL; Ragotte RJ; Borst AJ; See DL; Weidle C; Biswas R; Yu Y; Shrock EL; Ault R; Leung PJY; Huang B; Goreshnik I; Tam J; Carr KD; Singer B; Cri…</div><div class="abstract">Despite the central role of antibodies in modern medicine, no method currently exists to design novel, epitope-specific antibodies entirely in silico. Instead, antibody discovery currently relies on immunization, random library screening or the isolation of antibodies directly from patients&lt;sup&gt;1&lt;/sup&gt;. Here we demonstrate that combining computational protein design using a fine-tuned RFdiffusion&lt;sup&gt;2&lt;/sup&gt; network with yeast display screening enables the de novo generation of antibody variable heavy chains (VHHs), single-chain variable fragments (scFvs) and full antibodies that bind to user-specified epitopes with atomic-level precision. We experimentally characterize VHH binders to four disease-relevant epitopes. Cryo-electron microscopy confirms the binding pose of designed VHHs targeting influenza haemagglutinin and Clostridium difficile toxin B (TcdB). A high-resolution structure of the influenza-targeting VHH confirms atomic accuracy of the designed complementarity-determining regions (CDRs). Although initial computational designs exhibit modest affinity (tens to hundreds of nanomolar K&lt;sub&gt;d&lt;/sub&gt;), affinity maturation using OrthoRep&lt;sup&gt;3&lt;/sup&gt; enables production of single-digit nanomolar binders that maintain the intended epitope selectivity. We further demonstrate the de novo design of scFvs to TcdB and a PHOX2B peptide-MHC complex by combining designed heavy-chain and light-chain CDRs. Cryo-electron microscopy confirms the binding pose for two distinct TcdB scFvs, with high-resolution data for one design verifying the atomically accurate design of the conformations of all six CDR loops. Our approach establishes a framework for the computational design, screening and characterization of fully de novo antibodies with atomic-level precision in both structure and epitope targeting.</div><button class="toggle-abs">Ver abstract completo</button><div class="paper-foot"><span class="mono" style="color:var(--silver-dim);">Nexus</span><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12727541/" target="_blank" rel="noopener noreferrer">Ver fuente original</a></div></div><div class="paper" style="--mundo-c:var(--live);"><div class="paper-meta"><span class="badge-mundo">Live</span><span>2025</span><span class="badge-oa">Acceso abierto</span><span>CC-BY</span></div><h3>Nurses retention: the impact of transformational leadership, career growth, work well-being, and work-life Balance</h3><div class="autores">Eman Sameh AbdElhay; Samah Mohamed Taha; Mona Metwally El‐Sayed; Sahar Hassan Helaly; Islam Sameh Abdelhay</div><div class="abstract">BACKGROUND: Nurse retention is critical for healthcare systems worldwide, as high turnover rates adversely affect patient care and organizational stability. AIM: Examines the impact of transformational leadership, career growth opportunities, work well-being, and work-life balance on nurse retention. METHODS: A cross-sectional study was conducted with 297 nurses employed in inpatient wards at Mansoura University Hospital. The study measured variables using the Nursing Retention Index, Global Transformational Leadership Scale, Career Growth Scale, Work Well-Being Scale, and Work-Life Balance Scale. RESULTS: A linear regression analysis identified significant predictors of nurse retention. Work-life balance was found to be a strong predictor, with an unstandardized coefficient (B) of 0.255 (p &lt; 0.001) and a standardized coefficient (β) of 0.426, indicating a positive relationship with retention, transformational leadership also significantly influenced retention, with a B of 0.082 (p = 0.002) and a β of 0.171. In contrast, Career Growth and Work-Life Balance did not significantly predict retention, showing coefficients of -0.082 (p = 0.154) and -0.042 (p = 0.482). The model explained 23.4% of the variance in nurse retention (R-squared = 0.234) and demonstrated statistical significance (F = 22.294, p &lt; 0.001). CONCLUSION: This study highlights the critical role of transformational leadership and work-life balance in enhancing nurse retention. However, career growth and work well-being did not significantly predict retention in this study. Healthcare institutions should focus on transformational leadership and work-life balance to enhance nurse retention. Future studies should explore factors related to career growth and work well-being to determine their potential impact on retention.</div><button class="toggle-abs">Ver abstract completo</button><div class="paper-foot"><span class="mono" style="color:var(--silver-dim);">Live</span><a href="https://doi.org/10.1186/s12912-025-02762-1" target="_blank" rel="noopener noreferrer">Ver fuente original</a></div></div><div class="paper" style="--mundo-c:var(--learn);"><div class="paper-meta"><span class="badge-mundo">Learn</span><span>2026</span><span class="badge-oa">Acceso abierto</span><span>CC BY</span></div><h3>Wisdom across interfaces: Adhesion mechanism and application potential of wet-adhesive hydrogel in periodontal tissue.</h3><div class="autores">Duan Q; Wang X; Wang S; Yang Z; Tan W; He Z; Hu S; Song J</div><div class="abstract">Periodontitis, a chronic inflammatory disease of periodontal tissues closely linked to systemic health, presents significant therapeutic challenges due to the dynamic and moist microenvironment of these tissues. Current local therapeutic systems lack adaptability to this unique microenvironment, making it difficult to guarantee treatment efficacy at the target site. Wet-adhesive hydrogels, with their exceptional tissue adhesion and multifunctionality, demonstrate tremendous potential as emerging materials for periodontitis treatment. In this review, we systematically summarize recent advances in wet-adhesive hydrogels for periodontitis research, covering their adhesion challenges, mechanisms, material types, diverse biological applications and clinical translation. We begin with analyzing the unique anatomical structure and physiopathological microenvironment of periodontal tissues, revealing the fundamental causes that hinder long-term retention of local therapeutic systems. We then explore the chemical and physical adhesion mechanisms of wet-adhesive hydrogels, elucidating the scientific basis that supports their adaptation to the distinctive periodontal environment. Furthermore, we systematically categorize various adhesive hydrogel types along with their adjustable physicochemical properties, establishing a crucial link between adhesion mechanisms and clinical translation. We then summarized the multidimensional applications of wet-adhesive hydrogels in periodontitis, including wound protection and isolation, barrier membranes, stimuli-triggered drug delivery, hemostasis, electrical stimulation, stress conduction, and monitoring. Finally, we comprehensively discuss the current status and challenges of clinical translation. Our aim is to provide both theoretical foundation and practical guidance for developing next-generation intelligent and personalized periodontal treatment platforms.</div><button class="toggle-abs">Ver abstract completo</button><div class="paper-foot"><span class="mono" style="color:var(--silver-dim);">Learn</span><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12550343/" target="_blank" rel="noopener noreferrer">Ver fuente original</a></div></div><div class="paper" style="--mundo-c:var(--build);"><div class="paper-meta"><span class="badge-mundo">Build</span><span>2026</span><span class="badge-oa">Acceso abierto</span><span>CC-BY</span></div><h3>Ancient Greek Tyranny: A Reappraisal</h3><div class="autores">Edmund Stewart</div><div class="abstract">This book aims to transform scholarly thinking on ancient Greek tyranny by utilising, for the first time, comparative data and Political Science methods for the study of modern dictatorships. I show how the ‘neutral view’ of Greek tyrants as popular usurpers was first developed by Renaissance Humanists and is entirely alien to Greek thought. A comparative study of Greek tyrannies and personalist dictatorships vindicates Plato and Aristotle’s theories of tyranny as rule unconstrained by law (rather than illegitimate rule) that is consequently prone to moral degeneracy. I provide new methods for the objective identification of tyrannies, based on institutional analysis of the personalisation of power, that will enable a complete re-evaluation of this ancient politeia. This book makes a compelling case for the practical value of ancient political theory and demonstrates the pressing need to revive tyranny as a concept within modern political discourse.</div><button class="toggle-abs">Ver abstract completo</button><div class="paper-foot"><span class="mono" style="color:var(--silver-dim);">Build</span><a href="https://openalex.org/W7154806250" target="_blank" rel="noopener noreferrer">Ver fuente original</a></div></div><div class="paper" style="--mundo-c:var(--mind);"><div class="paper-meta"><span class="badge-mundo">Mind</span><span>2026</span><span class="badge-oa">Acceso abierto</span><span>CC BY</span></div><h3>Efficacy of Early Exposure Medical Programs for Underrepresented Students: A Systematic Review.</h3><div class="autores">Jaganathan N; Guntaka R; Goel V; Odo N; Sun Z; Arthur ME</div><div class="abstract">&lt;h4&gt;Background&lt;/h4&gt;Despite decades of initiatives, the physician workforce does not reflect the United States demographic diversity. Underrepresented students are lost at multiple stages of the path to medicine due to academic, financial, and psychosocial barriers, including limited access to ethnoracially concordant role models. Although &quot;pipeline&quot; and &quot;outreach&quot; programs have been implemented, evidence-based evaluation of their effectiveness remains limited.&lt;h4&gt;Objective&lt;/h4&gt;To identify components of early medical exposure programs associated with increased interest in medicine, self-efficacy, and diversity in the medical field.&lt;h4&gt;Methods&lt;/h4&gt;We conducted a systematic review of published studies evaluating early medical exposure programs measuring quantitative outcomes. Searches of PubMed, Cochrane, and ScienceDirect were performed for publications from April 1999 to October 2025. Two reviewers independently screened studies, with discrepancies resolved by consensus.&lt;h4&gt;Results&lt;/h4&gt;Of 464 studies identified, 24 met inclusion criteria. Mentorship (n=18) and research (n=13) were the common program components, followed by application preparation, observership experience, and subspecialty exposure. High school students were the primary participants (n=14), followed by undergraduates (n=8). Program duration varied from one day to three years, with longer programs associated with improved academic performance and increased higher education. Frequently reported outcomes included further education (n=10), increased biomedical and STEM degrees (n=8), increased interest in medicine (n=7), improved academic performance (n=4), and greater self-efficacy (n=4). Risk of bias was rated as &quot;Low&quot; or &quot;Moderate.&quot;&lt;h4&gt;Conclusion&lt;/h4&gt;Early exposure programs for underrepresented students are associated with increased interest in medicine, improved self-efficacy, reduced perceived barriers, and academic benefits. Mentorship and research emerged as the most prominent components, associated with increased likelihood of further education and the pursuit of biomedical/STEM degrees.</div><button class="toggle-abs">Ver abstract completo</button><div class="paper-foot"><span class="mono" style="color:var(--silver-dim);">Mind</span><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC13283067/" target="_blank" rel="noopener noreferrer">Ver fuente original</a></div></div><div class="paper" style="--mundo-c:var(--nexus);"><div class="paper-meta"><span class="badge-mundo">Nexus</span><span>2025</span><span class="badge-oa">Acceso abierto</span><span>CC BY</span></div><h3>The PRIDE database at 20 years: 2025 update.</h3><div class="autores">Perez-Riverol Y; Bandla C; Kundu DJ; Kamatchinathan S; Bai J; Hewapathirana S; John NS; Prakash A; Walzer M; Wang S; Vizcaíno JA</div><div class="abstract">The PRoteomics IDEntifications (PRIDE) database (https://www.ebi.ac.uk/pride/) is the world&#x27;s leading mass spectrometry (MS)-based proteomics data repository and one of the founding members of the ProteomeXchange consortium. This manuscript summarizes the developments in PRIDE resources and related tools for the last three years. The number of submitted datasets to PRIDE Archive (the archival component of PRIDE) has reached on average around 534 datasets per month. This has been possible thanks to continuous improvements in infrastructure such as a new file transfer protocol for very large datasets (Globus), a new data resubmission pipeline and an automatic dataset validation process. Additionally, we will highlight novel activities such as the availability of the PRIDE chatbot (based on the use of open-source Large Language Models), and our work to improve support for MS crosslinking datasets. Furthermore, we will describe how we have increased our efforts to reuse, reanalyze and disseminate high-quality proteomics data into added-value resources such as UniProt, Ensembl and Expression Atlas.</div><button class="toggle-abs">Ver abstract completo</button><div class="paper-foot"><span class="mono" style="color:var(--silver-dim);">Nexus</span><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11701690/" target="_blank" rel="noopener noreferrer">Ver fuente original</a></div></div><div class="paper" style="--mundo-c:var(--live);"><div class="paper-meta"><span class="badge-mundo">Live</span><span>2025</span><span class="badge-oa">Acceso abierto</span><span>CC-BY</span></div><h3>Enhancing Therapy Adherence: Impact on Clinical Outcomes, Healthcare Costs, and Patient Quality of Life</h3><div class="autores">Urszula Religioni; Rocío Barrios‐Rodríguez; Pilar Requena; Mariola Borowska; Janusz Ostrowski</div><div class="abstract">Adherence to therapy, defined as the extent to which a patient follows prescribed therapeutic recommendations, is a pivotal factor in the effective management of chronic diseases such as diabetes, hypertension, and cardiovascular conditions. This review highlights the profound influence of adherence on clinical outcomes, healthcare costs, and patient quality of life. Despite its critical importance, non-adherence remains a pervasive challenge globally, contributing to suboptimal treatment results, higher rates of complications, increased hospitalizations, and substantial healthcare expenditures. This narrative review examines the multifaceted impact of adherence, focusing on its role in achieving clinical efficacy, mitigating economic burdens, and enhancing patient well-being. The findings reveal that poor adherence exacerbates the risk of disease progression, complications, and higher healthcare costs. Conversely, improved adherence promotes better disease control, fewer complications, and enhanced patient quality of life. Interventions such as patient education, streamlined treatment regimens, and the integration of digital health tools have shown promise in addressing adherence barriers. Furthermore, the role of healthcare professionals is underscored as fundamental, with their continuous support, effective communication, and efforts to build patient trust being essential to fostering better adherence. In conclusion, adherence significantly affects clinical outcomes, healthcare costs, and patient quality of life. Addressing barriers to adherence requires a comprehensive and personalized approach, considering individual patient needs and circumstances. Future research should prioritize the long-term evaluation of emerging technologies and the development of tailored strategies to improve adherence across diverse patient populations. Strengthening adherence is not only crucial for individual patient outcomes, but also for enhancing the sustainability and efficiency of healthcare systems.</div><button class="toggle-abs">Ver abstract completo</button><div class="paper-foot"><span class="mono" style="color:var(--silver-dim);">Live</span><a href="https://doi.org/10.3390/medicina61010153" target="_blank" rel="noopener noreferrer">Ver fuente original</a></div></div><div class="paper" style="--mundo-c:var(--learn);"><div class="paper-meta"><span class="badge-mundo">Learn</span><span>2026</span><span class="badge-oa">Acceso abierto</span><span>CC BY</span></div><h3>Understanding Digital Literacy of Persons With Dementia and Their Caregivers: A Scoping Review and an Evolutionary Concept Analysis of Empirical Studies.</h3><div class="autores">Cho H; Cho E; You SB; Sefcik JS; Hodgson NA; Demiris G</div><div class="abstract">This study constitutes both a scoping review and a concept analysis, as it systematically examines digital literacy across settings (home, assisted living facilities, and other long-term care facilities) in the context of persons with dementia and their caregivers. We performed a scoping review of 22 empirical studies to examine how the literature has defined digital literacy in dementia care, followed by a concept analysis to conceptualize digital literacy&#x27;s antecedents, attributes, and consequences. Our analysis revealed three antecedents of digital literacy: technology-enhanced support systems, individual characteristics, and sociodemographic characteristics, which collectively impact persons with dementia and their caregivers&#x27; abilities to utilize digital resources effectively. We identified two critical attributes-technological skills and critical thinking skills-to evaluate digital health information. Our findings revealed that digital literacy is tied to several important consequences: technology acceptance, impacts on psychosocial factors, and the promotion of digital equity. These findings provide a foundation for future research that can incorporate the core components of digital literacy when designing technology-mediated interventions. While our findings conceptualized digital literacy among persons living with dementia and their caregivers, more research is needed to promote standardized terminology and consider the digital literacy level of end-users in developing technology-mediated interventions in the future.</div><button class="toggle-abs">Ver abstract completo</button><div class="paper-foot"><span class="mono" style="color:var(--silver-dim);">Learn</span><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12989035/" target="_blank" rel="noopener noreferrer">Ver fuente original</a></div></div><div class="paper" style="--mundo-c:var(--build);"><div class="paper-meta"><span class="badge-mundo">Build</span><span>2026</span><span class="badge-oa">Acceso abierto</span><span>CC-BY</span></div><h3>Positions and Possessions Belonging in the Early Modern Ottoman Empire</h3><div class="autores">Fırat Yaşa; Zeynep Dörtok Abacı</div><div class="abstract">The early modern Ottoman Empire offers a compelling context for exploring the many-sided and often fluid nature of belonging. Spanning vast territories and encompassing diverse ethnic, religious, and social groups, the Ottoman context reveals how this fundamental human relationship operated across religious, spatial, social, cultural, professional, and emotional dimensions simultaneously. Beyond the theoretically prescribed affiliations of legal classifications and social norms, factors like spatial proximity, individual career choices, and dependencies emerged as crucial markers. The fluidity of identity within this complex, multi-ethnic, multi-religious, and multilingual society is a key finding. The contributors demonstrate that while proximity fostered strong bonds of solidarity and shaped social hierarchy, belonging itself was often a fragile and volatile experience for both individuals and groups.</div><button class="toggle-abs">Ver abstract completo</button><div class="paper-foot"><span class="mono" style="color:var(--silver-dim);">Build</span><a href="https://openalex.org/W7149231544" target="_blank" rel="noopener noreferrer">Ver fuente original</a></div></div><!--/az-pre--></div>
     <button class="load-more" id="loadMoreBtn">Cargar más</button>
+    <div class="aviso-error" id="avisoError" style="display:none;"></div>
   </div>
-  <div id="emptyState" class="empty-state" style="display:none;">
-    <p>No encontramos papers con esa búsqueda. Prueba con otra palabra clave, en inglés.</p>
-  </div>
+  <div id="emptyState" class="empty-state" style="display:none;"></div>
 </div>
 
 <footer>
-  <p>Este Research Hub muestra el título y el abstract oficial de cada paper tal como se publicó, sin reescritura — es un índice de referencia, no contenido editorial de AURZANE. Cada resultado enlaza a la fuente original. Si preferís explorar un mundo a la vez, cada uno tiene su propia biblioteca: <a href="https://mind.aurzane.com/mind-biblioteca.html" style="color:var(--gold-light);">Mind</a>, <a href="https://nexus.aurzane.com/nexus-biblioteca.html" style="color:var(--gold-light);">Nexus</a>, <a href="https://live.aurzane.com/live-biblioteca.html" style="color:var(--gold-light);">Live</a>, <a href="https://learn.aurzane.com/learn-biblioteca.html" style="color:var(--gold-light);">Learn</a>, <a href="https://build.aurzane.com/build-biblioteca.html" style="color:var(--gold-light);">Build</a>.</p>
+  <p>Este Research Hub muestra el título y el abstract oficial de cada paper tal como se publicó, sin reescritura. Es un índice de referencia, no contenido editorial de AURZANE. Cada resultado enlaza a la fuente original. Si prefieres explorar un mundo a la vez, cada uno tiene su propia biblioteca: <a href="https://mind.aurzane.com/mind-biblioteca.html" style="color:var(--gold-light);">Mind</a>, <a href="https://nexus.aurzane.com/nexus-biblioteca.html" style="color:var(--gold-light);">Nexus</a>, <a href="https://live.aurzane.com/live-biblioteca.html" style="color:var(--gold-light);">Live</a>, <a href="https://learn.aurzane.com/learn-biblioteca.html" style="color:var(--gold-light);">Learn</a>, <a href="https://build.aurzane.com/build-biblioteca.html" style="color:var(--gold-light);">Build</a>.</p>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
@@ -175,183 +189,171 @@ const SUPABASE_KEY = 'sb_publishable___1v6VjDew0l8uGfMyb9Nw_YyCLTPPw';
 const sb = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
   window.__aurzaneSb = sb;
 
-  // AURZANE Core F3.5: Research Hub consume el adapter transversal de Library.
-  const libraryServicePromise = import('https://aurzane.com/core/index.js')
-    .then(({ createLibraryService }) => createLibraryService(sb));
+
   if(window.__aurzaneErrBuf.length){ window.__aurzaneErrBuf.forEach(function(en){ sb.from('frontend_error_log').insert(en).then(function(){}, function(){}); }); window.__aurzaneErrBuf.length = 0; }
 
 
+// Research Hub: novedades de los cinco mundos al entrar, búsqueda (también en español), filtros por mundo y año, «Cargar más».
+// Las primeras tarjetas vienen ya escritas en el HTML (research/prerender.py, cada día) para que nunca se vea vacío.
+const TABLA = 'biblioteca_unificada';
+const SEL = 'id,mundo,titulo,abstract,autores,anio,licencia,es_acceso_abierto,url_articulo,doi';
+const MUNDOS = ['mind','nexus','live','learn','build'];
 const MUNDO_LABEL = {mind:'Mind', nexus:'Nexus', live:'Live', learn:'Learn', build:'Build'};
 const MUNDO_COLOR_VAR = {mind:'--mind', nexus:'--nexus', live:'--live', learn:'--learn', build:'--build'};
+const POR_MUNDO = 4, PAGE_SIZE = 20;
+const $ = id => document.getElementById(id);
+const TOTAL = Number($('list').dataset.total) || null;
 
-const PAGE_SIZE = 20;
-let offset = 0;
-let currentQuery = '';
-let soloAcceso = false;
-let mundoActivo = 'todos';
-let totalCargados = 0;
-let cargando = false;
-let searchDebounce = null;
-
-function escapeHtml(s){
-  return (s||'').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+// Español → inglés: los papers están en inglés; si se busca en español también se busca la traducción.
+const ES_EN = {'ansiedad':'anxiety','estres':'stress','depresion':'depression','salud mental':'mental health','sueno':'sleep','insomnio':'insomnia',
+ 'memoria':'memory','cerebro':'brain','emociones':'emotions','emocion':'emotion','autoestima':'self-esteem','trauma':'trauma','duelo':'grief','adolescentes':'adolescents',
+ 'ninos':'children','infancia':'childhood','familia':'family','pareja':'couple','soledad':'loneliness','felicidad':'happiness','bienestar':'well-being','resiliencia':'resilience',
+ 'atencion plena':'mindfulness','meditacion':'meditation','terapia':'therapy','psicoterapia':'psychotherapy','adiccion':'addiction','alcohol':'alcohol','tabaco':'smoking',
+ 'suicidio':'suicide','autismo':'autism','tdah':'ADHD','demencia':'dementia','alzheimer':'Alzheimer','envejecimiento':'aging','personalidad':'personality',
+ 'nutricion':'nutrition','dieta':'diet','obesidad':'obesity','ejercicio':'exercise','deporte':'sport','actividad fisica':'physical activity','dolor':'pain',
+ 'educacion':'education','aprendizaje':'learning','escuela':'school','universidad':'university','estudiantes':'students','docentes':'teachers','lectura':'reading',
+ 'inteligencia artificial':'artificial intelligence','aprendizaje automatico':'machine learning','programacion':'programming','ciberseguridad':'cybersecurity','robotica':'robotics',
+ 'clima':'climate','cambio climatico':'climate change','energia':'energy','sostenibilidad':'sustainability','ciudad':'city','vivienda':'housing','agua':'water',
+ 'economia':'economics','empleo':'employment','trabajo':'work','pobreza':'poverty','desigualdad':'inequality','migracion':'migration','genero':'gender','mujeres':'women',
+ 'historia':'history','arqueologia':'archaeology','antiguo egipto':'ancient Egypt','roma':'Rome','filosofia':'philosophy','etica':'ethics','religion':'religion','arte':'art','musica':'music',
+ 'redes sociales':'social media','pantallas':'screen time','videojuegos':'video games','covid':'COVID-19','pandemia':'pandemic','cancer':'cancer','diabetes':'diabetes','corazon':'heart'};
+const sinTildes = s => s.normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase().trim();
+function expandir(q){
+  const k = sinTildes(q).replace(/\s+/g,' ');
+  let en = ES_EN[k];
+  if(!en){ const w = k.split(' '); if(w.length > 1 && w.every(x => ES_EN[x])) en = w.map(x => ES_EN[x]).join(' '); }
+  return en && en.toLowerCase() !== k ? { consulta: `"${q.replace(/"/g,'')}" or "${en}"`, en } : { consulta: q, en: null };
 }
 
-function urlSegura(u){
+let estado = { q:'', mundo:'todos', desde:null };
+let pagina = 0, mostrados = 0, total = TOTAL, peticion = 0;
+
+const esc = s => (s == null ? '' : String(s)).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function urlSegura(u){ try{ const p = new URL(u, location.href); return (p.protocol === 'http:' || p.protocol === 'https:') ? p.href : '#'; }catch(e){ return '#'; } }
+const num = n => Number(n).toLocaleString('es');
+
+function tarjeta(p){
+  const abs = p.abstract ? esc(p.abstract) : '<em style="color:var(--silver-dim);">Sin resumen disponible.</em>';
+  const autores = p.autores ? esc(p.autores.length > 160 ? p.autores.slice(0,160) + '…' : p.autores) : 'Autores no disponibles';
+  const link = p.url_articulo || (p.doi ? 'https://doi.org/' + p.doi : '');
+  const ml = MUNDO_LABEL[p.mundo] || p.mundo, mv = MUNDO_COLOR_VAR[p.mundo] || '--gold-light';
+  return `<div class="paper" style="--mundo-c:var(${mv});"><div class="paper-meta"><span class="badge-mundo">${esc(ml)}</span><span>${p.anio || 's/f'}</span>`
+    + (p.es_acceso_abierto ? '<span class="badge-oa">Acceso abierto</span>' : '') + (p.licencia ? `<span>${esc(p.licencia.toUpperCase())}</span>` : '')
+    + `</div><h3>${esc(p.titulo)}</h3><div class="autores">${autores}</div><div class="abstract">${abs}</div>`
+    + (p.abstract && p.abstract.length > 260 ? '<button class="toggle-abs">Ver abstract completo</button>' : '')
+    + `<div class="paper-foot"><span class="mono" style="color:var(--silver-dim);">${esc(ml)}</span>`
+    + (link ? `<a href="${esc(urlSegura(link))}" target="_blank" rel="noopener noreferrer">Ver fuente original</a>` : '') + '</div></div>';
+}
+
+const ordenar = r => r.order('anio', { ascending:false, nullsFirst:false }).order('id', { ascending:false });
+const novedades = () => !estado.q && estado.mundo === 'todos';
+
+async function pedir(p){
+  if(novedades()){
+    // sin búsqueda: lo más reciente de cada mundo, intercalado
+    const lotes = await Promise.all(MUNDOS.map(m => {
+      let r = sb.from(TABLA).select(SEL).eq('mundo', m).not('abstract', 'is', null);
+      if(estado.desde) r = r.gte('anio', estado.desde);
+      return ordenar(r).range(p * POR_MUNDO, p * POR_MUNDO + POR_MUNDO - 1);
+    }));
+    const fallo = lotes.find(x => x.error); if(fallo) throw fallo.error;
+    let t = estado.desde ? null : TOTAL;
+    if(estado.desde){ const c = await sb.from(TABLA).select('id', { count:'exact', head:true }).gte('anio', estado.desde); if(!c.error) t = c.count; }
+    const rows = []; for(let i = 0; i < POR_MUNDO; i++) lotes.forEach(x => { if(x.data[i]) rows.push(x.data[i]); });
+    return { rows, total: t, fin: lotes.every(x => x.data.length < POR_MUNDO) };
+  }
+  let r = sb.from(TABLA).select(SEL, { count:'exact' });
+  if(estado.mundo !== 'todos') r = r.eq('mundo', estado.mundo);
+  if(estado.desde) r = r.gte('anio', estado.desde);
+  if(estado.q) r = r.textSearch('search_vector', expandir(estado.q).consulta, { type:'websearch' });
+  const res = await ordenar(r).range(p * PAGE_SIZE, p * PAGE_SIZE + PAGE_SIZE - 1);
+  if(res.error) throw res.error;
+  return { rows: res.data || [], total: res.count, fin: (res.data || []).length < PAGE_SIZE };
+}
+
+function contar(){
+  const t = total != null ? total : mostrados;
+  $('resultCount').textContent = novedades() && !estado.desde
+    ? `Novedades de los cinco mundos: ${num(mostrados)} de ${num(t)} papers`
+    : `Mostrando ${num(mostrados)} de ${num(t)} resultados`;
+}
+
+function vacio(){
+  $('resultsArea').style.display = 'none';
+  const sug = $('sugerencias').innerHTML;
+  $('emptyState').innerHTML = estado.q
+    ? `<p>No encontramos papers sobre «${esc(estado.q)}»${estado.mundo !== 'todos' || estado.desde ? ' con estos filtros' : ''}. Prueba otra palabra, en inglés, o una de estas búsquedas:</p><div class="sugerencias">${sug}</div>`
+    : '<p>No hay papers con estos filtros.</p><button class="btn-sec" data-accion="limpiar">Quitar filtros</button>';
+  $('emptyState').style.display = 'block';
+}
+
+async function cargar(append){
+  const mi = ++peticion, btn = $('loadMoreBtn');
+  btn.disabled = true; btn.textContent = 'Cargando...'; $('avisoError').style.display = 'none';
+  if(!append){ pagina = 0; mostrados = 0; $('list').style.opacity = '.45'; }
   try{
-    const parsed = new URL(u, location.href);
-    return (parsed.protocol === 'http:' || parsed.protocol === 'https:') ? parsed.href : '#';
+    const r = await pedir(pagina);
+    if(mi !== peticion) return;                       // llegó una búsqueda más nueva
+    $('list').style.opacity = '';
+    if(!append && !r.rows.length){ vacio(); return; }
+    $('emptyState').style.display = 'none'; $('resultsArea').style.display = 'block';
+    if(append) $('list').insertAdjacentHTML('beforeend', r.rows.map(tarjeta).join('')); else $('list').innerHTML = r.rows.map(tarjeta).join('');
+    pagina++; mostrados += r.rows.length; total = r.total;
+    const ex = estado.q ? expandir(estado.q) : { en:null };
+    $('traduccion').style.display = ex.en ? 'block' : 'none'; if(ex.en) $('traduccion').textContent = `Buscando también en inglés: ${ex.en}`;
+    contar();
+    btn.style.display = r.fin || (total != null && mostrados >= total) ? 'none' : 'block';
   }catch(e){
-    return '#';
+    if(mi !== peticion) return;
+    console.error(e); $('list').style.opacity = '';
+    if(append || $('list').children.length){
+      $('avisoError').innerHTML = 'No se pudo cargar en este momento. <button class="btn-sec" data-accion="reintentar">Reintentar</button>';
+      $('avisoError').style.display = 'block'; $('avisoError').dataset.append = append ? '1' : '';
+    } else {
+      $('resultsArea').style.display = 'none';
+      $('emptyState').innerHTML = '<p>No se pudo conectar con las bibliotecas en este momento.</p><button class="btn-sec" data-accion="reintentar">Reintentar</button>';
+      $('emptyState').style.display = 'block';
+    }
+  }finally{
+    if(mi === peticion){ btn.disabled = false; btn.textContent = 'Cargar más'; }
   }
 }
 
-async function cargarTotal(){
-  const libraryService = await libraryServicePromise;
-  const result = await libraryService.list({ limit: 1, offset: 0 });
-  if(result.ok && result.data?.total != null){
-    document.getElementById('totalStat').textContent = result.data.total.toLocaleString('es') + ' papers indexados en los 5 mundos';
-  }
+function guardarUrl(){
+  const u = new URL(location.href);
+  estado.q ? u.searchParams.set('q', estado.q) : u.searchParams.delete('q');
+  estado.mundo !== 'todos' ? u.searchParams.set('mundo', estado.mundo) : u.searchParams.delete('mundo');
+  history.replaceState(null, '', u);
 }
+function activar(cont, sel){ document.querySelectorAll(cont + ' .chip').forEach(c => c.classList.toggle('active', c.matches(sel))); }
+function buscar(){ guardarUrl(); cargar(false); }
 
-async function construirQuery(){
-  const libraryService = await libraryServicePromise;
-  return libraryService.list({
-    world: mundoActivo !== 'todos' ? mundoActivo : null,
-    query: currentQuery.trim() || null,
-    openAccess: soloAcceso,
-    limit: PAGE_SIZE,
-    offset,
-  });
-}
-
-function renderPapers(papers, append){
-  const list = document.getElementById('list');
-  const html = papers.map(p => {
-    const abs = p.abstract ? escapeHtml(p.abstract) : '<em style="color:var(--silver-dim);">Sin resumen disponible.</em>';
-    const autores = p.autores ? escapeHtml(p.autores.length > 160 ? p.autores.slice(0,160) + '…' : p.autores) : 'Autores no disponibles';
-    const oa = p.es_acceso_abierto ? `<span class="badge-oa">Acceso abierto</span>` : '';
-    const link = p.url_articulo || (p.doi ? 'https://doi.org/' + p.doi : '');
-    const mundoLabel = MUNDO_LABEL[p.mundo] || p.mundo;
-    const mundoVar = MUNDO_COLOR_VAR[p.mundo] || '--gold-light';
-    return `
-      <div class="paper" style="--mundo-c:var(${mundoVar});">
-        <div class="paper-meta">
-          <span class="badge-mundo">${escapeHtml(mundoLabel)}</span>
-          <span>${p.anio || 's/f'}</span>
-          ${oa}
-          ${p.licencia ? `<span>${escapeHtml(p.licencia.toUpperCase())}</span>` : ''}
-        </div>
-        <h3>${escapeHtml(p.titulo)}</h3>
-        <div class="autores">${autores}</div>
-        <div class="abstract">${abs}</div>
-        ${p.abstract && p.abstract.length > 260 ? `<button class="toggle-abs">Ver abstract completo</button>` : ''}
-        <div class="paper-foot">
-          <span class="mono" style="color:var(--silver-dim);">${escapeHtml(mundoLabel)}</span>
-          ${link ? `<a href="${escapeHtml(urlSegura(link))}" target="_blank" rel="noopener noreferrer">Ver fuente original →</a>` : ''}
-        </div>
-      </div>
-    `;
-  }).join('');
-
-  if(append){ list.insertAdjacentHTML('beforeend', html); } else { list.innerHTML = html; }
-
-  list.querySelectorAll('.toggle-abs').forEach(btn => {
-    if(btn.dataset.wired) return;
-    btn.dataset.wired = '1';
-    btn.addEventListener('click', () => {
-      const absEl = btn.previousElementSibling;
-      absEl.classList.toggle('expanded');
-      btn.textContent = absEl.classList.contains('expanded') ? 'Ver menos' : 'Ver abstract completo';
-    });
-  });
-}
-
-async function cargarResultados(append){
-  if(cargando) return;
-  cargando = true;
-  const loadMoreBtn = document.getElementById('loadMoreBtn');
-  loadMoreBtn.disabled = true;
-  loadMoreBtn.textContent = 'Cargando...';
-
-  const result = await construirQuery();
-  const data = result.ok ? result.data.rows : null;
-  const error = result.ok ? null : result.error;
-  const count = result.ok ? result.data.total : null;
-
-  document.getElementById('loadState').style.display = 'none';
-
-  if(error){
-    document.getElementById('resultsArea').style.display = 'none';
-    document.getElementById('emptyState').style.display = 'block';
-    document.getElementById('emptyState').innerHTML = '<p>No pudimos cargar el Research Hub en este momento. Intenta de nuevo en unos minutos.</p>';
-    console.error(error);
-    cargando = false;
-    return;
-  }
-
-  const papers = data || [];
-  if(!append && papers.length === 0){
-    document.getElementById('resultsArea').style.display = 'none';
-    document.getElementById('emptyState').style.display = 'block';
-    cargando = false;
-    return;
-  }
-
-  document.getElementById('resultsArea').style.display = 'block';
-  document.getElementById('emptyState').style.display = 'none';
-
-  renderPapers(papers, append);
-  totalCargados = append ? totalCargados + papers.length : papers.length;
-  offset = totalCargados;
-
-  const totalDisponible = count != null ? count : totalCargados;
-  document.getElementById('resultCount').textContent =
-    `Mostrando ${totalCargados.toLocaleString('es')} de ${totalDisponible.toLocaleString('es')} resultados`;
-
-  loadMoreBtn.style.display = totalCargados < totalDisponible ? 'block' : 'none';
-  loadMoreBtn.disabled = false;
-  loadMoreBtn.textContent = 'Cargar más';
-  cargando = false;
-}
-
-function nuevaBusqueda(){
-  offset = 0;
-  totalCargados = 0;
-  cargarResultados(false);
-}
-
-document.getElementById('searchInput').addEventListener('input', (e) => {
-  clearTimeout(searchDebounce);
-  const val = e.target.value;
-  searchDebounce = setTimeout(() => {
-    currentQuery = val;
-    nuevaBusqueda();
-  }, 400);
+let espera = null;
+$('searchInput').addEventListener('input', e => { clearTimeout(espera); espera = setTimeout(() => { estado.q = e.target.value.trim(); buscar(); }, 400); });
+$('searchInput').addEventListener('keydown', e => { if(e.key === 'Enter'){ clearTimeout(espera); estado.q = e.target.value.trim(); buscar(); } });
+$('worldFilters').addEventListener('click', e => { const b = e.target.closest('.chip'); if(!b) return; estado.mundo = b.dataset.mundo; activar('#worldFilters', `[data-mundo="${estado.mundo}"]`); buscar(); });
+$('filters').addEventListener('click', e => { const b = e.target.closest('.chip'); if(!b) return; estado.desde = b.dataset.desde ? Number(b.dataset.desde) : null; activar('#filters', `[data-desde="${b.dataset.desde}"]`); buscar(); });
+document.addEventListener('click', e => {
+  const s = e.target.closest('a[data-q]');
+  if(s){ e.preventDefault(); estado.q = s.dataset.q; $('searchInput').value = s.dataset.q; buscar(); $('searchInput').scrollIntoView({ behavior:'smooth', block:'center' }); return; }
+  const a = e.target.closest('[data-accion]'); if(!a) return;
+  if(a.dataset.accion === 'reintentar') cargar(!!$('avisoError').dataset.append && $('list').children.length > 0);
+  if(a.dataset.accion === 'limpiar'){ estado = { q:'', mundo:'todos', desde:null }; $('searchInput').value = ''; activar('#worldFilters', '[data-mundo="todos"]'); activar('#filters', '[data-desde=""]'); buscar(); }
 });
-
-document.getElementById('worldFilters').addEventListener('click', (e) => {
-  const btn = e.target.closest('.chip');
-  if(!btn) return;
-  document.querySelectorAll('#worldFilters .chip').forEach(c => c.classList.remove('active'));
-  btn.classList.add('active');
-  mundoActivo = btn.dataset.mundo;
-  nuevaBusqueda();
+$('list').addEventListener('click', e => {
+  const b = e.target.closest('.toggle-abs'); if(!b) return;
+  const a = b.previousElementSibling; a.classList.toggle('expanded');
+  b.textContent = a.classList.contains('expanded') ? 'Ver menos' : 'Ver abstract completo';
 });
+$('loadMoreBtn').addEventListener('click', () => cargar(true));
 
-document.getElementById('filters').addEventListener('click', (e) => {
-  const btn = e.target.closest('.chip');
-  if(!btn) return;
-  document.querySelectorAll('#filters .chip').forEach(c => c.classList.remove('active'));
-  btn.classList.add('active');
-  soloAcceso = btn.dataset.oa === 'si';
-  nuevaBusqueda();
-});
-
-document.getElementById('loadMoreBtn').addEventListener('click', () => cargarResultados(true));
-
-cargarTotal();
-cargarResultados(false);
+// Arranque: una búsqueda en la dirección (?q=, ?mundo=) se ejecuta; si no, las novedades ya escritas en la página se quedan.
+const qs = new URLSearchParams(location.search);
+if(qs.get('q')){ estado.q = qs.get('q'); $('searchInput').value = estado.q; }
+if(MUNDOS.includes(qs.get('mundo'))){ estado.mundo = qs.get('mundo'); activar('#worldFilters', `[data-mundo="${estado.mundo}"]`); }
+const yaEscritas = $('list').querySelectorAll('.paper').length;
+if(!estado.q && estado.mundo === 'todos' && yaEscritas){ pagina = Math.ceil(yaEscritas / (POR_MUNDO * MUNDOS.length)); mostrados = yaEscritas; contar(); }
+else cargar(false);
 </script>
 
 </body>
