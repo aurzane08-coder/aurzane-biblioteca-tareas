@@ -1,2 +1,1 @@
-aurzane.com/core/config/defaults.js
-aurzane.com/core/data/supabase.js
+aurzane.com/research.html
