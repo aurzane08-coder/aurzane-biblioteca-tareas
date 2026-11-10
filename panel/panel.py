@@ -165,7 +165,12 @@ def seo():
     P['seo'] = leer('seo/resumen.json', {})
 
 
-for paso in (visitas, boletin, compras, redes, contenido, seo):
+def cursos():
+    P['cursos'] = leer('cursos/salud.json', {})
+    P['cifras'] = leer('cifras/cifras.json', {})
+
+
+for paso in (visitas, boletin, compras, redes, contenido, seo, cursos):
     try: paso()
     except Exception as e: P['avisos'].append(f'{paso.__name__}: {str(e)[:160]}'); print('ERROR', paso.__name__, e)
 
