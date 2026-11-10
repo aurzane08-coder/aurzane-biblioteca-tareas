@@ -122,6 +122,9 @@ def transforma(t):
     n = bloque(n, 'oaNota', nota)
     n = bloque(n, 'sugerencias', '<span class="lbl">Búsquedas populares:</span>' + ''.join(
         f'<a class="chip" href="?q={urllib.parse.quote_plus(q)}" data-q="{E(q)}">{E(et)}<small>{mil(c)}</small></a>' for et, q, c in sug))
+    DESC = {'mind': 'Psicología y mente', 'nexus': 'Universidades y sociedad', 'live': 'Vida, salud y bienestar', 'learn': 'Educación y aprendizaje', 'build': 'Tecnología y ciudades'}
+    for m, c in info['por_mundo'].items():
+        n = re.sub(r'(<small data-n="' + m + r'">)[^<]*(</small>)', lambda x, m=m, c=c: x.group(1) + f'{DESC[m]} · {mil(c)} papers' + x.group(2), n, count=1)
     años = iter([ANIO - 1, ANIO - 3])
     n = re.sub(r'data-desde="\d{4}">Desde \d{4}', lambda x: (lambda a: f'data-desde="{a}">Desde {a}')(next(años)), n, count=2)
     return n
