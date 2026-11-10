@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<script>
+  // Observabilidad de errores frontend (Fase 8-9 P1, ver observabilidad_errores_setup.sql).
+  // Se registra ANTES que cualquier otro script (incluido el SDK de Supabase) para
+  // no perderse errores tempranos; si todavía no existe un cliente listo, los junta
+  // en un buffer y los manda apenas el cliente de esta página se crea más abajo.
+  // Nunca incluye datos de usuario -- solo la ruta de la página y un mensaje genérico.
+  window.__aurzaneErrBuf = [];
+  window.__aurzaneLogErr = function(msg){
+    var entry = { pagina: location.pathname, mensaje: String(msg == null ? 'Error desconocido' : msg).slice(0,300) };
+    if(window.__aurzaneSb && window.__aurzaneSb.from){
+      window.__aurzaneSb.from('frontend_error_log').insert(entry).then(function(){}, function(){});
+    } else {
+      window.__aurzaneErrBuf.push(entry);
+    }
+  };
+  window.addEventListener('error', function(e){ window.__aurzaneLogErr(e && e.message); });
+  window.addEventListener('unhandledrejection', function(e){
+    var r = e && e.reason;
+    window.__aurzaneLogErr((r && r.message) || (r == null ? null : String(r)) || 'Promise rechazada');
+  });
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://aurzane.com/aurzane-paleta.js"></script>
+<title>Research Hub | AURZANE</title>
+<meta name="description" content="Un solo buscador para las cinco bibliotecas académicas de AURZANE: 25.000 artículos científicos de acceso abierto de Mind, Nexus, Live, Learn y Build, con abstract y fuente citable.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://chtfpqwrrarfdjcivlad.supabase.co">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;1,6..96,400;1,6..96,500&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#080B17; --navy-2:#0F1530; --navy-3:#151C3D; --navy-4:#1E2650;
+    --gold:#C9A24B; --gold-light:#EACF92; --bronze:#8A6A28;
+    --silver:#C7CDD6; --silver-dim:#8B92A0; --bone:#F5F3EE;
+    --line:rgba(199,205,214,0.13); --line-strong:rgba(201,162,75,0.38);
+    --mind:#D2AC57; --nexus:#8A9CF0; --live:#D19696; --learn:#72ADBD; --build:#BC875A;
+    --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    --r:10px; --ease:cubic-bezier(.2,.7,.2,1);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--navy);color:var(--bone);font-family:'Instrument Sans',sans-serif;line-height:1.6;min-height:100vh;-webkit-font-smoothing:antialiased;}
+  h1,h2,h3{font-family:'Bodoni Moda',serif;font-weight:500;}
+  a{color:inherit;}
+  button,input,select{font:inherit;color:inherit;}
+  :focus-visible{outline:2px solid var(--gold-light);outline-offset:2px;border-radius:6px;}
+  .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;}
+
+  /* Barra superior */
+  .topbar{position:sticky;top:0;z-index:30;background:rgba(8,11,23,0.9);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);padding:14px 5vw;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;}
+  .brand{font-family:'Bodoni Moda',serif;font-size:1.05rem;letter-spacing:0.06em;text-decoration:none;}
+  .brand span{color:var(--gold);}
+  .brand small{font-family:'Instrument Sans',sans-serif;font-size:0.72rem;letter-spacing:0.04em;color:var(--silver-dim);margin-left:6px;}
+  .topbar nav{display:flex;gap:22px;align-items:center;}
+  .topbar nav a{font-size:0.82rem;color:var(--silver-dim);text-decoration:none;transition:color .2s;}
+  .topbar nav a:hover,.topbar nav a.active{color:var(--gold-light);}
+
+  /* Cabecera y buscador */
+  .hero{max-width:860px;margin:0 auto;padding:6vh 5vw 0;text-align:center;}
+  .hero h1{font-size:clamp(1.75rem,3.6vw,2.5rem);line-height:1.2;}
+  .hero h1 span{color:var(--gold-light);}
+  .hero p{color:var(--silver);font-size:0.98rem;max-width:58ch;margin:12px auto 0;}
+  .hero .stat{display:inline-block;margin-top:14px;font-size:0.8rem;color:var(--gold-light);}
+
+  .buscador{max-width:760px;margin:26px auto 0;padding:0 5vw;}
+  .search-box{display:flex;align-items:center;gap:10px;background:var(--navy-2);border:1px solid var(--line-strong);
+    border-radius:14px;padding:6px 6px 6px 18px;transition:border-color .2s,box-shadow .2s;}
+  .search-box:focus-within{border-color:var(--gold);box-shadow:0 0 0 4px rgba(201,162,75,0.14);}
+  .search-box svg{flex-shrink:0;color:var(--gold-light);}
+  .search-box input{flex:1;min-width:0;background:none;border:none;outline:none;font-size:1.05rem;padding:12px 0;}
+  .search-box input::placeholder{color:var(--silver-dim);}
+  .search-box input::-webkit-search-cancel-button{display:none;}
+  .btn-limpiar{width:34px;height:34px;border-radius:50%;border:none;background:transparent;color:var(--silver-dim);cursor:pointer;display:none;transition:background .2s,color .2s;}
+  .btn-limpiar:hover{background:var(--navy-4);color:var(--bone);}
+  .search-box.con-texto .btn-limpiar{display:inline-flex;align-items:center;justify-content:center;}
+  .btn-buscar{border:none;border-radius:10px;background:var(--gold);color:var(--navy);font-weight:600;padding:12px 22px;cursor:pointer;transition:background .2s,transform .12s;}
+  .btn-buscar:hover{background:var(--gold-light);}
+  .btn-buscar:active{transform:scale(.97);}
+  .search-hint{font-size:0.78rem;color:var(--silver-dim);margin-top:10px;text-align:center;}
+  .search-hint kbd{font-family:var(--mono);font-size:0.72rem;border:1px solid var(--line);border-radius:4px;padding:1px 6px;color:var(--silver);}
+  .sugerencias{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;align-items:center;margin-top:16px;}
+  .sugerencias .lbl{font-size:0.78rem;color:var(--silver-dim);margin-right:2px;}
+
+  /* Chips y controles */
+  .chip{font-size:0.8rem;padding:6px 13px;border-radius:999px;border:1px solid var(--line);color:var(--silver);cursor:pointer;background:transparent;
+    text-decoration:none;display:inline-flex;align-items:center;gap:6px;transition:border-color .2s,color .2s,background .2s,transform .12s;}
+  .chip:hover{border-color:var(--line-strong);color:var(--gold-light);}
+  .chip:active{transform:scale(.96);}
+  .chip small{color:var(--silver-dim);font-size:0.72rem;}
+  .chip.active{background:rgba(201,162,75,0.16);border-color:var(--gold);color:var(--gold-light);}
+  .chip[data-mundo].active{background:color-mix(in srgb,var(--chip-c,var(--gold)) 18%,transparent);border-color:var(--chip-c,var(--gold));color:var(--bone);}
+  .chip-dot{width:7px;height:7px;border-radius:50%;background:var(--chip-c,var(--gold));}
+
+  /* Diseño principal */
+  .layout{max-width:1180px;margin:0 auto;padding:44px 5vw 9vh;display:grid;grid-template-columns:260px minmax(0,1fr);gap:36px;align-items:start;}
+  .panel{position:sticky;top:84px;background:var(--navy-2);border:1px solid var(--line);border-radius:var(--r);padding:20px;}
+  .panel-cab{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;}
+  .panel-cab h2{font-size:1.05rem;}
+  .link-btn{background:none;border:none;color:var(--gold-light);font-size:0.8rem;cursor:pointer;padding:4px 0;text-decoration:underline;text-underline-offset:3px;}
+  .link-btn[hidden]{display:none;}
+  .grupo{border-top:1px solid var(--line);padding-top:16px;margin-top:16px;}
+  .grupo:first-of-type{border-top:none;margin-top:8px;padding-top:4px;}
+  .grupo-tit{display:block;font-size:0.74rem;font-weight:600;letter-spacing:0.06em;color:var(--silver-dim);margin-bottom:10px;}
+  .chips{display:flex;flex-wrap:wrap;gap:6px;}
+  .rango{display:flex;gap:8px;align-items:center;}
+  .rango span{color:var(--silver-dim);font-size:0.8rem;}
+  .campo{width:100%;background:var(--navy);border:1px solid var(--line);border-radius:8px;padding:9px 11px;font-size:0.88rem;transition:border-color .2s;}
+  .campo:focus{outline:none;border-color:var(--gold);}
+  select.campo{appearance:none;cursor:pointer;background-image:linear-gradient(45deg,transparent 50%,var(--silver-dim) 50%),linear-gradient(135deg,var(--silver-dim) 50%,transparent 50%);
+    background-position:calc(100% - 14px) 52%,calc(100% - 9px) 52%;background-size:5px 5px;background-repeat:no-repeat;padding-right:26px;}
+  .interruptor{display:flex;align-items:center;justify-content:space-between;gap:10px;cursor:pointer;font-size:0.88rem;color:var(--silver);}
+  .interruptor input{position:absolute;opacity:0;pointer-events:none;}
+  .pista{width:38px;height:22px;border-radius:999px;background:var(--navy-4);position:relative;flex-shrink:0;transition:background .2s;}
+  .pista::after{content:'';position:absolute;top:3px;left:3px;width:16px;height:16px;border-radius:50%;background:var(--silver);transition:transform .2s var(--ease),background .2s;}
+  .interruptor input:checked + .pista{background:var(--gold);}
+  .interruptor input:checked + .pista::after{transform:translateX(16px);background:var(--navy);}
+  .interruptor input:focus-visible + .pista{outline:2px solid var(--gold-light);outline-offset:2px;}
+  .nota{font-size:0.76rem;color:var(--silver-dim);margin-top:8px;line-height:1.45;}
+  .nota b{color:var(--gold-light);font-weight:600;}
+  .panel-pie{display:none;}
+
+  /* Barra de resultados */
+  .barra{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:14px;}
+  .result-count{font-size:0.9rem;color:var(--silver);transition:opacity .25s;}
+  .result-count b{color:var(--bone);font-weight:600;}
+  .barra-der{display:flex;gap:10px;align-items:center;}
+  .orden{display:flex;align-items:center;gap:8px;font-size:0.82rem;color:var(--silver-dim);}
+  .orden .campo{width:auto;padding:7px 28px 7px 11px;font-size:0.84rem;}
+  .btn-filtros{display:none;align-items:center;gap:8px;border:1px solid var(--line-strong);background:transparent;color:var(--gold-light);border-radius:8px;padding:8px 14px;font-size:0.86rem;cursor:pointer;}
+  .btn-filtros .n{background:var(--gold);color:var(--navy);border-radius:999px;font-size:0.7rem;font-weight:700;min-width:18px;height:18px;display:inline-flex;align-items:center;justify-content:center;padding:0 5px;}
+  .btn-filtros .n:empty{display:none;}
+  .activos{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;}
+  .activos:empty{display:none;}
+  .pill{display:inline-flex;align-items:center;gap:6px;font-size:0.78rem;background:var(--navy-3);border:1px solid var(--line-strong);color:var(--gold-light);
+    border-radius:999px;padding:4px 6px 4px 12px;cursor:pointer;animation:aparece .2s var(--ease);}
+  .pill span{width:18px;height:18px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.06);}
+  .pill:hover span{background:var(--gold);color:var(--navy);}
+  .traduccion{font-size:0.82rem;color:var(--silver-dim);margin:-4px 0 14px;}
+  .traduccion b{color:var(--gold-light);font-weight:500;}
+  @keyframes aparece{from{opacity:0;transform:translateY(3px);}to{opacity:1;transform:none;}}
+
+  /* Tarjetas */
+  #list{display:flex;flex-direction:column;gap:14px;transition:opacity .2s;}
+  #list.cargando{opacity:.45;pointer-events:none;}
+  .paper{border:1px solid var(--line);border-radius:var(--r);padding:22px 24px;background:rgba(255,255,255,0.015);position:relative;
+    transition:border-color .2s,background .2s;animation:aparece .3s var(--ease);}
+  .paper::before{content:'';position:absolute;left:0;top:16px;bottom:16px;width:3px;border-radius:0 3px 3px 0;background:var(--mundo-c,var(--gold));}
+  .paper:hover{border-color:rgba(199,205,214,0.24);background:rgba(255,255,255,0.025);}
+  .paper-meta{display:flex;gap:8px;flex-wrap:wrap;align-items:center;font-size:0.76rem;color:var(--silver-dim);margin-bottom:10px;}
+  .badge-mundo{color:var(--mundo-c,var(--gold-light));border:1px solid color-mix(in srgb,var(--mundo-c,var(--gold)) 55%,transparent);border-radius:999px;padding:1px 10px;font-weight:600;letter-spacing:0.03em;}
+  .badge-oa{display:inline-flex;align-items:center;gap:5px;color:#9FD3A8;border:1px solid rgba(159,211,168,0.35);border-radius:999px;padding:1px 9px;}
+  .sep{opacity:.5;}
+  .paper h3{font-size:1.14rem;line-height:1.38;margin-bottom:6px;}
+  .paper h3 a{text-decoration:none;background:linear-gradient(var(--gold-light),var(--gold-light)) 0 100%/0 1px no-repeat;transition:background-size .3s var(--ease),color .2s;}
+  .paper h3 a:hover{color:var(--gold-light);background-size:100% 1px;}
+  .autores{font-size:0.88rem;color:var(--silver);margin-bottom:12px;}
+  .autores .mas{color:var(--silver-dim);}
+  .abstract{font-size:0.93rem;line-height:1.7;color:var(--silver);max-width:72ch;position:relative;max-height:5.1em;overflow:hidden;transition:max-height .35s var(--ease);}
+  .abstract::after{content:'';position:absolute;left:0;right:0;bottom:0;height:2.2em;background:linear-gradient(transparent,var(--navy));pointer-events:none;transition:opacity .2s;}
+  .abstract.expanded{max-height:none;}
+  .abstract.expanded::after,.abstract.corto::after{opacity:0;}
+  .abstract.corto{max-height:none;}
+  .abstract b{color:var(--bone);font-weight:600;}
+  .abstract p + p{margin-top:8px;}
+  .abstract em{color:var(--silver-dim);}
+  .paper-foot{margin-top:14px;padding-top:12px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;}
+  .doi{font-family:var(--mono);font-size:0.78rem;color:var(--silver-dim);text-decoration:none;word-break:break-all;}
+  .doi:hover{color:var(--gold-light);}
+  .acciones{display:flex;gap:6px;flex-wrap:wrap;}
+  .accion{display:inline-flex;align-items:center;gap:6px;font-size:0.8rem;border:1px solid var(--line);border-radius:8px;padding:6px 11px;background:transparent;color:var(--silver);
+    cursor:pointer;text-decoration:none;transition:border-color .2s,color .2s,background .2s,transform .12s;}
+  .accion:hover{border-color:var(--line-strong);color:var(--gold-light);}
+  .accion:active{transform:scale(.96);}
+  .accion.prim{border-color:var(--line-strong);color:var(--gold-light);}
+  .accion.ok{border-color:#9FD3A8;color:#9FD3A8;}
+  .toggle-abs{background:none;border:none;color:var(--gold-light);font-size:0.82rem;cursor:pointer;margin-top:8px;padding:2px 0;display:inline-flex;align-items:center;gap:5px;}
+  .toggle-abs svg{transition:transform .25s var(--ease);}
+  .toggle-abs[aria-expanded="true"] svg{transform:rotate(180deg);}
+
+  /* Esqueletos, vacío y errores */
+  .esqueleto{border:1px solid var(--line);border-radius:var(--r);padding:22px 24px;}
+  .esqueleto i{display:block;height:12px;border-radius:6px;margin-bottom:12px;background:linear-gradient(90deg,var(--navy-2),var(--navy-4),var(--navy-2));background-size:200% 100%;animation:brillo 1.2s linear infinite;}
+  .esqueleto i:nth-child(1){width:30%;} .esqueleto i:nth-child(2){width:85%;height:16px;} .esqueleto i:nth-child(3){width:50%;} .esqueleto i:nth-child(4){width:95%;} .esqueleto i:nth-child(5){width:70%;margin-bottom:0;}
+  @keyframes brillo{to{background-position:-200% 0;}}
+  .load-more{display:flex;align-items:center;gap:10px;margin:28px auto 0;background:transparent;border:1px solid var(--line-strong);color:var(--gold-light);
+    padding:12px 26px;border-radius:10px;font-size:0.9rem;cursor:pointer;transition:background .2s,color .2s,transform .12s;}
+  .load-more:hover{background:var(--gold);color:var(--navy);}
+  .load-more:active{transform:scale(.97);}
+  .load-more:disabled{opacity:.6;cursor:default;}
+  .mini-spin{width:14px;height:14px;border:2px solid currentColor;border-right-color:transparent;border-radius:50%;animation:spin .7s linear infinite;display:none;}
+  .load-more:disabled .mini-spin{display:inline-block;}
+  @keyframes spin{to{transform:rotate(360deg);}}
+  .estado{border:1px dashed var(--line-strong);border-radius:var(--r);padding:40px 24px;text-align:center;color:var(--silver);}
+  .estado h3{font-size:1.2rem;margin:10px 0 6px;color:var(--bone);}
+  .estado p{font-size:0.9rem;max-width:52ch;margin:0 auto;}
+  .estado .sugerencias{margin-top:18px;}
+  .estado .icono{color:var(--gold-light);}
+  .btn-sec{margin-top:16px;font-size:0.86rem;padding:9px 18px;border-radius:8px;border:1px solid var(--line-strong);background:transparent;color:var(--gold-light);cursor:pointer;transition:background .2s,color .2s;}
+  .btn-sec:hover{background:var(--gold);color:var(--navy);}
+  .aviso-error{margin-top:16px;text-align:center;font-size:0.86rem;color:var(--live);}
+  .fin{text-align:center;font-size:0.82rem;color:var(--silver-dim);margin-top:26px;}
+  .toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);background:var(--navy-3);border:1px solid var(--line-strong);color:var(--bone);
+    padding:10px 18px;border-radius:10px;font-size:0.86rem;opacity:0;pointer-events:none;transition:opacity .2s,transform .25s var(--ease);z-index:50;}
+  .toast.ver{opacity:1;transform:translate(-50%,0);}
+
+  footer{border-top:1px solid var(--line);padding:34px 6vw;text-align:center;}
+  footer p{font-size:0.8rem;color:var(--silver-dim);max-width:680px;margin:0 auto;}
+
+  /* Móvil y tableta */
+  @media (max-width:900px){
+    .layout{grid-template-columns:1fr;gap:0;padding-top:30px;}
+    .btn-filtros{display:inline-flex;}
+    .panel{position:fixed;inset:auto 0 0 0;top:auto;max-height:86vh;overflow:auto;border-radius:16px 16px 0 0;z-index:40;transform:translateY(105%);transition:transform .3s var(--ease);padding-bottom:0;}
+    .panel.abierto{transform:none;box-shadow:0 -10px 40px rgba(0,0,0,0.5);}
+    .panel-pie{display:flex;position:sticky;bottom:0;background:var(--navy-2);padding:14px 0 18px;margin-top:16px;border-top:1px solid var(--line);}
+    .panel-pie .btn-buscar{flex:1;}
+    .velo{position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:35;opacity:0;pointer-events:none;transition:opacity .25s;}
+    .velo.ver{opacity:1;pointer-events:auto;}
+  }
+  @media (max-width:560px){
+    .topbar nav a:not(.active){display:none;}
+    .hero{padding-top:4vh;}
+    .hero p{font-size:0.92rem;}
+    .search-box{padding-left:14px;}
+    .search-box input{font-size:1rem;}
+    .btn-buscar.en-caja{padding:12px 14px;}
+    .btn-buscar.en-caja .txt{display:none;}
+    .paper{padding:18px 16px 16px 18px;}
+    .paper h3{font-size:1.04rem;}
+    .orden span{display:none;}
+    .paper-foot{flex-direction:column;align-items:flex-start;}
+  }
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important;}}
+  .velo{display:none;}
+  .btn-buscar .ico-movil{display:none;}
+  @media (max-width:900px){ .velo{display:block;} }
+  @media (max-width:560px){ .btn-buscar.en-caja .ico-movil{display:block;} }
+</style>
+<meta name="google-adsense-account" content="ca-pub-8763758728010451">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8763758728010451" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div class="topbar" data-nosnippet>
+  <a href="https://aurzane.com" class="brand">AUR<span>Z</span>ANE<small>Research Hub</small></a>
+  <nav>
+    <a href="https://aurzane.com">Inicio</a>
+    <a href="https://aurzane.com/#research">Cómo trabajamos</a>
+    <a href="#" class="active" aria-current="page">Research Hub</a>
+  </nav>
+</div>
+
+<header class="hero">
+  <h1>Un solo buscador para <span>toda la investigación de AURZANE</span></h1>
+  <p>Las cinco bibliotecas académicas de AURZANE en un solo lugar: título, resumen oficial y enlace directo a la fuente de cada paper.</p>
+  <div class="stat" id="totalStat"><!--az-pre--><!--/az-pre--></div>
+</header>
+
+<section class="buscador" role="search">
+  <form class="search-box" id="searchForm" autocomplete="off">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+    <label class="sr" for="searchInput">Buscar papers</label>
+    <input id="searchInput" type="search" placeholder="Busca por tema, palabra clave o pregunta" enterkeyhint="search">
+    <button type="button" class="btn-limpiar" id="btnLimpiar" aria-label="Borrar búsqueda"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+    <button type="submit" class="btn-buscar en-caja"><span class="txt">Buscar</span><svg class="ico-movil" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+  </form>
+  <p class="search-hint">Los papers están en su idioma original, casi siempre inglés. Si buscas en español, también buscamos la traducción. Pulsa <kbd>/</kbd> para buscar.</p>
+  <div class="sugerencias" id="sugerencias"><!--az-pre--><!--/az-pre--></div>
+</section>
+
+<div class="velo" id="velo"></div>
+<main class="layout">
+  <aside class="panel" id="panel" aria-label="Filtros">
+    <div class="panel-cab">
+      <h2>Filtros</h2>
+      <button type="button" class="link-btn" id="btnQuitar" data-accion="limpiar" hidden>Quitar todos</button>
+    </div>
+
+    <div class="grupo">
+      <span class="grupo-tit" id="t-cat">CATEGORÍA</span>
+      <div class="chips" id="worldFilters" role="group" aria-labelledby="t-cat">
+        <button type="button" class="chip active" data-mundo="todos" aria-pressed="true">Todas</button>
+        <button type="button" class="chip" data-mundo="mind" style="--chip-c:var(--mind);" aria-pressed="false"><span class="chip-dot"></span>Mind</button>
+        <button type="button" class="chip" data-mundo="nexus" style="--chip-c:var(--nexus);" aria-pressed="false"><span class="chip-dot"></span>Nexus</button>
+        <button type="button" class="chip" data-mundo="live" style="--chip-c:var(--live);" aria-pressed="false"><span class="chip-dot"></span>Live</button>
+        <button type="button" class="chip" data-mundo="learn" style="--chip-c:var(--learn);" aria-pressed="false"><span class="chip-dot"></span>Learn</button>
+        <button type="button" class="chip" data-mundo="build" style="--chip-c:var(--build);" aria-pressed="false"><span class="chip-dot"></span>Build</button>
+      </div>
+    </div>
+
+    <div class="grupo">
+      <span class="grupo-tit" id="t-anio">AÑO DE PUBLICACIÓN</span>
+      <div class="rango" role="group" aria-labelledby="t-anio">
+        <label class="sr" for="anioDesde">Desde</label>
+        <select class="campo" id="anioDesde"><option value="">Desde</option></select>
+        <span>a</span>
+        <label class="sr" for="anioHasta">Hasta</label>
+        <select class="campo" id="anioHasta"><option value="">Hasta</option></select>
+      </div>
+    </div>
+
+    <div class="grupo">
+      <label class="grupo-tit" for="autorInput">AUTOR</label>
+      <input class="campo" id="autorInput" type="text" placeholder="Apellido, por ejemplo Smith" autocomplete="off">
+    </div>
+
+    <div class="grupo">
+      <label class="interruptor"><span>Solo acceso abierto</span><input type="checkbox" id="oaInput"><span class="pista" aria-hidden="true"></span></label>
+      <p class="nota" id="oaNota"><!--az-pre--><!--/az-pre--></p>
+    </div>
+
+    <div class="panel-pie"><button type="button" class="btn-buscar" id="btnVerResultados">Ver resultados</button></div>
+  </aside>
+
+  <section class="resultados" aria-live="polite">
+    <div class="barra">
+      <div class="result-count" id="resultCount"><!--az-pre--><!--/az-pre--></div>
+      <div class="barra-der">
+        <button type="button" class="btn-filtros" id="btnFiltros" aria-controls="panel" aria-expanded="false">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6h18M6 12h12M10 18h4"/></svg>Filtros <span class="n" id="nFiltros"></span>
+        </button>
+        <label class="orden"><span>Ordenar por</span>
+          <select class="campo" id="ordenSel">
+            <option value="recientes">Más recientes</option>
+            <option value="antiguos">Más antiguos</option>
+            <option value="titulo">Título (A a Z)</option>
+          </select>
+        </label>
+      </div>
+    </div>
+    <div class="activos" id="activos"></div>
+    <div class="traduccion" id="traduccion" style="display:none;"></div>
+    <div id="list" data-total=""><!--az-pre--><!--/az-pre--></div>
+    <div id="emptyState" style="display:none;"></div>
+    <button class="load-more" id="loadMoreBtn" type="button"><span class="mini-spin" aria-hidden="true"></span><span class="txt">Cargar más resultados</span></button>
+    <div class="aviso-error" id="avisoError" role="alert" style="display:none;"></div>
+    <p class="fin" id="fin" style="display:none;">Has llegado al final de los resultados.</p>
+  </section>
+</main>
+<div class="toast" id="toast" role="status"></div>
+
+<footer>
+  <p>Este Research Hub muestra el título y el abstract oficial de cada paper tal como se publicó, sin reescritura. Es un índice de referencia, no contenido editorial de AURZANE. Cada resultado enlaza a la fuente original. Si prefieres explorar un mundo a la vez, cada uno tiene su propia biblioteca: <a href="https://mind.aurzane.com/mind-biblioteca.html" style="color:var(--gold-light);">Mind</a>, <a href="https://nexus.aurzane.com/nexus-biblioteca.html" style="color:var(--gold-light);">Nexus</a>, <a href="https://live.aurzane.com/live-biblioteca.html" style="color:var(--gold-light);">Live</a>, <a href="https://learn.aurzane.com/learn-biblioteca.html" style="color:var(--gold-light);">Learn</a>, <a href="https://build.aurzane.com/build-biblioteca.html" style="color:var(--gold-light);">Build</a>.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+<script>
+const SUPABASE_URL = 'https://chtfpqwrrarfdjcivlad.supabase.co';
+const SUPABASE_KEY = 'sb_publishable___1v6VjDew0l8uGfMyb9Nw_YyCLTPPw';
+const sb = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+  window.__aurzaneSb = sb;
+
+
+  if(window.__aurzaneErrBuf.length){ window.__aurzaneErrBuf.forEach(function(en){ sb.from('frontend_error_log').insert(en).then(function(){}, function(){}); }); window.__aurzaneErrBuf.length = 0; }
+
+
+// Research Hub: novedades de los cinco mundos al entrar, búsqueda (también en español), filtros combinables
+// (categoría, año, autor y acceso abierto), orden, «Cargar más» y estados claros de carga, error y sin resultados.
+// Las primeras tarjetas vienen ya escritas en el HTML (research/prerender.py, cada día) para que nunca se vea vacío.
+const TABLA = 'biblioteca_unificada';
+const SEL = 'id,mundo,titulo,abstract,autores,anio,licencia,es_acceso_abierto,url_articulo,doi,fuente';
+const MUNDOS = ['mind','nexus','live','learn','build'];
+const MUNDO_LABEL = {mind:'Mind', nexus:'Nexus', live:'Live', learn:'Learn', build:'Build'};
+const POR_MUNDO = 4, PAGE_SIZE = 20, ANIO_MIN = 2000;
+const $ = id => document.getElementById(id);
+const TOTAL = Number($('list').dataset.total) || null;
+
+// Español → inglés: los papers están en inglés; si se busca en español también se busca la traducción.
+const ES_EN = {'ansiedad':'anxiety','estres':'stress','depresion':'depression','salud mental':'mental health','sueno':'sleep','insomnio':'insomnia',
+ 'memoria':'memory','cerebro':'brain','emociones':'emotions','emocion':'emotion','autoestima':'self-esteem','trauma':'trauma','duelo':'grief','adolescentes':'adolescents',
+ 'ninos':'children','infancia':'childhood','familia':'family','pareja':'couple','soledad':'loneliness','felicidad':'happiness','bienestar':'well-being','resiliencia':'resilience',
+ 'atencion plena':'mindfulness','meditacion':'meditation','terapia':'therapy','psicoterapia':'psychotherapy','adiccion':'addiction','alcohol':'alcohol','tabaco':'smoking',
+ 'suicidio':'suicide','autismo':'autism','tdah':'ADHD','demencia':'dementia','alzheimer':'Alzheimer','envejecimiento':'aging','personalidad':'personality',
+ 'nutricion':'nutrition','dieta':'diet','obesidad':'obesity','ejercicio':'exercise','deporte':'sport','actividad fisica':'physical activity','dolor':'pain',
+ 'educacion':'education','aprendizaje':'learning','escuela':'school','universidad':'university','estudiantes':'students','docentes':'teachers','lectura':'reading',
+ 'inteligencia artificial':'artificial intelligence','aprendizaje automatico':'machine learning','programacion':'programming','ciberseguridad':'cybersecurity','robotica':'robotics',
+ 'clima':'climate','cambio climatico':'climate change','energia':'energy','sostenibilidad':'sustainability','ciudad':'city','vivienda':'housing','agua':'water',
+ 'economia':'economics','empleo':'employment','trabajo':'work','pobreza':'poverty','desigualdad':'inequality','migracion':'migration','genero':'gender','mujeres':'women',
+ 'historia':'history','arqueologia':'archaeology','antiguo egipto':'ancient Egypt','roma':'Rome','filosofia':'philosophy','etica':'ethics','religion':'religion','arte':'art','musica':'music',
+ 'redes sociales':'social media','pantallas':'screen time','videojuegos':'video games','covid':'COVID-19','pandemia':'pandemic','cancer':'cancer','diabetes':'diabetes','corazon':'heart'};
+const sinTildes = s => s.normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase().trim();
+function expandir(q){
+  const k = sinTildes(q).replace(/\s+/g,' ');
+  let en = ES_EN[k];
+  if(!en){ const w = k.split(' '); if(w.length > 1 && w.every(x => ES_EN[x])) en = w.map(x => ES_EN[x]).join(' '); }
+  return en && en.toLowerCase() !== k ? { consulta: `"${q.replace(/"/g,'')}" or "${en}"`, en } : { consulta: q, en: null };
+}
+
+const VACIO = { q:'', mundo:'todos', desde:null, hasta:null, autor:'', oa:false, orden:'recientes' };
+let estado = { ...VACIO };
+let pagina = 0, mostrados = 0, total = TOTAL, peticion = 0;
+
+const esc = s => (s == null ? '' : String(s)).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function urlSegura(u){ try{ const p = new URL(u, location.href); return (p.protocol === 'http:' || p.protocol === 'https:') ? p.href : ''; }catch(e){ return ''; } }
+const num = n => Number(n).toLocaleString('es-ES', { useGrouping:'always' });
+
+// El abstract llega a veces con etiquetas (<h4>Importance</h4>...): se convierten en párrafos legibles, sin HTML ajeno.
+function abstractLegible(s){
+  const t = String(s).replace(/<h[1-6][^>]*>([\s\S]*?)<\/h[1-6]>/gi, '\u0001$1\u0002').replace(/<\/?(p|br|div)[^>]*>/gi, '\n').replace(/<[^>]+>/g, '');
+  const tx = document.createElement('textarea'); tx.innerHTML = t; const limpio = tx.value;
+  const partes = esc(limpio).replace(/\u0001\s*([^\u0002]*?)\s*\u0002/g, '\n\u0003$1\u0004 ').split(/\n+/).map(x => x.trim()).filter(Boolean);
+  return partes.map(x => '<p>' + x.replace(/\u0003([^\u0004]*)\u0004/, (m, h) => `<b>${h.replace(/[.:]$/, '')}.</b>`) + '</p>').join('');
+}
+function autoresHTML(a){
+  if(!a) return '<span class="mas">Autores no disponibles</span>';
+  const l = String(a).split(/\s*;\s*/).filter(Boolean);
+  if(l.length <= 4) return esc(l.join(', '));
+  return `${esc(l.slice(0,3).join(', '))} <button type="button" class="link-btn ver-autores" data-todos="${esc(l.join(', '))}">y ${l.length - 3} autores más</button>`;
+}
+function cita(p){
+  const l = String(p.autores || '').split(/\s*;\s*/).filter(Boolean);
+  const aut = l.length > 3 ? l.slice(0,3).join(', ') + ' et al.' : l.join(', ');
+  const enlace = p.doi ? 'https://doi.org/' + p.doi : (p.url_articulo || '');
+  return `${aut ? aut + ' ' : ''}(${p.anio || 's. f.'}). ${String(p.titulo || '').replace(/\.$/, '')}. ${enlace}`.trim();
+}
+
+function tarjeta(p){
+  const link = urlSegura(p.url_articulo || (p.doi ? 'https://doi.org/' + p.doi : ''));
+  const ml = MUNDO_LABEL[p.mundo] || p.mundo;
+  const largo = p.abstract && String(p.abstract).replace(/<[^>]+>/g,'').length > 320;
+  return `<article class="paper" style="--mundo-c:var(--${esc(p.mundo)});" data-cita="${esc(cita(p))}">`
+    + `<div class="paper-meta"><span class="badge-mundo">${esc(ml)}</span><span>${esc(p.anio || 's. f.')}</span>`
+    + (p.fuente ? `<span class="sep">·</span><span>${esc(p.fuente)}</span>` : '')
+    + (p.es_acceso_abierto ? '<span class="badge-oa"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Acceso abierto</span>' : '')
+    + (p.licencia ? `<span>${esc(String(p.licencia).toUpperCase())}</span>` : '') + '</div>'
+    + `<h3>${link ? `<a href="${esc(link)}" target="_blank" rel="noopener noreferrer">${esc(p.titulo)}</a>` : esc(p.titulo)}</h3>`
+    + `<div class="autores">${autoresHTML(p.autores)}</div>`
+    + (p.abstract ? `<div class="abstract${largo ? '' : ' corto'}" id="abs-${esc(p.id)}-${esc(p.mundo)}">${abstractLegible(p.abstract)}</div>`
+        + (largo ? `<button type="button" class="toggle-abs" aria-expanded="false" aria-controls="abs-${esc(p.id)}-${esc(p.mundo)}">Leer resumen completo <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>` : '')
+      : '<div class="abstract corto"><p><em>Este paper no tiene resumen disponible.</em></p></div>')
+    + `<div class="paper-foot">${p.doi ? `<a class="doi" href="https://doi.org/${esc(p.doi)}" target="_blank" rel="noopener noreferrer">DOI ${esc(p.doi)}</a>` : '<span class="doi">Sin DOI</span>'}`
+    + `<div class="acciones">${p.doi ? `<button type="button" class="accion" data-copiar="${esc(p.doi)}">Copiar DOI</button>` : ''}<button type="button" class="accion" data-copiar-cita>Copiar cita</button>`
+    + (link ? `<a class="accion prim" href="${esc(link)}" target="_blank" rel="noopener noreferrer">Leer artículo</a>` : '') + '</div></div></article>';
+}
+
+const esqueletos = n => Array.from({length:n}, () => '<div class="esqueleto" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>').join('');
+const ordenar = r => estado.orden === 'antiguos' ? r.order('anio', { ascending:true, nullsFirst:false }).order('id', { ascending:true })
+  : estado.orden === 'titulo' ? r.order('titulo', { ascending:true }).order('id', { ascending:true })
+  : r.order('anio', { ascending:false, nullsFirst:false }).order('id', { ascending:false });
+const novedades = () => !estado.q && estado.mundo === 'todos' && !estado.autor && estado.orden === 'recientes';
+const sinFiltros = () => !estado.desde && !estado.hasta && !estado.oa;
+function filtrar(r){
+  if(estado.mundo !== 'todos') r = r.eq('mundo', estado.mundo);
+  if(estado.desde) r = r.gte('anio', estado.desde);
+  if(estado.hasta) r = r.lte('anio', estado.hasta);
+  if(estado.oa) r = r.eq('es_acceso_abierto', true);
+  if(estado.autor) r = r.ilike('autores', `%${estado.autor.replace(/[%_]/g, '')}%`);
+  return r;
+}
+
+async function pedir(p){
+  if(novedades()){
+    // sin búsqueda: lo más reciente de cada mundo, intercalado
+    const lotes = await Promise.all(MUNDOS.map(m => {
+      let r = filtrar(sb.from(TABLA).select(SEL).eq('mundo', m).not('abstract', 'is', null));
+      return ordenar(r).range(p * POR_MUNDO, p * POR_MUNDO + POR_MUNDO - 1);
+    }));
+    const fallo = lotes.find(x => x.error); if(fallo) throw fallo.error;
+    let t = sinFiltros() ? TOTAL : null;
+    if(!sinFiltros()){ const c = await filtrar(sb.from(TABLA).select('id', { count:'exact', head:true })); if(!c.error) t = c.count; }
+    const rows = []; for(let i = 0; i < POR_MUNDO; i++) lotes.forEach(x => { if(x.data[i]) rows.push(x.data[i]); });
+    return { rows, total: t, fin: lotes.every(x => x.data.length < POR_MUNDO) };
+  }
+  let r = filtrar(sb.from(TABLA).select(SEL, { count:'exact' }));
+  if(estado.q) r = r.textSearch('search_vector', expandir(estado.q).consulta, { type:'websearch' });
+  const res = await ordenar(r).range(p * PAGE_SIZE, p * PAGE_SIZE + PAGE_SIZE - 1);
+  if(res.error) throw res.error;
+  return { rows: res.data || [], total: res.count, fin: (res.data || []).length < PAGE_SIZE };
+}
+
+function contar(){
+  const t = total != null ? total : mostrados;
+  $('resultCount').innerHTML = novedades() && sinFiltros()
+    ? `Novedades de los cinco mundos · <b>${num(mostrados)}</b> de ${num(t)} papers`
+    : `<b>${num(t)}</b> ${t === 1 ? 'resultado' : 'resultados'}${estado.q ? ` para «${esc(estado.q)}»` : ''}`;
+}
+
+// Filtros activos como etiquetas que se pueden quitar una a una
+function pintarActivos(){
+  const a = [];
+  if(estado.q) a.push(['q', `«${estado.q}»`]);
+  if(estado.mundo !== 'todos') a.push(['mundo', MUNDO_LABEL[estado.mundo]]);
+  if(estado.desde || estado.hasta) a.push(['anio', estado.desde && estado.hasta ? `${estado.desde} a ${estado.hasta}` : estado.desde ? `Desde ${estado.desde}` : `Hasta ${estado.hasta}`]);
+  if(estado.autor) a.push(['autor', `Autor: ${estado.autor}`]);
+  if(estado.oa) a.push(['oa', 'Acceso abierto']);
+  $('activos').innerHTML = a.map(([k, t]) => `<button type="button" class="pill" data-quitar="${k}" aria-label="Quitar filtro ${esc(t)}">${esc(t)}<span aria-hidden="true">×</span></button>`).join('');
+  const n = a.filter(x => x[0] !== 'q').length;
+  $('nFiltros').textContent = n || '';
+  $('btnQuitar').hidden = !a.length;
+}
+
+function vacio(){
+  const sug = $('sugerencias').innerHTML;
+  const conFiltros = estado.mundo !== 'todos' || !sinFiltros() || estado.autor;
+  $('emptyState').innerHTML = '<div class="estado"><svg class="icono" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3M8 11h6"/></svg>'
+    + (estado.q
+      ? `<h3>Sin resultados para «${esc(estado.q)}»</h3><p>${conFiltros ? 'Prueba a quitar algún filtro, ' : 'Prueba '}con otra palabra o en inglés, o empieza por una de estas búsquedas:</p><div class="sugerencias">${sug}</div>`
+      : '<h3>Ningún paper cumple estos filtros</h3><p>Amplía el rango de años, revisa el nombre del autor o quita algún filtro.</p>')
+    + (conFiltros ? '<button type="button" class="btn-sec" data-accion="limpiar">Quitar filtros</button>' : '') + '</div>';
+  $('emptyState').style.display = 'block'; $('list').innerHTML = ''; $('loadMoreBtn').style.display = 'none'; $('fin').style.display = 'none';
+}
+
+async function cargar(append){
+  const mi = ++peticion, btn = $('loadMoreBtn');
+  btn.disabled = true; btn.querySelector('.txt').textContent = 'Cargando...'; $('avisoError').style.display = 'none'; $('fin').style.display = 'none';
+  pintarActivos();
+  if(!append){
+    pagina = 0; mostrados = 0; $('emptyState').style.display = 'none';
+    if($('list').children.length) $('list').classList.add('cargando'); else $('list').innerHTML = esqueletos(4);
+  }
+  try{
+    const r = await pedir(pagina);
+    if(mi !== peticion) return;                       // llegó una búsqueda más nueva
+    $('list').classList.remove('cargando');
+    if(!append && !r.rows.length){ total = 0; contar(); vacio(); return; }
+    if(append) $('list').insertAdjacentHTML('beforeend', r.rows.map(tarjeta).join('')); else $('list').innerHTML = r.rows.map(tarjeta).join('');
+    pagina++; mostrados += r.rows.length; total = r.total;
+    const ex = estado.q ? expandir(estado.q) : { en:null };
+    $('traduccion').style.display = ex.en ? 'block' : 'none'; if(ex.en) $('traduccion').innerHTML = `Buscando también en inglés: <b>${esc(ex.en)}</b>`;
+    contar();
+    const acabado = r.fin || (total != null && mostrados >= total);
+    btn.style.display = acabado ? 'none' : 'flex';
+    $('fin').style.display = acabado && mostrados > PAGE_SIZE ? 'block' : 'none';
+  }catch(e){
+    if(mi !== peticion) return;
+    console.error(e); $('list').classList.remove('cargando');
+    if(append || $('list').querySelector('.paper')){
+      $('avisoError').innerHTML = 'No se pudieron cargar los resultados. Revisa tu conexión. <button type="button" class="btn-sec" data-accion="reintentar">Reintentar</button>';
+      $('avisoError').style.display = 'block'; $('avisoError').dataset.append = append ? '1' : '';
+    } else {
+      $('list').innerHTML = ''; btn.style.display = 'none';
+      $('emptyState').innerHTML = '<div class="estado"><h3>No pudimos conectar con las bibliotecas</h3><p>Puede ser un fallo momentáneo de la conexión. Tus filtros se mantienen.</p><button type="button" class="btn-sec" data-accion="reintentar">Reintentar</button></div>';
+      $('emptyState').style.display = 'block';
+    }
+  }finally{
+    if(mi === peticion){ btn.disabled = false; btn.querySelector('.txt').textContent = 'Cargar más resultados'; }
+  }
+}
+
+function guardarUrl(){
+  const u = new URL(location.href);
+  const pon = (k, v) => v ? u.searchParams.set(k, v) : u.searchParams.delete(k);
+  pon('q', estado.q); pon('mundo', estado.mundo !== 'todos' && estado.mundo); pon('desde', estado.desde); pon('hasta', estado.hasta);
+  pon('autor', estado.autor); pon('oa', estado.oa && '1'); pon('orden', estado.orden !== 'recientes' && estado.orden);
+  history.replaceState(null, '', u);
+}
+function sincronizar(){
+  $('searchInput').value = estado.q; $('searchForm').classList.toggle('con-texto', !!estado.q);
+  document.querySelectorAll('#worldFilters .chip').forEach(c => { const on = c.dataset.mundo === estado.mundo; c.classList.toggle('active', on); c.setAttribute('aria-pressed', on); });
+  $('anioDesde').value = estado.desde || ''; $('anioHasta').value = estado.hasta || '';
+  $('autorInput').value = estado.autor; $('oaInput').checked = estado.oa; $('ordenSel').value = estado.orden;
+}
+function buscar(){ guardarUrl(); sincronizar(); cargar(false); }
+function toast(t){ const el = $('toast'); el.textContent = t; el.classList.add('ver'); clearTimeout(toast.t); toast.t = setTimeout(() => el.classList.remove('ver'), 1800); }
+async function copiar(texto, boton, ok){
+  try{ await navigator.clipboard.writeText(texto); }catch(e){ const t = document.createElement('textarea'); t.value = texto; document.body.appendChild(t); t.select(); document.execCommand('copy'); t.remove(); }
+  const antes = boton.textContent; boton.classList.add('ok'); boton.textContent = 'Copiado'; toast(ok);
+  setTimeout(() => { boton.classList.remove('ok'); boton.textContent = antes; }, 1500);
+}
+
+// Años del filtro: del actual hacia atrás
+(function(){ const y = new Date().getFullYear(); let o = ''; for(let a = y; a >= ANIO_MIN; a--) o += `<option value="${a}">${a}</option>`; $('anioDesde').insertAdjacentHTML('beforeend', o); $('anioHasta').insertAdjacentHTML('beforeend', o); })();
+
+// Buscador
+let espera = null;
+$('searchInput').addEventListener('input', e => { $('searchForm').classList.toggle('con-texto', !!e.target.value); clearTimeout(espera); espera = setTimeout(() => { estado.q = e.target.value.trim(); buscar(); }, 450); });
+$('searchForm').addEventListener('submit', e => { e.preventDefault(); clearTimeout(espera); estado.q = $('searchInput').value.trim(); buscar(); $('searchInput').blur(); });
+$('btnLimpiar').addEventListener('click', () => { estado.q = ''; buscar(); $('searchInput').focus(); });
+document.addEventListener('keydown', e => {
+  if(e.key === '/' && !/input|textarea|select/i.test(document.activeElement.tagName)){ e.preventDefault(); $('searchInput').focus(); }
+  if(e.key === 'Escape') cerrarPanel();
+});
+
+// Filtros combinables
+$('worldFilters').addEventListener('click', e => { const b = e.target.closest('.chip'); if(!b) return; estado.mundo = b.dataset.mundo; buscar(); });
+$('anioDesde').addEventListener('change', e => { estado.desde = e.target.value ? Number(e.target.value) : null; if(estado.hasta && estado.desde > estado.hasta) estado.hasta = estado.desde; buscar(); });
+$('anioHasta').addEventListener('change', e => { estado.hasta = e.target.value ? Number(e.target.value) : null; if(estado.desde && estado.hasta < estado.desde) estado.desde = estado.hasta; buscar(); });
+let esperaAutor = null;
+$('autorInput').addEventListener('input', e => { clearTimeout(esperaAutor); esperaAutor = setTimeout(() => { estado.autor = e.target.value.trim(); if(estado.autor.length === 1) return; buscar(); }, 500); });
+$('oaInput').addEventListener('change', e => { estado.oa = e.target.checked; buscar(); });
+$('ordenSel').addEventListener('change', e => { estado.orden = e.target.value; buscar(); });
+$('activos').addEventListener('click', e => {
+  const b = e.target.closest('[data-quitar]'); if(!b) return;
+  ({ q: () => estado.q = '', mundo: () => estado.mundo = 'todos', anio: () => { estado.desde = null; estado.hasta = null; }, autor: () => estado.autor = '', oa: () => estado.oa = false })[b.dataset.quitar]();
+  buscar();
+});
+
+// Panel de filtros en móvil
+function abrirPanel(){ $('panel').classList.add('abierto'); $('velo').classList.add('ver'); $('btnFiltros').setAttribute('aria-expanded', 'true'); }
+function cerrarPanel(){ $('panel').classList.remove('abierto'); $('velo').classList.remove('ver'); $('btnFiltros').setAttribute('aria-expanded', 'false'); }
+$('btnFiltros').addEventListener('click', abrirPanel);
+$('velo').addEventListener('click', cerrarPanel);
+$('btnVerResultados').addEventListener('click', () => { cerrarPanel(); $('resultCount').scrollIntoView({ behavior:'smooth', block:'start' }); });
+
+// Acciones dentro de la página
+document.addEventListener('click', e => {
+  const s = e.target.closest('a[data-q]');
+  if(s){ e.preventDefault(); estado.q = s.dataset.q; buscar(); $('searchForm').scrollIntoView({ behavior:'smooth', block:'center' }); return; }
+  const t = e.target.closest('.toggle-abs');
+  if(t){ const a = document.getElementById(t.getAttribute('aria-controls')); const abierto = a.classList.toggle('expanded'); t.setAttribute('aria-expanded', abierto);
+    t.firstChild.textContent = abierto ? 'Mostrar menos ' : 'Leer resumen completo '; if(!abierto) t.closest('.paper').scrollIntoView({ block:'nearest' }); return; }
+  const va = e.target.closest('.ver-autores'); if(va){ va.parentElement.textContent = va.dataset.todos; return; }
+  const cd = e.target.closest('[data-copiar]'); if(cd){ copiar(cd.dataset.copiar, cd, 'DOI copiado'); return; }
+  const cc = e.target.closest('[data-copiar-cita]'); if(cc){ copiar(cc.closest('.paper').dataset.cita, cc, 'Cita copiada'); return; }
+  const a = e.target.closest('[data-accion]'); if(!a) return;
+  if(a.dataset.accion === 'reintentar') cargar(!!$('avisoError').dataset.append && $('list').querySelector('.paper') !== null);
+  if(a.dataset.accion === 'limpiar'){ estado = { ...VACIO }; buscar(); }
+});
+$('loadMoreBtn').addEventListener('click', () => cargar(true));
+
+// Arranque: la dirección (?q=, ?mundo=, ?desde=, ?hasta=, ?autor=, ?oa=, ?orden=) se respeta; si no hay nada, se quedan las novedades ya escritas.
+const qs = new URLSearchParams(location.search);
+estado.q = qs.get('q') || '';
+if(MUNDOS.includes(qs.get('mundo'))) estado.mundo = qs.get('mundo');
+estado.desde = Number(qs.get('desde')) || null; estado.hasta = Number(qs.get('hasta')) || null;
+estado.autor = qs.get('autor') || ''; estado.oa = qs.get('oa') === '1';
+if(['antiguos','titulo'].includes(qs.get('orden'))) estado.orden = qs.get('orden');
+sincronizar();
+const yaEscritas = $('list').querySelectorAll('.paper').length;
+if(novedades() && sinFiltros() && yaEscritas){ pagina = Math.ceil(yaEscritas / (POR_MUNDO * MUNDOS.length)); mostrados = yaEscritas; contar(); pintarActivos(); }
+else cargar(false);
+</script>
+
+</body>
+</html>

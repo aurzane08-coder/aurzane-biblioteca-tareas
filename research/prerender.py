@@ -14,7 +14,7 @@ SB = 'https://chtfpqwrrarfdjcivlad.supabase.co/rest/v1/biblioteca_unificada'
 KEY = 'sb_publishable___1v6VjDew0l8uGfMyb9Nw_YyCLTPPw'  # solo lectura de lo publicado
 SSH = os.environ.get('SSH', ''); DEST = os.environ.get('SG_DEST', '')
 HOY = datetime.date.today(); ANIO = HOY.year
-SEL = 'id,mundo,titulo,abstract,autores,anio,licencia,es_acceso_abierto,url_articulo,doi'
+SEL = 'id,mundo,titulo,abstract,autores,anio,licencia,es_acceso_abierto,url_articulo,doi,fuente'
 MUNDOS = ['mind', 'nexus', 'live', 'learn', 'build']
 LABEL = {'mind': 'Mind', 'nexus': 'Nexus', 'live': 'Live', 'learn': 'Learn', 'build': 'Build'}
 POR_MUNDO = 4
@@ -41,19 +41,53 @@ def remoto(orden, entrada=None):
     return subprocess.run(SSH.split() + [DEST, orden], capture_output=True, text=True, timeout=120, input=entrada).stdout
 
 
+def abstract_legible(t):
+    """Igual que en la página: los <h4>Importance</h4> se vuelven párrafos con su título en negrita, sin HTML ajeno."""
+    t = re.sub(r'<h[1-6][^>]*>([\s\S]*?)</h[1-6]>', '\u0001\\1\u0002', str(t))
+    t = re.sub(r'</?(p|br|div)[^>]*>', '\n', t, flags=re.I)
+    t = html.unescape(re.sub(r'<[^>]+>', '', t))
+    t = re.sub(r'\u0001\s*([^\u0002]*?)\s*\u0002', lambda m: '\n\u0003' + m.group(1) + '\u0004 ', E(t))
+    out = []
+    for x in [x.strip() for x in t.split('\n') if x.strip()]:
+        out.append('<p>' + re.sub(r'\u0003([^\u0004]*)\u0004', lambda m: '<b>' + re.sub(r'[.:]$', '', m.group(1)) + '.</b>', x, count=1) + '</p>')
+    return ''.join(out)
+
+
+def autores_html(a):
+    if not a: return '<span class="mas">Autores no disponibles</span>'
+    l = [x for x in re.split(r'\s*;\s*', a) if x]
+    if len(l) <= 4: return E(', '.join(l))
+    return f'{E(", ".join(l[:3]))} <button type="button" class="link-btn ver-autores" data-todos="{E(", ".join(l))}">y {len(l) - 3} autores más</button>'
+
+
+def cita(p):
+    l = [x for x in re.split(r'\s*;\s*', p.get('autores') or '') if x]
+    aut = ', '.join(l[:3]) + ' et al.' if len(l) > 3 else ', '.join(l)
+    enlace = f"https://doi.org/{p['doi']}" if p.get('doi') else (p.get('url_articulo') or '')
+    return f"{aut + ' ' if aut else ''}({p.get('anio') or 's. f.'}). {re.sub(r'[.]$', '', p.get('titulo') or '')}. {enlace}".strip()
+
+
 def tarjeta(p):
-    abs_ = E(p['abstract']) if p.get('abstract') else '<em style="color:var(--silver-dim);">Sin resumen disponible.</em>'
-    au = p.get('autores') or ''
-    au = E(au[:160] + '…' if len(au) > 160 else au) if au else 'Autores no disponibles'
     link = p.get('url_articulo') or (f"https://doi.org/{p['doi']}" if p.get('doi') else '')
     link = link if link.startswith(('http://', 'https://')) else ''
     ml = LABEL.get(p['mundo'], p['mundo'])
-    return (f'<div class="paper" style="--mundo-c:var(--{E(p["mundo"])});"><div class="paper-meta"><span class="badge-mundo">{ml}</span><span>{p.get("anio") or "s/f"}</span>'
-            + ('<span class="badge-oa">Acceso abierto</span>' if p.get('es_acceso_abierto') else '') + (f'<span>{E(p["licencia"].upper())}</span>' if p.get('licencia') else '')
-            + f'</div><h3>{E(p["titulo"])}</h3><div class="autores">{au}</div><div class="abstract">{abs_}</div>'
-            + ('<button class="toggle-abs">Ver abstract completo</button>' if p.get('abstract') and len(p['abstract']) > 260 else '')
-            + f'<div class="paper-foot"><span class="mono" style="color:var(--silver-dim);">{ml}</span>'
-            + (f'<a href="{E(link)}" target="_blank" rel="noopener noreferrer">Ver fuente original</a>' if link else '') + '</div></div>')
+    largo = bool(p.get('abstract')) and len(re.sub(r'<[^>]+>', '', p['abstract'])) > 320
+    ida = f"abs-{E(p['id'])}-{E(p['mundo'])}"
+    h = (f'<article class="paper" style="--mundo-c:var(--{E(p["mundo"])});" data-cita="{E(cita(p))}"><div class="paper-meta"><span class="badge-mundo">{ml}</span><span>{E(p.get("anio") or "s. f.")}</span>'
+         + (f'<span class="sep">·</span><span>{E(p["fuente"])}</span>' if p.get('fuente') else '')
+         + ('<span class="badge-oa"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Acceso abierto</span>' if p.get('es_acceso_abierto') else '')
+         + (f'<span>{E(p["licencia"].upper())}</span>' if p.get('licencia') else '') + '</div>'
+         + '<h3>' + (f'<a href="{E(link)}" target="_blank" rel="noopener noreferrer">{E(p["titulo"])}</a>' if link else E(p['titulo'])) + '</h3>'
+         + f'<div class="autores">{autores_html(p.get("autores"))}</div>')
+    if p.get('abstract'):
+        h += f'<div class="abstract{"" if largo else " corto"}" id="{ida}">{abstract_legible(p["abstract"])}</div>'
+        if largo: h += f'<button type="button" class="toggle-abs" aria-expanded="false" aria-controls="{ida}">Leer resumen completo <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>'
+    else:
+        h += '<div class="abstract corto"><p><em>Este paper no tiene resumen disponible.</em></p></div>'
+    h += '<div class="paper-foot">' + (f'<a class="doi" href="https://doi.org/{E(p["doi"])}" target="_blank" rel="noopener noreferrer">DOI {E(p["doi"])}</a>' if p.get('doi') else '<span class="doi">Sin DOI</span>')
+    h += '<div class="acciones">' + (f'<button type="button" class="accion" data-copiar="{E(p["doi"])}">Copiar DOI</button>' if p.get('doi') else '') + '<button type="button" class="accion" data-copiar-cita>Copiar cita</button>'
+    h += (f'<a class="accion prim" href="{E(link)}" target="_blank" rel="noopener noreferrer">Leer artículo</a>' if link else '') + '</div></div></article>'
+    return h
 
 
 # ---------- datos ----------
@@ -81,9 +115,9 @@ def bloque(t, ident, contenido):
 def transforma(t):
     n = bloque(t, 'list', ''.join(map(tarjeta, papers)))
     n = re.sub(r'(<div id="list" data-total=")\d*(")', lambda x: x.group(1) + str(total) + x.group(2), n, count=1)
-    n = bloque(n, 'resultCount', f'Novedades de los cinco mundos: {len(papers)} de {mil(total)} papers')
+    n = bloque(n, 'resultCount', f'Novedades de los cinco mundos · <b>{len(papers)}</b> de {mil(total)} papers')
     n = bloque(n, 'totalStat', f'{mil(total)} papers indexados en los 5 mundos')
-    nota = ('Todos los papers son de <b>acceso abierto</b>: puedes leerlos completos en su fuente original.' if oa == total
+    nota = ('Hoy <b>todos</b> los papers del índice son de acceso abierto: puedes leerlos completos en su fuente.' if oa == total
             else f'<b>{mil(oa)}</b> de los {mil(total)} papers son de acceso abierto.')
     n = bloque(n, 'oaNota', nota)
     n = bloque(n, 'sugerencias', '<span class="lbl">Búsquedas populares:</span>' + ''.join(
