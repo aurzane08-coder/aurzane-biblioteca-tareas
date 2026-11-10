@@ -17,7 +17,15 @@
    "meditation nature calm",
    "woman meditating outdoors",
    "relaxation breathing lake"
-  ]
+  ],
+  "portada_credito": {
+   "autor": "Erik Pevernagie\n \n\n.mw-parser-output .messagebox{margin:4px 0;width:auto;border-collapse:collapse;border:2px solid var(-",
+   "licencia": "CC BY-SA 3.0",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Did_not_expect_it_would_ever_happen_there.jpg",
+   "titulo": "File:Did not expect it would ever happen there.jpg",
+   "alt": "",
+   "fecha": "2026-11-10"
+  }
  },
  "neuroanatomia-funcional": {
   "area": "Neurociencias",
@@ -37,7 +45,15 @@
    "spinal cord cross section histology",
    "human brain anatomy specimen",
    "neurons microscopy"
-  ]
+  ],
+  "portada_credito": {
+   "autor": "OpenStax",
+   "licencia": "CC BY 4.0",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Anatom%C3%ADa_de_la_m%C3%A9dula_espinal.png",
+   "titulo": "File:Anatomía de la médula espinal.png",
+   "alt": "Ilustración detallada de la anatomía de la médula espinal.",
+   "fecha": "2026-11-10"
+  }
  },
  "tecnicas-neurociencias": {
   "area": "Neurociencias",
@@ -57,6 +73,14 @@
    "brain organoid fluorescence",
    "neuroscience laboratory microscope",
    "optogenetics neuron"
-  ]
+  ],
+  "portada_credito": {
+   "autor": "Doneuron",
+   "licencia": "CC BY-SA 3.0",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Cooper_laboratory_recording_of_optogenetic_silencing_of_prefrontal_cortical_neuron.jpg",
+   "titulo": "File:Cooper laboratory recording of optogenetic silencing of prefrontal cortical neuron.jpg",
+   "alt": "Registro in vivo de neuronas mediante silenciamiento optogenético con luz verde en laboratorio",
+   "fecha": "2026-11-10"
+  }
  }
 }
