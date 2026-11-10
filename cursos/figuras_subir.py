@@ -15,8 +15,15 @@ for f in json.load(open(LISTA)):
     nombre = f"{f['clave']}.webp"
     if nombre in hay and f['clave'] in tam: continue
     try:
-        rq = urllib.request.Request(f['src'], headers={'User-Agent': 'AURZANE-cursos/1.0 (aurzane.com)'})
-        im = Image.open(io.BytesIO(urllib.request.urlopen(rq, timeout=60).read()))
+        datos = None
+        for intento, url in enumerate([f['src'], f['src'] + '?revision=1', f['src'], f['src'] + '?origin=mt-web']):
+            try:
+                rq = urllib.request.Request(url, headers={'User-Agent': 'AURZANE-cursos/1.0 (aurzane.com)'})
+                datos = urllib.request.urlopen(rq, timeout=150).read(); break
+            except Exception as e:
+                print('reintento', f['clave'], intento, e); time.sleep(5 + 5 * intento)
+        if datos is None: raise RuntimeError('sin respuesta del servidor de origen')
+        im = Image.open(io.BytesIO(datos))
         im = im.convert('RGBA') if im.mode in ('P', 'LA', 'RGBA') else im.convert('RGB')
         if im.mode == 'RGBA':
             fondo = Image.new('RGB', im.size, 'white'); fondo.paste(im, mask=im.split()[3]); im = fondo

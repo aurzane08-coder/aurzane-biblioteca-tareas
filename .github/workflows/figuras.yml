@@ -10,7 +10,7 @@ concurrency: figuras
 jobs:
   figuras:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 60
     env:
       SG_KEY: ${{ secrets.SG_KEY }}
       SG_HOST: ${{ secrets.SG_HOST }}
