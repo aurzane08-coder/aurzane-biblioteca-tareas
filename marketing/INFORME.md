@@ -4,13 +4,13 @@ Actualizado: 2026-11-10. Clics de personas (sin bots ni vistas previas) que entr
 
 | Red | Publicaciones | Clics |
 |---|---|---|
-| telegram | 37 | 4 |
-| bluesky | 26 | 80 |
-| mastodon | 26 | 66 |
-| instagram | 14 | 0 |
-| facebook | 14 | 40 |
+| telegram | 38 | 4 |
+| bluesky | 27 | 81 |
+| mastodon | 27 | 69 |
+| instagram | 15 | 0 |
+| facebook | 15 | 41 |
 | threads | 0 | 0 |
-| pinterest | 17 | 0 |
+| pinterest | 18 | 0 |
 
 ## Productos con más clics
 
@@ -23,6 +23,7 @@ Actualizado: 2026-11-10. Clics de personas (sin bots ni vistas previas) que entr
 | test-sueno | 6 |
 | frase-b424a195 | 6 |
 | crea-l05-08 | 6 |
+| nc-ingenieria-en-tecnologias-industriales | 5 |
 | test-autocompasion | 5 |
 | test-personalidad | 5 |
 | test-habitos | 5 |
@@ -30,7 +31,6 @@ Actualizado: 2026-11-10. Clics de personas (sin bots ni vistas previas) que entr
 | crea-l05-04 | 4 |
 | crea-l05-03 | 4 |
 | curso-metod | 4 |
-| nc-ingenieria-en-tecnologias-industriales | 4 |
 | nc-sociologia | 4 |
 | biblio-nexus | 4 |
 | ovp | 4 |

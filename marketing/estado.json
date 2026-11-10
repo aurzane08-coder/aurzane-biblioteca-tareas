@@ -878,12 +878,12 @@
   },
   "2026-11-22": {
    "1": {
-    "telegram": "test-personalidad",
-    "bluesky": "auto-live-aurzane-com-calculadora-porcentajes",
-    "mastodon": "auto-live-aurzane-com-calculadora-imc",
-    "instagram": "auto-mind-aurzane-com-test-de-burnout",
-    "facebook": "auto-mind-aurzane-com-test-de-autoeficacia",
-    "threads": "auto-live-aurzane-com-calculadora-edad"
+    "telegram": "test-tdah",
+    "bluesky": "calc-sueldo",
+    "mastodon": "test-autocompasion",
+    "instagram": "test-personalidad",
+    "facebook": "curso-neuro",
+    "threads": "test-ansiedad"
    },
    "2": {
     "telegram": "libro-emociones-politicas-ninos-ninas",
@@ -924,12 +924,12 @@
   },
   "2026-11-23": {
    "1": {
-    "telegram": "test-ansiedad",
-    "bluesky": "auto-mind-aurzane-com-test-de-soledad",
-    "mastodon": "auto-mind-aurzane-com-test-de-autoeficacia",
-    "instagram": "auto-live-aurzane-com-calculadora-agua",
-    "facebook": "auto-mind-aurzane-com-test-de-estres",
-    "threads": "auto-live-aurzane-com-calculadora-interes-compuesto"
+    "telegram": "test-sueno",
+    "bluesky": "curso-neuro",
+    "mastodon": "test-tdah",
+    "instagram": "test-ansiedad",
+    "facebook": "calc-sueldo",
+    "threads": "test-autocompasion"
    },
    "2": {
     "telegram": "crea-l05-08",
@@ -1074,6 +1074,10 @@
    [
     "2026-11-10",
     "frase-f6c68696"
+   ],
+   [
+    "2026-11-10",
+    "nc-enfermeria"
    ]
   ],
   "bluesky": [
@@ -1180,6 +1184,10 @@
    [
     "2026-11-10",
     "frase-5b980a2a"
+   ],
+   [
+    "2026-11-10",
+    "nc-bellas-artes"
    ]
   ],
   "mastodon": [
@@ -1286,6 +1294,10 @@
    [
     "2026-11-10",
     "frase-317f71d2"
+   ],
+   [
+    "2026-11-10",
+    "nc-educacion-primaria"
    ]
   ],
   "instagram": [
@@ -1328,6 +1340,10 @@
    [
     "2026-11-10",
     "frase-e99ed1e3"
+   ],
+   [
+    "2026-11-10",
+    "nc-ciencias-ambientales"
    ]
   ],
   "facebook": [
@@ -1370,6 +1386,10 @@
    [
     "2026-11-10",
     "frase-9b2daa33"
+   ],
+   [
+    "2026-11-10",
+    "nc-ingenieria-en-tecnologias-industriales"
    ]
   ],
   "pinterest": [
@@ -1440,6 +1460,10 @@
    [
     "2026-11-10",
     "frase-caf8b982"
+   ],
+   [
+    "2026-11-10",
+    "nc-ciencia-y-tecnologia-de-los-alimentos"
    ]
   ],
   "instagram-video": [
