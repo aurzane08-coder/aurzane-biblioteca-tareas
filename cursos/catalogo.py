@@ -87,29 +87,46 @@ def commons(q):
         ii = (pg.get('imageinfo') or [{}])[0]; md = ii.get('extmetadata') or {}
         lic = (md.get('LicenseShortName') or {}).get('value', '')
         w, h = ii.get('width', 0), ii.get('height', 0)
-        if not LIC_OK.match(lic) or w < 1400 or not h or not 1.25 <= w / h <= 2.2 or ii.get('mime') not in ('image/jpeg', 'image/png') or NO_FOTO.search(pg.get('title', '')): continue
+        if not LIC_OK.match(lic) or w < 1400 or not h or not 1.25 <= w / h <= 2.2 or ii.get('mime') != 'image/jpeg' or NO_FOTO.search(pg.get('title', '')): continue
         autor = re.sub(r'<[^>]+>', '', (md.get('Artist') or {}).get('value', '')).strip()[:120] or 'Autor desconocido'
         desc = re.sub(r'<[^>]+>', '', (md.get('ImageDescription') or {}).get('value', ''))[:200]
         out.append({'titulo': pg['title'], 'desc': desc, 'autor': autor, 'licencia': lic, 'pagina': ii.get('descriptionurl'), 'url': ii.get('thumburl') or ii.get('url')})
     return out
 
 
+def commons_archivo(titulo):
+    u = 'https://commons.wikimedia.org/w/api.php?' + urllib.parse.urlencode({'action': 'query', 'format': 'json', 'titles': titulo, 'prop': 'imageinfo', 'iiprop': 'url|size|mime|extmetadata', 'iiurlwidth': 1600})
+    with urllib.request.urlopen(urllib.request.Request(u, headers={'User-Agent': 'AURZANE-cursos/1.0 (hola@aurzane.com)'}), timeout=60) as r:
+        pg = next(iter(json.load(r)['query']['pages'].values()))
+    ii = (pg.get('imageinfo') or [{}])[0]; md = ii.get('extmetadata') or {}
+    lic = (md.get('LicenseShortName') or {}).get('value', '')
+    if not LIC_OK.match(lic): print('licencia no válida', titulo, lic); return []
+    return [{'titulo': pg['title'], 'desc': re.sub(r'<[^>]+>', '', (md.get('ImageDescription') or {}).get('value', ''))[:200], 'licencia': lic,
+             'autor': re.sub(r'<[^>]+>', '', (md.get('Artist') or {}).get('value', '')).strip()[:120] or 'Autor desconocido', 'pagina': ii.get('descriptionurl'), 'url': ii.get('thumburl') or ii.get('url')}]
+
+
 def portada_web(c):
     """Elige y descarga una foto real para el curso si todavía no tiene una de la web. Devuelve True si cambió."""
     mt = meta.setdefault(c['slug'], {})
-    if (mt.get('portada_credito') or {}).get('pagina'): return False
+    fijo = mt.get('portada_archivo')
+    if (mt.get('portada_credito') or {}).get('pagina') and (not fijo or mt['portada_credito'].get('titulo') == fijo): return False
     cand = []
-    for q in (mt.get('portada_busqueda') or (mt.get('etiquetas') or [c['titulo']])[:2]):
-        try: cand += commons(q)
-        except Exception as e: print('commons', q, str(e)[:80])
+    if fijo: cand = commons_archivo(fijo)
+    else:
+        for q in (mt.get('portada_busqueda') or (mt.get('etiquetas') or [c['titulo']])[:2]):
+            try: cand += commons(q)
+            except Exception as e: print('commons', q, str(e)[:80])
     cand = list({x['titulo']: x for x in cand}.values())[:24]
     if not cand: print('sin foto libre para', c['slug']); return False
-    r = ia('Elige la mejor foto de portada para un curso online en español. Curso: «' + c['titulo'] + '». ' + (c.get('subtitulo') or '') +
+    r = None if fijo else ia('Elige la mejor foto de portada para un curso online en español. Curso: «' + c['titulo'] + '». ' + (c.get('subtitulo') or '') +
            '. Debe ser una fotografía real, profesional, sin texto ni logotipos, sin personas en situación vulnerable o angustiosa, adecuada como portada. '
            'Candidatas (índice: título · descripción):\n' + '\n'.join(f'{i}: {x["titulo"]} · {x["desc"]}' for i, x in enumerate(cand)) +
            '\nJSON: {"indice": número, "alt": "descripción breve de la foto en español (máx. 120 caracteres)"}')
-    i = r.get('indice') if isinstance(r, dict) else 0
-    x = cand[i if isinstance(i, int) and 0 <= i < len(cand) else 0]
+    if fijo: r = r if isinstance(r, dict) else {}; i = 0
+    else:
+        if not isinstance(r, dict) or not isinstance(r.get('indice'), int): print('la IA no eligió portada; se reintenta otro día', c['slug']); return False
+        i = r['indice'] if 0 <= r['indice'] < len(cand) else 0
+    x = cand[i]
     from PIL import Image
     with urllib.request.urlopen(urllib.request.Request(x['url'], headers={'User-Agent': 'AURZANE-cursos/1.0 (hola@aurzane.com)'}), timeout=120) as resp:
         im = Image.open(io.BytesIO(resp.read())).convert('RGB')
@@ -120,7 +137,11 @@ def portada_web(c):
     nombre = mt.get('portada') or f'portada-{c["slug"]}.webp'
     p = os.path.join(OUT, 'cursos', nombre); os.makedirs(os.path.dirname(p), exist_ok=True); im.save(p, 'WEBP', quality=82)
     mt['portada'] = nombre
-    mt['portada_credito'] = {'autor': x['autor'], 'licencia': x['licencia'], 'pagina': x['pagina'], 'titulo': x['titulo'], 'alt': (r or {}).get('alt') if isinstance(r, dict) else '', 'fecha': HOY}
+    alt = (r or {}).get('alt') if isinstance(r, dict) else ''
+    if not alt and x.get('desc'):
+        a = ia(f'Escribe en español una descripción breve (máx. 120 caracteres) de esta foto para el texto alternativo: {x["desc"]}. JSON {{"alt": "..."}}')
+        alt = (a or {}).get('alt', '') if isinstance(a, dict) else ''
+    mt['portada_credito'] = {'autor': x['autor'], 'licencia': x['licencia'], 'pagina': x['pagina'], 'titulo': x['titulo'], 'alt': alt, 'fecha': HOY}
     print('portada real', c['slug'], '·', x['titulo'], '·', x['licencia'])
     return True
 

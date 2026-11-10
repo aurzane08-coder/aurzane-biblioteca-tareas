@@ -18,14 +18,7 @@
    "woman meditating outdoors",
    "relaxation breathing lake"
   ],
-  "portada_credito": {
-   "autor": "Marc Schloesser",
-   "licencia": "CC BY 3.0",
-   "pagina": "https://commons.wikimedia.org/wiki/File:Pine_Forrest_(254783371).jpeg",
-   "titulo": "File:Pine Forrest (254783371).jpeg",
-   "alt": "Bosque de pinos tranquilo y soleado, ideal para transmitir calma y bienestar.",
-   "fecha": "2026-11-10"
-  }
+  "portada_archivo": "File:Relaxing woman enjoys morning coffee on a wooden bench.jpg"
  },
  "neuroanatomia-funcional": {
   "area": "Neurociencias",
@@ -46,14 +39,7 @@
    "human brain anatomy specimen",
    "neurons microscopy"
   ],
-  "portada_credito": {
-   "autor": "OpenStax",
-   "licencia": "CC BY 4.0",
-   "pagina": "https://commons.wikimedia.org/wiki/File:Anatom%C3%ADa_de_la_m%C3%A9dula_espinal.png",
-   "titulo": "File:Anatomía de la médula espinal.png",
-   "alt": "Ilustración detallada de la anatomía de la médula espinal.",
-   "fecha": "2026-11-10"
-  }
+  "portada_archivo": "File:Cortes de cerebro y telencéfalo de pez cebra visto con microscopio confocal.jpg"
  },
  "tecnicas-neurociencias": {
   "area": "Neurociencias",
@@ -74,13 +60,6 @@
    "neuroscience laboratory microscope",
    "optogenetics neuron"
   ],
-  "portada_credito": {
-   "autor": "Doneuron",
-   "licencia": "CC BY-SA 3.0",
-   "pagina": "https://commons.wikimedia.org/wiki/File:Cooper_laboratory_recording_of_optogenetic_silencing_of_prefrontal_cortical_neuron.jpg",
-   "titulo": "File:Cooper laboratory recording of optogenetic silencing of prefrontal cortical neuron.jpg",
-   "alt": "Registro in vivo de la inhibición optogenética de neuronas en la corteza prefrontal.",
-   "fecha": "2026-11-10"
-  }
+  "portada_archivo": "File:Rat primary cortical neuron culture, 3D reconstruction (30614936992).jpg"
  }
 }
