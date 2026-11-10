@@ -1,5 +1,64 @@
 [
  {
+  "id": "el-monstruo-de-colores-anna-llenas",
+  "titulo": "El monstruo de colores",
+  "autor": "Anna Llenas",
+  "temas": [
+   "emociones",
+   "crianza"
+  ],
+  "origen": "tendencia",
+  "fecha": "2026-11-10",
+  "isbn": "9788419401601",
+  "portada": "https://covers.openlibrary.org/b/id/14567182-M.jpg?default=false",
+  "anio": "2023",
+  "editorial": "Flamboyant",
+  "idioma": "",
+  "resumen": "",
+  "tendencia": "Ideal para regalar a los más pequeños y trabajar la gestión emocional.",
+  "tendencia_fecha": "2026-11-10",
+  "porque": "Este libro es ideal para los más pequeños y sus familias, porque ayuda a identificar y poner nombre a las emociones cotidianas a través de las ilustraciones. Aporta una herramienta visual muy clara para conversar sobre lo que sentimos y ordenar el caos emocional con calma."
+ },
+ {
+  "id": "el-cerebro-del-nino-daniel-j-siegel",
+  "titulo": "El cerebro del niño",
+  "autor": "Daniel J. Siegel",
+  "temas": [
+   "crianza",
+   "emociones"
+  ],
+  "origen": "tendencia",
+  "fecha": "2026-11-10",
+  "isbn": "9788484287148",
+  "portada": "https://covers.openlibrary.org/b/id/8143901-M.jpg?default=false",
+  "anio": "2018",
+  "editorial": "Alba",
+  "idioma": "",
+  "resumen": "",
+  "tendencia": "Muy buscado por padres que quieren regalar lectura práctica y educativa en noviembre.",
+  "tendencia_fecha": "2026-11-10",
+  "porque": "Es un libro pensado para padres y educadores que desean comprender mejor las rabietas y reacciones de los niños. Aporta explicaciones científicas accesibles y estrategias prácticas para fomentar una crianza respetuosa y conectar con la mente infantil."
+ },
+ {
+  "id": "las-madres-carmen-mola",
+  "titulo": "Las madres",
+  "autor": "Carmen Mola",
+  "temas": [
+   "novela"
+  ],
+  "origen": "tendencia",
+  "fecha": "2026-11-10",
+  "isbn": "9788420456027",
+  "portada": "https://covers.openlibrary.org/b/id/12919323-M.jpg?default=false",
+  "anio": "2022",
+  "editorial": "Alfaguara",
+  "idioma": "spa",
+  "resumen": "",
+  "tendencia": "Uno de los grandes entretenimientos literarios de máxima actualidad en España.",
+  "tendencia_fecha": "2026-11-10",
+  "porque": "Esta lectura está dirigida a los amantes de la novela negra que disfrutan con tramas oscuras y giros inesperados. Aporta una investigación policial intensa y de ritmo rápido protagonizada por la inspectora Elena Blanco."
+ },
+ {
   "id": "el-juego-interior-del-tenis-w-timothy-gallwey",
   "titulo": "El juego interior del tenis",
   "autor": "W. Timothy Gallwey",
