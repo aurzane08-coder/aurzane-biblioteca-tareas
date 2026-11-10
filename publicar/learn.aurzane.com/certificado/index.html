@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Certificados · AURZANE LEARN</title>
+<meta name="description" content="Obtén y verifica los certificados de aprovechamiento de los cursos de AURZANE LEARN. Formación libre y no reglada.">
+<link rel="canonical" href="https://learn.aurzane.com/certificado/">
+<script src="https://aurzane.com/aurzane-paleta.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="/aurzane-id.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400;1,500&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;1,6..96,400&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--papel:#fbfaf6;--tinta:#1d1b18;--suave:#5f5a52;--linea:#d9d3c5;--oro:#a8832f;--oro-claro:#e9dcb8;--fondo:#ecebe6;--campo:#fff;--ok:#2f6b46;--mal:#9b2d24}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--fondo:#161513;--campo:#22201d;--suave:#b9b2a5;--linea:#3a362f}}
+:root[data-theme="dark"]{--fondo:#161513;--campo:#22201d;--suave:#b9b2a5;--linea:#3a362f}
+*{box-sizing:border-box}
+body{margin:0;background:var(--fondo);color:var(--tinta);font:16px/1.6 'Instrument Sans',system-ui,sans-serif}
+:root[data-theme="dark"] body,:root:not([data-theme="light"]) body{color:inherit}
+.marco{max-width:1040px;margin:0 auto;padding:28px 16px 64px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:28px;flex-wrap:wrap}
+.top a{color:inherit;text-decoration:none;font-weight:600;letter-spacing:.02em}
+.panel{background:var(--campo);border:1px solid var(--linea);border-radius:14px;padding:24px;max-width:640px;margin:0 auto}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .panel{color:#ece7dc}}
+:root[data-theme="dark"] .panel{color:#ece7dc}
+h1{font:500 2rem/1.15 'Bodoni Moda',serif;margin:0 0 .4em}
+.lead{color:var(--suave);margin:0 0 1.2em}
+label{display:block;font-weight:600;margin:.8em 0 .3em}
+input[type=text]{width:100%;font:inherit;padding:.65em .8em;border:1px solid var(--linea);border-radius:10px;background:transparent;color:inherit}
+input[type=text]:focus-visible,button:focus-visible,a:focus-visible{outline:3px solid var(--oro);outline-offset:2px}
+.check{display:flex;gap:.6em;align-items:flex-start;font-weight:400;margin-top:1em}
+.btn{display:inline-block;font:600 1rem 'Instrument Sans',sans-serif;padding:.7em 1.2em;border-radius:999px;border:0;background:var(--tinta);color:var(--papel);cursor:pointer;text-decoration:none}
+:root[data-theme="dark"] .btn{background:var(--oro-claro);color:#1d1b18}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .btn{background:var(--oro-claro);color:#1d1b18}}
+.btn.sec{background:transparent;color:inherit;border:1px solid var(--linea)}
+.btn[disabled]{opacity:.5;cursor:default}
+.fila{display:flex;gap:10px;flex-wrap:wrap;margin-top:1.2em}
+.msg{margin-top:1em;min-height:1.4em}.msg.mal{color:var(--mal)}.msg.ok{color:var(--ok)}
+.req{list-style:none;padding:0;margin:1em 0}.req li{padding:.45em 0;border-top:1px solid var(--linea)}.req li:first-child{border-top:0}
+.req b{display:inline-block;min-width:1.4em}
+.nota{font-size:.88rem;color:var(--suave);margin-top:1.4em}
+/* el certificado */
+.hoja{--marfil:#f5edda;--marfil2:#ead9b4;--azul:#1f2747;--sepia:#6b5f4a;--oro-os:#8a6a24;--oro-m:#b8913a;--oro-cl:#e3c983;--grad:linear-gradient(100deg,#7d5e1f 0%,#c9a24b 28%,#f0dc9c 48%,#b68b34 70%,#e0c27a 100%);--grad-txt:linear-gradient(100deg,#6e4f15 0%,#a37a2a 30%,#c79e4a 50%,#9a7226 72%,#7a5a1c 100%);
+  background:radial-gradient(120% 95% at 50% 45%,var(--marfil) 55%,var(--marfil2) 100%);color:var(--azul);aspect-ratio:297/210;width:100%;max-width:1000px;margin:0 auto;position:relative;box-shadow:0 22px 60px rgba(40,30,10,.25);padding:6% 8% 5%;display:flex;flex-direction:column;container-type:inline-size;-webkit-print-color-adjust:exact;print-color-adjust:exact;overflow:hidden}
+.hoja::before{content:"";position:absolute;inset:2%;border:.55cqi solid transparent;border-image:var(--grad) 1;pointer-events:none}
+.hoja::after{content:"";position:absolute;inset:3.3%;border:1px solid rgba(138,106,36,.55);pointer-events:none}
+.h-fondo{position:absolute;inset:0;pointer-events:none;opacity:.07;background:repeating-linear-gradient(45deg,var(--oro-os) 0 1px,transparent 1px 9px),repeating-linear-gradient(-45deg,var(--oro-os) 0 1px,transparent 1px 9px);-webkit-mask:radial-gradient(60% 55% at 50% 50%,transparent 45%,#000 100%);mask:radial-gradient(60% 55% at 50% 50%,transparent 45%,#000 100%)}
+.h-esq{position:absolute;width:1.6cqi;height:1.6cqi;background:var(--grad);transform:rotate(45deg);box-shadow:0 0 0 .35cqi var(--marfil2)}
+.h-esq.a{top:calc(3.3% - .8cqi);left:calc(3.3% - .8cqi)}.h-esq.b{top:calc(3.3% - .8cqi);right:calc(3.3% - .8cqi)}.h-esq.c{bottom:calc(3.3% - .8cqi);left:calc(3.3% - .8cqi)}.h-esq.d{bottom:calc(3.3% - .8cqi);right:calc(3.3% - .8cqi)}
+.oro-txt{background:var(--grad-txt);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+.h-marca{position:relative;display:flex;justify-content:space-between;align-items:baseline;font-size:1.2cqi;letter-spacing:.32em;color:var(--sepia)}
+.h-marca strong{font:600 2.2cqi 'Bodoni Moda',serif;letter-spacing:.24em}
+.h-centro{position:relative;flex:1;display:flex;flex-direction:column;justify-content:center;text-align:center}
+.h-tipo{font:500 3.1cqi/1.1 'Cormorant Garamond','Bodoni Moda',serif;letter-spacing:.06em;margin:0}
+.h-otorga{font:italic 400 1.9cqi 'Cormorant Garamond',serif;color:var(--sepia);margin:1.6cqi 0 .4cqi}
+.h-nombre{font:italic 500 6.4cqi/1.08 'Cormorant Garamond','Bodoni Moda',serif;margin:0;padding:.2em 0;overflow-wrap:anywhere}
+.h-regla{width:42%;height:2px;margin:.8cqi auto 2cqi;background:linear-gradient(90deg,transparent,var(--oro-m) 20%,var(--oro-cl) 50%,var(--oro-m) 80%,transparent)}
+.h-texto{font:400 1.85cqi/1.55 'Cormorant Garamond',serif;color:var(--azul);max-width:76%;margin:0 auto}
+.h-curso{font:600 2.7cqi/1.2 'Bodoni Moda',serif;display:block;margin:.7cqi 0;color:var(--azul)}
+.h-pie{position:relative;display:grid;grid-template-columns:1fr auto 1fr;gap:3cqi;align-items:end;font-size:1.15cqi;color:var(--sepia)}
+.h-firma{border-top:1px solid var(--oro-m);padding-top:.8cqi;color:var(--azul);font-weight:600}
+.h-firma span{display:block;color:var(--sepia);font-weight:400}
+.h-sello{width:10.5cqi;height:10.5cqi;border-radius:50%;display:grid;place-items:center;text-align:center;background:radial-gradient(circle at 35% 30%,#f6e6b0,#c9a24b 55%,#8a6a24 100%);box-shadow:0 0 0 .4cqi var(--marfil),0 0 0 .55cqi var(--oro-m),0 .6cqi 1.4cqi rgba(80,55,10,.3);color:#3b2b0a}
+.h-sello b{display:block;font:600 3.2cqi/1 'Bodoni Moda',serif}
+.h-sello small{display:block;font:600 .85cqi 'Instrument Sans',sans-serif;letter-spacing:.25em;margin-top:.2cqi}
+.h-ver{text-align:right}.h-ver code{font:600 1.4cqi 'Instrument Sans',sans-serif;letter-spacing:.08em;color:var(--azul)}
+.h-legal{position:relative;font-size:1cqi;color:var(--sepia);text-align:center;margin-top:2cqi}
+.revocado{position:absolute;inset:0;display:grid;place-items:center;font:600 8cqi 'Bodoni Moda',serif;color:rgba(155,45,36,.35);transform:rotate(-12deg);pointer-events:none}
+.acciones{max-width:1000px;margin:20px auto 0;display:flex;gap:10px;flex-wrap:wrap;justify-content:space-between;align-items:center}
+.acciones p{margin:0;color:var(--suave);font-size:.92rem}
+@media (max-width:640px){.marco{padding-left:10px;padding-right:10px}}
+@media print{@page{size:A4 landscape;margin:0}body{background:#fff}.top,.acciones,.no-imprimir{display:none!important}.marco{padding:0;max-width:none}.hoja{box-shadow:none;width:297mm;height:210mm;max-width:none;aspect-ratio:auto}}
+</style>
+</head>
+<body>
+<div class="marco">
+  <div class="top no-imprimir"><a href="https://learn.aurzane.com/">AURZANE LEARN</a><a href="https://learn.aurzane.com/#cursos">Ver cursos</a></div>
+  <main id="app" tabindex="-1"><p class="lead">Cargando…</p></main>
+</div>
+<script>
+(function () {
+  var URL_SB = 'https://chtfpqwrrarfdjcivlad.supabase.co', KEY = 'sb_publishable___1v6VjDew0l8uGfMyb9Nw_YyCLTPPw';
+  var app = document.getElementById('app'), q = new URLSearchParams(location.search);
+  var esc = function (s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); };
+  var sb = window.crearClienteAurzaneID ? window.crearClienteAurzaneID(URL_SB, KEY) : window.supabase.createClient(URL_SB, KEY);
+  var fecha = function (d) { try { return new Date(d).toLocaleDateString('es-ES', { day: 'numeric', month: 'long', year: 'numeric' }); } catch (e) { return d; } };
+  var horas = function (h) { var n = Number(h); return (n % 1 ? n.toLocaleString('es-ES') : n) + (n === 1 ? ' hora' : ' horas'); };
+
+  function vBuscar(aviso) {
+    document.title = 'Verificar un certificado · AURZANE LEARN';
+    app.innerHTML = '<div class="panel"><h1>Verificar un certificado</h1><p class="lead">Escribe el código que aparece en el certificado (empieza por AZ-) para comprobar que lo emitió AURZANE.</p>' +
+      '<form id="f"><label for="cod">Código del certificado</label><input type="text" id="cod" autocomplete="off" placeholder="AZ-XXXX-XXXX-XXXX" required>' +
+      '<div class="fila"><button class="btn" type="submit">Comprobar</button></div><p class="msg mal" role="alert">' + esc(aviso || '') + '</p></form>' +
+      '<p class="nota">Los certificados de AURZANE LEARN acreditan el aprovechamiento de un curso libre. Son formación no reglada y no tienen validez académica oficial.</p></div>';
+    document.getElementById('f').addEventListener('submit', function (e) { e.preventDefault(); location.search = '?c=' + encodeURIComponent(document.getElementById('cod').value.trim().toUpperCase()); });
+  }
+
+  function vCertificado(c) {
+    var url = 'https://learn.aurzane.com/certificado/?c=' + c.codigo;
+    document.title = 'Certificado de ' + c.nombre + ' · AURZANE LEARN';
+    app.innerHTML = '<p class="no-imprimir msg ' + (c.revocado ? 'mal' : 'ok') + '" style="text-align:center;margin:0 0 16px">' +
+      (c.revocado ? 'Este certificado fue anulado y ya no es válido.' : 'Certificado válido, emitido por AURZANE el ' + esc(fecha(c.emitido)) + '.') + '</p>' +
+      '<article class="hoja" aria-label="Certificado"><div class="h-fondo" aria-hidden="true"></div><i class="h-esq a"></i><i class="h-esq b"></i><i class="h-esq c"></i><i class="h-esq d"></i>' +
+      '<div class="h-marca"><strong class="oro-txt">AURZANE</strong><span>LEARN</span></div>' +
+      '<div class="h-centro"><p class="h-tipo oro-txt">Certificado de aprovechamiento</p><p class="h-otorga">AURZANE certifica que</p>' +
+      '<h1 class="h-nombre oro-txt">' + esc(c.nombre) + '</h1><div class="h-regla" aria-hidden="true"></div>' +
+      '<p class="h-texto">ha completado el curso<span class="h-curso">' + esc(c.curso) + '</span>con una dedicación estimada de ' + esc(horas(c.horas)) +
+      ' y ha superado la evaluación final con una nota del ' + esc(c.nota) + ' %.</p></div>' +
+      '<div class="h-pie"><div class="h-firma">Psi. Cl. Adrián Sánchez Samaniego<span>Responsable académico de AURZANE · Psicólogo clínico, registro SENESCYT 1033-2023-2618464</span></div>' +
+      '<div class="h-sello" aria-hidden="true"><span><b>A</b><small>LEARN</small></span></div>' +
+      '<div class="h-ver">Emitido el ' + esc(fecha(c.emitido)) + '<br>Código <code>' + esc(c.codigo) + '</code><br>Verificación: learn.aurzane.com/certificado</div></div>' +
+      '<p class="h-legal">Formación libre y no reglada. Este certificado acredita la superación de un curso de AURZANE LEARN y no constituye un título académico ni profesional oficial.</p>' +
+      (c.revocado ? '<div class="revocado" aria-hidden="true">ANULADO</div>' : '') + '</article>' +
+      '<div class="acciones no-imprimir"><p>Para guardarlo en PDF, pulsa «Imprimir» y elige «Guardar como PDF», en horizontal.</p>' +
+      '<div class="fila" style="margin:0"><button class="btn" id="imp" type="button">Imprimir o guardar en PDF</button><button class="btn sec" id="cop" type="button">Copiar enlace de verificación</button></div></div>';
+    document.getElementById('imp').addEventListener('click', function () { window.print(); });
+    document.getElementById('cop').addEventListener('click', function (e) {
+      var b = e.currentTarget; (navigator.clipboard ? navigator.clipboard.writeText(url) : Promise.reject()).then(function () { b.textContent = 'Enlace copiado'; }, function () { prompt('Copia este enlace:', url); });
+    });
+  }
+
+  function vEmitir(slug, st, titulo) {
+    document.title = 'Tu certificado · AURZANE LEARN';
+    if (!st.sesion) {
+      app.innerHTML = '<div class="panel"><h1>Tu certificado</h1><p class="lead">Inicia sesión con tu cuenta de AURZANE ID para ver si ya puedes obtener el certificado de este curso.</p>' +
+        '<div class="fila"><a class="btn" href="https://aurzane.com/mi-aurzane.html?next=' + encodeURIComponent(location.href) + '">Iniciar sesión</a></div></div>';
+      return;
+    }
+    if (st.codigo) { location.replace('?c=' + encodeURIComponent(st.codigo)); return; }
+    var min = Math.round((st.nota_minima || 0.8) * 100), nota = st.mejor_nota == null ? null : Math.round(st.mejor_nota * 100);
+    var lecOk = st.visitadas >= Math.ceil(st.lecciones * 0.8), notaOk = nota != null && nota >= min;
+    var volver = 'https://learn.aurzane.com/cursos.html?c=' + encodeURIComponent(slug);
+    var req = '<ul class="req"><li><b>' + (lecOk ? '✓' : '·') + '</b> Abrir al menos el 80 % de las lecciones: llevas ' + st.visitadas + ' de ' + st.lecciones + '.</li>' +
+      '<li><b>' + (notaOk ? '✓' : '·') + '</b> Aprobar la evaluación final completa, en modo examen, con un ' + min + ' % o más: ' + (nota == null ? 'todavía no la has hecho.' : 'tu mejor nota es ' + nota + ' %.') + '</li></ul>';
+    if (!st.listo) {
+      app.innerHTML = '<div class="panel"><h1>Tu certificado</h1><p class="lead">' + esc(titulo) + '</p><p>Para obtenerlo necesitas:</p>' + req +
+        '<div class="fila"><a class="btn" href="' + volver + '">Volver al curso</a></div>' +
+        '<p class="nota">El certificado es gratuito. Acredita el aprovechamiento de un curso libre de AURZANE (formación no reglada, sin validez académica oficial).</p></div>';
+      return;
+    }
+    app.innerHTML = '<div class="panel"><h1>¡Ya puedes obtener tu certificado!</h1><p class="lead">' + esc(titulo) + '</p>' + req +
+      '<form id="f"><label for="nom">Tu nombre y apellidos, tal como quieres que aparezcan</label><input type="text" id="nom" autocomplete="name" maxlength="120" required>' +
+      '<label class="check"><input type="checkbox" id="conf" required> He revisado mi nombre. Sé que después no se puede cambiar.</label>' +
+      '<div class="fila"><button class="btn" type="submit" id="emi">Obtener mi certificado</button></div><p class="msg mal" id="msg" role="alert"></p></form>' +
+      '<p class="nota">Tu nombre, el curso, la nota y la fecha se podrán ver con el código del certificado, para que cualquiera pueda comprobarlo. Más información en la <a href="https://aurzane.com/privacidad.html">política de privacidad</a>.</p></div>';
+    document.getElementById('f').addEventListener('submit', function (e) {
+      e.preventDefault(); var b = document.getElementById('emi'); b.disabled = true;
+      sb.rpc('course_issue_certificate', { p_course: slug, p_nombre: document.getElementById('nom').value }).then(function (r) {
+        if (r.error) { document.getElementById('msg').textContent = r.error.message; b.disabled = false; return; }
+        location.replace('?c=' + encodeURIComponent(r.data.codigo));
+      });
+    });
+  }
+
+  var codigo = (q.get('c') || '').trim().toUpperCase(), curso = q.get('curso');
+  if (codigo) {
+    sb.rpc('course_verify_certificate', { p_codigo: codigo }).then(function (r) {
+      if (r.error || !r.data) return vBuscar('No hay ningún certificado con el código ' + codigo + '. Revisa que esté bien escrito.');
+      vCertificado(r.data);
+    });
+  } else if (curso) {
+    Promise.all([sb.rpc('course_certificate_status', { p_course: curso }), sb.from('course_courses').select('titulo').eq('slug', curso).maybeSingle()]).then(function (rs) {
+      var st = rs[0].data, t = rs[1].data;
+      if (rs[0].error || !st) return vBuscar('No encontramos ese curso.');
+      if (!st.certificable) { app.innerHTML = '<div class="panel"><h1>Este curso no tiene certificado</h1><p class="lead">Es un curso libre de estudio. Puedes seguir usándolo gratis sin límite.</p><div class="fila"><a class="btn" href="https://learn.aurzane.com/cursos.html?c=' + encodeURIComponent(curso) + '">Volver al curso</a></div></div>'; return; }
+      vEmitir(curso, st, t ? t.titulo : '');
+    });
+  } else vBuscar('');
+})();
+</script>
+</body>
+</html>
