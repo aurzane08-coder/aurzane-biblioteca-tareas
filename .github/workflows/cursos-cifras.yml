@@ -35,8 +35,8 @@ jobs:
           if [ -n "$SG_PASS" ]; then ssh-keygen -p -P "$SG_PASS" -N "" -f ~/.ssh/id >/dev/null; fi
           echo "SSH=ssh -i $HOME/.ssh/id -p ${SG_PORT:-18765} -o StrictHostKeyChecking=accept-new" >> $GITHUB_ENV
           echo "SG_DEST=$SG_USER@$SG_HOST" >> $GITHUB_ENV
-      - name: Cursos (catálogo, páginas, títulos y revisión)
-        run: python3 -u cursos/catalogo.py
+      - name: Cursos (catálogo, páginas, portadas reales, títulos y revisión)
+        run: pip install -q pillow 2>/dev/null || pip install -q --break-system-packages pillow; python3 -u cursos/catalogo.py
       - name: Artículos de cada mundo dentro de la página
         run: python3 -u mundos/prerender.py
       - name: Cifras reales en la web

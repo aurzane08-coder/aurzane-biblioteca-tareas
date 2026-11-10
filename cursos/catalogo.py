@@ -71,6 +71,59 @@ def sugerencias(q):
     return list(dict.fromkeys(out))[:20]
 
 
+
+# ---------- portadas: siempre fotos reales de Wikimedia Commons con licencia libre ----------
+LIC_OK = re.compile(r'^(CC BY(-SA)? [0-9.]+|CC0|Public domain|PD.*|Dominio público)', re.I)
+NO_FOTO = re.compile(r'logo|map\b|mapa|diagram|chart|icon|svg|drawing|illustration|ilustraci|clipart|cartoon|scheme|esquema|ai[- ]generated|midjourney|dall', re.I)
+
+
+def commons(q):
+    u = 'https://commons.wikimedia.org/w/api.php?' + urllib.parse.urlencode({'action': 'query', 'format': 'json', 'generator': 'search', 'gsrnamespace': 6,
+        'gsrsearch': q + ' filetype:bitmap', 'gsrlimit': 30, 'prop': 'imageinfo', 'iiprop': 'url|size|mime|extmetadata', 'iiurlwidth': 1600})
+    with urllib.request.urlopen(urllib.request.Request(u, headers={'User-Agent': 'AURZANE-cursos/1.0 (hola@aurzane.com)'}), timeout=60) as r:
+        pags = (json.load(r).get('query') or {}).get('pages', {}).values()
+    out = []
+    for pg in pags:
+        ii = (pg.get('imageinfo') or [{}])[0]; md = ii.get('extmetadata') or {}
+        lic = (md.get('LicenseShortName') or {}).get('value', '')
+        w, h = ii.get('width', 0), ii.get('height', 0)
+        if not LIC_OK.match(lic) or w < 1400 or not h or not 1.25 <= w / h <= 2.2 or ii.get('mime') not in ('image/jpeg', 'image/png') or NO_FOTO.search(pg.get('title', '')): continue
+        autor = re.sub(r'<[^>]+>', '', (md.get('Artist') or {}).get('value', '')).strip()[:120] or 'Autor desconocido'
+        desc = re.sub(r'<[^>]+>', '', (md.get('ImageDescription') or {}).get('value', ''))[:200]
+        out.append({'titulo': pg['title'], 'desc': desc, 'autor': autor, 'licencia': lic, 'pagina': ii.get('descriptionurl'), 'url': ii.get('thumburl') or ii.get('url')})
+    return out
+
+
+def portada_web(c):
+    """Elige y descarga una foto real para el curso si todavía no tiene una de la web. Devuelve True si cambió."""
+    mt = meta.setdefault(c['slug'], {})
+    if (mt.get('portada_credito') or {}).get('pagina'): return False
+    cand = []
+    for q in (mt.get('portada_busqueda') or (mt.get('etiquetas') or [c['titulo']])[:2]):
+        try: cand += commons(q)
+        except Exception as e: print('commons', q, str(e)[:80])
+    cand = list({x['titulo']: x for x in cand}.values())[:24]
+    if not cand: print('sin foto libre para', c['slug']); return False
+    r = ia('Elige la mejor foto de portada para un curso online en español. Curso: «' + c['titulo'] + '». ' + (c.get('subtitulo') or '') +
+           '. Debe ser una fotografía real, profesional, sin texto ni logotipos, sin personas en situación vulnerable o angustiosa, adecuada como portada. '
+           'Candidatas (índice: título · descripción):\n' + '\n'.join(f'{i}: {x["titulo"]} · {x["desc"]}' for i, x in enumerate(cand)) +
+           '\nJSON: {"indice": número, "alt": "descripción breve de la foto en español (máx. 120 caracteres)"}')
+    i = r.get('indice') if isinstance(r, dict) else 0
+    x = cand[i if isinstance(i, int) and 0 <= i < len(cand) else 0]
+    from PIL import Image
+    with urllib.request.urlopen(urllib.request.Request(x['url'], headers={'User-Agent': 'AURZANE-cursos/1.0 (hola@aurzane.com)'}), timeout=120) as resp:
+        im = Image.open(io.BytesIO(resp.read())).convert('RGB')
+    W, H = im.size; obj = 16 / 9
+    if W / H > obj: nw = int(H * obj); im = im.crop(((W - nw) // 2, 0, (W - nw) // 2 + nw, H))
+    else: nh = int(W / obj); im = im.crop((0, (H - nh) // 2, W, (H - nh) // 2 + nh))
+    im = im.resize((1200, 675), Image.LANCZOS)
+    nombre = mt.get('portada') or f'portada-{c["slug"]}.webp'
+    p = os.path.join(OUT, 'cursos', nombre); os.makedirs(os.path.dirname(p), exist_ok=True); im.save(p, 'WEBP', quality=82)
+    mt['portada'] = nombre
+    mt['portada_credito'] = {'autor': x['autor'], 'licencia': x['licencia'], 'pagina': x['pagina'], 'titulo': x['titulo'], 'alt': (r or {}).get('alt') if isinstance(r, dict) else '', 'fecha': HOY}
+    print('portada real', c['slug'], '·', x['titulo'], '·', x['licencia'])
+    return True
+
 # ---------- 1. datos ----------
 rq = urllib.request.Request(f'{SB}/rest/v1/rpc/course_catalog_public', data=b'{}', headers={'apikey': KEY, 'Content-Type': 'application/json'})
 with urllib.request.urlopen(rq, timeout=60) as r: cursos = json.load(r)
@@ -90,6 +143,9 @@ for c in cursos:
         if r and r.get('area') in AREAS:
             mt = dict(mt or {}, **{k: r[k] for k in ('area', 'publico', 'etiquetas') if k in r}); meta[c['slug']] = mt
     c['meta'] = mt or {'area': 'Estudio y aprendizaje', 'publico': '', 'etiquetas': []}
+    try: portada_web(c)
+    except Exception as e: print('portada', c['slug'], str(e)[:120])
+    c['meta'] = meta.get(c['slug'], c['meta'])
 
     # ---------- 2. revisión de funcionamiento ----------
     prob = []
@@ -192,7 +248,7 @@ for c in cursos:
           f'<span class="chip">{len(c["modulos"])} temas · {c["n_lec"]} lecciones</span><span class="chip">{c["n_preg"]} preguntas</span><span class="chip">Gratis</span>'
           + ('<span class="chip oro">Con certificado</span>' if c.get('certificable') else '') + '</div>'
           f'<a class="btn" href="https://learn.aurzane.com/cursos.html?c={c["slug"]}">Empezar el curso</a> <a class="btn sec" href="#temario">Ver el temario</a></div>'
-          f'<img src="{portada(c)}" alt="" width="1200" height="675"></div>'
+          f'<img src="{portada(c)}" alt="{E((c["meta"].get("portada_credito") or {}).get("alt") or "")}" width="1200" height="675"></div>'
           f'<div class="caja"><h2 style="margin-top:0">Sobre este curso</h2><p>{E(c.get("descripcion") or "")}</p>'
           + (f'<p><strong>A quién va dirigido:</strong> {E(c["meta"].get("publico"))}</p>' if c['meta'].get('publico') else '') + '</div>'
           + (f'<h2>Lo que aprenderás</h2><ul>{objetivos}</ul>' if objetivos else '')
@@ -202,6 +258,7 @@ for c in cursos:
              'Es formación libre y no reglada, sin validez académica oficial. <a href="https://learn.aurzane.com/certificado/">Verificar un certificado</a></p></div>' if c.get('certificable') else '')
           + f'<h2>Cómo funciona</h2><p>Cada tema incluye lecciones, mapa conceptual, esquema, tarjetas de repaso, la técnica de Feynman y un test. Solo necesitas una cuenta gratuita de AURZANE ID para guardar tu progreso.</p>'
           + f'<p class="fuentes"><strong>Fuentes y autoría:</strong> {E(c.get("nota_fuentes") or "")}</p>'
+          + ((lambda k: f'<p class="fuentes"><strong>Imagen de portada:</strong> {E(k["autor"])}, <a href="{E(k["pagina"])}" rel="noopener">Wikimedia Commons</a>, {E(k["licencia"])}.</p>' if k else '')(c['meta'].get('portada_credito')))
           + f'<p><a class="btn" href="https://learn.aurzane.com/cursos.html?c={c["slug"]}">Empezar el curso gratis</a></p></main></div>' + PIE)
     ficheros[f'curso/{c["slug"]}/index.html'] = pg
 

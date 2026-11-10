@@ -11,6 +11,12 @@
    "relajación",
    "ataques de pánico",
    "terapia cognitivo conductual"
+  ],
+  "portada": "portada-ansiedad.webp",
+  "portada_busqueda": [
+   "meditation nature calm",
+   "woman meditating outdoors",
+   "relaxation breathing lake"
   ]
  },
  "neuroanatomia-funcional": {
@@ -25,6 +31,12 @@
    "corteza cerebral",
    "neurociencia",
    "anatomía"
+  ],
+  "portada": "portada-neuro.webp",
+  "portada_busqueda": [
+   "spinal cord cross section histology",
+   "human brain anatomy specimen",
+   "neurons microscopy"
   ]
  },
  "tecnicas-neurociencias": {
@@ -39,6 +51,12 @@
    "electrofisiología",
    "investigación",
    "neurociencia"
+  ],
+  "portada": "portada-metodologia.webp",
+  "portada_busqueda": [
+   "brain organoid fluorescence",
+   "neuroscience laboratory microscope",
+   "optogenetics neuron"
   ]
  }
 }
