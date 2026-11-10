@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<script>
+  // Observabilidad de errores frontend (Fase 8-9 P1, ver observabilidad_errores_setup.sql).
+  // Se registra ANTES que cualquier otro script (incluido el SDK de Supabase) para
+  // no perderse errores tempranos; si todavía no existe un cliente listo, los junta
+  // en un buffer y los manda apenas el cliente de esta página se crea más abajo.
+  // Nunca incluye datos de usuario -- solo la ruta de la página y un mensaje genérico.
+  window.__aurzaneErrBuf = [];
+  window.__aurzaneLogErr = function(msg){
+    var entry = { pagina: location.pathname, mensaje: String(msg == null ? 'Error desconocido' : msg).slice(0,300) };
+    if(window.__aurzaneSb && window.__aurzaneSb.from){
+      window.__aurzaneSb.from('frontend_error_log').insert(entry).then(function(){}, function(){});
+    } else {
+      window.__aurzaneErrBuf.push(entry);
+    }
+  };
+  window.addEventListener('error', function(e){ window.__aurzaneLogErr(e && e.message); });
+  window.addEventListener('unhandledrejection', function(e){
+    var r = e && e.reason;
+    window.__aurzaneLogErr((r && r.message) || (r == null ? null : String(r)) || 'Promise rechazada');
+  });
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://aurzane.com/aurzane-paleta.js"></script>
+<title>Research Hub | AURZANE</title>
+<meta name="description" content="Un solo buscador para las cinco bibliotecas académicas de AURZANE: 25.000 artículos científicos de acceso abierto de Mind, Nexus, Live, Learn y Build, con abstract y fuente citable.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;1,6..96,400;1,6..96,500&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#080B17; --navy-2:#0F1530; --navy-3:#151C3D; --navy-4:#1E2650;
+    --gold:#C9A24B; --gold-light:#EACF92; --bronze:#8A6A28;
+    --silver:#C7CDD6; --silver-dim:#8B92A0; --bone:#F5F3EE;
+    --line:rgba(199,205,214,0.13); --line-strong:rgba(201,162,75,0.38);
+    --mind:#D2AC57; --nexus:#8A9CF0; --live:#D19696; --learn:#72ADBD; --build:#BC875A;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--navy);color:var(--bone);font-family:'Instrument Sans',sans-serif;line-height:1.6;min-height:100vh;}
+  h1,h2,h3{font-family:'Bodoni Moda',serif;font-weight:500;}
+  .mono{font-family:'Bodoni Moda',serif;font-style:italic;font-weight:500;}
+  a{color:inherit;}
+
+  .topbar{position:sticky;top:0;z-index:20;background:rgba(8,11,23,0.92);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);padding:18px 5vw;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;}
+  .brand{font-family:'Bodoni Moda',serif;font-size:1.05rem;letter-spacing:0.06em;text-decoration:none;}
+  .brand span{color:var(--gold);}
+  .topbar nav{display:flex;gap:22px;align-items:center;}
+  .topbar nav a{font-family:'Bodoni Moda',serif;font-size:0.75rem;color:var(--silver-dim);text-decoration:none;letter-spacing:0.03em;}
+  .topbar nav a:hover, .topbar nav a.active{color:var(--gold-light);}
+
+  .hero{max-width:900px;margin:0 auto;padding:7vh 6vw 4vh;text-align:center;}
+  .eyebrow{font-family:'Bodoni Moda',serif;font-style:italic;font-weight:500;color:var(--gold);font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;}
+  .hero h1{font-size:clamp(1.8rem,4vw,2.6rem);margin:14px 0 12px;}
+  .hero h1 span{color:var(--gold-light);}
+  .hero p{color:var(--silver);font-size:0.95rem;max-width:62ch;margin:0 auto;}
+  .hero .stat{font-family:'Bodoni Moda',serif;font-size:0.78rem;color:var(--gold-light);margin-top:14px;}
+
+  .search-wrap{max-width:680px;margin:30px auto 0;padding:0 6vw;}
+  .search-box{display:flex;align-items:center;gap:10px;background:var(--navy-2);border:1px solid var(--line-strong);
+    border-radius:30px;padding:13px 22px;}
+  .search-box svg{flex-shrink:0;opacity:0.6;}
+  .search-box input{flex:1;background:none;border:none;outline:none;color:var(--bone);font-family:'Instrument Sans',sans-serif;font-size:0.94rem;}
+  .search-box input:focus-visible{outline:2px solid var(--gold-light);}
+  .search-box input::placeholder{color:var(--silver-dim);}
+  .search-hint{text-align:center;font-family:'Bodoni Moda',serif;font-size:0.68rem;color:var(--silver-dim);margin-top:10px;}
+
+  .filters{max-width:760px;margin:20px auto 0;padding:0 6vw;display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
+  .chip{font-family:'Bodoni Moda',serif;font-size:0.72rem;padding:7px 16px;border-radius:20px;
+    border:1px solid var(--line-strong);color:var(--silver);cursor:pointer;background:transparent;transition:all .2s;}
+  .chip:hover{border-color:var(--gold-light);color:var(--gold-light);}
+  .chip.active{background:var(--gold);color:var(--navy);border-color:var(--gold);font-weight:700;}
+  .chip[data-mundo]{border-color:var(--chip-c, var(--line-strong));}
+  .chip[data-mundo].active{background:var(--chip-c, var(--gold));border-color:var(--chip-c, var(--gold));}
+  .chip-dot{width:7px;height:7px;border-radius:50%;background:var(--chip-c, var(--gold));display:inline-block;margin-right:7px;vertical-align:middle;}
+  .chip.active .chip-dot{background:var(--navy);}
+
+  .wrap{max-width:820px;margin:0 auto;padding:5vh 6vw 8vh;}
+  .result-count{font-family:'Bodoni Moda',serif;font-size:0.72rem;color:var(--silver-dim);margin-bottom:20px;}
+
+  .paper{border:1px solid var(--line);border-left:2px solid var(--mundo-c, var(--line));border-radius:3px;padding:22px 24px;margin-bottom:14px;background:rgba(255,255,255,0.01);}
+  .paper-meta{font-family:'Bodoni Moda',serif;font-size:0.68rem;color:var(--silver-dim);margin-bottom:8px;display:flex;gap:10px;flex-wrap:wrap;align-items:center;}
+  .badge-mundo{color:var(--mundo-c, var(--gold-light));border:1px solid var(--mundo-c, var(--line-strong));border-radius:10px;padding:2px 10px;text-transform:uppercase;letter-spacing:0.05em;}
+  .badge-oa{color:var(--gold-light);border:1px solid var(--line-strong);border-radius:10px;padding:2px 9px;}
+  .paper h3{font-size:1.02rem;line-height:1.4;margin-bottom:8px;}
+  .paper .autores{font-size:0.82rem;color:var(--silver);margin-bottom:10px;}
+  .paper .abstract{font-size:0.87rem;color:var(--silver);max-height:4.8em;overflow:hidden;position:relative;}
+  .paper .abstract.expanded{max-height:none;}
+  .paper .toggle-abs{font-family:'Bodoni Moda',serif;font-size:0.72rem;color:var(--gold-light);background:none;border:none;cursor:pointer;
+    margin-top:8px;padding:0;text-decoration:underline;text-underline-offset:3px;}
+  .paper .paper-foot{margin-top:14px;padding-top:12px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;}
+  .paper .paper-foot a{font-family:'Bodoni Moda',serif;font-size:0.74rem;color:var(--gold-light);text-decoration:none;}
+  .paper .paper-foot a:hover{text-decoration:underline;}
+
+  .load-more{display:block;margin:30px auto 0;background:transparent;border:1px solid var(--line-strong);color:var(--gold-light);
+    padding:12px 28px;border-radius:2px;font-family:'Bodoni Moda',serif;font-size:0.82rem;cursor:pointer;}
+  .load-more:hover{background:var(--gold);color:var(--navy);}
+  .load-more:disabled{opacity:0.4;cursor:default;}
+
+  .empty-state, .load-state{max-width:520px;margin:10vh auto;text-align:center;padding:0 20px;color:var(--silver);}
+  .spinner{width:28px;height:28px;border:2px solid var(--line);border-top-color:var(--gold);border-radius:50%;
+    animation:spin 0.8s linear infinite;margin:0 auto 20px;}
+  @keyframes spin{to{transform:rotate(360deg);}}
+
+  footer{border-top:1px solid var(--line);padding:34px 6vw;text-align:center;}
+  footer p{font-size:0.76rem;color:var(--silver-dim);max-width:640px;margin:0 auto;}
+
+  .sugerencias{max-width:760px;margin:16px auto 0;padding:0 6vw;display:flex;gap:8px;justify-content:center;flex-wrap:wrap;align-items:center;}
+  .sugerencias .lbl{font-size:0.72rem;color:var(--silver-dim);margin-right:4px;}
+  a.chip{text-decoration:none;display:inline-block;}
+  a.chip small{color:var(--silver-dim);margin-left:6px;}
+  .nota-oa{text-align:center;padding:0 6vw;font-size:0.72rem;color:var(--silver-dim);margin-top:12px;}
+  .nota-oa b{color:var(--gold-light);font-weight:600;}
+  .traduccion{font-size:0.74rem;color:var(--silver-dim);margin:-6px 0 14px;}
+  .aviso-error{margin-top:14px;text-align:center;font-size:0.8rem;color:var(--silver-dim);}
+  .btn-sec{margin-top:14px;font-family:inherit;font-size:0.78rem;padding:8px 18px;border-radius:20px;border:1px solid var(--line-strong);background:transparent;color:var(--gold-light);cursor:pointer;}
+  .empty-state .sugerencias{padding:0;margin-top:16px;}
+</style>
+<meta name="google-adsense-account" content="ca-pub-8763758728010451">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8763758728010451" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div class="topbar" data-nosnippet>
+  <a href="https://aurzane.com" class="brand">AUR<span>Z</span>ANE <span class="mono" style="font-size:0.7rem;color:var(--silver-dim);">/ RESEARCH HUB</span></a>
+  <nav>
+    <a href="https://aurzane.com">Inicio</a>
+    <a href="https://aurzane.com/#research">Cómo trabajamos</a>
+    <a href="#" class="active">Research Hub</a>
+  </nav>
+</div>
+
+<div class="hero">
+  <span class="eyebrow">Índice académico unificado</span>
+  <h1>Un solo buscador para <span>toda la investigación de AURZANE</span></h1>
+  <p>Las cinco bibliotecas académicas de AURZANE (Mind, Nexus, Live, Learn y Build) en un solo lugar: título, resumen oficial y enlace directo a la fuente de cada paper, sin tener que saber de antemano en qué mundo buscar.</p>
+  <div class="stat mono" id="totalStat"><!--az-pre--><!--/az-pre--></div>
+</div>
+
+<div class="search-wrap">
+  <div class="search-box">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+    <input id="searchInput" type="search" aria-label="Buscar papers" placeholder="Busca por tema, autor o palabra clave">
+  </div>
+  <p class="search-hint">Los papers están en su idioma original, casi siempre inglés. Si buscas en español, también buscamos la traducción.</p>
+</div>
+
+<div class="filters" id="worldFilters">
+  <button class="chip active" data-mundo="todos">Todos</button>
+  <button class="chip" data-mundo="mind" style="--chip-c:var(--mind);"><span class="chip-dot"></span>Mind</button>
+  <button class="chip" data-mundo="nexus" style="--chip-c:var(--nexus);"><span class="chip-dot"></span>Nexus</button>
+  <button class="chip" data-mundo="live" style="--chip-c:var(--live);"><span class="chip-dot"></span>Live</button>
+  <button class="chip" data-mundo="learn" style="--chip-c:var(--learn);"><span class="chip-dot"></span>Learn</button>
+  <button class="chip" data-mundo="build" style="--chip-c:var(--build);"><span class="chip-dot"></span>Build</button>
+</div>
+<div class="filters" id="filters" aria-label="Año de publicación">
+  <button class="chip active" data-desde="">Cualquier año</button>
+  <button class="chip" data-desde="2025">Desde 2025</button>
+  <button class="chip" data-desde="2023">Desde 2023</button>
+</div>
+<p class="nota-oa" id="oaNota"><!--az-pre--><!--/az-pre--></p>
+<div class="sugerencias" id="sugerencias"><!--az-pre--><!--/az-pre--></div>
+
+<div class="wrap">
+  <div id="loadState" class="load-state" style="display:none;">
+    <div class="spinner"></div>
+    <p class="mono" style="font-size:0.8rem;color:var(--silver-dim);"></p>
+  </div>
+  <div id="resultsArea">
+    <div class="result-count mono" id="resultCount"><!--az-pre--><!--/az-pre--></div>
+    <div class="traduccion" id="traduccion" style="display:none;"></div>
+    <div id="list" data-total=""><!--az-pre--><!--/az-pre--></div>
+    <button class="load-more" id="loadMoreBtn">Cargar más</button>
+    <div class="aviso-error" id="avisoError" style="display:none;"></div>
+  </div>
+  <div id="emptyState" class="empty-state" style="display:none;"></div>
+</div>
+
+<footer>
+  <p>Este Research Hub muestra el título y el abstract oficial de cada paper tal como se publicó, sin reescritura. Es un índice de referencia, no contenido editorial de AURZANE. Cada resultado enlaza a la fuente original. Si prefieres explorar un mundo a la vez, cada uno tiene su propia biblioteca: <a href="https://mind.aurzane.com/mind-biblioteca.html" style="color:var(--gold-light);">Mind</a>, <a href="https://nexus.aurzane.com/nexus-biblioteca.html" style="color:var(--gold-light);">Nexus</a>, <a href="https://live.aurzane.com/live-biblioteca.html" style="color:var(--gold-light);">Live</a>, <a href="https://learn.aurzane.com/learn-biblioteca.html" style="color:var(--gold-light);">Learn</a>, <a href="https://build.aurzane.com/build-biblioteca.html" style="color:var(--gold-light);">Build</a>.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+<script>
+const SUPABASE_URL = 'https://chtfpqwrrarfdjcivlad.supabase.co';
+const SUPABASE_KEY = 'sb_publishable___1v6VjDew0l8uGfMyb9Nw_YyCLTPPw';
+const sb = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+  window.__aurzaneSb = sb;
+
+
+  if(window.__aurzaneErrBuf.length){ window.__aurzaneErrBuf.forEach(function(en){ sb.from('frontend_error_log').insert(en).then(function(){}, function(){}); }); window.__aurzaneErrBuf.length = 0; }
+
+
+// Research Hub: novedades de los cinco mundos al entrar, búsqueda (también en español), filtros por mundo y año, «Cargar más».
+// Las primeras tarjetas vienen ya escritas en el HTML (research/prerender.py, cada día) para que nunca se vea vacío.
+const TABLA = 'biblioteca_unificada';
+const SEL = 'id,mundo,titulo,abstract,autores,anio,licencia,es_acceso_abierto,url_articulo,doi';
+const MUNDOS = ['mind','nexus','live','learn','build'];
+const MUNDO_LABEL = {mind:'Mind', nexus:'Nexus', live:'Live', learn:'Learn', build:'Build'};
+const MUNDO_COLOR_VAR = {mind:'--mind', nexus:'--nexus', live:'--live', learn:'--learn', build:'--build'};
+const POR_MUNDO = 4, PAGE_SIZE = 20;
+const $ = id => document.getElementById(id);
+const TOTAL = Number($('list').dataset.total) || null;
+
+// Español → inglés: los papers están en inglés; si se busca en español también se busca la traducción.
+const ES_EN = {'ansiedad':'anxiety','estres':'stress','depresion':'depression','salud mental':'mental health','sueno':'sleep','insomnio':'insomnia',
+ 'memoria':'memory','cerebro':'brain','emociones':'emotions','emocion':'emotion','autoestima':'self-esteem','trauma':'trauma','duelo':'grief','adolescentes':'adolescents',
+ 'ninos':'children','infancia':'childhood','familia':'family','pareja':'couple','soledad':'loneliness','felicidad':'happiness','bienestar':'well-being','resiliencia':'resilience',
+ 'atencion plena':'mindfulness','meditacion':'meditation','terapia':'therapy','psicoterapia':'psychotherapy','adiccion':'addiction','alcohol':'alcohol','tabaco':'smoking',
+ 'suicidio':'suicide','autismo':'autism','tdah':'ADHD','demencia':'dementia','alzheimer':'Alzheimer','envejecimiento':'aging','personalidad':'personality',
+ 'nutricion':'nutrition','dieta':'diet','obesidad':'obesity','ejercicio':'exercise','deporte':'sport','actividad fisica':'physical activity','dolor':'pain',
+ 'educacion':'education','aprendizaje':'learning','escuela':'school','universidad':'university','estudiantes':'students','docentes':'teachers','lectura':'reading',
+ 'inteligencia artificial':'artificial intelligence','aprendizaje automatico':'machine learning','programacion':'programming','ciberseguridad':'cybersecurity','robotica':'robotics',
+ 'clima':'climate','cambio climatico':'climate change','energia':'energy','sostenibilidad':'sustainability','ciudad':'city','vivienda':'housing','agua':'water',
+ 'economia':'economics','empleo':'employment','trabajo':'work','pobreza':'poverty','desigualdad':'inequality','migracion':'migration','genero':'gender','mujeres':'women',
+ 'historia':'history','arqueologia':'archaeology','antiguo egipto':'ancient Egypt','roma':'Rome','filosofia':'philosophy','etica':'ethics','religion':'religion','arte':'art','musica':'music',
+ 'redes sociales':'social media','pantallas':'screen time','videojuegos':'video games','covid':'COVID-19','pandemia':'pandemic','cancer':'cancer','diabetes':'diabetes','corazon':'heart'};
+const sinTildes = s => s.normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase().trim();
+function expandir(q){
+  const k = sinTildes(q).replace(/\s+/g,' ');
+  let en = ES_EN[k];
+  if(!en){ const w = k.split(' '); if(w.length > 1 && w.every(x => ES_EN[x])) en = w.map(x => ES_EN[x]).join(' '); }
+  return en && en.toLowerCase() !== k ? { consulta: `"${q.replace(/"/g,'')}" or "${en}"`, en } : { consulta: q, en: null };
+}
+
+let estado = { q:'', mundo:'todos', desde:null };
+let pagina = 0, mostrados = 0, total = TOTAL, peticion = 0;
+
+const esc = s => (s == null ? '' : String(s)).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function urlSegura(u){ try{ const p = new URL(u, location.href); return (p.protocol === 'http:' || p.protocol === 'https:') ? p.href : '#'; }catch(e){ return '#'; } }
+const num = n => Number(n).toLocaleString('es');
+
+function tarjeta(p){
+  const abs = p.abstract ? esc(p.abstract) : '<em style="color:var(--silver-dim);">Sin resumen disponible.</em>';
+  const autores = p.autores ? esc(p.autores.length > 160 ? p.autores.slice(0,160) + '…' : p.autores) : 'Autores no disponibles';
+  const link = p.url_articulo || (p.doi ? 'https://doi.org/' + p.doi : '');
+  const ml = MUNDO_LABEL[p.mundo] || p.mundo, mv = MUNDO_COLOR_VAR[p.mundo] || '--gold-light';
+  return `<div class="paper" style="--mundo-c:var(${mv});"><div class="paper-meta"><span class="badge-mundo">${esc(ml)}</span><span>${p.anio || 's/f'}</span>`
+    + (p.es_acceso_abierto ? '<span class="badge-oa">Acceso abierto</span>' : '') + (p.licencia ? `<span>${esc(p.licencia.toUpperCase())}</span>` : '')
+    + `</div><h3>${esc(p.titulo)}</h3><div class="autores">${autores}</div><div class="abstract">${abs}</div>`
+    + (p.abstract && p.abstract.length > 260 ? '<button class="toggle-abs">Ver abstract completo</button>' : '')
+    + `<div class="paper-foot"><span class="mono" style="color:var(--silver-dim);">${esc(ml)}</span>`
+    + (link ? `<a href="${esc(urlSegura(link))}" target="_blank" rel="noopener noreferrer">Ver fuente original</a>` : '') + '</div></div>';
+}
+
+const ordenar = r => r.order('anio', { ascending:false, nullsFirst:false }).order('id', { ascending:false });
+const novedades = () => !estado.q && estado.mundo === 'todos';
+
+async function pedir(p){
+  if(novedades()){
+    // sin búsqueda: lo más reciente de cada mundo, intercalado
+    const lotes = await Promise.all(MUNDOS.map(m => {
+      let r = sb.from(TABLA).select(SEL).eq('mundo', m).not('abstract', 'is', null);
+      if(estado.desde) r = r.gte('anio', estado.desde);
+      return ordenar(r).range(p * POR_MUNDO, p * POR_MUNDO + POR_MUNDO - 1);
+    }));
+    const fallo = lotes.find(x => x.error); if(fallo) throw fallo.error;
+    let t = estado.desde ? null : TOTAL;
+    if(estado.desde){ const c = await sb.from(TABLA).select('id', { count:'exact', head:true }).gte('anio', estado.desde); if(!c.error) t = c.count; }
+    const rows = []; for(let i = 0; i < POR_MUNDO; i++) lotes.forEach(x => { if(x.data[i]) rows.push(x.data[i]); });
+    return { rows, total: t, fin: lotes.every(x => x.data.length < POR_MUNDO) };
+  }
+  let r = sb.from(TABLA).select(SEL, { count:'exact' });
+  if(estado.mundo !== 'todos') r = r.eq('mundo', estado.mundo);
+  if(estado.desde) r = r.gte('anio', estado.desde);
+  if(estado.q) r = r.textSearch('search_vector', expandir(estado.q).consulta, { type:'websearch' });
+  const res = await ordenar(r).range(p * PAGE_SIZE, p * PAGE_SIZE + PAGE_SIZE - 1);
+  if(res.error) throw res.error;
+  return { rows: res.data || [], total: res.count, fin: (res.data || []).length < PAGE_SIZE };
+}
+
+function contar(){
+  const t = total != null ? total : mostrados;
+  $('resultCount').textContent = novedades() && !estado.desde
+    ? `Novedades de los cinco mundos: ${num(mostrados)} de ${num(t)} papers`
+    : `Mostrando ${num(mostrados)} de ${num(t)} resultados`;
+}
+
+function vacio(){
+  $('resultsArea').style.display = 'none';
+  const sug = $('sugerencias').innerHTML;
+  $('emptyState').innerHTML = estado.q
+    ? `<p>No encontramos papers sobre «${esc(estado.q)}»${estado.mundo !== 'todos' || estado.desde ? ' con estos filtros' : ''}. Prueba otra palabra, en inglés, o una de estas búsquedas:</p><div class="sugerencias">${sug}</div>`
+    : '<p>No hay papers con estos filtros.</p><button class="btn-sec" data-accion="limpiar">Quitar filtros</button>';
+  $('emptyState').style.display = 'block';
+}
+
+async function cargar(append){
+  const mi = ++peticion, btn = $('loadMoreBtn');
+  btn.disabled = true; btn.textContent = 'Cargando...'; $('avisoError').style.display = 'none';
+  if(!append){ pagina = 0; mostrados = 0; $('list').style.opacity = '.45'; }
+  try{
+    const r = await pedir(pagina);
+    if(mi !== peticion) return;                       // llegó una búsqueda más nueva
+    $('list').style.opacity = '';
+    if(!append && !r.rows.length){ vacio(); return; }
+    $('emptyState').style.display = 'none'; $('resultsArea').style.display = 'block';
+    if(append) $('list').insertAdjacentHTML('beforeend', r.rows.map(tarjeta).join('')); else $('list').innerHTML = r.rows.map(tarjeta).join('');
+    pagina++; mostrados += r.rows.length; total = r.total;
+    const ex = estado.q ? expandir(estado.q) : { en:null };
+    $('traduccion').style.display = ex.en ? 'block' : 'none'; if(ex.en) $('traduccion').textContent = `Buscando también en inglés: ${ex.en}`;
+    contar();
+    btn.style.display = r.fin || (total != null && mostrados >= total) ? 'none' : 'block';
+  }catch(e){
+    if(mi !== peticion) return;
+    console.error(e); $('list').style.opacity = '';
+    if(append || $('list').children.length){
+      $('avisoError').innerHTML = 'No se pudo cargar en este momento. <button class="btn-sec" data-accion="reintentar">Reintentar</button>';
+      $('avisoError').style.display = 'block'; $('avisoError').dataset.append = append ? '1' : '';
+    } else {
+      $('resultsArea').style.display = 'none';
+      $('emptyState').innerHTML = '<p>No se pudo conectar con las bibliotecas en este momento.</p><button class="btn-sec" data-accion="reintentar">Reintentar</button>';
+      $('emptyState').style.display = 'block';
+    }
+  }finally{
+    if(mi === peticion){ btn.disabled = false; btn.textContent = 'Cargar más'; }
+  }
+}
+
+function guardarUrl(){
+  const u = new URL(location.href);
+  estado.q ? u.searchParams.set('q', estado.q) : u.searchParams.delete('q');
+  estado.mundo !== 'todos' ? u.searchParams.set('mundo', estado.mundo) : u.searchParams.delete('mundo');
+  history.replaceState(null, '', u);
+}
+function activar(cont, sel){ document.querySelectorAll(cont + ' .chip').forEach(c => c.classList.toggle('active', c.matches(sel))); }
+function buscar(){ guardarUrl(); cargar(false); }
+
+let espera = null;
+$('searchInput').addEventListener('input', e => { clearTimeout(espera); espera = setTimeout(() => { estado.q = e.target.value.trim(); buscar(); }, 400); });
+$('searchInput').addEventListener('keydown', e => { if(e.key === 'Enter'){ clearTimeout(espera); estado.q = e.target.value.trim(); buscar(); } });
+$('worldFilters').addEventListener('click', e => { const b = e.target.closest('.chip'); if(!b) return; estado.mundo = b.dataset.mundo; activar('#worldFilters', `[data-mundo="${estado.mundo}"]`); buscar(); });
+$('filters').addEventListener('click', e => { const b = e.target.closest('.chip'); if(!b) return; estado.desde = b.dataset.desde ? Number(b.dataset.desde) : null; activar('#filters', `[data-desde="${b.dataset.desde}"]`); buscar(); });
+document.addEventListener('click', e => {
+  const s = e.target.closest('a[data-q]');
+  if(s){ e.preventDefault(); estado.q = s.dataset.q; $('searchInput').value = s.dataset.q; buscar(); $('searchInput').scrollIntoView({ behavior:'smooth', block:'center' }); return; }
+  const a = e.target.closest('[data-accion]'); if(!a) return;
+  if(a.dataset.accion === 'reintentar') cargar(!!$('avisoError').dataset.append && $('list').children.length > 0);
+  if(a.dataset.accion === 'limpiar'){ estado = { q:'', mundo:'todos', desde:null }; $('searchInput').value = ''; activar('#worldFilters', '[data-mundo="todos"]'); activar('#filters', '[data-desde=""]'); buscar(); }
+});
+$('list').addEventListener('click', e => {
+  const b = e.target.closest('.toggle-abs'); if(!b) return;
+  const a = b.previousElementSibling; a.classList.toggle('expanded');
+  b.textContent = a.classList.contains('expanded') ? 'Ver menos' : 'Ver abstract completo';
+});
+$('loadMoreBtn').addEventListener('click', () => cargar(true));
+
+// Arranque: una búsqueda en la dirección (?q=, ?mundo=) se ejecuta; si no, las novedades ya escritas en la página se quedan.
+const qs = new URLSearchParams(location.search);
+if(qs.get('q')){ estado.q = qs.get('q'); $('searchInput').value = estado.q; }
+if(MUNDOS.includes(qs.get('mundo'))){ estado.mundo = qs.get('mundo'); activar('#worldFilters', `[data-mundo="${estado.mundo}"]`); }
+const yaEscritas = $('list').querySelectorAll('.paper').length;
+if(!estado.q && estado.mundo === 'todos' && yaEscritas){ pagina = Math.ceil(yaEscritas / (POR_MUNDO * MUNDOS.length)); mostrados = yaEscritas; contar(); }
+else cargar(false);
+</script>
+
+</body>
+</html>
