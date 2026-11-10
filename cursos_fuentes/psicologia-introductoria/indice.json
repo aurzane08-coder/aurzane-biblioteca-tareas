@@ -1,0 +1,1194 @@
+{
+ "libro": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)",
+ "licencia": "CC BY  4.0",
+ "secciones": [
+  {
+   "archivo": "01-01.html",
+   "capitulo": 1,
+   "titulo": "TitlePage",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/00%3A_Front_Matter/01%3A_TitlePage"
+  },
+  {
+   "archivo": "01-02.html",
+   "capitulo": 1,
+   "titulo": "InfoPage",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/00%3A_Front_Matter/02%3A_InfoPage"
+  },
+  {
+   "archivo": "01-03.html",
+   "capitulo": 1,
+   "titulo": "Table of Contents",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/00%3A_Front_Matter/03%3A_Table_of_Contents"
+  },
+  {
+   "archivo": "01-04.html",
+   "capitulo": 1,
+   "titulo": "Licensing",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/00%3A_Front_Matter/04%3A_Licensing"
+  },
+  {
+   "archivo": "02-01.html",
+   "capitulo": 2,
+   "titulo": "TitlePage",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/00%3A_Materia_Frontal/01%3A_TitlePage"
+  },
+  {
+   "archivo": "02-02.html",
+   "capitulo": 2,
+   "titulo": "InfoPage",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/00%3A_Materia_Frontal/02%3A_InfoPage"
+  },
+  {
+   "archivo": "02-03.html",
+   "capitulo": 2,
+   "titulo": "Tabla de Contenidos",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/00%3A_Materia_Frontal/03%3A_Tabla_de_Contenidos"
+  },
+  {
+   "archivo": "02-04.html",
+   "capitulo": 2,
+   "titulo": "Acerca de los Autores",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/00%3A_Materia_Frontal/Acerca_de_los_Autores"
+  },
+  {
+   "archivo": "03-01.html",
+   "capitulo": 3,
+   "titulo": "Introducción",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/01%3A_Introducci%C3%B3n_a_la_Psicolog%C3%ADa/1.01%3A_Introducci%C3%B3n"
+  },
+  {
+   "archivo": "03-02.html",
+   "capitulo": 3,
+   "titulo": "1.1: ¿Qué es la Psicología?",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/01%3A_Introducci%C3%B3n_a_la_Psicolog%C3%ADa/1.02%3A_%C2%BFQu%C3%A9_es_la_Psicolog%C3%ADa%3F"
+  },
+  {
+   "archivo": "03-03.html",
+   "capitulo": 3,
+   "titulo": "1.2: Historia de la Psicología",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/01%3A_Introducci%C3%B3n_a_la_Psicolog%C3%ADa/1.03%3A_Historia_de_la_Psicolog%C3%ADa"
+  },
+  {
+   "archivo": "03-04.html",
+   "capitulo": 3,
+   "titulo": "1.3: Psicología Contemporánea",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/01%3A_Introducci%C3%B3n_a_la_Psicolog%C3%ADa/1.04%3A_Psicolog%C3%ADa_Contempor%C3%A1nea"
+  },
+  {
+   "archivo": "03-05.html",
+   "capitulo": 3,
+   "titulo": "1.4: Carreras en Psicología",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/01%3A_Introducci%C3%B3n_a_la_Psicolog%C3%ADa/1.05%3A_Carreras_en_Psicolog%C3%ADa"
+  },
+  {
+   "archivo": "03-06.html",
+   "capitulo": 3,
+   "titulo": "Preguntas de Pensamiento Crítico",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/01%3A_Introducci%C3%B3n_a_la_Psicolog%C3%ADa/Preguntas_de_Pensamiento_Cr%C3%ADtico"
+  },
+  {
+   "archivo": "03-07.html",
+   "capitulo": 3,
+   "titulo": "Preguntas de revisión",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/01%3A_Introducci%C3%B3n_a_la_Psicolog%C3%ADa/Preguntas_de_revisi%C3%B3n"
+  },
+  {
+   "archivo": "03-08.html",
+   "capitulo": 3,
+   "titulo": "Preguntas sobre aplicaciones personales",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/01%3A_Introducci%C3%B3n_a_la_Psicolog%C3%ADa/Preguntas_sobre_aplicaciones_personales"
+  },
+  {
+   "archivo": "03-09.html",
+   "capitulo": 3,
+   "titulo": "Resumen",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/01%3A_Introducci%C3%B3n_a_la_Psicolog%C3%ADa/Resumen"
+  },
+  {
+   "archivo": "03-10.html",
+   "capitulo": 3,
+   "titulo": "Términos Clave",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/01%3A_Introducci%C3%B3n_a_la_Psicolog%C3%ADa/T%C3%A9rminos_Clave"
+  },
+  {
+   "archivo": "04-01.html",
+   "capitulo": 4,
+   "titulo": "Introducción",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/02%3A_Investigaci%C3%B3n_Psicol%C3%B3gica/2.01%3A_Introducci%C3%B3n"
+  },
+  {
+   "archivo": "04-02.html",
+   "capitulo": 4,
+   "titulo": "2.1: ¿Por qué es importante la investigación?",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/02%3A_Investigaci%C3%B3n_Psicol%C3%B3gica/2.02%3A_%C2%BFPor_qu%C3%A9_es_importante_la_investigaci%C3%B3n%3F"
+  },
+  {
+   "archivo": "04-03.html",
+   "capitulo": 4,
+   "titulo": "2.2: Enfoques a la investigación",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/02%3A_Investigaci%C3%B3n_Psicol%C3%B3gica/2.03%3A_Enfoques_a_la_investigaci%C3%B3n"
+  },
+  {
+   "archivo": "04-04.html",
+   "capitulo": 4,
+   "titulo": "2.4: Análisis de hallazgos",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/02%3A_Investigaci%C3%B3n_Psicol%C3%B3gica/2.04%3A_An%C3%A1lisis_de_hallazgos"
+  },
+  {
+   "archivo": "04-05.html",
+   "capitulo": 4,
+   "titulo": "2.4: Ética",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/02%3A_Investigaci%C3%B3n_Psicol%C3%B3gica/2.05%3A_%C3%89tica"
+  },
+  {
+   "archivo": "04-06.html",
+   "capitulo": 4,
+   "titulo": "Preguntas de Pensamiento Crítico",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/02%3A_Investigaci%C3%B3n_Psicol%C3%B3gica/Preguntas_de_Pensamiento_Cr%C3%ADtico"
+  },
+  {
+   "archivo": "04-07.html",
+   "capitulo": 4,
+   "titulo": "Preguntas de revisión",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/02%3A_Investigaci%C3%B3n_Psicol%C3%B3gica/Preguntas_de_revisi%C3%B3n"
+  },
+  {
+   "archivo": "04-08.html",
+   "capitulo": 4,
+   "titulo": "Preguntas sobre aplicaciones personales",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/02%3A_Investigaci%C3%B3n_Psicol%C3%B3gica/Preguntas_sobre_aplicaciones_personales"
+  },
+  {
+   "archivo": "04-09.html",
+   "capitulo": 4,
+   "titulo": "Resumen",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/02%3A_Investigaci%C3%B3n_Psicol%C3%B3gica/Resumen"
+  },
+  {
+   "archivo": "04-10.html",
+   "capitulo": 4,
+   "titulo": "Términos Clave",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/02%3A_Investigaci%C3%B3n_Psicol%C3%B3gica/T%C3%A9rminos_Clave"
+  },
+  {
+   "archivo": "05-01.html",
+   "capitulo": 5,
+   "titulo": "Introducción",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/03%3A_Biopsicolog%C3%ADa/3.01%3A_Introducci%C3%B3n"
+  },
+  {
+   "archivo": "05-02.html",
+   "capitulo": 5,
+   "titulo": "3.1: Genética Humana",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/03%3A_Biopsicolog%C3%ADa/3.02%3A_Gen%C3%A9tica_Humana"
+  },
+  {
+   "archivo": "05-03.html",
+   "capitulo": 5,
+   "titulo": "3.2: Células del Sistema Nervioso",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/03%3A_Biopsicolog%C3%ADa/3.03%3A_C%C3%A9lulas_del_Sistema_Nervioso"
+  },
+  {
+   "archivo": "05-04.html",
+   "capitulo": 5,
+   "titulo": "3.3: Partes del Sistema Nervioso",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/03%3A_Biopsicolog%C3%ADa/3.04%3A_Partes_del_Sistema_Nervioso"
+  },
+  {
+   "archivo": "05-05.html",
+   "capitulo": 5,
+   "titulo": "3.4: El Cerebro y la Médula Espinal",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/03%3A_Biopsicolog%C3%ADa/3.05%3A_El_Cerebro_y_la_M%C3%A9dula_Espinal"
+  },
+  {
+   "archivo": "05-06.html",
+   "capitulo": 5,
+   "titulo": "3.5: El Sistema Endocrino",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/03%3A_Biopsicolog%C3%ADa/3.06%3A_El_Sistema_Endocrino"
+  },
+  {
+   "archivo": "05-07.html",
+   "capitulo": 5,
+   "titulo": "Preguntas de Pensamiento Crítico",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/03%3A_Biopsicolog%C3%ADa/Preguntas_de_Pensamiento_Cr%C3%ADtico"
+  },
+  {
+   "archivo": "05-08.html",
+   "capitulo": 5,
+   "titulo": "Preguntas de revisión",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/03%3A_Biopsicolog%C3%ADa/Preguntas_de_revisi%C3%B3n"
+  },
+  {
+   "archivo": "05-09.html",
+   "capitulo": 5,
+   "titulo": "Preguntas sobre aplicaciones personales",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/03%3A_Biopsicolog%C3%ADa/Preguntas_sobre_aplicaciones_personales"
+  },
+  {
+   "archivo": "05-10.html",
+   "capitulo": 5,
+   "titulo": "Resumen",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/03%3A_Biopsicolog%C3%ADa/Resumen"
+  },
+  {
+   "archivo": "05-11.html",
+   "capitulo": 5,
+   "titulo": "Términos Clave",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/03%3A_Biopsicolog%C3%ADa/T%C3%A9rminos_Clave"
+  },
+  {
+   "archivo": "06-01.html",
+   "capitulo": 6,
+   "titulo": "Introducción",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/04%3A_Estados_de_Conciencia/4.01%3A_Introducci%C3%B3n"
+  },
+  {
+   "archivo": "06-02.html",
+   "capitulo": 6,
+   "titulo": "4.1: ¿Qué es la Conciencia?",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/04%3A_Estados_de_Conciencia/4.02%3A_%C2%BFQu%C3%A9_es_la_Conciencia%3F"
+  },
+  {
+   "archivo": "06-03.html",
+   "capitulo": 6,
+   "titulo": "4.2: Dormir y por qué dormimos",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/04%3A_Estados_de_Conciencia/4.03%3A_Dormir_y_por_qu%C3%A9_dormimos"
+  },
+  {
+   "archivo": "06-04.html",
+   "capitulo": 6,
+   "titulo": "4.3: Etapas del sueño",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/04%3A_Estados_de_Conciencia/4.04%3A_Etapas_del_sue%C3%B1o"
+  },
+  {
+   "archivo": "06-05.html",
+   "capitulo": 6,
+   "titulo": "4.4: Problemas y trastornos del sueño",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/04%3A_Estados_de_Conciencia/4.05%3A_Problemas_y_trastornos_del_sue%C3%B1o"
+  },
+  {
+   "archivo": "06-06.html",
+   "capitulo": 6,
+   "titulo": "4.5: Uso y abuso de sustancias",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/04%3A_Estados_de_Conciencia/4.06%3A_Uso_y_abuso_de_sustancias"
+  },
+  {
+   "archivo": "06-07.html",
+   "capitulo": 6,
+   "titulo": "4.6: Otros Estados de Conciencia",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/04%3A_Estados_de_Conciencia/4.07%3A_Otros_Estados_de_Conciencia"
+  },
+  {
+   "archivo": "06-08.html",
+   "capitulo": 6,
+   "titulo": "Preguntas de Pensamiento Crítico",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/04%3A_Estados_de_Conciencia/Preguntas_de_Pensamiento_Cr%C3%ADtico"
+  },
+  {
+   "archivo": "06-09.html",
+   "capitulo": 6,
+   "titulo": "Preguntas de revisión",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/04%3A_Estados_de_Conciencia/Preguntas_de_revisi%C3%B3n"
+  },
+  {
+   "archivo": "06-10.html",
+   "capitulo": 6,
+   "titulo": "Preguntas sobre aplicaciones personales",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/04%3A_Estados_de_Conciencia/Preguntas_sobre_aplicaciones_personales"
+  },
+  {
+   "archivo": "06-11.html",
+   "capitulo": 6,
+   "titulo": "Resumen",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/04%3A_Estados_de_Conciencia/Resumen"
+  },
+  {
+   "archivo": "06-12.html",
+   "capitulo": 6,
+   "titulo": "Términos Clave",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/04%3A_Estados_de_Conciencia/T%C3%A9rminos_Clave"
+  },
+  {
+   "archivo": "07-01.html",
+   "capitulo": 7,
+   "titulo": "Introducción",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/05%3A_Sensaci%C3%B3n_y_Percepci%C3%B3n/5.01%3A_Introducci%C3%B3n"
+  },
+  {
+   "archivo": "07-02.html",
+   "capitulo": 7,
+   "titulo": "5.1: Sensación versus percepción",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/05%3A_Sensaci%C3%B3n_y_Percepci%C3%B3n/5.02%3A_Sensaci%C3%B3n_versus_percepci%C3%B3n"
+  },
+  {
+   "archivo": "07-03.html",
+   "capitulo": 7,
+   "titulo": "5.2: Ondas y longitudes de onda",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/05%3A_Sensaci%C3%B3n_y_Percepci%C3%B3n/5.03%3A_Ondas_y_longitudes_de_onda"
+  },
+  {
+   "archivo": "07-04.html",
+   "capitulo": 7,
+   "titulo": "5.3: Visión",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/05%3A_Sensaci%C3%B3n_y_Percepci%C3%B3n/5.04%3A_Visi%C3%B3n"
+  },
+  {
+   "archivo": "07-05.html",
+   "capitulo": 7,
+   "titulo": "5.4: Audiencia",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/05%3A_Sensaci%C3%B3n_y_Percepci%C3%B3n/5.05%3A_Audiencia"
+  },
+  {
+   "archivo": "07-06.html",
+   "capitulo": 7,
+   "titulo": "5.5: Los otros sentidos",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/05%3A_Sensaci%C3%B3n_y_Percepci%C3%B3n/5.06%3A_Los_otros_sentidos"
+  },
+  {
+   "archivo": "07-07.html",
+   "capitulo": 7,
+   "titulo": "5.6: Principios de Percepción Gestalt",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/05%3A_Sensaci%C3%B3n_y_Percepci%C3%B3n/5.07%3A_Principios_de_Percepci%C3%B3n_Gestalt"
+  },
+  {
+   "archivo": "07-08.html",
+   "capitulo": 7,
+   "titulo": "Preguntas de Pensamiento Crítico",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/05%3A_Sensaci%C3%B3n_y_Percepci%C3%B3n/Preguntas_de_Pensamiento_Cr%C3%ADtico"
+  },
+  {
+   "archivo": "07-09.html",
+   "capitulo": 7,
+   "titulo": "Preguntas de revisión",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/05%3A_Sensaci%C3%B3n_y_Percepci%C3%B3n/Preguntas_de_revisi%C3%B3n"
+  },
+  {
+   "archivo": "07-10.html",
+   "capitulo": 7,
+   "titulo": "Preguntas sobre aplicaciones personales",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/05%3A_Sensaci%C3%B3n_y_Percepci%C3%B3n/Preguntas_sobre_aplicaciones_personales"
+  },
+  {
+   "archivo": "07-11.html",
+   "capitulo": 7,
+   "titulo": "Resumen",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/05%3A_Sensaci%C3%B3n_y_Percepci%C3%B3n/Resumen"
+  },
+  {
+   "archivo": "07-12.html",
+   "capitulo": 7,
+   "titulo": "Términos Clave",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/05%3A_Sensaci%C3%B3n_y_Percepci%C3%B3n/T%C3%A9rminos_Clave"
+  },
+  {
+   "archivo": "08-01.html",
+   "capitulo": 8,
+   "titulo": "Introducción",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/06%3A_Aprendizaje/6.01%3A_Introducci%C3%B3n"
+  },
+  {
+   "archivo": "08-02.html",
+   "capitulo": 8,
+   "titulo": "6.1: ¿Qué es aprender?",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/06%3A_Aprendizaje/6.02%3A_%C2%BFQu%C3%A9_es_aprender%3F"
+  },
+  {
+   "archivo": "08-03.html",
+   "capitulo": 8,
+   "titulo": "6.2: Acondicionamiento Clásico",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/06%3A_Aprendizaje/6.03%3A_Acondicionamiento_Cl%C3%A1sico"
+  },
+  {
+   "archivo": "08-04.html",
+   "capitulo": 8,
+   "titulo": "6.3: Acondicionamiento Operante",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/06%3A_Aprendizaje/6.04%3A_Acondicionamiento_Operante"
+  },
+  {
+   "archivo": "08-05.html",
+   "capitulo": 8,
+   "titulo": "6.4: Aprendizaje observacional (Modelado)",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/06%3A_Aprendizaje/6.05%3A_Aprendizaje_observacional_(Modelado)"
+  },
+  {
+   "archivo": "08-06.html",
+   "capitulo": 8,
+   "titulo": "Preguntas de Pensamiento Crítico",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/06%3A_Aprendizaje/Preguntas_de_Pensamiento_Cr%C3%ADtico"
+  },
+  {
+   "archivo": "08-07.html",
+   "capitulo": 8,
+   "titulo": "Preguntas de revisión",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/06%3A_Aprendizaje/Preguntas_de_revisi%C3%B3n"
+  },
+  {
+   "archivo": "08-08.html",
+   "capitulo": 8,
+   "titulo": "Preguntas sobre aplicaciones personales",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/06%3A_Aprendizaje/Preguntas_sobre_aplicaciones_personales"
+  },
+  {
+   "archivo": "08-09.html",
+   "capitulo": 8,
+   "titulo": "Resumen",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/06%3A_Aprendizaje/Resumen"
+  },
+  {
+   "archivo": "08-10.html",
+   "capitulo": 8,
+   "titulo": "Términos Clave",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/06%3A_Aprendizaje/T%C3%A9rminos_Clave"
+  },
+  {
+   "archivo": "09-01.html",
+   "capitulo": 9,
+   "titulo": "Introducción",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/07%3A_Pensamiento_e_Inteligencia/7.01%3A_Introducci%C3%B3n"
+  },
+  {
+   "archivo": "09-02.html",
+   "capitulo": 9,
+   "titulo": "7.1: ¿Qué es la cognición?",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/07%3A_Pensamiento_e_Inteligencia/7.02%3A_%C2%BFQu%C3%A9_es_la_cognici%C3%B3n%3F"
+  },
+  {
+   "archivo": "09-03.html",
+   "capitulo": 9,
+   "titulo": "7.2: Idioma",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/07%3A_Pensamiento_e_Inteligencia/7.03%3A_Idioma"
+  },
+  {
+   "archivo": "09-04.html",
+   "capitulo": 9,
+   "titulo": "7.3: Resolución de problemas",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/07%3A_Pensamiento_e_Inteligencia/7.04%3A_Resoluci%C3%B3n_de_problemas"
+  },
+  {
+   "archivo": "09-05.html",
+   "capitulo": 9,
+   "titulo": "7.4: ¿Qué son la inteligencia y la creatividad?",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/07%3A_Pensamiento_e_Inteligencia/7.05%3A_%C2%BFQu%C3%A9_son_la_inteligencia_y_la_creatividad%3F"
+  },
+  {
+   "archivo": "09-06.html",
+   "capitulo": 9,
+   "titulo": "7.5: Medidas de Inteligencia",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/07%3A_Pensamiento_e_Inteligencia/7.06%3A_Medidas_de_Inteligencia"
+  },
+  {
+   "archivo": "09-07.html",
+   "capitulo": 9,
+   "titulo": "7.6: La fuente de la inteligencia",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/07%3A_Pensamiento_e_Inteligencia/7.07%3A_La_fuente_de_la_inteligencia"
+  },
+  {
+   "archivo": "09-08.html",
+   "capitulo": 9,
+   "titulo": "Preguntas de Pensamiento Crítico",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/07%3A_Pensamiento_e_Inteligencia/Preguntas_de_Pensamiento_Cr%C3%ADtico"
+  },
+  {
+   "archivo": "09-09.html",
+   "capitulo": 9,
+   "titulo": "Preguntas de revisión",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/07%3A_Pensamiento_e_Inteligencia/Preguntas_de_revisi%C3%B3n"
+  },
+  {
+   "archivo": "09-10.html",
+   "capitulo": 9,
+   "titulo": "Preguntas sobre aplicaciones personales",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/07%3A_Pensamiento_e_Inteligencia/Preguntas_sobre_aplicaciones_personales"
+  },
+  {
+   "archivo": "09-11.html",
+   "capitulo": 9,
+   "titulo": "Resumen",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/07%3A_Pensamiento_e_Inteligencia/Resumen"
+  },
+  {
+   "archivo": "09-12.html",
+   "capitulo": 9,
+   "titulo": "Términos Clave",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/07%3A_Pensamiento_e_Inteligencia/T%C3%A9rminos_Clave"
+  },
+  {
+   "archivo": "10-01.html",
+   "capitulo": 10,
+   "titulo": "Introducción",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/08%3A_Memoria/8.01%3A_Introducci%C3%B3n"
+  },
+  {
+   "archivo": "10-02.html",
+   "capitulo": 10,
+   "titulo": "8.1: Cómo funciona la memoria",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/08%3A_Memoria/8.02%3A_C%C3%B3mo_funciona_la_memoria"
+  },
+  {
+   "archivo": "10-03.html",
+   "capitulo": 10,
+   "titulo": "8.2: Partes del cerebro involucradas con la memoria",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/08%3A_Memoria/8.03%3A_Partes_del_cerebro_involucradas_con_la_memoria"
+  },
+  {
+   "archivo": "10-04.html",
+   "capitulo": 10,
+   "titulo": "8.3: Problemas con la memoria",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/08%3A_Memoria/8.04%3A_Problemas_con_la_memoria"
+  },
+  {
+   "archivo": "10-05.html",
+   "capitulo": 10,
+   "titulo": "8.4: Formas de mejorar la memoria",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/08%3A_Memoria/8.05%3A_Formas_de_mejorar_la_memoria"
+  },
+  {
+   "archivo": "10-06.html",
+   "capitulo": 10,
+   "titulo": "Preguntas de Pensamiento Crítico",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/08%3A_Memoria/Preguntas_de_Pensamiento_Cr%C3%ADtico"
+  },
+  {
+   "archivo": "10-07.html",
+   "capitulo": 10,
+   "titulo": "Preguntas de revisión",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/08%3A_Memoria/Preguntas_de_revisi%C3%B3n"
+  },
+  {
+   "archivo": "10-08.html",
+   "capitulo": 10,
+   "titulo": "Preguntas sobre aplicaciones personales",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/08%3A_Memoria/Preguntas_sobre_aplicaciones_personales"
+  },
+  {
+   "archivo": "10-09.html",
+   "capitulo": 10,
+   "titulo": "Resumen",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/08%3A_Memoria/Resumen"
+  },
+  {
+   "archivo": "10-10.html",
+   "capitulo": 10,
+   "titulo": "Términos Clave",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/08%3A_Memoria/T%C3%A9rminos_Clave"
+  },
+  {
+   "archivo": "11-01.html",
+   "capitulo": 11,
+   "titulo": "9.1: ¿Qué es el desarrollo de vida útil?",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/09%3A_Desarrollo_de_la_vida_%C3%BAtil/9.02%3A_%C2%BFQu%C3%A9_es_el_desarrollo_de_vida_%C3%BAtil%3F"
+  },
+  {
+   "archivo": "11-02.html",
+   "capitulo": 11,
+   "titulo": "9.2: Teorías de la Vida",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/09%3A_Desarrollo_de_la_vida_%C3%BAtil/9.03%3A_Teor%C3%ADas_de_la_Vida"
+  },
+  {
+   "archivo": "11-03.html",
+   "capitulo": 11,
+   "titulo": "9.3: Etapas de Desarrollo",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/09%3A_Desarrollo_de_la_vida_%C3%BAtil/9.04%3A_Etapas_de_Desarrollo"
+  },
+  {
+   "archivo": "11-04.html",
+   "capitulo": 11,
+   "titulo": "9.4: Muerte y Morir",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/09%3A_Desarrollo_de_la_vida_%C3%BAtil/9.05%3A_Muerte_y_Morir"
+  },
+  {
+   "archivo": "11-05.html",
+   "capitulo": 11,
+   "titulo": "Introducción",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/09%3A_Desarrollo_de_la_vida_%C3%BAtil/Introducci%C3%B3n"
+  },
+  {
+   "archivo": "11-06.html",
+   "capitulo": 11,
+   "titulo": "Preguntas de Pensamiento Crítico",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/09%3A_Desarrollo_de_la_vida_%C3%BAtil/Preguntas_de_Pensamiento_Cr%C3%ADtico"
+  },
+  {
+   "archivo": "11-07.html",
+   "capitulo": 11,
+   "titulo": "Preguntas de revisión",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/09%3A_Desarrollo_de_la_vida_%C3%BAtil/Preguntas_de_revisi%C3%B3n"
+  },
+  {
+   "archivo": "11-08.html",
+   "capitulo": 11,
+   "titulo": "Preguntas sobre aplicaciones personales",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/09%3A_Desarrollo_de_la_vida_%C3%BAtil/Preguntas_sobre_aplicaciones_personales"
+  },
+  {
+   "archivo": "11-09.html",
+   "capitulo": 11,
+   "titulo": "Resumen",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/09%3A_Desarrollo_de_la_vida_%C3%BAtil/Resumen"
+  },
+  {
+   "archivo": "11-10.html",
+   "capitulo": 11,
+   "titulo": "Términos Clave",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/09%3A_Desarrollo_de_la_vida_%C3%BAtil/T%C3%A9rminos_Clave"
+  },
+  {
+   "archivo": "12-01.html",
+   "capitulo": 12,
+   "titulo": "Introducción",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/10%3A_Emoci%C3%B3n_y_Motivaci%C3%B3n/10.01%3A_Introducci%C3%B3n"
+  },
+  {
+   "archivo": "12-02.html",
+   "capitulo": 12,
+   "titulo": "10.1: Motivación",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/10%3A_Emoci%C3%B3n_y_Motivaci%C3%B3n/10.02%3A_Motivaci%C3%B3n"
+  },
+  {
+   "archivo": "12-03.html",
+   "capitulo": 12,
+   "titulo": "10.2: Hambre y comer",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/10%3A_Emoci%C3%B3n_y_Motivaci%C3%B3n/10.03%3A_Hambre_y_comer"
+  },
+  {
+   "archivo": "12-04.html",
+   "capitulo": 12,
+   "titulo": "10.3: Comportamiento Sexual",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/10%3A_Emoci%C3%B3n_y_Motivaci%C3%B3n/10.04%3A_Comportamiento_Sexual"
+  },
+  {
+   "archivo": "12-05.html",
+   "capitulo": 12,
+   "titulo": "10.4: Emoción",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/10%3A_Emoci%C3%B3n_y_Motivaci%C3%B3n/10.05%3A_Emoci%C3%B3n"
+  },
+  {
+   "archivo": "12-06.html",
+   "capitulo": 12,
+   "titulo": "Preguntas de Pensamiento Crítico",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/10%3A_Emoci%C3%B3n_y_Motivaci%C3%B3n/Preguntas_de_Pensamiento_Cr%C3%ADtico"
+  },
+  {
+   "archivo": "12-07.html",
+   "capitulo": 12,
+   "titulo": "Preguntas de revisión",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/10%3A_Emoci%C3%B3n_y_Motivaci%C3%B3n/Preguntas_de_revisi%C3%B3n"
+  },
+  {
+   "archivo": "12-08.html",
+   "capitulo": 12,
+   "titulo": "Preguntas sobre aplicaciones personales",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/10%3A_Emoci%C3%B3n_y_Motivaci%C3%B3n/Preguntas_sobre_aplicaciones_personales"
+  },
+  {
+   "archivo": "12-09.html",
+   "capitulo": 12,
+   "titulo": "Resumen",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/10%3A_Emoci%C3%B3n_y_Motivaci%C3%B3n/Resumen"
+  },
+  {
+   "archivo": "12-10.html",
+   "capitulo": 12,
+   "titulo": "Términos Clave",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/10%3A_Emoci%C3%B3n_y_Motivaci%C3%B3n/T%C3%A9rminos_Clave"
+  },
+  {
+   "archivo": "13-01.html",
+   "capitulo": 13,
+   "titulo": "Introducción",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/11%3A_Personalidad/11.01%3A_Introducci%C3%B3n"
+  },
+  {
+   "archivo": "13-02.html",
+   "capitulo": 13,
+   "titulo": "11.1: ¿Qué es la Personalidad?",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/11%3A_Personalidad/11.02%3A_%C2%BFQu%C3%A9_es_la_Personalidad%3F"
+  },
+  {
+   "archivo": "13-03.html",
+   "capitulo": 13,
+   "titulo": "11.2: Freud y la perspectiva psicodinámica",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/11%3A_Personalidad/11.03%3A_Freud_y_la_perspectiva_psicodin%C3%A1mica"
+  },
+  {
+   "archivo": "13-04.html",
+   "capitulo": 13,
+   "titulo": "11.3: Neo-Freudianos- Adler, Erikson, Jung y Horney",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/11%3A_Personalidad/11.04%3A_Neo-Freudianos-_Adler%2C_Erikson%2C_Jung_y_Horney"
+  },
+  {
+   "archivo": "13-05.html",
+   "capitulo": 13,
+   "titulo": "11.4: Enfoques de aprendizaje",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/11%3A_Personalidad/11.05%3A_Enfoques_de_aprendizaje"
+  },
+  {
+   "archivo": "13-06.html",
+   "capitulo": 13,
+   "titulo": "11.5: Enfoques humanísticos",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/11%3A_Personalidad/11.06%3A_Enfoques_human%C3%ADsticos"
+  },
+  {
+   "archivo": "13-07.html",
+   "capitulo": 13,
+   "titulo": "11.6: Enfoques biológicos",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/11%3A_Personalidad/11.07%3A_Enfoques_biol%C3%B3gicos"
+  },
+  {
+   "archivo": "13-08.html",
+   "capitulo": 13,
+   "titulo": "11.7: Teóricos del rasgo",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/11%3A_Personalidad/11.08%3A_Te%C3%B3ricos_del_rasgo"
+  },
+  {
+   "archivo": "13-09.html",
+   "capitulo": 13,
+   "titulo": "11.8: Comprensiones culturales de la personalidad",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/11%3A_Personalidad/11.09%3A_Comprensiones_culturales_de_la_personalidad"
+  },
+  {
+   "archivo": "13-10.html",
+   "capitulo": 13,
+   "titulo": "11.9: Evaluación de la personalidad",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/11%3A_Personalidad/11.9%3A_Evaluaci%C3%B3n_de_la_personalidad"
+  },
+  {
+   "archivo": "13-11.html",
+   "capitulo": 13,
+   "titulo": "Preguntas de Pensamiento Crítico",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/11%3A_Personalidad/Preguntas_de_Pensamiento_Cr%C3%ADtico"
+  },
+  {
+   "archivo": "13-12.html",
+   "capitulo": 13,
+   "titulo": "Preguntas de revisión",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/11%3A_Personalidad/Preguntas_de_revisi%C3%B3n"
+  },
+  {
+   "archivo": "13-13.html",
+   "capitulo": 13,
+   "titulo": "Preguntas sobre aplicaciones personales",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/11%3A_Personalidad/Preguntas_sobre_aplicaciones_personales"
+  },
+  {
+   "archivo": "13-14.html",
+   "capitulo": 13,
+   "titulo": "Resumen",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/11%3A_Personalidad/Resumen"
+  },
+  {
+   "archivo": "13-15.html",
+   "capitulo": 13,
+   "titulo": "Términos Clave",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/11%3A_Personalidad/T%C3%A9rminos_Clave"
+  },
+  {
+   "archivo": "14-01.html",
+   "capitulo": 14,
+   "titulo": "Introducción",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/12%3A_Psicolog%C3%ADa_Social/12.01%3A_Introducci%C3%B3n"
+  },
+  {
+   "archivo": "14-02.html",
+   "capitulo": 14,
+   "titulo": "12.1: ¿Qué es la Psicología Social?",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/12%3A_Psicolog%C3%ADa_Social/12.02%3A_%C2%BFQu%C3%A9_es_la_Psicolog%C3%ADa_Social%3F"
+  },
+  {
+   "archivo": "14-03.html",
+   "capitulo": 14,
+   "titulo": "12.2: Autopresentación",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/12%3A_Psicolog%C3%ADa_Social/12.03%3A_Autopresentaci%C3%B3n"
+  },
+  {
+   "archivo": "14-04.html",
+   "capitulo": 14,
+   "titulo": "12.3: Actitudes y Persuasión",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/12%3A_Psicolog%C3%ADa_Social/12.04%3A_Actitudes_y_Persuasi%C3%B3n"
+  },
+  {
+   "archivo": "14-05.html",
+   "capitulo": 14,
+   "titulo": "12.4: Conformidad, Cumplimiento y Obediencia",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/12%3A_Psicolog%C3%ADa_Social/12.05%3A_Conformidad%2C_Cumplimiento_y_Obediencia"
+  },
+  {
+   "archivo": "14-06.html",
+   "capitulo": 14,
+   "titulo": "12.5: Prejuicio y discriminación",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/12%3A_Psicolog%C3%ADa_Social/12.06%3A_Prejuicio_y_discriminaci%C3%B3n"
+  },
+  {
+   "archivo": "14-07.html",
+   "capitulo": 14,
+   "titulo": "12.6: Agresión",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/12%3A_Psicolog%C3%ADa_Social/12.07%3A_Agresi%C3%B3n"
+  },
+  {
+   "archivo": "14-08.html",
+   "capitulo": 14,
+   "titulo": "12.7: Comportamiento Prosocial",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/12%3A_Psicolog%C3%ADa_Social/12.08%3A_Comportamiento_Prosocial"
+  },
+  {
+   "archivo": "14-09.html",
+   "capitulo": 14,
+   "titulo": "Preguntas de Pensamiento Crítico",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/12%3A_Psicolog%C3%ADa_Social/Preguntas_de_Pensamiento_Cr%C3%ADtico"
+  },
+  {
+   "archivo": "14-10.html",
+   "capitulo": 14,
+   "titulo": "Preguntas de revisión",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/12%3A_Psicolog%C3%ADa_Social/Preguntas_de_revisi%C3%B3n"
+  },
+  {
+   "archivo": "14-11.html",
+   "capitulo": 14,
+   "titulo": "Preguntas sobre aplicaciones personales",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/12%3A_Psicolog%C3%ADa_Social/Preguntas_sobre_aplicaciones_personales"
+  },
+  {
+   "archivo": "14-12.html",
+   "capitulo": 14,
+   "titulo": "Resumen",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/12%3A_Psicolog%C3%ADa_Social/Resumen"
+  },
+  {
+   "archivo": "14-13.html",
+   "capitulo": 14,
+   "titulo": "Términos Clave",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/12%3A_Psicolog%C3%ADa_Social/T%C3%A9rminos_Clave"
+  },
+  {
+   "archivo": "15-01.html",
+   "capitulo": 15,
+   "titulo": "Introducción",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/13%3A_Psicolog%C3%ADa_Industrial-Organizacional/13.01%3A_Introducci%C3%B3n"
+  },
+  {
+   "archivo": "15-02.html",
+   "capitulo": 15,
+   "titulo": "13.1: ¿Qué es la Psicología Industrial y Organizacional?",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/13%3A_Psicolog%C3%ADa_Industrial-Organizacional/13.02%3A_%C2%BFQu%C3%A9_es_la_Psicolog%C3%ADa_Industrial_y_Organizacional%3F"
+  },
+  {
+   "archivo": "15-03.html",
+   "capitulo": 15,
+   "titulo": "13.2: Psicología Industrial",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/13%3A_Psicolog%C3%ADa_Industrial-Organizacional/13.03%3A_Psicolog%C3%ADa_Industrial_-_Selecci%C3%B3n_y_Evaluaci%C3%B3n_de_Empleados"
+  },
+  {
+   "archivo": "15-04.html",
+   "capitulo": 15,
+   "titulo": "13.3: Psicología Organizacional",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/13%3A_Psicolog%C3%ADa_Industrial-Organizacional/13.04%3A_Psicolog%C3%ADa_Organizacional_-_La_Dimensi%C3%B3n_Social_del_Trabajo"
+  },
+  {
+   "archivo": "15-05.html",
+   "capitulo": 15,
+   "titulo": "13.4: Psicología de Factores Humanos y Diseño Laboral",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/13%3A_Psicolog%C3%ADa_Industrial-Organizacional/13.05%3A_Psicolog%C3%ADa_de_Factores_Humanos_y_Dise%C3%B1o_Laboral"
+  },
+  {
+   "archivo": "15-06.html",
+   "capitulo": 15,
+   "titulo": "Preguntas de Pensamiento Crítico",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/13%3A_Psicolog%C3%ADa_Industrial-Organizacional/Preguntas_de_Pensamiento_Cr%C3%ADtico"
+  },
+  {
+   "archivo": "15-07.html",
+   "capitulo": 15,
+   "titulo": "Preguntas de revisión",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/13%3A_Psicolog%C3%ADa_Industrial-Organizacional/Preguntas_de_revisi%C3%B3n"
+  },
+  {
+   "archivo": "15-08.html",
+   "capitulo": 15,
+   "titulo": "Preguntas sobre aplicaciones personales",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/13%3A_Psicolog%C3%ADa_Industrial-Organizacional/Preguntas_sobre_aplicaciones_personales"
+  },
+  {
+   "archivo": "15-09.html",
+   "capitulo": 15,
+   "titulo": "Resumen",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/13%3A_Psicolog%C3%ADa_Industrial-Organizacional/Resumen"
+  },
+  {
+   "archivo": "15-10.html",
+   "capitulo": 15,
+   "titulo": "Términos Clave",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/13%3A_Psicolog%C3%ADa_Industrial-Organizacional/T%C3%A9rminos_Clave"
+  },
+  {
+   "archivo": "16-01.html",
+   "capitulo": 16,
+   "titulo": "Introducción",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/14%3A_Estr%C3%A9s%2C_Estilo_de_Vida_y_Salud/14.01%3A_Introducci%C3%B3n"
+  },
+  {
+   "archivo": "16-02.html",
+   "capitulo": 16,
+   "titulo": "14.1: ¿Qué es el estrés?",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/14%3A_Estr%C3%A9s%2C_Estilo_de_Vida_y_Salud/14.02%3A_%C2%BFQu%C3%A9_es_el_estr%C3%A9s%3F"
+  },
+  {
+   "archivo": "16-03.html",
+   "capitulo": 16,
+   "titulo": "14.2: Estresores",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/14%3A_Estr%C3%A9s%2C_Estilo_de_Vida_y_Salud/14.03%3A_Estresores"
+  },
+  {
+   "archivo": "16-04.html",
+   "capitulo": 16,
+   "titulo": "14.3: Estrés y enfermedad",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/14%3A_Estr%C3%A9s%2C_Estilo_de_Vida_y_Salud/14.04%3A_Estr%C3%A9s_y_enfermedad"
+  },
+  {
+   "archivo": "16-05.html",
+   "capitulo": 16,
+   "titulo": "14.4: Regulación del Estrés",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/14%3A_Estr%C3%A9s%2C_Estilo_de_Vida_y_Salud/14.05%3A_Regulaci%C3%B3n_del_Estr%C3%A9s"
+  },
+  {
+   "archivo": "16-06.html",
+   "capitulo": 16,
+   "titulo": "14.5: La búsqueda de la felicidad",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/14%3A_Estr%C3%A9s%2C_Estilo_de_Vida_y_Salud/14.06%3A_La_b%C3%BAsqueda_de_la_felicidad"
+  },
+  {
+   "archivo": "16-07.html",
+   "capitulo": 16,
+   "titulo": "Preguntas de Pensamiento Crítico",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/14%3A_Estr%C3%A9s%2C_Estilo_de_Vida_y_Salud/Preguntas_de_Pensamiento_Cr%C3%ADtico"
+  },
+  {
+   "archivo": "16-08.html",
+   "capitulo": 16,
+   "titulo": "Preguntas de revisión",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/14%3A_Estr%C3%A9s%2C_Estilo_de_Vida_y_Salud/Preguntas_de_revisi%C3%B3n"
+  },
+  {
+   "archivo": "16-09.html",
+   "capitulo": 16,
+   "titulo": "Preguntas sobre aplicaciones personales",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/14%3A_Estr%C3%A9s%2C_Estilo_de_Vida_y_Salud/Preguntas_sobre_aplicaciones_personales"
+  },
+  {
+   "archivo": "16-10.html",
+   "capitulo": 16,
+   "titulo": "Resumen",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/14%3A_Estr%C3%A9s%2C_Estilo_de_Vida_y_Salud/Resumen"
+  },
+  {
+   "archivo": "16-11.html",
+   "capitulo": 16,
+   "titulo": "Términos Clave",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/14%3A_Estr%C3%A9s%2C_Estilo_de_Vida_y_Salud/T%C3%A9rminos_Clave"
+  },
+  {
+   "archivo": "17-01.html",
+   "capitulo": 17,
+   "titulo": "Introducción",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/15%3A_Trastornos_Psicol%C3%B3gicos/15.01%3A_Introducci%C3%B3n"
+  },
+  {
+   "archivo": "17-02.html",
+   "capitulo": 17,
+   "titulo": "15.1: ¿Qué son los Trastornos Psicológicos?",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/15%3A_Trastornos_Psicol%C3%B3gicos/15.02%3A_%C2%BFQu%C3%A9_son_los_Trastornos_Psicol%C3%B3gicos%3F"
+  },
+  {
+   "archivo": "17-03.html",
+   "capitulo": 17,
+   "titulo": "15.2: Diagnóstico y clasificación de trastornos psicológicos",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/15%3A_Trastornos_Psicol%C3%B3gicos/15.03%3A_Diagn%C3%B3stico_y_clasificaci%C3%B3n_de_trastornos_psicol%C3%B3gicos"
+  },
+  {
+   "archivo": "17-04.html",
+   "capitulo": 17,
+   "titulo": "15.3: Perspectivas sobre los Trastornos Psicológicos",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/15%3A_Trastornos_Psicol%C3%B3gicos/15.04%3A_Perspectivas_sobre_los_Trastornos_Psicol%C3%B3gicos"
+  },
+  {
+   "archivo": "17-05.html",
+   "capitulo": 17,
+   "titulo": "15.4: Trastornos de Ansiedad",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/15%3A_Trastornos_Psicol%C3%B3gicos/15.05%3A_Trastornos_de_Ansiedad"
+  },
+  {
+   "archivo": "17-06.html",
+   "capitulo": 17,
+   "titulo": "15.5: Trastornos obsesivo-compulsivos y relacionados",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/15%3A_Trastornos_Psicol%C3%B3gicos/15.06%3A_Trastornos_obsesivo-compulsivos_y_relacionados"
+  },
+  {
+   "archivo": "17-07.html",
+   "capitulo": 17,
+   "titulo": "15.6: Trastorno de estrés postraumático",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/15%3A_Trastornos_Psicol%C3%B3gicos/15.07%3A_Trastorno_de_estr%C3%A9s_postraum%C3%A1tico"
+  },
+  {
+   "archivo": "17-08.html",
+   "capitulo": 17,
+   "titulo": "15.7: Estado de ánimo y trastornos relacionados",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/15%3A_Trastornos_Psicol%C3%B3gicos/15.08%3A_Estado_de_%C3%A1nimo_y_trastornos_relacionados"
+  },
+  {
+   "archivo": "17-09.html",
+   "capitulo": 17,
+   "titulo": "15.8: Esquizofrenia",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/15%3A_Trastornos_Psicol%C3%B3gicos/15.09%3A_Esquizofrenia"
+  },
+  {
+   "archivo": "17-10.html",
+   "capitulo": 17,
+   "titulo": "15.10: Trastornos en la Infancia",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/15%3A_Trastornos_Psicol%C3%B3gicos/15.10%3A_Trastornos_en_la_Infancia"
+  },
+  {
+   "archivo": "17-11.html",
+   "capitulo": 17,
+   "titulo": "15.11: Trastornos de la personalidad",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/15%3A_Trastornos_Psicol%C3%B3gicos/15.11%3A_Trastornos_de_la_personalidad"
+  },
+  {
+   "archivo": "17-12.html",
+   "capitulo": 17,
+   "titulo": "15.9: Trastornos disociativos",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/15%3A_Trastornos_Psicol%C3%B3gicos/15.9%3A_Trastornos_disociativos"
+  },
+  {
+   "archivo": "17-13.html",
+   "capitulo": 17,
+   "titulo": "Preguntas de Pensamiento Crítico",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/15%3A_Trastornos_Psicol%C3%B3gicos/Preguntas_de_Pensamiento_Cr%C3%ADtico"
+  },
+  {
+   "archivo": "17-14.html",
+   "capitulo": 17,
+   "titulo": "Preguntas de revisión",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/15%3A_Trastornos_Psicol%C3%B3gicos/Preguntas_de_revisi%C3%B3n"
+  },
+  {
+   "archivo": "17-15.html",
+   "capitulo": 17,
+   "titulo": "Preguntas sobre aplicaciones personales",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/15%3A_Trastornos_Psicol%C3%B3gicos/Preguntas_sobre_aplicaciones_personales"
+  },
+  {
+   "archivo": "17-16.html",
+   "capitulo": 17,
+   "titulo": "Resumen",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/15%3A_Trastornos_Psicol%C3%B3gicos/Resumen"
+  },
+  {
+   "archivo": "17-17.html",
+   "capitulo": 17,
+   "titulo": "Términos Clave",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/15%3A_Trastornos_Psicol%C3%B3gicos/T%C3%A9rminos_Clave"
+  },
+  {
+   "archivo": "18-01.html",
+   "capitulo": 18,
+   "titulo": "Introducción",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/16%3A_Terapia_y_Tratamiento/16.01%3A_Introducci%C3%B3n"
+  },
+  {
+   "archivo": "18-02.html",
+   "capitulo": 18,
+   "titulo": "16.1: Tratamiento de Salud Mental",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/16%3A_Terapia_y_Tratamiento/16.02%3A_Tratamiento_de_Salud_Mental_-_Pasado_y_Presente"
+  },
+  {
+   "archivo": "18-03.html",
+   "capitulo": 18,
+   "titulo": "16.2: Tipos de Tratamiento",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/16%3A_Terapia_y_Tratamiento/16.03%3A_Tipos_de_Tratamiento"
+  },
+  {
+   "archivo": "18-04.html",
+   "capitulo": 18,
+   "titulo": "16.3: Modalidades de tratamiento",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/16%3A_Terapia_y_Tratamiento/16.04%3A_Modalidades_de_tratamiento"
+  },
+  {
+   "archivo": "18-05.html",
+   "capitulo": 18,
+   "titulo": "16.4: Trastornos Adictivos y Relacionados con Sustancias",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/16%3A_Terapia_y_Tratamiento/16.05%3A_Trastornos_Adictivos_y_Relacionados_con_Sustancias_-_Un_Caso_Especial"
+  },
+  {
+   "archivo": "18-06.html",
+   "capitulo": 18,
+   "titulo": "16.5: El modelo sociocultural y la utilización de la terapia",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/16%3A_Terapia_y_Tratamiento/16.06%3A_El_modelo_sociocultural_y_la_utilizaci%C3%B3n_de_la_terapia"
+  },
+  {
+   "archivo": "18-07.html",
+   "capitulo": 18,
+   "titulo": "Preguntas de Pensamiento Crítico",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/16%3A_Terapia_y_Tratamiento/Preguntas_de_Pensamiento_Cr%C3%ADtico"
+  },
+  {
+   "archivo": "18-08.html",
+   "capitulo": 18,
+   "titulo": "Preguntas de revisión",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/16%3A_Terapia_y_Tratamiento/Preguntas_de_revisi%C3%B3n"
+  },
+  {
+   "archivo": "18-09.html",
+   "capitulo": 18,
+   "titulo": "Preguntas sobre aplicaciones personales",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/16%3A_Terapia_y_Tratamiento/Preguntas_sobre_aplicaciones_personales"
+  },
+  {
+   "archivo": "18-10.html",
+   "capitulo": 18,
+   "titulo": "Resumen",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/16%3A_Terapia_y_Tratamiento/Resumen"
+  },
+  {
+   "archivo": "18-11.html",
+   "capitulo": 18,
+   "titulo": "Términos Clave",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/16%3A_Terapia_y_Tratamiento/T%C3%A9rminos_Clave"
+  },
+  {
+   "archivo": "19-01.html",
+   "capitulo": 19,
+   "titulo": "Index",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/zz%3A_Back_Matter/10%3A_Index"
+  },
+  {
+   "archivo": "19-02.html",
+   "capitulo": 19,
+   "titulo": "Glossary",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/zz%3A_Back_Matter/20%3A_Glossary"
+  },
+  {
+   "archivo": "19-03.html",
+   "capitulo": 19,
+   "titulo": "Detailed Licensing",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/zz%3A_Back_Matter/30%3A_Detailed_Licensing"
+  },
+  {
+   "archivo": "20-01.html",
+   "capitulo": 20,
+   "titulo": "Índice",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/zz%3A_Volver_Materia/01%3A_%C3%8Dndice"
+  },
+  {
+   "archivo": "20-02.html",
+   "capitulo": 20,
+   "titulo": "Índice",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/zz%3A_Volver_Materia/10%3A_%C3%8Dndice"
+  },
+  {
+   "archivo": "20-03.html",
+   "capitulo": 20,
+   "titulo": "Glosario",
+   "url": "https://espanol.libretexts.org/Bookshelves/Ciencias_Sociales/Psicologia/Psicolog%C3%ADa_Introductoria_2e_(OpenStax)/zz%3A_Volver_Materia/20%3A_Glosario"
+  }
+ ]
+}
