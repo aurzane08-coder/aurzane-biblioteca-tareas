@@ -1,0 +1,32 @@
+name: Mover a eliminar
+# Nunca borra: mueve archivos o carpetas del servidor a www/<sitio>/eliminar/<fecha>/ conservando su ruta.
+on:
+  workflow_dispatch:
+    inputs:
+      rutas:
+        description: 'Rutas separadas por espacios, como aurzane.com/carga'
+        required: true
+permissions:
+  contents: read
+jobs:
+  mover:
+    runs-on: ubuntu-latest
+    env:
+      SG_KEY: ${{ secrets.SG_KEY }}
+      SG_HOST: ${{ secrets.SG_HOST }}
+      SG_USER: ${{ secrets.SG_USER }}
+      SG_PORT: ${{ secrets.SG_PORT }}
+      SG_PASS: ${{ secrets.SG_PASS }}
+      RUTAS: ${{ github.event.inputs.rutas }}
+    steps:
+      - name: Mover
+        run: |
+          mkdir -p ~/.ssh && printf '%s\n' "$SG_KEY" | tr -d '\r' > ~/.ssh/id && chmod 600 ~/.ssh/id
+          if [ -n "$SG_PASS" ]; then ssh-keygen -p -P "$SG_PASS" -N "" -f ~/.ssh/id >/dev/null; fi
+          F=$(date +%Y%m%d-%H%M)
+          for r in $RUTAS; do
+            case "$r" in *..*|/*) echo "ruta no válida $r"; continue;; esac
+            s=${r%%/*}; p=${r#*/}
+            ssh -i ~/.ssh/id -p ${SG_PORT:-18765} -o StrictHostKeyChecking=accept-new "$SG_USER@$SG_HOST" \
+              "cd www/$s && [ -e public_html/$p ] && mkdir -p eliminar/$F/\$(dirname $p) && mv public_html/$p eliminar/$F/$p && echo movido $r || echo no existe $r"
+          done
