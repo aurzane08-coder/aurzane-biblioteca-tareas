@@ -1,5 +1,5 @@
 {
- "generado": "2026-11-09",
+ "generado": "2026-11-10",
  "productos": [
   {
    "id": "test-personalidad",
@@ -37009,6 +37009,60 @@
    "emoji": "",
    "foto_q": "forest path light",
    "alta": "2026-11-09"
+  },
+  {
+   "id": "cur-5827b4c76e",
+   "tipo": "curiosidad",
+   "mundo": "mind",
+   "origen": "curiosidades",
+   "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13740991/",
+   "titulo": "¿La acupuntura puede ayudar contra la depresión?",
+   "ganchos": [
+    "¿La acupuntura puede ayudar contra la depresión?",
+    "¿La acupuntura puede ayudar contra la depresión? 🧠",
+    "La ciencia estudia cómo la acupuntura reduce la inflamación cerebral y mejora la plasticid"
+   ],
+   "texto": "La ciencia estudia cómo la acupuntura reduce la inflamación cerebral y mejora la plasticidad neuronal. Una investigación publicada en Frontiers in Psychiatry señala que esta terapia no farmacológica ayuda a regular las señales inflamatorias en el cerebro. Además, favorece la neuroplasticidad y protege a las neuronas frente al estrés celular.\n\nFuente: Frontiers in Psychiatry",
+   "hashtags": [
+    "psicologia",
+    "neurociencia",
+    "bienestar",
+    "aurzane",
+    "Psicología",
+    "Curiosidades"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "🧠",
+   "dato": "La ciencia estudia cómo la acupuntura reduce la inflamación cerebral y mejora la plasticidad neuronal.",
+   "alta": "2026-11-10"
+  },
+  {
+   "id": "cur-6b094139bd",
+   "tipo": "curiosidad",
+   "mundo": "mind",
+   "origen": "curiosidades",
+   "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13729381/",
+   "titulo": "¿Cómo actúa la estimulación magnética en la depresión?",
+   "ganchos": [
+    "¿Cómo actúa la estimulación magnética en la depresión?",
+    "¿Cómo actúa la estimulación magnética en la depresión? 🧠",
+    "La estimulación magnética transcraneal modula la expresión génica cerebral relacionada con"
+   ],
+   "texto": "La estimulación magnética transcraneal modula la expresión génica cerebral relacionada con la plasticidad sináptica. Una revisión científica reciente analiza cómo esta técnica afecta a nivel molecular en la depresión resistente al tratamiento. Los datos sugieren cambios en la transcripción y el metabolismo neuronal específicos de cada región.\n\nFuente: Frontiers in Psychiatry",
+   "hashtags": [
+    "psicologia",
+    "ciencia",
+    "cerebro",
+    "divulgacion",
+    "Psicología",
+    "Curiosidades"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "🧠",
+   "dato": "La estimulación magnética transcraneal modula la expresión génica cerebral relacionada con la plasticidad sináptica.",
+   "alta": "2026-11-10"
   },
   {
    "id": "cur-2fc91ef243",
