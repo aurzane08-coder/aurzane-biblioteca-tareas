@@ -814,5 +814,17 @@
   "publicados": 86,
   "pruebas_ok": 56,
   "pruebas_total": 57
+ },
+ {
+  "fecha": "2026-11-10T22:03",
+  "estado": "medio",
+  "avisos": 3,
+  "arreglos": 1,
+  "errores_24h": 1,
+  "redes_ok_24h": 52,
+  "cola": 0,
+  "publicados": 86,
+  "pruebas_ok": 56,
+  "pruebas_total": 57
  }
 ]
