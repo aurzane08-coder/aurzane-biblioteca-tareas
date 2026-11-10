@@ -10,7 +10,7 @@ import json, os, re, subprocess, datetime, urllib.request
 
 R = os.path.dirname(os.path.abspath(__file__))
 SB = 'https://chtfpqwrrarfdjcivlad.supabase.co/rest/v1/'
-KEY = os.environ.get('SUPABASE_SERVICE_KEY', '')
+KEY = os.environ.get('SUPABASE_SERVICE_KEY', '').strip() or 'sb_publishable___1v6VjDew0l8uGfMyb9Nw_YyCLTPPw'
 SSH = os.environ.get('SSH', ''); DEST = os.environ.get('SG_DEST', '')
 HOY = datetime.date.today().isoformat()
 MUNDOS = ['mind', 'nexus', 'live', 'learn', 'build']
@@ -23,14 +23,14 @@ def remoto(orden, entrada=None):
 
 def cuenta(tabla, filtro=''):
     rq = urllib.request.Request(f'{SB}{tabla}?select=id{filtro}', method='HEAD',
-                                headers={'apikey': KEY, 'Authorization': 'Bearer ' + KEY, 'Prefer': 'count=exact', 'Range': '0-0'})
+                                headers={'apikey': KEY, 'Prefer': 'count=exact', 'Range': '0-0'})
     with urllib.request.urlopen(rq, timeout=60) as r: return int(r.headers.get('Content-Range', '*/0').split('/')[-1])
 
 
 def todos(tabla, campos, filtro=''):
     out, i = [], 0
     while True:
-        rq = urllib.request.Request(f'{SB}{tabla}?select={campos}{filtro}', headers={'apikey': KEY, 'Authorization': 'Bearer ' + KEY, 'Range': f'{i}-{i + 999}'})
+        rq = urllib.request.Request(f'{SB}{tabla}?select={campos}{filtro}', headers={'apikey': KEY, 'Range': f'{i}-{i + 999}'})
         with urllib.request.urlopen(rq, timeout=60) as r: lote = json.load(r)
         out += lote
         if len(lote) < 1000: return out
@@ -51,15 +51,9 @@ c['universidades'], c['paises'] = len(u), len({x['pais'] for x in u if x.get('pa
 cat = remoto('cat ~/www/aurzane.com/public_html/biblioteca/catalogo.js')
 try: c['libros'] = len(json.loads(cat[cat.index('{'):cat.rindex('}') + 1])['libros'])
 except Exception as e: print('libros', e)
-cursos = todos('course_courses', 'id,slug', '&estado=eq.publicado')
-mods = todos('course_modules', 'id,course_id', '&estado=eq.publicado')
-lecs = todos('course_lessons', 'module_id', '&estado=eq.publicado')
-pregs = todos('course_questions', 'course_id,tipo', '&estado=eq.publicada')
-c['cursos'] = {}
-for k in cursos:
-    ms = {m['id'] for m in mods if m['course_id'] == k['id']}
-    ps = [p for p in pregs if p['course_id'] == k['id']]
-    c['cursos'][k['slug']] = {'temas': len(ms), 'lecciones': sum(1 for l in lecs if l['module_id'] in ms), 'preguntas': len(ps), 'tipos': len({p['tipo'] for p in ps})}
+rq = urllib.request.Request(SB + 'rpc/course_catalog_public', data=b'{}', headers={'apikey': KEY, 'Content-Type': 'application/json'})
+with urllib.request.urlopen(rq, timeout=60) as r: cursos = json.load(r)
+c['cursos'] = {k['slug']: {'temas': len(k['modulos']), 'lecciones': sum(len(m['lecciones']) for m in k['modulos']), 'preguntas': k['preguntas'], 'tipos': k['tipos']} for k in cursos}
 json.dump(c, open(os.path.join(R, 'cifras.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
 print(json.dumps({k: v for k, v in c.items() if k != 'cursos'}, ensure_ascii=False))
 

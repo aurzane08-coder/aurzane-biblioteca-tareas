@@ -14,7 +14,7 @@ import json, os, re, html, datetime, subprocess, urllib.request, urllib.parse, t
 
 R = os.path.dirname(os.path.abspath(__file__))
 SB = 'https://chtfpqwrrarfdjcivlad.supabase.co'
-KEY = os.environ.get('SUPABASE_SERVICE_KEY', '')
+KEY = os.environ.get('SUPABASE_SERVICE_KEY', '').strip() or 'sb_publishable___1v6VjDew0l8uGfMyb9Nw_YyCLTPPw'  # la publicable basta: solo se lee lo publicado
 HOY = datetime.date.today().isoformat()
 OUT = os.path.join(R, 'salida'); os.makedirs(OUT, exist_ok=True)
 AREAS = ['Psicología y bienestar', 'Estudiar psicología', 'Neurociencias', 'Educación', 'Estudio y aprendizaje', 'Finanzas personales', 'Tecnología']
@@ -30,7 +30,7 @@ def guardar(n, d): json.dump(d, open(os.path.join(R, n), 'w', encoding='utf-8'),
 
 
 def sb(ruta):
-    rq = urllib.request.Request(f'{SB}/rest/v1/{ruta}', headers={'apikey': KEY, 'Authorization': 'Bearer ' + KEY})
+    rq = urllib.request.Request(f'{SB}/rest/v1/{ruta}', headers={'apikey': KEY})
     with urllib.request.urlopen(rq, timeout=60) as r: return json.load(r)
 
 
@@ -72,19 +72,15 @@ def sugerencias(q):
 
 
 # ---------- 1. datos ----------
-cursos = sb('course_courses?estado=eq.publicado&select=id,slug,titulo,subtitulo,descripcion,nivel,horas_estimadas,objetivos,nota_fuentes,published_at,certificable,nota_minima&order=published_at.desc')
-mods = sb('course_modules?estado=eq.publicado&select=id,course_id,orden,titulo,descripcion&order=orden')
-lecs = sb('course_lessons?estado=eq.publicado&select=module_id,orden,titulo,minutos&order=orden')
-pregs = sb('course_questions?estado=eq.publicada&select=course_id')
+rq = urllib.request.Request(f'{SB}/rest/v1/rpc/course_catalog_public', data=b'{}', headers={'apikey': KEY, 'Content-Type': 'application/json'})
+with urllib.request.urlopen(rq, timeout=60) as r: cursos = json.load(r)
 meta = leer('meta.json', {})
 seo = leer('seo.json', {})
 salud = {'fecha': HOY, 'cursos': []}
 
 for c in cursos:
-    c['modulos'] = [m for m in mods if m['course_id'] == c['id']]
-    for m in c['modulos']: m['lecciones'] = [l for l in lecs if l['module_id'] == m['id']]
     c['n_lec'] = sum(len(m['lecciones']) for m in c['modulos'])
-    c['n_preg'] = sum(1 for p in pregs if p['course_id'] == c['id'])
+    c['n_preg'] = c.get('preguntas') or 0
     c['min'] = sum((l.get('minutos') or 0) for m in c['modulos'] for l in m['lecciones'])
     mt = meta.get(c['slug'])
     if not mt or mt.get('area') not in AREAS:
@@ -103,7 +99,7 @@ for c in cursos:
     if c['n_lec'] and c['n_preg'] < c['n_lec'] * 3: prob.append(f'pocas preguntas ({c["n_preg"]} para {c["n_lec"]} lecciones)')
     if c.get('certificable'):
         try:
-            st = pedir(f'{SB}/rest/v1/rpc/course_certificate_status', {'p_course': c['slug']}, {'apikey': KEY, 'Authorization': 'Bearer ' + KEY})
+            st = pedir(f'{SB}/rest/v1/rpc/course_certificate_status', {'p_course': c['slug']}, {'apikey': KEY})
             if not (isinstance(st, dict) and st.get('certificable')): prob.append('el certificado no responde bien')
         except Exception as e: prob.append('el certificado da error: ' + str(e)[:80])
     horas_reales = round(c['min'] / 60 * 1.6, 1)  # lectura + práctica + tests
