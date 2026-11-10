@@ -1,36 +1,42 @@
 {
- "fecha": "2026-11-09",
+ "fecha": "2026-11-10",
  "conectado": true,
  "periodo": [
-  "2026-10-10",
-  "2026-11-06"
+  "2026-10-11",
+  "2026-11-07"
  ],
- "clics": 21,
- "impresiones": 7726,
+ "clics": 23,
+ "impresiones": 9552,
  "consultas": [
   [
    "ecpi university",
    0,
-   119,
+   130,
    7.7
   ],
   [
    "volar sobre el pantano",
    0,
-   103,
-   9.7
-  ],
-  [
-   "recuerda que vas a morir",
-   0,
-   67,
-   6.2
+   112,
+   9.6
   ],
   [
    "facultades",
    0,
-   52,
-   21.9
+   71,
+   22.5
+  ],
+  [
+   "texas a",
+   0,
+   70,
+   9.6
+  ],
+  [
+   "recuerda que vas a morir",
+   0,
+   69,
+   6.2
   ],
   [
    "carl rogers el proceso de convertirse en persona",
@@ -39,22 +45,16 @@
    9.8
   ],
   [
-   "texas a",
-   0,
-   46,
-   9.7
-  ],
-  [
    "los dones de la imperfeccion",
    0,
-   39,
+   40,
    12.0
   ],
   [
-   "cuantas universidades hay en cuenca",
+   "los medios de comunicación y la familia",
    0,
-   38,
-   6.6
+   40,
+   19.1
   ],
   [
    "la tía tula pdf",
@@ -63,22 +63,52 @@
    9.2
   ],
   [
+   "cuantas universidades hay en cuenca",
+   0,
+   37,
+   6.6
+  ],
+  [
    "dejame que te cuente",
    0,
    37,
    10.4
   ],
   [
-   "los medios de comunicación y la familia",
-   0,
-   37,
-   18.1
-  ],
-  [
    "el niño el topo el zorro y el caballo",
    0,
+   37,
+   11.5
+  ],
+  [
+   "universidades en utrecht holanda",
+   0,
+   36,
+   44.2
+  ],
+  [
+   "universidades",
+   0,
+   35,
+   24.7
+  ],
+  [
+   "universidad en canarias",
+   0,
    33,
-   11.6
+   81.7
+  ],
+  [
+   "universidades italia",
+   0,
+   32,
+   59.6
+  ],
+  [
+   "site:instagram.com \"universidade mogi das cruzes\" são paulo",
+   0,
+   30,
+   6.9
   ],
   [
    "universidades en pachuca",
@@ -93,100 +123,70 @@
    6.4
   ],
   [
-   "site:instagram.com \"universidade mogi das cruzes\" são paulo",
+   "universidades en parís",
    0,
    29,
-   7.0
+   55.6
   ],
   [
-   "universidades italia",
-   0,
-   29,
-   59.5
-  ],
-  [
-   "universidades en utrecht holanda",
+   "universidad en amsterdam",
    0,
    28,
-   44.7
+   63.0
   ],
   [
-   "universidad en canarias",
+   "universidades publicas en australia",
+   0,
+   28,
+   51.8
+  ],
+  [
+   "universidades amsterdam",
    0,
    27,
-   83.1
+   56.0
   ],
   [
-   "universidades",
+   "amsterdam universidad",
    0,
    26,
-   22.2
+   47.8
+  ],
+  [
+   "universidad",
+   0,
+   25,
+   30.4
+  ],
+  [
+   "universidades en alemania",
+   0,
+   25,
+   75.4
+  ],
+  [
+   "universidades en holanda",
+   0,
+   25,
+   39.5
   ],
   [
    "universidades en manta",
    2,
    24,
-   8.2
+   7.2
+  ],
+  [
+   "el camino de las lagrimas",
+   0,
+   24,
+   11.6
   ],
   [
    "romancero gitano pdf",
    0,
    24,
    9.6
-  ],
-  [
-   "universidades en alemania",
-   0,
-   24,
-   74.5
-  ],
-  [
-   "universidades en parís",
-   0,
-   24,
-   57.2
-  ],
-  [
-   "el don de la terapia",
-   0,
-   23,
-   11.2
-  ],
-  [
-   "universidades en españa",
-   0,
-   23,
-   70.3
-  ],
-  [
-   "universidades en holanda",
-   0,
-   23,
-   39.0
-  ],
-  [
-   "esperanza bausela herreras",
-   0,
-   22,
-   5.5
-  ],
-  [
-   "universidades en francia",
-   0,
-   22,
-   52.5
-  ],
-  [
-   "universidad en amsterdam",
-   0,
-   20,
-   66.3
-  ],
-  [
-   "universidades en riobamba",
-   0,
-   20,
-   12.1
   ]
  ],
  "paginas": [
@@ -199,8 +199,14 @@
   [
    "https://nexus.aurzane.com/universidades/ecuador/ciudad/manta/",
    2,
-   25,
-   6.1
+   32,
+   6.0
+  ],
+  [
+   "https://aurzane.com/biblioteca/libro/tormento.html",
+   2,
+   22,
+   6.8
   ],
   [
    "https://aurzane.com/biblioteca/libro/la-de-bringas.html",
@@ -211,14 +217,14 @@
   [
    "https://aurzane.com/biblioteca/leer.html?libro=ref-recuerda-que-vas-a-morir",
    1,
-   106,
-   6.3
+   110,
+   6.4
   ],
   [
-   "https://aurzane.com/biblioteca/libro/tormento.html",
+   "https://nexus.aurzane.com/universidades/notas-de-corte/derecho/",
    1,
-   21,
-   6.9
+   20,
+   8.8
   ],
   [
    "https://aurzane.com/biblioteca/libro/marianela.html",
@@ -229,8 +235,8 @@
   [
    "https://aurzane.com/biblioteca/libro/ref-nuestra-mente-nos-engana.html",
    1,
-   13,
-   9.2
+   15,
+   9.1
   ],
   [
    "https://aurzane.com/biblioteca/libro/ref-creacion-yo.html",
@@ -241,8 +247,8 @@
   [
    "https://aurzane.com/biblioteca/libro/ref-amarse-ojos-abiertos.html",
    1,
-   9,
-   14.3
+   10,
+   13.8
   ],
   [
    "https://aurzane.com/biblioteca/libro/ref-grito-desesperado.html",
@@ -301,20 +307,32 @@
   [
    "https://nexus.aurzane.com/universidades/estados-unidos/ecpi-university/",
    0,
-   126,
-   10.3
+   138,
+   10.5
   ],
   [
    "https://aurzane.com/biblioteca/libro/ref-volar-sobre-pantano.html",
    0,
-   116,
-   11.1
+   125,
+   11.0
   ],
   [
    "https://nexus.aurzane.com/universidades/paises-bajos/universiteit-van-amsterdam-uva/",
    0,
-   105,
-   50.0
+   121,
+   50.5
+  ],
+  [
+   "https://aurzane.com/biblioteca/libro/ref-nino-topo-zorro-caballo.html",
+   0,
+   94,
+   11.1
+  ],
+  [
+   "https://nexus.aurzane.com/universidades/paises-bajos/ciudad/utrecht/",
+   0,
+   91,
+   47.6
   ],
   [
    "https://nexus.aurzane.com/universidades/paises-bajos/",
@@ -323,216 +341,198 @@
    54.7
   ],
   [
-   "https://nexus.aurzane.com/universidades/ciudad/cuenca.html",
-   0,
-   84,
-   9.9
-  ],
-  [
-   "https://nexus.aurzane.com/universidades/paises-bajos/ciudad/utrecht/",
-   0,
-   80,
-   48.4
-  ],
-  [
-   "https://aurzane.com/biblioteca/libro/ref-nino-topo-zorro-caballo.html",
-   0,
-   76,
-   11.2
-  ],
-  [
    "https://nexus.aurzane.com/universidades/estados-unidos/columbia-university-in-the-city-of-new-york/",
    0,
-   75,
-   41.2
+   82,
+   40.2
   ],
   [
-   "https://nexus.aurzane.com/universidades/italia/ciudad/roma/",
+   "https://nexus.aurzane.com/universidades/ciudad/cuenca.html",
    0,
-   74,
-   37.0
+   80,
+   10.1
   ],
   [
    "https://nexus.aurzane.com/universidades/reino-unido/ciudad/glasgow/",
    0,
-   71,
-   60.1
+   79,
+   59.2
   ],
   [
    "https://nexus.aurzane.com/universidades/italia/sapienza-universita-di-roma/",
    0,
-   66,
-   52.7
+   78,
+   51.4
   ],
   [
-   "https://nexus.aurzane.com/universidades/espana/",
+   "https://nexus.aurzane.com/universidades/italia/ciudad/roma/",
    0,
-   62,
-   68.0
+   78,
+   37.6
   ]
  ],
  "paises": [
   [
    "ESP",
-   96,
-   6852,
-   22.6
+   105,
+   7793,
+   23.5
   ],
   [
    "ECU",
-   31,
-   2604,
-   9.0
+   35,
+   2867,
+   9.1
   ],
   [
    "MEX",
-   38,
-   2164,
-   20.5
+   40,
+   2580,
+   21.3
   ],
   [
    "USA",
-   2,
-   1243,
-   19.2
+   4,
+   1496,
+   21.7
+  ],
+  [
+   "COL",
+   28,
+   1252,
+   21.4
   ],
   [
    "ARG",
    26,
-   1086,
-   20.9
-  ],
-  [
-   "COL",
-   24,
-   1048,
-   20.6
-  ],
-  [
-   "PER",
-   22,
-   867,
-   10.4
+   1225,
+   21.7
   ],
   [
    "BRA",
    3,
-   751,
-   51.1
+   1096,
+   54.2
+  ],
+  [
+   "PER",
+   28,
+   964,
+   10.7
   ],
   [
    "CHL",
-   14,
-   675,
-   15.2
+   15,
+   813,
+   18.5
   ],
   [
    "VEN",
-   6,
-   481,
-   17.7
+   7,
+   565,
+   19.2
   ],
   [
    "BOL",
    9,
-   190,
-   10.3
+   233,
+   11.7
   ],
   [
    "GTM",
    6,
-   170,
-   20.0
+   190,
+   19.5
   ],
   [
    "DEU",
    0,
-   134,
-   33.7
+   154,
+   35.2
   ],
   [
    "DOM",
    4,
-   129,
-   8.7
+   153,
+   11.4
   ],
   [
    "CRI",
-   2,
-   117,
-   11.2
+   3,
+   141,
+   12.7
   ],
   [
    "FRA",
    0,
-   110,
-   33.3
+   135,
+   35.5
   ],
   [
    "BGD",
    0,
-   89,
-   46.7
+   113,
+   47.7
   ],
   [
    "PRY",
    3,
-   81,
-   11.3
+   106,
+   13.0
   ],
   [
    "GBR",
    2,
-   81,
-   31.6
+   101,
+   31.3
   ],
   [
    "CAN",
    1,
-   72,
-   28.9
+   83,
+   29.1
   ],
   [
    "PRI",
    1,
-   67,
-   14
+   74,
+   13.6
   ],
   [
    "HND",
    1,
-   55,
-   10.5
-  ],
-  [
-   "CUB",
-   3,
-   40,
-   17.5
+   66,
+   12
   ],
   [
    "CHE",
    0,
-   40,
-   37.9
+   50,
+   38.8
+  ],
+  [
+   "CUB",
+   3,
+   48,
+   15.8
   ],
   [
    "AUS",
-   1,
-   31,
-   28.8
+   2,
+   37,
+   27.3
   ],
   [
    "BEL",
    1,
-   23,
-   21.5
+   25,
+   20.4
   ],
   [
    "JPN",
    1,
-   17,
-   13.3
+   18,
+   12.9
   ],
   [
    "GNQ",
@@ -543,17 +543,47 @@
   [
    "HKG",
    0,
-   11,
-   15.8
+   12,
+   15.2
   ],
   [
-   "DNK",
-   0,
-   9,
-   16.3
+   "EGY",
+   1,
+   11,
+   8.6
   ]
  ],
  "paises_trabajados": [
+  [
+   "2026-11-10",
+   "Chile",
+   "El proceso de convertirse en persona de Carl Rogers: Resumen"
+  ],
+  [
+   "2026-11-10",
+   "Chile",
+   "Universidades en Santiago de Chile: guía completa y carreras"
+  ],
+  [
+   "2026-11-10",
+   "Perú",
+   "Manejo del estrés y ansiedad en estudiantes de Perú"
+  ],
+  [
+   "2026-11-10",
+   "Perú",
+   "Cómo elegir carrera universitaria en Perú: Guía definitiva"
+  ],
+  [
+   "2026-11-10",
+   "Colombia",
+   "Resumen de Fuera de serie de Malcolm Gladwell: Claves del éxito"
+  ],
+  [
+   "2026-11-10",
+   "Colombia",
+   "Carreras universitarias en Colombia: Guía completa y vocacional"
+  ],
   [
    "2026-11-09",
    "Argentina",
@@ -583,26 +613,6 @@
    "2026-11-09",
    "España",
    "Cómo superar la adversidad en España: claves de resiliencia mental"
-  ],
-  [
-   "2026-11-09",
-   "México",
-   "Cómo superar el arte de amargarse la vida: Claves psicológicas"
-  ],
-  [
-   "2026-11-09",
-   "México",
-   "Universidades en Puebla: Guía de carreras y opciones en México"
-  ],
-  [
-   "2026-11-09",
-   "Ecuador",
-   "Análisis psicológico y lecciones de Volar sobre el pantano"
-  ],
-  [
-   "2026-11-09",
-   "Ecuador",
-   "Guía de universidades en Cuenca y oferta académica en Ecuador"
   ]
  ],
  "fichas_ampliadas": 1,
@@ -618,54 +628,54 @@
  ],
  "temas_nuevos": [
   [
-   "2026-11-09",
+   "2026-11-10",
+   "el proceso de convertirse en persona carl rogers",
+   "El proceso de convertirse en persona de Carl Rogers: Resumen"
+  ],
+  [
+   "2026-11-10",
+   "cuantas universidades hay en santiago",
+   "Universidades en Santiago de Chile: guía completa y carreras"
+  ],
+  [
+   "2026-11-10",
    "en tiempos de estrés haz lo que importa pdf",
-   "Cómo manejar el estrés laboral y académico en Argentina con ACT"
+   "Manejo del estrés y ansiedad en estudiantes de Perú"
   ],
   [
-   "2026-11-09",
-   "universidades privadas caba",
-   "Universidades privadas en CABA: guía completa para elegir carrera en Argentina"
+   "2026-11-10",
+   "carreras universitarias peru",
+   "Cómo elegir carrera universitaria en Perú: Guía definitiva"
   ],
   [
-   "2026-11-09",
-   "esencialismo greg mckeown resumen",
-   "Resumen de Esencialismo: Cómo enfocarte en lo importante"
+   "2026-11-10",
+   "fuera de serie malcolm gladwell resumen",
+   "Resumen de Fuera de serie de Malcolm Gladwell: Claves del éxito"
   ],
   [
-   "2026-11-09",
-   "universidad en estados unidos",
-   "Cómo entrar a la universidad en EE. UU. siendo hispano"
+   "2026-11-10",
+   "licenciaturas en colombia",
+   "Carreras universitarias en Colombia: Guía completa y vocacional"
   ],
   [
-   "2026-11-09",
-   "universidades holandesas",
-   "Estudiar en universidades de Países Bajos desde España: guía y grados"
+   "2026-11-10",
+   "universidades australia",
+   "Estudiar en Australia: mejores universidades, visados y orientación"
   ],
   [
-   "2026-11-09",
-   "superar la adversidad: el poder de la resiliencia",
-   "Cómo superar la adversidad en España: claves de resiliencia mental"
+   "2026-11-10",
+   "universidades en inglaterra",
+   "Guía para estudiar en Inglaterra: universidades, acceso y costes"
   ],
   [
-   "2026-11-09",
-   "universidades publicas en australia",
-   "Universidades públicas en Australia: opciones y ventajas para estudiar"
+   "2026-11-10",
+   "universidades amsterdam",
+   "Universidades en Ámsterdam: carreras, requisitos y vida estudiantil"
   ],
   [
-   "2026-11-09",
-   "universidad en amsterdam",
-   "Estudiar en Ámsterdam: universidades, grados y proceso de admisión"
-  ],
-  [
-   "2026-11-09",
-   "universidades en australia",
-   "Guía para estudiar en Australia: universidades y oferta académica"
-  ],
-  [
-   "2026-11-09",
-   "universidades en alemania",
-   "Universidades en Alemania: cómo acceder y elegir carrera"
+   "2026-11-10",
+   "universidades en parís",
+   "Estudiar en París: guía completa de universidades y oferta académica"
   ]
  ]
 }

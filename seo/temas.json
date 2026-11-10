@@ -178,5 +178,106 @@
   "pais_nombre": "Argentina",
   "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al 135 (Argentina, Centro de Asistencia al Suicida). ",
   "fecha": "2026-11-09"
+ },
+ {
+  "consulta": "insomnio en adolescentes",
+  "titulo": "Insomnio en adolescentes: causas, consecuencias y cómo ayudarlos a dormir",
+  "mundo": "live",
+  "test": "sueno",
+  "fecha": "2026-11-10"
+ },
+ {
+  "consulta": "universidades en parís",
+  "titulo": "Estudiar en París: guía completa de universidades y oferta académica",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "fecha": "2026-11-10"
+ },
+ {
+  "consulta": "universidades amsterdam",
+  "titulo": "Universidades en Ámsterdam: carreras, requisitos y vida estudiantil",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "fecha": "2026-11-10"
+ },
+ {
+  "consulta": "universidades en inglaterra",
+  "titulo": "Guía para estudiar en Inglaterra: universidades, acceso y costes",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "fecha": "2026-11-10"
+ },
+ {
+  "consulta": "universidades australia",
+  "titulo": "Estudiar en Australia: mejores universidades, visados y orientación",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "fecha": "2026-11-10"
+ },
+ {
+  "consulta": "licenciaturas en colombia",
+  "titulo": "Carreras universitarias en Colombia: Guía completa y vocacional",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "oferta": "universidades",
+  "pais": "COL",
+  "pais_nombre": "Colombia",
+  "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al número de emergencias del país. ",
+  "fecha": "2026-11-10"
+ },
+ {
+  "consulta": "fuera de serie malcolm gladwell resumen",
+  "titulo": "Resumen de Fuera de serie de Malcolm Gladwell: Claves del éxito",
+  "mundo": "learn",
+  "test": "autoeficacia",
+  "oferta": "libros",
+  "pais": "COL",
+  "pais_nombre": "Colombia",
+  "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al número de emergencias del país. ",
+  "fecha": "2026-11-10"
+ },
+ {
+  "consulta": "carreras universitarias peru",
+  "titulo": "Cómo elegir carrera universitaria en Perú: Guía definitiva",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "oferta": "universidades",
+  "pais": "PER",
+  "pais_nombre": "Perú",
+  "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al 113, opción 5 (Perú). ",
+  "fecha": "2026-11-10"
+ },
+ {
+  "consulta": "en tiempos de estrés haz lo que importa pdf",
+  "titulo": "Manejo del estrés y ansiedad en estudiantes de Perú",
+  "mundo": "mind",
+  "test": "estres",
+  "oferta": "libros",
+  "pais": "PER",
+  "pais_nombre": "Perú",
+  "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al 113, opción 5 (Perú). ",
+  "fecha": "2026-11-10"
+ },
+ {
+  "consulta": "cuantas universidades hay en santiago",
+  "titulo": "Universidades en Santiago de Chile: guía completa y carreras",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "oferta": "universidades",
+  "pais": "CHL",
+  "pais_nombre": "Chile",
+  "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al *4141 (Chile, gratis, 24 horas). ",
+  "fecha": "2026-11-10"
+ },
+ {
+  "consulta": "el proceso de convertirse en persona carl rogers",
+  "titulo": "El proceso de convertirse en persona de Carl Rogers: Resumen",
+  "mundo": "mind",
+  "test": "autoaceptacion",
+  "oferta": "libros",
+  "pais": "CHL",
+  "pais_nombre": "Chile",
+  "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al *4141 (Chile, gratis, 24 horas). ",
+  "fecha": "2026-11-10"
  }
 ]
