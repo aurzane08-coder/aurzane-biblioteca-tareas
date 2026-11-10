@@ -85,5 +85,26 @@
    "alt": "Cultivo de neuronas corticales de rata con tubulina beta-III (verde), nestina (rojo), DCX (morado) y núcleos con DAPI (azul).",
    "fecha": "2026-11-10"
   }
+ },
+ "introduccion-psicologia": {
+  "area": "Psicología y bienestar",
+  "publico": "Cualquier persona que quiera una base sólida y científica de psicología, desde la curiosidad, los estudios o el trabajo.",
+  "etiquetas": [
+   "psicología",
+   "introducción a la psicología",
+   "curso de psicología gratis",
+   "mente y conducta",
+   "memoria",
+   "aprendizaje",
+   "personalidad",
+   "psicología social",
+   "trastornos psicológicos",
+   "terapia"
+  ],
+  "portada": "portada-psicologia.webp",
+  "portada_busqueda": [
+   "human eye close up iris"
+  ],
+  "portada_archivo": "File:Iris - left eye of a girl.jpg"
  }
 }
