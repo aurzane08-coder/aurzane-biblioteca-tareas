@@ -1,6 +1,2 @@
-live.aurzane.com/index.html
-build.aurzane.com/index.html
-mind.aurzane.com/index.html
-nexus.aurzane.com/index.html
-learn.aurzane.com/index.html
-aurzane.com/articulos.html
+live.aurzane.com/aurzane-id.js
+build.aurzane.com/aurzane-id.js
