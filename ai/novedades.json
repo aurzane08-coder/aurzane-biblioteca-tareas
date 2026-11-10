@@ -1,5 +1,10 @@
 [
  {
+  "fecha": "2026-11-10",
+  "url": "https://aurzane.com/articulos/cerebro-aprende-mejor-cuando-descansas/",
+  "titulo": "Artículo: Por qué tu cerebro aprende mejor cuando descansas"
+ },
+ {
   "fecha": "2026-11-09",
   "url": "https://aurzane.com/articulos/estres-laboral-academico-argentina-act/",
   "titulo": "Artículo: Estrés laboral y académico: guía práctica con ACT"
@@ -593,10 +598,5 @@
   "fecha": "2026-11-02",
   "url": "https://mind.aurzane.com/test-de-burnout/",
   "titulo": "Test de burnout gratis: ¿estás quemado/a en el trabajo?"
- },
- {
-  "fecha": "2026-11-02",
-  "url": "https://mind.aurzane.com/test-de-resiliencia/",
-  "titulo": "Test de resiliencia gratis (Brief Resilience Scale)"
  }
 ]

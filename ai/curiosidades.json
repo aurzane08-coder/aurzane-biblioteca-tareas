@@ -1,5 +1,30 @@
 [
  {
+  "id": "cur-114709696a",
+  "tipo": "curiosidad",
+  "titulo": "¿Tu cerebro aprende mejor cuando descansas?",
+  "dato": "Dormir tras estudiar consolida la memoria de trabajo y pasa la información a almacenamiento a largo plazo.",
+  "resumen": "Dormir tras estudiar consolida la memoria de trabajo y pasa la información a almacenamiento a largo plazo. Durante el sueño, el cerebro reactiva los patrones neuronales de lo aprendido. Este proceso, estudiado en la investigación sobre consolidación de memoria, es clave para retener información compleja.",
+  "fuente": "Diekelborn y Born, 2010",
+  "hashtags": [
+   "psicologia",
+   "aprendizaje",
+   "memoria",
+   "estudiar"
+  ],
+  "fuente_id": "tema-314-0",
+  "url": "https://mind.aurzane.com/",
+  "portada": "",
+  "tema": "curiosidad",
+  "idioma": "es",
+  "autores": "Diekelborn y Born, 2010",
+  "motivo": "Guion escrito por Gemini a partir de un tema de psicología. Revisa que el dato sea correcto antes de aprobar.",
+  "verificada": "2026-11-10",
+  "fecha": "2026-11-10",
+  "auto": true,
+  "verificacion": "El texto describe con precisión científica y sin exageraciones el proceso de consolidación de la memoria durante el sueño."
+ },
+ {
   "id": "cur-5827b4c76e",
   "tipo": "curiosidad",
   "titulo": "¿La acupuntura puede ayudar contra la depresión?",

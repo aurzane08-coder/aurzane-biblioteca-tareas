@@ -1,5 +1,26 @@
 [
  {
+  "id": "art-fa70ba7db6",
+  "slug": "cerebro-aprende-mejor-cuando-descansas",
+  "mundo": "learn",
+  "titulo": "Por qué tu cerebro aprende mejor cuando descansas",
+  "resumen": "Descubre cómo el sueño consolida la memoria y pasa lo aprendido a largo plazo. Un proceso clave para retener información compleja.",
+  "categoria": "Memoria",
+  "cuerpo": "En el ritmo acelerado del día a día, es común pensar que estudiar más horas seguidas es la única fórmula para retener nuevos conocimientos. Sin embargo, la ciencia del aprendizaje nos muestra una realidad muy distinta y fascinante. Nuestro cerebro no solo trabaja cuando estamos concentrados frente a un libro o una pantalla, sino que realiza una labor silenciosa y esencial cuando decidimos parar y descansar.\n\n## El poder invisible del descanso\n\nDurante mucho tiempo se ha considerado el descanso como una pausa pasiva en la que simplemente dejamos de hacer cosas. Lejos de ser un tiempo perdido, el cerebro aprovecha estos momentos para reorganizar la información. Cuando cerramos los libros y nos permitimos un respiro, se pone en marcha una maquinaria interna muy compleja destinada a ordenar todo lo que hemos intentado comprender a lo largo de la jornada.\n\n## Qué ocurre al dormir tras estudiar\n\nLa investigación científica ha demostrado que dormir después de un proceso de aprendizaje cumple una función biológica insustituible. En concreto, el sueño ayuda a consolidar la memoria de trabajo y facilita el paso de la información hacia un almacenamiento a largo plazo. Mientras descansamos, el cerebro reactiva de manera espontánea los mismos patrones neuronales que se activaron cuando estábamos estudiando. Este fenómeno permite que los conceptos complejos se asienten con mayor firmeza en nuestra estructura mental, facilitando que podamos recordarlos y utilizarlos en el futuro.\n\n## El papel de la consolidación\n\nEste proceso de consolidación de la memoria es fundamental para cualquier persona que esté adquiriendo nuevas habilidades o enfrentándose a retos formativos. Sin este paso nocturno, la información tiende a desvanecerse con mayor facilidad, volviendo más difícil el dominio de temas complejos. El descanso actúa, por tanto, como el pegamento que une las piezas del conocimiento, permitiendo que nuestra mente construya aprendizajes sólidos y duraderos.\n\n## Qué puedes hacer hoy\n\n* Programa pequeños descansos de unos minutos cada hora mientras estudias para permitir que tu mente procese la información de forma natural.\n* Prioriza una buena noche de sueño tras aprender algo nuevo en lugar de sacrificar horas de descanso para alargar las sesiones de repaso.\n* Evita las interrupciones constantes con pantallas justo antes de dormir, regalando a tu cerebro un espacio tranquilo para que active sus mecanismos de consolidación.",
+  "fecha": "2026-11-10",
+  "nota": 10,
+  "fuente_id": "cur-114709696a",
+  "imagen": "",
+  "test": "habitos",
+  "fuentes": [
+   {
+    "titulo": "¿Tu cerebro aprende mejor cuando descansas?",
+    "url": "https://mind.aurzane.com/",
+    "meta": "Diekelborn y Born, 2010"
+   }
+  ]
+ },
+ {
   "id": "art-83007ebe39",
   "slug": "estres-laboral-academico-argentina-act",
   "mundo": "mind",
