@@ -1,1 +1,1 @@
-aurzane.com/core/index.js
+aurzane.com/core/services/library.js
