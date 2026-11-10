@@ -22,5 +22,9 @@
  "desconocido|relanzar_enlaces": [
   2,
   0
+ ],
+ "prueba_fallida|reintentar_flujo": [
+  0,
+  1
  ]
 }
