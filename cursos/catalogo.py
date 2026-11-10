@@ -221,7 +221,7 @@ cat = (HEAD('Cursos gratis online con certificado · AURZANE LEARN',
             '.filtros label{font-size:.85rem;color:var(--suave);display:flex;flex-direction:column;gap:4px}.filtros select{font:inherit;padding:.45em .7em;border-radius:10px;border:1px solid var(--linea);background:var(--fondo);color:inherit}'
             '.filtros .chk{flex-direction:row;align-items:center;gap:8px;color:var(--tinta);font-size:.95rem}.cuenta{margin-left:auto;color:var(--suave);font-size:.9rem}'
             '.rej{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}.card{background:var(--superficie);border:1px solid var(--linea);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;text-decoration:none}'
-            '.card img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block}.card .c{padding:16px 18px 18px;display:flex;flex-direction:column;gap:8px;flex:1}.card h3{font:600 1.2rem/1.25 "Bodoni Moda",serif;margin:0}'
+            '.card img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;display:block}.card .c{padding:16px 18px 18px;display:flex;flex-direction:column;gap:8px;flex:1}.card h3{font:600 1.2rem/1.25 "Bodoni Moda",serif;margin:0}'
             '.card p{margin:0;color:var(--suave);font-size:.95rem}.card .d{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:6px}.card:hover{border-color:var(--oro)}'
             '.reco{border:2px solid var(--oro)}.reco-et{font-size:.8rem;font-weight:700;color:var(--oro)}.vacio{padding:40px;text-align:center;color:var(--suave)}</style>')
        + '<div class="w"><nav class="top"><a class="marca" href="https://learn.aurzane.com/">AURZANE LEARN</a><a href="https://learn.aurzane.com/certificado/">Verificar certificado</a></nav><main>'
