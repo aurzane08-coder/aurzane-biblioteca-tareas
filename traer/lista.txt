@@ -1,2 +1,3 @@
-live.aurzane.com/aurzane-id.js
-build.aurzane.com/aurzane-id.js
+learn.aurzane.com/cursos/portada-ansiedad.webp
+learn.aurzane.com/cursos/portada-neuro.webp
+learn.aurzane.com/cursos/portada-metodologia.webp
