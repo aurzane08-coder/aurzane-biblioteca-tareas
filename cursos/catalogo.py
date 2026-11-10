@@ -88,7 +88,7 @@ def commons(q):
         lic = (md.get('LicenseShortName') or {}).get('value', '')
         w, h = ii.get('width', 0), ii.get('height', 0)
         if not LIC_OK.match(lic) or w < 1400 or not h or not 1.25 <= w / h <= 2.2 or ii.get('mime') != 'image/jpeg' or NO_FOTO.search(pg.get('title', '')): continue
-        autor = re.sub(r'<[^>]+>', '', (md.get('Artist') or {}).get('value', '')).strip()[:120] or 'Autor desconocido'
+        autor = html.unescape(re.sub(r'<[^>]+>', '', (md.get('Artist') or {}).get('value', ''))).strip()[:120] or 'Autor desconocido'
         desc = re.sub(r'<[^>]+>', '', (md.get('ImageDescription') or {}).get('value', ''))[:200]
         out.append({'titulo': pg['title'], 'desc': desc, 'autor': autor, 'licencia': lic, 'pagina': ii.get('descriptionurl'), 'url': ii.get('thumburl') or ii.get('url')})
     return out
@@ -102,7 +102,7 @@ def commons_archivo(titulo):
     lic = (md.get('LicenseShortName') or {}).get('value', '')
     if not LIC_OK.match(lic): print('licencia no válida', titulo, lic); return []
     return [{'titulo': pg['title'], 'desc': re.sub(r'<[^>]+>', '', (md.get('ImageDescription') or {}).get('value', ''))[:200], 'licencia': lic,
-             'autor': re.sub(r'<[^>]+>', '', (md.get('Artist') or {}).get('value', '')).strip()[:120] or 'Autor desconocido', 'pagina': ii.get('descriptionurl'), 'url': ii.get('thumburl') or ii.get('url')}]
+             'autor': html.unescape(re.sub(r'<[^>]+>', '', (md.get('Artist') or {}).get('value', ''))).strip()[:120] or 'Autor desconocido', 'pagina': ii.get('descriptionurl'), 'url': ii.get('thumburl') or ii.get('url')}]
 
 
 def portada_web(c):
