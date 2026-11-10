@@ -1,6 +1,11 @@
 [
  {
   "fecha": "2026-11-10",
+  "url": "https://aurzane.com/articulos/esencialismo-enfocarte-lo-importante/",
+  "titulo": "Artículo: Esencialismo: Cómo enfocarte en lo importante"
+ },
+ {
+  "fecha": "2026-11-10",
   "url": "https://aurzane.com/articulos/universidades-privadas-caba-guia-carrera/",
   "titulo": "Artículo: Elegir carrera en CABA: guía de universidades privadas"
  },
@@ -593,10 +598,5 @@
   "fecha": "2026-11-02",
   "url": "https://nexus.aurzane.com/universidades/que-puedo-estudiar/",
   "titulo": "¿Qué carrera puedo estudiar con mi nota? Buscador 2025-2026"
- },
- {
-  "fecha": "2026-11-02",
-  "url": "https://mind.aurzane.com/test-de-estres/",
-  "titulo": "Test de estrés gratis y online (escala DASS-21)"
  }
 ]
