@@ -1,0 +1,26 @@
+name: Descargar libro abierto para un curso
+on:
+  workflow_dispatch:
+    inputs:
+      libro:
+        description: 'URL del índice del libro en espanol.libretexts.org (solo CC BY o CC BY-SA)'
+        required: true
+      carpeta:
+        description: 'Carpeta de destino'
+        required: true
+permissions:
+  contents: write
+jobs:
+  descargar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - run: python cursos_fuentes/descargar_libretexts.py
+        env:
+          LIBRO: ${{ github.event.inputs.libro }}
+          CARPETA: ${{ github.event.inputs.carpeta }}
+      - run: |
+          git config user.name "aurzane-bot"; git config user.email "bot@aurzane.com"
+          git add cursos_fuentes && git commit -m "Fuentes CC BY: ${{ github.event.inputs.carpeta }}" || exit 0
+          for i in 1 2 3; do git pull --rebase -X no-renames -X theirs && git push && break; sleep 5; done
