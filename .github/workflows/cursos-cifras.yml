@@ -8,7 +8,7 @@ on:
     workflows: ['Desplegar archivos a SiteGround']
     types: [completed]
   push:
-    paths: ['cursos/catalogo.py', 'cursos/meta.json', 'cifras/cifras.py', '.github/workflows/cursos-cifras.yml']
+    paths: ['cursos/catalogo.py', 'cursos/meta.json', 'cifras/cifras.py', 'mundos/prerender.py', '.github/workflows/cursos-cifras.yml']
   workflow_dispatch:
 permissions:
   contents: write
@@ -37,6 +37,8 @@ jobs:
           echo "SG_DEST=$SG_USER@$SG_HOST" >> $GITHUB_ENV
       - name: Cursos (catálogo, páginas, títulos y revisión)
         run: python3 -u cursos/catalogo.py
+      - name: Artículos de cada mundo dentro de la página
+        run: python3 -u mundos/prerender.py
       - name: Cifras reales en la web
         run: python3 -u cifras/cifras.py
       - name: Guardar
