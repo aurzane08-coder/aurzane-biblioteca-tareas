@@ -12,6 +12,12 @@
  "paises": 55,
  "libros": 1324,
  "cursos": {
+  "introduccion-psicologia": {
+   "temas": 16,
+   "lecciones": 64,
+   "preguntas": 256,
+   "tipos": 6
+  },
   "ansiedad-dia-a-dia": {
    "temas": 4,
    "lecciones": 12,

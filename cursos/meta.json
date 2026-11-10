@@ -105,6 +105,14 @@
   "portada_busqueda": [
    "human eye close up iris"
   ],
-  "portada_archivo": "File:Iris - left eye of a girl.jpg"
+  "portada_archivo": "File:Iris - left eye of a girl.jpg",
+  "portada_credito": {
+   "autor": "Laitr Keiows",
+   "licencia": "CC BY-SA 3.0",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Iris_-_left_eye_of_a_girl.jpg",
+   "titulo": "File:Iris - left eye of a girl.jpg",
+   "alt": "",
+   "fecha": "2026-11-10"
+  }
  }
 }

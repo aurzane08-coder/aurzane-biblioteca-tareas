@@ -2,6 +2,17 @@
  "fecha": "2026-11-10",
  "cursos": [
   {
+   "slug": "introduccion-psicologia",
+   "titulo": "Introducción a la psicología",
+   "temas": 16,
+   "lecciones": 64,
+   "preguntas": 256,
+   "horas": 20.0,
+   "certificado": true,
+   "estado": "ok",
+   "problemas": []
+  },
+  {
    "slug": "ansiedad-dia-a-dia",
    "titulo": "Gestionar la ansiedad en el día a día",
    "temas": 4,
