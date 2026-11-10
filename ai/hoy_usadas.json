@@ -1,7 +1,8 @@
 {
  "frases": [
   "cita-2a05ffb2be",
-  "fw-dd5b7bf4f1"
+  "fw-dd5b7bf4f1",
+  "fw-3f124fe085"
  ],
  "dias": {
   "2026-11-08": {
@@ -60,6 +61,35 @@
    "musica": {
     "url": "https://aurzane.com/marketing/musica/744747.mp3",
     "credito": "«Built To Last», Fall Walk Run (Jamendo), CC BY-SA"
+   }
+  },
+  "2026-11-10": {
+   "fecha": "2026-11-10",
+   "frase": {
+    "texto": "Vosotros, los europeos, tenéis los relojes, pero nosotros tenemos el tiempo.",
+    "autor": "Proverbio africano",
+    "obra": "",
+    "url": "https://aurzane.com/frases/#fw-3f124fe085",
+    "fuente": "Proverbia.net"
+   },
+   "curiosidad": {
+    "titulo": "¿Sabías que la depresión y el corazón están conectados?",
+    "texto": "La depresión y un tipo común de insuficiencia cardíaca comparten una raíz inflamatoria común. Un estudio reciente muestra que la depresión y los problemas del corazón están vinculados por mecanismos biológicos compartidos. La inflamación juega un papel clave en ambas condiciones y en sus procesos relacionados.",
+    "fuente": "Depression and Anxiety",
+    "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13695868/"
+   },
+   "ejercicio": {
+    "titulo": "Escaneo corporal (body scan) guiado de 7 minutos",
+    "url": "https://mind.aurzane.com/ejercicios/escaneo-corporal/"
+   },
+   "test": {
+    "titulo": "Test de TDAH en adultos (ASRS v1.1 de la OMS) gratis",
+    "url": "https://mind.aurzane.com/test-de-tdah/"
+   },
+   "mas_frases": true,
+   "musica": {
+    "url": "https://aurzane.com/marketing/musica/186949.mp3",
+    "credito": "«The Accident», Paper Plane Pilots (Jamendo), CC BY-SA"
    }
   }
  }

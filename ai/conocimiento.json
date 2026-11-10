@@ -21,7 +21,7 @@
   "receta": "relanzar_enlaces",
   "motivo": "Se han conectado 8 páginas huérfanas al sitemap desde aurzane.com/mapa/ y es necesario verificar su indexación y rastreo.",
   "explicacion": "Las páginas huérfanas carecían de enlaces internos previos, lo que impedía su descubrimiento por los rastreadores. Tras añadirlas al mapa web, se debe forzar una nueva revisión de enlaces. Si el problema persiste, asegúrate de actualizar manualmente el archivo sitemap.xml y enviar la URL de nuevo a Google Search Console.",
-  "ok": 1,
+  "ok": 2,
   "fallo": 0,
   "fecha": "2026-11-09",
   "ejemplo": "8 páginas del sitemap no tenían ningún enlace que llevara a ellas; ya están conectadas desde aurzane.com/mapa/."

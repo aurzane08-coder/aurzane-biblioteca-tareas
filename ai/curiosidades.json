@@ -1,5 +1,43 @@
 [
  {
+  "id": "cur-5827b4c76e",
+  "tipo": "curiosidad",
+  "titulo": "¿La acupuntura puede ayudar contra la depresión?",
+  "dato": "La ciencia estudia cómo la acupuntura reduce la inflamación cerebral y mejora la plasticidad neuronal.",
+  "resumen": "La ciencia estudia cómo la acupuntura reduce la inflamación cerebral y mejora la plasticidad neuronal. Una investigación publicada en Frontiers in Psychiatry señala que esta terapia no farmacológica ayuda a regular las señales inflamatorias en el cerebro. Además, favorece la neuroplasticidad y protege a las neuronas frente al estrés celular.",
+  "fuente": "Frontiers in Psychiatry",
+  "hashtags": [
+   "psicologia",
+   "neurociencia",
+   "bienestar",
+   "aurzane"
+  ],
+  "fuente_id": "pmc-PMC13740991",
+  "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13740991/",
+  "fecha": "2026-11-10",
+  "auto": true,
+  "verificacion": "El texto refleja con precisión moderada las líneas actuales de investigación neurobiológica sobre la acupuntura y la depresión sin caer en exageraciones milagrosas."
+ },
+ {
+  "id": "cur-6b094139bd",
+  "tipo": "curiosidad",
+  "titulo": "¿Cómo actúa la estimulación magnética en la depresión?",
+  "dato": "La estimulación magnética transcraneal modula la expresión génica cerebral relacionada con la plasticidad sináptica.",
+  "resumen": "La estimulación magnética transcraneal modula la expresión génica cerebral relacionada con la plasticidad sináptica. Una revisión científica reciente analiza cómo esta técnica afecta a nivel molecular en la depresión resistente al tratamiento. Los datos sugieren cambios en la transcripción y el metabolismo neuronal específicos de cada región.",
+  "fuente": "Frontiers in Psychiatry",
+  "hashtags": [
+   "psicologia",
+   "ciencia",
+   "cerebro",
+   "divulgacion"
+  ],
+  "fuente_id": "pmc-PMC13729381",
+  "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13729381/",
+  "fecha": "2026-11-10",
+  "auto": true,
+  "verificacion": "La afirmación describe con precisión y sin exageraciones los mecanismos neurobiológicos validados de la estimulación magnética transcraneal."
+ },
+ {
   "id": "cur-2fc91ef243",
   "tipo": "curiosidad",
   "titulo": "¿El estrés bloquea tu mente?",
