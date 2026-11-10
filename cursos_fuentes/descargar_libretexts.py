@@ -23,6 +23,9 @@ def contenido(pagina):
     t = m.group(1) if m else ''
     t = re.sub(r'<script.*?</script>|<style.*?</style>', '', t, flags=re.S)
     return t
+if os.environ.get('CRUDO'):
+    # diagnóstico: guarda una página tal cual para ver dónde está el texto
+    open(os.path.join(OUT, 'crudo.html'), 'w', encoding='utf-8').write(get(os.environ['CRUDO'])); raise SystemExit
 indice = get(LIBRO)
 lic = re.findall(r'CC BY[^"<]{0,20}', indice)[:3]
 print('licencia detectada:', lic)

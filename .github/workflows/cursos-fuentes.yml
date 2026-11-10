@@ -8,6 +8,10 @@ on:
       carpeta:
         description: 'Carpeta de destino'
         required: true
+      crudo:
+        description: 'Diagnóstico: URL de una página para guardarla sin procesar'
+        required: false
+        default: ''
 permissions:
   contents: write
 jobs:
@@ -20,6 +24,7 @@ jobs:
         env:
           LIBRO: ${{ github.event.inputs.libro }}
           CARPETA: ${{ github.event.inputs.carpeta }}
+          CRUDO: ${{ github.event.inputs.crudo }}
       - run: |
           git config user.name "aurzane-bot"; git config user.email "bot@aurzane.com"
           git add cursos_fuentes && git commit -m "Fuentes CC BY: ${{ github.event.inputs.carpeta }}" || exit 0
