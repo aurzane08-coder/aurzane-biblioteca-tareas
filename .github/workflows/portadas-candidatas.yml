@@ -1,0 +1,21 @@
+name: Portadas candidatas (fotos reales)
+on:
+  workflow_dispatch:
+    inputs:
+      busquedas:
+        description: 'JSON {"slug": ["búsqueda 1", "búsqueda 2"]}'
+        required: true
+permissions:
+  contents: write
+jobs:
+  hoja:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install -q pillow 2>/dev/null || pip install -q --break-system-packages pillow; python3 cursos/candidatas.py
+        env:
+          BUSQUEDAS: ${{ github.event.inputs.busquedas }}
+      - run: |
+          git config user.name "aurzane-bot"; git config user.email "bot@aurzane.com"
+          git add cursos/candidatas && git commit -qm "portadas candidatas" || exit 0
+          for i in 1 2 3; do git pull -q --rebase -X theirs && git push -q && break; sleep 5; done
