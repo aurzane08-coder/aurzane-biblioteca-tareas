@@ -1,6 +1,11 @@
 [
  {
   "fecha": "2026-11-10",
+  "url": "https://aurzane.com/articulos/universidades-privadas-caba-guia-carrera/",
+  "titulo": "Artículo: Elegir carrera en CABA: guía de universidades privadas"
+ },
+ {
+  "fecha": "2026-11-10",
   "url": "https://aurzane.com/articulos/cerebro-aprende-mejor-cuando-descansas/",
   "titulo": "Artículo: Por qué tu cerebro aprende mejor cuando descansas"
  },
@@ -593,10 +598,5 @@
   "fecha": "2026-11-02",
   "url": "https://mind.aurzane.com/test-de-estres/",
   "titulo": "Test de estrés gratis y online (escala DASS-21)"
- },
- {
-  "fecha": "2026-11-02",
-  "url": "https://mind.aurzane.com/test-de-burnout/",
-  "titulo": "Test de burnout gratis: ¿estás quemado/a en el trabajo?"
  }
 ]
