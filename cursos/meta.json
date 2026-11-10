@@ -18,7 +18,15 @@
    "woman meditating outdoors",
    "relaxation breathing lake"
   ],
-  "portada_archivo": "File:Relaxing woman enjoys morning coffee on a wooden bench.jpg"
+  "portada_archivo": "File:Relaxing woman enjoys morning coffee on a wooden bench.jpg",
+  "portada_credito": {
+   "autor": "Shixart1985",
+   "licencia": "CC BY 2.0",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Relaxing_woman_enjoys_morning_coffee_on_a_wooden_bench.jpg",
+   "titulo": "File:Relaxing woman enjoys morning coffee on a wooden bench.jpg",
+   "alt": "Mujer sentada en banco de madera bebiendo café en una apacible mañana rodeada de plantas.",
+   "fecha": "2026-11-10"
+  }
  },
  "neuroanatomia-funcional": {
   "area": "Neurociencias",
@@ -39,7 +47,15 @@
    "human brain anatomy specimen",
    "neurons microscopy"
   ],
-  "portada_archivo": "File:Cortes de cerebro y telencéfalo de pez cebra visto con microscopio confocal.jpg"
+  "portada_archivo": "File:Cortes de cerebro y telencéfalo de pez cebra visto con microscopio confocal.jpg",
+  "portada_credito": {
+   "autor": "Brandon Antonio Segura Torres &amp; Priscilla Vieto Bonilla",
+   "licencia": "CC BY-SA 4.0",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Cortes_de_cerebro_y_telenc%C3%A9falo_de_pez_cebra_visto_con_microscopio_confocal.jpg",
+   "titulo": "File:Cortes de cerebro y telencéfalo de pez cebra visto con microscopio confocal.jpg",
+   "alt": "Secciones del cerebro y telencéfalo de pez cebra vistas con un microscopio confocal.",
+   "fecha": "2026-11-10"
+  }
  },
  "tecnicas-neurociencias": {
   "area": "Neurociencias",
@@ -60,6 +76,14 @@
    "neuroscience laboratory microscope",
    "optogenetics neuron"
   ],
-  "portada_archivo": "File:Rat primary cortical neuron culture, 3D reconstruction (30614936992).jpg"
+  "portada_archivo": "File:Rat primary cortical neuron culture, 3D reconstruction (30614936992).jpg",
+  "portada_credito": {
+   "autor": "ZEISS Microscopy from Germany",
+   "licencia": "CC BY 2.0",
+   "pagina": "https://commons.wikimedia.org/wiki/File:Rat_primary_cortical_neuron_culture,_3D_reconstruction_(30614936992).jpg",
+   "titulo": "File:Rat primary cortical neuron culture, 3D reconstruction (30614936992).jpg",
+   "alt": "Cultivo de neuronas corticales de rata con tubulina beta-III (verde), nestina (rojo), DCX (morado) y núcleos con DAPI (azul).",
+   "fecha": "2026-11-10"
+  }
  }
 }
