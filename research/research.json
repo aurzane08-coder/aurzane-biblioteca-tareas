@@ -1,0 +1,25 @@
+{
+ "fecha": "2026-11-10",
+ "total": 25000,
+ "acceso_abierto": 25000,
+ "novedades": 20,
+ "sugerencias": {
+  "mental health": 2202,
+  "anxiety": 1407,
+  "sleep": 635,
+  "education": 7335,
+  "artificial intelligence": 1584,
+  "climate change": 262,
+  "nutrition": 381,
+  "adolescents": 1133,
+  "exercise": 831,
+  "archaeology": 1528
+ },
+ "por_mundo": {
+  "mind": 5000,
+  "nexus": 5000,
+  "live": 5000,
+  "learn": 5000,
+  "build": 5000
+ }
+}
