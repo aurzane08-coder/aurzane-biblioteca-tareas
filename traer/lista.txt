@@ -1,4 +1,6 @@
-learn.aurzane.com/robots.txt
-learn.aurzane.com/sitemap.xml
-aurzane.com/robots.txt
-aurzane.com/sitemap.xml
+mind.aurzane.com/mind-biblioteca.html
+nexus.aurzane.com/nexus-biblioteca.html
+live.aurzane.com/live-biblioteca.html
+learn.aurzane.com/learn-biblioteca.html
+build.aurzane.com/build-biblioteca.html
+aurzane.com/research.html
