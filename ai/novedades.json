@@ -1,6 +1,11 @@
 [
  {
   "fecha": "2026-11-11",
+  "url": "https://aurzane.com/articulos/proceso-convertirse-en-persona-carl-rogers/",
+  "titulo": "Artículo: El proceso de convertirse en persona: la visión de Carl Rogers"
+ },
+ {
+  "fecha": "2026-11-11",
   "url": "https://aurzane.com/articulos/estimulacion-magnetica-depresion-adolescente/",
   "titulo": "Artículo: Nuevas vías en la depresión adolescente: ciencia y combinación"
  },
@@ -592,11 +597,6 @@
  {
   "fecha": "2026-11-02",
   "url": "https://aurzane.com/mapa/",
-  "titulo": "404: Página no encontrada - AURZANE"
- },
- {
-  "fecha": "2026-11-02",
-  "url": "https://aurzane.com/biblioteca/recientes/",
   "titulo": "404: Página no encontrada - AURZANE"
  }
 ]
