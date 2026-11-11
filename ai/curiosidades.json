@@ -1,5 +1,30 @@
 [
  {
+  "id": "cur-0067f9c7bd",
+  "tipo": "curiosidad",
+  "titulo": "¿Funciona combinar terapia magnética y fármacos para la depresión?",
+  "dato": "Un estudio analiza sumar estimulación magnética transrepetitiva a la sertralina para la depresión adolescente en China.",
+  "resumen": "Un estudio analiza sumar estimulación magnética transrepetitiva a la sertralina para la depresión adolescente en China. La investigación revisa ensayos clínicos para comprobar si combinar este tratamiento magnético con el fármaco mejora la eficacia y la seguridad frente a usar solo el medicamento. Así se evalúa el impacto en los síntomas depresivos y cognitivos de los jóvenes.",
+  "fuente": "Frontiers in Psychiatry",
+  "hashtags": [
+   "aurzane",
+   "psicologia",
+   "ciencia",
+   "saludmental"
+  ],
+  "fuente_id": "pmc-PMC13736734",
+  "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13736734/",
+  "portada": "https://aurzane.com/biblioteca/recientes/portadas/pmc-PMC13736734.jpg",
+  "tema": "curiosidad",
+  "idioma": "es",
+  "autores": "Frontiers in Psychiatry",
+  "motivo": "Guion escrito por Gemini a partir de un estudio que aprobaste. Revisa que el dato sea correcto antes de aprobar.",
+  "verificada": "2026-11-11",
+  "fecha": "2026-11-11",
+  "auto": true,
+  "verificacion": "El texto describe de forma precisa, prudente y sin exageraciones una revisión científica sobre la combinación de tratamientos para la depresión."
+ },
+ {
   "id": "cur-114709696a",
   "tipo": "curiosidad",
   "titulo": "¿Tu cerebro aprende mejor cuando descansas?",

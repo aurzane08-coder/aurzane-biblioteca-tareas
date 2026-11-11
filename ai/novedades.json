@@ -1,6 +1,11 @@
 [
  {
   "fecha": "2026-11-11",
+  "url": "https://aurzane.com/articulos/estimulacion-magnetica-depresion-adolescente/",
+  "titulo": "Artículo: Nuevas vías en la depresión adolescente: ciencia y combinación"
+ },
+ {
+  "fecha": "2026-11-11",
   "url": "https://aurzane.com/biblioteca/recientes/ia-learn-all-about-life-a-comprehensive-education-in-life_202611/",
   "titulo": "Libro abierto: Learn All About Life: A Comprehensive Education in Life"
  },
@@ -593,10 +598,5 @@
   "fecha": "2026-11-02",
   "url": "https://aurzane.com/biblioteca/recientes/",
   "titulo": "404: Página no encontrada - AURZANE"
- },
- {
-  "fecha": "2026-11-02",
-  "url": "https://aurzane.com/novedades/",
-  "titulo": "Novedades de AURZANE: tests, herramientas y contenidos nuevos"
  }
 ]
