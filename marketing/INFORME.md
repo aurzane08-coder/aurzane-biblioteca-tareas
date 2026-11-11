@@ -4,13 +4,13 @@ Actualizado: 2026-11-11. Clics de personas (sin bots ni vistas previas) que entr
 
 | Red | Publicaciones | Clics |
 |---|---|---|
-| telegram | 39 | 4 |
-| bluesky | 27 | 84 |
-| mastodon | 27 | 72 |
-| instagram | 16 | 0 |
-| facebook | 16 | 46 |
+| telegram | 42 | 4 |
+| bluesky | 29 | 94 |
+| mastodon | 29 | 75 |
+| instagram | 19 | 0 |
+| facebook | 19 | 52 |
 | threads | 0 | 0 |
-| pinterest | 18 | 0 |
+| pinterest | 19 | 0 |
 
 ## Productos con más clics
 
@@ -19,13 +19,14 @@ Actualizado: 2026-11-11. Clics de personas (sin bots ni vistas previas) que entr
 | calc-sueldo | 11 |
 | test-tdah | 7 |
 | curso-neuro | 7 |
+| test-personalidad | 7 |
 | test-ansiedad | 7 |
 | test-sueno | 6 |
 | frase-b424a195 | 6 |
 | nc-ingenieria-en-tecnologias-industriales | 6 |
 | crea-l05-08 | 6 |
+| calc-calorias | 6 |
 | test-autocompasion | 5 |
-| test-personalidad | 5 |
 | test-habitos | 5 |
 | test-satisfaccion | 5 |
 | crea-l05-04 | 4 |
@@ -40,4 +41,3 @@ Actualizado: 2026-11-11. Clics de personas (sin bots ni vistas previas) que entr
 | frase-5e3e2ae7 | 4 |
 | crea-l06-02 | 4 |
 | frase-5b980a2a | 4 |
-| nc-bellas-artes | 4 |
