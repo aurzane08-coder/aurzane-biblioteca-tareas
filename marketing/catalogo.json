@@ -19260,6 +19260,81 @@
    "alta": "2026-10-26"
   },
   {
+   "id": "lectura-breve-historia-de-espana-fernando-garcia-de-cortazar",
+   "tipo": "lectura",
+   "mundo": "aurzane",
+   "origen": "tienda",
+   "url": "https://aurzane.com/libros/breve-historia-de-espana-fernando-garcia-de-cortazar/",
+   "titulo": "Breve historia de España",
+   "autor": "Fernando García de Cortázar",
+   "ganchos": [
+    "Libro recomendado: Breve historia de España",
+    "Breve historia de España, de Fernando García de Cortázar",
+    "¿Qué leer este mes? Breve historia de España"
+   ],
+   "texto": "Es para lectores interesados en recorrer los acontecimientos clave del pasado español de forma amena y rigurosa. Aporta una perspectiva amplia y narrativa de la identidad, los conflictos y la cultura de España a lo largo de los…",
+   "hashtags": [
+    "LibrosRecomendados",
+    "QueLeer",
+    "Lectura",
+    "Libros"
+   ],
+   "aviso": "Contiene enlace de afiliado.",
+   "img": null,
+   "emoji": "📚",
+   "alta": "2026-11-11"
+  },
+  {
+   "id": "lectura-el-mapa-del-tiempo-felix-j-palma",
+   "tipo": "lectura",
+   "mundo": "aurzane",
+   "origen": "tienda",
+   "url": "https://aurzane.com/libros/el-mapa-del-tiempo-felix-j-palma/",
+   "titulo": "El mapa del tiempo",
+   "autor": "Félix J. Palma",
+   "ganchos": [
+    "Libro recomendado: El mapa del tiempo",
+    "El mapa del tiempo, de Félix J. Palma",
+    "¿Qué leer este mes? El mapa del tiempo"
+   ],
+   "texto": "Es para los amantes de la literatura de misterio y de las tramas victorianas que juegan con los límites de la imaginación.",
+   "hashtags": [
+    "LibrosRecomendados",
+    "QueLeer",
+    "Lectura",
+    "Libros"
+   ],
+   "aviso": "Contiene enlace de afiliado.",
+   "img": null,
+   "emoji": "📚",
+   "alta": "2026-11-11"
+  },
+  {
+   "id": "lectura-crear-o-morir-andres-oppenheimer",
+   "tipo": "lectura",
+   "mundo": "aurzane",
+   "origen": "tienda",
+   "url": "https://aurzane.com/libros/crear-o-morir-andres-oppenheimer/",
+   "titulo": "Crear o morir",
+   "autor": "Andrés Oppenheimer",
+   "ganchos": [
+    "Libro recomendado: Crear o morir",
+    "Crear o morir, de Andrés Oppenheimer",
+    "¿Qué leer este mes? Crear o morir"
+   ],
+   "texto": "Es para emprendedores y curiosos que buscan entender los motores de la innovación en América Latina. Aporta ejemplos prácticos y testimonios sobre la importancia de la educación, la tecnología y la creatividad para transformar la…",
+   "hashtags": [
+    "LibrosRecomendados",
+    "QueLeer",
+    "Lectura",
+    "Libros"
+   ],
+   "aviso": "Contiene enlace de afiliado.",
+   "img": null,
+   "emoji": "📚",
+   "alta": "2026-11-11"
+  },
+  {
    "id": "lectura-el-monstruo-de-colores-anna-llenas",
    "tipo": "lectura",
    "mundo": "aurzane",
@@ -19558,6 +19633,56 @@
    "img": null,
    "emoji": "📚",
    "alta": "2026-11-09"
+  },
+  {
+   "id": "lectura-el-fin-del-trabajo-jeremy-rifkin",
+   "tipo": "lectura",
+   "mundo": "aurzane",
+   "origen": "tienda",
+   "url": "https://aurzane.com/libros/el-fin-del-trabajo-jeremy-rifkin/",
+   "titulo": "El fin del trabajo",
+   "autor": "Jeremy Rifkin",
+   "ganchos": [
+    "Libro recomendado: El fin del trabajo",
+    "El fin del trabajo, de Jeremy Rifkin",
+    "¿Qué leer este mes? El fin del trabajo"
+   ],
+   "texto": "Es para quienes analizan el impacto de la tecnología y la automatización en el mercado laboral actual. Aporta una reflexión profunda sobre la reducción del empleo tradicional y los nuevos desafíos económicos que afronta la…",
+   "hashtags": [
+    "LibrosRecomendados",
+    "QueLeer",
+    "Lectura",
+    "Libros"
+   ],
+   "aviso": "Contiene enlace de afiliado.",
+   "img": null,
+   "emoji": "📚",
+   "alta": "2026-11-11"
+  },
+  {
+   "id": "lectura-el-elemento-sir-ken-robinson",
+   "tipo": "lectura",
+   "mundo": "aurzane",
+   "origen": "tienda",
+   "url": "https://aurzane.com/libros/el-elemento-sir-ken-robinson/",
+   "titulo": "El elemento",
+   "autor": "Sir Ken Robinson",
+   "ganchos": [
+    "Libro recomendado: El elemento",
+    "El elemento, de Sir Ken Robinson",
+    "¿Qué leer este mes? El elemento"
+   ],
+   "texto": "Es para educadores, profesionales y cualquier persona en busca de su verdadera vocación personal. Aporta herramientas y reflexiones inspiradoras para conectar las pasiones individuales con las habilidades naturales en el entorno…",
+   "hashtags": [
+    "LibrosRecomendados",
+    "QueLeer",
+    "Lectura",
+    "Libros"
+   ],
+   "aviso": "Contiene enlace de afiliado.",
+   "img": null,
+   "emoji": "📚",
+   "alta": "2026-11-11"
   },
   {
    "id": "lectura-como-hacer-que-te-pasen-cosas-buenas-marian-rojas-estape",
@@ -37859,6 +37984,967 @@
    "emoji": "",
    "foto_q": "waterfall nature",
    "alta": "2026-11-10"
+  },
+  {
+   "id": "frase-4b8dea89",
+   "tipo": "frase",
+   "mundo": "aurzane",
+   "origen": "frases_web",
+   "url": "https://aurzane.com/frases/#fw-aeb81f24a3",
+   "titulo": "El cobarde sólo amenaza cuando está a salvo.",
+   "autor": "Goethe",
+   "libro": "",
+   "ganchos": [
+    "El cobarde sólo amenaza cuando está a salvo.",
+    "El cobarde sólo amenaza cuando está a salvo.",
+    "El cobarde sólo amenaza cuando está a salvo."
+   ],
+   "texto": "El cobarde sólo amenaza cuando está a salvo.",
+   "hashtags": [
+    "FrasesCélebres",
+    "FrasesDelDía",
+    "Reflexión",
+    "Psicología",
+    "Motivación",
+    "Bienestar",
+    "CrecimientoPersonal",
+    "Frases"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "",
+   "foto_q": "sunrise mountains",
+   "alta": "2026-11-11"
+  },
+  {
+   "id": "frase-2e9be943",
+   "tipo": "frase",
+   "mundo": "aurzane",
+   "origen": "frases_web",
+   "url": "https://aurzane.com/frases/#fw-44c817a706",
+   "titulo": "El optimista cree en los demás y el pesimista sólo cree en sí mismo.",
+   "autor": "Gilbert Keith Chesterton",
+   "libro": "",
+   "ganchos": [
+    "El optimista cree en los demás y el pesimista sólo cree en sí mismo.",
+    "El optimista cree en los demás y el pesimista sólo cree en sí mismo.",
+    "El optimista cree en los demás y el pesimista sólo cree en sí mismo."
+   ],
+   "texto": "El optimista cree en los demás y el pesimista sólo cree en sí mismo.",
+   "hashtags": [
+    "FrasesCélebres",
+    "FrasesDelDía",
+    "Reflexión",
+    "Psicología",
+    "Motivación",
+    "Bienestar",
+    "CrecimientoPersonal",
+    "Frases"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "",
+   "foto_q": "desert dunes sunset",
+   "alta": "2026-11-11"
+  },
+  {
+   "id": "frase-3788f01e",
+   "tipo": "frase",
+   "mundo": "aurzane",
+   "origen": "frases_web",
+   "url": "https://aurzane.com/frases/#fw-f8a012095e",
+   "titulo": "No anticipéis las tribulaciones ni temáis lo que seguramente no os puede suceder. Vivid siempre en un ambiente de optimismo.",
+   "autor": "Benjamin Franklin",
+   "libro": "",
+   "ganchos": [
+    "No anticipéis las tribulaciones ni temáis lo que seguramente no os puede suceder. Vivid siempre en un ambiente de optimismo.",
+    "No anticipéis las tribulaciones ni temáis lo que seguramente no os puede suceder. Vivid siempre en un ambiente de optimismo.",
+    "No anticipéis las tribulaciones ni temáis lo que seguramente no os puede suceder. Vivid siempre en un ambiente de optimismo."
+   ],
+   "texto": "No anticipéis las tribulaciones ni temáis lo que seguramente no os puede suceder. Vivid siempre en un ambiente de optimismo.",
+   "hashtags": [
+    "FrasesCélebres",
+    "FrasesDelDía",
+    "Reflexión",
+    "Psicología",
+    "Motivación",
+    "Bienestar",
+    "CrecimientoPersonal",
+    "Frases"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "",
+   "foto_q": "snowy mountain peak",
+   "alta": "2026-11-11"
+  },
+  {
+   "id": "frase-fe1af3e6",
+   "tipo": "frase",
+   "mundo": "aurzane",
+   "origen": "frases_web",
+   "url": "https://aurzane.com/frases/#fw-82eb11fd5b",
+   "titulo": "El pesimista se queja del viento; el optimista espera que cambie; el realista ajusta las velas.",
+   "autor": "William George Ward",
+   "libro": "",
+   "ganchos": [
+    "El pesimista se queja del viento; el optimista espera que cambie; el realista ajusta las velas.",
+    "El pesimista se queja del viento; el optimista espera que cambie; el realista ajusta las velas.",
+    "El pesimista se queja del viento; el optimista espera que cambie; el realista ajusta las velas."
+   ],
+   "texto": "El pesimista se queja del viento; el optimista espera que cambie; el realista ajusta las velas.",
+   "hashtags": [
+    "FrasesCélebres",
+    "FrasesDelDía",
+    "Reflexión",
+    "Psicología",
+    "Motivación",
+    "Bienestar",
+    "CrecimientoPersonal",
+    "Frases"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "",
+   "foto_q": "calm ocean waves",
+   "alta": "2026-11-11"
+  },
+  {
+   "id": "frase-c112152d",
+   "tipo": "frase",
+   "mundo": "aurzane",
+   "origen": "frases_web",
+   "url": "https://aurzane.com/frases/#fw-0c36d829a9",
+   "titulo": "El pesimismo conduce a la debilidad; el optimismo al poder.",
+   "autor": "William James",
+   "libro": "",
+   "ganchos": [
+    "El pesimismo conduce a la debilidad; el optimismo al poder.",
+    "El pesimismo conduce a la debilidad; el optimismo al poder.",
+    "El pesimismo conduce a la debilidad; el optimismo al poder."
+   ],
+   "texto": "El pesimismo conduce a la debilidad; el optimismo al poder.",
+   "hashtags": [
+    "FrasesCélebres",
+    "FrasesDelDía",
+    "Reflexión",
+    "Psicología",
+    "Motivación",
+    "Bienestar",
+    "CrecimientoPersonal",
+    "Frases"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "",
+   "foto_q": "rain drops window",
+   "alta": "2026-11-11"
+  },
+  {
+   "id": "frase-64a8874c",
+   "tipo": "frase",
+   "mundo": "aurzane",
+   "origen": "frases_web",
+   "url": "https://aurzane.com/frases/#fw-e184f242e4",
+   "titulo": "El optimismo es la creencia de que todo es hermoso.",
+   "autor": "Ambrose Bierce",
+   "libro": "",
+   "ganchos": [
+    "El optimismo es la creencia de que todo es hermoso.",
+    "El optimismo es la creencia de que todo es hermoso.",
+    "El optimismo es la creencia de que todo es hermoso."
+   ],
+   "texto": "El optimismo es la creencia de que todo es hermoso.",
+   "hashtags": [
+    "FrasesCélebres",
+    "FrasesDelDía",
+    "Reflexión",
+    "Psicología",
+    "Motivación",
+    "Bienestar",
+    "CrecimientoPersonal",
+    "Frases"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "",
+   "foto_q": "rain drops window",
+   "alta": "2026-11-11"
+  },
+  {
+   "id": "frase-81a780b6",
+   "tipo": "frase",
+   "mundo": "aurzane",
+   "origen": "frases_web",
+   "url": "https://aurzane.com/frases/#fw-e41a4cf85d",
+   "titulo": "No hay mal que por bien no venga.",
+   "autor": "Refrán",
+   "libro": "",
+   "ganchos": [
+    "No hay mal que por bien no venga.",
+    "No hay mal que por bien no venga.",
+    "No hay mal que por bien no venga."
+   ],
+   "texto": "No hay mal que por bien no venga.",
+   "hashtags": [
+    "FrasesCélebres",
+    "FrasesDelDía",
+    "Reflexión",
+    "Psicología",
+    "Motivación",
+    "Bienestar",
+    "CrecimientoPersonal",
+    "Frases"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "",
+   "foto_q": "pine forest fog",
+   "alta": "2026-11-11"
+  },
+  {
+   "id": "frase-295800e1",
+   "tipo": "frase",
+   "mundo": "aurzane",
+   "origen": "frases_web",
+   "url": "https://aurzane.com/frases/#fw-3437ecd211",
+   "titulo": "A mal tiempo, buena cara.",
+   "autor": "Refrán",
+   "libro": "",
+   "ganchos": [
+    "A mal tiempo, buena cara.",
+    "A mal tiempo, buena cara.",
+    "A mal tiempo, buena cara."
+   ],
+   "texto": "A mal tiempo, buena cara.",
+   "hashtags": [
+    "FrasesCélebres",
+    "FrasesDelDía",
+    "Reflexión",
+    "Psicología",
+    "Motivación",
+    "Bienestar",
+    "CrecimientoPersonal",
+    "Frases"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "",
+   "foto_q": "sunrise mountains",
+   "alta": "2026-11-11"
+  },
+  {
+   "id": "frase-42562371",
+   "tipo": "frase",
+   "mundo": "aurzane",
+   "origen": "frases_web",
+   "url": "https://aurzane.com/frases/#fw-307c7ab601",
+   "titulo": "La razón de que todos seamos tan amigos de pensar bien de los demás, es que todos tememos por nosotros mismos. La base del optimismo es simplemente el miedo.",
+   "autor": "Oscar Wilde",
+   "libro": "",
+   "ganchos": [
+    "La razón de que todos seamos tan amigos de pensar bien de los demás, es que todos tememos por nosotros mismos. La base del optimismo es simplemente el miedo.",
+    "La razón de que todos seamos tan amigos de pensar bien de los demás, es que todos tememos por nosotros mismos. La base del optimismo es simplemente el miedo.",
+    "La razón de que todos seamos tan amigos de pensar bien de los demás, es que todos tememos por nosotros mismos. La base del optimismo es simplemente el miedo."
+   ],
+   "texto": "La razón de que todos seamos tan amigos de pensar bien de los demás, es que todos tememos por nosotros mismos. La base del optimismo es simplemente el miedo.",
+   "hashtags": [
+    "FrasesCélebres",
+    "FrasesDelDía",
+    "Reflexión",
+    "Psicología",
+    "Motivación",
+    "Bienestar",
+    "CrecimientoPersonal",
+    "Frases"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "",
+   "foto_q": "rain drops window",
+   "alta": "2026-11-11"
+  },
+  {
+   "id": "frase-9e2504c5",
+   "tipo": "frase",
+   "mundo": "aurzane",
+   "origen": "frases_web",
+   "url": "https://aurzane.com/frases/#fw-4fe278707a",
+   "titulo": "El pesimista sabe rebelarse contra el mal. Sólo el optimista sabe extrañarse del mal.",
+   "autor": "Gilbert Keith Chesterton",
+   "libro": "",
+   "ganchos": [
+    "El pesimista sabe rebelarse contra el mal. Sólo el optimista sabe extrañarse del mal.",
+    "El pesimista sabe rebelarse contra el mal. Sólo el optimista sabe extrañarse del mal.",
+    "El pesimista sabe rebelarse contra el mal. Sólo el optimista sabe extrañarse del mal."
+   ],
+   "texto": "El pesimista sabe rebelarse contra el mal. Sólo el optimista sabe extrañarse del mal.",
+   "hashtags": [
+    "FrasesCélebres",
+    "FrasesDelDía",
+    "Reflexión",
+    "Psicología",
+    "Motivación",
+    "Bienestar",
+    "CrecimientoPersonal",
+    "Frases"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "",
+   "foto_q": "pine forest fog",
+   "alta": "2026-11-11"
+  },
+  {
+   "id": "frase-ad40d493",
+   "tipo": "frase",
+   "mundo": "aurzane",
+   "origen": "frases_web",
+   "url": "https://aurzane.com/frases/#fw-4fd7cabdd6",
+   "titulo": "Optimista es el que os mira a los ojos, pesimista, el que os mira a los pies.",
+   "autor": "Gilbert Keith Chesterton",
+   "libro": "",
+   "ganchos": [
+    "Optimista es el que os mira a los ojos, pesimista, el que os mira a los pies.",
+    "Optimista es el que os mira a los ojos, pesimista, el que os mira a los pies.",
+    "Optimista es el que os mira a los ojos, pesimista, el que os mira a los pies."
+   ],
+   "texto": "Optimista es el que os mira a los ojos, pesimista, el que os mira a los pies.",
+   "hashtags": [
+    "FrasesCélebres",
+    "FrasesDelDía",
+    "Reflexión",
+    "Psicología",
+    "Motivación",
+    "Bienestar",
+    "CrecimientoPersonal",
+    "Frases"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "",
+   "foto_q": "lavender field",
+   "alta": "2026-11-11"
+  },
+  {
+   "id": "frase-5f3e176c",
+   "tipo": "frase",
+   "mundo": "aurzane",
+   "origen": "frases_web",
+   "url": "https://aurzane.com/frases/#fw-9e24665326",
+   "titulo": "Optimista es aquel que cree que todo está bien menos el pesimista; y, pesimista, aquel que cree que todo está mal, excepto él mismo.",
+   "autor": "Gilbert Keith Chesterton",
+   "libro": "",
+   "ganchos": [
+    "Optimista es aquel que cree que todo está bien menos el pesimista; y, pesimista, aquel que cree que todo está mal, excepto él mismo.",
+    "Optimista es aquel que cree que todo está bien menos el pesimista; y, pesimista, aquel que cree que todo está mal, excepto él mismo.",
+    "Optimista es aquel que cree que todo está bien menos el pesimista; y, pesimista, aquel que cree que todo está mal, excepto él mismo."
+   ],
+   "texto": "Optimista es aquel que cree que todo está bien menos el pesimista; y, pesimista, aquel que cree que todo está mal, excepto él mismo.",
+   "hashtags": [
+    "FrasesCélebres",
+    "FrasesDelDía",
+    "Reflexión",
+    "Psicología",
+    "Motivación",
+    "Bienestar",
+    "CrecimientoPersonal",
+    "Frases"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "",
+   "foto_q": "green leaves sunlight",
+   "alta": "2026-11-11"
+  },
+  {
+   "id": "frase-273f5d33",
+   "tipo": "frase",
+   "mundo": "aurzane",
+   "origen": "frases_web",
+   "url": "https://aurzane.com/frases/#fw-1a1832fec3",
+   "titulo": "La vida tiene su lado sombrío y su lado brillante; de nosotros depende elegir el que más nos plazca.",
+   "autor": "Samuel Smiles",
+   "libro": "",
+   "ganchos": [
+    "La vida tiene su lado sombrío y su lado brillante; de nosotros depende elegir el que más nos plazca.",
+    "La vida tiene su lado sombrío y su lado brillante; de nosotros depende elegir el que más nos plazca.",
+    "La vida tiene su lado sombrío y su lado brillante; de nosotros depende elegir el que más nos plazca."
+   ],
+   "texto": "La vida tiene su lado sombrío y su lado brillante; de nosotros depende elegir el que más nos plazca.",
+   "hashtags": [
+    "FrasesCélebres",
+    "FrasesDelDía",
+    "Reflexión",
+    "Psicología",
+    "Motivación",
+    "Bienestar",
+    "CrecimientoPersonal",
+    "Frases"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "",
+   "foto_q": "waterfall nature",
+   "alta": "2026-11-11"
+  },
+  {
+   "id": "frase-385c978d",
+   "tipo": "frase",
+   "mundo": "aurzane",
+   "origen": "frases_web",
+   "url": "https://aurzane.com/frases/#fw-f7f511fbcd",
+   "titulo": "El fin de tener una mente abierta, como el de una boca abierta, es llenarla con algo valioso.",
+   "autor": "Gilbert Keith Chesterton",
+   "libro": "",
+   "ganchos": [
+    "El fin de tener una mente abierta, como el de una boca abierta, es llenarla con algo valioso.",
+    "El fin de tener una mente abierta, como el de una boca abierta, es llenarla con algo valioso.",
+    "El fin de tener una mente abierta, como el de una boca abierta, es llenarla con algo valioso."
+   ],
+   "texto": "El fin de tener una mente abierta, como el de una boca abierta, es llenarla con algo valioso.",
+   "hashtags": [
+    "FrasesCélebres",
+    "FrasesDelDía",
+    "Reflexión",
+    "Psicología",
+    "Motivación",
+    "Bienestar",
+    "CrecimientoPersonal",
+    "Frases"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "",
+   "foto_q": "clouds above",
+   "alta": "2026-11-11"
+  },
+  {
+   "id": "frase-fdd5fdb6",
+   "tipo": "frase",
+   "mundo": "aurzane",
+   "origen": "frases_web",
+   "url": "https://aurzane.com/frases/#fw-b4fd2f3255",
+   "titulo": "La mente del hombre es de mármol; la de la mujer de cera.",
+   "autor": "William Shakespeare",
+   "libro": "",
+   "ganchos": [
+    "La mente del hombre es de mármol; la de la mujer de cera.",
+    "La mente del hombre es de mármol; la de la mujer de cera.",
+    "La mente del hombre es de mármol; la de la mujer de cera."
+   ],
+   "texto": "La mente del hombre es de mármol; la de la mujer de cera.",
+   "hashtags": [
+    "FrasesCélebres",
+    "FrasesDelDía",
+    "Reflexión",
+    "Psicología",
+    "Motivación",
+    "Bienestar",
+    "CrecimientoPersonal",
+    "Frases"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "",
+   "foto_q": "desert dunes sunset",
+   "alta": "2026-11-11"
+  },
+  {
+   "id": "frase-724caea7",
+   "tipo": "frase",
+   "mundo": "aurzane",
+   "origen": "frases_web",
+   "url": "https://aurzane.com/frases/#fw-5ac856b913",
+   "titulo": "Ocurre con la gente de mente pequeña lo mismo que con las botellas de cuello estrecho. Cuanto menos contiene, más ruido hacen al vaciarlas.",
+   "autor": "Alexander Pope",
+   "libro": "",
+   "ganchos": [
+    "Ocurre con la gente de mente pequeña lo mismo que con las botellas de cuello estrecho. Cuanto menos contiene, más ruido hacen al vaciarlas.",
+    "Ocurre con la gente de mente pequeña lo mismo que con las botellas de cuello estrecho. Cuanto menos contiene, más ruido hacen al vaciarlas.",
+    "Ocurre con la gente de mente pequeña lo mismo que con las botellas de cuello estrecho. Cuanto menos contiene, más ruido hacen al vaciarlas."
+   ],
+   "texto": "Ocurre con la gente de mente pequeña lo mismo que con las botellas de cuello estrecho. Cuanto menos contiene, más ruido hacen al vaciarlas.",
+   "hashtags": [
+    "FrasesCélebres",
+    "FrasesDelDía",
+    "Reflexión",
+    "Psicología",
+    "Motivación",
+    "Bienestar",
+    "CrecimientoPersonal",
+    "Frases"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "",
+   "foto_q": "pine forest fog",
+   "alta": "2026-11-11"
+  },
+  {
+   "id": "frase-15f08061",
+   "tipo": "frase",
+   "mundo": "aurzane",
+   "origen": "frases_web",
+   "url": "https://aurzane.com/frases/#fw-ea859f60e7",
+   "titulo": "La mente se estira por una nueva idea o sensación, y nunca se contrae de nuevo a sus antiguas dimensiones.",
+   "autor": "Oliver Wendell Holmes",
+   "libro": "",
+   "ganchos": [
+    "La mente se estira por una nueva idea o sensación, y nunca se contrae de nuevo a sus antiguas dimensiones.",
+    "La mente se estira por una nueva idea o sensación, y nunca se contrae de nuevo a sus antiguas dimensiones.",
+    "La mente se estira por una nueva idea o sensación, y nunca se contrae de nuevo a sus antiguas dimensiones."
+   ],
+   "texto": "La mente se estira por una nueva idea o sensación, y nunca se contrae de nuevo a sus antiguas dimensiones.",
+   "hashtags": [
+    "FrasesCélebres",
+    "FrasesDelDía",
+    "Reflexión",
+    "Psicología",
+    "Motivación",
+    "Bienestar",
+    "CrecimientoPersonal",
+    "Frases"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "",
+   "foto_q": "forest path light",
+   "alta": "2026-11-11"
+  },
+  {
+   "id": "frase-a35f10b5",
+   "tipo": "frase",
+   "mundo": "aurzane",
+   "origen": "frases_web",
+   "url": "https://aurzane.com/frases/#fw-a4c361d41d",
+   "titulo": "Los hombres no son prisioneros del destino, sino prisioneros de su propia mente.",
+   "autor": "Franklin D. Roosevelt",
+   "libro": "",
+   "ganchos": [
+    "Los hombres no son prisioneros del destino, sino prisioneros de su propia mente.",
+    "Los hombres no son prisioneros del destino, sino prisioneros de su propia mente.",
+    "Los hombres no son prisioneros del destino, sino prisioneros de su propia mente."
+   ],
+   "texto": "Los hombres no son prisioneros del destino, sino prisioneros de su propia mente.",
+   "hashtags": [
+    "FrasesCélebres",
+    "FrasesDelDía",
+    "Reflexión",
+    "Psicología",
+    "Motivación",
+    "Bienestar",
+    "CrecimientoPersonal",
+    "Frases"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "",
+   "foto_q": "pine forest fog",
+   "alta": "2026-11-11"
+  },
+  {
+   "id": "frase-a1bc4234",
+   "tipo": "frase",
+   "mundo": "aurzane",
+   "origen": "frases_web",
+   "url": "https://aurzane.com/frases/#fw-2c82e6a686",
+   "titulo": "El trabajo del pensamiento se parece a la perforación de un pozo: el agua es turbia al principio, mas luego se clarifica.",
+   "autor": "Proverbio chino",
+   "libro": "",
+   "ganchos": [
+    "El trabajo del pensamiento se parece a la perforación de un pozo: el agua es turbia al principio, mas luego se clarifica.",
+    "El trabajo del pensamiento se parece a la perforación de un pozo: el agua es turbia al principio, mas luego se clarifica.",
+    "El trabajo del pensamiento se parece a la perforación de un pozo: el agua es turbia al principio, mas luego se clarifica."
+   ],
+   "texto": "El trabajo del pensamiento se parece a la perforación de un pozo: el agua es turbia al principio, mas luego se clarifica.",
+   "hashtags": [
+    "FrasesCélebres",
+    "FrasesDelDía",
+    "Reflexión",
+    "Psicología",
+    "Motivación",
+    "Bienestar",
+    "CrecimientoPersonal",
+    "Frases"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "",
+   "foto_q": "cherry blossom",
+   "alta": "2026-11-11"
+  },
+  {
+   "id": "frase-1389052d",
+   "tipo": "frase",
+   "mundo": "aurzane",
+   "origen": "frases_web",
+   "url": "https://aurzane.com/frases/#fw-7636080cb5",
+   "titulo": "Una colección de pensamientos debe ser una farmacia donde se encuentra remedio a todos los males.",
+   "autor": "Voltaire",
+   "libro": "",
+   "ganchos": [
+    "Una colección de pensamientos debe ser una farmacia donde se encuentra remedio a todos los males.",
+    "Una colección de pensamientos debe ser una farmacia donde se encuentra remedio a todos los males.",
+    "Una colección de pensamientos debe ser una farmacia donde se encuentra remedio a todos los males."
+   ],
+   "texto": "Una colección de pensamientos debe ser una farmacia donde se encuentra remedio a todos los males.",
+   "hashtags": [
+    "FrasesCélebres",
+    "FrasesDelDía",
+    "Reflexión",
+    "Psicología",
+    "Motivación",
+    "Bienestar",
+    "CrecimientoPersonal",
+    "Frases"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "",
+   "foto_q": "clouds above",
+   "alta": "2026-11-11"
+  },
+  {
+   "id": "frase-0f08d7de",
+   "tipo": "frase",
+   "mundo": "aurzane",
+   "origen": "frases_web",
+   "url": "https://aurzane.com/frases/#fw-1642978104",
+   "titulo": "El pensamiento no es más que un relámpago en medio de una larga noche. Pero ese relámpago lo es todo.",
+   "autor": "Henri Poincaré",
+   "libro": "",
+   "ganchos": [
+    "El pensamiento no es más que un relámpago en medio de una larga noche. Pero ese relámpago lo es todo.",
+    "El pensamiento no es más que un relámpago en medio de una larga noche. Pero ese relámpago lo es todo.",
+    "El pensamiento no es más que un relámpago en medio de una larga noche. Pero ese relámpago lo es todo."
+   ],
+   "texto": "El pensamiento no es más que un relámpago en medio de una larga noche. Pero ese relámpago lo es todo.",
+   "hashtags": [
+    "FrasesCélebres",
+    "FrasesDelDía",
+    "Reflexión",
+    "Psicología",
+    "Motivación",
+    "Bienestar",
+    "CrecimientoPersonal",
+    "Frases"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "",
+   "foto_q": "calm ocean waves",
+   "alta": "2026-11-11"
+  },
+  {
+   "id": "frase-c9339da5",
+   "tipo": "frase",
+   "mundo": "aurzane",
+   "origen": "frases_web",
+   "url": "https://aurzane.com/frases/#fw-a299800086",
+   "titulo": "El pensador sabe considerar las cosas más sencillas de lo que son.",
+   "autor": "Friedrich Nietzsche",
+   "libro": "",
+   "ganchos": [
+    "El pensador sabe considerar las cosas más sencillas de lo que son.",
+    "El pensador sabe considerar las cosas más sencillas de lo que son.",
+    "El pensador sabe considerar las cosas más sencillas de lo que son."
+   ],
+   "texto": "El pensador sabe considerar las cosas más sencillas de lo que son.",
+   "hashtags": [
+    "FrasesCélebres",
+    "FrasesDelDía",
+    "Reflexión",
+    "Psicología",
+    "Motivación",
+    "Bienestar",
+    "CrecimientoPersonal",
+    "Frases"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "",
+   "foto_q": "rain drops window",
+   "alta": "2026-11-11"
+  },
+  {
+   "id": "frase-9b02be87",
+   "tipo": "frase",
+   "mundo": "aurzane",
+   "origen": "frases_web",
+   "url": "https://aurzane.com/frases/#fw-a7d969b399",
+   "titulo": "El pensamiento está libre de impuestos.",
+   "autor": "Martin Lutero",
+   "libro": "",
+   "ganchos": [
+    "El pensamiento está libre de impuestos.",
+    "El pensamiento está libre de impuestos.",
+    "El pensamiento está libre de impuestos."
+   ],
+   "texto": "El pensamiento está libre de impuestos.",
+   "hashtags": [
+    "FrasesCélebres",
+    "FrasesDelDía",
+    "Reflexión",
+    "Psicología",
+    "Motivación",
+    "Bienestar",
+    "CrecimientoPersonal",
+    "Frases"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "",
+   "foto_q": "lavender field",
+   "alta": "2026-11-11"
+  },
+  {
+   "id": "frase-eda6d2b0",
+   "tipo": "frase",
+   "mundo": "aurzane",
+   "origen": "frases_web",
+   "url": "https://aurzane.com/frases/#fw-666bcf3052",
+   "titulo": "Pensamientos sin contenidos son vacíos; intuiciones sin conceptos son ciegas.",
+   "autor": "Immanuel Kant",
+   "libro": "",
+   "ganchos": [
+    "Pensamientos sin contenidos son vacíos; intuiciones sin conceptos son ciegas.",
+    "Pensamientos sin contenidos son vacíos; intuiciones sin conceptos son ciegas.",
+    "Pensamientos sin contenidos son vacíos; intuiciones sin conceptos son ciegas."
+   ],
+   "texto": "Pensamientos sin contenidos son vacíos; intuiciones sin conceptos son ciegas.",
+   "hashtags": [
+    "FrasesCélebres",
+    "FrasesDelDía",
+    "Reflexión",
+    "Psicología",
+    "Motivación",
+    "Bienestar",
+    "CrecimientoPersonal",
+    "Frases"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "",
+   "foto_q": "misty lake morning",
+   "alta": "2026-11-11"
+  },
+  {
+   "id": "frase-b51f4e1f",
+   "tipo": "frase",
+   "mundo": "aurzane",
+   "origen": "frases_web",
+   "url": "https://aurzane.com/frases/#fw-c917d205b1",
+   "titulo": "El que no pueda guardar sus pensamientos, jamás sabrá analizar grandes cosas.",
+   "autor": "Thomas Carlyle",
+   "libro": "",
+   "ganchos": [
+    "El que no pueda guardar sus pensamientos, jamás sabrá analizar grandes cosas.",
+    "El que no pueda guardar sus pensamientos, jamás sabrá analizar grandes cosas.",
+    "El que no pueda guardar sus pensamientos, jamás sabrá analizar grandes cosas."
+   ],
+   "texto": "El que no pueda guardar sus pensamientos, jamás sabrá analizar grandes cosas.",
+   "hashtags": [
+    "FrasesCélebres",
+    "FrasesDelDía",
+    "Reflexión",
+    "Psicología",
+    "Motivación",
+    "Bienestar",
+    "CrecimientoPersonal",
+    "Frases"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "",
+   "foto_q": "forest path light",
+   "alta": "2026-11-11"
+  },
+  {
+   "id": "frase-d5542819",
+   "tipo": "frase",
+   "mundo": "aurzane",
+   "origen": "frases_web",
+   "url": "https://aurzane.com/frases/#fw-6f5dd49c2b",
+   "titulo": "Una vez despertado el pensamiento no vuelve a dormitar.",
+   "autor": "Thomas Carlyle",
+   "libro": "",
+   "ganchos": [
+    "Una vez despertado el pensamiento no vuelve a dormitar.",
+    "Una vez despertado el pensamiento no vuelve a dormitar.",
+    "Una vez despertado el pensamiento no vuelve a dormitar."
+   ],
+   "texto": "Una vez despertado el pensamiento no vuelve a dormitar.",
+   "hashtags": [
+    "FrasesCélebres",
+    "FrasesDelDía",
+    "Reflexión",
+    "Psicología",
+    "Motivación",
+    "Bienestar",
+    "CrecimientoPersonal",
+    "Frases"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "",
+   "foto_q": "misty lake morning",
+   "alta": "2026-11-11"
+  },
+  {
+   "id": "frase-9a294bd3",
+   "tipo": "frase",
+   "mundo": "aurzane",
+   "origen": "frases_web",
+   "url": "https://aurzane.com/frases/#fw-dca2196f95",
+   "titulo": "Dos cuerpos pueden juntarse para producir otro, pero el pensamiento sólo puede dar vida al pensamiento.",
+   "autor": "George Sand",
+   "libro": "",
+   "ganchos": [
+    "Dos cuerpos pueden juntarse para producir otro, pero el pensamiento sólo puede dar vida al pensamiento.",
+    "Dos cuerpos pueden juntarse para producir otro, pero el pensamiento sólo puede dar vida al pensamiento.",
+    "Dos cuerpos pueden juntarse para producir otro, pero el pensamiento sólo puede dar vida al pensamiento."
+   ],
+   "texto": "Dos cuerpos pueden juntarse para producir otro, pero el pensamiento sólo puede dar vida al pensamiento.",
+   "hashtags": [
+    "FrasesCélebres",
+    "FrasesDelDía",
+    "Reflexión",
+    "Psicología",
+    "Motivación",
+    "Bienestar",
+    "CrecimientoPersonal",
+    "Frases"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "",
+   "foto_q": "wildflowers field",
+   "alta": "2026-11-11"
+  },
+  {
+   "id": "frase-a066a4ee",
+   "tipo": "frase",
+   "mundo": "aurzane",
+   "origen": "frases_web",
+   "url": "https://aurzane.com/frases/#fw-1ba662512d",
+   "titulo": "A menos pensamiento, pensamiento más tiránico y absorbente.",
+   "autor": "Miguel de Unamuno",
+   "libro": "",
+   "ganchos": [
+    "A menos pensamiento, pensamiento más tiránico y absorbente.",
+    "A menos pensamiento, pensamiento más tiránico y absorbente.",
+    "A menos pensamiento, pensamiento más tiránico y absorbente."
+   ],
+   "texto": "A menos pensamiento, pensamiento más tiránico y absorbente.",
+   "hashtags": [
+    "FrasesCélebres",
+    "FrasesDelDía",
+    "Reflexión",
+    "Psicología",
+    "Motivación",
+    "Bienestar",
+    "CrecimientoPersonal",
+    "Frases"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "",
+   "foto_q": "sunrise mountains",
+   "alta": "2026-11-11"
+  },
+  {
+   "id": "frase-56d59673",
+   "tipo": "frase",
+   "mundo": "aurzane",
+   "origen": "frases_web",
+   "url": "https://aurzane.com/frases/#fw-fc87fccaad",
+   "titulo": "A veces los pensamientos nos consuelan de las cosas, y los libros de las personas.",
+   "autor": "Joseph Joubert",
+   "libro": "",
+   "ganchos": [
+    "A veces los pensamientos nos consuelan de las cosas, y los libros de las personas.",
+    "A veces los pensamientos nos consuelan de las cosas, y los libros de las personas.",
+    "A veces los pensamientos nos consuelan de las cosas, y los libros de las personas."
+   ],
+   "texto": "A veces los pensamientos nos consuelan de las cosas, y los libros de las personas.",
+   "hashtags": [
+    "FrasesCélebres",
+    "FrasesDelDía",
+    "Reflexión",
+    "Psicología",
+    "Motivación",
+    "Bienestar",
+    "CrecimientoPersonal",
+    "Frases"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "",
+   "foto_q": "forest path light",
+   "alta": "2026-11-11"
+  },
+  {
+   "id": "frase-24e12cdf",
+   "tipo": "frase",
+   "mundo": "aurzane",
+   "origen": "frases_web",
+   "url": "https://aurzane.com/frases/#fw-01499b51e4",
+   "titulo": "Al principio vienen necesariamente a la mente la fantasía y la fábula. Desfilan después lo cálculos matemáticos, y sólo al final la realización corona el pensamiento.",
+   "autor": "Konstantín Eduardovich Tsiolkovski",
+   "libro": "",
+   "ganchos": [
+    "Al principio vienen necesariamente a la mente la fantasía y la fábula. Desfilan después lo cálculos matemáticos, y sólo al final la realización corona el pensamiento.",
+    "Al principio vienen necesariamente a la mente la fantasía y la fábula. Desfilan después lo cálculos matemáticos, y sólo al final la realización corona el pensamiento.",
+    "Al principio vienen necesariamente a la mente la fantasía y la fábula. Desfilan después lo cálculos matemáticos, y sólo al final la realización corona el pensamiento."
+   ],
+   "texto": "Al principio vienen necesariamente a la mente la fantasía y la fábula. Desfilan después lo cálculos matemáticos, y sólo al final la realización corona el pensamiento.",
+   "hashtags": [
+    "FrasesCélebres",
+    "FrasesDelDía",
+    "Reflexión",
+    "Psicología",
+    "Motivación",
+    "Bienestar",
+    "CrecimientoPersonal",
+    "Frases"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "",
+   "foto_q": "snowy mountain peak",
+   "alta": "2026-11-11"
+  },
+  {
+   "id": "frase-898760fb",
+   "tipo": "frase",
+   "mundo": "aurzane",
+   "origen": "frases_web",
+   "url": "https://aurzane.com/frases/#fw-6cc750a92e",
+   "titulo": "El pensamiento es la clave de todos los tesoros; las ganancias del avaro son nuestras sin sus preocupaciones.",
+   "autor": "Honoré de Balzac",
+   "libro": "",
+   "ganchos": [
+    "El pensamiento es la clave de todos los tesoros; las ganancias del avaro son nuestras sin sus preocupaciones.",
+    "El pensamiento es la clave de todos los tesoros; las ganancias del avaro son nuestras sin sus preocupaciones.",
+    "El pensamiento es la clave de todos los tesoros; las ganancias del avaro son nuestras sin sus preocupaciones."
+   ],
+   "texto": "El pensamiento es la clave de todos los tesoros; las ganancias del avaro son nuestras sin sus preocupaciones.",
+   "hashtags": [
+    "FrasesCélebres",
+    "FrasesDelDía",
+    "Reflexión",
+    "Psicología",
+    "Motivación",
+    "Bienestar",
+    "CrecimientoPersonal",
+    "Frases"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "",
+   "foto_q": "forest path light",
+   "alta": "2026-11-11"
   },
   {
    "id": "cur-0067f9c7bd",
