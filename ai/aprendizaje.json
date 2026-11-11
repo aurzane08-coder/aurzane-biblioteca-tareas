@@ -9,7 +9,7 @@
  ],
  "ed:European journal of psychotraumatology": [
   11,
-  24
+  25
  ],
  "ed:Revista medica del Instituto Mexicano del Seguro Social": [
   0,
@@ -120,7 +120,7 @@
   12
  ],
  "ed:Internet Archive": [
-  23,
+  24,
   117
  ],
  "ed:": [
@@ -144,7 +144,7 @@
   0
  ],
  "tipo:libro": [
-  47,
+  48,
   9
  ],
  "Gambling Behavior and Treatments": [
@@ -312,7 +312,7 @@
   0
  ],
  "archive:psicologia": [
-  23,
+  24,
   0
  ],
  "ed:The Open University": [
@@ -442,5 +442,9 @@
  "ed:Drug design, development and therapy": [
   1,
   0
+ ],
+ "ed:Innova Publishing": [
+  0,
+  1
  ]
 }

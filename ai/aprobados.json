@@ -1,5 +1,27 @@
 [
  {
+  "id": "ia-learn-all-about-life-a-comprehensive-education-in-life_202611",
+  "tipo": "libro",
+  "titulo": "Learn All About Life: A Comprehensive Education in Life",
+  "autores": "James Orlando",
+  "anio": 2026,
+  "editorial": "Internet Archive",
+  "url": "https://archive.org/details/learn-all-about-life-a-comprehensive-education-in-life_202611",
+  "ia": "learn-all-about-life-a-comprehensive-education-in-life_202611",
+  "pdf": "",
+  "lic": "cc-by-nc-sa",
+  "idioma": "en",
+  "tema": "archive:psicologia",
+  "resumen": "A structured 20-module, 100-lesson life-education curriculum exploring identity, purpose, mental health, relationships, financial literacy, and societal participation. Designed for independent learners, educators, and communities seeking a universal, evidence-informed framework for human flourishing. Contact: jamesorlando652@proton.me",
+  "motivo": "Libro de psicología con licencia CC-BY-NC-SA conservado en Internet Archive.",
+  "pdf_origen": "https://archive.org/download/learn-all-about-life-a-comprehensive-education-in-life_202611/Learn_All_About_Life_Readable_Edition.pdf",
+  "paginas": 262,
+  "portada": "https://aurzane.com/biblioteca/recientes/portadas/ia-learn-all-about-life-a-comprehensive-education-in-life_202611.jpg",
+  "publicado": "2026-11-11",
+  "nota": 7,
+  "auto": true
+ },
+ {
   "id": "pmc-PMC13729381",
   "tipo": "estudio",
   "titulo": "The application of transcranial magnetic stimulation in treatment-resistant depression: insights from omics",

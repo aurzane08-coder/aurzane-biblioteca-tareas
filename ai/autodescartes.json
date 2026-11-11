@@ -1,5 +1,27 @@
 [
  {
+  "fecha": "2026-11-11",
+  "id": "pmc-PMC13600278",
+  "tipo": "estudio",
+  "titulo": "Does exposure to potentially traumatic events moderate the longitudinal relationship between mental health and problematic media use? Moderated multiple mediati",
+  "url": "https://europepmc.org/article/PMC/PMC13600278",
+  "motivo": "La IA le dio 4/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/learn-all-about-life-a-comprehensive-education-in-life_202611/Learn_All_About_Lif"
+  ]
+ },
+ {
+  "fecha": "2026-11-11",
+  "id": "ia-stepanenko-guide-25-saas-pricing-en",
+  "tipo": "libro",
+  "titulo": "SaaS Pricing: The Psychology of Price and Monetization: How not to underprice, how not to lose customers, and how to find the optimal price point",
+  "url": "https://archive.org/details/stepanenko-guide-25-saas-pricing-en",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 12 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/stepanenko-guide-25-saas-pricing-en/25-saas-pricing.pdf"
+  ]
+ },
+ {
   "fecha": "2026-11-10",
   "id": "ia-command-responsibility-beyond-hierarchy-sergio-pommier-gallo-ph-d",
   "tipo": "libro",
@@ -2808,28 +2830,6 @@
   "motivo": "Dice ser un libro pero el PDF solo tiene 22 páginas (es un capítulo, artículo o resumen)",
   "probados": [
    "200 application/pdf https://archive.org/download/piloto-la-forma-signed_202605/Piloto-La_forma-signed.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-02",
-  "id": "ia-martin-f-echeverria-actualidad-de-la-psicologia-de-santo-tomas-2025",
-  "tipo": "libro",
-  "titulo": "Martín F Echeverría, Actualidad De La Psicologia De Santo Tomás, 2025",
-  "url": "https://archive.org/details/martin-f-echeverria-actualidad-de-la-psicologia-de-santo-tomas-2025",
-  "motivo": "Dice ser un libro pero el PDF solo tiene 31 páginas (es un capítulo, artículo o resumen)",
-  "probados": [
-   "200 application/pdf https://archive.org/download/martin-f-echeverria-actualidad-de-la-psicologia-de-santo-tomas-2025/Mart%C3%ADn%2"
-  ]
- },
- {
-  "fecha": "2026-11-02",
-  "id": "ia-2015-10-05-la-politica-es-guerra-jose-lopez",
-  "tipo": "libro",
-  "titulo": "La política es guerra - José López",
-  "url": "https://archive.org/details/2015-10-05-la-politica-es-guerra-jose-lopez",
-  "motivo": "Dice ser un libro pero el PDF solo tiene 8 páginas (es un capítulo, artículo o resumen)",
-  "probados": [
-   "200 application/pdf https://archive.org/download/2015-10-05-la-politica-es-guerra-jose-lopez/2015-10-05-la-politica-es-guerra-jose"
   ]
  }
 ]

@@ -2,7 +2,8 @@
  "frases": [
   "cita-2a05ffb2be",
   "fw-dd5b7bf4f1",
-  "fw-3f124fe085"
+  "fw-3f124fe085",
+  "fw-a2a58ebdb4"
  ],
  "dias": {
   "2026-11-08": {
@@ -90,6 +91,35 @@
    "musica": {
     "url": "https://aurzane.com/marketing/musica/186949.mp3",
     "credito": "«The Accident», Paper Plane Pilots (Jamendo), CC BY-SA"
+   }
+  },
+  "2026-11-11": {
+   "fecha": "2026-11-11",
+   "frase": {
+    "texto": "Cuando se quiere ser agradable en sociedad es preciso resolverse a permitir que muchas cosas que sabemos nos sean enseñadas por personas que las ignoran.",
+    "autor": "Chamfort",
+    "obra": "",
+    "url": "https://aurzane.com/frases/#fw-a2a58ebdb4",
+    "fuente": "Proverbia.net"
+   },
+   "curiosidad": {
+    "titulo": "¿Cómo actúa la estimulación magnética en la depresión?",
+    "texto": "La estimulación magnética transcraneal modula la expresión génica cerebral relacionada con la plasticidad sináptica. Una revisión científica reciente analiza cómo esta técnica afecta a nivel molecular en la depresión resistente al tratamiento. Los datos sugieren cambios en la transcripción y el metabolismo neuronal específicos de cada región.",
+    "fuente": "Frontiers in Psychiatry",
+    "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13729381/"
+   },
+   "ejercicio": {
+    "titulo": "Escaneo corporal (body scan) guiado de 7 minutos",
+    "url": "https://mind.aurzane.com/ejercicios/escaneo-corporal/"
+   },
+   "test": {
+    "titulo": "Test de sueño gratis",
+    "url": "https://live.aurzane.com/test-de-sueno/"
+   },
+   "mas_frases": true,
+   "musica": {
+    "url": "https://aurzane.com/marketing/musica/962283.mp3",
+    "credito": "«Variatio 16 a 1 Clav. Ouverture - Goldberg Variations BWV 988», Kimiko Ishizaka (Jamendo), CC BY"
    }
   }
  }
