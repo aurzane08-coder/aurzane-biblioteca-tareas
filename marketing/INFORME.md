@@ -1,14 +1,14 @@
 # Informe de marketing
 
-Actualizado: 2026-11-10. Clics de personas (sin bots ni vistas previas) que entraron por los enlaces de las publicaciones.
+Actualizado: 2026-11-11. Clics de personas (sin bots ni vistas previas) que entraron por los enlaces de las publicaciones.
 
 | Red | Publicaciones | Clics |
 |---|---|---|
-| telegram | 38 | 4 |
-| bluesky | 27 | 81 |
-| mastodon | 27 | 69 |
-| instagram | 15 | 0 |
-| facebook | 15 | 41 |
+| telegram | 39 | 4 |
+| bluesky | 27 | 84 |
+| mastodon | 27 | 72 |
+| instagram | 16 | 0 |
+| facebook | 16 | 46 |
 | threads | 0 | 0 |
 | pinterest | 18 | 0 |
 
@@ -22,8 +22,8 @@ Actualizado: 2026-11-10. Clics de personas (sin bots ni vistas previas) que entr
 | test-ansiedad | 7 |
 | test-sueno | 6 |
 | frase-b424a195 | 6 |
+| nc-ingenieria-en-tecnologias-industriales | 6 |
 | crea-l05-08 | 6 |
-| nc-ingenieria-en-tecnologias-industriales | 5 |
 | test-autocompasion | 5 |
 | test-personalidad | 5 |
 | test-habitos | 5 |
@@ -40,4 +40,4 @@ Actualizado: 2026-11-10. Clics de personas (sin bots ni vistas previas) que entr
 | frase-5e3e2ae7 | 4 |
 | crea-l06-02 | 4 |
 | frase-5b980a2a | 4 |
-| test-autoestima | 3 |
+| nc-bellas-artes | 4 |

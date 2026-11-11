@@ -967,6 +967,52 @@
     "youtube": "test-tdah",
     "tiktok": "test-satisfaccion"
    }
+  },
+  "2026-11-24": {
+   "1": {
+    "telegram": "test-ansiedad",
+    "bluesky": "test-sueno",
+    "mastodon": "calc-sueldo",
+    "instagram": "test-habitos",
+    "facebook": "test-tdah",
+    "threads": "curso-neuro"
+   },
+   "2": {
+    "telegram": "nc-ingenieria-en-tecnologias-industriales",
+    "bluesky": "nc-publicidad-y-relaciones-publicas",
+    "mastodon": "nc-criminologia",
+    "instagram": "nc-sociologia",
+    "facebook": "nc-educacion-infantil",
+    "threads": "nc-bellas-artes",
+    "pinterest": "nc-periodismo"
+   },
+   "3": {
+    "telegram": "frase-5b980a2a",
+    "bluesky": "frase-5e3e2ae7",
+    "mastodon": "frase-43c7f531",
+    "instagram": "frase-b424a195",
+    "facebook": "frase-8e70072e",
+    "threads": "frase-4a49bc6d",
+    "pinterest": "frase-b81b4c76"
+   },
+   "4": {
+    "instagram": "test-tdah",
+    "facebook": "test-ansiedad",
+    "youtube": "calc-sueldo",
+    "tiktok": "test-sueno",
+    "telegram": "test-autocompasion"
+   },
+   "5": {
+    "instagram": "frase-b424a195",
+    "facebook": "frase-5e3e2ae7",
+    "youtube": "frase-5b980a2a",
+    "tiktok": "frase-8e70072e",
+    "telegram": "frase-fe3fa4a3"
+   },
+   "6": {
+    "youtube": "test-satisfaccion",
+    "tiktok": "test-habitos"
+   }
   }
  },
  "historial": {
