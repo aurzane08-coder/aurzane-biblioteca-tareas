@@ -1,5 +1,84 @@
 [
  {
+  "id": "la-riqueza-de-las-naciones-adam-smith",
+  "titulo": "La riqueza de las naciones",
+  "autor": "Adam Smith",
+  "temas": [
+   "finanzas",
+   "ensayo"
+  ],
+  "origen": "tendencia",
+  "fecha": "2026-11-11",
+  "isbn": "9789506391492",
+  "portada": "",
+  "anio": "1998",
+  "editorial": "Perfil",
+  "idioma": "spa",
+  "resumen": "",
+  "tendencia": "Aprovecha el interés actual en economía para entender los fundamentos de los mercados.",
+  "tendencia_fecha": "2026-11-11",
+  "porque": "Es para quienes desean comprender los cimientos de la economía moderna y el funcionamiento del mercado. Aporta una visión clara sobre cómo la división del trabajo y el interés propio impulsan la prosperidad de las naciones."
+ },
+ {
+  "id": "breve-historia-de-espana-fernando-garcia-de-cortazar",
+  "titulo": "Breve historia de España",
+  "autor": "Fernando García de Cortázar",
+  "temas": [
+   "ensayo",
+   "ciencia"
+  ],
+  "origen": "tendencia",
+  "fecha": "2026-11-11",
+  "isbn": "9788420635279",
+  "portada": "https://covers.openlibrary.org/b/id/4903608-M.jpg?default=false",
+  "anio": "1994",
+  "editorial": "Alianza Editorial",
+  "idioma": "spa",
+  "resumen": "",
+  "tendencia": "Ideal para profundizar en el contexto sociopolítico e histórico del país en noviembre.",
+  "tendencia_fecha": "2026-11-11",
+  "porque": "Es para lectores interesados en recorrer los acontecimientos clave del pasado español de forma amena y rigurosa. Aporta una perspectiva amplia y narrativa de la identidad, los conflictos y la cultura de España a lo largo de los siglos."
+ },
+ {
+  "id": "el-mapa-del-tiempo-felix-j-palma",
+  "titulo": "El mapa del tiempo",
+  "autor": "Félix J. Palma",
+  "temas": [
+   "novela"
+  ],
+  "origen": "tendencia",
+  "fecha": "2026-11-11",
+  "isbn": "9788420691183",
+  "portada": "https://covers.openlibrary.org/b/id/10412519-M.jpg?default=false",
+  "anio": "2009",
+  "editorial": "Alianza Editorial",
+  "idioma": "",
+  "resumen": "",
+  "tendencia": "Una novela de misterio y viajes perfecta para las tardes largas de otoño.",
+  "tendencia_fecha": "2026-11-11",
+  "porque": "Es para los amantes de la literatura de misterio y de las tramas victorianas que juegan con los límites de la imaginación. Aporta una lectura entretenida que entrelaza la ficción histórica con el eterno deseo humano de viajar en el tiempo."
+ },
+ {
+  "id": "crear-o-morir-andres-oppenheimer",
+  "titulo": "Crear o morir",
+  "autor": "Andrés Oppenheimer",
+  "temas": [
+   "productividad",
+   "ensayo"
+  ],
+  "origen": "tendencia",
+  "fecha": "2026-11-11",
+  "isbn": "9789877251845",
+  "portada": "https://covers.openlibrary.org/b/id/10839738-M.jpg?default=false",
+  "anio": "2012",
+  "editorial": "Debolsillo",
+  "idioma": "",
+  "resumen": "",
+  "tendencia": "Responde al debate sobre la innovación, el empleo y el tejido industrial actual.",
+  "tendencia_fecha": "2026-11-11",
+  "porque": "Es para emprendedores y curiosos que buscan entender los motores de la innovación en América Latina. Aporta ejemplos prácticos y testimonios sobre la importancia de la educación, la tecnología y la creatividad para transformar la sociedad."
+ },
+ {
   "id": "el-monstruo-de-colores-anna-llenas",
   "titulo": "El monstruo de colores",
   "autor": "Anna Llenas",
@@ -255,6 +334,42 @@
   "tendencia": "Un clásico infaltable para regalar y disfrutar en los hogares conforme se acerca el invierno.",
   "tendencia_fecha": "2026-11-09",
   "porque": "Este libro es para cualquier persona que quiera disfrutar de la cocina casera y tradicional con recetas accesibles y explicadas con cercanía. Aporta el estilo inconfundible de Karlos Arguiñano para hacer fáciles platos sabrosos del día a día."
+ },
+ {
+  "id": "el-fin-del-trabajo-jeremy-rifkin",
+  "titulo": "El fin del trabajo",
+  "autor": "Jeremy Rifkin",
+  "temas": [
+   "burnout",
+   "productividad"
+  ],
+  "origen": "crecer",
+  "fecha": "2026-11-11",
+  "isbn": "9788449323737",
+  "portada": "https://covers.openlibrary.org/b/id/13766740-M.jpg?default=false",
+  "anio": "2010",
+  "editorial": "Booket",
+  "idioma": "",
+  "resumen": "",
+  "porque": "Es para quienes analizan el impacto de la tecnología y la automatización en el mercado laboral actual. Aporta una reflexión profunda sobre la reducción del empleo tradicional y los nuevos desafíos económicos que afronta la humanidad."
+ },
+ {
+  "id": "el-elemento-sir-ken-robinson",
+  "titulo": "El elemento",
+  "autor": "Sir Ken Robinson",
+  "temas": [
+   "vocacional",
+   "autoestima"
+  ],
+  "origen": "crecer",
+  "fecha": "2026-11-11",
+  "isbn": "9788415431213",
+  "portada": "https://covers.openlibrary.org/b/id/14038647-M.jpg?default=false",
+  "anio": "2012",
+  "editorial": "CONECTA",
+  "idioma": "",
+  "resumen": "",
+  "porque": "Es para educadores, profesionales y cualquier persona en busca de su verdadera vocación personal. Aporta herramientas y reflexiones inspiradoras para conectar las pasiones individuales con las habilidades naturales en el entorno adecuado."
  },
  {
   "id": "como-hacer-que-te-pasen-cosas-buenas-marian-rojas-estape",
