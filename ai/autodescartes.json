@@ -1,6 +1,15 @@
 [
  {
   "fecha": "2026-11-11",
+  "id": "ia-la-casa-de-los-siete-pecados-capitales_202611",
+  "tipo": "libro",
+  "titulo": "LA CASA DE LOS SIETE PECADOS CAPITALES",
+  "url": "https://archive.org/details/la-casa-de-los-siete-pecados-capitales_202611",
+  "motivo": "No tiene un PDF libre que se pueda descargar",
+  "probados": []
+ },
+ {
+  "fecha": "2026-11-11",
   "id": "ia-Tetrodotoxina-para-el-corazo-n",
   "tipo": "libro",
   "titulo": "TETRODOTOXINA PARA EL CORAZÓ N",
@@ -2822,16 +2831,5 @@
   "url": "https://philarchive.org/rec/NIUWGL",
   "motivo": "No tiene un PDF libre que se pueda descargar",
   "probados": []
- },
- {
-  "fecha": "2026-11-02",
-  "id": "ia-el-perdo-n-col-perlas-de-psicologia-1",
-  "tipo": "libro",
-  "titulo": "EL PERDÓ N Col Perlas De Psicología 1",
-  "url": "https://archive.org/details/el-perdo-n-col-perlas-de-psicologia-1",
-  "motivo": "Dice ser un libro pero el PDF solo tiene 48 páginas (es un capítulo, artículo o resumen)",
-  "probados": [
-   "200 application/pdf https://archive.org/download/el-perdo-n-col-perlas-de-psicologia-1/EL%20PERD%C3%93N%20Col%20Perlas%20de%20Psic"
-  ]
  }
 ]
