@@ -279,5 +279,92 @@
   "pais_nombre": "Chile",
   "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al *4141 (Chile, gratis, 24 horas). ",
   "fecha": "2026-11-10"
+ },
+ {
+  "consulta": "universidades en francia",
+  "titulo": "Estudiar en Francia: Guía de universidades, grados y requisitos",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "fecha": "2026-11-11"
+ },
+ {
+  "consulta": "universidades en escocia",
+  "titulo": "Estudiar en Escocia: Universidades, acceso y vida estudiantil",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "fecha": "2026-11-11"
+ },
+ {
+  "consulta": "doble grado en ade y derecho nota de corte",
+  "titulo": "Doble grado en ADE y Derecho: Notas de corte y salidas",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "fecha": "2026-11-11"
+ },
+ {
+  "consulta": "el proceso de convertirse en persona carl rogers",
+  "titulo": "Carl Rogers en Venezuela: claves de la terapia humanista hoy",
+  "mundo": "mind",
+  "test": "autoaceptacion",
+  "oferta": "libros",
+  "pais": "VEN",
+  "pais_nombre": "Venezuela",
+  "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al número de emergencias del país. ",
+  "fecha": "2026-11-11"
+ },
+ {
+  "consulta": "berea college carreras",
+  "titulo": "Estudiar en el extranjero desde Venezuela: guía y opciones",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "oferta": "universidades",
+  "pais": "VEN",
+  "pais_nombre": "Venezuela",
+  "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al número de emergencias del país. ",
+  "fecha": "2026-11-11"
+ },
+ {
+  "consulta": "que estudiar en puerto rico",
+  "titulo": "Qué estudiar en Puerto Rico: guía de carreras y vocación",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "oferta": "universidades",
+  "pais": "PRI",
+  "pais_nombre": "Puerto Rico",
+  "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al número de emergencias del país. ",
+  "fecha": "2026-11-11"
+ },
+ {
+  "consulta": "universidades en puerto rico",
+  "titulo": "Universidades en Puerto Rico: opciones y cómo elegir",
+  "mundo": "nexus",
+  "test": "autoeficacia",
+  "oferta": "universidades",
+  "pais": "PRI",
+  "pais_nombre": "Puerto Rico",
+  "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al número de emergencias del país. ",
+  "fecha": "2026-11-11"
+ },
+ {
+  "consulta": "universidades de roma",
+  "titulo": "Estudiar en Roma desde Honduras: Requisitos y carreras",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "oferta": "universidades",
+  "pais": "HND",
+  "pais_nombre": "Honduras",
+  "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al número de emergencias del país. ",
+  "fecha": "2026-11-11"
+ },
+ {
+  "consulta": "el camino de las lagrimas",
+  "titulo": "Cómo superar el duelo y la pérdida: Guía psicológica",
+  "mundo": "mind",
+  "test": "resiliencia",
+  "oferta": "libros",
+  "pais": "HND",
+  "pais_nombre": "Honduras",
+  "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al número de emergencias del país. ",
+  "fecha": "2026-11-11"
  }
 ]

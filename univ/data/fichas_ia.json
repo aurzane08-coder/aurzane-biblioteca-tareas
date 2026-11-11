@@ -22,5 +22,33 @@
    }
   ],
   "fecha": "2026-11-09"
+ },
+ "https://nexus.aurzane.com/universidades/estados-unidos/texas-a-m-international-university/": {
+  "titulo": "Guía de orientación vocacional para Texas A & M International University",
+  "parrafos": [
+   "Te damos la bienvenida a la guía de AURZANE para futuros estudiantes interesados en Texas A & M International University, una institución pública situada en Laredo, Texas. En nuestro catálogo figuran 30 carreras de su oferta académica, las cuales abarcan áreas diversas como administración de empresas, biología, ingeniería informática, enfermería y educación, entre otras opciones formativas en inglés.",
+   "El acceso a la universidad en Estados Unidos se gestiona de manera independiente en cada institución. Habitualmente se valora el expediente de la escuela secundaria, conocido como GPA, además de ensayos, cartas de recomendación y actividades extracurriculares, mientras que los exámenes SAT o ACT suelen ser opcionales en muchos centros. Para los estudiantes internacionales, es un requisito indispensable tramitar el visado correspondiente y acreditar el nivel de idioma inglés.",
+   "Para elegir la carrera adecuada es fundamental ir más allá del nombre de la universidad y comparar con atención el plan de estudios, las oportunidades de prácticas, la modalidad de impartición y las posibles salidas profesionales. Si todavía tienes dudas sobre qué camino seguir, te recomendamos realizar un test vocacional que te ayude a ordenar tus intereses y aptitudes personales antes de tomar una decisión definitiva.",
+   "Estudiar en Laredo, Texas, te sitúa en una zona con dinamismo regional y características propias de la frontera, donde conviven diversas comunidades y culturas. Para conocer con precisión los plazos de admisión, los costes vigentes y las opciones de ayuda financiera o becas disponibles, es aconsejable revisar siempre los canales oficiales de la universidad o consultar directamente con su departamento de admisiones."
+  ],
+  "faq": [
+   {
+    "p": "¿Texas A & M International University es pública o privada?",
+    "r": "Según los datos oficiales que recogemos en AURZANE, se trata de una institución de carácter público ubicada en el estado de Texas."
+   },
+   {
+    "p": "¿Dónde está situada la universidad?",
+    "r": "La sede principal de Texas A & M International University se encuentra en la ciudad de Laredo, Texas, dentro de Estados Unidos."
+   },
+   {
+    "p": "¿Qué se puede estudiar en esta institución?",
+    "r": "En nuestro catálogo actual figuran 30 carreras que abarcan disciplinas como contabilidad, química, ingeniería, enfermería y educación, cuyos nombres oficiales se presentan en inglés."
+   },
+   {
+    "p": "¿Cómo es el proceso de admisión en Estados Unidos?",
+    "r": "Cada universidad gestiona su propio proceso valorando el expediente académico o GPA, ensayos y cartas de recomendación, y muchas instituciones ya no exigen obligatoriamente el SAT o ACT."
+   }
+  ],
+  "fecha": "2026-11-11"
  }
 }
