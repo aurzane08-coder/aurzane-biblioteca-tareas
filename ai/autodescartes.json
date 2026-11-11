@@ -1,6 +1,28 @@
 [
  {
   "fecha": "2026-11-11",
+  "id": "ia-Knismolagnia",
+  "tipo": "libro",
+  "titulo": "Knismolagnia",
+  "url": "https://archive.org/details/Knismolagnia",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 2 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/Knismolagnia/Knismolagnia.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-11",
+  "id": "ia-Capnolagnia",
+  "tipo": "libro",
+  "titulo": "Capnolagnia",
+  "url": "https://archive.org/details/Capnolagnia",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 3 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/Capnolagnia/Capnolagnia.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-11",
   "id": "pmc-PMC13600278",
   "tipo": "estudio",
   "titulo": "Does exposure to potentially traumatic events moderate the longitudinal relationship between mental health and problematic media use? Moderated multiple mediati",
@@ -2811,25 +2833,5 @@
   "url": "https://doi.org/10.5772/intechopen.1014436",
   "motivo": "No tiene un PDF libre que se pueda descargar",
   "probados": []
- },
- {
-  "fecha": "2026-11-02",
-  "id": "oa-W7204509156",
-  "tipo": "libro",
-  "titulo": "Ontology and Time 1: A Foundation for Temporal Reality",
-  "url": "https://doi.org/10.1515/9783112233795",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": []
- },
- {
-  "fecha": "2026-11-02",
-  "id": "ia-piloto-la-forma-signed_202605",
-  "tipo": "libro",
-  "titulo": "Piloto La Forma Signed",
-  "url": "https://archive.org/details/piloto-la-forma-signed_202605",
-  "motivo": "Dice ser un libro pero el PDF solo tiene 22 páginas (es un capítulo, artículo o resumen)",
-  "probados": [
-   "200 application/pdf https://archive.org/download/piloto-la-forma-signed_202605/Piloto-La_forma-signed.pdf"
-  ]
  }
 ]
