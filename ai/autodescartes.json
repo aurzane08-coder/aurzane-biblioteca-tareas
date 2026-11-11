@@ -1,6 +1,24 @@
 [
  {
   "fecha": "2026-11-11",
+  "id": "ia-Tetrodotoxina-para-el-corazo-n",
+  "tipo": "libro",
+  "titulo": "TETRODOTOXINA PARA EL CORAZÓ N",
+  "url": "https://archive.org/details/Tetrodotoxina-para-el-corazo-n",
+  "motivo": "No tiene un PDF libre que se pueda descargar",
+  "probados": []
+ },
+ {
+  "fecha": "2026-11-11",
+  "id": "ia-Me-los-Contaron-de-noche_202611",
+  "tipo": "libro",
+  "titulo": "ME LOS CONTARON DE NOCHE",
+  "url": "https://archive.org/details/Me-los-Contaron-de-noche_202611",
+  "motivo": "No tiene un PDF libre que se pueda descargar",
+  "probados": []
+ },
+ {
+  "fecha": "2026-11-11",
   "id": "ia-Knismolagnia",
   "tipo": "libro",
   "titulo": "Knismolagnia",
@@ -2815,23 +2833,5 @@
   "probados": [
    "200 application/pdf https://archive.org/download/el-perdo-n-col-perlas-de-psicologia-1/EL%20PERD%C3%93N%20Col%20Perlas%20de%20Psic"
   ]
- },
- {
-  "fecha": "2026-11-02",
-  "id": "oa-W7223856432",
-  "tipo": "libro",
-  "titulo": "Ideal Matter",
-  "url": "https://doi.org/10.1515/9783689243821",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": []
- },
- {
-  "fecha": "2026-11-02",
-  "id": "oa-W7223023150",
-  "tipo": "libro",
-  "titulo": "The Evolving Landscape of Workplace - Challenges and Opportunities [Working Title]",
-  "url": "https://doi.org/10.5772/intechopen.1014436",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": []
  }
 ]
