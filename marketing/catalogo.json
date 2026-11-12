@@ -1,5 +1,5 @@
 {
- "generado": "2026-11-11",
+ "generado": "2026-11-12",
  "productos": [
   {
    "id": "test-personalidad",
@@ -38945,6 +38945,60 @@
    "emoji": "",
    "foto_q": "forest path light",
    "alta": "2026-11-11"
+  },
+  {
+   "id": "cur-caacb3bc64",
+   "tipo": "curiosidad",
+   "mundo": "mind",
+   "origen": "curiosidades",
+   "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13738223/",
+   "titulo": "Tu hígado y tu cerebro están conectados",
+   "ganchos": [
+    "Tu hígado y tu cerebro están conectados",
+    "Tu hígado y tu cerebro están conectados 🧠",
+    "Una fórmula tradicional china investiga cómo la comunicación entre el hígado y el cerebro "
+   ],
+   "texto": "Una fórmula tradicional china investiga cómo la comunicación entre el hígado y el cerebro influye en la depresión y el hígado graso. Un estudio analizó cómo tratamientos tradicionales podrían modular la comunicación bidireccional entre ambos órganos. Esto ocurre a través de vías como el nervio vago y la microbiota intestinal.\n\nFuente: Drug design, development and therapy",
+   "hashtags": [
+    "psicologia",
+    "salud",
+    "ciencia",
+    "curiosidades",
+    "Psicología",
+    "Curiosidades"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "🧠",
+   "dato": "Una fórmula tradicional china investiga cómo la comunicación entre el hígado y el cerebro influye en la depresión y el hígado graso.",
+   "alta": "2026-11-12"
+  },
+  {
+   "id": "cur-6ed39a5dd2",
+   "tipo": "curiosidad",
+   "mundo": "mind",
+   "origen": "curiosidades",
+   "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13735106/",
+   "titulo": "Cuidar a mayores a largo plazo: ¿qué es la resiliencia familiar?",
+   "ganchos": [
+    "Cuidar a mayores a largo plazo: ¿qué es la resiliencia familiar?",
+    "Cuidar a mayores a largo plazo: ¿qué es la resiliencia familiar? 🧠",
+    "Un análisis identifica cuatro claves de la resiliencia familiar ante cuidados prolongados "
+   ],
+   "texto": "Un análisis identifica cuatro claves de la resiliencia familiar ante cuidados prolongados en mayores. El estudio muestra que esta capacidad incluye ver la adversidad de forma positiva, reorganizarse para resolver problemas, mantener una buena interacción intergeneracional y buscar recursos externos. Todo ello ayuda a las familias a afrontar mejor el cuidado de personas mayores.\n\nFuente: Frontiers in Public Health",
+   "hashtags": [
+    "psicologia",
+    "familia",
+    "divulgacion",
+    "aurzane",
+    "Psicología",
+    "Curiosidades"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "🧠",
+   "dato": "Un análisis identifica cuatro claves de la resiliencia familiar ante cuidados prolongados en mayores.",
+   "alta": "2026-11-12"
   },
   {
    "id": "cur-0067f9c7bd",
