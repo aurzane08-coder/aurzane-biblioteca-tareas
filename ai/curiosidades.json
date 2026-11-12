@@ -1,5 +1,43 @@
 [
  {
+  "id": "cur-caacb3bc64",
+  "tipo": "curiosidad",
+  "titulo": "Tu hígado y tu cerebro están conectados",
+  "dato": "Una fórmula tradicional china investiga cómo la comunicación entre el hígado y el cerebro influye en la depresión y el hígado graso.",
+  "resumen": "Una fórmula tradicional china investiga cómo la comunicación entre el hígado y el cerebro influye en la depresión y el hígado graso. Un estudio analizó cómo tratamientos tradicionales podrían modular la comunicación bidireccional entre ambos órganos. Esto ocurre a través de vías como el nervio vago y la microbiota intestinal.",
+  "fuente": "Drug design, development and therapy",
+  "hashtags": [
+   "psicologia",
+   "salud",
+   "ciencia",
+   "curiosidades"
+  ],
+  "fuente_id": "pmc-PMC13738223",
+  "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13738223/",
+  "fecha": "2026-11-12",
+  "auto": true,
+  "verificacion": "El dato es riguroso, refleja la investigación actual sobre el eje hígado-cerebro y evita exageraciones pseudocientíficas."
+ },
+ {
+  "id": "cur-6ed39a5dd2",
+  "tipo": "curiosidad",
+  "titulo": "Cuidar a mayores a largo plazo: ¿qué es la resiliencia familiar?",
+  "dato": "Un análisis identifica cuatro claves de la resiliencia familiar ante cuidados prolongados en mayores.",
+  "resumen": "Un análisis identifica cuatro claves de la resiliencia familiar ante cuidados prolongados en mayores. El estudio muestra que esta capacidad incluye ver la adversidad de forma positiva, reorganizarse para resolver problemas, mantener una buena interacción intergeneracional y buscar recursos externos. Todo ello ayuda a las familias a afrontar mejor el cuidado de personas mayores.",
+  "fuente": "Frontiers in Public Health",
+  "hashtags": [
+   "psicologia",
+   "familia",
+   "divulgacion",
+   "aurzane"
+  ],
+  "fuente_id": "pmc-PMC13735106",
+  "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13735106/",
+  "fecha": "2026-11-12",
+  "auto": true,
+  "verificacion": "El dato refleja fielmente los hallazgos habituales en investigación sobre resiliencia familiar en contextos de cuidado geriátrico sin caer en exageraciones."
+ },
+ {
   "id": "cur-0067f9c7bd",
   "tipo": "curiosidad",
   "titulo": "¿Funciona combinar terapia magnética y fármacos para la depresión?",

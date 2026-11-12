@@ -1,5 +1,16 @@
 [
  {
+  "fecha": "2026-11-12",
+  "id": "pmc-PMC13508530",
+  "tipo": "estudio",
+  "titulo": "Distinguishing prolonged grief and mental well-being after homicidal loss: a longitudinal factor analytic study in the context of a criminal trial",
+  "url": "https://europepmc.org/article/PMC/PMC13508530",
+  "motivo": "La IA le dio 2/10: no encaja en la biblioteca",
+  "probados": [
+   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13508530.1/PMC13508530.1.pdf"
+  ]
+ },
+ {
   "fecha": "2026-11-11",
   "id": "ia-la-casa-de-los-siete-pecados-capitales_202611",
   "tipo": "libro",
@@ -2820,15 +2831,6 @@
   "tipo": "libro",
   "titulo": "Unified Expression, Semantic Dimensions, and Ontological Commitment: A Recursive-Ontological Challenge to Two-Dimensional Semantics and the Philosophical Zombie",
   "url": "https://philarchive.org/rec/NIUUES",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": []
- },
- {
-  "fecha": "2026-11-02",
-  "id": "oa-W7222685128",
-  "tipo": "libro",
-  "titulo": "Who Grants Logic the Right to Judge Reality? Strong Causality, Strong Logical Conceivability, and the Ontological Possibility of Philosophical Zombies",
-  "url": "https://philarchive.org/rec/NIUWGL",
   "motivo": "No tiene un PDF libre que se pueda descargar",
   "probados": []
  }

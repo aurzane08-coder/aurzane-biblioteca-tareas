@@ -3,7 +3,8 @@
   "cita-2a05ffb2be",
   "fw-dd5b7bf4f1",
   "fw-3f124fe085",
-  "fw-a2a58ebdb4"
+  "fw-a2a58ebdb4",
+  "fw-4fe278707a"
  ],
  "dias": {
   "2026-11-08": {
@@ -120,6 +121,35 @@
    "musica": {
     "url": "https://aurzane.com/marketing/musica/962283.mp3",
     "credito": "«Variatio 16 a 1 Clav. Ouverture - Goldberg Variations BWV 988», Kimiko Ishizaka (Jamendo), CC BY"
+   }
+  },
+  "2026-11-12": {
+   "fecha": "2026-11-12",
+   "frase": {
+    "texto": "El pesimista sabe rebelarse contra el mal. Sólo el optimista sabe extrañarse del mal.",
+    "autor": "Gilbert Keith Chesterton",
+    "obra": "",
+    "url": "https://aurzane.com/frases/#fw-4fe278707a",
+    "fuente": "Proverbia.net"
+   },
+   "curiosidad": {
+    "titulo": "¿Influye la cultura en nuestra salud mental?",
+    "texto": "Cuidar la salud mental de mujeres musulmanas y árabes en EE.UU. requiere una atención adaptada a su cultura. Un estudio analiza cómo la resiliencia y el bienestar de estas mujeres están profundamente conectados con sus valores culturales y religiosos. Por ello, la atención psicológica debe ser congruente con su identidad para ser eficaz.",
+    "fuente": "Frontiers in global women's health",
+    "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13720362/"
+   },
+   "ejercicio": {
+    "titulo": "Meditación guiada de 5 minutos",
+    "url": "https://mind.aurzane.com/ejercicios/atencion-a-la-respiracion/"
+   },
+   "test": {
+    "titulo": "Test de autocompasión gratis (escala de Kristin Neff)",
+    "url": "https://mind.aurzane.com/test-de-autocompasion/"
+   },
+   "mas_frases": true,
+   "musica": {
+    "url": "https://aurzane.com/marketing/musica/1613588.mp3",
+    "credito": "«VolexTagamine - Violin (StepOne, music2000, ps1)», VolexOne (Jamendo), CC BY"
    }
   }
  }
