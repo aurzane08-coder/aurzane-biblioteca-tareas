@@ -1,5 +1,26 @@
 [
  {
+  "id": "art-6fbc6d16f8",
+  "slug": "perspectivas-depresion-resistente-tratamiento",
+  "mundo": "mind",
+  "titulo": "Nuevas perspectivas en la depresión resistente al tratamiento",
+  "resumen": "Exploramos cómo la ciencia investiga la estimulación magnética transcraneal y los procesos biológicos de la depresión resistente.",
+  "categoria": "Salud mental",
+  "cuerpo": "## Comprender la depresión resistente\n\nLa depresión mayor es una experiencia compleja y profundamente dolorosa que afecta a millones de personas en todo el mundo. En ocasiones, las estrategias terapéuticas y farmacológicas convencionales no logran ofrecer el alivio esperado. Cuando esto ocurre, los profesionales hablan de depresión resistente al tratamiento, una forma clínica que plantea importantes retos para quienes la padecen y para la medicina.\n\nFrente a esta dificultad, la investigación científica continúa avanzando para encontrar nuevas vías de comprensión y apoyo. Uno de los métodos que ha demostrado eficacia clínica en estos casos es la estimulación magnética transcraneal, un procedimiento médico que utiliza campos magnéticos para modular la actividad en zonas específicas del cerebro sin necesidad de intervenciones invasivas.\n\n## Qué nos enseña la ciencia actual\n\nAunque la estimulación magnética transcraneal ya se utiliza en la práctica clínica, sus mecanismos biológicos exactos todavía no se comprenden por completo. Por este motivo, la comunidad científica revisa y analiza de manera constante los datos disponibles para desentrañar qué sucede a nivel microscópico cuando se aplica esta técnica.\n\nLas investigaciones recientes integran diferentes disciplinas científicas que estudian desde la actividad de los genes hasta las proteínas y el metabolismo cerebral. Estos análisis exploratorios sugieren que la aplicación magnética podría influir en los programas celulares relacionados con la plasticidad sináptica y el desarrollo de las neuronas, ayudando a que las conexiones cerebrales se adapten y respondan de un modo diferente.\n\n## Mirando hacia el futuro del bienestar\n\nLos datos también apuntan hacia procesos moleculares muy diversos, como la regulación de la expresión genética y cambios en las proteínas y metabolitos que participan en la comunicación entre las células cerebrales. Aunque estos descubrimientos proceden de estudios complejos y análisis de datos biológicos avanzados, su valor reside en abrir la puerta a tratamientos cada vez más precisos y personalizados.\n\nPara quienes transitan por esta clase de malestar, conocer que la ciencia sigue investigando ofrece un horizonte de esperanza. Entender que el cerebro posee una gran plasticidad y que la investigación busca optimizar las terapias existentes ayuda a transitar el proceso con mayor confianza en los equipos profesionales.\n\nSi estás pasando por un momento de malestar intenso o necesitas apoyo emocional inmediato, recuerda que puedes llamar al 024 en España, un servicio gratuito, confidencial y disponible las veinticuatro horas.\n\n## Qué puedes hacer hoy\n\n- Mantén un contacto abierto y honesto con tu equipo de salud mental sobre cómo te sientes y qué opciones terapéuticas se adaptan mejor a ti.\n- Prioriza el descanso diario y las rutinas suaves que cuiden tu bienestar físico, recordando que el cuerpo y la mente forman una unidad.\n- Valora cada pequeño paso que das en tu día a día, reconociendo el esfuerzo que implica transitar por momentos de dificultad emocional.",
+  "fecha": "2026-11-12",
+  "nota": 10,
+  "fuente_id": "pmc-PMC13729381",
+  "imagen": "https://aurzane.com/biblioteca/recientes/portadas/pmc-PMC13729381.jpg",
+  "test": "depresion",
+  "fuentes": [
+   {
+    "titulo": "The application of transcranial magnetic stimulation in treatment-resistant depression: insights from omics",
+    "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13729381/",
+    "meta": "Yang Y, Zhang X, Duan Y y otros · Frontiers in psychiatry · 2026"
+   }
+  ]
+ },
+ {
   "id": "art-6802334f3b",
   "slug": "universidades-santiago-chile-guia-carreras",
   "mundo": "nexus",
