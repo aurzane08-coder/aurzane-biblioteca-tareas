@@ -36,7 +36,7 @@
   7
  ],
  "ed:Frontiers in psychiatry": [
-  4,
+  6,
   8
  ],
  "ed:Advances in rheumatology (London, England)": [
@@ -188,7 +188,7 @@
   0
  ],
  "estudio:en": [
-  19,
+  21,
   29
  ],
  "ed:Frontiers in dental medicine": [
@@ -196,7 +196,7 @@
   1
  ],
  "tipo:estudio": [
-  46,
+  48,
   33
  ],
  "ed:Stress biology": [
@@ -452,6 +452,10 @@
   0
  ],
  "ed:Advances in health information science and practice": [
+  0,
+  1
+ ],
+ "ed:Communications sustainability": [
   0,
   1
  ]

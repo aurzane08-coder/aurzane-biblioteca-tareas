@@ -1,6 +1,17 @@
 [
  {
   "fecha": "2026-11-12",
+  "id": "pmc-PMC13747811",
+  "tipo": "estudio",
+  "titulo": "Institutional partnerships enable long-term use of Earth observations in water security and resilience",
+  "url": "https://europepmc.org/article/PMC/PMC13747811",
+  "motivo": "La IA le dio 2/10: no encaja en la biblioteca",
+  "probados": [
+   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13753846.1/PMC13753846.1.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-12",
   "id": "pmc-PMC13745348",
   "tipo": "estudio",
   "titulo": "Integrating mental health into fracture liaison services: an attribution-first policy approach to depression, concerns about falling and pathway loss",
@@ -2829,17 +2840,6 @@
   "motivo": "Dice ser un libro pero el PDF solo tiene 2 páginas (es un capítulo, artículo o resumen)",
   "probados": [
    "200 application/pdf https://archive.org/download/ego-contumaz/Ego%20contumaz.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-03",
-  "id": "ia-la-venta-de-garaje",
-  "tipo": "libro",
-  "titulo": "LA VENTA DE GARAJE",
-  "url": "https://archive.org/details/la-venta-de-garaje",
-  "motivo": "Dice ser un libro pero el PDF solo tiene 42 páginas (es un capítulo, artículo o resumen)",
-  "probados": [
-   "200 application/pdf https://archive.org/download/la-venta-de-garaje/LA%20VENTA%20DE%20GARAJE.pdf"
   ]
  }
 ]
