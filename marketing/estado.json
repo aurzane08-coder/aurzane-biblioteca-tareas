@@ -1182,6 +1182,10 @@
    [
     "2026-11-11",
     "nc-comunicacion-audiovisual"
+   ],
+   [
+    "2026-11-12",
+    "test-satisfaccion"
    ]
   ],
   "bluesky": [
@@ -1304,6 +1308,10 @@
    [
     "2026-11-11",
     "nc-relaciones-internacionales"
+   ],
+   [
+    "2026-11-12",
+    "test-tdah"
    ]
   ],
   "mastodon": [
@@ -1426,6 +1434,10 @@
    [
     "2026-11-11",
     "nc-ingenieria-biomedica"
+   ],
+   [
+    "2026-11-12",
+    "test-bienestar"
    ]
   ],
   "instagram": [
@@ -1484,6 +1496,10 @@
    [
     "2026-11-11",
     "nc-filologia-clasica"
+   ],
+   [
+    "2026-11-12",
+    "test-ansiedad"
    ]
   ],
   "facebook": [
@@ -1542,6 +1558,10 @@
    [
     "2026-11-11",
     "nc-historia-del-arte"
+   ],
+   [
+    "2026-11-12",
+    "calc-pau"
    ]
   ],
   "pinterest": [
