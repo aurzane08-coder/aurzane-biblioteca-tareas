@@ -996,10 +996,10 @@
   "pruebas_total": 57
  },
  {
-  "fecha": "2026-11-12T18:28",
+  "fecha": "2026-11-12T18:33",
   "estado": "medio",
-  "avisos": 4,
-  "arreglos": 2,
+  "avisos": 3,
+  "arreglos": 1,
   "errores_24h": 1,
   "redes_ok_24h": 53,
   "cola": 0,

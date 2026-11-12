@@ -26,5 +26,9 @@
  "prueba_fallida|reintentar_flujo": [
   0,
   1
+ ],
+ "tienda|vaciar_cache": [
+  1,
+  0
  ]
 }
