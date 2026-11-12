@@ -4,40 +4,40 @@ Actualizado: 2026-11-12. Clics de personas (sin bots ni vistas previas) que entr
 
 | Red | Publicaciones | Clics |
 |---|---|---|
-| telegram | 44 | 4 |
-| bluesky | 30 | 110 |
-| mastodon | 30 | 83 |
-| instagram | 21 | 0 |
-| facebook | 21 | 56 |
+| telegram | 47 | 4 |
+| bluesky | 32 | 145 |
+| mastodon | 32 | 91 |
+| instagram | 24 | 0 |
+| facebook | 24 | 65 |
 | threads | 0 | 0 |
-| pinterest | 20 | 0 |
+| pinterest | 21 | 0 |
 
 ## Productos con más clics
 
 | Producto | Clics |
 |---|---|
+| test-tdah | 14 |
 | calc-sueldo | 11 |
-| nc-ingenieria-en-tecnologias-industriales | 8 |
-| curso-neuro | 8 |
-| test-ansiedad | 8 |
-| test-tdah | 7 |
-| test-sueno | 7 |
-| nc-sociologia | 7 |
+| test-sueno | 10 |
+| nc-ingenieria-en-tecnologias-industriales | 9 |
+| curso-neuro | 9 |
+| test-ansiedad | 9 |
+| nc-sociologia | 8 |
+| calc-calorias | 8 |
 | test-personalidad | 7 |
-| calc-calorias | 7 |
+| crea-l05-08 | 7 |
+| frase-81d54602 | 7 |
 | frase-b424a195 | 6 |
-| crea-l05-08 | 6 |
-| test-autocompasion | 5 |
-| test-habitos | 5 |
-| nc-educacion-infantil | 5 |
-| test-satisfaccion | 5 |
-| frase-81d54602 | 5 |
-| nc-relaciones-internacionales | 5 |
-| crea-l05-04 | 4 |
-| crea-l05-03 | 4 |
-| curso-metod | 4 |
-| biblio-nexus | 4 |
-| ovp | 4 |
-| nc-criminologia | 4 |
-| frase-8e70072e | 4 |
-| frase-5e3e2ae7 | 4 |
+| test-autocompasion | 6 |
+| ovp | 6 |
+| test-habitos | 6 |
+| nc-educacion-infantil | 6 |
+| test-satisfaccion | 6 |
+| nc-relaciones-internacionales | 6 |
+| crea-l05-04 | 5 |
+| curso-metod | 5 |
+| biblio-nexus | 5 |
+| nc-criminologia | 5 |
+| frase-8e70072e | 5 |
+| crea-l06-02 | 5 |
+| frase-5b980a2a | 5 |
