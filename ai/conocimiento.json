@@ -52,5 +52,14 @@
   "fallo": 0,
   "fecha": "2026-11-10",
   "ejemplo": "Prueba fallida en https://build.aurzane.com/calculadora-reforma/: Carga bien · 1 error(es) de JavaScript: undefined"
+ },
+ "tienda|tienda: portada rota: el error de descartes": {
+  "receta": "vaciar_cache",
+  "motivo": "La portada de la tienda muestra un error conceptual o de renderizado ligado al título cartesiano.",
+  "explicacion": "Causa probable: un fallo temporal de procesamiento en PHP o un bloqueo en la compilación estática de la página debido a un script obsoleto en la caché de SiteGround. Si la acción no basta, accede por FTP o gestor de archivos, revisa el script PHP de la portada de la tienda para corregir la salida HTML y asegúrate de que no queden objetos corruptos en el directorio temporal.",
+  "ok": 0,
+  "fallo": 0,
+  "fecha": "2026-11-12",
+  "ejemplo": "Tienda: portada rota: El error de Descartes"
  }
 }
