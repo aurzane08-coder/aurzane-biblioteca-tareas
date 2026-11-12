@@ -366,5 +366,106 @@
   "pais_nombre": "Honduras",
   "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al número de emergencias del país. ",
   "fecha": "2026-11-11"
+ },
+ {
+  "consulta": "universidades de polonia",
+  "titulo": "Estudiar en Polonia: Guía de universidades y oferta académica",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "fecha": "2026-11-12"
+ },
+ {
+  "consulta": "universidad en canarias",
+  "titulo": "Universidades en Canarias: Opciones para tu futuro académico",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "fecha": "2026-11-12"
+ },
+ {
+  "consulta": "amsterdam universidad",
+  "titulo": "Estudiar en la Universidad de Ámsterdam: Carreras y accesos",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "fecha": "2026-11-12"
+ },
+ {
+  "consulta": "relajacion progresiva",
+  "titulo": "Técnica de relajación progresiva de Jacobson: Pasos y beneficios",
+  "mundo": "mind",
+  "test": "ansiedad",
+  "fecha": "2026-11-12"
+ },
+ {
+  "consulta": "los limites del amor",
+  "titulo": "Los límites del amor: Cómo establecer relaciones sanas y afecto",
+  "mundo": "mind",
+  "test": "autoestima",
+  "fecha": "2026-11-12"
+ },
+ {
+  "consulta": "como superar el estres por examenes de ingreso",
+  "titulo": "Cómo superar el estrés ante los exámenes de ingreso a la universidad en Cuba",
+  "mundo": "learn",
+  "test": "estres",
+  "oferta": "test",
+  "pais": "CUB",
+  "pais_nombre": "Cuba",
+  "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al número de emergencias del país. ",
+  "fecha": "2026-11-12"
+ },
+ {
+  "consulta": "tecnicas de estudio efectivo para la universidad",
+  "titulo": "Técnicas de estudio efectivo para la vida universitaria en Cuba",
+  "mundo": "learn",
+  "test": "autoeficacia",
+  "oferta": "libros",
+  "pais": "CUB",
+  "pais_nombre": "Cuba",
+  "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al número de emergencias del país. ",
+  "fecha": "2026-11-12"
+ },
+ {
+  "consulta": "universidades en montevideo",
+  "titulo": "Universidades en Montevideo y Uruguay: guía para elegir carrera",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "oferta": "universidades",
+  "pais": "URY",
+  "pais_nombre": "Uruguay",
+  "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al número de emergencias del país. ",
+  "fecha": "2026-11-12"
+ },
+ {
+  "consulta": "estudiar en la universidad",
+  "titulo": "Cómo empezar la universidad en Uruguay: adaptación y hábitos de estudio",
+  "mundo": "learn",
+  "test": "habitos",
+  "oferta": "libros",
+  "pais": "URY",
+  "pais_nombre": "Uruguay",
+  "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al número de emergencias del país. ",
+  "fecha": "2026-11-12"
+ },
+ {
+  "consulta": "cuantas universidades hay en el salvador",
+  "titulo": "Guía completa de universidades en El Salvador y su oferta académica",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "oferta": "universidades",
+  "pais": "SLV",
+  "pais_nombre": "El Salvador",
+  "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al número de emergencias del país. ",
+  "fecha": "2026-11-12"
+ },
+ {
+  "consulta": "el proceso de convertirse en persona carl rogers",
+  "titulo": "El proceso de convertirse en persona: clave psicológica para tu desarrollo",
+  "mundo": "mind",
+  "test": "autoestima",
+  "oferta": "libros",
+  "pais": "SLV",
+  "pais_nombre": "El Salvador",
+  "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al número de emergencias del país. ",
+  "fecha": "2026-11-12"
  }
 ]

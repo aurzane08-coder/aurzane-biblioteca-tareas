@@ -1,54 +1,60 @@
 {
- "fecha": "2026-11-11",
+ "fecha": "2026-11-12",
  "conectado": true,
  "periodo": [
-  "2026-10-12",
-  "2026-11-08"
+  "2026-10-13",
+  "2026-11-09"
  ],
- "clics": 23,
- "impresiones": 11586,
+ "clics": 26,
+ "impresiones": 13658,
  "consultas": [
-  [
-   "ecpi university",
-   0,
-   150,
-   7.7
-  ],
   [
    "berkeley",
    0,
-   139,
-   10.6
+   273,
+   9.6
+  ],
+  [
+   "ecpi university",
+   0,
+   164,
+   7.7
   ],
   [
    "volar sobre el pantano",
    0,
-   122,
+   126,
    9.5
   ],
   [
    "texas a",
    0,
-   74,
-   9.4
+   100,
+   9.6
   ],
   [
    "facultades",
    0,
-   73,
-   22.6
+   87,
+   24.6
   ],
   [
    "recuerda que vas a morir",
    0,
-   71,
+   76,
    6.3
   ],
   [
    "universidad",
    0,
-   55,
-   32.0
+   62,
+   29.3
+  ],
+  [
+   "universidades",
+   0,
+   56,
+   29.6
   ],
   [
    "carl rogers el proceso de convertirse en persona",
@@ -57,28 +63,46 @@
    9.8
   ],
   [
-   "universidades",
-   0,
-   47,
-   26.8
-  ],
-  [
    "los medios de comunicación y la familia",
    0,
-   43,
-   20.2
+   46,
+   21.4
+  ],
+  [
+   "universidades de polonia",
+   0,
+   46,
+   85.6
+  ],
+  [
+   "universidades en utrecht holanda",
+   0,
+   44,
+   43.5
   ],
   [
    "los dones de la imperfeccion",
    0,
-   40,
-   12.0
+   43,
+   11.7
   ],
   [
    "universidad en canarias",
    0,
-   40,
-   82.7
+   43,
+   82.9
+  ],
+  [
+   "universidades en parís",
+   0,
+   43,
+   56.6
+  ],
+  [
+   "la tía tula pdf",
+   0,
+   41,
+   9.2
   ],
   [
    "el niño el topo el zorro y el caballo",
@@ -87,22 +111,22 @@
    11.5
   ],
   [
-   "la tía tula pdf",
-   0,
-   39,
-   9.2
-  ],
-  [
-   "universidades en parís",
-   0,
-   38,
-   56.0
-  ],
-  [
    "universidades publicas en australia",
    0,
+   39,
+   55.7
+  ],
+  [
+   "universidades italia",
+   0,
    38,
-   56.3
+   62.0
+  ],
+  [
+   "amsterdam universidad",
+   0,
+   37,
+   51.7
   ],
   [
    "dejame que te cuente",
@@ -111,85 +135,67 @@
    10.4
   ],
   [
-   "cuantas universidades hay en cuenca",
+   "el camino de las lagrimas",
    0,
-   36,
-   6.6
-  ],
-  [
-   "universidades en utrecht holanda",
-   0,
-   36,
-   44.2
-  ],
-  [
-   "universidades italia",
-   0,
-   35,
-   60.4
-  ],
-  [
-   "amsterdam universidad",
-   0,
-   33,
-   51.0
+   34,
+   11.5
   ],
   [
    "universidad en amsterdam",
    0,
+   34,
+   61.5
+  ],
+  [
+   "universidades en australia",
+   0,
+   34,
+   67.4
+  ],
+  [
+   "cuantas universidades hay en cuenca",
+   0,
+   33,
+   6.7
+  ],
+  [
+   "universidades en inglaterra",
+   0,
    32,
-   61.2
+   56.3
   ],
   [
-   "site:instagram.com \"universidade mogi das cruzes\" são paulo",
+   "viterbo university",
    0,
-   30,
-   6.9
-  ],
-  [
-   "universidades de polonia",
-   0,
-   30,
-   84.4
-  ],
-  [
-   "universidades en pachuca",
-   0,
-   30,
-   74.5
-  ],
-  [
-   "recuerda que vas a morir vive",
-   0,
-   29,
-   6.4
+   32,
+   6.5
   ],
   [
    "universidades amsterdam",
    0,
-   29,
-   55.2
+   31,
+   54.5
   ],
   [
    "universidades en holanda",
    0,
-   28,
-   40.4
-  ],
-  [
-   "el camino de las lagrimas",
-   0,
-   27,
-   11.6
+   31,
+   41.0
   ],
   [
    "doble grado en derecho y ade notas de corte",
    0,
-   26,
-   80.3
+   30,
+   80.6
   ]
  ],
  "paginas": [
+  [
+   "https://aurzane.com/biblioteca/libro/tormento.html",
+   3,
+   26,
+   6.8
+  ],
   [
    "https://aurzane.com/biblioteca/libro/ref-proceso-convertirse-persona.html",
    2,
@@ -199,50 +205,50 @@
   [
    "https://nexus.aurzane.com/universidades/ecuador/ciudad/manta/",
    2,
-   35,
-   6.1
-  ],
-  [
-   "https://aurzane.com/biblioteca/libro/tormento.html",
-   2,
-   24,
-   6.8
+   44,
+   5.9
   ],
   [
    "https://aurzane.com/biblioteca/libro/la-de-bringas.html",
    2,
-   13,
+   14,
    7.5
   ],
   [
    "https://aurzane.com/biblioteca/leer.html?libro=ref-recuerda-que-vas-a-morir",
    1,
-   113,
+   117,
    6.4
+  ],
+  [
+   "https://aurzane.com/biblioteca/libro/romancero-gitano.html",
+   1,
+   34,
+   9.5
   ],
   [
    "https://nexus.aurzane.com/universidades/notas-de-corte/derecho/",
    1,
-   24,
-   8.7
-  ],
-  [
-   "https://aurzane.com/biblioteca/libro/marianela.html",
-   1,
-   16,
-   12.6
-  ],
-  [
-   "https://aurzane.com/biblioteca/libro/ref-nuestra-mente-nos-engana.html",
-   1,
-   15,
-   9.1
+   31,
+   9.0
   ],
   [
    "https://aurzane.com/biblioteca/libro/ref-creacion-yo.html",
    1,
-   14,
+   17,
    5.8
+  ],
+  [
+   "https://aurzane.com/biblioteca/libro/marianela.html",
+   1,
+   17,
+   12.3
+  ],
+  [
+   "https://aurzane.com/biblioteca/libro/ref-nuestra-mente-nos-engana.html",
+   1,
+   17,
+   8.8
   ],
   [
    "https://aurzane.com/biblioteca/libro/ref-amarse-ojos-abiertos.html",
@@ -251,16 +257,34 @@
    13.3
   ],
   [
+   "https://aurzane.com/biblioteca/libro/ref-valor-atencion.html",
+   1,
+   9,
+   12.2
+  ],
+  [
    "https://aurzane.com/biblioteca/libro/ref-grito-desesperado.html",
    1,
    9,
    8.3
   ],
   [
-   "https://aurzane.com/biblioteca/libro/ref-valor-atencion.html",
+   "https://aurzane.com/biblioteca/libro/ref-universo-emociones.html",
    1,
-   6,
-   13.2
+   8,
+   10.8
+  ],
+  [
+   "https://aurzane.com/biblioteca/libro/ref-tareas-duelo.html",
+   1,
+   7,
+   5.1
+  ],
+  [
+   "https://aurzane.com/biblioteca/leer.html?libro=ref-grito-desesperado",
+   1,
+   7,
+   6.7
   ],
   [
    "https://aurzane.com/biblioteca/libro/amor-y-pedagogia.html",
@@ -269,22 +293,10 @@
    9.0
   ],
   [
-   "https://aurzane.com/biblioteca/leer.html?libro=ref-grito-desesperado",
-   1,
-   5,
-   6.2
-  ],
-  [
    "https://aurzane.com/biblioteca/libro/misericordia.html",
    1,
    4,
    10.5
-  ],
-  [
-   "https://aurzane.com/biblioteca/libro/ref-universo-emociones.html",
-   1,
-   4,
-   9.0
   ],
   [
    "https://nexus.aurzane.com/universidades/notas-de-corte/trabajo-social/",
@@ -301,232 +313,220 @@
   [
    "https://aurzane.com/biblioteca/libro/ref-tu-cerebro-musica.html",
    1,
-   1,
-   30.0
-  ],
-  [
-   "https://nexus.aurzane.com/universidades/estados-unidos/ecpi-university/",
-   0,
-   158,
-   10.1
+   2,
+   18.0
   ],
   [
    "https://nexus.aurzane.com/universidades/estados-unidos/university-of-california-berkeley/",
    0,
-   150,
-   12.7
+   304,
+   12.9
+  ],
+  [
+   "https://nexus.aurzane.com/universidades/estados-unidos/ecpi-university/",
+   0,
+   173,
+   10.4
   ],
   [
    "https://nexus.aurzane.com/universidades/paises-bajos/universiteit-van-amsterdam-uva/",
    0,
-   133,
-   51.0
+   143,
+   51.3
   ],
   [
    "https://aurzane.com/biblioteca/libro/ref-volar-sobre-pantano.html",
    0,
-   132,
-   10.9
-  ],
-  [
-   "https://aurzane.com/biblioteca/libro/ref-nino-topo-zorro-caballo.html",
-   0,
-   104,
-   11.0
+   141,
+   10.8
   ],
   [
    "https://nexus.aurzane.com/universidades/reino-unido/ciudad/londres/",
    0,
-   98,
-   38.2
+   123,
+   40.2
+  ],
+  [
+   "https://aurzane.com/biblioteca/libro/ref-nino-topo-zorro-caballo.html",
+   0,
+   107,
+   11.0
   ],
   [
    "https://nexus.aurzane.com/universidades/paises-bajos/ciudad/utrecht/",
    0,
-   96,
-   47.6
+   106,
+   46.5
   ],
   [
    "https://nexus.aurzane.com/universidades/italia/sapienza-universita-di-roma/",
    0,
-   92,
-   51.3
-  ],
-  [
-   "https://nexus.aurzane.com/universidades/paises-bajos/",
-   0,
-   91,
-   54.7
+   102,
+   51.7
   ],
   [
    "https://nexus.aurzane.com/universidades/reino-unido/ciudad/glasgow/",
    0,
-   88,
-   60.4
-  ],
-  [
-   "https://nexus.aurzane.com/universidades/estados-unidos/columbia-university-in-the-city-of-new-york/",
-   0,
-   83,
-   40.3
+   97,
+   61.6
   ]
  ],
  "paises": [
   [
    "ESP",
-   110,
-   8967,
-   24.6
-  ],
-  [
-   "ECU",
-   39,
-   3168,
-   9.4
+   118,
+   10107,
+   25.1
   ],
   [
    "MEX",
-   41,
-   3095,
-   21.7
+   46,
+   3682,
+   21.5
+  ],
+  [
+   "ECU",
+   43,
+   3471,
+   9.5
   ],
   [
    "USA",
-   4,
-   1732,
-   24.4
+   6,
+   2000,
+   25.2
   ],
   [
    "COL",
-   30,
-   1485,
-   22.5
-  ],
-  [
-   "ARG",
-   27,
-   1401,
-   23.0
+   32,
+   1698,
+   22.4
   ],
   [
    "BRA",
    3,
-   1370,
+   1660,
    54.8
   ],
   [
+   "ARG",
+   27,
+   1571,
+   23.6
+  ],
+  [
    "PER",
-   29,
-   1070,
+   30,
+   1219,
    10.5
   ],
   [
    "CHL",
-   16,
-   926,
-   19.5
+   17,
+   1175,
+   24.7
   ],
   [
    "VEN",
    9,
-   651,
-   19.8
+   729,
+   20.4
   ],
   [
    "BOL",
    9,
-   284,
-   12.6
+   339,
+   13.1
   ],
   [
    "GTM",
-   8,
-   215,
-   20.1
-  ],
-  [
-   "DEU",
-   0,
-   179,
-   35.2
-  ],
-  [
-   "DOM",
-   4,
-   173,
-   11.6
+   9,
+   240,
+   19.4
   ],
   [
    "FRA",
    0,
-   169,
-   37.8
+   213,
+   40.4
+  ],
+  [
+   "DEU",
+   0,
+   206,
+   33.5
+  ],
+  [
+   "DOM",
+   4,
+   198,
+   11.4
   ],
   [
    "CRI",
-   3,
-   167,
-   13.0
-  ],
-  [
-   "PRY",
-   3,
-   139,
-   16.5
+   4,
+   192,
+   12.8
   ],
   [
    "BGD",
    0,
-   134,
-   47.3
+   167,
+   48.0
   ],
   [
    "PAN",
    1,
-   133,
-   18.8
+   156,
+   17.6
+  ],
+  [
+   "PRY",
+   3,
+   152,
+   16.0
   ],
   [
    "GBR",
    2,
-   116,
-   32.8
+   130,
+   33.3
   ],
   [
    "CAN",
    1,
-   96,
-   29.5
-  ],
-  [
-   "PRI",
-   1,
-   86,
-   21.6
+   105,
+   28.3
   ],
   [
    "HND",
    1,
-   79,
-   18.4
+   100,
+   17.6
+  ],
+  [
+   "PRI",
+   1,
+   92,
+   20.7
   ],
   [
    "CUB",
-   3,
-   57,
-   14.4
+   4,
+   74,
+   12.9
   ],
   [
    "CHE",
    0,
-   57,
-   40.7
+   63,
+   39.1
   ],
   [
    "AUS",
    2,
-   45,
-   29.9
+   49,
+   28.2
   ],
   [
    "BEL",
@@ -535,25 +535,55 @@
    18.9
   ],
   [
-   "JPN",
-   1,
-   18,
-   12.9
-  ],
-  [
    "ARE",
    0,
-   17,
-   41.6
+   26,
+   47.8
+  ],
+  [
+   "JPN",
+   1,
+   21,
+   14.2
   ],
   [
    "ALB",
    0,
-   13,
-   36.7
+   14,
+   34.4
   ]
  ],
  "paises_trabajados": [
+  [
+   "2026-11-12",
+   "El Salvador",
+   "El proceso de convertirse en persona: clave psicológica para tu desarrollo"
+  ],
+  [
+   "2026-11-12",
+   "El Salvador",
+   "Guía completa de universidades en El Salvador y su oferta académica"
+  ],
+  [
+   "2026-11-12",
+   "Uruguay",
+   "Cómo empezar la universidad en Uruguay: adaptación y hábitos de estudio"
+  ],
+  [
+   "2026-11-12",
+   "Uruguay",
+   "Universidades en Montevideo y Uruguay: guía para elegir carrera"
+  ],
+  [
+   "2026-11-12",
+   "Cuba",
+   "Técnicas de estudio efectivo para la vida universitaria en Cuba"
+  ],
+  [
+   "2026-11-12",
+   "Cuba",
+   "Cómo superar el estrés ante los exámenes de ingreso a la universidad en Cuba"
+  ],
   [
    "2026-11-11",
    "Honduras",
@@ -583,36 +613,6 @@
    "2026-11-11",
    "Venezuela",
    "Carl Rogers en Venezuela: claves de la terapia humanista hoy"
-  ],
-  [
-   "2026-11-10",
-   "Chile",
-   "El proceso de convertirse en persona de Carl Rogers: Resumen"
-  ],
-  [
-   "2026-11-10",
-   "Chile",
-   "Universidades en Santiago de Chile: guía completa y carreras"
-  ],
-  [
-   "2026-11-10",
-   "Perú",
-   "Manejo del estrés y ansiedad en estudiantes de Perú"
-  ],
-  [
-   "2026-11-10",
-   "Perú",
-   "Cómo elegir carrera universitaria en Perú: Guía definitiva"
-  ],
-  [
-   "2026-11-10",
-   "Colombia",
-   "Resumen de Fuera de serie de Malcolm Gladwell: Claves del éxito"
-  ],
-  [
-   "2026-11-10",
-   "Colombia",
-   "Carreras universitarias en Colombia: Guía completa y vocacional"
   ]
  ],
  "fichas_ampliadas": 2,
@@ -628,54 +628,54 @@
  ],
  "temas_nuevos": [
   [
-   "2026-11-11",
-   "el camino de las lagrimas",
-   "Cómo superar el duelo y la pérdida: Guía psicológica"
-  ],
-  [
-   "2026-11-11",
-   "universidades de roma",
-   "Estudiar en Roma desde Honduras: Requisitos y carreras"
-  ],
-  [
-   "2026-11-11",
-   "universidades en puerto rico",
-   "Universidades en Puerto Rico: opciones y cómo elegir"
-  ],
-  [
-   "2026-11-11",
-   "que estudiar en puerto rico",
-   "Qué estudiar en Puerto Rico: guía de carreras y vocación"
-  ],
-  [
-   "2026-11-11",
-   "berea college carreras",
-   "Estudiar en el extranjero desde Venezuela: guía y opciones"
-  ],
-  [
-   "2026-11-11",
+   "2026-11-12",
    "el proceso de convertirse en persona carl rogers",
-   "Carl Rogers en Venezuela: claves de la terapia humanista hoy"
+   "El proceso de convertirse en persona: clave psicológica para tu desarrollo"
   ],
   [
-   "2026-11-11",
-   "doble grado en ade y derecho nota de corte",
-   "Doble grado en ADE y Derecho: Notas de corte y salidas"
+   "2026-11-12",
+   "cuantas universidades hay en el salvador",
+   "Guía completa de universidades en El Salvador y su oferta académica"
   ],
   [
-   "2026-11-11",
-   "universidades en escocia",
-   "Estudiar en Escocia: Universidades, acceso y vida estudiantil"
+   "2026-11-12",
+   "estudiar en la universidad",
+   "Cómo empezar la universidad en Uruguay: adaptación y hábitos de estudio"
   ],
   [
-   "2026-11-11",
-   "universidades en francia",
-   "Estudiar en Francia: Guía de universidades, grados y requisitos"
+   "2026-11-12",
+   "universidades en montevideo",
+   "Universidades en Montevideo y Uruguay: guía para elegir carrera"
   ],
   [
-   "2026-11-10",
-   "el proceso de convertirse en persona carl rogers",
-   "El proceso de convertirse en persona de Carl Rogers: Resumen"
+   "2026-11-12",
+   "tecnicas de estudio efectivo para la universidad",
+   "Técnicas de estudio efectivo para la vida universitaria en Cuba"
+  ],
+  [
+   "2026-11-12",
+   "como superar el estres por examenes de ingreso",
+   "Cómo superar el estrés ante los exámenes de ingreso a la universidad en Cuba"
+  ],
+  [
+   "2026-11-12",
+   "los limites del amor",
+   "Los límites del amor: Cómo establecer relaciones sanas y afecto"
+  ],
+  [
+   "2026-11-12",
+   "relajacion progresiva",
+   "Técnica de relajación progresiva de Jacobson: Pasos y beneficios"
+  ],
+  [
+   "2026-11-12",
+   "amsterdam universidad",
+   "Estudiar en la Universidad de Ámsterdam: Carreras y accesos"
+  ],
+  [
+   "2026-11-12",
+   "universidad en canarias",
+   "Universidades en Canarias: Opciones para tu futuro académico"
   ]
  ]
 }
