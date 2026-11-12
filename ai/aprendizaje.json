@@ -125,7 +125,7 @@
  ],
  "ed:": [
   43,
-  14
+  15
  ],
  "ed:undefined": [
   0,
@@ -136,7 +136,7 @@
   1
  ],
  "Psychology Research and Bibliometrics": [
-  1,
+  2,
   0
  ],
  "ed:AYA Editora eBooks": [
@@ -144,7 +144,7 @@
   0
  ],
  "tipo:libro": [
-  48,
+  49,
   9
  ],
  "Gambling Behavior and Treatments": [
@@ -229,7 +229,7 @@
  ],
  "ed:Transcript Verlag": [
   0,
-  1
+  2
  ],
  "estudio:es": [
   27,
@@ -373,7 +373,7 @@
  ],
  "ed:Directory of Open access Books (OAPEN Foundation)": [
   0,
-  1
+  2
  ],
  "ed:Institutional Repository University of Extremadura (University of Extremadura)": [
   0,
@@ -458,5 +458,13 @@
  "ed:Communications sustainability": [
   0,
   1
+ ],
+ "ed:University of Birmingham": [
+  0,
+  1
+ ],
+ "ed:UMA Editorial eBooks": [
+  1,
+  0
  ]
 }

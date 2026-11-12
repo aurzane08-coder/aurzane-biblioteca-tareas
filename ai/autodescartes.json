@@ -1,6 +1,47 @@
 [
  {
   "fecha": "2026-11-12",
+  "id": "oa-W7225783079",
+  "tipo": "libro",
+  "titulo": "Cultures of Aging in a Globalized World: Approaches from Transnational American Studies",
+  "url": "https://doi.org/10.14361/9783839478448",
+  "motivo": "La IA le dio 3/10: no encaja en la biblioteca",
+  "probados": [
+   "HTTP Error 404: Not Found https://monografias.uma.es/index.php/mumaed/catalog/download/293/417/3520",
+   "200 application/pdf https://monografias.uma.es/index.php/mumaed/catalog/download/293/417/3692"
+  ]
+ },
+ {
+  "fecha": "2026-11-12",
+  "id": "oa-W7207689090",
+  "tipo": "libro",
+  "titulo": "Antes del número: Cómo Nace el Pensamiento Matemático en la Infancia",
+  "url": "https://doi.org/10.70577/eprexq35/acacfesa.editorial",
+  "motivo": "La IA le dio 2/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://www.transcript-verlag.de/media/pdf/01/eb/98/oa9783839478448.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-12",
+  "id": "oa-W7159579643",
+  "tipo": "libro",
+  "titulo": "¿Qué le pasa a mi sangre? Libro familiar para entender, acompañar y cuidar el cuerpo",
+  "url": "https://directory.doabooks.org/handle/20.500.12854/176468",
+  "motivo": "No tiene un PDF libre que se pueda descargar",
+  "probados": []
+ },
+ {
+  "fecha": "2026-11-12",
+  "id": "oa-W7225078136",
+  "tipo": "libro",
+  "titulo": "How anti-trans media undermines human rights and equality for everyone",
+  "url": "https://research.birmingham.ac.uk/en/publications/c7deeec0-658a-4a0b-87f8-b3eb612cd9a9",
+  "motivo": "No tiene un PDF libre que se pueda descargar",
+  "probados": []
+ },
+ {
+  "fecha": "2026-11-12",
   "id": "pmc-PMC13747811",
   "tipo": "estudio",
   "titulo": "Institutional partnerships enable long-term use of Earth observations in water security and resilience",
@@ -2796,50 +2837,6 @@
   "motivo": "Dice ser un libro pero el PDF solo tiene 10 páginas (es un capítulo, artículo o resumen)",
   "probados": [
    "200 application/pdf https://archive.org/download/la-disolucion-de-un-paradigma/La%20Disoluci%C3%B3n%20de%20un%20Paradigma.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-03",
-  "id": "ia-httpscuhso.uct.clindex.phpcuhsoesarticleview397",
-  "tipo": "libro",
-  "titulo": "Orígenes de la Psicologia Discursiva y su Desarrollo hacia una Psicología Cultural Postmoderna",
-  "url": "https://archive.org/details/httpscuhso.uct.clindex.phpcuhsoesarticleview397",
-  "motivo": "Dice ser un libro pero el PDF solo tiene 15 páginas (es un capítulo, artículo o resumen)",
-  "probados": [
-   "200 application/pdf https://archive.org/download/httpscuhso.uct.clindex.phpcuhsoesarticleview397/Origenes_de_la_Psicologia_Discurs"
-  ]
- },
- {
-  "fecha": "2026-11-03",
-  "id": "ia-quie-n-soy-yo",
-  "tipo": "libro",
-  "titulo": "QUIÉ N SOY YO",
-  "url": "https://archive.org/details/quie-n-soy-yo",
-  "motivo": "Dice ser un libro pero el PDF solo tiene 23 páginas (es un capítulo, artículo o resumen)",
-  "probados": [
-   "200 application/pdf https://archive.org/download/quie-n-soy-yo/QUI%C3%89N%20SOY%20YO.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-03",
-  "id": "ia-conectividad-total",
-  "tipo": "libro",
-  "titulo": "CONECTIVIDAD TOTAL",
-  "url": "https://archive.org/details/conectividad-total",
-  "motivo": "Dice ser un libro pero el PDF solo tiene 20 páginas (es un capítulo, artículo o resumen)",
-  "probados": [
-   "200 application/pdf https://archive.org/download/conectividad-total/CONECTIVIDAD%20TOTAL.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-03",
-  "id": "ia-ego-contumaz",
-  "tipo": "libro",
-  "titulo": "Ego Contumaz",
-  "url": "https://archive.org/details/ego-contumaz",
-  "motivo": "Dice ser un libro pero el PDF solo tiene 2 páginas (es un capítulo, artículo o resumen)",
-  "probados": [
-   "200 application/pdf https://archive.org/download/ego-contumaz/Ego%20contumaz.pdf"
   ]
  }
 ]

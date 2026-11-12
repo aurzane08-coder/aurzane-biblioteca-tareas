@@ -1,5 +1,33 @@
 [
  {
+  "id": "oa-W7161844855",
+  "tipo": "libro",
+  "titulo": "Metodología Experimental en Psicología: Guía para Estudiantes de Grado",
+  "url": "https://doi.org/10.24310/mumaedmumaed.293",
+  "autores": "Nicolás Sánchez‐Álvarez",
+  "anio": 2026,
+  "editorial": "UMA Editorial eBooks",
+  "doi": "10.24310/mumaedmumaed.293",
+  "pdf": "https://monografias.uma.es/index.php/mumaed/catalog/download/293/417/3520",
+  "pdfs": [
+   "https://monografias.uma.es/index.php/mumaed/catalog/download/293/417/3520"
+  ],
+  "landings": [
+   "https://doi.org/10.24310/mumaedmumaed.293"
+  ],
+  "lic": "cc-by-nc",
+  "idioma": "es",
+  "tema": "Psychology Research and Bibliometrics",
+  "resumen": "Experimental Methodology in Psychology: A Guide for Undergraduate Students provides a systematic and structured overview of the scientific foundations underpinning research in psychology, situating experimental methodology within the broader framework of the scientific method. The text is based on the conception of science as an organised system of verifiable knowledge constructed through observation, experimentation and logical reasoning, explicitly distinguishing scientific inference from everyday intuitive reasoning. In the field of Psychology, the textbook presents a general research model organised into three hierarchical levels: the theoretical level (formulation of hypotheses and conceptual expectations), the design level (operationalisation of variables and planning of the procedure) and the analysis level (selection of appropriate statistical models). This structure allows resea",
+  "motivo": "Libro de psicología en acceso abierto con licencia CC-BY-NC, de UMA Editorial eBooks.",
+  "pdf_origen": "https://monografias.uma.es/index.php/mumaed/catalog/download/293/417/3692",
+  "paginas": 76,
+  "portada": "https://aurzane.com/biblioteca/recientes/portadas/oa-W7161844855.jpg",
+  "publicado": "2026-11-12",
+  "nota": 8,
+  "auto": true
+ },
+ {
   "id": "pmc-PMC13753846",
   "tipo": "estudio",
   "titulo": "Adolescent idiopathic scoliosis and comorbid anxiety and depression: advances in psychophysiological interaction mechanisms and integrated interventions",
