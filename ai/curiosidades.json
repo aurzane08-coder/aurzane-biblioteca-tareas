@@ -1,5 +1,43 @@
 [
  {
+  "id": "cur-2fc833ad33",
+  "tipo": "curiosidad",
+  "titulo": "¿ huelen los aceites esenciales a bienestar?",
+  "dato": "Los aceites esenciales de plantas muestran potencial para aliviar la depresión y la ansiedad.",
+  "resumen": "Los aceites esenciales de plantas muestran potencial para aliviar la depresión y la ansiedad. Una revisión científica apunta a que compuestos vegetales específicos podrían actuar como nuevas estrategias terapéuticas. Su estudio ayuda a entender los mecanismos que conectan estos aromas con la regulación del estado de ánimo.",
+  "fuente": "Frontiers in Psychiatry",
+  "hashtags": [
+   "psicologia",
+   "bienestar",
+   "ciencia",
+   "aurzane"
+  ],
+  "fuente_id": "pmc-PMC13753939",
+  "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13753939/",
+  "fecha": "2026-11-13",
+  "auto": true,
+  "verificacion": "El dato refleja fielmente la literatura científica actual sobre aromaterapia y neuropsiquiatría sin caer en exageraciones milagrosas."
+ },
+ {
+  "id": "cur-ccf7b022bd",
+  "tipo": "curiosidad",
+  "titulo": "¿Sabías que la columna y las emociones se conectan?",
+  "dato": "La escoliosis idiopática en adolescentes se relaciona mucho con la ansiedad y la depresión.",
+  "resumen": "La escoliosis idiopática en adolescentes se relaciona mucho con la ansiedad y la depresión. Un estudio en Frontiers in Psychiatry analiza cómo estos problemas van de la mano. Los mecanismos psicofisiológicos explican que la salud física y mental están profundamente conectadas durante la adolescencia.",
+  "fuente": "Frontiers in Psychiatry",
+  "hashtags": [
+   "psicologia",
+   "adolescentes",
+   "saludmental",
+   "aurzane"
+  ],
+  "fuente_id": "pmc-PMC13753846",
+  "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13753846/",
+  "fecha": "2026-11-13",
+  "auto": true,
+  "verificacion": "El dato es científicamente correcto y está respaldado por literatura en psiquiatría y ortopedia pediátrica."
+ },
+ {
   "id": "cur-caacb3bc64",
   "tipo": "curiosidad",
   "titulo": "Tu hígado y tu cerebro están conectados",

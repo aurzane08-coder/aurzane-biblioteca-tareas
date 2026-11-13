@@ -4,7 +4,8 @@
   "fw-dd5b7bf4f1",
   "fw-3f124fe085",
   "fw-a2a58ebdb4",
-  "fw-4fe278707a"
+  "fw-4fe278707a",
+  "cita-97bb8e8f52"
  ],
  "dias": {
   "2026-11-08": {
@@ -151,6 +152,32 @@
     "url": "https://aurzane.com/marketing/musica/1613588.mp3",
     "credito": "«VolexTagamine - Violin (StepOne, music2000, ps1)», VolexOne (Jamendo), CC BY"
    }
+  },
+  "2026-11-13": {
+   "fecha": "2026-11-13",
+   "frase": {
+    "texto": "Aquella alma tierna y apasionada se ha entregado toda entera; su amor es su existencia, quitarle el uno es quitarle la otra.",
+    "autor": "Gertrudis Gómez de Avellaneda",
+    "obra": "Sab",
+    "url": "https://aurzane.com/biblioteca/libro/sab.html",
+    "fuente": ""
+   },
+   "curiosidad": {
+    "titulo": "Cuidar a mayores a largo plazo: ¿qué es la resiliencia familiar?",
+    "texto": "Un análisis identifica cuatro claves de la resiliencia familiar ante cuidados prolongados en mayores. El estudio muestra que esta capacidad incluye ver la adversidad de forma positiva, reorganizarse para resolver problemas, mantener una buena interacción intergeneracional y buscar recursos externos. Todo ello ayuda a las familias a afrontar mejor el cuidado de personas mayores.",
+    "fuente": "Frontiers in Public Health",
+    "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13735106/"
+   },
+   "ejercicio": {
+    "titulo": "Técnica STOP de mindfulness guiada (1 minuto)",
+    "url": "https://mind.aurzane.com/ejercicios/tecnica-stop/"
+   },
+   "test": {
+    "titulo": "Test de hábitos saludables gratis (SLIQ)",
+    "url": "https://live.aurzane.com/test-de-habitos/"
+   },
+   "mas_frases": true,
+   "musica": null
   }
  }
 }
