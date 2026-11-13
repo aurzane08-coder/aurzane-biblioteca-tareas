@@ -1,6 +1,11 @@
 [
  {
   "fecha": "2026-11-13",
+  "url": "https://aurzane.com/articulos/proceso-convertirse-en-persona-desarrollo/",
+  "titulo": "Artículo: El proceso de convertirse en persona: clave para tu desarrollo"
+ },
+ {
+  "fecha": "2026-11-13",
   "url": "https://aurzane.com/articulos/interfaces-cerebro-ordenador-ansiedad-ciencia/",
   "titulo": "Artículo: Interfaces cerebro-ordenador y ansiedad: nuevas vías científicas"
  },
@@ -593,10 +598,5 @@
   "fecha": "2026-11-02",
   "url": "https://aurzane.com/biblioteca/recientes/oa-W7207662261/",
   "titulo": "Libro abierto: Voces que nacen II"
- },
- {
-  "fecha": "2026-11-02",
-  "url": "https://aurzane.com/biblioteca/recientes/oa-W7165478086/",
-  "titulo": "Libro abierto: Voces desde la Investigación"
  }
 ]

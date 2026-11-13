@@ -61,5 +61,14 @@
   "fallo": 0,
   "fecha": "2026-11-12",
   "ejemplo": "Tienda: portada rota: El error de Descartes"
+ },
+ "prueba_fallida|prueba fallida en # no aparecen las preguntas del test": {
+  "receta": "reintentar_flujo",
+  "motivo": "El HTML inicial carga correctamente con estado 200 pero faltan elementos interactivos, lo que indica un fallo en la compilación o despliegue del script del test mediante GitHub Actions.",
+  "explicacion": "El servidor responde bien pero el motor de renderizado del test no inyecta las preguntas. La causa más probable es un error de JavaScript o un fallo en el pipeline de GitHub Actions al compilar los assets estáticos. Si la acción automática no lo resuelve, revisa manualmente la consola del navegador en busca de errores de JS y comprueba el último commit en el repositorio de GitHub.",
+  "ok": 0,
+  "fallo": 0,
+  "fecha": "2026-11-13",
+  "ejemplo": "Prueba fallida en https://mind.aurzane.com/test-de-ansiedad/: No aparecen las preguntas del test"
  }
 }
