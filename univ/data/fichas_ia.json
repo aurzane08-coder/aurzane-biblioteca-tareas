@@ -50,5 +50,33 @@
    }
   ],
   "fecha": "2026-11-11"
+ },
+ "https://nexus.aurzane.com/universidades/paises-bajos/universiteit-van-amsterdam-uva/": {
+  "titulo": "Guía AURZANE para estudiar en la Universiteit van Amsterdam",
+  "parrafos": [
+   "Te damos la bienvenida a la guía orientativa de AURZANE para la Universiteit van Amsterdam (UvA), una reconocida institución pública situada en Ámsterdam, en la región de Holanda Septentrional, Países Bajos. Su estructura académica se organiza en siete áreas y facultades que abarcan campos como las ciencias, las ciencias sociales y del comportamiento, el derecho, la economía y empresa, las humanidades, la medicina a través del Amsterdam UMC y la odontología mediante la ACTA. Para conocer la oferta completa de titulaciones, resulta fundamental consultar directamente su página web oficial.",
+   "El acceso a la educación superior en Países Bajos implica tener en cuenta que los requisitos específicos de admisión, los plazos de inscripción y las tasas varían según la institución, el programa y el año académico. Si te estás planteando estudiar fuera de tu país de origen, es muy importante que averigües con antelación si necesitas realizar la homologación oficial de tus estudios de secundaria, acreditar el dominio del idioma en el que se imparten las clases o tramitar la documentación necesaria para obtener el visado de estudiante.",
+   "Para elegir la carrera adecuada en esta universidad no debes fijarte únicamente en el prestigio del centro, sino que conviene comparar detenidamente el plan de estudios, las posibles prácticas profesionales, la modalidad de enseñanza y las salidas laborales. Si todavía tienes dudas sobre qué camino seguir, realizar un test vocacional previo te ayudará a ordenar tus intereses personales y aptitudes antes de tomar una decisión definitiva sobre tu futuro formativo.",
+   "Estudiar en Ámsterdam te sitúa en una de las ciudades más dinámicas y multiculturales de Europa, combinando un entorno académico de alto nivel con una intensa vida cultural y estudiantil. Vivir y formarse en esta región de Países Bajos te exigirá adaptarte a un nuevo estilo de vida, gestionar trámites de alojamiento y moverte en un ambiente internacional donde la bicicleta es el medio de transporte principal y el inglés está ampliamente extendido."
+  ],
+  "faq": [
+   {
+    "p": "¿Universiteit van Amsterdam (UvA) es pública o privada?",
+    "r": "Según los datos oficiales que recopilamos en AURZANE, se trata de una institución de carácter público situada en los Países Bajos."
+   },
+   {
+    "p": "¿Dónde está la Universidad de Ámsterdam?",
+    "r": "Su sede principal se encuentra ubicada en la ciudad de Ámsterdam, dentro de la región de Holanda Septentrional, en los Países Bajos."
+   },
+   {
+    "p": "¿Qué se puede estudiar en la Universiteit van Amsterdam?",
+    "r": "En nuestro catálogo figuran siete áreas y facultades principales, aunque puedes consultar la oferta completa de titulaciones directamente en su web oficial."
+   },
+   {
+    "p": "¿Cómo se entra a la universidad en Países Bajos?",
+    "r": "Los requisitos de acceso, los plazos y los costes cambian según la institución y el año, por lo que conviene revisar siempre la normativa oficial."
+   }
+  ],
+  "fecha": "2026-11-13"
  }
 }

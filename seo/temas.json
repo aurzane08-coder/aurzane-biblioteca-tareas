@@ -467,5 +467,99 @@
   "pais_nombre": "El Salvador",
   "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al número de emergencias del país. ",
   "fecha": "2026-11-12"
+ },
+ {
+  "consulta": "universidad en inglaterra",
+  "titulo": "Estudiar en Inglaterra: Guía de universidades y grados",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "fecha": "2026-11-13"
+ },
+ {
+  "consulta": "body scan mindfulness",
+  "titulo": "Body Scan: Qué es y cómo practicar este ejercicio de mindfulness",
+  "mundo": "mind",
+  "test": "estres",
+  "fecha": "2026-11-13"
+ },
+ {
+  "consulta": "universidad en holanda",
+  "titulo": "Estudiar en Holanda: Oferta académica y universidades",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "fecha": "2026-11-13"
+ },
+ {
+  "consulta": "universidades en california",
+  "titulo": "Universidades en California: Opciones para estudiar y grados",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "fecha": "2026-11-13"
+ },
+ {
+  "consulta": "mejores universidades de nicaragua",
+  "titulo": "Guía de universidades en Nicaragua: Cómo elegir carrera",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "oferta": "universidades",
+  "pais": "NIC",
+  "pais_nombre": "Nicaragua",
+  "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al número de emergencias del país. ",
+  "fecha": "2026-11-13"
+ },
+ {
+  "consulta": "que es un verdugo en el amor",
+  "titulo": "Relaciones de pareja tóxicas y límites en el amor",
+  "mundo": "mind",
+  "test": "autoestima",
+  "oferta": "libros",
+  "pais": "NIC",
+  "pais_nombre": "Nicaragua",
+  "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al número de emergencias del país. ",
+  "fecha": "2026-11-13"
+ },
+ {
+  "consulta": "cuantas universidades hay en santa cruz",
+  "titulo": "Universidades en Santa Cruz: guía completa y opciones para elegir carrera",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "oferta": "universidades",
+  "pais": "BOL",
+  "pais_nombre": "Bolivia",
+  "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al número de emergencias del país. ",
+  "fecha": "2026-11-13"
+ },
+ {
+  "consulta": "los limites del amor",
+  "titulo": "Cómo establecer límites sanos en pareja sin culpa: guía psicológica",
+  "mundo": "mind",
+  "test": "autoestima",
+  "oferta": "libros",
+  "pais": "BOL",
+  "pais_nombre": "Bolivia",
+  "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al número de emergencias del país. ",
+  "fecha": "2026-11-13"
+ },
+ {
+  "consulta": "amarse con los ojos abiertos resumen",
+  "titulo": "Amarse con los ojos abiertos: resumen y claves de pareja en RD",
+  "mundo": "mind",
+  "test": "autoestima",
+  "oferta": "libros",
+  "pais": "DOM",
+  "pais_nombre": "República Dominicana",
+  "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al número de emergencias del país. ",
+  "fecha": "2026-11-13"
+ },
+ {
+  "consulta": "nombre de universidades en santo domingo",
+  "titulo": "Universidades en Santo Domingo: Guía para elegir carrera en RD",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "oferta": "universidades",
+  "pais": "DOM",
+  "pais_nombre": "República Dominicana",
+  "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al número de emergencias del país. ",
+  "fecha": "2026-11-13"
  }
 ]

@@ -1,60 +1,66 @@
 {
- "fecha": "2026-11-12",
+ "fecha": "2026-11-13",
  "conectado": true,
  "periodo": [
-  "2026-10-13",
-  "2026-11-09"
+  "2026-10-14",
+  "2026-11-10"
  ],
- "clics": 26,
- "impresiones": 13658,
+ "clics": 29,
+ "impresiones": 15929,
  "consultas": [
   [
    "berkeley",
    0,
-   273,
-   9.6
+   274,
+   9.8
   ],
   [
    "ecpi university",
    0,
-   164,
-   7.7
+   167,
+   7.8
   ],
   [
    "volar sobre el pantano",
    0,
-   126,
-   9.5
+   139,
+   9.3
   ],
   [
    "texas a",
    0,
-   100,
-   9.6
+   107,
+   9.5
   ],
   [
    "facultades",
    0,
-   87,
-   24.6
+   90,
+   24.8
   ],
   [
    "recuerda que vas a morir",
    0,
-   76,
-   6.3
-  ],
-  [
-   "universidad",
-   0,
-   62,
-   29.3
+   78,
+   6.4
   ],
   [
    "universidades",
    0,
-   56,
-   29.6
+   72,
+   29.4
+  ],
+  [
+   "universidad",
+   0,
+   71,
+   28.3
+  ],
+  [
+   "universidades publicas en australia",
+   0,
+   51,
+   59.7
   ],
   [
    "carl rogers el proceso de convertirse en persona",
@@ -65,38 +71,50 @@
   [
    "los medios de comunicación y la familia",
    0,
-   46,
-   21.4
+   48,
+   22.3
   ],
   [
    "universidades de polonia",
    0,
-   46,
-   85.6
-  ],
-  [
-   "universidades en utrecht holanda",
-   0,
-   44,
-   43.5
-  ],
-  [
-   "los dones de la imperfeccion",
-   0,
-   43,
-   11.7
-  ],
-  [
-   "universidad en canarias",
-   0,
-   43,
-   82.9
+   48,
+   83.6
   ],
   [
    "universidades en parís",
    0,
+   48,
+   55.4
+  ],
+  [
+   "universidad en canarias",
+   0,
+   46,
+   83.6
+  ],
+  [
+   "universidades en utrecht holanda",
+   0,
+   46,
+   43.4
+  ],
+  [
+   "amsterdam universidad",
+   0,
+   45,
+   53.6
+  ],
+  [
+   "los dones de la imperfeccion",
+   0,
+   45,
+   11.5
+  ],
+  [
+   "universidades en inglaterra",
+   0,
    43,
-   56.6
+   58.4
   ],
   [
    "la tía tula pdf",
@@ -105,96 +123,84 @@
    9.2
   ],
   [
+   "universidades en australia",
+   0,
+   41,
+   62.3
+  ],
+  [
+   "universidades italia",
+   0,
+   41,
+   63.0
+  ],
+  [
+   "dejame que te cuente",
+   0,
+   40,
+   10.3
+  ],
+  [
    "el niño el topo el zorro y el caballo",
    0,
    39,
    11.5
   ],
   [
-   "universidades publicas en australia",
-   0,
-   39,
-   55.7
-  ],
-  [
-   "universidades italia",
-   0,
-   38,
-   62.0
-  ],
-  [
-   "amsterdam universidad",
+   "universidades en londres",
    0,
    37,
-   51.7
-  ],
-  [
-   "dejame que te cuente",
-   0,
-   37,
-   10.4
-  ],
-  [
-   "el camino de las lagrimas",
-   0,
-   34,
-   11.5
-  ],
-  [
-   "universidad en amsterdam",
-   0,
-   34,
-   61.5
-  ],
-  [
-   "universidades en australia",
-   0,
-   34,
-   67.4
-  ],
-  [
-   "cuantas universidades hay en cuenca",
-   0,
-   33,
-   6.7
-  ],
-  [
-   "universidades en inglaterra",
-   0,
-   32,
-   56.3
+   41.7
   ],
   [
    "viterbo university",
    0,
-   32,
-   6.5
+   37,
+   6.7
+  ],
+  [
+   "universidad en amsterdam",
+   0,
+   36,
+   61.7
+  ],
+  [
+   "el camino de las lagrimas",
+   0,
+   35,
+   11.5
   ],
   [
    "universidades amsterdam",
    0,
-   31,
-   54.5
+   35,
+   53.3
   ],
   [
-   "universidades en holanda",
+   "universidades de berkeley",
    0,
-   31,
-   41.0
+   35,
+   76.7
   ],
   [
-   "doble grado en derecho y ade notas de corte",
+   "universidades en francia",
    0,
-   30,
-   80.6
+   34,
+   57.3
   ]
  ],
  "paginas": [
   [
    "https://aurzane.com/biblioteca/libro/tormento.html",
    3,
-   26,
+   27,
    6.8
+  ],
+  [
+   "https://aurzane.com/biblioteca/leer.html?libro=ref-recuerda-que-vas-a-morir",
+   2,
+   121,
+   6.4
   ],
   [
    "https://aurzane.com/biblioteca/libro/ref-proceso-convertirse-persona.html",
@@ -205,44 +211,50 @@
   [
    "https://nexus.aurzane.com/universidades/ecuador/ciudad/manta/",
    2,
-   44,
-   5.9
+   59,
+   6.5
   ],
   [
    "https://aurzane.com/biblioteca/libro/la-de-bringas.html",
    2,
-   14,
+   15,
    7.5
-  ],
-  [
-   "https://aurzane.com/biblioteca/leer.html?libro=ref-recuerda-que-vas-a-morir",
-   1,
-   117,
-   6.4
-  ],
-  [
-   "https://aurzane.com/biblioteca/libro/romancero-gitano.html",
-   1,
-   34,
-   9.5
   ],
   [
    "https://nexus.aurzane.com/universidades/notas-de-corte/derecho/",
    1,
-   31,
-   9.0
+   42,
+   10.0
+  ],
+  [
+   "https://aurzane.com/biblioteca/libro/romancero-gitano.html",
+   1,
+   40,
+   9.5
   ],
   [
    "https://aurzane.com/biblioteca/libro/ref-creacion-yo.html",
    1,
-   17,
-   5.8
+   23,
+   6.9
+  ],
+  [
+   "https://aurzane.com/biblioteca/libro/ref-paradoja-chimpance.html",
+   1,
+   21,
+   9.0
+  ],
+  [
+   "https://nexus.aurzane.com/universidades/ecuador/instituto-superior-tecnologico-itca/",
+   1,
+   18,
+   8.7
   ],
   [
    "https://aurzane.com/biblioteca/libro/marianela.html",
    1,
-   17,
-   12.3
+   18,
+   13.3
   ],
   [
    "https://aurzane.com/biblioteca/libro/ref-nuestra-mente-nos-engana.html",
@@ -259,8 +271,8 @@
   [
    "https://aurzane.com/biblioteca/libro/ref-valor-atencion.html",
    1,
-   9,
-   12.2
+   10,
+   11.9
   ],
   [
    "https://aurzane.com/biblioteca/libro/ref-grito-desesperado.html",
@@ -269,16 +281,16 @@
    8.3
   ],
   [
+   "https://aurzane.com/biblioteca/libro/ref-tareas-duelo.html",
+   1,
+   8,
+   6.0
+  ],
+  [
    "https://aurzane.com/biblioteca/libro/ref-universo-emociones.html",
    1,
    8,
    10.8
-  ],
-  [
-   "https://aurzane.com/biblioteca/libro/ref-tareas-duelo.html",
-   1,
-   7,
-   5.1
   ],
   [
    "https://aurzane.com/biblioteca/leer.html?libro=ref-grito-desesperado",
@@ -293,16 +305,16 @@
    9.0
   ],
   [
+   "https://nexus.aurzane.com/universidades/notas-de-corte/trabajo-social/",
+   1,
+   5,
+   31.2
+  ],
+  [
    "https://aurzane.com/biblioteca/libro/misericordia.html",
    1,
    4,
    10.5
-  ],
-  [
-   "https://nexus.aurzane.com/universidades/notas-de-corte/trabajo-social/",
-   1,
-   3,
-   17.0
   ],
   [
    "https://nexus.aurzane.com/universidades/estados-unidos/ensign-college/",
@@ -319,241 +331,259 @@
   [
    "https://nexus.aurzane.com/universidades/estados-unidos/university-of-california-berkeley/",
    0,
-   304,
-   12.9
+   329,
+   15.7
   ],
   [
    "https://nexus.aurzane.com/universidades/estados-unidos/ecpi-university/",
    0,
-   173,
+   176,
    10.4
-  ],
-  [
-   "https://nexus.aurzane.com/universidades/paises-bajos/universiteit-van-amsterdam-uva/",
-   0,
-   143,
-   51.3
   ],
   [
    "https://aurzane.com/biblioteca/libro/ref-volar-sobre-pantano.html",
    0,
-   141,
-   10.8
+   158,
+   10.6
+  ],
+  [
+   "https://nexus.aurzane.com/universidades/paises-bajos/universiteit-van-amsterdam-uva/",
+   0,
+   155,
+   52.2
   ],
   [
    "https://nexus.aurzane.com/universidades/reino-unido/ciudad/londres/",
    0,
-   123,
-   40.2
-  ],
-  [
-   "https://aurzane.com/biblioteca/libro/ref-nino-topo-zorro-caballo.html",
-   0,
-   107,
-   11.0
+   150,
+   41.5
   ],
   [
    "https://nexus.aurzane.com/universidades/paises-bajos/ciudad/utrecht/",
    0,
-   106,
-   46.5
+   113,
+   46.4
   ],
   [
    "https://nexus.aurzane.com/universidades/italia/sapienza-universita-di-roma/",
    0,
-   102,
+   111,
    51.7
-  ],
-  [
-   "https://nexus.aurzane.com/universidades/reino-unido/ciudad/glasgow/",
-   0,
-   97,
-   61.6
   ]
  ],
  "paises": [
   [
    "ESP",
-   118,
-   10107,
-   25.1
+   126,
+   11330,
+   25.7
   ],
   [
    "MEX",
-   46,
-   3682,
-   21.5
+   48,
+   4127,
+   22.0
   ],
   [
    "ECU",
    43,
-   3471,
-   9.5
+   3971,
+   10.5
   ],
   [
    "USA",
-   6,
-   2000,
-   25.2
+   8,
+   2432,
+   24.9
   ],
   [
    "COL",
-   32,
-   1698,
-   22.4
+   37,
+   1949,
+   22.7
   ],
   [
    "BRA",
    3,
-   1660,
-   54.8
+   1949,
+   54.9
   ],
   [
    "ARG",
-   27,
-   1571,
-   23.6
+   29,
+   1883,
+   26.1
   ],
   [
    "PER",
    30,
-   1219,
-   10.5
+   1401,
+   12.3
   ],
   [
    "CHL",
-   17,
-   1175,
-   24.7
+   18,
+   1351,
+   25.8
   ],
   [
    "VEN",
-   9,
-   729,
-   20.4
+   10,
+   791,
+   21.1
   ],
   [
    "BOL",
-   9,
-   339,
-   13.1
+   10,
+   375,
+   12.5
+  ],
+  [
+   "RUS",
+   1,
+   309,
+   49.7
   ],
   [
    "GTM",
-   9,
-   240,
-   19.4
-  ],
-  [
-   "FRA",
-   0,
-   213,
-   40.4
+   10,
+   264,
+   18.7
   ],
   [
    "DEU",
    0,
-   206,
-   33.5
+   250,
+   35.1
   ],
   [
    "DOM",
-   4,
-   198,
-   11.4
+   5,
+   229,
+   11.3
   ],
   [
    "CRI",
    4,
-   192,
-   12.8
+   219,
+   15.3
   ],
   [
    "BGD",
    0,
-   167,
-   48.0
+   184,
+   48.6
+  ],
+  [
+   "PRY",
+   4,
+   176,
+   16.1
   ],
   [
    "PAN",
    1,
-   156,
-   17.6
-  ],
-  [
-   "PRY",
-   3,
-   152,
-   16.0
+   172,
+   17.3
   ],
   [
    "GBR",
    2,
-   130,
-   33.3
+   142,
+   32.5
   ],
   [
    "CAN",
    1,
-   105,
-   28.3
+   115,
+   28.7
   ],
   [
    "HND",
    1,
-   100,
-   17.6
+   112,
+   18.0
   ],
   [
    "PRI",
    1,
-   92,
-   20.7
+   100,
+   19.8
   ],
   [
    "CUB",
    4,
-   74,
-   12.9
+   82,
+   12.4
   ],
   [
    "CHE",
    0,
-   63,
-   39.1
+   70,
+   37.7
   ],
   [
    "AUS",
    2,
-   49,
-   28.2
+   51,
+   30.8
   ],
   [
    "BEL",
    1,
-   28,
-   18.9
+   34,
+   16.6
+  ],
+  [
+   "MAR",
+   1,
+   30,
+   39.0
   ],
   [
    "ARE",
    0,
-   26,
-   47.8
+   28,
+   44.6
   ],
   [
    "JPN",
    1,
-   21,
-   14.2
-  ],
-  [
-   "ALB",
-   0,
-   14,
-   34.4
+   24,
+   16.2
   ]
  ],
  "paises_trabajados": [
+  [
+   "2026-11-13",
+   "República Dominicana",
+   "Universidades en Santo Domingo: Guía para elegir carrera en RD"
+  ],
+  [
+   "2026-11-13",
+   "República Dominicana",
+   "Amarse con los ojos abiertos: resumen y claves de pareja en RD"
+  ],
+  [
+   "2026-11-13",
+   "Bolivia",
+   "Cómo establecer límites sanos en pareja sin culpa: guía psicológica"
+  ],
+  [
+   "2026-11-13",
+   "Bolivia",
+   "Universidades en Santa Cruz: guía completa y opciones para elegir carrera"
+  ],
+  [
+   "2026-11-13",
+   "Nicaragua",
+   "Relaciones de pareja tóxicas y límites en el amor"
+  ],
+  [
+   "2026-11-13",
+   "Nicaragua",
+   "Guía de universidades en Nicaragua: Cómo elegir carrera"
+  ],
   [
    "2026-11-12",
    "El Salvador",
@@ -583,40 +613,18 @@
    "2026-11-12",
    "Cuba",
    "Cómo superar el estrés ante los exámenes de ingreso a la universidad en Cuba"
-  ],
-  [
-   "2026-11-11",
-   "Honduras",
-   "Cómo superar el duelo y la pérdida: Guía psicológica"
-  ],
-  [
-   "2026-11-11",
-   "Honduras",
-   "Estudiar en Roma desde Honduras: Requisitos y carreras"
-  ],
-  [
-   "2026-11-11",
-   "Puerto Rico",
-   "Universidades en Puerto Rico: opciones y cómo elegir"
-  ],
-  [
-   "2026-11-11",
-   "Puerto Rico",
-   "Qué estudiar en Puerto Rico: guía de carreras y vocación"
-  ],
-  [
-   "2026-11-11",
-   "Venezuela",
-   "Estudiar en el extranjero desde Venezuela: guía y opciones"
-  ],
-  [
-   "2026-11-11",
-   "Venezuela",
-   "Carl Rogers en Venezuela: claves de la terapia humanista hoy"
   ]
  ],
- "fichas_ampliadas": 2,
+ "fichas_ampliadas": 3,
  "cambios_titulos": [
+  [
+   "2026-11-13",
+   "https://nexus.aurzane.com/universidades/estados-unidos/texas-a-m-international-university/",
+   "Texas A & M International University: 30 carreras | Universidades de Estados Unidos",
+   "Texas A&M International University: Carreras | Aurzane",
+   null,
+   0.0
+  ],
   [
    "2026-11-09",
    "https://nexus.aurzane.com/universidades/estados-unidos/ecpi-university/",
@@ -628,54 +636,54 @@
  ],
  "temas_nuevos": [
   [
-   "2026-11-12",
-   "el proceso de convertirse en persona carl rogers",
-   "El proceso de convertirse en persona: clave psicológica para tu desarrollo"
+   "2026-11-13",
+   "nombre de universidades en santo domingo",
+   "Universidades en Santo Domingo: Guía para elegir carrera en RD"
   ],
   [
-   "2026-11-12",
-   "cuantas universidades hay en el salvador",
-   "Guía completa de universidades en El Salvador y su oferta académica"
+   "2026-11-13",
+   "amarse con los ojos abiertos resumen",
+   "Amarse con los ojos abiertos: resumen y claves de pareja en RD"
   ],
   [
-   "2026-11-12",
-   "estudiar en la universidad",
-   "Cómo empezar la universidad en Uruguay: adaptación y hábitos de estudio"
-  ],
-  [
-   "2026-11-12",
-   "universidades en montevideo",
-   "Universidades en Montevideo y Uruguay: guía para elegir carrera"
-  ],
-  [
-   "2026-11-12",
-   "tecnicas de estudio efectivo para la universidad",
-   "Técnicas de estudio efectivo para la vida universitaria en Cuba"
-  ],
-  [
-   "2026-11-12",
-   "como superar el estres por examenes de ingreso",
-   "Cómo superar el estrés ante los exámenes de ingreso a la universidad en Cuba"
-  ],
-  [
-   "2026-11-12",
+   "2026-11-13",
    "los limites del amor",
-   "Los límites del amor: Cómo establecer relaciones sanas y afecto"
+   "Cómo establecer límites sanos en pareja sin culpa: guía psicológica"
   ],
   [
-   "2026-11-12",
-   "relajacion progresiva",
-   "Técnica de relajación progresiva de Jacobson: Pasos y beneficios"
+   "2026-11-13",
+   "cuantas universidades hay en santa cruz",
+   "Universidades en Santa Cruz: guía completa y opciones para elegir carrera"
   ],
   [
-   "2026-11-12",
-   "amsterdam universidad",
-   "Estudiar en la Universidad de Ámsterdam: Carreras y accesos"
+   "2026-11-13",
+   "que es un verdugo en el amor",
+   "Relaciones de pareja tóxicas y límites en el amor"
   ],
   [
-   "2026-11-12",
-   "universidad en canarias",
-   "Universidades en Canarias: Opciones para tu futuro académico"
+   "2026-11-13",
+   "mejores universidades de nicaragua",
+   "Guía de universidades en Nicaragua: Cómo elegir carrera"
+  ],
+  [
+   "2026-11-13",
+   "universidades en california",
+   "Universidades en California: Opciones para estudiar y grados"
+  ],
+  [
+   "2026-11-13",
+   "universidad en holanda",
+   "Estudiar en Holanda: Oferta académica y universidades"
+  ],
+  [
+   "2026-11-13",
+   "body scan mindfulness",
+   "Body Scan: Qué es y cómo practicar este ejercicio de mindfulness"
+  ],
+  [
+   "2026-11-13",
+   "universidad en inglaterra",
+   "Estudiar en Inglaterra: Guía de universidades y grados"
   ]
  ]
 }
