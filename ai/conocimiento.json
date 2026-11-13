@@ -48,7 +48,7 @@
   "receta": "avisar",
   "motivo": "Se ha producido un error de JavaScript no capturado durante las pruebas de la página.",
   "explicacion": "La prueba automatizada detectó una excepción JavaScript durante la carga de la calculadora.\nComo se trata de un problema en el código cliente, reintentar el flujo no solucionará el fallo.\nEs necesario revisar la consola para identificar la variable o script no definido.\nVerifica las referencias a aurzane-paleta.js y los scripts inline para corregir la sintaxis.",
-  "ok": 1,
+  "ok": 4,
   "fallo": 0,
   "fecha": "2026-11-10",
   "ejemplo": "Prueba fallida en https://build.aurzane.com/calculadora-reforma/: Carga bien · 1 error(es) de JavaScript: undefined"

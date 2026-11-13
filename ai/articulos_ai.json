@@ -1,5 +1,26 @@
 [
  {
+  "id": "art-a9eeecfc18",
+  "slug": "interfaces-cerebro-ordenador-ansiedad-ciencia",
+  "mundo": "mind",
+  "titulo": "Interfaces cerebro-ordenador y ansiedad: nuevas vías científicas",
+  "resumen": "Descubre cómo la tecnología de interfaces cerebro-ordenador explora nuevas formas de comprender y entrenar la regulación de la ansiedad.",
+  "categoria": "Salud Mental",
+  "cuerpo": "Los trastornos de ansiedad se encuentran entre los problemas de salud mental más extendidos en todo el mundo. Quienes los experimentan suelen notar dificultades persistentes para regular sus emociones, procesar la información cognitiva y mantener un funcionamiento social fluido en su día a día. \n\nPara abordar este malestar, la psicología clínica y la medicina disponen actualmente de diversas herramientas, como la psicoterapia, el apoyo farmacológico, el ejercicio físico y la estimulación cerebral no invasiva. Sin embargo, en ocasiones estos abordajes encuentran limitaciones relacionadas con la variabilidad entre personas, la constancia en el seguimiento o la dificultad para medir de manera objetiva los progresos del tratamiento.\n\n## Qué son las interfaces cerebro-ordenador\n\nEn la búsqueda constante de nuevas soluciones científicas, la investigación actual explora tecnologías innovadoras provenientes de la intersección entre la neurología y la informática. Entre ellas destacan las llamadas interfaces cerebro-ordenador, conocidas habitualmente por sus siglas en inglés como BCI.\n\nEstos sistemas avanzados tienen la capacidad de captar, decodificar y ofrecer información de retorno sobre la actividad eléctrica y hemodinámica del cerebro. Para lograrlo, emplean técnicas habituales como la electroencefalografía, la espectroscopia funcional de infrarrojo cercano o la resonancia magnética funcional en tiempo real. Su propósito principal consiste en traducir la actividad cerebral relacionada con la ansiedad en señales comprensibles que se puedan monitorizar o entrenar.\n\n## Cómo se conectan la mente y la tecnología\n\nEl fundamento de esta línea de estudio radica en transformar los patrones de la actividad cerebral en objetivos tangibles. Al decodificar las señales neuronales asociadas a los estados de ansiedad, los sistemas tecnológicos pueden servir como un espejo de la propia fisiología.\n\nEste proceso abre la puerta a que las personas puedan observar de forma directa aspectos de su funcionamiento interno que normalmente escapan a la consciencia. Aunque estas herramientas se encuentran en fase de investigación y revisión científica, representan un cambio de perspectiva relevante al intentar conectar de manera más estrecha los procesos mentales con datos objetivos y medibles.\n\n## Un horizonte de apoyo complementario\n\nLa integración de la tecnología en el ámbito del bienestar emocional busca sumar recursos a los enfoques terapéuticos tradicionales. El objetivo a largo plazo de estas investigaciones es ofrecer vías adicionales para que las personas aprendan a reconocer y gestionar las respuestas de su propio sistema nervioso ante situaciones de estrés intenso.\n\nDesde la perspectiva de la divulgación psicológica, es fundamental comprender que cualquier avance científico requiere tiempo, rigor y validación antes de convertirse en una práctica clínica habitual. La prioridad siempre será acompañar a cada persona desde la cercanía humana y el respeto a su proceso individual.\n\nSi experimentas un malestar emocional intenso que interfiere de forma significativa en tu vida diaria, recuerda que puedes llamar al 024, el teléfono de atención a la conducta suicida en España, donde ofrecen ayuda gratuita y confidencial.\n\n## Qué puedes hacer hoy\n\n* Presta atención a las señales de tu cuerpo: dedica unos minutos al día a observar tu respiración y la tensión muscular sin juzgar lo que sientes.\n* Mantén rutinas de autocuidado: prioriza el descanso adecuado y la actividad física moderada, ya que forman una base sólida para la regulación emocional.\n* Busca espacios seguros de expresión: hablar sobre lo que te preocupa con personas de confianza o profesionales de la psicología ayuda a reducir el peso del malestar.",
+  "fecha": "2026-11-13",
+  "nota": 10,
+  "fuente_id": "pmc-PMC13745318",
+  "imagen": "https://aurzane.com/biblioteca/recientes/portadas/pmc-PMC13745318.jpg",
+  "test": "ansiedad",
+  "fuentes": [
+   {
+    "titulo": "Potential Applications of Brain-Computer Interface Technology in the Rehabilitation of Patients with Anxiety Disorders: A Narrative Review",
+    "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13745318/",
+    "meta": "Liu Q, Liu J, Lou H · Neuropsychiatric disease and treatment · 2026"
+   }
+  ]
+ },
+ {
   "id": "art-4968498303",
   "slug": "elegir-carrera-puerto-rico-guia-vocacion",
   "mundo": "nexus",

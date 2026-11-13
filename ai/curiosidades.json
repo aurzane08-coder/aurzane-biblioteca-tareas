@@ -1,5 +1,30 @@
 [
  {
+  "id": "cur-2712364aef",
+  "tipo": "curiosidad",
+  "titulo": "¿Sabías que tu cerebro te engaña al creer que haces multitarea?",
+  "dato": "Según la investigación de Ophir, Nass y Wagner en 2009, quienes practican la multitarea rinden peor en pruebas de atención.",
+  "resumen": "Según la investigación de Ophir, Nass y Wagner en 2009, quienes practican la multitarea rinden peor en pruebas de atención. Lo que llamamos multitarea es en realidad un cambio rápido de foco. Cada vez que saltas de una tarea a otra, tu cerebro sufre un coste cognitivo que reduce la profundidad de tu concentración y aumenta los errores.",
+  "fuente": "Ophir, Nass y Wagner, 2009",
+  "hashtags": [
+   "psicologia",
+   "atencion",
+   "concentracion",
+   "aurzane"
+  ],
+  "fuente_id": "tema-317-0",
+  "url": "https://mind.aurzane.com/",
+  "portada": "",
+  "tema": "curiosidad",
+  "idioma": "es",
+  "autores": "Ophir, Nass y Wagner, 2009",
+  "motivo": "Guion escrito por Gemini a partir de un tema de psicología. Revisa que el dato sea correcto antes de aprobar.",
+  "verificada": "2026-11-13",
+  "fecha": "2026-11-13",
+  "auto": true,
+  "verificacion": "El texto refleja con precisión y sin exageraciones el estudio clásico de Ophir, Nass y Wagner sobre la multitarea."
+ },
+ {
   "id": "cur-2fc833ad33",
   "tipo": "curiosidad",
   "titulo": "¿ huelen los aceites esenciales a bienestar?",
