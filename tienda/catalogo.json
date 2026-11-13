@@ -1,5 +1,44 @@
 [
  {
+  "id": "la-naranja-mecanica-anthony-burgess",
+  "titulo": "La naranja mecánica",
+  "autor": "Anthony Burgess",
+  "temas": [
+   "novela",
+   "ensayo"
+  ],
+  "origen": "tendencia",
+  "fecha": "2026-11-13",
+  "isbn": "",
+  "portada": "https://covers.openlibrary.org/b/id/10693069-M.jpg?default=false",
+  "anio": "",
+  "editorial": "",
+  "idioma": "",
+  "resumen": "",
+  "tendencia": "Conecta con la alta curiosidad sobre la naranja en internet y es un clásico atemporal.",
+  "tendencia_fecha": "2026-11-13",
+  "porque": "Es para lectores interesados en la naturaleza del mal y el libre albedrio a traves de una distopia violenta. Aporta una reflexion profunda sobre la moralidad y un lenguaje inventado muy peculiar."
+ },
+ {
+  "id": "orgullo-y-prejuicio-jane-austen",
+  "titulo": "Orgullo y prejuicio",
+  "autor": "Jane Austen",
+  "temas": [
+   "novela"
+  ],
+  "origen": "tendencia",
+  "fecha": "2026-11-13",
+  "isbn": "9788415083696",
+  "portada": "https://covers.openlibrary.org/b/id/13574150-M.jpg?default=false",
+  "anio": "2013",
+  "editorial": "CreateSpace Independent Publishing Platform",
+  "idioma": "spa",
+  "resumen": "",
+  "tendencia": "Aprovecha la atención mediática sobre actrices británicas icónicas como Keira Knightley.",
+  "tendencia_fecha": "2026-11-13",
+  "porque": "Es para quienes disfrutan de las novelas de romances clasicos y de la ironia fina sobre la sociedad britanica del siglo XIX. Aporta una historia de amor inolvidable y unos personajes femeninos muy adelantados a su tiempo."
+ },
+ {
   "id": "la-riqueza-de-las-naciones-adam-smith",
   "titulo": "La riqueza de las naciones",
   "autor": "Adam Smith",
@@ -334,6 +373,41 @@
   "tendencia": "Un clásico infaltable para regalar y disfrutar en los hogares conforme se acerca el invierno.",
   "tendencia_fecha": "2026-11-09",
   "porque": "Este libro es para cualquier persona que quiera disfrutar de la cocina casera y tradicional con recetas accesibles y explicadas con cercanía. Aporta el estilo inconfundible de Karlos Arguiñano para hacer fáciles platos sabrosos del día a día."
+ },
+ {
+  "id": "no-pienses-en-un-elefante-george-lakoff",
+  "titulo": "No pienses en un elefante",
+  "autor": "George Lakoff",
+  "temas": [
+   "burnout"
+  ],
+  "origen": "crecer",
+  "fecha": "2026-11-13",
+  "isbn": "9788499425955",
+  "portada": "https://covers.openlibrary.org/b/id/13523321-M.jpg?default=false",
+  "anio": "2017",
+  "editorial": "Ediciones Península",
+  "idioma": "",
+  "resumen": "",
+  "porque": "Es para personas interesadas en la politica, la comunicacion y el impacto del lenguaje en la mente de los votantes. Aporta claves practicas para entender como se construyen los marcos mentales y el debate publico."
+ },
+ {
+  "id": "el-sueno-de-los-heroes-adolfo-bioy-casares",
+  "titulo": "El sueño de los héroes",
+  "autor": "Adolfo Bioy Casares",
+  "temas": [
+   "sueno",
+   "bienestar"
+  ],
+  "origen": "crecer",
+  "fecha": "2026-11-13",
+  "isbn": "9788420673615",
+  "portada": "https://covers.openlibrary.org/b/id/4903206-M.jpg?default=false",
+  "anio": "1954",
+  "editorial": "Cosac Naify",
+  "idioma": "spa",
+  "resumen": "",
+  "porque": "Es para aficionados a la literatura fantastica y de misterio ambientada en el Buenos Aires nocturno. Aporta una trama hipnotica sobre el destino, el valor y los recuerdos confusos de un hombre."
  },
  {
   "id": "el-fin-del-trabajo-jeremy-rifkin",
