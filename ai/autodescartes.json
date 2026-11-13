@@ -1,5 +1,27 @@
 [
  {
+  "fecha": "2026-11-13",
+  "id": "ia-turbo-suslik-2.1-english-engineers-edition",
+  "tipo": "libro",
+  "titulo": "Turbo Suslik 2.1 English Engineers Edition",
+  "url": "https://archive.org/details/turbo-suslik-2.1-english-engineers-edition",
+  "motivo": "La IA le dio 2/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/turbo-suslik-2.1-english-engineers-edition/Turbo-Suslik-2.1-English-engineers-edi"
+  ]
+ },
+ {
+  "fecha": "2026-11-13",
+  "id": "ia-turbo-suslik-2.0-english",
+  "tipo": "libro",
+  "titulo": "Turbo Suslik 2.0 English",
+  "url": "https://archive.org/details/turbo-suslik-2.0-english",
+  "motivo": "La IA le dio 2/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/turbo-suslik-2.1-english-engineers-edition/Turbo-Suslik-2.1-English-engineers-edi"
+  ]
+ },
+ {
   "fecha": "2026-11-12",
   "id": "oa-W7225783079",
   "tipo": "libro",
@@ -2815,28 +2837,6 @@
   "motivo": "Dice ser un libro pero el PDF solo tiene 45 páginas (es un capítulo, artículo o resumen)",
   "probados": [
    "200 application/pdf https://archive.org/download/las-maldiciones-humanas-rtf_202607/Las%20Maldiciones%20Humanas_rtf.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-03",
-  "id": "ia-el-amanecer-que-no-se-rompe",
-  "tipo": "libro",
-  "titulo": "EL AMANECER QUE NO SE ROMPE",
-  "url": "https://archive.org/details/el-amanecer-que-no-se-rompe",
-  "motivo": "Dice ser un libro pero el PDF solo tiene 30 páginas (es un capítulo, artículo o resumen)",
-  "probados": [
-   "200 application/pdf https://archive.org/download/el-amanecer-que-no-se-rompe/EL%20AMANECER%20QUE%20NO%20SE%20ROMPE.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-03",
-  "id": "ia-la-disolucion-de-un-paradigma",
-  "tipo": "libro",
-  "titulo": "La disolución de un paradigma",
-  "url": "https://archive.org/details/la-disolucion-de-un-paradigma",
-  "motivo": "Dice ser un libro pero el PDF solo tiene 10 páginas (es un capítulo, artículo o resumen)",
-  "probados": [
-   "200 application/pdf https://archive.org/download/la-disolucion-de-un-paradigma/La%20Disoluci%C3%B3n%20de%20un%20Paradigma.pdf"
   ]
  }
 ]
