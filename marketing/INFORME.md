@@ -1,11 +1,11 @@
 # Informe de marketing
 
-Actualizado: 2026-11-12. Clics de personas (sin bots ni vistas previas) que entraron por los enlaces de las publicaciones.
+Actualizado: 2026-11-13. Clics de personas (sin bots ni vistas previas) que entraron por los enlaces de las publicaciones.
 
 | Red | Publicaciones | Clics |
 |---|---|---|
 | telegram | 48 | 4 |
-| bluesky | 33 | 149 |
+| bluesky | 33 | 150 |
 | mastodon | 33 | 93 |
 | instagram | 25 | 0 |
 | facebook | 25 | 67 |
@@ -33,6 +33,7 @@ Actualizado: 2026-11-12. Clics de personas (sin bots ni vistas previas) que entr
 | test-habitos | 6 |
 | nc-educacion-infantil | 6 |
 | test-satisfaccion | 6 |
+| frase-5b980a2a | 6 |
 | nc-relaciones-internacionales | 6 |
 | crea-l05-04 | 5 |
 | curso-metod | 5 |
@@ -40,4 +41,3 @@ Actualizado: 2026-11-12. Clics de personas (sin bots ni vistas previas) que entr
 | nc-criminologia | 5 |
 | frase-8e70072e | 5 |
 | crea-l06-02 | 5 |
-| frase-5b980a2a | 5 |

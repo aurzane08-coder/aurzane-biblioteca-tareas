@@ -1,5 +1,5 @@
 {
- "generado": "2026-11-12",
+ "generado": "2026-11-13",
  "productos": [
   {
    "id": "test-personalidad",
@@ -40247,6 +40247,60 @@
    "emoji": "",
    "foto_q": "green leaves sunlight",
    "alta": "2026-11-12"
+  },
+  {
+   "id": "cur-2fc833ad33",
+   "tipo": "curiosidad",
+   "mundo": "mind",
+   "origen": "curiosidades",
+   "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13753939/",
+   "titulo": "¿ huelen los aceites esenciales a bienestar?",
+   "ganchos": [
+    "¿ huelen los aceites esenciales a bienestar?",
+    "¿ huelen los aceites esenciales a bienestar? 🧠",
+    "Los aceites esenciales de plantas muestran potencial para aliviar la depresión y la ansied"
+   ],
+   "texto": "Los aceites esenciales de plantas muestran potencial para aliviar la depresión y la ansiedad. Una revisión científica apunta a que compuestos vegetales específicos podrían actuar como nuevas estrategias terapéuticas. Su estudio ayuda a entender los mecanismos que conectan estos aromas con la regulación del estado de ánimo.\n\nFuente: Frontiers in Psychiatry",
+   "hashtags": [
+    "psicologia",
+    "bienestar",
+    "ciencia",
+    "aurzane",
+    "Psicología",
+    "Curiosidades"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "🧠",
+   "dato": "Los aceites esenciales de plantas muestran potencial para aliviar la depresión y la ansiedad.",
+   "alta": "2026-11-13"
+  },
+  {
+   "id": "cur-ccf7b022bd",
+   "tipo": "curiosidad",
+   "mundo": "mind",
+   "origen": "curiosidades",
+   "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13753846/",
+   "titulo": "¿Sabías que la columna y las emociones se conectan?",
+   "ganchos": [
+    "¿Sabías que la columna y las emociones se conectan?",
+    "¿Sabías que la columna y las emociones se conectan? 🧠",
+    "La escoliosis idiopática en adolescentes se relaciona mucho con la ansiedad y la depresión"
+   ],
+   "texto": "La escoliosis idiopática en adolescentes se relaciona mucho con la ansiedad y la depresión. Un estudio en Frontiers in Psychiatry analiza cómo estos problemas van de la mano. Los mecanismos psicofisiológicos explican que la salud física y mental están profundamente conectadas durante la adolescencia.\n\nFuente: Frontiers in Psychiatry",
+   "hashtags": [
+    "psicologia",
+    "adolescentes",
+    "saludmental",
+    "aurzane",
+    "Psicología",
+    "Curiosidades"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "🧠",
+   "dato": "La escoliosis idiopática en adolescentes se relaciona mucho con la ansiedad y la depresión.",
+   "alta": "2026-11-13"
   },
   {
    "id": "cur-caacb3bc64",
