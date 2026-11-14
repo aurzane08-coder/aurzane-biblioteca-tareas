@@ -19260,6 +19260,56 @@
    "alta": "2026-10-26"
   },
   {
+   "id": "lectura-el-universo-en-tu-mano-christophe-galfard",
+   "tipo": "lectura",
+   "mundo": "aurzane",
+   "origen": "tienda",
+   "url": "https://aurzane.com/libros/el-universo-en-tu-mano-christophe-galfard/",
+   "titulo": "El universo en tu mano",
+   "autor": "Christophe Galfard",
+   "ganchos": [
+    "Libro recomendado: El universo en tu mano",
+    "El universo en tu mano, de Christophe Galfard",
+    "¿Qué leer este mes? El universo en tu mano"
+   ],
+   "texto": "Este libro es para cualquier curioso que quiera viajar por el cosmos sin necesidad de matemáticas complejas. Aporta una comprensión visual y cercana de los misterios de la física moderna, desde los agujeros negros hasta el origen…",
+   "hashtags": [
+    "LibrosRecomendados",
+    "QueLeer",
+    "Lectura",
+    "Libros"
+   ],
+   "aviso": "Contiene enlace de afiliado.",
+   "img": null,
+   "emoji": "📚",
+   "alta": "2026-11-14"
+  },
+  {
+   "id": "lectura-la-utilidad-de-lo-inutil-nuccio-ordine",
+   "tipo": "lectura",
+   "mundo": "aurzane",
+   "origen": "tienda",
+   "url": "https://aurzane.com/libros/la-utilidad-de-lo-inutil-nuccio-ordine/",
+   "titulo": "La utilidad de lo inútil",
+   "autor": "Nuccio Ordine",
+   "ganchos": [
+    "Libro recomendado: La utilidad de lo inútil",
+    "La utilidad de lo inútil, de Nuccio Ordine",
+    "¿Qué leer este mes? La utilidad de lo inútil"
+   ],
+   "texto": "Esta obra es para quienes defienden el valor de la cultura, la literatura y el saber más allá del beneficio económico.",
+   "hashtags": [
+    "LibrosRecomendados",
+    "QueLeer",
+    "Lectura",
+    "Libros"
+   ],
+   "aviso": "Contiene enlace de afiliado.",
+   "img": null,
+   "emoji": "📚",
+   "alta": "2026-11-14"
+  },
+  {
    "id": "lectura-la-naranja-mecanica-anthony-burgess",
    "tipo": "lectura",
    "mundo": "aurzane",
