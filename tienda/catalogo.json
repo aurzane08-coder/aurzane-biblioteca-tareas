@@ -1,5 +1,44 @@
 [
  {
+  "id": "el-universo-en-tu-mano-christophe-galfard",
+  "titulo": "El universo en tu mano",
+  "autor": "Christophe Galfard",
+  "temas": [
+   "ciencia"
+  ],
+  "origen": "tendencia",
+  "fecha": "2026-11-14",
+  "isbn": "9788416290628",
+  "portada": "https://covers.openlibrary.org/b/id/7882629-M.jpg?default=false",
+  "anio": "2016",
+  "editorial": "Blackie Books",
+  "idioma": "spa",
+  "resumen": "",
+  "tendencia": "Conecta con el interés general por la exploración espacial y la física moderna.",
+  "tendencia_fecha": "2026-11-14",
+  "porque": "Este libro es para cualquier curioso que quiera viajar por el cosmos sin necesidad de matemáticas complejas. Aporta una comprensión visual y cercana de los misterios de la física moderna, desde los agujeros negros hasta el origen del universo."
+ },
+ {
+  "id": "la-utilidad-de-lo-inutil-nuccio-ordine",
+  "titulo": "La utilidad de lo inútil",
+  "autor": "Nuccio Ordine",
+  "temas": [
+   "ensayo",
+   "bienestar"
+  ],
+  "origen": "tendencia",
+  "fecha": "2026-11-14",
+  "isbn": "9788415689928",
+  "portada": "https://covers.openlibrary.org/b/id/8088582-M.jpg?default=false",
+  "anio": "2013",
+  "editorial": "Acantilado",
+  "idioma": "",
+  "resumen": "",
+  "tendencia": "Un ensayo breve perfecto para desacelerar el ritmo frenético del mes de noviembre.",
+  "tendencia_fecha": "2026-11-14",
+  "porque": "Esta obra es para quienes defienden el valor de la cultura, la literatura y el saber más allá del beneficio económico. Aporta una reflexión profunda y necesaria sobre cómo los saberes aparentemente inútiles son indispensables para el espíritu humano."
+ },
+ {
   "id": "la-naranja-mecanica-anthony-burgess",
   "titulo": "La naranja mecánica",
   "autor": "Anthony Burgess",
