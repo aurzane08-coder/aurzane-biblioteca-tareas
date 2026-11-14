@@ -40,7 +40,7 @@
   "motivo": "Fallo 404 al cargar un recurso JavaScript o activo estático durante la prueba de la versión exprés en mind.aurzane.com.",
   "explicacion": "Causa probable: el despliegue automático mediante GitHub Actions no sincronizó correctamente algún archivo JS dependiente del test tras una actualización. Cómo arreglarlo a mano: verificar en el repositorio que el archivo referenciado exista en la ruta correcta, asegurar permisos en el servidor SiteGround y comprobar las rutas relativas o absolutas en el HTML del subdominio.",
   "ok": 0,
-  "fallo": 2,
+  "fallo": 3,
   "fecha": "2026-11-10",
   "ejemplo": "Prueba fallida en https://mind.aurzane.com/test-de-personalidad/: Hice la versión exprés: perfil «Prisma» · 1 error(es) de JavaScript: Failed to load resource: the server responded with a status of 40"
  },
