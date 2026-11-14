@@ -1,5 +1,27 @@
 [
  {
+  "fecha": "2026-11-14",
+  "id": "ia-eidetic-afterlife-articles_20261114",
+  "tipo": "libro",
+  "titulo": "The Eidetic Afterlife Hypothesis: Historical Archive",
+  "url": "https://archive.org/details/eidetic-afterlife-articles_20261114",
+  "motivo": "La IA le dio 2/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/the-astro-testament-astroboy-zm/The_Astro_Testament_Astroboy_ZM.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-14",
+  "id": "ia-the-astro-testament-astroboy-zm",
+  "tipo": "libro",
+  "titulo": "The Astro Testament Astroboy ZM",
+  "url": "https://archive.org/details/the-astro-testament-astroboy-zm",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 27 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/the-astro-testament-astroboy-zm/The_Astro_Testament_Astroboy_ZM.pdf"
+  ]
+ },
+ {
   "fecha": "2026-11-13",
   "id": "ia-turbo-suslik-2.1-english-engineers-edition",
   "tipo": "libro",
@@ -2815,28 +2837,6 @@
   "motivo": "Dice ser un libro pero el PDF solo tiene 16 páginas (es un capítulo, artículo o resumen)",
   "probados": [
    "200 application/pdf https://archive.org/download/hacia-una-psicologia-ecosistemica-del-acto_202606/Hacia%20una%20psicolog%C3%ADa%2"
-  ]
- },
- {
-  "fecha": "2026-11-03",
-  "id": "ia-El-Umbral-del-Rubi",
-  "tipo": "libro",
-  "titulo": "EL UMBRAL DEL RUBÍ",
-  "url": "https://archive.org/details/El-Umbral-del-Rubi",
-  "motivo": "Dice ser un libro pero el PDF solo tiene 30 páginas (es un capítulo, artículo o resumen)",
-  "probados": [
-   "200 application/pdf https://archive.org/download/El-Umbral-del-Rubi/EL%20UMBRAL%20DEL%20RUB%C3%8D.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-03",
-  "id": "ia-las-maldiciones-humanas-rtf_202607",
-  "tipo": "libro",
-  "titulo": "Las Maldiciones Humanas Rtf",
-  "url": "https://archive.org/details/las-maldiciones-humanas-rtf_202607",
-  "motivo": "Dice ser un libro pero el PDF solo tiene 45 páginas (es un capítulo, artículo o resumen)",
-  "probados": [
-   "200 application/pdf https://archive.org/download/las-maldiciones-humanas-rtf_202607/Las%20Maldiciones%20Humanas_rtf.pdf"
   ]
  }
 ]

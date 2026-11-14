@@ -1,5 +1,5 @@
 {
- "diario": "2026-11-13",
+ "diario": "2026-11-14",
  "reintento_pdf_1": "v3",
  "solicitudes_hechas": [
   "0153dae9b6",
@@ -23,8 +23,8 @@
  "leccion_20261108": "2026-11-08",
  "art_dia": {
   "2026-11-14": {
-   "hechos": 1,
-   "intentos": 8
+   "hechos": 2,
+   "intentos": 10
   }
  },
  "incidencias_vistas": []

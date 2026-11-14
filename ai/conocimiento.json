@@ -31,7 +31,7 @@
   "motivo": "Se ha detectado 1 enlace roto en la revisión semanal que requiere comprobación manual.",
   "explicacion": "Un enlace interno o externo en el HTML o PHP de la web apunta a una URL inexistente. Como las automatizaciones no editan contenido estático, debes buscar el archivo afectado mediante grep en el repositorio, localizar la ruta errónea y corregirla en el código antes de hacer commit a GitHub.",
   "ok": 0,
-  "fallo": 1,
+  "fallo": 2,
   "fecha": "2026-11-10",
   "ejemplo": "Hay 1 enlaces rotos en la última revisión semanal."
  },
