@@ -38,5 +38,13 @@
   "facebook": 0,
   "instagram": 2,
   "youtube": 6
+ },
+ "2026-11-14": {
+  "telegram": 7,
+  "bluesky": 1,
+  "mastodon": null,
+  "facebook": 0,
+  "instagram": 2,
+  "youtube": 6
  }
 }

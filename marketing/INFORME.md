@@ -1,14 +1,14 @@
 # Informe de marketing
 
-Actualizado: 2026-11-13. Clics de personas (sin bots ni vistas previas) que entraron por los enlaces de las publicaciones.
+Actualizado: 2026-11-14. Clics de personas (sin bots ni vistas previas) que entraron por los enlaces de las publicaciones.
 
 | Red | Publicaciones | Clics |
 |---|---|---|
-| telegram | 52 | 4 |
-| bluesky | 36 | 162 |
-| mastodon | 36 | 101 |
-| instagram | 29 | 0 |
-| facebook | 29 | 75 |
+| telegram | 53 | 4 |
+| bluesky | 36 | 166 |
+| mastodon | 36 | 105 |
+| instagram | 30 | 0 |
+| facebook | 30 | 80 |
 | threads | 0 | 0 |
 | pinterest | 24 | 0 |
 
@@ -23,14 +23,15 @@ Actualizado: 2026-11-13. Clics de personas (sin bots ni vistas previas) que entr
 | curso-neuro | 9 |
 | test-ansiedad | 9 |
 | nc-sociologia | 8 |
+| crea-l05-02 | 8 |
 | calc-calorias | 8 |
 | test-personalidad | 7 |
+| ovp | 7 |
+| test-habitos | 7 |
 | crea-l05-08 | 7 |
 | frase-81d54602 | 7 |
 | frase-b424a195 | 6 |
 | test-autocompasion | 6 |
-| ovp | 6 |
-| test-habitos | 6 |
 | nc-educacion-infantil | 6 |
 | test-satisfaccion | 6 |
 | crea-l06-02 | 6 |
@@ -39,5 +40,4 @@ Actualizado: 2026-11-13. Clics de personas (sin bots ni vistas previas) que entr
 | crea-l05-04 | 5 |
 | curso-metod | 5 |
 | biblio-nexus | 5 |
-| crea-l05-02 | 5 |
 | nc-criminologia | 5 |
