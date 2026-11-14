@@ -432,3 +432,9 @@
 2026-11-14,6,youtube,frase-4f7eb0c1,ok,https://youtu.be/M47OeU6Wt0s
 2026-11-14,6,tiktok,frase-8a2a7a1d,error,500 null
 2026-11-14,6,tiktok,frase-8a2a7a1d,ok,v_inbox_file~v2.7708066464476989492 (borrador en la bandeja de TikTok: añade un sonido y publica)
+2026-11-14,2,telegram,frase-b2cd5000,error,400 {"ok":false "error_code":400 "description":"Bad Request: IMAGE_PROCESS_FAILED"}
+2026-11-14,2,bluesky,nc-enfermeria,ok,at://did:plc:6ovoiudj7dkxgrzd2zkyn77y/app.bsky.feed.post/3n2c2wgacta2j
+2026-11-14,2,mastodon,nc-ingenieria-aeroespacial,error,422 {"error":"Validation failed: File content type is invalid  File is invalid"}
+2026-11-14,2,instagram,nc-criminologia,ok,18188450749423941
+2026-11-14,2,facebook,nc-periodismo,ok,2120158928623374
+2026-11-14,2,pinterest,curso-neuro,feed,
