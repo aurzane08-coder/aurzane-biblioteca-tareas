@@ -1,5 +1,62 @@
 [
  {
+  "id": "cur-df87f5f0c3",
+  "tipo": "curiosidad",
+  "titulo": "¿Sabías que el estrés no siempre te perjudica?",
+  "dato": "Segun la American Psychological Association, cambiar tu perspectiva sobre el estrés reduce sus efectos negativos.",
+  "resumen": "Segun la American Psychological Association, cambiar tu perspectiva sobre el estrés reduce sus efectos negativos. En psicologia, se ha comprobado que ver la activacion fisica del estres como una ayuda para rendir mejor cambia la respuesta del cuerpo. De este modo, el organismo afronta la situacion con mayor eficacia y menor desgaste.",
+  "fuente": "American Psychological Association, 2013",
+  "hashtags": [
+   "psicologia",
+   "estres",
+   "divulgacion",
+   "saludmental"
+  ],
+  "fuente_id": "tema-318-0",
+  "url": "https://mind.aurzane.com/",
+  "fecha": "2026-11-14",
+  "auto": true,
+  "verificacion": "El dato está respaldado por investigaciones de la APA sobre la mentalidad hacia el estrés y es riguroso."
+ },
+ {
+  "id": "cur-c1c9d6339f",
+  "tipo": "curiosidad",
+  "titulo": "¿Se puede tratar la ansiedad leyendo la actividad cerebral?",
+  "dato": "Las interfaces cerebro-ordenador permiten monitorizar y entrenar señales cerebrales para modular la ansiedad.",
+  "resumen": "Las interfaces cerebro-ordenador permiten monitorizar y entrenar señales cerebrales para modular la ansiedad. Esta tecnología registra la actividad neuronal mediante electroencefalografía u otras técnicas. Así, convierte los patrones relacionados con la ansiedad en objetivos que se pueden observar y regular.",
+  "fuente": "Neuropsychiatric disease and treatment",
+  "hashtags": [
+   "psicología",
+   "neurociencia",
+   "ansiedad",
+   "aurzane"
+  ],
+  "fuente_id": "pmc-PMC13745318",
+  "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13745318/",
+  "fecha": "2026-11-14",
+  "auto": true,
+  "verificacion": "El uso de interfaces cerebro-ordenador y neurofeedback para monitorizar y modular la ansiedad mediante EEG está respaldado por la literatura científica."
+ },
+ {
+  "id": "cur-cf0450f8c1",
+  "tipo": "curiosidad",
+  "titulo": "¿Por qué se investiga la terapia asistida con psicodélicos?",
+  "dato": "Las revisiones científicas analizan los psicodélicos no como fármaco aislado, sino integrados dentro de un proceso de acompañamiento psicológico.",
+  "resumen": "Las revisiones científicas analizan los psicodélicos no como fármaco aislado, sino integrados dentro de un proceso de acompañamiento psicológico. Entre 2020 y 2025, la investigación se ha centrado en revisar su evidencia clínica, seguridad y mecanismos de acción. Además, los expertos destacan la importancia de regular los aspectos éticos de estas intervenciones.",
+  "fuente": "Frontiers in Psychology",
+  "hashtags": [
+   "psicologia",
+   "ciencia",
+   "saludmental",
+   "aurzane"
+  ],
+  "fuente_id": "pmc-PMC13748407",
+  "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13748407/",
+  "fecha": "2026-11-14",
+  "auto": true,
+  "verificacion": "La afirmación es científicamente precisa, verificable, está respaldada por literatura reciente y evita cualquier exageración."
+ },
+ {
   "id": "cur-2712364aef",
   "tipo": "curiosidad",
   "titulo": "¿Sabías que tu cerebro te engaña al creer que haces multitarea?",

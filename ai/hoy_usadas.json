@@ -5,7 +5,8 @@
   "fw-3f124fe085",
   "fw-a2a58ebdb4",
   "fw-4fe278707a",
-  "cita-97bb8e8f52"
+  "cita-97bb8e8f52",
+  "fw-cba107601c"
  ],
  "dias": {
   "2026-11-08": {
@@ -178,6 +179,35 @@
    },
    "mas_frases": true,
    "musica": null
+  },
+  "2026-11-14": {
+   "fecha": "2026-11-14",
+   "frase": {
+    "texto": "La tolerancia es la mejor religión.",
+    "autor": "Victor Hugo",
+    "obra": "",
+    "url": "https://aurzane.com/frases/#fw-cba107601c",
+    "fuente": "Proverbia.net"
+   },
+   "curiosidad": {
+    "titulo": "¿Por qué se investiga la terapia asistida con psicodélicos?",
+    "texto": "Las revisiones científicas analizan los psicodélicos no como fármaco aislado, sino integrados dentro de un proceso de acompañamiento psicológico. Entre 2020 y 2025, la investigación se ha centrado en revisar su evidencia clínica, seguridad y mecanismos de acción. Además, los expertos destacan la importancia de regular los aspectos éticos de estas intervenciones.",
+    "fuente": "Frontiers in Psychology",
+    "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13748407/"
+   },
+   "ejercicio": {
+    "titulo": "Respiración cuadrada (box breathing) guiada",
+    "url": "https://mind.aurzane.com/ejercicios/respiracion-cuadrada/"
+   },
+   "test": {
+    "titulo": "Test de sueño gratis",
+    "url": "https://live.aurzane.com/test-de-sueno/"
+   },
+   "mas_frases": true,
+   "musica": {
+    "url": "https://aurzane.com/marketing/musica/383175.mp3",
+    "credito": "«cloudy», Guillaume Robbe (Jamendo), CC BY-SA"
+   }
   }
  }
 }
