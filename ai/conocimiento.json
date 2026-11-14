@@ -37,18 +37,18 @@
  },
  "prueba_fallida|prueba fallida en # hice la versión exprés: perfil «prisma» · # error(es) de javascript: failed to load resource: the server responded with ": {
   "receta": "reintentar_flujo",
-  "motivo": "Fallo 404 al cargar un recurso JavaScript o activo estático durante la prueba de la versión exprés en mind.aurzane.com.",
-  "explicacion": "Causa probable: el despliegue automático mediante GitHub Actions no sincronizó correctamente algún archivo JS dependiente del test tras una actualización. Cómo arreglarlo a mano: verificar en el repositorio que el archivo referenciado exista en la ruta correcta, asegurar permisos en el servidor SiteGround y comprobar las rutas relativas o absolutas en el HTML del subdominio.",
+  "motivo": "Fallo de recurso 404 en la versión exprés del test de personalidad al cargar un script o activo generado por la automatización.",
+  "explicacion": "El error 404 en JavaScript suele ocurrir porque el archivo compilado o el script específico de la versión exprés no se subió correctamente al servidor durante el despliegue mediante GitHub Actions. Al reintentar el flujo se fuerza una nueva compilación y sincronización de los archivos estáticos en SiteGround. Si persiste, verifica en el repositorio que la ruta del script del perfil Prisma sea relativa o absoluta correcta y que no falte por commitear.",
   "ok": 0,
-  "fallo": 3,
-  "fecha": "2026-11-10",
+  "fallo": 0,
+  "fecha": "2026-11-14",
   "ejemplo": "Prueba fallida en https://mind.aurzane.com/test-de-personalidad/: Hice la versión exprés: perfil «Prisma» · 1 error(es) de JavaScript: Failed to load resource: the server responded with a status of 40"
  },
  "prueba_fallida|prueba fallida en # carga bien · # error(es) de javascript: undefined": {
   "receta": "avisar",
   "motivo": "Se ha producido un error de JavaScript no capturado durante las pruebas de la página.",
   "explicacion": "La prueba automatizada detectó una excepción JavaScript durante la carga de la calculadora.\nComo se trata de un problema en el código cliente, reintentar el flujo no solucionará el fallo.\nEs necesario revisar la consola para identificar la variable o script no definido.\nVerifica las referencias a aurzane-paleta.js y los scripts inline para corregir la sintaxis.",
-  "ok": 4,
+  "ok": 5,
   "fallo": 0,
   "fecha": "2026-11-10",
   "ejemplo": "Prueba fallida en https://build.aurzane.com/calculadora-reforma/: Carga bien · 1 error(es) de JavaScript: undefined"
@@ -66,7 +66,7 @@
   "receta": "reintentar_flujo",
   "motivo": "El HTML inicial carga correctamente con estado 200 pero faltan elementos interactivos, lo que indica un fallo en la compilación o despliegue del script del test mediante GitHub Actions.",
   "explicacion": "El servidor responde bien pero el motor de renderizado del test no inyecta las preguntas. La causa más probable es un error de JavaScript o un fallo en el pipeline de GitHub Actions al compilar los assets estáticos. Si la acción automática no lo resuelve, revisa manualmente la consola del navegador en busca de errores de JS y comprueba el último commit en el repositorio de GitHub.",
-  "ok": 3,
+  "ok": 6,
   "fallo": 0,
   "fecha": "2026-11-13",
   "ejemplo": "Prueba fallida en https://mind.aurzane.com/test-de-ansiedad/: No aparecen las preguntas del test"
