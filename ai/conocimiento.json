@@ -40,7 +40,7 @@
   "motivo": "Fallo de recurso 404 en la versión exprés del test de personalidad al cargar un script o activo generado por la automatización.",
   "explicacion": "El error 404 en JavaScript suele ocurrir porque el archivo compilado o el script específico de la versión exprés no se subió correctamente al servidor durante el despliegue mediante GitHub Actions. Al reintentar el flujo se fuerza una nueva compilación y sincronización de los archivos estáticos en SiteGround. Si persiste, verifica en el repositorio que la ruta del script del perfil Prisma sea relativa o absoluta correcta y que no falte por commitear.",
   "ok": 0,
-  "fallo": 0,
+  "fallo": 1,
   "fecha": "2026-11-14",
   "ejemplo": "Prueba fallida en https://mind.aurzane.com/test-de-personalidad/: Hice la versión exprés: perfil «Prisma» · 1 error(es) de JavaScript: Failed to load resource: the server responded with a status of 40"
  },
