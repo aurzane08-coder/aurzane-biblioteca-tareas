@@ -1,12 +1,12 @@
 {
- "fecha": "2026-11-13",
+ "fecha": "2026-11-14",
  "conectado": true,
  "periodo": [
-  "2026-10-14",
-  "2026-11-10"
+  "2026-10-15",
+  "2026-11-11"
  ],
  "clics": 29,
- "impresiones": 15929,
+ "impresiones": 15915,
  "consultas": [
   [
    "berkeley",
@@ -375,32 +375,26 @@
   [
    "ESP",
    126,
-   11330,
+   11325,
    25.7
   ],
   [
    "MEX",
    48,
-   4127,
+   4126,
    22.0
   ],
   [
    "ECU",
-   43,
-   3971,
+   42,
+   3900,
    10.5
   ],
   [
    "USA",
    8,
-   2432,
+   2431,
    24.9
-  ],
-  [
-   "COL",
-   37,
-   1949,
-   22.7
   ],
   [
    "BRA",
@@ -409,21 +403,27 @@
    54.9
   ],
   [
+   "COL",
+   37,
+   1946,
+   22.7
+  ],
+  [
    "ARG",
    29,
-   1883,
+   1882,
    26.1
   ],
   [
    "PER",
    30,
-   1401,
+   1400,
    12.3
   ],
   [
    "CHL",
    18,
-   1351,
+   1349,
    25.8
   ],
   [
@@ -555,6 +555,36 @@
  ],
  "paises_trabajados": [
   [
+   "2026-11-14",
+   "Panamá",
+   "Memento Mori: cómo la aceptación de la muerte mejora tu vida"
+  ],
+  [
+   "2026-11-14",
+   "Panamá",
+   "Universidades en Panamá: guía completa para elegir carrera"
+  ],
+  [
+   "2026-11-14",
+   "Guatemala",
+   "Cómo elegir carrera universitaria en Guatemala con éxito"
+  ],
+  [
+   "2026-11-14",
+   "Guatemala",
+   "Guía de universidades públicas y privadas en Guatemala"
+  ],
+  [
+   "2026-11-14",
+   "Costa Rica",
+   "Oferta académica en Costa Rica: claves para decidir tu carrera"
+  ],
+  [
+   "2026-11-14",
+   "Costa Rica",
+   "Carreras universitarias en Costa Rica: guía para elegir tu futuro"
+  ],
+  [
    "2026-11-13",
    "República Dominicana",
    "Universidades en Santo Domingo: Guía para elegir carrera en RD"
@@ -583,39 +613,9 @@
    "2026-11-13",
    "Nicaragua",
    "Guía de universidades en Nicaragua: Cómo elegir carrera"
-  ],
-  [
-   "2026-11-12",
-   "El Salvador",
-   "El proceso de convertirse en persona: clave psicológica para tu desarrollo"
-  ],
-  [
-   "2026-11-12",
-   "El Salvador",
-   "Guía completa de universidades en El Salvador y su oferta académica"
-  ],
-  [
-   "2026-11-12",
-   "Uruguay",
-   "Cómo empezar la universidad en Uruguay: adaptación y hábitos de estudio"
-  ],
-  [
-   "2026-11-12",
-   "Uruguay",
-   "Universidades en Montevideo y Uruguay: guía para elegir carrera"
-  ],
-  [
-   "2026-11-12",
-   "Cuba",
-   "Técnicas de estudio efectivo para la vida universitaria en Cuba"
-  ],
-  [
-   "2026-11-12",
-   "Cuba",
-   "Cómo superar el estrés ante los exámenes de ingreso a la universidad en Cuba"
   ]
  ],
- "fichas_ampliadas": 3,
+ "fichas_ampliadas": 5,
  "cambios_titulos": [
   [
    "2026-11-13",
@@ -636,6 +636,36 @@
  ],
  "temas_nuevos": [
   [
+   "2026-11-14",
+   "recuerda que vas a morir",
+   "Memento Mori: cómo la aceptación de la muerte mejora tu vida"
+  ],
+  [
+   "2026-11-14",
+   "cuantas universidades hay en panama",
+   "Universidades en Panamá: guía completa para elegir carrera"
+  ],
+  [
+   "2026-11-14",
+   "carreras universitarias en guatemala",
+   "Cómo elegir carrera universitaria en Guatemala con éxito"
+  ],
+  [
+   "2026-11-14",
+   "cuantas universidades publicas hay en guatemala",
+   "Guía de universidades públicas y privadas en Guatemala"
+  ],
+  [
+   "2026-11-14",
+   "carreras utn alajuela",
+   "Oferta académica en Costa Rica: claves para decidir tu carrera"
+  ],
+  [
+   "2026-11-14",
+   "carreras universitarias en costa rica",
+   "Carreras universitarias en Costa Rica: guía para elegir tu futuro"
+  ],
+  [
    "2026-11-13",
    "nombre de universidades en santo domingo",
    "Universidades en Santo Domingo: Guía para elegir carrera en RD"
@@ -654,36 +684,6 @@
    "2026-11-13",
    "cuantas universidades hay en santa cruz",
    "Universidades en Santa Cruz: guía completa y opciones para elegir carrera"
-  ],
-  [
-   "2026-11-13",
-   "que es un verdugo en el amor",
-   "Relaciones de pareja tóxicas y límites en el amor"
-  ],
-  [
-   "2026-11-13",
-   "mejores universidades de nicaragua",
-   "Guía de universidades en Nicaragua: Cómo elegir carrera"
-  ],
-  [
-   "2026-11-13",
-   "universidades en california",
-   "Universidades en California: Opciones para estudiar y grados"
-  ],
-  [
-   "2026-11-13",
-   "universidad en holanda",
-   "Estudiar en Holanda: Oferta académica y universidades"
-  ],
-  [
-   "2026-11-13",
-   "body scan mindfulness",
-   "Body Scan: Qué es y cómo practicar este ejercicio de mindfulness"
-  ],
-  [
-   "2026-11-13",
-   "universidad en inglaterra",
-   "Estudiar en Inglaterra: Guía de universidades y grados"
   ]
  ]
 }

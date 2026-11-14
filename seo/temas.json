@@ -561,5 +561,71 @@
   "pais_nombre": "República Dominicana",
   "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al número de emergencias del país. ",
   "fecha": "2026-11-13"
+ },
+ {
+  "consulta": "carreras universitarias en costa rica",
+  "titulo": "Carreras universitarias en Costa Rica: guía para elegir tu futuro",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "oferta": "universidades",
+  "pais": "CRI",
+  "pais_nombre": "Costa Rica",
+  "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al número de emergencias del país. ",
+  "fecha": "2026-11-14"
+ },
+ {
+  "consulta": "carreras utn alajuela",
+  "titulo": "Oferta académica en Costa Rica: claves para decidir tu carrera",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "oferta": "universidades",
+  "pais": "CRI",
+  "pais_nombre": "Costa Rica",
+  "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al número de emergencias del país. ",
+  "fecha": "2026-11-14"
+ },
+ {
+  "consulta": "cuantas universidades publicas hay en guatemala",
+  "titulo": "Guía de universidades públicas y privadas en Guatemala",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "oferta": "universidades",
+  "pais": "GTM",
+  "pais_nombre": "Guatemala",
+  "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al número de emergencias del país. ",
+  "fecha": "2026-11-14"
+ },
+ {
+  "consulta": "carreras universitarias en guatemala",
+  "titulo": "Cómo elegir carrera universitaria en Guatemala con éxito",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "oferta": "test",
+  "pais": "GTM",
+  "pais_nombre": "Guatemala",
+  "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al número de emergencias del país. ",
+  "fecha": "2026-11-14"
+ },
+ {
+  "consulta": "cuantas universidades hay en panama",
+  "titulo": "Universidades en Panamá: guía completa para elegir carrera",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "oferta": "universidades",
+  "pais": "PAN",
+  "pais_nombre": "Panamá",
+  "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al número de emergencias del país. ",
+  "fecha": "2026-11-14"
+ },
+ {
+  "consulta": "recuerda que vas a morir",
+  "titulo": "Memento Mori: cómo la aceptación de la muerte mejora tu vida",
+  "mundo": "mind",
+  "test": "resiliencia",
+  "oferta": "libros",
+  "pais": "PAN",
+  "pais_nombre": "Panamá",
+  "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al número de emergencias del país. ",
+  "fecha": "2026-11-14"
  }
 ]

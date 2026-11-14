@@ -78,5 +78,53 @@
    }
   ],
   "fecha": "2026-11-13"
+ },
+ "https://nexus.aurzane.com/universidades/espana/universidad-intercontinental-de-la-empresa/": {
+  "titulo": "Guía AURZANE: Universidad Intercontinental de la Empresa",
+  "parrafos": [
+   "Te damos la bienvenida a la guía de orientación vocacional de AURZANE para la Universidad Intercontinental de la Empresa. Creada en 2021 y con sede en Santiago de Compostela, Galicia, esta institución privada ofrece un catálogo de 7 grados distribuidos principalmente en las áreas de Ciencias Sociales y Jurídicas, Ciencias de la Salud, e Ingeniería y Arquitectura, con opciones en campus como A Coruña y Vigo.",
+   "Para acceder a los estudios de grado en España, por regla general se requiere contar con el título de Bachillerato o de Técnico Superior de Formación Profesional y superar la prueba de acceso a la universidad conocida como PAU. La nota de admisión se calcula sobre un total de 14 puntos, combinando la calificación media de los estudios previos con las fases general y específica de la prueba según las ponderaciones de cada titulación.",
+   "A la hora de elegir una carrera universitaria, te recomendamos no fijarte únicamente en el nombre de la institución. Es fundamental que compares los planes de estudio, analices las salidas profesionales, revises los enfoques prácticos y valores aspectos como la ubicación y la modalidad de impartición para tomar una decisión informada y acorde a tus metas.",
+   "Santiago de Compostela, situada en la comunidad autónoma de Galicia, ofrece un entorno universitario dinámico y acogedor, conocido por su rica historia y su ambiente propicio para la vida estudiantil. En esta ciudad y en otras sedes de la universidad podrás desarrollar tu etapa formativa combinando el rigor académico con una intensa actividad cultural y social."
+  ],
+  "faq": [
+   {
+    "p": "¿Qué tipo de universidad es la Universidad Intercontinental de la Empresa?",
+    "r": "Según los datos oficiales disponibles, se trata de una universidad privada con sede en Santiago de Compostela, en la comunidad autónoma de Galicia."
+   },
+   {
+    "p": "¿Qué se puede estudiar en esta universidad?",
+    "r": "En nuestro catálogo figuran 7 grados, centrados principalmente en áreas como Ciencias Sociales y Jurídicas, Ciencias de la Salud, e Ingeniería y Arquitectura."
+   },
+   {
+    "p": "¿Cómo es el acceso a la universidad en España?",
+    "r": "Se accede habitualmente con el título de Bachillerato o FP y superando la prueba de acceso a la universidad PAU, calculando la nota de admisión sobre un máximo de 14 puntos."
+   }
+  ],
+  "fecha": "2026-11-14"
+ },
+ "https://nexus.aurzane.com/universidades/notas-de-corte/psicologia/": {
+  "titulo": "Guía de Orientación AURZANE para el Grado en Psicología",
+  "parrafos": [
+   "Bienvenidos a AURZANE. Como vuestro orientador vocacional, os presento esta guía orientativa basada exclusivamente en los datos oficiales de acceso para el Grado en Psicología en el sistema universitario español. La información recopilada muestra la realidad de las notas de corte de la convocatoria ordinaria y el cupo general para el curso académico, abarcando un amplio abanico de instituciones públicas y centros adscritos distribuidos por todo el territorio nacional.",
+   "El acceso a la universidad en España requiere superar la prueba de acceso correspondiente y calcular la nota de admisión sobre 14 puntos, combinando la calificación de la fase general y las materias de modalidad ponderadas. Dado que la nota de corte representa la calificación del último alumno admitido en cada titulación, esta cifra fluctúa cada año en función de la oferta de plazas disponibles y la demanda de solicitudes de los futuros estudiantes.",
+   "Para elegir correctamente vuestra carrera, es fundamental contrastar vuestras preferencias personales con los requisitos de admisión específicos de cada universidad. Os recomendamos revisar detalladamente los listados oficiales, calcular vuestras opciones de acceso y consultar siempre los canales institucionales de cada facultad para verificar los procedimientos de preinscripción y matriculación vigentes.",
+   "La vida universitaria en cualquiera de las ciudades que imparten este grado ofrece un entorno dinámico para el desarrollo académico y personal. Más allá de las aulas en las facultades de Psicología, Ciencias de la Salud o Educación, los estudiantes disfrutan de una enriquecedora etapa de convivencia, aprendizaje continuo y participación en la vida cultural y social del campus."
+  ],
+  "faq": [
+   {
+    "p": "¿Cuál es la nota de corte de Psicología?",
+    "r": "La nota de corte varía en cada universidad según la demanda y las plazas ofertadas. En los datos oficiales disponibles para el curso actual, los valores van desde el mínimo registrado hasta el máximo por el cupo general."
+   },
+   {
+    "p": "¿Cómo calcular la nota de admisión sobre 14?",
+    "r": "Se calcula combinando la nota media de vuestro expediente académico de bachillerato junto con la fase general y las ponderaciones de las asignaturas específicas de la prueba de acceso. Es aconsejable utilizar las herramientas de cálculo proporcionadas por las administraciones educativas."
+   },
+   {
+    "p": "¿Cuándo cambian las notas de corte de psicología?",
+    "r": "Las notas de corte cambian todos los años tras finalizar los procesos de preinscripción en la convocatoria ordinaria y extraordinaria. Dependen estrictamente del número de plazas ofertadas y de las solicitudes de los estudiantes."
+   }
+  ],
+  "fecha": "2026-11-14"
  }
 }
