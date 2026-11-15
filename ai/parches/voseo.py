@@ -1,7 +1,7 @@
 # Cambia el voseo rioplatense (podés, sabés, necesitás…) por el español de España en las páginas publicadas.
 # Antes de tocar un archivo guarda una copia en <web>/eliminar/voseo-FECHA/. Uso: python3 voseo.py <carpeta_www>
 import re, os, sys, shutil, datetime
-M = {'aprendés': 'aprendes', 'decidís': 'decides', 'podés': 'puedes', 'tenés': 'tienes', 'querés': 'quieres', 'sabés': 'sabes', 'necesitás': 'necesitas',
+M = {'intentá': 'intenta', 'conversá': 'conversa', 'descargá': 'descarga', 'explorá': 'explora', 'accedé': 'accede', 'iniciá': 'inicia', 'registrate': 'regístrate', 'fijate': 'fíjate', 'animate': 'anímate', 'contactanos': 'contáctanos', 'aprendés': 'aprendes', 'decidís': 'decides', 'podés': 'puedes', 'tenés': 'tienes', 'querés': 'quieres', 'sabés': 'sabes', 'necesitás': 'necesitas',
      'elegís': 'eliges', 'hacés': 'haces', 'sentís': 'sientes', 'vivís': 'vives', 'estudiás': 'estudias', 'buscás': 'buscas', 'encontrás': 'encuentras',
      'probá': 'prueba', 'mirá': 'mira', 'empezá': 'empieza', 'pensás': 'piensas', 'contás': 'cuentas', 'llegás': 'llegas', 'usás': 'usas', 'trabajás': 'trabajas', 'imaginá': 'imagina', 'considerás': 'consideras', 'entrás': 'entras', 'respondé': 'responde', 'descubrí': 'descubre'}
 # Frases concretas revisadas en contexto (no se tocan títulos de libros como «Elegí mi vida» ni nombres de archivo)
@@ -15,7 +15,7 @@ P = [('Hola, iniciá sesión<small>Accedé a todo el', 'Hola, inicia sesión<sma
      ('revisá tu bandeja', 'revisa tu bandeja'), ('querés profundizar', 'quieres profundizar'), ('marcá si está', 'marca si está'), ('marcá "Ninguna de ellas"', 'marca "Ninguna de ellas"'),
      ('Marcá la letra', 'Marca la letra'), ('Iniciá sesión una sola vez y accedé', 'Inicia sesión una sola vez y accede'), ('Hacé una lista de lo que considerás', 'Haz una lista de lo que consideras'),
      ('Explorá planes de estudio:</strong> Descargá', 'Explora planes de estudio:</strong> Descarga'), ('Elegí cómo se ve tu cuenta', 'Elige cómo se ve tu cuenta'),
-     ('Escribinos', 'Escríbenos'), ('escribinos', 'escríbenos')]
+     ('Descubrí cómo', 'Descubre cómo'), ('Mapeá tus', 'Haz un mapa de tus'), ('Hacé una', 'Haz una'), ('Hacé clic', 'Haz clic'), ('Escribinos', 'Escríbenos'), ('escribinos', 'escríbenos')]
 pat = re.compile(r'(?<![\wáéíóúñ])(' + '|'.join(sorted(M, key=len, reverse=True)) + r')(?![\wáéíóúñ])', re.I)
 base = sys.argv[1]; hoy = datetime.datetime.now().strftime('%Y%m%d-%H%M'); n = 0
 for web in ['aurzane.com', 'mind.aurzane.com', 'live.aurzane.com', 'learn.aurzane.com', 'nexus.aurzane.com', 'build.aurzane.com', 'ovp.aurzane.com']:

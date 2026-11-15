@@ -49,11 +49,14 @@ c['articulos_total'] = sum(c['articulos'].values())
 u = todos('universidades', 'pais')
 c['universidades'], c['paises'] = len(u), len({x['pais'] for x in u if x.get('pais')})
 cat = remoto('cat ~/www/aurzane.com/public_html/biblioteca/catalogo.js')
-try: c['libros'] = len(json.loads(cat[cat.index('{'):cat.rindex('}') + 1])['libros'])
+try:
+    _L = json.loads(cat[cat.index('{'):cat.rindex('}') + 1])['libros']
+    c['libros'] = sum(1 for x in _L if x.get('tipo') != 'referencia'); c['fichas'] = len(_L) - c['libros']
 except Exception as e: print('libros', e)
 rq = urllib.request.Request(SB + 'rpc/course_catalog_public', data=b'{}', headers={'apikey': KEY, 'Content-Type': 'application/json'})
 with urllib.request.urlopen(rq, timeout=60) as r: cursos = json.load(r)
-c['cursos'] = {k['slug']: {'temas': len(k['modulos']), 'lecciones': sum(len(m['lecciones']) for m in k['modulos']), 'preguntas': k['preguntas'], 'tipos': k['tipos']} for k in cursos}
+c['cursos'] = {k['slug']: {'temas': len(k['modulos']), 'lecciones': sum(len(m['lecciones']) for m in k['modulos']), 'preguntas': k['preguntas'], 'tipos': k['tipos'],
+                         'titulo': k.get('titulo') or '', 'descripcion': (k.get('subtitulo') or k.get('descripcion') or '')[:220], 'certificable': bool(k.get('certificable'))} for k in cursos}
 json.dump(c, open(os.path.join(R, 'cifras.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
 print(json.dumps({k: v for k, v in c.items() if k != 'cursos'}, ensure_ascii=False))
 
@@ -74,6 +77,7 @@ def reglas(sitio):
     if c.get('libros'):
         rr.append((r'(Más de |más de )' + NUM + r'( libros)', lambda x: x.group(1) + redondo(c['libros']) + x.group(3)))
         rr.append((NUM + r' libros de psicología para leer gratis', lambda x: mil(c['libros']) + ' libros para leer gratis'))
+        rr.append((r'(más de |Más de )' + NUM + r' libros de psicología en español', lambda x: x.group(1) + redondo(c['libros']) + ' libros para leer gratis en español'))
     if c['universidades']:
         rr.append((NUM + r'( (?:instituciones|universidades) en )' + NUM + r'( países)', lambda x: mil(c['universidades']) + x.group(2) + str(c['paises']) + x.group(4)))
         rr.append((r'(\d{1,3}\.\d{3})( universidades)', lambda x: mil(c['universidades']) + x.group(2)))  # solo cifras del catálogo (miles)

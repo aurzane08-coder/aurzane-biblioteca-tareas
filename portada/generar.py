@@ -7,6 +7,13 @@ head = t[t.find('<head>') + 6:t.find('</head>')]
 head = re.sub(r'<style>.*?</style>', '', head, flags=re.S)
 U = lambda i, w=900: f'https://images.unsplash.com/photo-{i}?w={w}&q=72&auto=format&fit=crop'
 E = html.escape
+import json, os
+try: CIF = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'cifras', 'cifras.json'), encoding='utf-8'))
+except Exception: CIF = {}
+mil = lambda n: f'{n:,}'.replace(',', '.')
+NU, NP = mil(CIF.get('universidades') or 6411), CIF.get('paises') or 55
+# sin el nombre del autor en los datos estructurados de la portada
+head = re.sub(r',?"founder":\{[^{}]*\}', '', head)
 
 TESTS = [  # (slug o url, nombre, pregunta, duración, mundo, foto)
  ('https://mind.aurzane.com/test-de-ansiedad/', 'Ansiedad', '¿Lo que sientes es ansiedad?', '2 min', 'mind', '1505142468610-359e7d316be0'),
@@ -40,8 +47,23 @@ FAQ = [('¿Qué es AURZANE?', 'Un ecosistema de cinco mundos (MIND, NEXUS, LIVE,
        ('¿Los tests sustituyen a un diagnóstico?', 'No. Son cuestionarios validados y orientativos: te ayudan a ponerle nombre a lo que sientes y a decidir si te conviene consultar con un profesional.'),
        ('¿Tengo que registrarme?', 'Para los tests, ejercicios, calculadoras y la biblioteca, no. La cuenta AURZANE ID solo hace falta para guardar tu progreso en los cursos y para la evaluación vocacional completa.'),
        ('¿Cómo accedo a la evaluación vocacional (OVP)?', 'Desde ovp.aurzane.com creas tu cuenta y haces las seis pruebas (CHASIDE, Holland, AF5, hábitos de estudio, APT-A y APT-B). El informe integrador aparece en tu portal al terminar y puedes descargarlo en PDF. Por lanzamiento es gratis.'),
-       ('¿Quién está detrás?', 'Adrián Sánchez Samaniego, psicólogo clínico (SENESCYT N.º 1033-2023-2618464). Cada contenido cita sus fuentes y se corrige si alguien encuentra un error.'),
+       ('¿Quién está detrás?', 'Un psicólogo clínico titulado prepara y revisa los tests y los cursos. Cada contenido cita sus fuentes y se corrige si alguien encuentra un error. Más detalles en <a href="/sobre-aurzane.html">Sobre AURZANE</a>.'),
        ('¿Qué pasa con mis datos?', 'Los tests se calculan en tu navegador y no se guardan si no inicias sesión. Todo lo demás está explicado en la <a href="/privacidad.html">política de privacidad</a>.')]
+
+TXT = {c[0]: c for c in CURSOS}
+_cat = CIF.get('cursos') or {}
+if _cat:
+    try: META = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'cursos', 'meta.json'), encoding='utf-8'))
+    except Exception: META = {}
+    nuevos = []
+    for slug, d in _cat.items():
+        if slug in TXT:
+            c = list(TXT[slug]); c[5], c[6], c[7] = d.get('temas', c[5]), d.get('lecciones', c[6]), d.get('preguntas', c[7]); nuevos.append(tuple(c))
+        elif d.get('titulo'):
+            m = META.get(slug, {})
+            nuevos.append((slug, d['titulo'], m.get('area') or d.get('area') or 'Curso', d.get('descripcion') or m.get('publico') or '', m.get('portada') or 'portada-psicologia.webp',
+                           d.get('temas', 0), d.get('lecciones', 0), d.get('preguntas', 0), 'Gratis y con certificado' if d.get('certificable') else 'Gratis'))
+    if nuevos: CURSOS = nuevos
 
 def tarjeta_test(t):
     u, n, q, d, m, f = t
@@ -72,7 +94,7 @@ cuerpo = f'''
     <p class="p-pistas">Lo más buscado: <a href="https://mind.aurzane.com/test-de-personalidad/">Test de personalidad</a><a href="https://ovp.aurzane.com/">Test vocacional</a><a href="https://mind.aurzane.com/test-de-ansiedad/">Ansiedad</a><a href="https://nexus.aurzane.com/universidades/">Universidades</a></p>
     <ul class="p-cifras" aria-label="AURZANE en cifras">
       <li><b id="cTests">15</b> tests validados</li>
-      <li><b>6.411 universidades</b> en 55 países</li>
+      <li><b>{NU} universidades</b> en {NP} países</li>
       <li><b id="cLibros">748</b> libros para leer gratis</li>
       <li><b id="cArt">25.000</b> artículos científicos</li>
     </ul>
@@ -136,7 +158,7 @@ cuerpo = f'''
       <ul class="p-pasos">
         <li><a href="https://ovp.aurzane.com/"><b>Evaluación vocacional OVP</b><span>Seis pruebas (intereses, aptitudes, autoconcepto y hábitos de estudio) y un informe integrador en PDF. Gratis por lanzamiento.</span></a></li>
         <li><a href="https://nexus.aurzane.com/universidades/que-puedo-estudiar/"><b>¿Qué puedo estudiar con mi nota?</b><span>Pon tu nota de admisión y mira qué grados encajan.</span></a></li>
-        <li><a href="https://nexus.aurzane.com/universidades/"><b>Buscador de universidades</b><span>6.411 instituciones en 55 países, con sus carreras.</span></a></li>
+        <li><a href="https://nexus.aurzane.com/universidades/"><b>Buscador de universidades</b><span>{NU} instituciones en {NP} países, con sus carreras.</span></a></li>
         <li><a href="https://nexus.aurzane.com/calculadora-nota-pau/"><b>Calculadora de nota PAU</b><span>Nota de acceso y de admisión con ponderaciones.</span></a></li>
       </ul>
       <p class="p-nota">¿Eres un colegio? <a href="https://aurzane.com/colegios/">Orientación vocacional para todo tu bachillerato</a>.</p>
@@ -195,7 +217,7 @@ cuerpo = f'''
     <div>
       <h2 id="fT">Por qué puedes fiarte</h2>
       <ul class="p-razones">
-        <li><b>Criterio clínico.</b> Cada test y cada curso los prepara y revisa Adrián Sánchez Samaniego, psicólogo clínico (SENESCYT N.º 1033-2023-2618464).</li>
+        <li><b>Criterio clínico.</b> Cada test y cada curso los prepara y revisa un psicólogo clínico titulado.</li>
         <li><b>Fuentes a la vista.</b> Los artículos citan estudios reales y la biblioteca académica enlaza cada trabajo con su fuente original.</li>
         <li><b>Sin registros innecesarios.</b> Los tests se calculan en tu navegador; solo creas cuenta si quieres guardar tu progreso.</li>
       </ul>

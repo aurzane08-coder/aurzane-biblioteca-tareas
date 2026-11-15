@@ -1,0 +1,37 @@
+name: Seguridad
+# Quita enlaces públicos al admin, marca las páginas internas como no indexables y bloquea la enumeración de usuarios de WordPress.
+# Si algún sitio deja de responder 200 tras el cambio, se restaura el .htaccess anterior desde eliminar/.
+on:
+  push:
+    paths: ['ai/parches/seguridad.py', '.github/workflows/parche-seguridad.yml']
+  schedule:
+    - cron: '23 3 * * *'
+  workflow_dispatch:
+jobs:
+  p:
+    runs-on: ubuntu-latest
+    env:
+      SG_KEY: ${{ secrets.SG_KEY }}
+      SG_HOST: ${{ secrets.SG_HOST }}
+      SG_USER: ${{ secrets.SG_USER }}
+      SG_PORT: ${{ secrets.SG_PORT }}
+      SG_PASS: ${{ secrets.SG_PASS }}
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          mkdir -p ~/.ssh && printf '%s\n' "$SG_KEY" | tr -d '\r' > ~/.ssh/id && chmod 600 ~/.ssh/id
+          if [ -n "$SG_PASS" ]; then ssh-keygen -p -P "$SG_PASS" -N "" -f ~/.ssh/id >/dev/null; fi
+          SSH="ssh -i $HOME/.ssh/id -p ${SG_PORT:-18765} -o StrictHostKeyChecking=accept-new -o ConnectTimeout=60 $SG_USER@$SG_HOST"
+          $SSH 'python3 - www' < ai/parches/seguridad.py | sed 's/^/::notice title=Seguridad::/'
+          $SSH 'bash -s' <<'R' | sed 's/^/::notice title=Comprobación::/'
+          for h in aurzane.com mind.aurzane.com nexus.aurzane.com live.aurzane.com learn.aurzane.com build.aurzane.com ovp.aurzane.com; do
+            site-tools-client domain-all update id=$h flush_cache=1 >/dev/null 2>&1
+            c=$(curl -s -o /dev/null -w '%{http_code}' https://$h/)
+            if [ "$c" != "200" ]; then
+              u=$(ls -dt www/$h/eliminar/seguridad-*/ 2>/dev/null | head -1)
+              if [ -n "$u" ] && [ -f "$u/.htaccess" ]; then cp -p "$u/.htaccess" www/$h/public_html/.htaccess; echo "$h respondía $c: restaurado .htaccess"; fi
+            else echo "$h 200"; fi
+          done
+          echo "usuarios WP: $(curl -s -o /dev/null -w '%{http_code}' https://aurzane.com/wp-json/wp/v2/users) · autor: $(curl -s -o /dev/null -w '%{http_code}' 'https://aurzane.com/?author=1') · xmlrpc: $(curl -s -o /dev/null -w '%{http_code}' https://aurzane.com/xmlrpc.php)"
+          echo "admin X-Robots: $(curl -s -I https://aurzane.com/admin.html | grep -i x-robots | tr -d '\r')"
+          R

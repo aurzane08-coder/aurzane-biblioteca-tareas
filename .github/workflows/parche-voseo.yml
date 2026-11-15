@@ -2,6 +2,8 @@ name: Parche voseo
 on:
   push:
     paths: ['ai/parches/voseo.py']
+  schedule:
+    - cron: '53 5 * * *'
   workflow_dispatch:
 jobs:
   p:

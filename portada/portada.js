@@ -25,6 +25,7 @@ function alternarTema() {
     var m = ($('rhTxt').textContent.match(/(\d{1,3}(?:\.\d{3})+)\s+artículos/) || [])[1]; if (m) $('cArt').textContent = m;
   }
   if (d.readyState === 'complete') cifras(); else window.addEventListener('load', cifras);
+  d.addEventListener('aurzane-indice', cifras);
 
   /* Biblioteca: cifras, estantería y colecciones reales (biblioteca/resumen.js) */
   d.addEventListener('DOMContentLoaded', function () {

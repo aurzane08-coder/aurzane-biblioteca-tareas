@@ -1,0 +1,26 @@
+name: Identidad de los mundos
+# Aplica mundos/identidad.json en el servidor: portada de cada mundo y etiquetas antiguas de los menús.
+on:
+  push:
+    paths: ['mundos/identidad.json', 'ai/parches/identidad.py', '.github/workflows/parche-identidad.yml']
+  schedule:
+    - cron: '41 4 * * *'
+  workflow_dispatch:
+jobs:
+  p:
+    runs-on: ubuntu-latest
+    env:
+      SG_KEY: ${{ secrets.SG_KEY }}
+      SG_HOST: ${{ secrets.SG_HOST }}
+      SG_USER: ${{ secrets.SG_USER }}
+      SG_PORT: ${{ secrets.SG_PORT }}
+      SG_PASS: ${{ secrets.SG_PASS }}
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          mkdir -p ~/.ssh && printf '%s\n' "$SG_KEY" | tr -d '\r' > ~/.ssh/id && chmod 600 ~/.ssh/id
+          if [ -n "$SG_PASS" ]; then ssh-keygen -p -P "$SG_PASS" -N "" -f ~/.ssh/id >/dev/null; fi
+          SSH="ssh -i $HOME/.ssh/id -p ${SG_PORT:-18765} -o StrictHostKeyChecking=accept-new -o ConnectTimeout=60 $SG_USER@$SG_HOST"
+          J=$(python3 -c "import json,shlex;print(shlex.quote(json.dumps(json.load(open('mundos/identidad.json')),ensure_ascii=False)))")
+          $SSH "AZ_IDENTIDAD=$J python3 - www" < ai/parches/identidad.py | sed 's/^/::notice title=Identidad::/'
+          for h in aurzane.com mind.aurzane.com live.aurzane.com learn.aurzane.com nexus.aurzane.com build.aurzane.com; do $SSH "site-tools-client domain-all update id=$h flush_cache=1 >/dev/null 2>&1" || true; done

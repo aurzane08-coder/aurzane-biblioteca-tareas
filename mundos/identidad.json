@@ -1,0 +1,48 @@
+{
+ "_nota": "Identidad única de cada mundo. La usan ai/parches/identidad.py (portadas de cada mundo y menús antiguos), aurzane-ds.js (cabecera común) y portada/generar.py. Cambia aquí y se aplica sola.",
+ "mind": {
+  "corto": "Mente y tests",
+  "lema": "Entiende tu mente y cuídala",
+  "titulo": "AURZANE MIND: tests psicológicos, ejercicios guiados y psicología con fuentes",
+  "descripcion": "Tests psicológicos validados con el resultado explicado, ejercicios de calma de 1 a 8 minutos y guías de psicología con fuentes reales.",
+  "eyebrow": "Psicología aplicada a tu día a día",
+  "h1": "Entiende tu mente <span>y cuídala</span>",
+  "entrada": "Tests validados con el resultado explicado, ejercicios guiados para calmarte en minutos y guías de psicología con fuentes que puedes revisar. Si buscas orientación vocacional, la tienes en OVP."
+ },
+ "nexus": {
+  "corto": "Universidades y carreras",
+  "lema": "Decide qué y dónde estudiar",
+  "titulo": "AURZANE NEXUS: universidades, carreras y notas de corte",
+  "descripcion": "{N} universidades de {P} países, notas de corte oficiales, qué puedes estudiar con tu nota y guías sobre carreras, empleo y tecnología.",
+  "eyebrow": "Estudios, carreras y futuro profesional",
+  "h1": "Decide qué y dónde <span>estudiar</span>",
+  "entrada": "{N} universidades de {P} países con sus carreras, las notas de corte oficiales, qué puedes estudiar con tu nota y guías sobre carreras, empleo y cómo la tecnología cambia cada profesión."
+ },
+ "live": {
+  "corto": "Bienestar y salud",
+  "lema": "Vive con energía y propósito",
+  "titulo": "AURZANE LIVE: bienestar, salud, hábitos y propósito",
+  "descripcion": "Calculadoras de salud, tests de sueño, bienestar y hábitos, y guías sobre propósito, aventura y deporte para vivir con energía.",
+  "eyebrow": "Cuerpo, hábitos y vida cotidiana",
+  "h1": "Vive con energía <span>y propósito</span>",
+  "entrada": "Mide cómo estás (sueño, bienestar, hábitos), calcula lo que tu cuerpo necesita y encuentra ideas con fuentes reales para moverte más, descansar mejor y llenar tu día de propósito y aventura."
+ },
+ "learn": {
+  "corto": "Cursos",
+  "lema": "Aprende con cursos completos",
+  "titulo": "AURZANE LEARN: cursos gratis de psicología y neurociencias con certificado",
+  "descripcion": "Cursos gratis con temas, lecciones, preguntas de repaso y certificado. Guardas tu progreso con tu cuenta AURZANE ID.",
+  "eyebrow": "Cursos con certificado",
+  "h1": "Aprende con cursos completos, <span>a tu ritmo</span>",
+  "entrada": "Cada curso tiene programa, lecciones breves, mapas, tarjetas de repaso, evaluaciones y certificado. Tu progreso se guarda con tu cuenta y siempre sabes qué te toca después."
+ },
+ "build": {
+  "corto": "Vivienda y dinero",
+  "lema": "Construye tu patrimonio",
+  "titulo": "AURZANE BUILD: vivienda, dinero y patrimonio con números claros",
+  "descripcion": "Calculadoras de hipoteca, reforma y sueldo neto, y guías de vivienda, urbanismo y patrimonio para decidir con números claros.",
+  "eyebrow": "Vivienda, dinero y proyectos",
+  "h1": "Construye tu patrimonio <span>con números claros</span>",
+  "entrada": "Hoy BUILD te ayuda a decidir sobre vivienda y dinero: calcula tu hipoteca, tu reforma o tu sueldo neto y lee guías con fuentes sobre vivienda, urbanismo y patrimonio. Los proyectos físicos de AURZANE nacerán de aquí y se anunciarán en esta página."
+ }
+}

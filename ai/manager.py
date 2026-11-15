@@ -833,8 +833,8 @@ if (os.environ.get('GEMINI_API_KEY') or os.environ.get('GITHUB_TOKEN')) and _ah[
                 if clase == 'guia' else f'Curiosidad verificada: {f["titulo"]}. {f.get("resumen", "")} Fuente: {f.get("fuente", "")}')
         if clase == 'guia': enlace_f = ''
         _pg = PAIS_GUIA.get(f.get('titulo')) if clase == 'guia' else None
-        _variante = (f'español neutro y natural para lectores de {_pg["pais_nombre"]}, con los términos, instituciones y exámenes propios de ese país cuando vengan al caso (sin inventar datos concretos como fechas o precios)'
-                     if _pg and _pg.get('pais_nombre') and _pg.get('pais') != 'ESP' else 'español de España')
+        _variante = (f'español neutro y natural con tuteo (tú, nunca vos ni voseo: escribe «puedes», «elige», «descubre») para lectores de {_pg["pais_nombre"]}, con los términos, instituciones y exámenes propios de ese país cuando vengan al caso (sin inventar datos concretos como fechas o precios)'
+                     if _pg and _pg.get('pais_nombre') and _pg.get('pais') != 'ESP' else 'español de España con tuteo (tú)')
         _crisis = (_pg or {}).get('crisis') or 'Si el tema toca malestar intenso, añade que puedes llamar al 024 (España). '
         r = gemini_base('Eres redactor de AURZANE, una web de divulgación de psicología dirigida por un psicólogo clínico. Escribe un artículo original en ' + _variante + ', '
                         'cálido y riguroso, de 600 a 900 palabras, sin rayas largas, sin diagnosticar ni recomendar medicación, para personas sin formación. '
