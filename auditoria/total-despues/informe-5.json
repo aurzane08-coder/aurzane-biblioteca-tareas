@@ -1,0 +1,3018 @@
+[
+ {
+  "url": "https://aurzane.com/aviso-legal.html",
+  "anchos": {
+   "320": {
+    "carga_ms": 858,
+    "titulo": "Aviso legal de AURZANE",
+    "h1": [
+     "Aviso legal"
+    ],
+    "desborda": true,
+    "scroll_w": 338,
+    "culpables": [
+     "div.az-acc 338",
+     "button.az-btn.az-menu 338",
+     "svg 327",
+     "path 324"
+    ],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "Conocimiento"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 76,
+    "nav_enlaces": 29,
+    "alto_pagina": 4486,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 810,
+    "titulo": "Aviso legal de AURZANE",
+    "h1": [
+     "Aviso legal"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "Conocimiento"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 76,
+    "nav_enlaces": 29,
+    "alto_pagina": 4084,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 821,
+    "titulo": "Aviso legal de AURZANE",
+    "h1": [
+     "Aviso legal"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "Conocimiento"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 76,
+    "nav_enlaces": 29,
+    "alto_pagina": 2855,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 812,
+    "titulo": "Aviso legal de AURZANE",
+    "h1": [
+     "Aviso legal"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 76,
+    "nav_enlaces": 29,
+    "alto_pagina": 2382,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://aurzane.com/biblioteca/libro/ref-orgullo-prejuicio.html",
+  "anchos": {
+   "320": {
+    "carga_ms": 1364,
+    "titulo": "Orgullo y prejuicio, de Jane Austen: resumen y ficha",
+    "h1": [
+     "Orgullo y prejuicio"
+    ],
+    "desborda": true,
+    "scroll_w": 341,
+    "culpables": [
+     "div.az-acc 341",
+     "button.az-btn.az-menu 341",
+     "svg 330",
+     "path 327"
+    ],
+    "objetivos_pequenos": 4,
+    "ejemplos_objetivos": [
+     "Conocimiento",
+     "¿Algo no funciona? Avísanos",
+     "Relatos de vida y psicología n",
+     "Psicología social y relaciones"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 89,
+    "nav_enlaces": 29,
+    "alto_pagina": 7949,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 1351,
+    "titulo": "Orgullo y prejuicio, de Jane Austen: resumen y ficha",
+    "h1": [
+     "Orgullo y prejuicio"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 4,
+    "ejemplos_objetivos": [
+     "Conocimiento",
+     "¿Algo no funciona? Avísanos",
+     "Relatos de vida y psicología n",
+     "Psicología social y relaciones"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 82,
+    "nav_enlaces": 29,
+    "alto_pagina": 4900,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 1187,
+    "titulo": "Orgullo y prejuicio, de Jane Austen: resumen y ficha",
+    "h1": [
+     "Orgullo y prejuicio"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 4,
+    "ejemplos_objetivos": [
+     "Conocimiento",
+     "¿Algo no funciona? Avísanos",
+     "Relatos de vida y psicología n",
+     "Psicología social y relaciones"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 82,
+    "nav_enlaces": 29,
+    "alto_pagina": 3768,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 1364,
+    "titulo": "Orgullo y prejuicio, de Jane Austen: resumen y ficha",
+    "h1": [
+     "Orgullo y prejuicio"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 3,
+    "ejemplos_objetivos": [
+     "¿Algo no funciona? Avísanos",
+     "Relatos de vida y psicología n",
+     "Psicología social y relaciones"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 82,
+    "nav_enlaces": 29,
+    "alto_pagina": 2606,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://aurzane.com/biblioteca/tema/relatos-de-vida-y-psicologia-narrada.html",
+  "anchos": {
+   "320": {
+    "carga_ms": 1677,
+    "titulo": "Libros de relatos de vida y psicología narrada gratis en PDF | AURZANE",
+    "h1": [
+     "Libros de relatos de vida y psicología narrada"
+    ],
+    "desborda": true,
+    "scroll_w": 341,
+    "culpables": [
+     "div.az-acc 341",
+     "button.az-btn.az-menu 341",
+     "svg 330",
+     "path 327"
+    ],
+    "objetivos_pequenos": 17,
+    "ejemplos_objetivos": [
+     "Conocimiento",
+     "¿Algo no funciona? Avísanos",
+     "Testimonios",
+     "Memorias y autobiografías",
+     "Historias de vida"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 370,
+    "nav_enlaces": 29,
+    "alto_pagina": 160017,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 1714,
+    "titulo": "Libros de relatos de vida y psicología narrada gratis en PDF | AURZANE",
+    "h1": [
+     "Libros de relatos de vida y psicología narrada"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 17,
+    "ejemplos_objetivos": [
+     "Conocimiento",
+     "¿Algo no funciona? Avísanos",
+     "Testimonios",
+     "Memorias y autobiografías",
+     "Historias de vida"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 370,
+    "nav_enlaces": 29,
+    "alto_pagina": 60735,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 1562,
+    "titulo": "Libros de relatos de vida y psicología narrada gratis en PDF | AURZANE",
+    "h1": [
+     "Libros de relatos de vida y psicología narrada"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 17,
+    "ejemplos_objetivos": [
+     "Conocimiento",
+     "¿Algo no funciona? Avísanos",
+     "Testimonios",
+     "Memorias y autobiografías",
+     "Historias de vida"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 370,
+    "nav_enlaces": 29,
+    "alto_pagina": 48793,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 1864,
+    "titulo": "Libros de relatos de vida y psicología narrada gratis en PDF | AURZANE",
+    "h1": [
+     "Libros de relatos de vida y psicología narrada"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 16,
+    "ejemplos_objetivos": [
+     "¿Algo no funciona? Avísanos",
+     "Testimonios",
+     "Memorias y autobiografías",
+     "Historias de vida",
+     "Autobiografía"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 377,
+    "nav_enlaces": 29,
+    "alto_pagina": 28720,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://aurzane.com/libros/breve-historia-de-espana-fernando-garcia-de-cortazar/",
+  "anchos": {
+   "320": {
+    "carga_ms": 2002,
+    "titulo": "Breve historia de España, de Fernando García de Cortázar: de qué trata y dónde comprarlo | AURZANE",
+    "h1": [
+     "Breve historia de España"
+    ],
+    "desborda": true,
+    "scroll_w": 338,
+    "culpables": [
+     "div.az-acc 338",
+     "button.az-btn.az-menu 338",
+     "svg 327",
+     "path 324"
+    ],
+    "objetivos_pequenos": 4,
+    "ejemplos_objetivos": [
+     "Conocimiento",
+     "¿Algo no funciona? Avísanos",
+     "INPUT",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 69,
+    "nav_enlaces": 29,
+    "alto_pagina": 5089,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 1580,
+    "titulo": "Breve historia de España, de Fernando García de Cortázar: de qué trata y dónde comprarlo | AURZANE",
+    "h1": [
+     "Breve historia de España"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 4,
+    "ejemplos_objetivos": [
+     "Conocimiento",
+     "¿Algo no funciona? Avísanos",
+     "INPUT",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 69,
+    "nav_enlaces": 29,
+    "alto_pagina": 4955,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 1453,
+    "titulo": "Breve historia de España, de Fernando García de Cortázar: de qué trata y dónde comprarlo | AURZANE",
+    "h1": [
+     "Breve historia de España"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 4,
+    "ejemplos_objetivos": [
+     "Conocimiento",
+     "¿Algo no funciona? Avísanos",
+     "INPUT",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 69,
+    "nav_enlaces": 29,
+    "alto_pagina": 2981,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 1490,
+    "titulo": "Breve historia de España, de Fernando García de Cortázar: de qué trata y dónde comprarlo | AURZANE",
+    "h1": [
+     "Breve historia de España"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 3,
+    "ejemplos_objetivos": [
+     "¿Algo no funciona? Avísanos",
+     "INPUT",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 69,
+    "nav_enlaces": 29,
+    "alto_pagina": 2235,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://aurzane.com/novedades/",
+  "anchos": {
+   "320": {
+    "carga_ms": 806,
+    "titulo": "Novedades de AURZANE: tests, herramientas y contenidos nuevos",
+    "h1": [
+     "Novedades"
+    ],
+    "desborda": true,
+    "scroll_w": 338,
+    "culpables": [
+     "div.az-acc 338",
+     "button.az-btn.az-menu 338",
+     "svg 327",
+     "path 324"
+    ],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "Conocimiento"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 142,
+    "nav_enlaces": 29,
+    "alto_pagina": 14012,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 789,
+    "titulo": "Novedades de AURZANE: tests, herramientas y contenidos nuevos",
+    "h1": [
+     "Novedades"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "Conocimiento"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 142,
+    "nav_enlaces": 29,
+    "alto_pagina": 13530,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 785,
+    "titulo": "Novedades de AURZANE: tests, herramientas y contenidos nuevos",
+    "h1": [
+     "Novedades"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "Conocimiento"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 142,
+    "nav_enlaces": 29,
+    "alto_pagina": 6239,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 791,
+    "titulo": "Novedades de AURZANE: tests, herramientas y contenidos nuevos",
+    "h1": [
+     "Novedades"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 142,
+    "nav_enlaces": 29,
+    "alto_pagina": 5554,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://aurzane.com/ref-recuerda-que-vas-a-morir.html",
+  "anchos": {
+   "320": {
+    "carga_ms": 1361,
+    "titulo": "Recuerda que vas a morir. Vive: resumen e ideas clave",
+    "h1": [
+     "Recuerda que vas a morir. Vive"
+    ],
+    "desborda": true,
+    "scroll_w": 341,
+    "culpables": [
+     "div.az-acc 341",
+     "button.az-btn.az-menu 341",
+     "svg 330",
+     "path 327"
+    ],
+    "objetivos_pequenos": 5,
+    "ejemplos_objetivos": [
+     "Conocimiento",
+     "¿Algo no funciona? Avísanos",
+     "Relatos de vida y psicología n",
+     "Existencia, propósito y sentid",
+     "Duelo y pérdidas"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 89,
+    "nav_enlaces": 29,
+    "alto_pagina": 9763,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 1364,
+    "titulo": "Recuerda que vas a morir. Vive: resumen e ideas clave",
+    "h1": [
+     "Recuerda que vas a morir. Vive"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 5,
+    "ejemplos_objetivos": [
+     "Conocimiento",
+     "¿Algo no funciona? Avísanos",
+     "Relatos de vida y psicología n",
+     "Existencia, propósito y sentid",
+     "Duelo y pérdidas"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 82,
+    "nav_enlaces": 29,
+    "alto_pagina": 6520,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: [Report Only] Refused to frame 'https://www.google.com/' because an ancestor violates the following Content Security Policy directive: \"frame-ancestors 'self'\".\n"
+    ],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 1393,
+    "titulo": "Recuerda que vas a morir. Vive: resumen e ideas clave",
+    "h1": [
+     "Recuerda que vas a morir. Vive"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 5,
+    "ejemplos_objetivos": [
+     "Conocimiento",
+     "¿Algo no funciona? Avísanos",
+     "Relatos de vida y psicología n",
+     "Existencia, propósito y sentid",
+     "Duelo y pérdidas"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 82,
+    "nav_enlaces": 29,
+    "alto_pagina": 4816,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 1387,
+    "titulo": "Recuerda que vas a morir. Vive: resumen e ideas clave",
+    "h1": [
+     "Recuerda que vas a morir. Vive"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 4,
+    "ejemplos_objetivos": [
+     "¿Algo no funciona? Avísanos",
+     "Relatos de vida y psicología n",
+     "Existencia, propósito y sentid",
+     "Duelo y pérdidas"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 89,
+    "nav_enlaces": 29,
+    "alto_pagina": 3564,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://aurzane.com/temas/urbanismo/",
+  "anchos": {
+   "320": {
+    "carga_ms": 1300,
+    "titulo": "Urbanismo — AURZANE BUILD",
+    "h1": [
+     "Urbanismo"
+    ],
+    "desborda": true,
+    "scroll_w": 341,
+    "culpables": [
+     "div.az-acc 341",
+     "button.az-btn.az-menu 341",
+     "svg 330",
+     "path 327"
+    ],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "Conocimiento"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 74,
+    "nav_enlaces": 29,
+    "alto_pagina": 2666,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 1301,
+    "titulo": "Urbanismo — AURZANE BUILD",
+    "h1": [
+     "Urbanismo"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "Conocimiento"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 67,
+    "nav_enlaces": 29,
+    "alto_pagina": 2567,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 1319,
+    "titulo": "Urbanismo — AURZANE BUILD",
+    "h1": [
+     "Urbanismo"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "Conocimiento"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 74,
+    "nav_enlaces": 29,
+    "alto_pagina": 2090,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 1312,
+    "titulo": "Urbanismo — AURZANE BUILD",
+    "h1": [
+     "Urbanismo"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 74,
+    "nav_enlaces": 29,
+    "alto_pagina": 1681,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://build.aurzane.com/calculadora-sueldo-neto/",
+  "anchos": {
+   "320": {
+    "carga_ms": 1484,
+    "titulo": "Calculadora de sueldo neto 2026: de bruto a neto con IRPF | AURZANE BUILD",
+    "h1": [
+     "De bruto a neto: lo que de verdad cobras"
+    ],
+    "desborda": true,
+    "scroll_w": 331,
+    "culpables": [
+     "div.az-acc 331",
+     "button.az-btn.az-menu 331",
+     "table#tablaSueldos.tabla 345",
+     "tbody 345",
+     "tr 345",
+     "th 345"
+    ],
+    "objetivos_pequenos": 2,
+    "ejemplos_objetivos": [
+     "BUILD",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 84,
+    "nav_enlaces": 29,
+    "alto_pagina": 14350,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 1413,
+    "titulo": "Calculadora de sueldo neto 2026: de bruto a neto con IRPF | AURZANE BUILD",
+    "h1": [
+     "De bruto a neto: lo que de verdad cobras"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 2,
+    "ejemplos_objetivos": [
+     "BUILD",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 84,
+    "nav_enlaces": 29,
+    "alto_pagina": 12977,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: Access to XMLHttpRequest at 'https://aurzane.com/aurzane-ds.css?v=3' from origin 'https://build.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the ",
+     "console: Failed to load resource: net::ERR_FAILED"
+    ],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 1470,
+    "titulo": "Calculadora de sueldo neto 2026: de bruto a neto con IRPF | AURZANE BUILD",
+    "h1": [
+     "De bruto a neto: lo que de verdad cobras"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 2,
+    "ejemplos_objetivos": [
+     "BUILD",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 91,
+    "nav_enlaces": 29,
+    "alto_pagina": 9048,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 1423,
+    "titulo": "Calculadora de sueldo neto 2026: de bruto a neto con IRPF | AURZANE BUILD",
+    "h1": [
+     "De bruto a neto: lo que de verdad cobras"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 91,
+    "nav_enlaces": 29,
+    "alto_pagina": 6995,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: Access to XMLHttpRequest at 'https://aurzane.com/aurzane-ds.css?v=3' from origin 'https://build.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the ",
+     "console: Failed to load resource: net::ERR_FAILED"
+    ],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://learn.aurzane.com/curso/neuroanatomia-funcional/",
+  "anchos": {
+   "320": {
+    "carga_ms": 954,
+    "titulo": "Curso de neuroanatomía funcional online avanzado · AURZANE LEARN",
+    "h1": [
+     "Organización morfofuncional del Sistema Nervioso"
+    ],
+    "desborda": false,
+    "scroll_w": 320,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "LEARN"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 65,
+    "nav_enlaces": 27,
+    "alto_pagina": 6279,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 925,
+    "titulo": "Curso de neuroanatomía funcional online avanzado · AURZANE LEARN",
+    "h1": [
+     "Organización morfofuncional del Sistema Nervioso"
+    ],
+    "desborda": true,
+    "scroll_w": 378,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "LEARN"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 65,
+    "nav_enlaces": 27,
+    "alto_pagina": 5507,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: Access to XMLHttpRequest at 'https://aurzane.com/aurzane-ds.css?v=3' from origin 'https://learn.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the ",
+     "console: Failed to load resource: net::ERR_FAILED"
+    ],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 901,
+    "titulo": "Curso de neuroanatomía funcional online avanzado · AURZANE LEARN",
+    "h1": [
+     "Organización morfofuncional del Sistema Nervioso"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "LEARN"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 72,
+    "nav_enlaces": 27,
+    "alto_pagina": 3619,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 922,
+    "titulo": "Curso de neuroanatomía funcional online avanzado · AURZANE LEARN",
+    "h1": [
+     "Organización morfofuncional del Sistema Nervioso"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 65,
+    "nav_enlaces": 27,
+    "alto_pagina": 3024,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: Access to XMLHttpRequest at 'https://aurzane.com/aurzane-ds.css?v=3' from origin 'https://learn.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the ",
+     "console: Failed to load resource: net::ERR_FAILED"
+    ],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://live.aurzane.com/articulo.html",
+  "anchos": {
+   "320": {
+    "carga_ms": 1387,
+    "titulo": "Artículo — AURZANE",
+    "h1": [
+     ""
+    ],
+    "desborda": false,
+    "scroll_w": 320,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "LIVE"
+    ],
+    "img_sin_alt": 1,
+    "img_rotas": [],
+    "enlaces": 67,
+    "nav_enlaces": 29,
+    "alto_pagina": 1526,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 1335,
+    "titulo": "Artículo — AURZANE",
+    "h1": [
+     ""
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "LIVE"
+    ],
+    "img_sin_alt": 1,
+    "img_rotas": [],
+    "enlaces": 67,
+    "nav_enlaces": 29,
+    "alto_pagina": 1505,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [
+     {
+      "id": "color-contrast",
+      "impacto": "serious",
+      "n": 2,
+      "ejemplo": "#notFoundState > p:nth-child(1)"
+     }
+    ],
+    "errores": [
+     "console: Access to XMLHttpRequest at 'https://aurzane.com/aurzane-ds.css?v=3' from origin 'https://live.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the r",
+     "console: Failed to load resource: net::ERR_FAILED"
+    ],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 1282,
+    "titulo": "Artículo — AURZANE",
+    "h1": [
+     ""
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "LIVE"
+    ],
+    "img_sin_alt": 1,
+    "img_rotas": [],
+    "enlaces": 67,
+    "nav_enlaces": 29,
+    "alto_pagina": 1251,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 1321,
+    "titulo": "Artículo — AURZANE",
+    "h1": [
+     ""
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 1,
+    "img_rotas": [],
+    "enlaces": 67,
+    "nav_enlaces": 29,
+    "alto_pagina": 900,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [
+     {
+      "id": "color-contrast",
+      "impacto": "serious",
+      "n": 2,
+      "ejemplo": "#notFoundState > p:nth-child(1)"
+     }
+    ],
+    "errores": [
+     "console: Access to XMLHttpRequest at 'https://aurzane.com/aurzane-ds.css?v=3' from origin 'https://live.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the r",
+     "console: Failed to load resource: net::ERR_FAILED"
+    ],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://live.aurzane.com/calculadora-imc/",
+  "anchos": {
+   "320": {
+    "carga_ms": 1438,
+    "titulo": "Calculadora de IMC gratis: índice de masa corporal | AURZANE LIVE",
+    "h1": [
+     "¿Cuál es tu IMC?"
+    ],
+    "desborda": false,
+    "scroll_w": 320,
+    "culpables": [],
+    "objetivos_pequenos": 2,
+    "ejemplos_objetivos": [
+     "LIVE",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 94,
+    "nav_enlaces": 29,
+    "alto_pagina": 11060,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 1365,
+    "titulo": "Calculadora de IMC gratis: índice de masa corporal | AURZANE LIVE",
+    "h1": [
+     "¿Cuál es tu IMC?"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 2,
+    "ejemplos_objetivos": [
+     "LIVE",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 94,
+    "nav_enlaces": 29,
+    "alto_pagina": 10305,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: Access to XMLHttpRequest at 'https://aurzane.com/aurzane-ds.css?v=3' from origin 'https://live.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the r",
+     "console: Failed to load resource: net::ERR_FAILED"
+    ],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 1375,
+    "titulo": "Calculadora de IMC gratis: índice de masa corporal | AURZANE LIVE",
+    "h1": [
+     "¿Cuál es tu IMC?"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 2,
+    "ejemplos_objetivos": [
+     "LIVE",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 94,
+    "nav_enlaces": 29,
+    "alto_pagina": 7594,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 1411,
+    "titulo": "Calculadora de IMC gratis: índice de masa corporal | AURZANE LIVE",
+    "h1": [
+     "¿Cuál es tu IMC?"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 94,
+    "nav_enlaces": 29,
+    "alto_pagina": 5932,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: Access to XMLHttpRequest at 'https://aurzane.com/aurzane-ds.css?v=3' from origin 'https://live.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the r",
+     "console: Failed to load resource: net::ERR_FAILED"
+    ],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://live.aurzane.com/test-de-sueno/",
+  "anchos": {
+   "320": {
+    "carga_ms": 1436,
+    "titulo": "Test de sueño gratis: ¿duermes bien? | AURZANE LIVE",
+    "h1": [
+     "¿Duermes lo que tu cuerpo necesita?"
+    ],
+    "desborda": false,
+    "scroll_w": 320,
+    "culpables": [],
+    "objetivos_pequenos": 2,
+    "ejemplos_objetivos": [
+     "LIVE",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 97,
+    "nav_enlaces": 29,
+    "alto_pagina": 17242,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 1450,
+    "titulo": "Test de sueño gratis: ¿duermes bien? | AURZANE LIVE",
+    "h1": [
+     "¿Duermes lo que tu cuerpo necesita?"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 2,
+    "ejemplos_objetivos": [
+     "LIVE",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 97,
+    "nav_enlaces": 29,
+    "alto_pagina": 15163,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: Access to XMLHttpRequest at 'https://aurzane.com/aurzane-ds.css?v=3' from origin 'https://live.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the r",
+     "console: Failed to load resource: net::ERR_FAILED"
+    ],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 1475,
+    "titulo": "Test de sueño gratis: ¿duermes bien? | AURZANE LIVE",
+    "h1": [
+     "¿Duermes lo que tu cuerpo necesita?"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 2,
+    "ejemplos_objetivos": [
+     "LIVE",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 97,
+    "nav_enlaces": 29,
+    "alto_pagina": 10772,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 1457,
+    "titulo": "Test de sueño gratis: ¿duermes bien? | AURZANE LIVE",
+    "h1": [
+     "¿Duermes lo que tu cuerpo necesita?"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 97,
+    "nav_enlaces": 29,
+    "alto_pagina": 8590,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: Access to XMLHttpRequest at 'https://aurzane.com/aurzane-ds.css?v=3' from origin 'https://live.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the r",
+     "console: Failed to load resource: net::ERR_FAILED"
+    ],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://mind.aurzane.com/ejercicios/escaneo-corporal/",
+  "anchos": {
+   "320": {
+    "carga_ms": 1410,
+    "titulo": "Escaneo corporal (body scan) guiado de 7 minutos | AURZANE MIND",
+    "h1": [
+     "Escaneo corporal guiado"
+    ],
+    "desborda": true,
+    "scroll_w": 327,
+    "culpables": [
+     "div.az-acc 327",
+     "button.az-btn.az-menu 327"
+    ],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "MIND"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 93,
+    "nav_enlaces": 29,
+    "alto_pagina": 10979,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 1368,
+    "titulo": "Escaneo corporal (body scan) guiado de 7 minutos | AURZANE MIND",
+    "h1": [
+     "Escaneo corporal guiado"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "MIND"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 93,
+    "nav_enlaces": 29,
+    "alto_pagina": 9885,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: Access to XMLHttpRequest at 'https://aurzane.com/aurzane-ds.css?v=3' from origin 'https://mind.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the r",
+     "console: Failed to load resource: net::ERR_FAILED"
+    ],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 1396,
+    "titulo": "Escaneo corporal (body scan) guiado de 7 minutos | AURZANE MIND",
+    "h1": [
+     "Escaneo corporal guiado"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "MIND"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 93,
+    "nav_enlaces": 29,
+    "alto_pagina": 7292,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 1430,
+    "titulo": "Escaneo corporal (body scan) guiado de 7 minutos | AURZANE MIND",
+    "h1": [
+     "Escaneo corporal guiado"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 93,
+    "nav_enlaces": 29,
+    "alto_pagina": 5974,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: Access to XMLHttpRequest at 'https://aurzane.com/aurzane-ds.css?v=3' from origin 'https://mind.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the r",
+     "console: Failed to load resource: net::ERR_FAILED"
+    ],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://mind.aurzane.com/ejercicios/respiracion-cuadrada/",
+  "anchos": {
+   "320": {
+    "carga_ms": 1399,
+    "titulo": "Respiración cuadrada (box breathing) guiada | AURZANE MIND",
+    "h1": [
+     "Respiración cuadrada guiada"
+    ],
+    "desborda": true,
+    "scroll_w": 327,
+    "culpables": [
+     "div.az-acc 327",
+     "button.az-btn.az-menu 327"
+    ],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "MIND"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 94,
+    "nav_enlaces": 29,
+    "alto_pagina": 10964,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 1385,
+    "titulo": "Respiración cuadrada (box breathing) guiada | AURZANE MIND",
+    "h1": [
+     "Respiración cuadrada guiada"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "MIND"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 94,
+    "nav_enlaces": 29,
+    "alto_pagina": 9977,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: Access to XMLHttpRequest at 'https://aurzane.com/aurzane-ds.css?v=3' from origin 'https://mind.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the r",
+     "console: Failed to load resource: net::ERR_FAILED"
+    ],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 1379,
+    "titulo": "Respiración cuadrada (box breathing) guiada | AURZANE MIND",
+    "h1": [
+     "Respiración cuadrada guiada"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "MIND"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 94,
+    "nav_enlaces": 29,
+    "alto_pagina": 7405,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 1491,
+    "titulo": "Respiración cuadrada (box breathing) guiada | AURZANE MIND",
+    "h1": [
+     "Respiración cuadrada guiada"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 94,
+    "nav_enlaces": 29,
+    "alto_pagina": 6234,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: Access to XMLHttpRequest at 'https://aurzane.com/aurzane-ds.css?v=3' from origin 'https://mind.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the r",
+     "console: Failed to load resource: net::ERR_FAILED"
+    ],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://mind.aurzane.com/en/anxiety-test-gad-7/",
+  "anchos": {
+   "320": {
+    "carga_ms": 846,
+    "titulo": "Anxiety test (GAD-7): free online questionnaire | AURZANE",
+    "h1": [
+     "Anxiety test (GAD-7)"
+    ],
+    "desborda": false,
+    "scroll_w": 320,
+    "culpables": [],
+    "objetivos_pequenos": 29,
+    "ejemplos_objetivos": [
+     "MIND",
+     "INPUT",
+     "INPUT",
+     "INPUT",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 65,
+    "nav_enlaces": 21,
+    "alto_pagina": 4107,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "en",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 830,
+    "titulo": "Anxiety test (GAD-7): free online questionnaire | AURZANE",
+    "h1": [
+     "Anxiety test (GAD-7)"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 29,
+    "ejemplos_objetivos": [
+     "MIND",
+     "INPUT",
+     "INPUT",
+     "INPUT",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 65,
+    "nav_enlaces": 21,
+    "alto_pagina": 3562,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "en",
+    "axe": [],
+    "errores": [
+     "console: Access to XMLHttpRequest at 'https://aurzane.com/aurzane-ds.css?v=3' from origin 'https://mind.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the r",
+     "console: Failed to load resource: net::ERR_FAILED"
+    ],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 834,
+    "titulo": "Anxiety test (GAD-7): free online questionnaire | AURZANE",
+    "h1": [
+     "Anxiety test (GAD-7)"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 29,
+    "ejemplos_objetivos": [
+     "MIND",
+     "INPUT",
+     "INPUT",
+     "INPUT",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 65,
+    "nav_enlaces": 21,
+    "alto_pagina": 2513,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "en",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 855,
+    "titulo": "Anxiety test (GAD-7): free online questionnaire | AURZANE",
+    "h1": [
+     "Anxiety test (GAD-7)"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 28,
+    "ejemplos_objetivos": [
+     "INPUT",
+     "INPUT",
+     "INPUT",
+     "INPUT",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 65,
+    "nav_enlaces": 21,
+    "alto_pagina": 2094,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "en",
+    "axe": [],
+    "errores": [
+     "console: Access to XMLHttpRequest at 'https://aurzane.com/aurzane-ds.css?v=3' from origin 'https://mind.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the r",
+     "console: Failed to load resource: net::ERR_FAILED"
+    ],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://mind.aurzane.com/en/self-efficacy-test-gse/",
+  "anchos": {
+   "320": {
+    "carga_ms": 827,
+    "titulo": "Self-efficacy test (General Self-Efficacy Scale): free online questionnaire | AURZANE",
+    "h1": [
+     "Self-efficacy test (General Self-Efficacy Scale)"
+    ],
+    "desborda": false,
+    "scroll_w": 320,
+    "culpables": [],
+    "objetivos_pequenos": 41,
+    "ejemplos_objetivos": [
+     "MIND",
+     "INPUT",
+     "INPUT",
+     "INPUT",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 65,
+    "nav_enlaces": 21,
+    "alto_pagina": 4514,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "en",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 850,
+    "titulo": "Self-efficacy test (General Self-Efficacy Scale): free online questionnaire | AURZANE",
+    "h1": [
+     "Self-efficacy test (General Self-Efficacy Scale)"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 41,
+    "ejemplos_objetivos": [
+     "MIND",
+     "INPUT",
+     "INPUT",
+     "INPUT",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 65,
+    "nav_enlaces": 21,
+    "alto_pagina": 4257,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "en",
+    "axe": [],
+    "errores": [
+     "console: Access to XMLHttpRequest at 'https://aurzane.com/aurzane-ds.css?v=3' from origin 'https://mind.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the r",
+     "console: Failed to load resource: net::ERR_FAILED"
+    ],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 834,
+    "titulo": "Self-efficacy test (General Self-Efficacy Scale): free online questionnaire | AURZANE",
+    "h1": [
+     "Self-efficacy test (General Self-Efficacy Scale)"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 41,
+    "ejemplos_objetivos": [
+     "MIND",
+     "INPUT",
+     "INPUT",
+     "INPUT",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 65,
+    "nav_enlaces": 21,
+    "alto_pagina": 2891,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "en",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 855,
+    "titulo": "Self-efficacy test (General Self-Efficacy Scale): free online questionnaire | AURZANE",
+    "h1": [
+     "Self-efficacy test (General Self-Efficacy Scale)"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 40,
+    "ejemplos_objetivos": [
+     "INPUT",
+     "INPUT",
+     "INPUT",
+     "INPUT",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 65,
+    "nav_enlaces": 21,
+    "alto_pagina": 2481,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "en",
+    "axe": [],
+    "errores": [
+     "console: Access to XMLHttpRequest at 'https://aurzane.com/aurzane-ds.css?v=3' from origin 'https://mind.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the r",
+     "console: Failed to load resource: net::ERR_FAILED"
+    ],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://mind.aurzane.com/pt/teste-de-ansiedade-gad-7/",
+  "anchos": {
+   "320": {
+    "carga_ms": 838,
+    "titulo": "Teste de ansiedade (GAD-7): questionário grátis online | AURZANE",
+    "h1": [
+     "Teste de ansiedade (GAD-7)"
+    ],
+    "desborda": false,
+    "scroll_w": 320,
+    "culpables": [],
+    "objetivos_pequenos": 29,
+    "ejemplos_objetivos": [
+     "MIND",
+     "INPUT",
+     "INPUT",
+     "INPUT",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 65,
+    "nav_enlaces": 21,
+    "alto_pagina": 4178,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "pt-BR",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 854,
+    "titulo": "Teste de ansiedade (GAD-7): questionário grátis online | AURZANE",
+    "h1": [
+     "Teste de ansiedade (GAD-7)"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 29,
+    "ejemplos_objetivos": [
+     "MIND",
+     "INPUT",
+     "INPUT",
+     "INPUT",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 65,
+    "nav_enlaces": 21,
+    "alto_pagina": 4012,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "pt-BR",
+    "axe": [],
+    "errores": [
+     "console: Access to XMLHttpRequest at 'https://aurzane.com/aurzane-ds.css?v=3' from origin 'https://mind.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the r",
+     "console: Failed to load resource: net::ERR_FAILED"
+    ],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 818,
+    "titulo": "Teste de ansiedade (GAD-7): questionário grátis online | AURZANE",
+    "h1": [
+     "Teste de ansiedade (GAD-7)"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 29,
+    "ejemplos_objetivos": [
+     "MIND",
+     "INPUT",
+     "INPUT",
+     "INPUT",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 65,
+    "nav_enlaces": 21,
+    "alto_pagina": 2541,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "pt-BR",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 851,
+    "titulo": "Teste de ansiedade (GAD-7): questionário grátis online | AURZANE",
+    "h1": [
+     "Teste de ansiedade (GAD-7)"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 28,
+    "ejemplos_objetivos": [
+     "INPUT",
+     "INPUT",
+     "INPUT",
+     "INPUT",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 65,
+    "nav_enlaces": 21,
+    "alto_pagina": 2094,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "pt-BR",
+    "axe": [],
+    "errores": [
+     "console: Access to XMLHttpRequest at 'https://aurzane.com/aurzane-ds.css?v=3' from origin 'https://mind.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the r",
+     "console: Failed to load resource: net::ERR_FAILED"
+    ],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://mind.aurzane.com/test-de-autoestima/",
+  "anchos": {
+   "320": {
+    "carga_ms": 1419,
+    "titulo": "Test de autoestima de Rosenberg gratis y online | AURZANE MIND",
+    "h1": [
+     "¿Cómo te valoras de verdad?"
+    ],
+    "desborda": true,
+    "scroll_w": 327,
+    "culpables": [
+     "div.az-acc 327",
+     "button.az-btn.az-menu 327"
+    ],
+    "objetivos_pequenos": 2,
+    "ejemplos_objetivos": [
+     "MIND",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 100,
+    "nav_enlaces": 29,
+    "alto_pagina": 16066,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 1449,
+    "titulo": "Test de autoestima de Rosenberg gratis y online | AURZANE MIND",
+    "h1": [
+     "¿Cómo te valoras de verdad?"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 2,
+    "ejemplos_objetivos": [
+     "MIND",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 100,
+    "nav_enlaces": 29,
+    "alto_pagina": 14522,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: Access to XMLHttpRequest at 'https://aurzane.com/aurzane-ds.css?v=3' from origin 'https://mind.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the r",
+     "console: Failed to load resource: net::ERR_FAILED"
+    ],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 1453,
+    "titulo": "Test de autoestima de Rosenberg gratis y online | AURZANE MIND",
+    "h1": [
+     "¿Cómo te valoras de verdad?"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 2,
+    "ejemplos_objetivos": [
+     "MIND",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 100,
+    "nav_enlaces": 29,
+    "alto_pagina": 9960,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 1291,
+    "titulo": "Test de autoestima de Rosenberg gratis y online | AURZANE MIND",
+    "h1": [
+     "¿Cómo te valoras de verdad?"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 100,
+    "nav_enlaces": 29,
+    "alto_pagina": 8322,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: Access to XMLHttpRequest at 'https://aurzane.com/aurzane-ds.css?v=3' from origin 'https://mind.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the r",
+     "console: Failed to load resource: net::ERR_FAILED"
+    ],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://mind.aurzane.com/test-de-satisfaccion-con-la-vida/",
+  "anchos": {
+   "320": {
+    "carga_ms": 1481,
+    "titulo": "Test de satisfacción con la vida (felicidad) gratis | AURZANE MIND",
+    "h1": [
+     "¿Qué tan satisfecho/a estás con tu vida?"
+    ],
+    "desborda": true,
+    "scroll_w": 327,
+    "culpables": [
+     "div.az-acc 327",
+     "button.az-btn.az-menu 327"
+    ],
+    "objetivos_pequenos": 2,
+    "ejemplos_objetivos": [
+     "MIND",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 100,
+    "nav_enlaces": 29,
+    "alto_pagina": 15785,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 1458,
+    "titulo": "Test de satisfacción con la vida (felicidad) gratis | AURZANE MIND",
+    "h1": [
+     "¿Qué tan satisfecho/a estás con tu vida?"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 2,
+    "ejemplos_objetivos": [
+     "MIND",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 100,
+    "nav_enlaces": 29,
+    "alto_pagina": 14555,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: Access to XMLHttpRequest at 'https://aurzane.com/aurzane-ds.css?v=3' from origin 'https://mind.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the r",
+     "console: Failed to load resource: net::ERR_FAILED"
+    ],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 1435,
+    "titulo": "Test de satisfacción con la vida (felicidad) gratis | AURZANE MIND",
+    "h1": [
+     "¿Qué tan satisfecho/a estás con tu vida?"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 2,
+    "ejemplos_objetivos": [
+     "MIND",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 100,
+    "nav_enlaces": 29,
+    "alto_pagina": 10949,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 1503,
+    "titulo": "Test de satisfacción con la vida (felicidad) gratis | AURZANE MIND",
+    "h1": [
+     "¿Qué tan satisfecho/a estás con tu vida?"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 100,
+    "nav_enlaces": 29,
+    "alto_pagina": 8487,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: Access to XMLHttpRequest at 'https://aurzane.com/aurzane-ds.css?v=3' from origin 'https://mind.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the r",
+     "console: Failed to load resource: net::ERR_FAILED"
+    ],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://nexus.aurzane.com/nexus-biblioteca.html",
+  "anchos": {
+   "320": {
+    "carga_ms": 1526,
+    "titulo": "Biblioteca Académica — AURZANE NEXUS",
+    "h1": [
+     "Biblioteca de investigación abierta"
+    ],
+    "desborda": true,
+    "scroll_w": 337,
+    "culpables": [
+     "div.az-acc 337",
+     "button.az-btn.az-menu 337",
+     "svg 326",
+     "path 323"
+    ],
+    "objetivos_pequenos": 42,
+    "ejemplos_objetivos": [
+     "NEXUS",
+     "AURZANE",
+     "NEXUS",
+     "INPUT",
+     "Ver abstract completo"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 115,
+    "nav_enlaces": 29,
+    "alto_pagina": 12065,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 1447,
+    "titulo": "Biblioteca Académica — AURZANE NEXUS",
+    "h1": [
+     "Biblioteca de investigación abierta"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 42,
+    "ejemplos_objetivos": [
+     "NEXUS",
+     "AURZANE",
+     "NEXUS",
+     "INPUT",
+     "Ver abstract completo"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 115,
+    "nav_enlaces": 29,
+    "alto_pagina": 10658,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: Access to XMLHttpRequest at 'https://aurzane.com/aurzane-ds.css?v=3' from origin 'https://nexus.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the ",
+     "console: Failed to load resource: net::ERR_FAILED"
+    ],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 1302,
+    "titulo": "Biblioteca Académica — AURZANE NEXUS",
+    "h1": [
+     "Biblioteca de investigación abierta"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 42,
+    "ejemplos_objetivos": [
+     "NEXUS",
+     "AURZANE",
+     "NEXUS",
+     "INPUT",
+     "Ver abstract completo"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 108,
+    "nav_enlaces": 29,
+    "alto_pagina": 8541,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 1962,
+    "titulo": "Biblioteca Académica — AURZANE NEXUS",
+    "h1": [
+     "Biblioteca de investigación abierta"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 41,
+    "ejemplos_objetivos": [
+     "AURZANE",
+     "NEXUS",
+     "INPUT",
+     "Ver abstract completo",
+     "Ver fuente original →"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 108,
+    "nav_enlaces": 29,
+    "alto_pagina": 7793,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: Access to XMLHttpRequest at 'https://aurzane.com/aurzane-ds.css?v=3' from origin 'https://nexus.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the ",
+     "console: Failed to load resource: net::ERR_FAILED"
+    ],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://nexus.aurzane.com/universidades/mexico/",
+  "anchos": {
+   "320": {
+    "carga_ms": 1536,
+    "titulo": "Universidades en México: las 111 principales y dónde están (2026)",
+    "h1": [
+     "Universidades en México"
+    ],
+    "desborda": true,
+    "scroll_w": 337,
+    "culpables": [
+     "div.az-acc 337",
+     "button.az-btn.az-menu 337",
+     "svg 326",
+     "path 323"
+    ],
+    "objetivos_pequenos": 3,
+    "ejemplos_objetivos": [
+     "NEXUS",
+     "Quitar filtros",
+     "Más filtros ▾"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 249,
+    "nav_enlaces": 29,
+    "alto_pagina": 17636,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 1571,
+    "titulo": "Universidades en México: las 111 principales y dónde están (2026)",
+    "h1": [
+     "Universidades en México"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 3,
+    "ejemplos_objetivos": [
+     "NEXUS",
+     "Quitar filtros",
+     "Más filtros ▾"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 242,
+    "nav_enlaces": 29,
+    "alto_pagina": 16516,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial"
+    ],
+    "lang": "es",
+    "axe": [
+     {
+      "id": "color-contrast",
+      "impacto": "serious",
+      "n": 13,
+      "ejemplo": ".migas"
+     }
+    ],
+    "errores": [
+     "console: Access to XMLHttpRequest at 'https://aurzane.com/aurzane-ds.css?v=3' from origin 'https://nexus.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the ",
+     "console: Failed to load resource: net::ERR_FAILED"
+    ],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 1548,
+    "titulo": "Universidades en México: las 111 principales y dónde están (2026)",
+    "h1": [
+     "Universidades en México"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 3,
+    "ejemplos_objetivos": [
+     "NEXUS",
+     "Quitar filtros",
+     "Más filtros ▾"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 242,
+    "nav_enlaces": 29,
+    "alto_pagina": 8769,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 1646,
+    "titulo": "Universidades en México: las 111 principales y dónde están (2026)",
+    "h1": [
+     "Universidades en México"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "Quitar filtros"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 249,
+    "nav_enlaces": 29,
+    "alto_pagina": 6537,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: Access to XMLHttpRequest at 'https://aurzane.com/aurzane-ds.css?v=3' from origin 'https://nexus.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the ",
+     "console: Failed to load resource: net::ERR_FAILED"
+    ],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://ovp.aurzane.com/af5-cliente.html",
+  "anchos": {
+   "320": {
+    "carga_ms": 973,
+    "titulo": "AF5 — AURZANE MIND",
+    "h1": [
+     "¡Listo, gracias!",
+     "No pudimos verificar tu acceso"
+    ],
+    "desborda": false,
+    "scroll_w": 320,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 13,
+    "nav_enlaces": 4,
+    "alto_pagina": 928,
+    "fuentes": [
+     "Bodoni Moda",
+     "Instrument Sans",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 887,
+    "titulo": "AF5 — AURZANE MIND",
+    "h1": [
+     "¡Listo, gracias!",
+     "No pudimos verificar tu acceso"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 13,
+    "nav_enlaces": 4,
+    "alto_pagina": 928,
+    "fuentes": [
+     "Bodoni Moda",
+     "Instrument Sans",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: Access to XMLHttpRequest at 'https://aurzane.com/aurzane-ds.css?v=3' from origin 'https://ovp.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the re",
+     "console: Failed to load resource: net::ERR_FAILED"
+    ],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 876,
+    "titulo": "AF5 — AURZANE MIND",
+    "h1": [
+     "¡Listo, gracias!",
+     "No pudimos verificar tu acceso"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 13,
+    "nav_enlaces": 4,
+    "alto_pagina": 1044,
+    "fuentes": [
+     "Bodoni Moda",
+     "Instrument Sans",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 869,
+    "titulo": "AF5 — AURZANE MIND",
+    "h1": [
+     "¡Listo, gracias!",
+     "No pudimos verificar tu acceso"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 13,
+    "nav_enlaces": 4,
+    "alto_pagina": 1044,
+    "fuentes": [
+     "Bodoni Moda",
+     "Instrument Sans",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: Access to XMLHttpRequest at 'https://aurzane.com/aurzane-ds.css?v=3' from origin 'https://ovp.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the re",
+     "console: Failed to load resource: net::ERR_FAILED"
+    ],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://ovp.aurzane.com/holland-cliente.html",
+  "anchos": {
+   "320": {
+    "carga_ms": 924,
+    "titulo": "Holland — AURZANE MIND",
+    "h1": [
+     "¡Listo, gracias!",
+     "No pudimos verificar tu acceso"
+    ],
+    "desborda": false,
+    "scroll_w": 320,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 13,
+    "nav_enlaces": 4,
+    "alto_pagina": 928,
+    "fuentes": [
+     "Bodoni Moda",
+     "Instrument Sans",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 859,
+    "titulo": "Holland — AURZANE MIND",
+    "h1": [
+     "¡Listo, gracias!",
+     "No pudimos verificar tu acceso"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 13,
+    "nav_enlaces": 4,
+    "alto_pagina": 928,
+    "fuentes": [
+     "Bodoni Moda",
+     "Instrument Sans",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: Access to XMLHttpRequest at 'https://aurzane.com/aurzane-ds.css?v=3' from origin 'https://ovp.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the re",
+     "console: Failed to load resource: net::ERR_FAILED"
+    ],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 878,
+    "titulo": "Holland — AURZANE MIND",
+    "h1": [
+     "¡Listo, gracias!",
+     "No pudimos verificar tu acceso"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 13,
+    "nav_enlaces": 4,
+    "alto_pagina": 1044,
+    "fuentes": [
+     "Bodoni Moda",
+     "Instrument Sans",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 892,
+    "titulo": "Holland — AURZANE MIND",
+    "h1": [
+     "¡Listo, gracias!",
+     "No pudimos verificar tu acceso"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 13,
+    "nav_enlaces": 4,
+    "alto_pagina": 1044,
+    "fuentes": [
+     "Bodoni Moda",
+     "Instrument Sans",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: Access to XMLHttpRequest at 'https://aurzane.com/aurzane-ds.css?v=3' from origin 'https://ovp.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the re",
+     "console: Failed to load resource: net::ERR_FAILED"
+    ],
+    "rotos": []
+   }
+  }
+ }
+]
