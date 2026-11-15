@@ -882,7 +882,7 @@ $('qTabla').innerHTML=h||'<tr><td colspan="3">No hay resultados con estos filtro
 ['qNota','qCc','qTxt'].forEach(function(i){{$(i).addEventListener('input',function(){{lim=150;pintar();}});}});
 $('qTab').addEventListener('click',function(e){{var b=e.target.closest('button');if(!b)return;tab=b.getAttribute('data-v');lim=150;$('qTab').querySelectorAll('button').forEach(function(x){{x.setAttribute('aria-pressed',x===b);}});pintar();}});
 $('qMas').addEventListener('click',function(){{lim+=150;pintar();}});
-var u=new URLSearchParams(location.search);if(u.get('nota'))$('qNota').value=u.get('nota');pintar();}})();</script>""" + pie()
+var u=new URLSearchParams(location.search);if(u.get('nota'))$('qNota').value=u.get('nota');if(u.get('carrera')||u.get('q'))$('qTxt').value=u.get('carrera')||u.get('q');if(u.get('cc'))$('qCc').value=u.get('cc');pintar();}})();</script>""" + pie()
     escribir('que-puedo-estudiar/index.html', h)
     URLS.append((canon, '0.9'))
     print('Qué puedo estudiar:', len(datos), 'filas')

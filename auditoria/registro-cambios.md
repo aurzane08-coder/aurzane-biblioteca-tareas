@@ -55,3 +55,10 @@ Revisadas las 140 plantillas auditadas en escritorio y móvil, con capturas comp
 - Incorpora lo ya guardado en MIND, LIVE, LEARN, BUILD y NEXUS y en «Mi lista» del Research Hub, y mantiene ambas cosas sincronizadas al guardar o quitar.
 - Se quita «Guardados» de la segunda fila de cada mundo (ahora está en la cabecera común).
 - Informe OVP de ejemplo: marcas de las recomendaciones con contraste suficiente.
+
+## Panel OVP v3 (15/11/2026, noche)
+- `ovp.aurzane.com/portal.html` (generado con `ovp-panel/aplicar.py` + `panel.js` + `panel.css`): menú de 5 secciones (Inicio, Evaluaciones, Mi informe, Dónde estudiar, Mi cuenta); «Mi Proceso» se une a Evaluaciones; fuera la marca y los enlaces del ecosistema repetidos en la barra lateral y la ruta de navegación.
+- Inicio: siguiente paso con una sola acción principal, anillo de progreso con el tiempo que queda (minutos reales de cada test), recorrido de 5 pasos y mosaico de evaluaciones con icono, estado y acceso directo.
+- Nueva sección «Dónde estudiar»: las carreras del informe (CHASIDE u Holland) enlazan a NEXUS «¿Qué puedo estudiar?» filtrado por carrera y, si la pones, por tu nota; herramientas de notas de corte, universidades y calculadora PAU. Banda al final del informe que lleva ahí.
+- Móvil: pestañas horizontales en lugar del segundo menú; corregido el menú móvil que aparecía visible en escritorio.
+- NEXUS `que-puedo-estudiar` acepta `?carrera=`, `?q=` y `?cc=` (`univ/gen/gen.py`).
