@@ -1,0 +1,40 @@
+name: Copia de seguridad y mapa del sitio
+# Antes de grandes cambios: guarda una copia comprimida de cada sitio en www/copias/<fecha>/ (en el servidor, no se borra)
+# y escribe un inventario de páginas en auditoria/mapa.txt para la auditoría.
+on:
+  workflow_dispatch:
+    inputs:
+      copia:
+        description: 'Hacer copia completa (si/no)'
+        required: false
+        default: 'si'
+permissions:
+  contents: write
+jobs:
+  copia:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      SG_KEY: ${{ secrets.SG_KEY }}
+      SG_HOST: ${{ secrets.SG_HOST }}
+      SG_USER: ${{ secrets.SG_USER }}
+      SG_PORT: ${{ secrets.SG_PORT }}
+      SG_PASS: ${{ secrets.SG_PASS }}
+      COPIA: ${{ github.event.inputs.copia }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Copia y mapa
+        run: |
+          mkdir -p ~/.ssh && printf '%s\n' "$SG_KEY" | tr -d '\r' > ~/.ssh/id && chmod 600 ~/.ssh/id
+          if [ -n "$SG_PASS" ]; then ssh-keygen -p -P "$SG_PASS" -N "" -f ~/.ssh/id >/dev/null; fi
+          S="ssh -i $HOME/.ssh/id -p ${SG_PORT:-18765} -o StrictHostKeyChecking=accept-new $SG_USER@$SG_HOST"
+          F=$(date +%Y%m%d-%H%M)
+          if [ "$COPIA" = "si" ]; then
+            $S "mkdir -p www/copias/$F && cd www && for d in *aurzane.com; do [ -d \$d/public_html ] && tar --exclude='*.mp4' --exclude='*.zip' -czf copias/$F/\$d.tar.gz -C \$d public_html; done; ls -la copias/$F"
+          fi
+          mkdir -p auditoria
+          $S "cd www && for d in *aurzane.com; do [ -d \$d/public_html ] && (cd \$d/public_html && find . -maxdepth 3 -type f \( -name '*.html' -o -name '*.js' -o -name '*.css' \) -not -path './eliminar/*' -printf \"\$d %p %s\n\"); done" > auditoria/mapa.txt
+          wc -l auditoria/mapa.txt
+          git config user.name "aurzane-bot"; git config user.email "bot@aurzane.com"
+          git add auditoria/mapa.txt; git commit -qm "auditoría: mapa del sitio" || exit 0
+          for i in 1 2 3 4 5; do git pull -q --rebase -X theirs && git push -q && break; sleep 7; done
