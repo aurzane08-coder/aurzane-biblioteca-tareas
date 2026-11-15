@@ -1,0 +1,42 @@
+name: Auditoría total (todas las páginas)
+on:
+  workflow_dispatch:
+    inputs:
+      salida:
+        description: 'Carpeta de salida dentro de auditoria/'
+        required: true
+        default: 'total-antes'
+permissions:
+  contents: write
+concurrency: auditoria-total
+jobs:
+  auditar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    strategy:
+      fail-fast: false
+      matrix:
+        parte: [0, 1, 2, 3, 4, 5]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - run: npm i --no-save playwright@1.48.2 axe-core@4.10.2 && npx playwright install --with-deps chromium
+      - run: SALIDA=auditoria/${{ github.event.inputs.salida }} LISTA=auditoria/urls-total.txt ANCHOS=320,375,768,1366 PARTES=6 PARTE=${{ matrix.parte }} node auditoria/auditar.js
+      - uses: actions/upload-artifact@v4
+        with:
+          name: parte-${{ matrix.parte }}
+          path: auditoria/${{ github.event.inputs.salida }}
+  unir:
+    needs: auditar
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with: { path: partes }
+      - run: |
+          mkdir -p auditoria/${{ github.event.inputs.salida }}
+          for d in partes/*; do cp -r $d/. auditoria/${{ github.event.inputs.salida }}/; done
+          git config user.name "aurzane-bot"; git config user.email "bot@aurzane.com"
+          git add auditoria/; git commit -qm "auditoría total: ${{ github.event.inputs.salida }}" || exit 0
+          for i in 1 2 3 4 5; do git pull -q --rebase -X theirs && git push -q && break; sleep 7; done

@@ -4,8 +4,10 @@
 const { chromium } = require('playwright');
 const fs = require('fs');
 const AXE = fs.readFileSync(require.resolve('axe-core/axe.min.js'), 'utf8');
-const ANCHOS = [320, 375, 430, 768, 1024, 1366, 1440, 1920];
-const urls = fs.readFileSync('auditoria/urls.txt', 'utf8').split('\n').map(s => s.trim()).filter(Boolean);
+const ANCHOS = (process.env.ANCHOS || '320,375,430,768,1024,1366,1440,1920').split(',').map(Number);
+const todas = fs.readFileSync(process.env.LISTA || 'auditoria/urls.txt', 'utf8').split('\n').map(s => s.trim()).filter(Boolean);
+const PARTES = +(process.env.PARTES || 1), PARTE = +(process.env.PARTE || 0);
+const urls = todas.filter((u, i) => i % PARTES === PARTE);
 const SAL = process.env.SALIDA || 'auditoria/resultado';
 fs.mkdirSync(SAL + '/capturas', { recursive: true });
 const nombre = u => u.replace(/^https:\/\//, '').replace(/[^a-z0-9]+/gi, '_').replace(/_+$/, '');
@@ -59,7 +61,7 @@ const nombre = u => u.replace(/^https:\/\//, '').replace(/[^a-z0-9]+/gi, '_').re
       await ctx.close();
     }
     informe.push(fila); console.log('auditado', url);
-    fs.writeFileSync(SAL + '/informe.json', JSON.stringify(informe, null, 1));
+    fs.writeFileSync(SAL + '/informe' + (PARTES > 1 ? '-' + PARTE : '') + '.json', JSON.stringify(informe, null, 1));
   }
   await b.close();
 })();
