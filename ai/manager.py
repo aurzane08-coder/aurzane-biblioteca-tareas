@@ -1056,7 +1056,7 @@ def nombre_url(u):
         n_ = re.split(r'\s+[|·–—]\s+(?=AURZANE|Aurzane)', n_)[0].strip() if n_ else ''
         n_ = re.sub(r'^AURZANE\s+(MIND|NEXUS|LIVE|LEARN|BUILD|OVP)\s*[:·—–-]\s*', '', n_)
         c = {'n': n_, 'f': HOY}; tit_cache[u] = c
-    if c['n']: return c['n']
+    if c['n']: return re.sub(r':\s*de qué trata.*$|\s*\|\s*Leer gratis.*$|\s*\|\s*AURZANE.*$', '', c['n']).strip()
     p = urllib.parse.urlparse(u).path.strip('/').split('/')[-1].replace('.html', '')
     return (p.replace('-', ' ').capitalize() if p and p != 'index' else 'Inicio de ' + ((urllib.parse.urlparse(u).hostname or u).split('.')[0].upper()))
 def tipo_url(u):

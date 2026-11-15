@@ -47,3 +47,4 @@ Revisadas las 140 plantillas auditadas en escritorio y móvil, con capturas comp
 - Tuteo: 12 frases más (Mi AURZANE, OVP, NEXUS).
 - Contraste y anchos: informe OVP de ejemplo, «Volver» de los artículos de mundo, libros abiertos recientes en móvil, aviso de traducción.
 - Auditoría: recorre cada página antes de capturarla para que carguen las imágenes diferidas; añadidos los 11 perfiles del test de personalidad.
+- Ronda 5: portadas de mundo sin «Más explorado» (repetía artículos) ni la promoción duplicada de OVP; pies propios de cada mundo ocultos (el pie común ya los cubre); tienda de libros legible a 320 px; cinco rasgos de personalidad en una columna en pantallas muy estrechas; el aviso del boletín ya no tapa el contenido en móvil; casillas del boletín de 20 px; bandas del informe OVP con contraste; títulos limpios en el mapa del sitio; cabecera CORS para los estilos comunes (`parche-cors.yml`).
