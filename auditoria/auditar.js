@@ -1,0 +1,65 @@
+// Auditoría UX/UI y accesibilidad de AURZANE: cada URL en 8 anchos.
+// Mide desbordamiento horizontal, errores de JavaScript, recursos rotos, objetivos táctiles pequeños (WCAG 2.5.8),
+// imágenes sin alt, campos sin etiqueta y violaciones de axe-core (WCAG 2.2 A/AA). Capturas en 375 y 1366.
+const { chromium } = require('playwright');
+const fs = require('fs');
+const AXE = fs.readFileSync(require.resolve('axe-core/axe.min.js'), 'utf8');
+const ANCHOS = [320, 375, 430, 768, 1024, 1366, 1440, 1920];
+const urls = fs.readFileSync('auditoria/urls.txt', 'utf8').split('\n').map(s => s.trim()).filter(Boolean);
+const SAL = process.env.SALIDA || 'auditoria/resultado';
+fs.mkdirSync(SAL + '/capturas', { recursive: true });
+const nombre = u => u.replace(/^https:\/\//, '').replace(/[^a-z0-9]+/gi, '_').replace(/_+$/, '');
+(async () => {
+  const b = await chromium.launch();
+  const informe = [];
+  for (const url of urls) {
+    const fila = { url, anchos: {} };
+    for (const w of ANCHOS) {
+      const ctx = await b.newContext({ viewport: { width: w, height: w < 768 ? 800 : 900 }, deviceScaleFactor: 1, locale: 'es-ES', isMobile: w < 768, hasTouch: w < 768 });
+      const p = await ctx.newPage();
+      const errores = [], rotos = [];
+      p.on('pageerror', e => errores.push(String(e.message).slice(0, 200)));
+      p.on('console', m => { if (m.type() === 'error') errores.push('console: ' + m.text().slice(0, 200)); });
+      p.on('response', r => { if (r.status() >= 400 && /aurzane\.com/.test(r.url())) rotos.push(r.status() + ' ' + r.url().slice(0, 160)); });
+      const r = { };
+      try {
+        const t0 = Date.now();
+        await p.goto(url, { waitUntil: 'networkidle', timeout: 45000 }).catch(async () => { await p.waitForTimeout(3000); });
+        r.carga_ms = Date.now() - t0;
+        await p.waitForTimeout(1200);
+        Object.assign(r, await p.evaluate(() => {
+          const vw = document.documentElement.clientWidth;
+          const anchos = [...document.querySelectorAll('body *')].filter(e => { const b = e.getBoundingClientRect(); const s = getComputedStyle(e); return b.right > vw + 2 && b.width > 0 && s.position !== 'fixed' && s.visibility !== 'hidden'; })
+            .slice(0, 6).map(e => (e.tagName.toLowerCase() + (e.id ? '#' + e.id : '') + (e.className && typeof e.className === 'string' ? '.' + e.className.trim().split(/\s+/).slice(0, 2).join('.') : '')) + ' ' + Math.round(e.getBoundingClientRect().right));
+          const objetivos = [...document.querySelectorAll('a[href], button, input:not([type=hidden]), select, [role=button]')].filter(e => { const b = e.getBoundingClientRect(); const s = getComputedStyle(e);
+            return b.width > 0 && b.height > 0 && s.visibility !== 'hidden' && (b.width < 24 || b.height < 24) && !(e.tagName === 'A' && getComputedStyle(e).display === 'inline'); });
+          const nav = document.querySelector('header nav, nav, .topbar, header');
+          return {
+            titulo: document.title, h1: [...document.querySelectorAll('h1')].map(h => h.innerText.trim().slice(0, 80)),
+            desborda: document.documentElement.scrollWidth > vw + 1, scroll_w: document.documentElement.scrollWidth, culpables: anchos,
+            objetivos_pequenos: objetivos.length, ejemplos_objetivos: objetivos.slice(0, 5).map(e => (e.innerText || e.getAttribute('aria-label') || e.tagName).trim().slice(0, 30)),
+            img_sin_alt: [...document.images].filter(i => !i.hasAttribute('alt')).length,
+            img_rotas: [...document.images].filter(i => i.complete && i.naturalWidth === 0 && i.src).map(i => i.src.slice(0, 120)).slice(0, 5),
+            enlaces: document.querySelectorAll('a[href]').length, nav_enlaces: nav ? nav.querySelectorAll('a').length : 0,
+            alto_pagina: document.documentElement.scrollHeight,
+            fuentes: [...new Set([...document.querySelectorAll('h1,h2,h3,p,a,button')].slice(0, 300).map(e => getComputedStyle(e).fontFamily.split(',')[0].replace(/"/g, '')))].slice(0, 6),
+            lang: document.documentElement.lang,
+          };
+        }));
+        if (w === 375 || w === 1366) {
+          await p.addScriptTag({ content: AXE });
+          const ax = await p.evaluate(async () => { const res = await axe.run(document, { runOnly: { type: 'tag', values: ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa'] } });
+            return res.violations.map(v => ({ id: v.id, impacto: v.impact, n: v.nodes.length, ejemplo: (v.nodes[0]?.target || []).join(' ').slice(0, 120) })); });
+          r.axe = ax;
+          await p.screenshot({ path: `${SAL}/capturas/${nombre(url)}-${w}.jpg`, type: 'jpeg', quality: 55, fullPage: true, timeout: 30000 }).catch(() => {});
+        }
+      } catch (e) { r.fallo = String(e.message).slice(0, 200); }
+      r.errores = [...new Set(errores)].slice(0, 6); r.rotos = [...new Set(rotos)].slice(0, 8);
+      fila.anchos[w] = r;
+      await ctx.close();
+    }
+    informe.push(fila); console.log('auditado', url);
+    fs.writeFileSync(SAL + '/informe.json', JSON.stringify(informe, null, 1));
+  }
+  await b.close();
+})();

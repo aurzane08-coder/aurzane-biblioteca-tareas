@@ -1,0 +1,27 @@
+name: Auditoría UX y accesibilidad
+# Recorre auditoria/urls.txt en 8 anchos con Playwright y axe-core (WCAG 2.2 AA) y guarda informe y capturas en auditoria/<salida>/.
+on:
+  workflow_dispatch:
+    inputs:
+      salida:
+        description: 'Carpeta de salida dentro de auditoria/'
+        required: false
+        default: 'antes'
+permissions:
+  contents: write
+concurrency: auditoria
+jobs:
+  auditar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - run: npm i --no-save playwright@1.48.2 axe-core@4.10.2 && npx playwright install --with-deps chromium
+      - run: SALIDA=auditoria/${{ github.event.inputs.salida }} node auditoria/auditar.js
+      - name: Guardar
+        run: |
+          git config user.name "aurzane-bot"; git config user.email "bot@aurzane.com"
+          git add auditoria/; git commit -qm "auditoría: ${{ github.event.inputs.salida }}" || exit 0
+          for i in 1 2 3 4 5; do git pull -q --rebase -X theirs && git push -q && break; sleep 7; done
