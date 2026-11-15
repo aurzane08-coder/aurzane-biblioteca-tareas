@@ -1,0 +1,3403 @@
+[
+ {
+  "url": "https://aurzane.com/articulos/motivacion-autonoma-persistencia-aprendizaje-metaanalisis/",
+  "anchos": {
+   "320": {
+    "carga_ms": 1569,
+    "titulo": "Qué predice que alguien no abandone un curso: el metaanálisis de 344 estudios y 223.000 personas sobre motivación | AURZANE LEARN",
+    "h1": [
+     "Qué predice que alguien no abandone un curso: el metaanálisis de 344 estudios y "
+    ],
+    "desborda": false,
+    "scroll_w": 320,
+    "culpables": [],
+    "objetivos_pequenos": 2,
+    "ejemplos_objetivos": [
+     "INPUT",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 84,
+    "nav_enlaces": 29,
+    "alto_pagina": 7460,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 1959,
+    "titulo": "Qué predice que alguien no abandone un curso: el metaanálisis de 344 estudios y 223.000 personas sobre motivación | AURZANE LEARN",
+    "h1": [
+     "Qué predice que alguien no abandone un curso: el metaanálisis de 344 estudios y "
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 2,
+    "ejemplos_objetivos": [
+     "INPUT",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 84,
+    "nav_enlaces": 29,
+    "alto_pagina": 6753,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 1903,
+    "titulo": "Qué predice que alguien no abandone un curso: el metaanálisis de 344 estudios y 223.000 personas sobre motivación | AURZANE LEARN",
+    "h1": [
+     "Qué predice que alguien no abandone un curso: el metaanálisis de 344 estudios y "
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 2,
+    "ejemplos_objetivos": [
+     "INPUT",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 77,
+    "nav_enlaces": 29,
+    "alto_pagina": 4284,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 1887,
+    "titulo": "Qué predice que alguien no abandone un curso: el metaanálisis de 344 estudios y 223.000 personas sobre motivación | AURZANE LEARN",
+    "h1": [
+     "Qué predice que alguien no abandone un curso: el metaanálisis de 344 estudios y "
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 2,
+    "ejemplos_objetivos": [
+     "INPUT",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 84,
+    "nav_enlaces": 29,
+    "alto_pagina": 3894,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://aurzane.com/biblioteca/libro/antropologia-sexualidad.html",
+  "anchos": {
+   "320": {
+    "carga_ms": 1058,
+    "titulo": "Antropología de la sexualidad | Leer gratis en PDF",
+    "h1": [
+     "Antropología de la sexualidad"
+    ],
+    "desborda": false,
+    "scroll_w": 320,
+    "culpables": [],
+    "objetivos_pequenos": 4,
+    "ejemplos_objetivos": [
+     "Sexualidad, género y afectivid",
+     "¿Algo no funciona? Avísanos",
+     "INPUT",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 91,
+    "nav_enlaces": 29,
+    "alto_pagina": 146251,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 1044,
+    "titulo": "Antropología de la sexualidad | Leer gratis en PDF",
+    "h1": [
+     "Antropología de la sexualidad"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 4,
+    "ejemplos_objetivos": [
+     "Sexualidad, género y afectivid",
+     "¿Algo no funciona? Avísanos",
+     "INPUT",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 91,
+    "nav_enlaces": 29,
+    "alto_pagina": 168840,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [
+     {
+      "id": "target-size",
+      "impacto": "serious",
+      "n": 1,
+      "ejemplo": "input[type=\"checkbox\"]"
+     }
+    ],
+    "errores": [],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 1065,
+    "titulo": "Antropología de la sexualidad | Leer gratis en PDF",
+    "h1": [
+     "Antropología de la sexualidad"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 4,
+    "ejemplos_objetivos": [
+     "Sexualidad, género y afectivid",
+     "¿Algo no funciona? Avísanos",
+     "INPUT",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 91,
+    "nav_enlaces": 29,
+    "alto_pagina": 335401,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 1053,
+    "titulo": "Antropología de la sexualidad | Leer gratis en PDF",
+    "h1": [
+     "Antropología de la sexualidad"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 4,
+    "ejemplos_objetivos": [
+     "Sexualidad, género y afectivid",
+     "¿Algo no funciona? Avísanos",
+     "INPUT",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 91,
+    "nav_enlaces": 29,
+    "alto_pagina": 425626,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://aurzane.com/biblioteca/tema/personalidad-e-identidad.html",
+  "anchos": {
+   "320": {
+    "carga_ms": 1628,
+    "titulo": "Libros de personalidad e identidad en español gratis (PDF) | AURZANE",
+    "h1": [
+     "Libros de personalidad e identidad"
+    ],
+    "desborda": false,
+    "scroll_w": 320,
+    "culpables": [],
+    "objetivos_pequenos": 26,
+    "ejemplos_objetivos": [
+     "Autoestima",
+     "Psicología de la personalidad",
+     "Carácter",
+     "Teoría de los rasgos",
+     "Modelo de los cinco grandes"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 140,
+    "nav_enlaces": 29,
+    "alto_pagina": 29657,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 1378,
+    "titulo": "Libros de personalidad e identidad en español gratis (PDF) | AURZANE",
+    "h1": [
+     "Libros de personalidad e identidad"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 26,
+    "ejemplos_objetivos": [
+     "Autoestima",
+     "Psicología de la personalidad",
+     "Carácter",
+     "Teoría de los rasgos",
+     "Modelo de los cinco grandes"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 140,
+    "nav_enlaces": 29,
+    "alto_pagina": 13080,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 1520,
+    "titulo": "Libros de personalidad e identidad en español gratis (PDF) | AURZANE",
+    "h1": [
+     "Libros de personalidad e identidad"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 26,
+    "ejemplos_objetivos": [
+     "Autoestima",
+     "Psicología de la personalidad",
+     "Carácter",
+     "Teoría de los rasgos",
+     "Modelo de los cinco grandes"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 140,
+    "nav_enlaces": 29,
+    "alto_pagina": 10077,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 1451,
+    "titulo": "Libros de personalidad e identidad en español gratis (PDF) | AURZANE",
+    "h1": [
+     "Libros de personalidad e identidad"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 26,
+    "ejemplos_objetivos": [
+     "Autoestima",
+     "Psicología de la personalidad",
+     "Carácter",
+     "Teoría de los rasgos",
+     "Modelo de los cinco grandes"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 140,
+    "nav_enlaces": 29,
+    "alto_pagina": 6427,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://aurzane.com/contacto.html",
+  "anchos": {
+   "320": {
+    "carga_ms": 804,
+    "titulo": "Contacto | AURZANE",
+    "h1": [
+     "Contacto"
+    ],
+    "desborda": false,
+    "scroll_w": 320,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 58,
+    "nav_enlaces": 16,
+    "alto_pagina": 3252,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 818,
+    "titulo": "Contacto | AURZANE",
+    "h1": [
+     "Contacto"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 58,
+    "nav_enlaces": 16,
+    "alto_pagina": 3041,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 817,
+    "titulo": "Contacto | AURZANE",
+    "h1": [
+     "Contacto"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 58,
+    "nav_enlaces": 16,
+    "alto_pagina": 2415,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 806,
+    "titulo": "Contacto | AURZANE",
+    "h1": [
+     "Contacto"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 58,
+    "nav_enlaces": 16,
+    "alto_pagina": 1922,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://aurzane.com/libros/los-hombres-que-no-amaban-a-las-mujeres-stieg-larsson/",
+  "anchos": {
+   "320": {
+    "carga_ms": 1839,
+    "titulo": "Los hombres que no amaban a las mujeres, de Stieg Larsson: de qué trata y dónde comprarlo | AURZANE",
+    "h1": [
+     "Los hombres que no amaban a las mujeres"
+    ],
+    "desborda": true,
+    "scroll_w": 322,
+    "culpables": [],
+    "objetivos_pequenos": 5,
+    "ejemplos_objetivos": [
+     "¿Algo no funciona? Avísanos",
+     "INPUT",
+     "INPUT",
+     "INPUT",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 70,
+    "nav_enlaces": 29,
+    "alto_pagina": 5153,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 1566,
+    "titulo": "Los hombres que no amaban a las mujeres, de Stieg Larsson: de qué trata y dónde comprarlo | AURZANE",
+    "h1": [
+     "Los hombres que no amaban a las mujeres"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 5,
+    "ejemplos_objetivos": [
+     "¿Algo no funciona? Avísanos",
+     "INPUT",
+     "INPUT",
+     "INPUT",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 70,
+    "nav_enlaces": 29,
+    "alto_pagina": 5013,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [
+     {
+      "id": "target-size",
+      "impacto": "serious",
+      "n": 1,
+      "ejemplo": "aside > .in > form[method=\"post\"][action=\"https://aurzane.com/boletin/\"] > label > input[type=\"checkbox\"][name=\"acepto\"]"
+     }
+    ],
+    "errores": [],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 1495,
+    "titulo": "Los hombres que no amaban a las mujeres, de Stieg Larsson: de qué trata y dónde comprarlo | AURZANE",
+    "h1": [
+     "Los hombres que no amaban a las mujeres"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 5,
+    "ejemplos_objetivos": [
+     "¿Algo no funciona? Avísanos",
+     "INPUT",
+     "INPUT",
+     "INPUT",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 70,
+    "nav_enlaces": 29,
+    "alto_pagina": 2925,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 1436,
+    "titulo": "Los hombres que no amaban a las mujeres, de Stieg Larsson: de qué trata y dónde comprarlo | AURZANE",
+    "h1": [
+     "Los hombres que no amaban a las mujeres"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 5,
+    "ejemplos_objetivos": [
+     "¿Algo no funciona? Avísanos",
+     "INPUT",
+     "INPUT",
+     "INPUT",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 70,
+    "nav_enlaces": 29,
+    "alto_pagina": 2285,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://aurzane.com/ref-dejame-que-te-cuente.html",
+  "anchos": {
+   "320": {
+    "carga_ms": 1374,
+    "titulo": "Déjame que te cuente (Jorge Bucay): resumen e ideas clave",
+    "h1": [
+     "Déjame que te cuente"
+    ],
+    "desborda": false,
+    "scroll_w": 320,
+    "culpables": [],
+    "objetivos_pequenos": 3,
+    "ejemplos_objetivos": [
+     "Relatos de vida y psicología n",
+     "Autoestima, autocuidado y supe",
+     "¿Algo no funciona? Avísanos"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 81,
+    "nav_enlaces": 29,
+    "alto_pagina": 9426,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 1343,
+    "titulo": "Déjame que te cuente (Jorge Bucay): resumen e ideas clave",
+    "h1": [
+     "Déjame que te cuente"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 3,
+    "ejemplos_objetivos": [
+     "Relatos de vida y psicología n",
+     "Autoestima, autocuidado y supe",
+     "¿Algo no funciona? Avísanos"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 88,
+    "nav_enlaces": 29,
+    "alto_pagina": 6274,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 1222,
+    "titulo": "Déjame que te cuente (Jorge Bucay): resumen e ideas clave",
+    "h1": [
+     "Déjame que te cuente"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 3,
+    "ejemplos_objetivos": [
+     "Relatos de vida y psicología n",
+     "Autoestima, autocuidado y supe",
+     "¿Algo no funciona? Avísanos"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 88,
+    "nav_enlaces": 29,
+    "alto_pagina": 4692,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 1395,
+    "titulo": "Déjame que te cuente (Jorge Bucay): resumen e ideas clave",
+    "h1": [
+     "Déjame que te cuente"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 3,
+    "ejemplos_objetivos": [
+     "Relatos de vida y psicología n",
+     "Autoestima, autocuidado y supe",
+     "¿Algo no funciona? Avísanos"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 81,
+    "nav_enlaces": 29,
+    "alto_pagina": 3472,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://aurzane.com/temas/economia-inmobiliaria/",
+  "anchos": {
+   "320": {
+    "carga_ms": 1127,
+    "titulo": "Economía inmobiliaria — AURZANE BUILD",
+    "h1": [
+     "Economía inmobiliaria"
+    ],
+    "desborda": false,
+    "scroll_w": 320,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 74,
+    "nav_enlaces": 29,
+    "alto_pagina": 2730,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 1137,
+    "titulo": "Economía inmobiliaria — AURZANE BUILD",
+    "h1": [
+     "Economía inmobiliaria"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 74,
+    "nav_enlaces": 29,
+    "alto_pagina": 2617,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 1119,
+    "titulo": "Economía inmobiliaria — AURZANE BUILD",
+    "h1": [
+     "Economía inmobiliaria"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 67,
+    "nav_enlaces": 29,
+    "alto_pagina": 2090,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 1136,
+    "titulo": "Economía inmobiliaria — AURZANE BUILD",
+    "h1": [
+     "Economía inmobiliaria"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 74,
+    "nav_enlaces": 29,
+    "alto_pagina": 1681,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://build.aurzane.com/build-biblioteca.html",
+  "anchos": {
+   "320": {
+    "carga_ms": 1958,
+    "titulo": "Biblioteca Académica — AURZANE BUILD",
+    "h1": [
+     "Biblioteca de investigación abierta"
+    ],
+    "desborda": false,
+    "scroll_w": 320,
+    "culpables": [],
+    "objetivos_pequenos": 42,
+    "ejemplos_objetivos": [
+     "BUILD",
+     "INPUT",
+     "Ver abstract completo",
+     "Ver fuente original →",
+     "Ver abstract completo"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 116,
+    "nav_enlaces": 30,
+    "alto_pagina": 11366,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 1230,
+    "titulo": "Biblioteca Académica — AURZANE BUILD",
+    "h1": [
+     "Biblioteca de investigación abierta"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 42,
+    "ejemplos_objetivos": [
+     "BUILD",
+     "INPUT",
+     "Ver abstract completo",
+     "Ver fuente original →",
+     "Ver abstract completo"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 116,
+    "nav_enlaces": 30,
+    "alto_pagina": 10555,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: Access to XMLHttpRequest at 'https://aurzane.com/aurzane-ds.css?v=5' from origin 'https://build.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the ",
+     "console: Failed to load resource: net::ERR_FAILED"
+    ],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 1384,
+    "titulo": "Biblioteca Académica — AURZANE BUILD",
+    "h1": [
+     "Biblioteca de investigación abierta"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 42,
+    "ejemplos_objetivos": [
+     "BUILD",
+     "INPUT",
+     "Ver abstract completo",
+     "Ver fuente original →",
+     "Ver abstract completo"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 116,
+    "nav_enlaces": 30,
+    "alto_pagina": 8517,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 1401,
+    "titulo": "Biblioteca Académica — AURZANE BUILD",
+    "h1": [
+     "Biblioteca de investigación abierta"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 41,
+    "ejemplos_objetivos": [
+     "INPUT",
+     "Ver abstract completo",
+     "Ver fuente original →",
+     "Ver abstract completo",
+     "Ver fuente original →"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 123,
+    "nav_enlaces": 30,
+    "alto_pagina": 8008,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: Access to XMLHttpRequest at 'https://aurzane.com/aurzane-ds.css?v=5' from origin 'https://build.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the ",
+     "console: Failed to load resource: net::ERR_FAILED"
+    ],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://learn.aurzane.com/certificado/",
+  "anchos": {
+   "320": {
+    "carga_ms": 881,
+    "titulo": "Verificar un certificado · AURZANE LEARN",
+    "h1": [
+     "Verificar un certificado"
+    ],
+    "desborda": false,
+    "scroll_w": 320,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "LEARN"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 60,
+    "nav_enlaces": 28,
+    "alto_pagina": 1899,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 819,
+    "titulo": "Verificar un certificado · AURZANE LEARN",
+    "h1": [
+     "Verificar un certificado"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "LEARN"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 67,
+    "nav_enlaces": 28,
+    "alto_pagina": 1824,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: Access to XMLHttpRequest at 'https://aurzane.com/aurzane-ds.css?v=5' from origin 'https://learn.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the ",
+     "console: Failed to load resource: net::ERR_FAILED"
+    ],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 807,
+    "titulo": "Verificar un certificado · AURZANE LEARN",
+    "h1": [
+     "Verificar un certificado"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "LEARN"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 67,
+    "nav_enlaces": 28,
+    "alto_pagina": 1462,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 851,
+    "titulo": "Verificar un certificado · AURZANE LEARN",
+    "h1": [
+     "Verificar un certificado"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 60,
+    "nav_enlaces": 28,
+    "alto_pagina": 1062,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: Access to XMLHttpRequest at 'https://aurzane.com/aurzane-ds.css?v=5' from origin 'https://learn.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the ",
+     "console: Failed to load resource: net::ERR_FAILED"
+    ],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://learn.aurzane.com/cursos/",
+  "anchos": {
+   "320": {
+    "carga_ms": 889,
+    "titulo": "Cursos gratis online con certificado · AURZANE LEARN",
+    "h1": [
+     "Cursos gratis, a tu ritmo"
+    ],
+    "desborda": false,
+    "scroll_w": 320,
+    "culpables": [],
+    "objetivos_pequenos": 2,
+    "ejemplos_objetivos": [
+     "LEARN",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 73,
+    "nav_enlaces": 28,
+    "alto_pagina": 4074,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 868,
+    "titulo": "Cursos gratis online con certificado · AURZANE LEARN",
+    "h1": [
+     "Cursos gratis, a tu ritmo"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 2,
+    "ejemplos_objetivos": [
+     "LEARN",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 73,
+    "nav_enlaces": 28,
+    "alto_pagina": 3804,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: Access to XMLHttpRequest at 'https://aurzane.com/aurzane-ds.css?v=5' from origin 'https://learn.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the ",
+     "console: Failed to load resource: net::ERR_FAILED"
+    ],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 880,
+    "titulo": "Cursos gratis online con certificado · AURZANE LEARN",
+    "h1": [
+     "Cursos gratis, a tu ritmo"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 2,
+    "ejemplos_objetivos": [
+     "LEARN",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 66,
+    "nav_enlaces": 28,
+    "alto_pagina": 2383,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 882,
+    "titulo": "Cursos gratis online con certificado · AURZANE LEARN",
+    "h1": [
+     "Cursos gratis, a tu ritmo"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 66,
+    "nav_enlaces": 28,
+    "alto_pagina": 1854,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: Access to XMLHttpRequest at 'https://aurzane.com/aurzane-ds.css?v=5' from origin 'https://learn.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the ",
+     "console: Failed to load resource: net::ERR_FAILED"
+    ],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://live.aurzane.com/calculadora-dias-entre-fechas/",
+  "anchos": {
+   "320": {
+    "carga_ms": 1328,
+    "titulo": "Calculadora de días entre fechas gratis | AURZANE LIVE",
+    "h1": [
+     "¿Cuántos días hay entre dos fechas?"
+    ],
+    "desborda": false,
+    "scroll_w": 320,
+    "culpables": [],
+    "objetivos_pequenos": 5,
+    "ejemplos_objetivos": [
+     "LIVE",
+     "INPUT",
+     "INPUT",
+     "INPUT",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 95,
+    "nav_enlaces": 30,
+    "alto_pagina": 11158,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 1240,
+    "titulo": "Calculadora de días entre fechas gratis | AURZANE LIVE",
+    "h1": [
+     "¿Cuántos días hay entre dos fechas?"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 5,
+    "ejemplos_objetivos": [
+     "LIVE",
+     "INPUT",
+     "INPUT",
+     "INPUT",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 95,
+    "nav_enlaces": 30,
+    "alto_pagina": 10282,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: Access to XMLHttpRequest at 'https://aurzane.com/aurzane-ds.css?v=5' from origin 'https://live.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the r",
+     "console: Failed to load resource: net::ERR_FAILED"
+    ],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 1428,
+    "titulo": "Calculadora de días entre fechas gratis | AURZANE LIVE",
+    "h1": [
+     "¿Cuántos días hay entre dos fechas?"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 5,
+    "ejemplos_objetivos": [
+     "LIVE",
+     "INPUT",
+     "INPUT",
+     "INPUT",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 95,
+    "nav_enlaces": 30,
+    "alto_pagina": 7511,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 1257,
+    "titulo": "Calculadora de días entre fechas gratis | AURZANE LIVE",
+    "h1": [
+     "¿Cuántos días hay entre dos fechas?"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 4,
+    "ejemplos_objetivos": [
+     "INPUT",
+     "INPUT",
+     "INPUT",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 95,
+    "nav_enlaces": 30,
+    "alto_pagina": 5670,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: Access to XMLHttpRequest at 'https://aurzane.com/aurzane-ds.css?v=5' from origin 'https://live.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the r",
+     "console: Failed to load resource: net::ERR_FAILED"
+    ],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://live.aurzane.com/live-biblioteca.html",
+  "anchos": {
+   "320": {
+    "carga_ms": 1908,
+    "titulo": "Biblioteca Académica — AURZANE LIVE",
+    "h1": [
+     "Biblioteca de investigación abierta"
+    ],
+    "desborda": false,
+    "scroll_w": 320,
+    "culpables": [],
+    "objetivos_pequenos": 42,
+    "ejemplos_objetivos": [
+     "LIVE",
+     "INPUT",
+     "Ver abstract completo",
+     "Ver fuente original →",
+     "Ver abstract completo"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 123,
+    "nav_enlaces": 30,
+    "alto_pagina": 11909,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 1271,
+    "titulo": "Biblioteca Académica — AURZANE LIVE",
+    "h1": [
+     "Biblioteca de investigación abierta"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 42,
+    "ejemplos_objetivos": [
+     "LIVE",
+     "INPUT",
+     "Ver abstract completo",
+     "Ver fuente original →",
+     "Ver abstract completo"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 123,
+    "nav_enlaces": 30,
+    "alto_pagina": 10273,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: Access to XMLHttpRequest at 'https://aurzane.com/aurzane-ds.css?v=5' from origin 'https://live.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the r",
+     "console: Failed to load resource: net::ERR_FAILED"
+    ],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 1283,
+    "titulo": "Biblioteca Académica — AURZANE LIVE",
+    "h1": [
+     "Biblioteca de investigación abierta"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 42,
+    "ejemplos_objetivos": [
+     "LIVE",
+     "INPUT",
+     "Ver abstract completo",
+     "Ver fuente original →",
+     "Ver abstract completo"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 123,
+    "nav_enlaces": 30,
+    "alto_pagina": 8543,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 1284,
+    "titulo": "Biblioteca Académica — AURZANE LIVE",
+    "h1": [
+     "Biblioteca de investigación abierta"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 41,
+    "ejemplos_objetivos": [
+     "INPUT",
+     "Ver abstract completo",
+     "Ver fuente original →",
+     "Ver abstract completo",
+     "Ver fuente original →"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 123,
+    "nav_enlaces": 30,
+    "alto_pagina": 8076,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: Access to XMLHttpRequest at 'https://aurzane.com/aurzane-ds.css?v=5' from origin 'https://live.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the r",
+     "console: Failed to load resource: net::ERR_FAILED"
+    ],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://mind.aurzane.com/ejercicios/",
+  "anchos": {
+   "320": {
+    "carga_ms": 1358,
+    "titulo": "13 ejercicios de relajación y respiración guiados gratis | AURZANE MIND",
+    "h1": [
+     "Ejercicios guiados para calmar la mente"
+    ],
+    "desborda": false,
+    "scroll_w": 320,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "MIND"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 102,
+    "nav_enlaces": 30,
+    "alto_pagina": 5662,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 1351,
+    "titulo": "13 ejercicios de relajación y respiración guiados gratis | AURZANE MIND",
+    "h1": [
+     "Ejercicios guiados para calmar la mente"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "MIND"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 102,
+    "nav_enlaces": 30,
+    "alto_pagina": 5285,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: Access to XMLHttpRequest at 'https://aurzane.com/aurzane-ds.css?v=5' from origin 'https://mind.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the r",
+     "console: Failed to load resource: net::ERR_FAILED"
+    ],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 1192,
+    "titulo": "13 ejercicios de relajación y respiración guiados gratis | AURZANE MIND",
+    "h1": [
+     "Ejercicios guiados para calmar la mente"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "MIND"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 102,
+    "nav_enlaces": 30,
+    "alto_pagina": 4463,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 1224,
+    "titulo": "13 ejercicios de relajación y respiración guiados gratis | AURZANE MIND",
+    "h1": [
+     "Ejercicios guiados para calmar la mente"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 102,
+    "nav_enlaces": 30,
+    "alto_pagina": 2630,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: Access to XMLHttpRequest at 'https://aurzane.com/aurzane-ds.css?v=5' from origin 'https://mind.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the r",
+     "console: Failed to load resource: net::ERR_FAILED"
+    ],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://mind.aurzane.com/ejercicios/relajacion-muscular-progresiva/",
+  "anchos": {
+   "320": {
+    "carga_ms": 1223,
+    "titulo": "Relajación muscular progresiva de Jacobson guiada (8 min) | AURZANE MIND",
+    "h1": [
+     "Relajación muscular progresiva guiada"
+    ],
+    "desborda": false,
+    "scroll_w": 320,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "MIND"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 95,
+    "nav_enlaces": 30,
+    "alto_pagina": 10279,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 1405,
+    "titulo": "Relajación muscular progresiva de Jacobson guiada (8 min) | AURZANE MIND",
+    "h1": [
+     "Relajación muscular progresiva guiada"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "MIND"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 95,
+    "nav_enlaces": 30,
+    "alto_pagina": 9284,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: Access to XMLHttpRequest at 'https://aurzane.com/aurzane-ds.css?v=5' from origin 'https://mind.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the r",
+     "console: Failed to load resource: net::ERR_FAILED"
+    ],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 1213,
+    "titulo": "Relajación muscular progresiva de Jacobson guiada (8 min) | AURZANE MIND",
+    "h1": [
+     "Relajación muscular progresiva guiada"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "MIND"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 95,
+    "nav_enlaces": 30,
+    "alto_pagina": 7024,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 1238,
+    "titulo": "Relajación muscular progresiva de Jacobson guiada (8 min) | AURZANE MIND",
+    "h1": [
+     "Relajación muscular progresiva guiada"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 95,
+    "nav_enlaces": 30,
+    "alto_pagina": 5946,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: Access to XMLHttpRequest at 'https://aurzane.com/aurzane-ds.css?v=5' from origin 'https://mind.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the r",
+     "console: Failed to load resource: net::ERR_FAILED"
+    ],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://mind.aurzane.com/ejercicios/tecnica-5-4-3-2-1/",
+  "anchos": {
+   "320": {
+    "carga_ms": 1201,
+    "titulo": "Técnica 5-4-3-2-1 guiada para la ansiedad (grounding) | AURZANE MIND",
+    "h1": [
+     "Técnica 5-4-3-2-1 guiada"
+    ],
+    "desborda": false,
+    "scroll_w": 320,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "MIND"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 94,
+    "nav_enlaces": 30,
+    "alto_pagina": 10036,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 1218,
+    "titulo": "Técnica 5-4-3-2-1 guiada para la ansiedad (grounding) | AURZANE MIND",
+    "h1": [
+     "Técnica 5-4-3-2-1 guiada"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "MIND"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 94,
+    "nav_enlaces": 30,
+    "alto_pagina": 9119,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: Access to XMLHttpRequest at 'https://aurzane.com/aurzane-ds.css?v=5' from origin 'https://mind.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the r",
+     "console: Failed to load resource: net::ERR_FAILED"
+    ],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 1370,
+    "titulo": "Técnica 5-4-3-2-1 guiada para la ansiedad (grounding) | AURZANE MIND",
+    "h1": [
+     "Técnica 5-4-3-2-1 guiada"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "MIND"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 94,
+    "nav_enlaces": 30,
+    "alto_pagina": 6768,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 1370,
+    "titulo": "Técnica 5-4-3-2-1 guiada para la ansiedad (grounding) | AURZANE MIND",
+    "h1": [
+     "Técnica 5-4-3-2-1 guiada"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 94,
+    "nav_enlaces": 30,
+    "alto_pagina": 5696,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: Access to XMLHttpRequest at 'https://aurzane.com/aurzane-ds.css?v=5' from origin 'https://mind.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the r",
+     "console: Failed to load resource: net::ERR_FAILED"
+    ],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://mind.aurzane.com/en/life-satisfaction-test-swls/",
+  "anchos": {
+   "320": {
+    "carga_ms": 847,
+    "titulo": "Life satisfaction test (SWLS): free online questionnaire | AURZANE",
+    "h1": [
+     "Life satisfaction test (SWLS)"
+    ],
+    "desborda": false,
+    "scroll_w": 320,
+    "culpables": [],
+    "objetivos_pequenos": 36,
+    "ejemplos_objetivos": [
+     "MIND",
+     "INPUT",
+     "INPUT",
+     "INPUT",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 65,
+    "nav_enlaces": 22,
+    "alto_pagina": 4819,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "en",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 830,
+    "titulo": "Life satisfaction test (SWLS): free online questionnaire | AURZANE",
+    "h1": [
+     "Life satisfaction test (SWLS)"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 36,
+    "ejemplos_objetivos": [
+     "MIND",
+     "INPUT",
+     "INPUT",
+     "INPUT",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 65,
+    "nav_enlaces": 22,
+    "alto_pagina": 4599,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "en",
+    "axe": [],
+    "errores": [
+     "console: Access to XMLHttpRequest at 'https://aurzane.com/aurzane-ds.css?v=5' from origin 'https://mind.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the r",
+     "console: Failed to load resource: net::ERR_FAILED"
+    ],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 832,
+    "titulo": "Life satisfaction test (SWLS): free online questionnaire | AURZANE",
+    "h1": [
+     "Life satisfaction test (SWLS)"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 36,
+    "ejemplos_objetivos": [
+     "MIND",
+     "INPUT",
+     "INPUT",
+     "INPUT",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 65,
+    "nav_enlaces": 22,
+    "alto_pagina": 3142,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "en",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 828,
+    "titulo": "Life satisfaction test (SWLS): free online questionnaire | AURZANE",
+    "h1": [
+     "Life satisfaction test (SWLS)"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 35,
+    "ejemplos_objetivos": [
+     "INPUT",
+     "INPUT",
+     "INPUT",
+     "INPUT",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 65,
+    "nav_enlaces": 22,
+    "alto_pagina": 2646,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "en",
+    "axe": [],
+    "errores": [
+     "console: Access to XMLHttpRequest at 'https://aurzane.com/aurzane-ds.css?v=5' from origin 'https://mind.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the r",
+     "console: Failed to load resource: net::ERR_FAILED"
+    ],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://mind.aurzane.com/en/wellbeing-test-who-5/",
+  "anchos": {
+   "320": {
+    "carga_ms": 872,
+    "titulo": "Wellbeing test (WHO-5): free online questionnaire | AURZANE",
+    "h1": [
+     "Wellbeing test (WHO-5)"
+    ],
+    "desborda": false,
+    "scroll_w": 320,
+    "culpables": [],
+    "objetivos_pequenos": 31,
+    "ejemplos_objetivos": [
+     "MIND",
+     "INPUT",
+     "INPUT",
+     "INPUT",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 65,
+    "nav_enlaces": 22,
+    "alto_pagina": 5040,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "en",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 838,
+    "titulo": "Wellbeing test (WHO-5): free online questionnaire | AURZANE",
+    "h1": [
+     "Wellbeing test (WHO-5)"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 31,
+    "ejemplos_objetivos": [
+     "MIND",
+     "INPUT",
+     "INPUT",
+     "INPUT",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 65,
+    "nav_enlaces": 22,
+    "alto_pagina": 4270,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "en",
+    "axe": [],
+    "errores": [
+     "console: Access to XMLHttpRequest at 'https://aurzane.com/aurzane-ds.css?v=5' from origin 'https://mind.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the r",
+     "console: Failed to load resource: net::ERR_FAILED"
+    ],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 844,
+    "titulo": "Wellbeing test (WHO-5): free online questionnaire | AURZANE",
+    "h1": [
+     "Wellbeing test (WHO-5)"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 31,
+    "ejemplos_objetivos": [
+     "MIND",
+     "INPUT",
+     "INPUT",
+     "INPUT",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 65,
+    "nav_enlaces": 22,
+    "alto_pagina": 3115,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "en",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 852,
+    "titulo": "Wellbeing test (WHO-5): free online questionnaire | AURZANE",
+    "h1": [
+     "Wellbeing test (WHO-5)"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 30,
+    "ejemplos_objetivos": [
+     "INPUT",
+     "INPUT",
+     "INPUT",
+     "INPUT",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 65,
+    "nav_enlaces": 22,
+    "alto_pagina": 2371,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "en",
+    "axe": [],
+    "errores": [
+     "console: Access to XMLHttpRequest at 'https://aurzane.com/aurzane-ds.css?v=5' from origin 'https://mind.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the r",
+     "console: Failed to load resource: net::ERR_FAILED"
+    ],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://mind.aurzane.com/test-de-ansiedad/",
+  "anchos": {
+   "320": {
+    "carga_ms": 1304,
+    "titulo": "Test de ansiedad GAD-7 gratis y online | AURZANE MIND",
+    "h1": [
+     "¿Lo que sientes es ansiedad?"
+    ],
+    "desborda": false,
+    "scroll_w": 320,
+    "culpables": [],
+    "objetivos_pequenos": 2,
+    "ejemplos_objetivos": [
+     "MIND",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 102,
+    "nav_enlaces": 30,
+    "alto_pagina": 16785,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 1245,
+    "titulo": "Test de ansiedad GAD-7 gratis y online | AURZANE MIND",
+    "h1": [
+     "¿Lo que sientes es ansiedad?"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 2,
+    "ejemplos_objetivos": [
+     "MIND",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 102,
+    "nav_enlaces": 30,
+    "alto_pagina": 15158,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: Access to XMLHttpRequest at 'https://aurzane.com/aurzane-ds.css?v=5' from origin 'https://mind.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the r",
+     "console: Failed to load resource: net::ERR_FAILED"
+    ],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 1271,
+    "titulo": "Test de ansiedad GAD-7 gratis y online | AURZANE MIND",
+    "h1": [
+     "¿Lo que sientes es ansiedad?"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 2,
+    "ejemplos_objetivos": [
+     "MIND",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 102,
+    "nav_enlaces": 30,
+    "alto_pagina": 10919,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 1294,
+    "titulo": "Test de ansiedad GAD-7 gratis y online | AURZANE MIND",
+    "h1": [
+     "¿Lo que sientes es ansiedad?"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 102,
+    "nav_enlaces": 30,
+    "alto_pagina": 8617,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: Access to XMLHttpRequest at 'https://aurzane.com/aurzane-ds.css?v=5' from origin 'https://mind.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the r",
+     "console: Failed to load resource: net::ERR_FAILED"
+    ],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://mind.aurzane.com/test-de-estres/",
+  "anchos": {
+   "320": {
+    "carga_ms": 1265,
+    "titulo": "Test de estrés gratis y online (escala DASS-21) | AURZANE MIND",
+    "h1": [
+     "¿Cuánto estrés llevas encima?"
+    ],
+    "desborda": false,
+    "scroll_w": 320,
+    "culpables": [],
+    "objetivos_pequenos": 2,
+    "ejemplos_objetivos": [
+     "MIND",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 102,
+    "nav_enlaces": 30,
+    "alto_pagina": 16128,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 1263,
+    "titulo": "Test de estrés gratis y online (escala DASS-21) | AURZANE MIND",
+    "h1": [
+     "¿Cuánto estrés llevas encima?"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 2,
+    "ejemplos_objetivos": [
+     "MIND",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 102,
+    "nav_enlaces": 30,
+    "alto_pagina": 14325,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: Access to XMLHttpRequest at 'https://aurzane.com/aurzane-ds.css?v=5' from origin 'https://mind.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the r",
+     "console: Failed to load resource: net::ERR_FAILED"
+    ],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 1277,
+    "titulo": "Test de estrés gratis y online (escala DASS-21) | AURZANE MIND",
+    "h1": [
+     "¿Cuánto estrés llevas encima?"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 2,
+    "ejemplos_objetivos": [
+     "MIND",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 102,
+    "nav_enlaces": 30,
+    "alto_pagina": 10066,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 1284,
+    "titulo": "Test de estrés gratis y online (escala DASS-21) | AURZANE MIND",
+    "h1": [
+     "¿Cuánto estrés llevas encima?"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 102,
+    "nav_enlaces": 30,
+    "alto_pagina": 8021,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: Access to XMLHttpRequest at 'https://aurzane.com/aurzane-ds.css?v=5' from origin 'https://mind.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the r",
+     "console: Failed to load resource: net::ERR_FAILED"
+    ],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://nexus.aurzane.com/",
+  "anchos": {
+   "320": {
+    "carga_ms": 2007,
+    "titulo": "AURZANE NEXUS — Tecnología, conocimiento y salud",
+    "h1": [
+     "Conectamos ideas, personas y tecnología"
+    ],
+    "desborda": false,
+    "scroll_w": 320,
+    "culpables": [],
+    "objetivos_pequenos": 3,
+    "ejemplos_objetivos": [
+     "NEXUS",
+     "INPUT",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 136,
+    "nav_enlaces": 30,
+    "alto_pagina": 10692,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 1354,
+    "titulo": "AURZANE NEXUS — Tecnología, conocimiento y salud",
+    "h1": [
+     "Conectamos ideas, personas y tecnología"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 3,
+    "ejemplos_objetivos": [
+     "NEXUS",
+     "INPUT",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 129,
+    "nav_enlaces": 30,
+    "alto_pagina": 10128,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: Access to XMLHttpRequest at 'https://aurzane.com/aurzane-ds.css?v=5' from origin 'https://nexus.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the ",
+     "console: Failed to load resource: net::ERR_FAILED"
+    ],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 1398,
+    "titulo": "AURZANE NEXUS — Tecnología, conocimiento y salud",
+    "h1": [
+     "Conectamos ideas, personas y tecnología"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 3,
+    "ejemplos_objetivos": [
+     "NEXUS",
+     "INPUT",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 136,
+    "nav_enlaces": 30,
+    "alto_pagina": 6747,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 1543,
+    "titulo": "AURZANE NEXUS — Tecnología, conocimiento y salud",
+    "h1": [
+     "Conectamos ideas, personas y tecnología"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 2,
+    "ejemplos_objetivos": [
+     "INPUT",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 136,
+    "nav_enlaces": 30,
+    "alto_pagina": 5693,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: Access to XMLHttpRequest at 'https://aurzane.com/aurzane-ds.css?v=5' from origin 'https://nexus.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the ",
+     "console: Failed to load resource: net::ERR_FAILED"
+    ],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://nexus.aurzane.com/universidades/acerca/",
+  "anchos": {
+   "320": {
+    "carga_ms": 1199,
+    "titulo": "Fuentes y método del catálogo de universidades | AURZANE NEXUS",
+    "h1": [
+     "Fuentes y método"
+    ],
+    "desborda": false,
+    "scroll_w": 320,
+    "culpables": [
+     "table 677",
+     "thead 677",
+     "tr 677",
+     "th 357",
+     "th 517",
+     "th 677"
+    ],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "NEXUS"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 91,
+    "nav_enlaces": 30,
+    "alto_pagina": 6480,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 1204,
+    "titulo": "Fuentes y método del catálogo de universidades | AURZANE NEXUS",
+    "h1": [
+     "Fuentes y método"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [
+     "table 677",
+     "thead 677",
+     "tr 677",
+     "th 517",
+     "th 677",
+     "tbody 677"
+    ],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "NEXUS"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 84,
+    "nav_enlaces": 30,
+    "alto_pagina": 6279,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: Access to XMLHttpRequest at 'https://aurzane.com/aurzane-ds.css?v=5' from origin 'https://nexus.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the ",
+     "console: Failed to load resource: net::ERR_FAILED"
+    ],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 1208,
+    "titulo": "Fuentes y método del catálogo de universidades | AURZANE NEXUS",
+    "h1": [
+     "Fuentes y método"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "NEXUS"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 84,
+    "nav_enlaces": 30,
+    "alto_pagina": 5686,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 1244,
+    "titulo": "Fuentes y método del catálogo de universidades | AURZANE NEXUS",
+    "h1": [
+     "Fuentes y método"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 91,
+    "nav_enlaces": 30,
+    "alto_pagina": 4028,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: Access to XMLHttpRequest at 'https://aurzane.com/aurzane-ds.css?v=5' from origin 'https://nexus.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the ",
+     "console: Failed to load resource: net::ERR_FAILED"
+    ],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://nexus.aurzane.com/universidades/paises/",
+  "anchos": {
+   "320": {
+    "carga_ms": 1192,
+    "titulo": "Universidades por país: 55 países | AURZANE NEXUS",
+    "h1": [
+     "Universidades por país"
+    ],
+    "desborda": false,
+    "scroll_w": 320,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "NEXUS"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 146,
+    "nav_enlaces": 30,
+    "alto_pagina": 7308,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 1211,
+    "titulo": "Universidades por país: 55 países | AURZANE NEXUS",
+    "h1": [
+     "Universidades por país"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "NEXUS"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 139,
+    "nav_enlaces": 30,
+    "alto_pagina": 7106,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: Access to XMLHttpRequest at 'https://aurzane.com/aurzane-ds.css?v=5' from origin 'https://nexus.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the ",
+     "console: Failed to load resource: net::ERR_FAILED"
+    ],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 1243,
+    "titulo": "Universidades por país: 55 países | AURZANE NEXUS",
+    "h1": [
+     "Universidades por país"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "NEXUS"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 139,
+    "nav_enlaces": 30,
+    "alto_pagina": 4026,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 1240,
+    "titulo": "Universidades por país: 55 países | AURZANE NEXUS",
+    "h1": [
+     "Universidades por país"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 139,
+    "nav_enlaces": 30,
+    "alto_pagina": 2692,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: Access to XMLHttpRequest at 'https://aurzane.com/aurzane-ds.css?v=5' from origin 'https://nexus.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the ",
+     "console: Failed to load resource: net::ERR_FAILED"
+    ],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://ovp.aurzane.com/chaside-cliente.html",
+  "anchos": {
+   "320": {
+    "carga_ms": 1041,
+    "titulo": "CHASIDE — AURZANE MIND",
+    "h1": [
+     "¡Listo, gracias!",
+     "No pudimos verificar tu acceso"
+    ],
+    "desborda": false,
+    "scroll_w": 320,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 13,
+    "nav_enlaces": 4,
+    "alto_pagina": 928,
+    "fuentes": [
+     "Bodoni Moda",
+     "Instrument Sans",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 980,
+    "titulo": "CHASIDE — AURZANE MIND",
+    "h1": [
+     "¡Listo, gracias!",
+     "No pudimos verificar tu acceso"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 13,
+    "nav_enlaces": 4,
+    "alto_pagina": 928,
+    "fuentes": [
+     "Bodoni Moda",
+     "Instrument Sans",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: Access to XMLHttpRequest at 'https://aurzane.com/aurzane-ds.css?v=5' from origin 'https://ovp.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the re",
+     "console: Failed to load resource: net::ERR_FAILED"
+    ],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 1105,
+    "titulo": "CHASIDE — AURZANE MIND",
+    "h1": [
+     "¡Listo, gracias!",
+     "No pudimos verificar tu acceso"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 13,
+    "nav_enlaces": 4,
+    "alto_pagina": 1044,
+    "fuentes": [
+     "Bodoni Moda",
+     "Instrument Sans",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 970,
+    "titulo": "CHASIDE — AURZANE MIND",
+    "h1": [
+     "¡Listo, gracias!",
+     "No pudimos verificar tu acceso"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 13,
+    "nav_enlaces": 4,
+    "alto_pagina": 1044,
+    "fuentes": [
+     "Bodoni Moda",
+     "Instrument Sans",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: Access to XMLHttpRequest at 'https://aurzane.com/aurzane-ds.css?v=5' from origin 'https://ovp.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the re",
+     "console: Failed to load resource: net::ERR_FAILED"
+    ],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://ovp.aurzane.com/portal.html",
+  "anchos": {
+   "320": {
+    "carga_ms": 1446,
+    "titulo": "Mi AURZANE — Tu cuenta en el ecosistema",
+    "h1": [
+     "Mi AURZANE",
+     "Una cuenta para todo el ecosistema",
+     "Elige tu nueva contraseña",
+     "—"
+    ],
+    "desborda": false,
+    "scroll_w": 320,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "¿Olvidaste tu contraseña?"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 80,
+    "nav_enlaces": 16,
+    "alto_pagina": 3720,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 1427,
+    "titulo": "Mi AURZANE — Tu cuenta en el ecosistema",
+    "h1": [
+     "Mi AURZANE",
+     "Una cuenta para todo el ecosistema",
+     "Elige tu nueva contraseña",
+     "—"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "¿Olvidaste tu contraseña?"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 73,
+    "nav_enlaces": 16,
+    "alto_pagina": 3614,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 1489,
+    "titulo": "Mi AURZANE — Tu cuenta en el ecosistema",
+    "h1": [
+     "Mi AURZANE",
+     "Una cuenta para todo el ecosistema",
+     "Elige tu nueva contraseña",
+     "—"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "¿Olvidaste tu contraseña?"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 73,
+    "nav_enlaces": 16,
+    "alto_pagina": 2507,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 1645,
+    "titulo": "Mi AURZANE — Tu cuenta en el ecosistema",
+    "h1": [
+     "Mi AURZANE",
+     "Una cuenta para todo el ecosistema",
+     "Elige tu nueva contraseña",
+     "—"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "¿Olvidaste tu contraseña?"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 80,
+    "nav_enlaces": 16,
+    "alto_pagina": 1573,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://mind.aurzane.com/test-de-personalidad/p/prisma/",
+  "anchos": {
+   "320": {
+    "carga_ms": 1269,
+    "titulo": "Perfil Prisma: test de personalidad gratis | AURZANE MIND",
+    "h1": [
+     "¿Cómo es tu personalidad de verdad?",
+     "Prisma"
+    ],
+    "desborda": true,
+    "scroll_w": 323,
+    "culpables": [
+     "span.blob.b2 344",
+     "span.blob.b3 383",
+     "div.r5 323",
+     "div.r5.claro 323"
+    ],
+    "objetivos_pequenos": 3,
+    "ejemplos_objetivos": [
+     "MIND",
+     "INPUT",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 91,
+    "nav_enlaces": 30,
+    "alto_pagina": 8963,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 1266,
+    "titulo": "Perfil Prisma: test de personalidad gratis | AURZANE MIND",
+    "h1": [
+     "¿Cómo es tu personalidad de verdad?",
+     "Prisma"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [
+     "span.blob.b3 438"
+    ],
+    "objetivos_pequenos": 3,
+    "ejemplos_objetivos": [
+     "MIND",
+     "INPUT",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 91,
+    "nav_enlaces": 30,
+    "alto_pagina": 8568,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: Access to XMLHttpRequest at 'https://aurzane.com/aurzane-ds.css?v=5' from origin 'https://mind.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the r",
+     "console: Failed to load resource: net::ERR_FAILED"
+    ],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 1266,
+    "titulo": "Perfil Prisma: test de personalidad gratis | AURZANE MIND",
+    "h1": [
+     "¿Cómo es tu personalidad de verdad?",
+     "Prisma"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [
+     "span.blob.b3 835"
+    ],
+    "objetivos_pequenos": 3,
+    "ejemplos_objetivos": [
+     "MIND",
+     "INPUT",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 91,
+    "nav_enlaces": 30,
+    "alto_pagina": 6146,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 1268,
+    "titulo": "Perfil Prisma: test de personalidad gratis | AURZANE MIND",
+    "h1": [
+     "¿Cómo es tu personalidad de verdad?",
+     "Prisma"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [
+     "span.blob.b3 1435"
+    ],
+    "objetivos_pequenos": 2,
+    "ejemplos_objetivos": [
+     "INPUT",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 91,
+    "nav_enlaces": 30,
+    "alto_pagina": 4223,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: Access to XMLHttpRequest at 'https://aurzane.com/aurzane-ds.css?v=5' from origin 'https://mind.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the r",
+     "console: Failed to load resource: net::ERR_FAILED"
+    ],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://mind.aurzane.com/test-de-personalidad/p/timon/",
+  "anchos": {
+   "320": {
+    "carga_ms": 1258,
+    "titulo": "Perfil Timón: test de personalidad gratis | AURZANE MIND",
+    "h1": [
+     "¿Cómo es tu personalidad de verdad?",
+     "Prisma"
+    ],
+    "desborda": true,
+    "scroll_w": 323,
+    "culpables": [
+     "span.blob.b2 344",
+     "span.blob.b3 384",
+     "div.r5 323",
+     "div.r5.claro 323"
+    ],
+    "objetivos_pequenos": 3,
+    "ejemplos_objetivos": [
+     "MIND",
+     "INPUT",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 91,
+    "nav_enlaces": 30,
+    "alto_pagina": 8963,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 1249,
+    "titulo": "Perfil Timón: test de personalidad gratis | AURZANE MIND",
+    "h1": [
+     "¿Cómo es tu personalidad de verdad?",
+     "Prisma"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [
+     "span.blob.b3 439"
+    ],
+    "objetivos_pequenos": 3,
+    "ejemplos_objetivos": [
+     "MIND",
+     "INPUT",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 84,
+    "nav_enlaces": 30,
+    "alto_pagina": 8568,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: Access to XMLHttpRequest at 'https://aurzane.com/aurzane-ds.css?v=5' from origin 'https://mind.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the r",
+     "console: Failed to load resource: net::ERR_FAILED"
+    ],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 1314,
+    "titulo": "Perfil Timón: test de personalidad gratis | AURZANE MIND",
+    "h1": [
+     "¿Cómo es tu personalidad de verdad?",
+     "Prisma"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [
+     "span.blob.b3 834"
+    ],
+    "objetivos_pequenos": 3,
+    "ejemplos_objetivos": [
+     "MIND",
+     "INPUT",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 91,
+    "nav_enlaces": 30,
+    "alto_pagina": 6146,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 1291,
+    "titulo": "Perfil Timón: test de personalidad gratis | AURZANE MIND",
+    "h1": [
+     "¿Cómo es tu personalidad de verdad?",
+     "Prisma"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [
+     "span.blob.b3 1435"
+    ],
+    "objetivos_pequenos": 2,
+    "ejemplos_objetivos": [
+     "INPUT",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 84,
+    "nav_enlaces": 30,
+    "alto_pagina": 4223,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: Access to XMLHttpRequest at 'https://aurzane.com/aurzane-ds.css?v=5' from origin 'https://mind.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the r",
+     "console: Failed to load resource: net::ERR_FAILED"
+    ],
+    "rotos": []
+   }
+  }
+ }
+]

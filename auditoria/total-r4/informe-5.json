@@ -1,0 +1,2646 @@
+[
+ {
+  "url": "https://aurzane.com/aviso-legal.html",
+  "anchos": {
+   "320": {
+    "carga_ms": 855,
+    "titulo": "Aviso legal de AURZANE",
+    "h1": [
+     "Aviso legal"
+    ],
+    "desborda": false,
+    "scroll_w": 320,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 63,
+    "nav_enlaces": 16,
+    "alto_pagina": 4486,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 657,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 800,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "fallo": "page.evaluate: Execution context was destroyed, most likely because of a navigation",
+    "errores": [],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 689,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 900,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 688,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 900,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://aurzane.com/biblioteca/libro/ref-orgullo-prejuicio.html",
+  "anchos": {
+   "320": {
+    "carga_ms": 682,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 320,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 800,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 661,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 800,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 689,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 900,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 684,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 900,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "fallo": "page.evaluate: Execution context was destroyed, most likely because of a navigation.",
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://aurzane.com/biblioteca/tema/relatos-de-vida-y-psicologia-narrada.html",
+  "anchos": {
+   "320": {
+    "carga_ms": 674,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 320,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 800,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 671,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 800,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 676,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 900,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 675,
+    "titulo": "Libros de relatos de vida y psicología narrada gratis en PDF | AURZANE",
+    "h1": [
+     "Libros de relatos de vida y psicología narrada"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 16,
+    "ejemplos_objetivos": [
+     "Testimonios",
+     "Memorias y autobiografías",
+     "Historias de vida",
+     "Autobiografía",
+     "Ficción y empatía"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 377,
+    "nav_enlaces": 29,
+    "alto_pagina": 28739,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://aurzane.com/libros/breve-historia-de-espana-fernando-garcia-de-cortazar/",
+  "anchos": {
+   "320": {
+    "carga_ms": 678,
+    "titulo": "Breve historia de España, de Fernando García de Cortázar: de qué trata y dónde comprarlo | AURZANE",
+    "h1": [
+     "Breve historia de España"
+    ],
+    "desborda": true,
+    "scroll_w": 322,
+    "culpables": [],
+    "objetivos_pequenos": 3,
+    "ejemplos_objetivos": [
+     "¿Algo no funciona? Avísanos",
+     "INPUT",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 76,
+    "nav_enlaces": 29,
+    "alto_pagina": 4634,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 648,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 800,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 672,
+    "titulo": "Breve historia de España, de Fernando García de Cortázar: de qué trata y dónde comprarlo | AURZANE",
+    "h1": [
+     "Breve historia de España"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 2,
+    "ejemplos_objetivos": [
+     "INPUT",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 69,
+    "nav_enlaces": 29,
+    "alto_pagina": 2596,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 676,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 900,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://aurzane.com/novedades/",
+  "anchos": {
+   "320": {
+    "carga_ms": 657,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 320,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 800,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 679,
+    "titulo": "Novedades de AURZANE: tests, herramientas y contenidos nuevos",
+    "h1": [
+     "Novedades"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 142,
+    "nav_enlaces": 29,
+    "alto_pagina": 13530,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 670,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 900,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 659,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 900,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://aurzane.com/ref-recuerda-que-vas-a-morir.html",
+  "anchos": {
+   "320": {
+    "carga_ms": 672,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 320,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 800,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 683,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 800,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 652,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 900,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 672,
+    "titulo": "Recuerda que vas a morir. Vive: resumen e ideas clave",
+    "h1": [
+     "Recuerda que vas a morir. Vive"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 4,
+    "ejemplos_objetivos": [
+     "Relatos de vida y psicología n",
+     "Existencia, propósito y sentid",
+     "Duelo y pérdidas",
+     "¿Algo no funciona? Avísanos"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 89,
+    "nav_enlaces": 29,
+    "alto_pagina": 3583,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://aurzane.com/temas/urbanismo/",
+  "anchos": {
+   "320": {
+    "carga_ms": 677,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 320,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 800,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 653,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 800,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 678,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 900,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 673,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 900,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://build.aurzane.com/calculadora-sueldo-neto/",
+  "anchos": {
+   "320": {
+    "carga_ms": 689,
+    "titulo": "Calculadora de sueldo neto 2026: de bruto a neto con IRPF | AURZANE BUILD",
+    "h1": [
+     "De bruto a neto: lo que de verdad cobras"
+    ],
+    "desborda": true,
+    "scroll_w": 345,
+    "culpables": [
+     "a.activo 359",
+     "nav 345",
+     "a.cuenta 345",
+     "button 336",
+     "table#tablaSueldos.tabla 345",
+     "tbody 345"
+    ],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 20,
+    "nav_enlaces": 5,
+    "alto_pagina": 11734,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 674,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "build.aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 800,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 674,
+    "titulo": "Calculadora de sueldo neto 2026: de bruto a neto con IRPF | AURZANE BUILD",
+    "h1": [
+     "De bruto a neto: lo que de verdad cobras"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 3,
+    "ejemplos_objetivos": [
+     "Hipoteca",
+     "Sueldo neto",
+     "Reforma"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 20,
+    "nav_enlaces": 5,
+    "alto_pagina": 7534,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 650,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "build.aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 900,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://learn.aurzane.com/curso/neuroanatomia-funcional/",
+  "anchos": {
+   "320": {
+    "carga_ms": 721,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "learn.aurzane.com"
+    ],
+    "desborda": true,
+    "scroll_w": 336,
+    "culpables": [
+     "p 336"
+    ],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 840,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 681,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "learn.aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 800,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 648,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "learn.aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 900,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 674,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "learn.aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 900,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://live.aurzane.com/articulo.html",
+  "anchos": {
+   "320": {
+    "carga_ms": 2035,
+    "titulo": "Artículo — AURZANE",
+    "h1": [
+     ""
+    ],
+    "desborda": false,
+    "scroll_w": 320,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 1,
+    "img_rotas": [],
+    "enlaces": 1,
+    "nav_enlaces": 0,
+    "alto_pagina": 800,
+    "fuentes": [
+     "Bodoni Moda",
+     "Instrument Sans"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 651,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "live.aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 800,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 682,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "live.aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 900,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 666,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "live.aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 900,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://live.aurzane.com/calculadora-imc/",
+  "anchos": {
+   "320": {
+    "carga_ms": 657,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "live.aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 320,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 800,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 667,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "live.aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 800,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 666,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "live.aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 900,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 648,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "live.aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 900,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://live.aurzane.com/test-de-sueno/",
+  "anchos": {
+   "320": {
+    "carga_ms": 671,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "live.aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 320,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 800,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 667,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "live.aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 800,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 651,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "live.aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 900,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 654,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "live.aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 900,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://mind.aurzane.com/ejercicios/escaneo-corporal/",
+  "anchos": {
+   "320": {
+    "carga_ms": 669,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "mind.aurzane.com"
+    ],
+    "desborda": true,
+    "scroll_w": 336,
+    "culpables": [
+     "p 336"
+    ],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 840,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 661,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "mind.aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 800,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 656,
+    "titulo": "Escaneo corporal (body scan) guiado de 7 minutos | AURZANE MIND",
+    "h1": [
+     "Escaneo corporal guiado"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 8,
+    "ejemplos_objetivos": [
+     "Ansiedad",
+     "Depresión",
+     "Autoestima",
+     "TDAH",
+     "Autocompasión"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 27,
+    "nav_enlaces": 10,
+    "alto_pagina": 6604,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 674,
+    "titulo": "Escaneo corporal (body scan) guiado de 7 minutos | AURZANE MIND",
+    "h1": [
+     "Escaneo corporal guiado"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 8,
+    "ejemplos_objetivos": [
+     "Ansiedad",
+     "Depresión",
+     "Autoestima",
+     "TDAH",
+     "Autocompasión"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 27,
+    "nav_enlaces": 10,
+    "alto_pagina": 5690,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://mind.aurzane.com/ejercicios/respiracion-cuadrada/",
+  "anchos": {
+   "320": {
+    "carga_ms": 658,
+    "titulo": "Respiración cuadrada (box breathing) guiada | AURZANE MIND",
+    "h1": [
+     "Respiración cuadrada guiada"
+    ],
+    "desborda": true,
+    "scroll_w": 340,
+    "culpables": [
+     "a 359",
+     "nav 340",
+     "a.cuenta 340"
+    ],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 27,
+    "nav_enlaces": 10,
+    "alto_pagina": 9550,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 671,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "mind.aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 800,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 681,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "mind.aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 900,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 644,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "mind.aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 900,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://mind.aurzane.com/en/anxiety-test-gad-7/",
+  "anchos": {
+   "320": {
+    "carga_ms": 675,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "mind.aurzane.com"
+    ],
+    "desborda": true,
+    "scroll_w": 336,
+    "culpables": [
+     "p 336"
+    ],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 840,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 675,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "mind.aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 800,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 646,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "mind.aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 900,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 669,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "mind.aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 900,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://mind.aurzane.com/en/self-efficacy-test-gse/",
+  "anchos": {
+   "320": {
+    "carga_ms": 674,
+    "titulo": "Self-efficacy test (General Self-Efficacy Scale): free online questionnaire | AURZANE",
+    "h1": [
+     "Self-efficacy test (General Self-Efficacy Scale)"
+    ],
+    "desborda": false,
+    "scroll_w": 320,
+    "culpables": [],
+    "objetivos_pequenos": 40,
+    "ejemplos_objetivos": [
+     "INPUT",
+     "INPUT",
+     "INPUT",
+     "INPUT",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 6,
+    "nav_enlaces": 3,
+    "alto_pagina": 4524,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "en",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 647,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "mind.aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 800,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 672,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "mind.aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 900,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 670,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "mind.aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 900,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "fallo": "page.evaluate: Execution context was destroyed, most likely because of a navigation.",
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://mind.aurzane.com/pt/teste-de-ansiedade-gad-7/",
+  "anchos": {
+   "320": {
+    "carga_ms": 665,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "mind.aurzane.com"
+    ],
+    "desborda": true,
+    "scroll_w": 336,
+    "culpables": [
+     "p 336"
+    ],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 840,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 648,
+    "titulo": "Teste de ansiedade (GAD-7): questionário grátis online | AURZANE",
+    "h1": [
+     "Teste de ansiedade (GAD-7)"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 6,
+    "nav_enlaces": 3,
+    "alto_pagina": 1605,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "pt-BR",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 662,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "mind.aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 900,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 669,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "mind.aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 900,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://mind.aurzane.com/test-de-autoestima/",
+  "anchos": {
+   "320": {
+    "carga_ms": 667,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "mind.aurzane.com"
+    ],
+    "desborda": true,
+    "scroll_w": 336,
+    "culpables": [
+     "p 336"
+    ],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 840,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 2124,
+    "titulo": "Test de autoestima de Rosenberg gratis y online | AURZANE MIND",
+    "h1": [
+     "¿Cómo te valoras de verdad?"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 25,
+    "nav_enlaces": 10,
+    "alto_pagina": 10749,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 674,
+    "titulo": "Test de autoestima de Rosenberg gratis y online | AURZANE MIND",
+    "h1": [
+     "¿Cómo te valoras de verdad?"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 8,
+    "ejemplos_objetivos": [
+     "Ansiedad",
+     "Depresión",
+     "Autoestima",
+     "TDAH",
+     "Autocompasión"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 25,
+    "nav_enlaces": 10,
+    "alto_pagina": 7589,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 2139,
+    "titulo": "Test de autoestima de Rosenberg gratis y online | AURZANE MIND",
+    "h1": [
+     "¿Cómo te valoras de verdad?"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 8,
+    "ejemplos_objetivos": [
+     "Ansiedad",
+     "Depresión",
+     "Autoestima",
+     "TDAH",
+     "Autocompasión"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 25,
+    "nav_enlaces": 10,
+    "alto_pagina": 6769,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://mind.aurzane.com/test-de-satisfaccion-con-la-vida/",
+  "anchos": {
+   "320": {
+    "carga_ms": 662,
+    "titulo": "Test de satisfacción con la vida (felicidad) gratis | AURZANE MIND",
+    "h1": [
+     "¿Qué tan satisfecho/a estás con tu vida?"
+    ],
+    "desborda": true,
+    "scroll_w": 340,
+    "culpables": [
+     "a 359",
+     "nav 340",
+     "a.cuenta 340"
+    ],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 25,
+    "nav_enlaces": 10,
+    "alto_pagina": 11867,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 689,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "mind.aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 800,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 664,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "mind.aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 900,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 654,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "mind.aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 900,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://nexus.aurzane.com/nexus-biblioteca.html",
+  "anchos": {
+   "320": {
+    "carga_ms": 742,
+    "titulo": "Biblioteca Académica — AURZANE NEXUS",
+    "h1": [
+     "Biblioteca de investigación abierta"
+    ],
+    "desborda": true,
+    "scroll_w": 365,
+    "culpables": [
+     "div.utility-mundos 365",
+     "a 365"
+    ],
+    "objetivos_pequenos": 49,
+    "ejemplos_objetivos": [
+     "AURZANE",
+     "MIND",
+     "OVP",
+     "NEXUS",
+     "LIVE"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 49,
+    "nav_enlaces": 6,
+    "alto_pagina": 10915,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 666,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "nexus.aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 800,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 656,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "nexus.aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 900,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 673,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "nexus.aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 900,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://nexus.aurzane.com/universidades/mexico/",
+  "anchos": {
+   "320": {
+    "carga_ms": 2232,
+    "titulo": "Universidades en México: las 111 principales y dónde están (2026)",
+    "h1": [
+     "Universidades en México"
+    ],
+    "desborda": false,
+    "scroll_w": 320,
+    "culpables": [
+     "a 359"
+    ],
+    "objetivos_pequenos": 2,
+    "ejemplos_objetivos": [
+     "Quitar filtros",
+     "Más filtros ▾"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 180,
+    "nav_enlaces": 8,
+    "alto_pagina": 16401,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 648,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "nexus.aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 800,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 676,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "nexus.aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 900,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 660,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "nexus.aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 900,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://ovp.aurzane.com/af5-cliente.html",
+  "anchos": {
+   "320": {
+    "carga_ms": 733,
+    "titulo": "AF5 — AURZANE MIND",
+    "h1": [
+     "¡Listo, gracias!",
+     "No pudimos verificar tu acceso"
+    ],
+    "desborda": false,
+    "scroll_w": 320,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 6,
+    "nav_enlaces": 4,
+    "alto_pagina": 928,
+    "fuentes": [
+     "Bodoni Moda",
+     "Instrument Sans"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 675,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "ovp.aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 800,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 664,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "ovp.aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 900,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 652,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "ovp.aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 900,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://ovp.aurzane.com/holland-cliente.html",
+  "anchos": {
+   "320": {
+    "carga_ms": 666,
+    "titulo": "Holland — AURZANE MIND",
+    "h1": [
+     "¡Listo, gracias!",
+     "No pudimos verificar tu acceso"
+    ],
+    "desborda": false,
+    "scroll_w": 320,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 6,
+    "nav_enlaces": 4,
+    "alto_pagina": 928,
+    "fuentes": [
+     "Bodoni Moda",
+     "Instrument Sans"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 659,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "ovp.aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 800,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 1412,
+    "titulo": "Holland — AURZANE MIND",
+    "h1": [
+     "¡Listo, gracias!",
+     "No pudimos verificar tu acceso"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 6,
+    "nav_enlaces": 4,
+    "alto_pagina": 1044,
+    "fuentes": [
+     "Bodoni Moda",
+     "Instrument Sans"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 737,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "ovp.aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 900,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://mind.aurzane.com/test-de-personalidad/p/faro/",
+  "anchos": {
+   "320": {
+    "carga_ms": 668,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "mind.aurzane.com"
+    ],
+    "desborda": true,
+    "scroll_w": 336,
+    "culpables": [
+     "p 336"
+    ],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 840,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 2111,
+    "titulo": "Perfil Faro: test de personalidad gratis | AURZANE MIND",
+    "h1": [
+     "¿Cómo es tu personalidad de verdad?",
+     "Prisma"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [
+     "span.blob.b3 439"
+    ],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 20,
+    "nav_enlaces": 5,
+    "alto_pagina": 6796,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "axe": [
+     {
+      "id": "color-contrast",
+      "impacto": "serious",
+      "n": 8,
+      "ejemplo": ".r5:nth-child(1) > b"
+     }
+    ],
+    "errores": [],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 669,
+    "titulo": "Perfil Faro: test de personalidad gratis | AURZANE MIND",
+    "h1": [
+     "¿Cómo es tu personalidad de verdad?",
+     "Prisma"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [
+     "span.blob.b3 857"
+    ],
+    "objetivos_pequenos": 3,
+    "ejemplos_objetivos": [
+     "Guías",
+     "Biblioteca",
+     "Test vocacional"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 20,
+    "nav_enlaces": 5,
+    "alto_pagina": 3628,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 661,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "mind.aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 900,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://mind.aurzane.com/test-de-personalidad/p/remanso/",
+  "anchos": {
+   "320": {
+    "carga_ms": 658,
+    "titulo": "Perfil Remanso: test de personalidad gratis | AURZANE MIND",
+    "h1": [
+     "¿Cómo es tu personalidad de verdad?",
+     "Prisma"
+    ],
+    "desborda": true,
+    "scroll_w": 338,
+    "culpables": [
+     "a 359",
+     "nav 338",
+     "a#lnkCuenta.cuenta 338",
+     "span.blob.b2 338",
+     "span.blob.b3 407",
+     "div.r5 323"
+    ],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 20,
+    "nav_enlaces": 5,
+    "alto_pagina": 7068,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 672,
+    "titulo": "Perfil Remanso: test de personalidad gratis | AURZANE MIND",
+    "h1": [
+     "¿Cómo es tu personalidad de verdad?",
+     "Prisma"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [
+     "span.blob.b3 463"
+    ],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 20,
+    "nav_enlaces": 5,
+    "alto_pagina": 6796,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "axe": [
+     {
+      "id": "color-contrast",
+      "impacto": "serious",
+      "n": 8,
+      "ejemplo": ".r5:nth-child(1) > b"
+     }
+    ],
+    "errores": [],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 669,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "mind.aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 900,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 647,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "mind.aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 900,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ }
+]
