@@ -222,7 +222,7 @@
 <div class="todo-overlay" id="todoOverlay" onclick="cerrarTodo()"></div>
 <aside class="todo-panel" id="todoPanel" role="dialog" aria-modal="true" aria-label="Todo BUILD">
   <div class="todo-header">
-    <div class="quien" id="todoQuien">Hola, iniciá sesión<small>Accedé a todo el ecosistema</small></div>
+    <div class="quien" id="todoQuien">Hola, inicia sesión<small>Accede a todo el ecosistema</small></div>
     <button class="todo-cerrar" onclick="cerrarTodo()" aria-label="Cerrar menú">✕</button>
   </div>
   <div class="todo-grupo">
@@ -378,7 +378,7 @@ function reflejarSesionBuild(session) {
     quien.innerHTML = `Hola, ${nombre}<small>Tu cuenta AURZANE ID</small>`;
   } else {
     pill.innerHTML = `👤 Mi AURZANE`;
-    quien.innerHTML = `Hola, iniciá sesión<small>Accedé a todo el ecosistema</small>`;
+    quien.innerHTML = `Hola, inicia sesión<small>Accede a todo el ecosistema</small>`;
   }
 }
 sb.auth.getSession().then(({ data: { session } }) => reflejarSesionBuild(session));
@@ -539,7 +539,7 @@ document.getElementById('filters').addEventListener('click', (e) => {
 document.getElementById('loadMoreBtn').addEventListener('click', () => cargarResultados(true));
 
 // Permite llegar con una búsqueda ya hecha desde un link externo,
-// ej. las tarjetas de "Explorá por tema" de aurzane.com
+// ej. las tarjetas de "Explora por tema" de aurzane.com
 // (build-biblioteca.html?q=Inca+Empire).
 const qParam = new URLSearchParams(location.search).get('q');
 if(qParam){

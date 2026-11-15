@@ -1643,7 +1643,6 @@ function generateReportFromData(cliente, membrete){
     <div class="applicant-box">
       <div class="a-item"><div class="a-lbl">Postulante</div><div class="a-val">${nombre}</div></div>
       <div class="a-item"><div class="a-lbl">Edad</div><div class="a-val">${edad} años</div></div>
-      <div class="a-item"><div class="a-lbl">Fecha de nacimiento</div><div class="a-val">${fechaNac}</div></div>
       <div class="a-item"><div class="a-lbl">Institución</div><div class="a-val">${institucion}</div></div>
       <div class="a-item"><div class="a-lbl">Curso</div><div class="a-val">${curso}</div></div>
     </div>

@@ -254,7 +254,7 @@
 <div class="todo-overlay" id="todoOverlay" onclick="cerrarTodo()"></div>
 <aside class="todo-panel" id="todoPanel" role="dialog" aria-modal="true" aria-label="Todo MIND">
   <div class="todo-header">
-    <div class="quien" id="todoQuien">Hola, iniciá sesión<small>Accedé a todo el ecosistema</small></div>
+    <div class="quien" id="todoQuien">Hola, inicia sesión<small>Accede a todo el ecosistema</small></div>
     <button class="todo-cerrar" onclick="cerrarTodo()" aria-label="Cerrar menú">✕</button>
   </div>
   <div class="todo-grupo">
@@ -426,7 +426,7 @@ function reflejarSesionMind(session) {
     quien.innerHTML = `Hola, ${nombre}<small>Tu cuenta AURZANE ID</small>`;
   } else {
     pill.innerHTML = `👤 Mi AURZANE`;
-    quien.innerHTML = `Hola, iniciá sesión<small>Accedé a todo el ecosistema</small>`;
+    quien.innerHTML = `Hola, inicia sesión<small>Accede a todo el ecosistema</small>`;
   }
 }
 sb.auth.getSession().then(({ data: { session } }) => reflejarSesionMind(session));

@@ -38,7 +38,7 @@
 .opciones-informe .oi-estado{font-size:0.78rem;opacity:0.75;min-height:1em;padding-bottom:10px;}
 
 /* ----- datos de la persona: la institución suele ser larga ----- */
-.aurzane-report .applicant-box .a-item:nth-child(4){flex:1.7;}
+.aurzane-report .applicant-box .a-item:nth-child(3){flex:1.7;}
 
 /* ----- cómo leer ----- */
 .aurzane-report .como-leer{font-size:0.84rem;line-height:1.7;color:#3f3f3c;background:var(--wash);border:1px solid var(--hair);padding:16px 20px;margin:0 0 30px;}
@@ -80,7 +80,7 @@
 .aurzane-report.exportando-pdf{max-width:none;padding:0 !important;background:#FBF9F3;}
 .aurzane-report.exportando-pdf .report-head,
 .aurzane-report.exportando-pdf .report-footer{display:none !important;}
-.aurzane-report.exportando-pdf .applicant-box{display:grid;grid-template-columns:1.3fr 0.7fr 1fr;row-gap:14px;margin:4px 0 30px;}
+.aurzane-report.exportando-pdf .applicant-box{display:grid;grid-template-columns:1.3fr 0.6fr 1.6fr 0.9fr;row-gap:14px;margin:4px 0 30px;}
 .aurzane-report.exportando-pdf .a-item{border-top:none;padding:0 14px;border-left:1px solid var(--hair);}
 .aurzane-report.exportando-pdf .a-item:first-child,
 .aurzane-report.exportando-pdf .a-item:nth-child(4){border-left:none;padding-left:0;}

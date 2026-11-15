@@ -58,6 +58,13 @@
     if(v === 'm' || v.indexOf('mas') === 0 || v === 'hombre' || v === 'varon' || v === 'varón') return 'M';
     return '';
   }
+  // Colegios militares: su enlace propio (?inst=comil12) añade al informe la sección de carrera militar (ESMIL/ESFORSE).
+  function esColegioMilitar(m){
+    if(!m) return false;
+    if(m.enfoque === 'militar') return true;
+    if(/^comil/i.test(String(m.codigo || ''))) return true;
+    return /colegio militar|\bCOMIL\b/i.test([m.nombre_marca, m.subtitulo, m.institucion].join(' '));
+  }
   function romano(i){ return ['i','ii','iii','iv','v','vi','vii','viii','ix','x'][i] || '·'; }
 
   // Evaluaciones que entran al informe: las completadas, en orden fijo.
@@ -193,7 +200,6 @@
       '<div class="applicant-box">' +
         '<div class="a-item"><div class="a-lbl">Postulante</div><div class="a-val">' + nombre + '</div></div>' +
         '<div class="a-item"><div class="a-lbl">Edad</div><div class="a-val">' + edad + '</div></div>' +
-        '<div class="a-item"><div class="a-lbl">Fecha de nacimiento</div><div class="a-val">' + fechaNac + '</div></div>' +
         '<div class="a-item"><div class="a-lbl">Institución</div><div class="a-val">' + institucion + '</div></div>' +
         '<div class="a-item"><div class="a-lbl">Curso</div><div class="a-val">' + curso + '</div></div>' +
       '</div>' +
@@ -441,6 +447,48 @@
         '<div class="balance-col reforzar"><h4>Aspectos a trabajar</h4><ul>' + trabajar.map(function(t){ return '<li>' + t + '</li>'; }).join('') + '</ul></div>' +
       '</div>';
 
+    // Encaje con la carrera militar a partir de los resultados reales (solo se usa con membrete de colegio militar)
+    function encajeMilitar(){
+      var p = [], score = 0, academico = 0, ramas = [];
+      if(cha){
+        var posD = cha.ranked.map(function(r){ return r.letter; }).indexOf('D');
+        if(posD === 0){ score += 3; p.push('Tu área vocacional más fuerte en CHASIDE es <b>Defensa y Seguridad</b>, la que corresponde directamente a la carrera militar.'); }
+        else if(posD === 1 || posD === 2){ score += 2; p.push('<b>Defensa y Seguridad</b> aparece entre tus áreas más altas en CHASIDE (puesto ' + (posD + 1) + ').'); }
+        var RAMA = {
+          I: 'Tu interés por las ingenierías encaja con armas técnicas como ingeniería o comunicaciones.',
+          E: 'Tu afinidad con las ciencias exactas encaja con especialidades técnicas como artillería o comunicaciones.',
+          S: 'Tu interés por la salud encaja con los servicios de sanidad militar.',
+          C: 'Tu perfil administrativo encaja con los servicios de logística e intendencia.',
+          H: 'Tu perfil humanístico encaja con áreas como comunicación social, derechos humanos o asuntos jurídicos de la institución.',
+          A: 'Tu sensibilidad artística también tiene espacio en áreas como comunicación y difusión institucional.',
+          D: 'Tu perfil de Defensa y Seguridad encaja con las armas de combate, como infantería o caballería.'
+        };
+        cha.top2.forEach(function(r){ if(RAMA[r.letter]) ramas.push(RAMA[r.letter]); });
+      }
+      if(holland){
+        var top2 = holland.rows.slice(0, 2).map(function(d){ return d.key; });
+        var HM = { R: 'el tipo <b>Realista</b> (acción, trabajo práctico y físico)', S: 'el tipo <b>Social</b> (servicio y trabajo con personas)', E: 'el tipo <b>Emprendedor</b> (liderazgo y toma de decisiones)', C: 'el tipo <b>Convencional</b> (orden, normas y organización)' };
+        var hm = top2.filter(function(k){ return HM[k]; });
+        if(hm.length){ score += hm.length; p.push('En Holland destaca' + (hm.length > 1 ? 'n ' : ' ') + hm.map(function(k){ return HM[k]; }).join(' y ') + ', ' + (hm.length > 1 ? 'muy presentes' : 'muy presente') + ' en la vida militar.'); }
+      }
+      if(af5){
+        if(af5.dims.fisico && af5Band(af5.dims.fisico.centil) === 'high'){ score += 1; p.push('Tu autoconcepto físico es alto, una buena base para la exigencia física de la formación.'); }
+        if(af5.dims.social && af5Band(af5.dims.social.centil) === 'high'){ score += 1; p.push('Te percibes con buenas habilidades sociales, clave para el trabajo en equipo y el mando.'); }
+        if(af5.dims.emocional && af5Band(af5.dims.emocional.centil) === 'high'){ score += 1; p.push('Tu autoconcepto emocional es alto, algo que ayuda a rendir bajo presión.'); }
+        if(af5.academicoBand === 'high') academico++;
+      }
+      if(cht){
+        if(cht.areas.plan && cht.areas.plan.band === 'high'){ score += 1; p.push('Tus hábitos de planificación son sólidos: la disciplina y la organización del tiempo son el día a día de una escuela militar.'); }
+        if(cht.areas.tecnicas && cht.areas.tecnicas.band === 'high') academico++;
+      }
+      if(aptA && aptA.altas.length) academico++;
+      if(aptB && aptB.altas.length) academico++;
+      return {
+        puntos: p, ramas: ramas,
+        nivel: score >= 4 ? 'alto' : score >= 2 ? 'medio' : 'bajo'
+      };
+    }
+
     // Áreas y carreras
     var MAP_CH = { C:['E','C'], H:['S','A'], A:['A'], S:['S','I'], I:['I','R'], D:['R','E'], E:['I','C'] };
     function notasPreparacion(){
@@ -490,6 +538,47 @@
     } else {
       html += h2('Áreas y carreras para explorar') +
         '<p class="section-note">Este informe no incluye instrumentos de intereses vocacionales (CHASIDE u Holland), por lo que no propone áreas de carrera. Para obtener una orientación de carrera, conviene completar al menos uno de ellos; el resto de los resultados igualmente ayuda a conocer fortalezas y hábitos de base.</p>';
+    }
+
+    // Carrera militar: solo en informes con membrete de un colegio militar (p. ej. ?inst=comil12)
+    var militar = esColegioMilitar(membrete);
+    var encajeMil = militar ? encajeMilitar() : null;
+    if(militar){
+      var colegio = txt(membrete.institucion || membrete.nombre_marca, 'tu colegio');
+      var pts = encajeMil.puntos;
+      var areaFuerte = cha ? CHA_AREA_INFO[cha.ranked[0].letter].name : '';
+      var lectura = encajeMil.nivel === 'alto'
+        ? 'Varios de tus resultados coinciden con lo que pide y desarrolla la formación militar. Es una opción que vale la pena conocer a fondo.'
+        : encajeMil.nivel === 'medio'
+          ? 'Algunos de tus resultados coinciden con lo que pide y desarrolla la formación militar. Si te llama la atención, puedes empezar a prepararte desde ahora.'
+          : 'Tus resultados destacan sobre todo en ' + (areaFuerte ? '<b>' + areaFuerte + '</b>' : 'otras áreas') + '. El Ejército también necesita esas capacidades: hay espacio para perfiles técnicos, de servicio y de apoyo, no solo de combate.';
+      html += h2('Tu perfil y la carrera militar') +
+        '<p class="section-note">Esta sección se incluye porque estudias en <b>' + colegio + '</b>. Relaciona tus resultados con la formación en el Ejército Ecuatoriano y se suma a las recomendaciones de carrera de la sección anterior.</p>' +
+        '<h3 class="sub-title">Lo que dicen tus resultados</h3>' +
+        '<div class="conclusion-box" style="margin-bottom:18px;"><p>' + lectura + '</p>' +
+          (pts.length ? '<ul style="margin:8px 0 0 18px;padding:0;">' + pts.map(function(t){ return '<li style="margin-bottom:4px;">' + t + '</li>'; }).join('') + '</ul>' : '') + '</div>' +
+        (encajeMil.ramas.length ? '<h3 class="sub-title">Dónde pueden aportar tus fortalezas</h3><ul class="reco-list reco-box">' + encajeMil.ramas.map(function(t, i){ return '<li><span class="reco-mark">' + romano(i) + '</span><span>' + t + '</span></li>'; }).join('') + '</ul>' : '') +
+        '<h3 class="sub-title">Las dos escuelas de formación del Ejército</h3>' +
+        '<p class="section-note">Son dos caminos distintos, no uno mejor que otro. La elección depende de tus metas, del tiempo que quieras dedicar a la formación y de los requisitos de cada convocatoria.</p>' +
+        '<table class="summary-table"><thead><tr><th></th><th>ESMIL</th><th>ESFORSE</th></tr></thead><tbody>' +
+          '<tr><td><b>Nombre completo</b></td><td>Escuela Superior Militar Eloy Alfaro</td><td>Escuela de Formación de Soldados «Vencedores del Cenepa»</td></tr>' +
+          '<tr><td><b>Forma a</b></td><td>Oficiales (grado de subteniente)</td><td>Soldados de armas y servicios</td></tr>' +
+          '<tr><td><b>Duración</b></td><td>4 años, con internado</td><td>2 años, con internado</td></tr>' +
+          '<tr><td><b>Sede</b></td><td>Quito</td><td>Ambato</td></tr>' +
+          '<tr><td><b>Título</b></td><td>Licenciatura en Ciencias Militares (avalada por la ESPE)</td><td>Tecnología Superior en Ciencias Militares (avalada por la ESPE)</td></tr>' +
+          '<tr><td><b>Después</b></td><td>Mando de unidades, especialización en un arma o servicio, posgrados</td><td>Servicio activo, especialización en un arma o servicio, formación continua</td></tr>' +
+        '</tbody></table>' +
+        '<p class="section-note" style="margin-top:8px;">Los requisitos (edad, estatura, estado civil, documentos y pruebas) cambian cada año. Confirma siempre los datos en la convocatoria oficial publicada en <b>ejercitoecuatoriano.mil.ec</b>, sección Reclutamiento, antes de tomar cualquier decisión.</p>' +
+        '<h3 class="sub-title">Cómo prepararte desde ahora</h3>' +
+        '<ul class="reco-list reco-box">' + [
+          'Cuida tus notas de los últimos años: el proceso incluye pruebas académicas y la inscripción en el registro nacional de educación superior.',
+          'Entrena tu condición física con regularidad (carrera, barras, abdominales y natación): las pruebas físicas son eliminatorias y se mejoran con meses de práctica.',
+          'Habla con los oficiales e instructores de tu colegio y, si puedes, con cadetes o egresados de ambas escuelas para conocer el día a día real.',
+          'Conversa la decisión con tu familia: la formación es con internado y exige compromiso de todos.'
+        ].map(function(t, i){ return '<li><span class="reco-mark">' + romano(i) + '</span><span>' + t + '</span></li>'; }).join('') + '</ul>' +
+        '<h3 class="sub-title">Un camino que se puede combinar</h3>' +
+        '<p class="section-note">La carrera militar no cierra otras puertas. Dentro del Ejército puedes especializarte y seguir estudiando una carrera universitaria o un posgrado, y la Universidad de las Fuerzas Armadas ESPE ofrece además carreras civiles abiertas a todos los bachilleres. ' +
+          (areaFuerte ? 'Las áreas que destacan en tu perfil, como <b>' + areaFuerte + '</b>, tienen lugar tanto dentro como fuera de la institución, así que las carreras de la sección anterior siguen siendo opciones valiosas para ti.' : 'Las carreras de la sección anterior siguen siendo opciones valiosas para ti, dentro o fuera de la institución.') + '</p>';
     }
 
     // Conclusión integrada
@@ -551,6 +640,11 @@
     }
     if(aptB && aptB.bajas.length) recoE.push('Practicar de forma regular las áreas de APT-B con nivel bajo (' + aptB.bajas.map(function(d){ return d.name; }).join(', ') + ') con ejercicios breves y frecuentes.');
     if(aptA && aptA.bajas.length) recoE.push('Reforzar ' + aptA.bajas.map(function(d){ return d.name.toLowerCase(); }).join(', ') + ' con ejercicios graduados, sobre todo si la carrera elegida depende de esas habilidades.');
+    if(militar){
+      recoE.push(encajeMil.nivel === 'bajo'
+        ? 'Si la carrera militar te llama la atención, infórmate sobre la ESMIL y la ESFORSE y piensa cómo encajarían con las áreas en las que hoy destacas.'
+        : 'Considera la carrera militar como una opción real: revisa la próxima convocatoria de la ESMIL y de la ESFORSE y empieza tu preparación física y académica.');
+    }
     if(noIncluidos.length){
       recoE.push('Para una mirada más completa, se puede completar también: ' + noIncluidos.map(function(k){ return NOMBRE_TEST[k]; }).join(', ') + '. El informe se actualiza al terminarlas.');
     }
@@ -562,6 +656,9 @@
     ];
     if(af5 && af5.familiarBand === 'low'){
       recoF.push('El AF5 sugiere que ' + primerNombre + ' percibe cierta distancia o crítica en el ámbito familiar. Es recomendable mostrar apoyo explícito e incondicional durante este proceso, independientemente de la carrera que se elija.');
+    }
+    if(militar){
+      recoF.push('Si ' + primerNombre + ' muestra interés por la carrera militar, acompañarle a informarse (requisitos, vida en la escuela, internado) y apoyar su preparación física. Recordar que la carrera militar se puede combinar con estudios y especializaciones, y que las demás carreras del informe siguen abiertas.');
     }
     if(cht && cht.bajas.some(function(d){ return ['lugar','fisico','plan'].indexOf(d.key) !== -1; })){
       recoF.push('Facilitar en casa un espacio y horario fijo de estudio, y respetar ese tiempo sin interrupciones, apoya directamente los hábitos que salieron más bajos.');

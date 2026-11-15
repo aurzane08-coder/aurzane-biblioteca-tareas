@@ -542,7 +542,7 @@ img{max-width:100%;display:block;}
 </style>
 <!-- Estilos del informe integrado: compartidos con generar-informe.html (ver informe-shared.css) -->
 <link rel="stylesheet" href="informe-shared.css">
-<link rel="stylesheet" href="informe-v2.css?v=20261101a">
+<link rel="stylesheet" href="informe-v2.css?v=20261109c">
 </head>
 <body>
 
@@ -837,10 +837,10 @@ img{max-width:100%;display:block;}
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
 <script src="/aurzane-id.js"></script>
 <!-- Lógica de puntuación e interpretación del informe: compartida con generar-informe.html (ver informe-shared.js) -->
-<script src="informe-shared.js"></script>
+<script src="informe-shared.js?v=20261109c"></script>
 <!-- Informe con las evaluaciones elegidas y completadas + descargas PDF/Word -->
 <script src="informe-opciones.js?v=20261018b"></script>
-<script src="informe-v2.js?v=20261101b"></script>
+<script src="informe-v2.js?v=20261109c"></script>
 <script src="informe-export.js?v=20261018b"></script>
 <script>
   const SUPABASE_URL = 'https://chtfpqwrrarfdjcivlad.supabase.co';
@@ -1182,9 +1182,10 @@ img{max-width:100%;display:block;}
   async function mostrarAvisoInstitucion(){
     const cont = document.getElementById('instAvisoInicio');
     if(!cont || !instFromURL) return;
-    const { data } = await sb.from('membretes').select('nombre_marca,subtitulo').ilike('codigo', instFromURL).maybeSingle();
+    const { data } = await sb.from('membretes').select('nombre_marca,subtitulo,institucion').ilike('codigo', instFromURL).maybeSingle();
     if(!data) return;
-    cont.innerHTML = `<div class="inst-aviso"><span class="inst-franja"></span><span>Entraste con el enlace de <b>${escapeHtml(data.nombre_marca)}${data.subtitulo ? ' ' + escapeHtml(data.subtitulo) : ''}</b>. Tu informe llevará su membrete.</span></div>`;
+    const militar = /^comil/i.test(instFromURL) || /colegio militar|\bCOMIL\b/i.test([data.nombre_marca, data.subtitulo, data.institucion].join(' '));
+    cont.innerHTML = `<div class="inst-aviso"><span class="inst-franja"></span><span>Entraste con el enlace de <b>${escapeHtml(data.nombre_marca)}${data.subtitulo ? ' ' + escapeHtml(data.subtitulo) : ''}</b>. Tu informe llevará su membrete${militar ? ' e incluirá una sección sobre la carrera militar (ESMIL y ESFORSE), además de tus demás opciones' : ''}.</span></div>`;
   }
 
   function mostrarSelectorInicio(cliente){
