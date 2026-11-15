@@ -1010,10 +1010,12 @@ async function cargarProcesoOVP(session) {
 // ---- Mis cursos: progreso real del alumno en LEARN (mismas tablas que el curso, con RLS) ----
 // ---- Mis cursos: una tarjeta por curso con el progreso real del alumno (mismas tablas que LEARN, con RLS) ----
 const CURSOS_LEARN = [
-  { slug: "neuro-300260", titulo: "Organización morfofuncional del Sistema Nervioso", tipo: "Curso interactivo · Neurociencias", img: "https://learn.aurzane.com/cursos/portada-neuro.webp",
+  { slug: "ansiedad-dia-a-dia", titulo: "Gestionar la ansiedad en el día a día", tipo: "Curso práctico · Bienestar emocional", img: "https://learn.aurzane.com/cursos/portada-ansiedad.webp",
+    desc: "Entender la ansiedad, calmar el cuerpo, revisar los pensamientos y afrontar lo que evitas. Gratis y con certificado." },
+  { slug: "neuroanatomia-funcional", titulo: "Organización morfofuncional del Sistema Nervioso", tipo: "Curso interactivo · Neurociencias", img: "https://learn.aurzane.com/cursos/portada-neuro.webp",
     desc: "13 temas y 67 lecciones con mapas conceptuales, esquemas, tablas comparativas, tarjetas, técnica de Feynman y tests que se cierran al acertarlo todo." },
-  { slug: "metod-300263", titulo: "Metodología y técnicas de investigación en Neurociencias", tipo: "Curso interactivo · Métodos", img: "https://learn.aurzane.com/cursos/portada-metodologia.webp",
-    desc: "Estereotaxia, optogenética y terapia celular (células madre, iPSC, CRISPR, CAR-T), con nuevos temas a medida que avanza la asignatura." },
+  { slug: "tecnicas-neurociencias", titulo: "Metodología y técnicas de investigación en Neurociencias", tipo: "Curso interactivo · Métodos", img: "https://learn.aurzane.com/cursos/portada-metodologia.webp",
+    desc: "Estereotaxia, optogenética y terapia celular (células madre, iPSC, CRISPR, CAR-T), con nuevos temas próximamente." },
 ];
 function htmlCurso(c) {
   const url = "https://learn.aurzane.com/cursos.html?c=" + c.slug;
