@@ -6,7 +6,8 @@
   "fw-a2a58ebdb4",
   "fw-4fe278707a",
   "cita-97bb8e8f52",
-  "fw-cba107601c"
+  "fw-cba107601c",
+  "fw-41072391b8"
  ],
  "dias": {
   "2026-11-08": {
@@ -207,6 +208,35 @@
    "musica": {
     "url": "https://aurzane.com/marketing/musica/383175.mp3",
     "credito": "«cloudy», Guillaume Robbe (Jamendo), CC BY-SA"
+   }
+  },
+  "2026-11-15": {
+   "fecha": "2026-11-15",
+   "frase": {
+    "texto": "Cuando el dolor es insoportable, nos destruye; cuando no nos destruye, es que es soportable.",
+    "autor": "Marco Aurelio",
+    "obra": "",
+    "url": "https://aurzane.com/frases/#fw-41072391b8",
+    "fuente": "Proverbia.net"
+   },
+   "curiosidad": {
+    "titulo": "¿Funciona combinar terapia magnética y fármacos para la depresión?",
+    "texto": "Un estudio analiza sumar estimulación magnética transrepetitiva a la sertralina para la depresión adolescente en China. La investigación revisa ensayos clínicos para comprobar si combinar este tratamiento magnético con el fármaco mejora la eficacia y la seguridad frente a usar solo el medicamento. Así se evalúa el impacto en los síntomas depresivos y cognitivos de los jóvenes.",
+    "fuente": "Frontiers in Psychiatry",
+    "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13736734/"
+   },
+   "ejercicio": {
+    "titulo": "Meditación guiada de 5 minutos",
+    "url": "https://mind.aurzane.com/ejercicios/atencion-a-la-respiracion/"
+   },
+   "test": {
+    "titulo": "Test de satisfacción con la vida (felicidad) gratis",
+    "url": "https://mind.aurzane.com/test-de-satisfaccion-con-la-vida/"
+   },
+   "mas_frases": true,
+   "musica": {
+    "url": "https://aurzane.com/marketing/musica/1613588.mp3",
+    "credito": "«VolexTagamine - Violin (StepOne, music2000, ps1)», VolexOne (Jamendo), CC BY"
    }
   }
  }
