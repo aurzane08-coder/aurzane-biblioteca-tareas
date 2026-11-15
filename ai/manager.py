@@ -1044,17 +1044,48 @@ grupos = collections.defaultdict(list)
 for u in sorted(set(urls) | set(conexiones['fuera_sitemap'])):
     if MASIVAS.search(u): continue
     h = urllib.parse.urlparse(u).hostname or ''; grupos[h.split('.')[0].upper() if h != 'aurzane.com' else 'AURZANE'].append(u)
+# nombre de cada página = su título real (se guarda en caché y se renueva cada 7 días)
+tit_cache = leer('mapa_titulos.json', {})
 def nombre_url(u):
+    c = tit_cache.get(u)
+    if not c or c.get('f', '') < (datetime.date.today() - datetime.timedelta(days=7)).isoformat():
+        try:
+            st_, b_, _, _ = get(u); t_ = b_.decode('utf-8', 'replace') if st_ == 200 else ''
+            m_ = re.search(r'<title>([^<]*)</title>', t_); n_ = html.unescape(m_.group(1)).strip() if m_ else ''
+        except Exception: n_ = ''
+        n_ = re.split(r'\s+[|·–—]\s+(?=AURZANE|Aurzane)', n_)[0].strip() if n_ else ''
+        n_ = re.sub(r'^AURZANE\s+(MIND|NEXUS|LIVE|LEARN|BUILD|OVP)\s*[:·—–-]\s*', '', n_)
+        c = {'n': n_, 'f': HOY}; tit_cache[u] = c
+    if c['n']: return c['n']
     p = urllib.parse.urlparse(u).path.strip('/').split('/')[-1].replace('.html', '')
-    return (p.replace('-', ' ').capitalize() if p else (urllib.parse.urlparse(u).hostname or u))
-mapa_html = ''.join(f'<section><h2>{E(g)}</h2><ul>' + ''.join(f'<li><a href="{E(u)}">{E(nombre_url(u))}</a></li>' for u in us) + '</ul></section>' for g, us in sorted(grupos.items()))
+    return (p.replace('-', ' ').capitalize() if p and p != 'index' else 'Inicio de ' + ((urllib.parse.urlparse(u).hostname or u).split('.')[0].upper()))
+def tipo_url(u):
+    p = urllib.parse.urlparse(u).path
+    for k, r in (('Tests', r'/test-de-|/en/|/pt/|-test-|/teste-'), ('Calculadoras', r'calculadora'), ('Ejercicios guiados', r'/ejercicios/'), ('Cursos', r'/curso'),
+                 ('Bibliotecas y lectura', r'biblioteca|/libros|/recientes|/research|/frases|/leer'), ('Universidades', r'/universidades')):
+        if re.search(r, p): return k
+    return 'Páginas'
+NOMBRE_MUNDO = {'AURZANE': 'AURZANE', 'MIND': 'MIND · Mente y tests', 'NEXUS': 'NEXUS · Universidades', 'LIVE': 'LIVE · Bienestar y salud', 'LEARN': 'LEARN · Cursos', 'BUILD': 'BUILD · Vivienda y dinero', 'OVP': 'OVP · Orientación vocacional'}
+ORDEN = ['AURZANE', 'MIND', 'NEXUS', 'LIVE', 'LEARN', 'BUILD', 'OVP']
+OCULTAR = re.compile(r'/(admin|panel|ai)/|admin|generar-informe|-cliente\.html|restablecer|google[0-9a-f]+\.html|/articulo\.html$|/cursos\.html$')
+mapa_html = ''
+for g in sorted(grupos, key=lambda x: ORDEN.index(x) if x in ORDEN else 99):
+    por_tipo = collections.defaultdict(list)
+    for u in grupos[g]:
+        if OCULTAR.search(u): continue
+        por_tipo[tipo_url(u)].append((nombre_url(u), u))
+    if not por_tipo: continue
+    mapa_html += f'<section><h2>{E(NOMBRE_MUNDO.get(g, g))}</h2>' + ''.join(
+        f'<h3>{E(t)}</h3><ul>' + ''.join(f'<li><a href="{E(u)}">{E(n)}</a></li>' for n, u in sorted(set(xs), key=lambda z: z[0].lower())) + '</ul>'
+        for t, xs in sorted(por_tipo.items(), key=lambda z: (z[0] == 'Páginas', z[0]))) + '</section>'
+guardar('mapa_titulos.json', tit_cache)
 open(OUT + '/mapa/index.html', 'w', encoding='utf-8').write(
     '<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><script src="https://aurzane.com/aurzane-paleta.js"></script>'
     '<title>Mapa de AURZANE: todas las páginas</title><meta name="description" content="Todas las páginas de AURZANE en un solo lugar: tests, calculadoras, ejercicios, universidades, cursos y biblioteca.">'
     '<link rel="canonical" href="https://aurzane.com/mapa/"><link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@600;700&family=Instrument+Sans:wght@400;600&display=swap" rel="stylesheet">'
     '<style>body{margin:0;background:var(--bg,#F6F0E8);color:var(--text,#2E2620);font:16px/1.6 "Instrument Sans",system-ui,sans-serif}.h{background:#0F1530;color:#F5F3EE;padding:40px 20px}.h a{color:#EACF92}'
     '.w{max-width:1000px;margin:0 auto}h1{font:700 2.1rem "Bodoni Moda",serif;margin:6px 0}main{padding:10px 20px 60px;columns:2 300px;column-gap:40px}section{break-inside:avoid;margin:18px 0}'
-    'h2{font:700 1.1rem "Instrument Sans",sans-serif;letter-spacing:.04em;color:#5F5044;margin:0 0 6px}ul{list-style:none;padding:0;margin:0}li a{color:inherit;text-decoration:none;display:block;padding:4px 0;border-bottom:1px solid rgba(95,80,68,.12)}li a:hover{text-decoration:underline}</style></head><body>'
+    'h2{font:700 1.3rem "Bodoni Moda",serif;color:#2E2620;margin:0 0 4px}h3{font:600 .95rem "Instrument Sans",sans-serif;color:#5F5044;margin:14px 0 4px}ul{list-style:none;padding:0;margin:0}li a{color:inherit;text-decoration:none;display:block;padding:4px 0;border-bottom:1px solid rgba(95,80,68,.12)}li a:hover{text-decoration:underline}</style></head><body>'
     '<div class="h"><div class="w"><a href="https://aurzane.com/">AURZANE</a><h1>Mapa del sitio</h1><p>Todas las páginas del ecosistema. <a href="https://aurzane.com/novedades/">Ver novedades</a> · <a href="https://aurzane.com/biblioteca/">Biblioteca</a></p></div></div>'
     f'<main class="w">{mapa_html}</main></body></html>')
 # «Hoy en AURZANE»: frase, curiosidad, ejercicio, test y música tranquila del día para la portada (aurzane.com/hoy/hoy.json)

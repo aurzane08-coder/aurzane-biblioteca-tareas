@@ -74,6 +74,10 @@ UI = [
     ('Tests created and reviewed by a clinical psychologist (Psi. Cl. Adrian Sánchez Samaniego). These questionnaires are screening tools and do not replace a professional assessment. Your answers are not sent anywhere unless you are signed in and choose to save them.',
      'Testes criados e revisados por um psicólogo clínico (Psi. Cl. Adrian Sánchez Samaniego). Estes questionários são ferramentas de rastreamento e não substituem uma avaliação profissional. Suas respostas não são enviadas a lugar nenhum, a menos que você esteja conectado/a e escolha salvá-las.'),
     ('>Privacy<', '>Privacidade<'),
+    ('Validated questionnaire', 'Questionário validado'), ('<b>What it measures</b>', '<b>O que mede</b>'), ('</b>questions</span>', '</b>perguntas</span>'),
+    ('</b>min</span>', '</b>minutos</span>'), ('<b>Free</b>no sign-up', '<b>Grátis</b>sem cadastro'), ('Your result', 'Seu resultado'),
+    ('Answer every question to see your score and what it means.', 'Responda a todas as perguntas para ver sua pontuação e o que ela significa.'),
+    ("'<h2>What you can do</h2>", "'<h2>O que você pode fazer</h2>"),
     ('What is the ', 'O que é o '), ('It is a validated questionnaire. Source: ', 'É um questionário validado. Fonte: '), ('How is it scored?', 'Como é a pontuação?'),
     ('Scores range from', 'A pontuação vai de'), ('Is this a diagnosis?', 'Isto é um diagnóstico?'),
     ('No. It is a screening tool. Only a qualified professional can make a diagnosis after an interview.', 'Não. É uma ferramenta de rastreamento. Só um profissional qualificado pode fazer um diagnóstico após uma entrevista.'),
@@ -97,11 +101,11 @@ for t in TESTS:
     h = h.replace('href="https://mind.aurzane.com/en/" ', 'href="' + BASE + '" ').replace('<a href="https://mind.aurzane.com/en/">', '<a href="' + BASE + '">')
     os.makedirs(os.path.join(OUT, t['slug']), exist_ok=True)
     open(os.path.join(OUT, t['slug'], 'index.html'), 'w', encoding='utf-8').write(h)
-cards = ''.join(f'<a class="card" href="{BASE}{t["slug"]}/"><b>{t["name"]}</b><span>{len(t["items"])} perguntas · {t["scale"]}</span></a>' for t in TESTS)
+cards = ''.join(f'<a class="tx-test" href="{BASE}{t["slug"]}/"><img src="{ns["FOTO"](t["clave"], 520)}" alt="" loading="lazy" width="520" height="280"><div><b>{t["name"]}</b><span>{len(t["items"])} perguntas · {t["scale"]}</span></div></a>' for t in TESTS)
 idx = ns['indice']()
-idx = idx[:idx.index('<main')] + ('<main class="w"><h1>Testes psicológicos grátis</h1><p class="lead">Questionários validados na versão oficial em português, com resultado imediato e explicado. '
-       'Criados e revisados por um psicólogo clínico. Grátis e anônimos.</p><div class="grid">' + cards + '</div><p class="small">Também em <a href="https://mind.aurzane.com/en/" hreflang="en">inglês</a> e '
-       '<a href="https://mind.aurzane.com/" hreflang="es">espanhol</a>.</p></main>') + idx[idx.index('<footer'):]
+idx = idx[:idx.index('<main')] + ('<main class="tx-indice"><section class="tx-hero"><div class="w"><div><span class="tx-chip">MIND · Português</span><h1>Testes psicológicos grátis</h1><p class="lead">Questionários validados na versão oficial em português, com resultado imediato e explicado. '
+       'Criados e revisados por um psicólogo clínico. Grátis e anônimos.</p></div></div></section><div class="w tx-cuerpo"><div class="tx-rejilla">' + cards + '</div><p class="small">Também em <a href="https://mind.aurzane.com/en/" hreflang="en">inglês</a> e '
+       '<a href="https://mind.aurzane.com/" hreflang="es">espanhol</a>.</p></div></main>') + idx[idx.index('<footer'):]
 idx = traducir(idx).replace('Free psychological tests in English | AURZANE', 'Testes psicológicos grátis em português | AURZANE')
 idx = re.sub(r'<link rel="canonical"[^>]*>', f'<link rel="canonical" href="{BASE}">', idx)
 idx = re.sub(r'<link rel="alternate" hreflang="en"[^\n]*', f'<link rel="alternate" hreflang="pt-BR" href="{BASE}"><link rel="alternate" hreflang="en" href="https://mind.aurzane.com/en/"><link rel="alternate" hreflang="es" href="https://mind.aurzane.com/"><link rel="alternate" hreflang="x-default" href="https://mind.aurzane.com/">', idx, count=1)

@@ -140,3 +140,14 @@ https://ovp.aurzane.com/index.html
 https://ovp.aurzane.com/informe-ejemplo.html
 https://ovp.aurzane.com/portal.html
 https://ovp.aurzane.com/restablecer-contrasena.html
+https://mind.aurzane.com/test-de-personalidad/p/cometa/
+https://mind.aurzane.com/test-de-personalidad/p/faro/
+https://mind.aurzane.com/test-de-personalidad/p/fogata/
+https://mind.aurzane.com/test-de-personalidad/p/horizonte/
+https://mind.aurzane.com/test-de-personalidad/p/prisma/
+https://mind.aurzane.com/test-de-personalidad/p/puente/
+https://mind.aurzane.com/test-de-personalidad/p/raiz/
+https://mind.aurzane.com/test-de-personalidad/p/remanso/
+https://mind.aurzane.com/test-de-personalidad/p/sol/
+https://mind.aurzane.com/test-de-personalidad/p/telescopio/
+https://mind.aurzane.com/test-de-personalidad/p/timon/

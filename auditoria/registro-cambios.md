@@ -32,3 +32,18 @@ Preguntas, puntuaciones, fórmulas y resultados de tests y calculadoras; datos d
 - Portada de aurzane.com rehecha desde `portada/generar.py` (+ `portada.css`, `portada.js`): cabecera con foto y buscador, seis necesidades, Hoy en AURZANE, tests con foto, ejercicios, orientación, calculadoras, cursos, biblioteca, novedades del feed, confianza y preguntas frecuentes. Cifras de libros, tests y artículos leídas de datos reales.
 - Fichas `ref-*.html` duplicadas y rotas en la raíz: redirección 301 a su ficha de la biblioteca y copia movida a eliminar (`parche-ref.yml`).
 - Auditoría total: 142 páginas (todas las de cada mundo y muestras de cada plantilla generada), 4 anchos, axe.
+
+## Cuarta ronda: revisión total página a página (15/11/2026, noche)
+Revisadas las 140 plantillas auditadas en escritorio y móvil, con capturas completas.
+- Cabecera: la segunda fila de aurzane.com solo aparece en las páginas de conocimiento (biblioteca, libros, artículos, Research Hub, frases, novedades, temas y mapa); la cuenta, el contacto y lo legal ya no la repiten.
+- Pie: se ocultan los pies mínimos de plantilla (correo + ©) que repetían el pie común (Mi AURZANE, portal OVP).
+- Portadas de mundo: se ocultan los accesos rápidos (Guías, Mis guardados, Biblioteca, Ecosistema…) que repetían la navegación.
+- Tarjetas de tests y calculadoras: foto real en lugar de emoji en portadas de mundo y «Más herramientas» (`aurzane-estilo.js` v24).
+- Calculadoras: cada una con su foto (agua, calorías, IMC, embarazo, edad, días entre fechas, porcentajes, sueldo neto, nota PAU); antes muchas repetían la misma.
+- Biblioteca y tienda: el librero pasa al final del contenido en lugar de aparecer antes del libro o del catálogo.
+- Tests en inglés y portugués: plantilla nueva igual a la de los tests en español (cabecera morada con foto, preguntas en tarjeta, resultado al lado). Preguntas, opciones, puntuación y niveles sin cambios (`tests_en/gen.py`, `tests_pt/gen.py`).
+- Mapa del sitio: cada página con su título real, agrupada por mundo y tipo (`ai/manager.py`).
+- Portada: la foto del test de personalidad ya no ocupa media pantalla.
+- Tuteo: 12 frases más (Mi AURZANE, OVP, NEXUS).
+- Contraste y anchos: informe OVP de ejemplo, «Volver» de los artículos de mundo, libros abiertos recientes en móvil, aviso de traducción.
+- Auditoría: recorre cada página antes de capturarla para que carguen las imágenes diferidas; añadidos los 11 perfiles del test de personalidad.

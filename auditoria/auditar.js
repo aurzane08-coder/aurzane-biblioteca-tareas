@@ -28,7 +28,10 @@ const nombre = u => u.replace(/^https:\/\//, '').replace(/[^a-z0-9]+/gi, '_').re
         const t0 = Date.now();
         await p.goto(url, { waitUntil: 'networkidle', timeout: 45000 }).catch(async () => { await p.waitForTimeout(3000); });
         r.carga_ms = Date.now() - t0;
-        await p.waitForTimeout(1200);
+        await p.waitForTimeout(800);
+        /* recorre la página para que carguen las imágenes diferidas, como haría una persona */
+        await p.evaluate(async () => { const h = () => document.documentElement.scrollHeight; for (let y = 0; y < h(); y += Math.round(innerHeight * .8)) { scrollTo(0, y); await new Promise(r => setTimeout(r, 120)); } scrollTo(0, 0); }).catch(() => {});
+        await p.waitForTimeout(900);
         Object.assign(r, await p.evaluate(() => {
           const vw = document.documentElement.clientWidth;
           const anchos = [...document.querySelectorAll('body *')].filter(e => { const b = e.getBoundingClientRect(); const s = getComputedStyle(e); return b.right > vw + 2 && b.width > 0 && s.position !== 'fixed' && s.visibility !== 'hidden'; })

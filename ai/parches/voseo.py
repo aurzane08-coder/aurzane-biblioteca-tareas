@@ -11,7 +11,11 @@ P = [('Hola, iniciá sesión<small>Accedé a todo el', 'Hola, inicia sesión<sma
      ('Todavía no guardaste ningún artículo. Hacé clic', 'Todavía no has guardado ningún artículo. Haz clic'), ('Elegí, entre las', 'Elige, entre las'),
      ('Elegí la opción correcta', 'Elige la opción correcta'), ('elegí la opción que', 'elige la opción que'), ('o elegí "Todos"', 'o elige "Todos"'),
      ('Elegí tu nueva contraseña', 'Elige tu nueva contraseña'), ('seguí adelante', 'sigue adelante'), ('Creá el primero', 'Crea el primero'), ('guardá enlaces', 'guarda enlaces'),
-     ('Mapeá tus prioridades:</strong> Hacé una lista', 'Haz un mapa de tus prioridades:</strong> Haz una lista'), ('seguí la guía', 'sigue la guía'), ('Escribí el contenido', 'Escribe el contenido'), ('Escribinos', 'Escríbenos'), ('escribinos', 'escríbenos')]
+     ('Mapeá tus prioridades:</strong> Hacé una lista', 'Haz un mapa de tus prioridades:</strong> Haz una lista'), ('seguí la guía', 'sigue la guía'), ('Escribí el contenido', 'Escribe el contenido'), ('Descubrí cómo orientar', 'Descubre cómo orientar'), ('revisá que hayas respondido', 'revisa que hayas respondido'), ('revisá tu correo', 'revisa tu correo'),
+     ('revisá tu bandeja', 'revisa tu bandeja'), ('querés profundizar', 'quieres profundizar'), ('marcá si está', 'marca si está'), ('marcá "Ninguna de ellas"', 'marca "Ninguna de ellas"'),
+     ('Marcá la letra', 'Marca la letra'), ('Iniciá sesión una sola vez y accedé', 'Inicia sesión una sola vez y accede'), ('Hacé una lista de lo que considerás', 'Haz una lista de lo que consideras'),
+     ('Explorá planes de estudio:</strong> Descargá', 'Explora planes de estudio:</strong> Descarga'), ('Elegí cómo se ve tu cuenta', 'Elige cómo se ve tu cuenta'),
+     ('Escribinos', 'Escríbenos'), ('escribinos', 'escríbenos')]
 pat = re.compile(r'(?<![\wáéíóúñ])(' + '|'.join(sorted(M, key=len, reverse=True)) + r')(?![\wáéíóúñ])', re.I)
 base = sys.argv[1]; hoy = datetime.datetime.now().strftime('%Y%m%d-%H%M'); n = 0
 for web in ['aurzane.com', 'mind.aurzane.com', 'live.aurzane.com', 'learn.aurzane.com', 'nexus.aurzane.com', 'build.aurzane.com', 'ovp.aurzane.com']:
