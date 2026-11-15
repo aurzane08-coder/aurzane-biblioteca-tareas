@@ -66,9 +66,18 @@
   "receta": "reintentar_flujo",
   "motivo": "El HTML inicial carga correctamente con estado 200 pero faltan elementos interactivos, lo que indica un fallo en la compilación o despliegue del script del test mediante GitHub Actions.",
   "explicacion": "El servidor responde bien pero el motor de renderizado del test no inyecta las preguntas. La causa más probable es un error de JavaScript o un fallo en el pipeline de GitHub Actions al compilar los assets estáticos. Si la acción automática no lo resuelve, revisa manualmente la consola del navegador en busca de errores de JS y comprueba el último commit en el repositorio de GitHub.",
-  "ok": 6,
+  "ok": 7,
   "fallo": 0,
   "fecha": "2026-11-13",
   "ejemplo": "Prueba fallida en https://mind.aurzane.com/test-de-ansiedad/: No aparecen las preguntas del test"
+ },
+ "prueba_fallida|prueba fallida en # carga bien (# campos) · error de javascript: undefined": {
+  "receta": "avisar",
+  "motivo": "Error de JavaScript indefinido detectado en la calculadora de IMC de live.aurzane.com.",
+  "explicacion": "El error JavaScript de tipo undefined suele deberse a un script externo que no ha cargado correctamente (como aurzane-paleta.js) o a una función que intenta leer una propiedad de un elemento DOM que aún no se ha renderizado. Para solucionarlo a mano, inspecciona la consola del navegador en la URL afectada para identificar la línea exacta del fallo, verifica que los scripts carguen de forma síncrona o con el evento DOMContentLoaded, y comprueba que todos los selectores de los 9 campos existan en el HTML.",
+  "ok": 0,
+  "fallo": 0,
+  "fecha": "2026-11-15",
+  "ejemplo": "Prueba fallida en https://live.aurzane.com/calculadora-imc/: Carga bien (9 campos) · error de JavaScript: undefined"
  }
 }
