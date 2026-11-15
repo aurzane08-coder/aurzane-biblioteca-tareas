@@ -1,0 +1,25 @@
+name: Consulta al servidor
+# Solo lectura: ejecuta una orden de diagnóstico (du, ls, df...) en el servidor y muestra el resultado en el registro.
+on:
+  workflow_dispatch:
+    inputs:
+      orden:
+        description: 'Orden de solo lectura'
+        required: true
+permissions:
+  contents: read
+jobs:
+  consulta:
+    runs-on: ubuntu-latest
+    env:
+      SG_KEY: ${{ secrets.SG_KEY }}
+      SG_HOST: ${{ secrets.SG_HOST }}
+      SG_USER: ${{ secrets.SG_USER }}
+      SG_PORT: ${{ secrets.SG_PORT }}
+      SG_PASS: ${{ secrets.SG_PASS }}
+      ORDEN: ${{ github.event.inputs.orden }}
+    steps:
+      - run: |
+          mkdir -p ~/.ssh && printf '%s\n' "$SG_KEY" | tr -d '\r' > ~/.ssh/id && chmod 600 ~/.ssh/id
+          if [ -n "$SG_PASS" ]; then ssh-keygen -p -P "$SG_PASS" -N "" -f ~/.ssh/id >/dev/null; fi
+          ssh -i ~/.ssh/id -p ${SG_PORT:-18765} -o StrictHostKeyChecking=accept-new "$SG_USER@$SG_HOST" "$ORDEN" 2>&1 | sed 's/^/>> /'
