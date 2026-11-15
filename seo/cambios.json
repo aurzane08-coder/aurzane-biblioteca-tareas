@@ -44,5 +44,76 @@
    "texas a"
   ],
   "via": "univ"
+ },
+ {
+  "fecha": "2026-11-15",
+  "url": "https://nexus.aurzane.com/universidades/ecuador/ciudad/manta/",
+  "antes": {
+   "titulo": "Universidades en Manta: 4 opciones y 93 carreras (2026)",
+   "desc": "¿Cuántas universidades hay en Manta? Hay 4 (2 públicas y 2 privadas): Universidad Laica Eloy Alfaro de Manabí, Instituto Superior Tecnológico Luis Arboleda Martínez y Instituto Superior Tecnológico Faro y más. Compara sus 93 carreras, modalidades y web oficial.",
+   "clics": 2,
+   "impresiones": 96,
+   "ctr": 0.0208,
+   "posicion": 6.2
+  },
+  "despues": {
+   "titulo": "Universidades en Manta: Carreras y Centros | AURZANE",
+   "desc": "Conoce las 4 universidades e institutos de Manta, incluida la ULEAM. Compara 93 carreras, centros públicos y privados y sus modalidades."
+  },
+  "motivo": "Se ajusta la longitud para evitar que Google corte el texto e incorpora la mención a la ULEAM y las carreras para responder a las búsquedas de mayor intención.",
+  "consultas": [
+   "universidades en manta",
+   "universidad de manta",
+   "universidades de manta",
+   "universidad en manta",
+   "universidad manta"
+  ],
+  "via": "univ"
+ },
+ {
+  "fecha": "2026-11-15",
+  "url": "https://nexus.aurzane.com/universidades/ecuador/instituto-superior-tecnologico-el-condor/",
+  "antes": {
+   "titulo": "Instituto Superior Tecnológico \"el Cóndor\": 6 carreras | Universidades de Ecuador",
+   "desc": "Instituto Superior Tecnológico \"el Cóndor\" (Ambato, Tungurahua, Ecuador): sus 6 carreras, tipo privada, ciudad y web oficial.",
+   "clics": 0,
+   "impresiones": 82,
+   "ctr": 0.0,
+   "posicion": 9.1
+  },
+  "despues": {
+   "titulo": "Instituto El Condor: carreras y sede | AURZANE",
+   "desc": "descubre el instituto superior tecnologico el condor en ambato, ecuador. conoce sus 6 carreras, tipo de institucion y toda la informacion util."
+  },
+  "motivo": "se incluye el termino exacto que busca el usuario al principio del titulo y se detalla el contenido util en la descripcion para mejorar el ctr.",
+  "consultas": [
+   "instituto el condor"
+  ],
+  "via": "univ"
+ },
+ {
+  "fecha": "2026-11-15",
+  "url": "https://nexus.aurzane.com/universidades/notas-de-corte/psicologia/",
+  "antes": {
+   "titulo": "Nota de corte de Psicología 2025-2026: 34 universidades",
+   "desc": "Notas de corte de Psicología en 34 universidades públicas de España (curso 2025-2026): la más alta es 11,41 en la Universidad de Sevilla y la más baja 5,13. Datos oficiales del Ministerio.",
+   "clics": 0,
+   "impresiones": 97,
+   "ctr": 0.0,
+   "posicion": 10.9
+  },
+  "despues": {
+   "titulo": "Nota de corte Psicología 2026: 34 universidades",
+   "desc": "Consulta la nota de corte de Psicología en 34 universidades públicas de España para el curso 2026. Datos oficiales actualizados en Aurzane."
+  },
+  "motivo": "Se optimiza el título para que quepa exacto y la descripción incluye llamada a la acción y datos de las 34 universidades para captar clics.",
+  "consultas": [
+   "nota de corte psicologia",
+   "nota de corte de psicologia",
+   "nota corte psicologia",
+   "psicologia nota de corte",
+   "nota de corte psicologia 2026"
+  ],
+  "via": "univ"
  }
 ]

@@ -126,5 +126,29 @@
    }
   ],
   "fecha": "2026-11-14"
+ },
+ "https://nexus.aurzane.com/universidades/mexico/universidad-de-monterrey-udem/": {
+  "titulo": "Guía de orientación vocacional para la UDEM",
+  "parrafos": [
+   "La Universidad de Monterrey (UDEM) es una institución privada ubicada en San Pedro Garza García, Nuevo León, que ofrece diversas opciones académicas organizadas en cinco áreas y facultades principales: Derecho y Ciencias Sociales, Humanidades y Educación, Ingeniería y Tecnología, Negocios y Salud. Para conocer la oferta completa de carreras disponibles, es necesario consultar directamente su sitio web oficial.",
+   "El acceso a la educación superior en México requiere contar con el certificado de bachillerato o preparatoria y superar un proceso de selección que normalmente incluye el examen de admisión propio de cada universidad o pruebas estandarizadas como el EXANI-II. Las licenciaturas suelen tener una duración estimada entre cuatro y cinco años y, al tratarse de una universidad privada, es fundamental verificar que los programas cuenten con el debido Reconocimiento de Validez Oficial de Estudios (RVOE).",
+   "Elegir la carrera adecuada requiere un análisis detallado que va más allá del prestigio institucional, por lo que se recomienda comparar los planes de estudio, las modalidades de impartición, las oportunidades de prácticas profesionales y las salidas laborales. Realizar un test vocacional previo es una herramienta muy útil para alinear tus intereses personales y aptitudes con la opción profesional que mejor se adapte a tu perfil.",
+   "Estudiar en San Pedro Garza García, dentro del estado de Nuevo León, ofrece un entorno universitario dinámico y en una región clave para el desarrollo económico y educativo del país. La vida estudiantil combina el crecimiento académico con las ventajas de una zona metropolitana moderna, facilitando la integración de los futuros profesionales en la comunidad."
+  ],
+  "faq": [
+   {
+    "p": "¿La Universidad de Monterrey (UDEM) es una institución pública o privada?",
+    "r": "La Universidad de Monterrey (UDEM) es una institución de carácter privado situada en el estado de Nuevo León. Puedes consultar más detalles sobre su oferta académica directamente en sus canales oficiales."
+   },
+   {
+    "p": "¿Qué se puede estudiar en la Universidad de Monterrey (UDEM)?",
+    "r": "La institución cuenta con cinco áreas y facultades que abarcan campos como Derecho y Ciencias Sociales, Humanidades y Educación, Ingeniería y Tecnología, Negocios y Salud. La lista completa de carreras debe consultarse en su web oficial."
+   },
+   {
+    "p": "¿Cómo es el acceso a la universidad en México?",
+    "r": "Para ingresar a la licenciatura se necesita el certificado de bachillerato o preparatoria y aprobar el examen de admisión correspondiente. Muchas universidades utilizan su propio examen o el sistema EXANI-II del CENEVAL."
+   }
+  ],
+  "fecha": "2026-11-15"
  }
 }

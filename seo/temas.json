@@ -627,5 +627,62 @@
   "pais_nombre": "Panamá",
   "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al número de emergencias del país. ",
   "fecha": "2026-11-14"
+ },
+ {
+  "consulta": "california universidades",
+  "titulo": "Estudiar en California: Guía de universidades y opciones para latinos",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "fecha": "2026-11-15"
+ },
+ {
+  "consulta": "licenciaturas en parís",
+  "titulo": "Licenciaturas en París: Carreras, requisitos y vida universitaria",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "fecha": "2026-11-15"
+ },
+ {
+  "consulta": "universidad amsterdam",
+  "titulo": "Universidad de Ámsterdam: Oferta académica y cómo acceder",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "fecha": "2026-11-15"
+ },
+ {
+  "consulta": "notas de corte magisterio infantil",
+  "titulo": "Notas de corte para Magisterio Infantil: Todo lo que debes saber",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "fecha": "2026-11-15"
+ },
+ {
+  "consulta": "libros kristin neff",
+  "titulo": "Los mejores libros de Kristin Neff sobre autocompasión",
+  "mundo": "mind",
+  "test": "autocompasion",
+  "fecha": "2026-11-15"
+ },
+ {
+  "consulta": "universidades privadas en paraguay",
+  "titulo": "Universidades privadas en Paraguay: cómo elegir carrera y centro de estudio",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "oferta": "universidades",
+  "pais": "PRY",
+  "pais_nombre": "Paraguay",
+  "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al número de emergencias del país. ",
+  "fecha": "2026-11-15"
+ },
+ {
+  "consulta": "ansiedad por el estatus",
+  "titulo": "Ansiedad por el estatus en Paraguay: claves psicológicas para superarla",
+  "mundo": "mind",
+  "test": "ansiedad",
+  "oferta": "libros",
+  "pais": "PRY",
+  "pais_nombre": "Paraguay",
+  "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al número de emergencias del país. ",
+  "fecha": "2026-11-15"
  }
 ]
