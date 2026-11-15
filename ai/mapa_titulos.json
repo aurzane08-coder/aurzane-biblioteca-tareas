@@ -1,0 +1,902 @@
+{
+ "https://aurzane.com/": {
+  "n": "AURZANE: tests psicológicos gratis, calculadoras y libros de psicología",
+  "f": "2026-11-15"
+ },
+ "https://aurzane.com/aviso-legal.html": {
+  "n": "Aviso legal de AURZANE",
+  "f": "2026-11-15"
+ },
+ "https://aurzane.com/biblioteca/": {
+  "n": "Biblioteca de psicología gratis en español: libros en PDF",
+  "f": "2026-11-15"
+ },
+ "https://aurzane.com/biblioteca/recientes/": {
+  "n": "Libros abiertos y estudios recientes de psicología",
+  "f": "2026-11-15"
+ },
+ "https://aurzane.com/biblioteca/recientes/pmc-PMC13740361/": {
+  "n": "Burnout and Related Occupational and Psychological Outcomes Among Emergency Nurses in Saud | Leer gratis en AURZANE",
+  "f": "2026-11-15"
+ },
+ "https://aurzane.com/biblioteca/recientes/pmc-PMC13748345/": {
+  "n": "Person-centered, trauma-informed care and support for resilience after intimate partner vi | Leer gratis en AURZANE",
+  "f": "2026-11-15"
+ },
+ "https://aurzane.com/biblioteca/tema/mindfulness-meditacion-y-conciencia.html": {
+  "n": "Libros de mindfulness, meditación y conciencia gratis en PDF",
+  "f": "2026-11-15"
+ },
+ "https://aurzane.com/biblioteca/tema/personalidad-e-identidad.html": {
+  "n": "Libros de personalidad e identidad en español gratis (PDF)",
+  "f": "2026-11-15"
+ },
+ "https://aurzane.com/colegios/": {
+  "n": "Orientación vocacional para colegios",
+  "f": "2026-11-15"
+ },
+ "https://aurzane.com/condiciones.html": {
+  "n": "Condiciones de uso",
+  "f": "2026-11-15"
+ },
+ "https://aurzane.com/contacto.html": {
+  "n": "Contacto",
+  "f": "2026-11-15"
+ },
+ "https://aurzane.com/cookies.html": {
+  "n": "Política de cookies de AURZANE",
+  "f": "2026-11-15"
+ },
+ "https://aurzane.com/frases/": {
+  "n": "Frases célebres para pensar y sentirte mejor",
+  "f": "2026-11-15"
+ },
+ "https://aurzane.com/index.html": {
+  "n": "AURZANE: tests psicológicos gratis, calculadoras y libros de psicología",
+  "f": "2026-11-15"
+ },
+ "https://aurzane.com/libros/": {
+  "n": "Tienda de libros: gratis y de pago, psicología, novela y más",
+  "f": "2026-11-15"
+ },
+ "https://aurzane.com/libros/1984-george-orwell/": {
+  "n": "1984, de George Orwell: de qué trata y dónde comprarlo",
+  "f": "2026-11-15"
+ },
+ "https://aurzane.com/libros/aprende-a-descansar-jana-fernandez/": {
+  "n": "Aprende a descansar, de Jana Fernández: de qué trata y dónde comprarlo",
+  "f": "2026-11-15"
+ },
+ "https://aurzane.com/libros/breve-historia-de-espana-fernando-garcia-de-cortazar/": {
+  "n": "Breve historia de España, de Fernando García de Cortázar: de qué trata y dónde comprarlo",
+  "f": "2026-11-15"
+ },
+ "https://aurzane.com/libros/cien-anos-de-soledad-gabriel-garcia-marquez/": {
+  "n": "Cien años de soledad, de Gabriel García Márquez: de qué trata y dónde comprarlo",
+  "f": "2026-11-15"
+ },
+ "https://aurzane.com/libros/como-hacer-que-te-pasen-cosas-buenas-marian-rojas-estape/": {
+  "n": "Cómo hacer que te pasen cosas buenas, de Marian Rojas Estapé: de qué trata y dónde comprarlo",
+  "f": "2026-11-15"
+ },
+ "https://aurzane.com/libros/cosmos-carl-sagan/": {
+  "n": "Cosmos, de Carl Sagan: de qué trata y dónde comprarlo",
+  "f": "2026-11-15"
+ },
+ "https://aurzane.com/libros/crear-o-morir-andres-oppenheimer/": {
+  "n": "Crear o morir, de Andrés Oppenheimer: de qué trata y dónde comprarlo",
+  "f": "2026-11-15"
+ },
+ "https://aurzane.com/libros/disciplina-sin-lagrimas-daniel-j-siegel/": {
+  "n": "Disciplina sin lágrimas, de Daniel J. Siegel: de qué trata y dónde comprarlo",
+  "f": "2026-11-15"
+ },
+ "https://aurzane.com/libros/don-quijote-de-la-mancha-miguel-de-cervantes/": {
+  "n": "Don Quijote de la Mancha, de Miguel de Cervantes: de qué trata y dónde comprarlo",
+  "f": "2026-11-15"
+ },
+ "https://aurzane.com/libros/educar-con-inteligencia-emocional-maurice-j-elias/": {
+  "n": "Educar con inteligencia emocional, de Maurice J. Elias: de qué trata y dónde comprarlo",
+  "f": "2026-11-15"
+ },
+ "https://aurzane.com/libros/educar-en-el-asombro-catherine-l-ecuyer/": {
+  "n": "Educar en el asombro, de Catherine L'Ecuyer: de qué trata y dónde comprarlo",
+  "f": "2026-11-15"
+ },
+ "https://aurzane.com/libros/el-arte-de-no-amargarse-la-vida-rafael-santandreu/": {
+  "n": "El arte de no amargarse la vida, de Rafael Santandreu: de qué trata y dónde comprarlo",
+  "f": "2026-11-15"
+ },
+ "https://aurzane.com/libros/el-caballero-de-la-armadura-oxidada-robert-fisher/": {
+  "n": "El caballero de la armadura oxidada, de Robert Fisher: de qué trata y dónde comprarlo",
+  "f": "2026-11-15"
+ },
+ "https://aurzane.com/libros/el-cerebro-del-nino-daniel-j-siegel/": {
+  "n": "El cerebro del niño, de Daniel J. Siegel: de qué trata y dónde comprarlo",
+  "f": "2026-11-15"
+ },
+ "https://aurzane.com/libros/el-dia-que-se-perdio-la-cordura-javier-castillo/": {
+  "n": "El día que se perdió la cordura, de Javier Castillo: de qué trata y dónde comprarlo",
+  "f": "2026-11-15"
+ },
+ "https://aurzane.com/libros/el-director-david-jimenez/": {
+  "n": "El director, de David Jiménez: de qué trata y dónde comprarlo",
+  "f": "2026-11-15"
+ },
+ "https://aurzane.com/libros/el-elemento-ken-robinson/": {
+  "n": "El elemento, de Ken Robinson: de qué trata y dónde comprarlo",
+  "f": "2026-11-15"
+ },
+ "https://aurzane.com/libros/el-elemento-sir-ken-robinson/": {
+  "n": "El elemento, de Sir Ken Robinson: de qué trata y dónde comprarlo",
+  "f": "2026-11-15"
+ },
+ "https://aurzane.com/libros/el-error-de-descartes-antonio-damasio/": {
+  "n": "El error de Descartes, de Antonio Damasio: de qué trata y dónde comprarlo",
+  "f": "2026-11-15"
+ },
+ "https://aurzane.com/libros/el-fin-del-trabajo-jeremy-rifkin/": {
+  "n": "El fin del trabajo, de Jeremy Rifkin: de qué trata y dónde comprarlo",
+  "f": "2026-11-15"
+ },
+ "https://aurzane.com/libros/el-gen-egoista-richard-dawkins/": {
+  "n": "El gen egoísta, de Richard Dawkins: de qué trata y dónde comprarlo",
+  "f": "2026-11-15"
+ },
+ "https://aurzane.com/libros/el-infinito-en-un-junco-irene-vallejo/": {
+  "n": "El infinito en un junco, de Irene Vallejo: de qué trata y dónde comprarlo",
+  "f": "2026-11-15"
+ },
+ "https://aurzane.com/libros/el-juego-interior-del-tenis-w-timothy-gallwey/": {
+  "n": "El juego interior del tenis, de W. Timothy Gallwey: de qué trata y dónde comprarlo",
+  "f": "2026-11-15"
+ },
+ "https://aurzane.com/libros/el-mapa-del-tiempo-felix-j-palma/": {
+  "n": "El mapa del tiempo, de Félix J. Palma: de qué trata y dónde comprarlo",
+  "f": "2026-11-15"
+ },
+ "https://aurzane.com/libros/el-monstruo-de-colores-anna-llenas/": {
+  "n": "El monstruo de colores, de Anna Llenas: de qué trata y dónde comprarlo",
+  "f": "2026-11-15"
+ },
+ "https://aurzane.com/libros/el-poder-de-los-habitos-charles-duhigg/": {
+  "n": "El poder de los hábitos, de Charles Duhigg: de qué trata y dónde comprarlo",
+  "f": "2026-11-15"
+ },
+ "https://aurzane.com/libros/el-poder-de-los-introvertidos-susan-cain/": {
+  "n": "El poder de los introvertidos, de Susan Cain: de qué trata y dónde comprarlo",
+  "f": "2026-11-15"
+ },
+ "https://aurzane.com/libros/el-poder-del-ahora-eckhart-tolle/": {
+  "n": "El poder del ahora, de Eckhart Tolle: de qué trata y dónde comprarlo",
+  "f": "2026-11-15"
+ },
+ "https://aurzane.com/libros/el-principito-antoine-de-saint-exupery/": {
+  "n": "El principito, de Antoine de Saint-Exupéry: de qué trata y dónde comprarlo",
+  "f": "2026-11-15"
+ },
+ "https://aurzane.com/libros/el-siglo-de-la-soledad-noreena-hertz/": {
+  "n": "El siglo de la soledad, de Noreena Hertz: de qué trata y dónde comprarlo",
+  "f": "2026-11-15"
+ },
+ "https://aurzane.com/libros/el-sueno-de-los-heroes-adolfo-bioy-casares/": {
+  "n": "El sueño de los héroes, de Adolfo Bioy Casares: de qué trata y dónde comprarlo",
+  "f": "2026-11-15"
+ },
+ "https://aurzane.com/libros/el-valor-de-la-atencion-johann-hari/": {
+  "n": "El valor de la atención, de Johann Hari: de qué trata y dónde comprarlo",
+  "f": "2026-11-15"
+ },
+ "https://aurzane.com/libros/encuentra-tu-persona-vitamina-marian-rojas-estape/": {
+  "n": "Encuentra tu persona vitamina, de Marian Rojas Estapé: de qué trata y dónde comprarlo",
+  "f": "2026-11-15"
+ },
+ "https://aurzane.com/libros/habitos-atomicos-james-clear/": {
+  "n": "Hábitos atómicos, de James Clear: de qué trata y dónde comprarlo",
+  "f": "2026-11-15"
+ },
+ "https://aurzane.com/libros/independizate-de-papa-estado-carlos-galan/": {
+  "n": "Independízate de papá estado, de Carlos Galán: de qué trata y dónde comprarlo",
+  "f": "2026-11-15"
+ },
+ "https://aurzane.com/libros/inteligencia-emocional-daniel-goleman/": {
+  "n": "Inteligencia emocional, de Daniel Goleman: de qué trata y dónde comprarlo",
+  "f": "2026-11-15"
+ },
+ "https://aurzane.com/libros/invisible-eloy-moreno/": {
+  "n": "Invisible, de Eloy Moreno: de qué trata y dónde comprarlo",
+  "f": "2026-11-15"
+ },
+ "https://aurzane.com/libros/la-buena-cocina-karlos-arguinano/": {
+  "n": "La buena cocina, de Karlos Arguiñano: de qué trata y dónde comprarlo",
+  "f": "2026-11-15"
+ },
+ "https://aurzane.com/libros/la-casa-de-los-espiritus-isabel-allende/": {
+  "n": "La casa de los espíritus, de Isabel Allende: de qué trata y dónde comprarlo",
+  "f": "2026-11-15"
+ },
+ "https://aurzane.com/libros/la-chica-del-tren-paula-hawkins/": {
+  "n": "La chica del tren, de Paula Hawkins: de qué trata y dónde comprarlo",
+  "f": "2026-11-15"
+ },
+ "https://aurzane.com/libros/la-conquista-de-la-felicidad-bertrand-russell/": {
+  "n": "La conquista de la felicidad, de Bertrand Russell: de qué trata y dónde comprarlo",
+  "f": "2026-11-15"
+ },
+ "https://aurzane.com/libros/la-naranja-mecanica-anthony-burgess/": {
+  "n": "La naranja mecánica, de Anthony Burgess: de qué trata y dónde comprarlo",
+  "f": "2026-11-15"
+ },
+ "https://aurzane.com/libros/la-riqueza-de-las-naciones-adam-smith/": {
+  "n": "La riqueza de las naciones, de Adam Smith: de qué trata y dónde comprarlo",
+  "f": "2026-11-15"
+ },
+ "https://aurzane.com/libros/la-rueda-de-la-vida-elisabeth-kubler-ross/": {
+  "n": "La rueda de la vida, de Elisabeth Kübler-Ross: de qué trata y dónde comprarlo",
+  "f": "2026-11-15"
+ },
+ "https://aurzane.com/libros/la-sombra-del-viento-carlos-ruiz-zafon/": {
+  "n": "La sombra del viento, de Carlos Ruiz Zafón: de qué trata y dónde comprarlo",
+  "f": "2026-11-15"
+ },
+ "https://aurzane.com/libros/la-tierra-herida-miguel-delibes/": {
+  "n": "La tierra herida, de Miguel Delibes: de qué trata y dónde comprarlo",
+  "f": "2026-11-15"
+ },
+ "https://aurzane.com/libros/las-gafas-de-la-felicidad-rafael-santandreu/": {
+  "n": "Las gafas de la felicidad, de Rafael Santandreu: de qué trata y dónde comprarlo",
+  "f": "2026-11-15"
+ },
+ "https://aurzane.com/libros/las-madres-carmen-mola/": {
+  "n": "Las madres, de Carmen Mola: de qué trata y dónde comprarlo",
+  "f": "2026-11-15"
+ },
+ "https://aurzane.com/libros/limites-henry-cloud/": {
+  "n": "Límites, de Henry Cloud: de qué trata y dónde comprarlo",
+  "f": "2026-11-15"
+ },
+ "https://aurzane.com/libros/los-7-habitos-de-la-gente-altamente-efectiva-stephen-r-covey/": {
+  "n": "Los 7 hábitos de la gente altamente efectiva, de Stephen R. Covey: de qué trata y dónde comprarlo",
+  "f": "2026-11-15"
+ },
+ "https://aurzane.com/libros/los-cinco-lenguajes-del-amor-gary-chapman/": {
+  "n": "Los cinco lenguajes del amor, de Gary Chapman: de qué trata y dónde comprarlo",
+  "f": "2026-11-15"
+ },
+ "https://aurzane.com/libros/los-hombres-que-no-amaban-a-las-mujeres-stieg-larsson/": {
+  "n": "Los hombres que no amaban a las mujeres, de Stieg Larsson: de qué trata y dónde comprarlo",
+  "f": "2026-11-15"
+ },
+ "https://aurzane.com/libros/los-patitos-feos-boris-cyrulnik/": {
+  "n": "Los patitos feos, de Boris Cyrulnik: de qué trata y dónde comprarlo",
+  "f": "2026-11-15"
+ },
+ "https://aurzane.com/libros/los-pilares-de-la-tierra-ken-follett/": {
+  "n": "Los pilares de la Tierra, de Ken Follett: de qué trata y dónde comprarlo",
+  "f": "2026-11-15"
+ },
+ "https://aurzane.com/libros/los-seis-pilares-de-la-autoestima-nathaniel-branden/": {
+  "n": "Los seis pilares de la autoestima, de Nathaniel Branden: de qué trata y dónde comprarlo",
+  "f": "2026-11-15"
+ },
+ "https://aurzane.com/libros/mentalidad-mamba-kobe-bryant/": {
+  "n": "Mentalidad Mamba, de Kobe Bryant: de qué trata y dónde comprarlo",
+  "f": "2026-11-15"
+ },
+ "https://aurzane.com/libros/mindset-carol-s-dweck/": {
+  "n": "Mindset, de Carol S. Dweck: de qué trata y dónde comprarlo",
+  "f": "2026-11-15"
+ },
+ "https://aurzane.com/libros/no-pienses-en-un-elefante-george-lakoff/": {
+  "n": "No pienses en un elefante, de George Lakoff: de qué trata y dónde comprarlo",
+  "f": "2026-11-15"
+ },
+ "https://aurzane.com/libros/orgullo-y-prejuicio-jane-austen/": {
+  "n": "Orgullo y prejuicio, de Jane Austen: de qué trata y dónde comprarlo",
+  "f": "2026-11-15"
+ },
+ "https://aurzane.com/libros/patria-fernando-aramburu/": {
+  "n": "Patria, de Fernando Aramburu: de qué trata y dónde comprarlo",
+  "f": "2026-11-15"
+ },
+ "https://aurzane.com/libros/regalar/": {
+  "n": "Libros para regalar en Navidad y Reyes: ideas por persona",
+  "f": "2026-11-15"
+ },
+ "https://aurzane.com/libros/reina-roja-juan-gomez-jurado/": {
+  "n": "Reina roja, de Juan Gómez-Jurado: de qué trata y dónde comprarlo",
+  "f": "2026-11-15"
+ },
+ "https://aurzane.com/libros/se-amable-contigo-mismo-kristin-neff/": {
+  "n": "Sé amable contigo mismo, de Kristin Neff: de qué trata y dónde comprarlo",
+  "f": "2026-11-15"
+ },
+ "https://aurzane.com/libros/sentirse-bien-david-d-burns/": {
+  "n": "Sentirse bien, de David D. Burns: de qué trata y dónde comprarlo",
+  "f": "2026-11-15"
+ },
+ "https://aurzane.com/libros/sobre-el-duelo-y-el-dolor-elisabeth-kubler-ross/": {
+  "n": "Sobre el duelo y el dolor, de Elisabeth Kübler-Ross: de qué trata y dónde comprarlo",
+  "f": "2026-11-15"
+ },
+ "https://aurzane.com/libros/una-breve-historia-de-casi-todo-bill-bryson/": {
+  "n": "Una breve historia de casi todo, de Bill Bryson: de qué trata y dónde comprarlo",
+  "f": "2026-11-15"
+ },
+ "https://aurzane.com/libros/vivir-con-plenitud-las-crisis-jon-kabat-zinn/": {
+  "n": "Vivir con plenitud las crisis, de Jon Kabat-Zinn: de qué trata y dónde comprarlo",
+  "f": "2026-11-15"
+ },
+ "https://aurzane.com/mapa/": {
+  "n": "Mapa de AURZANE: todas las páginas",
+  "f": "2026-11-15"
+ },
+ "https://aurzane.com/novedades/": {
+  "n": "Novedades de AURZANE: tests, herramientas y contenidos nuevos",
+  "f": "2026-11-15"
+ },
+ "https://aurzane.com/politica-editorial.html": {
+  "n": "Política editorial de AURZANE",
+  "f": "2026-11-15"
+ },
+ "https://aurzane.com/privacidad.html": {
+  "n": "Aviso de Privacidad: AURZANE",
+  "f": "2026-11-15"
+ },
+ "https://aurzane.com/research.html": {
+  "n": "Research Hub",
+  "f": "2026-11-15"
+ },
+ "https://aurzane.com/sobre-aurzane.html": {
+  "n": "Sobre AURZANE: quiénes somos y cómo trabajamos",
+  "f": "2026-11-15"
+ },
+ "https://mind.aurzane.com/": {
+  "n": "Ciencia de la mente aplicada a estudiar y elegir carrera",
+  "f": "2026-11-15"
+ },
+ "https://mind.aurzane.com/ejercicios/": {
+  "n": "13 ejercicios de relajación y respiración guiados gratis",
+  "f": "2026-11-15"
+ },
+ "https://mind.aurzane.com/ejercicios/atencion-a-la-respiracion/": {
+  "n": "Meditación guiada de 5 minutos: atención a la respiración",
+  "f": "2026-11-15"
+ },
+ "https://mind.aurzane.com/ejercicios/coherencia-cardiaca/": {
+  "n": "Coherencia cardiaca guiada: respiración 365 de 5 minutos",
+  "f": "2026-11-15"
+ },
+ "https://mind.aurzane.com/ejercicios/escaneo-corporal/": {
+  "n": "Escaneo corporal (body scan) guiado de 7 minutos",
+  "f": "2026-11-15"
+ },
+ "https://mind.aurzane.com/ejercicios/lugar-seguro/": {
+  "n": "Visualización guiada del lugar seguro (5 min)",
+  "f": "2026-11-15"
+ },
+ "https://mind.aurzane.com/ejercicios/pausa-de-autocompasion/": {
+  "n": "Pausa de autocompasión guiada de Kristin Neff",
+  "f": "2026-11-15"
+ },
+ "https://mind.aurzane.com/ejercicios/relajacion-muscular-progresiva/": {
+  "n": "Relajación muscular progresiva de Jacobson guiada (8 min)",
+  "f": "2026-11-15"
+ },
+ "https://mind.aurzane.com/ejercicios/respiracion-4-7-8/": {
+  "n": "Respiración 4-7-8 guiada para dormir y calmar la ansiedad",
+  "f": "2026-11-15"
+ },
+ "https://mind.aurzane.com/ejercicios/respiracion-alterna/": {
+  "n": "Respiración alterna (nadi shodhana) guiada",
+  "f": "2026-11-15"
+ },
+ "https://mind.aurzane.com/ejercicios/respiracion-cuadrada/": {
+  "n": "Respiración cuadrada (box breathing) guiada",
+  "f": "2026-11-15"
+ },
+ "https://mind.aurzane.com/ejercicios/respiracion-diafragmatica/": {
+  "n": "Respiración diafragmática o abdominal guiada",
+  "f": "2026-11-15"
+ },
+ "https://mind.aurzane.com/ejercicios/suspiro-ciclico/": {
+  "n": "Suspiro cíclico (physiological sigh) guiado",
+  "f": "2026-11-15"
+ },
+ "https://mind.aurzane.com/ejercicios/tecnica-5-4-3-2-1/": {
+  "n": "Técnica 5-4-3-2-1 guiada para la ansiedad (grounding)",
+  "f": "2026-11-15"
+ },
+ "https://mind.aurzane.com/ejercicios/tecnica-stop/": {
+  "n": "Técnica STOP de mindfulness guiada (1 minuto)",
+  "f": "2026-11-15"
+ },
+ "https://mind.aurzane.com/en/": {
+  "n": "Free psychological tests in English",
+  "f": "2026-11-15"
+ },
+ "https://mind.aurzane.com/en/anxiety-test-gad-7/": {
+  "n": "Anxiety test (GAD-7): free online questionnaire",
+  "f": "2026-11-15"
+ },
+ "https://mind.aurzane.com/en/burnout-test-cbi/": {
+  "n": "Work burnout test (Copenhagen Burnout Inventory): free online questionnaire",
+  "f": "2026-11-15"
+ },
+ "https://mind.aurzane.com/en/depression-test-phq-9/": {
+  "n": "Depression test (PHQ-9): free online questionnaire",
+  "f": "2026-11-15"
+ },
+ "https://mind.aurzane.com/en/life-satisfaction-test-swls/": {
+  "n": "Life satisfaction test (SWLS): free online questionnaire",
+  "f": "2026-11-15"
+ },
+ "https://mind.aurzane.com/en/resilience-test-brs/": {
+  "n": "Resilience test (Brief Resilience Scale): free online questionnaire",
+  "f": "2026-11-15"
+ },
+ "https://mind.aurzane.com/en/self-compassion-test-scs-sf/": {
+  "n": "Self-compassion test (Neff, short form): free online questionnaire",
+  "f": "2026-11-15"
+ },
+ "https://mind.aurzane.com/en/self-efficacy-test-gse/": {
+  "n": "Self-efficacy test (General Self-Efficacy Scale): free online questionnaire",
+  "f": "2026-11-15"
+ },
+ "https://mind.aurzane.com/en/self-esteem-test-rosenberg/": {
+  "n": "Self-esteem test (Rosenberg): free online questionnaire",
+  "f": "2026-11-15"
+ },
+ "https://mind.aurzane.com/en/stress-test-dass-21/": {
+  "n": "Stress test (DASS-21 stress scale): free online questionnaire",
+  "f": "2026-11-15"
+ },
+ "https://mind.aurzane.com/en/wellbeing-test-who-5/": {
+  "n": "Wellbeing test (WHO-5): free online questionnaire",
+  "f": "2026-11-15"
+ },
+ "https://mind.aurzane.com/mind-biblioteca.html": {
+  "n": "Biblioteca académica",
+  "f": "2026-11-15"
+ },
+ "https://mind.aurzane.com/pt/": {
+  "n": "Testes psicológicos grátis em português",
+  "f": "2026-11-15"
+ },
+ "https://mind.aurzane.com/pt/teste-de-ansiedade-gad-7/": {
+  "n": "Teste de ansiedade (GAD-7): questionário grátis online",
+  "f": "2026-11-15"
+ },
+ "https://mind.aurzane.com/pt/teste-de-bem-estar-who-5/": {
+  "n": "Teste de bem-estar (WHO-5): questionário grátis online",
+  "f": "2026-11-15"
+ },
+ "https://mind.aurzane.com/pt/teste-de-depressao-phq-9/": {
+  "n": "Teste de depressão (PHQ-9): questionário grátis online",
+  "f": "2026-11-15"
+ },
+ "https://mind.aurzane.com/test-de-ansiedad/": {
+  "n": "Test de ansiedad GAD-7 gratis y online",
+  "f": "2026-11-15"
+ },
+ "https://mind.aurzane.com/test-de-autocompasion/": {
+  "n": "Test de autocompasión gratis (escala de Kristin Neff)",
+  "f": "2026-11-15"
+ },
+ "https://mind.aurzane.com/test-de-autoeficacia/": {
+  "n": "Test de autoeficacia gratis (escala de Schwarzer)",
+  "f": "2026-11-15"
+ },
+ "https://mind.aurzane.com/test-de-autoestima/": {
+  "n": "Test de autoestima de Rosenberg gratis y online",
+  "f": "2026-11-15"
+ },
+ "https://mind.aurzane.com/test-de-burnout/": {
+  "n": "Test de burnout gratis: ¿estás quemado/a en el trabajo?",
+  "f": "2026-11-15"
+ },
+ "https://mind.aurzane.com/test-de-depresion/": {
+  "n": "Test de depresión PHQ-9 gratis y online",
+  "f": "2026-11-15"
+ },
+ "https://mind.aurzane.com/test-de-estres/": {
+  "n": "Test de estrés gratis y online (escala DASS-21)",
+  "f": "2026-11-15"
+ },
+ "https://mind.aurzane.com/test-de-personalidad/": {
+  "n": "Test de personalidad gratis: descubre tu perfil de los Cinco Grandes",
+  "f": "2026-11-15"
+ },
+ "https://mind.aurzane.com/test-de-resiliencia/": {
+  "n": "Test de resiliencia gratis (Brief Resilience Scale)",
+  "f": "2026-11-15"
+ },
+ "https://mind.aurzane.com/test-de-satisfaccion-con-la-vida/": {
+  "n": "Test de satisfacción con la vida (felicidad) gratis",
+  "f": "2026-11-15"
+ },
+ "https://mind.aurzane.com/test-de-soledad/": {
+  "n": "Test de soledad gratis: ¿te sientes solo/a?",
+  "f": "2026-11-15"
+ },
+ "https://mind.aurzane.com/test-de-tdah/": {
+  "n": "Test de TDAH en adultos (ASRS v1.1 de la OMS) gratis",
+  "f": "2026-11-15"
+ },
+ "https://nexus.aurzane.com/": {
+  "n": "Tecnología, conocimiento y salud",
+  "f": "2026-11-15"
+ },
+ "https://nexus.aurzane.com/calculadora-nota-pau/": {
+  "n": "Calculadora nota PAU 2026: nota de acceso y de admisión (selectividad)",
+  "f": "2026-11-15"
+ },
+ "https://nexus.aurzane.com/index.html": {
+  "n": "Tecnología, conocimiento y salud",
+  "f": "2026-11-15"
+ },
+ "https://nexus.aurzane.com/nexus-biblioteca.html": {
+  "n": "Biblioteca Académica",
+  "f": "2026-11-15"
+ },
+ "https://nexus.aurzane.com/nexus.html": {
+  "n": "Tecnología, ciencia y datos al servicio de la vida real",
+  "f": "2026-11-15"
+ },
+ "https://nexus.aurzane.com/universidades/": {
+  "n": "Buscador de universidades y carreras gratis",
+  "f": "2026-11-15"
+ },
+ "https://nexus.aurzane.com/universidades/acerca/": {
+  "n": "Fuentes y método del catálogo de universidades",
+  "f": "2026-11-15"
+ },
+ "https://nexus.aurzane.com/universidades/alemania/": {
+  "n": "Universidades en Alemania: las 388 principales y dónde están (2026)",
+  "f": "2026-11-15"
+ },
+ "https://nexus.aurzane.com/universidades/argentina/": {
+  "n": "Universidades en Argentina: 118 instituciones",
+  "f": "2026-11-15"
+ },
+ "https://nexus.aurzane.com/universidades/australia/": {
+  "n": "Universidades en Australia: las 42 principales y dónde están (2026)",
+  "f": "2026-11-15"
+ },
+ "https://nexus.aurzane.com/universidades/austria/": {
+  "n": "Universidades en Austria: las 7 principales y dónde están (2026)",
+  "f": "2026-11-15"
+ },
+ "https://nexus.aurzane.com/universidades/belgica/": {
+  "n": "Universidades en Bélgica: las 7 principales y dónde están (2026)",
+  "f": "2026-11-15"
+ },
+ "https://nexus.aurzane.com/universidades/bolivia/": {
+  "n": "Universidades en Bolivia: las 8 principales y dónde están (2026)",
+  "f": "2026-11-15"
+ },
+ "https://nexus.aurzane.com/universidades/brasil/": {
+  "n": "Universidades en Brasil: las 161 principales y dónde están (2026)",
+  "f": "2026-11-15"
+ },
+ "https://nexus.aurzane.com/universidades/canada/": {
+  "n": "Universidades en Canadá: 97 instituciones",
+  "f": "2026-11-15"
+ },
+ "https://nexus.aurzane.com/universidades/chequia/": {
+  "n": "Universidades en Chequia: las 5 principales y dónde están (2026)",
+  "f": "2026-11-15"
+ },
+ "https://nexus.aurzane.com/universidades/chile/": {
+  "n": "Universidades en Chile: 52 instituciones",
+  "f": "2026-11-15"
+ },
+ "https://nexus.aurzane.com/universidades/china/": {
+  "n": "Universidades en China: las 145 principales y dónde están (2026)",
+  "f": "2026-11-15"
+ },
+ "https://nexus.aurzane.com/universidades/colombia/": {
+  "n": "Universidades en Colombia: 86 instituciones",
+  "f": "2026-11-15"
+ },
+ "https://nexus.aurzane.com/universidades/corea-del-sur/": {
+  "n": "Universidades en Corea del Sur: las 96 principales y dónde están (2026)",
+  "f": "2026-11-15"
+ },
+ "https://nexus.aurzane.com/universidades/costa-rica/": {
+  "n": "Universidades en Costa Rica: las 6 principales y dónde están (2026)",
+  "f": "2026-11-15"
+ },
+ "https://nexus.aurzane.com/universidades/cuba/": {
+  "n": "Universidades en Cuba: las 5 principales y dónde están (2026)",
+  "f": "2026-11-15"
+ },
+ "https://nexus.aurzane.com/universidades/dinamarca/": {
+  "n": "Universidades en Dinamarca: las 6 principales y dónde están (2026)",
+  "f": "2026-11-15"
+ },
+ "https://nexus.aurzane.com/universidades/ecuador/": {
+  "n": "Universidades en Ecuador: 258 instituciones y 3.759 carreras",
+  "f": "2026-11-15"
+ },
+ "https://nexus.aurzane.com/universidades/egipto/": {
+  "n": "Universidades en Egipto: las 5 principales y dónde están (2026)",
+  "f": "2026-11-15"
+ },
+ "https://nexus.aurzane.com/universidades/el-salvador/": {
+  "n": "Universidades en El Salvador: las 5 principales y dónde están (2026)",
+  "f": "2026-11-15"
+ },
+ "https://nexus.aurzane.com/universidades/emiratos-arabes-unidos/": {
+  "n": "Universidades en Emiratos Árabes Unidos: las 5 principales y dónde están (2026)",
+  "f": "2026-11-15"
+ },
+ "https://nexus.aurzane.com/universidades/espana/": {
+  "n": "Universidades de España: las 99 universidades y sus 3.484 grados",
+  "f": "2026-11-15"
+ },
+ "https://nexus.aurzane.com/universidades/estados-unidos/": {
+  "n": "Universidades en Estados Unidos: 3.675 instituciones y 99.814 carreras",
+  "f": "2026-11-15"
+ },
+ "https://nexus.aurzane.com/universidades/filipinas/": {
+  "n": "Universidades en Filipinas: las 4 principales y dónde están (2026)",
+  "f": "2026-11-15"
+ },
+ "https://nexus.aurzane.com/universidades/finlandia/": {
+  "n": "Universidades en Finlandia: las 6 principales y dónde están (2026)",
+  "f": "2026-11-15"
+ },
+ "https://nexus.aurzane.com/universidades/francia/": {
+  "n": "Universidades en Francia: las 240 principales y dónde están (2026)",
+  "f": "2026-11-15"
+ },
+ "https://nexus.aurzane.com/universidades/grecia/": {
+  "n": "Universidades en Grecia: las 5 principales y dónde están (2026)",
+  "f": "2026-11-15"
+ },
+ "https://nexus.aurzane.com/universidades/guatemala/": {
+  "n": "Universidades en Guatemala: las 6 principales y dónde están (2026)",
+  "f": "2026-11-15"
+ },
+ "https://nexus.aurzane.com/universidades/honduras/": {
+  "n": "Universidades en Honduras: las 5 principales y dónde están (2026)",
+  "f": "2026-11-15"
+ },
+ "https://nexus.aurzane.com/universidades/india/": {
+  "n": "Universidades en India: las 120 principales y dónde están (2026)",
+  "f": "2026-11-15"
+ },
+ "https://nexus.aurzane.com/universidades/irlanda/": {
+  "n": "Universidades en Irlanda: las 6 principales y dónde están (2026)",
+  "f": "2026-11-15"
+ },
+ "https://nexus.aurzane.com/universidades/israel/": {
+  "n": "Universidades en Israel: las 5 principales y dónde están (2026)",
+  "f": "2026-11-15"
+ },
+ "https://nexus.aurzane.com/universidades/italia/": {
+  "n": "Universidades en Italia: las 82 principales y dónde están (2026)",
+  "f": "2026-11-15"
+ },
+ "https://nexus.aurzane.com/universidades/japon/": {
+  "n": "Universidades en Japón: las 129 principales y dónde están (2026)",
+  "f": "2026-11-15"
+ },
+ "https://nexus.aurzane.com/universidades/marruecos/": {
+  "n": "Universidades en Marruecos: las 5 principales y dónde están (2026)",
+  "f": "2026-11-15"
+ },
+ "https://nexus.aurzane.com/universidades/mexico/": {
+  "n": "Universidades en México: las 111 principales y dónde están (2026)",
+  "f": "2026-11-15"
+ },
+ "https://nexus.aurzane.com/universidades/mi-lista/": {
+  "n": "Mi lista de universidades",
+  "f": "2026-11-15"
+ },
+ "https://nexus.aurzane.com/universidades/nicaragua/": {
+  "n": "Universidades en Nicaragua: las 5 principales y dónde están (2026)",
+  "f": "2026-11-15"
+ },
+ "https://nexus.aurzane.com/universidades/noruega/": {
+  "n": "Universidades en Noruega: las 5 principales y dónde están (2026)",
+  "f": "2026-11-15"
+ },
+ "https://nexus.aurzane.com/universidades/notas-de-corte/": {
+  "n": "Notas de corte 2025-2026 de todas las carreras en España",
+  "f": "2026-11-15"
+ },
+ "https://nexus.aurzane.com/universidades/nueva-zelanda/": {
+  "n": "Universidades en Nueva Zelanda: las 6 principales y dónde están (2026)",
+  "f": "2026-11-15"
+ },
+ "https://nexus.aurzane.com/universidades/paises-bajos/": {
+  "n": "Universidades en Países Bajos: las 55 principales y dónde están (2026)",
+  "f": "2026-11-15"
+ },
+ "https://nexus.aurzane.com/universidades/paises/": {
+  "n": "Universidades por país: 55 países",
+  "f": "2026-11-15"
+ },
+ "https://nexus.aurzane.com/universidades/panama/": {
+  "n": "Universidades en Panamá: las 5 principales y dónde están (2026)",
+  "f": "2026-11-15"
+ },
+ "https://nexus.aurzane.com/universidades/paraguay/": {
+  "n": "Universidades en Paraguay: las 6 principales y dónde están (2026)",
+  "f": "2026-11-15"
+ },
+ "https://nexus.aurzane.com/universidades/peru/": {
+  "n": "Universidades en Perú: las 12 principales y dónde están (2026)",
+  "f": "2026-11-15"
+ },
+ "https://nexus.aurzane.com/universidades/polonia/": {
+  "n": "Universidades en Polonia: las 6 principales y dónde están (2026)",
+  "f": "2026-11-15"
+ },
+ "https://nexus.aurzane.com/universidades/portugal/": {
+  "n": "Universidades en Portugal: las 42 principales y dónde están (2026)",
+  "f": "2026-11-15"
+ },
+ "https://nexus.aurzane.com/universidades/puerto-rico/": {
+  "n": "Universidades en Puerto Rico: las 6 principales y dónde están (2026)",
+  "f": "2026-11-15"
+ },
+ "https://nexus.aurzane.com/universidades/que-puedo-estudiar/": {
+  "n": "¿Qué carrera puedo estudiar con mi nota? Buscador 2025-2026",
+  "f": "2026-11-15"
+ },
+ "https://nexus.aurzane.com/universidades/reino-unido/": {
+  "n": "Universidades en Reino Unido: las 150 principales y dónde están (2026)",
+  "f": "2026-11-15"
+ },
+ "https://nexus.aurzane.com/universidades/republica-dominicana/": {
+  "n": "Universidades en República Dominicana: las 6 principales y dónde están (2026)",
+  "f": "2026-11-15"
+ },
+ "https://nexus.aurzane.com/universidades/rusia/": {
+  "n": "Universidades en Rusia: las 52 principales y dónde están (2026)",
+  "f": "2026-11-15"
+ },
+ "https://nexus.aurzane.com/universidades/singapur/": {
+  "n": "Universidades en Singapur: las 4 principales y dónde están (2026)",
+  "f": "2026-11-15"
+ },
+ "https://nexus.aurzane.com/universidades/sudafrica/": {
+  "n": "Universidades en Sudáfrica: las 6 principales y dónde están (2026)",
+  "f": "2026-11-15"
+ },
+ "https://nexus.aurzane.com/universidades/suecia/": {
+  "n": "Universidades en Suecia: las 7 principales y dónde están (2026)",
+  "f": "2026-11-15"
+ },
+ "https://nexus.aurzane.com/universidades/suiza/": {
+  "n": "Universidades en Suiza: 16 instituciones",
+  "f": "2026-11-15"
+ },
+ "https://nexus.aurzane.com/universidades/turquia/": {
+  "n": "Universidades en Turquía: las 7 principales y dónde están (2026)",
+  "f": "2026-11-15"
+ },
+ "https://nexus.aurzane.com/universidades/uruguay/": {
+  "n": "Universidades en Uruguay: 7 instituciones",
+  "f": "2026-11-15"
+ },
+ "https://nexus.aurzane.com/universidades/venezuela/": {
+  "n": "Universidades en Venezuela: las 8 principales y dónde están (2026)",
+  "f": "2026-11-15"
+ },
+ "https://live.aurzane.com/": {
+  "n": "Bienestar, propósito y vida plena",
+  "f": "2026-11-15"
+ },
+ "https://live.aurzane.com/calculadora-agua/": {
+  "n": "Cuánta agua beber al día: calculadora gratis",
+  "f": "2026-11-15"
+ },
+ "https://live.aurzane.com/calculadora-calorias/": {
+  "n": "Calculadora de calorías e IMC gratis: cuántas calorías necesito",
+  "f": "2026-11-15"
+ },
+ "https://live.aurzane.com/calculadora-dias-entre-fechas/": {
+  "n": "Calculadora de días entre fechas gratis",
+  "f": "2026-11-15"
+ },
+ "https://live.aurzane.com/calculadora-edad/": {
+  "n": "Calculadora de edad exacta gratis",
+  "f": "2026-11-15"
+ },
+ "https://live.aurzane.com/calculadora-embarazo/": {
+  "n": "Calculadora de embarazo: semanas y fecha probable de parto",
+  "f": "2026-11-15"
+ },
+ "https://live.aurzane.com/calculadora-imc/": {
+  "n": "Calculadora de IMC gratis: índice de masa corporal",
+  "f": "2026-11-15"
+ },
+ "https://live.aurzane.com/calculadora-interes-compuesto/": {
+  "n": "Calculadora de interés compuesto gratis",
+  "f": "2026-11-15"
+ },
+ "https://live.aurzane.com/calculadora-porcentajes/": {
+  "n": "Calculadora de porcentajes gratis: descuentos y aumentos",
+  "f": "2026-11-15"
+ },
+ "https://live.aurzane.com/index.html": {
+  "n": "Bienestar, propósito y vida plena",
+  "f": "2026-11-15"
+ },
+ "https://live.aurzane.com/live-biblioteca.html": {
+  "n": "Biblioteca Académica",
+  "f": "2026-11-15"
+ },
+ "https://live.aurzane.com/test-de-bienestar/": {
+  "n": "Test de bienestar emocional WHO-5 gratis",
+  "f": "2026-11-15"
+ },
+ "https://live.aurzane.com/test-de-habitos/": {
+  "n": "Test de hábitos saludables gratis (SLIQ)",
+  "f": "2026-11-15"
+ },
+ "https://live.aurzane.com/test-de-sueno/": {
+  "n": "Test de sueño gratis: ¿duermes bien?",
+  "f": "2026-11-15"
+ },
+ "https://learn.aurzane.com/": {
+  "n": "Guías de aprendizaje adulto, dominio y enseñanza efectiva",
+  "f": "2026-11-15"
+ },
+ "https://learn.aurzane.com/certificado/": {
+  "n": "Certificados",
+  "f": "2026-11-15"
+ },
+ "https://learn.aurzane.com/cursos/": {
+  "n": "Cursos gratis online con certificado",
+  "f": "2026-11-15"
+ },
+ "https://learn.aurzane.com/index.html": {
+  "n": "Guías de aprendizaje adulto, dominio y enseñanza efectiva",
+  "f": "2026-11-15"
+ },
+ "https://learn.aurzane.com/learn-biblioteca.html": {
+  "n": "Biblioteca Académica",
+  "f": "2026-11-15"
+ },
+ "https://build.aurzane.com/": {
+  "n": "Guías de bienes raíces, urbanismo e infraestructura",
+  "f": "2026-11-15"
+ },
+ "https://build.aurzane.com/build-biblioteca.html": {
+  "n": "Biblioteca Académica",
+  "f": "2026-11-15"
+ },
+ "https://build.aurzane.com/calculadora-hipoteca/": {
+  "n": "Calculadora de hipoteca 2026 con gastos e impuestos",
+  "f": "2026-11-15"
+ },
+ "https://build.aurzane.com/calculadora-reforma/": {
+  "n": "Calculadora de reforma 2026: cuánto cuesta reformar un piso",
+  "f": "2026-11-15"
+ },
+ "https://build.aurzane.com/calculadora-sueldo-neto/": {
+  "n": "Calculadora de sueldo neto 2026: de bruto a neto con IRPF",
+  "f": "2026-11-15"
+ },
+ "https://build.aurzane.com/index.html": {
+  "n": "Guías de bienes raíces, urbanismo e infraestructura",
+  "f": "2026-11-15"
+ },
+ "https://ovp.aurzane.com/": {
+  "n": "Test de orientación vocacional gratis online, con informe",
+  "f": "2026-11-15"
+ },
+ "https://ovp.aurzane.com/informe-ejemplo.html": {
+  "n": "Informe de ejemplo",
+  "f": "2026-11-15"
+ },
+ "https://ovp.aurzane.com/portal.html": {
+  "n": "Mi Proceso",
+  "f": "2026-11-15"
+ }
+}
