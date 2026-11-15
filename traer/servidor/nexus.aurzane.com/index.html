@@ -245,12 +245,12 @@
 <div class="todo-overlay" id="todoOverlay" onclick="cerrarTodo()"></div>
 <aside class="todo-panel" id="todoPanel" role="dialog" aria-modal="true" aria-label="Todo NEXUS">
   <div class="todo-header">
-    <div class="quien" id="todoQuien">Hola, iniciá sesión<small>Accedé a todo el ecosistema</small></div>
+    <div class="quien" id="todoQuien">Hola, inicia sesión<small>Accede a todo el ecosistema</small></div>
     <button class="todo-cerrar" onclick="cerrarTodo()" aria-label="Cerrar menú">✕</button>
   </div>
   <div class="todo-grupo">
     <h5>Catálogos NEXUS</h5>
-    <a class="todo-link" href="universidades/"><span class="ic">🎓</span> Universidades (6.409)</a>
+    <a class="todo-link" href="universidades/"><span class="ic">🎓</span> Universidades (6.411)</a>
     <a class="todo-link" href="calculadora-nota-pau/"><span class="ic">🧮</span> Calculadora de nota PAU</a>
     <a class="todo-link" href="nexus.html"><span class="ic">📰</span> Artículos y guías</a>
     <a class="todo-link" href="nexus.html#guardados"><span class="ic">⭐</span> Mis guardados</a>
@@ -287,7 +287,7 @@
       <h1>Conectamos ideas, personas y <span>tecnología</span></h1>
       <p>NEXUS es el mundo de AURZANE dedicado a la tecnología: cómo transforma la salud, la mente, la educación y la vida cotidiana. Artículos originales con fuentes reales, y una biblioteca académica abierta para quien quiera ir más a fondo.</p>
       <div class="stats mono">
-        <span><b>6.409</b> universidades e institutos</span>
+        <span><b>6.411</b> universidades e institutos</span>
         <span><b id="statArticulos">—</b> artículos originales</span>
         <span><b id="statBiblioteca">—</b> papers en la Biblioteca</span>
         <span><b>7</b> temas</span>
@@ -307,7 +307,7 @@
   <div class="accesos-section">
     <div class="accesos-grid">
       <a class="acceso-card" href="calculadora-nota-pau/"><span class="ac-ic">🧮</span><h4>Calculadora nota PAU</h4><p>¿Te llega para tu carrera?</p></a>
-      <a class="acceso-card" href="universidades/"><span class="ac-ic">🎓</span><h4>Universidades</h4><p>6.409 instituciones de 55 países</p></a>
+      <a class="acceso-card" href="universidades/"><span class="ac-ic">🎓</span><h4>Universidades</h4><p>6.411 instituciones de 55 países</p></a>
       <a class="acceso-card" href="nexus.html"><span class="ac-ic">📰</span><h4>Artículos NEXUS</h4><p id="accesoArticulosCount">Guías con fuentes reales</p></a>
       <a class="acceso-card" href="nexus-biblioteca.html"><span class="ac-ic">📚</span><h4>Biblioteca NEXUS</h4><p id="accesoBiblioCount">Papers de acceso abierto</p></a>
       <a class="acceso-card" href="https://aurzane.com/research.html"><span class="ac-ic">🔎</span><h4>Research Hub</h4><p>Las 5 bibliotecas a la vez</p></a>
@@ -317,7 +317,7 @@
 
   <div class="section">
     <div class="section-head">
-      <h2>Explorá por tema</h2>
+      <h2>Explora por tema</h2>
       <p>Cada tema abre directo a los artículos de NEXUS sobre ese tópico.</p>
     </div>
     <div class="grid" id="categoriasGrid"></div>
@@ -442,7 +442,7 @@ function reflejarSesionNexus(session) {
     quien.innerHTML = `Hola, ${nombre}<small>Tu cuenta AURZANE ID</small>`;
   } else {
     pill.innerHTML = `👤 Mi AURZANE`;
-    quien.innerHTML = `Hola, iniciá sesión<small>Accedé a todo el ecosistema</small>`;
+    quien.innerHTML = `Hola, inicia sesión<small>Accede a todo el ecosistema</small>`;
   }
 }
 sb.auth.getSession().then(({ data: { session } }) => reflejarSesionNexus(session));

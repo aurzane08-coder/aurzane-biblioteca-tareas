@@ -458,7 +458,7 @@
 <div class="todo-overlay" id="todoOverlay" onclick="cerrarTodo()"></div>
 <aside class="todo-panel" id="todoPanel" role="dialog" aria-modal="true" aria-label="Todo BUILD">
   <div class="todo-header">
-    <div class="quien" id="todoQuien">Hola, iniciá sesión<small>Accedé a todo el ecosistema</small></div>
+    <div class="quien" id="todoQuien">Hola, inicia sesión<small>Accede a todo el ecosistema</small></div>
     <button class="todo-cerrar" onclick="cerrarTodo()" aria-label="Cerrar menú">✕</button>
   </div>
   <div class="todo-grupo">
@@ -572,7 +572,7 @@
         <div class="section-head"><div><span class="sh-eyebrow">Rigor</span><h2>Investigación y fuentes</h2></div></div>
         <div class="research-band" id="researchBand"></div>
         <p class="research-sources" id="researchSources"></p>
-        <p class="research-sources">Explorá el corpus completo en la <a href="build-biblioteca.html">Biblioteca BUILD →</a></p>
+        <p class="research-sources">Explora el corpus completo en la <a href="build-biblioteca.html">Biblioteca BUILD →</a></p>
       </section>
 
       <section class="philosophy-band">
@@ -625,7 +625,7 @@
       </section>
 
       <section id="crossWorldSection" style="margin-bottom:20px;">
-        <div class="section-head"><div><span class="sh-eyebrow">Ecosistema</span><h2>Seguí explorando en otros mundos</h2></div></div>
+        <div class="section-head"><div><span class="sh-eyebrow">Ecosistema</span><h2>Sigue explorando en otros mundos</h2></div></div>
         <div class="cross-grid" id="crossGrid"></div>
       </section>
 
@@ -734,7 +734,7 @@ function reflejarSesionBuild(session) {
     quien.innerHTML = `Hola, ${nombre}<small>Tu cuenta AURZANE ID</small>`;
   } else {
     pill.innerHTML = `👤 Mi AURZANE`;
-    quien.innerHTML = `Hola, iniciá sesión<small>Accedé a todo el ecosistema</small>`;
+    quien.innerHTML = `Hola, inicia sesión<small>Accede a todo el ecosistema</small>`;
   }
 }
 sb.auth.getSession().then(({ data: { session } }) => reflejarSesionBuild(session));
@@ -1066,7 +1066,7 @@ function render(){
     loadMoreWrap.style.display = 'none';
     emptyState.style.display = 'block';
     emptyState.querySelector('p').textContent = vistaGuardados
-      ? 'Todavía no guardaste ninguna guía. Hacé clic en "Guardar" dentro de un artículo para verlo acá.'
+      ? 'Todavía no has guardado ninguna guía. Haz clic en "Guardar" dentro de un artículo para verlo acá.'
       : 'No encontramos guías con ese filtro todavía. El catálogo de BUILD sigue creciendo — vuelve pronto.';
     return;
   }
