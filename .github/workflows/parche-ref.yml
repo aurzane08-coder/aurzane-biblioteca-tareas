@@ -1,0 +1,32 @@
+name: Parche fichas duplicadas en la raíz
+# Las fichas ref-*.html de la raíz de aurzane.com son copias rotas (sin estilos ni portadas) de /biblioteca/libro/ref-*.html.
+# Redirige cada una (301) a su ficha buena y mueve la copia a eliminar/. Nada se borra.
+on:
+  push:
+    paths: ['.github/workflows/parche-ref.yml']
+jobs:
+  parche:
+    runs-on: ubuntu-latest
+    env:
+      SG_KEY: ${{ secrets.SG_KEY }}
+      SG_HOST: ${{ secrets.SG_HOST }}
+      SG_USER: ${{ secrets.SG_USER }}
+      SG_PORT: ${{ secrets.SG_PORT }}
+      SG_PASS: ${{ secrets.SG_PASS }}
+    steps:
+      - run: |
+          mkdir -p ~/.ssh && printf '%s\n' "$SG_KEY" | tr -d '\r' > ~/.ssh/id && chmod 600 ~/.ssh/id
+          if [ -n "$SG_PASS" ]; then ssh-keygen -p -P "$SG_PASS" -N "" -f ~/.ssh/id >/dev/null; fi
+          SSH="ssh -i $HOME/.ssh/id -p ${SG_PORT:-18765} -o StrictHostKeyChecking=accept-new"
+          $SSH "$SG_USER@$SG_HOST" 'bash -s' <<'R' | sed 's/^/::notice title=ref::/'
+          cd www/aurzane.com/public_html
+          F=$(date +%Y%m%d-%H%M); mkdir -p ../eliminar/ref-raiz-$F
+          cp -p .htaccess ../eliminar/ref-raiz-$F/htaccess
+          R=""
+          for f in ref-*.html; do [ -f "biblioteca/libro/$f" ] || continue; grep -q "^Redirect 301 /$f " .htaccess || R="$R
+          Redirect 301 /$f /biblioteca/libro/$f"; mv "$f" ../eliminar/ref-raiz-$F/ && echo "movido $f"; done
+          if [ -n "$R" ]; then printf '# fichas-ref-raiz-aurzane: copias de la raíz redirigidas a su ficha de la biblioteca%s\n\n' "$R" | sed 's/^ *//' | cat - .htaccess > .htaccess.n && mv .htaccess.n .htaccess; fi
+          head -14 .htaccess
+          site-tools-client domain-all update id=aurzane.com flush_cache=1 >/dev/null 2>&1
+          echo "prueba: $(curl -s -o /dev/null -w '%{http_code} %{redirect_url}' https://aurzane.com/ref-paula.html)"
+          R

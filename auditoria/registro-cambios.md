@@ -24,3 +24,11 @@ Preguntas, puntuaciones, fórmulas y resultados de tests y calculadoras; datos d
 - `aurzane-ds.css` v2: la barra común ya no hereda estilos de listas de cada página (Novedades), anchos móviles (Research Hub, Contacto, artículos, calculadoras de BUILD, test de personalidad), contraste de etiquetas de la portada, chip activo, enlaces de fuentes y objetivos de 24 px.
 - `aurzane-estilo.js` v23: contraste del texto del panel «Empieza por aquí» y del enlace «Ver el curso».
 - `aurzane-paleta.js`: versiones nuevas para que los navegadores recojan los cambios.
+
+## Tercera ronda: cabecera única, pie único y portada nueva (15/11/2026, tarde)
+- `aurzane-ds.js` v3: una sola cabecera en todo el ecosistema (fila 1: AURZANE, mundos, buscar, cuenta y tema; fila 2: secciones del mundo actual). Se ocultan sin borrarse la barra de mundos, las cabeceras propias de cada plantilla, los paneles «Todo» y el megamenú antiguo. El aula de cursos y las pruebas OVP conservan su barra de trabajo.
+- Pie único con mundos, conocimiento, cuenta, redes y legal; los pies de cada plantilla conservan sus avisos y pierden los enlaces repetidos.
+- Portadas de mundo: foto real en la cabecera, sin «Sigue explorando en otros mundos» ni «Lo que X podría construir».
+- Portada de aurzane.com rehecha desde `portada/generar.py` (+ `portada.css`, `portada.js`): cabecera con foto y buscador, seis necesidades, Hoy en AURZANE, tests con foto, ejercicios, orientación, calculadoras, cursos, biblioteca, novedades del feed, confianza y preguntas frecuentes. Cifras de libros, tests y artículos leídas de datos reales.
+- Fichas `ref-*.html` duplicadas y rotas en la raíz: redirección 301 a su ficha de la biblioteca y copia movida a eliminar (`parche-ref.yml`).
+- Auditoría total: 142 páginas (todas las de cada mundo y muestras de cada plantilla generada), 4 anchos, axe.
