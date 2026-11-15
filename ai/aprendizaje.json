@@ -144,7 +144,7 @@
   0
  ],
  "tipo:libro": [
-  49,
+  50,
   9
  ],
  "Gambling Behavior and Treatments": [
@@ -156,7 +156,7 @@
   0
  ],
  "Suicide and Self-Harm Studies": [
-  1,
+  2,
   0
  ],
  "ed:Instituto Aragonés de Ciencias de la Salud (IACS) eBooks": [
@@ -470,5 +470,9 @@
  "ed:Human Optimization Framework (HOF Research)": [
   0,
   2
+ ],
+ "ed:Ediciones Comunicación Científica eBooks": [
+  1,
+  0
  ]
 }

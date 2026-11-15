@@ -1,5 +1,33 @@
 [
  {
+  "id": "oa-W7226034015",
+  "tipo": "libro",
+  "titulo": "Análisis criminológico del suicidio",
+  "url": "https://doi.org/10.52501/cc.483",
+  "autores": "Edmundo Denis Rodríguez",
+  "anio": 2026,
+  "editorial": "Ediciones Comunicación Científica eBooks",
+  "doi": "10.52501/cc.483",
+  "pdf": "https://www.comunicacion-cientifica.com/libro/obra-483/descargas/Obra_483_Analisis_Criminologico_Suicidio.pdf",
+  "pdfs": [
+   "https://www.comunicacion-cientifica.com/libro/obra-483/descargas/Obra_483_Analisis_Criminologico_Suicidio.pdf"
+  ],
+  "landings": [
+   "https://doi.org/10.52501/cc.483"
+  ],
+  "lic": "cc-by-nc-nd",
+  "idioma": "es",
+  "tema": "Suicide and Self-Harm Studies",
+  "resumen": "“Análisis criminológico del suicidio” es una obra fundamental para comprender la conducta suicida más allá de un abordaje psicológico convencional. En este texto se aborda el fenómeno suicida no solo como un evento individual, sino como un elemento social relacionada con los aspectos criminológicos, especialmente en lo que se refiere a la detección y prevención. A lo largo de sus capítulos se adaptan diversos conceptos criminológicos a un fenómeno social que no siempre es visto como un hecho ilegal; pero si partimos de la importante función del estado, como protector de la vida como bien jurídico, estamos ante una conducta que debe analizarse desde el punto de vista criminológico. En esta obra hacemos una evaluación de las etapas de la conducta suicida, desde la ideación latente hasta la consumación, identificando momentos críticos en los que la detección y la prevención tienen mayor imp",
+  "motivo": "Libro de psicología en acceso abierto con licencia CC-BY-NC-ND, de Ediciones Comunicación Científica eBooks.",
+  "pdf_origen": "https://www.comunicacion-cientifica.com/libro/obra-483/descargas/Obra_483_Analisis_Criminologico_Suicidio.pdf",
+  "paginas": 170,
+  "portada": "https://aurzane.com/biblioteca/recientes/portadas/oa-W7226034015.jpg",
+  "publicado": "2026-11-15",
+  "nota": 9,
+  "auto": true
+ },
+ {
   "id": "oa-W7161844855",
   "tipo": "libro",
   "titulo": "Metodología Experimental en Psicología: Guía para Estudiantes de Grado",
