@@ -10,31 +10,44 @@
  "articulos_total": 25000,
  "universidades": 6411,
  "paises": 55,
- "libros": 1324,
+ "libros": 748,
+ "fichas": 576,
  "cursos": {
   "introduccion-psicologia": {
    "temas": 16,
    "lecciones": 64,
    "preguntas": 256,
-   "tipos": 6
+   "tipos": 6,
+   "titulo": "Introducción a la psicología",
+   "descripcion": "Mente, cerebro y conducta: de la investigación a la salud mental en 16 temas",
+   "certificable": true
   },
   "ansiedad-dia-a-dia": {
    "temas": 4,
    "lecciones": 12,
    "preguntas": 48,
-   "tipos": 6
+   "tipos": 6,
+   "titulo": "Gestionar la ansiedad en el día a día",
+   "descripcion": "Entenderla, calmar el cuerpo, revisar los pensamientos y afrontar lo que evitas",
+   "certificable": true
   },
   "tecnicas-neurociencias": {
    "temas": 2,
    "lecciones": 9,
    "preguntas": 61,
-   "tipos": 6
+   "tipos": 6,
+   "titulo": "Metodología y técnicas de investigación en Neurociencias",
+   "descripcion": "Cómo se investiga el sistema nervioso: de la estereotaxia a la terapia celular",
+   "certificable": false
   },
   "neuroanatomia-funcional": {
    "temas": 13,
    "lecciones": 67,
    "preguntas": 466,
-   "tipos": 6
+   "tipos": 6,
+   "titulo": "Organización morfofuncional del Sistema Nervioso",
+   "descripcion": "Neuroanatomía funcional, del desarrollo a las vías",
+   "certificable": false
   }
  }
 }
