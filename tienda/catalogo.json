@@ -1,5 +1,25 @@
 [
  {
+  "id": "el-encantador-de-perros-cesar-millan",
+  "titulo": "El encantador de perros",
+  "autor": "César Millán",
+  "temas": [
+   "habitos",
+   "bienestar"
+  ],
+  "origen": "tendencia",
+  "fecha": "2026-11-15",
+  "isbn": "9788403099357",
+  "portada": "https://covers.openlibrary.org/b/id/9845954-M.jpg?default=false",
+  "anio": "2007",
+  "editorial": "Cuatro",
+  "idioma": "spa",
+  "resumen": "",
+  "tendencia": "Ideal para los lectores que buscan la maestría en el comportamiento animal tras la alta tendencia de su autor en buscadores.",
+  "tendencia_fecha": "2026-11-15",
+  "porque": "Este libro es para quienes conviven con un perro y buscan comprender mejor su comportamiento cotidiano. Aporta pautas prácticas y directas para lograr una convivencia equilibrada y feliz en casa."
+ },
+ {
   "id": "el-universo-en-tu-mano-christophe-galfard",
   "titulo": "El universo en tu mano",
   "autor": "Christophe Galfard",
