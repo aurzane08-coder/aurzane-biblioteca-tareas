@@ -1,0 +1,148 @@
+/*
+ * AURZANE · Sistema de diseño compartido (v1)
+ * Lo cargan todas las páginas desde aurzane-paleta.js. Solo presentación: no cambia contenidos, datos ni lógica.
+ * Guías seguidas: WCAG 2.2 AA (foco visible, objetivos de 24 px, movimiento reducido), heurísticas de Nielsen
+ * (visibilidad del estado, coherencia, reconocer antes que recordar) y el patrón combobox/dialog de WAI-ARIA.
+ */
+:root{
+  /* color de cada mundo (el mismo que usa aurzane-estilo.js) */
+  --az-mind:#5B43B8;--az-nexus:#2F5FA8;--az-live:#B4542C;--az-learn:#2F7A55;--az-build:#8A5A32;--az-ovp:#5B43B8;--az-portada:#B08A3A;
+  /* versiones claras para fondos oscuros (contraste ≥ 4.5:1 sobre --az-barra) */
+  --az-mind-c:#A897F0;--az-nexus-c:#8DB3F2;--az-live-c:#F0A27C;--az-learn-c:#7FD3A7;--az-build-c:#DDB58C;--az-ovp-c:#A897F0;--az-portada-c:#E8C77E;
+  --az-barra:#10142B;--az-barra-2:#1A2042;--az-barra-txt:#ECE8DF;--az-barra-dim:#B4B2C4;--az-linea:rgba(255,255,255,.12);
+  --az-radio:12px;--az-radio-s:8px;--az-sombra:0 24px 60px -24px rgba(5,6,20,.6);
+  --az-fuente:"Instrument Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --az-foco:#F2C98A;--az-ease:cubic-bezier(.2,.7,.2,1);
+  --az-alto-barra:44px;
+}
+
+/* ---------- Base común: foco visible, objetivos táctiles y movimiento reducido ---------- */
+:where(a,button,input,select,textarea,summary,[tabindex]):focus-visible{outline:3px solid var(--mundo,#B08A3A);outline-offset:2px;border-radius:4px}
+html[data-tema="oscuro"] :where(a,button,input,select,textarea,summary,[tabindex]):focus-visible{outline-color:var(--az-foco)}
+:where(nav,footer,.utility,.topbar,.todo-panel) :where(a,button){min-height:24px}
+:where(button,[role="button"],input[type="submit"]){touch-action:manipulation}
+img{max-width:100%;height:auto}
+:where(h1,h2,h3){text-wrap:balance}
+:where(p,li){text-wrap:pretty}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+}
+
+/* Enlace para saltar al contenido (WCAG 2.4.1) */
+.az-saltar{position:fixed;left:12px;top:-60px;z-index:10001;background:#fff;color:#10142B;font:600 15px/1 var(--az-fuente);padding:12px 16px;border-radius:var(--az-radio-s);box-shadow:var(--az-sombra);text-decoration:none;transition:top .15s}
+.az-saltar:focus{top:10px}
+
+/* ---------- Barra del ecosistema: igual en todas las páginas ---------- */
+.utility.az-vieja{display:none!important}
+.az-eco{position:relative;z-index:9000;background:var(--az-barra);color:var(--az-barra-txt);font:500 14px/1.2 var(--az-fuente);border-bottom:1px solid var(--az-linea)}
+.az-eco *{box-sizing:border-box}
+.az-eco-in{max-width:1320px;margin:0 auto;min-height:var(--az-alto-barra);display:flex;align-items:center;gap:6px;padding:0 16px}
+.az-eco a,.az-eco button{color:inherit;font:inherit;text-decoration:none}
+.az-eco-logo{font-weight:700;letter-spacing:.08em;font-size:13px;padding:8px 10px 8px 0;margin-right:4px;white-space:nowrap}
+.az-eco-logo:hover{color:#fff}
+.az-mundos{display:flex;align-items:center;gap:2px;margin:0;padding:0;list-style:none}
+.az-mundos a{display:inline-flex;align-items:center;gap:7px;padding:8px 10px;border-radius:var(--az-radio-s);color:var(--az-barra-dim);font-size:13px;font-weight:600;letter-spacing:.04em;white-space:nowrap}
+.az-mundos a:hover{color:#fff;background:var(--az-barra-2)}
+.az-mundos a i{width:8px;height:8px;border-radius:50%;background:var(--c);flex:none}
+.az-mundos a[aria-current="page"],.az-mundos a[aria-current="true"]{color:#fff;background:var(--az-barra-2);box-shadow:inset 0 -2px 0 var(--c)}
+.az-eco-der{margin-left:auto;display:flex;align-items:center;gap:6px}
+.az-buscar{display:inline-flex;align-items:center;gap:10px;min-width:220px;height:32px;padding:0 8px 0 11px;border-radius:var(--az-radio-s);border:1px solid var(--az-linea);background:rgba(255,255,255,.05);color:var(--az-barra-dim)!important;cursor:pointer;font-size:13px!important}
+.az-buscar:hover{border-color:rgba(255,255,255,.3);color:#fff!important}
+.az-buscar svg{flex:none}
+.az-buscar kbd{margin-left:auto;font:600 11px/1 var(--az-fuente);border:1px solid var(--az-linea);border-radius:5px;padding:4px 6px;color:var(--az-barra-dim)}
+.az-eco-btn{display:inline-flex;align-items:center;gap:7px;height:32px;padding:0 10px;border-radius:var(--az-radio-s);border:1px solid transparent;background:none;cursor:pointer;color:var(--az-barra-txt);white-space:nowrap;font-size:13px!important;font-weight:600!important}
+.az-eco-btn:hover{background:var(--az-barra-2)}
+.az-eco-btn.cuenta{border-color:var(--az-linea)}
+.az-eco .az-tema{display:inline-flex!important;align-items:center;gap:7px;height:32px;padding:0 10px;border-radius:var(--az-radio-s);border:1px solid transparent!important;background:none!important;color:var(--az-barra-txt)!important;cursor:pointer;font:600 13px/1 var(--az-fuente)!important;box-shadow:none!important;margin:0!important;min-width:0!important}
+.az-eco .az-tema:hover{background:var(--az-barra-2)!important}
+.az-mundos-btn{display:none}
+@media (max-width:1080px){.az-buscar{min-width:0}.az-buscar .txt,.az-buscar kbd{display:none}.az-buscar{width:36px;justify-content:center;padding:0}}
+@media (max-width:860px){
+  .az-eco-in{gap:4px;padding:0 10px}
+  .az-mundos-btn{display:inline-flex}
+  .az-mundos{display:none;position:absolute;left:8px;right:8px;top:calc(100% + 6px);flex-direction:column;align-items:stretch;background:var(--az-barra);border:1px solid var(--az-linea);border-radius:var(--az-radio);padding:6px;box-shadow:var(--az-sombra)}
+  .az-eco.abierto .az-mundos{display:flex}
+  .az-mundos a{padding:13px 12px;font-size:15px}
+  .az-mundos a small{margin-left:auto;font-weight:400;letter-spacing:0;color:var(--az-barra-dim);font-size:13px}
+  .az-eco-btn.cuenta .txt,.az-eco .az-tema .txt{display:none}
+}
+@media (min-width:861px){.az-mundos a small{display:none}}
+@media (max-width:400px){.az-eco-logo{letter-spacing:.04em;margin-right:0}.az-eco-in{padding:0 6px;gap:2px}.az-eco-der{gap:2px}.az-eco-btn,.az-eco .az-tema{padding:0 8px!important}.az-buscar{width:34px}}
+@media print{.az-eco,.az-paleta{display:none!important}}
+
+/* ---------- Buscador global (Ctrl+K): diálogo con lista de resultados ---------- */
+.az-paleta{position:fixed;inset:0;z-index:10000;display:none;align-items:flex-start;justify-content:center;padding:10vh 16px 16px;background:rgba(6,8,22,.55);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.az-paleta.ver{display:flex}
+.az-paleta-caja{width:min(640px,100%);max-height:min(560px,80vh);display:flex;flex-direction:column;background:#fff;color:#1C1B26;border-radius:16px;box-shadow:var(--az-sombra);overflow:hidden;font:400 15px/1.4 var(--az-fuente)}
+html[data-tema="oscuro"] .az-paleta-caja{background:#171C38;color:#ECE8DF}
+.az-paleta-cab{display:flex;align-items:center;gap:10px;padding:14px 16px;border-bottom:1px solid rgba(20,20,40,.1)}
+html[data-tema="oscuro"] .az-paleta-cab{border-color:rgba(255,255,255,.1)}
+.az-paleta-cab input{flex:1;min-width:0;width:auto!important;height:auto!important;border:0!important;outline:0!important;box-shadow:none!important;background:none!important;color:inherit!important;font:500 17px/1.3 var(--az-fuente)!important;padding:4px 0!important;margin:0!important;border-radius:0!important}
+.az-paleta-cab input::placeholder{color:#6A6878}
+html[data-tema="oscuro"] .az-paleta-cab input::placeholder{color:#A9A7B8}
+.az-paleta-cab button{border:1px solid rgba(20,20,40,.15);background:none;color:inherit;border-radius:6px;font:600 12px/1 var(--az-fuente);padding:7px 8px;cursor:pointer}
+html[data-tema="oscuro"] .az-paleta-cab button{border-color:rgba(255,255,255,.2)}
+.az-paleta-lista{overflow:auto;padding:6px 8px 10px;margin:0;list-style:none}
+.az-paleta-lista .grupo{font:700 12px/1 var(--az-fuente);color:#5F5D6E;padding:14px 10px 6px;letter-spacing:.02em}
+html[data-tema="oscuro"] .az-paleta-lista .grupo{color:#B4B2C4}
+.az-paleta-lista [role="option"]{display:flex;align-items:center;gap:12px;padding:10px;border-radius:10px;cursor:pointer}
+.az-paleta-lista [role="option"][aria-selected="true"]{background:#F1EEE7}
+html[data-tema="oscuro"] .az-paleta-lista [role="option"][aria-selected="true"]{background:#242B52}
+.az-paleta-lista .pt{width:10px;height:10px;border-radius:50%;background:var(--c);flex:none}
+.az-paleta-lista b{display:block;font-weight:600;font-size:15px}
+.az-paleta-lista small{display:block;color:#5F5D6E;font-size:13px;margin-top:1px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:48ch}
+html[data-tema="oscuro"] .az-paleta-lista small{color:#B4B2C4}
+.az-paleta-lista mark{background:none;color:inherit;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:2px;text-decoration-color:var(--c)}
+.az-paleta-lista .tipo{margin-left:auto;font-size:12px;color:#5F5D6E;white-space:nowrap}
+html[data-tema="oscuro"] .az-paleta-lista .tipo{color:#B4B2C4}
+.az-paleta-pie{display:flex;gap:16px;flex-wrap:wrap;padding:10px 16px;border-top:1px solid rgba(20,20,40,.1);font-size:12px;color:#5F5D6E}
+html[data-tema="oscuro"] .az-paleta-pie{border-color:rgba(255,255,255,.1);color:#B4B2C4}
+.az-paleta-vacio{padding:24px 12px;color:#5F5D6E;text-align:center}
+@media (max-width:560px){.az-paleta{padding:0}.az-paleta-caja{width:100%;max-height:100%;height:100%;border-radius:0}.az-paleta-pie{display:none}}
+
+/* ---------- Fotos reales en lugar de dibujos propios (cabeceras de mundo, portadas y «Sigue explorando») ---------- */
+.world-header::before,main>.hero::before{display:none!important}
+.az-portada .ilu,.az-explorar .i{background-size:cover!important;background-position:center!important}
+.az-foto-credito{display:block;font-size:11px;opacity:.7;padding:4px 20px 0}
+.az-explorar .i{height:132px}
+
+/* Mi AURZANE ya está en la barra común: se quita el duplicado de la cabecera de cada mundo */
+html.az-ds .topbar .pill-cuenta,html.az-ds .topbar nav a.cuenta,html.az-ds #pillCuentaUtility{display:none!important}
+
+/* ---------- Contraste mínimo 4.5:1 en etiquetas que no lo alcanzaban (auditoría axe, WCAG 1.4.3) ---------- */
+.tipo-tag.Research{background:#4A5DB0!important;color:#fff!important}
+.tipo-tag.Analysis{background:#2C6E82!important;color:#fff!important}
+html.az-m-learn .oro{background:#7E6020!important;color:#fff!important}
+html.az-m-learn .reco-et{color:#7E6020!important}
+html.az-m-learn:is([data-tema="oscuro"]) .reco-et{color:#E8C77E!important}
+html.az-m-portada:not([data-tema="oscuro"]) header.principal .logo strong{color:#8A6A28}
+html.az-ds header.principal .pill-cuenta{display:none!important}
+/* carruseles horizontales: no ensanchan la página en móvil */
+.now-strip{min-width:0;max-width:100%}
+.az-paleta-lista [role="option"]>span:nth-child(2){flex:1;min-width:0}
+.az-paleta-lista small{max-width:none}
+@media (max-width:560px){.az-paleta-lista .tipo{display:none}}
+/* la barra común no hereda estilos de listas, enlaces o teclas de cada página */
+.az-eco li{display:block!important;width:auto!important;min-width:0!important;margin:0!important;padding:0!important;border:0!important;list-style:none!important;background:none!important}
+.az-eco li::before,.az-eco li::after{content:none!important}
+.az-eco a,.az-eco button{text-transform:none;box-shadow:none}
+.az-eco-in>*,.az-eco-der>*{flex:none}
+.az-buscar .txt{white-space:nowrap}
+.az-buscar kbd{background:#1A2042!important;color:#C9C7D6!important;box-shadow:none!important}
+.az-eco .az-mundos-btn span,.az-eco .az-eco-btn .txt{white-space:nowrap}
+
+/* ---------- Ajustes de ancho en móvil (sin desplazamiento horizontal de la página) ---------- */
+:where(input,select,textarea){max-width:100%}
+.mundos,.mundos-grid{box-sizing:border-box;min-width:0;max-width:100%}
+.topnav{flex-wrap:wrap;row-gap:6px}
+.app>*,.panel{min-width:0}
+.seg{flex-wrap:wrap}
+.hero:has(> .blob){overflow-x:clip}
+html.az-m-portada form.c{grid-template-columns:minmax(0,1fr)}html.az-m-portada form.c>label{min-width:0}
+.layout>*{min-width:0}.paper{overflow-wrap:anywhere}html.az-m-portada form.c select{width:100%}
+@media (max-width:400px){.campos{grid-template-columns:minmax(0,1fr)!important}}
+html.az-m-portada:not([data-tema="oscuro"]) .hero-grid .eyebrow{color:#7A5E22!important}
+html.az-m-portada .chip.active{background:#7A5E22!important;border-color:#7A5E22!important;color:#fff!important}
+.research-sources a{text-decoration:underline;text-underline-offset:2px}
+a[href$="acerca/"]{display:inline-block;min-height:24px;padding:2px 0}
+html[data-tema="oscuro"] .az-cr-ver{color:#E8C77E!important}

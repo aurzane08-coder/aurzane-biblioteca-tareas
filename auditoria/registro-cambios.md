@@ -19,3 +19,8 @@ Cada archivo sustituido queda también en `publicado/<fecha>/` de este repositor
 
 ## No se ha tocado
 Preguntas, puntuaciones, fórmulas y resultados de tests y calculadoras; datos de herramientas; reglas de negocio; datos de usuarios.
+
+## Segunda ronda (tras la primera auditoría «después»)
+- `aurzane-ds.css` v2: la barra común ya no hereda estilos de listas de cada página (Novedades), anchos móviles (Research Hub, Contacto, artículos, calculadoras de BUILD, test de personalidad), contraste de etiquetas de la portada, chip activo, enlaces de fuentes y objetivos de 24 px.
+- `aurzane-estilo.js` v23: contraste del texto del panel «Empieza por aquí» y del enlace «Ver el curso».
+- `aurzane-paleta.js`: versiones nuevas para que los navegadores recojan los cambios.
