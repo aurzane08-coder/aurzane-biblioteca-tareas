@@ -19260,6 +19260,31 @@
    "alta": "2026-10-26"
   },
   {
+   "id": "lectura-el-encantador-de-perros-cesar-millan",
+   "tipo": "lectura",
+   "mundo": "aurzane",
+   "origen": "tienda",
+   "url": "https://aurzane.com/libros/el-encantador-de-perros-cesar-millan/",
+   "titulo": "El encantador de perros",
+   "autor": "César Millán",
+   "ganchos": [
+    "Libro recomendado: El encantador de perros",
+    "El encantador de perros, de César Millán",
+    "¿Qué leer este mes? El encantador de perros"
+   ],
+   "texto": "Este libro es para quienes conviven con un perro y buscan comprender mejor su comportamiento cotidiano. Aporta pautas prácticas y directas para lograr una convivencia equilibrada y feliz en casa.",
+   "hashtags": [
+    "LibrosRecomendados",
+    "QueLeer",
+    "Lectura",
+    "Libros"
+   ],
+   "aviso": "Contiene enlace de afiliado.",
+   "img": null,
+   "emoji": "📚",
+   "alta": "2026-11-15"
+  },
+  {
    "id": "lectura-el-universo-en-tu-mano-christophe-galfard",
    "tipo": "lectura",
    "mundo": "aurzane",
