@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="UTF-8"><meta name="robots" content="noindex,nofollow"><title>Guardados de AURZANE</title></head>
+<body>
+<script>
+/* Almacén común de «Guardados» para todo el ecosistema.
+   Cada subdominio de aurzane.com lo abre en un marco invisible y le pide leer o escribir la lista;
+   así lo que guardas en MIND aparece también en LIVE, NEXUS, LEARN, BUILD, OVP y aurzane.com.
+   Solo responde a páginas de aurzane.com. */
+(function () {
+  var K = 'az-guardados', OK = /^https:\/\/([a-z0-9-]+\.)?aurzane\.com$/;
+  function leer() { try { var v = JSON.parse(localStorage.getItem(K) || 'null'); return v && v.l ? v : { l: [], b: [], i: [] }; } catch (e) { return { l: [], b: [], i: [] }; } }
+  addEventListener('message', function (e) {
+    if (!OK.test(e.origin) || !e.data || e.data.az !== 'g' || !e.data.op) return;
+    var r = null;
+    if (e.data.op === 'leer') r = leer();
+    else if (e.data.op === 'escribir') { try { localStorage.setItem(K, JSON.stringify(e.data.v)); r = e.data.v; } catch (x) { r = null; } }
+    e.source.postMessage({ az: 'g', id: e.data.id, v: r }, e.origin);
+  });
+  if (parent !== window) parent.postMessage({ az: 'g', listo: 1 }, '*');
+})();
+</script>
+</body></html>

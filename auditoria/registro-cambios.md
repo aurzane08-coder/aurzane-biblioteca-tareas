@@ -48,3 +48,10 @@ Revisadas las 140 plantillas auditadas en escritorio y móvil, con capturas comp
 - Contraste y anchos: informe OVP de ejemplo, «Volver» de los artículos de mundo, libros abiertos recientes en móvil, aviso de traducción.
 - Auditoría: recorre cada página antes de capturarla para que carguen las imágenes diferidas; añadidos los 11 perfiles del test de personalidad.
 - Ronda 5: portadas de mundo sin «Más explorado» (repetía artículos) ni la promoción duplicada de OVP; pies propios de cada mundo ocultos (el pie común ya los cubre); tienda de libros legible a 320 px; cinco rasgos de personalidad en una columna en pantallas muy estrechas; el aviso del boletín ya no tapa el contenido en móvil; casillas del boletín de 20 px; bandas del informe OVP con contraste; títulos limpios en el mapa del sitio; cabecera CORS para los estilos comunes (`parche-cors.yml`).
+
+## Guardados comunes (15/11/2026, noche)
+- Botón «Guardar» en la cabecera de cada test, perfil, calculadora, ejercicio, curso, libro, artículo y universidad, y botón «Guardados» con el número de elementos y un panel con todo lo guardado, agrupado por tipo y con el color de su mundo.
+- Una sola lista para todo el ecosistema: se guarda en este navegador mediante `aurzane.com/guardados-almacen.html` (marco invisible que comparten todos los subdominios) y, con sesión de AURZANE ID, en la tabla `public.guardados` de Supabase (seguridad por filas: cada persona solo ve y cambia lo suyo) para tenerla en todos los dispositivos.
+- Incorpora lo ya guardado en MIND, LIVE, LEARN, BUILD y NEXUS y en «Mi lista» del Research Hub, y mantiene ambas cosas sincronizadas al guardar o quitar.
+- Se quita «Guardados» de la segunda fila de cada mundo (ahora está en la cabecera común).
+- Informe OVP de ejemplo: marcas de las recomendaciones con contraste suficiente.
