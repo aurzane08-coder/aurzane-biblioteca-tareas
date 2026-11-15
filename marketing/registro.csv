@@ -450,3 +450,8 @@
 2026-11-15,1,mastodon,test-satisfaccion,ok,https://mastodon.social/@auzane/117619618574422236
 2026-11-15,1,instagram,curso-neuro,ok,18498630805105545
 2026-11-15,1,facebook,calc-hipoteca,ok,2593681047795271
+2026-11-15,5,instagram,frase-bdd8ece2,ok,17968113297206249
+2026-11-15,5,facebook,frase-207b157c,ok,1675992310659315
+2026-11-15,5,youtube,frase-d8300fcc,ok,https://youtu.be/mnMjFUsKAx4
+2026-11-15,5,tiktok,frase-7946bbda,error,500 null
+2026-11-15,5,telegram,frase-12468452,ok,99
