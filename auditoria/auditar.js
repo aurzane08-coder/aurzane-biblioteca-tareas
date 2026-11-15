@@ -28,6 +28,7 @@ const nombre = u => u.replace(/^https:\/\//, '').replace(/[^a-z0-9]+/gi, '_').re
         const t0 = Date.now();
         await p.goto(url, { waitUntil: 'networkidle', timeout: 45000 }).catch(async () => { await p.waitForTimeout(3000); });
         r.carga_ms = Date.now() - t0;
+        await p.waitForSelector('.az-cab', { timeout: 6000 }).catch(() => { r.sin_cabecera = true; });
         await p.waitForTimeout(800);
         /* recorre la página para que carguen las imágenes diferidas, como haría una persona */
         await p.evaluate(async () => { const h = () => document.documentElement.scrollHeight; for (let y = 0; y < h(); y += Math.round(innerHeight * .8)) { scrollTo(0, y); await new Promise(r => setTimeout(r, 120)); } scrollTo(0, 0); }).catch(() => {});
@@ -35,7 +36,7 @@ const nombre = u => u.replace(/^https:\/\//, '').replace(/[^a-z0-9]+/gi, '_').re
         Object.assign(r, await p.evaluate(() => {
           const vw = document.documentElement.clientWidth;
           const anchos = [...document.querySelectorAll('body *')].filter(e => { const b = e.getBoundingClientRect(); const s = getComputedStyle(e); return b.right > vw + 2 && b.width > 0 && s.position !== 'fixed' && s.visibility !== 'hidden'; })
-            .slice(0, 6).map(e => (e.tagName.toLowerCase() + (e.id ? '#' + e.id : '') + (e.className && typeof e.className === 'string' ? '.' + e.className.trim().split(/\s+/).slice(0, 2).join('.') : '')) + ' ' + Math.round(e.getBoundingClientRect().right));
+            .slice(0, 6).map(e => (e.tagName.toLowerCase() + (e.id ? '#' + e.id : '') + (e.className && typeof e.className === 'string' ? '.' + e.className.trim().split(/\s+/).slice(0, 2).join('.') : '') + (e.parentElement ? '<' + (e.parentElement.className && typeof e.parentElement.className === 'string' ? e.parentElement.className.split(' ')[0] : e.parentElement.tagName) : '')) + ' ' + Math.round(e.getBoundingClientRect().right));
           const objetivos = [...document.querySelectorAll('a[href], button, input:not([type=hidden]), select, [role=button]')].filter(e => { const b = e.getBoundingClientRect(); const s = getComputedStyle(e);
             return b.width > 0 && b.height > 0 && s.visibility !== 'hidden' && (b.width < 24 || b.height < 24) && !(e.tagName === 'A' && getComputedStyle(e).display === 'inline'); });
           const nav = document.querySelector('header nav, nav, .topbar, header');
@@ -51,7 +52,7 @@ const nombre = u => u.replace(/^https:\/\//, '').replace(/[^a-z0-9]+/gi, '_').re
             lang: document.documentElement.lang,
           };
         }));
-        if (w === 375 || w === 1366) {
+        if ((process.env.CAPTURAS || '375,1366').split(',').map(Number).includes(w)) {
           await p.addScriptTag({ content: AXE });
           const ax = await p.evaluate(async () => { const res = await axe.run(document, { runOnly: { type: 'tag', values: ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa'] } });
             return res.violations.map(v => ({ id: v.id, impacto: v.impact, n: v.nodes.length, ejemplo: (v.nodes[0]?.target || []).join(' ').slice(0, 120) })); });

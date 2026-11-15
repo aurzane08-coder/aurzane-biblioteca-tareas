@@ -7,6 +7,14 @@ on:
         description: 'Carpeta de salida dentro de auditoria/'
         required: false
         default: 'antes'
+      lista:
+        description: 'Lista de URLs'
+        required: false
+        default: 'auditoria/urls.txt'
+      anchos:
+        description: 'Anchos separados por comas'
+        required: false
+        default: '320,375,430,768,1024,1366,1440,1920'
 permissions:
   contents: write
 concurrency: auditoria
@@ -19,7 +27,7 @@ jobs:
       - uses: actions/setup-node@v4
         with: { node-version: 20 }
       - run: npm i --no-save playwright@1.48.2 axe-core@4.10.2 && npx playwright install --with-deps chromium
-      - run: SALIDA=auditoria/${{ github.event.inputs.salida }} node auditoria/auditar.js
+      - run: SALIDA=auditoria/${{ github.event.inputs.salida }} LISTA=${{ github.event.inputs.lista }} ANCHOS=${{ github.event.inputs.anchos }} CAPTURAS=${{ github.event.inputs.anchos }} node auditoria/auditar.js
       - name: Guardar
         run: |
           git config user.name "aurzane-bot"; git config user.email "bot@aurzane.com"
