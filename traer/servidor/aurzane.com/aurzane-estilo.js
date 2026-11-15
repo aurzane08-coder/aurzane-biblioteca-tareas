@@ -36,7 +36,7 @@
     'html[data-tema="oscuro"] .utility .eco a.activo{color:#fff!important;text-decoration:underline;text-decoration-color:var(--mundo);text-underline-offset:4px}' +
     /* cabecera de cada mundo: color propio y emblema en lugar de la mancha dorada */
     'main>.hero{position:relative}.world-header{position:relative;background-image:linear-gradient(180deg,var(--mundo-suave),transparent 85%)!important}' +
-    '.world-header::before,main>.hero::before{background:' + svg(C[0]) + ' center/contain no-repeat!important;opacity:.55;filter:none!important}' +
+    '.world-header::before,main>.hero::before{display:none!important}' +
     '.world-header .eyebrow,main>.hero .eyebrow{color:var(--mundo)!important}' +
     '.world-header h1 span{color:var(--mundo-osc)}html[data-tema="oscuro"] .world-header h1 span{color:inherit}' +
     '.trust-strip{border-top:3px solid var(--mundo)}' +
@@ -46,7 +46,7 @@
     '.az-empieza{position:absolute;right:max(28px,calc((100% - 1200px)/2));top:50%;transform:translateY(-50%);width:340px;z-index:2;background:var(--surface,#fffdf9);border:1px solid rgba(60,45,30,.12);border-radius:18px;padding:18px 18px 10px;box-shadow:0 24px 50px -30px rgba(30,20,10,.45);text-align:left}' +
     'html[data-tema="oscuro"] .az-empieza{background:#151a33;border-color:rgba(255,255,255,.12)}' +
     '.az-empieza h2{font:600 1.05rem/1.3 "Instrument Sans",system-ui,sans-serif;margin:0 0 4px;color:inherit}' +
-    '.az-empieza p{margin:0 0 10px;font-size:.86rem;opacity:.75}' +
+    '.az-empieza p{margin:0 0 10px;font-size:.86rem}' +
     '.az-empieza a{display:flex;gap:12px;align-items:center;padding:11px 8px;border-top:1px solid rgba(60,45,30,.1);text-decoration:none;color:inherit;border-radius:10px}' +
     '.az-empieza a:hover{background:var(--mundo-suave)}' +
     '.az-empieza a .ic{flex:none;width:38px;height:38px;border-radius:11px;display:grid;place-items:center;font-size:1.15rem;background:var(--mundo-suave);border:1px solid var(--mundo-suave)}' +
@@ -93,7 +93,7 @@
   }
 
   var FIJOS = {
-    nexus: [['🧮', 'Calculadora de nota PAU', 'Tu nota de acceso y de admisión', '/calculadora-nota-pau/'], ['🎓', 'Buscador de universidades', '6.409 instituciones en 55 países', '/universidades/'], ['🎯', '¿Qué puedo estudiar con mi nota?', 'Grados a tu alcance', '/universidades/que-puedo-estudiar/']],
+    nexus: [['🧮', 'Calculadora de nota PAU', 'Tu nota de acceso y de admisión', '/calculadora-nota-pau/'], ['🎓', 'Buscador de universidades', '6.411 instituciones en 55 países', '/universidades/'], ['🎯', '¿Qué puedo estudiar con mi nota?', 'Grados a tu alcance', '/universidades/que-puedo-estudiar/']],
     learn: [['🧠', 'Curso de neurociencias', 'Metodología e investigación, paso a paso', 'cursos.html?c=tecnicas-neurociencias'], ['📚', 'Todos los cursos', 'Gratis y a tu ritmo', 'cursos.html'], ['🎯', 'Test vocacional OVP', 'Descubre qué estudiar', 'https://ovp.aurzane.com/portal.html']]
   };
   function corto(t) { return t.length <= 48 ? t : t.slice(0, 48).replace(/\s+\S*$/, '') + '…'; }
@@ -148,9 +148,16 @@
     grafica: '<path d="M30 196h270M30 196V30" opacity=".5"/><g fill="#fff" fill-opacity=".14" stroke="none"><rect x="54" y="140" width="34" height="56" rx="6"/><rect x="104" y="116" width="34" height="80" rx="6"/><rect x="154" y="96" width="34" height="100" rx="6"/><rect x="204" y="70" width="34" height="126" rx="6"/></g><path d="M60 140l52-30 50-18 52-34 50-22" stroke="#FFD9A0" stroke-width="3"/><circle cx="264" cy="36" r="7" fill="#FFD9A0" stroke="none"/>',
     casa: '<g opacity=".25"><path d="M20 60h280M20 110h280M20 160h280M70 20v190M140 20v190M210 20v190M280 20v190"/></g><path d="M90 196V112l70-54 70 54v84z" fill="#fff" fill-opacity=".1"/><path d="M76 120l84-66 84 66" stroke="#FFD9A0" stroke-width="3"/><path d="M140 196v-48h40v48"/><path d="M40 196h240"/>'
   };
+
+  /* Fotos reales (Unsplash, licencia libre) para cada test y calculadora: sustituyen a los dibujos propios */
+  var FOTO = { olas: '1505142468610-359e7d316be0', nube: '1529665253569-6d01c0eaf7b6', espejo: '1517841905240-472988babdf9', corazon: '1544027993-37dbfe43562a',
+    montana: '1464822759023-fed622ff2c3b', vela: '1499750310107-5fef28a66643', espiral: '1541199249251-f713e6145474', brote: '1466692476868-aef1dfb1e735',
+    sol: '1507525428034-b723cf961d3e', bienestar: '1506126613408-eca07ce68773', puntos: '1512438248247-f0f2a5a8b7f0', foco: '1434030216411-0b793f4b4173',
+    luna: '1541781774459-bb2af2f05b55', habitos: '1490645935967-10de6ba17061', grafica: '1554224155-6726b3ff858f', casa: '1560518883-ce09059eeffa', ahorro: '1579621970563-ebec7560ff3e' };
+  function foto(clave, ancho) { return 'url("https://images.unsplash.com/photo-' + (FOTO[clave] || FOTO.grafica) + '?w=' + (ancho || 640) + '&q=70&auto=format&fit=crop")'; }
   var TEMA = { 'test-de-ansiedad': 'olas', 'test-de-depresion': 'nube', 'test-de-autoestima': 'espejo', 'test-de-autocompasion': 'corazon', 'test-de-autoeficacia': 'montana',
     'test-de-burnout': 'vela', 'test-de-estres': 'espiral', 'test-de-resiliencia': 'brote', 'test-de-satisfaccion-con-la-vida': 'sol', 'test-de-soledad': 'puntos',
-    'test-de-tdah': 'foco', 'test-de-bienestar': 'sol', 'test-de-habitos': 'habitos', 'test-de-sueno': 'luna', 'calculadora-hipoteca': 'casa', 'calculadora-reforma': 'casa' };
+    'test-de-tdah': 'foco', 'test-de-bienestar': 'bienestar', 'test-de-habitos': 'habitos', 'test-de-sueno': 'luna', 'calculadora-hipoteca': 'casa', 'calculadora-reforma': 'casa', 'calculadora-interes-compuesto': 'ahorro', 'calculadora-sueldo-neto': 'ahorro' };
   var MIDE = { 'test-de-ansiedad': 'Cuánta ansiedad y preocupación has sentido en las dos últimas semanas.', 'test-de-depresion': 'Cómo ha estado tu estado de ánimo en las dos últimas semanas.',
     'test-de-autoestima': 'Cómo te valoras a ti mismo en general.', 'test-de-autocompasion': 'Cómo te tratas cuando algo sale mal o te sientes mal.',
     'test-de-autoeficacia': 'Cuánto confías en tu capacidad para afrontar retos y problemas.', 'test-de-burnout': 'El agotamiento físico y mental que te dejan el trabajo o los estudios.',
@@ -163,8 +170,7 @@
     if (!/^(test-de-|calculadora-)/.test(slug) || slug === 'test-de-personalidad' || d.querySelector('.az-portada')) return;
     var wrap = d.querySelector('.hero > .wrap'), pre = wrap && wrap.querySelector('.pre');
     if (!wrap || !pre) return;
-    var ilu = ILU[TEMA[slug] || 'grafica'];
-    var img = 'url("data:image/svg+xml,' + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 220" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">' + ilu + '</svg>') + '")';
+    var img = foto(TEMA[slug] || 'grafica', 680);
     var chips = Array.prototype.map.call(wrap.querySelectorAll('.chips li'), function (x) { return x.textContent; }).join(' ');
     var min = (chips.match(/(\d+)\s*min/) || [])[1];
     var preg = ((d.body.innerText || '').match(/\b0 de (\d{1,2})\b/) || [])[1];
@@ -175,7 +181,7 @@
     if (min) datos.push('<li><i>' + min + '</i>minutos</li>');
     datos.push('<li><i>Gratis</i>sin registro</li>');
     var a = d.createElement('aside'); a.className = 'az-portada'; a.setAttribute('aria-label', 'Sobre este ' + (/^test/.test(slug) ? 'test' : 'cálculo'));
-    a.innerHTML = '<div class="ilu" role="img" aria-label="Ilustración de ' + esc(escala) + '" style="background-image:' + img.replace(/"/g, '&quot;') + ',radial-gradient(70% 80% at 50% 45%,rgba(255,217,160,.2),transparent 70%)"></div>' +
+    a.innerHTML = '<div class="ilu" role="img" aria-label="Ilustración de ' + esc(escala) + '" style="background-image:' + img.replace(/"/g, '&quot;') + '"></div>' +
       '<div class="dat"><span class="esc">' + esc(escala) + '</span>' + (MIDE[slug] ? '<b>Qué mide</b><p>' + esc(MIDE[slug]) + '</p>' : '<p>Resultado al instante, calculado en tu navegador.</p>') +
       '<ul>' + datos.join('') + '</ul></div>';
     wrap.style.position = 'relative'; wrap.appendChild(a); html.classList.add('az-con-portada');
@@ -209,8 +215,8 @@
     var sec = d.createElement('section'); sec.className = 'az-explorar'; sec.setAttribute('aria-labelledby', 'azExT');
     sec.innerHTML = '<div class="in"><h2 id="azExT">Sigue explorando</h2><p>Otros tests que suelen ir de la mano con este. Gratis, anónimos y con el resultado explicado.</p><div class="g">' +
       rel.split(' ').map(function (k) {
-        var t = TESTS[k], url = 'https://' + t[0] + '.aurzane.com/test-de-' + k + '/', motivo = ILU[TEMA['test-de-' + k] || 'grafica'];
-        var img = 'url(&quot;data:image/svg+xml,' + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 220" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">' + (motivo || '') + '</svg>') + '&quot;)';
+        var t = TESTS[k], url = 'https://' + t[0] + '.aurzane.com/test-de-' + k + '/';
+        var img = foto(TEMA['test-de-' + k] || 'grafica', 480).replace(/"/g, '&quot;');
         return '<a class="c az-c-' + t[0] + '" href="' + url + '"><span class="i" style="background-image:' + img + '" aria-hidden="true"></span><span class="t"><small>' + t[0].toUpperCase() + '</small><b>' + esc(t[1]) + '</b>' +
           (MIDE['test-de-' + k] ? '<em>' + esc(MIDE['test-de-' + k]) + '</em>' : '') + '</span></a>';
       }).join('') + '</div></div>';
@@ -293,7 +299,7 @@
       var box = d.createElement('div'); box.className = 'wrap az-curso-rel';
       box.innerHTML = '<a href="https://learn.aurzane.com/curso/' + c[1] + '/?utm_source=mind&amp;utm_medium=test" style="display:flex;gap:18px;align-items:center;text-decoration:none;color:inherit;border:1px solid #c9a24b;border-radius:16px;padding:18px 20px;margin:28px 0;background:rgba(201,162,75,.07)">' +
         '<img src="https://learn.aurzane.com/cursos/portada-ansiedad.webp" alt="" width="160" height="90" loading="lazy" style="width:160px;height:auto;border-radius:10px;flex:none">' +
-        '<span><strong style="display:block;font-size:1.08rem;margin-bottom:4px">' + c[2] + '</strong><span style="opacity:.85">' + c[3] + '</span><span style="display:block;margin-top:8px;font-weight:600;color:#a8822f">Ver el curso</span></span></a>';
+        '<span><strong style="display:block;font-size:1.08rem;margin-bottom:4px">' + c[2] + '</strong><span style="opacity:.85">' + c[3] + '</span><span class="az-cr-ver" style="display:block;margin-top:8px;font-weight:600;color:#7E6020">Ver el curso</span></span></a>';
       w.parentNode.insertBefore(box, w); return;
     }
   }
@@ -305,7 +311,7 @@
   function avisoFallo() {   // en todas las páginas: cualquier visitante puede avisar de un fallo; la IA lo revisa en su próxima ronda
     var pie = d.querySelector('footer'); if (!pie || d.querySelector('.az-fallo')) return;
     var b = d.createElement('button'); b.type = 'button'; b.className = 'az-fallo'; b.textContent = '¿Algo no funciona en esta página? Avísanos';
-    b.style.cssText = 'display:block;margin:14px auto;background:none;border:0;color:inherit;opacity:.7;font:inherit;font-size:.85rem;text-decoration:underline;cursor:pointer';
+    b.style.cssText = 'display:block;margin:14px auto;background:none;border:0;color:inherit;font:inherit;font-size:.9rem;text-decoration:underline;text-underline-offset:3px;cursor:pointer;min-height:24px;padding:4px 8px';
     b.addEventListener('click', function () {
       var t = w.prompt('Cuéntanos qué ha fallado (un enlace, un test, un botón…). No incluyas datos personales.'); if (!t || t.trim().length < 5) return;
       fetch('https://aurzane.com/ai/librero.php', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ tipo: 'incidencia', texto: t, pagina: location.href }) })
@@ -401,8 +407,8 @@
     if (!/(^|\.)aurzane\.com$/.test(location.hostname) || d.querySelector('a[href*="/contacto.html"]') || d.querySelector('.az-legal')) return;
     var L = [['sobre-aurzane.html', 'Sobre AURZANE'], ['contacto.html', 'Contacto'], ['politica-editorial.html', 'Política editorial'], ['privacidad.html', 'Privacidad'], ['cookies.html', 'Cookies'], ['aviso-legal.html', 'Aviso legal'], ['condiciones.html', 'Condiciones de uso']];
     var n = d.createElement('nav'); n.className = 'az-legal'; n.setAttribute('aria-label', 'Información legal');
-    n.style.cssText = 'text-align:center;font-size:.82rem;padding:14px 16px 22px;opacity:.8;line-height:2';
-    n.innerHTML = L.map(function (x) { return '<a href="https://aurzane.com/' + x[0] + '" style="color:inherit;margin:0 8px;white-space:nowrap">' + x[1] + '</a>'; }).join('');
+    n.style.cssText = 'display:flex;flex-wrap:wrap;justify-content:center;gap:4px 16px;flex:1 1 100%;width:100%;max-width:100%;box-sizing:border-box;min-width:0;font-size:.85rem;padding:14px 16px 22px;line-height:1.6';
+    n.innerHTML = L.map(function (x) { return '<a href="https://aurzane.com/' + x[0] + '" style="color:inherit;white-space:nowrap;padding:4px 0;text-underline-offset:3px">' + x[1] + '</a>'; }).join('');
     var pie = d.querySelector('footer'); pie ? pie.appendChild(n) : d.body.appendChild(n);
   }
   // Clics en enlaces de compra: se cuentan (sin datos personales) para el panel de resultados
