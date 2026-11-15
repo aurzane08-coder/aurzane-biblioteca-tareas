@@ -259,8 +259,8 @@
 /* Sistema de diseño compartido: barra común del ecosistema, buscador global (Ctrl+K) y base accesible */
 (function (d) {
   if (d.querySelector('link[data-azds]') || !/(^|\.)aurzane\.com$/.test(location.hostname)) return;
-  var l = d.createElement('link'); l.rel = 'stylesheet'; l.href = 'https://aurzane.com/aurzane-ds.css?v=2'; l.setAttribute('data-azds', '1');
+  var l = d.createElement('link'); l.rel = 'stylesheet'; l.href = 'https://aurzane.com/aurzane-ds.css?v=4'; l.setAttribute('data-azds', '1');
   (d.head || d.documentElement).appendChild(l);
-  var s = d.createElement('script'); s.src = 'https://aurzane.com/aurzane-ds.js?v=2'; s.defer = true; s.setAttribute('data-azds', '1');
+  var s = d.createElement('script'); s.src = 'https://aurzane.com/aurzane-ds.js?v=4'; s.defer = true; s.setAttribute('data-azds', '1');
   (d.head || d.documentElement).appendChild(s);
 })(document);
