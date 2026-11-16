@@ -341,7 +341,7 @@ ficheros['cursos/index.html'] = cat
 ficheros['sitemap.xml'] = ('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
                            + f'<url><loc>https://learn.aurzane.com/</loc></url><url><loc>https://learn.aurzane.com/cursos/</loc><lastmod>{HOY}</lastmod></url>'
                            + ''.join(f'<url><loc>https://learn.aurzane.com/curso/{c["slug"]}/</loc><lastmod>{HOY}</lastmod></url>' for c in cursos) + '</urlset>\n')
-ficheros['robots.txt'] = 'User-agent: *\nAllow: /\nDisallow: /admin-cursos.html\nSitemap: https://learn.aurzane.com/sitemap.xml\n'
+ficheros['robots.txt'] = 'User-agent: *\nAllow: /\nDisallow: /admin-cursos.html\nSitemap: https://learn.aurzane.com/sitemap.xml\nSitemap: https://learn.aurzane.com/sitemap-paginas.xml\n'
 for n, t in ficheros.items():
     p = os.path.join(OUT, n); os.makedirs(os.path.dirname(p), exist_ok=True); open(p, 'w', encoding='utf-8').write(t.replace('—', ', '))
 print(len(cursos), 'cursos ·', sum(1 for s in salud['cursos'] if s['estado'] != 'ok'), 'para revisar')
