@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://aurzane.com/aurzane-paleta.js"></script>
+<title>Calculadora de finiquito e indemnización por despido 2026 | AURZANE BUILD</title>
+<meta name="description" content="Calcula tu finiquito e indemnización en 2026: días del mes, vacaciones no disfrutadas, pagas extra y la indemnización por despido improcedente, objetivo o fin de contrato.">
+<link rel="canonical" href="https://build.aurzane.com/calculadora-finiquito/">
+<meta property="og:title" content="¿Cuánto te deben al dejar tu trabajo? Finiquito e indemnización">
+<meta property="og:description" content="Calcula tu finiquito e indemnización en 2026: días del mes, vacaciones no disfrutadas, pagas extra y la indemnización por despido improcedente, objetivo o fin de contrato.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://build.aurzane.com/calculadora-finiquito/">
+<meta property="og:image" content="https://build.aurzane.com/calculadora-sueldo-neto/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://build.aurzane.com/calculadora-sueldo-neto/og.jpg">
+<meta name="theme-color" content="#1d1915">
+<script>(function(){ try { if (localStorage.getItem('aurzane-tema') === 'oscuro') document.documentElement.setAttribute('data-tema','oscuro'); } catch(e){} })();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebApplication", "name": "Calculadora de finiquito e indemnización", "url": "https://build.aurzane.com/calculadora-finiquito/", "applicationCategory": "FinanceApplication", "operatingSystem": "Web", "inLanguage": "es", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "publisher": {"@type": "Organization", "name": "AURZANE", "url": "https://aurzane.com/"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Qué incluye el finiquito?", "acceptedAnswer": {"@type": "Answer", "text": "El salario de los días trabajados del último mes, las vacaciones generadas y no disfrutadas, y la parte proporcional de las pagas extra si no las cobras prorrateadas. Te corresponde siempre, también si te vas tú."}}, {"@type": "Question", "name": "¿Cuánto es la indemnización por despido improcedente?", "acceptedAnswer": {"@type": "Answer", "text": "Desde la reforma laboral de 2012, 33 días de salario por año trabajado con un máximo de 24 mensualidades. Si empezaste antes del 12 de febrero de 2012, ese tiempo se paga a 45 días por año (artículo 56 del Estatuto de los Trabajadores y disposición transitoria undécima)."}}, {"@type": "Question", "name": "¿La indemnización paga IRPF?", "acceptedAnswer": {"@type": "Answer", "text": "La indemnización por despido está exenta de IRPF hasta la cuantía obligatoria que marca la ley, con un máximo de 180.000 euros. El finiquito sí tributa y cotiza como una nómina más."}}, {"@type": "Question", "name": "¿Tengo que avisar si me voy de la empresa?", "acceptedAnswer": {"@type": "Answer", "text": "En la baja voluntaria se suele exigir un preaviso de 15 días, o el que diga tu convenio. Si no lo das, la empresa puede descontarte del finiquito los días que falten."}}]}]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@500;700&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<meta name="google-adsense-account" content="ca-pub-8763758728010451">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8763758728010451" crossorigin="anonymous"></script>
+<style>
+:root{
+  --navy-950:#070a14; --gold:#c9a24b; --gold-light:#e8cd8f; --gold-deep:#8a6a28;
+  --ok:#1f8a5e; --medio:#c27c12; --warn:#c2462e;
+  --bg:#f6f3ec; --surface:#ffffff; --surface-2:#f0ebe3; --text:#1d1915; --text-dim:#655b50; --border:rgba(29,25,21,.12);
+  --serif:'Bodoni Moda',Georgia,serif; --sans:'Instrument Sans',system-ui,-apple-system,sans-serif;
+  --sombra:0 14px 36px -18px rgba(29,25,21,.32);
+  --n1:#0f1823;--n2:#1d3349;--n3:#2f5d7c;--cian:#f2b544;--violeta:#ff8a4c;--acc-rgb:47,93,124;--acento-texto:#255070;
+}
+:root[data-tema="oscuro"]{
+  --bg:#0b0d14; --surface:#141824; --surface-2:#1c2131; --text:#f3f1ea; --text-dim:#a9adbd; --border:rgba(199,205,214,.14);
+  --sombra:0 14px 36px -18px rgba(0,0,0,.7); --ok:#3ccf95; --medio:#f2b544; --warn:#ff8f7a;
+  --acento-texto:#f2b544;
+}
+*{box-sizing:border-box} [hidden]{display:none!important}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);font-size:16.5px;line-height:1.6;overflow-x:hidden}
+a{color:var(--acento-texto)}
+:focus-visible{outline:3px solid var(--cian);outline-offset:2px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 16px}
+.num{font-variant-numeric:tabular-nums}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+.utility{background:var(--navy-950);color:#8b92a0;font-size:.78rem;padding:7px 0}
+.utility .wrap{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.utility .eco{overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+.utility a{color:inherit;text-decoration:none;margin-right:13px} .utility a:hover,.utility .activo{color:var(--gold-light)}
+.utility button{background:none;border:1px solid rgba(255,255,255,.2);color:inherit;border-radius:999px;padding:3px 10px;font:inherit;cursor:pointer;white-space:nowrap}
+.topbar{background:var(--n1);color:#fff;border-bottom:1px solid rgba(255,255,255,.08)}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:13px;padding-bottom:13px;gap:10px}
+.brand{font-family:var(--serif);font-weight:700;font-size:1.3rem;letter-spacing:.06em;color:#fff;text-decoration:none;white-space:nowrap}
+.brand .z{color:var(--gold)} .brand small{font-family:var(--sans);font-size:.72rem;color:rgba(255,255,255,.65);letter-spacing:.1em;margin-left:6px}
+.topbar nav{display:flex;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+.topbar nav a{color:rgba(255,255,255,.78);text-decoration:none;margin-left:16px;font-size:.9rem;white-space:nowrap} .topbar nav a:hover,.topbar nav a[aria-current]{color:#fff}
+.topbar .cuenta{border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:5px 12px}
+
+.hero{position:relative;overflow:hidden;color:#fff;background:radial-gradient(110% 120% at 90% 0%,var(--n3) 0%,var(--n2) 40%,var(--n1) 100%);padding:42px 0 118px}
+.hero::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.09) 1px,transparent 1.2px);background-size:22px 22px;mask-image:linear-gradient(180deg,#000 10%,transparent 90%)}
+.hero .wrap{position:relative}
+.migas{font-size:.85rem;color:rgba(255,255,255,.7);margin:0 0 14px} .migas a{color:inherit;text-decoration:none} .migas a:hover{color:#fff} .migas span{margin:0 6px;opacity:.6}
+.pre{display:inline-flex;gap:8px;align-items:center;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:5px 13px;font-size:.85rem;color:rgba(255,255,255,.88)}
+.hero h1{font-family:var(--serif);font-weight:700;font-size:clamp(2.1rem,5.4vw,3.5rem);line-height:1.06;margin:16px 0 12px;max-width:17em}
+.hero h1 span{background:linear-gradient(90deg,var(--cian),var(--violeta));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p.lead{font-size:1.1rem;color:rgba(255,255,255,.82);max-width:38em;margin:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 0;padding:0;list-style:none}
+.chips li{font-size:.85rem;color:rgba(255,255,255,.88);background:rgba(255,255,255,.09);border-radius:999px;padding:5px 12px}
+
+.app{position:relative;margin-top:-86px;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.95fr);gap:22px;align-items:start}
+.app.una{grid-template-columns:minmax(0,1fr);max-width:820px;margin-left:auto;margin-right:auto}
+.panel{background:var(--surface);border:1px solid var(--border);border-radius:22px;box-shadow:var(--sombra)}
+.panel-cab{padding:18px 22px 6px}
+.panel-cab h2{margin:0;font-size:1.15rem}
+.panel-cab p{margin:4px 0 0;color:var(--text-dim);font-size:.9rem}
+
+/* cuestionarios */
+.progreso{display:flex;align-items:center;gap:12px;padding:16px 22px 0}
+.progreso .barra{flex:1;height:8px;border-radius:99px;background:var(--surface-2);overflow:hidden}
+.progreso .barra i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--n3),var(--cian));transition:width .35s}
+.progreso span{font-size:.82rem;color:var(--text-dim);font-variant-numeric:tabular-nums;white-space:nowrap}
+.pregunta{padding:18px 22px;border-top:1px solid var(--border)}
+.pregunta:first-of-type{border-top:0}
+.pregunta h3{margin:0 0 4px;font-size:1.06rem;line-height:1.35;display:flex;gap:10px}
+.pregunta h3 .n{flex:none;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font-size:.8rem;color:#fff;background:linear-gradient(135deg,var(--n3),var(--n2))}
+.pregunta .ayuda{font-size:.86rem;color:var(--text-dim);margin:0 0 10px 36px}
+.opciones{display:grid;gap:8px;margin-left:36px}
+.opciones.fila{grid-template-columns:repeat(auto-fit,minmax(132px,1fr))}
+.op{display:flex;align-items:center;gap:10px;text-align:left;border:1.5px solid var(--border);background:var(--surface);color:var(--text);border-radius:12px;padding:10px 12px;font:500 .93rem var(--sans);cursor:pointer;transition:border-color .15s,background .15s}
+.op:hover{border-color:var(--n3)}
+.op i{flex:none;width:18px;height:18px;border-radius:50%;border:2px solid var(--border);display:grid;place-items:center}
+.op[aria-pressed="true"]{border-color:var(--n3);background:rgba(var(--acc-rgb),.09);font-weight:600}
+.op[aria-pressed="true"] i{border-color:var(--n3);background:radial-gradient(circle,var(--n3) 45%,transparent 50%)}
+.pregunta.falta{background:rgba(194,70,46,.06)}
+.pregunta.falta h3::after{content:"Responde esta pregunta";margin-left:auto;font-size:.75rem;color:var(--warn);font-weight:600;white-space:nowrap}
+
+/* formularios */
+.bloque-form{padding:16px 22px;border-top:1px solid var(--border)}
+.bloque-form:first-of-type{border-top:0}
+.bloque-form h3{margin:0 0 10px;font-size:1.02rem}
+.campos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.campos.tres{grid-template-columns:repeat(3,minmax(0,1fr))}
+.campo{min-width:0}
+.campo label{display:block;font-size:.86rem;font-weight:600;margin-bottom:5px}
+.campo small{display:block;font-size:.78rem;color:var(--text-dim);margin-top:3px}
+.entrada{position:relative}
+.entrada span{position:absolute;right:12px;top:50%;transform:translateY(-50%);color:var(--text-dim);font-size:.9rem;pointer-events:none}
+input[type=number],input[type=text],select{width:100%;font:500 1rem var(--sans);color:var(--text);background:var(--surface-2);border:1.5px solid transparent;border-radius:12px;padding:11px 12px;transition:border-color .15s}
+input[type=number]{font-variant-numeric:tabular-nums;font-weight:600}
+.entrada input{padding-right:42px}
+input:focus,select:focus{outline:none;border-color:var(--n3);background:var(--surface)}
+input[type=range]{width:100%;accent-color:var(--n3)}
+.seg{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:5px;background:var(--surface-2);padding:5px;border-radius:13px}
+.seg button{border:0;background:transparent;border-radius:9px;padding:9px 6px;font:600 .9rem var(--sans);color:var(--text-dim);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--surface);color:var(--text);box-shadow:0 2px 8px rgba(0,0,0,.1)}
+.check{display:flex;align-items:flex-start;gap:10px;padding:10px 12px;border:1.5px solid var(--border);border-radius:12px;cursor:pointer;margin-bottom:8px}
+.check input{width:18px;height:18px;margin-top:3px;accent-color:var(--n3);flex:none}
+.check b{display:block;font-size:.94rem} .check small{color:var(--text-dim);font-size:.82rem}
+.check:has(input:checked){border-color:var(--n3);background:rgba(var(--acc-rgb),.06)}
+.check .mini{margin-left:auto;display:flex;align-items:center;gap:6px;font-size:.82rem;color:var(--text-dim)}
+.check .mini input{width:64px;padding:6px 8px;margin:0}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:12px;padding:12px 20px;font:700 .96rem var(--sans);cursor:pointer;text-decoration:none}
+.btn-luz{background:linear-gradient(90deg,var(--cian),var(--violeta));color:#1d130c}
+.btn-osc{background:var(--n2);color:#fff}
+.btn-linea{background:transparent;color:var(--acento-texto);border:1.5px solid var(--border)}
+.btn-linea:hover{border-color:var(--n3)}
+.btn[disabled]{opacity:.55;cursor:not-allowed}
+.acciones{display:flex;gap:8px;flex-wrap:wrap;padding:16px 22px 22px}
+
+/* resultado */
+.res{overflow:hidden}
+.sticky{position:sticky;top:14px}
+.res-top{position:relative;color:#fff;padding:20px 22px 18px;background:radial-gradient(120% 100% at 100% 0%,var(--n3),var(--n1))}
+.res-top h2{font-size:.95rem;font-weight:600;margin:0;color:rgba(255,255,255,.75)}
+.medidor{position:relative;width:100%;max-width:300px;margin:4px auto 0}
+.medidor svg{width:100%;height:auto;display:block}
+.medidor .valor{position:absolute;left:0;right:0;bottom:5%;text-align:center}
+.medidor .valor b{display:block;font-family:var(--serif);font-size:3.4rem;line-height:1;font-variant-numeric:tabular-nums}
+.medidor .valor span{font-size:.85rem;color:rgba(255,255,255,.75)}
+.grande{font-family:var(--serif);font-size:clamp(2.4rem,6vw,3.3rem);line-height:1.05;font-variant-numeric:tabular-nums;margin:6px 0 2px}
+.res-top .sub2{color:rgba(255,255,255,.78);font-size:.9rem;margin:0}
+.nivel{display:inline-flex;align-items:center;gap:8px;margin-top:10px;font-weight:700;font-size:.95rem;background:rgba(255,255,255,.12);border-radius:999px;padding:6px 14px}
+.nivel i{width:10px;height:10px;border-radius:50%;background:#bbb}
+.nivel.ok i{background:#5ee0a8;box-shadow:0 0 0 4px rgba(94,224,168,.25)} .nivel.medio i{background:#ffc35a;box-shadow:0 0 0 4px rgba(255,195,90,.25)} .nivel.mal i{background:#ff8f7a;box-shadow:0 0 0 4px rgba(255,143,122,.25)}
+.res-cuerpo{padding:16px 22px 6px}
+.linea{display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-bottom:1px dashed var(--border);font-size:.93rem}
+.linea:last-child{border-bottom:0} .linea b{font-variant-numeric:tabular-nums;text-align:right}
+.linea.total{font-size:1.04rem;border-bottom:0;padding-top:10px}
+.area{margin:10px 0 14px}
+.area-cab{display:flex;justify-content:space-between;font-size:.92rem;font-weight:600;margin-bottom:5px}
+.area-cab span{color:var(--text-dim);font-weight:500;font-variant-numeric:tabular-nums}
+.barra-a{height:10px;border-radius:99px;background:var(--surface-2);overflow:hidden}
+.barra-a i{display:block;height:100%;border-radius:99px;transition:width .6s cubic-bezier(.2,.8,.2,1)}
+.barra-a i.ok{background:linear-gradient(90deg,#2aa577,#5ee0a8)} .barra-a i.medio{background:linear-gradient(90deg,#d9921d,#ffc35a)} .barra-a i.mal{background:linear-gradient(90deg,#c2462e,#ff8f7a)}
+.apilada{display:flex;height:16px;border-radius:99px;overflow:hidden;background:var(--surface-2);margin:8px 0 4px}
+.apilada i{display:block;height:100%}
+.leyenda{display:flex;flex-wrap:wrap;gap:12px;font-size:.8rem;color:var(--text-dim)}
+.leyenda b{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:5px;vertical-align:-1px}
+.consejos{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.consejos li{background:var(--surface-2);border-radius:14px;padding:12px 14px;font-size:.93rem}
+.consejos li b{display:block;margin-bottom:2px}
+.aviso{margin:12px 22px 0;padding:14px 16px;border-radius:14px;background:rgba(194,70,46,.08);border:1px solid rgba(194,70,46,.25);font-size:.92rem}
+.aviso.suave{background:var(--surface-2);border-color:var(--border)}
+.aviso b{display:block;margin-bottom:3px} .aviso a b{display:inline;margin:0}
+.vacio{padding:26px 22px;text-align:center;color:var(--text-dim)}
+.vacio .e{font-size:2.2rem;display:block;margin-bottom:6px}
+.historial{padding:0 22px 6px;font-size:.88rem;color:var(--text-dim)}
+.historial ol{list-style:none;padding:0;margin:6px 0 0;display:flex;gap:6px;flex-wrap:wrap}
+.historial li{background:var(--surface-2);border-radius:10px;padding:4px 10px;font-variant-numeric:tabular-nums}
+.msg{font-size:.85rem;color:var(--text-dim);min-height:1.2em;padding:0 22px 14px;margin:-6px 0 0}
+table.tabla{width:100%;border-collapse:collapse;font-size:.88rem;font-variant-numeric:tabular-nums}
+table.tabla th,table.tabla td{padding:7px 8px;border-bottom:1px solid var(--border);text-align:right}
+table.tabla th:first-child,table.tabla td:first-child{text-align:left}
+table.tabla th{font-size:.78rem;color:var(--text-dim);font-weight:600}
+.scroll{overflow-x:auto}
+.grafico svg{width:100%;height:auto;display:block}
+
+.movil-barra{display:none}
+body:not(.hecho) .movil-barra{display:none!important}
+section.bloque{padding:56px 0 0}
+h2.t{font-family:var(--serif);font-size:clamp(1.6rem,3.6vw,2.2rem);line-height:1.15;margin:0 0 10px}
+.sub{color:var(--text-dim);margin:0 0 22px;max-width:46em}
+.tarjetas{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.tcard{background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:20px;box-shadow:var(--sombra)}
+.tcard h3{margin:0 0 6px;font-size:1.05rem}
+.tcard p{margin:0;color:var(--text-dim);font-size:.93rem}
+.tcard .big{font-family:var(--serif);font-size:1.5rem;color:var(--acento-texto);margin:4px 0 6px}
+.siguiente{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.scard{display:block;text-decoration:none;color:#fff;border-radius:18px;padding:22px;min-height:150px;box-shadow:var(--sombra);transition:transform .2s}
+.scard:hover{transform:translateY(-4px)}
+.scard b{display:block;font-size:1.15rem;margin:8px 0 4px} .scard span{font-size:.92rem;opacity:.92} .scard .e{font-size:1.8rem}
+details.faq{border-bottom:1px solid var(--border);padding:14px 0}
+details.faq summary{cursor:pointer;font-weight:600}
+details.faq p{margin:8px 0 0;color:var(--text-dim)}
+.revisor{display:flex;gap:16px;align-items:center;margin:40px 0 0;padding:18px 20px;border:1px solid var(--border);border-radius:18px;background:var(--surface)}
+.revisor .ini{flex:none;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;font-family:var(--serif);font-size:1.3rem;color:#fff;background:linear-gradient(135deg,var(--n3),var(--n1))}
+.revisor p{margin:0;font-size:.92rem;color:var(--text-dim)} .revisor b{color:var(--text);font-size:1rem}
+.firma{display:flex;align-items:center;gap:22px;flex-wrap:wrap;margin:44px 0 0;padding:22px 24px;border:1px solid var(--border);border-radius:20px;background:var(--surface)}
+.firma img{width:min(260px,70vw);height:auto;display:block}
+:root[data-tema="oscuro"] .firma img{filter:brightness(0) invert(.94)}
+.firma p{margin:0;font-size:.92rem;color:var(--text-dim);max-width:34em} .firma b{display:block;color:var(--text);font-size:1rem;margin-bottom:2px}
+.creditos{font-size:.84rem;color:var(--text-dim);border-top:1px solid var(--border);margin-top:28px;padding-top:14px}
+.creditos li{margin:4px 0}
+footer{background:var(--navy-950);color:#8b92a0;font-size:.85rem;padding:26px 0;margin-top:56px}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+footer a{color:#8b92a0;margin-right:16px}
+
+@media (max-width:920px){
+  .app{grid-template-columns:1fr;margin-top:-80px}
+  .sticky{position:static}
+  .tarjetas,.siguiente{grid-template-columns:1fr}
+  .movil-barra{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:50;align-items:center;justify-content:space-between;gap:10px;background:var(--n1);color:#fff;border-radius:16px;padding:10px 14px 10px 18px;box-shadow:0 14px 30px -10px rgba(0,0,0,.5);transform:translateY(140%);transition:transform .25s}
+  .movil-barra.ver{transform:none}
+  .movil-barra b{font-family:var(--serif);font-size:1.45rem;font-variant-numeric:tabular-nums}
+  .movil-barra span{font-size:.8rem;color:rgba(255,255,255,.75);display:block}
+  .movil-barra a{background:linear-gradient(90deg,var(--cian),var(--violeta));color:#1d130c;font-weight:700;text-decoration:none;border-radius:10px;padding:9px 12px;font-size:.88rem}
+}
+@media (max-width:560px){
+  body{font-size:16px}
+  .topbar nav a:not(.cuenta){display:none}
+  .pregunta,.bloque-form{padding:16px}
+  .opciones{margin-left:0}
+  .pregunta .ayuda{margin-left:0}
+  .campos.tres{grid-template-columns:1fr 1fr}
+  .hero{padding:32px 0 108px}
+}
+@media print{.utility,.topbar,.hero::before,footer,.acciones,.movil-barra,.azp-btn,.azr-btn{display:none!important} .hero{padding:20px 0;background:none;color:#000} .hero p.lead{color:#333} .app{margin-top:0}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+<style>input[type=date]{width:100%;font:500 1rem var(--sans);color:var(--text);background:var(--surface-2);border:1.5px solid transparent;border-radius:12px;padding:10px 12px}.aviso-fin{font-size:.84rem;color:var(--text-dim);margin:14px 0 0}</style>
+</head>
+<body>
+<div class="utility" data-nosnippet><div class="wrap"><div class="eco"><a href="https://aurzane.com/">AURZANE</a><a href="https://mind.aurzane.com/">MIND</a><a href="https://ovp.aurzane.com/">OVP</a><a href="https://nexus.aurzane.com/">NEXUS</a><a href="https://live.aurzane.com/">LIVE</a><a href="https://learn.aurzane.com/">LEARN</a><a class=activo href="https://build.aurzane.com/">BUILD</a></div><button type="button" id="btnTema">🌓 Tema</button></div></div>
+<header class="topbar" data-nosnippet><div class="wrap">
+<a class="brand" href="https://build.aurzane.com/">AUR<span class="z">Z</span>ANE<small>/ BUILD</small></a>
+<nav aria-label="BUILD"><a href="/calculadora-hipoteca/">Hipoteca</a><a href="/calculadora-gastos-compra-vivienda/">Gastos compra</a><a href="/calculadora-rentabilidad-alquiler/">Alquiler</a><a href="/calculadora-sueldo-neto/">Sueldo</a><a href="/calculadora-ahorro/">Ahorro</a><a class="cuenta" href="https://aurzane.com/mi-aurzane.html">👤 Mi AURZANE</a></nav>
+</div></header>
+<section class="hero"><div class="wrap">
+<p class="migas"><a href="https://build.aurzane.com/">BUILD</a><span>/</span>Calculadora de finiquito e indemnización</p>
+<span class="pre">📄 Estatuto de los Trabajadores</span>
+<h1>Lo que te deben <span>al dejar tu trabajo</span></h1>
+<p class="lead">Escribe tu sueldo, tus fechas y el motivo de la salida. Te calculamos el finiquito (salario pendiente, vacaciones y pagas extra) y la indemnización que marca la ley.</p>
+<ul class="chips"><li>🗓️ Vacaciones y pagas</li><li>⚖️ Improcedente u objetivo</li><li>🧮 Antes y después de 2012</li></ul>
+</div></section>
+
+<div class="wrap">
+<div class="app">
+  <div class="panel">
+    <div class="bloque-form">
+      <h3>Tu contrato</h3>
+      <div class="campos">
+        <div class="campo" style="grid-column:1/-1"><label for="bruto">Salario bruto anual</label><div class="entrada"><input type="number" id="bruto" value="24000" min="0" step="500" inputmode="decimal"><span>€</span></div></div>
+        <div class="campo" style="grid-column:1/-1"><label>Pagas</label><div class="seg" id="pagas"><button type="button" data-v="14">14 (extras aparte)</button><button type="button" data-v="12">12 (prorrateadas)</button></div></div>
+        <div class="campo"><label for="inicio">Fecha de inicio</label><input type="date" id="inicio" value="2020-03-01"></div>
+        <div class="campo"><label for="fin">Último día trabajado</label><input type="date" id="fin"></div>
+      </div>
+    </div>
+    <div class="bloque-form">
+      <h3>La salida</h3>
+      <div class="campos">
+        <div class="campo" style="grid-column:1/-1"><label for="motivo">Motivo</label><select id="motivo"><option value="vol">Baja voluntaria</option><option value="imp" selected>Despido improcedente</option><option value="obj">Despido objetivo (causas económicas, técnicas…)</option><option value="tem">Fin de contrato temporal</option><option value="dis">Despido disciplinario procedente</option></select></div>
+        <div class="campo"><label for="vacas">Vacaciones ya disfrutadas este año</label><div class="entrada"><input type="number" id="vacas" value="0" min="0" step="1" inputmode="decimal"><span>días</span></div></div>
+        <div class="campo"><label for="pend">Días de vacaciones de años anteriores sin disfrutar</label><div class="entrada"><input type="number" id="pend" value="0" min="0" step="1" inputmode="decimal"><span>días</span></div></div>
+      </div>
+    </div>
+  </div>
+
+  <aside class="panel res sticky" id="resultado" aria-live="polite">
+    <div class="res-top"><h2>Total que te corresponde</h2><div class="grande" id="grande">–</div><p class="sub2" id="grandeSub"></p><span class="nivel ok" id="nivel"><i></i><span></span></span></div>
+    <div class="res-cuerpo">
+      <div class="linea"><span id="rDiasL">Salario de los días del último mes</span><b id="rDias"></b></div>
+      <div class="linea"><span id="rVacL">Vacaciones no disfrutadas</span><b id="rVac"></b></div>
+      <div class="linea"><span id="rExtraL">Parte de pagas extra</span><b id="rExtra"></b></div>
+      <div class="linea total"><span id="rFiniqL"><b>Finiquito</b></span><b id="rFiniq"></b></div>
+      <div class="linea"><span id="rIndL">Indemnización</span><b id="rInd"></b></div>
+      <div class="linea total"><span id="rTotalL"><b>Total bruto</b></span><b id="rTotal"></b></div>
+      <p id="nota" style="font-size:.86rem;color:var(--text-dim);margin:12px 0 0"></p>
+    </div>
+    <div class="acciones"><button class="btn btn-osc" id="compartir" type="button">Compartir este cálculo</button><button class="btn btn-linea" type="button" onclick="window.print()">Guardar en PDF</button></div>
+    <p class="msg" id="msg"></p>
+  </aside>
+</div>
+
+<section class="bloque">
+  <h2 class="t">Indemnización según el motivo</h2>
+  <div class="tarjetas">
+    <div class="tcard"><div class="big">33 días</div><h3>Despido improcedente</h3><p>33 días de salario por año trabajado, con un máximo de 24 mensualidades. Por el tiempo trabajado antes del 12 de febrero de 2012 se cuentan 45 días por año.</p></div>
+    <div class="tcard"><div class="big">20 días</div><h3>Despido objetivo</h3><p>20 días por año trabajado, con un máximo de 12 mensualidades. Si después se declara improcedente, sube a 33 días.</p></div>
+    <div class="tcard"><div class="big">12 días</div><h3>Fin de contrato temporal</h3><p>12 días por año trabajado. En la baja voluntaria y en el despido disciplinario procedente no hay indemnización, pero sí finiquito.</p></div>
+  </div>
+</section>
+
+<section class="bloque">
+  <h2 class="t">Más herramientas para tu dinero y tu casa</h2>
+  <div class="siguiente">
+    <a class="scard" style="background:linear-gradient(150deg,#24506e,#0c1620)" href="/calculadora-sueldo-neto/"><span class="e">💶</span><b>Sueldo neto</b><span>De bruto a neto con el IRPF de 2026.</span></a>
+    <a class="scard" style="background:linear-gradient(150deg,#2e5b4a,#0d1a15)" href="/calculadora-ahorro/"><span class="e">🐷</span><b>Calculadora de ahorro</b><span>Cuánto ahorrar al mes para tu meta (50/30/20).</span></a>
+    <a class="scard" style="background:linear-gradient(150deg,#6a4a2a,#1f150b)" href="/calculadora-jubilacion/"><span class="e">🌅</span><b>Calculadora de jubilación</b><span>Cuánto ahorrar para complementar tu pensión.</span></a>
+  </div>
+</section>
+
+<section class="bloque">
+  <h2 class="t">Preguntas frecuentes</h2>
+  <details class="faq"><summary>¿Qué incluye el finiquito?</summary><p>El salario de los días trabajados del último mes, las vacaciones generadas y no disfrutadas, y la parte proporcional de las pagas extra si no las cobras prorrateadas. Te corresponde siempre, también si te vas tú.</p></details>
+  <details class="faq"><summary>¿Cuánto es la indemnización por despido improcedente?</summary><p>Desde la reforma laboral de 2012, 33 días de salario por año trabajado con un máximo de 24 mensualidades. Si empezaste antes del 12 de febrero de 2012, ese tiempo se paga a 45 días por año (artículo 56 del Estatuto de los Trabajadores y disposición transitoria undécima).</p></details>
+  <details class="faq"><summary>¿La indemnización paga IRPF?</summary><p>La indemnización por despido está exenta de IRPF hasta la cuantía obligatoria que marca la ley, con un máximo de 180.000 euros. El finiquito sí tributa y cotiza como una nómina más.</p></details>
+  <details class="faq"><summary>¿Tengo que avisar si me voy de la empresa?</summary><p>En la baja voluntaria se suele exigir un preaviso de 15 días, o el que diga tu convenio. Si no lo das, la empresa puede descontarte del finiquito los días que falten.</p></details>
+  <ul class="creditos">
+    <li>Indemnizaciones: artículos 49, 53 y 56 del Estatuto de los Trabajadores (Real Decreto Legislativo 2/2015) y disposición transitoria undécima.</li>
+    <li>Exención en el IRPF: artículo 7.e de la Ley 35/2006, del IRPF.</li>
+    <li>Vacaciones: 30 días naturales al año (artículo 38 del Estatuto). Pagas extra calculadas por semestres (enero a junio y julio a diciembre); tu convenio puede repartirlas de otra forma.</li>
+    <li>Salario diario: salario bruto anual entre 365. No incluye complementos variables, horas extra ni lo que fije tu convenio.</li>
+  </ul>
+  <p class="aviso-fin">Cálculo orientativo con fines informativos y educativos. No es asesoramiento financiero, fiscal ni legal: para decidir, consulta tu caso con un profesional.</p>
+</section>
+</div>
+<div class="movil-barra" id="movilBarra"><div><span>Total</span><b id="movilValor">–</b></div><a href="#resultado">Ver detalle</a></div>
+
+<footer><div class="wrap"><span>© 2026 AURZANE BUILD · Herramienta gratuita y orientativa</span><span><a href="https://build.aurzane.com/">BUILD</a><a href="https://aurzane.com/">AURZANE</a><a href="https://aurzane.com/privacidad.html">Privacidad</a></span></div></footer>
+<script>
+(function(){
+  var b=document.getElementById('btnTema');
+  if(b) b.addEventListener('click',function(){var o=document.documentElement.getAttribute('data-tema')==='oscuro';if(o)document.documentElement.removeAttribute('data-tema');else document.documentElement.setAttribute('data-tema','oscuro');try{localStorage.setItem('aurzane-tema',o?'claro':'oscuro');}catch(e){}});
+})();
+window.AZ={
+  fmt:function(n,d){return Number(n).toLocaleString('es-ES',{minimumFractionDigits:d||0,maximumFractionDigits:d||0,useGrouping:'always'});},
+  eur:function(n){return AZ.fmt(Math.round(n))+' €';},
+  ls:function(k,v){try{if(v===undefined)return JSON.parse(localStorage.getItem(k)||'null');localStorage.setItem(k,JSON.stringify(v));}catch(e){return null;}},
+  medidor:function(el,valor,max,texto,sub){
+    var p=Math.max(0,Math.min(1,valor/max)),a0=Math.PI,a=a0-p*Math.PI,r=88,cx=110,cy=110;
+    var x=cx+r*Math.cos(a),y=cy-r*Math.sin(a),large=0;
+    var ticks='';for(var i=0;i<=10;i++){var t=a0-i/10*Math.PI;ticks+='<line x1="'+(cx+(r-22)*Math.cos(t)).toFixed(1)+'" y1="'+(cy-(r-22)*Math.sin(t)).toFixed(1)+'" x2="'+(cx+(r-15)*Math.cos(t)).toFixed(1)+'" y2="'+(cy-(r-15)*Math.sin(t)).toFixed(1)+'" stroke="rgba(255,255,255,.35)" stroke-width="2"/>';}
+    el.innerHTML='<svg viewBox="0 0 220 128" aria-hidden="true"><defs><linearGradient id="gm" x1="0" x2="1"><stop offset="0" stop-color="var(--cian)"/><stop offset="1" stop-color="var(--violeta)"/></linearGradient></defs>'+
+      '<path d="M22 110 A88 88 0 0 1 198 110" fill="none" stroke="rgba(255,255,255,.14)" stroke-width="16" stroke-linecap="round"/>'+
+      (p>0.001?'<path d="M22 110 A88 88 0 '+large+' 1 '+x.toFixed(1)+' '+y.toFixed(1)+'" fill="none" stroke="url(#gm)" stroke-width="16" stroke-linecap="round"/>':'')+ticks+'</svg>'+
+      '<div class="valor"><b>'+texto+'</b><span>'+sub+'</span></div>';
+  },
+  compartir:function(titulo,texto,msgEl){
+    var url=location.href;
+    if(navigator.share){navigator.share({title:titulo,text:texto,url:url}).catch(function(){});return;}
+    if(navigator.clipboard){navigator.clipboard.writeText(texto+' '+url).then(function(){if(msgEl)msgEl.textContent='Enlace copiado. Pégalo donde quieras compartirlo.';},function(){if(msgEl)msgEl.textContent=url;});}
+    else if(msgEl) msgEl.textContent=url;
+  },
+  // Pinta preguntas de opción única. preguntas: [{id,t,ayuda?,fila?,ops:[[valor,texto],...]}]
+  cuestionario:function(cont,preguntas,resp,alCambiar){
+    var h='';
+    preguntas.forEach(function(p,i){
+      h+='<div class="pregunta" id="p-'+p.id+'" role="group" aria-labelledby="t-'+p.id+'"><h3 id="t-'+p.id+'"><span class="n">'+(i+1)+'</span><span>'+p.t+'</span></h3>'+(p.ayuda?'<p class="ayuda">'+p.ayuda+'</p>':'')+'<div class="opciones'+(p.fila?' fila':'')+'">';
+      p.ops.forEach(function(o){h+='<button type="button" class="op" data-p="'+p.id+'" data-v="'+o[0]+'" aria-pressed="'+(resp[p.id]===o[0]?'true':'false')+'"><i></i><span>'+o[1]+'</span></button>';});
+      h+='</div></div>';
+    });
+    cont.innerHTML=h;
+    cont.addEventListener('click',function(e){
+      var b=e.target.closest('.op');if(!b)return;
+      var id=b.getAttribute('data-p'),v=b.getAttribute('data-v'),num=Number(v);resp[id]=isNaN(num)?v:num;
+      cont.querySelectorAll('.op[data-p="'+id+'"]').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});
+      var caja=document.getElementById('p-'+id);caja.classList.remove('falta');
+      var idx=preguntas.findIndex(function(p){return p.id===id;}),sig=preguntas[idx+1];
+      if(sig&&resp[sig.id]===undefined&&window.innerWidth<920){var el=document.getElementById('p-'+sig.id);setTimeout(function(){el.scrollIntoView({behavior:'smooth',block:'center'});},160);}
+      alCambiar&&alCambiar();
+    });
+  },
+  faltan:function(preguntas,resp){
+    var f=preguntas.filter(function(p){return resp[p.id]===undefined;});
+    f.forEach(function(p){document.getElementById('p-'+p.id).classList.add('falta');});
+    if(f.length)document.getElementById('p-'+f[0].id).scrollIntoView({behavior:'smooth',block:'center'});
+    return f.length;
+  },
+  // Imagen 1080x1350 del resultado para compartir. r={titulo,valor,max,unidad,nivel,frase,c1,c2}
+  imagen:function(r,msgEl){
+    var W=1080,H=1350,c=document.createElement('canvas');c.width=W;c.height=H;var x=c.getContext('2d');
+    var cs=getComputedStyle(document.documentElement),c1=r.c1||cs.getPropertyValue('--n1').trim(),c2=r.c2||cs.getPropertyValue('--n3').trim(),a1=cs.getPropertyValue('--cian').trim(),a2=cs.getPropertyValue('--violeta').trim();
+    var g=x.createRadialGradient(W*.9,0,50,W*.6,H*.4,H);g.addColorStop(0,c2);g.addColorStop(1,c1);x.fillStyle=g;x.fillRect(0,0,W,H);
+    x.fillStyle='rgba(255,255,255,.07)';for(var i=0;i<W;i+=36)for(var j=0;j<H;j+=36){x.beginPath();x.arc(i,j,2,0,7);x.fill();}
+    var serif='"Bodoni Moda",Georgia,serif',sans='"Instrument Sans",system-ui,sans-serif';
+    x.fillStyle='#fff';x.font='700 44px '+serif;x.fillText('AURZANE',80,120);
+    x.fillStyle='rgba(255,255,255,.8)';x.font='600 38px '+sans;x.fillText(r.titulo,80,230);
+    var cx=W/2,cy=720,rad=300,p=Math.max(0,Math.min(1,r.valor/r.max));
+    x.lineCap='round';x.lineWidth=56;x.strokeStyle='rgba(255,255,255,.15)';x.beginPath();x.arc(cx,cy,rad,Math.PI,2*Math.PI);x.stroke();
+    var lg=x.createLinearGradient(cx-rad,0,cx+rad,0);lg.addColorStop(0,a1);lg.addColorStop(1,a2);x.strokeStyle=lg;
+    if(p>0){x.beginPath();x.arc(cx,cy,rad,Math.PI,Math.PI+p*Math.PI);x.stroke();}
+    x.textAlign='center';x.fillStyle='#fff';x.font='700 210px '+serif;x.fillText(r.valor,cx,cy-20);
+    x.font='500 40px '+sans;x.fillStyle='rgba(255,255,255,.75)';x.fillText(r.unidad||('sobre '+r.max),cx,cy+50);
+    x.font='700 54px '+sans;x.fillStyle='#fff';x.fillText(r.nivel,cx,cy+170);
+    if(r.frase){x.font='400 36px '+sans;x.fillStyle='rgba(255,255,255,.82)';var pal=r.frase.split(' '),l='',y=cy+250;pal.forEach(function(w){if(x.measureText(l+w).width>860){x.fillText(l.trim(),cx,y);y+=50;l='';}l+=w+' ';});x.fillText(l.trim(),cx,y);}
+    x.font='600 31px '+sans;x.fillStyle=a1;x.fillText('Haz el tuyo gratis: '+location.host+location.pathname,cx,H-90);
+    c.toBlob(function(b){
+      var f=new File([b],'mi-resultado-aurzane.png',{type:'image/png'});
+      if(navigator.canShare&&navigator.canShare({files:[f]})){navigator.share({files:[f],title:r.titulo,text:'Mi resultado en '+r.titulo+'. Haz el tuyo gratis: '+location.href.split('#')[0]}).catch(function(){});}
+      else{var a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='mi-resultado-aurzane.png';a.click();if(msgEl)msgEl.textContent='Imagen descargada. Súbela a tus historias o envíala por WhatsApp.';}
+    },'image/png');
+  },
+  barraMovil:function(objetivo,barra){
+    if(!('IntersectionObserver' in window)||!objetivo||!barra)return;
+    new IntersectionObserver(function(es){es.forEach(function(e){barra.classList.toggle('ver',!e.isIntersecting&&window.scrollY>300);});},{threshold:0.05}).observe(objetivo);
+    window.addEventListener('scroll',function(){if(window.scrollY<300)barra.classList.remove('ver');},{passive:true});
+  }
+};
+</script>
+<script>(function(){
+var $=function(id){return document.getElementById(id);};
+var n=function(id){var v=parseFloat(String($(id).value).replace(',','.'));return isFinite(v)?v:0;};
+var st={"pagas": "14"};
+function seg(id,k){var el=$(id);if(!el)return;el.addEventListener('click',function(ev){var b=ev.target.closest('button');if(!b)return;st[k]=b.getAttribute('data-v');Array.prototype.forEach.call(el.querySelectorAll('button'),function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});pintar();});Array.prototype.forEach.call(el.querySelectorAll('button'),function(x){x.setAttribute('aria-pressed',x.getAttribute('data-v')===st[k]?'true':'false');});}
+function nivel(clase,txt){var e=$('nivel');e.className='nivel '+clase;e.querySelector('span').textContent=txt;}
+function hash(ids){var q=new URLSearchParams();ids.forEach(function(k){q.set(k,$(k).value);});Object.keys(st).forEach(function(k){q.set(k,st[k]);});history.replaceState(null,'','#'+q.toString());}
+(function(){var q=new URLSearchParams(location.hash.slice(1));q.forEach(function(v,k){if($(k)&&$(k).tagName!=='DIV')$(k).value=v;else if(k in st)st[k]=v;});})();
+
+seg('pagas','pagas');
+if(!$('fin').value){var h=new Date();$('fin').value=h.getFullYear()+'-'+('0'+(h.getMonth()+1)).slice(-2)+'-'+('0'+h.getDate()).slice(-2);}
+var DIA=864e5;function f(s){var p=String(s).split('-');return p.length===3?Date.UTC(+p[0],+p[1]-1,+p[2]):NaN;}
+function dias(a,b){return Math.max(0,Math.round((b-a)/DIA)+1);}
+function pintar(){
+  var bruto=n('bruto'),i0=f($('inicio').value),f0=f($('fin').value),motivo=$('motivo').value,catorce=st.pagas==='14';
+  if(!isFinite(i0)||!isFinite(f0)||f0<i0){$('grande').textContent='–';$('grandeSub').textContent='Revisa las fechas';return;}
+  var fd=new Date(f0),y=fd.getUTCFullYear(),m=fd.getUTCMonth(),d=fd.getUTCDate(),diario=bruto/365;
+  var mensual=bruto/(catorce?14:12),diasMes=Math.min(d,30),pDias=mensual*diasMes/30;
+  var ini=Math.max(i0,Date.UTC(y,0,1)),anioDias=(Date.UTC(y+1,0,1)-Date.UTC(y,0,1))/DIA;
+  var gen=30*dias(ini,f0)/anioDias,pendV=Math.max(gen-n('vacas'),0)+n('pend'),pVac=pendV*diario;
+  var pExtra=0;if(catorce){var s0=m<6?Date.UTC(y,0,1):Date.UTC(y,6,1),s1=m<6?Date.UTC(y,5,30):Date.UTC(y,11,31);pExtra=(bruto/14)*dias(Math.max(s0,i0),f0)/dias(s0,s1);}
+  var finiq=pDias+pVac+pExtra,total=dias(i0,f0),anios=total/365,corte=Date.UTC(2012,1,12),ind=0,txt='';
+  if(motivo==='imp'){
+    if(i0<corte){var d1=dias(i0,Math.min(f0,corte-DIA))*45/365,d2=f0>=corte?dias(corte,f0)*33/365:0;var dd=d1>720?Math.min(d1,1260):Math.min(d1+d2,720);ind=dd*diario;txt=AZ.fmt(dd,1)+' días de salario (45 días por año hasta 2012 y 33 después)';}
+    else{var dd2=Math.min(anios*33,720);ind=dd2*diario;txt=AZ.fmt(dd2,1)+' días de salario (33 por año, máximo 24 mensualidades)';}
+  }else if(motivo==='obj'){var d3=Math.min(anios*20,360);ind=d3*diario;txt=AZ.fmt(d3,1)+' días de salario (20 por año, máximo 12 mensualidades)';}
+  else if(motivo==='tem'){var d4=anios*12;ind=d4*diario;txt=AZ.fmt(d4,1)+' días de salario (12 por año)';}
+  else txt='Sin indemnización en '+(motivo==='vol'?'la baja voluntaria':'el despido disciplinario procedente');
+  var tot=finiq+ind;
+  $('grande').textContent=AZ.eur(tot);$('movilValor').textContent=AZ.eur(tot);
+  $('grandeSub').textContent='en bruto · '+AZ.fmt(anios,1)+' años en la empresa';
+  nivel(ind>0?'ok':'medio',ind>0?'Indemnización: '+AZ.eur(ind):'Solo finiquito');
+  $('rDiasL').textContent='Salario de '+diasMes+' días del último mes';$('rDias').textContent=AZ.eur(pDias);
+  $('rVacL').textContent='Vacaciones no disfrutadas ('+AZ.fmt(pendV,1)+' días)';$('rVac').textContent=AZ.eur(pVac);
+  $('rExtra').textContent=catorce?AZ.eur(pExtra):'Ya cobradas cada mes';$('rFiniq').textContent=AZ.eur(finiq);$('rInd').textContent=AZ.eur(ind);$('rTotal').textContent=AZ.eur(tot);
+  $('nota').textContent=txt+'. La indemnización está exenta de IRPF dentro de los límites legales; el finiquito tributa como una nómina.'+(motivo==='vol'?' Si no das el preaviso de tu convenio, te pueden descontar esos días.':'');
+  hash(['bruto','inicio','fin','motivo','vacas','pend']);
+}
+
+Array.prototype.forEach.call(document.querySelectorAll('.app input,.app select'),function(i){i.addEventListener('input',pintar);});
+pintar();document.body.classList.add('hecho');
+$('compartir').addEventListener('click',function(){AZ.compartir("Calculadora de finiquito e indemnización","Calcula tu finiquito y tu indemnización:",$('msg'));});
+AZ.barraMovil($('resultado'),$('movilBarra'));
+})();
+</script>
+</body>
+</html>

@@ -37,12 +37,12 @@
   "entrada": "Cada curso tiene programa, lecciones breves, mapas, tarjetas de repaso, evaluaciones y certificado. Tu progreso se guarda con tu cuenta y siempre sabes qué te toca después."
  },
  "build": {
-  "corto": "Vivienda y dinero",
-  "lema": "Construye tu patrimonio",
-  "titulo": "AURZANE BUILD: vivienda, dinero y patrimonio con números claros",
-  "descripcion": "Calculadoras de hipoteca, reforma y sueldo neto, y guías de vivienda, urbanismo y patrimonio para decidir con números claros.",
-  "eyebrow": "Vivienda, dinero y proyectos",
-  "h1": "Construye tu patrimonio <span>con números claros</span>",
-  "entrada": "Hoy BUILD te ayuda a decidir sobre vivienda y dinero: calcula tu hipoteca, tu reforma o tu sueldo neto y lee guías con fuentes sobre vivienda, urbanismo y patrimonio. Los proyectos físicos de AURZANE nacerán de aquí y se anunciarán en esta página."
+  "corto": "Dinero, ingresos y vivienda",
+  "lema": "Haz crecer tu dinero",
+  "titulo": "AURZANE BUILD: dinero, ingresos, inversión y vivienda con números claros",
+  "descripcion": "Calculadoras gratis de hipoteca, gastos de compra, rentabilidad del alquiler, sueldo neto, finiquito, ahorro y jubilación, y guías con fuentes para ganar, ahorrar e invertir mejor.",
+  "eyebrow": "Dinero, ingresos y vivienda",
+  "h1": "Haz crecer tu dinero <span>con números claros</span>",
+  "entrada": "BUILD te ayuda a decidir sobre tu dinero: cuánto cobrarás en neto, qué te deben si dejas un trabajo, cuánto ahorrar para tu meta o tu jubilación, cuánto cuesta comprar una casa y si compensa invertir en un piso para alquilar."
  }
 }
