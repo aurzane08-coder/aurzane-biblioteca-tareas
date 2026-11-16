@@ -79,5 +79,23 @@
   "fallo": 0,
   "fecha": "2026-11-15",
   "ejemplo": "Prueba fallida en https://live.aurzane.com/calculadora-imc/: Carga bien (9 campos) · error de JavaScript: undefined"
+ },
+ "automatizacion|la automatización «telegram libro del día» falla y el reintento no lo arregló.": {
+  "receta": "relanzar_marketing",
+  "motivo": "El script de Python para Telegram ha fallado y el reintento automático no lo ha solucionado.",
+  "explicacion": "Causa probable: un error temporal en la API de Telegram o un fallo en la lectura del archivo JSON con los libros diarios. Para solucionarlo a mano, accede al repositorio en GitHub, revisa los logs detallados del flujo en GitHub Actions, comprueba que el token de la API de Telegram sigue siendo válido y ejecuta el script manualmente desde tu terminal local.",
+  "ok": 0,
+  "fallo": 0,
+  "fecha": "2026-11-16",
+  "ejemplo": "La automatización «Telegram libro del día» falla y el reintento no lo arregló."
+ },
+ "prueba_fallida|prueba fallida en # carga bien · # error(es) de javascript: refused to display '# in a frame because it set 'x-frame-options' to 'sameorigin": {
+  "receta": "reintentar_flujo",
+  "motivo": "Error de JavaScript por bloqueo de iframe con cabecera X-Frame-Options en SiteGround.",
+  "explicacion": "El script aurzane-paleta.js o un componente incrustado intenta cargar aurzane.com en un iframe desde un subdominio, bloqueado por seguridad de SameOrigin. Si reintentar el flujo de GitHub Actions no lo soluciona, debes revisar las cabeceras HTTP en el servidor SiteGround o ajustar el script externo para evitar cargas en iframe cruzado.",
+  "ok": 0,
+  "fallo": 0,
+  "fecha": "2026-11-16",
+  "ejemplo": "Prueba fallida en https://build.aurzane.com/calculadora-hipoteca/: Carga bien · 1 error(es) de JavaScript: Refused to display 'https://aurzane.com/' in a frame because it set 'X-Frame-Options' to 'sam"
  }
 }

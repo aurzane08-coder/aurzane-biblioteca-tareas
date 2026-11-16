@@ -1,5 +1,30 @@
 [
  {
+  "id": "cur-4fc2490712",
+  "tipo": "curiosidad",
+  "titulo": "¿Por qué crees que todo el mundo te mira?",
+  "dato": "Tendemos a sobreestimar cuánto se fijan los demás en nosotros, según Thomas Gilovich.",
+  "resumen": "Tendemos a sobreestimar cuánto se fijan los demás en nosotros, según Thomas Gilovich. Este sesgo se llama efecto foco. Creemos que nuestros fallos y nuestra ropa son el centro de atención universal, cuando en realidad los demás están demasiado ocupados pensando en sí mismos.",
+  "fuente": "Gilovich et al., 2000",
+  "hashtags": [
+   "psicologia",
+   "sesgoscognitivos",
+   "curiosidades",
+   "aurzane"
+  ],
+  "fuente_id": "tema-320-0",
+  "url": "https://mind.aurzane.com/",
+  "portada": "",
+  "tema": "curiosidad",
+  "idioma": "es",
+  "autores": "Gilovich et al., 2000",
+  "motivo": "Guion escrito por Gemini a partir de un tema de psicología. Revisa que el dato sea correcto antes de aprobar.",
+  "verificada": "2026-11-16",
+  "fecha": "2026-11-16",
+  "auto": true,
+  "verificacion": "El texto describe con precisión científica y sin exageraciones el efecto foco demostrado por Thomas Gilovich."
+ },
+ {
   "id": "cur-b2dd49b335",
   "tipo": "curiosidad",
   "titulo": "¿Cómo afecta tu forma de afrontar el estrés?",
