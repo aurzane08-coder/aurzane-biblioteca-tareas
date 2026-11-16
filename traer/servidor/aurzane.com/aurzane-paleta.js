@@ -252,15 +252,15 @@
 (function (d) {
   if (window.AurzaneEstilo || d.querySelector('script[data-azest]')) return;
   var s = d.createElement('script');
-  s.src = 'https://aurzane.com/aurzane-estilo.js?v=23'; s.defer = true; s.setAttribute('data-azest', '1');
+  s.src = 'https://aurzane.com/aurzane-estilo.js?v=24'; s.defer = true; s.setAttribute('data-azest', '1');
   (d.head || d.documentElement).appendChild(s);
 })(document);
 
 /* Sistema de diseño compartido: barra común del ecosistema, buscador global (Ctrl+K) y base accesible */
 (function (d) {
   if (d.querySelector('link[data-azds]') || !/(^|\.)aurzane\.com$/.test(location.hostname)) return;
-  var l = d.createElement('link'); l.rel = 'stylesheet'; l.href = 'https://aurzane.com/aurzane-ds.css?v=4'; l.setAttribute('data-azds', '1');
+  var l = d.createElement('link'); l.rel = 'stylesheet'; l.href = 'https://aurzane.com/aurzane-ds.css?v=8'; l.setAttribute('data-azds', '1');
   (d.head || d.documentElement).appendChild(l);
-  var s = d.createElement('script'); s.src = 'https://aurzane.com/aurzane-ds.js?v=4'; s.defer = true; s.setAttribute('data-azds', '1');
+  var s = d.createElement('script'); s.src = 'https://aurzane.com/aurzane-ds.js?v=8'; s.defer = true; s.setAttribute('data-azds', '1');
   (d.head || d.documentElement).appendChild(s);
 })(document);

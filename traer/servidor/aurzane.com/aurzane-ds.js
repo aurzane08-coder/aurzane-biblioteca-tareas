@@ -14,7 +14,7 @@
   var mundo = (host.match(/^(mind|nexus|live|learn|build|ovp)\./) || [])[1] || 'aurzane';
 
   var MUNDOS = [
-    ['mind', 'MIND', 'Mente y tests'], ['nexus', 'NEXUS', 'Universidades'], ['live', 'LIVE', 'Bienestar y salud'],
+    ['mind', 'MIND', 'Mente y tests'], ['nexus', 'NEXUS', 'Universidades y carreras'], ['live', 'LIVE', 'Bienestar y salud'],
     ['learn', 'LEARN', 'Cursos'], ['build', 'BUILD', 'Vivienda y dinero'], ['ovp', 'OVP', 'Orientación vocacional']
   ];
   var COLOR = { mind: 'var(--az-mind-c)', nexus: 'var(--az-nexus-c)', live: 'var(--az-live-c)', learn: 'var(--az-learn-c)', build: 'var(--az-build-c)', ovp: 'var(--az-ovp-c)', aurzane: 'var(--az-portada-c)' };
@@ -44,14 +44,16 @@
      Sustituye a la barra de mundos, a la cabecera propia de cada página y a los paneles «Todo», que repetían enlaces. */
   var LOCAL = {
     aurzane: { n: 'Conocimiento', u: 'https://aurzane.com/biblioteca/', l: [['Biblioteca de libros', 'https://aurzane.com/biblioteca/'], ['Libros recomendados', 'https://aurzane.com/libros/'], ['Artículos', 'https://aurzane.com/articulos/'], ['Research Hub', 'https://aurzane.com/research.html'], ['Frases', 'https://aurzane.com/frases/'], ['Novedades', 'https://aurzane.com/novedades/']] },
-    mind: { n: 'MIND', u: 'https://mind.aurzane.com/', l: [['Tests', 'https://mind.aurzane.com/#tests'], ['Test de personalidad', 'https://mind.aurzane.com/test-de-personalidad/'], ['Ejercicios guiados', 'https://mind.aurzane.com/ejercicios/'], ['Guías', 'https://mind.aurzane.com/#recentSection'], ['Biblioteca', 'https://mind.aurzane.com/mind-biblioteca.html'], ['Guardados', 'https://mind.aurzane.com/#guardados', 'g']] },
+    mind: { n: 'MIND', u: 'https://mind.aurzane.com/', l: [['Tests', 'https://mind.aurzane.com/#tests'], ['Test de personalidad', 'https://mind.aurzane.com/test-de-personalidad/'], ['Ejercicios guiados', 'https://mind.aurzane.com/ejercicios/'], ['Guías', 'https://mind.aurzane.com/#recentSection'], ['Biblioteca', 'https://mind.aurzane.com/mind-biblioteca.html']] },
     nexus: { n: 'NEXUS', u: 'https://nexus.aurzane.com/', l: [['Universidades', 'https://nexus.aurzane.com/universidades/'], ['¿Qué puedo estudiar?', 'https://nexus.aurzane.com/universidades/que-puedo-estudiar/'], ['Notas de corte', 'https://nexus.aurzane.com/universidades/notas-de-corte/'], ['Nota PAU', 'https://nexus.aurzane.com/calculadora-nota-pau/'], ['Artículos', 'https://nexus.aurzane.com/nexus.html'], ['Biblioteca', 'https://nexus.aurzane.com/nexus-biblioteca.html']] },
-    live: { n: 'LIVE', u: 'https://live.aurzane.com/', l: [['Tests y calculadoras', 'https://live.aurzane.com/#tests'], ['Test de bienestar', 'https://live.aurzane.com/test-de-bienestar/'], ['Test de sueño', 'https://live.aurzane.com/test-de-sueno/'], ['Artículos', 'https://live.aurzane.com/#recentSection'], ['Biblioteca', 'https://live.aurzane.com/live-biblioteca.html'], ['Guardados', 'https://live.aurzane.com/#guardados', 'g']] },
-    learn: { n: 'LEARN', u: 'https://learn.aurzane.com/', l: [['Cursos', 'https://learn.aurzane.com/cursos/'], ['Certificados', 'https://learn.aurzane.com/certificado/'], ['Guías', 'https://learn.aurzane.com/#recentSection'], ['Biblioteca', 'https://learn.aurzane.com/learn-biblioteca.html'], ['Guardados', 'https://learn.aurzane.com/#guardados', 'g']] },
-    build: { n: 'BUILD', u: 'https://build.aurzane.com/', l: [['Hipoteca', 'https://build.aurzane.com/calculadora-hipoteca/'], ['Sueldo neto', 'https://build.aurzane.com/calculadora-sueldo-neto/'], ['Reforma', 'https://build.aurzane.com/calculadora-reforma/'], ['Guías', 'https://build.aurzane.com/#recentSection'], ['Biblioteca', 'https://build.aurzane.com/build-biblioteca.html'], ['Guardados', 'https://build.aurzane.com/#guardados', 'g']] },
+    live: { n: 'LIVE', u: 'https://live.aurzane.com/', l: [['Tests y calculadoras', 'https://live.aurzane.com/#tests'], ['Test de bienestar', 'https://live.aurzane.com/test-de-bienestar/'], ['Test de sueño', 'https://live.aurzane.com/test-de-sueno/'], ['Artículos', 'https://live.aurzane.com/#recentSection'], ['Biblioteca', 'https://live.aurzane.com/live-biblioteca.html']] },
+    learn: { n: 'LEARN', u: 'https://learn.aurzane.com/', l: [['Cursos', 'https://learn.aurzane.com/cursos/'], ['Certificados', 'https://learn.aurzane.com/certificado/'], ['Guías', 'https://learn.aurzane.com/#recentSection'], ['Biblioteca', 'https://learn.aurzane.com/learn-biblioteca.html']] },
+    build: { n: 'BUILD', u: 'https://build.aurzane.com/', l: [['Hipoteca', 'https://build.aurzane.com/calculadora-hipoteca/'], ['Sueldo neto', 'https://build.aurzane.com/calculadora-sueldo-neto/'], ['Reforma', 'https://build.aurzane.com/calculadora-reforma/'], ['Guías', 'https://build.aurzane.com/#recentSection'], ['Biblioteca', 'https://build.aurzane.com/build-biblioteca.html']] },
     ovp: { n: 'OVP', u: 'https://ovp.aurzane.com/', l: [['Cómo funciona', 'https://ovp.aurzane.com/'], ['Mi proceso', 'https://ovp.aurzane.com/portal.html'], ['Informe de ejemplo', 'https://ovp.aurzane.com/informe-ejemplo.html'], ['Para colegios', 'https://aurzane.com/colegios/']] }
   };
   var esPortada = mundo === 'aurzane' && /^\/(index\.html)?$/.test(ruta);
+  /* en aurzane.com la segunda fila es la del área Conocimiento; la cuenta, el contacto o lo legal no la necesitan */
+  var sinFilaLocal = mundo === 'aurzane' && !/^\/(biblioteca|libros|articulos|articulos-ai|research|frases|novedades|temas|mapa)\b/.test(ruta);
   /* tests en inglés y portugués: su propia navegación, en su idioma */
   if (mundo === 'mind' && /^\/en\//.test(ruta)) LOCAL.mind = { n: 'MIND · English', u: 'https://mind.aurzane.com/en/', l: [['All tests', 'https://mind.aurzane.com/en/'], ['Español', 'https://mind.aurzane.com/']] };
   if (mundo === 'mind' && /^\/pt\//.test(ruta)) LOCAL.mind = { n: 'MIND · Português', u: 'https://mind.aurzane.com/pt/', l: [['Todos os testes', 'https://mind.aurzane.com/pt/'], ['Español', 'https://mind.aurzane.com/']] };
@@ -79,7 +81,7 @@
     var sel = [
       'body > .utility', '.utility[data-nosnippet]', '#utilityBar',
       'body > header.topbar', 'body > div.topbar:has(.brand)', 'body > header.top', 'body > .w > nav.top', 'body > header:not([class]):has(> .w > .logo)',
-      '.btn-todo', '.todo-panel', '.todo-overlay', 'header.principal'
+      '.btn-todo', '.todo-panel', '.todo-overlay', 'header.principal', 'footer.pie-mind', 'footer.pie-live', 'footer.pie-nexus', 'footer.pie-learn', 'footer.pie-build'
     ];
     sel.forEach(function (s) { try { Array.prototype.forEach.call(d.querySelectorAll(s), function (e) { if (!e.closest('.az-cab')) { e.classList.add('az-vieja'); e.setAttribute('aria-hidden', 'true'); e.inert = true; } }); } catch (x) {} });
     /* plantillas con cabecera funcional: se conserva la herramienta y se quita solo lo repetido */
@@ -102,7 +104,7 @@
     var mundos = MUNDOS.map(function (x) {
       return '<li><a href="https://' + x[0] + '.aurzane.com/" style="--c:' + COLOR[x[0]] + '"' + (x[0] === mundo ? ' aria-current="true"' : '') + '><i aria-hidden="true"></i><span>' + x[1] + '</span><small>' + x[2] + '</small></a></li>';
     }).join('');
-    var locales = (L && !esPortada) ? L.l.map(function (x) {
+    var locales = (L && !esPortada && !sinFilaLocal) ? L.l.map(function (x) {
       return '<li><a href="' + x[1] + '"' + (actual(x[1]) ? ' aria-current="page"' : '') + (x[2] === 'g' ? ' class="az-guard"' : '') + '>' + esc(x[0]) + (x[2] === 'g' ? ' <span class="az-n" hidden></span>' : '') + '</a></li>';
     }).join('') : '';
     cab.innerHTML =
@@ -160,7 +162,7 @@
     Array.prototype.forEach.call(d.querySelectorAll('footer'), function (f) {
       if (f.closest('.az-pie')) return;
       Array.prototype.forEach.call(f.querySelectorAll('a[href]'), function (a) { if (REP.test(a.href)) a.classList.add('az-vieja'); });
-      setTimeout(function () { var t = (f.innerText || '').trim(); if (t.length < 90 && /^©/.test(t) && !f.querySelector('form,button:not(.az-fallo),img')) f.classList.add('az-vieja'); }, 0);
+      setTimeout(function () { var t = (f.innerText || '').trim(); if (t.length < 120 && /©/.test(t) && !f.querySelector('form,button:not(.az-fallo),img,input')) f.classList.add('az-vieja'); }, 0);
       Array.prototype.forEach.call(f.querySelectorAll('nav,ul,div,p,span'), function (e) { if (!e.textContent.replace(/[\s·|/©]+/g, '').length || (e.querySelectorAll('a').length && e.querySelectorAll('a:not(.az-vieja)').length === 0 && !e.textContent.replace(/[\s·|/]+/g, '').replace(Array.prototype.map.call(e.querySelectorAll('a'), function (a) { return a.textContent.replace(/[\s·|/]+/g, ''); }).join(''), '').length)) e.classList.add('az-vieja'); });
     });
     var ano = new Date().getFullYear();
@@ -186,9 +188,230 @@
   function mundosLimpios() {
     if (mundo === 'aurzane' || !/^\/(index\.html)?$/.test(ruta)) return;
     var x = d.getElementById('crossWorldSection'); if (x) x.classList.add('az-vieja');
+    Array.prototype.forEach.call(d.querySelectorAll('.accesos-section'), function (e) { e.classList.add('az-vieja'); });
+    /* «Más explorado» repetía los artículos de «Lo más relevante» y «Recientes»; la promoción de OVP ya tiene su propia sección y su mundo */
+    ['exploredSection', 'toolSection'].forEach(function (id) { var e = d.getElementById(id); if (e) e.classList.add('az-vieja'); });
     Array.prototype.forEach.call(d.querySelectorAll('section h2'), function (h) { if (/^Lo que (MIND|NEXUS|LIVE|LEARN|BUILD) (podría|va a) construir/.test(h.textContent.trim())) h.closest('section').classList.add('az-vieja'); });
   }
 
+
+  /* ---------- 2d. El librero va después del contenido ----------
+     En la biblioteca aparecía antes del libro o del catálogo y empujaba lo que la persona vino a ver. */
+  function libreroAlFinal() {
+    if (mundo !== 'aurzane' || !/^\/(biblioteca|libros)\b/.test(ruta)) return;
+    function mover() {
+      var lib = d.querySelector('.az-lib'); if (!lib || lib.__azMovido) return !!lib;
+      if (lib.previousElementSibling && lib.previousElementSibling.classList && lib.previousElementSibling.classList.contains('comprar')) { lib.__azMovido = 1; return true; }
+      var m = d.querySelector('main') || lib.parentNode; lib.__azMovido = 1; m.appendChild(lib); lib.classList.add('az-lib-final'); return true;
+    }
+    if (mover() || !w.MutationObserver) return;
+    var mo = new MutationObserver(function () { if (mover()) mo.disconnect(); }); mo.observe(d.body, { childList: true, subtree: true }); setTimeout(function () { mo.disconnect(); }, 10000);
+  }
+
+  /* ---------- 2e. Guardados comunes a todo el ecosistema ----------
+     Lo que guardas en cualquier mundo aparece en todos: en este navegador (almacén común en aurzane.com) y,
+     si has iniciado sesión con AURZANE ID, también en tu cuenta para verlo en cualquier dispositivo.
+     Incorpora lo que ya tenías guardado en cada mundo y en «Mi lista» del Research Hub. */
+  var SB_URL = 'https://chtfpqwrrarfdjcivlad.supabase.co', SB_KEY = 'sb_publishable___1v6VjDew0l8uGfMyb9Nw_YyCLTPPw';
+  var G = { d: null, cola: [], marco: null, n: 0, esperando: {}, cli: null, nube: false };
+  var ICO_MARCA = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-6-4-6 4z"/></svg>';
+  var TIPOS = ['Test', 'Perfil', 'Calculadora', 'Ejercicio', 'Curso', 'Artículo', 'Libro', 'Universidad', 'Artículo científico', 'Página'];
+  function vacio() { return { l: [], b: [], i: [] }; }
+  function pedir(op, v, cb) {
+    if (host === 'aurzane.com') {
+      try { if (op === 'escribir') localStorage.setItem('az-guardados', JSON.stringify(v)); var x = JSON.parse(localStorage.getItem('az-guardados') || 'null'); cb(x && x.l ? x : vacio()); } catch (e) { cb(op === 'escribir' ? v : vacio()); }
+      return;
+    }
+    var id = ++G.n; G.esperando[id] = cb;
+    var enviar = function () { G.marco.contentWindow.postMessage({ az: 'g', op: op, v: v, id: id }, 'https://aurzane.com'); };
+    if (G.marco && G.marco.__listo) enviar(); else G.cola.push(enviar);
+    setTimeout(function () { if (G.esperando[id]) { delete G.esperando[id]; cb(op === 'escribir' ? v : vacio()); } }, 6000);
+  }
+  function abrirAlmacen(cb) {
+    if (host === 'aurzane.com') return cb();
+    w.addEventListener('message', function (e) {
+      if (e.origin !== 'https://aurzane.com' || !e.data || e.data.az !== 'g') return;
+      if (e.data.listo) { G.marco.__listo = true; G.cola.splice(0).forEach(function (f) { f(); }); return; }
+      var f = G.esperando[e.data.id]; if (f) { delete G.esperando[e.data.id]; f(e.data.v || vacio()); }
+    });
+    var f = d.createElement('iframe'); f.src = 'https://aurzane.com/guardados-almacen.html'; f.title = 'Almacén de guardados'; f.setAttribute('aria-hidden', 'true'); f.tabIndex = -1;
+    f.style.cssText = 'position:absolute;width:1px;height:1px;border:0;left:-9999px;top:0;visibility:hidden';
+    G.marco = f; d.body.appendChild(f); cb();
+  }
+  function guardarLocal(cb) { G.d.b = G.d.b.slice(-300); G.d.i = G.d.i.slice(-600); pedir('escribir', G.d, function () { pintarContador(); if (cb) cb(); }); }
+  function esta(u) { return G.d && G.d.l.some(function (x) { return x.u === u; }); }
+  function enlace(u) { return /^https?:/.test(u) ? u : 'https://' + u; }
+  function anadir(it, sinNube) {
+    if (!it || esta(it.u)) return;
+    it.f = it.f || new Date().toISOString().slice(0, 10);
+    G.d.l.unshift(it); G.d.b = G.d.b.filter(function (b) { return b !== it.u; });
+    if (!sinNube) nube('poner', it);
+  }
+  function quitar(u, sinNube) {
+    G.d.l = G.d.l.filter(function (x) { return x.u !== u; });
+    if (G.d.b.indexOf(u) < 0) G.d.b.push(u);
+    if (!sinNube) nube('quitar', { u: u });
+  }
+
+  /* la página actual: qué es y cómo se llama */
+  function itemActual() {
+    var p = ruta.replace(/index\.html$/, ''), h = location.hash || '', k = null, u = host + p;
+    var mArt = h.match(/^#\/articulo\/([^/?#]+)/);
+    if (mArt) { k = 'Artículo'; u = host + '/#/articulo/' + mArt[1]; }
+    else if (/^\/test-de-personalidad\/p\/[^/]+\/$/.test(p)) k = 'Perfil';
+    else if (/^\/(test-de-[^/]+|en\/[^/]+-test[^/]*|pt\/teste-[^/]+)\/$/.test(p) || (mundo === 'ovp' && /^\/$/.test(p))) k = 'Test';
+    else if (/calculadora-[^/]+\/$/.test(p)) k = 'Calculadora';
+    else if (/^\/ejercicios\/[^/]+\/$/.test(p)) k = 'Ejercicio';
+    else if (mundo === 'learn' && /^\/curso\/[^/]+\/$/.test(p)) k = 'Curso';
+    else if (mundo === 'aurzane' && /^\/(biblioteca\/libro\/[^/]+|libros\/[^/]+\/|biblioteca\/recientes\/[^/]+\/)$/.test(p)) k = 'Libro';
+    else if (mundo === 'aurzane' && /^\/(articulos|articulos-ai)\/[^/]+\/$/.test(p)) k = 'Artículo';
+    else if (mundo === 'nexus' && /^\/universidades\/[^/]+\/[^/]+\/$/.test(p) && !/notas-de-corte\/$|que-puedo-estudiar\/$/.test(p)) k = 'Universidad';
+    if (!k) return null;
+    var h1 = Array.prototype.filter.call(d.querySelectorAll('h1'), function (x) { return x.offsetParent !== null && !x.closest('.az-cab,.az-vieja'); })[0];
+    var tt = d.title.split(/\s[|·–—]\s/)[0].replace(/:\s.*$/, '').replace(/\s+(gratis|online)\b.*$/i, '').trim();
+    var t = /^(Test|Perfil|Calculadora|Ejercicio)$/.test(k) && tt ? tt : ((h1 && h1.innerText.replace(/\s+/g, ' ').trim()) || tt);
+    return { u: u, t: t.slice(0, 120), m: mundo, k: k };
+  }
+
+  /* lo guardado antes en cada mundo y en el Research Hub pasa a la lista común (y se mantiene sincronizado) */
+  function importar() {
+    var cambio = false, clave;
+    if (mundo !== 'aurzane' && mundo !== 'ovp') {
+      clave = 'aurzane-' + mundo + '-guardados';
+      var sl; try { sl = JSON.parse(localStorage.getItem(clave) || '[]'); } catch (e) { sl = []; }
+      var limpio = sl.filter(function (s) { return G.d.b.indexOf(host + '/#/articulo/' + s) < 0 || G.d.i.indexOf(mundo + ':' + s) < 0; });
+      if (limpio.length !== sl.length) { try { localStorage.setItem(clave, JSON.stringify(limpio)); } catch (e) {} sl.forEach(function (x) { if (limpio.indexOf(x) < 0) G.d.i = G.d.i.filter(function (k) { return k !== mundo + ':' + x; }); }); cambio = true; }
+      limpio.forEach(function (s) {
+        var key = mundo + ':' + s, u = host + '/#/articulo/' + s;
+        if (G.d.i.indexOf(key) >= 0) return;
+        var a = d.querySelector('a[href*="#/articulo/' + s + '"]'), t = a ? (a.querySelector('h3,h4,h2') || a).innerText.trim() : '';
+        anadir({ u: u, t: (t || s.replace(/-/g, ' ').replace(/^./, function (c) { return c.toUpperCase(); })).slice(0, 120), m: mundo, k: 'Artículo' });
+        G.d.i.push(key); cambio = true;
+      });
+      G.d.i.filter(function (k) { return k.indexOf(mundo + ':') === 0; }).forEach(function (k) {
+        var s = k.slice(mundo.length + 1);
+        if (limpio.indexOf(s) < 0) { if (esta(host + '/#/articulo/' + s)) quitar(host + '/#/articulo/' + s); G.d.i = G.d.i.filter(function (z) { return z !== k; }); cambio = true; }
+      });
+    }
+    if (mundo === 'aurzane' && /^\/research(\.html)?$/.test(ruta)) {
+      var rl; try { rl = JSON.parse(localStorage.getItem('rh-guardados') || '[]'); } catch (e) { rl = []; }
+      var limpia = rl.filter(function (x) { return !(x.url && G.d.b.indexOf(x.url) >= 0 && G.d.i.indexOf('rh:' + x.url) >= 0); });
+      if (limpia.length !== rl.length) { try { localStorage.setItem('rh-guardados', JSON.stringify(limpia)); } catch (e) {} rl.forEach(function (x) { if (limpia.indexOf(x) < 0) G.d.i = G.d.i.filter(function (k) { return k !== 'rh:' + x.url; }); }); cambio = true; }
+      var urls = limpia.map(function (x) { return x.url; });
+      limpia.forEach(function (x) {
+        if (!x.url || G.d.i.indexOf('rh:' + x.url) >= 0) return;
+        anadir({ u: x.url, t: String(x.titulo || '').slice(0, 120), m: 'aurzane', k: 'Artículo científico' }); G.d.i.push('rh:' + x.url); cambio = true;
+      });
+      G.d.i.filter(function (k) { return k.indexOf('rh:') === 0; }).forEach(function (k) { var u = k.slice(3); if (urls.indexOf(u) < 0) { if (esta(u)) quitar(u); G.d.i = G.d.i.filter(function (z) { return z !== k; }); cambio = true; } });
+    }
+    return cambio;
+  }
+
+  /* cuenta AURZANE ID: misma lista en todos tus dispositivos */
+  function cargarScript(src, ok) { var s = d.createElement('script'); s.src = src; s.onload = ok; s.onerror = function () {}; d.head.appendChild(s); }
+  function conectarNube(cb) {
+    if (!sesion()) return cb && cb(false);
+    var listo = function () { try { G.cli = w.crearClienteAurzaneID(SB_URL, SB_KEY); G.nube = true; } catch (e) { G.nube = false; } if (cb) cb(G.nube); };
+    var conId = function () { if (w.crearClienteAurzaneID) listo(); else cargarScript('https://aurzane.com/aurzane-id.js', listo); };
+    if (w.supabase && w.supabase.createClient) conId(); else cargarScript('https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js', conId);
+  }
+  function nube(op, it) {
+    if (!G.nube || !G.cli) return;
+    if (op === 'poner') G.cli.from('guardados').upsert({ url: it.u, titulo: it.t, mundo: it.m, tipo: it.k }, { onConflict: 'user_id,url' }).then(function () {}, function () {});
+    else G.cli.from('guardados').delete().eq('url', it.u).then(function () {}, function () {});
+  }
+  function sincronizar(cb) {
+    if (!G.nube) return cb && cb();
+    G.cli.from('guardados').select('url,titulo,mundo,tipo,creado').order('creado', { ascending: false }).limit(1000).then(function (r) {
+      if (r.error || !r.data) return cb && cb();
+      var remotas = {};
+      r.data.forEach(function (x) { remotas[x.url] = 1; if (G.d.b.indexOf(x.url) >= 0) nube('quitar', { u: x.url }); else if (!esta(x.url)) G.d.l.push({ u: x.url, t: x.titulo, m: x.mundo, k: x.tipo, f: String(x.creado || '').slice(0, 10) }); });
+      G.d.l.forEach(function (x) { if (!remotas[x.u]) nube('poner', x); });
+      G.d.l.sort(function (a, b) { return (b.f || '').localeCompare(a.f || ''); });
+      guardarLocal(cb);
+    }, function () { if (cb) cb(); });
+  }
+
+  /* interfaz: botón «Guardar» de la página, botón «Guardados» de la cabecera y su panel */
+  function pintarContador() {
+    var n = G.d ? G.d.l.length : 0;
+    Array.prototype.forEach.call(d.querySelectorAll('.az-gd-n'), function (e) { e.textContent = n || ''; e.hidden = !n; });
+    var b = d.querySelector('.az-gd-btn'); if (b) b.setAttribute('aria-label', 'Guardados' + (n ? ': ' + n : ''));
+    var it = itemActual(), g = d.querySelector('.az-gd-esta');
+    if (g) { g.hidden = !it; if (it) { var on = esta(it.u); g.setAttribute('aria-pressed', on); g.querySelector('.txt').textContent = on ? 'Guardado' : 'Guardar'; g.setAttribute('aria-label', (on ? 'Quitar de guardados: ' : 'Guardar: ') + it.t); } }
+    if (G.panel && !G.panel.hidden) pintarPanel();
+  }
+  function pintarPanel() {
+    var cuerpo = G.panel.querySelector('.az-gd-lista'), l = G.d.l;
+    if (!l.length) { cuerpo.innerHTML = '<p class="az-gd-vacio">Aún no has guardado nada. Pulsa «Guardar» en cualquier test, calculadora, ejercicio, curso, libro, artículo o universidad y lo tendrás aquí, en todos los mundos.</p>'; return; }
+    var grupos = {}; l.forEach(function (x) { (grupos[x.k] = grupos[x.k] || []).push(x); });
+    cuerpo.innerHTML = TIPOS.concat(Object.keys(grupos).filter(function (k) { return TIPOS.indexOf(k) < 0; })).filter(function (k) { return grupos[k]; }).map(function (k) {
+      return '<h3>' + esc(k === 'Artículo científico' ? 'Artículos científicos' : k === 'Universidad' ? 'Universidades' : k === 'Página' ? 'Páginas' : k + 's') + ' <span>' + grupos[k].length + '</span></h3><ul>' + grupos[k].map(function (x) {
+        return '<li style="--c:' + (COLOR[x.m] || COLOR.aurzane) + '"><i aria-hidden="true"></i><a href="' + esc(enlace(x.u)) + '"' + (/^https?:/.test(x.u) ? ' target="_blank" rel="noopener"' : '') + '>' + esc(x.t) + '</a><small>' + esc(x.m === 'aurzane' ? 'AURZANE' : x.m.toUpperCase()) + '</small><button type="button" data-q="' + esc(x.u) + '" aria-label="Quitar ' + esc(x.t) + '">' +
+          '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button></li>';
+      }).join('') + '</ul>';
+    }).join('');
+  }
+  function crearPanel() {
+    var p = d.createElement('div'); p.className = 'az-gd-velo'; p.hidden = true;
+    p.innerHTML = '<aside class="az-gd" role="dialog" aria-modal="true" aria-labelledby="azGdT"><div class="az-gd-cab"><h2 id="azGdT">Guardados</h2><button type="button" class="az-gd-cerrar" aria-label="Cerrar guardados"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div>' +
+      '<div class="az-gd-lista"></div><p class="az-gd-pie"></p></aside>';
+    d.body.appendChild(p); G.panel = p;
+    p.addEventListener('mousedown', function (e) { if (e.target === p) cerrarPanel(); });
+    p.querySelector('.az-gd-cerrar').addEventListener('click', cerrarPanel);
+    p.addEventListener('click', function (e) {
+      var b = e.target.closest('button[data-q]'); if (!b) return;
+      var u = b.getAttribute('data-q'), li = b.closest('li'), sig = li && (li.nextElementSibling || li.previousElementSibling);
+      quitar(u); guardarLocal(function () { var f = sig && sig.querySelector('button[data-q]'); (f || p.querySelector('.az-gd-cerrar')).focus(); });
+      pintarPanel(); pintarContador();
+    });
+    p.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') { e.preventDefault(); cerrarPanel(); }
+      if (e.key === 'Tab') { var f = p.querySelectorAll('a[href],button'); if (!f.length) return; var a = f[0], z = f[f.length - 1];
+        if (e.shiftKey && d.activeElement === a) { e.preventDefault(); z.focus(); } else if (!e.shiftKey && d.activeElement === z) { e.preventDefault(); a.focus(); } }
+    });
+  }
+  function abrirPanel(origen) {
+    if (!G.panel) crearPanel();
+    G.origen = origen; pintarPanel();
+    G.panel.querySelector('.az-gd-pie').innerHTML = G.nube ? 'Sincronizados con tu cuenta AURZANE ID: los verás en cualquier dispositivo.' : 'Se guardan en este navegador. <a href="https://aurzane.com/mi-aurzane.html">Inicia sesión</a> para verlos también en tus otros dispositivos.';
+    G.panel.hidden = false; d.documentElement.style.overflow = 'hidden';
+    G.panel.querySelector('.az-gd-cerrar').focus();
+  }
+  function cerrarPanel() { if (!G.panel || G.panel.hidden) return; G.panel.hidden = true; d.documentElement.style.overflow = ''; if (G.origen && G.origen.focus) G.origen.focus(); }
+  function botones() {
+    var acc = d.querySelector('.az-cab .az-acc'); if (!acc || acc.querySelector('.az-gd-btn')) return;
+    var gs = d.createElement('button'); gs.type = 'button'; gs.className = 'az-btn az-gd-esta'; gs.hidden = true; gs.setAttribute('aria-pressed', 'false');
+    gs.innerHTML = ICO_MARCA + '<span class="txt">Guardar</span>';
+    var gb = d.createElement('button'); gb.type = 'button'; gb.className = 'az-btn az-gd-btn'; gb.setAttribute('aria-haspopup', 'dialog');
+    gb.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h10v16l-5-3.5L5 20z"/><path d="M15 6h4v16l-4-2.8"/></svg><span class="txt">Guardados</span><span class="az-gd-n" hidden></span>';
+    var cuenta = acc.querySelector('.az-cuenta'); acc.insertBefore(gs, cuenta); acc.insertBefore(gb, cuenta);
+    gb.addEventListener('click', function () { abrirPanel(gb); });
+    gs.addEventListener('click', function () {
+      var it = itemActual(); if (!it) return;
+      if (esta(it.u)) quitar(it.u); else anadir(it);
+      guardarLocal(); pintarContador();
+    });
+    var caj = d.querySelector('.az-cajon ul'); if (caj) { var li = d.createElement('li'); li.innerHTML = '<a href="#" class="az-gd-cajon">' + ICO_MARCA + 'Guardados <span class="az-gd-n" hidden></span></a>'; caj.appendChild(li);
+      li.querySelector('a').addEventListener('click', function (e) { e.preventDefault(); abrirPanel(gb); }); }
+  }
+  function guardados() {
+    if (!d.querySelector('.az-cab')) return;
+    botones();
+    abrirAlmacen(function () {
+      pedir('leer', null, function (v) {
+        G.d = v && v.l ? v : vacio(); if (!G.d.b) G.d.b = []; if (!G.d.i) G.d.i = [];
+        if (importar()) guardarLocal(); pintarContador();
+        conectarNube(function (ok) { if (ok) sincronizar(pintarContador); });
+      });
+    });
+    w.addEventListener('hashchange', function () { setTimeout(pintarContador, 400); });
+    /* lo que se guarda o quita con los botones propios de cada mundo y del Research Hub se refleja al momento */
+    var sc = d.getElementById('savedCount') || d.getElementById('nLista');
+    if (sc && w.MutationObserver) new MutationObserver(function () { if (G.d && importar()) { guardarLocal(); pintarContador(); } }).observe(sc, { childList: true, characterData: true, subtree: true });
+    setTimeout(function () { if (G.d && importar()) { guardarLocal(); pintarContador(); } }, 3000);
+    w.AurzaneGuardados = { abrir: function () { abrirPanel(d.querySelector('.az-gd-btn')); }, lista: function () { return G.d ? G.d.l.slice() : []; } };
+  }
 
   function anchoCompleto() {
     var els = [d.querySelector('.az-cab'), d.querySelector('.az-pie'), d.querySelector('.az-subnav')].filter(Boolean);
@@ -333,7 +556,13 @@
     Array.prototype.forEach.call(d.querySelectorAll('.scroll,.now-strip,.summary-table,.tnc,.comp'), function (s) { if (!s.hasAttribute('tabindex') && s.scrollWidth > s.clientWidth) { s.setAttribute('tabindex', '0'); s.setAttribute('role', 'region'); if (!s.getAttribute('aria-label')) s.setAttribute('aria-label', s.classList.contains('now-strip') ? 'Lo último publicado' : 'Tabla desplazable'); } });
   }
 
-  function iniciar() { saltar(); barra(); pie(); mundosLimpios(); anchoCompleto(); anotarVisita(); nombres(); setTimeout(nombres, 2500); }
+  function iniciar() { saltar(); barra(); pie(); mundosLimpios(); libreroAlFinal(); guardados(); anchoCompleto(); anotarVisita(); nombres(); setTimeout(nombres, 2500); }
   if (d.readyState === 'loading') d.addEventListener('DOMContentLoaded', iniciar); else iniciar();
   w.AurzaneBuscar = abrir; w.AurzaneIndice = INDICE;
+  /* índice al día: herramientas/indice.py lo regenera cada día con los tests, calculadoras, ejercicios y cursos nuevos */
+  (function () {
+    function usar() { var G = w.AurzaneIndiceGen; if (G && G.length) { INDICE.length = 0; Array.prototype.push.apply(INDICE, G); } try { d.dispatchEvent(new Event('aurzane-indice')); } catch (e) {} }
+    if (w.AurzaneIndiceGen) return usar();
+    var s = d.createElement('script'); s.async = true; s.src = 'https://aurzane.com/aurzane-indice.js?d=' + new Date().toISOString().slice(0, 10); s.onload = usar; d.head.appendChild(s);
+  })();
 })(window, document);
