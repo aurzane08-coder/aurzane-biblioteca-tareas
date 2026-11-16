@@ -509,3 +509,11 @@
 2026-11-16,6,youtube,frase-b5f6ec03,ok,https://youtu.be/yKLqPGwDkfM
 2026-11-16,7,tiktok,cur-5b579f7f14,error,403 {"error":{"code":"unaudited_client_can_only_post_to_private_accounts" "message":"Please review our integration guidelines at https://developers.ti
 2026-11-16,8,tiktok,cur-df87f5f0c3,error,403 {"error":{"code":"unaudited_client_can_only_post_to_private_accounts" "message":"Please review our integration guidelines at https://developers.ti
+2026-11-16,7,tiktok,cur-5b579f7f14,error,403 {"error":{"code":"unaudited_client_can_only_post_to_private_accounts" "message":"Please review our integration guidelines at https://developers.ti
+2026-11-16,8,tiktok,cur-df87f5f0c3,error,403 {"error":{"code":"unaudited_client_can_only_post_to_private_accounts" "message":"Please review our integration guidelines at https://developers.ti
+2026-11-16,2,telegram,crea-l06-05,ok,105
+2026-11-16,2,bluesky,crea-l07-03,ok,at://did:plc:6ovoiudj7dkxgrzd2zkyn77y/app.bsky.feed.post/3n2h5hwaxml2z
+2026-11-16,2,mastodon,crea-l05-05,ok,https://mastodon.social/@auzane/117627508886154284
+2026-11-16,2,instagram,crea-l06-02,ok,18209512885373672
+2026-11-16,2,facebook,crea-l07-08,ok,1109337265197364
+2026-11-16,2,pinterest,crea-l05-09,feed,
