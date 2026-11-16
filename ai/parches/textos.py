@@ -8,8 +8,8 @@ CAMBIOS = {
          '<h4>Escalas validadas</h4><p>Cuestionarios publicados que usan los profesionales, con su referencia.</p>'),
         ('<h4>100% virtual</h4><p>Tests online, corrección automática, devolución con profesional.</p>',
          '<h4>Resultado al instante</h4><p>Tu puntuación explicada al momento, gratis y sin registro.</p>')],
-    'ovp.aurzane.com/public_html/generar-informe.html': [('informe-opciones.js?v=20261018b', 'informe-opciones.js?v=20261116a'), ('informe-v2.js?v=20261109c', 'informe-v2.js?v=20261116a')],
-    'ovp.aurzane.com/public_html/informe-ejemplo.html': [('informe-opciones.js?v=20261018b', 'informe-opciones.js?v=20261116a'), ('informe-v2.js?v=20261109c', 'informe-v2.js?v=20261116a')],
+    'ovp.aurzane.com/public_html/generar-informe.html': [('informe-opciones.js?v=20261018b', 'informe-opciones.js?v=20261116a'), ('informe-v2.js?v=20261109c', 'informe-v2.js?v=20261116b'), ('informe-v2.js?v=20261116a', 'informe-v2.js?v=20261116b')],
+    'ovp.aurzane.com/public_html/informe-ejemplo.html': [('informe-opciones.js?v=20261018b', 'informe-opciones.js?v=20261116a'), ('informe-v2.js?v=20261109c', 'informe-v2.js?v=20261116b'), ('informe-v2.js?v=20261116a', 'informe-v2.js?v=20261116b')],
     # Admin: acceso directo a la gestión de colegios (alta de colegios, enfoque general o militar, equipo y estudiantes)
     'aurzane.com/public_html/admin.html': [
         ('        <span class="nav-label">Membretes</span>\n      </div>\n',
