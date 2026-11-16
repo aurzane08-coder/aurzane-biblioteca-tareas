@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://aurzane.com/aurzane-paleta.js"></script>
+<title>Modo aula: cursos gratis para tu clase | AURZANE LEARN</title>
+<meta name="description" content="Crea un aula en AURZANE LEARN, comparte un código con tus estudiantes y sigue su avance en el curso: lecciones completadas, nota y certificado. Gratis.">
+<link rel="canonical" href="https://learn.aurzane.com/aula/">
+<meta property="og:title" content="Modo aula de AURZANE LEARN"><meta property="og:description" content="Asigna un curso gratis a tu clase y sigue el avance de cada estudiante."><meta property="og:image" content="https://learn.aurzane.com/cursos/portada-ansiedad.webp">
+<link rel="icon" href="https://aurzane.com/favicon.ico" sizes="48x48">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@500;700&family=Instrument+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--papel:#F6F0E8;--tinta:#2E2620;--suave:#6B6153;--linea:rgba(46,38,32,.16);--azul:#14301F;--verde:#2F7A55;--oro:#C9A24B}
+body{margin:0;background:var(--bg,var(--papel));color:var(--text,var(--tinta));font:16px/1.65 "Instrument Sans",system-ui,sans-serif}
+.h{background:#14301F;color:#F2EFE6;padding:46px 20px 38px}.in{max-width:1000px;margin:0 auto}
+h1{font:700 clamp(1.8rem,4vw,2.5rem)/1.15 "Bodoni Moda",serif;margin:6px 0 10px}.h p{margin:0;color:#D6DDD3;max-width:640px}
+main{padding:26px 20px 70px}h2{font:700 1.3rem/1.3 "Bodoni Moda",serif;margin:0 0 10px}
+.tabs{display:flex;gap:8px;margin:0 0 20px}.tabs button{font:600 .95rem inherit;padding:10px 18px;border-radius:99px;border:1px solid var(--linea);background:transparent;color:inherit;cursor:pointer;min-height:44px}
+.tabs button[aria-selected="true"]{background:var(--verde);border-color:var(--verde);color:#fff}
+.caja{border:1px solid var(--linea);border-radius:16px;padding:20px;margin:0 0 18px;background:rgba(255,255,255,.45)}
+label{display:grid;gap:4px;font-size:.92rem;margin:0 0 12px}input,select{font:inherit;padding:11px 13px;border:1px solid rgba(46,38,32,.25);border-radius:10px;background:#fff;color:#2E2620}
+.btn{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:99px;padding:11px 20px;background:var(--verde);color:#fff;font:600 .95rem inherit;cursor:pointer;min-height:44px;text-decoration:none}
+.btn.sec{background:transparent;color:inherit;border:1px solid var(--linea)}.fila{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.msg{margin:10px 0 0;font-size:.92rem}.err{color:#A23B2A}.ok{color:var(--verde)}
+.codigo{font:700 1.4rem/1 ui-monospace,monospace;letter-spacing:.12em;padding:8px 14px;border-radius:10px;background:#fff;border:1px dashed var(--oro)}
+table{width:100%;border-collapse:collapse;font-size:.92rem}th,td{text-align:left;padding:9px 8px;border-bottom:1px solid var(--linea);vertical-align:middle}
+.barra{display:inline-block;width:90px;height:8px;border-radius:99px;background:rgba(46,38,32,.12);overflow:hidden;vertical-align:middle;margin-right:8px}.barra i{display:block;height:100%;background:var(--verde)}
+.aula{border-top:1px solid var(--linea);padding:16px 0}.aula:first-child{border-top:0}.scroll{overflow-x:auto}.nota{font-size:.88rem;color:var(--suave)}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<header class="h"><div class="in">
+<h1>Modo aula</h1>
+<p>Asigna un curso gratis a tu clase y sigue el avance de cada estudiante: lecciones completadas, mejor nota y certificado. Tus estudiantes solo necesitan su cuenta AURZANE ID y el código del aula.</p>
+</div></header>
+<main><div class="in">
+  <div id="sinSesion" class="caja" hidden>
+    <h2>Inicia sesión para continuar</h2>
+    <p>El modo aula funciona con la cuenta gratuita AURZANE ID, la misma de los cursos y los certificados.</p>
+    <a class="btn" id="btnLogin" href="https://aurzane.com/mi-aurzane.html">Iniciar sesión o crear cuenta</a>
+  </div>
+  <div id="conSesion" hidden>
+    <div class="tabs" role="tablist">
+      <button type="button" role="tab" id="tabEst" aria-selected="true" aria-controls="panEst">Soy estudiante</button>
+      <button type="button" role="tab" id="tabDoc" aria-selected="false" aria-controls="panDoc">Soy docente</button>
+    </div>
+    <section id="panEst" role="tabpanel" aria-labelledby="tabEst">
+      <div class="caja">
+        <h2>Unirme a un aula</h2>
+        <form id="fUnir">
+          <label>Código del aula <input id="uCod" maxlength="8" autocomplete="off" required style="text-transform:uppercase;max-width:200px"></label>
+          <label>Tu nombre y apellido (lo verá tu docente) <input id="uNom" maxlength="80" required></label>
+          <p class="nota">Al unirte, tu docente verá tu avance en el curso de esa aula (lecciones completadas, mejor nota y si tienes el certificado). No verá tus notas personales ni nada más de tu cuenta.</p>
+          <button class="btn" type="submit">Unirme</button>
+          <p class="msg" id="uMsg" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+      <div class="caja"><h2>Mis clases</h2><div id="misClases"><p class="nota">Cargando…</p></div></div>
+    </section>
+    <section id="panDoc" role="tabpanel" aria-labelledby="tabDoc" hidden>
+      <div class="caja">
+        <h2>Crear un aula</h2>
+        <form id="fCrear" class="fila" style="align-items:end">
+          <label style="flex:1 1 220px">Nombre del aula <input id="cNom" maxlength="80" placeholder="Por ejemplo: 2.º Bachillerato B" required></label>
+          <label style="flex:1 1 260px">Curso <select id="cCurso" required></select></label>
+          <button class="btn" type="submit" style="margin-bottom:12px">Crear aula</button>
+        </form>
+        <p class="msg" id="cMsg" role="status" aria-live="polite"></p>
+      </div>
+      <div class="caja"><h2>Mis aulas</h2><div id="misAulas"><p class="nota">Cargando…</p></div></div>
+    </section>
+  </div>
+</div></main>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="/aurzane-id.js"></script>
+<script>
+(function () {
+  var $ = function (i) { return document.getElementById(i); };
+  var E = function (s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
+  var sb = crearClienteAurzaneID('https://chtfpqwrrarfdjcivlad.supabase.co', 'sb_publishable___1v6VjDew0l8uGfMyb9Nw_YyCLTPPw');
+  var q = new URLSearchParams(location.search), CURSOS = {};
+  $('btnLogin').href = 'https://aurzane.com/mi-aurzane.html?next=' + encodeURIComponent(location.href);
+  function enlaceCurso(slug) { return 'https://learn.aurzane.com/curso/' + encodeURIComponent(slug) + '/?c=' + encodeURIComponent(slug); }
+  function fecha(x) { return x ? new Date(x).toLocaleDateString('es-ES', { day: 'numeric', month: 'short' }) : '–'; }
+  function pestana(doc) {
+    $('tabEst').setAttribute('aria-selected', !doc); $('tabDoc').setAttribute('aria-selected', doc);
+    $('panEst').hidden = doc; $('panDoc').hidden = !doc;
+    if (doc) misAulas();
+  }
+  $('tabEst').onclick = function () { pestana(false); }; $('tabDoc').onclick = function () { pestana(true); };
+
+  async function misClases() {
+    var r = await sb.rpc('aula_mis_clases');
+    if (r.error) { $('misClases').innerHTML = '<p class="err">No se pudieron cargar tus clases.</p>'; return; }
+    $('misClases').innerHTML = r.data.length ? r.data.map(function (c) {
+      return '<div class="aula"><b>' + E(c.nombre) + '</b> · ' + E(c.curso_titulo || c.course_slug) + '<div class="fila" style="margin-top:8px"><a class="btn" href="' + enlaceCurso(c.course_slug) + '">Ir al curso</a><span class="nota">Docente: ' + E(c.docente_email || '') + '</span></div></div>';
+    }).join('') : '<p class="nota">Todavía no estás en ningún aula. Pide el código a tu docente.</p>';
+  }
+  $('fUnir').addEventListener('submit', async function (e) {
+    e.preventDefault(); $('uMsg').className = 'msg'; $('uMsg').textContent = 'Uniéndote…';
+    var r = await sb.rpc('aula_unirse', { p_codigo: $('uCod').value, p_nombre: $('uNom').value });
+    if (r.error) { $('uMsg').className = 'msg err'; $('uMsg').textContent = r.error.message; return; }
+    $('uMsg').className = 'msg ok'; $('uMsg').innerHTML = 'Ya estás en «' + E(r.data.aula) + '». <a href="' + enlaceCurso(r.data.curso) + '">Empezar el curso</a>';
+    misClases();
+  });
+
+  async function misAulas() {
+    var r = await sb.rpc('aula_mis_aulas');
+    if (r.error) { $('misAulas').innerHTML = '<p class="err">No se pudieron cargar tus aulas.</p>'; return; }
+    if (!r.data.length) { $('misAulas').innerHTML = '<p class="nota">Aún no has creado ningún aula. Crea la primera arriba y comparte su código.</p>'; return; }
+    $('misAulas').innerHTML = r.data.map(function (a) {
+      var url = 'https://learn.aurzane.com/aula/?unirse=' + a.codigo;
+      return '<div class="aula" data-aula="' + a.id + '"><div class="fila" style="justify-content:space-between"><div><b>' + E(a.nombre) + '</b> · ' + E(a.curso_titulo || a.course_slug) + (a.activa ? '' : ' · <span class="err">cerrada</span>') +
+        '<div class="nota">' + a.estudiantes + ' estudiante' + (a.estudiantes === 1 ? '' : 's') + ' · creada el ' + fecha(a.creado) + '</div></div><span class="codigo" title="Código del aula">' + E(a.codigo) + '</span></div>' +
+        '<div class="fila" style="margin-top:10px"><button class="btn sec" type="button" data-copiar="' + E(url) + '">Copiar enlace para estudiantes</button><button class="btn sec" type="button" data-ver="' + a.id + '">Ver avance</button>' +
+        '<button class="btn sec" type="button" data-cerrar="' + a.id + '" data-activa="' + (a.activa ? '0' : '1') + '">' + (a.activa ? 'Cerrar aula' : 'Reabrir aula') + '</button></div><div class="scroll" id="av-' + a.id + '"></div></div>';
+    }).join('');
+  }
+  async function avance(id) {
+    var c = $('av-' + id); c.innerHTML = '<p class="nota">Cargando…</p>';
+    var r = await sb.rpc('aula_avance', { p_aula: id });
+    if (r.error) { c.innerHTML = '<p class="err">' + E(r.error.message) + '</p>'; return; }
+    if (!r.data.length) { c.innerHTML = '<p class="nota">Aún no se ha unido nadie. Comparte el código o el enlace.</p>'; return; }
+    var filas = r.data.map(function (x) {
+      var pct = x.total ? Math.round(x.lecciones / x.total * 100) : 0;
+      return '<tr><td>' + E(x.nombre) + '</td><td><span class="barra"><i style="width:' + pct + '%"></i></span>' + x.lecciones + ' de ' + x.total + '</td><td>' + (x.mejor_nota == null ? '–' : Number(x.mejor_nota).toLocaleString('es-ES', { maximumFractionDigits: 1 })) + '</td><td>' + (x.certificado ? 'Sí' : 'No') + '</td><td>' + fecha(x.ultima) + '</td><td><button class="btn sec" type="button" data-quitar="' + x.user_id + '" data-de="' + id + '">Quitar</button></td></tr>';
+    }).join('');
+    c.innerHTML = '<table><thead><tr><th>Estudiante</th><th>Lecciones</th><th>Mejor nota</th><th>Certificado</th><th>Última actividad</th><th><span class="nota">Acción</span></th></tr></thead><tbody>' + filas + '</tbody></table>' +
+      '<p class="fila" style="margin-top:10px"><button class="btn sec" type="button" data-csv="' + id + '">Descargar CSV</button></p>';
+    c.__datos = r.data;
+  }
+  document.addEventListener('click', async function (e) {
+    var b = e.target.closest('button'); if (!b) return;
+    if (b.dataset.copiar) { try { await navigator.clipboard.writeText(b.dataset.copiar); b.textContent = 'Enlace copiado'; } catch (x) { prompt('Copia este enlace:', b.dataset.copiar); } }
+    if (b.dataset.ver) avance(b.dataset.ver);
+    if (b.dataset.cerrar) { await sb.rpc('aula_cerrar', { p_aula: b.dataset.cerrar, p_activa: b.dataset.activa === '1' }); misAulas(); }
+    if (b.dataset.quitar) {
+      if (b.dataset.confirma !== '1') { b.dataset.confirma = '1'; b.textContent = '¿Seguro? Pulsa otra vez'; return; }
+      await sb.rpc('aula_quitar', { p_aula: b.dataset.de, p_user: b.dataset.quitar }); avance(b.dataset.de);
+    }
+    if (b.dataset.csv) {
+      var d = $('av-' + b.dataset.csv).__datos || [];
+      var csv = 'Estudiante;Lecciones completadas;Total;Mejor nota;Certificado;Ultima actividad\n' + d.map(function (x) { return [x.nombre, x.lecciones, x.total, x.mejor_nota == null ? '' : x.mejor_nota, x.certificado ? 'Si' : 'No', (x.ultima || '').slice(0, 10)].map(function (v) { return '"' + String(v).replace(/"/g, '""') + '"'; }).join(';'); }).join('\n');
+      var a = document.createElement('a'); a.href = URL.createObjectURL(new Blob(['﻿' + csv], { type: 'text/csv' })); a.download = 'avance-aula.csv'; a.click();
+    }
+  });
+  $('fCrear').addEventListener('submit', async function (e) {
+    e.preventDefault(); $('cMsg').className = 'msg'; $('cMsg').textContent = 'Creando…';
+    var r = await sb.rpc('aula_crear', { p_nombre: $('cNom').value, p_curso: $('cCurso').value });
+    if (r.error) { $('cMsg').className = 'msg err'; $('cMsg').textContent = r.error.message; return; }
+    $('cMsg').className = 'msg ok'; $('cMsg').innerHTML = 'Aula creada. Su código es <span class="codigo">' + E(r.data) + '</span>. Compártelo con tus estudiantes.';
+    $('cNom').value = ''; misAulas();
+  });
+
+  (async function () {
+    var s = await sb.auth.getSession();
+    if (!s.data || !s.data.session) { $('sinSesion').hidden = false; return; }
+    $('conSesion').hidden = false;
+    var c = await sb.from('course_courses').select('slug,titulo').eq('estado', 'publicado').order('titulo');
+    (c.data || []).forEach(function (x) { CURSOS[x.slug] = x.titulo; });
+    $('cCurso').innerHTML = (c.data || []).map(function (x) { return '<option value="' + E(x.slug) + '">' + E(x.titulo) + '</option>'; }).join('');
+    if (q.get('unirse')) $('uCod').value = q.get('unirse').toUpperCase();
+    misClases();
+    if (q.get('docente') === '1') pestana(true);
+  })();
+})();
+</script>
+</body>
+</html>
