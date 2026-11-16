@@ -25,10 +25,14 @@
  ],
  "prueba_fallida|reintentar_flujo": [
   4,
-  3
+  8
  ],
  "tienda|vaciar_cache": [
   1,
   0
+ ],
+ "automatizacion|relanzar_marketing": [
+  0,
+  1
  ]
 }

@@ -85,7 +85,7 @@
   "motivo": "El script de Python para Telegram ha fallado y el reintento automático no lo ha solucionado.",
   "explicacion": "Causa probable: un error temporal en la API de Telegram o un fallo en la lectura del archivo JSON con los libros diarios. Para solucionarlo a mano, accede al repositorio en GitHub, revisa los logs detallados del flujo en GitHub Actions, comprueba que el token de la API de Telegram sigue siendo válido y ejecuta el script manualmente desde tu terminal local.",
   "ok": 0,
-  "fallo": 0,
+  "fallo": 1,
   "fecha": "2026-11-16",
   "ejemplo": "La automatización «Telegram libro del día» falla y el reintento no lo arregló."
  },
@@ -94,8 +94,35 @@
   "motivo": "Error de JavaScript por bloqueo de iframe con cabecera X-Frame-Options en SiteGround.",
   "explicacion": "El script aurzane-paleta.js o un componente incrustado intenta cargar aurzane.com en un iframe desde un subdominio, bloqueado por seguridad de SameOrigin. Si reintentar el flujo de GitHub Actions no lo soluciona, debes revisar las cabeceras HTTP en el servidor SiteGround o ajustar el script externo para evitar cargas en iframe cruzado.",
   "ok": 0,
-  "fallo": 0,
+  "fallo": 5,
   "fecha": "2026-11-16",
   "ejemplo": "Prueba fallida en https://build.aurzane.com/calculadora-hipoteca/: Carga bien · 1 error(es) de JavaScript: Refused to display 'https://aurzane.com/' in a frame because it set 'X-Frame-Options' to 'sam"
+ },
+ "prueba_fallida|prueba fallida en # cambié un dato: #,# l → #,# l · # error(es) de javascript: refused to display '# in a frame because it set 'x-frame-opti": {
+  "receta": "reintentar_flujo",
+  "motivo": "Error de JavaScript por bloqueo de iframe con X-Frame-Options al cargar el dominio principal en la prueba automatizada.",
+  "explicacion": "El script de paleta o un componente incrustado en live.aurzane.com intenta cargar la URL raíz aurzane.com dentro de un iframe, pero la cabecera X-Frame-Options configurada como sameorigin en SiteGround lo bloquea. Para solucionarlo a mano, revisa los scripts externos o iframes en el código HTML de la página de la calculadora, asegúrate de que no se intente embeber aurzane.com desde live.aurzane.com sin la debida autorización de cabeceras o modifica las reglas del servidor en SiteGround si el iframe es estrictamente necesario.",
+  "ok": 0,
+  "fallo": 0,
+  "fecha": "2026-11-16",
+  "ejemplo": "Prueba fallida en https://live.aurzane.com/calculadora-agua/: Cambié un dato: 2,7 L → 3,2 L · 1 error(es) de JavaScript: Refused to display 'https://aurzane.com/' in a frame because it set 'X-Frame-Op"
+ },
+ "prueba_fallida|prueba fallida en # respondí # preguntas: resultado # sobre # (bienestar bajo) · # error(es) de javascript: refused to display '# in a frame": {
+  "receta": "avisar",
+  "motivo": "Error de JavaScript por bloqueo de X-Frame-Options al intentar cargar https://aurzane.com/ en un iframe desde live.aurzane.com",
+  "explicacion": "El script de la paleta u otro componente incrusta https://aurzane.com/ en un iframe, pero la directiva X-Frame-Options: sameorigin en SiteGround lo bloquea al estar en distintos subdominios. Para arreglarlo a mano, ajusta las cabeceras HTTP en el servidor o modifica el script para evitar el uso de iframes cruzados.",
+  "ok": 0,
+  "fallo": 0,
+  "fecha": "2026-11-16",
+  "ejemplo": "Prueba fallida en https://live.aurzane.com/test-de-bienestar/: Respondí 5 preguntas: resultado 40 sobre 100 (Bienestar bajo) · 1 error(es) de JavaScript: Refused to display 'https://aurzane.com/' in a"
+ },
+ "prueba_fallida|prueba fallida en # cambié un dato: # → # · # error(es) de javascript: refused to display '# in a frame because it set 'x-frame-options' to ": {
+  "receta": "reintentar_flujo",
+  "motivo": "Error de JavaScript por bloqueo de iframe en el servidor",
+  "explicacion": "El script de prueba intenta cargar el dominio principal dentro de un iframe, pero las cabeceras HTTP de SiteGround impiden mostrar 'https://aurzane.com/' en marcos externos por políticas de seguridad sameorigin. Para solucionarlo a mano, revisa la configuración del archivo .htaccess o las cabeceras X-Frame-Options en SiteGround para permitir iframes desde el entorno de pruebas, o ajusta la herramienta de testing automatizado para evitar la carga en contenedores cruzados.",
+  "ok": 0,
+  "fallo": 0,
+  "fecha": "2026-11-16",
+  "ejemplo": "Prueba fallida en https://live.aurzane.com/calculadora-dias-entre-fechas/: Cambié un dato: 92 → 92 · 1 error(es) de JavaScript: Refused to display 'https://aurzane.com/' in a frame because it set 'X-F"
  }
 }
