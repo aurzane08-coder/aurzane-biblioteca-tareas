@@ -542,3 +542,10 @@
 2026-11-16,7,tiktok,cur-5b579f7f14,error,403 {"error":{"code":"unaudited_client_can_only_post_to_private_accounts" "message":"Please review our integration guidelines at https://developers.ti
 2026-11-16,8,tiktok,cur-df87f5f0c3,error,403 {"error":{"code":"unaudited_client_can_only_post_to_private_accounts" "message":"Please review our integration guidelines at https://developers.ti
 2026-11-16,9,tiktok,frase-36357ac7,error,403 {"error":{"code":"unaudited_client_can_only_post_to_private_accounts" "message":"Please review our integration guidelines at https://developers.ti
+2026-11-16,7,tiktok,cur-5b579f7f14,error,403 {"error":{"code":"unaudited_client_can_only_post_to_private_accounts" "message":"Please review our integration guidelines at https://developers.ti
+2026-11-16,8,tiktok,cur-df87f5f0c3,error,403 {"error":{"code":"unaudited_client_can_only_post_to_private_accounts" "message":"Please review our integration guidelines at https://developers.ti
+2026-11-16,9,tiktok,frase-36357ac7,error,403 {"error":{"code":"unaudited_client_can_only_post_to_private_accounts" "message":"Please review our integration guidelines at https://developers.ti
+2026-11-16,4,instagram,frase-e9c6ecf2,ok,18101080205558634
+2026-11-16,4,facebook,cur-ea27fcda45,ok,1708304761010613
+2026-11-16,4,youtube,frase-6718c8c7,ok,https://youtu.be/myEYnnObHuk
+2026-11-16,4,telegram,frase-3adec0ca,ok,107
