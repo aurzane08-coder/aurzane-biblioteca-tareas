@@ -6,7 +6,7 @@ on:
     - cron: '23 6 * * *'
   workflow_dispatch:
   push:
-    paths: ['pruebas/recorridos.js', '.github/workflows/pruebas.yml']
+    paths: ['.github/workflows/pruebas.yml']
 permissions:
   contents: write
 jobs:
