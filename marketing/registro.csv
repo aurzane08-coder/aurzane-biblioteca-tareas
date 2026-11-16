@@ -473,3 +473,9 @@
 2026-11-16,7,tiktok,cur-5b579f7f14,error,403 {"error":{"code":"unaudited_client_can_only_post_to_private_accounts" "message":"Please review our integration guidelines at https://developers.ti
 2026-11-16,7,tiktok,cur-5b579f7f14,error,403 {"error":{"code":"unaudited_client_can_only_post_to_private_accounts" "message":"Please review our integration guidelines at https://developers.ti
 2026-11-16,7,tiktok,cur-5b579f7f14,error,403 {"error":{"code":"unaudited_client_can_only_post_to_private_accounts" "message":"Please review our integration guidelines at https://developers.ti
+2026-11-16,7,tiktok,cur-5b579f7f14,error,403 {"error":{"code":"unaudited_client_can_only_post_to_private_accounts" "message":"Please review our integration guidelines at https://developers.ti
+2026-11-16,1,telegram,test-habitos,error,400 {"ok":false "error_code":400 "description":"Bad Request: IMAGE_PROCESS_FAILED"}
+2026-11-16,1,bluesky,test-bienestar,ok,at://did:plc:6ovoiudj7dkxgrzd2zkyn77y/app.bsky.feed.post/3n2g5doa5mk2t
+2026-11-16,1,mastodon,test-depresion,error,422 {"error":"Validation failed: File content type is invalid  File is invalid"}
+2026-11-16,1,instagram,calc-pau,ok,18080504639724823
+2026-11-16,1,facebook,test-ansiedad,ok,1121507297395159
