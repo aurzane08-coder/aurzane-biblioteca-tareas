@@ -1,0 +1,324 @@
+/*
+ * AURZANE · Sistema de diseño compartido (v3)
+ * Lo cargan todas las páginas desde aurzane-paleta.js. Solo presentación: no cambia contenidos, datos ni lógica.
+ * Guías seguidas: WCAG 2.2 AA (foco visible, objetivos de 24 px, movimiento reducido), heurísticas de Nielsen
+ * (visibilidad del estado, coherencia, reconocer antes que recordar) y el patrón combobox/dialog de WAI-ARIA.
+ */
+:root{
+  /* color de cada mundo (el mismo que usa aurzane-estilo.js) */
+  --az-mind:#5B43B8;--az-nexus:#2F5FA8;--az-live:#B4542C;--az-learn:#2F7A55;--az-build:#8A5A32;--az-ovp:#5B43B8;--az-portada:#B08A3A;
+  /* versiones claras para fondos oscuros (contraste ≥ 4.5:1 sobre --az-barra) */
+  --az-mind-c:#A897F0;--az-nexus-c:#8DB3F2;--az-live-c:#F0A27C;--az-learn-c:#7FD3A7;--az-build-c:#DDB58C;--az-ovp-c:#A897F0;--az-portada-c:#E8C77E;
+  --az-barra:#10142B;--az-barra-2:#1A2042;--az-barra-txt:#ECE8DF;--az-barra-dim:#B4B2C4;--az-linea:rgba(255,255,255,.12);
+  --az-radio:12px;--az-radio-s:8px;--az-sombra:0 24px 60px -24px rgba(5,6,20,.6);
+  --az-fuente:"Instrument Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --az-foco:#F2C98A;--az-ease:cubic-bezier(.2,.7,.2,1);
+  --az-alto-barra:44px;
+}
+
+/* ---------- Base común: foco visible, objetivos táctiles y movimiento reducido ---------- */
+:where(a,button,input,select,textarea,summary,[tabindex]):focus-visible{outline:3px solid var(--mundo,#B08A3A);outline-offset:2px;border-radius:4px}
+html[data-tema="oscuro"] :where(a,button,input,select,textarea,summary,[tabindex]):focus-visible{outline-color:var(--az-foco)}
+:where(nav,footer,.utility,.topbar,.todo-panel) :where(a,button){min-height:24px}
+:where(button,[role="button"],input[type="submit"]){touch-action:manipulation}
+img{max-width:100%;height:auto}
+:where(h1,h2,h3){text-wrap:balance}
+:where(p,li){text-wrap:pretty}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+}
+
+/* Enlace para saltar al contenido (WCAG 2.4.1) */
+.az-saltar{position:fixed;left:12px;top:-60px;z-index:10001;background:#fff;color:#10142B;font:600 15px/1 var(--az-fuente);padding:12px 16px;border-radius:var(--az-radio-s);box-shadow:var(--az-sombra);text-decoration:none;transition:top .15s}
+.az-saltar:focus{top:10px}
+
+/* ---------- Cabecera única del ecosistema (fila 1 universal y sutil, fila 2 del mundo actual) ---------- */
+.az-vieja{display:none!important}
+.az-cab,.az-pie{display:block!important;padding:0!important;margin:0;border:0!important;max-width:none!important;box-shadow:none!important;text-align:left!important;flex:none!important;grid-column:1/-1}
+.az-cab{position:relative;z-index:9000;background:none!important;font:500 14px/1.2 var(--az-fuente);-webkit-font-smoothing:antialiased}
+.az-cab *{box-sizing:border-box}
+.az-cab ul{list-style:none;margin:0;padding:0;display:flex;align-items:center}
+.az-cab li{display:block!important;width:auto!important;margin:0!important;padding:0!important;border:0!important;background:none!important}
+.az-cab li::before,.az-cab li::after{content:none!important}
+.az-cab a,.az-cab button{font:inherit;text-decoration:none;text-transform:none;letter-spacing:inherit;box-shadow:none}
+.az-cab-in{max-width:1320px;margin:0 auto;display:flex;align-items:center;gap:8px;padding:0 20px}
+.az-cab-1{background:var(--az-barra);color:var(--az-barra-txt);border-bottom:1px solid var(--az-linea)}
+.az-cab-1 .az-cab-in{min-height:52px}
+.az-logo{font:600 19px/1 "Bodoni Moda",Georgia,serif;letter-spacing:.14em;color:#F3EFE6!important;padding:8px 14px 8px 0;margin-right:6px;border-right:1px solid var(--az-linea);white-space:nowrap}
+.az-logo b{color:#E2BF6A;font-weight:600}
+.az-mundos a{display:inline-flex;align-items:center;gap:7px;padding:9px 10px;border-radius:var(--az-radio-s);color:var(--az-barra-dim)!important;font-size:13px;font-weight:600;letter-spacing:.05em;white-space:nowrap}
+.az-mundos a:hover{color:#fff!important;background:var(--az-barra-2)}
+.az-mundos a i,.az-cajon i{width:8px;height:8px;border-radius:50%;background:var(--c);flex:none;display:inline-block}
+.az-mundos a[aria-current]{color:#fff!important;background:var(--az-barra-2);box-shadow:inset 0 -2px 0 var(--c)}
+.az-mundos small{display:none}
+.az-acc{margin-left:auto;display:flex;align-items:center;gap:6px}
+.az-buscar{display:inline-flex;align-items:center;gap:10px;width:250px;height:36px;padding:0 8px 0 12px;border-radius:999px;border:1px solid var(--az-linea);background:rgba(255,255,255,.06);color:var(--az-barra-dim)!important;cursor:pointer;font-size:13px!important}
+.az-buscar:hover{border-color:rgba(255,255,255,.35);color:#fff!important}
+.az-buscar svg{flex:none}
+.az-buscar .txt{white-space:nowrap}
+.az-buscar kbd{margin-left:auto;font:600 11px/1 var(--az-fuente);border:1px solid var(--az-linea);border-radius:6px;padding:4px 6px;background:#1A2042!important;color:#C9C7D6!important;box-shadow:none!important}
+.az-btn,.az-cab .az-tema{display:inline-flex!important;align-items:center;gap:7px;height:36px;padding:0 12px!important;border-radius:999px!important;border:1px solid transparent!important;background:none!important;color:var(--az-barra-txt)!important;cursor:pointer;font:600 13px/1 var(--az-fuente)!important;white-space:nowrap;margin:0!important;min-width:0!important;box-shadow:none!important}
+.az-btn:hover,.az-cab .az-tema:hover{background:var(--az-barra-2)!important}
+.az-cuenta{border-color:var(--az-linea)!important}
+.az-menu{display:none!important}
+.az-n[hidden]{display:none!important}
+.az-donde{display:none;align-items:center;gap:7px;color:#fff!important;font-weight:700;font-size:13px;letter-spacing:.06em;white-space:nowrap}
+.az-donde i{width:9px;height:9px;border-radius:3px;background:var(--c)}
+.az-cab-2{background:var(--surface,#FFFCF8);color:var(--text,#2E2620);border-bottom:1px solid var(--border,rgba(28,23,18,.13))}
+html[data-tema="oscuro"] .az-cab-2{background:#121731;color:#ECE8DF;border-color:rgba(255,255,255,.1)}
+.az-cab-2 .az-cab-in{min-height:48px;gap:4px}
+.az-mundo{display:inline-flex;align-items:center;gap:8px;font-weight:700;letter-spacing:.06em;font-size:13px;color:inherit!important;padding:8px 14px 8px 0;margin-right:6px;border-right:1px solid currentColor;border-right-color:rgba(127,127,127,.3);white-space:nowrap}
+.az-mundo i{width:10px;height:10px;border-radius:3px;background:var(--c);display:inline-block}
+.az-cab-2 nav{min-width:0;overflow-x:auto;scrollbar-width:none}
+.az-cab-2 nav::-webkit-scrollbar{display:none}
+.az-cab-2 a:not(.az-mundo){display:inline-flex;align-items:center;gap:6px;min-height:36px;padding:0 12px;border-radius:999px;color:inherit!important;opacity:.82;font-size:14px;white-space:nowrap}
+.az-cab-2 a:not(.az-mundo):hover{opacity:1;background:rgba(127,127,127,.12)}
+.az-cab-2 a[aria-current="page"]{opacity:1;font-weight:600;background:rgba(127,127,127,.14)}
+.az-n{display:inline-grid;place-items:center;min-width:20px;height:20px;padding:0 6px;border-radius:999px;background:var(--c);color:#10142B;font-size:11px;font-weight:700}
+.az-cajon{background:var(--az-barra);color:var(--az-barra-txt);padding:8px 16px 18px;max-height:calc(100vh - 52px);overflow:auto;border-bottom:1px solid var(--az-linea)}
+.az-cajon[hidden]{display:none!important}
+.az-cajon ul{flex-direction:column;align-items:stretch}
+.az-cajon a{display:flex;align-items:center;gap:10px;min-height:46px;padding:0 10px;border-radius:10px;color:#ECE8DF!important;font-size:16px}
+.az-cajon a:hover,.az-cajon a[aria-current]{background:var(--az-barra-2)}
+.az-cajon small{margin-left:auto;color:var(--az-barra-dim);font-size:13px;display:inline}
+.az-cajon-t{margin:14px 10px 6px;font:700 12px/1 var(--az-fuente);color:var(--az-barra-dim);letter-spacing:.04em}
+.az-cajon .az-n{margin-left:auto}
+.az-subnav{background:var(--surface-2,#F1E8D6);border-bottom:1px solid var(--border,rgba(28,23,18,.13))}
+.az-subnav-in{max-width:1320px;margin:0 auto;padding:4px 20px;display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+.az-subnav a{display:inline-flex;align-items:center;min-height:36px;padding:0 12px;border-radius:999px;white-space:nowrap;color:inherit;text-decoration:none;font-size:14px}
+.az-subnav a[aria-current]{font-weight:600;background:rgba(127,127,127,.14)}
+/* cabeceras con herramientas propias (biblioteca, Research Hub): se queda la herramienta, se va lo repetido */
+.az-cab-funcional .brand,.az-cab-funcional .topnav,.az-cab-funcional > .wrap > nav:not(.deptos),.topbar.az-cab-funcional nav > a{display:none!important}
+body > header:not([class]) > a.logo{display:none!important}
+@media (max-width:1180px){.az-mundos a{padding:9px 8px;letter-spacing:.02em}.az-buscar{width:auto}.az-buscar .txt,.az-buscar kbd{display:none}.az-buscar{width:36px;padding:0;justify-content:center}}
+@media (max-width:900px){
+  .az-mundos,.az-cab-2{display:none}
+  .az-menu{display:inline-flex!important}
+  .az-donde{display:inline-flex}
+  .az-cab-in{padding:0 12px}
+  .az-cuenta .txt,.az-cab .az-tema .txt{display:none}
+  .az-cuenta,.az-cab .az-tema,.az-menu{width:40px!important;min-width:40px!important;max-width:40px!important;padding:0!important;justify-content:center}
+  .az-cab{position:relative}
+}
+@media (max-width:440px){.az-cuenta{display:none!important}.az-logo{font-size:17px;letter-spacing:.1em;padding-right:10px;margin-right:2px}.az-acc{gap:2px}.az-cab-in{padding:0 10px;gap:6px}}
+@media (max-width:340px){.az-donde{font-size:12px;letter-spacing:.02em}.az-logo{letter-spacing:.06em}}
+@media print{.az-cab,.az-subnav,.az-paleta{display:none!important}}
+
+/* ---------- Buscador global (Ctrl+K): diálogo con lista de resultados ---------- */
+.az-paleta{position:fixed;inset:0;z-index:10000;display:none;align-items:flex-start;justify-content:center;padding:10vh 16px 16px;background:rgba(6,8,22,.55);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.az-paleta.ver{display:flex}
+.az-paleta-caja{width:min(640px,100%);max-height:min(560px,80vh);display:flex;flex-direction:column;background:#fff;color:#1C1B26;border-radius:16px;box-shadow:var(--az-sombra);overflow:hidden;font:400 15px/1.4 var(--az-fuente)}
+html[data-tema="oscuro"] .az-paleta-caja{background:#171C38;color:#ECE8DF}
+.az-paleta-cab{display:flex;align-items:center;gap:10px;padding:14px 16px;border-bottom:1px solid rgba(20,20,40,.1)}
+html[data-tema="oscuro"] .az-paleta-cab{border-color:rgba(255,255,255,.1)}
+.az-paleta-cab input{flex:1;min-width:0;width:auto!important;height:auto!important;border:0!important;outline:0!important;box-shadow:none!important;background:none!important;color:inherit!important;font:500 17px/1.3 var(--az-fuente)!important;padding:4px 0!important;margin:0!important;border-radius:0!important}
+.az-paleta-cab input::placeholder{color:#6A6878}
+html[data-tema="oscuro"] .az-paleta-cab input::placeholder{color:#A9A7B8}
+.az-paleta-cab button{border:1px solid rgba(20,20,40,.15);background:none;color:inherit;border-radius:6px;font:600 12px/1 var(--az-fuente);padding:7px 8px;cursor:pointer}
+html[data-tema="oscuro"] .az-paleta-cab button{border-color:rgba(255,255,255,.2)}
+.az-paleta-lista{overflow:auto;padding:6px 8px 10px;margin:0;list-style:none}
+.az-paleta-lista .grupo{font:700 12px/1 var(--az-fuente);color:#5F5D6E;padding:14px 10px 6px;letter-spacing:.02em}
+html[data-tema="oscuro"] .az-paleta-lista .grupo{color:#B4B2C4}
+.az-paleta-lista [role="option"]{display:flex;align-items:center;gap:12px;padding:10px;border-radius:10px;cursor:pointer}
+.az-paleta-lista [role="option"][aria-selected="true"]{background:#F1EEE7}
+html[data-tema="oscuro"] .az-paleta-lista [role="option"][aria-selected="true"]{background:#242B52}
+.az-paleta-lista .pt{width:10px;height:10px;border-radius:50%;background:var(--c);flex:none}
+.az-paleta-lista b{display:block;font-weight:600;font-size:15px}
+.az-paleta-lista small{display:block;color:#5F5D6E;font-size:13px;margin-top:1px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:48ch}
+html[data-tema="oscuro"] .az-paleta-lista small{color:#B4B2C4}
+.az-paleta-lista mark{background:none;color:inherit;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:2px;text-decoration-color:var(--c)}
+.az-paleta-lista .tipo{margin-left:auto;font-size:12px;color:#5F5D6E;white-space:nowrap}
+html[data-tema="oscuro"] .az-paleta-lista .tipo{color:#B4B2C4}
+.az-paleta-pie{display:flex;gap:16px;flex-wrap:wrap;padding:10px 16px;border-top:1px solid rgba(20,20,40,.1);font-size:12px;color:#5F5D6E}
+html[data-tema="oscuro"] .az-paleta-pie{border-color:rgba(255,255,255,.1);color:#B4B2C4}
+.az-paleta-vacio{padding:24px 12px;color:#5F5D6E;text-align:center}
+@media (max-width:560px){.az-paleta{padding:0}.az-paleta-caja{width:100%;max-height:100%;height:100%;border-radius:0}.az-paleta-pie{display:none}}
+
+/* ---------- Fotos reales en lugar de dibujos propios (cabeceras de mundo, portadas y «Sigue explorando») ---------- */
+.world-header::before,main>.hero::before{display:none!important}
+.az-portada .ilu,.az-explorar .i{background-size:cover!important;background-position:center!important}
+.az-foto-credito{display:block;font-size:11px;opacity:.7;padding:4px 20px 0}
+.az-explorar .i{height:132px}
+
+/* Mi AURZANE ya está en la barra común: se quita el duplicado de la cabecera de cada mundo */
+
+/* ---------- Contraste mínimo 4.5:1 en etiquetas que no lo alcanzaban (auditoría axe, WCAG 1.4.3) ---------- */
+.tipo-tag.Research{background:#4A5DB0!important;color:#fff!important}
+.tipo-tag.Analysis{background:#2C6E82!important;color:#fff!important}
+html.az-m-learn .oro{background:#7E6020!important;color:#fff!important}
+html.az-m-learn .reco-et{color:#7E6020!important}
+html.az-m-learn:is([data-tema="oscuro"]) .reco-et{color:#E8C77E!important}
+html.az-m-portada:not([data-tema="oscuro"]) header.principal .logo strong{color:#8A6A28}
+/* carruseles horizontales: no ensanchan la página en móvil */
+.now-strip{min-width:0;max-width:100%}
+.az-paleta-lista [role="option"]>span:nth-child(2){flex:1;min-width:0}
+.az-paleta-lista small{max-width:none}
+@media (max-width:560px){.az-paleta-lista .tipo{display:none}}
+
+/* ---------- Ajustes de ancho en móvil (sin desplazamiento horizontal de la página) ---------- */
+:where(input,select,textarea){max-width:100%}
+.mundos,.mundos-grid{box-sizing:border-box;min-width:0;max-width:100%}
+.topnav{flex-wrap:wrap;row-gap:6px}
+.app>*,.panel{min-width:0}
+.seg{flex-wrap:wrap}
+.hero:has(> .blob){overflow-x:clip}
+html.az-m-portada form.c{grid-template-columns:minmax(0,1fr)}html.az-m-portada form.c>label{min-width:0}
+.layout>*{min-width:0}.paper{overflow-wrap:anywhere}html.az-m-portada form.c select{width:100%}
+@media (max-width:400px){.campos{grid-template-columns:minmax(0,1fr)!important}}
+html.az-m-portada:not([data-tema="oscuro"]) .hero-grid .eyebrow{color:#7A5E22!important}
+html.az-m-portada .chip.active{background:#7A5E22!important;border-color:#7A5E22!important;color:#fff!important}
+.research-sources a{text-decoration:underline;text-underline-offset:2px}
+a[href$="acerca/"]{display:inline-block;min-height:24px;padding:2px 0}
+html[data-tema="oscuro"] .az-cr-ver{color:#E8C77E!important}
+
+/* ---------- Ronda 3: pendientes del informe ---------- */
+/* contraste: etiquetas de mundo en las portadas (tema claro) */
+html:not([data-tema="oscuro"]) .w-mind .cw-world{color:#6E5320!important}
+html:not([data-tema="oscuro"]) .w-nexus .cw-world{color:#3A4C9E!important}
+html:not([data-tema="oscuro"]) .w-live .cw-world{color:#86391A!important}
+html:not([data-tema="oscuro"]) .w-learn .cw-world{color:#1F5C3E!important}
+html:not([data-tema="oscuro"]) .w-build .cw-world{color:#5E3B1F!important}
+html:not([data-tema="oscuro"]) .cw-card[href*="ovp.aurzane.com"] .cw-world{color:#4A3696!important}
+/* portada: verde de LEARN, botón claro sobre el bloque oscuro de la biblioteca */
+html.az-m-portada:not([data-tema="oscuro"]){--a-learn:#45705A}
+.biblio-home .btn-ghost{color:#F3EFE6!important;border-color:rgba(255,255,255,.4)!important}
+.biblio-home .btn-ghost:hover{border-color:#E2BF6A!important;color:#fff!important}
+/* LEARN: contador de lecciones de cada módulo */
+html.az-m-learn:not([data-tema="oscuro"]) summary .n{color:#7E6020!important}
+/* NEXUS: etiqueta «privada» de universidades y menú del catálogo */
+html:not([data-tema="oscuro"]) .etq.priv{color:#6A31AE!important}
+#topnav a{display:inline-flex;align-items:center;min-height:24px}
+/* enlaces dentro de texto: siempre subrayados */
+.research-sources a{text-decoration:underline!important}
+/* test de personalidad: tarjetas de los cinco rasgos con texto blanco legible */
+.r5:not(.claro){background-image:linear-gradient(rgba(0,0,0,.3),rgba(0,0,0,.3))}
+/* anchos: tarjeta del curso relacionado, fuentes con enlaces largos, carrusel de novedades, categorías de la biblioteca */
+.az-curso-rel a{flex-wrap:wrap}
+.az-curso-rel img{max-width:100%}
+.fuentes,.fuentes a{overflow-wrap:anywhere}
+#now{overflow-x:clip}
+#now .wrap,#nowStrip{min-width:0;max-width:100%}
+.deptos-fila{box-sizing:border-box;max-width:100%}
+.hero .blob{max-width:100%}
+.hero:has(.blob){overflow-x:clip}
+
+/* ---------- Pie único ---------- */
+.az-legal{display:none!important}
+.az-pie{background:#0C1024;color:#C9C7D6;font:400 14px/1.55 var(--az-fuente);margin-top:0;clear:both}
+.az-pie *{box-sizing:border-box}
+.az-pie a{color:#ECE8DF;text-decoration:none}
+.az-pie a:hover{text-decoration:underline;text-underline-offset:3px}
+.az-pie-in{max-width:1320px;margin:0 auto;padding:48px 20px 28px;display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:32px}
+.az-pie-marca p{margin:12px 0 0;max-width:38ch}
+.az-pie .az-logo{border:0;padding:0;font-size:22px}
+.az-pie-t{margin:0 0 10px;font:700 12px/1 var(--az-fuente);letter-spacing:.06em;color:#E2BF6A}
+.az-pie ul{list-style:none;margin:0;padding:0}
+.az-pie li{margin:0;padding:0}
+.az-pie li a{display:inline-flex;align-items:center;gap:6px;min-height:32px}
+.az-pie small{color:#9C9AAE;font-size:12px}
+.az-pie-redes{display:flex;flex-wrap:wrap;gap:6px 14px}
+.az-pie-redes a{display:inline-flex;align-items:center;min-height:32px}
+.az-pie-legal{max-width:1320px;margin:0 auto;padding:16px 20px 28px;border-top:1px solid rgba(255,255,255,.1);display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 24px;font-size:13px}
+.az-pie-legal span:last-of-type{display:flex;flex-wrap:wrap;gap:4px 18px}
+.az-pie .az-fallo{color:#ECE8DF!important;margin:0!important;padding:4px 0!important;font-size:13px!important}
+@media (max-width:860px){.az-pie-in{grid-template-columns:1fr 1fr;gap:24px}.az-pie-marca{grid-column:1/-1}}
+@media (max-width:420px){.az-pie-in{grid-template-columns:1fr}}
+
+/* ---------- Portadas de mundo con foto real (Unsplash) ---------- */
+html.az-ds-mind.az-pm .world-header,html.az-ds-mind.az-pm main > .hero{background:linear-gradient(90deg,var(--bg,#F6F0E8) 34%,color-mix(in srgb,var(--bg,#F6F0E8) 70%,transparent) 58%,color-mix(in srgb,var(--bg,#F6F0E8) 10%,transparent) 100%),url('https://images.unsplash.com/photo-1559757175-5700dde675bc?w=1600&q=70&auto=format&fit=crop') right center/cover no-repeat!important}
+html.az-ds-nexus.az-pm .world-header,html.az-ds-nexus.az-pm main > .hero{background:linear-gradient(90deg,var(--bg,#F6F0E8) 34%,color-mix(in srgb,var(--bg,#F6F0E8) 70%,transparent) 58%,color-mix(in srgb,var(--bg,#F6F0E8) 10%,transparent) 100%),url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=1600&q=70&auto=format&fit=crop') right center/cover no-repeat!important}
+html.az-ds-live.az-pm .world-header,html.az-ds-live.az-pm main > .hero{background:linear-gradient(90deg,var(--bg,#F6F0E8) 34%,color-mix(in srgb,var(--bg,#F6F0E8) 70%,transparent) 58%,color-mix(in srgb,var(--bg,#F6F0E8) 10%,transparent) 100%),url('https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=1600&q=70&auto=format&fit=crop') right center/cover no-repeat!important}
+html.az-ds-learn.az-pm .world-header,html.az-ds-learn.az-pm main > .hero{background:linear-gradient(90deg,var(--bg,#F6F0E8) 34%,color-mix(in srgb,var(--bg,#F6F0E8) 70%,transparent) 58%,color-mix(in srgb,var(--bg,#F6F0E8) 10%,transparent) 100%),url('https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=1600&q=70&auto=format&fit=crop') right center/cover no-repeat!important}
+html.az-ds-build.az-pm .world-header,html.az-ds-build.az-pm main > .hero{background:linear-gradient(90deg,var(--bg,#F6F0E8) 34%,color-mix(in srgb,var(--bg,#F6F0E8) 70%,transparent) 58%,color-mix(in srgb,var(--bg,#F6F0E8) 10%,transparent) 100%),url('https://images.unsplash.com/photo-1461360370896-922624d12aa1?w=1600&q=70&auto=format&fit=crop') right center/cover no-repeat!important}
+html.az-ds-ovp.az-pm .world-header,html.az-ds-ovp.az-pm main > .hero{background:linear-gradient(90deg,var(--bg,#F6F0E8) 34%,color-mix(in srgb,var(--bg,#F6F0E8) 70%,transparent) 58%,color-mix(in srgb,var(--bg,#F6F0E8) 10%,transparent) 100%),url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1600&q=70&auto=format&fit=crop') right center/cover no-repeat!important}
+html[data-tema="oscuro"].az-ds .world-header,html[data-tema="oscuro"].az-ds main > .hero{background-blend-mode:normal}
+.world-header,main > .hero{border-radius:0 0 24px 24px}
+@media (max-width:760px){html.az-ds-mind.az-pm .world-header,html.az-ds-mind.az-pm main > .hero{background:var(--bg,#F6F0E8)!important;padding-top:0!important}html.az-ds-mind.az-pm .world-header::before,html.az-ds-mind.az-pm main > .hero::before{content:''!important;display:block!important;position:static!important;height:170px!important;margin:0 -5vw 22px!important;background:url('https://images.unsplash.com/photo-1559757175-5700dde675bc?w=900&q=70&auto=format&fit=crop') center/cover no-repeat!important;opacity:1!important;filter:none!important;inset:auto!important;width:auto!important;transform:none!important;border-radius:14px!important}html.az-ds-nexus.az-pm .world-header,html.az-ds-nexus.az-pm main > .hero{background:var(--bg,#F6F0E8)!important;padding-top:0!important}html.az-ds-nexus.az-pm .world-header::before,html.az-ds-nexus.az-pm main > .hero::before{content:''!important;display:block!important;position:static!important;height:170px!important;margin:0 -5vw 22px!important;background:url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=900&q=70&auto=format&fit=crop') center/cover no-repeat!important;opacity:1!important;filter:none!important;inset:auto!important;width:auto!important;transform:none!important;border-radius:14px!important}html.az-ds-live.az-pm .world-header,html.az-ds-live.az-pm main > .hero{background:var(--bg,#F6F0E8)!important;padding-top:0!important}html.az-ds-live.az-pm .world-header::before,html.az-ds-live.az-pm main > .hero::before{content:''!important;display:block!important;position:static!important;height:170px!important;margin:0 -5vw 22px!important;background:url('https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=900&q=70&auto=format&fit=crop') center/cover no-repeat!important;opacity:1!important;filter:none!important;inset:auto!important;width:auto!important;transform:none!important;border-radius:14px!important}html.az-ds-learn.az-pm .world-header,html.az-ds-learn.az-pm main > .hero{background:var(--bg,#F6F0E8)!important;padding-top:0!important}html.az-ds-learn.az-pm .world-header::before,html.az-ds-learn.az-pm main > .hero::before{content:''!important;display:block!important;position:static!important;height:170px!important;margin:0 -5vw 22px!important;background:url('https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=900&q=70&auto=format&fit=crop') center/cover no-repeat!important;opacity:1!important;filter:none!important;inset:auto!important;width:auto!important;transform:none!important;border-radius:14px!important}html.az-ds-build.az-pm .world-header,html.az-ds-build.az-pm main > .hero{background:var(--bg,#F6F0E8)!important;padding-top:0!important}html.az-ds-build.az-pm .world-header::before,html.az-ds-build.az-pm main > .hero::before{content:''!important;display:block!important;position:static!important;height:170px!important;margin:0 -5vw 22px!important;background:url('https://images.unsplash.com/photo-1461360370896-922624d12aa1?w=900&q=70&auto=format&fit=crop') center/cover no-repeat!important;opacity:1!important;filter:none!important;inset:auto!important;width:auto!important;transform:none!important;border-radius:14px!important}html.az-ds-ovp.az-pm .world-header,html.az-ds-ovp.az-pm main > .hero{background:var(--bg,#F6F0E8)!important;padding-top:0!important}html.az-ds-ovp.az-pm .world-header::before,html.az-ds-ovp.az-pm main > .hero::before{content:''!important;display:block!important;position:static!important;height:170px!important;margin:0 -5vw 22px!important;background:url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=900&q=70&auto=format&fit=crop') center/cover no-repeat!important;opacity:1!important;filter:none!important;inset:auto!important;width:auto!important;transform:none!important;border-radius:14px!important}}
+
+/* ---------- Ronda 4 (auditoría total de 150 páginas) ---------- */
+#breadcrumbBox,#breadcrumbBox a{color:#5A4C3A!important}
+html[data-tema="oscuro"] #breadcrumbBox,html[data-tema="oscuro"] #breadcrumbBox a{color:#C9C3B6!important}
+main p > a:not([class]),main li > a:not([class]){text-decoration:underline;text-underline-offset:2px}
+.summary-table,.tnc{display:block;max-width:100%;overflow-x:auto}
+.nivel.high{color:#3F5A22!important}.nivel.medium{color:#6E5320!important}.nivel.low{color:#8A3A3A!important}
+
+.az-pie p{color:#C9C7D6!important}.az-pie .az-pie-t{color:#E2BF6A!important}
+.scroll{max-width:100%;overflow-x:auto}
+.az-cajon a svg{flex:none}
+.tipo-tag.Guide{background:#2C6E82!important;color:#fff!important}
+.tipo-tag.AURZANE{background:#7A5E22!important;color:#fff!important}
+.dim-row.high .dim-name,.dim-row.high .dim-tag{color:#4A5E22!important}
+.dim-row.medium .dim-name,.dim-row.medium .dim-tag{color:#6E5320!important}
+.dim-row.low .dim-name,.dim-row.low .dim-tag{color:#8A3A3A!important}
+html:not([data-tema="oscuro"]) .estado{color:#5A5047!important}
+
+/* ---------- Ronda 4: revisión total ---------- */
+/* informe OVP de ejemplo: etiquetas de recomendación legibles */
+.reco-band.high{color:#3F5626!important}
+/* artículos de mundo: enlace de vuelta legible */
+#volverLink{color:inherit!important;text-decoration:underline;text-underline-offset:3px}
+/* el librero de la biblioteca, al final del contenido */
+.az-lib-final{margin:48px auto 24px!important;max-width:880px}
+/* libros abiertos y estudios recientes: columnas que caben en móvil */
+html.az-ds-aurzane article.t{grid-template-columns:96px minmax(0,1fr)}
+html.az-ds-aurzane article.t>*{min-width:0}
+html.az-ds-aurzane article.t h2,html.az-ds-aurzane article.t .k{overflow-wrap:anywhere}
+@media (max-width:420px){html.az-ds-aurzane article.t{grid-template-columns:72px minmax(0,1fr);gap:14px}html.az-ds-aurzane article.t .p{width:72px}}
+/* aviso de traducción: dentro de la pantalla */
+.azi-aviso{max-width:calc(100vw - 24px)!important;box-sizing:border-box!important}
+/* informe OVP: las tres bandas de recomendación con contraste suficiente y tamaño legible */
+.aurzane-report .reco-band.medium{color:#6B5016!important}
+.aurzane-report .reco-band.low{color:#8A3A3A!important}
+.aurzane-report .reco-band{font-size:.7rem!important}
+/* tienda de libros: ficha y tarjetas relacionadas que caben en móvil */
+html.az-ds-aurzane .ficha{grid-template-columns:minmax(0,280px) minmax(0,1fr)}
+@media (max-width:760px){html.az-ds-aurzane .ficha{grid-template-columns:minmax(0,1fr)}}
+html.az-ds-aurzane .ficha>*,html.az-ds-aurzane .ficha p{min-width:0;overflow-wrap:anywhere}
+html.az-ds-aurzane .libro .dat>span,html.az-ds-aurzane .libro .dat>b{display:block}
+html.az-ds-aurzane .libro .dat .et{display:inline-block}
+/* test de personalidad: los cinco rasgos en una columna en pantallas muy estrechas */
+@media (max-width:360px){.rasgos5{grid-template-columns:minmax(0,1fr)!important}}
+.rasgos5>*{min-width:0}
+/* boletín: en móvil no aparece como ventana encima del contenido (queda el bloque al final de la página) */
+@media (max-width:700px){.az-bol-pop{display:none!important}}
+.az-bol-pop input[type="checkbox"],.az-boletin input[type="checkbox"],aside .in form input[type="checkbox"]{width:20px;height:20px;margin:2px 6px 2px 0}
+.az-bol-pop label,.az-boletin label{min-height:24px;display:inline-flex;align-items:center}
+
+/* ---------- Guardados comunes ---------- */
+.az-gd-btn .az-gd-n,.az-gd-cajon .az-gd-n{min-width:20px;height:20px;padding:0 6px;border-radius:999px;background:var(--az-portada-c);color:#10142B;font:700 11px/20px var(--az-fuente);text-align:center}
+.az-gd-esta[aria-pressed="true"] svg{fill:currentColor}
+.az-gd-esta[aria-pressed="true"]{color:#F2C98A!important}
+@media (max-width:1320px){.az-gd-btn .txt{display:none}}
+@media (max-width:1120px){.az-gd-esta .txt{display:none}}
+@media (max-width:900px){.az-gd-btn,.az-gd-esta{width:40px!important;min-width:40px!important;padding:0!important;justify-content:center;position:relative}.az-gd-btn .az-gd-n{position:absolute;top:0;right:-2px;min-width:16px;height:16px;line-height:16px;font-size:10px;padding:0 4px}}
+@media (max-width:440px){.az-gd-btn{display:none!important}}
+.az-gd-velo{position:fixed;inset:0;z-index:10000;background:rgba(6,8,22,.5);display:flex;justify-content:flex-end}
+.az-gd-velo[hidden]{display:none}
+.az-gd{width:min(440px,100%);height:100%;background:#FFFDF8;color:#1C1B26;display:flex;flex-direction:column;box-shadow:-20px 0 60px -20px rgba(0,0,0,.5);font:400 15px/1.45 var(--az-fuente)}
+html[data-tema="oscuro"] .az-gd{background:#171C38;color:#ECE8DF}
+.az-gd-cab{display:flex;align-items:center;justify-content:space-between;padding:18px 20px;border-bottom:1px solid rgba(20,20,40,.1)}
+.az-gd-cab h2{margin:0;font:600 1.35rem/1.2 "Bodoni Moda",Georgia,serif}
+.az-gd-cerrar{width:40px;height:40px;border-radius:50%;border:1px solid rgba(20,20,40,.15);background:none;color:inherit;cursor:pointer;display:grid;place-items:center}
+.az-gd-lista{flex:1;overflow:auto;padding:8px 20px 20px}
+.az-gd-lista h3{font:700 13px/1 var(--az-fuente);color:#5F5D6E;margin:18px 0 6px}.az-gd-lista h3 span{font-weight:400}
+html[data-tema="oscuro"] .az-gd-lista h3{color:#B4B2C4}
+.az-gd-lista ul{list-style:none;margin:0;padding:0}
+.az-gd-lista li{display:grid;grid-template-columns:10px minmax(0,1fr) auto 40px;gap:10px;align-items:center;padding:8px 0;border-bottom:1px solid rgba(20,20,40,.08)}
+.az-gd-lista li i{width:10px;height:10px;border-radius:50%;background:var(--c)}
+.az-gd-lista li a{color:inherit;font-weight:600;text-decoration:none;overflow-wrap:anywhere}.az-gd-lista li a:hover{text-decoration:underline}
+.az-gd-lista li small{font-size:11px;color:#5F5D6E;letter-spacing:.04em}
+html[data-tema="oscuro"] .az-gd-lista li small{color:#B4B2C4}
+.az-gd-lista li button{width:36px;height:36px;border-radius:50%;border:0;background:none;color:inherit;cursor:pointer;display:grid;place-items:center;opacity:.7}
+.az-gd-lista li button:hover{opacity:1;background:rgba(20,20,40,.06)}
+.az-gd-vacio{color:#5F5D6E;padding:24px 0}
+html[data-tema="oscuro"] .az-gd-vacio{color:#B4B2C4}
+.az-gd-pie{margin:0;padding:14px 20px 18px;border-top:1px solid rgba(20,20,40,.1);font-size:13px;color:#5F5D6E}
+html[data-tema="oscuro"] .az-gd-pie{color:#B4B2C4}
+.az-gd-pie a{color:inherit}
+.az-gd-cajon{display:flex!important;align-items:center;gap:10px}
+.az-gd-esta[hidden],.az-gd-btn[hidden]{display:none!important}
+.aurzane-report .reco-list li .reco-mark{color:#6B5016!important}
+/* Revisión total 16/11/2026: contraste de la etiqueta de LIVE y del pie del informe OVP; cabecera a 320 px con el botón Guardar */
+html.az-ds-live .eyebrow{color:#9A4523!important}
+.aurzane-report .report-footer>span{color:#6B6658!important}
+@media(max-width:360px){.az-cab .az-acc{gap:2px!important}.az-cab .az-acc .az-btn{width:36px!important;min-width:36px!important}}
