@@ -747,5 +747,40 @@
   "mundo": "nexus",
   "test": "",
   "fecha": "2026-11-16"
+ },
+ {
+  "consulta": "carreras tecnicas",
+  "titulo": "Carreras técnicas: qué son, ventajas y cómo elegir la mejor opción",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "fecha": "2026-11-16"
+ },
+ {
+  "consulta": "licenciaturas en milán",
+  "titulo": "Estudiar en Milán: guía de licenciaturas, universidades y requisitos",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "fecha": "2026-11-16"
+ },
+ {
+  "consulta": "bentley university",
+  "titulo": "Bentley University: programas, admisiones y vida estudiantil",
+  "mundo": "nexus",
+  "test": "",
+  "fecha": "2026-11-16"
+ },
+ {
+  "consulta": "naropa university",
+  "titulo": "Naropa University: enfoque educativo y programas académicos",
+  "mundo": "nexus",
+  "test": "",
+  "fecha": "2026-11-16"
+ },
+ {
+  "consulta": "lafayette college",
+  "titulo": "Lafayette College: oferta académica, admisiones y costos",
+  "mundo": "nexus",
+  "test": "",
+  "fecha": "2026-11-16"
  }
 ]

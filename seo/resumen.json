@@ -619,6 +619,70 @@
  "cambios_titulos": [
   [
    "2026-11-16",
+   "https://nexus.aurzane.com/universidades/estados-unidos/catawba-college/",
+   "Catawba College: 36 carreras",
+   "Catawba College: Carreras y Admisión | AURZANE",
+   null,
+   0.0
+  ],
+  [
+   "2026-11-16",
+   "https://nexus.aurzane.com/universidades/estados-unidos/university-of-richmond/",
+   "University of Richmond: 42 carreras",
+   "University of Richmond: Carreras y Guía | AURZANE",
+   null,
+   0.0
+  ],
+  [
+   "2026-11-16",
+   "https://nexus.aurzane.com/universidades/estados-unidos/university-of-minnesota-morris/",
+   "University of Minnesota-Morris: 35 carreras",
+   "University of Minnesota Morris: carreras y qué es | AURZANE",
+   null,
+   0.0
+  ],
+  [
+   "2026-11-16",
+   "https://nexus.aurzane.com/universidades/uruguay/ciudad/montevideo/",
+   "Universidades en Montevideo: 6 opciones y 50 carreras (2026)",
+   "Universidades en Montevideo y Uruguay: guía y carreras",
+   null,
+   0.0
+  ],
+  [
+   "2026-11-16",
+   "https://nexus.aurzane.com/universidades/estados-unidos/kilgore-college/",
+   "Kilgore College: 31 carreras",
+   "Kilgore College: Carreras y Guia | AURZANE",
+   null,
+   0.0
+  ],
+  [
+   "2026-11-16",
+   "https://nexus.aurzane.com/universidades/estados-unidos/dean-college/",
+   "Dean College: 20 carreras | Universidades de Estados Unidos",
+   "Dean College: Carreras y Guia | AURZANE",
+   null,
+   0.0
+  ],
+  [
+   "2026-11-16",
+   "https://aurzane.com/biblioteca/libro/ref-camino-lagrimas.html",
+   "El Camino de las Lágrimas, Jorge Bucay | AURZANE",
+   "El Camino de las Lágrimas, Jorge Bucay | AURZANE",
+   null,
+   0.0
+  ],
+  [
+   "2026-11-16",
+   "https://aurzane.com/biblioteca/libro/ref-nino-topo-zorro-caballo.html",
+   "El niño, el topo, el zorro y el caballo | AURZANE",
+   "El niño, el topo, el zorro y el caballo | AURZANE",
+   null,
+   0.0
+  ],
+  [
+   "2026-11-16",
    "https://aurzane.com/biblioteca/libro/ref-dones-imperfeccion.html",
    "Los dones de la imperfección: resumen e ideas clave",
    "Los Dones de la Imperfección: Resumen y Guías | AURZANE",
@@ -672,73 +736,34 @@
    "Instituto Blez: carreras y web oficial | AURZANE",
    null,
    0.0
-  ],
-  [
-   "2026-11-16",
-   "https://aurzane.com/biblioteca/libro/ref-volar-sobre-pantano.html",
-   "Volar sobre el pantano: resumen y de qué trata",
-   "Volar sobre el pantano: resumen y análisis | AURZANE",
-   null,
-   0.0
-  ],
-  [
-   "2026-11-16",
-   "https://nexus.aurzane.com/universidades/estados-unidos/viterbo-university/",
-   "Viterbo University: 43 carreras",
-   "Viterbo University: Carreras y Oferta | AURZANE",
-   null,
-   0.0
-  ],
-  [
-   "2026-11-16",
-   "https://nexus.aurzane.com/universidades/ecuador/ciudad/guayaquil/",
-   "Universidades en Guayaquil: 39 opciones (2026)",
-   "Universidades en Guayaquil: Listado y Carreras",
-   null,
-   0.0
-  ],
-  [
-   "2026-11-16",
-   "https://nexus.aurzane.com/universidades/japon/nihon-university/",
-   "Nihon University: 13 áreas y facultades",
-   "Nihon University: facultades y carreras | AURZANE",
-   null,
-   0.0
-  ],
-  [
-   "2026-11-16",
-   "https://nexus.aurzane.com/universidades/mexico/universidad-michoacana-de-san-nicolas-de-hidalgo-umsnh/",
-   "Universidad Michoacana de San Nicolás de Hidalgo (UMSNH): carreras, ciudad y web | Universidades de México",
-   "UMICH: Carreras, Oferta y Web Oficial | AURZANE",
-   null,
-   0.0
-  ],
-  [
-   "2026-11-15",
-   "https://nexus.aurzane.com/universidades/notas-de-corte/psicologia/",
-   "Nota de corte de Psicología 2025-2026: 34 universidades",
-   "Nota de corte Psicología 2026: 34 universidades",
-   null,
-   0.0
-  ],
-  [
-   "2026-11-15",
-   "https://nexus.aurzane.com/universidades/ecuador/instituto-superior-tecnologico-el-condor/",
-   "Instituto Superior Tecnológico \"el Cóndor\": 6 carreras | Universidades de Ecuador",
-   "Instituto El Condor: carreras y sede | AURZANE",
-   null,
-   0.0
-  ],
-  [
-   "2026-11-15",
-   "https://nexus.aurzane.com/universidades/ecuador/ciudad/manta/",
-   "Universidades en Manta: 4 opciones y 93 carreras (2026)",
-   "Universidades en Manta: Carreras y Centros | AURZANE",
-   null,
-   0.0208
   ]
  ],
  "temas_nuevos": [
+  [
+   "2026-11-16",
+   "lafayette college",
+   "Lafayette College: oferta académica, admisiones y costos"
+  ],
+  [
+   "2026-11-16",
+   "naropa university",
+   "Naropa University: enfoque educativo y programas académicos"
+  ],
+  [
+   "2026-11-16",
+   "bentley university",
+   "Bentley University: programas, admisiones y vida estudiantil"
+  ],
+  [
+   "2026-11-16",
+   "licenciaturas en milán",
+   "Estudiar en Milán: guía de licenciaturas, universidades y requisitos"
+  ],
+  [
+   "2026-11-16",
+   "carreras tecnicas",
+   "Carreras técnicas: qué son, ventajas y cómo elegir la mejor opción"
+  ],
   [
    "2026-11-16",
    "hult international business school",
@@ -763,31 +788,6 @@
    "2026-11-16",
    "cambridge universidades",
    "Universidad de Cambridge: Cómo acceder, grados y vida estudiantil"
-  ],
-  [
-   "2026-11-16",
-   "glasgow universidad",
-   "Universidad de Glasgow: Carreras, admisión y estudiar en Escocia"
-  ],
-  [
-   "2026-11-16",
-   "columbia university",
-   "Columbia University: Admisiones, grados y vida en la universidad de Nueva York"
-  ],
-  [
-   "2026-11-16",
-   "hult business school",
-   "Hult International Business School: Oferta académica, campus y método"
-  ],
-  [
-   "2026-11-16",
-   "licenciaturas en madrid",
-   "Licenciaturas en Madrid: Guía completa para elegir carrera y universidad"
-  ],
-  [
-   "2026-11-15",
-   "ansiedad por el estatus",
-   "Ansiedad por el estatus en Paraguay: claves psicológicas para superarla"
   ]
  ]
 }

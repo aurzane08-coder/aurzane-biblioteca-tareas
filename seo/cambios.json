@@ -404,5 +404,193 @@
    "los dones de la imperfección de que trata"
   ],
   "via": "servidor"
+ },
+ {
+  "fecha": "2026-11-16",
+  "url": "https://aurzane.com/biblioteca/libro/ref-nino-topo-zorro-caballo.html",
+  "antes": {
+   "titulo": "El niño, el topo, el zorro y el caballo | AURZANE",
+   "desc": "Descubre de qué trata el libro de Charlie Mackesy, sus mensajes sobre amistad y valentía, para quién es recomendado y su versión animada.",
+   "clics": 0,
+   "impresiones": 126,
+   "ctr": 0.0,
+   "posicion": 10.9
+  },
+  "despues": {
+   "titulo": "El niño, el topo, el zorro y el caballo | AURZANE",
+   "desc": "Descubre el libro de Charlie Mackesy, sus enseñanzas sobre amistad y valentía, para quién está recomendado y los detalles de su versión animada."
+  },
+  "motivo": "Se mantiene el título exacto que busca el usuario con la marca y se optimiza la descripción incluyendo palabras clave secundarias para mejorar el CTR.",
+  "consultas": [
+   "el niño el topo el zorro y el caballo",
+   "el niño el topo el zorro y el caballo libro",
+   "libro el niño el topo el zorro y el caballo",
+   "el niño, el topo, el zorro y el caballo",
+   "el niño, el topo, el zorro y el caballo libro"
+  ],
+  "via": "servidor"
+ },
+ {
+  "fecha": "2026-11-16",
+  "url": "https://aurzane.com/biblioteca/libro/ref-camino-lagrimas.html",
+  "antes": {
+   "titulo": "El Camino de las Lágrimas, Jorge Bucay | AURZANE",
+   "desc": "Descubre el resumen y las ideas clave de El camino de las lágrimas de Jorge Bucay. Entiende las etapas del duelo y supera la pérdida con guía experta.",
+   "clics": 0,
+   "impresiones": 103,
+   "ctr": 0.0,
+   "posicion": 11.6
+  },
+  "despues": {
+   "titulo": "El Camino de las Lágrimas, Jorge Bucay | AURZANE",
+   "desc": "Lee el resumen y las ideas clave de el camino de las lágrimas de Jorge Bucay. Comprende las etapas del duelo y la pérdida en AURZANE."
+  },
+  "motivo": "Se ajusta exactamente a lo que buscan los usuarios (libro, autor y resumen) mejorando el gancho para conseguir clics manteniendo la marca.",
+  "consultas": [
+   "el camino de las lagrimas",
+   "el camino de las lágrimas de jorge bucay",
+   "el camino de las lágrimas resumen",
+   "jorge bucay el camino de las lagrimas",
+   "el camino de las lágrimas jorge bucay"
+  ],
+  "via": "servidor"
+ },
+ {
+  "fecha": "2026-11-16",
+  "url": "https://nexus.aurzane.com/universidades/estados-unidos/dean-college/",
+  "antes": {
+   "titulo": "Dean College: 20 carreras | Universidades de Estados Unidos",
+   "desc": "Dean College (Franklin, Massachusetts, Estados Unidos): sus 20 carreras, tipo privada, ciudad y web oficial.",
+   "clics": 0,
+   "impresiones": 79,
+   "ctr": 0.0,
+   "posicion": 15.9
+  },
+  "despues": {
+   "titulo": "Dean College: Carreras y Guia | AURZANE",
+   "desc": "Descubre Dean College en Estados Unidos: conoce sus carreras universitarias, tipo de institucion, ciudad y datos clave para tu orientacion."
+  },
+  "motivo": "Se optimiza el titulo para incluir la marca y afianzar la intencion de busqueda exacta del usuario, mejorando el gancho en la descripcion.",
+  "consultas": [
+   "dean college"
+  ],
+  "via": "univ"
+ },
+ {
+  "fecha": "2026-11-16",
+  "url": "https://nexus.aurzane.com/universidades/estados-unidos/kilgore-college/",
+  "antes": {
+   "titulo": "Kilgore College: 31 carreras",
+   "desc": "Kilgore College (Kilgore, Texas, Estados Unidos): sus 31 carreras, tipo pública, ciudad y web oficial.",
+   "clics": 0,
+   "impresiones": 67,
+   "ctr": 0.0,
+   "posicion": 15.6
+  },
+  "despues": {
+   "titulo": "Kilgore College: Carreras y Guia | AURZANE",
+   "desc": "Descubre Kilgore College en Texas, Estados Unidos: conoce sus 31 carreras disponibles, tipo de universidad publica, ubicacion y enlace a su web oficial."
+  },
+  "motivo": "Optimizamos el titulo añadiendo la intencion de busqueda de carreras y guia junto a la marca, y mejoramos la descripcion para captar clics destacando la informacion util de la ficha.",
+  "consultas": [
+   "kilgore college"
+  ],
+  "via": "univ"
+ },
+ {
+  "fecha": "2026-11-16",
+  "url": "https://nexus.aurzane.com/universidades/uruguay/ciudad/montevideo/",
+  "antes": {
+   "titulo": "Universidades en Montevideo: 6 opciones y 50 carreras (2026)",
+   "desc": "¿Cuántas universidades hay en Montevideo? Hay 6 (1 pública y 5 privadas): Universidad de la República, Universidad de la Empresa (UDE) y Universidad Católica del Uruguay (Dámaso Antonio Larrañaga) y más. Compara sus 50 carreras, modalidades y web oficial.",
+   "clics": 0,
+   "impresiones": 61,
+   "ctr": 0.0,
+   "posicion": 15.6
+  },
+  "despues": {
+   "titulo": "Universidades en Montevideo y Uruguay: guía y carreras",
+   "desc": "Descubre las universidades en Montevideo y Uruguay. Compara opciones públicas y privadas, sus carreras, modalidades y enlaces oficiales."
+  },
+  "motivo": "Se ajusta al límite de caracteres, integra las keywords principales y mejora el gancho para subir del puesto 15 y conseguir clics.",
+  "consultas": [
+   "universidades en montevideo",
+   "universidad en uruguay",
+   "universidad uruguay",
+   "universidades",
+   "universidades en uruguay"
+  ],
+  "via": "univ"
+ },
+ {
+  "fecha": "2026-11-16",
+  "url": "https://nexus.aurzane.com/universidades/estados-unidos/university-of-minnesota-morris/",
+  "antes": {
+   "titulo": "University of Minnesota-Morris: 35 carreras",
+   "desc": "University of Minnesota-Morris (Morris, Minnesota, Estados Unidos): sus 35 carreras, tipo pública, ciudad y web oficial.",
+   "clics": 0,
+   "impresiones": 61,
+   "ctr": 0.0,
+   "posicion": 16.2
+  },
+  "despues": {
+   "titulo": "University of Minnesota Morris: carreras y qué es | AURZANE",
+   "desc": "Descubre qué es UMN, la University of Minnesota Morris, sus 35 carreras universitarias, ubicación, tipo de universidad y datos oficiales."
+  },
+  "motivo": "Integra las keywords principales como umn, qué es y carreras, optimizando el CTR desde Google.",
+  "consultas": [
+   "umn",
+   "umn que es",
+   "minnesota morris university",
+   "university of minnesota morris graduate programs",
+   "university of minnesota morris majors"
+  ],
+  "via": "univ"
+ },
+ {
+  "fecha": "2026-11-16",
+  "url": "https://nexus.aurzane.com/universidades/estados-unidos/university-of-richmond/",
+  "antes": {
+   "titulo": "University of Richmond: 42 carreras",
+   "desc": "University of Richmond (University of Richmond, Virginia, Estados Unidos): sus 42 carreras, tipo privada, ciudad y web oficial.",
+   "clics": 0,
+   "impresiones": 58,
+   "ctr": 0.0,
+   "posicion": 11.1
+  },
+  "despues": {
+   "titulo": "University of Richmond: Carreras y Guía | AURZANE",
+   "desc": "Descubre la University of Richmond en Estados Unidos: sus 42 carreras universitarias, tipo de universidad, ubicación y enlace a su web oficial."
+  },
+  "motivo": "El nuevo título incluye la marca y responde directamente a la intención principal de búsqueda, y la descripción detalla el contenido exacto de la página optimizando el CTR.",
+  "consultas": [
+   "university of richmond",
+   "university of richmond mechanical engineering",
+   "richmond university",
+   "richmond university usa",
+   "university in richmond"
+  ],
+  "via": "univ"
+ },
+ {
+  "fecha": "2026-11-16",
+  "url": "https://nexus.aurzane.com/universidades/estados-unidos/catawba-college/",
+  "antes": {
+   "titulo": "Catawba College: 36 carreras",
+   "desc": "Catawba College (Salisbury, Carolina del Norte, Estados Unidos): sus 36 carreras, tipo privada, ciudad y web oficial.",
+   "clics": 0,
+   "impresiones": 54,
+   "ctr": 0.0,
+   "posicion": 14.9
+  },
+  "despues": {
+   "titulo": "Catawba College: Carreras y Admisión | AURZANE",
+   "desc": "Conoce Catawba College en Carolina del Norte: descubre sus 36 carreras universitarias, tipo de institución y detalles de su oferta académica."
+  },
+  "motivo": "Se optimiza el título para captar la intención de búsqueda exacta de la marca y se amplía la descripción con términos clave relevantes sin superar los límites.",
+  "consultas": [
+   "catawba college"
+  ],
+  "via": "univ"
  }
 ]
