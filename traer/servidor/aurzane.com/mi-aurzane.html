@@ -426,7 +426,7 @@ body{background:
       <div class="wrap hero-in">
         <p class="eyebrow-hero">AURZANE ID</p>
         <h1>Una cuenta para todo el ecosistema</h1>
-        <p class="lead-hero">Iniciá sesión una sola vez y accedé a MIND, NEXUS, LIVE, LEARN y BUILD — sin crear una cuenta distinta en cada mundo.</p>
+        <p class="lead-hero">Inicia sesión una sola vez y accede a MIND, NEXUS, LIVE, LEARN y BUILD — sin crear una cuenta distinta en cada mundo.</p>
         <div class="hero-mundos-row">
           <span class="hero-mundo-chip" style="--rgb:var(--a-mind-rgb)"><svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/></svg>MIND</span>
           <span class="hero-mundo-chip" style="--rgb:var(--a-nexus-rgb)"><svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2"/><circle cx="18" cy="6" r="2"/><circle cx="12" cy="18" r="2"/><path d="M7.6 7.1 10.6 16M16.4 7.1 13.4 16M8 6h8"/></svg>NEXUS</span>
@@ -735,7 +735,7 @@ body{background:
           </div>
           <div class="card-body">
             <h3>Preferencias</h3>
-            <p class="card-sub">Elegí cómo se ve tu cuenta — se aplica en toda la marca.</p>
+            <p class="card-sub">Elige cómo se ve tu cuenta — se aplica en toda la marca.</p>
             <div class="dato"><span class="k">Tema</span>
               <button class="btn btn-ghost btn-chico" onclick="alternarTemaMi()">
                 <svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13.2A8.2 8.2 0 1110.8 4a6.6 6.6 0 009.2 9.2z"/></svg>
@@ -1180,7 +1180,7 @@ document.getElementById("formRecuperar").addEventListener("submit", async (e) =>
     redirectTo: window.location.origin + "/mi-aurzane.html",
   });
   if (error) mostrarMsg("No se pudo enviar el enlace: " + error.message, "error");
-  else mostrarMsg("Listo — revisá tu correo para elegir una contraseña nueva.", "ok");
+  else mostrarMsg("Listo — revisa tu correo para elegir una contraseña nueva.", "ok");
 });
 
 document.getElementById("formSignup").addEventListener("submit", async (e) => {
@@ -1197,7 +1197,7 @@ document.getElementById("formSignup").addEventListener("submit", async (e) => {
   if (error) {
     mostrarMsg("No se pudo crear la cuenta: " + error.message, "error");
   } else {
-    mostrarMsg("Cuenta creada. Si tu proyecto pide confirmación por correo, revisá tu bandeja.", "ok");
+    mostrarMsg("Cuenta creada. Si tu proyecto pide confirmación por correo, revisa tu bandeja.", "ok");
   }
 });
 

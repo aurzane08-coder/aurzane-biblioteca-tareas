@@ -337,6 +337,10 @@
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg>
         <span class="nav-label">Resumen</span>
       </div>
+      <div class="nav-item" data-page="resultados">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>
+        <span class="nav-label">Resultados</span>
+      </div>
       <div class="nav-item" data-page="clientes">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="9" cy="8" r="3.5"/><path d="M2 20c0-3.5 3-6.3 7-6.3s7 2.8 7 6.3"/><circle cx="18" cy="8" r="2.5"/><path d="M16.5 13.5c2.8.3 5 2.6 5 5.5"/></svg>
         <span class="nav-label">Clientes</span>
@@ -377,6 +381,10 @@
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4h16v16H4z"/><path d="M8 8h8M8 12h8M8 16h4"/></svg>
         <span class="nav-label">Membretes</span>
       </div>
+      <a class="nav-item" href="https://ovp.aurzane.com/colegio.html" style="text-decoration:none;color:inherit">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 10l9-6 9 6"/><path d="M5 10v9h14v-9M9 19v-5h6v5"/></svg>
+        <span class="nav-label">Colegios</span>
+      </a>
       <div class="nav-item" data-page="configuracion">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v18M3 12h18"/><circle cx="12" cy="12" r="8"/></svg>
         <span class="nav-label">Configuración</span>
@@ -572,6 +580,11 @@
     </div>
 
     <!-- REPORTES -->
+    <div class="page" id="page-resultados">
+      <div class="page-head"><h2>Resultados</h2><p>Visitas, Google, boletín, clics y ventas de afiliados, redes y colegios: todo lo que mide AURZANE, en un solo sitio.</p></div>
+      <div id="azPanel"></div>
+    </div>
+
     <div class="page" id="page-reportes">
       <div class="page-head"><h2>Reportes</h2><p>Problemas que avisan los visitantes desde el botón ⚑ de cualquier mundo, y los enlaces rotos que encuentra el revisor automático cada semana.</p></div>
       <div class="kpi-row">
@@ -652,7 +665,7 @@
       <div class="page-head"><h2>Usuarios AURZANE ID</h2><p>Todas las cuentas del ecosistema — no solo clientes de OVP. Resetear acceso o deshabilitar una cuenta no borra ningún dato asociado.</p></div>
 
       <div class="note-box" id="usuariosSinFuncion" style="display:none;padding:18px 22px;border:1px solid var(--line-strong);border-radius:14px;background:rgba(201,162,75,0.06);margin-bottom:20px;font-size:0.86rem;color:var(--silver);">
-        Esta sección necesita la función de servidor <code>admin-usuarios</code> desplegada en tu proyecto de Supabase. Si todavía no la desplegaste, seguí la guía que te entregué junto con este archivo — en cuanto esté activa, esta pantalla funciona sin ningún cambio adicional.
+        Esta sección necesita la función de servidor <code>admin-usuarios</code> desplegada en tu proyecto de Supabase. Si todavía no la desplegaste, sigue la guía que te entregué junto con este archivo — en cuanto esté activa, esta pantalla funciona sin ningún cambio adicional.
       </div>
 
       <div class="toolbar">
@@ -722,7 +735,7 @@
           <div class="field"><label>Slug (URL)</label><input type="text" id="artSlug" placeholder="ej. como-elegir-carrera"></div>
           <div class="field full"><label>Título</label><input type="text" id="artTitulo"></div>
           <div class="field full"><label>Resumen (para la portada y SEO)</label><input type="text" id="artResumen"></div>
-          <div class="field full"><label>Cuerpo (texto enriquecido en Markdown: títulos, negrita, listas, enlaces e imágenes con URL)</label><textarea id="artCuerpo" rows="12" placeholder="## Título de sección&#10;&#10;Escribí el contenido aquí.&#10;&#10;[Ver fuente](https://ejemplo.com)&#10;&#10;![Imagen](https://ejemplo.com/imagen.jpg)" style="width:100%;background:var(--navy-2);border:1px solid var(--line);color:var(--bone);padding:12px 14px;border-radius:8px;font-family:'IBM Plex Mono',monospace;font-size:0.84rem;"></textarea></div>
+          <div class="field full"><label>Cuerpo (texto enriquecido en Markdown: títulos, negrita, listas, enlaces e imágenes con URL)</label><textarea id="artCuerpo" rows="12" placeholder="## Título de sección&#10;&#10;Escribe el contenido aquí.&#10;&#10;[Ver fuente](https://ejemplo.com)&#10;&#10;![Imagen](https://ejemplo.com/imagen.jpg)" style="width:100%;background:var(--navy-2);border:1px solid var(--line);color:var(--bone);padding:12px 14px;border-radius:8px;font-family:'IBM Plex Mono',monospace;font-size:0.84rem;"></textarea></div>
           <div class="field full"><label>Enlaces / fuentes (uno por línea: Título | URL)</label><textarea id="artFuentes" rows="4" placeholder="Fuente principal | https://ejemplo.com&#10;Artículo relacionado | https://ejemplo.org" style="width:100%;background:var(--navy-2);border:1px solid var(--line);color:var(--bone);padding:12px 14px;border-radius:8px;font-family:'IBM Plex Mono',monospace;font-size:0.84rem;"></textarea></div>
           <div class="field"><label>Imagen de portada (URL, opcional)</label><input type="url" id="artImagen" placeholder="https://..."></div>
           <div class="field"><label>Etiquetas (separadas por comas)</label><input type="text" id="artTags" placeholder="orientación, carreras, estudio"></div>
@@ -1342,7 +1355,7 @@
   }
   async function loadConfigurationAdmin(){
     const core=await aurzaneAdminCoreReady, tbody=document.getElementById('cfgTableBody'), empty=document.getElementById('cfgEmptyState');
-    tbody.innerHTML='<tr><td colspan="7" class="mono" style="color:var(--silver-dim);">Cargando...</td></tr>';
+    tbody.innerHTML='<tr><td colspan="7" class="mono" style="color:var(--silver-dim);">Cargando…</td></tr>';
     const result=await core.capabilityService.listConfiguration({enabled:null,limit:100,offset:0});
     if(!result.ok){ tbody.innerHTML=''; empty.style.display='block'; empty.textContent='No se pudo cargar la configuración: '+(result.error?.message||'error desconocido'); return; }
     const rows=result.data?.rows||[];
@@ -1354,7 +1367,7 @@
   }
   async function loadConfigurationHistory(configurationId){
     const core=await aurzaneAdminCoreReady,panel=document.getElementById('cfgHistoryPanel'),body=document.getElementById('cfgHistoryBody');
-    panel.style.display='block'; body.innerHTML='<tr><td colspan="4" class="mono" style="color:var(--silver-dim);">Cargando...</td></tr>';
+    panel.style.display='block'; body.innerHTML='<tr><td colspan="4" class="mono" style="color:var(--silver-dim);">Cargando…</td></tr>';
     const result=await core.capabilityService.historyConfiguration({configurationId,limit:100,offset:0});
     if(!result.ok){body.innerHTML=`<tr><td colspan="4">${escapeHtml(result.error?.message||'No se pudo cargar el historial.')}</td></tr>`;return;}
     const rows=result.data?.rows||[];
@@ -1402,7 +1415,7 @@
   document.getElementById('cfgHistoryClose').addEventListener('click',()=>document.getElementById('cfgHistoryPanel').style.display='none');
   async function loadFeatureFlagsAdmin(){
     const core=await aurzaneAdminCoreReady,tbody=document.getElementById('ffTableBody'),empty=document.getElementById('ffEmptyState');
-    tbody.innerHTML='<tr><td colspan="4" class="mono" style="color:var(--silver-dim);">Cargando...</td></tr>';
+    tbody.innerHTML='<tr><td colspan="4" class="mono" style="color:var(--silver-dim);">Cargando…</td></tr>';
     const result=await core.capabilityService.listFeatureFlags({limit:100,offset:0});
     if(!result.ok){tbody.innerHTML='';empty.style.display='block';empty.textContent='No se pudieron cargar los feature flags: '+(result.error?.message||'error desconocido');return;}
     const rows=result.data?.rows||[];empty.style.display=rows.length?'none':'block';empty.textContent='No hay feature flags activos.';
@@ -1434,6 +1447,7 @@
       if(item.dataset.page === 'personalidad') loadPersonalidad();
       if(item.dataset.page === 'reportes') loadReportes();
       if(item.dataset.page === 'ai') loadAI();
+      if(item.dataset.page === 'resultados'){ const tk = (await sb.auth.getSession()).data.session?.access_token; if(window.AurzanePanel) AurzanePanel.pintar(document.getElementById('azPanel'), tk); }
       if(item.dataset.page === 'configuracion') loadConfigurationAdmin();
       if(item.dataset.page === 'feature_flags') loadFeatureFlagsAdmin();
     };
@@ -2092,7 +2106,7 @@
     if(!data || data.length === 0){
       tbody.innerHTML = '';
       empty.style.display = 'block';
-      empty.textContent = 'Todavía no hay artículos. Creá el primero con "+ Nuevo artículo".';
+      empty.textContent = 'Todavía no hay artículos. Crea el primero con "+ Nuevo artículo".';
       return;
     }
     empty.style.display = 'none';
@@ -2201,7 +2215,7 @@
     }
     if(!payload.titulo || !payload.slug || !payload.cuerpo){ showToast('Título, slug y cuerpo son obligatorios.', 'error'); return; }
     if(resource === 'articulos' && (fuentes.length || tags.length)){
-      showToast('En artículos Core, guardá enlaces e imágenes dentro de Cuerpo usando Markdown. Fuentes y etiquetas estructuradas pertenecen a los artículos heredados.', 'error');
+      showToast('En artículos Core, guarda enlaces e imágenes dentro de Cuerpo usando Markdown. Fuentes y etiquetas estructuradas pertenecen a los artículos heredados.', 'error');
       return;
     }
     if(resource !== 'articulos' && payload.imagen_portada_url){
@@ -2293,7 +2307,7 @@
 
   async function loadPapelera(){
     const tbody = document.getElementById('clientsTableBody');
-    tbody.innerHTML = '<tr><td colspan="4" class="mono" style="color:var(--silver-dim);">Cargando...</td></tr>';
+    tbody.innerHTML = '<tr><td colspan="4" class="mono" style="color:var(--silver-dim);">Cargando…</td></tr>';
     const core = await aurzaneAdminCoreReady;
     const result = await core.capabilityService.listClientTrash({ limit: 100, offset: 0 });
     const eliminados = result.ok ? result.data?.rows || [] : null;
@@ -2344,7 +2358,7 @@
   // ===== CARGA DE DATOS =====
   async function loadClients(){
     const tbody = document.getElementById('clientsTableBody');
-    tbody.innerHTML = '<tr><td colspan="5" class="mono" style="color:var(--silver-dim);">Cargando...</td></tr>';
+    tbody.innerHTML = '<tr><td colspan="5" class="mono" style="color:var(--silver-dim);">Cargando…</td></tr>';
 
     const core = await aurzaneAdminCoreReady;
     const result = await core.capabilityService.listClients({ search: document.getElementById('searchInput').value, limit: 100, offset: 0 });
@@ -2644,7 +2658,7 @@
 
   async function loadMembretes(){
     const tbody = mbEl('membretesTableBody');
-    tbody.innerHTML = '<tr><td colspan="5" class="mono" style="color:var(--silver-dim);">Cargando...</td></tr>';
+    tbody.innerHTML = '<tr><td colspan="5" class="mono" style="color:var(--silver-dim);">Cargando…</td></tr>';
     const core = await aurzaneAdminCoreReady;
     const result = await core.capabilityService.listMembretes({ limit: 100, offset: 0 });
     const data = result.ok ? result.data?.rows || [] : null;
@@ -2949,6 +2963,11 @@
   document.getElementById('drawerClose').addEventListener('click', closeDrawer);
   document.getElementById('drawerBackdrop').addEventListener('click', closeDrawer);
   document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closeDrawer(); });
+</script>
+<script src="/panel/panel.js?v=4"></script>
+<script>
+// aurzane.com/admin.html#resultados abre directamente la pestaña de resultados
+(function(){ if(location.hash !== '#resultados') return; var n = 0, t = setInterval(function(){ var el = document.querySelector('.nav-item[data-page="resultados"]'); if((el && el.offsetParent) || ++n > 60){ clearInterval(t); if(el && el.offsetParent) el.click(); } }, 500); })();
 </script>
 </body>
 </html>
