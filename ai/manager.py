@@ -315,7 +315,7 @@ def verificar(p, guardar_pdf=False):
         except Exception: pass
     return True, ''
 def descartar_solo(p, motivo):
-    vistos.add(p['id']); autodesc.insert(0, {'fecha': HOY, 'id': p['id'], 'tipo': p['tipo'], 'titulo': p['titulo'][:160], 'url': p['url'], 'motivo': motivo, 'probados': INTENTOS[:6]})
+    vistos.add(p['id']); autodesc.insert(0, {'fecha': HOY, 'id': p['id'], 'tipo': p['tipo'], 'titulo': (p.get('titulo') or '')[:160], 'url': p.get('url') or '', 'motivo': motivo, 'probados': INTENTOS[:6]})
     for k in ('ed:' + (p.get('editorial') or ''),):
         a = apr.setdefault(k, [0, 0]); a[1] += 1
 
@@ -373,7 +373,7 @@ if nuevos_pub:
 pend = [p for p in pend if p['id'] not in vistos]
 revisadas = []
 for p in pend:
-    if 'paginas' in p or p['tipo'] in ('cita', 'curiosidad'): revisadas.append(p); continue
+    if 'paginas' in p or p['tipo'] in ('cita', 'curiosidad', 'articulo'): revisadas.append(p); continue   # los artículos esperan tu revisión, no llevan PDF
     ok, motivo = verificar(p)
     if ok: revisadas.append(p)
     else: descartar_solo(p, motivo[0].upper() + motivo[1:])
@@ -968,7 +968,7 @@ except Exception as e: print('::notice title=AI::páginas de artículos', str(e)
 pend.sort(key=puntos, reverse=True)
 pend = [x for x in pend if x['tipo'] != 'articulo']
 # artículos de salud escritos por la IA que esperan tu revisión: van a la Cola del admin («Publicar en Contenido» o «Descartar»)
-pend = [dict(id=a['id'], tipo='articulo', titulo=a['titulo'], resumen=a.get('resumen', ''), cuerpo=a.get('cuerpo', ''), slug=a['slug'], mundo=a['mundo'], categoria=a.get('categoria', ''),
+pend = [dict(id=a['id'], tipo='articulo', titulo=a['titulo'], url=f"https://{a['mundo']}.aurzane.com/articulo.html?mundo={a["mundo"]}&slug={urllib.parse.quote(a["slug"])}", resumen=a.get('resumen', ''), cuerpo=a.get('cuerpo', ''), slug=a['slug'], mundo=a['mundo'], categoria=a.get('categoria', ''),
              motivo='Artículo de salud escrito por la IA: revísalo. Hasta que lo publiques no sale en Google ni en las listas.')
         for a in art_hechos if a.get('cuerpo') and a.get('mundo') in MUNDOS_REVISION and a.get('revision') not in ('aprobada', 'descartado') and a['id'] not in vistos][:20] + pend
 _esp = [x for x in pend if x['tipo'] in ('cita', 'curiosidad')][:40]; pend = _esp + [x for x in pend if x['tipo'] not in ('cita', 'curiosidad')][:90 - len(_esp)]
