@@ -16,6 +16,8 @@ REDES_VIDEO = ['instagram', 'facebook', 'youtube', 'telegram']  # franjas 4 y 5:
 # y Adrián les ponga música de TikTok antes de publicarlos. YouTube no admite más: la cuota diaria de la API (10.000 unidades,
 # 1.600 por vídeo) ya la usan estos 3 vídeos y los 3 clips diarios de Clips-All.
 TIPOS_VIDEO = ('frase', 'test', 'calculadora', 'curiosidad')
+SOLO_FRASES = ('youtube', 'tiktok')   # en YouTube y TikTok solo frases y curiosidades; tests y calculadoras van a las demás redes
+TIPOS_SOLO = ('frase', 'curiosidad')
 VID = ('4', '5', '6', '7', '8', '9')   # vídeo vertical: 4 (tarde, de todo), 5 (mañana, frases y curiosidades), 6 (media tarde, solo YouTube) y 7-9 (TikTok)
 REDES_V6 = ['youtube']
 # TikTok (16/11/2026): tres vídeos al día a la hora de España con más público, cada uno de un tipo distinto para que no se repitan:
@@ -222,7 +224,9 @@ def planificar(dias=14):
         pass  # cada franja se completa abajo si falta
         dia = cal.setdefault(f, {})
         for fr in ('1', '2', '3', '4', '5', '6', '7', '8', '9'):
-            if fr in dia and all(i in cat for i in dia[fr].values()) and set(dia[fr]) >= set(redes_de(fr) if fr in VID else [x for x in REDES if not (x == 'pinterest' and fr == '1')]): continue
+            ya = datetime.datetime.now(datetime.timezone.utc)
+            if fr in dia and d == 0 and fr in HORAS and (ya.hour, ya.minute) >= HORAS[fr]: continue   # franja de hoy ya pasada: no se toca
+            if fr in dia and all(i in cat for i in dia[fr].values()) and not any(r in SOLO_FRASES and fr in VID and cat[i]['tipo'] not in TIPOS_SOLO for r, i in dia[fr].items()) and set(dia[fr]) >= set(redes_de(fr) if fr in VID else [x for x in REDES if not (x == 'pinterest' and fr == '1')]): continue
             grupo = 'herr' if fr == '1' else 'frase' if fr == '3' else 'video' if fr in ('4', '6') else 'video5' if fr == '5' else ('tk' + fr) if fr in TIKTOK_FRANJAS else TARDE[datetime.date.fromisoformat(f).toordinal() % len(TARDE)]
             usados = set(); dia[fr] = {}
             for r0 in (redes_de(fr) if fr in VID else REDES):
@@ -233,13 +237,15 @@ def planificar(dias=14):
                 elif grupo.startswith('tk'):
                     otros = {x for k in TIKTOK_FRANJAS if k != fr for x in dia.get(k, {}).values()}
                     par = datetime.date.fromisoformat(f).toordinal() % 2
-                    tipos = {'tk7': ('curiosidad',), 'tk8': ('test',) if par else ('calculadora',), 'tk9': ('frase',)}[grupo]
+                    tipos = {'tk7': ('curiosidad',), 'tk8': ('frase',) if par else ('curiosidad',), 'tk9': ('frase',)}[grupo]
                     cand = [p for p in cat.values() if p['tipo'] in tipos and p['id'] not in otros]
-                    if not cand: cand = [p for p in cat.values() if p['tipo'] in TIPOS_VIDEO and p['id'] not in otros]
+                    if not cand: cand = [p for p in cat.values() if p['tipo'] in TIPOS_SOLO and p['id'] not in otros]
                 elif grupo == 'video5':
                     cand = [p for p in cat.values() if p['tipo'] in ('frase', 'curiosidad') and p['id'] not in usados and p['id'] not in dia.get('4', {}).values()]
                 else:
                     cand = [p for p in cat.values() if GRUPO.get(p['tipo']) == grupo and p['id'] not in usados]
+                if fr in VID and r0 in SOLO_FRASES:
+                    cand = [p for p in cand if p['tipo'] in TIPOS_SOLO] or [p for p in cat.values() if p['tipo'] in TIPOS_SOLO and p['id'] not in usados]
                 if r in ('instagram', 'pinterest'): cand = [p for p in cand if p['tipo'] != 'notas' or True]
                 if not cand: cand = [p for p in cat.values() if p['id'] not in usados]
                 # nuevos primero (alta en los últimos 14 días y nunca publicados en esa red), luego el que lleva más sin salir
