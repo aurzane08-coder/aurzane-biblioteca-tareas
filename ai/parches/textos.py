@@ -36,6 +36,22 @@ CAMBIOS = {
          '    <div><b>Cursos con certificado</b><span>Cada estudiante tiene su <a href="https://learn.aurzane.com/aula/">aula personal en AURZANE LEARN</a> con su progreso, sus horas de estudio y sus certificados verificables, sin que nadie tenga que gestionarlo.</span></div>'),
         ('<div><b>Cursos para tus clases</b><span>Con el <a href="https://learn.aurzane.com/aula/?docente=1">modo aula de AURZANE LEARN</a>, cada docente asigna un curso gratis y sigue el avance de su grupo: lecciones, notas y certificados.</span></div>',
          '<div><b>Cursos con certificado</b><span>Cada estudiante tiene su <a href="https://learn.aurzane.com/aula/">aula personal en AURZANE LEARN</a> con su progreso, sus horas de estudio y sus certificados verificables, sin que nadie tenga que gestionarlo.</span></div>')]}
+# Identidad nueva de BUILD (dinero, ingresos y vivienda) y LIVE (salud y día a día), auditoría 16/11/2026
+CAMBIOS.setdefault('build.aurzane.com/public_html/index.html', []).extend([
+    ('<div class="status-pill"><span class="dot"></span>Los proyectos físicos siguen en exploración — la biblioteca de guías de BUILD ya es real</div>',
+     '<div class="status-pill"><span class="dot"></span>8 calculadoras gratis con la normativa de 2026 y guías con fuentes</div>'),
+    ('<p>BUILD es la dimensión más ambiciosa y también la más temprana de AURZANE: el punto donde la orientación vocacional de OVP, el conocimiento de MIND y las herramientas de NEXUS podrían convertirse en espacios físicos — clínicas, centros y proyectos con impacto real.</p>',
+     '<p>BUILD es el mundo de AURZANE para decidir sobre tu dinero: cuánto cobrarás en neto, qué te deben si dejas un trabajo, cuánto ahorrar para una meta o para tu jubilación, cuánto cuesta comprar una casa y si compensa invertir en un piso para alquilar.</p>'),
+    ('<p>Todavía no hay una clínica, un proyecto inmobiliario o una alianza institucional en marcha para mostrar — esa parte de BUILD sigue en etapa de exploración, y esta página lo cuenta honestamente en vez de simular algo que no existe. Lo que sí es real desde ahora es la biblioteca de BUILD: guías originales que sintetizan estudios verificables sobre bienes raíces, urbanismo, construcción sostenible y alianzas institucionales — el mismo tipo de investigación que, más adelante, va a sostener las decisiones detrás de esos proyectos físicos.</p>',
+     '<p>Cada calculadora cita la ley o la fuente oficial de la que salen sus números, y la biblioteca de BUILD resume estudios verificables sobre vivienda, urbanismo y economía doméstica. Son herramientas orientativas: para firmar o invertir, consulta tu caso con un profesional.</p>'),
+    ('<p class="pie-desc">AURZANE BUILD resume investigación real sobre bienes raíces, urbanismo e infraestructura en un lenguaje simple. Cada guía es una síntesis original — no una copia de las fuentes citadas. Los proyectos físicos de BUILD (clínicas, inmuebles, alianzas) siguen en etapa de exploración; cuando exista uno concreto, este espacio va a mostrarlo con el mismo nivel de detalle.</p>',
+     '<p class="pie-desc">AURZANE BUILD: calculadoras y guías gratis para tu dinero, tus ingresos y tu casa, con números de 2026 y fuentes citadas. Información orientativa, no asesoramiento financiero.</p>')])
+CAMBIOS.setdefault('live.aurzane.com/public_html/index.html', []).extend([
+    ('<div class="trust-item"><h4>Fuentes verificables</h4><p>Cada artículo cita publicaciones reales — nada se inventa ni se resume sin respaldo.</p></div>',
+     '<div class="trust-item"><h4>Fuentes verificables</h4><p>Cada calculadora y cada artículo citan la guía clínica o el estudio en que se basan.</p></div>'),
+    ('<div class="trust-item"><h4>6 áreas de bienestar</h4><p>Propósito, equilibrio, hábitos, aventura y ciencia del deporte.</p></div>',
+     '<div class="trust-item"><h4>Salud y día a día</h4><p>Ciclo y embarazo, peso y alimentación, sueño, bienestar emocional y las cuentas de cada día.</p></div>')])
+
 for rel, pares in CAMBIOS.items():
     f = os.path.join(base, rel)
     try: s = open(f, encoding='utf-8').read()
