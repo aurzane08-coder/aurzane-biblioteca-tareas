@@ -482,3 +482,4 @@
 2026-11-16,7,tiktok,cur-5b579f7f14,error,403 {"error":{"code":"unaudited_client_can_only_post_to_private_accounts" "message":"Please review our integration guidelines at https://developers.ti
 2026-11-16,1,telegram,test-habitos,ok,102
 2026-11-16,1,mastodon,test-depresion,ok,https://mastodon.social/@auzane/117625456262076411
+2026-11-16,7,tiktok,cur-5b579f7f14,error,403 {"error":{"code":"unaudited_client_can_only_post_to_private_accounts" "message":"Please review our integration guidelines at https://developers.ti
