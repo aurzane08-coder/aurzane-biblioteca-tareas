@@ -26,7 +26,14 @@ CAMBIOS = {
         ('<div class="paso"><h3>Evaluaciones</h3><p>Cada estudiante crea su cuenta y elige sus evaluaciones.',
          '<div class="paso"><h3>Cuenta del estudiante</h3><p>Cada estudiante entra por el enlace o el QR del colegio, crea su cuenta AURZANE ID y queda vinculado a su colegio. Después elige sus evaluaciones.'),
         ('<div><b>Datos protegidos</b><span>Los resultados de cada estudiante se guardan aparte del resto de la plataforma y solo los ve él o ella y el profesional responsable.</span></div>',
-         '<div><b>Datos protegidos</b><span>El colegio ve el avance de cada estudiante. Las respuestas y el informe solo los ve el propio estudiante y el profesional responsable, salvo que el estudiante decida compartir su informe con el colegio desde su portal.</span></div>')]}
+         '<div><b>Datos protegidos</b><span>El colegio ve el avance de cada estudiante. Las respuestas y el informe solo los ve el propio estudiante y el profesional responsable, salvo que el estudiante decida compartir su informe con el colegio desde su portal.</span></div>'),
+        # fase 4 (16/11/2026): el panel muestra intereses agregados y el modo aula de LEARN está disponible para los docentes
+        ('<div><b>Datos protegidos</b><span>El colegio ve el avance de cada estudiante. Las respuestas y el informe solo los ve el propio estudiante y el profesional responsable, salvo que el estudiante decida compartir su informe con el colegio desde su portal.</span></div>',
+         '<div><b>Datos protegidos</b><span>El colegio ve el avance de cada estudiante y, sin nombres, cuántos tienen cada área de interés como principal, con el consentimiento informado de las familias. El informe completo solo lo ve el colegio si el estudiante decide compartirlo desde su portal.</span></div>'),
+        ('<div><b>Lenguaje claro</b><span>Escrito para que el estudiante y su familia lo entiendan sin tecnicismos, con recomendaciones concretas.</span></div>',
+         '<div><b>Lenguaje claro</b><span>Escrito para que el estudiante y su familia lo entiendan sin tecnicismos, con recomendaciones concretas.</span></div>\n'
+         '    <div><b>Panel con datos del colegio</b><span>Avance en tiempo real, intereses vocacionales por curso (CHASIDE y Holland) y descarga en CSV, para planificar charlas, ferias y visitas a universidades.</span></div>\n'
+         '    <div><b>Cursos para tus clases</b><span>Con el <a href="https://learn.aurzane.com/aula/?docente=1">modo aula de AURZANE LEARN</a>, cada docente asigna un curso gratis y sigue el avance de su grupo: lecciones, notas y certificados.</span></div>')]}
 for rel, pares in CAMBIOS.items():
     f = os.path.join(base, rel)
     try: s = open(f, encoding='utf-8').read()
