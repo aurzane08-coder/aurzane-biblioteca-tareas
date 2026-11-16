@@ -1,5 +1,6 @@
-aurzane.com/aurzane-estilo.js
-aurzane.com/privacidad.html
-aurzane.com/cookies.html
-aurzane.com/condiciones.html
-aurzane.com/aviso-legal.html
+aurzane.com/aurzane-asistente.js
+mind.aurzane.com/test-de-ansiedad/index.html
+mind.aurzane.com/test-de-depresion/index.html
+live.aurzane.com/test-de-sueno/index.html
+aurzane.com/admin.html
+aurzane.com/mi-aurzane.html
