@@ -21,7 +21,9 @@ D = os.path.join(R, 'seo')
 SSH = os.environ.get('SSH', ''); DEST = os.environ.get('SG_DEST', '')
 HOY = datetime.date.today()
 CTR_ESPERADO = {1: .28, 2: .15, 3: .10, 4: .07, 5: .05, 6: .04, 7: .03, 8: .025, 9: .02, 10: .018}
-GENERADAS = re.compile(r'aurzane\.com/(libros|biblioteca|articulos|novedades|mapa|frases|marketing|ir|panel|colegios/contacto)/|/admin|portal\.html|mi-aurzane')
+# las fichas de libros (biblioteca/libro/) sí se optimizan: si un generador las rehace, el paso «mantener» vuelve a poner el título nuevo
+GENERADAS = re.compile(r'aurzane\.com/(libros|biblioteca/(?!libro/)|articulos|novedades|mapa|frases|marketing|ir|panel|colegios/contacto)/|/admin|portal\.html|mi-aurzane')
+MAX_DIA = int(os.environ.get('SEO_MAX_DIA', '8'))   # páginas que la IA reescribe al día (16/11/2026: de 4 a 8, hay pocas con clics y muchas con impresiones)
 
 
 def remoto(orden, entrada=None, t=120):
@@ -112,17 +114,17 @@ hace45 = (HOY - datetime.timedelta(days=45)).isoformat()
 recientes = {c['url'] for c in cambios if c['fecha'] >= hace45}
 cand = []
 for p, a in por_p.items():
-    if a[1] < 80 or p in recientes or GENERADAS.search(p) or '#' in p: continue
+    if a[1] < 50 or p in recientes or GENERADAS.search(p) or '#' in p: continue
     ps = pos(a)
-    if not ps or ps > 15: continue
+    if not ps or ps > 20: continue
     esperado = CTR_ESPERADO.get(max(1, round(ps)), .012)
     ctr = a[0] / a[1]
     if ctr < esperado * .6: cand.append((a[1] * (esperado - ctr), p, a, ps, ctr))
 cand.sort(reverse=True)
 univ_t = json.load(open(os.path.join(R, 'univ/data/gsc_titulos.json'), encoding='utf-8')) if os.path.exists(os.path.join(R, 'univ/data/gsc_titulos.json')) else {}
 hechos = 0
-for _, p, a, ps, ctr in cand[:10]:
-    if hechos >= 4: break
+for _, p, a, ps, ctr in cand[:MAX_DIA * 3]:
+    if hechos >= MAX_DIA: break
     u = urllib.parse.urlparse(p); host = u.hostname or ''
     if not re.match(r'^([a-z0-9-]+\.)?aurzane\.com$', host): continue
     ruta = u.path if not u.path.endswith('/') else u.path + 'index.html'
@@ -158,6 +160,31 @@ for _, p, a, ps, ctr in cand[:10]:
 if hechos and any(c['via'] == 'servidor' for c in cambios[-hechos:]):
     for h_ in {urllib.parse.urlparse(c['url']).hostname for c in cambios[-hechos:]}: remoto(f'site-tools-client domain-all update id={h_} flush_cache=1 >/dev/null 2>&1; true')
 json.dump(univ_t, open(os.path.join(R, 'univ/data/gsc_titulos.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+# mantener: si un generador ha rehecho una página cambiada en los últimos 120 días y ha vuelto el título viejo, se pone otra vez el nuevo
+MANT = r'''
+import json, sys, re, html, os
+n = 0
+for f, t0, t1, d1 in json.load(sys.stdin):
+    f = os.path.expanduser('~/' + f)
+    try: s = open(f, encoding='utf-8').read()
+    except Exception: continue
+    m = re.search(r'<title>(.*?)</title>', s, re.S)
+    if not m or html.unescape(m.group(1).strip()) != t0: continue
+    s = s.replace(m.group(0), '<title>' + html.escape(t1, quote=False) + '</title>', 1)
+    s = re.sub(r'(<meta name="description" content=")[^"]*(")', lambda x: x.group(1) + html.escape(d1) + x.group(2), s, count=1)
+    s = re.sub(r'(<meta property="og:title" content=")[^"]*(")', lambda x: x.group(1) + html.escape(t1) + x.group(2), s, count=1)
+    s = re.sub(r'(<meta property="og:description" content=")[^"]*(")', lambda x: x.group(1) + html.escape(d1) + x.group(2), s, count=1)
+    open(f, 'w', encoding='utf-8').write(s); n += 1
+print('mantenidos', n)
+'''
+lista = []
+for c in cambios:
+    if c.get('via') != 'servidor' or c['fecha'] < (HOY - datetime.timedelta(days=120)).isoformat(): continue
+    u = urllib.parse.urlparse(c['url']); ruta = u.path if not u.path.endswith('/') else u.path + 'index.html'
+    if '..' in ruta: continue
+    lista.append([f'www/{u.hostname}/public_html{ruta}', c['antes']['titulo'], c['despues']['titulo'], c['despues']['desc']])
+if lista:
+    print(remoto('python3 -c ' + __import__('shlex').quote(MANT), json.dumps(lista)).strip())
 # evaluación: cómo les va a las páginas cambiadas hace más de 21 días
 for c in cambios:
     if c['fecha'] <= (HOY - datetime.timedelta(days=21)).isoformat() and c['url'] in por_p:
