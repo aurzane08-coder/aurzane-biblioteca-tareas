@@ -345,9 +345,31 @@ def bloque_ia(url):
             + (f'<h3>Preguntas frecuentes</h3>{faq}' if faq else '') + '<p class="sub" style="font-size:.85rem">Texto orientativo elaborado por AURZANE a partir de los datos de esta ficha. Confirma requisitos, plazos y precios en la web oficial de la institución.</p></section>')
 
 
+def acortar(t, m=60):
+    """Títulos de 60 caracteres como máximo (Google corta a partir de ~60): se quitan primero los sufijos «| …»,
+    después los añadidos menos útiles y, si aún sobra, se corta por palabra sin dejar conectores al final."""
+    if len(t) <= m: return t
+    partes = t.split(' | ')
+    while len(partes) > 1 and len(' | '.join(partes)) > m: partes.pop()
+    t = ' | '.join(partes)
+    for q in (', públicas y privadas', ', ciudad y web', ' y dónde están', ' instituciones'):
+        if len(t) > m and q in t: t = t.replace(q, '' if q != ' instituciones' else ' centros')
+    if len(t) > m: t = re.sub(r' y (sus )?[\d.]+ (carreras|grados)', '', t)
+    if len(t) <= m: return t
+    anio = ' (2026)' if t.endswith(' (2026)') else ''
+    base = t[:-len(anio)] if anio else t
+    pal = base[:m - len(anio) + 1].rsplit(' ', 1)[0]
+    pal = re.sub(r'(\s+(y|de|del|la|las|el|los|en|a|e|o|u|sus|[\d.]+))+$', '', pal).rstrip(' ,:;-')
+    return pal + anio
+
+
+CIUDAD_PAISES = collections.defaultdict(set)
+
+
 def cabeza(titulo_pag, desc, canon, og_img=None, jsonld=None, robots=None):
     _o = GSC_T.get(canon) or {}
     titulo_pag = _o.get('titulo') or titulo_pag; desc = _o.get('desc') or desc
+    titulo_pag = acortar(titulo_pag)
     og_img = og_img or f'{SITIO}/universidades/og.jpg'
     return f'''<!DOCTYPE html>
 <html lang="es" data-v="{V}">
@@ -646,7 +668,8 @@ def pagina_ciudad(p, c, us):
     if npriv: partes.append(f'{npriv} privada' + ('s' if npriv > 1 else ''))
     reparto = ' y '.join(partes)
     palabra = 'grados' if p == 'España' else 'carreras'
-    tit = f'Universidades en {c}: {N} opciones' + (f' y {fmt(nc)} {palabra}' if nc else ', públicas y privadas') + ' (2026)'
+    cn = f'{c}, {p}' if len(CIUDAD_PAISES.get(c, ())) > 1 else c   # ciudades con el mismo nombre en varios países (La Paz)
+    tit = f'Universidades en {cn}: {N} opciones' + (f' y {fmt(nc)} {palabra}' if nc else ', públicas y privadas') + ' (2026)'
     desc = f'¿Cuántas universidades hay en {c}? Hay {N} ({reparto}): {lista}.' + (f' Compara sus {fmt(nc)} {palabra}, modalidades y web oficial.' if nc else ' Compara tipo, ubicación y web oficial.')
     lead = f'En {c} hay {N} universidades e institutos de educación superior ({reparto})' + (f', con {fmt(nc)} {palabra} en total.' if nc else '.') + ' Filtra por tipo o área y entra en cada una para ver su oferta y su web oficial.'
     respuesta = f'En {c} ({p}) hay {N} instituciones de educación superior: {reparto}. ' + ('Las que más ' + palabra + ' ofrecen son ' + ', '.join(f'{u["nombre"]} ({fmt(u["n"])})' for u in us[:3] if u['n']) + '.' if nc else 'Entre ellas están ' + ', '.join(u['nombre'] for u in us[:3]) + '.')
@@ -946,6 +969,9 @@ if os.path.exists(os.path.join(AQUI, 'og.jpg')):
 datos()
 portada()
 paises()
+for p in ORDEN_P:
+    for u in por_pais[p]:
+        if u['ciudad']: CIUDAD_PAISES[u['ciudad']].add(p)
 for p in ORDEN_P:
     pagina_pais(p)
     us = por_pais[p]
