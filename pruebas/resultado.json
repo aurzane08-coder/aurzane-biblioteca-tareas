@@ -1,10 +1,7 @@
 {
- "fecha": "2026-11-16T13:15:52.418Z",
+ "fecha": "2026-11-16T13:18:49.279Z",
  "fallos": [
-  "Test de ansiedad · page.waitForFunction: Timeout 8000ms exceeded.",
-  "Mapa https://aurzane.com/sitemap-paginas.xml · error",
-  "Mapa https://nexus.aurzane.com/sitemap-universidades.xml · error",
-  "Mapa https://aurzane.com/robots.txt · error"
+  "Test: botón «Ver resultado» lleva al resultado"
  ],
  "bien": [
   "Portada https://aurzane.com/ · 200",
@@ -15,8 +12,14 @@
   "Portada https://build.aurzane.com/ · 200",
   "Portada https://ovp.aurzane.com/ · 200",
   "Portada https://aurzane.com/biblioteca/ · 200",
+  "Test: resultado · 7 preguntas",
+  "Test: aparece la IA de resultados",
+  "Test: la IA responde · 200 ok",
   "404 propia · 404",
+  "Mapa https://aurzane.com/sitemap-paginas.xml · 200 true",
+  "Mapa https://nexus.aurzane.com/sitemap-universidades.xml · 200 true",
   "Mapa https://mind.aurzane.com/sitemap-paginas.xml · 200 true",
+  "Mapa https://aurzane.com/robots.txt · 200 true",
   "AVIF servido · image/avif"
  ]
 }
