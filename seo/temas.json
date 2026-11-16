@@ -719,5 +719,26 @@
   "mundo": "nexus",
   "test": "",
   "fecha": "2026-11-16"
+ },
+ {
+  "consulta": "facultades universitarias",
+  "titulo": "Facultades universitarias: cómo elegir la mejor opción para tu futuro",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "fecha": "2026-11-16"
+ },
+ {
+  "consulta": "grados universitarios y masters en la uem",
+  "titulo": "Grados universitarios y másteres: guía para elegir tu formación",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "fecha": "2026-11-16"
+ },
+ {
+  "consulta": "licenciaturas en monterrey",
+  "titulo": "Licenciaturas en Monterrey: oferta académica y orientación vocacional",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "fecha": "2026-11-16"
  }
 ]

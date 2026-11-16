@@ -178,5 +178,53 @@
    }
   ],
   "fecha": "2026-11-16"
+ },
+ "https://nexus.aurzane.com/universidades/estados-unidos/columbia-university-in-the-city-of-new-york/": {
+  "titulo": "Guía de orientación vocacional para Columbia University",
+  "parrafos": [
+   "Te damos la bienvenida a la guía de AURZANE para futuros estudiantes interesados en Columbia University in the City of New York. Esta institución es de carácter privado y tiene su sede en New York, Nueva York. En nuestro catálogo figuran 67 opciones de carreras de grado que abarcan disciplinas como ingeniería, ciencias, artes, humanidades y ciencias sociales para que explores todas las alternativas académicas disponibles.",
+   "El proceso de acceso a las universidades en Estados Unidos es gestionado por cada institución de manera independiente. Generalmente se valora el expediente académico de la escuela secundaria, los ensayos personales, las cartas de recomendación y las actividades extracurriculares. Muchas solicitudes se realizan a través de plataformas comunes como Common App y los estudiantes internacionales deben acreditar su nivel de inglés y gestionar un visado.",
+   "Para elegir la carrera adecuada es fundamental que compares los planes de estudio, las opciones de prácticas, la modalidad de enseñanza y las salidas profesionales de tu interés. Te recomendamos utilizar herramientas como un test vocacional para ordenar tus aptitudes y preferencias antes de tomar una decisión definitiva. Asimismo, debes consultar directamente los canales oficiales de la institución para verificar los requisitos de admisión y las opciones de ayuda financiera.",
+   "Estudiar en Nueva York te sitúa en una de las metrópolis más dinámicas del mundo, lo que enriquece la experiencia universitaria tanto dentro como fuera del campus. La vida estudiantil en esta ciudad combina una intensa actividad académica con múltiples oportunidades culturales, profesionales y sociales. Vivir aquí implica adaptarse a un ritmo urbano vibrante y aprovechar la red de conexiones que ofrece una ubicación tan destacada."
+  ],
+  "faq": [
+   {
+    "p": "¿Columbia University in the City of New York es pública o privada?",
+    "r": "Según los datos oficiales que recogemos en AURZANE, se trata de una institución de carácter privado."
+   },
+   {
+    "p": "¿Dónde está situada la universidad?",
+    "r": "Su sede principal se encuentra ubicada en New York, Nueva York, en Estados Unidos."
+   },
+   {
+    "p": "¿Cuántas carreras figuran en el catálogo de AURZANE?",
+    "r": "En nuestra plataforma disponemos de un listado de 67 carreras de grado pertenecientes a esta institución."
+   }
+  ],
+  "fecha": "2026-11-16"
+ },
+ "https://nexus.aurzane.com/universidades/espana/universidad-europea-de-madrid/": {
+  "titulo": "Guía de Orientación Vocacional AURZANE: Universidad Europea",
+  "parrafos": [
+   "Bienvenidos a la guía de orientación vocacional de AURZANE para la Universidad Europea de Madrid, una institución privada creada en 1995 y situada en Villaviciosa de Odón, Comunidad de Madrid. Esta universidad ofrece una amplia oferta académica compuesta por un total de 57 grados distribuidos en diversas áreas de conocimiento como Ciencias Sociales y Jurídicas, Ciencias de la Salud, Ingeniería y Arquitectura, Artes y Humanidades, y Ciencias.",
+   "Para acceder a las universidades en España, los estudiantes procedentes del sistema educativo nacional suelen contar con las pruebas de acceso a la universidad o equivalentes, cumpliendo con los procedimientos generales establecidos por el Ministerio y las normativas vigentes. En el caso de las universidades privadas, es recomendable consultar directamente sus procesos de admisión propios para conocer los pasos específicos de matriculación y plazos.",
+   "A la hora de elegir una carrera, es fundamental reflexionar sobre tus intereses profesionales, tus habilidades y el plan de estudio de cada grado, prestando atención a la carga en créditos ECTS y las posibles titulaciones habilitantes. Te sugerimos revisar siempre los canales oficiales de la institución para confirmar los requisitos de acceso particulares, sedes disponibles y planes de estudio actualizados antes de tomar una decisión definitiva.",
+   "Estudiar en la Comunidad de Madrid ofrece una experiencia universitaria dinámica, combinando una intensa vida académica con una amplia oferta cultural y de ocio adaptada a los jóvenes. La región cuenta con excelentes conexiones de transporte público que facilitan el desplazamiento diario hacia los campus y permiten disfrutar plenamente de la vida en la ciudad durante tu etapa formativa."
+  ],
+  "faq": [
+   {
+    "p": "¿Qué puedo estudiar en la Universidad Europea de Madrid?",
+    "r": "La universidad cuenta con 57 grados oficiales divididos en cinco grandes ramas de conocimiento, incluyendo Ciencias Sociales y Jurídicas, Ciencias de la Salud, Ingeniería y Arquitectura, Artes y Humanidades, y Ciencias."
+   },
+   {
+    "p": "¿Dónde está situada la Universidad Europea de Madrid?",
+    "r": "Su campus principal se encuentra ubicado en Villaviciosa de Odón, dentro de la Comunidad de Madrid, aunque algunos títulos específicos pueden impartirse también en otras sedes autorizadas como Alcobendas o Madrid."
+   },
+   {
+    "p": "¿Cómo puedo consultar los grados y la oferta de la UEM?",
+    "r": "Puedes explorar el listado completo de titulaciones, los créditos ECTS correspondientes y las profesiones para las que habilitan directamente en la web oficial de la institución o mediante las fichas informativas actualizadas."
+   }
+  ],
+  "fecha": "2026-11-16"
  }
 }
