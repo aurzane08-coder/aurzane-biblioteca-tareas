@@ -1,0 +1,3179 @@
+[
+ {
+  "url": "https://aurzane.com/articulos/sistemas-tutores-inteligentes-metaanalisis/",
+  "anchos": {
+   "320": {
+    "carga_ms": 686,
+    "sin_cabecera": true,
+    "titulo": "",
+    "h1": [],
+    "desborda": false,
+    "scroll_w": 320,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 800,
+    "fuentes": [],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 645,
+    "sin_cabecera": true,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 800,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 3133,
+    "titulo": "¿Funcionan los tutores con inteligencia artificial?",
+    "h1": [
+     "¿Funcionan los tutores con inteligencia artificial? El metaanálisis de 107 estud"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 85,
+    "nav_enlaces": 30,
+    "alto_pagina": 4117,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 619,
+    "titulo": "¿Funcionan los tutores con inteligencia artificial?",
+    "h1": [
+     "¿Funcionan los tutores con inteligencia artificial? El metaanálisis de 107 estud"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 85,
+    "nav_enlaces": 30,
+    "alto_pagina": 3727,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://aurzane.com/biblioteca/libro/ref-mundo-amarillo.html",
+  "anchos": {
+   "320": {
+    "carga_ms": 658,
+    "sin_cabecera": true,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 320,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 800,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 702,
+    "titulo": "El mundo amarillo, de Albert Espinosa: resumen y ficha",
+    "h1": [
+     "El mundo amarillo"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 4,
+    "ejemplos_objetivos": [
+     "Relatos de vida y psicología n",
+     "Trauma, adversidad y recuperac",
+     "Duelo y pérdidas",
+     "¿Algo no funciona? Avísanos"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 90,
+    "nav_enlaces": 30,
+    "alto_pagina": 4830,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 723,
+    "titulo": "El mundo amarillo, de Albert Espinosa: resumen y ficha",
+    "h1": [
+     "El mundo amarillo"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 4,
+    "ejemplos_objetivos": [
+     "Relatos de vida y psicología n",
+     "Trauma, adversidad y recuperac",
+     "Duelo y pérdidas",
+     "¿Algo no funciona? Avísanos"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 83,
+    "nav_enlaces": 30,
+    "alto_pagina": 3692,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 621,
+    "titulo": "El mundo amarillo, de Albert Espinosa: resumen y ficha",
+    "h1": [
+     "El mundo amarillo"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 4,
+    "ejemplos_objetivos": [
+     "Relatos de vida y psicología n",
+     "Trauma, adversidad y recuperac",
+     "Duelo y pérdidas",
+     "¿Algo no funciona? Avísanos"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 90,
+    "nav_enlaces": 30,
+    "alto_pagina": 2525,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://aurzane.com/biblioteca/tema/psicologia-digital-y-tecnologia.html",
+  "anchos": {
+   "320": {
+    "carga_ms": 648,
+    "sin_cabecera": true,
+    "titulo": "Libros de psicología digital y tecnología gratis en PDF",
+    "h1": [
+     "Libros de psicología digital y tecnología"
+    ],
+    "desborda": false,
+    "scroll_w": 320,
+    "culpables": [],
+    "objetivos_pequenos": 19,
+    "ejemplos_objetivos": [
+     "Ciberacoso",
+     "Psicología de las redes social",
+     "Economía de la atención",
+     "Persuasión digital",
+     "Comparación social digital"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 131,
+    "nav_enlaces": 30,
+    "alto_pagina": 23843,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 694,
+    "titulo": "Libros de psicología digital y tecnología gratis en PDF",
+    "h1": [
+     "Libros de psicología digital y tecnología"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 19,
+    "ejemplos_objetivos": [
+     "Ciberacoso",
+     "Psicología de las redes social",
+     "Economía de la atención",
+     "Persuasión digital",
+     "Comparación social digital"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 131,
+    "nav_enlaces": 30,
+    "alto_pagina": 10889,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 646,
+    "titulo": "Libros de psicología digital y tecnología gratis en PDF",
+    "h1": [
+     "Libros de psicología digital y tecnología"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 19,
+    "ejemplos_objetivos": [
+     "Ciberacoso",
+     "Psicología de las redes social",
+     "Economía de la atención",
+     "Persuasión digital",
+     "Comparación social digital"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 131,
+    "nav_enlaces": 30,
+    "alto_pagina": 8673,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 624,
+    "titulo": "Libros de psicología digital y tecnología gratis en PDF",
+    "h1": [
+     "Libros de psicología digital y tecnología"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 19,
+    "ejemplos_objetivos": [
+     "Ciberacoso",
+     "Psicología de las redes social",
+     "Economía de la atención",
+     "Persuasión digital",
+     "Comparación social digital"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 131,
+    "nav_enlaces": 30,
+    "alto_pagina": 5500,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://aurzane.com/frases/",
+  "anchos": {
+   "320": {
+    "carga_ms": 632,
+    "sin_cabecera": true,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 320,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 800,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 713,
+    "sin_cabecera": true,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 800,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 635,
+    "titulo": "Frases célebres para pensar y sentirte mejor | AURZANE",
+    "h1": [
+     "Frases célebres"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 503,
+    "nav_enlaces": 30,
+    "alto_pagina": 65518,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 684,
+    "titulo": "Frases célebres para pensar y sentirte mejor | AURZANE",
+    "h1": [
+     "Frases célebres"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 510,
+    "nav_enlaces": 30,
+    "alto_pagina": 62567,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://aurzane.com/mi-aurzane.html",
+  "anchos": {
+   "320": {
+    "carga_ms": 683,
+    "sin_cabecera": true,
+    "titulo": "Mi AURZANE — Tu cuenta en el ecosistema",
+    "h1": [
+     "Mi AURZANE",
+     "Una cuenta para todo el ecosistema",
+     "Elige tu nueva contraseña",
+     "—"
+    ],
+    "desborda": false,
+    "scroll_w": 320,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "¿Olvidaste tu contraseña?"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 75,
+    "nav_enlaces": 17,
+    "alto_pagina": 3724,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 619,
+    "titulo": "Mi AURZANE — Tu cuenta en el ecosistema",
+    "h1": [
+     "Mi AURZANE",
+     "Una cuenta para todo el ecosistema",
+     "Elige tu nueva contraseña",
+     "—"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "¿Olvidaste tu contraseña?"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 75,
+    "nav_enlaces": 17,
+    "alto_pagina": 3618,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 641,
+    "titulo": "Mi AURZANE — Tu cuenta en el ecosistema",
+    "h1": [
+     "Mi AURZANE",
+     "Una cuenta para todo el ecosistema",
+     "Elige tu nueva contraseña",
+     "—"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "¿Olvidaste tu contraseña?"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 75,
+    "nav_enlaces": 17,
+    "alto_pagina": 2507,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 698,
+    "titulo": "Mi AURZANE — Tu cuenta en el ecosistema",
+    "h1": [
+     "Mi AURZANE",
+     "Una cuenta para todo el ecosistema",
+     "Elige tu nueva contraseña",
+     "—"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "¿Olvidaste tu contraseña?"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 82,
+    "nav_enlaces": 17,
+    "alto_pagina": 1573,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://aurzane.com/ref-proceso-convertirse-persona.html",
+  "anchos": {
+   "320": {
+    "carga_ms": 708,
+    "sin_cabecera": true,
+    "titulo": "",
+    "h1": [],
+    "desborda": false,
+    "scroll_w": 320,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 800,
+    "fuentes": [],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 677,
+    "sin_cabecera": true,
+    "titulo": "El proceso de convertirse en persona: resumen e ideas clave",
+    "h1": [
+     "El proceso de convertirse en persona"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 3,
+    "ejemplos_objetivos": [
+     "Psicoterapia e intervención ps",
+     "Autoestima, autocuidado y supe",
+     "Personalidad e identidad"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 23,
+    "nav_enlaces": 5,
+    "alto_pagina": 4741,
+    "fuentes": [
+     "Bodoni Moda",
+     "Instrument Sans",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 660,
+    "titulo": "El proceso de convertirse en persona: resumen e ideas clave",
+    "h1": [
+     "El proceso de convertirse en persona"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 4,
+    "ejemplos_objetivos": [
+     "Psicoterapia e intervención ps",
+     "Autoestima, autocuidado y supe",
+     "Personalidad e identidad",
+     "¿Algo no funciona? Avísanos"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 90,
+    "nav_enlaces": 30,
+    "alto_pagina": 4876,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 645,
+    "titulo": "El proceso de convertirse en persona: resumen e ideas clave",
+    "h1": [
+     "El proceso de convertirse en persona"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 4,
+    "ejemplos_objetivos": [
+     "Psicoterapia e intervención ps",
+     "Autoestima, autocuidado y supe",
+     "Personalidad e identidad",
+     "¿Algo no funciona? Avísanos"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 90,
+    "nav_enlaces": 30,
+    "alto_pagina": 3581,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://aurzane.com/temas/inteligencia_artificial/",
+  "anchos": {
+   "320": {
+    "carga_ms": 1790,
+    "titulo": "Inteligencia Artificial — AURZANE NEXUS",
+    "h1": [
+     "Inteligencia Artificial"
+    ],
+    "desborda": false,
+    "scroll_w": 320,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 71,
+    "nav_enlaces": 30,
+    "alto_pagina": 3939,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 624,
+    "sin_cabecera": true,
+    "titulo": "Inteligencia Artificial — AURZANE NEXUS",
+    "h1": [
+     "Inteligencia Artificial"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 71,
+    "nav_enlaces": 30,
+    "alto_pagina": 3805,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 642,
+    "sin_cabecera": true,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 900,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 639,
+    "titulo": "Inteligencia Artificial — AURZANE NEXUS",
+    "h1": [
+     "Inteligencia Artificial"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 78,
+    "nav_enlaces": 30,
+    "alto_pagina": 2079,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://build.aurzane.com/calculadora-reforma/",
+  "anchos": {
+   "320": {
+    "carga_ms": 804,
+    "sin_cabecera": true,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "build.aurzane.com"
+    ],
+    "desborda": true,
+    "scroll_w": 336,
+    "culpables": [
+     "p<FOOTER 336"
+    ],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 840,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 751,
+    "sin_cabecera": true,
+    "titulo": "Calculadora de reforma 2026: cuánto cuesta reformar un piso",
+    "h1": [
+     "Cuánto te va a costar tu reforma, partida a partida"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 15,
+    "ejemplos_objetivos": [
+     "INPUT",
+     "INPUT",
+     "INPUT",
+     "Número de baños",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 20,
+    "nav_enlaces": 5,
+    "alto_pagina": 11360,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "axe": [
+     {
+      "id": "scrollable-region-focusable",
+      "impacto": "serious",
+      "n": 1,
+      "ejemplo": ".scroll"
+     }
+    ],
+    "errores": [],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 754,
+    "sin_cabecera": true,
+    "titulo": "",
+    "h1": [],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 900,
+    "fuentes": [],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 750,
+    "sin_cabecera": true,
+    "titulo": "Calculadora de reforma 2026: cuánto cuesta reformar un piso",
+    "h1": [
+     "Cuánto te va a costar tu reforma, partida a partida"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 18,
+    "ejemplos_objetivos": [
+     "Hipoteca",
+     "Sueldo neto",
+     "Reforma",
+     "INPUT",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 20,
+    "nav_enlaces": 5,
+    "alto_pagina": 6663,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://learn.aurzane.com/curso/introduccion-psicologia/",
+  "anchos": {
+   "320": {
+    "carga_ms": 782,
+    "sin_cabecera": true,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "learn.aurzane.com"
+    ],
+    "desborda": true,
+    "scroll_w": 336,
+    "culpables": [
+     "p<FOOTER 336"
+    ],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 840,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 763,
+    "sin_cabecera": true,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "learn.aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 800,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 755,
+    "sin_cabecera": true,
+    "titulo": "Curso de Introducción a la Psicología Gratis Online · AURZANE LEARN",
+    "h1": [
+     "Introducción a la psicología"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 9,
+    "nav_enlaces": 2,
+    "alto_pagina": 3329,
+    "fuentes": [
+     "Bodoni Moda",
+     "Instrument Sans"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 753,
+    "sin_cabecera": true,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "learn.aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 900,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://live.aurzane.com/",
+  "anchos": {
+   "320": {
+    "carga_ms": 846,
+    "sin_cabecera": true,
+    "titulo": "AURZANE LIVE: salud, cuerpo, descanso y día a día",
+    "h1": [
+     "Cuida tu salud cada día"
+    ],
+    "desborda": true,
+    "scroll_w": 369,
+    "culpables": [
+     "div.utility-mundos<u-wrap 368",
+     "a<utility-mundos 368"
+    ],
+    "objetivos_pequenos": 9,
+    "ejemplos_objetivos": [
+     "AURZANE",
+     "MIND",
+     "OVP",
+     "NEXUS",
+     "LIVE"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 81,
+    "nav_enlaces": 5,
+    "alto_pagina": 14138,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 761,
+    "sin_cabecera": true,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "live.aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 800,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 739,
+    "sin_cabecera": true,
+    "titulo": "AURZANE LIVE: salud, cuerpo, descanso y día a día",
+    "h1": [
+     "Cuida tu salud cada día"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [
+     "a.ex-card<explored-strip 858",
+     "div.ex-img<ex-card 857",
+     "img<ex-img 857",
+     "div.ex-body<ex-card 857",
+     "h4<ex-body 841",
+     "a.ex-card<explored-strip 1134"
+    ],
+    "objetivos_pequenos": 9,
+    "ejemplos_objetivos": [
+     "AURZANE",
+     "MIND",
+     "OVP",
+     "NEXUS",
+     "LIVE"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 96,
+    "nav_enlaces": 5,
+    "alto_pagina": 10956,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 750,
+    "sin_cabecera": true,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "live.aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 900,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://live.aurzane.com/calculadora-embarazo/",
+  "anchos": {
+   "320": {
+    "carga_ms": 747,
+    "sin_cabecera": true,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "live.aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 320,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 800,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 756,
+    "sin_cabecera": true,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "live.aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 800,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 748,
+    "sin_cabecera": true,
+    "titulo": "Calculadora de embarazo: semanas y fecha probable de parto",
+    "h1": [
+     "¿De cuántas semanas estás y cuándo llega?"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 6,
+    "ejemplos_objetivos": [
+     "Bienestar",
+     "Sueño",
+     "Calorías",
+     "IMC",
+     "Agua"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 23,
+    "nav_enlaces": 8,
+    "alto_pagina": 8311,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 766,
+    "sin_cabecera": true,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "live.aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 900,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://live.aurzane.com/test-de-habitos/",
+  "anchos": {
+   "320": {
+    "carga_ms": 749,
+    "sin_cabecera": true,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "live.aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 320,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 800,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 760,
+    "sin_cabecera": true,
+    "titulo": "Test de hábitos saludables gratis (SLIQ) | AURZANE LIVE",
+    "h1": [
+     "¿Qué nota le pondrías a tu estilo de vida?"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 23,
+    "nav_enlaces": 8,
+    "alto_pagina": 10670,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 742,
+    "sin_cabecera": true,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "live.aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 900,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 756,
+    "sin_cabecera": true,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "live.aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 900,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://mind.aurzane.com/ejercicios/coherencia-cardiaca/",
+  "anchos": {
+   "320": {
+    "carga_ms": 805,
+    "sin_cabecera": true,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "mind.aurzane.com"
+    ],
+    "desborda": true,
+    "scroll_w": 336,
+    "culpables": [
+     "p<FOOTER 336"
+    ],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 840,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 754,
+    "sin_cabecera": true,
+    "titulo": "Coherencia cardiaca guiada: respiración 365 de 5 minutos",
+    "h1": [
+     "Coherencia cardiaca guiada"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 27,
+    "nav_enlaces": 10,
+    "alto_pagina": 8123,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 749,
+    "sin_cabecera": true,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "mind.aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 900,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 746,
+    "sin_cabecera": true,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "mind.aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 900,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://mind.aurzane.com/ejercicios/respiracion-alterna/",
+  "anchos": {
+   "320": {
+    "carga_ms": 754,
+    "sin_cabecera": true,
+    "titulo": "Respiración alterna (nadi shodhana) guiada | AURZANE MIND",
+    "h1": [
+     "Respiración alterna guiada"
+    ],
+    "desborda": true,
+    "scroll_w": 340,
+    "culpables": [
+     "a<eco 359",
+     "nav<wrap 340",
+     "a.cuenta<NAV 340"
+    ],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 27,
+    "nav_enlaces": 10,
+    "alto_pagina": 8771,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 757,
+    "sin_cabecera": true,
+    "titulo": "Respiración alterna (nadi shodhana) guiada | AURZANE MIND",
+    "h1": [
+     "Respiración alterna guiada"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 27,
+    "nav_enlaces": 10,
+    "alto_pagina": 7778,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 751,
+    "sin_cabecera": true,
+    "titulo": "Respiración alterna (nadi shodhana) guiada | AURZANE MIND",
+    "h1": [
+     "Respiración alterna guiada"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 8,
+    "ejemplos_objetivos": [
+     "Ansiedad",
+     "Depresión",
+     "Autoestima",
+     "TDAH",
+     "Autocompasión"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 27,
+    "nav_enlaces": 10,
+    "alto_pagina": 6006,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 748,
+    "sin_cabecera": true,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "mind.aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 900,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://mind.aurzane.com/en/",
+  "anchos": {
+   "320": {
+    "carga_ms": 748,
+    "sin_cabecera": true,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "mind.aurzane.com"
+    ],
+    "desborda": true,
+    "scroll_w": 336,
+    "culpables": [
+     "p<FOOTER 336"
+    ],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 840,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 754,
+    "sin_cabecera": true,
+    "titulo": "Free psychological tests in English | AURZANE",
+    "h1": [
+     "Free psychological tests"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 14,
+    "nav_enlaces": 3,
+    "alto_pagina": 3125,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "en",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 748,
+    "sin_cabecera": true,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "mind.aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 900,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 750,
+    "sin_cabecera": true,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "mind.aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 900,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://mind.aurzane.com/en/self-compassion-test-scs-sf/",
+  "anchos": {
+   "320": {
+    "carga_ms": 748,
+    "sin_cabecera": true,
+    "titulo": "Self-compassion test (Neff, short form)",
+    "h1": [
+     "Self-compassion test (Neff, short form)"
+    ],
+    "desborda": false,
+    "scroll_w": 320,
+    "culpables": [],
+    "objetivos_pequenos": 60,
+    "ejemplos_objetivos": [
+     "INPUT",
+     "INPUT",
+     "INPUT",
+     "INPUT",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 6,
+    "nav_enlaces": 3,
+    "alto_pagina": 5339,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "en",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 750,
+    "sin_cabecera": true,
+    "titulo": "",
+    "h1": [],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 800,
+    "fuentes": [],
+    "lang": "en",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 746,
+    "sin_cabecera": true,
+    "titulo": "Self-compassion test (Neff, short form)",
+    "h1": [
+     "Self-compassion test (Neff, short form)"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 60,
+    "ejemplos_objetivos": [
+     "INPUT",
+     "INPUT",
+     "INPUT",
+     "INPUT",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 6,
+    "nav_enlaces": 3,
+    "alto_pagina": 2920,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "en",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 753,
+    "sin_cabecera": true,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "mind.aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 900,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://mind.aurzane.com/pt/",
+  "anchos": {
+   "320": {
+    "carga_ms": 755,
+    "sin_cabecera": true,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "mind.aurzane.com"
+    ],
+    "desborda": true,
+    "scroll_w": 336,
+    "culpables": [
+     "p<FOOTER 336"
+    ],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 840,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 755,
+    "sin_cabecera": true,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "mind.aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 800,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 761,
+    "sin_cabecera": true,
+    "titulo": "Testes psicológicos grátis em português | AURZANE",
+    "h1": [
+     "Testes psicológicos grátis"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 8,
+    "nav_enlaces": 3,
+    "alto_pagina": 926,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "pt-BR",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 752,
+    "sin_cabecera": true,
+    "titulo": "Testes psicológicos grátis em português | AURZANE",
+    "h1": [
+     "Testes psicológicos grátis"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 8,
+    "nav_enlaces": 3,
+    "alto_pagina": 900,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "pt-BR",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://mind.aurzane.com/test-de-autoeficacia/",
+  "anchos": {
+   "320": {
+    "carga_ms": 751,
+    "sin_cabecera": true,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "mind.aurzane.com"
+    ],
+    "desborda": true,
+    "scroll_w": 336,
+    "culpables": [
+     "p<FOOTER 336"
+    ],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 840,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 783,
+    "sin_cabecera": true,
+    "titulo": "Test de autoeficacia gratis (escala de Schwarzer)",
+    "h1": [
+     "¿Cuánto confías en tu capacidad para salir adelante?"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 25,
+    "nav_enlaces": 10,
+    "alto_pagina": 10227,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 755,
+    "sin_cabecera": true,
+    "titulo": "Test de autoeficacia gratis (escala de Schwarzer)",
+    "h1": [
+     "¿Cuánto confías en tu capacidad para salir adelante?"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 8,
+    "ejemplos_objetivos": [
+     "Ansiedad",
+     "Depresión",
+     "Autoestima",
+     "TDAH",
+     "Autocompasión"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 25,
+    "nav_enlaces": 10,
+    "alto_pagina": 7588,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 746,
+    "sin_cabecera": true,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "mind.aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 900,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://mind.aurzane.com/test-de-resiliencia/",
+  "anchos": {
+   "320": {
+    "carga_ms": 751,
+    "sin_cabecera": true,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "mind.aurzane.com"
+    ],
+    "desborda": true,
+    "scroll_w": 336,
+    "culpables": [
+     "p<FOOTER 336"
+    ],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 840,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 754,
+    "sin_cabecera": true,
+    "titulo": "Test de resiliencia gratis (Brief Resilience Scale)",
+    "h1": [
+     "¿Cuánto tardas en levantarte después de un golpe?"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 25,
+    "nav_enlaces": 10,
+    "alto_pagina": 10965,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 758,
+    "sin_cabecera": true,
+    "titulo": "Test de resiliencia gratis (Brief Resilience Scale)",
+    "h1": [
+     "¿Cuánto tardas en levantarte después de un golpe?"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 8,
+    "ejemplos_objetivos": [
+     "Ansiedad",
+     "Depresión",
+     "Autoestima",
+     "TDAH",
+     "Autocompasión"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 25,
+    "nav_enlaces": 10,
+    "alto_pagina": 8347,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 755,
+    "sin_cabecera": true,
+    "titulo": "Test de resiliencia gratis (Brief Resilience Scale)",
+    "h1": [
+     "¿Cuánto tardas en levantarte después de un golpe?"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 8,
+    "ejemplos_objetivos": [
+     "Ansiedad",
+     "Depresión",
+     "Autoestima",
+     "TDAH",
+     "Autocompasión"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 25,
+    "nav_enlaces": 10,
+    "alto_pagina": 6946,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://nexus.aurzane.com/calculadora-nota-pau/",
+  "anchos": {
+   "320": {
+    "carga_ms": 787,
+    "sin_cabecera": true,
+    "titulo": "Calculadora nota PAU 2026: nota de acceso y de admisión (selectividad)",
+    "h1": [
+     "Calcula tu nota de la PAU y descubre si te llega para tu carrera"
+    ],
+    "desborda": true,
+    "scroll_w": 348,
+    "culpables": [
+     "a<eco 359",
+     "nav<wrap 348",
+     "a.cuenta<NAV 348"
+    ],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 20,
+    "nav_enlaces": 5,
+    "alto_pagina": 12994,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 1050,
+    "sin_cabecera": true,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "nexus.aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 800,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 747,
+    "sin_cabecera": true,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "nexus.aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 900,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 749,
+    "sin_cabecera": true,
+    "titulo": "Calculadora nota PAU 2026: nota de acceso y de admisión (selectividad)",
+    "h1": [
+     "Calcula tu nota de la PAU y descubre si te llega para tu carrera"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 4,
+    "ejemplos_objetivos": [
+     "Universidades",
+     "Test vocacional",
+     "Test de personalidad",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 20,
+    "nav_enlaces": 5,
+    "alto_pagina": 6550,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://nexus.aurzane.com/universidades/espana/",
+  "anchos": {
+   "320": {
+    "carga_ms": 764,
+    "sin_cabecera": true,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "nexus.aurzane.com"
+    ],
+    "desborda": true,
+    "scroll_w": 354,
+    "culpables": [
+     "p<FOOTER 354"
+    ],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 886,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 759,
+    "sin_cabecera": true,
+    "titulo": "Universidades de España: las 99 universidades",
+    "h1": [
+     "Universidades de España"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 2,
+    "ejemplos_objetivos": [
+     "Quitar filtros",
+     "Más filtros ▾"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 169,
+    "nav_enlaces": 8,
+    "alto_pagina": 14885,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial"
+    ],
+    "lang": "es",
+    "axe": [
+     {
+      "id": "color-contrast",
+      "impacto": "serious",
+      "n": 6,
+      "ejemplo": "article:nth-child(13) > .etqs > .priv.etq"
+     },
+     {
+      "id": "target-size",
+      "impacto": "serious",
+      "n": 2,
+      "ejemplo": "a[href$=\"acerca/\"]"
+     }
+    ],
+    "errores": [],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 759,
+    "sin_cabecera": true,
+    "titulo": "Universidades de España: las 99 universidades",
+    "h1": [
+     "Universidades de España"
+    ],
+    "desborda": true,
+    "scroll_w": 876,
+    "culpables": [
+     "nav#topnav.topnav<wrap 876",
+     "a.cuenta<topnav 876"
+    ],
+    "objetivos_pequenos": 2,
+    "ejemplos_objetivos": [
+     "Quitar filtros",
+     "Más filtros ▾"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 169,
+    "nav_enlaces": 8,
+    "alto_pagina": 7706,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 764,
+    "sin_cabecera": true,
+    "titulo": "Universidades de España: las 99 universidades",
+    "h1": [
+     "Universidades de España"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 2,
+    "ejemplos_objetivos": [
+     "Quitar filtros",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 169,
+    "nav_enlaces": 8,
+    "alto_pagina": 6080,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial"
+    ],
+    "lang": "es",
+    "axe": [
+     {
+      "id": "color-contrast",
+      "impacto": "serious",
+      "n": 6,
+      "ejemplo": "article:nth-child(13) > .etqs > .priv.etq"
+     }
+    ],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://ovp.aurzane.com/",
+  "anchos": {
+   "320": {
+    "carga_ms": 816,
+    "sin_cabecera": true,
+    "titulo": "Test de orientación vocacional gratis online, con informe",
+    "h1": [
+     "Elegir qué estudiar no debería ser una corazonada. Debería tener evidencia detrá"
+    ],
+    "desborda": true,
+    "scroll_w": 367,
+    "culpables": [
+     "div.utility-mundos<u-wrap 367",
+     "a<utility-mundos 367",
+     "div.topbar-right<topbar 337",
+     "button.btn-todo<topbar-right 337"
+    ],
+    "objetivos_pequenos": 13,
+    "ejemplos_objetivos": [
+     "AURZANE",
+     "MIND",
+     "OVP",
+     "NEXUS",
+     "LIVE"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 40,
+    "nav_enlaces": 5,
+    "alto_pagina": 8268,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 747,
+    "sin_cabecera": true,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "ovp.aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 800,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 749,
+    "sin_cabecera": true,
+    "titulo": "Test de orientación vocacional gratis online, con informe",
+    "h1": [
+     "Elegir qué estudiar no debería ser una corazonada. Debería tener evidencia detrá"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 13,
+    "ejemplos_objetivos": [
+     "AURZANE",
+     "MIND",
+     "OVP",
+     "NEXUS",
+     "LIVE"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 40,
+    "nav_enlaces": 5,
+    "alto_pagina": 5632,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 742,
+    "sin_cabecera": true,
+    "titulo": "Test de orientación vocacional gratis online, con informe",
+    "h1": [
+     "Elegir qué estudiar no debería ser una corazonada. Debería tener evidencia detrá"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 15,
+    "ejemplos_objetivos": [
+     "AURZANE",
+     "MIND",
+     "OVP",
+     "NEXUS",
+     "LIVE"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 40,
+    "nav_enlaces": 5,
+    "alto_pagina": 5164,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial"
+    ],
+    "lang": "es",
+    "axe": [
+     {
+      "id": "color-contrast",
+      "impacto": "serious",
+      "n": 1,
+      "ejemplo": ".tier"
+     }
+    ],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://ovp.aurzane.com/generar-informe.html",
+  "anchos": {
+   "320": {
+    "carga_ms": 754,
+    "sin_cabecera": true,
+    "titulo": "Generar Informe · AURZANE MIND",
+    "h1": [
+     "Acceso de administrador",
+     "No se pudo generar el informe"
+    ],
+    "desborda": false,
+    "scroll_w": 320,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 5,
+    "nav_enlaces": 0,
+    "alto_pagina": 912,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 748,
+    "sin_cabecera": true,
+    "titulo": "Generar Informe · AURZANE MIND",
+    "h1": [
+     "Acceso de administrador",
+     "No se pudo generar el informe"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 5,
+    "nav_enlaces": 0,
+    "alto_pagina": 912,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 831,
+    "sin_cabecera": true,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "ovp.aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 900,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 750,
+    "sin_cabecera": true,
+    "titulo": "Generar Informe · AURZANE MIND",
+    "h1": [
+     "Acceso de administrador",
+     "No se pudo generar el informe"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 5,
+    "nav_enlaces": 0,
+    "alto_pagina": 1026,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://mind.aurzane.com/test-de-personalidad/p/cometa/",
+  "anchos": {
+   "320": {
+    "carga_ms": 758,
+    "sin_cabecera": true,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "mind.aurzane.com"
+    ],
+    "desborda": true,
+    "scroll_w": 336,
+    "culpables": [
+     "p<FOOTER 336"
+    ],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 840,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 749,
+    "sin_cabecera": true,
+    "titulo": "Perfil Cometa: test de personalidad gratis | AURZANE MIND",
+    "h1": [
+     "¿Cómo es tu personalidad de verdad?",
+     "Prisma"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [
+     "span.blob.b3<hero 441"
+    ],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 20,
+    "nav_enlaces": 5,
+    "alto_pagina": 6796,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "axe": [
+     {
+      "id": "color-contrast",
+      "impacto": "serious",
+      "n": 8,
+      "ejemplo": ".r5:nth-child(1) > b"
+     }
+    ],
+    "errores": [],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 756,
+    "sin_cabecera": true,
+    "titulo": "Perfil Cometa: test de personalidad gratis | AURZANE MIND",
+    "h1": [
+     "¿Cómo es tu personalidad de verdad?",
+     "Prisma"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [
+     "span.blob.b3<hero 854"
+    ],
+    "objetivos_pequenos": 3,
+    "ejemplos_objetivos": [
+     "Guías",
+     "Biblioteca",
+     "Test vocacional"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 20,
+    "nav_enlaces": 5,
+    "alto_pagina": 4872,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 745,
+    "sin_cabecera": true,
+    "titulo": "Perfil Cometa: test de personalidad gratis | AURZANE MIND",
+    "h1": [
+     "¿Cómo es tu personalidad de verdad?",
+     "Prisma"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [
+     "span.blob.b3<hero 1429"
+    ],
+    "objetivos_pequenos": 3,
+    "ejemplos_objetivos": [
+     "Guías",
+     "Biblioteca",
+     "Test vocacional"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 20,
+    "nav_enlaces": 5,
+    "alto_pagina": 3407,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "axe": [
+     {
+      "id": "color-contrast",
+      "impacto": "serious",
+      "n": 8,
+      "ejemplo": ".r5:nth-child(1) > b"
+     }
+    ],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://mind.aurzane.com/test-de-personalidad/p/raiz/",
+  "anchos": {
+   "320": {
+    "carga_ms": 758,
+    "sin_cabecera": true,
+    "titulo": "Perfil Raíz: test de personalidad gratis | AURZANE MIND",
+    "h1": [
+     "¿Cómo es tu personalidad de verdad?",
+     "Prisma"
+    ],
+    "desborda": true,
+    "scroll_w": 338,
+    "culpables": [
+     "a<eco 359",
+     "nav<wrap 338",
+     "a#lnkCuenta.cuenta<NAV 338",
+     "span.blob.b2<hero 326",
+     "span.blob.b3<hero 382",
+     "div.r5<rasgos5 323"
+    ],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 20,
+    "nav_enlaces": 5,
+    "alto_pagina": 7068,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 748,
+    "sin_cabecera": true,
+    "titulo": "Perfil Raíz: test de personalidad gratis | AURZANE MIND",
+    "h1": [
+     "¿Cómo es tu personalidad de verdad?",
+     "Prisma"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [
+     "span.blob.b3<hero 452"
+    ],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 20,
+    "nav_enlaces": 5,
+    "alto_pagina": 6796,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "axe": [
+     {
+      "id": "color-contrast",
+      "impacto": "serious",
+      "n": 8,
+      "ejemplo": ".r5:nth-child(1) > b"
+     }
+    ],
+    "errores": [],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 751,
+    "sin_cabecera": true,
+    "titulo": "Perfil Raíz: test de personalidad gratis | AURZANE MIND",
+    "h1": [
+     "¿Cómo es tu personalidad de verdad?",
+     "Prisma"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [
+     "span.blob.b3<hero 847"
+    ],
+    "objetivos_pequenos": 3,
+    "ejemplos_objetivos": [
+     "Guías",
+     "Biblioteca",
+     "Test vocacional"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 20,
+    "nav_enlaces": 5,
+    "alto_pagina": 4872,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 739,
+    "sin_cabecera": true,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "mind.aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 900,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://build.aurzane.com/calculadora-rentabilidad-alquiler/",
+  "anchos": {
+   "320": {
+    "carga_ms": 759,
+    "sin_cabecera": true,
+    "titulo": "Calculadora de rentabilidad del alquiler: bruta y neta | AURZANE BUILD",
+    "h1": [
+     "¿Compensa comprar para alquilar?"
+    ],
+    "desborda": true,
+    "scroll_w": 345,
+    "culpables": [
+     "a.activo<eco 359",
+     "nav<wrap 345",
+     "a.cuenta<NAV 345"
+    ],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 22,
+    "nav_enlaces": 7,
+    "alto_pagina": 5133,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 747,
+    "sin_cabecera": true,
+    "titulo": "Calculadora de rentabilidad del alquiler: bruta y neta | AURZANE BUILD",
+    "h1": [
+     "¿Compensa comprar para alquilar?"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 22,
+    "nav_enlaces": 7,
+    "alto_pagina": 4603,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 750,
+    "sin_cabecera": true,
+    "fallo": "page.evaluate: Execution context was destroyed, most likely because of a navigation",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 742,
+    "sin_cabecera": true,
+    "titulo": "Calculadora de rentabilidad del alquiler: bruta y neta | AURZANE BUILD",
+    "h1": [
+     "¿Compensa comprar para alquilar?"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 5,
+    "ejemplos_objetivos": [
+     "Hipoteca",
+     "Gastos compra",
+     "Alquiler",
+     "Sueldo",
+     "Ahorro"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 22,
+    "nav_enlaces": 7,
+    "alto_pagina": 2569,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://live.aurzane.com/calculadora-sueno/",
+  "anchos": {
+   "320": {
+    "carga_ms": 760,
+    "sin_cabecera": true,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "live.aurzane.com"
+    ],
+    "desborda": false,
+    "scroll_w": 320,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 0,
+    "nav_enlaces": 0,
+    "alto_pagina": 800,
+    "fuentes": [
+     "Arial"
+    ],
+    "lang": "en",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 741,
+    "sin_cabecera": true,
+    "titulo": "Calculadora de sueño: a qué hora dormir y despertar | AURZANE LIVE",
+    "h1": [
+     "Despierta entre ciclos, no en medio"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 23,
+    "nav_enlaces": 8,
+    "alto_pagina": 3695,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 747,
+    "sin_cabecera": true,
+    "titulo": "Calculadora de sueño: a qué hora dormir y despertar | AURZANE LIVE",
+    "h1": [
+     "Despierta entre ciclos, no en medio"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 6,
+    "ejemplos_objetivos": [
+     "Ovulación",
+     "Embarazo",
+     "Peso ideal",
+     "Calorías",
+     "Sueño"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 23,
+    "nav_enlaces": 8,
+    "alto_pagina": 3178,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 744,
+    "sin_cabecera": true,
+    "titulo": "Calculadora de sueño: a qué hora dormir y despertar | AURZANE LIVE",
+    "h1": [
+     "Despierta entre ciclos, no en medio"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 6,
+    "ejemplos_objetivos": [
+     "Ovulación",
+     "Embarazo",
+     "Peso ideal",
+     "Calorías",
+     "Sueño"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 23,
+    "nav_enlaces": 8,
+    "alto_pagina": 2155,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ }
+]
