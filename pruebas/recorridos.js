@@ -30,9 +30,8 @@ const ok = (n, c, det = '') => (c ? bien : fallos).push(n + (det ? ' · ' + det 
   {
     const { p, errs } = await pagina('https://mind.aurzane.com/test-de-ansiedad/');
     try {
-      const grupos = await p.$$('.opciones');
-      for (const g of grupos) { const o = await g.$('.op, label, input'); if (o) await o.click({ force: true }); }
-      await p.click('#calcular');
+      const n = await p.evaluate(() => { const gs = document.querySelectorAll('.opciones'); gs.forEach(g => { const o = g.querySelector('.op[data-v="1"]') || g.querySelector('.op'); if (o) o.click(); }); document.getElementById('calcular').click(); return gs.length; });
+      const grupos = { length: n };
       await p.waitForFunction(() => document.body.classList.contains('hecho'), null, { timeout: 8000 });
       ok('Test: resultado', true, grupos.length + ' preguntas');
       await p.evaluate(() => window.scrollTo(0, 0)); await p.waitForTimeout(300);
@@ -60,7 +59,7 @@ const ok = (n, c, det = '') => (c ? bien : fallos).push(n + (det ? ' · ' + det 
     const { p, r } = await pagina('https://mind.aurzane.com/esta-pagina-no-existe-prueba');
     ok('404 propia', r && r.status() === 404 && /no existe/i.test(await p.title().catch(() => '') + await p.textContent('h1').catch(() => '')), r && String(r.status()));
     for (const s of ['https://aurzane.com/sitemap-paginas.xml', 'https://nexus.aurzane.com/sitemap-universidades.xml', 'https://mind.aurzane.com/sitemap-paginas.xml', 'https://aurzane.com/robots.txt']) {
-      const x = await p.evaluate(async u => { try { const r = await fetch(u, { cache: 'no-store' }); const t = await r.text(); return r.status + ' ' + (t.includes('<loc>') || t.includes('Sitemap:')); } catch (e) { return 'error'; } }, s);
+      const x = await p.request.get(s).then(async r => r.status() + ' ' + /<loc>|Sitemap:/.test(await r.text())).catch(() => 'error');
       ok('Mapa ' + s, x === '200 true', x);
     }
     await p.close();
