@@ -222,3 +222,12 @@ details a{color:var(--oro-txt)}
   .p-lista a{flex-direction:column;gap:2px}
   .p-lista span{text-align:left}
 }
+
+/* Portada en 5 bloques (16/11/2026): enlaces secundarios bajo las 3 entradas principales y «Hoy» dentro del mismo bloque */
+.p-tambien{margin:22px 0 0;display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;color:var(--tinta-2)}
+.p-tambien a{display:inline-flex;align-items:center;min-height:40px;padding:0 16px;border:1px solid var(--linea);border-radius:999px;text-decoration:none;color:var(--tinta);font-weight:500}
+.p-tambien a:hover{border-color:var(--oro-txt);color:var(--oro-txt)}
+.p-intenciones .hoy{margin-top:40px;padding:32px;border:1px solid var(--linea);border-radius:var(--r);background:var(--sup)}
+.a-grid .h-col{scroll-margin-top:90px}
+#preguntas h2{margin-bottom:14px}
+@media (max-width:980px){.p-intenciones .hoy{padding:22px}}
