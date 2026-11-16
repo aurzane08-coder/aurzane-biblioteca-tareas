@@ -170,7 +170,7 @@ cuerpo = f'''
 
 <section class="p-sec" id="herramientas" aria-labelledby="hT">
   <div class="p-in">
-    <div class="p-cab"><h2 id="hT">Calculadoras para el día a día</h2><p>Con datos y normas de 2026, calculadas en tu navegador.</p></div>
+    <div class="p-cab"><h2 id="hT">Calculadoras para el día a día</h2><p>Con datos y normas de 2026, calculadas en tu navegador. ¿Tienes una web o un blog? <a href="/insertar/">Insértalas gratis</a>.</p></div>
     <div class="h-grid">{''.join(f'<div class="h-col"><h3>{E(g)}</h3><ul>' + ''.join(f'<li><a href="{u}">{E(n)}</a></li>' for n, u in L) + '</ul></div>' for g, L in CALC)}</div>
   </div>
 </section>
