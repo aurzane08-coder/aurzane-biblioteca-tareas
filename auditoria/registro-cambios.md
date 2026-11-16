@@ -62,3 +62,11 @@ Revisadas las 140 plantillas auditadas en escritorio y móvil, con capturas comp
 - Nueva sección «Dónde estudiar»: las carreras del informe (CHASIDE u Holland) enlazan a NEXUS «¿Qué puedo estudiar?» filtrado por carrera y, si la pones, por tu nota; herramientas de notas de corte, universidades y calculadora PAU. Banda al final del informe que lleva ahí.
 - Móvil: pestañas horizontales en lugar del segundo menú; corregido el menú móvil que aparecía visible en escritorio.
 - NEXUS `que-puedo-estudiar` acepta `?carrera=`, `?q=` y `?cc=` (`univ/gen/gen.py`).
+
+## Revisión del 16/11/2026 (mañana)
+- Sin nombre del titular en las páginas públicas (`ai/parches/nombre.py`, cada día): tests, ejercicios, calculadoras, guías, EN/PT, Sobre AURZANE, contacto, condiciones, política editorial y colegios. Se mantiene solo en el aviso legal y la política de privacidad (lo exige la ley) y en documentos firmados (certificados de LEARN e informes de OVP). Generadores corregidos en origen (`guias/guias.py`, `tests_en/gen.py`, `tests_pt/gen.py`).
+- Admin fuera de Google: cabecera `X-Robots-Tag: noindex` comprobada en `admin.html` y `admin-cursos.html` (parche de seguridad diario).
+- Colegios: panel del colegio (`ovp.aurzane.com/colegio.html`) con alta y baja del equipo del colegio desde la vista de administración; página de colegios con «Entrar al panel del colegio» y los dos accesos explicados; el estudiante decide si comparte su informe desde «Mi cuenta».
+- Cifras: la tienda cuenta los libros gratis igual que la biblioteca y la portada; las cifras se corrigen también tras publicar universidades y la tienda, y en biblioteca, colegios, Sobre AURZANE y OVP (países y universidades exactos).
+- Identidad: el parche de mundos cambia también «Vida sin límites», «Imperio físico» y «NEXUS: tecnología…» que quedaban en /temas/.
+- Lenguaje: los artículos de la IA se publican ya en tuteo (mismas listas que el parche de voseo).

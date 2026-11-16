@@ -118,3 +118,7 @@
 }
 @media(max-width:360px){.ov-mosaico{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){.ov-tile,.ov-tile:hover{transition:none;transform:none}}
+.ov-col p{color:var(--ink-2);font-size:.92rem;margin-bottom:14px}
+.ov-sw{display:flex;gap:10px;align-items:center;cursor:pointer;font-weight:600}
+.ov-sw input{width:20px;height:20px;accent-color:var(--gold)}
+#ovComparteMsg{display:block;margin-top:8px;color:var(--ink-3)}

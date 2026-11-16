@@ -5,7 +5,7 @@ on:
   schedule:
     - cron: '47 5 * * *'
   workflow_run:
-    workflows: ['Desplegar archivos a SiteGround']
+    workflows: ['Desplegar archivos a SiteGround', 'Universidades publicar portal', 'Tienda de libros']
     types: [completed]
   push:
     paths: ['cursos/catalogo.py', 'cursos/meta.json', 'cifras/cifras.py', 'mundos/prerender.py', 'portada/**', 'herramientas/indice.py', '.github/workflows/cursos-cifras.yml']

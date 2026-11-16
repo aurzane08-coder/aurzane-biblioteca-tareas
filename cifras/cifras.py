@@ -81,6 +81,9 @@ def reglas(sitio):
     if c['universidades']:
         rr.append((NUM + r'( (?:instituciones|universidades) en )' + NUM + r'( países)', lambda x: mil(c['universidades']) + x.group(2) + str(c['paises']) + x.group(4)))
         rr.append((r'(\d{1,3}\.\d{3})( universidades)', lambda x: mil(c['universidades']) + x.group(2)))  # solo cifras del catálogo (miles)
+        # «más de 6.000 instituciones de 23 países», «universidades de 23 países»: siempre la cifra exacta del catálogo
+        rr.append((r'(?:[Mm]ás de )?' + NUM + r'( (?:instituciones|universidades)(?: e institutos)? de )' + NUM + r'( países)', lambda x: mil(c['universidades']) + x.group(2) + str(c['paises']) + x.group(4)))
+        rr.append((r'((?:universidades|carreras) de )' + NUM + r'( países)', lambda x: x.group(1) + str(c['paises']) + x.group(3)))
     return rr
 
 
@@ -96,7 +99,8 @@ def cursos_en(texto):
 
 
 # ---------- 3. aplicar ----------
-PAGINAS = ['aurzane.com/index.html', 'aurzane.com/research.html', 'aurzane.com/mi-aurzane.html'] + \
+PAGINAS = ['aurzane.com/index.html', 'aurzane.com/research.html', 'aurzane.com/mi-aurzane.html', 'aurzane.com/biblioteca/index.html',
+            'aurzane.com/colegios/index.html', 'aurzane.com/sobre-aurzane.html', 'ovp.aurzane.com/index.html'] + \
           [f'{m}.aurzane.com/index.html' for m in MUNDOS] + [f'{m}.aurzane.com/{m}-biblioteca.html' for m in MUNDOS]
 cambios = []
 for p in PAGINAS:

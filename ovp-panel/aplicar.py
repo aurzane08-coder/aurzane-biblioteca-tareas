@@ -112,6 +112,12 @@ ESTUDIAR = '''
 '''
 rep('\n      <!-- MI CUENTA -->', ESTUDIAR + '\n      <!-- MI CUENTA -->')
 
+m2 = re.search(r'(<div class="page" id="page-cuenta">\n\s*<div class="page-head">.*?</div></div>\n)', s, re.S)
+assert m2
+s = s.replace(m2.group(1), m2.group(1) + '        <div class="panel" id="ovColegio" hidden></div>\n', 1)
+rep("      ['mi cuenta', () => renderCuenta(cliente, session)],\n", "      ['mi cuenta', () => renderCuenta(cliente, session)],\n      ['colegio', () => pintarColegio()],\n")
+
+rep('<h2>Mi Cuenta</h2>', '<h2>Mi cuenta</h2>')
 # ---------- 5. JavaScript ----------
 rep("const BC_PAGE_LABELS = { resumen:'Resumen', tests:'Mis Evaluaciones', plan:'Mi Proceso', informe:'Mi Informe', cuenta:'Mi Cuenta' };\n  function goToPage(key){\n",
     "const BC_PAGE_LABELS = { resumen:'Inicio', tests:'Evaluaciones', informe:'Mi informe', estudiar:'Dónde estudiar', cuenta:'Mi cuenta' };\n"

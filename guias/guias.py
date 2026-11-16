@@ -81,7 +81,7 @@ def bloque(g, sitio, ruta):
             f'<figure><img src="{img}" alt="{html.escape(g.get("alt") or g["titulo"])}" loading="lazy" width="1200" height="630"><figcaption>{html.escape(g.get("alt") or "")}</figcaption></figure>'
             f'{sec}<h3>Preguntas frecuentes</h3>{faq}'
             + (f'<h3>Para saber más</h3><ul class="fuentes">{fuentes}</ul>' if fuentes else '')
-            + f'<p class="resp">Guía elaborada por AURZANE. Responsable del contenido: Psi. Cl. Adrián Sánchez Samaniego, psicólogo clínico (Registro SENESCYT N.º 1033-2023-2618464). '
+            + f'<p class="resp">Guía elaborada por AURZANE. Responsable del contenido: un psicólogo clínico titulado. '
               f'Actualizada el {g["fecha"]}. Esta información es orientativa y no sustituye la valoración de un profesional.</p>'
             f'<script type="application/ld+json">{json.dumps(ld, ensure_ascii=False).replace("</", "<\\/")}</script></section></div>\n')
 

@@ -13,7 +13,9 @@ P = P.group(1) if P else '55'
 def rell(t): return t.replace('{N}', N).replace('{P}', P)
 VIEJAS = {r'(?<=</span> )MIND — [^<]{3,40}(?=</a>)': 'MIND — ' + ID['mind']['corto'], r'NEXUS — Tecnolog[ií]a': 'NEXUS — ' + ID['nexus']['corto'],
           r'LIVE — Vida sin l[ií]mites': 'LIVE — ' + ID['live']['corto'], r'LEARN — Conocimiento': 'LEARN — ' + ID['learn']['corto'],
-          r'BUILD — (?:Imperio f[ií]sico|Infraestructura)': 'BUILD — ' + ID['build']['corto']}
+          r'BUILD — (?:Imperio f[ií]sico|Infraestructura)': 'BUILD — ' + ID['build']['corto'],
+          r'Vida sin l[ií]mites: bienestar, propósito y hábitos': 'Bienestar, salud, hábitos y propósito', r'Vida sin l[ií]mites': ID['live']['corto'],
+          r'Imperio f[ií]sico': ID['build']['corto'], r'(?<=NEXUS: )[Tt]ecnolog[ií]a, conocimiento y salud': ID['nexus']['corto'].lower()}
 WEBS = ['aurzane.com', 'mind.aurzane.com', 'nexus.aurzane.com', 'live.aurzane.com', 'learn.aurzane.com', 'build.aurzane.com', 'ovp.aurzane.com']
 
 
@@ -56,7 +58,7 @@ for web in WEBS:
             rel = os.path.normpath(os.path.join(rel_d, x)); p = os.path.join(raiz, rel)
             try: s = open(p, encoding='utf-8').read()
             except Exception: continue
-            if ' — ' not in s: continue
+            if ' — ' not in s and 'Vida sin l' not in s and 'Imperio f' not in s and 'NEXUS: ' not in s: continue
             t = s
             for a, b in VIEJAS.items(): t = re.sub(a, b, t)
             n += guardar(web, rel, s, t)

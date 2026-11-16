@@ -772,6 +772,19 @@ def caja_test(clave):
     return (f'\n      <aside class="az-cta-test" style="margin:34px 0;padding:22px 24px;border-radius:18px;background:linear-gradient(150deg,#2a1f63,#5B43B8);color:#fff">'
             f'<p style="margin:0 0 4px;font-size:.8rem;font-weight:700;letter-spacing:.05em;opacity:.8">PONLO A PRUEBA</p><p style="margin:0 0 14px;font-size:1.15rem;font-weight:600;line-height:1.35">Haz el {html.escape(n)}: gratis, anónimo y con tu resultado explicado al momento.</p>'
             f'<a href="{u}" style="display:inline-block;background:#FFD9A0;color:#1b1440;font-weight:700;text-decoration:none;padding:11px 20px;border-radius:99px">Hacer el test</a></aside>')
+# Tuteo siempre (nunca voseo): mismas listas que ai/parches/voseo.py, aplicadas antes de publicar cada artículo.
+def _listas_voseo():
+    import ast
+    try:
+        arbol = ast.parse(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'parches', 'voseo.py'), encoding='utf-8').read())
+        v = {n.targets[0].id: ast.literal_eval(n.value) for n in arbol.body if isinstance(n, ast.Assign) and isinstance(n.targets[0], ast.Name) and n.targets[0].id in ('M', 'P')}
+        return v.get('M', {}), v.get('P', [])
+    except Exception: return {}, []
+_VM, _VP = _listas_voseo()
+_VPAT = re.compile(r'(?<![\wáéíóúñ])(' + '|'.join(sorted(_VM, key=len, reverse=True)) + r')(?![\wáéíóúñ])', re.I) if _VM else None
+def tutear(t):
+    for a_, b_ in _VP: t = t.replace(a_, b_)
+    return _VPAT.sub(lambda m: (lambda r: r[0].upper() + r[1:] if m.group(1)[0].isupper() else r)(_VM[m.group(1).lower()]), t) if _VPAT else t
 def md_html(t):
     """Markdown sencillo a HTML (títulos, listas, negrita, cursiva y enlaces), escapando el resto."""
     def linea(x):
@@ -793,7 +806,7 @@ def md_html(t):
 def pagina_articulo(a):
     nombre, host, _ = MUNDOS_A[a['mundo']]
     url = f'https://aurzane.com/articulos/{a["slug"]}/'
-    cuerpo = re.sub(r'\n*Fuente:.*$', '', a['cuerpo'].strip(), flags=re.S)
+    cuerpo = re.sub(r'\n*Fuente:.*$', '', tutear(a['cuerpo']).strip(), flags=re.S)
     fuentes = ''.join(f'<div class="source-item"><a href="{html.escape(f_["url"])}" target="_blank" rel="noopener">{html.escape(f_["titulo"])}</a><div class="src-meta">{html.escape(f_.get("meta", ""))}</div></div>' for f_ in a.get('fuentes', []))
     jl = json.dumps({'@context': 'https://schema.org', '@type': 'Article', 'headline': a['titulo'], 'description': a['resumen'], 'datePublished': a['fecha'], 'inLanguage': 'es',
                      'articleSection': a.get('categoria', ''), 'publisher': {'@type': 'Organization', 'name': 'AURZANE'}, 'author': {'@type': 'Organization', 'name': 'AURZANE'},
@@ -850,6 +863,8 @@ if (os.environ.get('GEMINI_API_KEY') or os.environ.get('GITHUB_TOKEN')) and _ah[
         except Exception: j = {}
         if not (j.get('titulo') and len(j.get('cuerpo', '')) > 1500): continue
         j['cuerpo'] = j['cuerpo'].replace('—', ',').replace('–', ',')
+        for _k in ('titulo', 'resumen', 'cuerpo'):
+            if j.get(_k): j[_k] = tutear(j[_k])
         j['slug'] = re.sub(r'[^a-z0-9-]+', '-', j.get('slug', '').lower()).strip('-')[:70] or hashlib.md5(j['titulo'].encode()).hexdigest()[:10]
         if any(a['slug'] == j['slug'] for a in art_hechos) or get(f'https://aurzane.com/articulos/{j["slug"]}/')[0] == 200: j['slug'] += '-' + HOY[5:].replace('-', '')
         j['mundo'] = j.get('mundo') if j.get('mundo') in MUNDOS_A else 'mind'

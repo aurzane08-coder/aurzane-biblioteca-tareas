@@ -242,7 +242,7 @@ HEAD = '''<!DOCTYPE html>
 <body>
 <header><div class="w"><a class="logo" href="https://aurzane.com/">AUR<span>Z</span>ANE</a><nav><a href="{base}">All tests</a><a href="{es}" hreflang="es" lang="es">Español</a></nav></div></header>
 '''
-FOOT = '''<footer><div class="w"><p>AURZANE · Tests created and reviewed by a clinical psychologist (Psi. Cl. Adrian Sánchez Samaniego). These questionnaires are screening tools and do not replace a professional assessment. Your answers are not sent anywhere unless you are signed in and choose to save them.</p></div></footer>
+FOOT = '''<footer><div class="w"><p>AURZANE · Tests created and reviewed by a clinical psychologist. These questionnaires are screening tools and do not replace a professional assessment. Your answers are not sent anywhere unless you are signed in and choose to save them.</p></div></footer>
 </body></html>'''
 
 JS = r'''<script>

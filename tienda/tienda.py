@@ -253,7 +253,13 @@ if st == 200:
             for t in m['temas']: macro[str(t)] = m['id']
         for l in B['libros']:
             k = clave(l['titulo'])
-            if k in vistos: continue
+            if l.get('tipo') == 'pdf': n_gratis += 1   # misma cifra que la biblioteca y la portada (cifras/cifras.py)
+            if k in vistos:
+                # si un libro elegido de pago también se puede leer gratis aquí, la tienda lo muestra como gratis
+                if l.get('tipo') == 'pdf':
+                    for x in todo:
+                        if x.get('top') and clave(x['t']) == k: x.update(p='g', f=f'https://aurzane.com/biblioteca/libro/{l["id"]}.html', lic=l.get('licencia', ''))
+                continue
             vistos.add(k)
             aut = (l.get('autores') or '').split(';')[0].strip()
             if ',' in aut and aut.count(',') == 1: a_, b_ = aut.split(','); aut = f'{b_.strip()} {a_.strip()}'
@@ -262,8 +268,7 @@ if st == 200:
                          'f': f'https://aurzane.com/biblioteca/libro/{l["id"]}.html', 'c': l.get('buscar') or '', 'p': 'g' if gratis else 'p',
                          's': TIENDA_S.get(macro.get(str(l.get('principal')), ''), 'Mente y personalidad'), 'd': l.get('alta', ''), 'tend': '', 'y': l.get('anio') or '',
                          'lic': l.get('licencia', '') if gratis else ''})
-            if gratis: n_gratis += 1
-            else: n_ref += 1
+            if not gratis: n_ref += 1
     except Exception as e: print('biblioteca', e)
 open(os.path.join(OUT, 'tienda.js'), 'w', encoding='utf-8').write('window.__azTienda=' + json.dumps(todo, ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/') + ';')
 
@@ -313,7 +318,8 @@ estrella = next((x for x in tendencia if x['img']), None) or next((x for x in pu
 jl = json.dumps({'@context': 'https://schema.org', '@type': 'ItemList', 'name': 'Tienda de libros AURZANE', 'numberOfItems': len(todo),
                  'itemListElement': [{'@type': 'ListItem', 'position': k + 1, 'url': x['f'], 'name': x['t']} for k, x in enumerate(pub[:60])]}, ensure_ascii=False)
 pag = open(os.path.join(D, 'plantilla.html'), encoding='utf-8').read()
-for k, v in {'{{N}}': f'{len(todo):,}'.replace(',', '.'), '{{NG}}': f'{n_gratis:,}'.replace(',', '.'), '{{NP}}': f'{len(pub) + n_ref:,}'.replace(',', '.'),
+n_pago = sum(1 for x in todo if x['p'] == 'p')
+for k, v in {'{{N}}': f'{n_gratis + n_pago:,}'.replace(',', '.'), '{{NG}}': f'{n_gratis:,}'.replace(',', '.'), '{{NP}}': f'{n_pago:,}'.replace(',', '.'),
              '{{MES}}': MES, '{{FECHA}}': HOY, '{{JSONLD}}': jl.replace('</', '<\\/'), '{{SECCIONES_JS}}': json.dumps(ORDEN_S, ensure_ascii=False),
              '{{ESTRELLA}}': (f'<a class="estrella" href="{E(estrella["f"])}"><span class="por">{"<img src=" + chr(34) + E(estrella["img"]) + chr(34) + " alt=" + chr(34) + "Portada de " + E(estrella["t"]) + chr(34) + ">" if estrella["img"] else ""}</span>'
                               f'<span class="dat"><small>LIBRO DE LA SEMANA</small><b>{E(estrella["t"])}</b><span class="au">{E(estrella["a"])}</span>'

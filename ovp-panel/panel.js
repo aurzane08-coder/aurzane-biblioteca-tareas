@@ -182,3 +182,24 @@
       pintarEstudiar();
     });
   })();
+
+  /* ---------- Compartir el informe con el colegio (lo decide el estudiante) ---------- */
+  async function pintarColegio(){
+    const w = document.getElementById('ovColegio');
+    if(!w) return;
+    const { data, error } = await sb.rpc('ovp_mi_colegio');
+    const c = !error && data && data[0];
+    if(!c){ w.hidden = true; return; }
+    w.hidden = false;
+    const nombre = escapeHtml(c.nombre + (c.subtitulo ? ' ' + c.subtitulo : ''));
+    w.innerHTML = `<div class="panel-head"><h3>Tu colegio</h3></div><div class="panel-body ov-col">
+      <p>Entraste con el enlace de <b>${nombre}</b>. Tu colegio ve cuántas evaluaciones llevas. Tu informe solo lo ve si tú lo compartes.</p>
+      <label class="ov-sw"><input type="checkbox" id="ovComparte" ${c.comparte ? 'checked' : ''}><span>Compartir mi informe con ${nombre}</span></label>
+      <small id="ovComparteMsg" aria-live="polite"></small></div>`;
+    document.getElementById('ovComparte').addEventListener('change', async (e) => {
+      const msg = document.getElementById('ovComparteMsg');
+      const { error } = await sb.rpc('ovp_compartir_colegio', { p: e.target.checked });
+      if(error){ e.target.checked = !e.target.checked; msg.textContent = 'No se pudo guardar. Inténtalo de nuevo.'; return; }
+      msg.textContent = e.target.checked ? 'Compartido. Puedes dejar de compartirlo cuando quieras.' : 'Ya no se comparte.';
+    });
+  }
