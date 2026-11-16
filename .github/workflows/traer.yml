@@ -5,6 +5,8 @@ on:
   push:
     paths: ['traer/lista.txt']
   workflow_dispatch:
+  schedule:   # cada día: los generadores parten siempre de lo que hay publicado (auditoría 16/11/2026)
+    - cron: '47 5 * * *'
 permissions:
   contents: write
 concurrency: traer
