@@ -1,0 +1,83 @@
+// Prueba diaria de los recorridos importantes de AURZANE, con un navegador real (16/11/2026).
+// Si algo falla, el flujo termina en error y GitHub avisa por correo. Solo lee: no crea cuentas ni envía formularios
+// (la pregunta a la IA es la única petición que escribe algo y no guarda nada).
+const { chromium } = require('playwright');
+const fallos = [], bien = [];
+const ok = (n, c, det = '') => (c ? bien : fallos).push(n + (det ? ' · ' + det : ''));
+
+(async () => {
+  const b = await chromium.launch();
+  const ctx = await b.newContext({ viewport: { width: 390, height: 844 }, userAgent: 'Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Mobile Safari/537.36 AURZANE-prueba' });
+  const pagina = async (url) => {
+    const p = await ctx.newPage(), errs = [];
+    p.on('pageerror', e => errs.push(e.message.slice(0, 120)));
+    p.on('console', m => { if (m.type() === 'error' && /Refused to display|X-Frame-Options|frame-ancestors/.test(m.text())) errs.push(m.text().slice(0, 120)); });
+    let r = null; try { r = await p.goto(url, { waitUntil: 'load', timeout: 45000 }); } catch (e) { errs.push('no carga: ' + e.message.slice(0, 80)); }
+    await p.waitForTimeout(2500);
+    return { p, r, errs };
+  };
+
+  // 1. Portadas: cargan, tienen la cabecera común y no hay errores de JavaScript
+  for (const u of ['https://aurzane.com/', 'https://mind.aurzane.com/', 'https://nexus.aurzane.com/', 'https://live.aurzane.com/', 'https://learn.aurzane.com/', 'https://build.aurzane.com/', 'https://ovp.aurzane.com/', 'https://aurzane.com/biblioteca/']) {
+    const { p, r, errs } = await pagina(u);
+    const cab = await p.$('.az-cab').catch(() => null);
+    const reto = await p.evaluate(() => document.body && document.body.innerText.length < 200).catch(() => true);
+    ok('Portada ' + u, r && r.status() === 200 && cab && !reto && !errs.length, [r && r.status(), cab ? '' : 'sin cabecera', reto ? 'página vacía o desafío anti-robots' : '', errs.join(' | ')].filter(Boolean).join(' '));
+    await p.close();
+  }
+
+  // 2. Test de ansiedad: responder, ver el resultado, botón «Ver resultado» y pregunta a la IA
+  {
+    const { p, errs } = await pagina('https://mind.aurzane.com/test-de-ansiedad/');
+    try {
+      const grupos = await p.$$('.opciones');
+      for (const g of grupos) { const o = await g.$('.op, label, input'); if (o) await o.click({ force: true }); }
+      await p.click('#calcular');
+      await p.waitForFunction(() => document.body.classList.contains('hecho'), null, { timeout: 8000 });
+      ok('Test: resultado', true, grupos.length + ' preguntas');
+      await p.evaluate(() => window.scrollTo(0, 0)); await p.waitForTimeout(300);
+      await p.evaluate(() => window.scrollTo(0, 600)); await p.waitForTimeout(500);
+      const barra = await p.$('#movilBarra');
+      if (barra) {
+        await p.evaluate(() => { const r = document.getElementById('resultado'); window.scrollTo(0, r.getBoundingClientRect().bottom + window.scrollY + 400); });
+        await p.waitForTimeout(600);
+        const vis = await p.evaluate(() => document.getElementById('movilBarra').classList.contains('ver'));
+        if (vis) { await p.click('#movilBarra button, #movilBarra a, #movilBarra', { force: true }).catch(() => {}); await p.waitForTimeout(1200); }
+        const enRes = await p.evaluate(() => { const r = document.getElementById('resultado').getBoundingClientRect(); return r.top < innerHeight && r.bottom > 0; });
+        ok('Test: botón «Ver resultado» lleva al resultado', enRes);
+      }
+      await p.waitForSelector('#azAsis', { timeout: 6000 }).catch(() => {});
+      ok('Test: aparece la IA de resultados', !!(await p.$('#azAsis')));
+      const ia = await p.evaluate(async () => { try { const r = await fetch('/ai/asistente.php', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ test: 'Test de ansiedad GAD-7', resultado: '6 puntos, nivel: leve', pregunta: '¿Qué significa mi resultado?' }) }); const j = await r.json(); return r.status + ' ' + (j.respuesta ? 'ok' : (j.error || 'sin respuesta')); } catch (e) { return 'error ' + e.message; } });
+      ok('Test: la IA responde', / ok$/.test(ia), ia);
+    } catch (e) { ok('Test de ansiedad', false, e.message.slice(0, 120)); }
+    if (errs.length) ok('Test: sin errores de JavaScript', false, errs.join(' | '));
+    await p.close();
+  }
+
+  // 3. Página de error propia y mapas del sitio
+  {
+    const { p, r } = await pagina('https://mind.aurzane.com/esta-pagina-no-existe-prueba');
+    ok('404 propia', r && r.status() === 404 && /no existe/i.test(await p.title().catch(() => '') + await p.textContent('h1').catch(() => '')), r && String(r.status()));
+    for (const s of ['https://aurzane.com/sitemap-paginas.xml', 'https://nexus.aurzane.com/sitemap-universidades.xml', 'https://mind.aurzane.com/sitemap-paginas.xml', 'https://aurzane.com/robots.txt']) {
+      const x = await p.evaluate(async u => { try { const r = await fetch(u, { cache: 'no-store' }); const t = await r.text(); return r.status + ' ' + (t.includes('<loc>') || t.includes('Sitemap:')); } catch (e) { return 'error'; } }, s);
+      ok('Mapa ' + s, x === '200 true', x);
+    }
+    await p.close();
+  }
+
+  // 4. Imágenes en AVIF para quien las acepta
+  {
+    const p = await ctx.newPage();
+    const r = await p.request.get('https://aurzane.com/biblioteca/og.jpg', { headers: { Accept: 'image/avif,image/webp,*/*' } }).catch(() => null);
+    ok('AVIF servido', r && /avif/.test(r.headers()['content-type'] || ''), r ? r.headers()['content-type'] : 'sin respuesta');
+    await p.close();
+  }
+
+  await b.close();
+  const res = '## Recorridos de AURZANE\n\n' + (fallos.length ? '### Fallos\n' + fallos.map(x => '- ' + x).join('\n') + '\n\n' : '') + '### Bien\n' + bien.map(x => '- ' + x).join('\n') + '\n';
+  console.log(res);
+  if (process.env.GITHUB_STEP_SUMMARY) require('fs').appendFileSync(process.env.GITHUB_STEP_SUMMARY, res);
+  require('fs').writeFileSync('pruebas/resultado.json', JSON.stringify({ fecha: new Date().toISOString(), fallos, bien }, null, 1));
+  process.exit(fallos.length ? 1 : 0);
+})();

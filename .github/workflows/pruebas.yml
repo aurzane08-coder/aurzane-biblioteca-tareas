@@ -1,0 +1,25 @@
+name: Prueba diaria de recorridos
+# Abre las webs con un navegador real cada mañana y comprueba lo que más importa: portadas, test, resultado,
+# botón «Ver resultado», IA de resultados, página 404, mapas del sitio y AVIF. Si algo falla, GitHub avisa por correo.
+on:
+  schedule:
+    - cron: '23 6 * * *'
+  workflow_dispatch:
+  push:
+    paths: ['pruebas/recorridos.js', '.github/workflows/pruebas.yml']
+permissions:
+  contents: write
+jobs:
+  probar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - run: npm i -s playwright@1.48.2 >/dev/null && npx playwright install --with-deps chromium >/dev/null
+      - id: p
+        run: node pruebas/recorridos.js
+      - name: Guardar resultado para el panel
+        if: always()
+        run: |
+          git config user.name "aurzane-bot"; git config user.email "bot@aurzane.com"
+          git add pruebas/resultado.json && git commit -qm "Prueba diaria de recorridos" && (git pull -q --rebase --autostash -X theirs; git push -q) || true
