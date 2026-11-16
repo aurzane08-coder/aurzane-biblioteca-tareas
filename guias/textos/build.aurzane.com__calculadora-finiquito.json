@@ -1,0 +1,55 @@
+{
+ "titulo": "Entender tu finiquito y despido en 2026",
+ "intro": "Dejar un empleo o recibir una notificación de cese genera una mezcla intensa de incertidumbre económica y desgaste emocional. Desde la perspectiva de la psicología clínica, este tipo de transiciones laborales activan respuestas de estrés similares a las que experimentamos ante cualquier pérdida significativa, donde el cerebro busca desesperadamente previsibilidad y control para calmar la ansiedad.\nPara mitigar ese impacto mental, contar con información clara sobre tus derechos económicos es fundamental. Saber exactamente qué cantidades te corresponden por ley, cómo se diferencian el finiquito y la indemnización, y qué plazos maneja la normativa actual te permite afrontar la situación desde la tranquilidad y la toma de decisiones informada, evitando el desgaste de la desinformación.",
+ "alt": "Persona revisando documentos de su contrato laboral y su nómina frente al ordenador en su despacho",
+ "secciones": [
+  {
+   "titulo": "Cómo funciona nuestra calculadora paso a paso",
+   "texto": "Nuestra herramienta digital procesa los datos básicos de tu relación laboral para ofrecerte una estimación realista y ajustada al marco legal vigente. Para utilizarla correctamente, introduce tu salario bruto anual tal como figura en tus últimas nóminas, especificando si percibes catorce pagas anuales o si las tienes prorrateadas en doce meses.\nEl sistema también te pide las fechas clave de inicio y de último día trabajado, además de desglosar los días de vacaciones que ya has disfrutado o aquellos pendientes de años anteriores. Con estos elementos, el algoritmo aplica las fórmulas matemáticas que establece el Estatuto de los Trabajadores para desglosar cada concepto monetario por separado.\n- Introduce siempre cifras brutas anuales para evitar errores en el cálculo diario.\n- Revisa bien el motivo exacto de la salida laboral, ya que cambia por completo la indemnización.\n- No olvides sumar los días de vacaciones pendientes de disfrute para que la liquidación final sea exacta."
+  },
+  {
+   "titulo": "La lógica matemática detrás de tus cálculos",
+   "texto": "Para entender qué cifras arroja la herramienta, conviene conocer las fórmulas básicas que maneja cualquier gestoría o departamento de recursos humanos. El salario diario se calcula dividiendo tu sueldo bruto anual entre 365 días, lo que sirve de base para abonar los días trabajados del mes en curso.\nLas vacaciones no disfrutadas se retribuyen multiplicando esos días pendientes por tu salario diario. En cuanto a las pagas extraordinarias, se contabilizan de forma proporcional al tiempo transcurrido dentro del semestre o periodo que marque tu convenio colectivo aplicable.\n- Salario diario: cociente entre el bruto anual y los 365 días del año.\n- Vacaciones: días no disfrutados multiplicados por el salario diario calculado.\n- Pagas extra: parte proporcional acumulada desde el inicio del periodo de cobro."
+  },
+  {
+   "titulo": "Ejemplos prácticos para interpretar tus resultados",
+   "texto": "Imaginemos un contrato que finaliza por un despido de carácter objetivo tras tres años y medio en la empresa, con un sueldo bruto de veintiún mil euros anuales. La calculadora determina primero la parte proporcional del finiquito por el mes en curso y las vacaciones que no se hayan podido gastar.\nA esa cantidad se le suma la indemnización correspondiente a los veinte días por año trabajado que marca la ley para este supuesto. Al ver los resultados desglosados en pantalla, puedes comprobar de un vistazo qué parte corresponde a derechos adquiridos de trabajo efectivo y qué parte a la compensación por la extinción.\n- El finiquito incluye siempre los días trabajados del mes, las pagas pendientes y las vacaciones.\n- La indemnización varía radicalmente si el motivo es una baja voluntaria o un despido.\n- El total bruto te orienta sobre la cifra que debe reflejar el documento oficial de liquidación."
+  },
+  {
+   "titulo": "Límites de la herramienta y precauciones importantes",
+   "texto": "Ninguna calculadora automatizada puede sustituir por completo la lectura detallada de un convenio colectivo sectorial o de empresa, que a menudo mejora las condiciones mínimas del Estatuto de los Trabajadores. Los complementos salariales variables, las horas extraordinarias o los pactos de non plus ultra pueden alterar la cuantía final.\nAdemás, los cálculos ofrecidos tienen una finalidad meramente orientativa y educativa para ayudarte a comprender tus finanzas personales tras un cese laboral. Ante cualquier discrepancia con la empresa o dudas complejas sobre tu categoría profesional, la prudencia aconseja contrastar los datos con un especialista.\n- El convenio colectivo aplicable puede contemplar mejoras salariales que la herramienta no detecta.\n- Los complementos variables o las primas por objetivos requieren un análisis individualizado.\n- Consulta siempre con un graduado social o abogado laboralista si la empresa no abona lo correcto."
+  },
+  {
+   "titulo": "Cuándo y cómo buscar apoyo emocional y profesional",
+   "texto": "Perder el empleo o romper la dinámica laboral habitual puede sobrepasar nuestros recursos de afrontamiento, provocando trastornos de sueño, apatía prolongada o niveles muy elevados de ansiedad. Reconocer que necesitas un espacio de desahogo o apoyo psicológico es un paso valiente hacia la recuperación de tu bienestar.\nSi en algún momento notas que la situación te supera por completo y experimentas pensamientos recurrentes de desesperanza o de hacerte daño, recuerda que en España dispones de recursos públicos inmediatos y gratuitos, como marcar el teléfono 024 de atención a la conducta suicida.\n- Valida tus emociones de tristeza o enfado como una respuesta humana normal ante el cambio.\n- Apóyate en tu círculo cercano de familiares y amistades para compartir el proceso.\n- Utiliza el teléfono 024 si necesitas asistencia psicológica urgente y confidencial."
+  }
+ ],
+ "faq": [
+  {
+   "p": "¿Qué diferencia hay entre finiquito e indemnización?",
+   "r": "El finiquito agrupa los salarios y derechos económicos pendientes de cobro, como las vacaciones o la parte proporcional de pagas extra, y corresponde siempre que se extingue un contrato. La indemnización es la compensación económica tasada por ley que se paga exclusivamente ante determinados tipos de cese, como el despido objetivo o el improcedente."
+  },
+  {
+   "p": "¿Tengo derecho a indemnización si presento una baja voluntaria?",
+   "r": "No, la baja voluntaria o dimisión por parte del trabajador no genera derecho a percibir ninguna indemnización económica. No obstante, la empresa sigue teniendo la obligación legal de abonarte el finiquito completo con los días trabajados del mes y las vacaciones generadas y no disfrutadas."
+  },
+  {
+   "p": "¿Cómo tributa el dinero que recibo en el IRPF?",
+   "r": "El importe correspondiente al finiquito tributa y cotiza en la declaración de la renta como si fuera una nómina ordinaria más. Por el contrario, la indemnización por despido está exenta de IRPF hasta la cuantía obligatoria que fija la ley, con un límite máximo total de ciento ochenta mil euros."
+  },
+  {
+   "p": "¿Qué ocurre si no respeto los días de preaviso al dimitir?",
+   "r": "Si decides marcharte de la empresa por iniciativa propia y no avisas con el periodo de antelación que exige tu convenio colectivo o la costumbre aplicable, por lo general de quince días, la empresa tiene el derecho legal de descontar de tu finiquito el importe correspondiente a los días de preaviso omitidos."
+  },
+  {
+   "p": "¿Qué se calcula si mi contrato temporal llega a su fin?",
+   "r": "Cuando finaliza legalmente un contrato de duración determinada, tienes derecho a percibir tu finiquito completo y además una indemnización de carácter tasado. Desde los cambios normativos recientes, esta indemnización se calcula a razón de doce días de salario por cada año de servicio trabajado."
+  }
+ ],
+ "fuentes": [
+  "Estatuto de los Trabajadores (Real Decreto Legislativo 2/2015)",
+  "Ley del Impuesto sobre la Renta de las Personas Físicas (Ley 35/2006)",
+  "Ministerio de Trabajo y Economía Social de España"
+ ],
+ "fecha": "2026-11-16"
+}

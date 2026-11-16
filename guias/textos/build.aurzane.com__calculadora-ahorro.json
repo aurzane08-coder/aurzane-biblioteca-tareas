@@ -1,0 +1,55 @@
+{
+ "titulo": "Calculadora de ahorro: domina tu dinero sin agobios",
+ "intro": "El bienestar financiero y la tranquilidad mental van de la mano. Cuando el dinero genera constantes preocupaciones, el estrés repercute directamente en la salud y en la calidad de vida diaria. Por eso, contar con un plan claro para gestionar los ingresos es una de las mejores decisiones de autocuidado que puedes tomar hoy mismo.\n\nEsta guía complementa nuestra calculadora para ayudarte a entender la lógica matemática detrás de tus metas. No se trata de vivir con restricciones extremas, sino de alinear tus gastos con lo que de verdad importa, utilizando métodos sencillos y contrastados que facilitan el ahorro constante mes a mes.",
+ "alt": "Persona utilizando una calculadora de ahorro digital en un ordenador portátil junto a una libreta de notas.",
+ "secciones": [
+  {
+   "titulo": "Cómo funciona nuestra calculadora por dentro",
+   "texto": "La herramienta traduce tus objetivos económicos a un idioma comprensible mediante fórmulas de anualidad y proyecciones de interés compuesto mensual. Al introducir tus ingresos netos y tus gastos fijos, la calculadora evalúa la viabilidad temporal de tu meta.\n\nPara calcular cuánto debes apartar, la herramienta divide la cantidad que deseas reunir entre los meses de plazo seleccionados, ajustando el resultado según la rentabilidad anual que hayas indicado. Esto permite visualizar el esfuerzo real que requiere cada objetivo.\n\n- Introduce siempre tus ingresos netos reales, es decir, lo que llega limpia a tu cuenta cada mes.\n- Sé realista con los gastos fijos para evitar que el plan se desmorone a la primera de cambio.\n- Ten en cuenta que los rendimientos estimados son orientativos y pueden variar según el mercado."
+  },
+  {
+   "titulo": "La regla matemática explicada paso a paso",
+   "texto": "El reparto del sueldo que propone el método se basa en una división porcentual muy intuitiva para ordenar cualquier economía doméstica. Consiste en destinar la mitad de los ingresos netos a cubrir las obligaciones imprescindibles para vivir.\n\nEl treinta por ciento restante se asigna al ocio y al estilo de vida personal, permitiendo disfrutar del presente sin culpa. El último veinte por ciento se reserva exclusivamente para construir patrimonio, cubrir imprevistos o cumplir metas a medio y largo plazo.\n\n- Necesidades: alquiler o hipoteca, suministros básicos, alimentación, transporte y seguros obligatorios.\n- Deseos: cenas fuera, suscripciones de entretenimiento, aficiones, ropa y viajes.\n- Ahorro: fondo de emergencia, amortización anticipada de deudas e inversión a futuro."
+  },
+  {
+   "titulo": "Ejemplos prácticos para entender los números",
+   "texto": "Imagina unos ingresos netos mensuales de mil quinientos euros. Aplicando el esquema anterior, setecientos cincuenta euros se destinan a necesidades básicas, cuatrocientos cincuenta euros a deseos y trescientos euros van directos a la partida de ahorro.\n\nSi tu meta es reunir tres mil euros para un viaje o un proyecto en diez meses, la calculadora te indicará que necesitas apartar trescientos euros mensuales. Al coincidir exactamente con el veinte por ciento de tu sueldo, sabrás que el objetivo es totalmente asumible.\n\n- Si tus gastos fijos superan el cincuenta por ciento, el margen de ahorro se reduce de forma automática.\n- En esos casos, el primer paso lógico consiste en revisar contratos, suministros y servicios para recortar fijos.\n- Nunca sacrifiques el fondo de emergencia para financiar deseos puntuales o caprichos a corto plazo."
+  },
+  {
+   "titulo": "Límites de la herramienta y errores comunes",
+   "texto": "Ninguna calculadora financiera puede prever imprevistos vitales, cambios macroeconómicos o fluctuaciones inesperadas en tus ingresos. La herramienta ofrece una simulación matemática basada en datos fijos, pero la vida real requiere flexibilidad constante.\n\nUn error frecuente es intentar ahorrar una cantidad desproporcionada desde el primer día, lo que genera frustración y abandono temprano del hábito. Es mucho más eficaz empezar con un porcentaje menor y aumentarlo de manera progresiva.\n\n- La herramienta no sustituye el asesoramiento financiero personalizado de un profesional cualificado.\n- Los cálculos no contemplan retenciones fiscales futuras ni la inflación acumulada a largo plazo.\n- Revisa tus números cada seis meses para adaptarlos a posibles subidas de sueldo o cambios de vida."
+  },
+  {
+   "titulo": "Cuándo pedir ayuda y cuidar tu salud financiera",
+   "texto": "Las dificultades con el dinero suelen generar altos niveles de ansiedad, insomnio y malestar psicológico generalizado. Si sientes que las deudas te ahogan, que la situación económica te supera por completo o que el estrés financiero afecta a tus relaciones, es fundamental buscar apoyo.\n\nHablar abiertamente del problema con familiares o profesionales ayuda a reducir la carga mental. Recuerda que en España dispones de recursos públicos y líneas de ayuda especializada para situaciones de vulnerabilidad emocional extrema, como el teléfono 024 de atención a la conducta suicida si experimentas desesperación profunda.\n\n- Prioriza siempre tu bienestar emocional por encima de cualquier indicador económico.\n- Busca asesoramiento legal o social gratuito si te enfrentas a procesos de desahucio o impagos graves.\n- Un bache financiero es una situación temporal, no una definición de tu valía personal."
+  }
+ ],
+ "faq": [
+  {
+   "p": "¿Qué hago si mis gastos fijos superan el 50% de mi sueldo?",
+   "r": "Es una situación muy común en grandes ciudades. Empieza por auditar tus suministros, transporte y seguros para buscar alternativas más económicas, y reduce el porcentaje de ahorro temporalmente hasta que puedas reequilibrar tu presupuesto."
+  },
+  {
+   "p": "¿Es mejor ahorrar o invertir el dinero sobrante?",
+   "r": "Primero debes asegurar tu colchón de emergencia en un producto seguro y disponible. Una vez cubierto ese colchón, puedes valorar opciones de inversión a largo plazo según tu perfil de riesgo y tus objetivos vitales."
+  },
+  {
+   "p": "¿Cada cuánto tiempo debo revisar mi plan de ahorro?",
+   "r": "Lo ideal es hacer una revisión rápida cada mes al cobrar y un análisis más profundo cada seis meses o cada vez que experimentes un cambio importante en tus ingresos, como un aumento de sueldo o un cambio de empleo."
+  },
+  {
+   "p": "¿Debo incluir el pago de deudas dentro de los gastos fijos?",
+   "r": "Las deudas esenciales, como la hipoteca, forman parte de las necesidades básicas. Los préstamos al consumo o tarjetas de crédito deben analizarse con cuidado, intentando amortizarlos cuanto antes para liberar capacidad de ahorro."
+  },
+  {
+   "p": "¿Qué pasa si un mes no puedo cumplir con mi meta de ahorro?",
+   "r": "No ocurre absolutamente nada y debes evitar fustigarte por ello. La constancia a lo largo de los años importa mucho más que un mes puntual en el que hayas tenido que gastar más debido a imprevistos."
+  }
+ ],
+ "fuentes": [
+  "Banco de España - Portal del Cliente Bancario",
+  "Comisión Nacional del Mercado de Valores (CNMV) - Finanzas para Todos",
+  "Ministerio de Consumo - Guías de consumo y economía doméstica"
+ ],
+ "fecha": "2026-11-16"
+}

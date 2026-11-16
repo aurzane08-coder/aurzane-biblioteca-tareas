@@ -1,0 +1,55 @@
+{
+ "titulo": "Tu peso ideal para tu altura: guía práctica de salud",
+ "intro": "Cuando nos subimos a la báscula, es fácil caer en la trampa de buscar un número fijo que encaje con cánones estéticos o comparaciones con otras personas. Sin embargo, desde la perspectiva de la psicología y la medicina, el concepto de peso ideal va mucho más allá de una cifra estricta en la pantalla. Se trata de encontrar un rango donde tu cuerpo funcione con energía, donde tus analíticas estén en orden y donde puedas mantener unos hábitos sostenibles sin que ello suponga un desgaste mental constante.\n\nEn AURZANE entendemos que la relación con nuestro cuerpo es un pilar fundamental del bienestar personal y emocional. Por ello, utilizar herramientas como nuestra calculadora no debe servir para obsesionarnos con cada gramo, sino para orientarnos sobre nuestro estado de salud general. A lo largo de esta guía, te explicamos cómo interpretar estos datos con perspectiva clínica, qué limitaciones tienen las fórmulas matemáticas y por qué el bienestar integral abarca mucho más que la masa corporal.",
+ "alt": "Persona midiendo su altura y peso frente a una báscula con una expresión tranquila y positiva.",
+ "secciones": [
+  {
+   "titulo": "¿Cómo funciona nuestra calculadora de peso ideal?",
+   "texto": "Nuestra calculadora combina el criterio del Índice de Masa Corporal establecido por la organización sanitaria internacional con cuatro de las fórmulas médicas más empleadas en la práctica clínica. Al introducir tu altura y tu sexo, el sistema cruza estos datos para ofrecerte una horquilla realista en lugar de un único número absoluto.\n\nLas fórmulas matemáticas que utilizamos (como las desarrolladas a lo largo de las décadas de los setenta y ochenta para calcular referencias corporales) relacionan la estatura con la complexión estimada según el sexo biológico. No obstante, estas operaciones son estimaciones orientativas y nunca sustituyen una valoración médica individualizada.\n\n- El rango OMS se calcula dividiendo tu peso en kilogramos entre tu altura en metros al cuadrado.\n- Las fórmulas médicas ofrecen un peso de referencia teórico basado en pulgadas de altura por encima de cierta base.\n- El cociente entre cintura y altura complementa la medición al valorar la distribución de la grasa abdominal."
+  },
+  {
+   "titulo": "Limitaciones del peso ideal: lo que la báscula no cuenta",
+   "texto": "El principal problema de buscar un peso ideal mediante fórmulas matemáticas es que estas herramientas ignoran por completo tu composición corporal. Dos personas con la misma altura y el mismo peso pueden tener una salud metabólica y física totalmente distinta.\n\nPor ejemplo, una persona que practica entrenamiento de fuerza de manera habitual tendrá una alta densidad muscular. Como el músculo pesa más que la grasa ocupando menos volumen, su IMC puede situarse en sobrepeso según los baremos estándar, a pesar de tener un porcentaje de grasa corporal saludable y un excelente estado físico.\n\n- El IMC no diferencia entre masa grasa, masa magra, agua corporal y densidad ósea.\n- La edad y la genética influyen de manera natural en la distribución de la grasa con los años.\n- Los estándares poblacionales no siempre reflejan las necesidades particulares de cada biotipo."
+  },
+  {
+   "titulo": "Más allá del número: indicadores clave de bienestar",
+   "texto": "Si quieres valorar tu salud de forma más completa, es recomendable mirar más allá del peso que marca la báscula en un momento determinado. El cuerpo humano fluctúa de forma natural cada día debido al agua, la retención de líquidos, el ciclo hormonal o las digestiones.\n\nPrestar atención a cómo te sientes en tu día a día te dará pistas mucho más fiables sobre tu estado de salud. La energía con la que te levantas, la calidad de tu descanso nocturno, tu capacidad para subir escaleras sin fatiga excesiva o la estabilidad de tu estado de ánimo son indicadores directos de bienestar.\n\n- Evalúa tu fuerza física y tu movilidad funcional antes que los kilos.\n- Observa tus niveles de energía y vitalidad a lo largo de la jornada.\n- Valora tu relación psicológica con la comida y la ausencia de culpa al comer."
+  },
+  {
+   "titulo": "Cómo usar la calculadora sin caer en la obsesión",
+   "texto": "Las herramientas de autoevaluación deben ser brújulas orientativas, nunca jueces severos de nuestra valía personal. Utilizar nuestra calculadora te ayuda a saber si te encuentras en una zona de seguridad según los criterios médicos generales, pero no debe convertirse en un motivo de ansiedad diaria.\n\nSi al comprobar tus datos ves que estás fuera del rango ideal, acércate a la cifra con curiosidad compasiva en lugar de con autocrítica. Los cambios físicos duraderos solo se consiguen cuando cuidamos el proceso y nuestra salud mental en paralelo.\n\n- No te peses todos los días; una o dos veces por semana bastan para ver tendencias.\n- Recuerda que el peso es solo un dato estático, no define quién eres.\n- Prioriza la constancia en los hábitos saludables frente al resultado inmediato."
+  },
+  {
+   "titulo": "Cuándo y cómo buscar apoyo profesional",
+   "texto": "Cuidar de uno mismo también implica saber cuándo es necesario delegar en manos expertas. Si notas que tus pensamientos sobre el peso, la comida o la imagen corporal ocupan demasiado espacio en tu mente, generan malestar intenso o interfieren con tu vida social, es el momento de pedir ayuda.\n\nEn España dispones de recursos sanitarios públicos y privados especializados en psicología clínica y nutrición que pueden ofrecerte un espacio seguro. Si alguna vez experimentas una angustia insostenible o ideas de hacerte daño, recuerda que puedes llamar de forma gratuita y confidencial al teléfono 024 de atención a la conducta suicida.\n\n- Consulta con un médico de cabecera ante cambios de peso inexplicables.\n- Acude a un psicólogo clínico si la relación con tu cuerpo te genera sufrimiento.\n- Utiliza los recursos públicos de ayuda emocional disponibles en tu comunidad."
+  }
+ ],
+ "faq": [
+  {
+   "p": "¿Por qué las fórmulas de peso ideal dan resultados diferentes?",
+   "r": "Cada fórmula matemática se diseñó en una época concreta con objetivos específicos, como calcular dosis farmacológicas. Al basarse en estaturas y complexiones estándar, cada autor priorizó variables distintas, por lo que es normal que arrojen pequeñas diferencias entre ellas."
+  },
+  {
+   "p": "¿Es fiable el IMC si tengo mucha masa muscular?",
+   "r": "No del todo. El Índice de Masa Corporal es una medida estadística poblacional que no distingue entre músculo y grasa. Las personas muy musculosas suelen registrar un IMC elevado sin que ello suponga un riesgo para su salud cardiovascular."
+  },
+  {
+   "p": "¿Cada cuánto tiempo debo calcular mi peso ideal?",
+   "r": "La altura adulta apenas varía, por lo que bastará con que consultes la herramienta si experimentas cambios físicos significativos o como recordatorio puntual. No es necesario realizar este cálculo de manera frecuente."
+  },
+  {
+   "p": "¿Qué debo hacer si mi peso está por debajo o por encima del rango OMS?",
+   "r": "Tómalo como una orientación general y analiza tus hábitos globales de sueño, movimiento y alimentación. Si tienes dudas sobre tu estado nutricional o metabólico, lo más adecuado es consultarlo con un profesional sanitario."
+  },
+  {
+   "p": "¿Influye la edad en el peso considerado saludable?",
+   "r": "Sí. A medida que cumplimos años, es natural que varíe ligeramente la composición corporal y la distribución de la grasa. Los rangos generales están pensados para población adulta general, pero los profesionales valoran cada etapa de la vida de forma individual."
+  }
+ ],
+ "fuentes": [
+  "Organización Mundial de la Salud: Guías sobre estado nutricional y clasificación del IMC en adultos",
+  "Ministerio de Sanidad de España: Recomendaciones de hábitos saludables y prevención de la obesidad",
+  "Guias clínicas de atención primaria sobre valoración antropométrica y riesgo cardiovascular"
+ ],
+ "fecha": "2026-11-16"
+}

@@ -1,0 +1,55 @@
+{
+ "titulo": "Calculadora de jubilación: guía para planificar tu futuro",
+ "intro": "Planificar el retiro laboral puede generar incertidumbre, pero transformar las dudas en números concretos ayuda a recuperar la tranquilidad y el control sobre el dinero. Esta herramienta te permite proyectar tus finanzas a largo plazo para que sepas exactamente qué camino seguir desde hoy mismo.\n\nEn esta guía orientativa de AURZANE veremos cómo funciona la lógica detrás de estos cálculos, qué errores conviene evitar al proyectar los gastos y de qué manera la constancia supera con creces a las grandes cantidades puntuales.",
+ "alt": "Persona madura revisando sus finanzas y calculando su pensión y ahorro para la jubilación en un ordenador portátil.",
+ "secciones": [
+  {
+   "titulo": "Cómo funciona la fórmula de la calculadora",
+   "texto": "La calculadora traduce tus metas futuras a euros de hoy mediante un proceso lógico dividido en tres fases principales. Primero, calcula la diferencia mensual entre el nivel de gasto que deseas mantener y la pensión pública estimada que vas a recibir.\n\nSegundo, proyecta esa brecha económica durante los años que durará tu etapa de retiro, teniendo en cuenta la esperanza de vida estimada. Tercero, aplica la rentabilidad real descontando la inflación para calcular el capital total que debes acumular en el momento de jubilarte.\n- Gasto deseado menos pensión pública igual a brecha mensual.\n- Aplicación de la regla del 4 por ciento para estimar el fondo necesario.\n- Descuento de la inflación para trabajar siempre con el poder adquisitivo actual."
+  },
+  {
+   "titulo": "Cómo utilizar la herramienta paso a paso",
+   "texto": "Para obtener un resultado realista, introduce primero tu edad actual y la edad a la que te gustaría dejar de trabajar. Sé realista con el gasto mensual deseado, pensando en tus necesidades reales de vivienda, salud y ocio.\n\nConsulta el simulador oficial de la Seguridad Social para introducir una estimación fiable de tu futura pensión pública. Añade tus ahorros actuales y prueba diferentes porcentajes de rentabilidad e inflación para ver cómo cambia el esfuerzo de ahorro mensual necesario.\n- Usa datos oficiales de cotización para la pensión.\n- Ajusta el gasto mensual a tu estilo de vida previsto.\n- Experimenta con distintos escenarios de rentabilidad y años."
+  },
+  {
+   "titulo": "Ejemplo práctico de planificación financiera",
+   "texto": "Imagina que calculas que necesitarás cubrir una diferencia de quinientos euros al mes entre tu gasto y tu pensión. Eso equivale a seis mil euros anuales que deberás generar por ti mismo cada año durante tu jubilación.\n\nSi aplicas la regla clásica de multiplicar por veinticinco esa cantidad anual para que el capital se sostenga a largo plazo, necesitarás reunir ciento cincuenta mil euros al jubilarte. Empezar a ahorrar con antelación permite que el interés compuesto haga su trabajo y reduzca el esfuerzo mensual necesario.\n- Brecha de quinientos euros mensuales.\n- Fondo objetivo de ciento cincuenta mil euros.\n- El tiempo y el interés compuesto como grandes aliados."
+  },
+  {
+   "titulo": "Límites y precauciones importantes",
+   "texto": "Ninguna herramienta digital puede adivinar el futuro económico, por lo que estos cálculos tienen un carácter puramente orientativo y educativo. Las rentabilidades pasadas no garantizan los resultados futuros y la inflación puede comportarse de manera imprevisible.\n\nLos cambios normativos en las pensiones o en la fiscalidad también pueden alterar tus planes a lo largo de las décadas. Conviene revisar los cálculos periódicamente, al menos una vez al año, para adaptar la estrategia a tu realidad cambiante.\n- Los resultados son estimaciones orientativas, no certezas.\n- La fiscalidad y las leyes pueden cambiar con los años.\n- Es necesario actualizar los datos de forma periódica."
+  },
+  {
+   "titulo": "Cuándo y cómo pedir ayuda profesional",
+   "texto": "Tomar decisiones sobre inversiones a treinta vista puede generar dudas complejas que superan la simple aritmética del ahorro mensual. Si te abruma la gestión de tu cartera o no sabes qué productos se adaptan mejor a tu perfil de riesgo, busca asesoramiento independiente.\n\nUn profesional cualificado puede ayudarte a diseñar una estrategia fiscal y financiera adecuada a tu situación personal y familiar. Recuerda que cuidar de tu bienestar financiero también es una forma de cuidar tu salud mental y reducir el estrés.\n- Consulta con un asesor financiero homologado y sin conflicto de intereses.\n- Valora tu tolerancia real al riesgo antes de invertir.\n- Si la gestión del dinero te genera ansiedad persistente, busca apoyo psicológico profesional."
+  }
+ ],
+ "faq": [
+  {
+   "p": "¿Por qué es tan importante descontar la inflación en la jubilación?",
+   "r": "La inflación reduce el poder adquisitivo del dinero con el paso de los años. Si no la tienes en cuenta, podrías descubrir que tus ahorros futuros compran mucho menos de lo que esperabas."
+  },
+  {
+   "p": "¿Qué pasa si mis ahorros actuales son cero?",
+   "r": "No ocurre nada malo, simplemente significa que debes empezar a construir tu fondo desde este mismo momento. La constancia mensual y el horizonte temporal son más importantes que el punto de partida."
+  },
+  {
+   "p": "¿Es fiable la regla del 4 por ciento para todo el mundo?",
+   "r": "Es una guía histórica útil basada en estudios de mercado a largo plazo, pero no una ley infalible. Cada persona debe adaptar su tasa de retirada según sus inversiones y la duración prevista de su retiro."
+  },
+  {
+   "p": "¿Cada cuánto tiempo debo recalcular mi plan de jubilación?",
+   "r": "Lo recomendable es revisar las cifras una vez al año o cuando se produzcan cambios importantes en tus ingresos, tus gastos o tu situación laboral y familiar."
+  },
+  {
+   "p": "¿Este cálculo incluye los impuestos al rescatar el dinero?",
+   "r": "No de forma detallada, ya que la fiscalidad depende de cada producto de ahorro, como planes de pensiones o fondos, y de la normativa vigente en cada momento en España."
+  }
+ ],
+ "fuentes": [
+  "Ministerio de Inclusión, Seguridad Social y Migraciones",
+  "Banco de España - Portal del Cliente Bancario",
+  "Comisión Nacional del Mercado de Valores"
+ ],
+ "fecha": "2026-11-16"
+}
