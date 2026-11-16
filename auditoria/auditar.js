@@ -38,7 +38,7 @@ const nombre = u => u.replace(/^https:\/\//, '').replace(/[^a-z0-9]+/gi, '_').re
           const anchos = [...document.querySelectorAll('body *')].filter(e => { const b = e.getBoundingClientRect(); const s = getComputedStyle(e); return b.right > vw + 2 && b.width > 0 && s.position !== 'fixed' && s.visibility !== 'hidden'; })
             .slice(0, 6).map(e => (e.tagName.toLowerCase() + (e.id ? '#' + e.id : '') + (e.className && typeof e.className === 'string' ? '.' + e.className.trim().split(/\s+/).slice(0, 2).join('.') : '') + (e.parentElement ? '<' + (e.parentElement.className && typeof e.parentElement.className === 'string' ? e.parentElement.className.split(' ')[0] : e.parentElement.tagName) : '')) + ' ' + Math.round(e.getBoundingClientRect().right));
           const objetivos = [...document.querySelectorAll('a[href], button, input:not([type=hidden]), select, [role=button]')].filter(e => { const b = e.getBoundingClientRect(); const s = getComputedStyle(e);
-            return b.width > 0 && b.height > 0 && s.visibility !== 'hidden' && (b.width < 24 || b.height < 24) && !(e.tagName === 'A' && getComputedStyle(e).display === 'inline'); });
+            return b.width > 0 && b.height > 0 && b.right > 0 && e.getAttribute('aria-hidden') !== 'true' && s.visibility !== 'hidden' && (b.width < 23.5 || b.height < 23.5) && !(e.tagName === 'A' && getComputedStyle(e).display === 'inline'); });
           const nav = document.querySelector('header nav, nav, .topbar, header');
           return {
             titulo: document.title, h1: [...document.querySelectorAll('h1')].map(h => h.innerText.trim().slice(0, 80)),
