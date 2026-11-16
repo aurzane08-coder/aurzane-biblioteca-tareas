@@ -1,5 +1,43 @@
 [
  {
+  "id": "cur-b2dd49b335",
+  "tipo": "curiosidad",
+  "titulo": "¿Cómo afecta tu forma de afrontar el estrés?",
+  "dato": "Tu salud mental depende directamente de las estrategias que usas para afrontar los problemas.",
+  "resumen": "Tu salud mental depende directamente de las estrategias que usas para afrontar los problemas. Un estudio realizado en universitarios muestra que la autopercepción de la salud mental está muy ligada a los métodos que elegimos para gestionar el estrés diario. Conocer qué estrategias empleas ayuda a entender mejor tu bienestar emocional actual.",
+  "fuente": "Revista Cuidarte",
+  "hashtags": [
+   "psicologia",
+   "estres",
+   "saludmental",
+   "aurzane"
+  ],
+  "fuente_id": "pmc-PMC13750918",
+  "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13750918/",
+  "fecha": "2026-11-16",
+  "auto": true,
+  "verificacion": "La afirmación está respaldada por la literatura científica sobre estrategias de afrontamiento y salud mental, aunque el término 'depende directamente' es ligeramente simplificador pero aceptable en di"
+ },
+ {
+  "id": "cur-8e657999c3",
+  "tipo": "curiosidad",
+  "titulo": "¿La música reduce la ansiedad?",
+  "dato": "Una revisión científica analizó el efecto de la música en la ansiedad aguda de estudiantes de enfermería.",
+  "resumen": "Una revisión científica analizó el efecto de la música en la ansiedad aguda de estudiantes de enfermería. El estudio evaluó intervenciones basadas en música para medir la ansiedad en contextos académicos y clínicos. Estos resultados ayudan a comprender mejor el manejo del estrés en estudiantes.",
+  "fuente": "Frontiers in Public Health",
+  "hashtags": [
+   "aurzane",
+   "psicologia",
+   "estudiantes",
+   "ansiedad"
+  ],
+  "fuente_id": "pmc-PMC13746330",
+  "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13746330/",
+  "fecha": "2026-11-16",
+  "auto": true,
+  "verificacion": "La afirmación está respaldada por la literatura científica y se presenta de forma prudente y sin exageraciones."
+ },
+ {
   "id": "cur-a8a409df15",
   "tipo": "curiosidad",
   "titulo": "¿El cerebro cambia tras sufrir maltrato?",

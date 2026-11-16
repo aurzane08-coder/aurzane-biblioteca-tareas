@@ -7,7 +7,8 @@
   "fw-4fe278707a",
   "cita-97bb8e8f52",
   "fw-cba107601c",
-  "fw-41072391b8"
+  "fw-41072391b8",
+  "fw-2e0c75c597"
  ],
  "dias": {
   "2026-11-08": {
@@ -237,6 +238,35 @@
    "musica": {
     "url": "https://aurzane.com/marketing/musica/1613588.mp3",
     "credito": "«VolexTagamine - Violin (StepOne, music2000, ps1)», VolexOne (Jamendo), CC BY"
+   }
+  },
+  "2026-11-16": {
+   "fecha": "2026-11-16",
+   "frase": {
+    "texto": "El hombre ha nacido libre y por doquiera se encuentra sujeto con cadenas.",
+    "autor": "Jean Jacques Rousseau",
+    "obra": "",
+    "url": "https://aurzane.com/frases/#fw-2e0c75c597",
+    "fuente": "Proverbia.net"
+   },
+   "curiosidad": {
+    "titulo": "¿Por qué pierdes la concentración tan rápido?",
+    "texto": "Tardamos más de 20 minutos en recuperar la concentración profunda tras cada interrupción. Cada vez que miras el móvil o cambias de pestaña, tu cerebro sufre un coste de cambio. Gloria Mark demostró que este esfuerzo acumulado reduce drásticamente nuestra productividad diaria.",
+    "fuente": "Gloria Mark, 2008",
+    "url": "https://mind.aurzane.com/"
+   },
+   "ejercicio": {
+    "titulo": "Suspiro cíclico (physiological sigh) guiado",
+    "url": "https://mind.aurzane.com/ejercicios/suspiro-ciclico/"
+   },
+   "test": {
+    "titulo": "Test de depresión PHQ-9 gratis y online",
+    "url": "https://mind.aurzane.com/test-de-depresion/"
+   },
+   "mas_frases": true,
+   "musica": {
+    "url": "https://aurzane.com/marketing/musica/1234661.mp3",
+    "credito": "«Waves», studyBreak (Jamendo), CC BY-SA"
    }
   }
  }
