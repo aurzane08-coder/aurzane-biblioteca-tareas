@@ -7,7 +7,7 @@ const ok = (n, c, det = '') => (c ? bien : fallos).push(n + (det ? ' · ' + det 
 
 (async () => {
   const b = await chromium.launch();
-  const ctx = await b.newContext({ viewport: { width: 390, height: 844 }, userAgent: 'Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Mobile Safari/537.36 AURZANE-prueba' });
+  const ctx = await b.newContext({ viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true, userAgent: 'Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Mobile Safari/537.36 AURZANE-prueba' });
   const pagina = async (url) => {
     const p = await ctx.newPage(), errs = [];
     p.on('pageerror', e => errs.push(e.message.slice(0, 120)));
@@ -41,7 +41,7 @@ const ok = (n, c, det = '') => (c ? bien : fallos).push(n + (det ? ' · ' + det 
         await p.evaluate(() => { const r = document.getElementById('resultado'); window.scrollTo(0, r.getBoundingClientRect().bottom + window.scrollY + 400); });
         await p.waitForTimeout(600);
         const vis = await p.evaluate(() => document.getElementById('movilBarra').classList.contains('ver'));
-        if (vis) { await p.click('#movilBarra a[href="#resultado"]', { force: true }).catch(() => {}); await p.waitForTimeout(2500); }
+        if (vis) { await p.waitForTimeout(400); await p.tap('#movilBarra a[href="#resultado"]').catch(() => p.evaluate(() => document.querySelector('#movilBarra a[href="#resultado"]').click())); await p.waitForTimeout(2500); }
         const enRes = await p.evaluate(() => { const r = document.getElementById('resultado').getBoundingClientRect(); return r.top < innerHeight && r.bottom > 0; });
         ok('Test: botón «Ver resultado» lleva al resultado', enRes);
       }
