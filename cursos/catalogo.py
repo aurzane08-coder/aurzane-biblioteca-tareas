@@ -230,13 +230,14 @@ h2{font:500 1.7rem/1.2 'Bodoni Moda',serif;margin:1.6em 0 .5em}
 footer{margin-top:64px;padding:28px 0;border-top:1px solid var(--linea);color:var(--suave);font-size:.9rem}"""
 HEAD = lambda t, d, canon, extra='': (f'<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">'
     f'<script src="https://aurzane.com/aurzane-paleta.js"></script><title>{E(t)}</title><meta name="description" content="{E(d)}"><link rel="canonical" href="{canon}">'
-    f'<meta property="og:title" content="{E(t)}"><meta property="og:description" content="{E(d)}"><meta property="og:url" content="{canon}"><meta property="og:type" content="website">'
+    f'<meta property="og:title" content="{E(t)}"><meta property="og:description" content="{E(d)}"><meta property="og:url" content="{canon}"><meta property="og:type" content="website"><meta property="og:image" content="{OGIMG(canon)}">'
     '<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
     '<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500;6..96,600&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">'
     f'<style>{CSS}</style>{extra}</head><body>')
 PIE = ('<footer><div class="w">Cursos libres y gratuitos de AURZANE LEARN. Formación no reglada: los certificados acreditan el aprovechamiento de un curso, no son títulos oficiales. '
        '<a href="https://aurzane.com/politica-editorial.html">Política editorial</a> · <a href="https://aurzane.com/privacidad.html">Privacidad</a></div></footer></body></html>')
 PORTADAS = {'ansiedad-dia-a-dia': 'portada-ansiedad.webp', 'neuroanatomia-funcional': 'portada-neuro.webp', 'tecnicas-neurociencias': 'portada-metodologia.webp'}
+OGIMG = lambda canon: portada({'slug': re.search(r'/curso/([^/]+)/', canon).group(1)}) if re.search(r'/curso/([^/]+)/', canon) else 'https://learn.aurzane.com/cursos/portada-ansiedad.webp'   # imagen al compartir (real, de Commons)
 portada = lambda c: 'https://learn.aurzane.com/cursos/' + (meta.get(c['slug'], {}).get('portada') or PORTADAS.get(c['slug'], 'portada-neuro.webp'))
 horas = lambda h: (f'{float(h):g} h' if h else '')
 NIVEL = lambda n: {'inicial': 'Inicial', 'intermedio': 'Intermedio', 'avanzado': 'Avanzado'}.get((n or '').lower(), (n or '').capitalize() or 'Inicial')
