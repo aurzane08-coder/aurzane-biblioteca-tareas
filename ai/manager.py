@@ -1265,6 +1265,10 @@ for x_ in ps: print('::notice title=PageSpeed::' + x_['url'] + f" rend {x_['rend
 pruebas = {}
 try: pruebas = json.load(open(OUT + '/pruebas.json', encoding='utf-8'))
 except Exception: pass
+# resultados de más de 36 horas no cuentan: así el panel no muestra fallos antiguos ya corregidos (16/11/2026)
+try:
+    if (AHORA - datetime.datetime.fromisoformat(pruebas.get('fecha', '').replace('Z', '+00:00'))).total_seconds() > 36 * 3600: pruebas = {}
+except Exception: pruebas = {}
 bloq = [r_ for r_ in pruebas.get('resultados', []) if r_['ok'] is None]
 fallos_abrir = [r_ for r_ in pruebas.get('resultados', []) if r_['ok'] is False and r_['detalle'].startswith('No se pudo abrir')]
 if pruebas.get('resultados') and len(bloq) + len(fallos_abrir) > len(pruebas['resultados']) / 2:
