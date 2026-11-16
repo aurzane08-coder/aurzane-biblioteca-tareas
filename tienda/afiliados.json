@@ -55,6 +55,46 @@
    "nombre": "Bookshop.org (EE. UU.)",
    "donde": "libros",
    "busqueda": "https://bookshop.org/search?keywords={q}"
+  },
+  "116725": {
+   "nombre": "World Businesses for Sale",
+   "donde": "negocio",
+   "url": "https://worldbusinessesforsale.com/"
+  },
+  "55123": {
+   "nombre": "fanmuebles",
+   "donde": "muebles",
+   "url": "https://www.fanmuebles.com/"
+  },
+  "20598": {
+   "nombre": "Leroy Merlin",
+   "donde": "bricolaje",
+   "url": "https://www.leroymerlin.es/"
+  },
+  "105405": {
+   "nombre": "Decathlon",
+   "donde": "deporte",
+   "url": "https://www.decathlon.es/es/"
+  },
+  "10476": {
+   "nombre": "Viator",
+   "donde": "aventura",
+   "url": "https://www.viator.com/es-ES/"
+  },
+  "11074": {
+   "nombre": "Logitravel",
+   "donde": "viajes",
+   "url": "https://www.logitravel.com/"
+  },
+  "20219": {
+   "nombre": "SaludOnNet",
+   "donde": "consulta",
+   "url": "https://www.saludonnet.com/"
+  },
+  "114654": {
+   "nombre": "ERGO Seguros de Viaje",
+   "donde": "seguro-viaje",
+   "url": "https://www.ergo-segurosdeviaje.es/"
   }
  }
 }

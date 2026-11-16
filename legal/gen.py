@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 """Páginas de confianza de AURZANE: sobre, contacto, política editorial y condiciones de uso.
 Salida en publicar/aurzane.com/. Uso: python3 legal/gen.py"""
-import os, json
+import os, sys, json
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 R = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(R, 'publicar', 'aurzane.com')
@@ -20,8 +21,7 @@ form.c button{justify-self:start;border:0;border-radius:99px;padding:12px 22px;b
 
 def pagina(slug, titulo, desc, h1, sub, cuerpo, extra_head=''):
     ld = {'@context': 'https://schema.org', '@type': 'WebPage', 'name': titulo, 'url': f'https://aurzane.com/{slug}', 'inLanguage': 'es',
-          'publisher': {'@type': 'Organization', 'name': 'AURZANE', 'url': 'https://aurzane.com/', 'email': 'hola@aurzane.com',
-                        'founder': {'@type': 'Person', 'name': 'Adrián Mauricio Sánchez Samaniego', 'jobTitle': 'Psicólogo clínico'}}}
+          'publisher': {'@type': 'Organization', 'name': 'AURZANE', 'url': 'https://aurzane.com/', 'email': 'hola@aurzane.com'}}
     return f'''<!DOCTYPE html>
 <html lang="es">
 <head>
@@ -62,8 +62,7 @@ SOBRE = '''  <h2>Qué es AURZANE</h2>
   <p>Además, AURZANE incluye una biblioteca de libros y estudios con licencia libre o de dominio público, una tienda de libros recomendados y AURZANE OVP, un sistema de orientación vocacional en línea con informe completo.</p>
 
   <h2>Quién está detrás</h2>
-  <div class="ficha"><img src="https://aurzane.com/img/firma.png" alt="Firma de Adrián Sánchez Samaniego" width="120"><div>
-  <p><strong>Adrián Mauricio Sánchez Samaniego</strong>, psicólogo clínico (registro SENESCYT N.º 1033-2023-2618464), es el responsable de AURZANE.</p></div></div>
+  <p>AURZANE lo dirige <strong>un psicólogo clínico titulado</strong>, responsable de sus contenidos y herramientas. Los datos del titular figuran en el <a href="/aviso-legal.html">aviso legal</a>.</p>
   <p>Su trabajo se centra en la evaluación psicológica y psicopedagógica y en la orientación vocacional de estudiantes, también dentro de centros educativos. Es el autor de las herramientas de AURZANE y el responsable de sus contenidos.</p>
 
   <h2>Cómo preparamos los contenidos</h2>
@@ -85,7 +84,7 @@ CONTACTO = '''  <p>Respondemos personalmente a cada mensaje, normalmente en 2 o 
   <h2>Datos de contacto</h2>
   <ul>
     <li><strong>Correo</strong>: <a href="mailto:hola@aurzane.com">hola@aurzane.com</a></li>
-    <li><strong>Responsable</strong>: Adrián Mauricio Sánchez Samaniego, psicólogo clínico</li>
+    <li><strong>Responsable</strong>: el titular de AURZANE, psicólogo clínico (datos en el <a href="/aviso-legal.html">aviso legal</a>)</li>
     <li><strong>Dirección postal</strong>: Salamanca (España). La dirección completa figura en el <a href="/aviso-legal.html">aviso legal</a>.</li>
   </ul>
   <h2>Escríbenos</h2>
@@ -127,39 +126,22 @@ EDITORIAL = '''  <p>Esta política explica cómo se crean, revisan y corrigen lo
   <h2>Uso de inteligencia artificial</h2>
   <p>Usamos herramientas de inteligencia artificial para ayudar a redactar guías, artículos y descripciones, siempre con instrucciones estrictas: no inventar datos concretos, citar solo organismos y fuentes reales, no hacer diagnósticos y remitir a un profesional cuando corresponde. Los textos de salud siguen un guion fijo y se revisan de forma periódica; si detectamos un error, lo corregimos.</p>
   <h2>Fuentes externas</h2>
-  <p>Los libros y estudios de la biblioteca son de acceso abierto o de dominio público y muestran su licencia y su origen. Los datos de universidades proceden de registros oficiales de cada país. Las imágenes son propias o tienen licencia que permite su uso, con atribución cuando la licencia lo pide.</p>
+  <p>Los libros y estudios de la biblioteca son de acceso abierto o de dominio público y muestran su licencia y su origen. Los datos de universidades proceden de registros oficiales de cada país. Las imágenes proceden de bancos y archivos con licencia que permite su uso (como Unsplash o Wikimedia Commons), con atribución cuando la licencia lo pide.</p>
   <h2>Correcciones</h2>
   <p>Si encuentras un error, usa el botón «⚑ Reportar» de cada página o escríbenos a <a href="mailto:hola@aurzane.com">hola@aurzane.com</a>. Revisamos cada aviso y, si procede, corregimos el contenido y actualizamos su fecha.</p>
   <h2>Responsable</h2>
-  <p>El responsable de los contenidos es Adrián Mauricio Sánchez Samaniego, psicólogo clínico (registro SENESCYT N.º 1033-2023-2618464). Más información en <a href="/sobre-aurzane.html">Sobre AURZANE</a>.</p>'''
+  <p>El responsable de los contenidos es el titular de AURZANE, psicólogo clínico. Sus datos figuran en el <a href="/aviso-legal.html">aviso legal</a> y hay más información en <a href="/sobre-aurzane.html">Sobre AURZANE</a>.</p>'''
 
-CONDICIONES = '''  <p class="firma" style="border:0;margin-top:0">Última actualización: noviembre de 2026</p>
-  <h2>1. Quién ofrece este sitio</h2>
-  <p>aurzane.com y sus subdominios (mind, nexus, live, learn, build y ovp.aurzane.com) son un proyecto de divulgación de Adrián Mauricio Sánchez Samaniego, psicólogo clínico. Los datos del titular están en el <a href="/aviso-legal.html">aviso legal</a>. Contacto: <a href="mailto:hola@aurzane.com">hola@aurzane.com</a>.</p>
-  <h2>2. Uso del contenido</h2>
-  <p>Los tests, calculadoras, guías, cursos y materiales son gratuitos y orientativos. No sustituyen una evaluación, un diagnóstico ni un tratamiento profesional. Puedes usarlos para tu uso personal y compartir los enlaces. No está permitido copiar de forma masiva los contenidos propios de AURZANE ni presentarlos como propios.</p>
-  <h2>3. Cuenta de Mi AURZANE</h2>
-  <p>Para guardar resultados o usar AURZANE OVP puedes crear una cuenta gratuita. Eres responsable de mantener tu contraseña en secreto. Puedes pedir el cierre de tu cuenta y el borrado de tus datos en cualquier momento escribiendo a hola@aurzane.com.</p>
-  <h2>4. Orientación vocacional (OVP)</h2>
-  <p>Las evaluaciones y el informe de AURZANE OVP son una herramienta de orientación. Las decisiones sobre estudios y carrera corresponden a cada persona y, en el caso de menores, a su familia. Los datos de las evaluaciones se tratan según la <a href="/privacidad.html">política de privacidad</a>.</p>
-  <h2>5. Biblioteca y tienda</h2>
-  <p>Los libros de la biblioteca mantienen la licencia indicada en cada ficha. La tienda de libros no vende ni envía productos: enlaza a tiendas externas, que gestionan el pedido, el pago, el envío y las devoluciones con sus propias condiciones. Algunos de esos enlaces son de afiliado.</p>
-  <h2>6. Redes sociales y YouTube</h2>
-  <p>Publicamos contenido propio en nuestras redes sociales, incluido nuestro canal de YouTube, mediante la herramienta interna AURZANE Publica, que usa los Servicios de API de YouTube. Al ver ese contenido en YouTube aceptas las <a href="https://www.youtube.com/t/terms" target="_blank" rel="noopener">Condiciones del Servicio de YouTube</a> y se aplica la <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de Privacidad de Google</a>.</p>
-  <h2>7. Comportamiento</h2>
-  <p>No está permitido usar el sitio para fines ilícitos, intentar acceder a datos de otras personas, enviar contenido ofensivo por los formularios ni sobrecargar los servicios de forma automatizada.</p>
-  <h2>8. Responsabilidad</h2>
-  <p>Cuidamos que la información sea correcta y cite sus fuentes, pero puede contener errores o quedar desactualizada. AURZANE no se hace responsable de las decisiones que se tomen solo a partir de sus contenidos ni del contenido de las webs externas a las que enlaza.</p>
-  <h2>9. Cambios</h2>
-  <p>Podemos actualizar estas condiciones. La fecha de la última actualización figura al inicio de esta página.</p>
-  <h2>10. Ley aplicable</h2>
-  <p>Estas condiciones se rigen por la legislación española. Para cualquier controversia, y salvo que la normativa de consumidores disponga otra cosa, serán competentes los juzgados y tribunales de Salamanca (España).</p>'''
+from textos import CONDICIONES, PRIVACIDAD, COOKIES, AVISO  # textos legales (legal/textos.py)
 
 os.makedirs(OUT, exist_ok=True)
 for slug, t, d, h1, sub, c in [
     ('sobre-aurzane.html', 'Sobre AURZANE: quiénes somos y cómo trabajamos', 'Quién está detrás de AURZANE, cómo preparamos los contenidos de psicología, bienestar y orientación vocacional, cómo se financia el proyecto y cómo contactar.', 'Sobre AURZANE', 'Psicología, bienestar y aprendizaje explicados con rigor y de forma gratuita.', SOBRE),
     ('contacto.html', 'Contacto | AURZANE', 'Escribe a AURZANE: dudas, errores en un contenido, privacidad, retirada de contenidos, colegios y colaboraciones. Respondemos en 2 o 3 días laborables.', 'Contacto', 'Escríbenos: respondemos personalmente a cada mensaje.', CONTACTO),
     ('politica-editorial.html', 'Política editorial de AURZANE', 'Cómo se crean, revisan y corrigen los contenidos de AURZANE: fuentes, tests validados, uso de inteligencia artificial, independencia y correcciones.', 'Política editorial', 'Cómo creamos, revisamos y corregimos nuestros contenidos.', EDITORIAL),
-    ('condiciones.html', 'Condiciones de uso · AURZANE', 'Condiciones de uso de aurzane.com y sus subdominios: contenido orientativo, cuenta de Mi AURZANE, orientación vocacional, biblioteca, tienda y responsabilidad.', 'Condiciones de uso', 'Las reglas para usar AURZANE.', CONDICIONES)]:
+    ('condiciones.html', 'Condiciones de uso · AURZANE', 'Condiciones de uso de aurzane.com y sus subdominios: contenido orientativo, cuenta AURZANE ID, Guardados, cursos y certificados, orientación vocacional, colegios, biblioteca, enlaces de afiliado y responsabilidad.', 'Condiciones de uso', 'Las reglas para usar AURZANE y sus servicios.', CONDICIONES),
+    ('privacidad.html', 'Política de privacidad · AURZANE', 'Qué datos trata AURZANE, para qué, con qué base legal, quién accede (incluidos los colegios), cuánto tiempo se conservan y cómo ejercer tus derechos.', 'Política de privacidad', 'Qué datos tratamos, para qué y cómo los protegemos.', PRIVACIDAD),
+    ('cookies.html', 'Política de cookies · AURZANE', 'Cookies y almacenamiento del navegador que usa AURZANE: sesión, preferencias, Guardados, lectura, cursos, publicidad y enlaces de afiliado.', 'Política de cookies', 'Qué guardamos en tu navegador y cómo decidir sobre ello.', COOKIES),
+    ('aviso-legal.html', 'Aviso legal · AURZANE', 'Titular de aurzane.com y sus subdominios, finalidad, propiedad intelectual, retirada de contenidos, enlaces de afiliado y responsabilidad.', 'Aviso legal', 'Información sobre el titular de este sitio web.', AVISO)]:
     open(os.path.join(OUT, slug), 'w', encoding='utf-8').write(pagina(slug, t, d, h1, sub, c))
 print('ok')

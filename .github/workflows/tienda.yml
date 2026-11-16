@@ -4,7 +4,7 @@ on:
   schedule:
     - cron: '41 5 * * *'   # cada día: la tienda crece poco a poco
   push:
-    paths: ['tienda/semilla.json', 'tienda/tienda.py', 'tienda/plantilla.html', '.github/workflows/tienda.yml']
+    paths: ['tienda/semilla.json', 'tienda/afiliados.json', 'tienda/tienda.py', 'tienda/plantilla.html', '.github/workflows/tienda.yml']
   workflow_dispatch:
 permissions:
   contents: write
