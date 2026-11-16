@@ -496,3 +496,5 @@
 2026-11-16,3,instagram,frase-4e4f2741,ok,17997707883104655
 2026-11-16,3,facebook,frase-2071b9c0,ok,2379355222837287
 2026-11-16,3,pinterest,frase-e9c6ecf2,feed,
+2026-11-16,7,tiktok,cur-5b579f7f14,error,403 {"error":{"code":"unaudited_client_can_only_post_to_private_accounts" "message":"Please review our integration guidelines at https://developers.ti
+2026-11-16,8,tiktok,cur-df87f5f0c3,error,403 {"error":{"code":"unaudited_client_can_only_post_to_private_accounts" "message":"Please review our integration guidelines at https://developers.ti
