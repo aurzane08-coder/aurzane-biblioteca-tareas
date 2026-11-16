@@ -1,0 +1,56 @@
+name: Copia semanal de la base de datos
+# Supabase gratis no hace copias. Cada domingo exporta todas las tablas públicas (API REST con la clave de servicio)
+# y guarda el archivo comprimido en el servidor, FUERA de public_html (~/copias-supabase/). Nunca se sube al repositorio
+# (es público y la base tiene datos personales). Se guardan las 8 últimas; las más antiguas pasan a ~/copias-supabase/eliminar/.
+# Sin el secreto SUPABASE_SERVICE_KEY no hace nada y lo avisa.
+on:
+  schedule:
+    - cron: '37 2 * * 0'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  copia:
+    runs-on: ubuntu-latest
+    env:
+      SB_URL: https://chtfpqwrrarfdjcivlad.supabase.co
+      SB_SRV: ${{ secrets.SUPABASE_SERVICE_KEY }}
+      SG_KEY: ${{ secrets.SG_KEY }}
+      SG_HOST: ${{ secrets.SG_HOST }}
+      SG_USER: ${{ secrets.SG_USER }}
+      SG_PORT: ${{ secrets.SG_PORT }}
+      SG_PASS: ${{ secrets.SG_PASS }}
+    steps:
+      - name: Exportar tablas
+        run: |
+          if [ -z "$SB_SRV" ]; then echo "::warning title=Copia de la base::Falta el secreto SUPABASE_SERVICE_KEY; no se hizo la copia"; echo SIN=1 >> $GITHUB_ENV; exit 0; fi
+          python3 - <<'P'
+          import json, os, urllib.request, tarfile, datetime
+          U, K = os.environ['SB_URL'], os.environ['SB_SRV']; cab = {'apikey': K, 'Authorization': 'Bearer ' + K}
+          def get(u, extra={}):
+              r = urllib.request.urlopen(urllib.request.Request(u, headers=dict(cab, **extra)), timeout=120); return r.read()
+          esquema = json.loads(get(U + '/rest/v1/', {'Accept': 'application/openapi+json'}))
+          tablas = sorted(k for k in esquema.get('definitions', {}))
+          os.makedirs('copia', exist_ok=True); total = 0
+          for t in tablas:
+              filas, ini = [], 0
+              while True:
+                  try: lote = json.loads(get(f'{U}/rest/v1/{t}?select=*', {'Range': f'{ini}-{ini + 999}'}))
+                  except Exception as e: print('no se pudo leer', t, e); break
+                  filas += lote; ini += 1000
+                  if len(lote) < 1000: break
+              json.dump(filas, open(f'copia/{t}.json', 'w'), ensure_ascii=False); total += len(filas)
+          nombre = 'supabase-' + datetime.date.today().isoformat() + '.tar.gz'
+          with tarfile.open(nombre, 'w:gz') as z: z.add('copia', arcname='copia')
+          open(os.environ['GITHUB_ENV'], 'a').write('ARCH=' + nombre + '\n')
+          print('tablas', len(tablas), 'filas', total)
+          P
+      - name: Guardar en el servidor
+        if: env.SIN != '1'
+        run: |
+          mkdir -p ~/.ssh && printf '%s\n' "$SG_KEY" | tr -d '\r' > ~/.ssh/id && chmod 600 ~/.ssh/id
+          if [ -n "$SG_PASS" ]; then ssh-keygen -p -P "$SG_PASS" -N "" -f ~/.ssh/id >/dev/null; fi
+          S="ssh -i $HOME/.ssh/id -p ${SG_PORT:-18765} -o StrictHostKeyChecking=accept-new"
+          $S "$SG_USER@$SG_HOST" 'mkdir -p ~/copias-supabase/eliminar && chmod 700 ~/copias-supabase'
+          scp -i ~/.ssh/id -P ${SG_PORT:-18765} "$ARCH" "$SG_USER@$SG_HOST:copias-supabase/"
+          $S "$SG_USER@$SG_HOST" 'cd ~/copias-supabase && ls -1t supabase-*.tar.gz | tail -n +9 | xargs -r -I{} mv {} eliminar/ ; ls -la'
