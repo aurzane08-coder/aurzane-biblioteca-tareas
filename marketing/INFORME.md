@@ -4,11 +4,11 @@ Actualizado: 2026-11-16. Clics de personas (sin bots ni vistas previas) que entr
 
 | Red | Publicaciones | Clics |
 |---|---|---|
-| telegram | 62 | 4 |
-| bluesky | 42 | 219 |
-| mastodon | 42 | 125 |
-| instagram | 39 | 0 |
-| facebook | 39 | 107 |
+| telegram | 64 | 4 |
+| bluesky | 43 | 223 |
+| mastodon | 43 | 129 |
+| instagram | 41 | 0 |
+| facebook | 41 | 114 |
 | threads | 0 | 0 |
 | pinterest | 28 | 0 |
 
@@ -17,12 +17,12 @@ Actualizado: 2026-11-16. Clics de personas (sin bots ni vistas previas) que entr
 | Producto | Clics |
 |---|---|
 | test-tdah | 15 |
+| test-ansiedad | 15 |
 | calc-sueldo | 12 |
 | calc-hipoteca | 12 |
 | test-sueno | 11 |
 | curso-neuro | 10 |
 | test-habitos | 10 |
-| test-ansiedad | 10 |
 | nc-ingenieria-en-tecnologias-industriales | 9 |
 | crea-l05-08 | 9 |
 | frase-fe3fa4a3 | 9 |
