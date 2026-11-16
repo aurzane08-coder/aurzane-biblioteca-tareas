@@ -5,6 +5,9 @@ on:
   schedule:
     - cron: '43 4 * * *'
   workflow_dispatch:
+  workflow_run:   # tras cada despliegue, para que las páginas nuevas entren el mismo día
+    workflows: ['Desplegar archivos a SiteGround']
+    types: [completed]
 jobs:
   p:
     runs-on: ubuntu-latest

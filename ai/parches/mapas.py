@@ -9,7 +9,7 @@ BASE = os.path.expanduser('~/' + (sys.argv[1] if len(sys.argv) > 1 else 'www'))
 HOSTS = ['aurzane.com', 'mind.aurzane.com', 'nexus.aurzane.com', 'live.aurzane.com', 'learn.aurzane.com', 'build.aurzane.com', 'ovp.aurzane.com']
 FUERA_DIR = {'eliminar', 'wp-admin', 'wp-content', 'wp-includes', 'node_modules', '.well-known', 'marketing', 'privado-ai', 'ai', 'panel',
              'tiktok', 'youtube', 'ir', 'core', 'mi', 'img', 'boletin'}
-FUERA_ARCH = re.compile(r'^(404|admin.*|google[0-9a-f]+|guardados-almacen|mi-aurzane|portal|generar-informe|colegio|.*-cliente|informe-ejemplo|leer)\.html$')
+FUERA_ARCH = re.compile(r'^(404|admin.*|google[0-9a-f]+|guardados-almacen|mi-aurzane|portal|generar-informe|colegio|.*-cliente|informe-ejemplo|leer|articulo)\.html$')
 OTROS = {'aurzane.com': ['biblioteca/recientes/sitemap.xml']}
 
 for h in HOSTS:
@@ -18,7 +18,8 @@ for h in HOSTS:
     urls = {}
     for dp, dn, fn in os.walk(raiz):
         rel = os.path.relpath(dp, raiz)
-        dn[:] = sorted(d for d in dn if d not in FUERA_DIR and not d.startswith('carga-') and not d.startswith('.'))
+        dn[:] = sorted(d for d in dn if d not in FUERA_DIR and not d.startswith('carga-') and not d.startswith('.')
+                       and not (h == 'nexus.aurzane.com' and rel == '.' and d == 'universidades'))   # ya van en sitemap-universidades.xml
         for f in fn:
             if not f.endswith('.html') or FUERA_ARCH.match(f): continue
             p = os.path.join(dp, f)

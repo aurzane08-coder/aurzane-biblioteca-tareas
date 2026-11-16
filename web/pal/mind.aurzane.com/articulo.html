@@ -4,7 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://aurzane.com/aurzane-paleta.js"></script>
-<title id="pageTitle">Artículo — AURZANE</title>
+<title id="pageTitle">Artículo | AURZANE</title>
+<script>if(!/[?&]slug=/.test(location.search)){var m=document.createElement('meta');m.name='robots';m.content='noindex, follow';document.head.appendChild(m);}</script>
 <meta name="description" id="pageDesc" content="">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;1,6..96,400&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -50,7 +51,7 @@
 </div>
 
 <main id="articleView" hidden>
-  <img class="portada" id="artImg" hidden>
+  <img class="portada" id="artImg" alt="" hidden>
   <h1 id="artTitulo"></h1>
   <div class="meta" id="artMeta"></div>
   <p class="resumen" id="artResumen" hidden></p>
@@ -99,7 +100,7 @@
     document.getElementById('breadcrumbBox').innerHTML =
       `<a href="https://aurzane.com">AURZANE</a><span class="sep">/</span><a href="${mundo.home}">${mundo.nombre}</a>`;
 
-    document.title = (data.seo_titulo || data.titulo) + ' — AURZANE ' + mundo.nombre;
+    document.title = (data.seo_titulo || data.titulo) + ' | AURZANE ' + mundo.nombre;
     document.getElementById('pageDesc').setAttribute('content', data.seo_descripcion || data.resumen || '');
 
     if(data.imagen_portada_url){
