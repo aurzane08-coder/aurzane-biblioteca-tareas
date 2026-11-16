@@ -41,7 +41,7 @@ const ok = (n, c, det = '') => (c ? bien : fallos).push(n + (det ? ' · ' + det 
         await p.evaluate(() => { const r = document.getElementById('resultado'); window.scrollTo(0, r.getBoundingClientRect().bottom + window.scrollY + 400); });
         await p.waitForTimeout(600);
         const vis = await p.evaluate(() => document.getElementById('movilBarra').classList.contains('ver'));
-        if (vis) { await p.click('#movilBarra button, #movilBarra a, #movilBarra', { force: true }).catch(() => {}); await p.waitForTimeout(1200); }
+        if (vis) { await p.click('#movilBarra a[href="#resultado"]', { force: true }).catch(() => {}); await p.waitForTimeout(2500); }
         const enRes = await p.evaluate(() => { const r = document.getElementById('resultado').getBoundingClientRect(); return r.top < innerHeight && r.bottom > 0; });
         ok('Test: botón «Ver resultado» lleva al resultado', enRes);
       }
