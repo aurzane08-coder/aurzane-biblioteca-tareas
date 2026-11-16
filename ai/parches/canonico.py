@@ -79,3 +79,16 @@ for ruta in OG:
     s = open(f, encoding='utf-8').read()
     t = re.sub(r'(<meta (?:property="og:image"|name="twitter:image") content=")https://' + re.escape(web) + r'/[a-z0-9-]+/og\.jpg(")', lambda m: m.group(1) + f'https://{web}/{carpeta}/og.jpg' + m.group(2), s)
     if t != s: open(f, 'w', encoding='utf-8').write(t); print('og:image propia en', ruta)
+
+# Tipos generales de ITP/AJD de 2026 revisados (auditoría 16/11/2026): Cantabria 9 %, Comunitat Valenciana 9 % (desde el 1/6/2026) y AJD 1,4 %,
+# Galicia 8 % y Región de Murcia 7,75 %. Se corrigen en la calculadora de hipoteca y en la de gastos de compra, que comparten la tabla.
+ITP = [("['Cantabria',10,1.5,10]", "['Cantabria',9,1.5,10]"), ("['Comunidad Valenciana',10,1.5,10]", "['Comunidad Valenciana',9,1.4,10]"),
+       ("['Galicia',10,1.5,10]", "['Galicia',8,1.5,10]"), ("['Región de Murcia',8,1.5,10]", "['Región de Murcia',7.75,1.5,10]")]
+for carpeta in ('calculadora-hipoteca', 'calculadora-gastos-compra-vivienda'):
+    f = os.path.join(base, 'build.aurzane.com', 'public_html', carpeta, 'index.html')
+    if not os.path.exists(f): continue
+    s = open(f, encoding='utf-8').read(); t = s
+    for a, b in ITP: t = t.replace(a, b)
+    if t != s:
+        c = os.path.join(base, 'build.aurzane.com', 'eliminar', 'canonico-' + hoy); os.makedirs(c, exist_ok=True); shutil.copy2(f, os.path.join(c, carpeta + '.html'))
+        open(f, 'w', encoding='utf-8').write(t); print('tipos de ITP de 2026 en', carpeta)
