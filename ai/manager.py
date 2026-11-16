@@ -338,6 +338,14 @@ for p in pend:
         if d == 'aprobar': curios_ok.insert(0, dict(p, fecha=HOY)); nuevas_curios += 1
         continue
     if p['tipo'] == 'articulo':   # al aprobarlo, el propio admin lo guarda en Contenido (tabla articulos) con tu sesión
+        _ya = [x for x in leer('articulos_ai.json', []) if x.get('id') == p['id']]
+        if _ya:   # artículo de salud ya escrito que esperaba tu revisión (auditoría 16/11/2026)
+            _todos = leer('articulos_ai.json', [])
+            for x in _todos:
+                if x.get('id') == p['id']: x['revision'] = 'aprobada' if d == 'aprobar' else 'descartado'
+            guardar('articulos_ai.json', _todos)
+            acciones.append(('Revisaste y publicaste «' if d == 'aprobar' else 'Descartaste «') + p['titulo'][:80] + ('»: ya sale en Google con tu firma.' if d == 'aprobar' else '»: se queda fuera de Google y de las listas.'))
+            continue
         if d == 'aprobar': art_hechos = leer('articulos_ai.json', []); art_hechos.insert(0, {'id': p['id'], 'slug': p['slug'], 'mundo': p['mundo'], 'titulo': p['titulo'], 'fuente_id': p.get('fuente_id'), 'fecha': HOY, 'via': 'admin'}); guardar('articulos_ai.json', art_hechos[:2000])
         continue
     if p['tipo'] == 'cita':
@@ -936,6 +944,10 @@ try:
 except Exception as e: print('::notice title=AI::páginas de artículos', str(e)[:150])
 pend.sort(key=puntos, reverse=True)
 pend = [x for x in pend if x['tipo'] != 'articulo']
+# artículos de salud escritos por la IA que esperan tu revisión: van a la Cola del admin («Publicar en Contenido» o «Descartar»)
+pend = [dict(id=a['id'], tipo='articulo', titulo=a['titulo'], resumen=a.get('resumen', ''), cuerpo=a.get('cuerpo', ''), slug=a['slug'], mundo=a['mundo'], categoria=a.get('categoria', ''),
+             motivo='Artículo de salud escrito por la IA: revísalo. Hasta que lo publiques no sale en Google ni en las listas.')
+        for a in art_hechos if a.get('cuerpo') and a.get('mundo') in MUNDOS_REVISION and a.get('revision') not in ('aprobada', 'descartado') and a['id'] not in vistos][:20] + pend
 _esp = [x for x in pend if x['tipo'] in ('cita', 'curiosidad')][:40]; pend = _esp + [x for x in pend if x['tipo'] not in ('cita', 'curiosidad')][:90 - len(_esp)]
 print('::notice title=AI::Cola ' + str(len(pend)) + ' propuestas: ' + ', '.join(f'{k} {v}' for k, v in collections.Counter(x['tipo'] for x in pend).items()) + ' · ' + str(nuevos_auto) + ' descartadas solas')
 json.dump(pend, open(OUT + '/propuestas.json', 'w', encoding='utf-8'), ensure_ascii=False)
