@@ -120,10 +120,19 @@ def fondo(p):
         q0 = VQ.get(p['id']) or (NATURALEZA[int(hashlib.md5(p['id'].encode()).hexdigest(), 16) % len(NATURALEZA)] if p['tipo'] in ('frase', 'curiosidad') else 'calm nature')
         u = pixabay(q0, p['id'])
         if u: return u
+    # Fondo variado: se evita repetir cualquiera de los últimos 60 fondos usados (marketing/fondos_usados.json).
+    # Primero el ambiente propio del producto; si ya se usaron todos, cualquier otro ambiente de la biblioteca.
     lib = mk.leer('biblioteca_videos.json', {})
-    q = VQ.get(p['id']) or (NATURALEZA[int(hashlib.md5(p['id'].encode()).hexdigest(), 16) % len(NATURALEZA)] if p['tipo'] in ('frase', 'curiosidad') else 'calm nature')
-    lista = lib.get(q) or lib['calm nature']
-    return lista[int(hashlib.md5((p['id'] + 'v').encode()).hexdigest(), 16) % len(lista)]
+    usados = mk.leer('fondos_usados.json', [])
+    h = int(hashlib.md5((p['id'] + 'v' + datetime.date.today().isoformat()).encode()).hexdigest(), 16)
+    q = VQ.get(p['id']) or NATURALEZA[h % len(NATURALEZA)]
+    todos = [u for k in sorted(lib) for u in lib[k]]
+    propios = [u for u in (lib.get(q) or []) if u not in usados]
+    resto = [u for u in todos if u not in usados] or todos
+    lista = propios or resto
+    u = lista[h % len(lista)]
+    mk.guardar('fondos_usados.json', (usados + [u])[-60:])
+    return u
 
 
 def pixabay(q, semilla):
