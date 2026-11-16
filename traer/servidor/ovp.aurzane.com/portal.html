@@ -539,6 +539,131 @@ img{max-width:100%;display:block;}
   .step-lbl{max-width:70px;font-size:0.62rem;}
   .step-dot{width:22px;height:22px;}
 }
+/* ===== Panel v3 (15/11/2026): inicio visual, menos menús repetidos, «Dónde estudiar» ===== */
+.mobile-nav-sheet,.topbar-mobile{display:none!important}
+.main-inner{position:relative;padding-top:60px}
+.topbar-actions{display:flex!important;position:absolute;top:12px;right:48px;margin:0!important;z-index:5}
+.sidebar{height:auto;max-height:100vh;top:72px;padding-top:18px}
+.sidebar-eco{margin-top:auto}
+.sidebar .nav-item{font-size:.92rem}
+
+.ov-hero{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:28px;align-items:center;
+  background:radial-gradient(120% 140% at 100% 0%,rgba(201,162,75,.13),transparent 55%),linear-gradient(160deg,var(--navy-3),var(--navy-2));
+  border:1px solid var(--line-gold);border-radius:20px;padding:34px 36px;margin-bottom:34px}
+.ov-hola{font-family:'Bodoni Moda',serif;font-style:italic;color:var(--gold-light);font-size:1.05rem;margin-bottom:6px}
+.ov-titulo{font-size:clamp(1.6rem,3vw,2.2rem);margin-bottom:10px}
+.ov-texto{color:var(--ink-2);max-width:58ch;font-size:.97rem}
+.ov-hero .nc-actions{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}
+.ov-hero .btn{padding:13px 22px;font-size:.92rem}
+.ov-anillo{text-align:center;min-width:160px}
+.ov-anillo[hidden]{display:none}
+.ov-anillo svg{display:block;margin:0 auto}
+.ov-anillo-n{font:600 26px 'Bodoni Moda',serif;fill:var(--ink)}
+.ov-anillo-l{font:500 10.5px 'Instrument Sans',sans-serif;fill:var(--ink-3);letter-spacing:.02em}
+.ov-anillo p{font-size:.84rem;color:var(--ink-2);margin-top:6px}
+.ov-anillo b{color:var(--gold-light);font-weight:600}
+
+.ov-sec{margin-bottom:38px}
+.ov-sec-head{display:flex;justify-content:space-between;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:14px}
+.ov-sec-t{font-size:1.18rem;margin-bottom:14px}
+.ov-sec-head .ov-sec-t{margin-bottom:0}
+.ov-link{background:none;border:0;color:var(--gold-light);font-size:.88rem;font-weight:600;padding:6px 2px;text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(234,207,146,.4)}
+.ov-link:hover{text-decoration-color:currentColor}
+
+#page-resumen .step-flow{background:var(--navy-2);border:1px solid var(--line);border-radius:var(--r-lg);padding:22px 18px;margin:0}
+.step-item[role="link"]{cursor:pointer}
+.step-item[role="link"]:hover .step-lbl{color:var(--gold-light)}
+
+.ov-ico{--c:#C9A24B;width:42px;height:42px;border-radius:12px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;
+  color:var(--c);background:color-mix(in srgb,var(--c) 16%,transparent);border:1px solid color-mix(in srgb,var(--c) 38%,transparent)}
+.ov-mosaico{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:14px}
+.ov-tile{position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:6px;text-align:left;
+  background:var(--navy-2);border:1px solid var(--line);border-radius:16px;padding:18px 16px 16px;color:var(--ink);font:inherit;
+  transition:border-color var(--dur) var(--ease),transform var(--dur) var(--ease)}
+.ov-tile:hover{border-color:var(--line-gold);transform:translateY(-2px)}
+.ov-tile .ov-ico{margin-bottom:6px}
+.ov-tile-n{font-family:'Bodoni Moda',serif;font-size:1.08rem;line-height:1.2}
+.ov-tile-m{font-size:.8rem;color:var(--ink-3)}
+.ov-est{position:absolute;top:16px;right:14px;font-size:.72rem;font-weight:600;padding:3px 9px;border-radius:99px;color:var(--ink-3);border:1px solid var(--line-2)}
+.ov-est.ok{color:var(--ok);border-color:var(--ok-line);background:var(--ok-bg)}
+.ov-est.mid{color:var(--gold-light);border-color:var(--warn-line);background:var(--warn-bg)}
+.ov-tile.sig{border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,162,75,.14)}
+.ov-tile.sig::after{content:'Siguiente';position:absolute;bottom:14px;right:14px;font-size:.72rem;font-weight:700;color:var(--gold-light)}
+.ov-tile.hecha .ov-tile-n{color:var(--ink-2)}
+.ov-add{border-style:dashed;justify-content:center;background:transparent}
+.ov-plus{width:42px;height:42px;border-radius:12px;border:1px dashed var(--line-2);display:inline-flex;align-items:center;justify-content:center;font-size:1.4rem;color:var(--gold-light);margin-bottom:6px}
+
+.ov-areas-mini{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+.ov-area-mini,.ov-area{background:var(--navy-2);border:1px solid var(--line);border-radius:16px;padding:18px 18px 16px}
+.ov-area-mini b{display:block;font-family:'Bodoni Moda',serif;font-weight:500;font-size:1.12rem;margin:2px 0 12px}
+.ov-tipo{font-size:.76rem;font-weight:600;color:var(--gold-light)}
+.ov-chips{display:flex;flex-wrap:wrap;gap:8px}
+.ov-chip{display:inline-flex;align-items:center;gap:6px;min-height:34px;padding:6px 13px;border-radius:99px;font-size:.86rem;text-decoration:none;
+  color:var(--ink);background:var(--navy-3);border:1px solid var(--line-2);transition:border-color var(--dur),color var(--dur)}
+.ov-chip::after{content:'';width:7px;height:7px;border-top:1.5px solid currentColor;border-right:1.5px solid currentColor;transform:rotate(45deg);opacity:.55;margin-left:2px}
+.ov-chip:hover{border-color:var(--gold-light);color:var(--gold-light)}
+.ov-area{margin-bottom:16px;padding:24px}
+.ov-area.principal{border-color:var(--line-gold);background:linear-gradient(160deg,var(--navy-3),var(--navy-2))}
+.ov-area h3{font-size:1.45rem;margin:4px 0 6px}
+.ov-area p{color:var(--ink-3);font-size:.88rem;margin-bottom:16px}
+.ov-vacio{display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap;background:var(--navy-2);border:1px dashed var(--line-2);border-radius:16px;padding:20px 22px}
+.ov-vacio h4{font-size:1.05rem;margin-bottom:4px}
+.ov-vacio p{color:var(--ink-3);font-size:.88rem;max-width:56ch}
+.ov-cargando{color:var(--ink-3);font-size:.9rem;padding:8px 0}
+
+.ov-nota{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;background:var(--navy-2);border:1px solid var(--line);border-radius:16px;padding:16px 20px;margin-bottom:20px}
+.ov-nota label{font-weight:600;font-size:.92rem}
+.ov-nota small{font-weight:400;color:var(--ink-3)}
+.ov-nota span{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.ov-nota input{width:120px;background:var(--navy-3);border:1px solid var(--line-2);border-radius:10px;padding:10px 12px;font:600 1rem 'Instrument Sans',sans-serif;color:var(--ink)}
+.ov-nota a{color:var(--gold-light);font-size:.86rem}
+.ov-herr{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.ov-h{display:block;text-decoration:none;background:var(--navy-2);border:1px solid var(--line);border-radius:14px;padding:16px 18px;transition:border-color var(--dur)}
+.ov-h:hover{border-color:var(--line-gold)}
+.ov-h b{display:block;font-family:'Bodoni Moda',serif;font-weight:500;font-size:1.02rem;margin-bottom:4px;color:var(--ink)}
+.ov-h span{font-size:.84rem;color:var(--ink-3)}
+.ov-pie{font-size:.78rem;color:var(--ink-3);margin-top:18px}
+
+.ov-banda{display:flex;gap:18px;align-items:center;justify-content:space-between;flex-wrap:wrap;border-top:1px solid var(--line-gold);
+  background:linear-gradient(160deg,var(--navy-3),var(--navy-2));padding:24px 28px}
+.ov-banda[hidden]{display:none}
+.ov-banda h4{font-size:1.2rem;margin-bottom:4px}
+.ov-banda p{color:var(--ink-2);font-size:.9rem;max-width:56ch}
+
+.tc-top{align-items:center;gap:12px}
+.tc-top h3{flex:1}
+#panelElegir{margin-top:30px}
+
+@media(max-width:900px){
+  .sidebar{display:block!important;position:sticky;top:0;width:auto;height:auto;max-height:none;padding:8px 10px;border-right:0;border-bottom:1px solid var(--line);z-index:30;background:rgba(15,21,48,.97)}
+  .sidebar .nav-items{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding:0}
+  .sidebar .nav-items::-webkit-scrollbar{display:none}
+  .sidebar .nav-item{flex:0 0 auto;padding:9px 12px;font-size:.86rem;gap:7px;white-space:nowrap}
+  .sidebar .nav-item svg{width:15px;height:15px}
+  .sidebar-eco,.sidebar-footer{display:none}
+  .main-inner{padding-top:58px}
+  .topbar-actions{right:18px}
+  .step-item{min-width:0}
+  .step-lbl{max-width:64px;font-size:.6rem}
+  #page-resumen .step-flow{padding:18px 8px}
+  .ov-hero{grid-template-columns:1fr;padding:24px 20px;gap:18px}
+  .ov-anillo{display:flex;align-items:center;gap:14px;text-align:left;min-width:0;order:-1}
+  .ov-anillo svg{width:84px;height:84px;margin:0}
+  .ov-hero .btn{flex:1 1 auto}
+  .ov-mosaico{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .ov-tile{padding:14px 12px 12px}
+  .ov-est{position:static;margin-top:4px}
+  .ov-tile.sig::after{display:none}
+  .ov-area{padding:18px}
+  .ov-banda{padding:20px}
+}
+@media(max-width:360px){.ov-mosaico{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.ov-tile,.ov-tile:hover{transition:none;transform:none}}
+.ov-col p{color:var(--ink-2);font-size:.92rem;margin-bottom:14px}
+.ov-sw{display:flex;gap:10px;align-items:center;cursor:pointer;font-weight:600}
+.ov-sw input{width:20px;height:20px;accent-color:var(--gold)}
+#ovComparteMsg{display:block;margin-top:8px;color:var(--ink-3)}
+
 </style>
 <!-- Estilos del informe integrado: compartidos con generar-informe.html (ver informe-shared.css) -->
 <link rel="stylesheet" href="informe-shared.css">
@@ -629,47 +754,30 @@ img{max-width:100%;display:block;}
   </div>
 
   <div class="sidebar">
-    <div class="sidebar-brand">
-      <a href="portal.html">AUR<span>Z</span>ANE</a>
-      <span class="tag">Mi Proceso OVP</span>
-    </div>
-    <div class="nav-items" id="navItems">
-      <div class="nav-item active" data-page="resumen">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg>
-        <span class="nav-label">Resumen</span>
+    <div class="nav-items" id="navItems" role="navigation" aria-label="Secciones de tu proceso">
+      <div class="nav-item active" data-page="resumen" role="link" tabindex="0">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg>
+        <span class="nav-label">Inicio</span>
       </div>
-      <div class="nav-item" data-page="tests">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
-        <span class="nav-label">Mis Evaluaciones</span>
+      <div class="nav-item" data-page="tests" role="link" tabindex="0">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+        <span class="nav-label">Evaluaciones</span>
         <span class="nav-badge" id="navTestsBadge" style="display:none;"></span>
       </div>
-      <div class="nav-item" data-page="plan">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 15h4"/></svg>
-        <span class="nav-label">Mi Proceso</span>
+      <div class="nav-item" data-page="informe" role="link" tabindex="0">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h6"/></svg>
+        <span class="nav-label">Mi informe</span>
       </div>
-      <div class="nav-item" data-page="informe">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h6"/></svg>
-        <span class="nav-label">Mi Informe</span>
+      <div class="nav-item" data-page="estudiar" role="link" tabindex="0">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1.66 2.69 3 6 3s6-1.34 6-3v-5"/></svg>
+        <span class="nav-label">Dónde estudiar</span>
       </div>
-      <a class="nav-item" href="https://nexus.aurzane.com/universidades/" target="_blank" rel="noopener" style="text-decoration:none;">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1.66 2.69 3 6 3s6-1.34 6-3v-5"/></svg>
-        <span class="nav-label">Universidades ↗</span>
-      </a>
-      <div class="nav-item" data-page="cuenta">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-        <span class="nav-label">Mi Cuenta</span>
+      <div class="nav-item" data-page="cuenta" role="link" tabindex="0">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+        <span class="nav-label">Mi cuenta</span>
       </div>
     </div>
     <div class="sidebar-eco">
-      <div class="sidebar-eco-label">Ecosistema AURZANE</div>
-      <a class="nav-item" href="https://aurzane.com/mi-aurzane.html" style="text-decoration:none;">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-        <span class="nav-label">Mi AURZANE ↗</span>
-      </a>
-      <a class="nav-item" href="https://mind.aurzane.com/" style="text-decoration:none;">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2a7 7 0 00-4 12.7V17h8v-2.3A7 7 0 0012 2z"/><path d="M9 21h6"/></svg>
-        <span class="nav-label">MIND ↗</span>
-      </a>
       <div class="sidebar-paleta">
         <div class="sidebar-eco-label" style="padding:0 0 8px;">Paleta de acento</div>
         <div class="paleta-swatches" id="paletaSwatchesShell"></div>
@@ -694,41 +802,41 @@ img{max-width:100%;display:block;}
         </div>
       </div>
 
-      <nav class="aur-breadcrumb" aria-label="Ruta de navegación">
-        <a href="https://aurzane.com/">AURZANE</a><span class="bc-sep">/</span>
-        <a href="https://aurzane.com/mi-aurzane.html">Mi AURZANE</a><span class="bc-sep">/</span>
-        <span>OVP</span><span class="bc-sep">/</span>
-        <span class="bc-cur" id="bcCurrent">Resumen</span>
-      </nav>
 
       <!-- RESUMEN -->
       <div class="page active" id="page-resumen">
-        <div class="page-head"><div><h2>Hola, <span id="clienteNombre"></span>.</h2><p class="hi-line">Este es tu recorrido de orientación vocacional.</p></div></div>
-        <div class="step-flow" id="stepFlow"></div>
-        <div id="nextStepWrap"></div>
-        <div class="panel">
-          <div class="panel-head"><h3>Tu proceso</h3></div>
-          <div class="panel-body"><div class="evals-progress-list" id="evalsProgressList"></div></div>
-        </div>
+        <section class="ov-hero" aria-labelledby="ovHola">
+          <div class="ov-hero-txt">
+            <p class="ov-hola" id="ovHola">Hola, <span id="clienteNombre"></span></p>
+            <div id="nextStepWrap"></div>
+          </div>
+          <div class="ov-anillo" id="ovAnillo" aria-live="polite"></div>
+        </section>
+        <section class="ov-sec" aria-labelledby="ovRutaT">
+          <h3 class="ov-sec-t" id="ovRutaT">Tu recorrido</h3>
+          <div class="step-flow" id="stepFlow"></div>
+        </section>
+        <section class="ov-sec" aria-labelledby="ovEvT">
+          <div class="ov-sec-head"><h3 class="ov-sec-t" id="ovEvT">Tus evaluaciones</h3><button type="button" class="ov-link" onclick="goToPage('plan')">Añadir o quitar</button></div>
+          <div class="ov-mosaico" id="evalsProgressList"></div>
+        </section>
+        <section class="ov-sec" aria-labelledby="ovEstT">
+          <div class="ov-sec-head"><h3 class="ov-sec-t" id="ovEstT">Carreras que encajan contigo</h3><button type="button" class="ov-link" onclick="goToPage('estudiar')">Dónde estudiarlas</button></div>
+          <div id="ovEstudiarResumen"></div>
+        </section>
       </div>
 
       <!-- MIS EVALUACIONES -->
       <div class="page" id="page-tests">
-        <div class="page-head"><div><h2>Mis Evaluaciones</h2><p>Completa tus evaluaciones a tu ritmo. Con cada evaluación que terminas, tu informe en «Mi Informe» se actualiza.</p></div></div>
+        <div class="page-head"><div><h2>Evaluaciones</h2><p>Hazlas a tu ritmo: lo que respondes se guarda solo. Con cada una que terminas, tu informe se actualiza.</p></div></div>
         <div class="filtros-tests" id="filtrosTests" style="display:none;margin-bottom:18px;">
           <button class="chip-test active" data-filtro="todos">Todos</button>
           <button class="chip-test" data-filtro="pendiente">Pendientes</button>
           <button class="chip-test" data-filtro="completado">Completados</button>
         </div>
         <div class="tests-grid" id="testsGrid"></div>
-      </div>
-
-      <!-- MI PLAN -->
-      <div class="page" id="page-plan">
-        <div class="page-head"><div><h2>Mi Proceso</h2><p>Qué incluye tu evaluación gratuita y qué sigue.</p></div></div>
-        <div id="planSummaryWrap"></div>
         <div class="panel" id="panelElegir">
-          <div class="panel-head"><h3>Elegir o añadir evaluaciones</h3></div>
+          <div class="panel-head"><h3>Añadir o quitar evaluaciones</h3></div>
           <div class="panel-body">
             <p class="text-2" style="font-size:0.88rem;margin-bottom:16px;">Marca las evaluaciones que quieres hacer. Las que ya completaste siguen en tu informe; las pendientes que desmarques se quitan de tu lista (lo que ya respondiste se guarda por si vuelves a elegirlas).</p>
             <div class="sel-tests" id="selectorProceso"></div>
@@ -741,21 +849,37 @@ img{max-width:100%;display:block;}
             </div>
           </div>
         </div>
-        <div class="panel">
-          <div class="panel-head"><h3>¿Qué ocurre después?</h3></div>
-          <div class="panel-body"><div class="next-steps-timeline" id="afterTimeline"></div></div>
-        </div>
       </div>
+
 
       <!-- MI INFORME -->
       <div class="page" id="page-informe">
-        <div class="page-head"><div><h2>Mi Informe</h2><p>El resultado integrado de tu proceso de evaluación.</p></div></div>
+        <div class="page-head"><div><h2>Mi informe</h2><p>Todas tus evaluaciones juntas en un solo informe, listo para leer y descargar.</p></div></div>
         <div class="panel"><div id="reportStateWrap"></div></div>
+      </div>
+
+      <!-- DÓNDE ESTUDIAR -->
+      <div class="page" id="page-estudiar">
+        <div class="page-head"><div><h2>Dónde estudiar</h2><p>Las carreras que salen en tu informe, dónde se estudian en España y con qué nota se entró el último curso.</p></div></div>
+        <div class="ov-nota">
+          <label for="ovNota">Tu nota de admisión <small>(sobre 14, si ya la sabes)</small></label>
+          <span><input type="number" id="ovNota" min="5" max="14" step="0.01" inputmode="decimal" placeholder="Ej. 10,5"><a href="https://nexus.aurzane.com/calculadora-nota-pau/" target="_blank" rel="noopener">No la sé: calcúlala</a></span>
+        </div>
+        <div id="ovEstudiar"></div>
+        <h3 class="ov-sec-t" style="margin:34px 0 14px;">Herramientas de NEXUS</h3>
+        <div class="ov-herr">
+          <a class="ov-h" id="ovHQue" href="https://nexus.aurzane.com/universidades/que-puedo-estudiar/" target="_blank" rel="noopener"><b>¿Qué puedo estudiar con mi nota?</b><span>Todas las carreras públicas a las que llegas, por comunidad.</span></a>
+          <a class="ov-h" href="https://nexus.aurzane.com/universidades/notas-de-corte/" target="_blank" rel="noopener"><b>Notas de corte</b><span>La nota oficial de cada grado en cada universidad.</span></a>
+          <a class="ov-h" href="https://nexus.aurzane.com/universidades/espana/" target="_blank" rel="noopener"><b>Universidades de España</b><span>Fichas con titulaciones, precios y ubicación.</span></a>
+          <a class="ov-h" href="https://nexus.aurzane.com/calculadora-nota-pau/" target="_blank" rel="noopener"><b>Calculadora de nota de la PAU</b><span>Tu nota de admisión sobre 14 con las ponderaciones.</span></a>
+        </div>
+        <p class="ov-pie">Datos de notas de corte del Ministerio de Ciencia, Innovación y Universidades (QEDU), cupo general y universidades públicas. Cambian cada año: tómalas como orientación.</p>
       </div>
 
       <!-- MI CUENTA -->
       <div class="page" id="page-cuenta">
-        <div class="page-head"><div><h2>Mi Cuenta</h2><p>Tus datos de registro y seguridad.</p></div></div>
+        <div class="page-head"><div><h2>Mi cuenta</h2><p>Tus datos de registro y seguridad.</p></div></div>
+        <div class="panel" id="ovColegio" hidden></div>
 
         <div class="panel">
           <div class="panel-head"><h3>Perfil</h3></div>
@@ -827,6 +951,10 @@ img{max-width:100%;display:block;}
       <input type="checkbox" id="consentCheckbox">
       <span>He leído el <a href="https://aurzane.com/privacidad.html" target="_blank" rel="noopener">aviso de privacidad</a> y acepto que se recopile y use mi información tal como se describe ahí.</span>
     </label>
+    <label class="consent-check">
+      <input type="checkbox" id="consentEdad">
+      <span>Tengo edad para aceptarlo por mí mismo (14 años o más en España), o mi madre, padre o tutor legal ha leído el aviso y autoriza que haga la evaluación.</span>
+    </label>
     <div class="consent-actions">
       <button class="btn btn-ghost" id="consentCancelBtn">Ahora no</button>
       <button class="btn btn-primary" id="consentAcceptBtn" disabled>Continuar</button>
@@ -839,8 +967,8 @@ img{max-width:100%;display:block;}
 <!-- Lógica de puntuación e interpretación del informe: compartida con generar-informe.html (ver informe-shared.js) -->
 <script src="informe-shared.js?v=20261109c"></script>
 <!-- Informe con las evaluaciones elegidas y completadas + descargas PDF/Word -->
-<script src="informe-opciones.js?v=20261018b"></script>
-<script src="informe-v2.js?v=20261109c"></script>
+<script src="informe-opciones.js?v=20261116c"></script>
+<script src="informe-v2.js?v=20261116b"></script>
 <script src="informe-export.js?v=20261018b"></script>
 <script>
   const SUPABASE_URL = 'https://chtfpqwrrarfdjcivlad.supabase.co';
@@ -1004,15 +1132,23 @@ img{max-width:100%;display:block;}
 
   /* ===================== NAVEGACIÓN SIDEBAR / MÓVIL ===================== */
 
-  const BC_PAGE_LABELS = { resumen:'Resumen', tests:'Mis Evaluaciones', plan:'Mi Proceso', informe:'Mi Informe', cuenta:'Mi Cuenta' };
+  const BC_PAGE_LABELS = { resumen:'Inicio', tests:'Evaluaciones', informe:'Mi informe', estudiar:'Dónde estudiar', cuenta:'Mi cuenta' };
   function goToPage(key){
+    const aElegir = key === 'plan';
+    if(aElegir || !document.getElementById('page-'+key)) key = aElegir ? 'tests' : 'resumen';
+    if(key === 'estudiar') pintarEstudiar();
     document.querySelectorAll('.nav-item').forEach(i=>i.classList.toggle('active', i.dataset.page===key));
     document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active', p.id === 'page-'+key));
     const bcCur = document.getElementById('bcCurrent');
     if(bcCur) bcCur.textContent = BC_PAGE_LABELS[key] || 'Resumen';
     window.scrollTo({top:0, behavior:'instant'});
+    if(aElegir){ const pe = document.getElementById('panelElegir'); if(pe) setTimeout(()=>pe.scrollIntoView({behavior:'smooth', block:'start'}), 30); }
     closeMobileNav();
   }
+  document.getElementById('navItems').addEventListener('keydown', (e)=>{
+    const item = e.target.closest('.nav-item');
+    if(item && item.dataset.page && (e.key === 'Enter' || e.key === ' ')){ e.preventDefault(); goToPage(item.dataset.page); }
+  });
   document.getElementById('navItems').addEventListener('click', (e)=>{
     const item = e.target.closest('.nav-item');
     if(item) goToPage(item.dataset.page);
@@ -1182,7 +1318,7 @@ img{max-width:100%;display:block;}
   async function mostrarAvisoInstitucion(){
     const cont = document.getElementById('instAvisoInicio');
     if(!cont || !instFromURL) return;
-    const { data } = await sb.from('membretes').select('nombre_marca,subtitulo,institucion').ilike('codigo', instFromURL).maybeSingle();
+    const { data: _mb } = await sb.rpc('membrete_por_codigo', { p_codigo: instFromURL }); const data = (_mb && _mb[0]) || null;   // el código del colegio ya no se lee de la tabla (16/11/2026)
     if(!data) return;
     const militar = /^comil/i.test(instFromURL) || /colegio militar|\bCOMIL\b/i.test([data.nombre_marca, data.subtitulo, data.institucion].join(' '));
     cont.innerHTML = `<div class="inst-aviso"><span class="inst-franja"></span><span>Entraste con el enlace de <b>${escapeHtml(data.nombre_marca)}${data.subtitulo ? ' ' + escapeHtml(data.subtitulo) : ''}</b>. Tu informe llevará su membrete${militar ? ' e incluirá una sección sobre la carrera militar (ESMIL y ESFORSE), además de tus demás opciones' : ''}.</span></div>`;
@@ -1313,7 +1449,9 @@ img{max-width:100%;display:block;}
       ['mi plan', () => renderPlanPage(cliente)],
       ['elegir evaluaciones', () => renderSelector('selectorProceso', cliente)],
       ['mi informe', () => renderInformePage(cliente)],
+      ['dónde estudiar', () => pintarEstudiar()],
       ['mi cuenta', () => renderCuenta(cliente, session)],
+      ['colegio', () => pintarColegio()],
       ['notificaciones', () => renderNotifications(cliente)],
       ['nav móvil', () => renderMobileNav()],
     ];
@@ -1346,6 +1484,7 @@ img{max-width:100%;display:block;}
       { key:'evals-activas', label:'Evaluaciones elegidas', done: activos.length > 0 },
       { key:'informe', label:'Informe disponible', done: completados.length > 0 },
       { key:'evals-completas', label:'Evaluaciones completadas', done: activos.length > 0 && pendientes.length === 0 },
+      { key:'estudiar', label:'Dónde estudiar', done:false, ir:'estudiar' },
     ];
     let currentIdx = steps.findIndex(s => !s.done);
     if(currentIdx === -1) currentIdx = steps.length - 1;
@@ -1355,7 +1494,7 @@ img{max-width:100%;display:block;}
   function renderStepFlow(cliente){
     const { steps, currentIdx } = computeProcessSteps(cliente);
     document.getElementById('stepFlow').innerHTML = steps.map((s,i)=>`
-      <div class="step-item ${s.done?'done':''} ${i===currentIdx?'current':''}">
+      <div class="step-item ${s.done?'done':''} ${i===currentIdx?'current':''}" ${s.ir?`role="link" tabindex="0" onclick="goToPage('${s.ir}')" onkeydown="if(event.key==='Enter')goToPage('${s.ir}')"`:''}>
         <span class="s-line"></span>
         <div class="step-dot">${s.done ? '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>' : (i+1)}</div>
         <span class="step-lbl">${s.label}</span>
@@ -1432,63 +1571,210 @@ img{max-width:100%;display:block;}
     }
   }
 
+  /* ===================== PANEL v3: inicio visual y «Dónde estudiar» ===================== */
+  const OV_ICONOS = {
+    chaside: { c:'#C9A24B', d:'<circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/>' },
+    holland: { c:'#7C93C9', d:'<path d="M12 3l7.8 4.5v9L12 21l-7.8-4.5v-9z"/><path d="M12 3v18M4.2 7.5l15.6 9M19.8 7.5l-15.6 9"/>' },
+    af5:     { c:'#C98BB0', d:'<circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/>' },
+    chte:    { c:'#7FA968', d:'<path d="M4 5a2 2 0 012-2h13v16H6a2 2 0 00-2 2z"/><path d="M4 19V5M8 7h7M8 11h5"/>' },
+    apt_b:   { c:'#D0905A', d:'<path d="M4 20l5-14h1l5 14M6 15h7"/><path d="M17 9v11M14.5 16.5L17 20l2.5-3.5"/>' },
+    apt_a:   { c:'#6FB3C2', d:'<path d="M9 3h6v4a2 2 0 104 0h2v6h-2a2 2 0 100 4h2v4H3V3h2a2 2 0 104 0z"/>' }
+  };
+  function ovIcono(k){
+    const i = OV_ICONOS[k] || { c:'#C9A24B', d:'<circle cx="12" cy="12" r="8"/>' };
+    return `<span class="ov-ico" style="--c:${i.c}" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">${i.d}</svg></span>`;
+  }
+
   function renderNextStep(cliente){
     const { activos, completados, pendientes } = getEvalStats(cliente);
     const wrap = document.getElementById('nextStepWrap');
-    let eyebrow = 'Tu siguiente paso', title = '', body = '', actions = '';
+    let title = '', body = '', actions = '';
 
     if(activos.length === 0){
       title = 'Elige tus evaluaciones';
-      body = 'Tu acceso es gratuito. Elige cuántas evaluaciones quieres hacer; con una ya obtienes tu informe.';
+      body = 'Es gratis. Con una sola ya tienes informe; para saber qué carreras encajan contigo, incluye CHASIDE u Holland.';
       actions = `<button class="btn btn-primary" onclick="goToPage('plan')">Elegir evaluaciones</button>`;
     } else if(pendientes.length > 0){
-      title = `Tienes ${pendientes.length} ${pendientes.length===1?'evaluación':'evaluaciones'} por completar`;
       const first = pendientes[0];
       const info = TEST_INFO[first.test_key];
-      body = (info ? `Sigue con «${info.nombre}»: ${info.proposito}` : 'Ve a «Mis Evaluaciones» para continuar.') +
-        (completados.length > 0 ? ` Tu informe ya está disponible con ${completados.length === 1 ? 'la evaluación que completaste' : 'las ' + completados.length + ' que completaste'} y se actualiza con cada nueva.` : '');
-      actions = `<button class="btn btn-primary" onclick="irAlTest('${info ? info.url : '#'}')">${startedTestKeys.has(first.test_key) ? 'Continuar evaluación' : 'Comenzar evaluación'} →</button>
-                 ${completados.length > 0 ? `<button class="btn btn-secondary" onclick="goToPage('informe')">Ver mi informe</button>` : ''}
-                 <button class="btn btn-ghost" onclick="goToPage('tests')">Ver todas mis evaluaciones</button>`;
+      const empezada = startedTestKeys.has(first.test_key);
+      title = info ? `${empezada ? 'Sigue con' : 'Ahora toca'} ${info.nombre}` : 'Sigue con tus evaluaciones';
+      body = (info ? `${info.proposito} Unos ${formatoMinutos(info.tiempoMin)}, y puedes pararla y seguir otro día.` : '') +
+        (completados.length > 0 ? ' Tu informe ya está disponible y se completa con cada evaluación.' : '');
+      actions = `<button class="btn btn-primary" onclick="irAlTest('${info ? info.url : '#'}')">${empezada ? 'Continuar' : 'Comenzar'} ${info ? escapeHtml(info.nombre) : ''}</button>` +
+        (completados.length > 0 ? `<button class="btn btn-ghost" onclick="goToPage('informe')">Ver mi informe</button>` : '');
     } else {
       title = 'Tu informe está listo';
-      body = `Completaste ${completados.length === 1 ? 'la evaluación que elegiste' : 'las ' + completados.length + ' evaluaciones que elegiste'}. Puedes leer tu informe y descargarlo en PDF o Word.` +
-        (activos.length < ALL_TEST_KEYS.length ? ' Si quieres un informe más completo, puedes añadir más evaluaciones.' : '');
+      body = `Terminaste ${completados.length === 1 ? 'tu evaluación' : 'tus ' + completados.length + ' evaluaciones'}. Léelo, descárgalo y mira dónde estudiar las carreras que encajan contigo.`;
       actions = `<button class="btn btn-primary" onclick="goToPage('informe')">Ver mi informe</button>` +
-        (activos.length < ALL_TEST_KEYS.length ? `<button class="btn btn-ghost" onclick="goToPage('plan')">Añadir evaluaciones</button>` : '');
+        `<button class="btn btn-ghost" onclick="goToPage('estudiar')">Dónde estudiar</button>`;
     }
 
     wrap.innerHTML = `
-      <div class="next-card">
-        <span class="eyebrow nc-eyebrow">${eyebrow}</span>
-        <h2 class="h2">${title}</h2>
-        <p>${body}</p>
-        ${actions ? `<div class="nc-actions">${actions}</div>` : ''}
-      </div>
+      <h2 class="ov-titulo">${title}</h2>
+      <p class="ov-texto">${body}</p>
+      ${actions ? `<div class="nc-actions">${actions}</div>` : ''}
     `;
+    renderAnillo(cliente);
   }
 
+  function renderAnillo(cliente){
+    const el = document.getElementById('ovAnillo');
+    if(!el) return;
+    const { activos, completados, pendientes } = getEvalStats(cliente);
+    if(activos.length === 0){ el.innerHTML = ''; el.hidden = true; return; }
+    el.hidden = false;
+    const r = 52, C = 2 * Math.PI * r, f = completados.length / activos.length;
+    const min = pendientes.reduce((t, a) => t + ((TEST_INFO[a.test_key] || {}).tiempoMin || 0), 0);
+    el.innerHTML = `
+      <svg viewBox="0 0 128 128" width="148" height="148" role="img" aria-label="${completados.length} de ${activos.length} evaluaciones completadas">
+        <circle cx="64" cy="64" r="${r}" fill="none" stroke="var(--navy-4)" stroke-width="11"/>
+        <circle cx="64" cy="64" r="${r}" fill="none" stroke="url(#ovGrad)" stroke-width="11" stroke-linecap="round"
+          stroke-dasharray="${(C * f).toFixed(1)} ${C.toFixed(1)}" transform="rotate(-90 64 64)"/>
+        <defs><linearGradient id="ovGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="var(--gold-light)"/><stop offset="1" stop-color="var(--gold)"/></linearGradient></defs>
+        <text x="64" y="62" text-anchor="middle" class="ov-anillo-n">${completados.length}/${activos.length}</text>
+        <text x="64" y="82" text-anchor="middle" class="ov-anillo-l">completadas</text>
+      </svg>
+      <p>${pendientes.length ? 'Te quedan unos <b>' + formatoMinutos(min) + '</b>' : '<b>¡Todo hecho!</b>'}</p>`;
+  }
 
   function renderEvalsProgress(cliente){
     const { activos } = getEvalStats(cliente);
     const list = document.getElementById('evalsProgressList');
     if(activos.length === 0){
       list.innerHTML = `<div class="empty-state">
-        <h4>Todavía no elegiste evaluaciones</h4>
-        <p>Elígelas en «Mi Proceso»; el acceso es gratuito.</p>
+        <h4>Todavía no has elegido evaluaciones</h4>
+        <p>Elígelas en «Evaluaciones»; el acceso es gratuito.</p>
       </div>`;
       return;
     }
-    list.innerHTML = activos.map(a=>{
-      const info = TEST_INFO[a.test_key] || { nombre:a.test_key, proposito:'' };
-      return `<div class="eval-row ${a.completado?'done':'active'}">
-        <div class="er-icon">${a.completado
-          ? '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"/></svg>'
-          : '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>'}</div>
-        <div class="er-info"><h4>${escapeHtml(info.nombre)}</h4><p>${escapeHtml(info.proposito)}</p></div>
-        <span class="badge ${a.completado?'badge-ok':'badge-warn'}"><span class="dot"></span>${a.completado?'Completado':'Pendiente'}</span>
+    const orden = activos.slice().sort((a, b) => (a.completado - b.completado) || (ALL_TEST_KEYS.indexOf(a.test_key) - ALL_TEST_KEYS.indexOf(b.test_key)));
+    const siguiente = orden.find(a => !a.completado);
+    list.innerHTML = orden.map(a => {
+      const info = TEST_INFO[a.test_key] || { nombre:a.test_key, proposito:'', tiempoMin:0, url:'#' };
+      const estado = a.completado ? 'Completada' : (startedTestKeys.has(a.test_key) ? 'Empezada' : 'Pendiente');
+      const accion = a.completado ? `goToPage('informe')` : `irAlTest('${info.url}')`;
+      const etiqueta = a.completado ? `Ver ${info.nombre} en el informe` : `${startedTestKeys.has(a.test_key) ? 'Continuar' : 'Comenzar'} ${info.nombre}`;
+      return `<button type="button" class="ov-tile ${a.completado ? 'hecha' : ''} ${a === siguiente ? 'sig' : ''}" onclick="${accion}" aria-label="${escapeHtml(etiqueta)}">
+        ${ovIcono(a.test_key)}
+        <span class="ov-tile-n">${escapeHtml(info.nombre)}</span>
+        <span class="ov-tile-m">${a.completado ? 'Ver en el informe' : formatoMinutos(info.tiempoMin) + ' · ' + info.preguntas + ' preguntas'}</span>
+        <span class="ov-est ${a.completado ? 'ok' : (estado === 'Empezada' ? 'mid' : '')}">${estado}</span>
+      </button>`;
+    }).join('') + (activos.length < ALL_TEST_KEYS.length
+      ? `<button type="button" class="ov-tile ov-add" onclick="goToPage('plan')"><span class="ov-plus" aria-hidden="true">+</span><span class="ov-tile-n">Añadir evaluaciones</span><span class="ov-tile-m">Tienes ${ALL_TEST_KEYS.length - activos.length} más disponibles</span></button>`
+      : '');
+  }
+
+  /* ---------- Carreras del informe → NEXUS ---------- */
+  // Las carreras salen tal cual del informe (CHASIDE u Holland). Para buscarlas en
+  // NEXUS se usa el nombre con el que aparecen en los grados españoles.
+  const OV_BUSQUEDA = {
+    'Contabilidad y Auditoría':'contabilidad', 'Turismo y Hotelería':'turismo', 'Comunicación Social':'comunicación',
+    'Educación / Pedagogía':'pedagogía', 'Artes Plásticas':'bellas artes', 'Diseño de Modas':'moda', 'Cine y Audiovisuales':'cine',
+    'Danza y Artes Escénicas':'artes escénicas', 'Fisioterapia / Rehabilitación':'fisioterapia', 'Obstetricia':'enfermería',
+    'Cultura Física y Deportes':'actividad física', 'Ingeniería en Sistemas / Software':'ingeniería del software',
+    'Ingeniería Industrial':'tecnologías industriales', 'Ciencias de la Computación':'informática', 'Ciencias Militares':'militar',
+    'Seguridad y Defensa':'defensa', 'Ciencias Policiales':'policial', 'Gestión de Riesgos y Emergencias':'seguridad',
+    'Marina Mercante':'náutica', 'Aeronáutica':'aeroespacial', 'Agronomía':'agrícola', 'Ingeniería Agroindustrial':'agroalimentaria',
+    'Medicina Veterinaria':'veterinaria', 'Tecnologías en electricidad y electrónica':'eléctrica',
+    'Carreras técnicas y militares de campo':'militar', 'Ingeniería de Software':'ingeniería del software', 'Artes Visuales':'bellas artes',
+    'Fonoaudiología':'logopedia', 'Orientación y consejería':'educación social', 'Comercio Exterior':'comercio'
+  };
+  let ovCarrerasListas = false;
+  function ovBusqueda(c){ return OV_BUSQUEDA[c] || c.replace(/\s*\/.*$/, ''); }
+  function ovNota(){ try{ return localStorage.getItem('aurzane-ovp-nota') || ''; }catch(e){ return ''; } }
+  function ovUrlCarrera(c){
+    const n = ovNota();
+    return 'https://nexus.aurzane.com/universidades/que-puedo-estudiar/?carrera=' + encodeURIComponent(ovBusqueda(c)) + (n ? '&nota=' + encodeURIComponent(n) : '');
+  }
+  function carrerasDelInforme(){
+    const rc = document.getElementById('reportContent');
+    if(!rc) return [];
+    return [...rc.querySelectorAll('.career-card')].map(card => {
+      const h = card.querySelector('h4');
+      const t = h && h.firstChild ? h.firstChild.textContent.trim() : '';
+      const m = t.match(/^(Prioridad|Alternativa):\s*(.*)$/);
+      let area = (m ? m[2] : t).trim();
+      area = area.charAt(0).toUpperCase() + area.slice(1);
+      const bloque = [...card.querySelectorAll('.career-list')].find(d => /^Carreras/.test(((d.querySelector('b') || {}).textContent) || ''));
+      const carreras = bloque ? bloque.textContent.replace(/^[^:]*:\s*/, '').replace(/\.\s*$/, '').split(/,\s*/).map(x => x.trim()).filter(Boolean) : [];
+      return { tipo: m ? m[1] : '', area, carreras };
+    }).filter(a => a.carreras.length);
+  }
+  function ovChips(lista, max){
+    return lista.slice(0, max || lista.length).map(c =>
+      `<a class="ov-chip" href="${ovUrlCarrera(c)}" target="_blank" rel="noopener" aria-label="Dónde estudiar ${escapeHtml(c)} (abre NEXUS)">${escapeHtml(c)}</a>`).join('');
+  }
+  function pintarEstudiar(){
+    const res = document.getElementById('ovEstudiarResumen'), pag = document.getElementById('ovEstudiar');
+    if(!res || !pag || !clienteCache) return;
+    const areas = carrerasDelInforme();
+    const banda = document.getElementById('ovBandaInforme');
+    if(banda) banda.hidden = !areas.length;
+    const incluidos = (typeof ovpTestsDelInforme === 'function') ? ovpTestsDelInforme(clienteCache) : [];
+    const conIntereses = incluidos.includes('chaside') || incluidos.includes('holland');
+    const n = ovNota();
+    const q = document.getElementById('ovHQue');
+    if(q) q.href = 'https://nexus.aurzane.com/universidades/que-puedo-estudiar/' + (n ? '?nota=' + encodeURIComponent(n) : '');
+
+    if(areas.length){
+      res.innerHTML = `<div class="ov-areas-mini">${areas.map(a => `
+        <div class="ov-area-mini"><span class="ov-tipo">${a.tipo === 'Alternativa' ? 'También encaja' : 'Tu área principal'}</span><b>${escapeHtml(a.area)}</b>
+          <div class="ov-chips">${ovChips(a.carreras, 5)}</div></div>`).join('')}</div>`;
+      pag.innerHTML = areas.map(a => `
+        <section class="ov-area ${a.tipo === 'Alternativa' ? '' : 'principal'}">
+          <span class="ov-tipo">${a.tipo === 'Alternativa' ? 'También encaja contigo' : 'Tu área principal'}</span>
+          <h3>${escapeHtml(a.area)}</h3>
+          <p>Toca una carrera para ver en qué universidades se estudia y su nota de corte${n ? ' comparada con tu ' + escapeHtml(n.replace('.', ',')) : ''}.</p>
+          <div class="ov-chips">${ovChips(a.carreras)}</div>
+        </section>`).join('');
+      return;
+    }
+    const cha = (clienteCache.activaciones || []).find(a => a.test_key === 'chaside' && a.activo);
+    const accion = conIntereses
+      ? '<p class="ov-cargando">Preparando tus carreras…</p>'
+      : (cha ? `<button class="btn btn-primary btn-sm" onclick="irAlTest('${TEST_INFO.chaside.url}')">${startedTestKeys.has('chaside') ? 'Continuar' : 'Hacer'} CHASIDE</button>`
+             : `<button class="btn btn-primary btn-sm" onclick="goToPage('plan')">Añadir CHASIDE u Holland</button>`);
+    const vacio = conIntereses && !ovCarrerasListas ? accion : `
+      <div class="ov-vacio">
+        <div><h4>Aquí verás tus carreras</h4><p>Aparecen cuando completas CHASIDE u Holland, las evaluaciones de intereses. Después podrás ver dónde se estudian y con qué nota.</p></div>
+        ${conIntereses ? '' : accion}
       </div>`;
-    }).join('');
+    res.innerHTML = vacio;
+    pag.innerHTML = vacio;
+  }
+  (function(){
+    const inp = document.getElementById('ovNota');
+    if(!inp) return;
+    inp.value = ovNota();
+    inp.addEventListener('input', () => {
+      const v = String(inp.value || '').replace(',', '.');
+      const ok = v && !isNaN(v) && +v >= 5 && +v <= 14;
+      try{ ok ? localStorage.setItem('aurzane-ovp-nota', v) : localStorage.removeItem('aurzane-ovp-nota'); }catch(e){}
+      pintarEstudiar();
+    });
+  })();
+
+  /* ---------- Compartir el informe con el colegio (lo decide el estudiante) ---------- */
+  async function pintarColegio(){
+    const w = document.getElementById('ovColegio');
+    if(!w) return;
+    const { data, error } = await sb.rpc('ovp_mi_colegio');
+    const c = !error && data && data[0];
+    if(!c){ w.hidden = true; return; }
+    w.hidden = false;
+    const nombre = escapeHtml(c.nombre + (c.subtitulo ? ' ' + c.subtitulo : ''));
+    w.innerHTML = `<div class="panel-head"><h3>Tu colegio</h3></div><div class="panel-body ov-col">
+      <p>Entraste con el enlace de <b>${nombre}</b>. Tu colegio ve cuántas evaluaciones llevas. Tu informe solo lo ve si tú lo compartes.</p>
+      <label class="ov-sw"><input type="checkbox" id="ovComparte" ${c.comparte ? 'checked' : ''}><span>Compartir mi informe con ${nombre}</span></label>
+      <small id="ovComparteMsg" aria-live="polite"></small></div>`;
+    document.getElementById('ovComparte').addEventListener('change', async (e) => {
+      const msg = document.getElementById('ovComparteMsg');
+      const { error } = await sb.rpc('ovp_compartir_colegio', { p: e.target.checked });
+      if(error){ e.target.checked = !e.target.checked; msg.textContent = 'No se pudo guardar. Inténtalo de nuevo.'; return; }
+      msg.textContent = e.target.checked ? 'Compartido. Puedes dejar de compartirlo cuando quieras.' : 'Ya no se comparte.';
+    });
   }
 
   // Filtro Amazon-style (Todos/Pendientes/Completados) sobre las
@@ -1528,7 +1814,7 @@ img{max-width:100%;display:block;}
       return `
         <div class="test-card ${done?'done':''}">
           <div class="tc-top">
-            <h3>${escapeHtml(info.nombre)}</h3>
+            ${ovIcono(a.test_key)}<h3>${escapeHtml(info.nombre)}</h3>
             <span class="badge ${done?'badge-ok':'badge-warn'}"><span class="dot"></span>${done?'Completado':'Pendiente'}</span>
           </div>
           <p class="tc-purpose">${escapeHtml(info.proposito)}</p>
@@ -1538,8 +1824,8 @@ img{max-width:100%;display:block;}
           </div>
           ${started ? `<div class="tc-dates">Ya empezaste esta evaluación</div>` : ''}
           ${fechaFin ? `<div class="tc-dates">Completado ${fechaFin}</div>` : ''}
-          <button class="btn ${done?'btn-secondary':'btn-primary'} btn-block" ${done?'disabled':''} onclick="irAlTest('${info.url}')">
-            ${done ? 'Completado ✓' : (started ? 'Continuar evaluación →' : 'Comenzar evaluación →')}
+          <button class="btn ${done?'btn-secondary':'btn-primary'} btn-block" ${done?'disabled':''} onclick="irAlTest('${info.url}')" aria-label="${done ? 'Completada' : (started ? 'Continuar' : 'Comenzar')} ${escapeHtml(info.nombre)}">
+            ${done ? 'Completada' : (started ? 'Continuar' : 'Comenzar')}
           </button>
         </div>
       `;
@@ -1560,6 +1846,7 @@ img{max-width:100%;display:block;}
   }
 
   function renderPlanPage(cliente){
+    if(!document.getElementById('planSummaryWrap')) return;
     const wrap = document.getElementById('planSummaryWrap');
     if(!cliente.plan){ wrap.innerHTML = ''; return; }
     const testKeys = ALL_TEST_KEYS.filter(k => (cliente.activaciones||[]).some(a => a.test_key === k && (a.activo || a.completado)));
@@ -1638,6 +1925,10 @@ img{max-width:100%;display:block;}
       </div>
       <div id="opcionesInforme" class="opciones-wrap"></div>
       <div id="clientReportWrap" style="border-top:1px solid var(--line);"></div>
+      <div class="ov-banda" id="ovBandaInforme" hidden>
+        <div><h4>¿Y ahora, dónde lo estudio?</h4><p>Mira en qué universidades se imparten las carreras de tu informe y con qué nota se entró el último curso.</p></div>
+        <button class="btn btn-primary" type="button" onclick="goToPage('estudiar')">Ver dónde estudiar</button>
+      </div>
     `;
     OVPExport.conectarBotones(document.getElementById('descargarPdfBtn'), document.getElementById('descargarWordBtn'));
 
@@ -1681,6 +1972,8 @@ img{max-width:100%;display:block;}
     const pintar = (el) => {
       generarInformeOVP(cliente, el.membrete, incluidos, el.profesional);
       quitarDevolucionDelInforme(document.getElementById('reportContent'));
+      ovCarrerasListas = true;
+      pintarEstudiar();
     };
     pintar(eleccion);
 
@@ -1803,7 +2096,7 @@ img{max-width:100%;display:block;}
     if(!url || url === '#'){ showToast('Este instrumento todavía no está disponible en el sistema.', 'error'); return; }
     if(!clienteCache || !clienteCache.consentimiento_at){
       pendingTestUrl = url;
-      consentCheckbox.checked = false;
+      consentCheckbox.checked = false; consentEdad.checked = false;
       consentAcceptBtn.disabled = true;
       consentModal.classList.add('open');
       return;
@@ -1816,8 +2109,10 @@ img{max-width:100%;display:block;}
     pendingTestUrl = null;
   }
 
+  const consentEdad = document.getElementById('consentEdad');   // consentimiento de menores (RGPD y LOPDGDD, art. 7), auditoría 16/11/2026
+  consentEdad.addEventListener('change', ()=>{ consentAcceptBtn.disabled = !(consentCheckbox.checked && consentEdad.checked); });
   consentCheckbox.addEventListener('change', ()=>{
-    consentAcceptBtn.disabled = !consentCheckbox.checked;
+    consentAcceptBtn.disabled = !(consentCheckbox.checked && consentEdad.checked);
   });
   document.getElementById('consentCancelBtn').addEventListener('click', closeConsentModal);
   document.querySelector('.consent-modal-backdrop').addEventListener('click', closeConsentModal);
@@ -1826,7 +2121,7 @@ img{max-width:100%;display:block;}
   });
 
   consentAcceptBtn.addEventListener('click', async ()=>{
-    if(!consentCheckbox.checked || !pendingTestUrl) return;
+    if(!consentCheckbox.checked || !consentEdad.checked || !pendingTestUrl) return;
     consentAcceptBtn.disabled = true;
     consentAcceptBtn.innerHTML = '<span class="btn-spinner"></span>';
     const ahora = new Date().toISOString();

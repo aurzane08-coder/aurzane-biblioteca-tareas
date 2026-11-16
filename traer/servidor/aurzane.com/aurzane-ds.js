@@ -14,8 +14,8 @@
   var mundo = (host.match(/^(mind|nexus|live|learn|build|ovp)\./) || [])[1] || 'aurzane';
 
   var MUNDOS = [
-    ['mind', 'MIND', 'Mente y tests'], ['nexus', 'NEXUS', 'Universidades y carreras'], ['live', 'LIVE', 'Bienestar y salud'],
-    ['learn', 'LEARN', 'Cursos'], ['build', 'BUILD', 'Vivienda y dinero'], ['ovp', 'OVP', 'Orientación vocacional']
+    ['mind', 'MIND', 'Mente y tests'], ['nexus', 'NEXUS', 'Universidades y carreras'], ['live', 'LIVE', 'Salud y día a día'],
+    ['learn', 'LEARN', 'Cursos'], ['build', 'BUILD', 'Dinero, ingresos y vivienda'], ['ovp', 'OVP', 'Orientación vocacional']
   ];
   var COLOR = { mind: 'var(--az-mind-c)', nexus: 'var(--az-nexus-c)', live: 'var(--az-live-c)', learn: 'var(--az-learn-c)', build: 'var(--az-build-c)', ovp: 'var(--az-ovp-c)', aurzane: 'var(--az-portada-c)' };
   /* índice del ecosistema: [título, url sin https, mundo, tipo, descripción, idioma] (generado del mapa del servidor) */
@@ -46,9 +46,9 @@
     aurzane: { n: 'Conocimiento', u: 'https://aurzane.com/biblioteca/', l: [['Biblioteca de libros', 'https://aurzane.com/biblioteca/'], ['Libros recomendados', 'https://aurzane.com/libros/'], ['Artículos', 'https://aurzane.com/articulos/'], ['Research Hub', 'https://aurzane.com/research.html'], ['Frases', 'https://aurzane.com/frases/'], ['Novedades', 'https://aurzane.com/novedades/']] },
     mind: { n: 'MIND', u: 'https://mind.aurzane.com/', l: [['Tests', 'https://mind.aurzane.com/#tests'], ['Test de personalidad', 'https://mind.aurzane.com/test-de-personalidad/'], ['Ejercicios guiados', 'https://mind.aurzane.com/ejercicios/'], ['Guías', 'https://mind.aurzane.com/#recentSection'], ['Biblioteca', 'https://mind.aurzane.com/mind-biblioteca.html']] },
     nexus: { n: 'NEXUS', u: 'https://nexus.aurzane.com/', l: [['Universidades', 'https://nexus.aurzane.com/universidades/'], ['¿Qué puedo estudiar?', 'https://nexus.aurzane.com/universidades/que-puedo-estudiar/'], ['Notas de corte', 'https://nexus.aurzane.com/universidades/notas-de-corte/'], ['Nota PAU', 'https://nexus.aurzane.com/calculadora-nota-pau/'], ['Artículos', 'https://nexus.aurzane.com/nexus.html'], ['Biblioteca', 'https://nexus.aurzane.com/nexus-biblioteca.html']] },
-    live: { n: 'LIVE', u: 'https://live.aurzane.com/', l: [['Tests y calculadoras', 'https://live.aurzane.com/#tests'], ['Test de bienestar', 'https://live.aurzane.com/test-de-bienestar/'], ['Test de sueño', 'https://live.aurzane.com/test-de-sueno/'], ['Artículos', 'https://live.aurzane.com/#recentSection'], ['Biblioteca', 'https://live.aurzane.com/live-biblioteca.html']] },
-    learn: { n: 'LEARN', u: 'https://learn.aurzane.com/', l: [['Cursos', 'https://learn.aurzane.com/cursos/'], ['Certificados', 'https://learn.aurzane.com/certificado/'], ['Guías', 'https://learn.aurzane.com/#recentSection'], ['Biblioteca', 'https://learn.aurzane.com/learn-biblioteca.html']] },
-    build: { n: 'BUILD', u: 'https://build.aurzane.com/', l: [['Hipoteca', 'https://build.aurzane.com/calculadora-hipoteca/'], ['Sueldo neto', 'https://build.aurzane.com/calculadora-sueldo-neto/'], ['Reforma', 'https://build.aurzane.com/calculadora-reforma/'], ['Guías', 'https://build.aurzane.com/#recentSection'], ['Biblioteca', 'https://build.aurzane.com/build-biblioteca.html']] },
+    live: { n: 'LIVE', u: 'https://live.aurzane.com/', l: [['Ovulación', 'https://live.aurzane.com/calculadora-ovulacion/'], ['Embarazo', 'https://live.aurzane.com/calculadora-embarazo/'], ['Peso ideal', 'https://live.aurzane.com/calculadora-peso-ideal/'], ['Calorías', 'https://live.aurzane.com/calculadora-calorias/'], ['Sueño', 'https://live.aurzane.com/calculadora-sueno/'], ['Test de bienestar', 'https://live.aurzane.com/test-de-bienestar/'], ['Todas las herramientas', 'https://live.aurzane.com/#tests'], ['Artículos', 'https://live.aurzane.com/#recentSection']] },
+    learn: { n: 'LEARN', u: 'https://learn.aurzane.com/', l: [['Mi aprendizaje', 'https://learn.aurzane.com/cursos/#mis-cursos'], ['Cursos', 'https://learn.aurzane.com/cursos/'], ['Certificados', 'https://learn.aurzane.com/certificado/'], ['Mi aula', 'https://learn.aurzane.com/aula/'], ['Guías', 'https://learn.aurzane.com/#recentSection'], ['Biblioteca', 'https://learn.aurzane.com/learn-biblioteca.html']] },
+    build: { n: 'BUILD', u: 'https://build.aurzane.com/', l: [['Hipoteca', 'https://build.aurzane.com/calculadora-hipoteca/'], ['Gastos de compra', 'https://build.aurzane.com/calculadora-gastos-compra-vivienda/'], ['Alquiler', 'https://build.aurzane.com/calculadora-rentabilidad-alquiler/'], ['Sueldo neto', 'https://build.aurzane.com/calculadora-sueldo-neto/'], ['Finiquito', 'https://build.aurzane.com/calculadora-finiquito/'], ['Ahorro', 'https://build.aurzane.com/calculadora-ahorro/'], ['Jubilación', 'https://build.aurzane.com/calculadora-jubilacion/'], ['Reforma', 'https://build.aurzane.com/calculadora-reforma/'], ['Guías', 'https://build.aurzane.com/#recentSection']] },
     ovp: { n: 'OVP', u: 'https://ovp.aurzane.com/', l: [['Cómo funciona', 'https://ovp.aurzane.com/'], ['Mi proceso', 'https://ovp.aurzane.com/portal.html'], ['Informe de ejemplo', 'https://ovp.aurzane.com/informe-ejemplo.html'], ['Para colegios', 'https://aurzane.com/colegios/']] }
   };
   var esPortada = mundo === 'aurzane' && /^\/(index\.html)?$/.test(ruta);
@@ -556,7 +556,15 @@
     Array.prototype.forEach.call(d.querySelectorAll('.scroll,.now-strip,.summary-table,.tnc,.comp'), function (s) { if (!s.hasAttribute('tabindex') && s.scrollWidth > s.clientWidth) { s.setAttribute('tabindex', '0'); s.setAttribute('role', 'region'); if (!s.getAttribute('aria-label')) s.setAttribute('aria-label', s.classList.contains('now-strip') ? 'Lo último publicado' : 'Tabla desplazable'); } });
   }
 
-  function iniciar() { saltar(); barra(); pie(); mundosLimpios(); libreroAlFinal(); guardados(); anchoCompleto(); anotarVisita(); nombres(); setTimeout(nombres, 2500); }
+  /* módulos por zona: biblioteca (aurzane-bib.js) y aula de LEARN (aurzane-learn.js) */
+  function modulos() {
+    var h = location.hostname.replace(/^www\./, ''), p = location.pathname, src = '';
+    if (h === 'aurzane.com' && /^\/biblioteca(\/|$)/.test(p)) src = 'https://aurzane.com/aurzane-bib.js?v=1';
+    else if (h === 'learn.aurzane.com') src = 'https://aurzane.com/aurzane-learn.js?v=1';
+    if (!src || d.querySelector('script[data-azmod]')) return;
+    var s = d.createElement('script'); s.src = src; s.defer = true; s.setAttribute('data-azmod', '1'); d.head.appendChild(s);
+  }
+  function iniciar() { saltar(); barra(); pie(); mundosLimpios(); libreroAlFinal(); guardados(); anchoCompleto(); anotarVisita(); nombres(); setTimeout(nombres, 2500); modulos(); }
   if (d.readyState === 'loading') d.addEventListener('DOMContentLoaded', iniciar); else iniciar();
   w.AurzaneBuscar = abrir; w.AurzaneIndice = INDICE;
   /* índice al día: herramientas/indice.py lo regenera cada día con los tests, calculadoras, ejercicios y cursos nuevos */

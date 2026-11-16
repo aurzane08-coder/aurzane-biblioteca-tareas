@@ -1437,7 +1437,9 @@
       document.querySelectorAll('.nav-item').forEach(i=>i.classList.remove('active'));
       document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
       item.classList.add('active');
-      document.getElementById('page-'+item.dataset.page).classList.add('active');
+      const pagina = document.getElementById('page-'+item.dataset.page);   // sin página no se rompe el menú (auditoría 16/11/2026)
+      if(!pagina){ showToast('Esta sección todavía no tiene contenido.', 'error'); return; }
+      pagina.classList.add('active');
       if(item.dataset.page === 'membretes') loadMembretes();
       if(item.dataset.page === 'productos') loadProductoStats();
       if(item.dataset.page === 'reactivos') renderReactivos();
@@ -2416,8 +2418,8 @@
     const completados = clientes.reduce((s,c)=> s + (c.activaciones||[]).filter(a=>a.completado).length, 0);
     const activos = clientes.reduce((s,c)=> s + (c.activaciones||[]).filter(a=>a.activo).length, 0);
     document.getElementById('kpiRow').innerHTML = `
-      <div class="kpi-card"><div class="k-num">${total}</div><div class="k-lbl">Clientes totales</div></div>
-      <div class="kpi-card"><div class="k-num">${pagados}</div><div class="k-lbl">Pagos confirmados</div></div>
+      <div class="kpi-card"><div class="k-num">${total}</div><div class="k-lbl">Clientes (sin papelera)</div></div>
+      <div class="kpi-card"><div class="k-num">${pagados}</div><div class="k-lbl">Procesos activados</div></div>
       <div class="kpi-card"><div class="k-num">${activos}</div><div class="k-lbl">Tests activos</div></div>
       <div class="kpi-card"><div class="k-num">${completados}</div><div class="k-lbl">Tests completados</div></div>
     `;
@@ -2497,7 +2499,7 @@
     const completados = allClients.reduce((s,c)=> s + (c.activaciones||[]).filter(a=>a.completado).length, 0);
     document.getElementById('productoOvpStats').innerHTML = `
       <div class="d-item"><div class="d-lbl">Clientes totales</div><div class="d-val">${total}</div></div>
-      <div class="d-item"><div class="d-lbl">Pagos confirmados</div><div class="d-val">${pagados}</div></div>
+      <div class="d-item"><div class="d-lbl">Procesos activados</div><div class="d-val">${pagados}</div></div>
       <div class="d-item"><div class="d-lbl">Evaluaciones completadas</div><div class="d-val">${completados}</div></div>
     `;
   }

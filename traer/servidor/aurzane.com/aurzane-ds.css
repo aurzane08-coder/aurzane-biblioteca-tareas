@@ -251,3 +251,80 @@ main p > a:not([class]),main li > a:not([class]){text-decoration:underline;text-
 .dim-row.medium .dim-name,.dim-row.medium .dim-tag{color:#6E5320!important}
 .dim-row.low .dim-name,.dim-row.low .dim-tag{color:#8A3A3A!important}
 html:not([data-tema="oscuro"]) .estado{color:#5A5047!important}
+
+/* ---------- Ronda 4: revisión total ---------- */
+/* informe OVP de ejemplo: etiquetas de recomendación legibles */
+.reco-band.high{color:#3F5626!important}
+/* artículos de mundo: enlace de vuelta legible */
+#volverLink{color:inherit!important;text-decoration:underline;text-underline-offset:3px}
+/* el librero de la biblioteca, al final del contenido */
+.az-lib-final{margin:48px auto 24px!important;max-width:880px}
+/* libros abiertos y estudios recientes: columnas que caben en móvil */
+html.az-ds-aurzane article.t{grid-template-columns:96px minmax(0,1fr)}
+html.az-ds-aurzane article.t>*{min-width:0}
+html.az-ds-aurzane article.t h2,html.az-ds-aurzane article.t .k{overflow-wrap:anywhere}
+@media (max-width:420px){html.az-ds-aurzane article.t{grid-template-columns:72px minmax(0,1fr);gap:14px}html.az-ds-aurzane article.t .p{width:72px}}
+/* aviso de traducción: dentro de la pantalla */
+.azi-aviso{max-width:calc(100vw - 24px)!important;box-sizing:border-box!important}
+/* informe OVP: las tres bandas de recomendación con contraste suficiente y tamaño legible */
+.aurzane-report .reco-band.medium{color:#6B5016!important}
+.aurzane-report .reco-band.low{color:#8A3A3A!important}
+.aurzane-report .reco-band{font-size:.7rem!important}
+/* tienda de libros: ficha y tarjetas relacionadas que caben en móvil */
+html.az-ds-aurzane .ficha{grid-template-columns:minmax(0,280px) minmax(0,1fr)}
+@media (max-width:760px){html.az-ds-aurzane .ficha{grid-template-columns:minmax(0,1fr)}}
+html.az-ds-aurzane .ficha>*,html.az-ds-aurzane .ficha p{min-width:0;overflow-wrap:anywhere}
+html.az-ds-aurzane .libro .dat>span,html.az-ds-aurzane .libro .dat>b{display:block}
+html.az-ds-aurzane .libro .dat .et{display:inline-block}
+/* test de personalidad: los cinco rasgos en una columna en pantallas muy estrechas */
+@media (max-width:360px){.rasgos5{grid-template-columns:minmax(0,1fr)!important}}
+.rasgos5>*{min-width:0}
+/* boletín: en móvil no aparece como ventana encima del contenido (queda el bloque al final de la página) */
+@media (max-width:700px){.az-bol-pop{display:none!important}}
+.az-bol-pop input[type="checkbox"],.az-boletin input[type="checkbox"],aside .in form input[type="checkbox"]{width:20px;height:20px;margin:2px 6px 2px 0}
+.az-bol-pop label,.az-boletin label{min-height:24px;display:inline-flex;align-items:center}
+
+/* ---------- Guardados comunes ---------- */
+.az-gd-btn .az-gd-n,.az-gd-cajon .az-gd-n{min-width:20px;height:20px;padding:0 6px;border-radius:999px;background:var(--az-portada-c);color:#10142B;font:700 11px/20px var(--az-fuente);text-align:center}
+.az-gd-esta[aria-pressed="true"] svg{fill:currentColor}
+.az-gd-esta[aria-pressed="true"]{color:#F2C98A!important}
+@media (max-width:1320px){.az-gd-btn .txt{display:none}}
+@media (max-width:1120px){.az-gd-esta .txt{display:none}}
+@media (max-width:900px){.az-gd-btn,.az-gd-esta{width:40px!important;min-width:40px!important;padding:0!important;justify-content:center;position:relative}.az-gd-btn .az-gd-n{position:absolute;top:0;right:-2px;min-width:16px;height:16px;line-height:16px;font-size:10px;padding:0 4px}}
+@media (max-width:440px){.az-gd-btn{display:none!important}}
+.az-gd-velo{position:fixed;inset:0;z-index:10000;background:rgba(6,8,22,.5);display:flex;justify-content:flex-end}
+.az-gd-velo[hidden]{display:none}
+.az-gd{width:min(440px,100%);height:100%;background:#FFFDF8;color:#1C1B26;display:flex;flex-direction:column;box-shadow:-20px 0 60px -20px rgba(0,0,0,.5);font:400 15px/1.45 var(--az-fuente)}
+html[data-tema="oscuro"] .az-gd{background:#171C38;color:#ECE8DF}
+.az-gd-cab{display:flex;align-items:center;justify-content:space-between;padding:18px 20px;border-bottom:1px solid rgba(20,20,40,.1)}
+.az-gd-cab h2{margin:0;font:600 1.35rem/1.2 "Bodoni Moda",Georgia,serif}
+.az-gd-cerrar{width:40px;height:40px;border-radius:50%;border:1px solid rgba(20,20,40,.15);background:none;color:inherit;cursor:pointer;display:grid;place-items:center}
+.az-gd-lista{flex:1;overflow:auto;padding:8px 20px 20px}
+.az-gd-lista h3{font:700 13px/1 var(--az-fuente);color:#5F5D6E;margin:18px 0 6px}.az-gd-lista h3 span{font-weight:400}
+html[data-tema="oscuro"] .az-gd-lista h3{color:#B4B2C4}
+.az-gd-lista ul{list-style:none;margin:0;padding:0}
+.az-gd-lista li{display:grid;grid-template-columns:10px minmax(0,1fr) auto 40px;gap:10px;align-items:center;padding:8px 0;border-bottom:1px solid rgba(20,20,40,.08)}
+.az-gd-lista li i{width:10px;height:10px;border-radius:50%;background:var(--c)}
+.az-gd-lista li a{color:inherit;font-weight:600;text-decoration:none;overflow-wrap:anywhere}.az-gd-lista li a:hover{text-decoration:underline}
+.az-gd-lista li small{font-size:11px;color:#5F5D6E;letter-spacing:.04em}
+html[data-tema="oscuro"] .az-gd-lista li small{color:#B4B2C4}
+.az-gd-lista li button{width:36px;height:36px;border-radius:50%;border:0;background:none;color:inherit;cursor:pointer;display:grid;place-items:center;opacity:.7}
+.az-gd-lista li button:hover{opacity:1;background:rgba(20,20,40,.06)}
+.az-gd-vacio{color:#5F5D6E;padding:24px 0}
+html[data-tema="oscuro"] .az-gd-vacio{color:#B4B2C4}
+.az-gd-pie{margin:0;padding:14px 20px 18px;border-top:1px solid rgba(20,20,40,.1);font-size:13px;color:#5F5D6E}
+html[data-tema="oscuro"] .az-gd-pie{color:#B4B2C4}
+.az-gd-pie a{color:inherit}
+.az-gd-cajon{display:flex!important;align-items:center;gap:10px}
+.az-gd-esta[hidden],.az-gd-btn[hidden]{display:none!important}
+.aurzane-report .reco-list li .reco-mark{color:#6B5016!important}
+/* Revisión total 16/11/2026: contraste de la etiqueta de LIVE y del pie del informe OVP; cabecera a 320 px con el botón Guardar */
+html.az-ds-live .eyebrow{color:#9A4523!important}
+.aurzane-report .report-footer>span{color:#6B6658!important}
+@media(max-width:360px){.az-cab .az-acc{gap:2px!important}.az-cab .az-acc .az-btn{width:36px!important;min-width:36px!important}}
+
+/* Objetivos táctiles de al menos 24 px (WCAG 2.2, criterio 2.5.8), auditoría 16/11/2026 */
+.breadcrumb a,.migas a,.az-cab-in .az-donde,.paper-foot a,.paper .toggle-abs,.az-boletin label a{display:inline-flex;align-items:center;min-height:24px}
+.az-pie-legal a{display:inline-flex;align-items:center;min-height:26px}
+input[type=checkbox],input[type=radio]{min-width:24px;min-height:24px}
+.search-box input,.search-wrap input{min-height:28px}

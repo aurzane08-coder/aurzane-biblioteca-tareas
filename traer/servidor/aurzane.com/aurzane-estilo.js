@@ -45,6 +45,7 @@
     /* panel «Empieza por aquí» a la derecha de la cabecera */
     '.az-empieza{position:absolute;right:max(28px,calc((100% - 1200px)/2));top:50%;transform:translateY(-50%);width:340px;z-index:2;background:var(--surface,#fffdf9);border:1px solid rgba(60,45,30,.12);border-radius:18px;padding:18px 18px 10px;box-shadow:0 24px 50px -30px rgba(30,20,10,.45);text-align:left}' +
     'html[data-tema="oscuro"] .az-empieza{background:#151a33;border-color:rgba(255,255,255,.12)}' +
+    '@media(min-width:1100px){.world-header:has(> .az-empieza){min-height:380px}}' +   /* el panel no se corta arriba (auditoría 16/11/2026) */
     '.az-empieza h2{font:600 1.05rem/1.3 "Instrument Sans",system-ui,sans-serif;margin:0 0 4px;color:inherit}' +
     '.az-empieza p{margin:0 0 10px;font-size:.86rem}' +
     '.az-empieza a{display:flex;gap:12px;align-items:center;padding:11px 8px;border-top:1px solid rgba(60,45,30,.1);text-decoration:none;color:inherit;border-radius:10px}' +
@@ -155,13 +156,17 @@
     sol: '1507525428034-b723cf961d3e', bienestar: '1506126613408-eca07ce68773', puntos: '1512438248247-f0f2a5a8b7f0', foco: '1434030216411-0b793f4b4173',
     luna: '1541781774459-bb2af2f05b55', habitos: '1490645935967-10de6ba17061', grafica: '1554224155-6726b3ff858f', casa: '1560518883-ce09059eeffa', ahorro: '1579621970563-ebec7560ff3e',
     agua: '1548839140-29a749e1cf4d', comida: '1512621776951-a57141f2eefd', ejercicio: '1571019613454-1cb2f99b2d8b', embarazo: '1493894473891-10fc1e5dbd22',
-    tarta: '1464349095431-e9a21285b5f3', calendario: '1506784983877-45594efa4cbe', graficos: '1434626881859-194d67b2b86f', estudio: '1427504494785-3a9ca7044f45', impuestos: '1554224154-26032ffc0d07' };
+    tarta: '1464349095431-e9a21285b5f3', calendario: '1506784983877-45594efa4cbe', graficos: '1434626881859-194d67b2b86f', estudio: '1427504494785-3a9ca7044f45', impuestos: '1554224154-26032ffc0d07',
+    chalet: '1570129477492-45c003edd2be', pisos: '1460317442991-0ec209397118', curriculum: '1586281380349-632531db7ed4', hucha: '1559526324-4b87b5e36e44',
+    playa: '1473186578172-c141e6798cf4', manos: '1505751172876-fa1923c5c528', pesas: '1517836357463-d25dfeac3438', dormir: '1520206183501-b80df61043c2' };
   function foto(clave, ancho) { return 'url("https://images.unsplash.com/photo-' + (FOTO[clave] || FOTO.grafica) + '?w=' + (ancho || 640) + '&q=70&auto=format&fit=crop")'; }
   var TEMA = { 'test-de-ansiedad': 'olas', 'test-de-depresion': 'nube', 'test-de-autoestima': 'espejo', 'test-de-autocompasion': 'corazon', 'test-de-autoeficacia': 'montana',
     'test-de-burnout': 'vela', 'test-de-estres': 'espiral', 'test-de-resiliencia': 'brote', 'test-de-satisfaccion-con-la-vida': 'sol', 'test-de-soledad': 'puntos',
     'test-de-tdah': 'foco', 'test-de-bienestar': 'bienestar', 'test-de-habitos': 'habitos', 'test-de-sueno': 'luna', 'calculadora-hipoteca': 'casa', 'calculadora-reforma': 'casa', 'calculadora-interes-compuesto': 'ahorro', 'calculadora-sueldo-neto': 'impuestos',
     'calculadora-agua': 'agua', 'calculadora-calorias': 'comida', 'calculadora-imc': 'ejercicio', 'calculadora-embarazo': 'embarazo', 'calculadora-edad': 'tarta',
-    'calculadora-dias-entre-fechas': 'calendario', 'calculadora-porcentajes': 'graficos', 'calculadora-nota-pau': 'estudio' };
+    'calculadora-dias-entre-fechas': 'calendario', 'calculadora-porcentajes': 'graficos', 'calculadora-nota-pau': 'estudio',
+    'calculadora-gastos-compra-vivienda': 'chalet', 'calculadora-rentabilidad-alquiler': 'pisos', 'calculadora-finiquito': 'curriculum', 'calculadora-ahorro': 'hucha',
+    'calculadora-jubilacion': 'playa', 'calculadora-ovulacion': 'manos', 'calculadora-peso-ideal': 'pesas', 'calculadora-sueno': 'dormir' };
   var MIDE = { 'test-de-ansiedad': 'Cuánta ansiedad y preocupación has sentido en las dos últimas semanas.', 'test-de-depresion': 'Cómo ha estado tu estado de ánimo en las dos últimas semanas.',
     'test-de-autoestima': 'Cómo te valoras a ti mismo en general.', 'test-de-autocompasion': 'Cómo te tratas cuando algo sale mal o te sientes mal.',
     'test-de-autoeficacia': 'Cuánto confías en tu capacidad para afrontar retos y problemas.', 'test-de-burnout': 'El agotamiento físico y mental que te dejan el trabajo o los estudios.',
@@ -172,6 +177,7 @@
   function portada() {
     var slug = location.pathname.split('/').filter(Boolean)[0] || '';
     if (!/^(test-de-|calculadora-)/.test(slug) || slug === 'test-de-personalidad' || d.querySelector('.az-portada')) return;
+    if (w.innerWidth < 700) return;   /* en el móvil la ficha empujaba la calculadora fuera de la pantalla y movía la página al cargar (CLS) */
     var wrap = d.querySelector('.hero > .wrap'), pre = wrap && wrap.querySelector('.pre');
     if (!wrap || !pre) return;
     var img = foto(TEMA[slug] || 'grafica', 680);
@@ -325,26 +331,46 @@
     pie.appendChild(b);
   }
   /* ofertas de socios (Awin) junto a la herramienta que encaja; solo aparecen cuando el programa nos ha aceptado */
-  var SOCIO = { hipoteca: [/^\/calculadora-hipoteca/, 'build', '¿Quieres que te estudien la hipoteca?', 'Un intermediario hipotecario compara bancos por ti y te dice cuánto te pueden prestar. Estudio sin compromiso.', 'Pedir estudio a'],
+  var SOCIO = { 
+    /* SaludOnNet en LIVE (16/11/2026): la consulta que encaja con cada calculadora o test, con enlace directo a la especialidad; va primero para tener prioridad */
+    'consulta-embarazo': [/^\/calculadora-(embarazo|ovulacion)/, 'live', 'Revisiones y ecografías del embarazo sin seguro', 'Consultas de obstetricia y ecografías en clínicas privadas a precio cerrado, hasta un 70 % más baratas que la tarifa oficial del centro.', 'Ver precios en', 'consulta', 'https://www.saludonnet.com/servicios-medicos/obstetricia-y-ginecologia'],
+    'consulta-nutricion': [/^\/calculadora-(calorias|imc|peso-ideal)/, 'live', '¿Prefieres que te guíe un especialista?', 'Consulta de endocrinología y nutrición en clínicas privadas o por videoconsulta, con precio cerrado y sin seguro médico.', 'Ver especialistas en', 'consulta', 'https://www.saludonnet.com/servicios-medicos/endocrinologia-y-nutricion'],
+    'consulta-sueno': [/^\/(test-de-sueno|calculadora-sueno)/, 'live', '¿Duermes mal desde hace semanas?', 'Habla con un médico por videoconsulta o pide cita con un especialista, con precio cerrado y sin seguro médico.', 'Hablar con un médico en', 'consulta', 'https://www.saludonnet.com/video-consulta'],
+    'consulta-chequeo': [/^\/(test-de-(habitos|bienestar)|calculadora-agua)/, 'live', 'Un chequeo para saber cómo estás', 'Análisis clínicos y revisiones en clínicas cerca de ti, a precio cerrado y sin necesidad de seguro.', 'Ver análisis en', 'consulta', 'https://www.saludonnet.com/servicios-medicos/analisis-clinicos'],
+    hipoteca: [/^\/calculadora-(hipoteca|gastos-compra-vivienda)/, 'build', '¿Quieres que te estudien la hipoteca?', 'Un intermediario hipotecario compara bancos por ti y te dice cuánto te pueden prestar. Estudio sin compromiso.', 'Pedir estudio a'],
     reforma: [/^\/calculadora-reforma/, 'build', '¿Lo pasamos a presupuestos reales?', 'Pide presupuestos a profesionales de tu zona y compáralos con lo que te ha salido aquí.', 'Pedir presupuestos en'],
     universidades: [/^\/(universidades|calculadora-nota-pau)/, 'nexus', '¿Vas a estudiar fuera de casa?', 'Busca habitación o piso de estudiantes cerca de tu universidad.', 'Buscar alojamiento en'],
-    crianza: [/^\/calculadora-embarazo/, 'live', 'Juguetes que acompañan el desarrollo', 'Juguetes educativos por edad para aprender jugando.', 'Ver juguetes en'],
-    nutricion: [/^\/calculadora-(calorias|imc)/, 'live', '¿Te ayudas con la alimentación?', 'Si entrenas o quieres cuidar tu alimentación, aquí tienes nutrición deportiva y comida saludable. Consulta con un profesional si tienes alguna condición de salud.', 'Ver productos en'],
-    sueno: [/^\/test-de-sueno/, 'live', 'Descansar mejor también es cuestión de cama', 'Colchones, almohadas y textiles de descanso. Si tus problemas de sueño duran semanas, habla con un profesional.', 'Ver en'],
+    crianza: [/^\/calculadora-(embarazo|ovulacion)/, 'live', 'Juguetes que acompañan el desarrollo', 'Juguetes educativos por edad para aprender jugando.', 'Ver juguetes en'],
+    nutricion: [/^\/calculadora-(calorias|imc|peso-ideal)/, 'live', '¿Te ayudas con la alimentación?', 'Si entrenas o quieres cuidar tu alimentación, aquí tienes nutrición deportiva y comida saludable. Consulta con un profesional si tienes alguna condición de salud.', 'Ver productos en'],
+    sueno: [/^\/(test-de-sueno|calculadora-sueno)/, 'live', 'Descansar mejor también es cuestión de cama', 'Colchones, almohadas y textiles de descanso. Si tus problemas de sueño duran semanas, habla con un profesional.', 'Ver en'],
     cursos: [/^\/.+/, 'learn', '¿Quieres seguir aprendiendo?', 'Cursos online en español para aprender nuevas habilidades a tu ritmo.', 'Ver cursos en'],
-    bienestar: [/^\/(test-de-habitos|calculadora-agua)/, 'live', 'Para llevar tus hábitos a la compra', 'Alimentación saludable y productos para el día a día. Ningún producto sustituye a dormir bien, moverte y comer variado.', 'Ver en'] };
+    bienestar: [/^\/(test-de-habitos|calculadora-agua)/, 'live', 'Para llevar tus hábitos a la compra', 'Alimentación saludable y productos para el día a día. Ningún producto sustituye a dormir bien, moverte y comer variado.', 'Ver en'],
+    /* si el socio principal de un sitio aún no nos ha aceptado, se muestra el siguiente que encaje (16/11/2026) */
+    bricolaje: [/^\/calculadora-reforma/, 'build', 'Materiales para tu reforma', 'Materiales, herramientas e instalación para llevar a cabo la reforma que acabas de calcular.', 'Ver en'],
+    muebles: [/^\/calculadora-(reforma|hipoteca|gastos-compra-vivienda)/, 'build', 'Amuebla tu nueva casa', 'Muebles y decoración con envío a domicilio para cuando termines la reforma o la mudanza.', 'Ver muebles en'],
+    'negocio-alquiler': [/^\/calculadora-rentabilidad-alquiler/, 'build', '¿Y si en lugar de un piso compras un negocio?', 'Negocios en venta con su facturación y su precio: otra forma de invertir para tener ingresos cada mes, sin depender de un inquilino.', 'Ver negocios en venta en', 'negocio'],
+    'negocio-propio': [/^\/calculadora-finiquito/, 'build', '¿Y si tu siguiente paso es tu propio negocio?', 'Negocios en venta que ya funcionan, con clientes y facturación: una forma de emprender sin empezar de cero, también con tu indemnización.', 'Ver negocios en venta en', 'negocio'],
+    'negocio-ahorro': [/^\/calculadora-(ahorro|jubilacion)/, 'build', 'Otra forma de poner a trabajar tus ahorros', 'Negocios en venta en España y en todo el mundo, con su facturación y su precio, para quien quiere generar ingresos además de su sueldo o su pensión.', 'Ver negocios en venta en', 'negocio'],
+    negocio: [/^\/(index\.html)?$/, 'build', '¿Y si compras un negocio que ya funciona?', 'Negocios en venta en España y en todo el mundo, con su facturación y su precio, para quien quiere invertir o emprender sin empezar de cero.', 'Ver negocios en venta en'],
+    deporte: [/^\/(calculadora-(calorias|imc)|test-de-habitos)/, 'live', 'Muévete más, a tu manera', 'Material deportivo para empezar o seguir entrenando, a cualquier nivel.', 'Ver en'],
+    aventura: [/^\/((index\.html)?|test-de-bienestar\/?)$/, 'live', 'Una aventura cerca de ti', 'Excursiones y actividades guiadas en tu ciudad o en tu próximo viaje: moverte, descubrir y desconectar también es cuidarte.', 'Ver actividades en'],
+    viajes: [/^\/((index\.html)?|test-de-bienestar\/?)$/, 'live', 'Desconecta con un viaje', 'Escapadas y viajes para descansar de verdad y volver con energía.', 'Ver viajes en'],
+    consulta: [/^\/test-de-(ansiedad|depresion|estres|burnout|autoestima|soledad|tdah|resiliencia|autocompasion)/, 'mind', '¿Quieres hablarlo con un profesional?', 'Si tu resultado te preocupa, una consulta con un psicólogo puede ayudarte: en clínica o por videoconsulta, con precio cerrado y sin seguro médico. Si estás en peligro, llama al 112 o al 024.', 'Ver psicólogos en', 'consulta', 'https://www.saludonnet.com/servicios-medicos/psicologia'],
+    'seguro-viaje': [/^\/(universidades|calculadora-nota-pau)/, 'nexus', '¿Te vas a estudiar fuera?', 'Seguro de viaje y de estudiantes para estancias en el extranjero, con asistencia médica.', 'Ver seguros en'] };
   function socios() {
-    var p = location.pathname, cual = null;
-    Object.keys(SOCIO).forEach(function (k) { if (SOCIO[k][1] === m && SOCIO[k][0].test(p)) cual = k; });
-    if (!cual || d.querySelector('.az-socio')) return;
+    var p = location.pathname, cands = [];
+    Object.keys(SOCIO).forEach(function (k) { if (SOCIO[k][1] === m && SOCIO[k][0].test(p)) cands.push(k); });
+    if (!cands.length || d.querySelector('.az-socio')) return;
     var sc = d.createElement('script'); sc.src = 'https://aurzane.com/libros/afiliados.js?d=' + new Date().toISOString().slice(0, 10); sc.async = true;
     sc.onload = function () {
-      var A = w.__azAfil || {}, id = Object.keys(A).filter(function (k) { return A[k].d === cual; })[0]; if (!id) return;
+      var A = w.__azAfil || {}, cual = null, id = null;
+      cands.some(function (c) { var dd = SOCIO[c][5] || c; id = Object.keys(A).filter(function (k) { return A[k].d === dd; })[0]; if (id) cual = c; return !!id; });
+      if (!id) return;
       var x = SOCIO[cual], pie = d.querySelector('.az-explorar') || d.querySelector('.az-libros') || d.querySelector('footer'); if (!pie) return;
       var c = d.createElement('aside'); c.className = 'az-socio'; c.setAttribute('data-nosnippet', '');
       c.style.cssText = 'max-width:1120px;margin:30px auto;padding:22px 24px;border-radius:18px;background:#141a33;color:#f3efe6;border:1px solid rgba(255,255,255,.12)';
       c.innerHTML = '<p style="margin:0 0 4px;font:700 1.2rem/1.3 \'Bodoni Moda\',Georgia,serif">' + x[2] + '</p><p style="margin:0 0 14px;opacity:.8">' + x[3] + '</p>' +
-        '<a href="' + A[id].u.replace(/"/g, '&quot;') + '" target="_blank" rel="sponsored nofollow noopener" style="display:inline-block;background:#E2BF6A;color:#1b1440;font-weight:700;text-decoration:none;padding:11px 20px;border-radius:99px">' + x[4] + ' ' + A[id].n + '</a>' +
+        '<a href="' + (x[6] ? A[id].u.replace(/([?&]ued=)[^&]*/, '$1' + encodeURIComponent(x[6])) : A[id].u).replace(/"/g, '&quot;') + '" target="_blank" rel="sponsored nofollow noopener" style="display:inline-block;background:#E2BF6A;color:#1b1440;font-weight:700;text-decoration:none;padding:11px 20px;border-radius:99px">' + x[4] + ' ' + A[id].n + '</a>' +
         '<p style="margin:12px 0 0;font-size:.78rem;opacity:.6">Enlace de afiliado: si contratas, AURZANE recibe una comisión sin coste para ti. El cálculo de esta página es independiente.</p>';
       pie.parentNode.insertBefore(c, pie);
     };

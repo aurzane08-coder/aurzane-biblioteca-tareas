@@ -16,7 +16,7 @@
   async function cargar(sb, forzar){
     if(cache && !forzar) return cache;
     var r = await Promise.all([
-      sb.from('membretes').select('*').eq('activo', true),
+      sb.from('membretes').select('id,nombre_marca,subtitulo,color_acento,nota_legal,created_at,color_banda,color_texto_banda,institucion,activo,escudo_url,enfoque').eq('activo', true),
       sb.from('profesionales').select('*').eq('activo', true)
     ]);
     var membretes = (r[0] && r[0].data) || [];
@@ -64,6 +64,10 @@
   function selector(cont, estado, onCambio){
     var op = estado.opciones;
     var defM = membretePorDefecto(op), defP = profesionalPorDefecto(op);
+    // El membrete de un colegio solo llega con su enlace: no se ofrece a otros y quien lo tiene no lo cambia aquí
+    var esCole = function(m){ return !!(m && m.codigo); };
+    var deColegio = esCole(estado.membrete);
+    op = { membretes: (op.membretes || []).filter(function(m){ return deColegio ? m.id === estado.membrete.id : !esCole(m); }), profesionales: op.profesionales };
     cont.innerHTML =
       '<div class="opciones-informe">' +
         '<label class="oi-campo"><span>Membrete</span>' +
@@ -78,6 +82,7 @@
       '</div>';
     var sm = cont.querySelector('#oiMembrete'), sp = cont.querySelector('#oiFirma'), st = cont.querySelector('#oiEstado');
     if(op.profesionales.length < 2) sp.disabled = true;
+    if(deColegio){ sm.disabled = true; sm.title = 'Tu informe lleva el membrete de tu colegio.'; }
     async function cambiar(){
       sm.disabled = sp.disabled = true;
       st.textContent = 'Guardando…';
@@ -89,9 +94,9 @@
         await onCambio({ membrete_id: mid, profesional_id: pid });
         st.textContent = 'Informe actualizado.';
       }catch(e){
-        st.textContent = 'No se pudo guardar: ' + (e && e.message ? e.message : 'error');
+        st.textContent = 'No se pudo guardar. Inténtalo de nuevo en un momento.';
       }finally{
-        sm.disabled = false;
+        sm.disabled = deColegio;
         sp.disabled = op.profesionales.length < 2;
       }
     }

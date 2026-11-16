@@ -7,6 +7,33 @@
  * - Pinta las opciones en los paneles .paleta-swatches que tenga la página
  *   y añade un botón flotante 🎨 para elegir el color desde cualquier sitio.
  */
+
+/* Calculadoras insertables en otras webs (16/11/2026): con ?embed=1 la calculadora se muestra sola, sin cabecera,
+   anuncios ni textos largos, con un enlace a AURZANE y su altura avisada a la web que la inserta (aurzane.com/insertar/) */
+(function (d, w) {
+  if (!/(^|[?&])embed=1(&|$)/.test(location.search) || !/^\/calculadora-/.test(location.pathname)) return;
+  w.__azEmbed = 1; d.documentElement.classList.add('az-embed');
+  var st = d.createElement('style');
+  st.textContent = 'html.az-embed .utility,html.az-embed .topbar,html.az-embed .az-cab,html.az-embed .az-subnav,html.az-embed footer,html.az-embed .az-pie,' +
+    'html.az-embed ins.adsbygoogle,html.az-embed section.bloque,html.az-embed .az-guia,html.az-embed .movil-barra,html.az-embed .az-dock,html.az-embed #azDock,' +
+    'html.az-embed .az-empieza,html.az-embed .az-boletin,html.az-embed .az-socio,html.az-embed .az-explorar,html.az-embed .az-curso-rel,html.az-embed .eco,' +
+    'html.az-embed aside.firma,html.az-embed .az-saltar,html.az-embed .migas,html.az-embed .az-libros,html.az-embed aside[data-nosnippet]{display:none!important}' +
+    'html.az-embed body>*:not(section.hero):not(main):not(.wrap:has(.app)):not(.az-embed-pie):not(script):not(style){display:none!important}' +
+    'html.az-embed body::before{display:none!important}html.az-embed section.hero{padding:14px 0 6px!important;min-height:0!important}' +
+    'html.az-embed section.hero p{display:none}html.az-embed h1{font-size:1.5rem!important;margin:0!important}' +
+    '.az-embed-pie{margin:14px auto 10px;max-width:1100px;padding:0 16px;font:600 13px/1.4 system-ui,sans-serif;opacity:.85}.az-embed-pie a{color:inherit}';
+  (d.head || d.documentElement).appendChild(st);
+  function alto() { try { var pie = d.querySelector('.az-embed-pie'); var h = pie ? Math.ceil(pie.getBoundingClientRect().bottom + w.scrollY + 12) : d.documentElement.scrollHeight; w.parent.postMessage({ az: 'alto', h: h, u: location.pathname }, '*'); } catch (e) {} }
+  d.addEventListener('DOMContentLoaded', function () {
+    var c = d.querySelector('link[rel="canonical"]'), u = (c && c.href) || (location.origin + location.pathname);
+    var p = d.createElement('p'); p.className = 'az-embed-pie';
+    p.innerHTML = 'Calculadora gratuita de <a href="' + u + '?utm_source=insertada&amp;utm_medium=' + encodeURIComponent(d.referrer ? new URL(d.referrer).hostname : 'web') + '" target="_blank" rel="noopener">AURZANE</a>';
+    d.body.appendChild(p);
+    Array.prototype.forEach.call(d.querySelectorAll('a[href]'), function (a) { if (!a.target) a.target = '_blank'; });
+    alto(); if (w.ResizeObserver) new ResizeObserver(alto).observe(d.body); w.addEventListener('load', alto);
+  });
+})(document, window);
+
 (function (w, d) {
   'use strict';
   if (w.AurzanePaleta) return;
@@ -197,7 +224,15 @@
 (function (d) {
   if (!/^(mind|live)\.aurzane\.com$/.test(location.hostname) || d.querySelector('script[data-azasis]')) return;
   var s = d.createElement('script');
-  s.src = 'https://aurzane.com/aurzane-asistente.js?v=2'; s.defer = true; s.setAttribute('data-azasis', '1');
+  s.src = 'https://aurzane.com/aurzane-asistente.js?v=3'; s.defer = true; s.setAttribute('data-azasis', '1');
+  (d.head || d.documentElement).appendChild(s);
+})(document);
+
+/* Tu siguiente paso: al terminar un test, tres pasos con sentido (otro test, una práctica y un curso u orientación) */
+(function (d) {
+  if (!/^(mind|live)\.aurzane\.com$/.test(location.hostname) || !/\/test-de-/.test(location.pathname) || d.querySelector('script[data-azruta]')) return;
+  var s = d.createElement('script');
+  s.src = 'https://aurzane.com/aurzane-ruta.js?v=1'; s.defer = true; s.setAttribute('data-azruta', '1');
   (d.head || d.documentElement).appendChild(s);
 })(document);
 
@@ -251,16 +286,100 @@
 /* Capa visual común: color propio de cada mundo, panel «Empieza por aquí», logo e icono */
 (function (d) {
   if (window.AurzaneEstilo || d.querySelector('script[data-azest]')) return;
+  /* diferido: escrito en la cabecera retrasaba la primera pintura (PageSpeed, 16/11/2026) */
+  var src = 'https://aurzane.com/aurzane-estilo.js?v=31';
   var s = d.createElement('script');
-  s.src = 'https://aurzane.com/aurzane-estilo.js?v=24'; s.defer = true; s.setAttribute('data-azest', '1');
+  s.src = src; s.defer = true; s.setAttribute('data-azest', '1');
   (d.head || d.documentElement).appendChild(s);
 })(document);
+
+/* Hueco reservado para la cabecera común mientras carga aurzane-ds.js (16/11/2026).
+   La cabecera se inserta al terminar de leer la página; sin hueco, todo el contenido bajaba de golpe (CLS de 0,1 a 0,5).
+   Aquí se ocultan ya las barras antiguas que la cabecera sustituye y se reserva su alto exacto (53 px, o 102 px con la
+   fila del mundo en pantallas de más de 900 px). Si la cabecera no llega en 5 s, se deshace y la página queda como estaba. */
+(function (d, w) {
+  var h = location.hostname;
+  if (!/(^|\.)aurzane\.com$/.test(h)) return;
+  var mundo = /^(www\.)?aurzane\.com$/.test(h) ? 'aurzane' : h.split('.')[0], ruta = location.pathname;
+  if (mundo === 'learn' && /^\/cursos\.html$/.test(ruta)) return;
+  if (window.__azEmbed) return;
+  var portada = mundo === 'aurzane' && /^\/(index\.html)?$/.test(ruta);
+  var sinFila = mundo === 'aurzane' && !/^\/(biblioteca|libros|articulos|articulos-ai|research|frases|novedades|temas|mapa)\b/.test(ruta);
+  var viejas = ['body > .utility', '.utility[data-nosnippet]', '#utilityBar', 'body > header.topbar', 'body > header.top', 'body > .w > nav.top', 'header.principal', '.btn-todo'];
+  if (!/^\/research(\.html)?$/.test(ruta)) viejas.push('body > div.topbar:has(.brand)');
+  viejas.push('body > header:not([class]):has(> .w > .logo)');
+  var P = 'html.az-pre:not(.az-ds) ';
+  var css = viejas.map(function (s) { return P + s; }).join(',') + '{display:none!important}' +
+    P + 'body::before{content:"";display:block;height:53px}' +
+    (!portada && !sinFila ? '@media (min-width:901px){' + P + 'body::before{height:102px}}' : '') +
+    /* cifras que llegan después (NEXUS): ancho fijo para que al rellenarse no recoloquen la cabecera */
+    '#statArticulos,#statBiblioteca{display:inline-block;min-width:6ch}' +
+    /* tests y calculadoras en tableta: hueco para la ficha con foto que añade aurzane-estilo.js (en el móvil no se añade), así nada salta al cargar */
+    '@media (min-width:700px) and (max-width:1099px){html.az-calc:not(.az-con-portada) .hero>.wrap::after{content:"";display:block;height:192px}}';
+  if (/^\/(test-de-|calculadora-)/.test(ruta) && !/^\/test-de-personalidad/.test(ruta)) d.documentElement.classList.add('az-calc');
+  /* portada de cada mundo: su foto de cabecera se pide ya (era el LCP y llegaba tarde) y su maquetación se aplica desde el principio */
+  var FOTO = { mind: '1559757175-5700dde675bc', nexus: '1518770660439-4636190af475', live: '1454496522488-7a8e488e8606', learn: '1481627834876-b7833e8f5570', build: '1461360370896-922624d12aa1', ovp: '1523240795612-9a054b0db644' };
+  if (mundo !== 'aurzane' && /^\/(index\.html)?$/.test(ruta)) {
+    d.documentElement.classList.add('az-ds-' + mundo, 'az-pm');
+    if (FOTO[mundo]) [['(max-width:760px)', 900], ['(min-width:761px)', 1600]].forEach(function (m) {
+      var k = d.createElement('link'); k.rel = 'preload'; k.as = 'image'; k.media = m[0]; k.setAttribute('fetchpriority', 'high');
+      k.href = 'https://images.unsplash.com/photo-' + FOTO[mundo] + '?w=' + m[1] + '&q=70&auto=format&fit=crop'; (d.head || d.documentElement).appendChild(k);
+    });
+  }
+  try { var st = d.createElement('style'); st.setAttribute('data-azpre', '1'); st.textContent = css; (d.head || d.documentElement).appendChild(st); d.documentElement.classList.add('az-pre'); } catch (e) { return; }
+  setTimeout(function () { if (!d.documentElement.classList.contains('az-ds')) d.documentElement.classList.remove('az-pre'); }, 5000);
+})(document, window);
 
 /* Sistema de diseño compartido: barra común del ecosistema, buscador global (Ctrl+K) y base accesible */
 (function (d) {
   if (d.querySelector('link[data-azds]') || !/(^|\.)aurzane\.com$/.test(location.hostname)) return;
-  var l = d.createElement('link'); l.rel = 'stylesheet'; l.href = 'https://aurzane.com/aurzane-ds.css?v=8'; l.setAttribute('data-azds', '1');
-  (d.head || d.documentElement).appendChild(l);
-  var s = d.createElement('script'); s.src = 'https://aurzane.com/aurzane-ds.js?v=8'; s.defer = true; s.setAttribute('data-azds', '1');
+  /* la hoja común se escribe en el documento mientras se lee la cabecera: así se aplica antes de pintar y la página
+     no cambia de aspecto ni salta cuando llega (16/11/2026); si la página ya está leída, se añade como antes */
+  var css = 'https://aurzane.com/aurzane-ds.css?v=12';
+  if (d.readyState === 'loading' && d.currentScript && d.currentScript.parentNode === d.head) d.write('<link rel="stylesheet" href="' + css + '" data-azds="1">');
+  else { var l = d.createElement('link'); l.rel = 'stylesheet'; l.href = css; l.setAttribute('data-azds', '1'); (d.head || d.documentElement).appendChild(l); }
+  var s = d.createElement('script'); s.src = 'https://aurzane.com/aurzane-ds.js?v=15'; s.defer = true; s.setAttribute('data-azds', '1');
   (d.head || d.documentElement).appendChild(s);
 })(document);
+
+/* Tests: la barra móvil «Ver resultado» aparece al bajar y lleva siempre al resultado (16/11/2026) */
+(function (w, d) {
+  function iniciar() {
+    var barra = d.getElementById('movilBarra'), res = d.getElementById('resultado');
+    if (!barra || !res || barra.__az) return; barra.__az = 1;
+    var visible = function () { var r = res.getBoundingClientRect(); return r.top < innerHeight && r.bottom > 0; };
+    var poner = function () { barra.classList.toggle('ver', w.scrollY > 300 && !visible()); };
+    w.addEventListener('scroll', poner, { passive: true }); w.addEventListener('resize', poner); poner();
+    var a = barra.querySelector('a[href="#resultado"]');
+    if (a) a.addEventListener('click', function (e) {
+      e.preventDefault();
+      var cab = d.querySelector('.az-cab'), alto = cab && getComputedStyle(cab).position === 'sticky' ? cab.offsetHeight : 0;
+      w.scrollTo({ top: res.getBoundingClientRect().top + w.scrollY - alto - 12, behavior: 'smooth' });
+      try { history.replaceState(null, '', '#resultado'); } catch (x) {}
+      setTimeout(function () { res.setAttribute('tabindex', '-1'); res.focus({ preventScroll: true }); }, 500);
+    });
+  }
+  if (d.readyState === 'loading') d.addEventListener('DOMContentLoaded', iniciar); else iniciar();
+  setTimeout(iniciar, 2000);
+})(window, document);
+
+/* Medición sin cookies (16/11/2026): una vista por página y los clics que importan (socios, salidas, cambios de mundo).
+   Solo se suman contadores en el servidor; no se guarda IP ni ningún identificador. */
+(function (d, w) {
+  if (w.__azMide || w.__azEmbed || navigator.webdriver || !/(^|\.)aurzane\.com$/.test(location.hostname)) return; w.__azMide = 1;
+  var U = 'https://aurzane.com/ai/visitas.php';
+  function envia(o) { try { var b = JSON.stringify(o); if (!(navigator.sendBeacon && navigator.sendBeacon(U, b))) fetch(U, { method: 'POST', body: b, keepalive: true, mode: 'no-cors' }); } catch (e) {} }
+  var ref = ''; try { var r = d.referrer ? new URL(d.referrer).hostname : ''; ref = !r ? 'directo' : /aurzane\.com$/.test(r) ? '' : /google\./.test(r) ? 'google' : /bing\./.test(r) ? 'bing' : /facebook|fb\./.test(r) ? 'facebook' : /instagram/.test(r) ? 'instagram' : /t\.co$|twitter|x\.com/.test(r) ? 'x' : /tiktok/.test(r) ? 'tiktok' : /telegram|t\.me/.test(r) ? 'telegram' : /pinterest/.test(r) ? 'pinterest' : 'otros'; } catch (e) {}
+  var base = { h: location.hostname.replace(/^www\./, ''), p: location.pathname };
+  function vista() { envia({ h: base.h, p: base.p, o: ref }); }
+  if (d.visibilityState === 'prerender') d.addEventListener('visibilitychange', vista, { once: true }); else vista();
+  d.addEventListener('click', function (ev) {
+    var a = ev.target && ev.target.closest && ev.target.closest('a[href]'); if (!a) return;
+    var u; try { u = new URL(a.href, location.href); } catch (e) { return; }
+    var e = '';
+    if (a.closest('.az-socio')) e = 'socio:' + (a.closest('.az-socio').getAttribute('data-socio') || u.hostname.replace(/^www\./, ''));
+    else if (!/aurzane\.com$/.test(u.hostname)) e = 'sale:' + u.hostname.replace(/^www\./, '');
+    else if (u.hostname !== location.hostname) e = 'mundo:' + u.hostname.split('.')[0];
+    if (e) envia({ h: base.h, p: base.p, e: e });
+  }, true);
+})(document, window);

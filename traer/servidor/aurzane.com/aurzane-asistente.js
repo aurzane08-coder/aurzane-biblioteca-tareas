@@ -35,15 +35,18 @@
       q = (q || '').trim(); if (q.length < 3) return;
       resp.innerHTML = '<p style="opacity:.7">Pensando…</p>';
       var act = datos() || x;
-      fetch('https://aurzane.com/ai/asistente.php', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ test: act.test, resultado: act.resultado, pregunta: q }) })
-        .then(function (r) { return r.json(); })
+      var cuerpo = JSON.stringify({ test: act.test, resultado: act.resultado, pregunta: q });
+      // primero en el mismo dominio del test (mind o live); si no existe, en aurzane.com
+      var pedir = function (u) { return fetch(u, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: cuerpo }).then(function (r) {
+        return r.text().then(function (t) { try { return JSON.parse(t); } catch (e) { throw new Error('respuesta ' + r.status); } }); }); };
+      pedir(location.origin + '/ai/asistente.php').catch(function () { return pedir('https://aurzane.com/ai/asistente.php'); })
         .then(function (j) {
           if (j.error) { resp.innerHTML = '<p>' + E(j.error) + '</p>'; return; }
           resp.innerHTML = '<p style="margin:0 0 6px;font-weight:700">' + E(q) + '</p>' + E(j.respuesta).split(/\n+/).map(function (p) { return '<p style="margin:0 0 8px">' + p + '</p>'; }).join('') +
             '<p style="font-size:.8rem;opacity:.65">Si en algún momento piensas en hacerte daño, llama al <a href="tel:024">024</a> (España, gratis, 24 h) o al 112.</p>' +
             '<p style="font-size:.85rem;margin-top:10px">¿Te ha servido? AURZANE es gratis gracias a quien lo apoya: <a href="https://ko-fi.com/adriansan7" target="_blank" rel="noopener">invítanos a un café ☕</a></p>';
         })
-        .catch(function () { resp.innerHTML = '<p>No se pudo conectar con el asistente. Prueba en un momento.</p>'; });
+        .catch(function () { resp.innerHTML = '<p>No se pudo conectar con el asistente. Revisa tu conexión y vuelve a intentarlo en un momento.</p>'; });
     }
     c.querySelectorAll('#azSug button').forEach(function (b) { b.addEventListener('click', function () { preguntar(b.textContent); }); });
     d.getElementById('azForm').addEventListener('submit', function (e) { e.preventDefault(); var i = d.getElementById('azPreg'); preguntar(i.value); i.value = ''; });
