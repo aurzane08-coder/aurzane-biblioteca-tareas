@@ -23,11 +23,18 @@ Header set Cache-Control "public, max-age=604800"
 </IfModule>
 # END AURZANE-AVIF
 """
+# Codificación en la cabecera HTTP: algunas portadas declaraban UTF-8 después del primer kilobyte (aviso de Lighthouse)
+CHARSET = """# BEGIN AURZANE-CHARSET
+AddDefaultCharset UTF-8
+AddCharset UTF-8 .html .css .js .xml .txt .json
+# END AURZANE-CHARSET
+"""
 for h in HOSTS:
     ht = BASE + '/' + h + '/public_html/.htaccess'
     if not os.path.exists(ht): continue
     t = open(ht, encoding='utf-8').read()
     n = re.sub(r'# BEGIN AURZANE-AVIF.*?# END AURZANE-AVIF\n?', '', t, flags=re.S)
-    n = BLOQUE + n
+    n = re.sub(r'# BEGIN AURZANE-CHARSET.*?# END AURZANE-CHARSET\n?', '', n, flags=re.S)
+    n = BLOQUE + CHARSET + n
     if n != t:
         open(ht, 'w', encoding='utf-8').write(n); print('regla AVIF', h)
