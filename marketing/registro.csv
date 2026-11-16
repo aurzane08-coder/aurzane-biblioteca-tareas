@@ -489,3 +489,10 @@
 2026-11-16,5,youtube,frase-2a05ffb2,ok,https://youtu.be/GLwKSbyYFFI
 2026-11-16,5,telegram,frase-29b7b81d,ok,103
 2026-11-16,7,tiktok,cur-5b579f7f14,error,403 {"error":{"code":"unaudited_client_can_only_post_to_private_accounts" "message":"Please review our integration guidelines at https://developers.ti
+2026-11-16,7,tiktok,cur-5b579f7f14,error,403 {"error":{"code":"unaudited_client_can_only_post_to_private_accounts" "message":"Please review our integration guidelines at https://developers.ti
+2026-11-16,3,telegram,frase-d8fa9ac5,ok,104
+2026-11-16,3,bluesky,frase-07a8c4a6,ok,at://did:plc:6ovoiudj7dkxgrzd2zkyn77y/app.bsky.feed.post/3n2gkezse4m2n
+2026-11-16,3,mastodon,frase-9a88f280,ok,https://mastodon.social/@auzane/117626165519025378
+2026-11-16,3,instagram,frase-4e4f2741,ok,17997707883104655
+2026-11-16,3,facebook,frase-2071b9c0,ok,2379355222837287
+2026-11-16,3,pinterest,frase-e9c6ecf2,feed,
