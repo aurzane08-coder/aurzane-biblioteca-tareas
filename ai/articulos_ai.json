@@ -27,7 +27,8 @@
   "fuente_id": "guia-bc160c05",
   "imagen": "",
   "test": "autocompasion",
-  "fuentes": []
+  "fuentes": [],
+  "revision": "pendiente"
  },
  {
   "id": "art-9b350baf0f",
@@ -63,7 +64,8 @@
     "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13736734/",
     "meta": "Sun H, Zhang L, Hu J y otros · Frontiers in psychiatry · 2026"
    }
-  ]
+  ],
+  "revision": "pendiente"
  },
  {
   "id": "art-4d6cbf1151",
@@ -78,7 +80,8 @@
   "fuente_id": "guia-b7f8a114",
   "imagen": "",
   "test": "ansiedad",
-  "fuentes": []
+  "fuentes": [],
+  "revision": "pendiente"
  },
  {
   "id": "art-815e39a0f0",
@@ -129,7 +132,8 @@
     "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13740991/",
     "meta": "Quan S, Xu W, Du H y otros · Frontiers in psychiatry · 2026"
    }
-  ]
+  ],
+  "revision": "pendiente"
  },
  {
   "id": "art-6e9c891018",
@@ -144,7 +148,8 @@
   "fuente_id": "guia-0726b56a",
   "imagen": "",
   "test": "resiliencia",
-  "fuentes": []
+  "fuentes": [],
+  "revision": "pendiente"
  },
  {
   "id": "art-b52447468c",
@@ -159,7 +164,8 @@
   "fuente_id": "guia-eba66fe2",
   "imagen": "",
   "test": "autoestima",
-  "fuentes": []
+  "fuentes": [],
+  "revision": "aprobada"
  },
  {
   "id": "art-b7df291b3c",
@@ -174,7 +180,8 @@
   "fuente_id": "guia-86b5fdcc",
   "imagen": "",
   "test": "autoestima",
-  "fuentes": []
+  "fuentes": [],
+  "revision": "aprobada"
  },
  {
   "id": "art-2d0c9b8e78",
@@ -195,7 +202,8 @@
     "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13746330/",
     "meta": "Chen B, Wu S, Zou Z y otros · Frontiers in public health · 2026"
    }
-  ]
+  ],
+  "revision": "pendiente"
  },
  {
   "id": "art-da3395e240",
@@ -240,7 +248,8 @@
   "fuente_id": "guia-168a5bc9",
   "imagen": "",
   "test": "autoestima",
-  "fuentes": []
+  "fuentes": [],
+  "revision": "pendiente"
  },
  {
   "id": "art-a9eeecfc18",
@@ -261,7 +270,8 @@
     "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13745318/",
     "meta": "Liu Q, Liu J, Lou H · Neuropsychiatric disease and treatment · 2026"
    }
-  ]
+  ],
+  "revision": "pendiente"
  },
  {
   "id": "art-4968498303",
@@ -306,7 +316,8 @@
   "fuente_id": "guia-321997b6",
   "imagen": "",
   "test": "resiliencia",
-  "fuentes": []
+  "fuentes": [],
+  "revision": "pendiente"
  },
  {
   "id": "art-6fbc6d16f8",
@@ -327,7 +338,8 @@
     "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13729381/",
     "meta": "Yang Y, Zhang X, Duan Y y otros · Frontiers in psychiatry · 2026"
    }
-  ]
+  ],
+  "revision": "pendiente"
  },
  {
   "id": "art-6802334f3b",
@@ -357,7 +369,8 @@
   "fuente_id": "guia-cc15b0bb",
   "imagen": "",
   "test": "",
-  "fuentes": []
+  "fuentes": [],
+  "revision": "pendiente"
  },
  {
   "id": "art-cdcf9701a5",
@@ -378,7 +391,8 @@
     "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13736734/",
     "meta": "Frontiers in Psychiatry"
    }
-  ]
+  ],
+  "revision": "pendiente"
  },
  {
   "id": "art-b0a98e6bf3",
@@ -444,7 +458,8 @@
   "fuente_id": "guia-ccad591a",
   "imagen": "",
   "test": "estres",
-  "fuentes": []
+  "fuentes": [],
+  "revision": "pendiente"
  },
  {
   "id": "art-21ca7a3207",
@@ -459,7 +474,8 @@
   "fuente_id": "guia-8d4a0fb1",
   "imagen": "",
   "test": "",
-  "fuentes": []
+  "fuentes": [],
+  "revision": "pendiente"
  },
  {
   "id": "art-7697ae41bf",
@@ -480,7 +496,8 @@
     "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13693427/",
     "meta": "Jin L, Nguyen T · European journal of psychotraumatology · 2026"
    }
-  ]
+  ],
+  "revision": "pendiente"
  },
  {
   "id": "art-7e8b704bfe",
@@ -495,7 +512,8 @@
   "fuente_id": "guia-f6507452",
   "imagen": "",
   "test": "ansiedad",
-  "fuentes": []
+  "fuentes": [],
+  "revision": "pendiente"
  },
  {
   "id": "art-7894bb0ee7",
@@ -515,6 +533,7 @@
     "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13686194/",
     "meta": "Melkam M, Xu C, Maccallum F y otros · European journal of psychotraumatology · 2026"
    }
-  ]
+  ],
+  "revision": "pendiente"
  }
 ]

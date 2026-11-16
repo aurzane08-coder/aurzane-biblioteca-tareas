@@ -15,6 +15,7 @@
   "9d26dd8589",
   "bf8b8cf569",
   "cfd27e2e5f",
+  "e2146fb847",
   "fb32259116"
  ],
  "recuperar_citas": "v1",
@@ -27,5 +28,8 @@
    "intentos": 12
   }
  },
- "incidencias_vistas": []
+ "incidencias_vistas": [],
+ "papelera_dia": "2026-11-16",
+ "visitas_dia": "2026-11-15",
+ "revision_humana": "v1"
 }

@@ -124,7 +124,7 @@
   126
  ],
  "ed:": [
-  43,
+  45,
   15
  ],
  "ed:undefined": [
@@ -473,6 +473,14 @@
  ],
  "ed:Ediciones Comunicación Científica eBooks": [
   1,
+  0
+ ],
+ "": [
+  2,
+  0
+ ],
+ "tipo:articulo": [
+  2,
   0
  ]
 }

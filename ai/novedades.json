@@ -1,6 +1,11 @@
 [
  {
   "fecha": "2026-11-16",
+  "url": "https://live.aurzane.com/calculadora-interes-compuesto/",
+  "titulo": "Calculadora de interés compuesto con aportaciones mensuales"
+ },
+ {
+  "fecha": "2026-11-16",
   "url": "https://aurzane.com/articulos/universidad-de-amsterdam-oferta-y-acceso/",
   "titulo": "Artículo: Universidad de Ámsterdam: Oferta y acceso"
  },
@@ -593,10 +598,5 @@
   "fecha": "2026-11-08",
   "url": "https://aurzane.com/biblioteca/recientes/oa-W7214274085/",
   "titulo": "Libro abierto: Neurocognitive Interventions in Mental Health Practice"
- },
- {
-  "fecha": "2026-11-08",
-  "url": "https://aurzane.com/biblioteca/recientes/oa-W7214584102/",
-  "titulo": "Libro abierto: Emetophobia: A Specific Fear of Vomiting"
  }
 ]
