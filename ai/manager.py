@@ -917,6 +917,14 @@ if (os.environ.get('GEMINI_API_KEY') or os.environ.get('GITHUB_TOKEN')) and _ah[
     ESTADO['articulo'] = HOY
     print(f'::notice title=AI::Artículos hoy: {_ah[HOY]["hechos"]} publicados en {_ah[HOY]["intentos"]} intentos')
     guardar('articulos_ai.json', art_hechos[:2000])
+# espacio de las papeleras «eliminar» (nunca se borra nada; se avisa si pasan de 1 GB para que decidas)
+try:
+    if ESTADO.get('papelera_dia') != HOY:
+        _du = remoto('du -sm www/*/eliminar 2>/dev/null')
+        _mb = sum(int(l.split()[0]) for l in _du.splitlines() if l.split() and l.split()[0].isdigit())
+        if _mb > 1024: acciones.append(f'Las carpetas «eliminar» ocupan {_mb} MB en el servidor. Revísalas cuando puedas: nada se ha borrado.')
+        ESTADO['papelera_dia'] = HOY
+except Exception as _e: print('papelera:', _e)
 # visitas de ayer (medición sin cookies de aurzane-paleta.js): un resumen al día en el registro de actividad
 try:
     _ayer = (AHORA.date() - datetime.timedelta(days=1)).isoformat()
