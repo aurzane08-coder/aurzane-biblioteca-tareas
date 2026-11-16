@@ -1,0 +1,3796 @@
+[
+ {
+  "url": "https://aurzane.com/articulos/sistemas-tutores-inteligentes-metaanalisis/",
+  "anchos": {
+   "320": {
+    "carga_ms": 732,
+    "sin_cabecera": true,
+    "titulo": "¿Funcionan los tutores con inteligencia artificial?",
+    "h1": [
+     "¿Funcionan los tutores con inteligencia artificial? El metaanálisis de 107 estud"
+    ],
+    "desborda": false,
+    "scroll_w": 320,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 85,
+    "nav_enlaces": 30,
+    "alto_pagina": 7149,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [
+     "console: [Report Only] Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'unsafe-inline'"
+    ],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 595,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "Our system thinks you might be a robot!"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "A"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 2,
+    "nav_enlaces": 0,
+    "alto_pagina": 994,
+    "fuentes": [
+     "Arial",
+     "Times New Roman"
+    ],
+    "lang": "en",
+    "axe": [
+     {
+      "id": "color-contrast",
+      "impacto": "serious",
+      "n": 1,
+      "ejemplo": "section > p"
+     },
+     {
+      "id": "label",
+      "impacto": "critical",
+      "n": 1,
+      "ejemplo": "#BDCC"
+     }
+    ],
+    "errores": [
+     "console: undefined"
+    ],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 581,
+    "sin_cabecera": true,
+    "titulo": "¿Funcionan los tutores con inteligencia artificial?",
+    "h1": [
+     "¿Funcionan los tutores con inteligencia artificial? El metaanálisis de 107 estud"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 78,
+    "nav_enlaces": 30,
+    "alto_pagina": 4117,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [
+     "console: [Report Only] Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'unsafe-inline'"
+    ],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 3092,
+    "titulo": "¿Funcionan los tutores con inteligencia artificial?",
+    "h1": [
+     "¿Funcionan los tutores con inteligencia artificial? El metaanálisis de 107 estud"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 78,
+    "nav_enlaces": 30,
+    "alto_pagina": 3727,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://aurzane.com/biblioteca/libro/ref-mundo-amarillo.html",
+  "anchos": {
+   "320": {
+    "carga_ms": 589,
+    "titulo": "El mundo amarillo, de Albert Espinosa: resumen y ficha",
+    "h1": [
+     "El mundo amarillo"
+    ],
+    "desborda": false,
+    "scroll_w": 320,
+    "culpables": [],
+    "objetivos_pequenos": 4,
+    "ejemplos_objetivos": [
+     "Relatos de vida y psicología n",
+     "Trauma, adversidad y recuperac",
+     "Duelo y pérdidas",
+     "¿Algo no funciona? Avísanos"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 83,
+    "nav_enlaces": 30,
+    "alto_pagina": 7850,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 581,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "Our system thinks you might be a robot!"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "A"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 2,
+    "nav_enlaces": 0,
+    "alto_pagina": 994,
+    "fuentes": [
+     "Arial",
+     "Times New Roman"
+    ],
+    "lang": "en",
+    "axe": [
+     {
+      "id": "color-contrast",
+      "impacto": "serious",
+      "n": 1,
+      "ejemplo": "section > p"
+     },
+     {
+      "id": "label",
+      "impacto": "critical",
+      "n": 1,
+      "ejemplo": "#BDCC"
+     }
+    ],
+    "errores": [
+     "console: undefined"
+    ],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 614,
+    "titulo": "El mundo amarillo, de Albert Espinosa: resumen y ficha",
+    "h1": [
+     "El mundo amarillo"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 4,
+    "ejemplos_objetivos": [
+     "Relatos de vida y psicología n",
+     "Trauma, adversidad y recuperac",
+     "Duelo y pérdidas",
+     "¿Algo no funciona? Avísanos"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 90,
+    "nav_enlaces": 30,
+    "alto_pagina": 3692,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 584,
+    "sin_cabecera": true,
+    "titulo": "El mundo amarillo, de Albert Espinosa: resumen y ficha",
+    "h1": [
+     "El mundo amarillo"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 4,
+    "ejemplos_objetivos": [
+     "Relatos de vida y psicología n",
+     "Trauma, adversidad y recuperac",
+     "Duelo y pérdidas",
+     "¿Algo no funciona? Avísanos"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 83,
+    "nav_enlaces": 30,
+    "alto_pagina": 2525,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://aurzane.com/biblioteca/tema/psicologia-digital-y-tecnologia.html",
+  "anchos": {
+   "320": {
+    "carga_ms": 1932,
+    "titulo": "Libros de psicología digital y tecnología gratis en PDF",
+    "h1": [
+     "Libros de psicología digital y tecnología"
+    ],
+    "desborda": false,
+    "scroll_w": 320,
+    "culpables": [],
+    "objetivos_pequenos": 19,
+    "ejemplos_objetivos": [
+     "Ciberacoso",
+     "Psicología de las redes social",
+     "Economía de la atención",
+     "Persuasión digital",
+     "Comparación social digital"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 131,
+    "nav_enlaces": 30,
+    "alto_pagina": 23843,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 588,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "Our system thinks you might be a robot!"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "A"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 2,
+    "nav_enlaces": 0,
+    "alto_pagina": 994,
+    "fuentes": [
+     "Arial",
+     "Times New Roman"
+    ],
+    "lang": "en",
+    "axe": [
+     {
+      "id": "color-contrast",
+      "impacto": "serious",
+      "n": 1,
+      "ejemplo": "section > p"
+     },
+     {
+      "id": "label",
+      "impacto": "critical",
+      "n": 1,
+      "ejemplo": "#BDCC"
+     }
+    ],
+    "errores": [
+     "console: undefined"
+    ],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 623,
+    "sin_cabecera": true,
+    "titulo": "Libros de psicología digital y tecnología gratis en PDF",
+    "h1": [
+     "Libros de psicología digital y tecnología"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 19,
+    "ejemplos_objetivos": [
+     "Ciberacoso",
+     "Psicología de las redes social",
+     "Economía de la atención",
+     "Persuasión digital",
+     "Comparación social digital"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 131,
+    "nav_enlaces": 30,
+    "alto_pagina": 8673,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [
+     "console: [Report Only] Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'unsafe-inline'"
+    ],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 586,
+    "titulo": "Libros de psicología digital y tecnología gratis en PDF",
+    "h1": [
+     "Libros de psicología digital y tecnología"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 19,
+    "ejemplos_objetivos": [
+     "Ciberacoso",
+     "Psicología de las redes social",
+     "Economía de la atención",
+     "Persuasión digital",
+     "Comparación social digital"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 131,
+    "nav_enlaces": 30,
+    "alto_pagina": 5500,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://aurzane.com/frases/",
+  "anchos": {
+   "320": {
+    "carga_ms": 592,
+    "sin_cabecera": true,
+    "titulo": "Frases célebres para pensar y sentirte mejor | AURZANE",
+    "h1": [
+     "Frases célebres"
+    ],
+    "desborda": false,
+    "scroll_w": 320,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 503,
+    "nav_enlaces": 30,
+    "alto_pagina": 103637,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "errores": [
+     "console: [Report Only] Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'unsafe-inline'"
+    ],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 1860,
+    "titulo": "Frases célebres para pensar y sentirte mejor | AURZANE",
+    "h1": [
+     "Frases célebres"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 510,
+    "nav_enlaces": 30,
+    "alto_pagina": 93348,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 1647,
+    "titulo": "Frases célebres para pensar y sentirte mejor | AURZANE",
+    "h1": [
+     "Frases célebres"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 503,
+    "nav_enlaces": 30,
+    "alto_pagina": 65518,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 618,
+    "titulo": "Frases célebres para pensar y sentirte mejor | AURZANE",
+    "h1": [
+     "Frases célebres"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 503,
+    "nav_enlaces": 30,
+    "alto_pagina": 62595,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://aurzane.com/mi-aurzane.html",
+  "anchos": {
+   "320": {
+    "carga_ms": 585,
+    "titulo": "Mi AURZANE — Tu cuenta en el ecosistema",
+    "h1": [
+     "Mi AURZANE",
+     "Una cuenta para todo el ecosistema",
+     "Elige tu nueva contraseña",
+     "—"
+    ],
+    "desborda": false,
+    "scroll_w": 320,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "¿Olvidaste tu contraseña?"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 82,
+    "nav_enlaces": 17,
+    "alto_pagina": 3724,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 638,
+    "sin_cabecera": true,
+    "titulo": "Mi AURZANE — Tu cuenta en el ecosistema",
+    "h1": [
+     "Mi AURZANE",
+     "Una cuenta para todo el ecosistema",
+     "Elige tu nueva contraseña",
+     "—"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "¿Olvidaste tu contraseña?"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 82,
+    "nav_enlaces": 17,
+    "alto_pagina": 3618,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: [Report Only] Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'unsafe-inline'"
+    ],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 613,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "Our system thinks you might be a robot!"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "A"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 2,
+    "nav_enlaces": 0,
+    "alto_pagina": 900,
+    "fuentes": [
+     "Arial",
+     "Times New Roman"
+    ],
+    "lang": "en",
+    "errores": [
+     "console: undefined"
+    ],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 587,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "Our system thinks you might be a robot!"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "A"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 2,
+    "nav_enlaces": 0,
+    "alto_pagina": 900,
+    "fuentes": [
+     "Arial",
+     "Times New Roman"
+    ],
+    "lang": "en",
+    "axe": [
+     {
+      "id": "color-contrast",
+      "impacto": "serious",
+      "n": 1,
+      "ejemplo": "section > p"
+     },
+     {
+      "id": "label",
+      "impacto": "critical",
+      "n": 1,
+      "ejemplo": "#BDCC"
+     }
+    ],
+    "errores": [
+     "console: undefined"
+    ],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://aurzane.com/ref-proceso-convertirse-persona.html",
+  "anchos": {
+   "320": {
+    "carga_ms": 606,
+    "titulo": "El proceso de convertirse en persona: resumen e ideas clave",
+    "h1": [
+     "El proceso de convertirse en persona"
+    ],
+    "desborda": false,
+    "scroll_w": 320,
+    "culpables": [],
+    "objetivos_pequenos": 4,
+    "ejemplos_objetivos": [
+     "Psicoterapia e intervención ps",
+     "Autoestima, autocuidado y supe",
+     "Personalidad e identidad",
+     "¿Algo no funciona? Avísanos"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 90,
+    "nav_enlaces": 30,
+    "alto_pagina": 9728,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 585,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "Our system thinks you might be a robot!"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "A"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 2,
+    "nav_enlaces": 0,
+    "alto_pagina": 994,
+    "fuentes": [
+     "Arial",
+     "Times New Roman"
+    ],
+    "lang": "en",
+    "axe": [
+     {
+      "id": "color-contrast",
+      "impacto": "serious",
+      "n": 1,
+      "ejemplo": "section > p"
+     },
+     {
+      "id": "label",
+      "impacto": "critical",
+      "n": 1,
+      "ejemplo": "#BDCC"
+     }
+    ],
+    "errores": [
+     "console: undefined"
+    ],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 589,
+    "titulo": "El proceso de convertirse en persona: resumen e ideas clave",
+    "h1": [
+     "El proceso de convertirse en persona"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 4,
+    "ejemplos_objetivos": [
+     "Psicoterapia e intervención ps",
+     "Autoestima, autocuidado y supe",
+     "Personalidad e identidad",
+     "¿Algo no funciona? Avísanos"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 90,
+    "nav_enlaces": 30,
+    "alto_pagina": 4876,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 2065,
+    "titulo": "El proceso de convertirse en persona: resumen e ideas clave",
+    "h1": [
+     "El proceso de convertirse en persona"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 4,
+    "ejemplos_objetivos": [
+     "Psicoterapia e intervención ps",
+     "Autoestima, autocuidado y supe",
+     "Personalidad e identidad",
+     "¿Algo no funciona? Avísanos"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 90,
+    "nav_enlaces": 30,
+    "alto_pagina": 3581,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://aurzane.com/temas/inteligencia_artificial/",
+  "anchos": {
+   "320": {
+    "carga_ms": 600,
+    "titulo": "Inteligencia Artificial — AURZANE NEXUS",
+    "h1": [
+     "Inteligencia Artificial"
+    ],
+    "desborda": false,
+    "scroll_w": 320,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 78,
+    "nav_enlaces": 30,
+    "alto_pagina": 3939,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "errores": [],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 583,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "Our system thinks you might be a robot!"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "A"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 2,
+    "nav_enlaces": 0,
+    "alto_pagina": 994,
+    "fuentes": [
+     "Arial",
+     "Times New Roman"
+    ],
+    "lang": "en",
+    "axe": [
+     {
+      "id": "color-contrast",
+      "impacto": "serious",
+      "n": 1,
+      "ejemplo": "section > p"
+     },
+     {
+      "id": "label",
+      "impacto": "critical",
+      "n": 1,
+      "ejemplo": "#BDCC"
+     }
+    ],
+    "errores": [
+     "console: undefined"
+    ],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 674,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "Our system thinks you might be a robot!"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "A"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 2,
+    "nav_enlaces": 0,
+    "alto_pagina": 900,
+    "fuentes": [
+     "Arial",
+     "Times New Roman"
+    ],
+    "lang": "en",
+    "errores": [
+     "console: undefined"
+    ],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 598,
+    "sin_cabecera": true,
+    "titulo": "Inteligencia Artificial — AURZANE NEXUS",
+    "h1": [
+     "Inteligencia Artificial"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 78,
+    "nav_enlaces": 30,
+    "alto_pagina": 2079,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: [Report Only] Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'unsafe-inline'"
+    ],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://build.aurzane.com/calculadora-reforma/",
+  "anchos": {
+   "320": {
+    "carga_ms": 754,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "Our system thinks you might be a robot!"
+    ],
+    "desborda": false,
+    "scroll_w": 320,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "A"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 2,
+    "nav_enlaces": 0,
+    "alto_pagina": 1063,
+    "fuentes": [
+     "Arial",
+     "Times New Roman"
+    ],
+    "lang": "en",
+    "errores": [
+     "console: undefined"
+    ],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 728,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "Our system thinks you might be a robot!"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "A"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 2,
+    "nav_enlaces": 0,
+    "alto_pagina": 994,
+    "fuentes": [
+     "Arial",
+     "Times New Roman"
+    ],
+    "lang": "en",
+    "axe": [
+     {
+      "id": "color-contrast",
+      "impacto": "serious",
+      "n": 1,
+      "ejemplo": "section > p"
+     },
+     {
+      "id": "label",
+      "impacto": "critical",
+      "n": 1,
+      "ejemplo": "#BDCC"
+     }
+    ],
+    "errores": [
+     "console: undefined"
+    ],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 732,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Calculadora de reforma 2026: cuánto cuesta reformar un piso",
+    "h1": [
+     "Cuánto te va a costar tu reforma, partida a partida"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 18,
+    "ejemplos_objetivos": [
+     "Hipoteca",
+     "Sueldo neto",
+     "Reforma",
+     "INPUT",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 20,
+    "nav_enlaces": 5,
+    "alto_pagina": 8519,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "errores": [
+     "console: [Report Only] Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'unsafe-inline'"
+    ],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 724,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "Our system thinks you might be a robot!"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "A"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 2,
+    "nav_enlaces": 0,
+    "alto_pagina": 900,
+    "fuentes": [
+     "Arial",
+     "Times New Roman"
+    ],
+    "lang": "en",
+    "axe": [
+     {
+      "id": "color-contrast",
+      "impacto": "serious",
+      "n": 1,
+      "ejemplo": "section > p"
+     },
+     {
+      "id": "label",
+      "impacto": "critical",
+      "n": 1,
+      "ejemplo": "#BDCC"
+     }
+    ],
+    "errores": [
+     "console: undefined"
+    ],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://learn.aurzane.com/curso/introduccion-psicologia/",
+  "anchos": {
+   "320": {
+    "carga_ms": 735,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Curso de Introducción a la Psicología Gratis Online · AURZANE LEARN",
+    "h1": [
+     "Introducción a la psicología"
+    ],
+    "desborda": true,
+    "scroll_w": 340,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 9,
+    "nav_enlaces": 2,
+    "alto_pagina": 6023,
+    "fuentes": [
+     "Bodoni Moda",
+     "Instrument Sans"
+    ],
+    "lang": "es",
+    "errores": [
+     "console: [Report Only] Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'unsafe-inline'"
+    ],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 1348,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Curso de Introducción a la Psicología Gratis Online · AURZANE LEARN",
+    "h1": [
+     "Introducción a la psicología"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 9,
+    "nav_enlaces": 2,
+    "alto_pagina": 5226,
+    "fuentes": [
+     "Bodoni Moda",
+     "Instrument Sans"
+    ],
+    "lang": "es",
+    "axe": [
+     {
+      "id": "color-contrast",
+      "impacto": "serious",
+      "n": 17,
+      "ejemplo": ".oro"
+     }
+    ],
+    "errores": [
+     "console: [Report Only] Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'unsafe-inline'"
+    ],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 730,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Curso de Introducción a la Psicología Gratis Online · AURZANE LEARN",
+    "h1": [
+     "Introducción a la psicología"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 9,
+    "nav_enlaces": 2,
+    "alto_pagina": 3329,
+    "fuentes": [
+     "Bodoni Moda",
+     "Instrument Sans"
+    ],
+    "lang": "es",
+    "errores": [
+     "console: [Report Only] Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'unsafe-inline'"
+    ],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 720,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Curso de Introducción a la Psicología Gratis Online · AURZANE LEARN",
+    "h1": [
+     "Introducción a la psicología"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 9,
+    "nav_enlaces": 2,
+    "alto_pagina": 3080,
+    "fuentes": [
+     "Bodoni Moda",
+     "Instrument Sans"
+    ],
+    "lang": "es",
+    "axe": [
+     {
+      "id": "color-contrast",
+      "impacto": "serious",
+      "n": 17,
+      "ejemplo": ".oro"
+     }
+    ],
+    "errores": [
+     "console: [Report Only] Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'unsafe-inline'"
+    ],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://live.aurzane.com/",
+  "anchos": {
+   "320": {
+    "carga_ms": 742,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "AURZANE LIVE: salud, cuerpo, descanso y día a día",
+    "h1": [
+     "Cuida tu salud cada día"
+    ],
+    "desborda": true,
+    "scroll_w": 369,
+    "culpables": [
+     "div.utility-mundos<u-wrap 368",
+     "a<utility-mundos 368",
+     "a.ex-card<explored-strip 555",
+     "div.ex-img<ex-card 554",
+     "img<ex-img 554",
+     "span.ex-num.mono<ex-img 336"
+    ],
+    "objetivos_pequenos": 9,
+    "ejemplos_objetivos": [
+     "AURZANE",
+     "MIND",
+     "OVP",
+     "NEXUS",
+     "LIVE"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 96,
+    "nav_enlaces": 5,
+    "alto_pagina": 16157,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "errores": [
+     "console: [Report Only] Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'unsafe-inline'"
+    ],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 727,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "AURZANE LIVE: salud, cuerpo, descanso y día a día",
+    "h1": [
+     "Cuida tu salud cada día"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [
+     "a.ex-card<explored-strip 559",
+     "div.ex-img<ex-card 558",
+     "img<ex-img 558",
+     "div.ex-body<ex-card 558",
+     "span.cat-badge<ex-body 408",
+     "h4<ex-body 542"
+    ],
+    "objetivos_pequenos": 9,
+    "ejemplos_objetivos": [
+     "AURZANE",
+     "MIND",
+     "OVP",
+     "NEXUS",
+     "LIVE"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 96,
+    "nav_enlaces": 5,
+    "alto_pagina": 14906,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "axe": [
+     {
+      "id": "color-contrast",
+      "impacto": "serious",
+      "n": 4,
+      "ejemplo": ".w-mind.cw-card[target=\"_blank\"]:nth-child(1) > .cw-world"
+     },
+     {
+      "id": "link-in-text-block",
+      "impacto": "serious",
+      "n": 1,
+      "ejemplo": ".research-sources:nth-child(4) > a[href$=\"live-biblioteca.html\"]"
+     },
+     {
+      "id": "link-name",
+      "impacto": "serious",
+      "n": 3,
+      "ejemplo": "#navArticulos"
+     }
+    ],
+    "errores": [
+     "console: [Report Only] Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'unsafe-inline'"
+    ],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 734,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "Our system thinks you might be a robot!"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "A"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 2,
+    "nav_enlaces": 0,
+    "alto_pagina": 900,
+    "fuentes": [
+     "Arial",
+     "Times New Roman"
+    ],
+    "lang": "en",
+    "errores": [
+     "console: undefined"
+    ],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 715,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "AURZANE LIVE: salud, cuerpo, descanso y día a día",
+    "h1": [
+     "Cuida tu salud cada día"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 12,
+    "ejemplos_objetivos": [
+     "AURZANE",
+     "MIND",
+     "OVP",
+     "NEXUS",
+     "LIVE"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 96,
+    "nav_enlaces": 5,
+    "alto_pagina": 7125,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "axe": [
+     {
+      "id": "color-contrast",
+      "impacto": "serious",
+      "n": 4,
+      "ejemplo": ".w-mind.cw-card[target=\"_blank\"]:nth-child(1) > .cw-world"
+     },
+     {
+      "id": "link-in-text-block",
+      "impacto": "serious",
+      "n": 1,
+      "ejemplo": ".research-sources:nth-child(4) > a[href$=\"live-biblioteca.html\"]"
+     }
+    ],
+    "errores": [
+     "console: [Report Only] Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'unsafe-inline'"
+    ],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://live.aurzane.com/calculadora-embarazo/",
+  "anchos": {
+   "320": {
+    "carga_ms": 1599,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Calculadora de embarazo: semanas y fecha probable de parto",
+    "h1": [
+     "¿De cuántas semanas estás y cuándo llega?"
+    ],
+    "desborda": true,
+    "scroll_w": 335,
+    "culpables": [
+     "a<eco 359",
+     "nav<wrap 335",
+     "a.cuenta<NAV 335"
+    ],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 23,
+    "nav_enlaces": 8,
+    "alto_pagina": 13536,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "errores": [
+     "console: [Report Only] Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'unsafe-inline'"
+    ],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 728,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Calculadora de embarazo: semanas y fecha probable de parto",
+    "h1": [
+     "¿De cuántas semanas estás y cuándo llega?"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 23,
+    "nav_enlaces": 8,
+    "alto_pagina": 12115,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: [Report Only] Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'unsafe-inline'"
+    ],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 720,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Calculadora de embarazo: semanas y fecha probable de parto",
+    "h1": [
+     "¿De cuántas semanas estás y cuándo llega?"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 6,
+    "ejemplos_objetivos": [
+     "Bienestar",
+     "Sueño",
+     "Calorías",
+     "IMC",
+     "Agua"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 23,
+    "nav_enlaces": 8,
+    "alto_pagina": 8311,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "errores": [
+     "console: [Report Only] Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'unsafe-inline'"
+    ],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 1677,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Calculadora de embarazo: semanas y fecha probable de parto",
+    "h1": [
+     "¿De cuántas semanas estás y cuándo llega?"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 6,
+    "ejemplos_objetivos": [
+     "Bienestar",
+     "Sueño",
+     "Calorías",
+     "IMC",
+     "Agua"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 23,
+    "nav_enlaces": 8,
+    "alto_pagina": 6637,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: [Report Only] Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'unsafe-inline'"
+    ],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://live.aurzane.com/test-de-habitos/",
+  "anchos": {
+   "320": {
+    "carga_ms": 1582,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Test de hábitos saludables gratis (SLIQ) | AURZANE LIVE",
+    "h1": [
+     "¿Qué nota le pondrías a tu estilo de vida?"
+    ],
+    "desborda": true,
+    "scroll_w": 335,
+    "culpables": [
+     "a<eco 359",
+     "nav<wrap 335",
+     "a.cuenta<NAV 335"
+    ],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 23,
+    "nav_enlaces": 8,
+    "alto_pagina": 12323,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "errores": [
+     "console: [Report Only] Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'unsafe-inline'"
+    ],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 736,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Test de hábitos saludables gratis (SLIQ) | AURZANE LIVE",
+    "h1": [
+     "¿Qué nota le pondrías a tu estilo de vida?"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 23,
+    "nav_enlaces": 8,
+    "alto_pagina": 10670,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: [Report Only] Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'unsafe-inline'"
+    ],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 726,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Test de hábitos saludables gratis (SLIQ) | AURZANE LIVE",
+    "h1": [
+     "¿Qué nota le pondrías a tu estilo de vida?"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 6,
+    "ejemplos_objetivos": [
+     "Bienestar",
+     "Sueño",
+     "Calorías",
+     "IMC",
+     "Agua"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 23,
+    "nav_enlaces": 8,
+    "alto_pagina": 7782,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "errores": [
+     "console: [Report Only] Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'unsafe-inline'"
+    ],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 1686,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Test de hábitos saludables gratis (SLIQ) | AURZANE LIVE",
+    "h1": [
+     "¿Qué nota le pondrías a tu estilo de vida?"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 6,
+    "ejemplos_objetivos": [
+     "Bienestar",
+     "Sueño",
+     "Calorías",
+     "IMC",
+     "Agua"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 23,
+    "nav_enlaces": 8,
+    "alto_pagina": 6355,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: [Report Only] Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'unsafe-inline'"
+    ],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://mind.aurzane.com/ejercicios/coherencia-cardiaca/",
+  "anchos": {
+   "320": {
+    "carga_ms": 1705,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Coherencia cardiaca guiada: respiración 365 de 5 minutos",
+    "h1": [
+     "Coherencia cardiaca guiada"
+    ],
+    "desborda": true,
+    "scroll_w": 340,
+    "culpables": [
+     "a<eco 359",
+     "nav<wrap 340",
+     "a.cuenta<NAV 340"
+    ],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 27,
+    "nav_enlaces": 10,
+    "alto_pagina": 9019,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "errores": [
+     "console: [Report Only] Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'unsafe-inline'"
+    ],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 730,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Coherencia cardiaca guiada: respiración 365 de 5 minutos",
+    "h1": [
+     "Coherencia cardiaca guiada"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 27,
+    "nav_enlaces": 10,
+    "alto_pagina": 8123,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: [Report Only] Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'unsafe-inline'"
+    ],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 739,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Coherencia cardiaca guiada: respiración 365 de 5 minutos",
+    "h1": [
+     "Coherencia cardiaca guiada"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 8,
+    "ejemplos_objetivos": [
+     "Ansiedad",
+     "Depresión",
+     "Autoestima",
+     "TDAH",
+     "Autocompasión"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 27,
+    "nav_enlaces": 10,
+    "alto_pagina": 6147,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "errores": [
+     "console: [Report Only] Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'unsafe-inline'"
+    ],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 735,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Coherencia cardiaca guiada: respiración 365 de 5 minutos",
+    "h1": [
+     "Coherencia cardiaca guiada"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 8,
+    "ejemplos_objetivos": [
+     "Ansiedad",
+     "Depresión",
+     "Autoestima",
+     "TDAH",
+     "Autocompasión"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 27,
+    "nav_enlaces": 10,
+    "alto_pagina": 5510,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: [Report Only] Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'unsafe-inline'"
+    ],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://mind.aurzane.com/ejercicios/respiracion-alterna/",
+  "anchos": {
+   "320": {
+    "carga_ms": 731,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "Our system thinks you might be a robot!"
+    ],
+    "desborda": false,
+    "scroll_w": 320,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "A"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 2,
+    "nav_enlaces": 0,
+    "alto_pagina": 1063,
+    "fuentes": [
+     "Arial",
+     "Times New Roman"
+    ],
+    "lang": "en",
+    "errores": [
+     "console: undefined"
+    ],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 727,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "Our system thinks you might be a robot!"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "A"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 2,
+    "nav_enlaces": 0,
+    "alto_pagina": 994,
+    "fuentes": [
+     "Arial",
+     "Times New Roman"
+    ],
+    "lang": "en",
+    "axe": [
+     {
+      "id": "color-contrast",
+      "impacto": "serious",
+      "n": 1,
+      "ejemplo": "section > p"
+     },
+     {
+      "id": "label",
+      "impacto": "critical",
+      "n": 1,
+      "ejemplo": "#BDCC"
+     }
+    ],
+    "errores": [
+     "console: undefined"
+    ],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 731,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Respiración alterna (nadi shodhana) guiada | AURZANE MIND",
+    "h1": [
+     "Respiración alterna guiada"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 8,
+    "ejemplos_objetivos": [
+     "Ansiedad",
+     "Depresión",
+     "Autoestima",
+     "TDAH",
+     "Autocompasión"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 27,
+    "nav_enlaces": 10,
+    "alto_pagina": 6006,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "errores": [
+     "console: [Report Only] Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'unsafe-inline'"
+    ],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 726,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Respiración alterna (nadi shodhana) guiada | AURZANE MIND",
+    "h1": [
+     "Respiración alterna guiada"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 8,
+    "ejemplos_objetivos": [
+     "Ansiedad",
+     "Depresión",
+     "Autoestima",
+     "TDAH",
+     "Autocompasión"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 27,
+    "nav_enlaces": 10,
+    "alto_pagina": 5341,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: [Report Only] Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'unsafe-inline'"
+    ],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://mind.aurzane.com/en/",
+  "anchos": {
+   "320": {
+    "carga_ms": 729,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Free psychological tests in English | AURZANE",
+    "h1": [
+     "Free psychological tests"
+    ],
+    "desborda": false,
+    "scroll_w": 320,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 14,
+    "nav_enlaces": 3,
+    "alto_pagina": 3301,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "en",
+    "errores": [
+     "console: [Report Only] Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'unsafe-inline'"
+    ],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 723,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Free psychological tests in English | AURZANE",
+    "h1": [
+     "Free psychological tests"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 14,
+    "nav_enlaces": 3,
+    "alto_pagina": 3125,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "en",
+    "axe": [],
+    "errores": [
+     "console: [Report Only] Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'unsafe-inline'"
+    ],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 725,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Free psychological tests in English | AURZANE",
+    "h1": [
+     "Free psychological tests"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 14,
+    "nav_enlaces": 3,
+    "alto_pagina": 1732,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "en",
+    "errores": [
+     "console: [Report Only] Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'unsafe-inline'"
+    ],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 716,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Free psychological tests in English | AURZANE",
+    "h1": [
+     "Free psychological tests"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 14,
+    "nav_enlaces": 3,
+    "alto_pagina": 1266,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "en",
+    "axe": [],
+    "errores": [
+     "console: [Report Only] Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'unsafe-inline'"
+    ],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://mind.aurzane.com/en/self-compassion-test-scs-sf/",
+  "anchos": {
+   "320": {
+    "carga_ms": 725,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Self-compassion test (Neff, short form)",
+    "h1": [
+     "Self-compassion test (Neff, short form)"
+    ],
+    "desborda": false,
+    "scroll_w": 320,
+    "culpables": [],
+    "objetivos_pequenos": 60,
+    "ejemplos_objetivos": [
+     "INPUT",
+     "INPUT",
+     "INPUT",
+     "INPUT",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 6,
+    "nav_enlaces": 3,
+    "alto_pagina": 5339,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "en",
+    "errores": [
+     "console: [Report Only] Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'unsafe-inline'"
+    ],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 722,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Self-compassion test (Neff, short form)",
+    "h1": [
+     "Self-compassion test (Neff, short form)"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 60,
+    "ejemplos_objetivos": [
+     "INPUT",
+     "INPUT",
+     "INPUT",
+     "INPUT",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 6,
+    "nav_enlaces": 3,
+    "alto_pagina": 4888,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "en",
+    "axe": [],
+    "errores": [
+     "console: [Report Only] Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'unsafe-inline'"
+    ],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 733,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Self-compassion test (Neff, short form)",
+    "h1": [
+     "Self-compassion test (Neff, short form)"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 60,
+    "ejemplos_objetivos": [
+     "INPUT",
+     "INPUT",
+     "INPUT",
+     "INPUT",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 6,
+    "nav_enlaces": 3,
+    "alto_pagina": 2920,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "en",
+    "errores": [
+     "console: [Report Only] Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'unsafe-inline'"
+    ],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 728,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Self-compassion test (Neff, short form)",
+    "h1": [
+     "Self-compassion test (Neff, short form)"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 60,
+    "ejemplos_objetivos": [
+     "INPUT",
+     "INPUT",
+     "INPUT",
+     "INPUT",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 6,
+    "nav_enlaces": 3,
+    "alto_pagina": 2740,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "en",
+    "axe": [],
+    "errores": [
+     "console: [Report Only] Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'unsafe-inline'"
+    ],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://mind.aurzane.com/pt/",
+  "anchos": {
+   "320": {
+    "carga_ms": 727,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Testes psicológicos grátis em português | AURZANE",
+    "h1": [
+     "Testes psicológicos grátis"
+    ],
+    "desborda": false,
+    "scroll_w": 320,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 8,
+    "nav_enlaces": 3,
+    "alto_pagina": 1431,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "pt-BR",
+    "errores": [
+     "console: [Report Only] Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'unsafe-inline'"
+    ],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 724,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Testes psicológicos grátis em português | AURZANE",
+    "h1": [
+     "Testes psicológicos grátis"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 8,
+    "nav_enlaces": 3,
+    "alto_pagina": 1324,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "pt-BR",
+    "axe": [],
+    "errores": [
+     "console: [Report Only] Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'unsafe-inline'"
+    ],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 741,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Testes psicológicos grátis em português | AURZANE",
+    "h1": [
+     "Testes psicológicos grátis"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 8,
+    "nav_enlaces": 3,
+    "alto_pagina": 926,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "pt-BR",
+    "errores": [
+     "console: [Report Only] Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'unsafe-inline'"
+    ],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 736,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Testes psicológicos grátis em português | AURZANE",
+    "h1": [
+     "Testes psicológicos grátis"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 8,
+    "nav_enlaces": 3,
+    "alto_pagina": 900,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "pt-BR",
+    "axe": [],
+    "errores": [
+     "console: [Report Only] Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'unsafe-inline'"
+    ],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://mind.aurzane.com/test-de-autoeficacia/",
+  "anchos": {
+   "320": {
+    "carga_ms": 733,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Test de autoeficacia gratis (escala de Schwarzer)",
+    "h1": [
+     "¿Cuánto confías en tu capacidad para salir adelante?"
+    ],
+    "desborda": true,
+    "scroll_w": 340,
+    "culpables": [
+     "a<eco 359",
+     "nav<wrap 340",
+     "a.cuenta<NAV 340"
+    ],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 25,
+    "nav_enlaces": 10,
+    "alto_pagina": 12017,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "errores": [
+     "console: [Report Only] Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'unsafe-inline'"
+    ],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 725,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Test de autoeficacia gratis (escala de Schwarzer)",
+    "h1": [
+     "¿Cuánto confías en tu capacidad para salir adelante?"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 25,
+    "nav_enlaces": 10,
+    "alto_pagina": 10227,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: [Report Only] Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'unsafe-inline'"
+    ],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 721,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "Our system thinks you might be a robot!"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "A"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 2,
+    "nav_enlaces": 0,
+    "alto_pagina": 900,
+    "fuentes": [
+     "Arial",
+     "Times New Roman"
+    ],
+    "lang": "en",
+    "errores": [
+     "console: undefined"
+    ],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 730,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Test de autoeficacia gratis (escala de Schwarzer)",
+    "h1": [
+     "¿Cuánto confías en tu capacidad para salir adelante?"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 8,
+    "ejemplos_objetivos": [
+     "Ansiedad",
+     "Depresión",
+     "Autoestima",
+     "TDAH",
+     "Autocompasión"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 25,
+    "nav_enlaces": 10,
+    "alto_pagina": 6628,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: [Report Only] Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'unsafe-inline'"
+    ],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://mind.aurzane.com/test-de-resiliencia/",
+  "anchos": {
+   "320": {
+    "carga_ms": 736,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Test de resiliencia gratis (Brief Resilience Scale)",
+    "h1": [
+     "¿Cuánto tardas en levantarte después de un golpe?"
+    ],
+    "desborda": true,
+    "scroll_w": 340,
+    "culpables": [
+     "a<eco 359",
+     "nav<wrap 340",
+     "a.cuenta<NAV 340"
+    ],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 25,
+    "nav_enlaces": 10,
+    "alto_pagina": 11944,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "errores": [
+     "console: [Report Only] Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'unsafe-inline'"
+    ],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 725,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Test de resiliencia gratis (Brief Resilience Scale)",
+    "h1": [
+     "¿Cuánto tardas en levantarte después de un golpe?"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 25,
+    "nav_enlaces": 10,
+    "alto_pagina": 10965,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: [Report Only] Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'unsafe-inline'"
+    ],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 732,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Test de resiliencia gratis (Brief Resilience Scale)",
+    "h1": [
+     "¿Cuánto tardas en levantarte después de un golpe?"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 8,
+    "ejemplos_objetivos": [
+     "Ansiedad",
+     "Depresión",
+     "Autoestima",
+     "TDAH",
+     "Autocompasión"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 25,
+    "nav_enlaces": 10,
+    "alto_pagina": 8347,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "errores": [
+     "console: [Report Only] Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'unsafe-inline'"
+    ],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 720,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Test de resiliencia gratis (Brief Resilience Scale)",
+    "h1": [
+     "¿Cuánto tardas en levantarte después de un golpe?"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 8,
+    "ejemplos_objetivos": [
+     "Ansiedad",
+     "Depresión",
+     "Autoestima",
+     "TDAH",
+     "Autocompasión"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 25,
+    "nav_enlaces": 10,
+    "alto_pagina": 6946,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: [Report Only] Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'unsafe-inline'"
+    ],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://nexus.aurzane.com/calculadora-nota-pau/",
+  "anchos": {
+   "320": {
+    "carga_ms": 739,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "Our system thinks you might be a robot!"
+    ],
+    "desborda": false,
+    "scroll_w": 320,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "A"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 2,
+    "nav_enlaces": 0,
+    "alto_pagina": 1063,
+    "fuentes": [
+     "Arial",
+     "Times New Roman"
+    ],
+    "lang": "en",
+    "errores": [
+     "console: undefined"
+    ],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 727,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Calculadora nota PAU 2026: nota de acceso y de admisión (selectividad)",
+    "h1": [
+     "Calcula tu nota de la PAU y descubre si te llega para tu carrera"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 20,
+    "nav_enlaces": 5,
+    "alto_pagina": 11590,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial"
+    ],
+    "lang": "es",
+    "axe": [
+     {
+      "id": "aria-hidden-focus",
+      "impacto": "serious",
+      "n": 1,
+      "ejemplo": "#movilBarra"
+     }
+    ],
+    "errores": [
+     "console: [Report Only] Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'unsafe-inline'"
+    ],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 727,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "Our system thinks you might be a robot!"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "A"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 2,
+    "nav_enlaces": 0,
+    "alto_pagina": 900,
+    "fuentes": [
+     "Arial",
+     "Times New Roman"
+    ],
+    "lang": "en",
+    "errores": [
+     "console: undefined"
+    ],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 1600,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Calculadora nota PAU 2026: nota de acceso y de admisión (selectividad)",
+    "h1": [
+     "Calcula tu nota de la PAU y descubre si te llega para tu carrera"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 4,
+    "ejemplos_objetivos": [
+     "Universidades",
+     "Test vocacional",
+     "Test de personalidad",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 20,
+    "nav_enlaces": 5,
+    "alto_pagina": 6550,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: [Report Only] Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'unsafe-inline'"
+    ],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://nexus.aurzane.com/universidades/espana/",
+  "anchos": {
+   "320": {
+    "carga_ms": 725,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Universidades de España: las 99 universidades",
+    "h1": [
+     "Universidades de España"
+    ],
+    "desborda": false,
+    "scroll_w": 320,
+    "culpables": [
+     "a<eco 359"
+    ],
+    "objetivos_pequenos": 2,
+    "ejemplos_objetivos": [
+     "Quitar filtros",
+     "Más filtros ▾"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 169,
+    "nav_enlaces": 8,
+    "alto_pagina": 15961,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial"
+    ],
+    "lang": "es",
+    "errores": [
+     "console: [Report Only] Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'unsafe-inline'"
+    ],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 724,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Universidades de España: las 99 universidades",
+    "h1": [
+     "Universidades de España"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 2,
+    "ejemplos_objetivos": [
+     "Quitar filtros",
+     "Más filtros ▾"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 169,
+    "nav_enlaces": 8,
+    "alto_pagina": 14885,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial"
+    ],
+    "lang": "es",
+    "axe": [
+     {
+      "id": "color-contrast",
+      "impacto": "serious",
+      "n": 6,
+      "ejemplo": "article:nth-child(13) > .etqs > .priv.etq"
+     },
+     {
+      "id": "target-size",
+      "impacto": "serious",
+      "n": 2,
+      "ejemplo": "a[href$=\"acerca/\"]"
+     }
+    ],
+    "errores": [
+     "console: [Report Only] Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'unsafe-inline'"
+    ],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 717,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Universidades de España: las 99 universidades",
+    "h1": [
+     "Universidades de España"
+    ],
+    "desborda": true,
+    "scroll_w": 876,
+    "culpables": [
+     "nav#topnav.topnav<wrap 876",
+     "a.cuenta<topnav 876"
+    ],
+    "objetivos_pequenos": 2,
+    "ejemplos_objetivos": [
+     "Quitar filtros",
+     "Más filtros ▾"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 169,
+    "nav_enlaces": 8,
+    "alto_pagina": 7706,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial"
+    ],
+    "lang": "es",
+    "errores": [
+     "console: [Report Only] Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'unsafe-inline'"
+    ],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 734,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Universidades de España: las 99 universidades",
+    "h1": [
+     "Universidades de España"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 2,
+    "ejemplos_objetivos": [
+     "Quitar filtros",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 169,
+    "nav_enlaces": 8,
+    "alto_pagina": 6080,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial"
+    ],
+    "lang": "es",
+    "axe": [
+     {
+      "id": "color-contrast",
+      "impacto": "serious",
+      "n": 6,
+      "ejemplo": "article:nth-child(13) > .etqs > .priv.etq"
+     }
+    ],
+    "errores": [
+     "console: [Report Only] Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'unsafe-inline'"
+    ],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://ovp.aurzane.com/",
+  "anchos": {
+   "320": {
+    "carga_ms": 733,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "Our system thinks you might be a robot!"
+    ],
+    "desborda": false,
+    "scroll_w": 320,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "A"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 2,
+    "nav_enlaces": 0,
+    "alto_pagina": 1063,
+    "fuentes": [
+     "Arial",
+     "Times New Roman"
+    ],
+    "lang": "en",
+    "errores": [
+     "console: undefined"
+    ],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 727,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Test de orientación vocacional gratis online, con informe",
+    "h1": [
+     "Elegir qué estudiar no debería ser una corazonada. Debería tener evidencia detrá"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 13,
+    "ejemplos_objetivos": [
+     "AURZANE",
+     "MIND",
+     "OVP",
+     "NEXUS",
+     "LIVE"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 40,
+    "nav_enlaces": 5,
+    "alto_pagina": 7573,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial"
+    ],
+    "lang": "es",
+    "axe": [
+     {
+      "id": "color-contrast",
+      "impacto": "serious",
+      "n": 1,
+      "ejemplo": ".tier"
+     }
+    ],
+    "errores": [
+     "console: [Report Only] Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'unsafe-inline'"
+    ],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 723,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "Our system thinks you might be a robot!"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "A"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 2,
+    "nav_enlaces": 0,
+    "alto_pagina": 900,
+    "fuentes": [
+     "Arial",
+     "Times New Roman"
+    ],
+    "lang": "en",
+    "errores": [
+     "console: undefined"
+    ],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 729,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Test de orientación vocacional gratis online, con informe",
+    "h1": [
+     "Elegir qué estudiar no debería ser una corazonada. Debería tener evidencia detrá"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 15,
+    "ejemplos_objetivos": [
+     "AURZANE",
+     "MIND",
+     "OVP",
+     "NEXUS",
+     "LIVE"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 40,
+    "nav_enlaces": 5,
+    "alto_pagina": 5164,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial"
+    ],
+    "lang": "es",
+    "axe": [
+     {
+      "id": "color-contrast",
+      "impacto": "serious",
+      "n": 1,
+      "ejemplo": ".tier"
+     }
+    ],
+    "errores": [
+     "console: [Report Only] Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'unsafe-inline'"
+    ],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://ovp.aurzane.com/generar-informe.html",
+  "anchos": {
+   "320": {
+    "carga_ms": 732,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Generar Informe · AURZANE MIND",
+    "h1": [
+     "Acceso de administrador",
+     "No se pudo generar el informe"
+    ],
+    "desborda": false,
+    "scroll_w": 320,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 5,
+    "nav_enlaces": 0,
+    "alto_pagina": 912,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial"
+    ],
+    "lang": "es",
+    "errores": [
+     "console: [Report Only] Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'unsafe-inline'"
+    ],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 732,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Generar Informe · AURZANE MIND",
+    "h1": [
+     "Acceso de administrador",
+     "No se pudo generar el informe"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 5,
+    "nav_enlaces": 0,
+    "alto_pagina": 912,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: [Report Only] Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'unsafe-inline'"
+    ],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 1144,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Generar Informe · AURZANE MIND",
+    "h1": [
+     "Acceso de administrador",
+     "No se pudo generar el informe"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 5,
+    "nav_enlaces": 0,
+    "alto_pagina": 1026,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial"
+    ],
+    "lang": "es",
+    "errores": [
+     "console: [Report Only] Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'unsafe-inline'"
+    ],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 723,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Generar Informe · AURZANE MIND",
+    "h1": [
+     "Acceso de administrador",
+     "No se pudo generar el informe"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 5,
+    "nav_enlaces": 0,
+    "alto_pagina": 1026,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: [Report Only] Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'unsafe-inline'"
+    ],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://mind.aurzane.com/test-de-personalidad/p/cometa/",
+  "anchos": {
+   "320": {
+    "carga_ms": 747,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Perfil Cometa: test de personalidad gratis | AURZANE MIND",
+    "h1": [
+     "¿Cómo es tu personalidad de verdad?",
+     "Prisma"
+    ],
+    "desborda": true,
+    "scroll_w": 338,
+    "culpables": [
+     "a<eco 359",
+     "nav<wrap 338",
+     "a#lnkCuenta.cuenta<NAV 338",
+     "span.blob.b3<hero 380",
+     "div.r5<rasgos5 323",
+     "div.r5.claro<rasgos5 323"
+    ],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 20,
+    "nav_enlaces": 5,
+    "alto_pagina": 7068,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "errores": [
+     "console: [Report Only] Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'unsafe-inline'"
+    ],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 730,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Perfil Cometa: test de personalidad gratis | AURZANE MIND",
+    "h1": [
+     "¿Cómo es tu personalidad de verdad?",
+     "Prisma"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [
+     "span.blob.b3<hero 435"
+    ],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 20,
+    "nav_enlaces": 5,
+    "alto_pagina": 6796,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "axe": [
+     {
+      "id": "color-contrast",
+      "impacto": "serious",
+      "n": 8,
+      "ejemplo": ".r5:nth-child(1) > b"
+     }
+    ],
+    "errores": [
+     "console: [Report Only] Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'unsafe-inline'"
+    ],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 736,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Perfil Cometa: test de personalidad gratis | AURZANE MIND",
+    "h1": [
+     "¿Cómo es tu personalidad de verdad?",
+     "Prisma"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [
+     "span.blob.b3<hero 828"
+    ],
+    "objetivos_pequenos": 3,
+    "ejemplos_objetivos": [
+     "Guías",
+     "Biblioteca",
+     "Test vocacional"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 20,
+    "nav_enlaces": 5,
+    "alto_pagina": 4872,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "errores": [
+     "console: [Report Only] Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'unsafe-inline'"
+    ],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 726,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Perfil Cometa: test de personalidad gratis | AURZANE MIND",
+    "h1": [
+     "¿Cómo es tu personalidad de verdad?",
+     "Prisma"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [
+     "span.blob.b3<hero 1426"
+    ],
+    "objetivos_pequenos": 3,
+    "ejemplos_objetivos": [
+     "Guías",
+     "Biblioteca",
+     "Test vocacional"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 20,
+    "nav_enlaces": 5,
+    "alto_pagina": 3407,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "axe": [
+     {
+      "id": "color-contrast",
+      "impacto": "serious",
+      "n": 8,
+      "ejemplo": ".r5:nth-child(1) > b"
+     }
+    ],
+    "errores": [
+     "console: [Report Only] Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'unsafe-inline'"
+    ],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://mind.aurzane.com/test-de-personalidad/p/raiz/",
+  "anchos": {
+   "320": {
+    "carga_ms": 723,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Perfil Raíz: test de personalidad gratis | AURZANE MIND",
+    "h1": [
+     "¿Cómo es tu personalidad de verdad?",
+     "Prisma"
+    ],
+    "desborda": true,
+    "scroll_w": 338,
+    "culpables": [
+     "a<eco 359",
+     "nav<wrap 338",
+     "a#lnkCuenta.cuenta<NAV 338",
+     "span.blob.b3<hero 380",
+     "div.r5<rasgos5 323",
+     "div.r5.claro<rasgos5 323"
+    ],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 20,
+    "nav_enlaces": 5,
+    "alto_pagina": 7068,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "errores": [
+     "console: [Report Only] Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'unsafe-inline'"
+    ],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 720,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Perfil Raíz: test de personalidad gratis | AURZANE MIND",
+    "h1": [
+     "¿Cómo es tu personalidad de verdad?",
+     "Prisma"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [
+     "span.blob.b3<hero 435"
+    ],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 20,
+    "nav_enlaces": 5,
+    "alto_pagina": 6796,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "axe": [
+     {
+      "id": "color-contrast",
+      "impacto": "serious",
+      "n": 8,
+      "ejemplo": ".r5:nth-child(1) > b"
+     }
+    ],
+    "errores": [
+     "console: [Report Only] Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'unsafe-inline'"
+    ],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 718,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Perfil Raíz: test de personalidad gratis | AURZANE MIND",
+    "h1": [
+     "¿Cómo es tu personalidad de verdad?",
+     "Prisma"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [
+     "span.blob.b3<hero 828"
+    ],
+    "objetivos_pequenos": 3,
+    "ejemplos_objetivos": [
+     "Guías",
+     "Biblioteca",
+     "Test vocacional"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 20,
+    "nav_enlaces": 5,
+    "alto_pagina": 4872,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "errores": [
+     "console: [Report Only] Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'unsafe-inline'"
+    ],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 725,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Perfil Raíz: test de personalidad gratis | AURZANE MIND",
+    "h1": [
+     "¿Cómo es tu personalidad de verdad?",
+     "Prisma"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [
+     "span.blob.b3<hero 1426"
+    ],
+    "objetivos_pequenos": 3,
+    "ejemplos_objetivos": [
+     "Guías",
+     "Biblioteca",
+     "Test vocacional"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 20,
+    "nav_enlaces": 5,
+    "alto_pagina": 3407,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "axe": [
+     {
+      "id": "color-contrast",
+      "impacto": "serious",
+      "n": 8,
+      "ejemplo": ".r5:nth-child(1) > b"
+     }
+    ],
+    "errores": [
+     "console: [Report Only] Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'unsafe-inline'"
+    ],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://build.aurzane.com/calculadora-rentabilidad-alquiler/",
+  "anchos": {
+   "320": {
+    "carga_ms": 722,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Calculadora de rentabilidad del alquiler: bruta y neta | AURZANE BUILD",
+    "h1": [
+     "¿Compensa comprar para alquilar?"
+    ],
+    "desborda": true,
+    "scroll_w": 345,
+    "culpables": [
+     "a.activo<eco 359",
+     "nav<wrap 345",
+     "a.cuenta<NAV 345"
+    ],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 22,
+    "nav_enlaces": 7,
+    "alto_pagina": 5133,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "errores": [
+     "console: [Report Only] Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'unsafe-inline'"
+    ],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 721,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Calculadora de rentabilidad del alquiler: bruta y neta | AURZANE BUILD",
+    "h1": [
+     "¿Compensa comprar para alquilar?"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 22,
+    "nav_enlaces": 7,
+    "alto_pagina": 4603,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: [Report Only] Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'unsafe-inline'"
+    ],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 731,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Calculadora de rentabilidad del alquiler: bruta y neta | AURZANE BUILD",
+    "h1": [
+     "¿Compensa comprar para alquilar?"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 5,
+    "ejemplos_objetivos": [
+     "Hipoteca",
+     "Gastos compra",
+     "Alquiler",
+     "Sueldo",
+     "Ahorro"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 22,
+    "nav_enlaces": 7,
+    "alto_pagina": 3937,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "errores": [
+     "console: [Report Only] Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'unsafe-inline'"
+    ],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 723,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Calculadora de rentabilidad del alquiler: bruta y neta | AURZANE BUILD",
+    "h1": [
+     "¿Compensa comprar para alquilar?"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 5,
+    "ejemplos_objetivos": [
+     "Hipoteca",
+     "Gastos compra",
+     "Alquiler",
+     "Sueldo",
+     "Ahorro"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 22,
+    "nav_enlaces": 7,
+    "alto_pagina": 2569,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: [Report Only] Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'unsafe-inline'"
+    ],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://live.aurzane.com/calculadora-sueno/",
+  "anchos": {
+   "320": {
+    "carga_ms": 1546,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Calculadora de sueño: a qué hora dormir y despertar | AURZANE LIVE",
+    "h1": [
+     "Despierta entre ciclos, no en medio"
+    ],
+    "desborda": true,
+    "scroll_w": 335,
+    "culpables": [
+     "a<eco 359",
+     "nav<wrap 335",
+     "a.cuenta<NAV 335"
+    ],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 23,
+    "nav_enlaces": 8,
+    "alto_pagina": 4092,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "errores": [
+     "console: [Report Only] Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'unsafe-inline'"
+    ],
+    "rotos": []
+   },
+   "375": {
+    "carga_ms": 730,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Calculadora de sueño: a qué hora dormir y despertar | AURZANE LIVE",
+    "h1": [
+     "Despierta entre ciclos, no en medio"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 23,
+    "nav_enlaces": 8,
+    "alto_pagina": 3695,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: [Report Only] Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'unsafe-inline'"
+    ],
+    "rotos": []
+   },
+   "768": {
+    "carga_ms": 728,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Calculadora de sueño: a qué hora dormir y despertar | AURZANE LIVE",
+    "h1": [
+     "Despierta entre ciclos, no en medio"
+    ],
+    "desborda": false,
+    "scroll_w": 768,
+    "culpables": [],
+    "objetivos_pequenos": 6,
+    "ejemplos_objetivos": [
+     "Ovulación",
+     "Embarazo",
+     "Peso ideal",
+     "Calorías",
+     "Sueño"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 23,
+    "nav_enlaces": 8,
+    "alto_pagina": 3178,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "errores": [
+     "console: [Report Only] Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'unsafe-inline'"
+    ],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 728,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Calculadora de sueño: a qué hora dormir y despertar | AURZANE LIVE",
+    "h1": [
+     "Despierta entre ciclos, no en medio"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 6,
+    "ejemplos_objetivos": [
+     "Ovulación",
+     "Embarazo",
+     "Peso ideal",
+     "Calorías",
+     "Sueño"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 23,
+    "nav_enlaces": 8,
+    "alto_pagina": 2155,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: [Report Only] Refused to evaluate a string as JavaScript because 'unsafe-eval' is not an allowed source of script in the following Content Security Policy directive: \"script-src 'self' 'unsafe-inline'"
+    ],
+    "rotos": []
+   }
+  }
+ }
+]
