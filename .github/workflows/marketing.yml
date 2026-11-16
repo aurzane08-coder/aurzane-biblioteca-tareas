@@ -3,7 +3,8 @@ name: Marketing automático
 #  - 05:13 UTC  planifica 14 días, crea las tarjetas, sube imágenes, feed RSS y enlaces cortos a aurzane.com
 #  - 08:37 UTC  franja de mañana (herramientas)       = 09:37 en España (10:37 en verano)
 #  - 12:13 UTC  frase de superación con foto (sobre todo Instagram) = 13:13 en España
-#  - 23:29 UTC  vídeo vertical (Reels, Facebook, YouTube Shorts, TikTok, Telegram) = tarde en América (18:29 Ecuador)
+#  - 23:29 UTC  vídeo vertical (Reels, Facebook, YouTube Shorts, Telegram) = tarde en América (18:29 Ecuador)
+#  - TikTok: 08:00, 14:00 y 21:00 hora de España (curiosidad, test o calculadora, frase)
 #  - 17:41 UTC  franja de tarde (libros, notas, etc.)  = 18:41 en España
 # Cada red se activa sola cuando existen sus secretos (ver marketing/README.md). Sin secretos no publica nada.
 on:
@@ -16,6 +17,7 @@ on:
     - cron: '47 10 * * *'  # segundo vídeo del día (frases y curiosidades)
     - cron: '23 15 * * *'  # tercer vídeo del día (solo YouTube y TikTok)
     - cron: '7 10,14,16,21 * * *'  # repaso: publica lo que se haya quedado atrás
+    - cron: '2 6,7,12,13,19,20 * * *'  # TikTok a las 08:00, 14:00 y 21:00 de España (dos horas UTC para invierno y verano; publica la que toque)
   push:
     paths: ['marketing/*.py', 'marketing/*.js', 'marketing/biblioteca_*.json', 'marketing/web/**', '.github/workflows/marketing.yml']
   workflow_dispatch:
@@ -54,7 +56,7 @@ jobs:
       TIKTOK_CLIENT_KEY: ${{ secrets.TIKTOK_CLIENT_KEY }}
       TIKTOK_CLIENT_SECRET: ${{ secrets.TIKTOK_CLIENT_SECRET }}
       TIKTOK_REFRESH_INICIAL: ${{ secrets.TIKTOK_REFRESH_TOKEN }}
-      TIKTOK_PUBLICO: "0"  # poner "1" cuando TikTok apruebe la app
+      TIKTOK_PUBLICO: "1"  # TikTok aprobó la app el 12/11/2026: los vídeos se publican directamente en público
       X_API_KEY: ${{ secrets.X_API_KEY }}
       X_API_SECRET: ${{ secrets.X_API_SECRET }}
       X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
@@ -64,7 +66,7 @@ jobs:
       - name: Qué toca
         run: |
           A="${{ github.event.inputs.accion }}"
-          case "${{ github.event.schedule }}" in '37 8 * * *') A=1;; '41 17 * * *') A=2;; '13 12 * * *') A=3;; '29 19 * * *') A=4;; '47 10 * * *') A=5;; '23 15 * * *') A=6;; '13 5 * * *') A=planificar;; esac
+          case "${{ github.event.schedule }}" in '37 8 * * *') A=1;; '41 17 * * *') A=2;; '13 12 * * *') A=3;; '29 23 * * *') A=4;; '2 6,7,12,13,19,20 * * *') A=pendientes;; '47 10 * * *') A=5;; '23 15 * * *') A=6;; '13 5 * * *') A=planificar;; esac
           echo "ACCION=${A:-planificar}" >> $GITHUB_ENV; echo "Acción: ${A:-planificar}"
       - name: SSH
         if: env.SG_KEY != ''

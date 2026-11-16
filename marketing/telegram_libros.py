@@ -39,9 +39,9 @@ libros.sort(key=puntos)
 
 est = json.load(open(EST, encoding='utf-8')) if os.path.exists(EST) else {'enviados': [], 'dias': {}}
 hoy = datetime.date.today().isoformat()
-if est['dias'].get(hoy) and os.environ.get('FORZAR') != '1': sys.exit(f'Hoy ya se publicó el libro del día ({est["dias"][hoy]})')
+if est['dias'].get(hoy) and os.environ.get('FORZAR') != '1': print(f'Hoy ya se publicó el libro del día ({est["dias"][hoy]})'); sys.exit(0)   # no es un error
 cuantos = 15 if not est['enviados'] else 1
-if len(est['enviados']) >= 365: sys.exit('Ya se publicaron los 365 libros')
+if len(est['enviados']) >= 365: print('Ya se publicaron los 365 libros'); sys.exit(0)
 pend = [l for l in libros if l['id'] not in est['enviados']][:cuantos]
 hechos = []
 for l in pend:

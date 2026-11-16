@@ -11,14 +11,17 @@ import json, os, re, sys, hashlib, datetime, collections, urllib.request, urllib
 
 D = os.path.dirname(os.path.abspath(__file__))
 REDES = ['telegram', 'bluesky', 'mastodon', 'instagram', 'facebook', 'threads', 'pinterest']  # X desactivada: cobra por publicar
-REDES_VIDEO = ['instagram', 'facebook', 'youtube', 'tiktok', 'telegram']  # franjas 4 y 5: vídeo vertical
+REDES_VIDEO = ['instagram', 'facebook', 'youtube', 'telegram']  # franjas 4 y 5: vídeo vertical (TikTok tiene sus propias franjas 7, 8 y 9)
 # TikTok: tres vídeos al día, cada uno en su franja (11:47, 16:23 y 20:29 en España), para que los avisos no se mezclen
 # y Adrián les ponga música de TikTok antes de publicarlos. YouTube no admite más: la cuota diaria de la API (10.000 unidades,
 # 1.600 por vídeo) ya la usan estos 3 vídeos y los 3 clips diarios de Clips-All.
 TIPOS_VIDEO = ('frase', 'test', 'calculadora', 'curiosidad')
-VID = ('4', '5', '6')   # franjas de vídeo vertical: 4 (tarde, de todo), 5 (mañana, frases y curiosidades) y 6 (media tarde, solo YouTube y TikTok)
-REDES_V6 = ['youtube', 'tiktok']
-def redes_de(fr): return REDES_V6 if fr == '6' else REDES_VIDEO
+VID = ('4', '5', '6', '7', '8', '9')   # vídeo vertical: 4 (tarde, de todo), 5 (mañana, frases y curiosidades), 6 (media tarde, solo YouTube) y 7-9 (TikTok)
+REDES_V6 = ['youtube']
+# TikTok (16/11/2026): tres vídeos al día a la hora de España con más público, cada uno de un tipo distinto para que no se repitan:
+#   7 = 08:00 curiosidad · 8 = 14:00 test o calculadora (alternos) · 9 = 21:00 frase. Fuentes de horario: estudios de Metricool y similares.
+TIKTOK_FRANJAS = {'7': (8, 0), '8': (14, 0), '9': (21, 0)}
+def redes_de(fr): return ['tiktok'] if fr in TIKTOK_FRANJAS else REDES_V6 if fr == '6' else REDES_VIDEO
 SITIO_IMG = 'https://aurzane.com/marketing/'
 IR = 'https://aurzane.com/ir/'
 HOY = datetime.date.today()
@@ -218,15 +221,21 @@ def planificar(dias=14):
         f = (HOY + datetime.timedelta(days=d)).isoformat()
         pass  # cada franja se completa abajo si falta
         dia = cal.setdefault(f, {})
-        for fr in ('1', '2', '3', '4', '5', '6'):
+        for fr in ('1', '2', '3', '4', '5', '6', '7', '8', '9'):
             if fr in dia and all(i in cat for i in dia[fr].values()) and set(dia[fr]) >= set(redes_de(fr) if fr in VID else [x for x in REDES if not (x == 'pinterest' and fr == '1')]): continue
-            grupo = 'herr' if fr == '1' else 'frase' if fr == '3' else 'video' if fr in ('4', '6') else 'video5' if fr == '5' else TARDE[datetime.date.fromisoformat(f).toordinal() % len(TARDE)]
+            grupo = 'herr' if fr == '1' else 'frase' if fr == '3' else 'video' if fr in ('4', '6') else 'video5' if fr == '5' else ('tk' + fr) if fr in TIKTOK_FRANJAS else TARDE[datetime.date.fromisoformat(f).toordinal() % len(TARDE)]
             usados = set(); dia[fr] = {}
             for r0 in (redes_de(fr) if fr in VID else REDES):
                 if r0 == 'pinterest' and fr == '1': continue
                 r = r0 + '-video' if fr in VID else r0
                 if grupo == 'video':
                     cand = [p for p in cat.values() if p['tipo'] in TIPOS_VIDEO and p['id'] not in usados and p['id'] not in dia.get('5', {}).values() and p['id'] not in dia.get('4' if fr == '6' else '6', {}).values()]
+                elif grupo.startswith('tk'):
+                    otros = {x for k in TIKTOK_FRANJAS if k != fr for x in dia.get(k, {}).values()}
+                    par = datetime.date.fromisoformat(f).toordinal() % 2
+                    tipos = {'tk7': ('curiosidad',), 'tk8': ('test',) if par else ('calculadora',), 'tk9': ('frase',)}[grupo]
+                    cand = [p for p in cat.values() if p['tipo'] in tipos and p['id'] not in otros]
+                    if not cand: cand = [p for p in cat.values() if p['tipo'] in TIPOS_VIDEO and p['id'] not in otros]
                 elif grupo == 'video5':
                     cand = [p for p in cat.values() if p['tipo'] in ('frase', 'curiosidad') and p['id'] not in usados and p['id'] not in dia.get('4', {}).values()]
                 else:
@@ -356,6 +365,21 @@ def imagen_de(p, fotos=None):
     return f'img/auto/{p["id"]}' + ('-f' if p['id'] in fotos else '') + '-s.jpg'   # -s: sin la dirección web en el pie (va en la descripción)
 
 
+_TAM = None
+def tam_img(url, local):
+    """Tamaño en bytes de una imagen del feed: del archivo local o, si no está, de aurzane.com (se guarda en feed_tam.json)."""
+    global _TAM
+    if _TAM is None: _TAM = leer('feed_tam.json', {})
+    if os.path.exists(local): return os.path.getsize(local)
+    if url in _TAM: return _TAM[url]
+    try:
+        r = urllib.request.urlopen(urllib.request.Request(url, method='HEAD', headers={'User-Agent': 'Mozilla/5.0 AURZANE feed'}), timeout=20)
+        n = int(r.headers.get('Content-Length') or 0)
+    except Exception: n = 0
+    if n: _TAM[url] = n; guardar('feed_tam.json', _TAM)
+    return n
+
+
 def feed():
     """RSS con imagen para Pinterest (pinea solo desde el feed) y lectores RSS."""
     cat = {p['id']: p for p in leer('catalogo.json')['productos']}
@@ -372,17 +396,19 @@ def feed():
          '<description>Lo nuevo de AURZANE cada día: tests psicológicos, calculadoras y libros de psicología gratis.</description><language>es</language>']
     for f, p in items:
         img = SITIO_IMG + imagen_de(p)
+        lon = tam_img(img, os.path.join(D, imagen_de(p)))
+        if not lon: continue   # Pinterest rechaza el feed si alguna imagen no existe o no indica su tamaño
         d = datetime.datetime.combine(datetime.date.fromisoformat(f), datetime.time(17, 0)).strftime('%a, %d %b %Y %H:%M:%S +0000')
         if p['tipo'] == 'frase':
             x.append(f'<item><title>{html.escape(p["titulo"])}</title><link>{IR}{codigo("pinterest", p["id"])}</link>'
                      f'<guid isPermaLink="false">{f}-{p["id"]}</guid><pubDate>{d}</pubDate>'
                      f'<description>{html.escape(p["titulo"] + " Más recursos gratis para tu bienestar en AURZANE.")}</description>'
-                     f'<enclosure url="{img}" type="image/jpeg" length="0"/><media:content url="{img}" medium="image"/></item>')
+                     f'<enclosure url="{img}" type="image/jpeg" length="{lon}"/><media:content url="{img}" medium="image" type="image/jpeg" fileSize="{lon}"/></item>')
             continue
         x.append(f'<item><title>{html.escape(p["ganchos"][0])}</title><link>{IR}{codigo("pinterest", p["id"])}</link>'
                  f'<guid isPermaLink="false">{f}-{p["id"]}</guid><pubDate>{d}</pubDate>'
-                 f'<description>{html.escape(p["texto"])}</description><enclosure url="{img}" type="image/jpeg" length="0"/>'
-                 f'<media:content url="{img}" medium="image"/></item>')
+                 f'<description>{html.escape(p["texto"])}</description><enclosure url="{img}" type="image/jpeg" length="{lon}"/>'
+                 f'<media:content url="{img}" medium="image" type="image/jpeg" fileSize="{lon}"/></item>')
     x.append('</channel></rss>')
     os.makedirs(os.path.join(D, 'salida'), exist_ok=True)
     open(os.path.join(D, 'salida', 'feed.xml'), 'w', encoding='utf-8').write('\n'.join(x))
@@ -472,14 +498,24 @@ def publicar_video(franja='4'):
             if not os.path.exists(local):
                 os.makedirs(os.path.dirname(local), exist_ok=True); urllib.request.urlretrieve(url, local)
             tx = texto(r if r in REDES else 'mastodon', p, n + 4) + f'\n\n🎵 {_v.credito(p)}'
-            ref = redes.publicar_video(r, tx, url, local, IR + codigo(r, i), p)
+            try: ref = redes.publicar_video(r, tx, url, local, IR + codigo(r, i), p)
+            except Exception as e1:
+                if r != 'tiktok': raise
+                print('TikTok falló, reintento en 30 s:', str(e1)[:120]); time.sleep(30)
+                ref = redes.publicar_video(r, tx, url, local, IR + codigo(r, i), p)
             hist.setdefault(h, []).append([hoy, i]); reg.write(f'{hoy},{franja},{r},{i},ok,{ref}\n'); print('OK vídeo', r, i, ref)
         except Exception as e:
             reg.write(f'{hoy},{franja},{r},{i},error,{str(e)[:150].replace(",", " ")}\n'); print('ERROR vídeo', r, i, e)
     guardar('estado.json', est)
 
 
-HORAS = {'1': (8, 37), '5': (10, 47), '3': (12, 13), '6': (15, 23), '2': (17, 41), '4': (23, 29)}  # UTC; la franja 4 sale a la hora de la tarde en América (18:29 en Ecuador, Colombia y Perú; 17:29 en México; 20:29 en Argentina)
+HORAS = {'1': (8, 37), '5': (10, 47), '3': (12, 13), '6': (15, 23), '2': (17, 41), '4': (23, 29)}
+try:   # franjas de TikTok a la hora de España (cambia sola con el horario de verano)
+    from zoneinfo import ZoneInfo
+    for _fr, (_h, _m) in TIKTOK_FRANJAS.items():
+        _u = datetime.datetime.combine(HOY, datetime.time(_h, _m), tzinfo=ZoneInfo('Europe/Madrid')).astimezone(datetime.timezone.utc)
+        HORAS[_fr] = (_u.hour, _u.minute)
+except Exception: HORAS.update({'7': (7, 0), '8': (13, 0), '9': (20, 0)})  # UTC; la franja 4 sale a la hora de la tarde en América (18:29 en Ecuador, Colombia y Perú; 17:29 en México; 20:29 en Argentina)
 
 
 def _exito():
