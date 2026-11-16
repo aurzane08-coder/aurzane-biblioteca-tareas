@@ -5,7 +5,7 @@ Actualizado: 2026-11-16. Clics de personas (sin bots ni vistas previas) que entr
 | Red | Publicaciones | Clics |
 |---|---|---|
 | telegram | 62 | 4 |
-| bluesky | 42 | 216 |
+| bluesky | 42 | 219 |
 | mastodon | 42 | 125 |
 | instagram | 39 | 0 |
 | facebook | 39 | 107 |
@@ -31,13 +31,13 @@ Actualizado: 2026-11-16. Clics de personas (sin bots ni vistas previas) que entr
 | ovp | 8 |
 | crea-l05-02 | 8 |
 | nc-educacion-infantil | 8 |
+| frase-5b980a2a | 8 |
 | frase-6d32afc7 | 8 |
 | calc-calorias | 8 |
 | test-personalidad | 7 |
 | calc-reforma | 7 |
 | calc-embarazo | 7 |
 | test-satisfaccion | 7 |
-| frase-5b980a2a | 7 |
+| frase-8e70072e | 7 |
 | frase-81d54602 | 7 |
-| frase-b424a195 | 6 |
-| curso-metod | 6 |
+| frase-5f349021 | 7 |
