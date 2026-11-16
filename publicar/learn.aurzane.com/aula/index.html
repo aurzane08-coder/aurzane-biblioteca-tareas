@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://aurzane.com/aurzane-paleta.js"></script>
+<title>Mi aula: tu progreso, horas y certificados | AURZANE LEARN</title>
+<meta name="description" content="Tu aula personal en AURZANE LEARN: el avance de cada curso, las horas que llevas estudiadas, tus notas y tus certificados verificables. Gratis con tu cuenta AURZANE ID.">
+<link rel="canonical" href="https://learn.aurzane.com/aula/">
+<meta property="og:title" content="Mi aula · AURZANE LEARN"><meta property="og:description" content="Tu progreso, tus horas de estudio y tus certificados, en un solo lugar."><meta property="og:image" content="https://learn.aurzane.com/cursos/portada-ansiedad.webp">
+<link rel="icon" href="https://aurzane.com/favicon.ico" sizes="48x48">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@500;700&family=Instrument+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--papel:#F6F0E8;--tinta:#2E2620;--suave:#6B6153;--linea:rgba(46,38,32,.16);--verde:#2F7A55;--oro:#C9A24B}
+body{margin:0;background:var(--bg,var(--papel));color:var(--text,var(--tinta));font:16px/1.65 "Instrument Sans",system-ui,sans-serif}
+.h{background:#14301F;color:#F2EFE6;padding:46px 20px 38px}.in{max-width:1000px;margin:0 auto}
+h1{font:700 clamp(1.8rem,4vw,2.5rem)/1.15 "Bodoni Moda",serif;margin:6px 0 10px}.h p{margin:0;color:#D6DDD3;max-width:640px}
+main{padding:26px 20px 70px}h2{font:700 1.3rem/1.3 "Bodoni Moda",serif;margin:0 0 12px}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:0 0 26px}@media (max-width:720px){.kpis{grid-template-columns:repeat(2,1fr)}}
+.kpi{border:1px solid var(--linea);border-radius:14px;padding:14px 16px;background:rgba(255,255,255,.5)}.kpi b{display:block;font:700 1.8rem/1.1 "Bodoni Moda",serif}.kpi span{font-size:.88rem;color:var(--suave)}
+.cursos{display:grid;gap:14px}
+.c{display:grid;grid-template-columns:1fr auto;gap:10px 18px;align-items:center;border:1px solid var(--linea);border-radius:16px;padding:18px;background:rgba(255,255,255,.45)}
+@media (max-width:640px){.c{grid-template-columns:1fr}}
+.c h3{margin:0 0 4px;font:700 1.12rem/1.3 "Bodoni Moda",serif}.c .meta{font-size:.9rem;color:var(--suave)}
+.barra{height:9px;border-radius:99px;background:rgba(46,38,32,.12);overflow:hidden;margin:10px 0 6px}.barra i{display:block;height:100%;background:var(--verde)}
+.btn{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:99px;padding:11px 20px;background:var(--verde);color:#fff!important;font:600 .95rem inherit;cursor:pointer;min-height:44px;text-decoration:none!important;white-space:nowrap}
+.btn.sec{background:transparent;color:inherit!important;border:1px solid var(--linea)}.acc{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.sello{display:inline-block;margin-left:6px;padding:2px 10px;border-radius:99px;background:rgba(201,162,75,.18);color:#7A5A12;font-size:.8rem;font-weight:600}
+.caja{border:1px solid var(--linea);border-radius:16px;padding:22px;background:rgba(255,255,255,.45)}.nota{font-size:.9rem;color:var(--suave)}
+[hidden]{display:none!important}
+</style>
+</head>
+<body>
+<header class="h"><div class="in">
+<h1>Mi aula</h1>
+<p>Todo tu aprendizaje en AURZANE en un solo lugar: el avance de cada curso, las horas que llevas estudiadas, tus notas y tus certificados verificables.</p>
+</div></header>
+<main><div class="in">
+  <div id="sinSesion" class="caja" hidden>
+    <h2>Entra para ver tu aula</h2>
+    <p>Tu aula se guarda en tu cuenta gratuita AURZANE ID. Crea la cuenta en un minuto y tu progreso, tus horas y tus certificados quedarán guardados aunque cambies de dispositivo.</p>
+    <p><a class="btn" id="btnLogin" href="https://aurzane.com/mi-aurzane.html">Crear cuenta o entrar</a> <a class="btn sec" href="https://learn.aurzane.com/cursos.html">Ver los cursos</a></p>
+  </div>
+  <div id="conSesion" hidden>
+    <div class="kpis" aria-label="Resumen">
+      <div class="kpi"><b id="kCur">0</b><span>cursos empezados</span></div>
+      <div class="kpi"><b id="kLec">0</b><span>lecciones completadas</span></div>
+      <div class="kpi"><b id="kHor">0</b><span>horas estudiadas</span></div>
+      <div class="kpi"><b id="kCer">0</b><span>certificados</span></div>
+    </div>
+    <h2>Tus cursos</h2>
+    <div class="cursos" id="lista"><p class="nota">Cargando…</p></div>
+    <p class="nota" style="margin-top:18px">Las horas se calculan con la duración de cada lección que has completado. Los certificados se pueden verificar con su código en <a href="https://learn.aurzane.com/certificado/">learn.aurzane.com/certificado</a>.</p>
+  </div>
+</div></main>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="/aurzane-id.js"></script>
+<script>
+(function () {
+  var $ = function (i) { return document.getElementById(i); };
+  var E = function (s) { return String(s == null ? '' : s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
+  var N = function (n, d) { return Number(n || 0).toLocaleString('es-ES', { maximumFractionDigits: d || 0 }); };
+  var sb = crearClienteAurzaneID('https://chtfpqwrrarfdjcivlad.supabase.co', 'sb_publishable___1v6VjDew0l8uGfMyb9Nw_YyCLTPPw');
+  $('btnLogin').href = 'https://aurzane.com/mi-aurzane.html?next=' + encodeURIComponent(location.href);
+  var curso = function (s) { return 'https://learn.aurzane.com/curso/' + encodeURIComponent(s) + '/?c=' + encodeURIComponent(s); };
+  (async function () {
+    var s = await sb.auth.getSession();
+    if (!s.data || !s.data.session) { $('sinSesion').hidden = false; return; }
+    $('conSesion').hidden = false;
+    var r = await sb.rpc('mi_aprendizaje');
+    if (r.error) { $('lista').innerHTML = '<p class="nota">No se pudo cargar tu aula. Recarga la página en un momento.</p>'; return; }
+    var L = r.data || [], emp = L.filter(function (x) { return x.completadas > 0 || x.ultima; });
+    $('kCur').textContent = N(emp.length);
+    $('kLec').textContent = N(L.reduce(function (a, x) { return a + x.completadas; }, 0));
+    $('kHor').textContent = N(L.reduce(function (a, x) { return a + x.minutos; }, 0) / 60, 1);
+    $('kCer').textContent = N(L.filter(function (x) { return x.certificado; }).length);
+    $('lista').innerHTML = L.map(function (x) {
+      var pct = x.total ? Math.round(x.completadas / x.total * 100) : 0, empezado = x.completadas > 0 || x.ultima;
+      var estado = x.certificado ? 'Certificado obtenido' : pct === 100 ? 'Lecciones terminadas: haz la evaluación final' : empezado ? 'En curso' : 'Sin empezar';
+      var meta = x.completadas + ' de ' + x.total + ' lecciones · ' + N(x.minutos / 60, 1) + ' de ' + N(x.horas, 1) + ' h' +
+        (x.mejor_nota != null ? ' · mejor nota ' + N(x.mejor_nota, 1) + (x.nota_minima ? ' (aprueba con ' + N(x.nota_minima, 1) + ')' : '') : '');
+      var acc = '<a class="btn" href="' + curso(x.slug) + '">' + (empezado ? 'Continuar' : 'Empezar') + '</a>' +
+        (x.certificado ? '<a class="btn sec" href="https://learn.aurzane.com/certificado/?c=' + encodeURIComponent(x.certificado) + '">Ver certificado</a>' : '');
+      return '<article class="c"><div><h3>' + E(x.titulo) + (x.certificado ? '<span class="sello">Certificado</span>' : '') + '</h3><div class="meta">' + E(estado) + ' · ' + meta + '</div>' +
+        '<div class="barra" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="' + pct + '"><i style="width:' + pct + '%"></i></div></div><div class="acc">' + acc + '</div></article>';
+    }).join('') || '<p class="nota">Aún no hay cursos publicados.</p>';
+  })();
+})();
+</script>
+</body>
+</html>

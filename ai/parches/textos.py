@@ -33,7 +33,9 @@ CAMBIOS = {
         ('<div><b>Lenguaje claro</b><span>Escrito para que el estudiante y su familia lo entiendan sin tecnicismos, con recomendaciones concretas.</span></div>',
          '<div><b>Lenguaje claro</b><span>Escrito para que el estudiante y su familia lo entiendan sin tecnicismos, con recomendaciones concretas.</span></div>\n'
          '    <div><b>Panel con datos del colegio</b><span>Avance en tiempo real, intereses vocacionales por curso (CHASIDE y Holland) y descarga en CSV, para planificar charlas, ferias y visitas a universidades.</span></div>\n'
-         '    <div><b>Cursos para tus clases</b><span>Con el <a href="https://learn.aurzane.com/aula/?docente=1">modo aula de AURZANE LEARN</a>, cada docente asigna un curso gratis y sigue el avance de su grupo: lecciones, notas y certificados.</span></div>')]}
+         '    <div><b>Cursos con certificado</b><span>Cada estudiante tiene su <a href="https://learn.aurzane.com/aula/">aula personal en AURZANE LEARN</a> con su progreso, sus horas de estudio y sus certificados verificables, sin que nadie tenga que gestionarlo.</span></div>'),
+        ('<div><b>Cursos para tus clases</b><span>Con el <a href="https://learn.aurzane.com/aula/?docente=1">modo aula de AURZANE LEARN</a>, cada docente asigna un curso gratis y sigue el avance de su grupo: lecciones, notas y certificados.</span></div>',
+         '<div><b>Cursos con certificado</b><span>Cada estudiante tiene su <a href="https://learn.aurzane.com/aula/">aula personal en AURZANE LEARN</a> con su progreso, sus horas de estudio y sus certificados verificables, sin que nadie tenga que gestionarlo.</span></div>')]}
 for rel, pares in CAMBIOS.items():
     f = os.path.join(base, rel)
     try: s = open(f, encoding='utf-8').read()
