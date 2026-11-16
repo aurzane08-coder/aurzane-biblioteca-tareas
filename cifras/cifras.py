@@ -77,7 +77,8 @@ def reglas(sitio):
     if c.get('libros'):
         rr.append((r'(Más de |más de )' + NUM + r'( libros)', lambda x: x.group(1) + redondo(c['libros']) + x.group(3)))
         rr.append((NUM + r' libros de psicología para leer gratis', lambda x: mil(c['libros']) + ' libros para leer gratis'))
-        rr.append((r'(más de |Más de )' + NUM + r' libros de psicología en español', lambda x: x.group(1) + redondo(c['libros']) + ' libros para leer gratis en español'))
+        rr.append((r'(más de |Más de )' + NUM + r' libros de psicología en español', lambda x: x.group(1) + redondo(c['libros']) + ' libros de psicología en español'))
+        rr.append((r'libros para leer gratis en español para leer gratis', lambda x: 'libros de psicología en español para leer gratis'))  # repara una frase duplicada (16/11/2026)
     if c['universidades']:
         rr.append((NUM + r'( (?:instituciones|universidades) en )' + NUM + r'( países)', lambda x: mil(c['universidades']) + x.group(2) + str(c['paises']) + x.group(4)))
         rr.append((r'(\d{1,3}\.\d{3})( universidades)', lambda x: mil(c['universidades']) + x.group(2)))  # solo cifras del catálogo (miles)
