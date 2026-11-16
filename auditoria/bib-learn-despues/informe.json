@@ -1,0 +1,915 @@
+[
+ {
+  "url": "https://aurzane.com/biblioteca/",
+  "anchos": {
+   "375": {
+    "carga_ms": 2022,
+    "titulo": "Biblioteca | AURZANE",
+    "h1": [
+     "La biblioteca abierta de psicología en español",
+     "Todos los libros"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [
+     "button.depto<wrap 434",
+     "button.depto<wrap 535",
+     "button.depto<wrap 645",
+     "button.depto<wrap 719",
+     "button.depto<wrap 840",
+     "button.depto<wrap 891"
+    ],
+    "objetivos_pequenos": 65,
+    "ejemplos_objetivos": [
+     "Ver todas las novedades",
+     "Ver todo",
+     "Ver todo",
+     "Ver todo",
+     "Ver todo"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 476,
+    "nav_enlaces": 30,
+    "alto_pagina": 16177,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 2204,
+    "titulo": "Biblioteca | AURZANE",
+    "h1": [
+     "La biblioteca abierta de psicología en español",
+     "Todos los libros"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [
+     "a.libro<est-libros 1543",
+     "div.portada.tipo<libro 1543",
+     "span.lomo<portada 1391",
+     "span.pt-tit<portada 1528",
+     "span.pt-aut<portada 1528",
+     "img<portada 1542"
+    ],
+    "objetivos_pequenos": 67,
+    "ejemplos_objetivos": [
+     "Ver todas las novedades",
+     "Ver todo",
+     "Ver todo",
+     "Ver todo",
+     "Ver todo"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 469,
+    "nav_enlaces": 30,
+    "alto_pagina": 12460,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://aurzane.com/biblioteca/#catalogo",
+  "anchos": {
+   "375": {
+    "carga_ms": 1597,
+    "titulo": "Biblioteca | AURZANE",
+    "h1": [
+     "La biblioteca abierta de psicología en español",
+     "Todos los libros"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [
+     "button.depto<wrap 434",
+     "button.depto<wrap 535",
+     "button.depto<wrap 645",
+     "button.depto<wrap 719",
+     "button.depto<wrap 840",
+     "button.depto<wrap 891"
+    ],
+    "objetivos_pequenos": 65,
+    "ejemplos_objetivos": [
+     "Ver todas las novedades",
+     "Ver todo",
+     "Ver todo",
+     "Ver todo",
+     "Ver todo"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 469,
+    "nav_enlaces": 30,
+    "alto_pagina": 16177,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 1648,
+    "titulo": "Biblioteca | AURZANE",
+    "h1": [
+     "La biblioteca abierta de psicología en español",
+     "Todos los libros"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [
+     "a.libro<est-libros 1543",
+     "div.portada.tipo<libro 1543",
+     "span.lomo<portada 1391",
+     "span.pt-tit<portada 1528",
+     "span.pt-aut<portada 1528",
+     "img<portada 1542"
+    ],
+    "objetivos_pequenos": 67,
+    "ejemplos_objetivos": [
+     "Ver todas las novedades",
+     "Ver todo",
+     "Ver todo",
+     "Ver todo",
+     "Ver todo"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 476,
+    "nav_enlaces": 30,
+    "alto_pagina": 12460,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://aurzane.com/biblioteca/libro/tristana.html",
+  "anchos": {
+   "375": {
+    "carga_ms": 1330,
+    "titulo": "Tristana (Benito Pérez Galdós) | Leer gratis en PDF",
+    "h1": [
+     "Tristana"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 4,
+    "ejemplos_objetivos": [
+     "Relatos de vida y psicología n",
+     "Psicología social y relaciones",
+     "Autoestima, autocuidado y supe",
+     "¿Algo no funciona? Avísanos"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 87,
+    "nav_enlaces": 30,
+    "alto_pagina": 76424,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 1334,
+    "titulo": "Tristana (Benito Pérez Galdós) | Leer gratis en PDF",
+    "h1": [
+     "Tristana"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 7,
+    "ejemplos_objetivos": [
+     "Relatos de vida y psicología n",
+     "Psicología social y relaciones",
+     "Autoestima, autocuidado y supe",
+     "¿Algo no funciona? Avísanos",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 87,
+    "nav_enlaces": 30,
+    "alto_pagina": 186541,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://aurzane.com/biblioteca/libro/ref-mundo-amarillo.html",
+  "anchos": {
+   "375": {
+    "carga_ms": 1426,
+    "titulo": "El mundo amarillo, de Albert Espinosa: resumen y ficha",
+    "h1": [
+     "El mundo amarillo"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 4,
+    "ejemplos_objetivos": [
+     "Relatos de vida y psicología n",
+     "Trauma, adversidad y recuperac",
+     "Duelo y pérdidas",
+     "¿Algo no funciona? Avísanos"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 90,
+    "nav_enlaces": 30,
+    "alto_pagina": 4826,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 1315,
+    "titulo": "El mundo amarillo, de Albert Espinosa: resumen y ficha",
+    "h1": [
+     "El mundo amarillo"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 4,
+    "ejemplos_objetivos": [
+     "Relatos de vida y psicología n",
+     "Trauma, adversidad y recuperac",
+     "Duelo y pérdidas",
+     "¿Algo no funciona? Avísanos"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 90,
+    "nav_enlaces": 30,
+    "alto_pagina": 2525,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://aurzane.com/biblioteca/tema/psicologia-de-la-salud.html",
+  "anchos": {
+   "375": {
+    "carga_ms": 1357,
+    "titulo": "Libros de psicología de la salud en español gratis (PDF) | AURZANE",
+    "h1": [
+     "Libros de psicología de la salud"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 16,
+    "ejemplos_objetivos": [
+     "Psicología de la salud",
+     "Conductas de salud",
+     "Cuidadores",
+     "Promoción de la salud",
+     "Actividad física y salud menta"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 165,
+    "nav_enlaces": 30,
+    "alto_pagina": 20786,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 1385,
+    "titulo": "Libros de psicología de la salud en español gratis (PDF) | AURZANE",
+    "h1": [
+     "Libros de psicología de la salud"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 16,
+    "ejemplos_objetivos": [
+     "Psicología de la salud",
+     "Conductas de salud",
+     "Cuidadores",
+     "Promoción de la salud",
+     "Actividad física y salud menta"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 165,
+    "nav_enlaces": 30,
+    "alto_pagina": 9917,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://aurzane.com/libros/",
+  "anchos": {
+   "375": {
+    "carga_ms": 1458,
+    "titulo": "Tienda de libros: gratis y de pago, psicología, novela y más | AURZANE",
+    "h1": [
+     "Tienda de libros"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [
+     "button<chips 385",
+     "button<chips 617",
+     "button<chips 833",
+     "button<chips 990",
+     "button<chips 1155",
+     "button<chips 1293"
+    ],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "¿Algo no funciona? Avísanos"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 122,
+    "nav_enlaces": 30,
+    "alto_pagina": 20790,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 1342,
+    "titulo": "Tienda de libros: gratis y de pago, psicología, novela y más | AURZANE",
+    "h1": [
+     "Tienda de libros"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [
+     "button<chips 1376",
+     "button<chips 1530",
+     "button<chips 1671",
+     "button<chips 1829",
+     "button<chips 1962",
+     "button<chips 2091"
+    ],
+    "objetivos_pequenos": 4,
+    "ejemplos_objetivos": [
+     "¿Algo no funciona? Avísanos",
+     "INPUT",
+     "INPUT",
+     "política de privacidad"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 122,
+    "nav_enlaces": 30,
+    "alto_pagina": 5047,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://learn.aurzane.com/",
+  "anchos": {
+   "375": {
+    "carga_ms": 2356,
+    "titulo": "AURZANE LEARN: cursos gratis de psicología y neurociencias con certificado",
+    "h1": [
+     "Aprende con cursos completos, a tu ritmo"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 7,
+    "ejemplos_objetivos": [
+     "LEARN",
+     "AURZANE",
+     "Mundos",
+     "INPUT",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 147,
+    "nav_enlaces": 29,
+    "alto_pagina": 15100,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: Refused to display 'https://aurzane.com/' in a frame because it set 'X-Frame-Options' to 'sameorigin'."
+    ],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 1381,
+    "titulo": "AURZANE LEARN: cursos gratis de psicología y neurociencias con certificado",
+    "h1": [
+     "Aprende con cursos completos, a tu ritmo"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 6,
+    "ejemplos_objetivos": [
+     "AURZANE",
+     "Mundos",
+     "INPUT",
+     "INPUT",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 147,
+    "nav_enlaces": 29,
+    "alto_pagina": 9295,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: Refused to display 'https://aurzane.com/' in a frame because it set 'X-Frame-Options' to 'sameorigin'."
+    ],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://learn.aurzane.com/cursos/",
+  "anchos": {
+   "375": {
+    "carga_ms": 1082,
+    "titulo": "Cursos gratis online con certificado · AURZANE LEARN",
+    "h1": [
+     "Cursos gratis, a tu ritmo"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 2,
+    "ejemplos_objetivos": [
+     "LEARN",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 67,
+    "nav_enlaces": 29,
+    "alto_pagina": 3804,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: Refused to display 'https://aurzane.com/' in a frame because it set 'X-Frame-Options' to 'sameorigin'."
+    ],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 1087,
+    "titulo": "Cursos gratis online con certificado · AURZANE LEARN",
+    "h1": [
+     "Cursos gratis, a tu ritmo"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 74,
+    "nav_enlaces": 29,
+    "alto_pagina": 1854,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: Refused to display 'https://aurzane.com/' in a frame because it set 'X-Frame-Options' to 'sameorigin'."
+    ],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://learn.aurzane.com/curso/introduccion-psicologia/",
+  "anchos": {
+   "375": {
+    "carga_ms": 1051,
+    "titulo": "Curso de Introducción a la Psicología Gratis Online · AURZANE LEARN",
+    "h1": [
+     "Introducción a la psicología"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "LEARN"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 69,
+    "nav_enlaces": 29,
+    "alto_pagina": 6470,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: Refused to display 'https://aurzane.com/' in a frame because it set 'X-Frame-Options' to 'sameorigin'."
+    ],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 1053,
+    "titulo": "Curso de Introducción a la Psicología Gratis Online · AURZANE LEARN",
+    "h1": [
+     "Introducción a la psicología"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 69,
+    "nav_enlaces": 29,
+    "alto_pagina": 3801,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: Refused to display 'https://aurzane.com/' in a frame because it set 'X-Frame-Options' to 'sameorigin'."
+    ],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://learn.aurzane.com/cursos.html",
+  "anchos": {
+   "375": {
+    "carga_ms": 1347,
+    "sin_cabecera": true,
+    "titulo": "Cursos · AURZANE LEARN",
+    "h1": [
+     "Inicia sesión para entrar al curso"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 12,
+    "nav_enlaces": 2,
+    "alto_pagina": 802,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 1348,
+    "sin_cabecera": true,
+    "titulo": "Cursos · AURZANE LEARN",
+    "h1": [
+     "Inicia sesión para entrar al curso"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 12,
+    "nav_enlaces": 2,
+    "alto_pagina": 902,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://aurzane.com/colegios/",
+  "anchos": {
+   "375": {
+    "carga_ms": 1002,
+    "titulo": "Orientación vocacional para colegios | AURZANE OVP",
+    "h1": [
+     "Orientación vocacional para cada estudiante de tu colegio"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 70,
+    "nav_enlaces": 17,
+    "alto_pagina": 9288,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 1013,
+    "titulo": "Orientación vocacional para colegios | AURZANE OVP",
+    "h1": [
+     "Orientación vocacional para cada estudiante de tu colegio"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 70,
+    "nav_enlaces": 17,
+    "alto_pagina": 5044,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://aurzane.com/sobre-aurzane.html",
+  "anchos": {
+   "375": {
+    "carga_ms": 1039,
+    "titulo": "Sobre AURZANE: quiénes somos y cómo trabajamos",
+    "h1": [
+     "Sobre AURZANE"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 59,
+    "nav_enlaces": 17,
+    "alto_pagina": 4175,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 1027,
+    "titulo": "Sobre AURZANE: quiénes somos y cómo trabajamos",
+    "h1": [
+     "Sobre AURZANE"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 59,
+    "nav_enlaces": 17,
+    "alto_pagina": 2263,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://mind.aurzane.com/test-de-ansiedad/",
+  "anchos": {
+   "375": {
+    "carga_ms": 1404,
+    "titulo": "Test de ansiedad GAD-7 gratis y online | AURZANE MIND",
+    "h1": [
+     "¿Lo que sientes es ansiedad?"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 3,
+    "ejemplos_objetivos": [
+     "MIND",
+     "INPUT",
+     "política de privacidad"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 101,
+    "nav_enlaces": 29,
+    "alto_pagina": 15112,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: Refused to display 'https://aurzane.com/' in a frame because it set 'X-Frame-Options' to 'sameorigin'."
+    ],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 1350,
+    "titulo": "Test de ansiedad GAD-7 gratis y online | AURZANE MIND",
+    "h1": [
+     "¿Lo que sientes es ansiedad?"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 2,
+    "ejemplos_objetivos": [
+     "INPUT",
+     "política de privacidad"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 101,
+    "nav_enlaces": 29,
+    "alto_pagina": 8617,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: Refused to display 'https://aurzane.com/' in a frame because it set 'X-Frame-Options' to 'sameorigin'."
+    ],
+    "rotos": []
+   }
+  }
+ }
+]
