@@ -40,6 +40,32 @@ def leer(n, d):
 def guardar(n, v): json.dump(v, open(os.path.join(D, n), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
 
 
+TILDES = {'guia': 'guía', 'guias': 'guías', 'admision': 'admisión', 'informacion': 'información', 'educacion': 'educación', 'ubicacion': 'ubicación',
+          'analisis': 'análisis', 'pagina': 'página', 'paginas': 'páginas', 'tambien': 'también',
+          'region': 'región', 'opinion': 'opinión', 'opiniones': 'opiniones', 'ingenieria': 'ingeniería', 'psicologia': 'psicología', 'matricula': 'matrícula',
+          'catalogo': 'catálogo', 'numero': 'número', 'facil': 'fácil', 'rapido': 'rápido'}
+MINUS = {'carreras', 'carrera', 'guía', 'guías', 'admisión', 'admisiones', 'información', 'resumen', 'análisis', 'precios', 'precio', 'opiniones', 'requisitos',
+         'becas', 'facultades', 'ranking', 'listado', 'lista', 'qué', 'cómo', 'cuál', 'ideas', 'clave', 'y', 'de', 'del', 'la', 'las', 'los', 'el', 'en', 'para',
+         'con', 'sin', 'por', 'e', 'o', 'u', 'a', 'al', 'su', 'sus', 'es', 'son', 'hay', 'gratis', 'online', 'pdf', 'notas', 'nota', 'corte', 'universidades',
+         'universidad', 'estudiar', 'test', 'calculadora', 'libro', 'autor', 'trata', 'mensaje', 'personajes', 'capítulos', 'reseña', 'ubicación', 'sedes', 'web', 'oficial'}
+
+
+def estilo_es(s):
+    """Tildes que la IA olvida y mayúsculas al estilo español (solo la primera palabra y los nombres propios)."""
+    def palabra(m):
+        w = m.group(0); base = w.lower()
+        if base in TILDES and not (w[0].isupper() and m.start() == 0 and False): base = TILDES[base]; w = base if w.islower() else base[0].upper() + base[1:]
+        return w
+    s = re.sub(r"[A-Za-zÁÉÍÓÚáéíóúÑñÜü]+", palabra, s)
+    out = []; inicio = True
+    for tok in re.split(r'(\s+)', s):
+        lw = tok.lower()
+        if not inicio and tok[:1].isupper() and lw in MINUS and out and not out[-1].rstrip().endswith((':', '.', '?', '¿', '|')): tok = lw
+        if tok.strip(): inicio = False
+        out.append(tok)
+    return ''.join(out)
+
+
 def pedir(url, datos=None, cab=None):
     cuerpo = json.dumps(datos).encode() if isinstance(datos, (dict, list)) else (urllib.parse.urlencode(datos).encode() if datos else None)
     h = dict(cab or {}); h.setdefault('Content-Type', 'application/json' if isinstance(datos, (dict, list)) else 'application/x-www-form-urlencoded')
@@ -142,9 +168,11 @@ for _, p, a, ps, ctr in cand[:MAX_DIA * 3]:
            f'Esta página sale en Google en la posición media {ps} con {a[1]} impresiones pero solo {a[0]} clics.\nURL: {p}\nTítulo actual: {t0}\nDescripción actual: {d0}\n'
            f'Búsquedas reales con las que aparece:\n{lista}\n\nEscribe un título nuevo (máximo 60 caracteres) y una descripción nueva (entre 120 y 155 caracteres) en español, '
            'que respondan a lo que busca la gente con esas palabras, sin prometer nada que la página no tenga, sin mayúsculas sostenidas, sin rayas largas ni emojis, '
+           'con ortografía española correcta (todas las tildes), mayúscula solo en la primera palabra y en nombres propios, sin prometer guías, PDF ni contenidos que la página no tenga, '
            'manteniendo «| AURZANE» o el nombre de la marca solo si cabe. Responde JSON: {"titulo": "...", "descripcion": "...", "motivo": "una frase"}')
     if not j or not j.get('titulo') or not (20 <= len(j['titulo']) <= 70) or not (80 <= len(j.get('descripcion', '')) <= 170): continue
     t1, d1 = j['titulo'].replace('—', ',').strip(), j['descripcion'].replace('—', ',').strip()
+    t1, d1 = estilo_es(t1), estilo_es(d1)
     if es_univ:
         univ_t[p] = {'titulo': t1, 'desc': d1}
     else:

@@ -803,6 +803,8 @@ def md_html(t):
             out.append('<ul>' + ''.join('<li>' + linea(re.sub(r'^([-*•]|\d+[.)])\s+', '', l)) + '</li>' for l in ls) + '</ul>')
         else: out.append('<p>' + linea(' '.join(ls)) + '</p>')
     return '\n'.join('      ' + x for x in out)
+MUNDOS_REVISION = ('mind', 'live')   # salud: lo que la IA escribe aquí necesita revisión humana (auditoría 16/11/2026)
+def revision_pendiente(a): return a.get('mundo') in MUNDOS_REVISION and a.get('revision') != 'aprobada'
 def pagina_articulo(a):
     nombre, host, _ = MUNDOS_A[a['mundo']]
     url = f'https://aurzane.com/articulos/{a["slug"]}/'
@@ -811,6 +813,9 @@ def pagina_articulo(a):
     jl = json.dumps({'@context': 'https://schema.org', '@type': 'Article', 'headline': a['titulo'], 'description': a['resumen'], 'datePublished': a['fecha'], 'inLanguage': 'es',
                      'articleSection': a.get('categoria', ''), 'publisher': {'@type': 'Organization', 'name': 'AURZANE'}, 'author': {'@type': 'Organization', 'name': 'AURZANE'},
                      'mainEntityOfPage': {'@type': 'WebPage', '@id': url}}, ensure_ascii=False)
+    pend_rev = revision_pendiente(a)
+    if a.get('revision') == 'aprobada':
+        jl = jl[:-1] + ', "reviewedBy": {"@type": "Person", "name": "Adrián Sánchez Samaniego", "jobTitle": "Psicólogo clínico"}}'
     rep = {'{{TITULO}}': html.escape(a['titulo']), '{{RESUMEN}}': html.escape(a['resumen']), '{{URL}}': url, '{{IMAGEN}}': html.escape(a.get('imagen') or 'https://aurzane.com/og-portada.jpg'),
            '{{JSONLD}}': jl.replace('</', '<\\/'), '{{HOST}}': host, '{{MUNDO}}': nombre, '{{TITULO_CORTO}}': html.escape(a['titulo'][:60] + ('…' if len(a['titulo']) > 60 else '')),
            '{{CATEGORIA}}': html.escape(a.get('categoria') or 'Divulgación'), '{{MINUTOS}}': str(max(2, round(len(cuerpo.split()) / 200))), '{{FECHA}}': html.escape(a['fecha']),
@@ -818,6 +823,12 @@ def pagina_articulo(a):
            '{{CUERPO}}': md_html(cuerpo) + caja_test(a.get('test', '')), '{{FUENTES}}': fuentes}
     h_ = open(os.path.join(D, 'plantilla_articulo.html'), encoding='utf-8').read()
     for k_, v_ in rep.items(): h_ = h_.replace(k_, v_)
+    _aviso_ia = 'Artículo de divulgación redactado con ayuda de inteligencia artificial a partir de la fuente citada y revisado automáticamente.'
+    if pend_rev:   # salud sin revisión humana: fuera de Google y con aviso claro hasta que se apruebe en el admin (Contenido)
+        h_ = h_.replace('<title>', '<meta name="robots" content="noindex, follow">\n<title>', 1)
+        h_ = h_.replace(_aviso_ia, 'Artículo de divulgación redactado con ayuda de inteligencia artificial a partir de la fuente citada. Pendiente de revisión por el psicólogo clínico de AURZANE.')
+    elif a.get('revision') == 'aprobada':
+        h_ = h_.replace(_aviso_ia, 'Artículo de divulgación redactado con ayuda de inteligencia artificial a partir de la fuente citada y revisado por Adrián Sánchez Samaniego, psicólogo clínico.')
     os.makedirs(f'{OUT}/articulos-ai/{a["slug"]}', exist_ok=True)
     open(f'{OUT}/articulos-ai/{a["slug"]}/index.html', 'w', encoding='utf-8').write(h_)
 _ah = ESTADO.get('art_dia', {}) if isinstance(ESTADO.get('art_dia'), dict) else {}
@@ -886,10 +897,11 @@ if (os.environ.get('GEMINI_API_KEY') or os.environ.get('GITHUB_TOKEN')) and _ah[
              'fuentes': [{'titulo': f['titulo'][:200], 'url': enlace_f, 'meta': ' · '.join(str(x) for x in (f.get('autores', '')[:120], f.get('editorial', ''), f.get('anio', '')) if x) or str(f.get('fuente', ''))}] if enlace_f else []}
         art_hechos.insert(0, a); _ah[HOY]['hechos'] += 1
         nov.insert(0, {'fecha': HOY, 'url': f'https://aurzane.com/articulos/{a["slug"]}/', 'titulo': 'Artículo: ' + a['titulo']})
-        acciones.append(f'Publiqué el artículo «{a["titulo"]}» en {MUNDOS_A[a["mundo"]][0]} (revisión {nota_a}/10).')
+        if a['mundo'] in MUNDOS_REVISION: a['revision'] = 'pendiente'
+        acciones.append(f'Publiqué el artículo «{a["titulo"]}» en {MUNDOS_A[a["mundo"]][0]} (revisión {nota_a}/10)' + (', pendiente de tu revisión en Contenido: hasta que lo publiques allí no sale en Google.' if a.get('revision') == 'pendiente' else '.'))
         if SB_SRV:
             fila = {'mundo': a['mundo'], 'slug': a['slug'], 'titulo': a['titulo'], 'resumen': a['resumen'], 'cuerpo': a['cuerpo'], 'categoria': a['categoria'] or None,
-                    'estado': 'publicado', 'publicado_at': AHORA.isoformat()}
+                    'estado': 'borrador' if a['mundo'] in MUNDOS_REVISION else 'publicado', 'publicado_at': AHORA.isoformat()}
             st_a, b_a, _, _ = get(SB_URL + '/rest/v1/articulos', {'apikey': SB_SRV, 'Authorization': 'Bearer ' + SB_SRV, 'Content-Type': 'application/json', 'Prefer': 'return=minimal'},
                                   datos=json.dumps(fila).encode(), metodo='POST', t=30)
             if st_a not in (200, 201, 204): print('::notice title=AI::no se guardó en Contenido', st_a, b_a[:120])
@@ -899,10 +911,27 @@ if (os.environ.get('GEMINI_API_KEY') or os.environ.get('GITHUB_TOKEN')) and _ah[
     guardar('articulos_ai.json', art_hechos[:2000])
 # todas las páginas de artículos de la IA se regeneran en cada revisión (así un cambio de diseño llega a todas)
 try:
+    # revisión humana: lo que publicas en el admin (Contenido) pasa a «aprobada»; la primera vez, los de salud ya publicados vuelven a borrador
+    if SB_SRV:
+        _cab = {'apikey': SB_SRV, 'Authorization': 'Bearer ' + SB_SRV, 'Content-Type': 'application/json'}
+        _pend = [a for a in art_hechos if a.get('cuerpo') and revision_pendiente(a)]
+        if _pend and ESTADO.get('revision_humana') != 'v1':
+            for a in _pend:
+                a['revision'] = 'pendiente'
+                get(SB_URL + '/rest/v1/articulos?slug=eq.' + urllib.parse.quote(a['slug']), dict(_cab, Prefer='return=minimal'), datos=json.dumps({'estado': 'borrador'}).encode(), metodo='PATCH', t=30)
+            ESTADO['revision_humana'] = 'v1'
+            acciones.append(f'{len(_pend)} artículos de salud quedaron pendientes de tu revisión en Contenido; hasta entonces no salen en Google.')
+        elif _pend:
+            st_r, b_r, _, _ = get(SB_URL + '/rest/v1/articulos?select=slug,estado&slug=in.(' + ','.join(urllib.parse.quote(a['slug']) for a in _pend[:150]) + ')', _cab, t=30)
+            try: _pub = {x['slug'] for x in json.loads(b_r) if x.get('estado') == 'publicado'} if st_r == 200 else set()
+            except Exception: _pub = set()
+            for a in _pend:
+                if a['slug'] in _pub: a['revision'] = 'aprobada'; acciones.append(f'Revisaste y publicaste «{a["titulo"]}»: ya sale en Google con tu firma.')
+        guardar('articulos_ai.json', art_hechos[:2000])
     for a in art_hechos:
         if a.get('cuerpo'): pagina_articulo(a)
     os.makedirs(OUT + '/articulos-ai', exist_ok=True)
-    lista_ai = [{k: a[k] for k in ('slug', 'mundo', 'titulo', 'resumen', 'categoria', 'fecha', 'imagen', 'test') if k in a} for a in art_hechos if a.get('cuerpo')][:300]
+    lista_ai = [{k: a[k] for k in ('slug', 'mundo', 'titulo', 'resumen', 'categoria', 'fecha', 'imagen', 'test') if k in a} for a in art_hechos if a.get('cuerpo') and not revision_pendiente(a)][:300]
     open(OUT + '/articulos-ai/ai.js', 'w', encoding='utf-8').write('window.__azArticulos=' + json.dumps(lista_ai, ensure_ascii=False).replace('</', '<\\/') + ';')
 except Exception as e: print('::notice title=AI::páginas de artículos', str(e)[:150])
 pend.sort(key=puntos, reverse=True)
@@ -1396,13 +1425,18 @@ def aplicar(receta, p):
     if receta == 'relanzar_marketing': return ('pendiente' if disparar('marketing.yml') else 'fallo'), 'Relancé el marketing automático'
     if receta == 'relanzar_enlaces': return ('pendiente' if disparar('enlaces.yml') else 'fallo'), 'Relancé la revisión de enlaces'
     if receta == 'diagnostico_ia':
+        # antes de diagnosticar, se comprueba otra vez: si ya no pasa, era un fallo puntual y no se inventa una causa (auditoría 16/11/2026)
+        try:
+            if sigue_mal(p) is False: return 'ok', 'Lo comprobé de nuevo y ya no ocurre: fue un fallo puntual, no hacía falta tocar nada.'
+        except Exception: pass
         previas = [x for x in REP if x['tipo'] == t and x['resultado'] == 'ok'][:5]
         memoria = '\n'.join(f"- {x['problema'][:120]} → se arregló con «{NOMBRES.get(x['receta'], x['receta'])}»" for x in previas)
         sug = gemini('Eres el ingeniero de mantenimiento de AURZANE, una web de psicología en SiteGround (HTML y PHP propios, NO usa WordPress; subdominios mind, nexus, live, learn, build, ovp; despliegue con GitHub Actions; marketing automático en redes con sus APIs) '
                      'con automatizaciones en GitHub Actions y Supabase. Responde en español, sin rayas largas, en máximo 8 líneas: 1) causa más probable, '
                      '2) cómo arreglarlo paso a paso, 3) si es seguro hacerlo automáticamente.\n\nProblema: ' + p['texto'] + '\n\nContexto:\n' + contexto_de(p)[:5000] +
                      ('\n\nCasos parecidos que se arreglaron antes:\n' + memoria if memoria else ''))
-        return ('escalado' if sug else 'fallo'), ('Diagnóstico de Gemini listo' if sug else f'Sin diagnóstico ({gem_estado})'), sug
+        if sug: sug = 'Hipótesis de la IA, sin comprobar (revísala antes de cambiar nada):\n' + sug
+        return ('escalado' if sug else 'fallo'), ('Hipótesis de la IA lista' if sug else f'Sin diagnóstico ({gem_estado})'), sug
     return 'escalado', 'Necesita que lo revises tú'
 # ---------- 16c. Tienda de libros, librero IA, boletín y libro del día en Telegram: vigila, repara y aprende de los avisos ----------
 try:
