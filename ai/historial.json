@@ -1464,13 +1464,13 @@
   "pruebas_total": 57
  },
  {
-  "fecha": "2026-11-16T23:38",
-  "estado": "mal",
-  "avisos": 2,
-  "arreglos": 4,
+  "fecha": "2026-11-16T23:44",
+  "estado": "medio",
+  "avisos": 1,
+  "arreglos": 3,
   "errores_24h": 9,
   "redes_ok_24h": 46,
-  "cola": 17,
+  "cola": 2,
   "publicados": 98,
   "pruebas_ok": 57,
   "pruebas_total": 57
