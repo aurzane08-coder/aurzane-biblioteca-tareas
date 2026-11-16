@@ -619,6 +619,14 @@
  "cambios_titulos": [
   [
    "2026-11-16",
+   "https://aurzane.com/biblioteca/",
+   "Biblioteca de psicología gratis en español: libros en PDF",
+   "Biblioteca de psicología gratis | Aurzane",
+   null,
+   0.0
+  ],
+  [
+   "2026-11-16",
    "https://nexus.aurzane.com/universidades/estados-unidos/catawba-college/",
    "Catawba College: 36 carreras",
    "Catawba College: Carreras y Admisión | AURZANE",
@@ -728,17 +736,34 @@
    "El cerebro emocional, Joseph LeDoux | Resumen",
    null,
    0.0
-  ],
-  [
-   "2026-11-16",
-   "https://nexus.aurzane.com/universidades/ecuador/instituto-superior-tecnologico-blez/",
-   "Instituto Superior Tecnológico Blez: 5 carreras",
-   "Instituto Blez: carreras y web oficial | AURZANE",
-   null,
-   0.0
   ]
  ],
  "temas_nuevos": [
+  [
+   "2026-11-16",
+   "antioch university",
+   "Antioch University: Enfoque Educativo, Programas y Admisiones"
+  ],
+  [
+   "2026-11-16",
+   "nihon university",
+   "Nihon University en Japón: Facultades, Carreras y Acceso"
+  ],
+  [
+   "2026-11-16",
+   "pratt institute",
+   "Pratt Institute: Oferta Académica, Campus y Proceso de Admisión"
+  ],
+  [
+   "2026-11-16",
+   "polonia universidades",
+   "Estudiar en Polonia: Universidades, Requisitos y Opciones Académicas"
+  ],
+  [
+   "2026-11-16",
+   "politecnico di milano",
+   "Politecnico di Milano: Carreras, Admisión y Guía para Estudiantes"
+  ],
   [
    "2026-11-16",
    "lafayette college",
@@ -763,31 +788,6 @@
    "2026-11-16",
    "carreras tecnicas",
    "Carreras técnicas: qué son, ventajas y cómo elegir la mejor opción"
-  ],
-  [
-   "2026-11-16",
-   "hult international business school",
-   "Estudiar en escuelas internacionales de negocios: ventajas y retos"
-  ],
-  [
-   "2026-11-16",
-   "licenciaturas en monterrey",
-   "Licenciaturas en Monterrey: opciones y claves para decidir tu carrera"
-  ],
-  [
-   "2026-11-16",
-   "grados universitarios y masters en la uem",
-   "Guía de grados y másteres: qué debes evaluar antes de elegir"
-  ],
-  [
-   "2026-11-16",
-   "facultades universitarias",
-   "Facultades universitarias: cómo elegir la mejor opción para tu futuro"
-  ],
-  [
-   "2026-11-16",
-   "cambridge universidades",
-   "Universidad de Cambridge: Cómo acceder, grados y vida estudiantil"
   ]
  ]
 }

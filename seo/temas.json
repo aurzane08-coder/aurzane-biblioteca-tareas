@@ -782,5 +782,40 @@
   "mundo": "nexus",
   "test": "",
   "fecha": "2026-11-16"
+ },
+ {
+  "consulta": "politecnico di milano",
+  "titulo": "Politecnico di Milano: Carreras, Admisión y Guía para Estudiantes",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "fecha": "2026-11-16"
+ },
+ {
+  "consulta": "polonia universidades",
+  "titulo": "Estudiar en Polonia: Universidades, Requisitos y Opciones Académicas",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "fecha": "2026-11-16"
+ },
+ {
+  "consulta": "pratt institute",
+  "titulo": "Pratt Institute: Oferta Académica, Campus y Proceso de Admisión",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "fecha": "2026-11-16"
+ },
+ {
+  "consulta": "nihon university",
+  "titulo": "Nihon University en Japón: Facultades, Carreras y Acceso",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "fecha": "2026-11-16"
+ },
+ {
+  "consulta": "antioch university",
+  "titulo": "Antioch University: Enfoque Educativo, Programas y Admisiones",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "fecha": "2026-11-16"
  }
 ]

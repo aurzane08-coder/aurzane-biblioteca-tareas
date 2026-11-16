@@ -592,5 +592,30 @@
    "catawba college"
   ],
   "via": "univ"
+ },
+ {
+  "fecha": "2026-11-16",
+  "url": "https://aurzane.com/biblioteca/",
+  "antes": {
+   "titulo": "Biblioteca de psicología gratis en español: libros en PDF",
+   "desc": "Más de 740 libros de psicología en español para leer gratis en PDF: ansiedad, duelo, autoestima, emociones, crianza y más, con licencia abierta. Sin registro.",
+   "clics": 0,
+   "impresiones": 50,
+   "ctr": 0.0,
+   "posicion": 15.8
+  },
+  "despues": {
+   "titulo": "Biblioteca de psicología gratis | Aurzane",
+   "desc": "Accede a libros de psicología, autores destacados y recursos de bienestar en abierto. Lectura gratuita sin registro en nuestra biblioteca digital."
+  },
+  "motivo": "Integra la marca y términos buscados optimizando el CTR sin superar los límites de caracteres.",
+  "consultas": [
+   "esperanza bausela herreras",
+   "gonzalo calcedo",
+   "jaime ruiz psicologo",
+   "perdida personal",
+   "\"maria eugenia lopera monsalve\""
+  ],
+  "via": "servidor"
  }
 ]
