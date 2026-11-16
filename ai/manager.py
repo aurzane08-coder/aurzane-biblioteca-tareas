@@ -932,10 +932,12 @@ try:
         _v = json.loads(remoto(f'cat www/aurzane.com/privado-ai/visitas/{_ayer}.json 2>/dev/null') or '{}')
         if _v.get('vistas'):
             _tot = sum(_v['vistas'].values()); _top = sorted(_v['vistas'].items(), key=lambda x: -x[1])[:5]
-            _soc = sum(n for k, n in _v.get('eventos', {}).items() if k.startswith('socio:'))
-            _ori = ', '.join(f'{k} {n}' for k, n in sorted(_v.get('origen', {}).items(), key=lambda x: -x[1])[:4])
+            _ev = _v.get('eventos') or {}; _ev = _ev if isinstance(_ev, dict) else {}
+            _soc = sum(n for k, n in _ev.items() if k.startswith('socio:'))
+            _og = _v.get('origen') or {}; _og = _og if isinstance(_og, dict) else {}
+            _ori = ', '.join(f'{k} {n}' for k, n in sorted(_og.items(), key=lambda x: -x[1])[:4])
             acciones.append(f'Ayer: {_tot} páginas vistas ({_ori}). Más vistas: ' + '; '.join(f'{k} ({n})' for k, n in _top) + f'. Clics en socios: {_soc}.')
-            guardar('visitas_resumen.json', ([{'dia': _ayer, 'vistas': _tot, 'origen': _v.get('origen', {}), 'socios': _soc}] + leer('visitas_resumen.json', []))[:400])
+            guardar('visitas_resumen.json', ([{'dia': _ayer, 'vistas': _tot, 'origen': _og, 'socios': _soc}] + leer('visitas_resumen.json', []))[:400])
         ESTADO['visitas_dia'] = _ayer
 except Exception as _e: print('visitas:', _e)
 # todas las páginas de artículos de la IA se regeneran en cada revisión (así un cambio de diseño llega a todas)
