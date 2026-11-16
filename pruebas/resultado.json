@@ -1,21 +1,25 @@
 {
- "fecha": "2026-11-16T13:25:17.282Z",
- "fallos": [
-  "Portada https://aurzane.com/ · 202 sin cabecera página vacía o desafío anti-robots",
-  "Portada https://mind.aurzane.com/ · 202 sin cabecera página vacía o desafío anti-robots",
-  "Portada https://nexus.aurzane.com/ · 202 sin cabecera página vacía o desafío anti-robots",
-  "Portada https://live.aurzane.com/ · 202 sin cabecera",
-  "Portada https://learn.aurzane.com/ · 202 sin cabecera página vacía o desafío anti-robots",
-  "Portada https://build.aurzane.com/ · 202 sin cabecera página vacía o desafío anti-robots",
-  "Portada https://ovp.aurzane.com/ · 202 sin cabecera",
-  "Portada https://aurzane.com/biblioteca/ · 202 sin cabecera página vacía o desafío anti-robots",
-  "Test de ansiedad · page.evaluate: TypeError: Cannot read properties of null (reading 'click')\n    at eval (eval at evaluate (:234:30), <ano",
-  "404 propia · 202",
-  "Mapa https://aurzane.com/sitemap-paginas.xml · 202 false",
-  "Mapa https://nexus.aurzane.com/sitemap-universidades.xml · 202 false",
-  "Mapa https://mind.aurzane.com/sitemap-paginas.xml · 202 false",
-  "Mapa https://aurzane.com/robots.txt · 202 false",
-  "AVIF servido · text/html"
- ],
- "bien": []
+ "fecha": "2026-11-16T13:28:24.344Z",
+ "fallos": [],
+ "avisos": [],
+ "bien": [
+  "Portada https://aurzane.com/ · 200",
+  "Portada https://mind.aurzane.com/ · 200",
+  "Portada https://nexus.aurzane.com/ · 200",
+  "Portada https://live.aurzane.com/ · 200",
+  "Portada https://learn.aurzane.com/ · 200",
+  "Portada https://build.aurzane.com/ · 200",
+  "Portada https://ovp.aurzane.com/ · 200",
+  "Portada https://aurzane.com/biblioteca/ · 200",
+  "Test: resultado · 7 preguntas",
+  "Test: botón «Ver resultado» lleva al resultado",
+  "Test: aparece la IA de resultados",
+  "Test: la IA responde · 200 ok",
+  "404 propia · 404",
+  "Mapa https://aurzane.com/sitemap-paginas.xml · 200 true",
+  "Mapa https://nexus.aurzane.com/sitemap-universidades.xml · 200 true",
+  "Mapa https://mind.aurzane.com/sitemap-paginas.xml · 200 true",
+  "Mapa https://aurzane.com/robots.txt · 200 true",
+  "AVIF servido · image/avif"
+ ]
 }
