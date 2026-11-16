@@ -57,3 +57,25 @@ for web in WEBS:
     if t != s:
         c = os.path.join(base, web, 'eliminar', 'canonico-' + hoy); os.makedirs(c, exist_ok=True); shutil.copy2(f, c)
         open(f, 'w', encoding='utf-8').write(t); print('plantilla de artículo arreglada en', web)
+
+# Imagen para compartir (og.jpg, 1200x630) de las calculadoras nuevas: foto real de Unsplash, la misma que su tarjeta.
+OG = {'build.aurzane.com/calculadora-gastos-compra-vivienda': '1570129477492-45c003edd2be', 'build.aurzane.com/calculadora-rentabilidad-alquiler': '1460317442991-0ec209397118',
+      'build.aurzane.com/calculadora-finiquito': '1586281380349-632531db7ed4', 'build.aurzane.com/calculadora-ahorro': '1559526324-4b87b5e36e44',
+      'build.aurzane.com/calculadora-jubilacion': '1473186578172-c141e6798cf4', 'live.aurzane.com/calculadora-ovulacion': '1505751172876-fa1923c5c528',
+      'live.aurzane.com/calculadora-peso-ideal': '1517836357463-d25dfeac3438', 'live.aurzane.com/calculadora-sueno': '1520206183501-b80df61043c2'}
+for ruta, fid in OG.items():
+    web, carpeta = ruta.split('/', 1)
+    f = os.path.join(base, web, 'public_html', carpeta, 'og.jpg')
+    if not os.path.isdir(os.path.dirname(f)) or (os.path.exists(f) and os.path.getsize(f) > 5000): continue
+    u = f'https://images.unsplash.com/photo-{fid}?w=1200&h=630&fit=crop&q=75&fm=jpg'
+    r = subprocess.run(['curl', '-sL', '-m', '60', '-o', f, '-w', '%{http_code}', u], capture_output=True, text=True)
+    if r.stdout.strip() == '200' and os.path.exists(f) and os.path.getsize(f) > 5000: print('og.jpg descargada', ruta)
+    elif os.path.exists(f):   # descarga fallida: se aparta a eliminar (nunca se borra)
+        c = os.path.join(base, web, 'eliminar', 'canonico-' + hoy); os.makedirs(c, exist_ok=True); shutil.move(f, os.path.join(c, carpeta.replace('/', '_') + '-og.jpg'))
+for ruta in OG:
+    web, carpeta = ruta.split('/', 1)
+    f = os.path.join(base, web, 'public_html', carpeta, 'index.html'); og = os.path.join(base, web, 'public_html', carpeta, 'og.jpg')
+    if not (os.path.exists(f) and os.path.exists(og)): continue
+    s = open(f, encoding='utf-8').read()
+    t = re.sub(r'(<meta (?:property="og:image"|name="twitter:image") content=")https://' + re.escape(web) + r'/[a-z0-9-]+/og\.jpg(")', lambda m: m.group(1) + f'https://{web}/{carpeta}/og.jpg' + m.group(2), s)
+    if t != s: open(f, 'w', encoding='utf-8').write(t); print('og:image propia en', ruta)

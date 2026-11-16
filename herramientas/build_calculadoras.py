@@ -213,7 +213,7 @@ CALCS = []
 
 # 1. Gastos de compra de vivienda ------------------------------------------------------------------------------
 CALCS.append(dict(
-    slug='calculadora-gastos-compra-vivienda', ogimg='calculadora-hipoteca', nombre='Calculadora de gastos de compra de vivienda',
+    slug='calculadora-gastos-compra-vivienda', ogimg='calculadora-gastos-compra-vivienda', nombre='Calculadora de gastos de compra de vivienda',
     titulo='Gastos de compra de vivienda 2026: ITP, notaría y registro',
     og='¿Cuánto cuesta comprar una casa además del precio? Gastos 2026',
     desc='Calcula los gastos de comprar una vivienda en 2026: ITP o IVA y AJD de tu comunidad, notaría, registro, gestoría y tasación, y el ahorro total que necesitas.',
@@ -280,7 +280,7 @@ $('tablaCCAA').addEventListener('click',function(e){var tr=e.target.closest('tr[
 
 # 2. Rentabilidad del alquiler -------------------------------------------------------------------------------
 CALCS.append(dict(
-    slug='calculadora-rentabilidad-alquiler', ogimg='calculadora-hipoteca', nombre='Calculadora de rentabilidad del alquiler',
+    slug='calculadora-rentabilidad-alquiler', ogimg='calculadora-rentabilidad-alquiler', nombre='Calculadora de rentabilidad del alquiler',
     titulo='Calculadora de rentabilidad del alquiler: bruta y neta',
     og='¿Compensa comprar un piso para alquilar? Calcula su rentabilidad',
     desc='Calcula la rentabilidad bruta y neta de comprar un piso para alquilar: gastos, impuestos de compra, vacíos, hipoteca, flujo de caja mensual y años para recuperar la inversión.',
@@ -340,7 +340,7 @@ function pintar(){
 
 # 3. Finiquito e indemnización -------------------------------------------------------------------------------
 CALCS.append(dict(
-    slug='calculadora-finiquito', ogimg='calculadora-sueldo-neto', nombre='Calculadora de finiquito e indemnización',
+    slug='calculadora-finiquito', ogimg='calculadora-finiquito', nombre='Calculadora de finiquito e indemnización',
     titulo='Calculadora de finiquito e indemnización por despido 2026',
     og='¿Cuánto te deben al dejar tu trabajo? Finiquito e indemnización',
     desc='Calcula tu finiquito e indemnización en 2026: días del mes, vacaciones no disfrutadas, pagas extra y la indemnización por despido improcedente, objetivo o fin de contrato.',
@@ -408,7 +408,7 @@ function pintar(){
 
 # 4. Ahorro -----------------------------------------------------------------------------------------------------
 CALCS.append(dict(
-    slug='calculadora-ahorro', ogimg='calculadora-sueldo-neto', nombre='Calculadora de ahorro',
+    slug='calculadora-ahorro', ogimg='calculadora-ahorro', nombre='Calculadora de ahorro',
     titulo='Calculadora de ahorro: cuánto ahorrar al mes (50/30/20)',
     og='¿Cuánto tienes que ahorrar al mes para tu meta?',
     desc='Calcula cuánto ahorrar al mes para llegar a tu meta, cómo repartir tu sueldo con la regla 50/30/20, tu fondo de emergencia y en cuánto tiempo lo consigues.',
@@ -460,7 +460,7 @@ function pintar(){
 
 # 5. Jubilación -------------------------------------------------------------------------------------------------
 CALCS.append(dict(
-    slug='calculadora-jubilacion', ogimg='calculadora-sueldo-neto', nombre='Calculadora de jubilación',
+    slug='calculadora-jubilacion', ogimg='calculadora-jubilacion', nombre='Calculadora de jubilación',
     titulo='Calculadora de jubilación: cuánto ahorrar para retirarte',
     og='¿Cuánto tienes que ahorrar para jubilarte tranquilo?',
     desc='Calcula cuánto ahorrar al mes para complementar tu pensión: capital que necesitas al jubilarte, efecto de la inflación, rentabilidad y la regla del 4%.',
@@ -511,7 +511,7 @@ function pintar(){
 # ===== LIVE: salud y vida diaria (16/11/2026) =====================================================================
 # 6. Ovulación ----------------------------------------------------------------------------------------------------
 CALCS.append(dict(
-    mundo='live', slug='calculadora-ovulacion', ogimg='calculadora-embarazo', nombre='Calculadora de ovulación',
+    mundo='live', slug='calculadora-ovulacion', ogimg='calculadora-ovulacion', nombre='Calculadora de ovulación',
     titulo='Calculadora de ovulación y días fértiles',
     og='¿Cuándo ovulas? Calcula tus días fértiles',
     desc='Calcula tus días fértiles y el día de ovulación a partir de tu última regla y la duración de tu ciclo, con el calendario de los próximos meses y la fecha de tu próxima regla.',
@@ -571,7 +571,7 @@ function pintar(){
 
 # 7. Peso ideal ---------------------------------------------------------------------------------------------------
 CALCS.append(dict(
-    mundo='live', slug='calculadora-peso-ideal', ogimg='calculadora-imc', nombre='Calculadora de peso ideal',
+    mundo='live', slug='calculadora-peso-ideal', ogimg='calculadora-peso-ideal', nombre='Calculadora de peso ideal',
     titulo='Calculadora de peso ideal según altura y sexo',
     og='¿Cuál es tu peso ideal? Calcúlalo con tu altura',
     desc='Calcula tu peso ideal según tu altura y sexo: el rango de peso saludable de la OMS y las fórmulas de Devine, Robinson, Miller y Hamwi, con tu diferencia respecto al peso actual.',
@@ -631,7 +631,7 @@ $('tablaPeso').addEventListener('click',function(e){var tr=e.target.closest('tr[
 
 # 8. Sueño (ciclos) -----------------------------------------------------------------------------------------------
 CALCS.append(dict(
-    mundo='live', slug='calculadora-sueno', ogimg='test-de-sueno', nombre='Calculadora de sueño',
+    mundo='live', slug='calculadora-sueno', ogimg='calculadora-sueno', nombre='Calculadora de sueño',
     titulo='Calculadora de sueño: a qué hora dormir y despertar',
     og='¿A qué hora te acuestas para despertar descansado?',
     desc='Calcula a qué hora acostarte o despertarte para completar ciclos de sueño de unos 90 minutos, con las horas que recomiendan los expertos para tu edad.',
