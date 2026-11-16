@@ -699,6 +699,7 @@ def fmt_nota(x):
     return f'{x:.3f}'.rstrip('0').rstrip('.').replace('.', ',')
 
 
+FINAS = []
 def ficha(u, vecinas):
     p = u['pais']; iso = PAISES[p][0]; ps = PSLUG[p]
     url = f'{SITIO}{BASE}{ps}/{u["slug"]}/'
@@ -767,7 +768,11 @@ def ficha(u, vecinas):
     if n: meta.append(f'<li>📚 {fmt(n)} {palabra}</li>')
     tit = f'{u["nombre"]}: ' + (f'{fmt(n)} {palabra}' if n else 'carreras, ciudad y web') + f' | Universidades de {p}'
     hf, cred = hero_foto(u.get('foto_archivo') or u.get('foto_ciudad'), 'Foto' if u.get('foto_tipo') == 'u' else 'Foto de ' + (u['ciudad'] or p))
-    h = cabeza(tit, desc_meta, url, og_img=commons(u.get('foto_archivo') or u.get('foto_ciudad'), 1200) if (u.get('foto_archivo') or u.get('foto_ciudad')) else None, jsonld=jl) + topbar('espana' if es_es else 'paises') + f'''
+    # ficha casi vacía (sin carreras, descripción ni foto): visible para quien llega, pero fuera de Google y del sitemap
+    # hasta que tenga contenido propio (auditoría 16/11/2026: 2.395 páginas «descubiertas, sin indexar» por contenido escaso)
+    fina = not n and not u.get('descripcion') and not (u.get('foto_archivo') or u.get('foto_ciudad'))
+    if fina: FINAS.append(url)
+    h = cabeza(tit, desc_meta, url, og_img=commons(u.get('foto_archivo') or u.get('foto_ciudad'), 1200) if (u.get('foto_archivo') or u.get('foto_ciudad')) else None, jsonld=jl, robots='noindex,follow' if fina else None) + topbar('espana' if es_es else 'paises') + f'''
 <main><section class="hero ficha-h{' con-foto' if hf else ''}"{hf}><div class="wrap">{migas(("Universidades", BASE), (p, f"{BASE}{ps}/"), *([(u["ciudad"], f"{BASE}{ps}/ciudad/{slug(u['ciudad'])}/")] if u["ciudad"] and vecinas and p != "Estados Unidos" else []), (u["nombre"], ""))}
 <div class="fila" style="margin-top:16px"><span class="mono" aria-hidden="true">{e(u["extra"].get("acronimo") or iniciales(u["nombre"]))[:5]}</span><div><h1 style="margin:0">{e(u["nombre"])}</h1></div></div>
 <ul class="meta">{''.join(meta)}</ul>{f'<p class="lead" style="margin-top:14px">{e(u["descripcion"])}</p>' if u["descripcion"] else ''}
@@ -779,7 +784,7 @@ def ficha(u, vecinas):
 <div class="reportar"><span>¿Algún dato no es correcto o un enlace no funciona?</span><button type="button" class="btn btn-borde" data-reportar data-tipo="dato" data-ref="{e(u["nombre"] + " (" + p + ")")}">⚑ Reportar un error</button></div></div>
 </main>''' + pie()
     escribir(f'{ps}/{u["slug"]}/index.html', h)
-    URLS.append((url, '0.7' if n else '0.5'))
+    if not fina: URLS.append((url, '0.7' if n else '0.5'))
 
 
 def limpiar_titulo(t):
@@ -986,5 +991,6 @@ que_puedo_estudiar()
 mi_lista()
 acerca()
 sitemap()
+print('fichas casi vacías fuera de Google:', len(FINAS))
 htaccess()
 print(f'OK {TOTAL_U} universidades, {TOTAL_C} carreras, {len(ORDEN_P)} países, {len(URLS)} URLs')
