@@ -619,32 +619,40 @@
  "cambios_titulos": [
   [
    "2026-11-16",
-   "https://aurzane.com/biblioteca/libro/ref-lector-vuelve-casa.html",
-   "Lector, vuelve a casa, de Maryanne Wolf: resumen y ficha",
-   "Lector, vuelve a casa, de Maryanne Wolf",
+   "https://aurzane.com/biblioteca/libro/ref-dones-imperfeccion.html",
+   "Los dones de la imperfección: resumen e ideas clave",
+   "Los Dones de la Imperfección: Resumen y Guías | AURZANE",
    null,
    0.0
   ],
   [
    "2026-11-16",
-   "https://aurzane.com/biblioteca/libro/ref-camino-lagrimas.html",
-   "El camino de las lágrimas: resumen e ideas clave",
-   "El Camino de las Lágrimas, Jorge Bucay | AURZANE",
+   "https://nexus.aurzane.com/universidades/chile/ciudad/concepcion/",
+   "Universidades en Concepción: 3 opciones y 32 carreras (2026)",
+   "Universidades en Concepción: carreras y cuáles hay",
+   null,
+   0.0
+  ],
+  [
+   "2026-11-16",
+   "https://aurzane.com/biblioteca/libro/ref-lector-vuelve-casa.html",
+   "Lector, vuelve a casa, de Maryanne Wolf",
+   "Lector, vuelve a casa de Maryanne Wolf | AURZANE",
    null,
    0.0
   ],
   [
    "2026-11-16",
    "https://aurzane.com/biblioteca/libro/la-tia-tula.html",
-   "La tía Tula (Miguel de Unamuno) | Leer gratis en PDF",
    "La tía Tula PDF gratis | AURZANE",
+   "La tía Tula PDF gratis y análisis | AURZANE",
    null,
    0.0
   ],
   [
    "2026-11-16",
    "https://aurzane.com/biblioteca/libro/ref-paula.html",
-   "Paula (Isabel Allende): resumen e ideas clave",
+   "Paula de Isabel Allende: resumen y análisis | AURZANE",
    "Paula de Isabel Allende: resumen y análisis | AURZANE",
    null,
    0.0
@@ -652,34 +660,26 @@
   [
    "2026-11-16",
    "https://aurzane.com/biblioteca/libro/ref-cerebro-emocional.html",
-   "El cerebro emocional, de Joseph LeDoux: resumen y ficha",
+   "El cerebro emocional, Joseph LeDoux | Resumen",
    "El cerebro emocional, Joseph LeDoux | Resumen",
    null,
    0.0
   ],
   [
    "2026-11-16",
-   "https://aurzane.com/biblioteca/libro/ref-nino-topo-zorro-caballo.html",
-   "El niño, el topo, el zorro y el caballo",
-   "El niño, el topo, el zorro y el caballo | AURZANE",
+   "https://nexus.aurzane.com/universidades/ecuador/instituto-superior-tecnologico-blez/",
+   "Instituto Superior Tecnológico Blez: 5 carreras",
+   "Instituto Blez: carreras y web oficial | AURZANE",
    null,
    0.0
   ],
   [
    "2026-11-16",
    "https://aurzane.com/biblioteca/libro/ref-volar-sobre-pantano.html",
-   "Volar sobre el pantano: resumen e ideas clave",
    "Volar sobre el pantano: resumen y de qué trata",
+   "Volar sobre el pantano: resumen y análisis | AURZANE",
    null,
    0.0
-  ],
-  [
-   "2026-11-16",
-   "https://aurzane.com/biblioteca/leer.html?libro=ref-recuerda-que-vas-a-morir",
-   "Leer | Biblioteca AURZANE",
-   "Recuerda que vas a morir | AURZANE",
-   null,
-   0.0142
   ],
   [
    "2026-11-16",
@@ -741,13 +741,18 @@
  "temas_nuevos": [
   [
    "2026-11-16",
+   "hult international business school",
+   "Estudiar en escuelas internacionales de negocios: ventajas y retos"
+  ],
+  [
+   "2026-11-16",
    "licenciaturas en monterrey",
-   "Licenciaturas en Monterrey: oferta académica y orientación vocacional"
+   "Licenciaturas en Monterrey: opciones y claves para decidir tu carrera"
   ],
   [
    "2026-11-16",
    "grados universitarios y masters en la uem",
-   "Grados universitarios y másteres: guía para elegir tu formación"
+   "Guía de grados y másteres: qué debes evaluar antes de elegir"
   ],
   [
    "2026-11-16",
@@ -783,11 +788,6 @@
    "2026-11-15",
    "ansiedad por el estatus",
    "Ansiedad por el estatus en Paraguay: claves psicológicas para superarla"
-  ],
-  [
-   "2026-11-15",
-   "universidades privadas en paraguay",
-   "Universidades privadas en Paraguay: cómo elegir carrera y centro de estudio"
   ]
  ]
 }

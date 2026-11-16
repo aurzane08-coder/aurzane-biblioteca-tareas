@@ -729,16 +729,23 @@
  },
  {
   "consulta": "grados universitarios y masters en la uem",
-  "titulo": "Grados universitarios y másteres: guía para elegir tu formación",
+  "titulo": "Guía de grados y másteres: qué debes evaluar antes de elegir",
   "mundo": "nexus",
   "test": "vocacional",
   "fecha": "2026-11-16"
  },
  {
   "consulta": "licenciaturas en monterrey",
-  "titulo": "Licenciaturas en Monterrey: oferta académica y orientación vocacional",
+  "titulo": "Licenciaturas en Monterrey: opciones y claves para decidir tu carrera",
   "mundo": "nexus",
   "test": "vocacional",
+  "fecha": "2026-11-16"
+ },
+ {
+  "consulta": "hult international business school",
+  "titulo": "Estudiar en escuelas internacionales de negocios: ventajas y retos",
+  "mundo": "nexus",
+  "test": "",
   "fecha": "2026-11-16"
  }
 ]

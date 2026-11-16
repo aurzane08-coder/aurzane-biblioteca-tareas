@@ -34,5 +34,13 @@
  "https://nexus.aurzane.com/universidades/estados-unidos/viterbo-university/": {
   "titulo": "Viterbo University: Carreras y Oferta | AURZANE",
   "desc": "Conoce Viterbo University en Wisconsin, Estados Unidos. Descubre sus 43 carreras universitarias, tipo de institución y detalles oficiales."
+ },
+ "https://nexus.aurzane.com/universidades/ecuador/instituto-superior-tecnologico-blez/": {
+  "titulo": "Instituto Blez: carreras y web oficial | AURZANE",
+  "desc": "Conoce el Instituto Superior Tecnológico Blez en Quito, Ecuador. Descubre sus 5 carreras, tipo de institución y acceso a su web oficial."
+ },
+ "https://nexus.aurzane.com/universidades/chile/ciudad/concepcion/": {
+  "titulo": "Universidades en Concepción: carreras y cuáles hay",
+  "desc": "Descubre qué universidades hay en Concepción, sus carreras y sedes públicas. Toda la información clave para tu orientación vocacional."
  }
 }
