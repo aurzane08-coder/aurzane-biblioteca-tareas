@@ -1,16 +1,16 @@
 # Informe de marketing
 
-Actualizado: 2026-11-15. Clics de personas (sin bots ni vistas previas) que entraron por los enlaces de las publicaciones.
+Actualizado: 2026-11-16. Clics de personas (sin bots ni vistas previas) que entraron por los enlaces de las publicaciones.
 
 | Red | Publicaciones | Clics |
 |---|---|---|
-| telegram | 61 | 4 |
-| bluesky | 41 | 205 |
-| mastodon | 41 | 124 |
-| instagram | 38 | 0 |
-| facebook | 38 | 104 |
+| telegram | 62 | 4 |
+| bluesky | 42 | 214 |
+| mastodon | 42 | 125 |
+| instagram | 39 | 0 |
+| facebook | 39 | 107 |
 | threads | 0 | 0 |
-| pinterest | 27 | 0 |
+| pinterest | 28 | 0 |
 
 ## Productos con más clics
 
@@ -24,11 +24,13 @@ Actualizado: 2026-11-15. Clics de personas (sin bots ni vistas previas) que entr
 | test-ansiedad | 10 |
 | calc-hipoteca | 10 |
 | nc-ingenieria-en-tecnologias-industriales | 9 |
+| crea-l05-08 | 9 |
 | frase-fe3fa4a3 | 9 |
+| frase-1d292112 | 9 |
 | nc-sociologia | 8 |
 | ovp | 8 |
-| crea-l05-08 | 8 |
 | crea-l05-02 | 8 |
+| nc-educacion-infantil | 8 |
 | frase-6d32afc7 | 8 |
 | calc-calorias | 8 |
 | test-personalidad | 7 |
@@ -39,5 +41,3 @@ Actualizado: 2026-11-15. Clics de personas (sin bots ni vistas previas) que entr
 | frase-81d54602 | 7 |
 | frase-b424a195 | 6 |
 | curso-metod | 6 |
-| test-autocompasion | 6 |
-| nc-educacion-infantil | 6 |
