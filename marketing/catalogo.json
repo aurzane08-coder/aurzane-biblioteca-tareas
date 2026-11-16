@@ -19260,6 +19260,56 @@
    "alta": "2026-10-26"
   },
   {
+   "id": "lectura-el-lider-resonante-crea-mas-daniel-goleman",
+   "tipo": "lectura",
+   "mundo": "aurzane",
+   "origen": "tienda",
+   "url": "https://aurzane.com/libros/el-lider-resonante-crea-mas-daniel-goleman/",
+   "titulo": "El líder resonante crea más",
+   "autor": "Daniel Goleman",
+   "ganchos": [
+    "Libro recomendado: El líder resonante crea más",
+    "El líder resonante crea más, de Daniel Goleman",
+    "¿Qué leer este mes? El líder resonante crea más"
+   ],
+   "texto": "Es ideal para profesionales y responsables de equipos que buscan potenciar la inteligencia emocional en su liderazgo. Aporta herramientas prácticas para conectar con las emociones y mejorar el clima de trabajo.",
+   "hashtags": [
+    "LibrosRecomendados",
+    "QueLeer",
+    "Lectura",
+    "Libros"
+   ],
+   "aviso": "Contiene enlace de afiliado.",
+   "img": null,
+   "emoji": "📚",
+   "alta": "2026-11-16"
+  },
+  {
+   "id": "lectura-el-camino-del-artista-julia-cameron",
+   "tipo": "lectura",
+   "mundo": "aurzane",
+   "origen": "tienda",
+   "url": "https://aurzane.com/libros/el-camino-del-artista-julia-cameron/",
+   "titulo": "El camino del artista",
+   "autor": "Julia Cameron",
+   "ganchos": [
+    "Libro recomendado: El camino del artista",
+    "El camino del artista, de Julia Cameron",
+    "¿Qué leer este mes? El camino del artista"
+   ],
+   "texto": "Está pensado para cualquier persona que desee desbloquear su creatividad y recuperar la confianza en su potencial artístico. Aporta un método guiado con ejercicios prácticos para superar los bloqueos creativos diarios.",
+   "hashtags": [
+    "LibrosRecomendados",
+    "QueLeer",
+    "Lectura",
+    "Libros"
+   ],
+   "aviso": "Contiene enlace de afiliado.",
+   "img": null,
+   "emoji": "📚",
+   "alta": "2026-11-16"
+  },
+  {
    "id": "lectura-el-encantador-de-perros-cesar-millan",
    "tipo": "lectura",
    "mundo": "aurzane",
@@ -42623,6 +42673,33 @@
    "emoji": "",
    "foto_q": "calm ocean waves",
    "alta": "2026-11-14"
+  },
+  {
+   "id": "cur-4fc2490712",
+   "tipo": "curiosidad",
+   "mundo": "mind",
+   "origen": "curiosidades",
+   "url": "https://mind.aurzane.com/",
+   "titulo": "¿Por qué crees que todo el mundo te mira?",
+   "ganchos": [
+    "¿Por qué crees que todo el mundo te mira?",
+    "¿Por qué crees que todo el mundo te mira? 🧠",
+    "Tendemos a sobreestimar cuánto se fijan los demás en nosotros, según Thomas Gilovich."
+   ],
+   "texto": "Tendemos a sobreestimar cuánto se fijan los demás en nosotros, según Thomas Gilovich. Este sesgo se llama efecto foco. Creemos que nuestros fallos y nuestra ropa son el centro de atención universal, cuando en realidad los demás están demasiado ocupados pensando en sí mismos.\n\nFuente: Gilovich et al., 2000",
+   "hashtags": [
+    "psicologia",
+    "sesgoscognitivos",
+    "curiosidades",
+    "aurzane",
+    "Psicología",
+    "Curiosidades"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "🧠",
+   "dato": "Tendemos a sobreestimar cuánto se fijan los demás en nosotros, según Thomas Gilovich.",
+   "alta": "2026-11-16"
   },
   {
    "id": "cur-b2dd49b335",
