@@ -48,7 +48,7 @@
   "receta": "avisar",
   "motivo": "Se ha producido un error de JavaScript no capturado durante las pruebas de la página.",
   "explicacion": "La prueba automatizada detectó una excepción JavaScript durante la carga de la calculadora.\nComo se trata de un problema en el código cliente, reintentar el flujo no solucionará el fallo.\nEs necesario revisar la consola para identificar la variable o script no definido.\nVerifica las referencias a aurzane-paleta.js y los scripts inline para corregir la sintaxis.",
-  "ok": 6,
+  "ok": 7,
   "fallo": 0,
   "fecha": "2026-11-10",
   "ejemplo": "Prueba fallida en https://build.aurzane.com/calculadora-reforma/: Carga bien · 1 error(es) de JavaScript: undefined"
@@ -66,7 +66,7 @@
   "receta": "reintentar_flujo",
   "motivo": "El HTML inicial carga correctamente con estado 200 pero faltan elementos interactivos, lo que indica un fallo en la compilación o despliegue del script del test mediante GitHub Actions.",
   "explicacion": "El servidor responde bien pero el motor de renderizado del test no inyecta las preguntas. La causa más probable es un error de JavaScript o un fallo en el pipeline de GitHub Actions al compilar los assets estáticos. Si la acción automática no lo resuelve, revisa manualmente la consola del navegador en busca de errores de JS y comprueba el último commit en el repositorio de GitHub.",
-  "ok": 9,
+  "ok": 10,
   "fallo": 2,
   "fecha": "2026-11-13",
   "ejemplo": "Prueba fallida en https://mind.aurzane.com/test-de-ansiedad/: No aparecen las preguntas del test"
