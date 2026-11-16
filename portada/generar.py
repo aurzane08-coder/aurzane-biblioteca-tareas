@@ -72,10 +72,10 @@ def tarjeta_test(t):
 
 intenciones = [('#tests', 'Conocerme mejor', '15 tests validados con el resultado explicado.', '1517841905240-472988babdf9', 'mind'),
                ('#calma', 'Calmarme ahora', 'Ejercicios guiados de 1 a 8 minutos.', '1544367567-0f2fcb009e0b', 'mind'),
-               ('#todo-orientacion', 'Decidir qué estudiar', 'Test vocacional, universidades y nota de acceso.', '1541339907198-e08756dedf3f', 'nexus'),
+               ('#orientacion', 'Decidir qué estudiar', 'Test vocacional, universidades y nota de acceso.', '1541339907198-e08756dedf3f', 'nexus'),
                ('#cursos', 'Aprender con un curso', 'Cursos gratis, algunos con certificado.', '1522202176988-66273c2fd55f', 'learn'),
                ('#herramientas', 'Hacer cuentas', 'Calculadoras de salud, dinero y vivienda.', '1579621970563-ebec7560ff3e', 'build'),
-               ('/biblioteca/', 'Leer gratis', 'Libros abiertos para leer aquí y artículos científicos.', '1532012197267-da84d127e765', 'live')]
+               ('#leer', 'Leer e investigar', 'Libros abiertos y artículos científicos.', '1532012197267-da84d127e765', 'live')]
 
 cuerpo = f'''
 <main id="contenido" tabindex="-1">
@@ -105,74 +105,115 @@ cuerpo = f'''
   <div class="p-in">
     <h2 id="iT">¿Qué quieres hacer hoy?</h2>
     <ul class="p-int">
-      {''.join(f'<li><a href="{h}" style="--c:var(--{m})"><img src="{U(f, 560)}" alt="" loading="lazy" width="560" height="360"><span><b>{E(n)}</b><small>{E(d)}</small></span></a></li>' for h, n, d, f, m in (intenciones[0], intenciones[2], intenciones[5]))}
+      {''.join(f'<li><a href="{h}" style="--c:var(--{m})"><img src="{U(f, 560)}" alt="" loading="lazy" width="560" height="360"><span><b>{E(n)}</b><small>{E(d)}</small></span></a></li>' for h, n, d, f, m in intenciones)}
     </ul>
-    <p class="p-tambien">También puedes <a href="#todo-calma">calmarte ahora</a><a href="#todo-cursos">aprender con un curso</a><a href="#todo-calculadoras">hacer cuentas</a><a href="#todo-cuenta">guardar tu progreso</a></p>
-    <div class="hoy" id="hoy" hidden>
-      <div class="hoy-grid">
-        <div>
-          <h3 class="hoy-fecha" id="hoyTitulo">Hoy en AURZANE · <span id="hoyDia"></span></h3>
-          <blockquote class="hoy-cita" id="hoyFrase"></blockquote>
-          <p class="hoy-autor" id="hoyAutor"></p>
-          <div class="hoy-musica" id="hoyMusica" hidden>
-            <button type="button" class="hoy-play" id="hoyPlay" aria-pressed="false">Escuchar música tranquila</button>
-            <span class="hoy-cred" id="hoyCred"></span>
-            <audio id="hoyAudio" preload="none" loop></audio>
-          </div>
-        </div>
-        <ul class="hoy-lista" id="hoyLista"></ul>
+  </div>
+</section>
+
+<section class="hoy" id="hoy" aria-labelledby="hoyTitulo" hidden>
+  <div class="p-in hoy-grid">
+    <div>
+      <h2 class="hoy-fecha" id="hoyTitulo">Hoy en AURZANE · <span id="hoyDia"></span></h2>
+      <blockquote class="hoy-cita" id="hoyFrase"></blockquote>
+      <p class="hoy-autor" id="hoyAutor"></p>
+      <div class="hoy-musica" id="hoyMusica" hidden>
+        <button type="button" class="hoy-play" id="hoyPlay" aria-pressed="false">Escuchar música tranquila</button>
+        <span class="hoy-cred" id="hoyCred"></span>
+        <audio id="hoyAudio" preload="none" loop></audio>
       </div>
     </div>
+    <ul class="hoy-lista" id="hoyLista"></ul>
   </div>
 </section>
 
 <section class="p-sec" id="tests" aria-labelledby="tT">
   <div class="p-in">
-    <div class="p-cab"><h2 id="tT">Empieza por un test</h2><p>Cuestionarios validados que usan psicólogos y médicos. Resultado al instante, explicado y sin registro.</p></div>
+    <div class="p-cab"><h2 id="tT">Tests para conocerte</h2><p>Cuestionarios validados que usan psicólogos y médicos. Resultado al instante, explicado y sin registro.</p></div>
     <a class="p-dest" href="https://mind.aurzane.com/test-de-personalidad/">
       <img src="{U('1494790108377-be9c29b29330', 1000)}" alt="" loading="lazy" width="1000" height="700">
       <span class="p-dest-txt"><small>El más completo · desde 4 minutos</small><b>Test de personalidad de los Cinco Grandes</b><span>Descubre si eres Fogata, Faro, Telescopio u otro de los 11 perfiles, con 30 facetas, tus fortalezas y las carreras que encajan contigo.</span><em class="p-boton">Hacer el test gratis</em></span>
     </a>
-    <div class="t-grid">{''.join(tarjeta_test(x) for x in TESTS[:6])}</div>
-    <a class="p-enlace" href="https://mind.aurzane.com/#tests">Ver todos los tests</a>
-    <a class="p-enlace" href="https://mind.aurzane.com/en/">En inglés</a><a class="p-enlace" href="https://mind.aurzane.com/pt/">En portugués</a>
+    <div class="t-grid">{''.join(tarjeta_test(x) for x in TESTS)}</div>
+    <p class="p-mas">También en <a href="https://mind.aurzane.com/en/">inglés</a> y <a href="https://mind.aurzane.com/pt/">portugués</a>.</p>
   </div>
 </section>
 
-<section class="p-sec p-suave" id="todo" aria-labelledby="aT">
-  <div class="p-in">
-    <div class="p-cab"><h2 id="aT">Todo AURZANE en un vistazo</h2><p>Cada área con sus herramientas principales. Entra solo en lo que te sirva.</p></div>
-    <div class="h-grid a-grid">
-      <div class="h-col" id="todo-orientacion"><h3>Decidir qué estudiar</h3><ul>
-        <li><a href="https://ovp.aurzane.com/">Evaluación vocacional OVP, con informe</a></li>
-        <li><a href="https://nexus.aurzane.com/universidades/que-puedo-estudiar/">¿Qué puedo estudiar con mi nota?</a></li>
-        <li><a href="https://nexus.aurzane.com/universidades/">{NU} universidades en {NP} países</a></li>
-        <li><a href="https://nexus.aurzane.com/calculadora-nota-pau/">Calculadora de nota PAU</a></li>
-        <li><a href="https://aurzane.com/colegios/">Orientación para colegios</a></li></ul></div>
-      <div class="h-col" id="todo-calma"><h3>Calmarte ahora</h3><ul>
-        {''.join(f'<li><a href="{u}">{E(n)} · {m}</a></li>' for u, n, d, m in EJ)}
-        <li><a href="https://mind.aurzane.com/ejercicios/">Todos los ejercicios guiados</a></li></ul></div>
-      <div class="h-col" id="todo-cursos"><h3>Cursos gratis</h3><ul>
-        {''.join(f'<li><a href="https://learn.aurzane.com/curso/{c[0]}/?c={c[0]}">{E(c[1])}</a></li>' for c in CURSOS[:4])}
-        <li><a href="https://learn.aurzane.com/cursos/">Todos los cursos</a></li></ul></div>
-      <div class="h-col" id="todo-calculadoras"><h3>Calculadoras</h3><ul>
-        {''.join(f'<li><a href="{u}">{E(n)}</a></li>' for g, L in CALC for n, u in L[:2])}</ul></div>
-      <div class="h-col" id="todo-leer"><h3>Leer e investigar</h3><ul>
-        <li><a href="/biblioteca/" id="bhCifras">Biblioteca: 748 libros para leer gratis</a></li>
-        <li><a href="/research.html" id="rhTxt">Research Hub: 25.000 artículos científicos</a></li>
-        <li><a href="/articulos/">Artículos con estudios citados</a></li>
-        <li><a href="/libros/">Libros recomendados</a></li>
-        <li><a href="/novedades/">Lo último en AURZANE</a></li></ul></div>
-      <div class="h-col" id="todo-cuenta"><h3>Tu cuenta AURZANE ID</h3><ul>
-        <li><a href="https://aurzane.com/mi-aurzane.html">Guarda tus resultados y tu progreso</a></li>
-        <li><a href="https://learn.aurzane.com/certificado/">Consigue certificados de tus cursos</a></li>
-        <li><a href="https://ovp.aurzane.com/portal.html">Haz la evaluación vocacional completa</a></li></ul></div>
+<section class="p-sec p-calma" id="calma" aria-labelledby="cT">
+  <div class="p-in p-dos">
+    <div class="p-foto"><img src="{U('1544367567-0f2fcb009e0b', 1000)}" alt="Una mujer estirándose al atardecer junto al mar" loading="lazy" width="1000" height="700"></div>
+    <div>
+      <h2 id="cT">Calmarte ahora</h2>
+      <p>Ejercicios guiados con voz y temporizador. Elige según lo que necesitas en este momento.</p>
+      <ul class="p-lista">{''.join(f'<li><a href="{u}"><b>{E(n)}</b><span>{E(d)} · {m}</span></a></li>' for u, n, d, m in EJ)}</ul>
+      <a class="p-enlace" href="https://mind.aurzane.com/ejercicios/">Ver los 13 ejercicios</a>
     </div>
+  </div>
+</section>
+
+<section class="p-sec p-oscura" id="orientacion" aria-labelledby="oT">
+  <div class="p-in p-dos p-dos-inv">
+    <div>
+      <h2 id="oT">Decidir qué estudiar, con datos</h2>
+      <p>Una evaluación vocacional completa y un buscador de universidades para pasar del «no sé» a una lista corta de opciones.</p>
+      <ul class="p-pasos">
+        <li><a href="https://ovp.aurzane.com/"><b>Evaluación vocacional OVP</b><span>Seis pruebas (intereses, aptitudes, autoconcepto y hábitos de estudio) y un informe integrador en PDF. Gratis por lanzamiento.</span></a></li>
+        <li><a href="https://nexus.aurzane.com/universidades/que-puedo-estudiar/"><b>¿Qué puedo estudiar con mi nota?</b><span>Pon tu nota de admisión y mira qué grados encajan.</span></a></li>
+        <li><a href="https://nexus.aurzane.com/universidades/"><b>Buscador de universidades</b><span>{NU} instituciones en {NP} países, con sus carreras.</span></a></li>
+        <li><a href="https://nexus.aurzane.com/calculadora-nota-pau/"><b>Calculadora de nota PAU</b><span>Nota de acceso y de admisión con ponderaciones.</span></a></li>
+      </ul>
+      <p class="p-nota">¿Eres un colegio? <a href="https://aurzane.com/colegios/">Orientación vocacional para todo tu bachillerato</a>.</p>
+    </div>
+    <div class="p-foto"><img src="{U('1541339907198-e08756dedf3f', 1000)}" alt="Estudiantes con toga lanzando el birrete al aire" loading="lazy" width="1000" height="700"></div>
+  </div>
+</section>
+
+<section class="p-sec" id="herramientas" aria-labelledby="hT">
+  <div class="p-in">
+    <div class="p-cab"><h2 id="hT">Calculadoras para el día a día</h2><p>Con datos y normas de 2026, calculadas en tu navegador.</p></div>
+    <div class="h-grid">{''.join(f'<div class="h-col"><h3>{E(g)}</h3><ul>' + ''.join(f'<li><a href="{u}">{E(n)}</a></li>' for n, u in L) + '</ul></div>' for g, L in CALC)}</div>
+  </div>
+</section>
+
+<section class="p-sec p-suave" id="cursos" aria-labelledby="kT">
+  <div class="p-in">
+    <div class="p-cab"><h2 id="kT">Cursos gratis</h2><p>Lecciones breves, mapas, tarjetas de repaso y tests. Avanzas a tu ritmo y guardas tu progreso con tu cuenta.</p></div>
+    <div class="k-grid" id="kGrid">{''.join(f"""<article class="k-card"><a href="https://learn.aurzane.com/curso/{s}/?c={s}"><img src="https://learn.aurzane.com/cursos/{img}" alt="" loading="lazy" width="1200" height="675"><span class="k-txt"><small>{E(a)}</small><b>{E(t)}</b><span>{E(d)}</span><ul class="k-datos"><li><b>{te}</b> temas</li><li><b>{le}</b> lecciones</li><li><b>{pr}</b> preguntas</li></ul><em>{E(acc)}</em></span></a></article>""" for s, t, a, d, img, te, le, pr, acc in CURSOS)}</div>
+    <a class="p-enlace" href="https://learn.aurzane.com/cursos/">Ver todos los cursos</a>
+  </div>
+</section>
+
+<section class="p-sec" id="leer" aria-labelledby="lT">
+  <div class="p-in">
+    <div class="p-cab"><h2 id="lT">Leer e investigar</h2><p>Libros con licencia abierta para leer aquí mismo y un buscador de artículos científicos con el resumen original.</p></div>
+    <div class="l-grid">
+      <div class="l-bib">
+        <div class="l-estante" id="bhEstante" aria-hidden="true"></div>
+        <h3>Biblioteca de libros</h3>
+        <p id="bhCifras">748 libros para leer aquí, organizados por temas.</p>
+        <form class="l-busca" action="/biblioteca/" method="get" role="search"><label for="bq" class="vh">Buscar un libro</label><input id="bq" name="q" type="search" placeholder="Ansiedad, apego, duelo…"><button type="submit">Buscar libros</button></form>
+        <div class="l-cats" id="bhCats"></div>
+      </div>
+      <div class="l-otros">
+        <a class="l-item" href="/research.html"><b>Research Hub</b><span id="rhTxt">Busca en las 5 bibliotecas del ecosistema a la vez: 25.000 artículos de acceso abierto, de Europe PMC, OpenAlex y PubMed.</span></a>
+        <a class="l-item" href="/articulos/"><b>Artículos</b><span>Guías breves escritas a partir de estudios citados, sin resúmenes inventados.</span></a>
+        <a class="l-item" href="/libros/"><b>Libros recomendados</b><span>Los títulos de psicología que más se leen ahora, con su resumen.</span></a>
+        <a class="l-item" href="/frases/"><b>Frases para pensar</b><span>Citas de autores clásicos, una nueva cada día.</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="p-sec p-suave" id="novedades" aria-labelledby="nT">
+  <div class="p-in">
+    <div class="p-cab"><h2 id="nT">Lo último en AURZANE</h2><p>Artículos, tests y herramientas nuevos, según se publican.</p></div>
+    <ol class="n-lista" id="nLista"><li><a href="/novedades/">Ver todas las novedades</a></li></ol>
+    <a class="p-enlace" href="/novedades/">Todas las novedades</a>
   </div>
 </section>
 
 <section class="p-sec" id="confianza" aria-labelledby="fT">
   <div class="p-in p-dos">
+    <div class="p-foto"><img src="{U('1471107340929-a87cd0f5b5f3', 1000)}" alt="Una pluma sobre un cuaderno abierto" loading="lazy" width="1000" height="700"></div>
     <div>
       <h2 id="fT">Por qué puedes fiarte</h2>
       <ul class="p-razones">
@@ -182,11 +223,14 @@ cuerpo = f'''
       </ul>
       <p><a class="p-enlace" href="/sobre-aurzane.html">Quiénes somos</a> <a class="p-enlace" href="/politica-editorial.html">Cómo preparamos los contenidos</a></p>
     </div>
-    <div id="preguntas">
-      <h2 id="qT">Preguntas frecuentes</h2>
-      {''.join(f'<details><summary>{E(q)}</summary><p>{a}</p></details>' for q, a in FAQ)}
-      <p class="p-nota">¿No está tu pregunta? <a href="/contacto.html">Escríbenos</a>.</p>
-    </div>
+  </div>
+</section>
+
+<section class="p-sec p-suave" id="preguntas" aria-labelledby="qT">
+  <div class="p-in p-estrecho">
+    <h2 id="qT">Preguntas frecuentes</h2>
+    {''.join(f'<details><summary>{E(q)}</summary><p>{a}</p></details>' for q, a in FAQ)}
+    <p class="p-nota">¿No está tu pregunta? <a href="/contacto.html">Escríbenos</a>.</p>
   </div>
 </section>
 

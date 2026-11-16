@@ -22,7 +22,7 @@ function alternarTema() {
   function cifras() {
     var I = window.AurzaneIndice;
     if (I) { var n = I.filter(function (x) { return x[3] === 'Test' && x[5] === 'es' && x[2] !== 'ovp'; }).length; if (n) $('cTests').textContent = n; }
-    var m = ((($('rhTxt') || {}).textContent || '').match(/(\d{1,3}(?:\.\d{3})+)\s+artículos/) || [])[1]; if (m) $('cArt').textContent = m;
+    var m = ($('rhTxt').textContent.match(/(\d{1,3}(?:\.\d{3})+)\s+artículos/) || [])[1]; if (m) $('cArt').textContent = m;
   }
   if (d.readyState === 'complete') cifras(); else window.addEventListener('load', cifras);
   d.addEventListener('aurzane-indice', cifras);
@@ -31,9 +31,9 @@ function alternarTema() {
   d.addEventListener('DOMContentLoaded', function () {
     var R = window.BIBLIOTECA_RESUMEN; if (!R) return;
     $('cLibros').textContent = Number(R.libros).toLocaleString('es-ES');
-    if ($('bhCifras')) $('bhCifras').textContent = 'Biblioteca: ' + Number(R.libros).toLocaleString('es-ES') + ' libros para leer gratis';
-    if ($('bhCats')) $('bhCats').innerHTML = (R.colecciones || R.categorias || []).map(function (c) { return '<a href="/biblioteca/#' + (R.colecciones ? 'c=' : 'm=') + E(c.id) + '">' + E(c.nombre) + '</a>'; }).join('');
-    if ($('bhEstante')) $('bhEstante').innerHTML = (R.destacados || []).slice(0, 6).map(function (x) { return '<a href="/biblioteca/libro/' + encodeURIComponent(x.id) + '.html" tabindex="-1"><img src="/biblioteca/' + E(x.portada) + '" alt="" loading="lazy" width="200" height="300"></a>'; }).join('');
+    $('bhCifras').textContent = Number(R.libros).toLocaleString('es-ES') + ' libros para leer aquí y ' + Number(R.fichas).toLocaleString('es-ES') + ' fichas de libros actuales, en ' + R.temas + ' temas.';
+    $('bhCats').innerHTML = (R.colecciones || R.categorias || []).map(function (c) { return '<a href="/biblioteca/#' + (R.colecciones ? 'c=' : 'm=') + E(c.id) + '">' + E(c.nombre) + '</a>'; }).join('');
+    $('bhEstante').innerHTML = (R.destacados || []).slice(0, 6).map(function (x) { return '<a href="/biblioteca/libro/' + encodeURIComponent(x.id) + '.html" tabindex="-1"><img src="/biblioteca/' + E(x.portada) + '" alt="" loading="lazy" width="200" height="300"></a>'; }).join('');
   });
 
   /* Hoy en AURZANE: frase, curiosidad, ejercicio, test del día, libro de la semana y música (hoy/hoy.json) */
@@ -74,7 +74,7 @@ function alternarTema() {
   fetch('/novedades/feed.xml', { cache: 'no-cache' }).then(function (r) { return r.ok ? r.text() : ''; }).then(function (x) {
     if (!x) return;
     var doc = new DOMParser().parseFromString(x, 'application/xml'), it = Array.prototype.slice.call(doc.querySelectorAll('item'), 0, 8);
-    if (!it.length || !$('nLista')) return;
+    if (!it.length) return;
     $('nLista').innerHTML = it.map(function (i) {
       var t = (i.querySelector('title') || {}).textContent || '', l = (i.querySelector('link') || {}).textContent || '/novedades/', f = new Date((i.querySelector('pubDate') || {}).textContent || '');
       var tipo = (t.match(/^([^:]{3,20}):\s*/) || [])[1] || 'Novedad';
