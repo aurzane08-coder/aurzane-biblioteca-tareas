@@ -1,5 +1,44 @@
 [
  {
+  "id": "el-lider-resonante-crea-mas-daniel-goleman",
+  "titulo": "El líder resonante crea más",
+  "autor": "Daniel Goleman",
+  "temas": [
+   "emociones",
+   "bienestar"
+  ],
+  "origen": "tendencia",
+  "fecha": "2026-11-16",
+  "isbn": "9788499087115",
+  "portada": "https://covers.openlibrary.org/b/id/12325803-M.jpg?default=false",
+  "anio": "2010",
+  "editorial": "Debolsillo",
+  "idioma": "",
+  "resumen": "",
+  "tendencia": "Conecta con la figura de entrenadores de élite y gestión de equipos en noviembre.",
+  "tendencia_fecha": "2026-11-16",
+  "porque": "Es ideal para profesionales y responsables de equipos que buscan potenciar la inteligencia emocional en su liderazgo. Aporta herramientas prácticas para conectar con las emociones y mejorar el clima de trabajo."
+ },
+ {
+  "id": "el-camino-del-artista-julia-cameron",
+  "titulo": "El camino del artista",
+  "autor": "Julia Cameron",
+  "temas": [
+   "habitos"
+  ],
+  "origen": "tendencia",
+  "fecha": "2026-11-16",
+  "isbn": "9789501603729",
+  "portada": "https://covers.openlibrary.org/b/id/5231229-M.jpg?default=false",
+  "anio": "2003",
+  "editorial": "Troquel Editorial",
+  "idioma": "spa",
+  "resumen": "",
+  "tendencia": "Una propuesta excelente para el inicio de la temporada de reflexión previa al nuevo año.",
+  "tendencia_fecha": "2026-11-16",
+  "porque": "Está pensado para cualquier persona que desee desbloquear su creatividad y recuperar la confianza en su potencial artístico. Aporta un método guiado con ejercicios prácticos para superar los bloqueos creativos diarios."
+ },
+ {
   "id": "el-encantador-de-perros-cesar-millan",
   "titulo": "El encantador de perros",
   "autor": "César Millán",
