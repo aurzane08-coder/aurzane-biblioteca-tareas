@@ -127,6 +127,7 @@ for _, p, a, ps, ctr in cand[:MAX_DIA * 3]:
     if hechos >= MAX_DIA: break
     u = urllib.parse.urlparse(p); host = u.hostname or ''
     if not re.match(r'^([a-z0-9-]+\.)?aurzane\.com$', host): continue
+    if u.query: continue   # páginas con parámetros (p. ej. leer.html?libro=) comparten un solo archivo: nunca se tocan
     ruta = u.path if not u.path.endswith('/') else u.path + 'index.html'
     if '..' in ruta or not re.match(r'^/[A-Za-z0-9/_.\-]*\.html$', ruta): continue
     es_univ = host == 'nexus.aurzane.com' and ruta.startswith('/universidades/')
@@ -181,7 +182,7 @@ lista = []
 for c in cambios:
     if c.get('via') != 'servidor' or c['fecha'] < (HOY - datetime.timedelta(days=120)).isoformat(): continue
     u = urllib.parse.urlparse(c['url']); ruta = u.path if not u.path.endswith('/') else u.path + 'index.html'
-    if '..' in ruta: continue
+    if '..' in ruta or u.query: continue
     lista.append([f'www/{u.hostname}/public_html{ruta}', c['antes']['titulo'], c['despues']['titulo'], c['despues']['desc']])
 if lista:
     print(remoto('python3 -c ' + __import__('shlex').quote(MANT), json.dumps(lista)).strip())
