@@ -5,8 +5,8 @@ indemnización, ahorro mensual (regla 50/30/20) y jubilación. Usan la misma pla
 la calculadora de sueldo neto, para que todo BUILD se vea igual. Tipos de ITP/AJD: los mismos de la calculadora de
 hipoteca (una sola fuente). Escribe publicar/build.aurzane.com/<ruta>/index.html.
 Después, solas: guías largas (guias.py), sitemap (mapas.py), buscador (indice.py) y títulos (titulos.py).
-Uso: python3 herramientas/build_calculadoras.py"""
-import json, os, re, html
+Uso: python3 herramientas/build_calculadoras.py [ruta ...]  (sin rutas, las escribe todas)"""
+import json, os, re, html, sys
 
 R = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 def shell(host, ruta):
@@ -48,7 +48,7 @@ TODAS += [
     ('calculadora-sueno', '🌙', 'Calculadora de sueño', 'A qué hora dormir para despertar descansado.', '#2d3a6b', '#0c1020'),
     ('test-de-sueno', '😴', 'Test de sueño', '¿Duermes bien? Chequeo en 2 minutos.', '#3b3366', '#110e1f'),
 ]
-INTERES = ('https://live.aurzane.com/calculadora-interes-compuesto/', '📈', 'Interés compuesto', 'Cuánto crecen tus ahorros con los años.', '#2b4f6b', '#0c1520')
+INTERES = ('https://build.aurzane.com/calculadora-interes-compuesto/', '📈', 'Interés compuesto', 'Cuánto crecen tus ahorros con los años.', '#2b4f6b', '#0c1520')
 
 
 def tarjetas(slug, rel):
@@ -508,6 +508,60 @@ function pintar(){
 }
 '''))
 
+# 9. Interés compuesto (se muda de LIVE a BUILD el 16/11/2026; la dirección antigua redirige con 301) -----------------
+CALCS.append(dict(
+    slug='calculadora-interes-compuesto', ogimg='calculadora-interes-compuesto', nombre='Calculadora de interés compuesto',
+    titulo='Calculadora de interés compuesto con aportaciones mensuales',
+    og='¿Cuánto crecerán tus ahorros? Calculadora de interés compuesto',
+    desc='Calcula cuánto crecen tus ahorros con el interés compuesto: capital inicial, aportación mensual, rentabilidad, comisiones e inflación. Mira cuánto pones tú y cuánto ganas con los intereses, año a año.',
+    pre='📈 El efecto bola de nieve', h1='Cuánto crece tu dinero <span>con los años</span>',
+    lead='Escribe lo que tienes, lo que puedes aportar cada mes y la rentabilidad que esperas. Te mostramos cuánto tendrás, cuánto has puesto tú y cuánto han generado los intereses.',
+    chips=['💶 Con aportaciones', '🧾 Con comisiones', '📉 En euros de hoy'],
+    form=bloque('Tu inversión', [campo('cap', 'Capital inicial', 5000, paso='100'), campo('apo', 'Aportación al mes', 150, paso='10'),
+                                 campo('tasa', 'Rentabilidad anual', 6, uni='%', paso='0.25'), campo('anos', 'Años', 20, uni='años')]) + '\n' +
+         bloque('Ajustes', [campo('com', 'Comisiones al año', 0.2, uni='%', paso='0.05'), campo('ipc', 'Inflación anual', 2, uni='%', paso='0.25')]),
+    restit='Tendrás al final', movil='Al final',
+    lineas=lineas([('rAport', 'Lo que aportas tú', 0), ('rInt', 'Lo que ganan los intereses', 1), ('rCom', 'Lo que se llevan las comisiones', 0), ('rHoy', 'En euros de hoy (con inflación)', 0),
+                   ('', '<div class="apilada" id="apilada"></div>' + LEY.format('<span><b style="background:var(--n3)"></b>Capital inicial</span><span><b style="background:var(--violeta)"></b>Aportaciones</span><span><b style="background:var(--cian)"></b>Intereses</span>'), 0)]),
+    extra="""<section class="bloque">
+  <h2 class="t">Año a año</h2>
+  <p class="sub">Cómo crece tu dinero cada año con los datos que has escrito.</p>
+  <div class="panel" style="padding:8px 20px"><div class="scroll"><table class="tabla" id="tablaAnos"></table></div></div>
+</section>
+<section class="bloque">
+  <h2 class="t">Las tres claves del interés compuesto</h2>
+  <div class="tarjetas">
+    <div class="tcard"><div class="big">Tiempo</div><h3>Empezar pronto</h3><p>Los intereses generan nuevos intereses: en los últimos años es cuando más crece el dinero. Diez años más pesan más que una aportación mayor.</p></div>
+    <div class="tcard"><div class="big">Constancia</div><h3>Aportar cada mes</h3><p>Una aportación automática, aunque sea pequeña, suaviza las subidas y bajadas del mercado y crea el hábito.</p></div>
+    <div class="tcard"><div class="big">Costes</div><h3>Vigilar comisiones</h3><p>Un 1 % de comisión al año parece poco, pero en 20 o 30 años se come una parte grande de lo ganado. Compara antes de elegir.</p></div>
+  </div>
+</section>""",
+    faq=[('¿Qué es el interés compuesto?', 'Es ganar intereses también sobre los intereses que ya has ganado. Si inviertes 1.000 euros al 5 %, el primer año ganas 50; el segundo, el 5 % de 1.050, y así cada año sobre una cantidad mayor.'),
+         ('¿Qué rentabilidad pongo?', 'Depende de dónde inviertas. Una cuenta remunerada o un depósito rinden poco y con poco riesgo; una cartera diversificada en bolsa ha rendido más a largo plazo, con caídas por el camino. Prueba varias cifras para ver el rango.'),
+         ('¿Tiene en cuenta impuestos y comisiones?', 'Las comisiones sí, con el campo de comisiones anuales. Los impuestos no: en España las ganancias tributan en la base del ahorro del IRPF cuando las recuperas, del 19 % al 30 % según la cantidad.'),
+         ('¿Es mejor ahorrar mucho tarde o poco desde joven?', 'Casi siempre, poco desde joven. Con el mismo dinero aportado, empezar 10 años antes puede dar un resultado mucho mayor, porque el interés compuesto tiene más tiempo para actuar.')],
+    creditos=['Fórmula de capitalización compuesta mensual con aportaciones periódicas; la comisión se descuenta de la rentabilidad anual.',
+              'Euros de hoy: valor final dividido entre (1 + inflación) elevado al número de años.',
+              'Tipos del IRPF del ahorro: artículo 66 de la Ley 35/2006, del IRPF.'],
+    rel=['calculadora-ahorro', 'calculadora-jubilacion', 'calculadora-rentabilidad-alquiler'],
+    compartir='Calcula cuánto crecen tus ahorros con el interés compuesto:',
+    js=r"""
+function pintar(){
+  var cap=n('cap'),apo=n('apo'),anos=Math.min(Math.max(Math.round(n('anos')),1),60),r=(n('tasa')-n('com'))/100,rb=n('tasa')/100,i=Math.pow(1+r,1/12)-1,ib=Math.pow(1+rb,1/12)-1;
+  var s=cap,sb=cap,filas='<tr><th>Año</th><th>Aportado</th><th>Intereses</th><th>Total</th></tr>';
+  for(var y=1;y<=anos;y++){for(var m=0;m<12;m++){s=s*(1+i)+apo;sb=sb*(1+ib)+apo;} var ap=cap+apo*12*y; if(y<=10||y%5===0||y===anos) filas+='<tr><td>'+y+'</td><td>'+AZ.eur(ap)+'</td><td>'+AZ.eur(s-ap)+'</td><td><b>'+AZ.eur(s)+'</b></td></tr>';}
+  var aport=cap+apo*12*anos,inter=s-aport,hoy=s/Math.pow(1+n('ipc')/100,anos);
+  $('grande').textContent=AZ.eur(s);$('movilValor').textContent=AZ.eur(s);
+  $('grandeSub').textContent='en '+anos+' años, con un '+AZ.fmt(n('tasa'),2)+'% anual';
+  nivel(inter>aport?'ok':'medio',inter>aport?'Los intereses ya superan lo que aportas':'Los intereses son el '+AZ.fmt(aport?inter/aport*100:0,0)+'% de lo aportado');
+  $('rAport').textContent=AZ.eur(aport);$('rInt').textContent=AZ.eur(inter);$('rCom').textContent='− '+AZ.eur(Math.max(sb-s,0));$('rHoy').textContent=AZ.eur(hoy);
+  var tt=Math.max(s,1);$('apilada').innerHTML='<i style="width:'+(cap/tt*100)+'%;background:var(--n3)"></i><i style="width:'+(apo*12*anos/tt*100)+'%;background:var(--violeta)"></i><i style="width:'+(Math.max(inter,0)/tt*100)+'%;background:var(--cian)"></i>';
+  $('tablaAnos').innerHTML=filas;
+  $('nota').textContent='Sin contar impuestos. Si empezaras 10 años más tarde con los mismos datos, tendrías unos '+AZ.eur(anos>10?(function(){var q=cap;for(var k=0;k<(anos-10)*12;k++)q=q*(1+i)+apo;return q;})():cap)+'.';
+  hash(['cap','apo','tasa','anos','com','ipc']);
+}
+"""))
+
 # ===== LIVE: salud y vida diaria (16/11/2026) =====================================================================
 # 6. Ovulación ----------------------------------------------------------------------------------------------------
 CALCS.append(dict(
@@ -679,7 +733,9 @@ function pintar(){
 """))
 
 if __name__ == '__main__':
+    solo = sys.argv[1:]   # p. ej. calculadora-ahorro: escribe solo esas (las demás ya están en el servidor con sus guías)
     for c in CALCS:
+        if solo and c['slug'] not in solo: continue
         d = os.path.join(R, 'publicar', MUNDOS[c.get('mundo', 'build')]['host'], c['slug']); os.makedirs(d, exist_ok=True)
         open(os.path.join(d, 'index.html'), 'w', encoding='utf-8').write(pagina(c))
         print('escrita', c['slug'], len(c['titulo']))

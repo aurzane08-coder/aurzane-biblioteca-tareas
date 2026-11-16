@@ -37,7 +37,7 @@ B = [
         ('/calculadora-finiquito/', '📄', 'Finiquito e indemnización', 'Lo que te deben al dejar o perder un trabajo, según el Estatuto de los Trabajadores.', 'Nuevo', '#4a3d63', '#15111e'),
         ('/calculadora-ahorro/', '🐷', 'Calculadora de ahorro', 'Cuánto apartar al mes para tu meta y cómo repartir el sueldo con la regla 50/30/20.', 'Nuevo', '#2e5b4a', '#0d1a15'),
         ('/calculadora-jubilacion/', '🌅', 'Calculadora de jubilación', 'El capital que necesitas para complementar tu pensión y cuánto ahorrar desde hoy.', 'Nuevo', '#6a4a2a', '#1f150b'),
-        ('https://live.aurzane.com/calculadora-interes-compuesto/', '📈', 'Interés compuesto', 'Cuánto crece tu dinero con los años si inviertes cada mes.', 'Inversión', '#2b4f6b', '#0c1520')])]
+        ('/calculadora-interes-compuesto/', '📈', 'Interés compuesto', 'Cuánto crece tu dinero con los años si inviertes cada mes.', 'Inversión', '#2b4f6b', '#0c1520')])]
 aplicar('build.aurzane.com', 'Calculadoras para tu dinero, tus ingresos y tu casa',
         'Números reales de 2026 para decidir antes de firmar, invertir o cambiar de trabajo. Gratis, sin registro y con la normativa citada.', B)
 

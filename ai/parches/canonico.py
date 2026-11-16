@@ -13,6 +13,8 @@ def bloque(web):
     b = ['# BEGIN AURZANE-CANONICO', '<IfModule mod_rewrite.c>', 'RewriteEngine On',
          'RewriteCond %{HTTPS} off [OR]', 'RewriteCond %{HTTP_HOST} ^www\\. [NC]',
          f'RewriteRule ^ https://{web}%{{REQUEST_URI}} [R=301,L,NE]']
+    if web == 'live.aurzane.com':   # el interés compuesto es dinero: se mudó a BUILD (16/11/2026)
+        b += ['RewriteRule ^calculadora-interes-compuesto/?(.*)$ https://build.aurzane.com/calculadora-interes-compuesto/$1 [R=301,L]']
     if web == 'aurzane.com':
         b += ['RewriteCond %{QUERY_STRING} (^|&)libro=([a-z0-9-]+)(&|$)', 'RewriteRule ^biblioteca/leer\\.html$ /biblioteca/libro/%2.html? [R=301,L]']
     b += ['</IfModule>']
@@ -62,7 +64,7 @@ for web in WEBS:
 OG = {'build.aurzane.com/calculadora-gastos-compra-vivienda': '1570129477492-45c003edd2be', 'build.aurzane.com/calculadora-rentabilidad-alquiler': '1460317442991-0ec209397118',
       'build.aurzane.com/calculadora-finiquito': '1586281380349-632531db7ed4', 'build.aurzane.com/calculadora-ahorro': '1559526324-4b87b5e36e44',
       'build.aurzane.com/calculadora-jubilacion': '1473186578172-c141e6798cf4', 'live.aurzane.com/calculadora-ovulacion': '1505751172876-fa1923c5c528',
-      'live.aurzane.com/calculadora-peso-ideal': '1517836357463-d25dfeac3438', 'live.aurzane.com/calculadora-sueno': '1520206183501-b80df61043c2'}
+      'live.aurzane.com/calculadora-peso-ideal': '1517836357463-d25dfeac3438', 'live.aurzane.com/calculadora-sueno': '1520206183501-b80df61043c2', 'build.aurzane.com/calculadora-interes-compuesto': '1579621970563-ebec7560ff3e'}
 for ruta, fid in OG.items():
     web, carpeta = ruta.split('/', 1)
     f = os.path.join(base, web, 'public_html', carpeta, 'og.jpg')
@@ -92,3 +94,11 @@ for carpeta in ('calculadora-hipoteca', 'calculadora-gastos-compra-vivienda'):
     if t != s:
         c = os.path.join(base, 'build.aurzane.com', 'eliminar', 'canonico-' + hoy); os.makedirs(c, exist_ok=True); shutil.copy2(f, os.path.join(c, carpeta + '.html'))
         open(f, 'w', encoding='utf-8').write(t); print('tipos de ITP de 2026 en', carpeta)
+
+# Interés compuesto mudado a BUILD: cuando la página nueva ya está publicada, la antigua de LIVE se aparta a eliminar
+# (la redirección 301 de arriba lleva a la nueva; así no queda en el sitemap de LIVE una dirección que redirige).
+_nueva = os.path.join(base, 'build.aurzane.com', 'public_html', 'calculadora-interes-compuesto', 'index.html')
+_vieja = os.path.join(base, 'live.aurzane.com', 'public_html', 'calculadora-interes-compuesto')
+if os.path.exists(_nueva) and os.path.isdir(_vieja):
+    c = os.path.join(base, 'live.aurzane.com', 'eliminar', 'canonico-' + hoy); os.makedirs(c, exist_ok=True)
+    shutil.move(_vieja, os.path.join(c, 'calculadora-interes-compuesto')); print('interés compuesto antiguo de LIVE apartado a eliminar')
