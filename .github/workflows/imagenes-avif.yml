@@ -1,0 +1,58 @@
+name: Imágenes en AVIF
+# Convierte a AVIF las imágenes reales (JPG y PNG de más de 8 KB) de los 7 dominios que aún no tienen su .avif o que han cambiado.
+# La conversión se hace aquí, no en SiteGround, para no cargar el servidor. Solo se guarda el AVIF si pesa al menos un 10 % menos;
+# si no, se apunta en www/.avif-omitidos.txt y no se vuelve a intentar. Nunca borra ni sustituye el original.
+on:
+  push:
+    paths: ['ai/parches/avif.py', '.github/workflows/imagenes-avif.yml']
+  schedule:
+    - cron: '27 3 * * *'
+  workflow_dispatch:
+    inputs:
+      limite:
+        description: 'Máximo de imágenes por ejecución'
+        default: '2500'
+permissions:
+  contents: read
+concurrency: { group: imagenes-avif, cancel-in-progress: false }
+jobs:
+  avif:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    env:
+      SG_KEY: ${{ secrets.SG_KEY }}
+      SG_HOST: ${{ secrets.SG_HOST }}
+      SG_USER: ${{ secrets.SG_USER }}
+      SG_PORT: ${{ secrets.SG_PORT }}
+      SG_PASS: ${{ secrets.SG_PASS }}
+      LIMITE: ${{ github.event.inputs.limite || '2500' }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Herramientas
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq libavif-bin >/dev/null && avifenc --version | head -1
+      - name: Lista, conversión y subida
+        run: |
+          mkdir -p ~/.ssh && printf '%s\n' "$SG_KEY" | tr -d '\r' > ~/.ssh/id && chmod 600 ~/.ssh/id
+          if [ -n "$SG_PASS" ]; then ssh-keygen -p -P "$SG_PASS" -N "" -f ~/.ssh/id >/dev/null; fi
+          SSH="ssh -i $HOME/.ssh/id -p ${SG_PORT:-18765} -o StrictHostKeyChecking=accept-new $SG_USER@$SG_HOST"
+          $SSH 'cd www && touch .avif-omitidos.txt && for h in aurzane.com mind.aurzane.com nexus.aurzane.com live.aurzane.com learn.aurzane.com build.aurzane.com ovp.aurzane.com; do
+              find $h/public_html \( -path "*/eliminar/*" -o -path "*/marketing/*" -o -path "*/node_modules/*" \) -prune -o -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" \) -size +8k -print |
+              while IFS= read -r f; do if [ ! -e "$f.avif" ] || [ "$f" -nt "$f.avif" ]; then printf "%s\n" "$f"; fi; done; done | grep -vxF -f .avif-omitidos.txt' > lista.txt || true
+          head -n "$LIMITE" lista.txt > tanda.txt
+          echo "Pendientes: $(wc -l < lista.txt). En esta tanda: $(wc -l < tanda.txt)"
+          mkdir -p orig avif
+          if [ -s tanda.txt ]; then
+            $SSH 'cd www && tar cf - -T -' < tanda.txt | tar xf - -C orig
+            : > omitidos.txt
+            convertir() { f="$1"; o="avif/$f.avif"; mkdir -p "$(dirname "$o")"
+              if avifenc -q 58 -s 6 -j 2 "orig/$f" "$o" >/dev/null 2>&1 && [ $(stat -c%s "$o") -lt $(( $(stat -c%s "orig/$f") * 9 / 10 )) ]; then echo "ok"; else rm -f "$o"; echo "$f" >> omitidos.txt; fi; }
+            export -f convertir
+            tr '\n' '\0' < tanda.txt | xargs -0 -P 4 -I{} bash -c 'convertir "$@"' _ {} | sort | uniq -c
+            ( cd avif && find . -name '*.avif' | sed 's#^\./##' > ../subir.txt )
+            echo "AVIF nuevos: $(wc -l < subir.txt). Omitidos (no ahorraban): $(wc -l < omitidos.txt)"
+            echo "Peso original: $(du -sh orig | cut -f1). Peso AVIF: $(du -sh avif | cut -f1)"
+            [ -s subir.txt ] && ( cd avif && tar cf - -T ../subir.txt ) | $SSH 'cd www && tar xf - --no-same-owner'
+            [ -s omitidos.txt ] && $SSH 'cat >> www/.avif-omitidos.txt' < omitidos.txt
+          fi
+          $SSH 'python3 - www' < ai/parches/avif.py
+          for h in aurzane.com mind.aurzane.com live.aurzane.com learn.aurzane.com nexus.aurzane.com build.aurzane.com ovp.aurzane.com; do $SSH "site-tools-client domain-all update id=$h flush_cache=1 >/dev/null 2>&1" || true; done
