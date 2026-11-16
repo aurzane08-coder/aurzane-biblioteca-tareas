@@ -10,7 +10,7 @@ WEBS = ['aurzane.com', 'mind.aurzane.com', 'nexus.aurzane.com', 'live.aurzane.co
 INTERNAS = re.compile(r'/(admin[a-z-]*\.html|generar-informe\.html|ai/index\.html|panel/index\.html)$')
 # enlaces al admin dentro de páginas públicas (pie «Estado del sistema» y similares)
 ENLACE = re.compile(r'[ \t]*<a [^>]*href="https://aurzane\.com/admin\.html[^"]*"[^>]*>(?:Estado del sistema|Admin|Panel admin|Administración)</a>[ \t]*\n?', re.I)
-MARCA = '# seguridad-aurzane v1'
+MARCA = '# seguridad-aurzane v2'
 BLOQUE = MARCA + r'''
 <IfModule mod_headers.c>
 <FilesMatch "^(admin[a-z-]*|generar-informe|guardados-almacen|wp-login)\.(html|php)$">
@@ -30,6 +30,14 @@ RewriteRule ^xmlrpc\.php$ - [F,L]
 Header set X-Robots-Tag "noindex, nofollow, noarchive" env=AZ_PRIV
 Header always set X-Content-Type-Options "nosniff"
 Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+# El almacén común de «Guardados» lo abren en un marco invisible los subdominios de aurzane.com:
+# a ese archivo solo se le permite enmarcarse dentro de aurzane.com y sus subdominios.
+<IfModule mod_headers.c>
+<Files "guardados-almacen.html">
+Header always unset X-Frame-Options
+Header always set Content-Security-Policy "frame-ancestors https://aurzane.com https://*.aurzane.com"
+</Files>
 </IfModule>
 # fin seguridad-aurzane
 '''
@@ -60,6 +68,6 @@ for web in WEBS:
     s = open(ht, encoding='utf-8').read() if os.path.exists(ht) else ''
     if MARCA not in s:
         if s: copia(web, '.htaccess')
-        s = re.sub(r'\n# seguridad-aurzane v\d.*?# fin seguridad-aurzane\n', '\n', s, flags=re.S)
+        s = re.sub(r'(^|\n)# seguridad-aurzane v\d.*?# fin seguridad-aurzane\n', r'\1', s, flags=re.S)
         open(ht, 'w', encoding='utf-8').write(BLOQUE + '\n' + s); print('cabeceras de seguridad en', web)
 print('enlaces al admin quitados:', n_enl)
