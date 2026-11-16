@@ -29,6 +29,8 @@ const nombre = u => u.replace(/^https:\/\//, '').replace(/[^a-z0-9]+/gi, '_').re
         await p.goto(url, { waitUntil: 'networkidle', timeout: 45000 }).catch(async () => { await p.waitForTimeout(3000); });
         r.carga_ms = Date.now() - t0;
         await p.waitForSelector('.az-cab', { timeout: 6000 }).catch(() => { r.sin_cabecera = true; });
+        await p.waitForFunction(() => document.documentElement.classList.contains('az-ds'), null, { timeout: 8000 }).catch(() => { r.sin_ds = true; });
+        await p.addStyleTag({ content: '*,*::before,*::after{animation:none!important;transition:none!important}' }).catch(() => {});   /* sin animaciones a medias: si no, axe mide colores en plena transición */
         await p.waitForTimeout(800);
         /* recorre la página para que carguen las imágenes diferidas, como haría una persona */
         await p.evaluate(async () => { const h = () => document.documentElement.scrollHeight; for (let y = 0; y < h(); y += Math.round(innerHeight * .8)) { scrollTo(0, y); await new Promise(r => setTimeout(r, 120)); } scrollTo(0, 0); }).catch(() => {});
