@@ -85,6 +85,7 @@ cuerpo = f'''
   <div class="p-hero-in">
     <h1 id="pT">Conócete, decide y construye tu vida con ciencia.</h1>
     <p class="p-lema">Tests psicológicos, cursos, calculadoras y libros gratis, creados por un psicólogo clínico y con las fuentes a la vista.</p>
+    <p class="p-acc"><a class="p-acc-1" href="#tests">Hacer un test gratis</a><a href="https://ovp.aurzane.com/">Descubrir qué estudiar</a><a href="/biblioteca/">Leer libros gratis</a></p>
     <form class="p-busca" id="pBusca" role="search">
       <label for="pQ" class="vh">Buscar en AURZANE</label>
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>

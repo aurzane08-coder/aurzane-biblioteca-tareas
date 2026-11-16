@@ -222,3 +222,11 @@ details a{color:var(--oro-txt)}
   .p-lista a{flex-direction:column;gap:2px}
   .p-lista span{text-align:left}
 }
+
+/* Tres accesos directos en la cabecera de la portada (16/11/2026) */
+.p-acc{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 22px}
+.p-acc a{display:inline-flex;align-items:center;min-height:46px;padding:0 22px;border-radius:999px;border:1px solid rgba(255,255,255,.55);color:#fff;font-weight:600;text-decoration:none!important}
+.p-acc a:hover{background:rgba(255,255,255,.12)}
+.p-acc a.p-acc-1{background:#E2BF6A;border-color:#E2BF6A;color:#1B1440}
+.p-acc a.p-acc-1:hover{background:#F0D28A}
+@media (max-width:620px){.p-acc a{flex:1 1 100%;justify-content:center}}
