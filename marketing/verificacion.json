@@ -1,7 +1,7 @@
 {
- "fecha": "2026-11-16T12:05",
+ "fecha": "2026-11-16T13:37",
  "redes": {
-  "telegram": "ERROR <urlopen error [Errno 104] Connection reset by peer>",
+  "telegram": "bot @aurzane_publica_bot en @aurzane: administrator (puede publicar)",
   "bluesky": "ok aurzane.bsky.social",
   "instagram": "ok @aurzane (cuenta 17841437879824682)",
   "mastodon": "ok app AURZANE marketing",
