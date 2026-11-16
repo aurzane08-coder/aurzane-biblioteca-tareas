@@ -153,11 +153,15 @@
   var FOTO = { olas: '1505142468610-359e7d316be0', nube: '1529665253569-6d01c0eaf7b6', espejo: '1517841905240-472988babdf9', corazon: '1544027993-37dbfe43562a',
     montana: '1464822759023-fed622ff2c3b', vela: '1499750310107-5fef28a66643', espiral: '1541199249251-f713e6145474', brote: '1466692476868-aef1dfb1e735',
     sol: '1507525428034-b723cf961d3e', bienestar: '1506126613408-eca07ce68773', puntos: '1512438248247-f0f2a5a8b7f0', foco: '1434030216411-0b793f4b4173',
-    luna: '1541781774459-bb2af2f05b55', habitos: '1490645935967-10de6ba17061', grafica: '1554224155-6726b3ff858f', casa: '1560518883-ce09059eeffa', ahorro: '1579621970563-ebec7560ff3e' };
+    luna: '1541781774459-bb2af2f05b55', habitos: '1490645935967-10de6ba17061', grafica: '1554224155-6726b3ff858f', casa: '1560518883-ce09059eeffa', ahorro: '1579621970563-ebec7560ff3e',
+    agua: '1548839140-29a749e1cf4d', comida: '1512621776951-a57141f2eefd', ejercicio: '1571019613454-1cb2f99b2d8b', embarazo: '1493894473891-10fc1e5dbd22',
+    tarta: '1464349095431-e9a21285b5f3', calendario: '1506784983877-45594efa4cbe', graficos: '1434626881859-194d67b2b86f', estudio: '1427504494785-3a9ca7044f45', impuestos: '1554224154-26032ffc0d07' };
   function foto(clave, ancho) { return 'url("https://images.unsplash.com/photo-' + (FOTO[clave] || FOTO.grafica) + '?w=' + (ancho || 640) + '&q=70&auto=format&fit=crop")'; }
   var TEMA = { 'test-de-ansiedad': 'olas', 'test-de-depresion': 'nube', 'test-de-autoestima': 'espejo', 'test-de-autocompasion': 'corazon', 'test-de-autoeficacia': 'montana',
     'test-de-burnout': 'vela', 'test-de-estres': 'espiral', 'test-de-resiliencia': 'brote', 'test-de-satisfaccion-con-la-vida': 'sol', 'test-de-soledad': 'puntos',
-    'test-de-tdah': 'foco', 'test-de-bienestar': 'bienestar', 'test-de-habitos': 'habitos', 'test-de-sueno': 'luna', 'calculadora-hipoteca': 'casa', 'calculadora-reforma': 'casa', 'calculadora-interes-compuesto': 'ahorro', 'calculadora-sueldo-neto': 'ahorro' };
+    'test-de-tdah': 'foco', 'test-de-bienestar': 'bienestar', 'test-de-habitos': 'habitos', 'test-de-sueno': 'luna', 'calculadora-hipoteca': 'casa', 'calculadora-reforma': 'casa', 'calculadora-interes-compuesto': 'ahorro', 'calculadora-sueldo-neto': 'impuestos',
+    'calculadora-agua': 'agua', 'calculadora-calorias': 'comida', 'calculadora-imc': 'ejercicio', 'calculadora-embarazo': 'embarazo', 'calculadora-edad': 'tarta',
+    'calculadora-dias-entre-fechas': 'calendario', 'calculadora-porcentajes': 'graficos', 'calculadora-nota-pau': 'estudio' };
   var MIDE = { 'test-de-ansiedad': 'Cuánta ansiedad y preocupación has sentido en las dos últimas semanas.', 'test-de-depresion': 'Cómo ha estado tu estado de ánimo en las dos últimas semanas.',
     'test-de-autoestima': 'Cómo te valoras a ti mismo en general.', 'test-de-autocompasion': 'Cómo te tratas cuando algo sale mal o te sientes mal.',
     'test-de-autoeficacia': 'Cuánto confías en tu capacidad para afrontar retos y problemas.', 'test-de-burnout': 'El agotamiento físico y mental que te dejan el trabajo o los estudios.',
@@ -441,6 +445,22 @@
       catch (x) { try { fetch('https://aurzane.com/ai/clic.php', { method: 'POST', body: datos, keepalive: true, mode: 'no-cors' }); } catch (y) {} }
     }, true);
   }
-  function iniciar() { panel(); portada(); explorar(); compartirImagen(); boletin(); boletinResultado(); boletinLectura(); librero(); avisoFallo(); socios(); sinFragmento(); amazonPais(); clicsCompra(); cursoRelacionado(); guardarTest(); videoDia(); piesLegales(); }
+  /* Tarjetas de tests y calculadoras con foto real en lugar de emoji: misma imagen que la portada de cada herramienta */
+  function tarjetasConFoto() {
+    var css = d.createElement('style');
+    css.textContent = 'a.az-cf{position:relative;overflow:hidden;padding-top:128px!important}' +
+      'a.az-cf .az-cf-img{position:absolute;left:0;right:0;top:0;height:112px;background-size:cover;background-position:center}' +
+      'a.az-cf .az-cf-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 40%,rgba(0,0,0,.35))}' +
+      'a.az-cf > .e{display:none!important}';
+    d.head.appendChild(css);
+    Array.prototype.forEach.call(d.querySelectorAll('a[href] > span.e'), function (e) {
+      var a = e.parentNode, p = (a.getAttribute('href') || '').replace(/^https?:\/\/[^/]+/, '').split('/').filter(Boolean)[0] || '';
+      if (!TEMA[p] || a.classList.contains('az-cf')) return;
+      var i = d.createElement('span'); i.className = 'az-cf-img'; i.setAttribute('aria-hidden', 'true'); i.style.backgroundImage = foto(TEMA[p], 480);
+      a.insertBefore(i, a.firstChild); a.classList.add('az-cf');
+    });
+  }
+
+  function iniciar() { panel(); portada(); explorar(); tarjetasConFoto(); compartirImagen(); boletin(); boletinResultado(); boletinLectura(); librero(); avisoFallo(); socios(); sinFragmento(); amazonPais(); clicsCompra(); cursoRelacionado(); guardarTest(); videoDia(); piesLegales(); }
   if (d.readyState === 'loading') d.addEventListener('DOMContentLoaded', iniciar); else iniciar();
 })(window, document);
