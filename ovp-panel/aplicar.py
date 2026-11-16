@@ -180,5 +180,7 @@ rep("      ['mi informe', () => renderInformePage(cliente)],\n",
 CSS = open(__file__.replace('aplicar.py', 'panel.css'), encoding='utf-8').read()
 rep('}\n</style>\n', '}\n' + CSS + '\n</style>\n')
 
+# versiones nuevas de los scripts del informe (enfoque del colegio y membrete de colegio bloqueado)
+s = s.replace('informe-opciones.js?v=20261018b', 'informe-opciones.js?v=20261116a').replace('informe-v2.js?v=20261109c', 'informe-v2.js?v=20261116a')
 open(dst, 'w', encoding='utf-8').write(s)
 print('ok', len(s))

@@ -8,6 +8,12 @@ CAMBIOS = {
          '<h4>Escalas validadas</h4><p>Cuestionarios publicados que usan los profesionales, con su referencia.</p>'),
         ('<h4>100% virtual</h4><p>Tests online, corrección automática, devolución con profesional.</p>',
          '<h4>Resultado al instante</h4><p>Tu puntuación explicada al momento, gratis y sin registro.</p>')],
+    'ovp.aurzane.com/public_html/generar-informe.html': [('informe-opciones.js?v=20261018b', 'informe-opciones.js?v=20261116a'), ('informe-v2.js?v=20261109c', 'informe-v2.js?v=20261116a')],
+    'ovp.aurzane.com/public_html/informe-ejemplo.html': [('informe-opciones.js?v=20261018b', 'informe-opciones.js?v=20261116a'), ('informe-v2.js?v=20261109c', 'informe-v2.js?v=20261116a')],
+    # Admin: acceso directo a la gestión de colegios (alta de colegios, enfoque general o militar, equipo y estudiantes)
+    'aurzane.com/public_html/admin.html': [
+        ('        <span class="nav-label">Membretes</span>\n      </div>\n',
+         '        <span class="nav-label">Membretes</span>\n      </div>\n      <a class="nav-item" href="https://ovp.aurzane.com/colegio.html" style="text-decoration:none;color:inherit">\n        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 10l9-6 9 6"/><path d="M5 10v9h14v-9M9 19v-5h6v5"/></svg>\n        <span class="nav-label">Colegios</span>\n      </a>\n')],
     # Colegios: acceso propio para el equipo del colegio y para sus estudiantes (panel en ovp.aurzane.com/colegio.html)
     'aurzane.com/public_html/colegios/index.html': [
         ('<a href="#contacto">Contacto</a></nav>', '<a href="#contacto">Contacto</a><a href="https://ovp.aurzane.com/colegio.html">Entrar al panel del colegio</a></nav>'),
@@ -26,7 +32,8 @@ for rel, pares in CAMBIOS.items():
     try: s = open(f, encoding='utf-8').read()
     except Exception as e: print('no encontrado', rel, e); continue
     t = s
-    for a, b in pares: t = t.replace(a, b)
+    for a, b in pares:
+        if b not in t: t = t.replace(a, b)   # idempotente: no repite lo ya aplicado
     if t == s: print('sin cambios', rel); continue
     web = rel.split('/')[0]; copia = os.path.join(base, web, 'eliminar', 'textos-' + hoy, os.path.basename(f))
     os.makedirs(os.path.dirname(copia), exist_ok=True); shutil.copy2(f, copia)
