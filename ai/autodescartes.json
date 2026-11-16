@@ -1,5 +1,27 @@
 [
  {
+  "fecha": "2026-11-16",
+  "id": "ia-unconsummated-excitation-and-feminine-neurosis",
+  "tipo": "libro",
+  "titulo": "Unconsummated Excitation And Feminine Neurosis",
+  "url": "https://archive.org/details/unconsummated-excitation-and-feminine-neurosis",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 6 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/unconsummated-excitation-and-feminine-neurosis/Unconsummated%20Excitation%20and%2"
+  ]
+ },
+ {
+  "fecha": "2026-11-16",
+  "id": "ia-information-flow-network-model-paper-withname_202611",
+  "tipo": "libro",
+  "titulo": "Information Flow Network Model Paper Withname",
+  "url": "https://archive.org/details/information-flow-network-model-paper-withname_202611",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 21 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/information-flow-network-model-paper-withname_202611/Great_Web_of_Everything_for_"
+  ]
+ },
+ {
   "fecha": "2026-11-14",
   "id": "ia-eidetic-afterlife-articles_20261114",
   "tipo": "libro",
@@ -2817,26 +2839,6 @@
   "motivo": "Dice ser un libro pero el PDF solo tiene 7 páginas (es un capítulo, artículo o resumen)",
   "probados": [
    "200 application/pdf https://archive.org/download/the-psychology-of-luxury-how-hospitality-spaces-influence-guest-perception/IRJAEH"
-  ]
- },
- {
-  "fecha": "2026-11-03",
-  "id": "ia-about_20261027",
-  "tipo": "libro",
-  "titulo": "about",
-  "url": "https://archive.org/details/about_20261027",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": []
- },
- {
-  "fecha": "2026-11-03",
-  "id": "ia-hacia-una-psicologia-ecosistemica-del-acto_202606",
-  "tipo": "libro",
-  "titulo": "Hacia una psicología ecosistémica del acto",
-  "url": "https://archive.org/details/hacia-una-psicologia-ecosistemica-del-acto_202606",
-  "motivo": "Dice ser un libro pero el PDF solo tiene 16 páginas (es un capítulo, artículo o resumen)",
-  "probados": [
-   "200 application/pdf https://archive.org/download/hacia-una-psicologia-ecosistemica-del-acto_202606/Hacia%20una%20psicolog%C3%ADa%2"
   ]
  }
 ]
