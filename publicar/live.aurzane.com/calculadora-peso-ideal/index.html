@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://aurzane.com/aurzane-paleta.js"></script>
+<title>Calculadora de peso ideal según altura y sexo | AURZANE LIVE</title>
+<meta name="description" content="Calcula tu peso ideal según tu altura y sexo: el rango de peso saludable de la OMS y las fórmulas de Devine, Robinson, Miller y Hamwi, con tu diferencia respecto al peso actual.">
+<link rel="canonical" href="https://live.aurzane.com/calculadora-peso-ideal/">
+<meta property="og:title" content="¿Cuál es tu peso ideal? Calcúlalo con tu altura">
+<meta property="og:description" content="Calcula tu peso ideal según tu altura y sexo: el rango de peso saludable de la OMS y las fórmulas de Devine, Robinson, Miller y Hamwi, con tu diferencia respecto al peso actual.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://live.aurzane.com/calculadora-peso-ideal/">
+<meta property="og:image" content="https://live.aurzane.com/calculadora-imc/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://live.aurzane.com/calculadora-imc/og.jpg">
+<meta name="theme-color" content="#1d1915">
+<script>(function(){ try { if (localStorage.getItem('aurzane-tema') === 'oscuro') document.documentElement.setAttribute('data-tema','oscuro'); } catch(e){} })();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebApplication", "name": "Calculadora de peso ideal", "url": "https://live.aurzane.com/calculadora-peso-ideal/", "applicationCategory": "HealthApplication", "operatingSystem": "Web", "inLanguage": "es", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "publisher": {"@type": "Organization", "name": "AURZANE", "url": "https://aurzane.com/"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Cuál es mi peso ideal según mi altura?", "acceptedAnswer": {"@type": "Answer", "text": "La referencia más usada es el rango de peso con un IMC entre 18,5 y 24,9. Para 1,65 m va de unos 50 a 68 kg; para 1,75 m, de unos 57 a 76 kg. Dentro de ese rango, el mejor peso depende de tu complexión, tu músculo y tu salud."}}, {"@type": "Question", "name": "¿Qué fórmula de peso ideal es la mejor?", "acceptedAnswer": {"@type": "Answer", "text": "Ninguna es perfecta. Las fórmulas de Devine (1974), Robinson (1983), Miller (1983) y Hamwi (1964) nacieron para calcular dosis de medicamentos y dan una cifra única. El rango del IMC de la OMS es más útil como objetivo de salud."}}, {"@type": "Question", "name": "¿Sirve para niños o adolescentes?", "acceptedAnswer": {"@type": "Answer", "text": "No. En menores de 18 años el peso se valora con las tablas de crecimiento por edad y sexo de la OMS. Consulta con tu pediatra."}}, {"@type": "Question", "name": "¿Cuánto peso puedo perder de forma saludable?", "acceptedAnswer": {"@type": "Answer", "text": "Como referencia general, entre medio kilo y un kilo por semana. Si tienes alguna enfermedad, estás embarazada o has perdido peso sin buscarlo, consulta antes con tu médico."}}]}]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@500;700&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<meta name="google-adsense-account" content="ca-pub-8763758728010451">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8763758728010451" crossorigin="anonymous"></script>
+<style>
+:root{
+  --navy-950:#070a14; --gold:#c9a24b; --gold-light:#e8cd8f; --gold-deep:#8a6a28;
+  --ok:#1f8a5e; --medio:#c27c12; --warn:#c2462e;
+  --bg:#f6f3ec; --surface:#ffffff; --surface-2:#f0ebe3; --text:#1d1915; --text-dim:#655b50; --border:rgba(29,25,21,.12);
+  --serif:'Bodoni Moda',Georgia,serif; --sans:'Instrument Sans',system-ui,-apple-system,sans-serif;
+  --sombra:0 14px 36px -18px rgba(29,25,21,.32);
+  --n1:#2a1610;--n2:#5e2c1b;--n3:#b45a33;--cian:#ffb38a;--violeta:#f2c14e;--acc-rgb:180,90,51;--acento-texto:#a14a24;
+}
+:root[data-tema="oscuro"]{
+  --bg:#0b0d14; --surface:#141824; --surface-2:#1c2131; --text:#f3f1ea; --text-dim:#a9adbd; --border:rgba(199,205,214,.14);
+  --sombra:0 14px 36px -18px rgba(0,0,0,.7); --ok:#3ccf95; --medio:#f2b544; --warn:#ff8f7a;
+  --acento-texto:#ffb38a;
+}
+*{box-sizing:border-box} [hidden]{display:none!important}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);font-size:16.5px;line-height:1.6;overflow-x:hidden}
+a{color:var(--acento-texto)}
+:focus-visible{outline:3px solid var(--cian);outline-offset:2px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 16px}
+.num{font-variant-numeric:tabular-nums}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+.utility{background:var(--navy-950);color:#8b92a0;font-size:.78rem;padding:7px 0}
+.utility .wrap{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.utility .eco{overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+.utility a{color:inherit;text-decoration:none;margin-right:13px} .utility a:hover,.utility .activo{color:var(--gold-light)}
+.utility button{background:none;border:1px solid rgba(255,255,255,.2);color:inherit;border-radius:999px;padding:3px 10px;font:inherit;cursor:pointer;white-space:nowrap}
+.topbar{background:var(--n1);color:#fff;border-bottom:1px solid rgba(255,255,255,.08)}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:13px;padding-bottom:13px;gap:10px}
+.brand{font-family:var(--serif);font-weight:700;font-size:1.3rem;letter-spacing:.06em;color:#fff;text-decoration:none;white-space:nowrap}
+.brand .z{color:var(--gold)} .brand small{font-family:var(--sans);font-size:.72rem;color:rgba(255,255,255,.65);letter-spacing:.1em;margin-left:6px}
+.topbar nav{display:flex;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+.topbar nav a{color:rgba(255,255,255,.78);text-decoration:none;margin-left:16px;font-size:.9rem;white-space:nowrap} .topbar nav a:hover,.topbar nav a[aria-current]{color:#fff}
+.topbar .cuenta{border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:5px 12px}
+
+.hero{position:relative;overflow:hidden;color:#fff;background:radial-gradient(110% 120% at 90% 0%,var(--n3) 0%,var(--n2) 40%,var(--n1) 100%);padding:42px 0 118px}
+.hero::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.09) 1px,transparent 1.2px);background-size:22px 22px;mask-image:linear-gradient(180deg,#000 10%,transparent 90%)}
+.hero .wrap{position:relative}
+.migas{font-size:.85rem;color:rgba(255,255,255,.7);margin:0 0 14px} .migas a{color:inherit;text-decoration:none} .migas a:hover{color:#fff} .migas span{margin:0 6px;opacity:.6}
+.pre{display:inline-flex;gap:8px;align-items:center;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:5px 13px;font-size:.85rem;color:rgba(255,255,255,.88)}
+.hero h1{font-family:var(--serif);font-weight:700;font-size:clamp(2.1rem,5.4vw,3.5rem);line-height:1.06;margin:16px 0 12px;max-width:17em}
+.hero h1 span{background:linear-gradient(90deg,var(--cian),var(--violeta));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p.lead{font-size:1.1rem;color:rgba(255,255,255,.82);max-width:38em;margin:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 0;padding:0;list-style:none}
+.chips li{font-size:.85rem;color:rgba(255,255,255,.88);background:rgba(255,255,255,.09);border-radius:999px;padding:5px 12px}
+
+.app{position:relative;margin-top:-86px;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.95fr);gap:22px;align-items:start}
+.app.una{grid-template-columns:minmax(0,1fr);max-width:820px;margin-left:auto;margin-right:auto}
+.panel{background:var(--surface);border:1px solid var(--border);border-radius:22px;box-shadow:var(--sombra)}
+.panel-cab{padding:18px 22px 6px}
+.panel-cab h2{margin:0;font-size:1.15rem}
+.panel-cab p{margin:4px 0 0;color:var(--text-dim);font-size:.9rem}
+
+/* cuestionarios */
+.progreso{display:flex;align-items:center;gap:12px;padding:16px 22px 0}
+.progreso .barra{flex:1;height:8px;border-radius:99px;background:var(--surface-2);overflow:hidden}
+.progreso .barra i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--n3),var(--cian));transition:width .35s}
+.progreso span{font-size:.82rem;color:var(--text-dim);font-variant-numeric:tabular-nums;white-space:nowrap}
+.pregunta{padding:18px 22px;border-top:1px solid var(--border)}
+.pregunta:first-of-type{border-top:0}
+.pregunta h3{margin:0 0 4px;font-size:1.06rem;line-height:1.35;display:flex;gap:10px}
+.pregunta h3 .n{flex:none;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font-size:.8rem;color:#fff;background:linear-gradient(135deg,var(--n3),var(--n2))}
+.pregunta .ayuda{font-size:.86rem;color:var(--text-dim);margin:0 0 10px 36px}
+.opciones{display:grid;gap:8px;margin-left:36px}
+.opciones.fila{grid-template-columns:repeat(auto-fit,minmax(132px,1fr))}
+.op{display:flex;align-items:center;gap:10px;text-align:left;border:1.5px solid var(--border);background:var(--surface);color:var(--text);border-radius:12px;padding:10px 12px;font:500 .93rem var(--sans);cursor:pointer;transition:border-color .15s,background .15s}
+.op:hover{border-color:var(--n3)}
+.op i{flex:none;width:18px;height:18px;border-radius:50%;border:2px solid var(--border);display:grid;place-items:center}
+.op[aria-pressed="true"]{border-color:var(--n3);background:rgba(var(--acc-rgb),.09);font-weight:600}
+.op[aria-pressed="true"] i{border-color:var(--n3);background:radial-gradient(circle,var(--n3) 45%,transparent 50%)}
+.pregunta.falta{background:rgba(194,70,46,.06)}
+.pregunta.falta h3::after{content:"Responde esta pregunta";margin-left:auto;font-size:.75rem;color:var(--warn);font-weight:600;white-space:nowrap}
+
+/* formularios */
+.bloque-form{padding:16px 22px;border-top:1px solid var(--border)}
+.bloque-form:first-of-type{border-top:0}
+.bloque-form h3{margin:0 0 10px;font-size:1.02rem}
+.campos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.campos.tres{grid-template-columns:repeat(3,minmax(0,1fr))}
+.campo{min-width:0}
+.campo label{display:block;font-size:.86rem;font-weight:600;margin-bottom:5px}
+.campo small{display:block;font-size:.78rem;color:var(--text-dim);margin-top:3px}
+.entrada{position:relative}
+.entrada span{position:absolute;right:12px;top:50%;transform:translateY(-50%);color:var(--text-dim);font-size:.9rem;pointer-events:none}
+input[type=number],input[type=text],select{width:100%;font:500 1rem var(--sans);color:var(--text);background:var(--surface-2);border:1.5px solid transparent;border-radius:12px;padding:11px 12px;transition:border-color .15s}
+input[type=number]{font-variant-numeric:tabular-nums;font-weight:600}
+.entrada input{padding-right:42px}
+input:focus,select:focus{outline:none;border-color:var(--n3);background:var(--surface)}
+input[type=range]{width:100%;accent-color:var(--n3)}
+.seg{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:5px;background:var(--surface-2);padding:5px;border-radius:13px}
+.seg button{border:0;background:transparent;border-radius:9px;padding:9px 6px;font:600 .9rem var(--sans);color:var(--text-dim);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--surface);color:var(--text);box-shadow:0 2px 8px rgba(0,0,0,.1)}
+.check{display:flex;align-items:flex-start;gap:10px;padding:10px 12px;border:1.5px solid var(--border);border-radius:12px;cursor:pointer;margin-bottom:8px}
+.check input{width:18px;height:18px;margin-top:3px;accent-color:var(--n3);flex:none}
+.check b{display:block;font-size:.94rem} .check small{color:var(--text-dim);font-size:.82rem}
+.check:has(input:checked){border-color:var(--n3);background:rgba(var(--acc-rgb),.06)}
+.check .mini{margin-left:auto;display:flex;align-items:center;gap:6px;font-size:.82rem;color:var(--text-dim)}
+.check .mini input{width:64px;padding:6px 8px;margin:0}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:12px;padding:12px 20px;font:700 .96rem var(--sans);cursor:pointer;text-decoration:none}
+.btn-luz{background:linear-gradient(90deg,var(--cian),var(--violeta));color:#1d130c}
+.btn-osc{background:var(--n2);color:#fff}
+.btn-linea{background:transparent;color:var(--acento-texto);border:1.5px solid var(--border)}
+.btn-linea:hover{border-color:var(--n3)}
+.btn[disabled]{opacity:.55;cursor:not-allowed}
+.acciones{display:flex;gap:8px;flex-wrap:wrap;padding:16px 22px 22px}
+
+/* resultado */
+.res{overflow:hidden}
+.sticky{position:sticky;top:14px}
+.res-top{position:relative;color:#fff;padding:20px 22px 18px;background:radial-gradient(120% 100% at 100% 0%,var(--n3),var(--n1))}
+.res-top h2{font-size:.95rem;font-weight:600;margin:0;color:rgba(255,255,255,.75)}
+.medidor{position:relative;width:100%;max-width:300px;margin:4px auto 0}
+.medidor svg{width:100%;height:auto;display:block}
+.medidor .valor{position:absolute;left:0;right:0;bottom:5%;text-align:center}
+.medidor .valor b{display:block;font-family:var(--serif);font-size:3.4rem;line-height:1;font-variant-numeric:tabular-nums}
+.medidor .valor span{font-size:.85rem;color:rgba(255,255,255,.75)}
+.grande{font-family:var(--serif);font-size:clamp(2.4rem,6vw,3.3rem);line-height:1.05;font-variant-numeric:tabular-nums;margin:6px 0 2px}
+.res-top .sub2{color:rgba(255,255,255,.78);font-size:.9rem;margin:0}
+.nivel{display:inline-flex;align-items:center;gap:8px;margin-top:10px;font-weight:700;font-size:.95rem;background:rgba(255,255,255,.12);border-radius:999px;padding:6px 14px}
+.nivel i{width:10px;height:10px;border-radius:50%;background:#bbb}
+.nivel.ok i{background:#5ee0a8;box-shadow:0 0 0 4px rgba(94,224,168,.25)} .nivel.medio i{background:#ffc35a;box-shadow:0 0 0 4px rgba(255,195,90,.25)} .nivel.mal i{background:#ff8f7a;box-shadow:0 0 0 4px rgba(255,143,122,.25)}
+.res-cuerpo{padding:16px 22px 6px}
+.linea{display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-bottom:1px dashed var(--border);font-size:.93rem}
+.linea:last-child{border-bottom:0} .linea b{font-variant-numeric:tabular-nums;text-align:right}
+.linea.total{font-size:1.04rem;border-bottom:0;padding-top:10px}
+.area{margin:10px 0 14px}
+.area-cab{display:flex;justify-content:space-between;font-size:.92rem;font-weight:600;margin-bottom:5px}
+.area-cab span{color:var(--text-dim);font-weight:500;font-variant-numeric:tabular-nums}
+.barra-a{height:10px;border-radius:99px;background:var(--surface-2);overflow:hidden}
+.barra-a i{display:block;height:100%;border-radius:99px;transition:width .6s cubic-bezier(.2,.8,.2,1)}
+.barra-a i.ok{background:linear-gradient(90deg,#2aa577,#5ee0a8)} .barra-a i.medio{background:linear-gradient(90deg,#d9921d,#ffc35a)} .barra-a i.mal{background:linear-gradient(90deg,#c2462e,#ff8f7a)}
+.apilada{display:flex;height:16px;border-radius:99px;overflow:hidden;background:var(--surface-2);margin:8px 0 4px}
+.apilada i{display:block;height:100%}
+.leyenda{display:flex;flex-wrap:wrap;gap:12px;font-size:.8rem;color:var(--text-dim)}
+.leyenda b{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:5px;vertical-align:-1px}
+.consejos{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.consejos li{background:var(--surface-2);border-radius:14px;padding:12px 14px;font-size:.93rem}
+.consejos li b{display:block;margin-bottom:2px}
+.aviso{margin:12px 22px 0;padding:14px 16px;border-radius:14px;background:rgba(194,70,46,.08);border:1px solid rgba(194,70,46,.25);font-size:.92rem}
+.aviso.suave{background:var(--surface-2);border-color:var(--border)}
+.aviso b{display:block;margin-bottom:3px} .aviso a b{display:inline;margin:0}
+.vacio{padding:26px 22px;text-align:center;color:var(--text-dim)}
+.vacio .e{font-size:2.2rem;display:block;margin-bottom:6px}
+.historial{padding:0 22px 6px;font-size:.88rem;color:var(--text-dim)}
+.historial ol{list-style:none;padding:0;margin:6px 0 0;display:flex;gap:6px;flex-wrap:wrap}
+.historial li{background:var(--surface-2);border-radius:10px;padding:4px 10px;font-variant-numeric:tabular-nums}
+.msg{font-size:.85rem;color:var(--text-dim);min-height:1.2em;padding:0 22px 14px;margin:-6px 0 0}
+table.tabla{width:100%;border-collapse:collapse;font-size:.88rem;font-variant-numeric:tabular-nums}
+table.tabla th,table.tabla td{padding:7px 8px;border-bottom:1px solid var(--border);text-align:right}
+table.tabla th:first-child,table.tabla td:first-child{text-align:left}
+table.tabla th{font-size:.78rem;color:var(--text-dim);font-weight:600}
+.scroll{overflow-x:auto}
+.grafico svg{width:100%;height:auto;display:block}
+
+.movil-barra{display:none}
+body:not(.hecho) .movil-barra{display:none!important}
+section.bloque{padding:56px 0 0}
+h2.t{font-family:var(--serif);font-size:clamp(1.6rem,3.6vw,2.2rem);line-height:1.15;margin:0 0 10px}
+.sub{color:var(--text-dim);margin:0 0 22px;max-width:46em}
+.tarjetas{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.tcard{background:var(--surface);border:1px solid var(--border);border-radius:18px;padding:20px;box-shadow:var(--sombra)}
+.tcard h3{margin:0 0 6px;font-size:1.05rem}
+.tcard p{margin:0;color:var(--text-dim);font-size:.93rem}
+.tcard .big{font-family:var(--serif);font-size:1.5rem;color:var(--acento-texto);margin:4px 0 6px}
+.siguiente{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.scard{display:block;text-decoration:none;color:#fff;border-radius:18px;padding:22px;min-height:150px;box-shadow:var(--sombra);transition:transform .2s}
+.scard:hover{transform:translateY(-4px)}
+.scard b{display:block;font-size:1.15rem;margin:8px 0 4px} .scard span{font-size:.92rem;opacity:.92} .scard .e{font-size:1.8rem}
+details.faq{border-bottom:1px solid var(--border);padding:14px 0}
+details.faq summary{cursor:pointer;font-weight:600}
+details.faq p{margin:8px 0 0;color:var(--text-dim)}
+.revisor{display:flex;gap:16px;align-items:center;margin:40px 0 0;padding:18px 20px;border:1px solid var(--border);border-radius:18px;background:var(--surface)}
+.revisor .ini{flex:none;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;font-family:var(--serif);font-size:1.3rem;color:#fff;background:linear-gradient(135deg,var(--n3),var(--n1))}
+.revisor p{margin:0;font-size:.92rem;color:var(--text-dim)} .revisor b{color:var(--text);font-size:1rem}
+.firma{display:flex;align-items:center;gap:22px;flex-wrap:wrap;margin:44px 0 0;padding:22px 24px;border:1px solid var(--border);border-radius:20px;background:var(--surface)}
+.firma img{width:min(260px,70vw);height:auto;display:block}
+:root[data-tema="oscuro"] .firma img{filter:brightness(0) invert(.94)}
+.firma p{margin:0;font-size:.92rem;color:var(--text-dim);max-width:34em} .firma b{display:block;color:var(--text);font-size:1rem;margin-bottom:2px}
+.creditos{font-size:.84rem;color:var(--text-dim);border-top:1px solid var(--border);margin-top:28px;padding-top:14px}
+.creditos li{margin:4px 0}
+footer{background:var(--navy-950);color:#8b92a0;font-size:.85rem;padding:26px 0;margin-top:56px}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+footer a{color:#8b92a0;margin-right:16px}
+
+@media (max-width:920px){
+  .app{grid-template-columns:1fr;margin-top:-80px}
+  .sticky{position:static}
+  .tarjetas,.siguiente{grid-template-columns:1fr}
+  .movil-barra{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:50;align-items:center;justify-content:space-between;gap:10px;background:var(--n1);color:#fff;border-radius:16px;padding:10px 14px 10px 18px;box-shadow:0 14px 30px -10px rgba(0,0,0,.5);transform:translateY(140%);transition:transform .25s}
+  .movil-barra.ver{transform:none}
+  .movil-barra b{font-family:var(--serif);font-size:1.45rem;font-variant-numeric:tabular-nums}
+  .movil-barra span{font-size:.8rem;color:rgba(255,255,255,.75);display:block}
+  .movil-barra a{background:linear-gradient(90deg,var(--cian),var(--violeta));color:#1d130c;font-weight:700;text-decoration:none;border-radius:10px;padding:9px 12px;font-size:.88rem}
+}
+@media (max-width:560px){
+  body{font-size:16px}
+  .topbar nav a:not(.cuenta){display:none}
+  .pregunta,.bloque-form{padding:16px}
+  .opciones{margin-left:0}
+  .pregunta .ayuda{margin-left:0}
+  .campos.tres{grid-template-columns:1fr 1fr}
+  .hero{padding:32px 0 108px}
+}
+@media print{.utility,.topbar,.hero::before,footer,.acciones,.movil-barra,.azp-btn,.azr-btn{display:none!important} .hero{padding:20px 0;background:none;color:#000} .hero p.lead{color:#333} .app{margin-top:0}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+<style>input[type=date],input[type=time]{width:100%;font:500 1rem var(--sans);color:var(--text);background:var(--surface-2);border:1.5px solid transparent;border-radius:12px;padding:10px 12px}.aviso-fin{font-size:.84rem;color:var(--text-dim);margin:14px 0 0}</style>
+</head>
+<body>
+<div class="utility" data-nosnippet><div class="wrap"><div class="eco"><a href="https://aurzane.com/">AURZANE</a><a href="https://mind.aurzane.com/">MIND</a><a href="https://ovp.aurzane.com/">OVP</a><a href="https://nexus.aurzane.com/">NEXUS</a><a class=activo href="https://live.aurzane.com/">LIVE</a><a href="https://learn.aurzane.com/">LEARN</a><a href="https://build.aurzane.com/">BUILD</a></div><button type="button" id="btnTema">🌓 Tema</button></div></div>
+<header class="topbar" data-nosnippet><div class="wrap">
+<a class="brand" href="https://live.aurzane.com/">AUR<span class="z">Z</span>ANE<small>/ LIVE</small></a>
+<nav aria-label="LIVE"><a href="/calculadora-ovulacion/">Ovulación</a><a href="/calculadora-embarazo/">Embarazo</a><a href="/calculadora-peso-ideal/" aria-current="page">Peso ideal</a><a href="/calculadora-calorias/">Calorías</a><a href="/calculadora-sueno/">Sueño</a><a href="/test-de-bienestar/">Bienestar</a><a class="cuenta" href="https://aurzane.com/mi-aurzane.html">👤 Mi AURZANE</a></nav>
+</div></header>
+<section class="hero"><div class="wrap">
+<p class="migas"><a href="https://live.aurzane.com/">LIVE</a><span>/</span>Calculadora de peso ideal</p>
+<span class="pre">⚖️ Rango saludable de la OMS</span>
+<h1>Tu peso ideal <span>para tu altura</span></h1>
+<p class="lead">Escribe tu altura y tu sexo. Te mostramos el rango de peso saludable que recomienda la OMS y lo que dicen las fórmulas médicas más usadas.</p>
+<ul class="chips"><li>📏 Rango OMS</li><li>🧮 4 fórmulas médicas</li><li>🎯 Tu diferencia</li></ul>
+</div></section>
+
+<div class="wrap">
+<div class="app">
+  <div class="panel">
+    <div class="bloque-form">
+      <h3>Tus datos</h3>
+      <div class="campos">
+        <div class="campo" style="grid-column:1/-1"><label>Sexo</label><div class="seg" id="sexo"><button type="button" data-v="m">Mujer</button><button type="button" data-v="h">Hombre</button></div></div>
+        <div class="campo"><label for="altura">Altura</label><div class="entrada"><input type="number" id="altura" value="165" min="0" step="1" inputmode="decimal"><span>cm</span></div></div>
+        <div class="campo"><label for="peso">Peso actual (opcional)</label><div class="entrada"><input type="number" id="peso" value="62" min="0" step="0.1" inputmode="decimal"><span>kg</span></div></div>
+      </div>
+    </div>
+  </div>
+
+  <aside class="panel res sticky" id="resultado" aria-live="polite">
+    <div class="res-top"><h2>Tu peso saludable</h2><div class="grande" id="grande">–</div><p class="sub2" id="grandeSub"></p><span class="nivel ok" id="nivel"><i></i><span></span></span></div>
+    <div class="res-cuerpo">
+      <div class="linea total"><span id="rIdealL"><b>Peso de referencia (IMC 22)</b></span><b id="rIdeal"></b></div>
+      <div class="linea"><span id="rDevineL">Fórmula de Devine</span><b id="rDevine"></b></div>
+      <div class="linea"><span id="rRobinsonL">Fórmula de Robinson</span><b id="rRobinson"></b></div>
+      <div class="linea"><span id="rMillerL">Fórmula de Miller</span><b id="rMiller"></b></div>
+      <div class="linea"><span id="rHamwiL">Fórmula de Hamwi</span><b id="rHamwi"></b></div>
+      <div class="linea"><span id="rImcL">Tu IMC actual</span><b id="rImc"></b></div>
+      <div class="linea total"><span id="rDifL"><b>Diferencia con el rango</b></span><b id="rDif"></b></div>
+      <p id="nota" style="font-size:.86rem;color:var(--text-dim);margin:12px 0 0"></p>
+    </div>
+    <div class="acciones"><button class="btn btn-osc" id="compartir" type="button">Compartir este cálculo</button><button class="btn btn-linea" type="button" onclick="window.print()">Guardar en PDF</button></div>
+    <p class="msg" id="msg"></p>
+  </aside>
+</div>
+
+<section class="bloque">
+  <h2 class="t">Peso saludable por altura</h2>
+  <p class="sub">Rango de peso con un IMC entre 18,5 y 24,9, el que la OMS considera saludable para personas adultas.</p>
+  <div class="panel" style="padding:8px 20px"><div class="scroll"><table class="tabla" id="tablaPeso"></table></div></div>
+</section>
+<section class="bloque">
+  <h2 class="t">Más allá del número</h2>
+  <div class="tarjetas">
+    <div class="tcard"><div class="big">18,5 a 24,9</div><h3>IMC saludable</h3><p>Es el criterio de la OMS para adultos. No distingue músculo de grasa: una persona muy musculada puede tener un IMC alto y estar sana.</p></div>
+    <div class="tcard"><div class="big">&lt; 0,5</div><h3>Cintura entre altura</h3><p>Divide tu perímetro de cintura entre tu altura. Por debajo de 0,5 el riesgo cardiovascular es menor: a veces dice más que el peso.</p></div>
+    <div class="tcard"><div class="big">Hábitos</div><h3>Lo que más cuenta</h3><p>Dormir bien, moverte a diario y comer variado mejoran tu salud aunque el peso cambie poco. Los cambios lentos son los que se mantienen.</p></div>
+  </div>
+</section>
+
+<section class="bloque">
+  <h2 class="t">Más herramientas para tu salud y tu día a día</h2>
+  <div class="siguiente">
+    <a class="scard" style="background:linear-gradient(150deg,#3a6070,#0f1a1f)" href="/calculadora-imc/"><span class="e">📏</span><b>Calculadora de IMC</b><span>Tu índice de masa corporal según la OMS.</span></a>
+    <a class="scard" style="background:linear-gradient(150deg,#5d6b2f,#1a1f0d)" href="/calculadora-calorias/"><span class="e">🥗</span><b>Calculadora de calorías</b><span>Cuántas calorías necesitas al día.</span></a>
+    <a class="scard" style="background:linear-gradient(150deg,#7a3f5c,#24101b)" href="/calculadora-ovulacion/"><span class="e">🌸</span><b>Calculadora de ovulación</b><span>Tus días fértiles y tu próxima regla.</span></a>
+  </div>
+</section>
+
+<section class="bloque">
+  <h2 class="t">Preguntas frecuentes</h2>
+  <details class="faq"><summary>¿Cuál es mi peso ideal según mi altura?</summary><p>La referencia más usada es el rango de peso con un IMC entre 18,5 y 24,9. Para 1,65 m va de unos 50 a 68 kg; para 1,75 m, de unos 57 a 76 kg. Dentro de ese rango, el mejor peso depende de tu complexión, tu músculo y tu salud.</p></details>
+  <details class="faq"><summary>¿Qué fórmula de peso ideal es la mejor?</summary><p>Ninguna es perfecta. Las fórmulas de Devine (1974), Robinson (1983), Miller (1983) y Hamwi (1964) nacieron para calcular dosis de medicamentos y dan una cifra única. El rango del IMC de la OMS es más útil como objetivo de salud.</p></details>
+  <details class="faq"><summary>¿Sirve para niños o adolescentes?</summary><p>No. En menores de 18 años el peso se valora con las tablas de crecimiento por edad y sexo de la OMS. Consulta con tu pediatra.</p></details>
+  <details class="faq"><summary>¿Cuánto peso puedo perder de forma saludable?</summary><p>Como referencia general, entre medio kilo y un kilo por semana. Si tienes alguna enfermedad, estás embarazada o has perdido peso sin buscarlo, consulta antes con tu médico.</p></details>
+  <ul class="creditos">
+    <li>Rango de IMC saludable: Organización Mundial de la Salud (OMS), clasificación del estado nutricional en adultos.</li>
+    <li>Fórmulas: Devine (1974), Robinson y cols. (1983), Miller y cols. (1983) y Hamwi (1964). Pensadas para alturas desde 152 cm.</li>
+    <li>Cintura entre altura: Ashwell y Gibson (2016), BMJ Open 6:e010159.</li>
+  </ul>
+  <p class="aviso-fin">Resultado orientativo con fines informativos. No sustituye la valoración de un profesional sanitario: si tienes dudas sobre tu salud, consulta con tu médico.</p>
+</section>
+</div>
+<div class="movil-barra" id="movilBarra"><div><span>Peso saludable</span><b id="movilValor">–</b></div><a href="#resultado">Ver detalle</a></div>
+
+<footer><div class="wrap"><span>© 2026 AURZANE LIVE · Herramienta gratuita y orientativa</span><span><a href="https://live.aurzane.com/">LIVE</a><a href="https://aurzane.com/">AURZANE</a><a href="https://aurzane.com/privacidad.html">Privacidad</a></span></div></footer>
+<script>
+(function(){
+  var b=document.getElementById('btnTema');
+  if(b) b.addEventListener('click',function(){var o=document.documentElement.getAttribute('data-tema')==='oscuro';if(o)document.documentElement.removeAttribute('data-tema');else document.documentElement.setAttribute('data-tema','oscuro');try{localStorage.setItem('aurzane-tema',o?'claro':'oscuro');}catch(e){}});
+})();
+window.AZ={
+  fmt:function(n,d){return Number(n).toLocaleString('es-ES',{minimumFractionDigits:d||0,maximumFractionDigits:d||0,useGrouping:'always'});},
+  eur:function(n){return AZ.fmt(Math.round(n))+' €';},
+  ls:function(k,v){try{if(v===undefined)return JSON.parse(localStorage.getItem(k)||'null');localStorage.setItem(k,JSON.stringify(v));}catch(e){return null;}},
+  medidor:function(el,valor,max,texto,sub){
+    var p=Math.max(0,Math.min(1,valor/max)),a0=Math.PI,a=a0-p*Math.PI,r=88,cx=110,cy=110;
+    var x=cx+r*Math.cos(a),y=cy-r*Math.sin(a),large=0;
+    var ticks='';for(var i=0;i<=10;i++){var t=a0-i/10*Math.PI;ticks+='<line x1="'+(cx+(r-22)*Math.cos(t)).toFixed(1)+'" y1="'+(cy-(r-22)*Math.sin(t)).toFixed(1)+'" x2="'+(cx+(r-15)*Math.cos(t)).toFixed(1)+'" y2="'+(cy-(r-15)*Math.sin(t)).toFixed(1)+'" stroke="rgba(255,255,255,.35)" stroke-width="2"/>';}
+    el.innerHTML='<svg viewBox="0 0 220 128" aria-hidden="true"><defs><linearGradient id="gm" x1="0" x2="1"><stop offset="0" stop-color="var(--cian)"/><stop offset="1" stop-color="var(--violeta)"/></linearGradient></defs>'+
+      '<path d="M22 110 A88 88 0 0 1 198 110" fill="none" stroke="rgba(255,255,255,.14)" stroke-width="16" stroke-linecap="round"/>'+
+      (p>0.001?'<path d="M22 110 A88 88 0 '+large+' 1 '+x.toFixed(1)+' '+y.toFixed(1)+'" fill="none" stroke="url(#gm)" stroke-width="16" stroke-linecap="round"/>':'')+ticks+'</svg>'+
+      '<div class="valor"><b>'+texto+'</b><span>'+sub+'</span></div>';
+  },
+  compartir:function(titulo,texto,msgEl){
+    var url=location.href;
+    if(navigator.share){navigator.share({title:titulo,text:texto,url:url}).catch(function(){});return;}
+    if(navigator.clipboard){navigator.clipboard.writeText(texto+' '+url).then(function(){if(msgEl)msgEl.textContent='Enlace copiado. Pégalo donde quieras compartirlo.';},function(){if(msgEl)msgEl.textContent=url;});}
+    else if(msgEl) msgEl.textContent=url;
+  },
+  // Pinta preguntas de opción única. preguntas: [{id,t,ayuda?,fila?,ops:[[valor,texto],...]}]
+  cuestionario:function(cont,preguntas,resp,alCambiar){
+    var h='';
+    preguntas.forEach(function(p,i){
+      h+='<div class="pregunta" id="p-'+p.id+'" role="group" aria-labelledby="t-'+p.id+'"><h3 id="t-'+p.id+'"><span class="n">'+(i+1)+'</span><span>'+p.t+'</span></h3>'+(p.ayuda?'<p class="ayuda">'+p.ayuda+'</p>':'')+'<div class="opciones'+(p.fila?' fila':'')+'">';
+      p.ops.forEach(function(o){h+='<button type="button" class="op" data-p="'+p.id+'" data-v="'+o[0]+'" aria-pressed="'+(resp[p.id]===o[0]?'true':'false')+'"><i></i><span>'+o[1]+'</span></button>';});
+      h+='</div></div>';
+    });
+    cont.innerHTML=h;
+    cont.addEventListener('click',function(e){
+      var b=e.target.closest('.op');if(!b)return;
+      var id=b.getAttribute('data-p'),v=b.getAttribute('data-v'),num=Number(v);resp[id]=isNaN(num)?v:num;
+      cont.querySelectorAll('.op[data-p="'+id+'"]').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});
+      var caja=document.getElementById('p-'+id);caja.classList.remove('falta');
+      var idx=preguntas.findIndex(function(p){return p.id===id;}),sig=preguntas[idx+1];
+      if(sig&&resp[sig.id]===undefined&&window.innerWidth<920){var el=document.getElementById('p-'+sig.id);setTimeout(function(){el.scrollIntoView({behavior:'smooth',block:'center'});},160);}
+      alCambiar&&alCambiar();
+    });
+  },
+  faltan:function(preguntas,resp){
+    var f=preguntas.filter(function(p){return resp[p.id]===undefined;});
+    f.forEach(function(p){document.getElementById('p-'+p.id).classList.add('falta');});
+    if(f.length)document.getElementById('p-'+f[0].id).scrollIntoView({behavior:'smooth',block:'center'});
+    return f.length;
+  },
+  // Imagen 1080x1350 del resultado para compartir. r={titulo,valor,max,unidad,nivel,frase,c1,c2}
+  imagen:function(r,msgEl){
+    var W=1080,H=1350,c=document.createElement('canvas');c.width=W;c.height=H;var x=c.getContext('2d');
+    var cs=getComputedStyle(document.documentElement),c1=r.c1||cs.getPropertyValue('--n1').trim(),c2=r.c2||cs.getPropertyValue('--n3').trim(),a1=cs.getPropertyValue('--cian').trim(),a2=cs.getPropertyValue('--violeta').trim();
+    var g=x.createRadialGradient(W*.9,0,50,W*.6,H*.4,H);g.addColorStop(0,c2);g.addColorStop(1,c1);x.fillStyle=g;x.fillRect(0,0,W,H);
+    x.fillStyle='rgba(255,255,255,.07)';for(var i=0;i<W;i+=36)for(var j=0;j<H;j+=36){x.beginPath();x.arc(i,j,2,0,7);x.fill();}
+    var serif='"Bodoni Moda",Georgia,serif',sans='"Instrument Sans",system-ui,sans-serif';
+    x.fillStyle='#fff';x.font='700 44px '+serif;x.fillText('AURZANE',80,120);
+    x.fillStyle='rgba(255,255,255,.8)';x.font='600 38px '+sans;x.fillText(r.titulo,80,230);
+    var cx=W/2,cy=720,rad=300,p=Math.max(0,Math.min(1,r.valor/r.max));
+    x.lineCap='round';x.lineWidth=56;x.strokeStyle='rgba(255,255,255,.15)';x.beginPath();x.arc(cx,cy,rad,Math.PI,2*Math.PI);x.stroke();
+    var lg=x.createLinearGradient(cx-rad,0,cx+rad,0);lg.addColorStop(0,a1);lg.addColorStop(1,a2);x.strokeStyle=lg;
+    if(p>0){x.beginPath();x.arc(cx,cy,rad,Math.PI,Math.PI+p*Math.PI);x.stroke();}
+    x.textAlign='center';x.fillStyle='#fff';x.font='700 210px '+serif;x.fillText(r.valor,cx,cy-20);
+    x.font='500 40px '+sans;x.fillStyle='rgba(255,255,255,.75)';x.fillText(r.unidad||('sobre '+r.max),cx,cy+50);
+    x.font='700 54px '+sans;x.fillStyle='#fff';x.fillText(r.nivel,cx,cy+170);
+    if(r.frase){x.font='400 36px '+sans;x.fillStyle='rgba(255,255,255,.82)';var pal=r.frase.split(' '),l='',y=cy+250;pal.forEach(function(w){if(x.measureText(l+w).width>860){x.fillText(l.trim(),cx,y);y+=50;l='';}l+=w+' ';});x.fillText(l.trim(),cx,y);}
+    x.font='600 31px '+sans;x.fillStyle=a1;x.fillText('Haz el tuyo gratis: '+location.host+location.pathname,cx,H-90);
+    c.toBlob(function(b){
+      var f=new File([b],'mi-resultado-aurzane.png',{type:'image/png'});
+      if(navigator.canShare&&navigator.canShare({files:[f]})){navigator.share({files:[f],title:r.titulo,text:'Mi resultado en '+r.titulo+'. Haz el tuyo gratis: '+location.href.split('#')[0]}).catch(function(){});}
+      else{var a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='mi-resultado-aurzane.png';a.click();if(msgEl)msgEl.textContent='Imagen descargada. Súbela a tus historias o envíala por WhatsApp.';}
+    },'image/png');
+  },
+  barraMovil:function(objetivo,barra){
+    if(!('IntersectionObserver' in window)||!objetivo||!barra)return;
+    new IntersectionObserver(function(es){es.forEach(function(e){barra.classList.toggle('ver',!e.isIntersecting&&window.scrollY>300);});},{threshold:0.05}).observe(objetivo);
+    window.addEventListener('scroll',function(){if(window.scrollY<300)barra.classList.remove('ver');},{passive:true});
+  }
+};
+</script>
+<script>(function(){
+var $=function(id){return document.getElementById(id);};
+var n=function(id){var v=parseFloat(String($(id).value).replace(',','.'));return isFinite(v)?v:0;};
+var st={"sexo": "m"};
+function seg(id,k){var el=$(id);if(!el)return;el.addEventListener('click',function(ev){var b=ev.target.closest('button');if(!b)return;st[k]=b.getAttribute('data-v');Array.prototype.forEach.call(el.querySelectorAll('button'),function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});pintar();});Array.prototype.forEach.call(el.querySelectorAll('button'),function(x){x.setAttribute('aria-pressed',x.getAttribute('data-v')===st[k]?'true':'false');});}
+function nivel(clase,txt){var e=$('nivel');e.className='nivel '+clase;e.querySelector('span').textContent=txt;}
+function hash(ids){var q=new URLSearchParams();ids.forEach(function(k){q.set(k,$(k).value);});Object.keys(st).forEach(function(k){q.set(k,st[k]);});history.replaceState(null,'','#'+q.toString());}
+(function(){var q=new URLSearchParams(location.hash.slice(1));q.forEach(function(v,k){if($(k)&&$(k).tagName!=='DIV')$(k).value=v;else if(k in st)st[k]=v;});})();
+
+seg('sexo','sexo');
+function pintar(){
+  var cm=n('altura'),m=cm/100,h=st.sexo==='h',pul=Math.max(cm/2.54-60,0),peso=n('peso');
+  if(cm<100||cm>230){$('grande').textContent='–';$('grandeSub').textContent='Escribe una altura entre 100 y 230 cm';return;}
+  var a=18.5*m*m,b=24.9*m*m,ref=22*m*m;
+  $('grande').textContent=AZ.fmt(a,0)+' – '+AZ.fmt(b,0)+' kg';$('movilValor').textContent=AZ.fmt(a,0)+'–'+AZ.fmt(b,0)+' kg';
+  $('grandeSub').textContent='para '+AZ.fmt(m,2)+' m de altura, según la OMS';
+  var dev=(h?50:45.5)+2.3*pul,rob=(h?52:49)+(h?1.9:1.7)*pul,mil=(h?56.2:53.1)+(h?1.41:1.36)*pul,ham=(h?48:45.5)+(h?2.7:2.2)*pul;
+  $('rIdeal').textContent=AZ.fmt(ref,1)+' kg';$('rDevine').textContent=AZ.fmt(dev,1)+' kg';$('rRobinson').textContent=AZ.fmt(rob,1)+' kg';$('rMiller').textContent=AZ.fmt(mil,1)+' kg';$('rHamwi').textContent=AZ.fmt(ham,1)+' kg';
+  if(peso>0){var imc=peso/(m*m),dif=peso<a?a-peso:peso>b?peso-b:0;
+    $('rImc').textContent=AZ.fmt(imc,1);$('rDif').textContent=dif?(peso<a?'Te faltan ':'Te sobran ')+AZ.fmt(dif,1)+' kg':'Estás dentro';
+    nivel(dif===0?'ok':imc<17||imc>=30?'mal':'medio',dif===0?'Peso saludable':imc<18.5?'Por debajo del rango':imc<30?'Por encima del rango':'Obesidad según la OMS');
+  }else{$('rImc').textContent='–';$('rDif').textContent='–';nivel('ok','Rango saludable de la OMS');}
+  $('nota').textContent=(cm<152?'Las fórmulas médicas no están pensadas para alturas por debajo de 152 cm: usa el rango de la OMS. ':'')+'El IMC no distingue músculo de grasa. Si tienes una enfermedad o estás embarazada, tu peso objetivo lo marca tu médico.';
+  var filas='<tr><th>Altura</th><th>Peso saludable</th><th>Referencia (IMC 22)</th></tr>';
+  for(var x=150;x<=195;x+=5){var mm=x/100;filas+='<tr data-a="'+x+'" style="cursor:pointer"><td>'+x+' cm</td><td>'+AZ.fmt(18.5*mm*mm,0)+' – '+AZ.fmt(24.9*mm*mm,0)+' kg</td><td>'+AZ.fmt(22*mm*mm,1)+' kg</td></tr>';}
+  $('tablaPeso').innerHTML=filas;
+  hash(['altura','peso']);
+}
+$('tablaPeso').addEventListener('click',function(e){var tr=e.target.closest('tr[data-a]');if(!tr)return;$('altura').value=tr.getAttribute('data-a');pintar();$('resultado').scrollIntoView({behavior:'smooth',block:'start'});});
+
+Array.prototype.forEach.call(document.querySelectorAll('.app input,.app select'),function(i){i.addEventListener('input',pintar);});
+pintar();document.body.classList.add('hecho');
+$('compartir').addEventListener('click',function(){AZ.compartir("Calculadora de peso ideal","Calcula tu peso ideal:",$('msg'));});
+AZ.barraMovil($('resultado'),$('movilBarra'));
+})();
+</script>
+</body>
+</html>

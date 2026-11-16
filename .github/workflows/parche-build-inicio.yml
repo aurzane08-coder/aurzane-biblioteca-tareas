@@ -1,4 +1,4 @@
-name: Portada de BUILD
+name: Portadas de BUILD y LIVE
 on:
   push:
     paths: ['ai/parches/build_inicio.py']
@@ -21,4 +21,4 @@ jobs:
           if [ -n "$SG_PASS" ]; then ssh-keygen -p -P "$SG_PASS" -N "" -f ~/.ssh/id >/dev/null; fi
           SSH="ssh -i $HOME/.ssh/id -p ${SG_PORT:-18765} -o StrictHostKeyChecking=accept-new $SG_USER@$SG_HOST"
           $SSH 'python3 - www' < ai/parches/build_inicio.py
-          for h in build.aurzane.com; do $SSH "site-tools-client domain-all update id=$h flush_cache=1 >/dev/null 2>&1" || true; done
+          for h in build.aurzane.com live.aurzane.com; do $SSH "site-tools-client domain-all update id=$h flush_cache=1 >/dev/null 2>&1" || true; done

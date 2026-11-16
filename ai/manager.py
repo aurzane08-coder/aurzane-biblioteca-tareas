@@ -1080,7 +1080,7 @@ def tipo_url(u):
                  ('Bibliotecas y lectura', r'biblioteca|/libros|/recientes|/research|/frases|/leer'), ('Universidades', r'/universidades')):
         if re.search(r, p): return k
     return 'Páginas'
-NOMBRE_MUNDO = {'AURZANE': 'AURZANE', 'MIND': 'MIND · Mente y tests', 'NEXUS': 'NEXUS · Universidades', 'LIVE': 'LIVE · Bienestar y salud', 'LEARN': 'LEARN · Cursos', 'BUILD': 'BUILD · Vivienda y dinero', 'OVP': 'OVP · Orientación vocacional'}
+NOMBRE_MUNDO = {'AURZANE': 'AURZANE', 'MIND': 'MIND · Mente y tests', 'NEXUS': 'NEXUS · Universidades', 'LIVE': 'LIVE · Salud y día a día', 'LEARN': 'LEARN · Cursos', 'BUILD': 'BUILD · Dinero, ingresos y vivienda', 'OVP': 'OVP · Orientación vocacional'}
 ORDEN = ['AURZANE', 'MIND', 'NEXUS', 'LIVE', 'LEARN', 'BUILD', 'OVP']
 OCULTAR = re.compile(r'/(admin|panel|ai)/|admin|generar-informe|-cliente\.html|restablecer|google[0-9a-f]+\.html|/articulo\.html$|/cursos\.html$')
 mapa_html = ''

@@ -9,12 +9,25 @@ Uso: python3 herramientas/build_calculadoras.py"""
 import json, os, re, html
 
 R = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-BASE = os.path.join(R, 'traer', 'servidor', 'build.aurzane.com', 'calculadora-sueldo-neto', 'index.html')
-OUT = os.path.join(R, 'publicar', 'build.aurzane.com')
-SRC = open(BASE, encoding='utf-8').read()
-CSS = SRC[SRC.find('<style>'):SRC.find('</style>') + 8]
-PIE = SRC[SRC.find('<footer>'):SRC.rfind('<script>(function(){')]   # pie + utilidades comunes AZ
-CSS_EXTRA = '<style>input[type=date]{width:100%;font:500 1rem var(--sans);color:var(--text);background:var(--surface-2);border:1.5px solid transparent;border-radius:12px;padding:10px 12px}.aviso-fin{font-size:.84rem;color:var(--text-dim);margin:14px 0 0}</style>'
+def shell(host, ruta):
+    s = open(os.path.join(R, 'traer', 'servidor', host, ruta, 'index.html'), encoding='utf-8').read()
+    return dict(css=s[s.find('<style>'):s.find('</style>') + 8], pie=s[s.find('<footer>'):s.rfind('<script>(function(){')],
+                theme=(re.search(r'<meta name="theme-color" content="([^"]+)"', s) or [0, '#1d1915'])[1])
+
+
+MUNDOS = {
+    'build': dict(host='build.aurzane.com', N='BUILD', cat='FinanceApplication', mas='Más herramientas para tu dinero y tu casa',
+                  nav=[('calculadora-hipoteca', 'Hipoteca'), ('calculadora-gastos-compra-vivienda', 'Gastos compra'), ('calculadora-rentabilidad-alquiler', 'Alquiler'),
+                       ('calculadora-sueldo-neto', 'Sueldo'), ('calculadora-ahorro', 'Ahorro')],
+                  aviso='Cálculo orientativo con fines informativos y educativos. No es asesoramiento financiero, fiscal ni legal: para decidir, consulta tu caso con un profesional.',
+                  **shell('build.aurzane.com', 'calculadora-sueldo-neto')),
+    'live': dict(host='live.aurzane.com', N='LIVE', cat='HealthApplication', mas='Más herramientas para tu salud y tu día a día',
+                 nav=[('calculadora-ovulacion', 'Ovulación'), ('calculadora-embarazo', 'Embarazo'), ('calculadora-peso-ideal', 'Peso ideal'), ('calculadora-calorias', 'Calorías'),
+                      ('calculadora-sueno', 'Sueño'), ('test-de-bienestar', 'Bienestar')],
+                 aviso='Resultado orientativo con fines informativos. No sustituye la valoración de un profesional sanitario: si tienes dudas sobre tu salud, consulta con tu médico.',
+                 **shell('live.aurzane.com', 'calculadora-edad')),
+}
+CSS_EXTRA = '<style>input[type=date],input[type=time]{width:100%;font:500 1rem var(--sans);color:var(--text);background:var(--surface-2);border:1.5px solid transparent;border-radius:12px;padding:10px 12px}.aviso-fin{font-size:.84rem;color:var(--text-dim);margin:14px 0 0}</style>'
 
 TODAS = [
     ('calculadora-hipoteca', '🏠', 'Calculadora de hipoteca', 'Cuota fija o variable con el euríbor actual.', '#2f5d7c', '#0f1823'),
@@ -25,6 +38,15 @@ TODAS = [
     ('calculadora-ahorro', '🐷', 'Calculadora de ahorro', 'Cuánto ahorrar al mes para tu meta (50/30/20).', '#2e5b4a', '#0d1a15'),
     ('calculadora-jubilacion', '🌅', 'Calculadora de jubilación', 'Cuánto ahorrar para complementar tu pensión.', '#6a4a2a', '#1f150b'),
     ('calculadora-reforma', '🛠️', 'Calculadora de reforma', 'Presupuesto partida a partida con IVA.', '#3d6f8f', '#132433'),
+]
+TODAS += [
+    ('calculadora-ovulacion', '🌸', 'Calculadora de ovulación', 'Tus días fértiles y tu próxima regla.', '#7a3f5c', '#24101b'),
+    ('calculadora-embarazo', '🤰', 'Calculadora de embarazo', 'Semanas de embarazo y fecha probable de parto.', '#6b4a6e', '#1d1220'),
+    ('calculadora-peso-ideal', '⚖️', 'Peso ideal', 'Tu rango de peso saludable según tu altura.', '#2f6b5e', '#0d1f1b'),
+    ('calculadora-imc', '📏', 'Calculadora de IMC', 'Tu índice de masa corporal según la OMS.', '#3a6070', '#0f1a1f'),
+    ('calculadora-calorias', '🥗', 'Calculadora de calorías', 'Cuántas calorías necesitas al día.', '#5d6b2f', '#1a1f0d'),
+    ('calculadora-sueno', '🌙', 'Calculadora de sueño', 'A qué hora dormir para despertar descansado.', '#2d3a6b', '#0c1020'),
+    ('test-de-sueno', '😴', 'Test de sueño', '¿Duermes bien? Chequeo en 2 minutos.', '#3b3366', '#110e1f'),
 ]
 INTERES = ('https://live.aurzane.com/calculadora-interes-compuesto/', '📈', 'Interés compuesto', 'Cuánto crecen tus ahorros con los años.', '#2b4f6b', '#0c1520')
 
@@ -41,16 +63,16 @@ def tarjetas(slug, rel):
 
 
 def pagina(c):
-    url = f'https://build.aurzane.com/{c["slug"]}/'
+    M = MUNDOS[c.get('mundo', 'build')]; H = M['host']
+    url = f'https://{H}/{c["slug"]}/'
     faq_ld = [{'@type': 'Question', 'name': q, 'acceptedAnswer': {'@type': 'Answer', 'text': re.sub('<[^>]+>', '', a)}} for q, a in c['faq']]
     ld = {'@context': 'https://schema.org', '@graph': [
-        {'@type': 'WebApplication', 'name': c['nombre'], 'url': url, 'applicationCategory': 'FinanceApplication', 'operatingSystem': 'Web', 'inLanguage': 'es',
+        {'@type': 'WebApplication', 'name': c['nombre'], 'url': url, 'applicationCategory': M['cat'], 'operatingSystem': 'Web', 'inLanguage': 'es',
          'isAccessibleForFree': True, 'offers': {'@type': 'Offer', 'price': '0', 'priceCurrency': 'EUR'}, 'publisher': {'@type': 'Organization', 'name': 'AURZANE', 'url': 'https://aurzane.com/'}},
         {'@type': 'FAQPage', 'mainEntity': faq_ld}]}
     e = html.escape
-    nav = ''.join(f'<a href="/{s}/"{" aria-current=\"page\"" if s == c["slug"] else ""}>{n}</a>' for s, n in
-                  [('calculadora-hipoteca', 'Hipoteca'), ('calculadora-gastos-compra-vivienda', 'Gastos compra'), ('calculadora-rentabilidad-alquiler', 'Alquiler'),
-                   ('calculadora-sueldo-neto', 'Sueldo'), ('calculadora-ahorro', 'Ahorro')])
+    nav = ''.join(f'<a href="/{s}/"{" aria-current=\"page\"" if s == c["slug"] else ""}>{n}</a>' for s, n in M['nav'])
+    eco = ''.join(f'<a{" class=activo" if x == M["N"] else ""} href="https://{(x.lower() + ".") if x != "AURZANE" else ""}aurzane.com/">{x}</a>' for x in ['AURZANE', 'MIND', 'OVP', 'NEXUS', 'LIVE', 'LEARN', 'BUILD'])
     faq = '\n  '.join(f'<details class="faq"><summary>{q}</summary><p>{a}</p></details>' for q, a in c['faq'])
     cred = '\n    '.join(f'<li>{x}</li>' for x in c['creditos'])
     chips = ''.join(f'<li>{x}</li>' for x in c['chips'])
@@ -60,20 +82,20 @@ def pagina(c):
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://aurzane.com/aurzane-paleta.js"></script>
-<title>{e(c["titulo"])} | AURZANE BUILD</title>
+<title>{e(c["titulo"])} | AURZANE {M["N"]}</title>
 <meta name="description" content="{e(c["desc"])}">
 <link rel="canonical" href="{url}">
 <meta property="og:title" content="{e(c["og"])}">
 <meta property="og:description" content="{e(c["desc"])}">
 <meta property="og:type" content="website">
 <meta property="og:url" content="{url}">
-<meta property="og:image" content="https://build.aurzane.com/{c["ogimg"]}/og.jpg">
+<meta property="og:image" content="https://{H}/{c["ogimg"]}/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="es_ES">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://build.aurzane.com/{c["ogimg"]}/og.jpg">
-<meta name="theme-color" content="#1d1915">
+<meta name="twitter:image" content="https://{H}/{c["ogimg"]}/og.jpg">
+<meta name="theme-color" content="{M["theme"]}">
 <script>(function(){{ try {{ if (localStorage.getItem('aurzane-tema') === 'oscuro') document.documentElement.setAttribute('data-tema','oscuro'); }} catch(e){{}} }})();</script>
 <script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -81,17 +103,17 @@ def pagina(c):
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@500;700&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <meta name="google-adsense-account" content="ca-pub-8763758728010451">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8763758728010451" crossorigin="anonymous"></script>
-{CSS}
+{M["css"]}
 {CSS_EXTRA}
 </head>
 <body>
-<div class="utility" data-nosnippet><div class="wrap"><div class="eco"><a href="https://aurzane.com/">AURZANE</a><a href="https://mind.aurzane.com/">MIND</a><a href="https://ovp.aurzane.com/">OVP</a><a href="https://nexus.aurzane.com/">NEXUS</a><a href="https://live.aurzane.com/">LIVE</a><a href="https://learn.aurzane.com/">LEARN</a><a class=activo href="https://build.aurzane.com/">BUILD</a></div><button type="button" id="btnTema">🌓 Tema</button></div></div>
+<div class="utility" data-nosnippet><div class="wrap"><div class="eco">{eco}</div><button type="button" id="btnTema">🌓 Tema</button></div></div>
 <header class="topbar" data-nosnippet><div class="wrap">
-<a class="brand" href="https://build.aurzane.com/">AUR<span class="z">Z</span>ANE<small>/ BUILD</small></a>
-<nav aria-label="BUILD">{nav}<a class="cuenta" href="https://aurzane.com/mi-aurzane.html">👤 Mi AURZANE</a></nav>
+<a class="brand" href="https://{H}/">AUR<span class="z">Z</span>ANE<small>/ {M["N"]}</small></a>
+<nav aria-label="{M["N"]}">{nav}<a class="cuenta" href="https://aurzane.com/mi-aurzane.html">👤 Mi AURZANE</a></nav>
 </div></header>
 <section class="hero"><div class="wrap">
-<p class="migas"><a href="https://build.aurzane.com/">BUILD</a><span>/</span>{c["nombre"]}</p>
+<p class="migas"><a href="https://{H}/">{M["N"]}</a><span>/</span>{c["nombre"]}</p>
 <span class="pre">{c["pre"]}</span>
 <h1>{c["h1"]}</h1>
 <p class="lead">{c["lead"]}</p>
@@ -118,7 +140,7 @@ def pagina(c):
 {c["extra"]}
 
 <section class="bloque">
-  <h2 class="t">Más herramientas para tu dinero y tu casa</h2>
+  <h2 class="t">{M["mas"]}</h2>
   <div class="siguiente">
     {tarjetas(c["slug"], c["rel"])}
   </div>
@@ -130,12 +152,12 @@ def pagina(c):
   <ul class="creditos">
     {cred}
   </ul>
-  <p class="aviso-fin">Cálculo orientativo con fines informativos y educativos. No es asesoramiento financiero, fiscal ni legal: para decidir, consulta tu caso con un profesional.</p>
+  <p class="aviso-fin">{M["aviso"]}</p>
 </section>
 </div>
 <div class="movil-barra" id="movilBarra"><div><span>{c["movil"]}</span><b id="movilValor">–</b></div><a href="#resultado">Ver detalle</a></div>
 
-{PIE}<script>(function(){{
+{M["pie"]}<script>(function(){{
 var $=function(id){{return document.getElementById(id);}};
 var n=function(id){{var v=parseFloat(String($(id).value).replace(',','.'));return isFinite(v)?v:0;}};
 var st={json.dumps(c.get("st", {}))};
@@ -486,8 +508,178 @@ function pintar(){
 }
 '''))
 
+# ===== LIVE: salud y vida diaria (16/11/2026) =====================================================================
+# 6. Ovulación ----------------------------------------------------------------------------------------------------
+CALCS.append(dict(
+    mundo='live', slug='calculadora-ovulacion', ogimg='calculadora-embarazo', nombre='Calculadora de ovulación',
+    titulo='Calculadora de ovulación y días fértiles',
+    og='¿Cuándo ovulas? Calcula tus días fértiles',
+    desc='Calcula tus días fértiles y el día de ovulación a partir de tu última regla y la duración de tu ciclo, con el calendario de los próximos meses y la fecha de tu próxima regla.',
+    pre='🌸 Ciclo menstrual', h1='Tus días fértiles, <span>mes a mes</span>',
+    lead='Escribe el primer día de tu última regla y cuánto suele durar tu ciclo. Te mostramos cuándo ovulas, tus días más fértiles y cuándo te tocará la próxima regla.',
+    chips=['📅 Próximos 6 ciclos', '🥚 Día de ovulación', '🧪 Cuándo hacer el test'],
+    form=bloque('Tu ciclo', ['<div class="campo" style="grid-column:1/-1"><label for="fur">Primer día de tu última regla</label><input type="date" id="fur"></div>',
+                             campo('ciclo', 'Duración de tu ciclo', 28, uni='días'), campo('regla', 'Días de regla', 5, uni='días')]),
+    restit='Tu próxima ovulación', movil='Ovulación',
+    lineas=lineas([('rFert', 'Días fértiles', 1), ('rTop', 'Días de máxima fertilidad', 0), ('rRegla', 'Próxima regla', 0), ('rTest', 'Test de embarazo fiable desde', 0)]),
+    extra="""<section class="bloque">
+  <h2 class="t">Tus próximos ciclos</h2>
+  <p class="sub">Calendario orientativo para un ciclo regular. Si tus ciclos cambian mucho de un mes a otro, las fechas reales pueden variar.</p>
+  <div class="panel" style="padding:8px 20px"><div class="scroll"><table class="tabla" id="tablaCiclos"></table></div></div>
+</section>
+<section class="bloque">
+  <h2 class="t">Cómo se calcula</h2>
+  <div class="tarjetas">
+    <div class="tcard"><div class="big">14 días</div><h3>La ovulación</h3><p>La fase que va de la ovulación a la siguiente regla dura unos 14 días en la mayoría de las mujeres. Por eso se cuenta hacia atrás desde la próxima regla.</p></div>
+    <div class="tcard"><div class="big">6 días</div><h3>La ventana fértil</h3><p>Los 5 días antes de la ovulación y el propio día: los espermatozoides sobreviven hasta 5 días y el óvulo, unas 24 horas.</p></div>
+    <div class="tcard"><div class="big">± días</div><h3>Ciclos irregulares</h3><p>Si tu ciclo varía, estas fechas son solo una aproximación. Los test de ovulación de farmacia y la temperatura basal ayudan a afinar.</p></div>
+  </div>
+</section>""",
+    faq=[('¿Cuáles son mis días fértiles?', 'Los 5 días anteriores a la ovulación y el día de la ovulación. En un ciclo de 28 días, la ovulación suele ser hacia el día 14, así que los días fértiles irían del 9 al 14 contando desde el primer día de la regla.'),
+         ('¿Cómo sé cuándo ovulo si mi ciclo no es de 28 días?', 'Resta 14 a la duración de tu ciclo: con un ciclo de 32 días, ovularías hacia el día 18. Es una aproximación: la fase final del ciclo puede durar entre 10 y 16 días.'),
+         ('¿Sirve esta calculadora como método anticonceptivo?', 'No. Los métodos basados en el calendario fallan con frecuencia, sobre todo con ciclos irregulares. Si no buscas un embarazo, consulta con tu médico o en tu centro de planificación familiar qué método te conviene.'),
+         ('¿Cuándo hago el test de embarazo?', 'Los test de orina son más fiables a partir del primer día de retraso de la regla. Si da negativo y la regla no llega, repítelo a los pocos días o consulta con tu médico.')],
+    creditos=['Ventana fértil de 6 días: Wilcox, Weinberg y Baird (1995), «Timing of sexual intercourse in relation to ovulation», New England Journal of Medicine 333:1517-21.',
+              'Duración de la fase lútea y del ciclo: American College of Obstetricians and Gynecologists (ACOG) y NHS.',
+              'Cálculo orientativo para ciclos regulares. No es un método anticonceptivo ni sustituye la consulta ginecológica.'],
+    rel=['calculadora-embarazo', 'calculadora-peso-ideal', 'test-de-sueno'],
+    compartir='Calcula tus días fértiles:',
+    js=r"""
+var DIA=864e5;function iso(t){var d=new Date(t);return d.getUTCFullYear()+'-'+('0'+(d.getUTCMonth()+1)).slice(-2)+'-'+('0'+d.getUTCDate()).slice(-2);}
+function f(s){var p=String(s).split('-');return p.length===3?Date.UTC(+p[0],+p[1]-1,+p[2]):NaN;}
+var MES=['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'],SEM=['dom','lun','mar','mié','jue','vie','sáb'];
+function fe(t,larga){var d=new Date(t);return (larga?SEM[d.getUTCDay()]+' ':'')+d.getUTCDate()+' '+MES[d.getUTCMonth()];}
+if(!$('fur').value){var h=new Date();$('fur').value=iso(Date.UTC(h.getFullYear(),h.getMonth(),h.getDate())-10*DIA);}
+function pintar(){
+  var fur=f($('fur').value),c=Math.min(Math.max(Math.round(n('ciclo'))||28,20),45),r=Math.min(Math.max(Math.round(n('regla'))||5,1),10);
+  if(!isFinite(fur)){$('grande').textContent='–';return;}
+  var h=new Date(),hoy=Date.UTC(h.getFullYear(),h.getMonth(),h.getDate()),k=0;
+  while(fur+(k+1)*c*DIA-14*DIA+DIA<hoy&&k<60)k++;
+  var ini=fur+k*c*DIA,ov=ini+(c-14)*DIA,prox=ini+c*DIA;
+  $('grande').textContent=fe(ov,true);$('movilValor').textContent=fe(ov);
+  var dd=Math.round((ov-hoy)/DIA);$('grandeSub').textContent=dd>0?'dentro de '+dd+' día'+(dd===1?'':'s'):dd===0?'hoy':'hace '+(-dd)+' día'+(dd===-1?'':'s');
+  var fert=hoy>=ov-5*DIA&&hoy<=ov+DIA;nivel(fert?'ok':'medio',fert?'Hoy estás en tus días fértiles':'Hoy no es un día fértil');
+  $('rFert').textContent='del '+fe(ov-5*DIA)+' al '+fe(ov+DIA);$('rTop').textContent=fe(ov-2*DIA)+' a '+fe(ov);
+  $('rRegla').textContent=fe(prox,true);$('rTest').textContent=fe(prox+DIA,true);
+  $('nota').textContent='Ciclo de '+c+' días: ovulas hacia el día '+(c-14)+' de tu ciclo. Si buscas embarazo, las relaciones en los 2 o 3 días antes de la ovulación son las que más probabilidades tienen.';
+  var filas='<tr><th>Ciclo</th><th>Regla</th><th>Días fértiles</th><th>Ovulación</th></tr>';
+  for(var i=0;i<6;i++){var a=ini+i*c*DIA,o=a+(c-14)*DIA;filas+='<tr><td>'+(i+1)+'</td><td>'+fe(a)+' – '+fe(a+(r-1)*DIA)+'</td><td>'+fe(o-5*DIA)+' – '+fe(o+DIA)+'</td><td><b>'+fe(o)+'</b></td></tr>';}
+  $('tablaCiclos').innerHTML=filas;
+  hash(['fur','ciclo','regla']);
+}
+"""))
+
+# 7. Peso ideal ---------------------------------------------------------------------------------------------------
+CALCS.append(dict(
+    mundo='live', slug='calculadora-peso-ideal', ogimg='calculadora-imc', nombre='Calculadora de peso ideal',
+    titulo='Calculadora de peso ideal según altura y sexo',
+    og='¿Cuál es tu peso ideal? Calcúlalo con tu altura',
+    desc='Calcula tu peso ideal según tu altura y sexo: el rango de peso saludable de la OMS y las fórmulas de Devine, Robinson, Miller y Hamwi, con tu diferencia respecto al peso actual.',
+    pre='⚖️ Rango saludable de la OMS', h1='Tu peso ideal <span>para tu altura</span>',
+    lead='Escribe tu altura y tu sexo. Te mostramos el rango de peso saludable que recomienda la OMS y lo que dicen las fórmulas médicas más usadas.',
+    chips=['📏 Rango OMS', '🧮 4 fórmulas médicas', '🎯 Tu diferencia'],
+    st={'sexo': 'm'},
+    form=bloque('Tus datos', [segm('sexo', 'Sexo', [('m', 'Mujer'), ('h', 'Hombre')], col=True), campo('altura', 'Altura', 165, uni='cm'),
+                              campo('peso', 'Peso actual (opcional)', 62, uni='kg', paso='0.1')]),
+    restit='Tu peso saludable', movil='Peso saludable',
+    lineas=lineas([('rIdeal', 'Peso de referencia (IMC 22)', 1), ('rDevine', 'Fórmula de Devine', 0), ('rRobinson', 'Fórmula de Robinson', 0), ('rMiller', 'Fórmula de Miller', 0),
+                   ('rHamwi', 'Fórmula de Hamwi', 0), ('rImc', 'Tu IMC actual', 0), ('rDif', 'Diferencia con el rango', 1)]),
+    extra="""<section class="bloque">
+  <h2 class="t">Peso saludable por altura</h2>
+  <p class="sub">Rango de peso con un IMC entre 18,5 y 24,9, el que la OMS considera saludable para personas adultas.</p>
+  <div class="panel" style="padding:8px 20px"><div class="scroll"><table class="tabla" id="tablaPeso"></table></div></div>
+</section>
+<section class="bloque">
+  <h2 class="t">Más allá del número</h2>
+  <div class="tarjetas">
+    <div class="tcard"><div class="big">18,5 a 24,9</div><h3>IMC saludable</h3><p>Es el criterio de la OMS para adultos. No distingue músculo de grasa: una persona muy musculada puede tener un IMC alto y estar sana.</p></div>
+    <div class="tcard"><div class="big">&lt; 0,5</div><h3>Cintura entre altura</h3><p>Divide tu perímetro de cintura entre tu altura. Por debajo de 0,5 el riesgo cardiovascular es menor: a veces dice más que el peso.</p></div>
+    <div class="tcard"><div class="big">Hábitos</div><h3>Lo que más cuenta</h3><p>Dormir bien, moverte a diario y comer variado mejoran tu salud aunque el peso cambie poco. Los cambios lentos son los que se mantienen.</p></div>
+  </div>
+</section>""",
+    faq=[('¿Cuál es mi peso ideal según mi altura?', 'La referencia más usada es el rango de peso con un IMC entre 18,5 y 24,9. Para 1,65 m va de unos 50 a 68 kg; para 1,75 m, de unos 57 a 76 kg. Dentro de ese rango, el mejor peso depende de tu complexión, tu músculo y tu salud.'),
+         ('¿Qué fórmula de peso ideal es la mejor?', 'Ninguna es perfecta. Las fórmulas de Devine (1974), Robinson (1983), Miller (1983) y Hamwi (1964) nacieron para calcular dosis de medicamentos y dan una cifra única. El rango del IMC de la OMS es más útil como objetivo de salud.'),
+         ('¿Sirve para niños o adolescentes?', 'No. En menores de 18 años el peso se valora con las tablas de crecimiento por edad y sexo de la OMS. Consulta con tu pediatra.'),
+         ('¿Cuánto peso puedo perder de forma saludable?', 'Como referencia general, entre medio kilo y un kilo por semana. Si tienes alguna enfermedad, estás embarazada o has perdido peso sin buscarlo, consulta antes con tu médico.')],
+    creditos=['Rango de IMC saludable: Organización Mundial de la Salud (OMS), clasificación del estado nutricional en adultos.',
+              'Fórmulas: Devine (1974), Robinson y cols. (1983), Miller y cols. (1983) y Hamwi (1964). Pensadas para alturas desde 152 cm.',
+              'Cintura entre altura: Ashwell y Gibson (2016), BMJ Open 6:e010159.'],
+    rel=['calculadora-imc', 'calculadora-calorias', 'calculadora-ovulacion'],
+    compartir='Calcula tu peso ideal:',
+    js=r"""
+seg('sexo','sexo');
+function pintar(){
+  var cm=n('altura'),m=cm/100,h=st.sexo==='h',pul=Math.max(cm/2.54-60,0),peso=n('peso');
+  if(cm<100||cm>230){$('grande').textContent='–';$('grandeSub').textContent='Escribe una altura entre 100 y 230 cm';return;}
+  var a=18.5*m*m,b=24.9*m*m,ref=22*m*m;
+  $('grande').textContent=AZ.fmt(a,0)+' – '+AZ.fmt(b,0)+' kg';$('movilValor').textContent=AZ.fmt(a,0)+'–'+AZ.fmt(b,0)+' kg';
+  $('grandeSub').textContent='para '+AZ.fmt(m,2)+' m de altura, según la OMS';
+  var dev=(h?50:45.5)+2.3*pul,rob=(h?52:49)+(h?1.9:1.7)*pul,mil=(h?56.2:53.1)+(h?1.41:1.36)*pul,ham=(h?48:45.5)+(h?2.7:2.2)*pul;
+  $('rIdeal').textContent=AZ.fmt(ref,1)+' kg';$('rDevine').textContent=AZ.fmt(dev,1)+' kg';$('rRobinson').textContent=AZ.fmt(rob,1)+' kg';$('rMiller').textContent=AZ.fmt(mil,1)+' kg';$('rHamwi').textContent=AZ.fmt(ham,1)+' kg';
+  if(peso>0){var imc=peso/(m*m),dif=peso<a?a-peso:peso>b?peso-b:0;
+    $('rImc').textContent=AZ.fmt(imc,1);$('rDif').textContent=dif?(peso<a?'Te faltan ':'Te sobran ')+AZ.fmt(dif,1)+' kg':'Estás dentro';
+    nivel(dif===0?'ok':imc<17||imc>=30?'mal':'medio',dif===0?'Peso saludable':imc<18.5?'Por debajo del rango':imc<30?'Por encima del rango':'Obesidad según la OMS');
+  }else{$('rImc').textContent='–';$('rDif').textContent='–';nivel('ok','Rango saludable de la OMS');}
+  $('nota').textContent=(cm<152?'Las fórmulas médicas no están pensadas para alturas por debajo de 152 cm: usa el rango de la OMS. ':'')+'El IMC no distingue músculo de grasa. Si tienes una enfermedad o estás embarazada, tu peso objetivo lo marca tu médico.';
+  var filas='<tr><th>Altura</th><th>Peso saludable</th><th>Referencia (IMC 22)</th></tr>';
+  for(var x=150;x<=195;x+=5){var mm=x/100;filas+='<tr data-a="'+x+'" style="cursor:pointer"><td>'+x+' cm</td><td>'+AZ.fmt(18.5*mm*mm,0)+' – '+AZ.fmt(24.9*mm*mm,0)+' kg</td><td>'+AZ.fmt(22*mm*mm,1)+' kg</td></tr>';}
+  $('tablaPeso').innerHTML=filas;
+  hash(['altura','peso']);
+}
+$('tablaPeso').addEventListener('click',function(e){var tr=e.target.closest('tr[data-a]');if(!tr)return;$('altura').value=tr.getAttribute('data-a');pintar();$('resultado').scrollIntoView({behavior:'smooth',block:'start'});});
+"""))
+
+# 8. Sueño (ciclos) -----------------------------------------------------------------------------------------------
+CALCS.append(dict(
+    mundo='live', slug='calculadora-sueno', ogimg='test-de-sueno', nombre='Calculadora de sueño',
+    titulo='Calculadora de sueño: a qué hora dormir y despertar',
+    og='¿A qué hora te acuestas para despertar descansado?',
+    desc='Calcula a qué hora acostarte o despertarte para completar ciclos de sueño de unos 90 minutos, con las horas que recomiendan los expertos para tu edad.',
+    pre='🌙 Ciclos de sueño', h1='Despierta <span>entre ciclos, no en medio</span>',
+    lead='Dinos a qué hora quieres despertarte, o a qué hora te acuestas. Te proponemos horas que encajan con ciclos completos de sueño y con lo que necesitas a tu edad.',
+    chips=['⏰ Hora de dormir o de despertar', '🔄 Ciclos de 90 minutos', '👤 Según tu edad'],
+    st={'modo': 'despertar'},
+    form=bloque('Tu horario', [segm('modo', 'Quiero calcular', [('despertar', 'A qué hora dormir'), ('dormir', 'A qué hora despertar')], col=True),
+                               '<div class="campo"><label for="hora" id="horaL">Me quiero despertar a las</label><input type="time" id="hora" value="07:00"></div>',
+                               campo('lat', 'Minutos en quedarte dormido', 15, uni='min'),
+                               '<div class="campo" style="grid-column:1/-1"><label for="edad">Tu edad</label><select id="edad"><option value="0">14 a 17 años (8 a 10 h)</option><option value="1" selected>18 a 64 años (7 a 9 h)</option><option value="2">65 años o más (7 a 8 h)</option></select></div>']),
+    restit='Te recomendamos', movil='Hora',
+    lineas=lineas([('r6', '6 ciclos (9 h de sueño)', 0), ('r5', '5 ciclos (7 h 30 min)', 1), ('r4', '4 ciclos (6 h)', 0), ('r3', '3 ciclos (4 h 30 min)', 0)]),
+    extra="""<section class="bloque">
+  <h2 class="t">Cuánto sueño necesitas</h2>
+  <div class="tarjetas">
+    <div class="tcard"><div class="big">7 a 9 h</div><h3>Personas adultas</h3><p>Es la recomendación de la National Sleep Foundation para 18 a 64 años. A partir de los 65, entre 7 y 8 horas.</p></div>
+    <div class="tcard"><div class="big">≈ 90 min</div><h3>Un ciclo de sueño</h3><p>Cada noche encadenas 4 o 5 ciclos de sueño ligero, profundo y REM. Despertar al final de uno suele dejar menos sensación de aturdimiento.</p></div>
+    <div class="tcard"><div class="big">Misma hora</div><h3>La regularidad</h3><p>Acostarte y levantarte a la misma hora, también el fin de semana, ayuda más que cualquier truco para dormir mejor.</p></div>
+  </div>
+</section>""",
+    faq=[('¿A qué hora me tengo que acostar para levantarme a las 7?', 'Para dormir 5 ciclos completos (7 horas y media) y contando 15 minutos para quedarte dormido, a las 23:15. Si te basta con 6 horas, a las 00:45; para 9 horas, a las 21:45.'),
+         ('¿Cuánto dura un ciclo de sueño?', 'Unos 90 minutos de media, aunque varía entre 70 y 120 minutos según la persona y el momento de la noche. Por eso estas horas son una guía, no una regla exacta.'),
+         ('¿Cuántas horas tengo que dormir?', 'La National Sleep Foundation recomienda de 8 a 10 horas entre los 14 y los 17 años, de 7 a 9 horas entre los 18 y los 64, y de 7 a 8 horas a partir de los 65.'),
+         ('¿Y si duermo las horas pero me levanto cansado?', 'Puede ser por horarios irregulares, ronquidos, apneas, estrés o el uso de pantallas antes de dormir. Si te pasa a menudo durante semanas, haz nuestro test de sueño y coméntalo con tu médico.')],
+    creditos=['Horas recomendadas: Hirshkowitz y cols. (2015), «National Sleep Foundation’s sleep time duration recommendations», Sleep Health 1(1):40-43.',
+              'Ciclos de sueño de unos 90 minutos: Carskadon y Dement, Principles and Practice of Sleep Medicine. La duración real varía entre personas.'],
+    rel=['test-de-sueno', 'calculadora-calorias', 'calculadora-peso-ideal'],
+    compartir='Calcula a qué hora dormir para despertar descansado:',
+    js=r"""
+seg('modo','modo');
+function hm(min){min=((Math.round(min)%1440)+1440)%1440;return ('0'+Math.floor(min/60)).slice(-2)+':'+('0'+min%60).slice(-2);}
+function pintar(){
+  var p=String($('hora').value||'07:00').split(':'),t=(+p[0])*60+(+p[1]||0),lat=Math.min(Math.max(n('lat'),0),120),ed=+$('edad').value,desp=st.modo==='despertar';
+  $('horaL').textContent=desp?'Me quiero despertar a las':'Me acuesto a las';
+  var res={};[6,5,4,3].forEach(function(k){res[k]=desp?t-k*90-lat:t+lat+k*90;});
+  var mejor=ed===0?6:5;
+  $('grande').textContent=hm(res[mejor]);$('movilValor').textContent=hm(res[mejor]);
+  $('grandeSub').textContent=(desp?'para acostarte y dormir ':'para despertarte tras ')+(mejor===6?'9 horas':'7 h 30 min');
+  nivel('ok',desp?'Acuéstate a esta hora':'Pon la alarma a esta hora');
+  [6,5,4,3].forEach(function(k){$('r'+k).textContent=hm(res[k]);$('r'+k+'L').innerHTML=(k===mejor?'<b>':'')+k+' ciclos ('+['','','','4 h 30 min','6 h','7 h 30 min','9 h'][k]+(k===mejor?' de sueño, recomendado)</b>':' de sueño)');});
+  $('nota').textContent=(ed===0?'Entre los 14 y los 17 años se recomiendan de 8 a 10 horas.':ed===2?'A partir de los 65 años se recomiendan de 7 a 8 horas.':'Entre los 18 y los 64 años se recomiendan de 7 a 9 horas.')+' Dormir 3 o 4 ciclos de forma habitual se queda corto.';
+  hash(['hora','lat','edad']);
+}
+"""))
+
 if __name__ == '__main__':
     for c in CALCS:
-        d = os.path.join(OUT, c['slug']); os.makedirs(d, exist_ok=True)
+        d = os.path.join(R, 'publicar', MUNDOS[c.get('mundo', 'build')]['host'], c['slug']); os.makedirs(d, exist_ok=True)
         open(os.path.join(d, 'index.html'), 'w', encoding='utf-8').write(pagina(c))
         print('escrita', c['slug'], len(c['titulo']))

@@ -19,13 +19,13 @@
   "entrada": "{N} universidades de {P} países con sus carreras, las notas de corte oficiales, qué puedes estudiar con tu nota y guías sobre carreras, empleo y cómo la tecnología cambia cada profesión."
  },
  "live": {
-  "corto": "Bienestar y salud",
+  "corto": "Salud y día a día",
   "lema": "Vive con energía y propósito",
-  "titulo": "AURZANE LIVE: bienestar, salud, hábitos y propósito",
-  "descripcion": "Calculadoras de salud, tests de sueño, bienestar y hábitos, y guías sobre propósito, aventura y deporte para vivir con energía.",
-  "eyebrow": "Cuerpo, hábitos y vida cotidiana",
-  "h1": "Vive con energía <span>y propósito</span>",
-  "entrada": "Mide cómo estás (sueño, bienestar, hábitos), calcula lo que tu cuerpo necesita y encuentra ideas con fuentes reales para moverte más, descansar mejor y llenar tu día de propósito y aventura."
+  "titulo": "AURZANE LIVE: salud, cuerpo, descanso y día a día",
+  "descripcion": "Calculadoras de salud gratis (ovulación, embarazo, peso ideal, IMC, calorías, sueño), tests de bienestar y hábitos, y guías con fuentes para cuidarte cada día.",
+  "eyebrow": "Salud, cuerpo y día a día",
+  "h1": "Cuida tu salud <span>cada día</span>",
+  "entrada": "Calcula tus días fértiles, tu peso saludable, tus calorías o a qué hora dormir, mide cómo estás con tests de la OMS y lee guías con fuentes reales para moverte más, descansar mejor y vivir con energía."
  },
  "learn": {
   "corto": "Cursos",
