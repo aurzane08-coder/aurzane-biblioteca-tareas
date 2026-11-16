@@ -22,7 +22,9 @@ for nivel in ("'GRADO'", "'GRADOD'"):
                     'centro': f.get('nombreCentro'), 'tipo_centro': f.get('tipoCentro'), 'tipo': f.get('tipoUniversidad'), 'ccaa': f.get('ccaa'),
                     'provincia': f.get('provincia'), 'nota': nota, 'curso': f.get('anio'), 'nivel': f.get('nivel')})
 if len(out) < 1000:
-    sys.exit('Muy pocas filas: no se guarda nada para no perder los datos anteriores')
+    # QEDU devuelve listas vacías desde el 16/11/2026 (cambio en la web del Ministerio): se conservan los datos anteriores sin marcar la automatización como fallida
+    print('::warning title=QEDU::QEDU no devolvió datos (' + str(len(out)) + ' filas); se conservan las notas de corte anteriores')
+    sys.exit(0)
 json.dump({'fuente': 'QEDU, Ministerio de Ciencia, Innovación y Universidades', 'url': 'https://www.ciencia.gob.es/qedu.html', 'filas': out},
           open('univ/data/notas_corte.json', 'w', encoding='utf-8'), ensure_ascii=False, separators=(',', ':'))
 print('OK', len(out), 'filas,', sum(1 for x in out if x['nota']), 'con nota')
