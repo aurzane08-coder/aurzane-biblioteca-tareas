@@ -1,36 +1,48 @@
 {
- "fecha": "2026-11-15",
+ "fecha": "2026-11-16",
  "conectado": true,
  "periodo": [
-  "2026-10-16",
-  "2026-11-12"
+  "2026-10-17",
+  "2026-11-13"
  ],
- "clics": 32,
- "impresiones": 20646,
+ "clics": 34,
+ "impresiones": 25818,
  "consultas": [
   [
-   "berkeley",
+   "umich",
    0,
-   276,
-   10.0
+   379,
+   8.5
   ],
   [
    "ecpi university",
    0,
-   203,
-   8.4
+   373,
+   10.8
+  ],
+  [
+   "berkeley",
+   0,
+   277,
+   10.0
   ],
   [
    "volar sobre el pantano",
    0,
-   184,
+   194,
    9.5
   ],
   [
    "texas a",
    0,
-   123,
-   9.5
+   133,
+   9.7
+  ],
+  [
+   "nihon university",
+   0,
+   127,
+   13.0
   ],
   [
    "facultades",
@@ -41,172 +53,160 @@
   [
    "universidades",
    0,
-   89,
-   31.1
-  ],
-  [
-   "recuerda que vas a morir",
-   0,
-   87,
-   6.5
+   95,
+   30.3
   ],
   [
    "universidad",
    0,
-   86,
-   30.8
+   94,
+   32.0
+  ],
+  [
+   "recuerda que vas a morir",
+   0,
+   88,
+   6.5
   ],
   [
    "instituto el condor",
    0,
-   82,
+   84,
    9.1
-  ],
-  [
-   "universidades de polonia",
-   0,
-   74,
-   81.7
-  ],
-  [
-   "universidades publicas en australia",
-   0,
-   59,
-   61.2
-  ],
-  [
-   "umich",
-   0,
-   58,
-   9.3
-  ],
-  [
-   "universidades en parís",
-   0,
-   57,
-   57.2
-  ],
-  [
-   "universidades en australia",
-   0,
-   54,
-   60.0
   ],
   [
    "viterbo university",
    0,
-   54,
-   8.3
+   82,
+   10.7
   ],
   [
-   "nihon university",
+   "universidades de polonia",
    0,
-   52,
-   10.5
+   81,
+   81.8
+  ],
+  [
+   "dean college",
+   0,
+   79,
+   15.9
+  ],
+  [
+   "kilgore college",
+   0,
+   67,
+   15.6
+  ],
+  [
+   "libros kristin neff",
+   0,
+   66,
+   48.6
+  ],
+  [
+   "universidades en parís",
+   0,
+   65,
+   56.9
+  ],
+  [
+   "universidades publicas en australia",
+   0,
+   62,
+   60.4
+  ],
+  [
+   "universidades en australia",
+   0,
+   60,
+   61.6
   ],
   [
    "universidades en utrecht holanda",
    0,
-   52,
-   44.2
+   55,
+   44.4
+  ],
+  [
+   "catawba college",
+   0,
+   54,
+   14.9
+  ],
+  [
+   "los dones de la imperfeccion",
+   0,
+   54,
+   11.4
   ],
   [
    "los medios de comunicación y la familia",
    0,
-   51,
-   23.3
+   53,
+   24.6
   ],
   [
    "universidades en inglaterra",
    0,
+   53,
+   61.1
+  ],
+  [
+   "university of richmond",
+   0,
+   52,
+   9.4
+  ],
+  [
+   "dejame que te cuente",
+   0,
    51,
-   60.6
+   10.2
+  ],
+  [
+   "el camino de las lagrimas",
+   0,
+   51,
+   13.1
+  ],
+  [
+   "umn",
+   0,
+   51,
+   10.7
+  ],
+  [
+   "amsterdam universidad",
+   0,
+   50,
+   53.5
   ],
   [
    "carl rogers el proceso de convertirse en persona",
    0,
    50,
    9.8
-  ],
-  [
-   "los dones de la imperfeccion",
-   0,
-   50,
-   11.4
-  ],
-  [
-   "universidad en canarias",
-   0,
-   49,
-   84.0
-  ],
-  [
-   "amsterdam universidad",
-   0,
-   48,
-   53.1
-  ],
-  [
-   "dejame que te cuente",
-   0,
-   48,
-   10.3
-  ],
-  [
-   "el camino de las lagrimas",
-   0,
-   46,
-   12.0
-  ],
-  [
-   "universidades en londres",
-   0,
-   46,
-   45.0
-  ],
-  [
-   "universidades italia",
-   0,
-   46,
-   63.9
-  ],
-  [
-   "umn",
-   0,
-   44,
-   10.7
-  ],
-  [
-   "universidades en manta",
-   2,
-   43,
-   6.7
-  ],
-  [
-   "la tía tula pdf",
-   0,
-   42,
-   9.2
   ]
  ],
  "paginas": [
   [
    "https://aurzane.com/biblioteca/libro/tormento.html",
    3,
-   33,
+   34,
    7.0
   ],
   [
    "https://aurzane.com/biblioteca/leer.html?libro=ref-recuerda-que-vas-a-morir",
    2,
-   136,
+   141,
    6.4
   ],
   [
    "https://nexus.aurzane.com/universidades/ecuador/ciudad/manta/",
    2,
-   96,
-   6.2
+   105,
+   6.4
   ],
   [
    "https://aurzane.com/biblioteca/libro/ref-proceso-convertirse-persona.html",
@@ -223,62 +223,74 @@
   [
    "https://nexus.aurzane.com/universidades/notas-de-corte/derecho/",
    1,
-   62,
-   9.4
+   67,
+   9.9
   ],
   [
    "https://aurzane.com/biblioteca/libro/ref-don-terapia.html",
    1,
-   44,
+   48,
    11.8
   ],
   [
    "https://aurzane.com/biblioteca/libro/romancero-gitano.html",
    1,
-   41,
-   9.5
+   45,
+   9.4
+  ],
+  [
+   "https://aurzane.com/biblioteca/leer.html?libro=ref-superar-adversidad",
+   1,
+   33,
+   8.4
   ],
   [
    "https://aurzane.com/biblioteca/libro/ref-creacion-yo.html",
    1,
-   28,
-   6.6
-  ],
-  [
-   "https://nexus.aurzane.com/universidades/ecuador/instituto-superior-tecnologico-itca/",
-   1,
-   24,
-   8.5
+   31,
+   6.5
   ],
   [
    "https://aurzane.com/biblioteca/libro/ref-paradoja-chimpance.html",
    1,
+   27,
+   9.3
+  ],
+  [
+   "https://nexus.aurzane.com/universidades/ecuador/instituto-superior-tecnologico-itca/",
+   1,
+   25,
+   8.7
+  ],
+  [
+   "https://nexus.aurzane.com/universidades/estados-unidos/hamilton-college/",
+   1,
    23,
-   9.0
+   15.9
   ],
   [
    "https://aurzane.com/biblioteca/libro/marianela.html",
    1,
-   19,
-   13.1
+   20,
+   12.8
   ],
   [
    "https://aurzane.com/biblioteca/libro/ref-nuestra-mente-nos-engana.html",
    1,
-   17,
-   8.8
+   18,
+   8.9
+  ],
+  [
+   "https://aurzane.com/biblioteca/libro/ref-tareas-duelo.html",
+   1,
+   15,
+   6.9
   ],
   [
    "https://aurzane.com/biblioteca/libro/ref-amarse-ojos-abiertos.html",
    1,
    13,
    12.5
-  ],
-  [
-   "https://aurzane.com/biblioteca/libro/ref-tareas-duelo.html",
-   1,
-   13,
-   6.8
   ],
   [
    "https://aurzane.com/biblioteca/libro/ref-universo-emociones.html",
@@ -299,12 +311,6 @@
    8.3
   ],
   [
-   "https://nexus.aurzane.com/universidades/estados-unidos/hamilton-college/",
-   1,
-   8,
-   11.6
-  ],
-  [
    "https://nexus.aurzane.com/universidades/notas-de-corte/trabajo-social/",
    1,
    7,
@@ -323,16 +329,16 @@
    9.0
   ],
   [
+   "https://nexus.aurzane.com/universidades/estados-unidos/ensign-college/",
+   1,
+   4,
+   4.8
+  ],
+  [
    "https://aurzane.com/biblioteca/libro/misericordia.html",
    1,
    4,
    10.5
-  ],
-  [
-   "https://nexus.aurzane.com/universidades/estados-unidos/ensign-college/",
-   1,
-   3,
-   4.7
   ],
   [
    "https://nexus.aurzane.com/universidades/ecuador/instituto-superior-tecnologico-oriente/",
@@ -341,216 +347,210 @@
    10.0
   ],
   [
+   "https://aurzane.com/biblioteca/libro/jasp-estadistica.html",
+   1,
+   2,
+   7.0
+  ],
+  [
    "https://aurzane.com/biblioteca/libro/ref-tu-cerebro-musica.html",
    1,
    2,
    18.0
   ],
   [
+   "https://nexus.aurzane.com/universidades/mexico/universidad-michoacana-de-san-nicolas-de-hidalgo-umsnh/",
+   0,
+   391,
+   10.0
+  ],
+  [
    "https://nexus.aurzane.com/universidades/estados-unidos/university-of-california-berkeley/",
    0,
-   365,
-   19.5
-  ],
-  [
-   "https://nexus.aurzane.com/universidades/estados-unidos/ecpi-university/",
-   0,
-   212,
-   10.6
-  ],
-  [
-   "https://aurzane.com/biblioteca/libro/ref-volar-sobre-pantano.html",
-   0,
-   205,
-   10.7
-  ],
-  [
-   "https://nexus.aurzane.com/universidades/reino-unido/ciudad/londres/",
-   0,
-   185,
-   43.3
+   386,
+   21.5
   ]
  ],
  "paises": [
   [
    "ESP",
-   147,
-   13734,
-   26.2
+   148,
+   15049,
+   26.6
   ],
   [
    "MEX",
-   59,
-   5276,
-   24.1
+   64,
+   6161,
+   23.2
   ],
   [
    "ECU",
-   49,
-   4781,
-   10.7
+   50,
+   5311,
+   11.9
   ],
   [
    "USA",
-   12,
-   2957,
-   25.1
-  ],
-  [
-   "COL",
-   43,
-   2769,
-   27.3
+   13,
+   3622,
+   24.5
   ],
   [
    "BRA",
    3,
-   2507,
-   52.4
+   3126,
+   46.7
+  ],
+  [
+   "COL",
+   43,
+   3114,
+   26.3
   ],
   [
    "ARG",
-   36,
-   2284,
-   26.2
+   37,
+   2814,
+   25.0
   ],
   [
    "PER",
-   36,
-   1745,
-   12.4
+   37,
+   2163,
+   13.0
   ],
   [
    "CHL",
    20,
-   1640,
-   25.0
+   1831,
+   24.7
   ],
   [
    "VEN",
    10,
-   980,
-   23.0
+   1111,
+   22.8
   ],
   [
    "BOL",
    11,
-   482,
-   11.6
+   570,
+   12.4
   ],
   [
    "RUS",
    1,
-   389,
-   51.3
+   448,
+   48.8
   ],
   [
    "GTM",
    10,
-   336,
-   20.3
+   367,
+   20.1
   ],
   [
    "DOM",
-   7,
-   284,
-   11.9
-  ],
-  [
-   "CRI",
-   5,
-   261,
-   16.5
+   8,
+   321,
+   11.5
   ],
   [
    "URY",
    1,
-   243,
-   11.3
-  ],
-  [
-   "PAN",
-   3,
-   231,
-   16.3
+   292,
+   11.9
   ],
   [
    "BGD",
    0,
-   228,
-   46.2
+   283,
+   40.7
+  ],
+  [
+   "CRI",
+   5,
+   280,
+   16.9
+  ],
+  [
+   "PAN",
+   3,
+   254,
+   16.8
   ],
   [
    "PRY",
    4,
-   214,
-   14.7
+   241,
+   15.0
   ],
   [
    "GBR",
    2,
-   182,
-   33.2
+   229,
+   33.0
+  ],
+  [
+   "SLV",
+   1,
+   219,
+   19.8
   ],
   [
    "NLD",
-   1,
-   156,
-   37.1
+   2,
+   190,
+   34.2
   ],
   [
    "HND",
-   1,
-   152,
-   18.9
+   2,
+   176,
+   19.0
   ],
   [
    "CAN",
    1,
-   141,
-   31.1
+   169,
+   29.1
   ],
   [
    "PRI",
    1,
-   111,
-   20.5
+   123,
+   19.4
   ],
   [
    "CUB",
-   4,
-   101,
-   11.0
+   5,
+   116,
+   10.5
   ],
   [
    "CHE",
    0,
-   87,
-   35.0
-  ],
-  [
-   "AUS",
-   2,
-   60,
-   28.8
-  ],
-  [
-   "MAR",
-   1,
-   43,
-   30.5
+   104,
+   33.0
   ],
   [
    "BEL",
    1,
-   40,
-   18.1
+   96,
+   11.9
   ],
   [
-   "ARE",
-   0,
-   32,
-   40.4
+   "AUS",
+   2,
+   75,
+   23.5
+  ],
+  [
+   "MAR",
+   1,
+   72,
+   22.1
   ]
  ],
  "paises_trabajados": [
@@ -615,8 +615,40 @@
    "Universidades en Santa Cruz: guía completa y opciones para elegir carrera"
   ]
  ],
- "fichas_ampliadas": 6,
+ "fichas_ampliadas": 7,
  "cambios_titulos": [
+  [
+   "2026-11-16",
+   "https://nexus.aurzane.com/universidades/estados-unidos/viterbo-university/",
+   "Viterbo University: 43 carreras",
+   "Viterbo University: Carreras y Oferta | AURZANE",
+   null,
+   0.0
+  ],
+  [
+   "2026-11-16",
+   "https://nexus.aurzane.com/universidades/ecuador/ciudad/guayaquil/",
+   "Universidades en Guayaquil: 39 opciones (2026)",
+   "Universidades en Guayaquil: Listado y Carreras",
+   null,
+   0.0
+  ],
+  [
+   "2026-11-16",
+   "https://nexus.aurzane.com/universidades/japon/nihon-university/",
+   "Nihon University: 13 áreas y facultades",
+   "Nihon University: facultades y carreras | AURZANE",
+   null,
+   0.0
+  ],
+  [
+   "2026-11-16",
+   "https://nexus.aurzane.com/universidades/mexico/universidad-michoacana-de-san-nicolas-de-hidalgo-umsnh/",
+   "Universidad Michoacana de San Nicolás de Hidalgo (UMSNH): carreras, ciudad y web | Universidades de México",
+   "UMICH: Carreras, Oferta y Web Oficial | AURZANE",
+   null,
+   0.0
+  ],
   [
    "2026-11-15",
    "https://nexus.aurzane.com/universidades/notas-de-corte/psicologia/",
@@ -660,6 +692,31 @@
  ],
  "temas_nuevos": [
   [
+   "2026-11-16",
+   "cambridge universidades",
+   "Universidad de Cambridge: Cómo acceder, grados y vida estudiantil"
+  ],
+  [
+   "2026-11-16",
+   "glasgow universidad",
+   "Universidad de Glasgow: Carreras, admisión y estudiar en Escocia"
+  ],
+  [
+   "2026-11-16",
+   "columbia university",
+   "Columbia University: Admisiones, grados y vida en la universidad de Nueva York"
+  ],
+  [
+   "2026-11-16",
+   "hult business school",
+   "Hult International Business School: Oferta académica, campus y método"
+  ],
+  [
+   "2026-11-16",
+   "licenciaturas en madrid",
+   "Licenciaturas en Madrid: Guía completa para elegir carrera y universidad"
+  ],
+  [
    "2026-11-15",
    "ansiedad por el estatus",
    "Ansiedad por el estatus en Paraguay: claves psicológicas para superarla"
@@ -683,31 +740,6 @@
    "2026-11-15",
    "universidad amsterdam",
    "Universidad de Ámsterdam: Oferta académica y cómo acceder"
-  ],
-  [
-   "2026-11-15",
-   "licenciaturas en parís",
-   "Licenciaturas en París: Carreras, requisitos y vida universitaria"
-  ],
-  [
-   "2026-11-15",
-   "california universidades",
-   "Estudiar en California: Guía de universidades y opciones para latinos"
-  ],
-  [
-   "2026-11-14",
-   "recuerda que vas a morir",
-   "Memento Mori: cómo la aceptación de la muerte mejora tu vida"
-  ],
-  [
-   "2026-11-14",
-   "cuantas universidades hay en panama",
-   "Universidades en Panamá: guía completa para elegir carrera"
-  ],
-  [
-   "2026-11-14",
-   "carreras universitarias en guatemala",
-   "Cómo elegir carrera universitaria en Guatemala con éxito"
   ]
  ]
 }

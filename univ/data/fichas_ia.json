@@ -150,5 +150,33 @@
    }
   ],
   "fecha": "2026-11-15"
+ },
+ "https://nexus.aurzane.com/universidades/japon/nihon-university/": {
+  "titulo": "Guía de orientación vocacional AURZANE para Nihon University",
+  "parrafos": [
+   "Te damos la bienvenida a la guía de orientación vocacional de AURZANE para Nihon University, una institución educativa de carácter privado situada en Chiyoda, Tokio. En nuestro catálogo figuran 13 áreas y facultades que abarcan disciplinas como arte, ciencias biológicas, ciencia y tecnología, comercio, derecho, economía, farmacia, humanidades y ciencias, ingeniería, medicina, odontología, relaciones internacionales y tecnología industrial.",
+   "Para acceder a la educación superior en Japón, es importante tener en cuenta que los requisitos de admisión, los plazos de inscripción y los costes varían según la institución, el año y el perfil del estudiante internacional. Por ello, es fundamental consultar la web oficial de la universidad y los organismos oficiales del país para conocer los trámites exactos de visado, homologación de estudios previos y acreditación del idioma en el que se imparten las clases.",
+   "Elegir una carrera universitaria requiere un análisis detallado que va más allá del prestigio de la institución. Te recomendamos comparar los planes de estudio, las oportunidades de prácticas profesionales, la modalidad de enseñanza y las salidas laborales de cada opción. Si aún no tienes clara tu vocación, realizar un test previo te ayudará a alinear tus intereses personales con la oferta académica disponible.",
+   "Estudiar en Chiyoda, Tokio, te sitúa en un entorno urbano dinámico y de gran relevancia cultural y económica en Japón. La vida estudiantil en esta zona combina la actividad académica con el acceso a una amplia red de servicios, transporte y oportunidades de intercambio cultural, lo que favorece el desarrollo personal y profesional durante tu etapa universitaria."
+  ],
+  "faq": [
+   {
+    "p": "¿Nihon University es pública o privada?",
+    "r": "Según los datos oficiales de nuestro catálogo, Nihon University es una institución de carácter privado. Puedes verificar esta información y otros detalles institucionales directamente en su sitio web oficial."
+   },
+   {
+    "p": "¿Dónde está situada Nihon University?",
+    "r": "La sede principal de la universidad se encuentra ubicada en Chiyoda, Tokio, Japón. Esta localización ofrece un entorno urbano muy activo para los estudiantes."
+   },
+   {
+    "p": "¿Qué se puede estudiar en Nihon University?",
+    "r": "En nuestro catálogo figuran 13 áreas y facultades que incluyen opciones como derecho, economía, medicina, ingeniería y arte, entre otras. Te recomendamos revisar su oferta completa en la web oficial."
+   },
+   {
+    "p": "¿Cómo se accede a la universidad en Japón?",
+    "r": "Los requisitos de acceso, los plazos y los precios cambian según la institución y el año. Es necesario consultar la web oficial de la universidad y los organismos de educación superior del país."
+   }
+  ],
+  "fecha": "2026-11-16"
  }
 }

@@ -684,5 +684,40 @@
   "pais_nombre": "Paraguay",
   "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al número de emergencias del país. ",
   "fecha": "2026-11-15"
+ },
+ {
+  "consulta": "licenciaturas en madrid",
+  "titulo": "Licenciaturas en Madrid: Guía completa para elegir carrera y universidad",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "fecha": "2026-11-16"
+ },
+ {
+  "consulta": "hult business school",
+  "titulo": "Hult International Business School: Oferta académica, campus y método",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "fecha": "2026-11-16"
+ },
+ {
+  "consulta": "columbia university",
+  "titulo": "Columbia University: Admisiones, grados y vida en la universidad de Nueva York",
+  "mundo": "nexus",
+  "test": "",
+  "fecha": "2026-11-16"
+ },
+ {
+  "consulta": "glasgow universidad",
+  "titulo": "Universidad de Glasgow: Carreras, admisión y estudiar en Escocia",
+  "mundo": "nexus",
+  "test": "",
+  "fecha": "2026-11-16"
+ },
+ {
+  "consulta": "cambridge universidades",
+  "titulo": "Universidad de Cambridge: Cómo acceder, grados y vida estudiantil",
+  "mundo": "nexus",
+  "test": "",
+  "fecha": "2026-11-16"
  }
 ]
