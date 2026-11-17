@@ -871,8 +871,8 @@ if (os.environ.get('GEMINI_API_KEY') or os.environ.get('GITHUB_TOKEN')) and _ah[
             guias_libres = _g + [x for x in guias_libres if x not in _g]
     otras_a = ([('estudio', x) for x in aprob if x['tipo'] == 'estudio' and x['id'] not in usados_a and x.get('resumen')][:2] +
                [('curiosidad', x) for x in curios_ok if x['id'] not in usados_a][:1])
-    # el primer artículo del día sale de un estudio; el segundo es una guía práctica ligada a un test
-    fuentes_a = (otras_a + guias_libres[:4]) if _ah[HOY]['hechos'] == 0 else (guias_libres[:4] + otras_a)
+    # primero las guías prácticas ligadas a un test o calculadora; los estudios, en días alternos
+    fuentes_a = (otras_a + guias_libres[:4]) if (datetime.date.fromisoformat(HOY).toordinal() % 2 and _ah[HOY]['hechos'] == 0) else (guias_libres[:4] + otras_a)
     titulos_previos = '; '.join(a['titulo'] for a in art_hechos[:30])
     for clase, f in fuentes_a:
         if _ah[HOY]['intentos'] >= LIMITE_A * 3 or _ah[HOY]['hechos'] >= LIMITE_A: break
