@@ -1,0 +1,42 @@
+name: Guías de libros (IA)
+# Escribe cada día guías de lectura para las fichas de libros que aún no la tienen (biblioteca/guias_auto.py)
+# y vuelve a poner las ya escritas si un despliegue rehace alguna página.
+on:
+  schedule:
+    - cron: '17 7 * * *'
+  workflow_run:
+    workflows: ['Desplegar archivos a SiteGround']
+    types: [completed]
+  push:
+    paths: ['biblioteca/guias_auto.py']
+  workflow_dispatch:
+permissions:
+  contents: write
+  models: read
+concurrency: guias-libros
+jobs:
+  guias:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      SG_KEY: ${{ secrets.SG_KEY }}
+      SG_HOST: ${{ secrets.SG_HOST }}
+      SG_USER: ${{ secrets.SG_USER }}
+      SG_PORT: ${{ secrets.SG_PORT }}
+      SG_PASS: ${{ secrets.SG_PASS }}
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      GUIAS_DIA: ${{ github.event_name == 'workflow_run' && '0' || '4' }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: SSH
+        run: |
+          mkdir -p ~/.ssh && printf '%s\n' "$SG_KEY" | tr -d '\r' > ~/.ssh/id && chmod 600 ~/.ssh/id
+          if [ -n "$SG_PASS" ]; then ssh-keygen -p -P "$SG_PASS" -N "" -f ~/.ssh/id >/dev/null; fi
+          echo "SSH=ssh -i $HOME/.ssh/id -p ${SG_PORT:-18765} -o StrictHostKeyChecking=accept-new" >> $GITHUB_ENV
+          echo "SG_DEST=$SG_USER@$SG_HOST" >> $GITHUB_ENV
+      - run: python3 -u biblioteca/guias_auto.py
+      - run: |
+          git config user.name "aurzane-bot"; git config user.email "bot@aurzane.com"
+          git add biblioteca/guias_auto.json; git commit -qm "guías de libros: $(date +%F)" || exit 0
+          for i in 1 2 3; do git pull -q --rebase -X theirs && git push -q && break; sleep 5; done
