@@ -20135,6 +20135,31 @@
    "alta": "2026-11-17"
   },
   {
+   "id": "lectura-enfocate-cal-newport",
+   "tipo": "lectura",
+   "mundo": "aurzane",
+   "origen": "tienda",
+   "url": "https://aurzane.com/libros/enfocate-cal-newport/",
+   "titulo": "Enfócate",
+   "autor": "Cal Newport",
+   "ganchos": [
+    "Libro recomendado: Enfócate",
+    "Enfócate, de Cal Newport",
+    "¿Qué leer este mes? Enfócate"
+   ],
+   "texto": "Este libro es para profesionales y estudiantes que se sienten abrumados por las distracciones diarias. Aporta estrategias claras para trabajar con intensidad y multiplicar el rendimiento sin perder la calma.",
+   "hashtags": [
+    "LibrosRecomendados",
+    "QueLeer",
+    "Lectura",
+    "Libros"
+   ],
+   "aviso": "Contiene enlace de afiliado.",
+   "img": null,
+   "emoji": "📚",
+   "alta": "2026-11-17"
+  },
+  {
    "id": "lectura-no-pienses-en-un-elefante-george-lakoff",
    "tipo": "lectura",
    "mundo": "aurzane",

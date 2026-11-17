@@ -219,7 +219,7 @@ fecha,red,producto,clics
 2026-11-17,bluesky,crea-l07-03,1
 2026-11-17,bluesky,frase-7e16705b,5
 2026-11-17,bluesky,nc-bellas-artes,1
-2026-11-17,bluesky,nc-ciencias-de-la-actividad-fisica-y-del-deporte,4
+2026-11-17,bluesky,nc-ciencias-de-la-actividad-fisica-y-del-deporte,5
 2026-11-17,bluesky,test-autoestima,5
 2026-11-17,facebook,frase-069c1b0c,1
 2026-11-17,facebook,nc-ingenieria-quimica-industrial,2
@@ -227,4 +227,5 @@ fecha,red,producto,clics
 2026-11-17,mastodon,frase-ce025c50,2
 2026-11-17,mastodon,nc-historia,1
 2026-11-17,mastodon,test-ansiedad,1
+2026-11-17,mastodon,test-depresion,1
 2026-11-17,mastodon,test-satisfaccion,1
