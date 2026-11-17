@@ -208,7 +208,7 @@
 (function (d) {
   if (window.AurzaneReportar || d.querySelector('script[data-azr]')) return;
   var s = d.createElement('script');
-  s.src = 'https://aurzane.com/aurzane-reportes.js?v=1'; s.defer = true; s.setAttribute('data-azr', '1');
+  s.src = 'https://aurzane.com/aurzane-reportes.js?v=h9886cd38'; s.defer = true; s.setAttribute('data-azr', '1');
   (d.head || d.documentElement).appendChild(s);
 })(document);
 
@@ -216,7 +216,7 @@
 (function (d) {
   if (window.AurzaneIdiomas || d.querySelector('script[data-azi]')) return;
   var s = d.createElement('script');
-  s.src = 'https://aurzane.com/aurzane-idiomas.js?v=1'; s.defer = true; s.setAttribute('data-azi', '1');
+  s.src = 'https://aurzane.com/aurzane-idiomas.js?v=hf9e24fdb'; s.defer = true; s.setAttribute('data-azi', '1');
   (d.head || d.documentElement).appendChild(s);
 })(document);
 
@@ -224,7 +224,7 @@
 (function (d) {
   if (!/^(mind|live)\.aurzane\.com$/.test(location.hostname) || d.querySelector('script[data-azasis]')) return;
   var s = d.createElement('script');
-  s.src = 'https://aurzane.com/aurzane-asistente.js?v=3'; s.defer = true; s.setAttribute('data-azasis', '1');
+  s.src = 'https://aurzane.com/aurzane-asistente.js?v=hd090e4cd'; s.defer = true; s.setAttribute('data-azasis', '1');
   (d.head || d.documentElement).appendChild(s);
 })(document);
 
@@ -232,7 +232,7 @@
 (function (d) {
   if (!/^(mind|live)\.aurzane\.com$/.test(location.hostname) || !/\/test-de-/.test(location.pathname) || d.querySelector('script[data-azruta]')) return;
   var s = d.createElement('script');
-  s.src = 'https://aurzane.com/aurzane-ruta.js?v=1'; s.defer = true; s.setAttribute('data-azruta', '1');
+  s.src = 'https://aurzane.com/aurzane-ruta.js?v=hb54794d9'; s.defer = true; s.setAttribute('data-azruta', '1');
   (d.head || d.documentElement).appendChild(s);
 })(document);
 
@@ -241,7 +241,7 @@
   var h = location.hostname, p = location.pathname;
   if (!(/^(mind|live|learn|nexus|build)\.aurzane\.com$/.test(h) || (h === 'aurzane.com' && /^\/(articulos(\/[^/]*)?\/?(index\.html)?|research(\.html)?\/?)$/.test(p))) || d.querySelector('script[data-azcont]')) return;
   var s = d.createElement('script');
-  s.src = 'https://aurzane.com/aurzane-contenido.js?v=7'; s.defer = true; s.setAttribute('data-azcont', '1');
+  s.src = 'https://aurzane.com/aurzane-contenido.js?v=hf670cdee'; s.defer = true; s.setAttribute('data-azcont', '1');
   (d.head || d.documentElement).appendChild(s);
 })(document);
 
@@ -287,7 +287,7 @@
 (function (d) {
   if (window.AurzaneEstilo || d.querySelector('script[data-azest]')) return;
   /* diferido: escrito en la cabecera retrasaba la primera pintura (PageSpeed, 16/11/2026) */
-  var src = 'https://aurzane.com/aurzane-estilo.js?v=35';
+  var src = 'https://aurzane.com/aurzane-estilo.js?v=h439e73aa';
   var s = d.createElement('script');
   s.src = src; s.defer = true; s.setAttribute('data-azest', '1');
   (d.head || d.documentElement).appendChild(s);
@@ -335,10 +335,10 @@
   if (d.querySelector('link[data-azds]') || !/(^|\.)aurzane\.com$/.test(location.hostname)) return;
   /* la hoja común se escribe en el documento mientras se lee la cabecera: así se aplica antes de pintar y la página
      no cambia de aspecto ni salta cuando llega (16/11/2026); si la página ya está leída, se añade como antes */
-  var css = 'https://aurzane.com/aurzane-ds.css?v=15';
+  var css = 'https://aurzane.com/aurzane-ds.css?v=hd760af6a';
   if (d.readyState === 'loading' && d.currentScript && d.currentScript.parentNode === d.head) d.write('<link rel="stylesheet" href="' + css + '" data-azds="1">');
   else { var l = d.createElement('link'); l.rel = 'stylesheet'; l.href = css; l.setAttribute('data-azds', '1'); (d.head || d.documentElement).appendChild(l); }
-  var s = d.createElement('script'); s.src = 'https://aurzane.com/aurzane-ds.js?v=15'; s.defer = true; s.setAttribute('data-azds', '1');
+  var s = d.createElement('script'); s.src = 'https://aurzane.com/aurzane-ds.js?v=hbdf28122'; s.defer = true; s.setAttribute('data-azds', '1');
   (d.head || d.documentElement).appendChild(s);
 })(document);
 

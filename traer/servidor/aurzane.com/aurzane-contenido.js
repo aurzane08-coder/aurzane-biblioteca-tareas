@@ -237,9 +237,14 @@
     var tema = temaLibros(texto);
     conLibros(function (todos) {
       if (d.querySelector('.az-libros')) return;
-      var l = todos.filter(function (x) { return x.temas.indexOf(tema) >= 0 && x.img; });
-      if (l.length < 2) l = l.concat(todos.filter(function (x) { return x.temas.indexOf('bienestar') >= 0 && x.img && l.indexOf(x) < 0; }));
-      l = l.slice(0, 3); if (l.length < 2) return;
+      /* si faltan libros del tema se completa con temas cercanos, nunca con otros que no tengan que ver (17/11/2026: en la hipoteca salían libros de perros) */
+      var CERCA = { vivienda: ['finanzas', 'productividad'], finanzas: ['vivienda', 'productividad'], crianza: ['relaciones', 'emociones'], vocacional: ['productividad', 'habitos'],
+        habitos: ['productividad', 'sueno'], sueno: ['habitos', 'estres'], ansiedad: ['estres', 'emociones'], estres: ['ansiedad', 'burnout'], depresion: ['emociones', 'resiliencia'],
+        burnout: ['estres', 'productividad'], autoestima: ['autocompasion', 'emociones'], autocompasion: ['autoestima', 'emociones'], soledad: ['relaciones', 'emociones'],
+        tdah: ['productividad', 'habitos'], satisfaccion: ['bienestar', 'resiliencia'], personalidad: ['emociones', 'ciencia'] };
+      var pref = [tema].concat(CERCA[tema] || ['bienestar']), l = [];
+      pref.forEach(function (t) { todos.forEach(function (x) { if (l.length < 3 && x.img && x.temas.indexOf('novela') < 0 && x.temas.indexOf(t) >= 0 && l.indexOf(x) < 0) l.push(x); }); });
+      if (l.length < 2) return;
       var c = d.createElement('aside'); c.className = 'az-libros'; c.setAttribute('data-nosnippet', '');
       c.style.cssText = 'margin:34px auto;max-width:1120px;padding:22px 24px;border-radius:20px;background:#141a33;color:#f3efe6;border:1px solid rgba(255,255,255,.1)';
       c.innerHTML = '<p style="margin:0 0 4px;font:700 1.25rem/1.25 \'Bodoni Moda\',Georgia,serif;color:#f3efe6">Libros para seguir profundizando</p>' +

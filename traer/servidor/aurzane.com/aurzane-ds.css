@@ -94,7 +94,7 @@ body > header:not([class]) > a.logo{display:none!important}
 @media (max-width:900px){
   .az-mundos,.az-cab-2{display:none}
   .az-menu{display:inline-flex!important}
-  .az-donde{display:inline-flex}
+  .az-donde{display:inline-flex;min-height:24px}   /* solo en móvil: en escritorio el mundo ya sale en la barra (17/11/2026, auditoría final) */
   .az-cab-in{padding:0 12px}
   .az-cuenta .txt,.az-cab .az-tema .txt{display:none}
   .az-cuenta,.az-cab .az-tema,.az-menu{width:40px!important;min-width:40px!important;max-width:40px!important;padding:0!important;justify-content:center}
@@ -324,7 +324,7 @@ html.az-ds-live .eyebrow{color:#9A4523!important}
 @media(max-width:360px){.az-cab .az-acc{gap:2px!important}.az-cab .az-acc .az-btn{width:36px!important;min-width:36px!important}}
 
 /* Objetivos táctiles de al menos 24 px (WCAG 2.2, criterio 2.5.8), auditoría 16/11/2026 */
-.breadcrumb a,.migas a,.az-cab-in .az-donde,.paper-foot a,.paper .toggle-abs,.az-boletin label a{display:inline-flex;align-items:center;min-height:24px}
+.breadcrumb a,.migas a,.paper-foot a,.paper .toggle-abs,.az-boletin label a{display:inline-flex;align-items:center;min-height:24px}
 .az-pie-legal a{display:inline-flex;align-items:center;min-height:26px}
 input[type=checkbox],input[type=radio]{min-width:24px;min-height:24px}
 .search-box input,.search-wrap input{min-height:28px}
@@ -334,3 +334,11 @@ a[href$="acerca/"]{display:inline-flex;align-items:center;min-height:24px}
 
 /* 17/11/2026: contraste en tema oscuro del sistema (módulos de los cursos de LEARN: el dorado oscuro no se leía sobre azul noche) */
 @media (prefers-color-scheme:dark){html.az-m-learn:not([data-tema="claro"]) summary .n,.tem summary .n{color:#d9b45a!important}html.az-m-learn:not([data-tema="claro"]) .oro{background:#d9b45a!important;color:#1b1440!important}html.az-m-mind:not([data-tema="claro"]) .r5 b{color:#1b1440!important}}
+/* contraste (auditoría final, 17/11/2026): rasgos del test de personalidad con texto blanco sobre el color oscurecido,
+   niveles del informe OVP con los mismos colores en modo claro y oscuro, y tabla resumen que no desborda en móvil */
+.rasgos5 .r5{background:color-mix(in srgb,var(--c) 58%,#1b1440)!important}
+.rasgos5 .r5 b,.rasgos5 .r5 span:not(.e){color:#fff!important;opacity:1!important}
+.nivel.high{color:#3f5a22!important;background:#e3ead0!important}
+.nivel.medium{color:#6e5320!important;background:#eadfc0!important}
+.nivel.low{color:#8a3a3a!important;background:#f0dcdc!important}
+table.summary-table{display:block;max-width:100%;overflow-x:auto}

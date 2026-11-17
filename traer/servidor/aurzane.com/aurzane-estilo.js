@@ -158,7 +158,7 @@
     agua: '1548839140-29a749e1cf4d', comida: '1512621776951-a57141f2eefd', ejercicio: '1571019613454-1cb2f99b2d8b', embarazo: '1493894473891-10fc1e5dbd22',
     tarta: '1464349095431-e9a21285b5f3', calendario: '1506784983877-45594efa4cbe', graficos: '1434626881859-194d67b2b86f', estudio: '1427504494785-3a9ca7044f45', impuestos: '1554224154-26032ffc0d07',
     chalet: '1570129477492-45c003edd2be', pisos: '1460317442991-0ec209397118', curriculum: '1586281380349-632531db7ed4', hucha: '1559526324-4b87b5e36e44',
-    playa: '1473186578172-c141e6798cf4', manos: '1505751172876-fa1923c5c528', pesas: '1517836357463-d25dfeac3438', dormir: '1520206183501-b80df61043c2' };
+    playa: '1473186578172-c141e6798cf4', manos: '1505751172876-fa1923c5c528', pesas: '1517836357463-d25dfeac3438', dormir: '1520206183501-b80df61043c2', viaje: '1603792835233-f4f7c2497d4f' };
   function foto(clave, ancho) { return 'url("https://images.unsplash.com/photo-' + (FOTO[clave] || FOTO.grafica) + '?w=' + (ancho || 640) + '&q=70&auto=format&fit=crop")'; }
   var TEMA = { 'test-de-ansiedad': 'olas', 'test-de-depresion': 'nube', 'test-de-autoestima': 'espejo', 'test-de-autocompasion': 'corazon', 'test-de-autoeficacia': 'montana',
     'test-de-burnout': 'vela', 'test-de-estres': 'espiral', 'test-de-resiliencia': 'brote', 'test-de-satisfaccion-con-la-vida': 'sol', 'test-de-soledad': 'puntos',
@@ -420,7 +420,7 @@
   var SOCIO_FOTO = { 'consulta-embarazo': 'embarazo', 'consulta-nutricion': 'comida', 'consulta-sueno': 'dormir', 'consulta-chequeo': 'bienestar', hipoteca: 'casa', reforma: 'chalet',
     universidades: 'estudio', crianza: 'manos', nutricion: 'comida', sueno: 'dormir', cursos: 'foco', bienestar: 'habitos', bricolaje: 'casa', muebles: 'chalet',
     'negocio-alquiler': 'pisos', 'negocio-propio': 'curriculum', 'negocio-ahorro': 'hucha', negocio: 'graficos', deporte: 'ejercicio', aventura: 'montana', viajes: 'playa',
-    consulta: 'vela', 'seguro-viaje': 'playa' };
+    consulta: 'vela', 'seguro-viaje': 'viaje' };
   function socios() {
     var p = location.pathname, cands = [];
     Object.keys(SOCIO).forEach(function (k) { if (SOCIO[k][1] === m && SOCIO[k][0].test(p)) cands.push(k); });
@@ -437,10 +437,10 @@
       c.style.cssText = 'max-width:1120px;margin:30px auto;border-radius:18px;background:#141a33;color:#f3efe6;border:1px solid rgba(255,255,255,.12);overflow:hidden;display:flex;flex-wrap:wrap';
       c.innerHTML = '<a href="' + href + '" target="_blank" rel="sponsored nofollow noopener" tabindex="-1" aria-hidden="true" style="flex:1 1 260px;min-height:170px;max-height:260px;display:block;background:#1d2547">' +
         '<img src="https://images.unsplash.com/photo-' + (FOTO[fk] || FOTO.grafica) + '?w=720&q=60&auto=format&fit=crop" alt="" loading="lazy" decoding="async" width="720" height="480" style="width:100%;height:100%;object-fit:cover;display:block"></a>' +
-        '<div style="flex:2 1 320px;padding:22px 24px"><p style="margin:0 0 6px;font-size:.8rem;opacity:.65">Socio de AURZANE: ' + A[id].n + '</p>' +
+        '<div style="flex:2 1 320px;padding:22px 24px"><p style="margin:0 0 6px;font-size:.72rem;letter-spacing:.02em;opacity:.6"><a href="https://aurzane.com/aviso-legal.html" style="color:inherit">Publicidad</a> · ' + A[id].n + '</p>' +
         '<p style="margin:0 0 6px;font:700 1.25rem/1.3 \'Bodoni Moda\',Georgia,serif">' + x[2] + '</p><p style="margin:0 0 16px;opacity:.82">' + x[3] + '</p>' +
         '<a href="' + href + '" target="_blank" rel="sponsored nofollow noopener" style="display:inline-flex;align-items:center;min-height:44px;background:#E2BF6A;color:#1b1440;font-weight:700;text-decoration:none;padding:10px 22px;border-radius:99px">' + x[4] + ' ' + A[id].n + ' ↗</a>' +
-        '<p style="margin:12px 0 0;font-size:.76rem;opacity:.6">Enlace de afiliado: si contratas, AURZANE recibe una comisión sin coste para ti. El cálculo de esta página es independiente.</p></div>';
+        '</div>';
       pie.parentNode.insertBefore(c, pie);
     };
     d.head.appendChild(sc);

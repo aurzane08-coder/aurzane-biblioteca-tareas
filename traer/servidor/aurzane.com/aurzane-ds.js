@@ -464,7 +464,7 @@
     if (anterior && anterior.focus) anterior.focus();
   }
   function puntuar(x, q) {
-    var t = sinTildes(x[0]), desc = sinTildes(x[4] + ' ' + x[3] + ' ' + x[2]), p = 0, partes = q.split(/\s+/).filter(Boolean);
+    var t = sinTildes(x[0]), desc = sinTildes(x[4] + ' ' + x[3] + ' ' + x[2] + ' ' + (x[6] || '')), p = 0, partes = q.split(/\s+/).filter(Boolean);
     for (var i = 0; i < partes.length; i++) {
       var k = partes[i];
       if (t.indexOf(k) === 0) p += 12; else if (new RegExp('\\b' + k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).test(t)) p += 8; else if (t.indexOf(k) >= 0) p += 5; else if (desc.indexOf(k) >= 0) p += 2; else return 0;
