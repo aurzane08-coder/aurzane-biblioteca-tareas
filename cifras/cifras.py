@@ -53,6 +53,9 @@ try:
     _L = json.loads(cat[cat.index('{'):cat.rindex('}') + 1])['libros']
     c['libros'] = sum(1 for x in _L if x.get('tipo') != 'referencia'); c['fichas'] = len(_L) - c['libros']
 except Exception as e: print('libros', e)
+# calculadoras de BUILD que de verdad hay en el servidor (17/11/2026, auditoría final: la portada decía «8» y había más)
+try: c['calc_build'] = int(remoto("ls -d ~/www/build.aurzane.com/public_html/calculadora-*/ ~/www/build.aurzane.com/public_html/alquiler-por-municipio/ 2>/dev/null | wc -l").strip() or 0)
+except Exception as e: print('calculadoras', e)
 rq = urllib.request.Request(SB + 'rpc/course_catalog_public', data=b'{}', headers={'apikey': KEY, 'Content-Type': 'application/json'})
 with urllib.request.urlopen(rq, timeout=60) as r: cursos = json.load(r)
 c['cursos'] = {k['slug']: {'temas': len(k['modulos']), 'lecciones': sum(len(m['lecciones']) for m in k['modulos']), 'preguntas': k['preguntas'], 'tipos': k['tipos'],
@@ -85,6 +88,10 @@ def reglas(sitio):
         # «más de 6.000 instituciones de 23 países», «universidades de 23 países»: siempre la cifra exacta del catálogo
         rr.append((r'(?:[Mm]ás de )?' + NUM + r'( (?:instituciones|universidades)(?: e institutos)? de )' + NUM + r'( países)', lambda x: mil(c['universidades']) + x.group(2) + str(c['paises']) + x.group(4)))
         rr.append((r'((?:universidades|carreras) de )' + NUM + r'( países)', lambda x: x.group(1) + str(c['paises']) + x.group(3)))
+    if sitio == 'build.aurzane.com' and c.get('calc_build'):
+        rr.append((r'\d+( calculadoras gratis con la normativa)', lambda x: str(c['calc_build']) + x.group(1)))
+    if sitio == 'learn.aurzane.com' and len(c.get('cursos') or {}) > 1:
+        rr.append((r'(?:Primer curso disponible|\d+ cursos gratis con certificado)( y biblioteca de guías abierta)', lambda x: f"{len(c['cursos'])} cursos gratis con certificado" + x.group(1)))
     return rr
 
 
