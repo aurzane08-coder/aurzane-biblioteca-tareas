@@ -855,9 +855,9 @@ def pagina_articulo(a):
 _ah = ESTADO.get('art_dia', {}) if isinstance(ESTADO.get('art_dia'), dict) else {}
 _ah = {HOY: _ah.get(HOY, {'hechos': 0, 'intentos': 0})}; ESTADO['art_dia'] = _ah
 # hasta 2 artículos al día; si la IA falla (cupo, nota baja) se reintenta en la siguiente revisión, máximo 6 intentos al día
-# 2 artículos al día, y hasta 2 más si hay temas pendientes de lo que la gente busca en Google (por país)
+# menos y mejores (auditoría, fase 3, tarea 54): 1 artículo al día y 1 más solo si hay un tema pendiente de lo que la gente busca en Google
 _usados_prev = {a.get('fuente_id') for a in art_hechos} | {a.get('fuente_id') for a in autodesc if a.get('tipo') == 'articulo'}
-LIMITE_A = 2 + min(2, sum(1 for t in _temas_seo if 'guia-' + hashlib.md5(t['titulo'].encode()).hexdigest()[:8] not in _usados_prev))
+LIMITE_A = 1 + min(1, sum(1 for t in _temas_seo if 'guia-' + hashlib.md5(t['titulo'].encode()).hexdigest()[:8] not in _usados_prev))
 if (os.environ.get('GEMINI_API_KEY') or os.environ.get('GITHUB_TOKEN')) and _ah[HOY]['hechos'] < LIMITE_A and _ah[HOY]['intentos'] < LIMITE_A * 3:
     usados_a = {a.get('fuente_id') for a in art_hechos} | {a.get('fuente_id') for a in autodesc if a.get('tipo') == 'articulo'}
     guias_libres = [('guia', {'id': 'guia-' + hashlib.md5(t.encode()).hexdigest()[:8], 'titulo': t, 'test': k, 'mundo': m}) for t, k, m in GUIAS_A
