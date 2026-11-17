@@ -298,20 +298,80 @@
   }
   /* la barra de mundos no debe aparecer en los resultados de Google como texto («AURZANEMINDOVP…») */
   // Curso relacionado: tras los tests y ejercicios de ansiedad o estrés, el curso gratuito con certificado.
-  var CURSOS_REL = [[/^\/(test-de-ansiedad|test-de-estres|ejercicios\/(respiracion|relajacion|respiracion-[a-z-]+|relajacion-[a-z-]+))/, 'ansiedad-dia-a-dia',
-    'Curso gratis: Gestionar la ansiedad en el día a día', 'Entiende tu ansiedad, calma el cuerpo, revisa los pensamientos que la alimentan y construye tu plan. 4 temas y certificado gratuito al terminar.']];
+  // Curso relacionado al final de tests y ejercicios. [ruta, curso, título, texto, dominio, solo si está publicado]
+  // Los cursos nuevos solo se anuncian cuando ya están publicados (lista que genera cada día cursos/catalogo.py).
+  var CURSOS_REL = [
+    [/^\/(test-de-ansiedad|test-de-estres|ejercicios\/(respiracion|relajacion|respiracion-[a-z-]+|relajacion-[a-z-]+))/, 'ansiedad-dia-a-dia',
+      'Curso gratis: Gestionar la ansiedad en el día a día', 'Entiende tu ansiedad, calma el cuerpo, revisa los pensamientos que la alimentan y construye tu plan. 4 temas y certificado gratuito al terminar.', 'mind.aurzane.com', false],
+    [/^\/(test-de-autoestima|test-de-autocompasion|ejercicios\/pausa-de-autocompasion)/, 'autoestima-dia-a-dia',
+      'Curso gratis: Autoestima en el día a día', 'Reconoce la voz crítica, trátate con más amabilidad y actúa según lo que te importa. Mini curso con certificado gratuito al terminar.', 'mind.aurzane.com', true],
+    [/^\/(test-de-sueno|calculadora-sueno)/, 'dormir-mejor',
+      'Curso gratis: Dormir mejor', 'Cómo funciona el sueño, qué hábitos lo ordenan y qué hacer cuando no llega, con un diario de sueño. Mini curso con certificado gratuito al terminar.', 'live.aurzane.com', true]];
   function cursoRelacionado() {
-    if (location.hostname !== 'mind.aurzane.com' || d.querySelector('.az-curso-rel')) return;
+    if (d.querySelector('.az-curso-rel')) return;
     for (var i = 0; i < CURSOS_REL.length; i++) {
-      var c = CURSOS_REL[i]; if (!c[0].test(location.pathname)) continue;
-      var ref = d.querySelector('section[data-guia]') || d.querySelector('aside.firma') || d.querySelector('footer'); if (!ref) return;
-      var w = ref.closest('.wrap') || ref;
-      var box = d.createElement('div'); box.className = 'wrap az-curso-rel';
-      box.innerHTML = '<a href="https://learn.aurzane.com/curso/' + c[1] + '/?utm_source=mind&amp;utm_medium=test" style="display:flex;gap:18px;align-items:center;text-decoration:none;color:inherit;border:1px solid #c9a24b;border-radius:16px;padding:18px 20px;margin:28px 0;background:rgba(201,162,75,.07)">' +
-        '<img src="https://learn.aurzane.com/cursos/portada-ansiedad.webp" alt="" width="160" height="90" loading="lazy" style="width:160px;height:auto;border-radius:10px;flex:none">' +
-        '<span><strong style="display:block;font-size:1.08rem;margin-bottom:4px">' + c[2] + '</strong><span style="opacity:.85">' + c[3] + '</span><span class="az-cr-ver" style="display:block;margin-top:8px;font-weight:600;color:#7E6020">Ver el curso</span></span></a>';
-      w.parentNode.insertBefore(box, w); return;
+      var c = CURSOS_REL[i]; if (location.hostname !== c[4] || !c[0].test(location.pathname)) continue;
+      var pintar = function (img) {
+        var ref = d.querySelector('section[data-guia]') || d.querySelector('aside.firma') || d.querySelector('footer'); if (!ref || d.querySelector('.az-curso-rel')) return;
+        var w = ref.closest('.wrap') || ref;
+        var box = d.createElement('div'); box.className = 'wrap az-curso-rel';
+        box.innerHTML = '<a href="https://learn.aurzane.com/curso/' + c[1] + '/?utm_source=' + c[4].split('.')[0] + '&amp;utm_medium=test" style="display:flex;gap:18px;align-items:center;text-decoration:none;color:inherit;border:1px solid #c9a24b;border-radius:16px;padding:18px 20px;margin:28px 0;background:rgba(201,162,75,.07)">' +
+          '<img src="' + img + '" alt="" width="160" height="90" loading="lazy" style="width:160px;height:auto;border-radius:10px;flex:none">' +
+          '<span><strong style="display:block;font-size:1.08rem;margin-bottom:4px">' + c[2] + '</strong><span style="opacity:.85">' + c[3] + '</span><span class="az-cr-ver" style="display:block;margin-top:8px;font-weight:600;color:#7E6020">Ver el curso</span></span></a>';
+        w.parentNode.insertBefore(box, w);
+      };
+      if (!c[5]) { pintar('https://learn.aurzane.com/cursos/portada-ansiedad.webp'); return; }
+      var s = d.createElement('script'); s.src = 'https://learn.aurzane.com/cursos/publicados.js?d=' + new Date().toISOString().slice(0, 10); s.async = true;
+      s.onload = function () { var P = w.AZ_CURSOS_PUB || {}; if (P[c[1]]) pintar(P[c[1]].img); };
+      d.head.appendChild(s); return;
     }
+  }
+  // Recordatorios en tu calendario (17/11/2026, etapa 3, tarea 42): regla prevista y citas del embarazo como archivo .ics
+  // que se crea en el propio dispositivo. AURZANE no recibe ni guarda ninguna fecha (son datos de salud).
+  function calendarioIcs() {
+    var esOvu = /^\/calculadora-ovulacion\/?$/.test(location.pathname), esEmb = /^\/calculadora-embarazo\/?$/.test(location.pathname);
+    if ((!esOvu && !esEmb) || d.querySelector('.az-ics')) return;
+    var ancla = d.getElementById(esOvu ? 'tablaCiclos' : 'hitosBloque') || d.getElementById('hitos'); if (!ancla) return;
+    if (ancla.tagName === 'TABLE' || ancla.tagName === 'TBODY') ancla = ancla.closest('table') || ancla;
+    var DIA = 864e5;
+    function dIso(t) { var x = new Date(t); return x.getUTCFullYear() + ('0' + (x.getUTCMonth() + 1)).slice(-2) + ('0' + x.getUTCDate()).slice(-2); }
+    function utc(v) { var p = String(v || '').split('-'); return p.length === 3 ? Date.UTC(+p[0], +p[1] - 1, +p[2]) : NaN; }
+    function num(id, def, a, b) { var e = d.getElementById(id), v = e ? Math.round(+e.value) : NaN; return isFinite(v) && v ? Math.min(Math.max(v, a), b) : def; }
+    function eventos() {
+      var fur = utc((d.getElementById('fur') || {}).value); if (!isFinite(fur)) return [];
+      var hoy = new Date(), h0 = Date.UTC(hoy.getFullYear(), hoy.getMonth(), hoy.getDate()), ev = [];
+      if (esOvu) {
+        var c = num('ciclo', 28, 20, 45), pr = fur, n = 0;
+        while (pr <= h0 && n < 200) { pr += c * DIA; n++; }
+        for (var i = 0; i < 6; i++) ev.push([pr + i * c * DIA, 'Regla prevista', 'Fecha calculada con un ciclo de ' + c + ' días. Es una estimación: los ciclos varían.']);
+      } else {
+        var cic = num('ciclo', 28, 21, 40), base = fur + (cic - 28) * DIA, H = w.HITOS || [[4,5,'Prueba de embarazo','Ya puede dar positivo en casa. Pide cita con tu centro de salud y empieza con ácido fólico si aún no lo tomas.'],[6,10,'Primera visita y analítica','Grupo sanguíneo, serologías y análisis de sangre y orina del primer trimestre.'],[11,13,'Ecografía del primer trimestre','Confirma la edad gestacional y, junto con la analítica, el cribado combinado.'],[18,22,'Ecografía morfológica','La de la semana 20: revisa con detalle la anatomía del bebé.'],[24,28,'Test de O’Sullivan','Cribado de diabetes gestacional con una prueba de glucosa.'],[32,36,'Ecografía del tercer trimestre','Valora el crecimiento y la posición del bebé.'],[35,37,'Cultivo de estreptococo','Muestra vaginal y rectal para prevenir infecciones en el parto.'],[37,42,'A término','El bebé puede nacer en cualquier momento. Revisa tu plan de parto.']];   // mismas citas que la calculadora de embarazo de LIVE
+        H.forEach(function (x) { var a = base + x[0] * 7 * DIA; if (a + 7 * DIA >= h0) ev.push([a, x[2] + ' (semanas ' + x[0] + ' a ' + x[1] + ')', x[3]]); });
+        ev.push([base + 280 * DIA, 'Fecha probable de parto', 'Fecha estimada: solo una pequeña parte de los bebés nace justo ese día.']);
+      }
+      return ev;
+    }
+    var box = d.createElement('div'); box.className = 'az-ics';
+    box.style.cssText = 'margin:18px 0;padding:14px 16px;border-radius:12px;border:1px solid rgba(127,127,127,.3);font-size:.93rem';
+    box.innerHTML = '<button type="button" style="min-height:44px;padding:10px 18px;border-radius:99px;border:1px solid currentColor;background:transparent;color:inherit;font:inherit;font-weight:600;cursor:pointer">📅 ' +
+      (esOvu ? 'Añadir mis próximas reglas a mi calendario' : 'Añadir las citas del embarazo a mi calendario') + '</button>' +
+      '<p style="margin:8px 0 0;opacity:.8">Se descarga un archivo de calendario con aviso la víspera. Se crea en tu dispositivo: AURZANE no recibe ni guarda tus fechas.</p>';
+    box.querySelector('button').addEventListener('click', function () {
+      var ev = eventos(); if (!ev.length) { box.querySelector('p').textContent = 'Primero indica la fecha de tu última regla.'; return; }
+      var st = new Date().toISOString().replace(/[-:]/g, '').slice(0, 15) + 'Z';
+      var esc = function (t) { return String(t).replace(/[\\,;]/g, function (m) { return '\\' + m; }).replace(/\n/g, '\\n'); };
+      var ics = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//AURZANE//Recordatorios//ES', 'CALSCALE:GREGORIAN'];
+      ev.forEach(function (e, i) {
+        ics.push('BEGIN:VEVENT', 'UID:' + dIso(e[0]) + '-' + i + '-' + Math.random().toString(36).slice(2, 8) + '@aurzane.com', 'DTSTAMP:' + st,
+          'DTSTART;VALUE=DATE:' + dIso(e[0]), 'DTEND;VALUE=DATE:' + dIso(e[0] + DIA), 'SUMMARY:' + esc(e[1]), 'DESCRIPTION:' + esc(e[2] + ' ' + location.href.split('#')[0]),
+          'BEGIN:VALARM', 'TRIGGER:-PT12H', 'ACTION:DISPLAY', 'DESCRIPTION:' + esc(e[1]), 'END:VALARM', 'END:VEVENT');
+      });
+      ics.push('END:VCALENDAR');
+      var a = d.createElement('a'); a.href = URL.createObjectURL(new Blob([ics.join('\r\n')], { type: 'text/calendar' }));
+      a.download = esOvu ? 'reglas-previstas.ics' : 'citas-embarazo.ics'; d.body.appendChild(a); a.click(); setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 1000);
+      box.querySelector('p').textContent = 'Listo: abre el archivo descargado para añadir ' + ev.length + ' fechas a tu calendario.';
+    });
+    ancla.parentNode.insertBefore(box, ancla.nextSibling);
   }
   function sinFragmento() { Array.prototype.forEach.call(d.querySelectorAll('.utility,.topbar,.todo-panel'), function (e) { e.setAttribute('data-nosnippet', ''); }); }
   function librero() {   // IA de la tienda y la biblioteca
@@ -487,6 +547,8 @@
     });
   }
 
-  function iniciar() { panel(); portada(); explorar(); tarjetasConFoto(); compartirImagen(); boletin(); boletinResultado(); boletinLectura(); librero(); avisoFallo(); socios(); sinFragmento(); amazonPais(); clicsCompra(); cursoRelacionado(); guardarTest(); videoDia(); piesLegales(); }
+  /* tablas con desplazamiento horizontal: accesibles con el teclado (WCAG 2.1.1) */
+  function desplazables() { Array.prototype.forEach.call(d.querySelectorAll('.scroll'), function (s) { if (s.scrollWidth > s.clientWidth + 1 && !s.hasAttribute('tabindex')) { s.tabIndex = 0; s.setAttribute('role', 'region'); s.setAttribute('aria-label', 'Tabla desplazable'); } }); }
+  function iniciar() { setTimeout(desplazables, 800); panel(); portada(); explorar(); tarjetasConFoto(); compartirImagen(); boletin(); boletinResultado(); boletinLectura(); librero(); avisoFallo(); socios(); sinFragmento(); amazonPais(); clicsCompra(); cursoRelacionado(); calendarioIcs(); guardarTest(); videoDia(); piesLegales(); }
   if (d.readyState === 'loading') d.addEventListener('DOMContentLoaded', iniciar); else iniciar();
 })(window, document);

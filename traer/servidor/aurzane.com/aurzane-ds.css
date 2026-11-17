@@ -328,3 +328,9 @@ html.az-ds-live .eyebrow{color:#9A4523!important}
 .az-pie-legal a{display:inline-flex;align-items:center;min-height:26px}
 input[type=checkbox],input[type=radio]{min-width:24px;min-height:24px}
 .search-box input,.search-wrap input{min-height:28px}
+/* Contraste AA en las migas del lector de artículos y objetivo táctil del enlace «acerca» de NEXUS (auditoría r8, 17/11/2026) */
+html:not([data-tema="oscuro"]) #breadcrumbBox,html:not([data-tema="oscuro"]) #breadcrumbBox a{color:#5f5444}
+a[href$="acerca/"]{display:inline-flex;align-items:center;min-height:24px}
+
+/* 17/11/2026: contraste en tema oscuro del sistema (módulos de los cursos de LEARN: el dorado oscuro no se leía sobre azul noche) */
+@media (prefers-color-scheme:dark){.tem summary .n{color:#d9b45a}}
