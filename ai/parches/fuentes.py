@@ -51,12 +51,33 @@ def htaccess(dir_f):
         open(p, 'w').write(t)
 
 
+PALETA = '<script src="https://aurzane.com/aurzane-paleta.js"></script>'
+PRE_DS = re.compile(r'<link rel="preload" href="https://aurzane\.com/aurzane-ds\.css\?v=[0-9]+" as="style" data-azpre="1">')
+
+
+def version_ds():
+    """Versión de la hoja común que carga aurzane-paleta.js; con ella se adelanta su descarga en cada página."""
+    try:
+        m = re.search(r"aurzane-ds\.css\?v=([0-9]+)", open(base + '/aurzane.com/public_html/aurzane-paleta.js', encoding='utf-8').read())
+        return m.group(1) if m else ''
+    except Exception: return ''
+
+
+def precarga(t, v):
+    """Hoja común precargada en paralelo con aurzane-paleta.js (antes se pedía después: medio segundo más en móvil)."""
+    if not v or PALETA not in t: return t
+    tag = f'<link rel="preload" href="https://aurzane.com/aurzane-ds.css?v={v}" as="style" data-azpre="1">'
+    if PRE_DS.search(t): return PRE_DS.sub(tag, t, count=1)
+    return t.replace(PALETA, PALETA + tag, 1)
+
+
 def main():
     raiz_f = base + '/aurzane.com/public_html/fuentes'
     if not os.path.exists(raiz_f + '/instrument-sans-latin-wght-normal.woff2'):
         print('::warning::Faltan las fuentes en aurzane.com/fuentes/: no se cambia ninguna página'); return
     htaccess(raiz_f)
-    total, dejadas = 0, 0
+    total, dejadas, pre = 0, 0, 0
+    VDS = version_ds()
     for w in WEBS:
         raiz = base + '/' + w + '/public_html'; copia = base + '/' + w + '/eliminar/fuentes-' + hoy
         for d, sub, fs in os.walk(raiz):
@@ -66,8 +87,12 @@ def main():
                 p = os.path.join(d, f)
                 try: t = open(p, encoding='utf-8').read()
                 except Exception: continue
-                if 'fonts.googleapis.com' not in t: continue
                 t0 = t
+                t = precarga(t, VDS)
+                if 'fonts.googleapis.com' not in t:
+                    if t != t0:   # solo cambia una etiqueta de precarga: sin copia (serían miles de copias en cada cambio de versión)
+                        tmp = p + '.tmp-fuentes'; open(tmp, 'w', encoding='utf-8').write(t); os.replace(tmp, p); pre += 1
+                    continue
                 t = re.sub(r'<noscript>\s*(<link\b[^>]*fonts\.googleapis\.com[^>]*>)\s*</noscript>', lambda m: '' if not (familias(re.search(r'href=["\'](https://fonts[^"\']+)', m.group(1)).group(1)) - NUESTRAS) else m.group(0), t)
                 hecho = [False]
 
@@ -86,7 +111,7 @@ def main():
                 rel = os.path.relpath(p, raiz); dst = os.path.join(copia, rel)
                 os.makedirs(os.path.dirname(dst), exist_ok=True); shutil.copy2(p, dst)
                 tmp = p + '.tmp-fuentes'; open(tmp, 'w', encoding='utf-8').write(n); os.replace(tmp, p); total += 1
-    print(f'::notice::Fuentes propias: {total} páginas cambiadas; {dejadas} usan otras familias y siguen con Google Fonts')
+    print(f'::notice::Fuentes propias: {total} páginas cambiadas; {dejadas} usan otras familias y siguen con Google Fonts; hoja común precargada (v{VDS}) en {pre} páginas más')
 
 
 main()
