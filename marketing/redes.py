@@ -330,15 +330,16 @@ def video_tiktok(texto, url, local, enlace, p):
     opciones = info.get('privacy_level_options', [])
     priv = 'PUBLIC_TO_EVERYONE' if E('TIKTOK_PUBLICO') == '1' and 'PUBLIC_TO_EVERYONE' in opciones else ('SELF_ONLY' if 'SELF_ONLY' in opciones else opciones[0])
     datos = open(local, 'rb').read()
-    titulo = (p['titulo'] if p['tipo'] == 'frase' else p['ganchos'][0]) + ' ' + ' '.join('#' + h for h in p.get('hashtags', [])[:4]) + ' #AURZANE'
-    if '🎵' in texto: titulo += '\n' + texto[texto.index('🎵'):]
+    titulo = texto[:2200]   # descripción preparada en mk.texto_tiktok
+    def _aviso():   # el borrador de la bandeja no lleva descripción: se manda por correo para copiarla (paso «Aviso TikTok» del flujo)
+        with open('/tmp/tiktok_textos.txt', 'a', encoding='utf-8') as f: f.write(f"=== {p.get('tipo', '')}: {p.get('titulo', '')[:80]}\n\n{titulo}\n\n")
     fuente = {'source': 'FILE_UPLOAD', 'video_size': len(datos), 'chunk_size': len(datos), 'total_chunk_count': 1}
     if priv != 'PUBLIC_TO_EVERYONE':
         # Sin auditoría, TikTok no deja publicar en cuentas públicas. Se manda a la bandeja de TikTok como borrador:
         # Adrián lo abre en la app, le pone un sonido de la biblioteca de TikTok (música en tendencia) y publica.
         ini = pedir('https://open.tiktokapis.com/v2/post/publish/inbox/video/init/', {'source_info': fuente}, cab)['data']
         pedir(ini['upload_url'], crudo=datos, metodo='PUT', t=600, cab={'Content-Type': 'video/mp4', 'Content-Range': f'bytes 0-{len(datos) - 1}/{len(datos)}'})
-        return ini['publish_id'] + ' (borrador en la bandeja de TikTok: añade un sonido y publica)'
+        _aviso(); return ini['publish_id'] + ' (borrador en la bandeja de TikTok: añade un sonido y publica)'
     try:
         ini = pedir('https://open.tiktokapis.com/v2/post/publish/video/init/', {
             'post_info': {'title': titulo[:2200], 'privacy_level': priv, 'disable_comment': False, 'disable_duet': False, 'disable_stitch': False},
@@ -348,7 +349,7 @@ def video_tiktok(texto, url, local, enlace, p):
         if 'unaudited' not in str(e): raise
         ini = pedir('https://open.tiktokapis.com/v2/post/publish/inbox/video/init/', {'source_info': fuente}, cab)['data']
         pedir(ini['upload_url'], crudo=datos, metodo='PUT', t=600, cab={'Content-Type': 'video/mp4', 'Content-Range': f'bytes 0-{len(datos) - 1}/{len(datos)}'})
-        return ini['publish_id'] + ' (borrador en la bandeja de TikTok: la app aún no está auditada; publícalo desde la app)'
+        _aviso(); return ini['publish_id'] + ' (borrador en la bandeja de TikTok: la app aún no está auditada; publícalo desde la app)'
     pedir(ini['upload_url'], crudo=datos, metodo='PUT', t=600,
           cab={'Content-Type': 'video/mp4', 'Content-Range': f'bytes 0-{len(datos) - 1}/{len(datos)}'})
     return ini['publish_id'] + ('' if priv == 'PUBLIC_TO_EVERYONE' else ' (privado hasta la auditoría de TikTok)')

@@ -4,7 +4,7 @@ name: Marketing automático
 #  - 08:37 UTC  franja de mañana (herramientas)       = 09:37 en España (10:37 en verano)
 #  - 12:13 UTC  frase de superación con foto (sobre todo Instagram) = 13:13 en España
 #  - 23:29 UTC  vídeo vertical (Reels, Facebook, YouTube Shorts, Telegram) = tarde en América (18:29 Ecuador)
-#  - TikTok: 08:00, 14:00 y 21:00 hora de España (curiosidad, test o calculadora, frase)
+#  - TikTok: 18:00 y 22:00 hora de España (curiosidad y frase)
 #  - 17:41 UTC  franja de tarde (libros, notas, etc.)  = 18:41 en España
 # Cada red se activa sola cuando existen sus secretos (ver marketing/README.md). Sin secretos no publica nada.
 on:
@@ -17,7 +17,7 @@ on:
     - cron: '47 10 * * *'  # segundo vídeo del día (frases y curiosidades)
     - cron: '23 15 * * *'  # tercer vídeo del día (solo YouTube y TikTok)
     - cron: '7 10,14,16,21 * * *'  # repaso: publica lo que se haya quedado atrás
-    - cron: '2 6,7,12,13,19,20 * * *'  # TikTok a las 08:00, 14:00 y 21:00 de España (dos horas UTC para invierno y verano; publica la que toque)
+    - cron: '2 16,17,20,21 * * *'  # TikTok a las 18:00 y 22:00 de España (dos horas UTC para invierno y verano; publica la que toque)
   push:
     paths: ['marketing/*.py', 'marketing/*.js', 'marketing/biblioteca_*.json', 'marketing/web/**', '.github/workflows/marketing.yml']
   workflow_dispatch:
@@ -66,7 +66,7 @@ jobs:
       - name: Qué toca
         run: |
           A="${{ github.event.inputs.accion }}"
-          case "${{ github.event.schedule }}" in '37 8 * * *') A=1;; '41 17 * * *') A=2;; '13 12 * * *') A=3;; '29 23 * * *') A=4;; '2 6,7,12,13,19,20 * * *') A=pendientes;; '47 10 * * *') A=5;; '23 15 * * *') A=6;; '13 5 * * *') A=planificar;; esac
+          case "${{ github.event.schedule }}" in '37 8 * * *') A=1;; '41 17 * * *') A=2;; '13 12 * * *') A=3;; '29 23 * * *') A=4;; '2 16,17,20,21 * * *') A=pendientes;; '47 10 * * *') A=5;; '23 15 * * *') A=6;; '13 5 * * *') A=planificar;; esac
           echo "ACCION=${A:-planificar}" >> $GITHUB_ENV; echo "Acción: ${A:-planificar}"
       - name: SSH
         if: env.SG_KEY != ''
@@ -118,6 +118,13 @@ jobs:
       - name: Publicar lo que toque
         if: env.ACCION != 'verificar'
         run: python3 marketing/mk.py pendientes
+      - name: Aviso TikTok (descripción por correo para el borrador de la bandeja)
+        if: env.SG_KEY != '' && hashFiles('marketing/aviso_tiktok.php') != ''
+        run: |
+          if [ -s /tmp/tiktok_textos.txt ]; then
+            cat marketing/aviso_tiktok.php | $SSH "$SG_USER@$SG_HOST" "cat > aviso_tiktok.php"
+            cat /tmp/tiktok_textos.txt | $SSH "$SG_USER@$SG_HOST" "php aviso_tiktok.php" || true
+          fi
       - name: Subir a aurzane.com y leer clics
         if: env.SG_KEY != ''
         run: |

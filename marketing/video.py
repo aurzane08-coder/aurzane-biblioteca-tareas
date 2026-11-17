@@ -15,7 +15,7 @@ def duracion(p):
     palabras = len(' '.join(str(p.get(k) or '') for k in ('titulo', 'texto', 'autor') if k != 'texto' or p.get('tipo') != 'frase').split())
     if p.get('tipo') == 'frase': return max(12, min(22, round(palabras / 2.3) + 7))
     return max(15, min(30, round(palabras / 2.6) + 8))
-V = 'm2-'  # versión de los vídeos: m2 = con música y solo la marca arriba (la dirección web va en la descripción)
+V = 'm3-'  # versión de los vídeos: m3 = entrada por pasos, zoom lento del fondo y «Síguenos» al final (m2: con música y solo la marca arriba)
 # Música de fondo: Kevin MacLeod (incompetech.com), licencia CC BY 4.0. Uso comercial y monetización permitidos citando el tema,
 # por eso cada publicación de vídeo lleva el crédito (mk.credito_musica). Calma para frases, más alegre para tests y calculadoras.
 MUSICA_CALMA = ['Meditation Impromptu 01', 'Meditation Impromptu 02', 'Meditation Impromptu 03', 'Peaceful Desolation', 'Healing', 'Dreamer',
@@ -208,16 +208,28 @@ def generar(dias=2):
         sal = os.path.join(D, 'salida', 'video', V + i + '.mp4')
         mus, cred = elegir_musica(p)
         usada = mk.leer('musica_usada.json', {}); usada[i] = cred; mk.guardar('musica_usada.json', usada)
-        filtro = ('[0:v]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,setsar=1,fps=30,eq=brightness=-0.05:saturation=1.05[b];'
-                  '[1:v]format=rgba,fade=in:st=0.3:d=0.9:alpha=1[c];[b][c]overlay=0:0,format=yuv420p[v]')
+        # Entrada por pasos (17/11/2026): marca y etiqueta, luego el título, luego autor o explicación, y al final «Síguenos».
+        # El fondo se acerca muy despacio (efecto Ken Burns) para que el vídeo no se vea estático.
+        t2 = round(min(dur * .4, 1.6 + len(str(p.get('titulo', '')).split()) / 3.2), 2); t3 = round(max(t2 + 2, dur - 4), 2)
+        capas_in = ['-loop', '1', '-i', f'/tmp/capa-{i}.png']
+        extra = [k for k in (1, 2, 3) if os.path.exists(f'/tmp/capa-{i}-{k}.png')]
+        for k in extra: capas_in += ['-loop', '1', '-i', f'/tmp/capa-{i}-{k}.png']
+        filtro = (f"[0:v]scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,setsar=1,fps=30,"
+                  f"scale=w='1080*(1+0.06*t/{dur})':h='1920*(1+0.06*t/{dur})':eval=frame,crop=1080:1920,eq=brightness=-0.05:saturation=1.05[b];"
+                  "[1:v]format=rgba,fade=in:st=0.2:d=0.7:alpha=1[c0];[b][c0]overlay=0:0[x0]")
+        ini = {1: 0.7, 2: t2, 3: t3}; ult = 'x0'
+        for n_, k in enumerate(extra, start=2):
+            filtro += f";[{n_}:v]format=rgba,fade=in:st={ini[k]}:d=0.6:alpha=1[c{k}];[{ult}][c{k}]overlay=0:0[x{k}]"; ult = f'x{k}'
+        filtro += f';[{ult}]format=yuv420p[v]'
+        ai = 2 + len(extra)
         if mus:
             audio_in = ['-ss', str(3 + int(hashlib.md5(i.encode()).hexdigest(), 16) % 20), '-i', mus]
-            filtro += f';[2:a]volume=0.55,afade=t=in:st=0:d=1.2,afade=t=out:st={dur - 2.5}:d=2.5[a]'; amap = '[a]'
+            filtro += f';[{ai}:a]volume=0.55,afade=t=in:st=0:d=1.2,afade=t=out:st={dur - 2.5}:d=2.5[a]'; amap = '[a]'
         else:
-            audio_in = ['-f', 'lavfi', '-i', 'anullsrc=r=44100:cl=stereo']; amap = '2:a'
-        cmd = ['ffmpeg', '-y', '-loglevel', 'error', '-stream_loop', '-1', '-i', src, '-loop', '1', '-i', f'/tmp/capa-{i}.png'] + audio_in + [
+            audio_in = ['-f', 'lavfi', '-i', 'anullsrc=r=44100:cl=stereo']; amap = f'{ai}:a'
+        cmd = ['ffmpeg', '-y', '-loglevel', 'error', '-stream_loop', '-1', '-i', src] + capas_in + audio_in + [
                '-filter_complex', filtro, '-map', '[v]', '-map', amap,
-               '-t', str(dur), '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '23', '-profile:v', 'high', '-c:a', 'aac', '-b:a', '128k', '-ar', '44100',
+               '-t', str(dur), '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '21', '-profile:v', 'high', '-c:a', 'aac', '-b:a', '128k', '-ar', '44100',
                '-movflags', '+faststart', sal]
         r = subprocess.run(cmd)
         print('::notice title=Videos::', i, 'ok' if r.returncode == 0 else 'ERROR', round(os.path.getsize(sal) / 1e6, 1) if os.path.exists(sal) else '', 'MB')

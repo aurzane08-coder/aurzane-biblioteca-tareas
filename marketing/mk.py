@@ -20,9 +20,9 @@ SOLO_FRASES = ('youtube', 'tiktok')   # en YouTube y TikTok solo frases y curios
 TIPOS_SOLO = ('frase', 'curiosidad')
 VID = ('4', '5', '6', '7', '8', '9')   # vídeo vertical: 4 (tarde, de todo), 5 (mañana, frases y curiosidades), 6 (media tarde, solo YouTube) y 7-9 (TikTok)
 REDES_V6 = ['youtube']
-# TikTok (16/11/2026): tres vídeos al día a la hora de España con más público, cada uno de un tipo distinto para que no se repitan:
-#   7 = 08:00 curiosidad · 8 = 14:00 test o calculadora (alternos) · 9 = 21:00 frase. Fuentes de horario: estudios de Metricool y similares.
-TIKTOK_FRANJAS = {'7': (8, 0), '8': (14, 0), '9': (21, 0)}
+# TikTok (17/11/2026): dos vídeos al día, a las horas con más público según Metricool (pico 17:00-19:00) y Buffer (7 M de vídeos: la noche rinde más):
+#   7 = 18:00 curiosidad (mediodía en Ecuador y Colombia) · 9 = 22:00 frase (tarde en América: 16:00 Ecuador, 18:00 Argentina).
+TIKTOK_FRANJAS = {'7': (18, 0), '9': (22, 0)}
 def redes_de(fr): return ['tiktok'] if fr in TIKTOK_FRANJAS else REDES_V6 if fr == '6' else REDES_VIDEO
 SITIO_IMG = 'https://aurzane.com/marketing/'
 IR = 'https://aurzane.com/ir/'
@@ -225,7 +225,9 @@ def planificar(dias=14):
         f = (HOY + datetime.timedelta(days=d)).isoformat()
         pass  # cada franja se completa abajo si falta
         dia = cal.setdefault(f, {})
+        if '8' not in TIKTOK_FRANJAS: dia.pop('8', None)   # TikTok pasó de 3 a 2 vídeos al día
         for fr in ('1', '2', '3', '4', '5', '6', '7', '8', '9'):
+            if fr in ('7', '8', '9') and fr not in TIKTOK_FRANJAS: continue
             ya = datetime.datetime.now(datetime.timezone.utc)
             if fr in dia and d == 0 and fr in HORAS and (ya.hour, ya.minute) >= HORAS[fr]: continue   # franja de hoy ya pasada: no se toca
             if fr in dia and all(i in cat for i in dia[fr].values()) and not any(r in SOLO_FRASES and fr in VID and cat[i]['tipo'] not in TIPOS_SOLO for r, i in dia[fr].items()) and set(dia[fr]) >= set(redes_de(fr) if fr in VID else [x for x in REDES if not (x == 'pinterest' and fr == '1')]): continue
@@ -445,6 +447,29 @@ def texto_frase(r, p, n):
     return f'{t}\n\n{q}\n\n{url}\n\n#FrasesMotivadoras #Superación #SaludMental #Psicología'
 
 
+PREG_TK = ['¿Qué te dice esta frase hoy?', '¿Con qué parte te quedas?', 'Guárdala para cuando la necesites.', 'Mándasela a quien la necesite hoy.',
+           '¿Estás de acuerdo? Te leo en comentarios.', 'Escríbela donde la veas cada mañana.']
+PREG_CUR = ['¿Lo sabías? Cuéntamelo en comentarios.', 'Guárdalo y compártelo con quien le guste la psicología.', '¿Te ha pasado alguna vez?',
+            'Etiqueta a quien tiene que ver esto.', '¿Qué otra curiosidad del cerebro quieres que expliquemos?']
+
+
+def texto_tiktok(p):
+    """Descripción para TikTok (17/11/2026): gancho, cuerpo corto, una pregunta que invite a comentar, invitación a seguir
+    y 5 o 6 etiquetas en español del tema. Sin enlaces (en TikTok no se pueden pulsar): la web va en la bio."""
+    h = int(hashlib.md5(p['id'].encode()).hexdigest(), 16)
+    if p['tipo'] == 'frase':
+        cuerpo = f"«{p['titulo']}»" + ('' if p.get('autor') in ('', None, 'AURZANE') else f"\n{p['autor']}")
+        cierre = PREG_TK[h % len(PREG_TK)] + '\n\nSíguenos: cada día una frase que ayuda y psicología explicada fácil.'
+        base = ['frases', 'frasesmotivadoras', 'reflexion', 'psicologia', 'saludmental']
+    else:
+        cuerpo = p['titulo'] + '\n\n' + recorta(p.get('dato') or p['texto'], 320)
+        cierre = PREG_CUR[h % len(PREG_CUR)] + '\n\nSíguenos para más psicología en 30 segundos.'
+        base = ['psicologia', 'sabiasque', 'curiosidades', 'cerebro', 'aprendeentiktok']
+    extra = [x for x in (p.get('hashtags') or []) if x.lower() not in base + ['aurzane']][:2]
+    tags = ' '.join('#' + x for x in base + extra + ['aurzane'])
+    return f'{cuerpo}\n\n{cierre}\n\n{tags}'
+
+
 def texto(r, p, n):
     if p['tipo'] == 'frase': return texto_frase(r, p, n)
     g = p['ganchos'][n % len(p['ganchos'])]
@@ -505,7 +530,7 @@ def publicar_video(franja='4'):
         try:
             if not os.path.exists(local):
                 os.makedirs(os.path.dirname(local), exist_ok=True); urllib.request.urlretrieve(url, local)
-            tx = texto(r if r in REDES else 'mastodon', p, n + 4) + f'\n\n🎵 {_v.credito(p)}'
+            tx = (texto_tiktok(p) if r == 'tiktok' else texto(r if r in REDES else 'mastodon', p, n + 4)) + f'\n\n🎵 {_v.credito(p)}'
             try: ref = redes.publicar_video(r, tx, url, local, IR + codigo(r, i), p)
             except Exception as e1:
                 if r != 'tiktok': raise
@@ -523,7 +548,7 @@ try:   # franjas de TikTok a la hora de España (cambia sola con el horario de v
     for _fr, (_h, _m) in TIKTOK_FRANJAS.items():
         _u = datetime.datetime.combine(HOY, datetime.time(_h, _m), tzinfo=ZoneInfo('Europe/Madrid')).astimezone(datetime.timezone.utc)
         HORAS[_fr] = (_u.hour, _u.minute)
-except Exception: HORAS.update({'7': (7, 0), '8': (13, 0), '9': (20, 0)})  # UTC; la franja 4 sale a la hora de la tarde en América (18:29 en Ecuador, Colombia y Perú; 17:29 en México; 20:29 en Argentina)
+except Exception: HORAS.update({'7': (17, 0), '9': (21, 0)})  # UTC; la franja 4 sale a la hora de la tarde en América (18:29 en Ecuador, Colombia y Perú; 17:29 en México; 20:29 en Argentina)
 
 
 def _exito():

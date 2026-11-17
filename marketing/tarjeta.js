@@ -36,27 +36,37 @@ ${x.credito ? `<div class="cred">${esc(x.credito)}</div>` : ''}</body></html>`;
 }
 // Capa transparente 1080x1920 para vídeos verticales (Reels, Shorts, TikTok): el vídeo de fondo se pone con ffmpeg.
 async function capa(pg, x, t) {
+  // Vídeo vertical (17/11/2026): la capa sale en 4 PNG del mismo diseño para que el vídeo los muestre por pasos
+  // (marca y etiqueta, título, autor o explicación, y al final la invitación a seguir). Todo dentro de la zona segura
+  // de TikTok, Reels y Shorts: nada bajo los botones de la derecha ni bajo el texto de abajo.
   await pg.setViewportSize({width: 1080, height: 1920});
-  const n = (x.titulo || '').length, tam = n > 110 ? 70 : n > 75 ? 82 : n > 45 ? 96 : 112;
-  const html = `<html><head><meta charset="utf-8"><style>
+  const n = (x.titulo || '').length, tam = n > 110 ? 68 : n > 75 ? 80 : n > 45 ? 94 : 108;
+  const fin = x.fin || (x.cita ? 'Síguenos: una frase que ayuda, cada día' : 'Síguenos para más psicología en 30 segundos');
+  const html = (paso) => `<html><head><meta charset="utf-8"><style>
 @font-face{font-family:B;src:url(file://${F}/bodoni-moda/files/bodoni-moda-latin-700-normal.woff2)}
 @font-face{font-family:I;src:url(file://${F}/instrument-sans/files/instrument-sans-latin-500-normal.woff2)}
 @font-face{font-family:I;font-weight:700;src:url(file://${F}/instrument-sans/files/instrument-sans-latin-700-normal.woff2)}
 *{box-sizing:border-box}html,body{margin:0;width:1080px;height:1920px;background:transparent;color:#fff;font-family:I;overflow:hidden}
-.v{position:absolute;inset:0;background:linear-gradient(180deg,${t[0]}99 0%,${t[0]}00 22%,${t[0]}00 40%,${t[0]}8c 60%,${t[0]}e6 100%)}
-.top{position:absolute;top:150px;left:0;right:0;text-align:center;font-family:B;font-size:46px;letter-spacing:.12em}.top span{color:${t[4]}}
-.w{position:absolute;left:90px;right:90px;bottom:420px;text-align:center}
+.o{visibility:hidden}
+.v{position:absolute;inset:0;background:linear-gradient(180deg,${t[0]}b3 0%,${t[0]}00 20%,${t[0]}33 38%,${t[0]}b3 58%,${t[0]}f0 100%)}
+.top{position:absolute;top:150px;left:0;right:0;text-align:center;font-family:B;font-size:46px;letter-spacing:.12em;text-shadow:0 2px 18px rgba(0,0,0,.4)}.top span{color:${t[4]}}
+.w{position:absolute;left:96px;right:150px;bottom:560px;text-align:center}
 .k{display:inline-block;font-size:34px;font-weight:700;padding:12px 30px;border-radius:99px;background:rgba(255,255,255,.16);border:2px solid rgba(255,255,255,.3);margin-bottom:34px}
-h1{font-family:B;font-size:${tam}px;line-height:1.1;margin:0;text-shadow:0 6px 40px rgba(0,0,0,.45)}
-.a{margin-top:30px;font-size:34px;color:${t[3]}}
-p{font-size:40px;line-height:1.35;margin:30px 0 0;opacity:.92}
-.cta{position:absolute;bottom:250px;left:0;right:0;text-align:center}
-.cta b{display:inline-block;font-size:36px;color:${t[0]};background:linear-gradient(90deg,${t[3]},${t[4]});padding:18px 40px;border-radius:99px}
-</style></head><body><div class="v"></div><div class="top">AUR<span>Z</span>ANE</div>
-<div class="w">${x.kicker ? `<div class="k">${esc(x.kicker)}</div>` : ''}<h1>${x.cita ? '“' : ''}${esc(x.titulo)}${x.cita ? '”' : ''}</h1>${x.autor ? `<div class="a">${esc(x.autor)}</div>` : ''}${x.sub ? `<p>${esc(x.sub)}</p>` : ''}</div>
+h1{font-family:B;font-size:${tam}px;line-height:1.1;margin:0;text-shadow:0 6px 40px rgba(0,0,0,.5)}
+.q{display:block;font-size:${Math.round(tam * 1.9)}px;line-height:.55;height:${Math.round(tam * .62)}px;color:${t[4]}}
+.a{margin-top:34px;font-size:36px;color:${t[3]};font-weight:700;letter-spacing:.02em}
+.a:before{content:"";display:block;width:70px;height:3px;background:${t[4]};margin:0 auto 26px;border-radius:3px}
+p{font-size:40px;line-height:1.38;margin:30px 0 0;opacity:.95;text-shadow:0 2px 20px rgba(0,0,0,.45)}
+.fin{position:absolute;left:96px;right:150px;bottom:430px;text-align:center}
+.fin b{display:inline-block;font-size:32px;color:${t[0]};background:linear-gradient(90deg,${t[3]},${t[4]});padding:16px 34px;border-radius:99px;box-shadow:0 10px 30px rgba(0,0,0,.3)}
+</style></head><body><div class="v ${paso === 0 ? '' : 'o'}"></div><div class="top ${paso === 0 ? '' : 'o'}">AUR<span>Z</span>ANE</div>
+<div class="w">${x.kicker ? `<div class="k ${paso === 0 ? '' : 'o'}">${esc(x.kicker)}</div>` : ''}<h1 class="${paso === 1 ? '' : 'o'}">${x.cita ? '<span class="q">“</span>' : ''}${esc(x.titulo)}</h1>${x.autor ? `<div class="a ${paso === 2 ? '' : 'o'}">${esc(x.autor)}</div>` : ''}${x.sub ? `<p class="${paso === 2 ? '' : 'o'}">${esc(x.sub)}</p>` : ''}</div>
+<div class="fin ${paso === 3 ? '' : 'o'}"><b>${esc(fin)}</b></div>
 </body></html>`;
-  fs.writeFileSync('/tmp/capa.html', html); await pg.goto('file:///tmp/capa.html'); await pg.waitForTimeout(250);
-  await pg.screenshot({path: x.salida, type: 'png', omitBackground: true});
+  for (const paso of [0, 1, 2, 3]) {
+    fs.writeFileSync('/tmp/capa.html', html(paso)); await pg.goto('file:///tmp/capa.html'); await pg.waitForTimeout(200);
+    await pg.screenshot({path: paso ? x.salida.replace(/\.png$/, `-${paso}.png`) : x.salida, type: 'png', omitBackground: true});
+  }
   await pg.setViewportSize({width: 1080, height: 1350});
 }
 const esc = s => String(s || '').replace(/&/g, '&amp;').replace(/</g, '&lt;');
