@@ -47,11 +47,12 @@ jobs:
               except Exception: continue
               a = d['audits']; sc = d['categories']['performance']['score']
               if sc is None: continue
-              rb = [i.get('url', '')[:120] for i in (a.get('render-blocking-resources', {}).get('details', {}) or {}).get('items', [])]
+              rb = [i.get('url', '')[:120] for k in ('render-blocking-resources', 'render-blocking-insight') for i in ((a.get(k, {}) or {}).get('details', {}) or {}).get('items', []) if isinstance(i, dict)]
               filas[d['finalDisplayedUrl']].append(dict(nota=round(sc * 100), lcp=round(a['largest-contentful-paint']['numericValue']),
                   fcp=round(a['first-contentful-paint']['numericValue']), tbt=round(a['total-blocking-time']['numericValue']),
                   cls=round(a['cumulative-layout-shift']['numericValue'], 3), bloqueantes=rb,
-                  lcp_elemento=str((a.get('largest-contentful-paint-element', {}).get('details', {}) or {}).get('items', ''))[:300]))
+                  lcp_elemento=str([(a.get(k, {}) or {}).get('details') for k in ('largest-contentful-paint-element', 'lcp-breakdown-insight', 'lcp-phases-insight') if a.get(k)])[:1500],
+                  peticiones=[(r.get('url', '')[:90], r.get('transferSize'), round(r.get('endTime', 0))) for r in ((a.get('network-requests', {}).get('details', {}) or {}).get('items', []))[:25]]))
           res = {u: max(v, key=lambda x: x['nota']) for u, v in filas.items()}   # la mejor de dos pasadas: quita el ruido de la máquina
           hoy = datetime.date.today().isoformat()
           json.dump(res, open(f'auditoria/rendimiento/{hoy}.json', 'w'), ensure_ascii=False, indent=1)
