@@ -315,7 +315,9 @@ for x, c in zip(pub, lista):
     datos = ' · '.join(v for v in (x['y'], c.get('editorial', ''), ('ISBN ' + c['isbn']) if c.get('isbn') else '') if v)
     jl = json.dumps({'@context': 'https://schema.org', '@type': 'Book', 'name': x['t'], 'author': {'@type': 'Person', 'name': x['a']}, 'isbn': c.get('isbn') or None,
                      'image': x['img'] or None, 'datePublished': x['y'] or None, 'publisher': c.get('editorial') or None, 'inLanguage': 'es', 'url': x['f']}, ensure_ascii=False)
-    rep = {'{{T}}': E(x['t']), '{{A}}': E(x['a']), '{{URL}}': x['f'], '{{AMZ}}': E(x['u']),
+    # título de 60 caracteres como máximo (Google corta los largos): se recorta en este orden (auditoría final, 17/11/2026)
+    _tt = next((c for c in (f"{x['t']}, de {x['a']}: de qué trata y dónde comprarlo", f"{x['t']}, de {x['a']}: de qué trata", f"{x['t']}, de {x['a']}", x['t']) if len(c) <= 60), x['t'][:60].rsplit(' ', 1)[0])
+    rep = {'{{TITULO}}': E(_tt), '{{T}}': E(x['t']), '{{A}}': E(x['a']), '{{URL}}': x['f'], '{{AMZ}}': E(x['u']),
            '{{OTRAS}}': ''.join(f'<a class="btn2" href="{E(awin(k, v["busqueda"].replace("{q}", urllib.parse.quote(c.get("isbn") or (x["t"] + " " + x["a"])))))}" target="_blank" rel="sponsored nofollow noopener">Comprar en {E(v["nombre"])}</a>'
                                 for k, v in AF['programas'].items() if k in activos and v.get('busqueda')), '{{SECCION}}': E(x['s']), '{{DATOS}}': E(datos),
            '{{IMG}}': (f'<img src="{E(x["img"])}" alt="Portada de {E(x["t"])}" width="260" height="390">' if x['img'] else f'<span class="sin">{E(x["t"])}</span>'),
