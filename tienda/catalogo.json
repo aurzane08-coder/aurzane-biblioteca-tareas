@@ -1,5 +1,24 @@
 [
  {
+  "id": "el-laberinto-de-los-espiritus-carlos-ruiz-zafon",
+  "titulo": "El laberinto de los espíritus",
+  "autor": "Carlos Ruiz Zafón",
+  "temas": [
+   "novela"
+  ],
+  "origen": "tendencia",
+  "fecha": "2026-11-17",
+  "isbn": "9788408186823",
+  "portada": "https://covers.openlibrary.org/b/id/7885414-M.jpg?default=false",
+  "anio": "2016",
+  "editorial": "Signatuur",
+  "idioma": "spa",
+  "resumen": "",
+  "tendencia": "Ideal para los meses de lectura otoñal y búsqueda de grandes historias.",
+  "tendencia_fecha": "2026-11-17",
+  "porque": "Este libro es para los seguidores de la saga del Cementerio de los Libros Olvidados que desean conocer el gran cierre de la historia. Aporta un desenlace emocionante y lleno de misterio que conecta todas las tramas anteriores."
+ },
+ {
   "id": "el-lider-resonante-crea-mas-daniel-goleman",
   "titulo": "El líder resonante crea más",
   "autor": "Daniel Goleman",
@@ -730,6 +749,24 @@
   "idioma": "spa",
   "resumen": "",
   "porque": "Este libro es para profesionales y estudiantes que se sienten abrumados por las distracciones diarias. Aporta estrategias claras para trabajar con intensidad y multiplicar el rendimiento sin perder la calma."
+ },
+ {
+  "id": "descansa-alex-soojung-kim-pang",
+  "titulo": "Descansa",
+  "autor": "Alex Soojung-Kim Pang",
+  "temas": [
+   "sueno",
+   "productividad"
+  ],
+  "origen": "crecer",
+  "fecha": "2026-11-17",
+  "isbn": "9788416894826",
+  "portada": "https://covers.openlibrary.org/b/id/12600144-M.jpg?default=false",
+  "anio": "2017",
+  "editorial": "LID Publishing",
+  "idioma": "",
+  "resumen": "",
+  "porque": "Este libro es para quienes buscan un equilibrio saludable entre la vida laboral y el descanso diario. Aporta estrategias prácticas basadas en la ciencia para mejorar la productividad a través de la desconexión."
  },
  {
   "id": "no-pienses-en-un-elefante-george-lakoff",
