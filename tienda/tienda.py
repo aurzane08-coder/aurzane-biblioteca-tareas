@@ -164,6 +164,7 @@ pendientes_s = [l for l in semilla['libros'] if slug(l['titulo'] + ' ' + l['auto
 for l in pendientes_s[:25]:
     i = slug(l['titulo'] + ' ' + l['autor'])
     v = verificar(l['titulo'], l['autor']); time.sleep(0.4)
+    if not v and l.get('original'): v = verificar(l['original'], l['autor']); time.sleep(0.4)   # traducciones que Open Library solo tiene con el título original
     if not v: print('sin verificar (se reintenta en la próxima pasada):', l['titulo']); continue
     cat[i] = {'id': i, 'titulo': l['titulo'], 'autor': l['autor'], 'temas': l['temas'], 'origen': 'semilla', 'fecha': HOY, **v}; nuevos.append(i)
 

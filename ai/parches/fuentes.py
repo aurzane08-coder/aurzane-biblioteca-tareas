@@ -45,7 +45,7 @@ def familias(url):
 def htaccess(dir_f):
     """Las letras se piden desde los 7 dominios: hace falta permiso CORS y caché larga."""
     p = dir_f + '/.htaccess'
-    t = ('# AURZANE fuentes propias\n<IfModule mod_headers.c>\n<FilesMatch "\\.woff2$">\nHeader set Access-Control-Allow-Origin "*"\n'
+    t = ('# AURZANE fuentes propias\n<IfModule mod_headers.c>\n<FilesMatch "\\.woff2$">\nHeader always set Access-Control-Allow-Origin "*"\n'
          'Header set Cache-Control "public, max-age=31536000, immutable"\n</FilesMatch>\n</IfModule>\nAddType font/woff2 .woff2\n')
     if not os.path.exists(p) or open(p).read() != t:
         open(p, 'w').write(t)

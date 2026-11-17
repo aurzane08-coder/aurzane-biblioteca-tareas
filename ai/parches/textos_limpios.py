@@ -1,6 +1,8 @@
 """Textos limpios en las portadas y páginas (17/11/2026, plan de la auditoría final, puntos 36, 37 y 38).
 - Quita las secciones «Hoja de ruta» públicas de las portadas de LEARN y BUILD (promesas sin fecha).
 - Español de España: «¿Qué tan…?» → «¿Cómo de…?», «sin costo» → «sin coste».
+- Fichas de libros sin guía (biblioteca/libro/ref-*.html sin «Ideas clave»): el título decía «resumen y ficha» sin tener
+  resumen; pasa a «ficha del libro». Las fichas con guía (resumen, ideas clave, preguntas) se quedan como están.
 - Sin rayas largas (—) en el texto visible: en <title> se cambian por « | » y en el resto por una coma.
   No se toca nada dentro de <script> ni <style>.
 Corre cada día y tras cada despliegue; lo ya limpio no cambia. Copia previa en <web>/eliminar/textos-limpios-FECHA/."""
@@ -55,6 +57,9 @@ for w in WEBS:
             except Exception: continue
             n = t
             if f == 'index.html' and d == raiz and w in ('learn.aurzane.com', 'build.aurzane.com'): n = sin_hoja_de_ruta(n)
+            if f.startswith('ref-') and 'Ideas clave' not in n and 'resumen y ficha' in n:
+                n = re.sub(r'(<title>[^<]*?)resumen y ficha', r'\1ficha del libro', n)
+                n = re.sub(r'(<meta property="og:title" content="[^"]*?)resumen y ficha', r'\1ficha del libro', n)
             if '—' in n or 'tan ' in n or 'costo' in n: n = texto(n)
             if n == t: continue
             c = os.path.join(base, w, 'eliminar', 'textos-limpios-' + hoy, os.path.relpath(p, raiz))
