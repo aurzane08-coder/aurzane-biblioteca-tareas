@@ -328,3 +328,7 @@ table.tnc td.num{color:var(--text-dim);width:32px}
 .form-anun input:not([type=checkbox]),.form-anun textarea{font:inherit;padding:10px 12px;border-radius:10px;border:1px solid var(--line,rgba(127,127,127,.35));background:var(--surface,#fff);color:inherit;min-height:44px}
 .form-anun button{justify-self:start}
 @media (prefers-color-scheme:dark){html:not([data-tema="claro"]) .etq.patro{background:#4a3a10;color:#f5e6b8}}
+.precios{display:flex;flex-wrap:wrap;gap:14px;margin:6px 0 14px}
+.precio{flex:1 1 200px;border:1px solid var(--line,rgba(127,127,127,.35));border-radius:14px;padding:14px 16px}
+.precio b{display:block;font-size:1.8rem;line-height:1.1}
+.precio span{color:var(--text-dim);font-size:.9rem}

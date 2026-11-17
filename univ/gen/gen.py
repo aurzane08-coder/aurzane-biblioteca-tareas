@@ -106,6 +106,7 @@ UNIS = []
 # Ranking mundial abierto (OpenAlex, CC0): lo prepara cada mes univ/ranking.py
 RANK = cargar_json('ranking.json') or {'dom': {}, 'nom': {}}
 # patrocinios (17/11/2026, etapa 4, tarea 46): solo los vigentes hoy; caducan solos
+PRECIO = (cargar_json('patrocinios.json') or {}).get('precio') or {}
 PATRO = {x['id']: x for x in ((cargar_json('patrocinios.json') or {}).get('lista') or [])
          if x.get('id') and x.get('url', '').startswith('https://') and str(x.get('desde', '')) <= datetime.date.today().isoformat() <= str(x.get('hasta', '9999'))}
 
@@ -989,6 +990,12 @@ def anunciate():
     activas = len(PATRO)
     desc = f'Destaca tu universidad en AURZANE NEXUS ante estudiantes que comparan {fmt(TOTAL_U)} universidades de {n_pais} países: etiqueta Patrocinado, primeras posiciones y enlace a admisión.'
     cifras = [(fmt(TOTAL_U), 'universidades e institutos con ficha propia'), (fmt(TOTAL_C), 'carreras y grados en el catálogo'), (str(n_pais), 'países'), (fmt(n_rank), 'fichas con ranking mundial')]
+    precio_html = ''
+    if PRECIO.get('mes'):
+        precio_html = (f'<section class="card" id="precio"><h2>Precio</h2><div class="precios"><div class="precio"><b>{PRECIO["mes"]} €</b><span>al mes por universidad</span></div>'
+                       + (f'<div class="precio"><b>{PRECIO["anio"]} €</b><span>al año: {12 * PRECIO["mes"] - PRECIO["anio"]} € menos que pagando mes a mes</span></div>' if PRECIO.get('anio') else '') + '</div>'
+                       + (f'<p><b>Los primeros {PRECIO["prueba_dias"]} días son gratis</b> y sin compromiso: si no te convence, no pagas nada y tu ficha vuelve a ser normal sola.</p>' if PRECIO.get('prueba_dias') else '')
+                       + '<p class="sub" style="margin:8px 0 0">IVA no incluido. Sin permanencia: se renueva solo si tú lo pides. Otros portales de estudios cobran entre 100 y 130 € al mes por un solo programa destacado.</p></section>')
     h = cabeza('Destaca tu universidad ante miles de futuros estudiantes | AURZANE NEXUS', desc, SITIO + BASE + 'anunciate/') + topbar() + f'''
 <main><section class="hero" style="padding-bottom:36px"><div class="wrap">{migas(("Universidades", BASE), ("Destaca tu universidad", ""))}<h1>Destaca tu <em>universidad</em></h1><p class="lead">Llega a quien está eligiendo carrera justo cuando compara universidades. Tu ficha sale primero en su país y su ciudad, con la etiqueta «Patrocinado» y un botón directo a tu página de admisión.</p></div></section>
 <div class="wrap" style="max-width:900px;margin-top:30px">
@@ -998,7 +1005,8 @@ def anunciate():
 <li><b>Etiqueta «Patrocinado»</b> visible en la tarjeta y en la ficha. Siempre se indica que es publicidad.</li>
 <li><b>Botón a tu página de admisión</b> en la ficha, con UTM para que midas las visitas en tu analítica.</li>
 <li><b>Sin tocar los datos</b>: el ranking mundial, las carreras y las notas de corte salen de fuentes oficiales y no se pueden comprar.</li></ul></section>
-<section class="card" id="solicitar"><h2>Solicitar información</h2>
+{precio_html}
+<section class="card" id="solicitar"><h2>{"Empieza con tu mes gratis" if PRECIO.get("prueba_dias") else "Solicitar información"}</h2>
 <form id="formAnun" class="form-anun"><input type="text" name="web" tabindex="-1" autocomplete="off" class="vh" aria-hidden="true">
 <label>Universidad<input name="universidad" id="anunU" required maxlength="160"></label>
 <label>Tu nombre y cargo<input name="nombre" required maxlength="120"></label>
@@ -1007,7 +1015,7 @@ def anunciate():
 <label class="chk"><input type="checkbox" name="acepto" required> Acepto la <a href="https://aurzane.com/privacidad.html" target="_blank" rel="noopener">política de privacidad</a></label>
 <button type="submit" class="btn btn-osc">Enviar solicitud</button><p id="anunRes" class="sub" aria-live="polite"></p></form></section>
 </div></main>
-<script>(function(){{var f=document.getElementById('formAnun'),m=/[?&]u=([a-z0-9-]+\/[a-z0-9-]+)/.exec(location.search);
+<script>(function(){{var f=document.getElementById('formAnun'),m=/[?&]u=([a-z0-9-]+[/][a-z0-9-]+)/.exec(location.search);
 if(m){{fetch('{BASE}datos/indice.json').then(function(r){{return r.json()}}).then(function(d){{var p=m[1].split('/');d.u.some(function(x){{if(d.p[x[1]][0]===p[0]&&x[2]===p[1]){{document.getElementById('anunU').value=x[0];return true}}}})}}).catch(function(){{}})}}
 f.addEventListener('submit',function(ev){{ev.preventDefault();var d=Object.fromEntries(new FormData(f));var r=document.getElementById('anunRes');r.textContent='Enviando…';
 var cuerpo={{web:d.web,nombre:d.nombre,correo:d.correo,acepto:d.acepto?1:0,motivo:'Patrocinio NEXUS',mensaje:'Universidad: '+d.universidad+(m?' ('+m[1]+')':'')+'\n\n'+(d.mensaje||'(sin mensaje)')}};

@@ -1,4 +1,10 @@
 {
   "_info": "Universidades patrocinadas en AURZANE NEXUS (tarea 46). Cada entrada: id = pais/slug de la ficha (como en su URL), desde y hasta = fechas AAAA-MM-DD, texto = frase corta de la universidad (opcional), url = página de admisión. Solo se muestran entre desde y hasta: al caducar desaparecen solas en la siguiente publicación diaria. Las fichas patrocinadas llevan la etiqueta «Patrocinado», salen primero en su país y su ciudad y tienen un botón a su página de admisión (enlace rel=sponsored con UTM). El ranking y los datos oficiales no cambian.",
-  "lista": []
+  "lista": [],
+  "precio": {
+    "_info": "Tarifa que se muestra en «Destaca tu universidad». Referencia de mercado (17/11/2026): masterMania 130 €/mes por máster destacado, FindAMasters desde 100 £/mes por curso, StudyQA desde 300 $/mes. AURZANE va por debajo mientras crece su tráfico.",
+    "mes": 29,
+    "anio": 290,
+    "prueba_dias": 30
+  }
 }
