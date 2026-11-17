@@ -1,0 +1,3048 @@
+[
+ {
+  "url": "https://aurzane.com/articulos/clase-magistral-vs-aprendizaje-activo-metaanalisis/",
+  "anchos": {
+   "375": {
+    "carga_ms": 924,
+    "titulo": "La clase magistral pierde: el metaanálisis de 225 estudios que comparó enseñar exponiendo contra enseñar haciendo participar",
+    "h1": [
+     "La clase magistral pierde: el metaanálisis de 225 estudios que comparó enseñar e"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 85,
+    "nav_enlaces": 30,
+    "alto_pagina": 6578,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 886,
+    "titulo": "La clase magistral pierde: el metaanálisis de 225 estudios que comparó enseñar exponiendo contra enseñar haciendo participar",
+    "h1": [
+     "La clase magistral pierde: el metaanálisis de 225 estudios que comparó enseñar e"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 85,
+    "nav_enlaces": 30,
+    "alto_pagina": 3843,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "375o": {
+    "carga_ms": 942,
+    "titulo": "La clase magistral pierde: el metaanálisis de 225 estudios que comparó enseñar exponiendo contra enseñar haciendo participar",
+    "h1": [
+     "La clase magistral pierde: el metaanálisis de 225 estudios que comparó enseñar e"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 85,
+    "nav_enlaces": 30,
+    "alto_pagina": 6578,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://aurzane.com/biblioteca/leer.html",
+  "anchos": {
+   "375": {
+    "carga_ms": 878,
+    "titulo": "Leer | Biblioteca AURZANE",
+    "h1": [
+     "No encontramos ese libro"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "¿Algo no funciona? Avísanos"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 75,
+    "nav_enlaces": 30,
+    "alto_pagina": 2168,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 861,
+    "titulo": "Leer | Biblioteca AURZANE",
+    "h1": [
+     "No encontramos ese libro"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "¿Algo no funciona? Avísanos"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 75,
+    "nav_enlaces": 30,
+    "alto_pagina": 1148,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "375o": {
+    "carga_ms": 839,
+    "titulo": "Leer | Biblioteca AURZANE",
+    "h1": [
+     "No encontramos ese libro"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "¿Algo no funciona? Avísanos"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 75,
+    "nav_enlaces": 30,
+    "alto_pagina": 2168,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://aurzane.com/biblioteca/recomendados/",
+  "anchos": {
+   "375": {
+    "carga_ms": 840,
+    "sin_cabecera": true,
+    "titulo": "Libros de psicología recomendados | Biblioteca AURZANE",
+    "h1": [
+     "Libros de psicología recomendados"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "¿Algo no funciona? Avísanos"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 89,
+    "nav_enlaces": 30,
+    "alto_pagina": 6449,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 945,
+    "titulo": "Libros de psicología recomendados | Biblioteca AURZANE",
+    "h1": [
+     "Libros de psicología recomendados"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "¿Algo no funciona? Avísanos"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 89,
+    "nav_enlaces": 30,
+    "alto_pagina": 4694,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "375o": {
+    "carga_ms": 907,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "Our system thinks you might be a robot!"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "A"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 2,
+    "nav_enlaces": 0,
+    "alto_pagina": 994,
+    "fuentes": [
+     "Arial",
+     "Times New Roman"
+    ],
+    "lang": "en",
+    "axe": [
+     {
+      "id": "color-contrast",
+      "impacto": "serious",
+      "n": 1,
+      "ejemplo": "section > p"
+     },
+     {
+      "id": "label",
+      "impacto": "critical",
+      "n": 1,
+      "ejemplo": "#BDCC"
+     }
+    ],
+    "errores": [
+     "console: undefined"
+    ],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://aurzane.com/condiciones.html",
+  "anchos": {
+   "375": {
+    "carga_ms": 849,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "Our system thinks you might be a robot!"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "A"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 2,
+    "nav_enlaces": 0,
+    "alto_pagina": 994,
+    "fuentes": [
+     "Arial",
+     "Times New Roman"
+    ],
+    "lang": "en",
+    "axe": [
+     {
+      "id": "color-contrast",
+      "impacto": "serious",
+      "n": 1,
+      "ejemplo": "section > p"
+     },
+     {
+      "id": "label",
+      "impacto": "critical",
+      "n": 1,
+      "ejemplo": "#BDCC"
+     }
+    ],
+    "errores": [
+     "console: undefined"
+    ],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 1661,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "Our system thinks you might be a robot!"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "A"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 2,
+    "nav_enlaces": 0,
+    "alto_pagina": 900,
+    "fuentes": [
+     "Arial",
+     "Times New Roman"
+    ],
+    "lang": "en",
+    "axe": [
+     {
+      "id": "color-contrast",
+      "impacto": "serious",
+      "n": 1,
+      "ejemplo": "section > p"
+     },
+     {
+      "id": "label",
+      "impacto": "critical",
+      "n": 1,
+      "ejemplo": "#BDCC"
+     }
+    ],
+    "errores": [
+     "console: undefined"
+    ],
+    "rotos": []
+   },
+   "375o": {
+    "carga_ms": 883,
+    "titulo": "Condiciones de uso · AURZANE",
+    "h1": [
+     "Condiciones de uso"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 60,
+    "nav_enlaces": 17,
+    "alto_pagina": 5934,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://aurzane.com/libros/la-chica-del-tren-paula-hawkins/",
+  "anchos": {
+   "375": {
+    "carga_ms": 832,
+    "titulo": "La chica del tren, de Paula Hawkins: de qué trata y dónde comprarlo | AURZANE",
+    "h1": [
+     "La chica del tren"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "¿Algo no funciona? Avísanos"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 77,
+    "nav_enlaces": 30,
+    "alto_pagina": 4625,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 849,
+    "titulo": "La chica del tren, de Paula Hawkins: de qué trata y dónde comprarlo | AURZANE",
+    "h1": [
+     "La chica del tren"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "¿Algo no funciona? Avísanos"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 77,
+    "nav_enlaces": 30,
+    "alto_pagina": 2014,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "375o": {
+    "carga_ms": 936,
+    "titulo": "La chica del tren, de Paula Hawkins: de qué trata y dónde comprarlo | AURZANE",
+    "h1": [
+     "La chica del tren"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "¿Algo no funciona? Avísanos"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 77,
+    "nav_enlaces": 30,
+    "alto_pagina": 4625,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://aurzane.com/privacidad.html",
+  "anchos": {
+   "375": {
+    "carga_ms": 881,
+    "sin_cabecera": true,
+    "titulo": "Política de privacidad · AURZANE",
+    "h1": [
+     "Política de privacidad"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 82,
+    "nav_enlaces": 17,
+    "alto_pagina": 14450,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 877,
+    "titulo": "Política de privacidad · AURZANE",
+    "h1": [
+     "Política de privacidad"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 82,
+    "nav_enlaces": 17,
+    "alto_pagina": 7336,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "375o": {
+    "carga_ms": 2111,
+    "titulo": "Política de privacidad · AURZANE",
+    "h1": [
+     "Política de privacidad"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 82,
+    "nav_enlaces": 17,
+    "alto_pagina": 14450,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://aurzane.com/sobre-aurzane.html",
+  "anchos": {
+   "375": {
+    "carga_ms": 1959,
+    "titulo": "Sobre AURZANE: quiénes somos y cómo trabajamos",
+    "h1": [
+     "Sobre AURZANE"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 60,
+    "nav_enlaces": 17,
+    "alto_pagina": 4165,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 872,
+    "titulo": "Sobre AURZANE: quiénes somos y cómo trabajamos",
+    "h1": [
+     "Sobre AURZANE"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 60,
+    "nav_enlaces": 17,
+    "alto_pagina": 2224,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "375o": {
+    "carga_ms": 1996,
+    "titulo": "Sobre AURZANE: quiénes somos y cómo trabajamos",
+    "h1": [
+     "Sobre AURZANE"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 60,
+    "nav_enlaces": 17,
+    "alto_pagina": 4165,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://build.aurzane.com/articulo.html",
+  "anchos": {
+   "375": {
+    "carga_ms": 810,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Artículo | AURZANE",
+    "h1": [
+     ""
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 1,
+    "nav_enlaces": 0,
+    "alto_pagina": 800,
+    "fuentes": [
+     "Bodoni Moda",
+     "Instrument Sans"
+    ],
+    "lang": "es",
+    "axe": [
+     {
+      "id": "color-contrast",
+      "impacto": "serious",
+      "n": 3,
+      "ejemplo": "#breadcrumbBox"
+     }
+    ],
+    "errores": [
+     "console: Access to font at 'https://aurzane.com/fuentes/instrument-sans-latin-wght-normal.woff2' from origin 'https://build.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header",
+     "console: Failed to load resource: net::ERR_FAILED",
+     "console: Access to font at 'https://aurzane.com/fuentes/bodoni-moda-latin-opsz-normal.woff2' from origin 'https://build.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is ",
+     "console: Access to font at 'https://aurzane.com/fuentes/bodoni-moda-latin-opsz-italic.woff2' from origin 'https://build.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is "
+    ],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 829,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Artículo | AURZANE",
+    "h1": [
+     ""
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 1,
+    "nav_enlaces": 0,
+    "alto_pagina": 900,
+    "fuentes": [
+     "Bodoni Moda",
+     "Instrument Sans"
+    ],
+    "lang": "es",
+    "axe": [
+     {
+      "id": "color-contrast",
+      "impacto": "serious",
+      "n": 3,
+      "ejemplo": "#breadcrumbBox"
+     }
+    ],
+    "errores": [
+     "console: Access to font at 'https://aurzane.com/fuentes/instrument-sans-latin-wght-normal.woff2' from origin 'https://build.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header",
+     "console: Failed to load resource: net::ERR_FAILED",
+     "console: Access to font at 'https://aurzane.com/fuentes/bodoni-moda-latin-opsz-normal.woff2' from origin 'https://build.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is ",
+     "console: Access to font at 'https://aurzane.com/fuentes/bodoni-moda-latin-opsz-italic.woff2' from origin 'https://build.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is "
+    ],
+    "rotos": []
+   },
+   "375o": {
+    "carga_ms": 808,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Artículo | AURZANE",
+    "h1": [
+     ""
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 1,
+    "nav_enlaces": 0,
+    "alto_pagina": 800,
+    "fuentes": [
+     "Bodoni Moda",
+     "Instrument Sans"
+    ],
+    "lang": "es",
+    "axe": [
+     {
+      "id": "color-contrast",
+      "impacto": "serious",
+      "n": 3,
+      "ejemplo": "#breadcrumbBox"
+     }
+    ],
+    "errores": [
+     "console: Access to font at 'https://aurzane.com/fuentes/instrument-sans-latin-wght-normal.woff2' from origin 'https://build.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header",
+     "console: Failed to load resource: net::ERR_FAILED",
+     "console: Access to font at 'https://aurzane.com/fuentes/bodoni-moda-latin-opsz-normal.woff2' from origin 'https://build.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is ",
+     "console: Access to font at 'https://aurzane.com/fuentes/bodoni-moda-latin-opsz-italic.woff2' from origin 'https://build.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is "
+    ],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://learn.aurzane.com/articulo.html",
+  "anchos": {
+   "375": {
+    "carga_ms": 885,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "Our system thinks you might be a robot!"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "A"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 2,
+    "nav_enlaces": 0,
+    "alto_pagina": 994,
+    "fuentes": [
+     "Arial",
+     "Times New Roman"
+    ],
+    "lang": "en",
+    "axe": [
+     {
+      "id": "color-contrast",
+      "impacto": "serious",
+      "n": 1,
+      "ejemplo": "section > p"
+     },
+     {
+      "id": "label",
+      "impacto": "critical",
+      "n": 1,
+      "ejemplo": "#BDCC"
+     }
+    ],
+    "errores": [
+     "console: undefined"
+    ],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 1170,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Artículo | AURZANE",
+    "h1": [
+     ""
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 1,
+    "nav_enlaces": 0,
+    "alto_pagina": 900,
+    "fuentes": [
+     "Bodoni Moda",
+     "Instrument Sans"
+    ],
+    "lang": "es",
+    "axe": [
+     {
+      "id": "color-contrast",
+      "impacto": "serious",
+      "n": 3,
+      "ejemplo": "#breadcrumbBox"
+     }
+    ],
+    "errores": [
+     "console: Access to font at 'https://aurzane.com/fuentes/instrument-sans-latin-wght-normal.woff2' from origin 'https://learn.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header",
+     "console: Failed to load resource: net::ERR_FAILED",
+     "console: Access to font at 'https://aurzane.com/fuentes/bodoni-moda-latin-opsz-normal.woff2' from origin 'https://learn.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is ",
+     "console: Access to font at 'https://aurzane.com/fuentes/bodoni-moda-latin-opsz-italic.woff2' from origin 'https://learn.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is "
+    ],
+    "rotos": []
+   },
+   "375o": {
+    "carga_ms": 825,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Artículo | AURZANE",
+    "h1": [
+     ""
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 1,
+    "nav_enlaces": 0,
+    "alto_pagina": 800,
+    "fuentes": [
+     "Bodoni Moda",
+     "Instrument Sans"
+    ],
+    "lang": "es",
+    "axe": [
+     {
+      "id": "color-contrast",
+      "impacto": "serious",
+      "n": 3,
+      "ejemplo": "#breadcrumbBox"
+     }
+    ],
+    "errores": [
+     "console: Access to font at 'https://aurzane.com/fuentes/instrument-sans-latin-wght-normal.woff2' from origin 'https://learn.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header",
+     "console: Failed to load resource: net::ERR_FAILED",
+     "console: Access to font at 'https://aurzane.com/fuentes/bodoni-moda-latin-opsz-normal.woff2' from origin 'https://learn.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is ",
+     "console: Access to font at 'https://aurzane.com/fuentes/bodoni-moda-latin-opsz-italic.woff2' from origin 'https://learn.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is "
+    ],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://learn.aurzane.com/cursos.html",
+  "anchos": {
+   "375": {
+    "carga_ms": 799,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Cursos · AURZANE LEARN",
+    "h1": [
+     "Inicia sesión para entrar al curso"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 5,
+    "nav_enlaces": 2,
+    "alto_pagina": 802,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: Access to font at 'https://aurzane.com/fuentes/instrument-sans-latin-wght-normal.woff2' from origin 'https://learn.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header",
+     "console: Failed to load resource: net::ERR_FAILED",
+     "console: Access to font at 'https://aurzane.com/fuentes/bodoni-moda-latin-opsz-normal.woff2' from origin 'https://learn.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is "
+    ],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 825,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "Our system thinks you might be a robot!"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "A"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 2,
+    "nav_enlaces": 0,
+    "alto_pagina": 900,
+    "fuentes": [
+     "Arial",
+     "Times New Roman"
+    ],
+    "lang": "en",
+    "axe": [
+     {
+      "id": "color-contrast",
+      "impacto": "serious",
+      "n": 1,
+      "ejemplo": "section > p"
+     },
+     {
+      "id": "label",
+      "impacto": "critical",
+      "n": 1,
+      "ejemplo": "#BDCC"
+     }
+    ],
+    "errores": [
+     "console: undefined"
+    ],
+    "rotos": []
+   },
+   "375o": {
+    "carga_ms": 806,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Cursos · AURZANE LEARN",
+    "h1": [
+     "Inicia sesión para entrar al curso"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 5,
+    "nav_enlaces": 2,
+    "alto_pagina": 802,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: Access to font at 'https://aurzane.com/fuentes/instrument-sans-latin-wght-normal.woff2' from origin 'https://learn.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header",
+     "console: Failed to load resource: net::ERR_FAILED",
+     "console: Access to font at 'https://aurzane.com/fuentes/bodoni-moda-latin-opsz-normal.woff2' from origin 'https://learn.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is "
+    ],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://live.aurzane.com/calculadora-calorias/",
+  "anchos": {
+   "375": {
+    "carga_ms": 867,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "Our system thinks you might be a robot!"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "A"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 2,
+    "nav_enlaces": 0,
+    "alto_pagina": 994,
+    "fuentes": [
+     "Arial",
+     "Times New Roman"
+    ],
+    "lang": "en",
+    "axe": [
+     {
+      "id": "color-contrast",
+      "impacto": "serious",
+      "n": 1,
+      "ejemplo": "section > p"
+     },
+     {
+      "id": "label",
+      "impacto": "critical",
+      "n": 1,
+      "ejemplo": "#BDCC"
+     }
+    ],
+    "errores": [
+     "console: undefined"
+    ],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 809,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Calculadora de calorías e IMC: cuántas calorías necesito",
+    "h1": [
+     "¿Cuánta energía necesita tu cuerpo cada día?"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 11,
+    "ejemplos_objetivos": [
+     "Bienestar",
+     "Sueño",
+     "Calorías",
+     "IMC",
+     "Agua"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 23,
+    "nav_enlaces": 8,
+    "alto_pagina": 5262,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: Access to font at 'https://aurzane.com/fuentes/instrument-sans-latin-wght-normal.woff2' from origin 'https://live.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header ",
+     "console: Failed to load resource: net::ERR_FAILED",
+     "console: Access to font at 'https://aurzane.com/fuentes/bodoni-moda-latin-opsz-normal.woff2' from origin 'https://live.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is p"
+    ],
+    "rotos": []
+   },
+   "375o": {
+    "carga_ms": 873,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Calculadora de calorías e IMC: cuántas calorías necesito",
+    "h1": [
+     "¿Cuánta energía necesita tu cuerpo cada día?"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 5,
+    "ejemplos_objetivos": [
+     "INPUT",
+     "INPUT",
+     "INPUT",
+     "INPUT",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 23,
+    "nav_enlaces": 8,
+    "alto_pagina": 8826,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: Access to font at 'https://aurzane.com/fuentes/instrument-sans-latin-wght-normal.woff2' from origin 'https://live.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header ",
+     "console: Failed to load resource: net::ERR_FAILED",
+     "console: Access to font at 'https://aurzane.com/fuentes/bodoni-moda-latin-opsz-normal.woff2' from origin 'https://live.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is p"
+    ],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://live.aurzane.com/calculadora-porcentajes/",
+  "anchos": {
+   "375": {
+    "carga_ms": 793,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "Our system thinks you might be a robot!"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "A"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 2,
+    "nav_enlaces": 0,
+    "alto_pagina": 994,
+    "fuentes": [
+     "Arial",
+     "Times New Roman"
+    ],
+    "lang": "en",
+    "axe": [
+     {
+      "id": "color-contrast",
+      "impacto": "serious",
+      "n": 1,
+      "ejemplo": "section > p"
+     },
+     {
+      "id": "label",
+      "impacto": "critical",
+      "n": 1,
+      "ejemplo": "#BDCC"
+     }
+    ],
+    "errores": [
+     "console: undefined"
+    ],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 813,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Calculadora de porcentajes gratis: descuentos y aumentos",
+    "h1": [
+     "Calcula cualquier porcentaje"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 6,
+    "ejemplos_objetivos": [
+     "Bienestar",
+     "Sueño",
+     "Calorías",
+     "IMC",
+     "Agua"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 23,
+    "nav_enlaces": 8,
+    "alto_pagina": 4815,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: Access to font at 'https://aurzane.com/fuentes/instrument-sans-latin-wght-normal.woff2' from origin 'https://live.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header ",
+     "console: Failed to load resource: net::ERR_FAILED",
+     "console: Access to font at 'https://aurzane.com/fuentes/bodoni-moda-latin-opsz-normal.woff2' from origin 'https://live.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is p"
+    ],
+    "rotos": []
+   },
+   "375o": {
+    "carga_ms": 793,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "Our system thinks you might be a robot!"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "A"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 2,
+    "nav_enlaces": 0,
+    "alto_pagina": 994,
+    "fuentes": [
+     "Arial",
+     "Times New Roman"
+    ],
+    "lang": "en",
+    "axe": [
+     {
+      "id": "color-contrast",
+      "impacto": "serious",
+      "n": 1,
+      "ejemplo": "section > p"
+     },
+     {
+      "id": "label",
+      "impacto": "critical",
+      "n": 1,
+      "ejemplo": "#BDCC"
+     }
+    ],
+    "errores": [
+     "console: undefined"
+    ],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://mind.aurzane.com/articulo.html",
+  "anchos": {
+   "375": {
+    "carga_ms": 840,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "Our system thinks you might be a robot!"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "A"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 2,
+    "nav_enlaces": 0,
+    "alto_pagina": 994,
+    "fuentes": [
+     "Arial",
+     "Times New Roman"
+    ],
+    "lang": "en",
+    "axe": [
+     {
+      "id": "color-contrast",
+      "impacto": "serious",
+      "n": 1,
+      "ejemplo": "section > p"
+     },
+     {
+      "id": "label",
+      "impacto": "critical",
+      "n": 1,
+      "ejemplo": "#BDCC"
+     }
+    ],
+    "errores": [
+     "console: undefined"
+    ],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 803,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Artículo | AURZANE",
+    "h1": [
+     ""
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 1,
+    "nav_enlaces": 0,
+    "alto_pagina": 900,
+    "fuentes": [
+     "Bodoni Moda",
+     "Instrument Sans"
+    ],
+    "lang": "es",
+    "axe": [
+     {
+      "id": "color-contrast",
+      "impacto": "serious",
+      "n": 3,
+      "ejemplo": "#breadcrumbBox"
+     }
+    ],
+    "errores": [
+     "console: Access to font at 'https://aurzane.com/fuentes/instrument-sans-latin-wght-normal.woff2' from origin 'https://mind.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header ",
+     "console: Failed to load resource: net::ERR_FAILED",
+     "console: Access to font at 'https://aurzane.com/fuentes/bodoni-moda-latin-opsz-normal.woff2' from origin 'https://mind.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is p",
+     "console: Access to font at 'https://aurzane.com/fuentes/bodoni-moda-latin-opsz-italic.woff2' from origin 'https://mind.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is p"
+    ],
+    "rotos": []
+   },
+   "375o": {
+    "carga_ms": 814,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Artículo | AURZANE",
+    "h1": [
+     ""
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 1,
+    "nav_enlaces": 0,
+    "alto_pagina": 800,
+    "fuentes": [
+     "Bodoni Moda",
+     "Instrument Sans"
+    ],
+    "lang": "es",
+    "axe": [
+     {
+      "id": "color-contrast",
+      "impacto": "serious",
+      "n": 3,
+      "ejemplo": "#breadcrumbBox"
+     }
+    ],
+    "errores": [
+     "console: Access to font at 'https://aurzane.com/fuentes/instrument-sans-latin-wght-normal.woff2' from origin 'https://mind.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header ",
+     "console: Failed to load resource: net::ERR_FAILED",
+     "console: Access to font at 'https://aurzane.com/fuentes/bodoni-moda-latin-opsz-normal.woff2' from origin 'https://mind.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is p",
+     "console: Access to font at 'https://aurzane.com/fuentes/bodoni-moda-latin-opsz-italic.woff2' from origin 'https://mind.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is p"
+    ],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://mind.aurzane.com/ejercicios/pausa-de-autocompasion/",
+  "anchos": {
+   "375": {
+    "carga_ms": 795,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Pausa de autocompasión guiada de Kristin Neff | AURZANE MIND",
+    "h1": [
+     "Pausa de autocompasión guiada"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 27,
+    "nav_enlaces": 10,
+    "alto_pagina": 8551,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: Access to font at 'https://aurzane.com/fuentes/instrument-sans-latin-wght-normal.woff2' from origin 'https://mind.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header ",
+     "console: Failed to load resource: net::ERR_FAILED",
+     "console: Access to font at 'https://aurzane.com/fuentes/bodoni-moda-latin-opsz-normal.woff2' from origin 'https://mind.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is p"
+    ],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 808,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Pausa de autocompasión guiada de Kristin Neff | AURZANE MIND",
+    "h1": [
+     "Pausa de autocompasión guiada"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 8,
+    "ejemplos_objetivos": [
+     "Ansiedad",
+     "Depresión",
+     "Autoestima",
+     "TDAH",
+     "Autocompasión"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 27,
+    "nav_enlaces": 10,
+    "alto_pagina": 5605,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: Access to font at 'https://aurzane.com/fuentes/instrument-sans-latin-wght-normal.woff2' from origin 'https://mind.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header ",
+     "console: Failed to load resource: net::ERR_FAILED",
+     "console: Access to font at 'https://aurzane.com/fuentes/bodoni-moda-latin-opsz-normal.woff2' from origin 'https://mind.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is p"
+    ],
+    "rotos": []
+   },
+   "375o": {
+    "carga_ms": 861,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Pausa de autocompasión guiada de Kristin Neff | AURZANE MIND",
+    "h1": [
+     "Pausa de autocompasión guiada"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 27,
+    "nav_enlaces": 10,
+    "alto_pagina": 8551,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: Access to font at 'https://aurzane.com/fuentes/instrument-sans-latin-wght-normal.woff2' from origin 'https://mind.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header ",
+     "console: Failed to load resource: net::ERR_FAILED",
+     "console: Access to font at 'https://aurzane.com/fuentes/bodoni-moda-latin-opsz-normal.woff2' from origin 'https://mind.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is p"
+    ],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://mind.aurzane.com/ejercicios/suspiro-ciclico/",
+  "anchos": {
+   "375": {
+    "carga_ms": 801,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Suspiro cíclico (physiological sigh) guiado | AURZANE MIND",
+    "h1": [
+     "Suspiro cíclico guiado"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 27,
+    "nav_enlaces": 10,
+    "alto_pagina": 9187,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: Access to font at 'https://aurzane.com/fuentes/bodoni-moda-latin-opsz-normal.woff2' from origin 'https://mind.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is p",
+     "console: Failed to load resource: net::ERR_FAILED",
+     "console: Access to font at 'https://aurzane.com/fuentes/instrument-sans-latin-wght-normal.woff2' from origin 'https://mind.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header "
+    ],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 810,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Suspiro cíclico (physiological sigh) guiado | AURZANE MIND",
+    "h1": [
+     "Suspiro cíclico guiado"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 8,
+    "ejemplos_objetivos": [
+     "Ansiedad",
+     "Depresión",
+     "Autoestima",
+     "TDAH",
+     "Autocompasión"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 27,
+    "nav_enlaces": 10,
+    "alto_pagina": 6124,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: Access to font at 'https://aurzane.com/fuentes/instrument-sans-latin-wght-normal.woff2' from origin 'https://mind.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header ",
+     "console: Failed to load resource: net::ERR_FAILED",
+     "console: Access to font at 'https://aurzane.com/fuentes/bodoni-moda-latin-opsz-normal.woff2' from origin 'https://mind.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is p"
+    ],
+    "rotos": []
+   },
+   "375o": {
+    "carga_ms": 796,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Suspiro cíclico (physiological sigh) guiado | AURZANE MIND",
+    "h1": [
+     "Suspiro cíclico guiado"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 27,
+    "nav_enlaces": 10,
+    "alto_pagina": 9187,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: Access to font at 'https://aurzane.com/fuentes/instrument-sans-latin-wght-normal.woff2' from origin 'https://mind.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header ",
+     "console: Failed to load resource: net::ERR_FAILED",
+     "console: Access to font at 'https://aurzane.com/fuentes/bodoni-moda-latin-opsz-normal.woff2' from origin 'https://mind.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is p"
+    ],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://mind.aurzane.com/en/depression-test-phq-9/",
+  "anchos": {
+   "375": {
+    "carga_ms": 807,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Depression test (PHQ-9): free online questionnaire | AURZANE",
+    "h1": [
+     "Depression test (PHQ-9)"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 36,
+    "ejemplos_objetivos": [
+     "INPUT",
+     "INPUT",
+     "INPUT",
+     "INPUT",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 6,
+    "nav_enlaces": 3,
+    "alto_pagina": 4267,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "en",
+    "axe": [],
+    "errores": [
+     "console: Access to font at 'https://aurzane.com/fuentes/instrument-sans-latin-wght-normal.woff2' from origin 'https://mind.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header ",
+     "console: Failed to load resource: net::ERR_FAILED",
+     "console: Access to font at 'https://aurzane.com/fuentes/bodoni-moda-latin-opsz-normal.woff2' from origin 'https://mind.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is p"
+    ],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 796,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "Our system thinks you might be a robot!"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "A"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 2,
+    "nav_enlaces": 0,
+    "alto_pagina": 900,
+    "fuentes": [
+     "Arial",
+     "Times New Roman"
+    ],
+    "lang": "en",
+    "axe": [
+     {
+      "id": "color-contrast",
+      "impacto": "serious",
+      "n": 1,
+      "ejemplo": "section > p"
+     },
+     {
+      "id": "label",
+      "impacto": "critical",
+      "n": 1,
+      "ejemplo": "#BDCC"
+     }
+    ],
+    "errores": [
+     "console: undefined"
+    ],
+    "rotos": []
+   },
+   "375o": {
+    "carga_ms": 821,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Depression test (PHQ-9): free online questionnaire | AURZANE",
+    "h1": [
+     "Depression test (PHQ-9)"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 36,
+    "ejemplos_objetivos": [
+     "INPUT",
+     "INPUT",
+     "INPUT",
+     "INPUT",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 6,
+    "nav_enlaces": 3,
+    "alto_pagina": 4267,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "en",
+    "axe": [],
+    "errores": [
+     "console: Access to font at 'https://aurzane.com/fuentes/instrument-sans-latin-wght-normal.woff2' from origin 'https://mind.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header ",
+     "console: Failed to load resource: net::ERR_FAILED",
+     "console: Access to font at 'https://aurzane.com/fuentes/bodoni-moda-latin-opsz-normal.woff2' from origin 'https://mind.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is p"
+    ],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://mind.aurzane.com/en/stress-test-dass-21/",
+  "anchos": {
+   "375": {
+    "carga_ms": 808,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Stress test (DASS-21 stress scale)",
+    "h1": [
+     "Stress test (DASS-21 stress scale)"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 28,
+    "ejemplos_objetivos": [
+     "INPUT",
+     "INPUT",
+     "INPUT",
+     "INPUT",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 6,
+    "nav_enlaces": 3,
+    "alto_pagina": 4333,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "en",
+    "axe": [],
+    "errores": [
+     "console: Access to font at 'https://aurzane.com/fuentes/instrument-sans-latin-wght-normal.woff2' from origin 'https://mind.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header ",
+     "console: Failed to load resource: net::ERR_FAILED",
+     "console: Access to font at 'https://aurzane.com/fuentes/bodoni-moda-latin-opsz-normal.woff2' from origin 'https://mind.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is p"
+    ],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 864,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Stress test (DASS-21 stress scale)",
+    "h1": [
+     "Stress test (DASS-21 stress scale)"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 28,
+    "ejemplos_objetivos": [
+     "INPUT",
+     "INPUT",
+     "INPUT",
+     "INPUT",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 6,
+    "nav_enlaces": 3,
+    "alto_pagina": 2968,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "en",
+    "axe": [],
+    "errores": [
+     "console: Access to font at 'https://aurzane.com/fuentes/instrument-sans-latin-wght-normal.woff2' from origin 'https://mind.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header ",
+     "console: Failed to load resource: net::ERR_FAILED",
+     "console: Access to font at 'https://aurzane.com/fuentes/bodoni-moda-latin-opsz-normal.woff2' from origin 'https://mind.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is p"
+    ],
+    "rotos": []
+   },
+   "375o": {
+    "carga_ms": 805,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Stress test (DASS-21 stress scale)",
+    "h1": [
+     "Stress test (DASS-21 stress scale)"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 28,
+    "ejemplos_objetivos": [
+     "INPUT",
+     "INPUT",
+     "INPUT",
+     "INPUT",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 6,
+    "nav_enlaces": 3,
+    "alto_pagina": 4333,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "en",
+    "axe": [],
+    "errores": [
+     "console: Access to font at 'https://aurzane.com/fuentes/instrument-sans-latin-wght-normal.woff2' from origin 'https://mind.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header ",
+     "console: Failed to load resource: net::ERR_FAILED",
+     "console: Access to font at 'https://aurzane.com/fuentes/bodoni-moda-latin-opsz-normal.woff2' from origin 'https://mind.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is p"
+    ],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://mind.aurzane.com/pt/teste-de-depressao-phq-9/",
+  "anchos": {
+   "375": {
+    "carga_ms": 803,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Teste de depressão (PHQ-9): questionário grátis online",
+    "h1": [
+     "Teste de depressão (PHQ-9)"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 36,
+    "ejemplos_objetivos": [
+     "INPUT",
+     "INPUT",
+     "INPUT",
+     "INPUT",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 6,
+    "nav_enlaces": 3,
+    "alto_pagina": 4481,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "pt-BR",
+    "axe": [],
+    "errores": [
+     "console: Access to font at 'https://aurzane.com/fuentes/instrument-sans-latin-wght-normal.woff2' from origin 'https://mind.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header ",
+     "console: Failed to load resource: net::ERR_FAILED",
+     "console: Access to font at 'https://aurzane.com/fuentes/bodoni-moda-latin-opsz-normal.woff2' from origin 'https://mind.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is p"
+    ],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 816,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Teste de depressão (PHQ-9): questionário grátis online",
+    "h1": [
+     "Teste de depressão (PHQ-9)"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 36,
+    "ejemplos_objetivos": [
+     "INPUT",
+     "INPUT",
+     "INPUT",
+     "INPUT",
+     "INPUT"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 6,
+    "nav_enlaces": 3,
+    "alto_pagina": 2795,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "pt-BR",
+    "axe": [],
+    "errores": [
+     "console: Access to font at 'https://aurzane.com/fuentes/instrument-sans-latin-wght-normal.woff2' from origin 'https://mind.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header ",
+     "console: Failed to load resource: net::ERR_FAILED",
+     "console: Access to font at 'https://aurzane.com/fuentes/bodoni-moda-latin-opsz-normal.woff2' from origin 'https://mind.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is p"
+    ],
+    "rotos": []
+   },
+   "375o": {
+    "carga_ms": 805,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "Our system thinks you might be a robot!"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "A"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 2,
+    "nav_enlaces": 0,
+    "alto_pagina": 994,
+    "fuentes": [
+     "Arial",
+     "Times New Roman"
+    ],
+    "lang": "en",
+    "axe": [
+     {
+      "id": "color-contrast",
+      "impacto": "serious",
+      "n": 1,
+      "ejemplo": "section > p"
+     },
+     {
+      "id": "label",
+      "impacto": "critical",
+      "n": 1,
+      "ejemplo": "#BDCC"
+     }
+    ],
+    "errores": [
+     "console: undefined"
+    ],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://mind.aurzane.com/test-de-depresion/",
+  "anchos": {
+   "375": {
+    "carga_ms": 808,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Test de depresión PHQ-9 gratis y online | AURZANE MIND",
+    "h1": [
+     "¿Cómo está tu estado de ánimo?"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 25,
+    "nav_enlaces": 10,
+    "alto_pagina": 11845,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: Access to font at 'https://aurzane.com/fuentes/instrument-sans-latin-wght-normal.woff2' from origin 'https://mind.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header ",
+     "console: Failed to load resource: net::ERR_FAILED",
+     "console: Access to font at 'https://aurzane.com/fuentes/bodoni-moda-latin-opsz-normal.woff2' from origin 'https://mind.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is p"
+    ],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 806,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Test de depresión PHQ-9 gratis y online | AURZANE MIND",
+    "h1": [
+     "¿Cómo está tu estado de ánimo?"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 8,
+    "ejemplos_objetivos": [
+     "Ansiedad",
+     "Depresión",
+     "Autoestima",
+     "TDAH",
+     "Autocompasión"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 25,
+    "nav_enlaces": 10,
+    "alto_pagina": 7517,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: Access to font at 'https://aurzane.com/fuentes/instrument-sans-latin-wght-normal.woff2' from origin 'https://mind.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header ",
+     "console: Failed to load resource: net::ERR_FAILED",
+     "console: Access to font at 'https://aurzane.com/fuentes/bodoni-moda-latin-opsz-normal.woff2' from origin 'https://mind.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is p"
+    ],
+    "rotos": []
+   },
+   "375o": {
+    "carga_ms": 822,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Test de depresión PHQ-9 gratis y online | AURZANE MIND",
+    "h1": [
+     "¿Cómo está tu estado de ánimo?"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 25,
+    "nav_enlaces": 10,
+    "alto_pagina": 11845,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: Access to font at 'https://aurzane.com/fuentes/instrument-sans-latin-wght-normal.woff2' from origin 'https://mind.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header ",
+     "console: Failed to load resource: net::ERR_FAILED",
+     "console: Access to font at 'https://aurzane.com/fuentes/bodoni-moda-latin-opsz-normal.woff2' from origin 'https://mind.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is p"
+    ],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://mind.aurzane.com/test-de-tdah/",
+  "anchos": {
+   "375": {
+    "carga_ms": 811,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "Our system thinks you might be a robot!"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "A"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 2,
+    "nav_enlaces": 0,
+    "alto_pagina": 994,
+    "fuentes": [
+     "Arial",
+     "Times New Roman"
+    ],
+    "lang": "en",
+    "axe": [
+     {
+      "id": "color-contrast",
+      "impacto": "serious",
+      "n": 1,
+      "ejemplo": "section > p"
+     },
+     {
+      "id": "label",
+      "impacto": "critical",
+      "n": 1,
+      "ejemplo": "#BDCC"
+     }
+    ],
+    "errores": [
+     "console: undefined"
+    ],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 802,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Test de TDAH en adultos (ASRS v1.1 de la OMS) gratis",
+    "h1": [
+     "¿Tu forma de concentrarte podría ser TDAH?"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 8,
+    "ejemplos_objetivos": [
+     "Ansiedad",
+     "Depresión",
+     "Autoestima",
+     "TDAH",
+     "Autocompasión"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 25,
+    "nav_enlaces": 10,
+    "alto_pagina": 7259,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: Access to font at 'https://aurzane.com/fuentes/instrument-sans-latin-wght-normal.woff2' from origin 'https://mind.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header ",
+     "console: Failed to load resource: net::ERR_FAILED",
+     "console: Access to font at 'https://aurzane.com/fuentes/bodoni-moda-latin-opsz-normal.woff2' from origin 'https://mind.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is p"
+    ],
+    "rotos": []
+   },
+   "375o": {
+    "carga_ms": 813,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Test de TDAH en adultos (ASRS v1.1 de la OMS) gratis",
+    "h1": [
+     "¿Tu forma de concentrarte podría ser TDAH?"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 25,
+    "nav_enlaces": 10,
+    "alto_pagina": 11764,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: Access to font at 'https://aurzane.com/fuentes/instrument-sans-latin-wght-normal.woff2' from origin 'https://mind.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header ",
+     "console: Failed to load resource: net::ERR_FAILED",
+     "console: Access to font at 'https://aurzane.com/fuentes/bodoni-moda-latin-opsz-normal.woff2' from origin 'https://mind.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is p"
+    ],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://nexus.aurzane.com/universidades/",
+  "anchos": {
+   "375": {
+    "carga_ms": 860,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Buscador de universidades y carreras gratis | AURZANE NEXUS",
+    "h1": [
+     "Encuentra tu universidad y tu carrera"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 99,
+    "nav_enlaces": 8,
+    "alto_pagina": 8212,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "axe": [
+     {
+      "id": "target-size",
+      "impacto": "serious",
+      "n": 2,
+      "ejemplo": "span:nth-child(2) > a[href$=\"acerca/\"]"
+     }
+    ],
+    "errores": [
+     "console: Access to font at 'https://aurzane.com/fuentes/instrument-sans-latin-wght-normal.woff2' from origin 'https://nexus.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header",
+     "console: Failed to load resource: net::ERR_FAILED",
+     "console: Access to font at 'https://aurzane.com/fuentes/bodoni-moda-latin-opsz-normal.woff2' from origin 'https://nexus.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is "
+    ],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 822,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Buscador de universidades y carreras gratis | AURZANE NEXUS",
+    "h1": [
+     "Encuentra tu universidad y tu carrera"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 99,
+    "nav_enlaces": 8,
+    "alto_pagina": 3744,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: Access to font at 'https://aurzane.com/fuentes/instrument-sans-latin-wght-normal.woff2' from origin 'https://nexus.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header",
+     "console: Failed to load resource: net::ERR_FAILED",
+     "console: Access to font at 'https://aurzane.com/fuentes/bodoni-moda-latin-opsz-normal.woff2' from origin 'https://nexus.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is "
+    ],
+    "rotos": []
+   },
+   "375o": {
+    "carga_ms": 806,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Buscador de universidades y carreras gratis | AURZANE NEXUS",
+    "h1": [
+     "Encuentra tu universidad y tu carrera"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 99,
+    "nav_enlaces": 8,
+    "alto_pagina": 8212,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "axe": [
+     {
+      "id": "target-size",
+      "impacto": "serious",
+      "n": 2,
+      "ejemplo": "span:nth-child(2) > a[href$=\"acerca/\"]"
+     }
+    ],
+    "errores": [
+     "console: Access to font at 'https://aurzane.com/fuentes/instrument-sans-latin-wght-normal.woff2' from origin 'https://nexus.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header",
+     "console: Failed to load resource: net::ERR_FAILED",
+     "console: Access to font at 'https://aurzane.com/fuentes/bodoni-moda-latin-opsz-normal.woff2' from origin 'https://nexus.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is "
+    ],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://nexus.aurzane.com/universidades/notas-de-corte/",
+  "anchos": {
+   "375": {
+    "carga_ms": 801,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Notas de corte 2025-2026 de todas las carreras en España",
+    "h1": [
+     "Notas de corte 2025-2026"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 299,
+    "nav_enlaces": 8,
+    "alto_pagina": 24159,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "axe": [
+     {
+      "id": "target-size",
+      "impacto": "serious",
+      "n": 2,
+      "ejemplo": "a[href$=\"acerca/\"]"
+     }
+    ],
+    "errores": [
+     "console: Access to font at 'https://aurzane.com/fuentes/instrument-sans-latin-wght-normal.woff2' from origin 'https://nexus.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header",
+     "console: Failed to load resource: net::ERR_FAILED",
+     "console: Access to font at 'https://aurzane.com/fuentes/bodoni-moda-latin-opsz-normal.woff2' from origin 'https://nexus.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is "
+    ],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 824,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Notas de corte 2025-2026 de todas las carreras en España",
+    "h1": [
+     "Notas de corte 2025-2026"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 299,
+    "nav_enlaces": 8,
+    "alto_pagina": 10698,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: Access to font at 'https://aurzane.com/fuentes/instrument-sans-latin-wght-normal.woff2' from origin 'https://nexus.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header",
+     "console: Failed to load resource: net::ERR_FAILED",
+     "console: Access to font at 'https://aurzane.com/fuentes/bodoni-moda-latin-opsz-normal.woff2' from origin 'https://nexus.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is "
+    ],
+    "rotos": []
+   },
+   "375o": {
+    "carga_ms": 793,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Notas de corte 2025-2026 de todas las carreras en España",
+    "h1": [
+     "Notas de corte 2025-2026"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 299,
+    "nav_enlaces": 8,
+    "alto_pagina": 24159,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "axe": [
+     {
+      "id": "target-size",
+      "impacto": "serious",
+      "n": 2,
+      "ejemplo": "a[href$=\"acerca/\"]"
+     }
+    ],
+    "errores": [
+     "console: Access to font at 'https://aurzane.com/fuentes/instrument-sans-latin-wght-normal.woff2' from origin 'https://nexus.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header",
+     "console: Failed to load resource: net::ERR_FAILED",
+     "console: Access to font at 'https://aurzane.com/fuentes/bodoni-moda-latin-opsz-normal.woff2' from origin 'https://nexus.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is "
+    ],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://ovp.aurzane.com/apt-b-cliente.html",
+  "anchos": {
+   "375": {
+    "carga_ms": 904,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "APT-B — AURZANE MIND",
+    "h1": [
+     "¡Listo, gracias!",
+     "No pudimos verificar tu acceso"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 5,
+    "nav_enlaces": 3,
+    "alto_pagina": 920,
+    "fuentes": [
+     "Bodoni Moda",
+     "Instrument Sans"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: Access to font at 'https://aurzane.com/fuentes/bodoni-moda-latin-opsz-italic.woff2' from origin 'https://ovp.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is pr",
+     "console: Failed to load resource: net::ERR_FAILED",
+     "console: Access to font at 'https://aurzane.com/fuentes/bodoni-moda-latin-opsz-normal.woff2' from origin 'https://ovp.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is pr",
+     "console: Access to font at 'https://aurzane.com/fuentes/instrument-sans-latin-wght-normal.woff2' from origin 'https://ovp.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header i"
+    ],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 797,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "APT-B — AURZANE MIND",
+    "h1": [
+     "¡Listo, gracias!",
+     "No pudimos verificar tu acceso"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 5,
+    "nav_enlaces": 3,
+    "alto_pagina": 1035,
+    "fuentes": [
+     "Bodoni Moda",
+     "Instrument Sans"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: Access to font at 'https://aurzane.com/fuentes/bodoni-moda-latin-opsz-normal.woff2' from origin 'https://ovp.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is pr",
+     "console: Failed to load resource: net::ERR_FAILED",
+     "console: Access to font at 'https://aurzane.com/fuentes/instrument-sans-latin-wght-normal.woff2' from origin 'https://ovp.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header i",
+     "console: Access to font at 'https://aurzane.com/fuentes/bodoni-moda-latin-opsz-italic.woff2' from origin 'https://ovp.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is pr"
+    ],
+    "rotos": []
+   },
+   "375o": {
+    "carga_ms": 803,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "APT-B — AURZANE MIND",
+    "h1": [
+     "¡Listo, gracias!",
+     "No pudimos verificar tu acceso"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 5,
+    "nav_enlaces": 3,
+    "alto_pagina": 920,
+    "fuentes": [
+     "Bodoni Moda",
+     "Instrument Sans"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: Access to font at 'https://aurzane.com/fuentes/bodoni-moda-latin-opsz-italic.woff2' from origin 'https://ovp.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is pr",
+     "console: Failed to load resource: net::ERR_FAILED",
+     "console: Access to font at 'https://aurzane.com/fuentes/instrument-sans-latin-wght-normal.woff2' from origin 'https://ovp.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header i",
+     "console: Access to font at 'https://aurzane.com/fuentes/bodoni-moda-latin-opsz-normal.woff2' from origin 'https://ovp.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is pr"
+    ],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://ovp.aurzane.com/informe-ejemplo.html",
+  "anchos": {
+   "375": {
+    "carga_ms": 836,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "Our system thinks you might be a robot!"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "A"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 2,
+    "nav_enlaces": 0,
+    "alto_pagina": 994,
+    "fuentes": [
+     "Arial",
+     "Times New Roman"
+    ],
+    "lang": "en",
+    "axe": [
+     {
+      "id": "color-contrast",
+      "impacto": "serious",
+      "n": 1,
+      "ejemplo": "section > p"
+     },
+     {
+      "id": "label",
+      "impacto": "critical",
+      "n": 1,
+      "ejemplo": "#BDCC"
+     }
+    ],
+    "errores": [
+     "console: undefined"
+    ],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 796,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "Our system thinks you might be a robot!"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "A"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 2,
+    "nav_enlaces": 0,
+    "alto_pagina": 900,
+    "fuentes": [
+     "Arial",
+     "Times New Roman"
+    ],
+    "lang": "en",
+    "axe": [
+     {
+      "id": "color-contrast",
+      "impacto": "serious",
+      "n": 1,
+      "ejemplo": "section > p"
+     },
+     {
+      "id": "label",
+      "impacto": "critical",
+      "n": 1,
+      "ejemplo": "#BDCC"
+     }
+    ],
+    "errores": [
+     "console: undefined"
+    ],
+    "rotos": []
+   },
+   "375o": {
+    "carga_ms": 1137,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Informe de ejemplo · AURZANE OVP",
+    "h1": [],
+    "desborda": true,
+    "scroll_w": 443,
+    "culpables": [
+     "table.summary-table<report 442",
+     "thead<summary-table 442",
+     "tr<THEAD 442",
+     "th<TR 442",
+     "tbody<summary-table 442",
+     "tr<TBODY 442"
+    ],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 21,
+    "nav_enlaces": 0,
+    "alto_pagina": 20369,
+    "fuentes": [
+     "Bodoni Moda",
+     "Instrument Sans"
+    ],
+    "lang": "es",
+    "axe": [
+     {
+      "id": "color-contrast",
+      "impacto": "serious",
+      "n": 57,
+      "ejemplo": ".nivel.high"
+     }
+    ],
+    "errores": [
+     "console: Access to font at 'https://aurzane.com/fuentes/instrument-sans-latin-wght-normal.woff2' from origin 'https://ovp.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header i",
+     "console: Failed to load resource: net::ERR_FAILED",
+     "console: Access to font at 'https://aurzane.com/fuentes/bodoni-moda-latin-opsz-normal.woff2' from origin 'https://ovp.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is pr",
+     "console: Access to font at 'https://aurzane.com/fuentes/bodoni-moda-latin-opsz-italic.woff2' from origin 'https://ovp.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is pr",
+     "console: Access to font at 'https://aurzane.com/fuentes/instrument-sans-latin-wght-italic.woff2' from origin 'https://ovp.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header i"
+    ],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://mind.aurzane.com/test-de-personalidad/p/horizonte/",
+  "anchos": {
+   "375": {
+    "carga_ms": 816,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Perfil Horizonte: test de personalidad gratis | AURZANE MIND",
+    "h1": [
+     "¿Cómo es tu personalidad de verdad?",
+     "Prisma"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [
+     "span.blob.b3<hero 435"
+    ],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 20,
+    "nav_enlaces": 5,
+    "alto_pagina": 6922,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "axe": [
+     {
+      "id": "color-contrast",
+      "impacto": "serious",
+      "n": 8,
+      "ejemplo": ".r5:nth-child(1) > b"
+     }
+    ],
+    "errores": [
+     "console: Access to font at 'https://aurzane.com/fuentes/instrument-sans-latin-wght-normal.woff2' from origin 'https://mind.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header ",
+     "console: Failed to load resource: net::ERR_FAILED",
+     "console: Access to font at 'https://aurzane.com/fuentes/bodoni-moda-latin-opsz-normal.woff2' from origin 'https://mind.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is p"
+    ],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 2294,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Perfil Horizonte: test de personalidad gratis | AURZANE MIND",
+    "h1": [
+     "¿Cómo es tu personalidad de verdad?",
+     "Prisma"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [
+     "span.blob.b3<hero 1426"
+    ],
+    "objetivos_pequenos": 3,
+    "ejemplos_objetivos": [
+     "Guías",
+     "Biblioteca",
+     "Test vocacional"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 20,
+    "nav_enlaces": 5,
+    "alto_pagina": 3446,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "axe": [
+     {
+      "id": "color-contrast",
+      "impacto": "serious",
+      "n": 8,
+      "ejemplo": ".r5:nth-child(1) > b"
+     }
+    ],
+    "errores": [
+     "console: Access to font at 'https://aurzane.com/fuentes/bodoni-moda-latin-opsz-normal.woff2' from origin 'https://mind.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is p",
+     "console: Failed to load resource: net::ERR_FAILED",
+     "console: Access to font at 'https://aurzane.com/fuentes/instrument-sans-latin-wght-normal.woff2' from origin 'https://mind.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header "
+    ],
+    "rotos": []
+   },
+   "375o": {
+    "carga_ms": 808,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Perfil Horizonte: test de personalidad gratis | AURZANE MIND",
+    "h1": [
+     "¿Cómo es tu personalidad de verdad?",
+     "Prisma"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [
+     "span.blob.b3<hero 435"
+    ],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 20,
+    "nav_enlaces": 5,
+    "alto_pagina": 6922,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "axe": [
+     {
+      "id": "color-contrast",
+      "impacto": "serious",
+      "n": 8,
+      "ejemplo": ".r5:nth-child(1) > b"
+     }
+    ],
+    "errores": [
+     "console: Access to font at 'https://aurzane.com/fuentes/bodoni-moda-latin-opsz-normal.woff2' from origin 'https://mind.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is p",
+     "console: Failed to load resource: net::ERR_FAILED",
+     "console: Access to font at 'https://aurzane.com/fuentes/instrument-sans-latin-wght-normal.woff2' from origin 'https://mind.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header "
+    ],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://mind.aurzane.com/test-de-personalidad/p/telescopio/",
+  "anchos": {
+   "375": {
+    "carga_ms": 812,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Perfil Telescopio: test de personalidad gratis",
+    "h1": [
+     "¿Cómo es tu personalidad de verdad?",
+     "Prisma"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [
+     "span.blob.b3<hero 435"
+    ],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 20,
+    "nav_enlaces": 5,
+    "alto_pagina": 6922,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "axe": [
+     {
+      "id": "color-contrast",
+      "impacto": "serious",
+      "n": 8,
+      "ejemplo": ".r5:nth-child(1) > b"
+     }
+    ],
+    "errores": [
+     "console: Access to font at 'https://aurzane.com/fuentes/instrument-sans-latin-wght-normal.woff2' from origin 'https://mind.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header ",
+     "console: Failed to load resource: net::ERR_FAILED",
+     "console: Access to font at 'https://aurzane.com/fuentes/bodoni-moda-latin-opsz-normal.woff2' from origin 'https://mind.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is p"
+    ],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 797,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Perfil Telescopio: test de personalidad gratis",
+    "h1": [
+     "¿Cómo es tu personalidad de verdad?",
+     "Prisma"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [
+     "span.blob.b3<hero 1426"
+    ],
+    "objetivos_pequenos": 3,
+    "ejemplos_objetivos": [
+     "Guías",
+     "Biblioteca",
+     "Test vocacional"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 20,
+    "nav_enlaces": 5,
+    "alto_pagina": 3446,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "axe": [
+     {
+      "id": "color-contrast",
+      "impacto": "serious",
+      "n": 8,
+      "ejemplo": ".r5:nth-child(1) > b"
+     }
+    ],
+    "errores": [
+     "console: Access to font at 'https://aurzane.com/fuentes/instrument-sans-latin-wght-normal.woff2' from origin 'https://mind.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header ",
+     "console: Failed to load resource: net::ERR_FAILED",
+     "console: Access to font at 'https://aurzane.com/fuentes/bodoni-moda-latin-opsz-normal.woff2' from origin 'https://mind.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is p"
+    ],
+    "rotos": []
+   },
+   "375o": {
+    "carga_ms": 818,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "Our system thinks you might be a robot!"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "A"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 2,
+    "nav_enlaces": 0,
+    "alto_pagina": 994,
+    "fuentes": [
+     "Arial",
+     "Times New Roman"
+    ],
+    "lang": "en",
+    "axe": [
+     {
+      "id": "color-contrast",
+      "impacto": "serious",
+      "n": 1,
+      "ejemplo": "section > p"
+     },
+     {
+      "id": "label",
+      "impacto": "critical",
+      "n": 1,
+      "ejemplo": "#BDCC"
+     }
+    ],
+    "errores": [
+     "console: undefined"
+    ],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://build.aurzane.com/calculadora-jubilacion/",
+  "anchos": {
+   "375": {
+    "carga_ms": 815,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Calculadora de jubilación: cuánto ahorrar para retirarte | AURZANE BUILD",
+    "h1": [
+     "Tu jubilación, con números"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 22,
+    "nav_enlaces": 7,
+    "alto_pagina": 9376,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: Access to font at 'https://aurzane.com/fuentes/instrument-sans-latin-wght-normal.woff2' from origin 'https://build.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header",
+     "console: Failed to load resource: net::ERR_FAILED",
+     "console: Access to font at 'https://aurzane.com/fuentes/bodoni-moda-latin-opsz-normal.woff2' from origin 'https://build.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is "
+    ],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 806,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Robot Challenge Screen",
+    "h1": [
+     "Our system thinks you might be a robot!"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "A"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 2,
+    "nav_enlaces": 0,
+    "alto_pagina": 900,
+    "fuentes": [
+     "Arial",
+     "Times New Roman"
+    ],
+    "lang": "en",
+    "axe": [
+     {
+      "id": "color-contrast",
+      "impacto": "serious",
+      "n": 1,
+      "ejemplo": "section > p"
+     },
+     {
+      "id": "label",
+      "impacto": "critical",
+      "n": 1,
+      "ejemplo": "#BDCC"
+     }
+    ],
+    "errores": [
+     "console: undefined"
+    ],
+    "rotos": []
+   },
+   "375o": {
+    "carga_ms": 3113,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "Calculadora de jubilación: cuánto ahorrar para retirarte | AURZANE BUILD",
+    "h1": [
+     "Tu jubilación, con números"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 22,
+    "nav_enlaces": 7,
+    "alto_pagina": 9376,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: Access to font at 'https://aurzane.com/fuentes/instrument-sans-latin-wght-normal.woff2' from origin 'https://build.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header",
+     "console: Failed to load resource: net::ERR_FAILED",
+     "console: Access to font at 'https://aurzane.com/fuentes/bodoni-moda-latin-opsz-normal.woff2' from origin 'https://build.aurzane.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is "
+    ],
+    "rotos": []
+   }
+  }
+ }
+]

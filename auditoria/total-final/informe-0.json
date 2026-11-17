@@ -1,0 +1,2500 @@
+[
+ {
+  "url": "https://aurzane.com/",
+  "anchos": {
+   "375": {
+    "carga_ms": 2001,
+    "titulo": "AURZANE: tests psicológicos, calculadoras y libros de psicología",
+    "h1": [
+     "Conócete, decide y construye tu vida con ciencia."
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 157,
+    "nav_enlaces": 17,
+    "alto_pagina": 18081,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 1923,
+    "titulo": "AURZANE: tests psicológicos, calculadoras y libros de psicología",
+    "h1": [
+     "Conócete, decide y construye tu vida con ciencia."
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 157,
+    "nav_enlaces": 17,
+    "alto_pagina": 10819,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "375o": {
+    "carga_ms": 1847,
+    "titulo": "AURZANE: tests psicológicos, calculadoras y libros de psicología",
+    "h1": [
+     "Conócete, decide y construye tu vida con ciencia."
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 157,
+    "nav_enlaces": 17,
+    "alto_pagina": 18081,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://aurzane.com/biblioteca/",
+  "anchos": {
+   "375": {
+    "carga_ms": 3057,
+    "titulo": "Biblioteca | AURZANE",
+    "h1": [
+     "La biblioteca abierta de psicología en español",
+     "Todos los libros"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [
+     "button.depto<wrap 434",
+     "button.depto<wrap 535",
+     "button.depto<wrap 645",
+     "button.depto<wrap 719",
+     "button.depto<wrap 840",
+     "button.depto<wrap 891"
+    ],
+    "objetivos_pequenos": 65,
+    "ejemplos_objetivos": [
+     "Ver todas las novedades",
+     "Ver todo",
+     "Ver todo",
+     "Ver todo",
+     "Ver todo"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 476,
+    "nav_enlaces": 30,
+    "alto_pagina": 16181,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: [Report Only] Refused to frame 'https://www.google.com/' because an ancestor violates the following Content Security Policy directive: \"frame-ancestors 'self'\".\n"
+    ],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 2832,
+    "titulo": "Biblioteca | AURZANE",
+    "h1": [
+     "La biblioteca abierta de psicología en español",
+     "Todos los libros"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [
+     "a.libro<est-libros 1543",
+     "div.portada.tipo<libro 1543",
+     "span.lomo<portada 1391",
+     "span.pt-tit<portada 1528",
+     "span.pt-aut<portada 1528",
+     "img<portada 1542"
+    ],
+    "objetivos_pequenos": 67,
+    "ejemplos_objetivos": [
+     "Ver todas las novedades",
+     "Ver todo",
+     "Ver todo",
+     "Ver todo",
+     "Ver todo"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 476,
+    "nav_enlaces": 30,
+    "alto_pagina": 12460,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "375o": {
+    "carga_ms": 1822,
+    "titulo": "Biblioteca | AURZANE",
+    "h1": [
+     "La biblioteca abierta de psicología en español",
+     "Todos los libros"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [
+     "button.depto<wrap 434",
+     "button.depto<wrap 535",
+     "button.depto<wrap 645",
+     "button.depto<wrap 719",
+     "button.depto<wrap 840",
+     "button.depto<wrap 891"
+    ],
+    "objetivos_pequenos": 65,
+    "ejemplos_objetivos": [
+     "Ver todas las novedades",
+     "Ver todo",
+     "Ver todo",
+     "Ver todo",
+     "Ver todo"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 476,
+    "nav_enlaces": 30,
+    "alto_pagina": 16181,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://aurzane.com/biblioteca/recientes/",
+  "anchos": {
+   "375": {
+    "carga_ms": 1605,
+    "titulo": "Libros abiertos y estudios recientes de psicología | AURZANE",
+    "h1": [
+     "Libros abiertos y estudios recientes"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "¿Algo no funciona? Avísanos"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 363,
+    "nav_enlaces": 30,
+    "alto_pagina": 62377,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 1428,
+    "titulo": "Libros abiertos y estudios recientes de psicología | AURZANE",
+    "h1": [
+     "Libros abiertos y estudios recientes"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "¿Algo no funciona? Avísanos"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 363,
+    "nav_enlaces": 30,
+    "alto_pagina": 30856,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "375o": {
+    "carga_ms": 1285,
+    "titulo": "Libros abiertos y estudios recientes de psicología | AURZANE",
+    "h1": [
+     "Libros abiertos y estudios recientes"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "¿Algo no funciona? Avísanos"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 363,
+    "nav_enlaces": 30,
+    "alto_pagina": 62377,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://aurzane.com/colegios/",
+  "anchos": {
+   "375": {
+    "carga_ms": 1375,
+    "titulo": "Orientación vocacional para colegios | AURZANE OVP",
+    "h1": [
+     "Orientación vocacional para cada estudiante de tu colegio"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 72,
+    "nav_enlaces": 17,
+    "alto_pagina": 11487,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 1392,
+    "titulo": "Orientación vocacional para colegios | AURZANE OVP",
+    "h1": [
+     "Orientación vocacional para cada estudiante de tu colegio"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 72,
+    "nav_enlaces": 17,
+    "alto_pagina": 6169,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "375o": {
+    "carga_ms": 1658,
+    "titulo": "Orientación vocacional para colegios | AURZANE OVP",
+    "h1": [
+     "Orientación vocacional para cada estudiante de tu colegio"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 72,
+    "nav_enlaces": 17,
+    "alto_pagina": 11487,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://aurzane.com/libros/crear-o-morir-andres-oppenheimer/",
+  "anchos": {
+   "375": {
+    "carga_ms": 1678,
+    "titulo": "Crear o morir, de Andrés Oppenheimer: de qué trata y dónde comprarlo | AURZANE",
+    "h1": [
+     "Crear o morir"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "¿Algo no funciona? Avísanos"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 77,
+    "nav_enlaces": 30,
+    "alto_pagina": 4721,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 1419,
+    "titulo": "Crear o morir, de Andrés Oppenheimer: de qué trata y dónde comprarlo | AURZANE",
+    "h1": [
+     "Crear o morir"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "¿Algo no funciona? Avísanos"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 77,
+    "nav_enlaces": 30,
+    "alto_pagina": 2089,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "375o": {
+    "carga_ms": 1530,
+    "titulo": "Crear o morir, de Andrés Oppenheimer: de qué trata y dónde comprarlo | AURZANE",
+    "h1": [
+     "Crear o morir"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 1,
+    "ejemplos_objetivos": [
+     "¿Algo no funciona? Avísanos"
+    ],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 77,
+    "nav_enlaces": 30,
+    "alto_pagina": 4721,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://aurzane.com/politica-editorial.html",
+  "anchos": {
+   "375": {
+    "carga_ms": 1246,
+    "titulo": "Política editorial de AURZANE",
+    "h1": [
+     "Política editorial"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 58,
+    "nav_enlaces": 17,
+    "alto_pagina": 3716,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 1098,
+    "titulo": "Política editorial de AURZANE",
+    "h1": [
+     "Política editorial"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 58,
+    "nav_enlaces": 17,
+    "alto_pagina": 1992,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "375o": {
+    "carga_ms": 1192,
+    "titulo": "Política editorial de AURZANE",
+    "h1": [
+     "Política editorial"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 58,
+    "nav_enlaces": 17,
+    "alto_pagina": 3716,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://aurzane.com/research.html",
+  "anchos": {
+   "375": {
+    "carga_ms": 2443,
+    "titulo": "Research Hub | AURZANE",
+    "h1": [
+     "Un solo buscador para toda la investigación de AURZANE"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [
+     "button.mundo-card<mundos-grid 463",
+     "img<mundo-card 462",
+     "span<mundo-card 448",
+     "b<SPAN 448",
+     "small<SPAN 448",
+     "button.mundo-card<mundos-grid 615"
+    ],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 143,
+    "nav_enlaces": 30,
+    "alto_pagina": 12375,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "ui-monospace"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 1666,
+    "titulo": "Research Hub | AURZANE",
+    "h1": [
+     "Un solo buscador para toda la investigación de AURZANE"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [
+     "div.lista-cab<lista 1807",
+     "h2<lista-cab 1471",
+     "button#cerrarLista.icon-btn<lista-cab 1787",
+     "svg<icon-btn 1778",
+     "path<svg 1774",
+     "div#listaCuerpo.lista-cuerpo<lista 1807"
+    ],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 143,
+    "nav_enlaces": 30,
+    "alto_pagina": 9047,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "ui-monospace"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "375o": {
+    "carga_ms": 1527,
+    "titulo": "Research Hub | AURZANE",
+    "h1": [
+     "Un solo buscador para toda la investigación de AURZANE"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [
+     "button.mundo-card<mundos-grid 463",
+     "img<mundo-card 462",
+     "span<mundo-card 448",
+     "b<SPAN 448",
+     "small<SPAN 448",
+     "button.mundo-card<mundos-grid 615"
+    ],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 143,
+    "nav_enlaces": 30,
+    "alto_pagina": 12375,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "ui-monospace"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://build.aurzane.com/",
+  "anchos": {
+   "375": {
+    "carga_ms": 1558,
+    "titulo": "AURZANE BUILD: dinero, ingresos, inversión y vivienda con números claros",
+    "h1": [
+     "Haz crecer tu dinero con números claros"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 164,
+    "nav_enlaces": 37,
+    "alto_pagina": 15359,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 1763,
+    "titulo": "AURZANE BUILD: dinero, ingresos, inversión y vivienda con números claros",
+    "h1": [
+     "Haz crecer tu dinero con números claros"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 164,
+    "nav_enlaces": 37,
+    "alto_pagina": 8088,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "375o": {
+    "carga_ms": 1566,
+    "titulo": "AURZANE BUILD: dinero, ingresos, inversión y vivienda con números claros",
+    "h1": [
+     "Haz crecer tu dinero con números claros"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 164,
+    "nav_enlaces": 37,
+    "alto_pagina": 15359,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://learn.aurzane.com/",
+  "anchos": {
+   "375": {
+    "carga_ms": 1452,
+    "titulo": "AURZANE LEARN: cursos gratis de psicología y neurociencias con certificado",
+    "h1": [
+     "Aprende con cursos completos, a tu ritmo"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 156,
+    "nav_enlaces": 31,
+    "alto_pagina": 15123,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 1540,
+    "titulo": "AURZANE LEARN: cursos gratis de psicología y neurociencias con certificado",
+    "h1": [
+     "Aprende con cursos completos, a tu ritmo"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 156,
+    "nav_enlaces": 31,
+    "alto_pagina": 9309,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "375o": {
+    "carga_ms": 1431,
+    "titulo": "AURZANE LEARN: cursos gratis de psicología y neurociencias con certificado",
+    "h1": [
+     "Aprende con cursos completos, a tu ritmo"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 156,
+    "nav_enlaces": 31,
+    "alto_pagina": 15123,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://learn.aurzane.com/curso/tecnicas-neurociencias/",
+  "anchos": {
+   "375": {
+    "carga_ms": 1173,
+    "titulo": "Investigación en Neurociencias y Estereotaxia · AURZANE LEARN",
+    "h1": [
+     "Metodología y técnicas de investigación en Neurociencias"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 80,
+    "nav_enlaces": 31,
+    "alto_pagina": 5168,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 1085,
+    "titulo": "Investigación en Neurociencias y Estereotaxia · AURZANE LEARN",
+    "h1": [
+     "Metodología y técnicas de investigación en Neurociencias"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 80,
+    "nav_enlaces": 31,
+    "alto_pagina": 2897,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "375o": {
+    "carga_ms": 1745,
+    "titulo": "Investigación en Neurociencias y Estereotaxia · AURZANE LEARN",
+    "h1": [
+     "Metodología y técnicas de investigación en Neurociencias"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 80,
+    "nav_enlaces": 31,
+    "alto_pagina": 5168,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://live.aurzane.com/calculadora-agua/",
+  "anchos": {
+   "375": {
+    "carga_ms": 1402,
+    "titulo": "Cuánta agua beber al día: calculadora gratis | AURZANE LIVE",
+    "h1": [
+     "¿Cuánta agua necesitas al día?"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 102,
+    "nav_enlaces": 35,
+    "alto_pagina": 11496,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 1391,
+    "titulo": "Cuánta agua beber al día: calculadora gratis | AURZANE LIVE",
+    "h1": [
+     "¿Cuánta agua necesitas al día?"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 102,
+    "nav_enlaces": 35,
+    "alto_pagina": 6422,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "375o": {
+    "carga_ms": 2220,
+    "titulo": "Cuánta agua beber al día: calculadora gratis | AURZANE LIVE",
+    "h1": [
+     "¿Cuánta agua necesitas al día?"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 102,
+    "nav_enlaces": 35,
+    "alto_pagina": 11496,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://build.aurzane.com/calculadora-interes-compuesto/",
+  "anchos": {
+   "375": {
+    "carga_ms": 1465,
+    "titulo": "Calculadora de interés compuesto con aportaciones mensuales | AURZANE BUILD",
+    "h1": [
+     "Cuánto crece tu dinero con los años"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 101,
+    "nav_enlaces": 37,
+    "alto_pagina": 6904,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 1433,
+    "titulo": "Calculadora de interés compuesto con aportaciones mensuales | AURZANE BUILD",
+    "h1": [
+     "Cuánto crece tu dinero con los años"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 101,
+    "nav_enlaces": 37,
+    "alto_pagina": 3855,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "375o": {
+    "carga_ms": 1339,
+    "titulo": "Calculadora de interés compuesto con aportaciones mensuales | AURZANE BUILD",
+    "h1": [
+     "Cuánto crece tu dinero con los años"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 101,
+    "nav_enlaces": 37,
+    "alto_pagina": 6904,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://mind.aurzane.com/",
+  "anchos": {
+   "375": {
+    "carga_ms": 2060,
+    "titulo": "AURZANE MIND: tests psicológicos, ejercicios guiados y psicología con fuentes",
+    "h1": [
+     "Entiende tu mente y cuídala"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 185,
+    "nav_enlaces": 29,
+    "alto_pagina": 17578,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 1481,
+    "titulo": "AURZANE MIND: tests psicológicos, ejercicios guiados y psicología con fuentes",
+    "h1": [
+     "Entiende tu mente y cuídala"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 185,
+    "nav_enlaces": 29,
+    "alto_pagina": 8909,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "375o": {
+    "carga_ms": 1587,
+    "titulo": "AURZANE MIND: tests psicológicos, ejercicios guiados y psicología con fuentes",
+    "h1": [
+     "Entiende tu mente y cuídala"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 185,
+    "nav_enlaces": 29,
+    "alto_pagina": 17578,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://mind.aurzane.com/ejercicios/lugar-seguro/",
+  "anchos": {
+   "375": {
+    "carga_ms": 1403,
+    "titulo": "Visualización guiada del lugar seguro (5 min) | AURZANE MIND",
+    "h1": [
+     "Visualización del lugar seguro"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 93,
+    "nav_enlaces": 29,
+    "alto_pagina": 10024,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 1706,
+    "titulo": "Visualización guiada del lugar seguro (5 min) | AURZANE MIND",
+    "h1": [
+     "Visualización del lugar seguro"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 93,
+    "nav_enlaces": 29,
+    "alto_pagina": 6193,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "375o": {
+    "carga_ms": 1366,
+    "titulo": "Visualización guiada del lugar seguro (5 min) | AURZANE MIND",
+    "h1": [
+     "Visualización del lugar seguro"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 93,
+    "nav_enlaces": 29,
+    "alto_pagina": 10024,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://mind.aurzane.com/ejercicios/respiracion-diafragmatica/",
+  "anchos": {
+   "375": {
+    "carga_ms": 1336,
+    "titulo": "Respiración diafragmática o abdominal guiada | AURZANE MIND",
+    "h1": [
+     "Respiración diafragmática guiada"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 94,
+    "nav_enlaces": 29,
+    "alto_pagina": 9732,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 1496,
+    "titulo": "Respiración diafragmática o abdominal guiada | AURZANE MIND",
+    "h1": [
+     "Respiración diafragmática guiada"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 94,
+    "nav_enlaces": 29,
+    "alto_pagina": 6322,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "375o": {
+    "carga_ms": 1390,
+    "titulo": "Respiración diafragmática o abdominal guiada | AURZANE MIND",
+    "h1": [
+     "Respiración diafragmática guiada"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 94,
+    "nav_enlaces": 29,
+    "alto_pagina": 9732,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://mind.aurzane.com/en/burnout-test-cbi/",
+  "anchos": {
+   "375": {
+    "carga_ms": 1095,
+    "titulo": "Work burnout test (Copenhagen Burnout Inventory)",
+    "h1": [
+     "Work burnout test (Copenhagen Burnout Inventory)"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 66,
+    "nav_enlaces": 23,
+    "alto_pagina": 4604,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "en",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 1322,
+    "titulo": "Work burnout test (Copenhagen Burnout Inventory)",
+    "h1": [
+     "Work burnout test (Copenhagen Burnout Inventory)"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 66,
+    "nav_enlaces": 23,
+    "alto_pagina": 2729,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "en",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "375o": {
+    "carga_ms": 1274,
+    "titulo": "Work burnout test (Copenhagen Burnout Inventory)",
+    "h1": [
+     "Work burnout test (Copenhagen Burnout Inventory)"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 66,
+    "nav_enlaces": 23,
+    "alto_pagina": 4604,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "en",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://mind.aurzane.com/en/self-esteem-test-rosenberg/",
+  "anchos": {
+   "375": {
+    "carga_ms": 1096,
+    "titulo": "Self-esteem test (Rosenberg): free online questionnaire",
+    "h1": [
+     "Self-esteem test (Rosenberg)"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 66,
+    "nav_enlaces": 23,
+    "alto_pagina": 4800,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "en",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 1082,
+    "titulo": "Self-esteem test (Rosenberg): free online questionnaire",
+    "h1": [
+     "Self-esteem test (Rosenberg)"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 66,
+    "nav_enlaces": 23,
+    "alto_pagina": 2729,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "en",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "375o": {
+    "carga_ms": 1138,
+    "titulo": "Self-esteem test (Rosenberg): free online questionnaire",
+    "h1": [
+     "Self-esteem test (Rosenberg)"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 66,
+    "nav_enlaces": 23,
+    "alto_pagina": 4800,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "en",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://mind.aurzane.com/pt/teste-de-bem-estar-who-5/",
+  "anchos": {
+   "375": {
+    "carga_ms": 1050,
+    "titulo": "Teste de bem-estar (WHO-5): questionário grátis online",
+    "h1": [
+     "Teste de bem-estar (WHO-5)"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 66,
+    "nav_enlaces": 23,
+    "alto_pagina": 4842,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "pt-BR",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 1083,
+    "titulo": "Teste de bem-estar (WHO-5): questionário grátis online",
+    "h1": [
+     "Teste de bem-estar (WHO-5)"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 66,
+    "nav_enlaces": 23,
+    "alto_pagina": 2619,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "pt-BR",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "375o": {
+    "carga_ms": 1080,
+    "titulo": "Teste de bem-estar (WHO-5): questionário grátis online",
+    "h1": [
+     "Teste de bem-estar (WHO-5)"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 66,
+    "nav_enlaces": 23,
+    "alto_pagina": 4842,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "pt-BR",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://mind.aurzane.com/test-de-burnout/",
+  "anchos": {
+   "375": {
+    "carga_ms": 1107,
+    "titulo": "Test de burnout gratis: ¿estás quemado/a en el trabajo?",
+    "h1": [
+     "¿Tu trabajo te está quemando?"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 102,
+    "nav_enlaces": 29,
+    "alto_pagina": 14704,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 1117,
+    "titulo": "Test de burnout gratis: ¿estás quemado/a en el trabajo?",
+    "h1": [
+     "¿Tu trabajo te está quemando?"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 102,
+    "nav_enlaces": 29,
+    "alto_pagina": 8717,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "375o": {
+    "carga_ms": 1265,
+    "titulo": "Test de burnout gratis: ¿estás quemado/a en el trabajo?",
+    "h1": [
+     "¿Tu trabajo te está quemando?"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 102,
+    "nav_enlaces": 29,
+    "alto_pagina": 14704,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://mind.aurzane.com/test-de-soledad/",
+  "anchos": {
+   "375": {
+    "carga_ms": 1159,
+    "titulo": "Test de soledad gratis: ¿te sientes solo/a? | AURZANE MIND",
+    "h1": [
+     "¿Te sientes solo/a aunque estés rodeado/a de gente?"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 102,
+    "nav_enlaces": 29,
+    "alto_pagina": 13316,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 1505,
+    "titulo": "Test de soledad gratis: ¿te sientes solo/a? | AURZANE MIND",
+    "h1": [
+     "¿Te sientes solo/a aunque estés rodeado/a de gente?"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 102,
+    "nav_enlaces": 29,
+    "alto_pagina": 7238,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "375o": {
+    "carga_ms": 1149,
+    "titulo": "Test de soledad gratis: ¿te sientes solo/a? | AURZANE MIND",
+    "h1": [
+     "¿Te sientes solo/a aunque estés rodeado/a de gente?"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 102,
+    "nav_enlaces": 29,
+    "alto_pagina": 13316,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://nexus.aurzane.com/nexus.html",
+  "anchos": {
+   "375": {
+    "carga_ms": 2192,
+    "titulo": "AURZANE NEXUS — Universidades y carreras, ciencia y datos al servicio de la vida real",
+    "h1": [
+     "Tecnología que mejora la vida real"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [
+     "a.ex-card<explored-strip 559",
+     "div.ex-img<ex-card 558",
+     "img<ex-img 558",
+     "div.ex-body<ex-card 558",
+     "span.cat-badge<ex-body 414",
+     "h4<ex-body 542"
+    ],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 125,
+    "nav_enlaces": 31,
+    "alto_pagina": 10560,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 1990,
+    "titulo": "AURZANE NEXUS — Universidades y carreras, ciencia y datos al servicio de la vida real",
+    "h1": [
+     "Tecnología que mejora la vida real"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 125,
+    "nav_enlaces": 31,
+    "alto_pagina": 5681,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "375o": {
+    "carga_ms": 2506,
+    "titulo": "AURZANE NEXUS — Universidades y carreras, ciencia y datos al servicio de la vida real",
+    "h1": [
+     "Tecnología que mejora la vida real"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [
+     "a.ex-card<explored-strip 559",
+     "div.ex-img<ex-card 558",
+     "img<ex-img 558",
+     "div.ex-body<ex-card 558",
+     "span.cat-badge<ex-body 414",
+     "h4<ex-body 542"
+    ],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 118,
+    "nav_enlaces": 31,
+    "alto_pagina": 10560,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://nexus.aurzane.com/universidades/mi-lista/",
+  "anchos": {
+   "375": {
+    "carga_ms": 1342,
+    "titulo": "Mi lista de universidades | AURZANE NEXUS",
+    "h1": [
+     "Mi lista"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 94,
+    "nav_enlaces": 31,
+    "alto_pagina": 1774,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 1356,
+    "titulo": "Mi lista de universidades | AURZANE NEXUS",
+    "h1": [
+     "Mi lista"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 94,
+    "nav_enlaces": 31,
+    "alto_pagina": 934,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "375o": {
+    "carga_ms": 1884,
+    "titulo": "Mi lista de universidades | AURZANE NEXUS",
+    "h1": [
+     "Mi lista"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 94,
+    "nav_enlaces": 31,
+    "alto_pagina": 1774,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://ovp.aurzane.com/apt-a-cliente.html",
+  "anchos": {
+   "375": {
+    "carga_ms": 974,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "APT-A — AURZANE MIND",
+    "h1": [
+     "¡Listo, gracias!",
+     "No pudimos verificar tu acceso"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 12,
+    "nav_enlaces": 3,
+    "alto_pagina": 920,
+    "fuentes": [
+     "Bodoni Moda",
+     "Instrument Sans",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 1124,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "APT-A — AURZANE MIND",
+    "h1": [
+     "¡Listo, gracias!",
+     "No pudimos verificar tu acceso"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 12,
+    "nav_enlaces": 3,
+    "alto_pagina": 1035,
+    "fuentes": [
+     "Bodoni Moda",
+     "Instrument Sans",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "375o": {
+    "carga_ms": 870,
+    "sin_cabecera": true,
+    "sin_ds": true,
+    "titulo": "APT-A — AURZANE MIND",
+    "h1": [
+     "¡Listo, gracias!",
+     "No pudimos verificar tu acceso"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 12,
+    "nav_enlaces": 3,
+    "alto_pagina": 920,
+    "fuentes": [
+     "Bodoni Moda",
+     "Instrument Sans",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://ovp.aurzane.com/index.html",
+  "anchos": {
+   "375": {
+    "carga_ms": 1502,
+    "titulo": "Test de orientación vocacional gratis online, con informe",
+    "h1": [
+     "Elegir qué estudiar no debería ser una corazonada. Debería tener evidencia detrá"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 104,
+    "nav_enlaces": 27,
+    "alto_pagina": 8637,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 2029,
+    "titulo": "Test de orientación vocacional gratis online, con informe",
+    "h1": [
+     "Elegir qué estudiar no debería ser una corazonada. Debería tener evidencia detrá"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 104,
+    "nav_enlaces": 27,
+    "alto_pagina": 5511,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [
+     "console: [Report Only] Refused to frame 'https://www.google.com/' because an ancestor violates the following Content Security Policy directive: \"frame-ancestors 'self'\".\n"
+    ],
+    "rotos": []
+   },
+   "375o": {
+    "carga_ms": 1405,
+    "titulo": "Test de orientación vocacional gratis online, con informe",
+    "h1": [
+     "Elegir qué estudiar no debería ser una corazonada. Debería tener evidencia detrá"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 104,
+    "nav_enlaces": 27,
+    "alto_pagina": 8637,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://mind.aurzane.com/test-de-personalidad/p/fogata/",
+  "anchos": {
+   "375": {
+    "carga_ms": 1371,
+    "titulo": "Perfil Fogata: test de personalidad gratis | AURZANE MIND",
+    "h1": [
+     "¿Cómo es tu personalidad de verdad?",
+     "Prisma"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [
+     "span.blob.b3<hero 435"
+    ],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 91,
+    "nav_enlaces": 29,
+    "alto_pagina": 8763,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 1473,
+    "titulo": "Perfil Fogata: test de personalidad gratis | AURZANE MIND",
+    "h1": [
+     "¿Cómo es tu personalidad de verdad?",
+     "Prisma"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [
+     "span.blob.b3<hero 1426"
+    ],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 91,
+    "nav_enlaces": 29,
+    "alto_pagina": 4261,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "375o": {
+    "carga_ms": 1681,
+    "titulo": "Perfil Fogata: test de personalidad gratis | AURZANE MIND",
+    "h1": [
+     "¿Cómo es tu personalidad de verdad?",
+     "Prisma"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [
+     "span.blob.b3<hero 435"
+    ],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 91,
+    "nav_enlaces": 29,
+    "alto_pagina": 8763,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://mind.aurzane.com/test-de-personalidad/p/sol/",
+  "anchos": {
+   "375": {
+    "carga_ms": 1406,
+    "titulo": "Perfil Sol: test de personalidad gratis | AURZANE MIND",
+    "h1": [
+     "¿Cómo es tu personalidad de verdad?",
+     "Prisma"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [
+     "span.blob.b3<hero 435"
+    ],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 91,
+    "nav_enlaces": 29,
+    "alto_pagina": 8763,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 1387,
+    "titulo": "Perfil Sol: test de personalidad gratis | AURZANE MIND",
+    "h1": [
+     "¿Cómo es tu personalidad de verdad?",
+     "Prisma"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [
+     "span.blob.b3<hero 1426"
+    ],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 91,
+    "nav_enlaces": 29,
+    "alto_pagina": 4261,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "375o": {
+    "carga_ms": 1517,
+    "titulo": "Perfil Sol: test de personalidad gratis | AURZANE MIND",
+    "h1": [
+     "¿Cómo es tu personalidad de verdad?",
+     "Prisma"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [
+     "span.blob.b3<hero 435"
+    ],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 91,
+    "nav_enlaces": 29,
+    "alto_pagina": 8763,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://build.aurzane.com/calculadora-ahorro/",
+  "anchos": {
+   "375": {
+    "carga_ms": 2097,
+    "titulo": "Calculadora de ahorro: cuánto ahorrar al mes (50/30/20) | AURZANE BUILD",
+    "h1": [
+     "Tu meta, mes a mes"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 103,
+    "nav_enlaces": 37,
+    "alto_pagina": 12243,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 1400,
+    "titulo": "Calculadora de ahorro: cuánto ahorrar al mes (50/30/20) | AURZANE BUILD",
+    "h1": [
+     "Tu meta, mes a mes"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 103,
+    "nav_enlaces": 37,
+    "alto_pagina": 6578,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "375o": {
+    "carga_ms": 1362,
+    "titulo": "Calculadora de ahorro: cuánto ahorrar al mes (50/30/20) | AURZANE BUILD",
+    "h1": [
+     "Tu meta, mes a mes"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 103,
+    "nav_enlaces": 37,
+    "alto_pagina": 12243,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ },
+ {
+  "url": "https://learn.aurzane.com/aula/",
+  "anchos": {
+   "375": {
+    "carga_ms": 1154,
+    "titulo": "Mi aula: tu progreso, horas y certificados | AURZANE LEARN",
+    "h1": [
+     "Mi aula"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 73,
+    "nav_enlaces": 31,
+    "alto_pagina": 2487,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "1366": {
+    "carga_ms": 1037,
+    "titulo": "Mi aula: tu progreso, horas y certificados | AURZANE LEARN",
+    "h1": [
+     "Mi aula"
+    ],
+    "desborda": false,
+    "scroll_w": 1366,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 73,
+    "nav_enlaces": 31,
+    "alto_pagina": 1323,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   },
+   "375o": {
+    "carga_ms": 1057,
+    "titulo": "Mi aula: tu progreso, horas y certificados | AURZANE LEARN",
+    "h1": [
+     "Mi aula"
+    ],
+    "desborda": false,
+    "scroll_w": 375,
+    "culpables": [],
+    "objetivos_pequenos": 0,
+    "ejemplos_objetivos": [],
+    "img_sin_alt": 0,
+    "img_rotas": [],
+    "enlaces": 73,
+    "nav_enlaces": 31,
+    "alto_pagina": 2487,
+    "fuentes": [
+     "Instrument Sans",
+     "Bodoni Moda",
+     "Arial",
+     "system-ui"
+    ],
+    "lang": "es",
+    "axe": [],
+    "errores": [],
+    "rotos": []
+   }
+  }
+ }
+]
