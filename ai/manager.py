@@ -766,6 +766,19 @@ GUIAS_A = [('Cómo calmar la ansiedad en el momento: técnicas con respaldo cien
            ('Hábitos diarios que más mejoran el ánimo según la evidencia', 'habitos', 'live'), ('Cómo crear un hábito y que dure', 'habitos', 'live'),
            ('Cuántas horas hay que dormir según tu edad', 'sueno', 'live'), ('Insomnio: qué hacer cuando no puedes dormir', 'sueno', 'live'),
            ('Cómo elegir carrera si no sabes qué estudiar', 'vocacional', 'nexus'), ('Tests vocacionales: qué miden y para qué sirven de verdad', 'vocacional', 'nexus')]
+# Guías de BUILD y LIVE (etapa 3 de la auditoría, tarea 41): cada una lleva a la calculadora de AURZANE del tema
+CALC_A = {'hipoteca': ('https://build.aurzane.com/calculadora-hipoteca/', 'calculadora de hipoteca'), 'sueldo': ('https://build.aurzane.com/calculadora-sueldo-neto/', 'calculadora de sueldo neto'),
+          'finiquito': ('https://build.aurzane.com/calculadora-finiquito/', 'calculadora de finiquito'), 'compra': ('https://build.aurzane.com/calculadora-gastos-compra-vivienda/', 'calculadora de gastos de compra de vivienda'),
+          'alquiler': ('https://build.aurzane.com/calculadora-rentabilidad-alquiler/', 'calculadora de rentabilidad del alquiler'), 'ahorro': ('https://build.aurzane.com/calculadora-ahorro/', 'calculadora de ahorro'),
+          'jubilacion': ('https://build.aurzane.com/calculadora-jubilacion/', 'calculadora de jubilación'), 'interes': ('https://build.aurzane.com/calculadora-interes-compuesto/', 'calculadora de interés compuesto'),
+          'reforma': ('https://build.aurzane.com/calculadora-reforma/', 'calculadora de reforma'), 'imc': ('https://live.aurzane.com/calculadora-imc/', 'calculadora de IMC'),
+          'agua': ('https://live.aurzane.com/calculadora-agua/', 'calculadora de agua'), 'calorias': ('https://live.aurzane.com/calculadora-calorias/', 'calculadora de calorías')}
+GUIAS_MUNDO = [('Cómo calcular cuánta hipoteca puedes pagar sin ahogarte', 'hipoteca', 'build'), ('Gastos de comprar una vivienda en España además del precio', 'compra', 'build'),
+               ('Del sueldo bruto al neto: qué te descuentan y por qué', 'sueldo', 'build'), ('Cómo se calcula el finiquito y qué conceptos incluye', 'finiquito', 'build'),
+               ('Cómo calcular la rentabilidad real de un piso en alquiler', 'alquiler', 'build'), ('Cómo crear un fondo de emergencia paso a paso', 'ahorro', 'build'),
+               ('Interés compuesto explicado con ejemplos sencillos', 'interes', 'build'), ('Cuánto cuesta reformar una vivienda y cómo presupuestarlo', 'reforma', 'build'),
+               ('Cómo planificar el ahorro para la jubilación desde joven', 'jubilacion', 'build'), ('Cuánta agua hay que beber al día de verdad', 'agua', 'live'),
+               ('Qué indica el IMC y qué no te dice', 'imc', 'live'), ('Cuántas calorías necesitas y por qué varían tanto', 'calorias', 'live')]
 # temas que la gente busca en Google y donde AURZANE sale lejos (seo/seo.py, Search Console): van primero
 # cada tema puede ir dirigido a un país (motor de crecimiento por países de seo/seo.py)
 PAIS_GUIA = {}
@@ -811,7 +824,7 @@ def md_html(t):
             out.append('<ul>' + ''.join('<li>' + linea(re.sub(r'^([-*•]|\d+[.)])\s+', '', l)) + '</li>' for l in ls) + '</ul>')
         else: out.append('<p>' + linea(' '.join(ls)) + '</p>')
     return '\n'.join('      ' + x for x in out)
-MUNDOS_REVISION = ('mind', 'live')   # salud: lo que la IA escribe aquí necesita revisión humana (auditoría 16/11/2026)
+MUNDOS_REVISION = ('mind', 'live', 'build')   # salud y dinero: lo que la IA escribe aquí necesita revisión humana (auditoría 16/11/2026; BUILD desde 17/11/2026)
 def revision_pendiente(a): return a.get('mundo') in MUNDOS_REVISION and a.get('revision') != 'aprobada'
 def pagina_articulo(a):
     nombre, host, _ = MUNDOS_A[a['mundo']]
@@ -836,7 +849,7 @@ def pagina_articulo(a):
         h_ = h_.replace('<title>', '<meta name="robots" content="noindex, follow">\n<title>', 1)
         h_ = h_.replace(_aviso_ia, 'Artículo de divulgación redactado con ayuda de inteligencia artificial a partir de la fuente citada. Pendiente de revisión por el psicólogo clínico de AURZANE.')
     elif a.get('revision') == 'aprobada':
-        h_ = h_.replace(_aviso_ia, 'Artículo de divulgación redactado con ayuda de inteligencia artificial a partir de la fuente citada y revisado por Adrián Sánchez Samaniego, psicólogo clínico.')
+        h_ = h_.replace(_aviso_ia, 'Artículo de divulgación redactado con ayuda de inteligencia artificial a partir de la fuente citada y revisado por Adrián Sánchez Samaniego' + ('.' if a.get('mundo') == 'build' else ', psicólogo clínico.'))
     os.makedirs(f'{OUT}/articulos-ai/{a["slug"]}', exist_ok=True)
     open(f'{OUT}/articulos-ai/{a["slug"]}/index.html', 'w', encoding='utf-8').write(h_)
 _ah = ESTADO.get('art_dia', {}) if isinstance(ESTADO.get('art_dia'), dict) else {}
@@ -849,6 +862,13 @@ if (os.environ.get('GEMINI_API_KEY') or os.environ.get('GITHUB_TOKEN')) and _ah[
     usados_a = {a.get('fuente_id') for a in art_hechos} | {a.get('fuente_id') for a in autodesc if a.get('tipo') == 'articulo'}
     guias_libres = [('guia', {'id': 'guia-' + hashlib.md5(t.encode()).hexdigest()[:8], 'titulo': t, 'test': k, 'mundo': m}) for t, k, m in GUIAS_A
                     if 'guia-' + hashlib.md5(t.encode()).hexdigest()[:8] not in usados_a]
+    guias_libres += [('guia', {'id': 'guia-' + hashlib.md5(t.encode()).hexdigest()[:8], 'titulo': t, 'test': '', 'calc': k, 'mundo': m}) for t, k, m in GUIAS_MUNDO
+                     if 'guia-' + hashlib.md5(t.encode()).hexdigest()[:8] not in usados_a]
+    _hace7 = (datetime.date.fromisoformat(HOY) - datetime.timedelta(days=7)).isoformat()
+    for _mw in ('build', 'live'):   # LIVE y BUILD también reciben artículos: si llevan una semana sin ninguno, su guía va primero
+        if not any(x.get('mundo') == _mw and x.get('fecha', '') >= _hace7 for x in art_hechos):
+            _g = [x for x in guias_libres if x[1]['mundo'] == _mw][:1]
+            guias_libres = _g + [x for x in guias_libres if x not in _g]
     otras_a = ([('estudio', x) for x in aprob if x['tipo'] == 'estudio' and x['id'] not in usados_a and x.get('resumen')][:2] +
                [('curiosidad', x) for x in curios_ok if x['id'] not in usados_a][:1])
     # el primer artículo del día sale de un estudio; el segundo es una guía práctica ligada a un test
@@ -861,14 +881,20 @@ if (os.environ.get('GEMINI_API_KEY') or os.environ.get('GITHUB_TOKEN')) and _ah[
         base = (f'Estudio publicado en acceso abierto:\nTítulo: {f["titulo"]}\nAutores: {f.get("autores", "")}\nRevista: {f.get("editorial", "")} ({f.get("anio", "")})\nResumen: {f.get("resumen", "")[:2500]}'
                 if clase == 'estudio' else
                 (f'Guía práctica sobre: {f["titulo"]}. No hay una fuente única: usa solo conocimiento científico muy establecido (guías clínicas, consensos), sin cifras inventadas. '
-                 f'El mundo es {f["mundo"]}. ' + (f'Menciona de forma natural, una sola vez, que en AURZANE hay un test gratuito para orientarse ({TESTS_A[f["test"]][1]}).' if f.get('test') in TESTS_A else ''))
+                 f'El mundo es {f["mundo"]}. ' + (f'Menciona de forma natural, una sola vez, que en AURZANE hay un test gratuito para orientarse ({TESTS_A[f["test"]][1]}).' if f.get('test') in TESTS_A else '')
+                 + (f'Menciona de forma natural, una sola vez, la {CALC_A[f["calc"]][1]} gratuita de AURZANE con este enlace en Markdown: [{CALC_A[f["calc"]][1]}]({CALC_A[f["calc"]][0]}). ' if f.get('calc') in CALC_A else '')
+                 + ('Es un tema de dinero o vivienda en España: explica conceptos y cómo calcularlos, sin recomendar productos financieros concretos ni dar consejo de inversión personalizado; '
+                    'si citas impuestos, tipos o límites legales, di que cambian y que conviene comprobarlos en la fuente oficial (Agencia Tributaria, Seguridad Social, BOE o la comunidad autónoma). '
+                    if f.get('mundo') == 'build' else ''))
                 if clase == 'guia' else f'Curiosidad verificada: {f["titulo"]}. {f.get("resumen", "")} Fuente: {f.get("fuente", "")}')
         if clase == 'guia': enlace_f = ''
         _pg = PAIS_GUIA.get(f.get('titulo')) if clase == 'guia' else None
         _variante = (f'español neutro y natural con tuteo (tú, nunca vos ni voseo: escribe «puedes», «elige», «descubre») para lectores de {_pg["pais_nombre"]}, con los términos, instituciones y exámenes propios de ese país cuando vengan al caso (sin inventar datos concretos como fechas o precios)'
                      if _pg and _pg.get('pais_nombre') and _pg.get('pais') != 'ESP' else 'español de España con tuteo (tú)')
         _crisis = (_pg or {}).get('crisis') or 'Si el tema toca malestar intenso, añade que puedes llamar al 024 (España). '
-        r = gemini_base('Eres redactor de AURZANE, una web de divulgación de psicología dirigida por un psicólogo clínico. Escribe un artículo original en ' + _variante + ', '
+        _quien = ('una web de divulgación práctica sobre dinero, trabajo y vivienda' if f.get('mundo') == 'build' else
+                  'una web de divulgación sobre salud y hábitos dirigida por un psicólogo clínico' if f.get('mundo') == 'live' else 'una web de divulgación de psicología dirigida por un psicólogo clínico')
+        r = gemini_base('Eres redactor de AURZANE, ' + _quien + '. Escribe un artículo original en ' + _variante + ', '
                         'cálido y riguroso, de 600 a 900 palabras, sin rayas largas, sin diagnosticar ni recomendar medicación, para personas sin formación. '
                         'Usa SOLO lo que dice la fuente y conocimiento muy establecido; no inventes cifras. Estructura en Markdown: introducción, 3 o 4 secciones con "## " '
                         'y una sección final "## Qué puedes hacer hoy" con 3 ideas prácticas en lista. No incluyas la fuente en el cuerpo. '
