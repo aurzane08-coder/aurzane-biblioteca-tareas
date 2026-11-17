@@ -1,23 +1,32 @@
 name: Alquiler por municipio (INE)
-# Cada mes comprueba si el INE ha publicado datos nuevos del índice de alquiler por municipio y, si los hay,
-# los publica en build.aurzane.com/alquiler-por-municipio/ (pasa por desplegar.yml).
+# Cada mes comprueba si el INE ha publicado datos nuevos del índice de alquiler por municipio y sube el archivo de
+# datos por SSH a build.aurzane.com/alquiler-por-municipio/datos.json (la página lo lee al abrirse).
 on:
   schedule:
     - cron: '27 5 12 * *'
   workflow_dispatch:
 permissions:
   contents: write
-  actions: write
 jobs:
   ine:
     runs-on: ubuntu-latest
+    env:
+      SG_KEY: ${{ secrets.SG_KEY }}
+      SG_HOST: ${{ secrets.SG_HOST }}
+      SG_USER: ${{ secrets.SG_USER }}
+      SG_PORT: ${{ secrets.SG_PORT }}
+      SG_PASS: ${{ secrets.SG_PASS }}
     steps:
       - uses: actions/checkout@v4
       - run: python3 herramientas/alquiler_ine.py
+      - name: Subir al servidor
+        run: |
+          mkdir -p ~/.ssh && printf '%s\n' "$SG_KEY" | tr -d '\r' > ~/.ssh/id && chmod 600 ~/.ssh/id
+          if [ -n "$SG_PASS" ]; then ssh-keygen -p -P "$SG_PASS" -N "" -f ~/.ssh/id >/dev/null; fi
+          SSH="ssh -i $HOME/.ssh/id -p ${SG_PORT:-18765} -o StrictHostKeyChecking=accept-new $SG_USER@$SG_HOST"
+          $SSH 'mkdir -p ~/www/build.aurzane.com/public_html/alquiler-por-municipio && cat > ~/www/build.aurzane.com/public_html/alquiler-por-municipio/datos.json.tmp && mv ~/www/build.aurzane.com/public_html/alquiler-por-municipio/datos.json.tmp ~/www/build.aurzane.com/public_html/alquiler-por-municipio/datos.json' < salida-ine/datos.json
+          echo "subido: $(wc -c < salida-ine/datos.json) bytes"
       - run: |
           git config user.name "aurzane-bot"; git config user.email "bot@aurzane.com"
-          git add publicar herramientas/alquiler_ine_ultimo.json; git commit -qm "alquiler INE: $(date +%F)" || exit 0
-          for i in 1 2 3; do git pull -q --rebase -X theirs && git push -q && break; sleep 5; done
-          gh workflow run desplegar.yml --ref main || true
-        env:
-          GH_TOKEN: ${{ github.token }}
+          git add herramientas/alquiler_ine_ultimo.json; git commit -qm "alquiler INE: $(date +%F)" || exit 0
+          for i in 1 2 3; do git pull -q --rebase -X theirs -X no-renames && git push -q && break; sleep 5; done

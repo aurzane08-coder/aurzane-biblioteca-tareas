@@ -11,7 +11,8 @@ import json, os, re, html, sys
 R = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 def shell(host, ruta):
     s = open(os.path.join(R, 'traer', 'servidor', host, ruta, 'index.html'), encoding='utf-8').read()
-    return dict(css=s[s.find('<style>'):s.find('</style>') + 8], pie=s[s.find('<footer>'):s.rfind('<script>(function(){')],
+    css = max(re.findall(r'<style>.*?</style>', s, re.S), key=len)   # la hoja de la página (no la de fuentes ni otras pequeñas)
+    return dict(css=css, pie=s[s.find('<footer>'):s.rfind('<script>(function(){')],
                 theme=(re.search(r'<meta name="theme-color" content="([^"]+)"', s) or [0, '#1d1915'])[1])
 
 

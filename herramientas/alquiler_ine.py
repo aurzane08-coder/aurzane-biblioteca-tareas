@@ -3,7 +3,7 @@ Descarga del INE el Índice de Precios de Vivienda en Alquiler (IPVA), tabla 590
 mayores de 10.000 habitantes)», base 2015 = 100, y escribe el archivo de datos que usa la herramienta
 build.aurzane.com/alquiler-por-municipio/. Corre cada mes (.github/workflows/alquiler-ine.yml); si el INE publica un año
 nuevo, la herramienta lo muestra sola. Si la respuesta no es completa, no cambia nada.
-Salida: publicar/build.aurzane.com/alquiler-por-municipio/datos.json"""
+Salida: salida-ine/datos.json (el flujo lo sube por SSH a build.aurzane.com/alquiler-por-municipio/)"""
 import json, os, re, sys, time, urllib.request
 R = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 URL = 'https://servicios.ine.es/wstempus/js/ES/DATOS_TABLA/59060?nult=12'
@@ -36,10 +36,11 @@ m.sort(key=lambda x: x[0])
 out = {'anyo': anyo, 'fuente': 'INE, Índice de Precios de Vivienda en Alquiler (IPVA), tabla 59060, base 2015 = 100',
        'actualizado': time.strftime('%Y-%m-%d'), 'nac': [var.get(nac, {}).get(anyo), round(idx[nac][anyo], 1),
        round((idx[nac][anyo] / idx[nac][anyo - 5] - 1) * 100, 1) if idx[nac].get(anyo - 5) else None], 'm': m}
-d = os.path.join(R, 'publicar', 'build.aurzane.com', 'alquiler-por-municipio'); os.makedirs(d, exist_ok=True)
+d = os.path.join(R, 'salida-ine'); os.makedirs(d, exist_ok=True)
 nuevo = json.dumps(out, ensure_ascii=False, separators=(',', ':'))
 viejo_p = os.path.join(R, 'herramientas', 'alquiler_ine_ultimo.json')
 if os.path.exists(viejo_p) and json.load(open(viejo_p))['m'] == out['m']:
-    print(f'Sin cambios en el INE (año {anyo}, {len(m)} municipios)'); sys.exit(0)
+    print(f'Sin cambios en el INE (año {anyo}, {len(m)} municipios)')
+    open(os.path.join(d, 'datos.json'), 'w').write(nuevo); sys.exit(0)   # se vuelve a subir igual: así el servidor nunca se queda sin él
 open(os.path.join(d, 'datos.json'), 'w').write(nuevo); open(viejo_p, 'w').write(nuevo)
 print(f'Alquiler INE: año {anyo}, {len(m)} municipios, España {out["nac"][0]} % en el último año')
