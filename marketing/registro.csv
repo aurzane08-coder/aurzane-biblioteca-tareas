@@ -557,3 +557,4 @@
 2026-11-17,1,mastodon,test-ansiedad,ok,https://mastodon.social/@auzane/117631057097935613
 2026-11-17,1,instagram,test-depresion,ok,18112251695254037
 2026-11-17,1,facebook,calc-embarazo,ok,1128817486453141
+2026-11-17,7,tiktok,cur-8e657999c3,error,403 {"error":{"code":"unaudited_client_can_only_post_to_private_accounts" "message":"Please review our integration guidelines at https://developers.ti
