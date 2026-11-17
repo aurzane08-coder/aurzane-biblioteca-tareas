@@ -1,212 +1,212 @@
 {
- "fecha": "2026-11-16",
+ "fecha": "2026-11-17",
  "conectado": true,
  "periodo": [
-  "2026-10-17",
-  "2026-11-13"
+  "2026-10-18",
+  "2026-11-14"
  ],
- "clics": 34,
- "impresiones": 25818,
+ "clics": 36,
+ "impresiones": 32748,
  "consultas": [
   [
    "umich",
    0,
-   379,
-   8.5
+   983,
+   8.9
   ],
   [
    "ecpi university",
    0,
-   373,
+   529,
    10.8
   ],
   [
    "berkeley",
    0,
-   277,
-   10.0
+   284,
+   10.3
   ],
   [
    "volar sobre el pantano",
    0,
-   194,
-   9.5
+   205,
+   10.4
   ],
   [
-   "texas a",
+   "university of richmond",
    0,
-   133,
-   9.7
+   178,
+   9.4
   ],
   [
    "nihon university",
    0,
-   127,
-   13.0
+   175,
+   13.6
+  ],
+  [
+   "texas a",
+   0,
+   173,
+   10.3
+  ],
+  [
+   "viterbo university",
+   0,
+   130,
+   11.6
+  ],
+  [
+   "dean college",
+   0,
+   119,
+   16.1
+  ],
+  [
+   "kilgore college",
+   0,
+   119,
+   13.8
+  ],
+  [
+   "bushnell university",
+   0,
+   118,
+   9.2
   ],
   [
    "facultades",
    0,
-   96,
-   24.6
-  ],
-  [
-   "universidades",
-   0,
-   95,
-   30.3
+   104,
+   25.2
   ],
   [
    "universidad",
    0,
-   94,
-   32.0
+   103,
+   33.9
+  ],
+  [
+   "crowder college",
+   0,
+   98,
+   14.4
+  ],
+  [
+   "universidades",
+   0,
+   97,
+   30.7
+  ],
+  [
+   "caldwell university",
+   0,
+   90,
+   12.4
   ],
   [
    "recuerda que vas a morir",
    0,
-   88,
+   90,
    6.5
   ],
   [
    "instituto el condor",
    0,
-   84,
+   88,
    9.1
-  ],
-  [
-   "viterbo university",
-   0,
-   82,
-   10.7
   ],
   [
    "universidades de polonia",
    0,
-   81,
-   81.8
+   88,
+   81.6
   ],
   [
-   "dean college",
+   "desales university",
    0,
-   79,
-   15.9
+   87,
+   3.7
   ],
   [
-   "kilgore college",
+   "bethesda university",
    0,
-   67,
-   15.6
+   86,
+   11.4
   ],
   [
-   "libros kristin neff",
+   "catawba college",
    0,
-   66,
-   48.6
+   85,
+   13.5
+  ],
+  [
+   "transylvania university",
+   0,
+   80,
+   12.5
+  ],
+  [
+   "ie university",
+   0,
+   76,
+   9.2
+  ],
+  [
+   "eureka college",
+   0,
+   69,
+   17.1
+  ],
+  [
+   "bentley university",
+   0,
+   68,
+   11.1
   ],
   [
    "universidades en parís",
    0,
-   65,
+   68,
    56.9
   ],
   [
    "universidades publicas en australia",
    0,
-   62,
-   60.4
+   68,
+   59.2
+  ],
+  [
+   "libros kristin neff",
+   0,
+   67,
+   48.5
   ],
   [
    "universidades en australia",
    0,
-   60,
-   61.6
-  ],
-  [
-   "universidades en utrecht holanda",
-   0,
-   55,
-   44.4
-  ],
-  [
-   "catawba college",
-   0,
-   54,
-   14.9
-  ],
-  [
-   "los dones de la imperfeccion",
-   0,
-   54,
-   11.4
-  ],
-  [
-   "los medios de comunicación y la familia",
-   0,
-   53,
-   24.6
-  ],
-  [
-   "universidades en inglaterra",
-   0,
-   53,
-   61.1
-  ],
-  [
-   "university of richmond",
-   0,
-   52,
-   9.4
-  ],
-  [
-   "dejame que te cuente",
-   0,
-   51,
-   10.2
-  ],
-  [
-   "el camino de las lagrimas",
-   0,
-   51,
-   13.1
-  ],
-  [
-   "umn",
-   0,
-   51,
-   10.7
-  ],
-  [
-   "amsterdam universidad",
-   0,
-   50,
-   53.5
-  ],
-  [
-   "carl rogers el proceso de convertirse en persona",
-   0,
-   50,
-   9.8
+   66,
+   63.3
   ]
  ],
  "paginas": [
   [
    "https://aurzane.com/biblioteca/libro/tormento.html",
    3,
-   34,
+   37,
    7.0
   ],
   [
    "https://aurzane.com/biblioteca/leer.html?libro=ref-recuerda-que-vas-a-morir",
    2,
-   141,
+   144,
    6.4
   ],
   [
    "https://nexus.aurzane.com/universidades/ecuador/ciudad/manta/",
    2,
-   105,
-   6.4
+   114,
+   6.6
   ],
   [
    "https://aurzane.com/biblioteca/libro/ref-proceso-convertirse-persona.html",
@@ -221,22 +221,46 @@
    7.2
   ],
   [
+   "https://nexus.aurzane.com/universidades/estados-unidos/new-york-university/",
+   1,
+   82,
+   24.4
+  ],
+  [
    "https://nexus.aurzane.com/universidades/notas-de-corte/derecho/",
    1,
-   67,
-   9.9
+   75,
+   13.1
   ],
   [
    "https://aurzane.com/biblioteca/libro/ref-don-terapia.html",
    1,
-   48,
-   11.8
+   55,
+   11.9
   ],
   [
    "https://aurzane.com/biblioteca/libro/romancero-gitano.html",
    1,
-   45,
+   48,
    9.4
+  ],
+  [
+   "https://aurzane.com/biblioteca/libro/ref-cerebro-mito-yo.html",
+   1,
+   43,
+   9.6
+  ],
+  [
+   "https://aurzane.com/biblioteca/libro/ref-creacion-yo.html",
+   1,
+   35,
+   7.1
+  ],
+  [
+   "https://nexus.aurzane.com/universidades/estados-unidos/hamilton-college/",
+   1,
+   34,
+   16.6
   ],
   [
    "https://aurzane.com/biblioteca/leer.html?libro=ref-superar-adversidad",
@@ -245,34 +269,22 @@
    8.4
   ],
   [
-   "https://aurzane.com/biblioteca/libro/ref-creacion-yo.html",
-   1,
-   31,
-   6.5
-  ],
-  [
    "https://aurzane.com/biblioteca/libro/ref-paradoja-chimpance.html",
    1,
-   27,
-   9.3
+   28,
+   9.4
   ],
   [
    "https://nexus.aurzane.com/universidades/ecuador/instituto-superior-tecnologico-itca/",
    1,
-   25,
-   8.7
-  ],
-  [
-   "https://nexus.aurzane.com/universidades/estados-unidos/hamilton-college/",
-   1,
-   23,
-   15.9
+   27,
+   10.3
   ],
   [
    "https://aurzane.com/biblioteca/libro/marianela.html",
    1,
-   20,
-   12.8
+   24,
+   16.4
   ],
   [
    "https://aurzane.com/biblioteca/libro/ref-nuestra-mente-nos-engana.html",
@@ -281,10 +293,22 @@
    8.9
   ],
   [
+   "https://nexus.aurzane.com/universidades/estados-unidos/ensign-college/",
+   1,
+   17,
+   4.4
+  ],
+  [
    "https://aurzane.com/biblioteca/libro/ref-tareas-duelo.html",
    1,
    15,
    6.9
+  ],
+  [
+   "https://aurzane.com/biblioteca/libro/ref-universo-emociones.html",
+   1,
+   14,
+   13.1
   ],
   [
    "https://aurzane.com/biblioteca/libro/ref-amarse-ojos-abiertos.html",
@@ -293,28 +317,22 @@
    12.5
   ],
   [
-   "https://aurzane.com/biblioteca/libro/ref-universo-emociones.html",
-   1,
-   11,
-   10.5
-  ],
-  [
    "https://aurzane.com/biblioteca/libro/ref-valor-atencion.html",
    1,
    10,
    11.9
   ],
   [
-   "https://aurzane.com/biblioteca/libro/ref-grito-desesperado.html",
-   1,
-   9,
-   8.3
-  ],
-  [
    "https://nexus.aurzane.com/universidades/notas-de-corte/trabajo-social/",
    1,
-   7,
-   28.3
+   10,
+   22.8
+  ],
+  [
+   "https://aurzane.com/biblioteca/libro/ref-grito-desesperado.html",
+   1,
+   10,
+   8.3
   ],
   [
    "https://aurzane.com/biblioteca/leer.html?libro=ref-grito-desesperado",
@@ -327,12 +345,6 @@
    1,
    5,
    9.0
-  ],
-  [
-   "https://nexus.aurzane.com/universidades/estados-unidos/ensign-college/",
-   1,
-   4,
-   4.8
   ],
   [
    "https://aurzane.com/biblioteca/libro/misericordia.html",
@@ -357,203 +369,221 @@
    1,
    2,
    18.0
-  ],
-  [
-   "https://nexus.aurzane.com/universidades/mexico/universidad-michoacana-de-san-nicolas-de-hidalgo-umsnh/",
-   0,
-   391,
-   10.0
-  ],
-  [
-   "https://nexus.aurzane.com/universidades/estados-unidos/university-of-california-berkeley/",
-   0,
-   386,
-   21.5
   ]
  ],
  "paises": [
   [
    "ESP",
-   148,
-   15049,
-   26.6
+   153,
+   16768,
+   28.1
   ],
   [
    "MEX",
-   64,
-   6161,
-   23.2
+   71,
+   7276,
+   22.1
   ],
   [
    "ECU",
-   50,
-   5311,
-   11.9
+   49,
+   5727,
+   12.3
   ],
   [
    "USA",
-   13,
-   3622,
-   24.5
+   15,
+   4722,
+   23.0
   ],
   [
    "BRA",
    3,
-   3126,
-   46.7
+   4157,
+   38.6
   ],
   [
    "COL",
-   43,
-   3114,
-   26.3
+   44,
+   3440,
+   25.4
   ],
   [
    "ARG",
-   37,
-   2814,
-   25.0
+   39,
+   3222,
+   24.0
   ],
   [
    "PER",
-   37,
-   2163,
+   39,
+   2406,
    13.0
   ],
   [
    "CHL",
    20,
-   1831,
-   24.7
+   1967,
+   24.3
   ],
   [
    "VEN",
    10,
-   1111,
-   22.8
+   1248,
+   22.2
   ],
   [
    "BOL",
    11,
-   570,
-   12.4
+   626,
+   12.9
   ],
   [
    "RUS",
    1,
-   448,
-   48.8
+   512,
+   44.6
   ],
   [
    "GTM",
    10,
-   367,
-   20.1
+   403,
+   20.4
   ],
   [
    "DOM",
    8,
-   321,
+   348,
    11.5
-  ],
-  [
-   "URY",
-   1,
-   292,
-   11.9
   ],
   [
    "BGD",
    0,
-   283,
-   40.7
+   336,
+   37.1
+  ],
+  [
+   "URY",
+   2,
+   327,
+   12.2
   ],
   [
    "CRI",
    5,
-   280,
-   16.9
-  ],
-  [
-   "PAN",
-   3,
-   254,
-   16.8
-  ],
-  [
-   "PRY",
-   4,
-   241,
-   15.0
+   296,
+   17.1
   ],
   [
    "GBR",
    2,
-   229,
-   33.0
+   286,
+   29.2
   ],
   [
-   "SLV",
-   1,
-   219,
-   19.8
+   "PAN",
+   3,
+   275,
+   16.7
+  ],
+  [
+   "PRY",
+   4,
+   272,
+   15.2
   ],
   [
    "NLD",
    2,
-   190,
-   34.2
-  ],
-  [
-   "HND",
-   2,
-   176,
-   19.0
-  ],
-  [
-   "CAN",
-   1,
-   169,
-   29.1
-  ],
-  [
-   "PRI",
-   1,
-   123,
-   19.4
-  ],
-  [
-   "CUB",
-   5,
-   116,
-   10.5
-  ],
-  [
-   "CHE",
-   0,
-   104,
-   33.0
+   253,
+   29.2
   ],
   [
    "BEL",
    1,
-   96,
-   11.9
+   237,
+   8.9
   ],
   [
-   "AUS",
+   "SLV",
+   1,
+   236,
+   20.1
+  ],
+  [
+   "CAN",
+   1,
+   224,
+   24.2
+  ],
+  [
+   "HND",
    2,
-   75,
-   23.5
+   190,
+   19.0
+  ],
+  [
+   "CUB",
+   5,
+   128,
+   10.3
+  ],
+  [
+   "PRI",
+   1,
+   128,
+   19.0
   ],
   [
    "MAR",
    1,
-   72,
-   22.1
+   119,
+   16.9
+  ],
+  [
+   "CHE",
+   0,
+   114,
+   31.5
+  ],
+  [
+   "AUS",
+   2,
+   94,
+   20.1
   ]
  ],
  "paises_trabajados": [
+  [
+   "2026-11-17",
+   "Ecuador",
+   "Análisis y reflexión de Volar sobre el pantano para estudiantes en Ecuador"
+  ],
+  [
+   "2026-11-17",
+   "Ecuador",
+   "Universidades en Manta y guía para elegir carrera en Ecuador"
+  ],
+  [
+   "2026-11-17",
+   "México",
+   "El Proceso de Convertirse en Persona de Carl Rogers: Resumen y Claves"
+  ],
+  [
+   "2026-11-17",
+   "México",
+   "Guía de Universidades en Puebla: Oferta Educativa y Elegir Carrera"
+  ],
+  [
+   "2026-11-17",
+   "España",
+   "Cómo superar el perfeccionismo: lecciones de psicología en España"
+  ],
+  [
+   "2026-11-17",
+   "España",
+   "Estudiar en Escocia: guía completa para universitarios en España"
+  ],
   [
    "2026-11-15",
    "Paraguay",
@@ -583,40 +613,74 @@
    "2026-11-14",
    "Guatemala",
    "Guía de universidades públicas y privadas en Guatemala"
-  ],
-  [
-   "2026-11-14",
-   "Costa Rica",
-   "Oferta académica en Costa Rica: claves para decidir tu carrera"
-  ],
-  [
-   "2026-11-14",
-   "Costa Rica",
-   "Carreras universitarias en Costa Rica: guía para elegir tu futuro"
-  ],
-  [
-   "2026-11-13",
-   "República Dominicana",
-   "Universidades en Santo Domingo: Guía para elegir carrera en RD"
-  ],
-  [
-   "2026-11-13",
-   "República Dominicana",
-   "Amarse con los ojos abiertos: resumen y claves de pareja en RD"
-  ],
-  [
-   "2026-11-13",
-   "Bolivia",
-   "Cómo establecer límites sanos en pareja sin culpa: guía psicológica"
-  ],
-  [
-   "2026-11-13",
-   "Bolivia",
-   "Universidades en Santa Cruz: guía completa y opciones para elegir carrera"
   ]
  ],
  "fichas_ampliadas": 9,
  "cambios_titulos": [
+  [
+   "2026-11-17",
+   "https://nexus.aurzane.com/universidades/estados-unidos/caldwell-university/",
+   "Caldwell University: 32 carreras",
+   "Caldwell University: carreras y info | AURZANE",
+   null,
+   0.0
+  ],
+  [
+   "2026-11-17",
+   "https://nexus.aurzane.com/universidades/estados-unidos/crowder-college/",
+   "Crowder College: 41 carreras",
+   "Crowder College en Estados Unidos | AURZANE",
+   null,
+   0.0
+  ],
+  [
+   "2026-11-17",
+   "https://nexus.aurzane.com/universidades/estados-unidos/kutztown-university-of-pennsylvania/",
+   "Kutztown University of Pennsylvania: 40 carreras",
+   "Kutztown University: carreras y datos | AURZANE",
+   null,
+   0.0
+  ],
+  [
+   "2026-11-17",
+   "https://nexus.aurzane.com/universidades/estados-unidos/nazareth-university/",
+   "Nazareth University: 55 carreras",
+   "Nazareth University: carreras y qué estudiar | Aurzane",
+   null,
+   0.0
+  ],
+  [
+   "2026-11-17",
+   "https://nexus.aurzane.com/universidades/estados-unidos/moravian-university/",
+   "Moravian University: 40 carreras",
+   "Moravian University: carreras y datos clave | AURZANE",
+   null,
+   0.0
+  ],
+  [
+   "2026-11-17",
+   "https://nexus.aurzane.com/universidades/estados-unidos/bushnell-university/",
+   "Bushnell University: 33 carreras",
+   "Bushnell University: carreras y datos | Aurzane",
+   null,
+   0.0
+  ],
+  [
+   "2026-11-17",
+   "https://nexus.aurzane.com/universidades/estados-unidos/metropolitan-state-university-of-denver/",
+   "Metropolitan State University of Denver: 76 carreras",
+   "MSU Denver: carreras, tipo y web oficial | AURZANE",
+   null,
+   0.0
+  ],
+  [
+   "2026-11-17",
+   "https://nexus.aurzane.com/universidades/estados-unidos/desales-university/",
+   "DeSales University: 39 carreras",
+   "DeSales University: 39 carreras y datos | AURZANE",
+   null,
+   0.0
+  ],
   [
    "2026-11-16",
    "https://aurzane.com/biblioteca/",
@@ -672,73 +736,39 @@
    "Dean College: Carreras y Guia | AURZANE",
    null,
    0.0
-  ],
-  [
-   "2026-11-16",
-   "https://aurzane.com/biblioteca/libro/ref-camino-lagrimas.html",
-   "El Camino de las Lágrimas, Jorge Bucay | AURZANE",
-   "El Camino de las Lágrimas, Jorge Bucay | AURZANE",
-   null,
-   0.0
-  ],
-  [
-   "2026-11-16",
-   "https://aurzane.com/biblioteca/libro/ref-nino-topo-zorro-caballo.html",
-   "El niño, el topo, el zorro y el caballo | AURZANE",
-   "El niño, el topo, el zorro y el caballo | AURZANE",
-   null,
-   0.0
-  ],
-  [
-   "2026-11-16",
-   "https://aurzane.com/biblioteca/libro/ref-dones-imperfeccion.html",
-   "Los dones de la imperfección: resumen e ideas clave",
-   "Los Dones de la Imperfección: Resumen y Guías | AURZANE",
-   null,
-   0.0
-  ],
-  [
-   "2026-11-16",
-   "https://nexus.aurzane.com/universidades/chile/ciudad/concepcion/",
-   "Universidades en Concepción: 3 opciones y 32 carreras (2026)",
-   "Universidades en Concepción: carreras y cuáles hay",
-   null,
-   0.0
-  ],
-  [
-   "2026-11-16",
-   "https://aurzane.com/biblioteca/libro/ref-lector-vuelve-casa.html",
-   "Lector, vuelve a casa, de Maryanne Wolf",
-   "Lector, vuelve a casa de Maryanne Wolf | AURZANE",
-   null,
-   0.0
-  ],
-  [
-   "2026-11-16",
-   "https://aurzane.com/biblioteca/libro/la-tia-tula.html",
-   "La tía Tula PDF gratis | AURZANE",
-   "La tía Tula PDF gratis y análisis | AURZANE",
-   null,
-   0.0
-  ],
-  [
-   "2026-11-16",
-   "https://aurzane.com/biblioteca/libro/ref-paula.html",
-   "Paula de Isabel Allende: resumen y análisis | AURZANE",
-   "Paula de Isabel Allende: resumen y análisis | AURZANE",
-   null,
-   0.0
-  ],
-  [
-   "2026-11-16",
-   "https://aurzane.com/biblioteca/libro/ref-cerebro-emocional.html",
-   "El cerebro emocional, Joseph LeDoux | Resumen",
-   "El cerebro emocional, Joseph LeDoux | Resumen",
-   null,
-   0.0
   ]
  ],
  "temas_nuevos": [
+  [
+   "2026-11-17",
+   "volar sobre el pantano",
+   "Análisis y reflexión de Volar sobre el pantano para estudiantes en Ecuador"
+  ],
+  [
+   "2026-11-17",
+   "universidades en manta",
+   "Universidades en Manta y guía para elegir carrera en Ecuador"
+  ],
+  [
+   "2026-11-17",
+   "carl rogers el proceso de convertirse en persona",
+   "El Proceso de Convertirse en Persona de Carl Rogers: Resumen y Claves"
+  ],
+  [
+   "2026-11-17",
+   "universidades en puebla",
+   "Guía de Universidades en Puebla: Oferta Educativa y Elegir Carrera"
+  ],
+  [
+   "2026-11-17",
+   "los dones de la imperfeccion",
+   "Cómo superar el perfeccionismo: lecciones de psicología en España"
+  ],
+  [
+   "2026-11-17",
+   "universidades en escocia",
+   "Estudiar en Escocia: guía completa para universitarios en España"
+  ],
   [
    "2026-11-16",
    "antioch university",
@@ -758,36 +788,6 @@
    "2026-11-16",
    "polonia universidades",
    "Estudiar en Polonia: Universidades, Requisitos y Opciones Académicas"
-  ],
-  [
-   "2026-11-16",
-   "politecnico di milano",
-   "Politecnico di Milano: Carreras, Admisión y Guía para Estudiantes"
-  ],
-  [
-   "2026-11-16",
-   "lafayette college",
-   "Lafayette College: oferta académica, admisiones y costos"
-  ],
-  [
-   "2026-11-16",
-   "naropa university",
-   "Naropa University: enfoque educativo y programas académicos"
-  ],
-  [
-   "2026-11-16",
-   "bentley university",
-   "Bentley University: programas, admisiones y vida estudiantil"
-  ],
-  [
-   "2026-11-16",
-   "licenciaturas en milán",
-   "Estudiar en Milán: guía de licenciaturas, universidades y requisitos"
-  ],
-  [
-   "2026-11-16",
-   "carreras tecnicas",
-   "Carreras técnicas: qué son, ventajas y cómo elegir la mejor opción"
   ]
  ]
 }
