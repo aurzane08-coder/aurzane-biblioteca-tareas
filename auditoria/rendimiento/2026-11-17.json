@@ -1,83 +1,546 @@
 {
  "https://aurzane.com/": {
-  "nota": 64,
-  "lcp": 7212,
-  "fcp": 3930,
-  "tbt": 181,
+  "nota": 68,
+  "lcp": 6940,
+  "fcp": 3562,
+  "tbt": 104,
   "cls": 0,
   "bloqueantes": [],
-  "lcp_elemento": ""
+  "lcp_elemento": "[None]",
+  "peticiones": [
+   [
+    "https://aurzane.com/",
+    16908,
+    0
+   ],
+   [
+    "https://images.unsplash.com/photo-1508672019048-805c876b67e2?w=900&q=72&auto=format&fit=cr",
+    110102,
+    0
+   ],
+   [
+    "https://aurzane.com/aurzane-paleta.js",
+    11721,
+    0
+   ],
+   [
+    "https://aurzane.com/fuentes/instrument-sans-latin-wght-normal.woff2",
+    30591,
+    0
+   ],
+   [
+    "https://aurzane.com/fuentes/bodoni-moda-latin-opsz-normal.woff2",
+    46777,
+    0
+   ],
+   [
+    "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8763758728010",
+    56965,
+    0
+   ],
+   [
+    "https://aurzane.com/biblioteca/resumen.js",
+    1953,
+    0
+   ],
+   [
+    "https://images.unsplash.com/photo-1508672019048-805c876b67e2?w=2200&q=72&auto=format&fit=c",
+    419258,
+    0
+   ],
+   [
+    "https://aurzane.com/aurzane-reportes.js?v=1",
+    4618,
+    0
+   ],
+   [
+    "https://aurzane.com/aurzane-idiomas.js?v=1",
+    5018,
+    0
+   ],
+   [
+    "https://aurzane.com/aurzane-estilo.js?v=33",
+    23860,
+    0
+   ],
+   [
+    "https://aurzane.com/aurzane-ds.css?v=14",
+    9694,
+    0
+   ],
+   [
+    "https://aurzane.com/aurzane-ds.js?v=15",
+    24694,
+    0
+   ],
+   [
+    "https://pagead2.googlesyndication.com/pagead/managed/js/adsense/m202611110101/show_ads_imp",
+    170350,
+    0
+   ],
+   [
+    "https://googleads.g.doubleclick.net/pagead/html/r20261116/r20190131/zrt_lookup_fy2021.html",
+    3912,
+    0
+   ],
+   [
+    "https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-8763758728010451&output=html&",
+    65,
+    0
+   ],
+   [
+    "https://aurzane.com/hoy/hoy.json",
+    1047,
+    0
+   ],
+   [
+    "https://aurzane.com/novedades/feed.xml",
+    3152,
+    0
+   ],
+   [
+    "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=560&q=72&auto=format&fit=cr",
+    57907,
+    0
+   ],
+   [
+    "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=560&q=72&auto=format&fit=crop",
+    12666,
+    0
+   ],
+   [
+    "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=560&q=72&auto=format&fit=cr",
+    38503,
+    0
+   ],
+   [
+    "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=560&q=72&auto=format&fit=cr",
+    30345,
+    0
+   ],
+   [
+    "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=560&q=72&auto=format&fit=cr",
+    13628,
+    0
+   ],
+   [
+    "https://images.unsplash.com/photo-1532012197267-da84d127e765?w=560&q=72&auto=format&fit=cr",
+    38108,
+    0
+   ],
+   [
+    "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=1000&q=72&auto=format&fit=c",
+    33660,
+    0
+   ]
+  ]
  },
  "https://mind.aurzane.com/": {
-  "nota": 62,
-  "lcp": 6479,
-  "fcp": 5486,
-  "tbt": 130,
+  "nota": 70,
+  "lcp": 5881,
+  "fcp": 3673,
+  "tbt": 98,
   "cls": 0,
   "bloqueantes": [],
-  "lcp_elemento": ""
- },
- "https://nexus.aurzane.com/": {
-  "nota": 79,
-  "lcp": 4044,
-  "fcp": 3439,
-  "tbt": 110,
-  "cls": 0,
-  "bloqueantes": [],
-  "lcp_elemento": ""
- },
- "https://live.aurzane.com/": {
-  "nota": 78,
-  "lcp": 4143,
-  "fcp": 3353,
-  "tbt": 122,
-  "cls": 0,
-  "bloqueantes": [],
-  "lcp_elemento": ""
- },
- "https://learn.aurzane.com/": {
-  "nota": 79,
-  "lcp": 3975,
-  "fcp": 3675,
-  "tbt": 70,
-  "cls": 0,
-  "bloqueantes": [],
-  "lcp_elemento": ""
- },
- "https://build.aurzane.com/": {
-  "nota": 79,
-  "lcp": 4086,
-  "fcp": 3346,
-  "tbt": 90,
-  "cls": 0,
-  "bloqueantes": [],
-  "lcp_elemento": ""
+  "lcp_elemento": "[None]",
+  "peticiones": [
+   [
+    "https://mind.aurzane.com/",
+    22597,
+    0
+   ],
+   [
+    "https://aurzane.com/aurzane-paleta.js",
+    11721,
+    0
+   ],
+   [
+    "https://aurzane.com/fuentes/instrument-sans-latin-wght-normal.woff2",
+    30591,
+    0
+   ],
+   [
+    "https://aurzane.com/fuentes/bodoni-moda-latin-opsz-normal.woff2",
+    46776,
+    0
+   ],
+   [
+    "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8763758728010",
+    56971,
+    0
+   ],
+   [
+    "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js",
+    48567,
+    0
+   ],
+   [
+    "https://mind.aurzane.com/aurzane-id.js",
+    2337,
+    0
+   ],
+   [
+    "https://aurzane.com/aurzane-reportes.js?v=1",
+    4617,
+    0
+   ],
+   [
+    "https://aurzane.com/aurzane-idiomas.js?v=1",
+    5017,
+    0
+   ],
+   [
+    "https://aurzane.com/aurzane-asistente.js?v=3",
+    3219,
+    0
+   ],
+   [
+    "https://aurzane.com/aurzane-contenido.js?v=6",
+    10742,
+    0
+   ],
+   [
+    "https://aurzane.com/aurzane-estilo.js?v=33",
+    23859,
+    0
+   ],
+   [
+    "https://images.unsplash.com/photo-1559757175-5700dde675bc?w=900&q=70&auto=format&fit=crop",
+    34249,
+    0
+   ],
+   [
+    "https://aurzane.com/aurzane-ds.css?v=14",
+    9693,
+    0
+   ],
+   [
+    "https://aurzane.com/aurzane-ds.js?v=15",
+    24702,
+    0
+   ],
+   [
+    "https://pagead2.googlesyndication.com/pagead/managed/js/adsense/m202611110101/show_ads_imp",
+    170350,
+    0
+   ],
+   [
+    "https://aurzane.com/fuentes/bodoni-moda-latin-opsz-italic.woff2",
+    54281,
+    0
+   ],
+   [
+    "https://googleads.g.doubleclick.net/pagead/html/r20261116/r20190131/zrt_lookup_fy2021.html",
+    3912,
+    0
+   ],
+   [
+    "https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-8763758728010451&output=html&",
+    65,
+    0
+   ],
+   [
+    "https://chtfpqwrrarfdjcivlad.supabase.co/rest/v1/mind_biblioteca?select=id",
+    0,
+    0
+   ],
+   [
+    "https://chtfpqwrrarfdjcivlad.supabase.co/rest/v1/mind_biblioteca?select=id",
+    790,
+    0
+   ],
+   [
+    "https://chtfpqwrrarfdjcivlad.supabase.co/rest/v1/mind_articulos?select=slug%2Ccategoria%2C",
+    8287,
+    0
+   ],
+   [
+    "https://chtfpqwrrarfdjcivlad.supabase.co/rest/v1/mind_articulos?select=slug%2Ccategoria%2C",
+    0,
+    0
+   ],
+   [
+    "https://aurzane.com/articulos/ai.js?d=2026-11-17T05",
+    2017,
+    0
+   ],
+   [
+    "https://aurzane.com/videos.js?d=2026-11-17",
+    2520,
+    0
+   ]
+  ]
  },
  "https://ovp.aurzane.com/": {
-  "nota": 67,
-  "lcp": 6004,
-  "fcp": 4268,
-  "tbt": 116,
+  "nota": 72,
+  "lcp": 5546,
+  "fcp": 3480,
+  "tbt": 84,
   "cls": 0,
   "bloqueantes": [],
-  "lcp_elemento": ""
+  "lcp_elemento": "[None]",
+  "peticiones": [
+   [
+    "https://ovp.aurzane.com/",
+    9658,
+    0
+   ],
+   [
+    "https://aurzane.com/aurzane-paleta.js",
+    11722,
+    0
+   ],
+   [
+    "https://aurzane.com/fuentes/instrument-sans-latin-wght-normal.woff2",
+    30592,
+    0
+   ],
+   [
+    "https://aurzane.com/fuentes/bodoni-moda-latin-opsz-normal.woff2",
+    46777,
+    0
+   ],
+   [
+    "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8763758728010",
+    56973,
+    0
+   ],
+   [
+    "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js",
+    48570,
+    0
+   ],
+   [
+    "https://ovp.aurzane.com/aurzane-id.js",
+    4766,
+    0
+   ],
+   [
+    "https://ovp.aurzane.com/ovp-guia.js?v=2",
+    4425,
+    0
+   ],
+   [
+    "https://aurzane.com/aurzane-reportes.js?v=1",
+    4618,
+    0
+   ],
+   [
+    "https://aurzane.com/aurzane-idiomas.js?v=1",
+    5018,
+    0
+   ],
+   [
+    "https://aurzane.com/aurzane-estilo.js?v=33",
+    23860,
+    0
+   ],
+   [
+    "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=900&q=70&auto=format&fit=cr",
+    59823,
+    0
+   ],
+   [
+    "https://aurzane.com/aurzane-ds.css?v=14",
+    9694,
+    0
+   ],
+   [
+    "https://aurzane.com/aurzane-ds.js?v=15",
+    24694,
+    0
+   ],
+   [
+    "https://pagead2.googlesyndication.com/pagead/managed/js/adsense/m202611110101/show_ads_imp",
+    170350,
+    0
+   ],
+   [
+    "https://aurzane.com/fuentes/bodoni-moda-latin-opsz-italic.woff2",
+    54282,
+    0
+   ],
+   [
+    "https://googleads.g.doubleclick.net/pagead/html/r20261116/r20190131/zrt_lookup_fy2021.html",
+    3912,
+    0
+   ],
+   [
+    "https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-8763758728010451&output=html&",
+    65,
+    0
+   ],
+   [
+    "https://aurzane.com/guardados-almacen.html",
+    1688,
+    0
+   ],
+   [
+    "https://aurzane.com/aurzane-indice.js?d=2026-11-17",
+    8203,
+    0
+   ],
+   [
+    "https://ep1.adtrafficquality.google/getconfig/sodar?sv=200&tid=gda&tv=r20261116&st=env&sjk",
+    13895,
+    0
+   ],
+   [
+    "https://aurzane.com/favicon-48.png",
+    4017,
+    0
+   ],
+   [
+    "https://ep2.adtrafficquality.google/sodar/sodar2.js",
+    8392,
+    0
+   ],
+   [
+    "https://ep2.adtrafficquality.google/sodar/sodar2/257/runner.html",
+    6126,
+    0
+   ],
+   [
+    "https://www.google.com/recaptcha/api2/aframe",
+    597,
+    0
+   ]
+  ]
  },
- "https://build.aurzane.com/calculadora-finiquito/#bruto=24000&inicio=2020-03-01&fin=2026-11-17&motivo=imp&vacas=0&pend=0&pagas=14": {
-  "nota": 89,
-  "lcp": 2908,
-  "fcp": 2908,
-  "tbt": 126,
+ "https://live.aurzane.com/": {
+  "nota": 85,
+  "lcp": 3718,
+  "fcp": 2503,
+  "tbt": 54,
   "cls": 0,
   "bloqueantes": [],
-  "lcp_elemento": ""
- },
- "https://mind.aurzane.com/test-de-ansiedad/": {
-  "nota": 89,
-  "lcp": 2909,
-  "fcp": 2909,
-  "tbt": 112,
-  "cls": 0,
-  "bloqueantes": [],
-  "lcp_elemento": ""
+  "lcp_elemento": "[None]",
+  "peticiones": [
+   [
+    "https://live.aurzane.com/",
+    21032,
+    0
+   ],
+   [
+    "https://aurzane.com/aurzane-paleta.js",
+    11721,
+    0
+   ],
+   [
+    "https://aurzane.com/fuentes/instrument-sans-latin-wght-normal.woff2",
+    30591,
+    0
+   ],
+   [
+    "https://aurzane.com/fuentes/bodoni-moda-latin-opsz-normal.woff2",
+    46776,
+    0
+   ],
+   [
+    "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js",
+    48580,
+    0
+   ],
+   [
+    "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8763758728010",
+    56973,
+    0
+   ],
+   [
+    "https://live.aurzane.com/aurzane-id.js",
+    2337,
+    0
+   ],
+   [
+    "https://aurzane.com/aurzane-reportes.js?v=1",
+    4617,
+    0
+   ],
+   [
+    "https://aurzane.com/aurzane-idiomas.js?v=1",
+    5017,
+    0
+   ],
+   [
+    "https://aurzane.com/aurzane-asistente.js?v=3",
+    3219,
+    0
+   ],
+   [
+    "https://aurzane.com/aurzane-contenido.js?v=6",
+    10742,
+    0
+   ],
+   [
+    "https://aurzane.com/aurzane-estilo.js?v=33",
+    23859,
+    0
+   ],
+   [
+    "https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=900&q=70&auto=format&fit=cr",
+    69610,
+    0
+   ],
+   [
+    "https://aurzane.com/aurzane-ds.css?v=14",
+    9693,
+    0
+   ],
+   [
+    "https://aurzane.com/aurzane-ds.js?v=15",
+    24702,
+    0
+   ],
+   [
+    "https://chtfpqwrrarfdjcivlad.supabase.co/rest/v1/live_articulos?select=slug%2Ccategoria%2C",
+    11860,
+    0
+   ],
+   [
+    "https://chtfpqwrrarfdjcivlad.supabase.co/rest/v1/live_articulos?select=slug%2Ccategoria%2C",
+    0,
+    0
+   ],
+   [
+    "https://aurzane.com/fuentes/bodoni-moda-latin-opsz-italic.woff2",
+    54281,
+    0
+   ],
+   [
+    "https://pagead2.googlesyndication.com/pagead/managed/js/adsense/m202611110101/show_ads_imp",
+    170350,
+    0
+   ],
+   [
+    "https://googleads.g.doubleclick.net/pagead/html/r20261116/r20190131/zrt_lookup_fy2021.html",
+    3912,
+    0
+   ],
+   [
+    "https://pagead2.googlesyndication.com/pagead/gen_204?id=ach_evt&tn=DIV&cls=azi-aviso%20not",
+    20,
+    0
+   ],
+   [
+    "https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-8763758728010451&output=html&",
+    65,
+    0
+   ],
+   [
+    "https://aurzane.com/articulos/ai.js?d=2026-11-17T05",
+    2017,
+    0
+   ],
+   [
+    "https://aurzane.com/libros/afiliados.js?d=2026-11-17",
+    723,
+    0
+   ],
+   [
+    "https://aurzane.com/videos.js?d=2026-11-17",
+    2520,
+    0
+   ]
+  ]
  }
 }
