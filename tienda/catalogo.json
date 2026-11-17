@@ -469,6 +469,216 @@
   "porque": "Este libro es para cualquier persona que quiera disfrutar de la cocina casera y tradicional con recetas accesibles y explicadas con cercanía. Aporta el estilo inconfundible de Karlos Arguiñano para hacer fáciles platos sabrosos del día a día."
  },
  {
+  "id": "el-hombre-en-busca-de-sentido-viktor-e-frankl",
+  "titulo": "El hombre en busca de sentido",
+  "autor": "Viktor E. Frankl",
+  "temas": [
+   "resiliencia",
+   "depresion",
+   "satisfaccion"
+  ],
+  "origen": "semilla",
+  "fecha": "2026-11-17",
+  "isbn": "9788425420924",
+  "portada": "https://covers.openlibrary.org/b/id/8516506-M.jpg?default=false",
+  "anio": "1946",
+  "editorial": "",
+  "idioma": "spa",
+  "resumen": "",
+  "porque": "Este libro es para quienes buscan esperanza y fortaleza interior en los momentos más difíciles. Aporta una profunda reflexión sobre cómo encontrar un propósito vital a pesar de la adversidad."
+ },
+ {
+  "id": "por-que-dormimos-matthew-walker",
+  "titulo": "Por qué dormimos",
+  "autor": "Matthew Walker",
+  "temas": [
+   "sueno"
+  ],
+  "origen": "semilla",
+  "fecha": "2026-11-17",
+  "isbn": "",
+  "portada": "https://covers.openlibrary.org/b/id/8814155-M.jpg?default=false",
+  "anio": "2017",
+  "editorial": "",
+  "idioma": "spa",
+  "resumen": "",
+  "porque": "Es ideal para cualquier persona interesada en mejorar su salud física y mental a través del descanso. Aporta claves científicas sobre cómo el sueño influye en la memoria, el aprendizaje y el bienestar."
+ },
+ {
+  "id": "pensar-rapido-pensar-despacio-daniel-kahneman",
+  "titulo": "Pensar rápido, pensar despacio",
+  "autor": "Daniel Kahneman",
+  "temas": [
+   "personalidad",
+   "ciencia"
+  ],
+  "origen": "semilla",
+  "fecha": "2026-11-17",
+  "isbn": "9788483068618",
+  "portada": "https://covers.openlibrary.org/b/id/13290711-M.jpg?default=false",
+  "anio": "2011",
+  "editorial": "",
+  "idioma": "",
+  "resumen": "",
+  "porque": "Va dirigido a quienes desean comprender los mecanismos mentales que guían sus decisiones cotidianas. Aporta un análisis claro sobre los dos sistemas de pensamiento que controlan cómo actuamos."
+ },
+ {
+  "id": "ikigai-hector-garcia-y-francesc-miralles",
+  "titulo": "Ikigai",
+  "autor": "Héctor García y Francesc Miralles",
+  "temas": [
+   "satisfaccion",
+   "vocacional"
+  ],
+  "origen": "semilla",
+  "fecha": "2026-11-17",
+  "isbn": "9788466344180",
+  "portada": "https://covers.openlibrary.org/b/id/11300391-M.jpg?default=false",
+  "anio": "2016",
+  "editorial": "",
+  "idioma": "spa",
+  "resumen": "",
+  "porque": "Es perfecto para quienes buscan un propósito diario y una vida más plena y longeva. Aporta las enseñanzas de los centenarios japoneses para conectar con lo que da sentido a la existencia."
+ },
+ {
+  "id": "sobre-el-duelo-y-el-dolor-elisabeth-kubler-ross-y-david-kessler",
+  "titulo": "Sobre el duelo y el dolor",
+  "autor": "Elisabeth Kübler-Ross y David Kessler",
+  "temas": [
+   "duelo"
+  ],
+  "origen": "semilla",
+  "fecha": "2026-11-17",
+  "isbn": "9788489957763",
+  "portada": "https://covers.openlibrary.org/b/id/3333343-M.jpg?default=false",
+  "anio": "2006",
+  "editorial": "",
+  "idioma": "spa",
+  "resumen": "",
+  "porque": "Ayuda a quienes transitan por la pérdida de un ser querido o una experiencia dolorosa. Aporta acompañamiento emocional y comprensión sobre las distintas etapas del duelo."
+ },
+ {
+  "id": "maneras-de-amar-amir-levine-y-rachel-heller",
+  "titulo": "Maneras de amar",
+  "autor": "Amir Levine y Rachel Heller",
+  "temas": [
+   "relaciones"
+  ],
+  "origen": "semilla",
+  "fecha": "2026-11-17",
+  "isbn": "9788479537814",
+  "portada": "https://covers.openlibrary.org/b/id/12483585-M.jpg?default=false",
+  "anio": "2011",
+  "editorial": "",
+  "idioma": "spa",
+  "resumen": "",
+  "porque": "Está pensado para quienes quieren entender mejor sus relaciones afectivas y de pareja. Aporta herramientas basadas en la teoría del apego para identificar dinámicas sentimentales."
+ },
+ {
+  "id": "el-cerebro-del-nino-daniel-j-siegel-y-tina-payne-bryson",
+  "titulo": "El cerebro del niño",
+  "autor": "Daniel J. Siegel y Tina Payne Bryson",
+  "temas": [
+   "crianza"
+  ],
+  "origen": "semilla",
+  "fecha": "2026-11-17",
+  "isbn": "9789501508413",
+  "portada": "https://covers.openlibrary.org/b/id/12329465-M.jpg?default=false",
+  "anio": "2014",
+  "editorial": "",
+  "idioma": "",
+  "resumen": "",
+  "porque": "Es una guía excelente para madres, padres y educadores que acompañan el desarrollo infantil. Aporta estrategias prácticas para fomentar la inteligencia emocional y la calma en casa."
+ },
+ {
+  "id": "padre-rico-padre-pobre-robert-t-kiyosaki",
+  "titulo": "Padre rico, padre pobre",
+  "autor": "Robert T. Kiyosaki",
+  "temas": [
+   "finanzas"
+  ],
+  "origen": "semilla",
+  "fecha": "2026-11-17",
+  "isbn": "9788466373005",
+  "portada": "https://covers.openlibrary.org/b/id/8315603-M.jpg?default=false",
+  "anio": "1990",
+  "editorial": "",
+  "idioma": "spa",
+  "resumen": "",
+  "porque": "Dirigido a quienes desean cambiar su mentalidad sobre el dinero y las finanzas personales. Aporta una perspectiva diferente sobre cómo hacer que el dinero trabaje para ti."
+ },
+ {
+  "id": "el-hombre-mas-rico-de-babilonia-george-s-clason",
+  "titulo": "El hombre más rico de Babilonia",
+  "autor": "George S. Clason",
+  "temas": [
+   "finanzas"
+  ],
+  "origen": "semilla",
+  "fecha": "2026-11-17",
+  "isbn": "9788477203711",
+  "portada": "https://covers.openlibrary.org/b/id/10491331-M.jpg?default=false",
+  "anio": "1926",
+  "editorial": "",
+  "idioma": "spa",
+  "resumen": "",
+  "porque": "Es para lectores que buscan principios financieros sólidos atemporales y fáciles de aplicar. Aporta sabios consejos sobre el ahorro, la gestión y la multiplicación de la riqueza mediante parábolas."
+ },
+ {
+  "id": "la-psicologia-del-dinero-morgan-housel",
+  "titulo": "La psicología del dinero",
+  "autor": "Morgan Housel",
+  "temas": [
+   "finanzas",
+   "vivienda"
+  ],
+  "origen": "semilla",
+  "fecha": "2026-11-17",
+  "isbn": "9788408268130",
+  "portada": "https://covers.openlibrary.org/b/id/10389354-M.jpg?default=false",
+  "anio": "2020",
+  "editorial": "",
+  "idioma": "spa",
+  "resumen": "",
+  "porque": "Ideal para entender que la riqueza depende más del comportamiento que de los conocimientos técnicos. Aporta lecciones esenciales sobre la relación emocional que tenemos con el dinero."
+ },
+ {
+  "id": "sapiens-de-animales-a-dioses-yuval-noah-harari",
+  "titulo": "Sapiens. De animales a dioses",
+  "autor": "Yuval Noah Harari",
+  "temas": [
+   "ciencia",
+   "ensayo"
+  ],
+  "origen": "semilla",
+  "fecha": "2026-11-17",
+  "isbn": "9788466361903",
+  "portada": "https://covers.openlibrary.org/b/id/8634250-M.jpg?default=false",
+  "anio": "2011",
+  "editorial": "",
+  "idioma": "spa",
+  "resumen": "",
+  "porque": "Para mentes curiosas que quieren conocer el recorrido de la humanidad desde la prehistoria. Aporta una visión global de cómo nuestra especie llegó a dominar el planeta."
+ },
+ {
+  "id": "breve-historia-del-tiempo-stephen-hawking",
+  "titulo": "Breve historia del tiempo",
+  "autor": "Stephen Hawking",
+  "temas": [
+   "ciencia"
+  ],
+  "origen": "semilla",
+  "fecha": "2026-11-17",
+  "isbn": "9788408119593",
+  "portada": "https://covers.openlibrary.org/b/id/10432365-M.jpg?default=false",
+  "anio": "1988",
+  "editorial": "",
+  "idioma": "spa",
+  "resumen": "",
+  "porque": "Dirigido a entusiastas de la ciencia que desean comprender los grandes misterios del universo. Aporta explicaciones accesibles sobre el espacio, el tiempo y el origen del cosmos."
+ },
+ {
   "id": "no-pienses-en-un-elefante-george-lakoff",
   "titulo": "No pienses en un elefante",
   "autor": "George Lakoff",
