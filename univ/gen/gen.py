@@ -996,7 +996,7 @@ def anunciate():
                        + (f'<div class="precio"><b>{PRECIO["anio"]} €</b><span>al año: {12 * PRECIO["mes"] - PRECIO["anio"]} € menos que pagando mes a mes</span></div>' if PRECIO.get('anio') else '') + '</div>'
                        + (f'<p><b>Los primeros {PRECIO["prueba_dias"]} días son gratis</b> y sin compromiso: si no te convence, no pagas nada y tu ficha vuelve a ser normal sola.</p>' if PRECIO.get('prueba_dias') else '')
                        + '<p class="sub" style="margin:8px 0 0">IVA no incluido. Sin permanencia: se renueva solo si tú lo pides. Otros portales de estudios cobran entre 100 y 130 € al mes por un solo programa destacado.</p></section>')
-    h = cabeza('Destaca tu universidad ante miles de futuros estudiantes | AURZANE NEXUS', desc, SITIO + BASE + 'anunciate/') + topbar() + f'''
+    h = cabeza(f'Destaca tu universidad entre {fmt(TOTAL_U)} de {n_pais} países | AURZANE NEXUS', desc, SITIO + BASE + 'anunciate/') + topbar() + f'''
 <main><section class="hero" style="padding-bottom:36px"><div class="wrap">{migas(("Universidades", BASE), ("Destaca tu universidad", ""))}<h1>Destaca tu <em>universidad</em></h1><p class="lead">Llega a quien está eligiendo carrera justo cuando compara universidades. Tu ficha sale primero en su país y su ciudad, con la etiqueta «Patrocinado» y un botón directo a tu página de admisión.</p></div></section>
 <div class="wrap" style="max-width:900px;margin-top:30px">
 <section class="card"><h2>El catálogo hoy</h2><dl class="datos cifras-anun">{''.join(f'<div><dt>{t}</dt><dd><b>{n}</b></dd></div>' for n, t in cifras)}</dl><p class="sub" style="margin:10px 0 0">Datos de hoy, {HOY.strftime('%d/%m/%Y')}: se recalculan solos en cada publicación.</p></section>
