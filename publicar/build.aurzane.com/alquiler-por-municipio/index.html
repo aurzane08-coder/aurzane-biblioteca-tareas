@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://aurzane.com/aurzane-paleta.js"></script>
+<title>¿Cuánto ha subido el alquiler en tu municipio? Datos del INE | AURZANE BUILD</title>
+<meta name="description" content="Busca tu municipio y mira cuánto ha subido el alquiler en el último año, en cinco años y desde 2015, con los datos oficiales del INE de más de 700 municipios.">
+<link rel="canonical" href="https://build.aurzane.com/alquiler-por-municipio/">
+<meta property="og:title" content="¿Cuánto ha subido el alquiler en tu ciudad?">
+<meta property="og:description" content="Busca tu municipio y mira cuánto ha subido el alquiler en el último año, en cinco años y desde 2015, con los datos oficiales del INE de más de 700 municipios.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://build.aurzane.com/alquiler-por-municipio/">
+<meta property="og:image" content="https://build.aurzane.com/calculadora-rentabilidad-alquiler/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://build.aurzane.com/calculadora-rentabilidad-alquiler/og.jpg">
+<meta name="theme-color" content="#1d1915">
+<script>(function(){ try { if (localStorage.getItem('aurzane-tema') === 'oscuro') document.documentElement.setAttribute('data-tema','oscuro'); } catch(e){} })();</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebApplication", "name": "Precio del alquiler por municipio", "url": "https://build.aurzane.com/alquiler-por-municipio/", "applicationCategory": "FinanceApplication", "operatingSystem": "Web", "inLanguage": "es", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "publisher": {"@type": "Organization", "name": "AURZANE", "url": "https://aurzane.com/"}}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿De dónde salen estos datos?", "acceptedAnswer": {"@type": "Answer", "text": "Del Índice de Precios de Vivienda en Alquiler (IPVA) del Instituto Nacional de Estadística, que se calcula con los contratos de alquiler declarados a Hacienda. Recoge los municipios de más de 10.000 habitantes."}}, {"@type": "Question", "name": "¿Por qué no aparece el último año?", "acceptedAnswer": {"@type": "Answer", "text": "El INE publica el IPVA una vez al año, con unos meses de retraso. Esta página revisa cada mes si hay datos nuevos y los muestra en cuanto salen."}}, {"@type": "Question", "name": "¿Es el precio de los anuncios?", "acceptedAnswer": {"@type": "Answer", "text": "No. Los portales muestran lo que se pide en los anuncios nuevos; el INE mide lo que se paga en los contratos reales, incluidos los antiguos, por eso suele subir menos."}}, {"@type": "Question", "name": "¿Me sirve para saber cuánto cobrar o pagar?", "acceptedAnswer": {"@type": "Answer", "text": "Te da la tendencia de tu municipio. Para fijar una renta concreta, compara pisos parecidos en tu zona y revisa el índice de referencia del alquiler si tu zona está declarada tensionada."}}]}]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@500;700&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<meta name="google-adsense-account" content="ca-pub-8763758728010451">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8763758728010451" crossorigin="anonymous"></script>
+
+<style>input[type=date],input[type=time]{width:100%;font:500 1rem var(--sans);color:var(--text);background:var(--surface-2);border:1.5px solid transparent;border-radius:12px;padding:10px 12px}.aviso-fin{font-size:.84rem;color:var(--text-dim);margin:14px 0 0}</style>
+</head>
+<body>
+<div class="utility" data-nosnippet><div class="wrap"><div class="eco"><a href="https://aurzane.com/">AURZANE</a><a href="https://mind.aurzane.com/">MIND</a><a href="https://ovp.aurzane.com/">OVP</a><a href="https://nexus.aurzane.com/">NEXUS</a><a href="https://live.aurzane.com/">LIVE</a><a href="https://learn.aurzane.com/">LEARN</a><a class=activo href="https://build.aurzane.com/">BUILD</a></div><button type="button" id="btnTema">🌓 Tema</button></div></div>
+<header class="topbar" data-nosnippet><div class="wrap">
+<a class="brand" href="https://build.aurzane.com/">AUR<span class="z">Z</span>ANE<small>/ BUILD</small></a>
+<nav aria-label="BUILD"><a href="/calculadora-hipoteca/">Hipoteca</a><a href="/calculadora-gastos-compra-vivienda/">Gastos compra</a><a href="/calculadora-rentabilidad-alquiler/">Alquiler</a><a href="/calculadora-sueldo-neto/">Sueldo</a><a href="/calculadora-ahorro/">Ahorro</a><a class="cuenta" href="https://aurzane.com/mi-aurzane.html">👤 Mi AURZANE</a></nav>
+</div></header>
+<section class="hero"><div class="wrap">
+<p class="migas"><a href="https://build.aurzane.com/">BUILD</a><span>/</span>Precio del alquiler por municipio</p>
+<span class="pre">🔑 Datos oficiales del INE</span>
+<h1>¿Cuánto ha subido el alquiler <span>en tu municipio?</span></h1>
+<p class="lead">Escribe tu municipio y te mostramos cuánto ha subido el alquiler según el Índice de Precios de Vivienda en Alquiler del INE, comparado con el conjunto de España.</p>
+<ul class="chips"><li>🏙️ Más de 700 municipios</li><li>📈 Último año, 5 años y desde 2015</li><li>🔄 Se actualiza solo</li></ul>
+</div></section>
+
+<div class="wrap">
+<div class="app">
+  <div class="panel">
+    <div class="bloque-form">
+      <h3>Tu municipio</h3>
+      <div class="campos">
+        <div class="campo" style="grid-column:1/-1"><label for="muni">Municipio (de más de 10.000 habitantes)</label><input id="muni" list="munis" autocomplete="off" placeholder="Escribe tu municipio, por ejemplo Salamanca"><datalist id="munis"></datalist></div>
+      </div>
+    </div>
+  </div>
+
+  <aside class="panel res sticky" id="resultado" aria-live="polite">
+    <div class="res-top"><h2>Subida del alquiler en el último año</h2><div class="grande" id="grande">–</div><p class="sub2" id="grandeSub"></p><span class="nivel ok" id="nivel"><i></i><span></span></span></div>
+    <div class="res-cuerpo">
+      <div class="linea"><span id="rCincoL">En los últimos 5 años</span><b id="rCinco"></b></div>
+      <div class="linea total"><span id="rDesdeL"><b>Desde 2015</b></span><b id="rDesde"></b></div>
+      <div class="linea"><span id="rEspL">España en el último año</span><b id="rEsp"></b></div>
+      <div class="linea"><span id="rPuestoL">Puesto entre los municipios</span><b id="rPuesto"></b></div>
+      <p id="nota" style="font-size:.86rem;color:var(--text-dim);margin:12px 0 0"></p>
+    </div>
+    <div class="acciones"><button class="btn btn-osc" id="compartir" type="button">Compartir este cálculo</button><button class="btn btn-linea" type="button" onclick="window.print()">Guardar en PDF</button></div>
+    <p class="msg" id="msg"></p>
+  </aside>
+</div>
+
+<section class="bloque">
+  <h2 class="t">Dónde más ha subido y dónde menos</h2>
+  <p class="sub" id="anyoTxt">Municipios de más de 10.000 habitantes con datos del INE.</p>
+  <div class="tarjetas"><div class="panel" style="padding:8px 20px"><h3>Más subida en el último año</h3><div class="scroll"><table class="tabla" id="tSuben"></table></div></div>
+  <div class="panel" style="padding:8px 20px"><h3>Menos subida en el último año</h3><div class="scroll"><table class="tabla" id="tBajan"></table></div></div></div>
+</section>
+
+<section class="bloque">
+  <h2 class="t">Más herramientas para tu dinero y tu casa</h2>
+  <div class="siguiente">
+    <a class="scard" style="background:linear-gradient(150deg,#5b4a2e,#1c160c)" href="/calculadora-rentabilidad-alquiler/"><span class="e">🔑</span><b>Rentabilidad del alquiler</b><span>Bruta, neta y con hipoteca: ¿compensa invertir?</span></a>
+    <a class="scard" style="background:linear-gradient(150deg,#2f5d7c,#0f1823)" href="/calculadora-hipoteca/"><span class="e">🏠</span><b>Calculadora de hipoteca</b><span>Cuota fija o variable con el euríbor actual.</span></a>
+    <a class="scard" style="background:linear-gradient(150deg,#365f52,#0f1d19)" href="/calculadora-gastos-compra-vivienda/"><span class="e">🧾</span><b>Gastos de compra de vivienda</b><span>ITP o IVA de tu comunidad, notaría y registro.</span></a>
+  </div>
+</section>
+
+<section class="bloque">
+  <h2 class="t">Preguntas frecuentes</h2>
+  <details class="faq"><summary>¿De dónde salen estos datos?</summary><p>Del Índice de Precios de Vivienda en Alquiler (IPVA) del Instituto Nacional de Estadística, que se calcula con los contratos de alquiler declarados a Hacienda. Recoge los municipios de más de 10.000 habitantes.</p></details>
+  <details class="faq"><summary>¿Por qué no aparece el último año?</summary><p>El INE publica el IPVA una vez al año, con unos meses de retraso. Esta página revisa cada mes si hay datos nuevos y los muestra en cuanto salen.</p></details>
+  <details class="faq"><summary>¿Es el precio de los anuncios?</summary><p>No. Los portales muestran lo que se pide en los anuncios nuevos; el INE mide lo que se paga en los contratos reales, incluidos los antiguos, por eso suele subir menos.</p></details>
+  <details class="faq"><summary>¿Me sirve para saber cuánto cobrar o pagar?</summary><p>Te da la tendencia de tu municipio. Para fijar una renta concreta, compara pisos parecidos en tu zona y revisa el índice de referencia del alquiler si tu zona está declarada tensionada.</p></details>
+  <ul class="creditos">
+    <li>Instituto Nacional de Estadística (INE), Índice de Precios de Vivienda en Alquiler (IPVA), tabla 59060: índices por municipio, base 2015 = 100.</li>
+    <li>Los porcentajes de cinco años y desde 2015 se calculan con los índices publicados por el INE.</li>
+  </ul>
+  <p class="aviso-fin">Cálculo orientativo con fines informativos y educativos. No es asesoramiento financiero, fiscal ni legal: para decidir, consulta tu caso con un profesional.</p>
+</section>
+</div>
+<div class="movil-barra" id="movilBarra"><div><span>Último año</span><b id="movilValor">–</b></div><a href="#resultado">Ver detalle</a></div>
+
+<footer><div class="wrap"><span>© 2026 AURZANE BUILD · Herramienta gratuita y orientativa</span><span><a href="https://build.aurzane.com/">BUILD</a><a href="https://aurzane.com/">AURZANE</a><a href="https://aurzane.com/privacidad.html">Privacidad</a></span></div></footer>
+<script>
+(function(){
+  var b=document.getElementById('btnTema');
+  if(b) b.addEventListener('click',function(){var o=document.documentElement.getAttribute('data-tema')==='oscuro';if(o)document.documentElement.removeAttribute('data-tema');else document.documentElement.setAttribute('data-tema','oscuro');try{localStorage.setItem('aurzane-tema',o?'claro':'oscuro');}catch(e){}});
+})();
+window.AZ={
+  fmt:function(n,d){return Number(n).toLocaleString('es-ES',{minimumFractionDigits:d||0,maximumFractionDigits:d||0,useGrouping:'always'});},
+  eur:function(n){return AZ.fmt(Math.round(n))+' €';},
+  ls:function(k,v){try{if(v===undefined)return JSON.parse(localStorage.getItem(k)||'null');localStorage.setItem(k,JSON.stringify(v));}catch(e){return null;}},
+  medidor:function(el,valor,max,texto,sub){
+    var p=Math.max(0,Math.min(1,valor/max)),a0=Math.PI,a=a0-p*Math.PI,r=88,cx=110,cy=110;
+    var x=cx+r*Math.cos(a),y=cy-r*Math.sin(a),large=0;
+    var ticks='';for(var i=0;i<=10;i++){var t=a0-i/10*Math.PI;ticks+='<line x1="'+(cx+(r-22)*Math.cos(t)).toFixed(1)+'" y1="'+(cy-(r-22)*Math.sin(t)).toFixed(1)+'" x2="'+(cx+(r-15)*Math.cos(t)).toFixed(1)+'" y2="'+(cy-(r-15)*Math.sin(t)).toFixed(1)+'" stroke="rgba(255,255,255,.35)" stroke-width="2"/>';}
+    el.innerHTML='<svg viewBox="0 0 220 128" aria-hidden="true"><defs><linearGradient id="gm" x1="0" x2="1"><stop offset="0" stop-color="var(--cian)"/><stop offset="1" stop-color="var(--violeta)"/></linearGradient></defs>'+
+      '<path d="M22 110 A88 88 0 0 1 198 110" fill="none" stroke="rgba(255,255,255,.14)" stroke-width="16" stroke-linecap="round"/>'+
+      (p>0.001?'<path d="M22 110 A88 88 0 '+large+' 1 '+x.toFixed(1)+' '+y.toFixed(1)+'" fill="none" stroke="url(#gm)" stroke-width="16" stroke-linecap="round"/>':'')+ticks+'</svg>'+
+      '<div class="valor"><b>'+texto+'</b><span>'+sub+'</span></div>';
+  },
+  compartir:function(titulo,texto,msgEl){
+    var url=location.href;
+    if(navigator.share){navigator.share({title:titulo,text:texto,url:url}).catch(function(){});return;}
+    if(navigator.clipboard){navigator.clipboard.writeText(texto+' '+url).then(function(){if(msgEl)msgEl.textContent='Enlace copiado. Pégalo donde quieras compartirlo.';},function(){if(msgEl)msgEl.textContent=url;});}
+    else if(msgEl) msgEl.textContent=url;
+  },
+  // Pinta preguntas de opción única. preguntas: [{id,t,ayuda?,fila?,ops:[[valor,texto],...]}]
+  cuestionario:function(cont,preguntas,resp,alCambiar){
+    var h='';
+    preguntas.forEach(function(p,i){
+      h+='<div class="pregunta" id="p-'+p.id+'" role="group" aria-labelledby="t-'+p.id+'"><h3 id="t-'+p.id+'"><span class="n">'+(i+1)+'</span><span>'+p.t+'</span></h3>'+(p.ayuda?'<p class="ayuda">'+p.ayuda+'</p>':'')+'<div class="opciones'+(p.fila?' fila':'')+'">';
+      p.ops.forEach(function(o){h+='<button type="button" class="op" data-p="'+p.id+'" data-v="'+o[0]+'" aria-pressed="'+(resp[p.id]===o[0]?'true':'false')+'"><i></i><span>'+o[1]+'</span></button>';});
+      h+='</div></div>';
+    });
+    cont.innerHTML=h;
+    cont.addEventListener('click',function(e){
+      var b=e.target.closest('.op');if(!b)return;
+      var id=b.getAttribute('data-p'),v=b.getAttribute('data-v'),num=Number(v);resp[id]=isNaN(num)?v:num;
+      cont.querySelectorAll('.op[data-p="'+id+'"]').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});
+      var caja=document.getElementById('p-'+id);caja.classList.remove('falta');
+      var idx=preguntas.findIndex(function(p){return p.id===id;}),sig=preguntas[idx+1];
+      if(sig&&resp[sig.id]===undefined&&window.innerWidth<920){var el=document.getElementById('p-'+sig.id);setTimeout(function(){el.scrollIntoView({behavior:'smooth',block:'center'});},160);}
+      alCambiar&&alCambiar();
+    });
+  },
+  faltan:function(preguntas,resp){
+    var f=preguntas.filter(function(p){return resp[p.id]===undefined;});
+    f.forEach(function(p){document.getElementById('p-'+p.id).classList.add('falta');});
+    if(f.length)document.getElementById('p-'+f[0].id).scrollIntoView({behavior:'smooth',block:'center'});
+    return f.length;
+  },
+  // Imagen 1080x1350 del resultado para compartir. r={titulo,valor,max,unidad,nivel,frase,c1,c2}
+  imagen:function(r,msgEl){
+    var W=1080,H=1350,c=document.createElement('canvas');c.width=W;c.height=H;var x=c.getContext('2d');
+    var cs=getComputedStyle(document.documentElement),c1=r.c1||cs.getPropertyValue('--n1').trim(),c2=r.c2||cs.getPropertyValue('--n3').trim(),a1=cs.getPropertyValue('--cian').trim(),a2=cs.getPropertyValue('--violeta').trim();
+    var g=x.createRadialGradient(W*.9,0,50,W*.6,H*.4,H);g.addColorStop(0,c2);g.addColorStop(1,c1);x.fillStyle=g;x.fillRect(0,0,W,H);
+    x.fillStyle='rgba(255,255,255,.07)';for(var i=0;i<W;i+=36)for(var j=0;j<H;j+=36){x.beginPath();x.arc(i,j,2,0,7);x.fill();}
+    var serif='"Bodoni Moda",Georgia,serif',sans='"Instrument Sans",system-ui,sans-serif';
+    x.fillStyle='#fff';x.font='700 44px '+serif;x.fillText('AURZANE',80,120);
+    x.fillStyle='rgba(255,255,255,.8)';x.font='600 38px '+sans;x.fillText(r.titulo,80,230);
+    var cx=W/2,cy=720,rad=300,p=Math.max(0,Math.min(1,r.valor/r.max));
+    x.lineCap='round';x.lineWidth=56;x.strokeStyle='rgba(255,255,255,.15)';x.beginPath();x.arc(cx,cy,rad,Math.PI,2*Math.PI);x.stroke();
+    var lg=x.createLinearGradient(cx-rad,0,cx+rad,0);lg.addColorStop(0,a1);lg.addColorStop(1,a2);x.strokeStyle=lg;
+    if(p>0){x.beginPath();x.arc(cx,cy,rad,Math.PI,Math.PI+p*Math.PI);x.stroke();}
+    x.textAlign='center';x.fillStyle='#fff';x.font='700 210px '+serif;x.fillText(r.valor,cx,cy-20);
+    x.font='500 40px '+sans;x.fillStyle='rgba(255,255,255,.75)';x.fillText(r.unidad||('sobre '+r.max),cx,cy+50);
+    x.font='700 54px '+sans;x.fillStyle='#fff';x.fillText(r.nivel,cx,cy+170);
+    if(r.frase){x.font='400 36px '+sans;x.fillStyle='rgba(255,255,255,.82)';var pal=r.frase.split(' '),l='',y=cy+250;pal.forEach(function(w){if(x.measureText(l+w).width>860){x.fillText(l.trim(),cx,y);y+=50;l='';}l+=w+' ';});x.fillText(l.trim(),cx,y);}
+    x.font='600 31px '+sans;x.fillStyle=a1;x.fillText('Haz el tuyo gratis: '+location.host+location.pathname,cx,H-90);
+    c.toBlob(function(b){
+      var f=new File([b],'mi-resultado-aurzane.png',{type:'image/png'});
+      if(navigator.canShare&&navigator.canShare({files:[f]})){navigator.share({files:[f],title:r.titulo,text:'Mi resultado en '+r.titulo+'. Haz el tuyo gratis: '+location.href.split('#')[0]}).catch(function(){});}
+      else{var a=document.createElement('a');a.href=URL.createObjectURL(b);a.download='mi-resultado-aurzane.png';a.click();if(msgEl)msgEl.textContent='Imagen descargada. Súbela a tus historias o envíala por WhatsApp.';}
+    },'image/png');
+  },
+  barraMovil:function(objetivo,barra){
+    if(!('IntersectionObserver' in window)||!objetivo||!barra)return;
+    new IntersectionObserver(function(es){es.forEach(function(e){barra.classList.toggle('ver',!e.isIntersecting&&window.scrollY>300);});},{threshold:0.05}).observe(objetivo);
+    window.addEventListener('scroll',function(){if(window.scrollY<300)barra.classList.remove('ver');},{passive:true});
+  }
+};
+</script>
+<script>(function(){
+var $=function(id){return document.getElementById(id);};
+var n=function(id){var v=parseFloat(String($(id).value).replace(',','.'));return isFinite(v)?v:0;};
+var st={};
+function seg(id,k){var el=$(id);if(!el)return;el.addEventListener('click',function(ev){var b=ev.target.closest('button');if(!b)return;st[k]=b.getAttribute('data-v');Array.prototype.forEach.call(el.querySelectorAll('button'),function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});pintar();});Array.prototype.forEach.call(el.querySelectorAll('button'),function(x){x.setAttribute('aria-pressed',x.getAttribute('data-v')===st[k]?'true':'false');});}
+function nivel(clase,txt){var e=$('nivel');e.className='nivel '+clase;e.querySelector('span').textContent=txt;}
+function hash(ids){var q=new URLSearchParams();ids.forEach(function(k){q.set(k,$(k).value);});Object.keys(st).forEach(function(k){q.set(k,st[k]);});history.replaceState(null,'','#'+q.toString());}
+(function(){var q=new URLSearchParams(location.hash.slice(1));q.forEach(function(v,k){if($(k)&&$(k).tagName!=='DIV')$(k).value=v;else if(k in st)st[k]=v;});})();
+
+var D=null;function pc(v){return v==null?'-':(v>0?'+':'')+String(v).replace('.',',')+' %';}
+function nrm(t){return String(t||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').trim();}
+function pintar(){
+  if(!D)return;var q=nrm($('muni').value),m=null;
+  for(var i=0;i<D.m.length;i++){if(nrm(D.m[i][0])===q){m=D.m[i];break;}}
+  if(!m&&q.length>2)for(var j=0;j<D.m.length;j++){if(nrm(D.m[j][0]).indexOf(q)===0){m=D.m[j];break;}}
+  if(!m){$('grande').textContent='–';$('grandeSub').textContent='Escribe un municipio de la lista';return;}
+  $('grande').textContent=pc(m[1]);$('movilValor').textContent=pc(m[1]);$('grandeSub').textContent=m[0]+', año '+D.anyo;
+  var ord=D.m.filter(function(x){return x[1]!=null;}).sort(function(a,b){return b[1]-a[1];}),pos=ord.indexOf(m)+1;
+  $('rCinco').textContent=pc(m[3]);$('rDesde').textContent=pc(Math.round((m[2]-100)*10)/10);$('rEsp').textContent=pc(D.nac[0]);
+  $('rPuesto').textContent=pos?'n.º '+pos+' de '+ord.length+' (1 = más subida)':'-';
+  var dif=m[1]!=null&&D.nac[0]!=null?m[1]-D.nac[0]:null;
+  nivel(dif==null?'medio':dif>0.5?'mal':dif<-0.5?'ok':'medio',dif==null?'Sin dato del último año':dif>0.5?'Sube más que la media de España':dif<-0.5?'Sube menos que la media de España':'En la media de España');
+  $('nota').textContent='Fuente: '+D.fuente+'. Datos de '+D.anyo+', revisados el '+D.actualizado+'.';
+  hash(['muni']);
+}
+fetch('/alquiler-por-municipio/datos.json').then(function(r){return r.json();}).then(function(d){D=d;
+  $('munis').innerHTML=d.m.map(function(x){return '<option value="'+x[0].replace(/"/g,'&quot;')+'">';}).join('');
+  var ord=d.m.filter(function(x){return x[1]!=null;}).sort(function(a,b){return b[1]-a[1];});
+  var fila=function(x){return '<tr><td>'+x[0]+'</td><td><b>'+pc(x[1])+'</b></td></tr>';};
+  $('tSuben').innerHTML='<tr><th>Municipio</th><th>Subida</th></tr>'+ord.slice(0,10).map(fila).join('');
+  $('tBajan').innerHTML='<tr><th>Municipio</th><th>Subida</th></tr>'+ord.slice(-10).reverse().map(fila).join('');
+  $('anyoTxt').textContent='Año '+d.anyo+'. En el conjunto de España el alquiler subió '+pc(d.nac[0])+' en el último año y '+pc(d.nac[2])+' en cinco años (INE).';
+  if(!$('muni').value)$('muni').value='Madrid';pintar();
+}).catch(function(){$('grandeSub').textContent='No se pudieron cargar los datos del INE. Recarga en un momento.';});
+
+Array.prototype.forEach.call(document.querySelectorAll('.app input,.app select'),function(i){i.addEventListener('input',pintar);});
+pintar();document.body.classList.add('hecho');
+$('compartir').addEventListener('click',function(){AZ.compartir("Precio del alquiler por municipio","Mira cuánto ha subido el alquiler en tu municipio:",$('msg'));});
+AZ.barraMovil($('resultado'),$('movilBarra'));
+})();
+</script>
+</body>
+</html>

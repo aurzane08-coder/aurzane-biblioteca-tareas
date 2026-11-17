@@ -38,6 +38,7 @@ TODAS = [
     ('calculadora-ahorro', '🐷', 'Calculadora de ahorro', 'Cuánto ahorrar al mes para tu meta (50/30/20).', '#2e5b4a', '#0d1a15'),
     ('calculadora-jubilacion', '🌅', 'Calculadora de jubilación', 'Cuánto ahorrar para complementar tu pensión.', '#6a4a2a', '#1f150b'),
     ('calculadora-reforma', '🛠️', 'Calculadora de reforma', 'Presupuesto partida a partida con IVA.', '#3d6f8f', '#132433'),
+    ('alquiler-por-municipio', '🏙️', 'Alquiler en tu municipio', 'Cuánto ha subido según el INE.', '#5b3f2e', '#1c120c'),
 ]
 TODAS += [
     ('calculadora-ovulacion', '🌸', 'Calculadora de ovulación', 'Tus días fértiles y tu próxima regla.', '#7a3f5c', '#24101b'),
@@ -621,6 +622,60 @@ function pintar(){
   $('tablaCiclos').innerHTML=filas;
   hash(['fur','ciclo','regla']);
 }
+"""))
+
+# Alquiler por municipio (17/11/2026): datos oficiales del INE, se actualizan solos (herramientas/alquiler_ine.py) ------
+CALCS.append(dict(
+    mundo='build', slug='alquiler-por-municipio', ogimg='calculadora-rentabilidad-alquiler', nombre='Precio del alquiler por municipio',
+    titulo='¿Cuánto ha subido el alquiler en tu municipio? Datos del INE',
+    og='¿Cuánto ha subido el alquiler en tu ciudad?',
+    desc='Busca tu municipio y mira cuánto ha subido el alquiler en el último año, en cinco años y desde 2015, con los datos oficiales del INE de más de 700 municipios.',
+    pre='🔑 Datos oficiales del INE', h1='¿Cuánto ha subido el alquiler <span>en tu municipio?</span>',
+    lead='Escribe tu municipio y te mostramos cuánto ha subido el alquiler según el Índice de Precios de Vivienda en Alquiler del INE, comparado con el conjunto de España.',
+    chips=['🏙️ Más de 700 municipios', '📈 Último año, 5 años y desde 2015', '🔄 Se actualiza solo'],
+    form=bloque('Tu municipio', ['<div class="campo" style="grid-column:1/-1"><label for="muni">Municipio (de más de 10.000 habitantes)</label><input id="muni" list="munis" autocomplete="off" placeholder="Escribe tu municipio, por ejemplo Salamanca"><datalist id="munis"></datalist></div>']),
+    restit='Subida del alquiler en el último año', movil='Último año',
+    lineas=lineas([('rCinco', 'En los últimos 5 años', 0), ('rDesde', 'Desde 2015', 1), ('rEsp', 'España en el último año', 0), ('rPuesto', 'Puesto entre los municipios', 0)]),
+    extra="""<section class="bloque">
+  <h2 class="t">Dónde más ha subido y dónde menos</h2>
+  <p class="sub" id="anyoTxt">Municipios de más de 10.000 habitantes con datos del INE.</p>
+  <div class="tarjetas"><div class="panel" style="padding:8px 20px"><h3>Más subida en el último año</h3><div class="scroll"><table class="tabla" id="tSuben"></table></div></div>
+  <div class="panel" style="padding:8px 20px"><h3>Menos subida en el último año</h3><div class="scroll"><table class="tabla" id="tBajan"></table></div></div></div>
+</section>""",
+    faq=[('¿De dónde salen estos datos?', 'Del Índice de Precios de Vivienda en Alquiler (IPVA) del Instituto Nacional de Estadística, que se calcula con los contratos de alquiler declarados a Hacienda. Recoge los municipios de más de 10.000 habitantes.'),
+         ('¿Por qué no aparece el último año?', 'El INE publica el IPVA una vez al año, con unos meses de retraso. Esta página revisa cada mes si hay datos nuevos y los muestra en cuanto salen.'),
+         ('¿Es el precio de los anuncios?', 'No. Los portales muestran lo que se pide en los anuncios nuevos; el INE mide lo que se paga en los contratos reales, incluidos los antiguos, por eso suele subir menos.'),
+         ('¿Me sirve para saber cuánto cobrar o pagar?', 'Te da la tendencia de tu municipio. Para fijar una renta concreta, compara pisos parecidos en tu zona y revisa el índice de referencia del alquiler si tu zona está declarada tensionada.')],
+    creditos=['Instituto Nacional de Estadística (INE), Índice de Precios de Vivienda en Alquiler (IPVA), tabla 59060: índices por municipio, base 2015 = 100.',
+              'Los porcentajes de cinco años y desde 2015 se calculan con los índices publicados por el INE.'],
+    rel=['calculadora-rentabilidad-alquiler', 'calculadora-hipoteca', 'calculadora-gastos-compra-vivienda'],
+    compartir='Mira cuánto ha subido el alquiler en tu municipio:',
+    js=r"""
+var D=null;function pc(v){return v==null?'-':(v>0?'+':'')+String(v).replace('.',',')+' %';}
+function nrm(t){return String(t||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').trim();}
+function pintar(){
+  if(!D)return;var q=nrm($('muni').value),m=null;
+  for(var i=0;i<D.m.length;i++){if(nrm(D.m[i][0])===q){m=D.m[i];break;}}
+  if(!m&&q.length>2)for(var j=0;j<D.m.length;j++){if(nrm(D.m[j][0]).indexOf(q)===0){m=D.m[j];break;}}
+  if(!m){$('grande').textContent='–';$('grandeSub').textContent='Escribe un municipio de la lista';return;}
+  $('grande').textContent=pc(m[1]);$('movilValor').textContent=pc(m[1]);$('grandeSub').textContent=m[0]+', año '+D.anyo;
+  var ord=D.m.filter(function(x){return x[1]!=null;}).sort(function(a,b){return b[1]-a[1];}),pos=ord.indexOf(m)+1;
+  $('rCinco').textContent=pc(m[3]);$('rDesde').textContent=pc(Math.round((m[2]-100)*10)/10);$('rEsp').textContent=pc(D.nac[0]);
+  $('rPuesto').textContent=pos?'n.º '+pos+' de '+ord.length+' (1 = más subida)':'-';
+  var dif=m[1]!=null&&D.nac[0]!=null?m[1]-D.nac[0]:null;
+  nivel(dif==null?'medio':dif>0.5?'mal':dif<-0.5?'ok':'medio',dif==null?'Sin dato del último año':dif>0.5?'Sube más que la media de España':dif<-0.5?'Sube menos que la media de España':'En la media de España');
+  $('nota').textContent='Fuente: '+D.fuente+'. Datos de '+D.anyo+', revisados el '+D.actualizado+'.';
+  hash(['muni']);
+}
+fetch('/alquiler-por-municipio/datos.json').then(function(r){return r.json();}).then(function(d){D=d;
+  $('munis').innerHTML=d.m.map(function(x){return '<option value="'+x[0].replace(/"/g,'&quot;')+'">';}).join('');
+  var ord=d.m.filter(function(x){return x[1]!=null;}).sort(function(a,b){return b[1]-a[1];});
+  var fila=function(x){return '<tr><td>'+x[0]+'</td><td><b>'+pc(x[1])+'</b></td></tr>';};
+  $('tSuben').innerHTML='<tr><th>Municipio</th><th>Subida</th></tr>'+ord.slice(0,10).map(fila).join('');
+  $('tBajan').innerHTML='<tr><th>Municipio</th><th>Subida</th></tr>'+ord.slice(-10).reverse().map(fila).join('');
+  $('anyoTxt').textContent='Año '+d.anyo+'. En el conjunto de España el alquiler subió '+pc(d.nac[0])+' en el último año y '+pc(d.nac[2])+' en cinco años (INE).';
+  if(!$('muni').value)$('muni').value='Madrid';pintar();
+}).catch(function(){$('grandeSub').textContent='No se pudieron cargar los datos del INE. Recarga en un momento.';});
 """))
 
 # 7. Peso ideal ---------------------------------------------------------------------------------------------------

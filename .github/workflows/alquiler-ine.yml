@@ -1,0 +1,23 @@
+name: Alquiler por municipio (INE)
+# Cada mes comprueba si el INE ha publicado datos nuevos del índice de alquiler por municipio y, si los hay,
+# los publica en build.aurzane.com/alquiler-por-municipio/ (pasa por desplegar.yml).
+on:
+  schedule:
+    - cron: '27 5 12 * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: write
+jobs:
+  ine:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 herramientas/alquiler_ine.py
+      - run: |
+          git config user.name "aurzane-bot"; git config user.email "bot@aurzane.com"
+          git add publicar herramientas/alquiler_ine_ultimo.json; git commit -qm "alquiler INE: $(date +%F)" || exit 0
+          for i in 1 2 3; do git pull -q --rebase -X theirs && git push -q && break; sleep 5; done
+          gh workflow run desplegar.yml --ref main || true
+        env:
+          GH_TOKEN: ${{ github.token }}
