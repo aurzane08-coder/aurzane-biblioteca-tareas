@@ -5880,5 +5880,17 @@
   "recogida": "2026-11-14",
   "ok": true,
   "publicada": "2026-11-14"
+ },
+ {
+  "id": "fw-1e8e093b7e",
+  "texto": "Más vale buena esperanza que ruin posesión.",
+  "autor": "Refrán",
+  "vida": "",
+  "descripcion": "",
+  "tema": "esperanza",
+  "fuente": "Proverbia.net",
+  "url_fuente": "https://proverbia.net/frase-del-dia",
+  "recogida": "2026-11-17",
+  "ok": true
  }
 ]
