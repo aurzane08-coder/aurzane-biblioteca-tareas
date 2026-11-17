@@ -39,7 +39,7 @@ def frases_de(autor):
         if not re.match(r'^\*\s*[^*:]', ln): continue   # solo citas de primer nivel (las de segundo nivel son fuentes o notas)
         f = limpia(ln[1:])
         if not (30 <= len(f) <= 150) or not TEMAS.search(f) or MALO.search(f): continue
-        if re.search(r'[\[\]{}|=]|http|Fuente|Cita|Atribuid|traducci', f, re.I): continue
+        if ' / ' in f or re.search(r'[\[\]{}|=]|http|Fuente|Cita|Atribuid|traducci', f, re.I): continue
         if not re.search(r'[áéíóúñ¿¡]|\b(el|la|que|de|no|es)\b', f): continue   # en español
         out.append([f if f[-1] in '.!?»' else f + '.', autor + ' (vía Wikiquote)'])
     return out[:12]
