@@ -1,0 +1,4 @@
+{
+  "_info": "Universidades patrocinadas en AURZANE NEXUS (tarea 46). Cada entrada: id = pais/slug de la ficha (como en su URL), desde y hasta = fechas AAAA-MM-DD, texto = frase corta de la universidad (opcional), url = página de admisión. Solo se muestran entre desde y hasta: al caducar desaparecen solas en la siguiente publicación diaria. Las fichas patrocinadas llevan la etiqueta «Patrocinado», salen primero en su país y su ciudad y tienen un botón a su página de admisión (enlace rel=sponsored con UTM). El ranking y los datos oficiales no cambian.",
+  "lista": []
+}

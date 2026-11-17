@@ -205,7 +205,7 @@
       else {
         var esU = function (u) { return /^universi/i.test(u[5] || 'Universidad') ? 0 : 1; };
         var coin = function (u) { return !ps.length || ps.every(function (p) { return u.k.indexOf(p) >= 0; }) ? 0 : 1; };
-        r.sort(function (a, b) { return coin(a) - coin(b) || esU(a) - esU(b) || b[6] - a[6] || a[1].localeCompare(b[1], 'es'); });
+        r.sort(function (a, b) { return (b[13] || 0) - (a[13] || 0) || coin(a) - coin(b) || esU(a) - esU(b) || b[6] - a[6] || a[1].localeCompare(b[1], 'es'); });
       }
       return { r: r, hits: hitsCarr };
     }
@@ -215,7 +215,7 @@
       var extra = hits ? '<p class="lugar" style="margin-top:8px">🎓 ' + hits.slice(0, 2).map(function (c) { return esc(c[1]); }).join(' · ') + (hits.length > 2 ? ' y ' + (hits.length - 2) + ' más' : '') + '</p>' : '';
       var foto = u[11] ? '<div class="uc-foto"><img src="' + esc(u[11]) + '" alt="" loading="lazy" onerror="this.parentNode.classList.add(\'sin\');this.remove()"><span>' + esc(iniciales(u[1])) + '</span></div>' : '<div class="uc-foto sin"><span>' + esc(iniciales(u[1])) + '</span></div>';
       return '<article class="uc">' + foto + '<div class="top"><span class="mono" aria-hidden="true">' + (u[10] ? '<img src="' + esc(u[10]) + '" alt="" loading="lazy" onerror="this.remove()">' : '') + esc(iniciales(u[1])) + '</span><div style="min-width:0;flex:1"><h3><a href="' + url + '">' + esc(u[1]) + '</a></h3><p class="lugar">📍 ' + esc([u[2], u[3]].filter(Boolean).join(', ') || D.pais) + '</p></div><button class="guardar" type="button" data-guardar data-id="' + esc(pais + '/' + u[0]) + '" data-n="' + esc(u[1]) + '" data-url="' + url + '" aria-pressed="false">☆</button></div>' +
-        extra + '<div class="etqs">' + tipo + (u[5] ? '<span class="etq">' + esc(u[5]) + '</span>' : '') + '</div>' +
+        extra + '<div class="etqs">' + (u[13] ? '<span class="etq patro">Patrocinado</span>' : '') + tipo + (u[5] ? '<span class="etq">' + esc(u[5]) + '</span>' : '') + '</div>' +
         '<div class="pie"><span>' + (u[6] ? '<b>' + fmt(u[6]) + '</b> ' + (u[7] === 'areas' ? 'áreas' : (pais === 'espana' ? 'grados' : 'carreras')) : 'Carreras en su web') + '</span><span aria-hidden="true">→</span></div></article>';
     }
     function pintar() {

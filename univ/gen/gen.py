@@ -105,6 +105,17 @@ PRIN = cargar_json('principales.json')
 UNIS = []
 # Ranking mundial abierto (OpenAlex, CC0): lo prepara cada mes univ/ranking.py
 RANK = cargar_json('ranking.json') or {'dom': {}, 'nom': {}}
+# patrocinios (17/11/2026, etapa 4, tarea 46): solo los vigentes hoy; caducan solos
+PATRO = {x['id']: x for x in ((cargar_json('patrocinios.json') or {}).get('lista') or [])
+         if x.get('id') and x.get('url', '').startswith('https://') and str(x.get('desde', '')) <= datetime.date.today().isoformat() <= str(x.get('hasta', '9999'))}
+
+
+def patro(u):
+    return PATRO.get(PSLUG[u['pais']] + '/' + u['slug'])
+
+
+def utm(url, donde):
+    return url + ('&' if '?' in url else '?') + 'utm_source=aurzane&utm_medium=nexus&utm_campaign=patrocinio&utm_content=' + donde
 
 
 def _dom(u):
@@ -444,7 +455,7 @@ def topbar(actual=''):
 
 
 def pie():
-    return f'''<footer><div class="wrap"><span>© {HOY.year} AURZANE NEXUS · Catálogo de universidades</span><span><a href="https://nexus.aurzane.com/">NEXUS</a><a href="{BASE}">Universidades</a><a href="{BASE}acerca/">Fuentes y método</a><a href="https://aurzane.com/privacidad.html">Privacidad</a></span></div></footer>
+    return f'''<footer><div class="wrap"><span>© {HOY.year} AURZANE NEXUS · Catálogo de universidades</span><span><a href="https://nexus.aurzane.com/">NEXUS</a><a href="{BASE}">Universidades</a><a href="{BASE}acerca/">Fuentes y método</a><a href="{BASE}anunciate/">Destaca tu universidad</a><a href="https://aurzane.com/privacidad.html">Privacidad</a></span></div></footer>
 <script src="{BASE}assets/univ.js?v={V}" defer></script>
 </body></html>
 '''
@@ -482,7 +493,7 @@ def datos():
         filas, carr = [], []
         for i, u in enumerate(us):
             ua = sorted({ai[c['area']] for c in u['carreras'] if c['area']})
-            filas.append([u['slug'], u['nombre'], u['ciudad'], u['region'], u['tipo'], u['tipo_ies'], u['n'], u['nivel'], ua, u['extra'].get('acronimo', ''), u['logo'], u.get('foto', ''), (rank_de(u) or [0, 0, 0, 0, 0])[:5]])
+            filas.append([u['slug'], u['nombre'], u['ciudad'], u['region'], u['tipo'], u['tipo_ies'], u['n'], u['nivel'], ua, u['extra'].get('acronimo', ''), u['logo'], u.get('foto', ''), (rank_de(u) or [0, 0, 0, 0, 0])[:5], 1 if patro(u) else 0])
             for c in u['carreras']:
                 if u['nivel'] == 'programas':
                     carr.append([i, c['n'], ai.get(c['area'], -1)] + ([c['nota']] if c.get('nota') else []))   # 4.º valor: nota de corte (España)
@@ -506,7 +517,8 @@ def tarjeta(u):
     lugar = ', '.join(x for x in [u['ciudad'], u['region']] if x) or u['pais']
     cnt = f'<b>{fmt(u["n"])}</b> {"áreas" if u["nivel"] == "areas" else ("grados" if u["pais"] == "España" else "carreras")}' if u['n'] else 'Carreras en su web'
     foto = f'<div class="uc-foto"><img src="{e(u["foto"])}" alt="" loading="lazy" onerror="this.parentNode.classList.add(\'sin\');this.remove()"><span>{e(iniciales(u["nombre"]))}</span></div>' if u.get('foto') else f'<div class="uc-foto sin"><span>{e(iniciales(u["nombre"]))}</span></div>'
-    return (f'<article class="uc">{foto}<div class="top"><span class="mono" aria-hidden="true">{e(iniciales(u["nombre"]))}</span><div style="min-width:0;flex:1"><h3><a href="{url}">{e(u["nombre"])}</a></h3>'
+    if patro(u): tipo = '<span class="etq patro">Patrocinado</span>' + tipo
+    return (f'<article class="uc{" uc-patro" if patro(u) else ""}">{foto}<div class="top"><span class="mono" aria-hidden="true">{e(iniciales(u["nombre"]))}</span><div style="min-width:0;flex:1"><h3><a href="{url}">{e(u["nombre"])}</a></h3>'
             f'<p class="lugar">📍 {e(lugar)}</p></div><button class="guardar" type="button" data-guardar data-id="{p}/{u["slug"]}" data-n="{e(u["nombre"])}" data-url="{url}" aria-pressed="false">☆</button></div>'
             f'<div class="etqs">{tipo}<span class="etq">{e(u["tipo_ies"])}</span></div><div class="pie"><span>{cnt}</span><span aria-hidden="true">→</span></div></article>')
 
@@ -519,7 +531,7 @@ def panel_listado(p, us, ciudad_fija='', titulo_res=''):
     area_lbl = 'Rama de conocimiento' if p == 'España' else 'Área de estudio'
     ies = len({u['tipo_ies'] for u in us}) > 1
     lbl_q = 'Universidad, ciudad o carrera' if tiene_carr else 'Universidad o ciudad'
-    estaticas = ''.join(tarjeta(u) for u in sorted(us, key=lambda x: (0 if x['tipo_ies'].lower().startswith('universi') else 1, -x['n'], x['nombre']))[:36])
+    estaticas = ''.join(tarjeta(u) for u in sorted(us, key=lambda x: (0 if patro(x) else 1, 0 if x['tipo_ies'].lower().startswith('universi') else 1, -x['n'], x['nombre']))[:36])
     return f'''<div class="wrap"><div class="app" id="listado" data-pais="{pslug}" data-ciudad="{e(ciudad_fija)}" {"data-carreras=1" if tiene_carr else ""}>
 <aside class="filtros cerrado" aria-label="Filtros">
 <h2>Filtrar <span><button type="button" id="limpiar">Quitar filtros</button><button type="button" id="togFiltros" aria-expanded="false" aria-controls="cuerpoF">Más filtros ▾</button></span></h2>
@@ -779,6 +791,11 @@ def ficha(u, vecinas):
             f'<p style="margin:10px 0 0"><a href="{BASE}{ps}/ciudad/{slug(u["ciudad"])}/">Ver todas en {e(u["ciudad"])} →</a></p>' if u['ciudad'] and len(vecinas) >= 1 and p != 'Estados Unidos' else '') + '</section>'
     cta = ('<section class="cta"><b>¿Te llega la nota?</b><p>Calcula tu nota de admisión de la PAU sobre 14 y compárala con la nota de corte.</p><a class="btn btn-luz" href="/calculadora-nota-pau/">Calcular mi nota</a></section>' if es_es else
            '<section class="cta"><b>¿No sabes qué estudiar?</b><p>Haz el test vocacional gratis y descubre las carreras que encajan contigo.</p><a class="btn btn-luz" href="https://ovp.aurzane.com/">Hacer el test vocacional</a></section>')
+    pt = patro(u)
+    if pt:
+        cta = (f'<section class="cta cta-patro"><span class="etq patro">Patrocinado</span><b>{e(pt.get("texto") or "Admisiones abiertas")}</b>'
+               f'<p>Información oficial de admisión de {e(u["nombre"])}.</p><a class="btn btn-luz" href="{e(utm(pt["url"], "ficha"))}" target="_blank" rel="sponsored noopener">Ver admisión ↗</a></section>') + cta
+    destaca = '' if pt else f'<p class="destaca"><a href="{BASE}anunciate/?u={ps}/{u["slug"]}">¿Trabajas en {e(u["nombre"])}? Destácala ante estudiantes que buscan carrera</a></p>'
     desc_meta = f'{u["nombre"]} ({lugar}, {p}): ' + (f'sus {fmt(n)} {palabra}, ' if n else '') + f'tipo {u["tipo_txt"].lower() or "-"}, ciudad y web oficial.'
     jl = {'@context': 'https://schema.org', '@type': 'CollegeOrUniversity', 'name': u['nombre'], 'url': u['web'] or url,
           'address': {'@type': 'PostalAddress', 'addressLocality': u['ciudad'] or None, 'addressRegion': u['region'] or None, 'addressCountry': iso.upper()},
@@ -805,7 +822,7 @@ def ficha(u, vecinas):
 <div class="wrap"><div class="ficha"><div>{bloque_c}{bloque_ia(url) or bloque_auto(u, orden_g, grupos)}</div>
 <aside><section class="card"><h2>Datos</h2>{datos_html}</section>{cta}{cerca}</aside></div>
 <p class="fuente">{fuente_pais(p)} </p>
-<div class="reportar"><span>¿Algún dato no es correcto o un enlace no funciona?</span><button type="button" class="btn btn-borde" data-reportar data-tipo="dato" data-ref="{e(u["nombre"] + " (" + p + ")")}">⚑ Reportar un error</button></div></div>
+<div class="reportar"><span>¿Algún dato no es correcto o un enlace no funciona?</span><button type="button" class="btn btn-borde" data-reportar data-tipo="dato" data-ref="{e(u["nombre"] + " (" + p + ")")}">⚑ Reportar un error</button></div>{destaca}</div>
 </main>''' + pie()
     escribir(f'{ps}/{u["slug"]}/index.html', h)
     if not fina: URLS.append((url, '0.7' if n else '0.5'))
@@ -964,6 +981,42 @@ def comparar():
     URLS.append((SITIO + BASE + 'comparar/', '0.8'))
 
 
+def anunciate():
+    """Destaca tu universidad (17/11/2026, etapa 4, tarea 46): página para universidades que quieran aparecer
+    destacadas. Cifras reales del catálogo, calculadas en cada publicación. Las solicitudes llegan por el
+    formulario de contacto de aurzane.com (mismo buzón y mismo registro privado); no hay pagos en la web."""
+    n_pais = len(ORDEN_P); n_rank = sum(1 for u in UNIS if rank_de(u))
+    activas = len(PATRO)
+    desc = f'Destaca tu universidad en AURZANE NEXUS ante estudiantes que comparan {fmt(TOTAL_U)} universidades de {n_pais} países: etiqueta Patrocinado, primeras posiciones y enlace a admisión.'
+    cifras = [(fmt(TOTAL_U), 'universidades e institutos con ficha propia'), (fmt(TOTAL_C), 'carreras y grados en el catálogo'), (str(n_pais), 'países'), (fmt(n_rank), 'fichas con ranking mundial')]
+    h = cabeza('Destaca tu universidad ante miles de futuros estudiantes | AURZANE NEXUS', desc, SITIO + BASE + 'anunciate/') + topbar() + f'''
+<main><section class="hero" style="padding-bottom:36px"><div class="wrap">{migas(("Universidades", BASE), ("Destaca tu universidad", ""))}<h1>Destaca tu <em>universidad</em></h1><p class="lead">Llega a quien está eligiendo carrera justo cuando compara universidades. Tu ficha sale primero en su país y su ciudad, con la etiqueta «Patrocinado» y un botón directo a tu página de admisión.</p></div></section>
+<div class="wrap" style="max-width:900px;margin-top:30px">
+<section class="card"><h2>El catálogo hoy</h2><dl class="datos cifras-anun">{''.join(f'<div><dt>{t}</dt><dd><b>{n}</b></dd></div>' for n, t in cifras)}</dl><p class="sub" style="margin:10px 0 0">Datos de hoy, {HOY.strftime('%d/%m/%Y')}: se recalculan solos en cada publicación.</p></section>
+<section class="card"><h2>Qué incluye</h2><ul class="lista-anun">
+<li><b>Primeras posiciones</b> en el listado de tu país y de tu ciudad.</li>
+<li><b>Etiqueta «Patrocinado»</b> visible en la tarjeta y en la ficha. Siempre se indica que es publicidad.</li>
+<li><b>Botón a tu página de admisión</b> en la ficha, con UTM para que midas las visitas en tu analítica.</li>
+<li><b>Sin tocar los datos</b>: el ranking mundial, las carreras y las notas de corte salen de fuentes oficiales y no se pueden comprar.</li></ul></section>
+<section class="card" id="solicitar"><h2>Solicitar información</h2>
+<form id="formAnun" class="form-anun"><input type="text" name="web" tabindex="-1" autocomplete="off" class="vh" aria-hidden="true">
+<label>Universidad<input name="universidad" id="anunU" required maxlength="160"></label>
+<label>Tu nombre y cargo<input name="nombre" required maxlength="120"></label>
+<label>Correo institucional<input type="email" name="correo" required maxlength="160"></label>
+<label>Mensaje (opcional)<textarea name="mensaje" rows="4" maxlength="2000" placeholder="Países o ciudades que te interesan, fechas de tu campaña de admisión…"></textarea></label>
+<label class="chk"><input type="checkbox" name="acepto" required> Acepto la <a href="https://aurzane.com/privacidad.html" target="_blank" rel="noopener">política de privacidad</a></label>
+<button type="submit" class="btn btn-osc">Enviar solicitud</button><p id="anunRes" class="sub" aria-live="polite"></p></form></section>
+</div></main>
+<script>(function(){{var f=document.getElementById('formAnun'),m=/[?&]u=([a-z0-9-]+\/[a-z0-9-]+)/.exec(location.search);
+if(m){{fetch('{BASE}datos/indice.json').then(function(r){{return r.json()}}).then(function(d){{var p=m[1].split('/');d.u.some(function(x){{if(d.p[x[1]][0]===p[0]&&x[2]===p[1]){{document.getElementById('anunU').value=x[0];return true}}}})}}).catch(function(){{}})}}
+f.addEventListener('submit',function(ev){{ev.preventDefault();var d=Object.fromEntries(new FormData(f));var r=document.getElementById('anunRes');r.textContent='Enviando…';
+var cuerpo={{web:d.web,nombre:d.nombre,correo:d.correo,acepto:d.acepto?1:0,motivo:'Patrocinio NEXUS',mensaje:'Universidad: '+d.universidad+(m?' ('+m[1]+')':'')+'\n\n'+(d.mensaje||'(sin mensaje)')}};
+fetch('https://aurzane.com/contacto.php',{{method:'POST',headers:{{'Content-Type':'text/plain'}},body:JSON.stringify(cuerpo)}}).then(function(x){{return x.json()}}).then(function(j){{r.textContent=j.ok?'Recibido. Te escribiremos al correo que nos has dejado.':(j.error||'No se pudo enviar.');if(j.ok)f.reset()}}).catch(function(){{r.innerHTML='No se pudo enviar. Escríbenos a <a href="mailto:hola@aurzane.com">hola@aurzane.com</a>.'}})}})}})();</script>''' + pie()
+    escribir('anunciate/index.html', h)
+    URLS.append((SITIO + BASE + 'anunciate/', '0.3'))
+    print('Patrocinios vigentes:', activas)
+
+
 def acerca():
     filas = ''.join(f'<tr><td>{bandera(PAISES[p][0])} {e(p)}</td><td class="num">{fmt(len(por_pais[p]))}</td><td class="num">{fmt(sum(u["n"] for u in por_pais[p]))}</td><td>{NIVEL_LBL[nivel_pais(p)]}</td></tr>' for p in ORDEN_P)
     h = cabeza('Fuentes y método del catálogo de universidades | AURZANE NEXUS', 'De dónde salen los datos del catálogo de universidades de AURZANE NEXUS y cómo se actualizan.', SITIO + BASE + 'acerca/') + topbar() + f'''
@@ -1032,6 +1085,7 @@ notas_de_corte()
 que_puedo_estudiar()
 mi_lista()
 comparar()
+anunciate()
 acerca()
 sitemap()
 print('fichas casi vacías fuera de Google:', len(FINAS))
