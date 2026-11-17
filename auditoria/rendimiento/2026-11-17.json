@@ -1,0 +1,83 @@
+{
+ "https://aurzane.com/": {
+  "nota": 64,
+  "lcp": 7212,
+  "fcp": 3930,
+  "tbt": 181,
+  "cls": 0,
+  "bloqueantes": [],
+  "lcp_elemento": ""
+ },
+ "https://mind.aurzane.com/": {
+  "nota": 62,
+  "lcp": 6479,
+  "fcp": 5486,
+  "tbt": 130,
+  "cls": 0,
+  "bloqueantes": [],
+  "lcp_elemento": ""
+ },
+ "https://nexus.aurzane.com/": {
+  "nota": 79,
+  "lcp": 4044,
+  "fcp": 3439,
+  "tbt": 110,
+  "cls": 0,
+  "bloqueantes": [],
+  "lcp_elemento": ""
+ },
+ "https://live.aurzane.com/": {
+  "nota": 78,
+  "lcp": 4143,
+  "fcp": 3353,
+  "tbt": 122,
+  "cls": 0,
+  "bloqueantes": [],
+  "lcp_elemento": ""
+ },
+ "https://learn.aurzane.com/": {
+  "nota": 79,
+  "lcp": 3975,
+  "fcp": 3675,
+  "tbt": 70,
+  "cls": 0,
+  "bloqueantes": [],
+  "lcp_elemento": ""
+ },
+ "https://build.aurzane.com/": {
+  "nota": 79,
+  "lcp": 4086,
+  "fcp": 3346,
+  "tbt": 90,
+  "cls": 0,
+  "bloqueantes": [],
+  "lcp_elemento": ""
+ },
+ "https://ovp.aurzane.com/": {
+  "nota": 67,
+  "lcp": 6004,
+  "fcp": 4268,
+  "tbt": 116,
+  "cls": 0,
+  "bloqueantes": [],
+  "lcp_elemento": ""
+ },
+ "https://build.aurzane.com/calculadora-finiquito/#bruto=24000&inicio=2020-03-01&fin=2026-11-17&motivo=imp&vacas=0&pend=0&pagas=14": {
+  "nota": 89,
+  "lcp": 2908,
+  "fcp": 2908,
+  "tbt": 126,
+  "cls": 0,
+  "bloqueantes": [],
+  "lcp_elemento": ""
+ },
+ "https://mind.aurzane.com/test-de-ansiedad/": {
+  "nota": 89,
+  "lcp": 2909,
+  "fcp": 2909,
+  "tbt": 112,
+  "cls": 0,
+  "bloqueantes": [],
+  "lcp_elemento": ""
+ }
+}
