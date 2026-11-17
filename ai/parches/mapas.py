@@ -2,7 +2,10 @@
 - sitemap-paginas.xml en cada dominio: todas sus páginas indexables (sin noindex, sin zonas privadas), con la URL canónica
   que declara la propia página y la fecha real de modificación del archivo.
 - robots.txt: quita líneas Sitemap que no apuntan a un .xml y declara todos los sitemaps que existen en ese dominio.
-No toca el resto de líneas del robots ni los sitemaps que escriben otros generadores."""
+No toca el resto de líneas del robots.
+17/11/2026 (auditoría final, puntos 19, 20 y 31): limpia también los sitemaps de los otros generadores de cada dominio:
+cada URL sale una sola vez (en el sitemap más específico), «index.html» pasa a «/», y fuera las páginas con noindex,
+las que redirigen y las que declaran como canónica otra dirección."""
 import os, re, sys, datetime, html
 
 BASE = os.path.expanduser('~/' + (sys.argv[1] if len(sys.argv) > 1 else 'www'))
@@ -11,6 +14,46 @@ FUERA_DIR = {'eliminar', 'wp-admin', 'wp-content', 'wp-includes', 'node_modules'
              'tiktok', 'youtube', 'ir', 'core', 'mi', 'img', 'boletin'}
 FUERA_ARCH = re.compile(r'^(404|admin.*|google[0-9a-f]+|guardados-almacen|mi-aurzane|portal|generar-informe|colegio|.*-cliente|informe-ejemplo|leer|articulo)\.html$')
 OTROS = {'aurzane.com': ['biblioteca/recientes/sitemap.xml']}
+
+def local(raiz, ruta):
+    ruta = ruta.split('?')[0].split('#')[0].lstrip('/')
+    for c in ([os.path.join(raiz, ruta, 'index.html')] if not ruta or ruta.endswith('/') else [os.path.join(raiz, ruta), os.path.join(raiz, ruta, 'index.html')]):
+        if os.path.isfile(c): return c
+    return ''
+
+
+def fuera(h, raiz, u):
+    """True si la URL no debe estar en un sitemap: noindex, redirección o canónica distinta."""
+    if not u.startswith('https://' + h + '/'): return True
+    f = local(raiz, u[len('https://' + h):])
+    if not f: return False   # páginas que genera el servidor: se dejan
+    try: t = open(f, encoding='utf-8', errors='ignore').read(15000)
+    except Exception: return False
+    if re.search(r'<meta[^>]+name=["\']robots["\'][^>]+noindex', t, re.I) or re.search(r'http-equiv=["\']refresh', t, re.I): return True
+    c = re.search(r'<link[^>]+rel=["\']canonical["\'][^>]+href=["\']([^"\']+)', t, re.I)
+    return bool(c and html.unescape(c.group(1)).rstrip('/') != u.rstrip('/'))
+
+
+def limpiar(h, raiz):
+    mapas = [f for f in os.listdir(raiz) if re.match(r'sitemap.*\.xml$', f)] + [m for m in OTROS.get(h, []) if os.path.exists(raiz + '/' + m)]
+    orden = sorted(mapas, key=lambda m: (m == 'sitemap-paginas.xml', m == 'sitemap.xml', m))   # los específicos primero
+    vistas, total = set(), 0
+    for m in orden:
+        p = raiz + '/' + m; t = open(p, encoding='utf-8', errors='ignore').read()
+        if '<urlset' not in t: continue
+        bloques = re.findall(r'<url>.*?</url>', t, re.S); nuevos = []
+        for b in bloques:
+            mm = re.search(r'<loc>\s*([^<\s]+)\s*</loc>', b)
+            if not mm: continue
+            u = html.unescape(mm.group(1)); u2 = re.sub(r'/index\.html$', '/', u)
+            if u2 in vistas or fuera(h, raiz, u2): continue
+            vistas.add(u2); nuevos.append(b.replace(mm.group(0), '<loc>' + html.escape(u2) + '</loc>') if u2 != u else b)
+        if len(nuevos) != len(bloques) or any(a != b for a, b in zip(nuevos, bloques)):
+            cab = t[:t.index('<url>')] if '<url>' in t else t[:t.index('</urlset>')]
+            open(p, 'w', encoding='utf-8').write(cab + '\n'.join(nuevos) + '\n</urlset>\n'); total += len(bloques) - len(nuevos)
+            print(f'{h}/{m}: {len(bloques) - len(nuevos)} entradas quitadas (duplicadas, noindex o redirigidas)')
+    return total
+
 
 for h in HOSTS:
     raiz = BASE + '/' + h + '/public_html'
@@ -52,3 +95,4 @@ for h in HOSTS:
     if nuevo != t:
         open(rb, 'w', encoding='utf-8').write(nuevo); print('robots actualizado', h)
     print(h, len(urls), 'páginas en sitemap-paginas.xml')
+    limpiar(h, raiz)
