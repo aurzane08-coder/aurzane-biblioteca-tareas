@@ -32,5 +32,5 @@ print('archivos actualizados:', n)
 pal = os.path.join(base, 'aurzane.com', 'public_html', 'aurzane-paleta.js')
 if os.path.exists(os.path.join(base, 'aurzane.com', 'eliminar', 'cifras-' + hoy, 'aurzane-estilo.js')):
     s = open(pal, encoding='utf-8').read()
-    t = re.sub(r'(aurzane-estilo\.js\?v=[0-9]+)(?:\.c[0-9]+)?', lambda m: m.group(1) + '.c' + datetime.datetime.now().strftime('%Y%m%d%H%M'), s)
+    t = re.sub(r'(aurzane-estilo\.js\?v=[0-9A-Za-z]+)(?:\.c[0-9]+)?', lambda m: m.group(1) + '.c' + datetime.datetime.now().strftime('%Y%m%d%H%M'), s)
     if t != s: open(pal, 'w', encoding='utf-8').write(t); print('versión nueva de aurzane-estilo.js en el cargador')

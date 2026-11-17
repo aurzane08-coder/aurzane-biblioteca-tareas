@@ -19,3 +19,4 @@ ovp.aurzane.com/colegio.html
 ovp.aurzane.com/generar-informe.html
 ovp.aurzane.com/informe-ejemplo.html
 ovp.aurzane.com/informe-opciones.js
+aurzane.com/aurzane-contenido.js

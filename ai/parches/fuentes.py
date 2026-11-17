@@ -52,13 +52,13 @@ def htaccess(dir_f):
 
 
 PALETA = '<script src="https://aurzane.com/aurzane-paleta.js"></script>'
-PRE_DS = re.compile(r'<link rel="preload" href="https://aurzane\.com/aurzane-ds\.css\?v=[0-9]+" as="style" data-azpre="1">')
+PRE_DS = re.compile(r'<link rel="preload" href="https://aurzane\.com/aurzane-ds\.css\?v=[0-9A-Za-z._-]+" as="style" data-azpre="1">')
 
 
 def version_ds():
     """Versión de la hoja común que carga aurzane-paleta.js; con ella se adelanta su descarga en cada página."""
     try:
-        m = re.search(r"aurzane-ds\.css\?v=([0-9]+)", open(base + '/aurzane.com/public_html/aurzane-paleta.js', encoding='utf-8').read())
+        m = re.search(r"aurzane-ds\.css\?v=([0-9A-Za-z._-]+)", open(base + '/aurzane.com/public_html/aurzane-paleta.js', encoding='utf-8').read())
         return m.group(1) if m else ''
     except Exception: return ''
 
