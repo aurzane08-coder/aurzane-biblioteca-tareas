@@ -2022,25 +2022,74 @@
   "url": "https://www.pexels.com/photo/30328856/",
   "src": "https://images.pexels.com/photos/30328856/pexels-photo-30328856.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
  },
- "auto-aurzane-com-colegios": {
-  "pid": "6929350",
-  "q": "books learning",
+ "promo-aurzane": {
+  "pid": "7015138",
+  "q": "sunrise mountains",
   "autor": "Pexels",
-  "url": "https://www.pexels.com/photo/6929350/",
-  "src": "https://images.pexels.com/photos/6929350/pexels-photo-6929350.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+  "url": "https://www.pexels.com/photo/7015138/",
+  "src": "https://images.pexels.com/photos/7015138/pexels-photo-7015138.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
  },
- "auto-aurzane-com-mapa": {
-  "pid": "11839922",
-  "q": "books learning",
+ "promo-biblioteca": {
+  "pid": "16058007",
+  "q": "library bookshelves",
   "autor": "Pexels",
-  "url": "https://www.pexels.com/photo/11839922/",
-  "src": "https://images.pexels.com/photos/11839922/pexels-photo-11839922.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+  "url": "https://www.pexels.com/photo/16058007/",
+  "src": "https://images.pexels.com/photos/16058007/pexels-photo-16058007.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
  },
- "auto-aurzane-com-novedades": {
-  "pid": "11839922",
-  "q": "books learning",
+ "promo-build": {
+  "pid": "7111592",
+  "q": "calculator coins desk",
   "autor": "Pexels",
-  "url": "https://www.pexels.com/photo/11839922/",
-  "src": "https://images.pexels.com/photos/11839922/pexels-photo-11839922.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+  "url": "https://www.pexels.com/photo/7111592/",
+  "src": "https://images.pexels.com/photos/7111592/pexels-photo-7111592.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "promo-colegios": {
+  "pid": "5212339",
+  "q": "teacher classroom",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/5212339/",
+  "src": "https://images.pexels.com/photos/5212339/pexels-photo-5212339.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "promo-ejercicios": {
+  "pid": "5431238",
+  "q": "calm woman breathing nature",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/5431238/",
+  "src": "https://images.pexels.com/photos/5431238/pexels-photo-5431238.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "promo-learn": {
+  "pid": "8085937",
+  "q": "student reading notes",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/8085937/",
+  "src": "https://images.pexels.com/photos/8085937/pexels-photo-8085937.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "promo-live": {
+  "pid": "38224331",
+  "q": "healthy breakfast fruit",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/38224331/",
+  "src": "https://images.pexels.com/photos/38224331/pexels-photo-38224331.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "promo-mind": {
+  "pid": "8053348",
+  "q": "person reflecting",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/8053348/",
+  "src": "https://images.pexels.com/photos/8053348/pexels-photo-8053348.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "promo-nexus": {
+  "pid": "5965728",
+  "q": "university students campus",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/5965728/",
+  "src": "https://images.pexels.com/photos/5965728/pexels-photo-5965728.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "promo-ovp": {
+  "pid": "6781671",
+  "q": "young student thinking future",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/6781671/",
+  "src": "https://images.pexels.com/photos/6781671/pexels-photo-6781671.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
  }
 }

@@ -716,15 +716,6 @@
     "facebook": "test-depresion",
     "threads": "test-autoestima"
    },
-   "2": {
-    "telegram": "libro-traductologia-neurocognicion-como-se-organiza-sistema",
-    "bluesky": "libro-la-regenta",
-    "mastodon": "libro-novelas-ejemplares-amorosas-zayas",
-    "instagram": "libro-emociones-politicas-ninos-ninas",
-    "facebook": "libro-subjetividades-emociones-politicas-maestros-maestras",
-    "threads": "libro-encontrar-nuestros-hijos-testimonio-madre",
-    "pinterest": "libro-familias-tejedoras-futuro-propuesta-investigacion-intervenci"
-   },
    "3": {
     "telegram": "frase-95241186",
     "bluesky": "frase-3adec0ca",
@@ -753,10 +744,21 @@
     "tiktok": "frase-76e98079"
    },
    "7": {
-    "tiktok": "cur-fa08043f6f"
+    "tiktok": "cur-83de1560e2",
+    "youtube": "cur-ea27fcda45"
    },
    "9": {
-    "tiktok": "frase-e99ed1e3"
+    "tiktok": "frase-7e16705b",
+    "youtube": "frase-069c1b0c"
+   },
+   "2": {
+    "telegram": "promo-aurzane",
+    "bluesky": "promo-mind",
+    "mastodon": "promo-biblioteca",
+    "instagram": "promo-ejercicios",
+    "facebook": "promo-ovp",
+    "threads": "promo-colegios",
+    "pinterest": "promo-nexus"
    }
   },
   "2026-11-19": {
@@ -767,15 +769,6 @@
     "instagram": "calc-sueldo",
     "facebook": "test-sueno",
     "threads": "calc-embarazo"
-   },
-   "2": {
-    "telegram": "biblio-learn",
-    "bluesky": "biblioteca",
-    "mastodon": "articulos",
-    "instagram": "biblio-live",
-    "facebook": "biblio-nexus",
-    "threads": "biblio-mind",
-    "pinterest": "biblio-build"
    },
    "3": {
     "telegram": "frase-29b7b81d",
@@ -805,10 +798,21 @@
     "tiktok": "frase-5db9c66e"
    },
    "7": {
-    "tiktok": "cur-6ed39a5dd2"
+    "tiktok": "cur-2b9bfbd041",
+    "youtube": "cur-6b094139bd"
    },
    "9": {
-    "tiktok": "frase-4121909e"
+    "tiktok": "frase-3ca42465",
+    "youtube": "frase-7e16705b"
+   },
+   "2": {
+    "telegram": "promo-live",
+    "bluesky": "promo-aurzane",
+    "mastodon": "promo-learn",
+    "instagram": "promo-build",
+    "facebook": "promo-mind",
+    "threads": "promo-nexus",
+    "pinterest": "promo-colegios"
    }
   },
   "2026-11-20": {
@@ -819,15 +823,6 @@
     "instagram": "test-satisfaccion",
     "facebook": "curso-metod",
     "threads": "test-bienestar"
-   },
-   "2": {
-    "telegram": "crea-l05-03",
-    "bluesky": "crea-l05-09",
-    "mastodon": "crea-l06-14",
-    "instagram": "crea-l05-02",
-    "facebook": "crea-l06-05",
-    "threads": "crea-l07-03",
-    "pinterest": "crea-l05-08"
    },
    "3": {
     "telegram": "frase-5082d522",
@@ -857,10 +852,21 @@
     "tiktok": "frase-3339fb61"
    },
    "7": {
-    "tiktok": "cur-2712364aef"
+    "tiktok": "cur-b2dd49b335",
+    "youtube": "cur-2712364aef"
    },
    "9": {
-    "tiktok": "frase-b629d12e"
+    "tiktok": "frase-2a05ffb2",
+    "youtube": "frase-436a2433"
+   },
+   "2": {
+    "telegram": "promo-colegios",
+    "bluesky": "promo-learn",
+    "mastodon": "promo-ejercicios",
+    "instagram": "promo-live",
+    "facebook": "promo-biblioteca",
+    "threads": "promo-aurzane",
+    "pinterest": "promo-build"
    }
   },
   "2026-11-21": {
@@ -871,15 +877,6 @@
     "instagram": "calc-reforma",
     "facebook": "test-autoestima",
     "threads": "test-satisfaccion"
-   },
-   "2": {
-    "telegram": "libro-programa-promocion-salud-mental-positiva-adultos",
-    "bluesky": "libro-pedagogia-sentidos-epistemologia-afectividad-transformacion-",
-    "mastodon": "libro-cuentos-de-amor-pardo-bazan",
-    "instagram": "libro-misericordia",
-    "facebook": "libro-marta-y-maria",
-    "threads": "libro-antropologia-sexualidad",
-    "pinterest": "libro-la-sirena-negra"
    },
    "3": {
     "telegram": "frase-0391eea7",
@@ -909,10 +906,21 @@
     "tiktok": "frase-1d3f1613"
    },
    "7": {
-    "tiktok": "cur-d8c8e23130"
+    "tiktok": "cur-6b094139bd",
+    "youtube": "cur-8e657999c3"
    },
    "9": {
-    "tiktok": "frase-bfc5dc8d"
+    "tiktok": "frase-b5f6ec03",
+    "youtube": "frase-205773d7"
+   },
+   "2": {
+    "telegram": "promo-learn",
+    "bluesky": "promo-colegios",
+    "mastodon": "promo-mind",
+    "instagram": "promo-ovp",
+    "facebook": "promo-build",
+    "threads": "promo-biblioteca",
+    "pinterest": "promo-aurzane"
    }
   },
   "2026-11-22": {
@@ -923,15 +931,6 @@
     "instagram": "test-personalidad",
     "facebook": "curso-neuro",
     "threads": "test-ansiedad"
-   },
-   "2": {
-    "telegram": "libro-emociones-politicas-ninos-ninas",
-    "bluesky": "libro-justicia-intercultural-bienestar-emocional-restableciendo-vi",
-    "mastodon": "libro-sonata-de-primavera",
-    "instagram": "libro-novelas-ejemplares-amorosas-zayas",
-    "facebook": "libro-nino-frente-imagen-filmica-ruptura-intento",
-    "threads": "libro-el-sombrero-de-tres-picos",
-    "pinterest": "libro-programa-terapia-asistida-animales-promocion-salud"
    },
    "3": {
     "telegram": "frase-b424a195",
@@ -959,10 +958,21 @@
     "youtube": "frase-bfc5dc8d"
    },
    "7": {
-    "tiktok": "cur-5827b4c76e"
+    "tiktok": "cur-a8a409df15",
+    "youtube": "cur-2fc91ef243"
    },
    "9": {
-    "tiktok": "frase-c5f24133"
+    "tiktok": "frase-b2b82371",
+    "youtube": "frase-9cea837d"
+   },
+   "2": {
+    "telegram": "promo-mind",
+    "bluesky": "promo-build",
+    "mastodon": "promo-nexus",
+    "instagram": "promo-learn",
+    "facebook": "promo-colegios",
+    "threads": "promo-ejercicios",
+    "pinterest": "promo-live"
    }
   },
   "2026-11-23": {
@@ -973,15 +983,6 @@
     "instagram": "test-ansiedad",
     "facebook": "calc-sueldo",
     "threads": "test-autocompasion"
-   },
-   "2": {
-    "telegram": "crea-l05-08",
-    "bluesky": "crea-l05-03",
-    "mastodon": "crea-l05-04",
-    "instagram": "crea-l05-01",
-    "facebook": "crea-l06-02",
-    "threads": "crea-l06-14",
-    "pinterest": "crea-l06-08"
    },
    "3": {
     "telegram": "frase-5e3e2ae7",
@@ -1009,10 +1010,21 @@
     "youtube": "frase-88b46a08"
    },
    "7": {
-    "tiktok": "cur-947e34c9af"
+    "tiktok": "cur-2fc833ad33",
+    "youtube": "cur-b2dd49b335"
    },
    "9": {
-    "tiktok": "frase-43c7f531"
+    "tiktok": "frase-f7ddd565",
+    "youtube": "frase-642dd1c0"
+   },
+   "2": {
+    "telegram": "promo-ejercicios",
+    "bluesky": "promo-ovp",
+    "mastodon": "promo-aurzane",
+    "instagram": "promo-nexus",
+    "facebook": "promo-learn",
+    "threads": "promo-live",
+    "pinterest": "promo-mind"
    }
   },
   "2026-11-24": {
@@ -1023,15 +1035,6 @@
     "instagram": "test-habitos",
     "facebook": "test-tdah",
     "threads": "curso-neuro"
-   },
-   "2": {
-    "telegram": "nc-ingenieria-en-tecnologias-industriales",
-    "bluesky": "nc-publicidad-y-relaciones-publicas",
-    "mastodon": "nc-criminologia",
-    "instagram": "nc-sociologia",
-    "facebook": "nc-educacion-infantil",
-    "threads": "nc-bellas-artes",
-    "pinterest": "nc-periodismo"
    },
    "3": {
     "telegram": "frase-5b980a2a",
@@ -1059,10 +1062,21 @@
     "youtube": "frase-5681e992"
    },
    "7": {
-    "tiktok": "cur-7d8fdd8c97"
+    "tiktok": "cur-cf0450f8c1",
+    "youtube": "cur-4fc2490712"
    },
    "9": {
-    "tiktok": "frase-ff372591"
+    "tiktok": "frase-d8300fcc",
+    "youtube": "frase-a68b08bf"
+   },
+   "2": {
+    "telegram": "promo-biblioteca",
+    "bluesky": "promo-live",
+    "mastodon": "promo-ovp",
+    "instagram": "promo-mind",
+    "facebook": "promo-ejercicios",
+    "threads": "promo-learn",
+    "pinterest": "promo-nexus"
    }
   },
   "2026-11-25": {
@@ -1073,15 +1087,6 @@
     "instagram": "test-sueno",
     "facebook": "calc-calorias",
     "threads": "test-tdah"
-   },
-   "2": {
-    "telegram": "lectura-sentirse-bien-david-d-burns",
-    "bluesky": "lectura-educar-en-el-asombro-catherine-l-ecuyer",
-    "mastodon": "lectura-crear-o-morir-andres-oppenheimer",
-    "instagram": "lectura-inteligencia-emocional-daniel-goleman",
-    "facebook": "lectura-la-casa-de-los-espiritus-isabel-allende",
-    "threads": "lectura-los-cinco-lenguajes-del-amor-gary-chapman",
-    "pinterest": "lectura-el-siglo-de-la-soledad-noreena-hertz"
    },
    "3": {
     "telegram": "frase-81d54602",
@@ -1109,10 +1114,21 @@
     "youtube": "frase-f7ddd565"
    },
    "7": {
-    "tiktok": "cur-ed1744a3b5"
+    "tiktok": "cur-5b579f7f14",
+    "youtube": "cur-df87f5f0c3"
    },
    "9": {
-    "tiktok": "frase-88b46a08"
+    "tiktok": "frase-f259550b",
+    "youtube": "frase-6763a887"
+   },
+   "2": {
+    "telegram": "promo-ovp",
+    "bluesky": "promo-biblioteca",
+    "mastodon": "promo-build",
+    "instagram": "promo-colegios",
+    "facebook": "promo-nexus",
+    "threads": "promo-mind",
+    "pinterest": "promo-learn"
    }
   },
   "2026-11-26": {
@@ -1123,15 +1139,6 @@
     "instagram": "calc-embarazo",
     "facebook": "test-satisfaccion",
     "threads": "test-personalidad"
-   },
-   "2": {
-    "telegram": "auto-aurzane-com-colegios",
-    "bluesky": "auto-aurzane-com-novedades",
-    "mastodon": "auto-aurzane-com-mapa",
-    "instagram": "biblio-mind",
-    "facebook": "biblio-learn",
-    "threads": "biblio-nexus",
-    "pinterest": "biblio-live"
    },
    "3": {
     "telegram": "frase-30698848",
@@ -1159,10 +1166,21 @@
     "youtube": "frase-f259550b"
    },
    "7": {
-    "tiktok": "cur-114709696a"
+    "tiktok": "cur-5b579f7f14",
+    "youtube": "cur-ccf7b022bd"
    },
    "9": {
-    "tiktok": "frase-f56e3629"
+    "tiktok": "frase-3adec0ca",
+    "youtube": "frase-6a62d220"
+   },
+   "2": {
+    "telegram": "promo-nexus",
+    "bluesky": "promo-ejercicios",
+    "mastodon": "promo-live",
+    "instagram": "promo-biblioteca",
+    "facebook": "promo-aurzane",
+    "threads": "promo-ovp",
+    "pinterest": "promo-colegios"
    }
   },
   "2026-11-27": {
@@ -1173,15 +1191,6 @@
     "instagram": "calc-hipoteca",
     "facebook": "ovp",
     "threads": "test-sueno"
-   },
-   "2": {
-    "telegram": "crea-l06-02",
-    "bluesky": "crea-l05-02",
-    "mastodon": "crea-l05-08",
-    "instagram": "crea-l05-04",
-    "facebook": "crea-l05-03",
-    "threads": "crea-l05-01",
-    "pinterest": "crea-l06-05"
    },
    "3": {
     "telegram": "frase-5f349021",
@@ -1210,10 +1219,21 @@
     "youtube": "frase-9b2daa33"
    },
    "7": {
-    "tiktok": "cur-ea27fcda45"
+    "tiktok": "cur-df87f5f0c3",
+    "youtube": "cur-51017ffc8d"
    },
    "9": {
-    "tiktok": "frase-b83c1781"
+    "tiktok": "frase-069c1b0c",
+    "youtube": "frase-147cf969"
+   },
+   "2": {
+    "telegram": "promo-build",
+    "bluesky": "promo-nexus",
+    "mastodon": "promo-colegios",
+    "instagram": "promo-aurzane",
+    "facebook": "promo-live",
+    "threads": "promo-biblioteca",
+    "pinterest": "promo-ejercicios"
    }
   },
   "2026-11-28": {
@@ -1260,10 +1280,12 @@
     "youtube": "frase-b0b292c5"
    },
    "7": {
-    "tiktok": "cur-caacb3bc64"
+    "tiktok": "cur-5b579f7f14",
+    "youtube": "cur-0067f9c7bd"
    },
    "9": {
-    "tiktok": "frase-b1cb5465"
+    "tiktok": "frase-b672c861",
+    "youtube": "frase-7792ed52"
    }
   },
   "2026-11-29": {
@@ -1274,15 +1296,6 @@
     "instagram": "ovp",
     "facebook": "test-autocompasion",
     "threads": "calc-reforma"
-   },
-   "2": {
-    "telegram": "lectura-como-hacer-que-te-pasen-cosas-buenas-marian-rojas-estape",
-    "bluesky": "lectura-el-valor-de-la-atencion-johann-hari",
-    "mastodon": "lectura-el-poder-de-los-introvertidos-susan-cain",
-    "instagram": "lectura-las-madres-carmen-mola",
-    "facebook": "lectura-la-rueda-de-la-vida-elisabeth-kubler-ross",
-    "threads": "lectura-el-encantador-de-perros-cesar-millan",
-    "pinterest": "lectura-mindset-carol-s-dweck"
    },
    "3": {
     "telegram": "frase-1d292112",
@@ -1310,10 +1323,21 @@
     "youtube": "frase-288e4856"
    },
    "7": {
-    "tiktok": "cur-c1c9d6339f"
+    "tiktok": "cur-8e657999c3",
+    "youtube": "cur-6ed39a5dd2"
    },
    "9": {
-    "tiktok": "frase-4f7eb0c1"
+    "tiktok": "frase-9cf4bea6",
+    "youtube": "frase-13a97ffe"
+   },
+   "2": {
+    "telegram": "promo-aurzane",
+    "bluesky": "promo-mind",
+    "mastodon": "promo-biblioteca",
+    "instagram": "promo-ejercicios",
+    "facebook": "promo-ovp",
+    "threads": "promo-build",
+    "pinterest": "promo-live"
    }
   },
   "2026-11-30": {
@@ -1359,10 +1383,12 @@
     "youtube": "frase-d538ea6a"
    },
    "7": {
-    "tiktok": "cur-cdd19efff6"
+    "tiktok": "cur-fa08043f6f",
+    "youtube": "cur-947e34c9af"
    },
    "9": {
-    "tiktok": "frase-a1999f3e"
+    "tiktok": "frase-6763a887",
+    "youtube": "frase-83bb2786"
    }
   }
  },
