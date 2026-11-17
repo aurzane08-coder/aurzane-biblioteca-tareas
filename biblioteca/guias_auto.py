@@ -7,7 +7,7 @@ empezando por las que más aparecen en Google (seo/resumen.json), con la IA y co
 - El título pasa de «ficha del libro» a «resumen e ideas clave».
 Las guías se guardan en biblioteca/guias_auto.json y se vuelven a poner solas si un despliegue rehace la página.
 Copia previa de cada página en www/aurzane.com/eliminar/guias-FECHA/. Entradas: GEMINI_API_KEY, GITHUB_TOKEN, SSH, SG_DEST."""
-import json, os, re, sys, html, subprocess, datetime, urllib.request
+import json, os, re, sys, html, time, subprocess, datetime, urllib.request, urllib.error
 R = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 F = os.path.join(R, 'biblioteca', 'guias_auto.json')
 SSH = os.environ.get('SSH', ''); DEST = os.environ.get('SG_DEST', '')
@@ -25,6 +25,10 @@ def remoto(orden, entrada=None):
 def post(url, datos, cab):
     try:
         with urllib.request.urlopen(urllib.request.Request(url, json.dumps(datos).encode(), cab), timeout=120) as r: return json.load(r)
+    except urllib.error.HTTPError as e:
+        try: cuerpo = e.read().decode()[:160]
+        except Exception: cuerpo = ''
+        print('IA', e.code, cuerpo); return None
     except Exception as e: print('IA', str(e)[:100]); return None
 
 
@@ -39,9 +43,11 @@ def ia(prompt):
     tk = os.environ.get('GITHUB_TOKEN', '')
     for m in ('openai/gpt-4.1', 'openai/gpt-4.1-mini'):
         if not tk: break
-        j = post('https://models.github.ai/inference/chat/completions', {'model': m, 'messages': [{'role': 'user', 'content': prompt}], 'temperature': 0.3, 'response_format': {'type': 'json_object'}},
+        j = post('https://models.github.ai/inference/chat/completions', {'model': m, 'messages': [{'role': 'user', 'content': prompt}], 'temperature': 0.3},
                  {'Content-Type': 'application/json', 'Authorization': 'Bearer ' + tk})
-        try: return json.loads(j['choices'][0]['message']['content'])
+        try:
+            t = j['choices'][0]['message']['content']
+            return json.loads(t[t.index('{'):t.rindex('}') + 1])
         except Exception: pass
     return None
 
@@ -83,6 +89,7 @@ pend = [f for f in sin if f in guias]
 nuevas = 0
 for f in [f for f in sin if f not in guias]:
     if nuevas >= POR_DIA: break
+    time.sleep(6)   # sin pisar el cupo por minuto de la IA
     p = remoto(f'cat {DIR}/{f}')
     t = re.search(r'<h1>(.*?)</h1>', p); a = re.search(r'<p class="autores">(.*?)</p>', p); rs = re.search(r'<p class="resumen">(.*?)</p>', p)
     if not t: continue
@@ -96,7 +103,9 @@ for f in [f for f in sin if f not in guias]:
            '"faq": [["pregunta frecuente", "respuesta de 25 a 60 palabras"], ["…", "…"], ["…", "…"]]}')
     ok = (isinstance(g, dict) and g.get('conozco') and isinstance(g.get('ideas'), list) and 4 <= len(g['ideas']) <= 7 and isinstance(g.get('faq'), list) and len(g['faq']) >= 3
           and all(isinstance(x, list) and len(x) == 2 for x in g['faq']) and 300 <= len(g.get('trata', '')) <= 1100 and g.get('para') and g.get('psico'))
-    if not ok: print('sin guía (la IA no conoce el libro o la respuesta no vale):', titulo); guias[f] = {'saltar': True, 'fecha': HOY}; continue
+    if g is None: print('IA sin respuesta (cupo o caída): se reintenta otro día'); break
+    if isinstance(g, dict) and g.get('conozco') is False: print('la IA no conoce el libro, se salta:', titulo); guias[f] = {'saltar': True, 'fecha': HOY}; continue
+    if not ok: print('respuesta no válida, se reintenta otro día:', titulo); continue
     g = {k: (v.replace('—', ',') if isinstance(v, str) else v) for k, v in g.items()}
     guias[f] = {'titulo': titulo, 'fecha': HOY, **{k: g[k] for k in ('trata', 'ideas', 'para', 'psico')}, 'faq': g['faq'][:4]}
     pend.append(f); nuevas += 1
