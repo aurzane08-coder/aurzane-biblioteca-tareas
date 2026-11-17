@@ -455,6 +455,7 @@
 ./alemania/xu-exponential-university-of-applied-sciences/index.html
 ./alemania/zeppelin-university-a-university-between-business-culture-media-and-politics/index.html
 ./alemania/zittau-gorlitz-university-of-applied-sciences/index.html
+./anunciate/index.html
 ./argentina/ciudad/bahia-blanca/index.html
 ./argentina/ciudad/buenos-aires/index.html
 ./argentina/ciudad/ciudad-autonoma-de-buenos-aires/index.html
