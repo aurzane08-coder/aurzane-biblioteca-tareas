@@ -56,7 +56,7 @@ jobs:
       TIKTOK_CLIENT_KEY: ${{ secrets.TIKTOK_CLIENT_KEY }}
       TIKTOK_CLIENT_SECRET: ${{ secrets.TIKTOK_CLIENT_SECRET }}
       TIKTOK_REFRESH_INICIAL: ${{ secrets.TIKTOK_REFRESH_TOKEN }}
-      TIKTOK_PUBLICO: "1"  # TikTok aprobó la app el 12/11/2026: los vídeos se publican directamente en público
+      TIKTOK_PUBLICO: "1"  # intenta publicar en público; mientras TikTok no audite la app, el vídeo va como borrador a la bandeja (redes.py)
       X_API_KEY: ${{ secrets.X_API_KEY }}
       X_API_SECRET: ${{ secrets.X_API_SECRET }}
       X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
@@ -109,6 +109,9 @@ jobs:
           T=${T:-$TIKTOK_REFRESH_INICIAL}
           [ -z "$T" ] && exit 0
           echo "::add-mask::$T"; echo "TIKTOK_REFRESH_TOKEN=$T" >> $GITHUB_ENV
+      - name: Frases de autores clásicos (Wikiquote), cada lunes o si faltan
+        if: env.ACCION == 'planificar'
+        run: if [ "$(date +%u)" = 1 ] || [ ! -f marketing/frases_web.json ]; then python3 marketing/frases_web.py || true; fi
       - name: Comprobar redes
         if: env.ACCION == 'verificar' || env.ACCION == 'planificar'
         run: python3 marketing/mk.py verificar | sed 's/^/::notice title=Redes::/'; python3 marketing/mk.py seguidores || true

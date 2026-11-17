@@ -6,7 +6,15 @@ D = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, D)
 import mk
 
-DUR = {'frase': 12, 'curiosidad': 14}
+DUR = {'frase': 12, 'curiosidad': 14}   # mínimos
+
+
+def duracion(p):
+    """Tiempo justo para leer el texto con calma y que el vídeo respire (17/11/2026): unas 2,3 palabras por segundo
+    más un margen para la entrada y la salida. Frases de 12 a 22 s; curiosidades de 15 a 30 s."""
+    palabras = len(' '.join(str(p.get(k) or '') for k in ('titulo', 'texto', 'autor') if k != 'texto' or p.get('tipo') != 'frase').split())
+    if p.get('tipo') == 'frase': return max(12, min(22, round(palabras / 2.3) + 7))
+    return max(15, min(30, round(palabras / 2.6) + 8))
 V = 'm2-'  # versión de los vídeos: m2 = con música y solo la marca arriba (la dirección web va en la descripción)
 # Música de fondo: Kevin MacLeod (incompetech.com), licencia CC BY 4.0. Uso comercial y monetización permitidos citando el tema,
 # por eso cada publicación de vídeo lleva el crédito (mk.credito_musica). Calma para frases, más alegre para tests y calculadoras.
@@ -119,8 +127,10 @@ def fondo(p):
     if os.environ.get('PIXABAY_KEY') and int(hashlib.md5((p['id'] + 'px').encode()).hexdigest(), 16) % 2 == 0:
         q0 = VQ.get(p['id']) or (NATURALEZA[int(hashlib.md5(p['id'].encode()).hexdigest(), 16) % len(NATURALEZA)] if p['tipo'] in ('frase', 'curiosidad') else 'calm nature')
         u = pixabay(q0, p['id'])
-        if u: return u
-    # Fondo variado: se evita repetir cualquiera de los últimos 60 fondos usados (marketing/fondos_usados.json).
+        usados = mk.leer('fondos_usados.json', [])
+        if u and u not in usados:
+            mk.guardar('fondos_usados.json', (usados + [u])[-150:]); return u
+    # Fondo variado: se evita repetir cualquiera de los últimos 150 fondos usados (marketing/fondos_usados.json).
     # Primero el ambiente propio del producto; si ya se usaron todos, cualquier otro ambiente de la biblioteca.
     lib = mk.leer('biblioteca_videos.json', {})
     usados = mk.leer('fondos_usados.json', [])
@@ -131,7 +141,7 @@ def fondo(p):
     resto = [u for u in todos if u not in usados] or todos
     lista = propios or resto
     u = lista[h % len(lista)]
-    mk.guardar('fondos_usados.json', (usados + [u])[-60:])
+    mk.guardar('fondos_usados.json', (usados + [u])[-150:])
     return u
 
 
@@ -187,7 +197,7 @@ def generar(dias=2):
     json.dump(capas, open('/tmp/capas.json', 'w'), ensure_ascii=False)
     subprocess.run(['node', os.path.join(D, 'tarjeta.js'), '/tmp/capas.json', os.environ.get('FUENTES', '/tmp/f/node_modules/@fontsource')], check=True)
     for p in pend:
-        i = p['id']; dur = DUR.get(p['tipo'], 15)
+        i = p['id']; dur = duracion(p)
         src = f'/tmp/fondo-{i}.mp4'
         try:
             req = urllib.request.Request(fondo(p), headers={'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36',

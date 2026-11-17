@@ -127,6 +127,8 @@ def catalogo():
     # frases de superación (sobre todo para Instagram)
     import frases
     lista = [(t, 'AURZANE') for t in frases.ORIGINALES] + list(frases.CLASICAS)
+    try: lista += [tuple(x) for x in json.load(open(os.path.join(D, 'frases_web.json'), encoding='utf-8'))]   # clásicos de Wikiquote (frases_web.py)
+    except Exception: pass
     mundos = ['mind', 'live', 'learn', 'aurzane', 'nexus', 'build']
     for t, a in lista:
         fid = 'frase-' + hashlib.md5(t.encode()).hexdigest()[:8]
