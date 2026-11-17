@@ -30,6 +30,8 @@ jobs:
       - uses: actions/checkout@v4
       - name: Exportar Supabase
         run: python3 -u univ/exportar.py
+      - name: Datos básicos de cada país (REST Countries)
+        run: python3 -u univ/paises_info.py univ/data || true
       - name: Generar portal
         run: python3 -u univ/gen/gen.py univ/data salida/universidades
       - name: Lista de archivos y retirados

@@ -333,3 +333,9 @@ table.tnc td.num{color:var(--text-dim);width:32px}
 .precio{flex:1 1 200px;border:1px solid var(--line,rgba(127,127,127,.35));border-radius:14px;padding:14px 16px}
 .precio b{display:block;font-size:1.8rem;line-height:1.1}
 .precio span{color:var(--text-dim);font-size:.9rem}
+/* Estudiar en [país] (auditoría final) */
+.estudiar-en .datos{display:grid;grid-template-columns:max-content 1fr;gap:6px 16px;margin:6px 0 10px}
+.estudiar-en .datos dt{color:var(--text-dim)}
+.estudiar-en .top-rank{margin:6px 0;padding-left:1.3em;line-height:1.8}
+.estudiar-en .top-rank small{color:var(--text-dim)}
+.estudiar-en .pasos{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 0}

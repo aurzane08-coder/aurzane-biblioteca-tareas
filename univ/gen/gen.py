@@ -107,6 +107,7 @@ UNIS = []
 RANK = cargar_json('ranking.json') or {'dom': {}, 'nom': {}}
 # patrocinios (17/11/2026, etapa 4, tarea 46): solo los vigentes hoy; caducan solos
 PRECIO = (cargar_json('patrocinios.json') or {}).get('precio') or {}
+PINFO = cargar_json('paises_info.json') or {}   # idiomas, moneda y capital (univ/paises_info.py)
 PATRO = {x['id']: x for x in ((cargar_json('patrocinios.json') or {}).get('lista') or [])
          if x.get('id') and x.get('url', '').startswith('https://') and str(x.get('desde', '')) <= datetime.date.today().isoformat() <= str(x.get('hasta', '9999'))}
 
@@ -652,10 +653,10 @@ def pagina_pais(p):
         lead = f'Las {len(us)} universidades del sistema universitario español con sus {fmt(nc)} grados oficiales vigentes, según el Registro de Universidades, Centros y Títulos (RUCT). Filtra por comunidad autónoma, rama, ciudad o tipo.'
     elif nivel == 'basico':
         nombres = [u['nombre'] for u in us[:3]]
-        tit = f'Universidades en {p}: las {len(us)} principales y dónde están (2026)'
+        tit = next(t for t in (f'Universidades en {p}: ranking y cómo estudiar allí (2026)', f'Universidades en {p}: ranking y cómo estudiar allí', f'Universidades en {p}: las {len(us)} principales (2026)', f'Universidades en {p}') if len(t) <= 60 or t == f'Universidades en {p}')
         lead = f'Las {len(us)} universidades principales de {p}' + (f', como {", ".join(nombres[:-1])} y {nombres[-1]}' if len(nombres) > 1 else '') + '. Consulta su ciudad, si son públicas o privadas y su web oficial para estudiar en ' + p + '.'
     else:
-        tit = f'Universidades en {p}: {fmt(len(us))} instituciones{" y " + fmt(nc) + " carreras" if nivel == "programas" else ""} | AURZANE NEXUS'
+        tit = next(t for t in (f'Universidades en {p}: ranking, carreras y cómo estudiar allí', f'Universidades en {p}: ranking y carreras', f'Universidades en {p}') if len(t) <= 60 or t == f'Universidades en {p}')
         lead = f'{fmt(len(us))} universidades e institutos de educación superior en {p}' + (f', con {fmt(nc)} carreras.' if nivel == 'programas' else '.') + ' Filtra por ciudad, tipo y área.'
     jl = {'@context': 'https://schema.org', '@type': 'ItemList', 'name': f'Universidades de {p}', 'numberOfItems': len(us),
           'itemListElement': [{'@type': 'ListItem', 'position': i + 1, 'url': f'{SITIO}{BASE}{PSLUG[p]}/{u["slug"]}/', 'name': u['nombre']} for i, u in enumerate(sorted(us, key=lambda x: -x['n'])[:50])]}
@@ -677,6 +678,7 @@ def pagina_pais(p):
 </div></section>
 {panel_listado(p, us)}
 <div class="wrap">{ciudades_html}{todas}
+{estudiar_en(p, us)}
 <section class="card guia-auto" style="margin-top:24px"><h2>Cómo es el acceso a la universidad en {e(p)}</h2>{''.join('<p>' + e(x) + '</p>' for x in _acceso(p))}<h3>Cómo elegir universidad y carrera</h3><p>{e(_ELEGIR)}</p></section>
 <p class="fuente">{fuente_pais(p)}</p></div>
 </main>''' + pie()
@@ -685,6 +687,28 @@ def pagina_pais(p):
     if p not in ('Estados Unidos',):
         for c in [c for c, n in ciudades.items() if n >= 2]:
             pagina_ciudad(p, c, [u for u in us if u['ciudad'] == c])
+
+
+def estudiar_en(p, us):
+    """Estudiar en [país]: lo esencial con datos reales (auditoría final, punto 44): idiomas, moneda, capital,
+    las universidades mejor situadas en el ranking mundial abierto y los siguientes pasos dentro de AURZANE."""
+    iso = PAISES[p][0].lower(); pi = PINFO.get(iso) or {}
+    rk = sorted(((rank_de(u), u) for u in us if rank_de(u)), key=lambda x: x[0][0])[:5]
+    filas = []
+    if pi.get('idiomas'): filas.append(('Idiomas oficiales', ', '.join(pi['idiomas'])))
+    if pi.get('moneda'): filas.append(('Moneda', ', '.join(pi['moneda'])))
+    if pi.get('capital'): filas.append(('Capital', pi['capital']))
+    npub = sum(1 for u in us if u['tipo'] == 'Pública')
+    filas.append(('En el catálogo', f'{fmt(len(us))} instituciones, {fmt(npub)} públicas'))
+    datos_h = '<dl class="datos">' + ''.join(f'<dt>{e(a)}</dt><dd>{e(b)}</dd>' for a, b in filas) + '</dl>'
+    top = ''
+    if rk:
+        top = ('<h3>Las mejor situadas en el ranking mundial</h3><ol class="top-rank">' + ''.join(
+            f'<li><a href="{BASE}{PSLUG[p]}/{u["slug"]}/">{e(u["nombre"])}</a> <small>n.º {fmt(r[0])} del mundo</small></li>' for r, u in rk) +
+            f'</ol><p class="sub">Ranking abierto por citas científicas (OpenAlex). <a href="{BASE}acerca/#ranking">Cómo se calcula</a>.</p>')
+    pasos = (f'<p class="pasos"><a class="btn btn-luz" href="https://ovp.aurzane.com/">Haz el test vocacional gratis</a> '
+             f'<a class="btn btn-claro" href="{BASE}comparar/">Compara universidades</a></p>')
+    return f'<section class="card estudiar-en" style="margin-top:24px"><h2>Estudiar en {e(p)}: lo esencial</h2>{datos_h}{top}{pasos}</section>'
 
 
 def fuente_pais(p):
@@ -814,6 +838,10 @@ def ficha(u, vecinas):
     if u['extra'].get('anio'): meta.append(f'<li>📜 Creada en {e(u["extra"]["anio"])}</li>')
     if n: meta.append(f'<li>📚 {fmt(n)} {palabra}</li>')
     tit = f'{u["nombre"]}: ' + (f'{fmt(n)} {palabra}' if n else 'carreras, ciudad y web') + f' | Universidades de {p}'
+    rk_u = rank_de(u)
+    if rk_u and not es_es:   # lo que diferencia la ficha de la web oficial: su puesto en el ranking mundial (auditoría final, punto 45)
+        tit = next((t for t in (f'{u["nombre"]}: n.º {fmt(rk_u[0])} del mundo y {fmt(n)} {palabra}' if n else '', f'{u["nombre"]}: n.º {fmt(rk_u[0])} del mundo, ranking y carreras',
+                                 f'{u["nombre"]}: n.º {fmt(rk_u[0])} del mundo') if t and len(t) <= 65), tit)
     hf, cred = hero_foto(u.get('foto_archivo') or u.get('foto_ciudad'), 'Foto' if u.get('foto_tipo') == 'u' else 'Foto de ' + (u['ciudad'] or p))
     # ficha casi vacía (sin carreras, descripción ni foto): visible para quien llega, pero fuera de Google y del sitemap
     # hasta que tenga contenido propio (auditoría 16/11/2026: 2.395 páginas «descubiertas, sin indexar» por contenido escaso)
