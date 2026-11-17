@@ -1,8 +1,8 @@
 name: Clips (Clips-All)
 # Recorta vídeos autorizados de campañas de clipping (clips/fuentes.json) en Shorts verticales con subtítulos y los sube a Clips-All y a TikTok.
 on:
-  schedule:
-    - cron: '17 8,13,19 * * *'   # 9:17, 14:17 y 20:17 en España: un clip en cada pasada
+  # schedule: desactivado el 17/11/2026: se dejó la campaña de Reental (Clipeamos). Para una campaña nueva, añadir fuentes en clips/fuentes.json y volver a activar
+  #   - cron: '17 8,13,19 * * *'
   push:
     paths: ['clips/fuentes.json', '.github/workflows/clips.yml', 'marketing/web/youtube/**']
   workflow_dispatch:
