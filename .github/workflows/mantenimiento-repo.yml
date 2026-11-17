@@ -1,0 +1,22 @@
+name: Mantenimiento del repositorio
+# A mano: borra una rama que ya no se usa (por ejemplo, material de campañas abandonadas) para que GitHub libere su peso.
+on:
+  workflow_dispatch:
+    inputs:
+      rama:
+        description: 'Rama a borrar (nunca main)'
+        required: true
+permissions:
+  contents: write
+jobs:
+  r:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - env:
+          RAMA: ${{ github.event.inputs.rama }}
+        run: |
+          [ "$RAMA" = "main" ] && { echo "main no se borra"; exit 1; }
+          git push origin --delete "$RAMA" && echo "::notice::Rama $RAMA borrada"
