@@ -12,6 +12,7 @@
  "paises": 55,
  "libros": 748,
  "fichas": 576,
+ "calc_build": 10,
  "cursos": {
   "dormir-mejor": {
    "temas": 2,
