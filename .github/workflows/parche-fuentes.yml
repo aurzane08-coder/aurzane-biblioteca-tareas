@@ -1,0 +1,26 @@
+name: Fuentes propias
+on:
+  push:
+    paths: ['ai/parches/fuentes.py']
+  schedule:
+    - cron: '13 5 * * *'
+  workflow_dispatch:
+  workflow_run:   # tras cada despliegue, para que las páginas nuevas entren el mismo día
+    workflows: ['Desplegar archivos a SiteGround']
+    types: [completed]
+jobs:
+  p:
+    runs-on: ubuntu-latest
+    env:
+      SG_KEY: ${{ secrets.SG_KEY }}
+      SG_HOST: ${{ secrets.SG_HOST }}
+      SG_USER: ${{ secrets.SG_USER }}
+      SG_PORT: ${{ secrets.SG_PORT }}
+      SG_PASS: ${{ secrets.SG_PASS }}
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          mkdir -p ~/.ssh && printf '%s\n' "$SG_KEY" | tr -d '\r' > ~/.ssh/id && chmod 600 ~/.ssh/id
+          if [ -n "$SG_PASS" ]; then ssh-keygen -p -P "$SG_PASS" -N "" -f ~/.ssh/id >/dev/null; fi
+          SSH="ssh -i $HOME/.ssh/id -p ${SG_PORT:-18765} -o StrictHostKeyChecking=accept-new $SG_USER@$SG_HOST"
+          $SSH 'python3 - www' < ai/parches/fuentes.py
