@@ -96,5 +96,10 @@
    "donde": "seguro-viaje",
    "url": "https://www.ergo-segurosdeviaje.es/"
   }
+ },
+ "udemy": {
+  "_info": "Udemy por Impact (cuenta del socio). enlace = enlace de seguimiento que da Impact; se le añade ?u=<página de Udemy> para llevar a una búsqueda concreta (probado el 17/11/2026: llega a la búsqueda en español con el seguimiento). Vacío = no se muestra nada.",
+  "enlace": "https://trk.udemy.com/KB5Zmx",
+  "busqueda": "https://www.udemy.com/courses/search/?q={q}&lang=es&sort=relevance"
  }
 }

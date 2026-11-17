@@ -228,7 +228,10 @@ pub = [{'id': x['id'], 't': x['titulo'], 'a': x['autor'], 'temas': x['temas'], '
         'u': amazon(x), 'f': f'https://aurzane.com/libros/{x["id"]}/', 'r': (x.get('resumen') or '')[:220], 'y': x.get('anio', ''), 'd': x['fecha'],
         'tend': x.get('tendencia', '') if x.get('tendencia_fecha', '') >= hace35 else ''} for x in lista]
 json.dump(pub, open(os.path.join(OUT, 'libros.json'), 'w', encoding='utf-8'), ensure_ascii=False, separators=(',', ':'))
-open(os.path.join(OUT, 'afiliados.js'), 'w', encoding='utf-8').write('window.__azAfil=' + json.dumps({k: {'n': v['nombre'], 'd': v['donde'], 'u': awin(k, v['url'])} for k, v in AF['programas'].items() if k in activos and v.get('url')}, ensure_ascii=False) + ';')
+_afil = {k: {'n': v['nombre'], 'd': v['donde'], 'u': awin(k, v['url'])} for k, v in AF['programas'].items() if k in activos and v.get('url')}
+if (AF.get('udemy') or {}).get('enlace'):   # Udemy por Impact (17/11/2026): ocupa el hueco «cursos» de LEARN, con cursos en español
+    _afil = {'udemy': {'n': 'Udemy', 'd': 'cursos', 'u': AF['udemy']['enlace'] + '?u=' + urllib.parse.quote('https://www.udemy.com/courses/search/?q=curso&lang=es&sort=relevance', safe='')}, **_afil}
+open(os.path.join(OUT, 'afiliados.js'), 'w', encoding='utf-8').write('window.__azAfil=' + json.dumps(_afil, ensure_ascii=False) + ';')
 # versión .js para que los tests y artículos de los subdominios la carguen sin problemas de CORS
 open(os.path.join(OUT, 'libros.js'), 'w', encoding='utf-8').write('window.__azLibros=' + json.dumps(pub, ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/') + ';')
 

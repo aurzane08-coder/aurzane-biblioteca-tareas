@@ -149,6 +149,25 @@ def portada_web(c):
 rq = urllib.request.Request(f'{SB}/rest/v1/rpc/course_catalog_public', data=b'{}', headers={'apikey': KEY, 'Content-Type': 'application/json'})
 with urllib.request.urlopen(rq, timeout=60) as r: cursos = json.load(r)
 meta = leer('meta.json', {})
+# Udemy (17/11/2026, etapa 4, tarea 46): al final de cada curso, búsquedas de cursos en español sobre sus temas, con el
+# enlace de afiliado de Impact. Los temas salen solos de las etiquetas del curso; sin enlace en tienda/afiliados.json, no sale nada.
+try: UDEMY = json.load(open(os.path.join(R, '..', 'tienda', 'afiliados.json'), encoding='utf-8')).get('udemy') or {}
+except Exception: UDEMY = {}
+
+
+def udemy_caja(c):
+    if not UDEMY.get('enlace'): return ''
+    tit = c['titulo'].lower(); temas = []
+    for t in (c['meta'].get('etiquetas') or []):
+        if 'gratis' in t or 'curso' in t or len(temas) == 3 or any(t in x or x in t for x in temas): continue
+        temas.append(t)
+    if not temas: return ''
+    enl = lambda q: UDEMY['enlace'] + '?u=' + urllib.parse.quote(UDEMY['busqueda'].replace('{q}', urllib.parse.quote_plus(q)), safe='')
+    chips = ''.join(f'<a class="ud-chip" href="{E(enl(t))}" target="_blank" rel="sponsored nofollow noopener" data-socio="udemy">{E(t[:1].upper() + t[1:])} ↗</a>' for t in temas)
+    return ('<aside class="az-socio ud-caja" data-nosnippet><div class="ud-cab"><span class="ud-marca">Udemy</span><h2>¿Quieres ir más allá?</h2></div>'
+            '<p>Cuando termines este curso gratis, en Udemy encontrarás cursos en español, de pago, para profundizar en estos temas:</p>'
+            f'<div class="ud-chips">{chips}</div>'
+            '<p class="ud-aviso">Enlaces de afiliado: si compras un curso, AURZANE recibe una comisión sin coste extra para ti. Este curso de AURZANE es y seguirá siendo gratis.</p></aside>')
 seo = leer('seo.json', {})
 salud = {'fecha': HOY, 'cursos': []}
 
@@ -262,6 +281,11 @@ for c in cursos:
                '.tem summary{cursor:pointer;padding:14px 18px;font-weight:600;display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}.tem .n{color:var(--oro);font-size:.85rem}.tem .t{margin-left:auto;color:var(--suave);font-weight:400;font-size:.88rem}'
                '.tem ol{margin:0 18px 16px 34px;padding:0}.tem ol li{padding:4px 0;display:flex;gap:10px}.tem ol .t{margin-left:auto}.tem p{margin:0 18px 8px;color:var(--suave)}'
                '.caja{background:var(--superficie);border:1px solid var(--linea);border-radius:16px;padding:20px 22px;margin:18px 0}.fuentes{font-size:.9rem;color:var(--suave)}'
+               '.ud-caja{margin:34px 0 10px;padding:20px 22px;border-radius:16px;border:1px solid var(--linea);background:var(--superficie)}.ud-cab{display:flex;align-items:center;gap:12px;flex-wrap:wrap}'
+               '.ud-cab h2{margin:0;font-size:1.15rem}.ud-marca{font:700 .72rem/1 system-ui,sans-serif;letter-spacing:.04em;background:#5624d0;color:#fff;padding:6px 9px;border-radius:6px}'
+               '.ud-caja>p{margin:10px 0 0;color:var(--suave)}.ud-chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 4px}'
+               '.ud-chip{display:inline-flex;align-items:center;min-height:44px;padding:8px 16px;border-radius:99px;border:1px solid var(--linea);text-decoration:none;color:inherit;font-weight:600;background:transparent}'
+               '.ud-chip:hover,.ud-chip:focus-visible{border-color:#5624d0;outline:none;box-shadow:0 0 0 2px rgba(86,36,208,.25)}.ud-caja .ud-aviso{font-size:.8rem;margin-top:12px}'
                '@media (max-width:760px){.hero{grid-template-columns:1fr}}</style>'
                f'<script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>')
           + '<div class="w"><nav class="top"><a class="marca" href="https://learn.aurzane.com/">AURZANE LEARN</a><a href="https://learn.aurzane.com/cursos/">Todos los cursos</a></nav>'
@@ -281,7 +305,7 @@ for c in cursos:
           + f'<h2>Cómo funciona</h2><p>Cada tema incluye lecciones, mapa conceptual, esquema, tarjetas de repaso, la técnica de Feynman y un test. Solo necesitas una cuenta gratuita de AURZANE ID para guardar tu progreso.</p>'
           + f'<p class="fuentes"><strong>Fuentes y autoría:</strong> {E(c.get("nota_fuentes") or "")}</p>'
           + ((lambda k: f'<p class="fuentes"><strong>Imagen de portada:</strong> {E(k["autor"])}, <a href="{E(k["pagina"])}" rel="noopener">Wikimedia Commons</a>, {E(k["licencia"])}.</p>' if k else '')(c['meta'].get('portada_credito')))
-          + f'<p><a class="btn" href="https://learn.aurzane.com/cursos.html?c={c["slug"]}">Empezar el curso gratis</a></p></main></div>' + PIE)
+          + f'<p><a class="btn" href="https://learn.aurzane.com/cursos.html?c={c["slug"]}">Empezar el curso gratis</a></p>' + udemy_caja(c) + '</main></div>' + PIE)
     ficheros[f'curso/{c["slug"]}/index.html'] = pg
 
 # catálogo

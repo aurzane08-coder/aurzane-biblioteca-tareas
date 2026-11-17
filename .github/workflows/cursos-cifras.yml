@@ -8,7 +8,7 @@ on:
     workflows: ['Desplegar archivos a SiteGround', 'Universidades publicar portal', 'Tienda de libros']
     types: [completed]
   push:
-    paths: ['cursos/catalogo.py', 'cursos/meta.json', 'cifras/cifras.py', 'mundos/prerender.py', 'portada/**', 'herramientas/indice.py', '.github/workflows/cursos-cifras.yml']
+    paths: ['cursos/catalogo.py', 'cursos/meta.json', 'cifras/cifras.py', 'mundos/prerender.py', 'portada/**', 'herramientas/indice.py', 'tienda/afiliados.json', '.github/workflows/cursos-cifras.yml']
   workflow_dispatch:
 permissions:
   contents: write
