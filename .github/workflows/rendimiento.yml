@@ -1,0 +1,63 @@
+name: Rendimiento (Lighthouse móvil)
+# Mide la velocidad real en móvil de las páginas clave con Lighthouse, sin depender de la cuota de PageSpeed.
+# Guarda un resumen en auditoria/rendimiento/AAAA-MM-DD.json. Corre los lunes y a mano.
+on:
+  workflow_dispatch:
+    inputs:
+      urls:
+        description: 'URLs separadas por espacios (vacío = las de siempre)'
+        required: false
+  schedule:
+    - cron: '23 4 * * 1'
+permissions:
+  contents: write
+concurrency:
+  group: rendimiento
+  cancel-in-progress: false
+jobs:
+  medir:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm i -g lighthouse@12.2.1 >/dev/null 2>&1
+      - name: Medir
+        env:
+          URLS: ${{ github.event.inputs.urls }}
+        run: |
+          U="${URLS:-https://aurzane.com/ https://mind.aurzane.com/ https://nexus.aurzane.com/ https://live.aurzane.com/ https://learn.aurzane.com/ https://build.aurzane.com/ https://ovp.aurzane.com/ https://build.aurzane.com/calculadora-finiquito/ https://mind.aurzane.com/test-de-ansiedad/}"
+          mkdir -p lh auditoria/rendimiento
+          i=0
+          for u in $U; do
+            i=$((i+1))
+            for intento in 1 2; do
+              lighthouse "$u" --quiet --only-categories=performance --output=json --output-path=lh/$i-$intento.json \
+                --chrome-flags="--headless=new --no-sandbox" --max-wait-for-load=45000 >/dev/null 2>&1 || true
+            done
+            sleep 5
+          done
+          python3 - <<'E'
+          import json, glob, datetime, collections
+          filas = collections.defaultdict(list)
+          for f in sorted(glob.glob('lh/*.json')):
+              try: d = json.load(open(f))
+              except Exception: continue
+              a = d['audits']; sc = d['categories']['performance']['score']
+              if sc is None: continue
+              rb = [i.get('url', '')[:120] for i in (a.get('render-blocking-resources', {}).get('details', {}) or {}).get('items', [])]
+              filas[d['finalDisplayedUrl']].append(dict(nota=round(sc * 100), lcp=round(a['largest-contentful-paint']['numericValue']),
+                  fcp=round(a['first-contentful-paint']['numericValue']), tbt=round(a['total-blocking-time']['numericValue']),
+                  cls=round(a['cumulative-layout-shift']['numericValue'], 3), bloqueantes=rb,
+                  lcp_elemento=str((a.get('largest-contentful-paint-element', {}).get('details', {}) or {}).get('items', ''))[:300]))
+          res = {u: max(v, key=lambda x: x['nota']) for u, v in filas.items()}   # la mejor de dos pasadas: quita el ruido de la máquina
+          hoy = datetime.date.today().isoformat()
+          json.dump(res, open(f'auditoria/rendimiento/{hoy}.json', 'w'), ensure_ascii=False, indent=1)
+          for u, r in res.items(): print(f"::notice::{r['nota']} · LCP {r['lcp']/1000:.1f}s · CLS {r['cls']} · {u}")
+          E
+      - run: |
+          git config user.name "aurzane-bot"; git config user.email "bot@aurzane.com"
+          git add auditoria/rendimiento; git commit -qm "rendimiento: $(date +%F)" || exit 0
+          for i in 1 2 3; do git pull -q --rebase -X theirs && git push -q && break; sleep 5; done

@@ -22,7 +22,7 @@ jobs:
       - uses: actions/setup-node@v4
         with: { node-version: 20 }
       - run: npm i --no-save playwright@1.48.2 axe-core@4.10.2 && npx playwright install --with-deps chromium
-      - run: SALIDA=auditoria/${{ github.event.inputs.salida }} LISTA=auditoria/urls-total.txt ANCHOS=320,375,768,1366 PARTES=6 PARTE=${{ matrix.parte }} node auditoria/auditar.js
+      - run: SALIDA=auditoria/${{ github.event.inputs.salida }} LISTA=auditoria/urls-total.txt ANCHOS=320,375,768,1366,375o,1366o PARTES=6 PARTE=${{ matrix.parte }} node auditoria/auditar.js
       - uses: actions/upload-artifact@v4
         with:
           name: parte-${{ matrix.parte }}

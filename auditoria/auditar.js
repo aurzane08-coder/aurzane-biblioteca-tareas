@@ -4,7 +4,7 @@
 const { chromium } = require('playwright');
 const fs = require('fs');
 const AXE = fs.readFileSync(require.resolve('axe-core/axe.min.js'), 'utf8');
-const ANCHOS = (process.env.ANCHOS || '320,375,430,768,1024,1366,1440,1920').split(',').map(Number);
+const ANCHOS = (process.env.ANCHOS || '320,375,430,768,1024,1366,1440,1920').split(',');   /* «1366o» = mismo ancho con el tema oscuro del sistema */
 const todas = fs.readFileSync(process.env.LISTA || 'auditoria/urls.txt', 'utf8').split('\n').map(s => s.trim()).filter(Boolean);
 const PARTES = +(process.env.PARTES || 1), PARTE = +(process.env.PARTE || 0);
 const urls = todas.filter((u, i) => i % PARTES === PARTE);
@@ -16,8 +16,9 @@ const nombre = u => u.replace(/^https:\/\//, '').replace(/[^a-z0-9]+/gi, '_').re
   const informe = [];
   for (const url of urls) {
     const fila = { url, anchos: {} };
-    for (const w of ANCHOS) {
-      const ctx = await b.newContext({ viewport: { width: w, height: w < 768 ? 800 : 900 }, deviceScaleFactor: 1, locale: 'es-ES', isMobile: w < 768, hasTouch: w < 768 });
+    for (const clave of ANCHOS) {
+      const w = parseInt(clave, 10), oscuro = /o$/.test(clave);
+      const ctx = await b.newContext({ viewport: { width: w, height: w < 768 ? 800 : 900 }, deviceScaleFactor: 1, locale: 'es-ES', isMobile: w < 768, hasTouch: w < 768, colorScheme: oscuro ? 'dark' : 'light' });
       const p = await ctx.newPage();
       const errores = [], rotos = [];
       p.on('pageerror', e => errores.push(String(e.message).slice(0, 200)));
@@ -54,7 +55,7 @@ const nombre = u => u.replace(/^https:\/\//, '').replace(/[^a-z0-9]+/gi, '_').re
             lang: document.documentElement.lang,
           };
         }));
-        if ((process.env.CAPTURAS || '375,1366').split(',').map(Number).includes(w)) {
+        if ((process.env.CAPTURAS || '375,1366').split(',').includes(clave)) {
           await p.addScriptTag({ content: AXE });
           const ax = await p.evaluate(async () => { const res = await axe.run(document, { runOnly: { type: 'tag', values: ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa'] } });
             return res.violations.map(v => ({ id: v.id, impacto: v.impact, n: v.nodes.length, ejemplo: (v.nodes[0]?.target || []).join(' ').slice(0, 120) })); });
@@ -63,7 +64,7 @@ const nombre = u => u.replace(/^https:\/\//, '').replace(/[^a-z0-9]+/gi, '_').re
         }
       } catch (e) { r.fallo = String(e.message).slice(0, 200); }
       r.errores = [...new Set(errores)].slice(0, 6); r.rotos = [...new Set(rotos)].slice(0, 8);
-      fila.anchos[w] = r;
+      fila.anchos[clave] = r;
       await ctx.close();
     }
     informe.push(fila); console.log('auditado', url);
