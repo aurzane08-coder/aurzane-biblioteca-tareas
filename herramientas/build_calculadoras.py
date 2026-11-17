@@ -28,7 +28,7 @@ MUNDOS = {
                  aviso='Resultado orientativo con fines informativos. No sustituye la valoración de un profesional sanitario: si tienes dudas sobre tu salud, consulta con tu médico.',
                  **shell('live.aurzane.com', 'calculadora-edad')),
 }
-CSS_EXTRA = '<style>input[type=date],input[type=time]{width:100%;font:500 1rem var(--sans);color:var(--text);background:var(--surface-2);border:1.5px solid transparent;border-radius:12px;padding:10px 12px}.aviso-fin{font-size:.84rem;color:var(--text-dim);margin:14px 0 0}</style>'
+CSS_EXTRA = '<style>input[type=date],input[type=time],.campo input[list]{width:100%;font:500 1rem var(--sans);color:var(--text);background:var(--surface-2);border:1.5px solid transparent;border-radius:12px;padding:10px 12px}.aviso-fin{font-size:.84rem;color:var(--text-dim);margin:14px 0 0}</style>'
 
 TODAS = [
     ('calculadora-hipoteca', '🏠', 'Calculadora de hipoteca', 'Cuota fija o variable con el euríbor actual.', '#2f5d7c', '#0f1823'),
