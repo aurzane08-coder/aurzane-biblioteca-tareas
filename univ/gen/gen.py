@@ -268,7 +268,11 @@ def _n(t):
 def _dom(w):
     w = re.sub(r'^https?://', '', (w or '').lower()).split('/')[0]
     return re.sub(r'^www\d?\.', '', w)
-def commons(f, ancho=640):
+ANCHOS_WM = (120, 250, 330, 500, 960, 1280, 1920)   # tamaños estándar de Wikimedia: salen de su caché (17/11/2026, auditoría final)
+
+
+def commons(f, ancho=500):
+    ancho = min((a for a in ANCHOS_WM if a >= ancho), default=1920)
     return 'https://commons.wikimedia.org/wiki/Special:FilePath/' + urllib.parse.quote(f.replace(' ', '_')) + f'?width={ancho}' if f else ''
 IMG_DOM, IMG_NOM = collections.defaultdict(dict), collections.defaultdict(dict)
 GEN_UNIV = ['1541339907198-e08756dedf3f', '1562774053-701939374585', '1592280771190-3e2e4d571952', '1607237138185-eedd9c632b0b', '1576495199011-eb94736d05d6', '1606761568499-6d2451b23c66', '1427504494785-3a9ca7044f45']
@@ -400,7 +404,7 @@ def acortar(t, m=60):
 CIUDAD_PAISES = collections.defaultdict(set)
 
 
-def cabeza(titulo_pag, desc, canon, og_img=None, jsonld=None, robots=None):
+def cabeza(titulo_pag, desc, canon, og_img=None, jsonld=None, robots=None, precarga=None):
     _o = GSC_T.get(canon) or {}
     titulo_pag = _o.get('titulo') or titulo_pag; desc = _o.get('desc') or desc
     titulo_pag = acortar(titulo_pag)
@@ -412,6 +416,7 @@ def cabeza(titulo_pag, desc, canon, og_img=None, jsonld=None, robots=None):
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://aurzane.com/aurzane-paleta.js"></script>
 <title>{e(titulo_pag)}</title>
+{f'<link rel="preload" as="image" href="{e(precarga)}" fetchpriority="high">' if precarga else ''}
 <meta name="description" content="{e(desc)}">
 <link rel="canonical" href="{e(canon)}">
 {f'<meta name="robots" content="{robots}">' if robots else ''}
@@ -506,7 +511,7 @@ def datos():
 # ---------------------------------------------------------------- tarjeta estática (SEO, antes del JS)
 def hero_foto(archivo, tipo_txt):
     if not archivo: return '', ''
-    estilo = f' style="--foto:url(\'{commons(archivo, 1600)}\')"'
+    estilo = f' style="--foto:url(\'{commons(archivo, 960)}\')"'
     credito = f'<a class="credito-foto" href="https://commons.wikimedia.org/wiki/File:{urllib.parse.quote(archivo.replace(" ", "_"))}" target="_blank" rel="noopener">📷 {e(tipo_txt)}: Wikimedia Commons</a>'
     return estilo, credito
 
@@ -658,7 +663,7 @@ def pagina_pais(p):
     ciudades_html = ''
     if top_c and p not in ('Estados Unidos',):
         ciudades_html = '<section class="bloque"><h2 class="t">Universidades por ciudad</h2><div class="paises">' + ''.join(
-            (lambda fc: f'<a class="pais ciudad{" con-foto" if fc else ""}" href="{BASE}{PSLUG[p]}/ciudad/{slug(c)}/"' + (f' style="--foto:url(\'{commons(fc, 480)}\')"' if fc else '') + f'><span><b>{e(c)}</b><small>{ciudades[c]} instituciones</small></span></a>')(IMG.get('c', {}).get(PAISES[p][0], {}).get(_n(c))) for c in top_c) + '</div></section>'
+            (lambda fc: f'<a class="pais ciudad{" con-foto" if fc else ""}" href="{BASE}{PSLUG[p]}/ciudad/{slug(c)}/"' + (f' style="--foto:url(\'{commons(fc, 500)}\')"' if fc else '') + f'><span><b>{e(c)}</b><small>{ciudades[c]} instituciones</small></span></a>')(IMG.get('c', {}).get(PAISES[p][0], {}).get(_n(c))) for c in top_c) + '</div></section>'
     todas = ''
     if len(us) <= 600:
         todas = '<details class="todas"><summary>Todas las instituciones de ' + e(p) + ' (A-Z)</summary><ul>' + ''.join(f'<li><a href="{BASE}{PSLUG[p]}/{u["slug"]}/">{e(u["nombre"])}</a></li>' for u in us) + '</ul></details>'
@@ -719,7 +724,7 @@ def pagina_ciudad(p, c, us):
             {'@type': 'ListItem', 'position': 3, 'name': c, 'item': canon}]}]}
     fc = IMG.get('c', {}).get(iso, {}).get(_n(c))
     hf, cred = hero_foto(fc, 'Foto de ' + c)
-    h = cabeza(tit, desc, canon, og_img=commons(fc, 1200) if fc else None, jsonld=jsonld) + topbar('espana' if p == 'España' else 'paises') + f'''
+    h = cabeza(tit, desc, canon, og_img=commons(fc, 1280) if fc else None, jsonld=jsonld) + topbar('espana' if p == 'España' else 'paises') + f'''
 <main><section class="hero{' con-foto' if hf else ''}" style="padding-bottom:40px"{hf}><div class="wrap">{migas(("Universidades", BASE), (p, f"{BASE}{PSLUG[p]}/"), (c, ""))}
 <h1>{bandera(iso, "g")} Universidades en <em>{e(c)}</em></h1><p class="lead">{e(lead)}</p>{cred}</div></section>
 {panel_listado(p, us, ciudad_fija=c)}
@@ -814,7 +819,7 @@ def ficha(u, vecinas):
     # hasta que tenga contenido propio (auditoría 16/11/2026: 2.395 páginas «descubiertas, sin indexar» por contenido escaso)
     fina = not n and not u.get('descripcion') and not (u.get('foto_archivo') or u.get('foto_ciudad'))
     if fina: FINAS.append(url)
-    h = cabeza(tit, desc_meta, url, og_img=commons(u.get('foto_archivo') or u.get('foto_ciudad'), 1200) if (u.get('foto_archivo') or u.get('foto_ciudad')) else None, jsonld=jl, robots='noindex,follow' if fina else None) + topbar('espana' if es_es else 'paises') + f'''
+    h = cabeza(tit, desc_meta, url, og_img=commons(u.get('foto_archivo') or u.get('foto_ciudad'), 1280) if (u.get('foto_archivo') or u.get('foto_ciudad')) else None, jsonld=jl, robots='noindex,follow' if fina else None, precarga=commons(u.get('foto_archivo') or u.get('foto_ciudad'), 960) or None) + topbar('espana' if es_es else 'paises') + f'''
 <main><section class="hero ficha-h{' con-foto' if hf else ''}"{hf}><div class="wrap">{migas(("Universidades", BASE), (p, f"{BASE}{ps}/"), *([(u["ciudad"], f"{BASE}{ps}/ciudad/{slug(u['ciudad'])}/")] if u["ciudad"] and vecinas and p != "Estados Unidos" else []), (u["nombre"], ""))}
 <div class="fila" style="margin-top:16px"><span class="mono" aria-hidden="true">{e(u["extra"].get("acronimo") or iniciales(u["nombre"]))[:5]}</span><div><h1 style="margin:0">{e(u["nombre"])}</h1></div></div>
 <ul class="meta">{''.join(meta)}</ul>{f'<p class="lead" style="margin-top:14px">{e(u["descripcion"])}</p>' if u["descripcion"] else ''}
