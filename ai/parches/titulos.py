@@ -53,16 +53,20 @@ for h in HOSTS:
         except Exception: continue
         m = re.search(r'<title>(.*?)</title>', t, re.S | re.I)
         if not m: continue
-        datos[p] = (t, m, re.sub(r'\s+', ' ', html.unescape(m.group(1))).strip())
-    nuevos = {p: acortar(x[2]) for p, x in datos.items()}
+        viejo = re.sub(r'\s+', ' ', html.unescape(m.group(1))).strip()
+        datos[p] = (t, m, viejo)
+    # 17/11/2026 (auditoría final): repara «…, de Rafael Santandreu, Rafael Santandreu», el autor añadido dos veces
+    nuevos = {p: acortar(re.sub(r'(, (?:de )?([^,|]{4,})), \2\b', r'\1', x[2])) for p, x in datos.items()}
     # repetidos: se diferencian con el autor o la carpeta
     rep = collections.defaultdict(list)
     for p, n in nuevos.items(): rep[n].append(p)
     for n, ps in rep.items():
         if len(ps) < 2: continue
         for p in ps:
-            extra = autor(datos[p][0]) or os.path.basename(os.path.dirname(p)).replace('-', ' ')
-            if not extra: continue
+            carpeta = os.path.basename(os.path.dirname(p)).replace('-', ' ')
+            extra = autor(datos[p][0]) or carpeta
+            if extra and extra.lower() in n.lower(): extra = {'libro': 'ficha', 'libros': 'en la tienda'}.get(carpeta, carpeta)   # el autor ya está: no se repite
+            if not extra or extra.lower() in n.lower(): continue
             base = acortar(n, M - len(extra) - 2) if len(n) + len(extra) + 2 > M else n
             nuevos[p] = f'{base}, {extra}' if len(base) + len(extra) + 2 <= M else acortar(f'{base}, {extra}')
     for p, n in nuevos.items():
