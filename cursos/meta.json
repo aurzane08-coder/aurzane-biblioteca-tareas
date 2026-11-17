@@ -114,5 +114,39 @@
    "alt": "",
    "fecha": "2026-11-10"
   }
+ },
+ "dormir-mejor": {
+  "area": "Psicología y bienestar",
+  "publico": "Cualquier persona que duerma mal o quiera cuidar su descanso.",
+  "etiquetas": [
+   "sueño",
+   "insomnio",
+   "dormir mejor",
+   "higiene del sueño",
+   "descanso",
+   "terapia cognitivo conductual"
+  ],
+  "portada_busqueda": [
+   "bedroom morning light bed",
+   "peaceful sleep bedroom",
+   "cozy bed window morning"
+  ]
+ },
+ "autoestima-dia-a-dia": {
+  "area": "Psicología y bienestar",
+  "publico": "Cualquier persona que quiera tratarse mejor y ganar confianza en sí misma.",
+  "etiquetas": [
+   "autoestima",
+   "autocompasión",
+   "confianza",
+   "asertividad",
+   "voz crítica",
+   "terapia cognitivo conductual"
+  ],
+  "portada_busqueda": [
+   "woman smiling outdoors sunlight",
+   "person hiking mountain top happy",
+   "young man smiling nature"
+  ]
  }
 }
