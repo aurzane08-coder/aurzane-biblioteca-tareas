@@ -13,6 +13,24 @@
  "libros": 748,
  "fichas": 576,
  "cursos": {
+  "dormir-mejor": {
+   "temas": 2,
+   "lecciones": 4,
+   "preguntas": 21,
+   "tipos": 6,
+   "titulo": "Dormir mejor",
+   "descripcion": "Entender el sueño, cuidar los hábitos y qué hacer cuando no llega",
+   "certificable": true
+  },
+  "autoestima-dia-a-dia": {
+   "temas": 2,
+   "lecciones": 4,
+   "preguntas": 20,
+   "tipos": 6,
+   "titulo": "Autoestima en el día a día",
+   "descripcion": "Entender la voz crítica, tratarte con amabilidad y actuar según lo que te importa",
+   "certificable": true
+  },
   "introduccion-psicologia": {
    "temas": 16,
    "lecciones": 64,

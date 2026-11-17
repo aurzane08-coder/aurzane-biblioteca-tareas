@@ -2,6 +2,28 @@
  "fecha": "2026-11-17",
  "cursos": [
   {
+   "slug": "dormir-mejor",
+   "titulo": "Dormir mejor",
+   "temas": 2,
+   "lecciones": 4,
+   "preguntas": 21,
+   "horas": 1.5,
+   "certificado": true,
+   "estado": "ok",
+   "problemas": []
+  },
+  {
+   "slug": "autoestima-dia-a-dia",
+   "titulo": "Autoestima en el día a día",
+   "temas": 2,
+   "lecciones": 4,
+   "preguntas": 20,
+   "horas": 1.5,
+   "certificado": true,
+   "estado": "ok",
+   "problemas": []
+  },
+  {
    "slug": "introduccion-psicologia",
    "titulo": "Introducción a la psicología",
    "temas": 16,
