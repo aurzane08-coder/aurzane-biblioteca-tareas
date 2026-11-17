@@ -26,3 +26,11 @@ for web, rel in [('aurzane.com', 'index.html'), ('aurzane.com', 'aurzane-estilo.
         copia = os.path.join(base, web, 'eliminar', 'cifras-' + hoy, rel); os.makedirs(os.path.dirname(copia), exist_ok=True); shutil.copy2(f, copia)
         open(f, 'w', encoding='utf-8').write(t); n += 1; print('actualizado', web, rel)
 print('archivos actualizados:', n)
+# aurzane-estilo.js se guarda un año en el navegador (ai/parches/cache.py): si cambió, se le da una versión nueva en el
+# cargador para que todo el mundo reciba la cifra al día. Sufijo propio (.cAAAAMMDDHHMM) para no chocar con los números
+# que se usan al desplegar desde el repositorio.
+pal = os.path.join(base, 'aurzane.com', 'public_html', 'aurzane-paleta.js')
+if os.path.exists(os.path.join(base, 'aurzane.com', 'eliminar', 'cifras-' + hoy, 'aurzane-estilo.js')):
+    s = open(pal, encoding='utf-8').read()
+    t = re.sub(r'(aurzane-estilo\.js\?v=[0-9]+)(?:\.c[0-9]+)?', lambda m: m.group(1) + '.c' + datetime.datetime.now().strftime('%Y%m%d%H%M'), s)
+    if t != s: open(pal, 'w', encoding='utf-8').write(t); print('versión nueva de aurzane-estilo.js en el cargador')
