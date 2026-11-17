@@ -461,7 +461,10 @@ def texto_frase(r, p, n):
         return s_ if len(s_) <= 300 else f'{t}\n\n{url}'[:300]
     if r == 'facebook':
         return f'{t}\n\n{q}\n\nTests de bienestar y lecturas de psicología gratis 👉 {url}'
-    return f'{t}\n\n{q}\n\n{url}\n\n#FrasesMotivadoras #Superación #SaludMental #Psicología'
+    s_ = f'{t}\n\n{q}\n\n{url}\n\n#FrasesMotivadoras #Superación #SaludMental #Psicología'
+    if r in ('mastodon', 'threads') and len(s_) > 500:   # Mastodon y Threads: máximo 500 caracteres
+        s_ = f'{t}\n\n{url}\n\n#FrasesMotivadoras' if len(f'{t}\n\n{url}\n\n#FrasesMotivadoras') <= 500 else f'{recorta(t, 440)}\n\n{url}'
+    return s_
 
 
 PREG_TK = ['¿Qué te dice esta frase hoy?', '¿Con qué parte te quedas?', 'Guárdala para cuando la necesites.', 'Mándasela a quien la necesite hoy.',

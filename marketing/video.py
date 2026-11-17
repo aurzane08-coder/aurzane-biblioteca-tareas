@@ -229,7 +229,7 @@ def generar(dias=2):
             audio_in = ['-f', 'lavfi', '-i', 'anullsrc=r=44100:cl=stereo']; amap = f'{ai}:a'
         cmd = ['ffmpeg', '-y', '-loglevel', 'error', '-stream_loop', '-1', '-i', src] + capas_in + audio_in + [
                '-filter_complex', filtro, '-map', '[v]', '-map', amap,
-               '-t', str(dur), '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '21', '-profile:v', 'high', '-c:a', 'aac', '-b:a', '128k', '-ar', '44100',
+               '-t', str(dur), '-c:v', 'libx264', '-preset', 'veryfast', '-crf', '23', '-maxrate', '6M', '-bufsize', '12M', '-profile:v', 'high', '-c:a', 'aac', '-b:a', '128k', '-ar', '44100',
                '-movflags', '+faststart', sal]
         r = subprocess.run(cmd)
         print('::notice title=Videos::', i, 'ok' if r.returncode == 0 else 'ERROR', round(os.path.getsize(sal) / 1e6, 1) if os.path.exists(sal) else '', 'MB')
