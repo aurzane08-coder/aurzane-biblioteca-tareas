@@ -1,5 +1,5 @@
 {
- "diario": "2026-11-16",
+ "diario": "2026-11-17",
  "reintento_pdf_1": "v3",
  "solicitudes_hechas": [
   "0153dae9b6",
@@ -25,7 +25,7 @@
  "art_dia": {
   "2026-11-17": {
    "hechos": 0,
-   "intentos": 7
+   "intentos": 12
   }
  },
  "incidencias_vistas": [],

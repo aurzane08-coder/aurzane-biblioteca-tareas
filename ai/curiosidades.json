@@ -1,5 +1,30 @@
 [
  {
+  "id": "cur-83de1560e2",
+  "tipo": "curiosidad",
+  "titulo": "¿Tu cerebro se limpia mientras duermes?",
+  "dato": "Al dormir, el cerebro activa un sistema para eliminar toxinas acumuladas durante el día.",
+  "resumen": "Al dormir, el cerebro activa un sistema para eliminar toxinas acumuladas durante el día. El sistema glinfático se activa principalmente durante el sueño profundo. Las células glial se contraen para facilitar que el líquido cefalorraquídeo limpie los residuos metabólicos acumulados.",
+  "fuente": "Xie et al., 2013, Science",
+  "hashtags": [
+   "psicologia",
+   "suneio",
+   "cerebro",
+   "ciencia"
+  ],
+  "fuente_id": "tema-321-0",
+  "url": "https://mind.aurzane.com/",
+  "portada": "",
+  "tema": "curiosidad",
+  "idioma": "es",
+  "autores": "Xie et al., 2013, Science",
+  "motivo": "Guion escrito por Gemini a partir de un tema de psicología. Revisa que el dato sea correcto antes de aprobar.",
+  "verificada": "2026-11-17",
+  "fecha": "2026-11-17",
+  "auto": true,
+  "verificacion": "La afirmación describe con precisión el funcionamiento del sistema glinfático respaldado por el estudio de Xie et al. (2013)."
+ },
+ {
   "id": "cur-e2c082e1e9",
   "tipo": "curiosidad",
   "titulo": "¿Los terremotos se preparan en el colegio?",
