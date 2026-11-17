@@ -31,7 +31,8 @@ B = [
         ('/calculadora-hipoteca/', '🏠', 'Calculadora de hipoteca', 'Cuota fija o variable, ahorro necesario y si te conviene alquilar o comprar.', 'EUR', '#2f5d7c', '#0f1823'),
         ('/calculadora-gastos-compra-vivienda/', '🧾', 'Gastos de compra de vivienda', 'ITP o IVA de tu comunidad, notaría, registro y el dinero que necesitas para firmar.', 'Nuevo', '#365f52', '#0f1d19'),
         ('/calculadora-rentabilidad-alquiler/', '🔑', 'Rentabilidad del alquiler', '¿Compensa comprar para alquilar? Rentabilidad bruta y neta, con o sin hipoteca.', 'Nuevo', '#5b4a2e', '#1c160c'),
-        ('/calculadora-reforma/', '🛠️', 'Calculadora de reforma', 'Cocina, baños, suelos y ventanas: presupuesto partida a partida con IVA.', 'Precios 2026', '#3d6f8f', '#132433')]),
+        ('/calculadora-reforma/', '🛠️', 'Calculadora de reforma', 'Cocina, baños, suelos y ventanas: presupuesto partida a partida con IVA.', 'Precios 2026', '#3d6f8f', '#132433'),
+        ('/alquiler-por-municipio/', '🏙️', '¿Cuánto ha subido el alquiler?', 'Busca tu municipio: subida del último año, de cinco años y desde 2015, con datos del INE.', 'Datos INE', '#5b3f2e', '#1c120c')]),
     ('Ganar, ahorrar y planificar', [
         ('/calculadora-sueldo-neto/', '💶', 'Sueldo neto', 'De bruto a neto con el IRPF y la Seguridad Social de 2026.', 'IRPF 2026', '#24506e', '#0c1620'),
         ('/calculadora-finiquito/', '📄', 'Finiquito e indemnización', 'Lo que te deben al dejar o perder un trabajo, según el Estatuto de los Trabajadores.', 'Nuevo', '#4a3d63', '#15111e'),
