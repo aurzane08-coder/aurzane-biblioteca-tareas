@@ -1,4 +1,4 @@
-name: Sin anuncios en salud mental
+name: Anuncios con criterio (OVP sin anuncios)
 on:
   push:
     paths: ['ai/parches/sin_anuncios.py']
