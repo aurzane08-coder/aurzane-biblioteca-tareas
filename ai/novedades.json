@@ -1,6 +1,11 @@
 [
  {
   "fecha": "2026-11-17",
+  "url": "https://aurzane.com/articulos/volar-sobre-el-pantano-jovenes-ecuador/",
+  "titulo": "Artículo: Volar sobre el pantano: guía de reflexión juvenil en Ecuador"
+ },
+ {
+  "fecha": "2026-11-17",
   "url": "https://aurzane.com/articulos/como-calcular-hipoteca-pagar-sin-ahogarte/",
   "titulo": "Artículo: Cómo calcular cuánta hipoteca puedes pagar sin ahogarte"
  },
@@ -593,10 +598,5 @@
   "fecha": "2026-11-08",
   "url": "https://aurzane.com/biblioteca/recientes/ia-La-clinica-de-las-confesiones/",
   "titulo": "Libro abierto: LA CLÍNICA DE LAS CONFESIONES"
- },
- {
-  "fecha": "2026-11-08",
-  "url": "https://aurzane.com/biblioteca/recientes/ia-el-espejo-roto/",
-  "titulo": "Libro abierto: EL ESPEJO ROTO"
  }
 ]
