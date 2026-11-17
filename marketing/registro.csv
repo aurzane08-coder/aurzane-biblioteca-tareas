@@ -575,3 +575,6 @@
 2026-11-17,7,tiktok,cur-8e657999c3,error,403 {"error":{"code":"unaudited_client_can_only_post_to_private_accounts" "message":"Please review our integration guidelines at https://developers.ti
 2026-11-17,3,mastodon,frase-3c5b1ef6,error,422 {"error":"Validation failed: Text character limit of 500 exceeded"}
 2026-11-17,8,tiktok,frase-0dd779c3,error,403 {"error":{"code":"unaudited_client_can_only_post_to_private_accounts" "message":"Please review our integration guidelines at https://developers.ti
+2026-11-17,7,tiktok,cur-8e657999c3,error,403 {"error":{"code":"unaudited_client_can_only_post_to_private_accounts" "message":"Please review our integration guidelines at https://developers.ti
+2026-11-17,3,mastodon,frase-3c5b1ef6,error,422 {"error":"Validation failed: Text character limit of 500 exceeded"}
+2026-11-17,8,tiktok,frase-0dd779c3,error,403 {"error":{"code":"unaudited_client_can_only_post_to_private_accounts" "message":"Please review our integration guidelines at https://developers.ti

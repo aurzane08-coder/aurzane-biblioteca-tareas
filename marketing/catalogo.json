@@ -19810,6 +19810,306 @@
    "alta": "2026-11-09"
   },
   {
+   "id": "lectura-el-hombre-en-busca-de-sentido-viktor-e-frankl",
+   "tipo": "lectura",
+   "mundo": "aurzane",
+   "origen": "tienda",
+   "url": "https://aurzane.com/libros/el-hombre-en-busca-de-sentido-viktor-e-frankl/",
+   "titulo": "El hombre en busca de sentido",
+   "autor": "Viktor E. Frankl",
+   "ganchos": [
+    "Libro recomendado: El hombre en busca de sentido",
+    "El hombre en busca de sentido, de Viktor E. Frankl",
+    "¿Qué leer este mes? El hombre en busca de sentido"
+   ],
+   "texto": "Este libro es para quienes buscan esperanza y fortaleza interior en los momentos más difíciles. Aporta una profunda reflexión sobre cómo encontrar un propósito vital a pesar de la adversidad.",
+   "hashtags": [
+    "LibrosRecomendados",
+    "QueLeer",
+    "Lectura",
+    "Libros"
+   ],
+   "aviso": "Contiene enlace de afiliado.",
+   "img": null,
+   "emoji": "📚",
+   "alta": "2026-11-17"
+  },
+  {
+   "id": "lectura-por-que-dormimos-matthew-walker",
+   "tipo": "lectura",
+   "mundo": "aurzane",
+   "origen": "tienda",
+   "url": "https://aurzane.com/libros/por-que-dormimos-matthew-walker/",
+   "titulo": "Por qué dormimos",
+   "autor": "Matthew Walker",
+   "ganchos": [
+    "Libro recomendado: Por qué dormimos",
+    "Por qué dormimos, de Matthew Walker",
+    "¿Qué leer este mes? Por qué dormimos"
+   ],
+   "texto": "Es ideal para cualquier persona interesada en mejorar su salud física y mental a través del descanso. Aporta claves científicas sobre cómo el sueño influye en la memoria, el aprendizaje y el bienestar.",
+   "hashtags": [
+    "LibrosRecomendados",
+    "QueLeer",
+    "Lectura",
+    "Libros"
+   ],
+   "aviso": "Contiene enlace de afiliado.",
+   "img": null,
+   "emoji": "📚",
+   "alta": "2026-11-17"
+  },
+  {
+   "id": "lectura-pensar-rapido-pensar-despacio-daniel-kahneman",
+   "tipo": "lectura",
+   "mundo": "aurzane",
+   "origen": "tienda",
+   "url": "https://aurzane.com/libros/pensar-rapido-pensar-despacio-daniel-kahneman/",
+   "titulo": "Pensar rápido, pensar despacio",
+   "autor": "Daniel Kahneman",
+   "ganchos": [
+    "Libro recomendado: Pensar rápido, pensar despacio",
+    "Pensar rápido, pensar despacio, de Daniel Kahneman",
+    "¿Qué leer este mes? Pensar rápido, pensar despacio"
+   ],
+   "texto": "Va dirigido a quienes desean comprender los mecanismos mentales que guían sus decisiones cotidianas. Aporta un análisis claro sobre los dos sistemas de pensamiento que controlan cómo actuamos.",
+   "hashtags": [
+    "LibrosRecomendados",
+    "QueLeer",
+    "Lectura",
+    "Libros"
+   ],
+   "aviso": "Contiene enlace de afiliado.",
+   "img": null,
+   "emoji": "📚",
+   "alta": "2026-11-17"
+  },
+  {
+   "id": "lectura-ikigai-hector-garcia-y-francesc-miralles",
+   "tipo": "lectura",
+   "mundo": "aurzane",
+   "origen": "tienda",
+   "url": "https://aurzane.com/libros/ikigai-hector-garcia-y-francesc-miralles/",
+   "titulo": "Ikigai",
+   "autor": "Héctor García y Francesc Miralles",
+   "ganchos": [
+    "Libro recomendado: Ikigai",
+    "Ikigai, de Héctor García y Francesc Miralles",
+    "¿Qué leer este mes? Ikigai"
+   ],
+   "texto": "Es perfecto para quienes buscan un propósito diario y una vida más plena y longeva. Aporta las enseñanzas de los centenarios japoneses para conectar con lo que da sentido a la existencia.",
+   "hashtags": [
+    "LibrosRecomendados",
+    "QueLeer",
+    "Lectura",
+    "Libros"
+   ],
+   "aviso": "Contiene enlace de afiliado.",
+   "img": null,
+   "emoji": "📚",
+   "alta": "2026-11-17"
+  },
+  {
+   "id": "lectura-sobre-el-duelo-y-el-dolor-elisabeth-kubler-ross-y-david-kessler",
+   "tipo": "lectura",
+   "mundo": "aurzane",
+   "origen": "tienda",
+   "url": "https://aurzane.com/libros/sobre-el-duelo-y-el-dolor-elisabeth-kubler-ross-y-david-kessler/",
+   "titulo": "Sobre el duelo y el dolor",
+   "autor": "Elisabeth Kübler-Ross y David Kessler",
+   "ganchos": [
+    "Libro recomendado: Sobre el duelo y el dolor",
+    "Sobre el duelo y el dolor, de Elisabeth Kübler-Ross y David Kessler",
+    "¿Qué leer este mes? Sobre el duelo y el dolor"
+   ],
+   "texto": "Ayuda a quienes transitan por la pérdida de un ser querido o una experiencia dolorosa. Aporta acompañamiento emocional y comprensión sobre las distintas etapas del duelo.",
+   "hashtags": [
+    "LibrosRecomendados",
+    "QueLeer",
+    "Lectura",
+    "Libros"
+   ],
+   "aviso": "Contiene enlace de afiliado.",
+   "img": null,
+   "emoji": "📚",
+   "alta": "2026-11-17"
+  },
+  {
+   "id": "lectura-maneras-de-amar-amir-levine-y-rachel-heller",
+   "tipo": "lectura",
+   "mundo": "aurzane",
+   "origen": "tienda",
+   "url": "https://aurzane.com/libros/maneras-de-amar-amir-levine-y-rachel-heller/",
+   "titulo": "Maneras de amar",
+   "autor": "Amir Levine y Rachel Heller",
+   "ganchos": [
+    "Libro recomendado: Maneras de amar",
+    "Maneras de amar, de Amir Levine y Rachel Heller",
+    "¿Qué leer este mes? Maneras de amar"
+   ],
+   "texto": "Está pensado para quienes quieren entender mejor sus relaciones afectivas y de pareja. Aporta herramientas basadas en la teoría del apego para identificar dinámicas sentimentales.",
+   "hashtags": [
+    "LibrosRecomendados",
+    "QueLeer",
+    "Lectura",
+    "Libros"
+   ],
+   "aviso": "Contiene enlace de afiliado.",
+   "img": null,
+   "emoji": "📚",
+   "alta": "2026-11-17"
+  },
+  {
+   "id": "lectura-el-cerebro-del-nino-daniel-j-siegel-y-tina-payne-bryson",
+   "tipo": "lectura",
+   "mundo": "aurzane",
+   "origen": "tienda",
+   "url": "https://aurzane.com/libros/el-cerebro-del-nino-daniel-j-siegel-y-tina-payne-bryson/",
+   "titulo": "El cerebro del niño",
+   "autor": "Daniel J. Siegel y Tina Payne Bryson",
+   "ganchos": [
+    "Libro recomendado: El cerebro del niño",
+    "El cerebro del niño, de Daniel J. Siegel y Tina Payne Bryson",
+    "¿Qué leer este mes? El cerebro del niño"
+   ],
+   "texto": "Es una guía excelente para madres, padres y educadores que acompañan el desarrollo infantil. Aporta estrategias prácticas para fomentar la inteligencia emocional y la calma en casa.",
+   "hashtags": [
+    "LibrosRecomendados",
+    "QueLeer",
+    "Lectura",
+    "Libros"
+   ],
+   "aviso": "Contiene enlace de afiliado.",
+   "img": null,
+   "emoji": "📚",
+   "alta": "2026-11-17"
+  },
+  {
+   "id": "lectura-padre-rico-padre-pobre-robert-t-kiyosaki",
+   "tipo": "lectura",
+   "mundo": "aurzane",
+   "origen": "tienda",
+   "url": "https://aurzane.com/libros/padre-rico-padre-pobre-robert-t-kiyosaki/",
+   "titulo": "Padre rico, padre pobre",
+   "autor": "Robert T. Kiyosaki",
+   "ganchos": [
+    "Libro recomendado: Padre rico, padre pobre",
+    "Padre rico, padre pobre, de Robert T. Kiyosaki",
+    "¿Qué leer este mes? Padre rico, padre pobre"
+   ],
+   "texto": "Dirigido a quienes desean cambiar su mentalidad sobre el dinero y las finanzas personales. Aporta una perspectiva diferente sobre cómo hacer que el dinero trabaje para ti.",
+   "hashtags": [
+    "LibrosRecomendados",
+    "QueLeer",
+    "Lectura",
+    "Libros"
+   ],
+   "aviso": "Contiene enlace de afiliado.",
+   "img": null,
+   "emoji": "📚",
+   "alta": "2026-11-17"
+  },
+  {
+   "id": "lectura-el-hombre-mas-rico-de-babilonia-george-s-clason",
+   "tipo": "lectura",
+   "mundo": "aurzane",
+   "origen": "tienda",
+   "url": "https://aurzane.com/libros/el-hombre-mas-rico-de-babilonia-george-s-clason/",
+   "titulo": "El hombre más rico de Babilonia",
+   "autor": "George S. Clason",
+   "ganchos": [
+    "Libro recomendado: El hombre más rico de Babilonia",
+    "El hombre más rico de Babilonia, de George S. Clason",
+    "¿Qué leer este mes? El hombre más rico de Babilonia"
+   ],
+   "texto": "Es para lectores que buscan principios financieros sólidos atemporales y fáciles de aplicar. Aporta sabios consejos sobre el ahorro, la gestión y la multiplicación de la riqueza mediante parábolas.",
+   "hashtags": [
+    "LibrosRecomendados",
+    "QueLeer",
+    "Lectura",
+    "Libros"
+   ],
+   "aviso": "Contiene enlace de afiliado.",
+   "img": null,
+   "emoji": "📚",
+   "alta": "2026-11-17"
+  },
+  {
+   "id": "lectura-la-psicologia-del-dinero-morgan-housel",
+   "tipo": "lectura",
+   "mundo": "aurzane",
+   "origen": "tienda",
+   "url": "https://aurzane.com/libros/la-psicologia-del-dinero-morgan-housel/",
+   "titulo": "La psicología del dinero",
+   "autor": "Morgan Housel",
+   "ganchos": [
+    "Libro recomendado: La psicología del dinero",
+    "La psicología del dinero, de Morgan Housel",
+    "¿Qué leer este mes? La psicología del dinero"
+   ],
+   "texto": "Ideal para entender que la riqueza depende más del comportamiento que de los conocimientos técnicos. Aporta lecciones esenciales sobre la relación emocional que tenemos con el dinero.",
+   "hashtags": [
+    "LibrosRecomendados",
+    "QueLeer",
+    "Lectura",
+    "Libros"
+   ],
+   "aviso": "Contiene enlace de afiliado.",
+   "img": null,
+   "emoji": "📚",
+   "alta": "2026-11-17"
+  },
+  {
+   "id": "lectura-sapiens-de-animales-a-dioses-yuval-noah-harari",
+   "tipo": "lectura",
+   "mundo": "aurzane",
+   "origen": "tienda",
+   "url": "https://aurzane.com/libros/sapiens-de-animales-a-dioses-yuval-noah-harari/",
+   "titulo": "Sapiens. De animales a dioses",
+   "autor": "Yuval Noah Harari",
+   "ganchos": [
+    "Libro recomendado: Sapiens. De animales a dioses",
+    "Sapiens. De animales a dioses, de Yuval Noah Harari",
+    "¿Qué leer este mes? Sapiens. De animales a dioses"
+   ],
+   "texto": "Para mentes curiosas que quieren conocer el recorrido de la humanidad desde la prehistoria. Aporta una visión global de cómo nuestra especie llegó a dominar el planeta.",
+   "hashtags": [
+    "LibrosRecomendados",
+    "QueLeer",
+    "Lectura",
+    "Libros"
+   ],
+   "aviso": "Contiene enlace de afiliado.",
+   "img": null,
+   "emoji": "📚",
+   "alta": "2026-11-17"
+  },
+  {
+   "id": "lectura-breve-historia-del-tiempo-stephen-hawking",
+   "tipo": "lectura",
+   "mundo": "aurzane",
+   "origen": "tienda",
+   "url": "https://aurzane.com/libros/breve-historia-del-tiempo-stephen-hawking/",
+   "titulo": "Breve historia del tiempo",
+   "autor": "Stephen Hawking",
+   "ganchos": [
+    "Libro recomendado: Breve historia del tiempo",
+    "Breve historia del tiempo, de Stephen Hawking",
+    "¿Qué leer este mes? Breve historia del tiempo"
+   ],
+   "texto": "Dirigido a entusiastas de la ciencia que desean comprender los grandes misterios del universo. Aporta explicaciones accesibles sobre el espacio, el tiempo y el origen del cosmos.",
+   "hashtags": [
+    "LibrosRecomendados",
+    "QueLeer",
+    "Lectura",
+    "Libros"
+   ],
+   "aviso": "Contiene enlace de afiliado.",
+   "img": null,
+   "emoji": "📚",
+   "alta": "2026-11-17"
+  },
+  {
    "id": "lectura-no-pienses-en-un-elefante-george-lakoff",
    "tipo": "lectura",
    "mundo": "aurzane",
@@ -42673,6 +42973,33 @@
    "emoji": "",
    "foto_q": "calm ocean waves",
    "alta": "2026-11-14"
+  },
+  {
+   "id": "cur-83de1560e2",
+   "tipo": "curiosidad",
+   "mundo": "mind",
+   "origen": "curiosidades",
+   "url": "https://mind.aurzane.com/",
+   "titulo": "¿Tu cerebro se limpia mientras duermes?",
+   "ganchos": [
+    "¿Tu cerebro se limpia mientras duermes?",
+    "¿Tu cerebro se limpia mientras duermes? 🧠",
+    "Al dormir, el cerebro activa un sistema para eliminar toxinas acumuladas durante el día."
+   ],
+   "texto": "Al dormir, el cerebro activa un sistema para eliminar toxinas acumuladas durante el día. El sistema glinfático se activa principalmente durante el sueño profundo. Las células glial se contraen para facilitar que el líquido cefalorraquídeo limpie los residuos metabólicos acumulados.\n\nFuente: Xie et al., 2013, Science",
+   "hashtags": [
+    "psicologia",
+    "suneio",
+    "cerebro",
+    "ciencia",
+    "Psicología",
+    "Curiosidades"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "🧠",
+   "dato": "Al dormir, el cerebro activa un sistema para eliminar toxinas acumuladas durante el día.",
+   "alta": "2026-11-17"
   },
   {
    "id": "cur-e2c082e1e9",
