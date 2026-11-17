@@ -1,1 +1,114 @@
-{}
+{
+ "ref-don-terapia.html": {
+  "titulo": "El don de la terapia",
+  "fecha": "2026-11-17",
+  "trata": "Esta obra recopila la sabiduría acumulada durante décadas por uno de los grandes referentes de la psiquiatría contemporánea, ofreciendo una perspectiva íntima y honesta sobre el oficio de acompañar a otros. A través de breves reflexiones prácticas, el autor despoja a la consulta de tecnicismos innecesarios para centrarse en lo verdaderamente sanador: el vínculo humano genuino que se establece entre dos personas. Lejos de proponer manuales rígidos, invita a los profesionales a improvisar desde la autenticidad, cuidar la relación interpersonal y asumir la propia vulnerabilidad como una herramienta clínica fundamental en el proceso de transformación.",
+  "ideas": [
+   "La relación entre terapeuta y paciente es el motor principal del cambio clínico.",
+   "La autenticidad del profesional resulta mucho más eficaz que cualquier técnica distante.",
+   "Es fundamental implicarse en la vida del paciente sin perder la perspectiva clínica.",
+   "Las limitaciones y errores propios deben asumirse con naturalidad y apertura.",
+   "El sufrimiento humano comparte raíces universales que requieren empatía profunda."
+  ],
+  "para": "Este libro está dirigido especialmente a psicólogos, terapeutas y estudiantes de salud mental que buscan profundizar en el lado más humano y artesanal de la práctica clínica, alejándose de enfoques excesivamente medicalizados o impersonales.",
+  "psico": "Desde la psicología basada en la evidencia, la obra acierta al destacar la alianza terapéutica como el factor común más potente para el éxito clínico. Sin embargo, muchos de los consejos apuestan fuertemente por la intuición y el estilo personal, lo cual debe matizarse siempre con la prudencia metodológica, la supervisión adecuada y los marcos empíricos validados para evitar sesgos subjetivos o intervenciones carentes de contraste científico.",
+  "faq": [
+   [
+    "¿Es un manual teórico?",
+    "No, se compone de reflexiones breves y consejos prácticos basados en la experiencia clínica real del autor."
+   ],
+   [
+    "¿Sirve para pacientes o solo para terapeutas?",
+    "Aunque está escrito pensando en los profesionales, cualquier lector interesado en la psicoterapia puede disfrutarlo por su lenguaje accesible."
+   ],
+   [
+    "¿Qué enfoque terapéutico defiende?",
+    "Se sitúa principalmente en la corriente existencial y humanista, priorizando el contacto humano directo y significativo."
+   ]
+  ]
+ },
+ "ref-cerebro-mito-yo.html": {
+  "titulo": "El cerebro y el mito del yo",
+  "fecha": "2026-11-17",
+  "trata": "Esta obra fundamental de la neurociencia propone que el cerebro es un sistema cerrado cuya función principal no es reaccionar al entorno, sino generar activamente estados internos orientados a la predicción del movimiento. El autor argumenta que la mente y el concepto del yo no son reflejos pasivos de la realidad exterior, sino construcciones evolutivas diseñadas para anticipar consecuencias y facilitar la supervivencia mediante la gestión motora.",
+  "ideas": [
+   "El cerebro funciona fundamentalmente como un sistema cerrado que genera actividad intrínseca.",
+   "La mente y el yo son construcciones evolutivas cuyo propósito principal es la predicción.",
+   "La consciencia surge de la coordinación temporal entre el tálamo y la corteza cerebral.",
+   "La percepción sensorial no crea la realidad, sino que modula un mundo interno ya existente.",
+   "El movimiento es la razón de ser del sistema nervioso y el fin último de toda cognición."
+  ],
+  "para": "Este libro está dirigido a lectores interesados en la neurociencia profunda, la filosofía de la mente y la psicología cognitiva que busquen comprender las bases biológicas de la consciencia más allá del mero procesamiento computacional de información.",
+  "psico": "Desde la psicología basada en la evidencia, la perspectiva de Llinás resulta sumamente útil para deconstruir la ilusión de un yo estanco y racional. Al entender la cognición como un mecanismo predictivo, la clínica puede abordar con mayor solidez los sesgos perceptivos, los trastornos de despersonalización y los patrones de pensamiento rígidos, visualizando los síntomas no como errores aislados, sino como desajustes en los sistemas predictivos cerebrales.",
+  "faq": [
+   [
+    "¿Qué papel juega la consciencia según el autor?",
+    "La consciencia actúa como un sistema central de predicción que permite evaluar diferentes escenarios de acción antes de ejecutar el movimiento, optimizando así la supervivencia del organismo en entornos complejos."
+   ],
+   [
+    "¿Es un libro accesible para lectores sin conocimientos previos?",
+    "No especialmente. Requiere cierta familiaridad con la biología y los conceptos neuroanatómicos básicos, ya que profundiza en el funcionamiento electrofisiológico neuronal y en la circuitería cerebral."
+   ],
+   [
+    "¿Cómo influye esta lectura en la comprensión de la psicología?",
+    "Aporta una base biológica sólida para entender que nuestra experiencia subjetiva del mundo y de nosotros mismos es una simulación interna, lo cual transforma la manera en que analizamos los procesos mentales."
+   ]
+  ]
+ },
+ "ref-nuestra-mente-nos-engana.html": {
+  "titulo": "Nuestra mente nos engaña",
+  "fecha": "2026-11-17",
+  "trata": "Este libro aborda de manera divulgativa y rigurosa los mecanismos automáticos de nuestro cerebro que nos llevan a caer en sesgos cognitivos y errores de razonamiento. A través de múltiples ejemplos de la vida cotidiana, la autora examina cómo interpretamos la realidad de forma sesgada, analizando la influencia de la publicidad engañosa, las falacias lógicas y el peligro de las pseudoterapias en la sociedad actual.",
+  "ideas": [
+   "Nuestra mente tiende a buscar confirmación de lo que ya cree, ignorando la evidencia contraria.",
+   "La publicidad aprovecha nuestras debilidades cognitivas para influir en las decisiones de compra.",
+   "Las pseudoterapias se aprovechan de los sesgos de causalidad y de la necesidad de control.",
+   "El pensamiento intuitivo es rápido pero propenso a errores sistemáticos que debemos aprender a detectar.",
+   "Adoptar una postura crítica y basada en la ciencia protege nuestro bienestar psicológico y económico."
+  ],
+  "para": "Esta obra está recomendada para cualquier persona interesada en comprender cómo funciona su propio pensamiento, así como para estudiantes y profesionales que busquen herramientas prácticas para detectar la manipulación informativa y las falsas creencias.",
+  "psico": "Desde la psicología basada en la evidencia, este manual es una herramienta excelente para fomentar la metacognición y el pensamiento crítico. Al desgranar los sesgos cognitivos, ayuda a entender que el autoengaño no es un trastorno, sino un funcionamiento heurístico evolutivo. Sin embargo, en consulta observamos que el conocimiento teórico de estos sesgos no siempre es suficiente para neutralizarlos, por lo que se requiere un entrenamiento constante en validación empírica y contraste de datos.",
+  "faq": [
+   [
+    "¿Qué es exactamente un sesgo cognitivo?",
+    "Es una desviación en el procesamiento mental que nos lleva a interpretar la información de forma ilógica o distorsionada, afectando a nuestros juicios y toma de decisiones diarias."
+   ],
+   [
+    "¿Por qué caemos tan fácilmente en las pseudoterapias?",
+    "Porque nuestro cerebro busca desesperadamente patrones y causalidad, especialmente ante la enfermedad o la incertidumbre, lo que facilita que creamos en tratamientos sin eficacia probada."
+   ],
+   [
+    "¿Ayuda este libro a mejorar el pensamiento crítico?",
+    "Sí, proporciona numerosos ejemplos prácticos que facilitan identificar nuestros propios errores de razonamiento y la manipulación externa en medios y redes sociales."
+   ]
+  ]
+ },
+ "ref-grito-desesperado.html": {
+  "titulo": "Un grito desesperado",
+  "fecha": "2026-11-17",
+  "trata": "Esta novela aborda la profunda crisis por la que atraviesa una familia contemporánea, narrada desde la perspectiva del hijo adolescente. A través de vivencias cotidianas complejas, la trama expone la distancia emocional que a menudo se genera en el hogar, el impacto del silencio y la incomprensión mutua. Los protagonistas se enfrentan a situaciones límite que ponen a prueba los vínculos afectivos, obligándoles a replantearse sus roles, a buscar caminos hacia el entendimiento y a reflexionar sobre la necesidad urgente de reconstruir el diálogo familiar desde la base.",
+  "ideas": [
+   "La falta de comunicación efectiva deteriora progresivamente los vínculos afectivos en el hogar.",
+   "Los conflictos de los hijos adolescentes suelen reflejar carencias o dinámicas disfuncionales previas en la familia.",
+   "El afecto incondicional y el tiempo compartido actúan como pilares fundamentales para la recuperación emocional.",
+   "La validación de las emociones juveniles previene conductas de riesgo y aislamiento.",
+   "El cambio familiar genuino exige autocrítica y un compromiso activo por parte de los adultos."
+  ],
+  "para": "Este libro está especialmente indicado para padres, madres y educadores que buscan comprender mejor el universo emocional de los adolescentes. También resulta de utilidad para jóvenes en etapas de confusión que necesitan sentirse reflejados y encontrar vías de expresión para sus inquietudes cotidianas.",
+  "psico": "Desde la psicología clínica basada en la evidencia, la obra aborda con acierto la importancia de la validación emocional y la escucha activa en el desarrollo adolescente. No obstante, conviene matizar que las dinámicas familiares complejas raramente se resuelven mediante epifanías puntuales, requiriendo habitualmente un proceso terapéutico estructurado. Las fórmulas literarias de autoayuda pueden motivar el cambio de actitud, pero la resolución de crisis profundas demanda herramientas profesionales de comunicación y modificación de conducta.",
+  "faq": [
+   [
+    "¿Es un libro útil para mejorar la relación con mi hijo adolescente?",
+    "Sí, funciona como un excelente recurso para la reflexión y la empatía, ayudando a los progenitores a mirar desde la perspectiva de los jóvenes y a replantearse los estilos educativos habituales en casa."
+   ],
+   [
+    "¿Aborda la obra problemas psicológicos graves?",
+    "Toca situaciones límite y momentos de profunda angustia vital, aunque lo hace desde un enfoque narrativo y divulgativo, por lo que no sustituye en ningún caso la intervención de un profesional de la salud mental."
+   ],
+   [
+    "¿Está escrito desde una perspectiva exclusivamente teórica?",
+    "No, se presenta en formato de novela con personajes ficcionados y situaciones cotidianas, lo que facilita una lectura ágil y accesible para lectores de muy diversas edades sin perder el trasfondo pedagógico."
+   ]
+  ]
+ }
+}
