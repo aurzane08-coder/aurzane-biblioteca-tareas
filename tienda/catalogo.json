@@ -679,6 +679,24 @@
   "porque": "Dirigido a entusiastas de la ciencia que desean comprender los grandes misterios del universo. Aporta explicaciones accesibles sobre el espacio, el tiempo y el origen del cosmos."
  },
  {
+  "id": "la-sociedad-del-cansancio-byung-chul-han",
+  "titulo": "La sociedad del cansancio",
+  "autor": "Byung-Chul Han",
+  "temas": [
+   "burnout",
+   "ensayo"
+  ],
+  "origen": "semilla",
+  "fecha": "2026-11-17",
+  "isbn": "9788425438547",
+  "portada": "https://covers.openlibrary.org/b/id/14067349-M.jpg?default=false",
+  "anio": "2010",
+  "editorial": "",
+  "idioma": "",
+  "resumen": "",
+  "porque": "Este libro es para quienes se sienten agotados por la autoexigencia constante y el ritmo de vida actual. Aporta una profunda reflexión filosófica sobre cómo nos explotamos a nosotros mismos creyendo que somos libres."
+ },
+ {
   "id": "no-pienses-en-un-elefante-george-lakoff",
   "titulo": "No pienses en un elefante",
   "autor": "George Lakoff",
