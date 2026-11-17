@@ -1041,18 +1041,25 @@ def anunciate():
 {precio_html}
 <section class="card" id="solicitar"><h2>{"Empieza con tu mes gratis" if PRECIO.get("prueba_dias") else "Solicitar información"}</h2>
 <form id="formAnun" class="form-anun"><input type="text" name="web" tabindex="-1" autocomplete="off" class="vh" aria-hidden="true">
-<label>Universidad<input name="universidad" id="anunU" required maxlength="160"></label>
+<label>Universidad<input name="universidad" id="anunU" required maxlength="160" list="anunL" autocomplete="off" placeholder="Empieza a escribir y elígela de la lista"><datalist id="anunL"></datalist></label><input type="hidden" name="id" id="anunId">
 <label>Tu nombre y cargo<input name="nombre" required maxlength="120"></label>
 <label>Correo institucional<input type="email" name="correo" required maxlength="160"></label>
+<label>Página de admisión<input type="url" name="admision" required maxlength="300" placeholder="https://"></label>
+<label>Frase para tu ficha (opcional)<input name="texto" maxlength="90" placeholder="Por ejemplo: Matrícula abierta para septiembre"></label>
 <label>Mensaje (opcional)<textarea name="mensaje" rows="4" maxlength="2000" placeholder="Países o ciudades que te interesan, fechas de tu campaña de admisión…"></textarea></label>
 <label class="chk"><input type="checkbox" name="acepto" required> Acepto la <a href="https://aurzane.com/privacidad.html" target="_blank" rel="noopener">política de privacidad</a></label>
 <button type="submit" class="btn btn-osc">Enviar solicitud</button><p id="anunRes" class="sub" aria-live="polite"></p></form></section>
 </div></main>
-<script>(function(){{var f=document.getElementById('formAnun'),m=/[?&]u=([a-z0-9-]+[/][a-z0-9-]+)/.exec(location.search);
-if(m){{fetch('{BASE}datos/indice.json').then(function(r){{return r.json()}}).then(function(d){{var p=m[1].split('/');d.u.some(function(x){{if(d.p[x[1]][0]===p[0]&&x[2]===p[1]){{document.getElementById('anunU').value=x[0];return true}}}})}}).catch(function(){{}})}}
-f.addEventListener('submit',function(ev){{ev.preventDefault();var d=Object.fromEntries(new FormData(f));var r=document.getElementById('anunRes');r.textContent='Enviando…';
-var cuerpo={{web:d.web,nombre:d.nombre,correo:d.correo,acepto:d.acepto?1:0,motivo:'Patrocinio NEXUS',mensaje:'Universidad: '+d.universidad+(m?' ('+m[1]+')':'')+'\n\n'+(d.mensaje||'(sin mensaje)')}};
-fetch('https://aurzane.com/contacto.php',{{method:'POST',headers:{{'Content-Type':'text/plain'}},body:JSON.stringify(cuerpo)}}).then(function(x){{return x.json()}}).then(function(j){{r.textContent=j.ok?'Recibido. Te escribiremos al correo que nos has dejado.':(j.error||'No se pudo enviar.');if(j.ok)f.reset()}}).catch(function(){{r.innerHTML='No se pudo enviar. Escríbenos a <a href="mailto:hola@aurzane.com">hola@aurzane.com</a>.'}})}})}})();</script>''' + pie()
+<script>(function(){{var f=document.getElementById('formAnun'),U=document.getElementById('anunU'),L=document.getElementById('anunL'),I=document.getElementById('anunId'),D=null,m=/[?&]u=([a-z0-9-]+[/][a-z0-9-]+)/.exec(location.search);
+function idDe(x){{return D.p[x[1]][0]+'/'+x[2]}}
+function norm(t){{return (t||'').toLowerCase().normalize('NFD').replace(/[\\u0300-\\u036f]/g,'')}}
+function resolver(){{I.value='';if(!D)return;var v=U.value.trim();D.u.some(function(x){{if(x[0]===v){{I.value=idDe(x);return true}}}})}}
+fetch('{BASE}datos/indice.json').then(function(r){{return r.json()}}).then(function(d){{D=d;if(m){{d.u.some(function(x){{if(idDe(x)===m[1]){{U.value=x[0];I.value=m[1];return true}}}})}}}}).catch(function(){{}});
+U.addEventListener('input',function(){{resolver();if(!D||U.value.length<3)return;var q=norm(U.value),n=0,h='';D.u.some(function(x){{if(norm(x[0]).indexOf(q)>=0){{h+='<option value="'+x[0].replace(/"/g,'&quot;')+'">'+D.p[x[1]][2]+'</option>';n++}}return n>=8}});L.innerHTML=h}});
+U.addEventListener('change',resolver);
+f.addEventListener('submit',function(ev){{ev.preventDefault();resolver();var r=document.getElementById('anunRes');if(!I.value){{r.textContent='Elige tu universidad de la lista que aparece al escribir.';U.focus();return}}
+var d=Object.fromEntries(new FormData(f));d.acepto=d.acepto?1:0;r.textContent='Enviando…';
+fetch('https://aurzane.com/patrocinio.php',{{method:'POST',headers:{{'Content-Type':'text/plain'}},body:JSON.stringify(d)}}).then(function(x){{return x.json()}}).then(function(j){{r.textContent=j.ok?(j.mensaje||'Recibido.'):(j.error||'No se pudo enviar.');if(j.ok)f.reset()}}).catch(function(){{r.textContent='No se pudo enviar. Escríbenos a hola@aurzane.com.'}})}});}})();</script>''' + pie()
     escribir('anunciate/index.html', h)
     URLS.append((SITIO + BASE + 'anunciate/', '0.3'))
     print('Patrocinios vigentes:', activas)

@@ -10,6 +10,7 @@ name: Universidades publicar portal
 on:
   schedule:
     - cron: '17 3 * * *'
+    - cron: '17 15 * * *'  # segunda pasada: los patrocinios aprobados por la mañana salen el mismo día
   workflow_dispatch:
   push:
     paths: ['univ/gen/**', 'univ/data/imagenes.json', 'univ/data/ranking.json', 'univ/data/patrocinios.json']
@@ -32,6 +33,23 @@ jobs:
         run: python3 -u univ/exportar.py
       - name: Datos básicos de cada país (REST Countries)
         run: python3 -u univ/paises_info.py univ/data || true
+      - name: Patrocinios aprobados (servidor) y avisos de fin
+        if: env.SG_KEY != ''
+        run: |
+          mkdir -p ~/.ssh && printf '%s\n' "$SG_KEY" | tr -d '\r' > ~/.ssh/id && chmod 600 ~/.ssh/id
+          if [ -n "$SG_PASS" ]; then ssh-keygen -p -P "$SG_PASS" -N "" -f ~/.ssh/id >/dev/null; fi
+          SSH="ssh -i ~/.ssh/id -p ${SG_PORT:-18765} -o StrictHostKeyChecking=accept-new"
+          if $SSH "$SG_USER@$SG_HOST" "[ -f www/aurzane.com/public_html/patrocinio.php ] && php www/aurzane.com/public_html/patrocinio.php" > /tmp/activos.json; then
+            python3 - <<'PY'
+          import json
+          f = 'univ/data/patrocinios.json'; d = json.load(open(f, encoding='utf-8'))
+          act = json.load(open('/tmp/activos.json', encoding='utf-8'))
+          manual = [x for x in d.get('lista', []) if x.get('manual')]   # altas a mano (campo manual: true) se respetan
+          d['lista'] = manual + [x for x in act if x['id'] not in {m['id'] for m in manual}]
+          json.dump(d, open(f, 'w', encoding='utf-8'), ensure_ascii=False, indent=2)
+          print('Patrocinios activos:', len(d['lista']))
+          PY
+          else echo "::notice::Sin lista de patrocinios del servidor"; fi
       - name: Generar portal
         run: python3 -u univ/gen/gen.py univ/data salida/universidades
       - name: Lista de archivos y retirados
