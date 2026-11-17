@@ -1,5 +1,5 @@
 {
- "generado": "2026-11-16",
+ "generado": "2026-11-17",
  "productos": [
   {
    "id": "test-personalidad",
@@ -42673,6 +42673,60 @@
    "emoji": "",
    "foto_q": "calm ocean waves",
    "alta": "2026-11-14"
+  },
+  {
+   "id": "cur-e2c082e1e9",
+   "tipo": "curiosidad",
+   "mundo": "mind",
+   "origen": "curiosidades",
+   "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13729873/",
+   "titulo": "¿Los terremotos se preparan en el colegio?",
+   "ganchos": [
+    "¿Los terremotos se preparan en el colegio?",
+    "¿Los terremotos se preparan en el colegio? 🧠",
+    "La preparación escolar ante terremotos ayuda a mantener la salud física y psicológica."
+   ],
+   "texto": "La preparación escolar ante terremotos ayuda a mantener la salud física y psicológica. Una revisión científica analiza cómo los colegios en zonas sísmicas pueden proteger el bienestar de los menores. Esto incluye desde prevenir lesiones hasta ofrecer apoyo emocional antes y después de un seísmo.\n\nFuente: Journal of multidisciplinary healthcare",
+   "hashtags": [
+    "aurzane",
+    "psicologia",
+    "ciencia",
+    "educacion",
+    "Psicología",
+    "Curiosidades"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "🧠",
+   "dato": "La preparación escolar ante terremotos ayuda a mantener la salud física y psicológica.",
+   "alta": "2026-11-17"
+  },
+  {
+   "id": "cur-cdd19efff6",
+   "tipo": "curiosidad",
+   "mundo": "mind",
+   "origen": "curiosidades",
+   "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13750916/",
+   "titulo": "¿Funciona el mindfulness en la cárcel?",
+   "ganchos": [
+    "¿Funciona el mindfulness en la cárcel?",
+    "¿Funciona el mindfulness en la cárcel? 🧠",
+    "Una revisión científica muestra que practicar mindfulness reduce el estrés, la ansiedad y "
+   ],
+   "texto": "Una revisión científica muestra que practicar mindfulness reduce el estrés, la ansiedad y la depresión en personas privadas de libertad. Este tipo de intervenciones basadas en la atención plena ayudan a gestionar mejor las emociones en entornos complejos y de alta presión. La evidencia científica apunta a que mejora el bienestar psicológico incluso en situaciones de confinamiento.\n\nFuente: Revista Cuidarte",
+   "hashtags": [
+    "psicología",
+    "mindfulness",
+    "saludmental",
+    "aurzane",
+    "Psicología",
+    "Curiosidades"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "🧠",
+   "dato": "Una revisión científica muestra que practicar mindfulness reduce el estrés, la ansiedad y la depresión en personas privadas de libertad.",
+   "alta": "2026-11-17"
   },
   {
    "id": "cur-4fc2490712",
