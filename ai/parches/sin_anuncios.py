@@ -41,6 +41,6 @@ for p in glob.glob(os.path.join(raiz_m, '**', 'index.html'), recursive=True):
     copias = sorted(glob.glob(os.path.join(base, 'mind.aurzane.com', 'eliminar', 'sin-anuncios-*', rel)))
     if not copias: continue
     nuevo = open(copias[-1], encoding='utf-8').read()   # la página tal como estaba antes de quitarle los anuncios
-    if not ADS.search(nuevo) or 'az-sin-anuncios' in nuevo: continue
+    if 'az-sin-anuncios' in nuevo: continue   # (en inglés y portugués nunca hubo anuncios: solo se quita la marca)
     guardar('mind.aurzane.com', raiz_m, p, nuevo); dev += 1
 print(f'::notice::OVP sin anuncios: {n} páginas cambiadas. Tests de MIND con anuncios de nuevo: {dev}')
