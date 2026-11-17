@@ -3,6 +3,9 @@
 - Español de España: «¿Qué tan…?» → «¿Cómo de…?», «sin costo» → «sin coste».
 - Fichas de libros sin guía (biblioteca/libro/ref-*.html sin «Ideas clave»): el título decía «resumen y ficha» sin tener
   resumen; pasa a «ficha del libro». Las fichas con guía (resumen, ideas clave, preguntas) se quedan como están.
+- Biblioteca (aurzane.com/biblioteca/libro/): las fichas sin resumen tenían como descripción solo «Léelo gratis en español.»;
+  ahora una propia con título, autor y tema. Las que no tienen imagen para compartir llevan su portada (o la de AURZANE).
+- Páginas indexables sin canonical: se añade la suya.
 - Sin rayas largas (—) en el texto visible: en <title> se cambian por « | » y en el resto por una coma.
   No se toca nada dentro de <script> ni <style>.
 Corre cada día y tras cada despliegue; lo ya limpio no cambia. Copia previa en <web>/eliminar/textos-limpios-FECHA/."""
@@ -27,6 +30,32 @@ def sin_hoja_de_ruta(t):
             if prof == 0: i = ini + x.end(); break
         else: return t
         t = t[:ini] + t[i:]
+
+
+def biblioteca(t, f):
+    slug = f[:-5]
+    h1 = re.search(r'<h1>([^<]+)</h1>', t); au = re.search(r'<p class="autores">([^<]+)</p>', t)
+    tema = re.search(r'<a class="chip leer" href="../tema/[^"]+">([^<]+)</a>', t)
+    if h1 and re.search(r'<meta name="description" content="\s*Léelo gratis en español\.">', t):
+        d = f'Lee gratis «{h1.group(1)}»' + (f', de {au.group(1).split(";")[0].strip()}' if au else '') + \
+            (f': libro de {tema.group(1).lower()}' if tema else '') + ' en español, legal y sin registro, en la biblioteca de AURZANE.'
+        d = d if len(d) <= 160 else d[:157].rsplit(' ', 1)[0] + '…'
+        t = re.sub(r'(<meta name="description" content=")\s*Léelo gratis en español\.(">)', lambda m: m.group(1) + d.replace('"', '&quot;') + m.group(2), t, count=1)
+        t = re.sub(r'(<meta property="og:description" content=")\s*Léelo gratis en español\.(">)', lambda m: m.group(1) + d.replace('"', '&quot;') + m.group(2), t, count=1)
+    if 'property="og:image"' not in t and '</head>' in t:
+        img = next((m for m in re.findall(r'<img src="\.\./portadas/([^"]+)"', t) if m.rsplit('.', 1)[0] and slug.startswith(m.rsplit('.', 1)[0][:40])), '')
+        u = 'https://aurzane.com/biblioteca/portadas/' + img if img else 'https://aurzane.com/og-portada.jpg'
+        t = t.replace('</head>', f'<meta property="og:image" content="{u}">\n</head>', 1)
+    return t
+
+
+def canonica(t, w, raiz, p):
+    # las páginas cuyo contenido cambia con «?…» (leer.html?libro=, articulo.html?id=, cursos.html?c=) no llevan canonical fija
+    if 'location.search' in t or 'URLSearchParams' in t: return t
+    if re.search(r'rel=["\']canonical', t, re.I) or re.search(r'<meta[^>]+name=["\']robots["\'][^>]+noindex', t, re.I) or '</head>' not in t: return t
+    rel = os.path.relpath(p, raiz).replace(os.sep, '/')
+    u = f'https://{w}/' + (rel[:-10] if rel.endswith('index.html') else rel)
+    return t.replace('</head>', f'<link rel="canonical" href="{u}">\n</head>', 1)
 
 
 def texto(t):
@@ -57,6 +86,8 @@ for w in WEBS:
             except Exception: continue
             n = t
             if f == 'index.html' and d == raiz and w in ('learn.aurzane.com', 'build.aurzane.com'): n = sin_hoja_de_ruta(n)
+            if w == 'aurzane.com' and os.path.basename(d) == 'libro' and 'biblioteca' in d: n = biblioteca(n, f)
+            n = canonica(n, w, raiz, p)
             if f.startswith('ref-') and 'Ideas clave' not in n and 'resumen y ficha' in n:
                 n = re.sub(r'(<title>[^<]*?)resumen y ficha', r'\1ficha del libro', n)
                 n = re.sub(r'(<meta property="og:title" content="[^"]*?)resumen y ficha', r'\1ficha del libro', n)
