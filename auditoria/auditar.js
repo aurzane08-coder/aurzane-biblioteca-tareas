@@ -18,7 +18,7 @@ const nombre = u => u.replace(/^https:\/\//, '').replace(/[^a-z0-9]+/gi, '_').re
     const fila = { url, anchos: {} };
     for (const clave of ANCHOS) {
       const w = parseInt(clave, 10), oscuro = /o$/.test(clave);
-      const ctx = await b.newContext({ viewport: { width: w, height: w < 768 ? 800 : 900 }, deviceScaleFactor: 1, locale: 'es-ES', isMobile: w < 768, hasTouch: w < 768, colorScheme: oscuro ? 'dark' : 'light' });
+      const ctx = await b.newContext({ viewport: { width: w, height: w < 768 ? 800 : 900 }, deviceScaleFactor: 1, locale: 'es-ES', isMobile: w < 768, hasTouch: w < 768, colorScheme: oscuro ? 'dark' : 'light', bypassCSP: true });   /* sin CSP: axe no genera avisos que retrasarían el paso de la CSP a modo bloqueo */
       const p = await ctx.newPage();
       const errores = [], rotos = [];
       p.on('pageerror', e => errores.push(String(e.message).slice(0, 200)));
@@ -60,7 +60,7 @@ const nombre = u => u.replace(/^https:\/\//, '').replace(/[^a-z0-9]+/gi, '_').re
           const ax = await p.evaluate(async () => { const res = await axe.run(document, { runOnly: { type: 'tag', values: ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa'] } });
             return res.violations.map(v => ({ id: v.id, impacto: v.impact, n: v.nodes.length, ejemplo: (v.nodes[0]?.target || []).join(' ').slice(0, 120) })); });
           r.axe = ax;
-          await p.screenshot({ path: `${SAL}/capturas/${nombre(url)}-${w}.jpg`, type: 'jpeg', quality: 55, fullPage: true, timeout: 30000 }).catch(() => {});
+          await p.screenshot({ path: `${SAL}/capturas/${nombre(url)}-${clave}.jpg`, type: 'jpeg', quality: 55, fullPage: true, timeout: 30000 }).catch(() => {});
         }
       } catch (e) { r.fallo = String(e.message).slice(0, 200); }
       r.errores = [...new Set(errores)].slice(0, 6); r.rotos = [...new Set(rotos)].slice(0, 8);
