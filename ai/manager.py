@@ -772,13 +772,17 @@ CALC_A = {'hipoteca': ('https://build.aurzane.com/calculadora-hipoteca/', 'calcu
           'alquiler': ('https://build.aurzane.com/calculadora-rentabilidad-alquiler/', 'calculadora de rentabilidad del alquiler'), 'ahorro': ('https://build.aurzane.com/calculadora-ahorro/', 'calculadora de ahorro'),
           'jubilacion': ('https://build.aurzane.com/calculadora-jubilacion/', 'calculadora de jubilación'), 'interes': ('https://build.aurzane.com/calculadora-interes-compuesto/', 'calculadora de interés compuesto'),
           'reforma': ('https://build.aurzane.com/calculadora-reforma/', 'calculadora de reforma'), 'imc': ('https://live.aurzane.com/calculadora-imc/', 'calculadora de IMC'),
-          'agua': ('https://live.aurzane.com/calculadora-agua/', 'calculadora de agua'), 'calorias': ('https://live.aurzane.com/calculadora-calorias/', 'calculadora de calorías')}
+          'agua': ('https://live.aurzane.com/calculadora-agua/', 'calculadora de agua'), 'calorias': ('https://live.aurzane.com/calculadora-calorias/', 'calculadora de calorías'),
+          'ovulacion': ('https://live.aurzane.com/calculadora-ovulacion/', 'calculadora de ovulación'), 'embarazo': ('https://live.aurzane.com/calculadora-embarazo/', 'calculadora de embarazo'),
+          'sueno_c': ('https://live.aurzane.com/calculadora-sueno/', 'calculadora de sueño'), 'peso': ('https://live.aurzane.com/calculadora-peso-ideal/', 'calculadora de peso ideal')}
 GUIAS_MUNDO = [('Cómo calcular cuánta hipoteca puedes pagar sin ahogarte', 'hipoteca', 'build'), ('Gastos de comprar una vivienda en España además del precio', 'compra', 'build'),
                ('Del sueldo bruto al neto: qué te descuentan y por qué', 'sueldo', 'build'), ('Cómo se calcula el finiquito y qué conceptos incluye', 'finiquito', 'build'),
                ('Cómo calcular la rentabilidad real de un piso en alquiler', 'alquiler', 'build'), ('Cómo crear un fondo de emergencia paso a paso', 'ahorro', 'build'),
                ('Interés compuesto explicado con ejemplos sencillos', 'interes', 'build'), ('Cuánto cuesta reformar una vivienda y cómo presupuestarlo', 'reforma', 'build'),
                ('Cómo planificar el ahorro para la jubilación desde joven', 'jubilacion', 'build'), ('Cuánta agua hay que beber al día de verdad', 'agua', 'live'),
-               ('Qué indica el IMC y qué no te dice', 'imc', 'live'), ('Cuántas calorías necesitas y por qué varían tanto', 'calorias', 'live')]
+               ('Qué indica el IMC y qué no te dice', 'imc', 'live'), ('Cuántas calorías necesitas y por qué varían tanto', 'calorias', 'live'),
+               ('Días fértiles: cómo saber cuándo ovulas', 'ovulacion', 'live'), ('Cómo calcular la fecha probable de parto y las semanas de embarazo', 'embarazo', 'live'),
+               ('A qué hora acostarte para despertar descansado: los ciclos de sueño', 'sueno_c', 'live'), ('Peso ideal: qué fórmulas existen y cuánto fiarse de ellas', 'peso', 'live')]
 # temas que la gente busca en Google y donde AURZANE sale lejos (seo/seo.py, Search Console): van primero
 # cada tema puede ir dirigido a un país (motor de crecimiento por países de seo/seo.py)
 PAIS_GUIA = {}
