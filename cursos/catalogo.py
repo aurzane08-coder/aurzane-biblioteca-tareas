@@ -339,6 +339,8 @@ Array.prototype.forEach.call(document.querySelectorAll('.intenciones button'),fu
 ['q','fa','fn','fd','fo','fc'].forEach(function(i){$(i).addEventListener(i==='q'?'input':'change',pinta)});pinta()})();</script>"""
        + PIE)
 ficheros['cursos/index.html'] = cat
+# Lista de cursos publicados para los recuadros «curso relacionado» de los tests (aurzane-estilo.js): un curso en borrador no se anuncia
+ficheros['cursos/publicados.js'] = 'window.AZ_CURSOS_PUB=' + json.dumps({c['slug']: {'t': c['titulo'], 'img': portada(c), 'h': float(c.get('horas_estimadas') or 0), 'temas': len(c['modulos'])} for c in cursos}, ensure_ascii=False) + ';\n'
 ficheros['sitemap.xml'] = ('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
                            + f'<url><loc>https://learn.aurzane.com/</loc></url><url><loc>https://learn.aurzane.com/cursos/</loc><lastmod>{HOY}</lastmod></url>'
                            + ''.join(f'<url><loc>https://learn.aurzane.com/curso/{c["slug"]}/</loc><lastmod>{HOY}</lastmod></url>' for c in cursos) + '</urlset>\n')
