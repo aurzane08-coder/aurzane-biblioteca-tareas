@@ -591,3 +591,12 @@
 2026-11-17,7,tiktok,cur-8e657999c3,error,403 {"error":{"code":"unaudited_client_can_only_post_to_private_accounts" "message":"Please review our integration guidelines at https://developers.ti
 2026-11-17,3,mastodon,frase-3c5b1ef6,error,422 {"error":"Validation failed: File content type is invalid  File is invalid"}
 2026-11-17,8,tiktok,frase-0dd779c3,error,403 {"error":{"code":"unaudited_client_can_only_post_to_private_accounts" "message":"Please review our integration guidelines at https://developers.ti
+2026-11-17,7,tiktok,cur-8e657999c3,error,403 {"error":{"code":"unaudited_client_can_only_post_to_private_accounts" "message":"Please review our integration guidelines at https://developers.ti
+2026-11-17,3,mastodon,frase-3c5b1ef6,error,422 {"error":"Validation failed: Text character limit of 500 exceeded"}
+2026-11-17,8,tiktok,frase-0dd779c3,error,403 {"error":{"code":"unaudited_client_can_only_post_to_private_accounts" "message":"Please review our integration guidelines at https://developers.ti
+2026-11-17,2,telegram,nc-inteligencia-artificial,ok,112
+2026-11-17,2,bluesky,nc-ciencias-de-la-actividad-fisica-y-del-deporte,ok,at://did:plc:6ovoiudj7dkxgrzd2zkyn77y/app.bsky.feed.post/3n2jlxruwvg25
+2026-11-17,2,mastodon,nc-historia,ok,https://mastodon.social/@auzane/117633032562200114
+2026-11-17,2,instagram,nc-psicologia,ok,18121955066055502
+2026-11-17,2,facebook,nc-ingenieria-quimica-industrial,ok,1612978383960541
+2026-11-17,2,pinterest,nc-criminologia,feed,
