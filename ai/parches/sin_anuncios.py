@@ -1,6 +1,7 @@
 """Anuncios con criterio (17/11/2026; cambiado el mismo día por decisión de Adrian).
-- OVP (ovp.aurzane.com) va SIN anuncios en todas sus páginas: ahí se tratan datos sensibles (evaluaciones psicológicas,
-  informe, portal). Se quita el script de AdSense y los bloques <ins>; se deja la verificación de la cuenta.
+- OVP: SIN anuncios solo en las páginas donde se tratan datos sensibles: portal, evaluaciones (*-cliente.html),
+  generar el informe y restablecer la contraseña. Las páginas públicas (portada, colegios, informe de ejemplo, 404)
+  sí llevan anuncios. Se quita el script de AdSense y los bloques <ins>; se deja la verificación de la cuenta.
 - Los tests de salud de MIND SÍ llevan anuncios y socios (público general), con buena experiencia: la mañana del 17/11
   se les quitaron y aquí se les devuelven desde la copia que se guardó en eliminar/sin-anuncios-*.
 Corre cada día y tras cada despliegue. Copia previa de cada página cambiada en <web>/eliminar/."""
@@ -19,8 +20,9 @@ def guardar(web, raiz, p, t):
     open(p + '.tmp', 'w', encoding='utf-8').write(t); os.replace(p + '.tmp', p)
 
 
-# 1) OVP sin anuncios
-n = 0; raiz = os.path.join(base, 'ovp.aurzane.com', 'public_html')
+# 1) OVP: sin anuncios en las páginas sensibles; las públicas recuperan los suyos (copia en eliminar/)
+SENSIBLE = re.compile(r'(^|/)(portal|generar-informe|restablecer-contrasena|[a-z0-9-]+-cliente)\.html$')
+n = 0; dev_o = 0; raiz = os.path.join(base, 'ovp.aurzane.com', 'public_html')
 for d, sub, fs in os.walk(raiz):
     sub[:] = [s for s in sub if s not in FUERA and not s.startswith('.')]
     for f in fs:
@@ -28,6 +30,13 @@ for d, sub, fs in os.walk(raiz):
         p = os.path.join(d, f)
         try: t = open(p, encoding='utf-8').read()
         except Exception: continue
+        rel = os.path.relpath(p, raiz)
+        if not SENSIBLE.search(rel):
+            if 'name="az-sin-anuncios"' in t:
+                copias = sorted(glob.glob(os.path.join(base, 'ovp.aurzane.com', 'eliminar', 'sin-anuncios-*', rel)))
+                if copias and 'az-sin-anuncios' not in open(copias[-1], encoding='utf-8').read():
+                    guardar('ovp.aurzane.com', raiz, p, open(copias[-1], encoding='utf-8').read()); dev_o += 1
+            continue
         nuevo = INS.sub('', ADS.sub('', t))
         if 'name="az-sin-anuncios"' not in nuevo and '</head>' in nuevo: nuevo = nuevo.replace('</head>', MARCA + '</head>', 1)
         if nuevo != t: guardar('ovp.aurzane.com', raiz, p, nuevo); n += 1
@@ -43,4 +52,4 @@ for p in glob.glob(os.path.join(raiz_m, '**', 'index.html'), recursive=True):
     nuevo = open(copias[-1], encoding='utf-8').read()   # la página tal como estaba antes de quitarle los anuncios
     if 'az-sin-anuncios' in nuevo: continue   # (en inglés y portugués nunca hubo anuncios: solo se quita la marca)
     guardar('mind.aurzane.com', raiz_m, p, nuevo); dev += 1
-print(f'::notice::OVP sin anuncios: {n} páginas cambiadas. Tests de MIND con anuncios de nuevo: {dev}')
+print(f'::notice::OVP: {n} páginas sensibles sin anuncios, {dev_o} públicas con anuncios de nuevo. Tests de MIND con anuncios de nuevo: {dev}')
