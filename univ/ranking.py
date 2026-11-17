@@ -34,14 +34,38 @@ def norm(t):
     return re.sub(r'[^a-z0-9 ]+', ' ', t).strip()
 
 
-# 1) todas las instituciones educativas de OpenAlex (unas 25.000), con cursor
-inst, cur, n = [], '*', 0
-campos = 'id,display_name,display_name_alternatives,homepage_url,country_code,works_count,cited_by_count,summary_stats,type'
-while cur:
-    j = pedir(f'{API}?filter=type:education&per_page=200&select={campos}&cursor={urllib.parse.quote(cur)}&mailto={CORREO}')
-    inst += j['results']; cur = j['meta'].get('next_cursor'); n += 1
-    if n % 25 == 0: print(n, 'páginas,', len(inst), 'instituciones')
-    time.sleep(0.15)
+# 1) todas las instituciones educativas de OpenAlex, desde su copia pública completa (S3, sin clave ni límite diario;
+#    la API pide clave desde 2026). Cada institución está en la partición de su última actualización.
+import gzip as _gz, io, xml.etree.ElementTree as ET
+S3 = 'https://openalex.s3.amazonaws.com/'
+claves, token = [], None
+while True:
+    q = 'list-type=2&prefix=data/jsonl/institutions/' + ('&continuation-token=' + urllib.parse.quote(token) if token else '')
+    with urllib.request.urlopen(S3 + '?' + q, timeout=120) as r:
+        x = ET.fromstring(r.read())
+    ns = {'s': x.tag.split('}')[0].strip('{')}
+    claves += [k.text for k in x.findall('s:Contents/s:Key', ns) if k.text.endswith('.gz')]
+    t = x.find('s:NextContinuationToken', ns)
+    if t is None: break
+    token = t.text
+claves.sort()   # por fecha de partición: la versión más reciente de cada institución gana
+print('OpenAlex:', len(claves), 'archivos')
+por_id = {}
+for k in claves:
+    for i in range(4):
+        try:
+            with urllib.request.urlopen(S3 + k, timeout=300) as r:
+                datos = r.read(); break
+        except Exception as e:
+            print('reintento', k, str(e)[:60]); time.sleep(5 * (i + 1))
+    else:
+        raise SystemExit('No se pudo descargar ' + k + ': se deja el ranking anterior')
+    for ln in _gz.GzipFile(fileobj=io.BytesIO(datos)):
+        try: o = json.loads(ln)
+        except Exception: continue
+        if o.get('type') != 'education': por_id.pop(o.get('id'), None); continue
+        por_id[o['id']] = {c: o.get(c) for c in ('id', 'display_name', 'display_name_alternatives', 'homepage_url', 'country_code', 'works_count', 'cited_by_count', 'summary_stats')}
+inst = list(por_id.values())
 print('OpenAlex:', len(inst), 'instituciones educativas')
 if len(inst) < 5000: raise SystemExit('Respuesta incompleta de OpenAlex: se deja el ranking anterior')
 inst.sort(key=lambda x: -(x.get('cited_by_count') or 0))
