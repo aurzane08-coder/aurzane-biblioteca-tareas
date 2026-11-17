@@ -629,3 +629,4 @@
 2026-11-17,9,tiktok,frase-2235d4e7,ok,v_inbox_file~v2.7709254486234712082 (borrador en la bandeja de TikTok: la app aún no está auditada; publícalo desde la app)
 2026-11-17,3,mastodon,frase-3c5b1ef6,error,422 {"error":"Validation failed: File content type is invalid  File is invalid"}
 2026-11-17,3,mastodon,frase-3c5b1ef6,error,422 {"error":"Validation failed: Text character limit of 500 exceeded"}
+2026-11-17,3,mastodon,frase-3c5b1ef6,error,422 {"error":"Validation failed: Text character limit of 500 exceeded"}

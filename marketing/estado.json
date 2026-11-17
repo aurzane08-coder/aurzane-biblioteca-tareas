@@ -703,9 +703,6 @@
    "7": {
     "tiktok": "cur-8e657999c3"
    },
-   "8": {
-    "tiktok": "frase-0dd779c3"
-   },
    "9": {
     "tiktok": "frase-2235d4e7"
    }
@@ -757,9 +754,6 @@
    },
    "7": {
     "tiktok": "cur-fa08043f6f"
-   },
-   "8": {
-    "tiktok": "cur-cadc144101"
    },
    "9": {
     "tiktok": "frase-e99ed1e3"
@@ -813,9 +807,6 @@
    "7": {
     "tiktok": "cur-6ed39a5dd2"
    },
-   "8": {
-    "tiktok": "frase-2144e317"
-   },
    "9": {
     "tiktok": "frase-4121909e"
    }
@@ -867,9 +858,6 @@
    },
    "7": {
     "tiktok": "cur-2712364aef"
-   },
-   "8": {
-    "tiktok": "cur-4fc2490712"
    },
    "9": {
     "tiktok": "frase-b629d12e"
@@ -923,9 +911,6 @@
    "7": {
     "tiktok": "cur-d8c8e23130"
    },
-   "8": {
-    "tiktok": "frase-fee27969"
-   },
    "9": {
     "tiktok": "frase-bfc5dc8d"
    }
@@ -975,9 +960,6 @@
    },
    "7": {
     "tiktok": "cur-5827b4c76e"
-   },
-   "8": {
-    "tiktok": "cur-51017ffc8d"
    },
    "9": {
     "tiktok": "frase-c5f24133"
@@ -1029,9 +1011,6 @@
    "7": {
     "tiktok": "cur-947e34c9af"
    },
-   "8": {
-    "tiktok": "frase-25a8144f"
-   },
    "9": {
     "tiktok": "frase-43c7f531"
    }
@@ -1081,9 +1060,6 @@
    },
    "7": {
     "tiktok": "cur-7d8fdd8c97"
-   },
-   "8": {
-    "tiktok": "cur-2fc91ef243"
    },
    "9": {
     "tiktok": "frase-ff372591"
@@ -1135,30 +1111,27 @@
    "7": {
     "tiktok": "cur-ed1744a3b5"
    },
-   "8": {
-    "tiktok": "frase-9b2daa33"
-   },
    "9": {
     "tiktok": "frase-88b46a08"
    }
   },
   "2026-11-26": {
    "1": {
-    "telegram": "test-personalidad",
-    "bluesky": "auto-live-aurzane-com-calculadora-porcentajes",
-    "mastodon": "auto-live-aurzane-com-calculadora-imc",
-    "instagram": "auto-mind-aurzane-com-test-de-burnout",
-    "facebook": "auto-mind-aurzane-com-test-de-autoeficacia",
-    "threads": "auto-live-aurzane-com-calculadora-edad"
+    "telegram": "calc-hipoteca",
+    "bluesky": "ovp",
+    "mastodon": "test-habitos",
+    "instagram": "calc-embarazo",
+    "facebook": "test-satisfaccion",
+    "threads": "test-personalidad"
    },
    "2": {
-    "telegram": "biblio-nexus",
-    "bluesky": "biblio-live",
-    "mastodon": "biblio-mind",
-    "instagram": "auto-mind-aurzane-com-ejercicios",
-    "facebook": "auto-mind-aurzane-com-pt",
-    "threads": "auto-mind-aurzane-com-en",
-    "pinterest": "auto-mind-aurzane-com-en-self-compassion-test-scs-sf"
+    "telegram": "auto-aurzane-com-colegios",
+    "bluesky": "auto-aurzane-com-novedades",
+    "mastodon": "auto-aurzane-com-mapa",
+    "instagram": "biblio-mind",
+    "facebook": "biblio-learn",
+    "threads": "biblio-nexus",
+    "pinterest": "biblio-live"
    },
    "3": {
     "telegram": "frase-30698848",
@@ -1188,21 +1161,18 @@
    "7": {
     "tiktok": "cur-114709696a"
    },
-   "8": {
-    "tiktok": "cur-ccf7b022bd"
-   },
    "9": {
     "tiktok": "frase-f56e3629"
    }
   },
   "2026-11-27": {
    "1": {
-    "telegram": "auto-mind-aurzane-com-test-de-autoeficacia",
-    "bluesky": "auto-mind-aurzane-com-test-de-soledad",
-    "mastodon": "auto-mind-aurzane-com-test-de-resiliencia",
-    "instagram": "auto-live-aurzane-com-calculadora-agua",
-    "facebook": "auto-mind-aurzane-com-test-de-estres",
-    "threads": "auto-live-aurzane-com-calculadora-interes-compuesto"
+    "telegram": "calc-reforma",
+    "bluesky": "test-habitos",
+    "mastodon": "calc-embarazo",
+    "instagram": "calc-hipoteca",
+    "facebook": "ovp",
+    "threads": "test-sueno"
    },
    "2": {
     "telegram": "crea-l06-02",
@@ -1242,21 +1212,18 @@
    "7": {
     "tiktok": "cur-ea27fcda45"
    },
-   "8": {
-    "tiktok": "frase-e74fb2a0"
-   },
    "9": {
     "tiktok": "frase-b83c1781"
    }
   },
   "2026-11-28": {
    "1": {
-    "telegram": "auto-mind-aurzane-com-test-de-soledad",
-    "bluesky": "auto-mind-aurzane-com-test-de-resiliencia",
-    "mastodon": "auto-mind-aurzane-com-test-de-autoeficacia",
-    "instagram": "auto-live-aurzane-com-calculadora-interes-compuesto",
-    "facebook": "auto-live-aurzane-com-calculadora-agua",
-    "threads": "auto-live-aurzane-com-calculadora-porcentajes"
+    "telegram": "test-satisfaccion",
+    "bluesky": "calc-calorias",
+    "mastodon": "calc-reforma",
+    "instagram": "test-autoestima",
+    "facebook": "test-personalidad",
+    "threads": "curso-metod"
    },
    "2": {
     "telegram": "lectura-la-rueda-de-la-vida-elisabeth-kubler-ross",
@@ -1295,21 +1262,18 @@
    "7": {
     "tiktok": "cur-caacb3bc64"
    },
-   "8": {
-    "tiktok": "cur-0067f9c7bd"
-   },
    "9": {
     "tiktok": "frase-b1cb5465"
    }
   },
   "2026-11-29": {
    "1": {
-    "telegram": "auto-mind-aurzane-com-test-de-estres",
-    "bluesky": "auto-live-aurzane-com-calculadora-interes-compuesto",
-    "mastodon": "auto-live-aurzane-com-calculadora-agua",
-    "instagram": "auto-live-aurzane-com-calculadora-porcentajes",
-    "facebook": "auto-mind-aurzane-com-test-de-resiliencia",
-    "threads": "auto-mind-aurzane-com-test-de-autoeficacia"
+    "telegram": "curso-neuro",
+    "bluesky": "test-satisfaccion",
+    "mastodon": "calc-hipoteca",
+    "instagram": "ovp",
+    "facebook": "test-autocompasion",
+    "threads": "calc-reforma"
    },
    "2": {
     "telegram": "lectura-como-hacer-que-te-pasen-cosas-buenas-marian-rojas-estape",
@@ -1348,21 +1312,18 @@
    "7": {
     "tiktok": "cur-c1c9d6339f"
    },
-   "8": {
-    "tiktok": "frase-ebed20dc"
-   },
    "9": {
     "tiktok": "frase-4f7eb0c1"
    }
   },
   "2026-11-30": {
    "1": {
-    "telegram": "auto-live-aurzane-com-calculadora-imc",
-    "bluesky": "auto-live-aurzane-com-calculadora-edad",
-    "mastodon": "auto-live-aurzane-com-calculadora-interes-compuesto",
-    "instagram": "auto-mind-aurzane-com-test-de-autoeficacia",
-    "facebook": "auto-live-aurzane-com-calculadora-dias-entre-fechas",
-    "threads": "auto-mind-aurzane-com-test-de-resiliencia"
+    "telegram": "calc-calorias",
+    "bluesky": "test-tdah",
+    "mastodon": "curso-neuro",
+    "instagram": "test-autocompasion",
+    "facebook": "calc-reforma",
+    "threads": "ovp"
    },
    "2": {
     "telegram": "crea-l05-02",
@@ -1399,9 +1360,6 @@
    },
    "7": {
     "tiktok": "cur-cdd19efff6"
-   },
-   "8": {
-    "tiktok": "cur-e2c082e1e9"
    },
    "9": {
     "tiktok": "frase-a1999f3e"

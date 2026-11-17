@@ -6,7 +6,7 @@ Actualizado: 2026-11-17. Clics de personas (sin bots ni vistas previas) que entr
 |---|---|---|
 | telegram | 71 | 4 |
 | bluesky | 48 | 249 |
-| mastodon | 47 | 146 |
+| mastodon | 47 | 147 |
 | instagram | 48 | 0 |
 | facebook | 48 | 120 |
 | threads | 0 | 0 |
@@ -21,8 +21,8 @@ Actualizado: 2026-11-17. Clics de personas (sin bots ni vistas previas) que entr
 | calc-sueldo | 12 |
 | calc-hipoteca | 12 |
 | test-sueno | 11 |
+| test-habitos | 11 |
 | curso-neuro | 10 |
-| test-habitos | 10 |
 | nc-ingenieria-en-tecnologias-industriales | 9 |
 | crea-l05-08 | 9 |
 | frase-fe3fa4a3 | 9 |
