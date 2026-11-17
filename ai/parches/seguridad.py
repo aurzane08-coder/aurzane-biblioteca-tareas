@@ -10,7 +10,7 @@ WEBS = ['aurzane.com', 'mind.aurzane.com', 'nexus.aurzane.com', 'live.aurzane.co
 INTERNAS = re.compile(r'/(admin[a-z-]*\.html|generar-informe\.html|ai/index\.html|panel/index\.html)$')
 # enlaces al admin dentro de páginas públicas (pie «Estado del sistema» y similares)
 ENLACE = re.compile(r'[ \t]*<a [^>]*href="https://aurzane\.com/admin\.html[^"]*"[^>]*>(?:Estado del sistema|Admin|Panel admin|Administración)</a>[ \t]*\n?', re.I)
-MARCA = '# seguridad-aurzane v2'
+MARCA = '# seguridad-aurzane v3'   # v3: Permissions-Policy (auditoría final, 17/11/2026)
 BLOQUE = MARCA + r'''
 <IfModule mod_headers.c>
 <FilesMatch "^(admin[a-z-]*|generar-informe|guardados-almacen|wp-login)\.(html|php)$">
@@ -30,6 +30,7 @@ RewriteRule ^xmlrpc\.php$ - [F,L]
 Header set X-Robots-Tag "noindex, nofollow, noarchive" env=AZ_PRIV
 Header always set X-Content-Type-Options "nosniff"
 Header always set Referrer-Policy "strict-origin-when-cross-origin"
+Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), usb=(), payment=(), magnetometer=(), gyroscope=()"
 </IfModule>
 # El almacén común de «Guardados» lo abren en un marco invisible los subdominios de aurzane.com:
 # a ese archivo solo se le permite enmarcarse dentro de aurzane.com y sus subdominios.
