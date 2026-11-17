@@ -124,5 +124,41 @@
   "fallo": 0,
   "fecha": "2026-11-16",
   "ejemplo": "Prueba fallida en https://live.aurzane.com/calculadora-dias-entre-fechas/: Cambié un dato: 92 → 92 · 1 error(es) de JavaScript: Refused to display 'https://aurzane.com/' in a frame because it set 'X-F"
+ },
+ "prueba_fallida|prueba fallida en # carga bien · # error(es) de javascript: access to font at '# from origin '# has been blocked by cors policy: no 'access-": {
+  "receta": "relanzar_enlaces",
+  "motivo": "Bloqueo CORS en fuentes al cargar recursos desde build.aurzane.com hacia aurzane.com.",
+  "explicacion": "El navegador bloquea la fuente por política CORS porque el dominio principal (aurzane.com) no envía la cabecera Access-Control-Allow-Origin permitiendo el acceso desde subdominios como build.aurzane.com. Para solucionarlo a mano, añade en el servidor de aurzane.com (o en la configuración de SiteGround/htaccess) la cabecera Header set Access-Control-Allow-Origin '*' para los archivos de fuentes (.woff2), o revisa las rutas de los enlaces y assets estáticos en las reglas del sistema de despliegue.",
+  "ok": 0,
+  "fallo": 0,
+  "fecha": "2026-11-17",
+  "ejemplo": "Prueba fallida en https://build.aurzane.com/calculadora-hipoteca/: Carga bien · 4 error(es) de JavaScript: Access to font at 'https://aurzane.com/fuentes/instrument-sans-latin-wght-normal.woff2' from "
+ },
+ "prueba_fallida|prueba fallida en # cambié un dato: #,# l → #,# l · # error(es) de javascript: access to font at '# from origin '# has been blocked by cors ": {
+  "receta": "relanzar_enlaces",
+  "motivo": "Error de CORS al cargar la fuente desde un subdominio por restricciones de cabeceras en el servidor.",
+  "explicacion": "El navegador bloquea la fuente en aurzane.com debido a la política de origen cruzado (CORS). Para solucionarlo a mano en SiteGround, añade las cabeceras Access-Control-Allow-Origin: * en el archivo .htaccess del dominio principal o configura Nginx/Apache para permitir solicitudes desde live.aurzane.com.",
+  "ok": 0,
+  "fallo": 0,
+  "fecha": "2026-11-17",
+  "ejemplo": "Prueba fallida en https://live.aurzane.com/calculadora-agua/: Cambié un dato: 2,7 L → 3,2 L · 4 error(es) de JavaScript: Access to font at 'https://aurzane.com/fuentes/instrument-sans-latin-wght-norma"
+ },
+ "prueba_fallida|prueba fallida en # respondí # preguntas: resultado # sobre # (bienestar bajo) · # error(es) de javascript: access to font at '# from origin": {
+  "receta": "relanzar_enlaces",
+  "motivo": "Bloqueo de CORS en la carga de fuentes web desde un subdominio externo.",
+  "explicacion": "El navegador bloquea el archivo woff2 porque https://live.aurzane.com solicita un recurso estático alojado en https://aurzane.com sin las cabeceras CORS permitidas. Para solucionarlo a mano, añade en el archivo .htaccess del dominio principal o en la configuración de SiteGround la cabecera Header set Access-Control-Allow-Origin '*' para los archivos de fuentes.",
+  "ok": 0,
+  "fallo": 0,
+  "fecha": "2026-11-17",
+  "ejemplo": "Prueba fallida en https://live.aurzane.com/test-de-bienestar/: Respondí 5 preguntas: resultado 40 sobre 100 (Bienestar bajo) · 4 error(es) de JavaScript: Access to font at 'https://aurzane.com/fuentes"
+ },
+ "prueba_fallida|prueba fallida en # cambié un dato: # → # · # error(es) de javascript: access to font at '# from origin '# has been blocked by cors policy: ": {
+  "receta": "relanzar_enlaces",
+  "motivo": "Bloqueo CORS al cargar la fuente desde el dominio principal en un subdominio.",
+  "explicacion": "El navegador bloquea la carga de la fuente tipográfica en live.aurzane.com porque se sirve desde aurzane.com sin cabeceras CORS permitidas. Para solucionarlo a mano, añade las cabeceras de control de acceso Access-Control-Allow-Origin en el servidor SiteGround para los archivos de fuentes (.woff2) o configura el archivo .htaccess en la raíz del dominio principal.",
+  "ok": 0,
+  "fallo": 0,
+  "fecha": "2026-11-17",
+  "ejemplo": "Prueba fallida en https://live.aurzane.com/calculadora-dias-entre-fechas/: Cambié un dato: 92 → 92 · 4 error(es) de JavaScript: Access to font at 'https://aurzane.com/fuentes/bodoni-moda-latin-opsz-no"
  }
 }
