@@ -29,7 +29,7 @@ def limpia(t):
     t = re.sub(r'<ref[^>]*>.*?</ref>|<ref[^>]*/>|<[^>]+>', '', t, flags=re.S)
     t = re.sub(r'\[\[(?:[^|\]]*\|)?([^\]]+)\]\]', r'\1', t)
     t = re.sub(r'\{\{[^}]*\}\}', '', t); t = re.sub(r"'{2,}", '', t)
-    t = html.unescape(t).strip().strip('«»"“”').strip()
+    t = re.sub(r'[«»"“”]', '', html.unescape(t)).strip()
     return re.sub(r'\s+', ' ', t)
 
 
