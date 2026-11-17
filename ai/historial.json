@@ -1498,5 +1498,17 @@
   "publicados": 98,
   "pruebas_ok": 57,
   "pruebas_total": 57
+ },
+ {
+  "fecha": "2026-11-17T09:06",
+  "estado": "medio",
+  "avisos": 1,
+  "arreglos": 2,
+  "errores_24h": 7,
+  "redes_ok_24h": 26,
+  "cola": 2,
+  "publicados": 98,
+  "pruebas_ok": 57,
+  "pruebas_total": 57
  }
 ]
