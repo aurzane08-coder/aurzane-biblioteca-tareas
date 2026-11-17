@@ -404,7 +404,7 @@
               '</tbody></table></div><p class="sub" style="margin-top:8px">Ranking mundial por citas científicas según <a href="' + BASE + 'acerca/#ranking">OpenAlex</a> (datos abiertos, se actualiza cada mes). ✓ = la mejor posicionada de las elegidas.</p>';
             if (info.length > 1) {
               h += '<section class="card" style="margin-top:22px"><h2 style="margin-top:0">Lo que tienen en común</h2>' +
-                (comunesA.length ? '<p><b>Áreas en las que ofrecen estudios:</b> ' + esc(comunesA.join(', ')) + '.</p>' : '<p>No comparten ninguna área de estudio según los datos oficiales.</p>');
+                (comunesA.length ? '<p><b>Áreas en las que ofrecen estudios:</b> ' + esc(comunesA.join(', ')) + '.</p>' : info.every(function (x) { return x.areas.length; }) ? '<p>No comparten ninguna área de estudio según los datos oficiales.</p>' : '<p class="sub">No tenemos las áreas de estudio de alguna de ellas; consulta su web.</p>');
               if (comunesC.length) {
                 var hayNota = comunesC.some(function (k) { return info.some(function (x) { return x.carr[k].nota; }); });
                 h += '<h3>' + fmt(comunesC.length) + (comunesC.length === 1 ? ' carrera en común' : ' carreras en común') + '</h3><div class="comp"><table><thead><tr><th scope="col">Carrera</th>' +
