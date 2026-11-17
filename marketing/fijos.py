@@ -142,5 +142,34 @@ C = [  # (lote, imagen, url, titulo, texto, tags)
 for lote, n, url, tit, tx, tags in C:
     p(f'crea-l{lote}-{n:02d}', 'creativo', 'aurzane', url, tit, [tit, tit + ', gratis', tit], tx, tags, img=f'img/lote{lote}-{n:02d}-v.jpg')
 
+# ---------- Campaña «Conoce AURZANE» (fase 4, punto 57; 17/11/2026) ----------
+# Presentaciones de cada parte de AURZANE para Instagram, Facebook, Telegram, Bluesky y Mastodon (TikTok y YouTube solo llevan vídeos).
+# Sin cifras escritas a mano: los números reales ya salen en cada página y se actualizan solos.
+PROMOS = [
+ ('promo-mind', 'mind', M + '/', 'MIND: tests de psicología gratis', ['Conócete mejor en 3 minutos', '¿Cómo estás de verdad? Míralo con un test serio', 'Tests de psicología validados, gratis y anónimos'],
+  'Ansiedad, estrés, autoestima, personalidad, burnout y más: cuestionarios que usan los profesionales, con tu resultado explicado al momento. Sin registro.', ['Psicología', 'SaludMental', 'Autoconocimiento'], 'person reflecting'),
+ ('promo-ejercicios', 'mind', M + '/ejercicios/', 'Ejercicios guiados con voz', ['Calma en 5 minutos, guiada con voz', 'Respira, suelta y vuelve a ti', 'Relajación guiada gratis, cuando la necesites'],
+  'Respiración 4-7-8, escaneo corporal, coherencia cardiaca, técnica 5-4-3-2-1 y más ejercicios guiados con voz para bajar el estrés. Gratis.', ['Relajación', 'Mindfulness', 'Bienestar'], 'calm woman breathing nature'),
+ ('promo-nexus', 'nexus', N + '/', 'NEXUS: qué y dónde estudiar', ['¿No sabes qué estudiar? Empieza aquí', 'Universidades y carreras de todo el mundo, en un buscador', 'Elige carrera con datos, no a ciegas'],
+  'Busca universidades por país y ranking, compara carreras y consulta notas de corte oficiales en España. Gratis y sin registro.', ['Universidad', 'QuéEstudiar', 'Orientación'], 'university students campus'),
+ ('promo-ovp', 'mind', 'https://ovp.aurzane.com/', 'Orientación vocacional AURZANE', ['Descubre a qué te gustaría dedicarte', 'Intereses, aptitudes y personalidad en un solo informe', 'Orientación vocacional hecha por un psicólogo'],
+  'Un proceso guiado de orientación vocacional con informe personal: tus intereses, aptitudes y personalidad, y las carreras que encajan contigo.', ['OrientaciónVocacional', 'Carreras', 'Estudiantes'], 'young student thinking future'),
+ ('promo-colegios', 'mind', 'https://aurzane.com/colegios/', 'Orientación vocacional para colegios', ['Colegios y academias: orientación vocacional para todo el curso', 'Informes vocacionales para tus alumnos, sin papeleo', 'Ayuda a tus alumnos a elegir carrera'],
+  'Para departamentos de orientación, colegios y academias: un proceso vocacional completo para tus alumnos, con informe personal y panel para el orientador.', ['Orientadores', 'Colegios', 'Educación'], 'teacher classroom'),
+ ('promo-live', 'live', L + '/', 'LIVE: salud y bienestar', ['Cuida tu cuerpo con calculadoras fiables', 'Sueño, agua, calorías e IMC en un clic', 'Pequeños hábitos, grandes cambios'],
+  'Calculadoras de salud, guías de hábitos y lecturas de bienestar con fuentes citadas. Gratis y sin registro.', ['Salud', 'Bienestar', 'Hábitos'], 'healthy breakfast fruit'),
+ ('promo-build', 'build', B + '/', 'BUILD: dinero y vivienda', ['Haz números antes de decidir', 'Hipoteca, sueldo neto y finiquito, calculados en un minuto', 'Tus finanzas, claras y sin letra pequeña'],
+  'Calculadoras de hipoteca, sueldo neto, finiquito, ahorro y alquiler, con guías que explican cada número. Gratis.', ['Finanzas', 'Hipoteca', 'Ahorro'], 'calculator coins desk'),
+ ('promo-learn', 'learn', LE + '/', 'LEARN: cursos gratis con certificado', ['Aprende algo nuevo esta semana', 'Cursos gratis a tu ritmo', 'Formación gratuita, de verdad'],
+  'Cursos gratuitos de neurociencia, psicología y más, organizados por temas y a tu ritmo.', ['Cursos', 'AprendeGratis', 'Formación'], 'student reading notes'),
+ ('promo-biblioteca', 'aurzane', W + '/biblioteca/', 'Biblioteca AURZANE', ['Libros de psicología para leer gratis', 'Tu próxima lectura, gratis y legal', 'Biblioteca abierta: lee sin pagar'],
+  'Libros con licencia abierta de psicología, neurociencia, salud, historia y más, para leer en línea sin pagar y sin registro.', ['LibrosGratis', 'Lectura', 'Psicología'], 'library bookshelves'),
+ ('promo-aurzane', 'aurzane', W + '/', 'AURZANE: todo en un lugar', ['Psicología, estudios, salud y dinero en un solo sitio', 'Herramientas gratis para decidir mejor', 'Tu mente, tus estudios y tu vida, más claros'],
+  'Tests de psicología, buscador de universidades, calculadoras de salud y finanzas, cursos y una biblioteca abierta. Todo gratis.', ['AURZANE', 'Psicología', 'Gratis'], 'sunrise mountains'),
+]
+for i_, mu, url, tit, gan, tx, tags, fq in PROMOS:
+    p(i_, 'promo', mu, url, tit, gan, tx, tags)
+    P[-1]['foto_q'] = fq
+
 json.dump({'productos': P}, open(os.path.join(os.path.dirname(__file__), 'fijos.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
 print(len(P), 'productos fijos')

@@ -23,7 +23,9 @@ REDES_V6 = ['youtube']
 # TikTok (17/11/2026): dos vídeos al día, a las horas con más público según Metricool (pico 17:00-19:00) y Buffer (7 M de vídeos: la noche rinde más):
 #   7 = 18:00 curiosidad (mediodía en Ecuador y Colombia) · 9 = 22:00 frase (tarde en América: 16:00 Ecuador, 18:00 Argentina).
 TIKTOK_FRANJAS = {'7': (18, 0), '9': (22, 0)}
-def redes_de(fr): return ['tiktok'] if fr in TIKTOK_FRANJAS else REDES_V6 if fr == '6' else REDES_VIDEO
+# YouTube (17/11/2026): con Clips-All parado sobra cuota de la API, así que YouTube también sube un vídeo distinto en cada franja de TikTok
+# (5 al día: 5 x 1.600 = 8.000 de las 10.000 unidades diarias). Si se reactiva clips.yml, quitar 'youtube' de aquí.
+def redes_de(fr): return ['tiktok', 'youtube'] if fr in TIKTOK_FRANJAS else REDES_V6 if fr == '6' else REDES_VIDEO
 SITIO_IMG = 'https://aurzane.com/marketing/'
 IR = 'https://aurzane.com/ir/'
 HOY = datetime.date.today()
@@ -173,7 +175,7 @@ def catalogo():
     try:
         sm = get('https://aurzane.com/sitemap.xml')
         for u in re.findall(r'<loc>([^<]+)</loc>', sm):
-            if u.rstrip('/') in urls or re.search(r'/(biblioteca|universidades)/|\.html$|portal|aurzane\.com/$', u): continue
+            if u.rstrip('/') in urls or re.search(r'/(biblioteca|universidades)/|\.html$|portal|\.aurzane\.com/(en|pt)(/|$)|aurzane\.com/$', u): continue
             pid = 'auto-' + re.sub(r'[^a-z0-9]+', '-', u.split('//')[1].lower()).strip('-')
             if pid in prev: out.append(prev[pid]); continue
             try:
@@ -192,6 +194,12 @@ def catalogo():
                 print('No se pudo leer', u, e)
     except Exception as e:
         print('Sitemap no disponible:', e)
+    # sin páginas en inglés o portugués (las redes son en español) y sin «| AURZANE» repetido en los textos
+    out = [p for p in out if not (p.get('origen') == 'sitemap' and re.search(r'\.aurzane\.com/(en|pt)(/|$)', p['url']))]
+    for p in out:
+        if p.get('origen') == 'sitemap':
+            p['titulo'] = re.sub(r'\s*[|·:-]\s*AURZANE\s*$', '', p['titulo']).strip()
+            p['ganchos'] = [re.sub(r'\s*[|·:-]\s*AURZANE\s*$', '', g).strip() for g in p['ganchos']]
     for p in out:
         p.setdefault('alta', (prev.get(p['id']) or {}).get('alta') or p.get('alta') or HOY.isoformat())
         if p['id'] in prev and prev[p['id']].get('alta'): p['alta'] = prev[p['id']]['alta']
@@ -202,8 +210,15 @@ def catalogo():
 # ------------------------------------------------------------------ planificación
 # franja 1 (mañana): herramientas; franja 2 (tarde): rota entre libros, creatividades, notas y secciones
 TARDE = ['libro', 'creativo', 'notas', 'libro', 'seccion', 'creativo', 'libro']
+# Campaña «Conoce AURZANE» (punto 57): del 18 al 27/11/2026 la franja de la tarde presenta cada parte de AURZANE;
+# después, una presentación a la semana (los domingos) para que quien llega nuevo sepa todo lo que hay.
+CAMPANA = ('2026-11-18', '2026-11-27')
+def grupo_tarde(f):
+    d = datetime.date.fromisoformat(f)
+    if CAMPANA[0] <= f <= CAMPANA[1] or d.weekday() == 6: return 'promo'
+    return TARDE[d.toordinal() % len(TARDE)]
 GRUPO = {'test': 'herr', 'calculadora': 'herr', 'curso': 'herr', 'libro': 'libro', 'lectura': 'libro', 'creativo': 'creativo',
-         'notas': 'notas', 'seccion': 'seccion', 'frase': 'frase'}
+         'notas': 'notas', 'seccion': 'seccion', 'frase': 'frase', 'promo': 'promo'}
 
 
 def planificar(dias=14):
@@ -230,8 +245,9 @@ def planificar(dias=14):
             if fr in ('7', '8', '9') and fr not in TIKTOK_FRANJAS: continue
             ya = datetime.datetime.now(datetime.timezone.utc)
             if fr in dia and d == 0 and fr in HORAS and (ya.hour, ya.minute) >= HORAS[fr]: continue   # franja de hoy ya pasada: no se toca
+            if fr == '2' and fr in dia and grupo_tarde(f) == 'promo' and d > 0 and any(cat.get(i, {}).get('tipo') != 'promo' for i in dia[fr].values()): del dia[fr]
             if fr in dia and all(i in cat for i in dia[fr].values()) and not any(r in SOLO_FRASES and fr in VID and cat[i]['tipo'] not in TIPOS_SOLO for r, i in dia[fr].items()) and set(dia[fr]) >= set(redes_de(fr) if fr in VID else [x for x in REDES if not (x == 'pinterest' and fr == '1')]): continue
-            grupo = 'herr' if fr == '1' else 'frase' if fr == '3' else 'video' if fr in ('4', '6') else 'video5' if fr == '5' else ('tk' + fr) if fr in TIKTOK_FRANJAS else TARDE[datetime.date.fromisoformat(f).toordinal() % len(TARDE)]
+            grupo = 'herr' if fr == '1' else 'frase' if fr == '3' else 'video' if fr in ('4', '6') else 'video5' if fr == '5' else ('tk' + fr) if fr in TIKTOK_FRANJAS else grupo_tarde(f)
             usados = set(); dia[fr] = {}
             for r0 in (redes_de(fr) if fr in VID else REDES):
                 if r0 == 'pinterest' and fr == '1': continue
@@ -240,10 +256,11 @@ def planificar(dias=14):
                     cand = [p for p in cat.values() if p['tipo'] in TIPOS_VIDEO and p['id'] not in usados and p['id'] not in dia.get('5', {}).values() and p['id'] not in dia.get('4' if fr == '6' else '6', {}).values()]
                 elif grupo.startswith('tk'):
                     otros = {x for k in TIKTOK_FRANJAS if k != fr for x in dia.get(k, {}).values()}
+                    if r0 == 'youtube': otros |= {x for k in ('4', '5', '6') for x in dia.get(k, {}).values()}
                     par = datetime.date.fromisoformat(f).toordinal() % 2
                     tipos = {'tk7': ('curiosidad',), 'tk8': ('frase',) if par else ('curiosidad',), 'tk9': ('frase',)}[grupo]
-                    cand = [p for p in cat.values() if p['tipo'] in tipos and p['id'] not in otros]
-                    if not cand: cand = [p for p in cat.values() if p['tipo'] in TIPOS_SOLO and p['id'] not in otros]
+                    cand = [p for p in cat.values() if p['tipo'] in tipos and p['id'] not in otros and p['id'] not in usados]
+                    if not cand: cand = [p for p in cat.values() if p['tipo'] in TIPOS_SOLO and p['id'] not in otros and p['id'] not in usados]
                 elif grupo == 'video5':
                     cand = [p for p in cat.values() if p['tipo'] in ('frase', 'curiosidad') and p['id'] not in usados and p['id'] not in dia.get('4', {}).values()]
                 else:
@@ -274,7 +291,7 @@ def planificar(dias=14):
         foto = foto_para(p, fotos, usadas)
         sal = os.path.join(D, imagen_de(p, fotos))
         if os.path.exists(sal): continue
-        kick = {'test': 'Test gratis', 'calculadora': 'Calculadora gratis', 'curso': 'Curso gratis', 'libro': 'Libro gratis · licencia abierta',
+        kick = {'test': 'Test gratis', 'calculadora': 'Calculadora gratis', 'curso': 'Curso gratis', 'libro': 'Libro gratis · licencia abierta', 'promo': 'Conoce AURZANE',
                 'notas': 'Notas de corte 2025-2026', 'seccion': 'Gratis en AURZANE', 'lectura': 'Libro recomendado'}.get(p['tipo'], 'AURZANE')
         sub = (f"{p.get('autor')} · {p.get('paginas')} páginas · {p.get('licencia')}" if p['tipo'] == 'libro' else p.get('autor', '') if p['tipo'] == 'lectura'
                else recorta(p['texto'], 150))

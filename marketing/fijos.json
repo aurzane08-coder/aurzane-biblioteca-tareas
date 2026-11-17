@@ -993,6 +993,226 @@
    "aviso": "",
    "img": "img/lote07-14-v.jpg",
    "emoji": ""
+  },
+  {
+   "id": "promo-mind",
+   "tipo": "promo",
+   "mundo": "mind",
+   "url": "https://mind.aurzane.com/",
+   "titulo": "MIND: tests de psicología gratis",
+   "ganchos": [
+    "Conócete mejor en 3 minutos",
+    "¿Cómo estás de verdad? Míralo con un test serio",
+    "Tests de psicología validados, gratis y anónimos"
+   ],
+   "texto": "Ansiedad, estrés, autoestima, personalidad, burnout y más: cuestionarios que usan los profesionales, con tu resultado explicado al momento. Sin registro.",
+   "hashtags": [
+    "Psicología",
+    "SaludMental",
+    "Autoconocimiento"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "",
+   "foto_q": "person reflecting"
+  },
+  {
+   "id": "promo-ejercicios",
+   "tipo": "promo",
+   "mundo": "mind",
+   "url": "https://mind.aurzane.com/ejercicios/",
+   "titulo": "Ejercicios guiados con voz",
+   "ganchos": [
+    "Calma en 5 minutos, guiada con voz",
+    "Respira, suelta y vuelve a ti",
+    "Relajación guiada gratis, cuando la necesites"
+   ],
+   "texto": "Respiración 4-7-8, escaneo corporal, coherencia cardiaca, técnica 5-4-3-2-1 y más ejercicios guiados con voz para bajar el estrés. Gratis.",
+   "hashtags": [
+    "Relajación",
+    "Mindfulness",
+    "Bienestar"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "",
+   "foto_q": "calm woman breathing nature"
+  },
+  {
+   "id": "promo-nexus",
+   "tipo": "promo",
+   "mundo": "nexus",
+   "url": "https://nexus.aurzane.com/",
+   "titulo": "NEXUS: qué y dónde estudiar",
+   "ganchos": [
+    "¿No sabes qué estudiar? Empieza aquí",
+    "Universidades y carreras de todo el mundo, en un buscador",
+    "Elige carrera con datos, no a ciegas"
+   ],
+   "texto": "Busca universidades por país y ranking, compara carreras y consulta notas de corte oficiales en España. Gratis y sin registro.",
+   "hashtags": [
+    "Universidad",
+    "QuéEstudiar",
+    "Orientación"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "",
+   "foto_q": "university students campus"
+  },
+  {
+   "id": "promo-ovp",
+   "tipo": "promo",
+   "mundo": "mind",
+   "url": "https://ovp.aurzane.com/",
+   "titulo": "Orientación vocacional AURZANE",
+   "ganchos": [
+    "Descubre a qué te gustaría dedicarte",
+    "Intereses, aptitudes y personalidad en un solo informe",
+    "Orientación vocacional hecha por un psicólogo"
+   ],
+   "texto": "Un proceso guiado de orientación vocacional con informe personal: tus intereses, aptitudes y personalidad, y las carreras que encajan contigo.",
+   "hashtags": [
+    "OrientaciónVocacional",
+    "Carreras",
+    "Estudiantes"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "",
+   "foto_q": "young student thinking future"
+  },
+  {
+   "id": "promo-colegios",
+   "tipo": "promo",
+   "mundo": "mind",
+   "url": "https://aurzane.com/colegios/",
+   "titulo": "Orientación vocacional para colegios",
+   "ganchos": [
+    "Colegios y academias: orientación vocacional para todo el curso",
+    "Informes vocacionales para tus alumnos, sin papeleo",
+    "Ayuda a tus alumnos a elegir carrera"
+   ],
+   "texto": "Para departamentos de orientación, colegios y academias: un proceso vocacional completo para tus alumnos, con informe personal y panel para el orientador.",
+   "hashtags": [
+    "Orientadores",
+    "Colegios",
+    "Educación"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "",
+   "foto_q": "teacher classroom"
+  },
+  {
+   "id": "promo-live",
+   "tipo": "promo",
+   "mundo": "live",
+   "url": "https://live.aurzane.com/",
+   "titulo": "LIVE: salud y bienestar",
+   "ganchos": [
+    "Cuida tu cuerpo con calculadoras fiables",
+    "Sueño, agua, calorías e IMC en un clic",
+    "Pequeños hábitos, grandes cambios"
+   ],
+   "texto": "Calculadoras de salud, guías de hábitos y lecturas de bienestar con fuentes citadas. Gratis y sin registro.",
+   "hashtags": [
+    "Salud",
+    "Bienestar",
+    "Hábitos"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "",
+   "foto_q": "healthy breakfast fruit"
+  },
+  {
+   "id": "promo-build",
+   "tipo": "promo",
+   "mundo": "build",
+   "url": "https://build.aurzane.com/",
+   "titulo": "BUILD: dinero y vivienda",
+   "ganchos": [
+    "Haz números antes de decidir",
+    "Hipoteca, sueldo neto y finiquito, calculados en un minuto",
+    "Tus finanzas, claras y sin letra pequeña"
+   ],
+   "texto": "Calculadoras de hipoteca, sueldo neto, finiquito, ahorro y alquiler, con guías que explican cada número. Gratis.",
+   "hashtags": [
+    "Finanzas",
+    "Hipoteca",
+    "Ahorro"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "",
+   "foto_q": "calculator coins desk"
+  },
+  {
+   "id": "promo-learn",
+   "tipo": "promo",
+   "mundo": "learn",
+   "url": "https://learn.aurzane.com/",
+   "titulo": "LEARN: cursos gratis con certificado",
+   "ganchos": [
+    "Aprende algo nuevo esta semana",
+    "Cursos gratis a tu ritmo",
+    "Formación gratuita, de verdad"
+   ],
+   "texto": "Cursos gratuitos de neurociencia, psicología y más, organizados por temas y a tu ritmo.",
+   "hashtags": [
+    "Cursos",
+    "AprendeGratis",
+    "Formación"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "",
+   "foto_q": "student reading notes"
+  },
+  {
+   "id": "promo-biblioteca",
+   "tipo": "promo",
+   "mundo": "aurzane",
+   "url": "https://aurzane.com/biblioteca/",
+   "titulo": "Biblioteca AURZANE",
+   "ganchos": [
+    "Libros de psicología para leer gratis",
+    "Tu próxima lectura, gratis y legal",
+    "Biblioteca abierta: lee sin pagar"
+   ],
+   "texto": "Libros con licencia abierta de psicología, neurociencia, salud, historia y más, para leer en línea sin pagar y sin registro.",
+   "hashtags": [
+    "LibrosGratis",
+    "Lectura",
+    "Psicología"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "",
+   "foto_q": "library bookshelves"
+  },
+  {
+   "id": "promo-aurzane",
+   "tipo": "promo",
+   "mundo": "aurzane",
+   "url": "https://aurzane.com/",
+   "titulo": "AURZANE: todo en un lugar",
+   "ganchos": [
+    "Psicología, estudios, salud y dinero en un solo sitio",
+    "Herramientas gratis para decidir mejor",
+    "Tu mente, tus estudios y tu vida, más claros"
+   ],
+   "texto": "Tests de psicología, buscador de universidades, calculadoras de salud y finanzas, cursos y una biblioteca abierta. Todo gratis.",
+   "hashtags": [
+    "AURZANE",
+    "Psicología",
+    "Gratis"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "",
+   "foto_q": "sunrise mountains"
   }
  ]
 }
