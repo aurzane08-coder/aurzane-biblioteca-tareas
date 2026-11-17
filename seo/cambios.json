@@ -631,53 +631,11 @@
   },
   "despues": {
    "titulo": "DeSales University: 39 carreras y datos | AURZANE",
-   "desc": "Conoce DeSales University en Pensilvania, Estados Unidos. Descubre sus 39 carreras disponibles, tipo de universidad y sitio web oficial."
+   "desc": "Conoce DeSales University en Pensilvania, Estados Unidos. Descubre sus 39 carreras universitarias, tipo de institución y web oficial en AURZANE."
   },
-  "motivo": "Se optimiza el título incluyendo la marca y manteniendo las palabras clave exactas que generan impresiones, y se redacta una descripción persuasiva que cumple con la longitud requerida.",
+  "motivo": "El título incluye la marca y responde exactamente a la intención de búsqueda transaccional informativa del usuario con una longitud óptima.",
   "consultas": [
    "desales university"
-  ],
-  "via": "univ"
- },
- {
-  "fecha": "2026-11-17",
-  "url": "https://nexus.aurzane.com/universidades/estados-unidos/metropolitan-state-university-of-denver/",
-  "antes": {
-   "titulo": "Metropolitan State University of Denver: 76 carreras",
-   "desc": "Metropolitan State University of Denver (Denver, Colorado, Estados Unidos): sus 76 carreras, tipo pública, ciudad y web oficial.",
-   "clics": 0,
-   "impresiones": 52,
-   "ctr": 0.0,
-   "posicion": 5.4
-  },
-  "despues": {
-   "titulo": "MSU Denver: carreras, tipo y web oficial | AURZANE",
-   "desc": "Descubre Metropolitan State University of Denver en Estados Unidos: sus 76 carreras universitarias, tipo de universidad y sitio web oficial."
-  },
-  "motivo": "Se ajusta exactamente a la intención de búsqueda de la marca corta añadiendo la propuesta de valor con marca final.",
-  "consultas": [
-   "msu denver"
-  ],
-  "via": "univ"
- },
- {
-  "fecha": "2026-11-17",
-  "url": "https://nexus.aurzane.com/universidades/estados-unidos/bushnell-university/",
-  "antes": {
-   "titulo": "Bushnell University: 33 carreras",
-   "desc": "Bushnell University (Eugene, Oregón, Estados Unidos): sus 33 carreras, tipo privada, ciudad y web oficial.",
-   "clics": 0,
-   "impresiones": 118,
-   "ctr": 0.0,
-   "posicion": 9.2
-  },
-  "despues": {
-   "titulo": "Bushnell University: carreras y datos | Aurzane",
-   "desc": "Conoce Bushnell University en Estados Unidos. Descubre sus 33 carreras, tipo de universidad privada, ubicación en Oregón y su sitio web oficial."
-  },
-  "motivo": "Se optimiza el título incluyendo la marca y la intención de búsqueda principal, y se amplía la descripción para aportar valor directo sobre la universidad.",
-  "consultas": [
-   "bushnell university"
   ],
   "via": "univ"
  },
@@ -693,10 +651,10 @@
    "posicion": 7.0
   },
   "despues": {
-   "titulo": "Moravian University: carreras y datos clave | AURZANE",
-   "desc": "Conoce Moravian University en Pensilvania: descubre sus 40 carreras universitarias, el tipo de institución privada, ubicación y su web oficial."
+   "titulo": "Moravian University: carreras y datos | AURZANE",
+   "desc": "Conoce Moravian University en Pensilvania: descubre sus 40 carreras universitarias, tipo de institución, ubicación y sitio web oficial."
   },
-  "motivo": "El nuevo título y descripción mejoran el CTR al incluir términos clave como carreras y datos clave, manteniendo la marca dentro del límite de caracteres y la intención informativa de la búsqueda.",
+  "motivo": "El nuevo título y descripción atacan la intención de búsqueda exacta de la marca con llamadas a la acción claras dentro de los límites de caracteres.",
   "consultas": [
    "moravian university",
    "moravian university programs"
@@ -715,34 +673,12 @@
    "posicion": 6.8
   },
   "despues": {
-   "titulo": "Nazareth University: carreras y qué estudiar | Aurzane",
-   "desc": "Descubre Nazareth University en Nueva York: conoce su oferta educativa con 55 carreras, tipo de universidad, ubicación y enlace oficial."
+   "titulo": "Nazareth University: carreras, tipo y web | Aurzane",
+   "desc": "Conoce Nazareth University en Rochester, Nueva York. Descubre sus 55 carreras, el tipo de universidad privada, ubicación y su sitio web oficial."
   },
-  "motivo": "El nuevo título y descripción añaden intención de búsqueda educativa y claridad, optimizando el CTR para usuarios que buscan información de esta universidad.",
+  "motivo": "Añade la marca de forma natural, mejora el gancho para la intención informativa de la marca y se ajusta estrictamente a los límites de caracteres.",
   "consultas": [
    "nazareth university"
-  ],
-  "via": "univ"
- },
- {
-  "fecha": "2026-11-17",
-  "url": "https://nexus.aurzane.com/universidades/estados-unidos/kutztown-university-of-pennsylvania/",
-  "antes": {
-   "titulo": "Kutztown University of Pennsylvania: 40 carreras",
-   "desc": "Kutztown University of Pennsylvania (Kutztown, Pensilvania, Estados Unidos): sus 40 carreras, tipo pública, ciudad y web oficial.",
-   "clics": 0,
-   "impresiones": 51,
-   "ctr": 0.0,
-   "posicion": 7.5
-  },
-  "despues": {
-   "titulo": "Kutztown University: carreras y datos | AURZANE",
-   "desc": "Conoce Kutztown University of Pennsylvania: descubre sus 40 carreras, tipo de universidad pública, ubicación en Estados Unidos y web oficial."
-  },
-  "motivo": "Optimiza el CTR alineándose exactamente con la búsqueda directa de la universidad y mostrando información útil.",
-  "consultas": [
-   "kutztown university",
-   "kutztown state university"
   ],
   "via": "univ"
  },
@@ -758,10 +694,10 @@
    "posicion": 14.4
   },
   "despues": {
-   "titulo": "Crowder College en Estados Unidos | AURZANE",
-   "desc": "Conoce Crowder College en Neosho, Misuri. Descubre sus 41 carreras, el tipo de universidad pública, su ubicación y la web oficial en AURZANE."
+   "titulo": "Crowder College en Estados Unidos: carreras y datos",
+   "desc": "Descubre Crowder College en Misuri, Estados Unidos: conoce sus 41 carreras, el tipo de institución, su ubicación en ciudad y la web oficial."
   },
-  "motivo": "El título incluye la marca dentro del límite y la descripción detalla la información exacta que ofrece la página sobre la institución sin inventar contenidos.",
+  "motivo": "El nuevo título y descripción mejoran el CTR respondiendo de forma exacta a la intención de búsqueda informacional sobre la universidad sin usar elementos prohibidos.",
   "consultas": [
    "crowder college"
   ],
@@ -779,13 +715,81 @@
    "posicion": 12.4
   },
   "despues": {
-   "titulo": "Caldwell University: carreras y info | AURZANE",
-   "desc": "Descubre Caldwell University en Nueva Jersey, Estados Unidos: conoce sus 32 carreras, tipo de universidad privada, ubicación y enlace oficial."
+   "titulo": "Caldwell University: carreras y datos | AURZANE",
+   "desc": "Conoce Caldwell University en Nueva Jersey: sus 32 carreras, tipo de universidad privada, ubicación y enlace a su sitio web oficial."
   },
-  "motivo": "Se ajusta al límite de caracteres, incluye la marca, usa mayúsculas solo en nombres propios y responde exactamente a la intención de búsqueda.",
+  "motivo": "Se optimiza el título incluyendo la marca dentro del límite y se enriquece la descripción con los datos reales que ofrece la página para captar clics.",
   "consultas": [
    "caldwell university",
    "american caldwell"
+  ],
+  "via": "univ"
+ },
+ {
+  "fecha": "2026-11-17",
+  "url": "https://nexus.aurzane.com/universidades/estados-unidos/middlebury-college/",
+  "antes": {
+   "titulo": "Middlebury College: 42 carreras",
+   "desc": "Middlebury College (Middlebury, Vermont, Estados Unidos): sus 42 carreras, tipo privada, ciudad y web oficial.",
+   "clics": 0,
+   "impresiones": 59,
+   "ctr": 0.0,
+   "posicion": 9.8
+  },
+  "despues": {
+   "titulo": "Middlebury College: carreras y datos | AURZANE",
+   "desc": "Conoce Middlebury College en Vermont, Estados Unidos: descubre sus 42 carreras, tipo de universidad privada, ubicación y enlace a su web oficial."
+  },
+  "motivo": "Se ajusta estrictamente a los límites de caracteres, incluye la marca y responde directamente a la intención de búsqueda informacional sobre la universidad.",
+  "consultas": [
+   "middlebury college",
+   "middlebury"
+  ],
+  "via": "univ"
+ },
+ {
+  "fecha": "2026-11-17",
+  "url": "https://nexus.aurzane.com/universidades/estados-unidos/bethesda-university/",
+  "antes": {
+   "titulo": "Bethesda University: 9 carreras",
+   "desc": "Bethesda University (Anaheim, California, Estados Unidos): sus 9 carreras, tipo privada, ciudad y web oficial.",
+   "clics": 0,
+   "impresiones": 86,
+   "ctr": 0.0,
+   "posicion": 11.4
+  },
+  "despues": {
+   "titulo": "Bethesda University: carreras y datos | Aurzane",
+   "desc": "Conoce Bethesda University en Anaheim, California. Descubre sus 9 carreras, el tipo de universidad privada, ubicación y su página web oficial."
+  },
+  "motivo": "El título incluye la marca y responde directamente a la búsqueda exacta del usuario, mientras que la descripción detalla la información real disponible en la página.",
+  "consultas": [
+   "bethesda university"
+  ],
+  "via": "univ"
+ },
+ {
+  "fecha": "2026-11-17",
+  "url": "https://nexus.aurzane.com/universidades/estados-unidos/texas-a-m-university-san-antonio/",
+  "antes": {
+   "titulo": "Texas A&M University-San Antonio: 26 carreras",
+   "desc": "Texas A&M University-San Antonio (San Antonio, Texas, Estados Unidos): sus 26 carreras, tipo pública, ciudad y web oficial.",
+   "clics": 0,
+   "impresiones": 83,
+   "ctr": 0.0,
+   "posicion": 13.6
+  },
+  "despues": {
+   "titulo": "Texas A&M University: carreras y info | Aurzane",
+   "desc": "Conoce la Texas A&M University en Estados Unidos. Descubre sus 26 carreras universitarias, tipo de institución y detalles oficiales."
+  },
+  "motivo": "El nuevo título y descripción capturan las búsquedas principales sobre la universidad y sus carreras, ajustándose estrictamente a la longitud requerida y manteniendo la marca.",
+  "consultas": [
+   "texas a",
+   "a & m texas",
+   "a and m texas",
+   "texas a&m",
+   "texas a&m university carreras"
   ],
   "via": "univ"
  }

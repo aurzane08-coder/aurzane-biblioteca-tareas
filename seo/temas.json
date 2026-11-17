@@ -819,28 +819,6 @@
   "fecha": "2026-11-16"
  },
  {
-  "consulta": "universidades en escocia",
-  "titulo": "Estudiar en Escocia: guía completa para universitarios en España",
-  "mundo": "nexus",
-  "test": "vocacional",
-  "oferta": "universidades",
-  "pais": "ESP",
-  "pais_nombre": "España",
-  "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al 024 (España, gratis, 24 horas). ",
-  "fecha": "2026-11-17"
- },
- {
-  "consulta": "los dones de la imperfeccion",
-  "titulo": "Cómo superar el perfeccionismo: lecciones de psicología en España",
-  "mundo": "mind",
-  "test": "autocompasion",
-  "oferta": "libros",
-  "pais": "ESP",
-  "pais_nombre": "España",
-  "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al 024 (España, gratis, 24 horas). ",
-  "fecha": "2026-11-17"
- },
- {
   "consulta": "universidades en puebla",
   "titulo": "Guía de Universidades en Puebla: Oferta Educativa y Elegir Carrera",
   "mundo": "nexus",
@@ -875,7 +853,7 @@
  },
  {
   "consulta": "volar sobre el pantano",
-  "titulo": "Análisis y reflexión de Volar sobre el pantano para estudiantes en Ecuador",
+  "titulo": "Análisis y reflexión de Volar sobre el pantano para jóvenes en Ecuador",
   "mundo": "learn",
   "test": "resiliencia",
   "oferta": "libros",

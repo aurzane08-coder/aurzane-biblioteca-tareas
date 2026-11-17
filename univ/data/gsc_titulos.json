@@ -69,34 +69,34 @@
  },
  "https://nexus.aurzane.com/universidades/estados-unidos/desales-university/": {
   "titulo": "DeSales University: 39 carreras y datos | AURZANE",
-  "desc": "Conoce DeSales University en Pensilvania, Estados Unidos. Descubre sus 39 carreras disponibles, tipo de universidad y sitio web oficial."
- },
- "https://nexus.aurzane.com/universidades/estados-unidos/metropolitan-state-university-of-denver/": {
-  "titulo": "MSU Denver: carreras, tipo y web oficial | AURZANE",
-  "desc": "Descubre Metropolitan State University of Denver en Estados Unidos: sus 76 carreras universitarias, tipo de universidad y sitio web oficial."
- },
- "https://nexus.aurzane.com/universidades/estados-unidos/bushnell-university/": {
-  "titulo": "Bushnell University: carreras y datos | Aurzane",
-  "desc": "Conoce Bushnell University en Estados Unidos. Descubre sus 33 carreras, tipo de universidad privada, ubicación en Oregón y su sitio web oficial."
+  "desc": "Conoce DeSales University en Pensilvania, Estados Unidos. Descubre sus 39 carreras universitarias, tipo de institución y web oficial en AURZANE."
  },
  "https://nexus.aurzane.com/universidades/estados-unidos/moravian-university/": {
-  "titulo": "Moravian University: carreras y datos clave | AURZANE",
-  "desc": "Conoce Moravian University en Pensilvania: descubre sus 40 carreras universitarias, el tipo de institución privada, ubicación y su web oficial."
+  "titulo": "Moravian University: carreras y datos | AURZANE",
+  "desc": "Conoce Moravian University en Pensilvania: descubre sus 40 carreras universitarias, tipo de institución, ubicación y sitio web oficial."
  },
  "https://nexus.aurzane.com/universidades/estados-unidos/nazareth-university/": {
-  "titulo": "Nazareth University: carreras y qué estudiar | Aurzane",
-  "desc": "Descubre Nazareth University en Nueva York: conoce su oferta educativa con 55 carreras, tipo de universidad, ubicación y enlace oficial."
- },
- "https://nexus.aurzane.com/universidades/estados-unidos/kutztown-university-of-pennsylvania/": {
-  "titulo": "Kutztown University: carreras y datos | AURZANE",
-  "desc": "Conoce Kutztown University of Pennsylvania: descubre sus 40 carreras, tipo de universidad pública, ubicación en Estados Unidos y web oficial."
+  "titulo": "Nazareth University: carreras, tipo y web | Aurzane",
+  "desc": "Conoce Nazareth University en Rochester, Nueva York. Descubre sus 55 carreras, el tipo de universidad privada, ubicación y su sitio web oficial."
  },
  "https://nexus.aurzane.com/universidades/estados-unidos/crowder-college/": {
-  "titulo": "Crowder College en Estados Unidos | AURZANE",
-  "desc": "Conoce Crowder College en Neosho, Misuri. Descubre sus 41 carreras, el tipo de universidad pública, su ubicación y la web oficial en AURZANE."
+  "titulo": "Crowder College en Estados Unidos: carreras y datos",
+  "desc": "Descubre Crowder College en Misuri, Estados Unidos: conoce sus 41 carreras, el tipo de institución, su ubicación en ciudad y la web oficial."
  },
  "https://nexus.aurzane.com/universidades/estados-unidos/caldwell-university/": {
-  "titulo": "Caldwell University: carreras y info | AURZANE",
-  "desc": "Descubre Caldwell University en Nueva Jersey, Estados Unidos: conoce sus 32 carreras, tipo de universidad privada, ubicación y enlace oficial."
+  "titulo": "Caldwell University: carreras y datos | AURZANE",
+  "desc": "Conoce Caldwell University en Nueva Jersey: sus 32 carreras, tipo de universidad privada, ubicación y enlace a su sitio web oficial."
+ },
+ "https://nexus.aurzane.com/universidades/estados-unidos/middlebury-college/": {
+  "titulo": "Middlebury College: carreras y datos | AURZANE",
+  "desc": "Conoce Middlebury College en Vermont, Estados Unidos: descubre sus 42 carreras, tipo de universidad privada, ubicación y enlace a su web oficial."
+ },
+ "https://nexus.aurzane.com/universidades/estados-unidos/bethesda-university/": {
+  "titulo": "Bethesda University: carreras y datos | Aurzane",
+  "desc": "Conoce Bethesda University en Anaheim, California. Descubre sus 9 carreras, el tipo de universidad privada, ubicación y su página web oficial."
+ },
+ "https://nexus.aurzane.com/universidades/estados-unidos/texas-a-m-university-san-antonio/": {
+  "titulo": "Texas A&M University: carreras y info | Aurzane",
+  "desc": "Conoce la Texas A&M University en Estados Unidos. Descubre sus 26 carreras universitarias, tipo de institución y detalles oficiales."
  }
 }

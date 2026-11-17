@@ -557,7 +557,7 @@
   [
    "2026-11-17",
    "Ecuador",
-   "Análisis y reflexión de Volar sobre el pantano para estudiantes en Ecuador"
+   "Análisis y reflexión de Volar sobre el pantano para jóvenes en Ecuador"
   ],
   [
    "2026-11-17",
@@ -573,16 +573,6 @@
    "2026-11-17",
    "México",
    "Guía de Universidades en Puebla: Oferta Educativa y Elegir Carrera"
-  ],
-  [
-   "2026-11-17",
-   "España",
-   "Cómo superar el perfeccionismo: lecciones de psicología en España"
-  ],
-  [
-   "2026-11-17",
-   "España",
-   "Estudiar en Escocia: guía completa para universitarios en España"
   ],
   [
    "2026-11-15",
@@ -613,15 +603,49 @@
    "2026-11-14",
    "Guatemala",
    "Guía de universidades públicas y privadas en Guatemala"
+  ],
+  [
+   "2026-11-14",
+   "Costa Rica",
+   "Oferta académica en Costa Rica: claves para decidir tu carrera"
+  ],
+  [
+   "2026-11-14",
+   "Costa Rica",
+   "Carreras universitarias en Costa Rica: guía para elegir tu futuro"
   ]
  ],
  "fichas_ampliadas": 9,
  "cambios_titulos": [
   [
    "2026-11-17",
+   "https://nexus.aurzane.com/universidades/estados-unidos/texas-a-m-university-san-antonio/",
+   "Texas A&M University-San Antonio: 26 carreras",
+   "Texas A&M University: carreras y info | Aurzane",
+   null,
+   0.0
+  ],
+  [
+   "2026-11-17",
+   "https://nexus.aurzane.com/universidades/estados-unidos/bethesda-university/",
+   "Bethesda University: 9 carreras",
+   "Bethesda University: carreras y datos | Aurzane",
+   null,
+   0.0
+  ],
+  [
+   "2026-11-17",
+   "https://nexus.aurzane.com/universidades/estados-unidos/middlebury-college/",
+   "Middlebury College: 42 carreras",
+   "Middlebury College: carreras y datos | AURZANE",
+   null,
+   0.0
+  ],
+  [
+   "2026-11-17",
    "https://nexus.aurzane.com/universidades/estados-unidos/caldwell-university/",
    "Caldwell University: 32 carreras",
-   "Caldwell University: carreras y info | AURZANE",
+   "Caldwell University: carreras y datos | AURZANE",
    null,
    0.0
   ],
@@ -629,15 +653,7 @@
    "2026-11-17",
    "https://nexus.aurzane.com/universidades/estados-unidos/crowder-college/",
    "Crowder College: 41 carreras",
-   "Crowder College en Estados Unidos | AURZANE",
-   null,
-   0.0
-  ],
-  [
-   "2026-11-17",
-   "https://nexus.aurzane.com/universidades/estados-unidos/kutztown-university-of-pennsylvania/",
-   "Kutztown University of Pennsylvania: 40 carreras",
-   "Kutztown University: carreras y datos | AURZANE",
+   "Crowder College en Estados Unidos: carreras y datos",
    null,
    0.0
   ],
@@ -645,7 +661,7 @@
    "2026-11-17",
    "https://nexus.aurzane.com/universidades/estados-unidos/nazareth-university/",
    "Nazareth University: 55 carreras",
-   "Nazareth University: carreras y qué estudiar | Aurzane",
+   "Nazareth University: carreras, tipo y web | Aurzane",
    null,
    0.0
   ],
@@ -653,23 +669,7 @@
    "2026-11-17",
    "https://nexus.aurzane.com/universidades/estados-unidos/moravian-university/",
    "Moravian University: 40 carreras",
-   "Moravian University: carreras y datos clave | AURZANE",
-   null,
-   0.0
-  ],
-  [
-   "2026-11-17",
-   "https://nexus.aurzane.com/universidades/estados-unidos/bushnell-university/",
-   "Bushnell University: 33 carreras",
-   "Bushnell University: carreras y datos | Aurzane",
-   null,
-   0.0
-  ],
-  [
-   "2026-11-17",
-   "https://nexus.aurzane.com/universidades/estados-unidos/metropolitan-state-university-of-denver/",
-   "Metropolitan State University of Denver: 76 carreras",
-   "MSU Denver: carreras, tipo y web oficial | AURZANE",
+   "Moravian University: carreras y datos | AURZANE",
    null,
    0.0
   ],
@@ -742,7 +742,7 @@
   [
    "2026-11-17",
    "volar sobre el pantano",
-   "Análisis y reflexión de Volar sobre el pantano para estudiantes en Ecuador"
+   "Análisis y reflexión de Volar sobre el pantano para jóvenes en Ecuador"
   ],
   [
    "2026-11-17",
@@ -758,16 +758,6 @@
    "2026-11-17",
    "universidades en puebla",
    "Guía de Universidades en Puebla: Oferta Educativa y Elegir Carrera"
-  ],
-  [
-   "2026-11-17",
-   "los dones de la imperfeccion",
-   "Cómo superar el perfeccionismo: lecciones de psicología en España"
-  ],
-  [
-   "2026-11-17",
-   "universidades en escocia",
-   "Estudiar en Escocia: guía completa para universitarios en España"
   ],
   [
    "2026-11-16",
@@ -788,6 +778,16 @@
    "2026-11-16",
    "polonia universidades",
    "Estudiar en Polonia: Universidades, Requisitos y Opciones Académicas"
+  ],
+  [
+   "2026-11-16",
+   "politecnico di milano",
+   "Politecnico di Milano: Carreras, Admisión y Guía para Estudiantes"
+  ],
+  [
+   "2026-11-16",
+   "lafayette college",
+   "Lafayette College: oferta académica, admisiones y costos"
   ]
  ]
 }
