@@ -1306,6 +1306,7 @@
 ./colombia/universidad-tecnologica-de-bolivar/index.html
 ./colombia/universidad-tecnologica-de-pereira-utp/index.html
 ./colombia/universidad-tecnologica-del-choco-diego-luis-cordoba/index.html
+./comparar/index.html
 ./corea-del-sur/ciudad/asan/index.html
 ./corea-del-sur/ciudad/busan/index.html
 ./corea-del-sur/ciudad/changwon/index.html
