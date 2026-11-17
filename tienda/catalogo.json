@@ -43,8 +43,7 @@
   "titulo": "El encantador de perros",
   "autor": "César Millán",
   "temas": [
-   "habitos",
-   "bienestar"
+   "ensayo"
   ],
   "origen": "tendencia",
   "fecha": "2026-11-15",
@@ -102,8 +101,7 @@
   "titulo": "La naranja mecánica",
   "autor": "Anthony Burgess",
   "temas": [
-   "novela",
-   "ensayo"
+   "novela"
   ],
   "origen": "tendencia",
   "fecha": "2026-11-13",
@@ -299,8 +297,7 @@
   "titulo": "Invisible",
   "autor": "Eloy Moreno",
   "temas": [
-   "novela",
-   "emociones"
+   "novela"
   ],
   "origen": "tendencia",
   "fecha": "2026-11-09",
@@ -398,8 +395,7 @@
   "titulo": "El día que se perdió la cordura",
   "autor": "Javier Castillo",
   "temas": [
-   "novela",
-   "emociones"
+   "novela"
   ],
   "origen": "tendencia",
   "fecha": "2026-11-09",
@@ -494,8 +490,7 @@
   "titulo": "El sueño de los héroes",
   "autor": "Adolfo Bioy Casares",
   "temas": [
-   "sueno",
-   "bienestar"
+   "novela"
   ],
   "origen": "crecer",
   "fecha": "2026-11-13",

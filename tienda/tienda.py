@@ -95,6 +95,20 @@ def verificar_ol(titulo, autor, pal, ape):
         isbn = next((i for i in isbns if len(i) == 13 and i.startswith(('97884', '97884', '97898', '97895', '97896', '97897'))), '') or next((i for i in isbns if len(i) == 13), '')
         return {'isbn': isbn, 'portada': f'https://covers.openlibrary.org/b/id/{v["cover_i"]}-M.jpg?default=false' if v.get('cover_i') else '',
                 'anio': str(v.get('first_publish_year', '')), 'editorial': (v.get('publisher') or [''])[0], 'idioma': 'spa' if 'spa' in (v.get('language') or []) else '', 'resumen': ''}
+    # 17/11/2026: la búsqueda por campos no encuentra traducciones al español («Padre rico, padre pobre» está como «Rich Dad, Poor Dad»):
+    # segunda búsqueda libre con el título y el apellido, aceptada solo si el autor coincide y hay pocos resultados.
+    if ape:
+        st, b = get('https://openlibrary.org/search.json?' + urllib.parse.urlencode({'q': titulo + ' ' + ape[-1], 'limit': 5, 'fields': 'title,author_name,isbn,cover_i,first_publish_year,publisher,language'}))
+        if st == 200:
+            j = json.loads(b)
+            if 0 < j.get('numFound', 0) <= 20:
+                for v in j.get('docs', []):
+                    av = set(norm(' '.join(v.get('author_name', []))))
+                    if not any(a in av for a in ape) or not v.get('cover_i'): continue
+                    isbns = v.get('isbn') or []
+                    isbn = next((i for i in isbns if len(i) == 13 and i.startswith('97884')), '') or next((i for i in isbns if len(i) == 13 and i.startswith(('97895', '97896', '97897', '97898'))), '')
+                    return {'isbn': isbn, 'portada': f'https://covers.openlibrary.org/b/id/{v["cover_i"]}-M.jpg?default=false',
+                            'anio': str(v.get('first_publish_year', '')), 'editorial': '', 'idioma': 'spa' if 'spa' in (v.get('language') or []) else '', 'resumen': ''}
     return None
 
 
@@ -171,7 +185,7 @@ r = ia(f'Eres el librero de AURZANE, una web española de psicología y bienesta
        f'A) "tendencia": hasta 6 libros que alguien que busca esos temas, o en esta época del año (regalos, temporada, efemérides), querría comprar. Ignora tendencias de sucesos trágicos.\n'
        f'B) "crecer": 2 libros muy vendidos o muy recomendados para cada una de estas secciones con pocos libros: {", ".join(flojas)}.\n'
        f'No repitas estos: {ya}.\n'
-       f'Claves de tema válidas: {", ".join(SECC)}.\n'
+       f'Claves de tema válidas: {", ".join(SECC)}. Los temas dicen de qué trata el libro, no las palabras de su título: una novela lleva solo «novela».\n'
        'Responde solo JSON: {"tendencia":[{"titulo":"","autor":"","temas":["clave"],"motivo":"<por qué ahora, 1 frase corta>"}],"crecer":[{"titulo":"","autor":"","temas":["clave"]}]}')
 try: prop = json.loads(re.search(r'\{.*\}', r, re.S).group(0)) if r else {}
 except Exception: prop = {}
@@ -187,6 +201,7 @@ for tipo in ('tendencia', 'crecer'):
         v = verificar(l['titulo'], l['autor']); time.sleep(0.6)
         if not v: descartes.add(i); print('la IA propuso uno que no aparece en Google Books:', l['titulo'], '·', l['autor']); continue
         temas = [t for t in (l.get('temas') or []) if t in SECC] or ['ensayo']
+        if 'novela' in temas: temas = ['novela']
         cat[i] = {'id': i, 'titulo': l['titulo'], 'autor': l['autor'], 'temas': temas, 'origen': tipo, 'fecha': HOY, **v}
         if tipo == 'tendencia': cat[i].update(tendencia=l.get('motivo', ''), tendencia_fecha=HOY)
         nuevos.append(i)
