@@ -1,5 +1,43 @@
 [
  {
+  "id": "cur-e2c082e1e9",
+  "tipo": "curiosidad",
+  "titulo": "¿Los terremotos se preparan en el colegio?",
+  "dato": "La preparación escolar ante terremotos ayuda a mantener la salud física y psicológica.",
+  "resumen": "La preparación escolar ante terremotos ayuda a mantener la salud física y psicológica. Una revisión científica analiza cómo los colegios en zonas sísmicas pueden proteger el bienestar de los menores. Esto incluye desde prevenir lesiones hasta ofrecer apoyo emocional antes y después de un seísmo.",
+  "fuente": "Journal of multidisciplinary healthcare",
+  "hashtags": [
+   "aurzane",
+   "psicologia",
+   "ciencia",
+   "educacion"
+  ],
+  "fuente_id": "pmc-PMC13729873",
+  "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13729873/",
+  "fecha": "2026-11-17",
+  "auto": true,
+  "verificacion": "El dato está respaldado por la literatura científica sobre gestión de riesgos y salud mental infantil."
+ },
+ {
+  "id": "cur-cdd19efff6",
+  "tipo": "curiosidad",
+  "titulo": "¿Funciona el mindfulness en la cárcel?",
+  "dato": "Una revisión científica muestra que practicar mindfulness reduce el estrés, la ansiedad y la depresión en personas privadas de libertad.",
+  "resumen": "Una revisión científica muestra que practicar mindfulness reduce el estrés, la ansiedad y la depresión en personas privadas de libertad. Este tipo de intervenciones basadas en la atención plena ayudan a gestionar mejor las emociones en entornos complejos y de alta presión. La evidencia científica apunta a que mejora el bienestar psicológico incluso en situaciones de confinamiento.",
+  "fuente": "Revista Cuidarte",
+  "hashtags": [
+   "psicología",
+   "mindfulness",
+   "saludmental",
+   "aurzane"
+  ],
+  "fuente_id": "pmc-PMC13750916",
+  "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13750916/",
+  "fecha": "2026-11-17",
+  "auto": true,
+  "verificacion": "La afirmación está respaldada por revisiones científicas sobre mindfulness en entornos penitenciarios sin caer en exageraciones."
+ },
+ {
   "id": "cur-4fc2490712",
   "tipo": "curiosidad",
   "titulo": "¿Por qué crees que todo el mundo te mira?",

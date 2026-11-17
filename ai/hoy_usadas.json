@@ -8,7 +8,8 @@
   "cita-97bb8e8f52",
   "fw-cba107601c",
   "fw-41072391b8",
-  "fw-2e0c75c597"
+  "fw-2e0c75c597",
+  "cita-3adec0ca95"
  ],
  "dias": {
   "2026-11-08": {
@@ -268,6 +269,32 @@
     "url": "https://aurzane.com/marketing/musica/1234661.mp3",
     "credito": "«Waves», studyBreak (Jamendo), CC BY-SA"
    }
+  },
+  "2026-11-17": {
+   "fecha": "2026-11-17",
+   "frase": {
+    "texto": "Debemos mentalizarnos de que hacer las cosas bien siempre lleva algo de tiempo y esfuerzo.",
+    "autor": "Adrian Aguayo Llanos",
+    "obra": "Prevención integral del ciberacoso y otros riesgos y violencias online",
+    "url": "https://aurzane.com/biblioteca/libro/prevencion-integral-ciberacoso-otros-riesgos-violencias.html",
+    "fuente": ""
+   },
+   "curiosidad": {
+    "titulo": "¿Tu cerebro aprende mejor cuando descansas?",
+    "texto": "Dormir tras estudiar consolida la memoria de trabajo y pasa la información a almacenamiento a largo plazo. Durante el sueño, el cerebro reactiva los patrones neuronales de lo aprendido. Este proceso, estudiado en la investigación sobre consolidación de memoria, es clave para retener información compleja.",
+    "fuente": "Diekelborn y Born, 2010",
+    "url": "https://mind.aurzane.com/"
+   },
+   "ejercicio": {
+    "titulo": "Respiración alterna (nadi shodhana) guiada",
+    "url": "https://mind.aurzane.com/ejercicios/respiracion-alterna/"
+   },
+   "test": {
+    "titulo": "Test de ansiedad GAD-7 gratis y online",
+    "url": "https://mind.aurzane.com/test-de-ansiedad/"
+   },
+   "mas_frases": true,
+   "musica": null
   }
  }
 }
