@@ -256,7 +256,7 @@ for c in cursos:
           'offers': {'@type': 'Offer', 'price': 0, 'priceCurrency': 'EUR', 'category': 'Free'},
           'hasCourseInstance': {'@type': 'CourseInstance', 'courseMode': 'Online', 'courseWorkload': f'PT{int(float(c.get("horas_estimadas") or 1))}H'},
           'educationalLevel': NIVEL(c.get('nivel')), 'syllabusSections': [{'@type': 'Syllabus', 'name': m['titulo']} for m in c['modulos']]}
-    pg = (HEAD(c['seo']['title'] + ' · AURZANE LEARN' if 'AURZANE' not in c['seo']['title'] else c['seo']['title'], c['seo']['description'], url,
+    pg = (HEAD(c['seo']['title'] + ' · AURZANE LEARN' if 'AURZANE' not in c['seo']['title'].upper() else c['seo']['title'], c['seo']['description'], url,
                '<style>.hero{display:grid;grid-template-columns:1.1fr 1fr;gap:32px;align-items:center;padding:24px 0 8px}.hero img{width:100%;height:auto;border-radius:18px;display:block}'
                '.datos{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 22px}.tem{list-style:none;padding:0;margin:0}.tem>li{border:1px solid var(--linea);border-radius:14px;margin:10px 0;background:var(--superficie)}'
                '.tem summary{cursor:pointer;padding:14px 18px;font-weight:600;display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}.tem .n{color:var(--oro);font-size:.85rem}.tem .t{margin-left:auto;color:var(--suave);font-weight:400;font-size:.88rem}'
