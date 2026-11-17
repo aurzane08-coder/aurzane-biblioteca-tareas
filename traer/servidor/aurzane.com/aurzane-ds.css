@@ -333,4 +333,4 @@ html:not([data-tema="oscuro"]) #breadcrumbBox,html:not([data-tema="oscuro"]) #br
 a[href$="acerca/"]{display:inline-flex;align-items:center;min-height:24px}
 
 /* 17/11/2026: contraste en tema oscuro del sistema (módulos de los cursos de LEARN: el dorado oscuro no se leía sobre azul noche) */
-@media (prefers-color-scheme:dark){.tem summary .n{color:#d9b45a}}
+@media (prefers-color-scheme:dark){html.az-m-learn:not([data-tema="claro"]) summary .n,.tem summary .n{color:#d9b45a!important}html.az-m-learn:not([data-tema="claro"]) .oro{background:#d9b45a!important;color:#1b1440!important}html.az-m-mind:not([data-tema="claro"]) .r5 b{color:#1b1440!important}}

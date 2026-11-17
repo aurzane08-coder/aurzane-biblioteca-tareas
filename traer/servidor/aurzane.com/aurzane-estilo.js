@@ -417,6 +417,10 @@
     viajes: [/^\/((index\.html)?|test-de-bienestar\/?)$/, 'live', 'Desconecta con un viaje', 'Escapadas y viajes para descansar de verdad y volver con energía.', 'Ver viajes en'],
     consulta: [/^\/test-de-(ansiedad|depresion|estres|burnout|autoestima|soledad|tdah|resiliencia|autocompasion)/, 'mind', '¿Quieres hablarlo con un profesional?', 'Si tu resultado te preocupa, una consulta con un psicólogo puede ayudarte: en clínica o por videoconsulta, con precio cerrado y sin seguro médico. Si estás en peligro, llama al 112 o al 024.', 'Ver psicólogos en', 'consulta', 'https://www.saludonnet.com/servicios-medicos/psicologia'],
     'seguro-viaje': [/^\/(universidades|calculadora-nota-pau)/, 'nexus', '¿Te vas a estudiar fuera?', 'Seguro de viaje y de estudiantes para estancias en el extranjero, con asistencia médica.', 'Ver seguros en'] };
+  var SOCIO_FOTO = { 'consulta-embarazo': 'embarazo', 'consulta-nutricion': 'comida', 'consulta-sueno': 'dormir', 'consulta-chequeo': 'bienestar', hipoteca: 'casa', reforma: 'chalet',
+    universidades: 'estudio', crianza: 'manos', nutricion: 'comida', sueno: 'dormir', cursos: 'foco', bienestar: 'habitos', bricolaje: 'casa', muebles: 'chalet',
+    'negocio-alquiler': 'pisos', 'negocio-propio': 'curriculum', 'negocio-ahorro': 'hucha', negocio: 'graficos', deporte: 'ejercicio', aventura: 'montana', viajes: 'playa',
+    consulta: 'vela', 'seguro-viaje': 'playa' };
   function socios() {
     var p = location.pathname, cands = [];
     Object.keys(SOCIO).forEach(function (k) { if (SOCIO[k][1] === m && SOCIO[k][0].test(p)) cands.push(k); });
@@ -428,10 +432,15 @@
       if (!id) return;
       var x = SOCIO[cual], pie = d.querySelector('.az-explorar') || d.querySelector('.az-libros') || d.querySelector('footer'); if (!pie) return;
       var c = d.createElement('aside'); c.className = 'az-socio'; c.setAttribute('data-nosnippet', '');
-      c.style.cssText = 'max-width:1120px;margin:30px auto;padding:22px 24px;border-radius:18px;background:#141a33;color:#f3efe6;border:1px solid rgba(255,255,255,.12)';
-      c.innerHTML = '<p style="margin:0 0 4px;font:700 1.2rem/1.3 \'Bodoni Moda\',Georgia,serif">' + x[2] + '</p><p style="margin:0 0 14px;opacity:.8">' + x[3] + '</p>' +
-        '<a href="' + (x[6] ? A[id].u.replace(/([?&]ued=)[^&]*/, '$1' + encodeURIComponent(x[6])) : A[id].u).replace(/"/g, '&quot;') + '" target="_blank" rel="sponsored nofollow noopener" style="display:inline-block;background:#E2BF6A;color:#1b1440;font-weight:700;text-decoration:none;padding:11px 20px;border-radius:99px">' + x[4] + ' ' + A[id].n + '</a>' +
-        '<p style="margin:12px 0 0;font-size:.78rem;opacity:.6">Enlace de afiliado: si contratas, AURZANE recibe una comisión sin coste para ti. El cálculo de esta página es independiente.</p>';
+      /* tarjeta con foto real (Unsplash) del tema de la oferta (17/11/2026): más clara y atractiva que un banner, sin cargar publicidad de terceros */
+      var fk = SOCIO_FOTO[cual] || 'grafica', href = (x[6] ? A[id].u.replace(/([?&]ued=)[^&]*/, '$1' + encodeURIComponent(x[6])) : A[id].u).replace(/"/g, '&quot;');
+      c.style.cssText = 'max-width:1120px;margin:30px auto;border-radius:18px;background:#141a33;color:#f3efe6;border:1px solid rgba(255,255,255,.12);overflow:hidden;display:flex;flex-wrap:wrap';
+      c.innerHTML = '<a href="' + href + '" target="_blank" rel="sponsored nofollow noopener" tabindex="-1" aria-hidden="true" style="flex:1 1 260px;min-height:170px;max-height:260px;display:block;background:#1d2547">' +
+        '<img src="https://images.unsplash.com/photo-' + (FOTO[fk] || FOTO.grafica) + '?w=720&q=60&auto=format&fit=crop" alt="" loading="lazy" decoding="async" width="720" height="480" style="width:100%;height:100%;object-fit:cover;display:block"></a>' +
+        '<div style="flex:2 1 320px;padding:22px 24px"><p style="margin:0 0 6px;font-size:.8rem;opacity:.65">Socio de AURZANE: ' + A[id].n + '</p>' +
+        '<p style="margin:0 0 6px;font:700 1.25rem/1.3 \'Bodoni Moda\',Georgia,serif">' + x[2] + '</p><p style="margin:0 0 16px;opacity:.82">' + x[3] + '</p>' +
+        '<a href="' + href + '" target="_blank" rel="sponsored nofollow noopener" style="display:inline-flex;align-items:center;min-height:44px;background:#E2BF6A;color:#1b1440;font-weight:700;text-decoration:none;padding:10px 22px;border-radius:99px">' + x[4] + ' ' + A[id].n + ' ↗</a>' +
+        '<p style="margin:12px 0 0;font-size:.76rem;opacity:.6">Enlace de afiliado: si contratas, AURZANE recibe una comisión sin coste para ti. El cálculo de esta página es independiente.</p></div>';
       pie.parentNode.insertBefore(c, pie);
     };
     d.head.appendChild(sc);
