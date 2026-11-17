@@ -28,7 +28,15 @@ quitadas = len(base) - len(out)
 ya = {x[1] for x in out}
 REGLAS = [('mind', 'test-de-*/', 'Test', 'es'), ('live', 'test-de-*/', 'Test', 'es'), ('mind', 'en/*/', 'Test', 'en'), ('mind', 'pt/*/', 'Test', 'pt'),
           ('live', 'calculadora-*/', 'Calculadora', 'es'), ('build', 'calculadora-*/', 'Calculadora', 'es'), ('nexus', 'calculadora-*/', 'Calculadora', 'es'),
-          ('mind', 'ejercicios/*/', 'Ejercicio', 'es'), ('learn', 'curso/*/', 'Curso', 'es')]
+          ('mind', 'ejercicios/*/', 'Ejercicio', 'es'), ('learn', 'curso/*/', 'Curso', 'es'), ('build', 'alquiler-por-municipio/', 'Herramienta', 'es')]
+# palabras que la gente escribe y que no salen en el título (17/11/2026, auditoría final: «hipoteca» no encontraba los gastos de compra)
+PALABRAS = {'calculadora-gastos-compra-vivienda': 'hipoteca piso casa comprar vivienda itp iva notaria registro impuestos',
+            'calculadora-hipoteca': 'euribor cuota prestamo banco interes piso casa', 'calculadora-rentabilidad-alquiler': 'alquilar inversion piso hipoteca',
+            'alquiler-por-municipio': 'alquiler precio subida ine municipio ciudad piso', 'calculadora-finiquito': 'despido indemnizacion paro trabajo',
+            'calculadora-sueldo-neto': 'nomina salario irpf bruto neto', 'calculadora-jubilacion': 'pension retiro', 'calculadora-ahorro': 'ahorrar dinero meta',
+            'calculadora-interes-compuesto': 'invertir inversion rentabilidad', 'calculadora-reforma': 'obra casa presupuesto', 'calculadora-nota-pau': 'selectividad ebau evau nota corte',
+            'calculadora-ovulacion': 'dias fertiles regla embarazo', 'calculadora-embarazo': 'semanas parto', 'test-de-ansiedad': 'nervios angustia preocupacion gad',
+            'test-de-depresion': 'tristeza animo phq', 'test-de-estres': 'agobio tension', 'test-de-burnout': 'trabajo agotamiento quemado'}
 nuevas = 0
 for mundo, patron, tipo, lang in REGLAS:
     raiz = os.path.join(W, mundo + '.aurzane.com', 'public_html')
@@ -39,6 +47,11 @@ for mundo, patron, tipo, lang in REGLAS:
         mt = meta(os.path.join(d, 'index.html'))
         if not mt or not mt[0]: continue
         out.append([mt[0], u, mundo, tipo, mt[1], lang]); ya.add(u); nuevas += 1
+for x in out:   # palabras de búsqueda (séptimo campo, que lee aurzane-ds.js)
+    clave = x[1].rstrip('/').rsplit('/', 1)[-1]
+    if clave in PALABRAS:
+        while len(x) < 6: x.append('')
+        x[6:] = [PALABRAS[clave]]
 js = '/* Índice del buscador común, generado por herramientas/indice.py el ' + datetime.date.today().isoformat() + '. No editar a mano. */\nwindow.AurzaneIndiceGen = ' + json.dumps(out, ensure_ascii=False, separators=(',', ':')) + ';\n'
 f = W + '/aurzane.com/public_html/aurzane-indice.js'
 viejo = open(f, encoding='utf-8').read() if os.path.exists(f) else ''
