@@ -13,16 +13,16 @@ WEBS = ['aurzane.com', 'mind.aurzane.com', 'nexus.aurzane.com', 'live.aurzane.co
 BLOQUE = '''# BEGIN AURZANE-CACHE
 <IfModule mod_headers.c>
 <If "%{QUERY_STRING} =~ /(^|&)v=[0-9A-Za-z._-]+/ && %{REQUEST_URI} =~ /\\.(css|js)$/">
-Header always set Cache-Control "public, max-age=31536000, immutable"
+Header set Cache-Control "public, max-age=31536000, immutable"
 </If>
 <FilesMatch "\\.woff2$">
-Header always set Cache-Control "public, max-age=31536000, immutable"
+Header set Cache-Control "public, max-age=31536000, immutable"
 </FilesMatch>
 <FilesMatch "\\.(webp|avif|jpe?g|png|gif|svg|ico)$">
-Header always set Cache-Control "public, max-age=604800"
+Header set Cache-Control "public, max-age=604800"
 </FilesMatch>
 <Files "aurzane-paleta.js">
-Header always set Cache-Control "public, max-age=600"
+Header set Cache-Control "public, max-age=600"
 </Files>
 </IfModule>
 # END AURZANE-CACHE
