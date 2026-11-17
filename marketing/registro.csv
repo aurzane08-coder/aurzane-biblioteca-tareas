@@ -551,3 +551,9 @@
 2026-11-16,4,telegram,frase-3adec0ca,ok,107
 2026-11-17,7,tiktok,cur-8e657999c3,error,403 {"error":{"code":"unaudited_client_can_only_post_to_private_accounts" "message":"Please review our integration guidelines at https://developers.ti
 2026-11-17,7,tiktok,cur-8e657999c3,error,403 {"error":{"code":"unaudited_client_can_only_post_to_private_accounts" "message":"Please review our integration guidelines at https://developers.ti
+2026-11-17,7,tiktok,cur-8e657999c3,error,403 {"error":{"code":"unaudited_client_can_only_post_to_private_accounts" "message":"Please review our integration guidelines at https://developers.ti
+2026-11-17,1,telegram,ovp,ok,109
+2026-11-17,1,bluesky,test-autoestima,ok,at://did:plc:6ovoiudj7dkxgrzd2zkyn77y/app.bsky.feed.post/3n2ipvgseid26
+2026-11-17,1,mastodon,test-ansiedad,ok,https://mastodon.social/@auzane/117631057097935613
+2026-11-17,1,instagram,test-depresion,ok,18112251695254037
+2026-11-17,1,facebook,calc-embarazo,ok,1128817486453141
