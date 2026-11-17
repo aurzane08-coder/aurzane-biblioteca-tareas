@@ -342,3 +342,6 @@ a[href$="acerca/"]{display:inline-flex;align-items:center;min-height:24px}
 .nivel.medium{color:#6e5320!important;background:#eadfc0!important}
 .nivel.low{color:#8a3a3a!important;background:#f0dcdc!important}
 table.summary-table{display:block;max-width:100%;overflow-x:auto}
+/* NEXUS: el texto del héroe ya no pisa la foto (auditoría final) */
+html.az-m-nexus .hero .hero-in>p{max-width:560px}
+html.az-m-nexus .hero .hero-in>p,html.az-m-nexus .hero .hero-in>h1{text-shadow:0 0 18px var(--bg,#faf6ec),0 0 2px var(--bg,#faf6ec)}
