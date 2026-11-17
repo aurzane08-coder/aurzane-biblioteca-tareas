@@ -103,6 +103,28 @@ SBC = cargar_json('sb_carreras.json.gz')
 RUCT = cargar_json('ruct.json')
 PRIN = cargar_json('principales.json')
 UNIS = []
+# Ranking mundial abierto (OpenAlex, CC0): lo prepara cada mes univ/ranking.py
+RANK = cargar_json('ranking.json') or {'dom': {}, 'nom': {}}
+
+
+def _dom(u):
+    if not u: return ''
+    h = urllib.parse.urlparse(u if '//' in u else 'http://' + u).netloc.lower().split(':')[0]
+    return re.sub(r'^(www\d?|web|portal|en|es)\.', '', h)
+
+
+def _nrm(t):
+    t = unicodedata.normalize('NFD', (t or '').lower()); t = ''.join(c for c in t if unicodedata.category(c) != 'Mn')
+    return re.sub(r'[^a-z0-9 ]+', ' ', t).strip()
+
+
+def rank_de(u):
+    """[posición mundial, posición en su país, índice h, publicaciones, citas, id OpenAlex] o None."""
+    r = RANK['dom'].get(_dom(u.get('web')))
+    if not r:
+        iso = (PAISES.get(u['pais']) or ('',))[0]
+        r = RANK['nom'].get(iso.lower() + '|' + _nrm(u['nombre']))
+    return r
 
 # Universidades que ya vienen del RUCT en Supabase (tras la importación) se reconocen por fuente
 RUCT_EN_SB = any((u.get('fuente') or '') == 'RUCT' for u in SBU)
@@ -460,7 +482,7 @@ def datos():
         filas, carr = [], []
         for i, u in enumerate(us):
             ua = sorted({ai[c['area']] for c in u['carreras'] if c['area']})
-            filas.append([u['slug'], u['nombre'], u['ciudad'], u['region'], u['tipo'], u['tipo_ies'], u['n'], u['nivel'], ua, u['extra'].get('acronimo', ''), u['logo'], u.get('foto', '')])
+            filas.append([u['slug'], u['nombre'], u['ciudad'], u['region'], u['tipo'], u['tipo_ies'], u['n'], u['nivel'], ua, u['extra'].get('acronimo', ''), u['logo'], u.get('foto', ''), (rank_de(u) or [0, 0, 0, 0, 0])[:5]])
             for c in u['carreras']:
                 if u['nivel'] == 'programas':
                     carr.append([i, c['n'], ai.get(c['area'], -1)] + ([c['nota']] if c.get('nota') else []))   # 4.º valor: nota de corte (España)
@@ -744,6 +766,8 @@ def ficha(u, vecinas):
     if u['extra'].get('acronimo'): dato.append(('Siglas', e(u['extra']['acronimo'])))
     if u['extra'].get('anio'): dato.append(('Creada en', e(u['extra']['anio'])))
     if u['extra'].get('en_linea'): dato.append(('Modalidad', 'En línea'))
+    rk = rank_de(u)
+    if rk: dato.append(('Ranking mundial', f'<a href="{BASE}acerca/#ranking" title="Posición por citas científicas en OpenAlex">n.º {fmt(rk[0])} del mundo · n.º {fmt(rk[1])} en {e(p)}</a>'))
     if u['web']:
         dom = re.sub(r'^https?://(www\.)?', '', u['web']).rstrip('/')
         dato.append(('Web', f'<a href="{e(u["web"])}" target="_blank" rel="noopener nofollow">{e(dom)}</a>'))
@@ -927,9 +951,9 @@ def comparar():
     """Comparador de universidades (17/11/2026, etapa 3 de la auditoría, tarea 40): hasta 3 universidades de
     cualquier país lado a lado, con las carreras que tienen en común y, en España, su nota de corte. Enlace
     compartible (?u=pais/slug,pais/slug). Todo sale de los mismos datos oficiales del catálogo."""
-    desc = 'Compara gratis hasta 3 universidades lado a lado: país, ciudad, tipo, número de carreras, áreas y carreras en común con su nota de corte en España.'
-    h = cabeza('Comparador de universidades: compara hasta 3 lado a lado | AURZANE NEXUS', desc, SITIO + BASE + 'comparar/') + topbar('comparar') + f'''
-<main><section class="hero" style="padding-bottom:36px"><div class="wrap">{migas(("Universidades", BASE), ("Comparar", ""))}<h1>Compara <em>universidades</em></h1><p class="lead">Elige hasta tres universidades y míralas lado a lado: dónde están, qué tipo de institución son, cuántas carreras ofrecen y qué carreras tienen en común.</p></div></section>
+    desc = 'Compara gratis hasta 3 universidades de cualquier país: ranking mundial, número de carreras, carreras en común y nota de corte en España.'
+    h = cabeza('Comparador de universidades del mundo: ranking y carreras | AURZANE NEXUS', desc, SITIO + BASE + 'comparar/') + topbar('comparar') + f'''
+<main><section class="hero" style="padding-bottom:36px"><div class="wrap">{migas(("Universidades", BASE), ("Comparar", ""))}<h1>Compara <em>universidades</em></h1><p class="lead">Elige hasta tres universidades de cualquier país y míralas lado a lado: ranking mundial, cuántas carreras ofrecen y qué carreras tienen en común.</p></div></section>
 <div class="wrap" style="margin-top:26px">
 <div class="card" id="cmpElegir"><h2 style="margin-top:0">Elige las universidades</h2>
 <div class="cmp-campos">{''.join(f'<div class="cmp-campo"><label for="cmpQ{i}">Universidad {i + 1}</label><input id="cmpQ{i}" type="search" autocomplete="off" placeholder="Escribe el nombre o la ciudad" data-i="{i}"><ul class="cmp-sug" id="cmpS{i}" role="listbox" hidden></ul></div>' for i in range(3))}</div>
@@ -945,6 +969,7 @@ def acerca():
     h = cabeza('Fuentes y método del catálogo de universidades | AURZANE NEXUS', 'De dónde salen los datos del catálogo de universidades de AURZANE NEXUS y cómo se actualizan.', SITIO + BASE + 'acerca/') + topbar() + f'''
 <main><section class="hero" style="padding-bottom:36px"><div class="wrap">{migas(("Universidades", BASE), ("Fuentes y método", ""))}<h1>Fuentes y <em>método</em></h1><p class="lead">Cómo construimos el catálogo y de dónde sale cada dato.</p></div></section>
 <div class="wrap" style="max-width:900px;margin-top:30px">
+<section class="card" id="ranking"><h2>Ranking mundial</h2><p>El ranking que ves en cada ficha y en el <a href="{BASE}comparar/">comparador</a> sale de <a href="https://openalex.org" target="_blank" rel="noopener">OpenAlex</a>, un índice abierto (licencia CC0) de la producción científica de todas las instituciones del mundo. Ordenamos más de {fmt(RANK.get("_total") or 0)} instituciones educativas por el número de citas que reciben sus publicaciones y mostramos la posición mundial y la posición dentro de su país, junto al índice h. Mide impacto investigador, no la calidad de la docencia ni la empleabilidad, y no es el ranking QS ni el THE. Se actualiza solo cada mes{(" (último dato: " + RANK["_fecha"] + ")") if RANK.get("_fecha") else ""}.</p></section>
 <section class="card"><h2>Fuentes</h2>
 <p><b>España:</b> Registro de Universidades, Centros y Títulos (RUCT) del Ministerio de Ciencia, Innovación y Universidades. Incluimos los grados oficiales vigentes (publicados en el BOE o autorizados por la comunidad autónoma), con su rama, su campo de estudio, sus créditos y los municipios donde se imparten.</p>
 <p><b>Ecuador:</b> registro oficial de instituciones y carreras vigentes de la SENESCYT.</p>

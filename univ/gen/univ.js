@@ -382,8 +382,10 @@
               var fp = P[k], i = fp.u.findIndex(function (f) { return f[0] === u[2]; }), f = fp.u[i] || [];
               var areas = (f[8] || []).map(function (a) { return fp.areas[a]; });
               var carr = {}; (C[k].c || []).forEach(function (c) { if (c[0] === i) { var n = norm(c[1].replace(/^grado en /i, '')); carr[n] = carr[n] || { t: c[1], nota: c[3] }; } });
-              return { u: u, p: d.p[u[1]], areas: areas, carr: carr, ruta: BASE + d.p[u[1]][0] + '/' + u[2] + '/' };
+              return { u: u, p: d.p[u[1]], areas: areas, carr: carr, rk: f[12] || null, ruta: BASE + d.p[u[1]][0] + '/' + u[2] + '/' };
             });
+            var cr = info.filter(function (x) { return x.rk && x.rk[0]; }).sort(function (a, b) { return a.rk[0] - b.rk[0]; });
+            if (info.length > 1 && cr.length > 1) cr[0].mejor = true;
             var fila = function (t, fn) { return '<tr><th scope="row">' + t + '</th>' + info.map(function (x) { return '<td>' + fn(x) + '</td>'; }).join('') + '</tr>'; };
             var comunesA = info.length > 1 ? info[0].areas.filter(function (a) { return info.every(function (x) { return x.areas.indexOf(a) >= 0; }); }) : [];
             var comunesC = info.length > 1 ? Object.keys(info[0].carr).filter(function (k) { return info.every(function (x) { return x.carr[k]; }); }) : [];
@@ -393,9 +395,13 @@
               fila('Región', function (x) { return esc(x.u[8] || '-'); }) +
               fila('Tipo', function (x) { return esc(x.u[4] || '-'); }) +
               fila('Institución', function (x) { return esc(x.u[5] || '-'); }) +
+              fila('Ranking mundial', function (x) { return x.rk && x.rk[0] ? '<b>n.º ' + fmt(x.rk[0]) + '</b>' + (x.mejor ? ' ✓' : '') : 'Sin datos'; }) +
+              fila('Ranking en su país', function (x) { return x.rk && x.rk[1] ? 'n.º ' + fmt(x.rk[1]) : '-'; }) +
+              fila('Índice h', function (x) { return x.rk && x.rk[2] ? fmt(x.rk[2]) : '-'; }) +
+              fila('Publicaciones', function (x) { return x.rk && x.rk[3] ? fmt(x.rk[3]) : '-'; }) +
               fila('Carreras', function (x) { return x.u[6] ? fmt(x.u[6]) : 'Consultar en su web'; }) +
               fila('Áreas', function (x) { return x.areas.length ? esc(x.areas.join(', ')) : '-'; }) +
-              '</tbody></table></div>';
+              '</tbody></table></div><p class="sub" style="margin-top:8px">Ranking mundial por citas científicas según <a href="' + BASE + 'acerca/#ranking">OpenAlex</a> (datos abiertos, se actualiza cada mes). ✓ = la mejor posicionada de las elegidas.</p>';
             if (info.length > 1) {
               h += '<section class="card" style="margin-top:22px"><h2 style="margin-top:0">Lo que tienen en común</h2>' +
                 (comunesA.length ? '<p><b>Áreas en las que ofrecen estudios:</b> ' + esc(comunesA.join(', ')) + '.</p>' : '<p>No comparten ninguna área de estudio según los datos oficiales.</p>');
