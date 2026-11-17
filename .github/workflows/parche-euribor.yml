@@ -1,0 +1,26 @@
+name: Euríbor al día
+on:
+  push:
+    paths: ['ai/parches/euribor.py']
+  schedule:
+    - cron: '47 6 * * *'
+  workflow_dispatch:
+jobs:
+  p:
+    runs-on: ubuntu-latest
+    env:
+      SG_KEY: ${{ secrets.SG_KEY }}
+      SG_HOST: ${{ secrets.SG_HOST }}
+      SG_USER: ${{ secrets.SG_USER }}
+      SG_PORT: ${{ secrets.SG_PORT }}
+      SG_PASS: ${{ secrets.SG_PASS }}
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          mkdir -p ~/.ssh && printf '%s\n' "$SG_KEY" | tr -d '\r' > ~/.ssh/id && chmod 600 ~/.ssh/id
+          if [ -n "$SG_PASS" ]; then ssh-keygen -p -P "$SG_PASS" -N "" -f ~/.ssh/id >/dev/null; fi
+          SSH="ssh -i $HOME/.ssh/id -p ${SG_PORT:-18765} -o StrictHostKeyChecking=accept-new $SG_USER@$SG_HOST"
+          D=$(curl -sf -H 'Accept: text/csv' 'https://data-api.ecb.europa.eu/service/data/FM/M.U2.EUR.RT.MM.EURIBOR1YD_.HSTA?lastNObservations=1&format=csvdata' | python3 -c "import csv,sys; r=list(csv.DictReader(sys.stdin))[-1]; print(r['OBS_VALUE'], r['TIME_PERIOD'])")
+          [ -n "$D" ] || { echo "::warning::El BCE no respondió; se reintenta mañana"; exit 0; }
+          echo "Dato BCE: $D"
+          $SSH "python3 - www $D" < ai/parches/euribor.py
