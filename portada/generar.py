@@ -6,6 +6,9 @@ t = open(src, encoding='utf-8').read()
 head = t[t.find('<head>') + 6:t.find('</head>')]
 head = re.sub(r'<style>.*?</style>', '', head, flags=re.S)
 U = lambda i, w=900: f'https://images.unsplash.com/photo-{i}?w={w}&q=72&auto=format&fit=crop'
+# Foto principal desde aurzane.com (la guarda ai/parches/hero.py, misma foto de Unsplash): sin conexión a otro dominio
+HERO = lambda w, fm: f'https://aurzane.com/img/hero/1508672019048-805c876b67e2-{w}-q{45 if fm == "avif" else 55}.{fm}'
+HSET = lambda fm: ', '.join(f'{HERO(w, fm)} {w}w' for w in (600, 900, 1400, 2200))
 E = html.escape
 import json, os
 try: CIF = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'cifras', 'cifras.json'), encoding='utf-8'))
@@ -81,7 +84,7 @@ cuerpo = f'''
 <main id="contenido" tabindex="-1">
 
 <section class="p-hero" aria-labelledby="pT">
-  <img class="p-hero-foto" src="{U('1508672019048-805c876b67e2', 1800)}" srcset="{U('1508672019048-805c876b67e2', 600)} 600w, {U('1508672019048-805c876b67e2', 900)} 900w, {U('1508672019048-805c876b67e2', 1400)} 1400w, {U('1508672019048-805c876b67e2', 2200)} 2200w" sizes="100vw" alt="Una persona sentada al final de un muelle, frente a un lago entre montañas" width="1800" height="1100" fetchpriority="high">
+  <picture><source type="image/avif" srcset="{HSET('avif')}" sizes="100vw"><img class="p-hero-foto" src="{HERO(900, 'webp')}" srcset="{HSET('webp')}" sizes="100vw" alt="Una persona sentada al final de un muelle, frente a un lago entre montañas" width="1800" height="1100" fetchpriority="high"></picture>
   <div class="p-hero-in">
     <h1 id="pT">Conócete, decide y construye tu vida con ciencia.</h1>
     <p class="p-lema">Tests psicológicos, cursos, calculadoras y libros gratis, creados por un psicólogo clínico y con las fuentes a la vista.</p>
@@ -241,9 +244,9 @@ cuerpo = f'''
 css = open(__file__.replace('generar.py', 'portada.css'), encoding='utf-8').read()
 js = open(__file__.replace('generar.py', 'portada.js'), encoding='utf-8').read()
 # la foto de portada es el elemento principal (LCP): se pide desde el principio de la cabecera (auditoría 16/11/2026)
-SRCSET_HERO = ', '.join(f"{U('1508672019048-805c876b67e2', w)} {w}w" for w in (600, 900, 1400, 2200))
-PRE = f'\n<link rel="preconnect" href="https://images.unsplash.com">\n<link rel="preload" as="image" imagesrcset="{SRCSET_HERO}" imagesizes="100vw" fetchpriority="high">'
+PRE = f'\n<link rel="preload" as="image" type="image/avif" imagesrcset="{HSET("avif")}" imagesizes="100vw" fetchpriority="high">'
 head = re.sub(r'\n<link rel="preconnect" href="https://images.unsplash.com">\n<link rel="preload" as="image" imagesrcset="[^"]*" imagesizes="100vw" fetchpriority="high">', '', head)
+head = re.sub(r'\n<link rel="preload" as="image" type="image/avif" imagesrcset="[^"]*" imagesizes="100vw" fetchpriority="high">', '', head)
 head = head.replace('<meta charset="UTF-8">', '<meta charset="UTF-8">' + PRE, 1) if '<meta charset="UTF-8">' in head else PRE + head
 doc = ('<!DOCTYPE html>\n<html lang="es">\n<head>' + head + '<style>\n' + css + '\n</style>\n</head>\n<body class="portada">\n'
        '<button type="button" id="btnTema" onclick="alternarTema()" aria-label="Cambiar entre tema claro y oscuro">Tema</button>\n' +
