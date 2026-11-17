@@ -307,3 +307,9 @@ table.tnc td.num{color:var(--text-dim);width:32px}
 .nc-lista li{break-inside:avoid;padding:9px 0;border-bottom:1px dashed var(--border)}
 .nc-lista li a{font-weight:600;text-decoration:none;color:var(--text)} .nc-lista li a:hover{color:var(--accent-text)}
 .nc-lista li small{display:block;color:var(--text-dim);font-size:.8rem}
+/* comparador (17/11/2026) */
+.cmp-campos{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.cmp-campo{position:relative}.cmp-campo label{display:block;font-weight:600;margin-bottom:6px}
+.cmp-campo input{width:100%;min-height:44px;padding:10px 12px;border:1px solid var(--border);border-radius:10px;background:var(--surface);color:inherit;font:inherit}
+.cmp-sug{position:absolute;z-index:20;left:0;right:0;top:100%;margin:4px 0 0;padding:6px;list-style:none;background:var(--surface);border:1px solid var(--border);border-radius:10px;box-shadow:0 10px 30px rgba(0,0,0,.18);max-height:320px;overflow:auto}
+.cmp-sug li{padding:10px;border-radius:8px;cursor:pointer;min-height:24px}.cmp-sug li[data-id]:hover,.cmp-sug li[data-id]:focus{background:rgba(127,127,127,.12);outline:none}

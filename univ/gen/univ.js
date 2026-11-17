@@ -335,4 +335,88 @@
     pintar(); window.__univPintarMiLista = pintar;
     document.addEventListener('click', function (e) { if (e.target.closest('#miLista [data-guardar]')) setTimeout(pintar, 0); });
   })();
+
+  /* ---------- comparador (hasta 3 universidades lado a lado, con carreras en común) ---------- */
+  var CMP = $('#comparador');
+  if (CMP) (function () {
+    var sel = [null, null, null], IDX = null;
+    function idx() { return IDX || (IDX = json('datos/indice.json')); }
+    function id(d, u) { return d.p[u[1]][0] + '/' + u[2]; }
+    function url(ids) { var q = ids.filter(Boolean).join(','); history.replaceState(null, '', location.pathname + (q ? '?u=' + q : '')); }
+    function buscar(i, q) {
+      var ul = $('#cmpS' + i); q = norm(q);
+      if (q.length < 2) { ul.hidden = true; return; }
+      idx().then(function (d) {
+        var tk = q.split(' '); var r = d.u.filter(function (u) { var t = norm(u[0] + ' ' + (u[3] || '') + ' ' + (u[8] || '')); return tk.every(function (w) { return t.indexOf(w) >= 0; }); }).sort(function (a, b) { return (b[6] || 0) - (a[6] || 0); }).slice(0, 8);
+        ul.innerHTML = r.length ? r.map(function (u) { var p = d.p[u[1]]; return '<li role="option" tabindex="0" data-id="' + esc(id(d, u)) + '">' + bandera(p[1]) + ' ' + esc(u[0]) + (u[3] ? ' <span class="sub">· ' + esc(u[3]) + '</span>' : '') + '</li>'; }).join('') : '<li class="sub">Sin resultados</li>';
+        ul.hidden = false;
+      });
+    }
+    function elegir(i, uid) {
+      idx().then(function (d) {
+        var u = d.u.filter(function (x) { return id(d, x) === uid; })[0]; if (!u) return;
+        sel[i] = uid; $('#cmpQ' + i).value = u[0]; $('#cmpS' + i).hidden = true; url(sel); pintar();
+      });
+    }
+    $$('.cmp-campo input').forEach(function (inp) {
+      var i = +inp.getAttribute('data-i');
+      inp.addEventListener('input', function () { if (!inp.value.trim()) { sel[i] = null; url(sel); pintar(); } buscar(i, inp.value); });
+      inp.addEventListener('keydown', function (e) { if (e.key === 'Enter') { var li = $('#cmpS' + i + ' li[data-id]'); if (li) { e.preventDefault(); elegir(i, li.getAttribute('data-id')); } } });
+    });
+    document.addEventListener('click', function (e) {
+      var li = e.target.closest('.cmp-sug li[data-id]'); if (!li) { $$('.cmp-sug').forEach(function (x) { x.hidden = true; }); return; }
+      elegir(+li.parentNode.id.slice(4), li.getAttribute('data-id'));
+    });
+    document.addEventListener('keydown', function (e) { var li = e.target.closest && e.target.closest('.cmp-sug li[data-id]'); if (li && e.key === 'Enter') elegir(+li.parentNode.id.slice(4), li.getAttribute('data-id')); });
+    function pais(ps) { return json('datos/' + ps + '.json'); }
+    function carreras(ps) { return json('datos/' + ps + '-carreras.json').catch(function () { return { c: [] }; }); }
+    function pintar() {
+      var ids = sel.filter(Boolean);
+      if (!ids.length) { CMP.innerHTML = '<div class="vacio-res"><p style="margin:0">Elige al menos dos universidades para verlas lado a lado.</p></div>'; return; }
+      idx().then(function (d) {
+        var us = ids.map(function (x) { return d.u.filter(function (u) { return id(d, u) === x; })[0]; }).filter(Boolean);
+        var pss = us.map(function (u) { return d.p[u[1]][0]; });
+        return Promise.all(pss.map(pais)).then(function (P) {
+          return Promise.all(pss.map(carreras)).then(function (C) {
+            var info = us.map(function (u, k) {
+              var fp = P[k], i = fp.u.findIndex(function (f) { return f[0] === u[2]; }), f = fp.u[i] || [];
+              var areas = (f[8] || []).map(function (a) { return fp.areas[a]; });
+              var carr = {}; (C[k].c || []).forEach(function (c) { if (c[0] === i) { var n = norm(c[1].replace(/^grado en /i, '')); carr[n] = carr[n] || { t: c[1], nota: c[3] }; } });
+              return { u: u, p: d.p[u[1]], areas: areas, carr: carr, ruta: BASE + d.p[u[1]][0] + '/' + u[2] + '/' };
+            });
+            var fila = function (t, fn) { return '<tr><th scope="row">' + t + '</th>' + info.map(function (x) { return '<td>' + fn(x) + '</td>'; }).join('') + '</tr>'; };
+            var comunesA = info.length > 1 ? info[0].areas.filter(function (a) { return info.every(function (x) { return x.areas.indexOf(a) >= 0; }); }) : [];
+            var comunesC = info.length > 1 ? Object.keys(info[0].carr).filter(function (k) { return info.every(function (x) { return x.carr[k]; }); }) : [];
+            var h = '<div class="comp"><table><thead><tr><th scope="col">Universidad</th>' + info.map(function (x) { return '<td><a href="' + esc(x.ruta) + '"><b>' + esc(x.u[0]) + '</b></a></td>'; }).join('') + '</tr></thead><tbody>' +
+              fila('País', function (x) { return bandera(x.p[1]) + ' ' + esc(x.p[2]); }) +
+              fila('Ciudad', function (x) { return esc(x.u[3] || '-'); }) +
+              fila('Región', function (x) { return esc(x.u[8] || '-'); }) +
+              fila('Tipo', function (x) { return esc(x.u[4] || '-'); }) +
+              fila('Institución', function (x) { return esc(x.u[5] || '-'); }) +
+              fila('Carreras', function (x) { return x.u[6] ? fmt(x.u[6]) : 'Consultar en su web'; }) +
+              fila('Áreas', function (x) { return x.areas.length ? esc(x.areas.join(', ')) : '-'; }) +
+              '</tbody></table></div>';
+            if (info.length > 1) {
+              h += '<section class="card" style="margin-top:22px"><h2 style="margin-top:0">Lo que tienen en común</h2>' +
+                (comunesA.length ? '<p><b>Áreas en las que ofrecen estudios:</b> ' + esc(comunesA.join(', ')) + '.</p>' : '<p>No comparten ninguna área de estudio según los datos oficiales.</p>');
+              if (comunesC.length) {
+                var hayNota = comunesC.some(function (k) { return info.some(function (x) { return x.carr[k].nota; }); });
+                h += '<h3>' + fmt(comunesC.length) + (comunesC.length === 1 ? ' carrera en común' : ' carreras en común') + '</h3><div class="comp"><table><thead><tr><th scope="col">Carrera</th>' +
+                  (hayNota ? info.map(function (x) { return '<td>Nota de corte en ' + esc(x.u[0].length > 40 ? x.u[0].slice(0, 38) + '…' : x.u[0]) + '</td>'; }).join('') : '') + '</tr></thead><tbody>' +
+                  comunesC.sort().slice(0, 150).map(function (k) { return '<tr><th scope="row">' + esc(info[0].carr[k].t) + '</th>' + (hayNota ? info.map(function (x) { var n = x.carr[k].nota; return '<td class="num">' + (n ? String(n).replace('.', ',') : '-') + '</td>'; }).join('') : '') + '</tr>'; }).join('') + '</tbody></table></div>' +
+                  (hayNota ? '<p class="sub">Nota de corte del último curso publicado (nota de admisión sobre 14, la más baja si hay varios centros).</p>' : '');
+              } else if (info.every(function (x) { return Object.keys(x.carr).length; })) h += '<p>No tienen ninguna carrera con el mismo nombre.</p>';
+              else h += '<p class="sub">Para algunas de estas universidades no tenemos la lista oficial de carreras; consulta su web.</p>';
+              h += '</section>';
+            } else h += '<p class="sub" style="margin-top:14px">Añade otra universidad para ver lo que tienen en común.</p>';
+            CMP.innerHTML = h;
+          });
+        });
+      }).catch(function () { CMP.innerHTML = '<p>No se pudieron cargar los datos. Recarga la página en un momento.</p>'; });
+    }
+    var q = (location.search.match(/[?&]u=([^&]+)/) || [])[1];
+    var ini = q ? decodeURIComponent(q).split(',').slice(0, 3) : lista().slice(-3).map(function (x) { return x.id; });
+    if (ini.length) idx().then(function (d) { ini.forEach(function (x, i) { var u = d.u.filter(function (y) { return id(d, y) === x; })[0]; if (u) { sel[i] = x; $('#cmpQ' + i).value = u[0]; } }); pintar(); });
+    else pintar();
+  })();
 })();

@@ -463,7 +463,7 @@ def datos():
             filas.append([u['slug'], u['nombre'], u['ciudad'], u['region'], u['tipo'], u['tipo_ies'], u['n'], u['nivel'], ua, u['extra'].get('acronimo', ''), u['logo'], u.get('foto', '')])
             for c in u['carreras']:
                 if u['nivel'] == 'programas':
-                    carr.append([i, c['n'], ai.get(c['area'], -1)])
+                    carr.append([i, c['n'], ai.get(c['area'], -1)] + ([c['nota']] if c.get('nota') else []))   # 4.º valor: nota de corte (España)
         escribir(f'datos/{PSLUG[p]}.json', json.dumps({'pais': p, 'areas': areas, 'u': filas}, ensure_ascii=False, separators=(',', ':')))
         if carr:
             escribir(f'datos/{PSLUG[p]}-carreras.json', json.dumps({'c': carr}, ensure_ascii=False, separators=(',', ':')))
@@ -574,7 +574,7 @@ def portada():
 <section class="bloque" style="max-width:800px"><h2 class="t">Preguntas frecuentes</h2>
 <details class="faq"><summary>¿De dónde salen los datos?</summary><p>España viene del Registro de Universidades, Centros y Títulos (RUCT) del Ministerio de Ciencia, Innovación y Universidades. Ecuador, del registro oficial de la SENESCYT. Estados Unidos, del College Scorecard del Departamento de Educación. El resto, de las fuentes oficiales de cada país y de las webs de cada universidad. Más detalles en <a href="{BASE}acerca/">fuentes y método</a>.</p></details>
 <details class="faq"><summary>¿Por qué algunas universidades no tienen carreras?</summary><p>En algunos países solo publicamos las universidades principales o sus áreas y facultades. En esos casos te enlazamos a su web oficial, donde está su oferta completa.</p></details>
-<details class="faq"><summary>¿Puedo comparar universidades?</summary><p>Sí. Pulsa ☆ en cualquier universidad para guardarla en <a href="{BASE}mi-lista/">Mi lista</a>, donde puedes compararlas lado a lado.</p></details>
+<details class="faq"><summary>¿Puedo comparar universidades?</summary><p>Sí. Usa el <a href="{BASE}comparar/">comparador</a> para ver hasta tres lado a lado, con las carreras que tienen en común y su nota de corte en España. También puedes pulsar ☆ para guardarlas en <a href="{BASE}mi-lista/">Mi lista</a>.</p></details>
 <details class="faq"><summary>He visto un dato que no es correcto</summary><p>Pulsa «Reportar un error» en la ficha de la universidad, o el botón ⚑ que tienes en cualquier página, y lo revisamos. Cada ficha indica su fuente.</p></details>
 </section>
 </div></main>
@@ -776,7 +776,7 @@ def ficha(u, vecinas):
 <main><section class="hero ficha-h{' con-foto' if hf else ''}"{hf}><div class="wrap">{migas(("Universidades", BASE), (p, f"{BASE}{ps}/"), *([(u["ciudad"], f"{BASE}{ps}/ciudad/{slug(u['ciudad'])}/")] if u["ciudad"] and vecinas and p != "Estados Unidos" else []), (u["nombre"], ""))}
 <div class="fila" style="margin-top:16px"><span class="mono" aria-hidden="true">{e(u["extra"].get("acronimo") or iniciales(u["nombre"]))[:5]}</span><div><h1 style="margin:0">{e(u["nombre"])}</h1></div></div>
 <ul class="meta">{''.join(meta)}</ul>{f'<p class="lead" style="margin-top:14px">{e(u["descripcion"])}</p>' if u["descripcion"] else ''}
-<div class="acc">{f'<a class="btn btn-luz" href="{e(u["web"])}" target="_blank" rel="noopener nofollow">Web oficial ↗</a>' if u["web"] else ''}<button type="button" class="btn btn-claro" data-guardar data-id="{ps}/{u["slug"]}" data-n="{e(u["nombre"])}" data-url="{BASE}{ps}/{u["slug"]}/" aria-pressed="false">☆ Guardar</button>{'<a class="btn btn-claro" href="#carreras">Ver ' + palabra + '</a>' if n else ''}</div>
+<div class="acc">{f'<a class="btn btn-luz" href="{e(u["web"])}" target="_blank" rel="noopener nofollow">Web oficial ↗</a>' if u["web"] else ''}<button type="button" class="btn btn-claro" data-guardar data-id="{ps}/{u["slug"]}" data-n="{e(u["nombre"])}" data-url="{BASE}{ps}/{u["slug"]}/" aria-pressed="false">☆ Guardar</button>{'<a class="btn btn-claro" href="#carreras">Ver ' + palabra + '</a>' if n else ''}<a class="btn btn-claro" href="{BASE}comparar/?u={ps}/{u["slug"]}">Comparar con otra</a></div>
 {cred}</div></section>
 <div class="wrap"><div class="ficha"><div>{bloque_c}{bloque_ia(url) or bloque_auto(u, orden_g, grupos)}</div>
 <aside><section class="card"><h2>Datos</h2>{datos_html}</section>{cta}{cerca}</aside></div>
@@ -918,9 +918,26 @@ var u=new URLSearchParams(location.search);if(u.get('nota'))$('qNota').value=u.g
 
 def mi_lista():
     h = cabeza('Mi lista de universidades | AURZANE NEXUS', 'Tus universidades guardadas, comparadas lado a lado.', SITIO + BASE + 'mi-lista/', robots='noindex,follow') + topbar('lista') + f'''
-<main><section class="hero" style="padding-bottom:36px"><div class="wrap">{migas(("Universidades", BASE), ("Mi lista", ""))}<h1>Mi <em>lista</em></h1><p class="lead">Las universidades que guardas, comparadas lado a lado. Se guardan en este dispositivo.</p></div></section>
+<main><section class="hero" style="padding-bottom:36px"><div class="wrap">{migas(("Universidades", BASE), ("Mi lista", ""))}<h1>Mi <em>lista</em></h1><p class="lead">Las universidades que guardas, comparadas lado a lado. Se guardan en este dispositivo. Para ver también las carreras que tienen en común, usa el <a href="{BASE}comparar/">comparador</a>.</p></div></section>
 <div class="wrap" style="margin-top:26px"><div id="miLista"><p class="sub">Cargando…</p></div></div></main>''' + pie()
     escribir('mi-lista/index.html', h)
+
+
+def comparar():
+    """Comparador de universidades (17/11/2026, etapa 3 de la auditoría, tarea 40): hasta 3 universidades de
+    cualquier país lado a lado, con las carreras que tienen en común y, en España, su nota de corte. Enlace
+    compartible (?u=pais/slug,pais/slug). Todo sale de los mismos datos oficiales del catálogo."""
+    desc = 'Compara gratis hasta 3 universidades lado a lado: país, ciudad, tipo, número de carreras, áreas y carreras en común con su nota de corte en España.'
+    h = cabeza('Comparador de universidades: compara hasta 3 lado a lado | AURZANE NEXUS', desc, SITIO + BASE + 'comparar/') + topbar('comparar') + f'''
+<main><section class="hero" style="padding-bottom:36px"><div class="wrap">{migas(("Universidades", BASE), ("Comparar", ""))}<h1>Compara <em>universidades</em></h1><p class="lead">Elige hasta tres universidades y míralas lado a lado: dónde están, qué tipo de institución son, cuántas carreras ofrecen y qué carreras tienen en común.</p></div></section>
+<div class="wrap" style="margin-top:26px">
+<div class="card" id="cmpElegir"><h2 style="margin-top:0">Elige las universidades</h2>
+<div class="cmp-campos">{''.join(f'<div class="cmp-campo"><label for="cmpQ{i}">Universidad {i + 1}</label><input id="cmpQ{i}" type="search" autocomplete="off" placeholder="Escribe el nombre o la ciudad" data-i="{i}"><ul class="cmp-sug" id="cmpS{i}" role="listbox" hidden></ul></div>' for i in range(3))}</div>
+<p class="sub" style="margin:12px 0 0">Los datos salen de los registros oficiales de cada país. <a href="{BASE}acerca/">Fuentes y método</a>.</p></div>
+<div id="comparador" style="margin-top:22px"></div>
+</div></main>''' + pie()
+    escribir('comparar/index.html', h)
+    URLS.append((SITIO + BASE + 'comparar/', '0.8'))
 
 
 def acerca():
@@ -989,6 +1006,7 @@ for p in ORDEN_P:
 notas_de_corte()
 que_puedo_estudiar()
 mi_lista()
+comparar()
 acerca()
 sitemap()
 print('fichas casi vacías fuera de Google:', len(FINAS))
