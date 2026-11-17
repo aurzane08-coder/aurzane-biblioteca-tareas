@@ -697,6 +697,41 @@
   "porque": "Este libro es para quienes se sienten agotados por la autoexigencia constante y el ritmo de vida actual. Aporta una profunda reflexión filosófica sobre cómo nos explotamos a nosotros mismos creyendo que somos libres."
  },
  {
+  "id": "manual-de-ansiedad-y-fobias-edmund-j-bourne",
+  "titulo": "Manual de ansiedad y fobias",
+  "autor": "Edmund J. Bourne",
+  "temas": [
+   "ansiedad"
+  ],
+  "origen": "semilla",
+  "fecha": "2026-11-17",
+  "isbn": "9788416579181",
+  "portada": "",
+  "anio": "2016",
+  "editorial": "Editorial Sirio",
+  "idioma": "spa",
+  "resumen": "",
+  "porque": "Este libro es para quienes sufren ansiedad o fobias y buscan comprender lo que les pasa. Aporta herramientas prácticas y ejercicios guiados para recuperar el control paso a paso."
+ },
+ {
+  "id": "enfocate-cal-newport",
+  "titulo": "Enfócate",
+  "autor": "Cal Newport",
+  "temas": [
+   "tdah",
+   "productividad"
+  ],
+  "origen": "semilla",
+  "fecha": "2026-11-17",
+  "isbn": "9788411000512",
+  "portada": "https://covers.openlibrary.org/b/id/7988607-M.jpg?default=false",
+  "anio": "2016",
+  "editorial": "Blackstone Audio Inc",
+  "idioma": "spa",
+  "resumen": "",
+  "porque": "Este libro es para profesionales y estudiantes que se sienten abrumados por las distracciones diarias. Aporta estrategias claras para trabajar con intensidad y multiplicar el rendimiento sin perder la calma."
+ },
+ {
   "id": "no-pienses-en-un-elefante-george-lakoff",
   "titulo": "No pienses en un elefante",
   "autor": "George Lakoff",
