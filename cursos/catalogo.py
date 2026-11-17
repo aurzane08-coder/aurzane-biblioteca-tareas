@@ -164,10 +164,10 @@ def udemy_caja(c):
     if not temas: return ''
     enl = lambda q: UDEMY['enlace'] + '?u=' + urllib.parse.quote(UDEMY['busqueda'].replace('{q}', urllib.parse.quote_plus(q)), safe='')
     chips = ''.join(f'<a class="ud-chip" href="{E(enl(t))}" target="_blank" rel="sponsored nofollow noopener" data-socio="udemy">{E(t[:1].upper() + t[1:])} ↗</a>' for t in temas)
-    return ('<aside class="az-socio ud-caja" data-nosnippet><img class="ud-foto" src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=720&q=60&auto=format&fit=crop" alt="" loading="lazy" decoding="async" width="720" height="480"><div class="ud-txt"><div class="ud-cab"><span class="ud-marca">Udemy</span><h2>¿Quieres ir más allá?</h2></div>'
+    return ('<aside class="az-socio ud-caja" data-nosnippet><img class="ud-foto" src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=720&q=60&auto=format&fit=crop" alt="" loading="lazy" decoding="async" width="720" height="480"><div class="ud-txt"><div class="ud-cab"><span class="ud-marca">Udemy</span><h2>¿Quieres ir más allá?</h2><span class="ud-pub">Publicidad</span></div>'
             '<p>Cuando termines este curso gratis, en Udemy encontrarás cursos en español, de pago, para profundizar en estos temas:</p>'
             f'<div class="ud-chips">{chips}</div>'
-            '<p class="ud-aviso">Enlaces de afiliado: si compras un curso, AURZANE recibe una comisión sin coste extra para ti. Este curso de AURZANE es y seguirá siendo gratis.</p></div></aside>')
+            '</div></aside>')
 seo = leer('seo.json', {})
 salud = {'fecha': HOY, 'cursos': []}
 
@@ -286,7 +286,7 @@ for c in cursos:
                '.ud-cab h2{margin:0;font-size:1.15rem}.ud-marca{font:700 .72rem/1 system-ui,sans-serif;letter-spacing:.04em;background:#5624d0;color:#fff;padding:6px 9px;border-radius:6px}'
                '.ud-chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 4px}'
                '.ud-chip{display:inline-flex;align-items:center;min-height:44px;padding:8px 16px;border-radius:99px;border:1px solid var(--linea);text-decoration:none;color:inherit;font-weight:600;background:transparent}'
-               '.ud-chip:hover,.ud-chip:focus-visible{border-color:#5624d0;outline:none;box-shadow:0 0 0 2px rgba(86,36,208,.25)}.ud-caja .ud-aviso{font-size:.8rem;margin-top:12px}'
+               '.ud-pub{margin-left:auto;font-size:.72rem;opacity:.6}.ud-chip:hover,.ud-chip:focus-visible{border-color:#5624d0;outline:none;box-shadow:0 0 0 2px rgba(86,36,208,.25)}.ud-caja .ud-aviso{font-size:.8rem;margin-top:12px}'
                '@media (max-width:760px){.hero{grid-template-columns:1fr}}</style>'
                f'<script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>')
           + '<div class="w"><nav class="top"><a class="marca" href="https://learn.aurzane.com/">AURZANE LEARN</a><a href="https://learn.aurzane.com/cursos/">Todos los cursos</a></nav>'
