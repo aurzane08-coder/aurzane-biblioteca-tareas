@@ -1,0 +1,20 @@
+name: Rastreo SEO técnico
+# Revisa una muestra amplia de todas las páginas de los sitemaps (títulos, descripciones, h1, canonical, noindex, alt...).
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '53 3 1 * *'
+permissions:
+  contents: write
+concurrency: rastreo
+jobs:
+  r:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -u auditoria/rastreo.py
+      - run: |
+          git config user.name "aurzane-bot"; git config user.email "bot@aurzane.com"
+          git add auditoria/rastreo; git commit -qm "rastreo SEO: $(date +%F)" || exit 0
+          for i in 1 2 3; do git pull -q --rebase -X theirs && git push -q && break; sleep 5; done
