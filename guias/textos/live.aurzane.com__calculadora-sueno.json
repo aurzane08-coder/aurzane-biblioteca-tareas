@@ -1,0 +1,55 @@
+{
+ "titulo": "Calculadora de sueño: optimiza tu descanso y bienestar",
+ "intro": "Entender cómo funciona nuestro descanso nocturno es el primer paso para mejorar el rendimiento diario, la concentración y el bienestar general. Muchas veces nos centramos únicamente en las horas totales que pasamos en la cama, olvidando que la calidad de ese tiempo depende directamente de la estructura interna del sueño y de cómo se suceden sus diferentes fases a lo largo de la noche.\nDesde el punto de vista de la psicología y la salud general, regular el momento en el que nos acostamos y nos levantamos ayuda a sincronizar los ritmos circadianos naturales del organismo. Esta guía práctica complementa nuestra calculadora de sueño de AURZANE, profundizando en la lógica matemática y biológica que hay detrás de los ciclos de noventa minutos para que puedas aprovecharla al máximo en tu día a día.",
+ "alt": "Ilustración abstracta y serena de un dormitorio con tonos nocturnos y un reloj minimalista indicando las horas de sueño",
+ "secciones": [
+  {
+   "titulo": "Cómo funciona la fórmula de la calculadora",
+   "texto": "Nuestra herramienta se basa en un cálculo matemático sencillo pero muy eficaz que cruza tres variables principales: la hora objetivo, la duración media de los ciclos de noventa minutos y el tiempo estimado de latencia del sueño, que es el margen que tardas en quedarte dormido desde que apagas la luz.\nPara calcular a qué hora debes acostarte si tienes una hora fija para despertar, la herramienta resta bloques de noventa minutos hacia atrás desde tu alarma, añadiendo además los minutos que hayas indicado que tardas en conciliar el sueño. Si el cálculo se hace a la inversa, partiendo del momento en que te acuestas, la calculadora suma esos mismos bloques para ofrecerte las horas ideales en las que tu alarma coincidirá con el final de una fase ligera.\n- El cálculo se organiza en bloques cerrados de ciclos completos para evitar el despertar abrupto en fase profunda.\n- Se incluye un margen de transición personalizable porque el tiempo que tardamos en dormirnos varía en cada persona.\n- Los resultados son orientativos y buscan facilitar la sincronización con los ritmos biológicos naturales."
+  },
+  {
+   "titulo": "Cómo utilizar la herramienta correctamente",
+   "texto": "Para sacar el máximo partido a esta calculadora de sueño, es recomendable introducir datos realistas y mantener cierta constancia en su uso diario. El margen de tiempo que tardas en dormirte no es un número fijo, sino que puede cambiar según el nivel de estrés acumulado, la actividad física realizada durante la jornada o la exposición previa a pantallas.\nTe aconsejamos probar la herramienta durante al menos una semana completa para comprobar qué número de ciclos encaja mejor con tu ritmo de vida y tus obligaciones laborales o académicas. No intentes reducir tus horas de descanso de manera drástica de la noche a la mañana, ya que el cuerpo necesita adaptación.\n- Introduce el tiempo real que tardas en dormirte, no el que desearías tardar.\n- Elige la franja de edad correspondiente para que la recomendación se ajuste a las directrices de salud general.\n- Utiliza el resultado como una guía flexible y no como una norma rígida e inflexible."
+  },
+  {
+   "titulo": "Ejemplos prácticos para el día a día",
+   "texto": "Imagina que necesitas despertarte a las 07:00 de la mañana para ir a trabajar o estudiar y calculas que tardas unos quince minutos en quedarte dormido. Si buscas un descanso óptimo de cinco ciclos completos, que equivalen a siete horas y media, la calculadora te sugerirá acostarte a las 23:15 horas.\nEn el caso de que tu estilo de vida o tus compromisos te obliguen a dormir menos, podrías optar por cuatro ciclos, lo que supone un total de seis horas de sueño efectivo. En este supuesto, contando los quince minutos de latencia, la hora ideal para apagar la luz sería las 00:45 horas.\n- Si te levantas a las 06:00 y duermes cuatro ciclos, debes acostarte a las 23:45.\n- Si tu alarma suena a las 08:00 y buscas seis ciclos completos, la hora de dormir será las 22:45.\n- Recuerda que estos ejemplos asumen un tiempo de adormecimiento estándar de quince minutos."
+  },
+  {
+   "titulo": "Límites de la calculadora y variabilidad individual",
+   "texto": "Ninguna herramienta digital puede sustituir a la complejidad de la biología humana ni a las necesidades específicas de cada momento vital. La duración exacta de un ciclo de sueño no es un reloj exacto de noventa minutos para todo el mundo, sino que puede oscilar entre los setenta y los ciento veinte minutos según la persona, la genética o la edad.\nAdemás, factores externos como el consumo de cafeína, cenas muy copiosas, la práctica de ejercicio intenso a última hora de la tarde o la presencia de preocupaciones cotidianas alteran la arquitectura del sueño. La calculadora ofrece una referencia matemática muy útil, pero el mejor indicador de que has descansado bien es cómo te sientes al despertar.\n- La variabilidad nocturna hace que algunos ciclos sean ligeramente más cortos o más largos.\n- Las situaciones de estrés puntual pueden alterar la facilidad para conciliar el sueño.\n- Si la sensación de fatiga persiste durante semanas a pesar de dormir las horas recomendadas, conviene consultar con un especialista."
+  },
+  {
+   "titulo": "Cuándo buscar apoyo profesional y recursos en España",
+   "texto": "Dormir mal de forma ocasional es una respuesta normal ante situaciones de estrés, exámenes, cambios laborales o preocupaciones puntuales. Sin embargo, cuando los problemas para conciliar o mantener el sueño se prolongan durante semanas o meses, afectando de manera clara al estado de ánimo y al rendimiento, es importante buscar ayuda médica.\nEn España, el sistema sanitario cuenta con profesionales de la atención primaria y unidades del sueño que pueden valorar cada caso de forma individualizada. Si además experimentas malestar emocional profundo, desesperanza o ideas recurrentes de hacerte daño, recuerda que tienes a tu disposición el teléfono 024, un servicio público, gratuito y confidencial de atención a la conducta suicida disponible las veinticuatro horas.\n- Consulta con tu médico de cabecera si notas ronquidos intensos, despertares con sensación de ahogo o fatiga crónica.\n- Evita la automedicación con productos para dormir sin supervisión facultativa.\n- Utiliza el teléfono 024 de manera inmediata si atraviesas una crisis emocional grave."
+  }
+ ],
+ "faq": [
+  {
+   "p": "¿Por qué es tan importante mantener la misma hora para despertar?",
+   "r": "Acostarse y levantarse a la misma hora todos los días, incluidos los fines de semana, entrena a nuestro reloj biológico interno. Esta regularidad facilita que los mecanismos naturales del organismo anticipen el descanso y mejoren la calidad global de las fases nocturnas."
+  },
+  {
+   "p": "¿Qué pasa si me despierto en medio de un ciclo de sueño?",
+   "r": "Despertarse de manera abrupta en plena fase de sueño profundo suele provocar una sensación intensa de aturdimiento, pesadez mental y desorientación conocida como inercia del sueño. Por eso resulta tan útil alinear la alarma con el final de los ciclos completos."
+  },
+  {
+   "p": "¿Cuánto tiempo dura exactamente un ciclo de sueño?",
+   "r": "De media dura unos noventa minutos, durante los cuales el cuerpo transita desde el sueño ligero hasta el profundo y la fase REM. No obstante, esta duración puede variar entre los setenta y los ciento veinte minutos dependiendo de cada persona."
+  },
+  {
+   "p": "¿Cuántas horas debo dormir según mi edad?",
+   "r": "Las directrices generales de salud recomiendan entre ocho y diez horas para los adolescentes de 14 a 17 años, entre siete y nueve horas para las personas adultas de 18 a 64 años, y entre siete y ocho horas a partir de los 65 años."
+  },
+  {
+   "p": "¿Es normal tardar un rato en dormirme después de acostarme?",
+   "r": "Sí, un periodo de latencia de entre diez y veinte minutos se considera completamente habitual mientras el cuerpo se relaja. Si tardas mucho más tiempo de forma habitual, puede ser útil revisar tus hábitos antes de acostarte."
+  }
+ ],
+ "fuentes": [
+  "Organización Mundial de la Salud (OMS)",
+  "Guías clínicas de la National Sleep Foundation",
+  "Ministerio de Sanidad de España sobre hábitos de vida saludable"
+ ],
+ "fecha": "2026-11-17"
+}

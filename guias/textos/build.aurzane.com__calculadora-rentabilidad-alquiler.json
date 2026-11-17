@@ -1,0 +1,51 @@
+{
+ "titulo": "¿Compensa comprar para alquilar?",
+ "intro": "Invertir en ladrillo es una de las decisiones financieras más meditadas por las familias en España, a caballo entre la búsqueda de seguridad y la generación de ingresos recurrentes. Sin embargo, detrás de la ilusión de recibir una renta mensual se esconde una compleja red de costes iniciales, impuestos y obligaciones fiscales que a menudo pasan desapercibidos.\n\nEsta guía complementa nuestra calculadora con las claves prácticas que todo inversor particular debe dominar antes de firmar ante notario. Analizaremos cómo interpretar los números reales de una operación, el impacto de la fiscalidad actual y los riesgos ocultos que pueden convertir una supuesta ganga en un quebradero de cabeza financiero y emocional.",
+ "alt": "Inversor analizando datos inmobiliarios y números de rentabilidad en una tablet junto a una maqueta de edificio",
+ "secciones": [
+  {
+   "titulo": "Cómo funciona nuestra calculadora",
+   "texto": "La herramienta de AURZANE BUILD parte de los datos esenciales que introduces para desglosar la realidad económica de la vivienda. Para usarla bien, debes ser realista con los costes: no olvides incluir los impuestos autonómicos, los honorarios notariales, las derramas previstas en la comunidad y un porcentaje destinado a posibles periodos sin inquilino.\n\nLa fórmula de la rentabilidad bruta divide el alquiler anual entre el precio de compra del inmueble, ofreciendo una visión rápida pero incompleta. La rentabilidad neta, en cambio, resta todos los gastos anuales al ingreso y lo divide entre la inversión total realizada, incluyendo reformas e impuestos.\n- Introduce el precio real de adquisición sin sobreestimar el valor de mercado.\n- Añade siempre una estimación para mantenimiento y meses de vacancia.\n- Revisa el flujo de caja mensual para comprobar si el alquiler cubre la hipoteca y los gastos fijos."
+  },
+  {
+   "titulo": "La trampa del flujo de caja negativo",
+   "texto": "Uno de los mayores errores del pequeño inversor es confiar únicamente en la revalorización a largo plazo del inmueble mientras asume un flujo de caja mensual negativo. Esto ocurre cuando la suma de la cuota hipotecaria, los impuestos y los gastos supera el dinero que ingresas cada mes por el alquiler.\n\nAunque el piso aumente de valor con los años, un flujo negativo te obliga a aportar dinero de tu bolsillo mes a mes para mantener la inversión a flote. Si tus ingresos habituales sufren un revés o surgen imprevistos familiares, esa letra mensual puede convertirse en una fuente de estrés financiero muy difícil de sostener.\n- Calcula el flujo mensual restando a la renta todos los gastos y la cuota del préstamo.\n- Asegúrate de contar con un colchón de ahorros específico para la vivienda.\n- Evita operaciones justas donde cualquier imprevisto rompa tu equilibrio económico."
+  },
+  {
+   "titulo": "Entender la rentabilidad sobre tu dinero",
+   "texto": "Cuando compras al contado, la rentabilidad de tu capital coincide con la neta del inmueble. Pero al utilizar financiación ajena mediante hipoteca, entra en juego el apalancamiento financiero, que puede multiplicar el rendimiento sobre tus ahorros iniciales si el coste de la deuda es inferior a lo que rinde el piso.\n\nNo obstante, la hipoteca funciona como un amplificador bidireccional: si los tipos de interés suben o el inmueble pierde valor, el riesgo asumido sobre tu propio dinero se incrementa de forma notable. Evaluar este equilibrio requiere prudencia y un análisis honesto de tu propia tolerancia al riesgo.\n- Compara el tipo de interés de la hipoteca con la rentabilidad neta esperada.\n- Valora si prefieres la tranquilidad de no tener deudas frente al apalancamiento.\n- Recuerda que las condiciones hipotecarias para inversores suelen ser más estrictas."
+  },
+  {
+   "titulo": "Límites y prudencia en la inversión",
+   "texto": "Toda proyección inmobiliaria descansa sobre hipótesis que pueden cambiar con el tiempo: cambios normativos, morosidad, reparaciones estructurales imprevistas o fluctuaciones en la demanda de alquiler en esa zona concreta de la ciudad. Los números sobre el papel son solo una estimación orientativa.\n\nAntes de comprometer tus ahorros, es aconsejable reflexionar sobre tu situación vital global y tus objetivos de bienestar a largo plazo. Una inversión inmobiliaria inmoviliza una parte muy importante de tu patrimonio, restando liquidez frente a otras alternativas financieras más diversificadas.\n- No destines a la compra dinero que puedas necesitar a corto o medio plazo.\n- Valora el coste emocional de gestionar inquilinos, averías y reclamaciones.\n- Consulta siempre con un profesional colegiado para validar tu estrategia fiscal y jurídica."
+  }
+ ],
+ "faq": [
+  {
+   "p": "¿Por qué la rentabilidad bruta puede engañarme al comprar un piso?",
+   "r": "La rentabilidad bruta solo relaciona el precio de venta con el alquiler, ignorando por completo los impuestos de compra, los gastos de notaría, las derramas, los seguros y los meses en que el piso pueda estar vacío. Por eso, dos pisos con la misma rentabilidad bruta pueden ofrecer resultados netos muy diferentes en tu bolsillo."
+  },
+  {
+   "p": "¿Qué gastos debo sumar obligatoriamente al calcular la inversión inicial?",
+   "r": "Además del precio del piso, debes añadir los impuestos autonómicos como el ITP o el IVA, los honorarios de notaría y registro de la propiedad, los costes de gestoría si los hubiera, y el presupuesto destinado a reformas necesarias, acondicionamiento y mobiliario básico para entrar a vivir."
+  },
+  {
+   "p": "¿Es mejor comprar al contado o pedir una hipoteca para alquilar?",
+   "r": "Depende de tu perfil y de los tipos de interés vigentes. La hipoteca permite multiplicar el rendimiento de tus ahorros si el alquiler cubre la deuda, pero introduce el riesgo del flujo de caja negativo si el piso se queda vacío o suben las cuotas, exigiendo un mayor colchón financiero de seguridad."
+  },
+  {
+   "p": "¿Cómo afecta la Ley de Vivienda actual a los impuestos del alquiler?",
+   "r": "La normativa vigente regula las reducciones en el IRPF sobre el rendimiento neto obtenido por el alquiler de vivienda habitual, aplicando incentivos fiscales variables según la zona de mercado residencial y si se trata de contratos nuevos o reducciones de renta, por lo que conviene revisar la normativa fiscal actualizada."
+  },
+  {
+   "p": "¿Dónde puedo buscar ayuda si tengo dudas sobre la viabilidad de mi inversión?",
+   "r": "Para cuestiones relativas a la fiscalidad, la redacción de contratos o la viabilidad económica detallada, es recomendable acudir a asesores fiscales, agencias de la propiedad inmobiliaria o abogados especializados en derecho inmobiliario antes de firmar cualquier arras o compromiso de compra."
+  }
+ ],
+ "fuentes": [
+  "Ley 35/2006, de 28 de noviembre, del Impuesto sobre la Renta de las Personas Físicas",
+  "Ley 12/2023, por el derecho a la vivienda",
+  "Banco de España: Guías de educación financiera y acceso al crédito hipotecario"
+ ],
+ "fecha": "2026-11-17"
+}
