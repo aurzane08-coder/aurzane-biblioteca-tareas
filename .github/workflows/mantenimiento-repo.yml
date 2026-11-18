@@ -1,11 +1,16 @@
 name: Mantenimiento del repositorio
-# A mano: borra una rama que ya no se usa (por ejemplo, material de campañas abandonadas) para que GitHub libere su peso.
+# Archiva y quita ramas que ya no se usan. Antes de quitar cada rama la guarda como etiqueta «archivo/<rama>»,
+# así su contenido se puede recuperar siempre (git checkout archivo/<rama>). Nunca toca main ni material-clips.
+# A mano (una rama) o escribiendo las ramas en mantenimiento/ramas.txt (una por línea).
 on:
   workflow_dispatch:
     inputs:
       rama:
-        description: 'Rama a borrar (nunca main)'
+        description: 'Rama a archivar y quitar (nunca main)'
         required: true
+  push:
+    branches: [main]
+    paths: ['mantenimiento/ramas.txt']
 permissions:
   contents: write
 jobs:
@@ -18,5 +23,10 @@ jobs:
       - env:
           RAMA: ${{ github.event.inputs.rama }}
         run: |
-          [ "$RAMA" = "main" ] && { echo "main no se borra"; exit 1; }
-          git push origin --delete "$RAMA" && echo "::notice::Rama $RAMA borrada"
+          L="$RAMA"; [ -z "$L" ] && L=$(grep -v '^\s*#' mantenimiento/ramas.txt | tr -d ' ')
+          for b in $L; do
+            case "$b" in main|material-clips) echo "$b no se toca"; continue;; esac
+            git ls-remote --exit-code --heads origin "$b" >/dev/null || { echo "$b ya no existe"; continue; }
+            git fetch -q origin "refs/heads/$b:refs/remotes/origin/$b"
+            git push -q origin "refs/remotes/origin/$b:refs/tags/archivo/$b" && git push -q origin --delete "$b" && echo "::notice::$b archivada como archivo/$b y quitada"
+          done
