@@ -11,7 +11,8 @@ const URLS = process.argv.slice(2);
     p.on('response', r => { if (r.status() >= 400) ev.push('HTTP ' + r.status() + ' ' + r.url().slice(0, 150)); });
     try {
       await p.goto(u, { waitUntil: 'domcontentloaded', timeout: 45000 });
-      for (let k = 0; k < 25; k++) { if (!/sgcaptcha/.test(p.url() + (await p.content()).slice(0, 3000))) break; await p.waitForTimeout(1000); }
+      for (let k = 0; k < 30; k++) { try { if (!/sgcaptcha/.test(p.url() + (await p.content()).slice(0, 3000))) break; } catch (e) {} await p.waitForTimeout(1000); }
+      await p.waitForTimeout(3000);
       await p.waitForLoadState('networkidle', { timeout: 20000 }).catch(() => {});
       const info = await p.evaluate(() => ({ url: location.href, preg: document.querySelectorAll('.pregunta').length, guia: !!document.querySelector('.guia, .g-escena, #g-texto, [data-guia]'), botones: document.querySelectorAll('button, a.btn, .btn').length, texto: document.body.innerText.length, inicio: document.body.innerText.slice(0, 200).replace(/\s+/g, ' ') }));
       console.log('\n### ' + u + '\n' + JSON.stringify(info));
