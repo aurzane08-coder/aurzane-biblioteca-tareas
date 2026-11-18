@@ -339,3 +339,5 @@ table.tnc td.num{color:var(--text-dim);width:32px}
 .estudiar-en .top-rank{margin:6px 0;padding-left:1.3em;line-height:1.8}
 .estudiar-en .top-rank small{color:var(--text-dim)}
 .estudiar-en .pasos{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 0}
+
+.anun-ok{margin:16px auto;max-width:760px;padding:16px 20px;border-radius:14px;background:#e9f6ee;border:1px solid #9fd3b2;color:#14532d;line-height:1.5}

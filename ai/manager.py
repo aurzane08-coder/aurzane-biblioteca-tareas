@@ -106,6 +106,31 @@ if viejos:
     r = remoto('site-tools-client domain-all update id=aurzane.com flush_cache=1')
     acciones.append(f'Vacié la caché de aurzane.com: servía una versión antigua de {", ".join(x.rsplit("/", 1)[1] for x in viejos)}.' + ('' if 'OK' in r else ' (sin confirmación del servidor)'))
 
+# Lecciones de errores de JavaScript (18/11/2026): qué significan y cómo se arreglaron. La IA las usa para diagnosticar
+# errores parecidos y las muestra en el panel junto al error. Para añadir una: patrón (regex), causa y arreglo.
+LECCIONES_JS = [
+    (r'supabase-js ya est[eé] cargado|crearClienteAurzaneID is not defined',
+     'La librería de cuentas (supabase-js, desde un CDN) no llegó: bloqueador de anuncios, red lenta o CDN caída.',
+     'aurzane-id.js ya no rompe la página: devuelve un cliente «sin conexión» (parche ai/parches/errores_js.py). Si vuelve a salir en una página, comprueba que carga supabase-js ANTES de /aurzane-id.js.'),
+    (r'(d\.body|document\.body)[^a-z]*(is null|null is not an object|reading .(appendChild|insertBefore))|Cannot read properties of null \(reading .(appendChild|insertBefore)',
+     'Un script común intentó pintar antes de que existiera el cuerpo de la página (se cargó en la cabecera o la página redirigía con JavaScript).',
+     'Mover la redirección al servidor (.htaccess, como leer.html?libro=) o cargar el script con defer al final del body; los scripts comunes deben esperar a DOMContentLoaded si document.body es null.'),
+    (r"Unexpected token '?'?$|Unexpected token '|Invalid or unexpected token",
+     'El navegador recibió un archivo cortado o una versión vieja guardada en caché (suele pasar justo después de un despliegue).',
+     'Si el archivo cambió después del error, ya está resuelto (versiones con huella en ai/parches/versiones.py). Si sigue saliendo, pasa node --check al archivo o al script de la página.'),
+    (r'\.catch is not a function',
+     'Las consultas de Supabase devuelven un objeto «thenable» sin .catch.',
+     'Envolver la consulta en Promise.resolve(consulta).then(ok, error) en vez de usar .catch (como en mi-como-voy.js).'),
+    (r"reading 'classList'|reading .classList",
+     'El código buscó un elemento que la página no tiene (por ejemplo, una sección del menú sin contenido).',
+     'Comprobar que getElementById devuelve algo antes de usarlo (admin.html ya lo hace desde el 16/11/2026).'),
+]
+def leccion_js(m):
+    for pat, causa, arreglo in LECCIONES_JS:
+        if re.search(pat, m or '', re.I): return {'causa': causa, 'arreglo': arreglo}
+    return None
+
+
 # ---------- 4. Errores de JavaScript de los visitantes ----------
 errores = {'total_24h': 0, 'paginas_24h': 0, 'top': []}
 log = remoto('tail -n 3000 www/aurzane.com/privado-ai/errores.log 2>/dev/null')
@@ -115,7 +140,28 @@ if log:
     rec = [f for f in filas if f[0] >= corte and f[-1] != 'bot']
     errores['total_24h'] = len(rec); errores['paginas_24h'] = len({f[1] + f[2] for f in rec})
     c = collections.Counter((f[4], f[5], f[1] + f[2]) for f in rec)
-    errores['top'] = [{'mensaje': m, 'archivo': s, 'pagina': p, 'veces': n} for (m, s, p), n in c.most_common(10)]
+    # Lección del 18/11/2026: si el archivo que falla se cambió DESPUÉS del último error, el error ya está corregido
+    # (o el navegador usaba una versión vieja). No se avisa de nuevo; queda en «corregidos» para que se vea.
+    ultimo = {}
+    for f in rec: ultimo[(f[4], f[5], f[1] + f[2])] = max(ultimo.get((f[4], f[5], f[1] + f[2]), ''), f[0])
+    def ruta_srv(u):
+        m_ = re.search(r'https?://[^\s)]+', u or '')
+        if not m_: return None
+        x = urllib.parse.urlparse(re.sub(r':\d+(:\d+)?$', '', m_.group(0)))
+        if not (x.hostname or '').endswith('aurzane.com'): return None
+        pth = x.path if not x.path.endswith('/') else x.path + 'index.html'
+        return f'www/{x.hostname}/public_html{pth}'
+    rutas = sorted({r for (_, s_, _) in c for r in [ruta_srv(s_)] if r and re.fullmatch(r'[\w./-]+', r)})
+    mt = {}
+    if rutas:
+        for l_ in (remoto('stat -c "%Y %n" ' + ' '.join(rutas) + ' 2>/dev/null') or '').splitlines():
+            t_, _, n_ = l_.partition(' '); mt[n_] = datetime.datetime.utcfromtimestamp(int(t_)).strftime('%Y-%m-%d %H:%M:%S') if t_.isdigit() else ''
+    errores['corregidos'] = []
+    for k in list(c):
+        r_ = ruta_srv(k[1])
+        if r_ and mt.get(r_) and mt[r_] > ultimo[k]:
+            errores['corregidos'].append({'mensaje': k[0], 'archivo': k[1], 'pagina': k[2], 'veces': c[k], 'cambiado': mt[r_]}); del c[k]
+    errores['top'] = [{'mensaje': m, 'archivo': s, 'pagina': p, 'veces': n, 'leccion': leccion_js(m)} for (m, s, p), n in c.most_common(10)]
     for (m, s, p), n in c.most_common(3):
         if n >= 5: aviso('medio', f'Error repetido {n} veces en {p}: {m[:120]}', 'js_error', json.dumps([m[:300], s, p]))
 
@@ -1405,6 +1451,7 @@ def aprender_desconocido(p, f_, probadas=()):
                'Apareció este problema: «' + p['texto'] + '». Contexto:\n' + contexto_de(p)[:3000] +
                '\n\nAcciones que puedes ordenar (solo estas): ' + ', '.join(f'{x} = {NOMBRES.get(x, x)}' for x in opciones) +
                ('\n\nLo que has aprendido antes:\n' + previos if previos else '') +
+               ('\n\nLecciones de errores de JavaScript ya resueltos:\n' + '\n'.join(f'- {c_} Arreglo: {a_}' for _, c_, a_ in LECCIONES_JS) if p.get('tipo') == 'js_error' else '') +
                '\n\nResponde SOLO con JSON: {"receta": "<una de las acciones>", "motivo": "<una frase en español>", "explicacion": "<causa probable y cómo arreglarlo a mano si la acción no basta, máximo 6 líneas, sin rayas largas>"}', 700)
     m = re.search(r'\{.*\}', r, re.S)
     try: j = json.loads(m.group(0)) if m else {}
@@ -1499,7 +1546,8 @@ def aplicar(receta, p):
         sug = gemini('Eres el ingeniero de mantenimiento de AURZANE, una web de psicología en SiteGround (HTML y PHP propios, NO usa WordPress; subdominios mind, nexus, live, learn, build, ovp; despliegue con GitHub Actions; marketing automático en redes con sus APIs) '
                      'con automatizaciones en GitHub Actions y Supabase. Responde en español, sin rayas largas, en máximo 8 líneas: 1) causa más probable, '
                      '2) cómo arreglarlo paso a paso, 3) si es seguro hacerlo automáticamente.\n\nProblema: ' + p['texto'] + '\n\nContexto:\n' + contexto_de(p)[:5000] +
-                     ('\n\nCasos parecidos que se arreglaron antes:\n' + memoria if memoria else ''))
+                     ('\n\nCasos parecidos que se arreglaron antes:\n' + memoria if memoria else '') +
+                     ('\n\nLecciones de errores de JavaScript ya resueltos:\n' + '\n'.join(f'- {c_} Arreglo: {a_}' for _, c_, a_ in LECCIONES_JS) if t == 'js_error' else ''))
         if sug: sug = 'Hipótesis de la IA, sin comprobar (revísala antes de cambiar nada):\n' + sug
         return ('escalado' if sug else 'fallo'), ('Hipótesis de la IA lista' if sug else f'Sin diagnóstico ({gem_estado})'), sug
     return 'escalado', 'Necesita que lo revises tú'
