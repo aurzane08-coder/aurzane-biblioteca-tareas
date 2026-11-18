@@ -9,7 +9,8 @@
   "fw-cba107601c",
   "fw-41072391b8",
   "fw-2e0c75c597",
-  "cita-3adec0ca95"
+  "cita-3adec0ca95",
+  "fw-6d7b3852a2"
  ],
  "dias": {
   "2026-11-08": {
@@ -295,6 +296,35 @@
    },
    "mas_frases": true,
    "musica": null
+  },
+  "2026-11-18": {
+   "fecha": "2026-11-18",
+   "frase": {
+    "texto": "Los más insolentes en la prosperidad son en la adversidad los más temerosos.",
+    "autor": "Fénelon",
+    "obra": "",
+    "url": "https://aurzane.com/frases/#fw-6d7b3852a2",
+    "fuente": "Proverbia.net"
+   },
+   "curiosidad": {
+    "titulo": "¿Sabías que la depresión y el corazón están conectados?",
+    "texto": "La depresión y un tipo común de insuficiencia cardíaca comparten una raíz inflamatoria común. Un estudio reciente muestra que la depresión y los problemas del corazón están vinculados por mecanismos biológicos compartidos. La inflamación juega un papel clave en ambas condiciones y en sus procesos relacionados.",
+    "fuente": "Depression and Anxiety",
+    "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13695868/"
+   },
+   "ejercicio": {
+    "titulo": "Respiración alterna (nadi shodhana) guiada",
+    "url": "https://mind.aurzane.com/ejercicios/respiracion-alterna/"
+   },
+   "test": {
+    "titulo": "Test de autoestima de Rosenberg gratis y online",
+    "url": "https://mind.aurzane.com/test-de-autoestima/"
+   },
+   "mas_frases": true,
+   "musica": {
+    "url": "https://aurzane.com/marketing/musica/1203517.mp3",
+    "credito": "«Fight in my mind», Luke (Jamendo), CC BY-SA"
+   }
   }
  }
 }

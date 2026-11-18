@@ -1,5 +1,43 @@
 [
  {
+  "id": "cur-f32c6b294b",
+  "tipo": "curiosidad",
+  "titulo": "¿Sabías esto sobre los enfermeros de urgencias?",
+  "dato": "Un estudio analiza el agotamiento, la ansiedad y el estrés laboral en enfermería de urgencias en Arabia Saudí.",
+  "resumen": "Un estudio analiza el agotamiento, la ansiedad y el estrés laboral en enfermería de urgencias en Arabia Saudí. Una revisión científica ha recopilado investigaciones sobre el desgaste profesional, la fatiga y los problemas de sueño en estos sanitarios. El objetivo es mapear cómo afecta este entorno tan exigente a su salud psicológica.",
+  "fuente": "Nursing Open",
+  "hashtags": [
+   "psicologia",
+   "saludmental",
+   "curiosidades",
+   "divulgacion"
+  ],
+  "fuente_id": "pmc-PMC13740361",
+  "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13740361/",
+  "fecha": "2026-11-18",
+  "auto": true,
+  "verificacion": "El dato describe con precisión y sin exageraciones una revisión científica real publicada en Nursing Open sobre la salud mental en enfermeros."
+ },
+ {
+  "id": "cur-ef11af2090",
+  "tipo": "curiosidad",
+  "titulo": "¿Tu móvil sabe si tienes depresión?",
+  "dato": "La forma en que usas tus dispositivos digitales ayuda a estudiar la depresión de forma continua en tu día a día.",
+  "resumen": "La forma en que usas tus dispositivos digitales ayuda a estudiar la depresión de forma continua en tu día a día. Un estudio revisó cómo ciertas interacciones online pueden reflejar cambios de comportamiento asociados a la depresión. Esto abre nuevas vías para comprender mejor la salud mental en entornos naturales.",
+  "fuente": "Journal of Medical Internet Research",
+  "hashtags": [
+   "aurzane",
+   "psicologia",
+   "saludmental",
+   "divulgacion"
+  ],
+  "fuente_id": "pmc-PMC13735187",
+  "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13735187/",
+  "fecha": "2026-11-18",
+  "auto": true,
+  "verificacion": "El dato refleja con precisión el estado actual de la investigación en fenotipado digital sin caer en exageraciones sensacionalistas."
+ },
+ {
   "id": "cur-83de1560e2",
   "tipo": "curiosidad",
   "titulo": "¿Tu cerebro se limpia mientras duermes?",
