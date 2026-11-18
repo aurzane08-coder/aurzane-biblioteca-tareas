@@ -21,6 +21,6 @@ jobs:
       - name: Guardar
         run: |
           git config user.name "aurzane-bot"; git config user.email "bot@aurzane.com"
-          git add -A univ/data/scorecard.json univ/data/scorecard.log univ/data/scorecard_crudo.json.gz
+          git add -A univ/data/scorecard*
           git commit -m "univ: College Scorecard EE. UU." || exit 0
           for i in 1 2 3 4 5; do git pull --rebase -X theirs && git push && break; sleep 7; done
