@@ -1332,6 +1332,54 @@
    "alta": "2026-11-17"
   },
   {
+   "id": "promo-estres",
+   "tipo": "promo",
+   "mundo": "mind",
+   "url": "https://mind.aurzane.com/test-de-estres/",
+   "titulo": "Test de estrés gratis",
+   "ganchos": [
+    "¿Es estrés o algo más? Compruébalo en 2 minutos",
+    "Mide tu estrés con el test que usan los psicólogos",
+    "Antes de pedir cita, haz este test gratis"
+   ],
+   "texto": "Test de estrés validado, gratis y anónimo, con tu resultado explicado al momento. Si lo necesitas, te mostramos cómo hablar con un psicólogo en clínica o por videoconsulta, con precio cerrado y sin seguro.",
+   "hashtags": [
+    "SaludMental",
+    "Estrés",
+    "Psicología"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "",
+   "foto_q": "stressed woman laptop",
+   "origen": "fijo",
+   "alta": "2026-11-18"
+  },
+  {
+   "id": "promo-chequeo",
+   "tipo": "promo",
+   "mundo": "live",
+   "url": "https://live.aurzane.com/test-de-habitos/",
+   "titulo": "Test de hábitos saludables",
+   "ganchos": [
+    "¿Cómo de sanos son tus hábitos?",
+    "Tu salud en 10 preguntas",
+    "Pequeños cambios que se notan"
+   ],
+   "texto": "Sueño, alimentación, movimiento y descanso: descubre qué hábitos te ayudan y cuáles mejorar. Y si quieres un chequeo, análisis y especialistas a precio cerrado sin seguro médico.",
+   "hashtags": [
+    "Salud",
+    "Hábitos",
+    "Chequeo"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "",
+   "foto_q": "doctor consultation clinic",
+   "origen": "fijo",
+   "alta": "2026-11-18"
+  },
+  {
    "id": "libro-introduccion-psicologia-cientifica",
    "tipo": "libro",
    "mundo": "aurzane",
@@ -54356,6 +54404,33 @@
    "alta": "2026-11-17"
   },
   {
+   "id": "cur-f25e9c5a6c",
+   "tipo": "curiosidad",
+   "mundo": "mind",
+   "origen": "curiosidades",
+   "url": "https://mind.aurzane.com/",
+   "titulo": "¿Por qué ignoras lo que tienes delante?",
+   "ganchos": [
+    "¿Por qué ignoras lo que tienes delante?",
+    "¿Por qué ignoras lo que tienes delante? 🧠",
+    "Según Simons y Chabris en 1999, la mitad de las personas no ven un gorila cruzando un part"
+   ],
+   "texto": "Según Simons y Chabris en 1999, la mitad de las personas no ven un gorila cruzando un partido de baloncesto si prestan atención a los pases. Este fenómeno se llama ceguera inatencional. Ocurre porque el cerebro humano filtra la información sensorial para no colapsar, centrando todos sus recursos en una sola tarea y volviéndonos ciegos a lo inesperado.\n\nFuente: Simons y Chabris, 1999",
+   "hashtags": [
+    "aurzane",
+    "psicologia",
+    "atencion",
+    "curiosidades",
+    "Psicología",
+    "Curiosidades"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "🧠",
+   "dato": "Según Simons y Chabris en 1999, la mitad de las personas no ven un gorila cruzando un partido de baloncesto si prestan atención a los pases.",
+   "alta": "2026-11-18"
+  },
+  {
    "id": "cur-f32c6b294b",
    "tipo": "curiosidad",
    "mundo": "mind",
@@ -55218,6 +55293,48 @@
    "emoji": "🧠",
    "dato": "La depresión y un tipo común de insuficiencia cardíaca comparten una raíz inflamatoria común.",
    "alta": "2026-11-03"
+  },
+  {
+   "id": "auto-aurzane-com-novedades",
+   "tipo": "seccion",
+   "mundo": "aurzane",
+   "origen": "sitemap",
+   "url": "https://aurzane.com/novedades/",
+   "titulo": "Novedades de AURZANE: tests, herramientas y contenidos nuevos",
+   "ganchos": [
+    "Novedades de AURZANE: tests, herramientas y contenidos nuevos",
+    "Novedades de AURZANE: tests, herramientas y contenidos nuevos",
+    "Novedades de AURZANE: tests, herramientas y contenidos nuevos"
+   ],
+   "texto": "Todo lo nuevo de AURZANE: tests, calculadoras, ejercicios guiados, cursos, libros y artículos, actualizado automáticamente.",
+   "hashtags": [
+    "AURZANE"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "✨",
+   "alta": "2026-11-18"
+  },
+  {
+   "id": "auto-aurzane-com-mapa",
+   "tipo": "seccion",
+   "mundo": "aurzane",
+   "origen": "sitemap",
+   "url": "https://aurzane.com/mapa/",
+   "titulo": "Mapa de AURZANE: todas las páginas",
+   "ganchos": [
+    "Mapa de AURZANE: todas las páginas",
+    "Mapa de AURZANE: todas las páginas",
+    "Mapa de AURZANE: todas las páginas"
+   ],
+   "texto": "Todas las páginas de AURZANE en un solo lugar: tests, calculadoras, ejercicios, universidades, cursos y biblioteca.",
+   "hashtags": [
+    "AURZANE"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "✨",
+   "alta": "2026-11-18"
   }
  ]
 }

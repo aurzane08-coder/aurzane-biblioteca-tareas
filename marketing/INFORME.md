@@ -4,11 +4,11 @@ Actualizado: 2026-11-18. Clics de personas (sin bots ni vistas previas) que entr
 
 | Red | Publicaciones | Clics |
 |---|---|---|
-| telegram | 72 | 4 |
-| bluesky | 48 | 249 |
-| mastodon | 48 | 151 |
-| instagram | 49 | 0 |
-| facebook | 49 | 120 |
+| telegram | 73 | 4 |
+| bluesky | 49 | 254 |
+| mastodon | 49 | 152 |
+| instagram | 50 | 0 |
+| facebook | 50 | 121 |
 | threads | 0 | 0 |
 | pinterest | 32 | 0 |
 
@@ -21,23 +21,23 @@ Actualizado: 2026-11-18. Clics de personas (sin bots ni vistas previas) que entr
 | calc-sueldo | 12 |
 | calc-hipoteca | 12 |
 | test-sueno | 11 |
+| test-personalidad | 11 |
 | test-habitos | 11 |
 | curso-neuro | 10 |
 | nc-ingenieria-en-tecnologias-industriales | 9 |
+| ovp | 9 |
 | crea-l05-08 | 9 |
 | frase-fe3fa4a3 | 9 |
+| calc-calorias | 9 |
 | frase-1d292112 | 9 |
 | test-autoestima | 8 |
 | nc-sociologia | 8 |
-| ovp | 8 |
 | crea-l05-02 | 8 |
 | nc-educacion-infantil | 8 |
 | test-satisfaccion | 8 |
 | frase-8e70072e | 8 |
 | frase-5b980a2a | 8 |
 | frase-6d32afc7 | 8 |
-| calc-calorias | 8 |
-| test-personalidad | 7 |
 | calc-reforma | 7 |
 | calc-embarazo | 7 |
 | frase-81d54602 | 7 |
