@@ -4,7 +4,8 @@ const URLS = process.argv.slice(2);
 (async () => {
   const b = await chromium.launch();
   for (const u of URLS) {
-    const ctx = await b.newContext({ locale: 'es-ES', viewport: { width: 1280, height: 900 } }); const p = await ctx.newPage(); const ev = [];
+    const ctx = await b.newContext({ locale: 'es-ES', viewport: { width: 1280, height: 900 } }); await ctx.route(/googlesyndication\.com|doubleclick\.net|adservice\.google|googleads|fundingchoicesmessages/, r => r.abort());   // AdSense: un robot nunca carga anuncios (serían impresiones no válidas)
+    const p = await ctx.newPage(); const ev = [];
     p.on('pageerror', e => ev.push('JS: ' + (e.stack || e.message || e).toString().slice(0, 400)));
     p.on('console', m => { if (m.type() === 'error' || m.type() === 'warning') ev.push(m.type() + ': ' + m.text().slice(0, 300)); });
     p.on('requestfailed', r => ev.push('RED: ' + r.url().slice(0, 150) + ' ' + (r.failure() || {}).errorText));

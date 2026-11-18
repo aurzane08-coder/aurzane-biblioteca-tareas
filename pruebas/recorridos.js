@@ -9,6 +9,7 @@ const ok = (n, c, det = '') => (c ? bien : fallos).push(n + (det ? ' · ' + det 
 (async () => {
   const b = await chromium.launch();
   const ctx = await b.newContext({ viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true, userAgent: 'Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Mobile Safari/537.36 AURZANE-prueba' });
+  await ctx.route(/googlesyndication\.com|doubleclick\.net|adservice\.google|googleads|fundingchoicesmessages/, r => r.abort());   // AdSense: un robot nunca carga anuncios (serían impresiones no válidas)
   const pagina = async (url) => {
     const p = await ctx.newPage(), errs = [];
     p.on('pageerror', e => errs.push(e.message.slice(0, 120)));
