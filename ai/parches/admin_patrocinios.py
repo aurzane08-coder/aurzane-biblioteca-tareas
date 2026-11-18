@@ -2,7 +2,7 @@
 Adrián lo controla todo desde admin.html: aquí ve las solicitudes de universidades, aprueba el mes gratis, alarga, da de baja,
 copia los enlaces de pago de Stripe y guarda la clave de firma de Stripe (se guarda fuera de la web y nunca se vuelve a mostrar).
 Habla con aurzane.com/patrocinio.php?admin=1, que comprueba la sesión con es_admin() de Supabase.
-Se aplica en el servidor sobre el admin.html vivo y es repetible (marcadores). Copia previa en aurzane.com/eliminar/admin-patrocinios-FECHA/."""
+Se aplica en el servidor sobre el admin.html vivo y es repetible (marcadores); corre al cambiar este archivo, tras cada despliegue y cada día. Copia previa en aurzane.com/eliminar/admin-patrocinios-FECHA/."""
 import os, sys, shutil, datetime
 base = os.path.expanduser('~/' + (sys.argv[1] if len(sys.argv) > 1 else 'www')); hoy = datetime.date.today().strftime('%Y%m%d')
 f = os.path.join(base, 'aurzane.com', 'public_html', 'admin.html')
