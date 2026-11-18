@@ -12,7 +12,7 @@
   1
  ],
  "prueba_fallida|vaciar_cache": [
-  63,
+  66,
   11
  ],
  "red_manual|reintentar_flujo": [
@@ -24,7 +24,7 @@
   0
  ],
  "prueba_fallida|reintentar_flujo": [
-  9,
+  10,
   10
  ],
  "tienda|vaciar_cache": [
@@ -36,7 +36,7 @@
   1
  ],
  "prueba_fallida|relanzar_enlaces": [
-  10,
+  13,
   1
  ],
  "tienda|relanzar_enlaces": [
