@@ -1,7 +1,7 @@
 {
- "fecha": "2026-11-18T18:50",
+ "fecha": "2026-11-18T22:11",
  "redes": {
-  "telegram": "bot @aurzane_publica_bot en @aurzane: administrator (puede publicar)",
+  "telegram": "ERROR 502 {\"ok\":false,\"error_code\":502,\"description\":\"Bad Gateway\"}",
   "bluesky": "ok aurzane.bsky.social",
   "instagram": "ok @aurzane (cuenta 17841437879824682)",
   "mastodon": "ok app AURZANE marketing",

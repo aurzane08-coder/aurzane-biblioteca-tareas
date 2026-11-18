@@ -5,8 +5,8 @@ Actualizado: 2026-11-18. Clics de personas (sin bots ni vistas previas) que entr
 | Red | Publicaciones | Clics |
 |---|---|---|
 | telegram | 76 | 4 |
-| bluesky | 51 | 266 |
-| mastodon | 51 | 163 |
+| bluesky | 51 | 267 |
+| mastodon | 51 | 166 |
 | instagram | 53 | 0 |
 | facebook | 53 | 123 |
 | threads | 0 | 0 |
