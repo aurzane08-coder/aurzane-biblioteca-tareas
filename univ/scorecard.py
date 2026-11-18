@@ -29,12 +29,26 @@ def dominio(u):
     return re.sub(r'^www\d?\.', '', u)
 
 
+RESERVA = 'https://ed-public-download.scorecard.network/downloads/Most-Recent-Cohorts-Institution_11022026.zip'   # la de noviembre de 2026
+
+
+def bajar(url, t=300):
+    # curl con cabeceras de navegador: la web del Departamento de Educación rechaza (403) a urllib
+    import subprocess
+    r = subprocess.run(['curl', '-sSL', '--fail', '-m', str(t), '-A', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36',
+                        '-H', 'Accept: text/html,application/zip,*/*', url], capture_output=True)
+    if r.returncode: raise RuntimeError(f'{url}: {r.stderr.decode()[:200]}')
+    return r.stdout
+
+
 def descargar():
-    h = urllib.request.urlopen(urllib.request.Request(PAGINA, headers=UA), timeout=60).read().decode('utf-8', 'replace')
-    m = re.search(r'https://[^"\']+Most-Recent-Cohorts-Institution[^"\']*\.zip', h)
-    if not m: sys.exit('No encuentro el archivo de instituciones en ' + PAGINA)
-    url = m.group(0); print('Descargando', url, flush=True)
-    z = zipfile.ZipFile(io.BytesIO(urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=300).read()))
+    url = RESERVA
+    try:
+        m = re.search(r'https://[^"\']+Most-Recent-Cohorts-Institution[^"\']*\.zip', bajar(PAGINA, 60).decode('utf-8', 'replace'))
+        if m: url = m.group(0)
+    except Exception as e: print('Página de descargas no disponible, uso el último archivo conocido:', e)
+    print('Descargando', url, flush=True)
+    z = zipfile.ZipFile(io.BytesIO(bajar(url)))
     nombre = next(n for n in z.namelist() if n.lower().endswith('.csv') and 'institution' in n.lower())
     return url, csv.DictReader(io.TextIOWrapper(z.open(nombre), encoding='utf-8-sig'))
 
