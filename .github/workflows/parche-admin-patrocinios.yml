@@ -1,7 +1,7 @@
-name: Admin con la pestaña Patrocinios
+name: Admin (Patrocinios, Inicio y diseño)
 on:
   push:
-    paths: ['ai/parches/admin_patrocinios.py', 'ai/parches/admin_mejoras.py']
+    paths: ['ai/parches/admin_patrocinios.py', 'ai/parches/admin_mejoras.py', 'ai/parches/admin_diseno.py']
   schedule:
     - cron: '29 6 * * *'
   workflow_dispatch:
@@ -24,4 +24,5 @@ jobs:
           if [ -n "$SG_PASS" ]; then ssh-keygen -p -P "$SG_PASS" -N "" -f ~/.ssh/id >/dev/null; fi
           SSH="ssh -i $HOME/.ssh/id -p ${SG_PORT:-18765} -o StrictHostKeyChecking=accept-new $SG_USER@$SG_HOST"
           $SSH 'python3 - www' < ai/parches/admin_patrocinios.py
-          $SSH 'python3 - www' < ai/parches/admin_mejoras.py   # uno tras otro: los dos tocan admin.html
+          $SSH 'python3 - www' < ai/parches/admin_mejoras.py   # uno tras otro: los tres tocan admin.html
+          $SSH 'python3 - www' < ai/parches/admin_diseno.py
