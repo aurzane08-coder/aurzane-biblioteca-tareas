@@ -17,5 +17,8 @@ def todo(tabla, orden='id'):
 os.makedirs('univ/data', exist_ok=True)
 for t in ['universidades', 'carreras']:
     d = todo(t)
-    with gzip.open(f'univ/data/sb_{t}.json.gz', 'wt', encoding='utf-8') as f: json.dump(d, f, ensure_ascii=False)
+    # sin fecha dentro del .gz y con orden fijo: si los datos no cambian, el archivo es idéntico y no se guarda otra copia
+    # (19/11/2026: cada exportación guardaba 9 MB nuevos en el historial aunque nada hubiera cambiado)
+    with open(f'univ/data/sb_{t}.json.gz', 'wb') as fb, gzip.GzipFile(fileobj=fb, mode='wb', mtime=0, filename='') as g:
+        g.write(json.dumps(d, ensure_ascii=False, sort_keys=True).encode('utf-8'))
     print('OK', t, len(d))
