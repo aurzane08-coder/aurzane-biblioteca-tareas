@@ -1,6 +1,8 @@
 {
- "fecha": "2026-11-17T16:20:48.780Z",
- "fallos": [],
+ "fecha": "2026-11-18T15:54:34.246Z",
+ "fallos": [
+  "Test: la IA responde · 503 El asistente está muy solicitado ahora mismo. Prueba en un rato."
+ ],
  "avisos": [],
  "bien": [
   "Portada https://aurzane.com/ · 200",
@@ -14,7 +16,6 @@
   "Test: resultado · 7 preguntas",
   "Test: botón «Ver resultado» lleva al resultado",
   "Test: aparece la IA de resultados",
-  "Test: la IA responde · 200 ok",
   "404 propia · 404",
   "Mapa https://aurzane.com/sitemap-paginas.xml · 200 true",
   "Mapa https://nexus.aurzane.com/sitemap-universidades.xml · 200 true",
