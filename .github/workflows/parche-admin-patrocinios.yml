@@ -1,7 +1,7 @@
-name: Admin (Patrocinios, Inicio y diseño)
+name: Admin (Patrocinios, Ingresos, Inicio y diseño)
 on:
   push:
-    paths: ['ai/parches/admin_patrocinios.py', 'ai/parches/admin_mejoras.py', 'ai/parches/admin_diseno.py']
+    paths: ['ai/parches/admin_patrocinios.py', 'ai/parches/admin_mejoras.py', 'ai/parches/admin_diseno.py', 'ai/parches/admin_ingresos.py']
   schedule:
     - cron: '29 6 * * *'
   workflow_dispatch:
@@ -26,3 +26,4 @@ jobs:
           $SSH 'python3 - www' < ai/parches/admin_patrocinios.py
           $SSH 'python3 - www' < ai/parches/admin_mejoras.py   # uno tras otro: los tres tocan admin.html
           $SSH 'python3 - www' < ai/parches/admin_diseno.py
+          $SSH 'python3 - www' < ai/parches/admin_ingresos.py   # después de Inicio: añade Ingresos al grupo «Hoy»

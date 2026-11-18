@@ -166,6 +166,11 @@ PROMOS = [
   'Libros con licencia abierta de psicología, neurociencia, salud, historia y más, para leer en línea sin pagar y sin registro.', ['LibrosGratis', 'Lectura', 'Psicología'], 'library bookshelves'),
  ('promo-aurzane', 'aurzane', W + '/', 'AURZANE: todo en un lugar', ['Psicología, estudios, salud y dinero en un solo sitio', 'Herramientas gratis para decidir mejor', 'Tu mente, tus estudios y tu vida, más claros'],
   'Tests de psicología, buscador de universidades, calculadoras de salud y finanzas, cursos y una biblioteca abierta. Todo gratis.', ['AURZANE', 'Psicología', 'Gratis'], 'sunrise mountains'),
+  # SaludOnNet (Awin, 18/11/2026): llevan a tests y calculadoras que muestran, junto al resultado, la consulta con un profesional a precio cerrado
+ ('promo-estres', 'mind', M + '/test-de-estres/', 'Test de estrés gratis', ['¿Es estrés o algo más? Compruébalo en 2 minutos', 'Mide tu estrés con el test que usan los psicólogos', 'Antes de pedir cita, haz este test gratis'],
+  'Test de estrés validado, gratis y anónimo, con tu resultado explicado al momento. Si lo necesitas, te mostramos cómo hablar con un psicólogo en clínica o por videoconsulta, con precio cerrado y sin seguro.', ['SaludMental', 'Estrés', 'Psicología'], 'stressed woman laptop'),
+ ('promo-chequeo', 'live', L + '/test-de-habitos/', 'Test de hábitos saludables', ['¿Cómo de sanos son tus hábitos?', 'Tu salud en 10 preguntas', 'Pequeños cambios que se notan'],
+  'Sueño, alimentación, movimiento y descanso: descubre qué hábitos te ayudan y cuáles mejorar. Y si quieres un chequeo, análisis y especialistas a precio cerrado sin seguro médico.', ['Salud', 'Hábitos', 'Chequeo'], 'doctor consultation clinic'),
 ]
 for i_, mu, url, tit, gan, tx, tags, fq in PROMOS:
     p(i_, 'promo', mu, url, tit, gan, tx, tags)

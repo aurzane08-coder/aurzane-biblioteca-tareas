@@ -1213,6 +1213,50 @@
    "img": null,
    "emoji": "",
    "foto_q": "sunrise mountains"
+  },
+  {
+   "id": "promo-estres",
+   "tipo": "promo",
+   "mundo": "mind",
+   "url": "https://mind.aurzane.com/test-de-estres/",
+   "titulo": "Test de estrés gratis",
+   "ganchos": [
+    "¿Es estrés o algo más? Compruébalo en 2 minutos",
+    "Mide tu estrés con el test que usan los psicólogos",
+    "Antes de pedir cita, haz este test gratis"
+   ],
+   "texto": "Test de estrés validado, gratis y anónimo, con tu resultado explicado al momento. Si lo necesitas, te mostramos cómo hablar con un psicólogo en clínica o por videoconsulta, con precio cerrado y sin seguro.",
+   "hashtags": [
+    "SaludMental",
+    "Estrés",
+    "Psicología"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "",
+   "foto_q": "stressed woman laptop"
+  },
+  {
+   "id": "promo-chequeo",
+   "tipo": "promo",
+   "mundo": "live",
+   "url": "https://live.aurzane.com/test-de-habitos/",
+   "titulo": "Test de hábitos saludables",
+   "ganchos": [
+    "¿Cómo de sanos son tus hábitos?",
+    "Tu salud en 10 preguntas",
+    "Pequeños cambios que se notan"
+   ],
+   "texto": "Sueño, alimentación, movimiento y descanso: descubre qué hábitos te ayudan y cuáles mejorar. Y si quieres un chequeo, análisis y especialistas a precio cerrado sin seguro médico.",
+   "hashtags": [
+    "Salud",
+    "Hábitos",
+    "Chequeo"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "",
+   "foto_q": "doctor consultation clinic"
   }
  ]
 }
