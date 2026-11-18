@@ -68,3 +68,13 @@ if 'AURZANE-LEER-LIBRO' not in s and 'RewriteEngine On\n' in s:
     escribir(ht, s[:i] + BLOQUE + s[i:]); print('::notice::leer.html?libro= redirige desde el servidor')
 else:
     print('leer.html: sin cambios')
+
+# 3. Asistente de resultados: en el móvil, el campo de pregunta con letra menor de 16 px hacía que el iPhone ampliara la página
+#    (reporte de un visitante del 14/11/2026: «la pantalla a veces se hace más grande»)
+fa = os.path.join(base, 'aurzane.com', 'public_html', 'aurzane-asistente.js')
+if os.path.isfile(fa):
+    s = open(fa, encoding='utf-8').read()
+    viejo = 'color:inherit;font:inherit">'
+    if viejo in s and 'font:inherit;font-size:16px' not in s:
+        copia(fa, 'aurzane-asistente.js'); escribir(fa, s.replace(viejo, 'color:inherit;font:inherit;font-size:16px">'))
+        print('::notice::asistente: el móvil ya no amplía la página al escribir')
