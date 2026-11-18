@@ -28,6 +28,8 @@ body .page-head p{font-size:.92rem;max-width:80ch;line-height:1.55}
 /* etiquetas y tablas legibles */
 body th{font-family:'Instrument Sans',sans-serif;font-size:.74rem;text-transform:none;letter-spacing:0;font-weight:600;color:var(--silver-dim);background:var(--navy-2);position:sticky;top:0;z-index:2;white-space:nowrap}
 body td{font-variant-numeric:tabular-nums}
+body .mono,body td .mono,body td em,body td i:not(.test-dot){font-family:'Instrument Sans',sans-serif;font-style:normal;font-weight:500}
+body td,body td *{font-style:normal}
 body tbody tr:hover td{background:rgba(255,255,255,.025)}
 body .table-scroll{max-height:72vh;overflow:auto}
 body .field label{font-family:'Instrument Sans',sans-serif;font-size:.78rem;text-transform:none;letter-spacing:0;font-weight:600;color:var(--silver)}
@@ -67,6 +69,9 @@ body .nav-item.active{box-shadow:inset 3px 0 0 var(--gold)}
   body .nav-item span.nav-label,body .sidebar-footer .email{display:inline}
   body .nav-grupo{display:block!important}
   body .sidebar-brand{text-align:left;padding:22px 24px}
+  body .sidebar-brand a span.full-name,body .sidebar-brand a span.brand-letters,body .sidebar-brand .tag{display:inline}
+  .az-migas{visibility:hidden}
+  #azTopAct{display:none!important}
   body .main{padding:0 16px 48px}
   .az-menu{display:inline-flex!important}
   .az-top .az-ocultable{display:none}
