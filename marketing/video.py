@@ -15,7 +15,7 @@ def duracion(p):
     palabras = len(' '.join(str(p.get(k) or '') for k in ('titulo', 'texto', 'autor') if k != 'texto' or p.get('tipo') != 'frase').split())
     if p.get('tipo') == 'frase': return max(12, min(22, round(palabras / 2.3) + 7))
     return max(15, min(30, round(palabras / 2.6) + 8))
-V = 'm3-'  # versión de los vídeos: m3 = entrada por pasos, zoom lento del fondo y «Síguenos» al final (m2: con música y solo la marca arriba)
+V = 'm4-'  # versión de los vídeos: m4 = como m3 pero sin «Síguenos» al final, para que se compartan; m3 = entrada por pasos, zoom lento del fondo y «Síguenos» al final (m2: con música y solo la marca arriba)
 # Música de fondo: Kevin MacLeod (incompetech.com), licencia CC BY 4.0. Uso comercial y monetización permitidos citando el tema,
 # por eso cada publicación de vídeo lleva el crédito (mk.credito_musica). Calma para frases, más alegre para tests y calculadoras.
 MUSICA_CALMA = ['Meditation Impromptu 01', 'Meditation Impromptu 02', 'Meditation Impromptu 03', 'Peaceful Desolation', 'Healing', 'Dreamer',
@@ -208,7 +208,7 @@ def generar(dias=2):
         sal = os.path.join(D, 'salida', 'video', V + i + '.mp4')
         mus, cred = elegir_musica(p)
         usada = mk.leer('musica_usada.json', {}); usada[i] = cred; mk.guardar('musica_usada.json', usada)
-        # Entrada por pasos (17/11/2026): marca y etiqueta, luego el título, luego autor o explicación, y al final «Síguenos».
+        # Entrada por pasos (17/11/2026): marca y etiqueta, luego el título, y luego autor o explicación (sin «Síguenos»: así se comparte mejor).
         # El fondo se acerca muy despacio (efecto Ken Burns) para que el vídeo no se vea estático.
         t2 = round(min(dur * .4, 1.6 + len(str(p.get('titulo', '')).split()) / 3.2), 2); t3 = round(max(t2 + 2, dur - 4), 2)
         capas_in = ['-loop', '1', '-i', f'/tmp/capa-{i}.png']

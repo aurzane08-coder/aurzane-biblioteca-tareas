@@ -37,11 +37,10 @@ ${x.credito ? `<div class="cred">${esc(x.credito)}</div>` : ''}</body></html>`;
 // Capa transparente 1080x1920 para vídeos verticales (Reels, Shorts, TikTok): el vídeo de fondo se pone con ffmpeg.
 async function capa(pg, x, t) {
   // Vídeo vertical (17/11/2026): la capa sale en 4 PNG del mismo diseño para que el vídeo los muestre por pasos
-  // (marca y etiqueta, título, autor o explicación, y al final la invitación a seguir). Todo dentro de la zona segura
+  // (marca y etiqueta, título, y autor o explicación). Todo dentro de la zona segura
   // de TikTok, Reels y Shorts: nada bajo los botones de la derecha ni bajo el texto de abajo.
   await pg.setViewportSize({width: 1080, height: 1920});
   const n = (x.titulo || '').length, tam = n > 110 ? 68 : n > 75 ? 80 : n > 45 ? 94 : 108;
-  const fin = x.fin || (x.cita ? 'Síguenos: una frase que ayuda, cada día' : 'Síguenos para más psicología en 30 segundos');
   const html = (paso) => `<html><head><meta charset="utf-8"><style>
 @font-face{font-family:B;src:url(file://${F}/bodoni-moda/files/bodoni-moda-latin-700-normal.woff2)}
 @font-face{font-family:I;src:url(file://${F}/instrument-sans/files/instrument-sans-latin-500-normal.woff2)}
@@ -61,9 +60,8 @@ p{font-size:40px;line-height:1.38;margin:30px 0 0;opacity:.95;text-shadow:0 2px 
 .fin b{display:inline-block;font-size:32px;color:${t[0]};background:linear-gradient(90deg,${t[3]},${t[4]});padding:16px 34px;border-radius:99px;box-shadow:0 10px 30px rgba(0,0,0,.3)}
 </style></head><body><div class="v ${paso === 0 ? '' : 'o'}"></div><div class="top ${paso === 0 ? '' : 'o'}">AUR<span>Z</span>ANE</div>
 <div class="w">${x.kicker ? `<div class="k ${paso === 0 ? '' : 'o'}">${esc(x.kicker)}</div>` : ''}<h1 class="${paso === 1 ? '' : 'o'}">${x.cita ? '<span class="q">“</span>' : ''}${esc(x.titulo)}</h1>${x.autor ? `<div class="a ${paso === 2 ? '' : 'o'}">${esc(x.autor)}</div>` : ''}${x.sub ? `<p class="${paso === 2 ? '' : 'o'}">${esc(x.sub)}</p>` : ''}</div>
-<div class="fin ${paso === 3 ? '' : 'o'}"><b>${esc(fin)}</b></div>
 </body></html>`;
-  for (const paso of [0, 1, 2, 3]) {
+  for (const paso of [0, 1, 2]) {   // sin «Síguenos» al final (18/11/2026): así el vídeo se comparte mejor
     fs.writeFileSync('/tmp/capa.html', html(paso)); await pg.goto('file:///tmp/capa.html'); await pg.waitForTimeout(200);
     await pg.screenshot({path: paso ? x.salida.replace(/\.png$/, `-${paso}.png`) : x.salida, type: 'png', omitBackground: true});
   }
