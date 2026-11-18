@@ -1,4 +1,4 @@
-name: Admin: pestaña Patrocinios
+name: Admin con la pestaña Patrocinios
 on:
   push:
     paths: ['ai/parches/admin_patrocinios.py']
