@@ -1,14 +1,14 @@
 # Informe de marketing
 
-Actualizado: 2026-11-17. Clics de personas (sin bots ni vistas previas) que entraron por los enlaces de las publicaciones.
+Actualizado: 2026-11-18. Clics de personas (sin bots ni vistas previas) que entraron por los enlaces de las publicaciones.
 
 | Red | Publicaciones | Clics |
 |---|---|---|
-| telegram | 71 | 4 |
+| telegram | 72 | 4 |
 | bluesky | 48 | 249 |
-| mastodon | 48 | 147 |
-| instagram | 48 | 0 |
-| facebook | 48 | 120 |
+| mastodon | 48 | 151 |
+| instagram | 49 | 0 |
+| facebook | 49 | 120 |
 | threads | 0 | 0 |
 | pinterest | 32 | 0 |
 

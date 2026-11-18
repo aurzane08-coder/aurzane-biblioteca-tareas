@@ -1,5 +1,5 @@
 {
- "generado": "2026-11-17",
+ "generado": "2026-11-18",
  "productos": [
   {
    "id": "test-personalidad",
@@ -54356,6 +54356,60 @@
    "alta": "2026-11-17"
   },
   {
+   "id": "cur-f32c6b294b",
+   "tipo": "curiosidad",
+   "mundo": "mind",
+   "origen": "curiosidades",
+   "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13740361/",
+   "titulo": "¿Sabías esto sobre los enfermeros de urgencias?",
+   "ganchos": [
+    "¿Sabías esto sobre los enfermeros de urgencias?",
+    "¿Sabías esto sobre los enfermeros de urgencias? 🧠",
+    "Un estudio analiza el agotamiento, la ansiedad y el estrés laboral en enfermería de urgenc"
+   ],
+   "texto": "Un estudio analiza el agotamiento, la ansiedad y el estrés laboral en enfermería de urgencias en Arabia Saudí. Una revisión científica ha recopilado investigaciones sobre el desgaste profesional, la fatiga y los problemas de sueño en estos sanitarios. El objetivo es mapear cómo afecta este entorno tan exigente a su salud psicológica.\n\nFuente: Nursing Open",
+   "hashtags": [
+    "psicologia",
+    "saludmental",
+    "curiosidades",
+    "divulgacion",
+    "Psicología",
+    "Curiosidades"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "🧠",
+   "dato": "Un estudio analiza el agotamiento, la ansiedad y el estrés laboral en enfermería de urgencias en Arabia Saudí.",
+   "alta": "2026-11-18"
+  },
+  {
+   "id": "cur-ef11af2090",
+   "tipo": "curiosidad",
+   "mundo": "mind",
+   "origen": "curiosidades",
+   "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13735187/",
+   "titulo": "¿Tu móvil sabe si tienes depresión?",
+   "ganchos": [
+    "¿Tu móvil sabe si tienes depresión?",
+    "¿Tu móvil sabe si tienes depresión? 🧠",
+    "La forma en que usas tus dispositivos digitales ayuda a estudiar la depresión de forma con"
+   ],
+   "texto": "La forma en que usas tus dispositivos digitales ayuda a estudiar la depresión de forma continua en tu día a día. Un estudio revisó cómo ciertas interacciones online pueden reflejar cambios de comportamiento asociados a la depresión. Esto abre nuevas vías para comprender mejor la salud mental en entornos naturales.\n\nFuente: Journal of Medical Internet Research",
+   "hashtags": [
+    "aurzane",
+    "psicologia",
+    "saludmental",
+    "divulgacion",
+    "Psicología",
+    "Curiosidades"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "🧠",
+   "dato": "La forma en que usas tus dispositivos digitales ayuda a estudiar la depresión de forma continua en tu día a día.",
+   "alta": "2026-11-18"
+  },
+  {
    "id": "cur-83de1560e2",
    "tipo": "curiosidad",
    "mundo": "mind",
@@ -55164,48 +55218,6 @@
    "emoji": "🧠",
    "dato": "La depresión y un tipo común de insuficiencia cardíaca comparten una raíz inflamatoria común.",
    "alta": "2026-11-03"
-  },
-  {
-   "id": "auto-aurzane-com-novedades",
-   "tipo": "seccion",
-   "mundo": "aurzane",
-   "origen": "sitemap",
-   "url": "https://aurzane.com/novedades/",
-   "titulo": "Novedades de AURZANE: tests, herramientas y contenidos nuevos",
-   "ganchos": [
-    "Novedades de AURZANE: tests, herramientas y contenidos nuevos",
-    "Novedades de AURZANE: tests, herramientas y contenidos nuevos",
-    "Novedades de AURZANE: tests, herramientas y contenidos nuevos"
-   ],
-   "texto": "Todo lo nuevo de AURZANE: tests, calculadoras, ejercicios guiados, cursos, libros y artículos, actualizado automáticamente.",
-   "hashtags": [
-    "AURZANE"
-   ],
-   "aviso": "",
-   "img": null,
-   "emoji": "✨",
-   "alta": "2026-11-12"
-  },
-  {
-   "id": "auto-aurzane-com-mapa",
-   "tipo": "seccion",
-   "mundo": "aurzane",
-   "origen": "sitemap",
-   "url": "https://aurzane.com/mapa/",
-   "titulo": "Mapa de AURZANE: todas las páginas",
-   "ganchos": [
-    "Mapa de AURZANE: todas las páginas",
-    "Mapa de AURZANE: todas las páginas",
-    "Mapa de AURZANE: todas las páginas"
-   ],
-   "texto": "Todas las páginas de AURZANE en un solo lugar: tests, calculadoras, ejercicios, universidades, cursos y biblioteca.",
-   "hashtags": [
-    "AURZANE"
-   ],
-   "aviso": "",
-   "img": null,
-   "emoji": "✨",
-   "alta": "2026-11-12"
   }
  ]
 }
