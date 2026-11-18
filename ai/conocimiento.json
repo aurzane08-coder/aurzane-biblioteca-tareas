@@ -178,5 +178,14 @@
   "fallo": 0,
   "fecha": "2026-11-18",
   "ejemplo": "Tienda: portada rota: El hombre más rico de Babilonia; portada rota: Invisible"
+ },
+ "prueba_fallida|prueba fallida en # cambié un dato: #,# → #,# · # error(es) de javascript: access to font at '# from origin '# has been blocked by cors poli": {
+  "receta": "relanzar_enlaces",
+  "motivo": "Bloqueo CORS al cargar fuentes tipográficas desde un subdominio externo en SiteGround.",
+  "explicacion": "El navegador bloquea la fuente woff2 en live.aurzane.com porque se sirve desde aurzane.com sin cabeceras CORS permitidas. Para arreglarlo a mano, añade las cabeceras Access-Control-Allow-Origin en el archivo .htaccess de aurzane.com o configura SiteGround para permitir el acceso cruzado a la carpeta /fuentes/.",
+  "ok": 0,
+  "fallo": 0,
+  "fecha": "2026-11-18",
+  "ejemplo": "Prueba fallida en https://live.aurzane.com/calculadora-imc/: Cambié un dato: 24,2 → 16,7 · 4 error(es) de JavaScript: Access to font at 'https://aurzane.com/fuentes/instrument-sans-latin-wght-normal.w"
  }
 }
