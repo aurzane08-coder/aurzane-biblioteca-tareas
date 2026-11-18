@@ -1,5 +1,30 @@
 [
  {
+  "id": "cur-f25e9c5a6c",
+  "tipo": "curiosidad",
+  "titulo": "¿Por qué ignoras lo que tienes delante?",
+  "dato": "Según Simons y Chabris en 1999, la mitad de las personas no ven un gorila cruzando un partido de baloncesto si prestan atención a los pases.",
+  "resumen": "Según Simons y Chabris en 1999, la mitad de las personas no ven un gorila cruzando un partido de baloncesto si prestan atención a los pases. Este fenómeno se llama ceguera inatencional. Ocurre porque el cerebro humano filtra la información sensorial para no colapsar, centrando todos sus recursos en una sola tarea y volviéndonos ciegos a lo inesperado.",
+  "fuente": "Simons y Chabris, 1999",
+  "hashtags": [
+   "aurzane",
+   "psicologia",
+   "atencion",
+   "curiosidades"
+  ],
+  "fuente_id": "tema-322-0",
+  "url": "https://mind.aurzane.com/",
+  "portada": "",
+  "tema": "curiosidad",
+  "idioma": "es",
+  "autores": "Simons y Chabris, 1999",
+  "motivo": "Guion escrito por Gemini a partir de un tema de psicología. Revisa que el dato sea correcto antes de aprobar.",
+  "verificada": "2026-11-18",
+  "fecha": "2026-11-18",
+  "auto": true,
+  "verificacion": "El experimento clásico de Simons y Chabris (1999) sobre la ceguera inatencional del gorila se describe con precisión y sin exageraciones."
+ },
+ {
   "id": "cur-f32c6b294b",
   "tipo": "curiosidad",
   "titulo": "¿Sabías esto sobre los enfermeros de urgencias?",

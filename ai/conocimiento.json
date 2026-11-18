@@ -160,5 +160,14 @@
   "fallo": 0,
   "fecha": "2026-11-17",
   "ejemplo": "Prueba fallida en https://live.aurzane.com/calculadora-dias-entre-fechas/: Cambié un dato: 92 → 92 · 4 error(es) de JavaScript: Access to font at 'https://aurzane.com/fuentes/bodoni-moda-latin-opsz-no"
+ },
+ "prueba_fallida|prueba fallida en # respondí # preguntas: resultado # sobre # (estilo de vida intermedio) · # error(es) de javascript: access to font at '# ": {
+  "receta": "relanzar_enlaces",
+  "motivo": "Error de CORS al cargar la fuente desde un subdominio diferente.",
+  "explicacion": "El navegador bloquea la fuente externa en live.aurzane.com porque aurzane.com no emite la cabecera Access-Control-Allow-Origin. Se soluciona añadiendo la cabecera CORS en el servidor o .htaccess del dominio principal.",
+  "ok": 0,
+  "fallo": 0,
+  "fecha": "2026-11-18",
+  "ejemplo": "Prueba fallida en https://live.aurzane.com/test-de-habitos/: Respondí 7 preguntas: resultado 5 sobre 10 (Estilo de vida intermedio) · 4 error(es) de JavaScript: Access to font at 'https://aurzane.com/"
  }
 }
