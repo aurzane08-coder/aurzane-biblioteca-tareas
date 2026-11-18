@@ -4,7 +4,7 @@ on:
     branches: [main]
     paths: ['univ/scorecard.py']
   schedule:
-    - cron: '23 4 1 * *'   # cada mes: la fuente se actualiza varias veces al año
+    - cron: '23 * * * *'   # cada hora: sin clave propia la API solo deja ~10 consultas por hora; cuando está completo no consulta nada hasta el mes siguiente
   workflow_dispatch:
 permissions:
   contents: write
@@ -16,9 +16,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: python3 -u univ/scorecard.py
+        env:
+          SCORECARD_KEY: ${{ secrets.SCORECARD_KEY }}
       - name: Guardar
         run: |
           git config user.name "aurzane-bot"; git config user.email "bot@aurzane.com"
-          git add -A univ/data/scorecard.json univ/data/scorecard.log
+          git add -A univ/data/scorecard.json univ/data/scorecard.log univ/data/scorecard_crudo.json.gz
           git commit -m "univ: College Scorecard EE. UU." || exit 0
           for i in 1 2 3 4 5; do git pull --rebase -X theirs && git push && break; sleep 7; done

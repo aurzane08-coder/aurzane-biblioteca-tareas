@@ -1,9 +1,9 @@
 """Datos oficiales de las universidades de Estados Unidos: College Scorecard (Departamento de Educación de EE. UU.).
-Fuente: https://collegescorecard.ed.gov/data/ (archivo «Most-Recent-Cohorts-Institution», datos públicos del Gobierno).
+Fuente: API oficial del College Scorecard (api.data.gov), los mismos datos públicos que https://collegescorecard.ed.gov/data/.
 Une cada institución con su ficha de AURZANE por el dominio de su web oficial y, si no, por nombre + ciudad.
 Solo se guardan cifras que publica la fuente; ninguna se calcula ni se estima.
 Salida: univ/data/scorecard.json  {id de la ficha: {campos}}  +  univ/data/scorecard.log (cobertura)."""
-import csv, io, json, gzip, os, re, sys, unicodedata, urllib.request, zipfile
+import json, gzip, os, re, sys, unicodedata, urllib.request, urllib.parse
 
 D = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data')
 PAGINA = 'https://collegescorecard.ed.gov/data/'
@@ -29,28 +29,48 @@ def dominio(u):
     return re.sub(r'^www\d?\.', '', u)
 
 
-RESERVA = 'https://ed-public-download.scorecard.network/downloads/Most-Recent-Cohorts-Institution_11022026.zip'   # la de noviembre de 2026
-
-
-def bajar(url, t=300):
-    # curl con cabeceras de navegador: la web del Departamento de Educación rechaza (403) a urllib
-    import subprocess
-    r = subprocess.run(['curl', '-sSL', '--fail', '-m', str(t), '-A', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36',
-                        '-H', 'Accept: text/html,application/zip,*/*', url], capture_output=True)
-    if r.returncode: raise RuntimeError(f'{url}: {r.stderr.decode()[:200]}')
-    return r.stdout
+API = 'https://api.data.gov/ed/collegescorecard/v1/schools'
+# columna de la API oficial -> nombre en AURZANE (mismas cifras que el archivo descargable)
+API_CAMPOS = {
+    'id': 'unitid', 'school.name': 'nombre_oficial', 'school.city': 'ciudad', 'school.state': 'estado', 'school.school_url': 'web',
+    'school.ownership': 'control', 'school.degrees_awarded.highest': 'grado_max', 'latest.student.size': 'estudiantes_grado',
+    'latest.admissions.admission_rate.overall': 'admision',
+    'latest.admissions.sat_scores.25th_percentile.critical_reading': 'sat_lec_25', 'latest.admissions.sat_scores.75th_percentile.critical_reading': 'sat_lec_75',
+    'latest.admissions.sat_scores.25th_percentile.math': 'sat_mat_25', 'latest.admissions.sat_scores.75th_percentile.math': 'sat_mat_75',
+    'latest.admissions.act_scores.25th_percentile.cumulative': 'act_25', 'latest.admissions.act_scores.75th_percentile.cumulative': 'act_75',
+    'latest.cost.tuition.in_state': 'matricula_estado', 'latest.cost.tuition.out_of_state': 'matricula_fuera',
+    'latest.cost.avg_net_price.public': 'precio_neto_pub', 'latest.cost.avg_net_price.private': 'precio_neto_priv',
+    'latest.aid.pell_grant_rate': 'beca_pell', 'latest.completion.completion_rate_4yr_150nt': 'graduacion_6',
+    'latest.student.retention_rate.four_year.full_time': 'permanencia', 'latest.earnings.10_yrs_after_entry.median': 'salario_10',
+    'latest.aid.median_debt.completers.overall': 'deuda_mediana', 'location.lat': 'lat', 'location.lon': 'lon',
+}
+CRUDO = os.path.join(D, 'scorecard_crudo.json.gz')   # páginas ya bajadas: sin clave propia la API deja ~10 consultas por hora
 
 
 def descargar():
-    url = RESERVA
-    try:
-        m = re.search(r'https://[^"\']+Most-Recent-Cohorts-Institution[^"\']*\.zip', bajar(PAGINA, 60).decode('utf-8', 'replace'))
-        if m: url = m.group(0)
-    except Exception as e: print('Página de descargas no disponible, uso el último archivo conocido:', e)
-    print('Descargando', url, flush=True)
-    z = zipfile.ZipFile(io.BytesIO(bajar(url)))
-    nombre = next(n for n in z.namelist() if n.lower().endswith('.csv') and 'institution' in n.lower())
-    return url, csv.DictReader(io.TextIOWrapper(z.open(nombre), encoding='utf-8-sig'))
+    """Baja todas las instituciones abiertas de la API oficial, por páginas de 100, y continúa donde lo dejó.
+    Con la clave gratuita de api.data.gov (secreto SCORECARD_KEY) baja todo de una vez; sin ella usa DEMO_KEY poco a poco."""
+    import time
+    clave = os.environ.get('SCORECARD_KEY') or 'DEMO_KEY'
+    estado = json.load(gzip.open(CRUDO)) if os.path.exists(CRUDO) else {'paginas': {}, 'total': None}
+    if estado.get('mes') != __import__('datetime').date.today().strftime('%Y-%m'): estado = {'paginas': {}, 'total': None, 'mes': __import__('datetime').date.today().strftime('%Y-%m')}
+    hechas = 0
+    while True:
+        tot = estado['total']; faltan = [p for p in range((tot + 99) // 100 if tot else 1) if str(p) not in estado['paginas']]
+        if not faltan: break
+        if clave == 'DEMO_KEY' and hechas >= 9: break
+        p = faltan[0]
+        q = urllib.parse.urlencode({'api_key': clave, 'school.operating': 1, 'per_page': 100, 'page': p, 'fields': ','.join(API_CAMPOS)})
+        try: r = json.loads(urllib.request.urlopen(urllib.request.Request(API + '?' + q, headers=UA), timeout=90).read())
+        except Exception as e: print('Pausa de la API:', e); break
+        estado['total'] = r['metadata']['total']; estado['paginas'][str(p)] = r['results']; hechas += 1
+        print(f'Página {p + 1} de {(estado["total"] + 99) // 100}', flush=True)
+        time.sleep(1 if clave != 'DEMO_KEY' else 2)
+    json.dump(estado, gzip.open(CRUDO, 'wt', encoding='utf-8'), separators=(',', ':'))
+    tot = estado['total'] or 0
+    completo = tot and len(estado['paginas']) >= (tot + 99) // 100
+    filas = [{API_CAMPOS[k]: v for k, v in x.items() if k in API_CAMPOS} for lst in estado['paginas'].values() for x in lst]
+    return completo, len(estado['paginas']), (tot + 99) // 100, filas
 
 
 def num(v):
@@ -63,17 +83,18 @@ def num(v):
 def main():
     U = json.load(gzip.open(os.path.join(D, 'sb_universidades.json.gz')))
     us = [u for u in U if u.get('pais') == 'Estados Unidos']
-    url, filas = descargar()
+    completo, hechas, total_p, filas = descargar()
+    if not completo:
+        open(os.path.join(D, 'scorecard.log'), 'w', encoding='utf-8').write(f'College Scorecard: bajadas {hechas} de {total_p} páginas; se sigue en la próxima hora.\n')
+        print(f'Faltan páginas ({hechas} de {total_p}); continúa en la próxima ejecución.'); return
+    url = API
     por_dom, por_nom = {}, {}
-    n_total = 0
-    for f in filas:
-        n_total += 1
-        x = {k2: (f.get(k) if k in ('INSTNM', 'CITY', 'STABBR', 'INSTURL') else num(f.get(k))) for k, k2 in CAMPOS.items()}
-        if f.get('CURROPER') == '0': continue   # cerrada
-        d = dominio(x['web'])
+    n_total = len(filas)
+    for x in filas:
+        d = dominio(x.get('web'))
         if d: por_dom.setdefault(d, []).append(x)
-        por_nom.setdefault((norm(x['nombre_oficial']), norm(x['ciudad'])), []).append(x)
-        por_nom.setdefault((norm(x['nombre_oficial']), ''), []).append(x)
+        por_nom.setdefault((norm(x.get('nombre_oficial')), norm(x.get('ciudad'))), []).append(x)
+        por_nom.setdefault((norm(x.get('nombre_oficial')), ''), []).append(x)
     out, como = {}, {'dominio': 0, 'nombre_ciudad': 0, 'nombre': 0}
     for u in us:
         c = None
