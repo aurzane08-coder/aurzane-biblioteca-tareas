@@ -396,6 +396,9 @@
     'consulta-embarazo': [/^\/calculadora-(embarazo|ovulacion)/, 'live', 'Revisiones y ecografías del embarazo sin seguro', 'Consultas de obstetricia y ecografías en clínicas privadas a precio cerrado, hasta un 70 % más baratas que la tarifa oficial del centro.', 'Ver precios en', 'consulta', 'https://www.saludonnet.com/servicios-medicos/obstetricia-y-ginecologia'],
     'consulta-nutricion': [/^\/calculadora-(calorias|imc|peso-ideal)/, 'live', '¿Prefieres que te guíe un especialista?', 'Consulta de endocrinología y nutrición en clínicas privadas o por videoconsulta, con precio cerrado y sin seguro médico.', 'Ver especialistas en', 'consulta', 'https://www.saludonnet.com/servicios-medicos/endocrinologia-y-nutricion'],
     'consulta-sueno': [/^\/(test-de-sueno|calculadora-sueno)/, 'live', '¿Duermes mal desde hace semanas?', 'Habla con un médico por videoconsulta o pide cita con un especialista, con precio cerrado y sin seguro médico.', 'Hablar con un médico en', 'consulta', 'https://www.saludonnet.com/video-consulta'],
+    /* más sitios para SaludOnNet (18/11/2026): ejercicios guiados de MIND y artículos de salud de LIVE */
+    'consulta-ejercicios': [/^\/ejercicios/, 'mind', '¿Necesitas algo más que respirar?', 'Si el estrés o la ansiedad no bajan con los ejercicios, hablarlo con un psicólogo puede ayudarte: en clínica o por videoconsulta, con precio cerrado y sin seguro médico.', 'Ver psicólogos en', 'consulta', 'https://www.saludonnet.com/servicios-medicos/psicologia'],
+    'consulta-articulo': [/^\/articulo\.html/, 'live', '¿Te ha surgido alguna duda sobre tu salud?', 'Habla con un médico por videoconsulta o pide cita con un especialista, con precio cerrado y sin seguro médico.', 'Hablar con un médico en', 'consulta', 'https://www.saludonnet.com/video-consulta'],
     'consulta-chequeo': [/^\/(test-de-(habitos|bienestar)|calculadora-agua)/, 'live', 'Un chequeo para saber cómo estás', 'Análisis clínicos y revisiones en clínicas cerca de ti, a precio cerrado y sin necesidad de seguro.', 'Ver análisis en', 'consulta', 'https://www.saludonnet.com/servicios-medicos/analisis-clinicos'],
     hipoteca: [/^\/calculadora-(hipoteca|gastos-compra-vivienda)/, 'build', '¿Quieres que te estudien la hipoteca?', 'Un intermediario hipotecario compara bancos por ti y te dice cuánto te pueden prestar. Estudio sin compromiso.', 'Pedir estudio a'],
     reforma: [/^\/calculadora-reforma/, 'build', '¿Lo pasamos a presupuestos reales?', 'Pide presupuestos a profesionales de tu zona y compáralos con lo que te ha salido aquí.', 'Pedir presupuestos en'],
@@ -415,9 +418,9 @@
     deporte: [/^\/(calculadora-(calorias|imc)|test-de-habitos)/, 'live', 'Muévete más, a tu manera', 'Material deportivo para empezar o seguir entrenando, a cualquier nivel.', 'Ver en'],
     aventura: [/^\/((index\.html)?|test-de-bienestar\/?)$/, 'live', 'Una aventura cerca de ti', 'Excursiones y actividades guiadas en tu ciudad o en tu próximo viaje: moverte, descubrir y desconectar también es cuidarte.', 'Ver actividades en'],
     viajes: [/^\/((index\.html)?|test-de-bienestar\/?)$/, 'live', 'Desconecta con un viaje', 'Escapadas y viajes para descansar de verdad y volver con energía.', 'Ver viajes en'],
-    consulta: [/^\/test-de-(ansiedad|depresion|estres|burnout|autoestima|soledad|tdah|resiliencia|autocompasion)/, 'mind', '¿Quieres hablarlo con un profesional?', 'Si tu resultado te preocupa, una consulta con un psicólogo puede ayudarte: en clínica o por videoconsulta, con precio cerrado y sin seguro médico. Si estás en peligro, llama al 112 o al 024.', 'Ver psicólogos en', 'consulta', 'https://www.saludonnet.com/servicios-medicos/psicologia'],
+    consulta: [/^\/test-de-(ansiedad|depresion|estres|burnout|autoestima|soledad|tdah|resiliencia|autocompasion|autoeficacia|satisfaccion-con-la-vida)/, 'mind', '¿Quieres hablarlo con un profesional?', 'Si tu resultado te preocupa, una consulta con un psicólogo puede ayudarte: en clínica o por videoconsulta, con precio cerrado y sin seguro médico. Si estás en peligro, llama al 112 o al 024.', 'Ver psicólogos en', 'consulta', 'https://www.saludonnet.com/servicios-medicos/psicologia'],
     'seguro-viaje': [/^\/(universidades|calculadora-nota-pau)/, 'nexus', '¿Te vas a estudiar fuera?', 'Seguro de viaje y de estudiantes para estancias en el extranjero, con asistencia médica.', 'Ver seguros en'] };
-  var SOCIO_FOTO = { 'consulta-embarazo': 'embarazo', 'consulta-nutricion': 'comida', 'consulta-sueno': 'dormir', 'consulta-chequeo': 'bienestar', hipoteca: 'casa', reforma: 'chalet',
+  var SOCIO_FOTO = { 'consulta-embarazo': 'embarazo', 'consulta-nutricion': 'comida', 'consulta-sueno': 'dormir', 'consulta-chequeo': 'bienestar', 'consulta-ejercicios': 'vela', 'consulta-articulo': 'bienestar', hipoteca: 'casa', reforma: 'chalet',
     universidades: 'estudio', crianza: 'manos', nutricion: 'comida', sueno: 'dormir', cursos: 'foco', bienestar: 'habitos', bricolaje: 'casa', muebles: 'chalet',
     'negocio-alquiler': 'pisos', 'negocio-propio': 'curriculum', 'negocio-ahorro': 'hucha', negocio: 'graficos', deporte: 'ejercicio', aventura: 'montana', viajes: 'playa',
     consulta: 'vela', 'seguro-viaje': 'viaje' };
@@ -442,6 +445,17 @@
         '<a href="' + href + '" target="_blank" rel="sponsored nofollow noopener" style="display:inline-flex;align-items:center;min-height:44px;background:#E2BF6A;color:#1b1440;font-weight:700;text-decoration:none;padding:10px 22px;border-radius:99px">' + x[4] + ' ' + A[id].n + ' ↗</a>' +
         '</div>';
       pie.parentNode.insertBefore(c, pie);
+      /* SaludOnNet (18/11/2026): al ver el resultado, la consulta sube justo debajo, que es cuando más ayuda; si no hay resultado, se queda abajo */
+      if (/^consulta/.test(cual)) {
+        var subir = function () {
+          var r = d.getElementById('accRes'), bt = d.getElementById('calcular'), an = (r && !r.hidden) ? r : (bt && bt.closest('.acciones'));
+          if (!an || !an.parentNode || an.nextSibling === c) return;
+          c.style.margin = '18px auto'; an.parentNode.insertBefore(c, an.nextSibling);
+        };
+        if (d.body.classList.contains('hecho')) subir();
+        try { new MutationObserver(function () { if (d.body.classList.contains('hecho')) subir(); }).observe(d.body, { attributes: true, attributeFilter: ['class'] }); } catch (e) {}
+        var btc = d.getElementById('calcular'); if (btc) btc.addEventListener('click', function () { setTimeout(subir, 400); });
+      }
     };
     d.head.appendChild(sc);
   }
