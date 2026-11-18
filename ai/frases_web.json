@@ -5893,5 +5893,17 @@
   "recogida": "2026-11-17",
   "ok": true,
   "publicada": "2026-11-17"
+ },
+ {
+  "id": "fw-ab93956f8a",
+  "texto": "Una palabra bien elegida puede economizar no sólo cien palabras sino cien pensamientos.",
+  "autor": "Henri Poincaré",
+  "vida": "1854-1912",
+  "descripcion": "Matemático francés.",
+  "tema": "palabras",
+  "fuente": "Proverbia.net",
+  "url_fuente": "https://proverbia.net/frase-del-dia",
+  "recogida": "2026-11-18",
+  "ok": true
  }
 ]
