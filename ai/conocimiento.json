@@ -67,7 +67,7 @@
   "motivo": "El HTML inicial carga correctamente con estado 200 pero faltan elementos interactivos, lo que indica un fallo en la compilación o despliegue del script del test mediante GitHub Actions.",
   "explicacion": "El servidor responde bien pero el motor de renderizado del test no inyecta las preguntas. La causa más probable es un error de JavaScript o un fallo en el pipeline de GitHub Actions al compilar los assets estáticos. Si la acción automática no lo resuelve, revisa manualmente la consola del navegador en busca de errores de JS y comprueba el último commit en el repositorio de GitHub.",
   "ok": 14,
-  "fallo": 2,
+  "fallo": 4,
   "fecha": "2026-11-13",
   "ejemplo": "Prueba fallida en https://mind.aurzane.com/test-de-ansiedad/: No aparecen las preguntas del test"
  },
@@ -130,7 +130,7 @@
   "motivo": "Bloqueo CORS en fuentes al cargar recursos desde build.aurzane.com hacia aurzane.com.",
   "explicacion": "El navegador bloquea la fuente por política CORS porque el dominio principal (aurzane.com) no envía la cabecera Access-Control-Allow-Origin permitiendo el acceso desde subdominios como build.aurzane.com. Para solucionarlo a mano, añade en el servidor de aurzane.com (o en la configuración de SiteGround/htaccess) la cabecera Header set Access-Control-Allow-Origin '*' para los archivos de fuentes (.woff2), o revisa las rutas de los enlaces y assets estáticos en las reglas del sistema de despliegue.",
   "ok": 2,
-  "fallo": 0,
+  "fallo": 1,
   "fecha": "2026-11-17",
   "ejemplo": "Prueba fallida en https://build.aurzane.com/calculadora-hipoteca/: Carga bien · 4 error(es) de JavaScript: Access to font at 'https://aurzane.com/fuentes/instrument-sans-latin-wght-normal.woff2' from "
  },
@@ -184,8 +184,26 @@
   "motivo": "Bloqueo CORS al cargar fuentes tipográficas desde un subdominio externo en SiteGround.",
   "explicacion": "El navegador bloquea la fuente woff2 en live.aurzane.com porque se sirve desde aurzane.com sin cabeceras CORS permitidas. Para arreglarlo a mano, añade las cabeceras Access-Control-Allow-Origin en el archivo .htaccess de aurzane.com o configura SiteGround para permitir el acceso cruzado a la carpeta /fuentes/.",
   "ok": 0,
-  "fallo": 0,
+  "fallo": 1,
   "fecha": "2026-11-18",
   "ejemplo": "Prueba fallida en https://live.aurzane.com/calculadora-imc/: Cambié un dato: 24,2 → 16,7 · 4 error(es) de JavaScript: Access to font at 'https://aurzane.com/fuentes/instrument-sans-latin-wght-normal.w"
+ },
+ "prueba_fallida|prueba fallida en # respondí # preguntas: resultado #,# de # (burnout moderado) · # error(es) de javascript: access to font at '# from origi": {
+  "receta": "relanzar_enlaces",
+  "motivo": "Error de CORS al cargar la fuente desde el dominio principal en un subdominio.",
+  "explicacion": "El navegador bloquea la fuente woff2 en mind.aurzane.com porque se sirve desde aurzane.com sin cabeceras CORS permitidas. Causa probable: falta la directiva Access-Control-Allow-Origin en el .htaccess o configuración Nginx del servidor principal (SiteGround). Solución manual: añadir 'Header set Access-Control-Allow-Origin \"*\"' en el archivo .htaccess de aurzane.com para la carpeta de fuentes.",
+  "ok": 0,
+  "fallo": 0,
+  "fecha": "2026-11-18",
+  "ejemplo": "Prueba fallida en https://mind.aurzane.com/test-de-burnout/: Respondí 7 preguntas: resultado 50,0 de 100 (Burnout moderado) · 4 error(es) de JavaScript: Access to font at 'https://aurzane.com/fuentes/"
+ },
+ "prueba_fallida|prueba fallida en # respondí # preguntas: resultado # de # (síntomas moderadamente graves) · # error(es) de javascript: access to font at '#": {
+  "receta": "relanzar_enlaces",
+  "motivo": "Bloqueo CORS en la carga de fuentes web desde un subdominio externo.",
+  "explicacion": "El navegador bloquea la fuente Instrument Sans porque 'mind.aurzane.com' intenta cargarla desde 'aurzane.com' sin los encabezados CORS adecuados. Hay que añadir las cabeceras Access-Control-Allow-Origin: * en la configuración del servidor de SiteGround para los archivos de fuentes.",
+  "ok": 0,
+  "fallo": 0,
+  "fecha": "2026-11-18",
+  "ejemplo": "Prueba fallida en https://mind.aurzane.com/test-de-depresion/: Respondí 9 preguntas: resultado 18 de 27 (Síntomas moderadamente graves) · 4 error(es) de JavaScript: Access to font at 'https://aurzane."
  }
 }

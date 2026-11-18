@@ -1,6 +1,325 @@
 [
  {
   "fecha": "2026-11-18",
+  "id": "pmc-PMC13755324",
+  "tipo": "estudio",
+  "titulo": "Effects of caffeine intake on depressive and anxiety symptoms: a systematic review and meta-analysis of randomized controlled trials",
+  "url": "https://europepmc.org/article/PMC/PMC13755324",
+  "motivo": "La IA le dio 6/10: no encaja en la biblioteca",
+  "probados": [
+   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13755279.1/PMC13755279.1.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-18",
+  "id": "pmc-PMC13754653",
+  "tipo": "estudio",
+  "titulo": "Effects of mindfulness-based interventions on sleep quality in university students: a meta-analysis of randomized controlled trials",
+  "url": "https://europepmc.org/article/PMC/PMC13754653",
+  "motivo": "La IA le dio 6/10: no encaja en la biblioteca",
+  "probados": [
+   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13755324.1/PMC13755324.1.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-18",
+  "id": "pmc-PMC13754879",
+  "tipo": "estudio",
+  "titulo": "Prevalence of burnout in physiotherapists during the COVID-19 pandemic: systematic review and meta-analysis",
+  "url": "https://europepmc.org/article/PMC/PMC13754879",
+  "motivo": "La IA le dio 4/10: no encaja en la biblioteca",
+  "probados": [
+   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13755324.1/PMC13755324.1.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-18",
+  "id": "pmc-PMC13757884",
+  "tipo": "estudio",
+  "titulo": "Posttraumatic symptoms and religious/spiritual struggles in Russian Orthodox women: a network analysis",
+  "url": "https://europepmc.org/article/PMC/PMC13757884",
+  "motivo": "La IA le dio 2/10: no encaja en la biblioteca",
+  "probados": [
+   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13755324.1/PMC13755324.1.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-18",
+  "id": "pmc-PMC13757849",
+  "tipo": "estudio",
+  "titulo": "How social media-induced secondary traumatic stress affects depression: a moderated mediation model of self-compassion and problematic social media use in colle",
+  "url": "https://europepmc.org/article/PMC/PMC13757849",
+  "motivo": "La IA le dio 3/10: no encaja en la biblioteca",
+  "probados": [
+   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13755324.1/PMC13755324.1.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-18",
+  "id": "pmc-PMC13757900",
+  "tipo": "estudio",
+  "titulo": "Childhood trauma, post-traumatic stress disorder, and age at onset in adult separation anxiety disorder: a cross-sectional outpatient study",
+  "url": "https://europepmc.org/article/PMC/PMC13757900",
+  "motivo": "La IA le dio 2/10: no encaja en la biblioteca",
+  "probados": [
+   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13755324.1/PMC13755324.1.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-18",
+  "id": "pmc-PMC13757823",
+  "tipo": "estudio",
+  "titulo": "Young people's experiences of receiving therapist-supported online cognitive therapy for post-traumatic stress disorder",
+  "url": "https://europepmc.org/article/PMC/PMC13757823",
+  "motivo": "La IA le dio 2/10: no encaja en la biblioteca",
+  "probados": [
+   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13755324.1/PMC13755324.1.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-18",
+  "id": "oa-W7234075909",
+  "tipo": "libro",
+  "titulo": "Gamificación en la educación: estrategias para incrementar la motivación, participación y compromiso estudiantil",
+  "url": "https://doi.org/10.64245/eanean59",
+  "motivo": "La IA le dio 3/10: no encaja en la biblioteca",
+  "probados": [
+   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13755324.1/PMC13755324.1.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-18",
+  "id": "ia-psychology-and-cognitive-sciences-10.17140-pcsoj-5-151",
+  "tipo": "libro",
+  "titulo": "How the Desensitization of Police Violence, Stereotyped Language, and Racial Bias Impact Black Communities",
+  "url": "https://archive.org/details/psychology-and-cognitive-sciences-10.17140-pcsoj-5-151",
+  "motivo": "No tiene un PDF libre que se pueda descargar",
+  "probados": [
+   "200 application/pdf https://archive.org/download/psychology-and-cognitive-sciences-10.17140-pcsoj-5-151/10.17140_pcsoj-5-151.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-18",
+  "id": "ia-psychology-and-cognitive-sciences-10.17140-pcsoj-5-e012",
+  "tipo": "libro",
+  "titulo": "Addressing the Model Minority Myth from a Cognitive Perspective",
+  "url": "https://archive.org/details/psychology-and-cognitive-sciences-10.17140-pcsoj-5-e012",
+  "motivo": "No tiene un PDF libre que se pueda descargar",
+  "probados": [
+   "200 application/pdf https://archive.org/download/psychology-and-cognitive-sciences-10.17140-pcsoj-5-e012/10.17140_pcsoj-5-e012.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-18",
+  "id": "ia-psychology-and-cognitive-sciences-10.17140-pcsoj-5-143",
+  "tipo": "libro",
+  "titulo": "Nudge: Towards a Consensus View?",
+  "url": "https://archive.org/details/psychology-and-cognitive-sciences-10.17140-pcsoj-5-143",
+  "motivo": "No tiene un PDF libre que se pueda descargar",
+  "probados": [
+   "200 application/pdf https://archive.org/download/psychology-and-cognitive-sciences-10.17140-pcsoj-5-143/10.17140_pcsoj-5-143.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-18",
+  "id": "ia-psychology-and-cognitive-sciences-10.17140-pcsoj-5-144",
+  "tipo": "libro",
+  "titulo": "Does Progress Bars’ Behavior Influence the User Experience in Human-Computer Interaction?",
+  "url": "https://archive.org/details/psychology-and-cognitive-sciences-10.17140-pcsoj-5-144",
+  "motivo": "No tiene un PDF libre que se pueda descargar",
+  "probados": [
+   "200 application/pdf https://archive.org/download/psychology-and-cognitive-sciences-10.17140-pcsoj-5-144/10.17140_pcsoj-5-144.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-18",
+  "id": "ia-psychology-and-cognitive-sciences-10.17140-pcsoj-5-145",
+  "tipo": "libro",
+  "titulo": "Therapeutic Relationship of Telepsychiatry and Telebehavioral Health: Ideas from Research on Telepresence, Virtual Reality and Augmented Reality",
+  "url": "https://archive.org/details/psychology-and-cognitive-sciences-10.17140-pcsoj-5-145",
+  "motivo": "No tiene un PDF libre que se pueda descargar",
+  "probados": [
+   "200 application/pdf https://archive.org/download/psychology-and-cognitive-sciences-10.17140-pcsoj-5-145/10.17140_pcsoj-5-145.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-18",
+  "id": "ia-psychology-and-cognitive-sciences-10.17140-pcsoj-5-146",
+  "tipo": "libro",
+  "titulo": "A Review of Barriers to Treating Domestic Violence for Middle Eastern Women Living in the United States",
+  "url": "https://archive.org/details/psychology-and-cognitive-sciences-10.17140-pcsoj-5-146",
+  "motivo": "No tiene un PDF libre que se pueda descargar",
+  "probados": [
+   "200 application/pdf https://archive.org/download/psychology-and-cognitive-sciences-10.17140-pcsoj-5-146/10.17140_pcsoj-5-146.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-18",
+  "id": "ia-psychology-and-cognitive-sciences-10.17140-pcsoj-5-147",
+  "tipo": "libro",
+  "titulo": "Impact of Insomnia on Optimism: A Predictor Factor among Young Adults in Indian Context",
+  "url": "https://archive.org/details/psychology-and-cognitive-sciences-10.17140-pcsoj-5-147",
+  "motivo": "No tiene un PDF libre que se pueda descargar",
+  "probados": [
+   "200 application/pdf https://archive.org/download/psychology-and-cognitive-sciences-10.17140-pcsoj-5-147/10.17140_pcsoj-5-147.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-18",
+  "id": "ia-psychology-and-cognitive-sciences-10.17140-pcsoj-4-141",
+  "tipo": "libro",
+  "titulo": "Human Behavior with Mobile Health: Smartphone/ Devices, Apps and Cognition",
+  "url": "https://archive.org/details/psychology-and-cognitive-sciences-10.17140-pcsoj-4-141",
+  "motivo": "No tiene un PDF libre que se pueda descargar",
+  "probados": [
+   "200 application/pdf https://archive.org/download/psychology-and-cognitive-sciences-10.17140-pcsoj-4-141/10.17140_pcsoj-4-141.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-18",
+  "id": "ia-psychology-and-cognitive-sciences-10.17140-pcsoj-4-137",
+  "tipo": "libro",
+  "titulo": "Stress of Siege of Gaza and Locus of Control in Palestinian Children in the Gaza Strip",
+  "url": "https://archive.org/details/psychology-and-cognitive-sciences-10.17140-pcsoj-4-137",
+  "motivo": "No tiene un PDF libre que se pueda descargar",
+  "probados": [
+   "200 application/pdf https://archive.org/download/psychology-and-cognitive-sciences-10.17140-pcsoj-4-137/10.17140_pcsoj-4-137.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-18",
+  "id": "ia-psychology-and-cognitive-sciences-10.17140-pcsoj-4-138",
+  "tipo": "libro",
+  "titulo": "Relationship of Sustainable Behavior, World-Mindedness, National and Global Identities, Perceived Environmental Risk and Globalization Impact Among College Stud",
+  "url": "https://archive.org/details/psychology-and-cognitive-sciences-10.17140-pcsoj-4-138",
+  "motivo": "No tiene un PDF libre que se pueda descargar",
+  "probados": [
+   "200 application/pdf https://archive.org/download/psychology-and-cognitive-sciences-10.17140-pcsoj-4-138/10.17140_pcsoj-4-138.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-18",
+  "id": "ia-psychology-and-cognitive-sciences-10.17140-pcsoj-4-139",
+  "tipo": "libro",
+  "titulo": "A Prospective Examination of Acceptance at a CBT-based Interdisciplinary Chronic Pain Management Program",
+  "url": "https://archive.org/details/psychology-and-cognitive-sciences-10.17140-pcsoj-4-139",
+  "motivo": "No tiene un PDF libre que se pueda descargar",
+  "probados": [
+   "200 application/pdf https://archive.org/download/psychology-and-cognitive-sciences-10.17140-pcsoj-4-139/10.17140_pcsoj-4-139.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-18",
+  "id": "ia-psychology-and-cognitive-sciences-10.17140-pcsoj-4-140",
+  "tipo": "libro",
+  "titulo": "New Insights into “The Bignetti Model” from Classic and Quantum Mechanics Perspectives",
+  "url": "https://archive.org/details/psychology-and-cognitive-sciences-10.17140-pcsoj-4-140",
+  "motivo": "No tiene un PDF libre que se pueda descargar",
+  "probados": [
+   "200 application/pdf https://archive.org/download/psychology-and-cognitive-sciences-10.17140-pcsoj-4-140/10.17140_pcsoj-4-140.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-18",
+  "id": "ia-psychology-and-cognitive-sciences-10.17140-pcsoj-4-e011",
+  "tipo": "libro",
+  "titulo": "A Call to Promote Soft Skills in Software Engineering",
+  "url": "https://archive.org/details/psychology-and-cognitive-sciences-10.17140-pcsoj-4-e011",
+  "motivo": "No tiene un PDF libre que se pueda descargar",
+  "probados": [
+   "200 application/pdf https://archive.org/download/psychology-and-cognitive-sciences-10.17140-pcsoj-4-e011/10.17140_pcsoj-4-e011.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-18",
+  "id": "ia-psychology-and-cognitive-sciences-10.17140-pcsoj-3-129",
+  "tipo": "libro",
+  "titulo": "Virtual Acute Stress Reaction in a Treatment Team Following a Family Meeting of “Potentates”: Measures of Prevention",
+  "url": "https://archive.org/details/psychology-and-cognitive-sciences-10.17140-pcsoj-3-129",
+  "motivo": "No tiene un PDF libre que se pueda descargar",
+  "probados": [
+   "200 application/pdf https://archive.org/download/psychology-and-cognitive-sciences-10.17140-pcsoj-3-129/10.17140_pcsoj-3-129.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-18",
+  "id": "ia-psychology-and-cognitive-sciences-10.17140-pcsoj-3-130",
+  "tipo": "libro",
+  "titulo": "How Social Status Influences “Affect Language” in Tweets",
+  "url": "https://archive.org/details/psychology-and-cognitive-sciences-10.17140-pcsoj-3-130",
+  "motivo": "No tiene un PDF libre que se pueda descargar",
+  "probados": [
+   "200 application/pdf https://archive.org/download/psychology-and-cognitive-sciences-10.17140-pcsoj-3-130/10.17140_pcsoj-3-130.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-18",
+  "id": "ia-psychology-and-cognitive-sciences-10.17140-pcsoj-3-131",
+  "tipo": "libro",
+  "titulo": "The Effect of Mobile Telephone Electromagnetic Field on Human Brain Bioelectric Activity and Information Processing Speed",
+  "url": "https://archive.org/details/psychology-and-cognitive-sciences-10.17140-pcsoj-3-131",
+  "motivo": "No tiene un PDF libre que se pueda descargar",
+  "probados": [
+   "200 application/pdf https://archive.org/download/psychology-and-cognitive-sciences-10.17140-pcsoj-3-131/10.17140_pcsoj-3-131.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-18",
+  "id": "ia-psychology-and-cognitive-sciences-10.17140-pcsoj-3-132",
+  "tipo": "libro",
+  "titulo": "Psychological Pleasure in Reading and Visual Cognition Under Colour Luminance: A Psycholinguistic Approach",
+  "url": "https://archive.org/details/psychology-and-cognitive-sciences-10.17140-pcsoj-3-132",
+  "motivo": "No tiene un PDF libre que se pueda descargar",
+  "probados": [
+   "200 application/pdf https://archive.org/download/psychology-and-cognitive-sciences-10.17140-pcsoj-3-132/10.17140_pcsoj-3-132.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-18",
+  "id": "ia-psychology-and-cognitive-sciences-10.17140-pcsoj-3-134",
+  "tipo": "libro",
+  "titulo": "Volunteers Motives in Relation to their Task Preference in Health Service Delivery: A Case of West Kenya",
+  "url": "https://archive.org/details/psychology-and-cognitive-sciences-10.17140-pcsoj-3-134",
+  "motivo": "No tiene un PDF libre que se pueda descargar",
+  "probados": [
+   "200 application/pdf https://archive.org/download/psychology-and-cognitive-sciences-10.17140-pcsoj-3-134/10.17140_pcsoj-3-134.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-18",
+  "id": "ia-psychology-and-cognitive-sciences-10.17140-pcsoj-3-133",
+  "tipo": "libro",
+  "titulo": "Which is Necessary for Cognition, “Free Will” or “Free Will Illusion”?",
+  "url": "https://archive.org/details/psychology-and-cognitive-sciences-10.17140-pcsoj-3-133",
+  "motivo": "No tiene un PDF libre que se pueda descargar",
+  "probados": [
+   "200 application/pdf https://archive.org/download/psychology-and-cognitive-sciences-10.17140-pcsoj-3-133/10.17140_pcsoj-3-133.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-18",
+  "id": "ia-psychology-and-cognitive-sciences-10.17140-pcsoj-3-135",
+  "tipo": "libro",
+  "titulo": "Epistemic Curiosity, Conceptual Ambiguity and Cognitive Conflict: Do these Implicate Students Exploratory Behavior?",
+  "url": "https://archive.org/details/psychology-and-cognitive-sciences-10.17140-pcsoj-3-135",
+  "motivo": "No tiene un PDF libre que se pueda descargar",
+  "probados": [
+   "200 application/pdf https://archive.org/download/psychology-and-cognitive-sciences-10.17140-pcsoj-3-135/10.17140_pcsoj-3-135.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-18",
+  "id": "ia-el-vinculo-elegido-y-el-sentido-del-amor-1",
+  "tipo": "libro",
+  "titulo": "El vinculo elegido y el sentido del amor",
+  "url": "https://archive.org/details/el-vinculo-elegido-y-el-sentido-del-amor-1",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 7 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/el-vinculo-elegido-y-el-sentido-del-amor-1/El_vinculo_elegido_y_el_sentido_del_am"
+  ]
+ },
+ {
+  "fecha": "2026-11-18",
   "id": "ia-psychology-and-cognitive-sciences-10.17140-pcsoj-3-e009",
   "tipo": "libro",
   "titulo": "Deprivation or Interest-Type Curiosity and Exploratory Behaviour in Humans: Are they Inherently Cognitive and Implicate Curiosity-Induced Teaching?",
@@ -2576,267 +2895,5 @@
   "titulo": "Amalia pasa mucho tiempo encerrada en su dormitorio, ha cambiado su forma de vestir, apenas habla o ve a sus amigas y está siempre pendiente de su teléfono.",
   "url": "https://aurzane.com/biblioteca/libro/relaciones-sanas-guia-dirigida-familias-prevencion.html",
   "motivo": "Frase con restos de escaneo o demasiado técnica para redes"
- },
- {
-  "fecha": "2026-11-03",
-  "id": "cita-9be1a77c4e",
-  "tipo": "cita",
-  "titulo": "No está aprendiendo a establecer una relación sana, lo que puede llevarle a desarrollar comportamientos aún más violentos a lo largo del tiempo.",
-  "url": "https://aurzane.com/biblioteca/libro/relaciones-sanas-guia-dirigida-familias-prevencion.html",
-  "motivo": "Frase con restos de escaneo o demasiado técnica para redes"
- },
- {
-  "fecha": "2026-11-03",
-  "id": "cita-85a3cb00aa",
-  "tipo": "cita",
-  "titulo": "Incluye aquellas actividades que no son explícitamente educativas, pero que contienen importantes componentes para favorecer el proceso de aprendizaje.",
-  "url": "https://aurzane.com/biblioteca/libro/aprendizaje-invisible-hacia-nueva-ecologia-educacion.html",
-  "motivo": "Frase con restos de escaneo o demasiado técnica para redes"
- },
- {
-  "fecha": "2026-11-03",
-  "id": "cita-d30193a3d6",
-  "tipo": "cita",
-  "titulo": "Cualquier aprendizaje conlleva almacenar un recuerdo nuevo en una determinada ubicación de la memoria, lo que permite añadir y expandir lo que ya está en ese lu",
-  "url": "https://aurzane.com/biblioteca/libro/aprendizaje-invisible-hacia-nueva-ecologia-educacion.html",
-  "motivo": "Frase con restos de escaneo o demasiado técnica para redes"
- },
- {
-  "fecha": "2026-11-03",
-  "id": "cita-6be5e603de",
-  "tipo": "cita",
-  "titulo": "Es justamente esa intangibilidad lo que hace que el conocimiento tácito pase muchas veces inadvertido o sea subvalorado.",
-  "url": "https://aurzane.com/biblioteca/libro/aprendizaje-invisible-hacia-nueva-ecologia-educacion.html",
-  "motivo": "Frase con restos de escaneo o demasiado técnica para redes"
- },
- {
-  "fecha": "2026-11-03",
-  "id": "cita-6aaef454a9",
-  "tipo": "cita",
-  "titulo": "Debido a este y otros factores no es de extrañar que aumente la temperatura cuando se habla de repensar el papel de las instituciones educativas.",
-  "url": "https://aurzane.com/biblioteca/libro/aprendizaje-invisible-hacia-nueva-ecologia-educacion.html",
-  "motivo": "Frase con restos de escaneo o demasiado técnica para redes"
- },
- {
-  "fecha": "2026-11-03",
-  "id": "cita-a5fc1925ea",
-  "tipo": "cita",
-  "titulo": "Una vez se ha establecido el itinerario definitivo, automáticamente aparece el código numérico asignado a cada actividad.",
-  "url": "https://aurzane.com/biblioteca/libro/itinerarios-individualizados-aprendizaje-autorregulado.html",
-  "motivo": "Frase con restos de escaneo o demasiado técnica para redes"
- },
- {
-  "fecha": "2026-11-03",
-  "id": "ia-cognitive-bias-in-criminal-investigations-pommier-gallo-2026",
-  "tipo": "libro",
-  "titulo": "Cognitive Bias in Criminal Investigations: Confirmation Bias, Contextual Information, and Investigative Tunnel Vision",
-  "url": "https://archive.org/details/cognitive-bias-in-criminal-investigations-pommier-gallo-2026",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": [
-   "HTTP Error 500: Internal Server Error https://archive.org/download/cognitive-bias-in-criminal-investigations-pommier-gallo-2026/Cognitive%20Bias%20i"
-  ]
- },
- {
-  "fecha": "2026-11-03",
-  "id": "ia-wake-up-o-nation-of-islam-full-english-translation-fixed-cover",
-  "tipo": "libro",
-  "titulo": "Wake Up O Nation Of Islam FULL English Translation FIXED COVER",
-  "url": "https://archive.org/details/wake-up-o-nation-of-islam-full-english-translation-fixed-cover",
-  "motivo": "Dice ser un libro pero el PDF solo tiene 32 páginas (es un capítulo, artículo o resumen)",
-  "probados": [
-   "200 application/pdf https://archive.org/download/wake-up-o-nation-of-islam-full-english-translation-fixed-cover/Wake_Up_O_Nation_o"
-  ]
- },
- {
-  "fecha": "2026-11-03",
-  "id": "cita-8b4c049edd",
-  "tipo": "cita",
-  "titulo": "Por donde se una seriación cae en la cuenta de que jerárquica bien entendida de los conocimientos humanos representa verdadero árbol un genealógico.",
-  "url": "https://aurzane.com/biblioteca/libro/reglas-y-consejos-cajal.html",
-  "motivo": "Frase con restos de escaneo o demasiado técnica para redes"
- },
- {
-  "fecha": "2026-11-03",
-  "id": "cita-8b8c9919a9",
-  "tipo": "cita",
-  "titulo": "La mayoría de las pruebas paramétricas son muy sensibles a los valores atípicos, mientras que las no paramétricas generalmente no lo son.",
-  "url": "https://aurzane.com/biblioteca/libro/jasp-estadistica.html",
-  "motivo": "Frase con restos de escaneo o demasiado técnica para redes"
- },
- {
-  "fecha": "2026-11-03",
-  "id": "cita-fdadaae64d",
-  "tipo": "cita",
-  "titulo": "Verdaderamente fué cortísima la diferencia de tiempo en la vida; y ésta ¿con cuántas molestias, con qué hombres y en cuál cuerpezuelo se toleró?",
-  "url": "https://aurzane.com/biblioteca/libro/moralistas-griegos.html",
-  "motivo": "Frase con restos de escaneo o demasiado técnica para redes"
- },
- {
-  "fecha": "2026-11-03",
-  "id": "cita-e85311c5e8",
-  "tipo": "cita",
-  "titulo": "De hecho, se ha reconocido que los medios de comunicación son clave en la socialización y el aprendizaje sobre género y sexualidades entre adolescentes y jóvene",
-  "url": "https://aurzane.com/biblioteca/libro/adolescencia-medios-sexualidades-reimaginar-educacion-afecti.html",
-  "motivo": "Frase con restos de escaneo o demasiado técnica para redes"
- },
- {
-  "fecha": "2026-11-03",
-  "id": "cita-e012200f2f",
-  "tipo": "cita",
-  "titulo": "Importa, sin en los embargo, hacer aquí una distinción de gran dísima importancia, olvidada á menudo por los que no se toman el trabajo de pensar.",
-  "url": "https://aurzane.com/biblioteca/libro/relaciones-patologia-mental-tribunales-justicia.html",
-  "motivo": "Frase con restos de escaneo o demasiado técnica para redes"
- },
- {
-  "fecha": "2026-11-03",
-  "id": "cita-773635eaf5",
-  "tipo": "cita",
-  "titulo": "Éstas son preci samente las que pueden ofrecer al perito ma yores dificultades para resolver los problemas de irresponsabilidad.",
-  "url": "https://aurzane.com/biblioteca/libro/relaciones-patologia-mental-tribunales-justicia.html",
-  "motivo": "Frase con restos de escaneo o demasiado técnica para redes"
- },
- {
-  "fecha": "2026-11-03",
-  "id": "cita-6748a069b3",
-  "tipo": "cita",
-  "titulo": "Amalia pasa mucho tiempo encerrada en su dormitorio, ha cambiado su forma de vestir, apenas habla o ve a sus amigas y está siempre pendiente de su teléfono.",
-  "url": "https://aurzane.com/biblioteca/libro/relaciones-sanas-guia-dirigida-familias-prevencion.html",
-  "motivo": "Frase con restos de escaneo o demasiado técnica para redes"
- },
- {
-  "fecha": "2026-11-03",
-  "id": "cita-9be1a77c4e",
-  "tipo": "cita",
-  "titulo": "No está aprendiendo a establecer una relación sana, lo que puede llevarle a desarrollar comportamientos aún más violentos a lo largo del tiempo.",
-  "url": "https://aurzane.com/biblioteca/libro/relaciones-sanas-guia-dirigida-familias-prevencion.html",
-  "motivo": "Frase con restos de escaneo o demasiado técnica para redes"
- },
- {
-  "fecha": "2026-11-03",
-  "id": "cita-85a3cb00aa",
-  "tipo": "cita",
-  "titulo": "Incluye aquellas actividades que no son explícitamente educativas, pero que contienen importantes componentes para favorecer el proceso de aprendizaje.",
-  "url": "https://aurzane.com/biblioteca/libro/aprendizaje-invisible-hacia-nueva-ecologia-educacion.html",
-  "motivo": "Frase con restos de escaneo o demasiado técnica para redes"
- },
- {
-  "fecha": "2026-11-03",
-  "id": "cita-d30193a3d6",
-  "tipo": "cita",
-  "titulo": "Cualquier aprendizaje conlleva almacenar un recuerdo nuevo en una determinada ubicación de la memoria, lo que permite añadir y expandir lo que ya está en ese lu",
-  "url": "https://aurzane.com/biblioteca/libro/aprendizaje-invisible-hacia-nueva-ecologia-educacion.html",
-  "motivo": "Frase con restos de escaneo o demasiado técnica para redes"
- },
- {
-  "fecha": "2026-11-03",
-  "id": "cita-6be5e603de",
-  "tipo": "cita",
-  "titulo": "Es justamente esa intangibilidad lo que hace que el conocimiento tácito pase muchas veces inadvertido o sea subvalorado.",
-  "url": "https://aurzane.com/biblioteca/libro/aprendizaje-invisible-hacia-nueva-ecologia-educacion.html",
-  "motivo": "Frase con restos de escaneo o demasiado técnica para redes"
- },
- {
-  "fecha": "2026-11-03",
-  "id": "cita-6aaef454a9",
-  "tipo": "cita",
-  "titulo": "Debido a este y otros factores no es de extrañar que aumente la temperatura cuando se habla de repensar el papel de las instituciones educativas.",
-  "url": "https://aurzane.com/biblioteca/libro/aprendizaje-invisible-hacia-nueva-ecologia-educacion.html",
-  "motivo": "Frase con restos de escaneo o demasiado técnica para redes"
- },
- {
-  "fecha": "2026-11-03",
-  "id": "cita-a5fc1925ea",
-  "tipo": "cita",
-  "titulo": "Una vez se ha establecido el itinerario definitivo, automáticamente aparece el código numérico asignado a cada actividad.",
-  "url": "https://aurzane.com/biblioteca/libro/itinerarios-individualizados-aprendizaje-autorregulado.html",
-  "motivo": "Frase con restos de escaneo o demasiado técnica para redes"
- },
- {
-  "fecha": "2026-11-03",
-  "id": "ia-stubborn-ego",
-  "tipo": "libro",
-  "titulo": "Stubborn Ego",
-  "url": "https://archive.org/details/stubborn-ego",
-  "motivo": "Dice ser un libro pero el PDF solo tiene 2 páginas (es un capítulo, artículo o resumen)",
-  "probados": [
-   "200 application/pdf https://archive.org/download/stubborn-ego/stubborn%20ego.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-03",
-  "id": "ia-temporal-integrity-of-eyewitness-evidence-sergio-pommier-gallo-ph-d-2026",
-  "tipo": "libro",
-  "titulo": "Temporal Integrity of Eyewitness Evidence: Memory Contamination, Investigative Sequencing, and the Preservation of Testimonial Information",
-  "url": "https://archive.org/details/temporal-integrity-of-eyewitness-evidence-sergio-pommier-gallo-ph-d-2026",
-  "motivo": "Dice ser un libro pero el PDF solo tiene 24 páginas (es un capítulo, artículo o resumen)",
-  "probados": [
-   "200 application/pdf https://archive.org/download/temporal-integrity-of-eyewitness-evidence-sergio-pommier-gallo-ph-d-2026/Temporal"
-  ]
- },
- {
-  "fecha": "2026-11-03",
-  "id": "ia-witness-memory-as-a-mutable-evidentiary-record-sergio-pommier-gallo-ph-d",
-  "tipo": "libro",
-  "titulo": "Witness Memory as a Mutable Evidentiary Record: Post-Event Contamination, Confidence Inflation, and the Reliability of Criminal Identification",
-  "url": "https://archive.org/details/witness-memory-as-a-mutable-evidentiary-record-sergio-pommier-gallo-ph-d",
-  "motivo": "Dice ser un libro pero el PDF solo tiene 24 páginas (es un capítulo, artículo o resumen)",
-  "probados": [
-   "200 application/pdf https://archive.org/download/witness-memory-as-a-mutable-evidentiary-record-sergio-pommier-gallo-ph-d/Witness%"
-  ]
- },
- {
-  "fecha": "2026-11-03",
-  "id": "ia-JPR_Vol6_Issue5_2022",
-  "tipo": "libro",
-  "titulo": "Journal of Pedagogical Research, Volume 6, Issue 5 (2022)",
-  "url": "https://archive.org/details/JPR_Vol6_Issue5_2022",
-  "motivo": "Dice ser un libro pero el PDF solo tiene 37 páginas (es un capítulo, artículo o resumen)",
-  "probados": [
-   "200 application/pdf https://archive.org/download/JPR_Vol6_Issue5_2022/mathematics-student-teachers-task-design-processes-the-case-"
-  ]
- },
- {
-  "fecha": "2026-11-03",
-  "id": "ia-JPR_Vol6_Issue4_2022",
-  "tipo": "libro",
-  "titulo": "Journal of Pedagogical Research, Volume 6, Issue 4 (2022)",
-  "url": "https://archive.org/details/JPR_Vol6_Issue4_2022",
-  "motivo": "Dice ser un libro pero el PDF solo tiene 17 páginas (es un capítulo, artículo o resumen)",
-  "probados": [
-   "200 application/pdf https://archive.org/download/JPR_Vol6_Issue4_2022/the-effectiveness-of-guided-inquiry-based-technology-integra"
-  ]
- },
- {
-  "fecha": "2026-11-03",
-  "id": "ia-JPR_Vol6_Issue3_2022",
-  "tipo": "libro",
-  "titulo": "Journal of Pedagogical Research, Volume 6, Issue 3 (2022)",
-  "url": "https://archive.org/details/JPR_Vol6_Issue3_2022",
-  "motivo": "Dice ser un libro pero el PDF solo tiene 17 páginas (es un capítulo, artículo o resumen)",
-  "probados": [
-   "200 application/pdf https://archive.org/download/JPR_Vol6_Issue3_2022/research-trends-in-mathematics-education-a-quantitative-cont"
-  ]
- },
- {
-  "fecha": "2026-11-03",
-  "id": "ia-JPR_Vol6_Issue2_2022",
-  "tipo": "libro",
-  "titulo": "Journal of Pedagogical Research, Volume 6, Issue 2 (2022)",
-  "url": "https://archive.org/details/JPR_Vol6_Issue2_2022",
-  "motivo": "Dice ser un libro pero el PDF solo tiene 21 páginas (es un capítulo, artículo o resumen)",
-  "probados": [
-   "200 application/pdf https://archive.org/download/JPR_Vol6_Issue2_2022/extraction-and-recognition-of-competency-components-of-the-s"
-  ]
- },
- {
-  "fecha": "2026-11-03",
-  "id": "ia-JPR_Vol6_Issue1_2022",
-  "tipo": "libro",
-  "titulo": "Journal of Pedagogical Research, Volume 6, Issue 1 (2022)",
-  "url": "https://archive.org/details/JPR_Vol6_Issue1_2022",
-  "motivo": "Dice ser un libro pero el PDF solo tiene 22 páginas (es un capítulo, artículo o resumen)",
-  "probados": [
-   "200 application/pdf https://archive.org/download/JPR_Vol6_Issue1_2022/prospective-primary-school-teachers-change-in-attitudes-and-"
-  ]
  }
 ]
