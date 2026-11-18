@@ -1,0 +1,55 @@
+{
+ "titulo": "Calculadora de interés compuesto: guía práctica y uso",
+ "intro": "El crecimiento del dinero a largo plazo no depende únicamente de la cantidad que se consigue apartar cada mes, sino de la forma en que los propios rendimientos se reinvierten de manera constante. Comprender esta dinámica resulta fundamental para ordenar las finanzas personales sin caer en expectativas irreales ni en errores comunes de planificación.\n\nEsta guía detalla el funcionamiento lógico de la calculadora de interés compuesto con aportaciones mensuales de Aurzane, explica su fórmula en un lenguaje accesible y ofrece pautas claras para interpretar los resultados, conocer sus limitaciones y tomar decisiones financieras informadas y prudentes.",
+ "alt": "Gráfico ascendente con una bola de nieve que simboliza el crecimiento del ahorro a lo largo de los años en Aurzane",
+ "secciones": [
+  {
+   "titulo": "Cómo entender la fórmula detrás de los números",
+   "texto": "Aunque el motor de la calculadora opera con algoritmos matemáticos complejos, su lógica se resume en conceptos sencillos que cualquier persona puede aplicar a su planificación económica.\n- Capital inicial: es la semilla financiera con la que se parte al abrir la operación de ahorro o inversión.\n- Aportaciones periódicas: la suma fija que se añade cada mes de forma constante, un hábito que actúa como un amortiguador ante las fluctuaciones del mercado.\n- Rentabilidad neta: el porcentaje anual esperado, al que previamente se le han restado las comisiones de gestión o custodia.\n- Ajuste por inflación: el cálculo que traslada el valor nominal futuro a los euros de hoy, permitiendo ver el poder adquisitivo real que se tendrá con los años."
+  },
+  {
+   "titulo": "Cómo utilizar la calculadora para planificar con cabeza",
+   "texto": "Para sacar el máximo partido a esta herramienta de simulación, conviene introducir datos realistas y probar varios escenarios antes de tomar cualquier decisión sobre el dinero.\n- Empieza por tu realidad actual: anota tus ahorros disponibles y la cantidad mensual que puedes apartar sin comprometer tus gastos básicos.\n- Modula las expectativas: prueba una rentabilidad conservadora para evitar sorpresas desagradables si el mercado bursátil o los tipos de interés sufren correcciones.\n- Vigila los costes ocultos: introduce con precisión las comisiones anuales de tus productos, ya que un porcentaje aparentemente pequeño desgasta de forma notable el capital a treinta vista."
+  },
+  {
+   "titulo": "Ejemplos prácticos del efecto acumulativo",
+   "texto": "El verdadero potencial de la capitalización compuesta se aprecia al comparar diferentes horizontes temporales y constancia en las aportaciones.\n- La constancia supera al golpe de efecto: ahorrar una cantidad moderada pero ininterrumpida mes a mes suele generar mejores frutos a largo plazo que realizar grandes aportaciones esporádicas.\n- El factor tiempo es determinante: cuanto antes se comience a apartar dinero, mayor será la proporción de intereses acumulados frente al capital total aportado por el ahorrador.\n- El tramo final del proceso: los últimos años son aquellos en los que el dinero crece con mayor velocidad, puesto que la base sobre la que se calcula el rendimiento es ya muy elevada."
+  },
+  {
+   "titulo": "Límites de la simulación y prudencia financiera",
+   "texto": "Ninguna herramienta digital puede predecir el futuro con exactitud matemática, por lo que los resultados obtenidos deben interpretarse siempre como una orientación informativa y educativa.\n- Volatilidad del mercado: los rendimientos pasados de la economía o de los índices bursátiles no garantizan ganancias futuras equivalentes.\n- Impacto fiscal no incluido: la calculadora muestra el bruto acumulado, pero recuerda que en España las ganancias obtenidas al rescatar el dinero están sujetas a la tributación correspondiente en el IRPF.\n- Imprevistos vitales: la vida personal y laboral cambia, por lo que la planificación debe revisarse de manera periódica para adaptarla a nuevas circunstancias."
+  },
+  {
+   "titulo": "Cuándo buscar asesoramiento profesional",
+   "texto": "Gestionar el patrimonio personal requiere a veces la ayuda de expertos independientes que ofrezcan una visión global y adaptada a cada situación particular.\n- Si te abruma la elección de productos financieros adecuados a tu perfil de riesgo, un asesor cualificado puede orientarte sin sesgos comerciales.\n- Ante cambios económicos importantes, como herencias, grandes ventas de inmuebles o modificaciones sustanciales de ingresos, es prudente consultar con profesionales fiscales.\n- Recuerda que la salud financiera está estrechamente ligada al bienestar psicológico: si la gestión del dinero genera ansiedad persistente o bloqueos, busca apoyo profesional y utiliza los recursos de orientación disponibles en España para cuidar tu tranquilidad."
+  }
+ ],
+ "faq": [
+  {
+   "p": "¿Qué diferencia hay entre interés simple e interés compuesto?",
+   "r": "El interés simple calcula los beneficios únicamente sobre el dinero inicial aportado. El interés compuesto calcula los beneficios tanto sobre el capital inicial como sobre los intereses que ya se han ido acumulando en los periodos anteriores."
+  },
+  {
+   "p": "¿Por qué es tan importante empezar a ahorrar desde joven?",
+   "r": "Porque el factor tiempo es el elemento que más multiplica el efecto del interés compuesto. Al disponer de más años por delante, los intereses generan nuevos intereses durante un periodo prolongado, superando con creces el esfuerzo de ahorrar cantidades mayores más tarde."
+  },
+  {
+   "p": "¿La calculadora tiene en cuenta los impuestos de Hacienda?",
+   "r": "No de forma automática. La herramienta calcula el rendimiento bruto y las comisiones, pero debes tener en cuenta que en España las ganancias de las inversiones tributan en la base del ahorro del IRPF en el momento en que decides retirarlas."
+  },
+  {
+   "p": "¿Qué rentabilidad debo introducir en la simulación?",
+   "r": "Debes probar con varios rangos según el destino de tu dinero. Los depósitos o cuentas ofrecen rentabilidades muy bajas con bajo riesgo, mientras que las carteras diversificadas de inversión histórica han obtenido medias superiores a largo plazo, siempre asumiendo oscilaciones temporales."
+  },
+  {
+   "p": "¿Cómo afecta la inflación al resultado final?",
+   "r": "La inflación reduce el poder adquisitivo del dinero con el paso de los años. La opción de euros de hoy de la calculadora ajusta el valor futuro dividiéndolo por el efecto acumulado de la inflación estimada, mostrando lo que realmente podrás comprar en el futuro."
+  }
+ ],
+ "fuentes": [
+  "Banco de España - Portal del Cliente Bancario",
+  "Comisión Nacional del Mercado de Valores (CNMV)",
+  "Agencia Tributaria - Impuesto sobre la Renta de las Personas Físicas"
+ ],
+ "fecha": "2026-11-18"
+}
