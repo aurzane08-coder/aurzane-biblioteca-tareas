@@ -30,7 +30,7 @@
   "receta": "avisar",
   "motivo": "Se ha detectado 1 enlace roto en la revisión semanal que requiere comprobación manual.",
   "explicacion": "Un enlace interno o externo en el HTML o PHP de la web apunta a una URL inexistente. Como las automatizaciones no editan contenido estático, debes buscar el archivo afectado mediante grep en el repositorio, localizar la ruta errónea y corregirla en el código antes de hacer commit a GitHub.",
-  "ok": 0,
+  "ok": 1,
   "fallo": 2,
   "fecha": "2026-11-10",
   "ejemplo": "Hay 1 enlaces rotos en la última revisión semanal."
@@ -75,7 +75,7 @@
   "receta": "avisar",
   "motivo": "Error de JavaScript indefinido detectado en la calculadora de IMC de live.aurzane.com.",
   "explicacion": "El error JavaScript de tipo undefined suele deberse a un script externo que no ha cargado correctamente (como aurzane-paleta.js) o a una función que intenta leer una propiedad de un elemento DOM que aún no se ha renderizado. Para solucionarlo a mano, inspecciona la consola del navegador en la URL afectada para identificar la línea exacta del fallo, verifica que los scripts carguen de forma síncrona o con el evento DOMContentLoaded, y comprueba que todos los selectores de los 9 campos existan en el HTML.",
-  "ok": 1,
+  "ok": 2,
   "fallo": 0,
   "fecha": "2026-11-15",
   "ejemplo": "Prueba fallida en https://live.aurzane.com/calculadora-imc/: Carga bien (9 campos) · error de JavaScript: undefined"
@@ -129,7 +129,7 @@
   "receta": "relanzar_enlaces",
   "motivo": "Bloqueo CORS en fuentes al cargar recursos desde build.aurzane.com hacia aurzane.com.",
   "explicacion": "El navegador bloquea la fuente por política CORS porque el dominio principal (aurzane.com) no envía la cabecera Access-Control-Allow-Origin permitiendo el acceso desde subdominios como build.aurzane.com. Para solucionarlo a mano, añade en el servidor de aurzane.com (o en la configuración de SiteGround/htaccess) la cabecera Header set Access-Control-Allow-Origin '*' para los archivos de fuentes (.woff2), o revisa las rutas de los enlaces y assets estáticos en las reglas del sistema de despliegue.",
-  "ok": 0,
+  "ok": 2,
   "fallo": 0,
   "fecha": "2026-11-17",
   "ejemplo": "Prueba fallida en https://build.aurzane.com/calculadora-hipoteca/: Carga bien · 4 error(es) de JavaScript: Access to font at 'https://aurzane.com/fuentes/instrument-sans-latin-wght-normal.woff2' from "
@@ -156,7 +156,7 @@
   "receta": "relanzar_enlaces",
   "motivo": "Bloqueo CORS al cargar la fuente desde el dominio principal en un subdominio.",
   "explicacion": "El navegador bloquea la carga de la fuente tipográfica en live.aurzane.com porque se sirve desde aurzane.com sin cabeceras CORS permitidas. Para solucionarlo a mano, añade las cabeceras de control de acceso Access-Control-Allow-Origin en el servidor SiteGround para los archivos de fuentes (.woff2) o configura el archivo .htaccess en la raíz del dominio principal.",
-  "ok": 0,
+  "ok": 1,
   "fallo": 0,
   "fecha": "2026-11-17",
   "ejemplo": "Prueba fallida en https://live.aurzane.com/calculadora-dias-entre-fechas/: Cambié un dato: 92 → 92 · 4 error(es) de JavaScript: Access to font at 'https://aurzane.com/fuentes/bodoni-moda-latin-opsz-no"
@@ -165,9 +165,18 @@
   "receta": "relanzar_enlaces",
   "motivo": "Error de CORS al cargar la fuente desde un subdominio diferente.",
   "explicacion": "El navegador bloquea la fuente externa en live.aurzane.com porque aurzane.com no emite la cabecera Access-Control-Allow-Origin. Se soluciona añadiendo la cabecera CORS en el servidor o .htaccess del dominio principal.",
-  "ok": 0,
+  "ok": 1,
   "fallo": 0,
   "fecha": "2026-11-18",
   "ejemplo": "Prueba fallida en https://live.aurzane.com/test-de-habitos/: Respondí 7 preguntas: resultado 5 sobre 10 (Estilo de vida intermedio) · 4 error(es) de JavaScript: Access to font at 'https://aurzane.com/"
+ },
+ "tienda|tienda: portada rota: el hombre más rico de babilonia; portada rota: invisible": {
+  "receta": "relanzar_enlaces",
+  "motivo": "Revisar nuevamente los enlaces de las portadas para descartar fallos temporales de conexión o bloqueo del proveedor.",
+  "explicacion": "Las URLs de las imágenes de ambos libros pueden haber sufrido un fallo puntual de respuesta o bloqueo temporal por parte del servidor de origen. Si tras la revisión continúan rotas, deberás editar a mano el archivo PHP o JSON de la tienda para actualizar los enlaces directos de las portadas o subirlas localmente al servidor.",
+  "ok": 0,
+  "fallo": 0,
+  "fecha": "2026-11-18",
+  "ejemplo": "Tienda: portada rota: El hombre más rico de Babilonia; portada rota: Invisible"
  }
 }

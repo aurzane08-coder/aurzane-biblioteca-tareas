@@ -1,6 +1,6 @@
 {
  "enlaces_rotos|relanzar_enlaces": [
-  2,
+  3,
   3
  ],
  "automatizacion|reintentar_flujo": [
@@ -12,7 +12,7 @@
   1
  ],
  "prueba_fallida|vaciar_cache": [
-  61,
+  63,
   9
  ],
  "red_manual|reintentar_flujo": [
@@ -36,7 +36,7 @@
   1
  ],
  "prueba_fallida|relanzar_enlaces": [
-  7,
+  10,
   0
  ]
 }
