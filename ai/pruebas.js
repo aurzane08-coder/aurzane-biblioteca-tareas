@@ -26,6 +26,7 @@ async function probar(browser, p) {
     }
     if (bloqueado) { await ctx.close(); return { url: p.url, tipo: p.tipo, ok: null, detalle: 'SiteGround pidió verificación anti-robots y no se pudo pasar', ms: Date.now() - t0, errores: [] }; }
     await page.waitForLoadState('networkidle', { timeout: 20000 }).catch(() => {});
+    await page.waitForTimeout(p.reintento ? 4000 : 1500);   // tras la verificación anti-robots la página se recarga: dar tiempo a que el JavaScript pinte
     const st = r ? r.status() : 0;
     if (st >= 400) { ok = false; detalle = 'La página devuelve ' + st; }
     else if (p.tipo === 'test') {
@@ -76,6 +77,7 @@ async function probar(browser, p) {
     }
   } catch (e) { ok = false; detalle = 'No se pudo abrir: ' + String(e.message || e).split('\n')[0].slice(0, 150); }
   if (ok && errores.length) { ok = false; detalle += ` · ${errores.length} error(es) de JavaScript: ${errores[0]}`; }
+  else if (!ok && errores.length) detalle += ` · error de JavaScript: ${errores[0]}`;   // con el error a la vista se sabe la causa
   await ctx.close();
   return { url: p.url, tipo: p.tipo, ok, detalle, ms: Date.now() - t0, errores: errores.slice(0, 3) };
 }
@@ -86,7 +88,10 @@ async function probar(browser, p) {
   let seguidos = 0;
   for (const p of lista) {
     if (seguidos >= 4) { out.push({ url: p.url, tipo: p.tipo, ok: null, detalle: 'Sin comprobar: SiteGround está frenando al navegador de pruebas', ms: 0, errores: [] }); continue; }
-    const r = await probar(browser, p); out.push(r); seguidos = r.ok === null ? seguidos + 1 : 0;
+    let r = await probar(browser, p);
+    // Lección del 18/11/2026: un fallo suelto suele ser la verificación anti-robots; se repite una vez, con más espera, antes de avisar
+    if (r.ok === false) { const r2 = await probar(browser, Object.assign({}, p, { reintento: true })); if (r2.ok !== false) r = r2; else r = Object.assign(r2, { detalle: r2.detalle + ' (falló dos veces)' }); }
+    out.push(r); seguidos = r.ok === null ? seguidos + 1 : 0;
     console.log((r.ok ? 'OK   ' : r.ok === null ? 'BLOQ ' : 'FALLO') + ' ' + p.url + ' · ' + r.detalle);
   }
   await browser.close();

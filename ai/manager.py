@@ -124,6 +124,13 @@ LECCIONES_JS = [
     (r"reading 'classList'|reading .classList",
      'El código buscó un elemento que la página no tiene (por ejemplo, una sección del menú sin contenido).',
      'Comprobar que getElementById devuelve algo antes de usarlo (admin.html ya lo hace desde el 16/11/2026).'),
+    # Lecciones del 18/11/2026 (pruebas funcionales con 53 avisos a la vez)
+    (r"Access to font at .*blocked by CORS|No 'Access-Control-Allow-Origin' header",
+     'Las fuentes propias viven en aurzane.com/fuentes/ y los subdominios (mind, live, nexus...) las piden desde otro origen. La CDN de SiteGround guardó copias de las fuentes de antes de poner la cabecera que lo permite.',
+     'aurzane.com/public_html/fuentes/.htaccess ya pone «Access-Control-Allow-Origin: *» (desde el 17/11/2026). Si vuelve a salir: comprobar la cabecera con curl -I -H "Origin: https://mind.aurzane.com" a la fuente y vaciar la caché (acción vaciar_cache, que también purga la CDN). Si la cabecera ya está, el aviso es de una copia vieja y se resuelve solo; no hace falta tocar las páginas. Las fuentes no rompen nada: si fallan, la página usa la letra del sistema.'),
+    (r'No aparecen las preguntas del test|No aparece la guía del ejercicio|El portal carga vacío o sin botones',
+     'Casi siempre es la verificación anti-robots de SiteGround: el navegador de pruebas la pasa, pero la página se recarga y se mira antes de que el JavaScript pinte las preguntas, la guía o el formulario.',
+     'Las pruebas ahora repiten cada página que falla, con más espera tras la verificación (ai/pruebas.js), y solo avisan si falla dos veces. Si aun así falla, abrir la página con el flujo «Diagnóstico de páginas» (ai/diag/urls.txt): muestra cuántas preguntas hay y todos los errores de consola y de red.'),
 ]
 def leccion_js(m):
     for pat, causa, arreglo in LECCIONES_JS:
@@ -1415,9 +1422,23 @@ if pruebas.get('resultados') and len(bloq) + len(fallos_abrir) > len(pruebas['re
     # casi todo falla a la vez al abrir: es el filtro anti-robots de SiteGround o la red de GitHub, no la web (las pruebas desde el servidor lo confirman)
     aviso('medio', f'No pude hacer las pruebas funcionales: SiteGround frenó al navegador de pruebas en {len(bloq) + len(fallos_abrir)} páginas. Se repiten en la próxima revisión.', 'pruebas_bloqueadas', 'todas')
     pruebas['resultados'] = [r_ for r_ in pruebas['resultados'] if r_ not in bloq and r_ not in fallos_abrir]
+CORS_OK = None
+def fuentes_con_cabecera():
+    # Lección del 18/11/2026: si la fuente ya responde con la cabecera CORS, el error era de una copia vieja de la CDN
+    global CORS_OK
+    if CORS_OK is None:
+        try:
+            st_, _, _, hd_ = get('https://aurzane.com/fuentes/instrument-sans-latin-wght-normal.woff2', {'Origin': 'https://mind.aurzane.com'}, t=20)
+            CORS_OK = st_ == 200 and (hd_.get('access-control-allow-origin') or '') in ('*', 'https://mind.aurzane.com')
+        except Exception: CORS_OK = False
+    return CORS_OK
 for r_ in pruebas.get('resultados', []):
     if r_['ok'] is False:
-        aviso('mal' if r_['tipo'] in ('test', 'portal', 'calculadora') else 'medio', f'Prueba fallida en {r_["url"]}: {r_["detalle"]}', 'prueba_fallida', r_['url'])
+        errs = [e_ for e_ in r_.get('errores', []) if not re.search(r'Access to font at .*CORS', e_)]
+        solo_fuentes = 'blocked by CORS' in r_['detalle'] and not errs and ' · ' in r_['detalle'] and not re.search(r'No aparecen|no salió|vacío|mal \(|devuelve|No se pudo', r_['detalle'])
+        if solo_fuentes and fuentes_con_cabecera(): continue   # la función va bien; solo eran fuentes de una copia vieja ya corregida
+        lc = leccion_js(r_['detalle'])
+        aviso('mal' if r_['tipo'] in ('test', 'portal', 'calculadora') else 'medio', f'Prueba fallida en {r_["url"]}: {r_["detalle"]}' + (f' (Causa probable: {lc["causa"]} Arreglo: {lc["arreglo"]})' if lc else ''), 'prueba_fallida', r_['url'])
 servicios = []
 for nombre, u, cab in (('AURZANE ID (inicio de sesión)', 'https://chtfpqwrrarfdjcivlad.supabase.co/auth/v1/health', {'apikey': 'sb_publishable___1v6VjDew0l8uGfMyb9Nw_YyCLTPPw'}),
                        ('Base de datos (Supabase REST)', 'https://chtfpqwrrarfdjcivlad.supabase.co/rest/v1/', {'apikey': 'sb_publishable___1v6VjDew0l8uGfMyb9Nw_YyCLTPPw'})):
@@ -1451,7 +1472,7 @@ def aprender_desconocido(p, f_, probadas=()):
                'Apareció este problema: «' + p['texto'] + '». Contexto:\n' + contexto_de(p)[:3000] +
                '\n\nAcciones que puedes ordenar (solo estas): ' + ', '.join(f'{x} = {NOMBRES.get(x, x)}' for x in opciones) +
                ('\n\nLo que has aprendido antes:\n' + previos if previos else '') +
-               ('\n\nLecciones de errores de JavaScript ya resueltos:\n' + '\n'.join(f'- {c_} Arreglo: {a_}' for _, c_, a_ in LECCIONES_JS) if p.get('tipo') == 'js_error' else '') +
+               ('\n\nLecciones de errores de JavaScript ya resueltos:\n' + '\n'.join(f'- {c_} Arreglo: {a_}' for _, c_, a_ in LECCIONES_JS) if p.get('tipo') in ('js_error', 'prueba_fallida') else '') +
                '\n\nResponde SOLO con JSON: {"receta": "<una de las acciones>", "motivo": "<una frase en español>", "explicacion": "<causa probable y cómo arreglarlo a mano si la acción no basta, máximo 6 líneas, sin rayas largas>"}', 700)
     m = re.search(r'\{.*\}', r, re.S)
     try: j = json.loads(m.group(0)) if m else {}
