@@ -224,7 +224,7 @@
 (function (d) {
   if (!/^(mind|live)\.aurzane\.com$/.test(location.hostname) || d.querySelector('script[data-azasis]')) return;
   var s = d.createElement('script');
-  s.src = 'https://aurzane.com/aurzane-asistente.js?v=hd090e4cd'; s.defer = true; s.setAttribute('data-azasis', '1');
+  s.src = 'https://aurzane.com/aurzane-asistente.js?v=hf1ab529d'; s.defer = true; s.setAttribute('data-azasis', '1');
   (d.head || d.documentElement).appendChild(s);
 })(document);
 
