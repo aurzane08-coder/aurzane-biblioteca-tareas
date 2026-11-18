@@ -15,7 +15,7 @@ def duracion(p):
     palabras = len(' '.join(str(p.get(k) or '') for k in ('titulo', 'texto', 'autor') if k != 'texto' or p.get('tipo') != 'frase').split())
     if p.get('tipo') == 'frase': return max(12, min(22, round(palabras / 2.3) + 7))
     return max(15, min(30, round(palabras / 2.6) + 8))
-V = 'm4-'  # versión de los vídeos: m4 = como m3 pero sin «Síguenos» al final, para que se compartan; m3 = entrada por pasos, zoom lento del fondo y «Síguenos» al final (m2: con música y solo la marca arriba)
+V = 'm5-'  # versión de los vídeos: m5 = sin «(vía Wikiquote)» en el autor; m4 = como m3 pero sin «Síguenos» al final, para que se compartan; m3 = entrada por pasos, zoom lento del fondo y «Síguenos» al final (m2: con música y solo la marca arriba)
 # Música de fondo: Kevin MacLeod (incompetech.com), licencia CC BY 4.0. Uso comercial y monetización permitidos citando el tema,
 # por eso cada publicación de vídeo lleva el crédito (mk.credito_musica). Calma para frases, más alegre para tests y calculadoras.
 MUSICA_CALMA = ['Meditation Impromptu 01', 'Meditation Impromptu 02', 'Meditation Impromptu 03', 'Peaceful Desolation', 'Healing', 'Dreamer',
@@ -165,7 +165,8 @@ def pixabay(q, semilla):
 
 def capa_de(p):
     if p['tipo'] == 'frase':
-        return dict(titulo=p['titulo'], cita=True, autor='' if p.get('autor') == 'AURZANE' else p.get('autor'))
+        au = re.sub(r'\s*\(vía [^)]*\)', '', p.get('autor') or '')   # «Mark Twain (vía Wikiquote)» → «Mark Twain»
+        return dict(titulo=p['titulo'], cita=True, autor='' if au == 'AURZANE' else au)
     if p['tipo'] == 'curiosidad':
         return dict(kicker='¿Sabías que…?', titulo=p['titulo'], sub=mk.recorta(p.get('dato') or p['texto'], 150))
     kick = {'test': 'Test gratis', 'calculadora': 'Calculadora gratis', 'curso': 'Curso gratis'}.get(p['tipo'], 'Gratis')

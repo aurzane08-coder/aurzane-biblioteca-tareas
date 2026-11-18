@@ -25,6 +25,16 @@ REDES_V6 = ['youtube']
 TIKTOK_FRANJAS = {'7': (18, 0), '9': (22, 0)}
 # YouTube (17/11/2026): con Clips-All parado sobra cuota de la API, así que YouTube también sube un vídeo distinto en cada franja de TikTok
 # (5 al día: 5 x 1.600 = 8.000 de las 10.000 unidades diarias). Si se reactiva clips.yml, quitar 'youtube' de aquí.
+def apto_video(p, fr, r):
+    """Qué puede salir en un vídeo (18/11/2026). Nunca frases sacadas de libros de la biblioteca (origen «citas»): fuera de su
+    contexto no se entienden y algunas son de artículos académicos con la referencia como autor. En TikTok solo frases célebres
+    con su autor (aurzane.com/frases, de Proverbia y similares) o las de AURZANE: frase + vídeo bonito + música."""
+    if p.get('origen') == 'citas': return False
+    if r in SOLO_FRASES and p['tipo'] not in TIPOS_SOLO: return False
+    if r == 'tiktok' and fr in TIKTOK_FRANJAS and p['tipo'] != 'frase': return False
+    return True
+
+
 def redes_de(fr): return ['tiktok', 'youtube'] if fr in TIKTOK_FRANJAS else REDES_V6 if fr == '6' else REDES_VIDEO
 SITIO_IMG = 'https://aurzane.com/marketing/'
 IR = 'https://aurzane.com/ir/'
@@ -246,7 +256,7 @@ def planificar(dias=14):
             ya = datetime.datetime.now(datetime.timezone.utc)
             if fr in dia and d == 0 and fr in HORAS and (ya.hour, ya.minute) >= HORAS[fr]: continue   # franja de hoy ya pasada: no se toca
             if fr == '2' and fr in dia and grupo_tarde(f) == 'promo' and d > 0 and any(cat.get(i, {}).get('tipo') != 'promo' for i in dia[fr].values()): del dia[fr]
-            if fr in dia and all(i in cat for i in dia[fr].values()) and not any(r in SOLO_FRASES and fr in VID and cat[i]['tipo'] not in TIPOS_SOLO for r, i in dia[fr].items()) and set(dia[fr]) >= set(redes_de(fr) if fr in VID else [x for x in REDES if not (x == 'pinterest' and fr == '1')]): continue
+            if fr in dia and all(i in cat for i in dia[fr].values()) and not any(fr in VID and not apto_video(cat[i], fr, r) for r, i in dia[fr].items()) and set(dia[fr]) >= set(redes_de(fr) if fr in VID else [x for x in REDES if not (x == 'pinterest' and fr == '1')]): continue
             grupo = 'herr' if fr == '1' else 'frase' if fr == '3' else 'video' if fr in ('4', '6') else 'video5' if fr == '5' else ('tk' + fr) if fr in TIKTOK_FRANJAS else grupo_tarde(f)
             usados = set(); dia[fr] = {}
             for r0 in (redes_de(fr) if fr in VID else REDES):
@@ -259,14 +269,16 @@ def planificar(dias=14):
                     if r0 == 'youtube': otros |= {x for k in ('4', '5', '6') for x in dia.get(k, {}).values()}
                     par = datetime.date.fromisoformat(f).toordinal() % 2
                     tipos = {'tk7': ('curiosidad',), 'tk8': ('frase',) if par else ('curiosidad',), 'tk9': ('frase',)}[grupo]
+                    if r0 == 'tiktok': tipos = ('frase',)   # TikTok: siempre frase célebre + vídeo + música
                     cand = [p for p in cat.values() if p['tipo'] in tipos and p['id'] not in otros and p['id'] not in usados]
+                    if r0 == 'tiktok': cand = [p for p in cand if p.get('origen') == 'frases_web'] or cand
                     if not cand: cand = [p for p in cat.values() if p['tipo'] in TIPOS_SOLO and p['id'] not in otros and p['id'] not in usados]
                 elif grupo == 'video5':
                     cand = [p for p in cat.values() if p['tipo'] in ('frase', 'curiosidad') and p['id'] not in usados and p['id'] not in dia.get('4', {}).values()]
                 else:
                     cand = [p for p in cat.values() if GRUPO.get(p['tipo']) == grupo and p['id'] not in usados]
-                if fr in VID and r0 in SOLO_FRASES:
-                    cand = [p for p in cand if p['tipo'] in TIPOS_SOLO] or [p for p in cat.values() if p['tipo'] in TIPOS_SOLO and p['id'] not in usados]
+                if fr in VID:
+                    cand = [p for p in cand if apto_video(p, fr, r0)] or [p for p in cat.values() if apto_video(p, fr, r0) and p['id'] not in usados]
                 if r in ('instagram', 'pinterest'): cand = [p for p in cand if p['tipo'] != 'notas' or True]
                 if not cand: cand = [p for p in cat.values() if p['id'] not in usados]
                 # nuevos primero (alta en los últimos 14 días y nunca publicados en esa red), luego el que lleva más sin salir
