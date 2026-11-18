@@ -1,3 +1,4 @@
+# Se ejecuta cada hora hasta tener las 62 páginas de la API; después solo una vez al mes.
 """Datos oficiales de las universidades de Estados Unidos: College Scorecard (Departamento de Educación de EE. UU.).
 Fuente: API oficial del College Scorecard (api.data.gov), los mismos datos públicos que https://collegescorecard.ed.gov/data/.
 Une cada institución con su ficha de AURZANE por el dominio de su web oficial y, si no, por nombre + ciudad.
