@@ -6,7 +6,7 @@
 3. Cada sección tiene su dirección (admin.html#clientes…): el botón atrás funciona y al recargar sigues donde estabas.
 4. Buscador de secciones con Ctrl K o «/».
 Copia previa en aurzane.com/eliminar/admin-mejoras-FECHA/."""
-import os, sys, shutil, datetime
+import os, re, sys, shutil, datetime
 base = os.path.expanduser('~/' + (sys.argv[1] if len(sys.argv) > 1 else 'www')); hoy = datetime.date.today().strftime('%Y%m%d')
 f = os.path.join(base, 'aurzane.com', 'public_html', 'admin.html')
 s = open(f, encoding='utf-8').read(); t = s
@@ -35,6 +35,8 @@ INICIO = '''      <!-- inicio (admin_mejoras) -->
           <section class="in-caja"><h4>Redes: publicaciones en 24 h</h4><div id="inRedes"></div></section>
           <section class="in-caja"><h4>Visitas desde redes, 30 días</h4><div id="inClicsRedes"></div></section>
           <section class="in-caja"><h4>OVP: del registro al resultado</h4><div id="inEmbudo"></div></section>
+          <section class="in-caja"><h4>Clics a tiendas por tienda, 30 días</h4><div id="inTiendas"></div></section>
+          <section class="in-caja"><h4>Seguidores por red</h4><div id="inSeg"></div></section>
         </div>
         <section class="in-sec"><h3>Accesos rápidos</h3><div class="in-accesos">
           <a href="https://aurzane.com/" target="_blank" rel="noopener">aurzane.com</a><a href="https://mind.aurzane.com/" target="_blank" rel="noopener">MIND</a><a href="https://nexus.aurzane.com/" target="_blank" rel="noopener">NEXUS</a><a href="https://live.aurzane.com/" target="_blank" rel="noopener">LIVE</a><a href="https://learn.aurzane.com/" target="_blank" rel="noopener">LEARN</a><a href="https://build.aurzane.com/" target="_blank" rel="noopener">BUILD</a><a href="https://ovp.aurzane.com/" target="_blank" rel="noopener">OVP</a>
@@ -43,6 +45,10 @@ INICIO = '''      <!-- inicio (admin_mejoras) -->
         <h3 class="in-ovp">OVP en cifras</h3>
       </div>
 '''
+# versión nueva: se quita la anterior (bloques entre marcadores) y se vuelve a poner
+t = re.sub(r'      <!-- inicio \(admin_mejoras\) -->.*?<h3 class="in-ovp">[^<]*</h3>\n      </div>\n', '', t, flags=re.S)
+t = re.sub(r'<script>\n/\* Panel más funcional \(admin_mejoras.*?</script>\n', '', t, flags=re.S)
+t = t.replace('<div class="page-head"><h2>Inicio</h2><p>Lo que tienes que hacer hoy, cómo va AURZANE y tus accesos. Se actualiza solo cada minuto.</p></div>\n', '<div class="page-head"><h2>Resumen</h2><p>El estado general de tu proceso OVP, de un vistazo.</p></div>')
 viejo_head = '<div class="page-head"><h2>Resumen</h2><p>El estado general de tu proceso OVP, de un vistazo.</p></div>'
 if 'id="inHoy"' not in t and viejo_head in t:
     t = t.replace(viejo_head, '<div class="page-head"><h2>Inicio</h2><p>Lo que tienes que hacer hoy, cómo va AURZANE y tus accesos. Se actualiza solo cada minuto.</p></div>\n' + INICIO, 1)
@@ -57,7 +63,7 @@ SCRIPT = r'''<script>
   st.textContent = '.nav-items{overflow-y:auto;min-height:0;scrollbar-width:thin}.main{max-width:1280px}'
     + '#page-resumen .panel:has(#planBreakdown){display:none}'
     + '#inHoy{display:grid;gap:22px;margin-bottom:26px}.in-sec h3,.in-ovp{font-family:"Bodoni Moda",serif;font-size:1.05rem;margin:0 0 12px;font-weight:600}.in-sec h3 small{font-family:inherit;font-size:.74rem;color:var(--silver-dim);font-weight:400;margin-left:8px}.in-ovp{margin:6px 0 -10px}'
-    + '.in-tareas{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}'
+    + '.in-tareas{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}'
     + '.in-t{display:flex;gap:12px;align-items:center;padding:14px 16px;border:1px solid var(--line);border-radius:14px;background:var(--navy-2);cursor:pointer;text-align:left;color:inherit;font:inherit;width:100%}.in-t:hover,.in-t:focus-visible{border-color:var(--line-strong)}'
     + '.in-t b{font-family:"Bodoni Moda",serif;font-size:1.7rem;min-width:36px;color:var(--gold-light)}.in-t span{font-size:.86rem;line-height:1.35}.in-t small{display:block;color:var(--silver-dim);font-size:.74rem}.in-t.ok b{color:var(--ok)}.in-vacio{color:var(--silver-dim);font-size:.88rem}'
     + '.in-kpis{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden}.in-k{background:var(--navy-2);padding:16px 18px}.in-k b{display:block;font-family:"Bodoni Moda",serif;font-size:1.5rem}.in-k span{font-size:.76rem;color:var(--silver-dim)}.in-k i{font-style:normal;font-size:.72rem;margin-left:6px}.in-k i.sube{color:var(--ok)}.in-k i.baja{color:#e08a8a}'
@@ -148,6 +154,7 @@ SCRIPT = r'''<script>
   async function datos(){
     var tk = await token(); if(!tk) return;
     try{ INF = ((await (await fetch('/ai/api.php', { cache:'no-store', headers:{ Authorization:'Bearer ' + tk } })).json()).informe) || INF; }catch(e){}
+    try{ var q = await window.__aurzaneSb.from('reportes').select('id', { count:'exact', head:true }).eq('estado', 'nuevo'); if(q.count != null){ var rb = $('repBadge'); if(rb){ rb.textContent = q.count || ''; rb.style.display = q.count ? 'inline-block' : 'none'; } } }catch(e){}
     try{ var r = await (await fetch('https://aurzane.com/panel/datos.php', { method:'POST', headers:{ 'Content-Type':'application/json' }, body: JSON.stringify({ token: tk }) })).json(); if(!r.error) PAN = r; }catch(e){}
     pintar();
   }
@@ -174,8 +181,8 @@ SCRIPT = r'''<script>
     var k = function(v, tt, extra, sp){ return '<div class="in-k"><b>' + v + '</b><span>' + tt + '</span>' + (extra ? '<span style="display:block;margin-top:4px">' + extra + '</span>' : '') + (sp || '') + '</div>'; };
     $('inKpis').innerHTML = k(N(u7), 'Visitantes, últimos 7 días', pct(u7, u7p), spark(dias.map(function(d){ return d.visitantes; }), ORO))
       + k(N(suma(dias, 'paginas')), 'Páginas vistas, 30 días', '', spark(dias.map(function(d){ return d.paginas; }), PLATA))
-      + k(N(S.clics), 'Clics desde Google, 4 semanas', N(S.impresiones) + ' veces en resultados')
-      + k(N((P.clics_compra || {}).total_30_dias), 'Clics a tiendas, 30 días', 'Afiliados: Amazon, Awin…')
+      + k(N(S.clics), 'Clics desde Google, 4 sem.', N(S.impresiones) + ' apariciones')
+      + k(N((P.clics_compra || {}).total_30_dias), 'Clics a tiendas, 30 días', '')
       + k(N((P.clics_redes || {}).total_30_dias), 'Visitas desde redes, 30 días', '')
       + k(N(seg), 'Seguidores en redes', segD ? '<i class="sube">▲ +' + segD + ' en 30 días</i>' : '');
     $('inFecha').textContent = P.generado ? '· datos del ' + new Date(P.generado).toLocaleDateString('es-ES') : '';
@@ -186,6 +193,8 @@ SCRIPT = r'''<script>
     $('inRedes').innerHTML = Object.keys(M).length ? Object.keys(M).map(function(r){ var x = M[r], tot = (x.ok || 0) + (x.fallos || 0) || 1;
       return '<div class="in-bar"><span>' + E(r) + '</span><span class="t"><i style="width:' + (x.ok / tot * 100) + '%;background:' + OK + '"></i><i style="width:' + (x.fallos / tot * 100) + '%;background:' + MAL + '"></i></span><b>' + x.ok + (x.fallos ? ' · ' + x.fallos + ' ✕' : '') + '</b></div>'; }).join('') + '<div class="in-ley" style="margin-top:10px"><span><i style="background:' + OK + '"></i>Publicadas</span><span><i style="background:' + MAL + '"></i>Fallidas</span></div>' : '<p class="in-vacio">Sin publicaciones en 24 h.</p>';
     $('inClicsRedes').innerHTML = barras((P.clics_redes || {}).por_red, ORO);
+    $('inTiendas').innerHTML = barras((P.clics_compra || {}).por_tienda, OK);
+    $('inSeg').innerHTML = barras(segR.map(function(r){ return [r[0], r[1] == null ? 0 : r[1], null, r[2]]; }), PLATA, function(f){ return N(f[1]) + (f[3] ? ' (+' + f[3] + ')' : ''); });
     var ov = kpiOVP(); $('inEmbudo').innerHTML = ov.length ? barras(ov, PLATA) : '<p class="in-vacio">Sin datos de OVP.</p>';
   }
   document.addEventListener('click', function(ev){ var b = ev.target.closest('[data-in]'); if(!b) return; abrir(b.dataset.in);
