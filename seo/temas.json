@@ -861,5 +861,70 @@
   "pais_nombre": "Ecuador",
   "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al número de emergencias del país. ",
   "fecha": "2026-11-17"
+ },
+ {
+  "consulta": "carreras de universidad",
+  "titulo": "Cómo elegir una carrera universitaria: Guía de orientación vocacional",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "fecha": "2026-11-18"
+ },
+ {
+  "consulta": "calculadora de edad",
+  "titulo": "Calculadora de edad cronológica y desarrollo vital en psicología",
+  "mundo": "mind",
+  "test": "",
+  "fecha": "2026-11-18"
+ },
+ {
+  "consulta": "institutos en quito",
+  "titulo": "Guía de institutos y universidades en Quito para tu futuro",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "fecha": "2026-11-18"
+ },
+ {
+  "consulta": "carreras tecnicas",
+  "titulo": "Carreras técnicas en Estados Unidos: opciones con alta demanda laboral",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "oferta": "universidades",
+  "pais": "USA",
+  "pais_nombre": "Estados Unidos (hispanohablantes)",
+  "crisis": "Si el tema toca malestar intenso, añade que se puede llamar o escribir al 988 (Estados Unidos, también en español). ",
+  "fecha": "2026-11-18"
+ },
+ {
+  "consulta": "estres",
+  "titulo": "Cómo manejar el estrés académico y laboral en Estados Unidos",
+  "mundo": "mind",
+  "test": "estres",
+  "oferta": "libros",
+  "pais": "USA",
+  "pais_nombre": "Estados Unidos (hispanohablantes)",
+  "crisis": "Si el tema toca malestar intenso, añade que se puede llamar o escribir al 988 (Estados Unidos, también en español). ",
+  "fecha": "2026-11-18"
+ },
+ {
+  "consulta": "orientacion vocacional argentina",
+  "titulo": "Test de orientación vocacional en Argentina: ¿cómo elegir carrera?",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "oferta": "universidades",
+  "pais": "ARG",
+  "pais_nombre": "Argentina",
+  "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al 135 (Argentina, Centro de Asistencia al Suicida). ",
+  "fecha": "2026-11-18"
+ },
+ {
+  "consulta": "ansiedad examenes finales facultad",
+  "titulo": "Cómo superar la ansiedad por los exámenes en la facultad en Argentina",
+  "mundo": "learn",
+  "test": "ansiedad",
+  "oferta": "libros",
+  "pais": "ARG",
+  "pais_nombre": "Argentina",
+  "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al 135 (Argentina, Centro de Asistencia al Suicida). ",
+  "fecha": "2026-11-18"
  }
 ]
