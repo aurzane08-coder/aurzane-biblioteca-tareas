@@ -46,7 +46,7 @@ SCRIPT = r'''<style id="azIngresos">
 .ig-check{display:flex;gap:10px;align-items:flex-start;padding:8px 0;border-bottom:1px solid var(--line);font-size:.86rem;cursor:pointer}
 .ig-check:last-child{border-bottom:0}.ig-check input{margin-top:3px;accent-color:var(--gold)}.ig-check small{display:block;color:var(--silver-dim);font-size:.76rem}
 .ig-check.hecho span{text-decoration:line-through;opacity:.55}
-#igTabla td{vertical-align:top;font-size:.84rem}#igTabla td small{display:block;color:var(--silver-dim);font-size:.76rem;margin-top:2px}
+#igTabla td{vertical-align:top;font-size:.84rem}#igTabla .btn-mini{white-space:nowrap;display:inline-block}#igTabla td small{display:block;color:var(--silver-dim);font-size:.76rem;margin-top:2px}
 .ig-nota{color:var(--silver-dim);font-size:.78rem;margin:12px 0 0}
 .ig-vacio{color:var(--silver-dim);font-size:.86rem}
 </style>
