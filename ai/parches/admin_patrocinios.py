@@ -3,7 +3,7 @@ Adrián lo controla todo desde admin.html: aquí ve las solicitudes de universid
 copia los enlaces de pago de Stripe y guarda la clave de firma de Stripe (se guarda fuera de la web y nunca se vuelve a mostrar).
 Habla con aurzane.com/patrocinio.php?admin=1, que comprueba la sesión con es_admin() de Supabase.
 Se aplica en el servidor sobre el admin.html vivo y es repetible (marcadores); corre al cambiar este archivo, tras cada despliegue y cada día. Copia previa en aurzane.com/eliminar/admin-patrocinios-FECHA/."""
-import os, sys, shutil, datetime
+import os, re, sys, shutil, datetime
 base = os.path.expanduser('~/' + (sys.argv[1] if len(sys.argv) > 1 else 'www')); hoy = datetime.date.today().strftime('%Y%m%d')
 f = os.path.join(base, 'aurzane.com', 'public_html', 'admin.html')
 s = open(f, encoding='utf-8').read(); t = s
@@ -50,7 +50,7 @@ SCRIPT = r'''<script>
       : '<div class="panel-head"><h3>Conectar los pagos de Stripe</h3><span class="status-pill pending">Falta un paso</span></div>'
         + '<p style="color:var(--silver);font-size:.88rem">Los enlaces de pago ya están creados. Falta guardar la clave que firma los avisos de Stripe para que cada pago alargue el destacado solo:</p>'
         + '<ol style="color:var(--silver);font-size:.88rem;line-height:1.7"><li>En Stripe abre <b>Desarrolladores, Webhooks</b> y entra en <b>AURZANE patrocinios NEXUS</b>.</li><li>En <b>Secreto de firma</b> pulsa <b>Mostrar</b> y cópialo (empieza por whsec_).</li><li>Pégalo aquí y guarda. Se guarda en el servidor, fuera de la web, y no se vuelve a mostrar.</li></ol>'
-        + '<div class="form-grid"><div class="field full"><input id="ptClave" type="password" autocomplete="off" placeholder="whsec_…"></div><div class="field full"><button class="btn-gold" id="ptGuardarClave">Guardar clave de Stripe</button></div></div>';
+        + '<div class="form-grid"><div class="field full"><input id="ptClave" type="text" name="stripe-whsec" autocomplete="off" data-lpignore="true" spellcheck="false" style="-webkit-text-security:disc" placeholder="whsec_…"></div><div class="field full"><button class="btn-gold" id="ptGuardarClave">Guardar clave de Stripe</button></div></div>';
     var g = $('ptGuardarClave'); if(g) g.onclick = async function(){ try{ await api({ accion:'clave_stripe', clave: $('ptClave').value.trim() }); $('ptClave').value = ''; toast('Pagos de Stripe conectados.'); cargar(); } catch(e){ toast(e.message, 'error'); } };
     $('ptTabla').innerHTML = l.length ? l.map(function(s){
       var e = EST[s.estado] || [s.estado, 'pending'], acc = [];
@@ -104,7 +104,8 @@ if 'data-page="patrocinios"' not in t:
 if 'id="page-patrocinios"' not in t and '    <!-- USUARIOS -->' in t:
     t = t.replace('    <!-- USUARIOS -->', PAGE + '    <!-- USUARIOS -->', 1)
 t = t.replace("['Contenido', ['universidades','contenido']]", "['Contenido', ['universidades','patrocinios','contenido']]")
-if 'admin_patrocinios, 18/11/2026' not in t and '</body>' in t:
+t = re.sub(r'<script>\n/\* Patrocinios \(admin_patrocinios.*?</script>\n', '', t, flags=re.S)
+if '</body>' in t:
     i = t.rindex('</body>'); t = t[:i] + SCRIPT + t[i:]
 if t != s:
     c = os.path.join(base, 'aurzane.com', 'eliminar', 'admin-patrocinios-' + hoy); os.makedirs(c, exist_ok=True)
