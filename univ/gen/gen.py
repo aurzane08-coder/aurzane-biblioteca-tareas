@@ -899,7 +899,9 @@ def notas_de_corte():
         resp = f'En el curso {NC_CURSO}, la nota de corte de {nombre} va de {fmt_nota(mn["nota"])} ({mn["universidad"]}) a {fmt_nota(mx["nota"])} ({mx["universidad"]}), sobre 14, en la convocatoria ordinaria y por el cupo general.'
         canon = f'{SITIO}{BASE}notas-de-corte/{k}/'
         jl = {'@context': 'https://schema.org', '@graph': [{'@type': 'FAQPage', 'mainEntity': [{'@type': 'Question', 'name': f'¿Cuál es la nota de corte de {nombre}?', 'acceptedAnswer': {'@type': 'Answer', 'text': resp}}]},
-              {'@type': 'Dataset', 'name': tit, 'description': desc, 'url': canon, 'creator': {'@type': 'Organization', 'name': 'Ministerio de Ciencia, Innovación y Universidades'}, 'temporalCoverage': NC_CURSO, 'isAccessibleForFree': True}]}
+              {'@type': 'Dataset', 'name': tit, 'description': desc, 'url': canon, 'creator': {'@type': 'Organization', 'name': 'Ministerio de Ciencia, Innovación y Universidades'}, 'temporalCoverage': NC_CURSO, 'isAccessibleForFree': True,
+               # datos públicos de la Administración General del Estado: reutilización con atribución (CC BY 4.0, licencia por defecto de datos.gob.es)
+               'license': 'https://creativecommons.org/licenses/by/4.0/', 'creditText': 'QEDU, Ministerio de Ciencia, Innovación y Universidades'}]}
         h = cabeza(tit, desc, canon, jsonld=jl) + topbar('espana') + f"""
 <main><section class="hero" style="padding-bottom:40px"><div class="wrap">{migas(("Universidades", BASE), ("España", BASE + "espana/"), ("Notas de corte", BASE + "notas-de-corte/"), (nombre, ""))}
 <h1>Nota de corte de <em>{e(nombre)}</em></h1><p class="lead">{e(resp)}</p>
