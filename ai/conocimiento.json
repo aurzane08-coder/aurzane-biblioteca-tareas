@@ -174,7 +174,7 @@
   "receta": "relanzar_enlaces",
   "motivo": "Revisar nuevamente los enlaces de las portadas para descartar fallos temporales de conexión o bloqueo del proveedor.",
   "explicacion": "Las URLs de las imágenes de ambos libros pueden haber sufrido un fallo puntual de respuesta o bloqueo temporal por parte del servidor de origen. Si tras la revisión continúan rotas, deberás editar a mano el archivo PHP o JSON de la tienda para actualizar los enlaces directos de las portadas o subirlas localmente al servidor.",
-  "ok": 0,
+  "ok": 1,
   "fallo": 0,
   "fecha": "2026-11-18",
   "ejemplo": "Tienda: portada rota: El hombre más rico de Babilonia; portada rota: Invisible"
