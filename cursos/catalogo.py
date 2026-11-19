@@ -243,7 +243,9 @@ h2{font:500 1.7rem/1.2 'Bodoni Moda',serif;margin:1.6em 0 .5em}
 .lead{color:var(--suave);max-width:62ch;font-size:1.08rem}
 .btn{display:inline-block;padding:.75em 1.3em;border-radius:999px;background:var(--azul);color:#f4ead0;text-decoration:none;font-weight:600;border:0;cursor:pointer;font:inherit;font-weight:600}
 :root[data-theme="dark"] .btn{background:var(--oro-cl);color:#141a33}@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .btn{background:var(--oro-cl);color:#141a33}}
-.btn.sec{background:transparent;color:inherit;border:1px solid var(--linea)}
+.btn.sec,:root .btn.sec{background:transparent;color:inherit;border:1px solid var(--linea)}
+:root[data-theme="dark"] .btn.sec{background:transparent;color:inherit}@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .btn.sec{background:transparent;color:inherit}}
+.ctas{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}@media (max-width:420px){.ctas .btn{flex:1 1 0;text-align:center;padding:.75em .9em;white-space:nowrap}}
 .chip{display:inline-flex;align-items:center;gap:.35em;padding:.3em .75em;border-radius:999px;background:var(--chip);font-size:.85rem;color:var(--tinta)}
 .chip.oro{background:var(--oro);color:#fff}
 footer{margin-top:64px;padding:28px 0;border-top:1px solid var(--linea);color:var(--suave);font-size:.9rem}"""
@@ -294,7 +296,7 @@ for c in cursos:
           f'<div class="datos"><span class="chip">{horas(c.get("horas_estimadas"))}</span><span class="chip">Nivel {E(NIVEL(c.get("nivel")))}</span>'
           f'<span class="chip">{len(c["modulos"])} temas · {c["n_lec"]} lecciones</span><span class="chip">{c["n_preg"]} preguntas</span><span class="chip">Gratis</span>'
           + ('<span class="chip oro">Con certificado</span>' if c.get('certificable') else '') + '</div>'
-          f'<a class="btn" href="https://learn.aurzane.com/cursos.html?c={c["slug"]}">Empezar el curso</a> <a class="btn sec" href="#temario">Ver el temario</a></div>'
+          f'<div class="ctas"><a class="btn" href="https://learn.aurzane.com/cursos.html?c={c["slug"]}">Empezar el curso</a><a class="btn sec" href="#temario">Ver el temario</a></div></div>'
           f'<img src="{portada(c)}" alt="{E((c["meta"].get("portada_credito") or {}).get("alt") or "")}" width="1200" height="675"></div>'
           f'<div class="caja"><h2 style="margin-top:0">Sobre este curso</h2><p>{E(c.get("descripcion") or "")}</p>'
           + (f'<p><strong>A quién va dirigido:</strong> {E(c["meta"].get("publico"))}</p>' if c['meta'].get('publico') else '') + '</div>'

@@ -1067,11 +1067,14 @@ nov = nov[:120]; guardar('novedades.json', nov); pagina_novedades()
 
 # ---------- Páginas públicas: índice de recientes y una ficha con lector para cada obra ----------
 E = html.escape
+# 19/11/2026: títulos con cursivas de la fuente (<i>Verschickungskinder</i>): se muestran como cursiva, no como etiqueta escrita
+T = lambda t: re.sub(r'&lt;(/?)(i|em|b|strong|sup|sub)&gt;', r'<\1\2>', E(t or ''))
+SIN_ETQ = lambda t: re.sub(r'</?(i|em|b|strong|sup|sub)>', '', t or '')
 LIC_TXT = {'cc-by': 'CC BY', 'cc-by-sa': 'CC BY-SA', 'cc-by-nd': 'CC BY-ND', 'cc-by-nc': 'CC BY-NC', 'cc-by-nc-sa': 'CC BY-NC-SA', 'cc-by-nc-nd': 'CC BY-NC-ND', 'cc0': 'CC0'}
 LIC_URL = lambda l: 'https://creativecommons.org/publicdomain/zero/1.0/deed.es' if l == 'cc0' else f'https://creativecommons.org/licenses/{l[3:]}/4.0/deed.es'
 CSS = ('body{margin:0;background:var(--bg,#F6F0E8);color:var(--text,#2E2620);font:16px/1.6 "Instrument Sans",system-ui,sans-serif}'
        '.h{background:#0F1530;color:#F5F3EE;padding:46px 20px 40px}.w{max-width:960px;margin:0 auto}h1{font:700 clamp(1.7rem,4vw,2.3rem)/1.15 "Bodoni Moda",serif;margin:8px 0}.h a{color:#EACF92}'
-       'main{padding:24px 20px 60px}.rt{display:grid;grid-template-columns:120px minmax(0,1fr);gap:20px;padding:22px 0;border-bottom:1px solid rgba(95,80,68,.16)}'
+       'main{padding:24px 20px 60px}.rt h2,.ficha h1{overflow-wrap:anywhere}.rt{display:grid;grid-template-columns:120px minmax(0,1fr);gap:20px;padding:22px 0;border-bottom:1px solid rgba(95,80,68,.16)}'
        '.rp{width:120px;max-width:100%;box-sizing:border-box;aspect-ratio:2/3;border-radius:6px;overflow:hidden;background:linear-gradient(160deg,#1C2550,#3B2F6B);position:relative;box-shadow:0 8px 22px -10px rgba(0,0,0,.4);display:block}'
        '.rp img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}.rp span{position:absolute;inset:12px;color:#F5F3EE;font:600 .8rem/1.3 "Bodoni Moda",serif}.rp img+span{display:none}'
        '.k{font-size:.8rem;color:#6E6257}.i{margin-left:8px;padding:1px 8px;border-radius:99px;background:rgba(95,80,68,.1)}h2{font:700 1.2rem/1.3 "Bodoni Moda",serif;margin:4px 0}h2 a{color:inherit;text-decoration:none}.a{margin:0;color:#5F5044;font-size:.92rem}'
@@ -1088,7 +1091,7 @@ CAB = lambda titulo, desc, canon, img: ('<!DOCTYPE html><html lang="es"><head><m
     f'<meta property="og:title" content="{E(titulo)}"><meta property="og:description" content="{E(desc[:200])}"><meta property="og:url" content="{canon}">' + (f'<meta property="og:image" content="{E(img)}">' if img else '') +
     '<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@600;700&family=Instrument+Sans:wght@400;600&display=swap" rel="stylesheet">'
     f'<style>{CSS}</style></head><body>')
-def portada_html(p): return (f'<img src="{E(p["portada"])}" alt="Portada de {E(p["titulo"][:80])}" loading="lazy" onerror="this.remove()">' if p.get('portada') else '') + f'<span>{E(p["titulo"][:70])}</span>'
+def portada_html(p): return (f'<img src="{E(p["portada"])}" alt="Portada de {E(SIN_ETQ(p["titulo"])[:80])}" loading="lazy" onerror="this.remove()">' if p.get('portada') else '') + f'<span>{E(SIN_ETQ(p["titulo"])[:70])}</span>'
 def datos(p): return ', '.join(str(v) for v in (p.get('autores'), p.get('anio'), p.get('editorial')) if v)
 def pagina_recientes():
     def tarjeta(p):
@@ -1097,7 +1100,7 @@ def pagina_recientes():
         f = f'/biblioteca/recientes/{p["id"]}/'
         return (f'<article class="rt"><a class="rp" href="{f}">{portada_html(p)}</a><div>'
                 f'<div class="k">{"Libro abierto" if p["tipo"] == "libro" else "Estudio reciente"} · {LIC_TXT.get(p.get("lic"), p.get("lic", "").upper())}' + (f' · {p["paginas"]} páginas' if p.get('paginas') else '') + f'{idi}</div>'
-                f'<h2><a href="{f}">{E(p["titulo"])}</a></h2><p class="a">{E(datos(p))}</p>{res}<p class="b"><a class="lee" href="{f}">Leer en AURZANE</a></p></div></article>')
+                f'<h2><a href="{f}">{T(p["titulo"])}</a></h2><p class="a">{E(datos(p))}</p>{res}<p class="b"><a class="lee" href="{f}">Leer en AURZANE</a></p></div></article>')
     cuerpo = ''.join(tarjeta(p) for p in aprob[:200]) or '<p>Muy pronto verás aquí libros abiertos y estudios recientes seleccionados.</p>'
     open(REC + '/index.html', 'w', encoding='utf-8').write(CAB('Libros abiertos y estudios recientes de psicología | AURZANE', 'Libros de psicología en acceso abierto y estudios recientes con licencia libre, seleccionados por AURZANE. Gratis y legales, para leer en la web.', 'https://aurzane.com/biblioteca/recientes/', aprob[0].get('portada', '') if aprob else '') +
         '<div class="h"><div class="w"><a href="https://aurzane.com/biblioteca/">Biblioteca AURZANE</a><h1>Libros abiertos y estudios recientes</h1>'
@@ -1128,11 +1131,11 @@ def pagina_recientes():
         desc = (p.get('resumen') or f'{p["titulo"]}. {datos(p)}. Gratis y en acceso abierto.')
         ld = json.dumps({'@context': 'https://schema.org', '@type': 'Book' if p['tipo'] == 'libro' else 'ScholarlyArticle', 'name': p['titulo'], 'author': [{'@type': 'Person', 'name': a} for a in (p.get('autores') or '').split(', ') if a and a != 'y otros'],
                          'datePublished': str(p.get('anio') or ''), 'publisher': p.get('editorial') or None, 'license': LIC_URL(lic) if lic.startswith('cc') else None, 'isAccessibleForFree': True, 'image': p.get('portada') or None, 'url': f'https://aurzane.com/biblioteca/recientes/{p["id"]}/'}, ensure_ascii=False)
-        open(d + '/index.html', 'w', encoding='utf-8').write(CAB(f'{p["titulo"][:90]} | Leer gratis en AURZANE', desc, f'https://aurzane.com/biblioteca/recientes/{p["id"]}/', p.get('portada', '')) +
+        open(d + '/index.html', 'w', encoding='utf-8').write(CAB(f'{SIN_ETQ(p["titulo"])[:90]} | Leer gratis en AURZANE', desc, f'https://aurzane.com/biblioteca/recientes/{p["id"]}/', p.get('portada', '')) +
             f'<script type="application/ld+json">{ld}</script>'
             f'<div class="h"><div class="w"><a href="/biblioteca/recientes/">Libros abiertos y estudios recientes</a></div></div><main class="w"><div class="ficha"><div class="rp">{portada_html(p)}</div><div>'
             f'<div class="k">{"Libro abierto" if p["tipo"] == "libro" else "Estudio reciente"} · {E(lt)}' + (f' · {p["paginas"]} páginas' if p.get('paginas') else '') + ('' if p.get('idioma') == 'es' else '<span class="i">En inglés</span>') + '</div>'
-            f'<h1 style="color:inherit">{E(p["titulo"])}</h1><p class="a">{E(datos(p))}</p>' + (f'<p class="r">{E(p["resumen"])}</p>' if p.get('resumen') else '') +
+            f'<h1 style="color:inherit">{T(p["titulo"])}</h1><p class="a">{E(datos(p))}</p>' + (f'<p class="r">{E(p["resumen"])}</p>' if p.get('resumen') else '') +
             f'<div class="cred">Obra de {E(p.get("autores") or "sus autores")}' + (f', publicada por {E(p["editorial"])}' if p.get('editorial') else '') + f' con licencia <a href="{LIC_URL(lic)}" target="_blank" rel="noopener license">{E(lt)}</a>. '
             f'AURZANE la ofrece sin modificaciones. <a href="{E(p["url"])}" target="_blank" rel="noopener">Ficha original</a>.</div>'
             f'<p class="b"><a class="lee" href="#lector">Empezar a leer</a></p></div></div>{lector}</main></body></html>')
