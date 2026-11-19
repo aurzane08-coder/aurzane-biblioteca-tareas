@@ -10,11 +10,11 @@ JS = r'''<script id="azRendimiento">
 /* admin_rendimiento: una lectura repetida en 45 s reutiliza la primera respuesta */
 (function(){
   var orig = window.fetch.bind(window), memo = {};
-  var LECTURA = /\/ai\/api\.php(\?|$)|\/panel\/datos\.php|\/patrocinio\.php\?admin=1/;
+  var LECTURA = /\/ai\/api\.php(\?|$)|\/panel\/datos\.php|\/patrocinio\.php\?admin=1|\/rest\/v1\/rpc\/es_admin/;
   window.fetch = function(u, o){
     try {
       var url = typeof u === 'string' ? u : (u && u.url) || '', m = ((o && o.method) || 'GET').toUpperCase(), b = (o && typeof o.body === 'string') ? o.body : '';
-      var esLectura = LECTURA.test(url) && (m === 'GET' || (m === 'POST' && (/datos\.php/.test(url) || b === '{}' || b === '')));
+      var esLectura = LECTURA.test(url) && (m === 'GET' || (m === 'POST' && (/datos\.php/.test(url) || b === '{}' || b === '' || /es_admin/.test(url))));
       if (!esLectura) return orig(u, o);
       var k = m + ' ' + url.replace(/[?&]r=\d+/, '') + ' ' + (/datos\.php/.test(url) ? '' : b), x = memo[k];
       if (x && Date.now() - x.t < 45000) return x.p.then(function(r){ return r.clone(); });
@@ -35,6 +35,10 @@ t = t.replace(SEL_V, SEL_N)
 FIL_V = "    const { data, error } = await q;\n    const body = document.getElementById('repBody')"
 FIL_N = "    let { data, error } = await q;\n    if(data) data = data.filter(r => !(r.estado === 'resuelto' && r.resuelto && Date.now() - new Date(r.resuelto).getTime() > 864e5));   /* admin_rendimiento: resuelto hace más de 24 h, fuera de la lista */\n    const body = document.getElementById('repBody')"
 t = t.replace(FIL_V, FIL_N)
+# El núcleo del admin refrescaba sus tres módulos uno detrás de otro (1,5 s): ahora a la vez
+CORE_V = "fetch('./core/services/membretes-f7-7-r2.js', { cache: 'reload' }).catch(() => null).then(() => fetch('./core/services/universities-f7-8.js', { cache: 'reload' }).catch(() => null)).then(() => fetch('./core/admin/service-f7-8.js', { cache: 'reload' }).catch(() => null)).then(() => import('./core/index-f7-8.js'))"
+CORE_N = "Promise.all(['./core/services/membretes-f7-7-r2.js', './core/services/universities-f7-8.js', './core/admin/service-f7-8.js'].map(u => fetch(u, { cache: 'reload' }).catch(() => null))).then(() => import('./core/index-f7-8.js'))"
+t = t.replace(CORE_V, CORE_N)
 if t != s:
     c = os.path.join(base, 'aurzane.com', 'eliminar', 'admin-rendimiento-' + hoy); os.makedirs(c, exist_ok=True)
     if not os.path.exists(os.path.join(c, 'admin.html')): shutil.copy2(f, c)
