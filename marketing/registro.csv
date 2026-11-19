@@ -675,3 +675,7 @@
 2026-11-19,1,mastodon,calc-calorias,error,422 {"error":"Validation failed: File content type is invalid  File is invalid"}
 2026-11-19,1,telegram,curso-metod,ok,120
 2026-11-19,1,mastodon,calc-calorias,ok,https://mastodon.social/@auzane/117642648390381402
+2026-11-19,5,instagram,frase-43c7f531,ok,17914310751476062
+2026-11-19,5,facebook,frase-3ca42465,ok,1093086066877985
+2026-11-19,5,youtube,frase-40854f37,ok,https://youtu.be/d1g18ddIgtE
+2026-11-19,5,telegram,frase-4f7eb0c1,ok,121
