@@ -85,9 +85,8 @@ def main():
     U = json.load(gzip.open(os.path.join(D, 'sb_universidades.json.gz')))
     us = [u for u in U if u.get('pais') == 'Estados Unidos']
     completo, hechas, total_p, filas = descargar()
-    if not completo:
-        open(os.path.join(D, 'scorecard.log'), 'w', encoding='utf-8').write(f'College Scorecard: bajadas {hechas} de {total_p} páginas; se sigue en la próxima hora.\n')
-        print(f'Faltan páginas ({hechas} de {total_p}); continúa en la próxima ejecución.'); return
+    # 19/11/2026: aunque falten páginas, se unen ya las que hay (las fichas ganan datos poco a poco)
+    if not completo: print(f'Faltan páginas ({hechas} de {total_p}); se unen las que ya hay y se sigue en la próxima ejecución.')
     url = API
     por_dom, por_nom = {}, {}
     n_total = len(filas)
@@ -114,6 +113,7 @@ def main():
            f'(dominio {como["dominio"]}, nombre y ciudad {como["nombre_ciudad"]}, solo nombre {como["nombre"]}).\n'
            f'Con tasa de admisión {con("admision")}, matrícula {con("matricula_fuera")}, precio neto {con("precio_neto_pub") + con("precio_neto_priv")}, '
            f'SAT {con("sat_mat_25")}, graduación {con("graduacion_6")}, salario a 10 años {con("salario_10")}, becas Pell {con("beca_pell")}.')
+    if not completo: log = f'College Scorecard: bajadas {hechas} de {total_p} páginas; se sigue en la próxima hora.\n' + log
     open(os.path.join(D, 'scorecard.log'), 'w', encoding='utf-8').write(log + '\n'); print(log)
 
 

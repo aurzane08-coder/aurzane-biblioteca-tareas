@@ -341,3 +341,11 @@ table.tnc td.num{color:var(--text-dim);width:32px}
 .estudiar-en .pasos{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 0}
 
 .anun-ok{margin:16px auto;max-width:760px;padding:16px 20px;border-radius:14px;background:#e9f6ee;border:1px solid #9fd3b2;color:#14532d;line-height:1.5}
+/* Admisión, costes y becas de EE. UU. (College Scorecard, 19/11/2026) */
+.sc-datos{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px;margin-top:10px}
+.sc-datos div{display:block;border:1px solid var(--border);border-radius:14px;padding:12px 14px}
+.sc-datos div:last-child{border-bottom:1px solid var(--border)}
+.sc-datos dt{font-size:.82rem}
+.sc-datos dd{text-align:left;margin-top:2px}
+.sc-datos dd b{display:block;font-size:1.15rem}
+.sc-datos dd small{display:block;font-weight:400;color:var(--text-dim);font-size:.78rem;line-height:1.4;margin-top:4px}

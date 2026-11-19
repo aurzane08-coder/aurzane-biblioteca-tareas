@@ -249,6 +249,37 @@ for u in UNIS:
 
 # --- notas de corte oficiales (QEDU) para grados de universidades españolas
 NC = cargar_json('notas_corte.json') or {'filas': []}
+# Datos oficiales de EE. UU. (College Scorecard, Departamento de Educación): admisión, costes, becas y resultados (19/11/2026)
+SC = (cargar_json('scorecard.json') or {}).get('universidades', {})
+_PCT = lambda x: f'{round(x * 100)} %'
+_USD = lambda x: f'{fmt(int(round(x)))} $'
+def bloque_scorecard(u):
+    d = SC.get(u['id'])
+    if not d: return ''
+    neto = d.get('precio_neto_pub') if d.get('control') == 1 else d.get('precio_neto_priv')
+    filas = []
+    if d.get('admision') is not None: filas.append(('Tasa de admisión', _PCT(d['admision']), f'De cada 100 solicitudes, se admiten {round(d["admision"] * 100)}.'))
+    sat = [d.get(k) for k in ('sat_lec_25', 'sat_mat_25', 'sat_lec_75', 'sat_mat_75')]
+    if all(v is not None for v in sat): filas.append(('SAT de los admitidos', f'{fmt(int(sat[0] + sat[1]))} a {fmt(int(sat[2] + sat[3]))}', 'La mitad de los admitidos saca una nota en este rango (lectura y matemáticas, sobre 1.600).'))
+    if d.get('act_25') is not None and d.get('act_75') is not None: filas.append(('ACT de los admitidos', f'{int(d["act_25"])} a {int(d["act_75"])}', 'La mitad de los admitidos está en este rango (sobre 36).'))
+    if d.get('matricula_fuera') is not None:
+        filas.append(('Matrícula al año', _USD(d['matricula_fuera']) + (f' ({_USD(d["matricula_estado"])} para residentes del estado)' if d.get('matricula_estado') and d.get('matricula_estado') != d.get('matricula_fuera') else ''),
+                      'Precio oficial de un curso (matrícula y tasas) para quien no reside en el estado; es el que suelen pagar los estudiantes internacionales.'))
+    if neto is not None: filas.append(('Precio neto medio al año', _USD(neto), 'Lo que paga de media un estudiante de primer curso con ayuda federal, contando alojamiento y comida y restando becas.'))
+    if d.get('beca_pell') is not None: filas.append(('Con beca Pell', _PCT(d['beca_pell']), 'Estudiantes de grado que reciben la beca federal Pell.'))
+    if d.get('permanencia') is not None: filas.append(('Siguen tras el primer año', _PCT(d['permanencia']), 'Estudiantes de primer curso a tiempo completo que continúan al año siguiente.'))
+    if d.get('graduacion_6') is not None: filas.append(('Se gradúan', _PCT(d['graduacion_6']), 'Terminan un grado de 4 años en un máximo de 6.'))
+    if d.get('salario_10') is not None: filas.append(('Salario 10 años después', _USD(d['salario_10']) + ' al año', 'Sueldo mediano de quienes empezaron aquí, diez años después de entrar.'))
+    if d.get('deuda_mediana') is not None: filas.append(('Deuda al terminar', _USD(d['deuda_mediana']), 'Préstamo federal mediano de quienes terminan los estudios.'))
+    if d.get('estudiantes_grado'): filas.append(('Estudiantes de grado', fmt(int(d['estudiantes_grado'])), ''))
+    if not filas: return ''
+    tipo = {1: 'pública', 2: 'privada sin ánimo de lucro', 3: 'privada con ánimo de lucro'}.get(d.get('control'), '')
+    dl = ''.join(f'<div><dt>{e(a)}</dt><dd><b>{e(b)}</b>{f"<small>{e(c)}</small>" if c else ""}</dd></div>' for a, b, c in filas)
+    nota = ('<p class="sub" style="margin-top:12px"><b>Si vienes de fuera de EE. UU.:</b> la beca Pell y los préstamos federales son solo para ciudadanos y residentes. '
+            'Pregunta a la universidad por sus becas para estudiantes internacionales (<i>international student scholarships</i>) y por el coste total del curso (<i>cost of attendance</i>).</p>')
+    return (f'<section class="card" id="admision-costes"><h2>Admisión, costes y becas</h2>' + (f'<p class="sub">Institución {e(tipo)}.</p>' if tipo else '') +
+            f'<dl class="datos sc-datos">{dl}</dl>{nota}<p class="fuente" style="margin:10px 0 0">Fuente: <a href="https://collegescorecard.ed.gov/school/?{int(d["unitid"])}" target="_blank" rel="noopener">College Scorecard</a>, Departamento de Educación de EE. UU. (datos oficiales; se actualizan solos cada mes).</p></section>')
+
 NC_COD = collections.defaultdict(list)  # (cod_univ, cod_titulo) -> filas
 for f in NC['filas']:
     NC_COD[(f.get('cod_univ') or '', f.get('cod_titulo') or '')].append(f)
@@ -842,10 +873,17 @@ def ficha(u, vecinas):
     if rk_u and not es_es:   # lo que diferencia la ficha de la web oficial: su puesto en el ranking mundial (auditoría final, punto 45)
         tit = next((t for t in (f'{u["nombre"]}: n.º {fmt(rk_u[0])} del mundo y {fmt(n)} {palabra}' if n else '', f'{u["nombre"]}: n.º {fmt(rk_u[0])} del mundo, ranking y carreras',
                                  f'{u["nombre"]}: n.º {fmt(rk_u[0])} del mundo') if t and len(t) <= 65), tit)
+    _sc = SC.get(u['id']) if p == 'Estados Unidos' else None
+    if _sc:   # 19/11/2026: título y descripción con lo que busca un estudiante (admisión y coste reales)
+        _neto = _sc.get('precio_neto_pub') if _sc.get('control') == 1 else _sc.get('precio_neto_priv')
+        _ad = f'admisión {round(_sc["admision"] * 100)} %' if _sc.get('admision') is not None else ''
+        tit = next((t for t in (f'{u["nombre"]}: {_ad}, costes y becas' if _ad else '', f'{u["nombre"]}: admisión, costes y becas', f'{u["nombre"]}: costes y becas') if t and len(t) <= 65), tit)
+        desc_meta = f'{u["nombre"]} ({lugar}): ' + ', '.join(x for x in (f'tasa de admisión del {round(_sc["admision"] * 100)} %' if _sc.get('admision') is not None else '', f'precio neto medio de {_USD(_neto)} al año' if _neto else '', f'{fmt(n)} {palabra}' if n else '') if x) + '. Datos oficiales y cómo estudiar allí siendo de fuera.'
     hf, cred = hero_foto(u.get('foto_archivo') or u.get('foto_ciudad'), 'Foto' if u.get('foto_tipo') == 'u' else 'Foto de ' + (u['ciudad'] or p))
     # ficha casi vacía (sin carreras, descripción ni foto): visible para quien llega, pero fuera de Google y del sitemap
     # hasta que tenga contenido propio (auditoría 16/11/2026: 2.395 páginas «descubiertas, sin indexar» por contenido escaso)
-    fina = not n and not u.get('descripcion') and not (u.get('foto_archivo') or u.get('foto_ciudad'))
+    bloque_sc = bloque_scorecard(u) if p == 'Estados Unidos' else ''
+    fina = not n and not u.get('descripcion') and not (u.get('foto_archivo') or u.get('foto_ciudad')) and not bloque_sc
     if fina: FINAS.append(url)
     h = cabeza(tit, desc_meta, url, og_img=commons(u.get('foto_archivo') or u.get('foto_ciudad'), 1280) if (u.get('foto_archivo') or u.get('foto_ciudad')) else None, jsonld=jl, robots='noindex,follow' if fina else None, precarga=commons(u.get('foto_archivo') or u.get('foto_ciudad'), 960) or None) + topbar('espana' if es_es else 'paises') + f'''
 <main><section class="hero ficha-h{' con-foto' if hf else ''}"{hf}><div class="wrap">{migas(("Universidades", BASE), (p, f"{BASE}{ps}/"), *([(u["ciudad"], f"{BASE}{ps}/ciudad/{slug(u['ciudad'])}/")] if u["ciudad"] and vecinas and p != "Estados Unidos" else []), (u["nombre"], ""))}
@@ -853,7 +891,7 @@ def ficha(u, vecinas):
 <ul class="meta">{''.join(meta)}</ul>{f'<p class="lead" style="margin-top:14px">{e(u["descripcion"])}</p>' if u["descripcion"] else ''}
 <div class="acc">{f'<a class="btn btn-luz" href="{e(u["web"])}" target="_blank" rel="noopener nofollow">Web oficial ↗</a>' if u["web"] else ''}<button type="button" class="btn btn-claro" data-guardar data-id="{ps}/{u["slug"]}" data-n="{e(u["nombre"])}" data-url="{BASE}{ps}/{u["slug"]}/" aria-pressed="false">☆ Guardar</button>{'<a class="btn btn-claro" href="#carreras">Ver ' + palabra + '</a>' if n else ''}<a class="btn btn-claro" href="{BASE}comparar/?u={ps}/{u["slug"]}">Comparar con otra</a></div>
 {cred}</div></section>
-<div class="wrap"><div class="ficha"><div>{bloque_c}{bloque_ia(url) or bloque_auto(u, orden_g, grupos)}</div>
+<div class="wrap"><div class="ficha"><div>{bloque_sc}{bloque_c}{bloque_ia(url) or bloque_auto(u, orden_g, grupos)}</div>
 <aside><section class="card"><h2>Datos</h2>{datos_html}</section>{cta}{cerca}</aside></div>
 <p class="fuente">{fuente_pais(p)} </p>
 <div class="reportar"><span>¿Algún dato no es correcto o un enlace no funciona?</span><button type="button" class="btn btn-borde" data-reportar data-tipo="dato" data-ref="{e(u["nombre"] + " (" + p + ")")}">⚑ Reportar un error</button></div>{destaca}</div>
