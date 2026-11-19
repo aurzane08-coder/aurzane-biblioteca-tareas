@@ -1,5 +1,43 @@
 [
  {
+  "id": "cur-48928c7418",
+  "tipo": "curiosidad",
+  "titulo": "¿Por qué estar a solas a veces duele?",
+  "dato": "Estar a solas no es lo mismo que sentirse solo; la diferencia está en por qué decides estar sin compañía.",
+  "resumen": "Estar a solas no es lo mismo que sentirse solo; la diferencia está en por qué decides estar sin compañía. Según la psicología, la soledad buscada impulsa el crecimiento personal cuando nace de tu propia voluntad. En cambio, si se siente impuesta, genera malestar y desconexión con uno mismo.",
+  "fuente": "Integrative psychological & behavioral science",
+  "hashtags": [
+   "psicologia",
+   "aurzane",
+   "saludmental",
+   "desarrollopersonal"
+  ],
+  "fuente_id": "pmc-PMC13731690",
+  "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13731690/",
+  "fecha": "2026-11-19",
+  "auto": true,
+  "verificacion": "Distingue correctamente entre soledad buscada y no deseada, respaldado por la literatura psicológica."
+ },
+ {
+  "id": "cur-9c2850848e",
+  "tipo": "curiosidad",
+  "titulo": "¿Sabías que la depresión y el autismo se cruzan?",
+  "dato": "Adaptar las terapias psicológicas ayuda a tratar los síntomas depresivos en personas con autismo.",
+  "resumen": "Adaptar las terapias psicológicas ayuda a tratar los síntomas depresivos en personas con autismo. Una revisión científica reciente señala que enfoques como la terapia cognitivo-conductual adaptada, el mindfulness o el ejercicio muestran mejoras en los síntomas de depresión, aunque el diagnóstico sigue siendo complejo por la superposición de señales.",
+  "fuente": "Frontiers in Psychiatry",
+  "hashtags": [
+   "AURZANE",
+   "Psicologia",
+   "Autismo",
+   "Divulgacion"
+  ],
+  "fuente_id": "pmc-PMC13755279",
+  "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13755279/",
+  "fecha": "2026-11-19",
+  "auto": true,
+  "verificacion": "La afirmación está respaldada por literatura científica reciente sobre adaptación terapéutica en neurodivergencia."
+ },
+ {
   "id": "cur-f25e9c5a6c",
   "tipo": "curiosidad",
   "titulo": "¿Por qué ignoras lo que tienes delante?",

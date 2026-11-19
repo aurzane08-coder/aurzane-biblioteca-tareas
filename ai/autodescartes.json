@@ -1,5 +1,16 @@
 [
  {
+  "fecha": "2026-11-19",
+  "id": "ia-la-mirada-de-la-muerte",
+  "tipo": "libro",
+  "titulo": "La Mirada De La Muerte",
+  "url": "https://archive.org/details/la-mirada-de-la-muerte",
+  "motivo": "La IA le dio 4/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/la-mirada-de-la-muerte/La%20mirada%20de%20la%20muerte.pdf"
+  ]
+ },
+ {
   "fecha": "2026-11-18",
   "id": "ia-psychology-and-cognitive-sciences-10.17140-pcsoj-9-172",
   "tipo": "libro",
@@ -2941,13 +2952,5 @@
   "titulo": "Al mismo tiempo, queremos ayudar a calmar la angustia intensa y ofrecer esperanza.",
   "url": "https://aurzane.com/biblioteca/libro/manual-primeros-auxilios-psicologicos.html",
   "motivo": "Gemini le dio 5/10: no tiene fuerza suficiente para redes"
- },
- {
-  "fecha": "2026-11-03",
-  "id": "cita-1c0a2a8f53",
-  "tipo": "cita",
-  "titulo": "La música relajante le ayuda a regular sus emociones y a calmar su mente.",
-  "url": "https://aurzane.com/biblioteca/libro/manual-primeros-auxilios-psicologicos.html",
-  "motivo": "Gemini le dio 4/10: no tiene fuerza suficiente para redes"
  }
 ]

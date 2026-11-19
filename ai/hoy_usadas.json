@@ -10,7 +10,8 @@
   "fw-41072391b8",
   "fw-2e0c75c597",
   "cita-3adec0ca95",
-  "fw-6d7b3852a2"
+  "fw-6d7b3852a2",
+  "fw-ce64b5dcbe"
  ],
  "dias": {
   "2026-11-08": {
@@ -324,6 +325,35 @@
    "musica": {
     "url": "https://aurzane.com/marketing/musica/1203517.mp3",
     "credito": "«Fight in my mind», Luke (Jamendo), CC BY-SA"
+   }
+  },
+  "2026-11-19": {
+   "fecha": "2026-11-19",
+   "frase": {
+    "texto": "Una de las alegrías de la amistad es saber en quien confiar.",
+    "autor": "Alessandro Manzoni",
+    "obra": "",
+    "url": "https://aurzane.com/frases/#fw-ce64b5dcbe",
+    "fuente": "Proverbia.net"
+   },
+   "curiosidad": {
+    "titulo": "¿Los terremotos se preparan en el colegio?",
+    "texto": "La preparación escolar ante terremotos ayuda a mantener la salud física y psicológica. Una revisión científica analiza cómo los colegios en zonas sísmicas pueden proteger el bienestar de los menores. Esto incluye desde prevenir lesiones hasta ofrecer apoyo emocional antes y después de un seísmo.",
+    "fuente": "Journal of multidisciplinary healthcare",
+    "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13729873/"
+   },
+   "ejercicio": {
+    "titulo": "Respiración cuadrada (box breathing) guiada",
+    "url": "https://mind.aurzane.com/ejercicios/respiracion-cuadrada/"
+   },
+   "test": {
+    "titulo": "Test de autoestima de Rosenberg gratis y online",
+    "url": "https://mind.aurzane.com/test-de-autoestima/"
+   },
+   "mas_frases": true,
+   "musica": {
+    "url": "https://aurzane.com/marketing/musica/1187638.mp3",
+    "credito": "«Come Home», Marc Reeves (Jamendo), CC BY"
    }
   }
  }
