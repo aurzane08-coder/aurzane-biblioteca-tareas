@@ -12,15 +12,18 @@ concurrency: univ-scorecard
 jobs:
   scorecard:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 350
     steps:
       - uses: actions/checkout@v4
-      - run: python3 -u univ/scorecard.py
+      - name: Bajar por tandas (sin clave propia, unas 9 consultas por hora) y guardar cada tanda
         env:
           SCORECARD_KEY: ${{ secrets.SCORECARD_KEY }}
-      - name: Guardar
         run: |
           git config user.name "aurzane-bot"; git config user.email "bot@aurzane.com"
-          git add -A univ/data/scorecard*
-          git commit -m "univ: College Scorecard EE. UU." || exit 0
-          for i in 1 2 3 4 5; do git pull --rebase -X theirs && git push && break; sleep 7; done
+          for t in 1 2 3 4 5 6; do
+            python3 -u univ/scorecard.py
+            git add -A univ/data/scorecard*
+            git commit -qm "univ: College Scorecard EE. UU. (tanda $t)" && for i in 1 2 3 4 5; do git pull -q --rebase -X theirs && git push -q && break; sleep 7; done
+            grep -q "bajadas" univ/data/scorecard.log || break   # completo
+            [ $t -lt 6 ] && sleep 3700
+          done

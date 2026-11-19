@@ -1342,6 +1342,10 @@ try:
         conexiones['fuera_sitemap'] = sorted(set(conexiones['fuera_sitemap']) | {url_a(a) for a in arts} | {'https://aurzane.com/articulos/recientes/'} | ({'https://aurzane.com/frases/'} if os.path.exists(OUT + '/frases/index.html') else set()))
 except Exception as e:
     print('::notice title=AI::índice de artículos no generado', str(e)[:120])
+# Lección del 19/11/2026 (Search Console: «Página alternativa con etiqueta canónica adecuada»): en el mapa va la dirección
+# canónica de cada página, «https://aurzane.com/» y no «https://aurzane.com/index.html», ni otra que ya esté en un mapa
+_sm = smap if 'smap' in dir() else set()
+conexiones['fuera_sitemap'] = sorted({v for v in (re.sub(r'/index\.html$', '/', u) for u in conexiones['fuera_sitemap']) if v.rstrip('/') not in _sm})
 if conexiones['fuera_sitemap']:
     open(OUT + '/sitemap-ai.xml', 'w', encoding='utf-8').write('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + ''.join(f'<url><loc>{E(u)}</loc></url>' for u in conexiones['fuera_sitemap']) + '</urlset>')
 # reparación de enlaces internos rotos con redirección 301 a la página más parecida
