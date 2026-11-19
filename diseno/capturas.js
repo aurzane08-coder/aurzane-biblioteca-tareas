@@ -6,7 +6,7 @@ const [lista, salida] = process.argv.slice(2); fs.mkdirSync(salida, { recursive:
 const URLS = fs.readFileSync(lista, 'utf8').split('\n').map(s => s.trim()).filter(s => s && !s.startsWith('#'));
 const TEMAS = (process.env.TEMAS || 'claro oscuro').split(/\s+/), VISTAS = (process.env.VISTAS || 'escritorio movil').split(/\s+/), ALTO = +(process.env.ALTO || 5200);
 const VP = { escritorio: { width: 1440, height: 900 }, movil: { width: 390, height: 844, isMobile: true, hasTouch: true, deviceScaleFactor: 1 } };
-const BORR = path.join(__dirname, 'borrador'); const V4 = process.env.V4 === '1'; const PAL = require('./paleta-v4.js');
+const BORR = path.join(__dirname, 'borrador'); const LOCAL = process.env.LOCAL ? path.resolve(process.env.LOCAL) : null; /* LOCAL=traer/servidor: sin red */ const V4 = process.env.V4 === '1'; const PAL = require('./paleta-v4.js');
 const nombre = u => u.replace(/^https?:\/\//, '').replace(/[^a-z0-9]+/gi, '_').replace(/_+$/, '').slice(0, 90);
 (async () => {
   const b = await chromium.launch(); const informe = [];
@@ -22,6 +22,8 @@ const nombre = u => u.replace(/^https?:\/\//, '').replace(/[^a-z0-9]+/gi, '_').r
       const texto = ['html', 'js', 'css'].includes(ext) || r.request().resourceType() === 'document';
       let cuerpo = null, tipo = TIPO[ext] || 'application/octet-stream', estado = 200, cab = {};
       if (fs.existsSync(f) && fs.statSync(f).isFile()) cuerpo = fs.readFileSync(f);
+      else if (LOCAL) { let g = path.join(LOCAL, x.hostname, decodeURIComponent(x.pathname)); if (g.endsWith('/') || (fs.existsSync(g) && fs.statSync(g).isDirectory())) g = path.join(g, 'index.html');
+        if (fs.existsSync(g) && fs.statSync(g).isFile()) cuerpo = fs.readFileSync(g); else return r.fulfill({ status: 404, body: '' }); }
       else if (V4 && texto) { try { const res = await r.fetch(); estado = res.status(); cab = res.headers(); cuerpo = await res.body(); tipo = cab['content-type'] || tipo; } catch (e) { return r.continue(); } }
       if (cuerpo === null) return r.continue();
       if (V4 && texto && estado < 300) {
@@ -31,6 +33,7 @@ const nombre = u => u.replace(/^https?:\/\//, '').replace(/[^a-z0-9]+/gi, '_').r
       }
       return r.fulfill({ status: estado, contentType: tipo, body: cuerpo, headers: { 'access-control-allow-origin': '*' } });
     });
+    if (LOCAL) await ctx.route(u2 => !/aurzane\.com/.test(u2.hostname), r => r.abort());
     const p = await ctx.newPage(); const err = [];
     p.on('pageerror', e => err.push('JS ' + (e.message || e).toString().slice(0, 160)));
     p.on('response', r => { if (r.status() >= 400 && !/favicon/.test(r.url())) err.push(r.status() + ' ' + r.url().slice(0, 120)); });
@@ -38,16 +41,16 @@ const nombre = u => u.replace(/^https?:\/\//, '').replace(/[^a-z0-9]+/gi, '_').r
     try {
       await p.goto(u, { waitUntil: 'domcontentloaded', timeout: 60000 });
       for (let k = 0; k < 40; k++) { try { if (!/sgcaptcha/.test(p.url() + (await p.content()).slice(0, 3000))) break; } catch (e) {} await p.waitForTimeout(1000); }
-      await p.waitForLoadState('networkidle', { timeout: 20000 }).catch(() => {});
+      await p.waitForLoadState('networkidle', { timeout: LOCAL ? 4000 : 20000 }).catch(() => {});
       await p.evaluate(async A => { for (let y = 0; y < Math.min(document.body.scrollHeight, A); y += 600) { scrollTo(0, y); await new Promise(r => setTimeout(r, 120)); } scrollTo(0, 0); }, ALTO);
       await p.waitForTimeout(1800);
       const m = await p.evaluate(() => { const W = document.documentElement.clientWidth;
         const fuera = [...document.querySelectorAll('body *')].filter(e => { const r = e.getBoundingClientRect(); return r.width && r.right > W + 2 && getComputedStyle(e).position !== 'fixed'; }).slice(0, 5).map(e => e.tagName.toLowerCase() + (e.className && typeof e.className == 'string' ? '.' + e.className.split(' ')[0] : ''));
         const rotas = [...document.images].filter(i => i.complete && i.naturalWidth === 0 && i.getBoundingClientRect().width > 0).map(i => i.src.slice(0, 100)).slice(0, 5);
         return { alto: document.body.scrollHeight, ancho: document.documentElement.scrollWidth, W, fuera, rotas, imgs: document.images.length }; });
+      // la ventana NO se estira al alto de la página: con 100vh/5vh el diseño se deformaría (falsos huecos enormes)
       const H = Math.min(m.alto, ALTO);
-      await p.setViewportSize({ width: VP[v].width, height: H }); await p.waitForTimeout(800);
-      await p.screenshot({ path: path.join(salida, id + '.jpg'), type: 'jpeg', quality: 62, clip: { x: 0, y: 0, width: VP[v].width, height: H } });
+      await p.screenshot({ path: path.join(salida, id + '.jpg'), type: 'jpeg', quality: 62, fullPage: true, clip: { x: 0, y: 0, width: VP[v].width, height: H } });
       informe.push({ id, u, v, t, ...m, err: err.slice(0, 8) });
     } catch (e) { informe.push({ id, u, v, t, fallo: e.message.split('\n')[0] }); }
     await ctx.close();
