@@ -5906,5 +5906,17 @@
   "recogida": "2026-11-18",
   "ok": true,
   "publicada": "2026-11-18"
+ },
+ {
+  "id": "fw-a12a516c99",
+  "texto": "La vida de un amigo, es la nuestra, como la verdadera vida de cada uno es la de todos.",
+  "autor": "George Sand",
+  "vida": "1804-1876",
+  "descripcion": "Escritora francesa.",
+  "tema": "vida",
+  "fuente": "Proverbia.net",
+  "url_fuente": "https://proverbia.net/frase-del-dia",
+  "recogida": "2026-11-19",
+  "ok": true
  }
 ]
