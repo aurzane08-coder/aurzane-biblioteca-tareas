@@ -1,5 +1,62 @@
 [
  {
+  "id": "oa-W7220851852",
+  "tipo": "libro",
+  "titulo": "Making the Shift from Student to Learner: Reigniting Your Curiosity and Inquiry",
+  "url": "https://doi.org/10.32393/mssl",
+  "autores": "Tessa Rooseboom, Patience Smith, Noah Striker",
+  "anio": 2026,
+  "editorial": "",
+  "doi": "10.32393/mssl",
+  "pdf": "https://pressbooks.library.upei.ca/curiosityandinquiry/open/download?type=print_pdf",
+  "pdfs": [
+   "https://pressbooks.library.upei.ca/curiosityandinquiry/open/download?type=print_pdf"
+  ],
+  "landings": [
+   "https://doi.org/10.32393/mssl"
+  ],
+  "lic": "cc-by-nc",
+  "idioma": "en",
+  "tema": "Psychological and Educational Research Studies",
+  "resumen": "University can feel like a checklist: attend class, complete assignments, earn grades, move on. But what if learning could be more than a requirement—what if it became a source of purpose, possibility, and delight? Making the Shift from Student to Learner: Reigniting Your Curiosity and Inquiry invites students to trade passive routines for an active, curious relationship with learning.Grounded in student experience and insight, this handbook shows readers how to notice what sparks their interest, ask questions that open paths, and build the habits that make inquiry manageable. Through strategies, prompts, and stories, it explores motivation, time management, the art of questioning, and how to navigate uncertainty. It also asks readers to consider technology—including artificial intelligence—with curiosity and critical judgment: not simply what a tool can do, but how using it shapes the w",
+  "motivo": "Libro de psicología en acceso abierto con licencia CC-BY-NC, de una editorial académica.",
+  "pdf_origen": "https://pressbooks.library.upei.ca/curiosityandinquiry/open/download?type=print_pdf",
+  "paginas": 87,
+  "portada": "https://aurzane.com/biblioteca/recientes/portadas/oa-W7220851852.jpg",
+  "publicado": "2026-11-19",
+  "nota": 7,
+  "auto": true
+ },
+ {
+  "id": "oa-W7214443598",
+  "tipo": "libro",
+  "titulo": "Desarrollo de competencias a lo largo de la escolaridad",
+  "url": "https://doi.org/10.70577/ktbhs616",
+  "autores": "Edison Cristóbal Maldonado Alvarado, Alexandra Carina Girón Arevalo, Celia del Rocío Cardona Ramírez",
+  "anio": 2026,
+  "editorial": "",
+  "doi": "10.70577/ktbhs616",
+  "pdf": "https://cidproseditorial.com/index.php/file/catalog/download/40/42/144",
+  "pdfs": [
+   "https://cidproseditorial.com/index.php/file/catalog/download/40/42/144"
+  ],
+  "landings": [
+   "https://doi.org/10.70577/ktbhs616"
+  ],
+  "lic": "cc-by",
+  "idioma": "es",
+  "tema": "Educational methodologies and cognitive development",
+  "resumen": "La presente obra analiza el desarrollo progresivo de competencias a lo largo de la escolaridad, desde la primera infancia hasta el Bachillerato, considerando las capacidades que permiten a los estudiantes desenvolverse de manera autónoma, crítica y responsable en distintos contextos. El libro aborda inicialmente competencias vinculadas con autonomía, comunicación, pensamiento lógico, motricidad, convivencia y juego. Posteriormente examina el fortalecimiento de la lectura, escritura, razonamiento matemático, indagación científica, comprensión social y pensamiento ambiental durante la Educación Básica. En niveles superiores se profundiza en pensamiento crítico, argumentación, alfabetización digital, resolución de problemas, búsqueda de información y ciudadanía digital. Asimismo, se analizan competencias académicas y profesionales relacionadas con autorregulación, investigación, orientación",
+  "motivo": "Libro de psicología en acceso abierto con licencia CC-BY, de una editorial académica.",
+  "pdf_origen": "https://cidproseditorial.com/index.php/file/catalog/download/40/42/144",
+  "paginas": 192,
+  "portada": "https://aurzane.com/biblioteca/recientes/portadas/oa-W7214443598.jpg",
+  "pdf_local": "https://aurzane.com/biblioteca/recientes/pdf/oa-W7214443598.pdf",
+  "publicado": "2026-11-19",
+  "nota": 7,
+  "auto": true
+ },
+ {
   "id": "pmc-PMC13757844",
   "tipo": "estudio",
   "titulo": "Interventions for anxiety, burnout, and resilience in university students: a systematic review with implications for mental health nursing practice",

@@ -124,8 +124,8 @@
   129
  ],
  "ed:": [
-  48,
-  35
+  50,
+  33
  ],
  "ed:undefined": [
   0,
@@ -144,7 +144,7 @@
   0
  ],
  "tipo:libro": [
-  50,
+  52,
   9
  ],
  "Gambling Behavior and Treatments": [
@@ -260,7 +260,7 @@
   0
  ],
  "Educational methodologies and cognitive development": [
-  1,
+  2,
   0
  ],
  "Reading and Literacy Development": [
@@ -496,6 +496,10 @@
   0
  ],
  "ed:Cogent mental health": [
+  1,
+  0
+ ],
+ "Psychological and Educational Research Studies": [
   1,
   0
  ]
