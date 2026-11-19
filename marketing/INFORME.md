@@ -1,16 +1,16 @@
 # Informe de marketing
 
-Actualizado: 2026-11-18. Clics de personas (sin bots ni vistas previas) que entraron por los enlaces de las publicaciones.
+Actualizado: 2026-11-19. Clics de personas (sin bots ni vistas previas) que entraron por los enlaces de las publicaciones.
 
 | Red | Publicaciones | Clics |
 |---|---|---|
-| telegram | 76 | 4 |
-| bluesky | 51 | 267 |
-| mastodon | 51 | 166 |
-| instagram | 53 | 0 |
-| facebook | 53 | 123 |
+| telegram | 77 | 4 |
+| bluesky | 51 | 269 |
+| mastodon | 51 | 169 |
+| instagram | 54 | 0 |
+| facebook | 54 | 124 |
 | threads | 0 | 0 |
-| pinterest | 34 | 0 |
+| pinterest | 34 | 1 |
 
 ## Productos con más clics
 
@@ -20,9 +20,9 @@ Actualizado: 2026-11-18. Clics de personas (sin bots ni vistas previas) que entr
 | test-tdah | 15 |
 | calc-sueldo | 12 |
 | test-personalidad | 12 |
+| test-habitos | 12 |
 | calc-hipoteca | 12 |
 | test-sueno | 11 |
-| test-habitos | 11 |
 | curso-neuro | 10 |
 | nc-ingenieria-en-tecnologias-industriales | 9 |
 | ovp | 9 |
@@ -33,6 +33,7 @@ Actualizado: 2026-11-18. Clics de personas (sin bots ni vistas previas) que entr
 | test-autoestima | 8 |
 | nc-sociologia | 8 |
 | crea-l05-02 | 8 |
+| calc-embarazo | 8 |
 | frase-3adec0ca | 8 |
 | nc-educacion-infantil | 8 |
 | test-satisfaccion | 8 |
@@ -40,4 +41,3 @@ Actualizado: 2026-11-18. Clics de personas (sin bots ni vistas previas) que entr
 | frase-5b980a2a | 8 |
 | frase-6d32afc7 | 8 |
 | calc-reforma | 7 |
-| calc-embarazo | 7 |

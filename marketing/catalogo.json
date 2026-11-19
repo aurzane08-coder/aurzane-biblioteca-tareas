@@ -1,5 +1,5 @@
 {
- "generado": "2026-11-18",
+ "generado": "2026-11-19",
  "productos": [
   {
    "id": "test-personalidad",
@@ -54433,6 +54433,60 @@
    "emoji": "",
    "foto_q": "green leaves sunlight",
    "alta": "2026-11-18"
+  },
+  {
+   "id": "cur-48928c7418",
+   "tipo": "curiosidad",
+   "mundo": "mind",
+   "origen": "curiosidades",
+   "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13731690/",
+   "titulo": "¿Por qué estar a solas a veces duele?",
+   "ganchos": [
+    "¿Por qué estar a solas a veces duele?",
+    "¿Por qué estar a solas a veces duele? 🧠",
+    "Estar a solas no es lo mismo que sentirse solo; la diferencia está en por qué decides esta"
+   ],
+   "texto": "Estar a solas no es lo mismo que sentirse solo; la diferencia está en por qué decides estar sin compañía. Según la psicología, la soledad buscada impulsa el crecimiento personal cuando nace de tu propia voluntad. En cambio, si se siente impuesta, genera malestar y desconexión con uno mismo.\n\nFuente: Integrative psychological & behavioral science",
+   "hashtags": [
+    "psicologia",
+    "aurzane",
+    "saludmental",
+    "desarrollopersonal",
+    "Psicología",
+    "Curiosidades"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "🧠",
+   "dato": "Estar a solas no es lo mismo que sentirse solo; la diferencia está en por qué decides estar sin compañía.",
+   "alta": "2026-11-19"
+  },
+  {
+   "id": "cur-9c2850848e",
+   "tipo": "curiosidad",
+   "mundo": "mind",
+   "origen": "curiosidades",
+   "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13755279/",
+   "titulo": "¿Sabías que la depresión y el autismo se cruzan?",
+   "ganchos": [
+    "¿Sabías que la depresión y el autismo se cruzan?",
+    "¿Sabías que la depresión y el autismo se cruzan? 🧠",
+    "Adaptar las terapias psicológicas ayuda a tratar los síntomas depresivos en personas con a"
+   ],
+   "texto": "Adaptar las terapias psicológicas ayuda a tratar los síntomas depresivos en personas con autismo. Una revisión científica reciente señala que enfoques como la terapia cognitivo-conductual adaptada, el mindfulness o el ejercicio muestran mejoras en los síntomas de depresión, aunque el diagnóstico sigue siendo complejo por la superposición de señales.\n\nFuente: Frontiers in Psychiatry",
+   "hashtags": [
+    "AURZANE",
+    "Psicologia",
+    "Autismo",
+    "Divulgacion",
+    "Psicología",
+    "Curiosidades"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "🧠",
+   "dato": "Adaptar las terapias psicológicas ayuda a tratar los síntomas depresivos en personas con autismo.",
+   "alta": "2026-11-19"
   },
   {
    "id": "cur-f25e9c5a6c",
