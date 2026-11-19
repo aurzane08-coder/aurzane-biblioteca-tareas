@@ -19548,6 +19548,31 @@
    "alta": "2026-10-26"
   },
   {
+   "id": "lectura-historias-de-la-historia-corrado-augias",
+   "tipo": "lectura",
+   "mundo": "aurzane",
+   "origen": "tienda",
+   "url": "https://aurzane.com/libros/historias-de-la-historia-corrado-augias/",
+   "titulo": "Historias de la historia",
+   "autor": "Corrado Augias",
+   "ganchos": [
+    "Libro recomendado: Historias de la historia",
+    "Historias de la historia, de Corrado Augias",
+    "¿Qué leer este mes? Historias de la historia"
+   ],
+   "texto": "Es ideal para los amantes de los relatos fascinantes del pasado que buscan comprender mejor los grandes enigmas y personajes de nuestra civilización.",
+   "hashtags": [
+    "LibrosRecomendados",
+    "QueLeer",
+    "Lectura",
+    "Libros"
+   ],
+   "aviso": "Contiene enlace de afiliado.",
+   "img": null,
+   "emoji": "📚",
+   "alta": "2026-11-19"
+  },
+  {
    "id": "lectura-el-laberinto-de-los-espiritus-carlos-ruiz-zafon",
    "tipo": "lectura",
    "mundo": "aurzane",
@@ -54433,6 +54458,37 @@
    "emoji": "",
    "foto_q": "green leaves sunlight",
    "alta": "2026-11-18"
+  },
+  {
+   "id": "frase-c0ffa5f4",
+   "tipo": "frase",
+   "mundo": "aurzane",
+   "origen": "frases_web",
+   "url": "https://aurzane.com/frases/#fw-a12a516c99",
+   "titulo": "La vida de un amigo, es la nuestra, como la verdadera vida de cada uno es la de todos.",
+   "autor": "George Sand",
+   "libro": "",
+   "ganchos": [
+    "La vida de un amigo, es la nuestra, como la verdadera vida de cada uno es la de todos.",
+    "La vida de un amigo, es la nuestra, como la verdadera vida de cada uno es la de todos.",
+    "La vida de un amigo, es la nuestra, como la verdadera vida de cada uno es la de todos."
+   ],
+   "texto": "La vida de un amigo, es la nuestra, como la verdadera vida de cada uno es la de todos.",
+   "hashtags": [
+    "FrasesCélebres",
+    "FrasesDelDía",
+    "Reflexión",
+    "Psicología",
+    "Motivación",
+    "Bienestar",
+    "CrecimientoPersonal",
+    "Frases"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "",
+   "foto_q": "green leaves sunlight",
+   "alta": "2026-11-19"
   },
   {
    "id": "cur-48928c7418",
