@@ -1,6 +1,26 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+<script id="azRendimiento">
+/* admin_rendimiento: una lectura repetida en 45 s reutiliza la primera respuesta */
+(function(){
+  var orig = window.fetch.bind(window), memo = {};
+  var LECTURA = /\/ai\/api\.php(\?|$)|\/panel\/datos\.php|\/patrocinio\.php\?admin=1|\/rest\/v1\/rpc\/es_admin/;
+  window.fetch = function(u, o){
+    try {
+      var url = typeof u === 'string' ? u : (u && u.url) || '', m = ((o && o.method) || 'GET').toUpperCase(), b = (o && typeof o.body === 'string') ? o.body : '';
+      var esLectura = LECTURA.test(url) && (m === 'GET' || (m === 'POST' && (/datos\.php/.test(url) || b === '{}' || b === '' || /es_admin/.test(url))));
+      if (!esLectura) return orig(u, o);
+      var k = m + ' ' + url.replace(/[?&]r=\d+/, '') + ' ' + (/datos\.php/.test(url) ? '' : b), x = memo[k];
+      if (x && Date.now() - x.t < 45000) return x.p.then(function(r){ return r.clone(); });
+      var p = orig(u, o); memo[k] = { t: Date.now(), p: p };
+      p.then(function(r){ if (!r.ok) delete memo[k]; }, function(){ delete memo[k]; });
+      return p.then(function(r){ return r.clone(); });
+    } catch (e) { return orig(u, o); }
+  };
+})();
+</script>
+
 <meta name="robots" content="noindex,nofollow">
 <script>
   // Observabilidad de errores frontend (Fase 8-9 P1, ver observabilidad_errores_setup.sql).
@@ -1178,7 +1198,7 @@ body .nav-item.active{box-shadow:inset 3px 0 0 var(--gold)}
   let aurzaneAdminCore = null;
   // Refresca en caché el servicio de membretes (campos nuevos: franja, escudo, visible)
   // antes de importar el núcleo, para que no quede una copia vieja del módulo.
-  const aurzaneAdminCoreReady = fetch('./core/services/membretes-f7-7-r2.js', { cache: 'reload' }).catch(() => null).then(() => fetch('./core/services/universities-f7-8.js', { cache: 'reload' }).catch(() => null)).then(() => fetch('./core/admin/service-f7-8.js', { cache: 'reload' }).catch(() => null)).then(() => import('./core/index-f7-8.js')).then(core => {
+  const aurzaneAdminCoreReady = Promise.all(['./core/services/membretes-f7-7-r2.js', './core/services/universities-f7-8.js', './core/admin/service-f7-8.js'].map(u => fetch(u, { cache: 'reload' }).catch(() => null))).then(() => import('./core/index-f7-8.js')).then(core => {
     const identity = core.createIdentityAdapter(sb);
     const permissions = Object.freeze({ isAdmin: () => core.isAdmin(sb) });
     const context = core.createAdminContext({ identity, permissions });
@@ -1850,11 +1870,12 @@ body .nav-item.active{box-shadow:inset 3px 0 0 var(--gold)}
   const REP_TIPO = { enlace:'Enlace roto', dato:'Dato incorrecto', pagina:'Página', sugerencia:'Sugerencia', otro:'Otro' };
   async function loadReportes(){
     const est = document.getElementById('repFEstado').value, tipo = document.getElementById('repFTipo').value, ori = document.getElementById('repFOrigen').value;
-    let q = sb.from('reportes').select('id,creado,tipo,mensaje,url,referencia,email,origen,estado,nota').order('creado', { ascending:false }).limit(300);
+    let q = sb.from('reportes').select('id,creado,tipo,mensaje,url,referencia,email,origen,estado,nota,resuelto').order('creado', { ascending:false }).limit(300);
     if(est === 'abiertos') q = q.in('estado', ['nuevo','revisando']); else if(est) q = q.eq('estado', est);
     if(tipo) q = q.eq('tipo', tipo);
     if(ori) q = q.eq('origen', ori);
-    const { data, error } = await q;
+    let { data, error } = await q;
+    if(data) data = data.filter(r => !(r.estado === 'resuelto' && r.resuelto && Date.now() - new Date(r.resuelto).getTime() > 864e5));   /* admin_rendimiento: resuelto hace más de 24 h, fuera de la lista */
     const body = document.getElementById('repBody'), vacio = document.getElementById('repVacio');
     if(error){ body.innerHTML=''; vacio.style.display='block'; vacio.textContent='No se pudo leer la tabla de reportes: ' + error.message; return; }
     const cont = await sb.from('reportes').select('estado,origen').limit(5000);
@@ -3404,12 +3425,17 @@ body .nav-item.active{box-shadow:inset 3px 0 0 var(--gold)}
   var INF = null, PAN = null;
   async function token(){ var sb = window.__aurzaneSb; return sb ? (await sb.auth.getSession()).data.session?.access_token : ''; }
   async function datos(){
+    /* 19/11/2026: las tres consultas van a la vez (antes, una detrás de otra: unos 5 s) y lo último que se vio se pinta al momento */
     var tk = await token(); if(!tk) return;
-    try{ INF = ((await (await fetch('/ai/api.php', { cache:'no-store', headers:{ Authorization:'Bearer ' + tk } })).json()).informe) || INF; }catch(e){}
-    try{ var q = await window.__aurzaneSb.from('reportes').select('id', { count:'exact', head:true }).eq('estado', 'nuevo'); if(q.count != null){ var rb = $('repBadge'); if(rb){ rb.textContent = q.count || ''; rb.style.display = q.count ? 'inline-block' : 'none'; } } }catch(e){}
-    try{ var r = await (await fetch('https://aurzane.com/panel/datos.php', { method:'POST', headers:{ 'Content-Type':'application/json' }, body: JSON.stringify({ token: tk }) })).json(); if(!r.error) PAN = r; }catch(e){}
+    var f1 = fetch('/ai/api.php', { cache:'no-store', headers:{ Authorization:'Bearer ' + tk } }).then(function(r){ return r.json(); }).then(function(j){ INF = (j && j.informe) || INF; }).catch(function(){});
+    var f2 = window.__aurzaneSb.from('reportes').select('id', { count:'exact', head:true }).eq('estado', 'nuevo').then(function(q){ if(q.count != null){ var rb = $('repBadge'); if(rb){ rb.textContent = q.count || ''; rb.style.display = q.count ? 'inline-block' : 'none'; } } }).catch(function(){});
+    var f3 = fetch('https://aurzane.com/panel/datos.php', { method:'POST', headers:{ 'Content-Type':'application/json' }, body: JSON.stringify({ token: tk }) }).then(function(r){ return r.json(); }).then(function(r){ if(!r.error) PAN = r; }).catch(function(){});
+    f1.then(pintar); f3.then(pintar);
+    await Promise.all([f1, f2, f3]);
+    try { localStorage.setItem('azInicioCache', JSON.stringify({ t: Date.now(), INF: INF, PAN: PAN })); } catch(e) {}
     pintar();
   }
+  try { var cch = JSON.parse(localStorage.getItem('azInicioCache') || 'null'); if(cch && Date.now() - cch.t < 864e5){ INF = cch.INF; PAN = cch.PAN; setTimeout(function(){ try { pintar(); } catch(e) {} }, 0); } } catch(e) {}
   var kpiOVP = function(){ return Array.prototype.map.call(document.querySelectorAll('#kpiRow .kpi-card'), function(d){ return [((d.querySelector('.k-lbl') || {}).textContent || '').trim(), parseInt(((d.querySelector('.k-num') || {}).textContent || '').replace(/\D/g, ''), 10) || 0]; }).filter(function(x){ return x[0]; }); };
   function pintar(){
     if(!$('inTareas')) return;
