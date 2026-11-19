@@ -402,6 +402,10 @@
     'consulta-chequeo': [/^\/(test-de-(habitos|bienestar)|calculadora-agua)/, 'live', 'Un chequeo para saber cómo estás', 'Análisis clínicos y revisiones en clínicas cerca de ti, a precio cerrado y sin necesidad de seguro.', 'Ver análisis en', 'consulta', 'https://www.saludonnet.com/servicios-medicos/analisis-clinicos'],
     hipoteca: [/^\/calculadora-(hipoteca|gastos-compra-vivienda)/, 'build', '¿Quieres que te estudien la hipoteca?', 'Un intermediario hipotecario compara bancos por ti y te dice cuánto te pueden prestar. Estudio sin compromiso.', 'Pedir estudio a'],
     reforma: [/^\/calculadora-reforma/, 'build', '¿Lo pasamos a presupuestos reales?', 'Pide presupuestos a profesionales de tu zona y compáralos con lo que te ha salido aquí.', 'Pedir presupuestos en'],
+    /* Simbye (Awin 107814, 19/11/2026): eSIM de datos en las fichas de universidades de países a los que se va a estudiar desde España o Latinoamérica
+       (no en las de España ni Latinoamérica, donde quien mira suele vivir allí). EE. UU. lleva a su eSIM; el resto, a la tienda en español */
+    'esim-eeuu': [/^\/universidades\/estados-unidos\//, 'nexus', 'Llega a EE. UU. con internet desde el primer minuto', 'eSIM de datos para Estados Unidos: la instalas en el móvil antes de salir, sin tarjeta física ni roaming, y la recibes por correo en minutos.', 'Ver la eSIM de EE. UU. en', 'esim', 'https://simbye.com/es/products/usa-data-esim'],
+    esim: [/^\/universidades\/(?!(espana|argentina|bolivia|brasil|chile|colombia|costa-rica|cuba|ecuador|el-salvador|guatemala|honduras|mexico|nicaragua|panama|paraguay|peru|puerto-rico|republica-dominicana|uruguay|venezuela|acerca|anunciate|assets|comparar|datos|mi-lista|notas-de-corte|paises|que-puedo-estudiar)\/)[a-z-]+\//, 'nexus', '¿Te vas a estudiar fuera? Llega con internet', 'eSIM de datos para más de 190 países: la instalas en el móvil antes de salir, sin tarjeta física ni roaming, y la recibes por correo en minutos.', 'Ver eSIM en', 'esim', 'https://simbye.com/es/'],
     universidades: [/^\/(universidades|calculadora-nota-pau)/, 'nexus', '¿Vas a estudiar fuera de casa?', 'Busca habitación o piso de estudiantes cerca de tu universidad.', 'Buscar alojamiento en'],
     crianza: [/^\/calculadora-(embarazo|ovulacion)/, 'live', 'Juguetes que acompañan el desarrollo', 'Juguetes educativos por edad para aprender jugando.', 'Ver juguetes en'],
     nutricion: [/^\/calculadora-(calorias|imc|peso-ideal)/, 'live', '¿Te ayudas con la alimentación?', 'Si entrenas o quieres cuidar tu alimentación, aquí tienes nutrición deportiva y comida saludable. Consulta con un profesional si tienes alguna condición de salud.', 'Ver productos en'],
@@ -423,7 +427,7 @@
   var SOCIO_FOTO = { 'consulta-embarazo': 'embarazo', 'consulta-nutricion': 'comida', 'consulta-sueno': 'dormir', 'consulta-chequeo': 'bienestar', 'consulta-ejercicios': 'vela', 'consulta-articulo': 'bienestar', hipoteca: 'casa', reforma: 'chalet',
     universidades: 'estudio', crianza: 'manos', nutricion: 'comida', sueno: 'dormir', cursos: 'foco', bienestar: 'habitos', bricolaje: 'casa', muebles: 'chalet',
     'negocio-alquiler': 'pisos', 'negocio-propio': 'curriculum', 'negocio-ahorro': 'hucha', negocio: 'graficos', deporte: 'ejercicio', aventura: 'montana', viajes: 'playa',
-    consulta: 'vela', 'seguro-viaje': 'viaje' };
+    consulta: 'vela', 'seguro-viaje': 'viaje', 'esim-eeuu': 'viaje', esim: 'viaje' };
   function socios() {
     var p = location.pathname, cands = [];
     Object.keys(SOCIO).forEach(function (k) { if (SOCIO[k][1] === m && SOCIO[k][0].test(p)) cands.push(k); });
