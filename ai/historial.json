@@ -1690,5 +1690,17 @@
   "publicados": 99,
   "pruebas_ok": 8,
   "pruebas_total": 57
+ },
+ {
+  "fecha": "2026-11-19T04:39",
+  "estado": "mal",
+  "avisos": 49,
+  "arreglos": 2,
+  "errores_24h": 0,
+  "redes_ok_24h": 29,
+  "cola": 0,
+  "publicados": 99,
+  "pruebas_ok": 8,
+  "pruebas_total": 57
  }
 ]
