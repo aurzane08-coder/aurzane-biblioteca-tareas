@@ -688,3 +688,9 @@
 2026-11-19,6,youtube,frase-9e6278a9,ok,https://youtu.be/05_dlf3Go8U
 2026-11-19,7,tiktok,frase-4121909e,ok,v_inbox_file~v2.7709931725106710529 (borrador en la bandeja de TikTok: la app aún no está auditada; publícalo desde la app)
 2026-11-19,7,youtube,cur-f25e9c5a6c,ok,https://youtu.be/OeHYlUR7KCQ
+2026-11-19,2,telegram,promo-live,error,400 {"ok":false "error_code":400 "description":"Bad Request: IMAGE_PROCESS_FAILED"}
+2026-11-19,2,bluesky,promo-aurzane,ok,at://did:plc:6ovoiudj7dkxgrzd2zkyn77y/app.bsky.feed.post/3n2ooeqye6x2n
+2026-11-19,2,mastodon,promo-learn,error,422 {"error":"Validation failed: File content type is invalid  File is invalid"}
+2026-11-19,2,instagram,promo-build,ok,18185366080430248
+2026-11-19,2,facebook,promo-mind,ok,1637055321502633
+2026-11-19,2,pinterest,promo-colegios,feed,
