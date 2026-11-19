@@ -1,6 +1,36 @@
 [
  {
   "fecha": "2026-11-19",
+  "id": "pmc-PMC13759127",
+  "tipo": "estudio",
+  "titulo": "Sleep duration and risk of post-stroke depression: a systematic review and meta-analysis",
+  "url": "https://europepmc.org/article/PMC/PMC13759127",
+  "motivo": "La IA le dio 2/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://cidproseditorial.com/index.php/file/catalog/download/42/44/151"
+  ]
+ },
+ {
+  "fecha": "2026-11-19",
+  "id": "cita-0f74324f8e",
+  "tipo": "cita",
+  "titulo": "El pensamiento aplicado requiere transferir conocimientos aprendidos a situaciones distintas de aquellas en las que fueron enseñados inicialmente.",
+  "url": "https://aurzane.com/biblioteca/recientes/oa-W7214443598/",
+  "motivo": "Gemini le dio 2/10: no tiene fuerza suficiente para redes"
+ },
+ {
+  "fecha": "2026-11-19",
+  "id": "ia-el-imperio-de-la-publicidad",
+  "tipo": "libro",
+  "titulo": "El imperio de la publicidad",
+  "url": "https://archive.org/details/el-imperio-de-la-publicidad",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 8 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/el-imperio-de-la-publicidad/El%20imperio%20de%20la%20publicidad%20.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-19",
   "id": "oa-W7220851852",
   "tipo": "libro",
   "titulo": "Making the Shift from Student to Learner: Reigniting Your Curiosity and Inquiry",
@@ -2934,29 +2964,5 @@
   "titulo": "El número de estos pequeños músculos que encierra el cuerpo entero de un cuadrúpedo velludo es verdaderamente pro- digioso.",
   "url": "https://aurzane.com/biblioteca/libro/expresion-emociones-hombre-animales.html",
   "motivo": "Gemini le dio 2/10: no tiene fuerza suficiente para redes"
- },
- {
-  "fecha": "2026-11-03",
-  "id": "cita-099bace7c5",
-  "tipo": "cita",
-  "titulo": "Nunca probablemente so explicará de un modo completo la causa ó el origen de cada sonido particular de cada estado de espíritu.",
-  "url": "https://aurzane.com/biblioteca/libro/expresion-emociones-hombre-animales.html",
-  "motivo": "Gemini le dio 5/10: no tiene fuerza suficiente para redes"
- },
- {
-  "fecha": "2026-11-03",
-  "id": "cita-9831d5c92b",
-  "tipo": "cita",
-  "titulo": "Sentir ilusión por el trabajo docente: inteligencia emocional y el papel del afrontamiento resiliente en un estudio con profesorado de secundaria.",
-  "url": "https://aurzane.com/biblioteca/libro/inteligencia-emocional-entornos-educativos-evidencias-cienti.html",
-  "motivo": "Gemini le dio 2/10: no tiene fuerza suficiente para redes"
- },
- {
-  "fecha": "2026-11-03",
-  "id": "cita-fa206d9496",
-  "tipo": "cita",
-  "titulo": "Por si fuera poco, el docente es un modelo en el que la expresión de determinadas emociones como el enfado no está bien vista socialmente.",
-  "url": "https://aurzane.com/biblioteca/libro/inteligencia-emocional-entornos-educativos-evidencias-cienti.html",
-  "motivo": "Gemini le dio 3/10: no tiene fuerza suficiente para redes"
  }
 ]

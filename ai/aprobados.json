@@ -1,5 +1,34 @@
 [
  {
+  "id": "oa-W7215130536",
+  "tipo": "libro",
+  "titulo": "Innovación educativa mediante el Método Van Dijk en contextos inclusivos",
+  "url": "https://doi.org/10.70577/m7esp021",
+  "autores": "Ana María Pozo Mejía, Luis Hugo González Enríquez",
+  "anio": 2026,
+  "editorial": "",
+  "doi": "10.70577/m7esp021",
+  "pdf": "https://cidproseditorial.com/index.php/file/catalog/download/42/44/151",
+  "pdfs": [
+   "https://cidproseditorial.com/index.php/file/catalog/download/42/44/151"
+  ],
+  "landings": [
+   "https://doi.org/10.70577/m7esp021"
+  ],
+  "lic": "cc-by",
+  "idioma": "es",
+  "tema": "Hearing Impairment and Communication",
+  "resumen": "Innovación educativa mediante el Método Van Dijk en contextos inclusivos aborda los fundamentos, estrategias y posibilidades de aplicación de este enfoque educativo en estudiantes con sordoceguera, multidiscapacidad y necesidades complejas de comunicación. La obra analiza el papel del movimiento, el tacto, la interacción y las experiencias compartidas como bases para favorecer procesos comunicativos progresivos y significativos. También examina la comunicación prelingüística, receptiva y expresiva, así como el uso de sistemas alternativos y apoyos adaptados a las características individuales del estudiante. El libro profundiza en estrategias educativas como la resonancia, los movimientos coactivos, la anticipación, las rutinas, la imitación y las actividades significativas orientadas al desarrollo de la autonomía y la participación. Asimismo, aborda la planificación educativa, la adaptac",
+  "motivo": "Libro de psicología en acceso abierto con licencia CC-BY, de una editorial académica.",
+  "pdf_origen": "https://cidproseditorial.com/index.php/file/catalog/download/42/44/151",
+  "paginas": 161,
+  "portada": "https://aurzane.com/biblioteca/recientes/portadas/oa-W7215130536.jpg",
+  "pdf_local": "https://aurzane.com/biblioteca/recientes/pdf/oa-W7215130536.pdf",
+  "publicado": "2026-11-19",
+  "nota": 8,
+  "auto": true
+ },
+ {
   "id": "oa-W7220851852",
   "tipo": "libro",
   "titulo": "Making the Shift from Student to Learner: Reigniting Your Curiosity and Inquiry",
