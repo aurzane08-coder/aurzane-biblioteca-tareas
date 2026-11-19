@@ -1527,7 +1527,7 @@ def aprender(tipo, receta, ok):
 def tasa(tipo, receta):
     a = APR.get(f'{tipo}|{receta}', [0, 0]); return (a[0] + 1) / (a[0] + a[1] + 2)
 NOMBRES = {'aprender': 'Aprender algo nuevo', 'vaciar_cache': 'Vaciar la caché del sitio', 'reintentar_flujo': 'Reintentar la automatización', 'relanzar_marketing': 'Relanzar las publicaciones',
-           'relanzar_enlaces': 'Volver a revisar los enlaces', 'diagnostico_ia': 'Diagnóstico con IA', 'avisar': 'Avisarte'}
+           'relanzar_enlaces': 'Volver a revisar los enlaces', 'diagnostico_ia': 'Diagnóstico con IA', 'avisar': 'Avisarte', 'observar': 'Solo observar (control)'}
 RECETAS = {'contenido_viejo': ['diagnostico_ia'], 'prueba_fallida': ['vaciar_cache', 'diagnostico_ia'], 'servicio_caido': ['avisar'], 'sitio_caido': ['vaciar_cache', 'diagnostico_ia'], 'sitio_lento': ['vaciar_cache', 'diagnostico_ia'], 'pagina_error': ['vaciar_cache', 'diagnostico_ia'],
            'script_caido': ['vaciar_cache', 'diagnostico_ia'], 'js_error': ['vaciar_cache', 'diagnostico_ia'], 'automatizacion': ['reintentar_flujo', 'diagnostico_ia'],
            'red_fallos': ['relanzar_marketing', 'diagnostico_ia'], 'enlaces_rotos': ['relanzar_enlaces'], 'lenta_movil': ['diagnostico_ia'],
@@ -1713,7 +1713,14 @@ for p in problemas:
     if siguiente is None:
         if p['clave'] in pedidas: siguiente = orden[0]
         else: necesita.append(p); continue
-    res = aplicar(siguiente, p); hechos += 1
+    # Grupo de control (19/11/2026): 1 de cada 5 fallos de pruebas solo se observa, sin tocar nada. Así se sabe si vaciar la caché
+    # de verdad arregla algo o si el fallo se iba solo (antes contaba como acierto cualquier fallo que desaparecía).
+    if t == 'prueba_fallida' and siguiente == 'vaciar_cache' and int(hashlib.md5((p['clave'] + HOY).encode()).hexdigest(), 16) % 5 == 0:
+        mal = sigue_mal(p); siguiente = 'observar'
+        res = (('pendiente' if mal is None else 'fallo' if mal else 'ok'), 'Solo observado, sin tocar nada (grupo de control para medir si las reparaciones sirven)')
+    else:
+        res = aplicar(siguiente, p)
+    hechos += 1
     resultado, detalle = res[0], res[1]; sug = res[2] if len(res) > 2 else ''
     anotar(p['clave'], t, p['texto'], siguiente, resultado, detalle, sug, f_)
     if resultado in ('ok', 'fallo') and siguiente != 'diagnostico_ia':
@@ -1730,7 +1737,7 @@ ESTADO['solicitudes_hechas'] = sorted(hechas_sol)[-500:]
 if GEM and gem_estado == 'sin clave':
     gemini('Responde solo: ok', 10)
 print('::notice title=AI::Gemini: ' + (gem_estado if GEM else 'sin clave'))
-reparaciones_inf = {'conocimiento': [dict(v, firma=k.split('|', 1)[1][:120]) for k, v in list(CONOC.items())[-40:]], 'log': [e_ for e_ in REP if e_.get('fecha', '') >= (AHORA - datetime.timedelta(hours=24)).isoformat()[:16] or e_.get('clave') in claves_ahora][:80], 'log_total': len(REP), 'aprendizaje': {k: v for k, v in APR.items()}, 'nombres': NOMBRES, 'gemini': gem_estado if GEM else 'sin clave',
+reparaciones_inf = {'conocimiento': [dict(v, firma=k.split('|', 1)[1][:120]) for k, v in list(CONOC.items())[-40:]], 'log': [e_ for e_ in REP if e_.get('fecha', '') >= (AHORA - datetime.timedelta(hours=24)).isoformat()[:16] or e_.get('clave') in claves_ahora][:80], 'log_total': len(REP), 'aprendizaje': {k: v for k, v in APR.items()}, 'control': {t_: {'observar': round(tasa(t_, 'observar'), 2), **{r_: round(tasa(t_, r_), 2) for r_ in SEGURAS if f'{t_}|{r_}' in APR}} for t_ in {k.split('|')[0] for k in APR if k.endswith('|observar')}}, 'nombres': NOMBRES, 'gemini': gem_estado if GEM else 'sin clave',
                     'pendientes_solicitud': sum(1 for x in SOL if x.get('id') not in hechas_sol)}
 
 if CAPTCHA['n']: print('::notice title=AI::SiteGround pidió verificación anti-robots ' + str(CAPTCHA['n']) + ' veces; comprobado desde el servidor (' + str(CAPTCHA['servidor_ok']) + ' bien).')
