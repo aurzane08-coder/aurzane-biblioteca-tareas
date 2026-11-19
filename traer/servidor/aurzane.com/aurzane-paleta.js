@@ -287,7 +287,7 @@
 (function (d) {
   if (window.AurzaneEstilo || d.querySelector('script[data-azest]')) return;
   /* diferido: escrito en la cabecera retrasaba la primera pintura (PageSpeed, 16/11/2026) */
-  var src = 'https://aurzane.com/aurzane-estilo.js?v=hb3dfec59';
+  var src = 'https://aurzane.com/aurzane-estilo.js?v=heda561ec';
   var s = d.createElement('script');
   s.src = src; s.defer = true; s.setAttribute('data-azest', '1');
   (d.head || d.documentElement).appendChild(s);
