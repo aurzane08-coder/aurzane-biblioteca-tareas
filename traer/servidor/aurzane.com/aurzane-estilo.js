@@ -79,7 +79,7 @@
     '.az-boletin h2{font:700 clamp(1.35rem,2.6vw,1.8rem)/1.2 "Bodoni Moda",Georgia,serif;margin:0 0 8px;color:#f3efe6}.az-boletin p{margin:0;opacity:.8}' +
     '.az-boletin form{display:grid;grid-template-columns:1fr auto;gap:10px}.az-boletin input[type=email]{padding:13px 16px;border-radius:99px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.06);color:#fff;font:inherit;min-width:0}' +
     '.az-boletin button{padding:13px 22px;border:0;border-radius:99px;background:#E2BF6A;color:#1b1440;font:700 1rem inherit;cursor:pointer}' +
-    '.az-boletin label{grid-column:1/-1;font-size:.84rem;opacity:.8}.az-boletin label a{color:#E2BF6A}.az-boletin .trampa{position:absolute;left:-9999px}' +
+    '.az-boletin label{grid-column:1/-1;font-size:.84rem;opacity:.8;gap:.35em;align-items:center;flex-wrap:wrap}.az-boletin label a{color:#E2BF6A}.az-boletin .trampa{position:absolute;left:-9999px}' +
     '@media(max-width:760px){.az-boletin .in{grid-template-columns:1fr}.az-boletin form{grid-template-columns:1fr}}' +
     '.az-bol-pop{position:fixed;right:16px;bottom:16px;z-index:9995;width:min(380px,calc(100vw - 32px));padding:18px 18px 16px!important;border-radius:18px;box-shadow:0 24px 60px -20px rgba(0,0,0,.7)}' +
     '.az-bol-pop form,.az-bol-res form{grid-template-columns:1fr!important}.az-bol-pop .cerrar{position:absolute;top:6px;right:10px;background:none;border:0;color:#fff;font-size:1.5rem;cursor:pointer;opacity:.7}' +
