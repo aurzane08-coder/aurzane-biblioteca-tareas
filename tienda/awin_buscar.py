@@ -6,6 +6,7 @@ CLAVES = ['edx', 'coursera', 'udemy', 'domestika', 'babbel', 'busuu', 'preply', 
           'libro', 'book', 'storytel', 'audible', 'kobo', 'nubico', 'bookbeo', 'mindful', 'calm', 'headspace', 'yoga', 'meditat', 'sleep', 'psicolog',
           'therapy', 'terapia', 'student', 'estudiant', 'notebook', 'papeler', 'office', 'lamy', 'moleskine']
 if os.environ.get('CLAVES'): CLAVES = [c.strip() for c in os.environ['CLAVES'].split(',') if c.strip()]
+CLAVES += ['simbye', 'esim', 'e-sim', 'roaming', 'holafly', 'airalo']   # 19/11/2026: eSIM de viaje
 out = []
 for rel in ('notjoined', 'pending', 'joined', 'rejected'):
     rq = urllib.request.Request(f'https://api.awin.com/publishers/{pid}/programmes?relationship={rel}', headers={'Authorization': 'Bearer ' + tk})
