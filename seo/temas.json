@@ -926,5 +926,49 @@
   "pais_nombre": "Argentina",
   "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al 135 (Argentina, Centro de Asistencia al Suicida). ",
   "fecha": "2026-11-18"
+ },
+ {
+  "consulta": "cuantas universidades hay en medellin",
+  "titulo": "Universidades en Medellín: guía completa para elegir carrera en Colombia",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "oferta": "universidades",
+  "pais": "COL",
+  "pais_nombre": "Colombia",
+  "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al número de emergencias del país. ",
+  "fecha": "2026-11-19"
+ },
+ {
+  "consulta": "universidades en bogota",
+  "titulo": "Estudiar en Bogotá: oferta académica y cómo elegir universidad en Colombia",
+  "mundo": "nexus",
+  "test": "autoeficacia",
+  "oferta": "universidades",
+  "pais": "COL",
+  "pais_nombre": "Colombia",
+  "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al número de emergencias del país. ",
+  "fecha": "2026-11-19"
+ },
+ {
+  "consulta": "orientacion vocacional peru",
+  "titulo": "Cómo elegir carrera en Perú: guía de orientación vocacional",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "oferta": "universidades",
+  "pais": "PER",
+  "pais_nombre": "Perú",
+  "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al 113, opción 5 (Perú). ",
+  "fecha": "2026-11-19"
+ },
+ {
+  "consulta": "ansiedad examenes universidad peru",
+  "titulo": "Cómo superar la ansiedad por exámenes en la universidad en Perú",
+  "mundo": "mind",
+  "test": "ansiedad",
+  "oferta": "libros",
+  "pais": "PER",
+  "pais_nombre": "Perú",
+  "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al 113, opción 5 (Perú). ",
+  "fecha": "2026-11-19"
  }
 ]
