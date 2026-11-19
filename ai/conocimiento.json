@@ -336,7 +336,7 @@
   "receta": "reintentar_flujo",
   "motivo": "Fallo transitorio de JavaScript en la carga de recursos tras la verificación anti-robots de SiteGround.",
   "explicacion": "El navegador de pruebas detectó un error de red al cargar un recurso externo o script al inicio. Como la página responde con estado 200 y el HTML inicial está completo, suele deberse a un retraso en la inyección de scripts tras superar el muro de SiteGround o a un bloqueo temporal. Si la automatización vuelve a fallar, revisa la consola de red en las herramientas de desarrollo para identificar el archivo exacto que no descargó.",
-  "ok": 0,
+  "ok": 5,
   "fallo": 5,
   "fecha": "2026-11-19",
   "ejemplo": "Prueba fallida en https://mind.aurzane.com/ejercicios/atencion-a-la-respiracion/: La guía del ejercicio carga · 1 error(es) de JavaScript: Failed to load resource: net::ERR_FAILED (falló dos veces)"

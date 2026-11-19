@@ -1,6 +1,28 @@
 [
  {
   "fecha": "2026-11-19",
+  "id": "oa-W7220851852",
+  "tipo": "libro",
+  "titulo": "Making the Shift from Student to Learner: Reigniting Your Curiosity and Inquiry",
+  "url": "https://doi.org/10.32393/mssl",
+  "motivo": "La IA le dio 5/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf; cha https://pressbooks.library.upei.ca/curiosityandinquiry/open/download?type=print_pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-19",
+  "id": "oa-W7214443598",
+  "tipo": "libro",
+  "titulo": "Desarrollo de competencias a lo largo de la escolaridad",
+  "url": "https://doi.org/10.70577/ktbhs616",
+  "motivo": "La IA le dio 6/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf; cha https://pressbooks.library.upei.ca/curiosityandinquiry/open/download?type=print_pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-19",
   "id": "ia-la-mirada-de-la-muerte",
   "tipo": "libro",
   "titulo": "La Mirada De La Muerte",
@@ -2936,21 +2958,5 @@
   "titulo": "Por si fuera poco, el docente es un modelo en el que la expresión de determinadas emociones como el enfado no está bien vista socialmente.",
   "url": "https://aurzane.com/biblioteca/libro/inteligencia-emocional-entornos-educativos-evidencias-cienti.html",
   "motivo": "Gemini le dio 3/10: no tiene fuerza suficiente para redes"
- },
- {
-  "fecha": "2026-11-03",
-  "id": "cita-255ac6fe44",
-  "tipo": "cita",
-  "titulo": "Reconocer las señales a tiempo y aprender a gestionar el estrés puede evitar daños a largo plazo para la salud y el bienestar.",
-  "url": "https://aurzane.com/biblioteca/libro/manual-primeros-auxilios-psicologicos.html",
-  "motivo": "Gemini le dio 5/10: no tiene fuerza suficiente para redes"
- },
- {
-  "fecha": "2026-11-03",
-  "id": "cita-f51e542825",
-  "tipo": "cita",
-  "titulo": "Al mismo tiempo, queremos ayudar a calmar la angustia intensa y ofrecer esperanza.",
-  "url": "https://aurzane.com/biblioteca/libro/manual-primeros-auxilios-psicologicos.html",
-  "motivo": "Gemini le dio 5/10: no tiene fuerza suficiente para redes"
  }
 ]
