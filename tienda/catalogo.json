@@ -39,6 +39,24 @@
   "porque": "Este libro es para quienes desean cambiar su relación con el dinero y revisar sus creencias financieras inconscientes. Aporta herramientas prácticas para identificar y modificar los patrones mentales que condicionan el éxito económico."
  },
  {
+  "id": "cuentos-de-la-alhambra-washington-irving",
+  "titulo": "Cuentos de la Alhambra",
+  "autor": "Washington Irving",
+  "temas": [
+   "novela"
+  ],
+  "origen": "tendencia",
+  "fecha": "2026-11-19",
+  "isbn": "9788424105037",
+  "portada": "https://covers.openlibrary.org/b/id/14939671-M.jpg?default=false",
+  "anio": "1987",
+  "editorial": "Editorial Gente Nueva",
+  "idioma": "spa",
+  "resumen": "",
+  "tendencia": "Una lectura evocadora y cultural muy ligada al imaginario andaluz y al arte de El Barrio.",
+  "tendencia_fecha": "2026-11-19"
+ },
+ {
   "id": "invisible-eloy-moreno",
   "titulo": "Invisible",
   "autor": "Eloy Moreno",
