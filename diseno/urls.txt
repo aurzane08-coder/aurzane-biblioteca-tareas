@@ -1,0 +1,23 @@
+# Páginas que representan cada tipo de plantilla de AURZANE (una por tipo)
+https://aurzane.com/
+https://aurzane.com/research.html
+https://aurzane.com/biblioteca/
+https://aurzane.com/biblioteca/recientes/
+https://aurzane.com/libros/
+https://aurzane.com/biblioteca/libro/tormento.html
+https://aurzane.com/articulos/
+https://aurzane.com/articulos/minimalismo-huella-ecologica-bienestar/
+https://aurzane.com/novedades/
+https://aurzane.com/frases/
+https://mind.aurzane.com/
+https://mind.aurzane.com/mind-biblioteca.html
+https://mind.aurzane.com/test-de-ansiedad/
+https://nexus.aurzane.com/
+https://nexus.aurzane.com/universidades/
+https://live.aurzane.com/
+https://learn.aurzane.com/
+https://learn.aurzane.com/cursos/
+https://learn.aurzane.com/curso/autoestima-dia-a-dia/
+https://build.aurzane.com/
+https://build.aurzane.com/calculadora-hipoteca/
+https://ovp.aurzane.com/
