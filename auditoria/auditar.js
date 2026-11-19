@@ -19,7 +19,7 @@ const nombre = u => u.replace(/^https:\/\//, '').replace(/[^a-z0-9]+/gi, '_').re
     for (const clave of ANCHOS) {
       const w = parseInt(clave, 10), oscuro = /o$/.test(clave);
       const ctx = await b.newContext({ viewport: { width: w, height: w < 768 ? 800 : 900 }, deviceScaleFactor: 1, locale: 'es-ES', isMobile: w < 768, hasTouch: w < 768, colorScheme: oscuro ? 'dark' : 'light', bypassCSP: true });   /* sin CSP: axe no genera avisos que retrasarían el paso de la CSP a modo bloqueo */
-      await ctx.route(/googlesyndication\.com|doubleclick\.net|adservice\.google|googleads|fundingchoicesmessages/, r => r.abort());   // AdSense: un robot nunca carga anuncios (serían impresiones no válidas)
+      await ctx.route(/googlesyndication\.com|doubleclick\.net|adservice\.google|googleads|fundingchoicesmessages/, r => r.fulfill({ status: 200, contentType: 'application/javascript', body: '' }));   // AdSense: un robot nunca carga anuncios (serían impresiones no válidas). Con respuesta vacía y no «abort»: abortar dejaba un error «Failed to load resource» en cada página (19/11/2026)
       const p = await ctx.newPage();
       const errores = [], rotos = [];
       p.on('pageerror', e => errores.push(String(e.message).slice(0, 200)));

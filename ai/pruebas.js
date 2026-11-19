@@ -11,7 +11,7 @@ const RUIDO = /Report Only|frame-ancestors|googlesyndication|adsbygoogle|doublec
 
 async function probar(browser, p) {
   const ctx = await browser.newContext({ userAgent: UA, viewport: { width: 1280, height: 900 }, locale: 'es-ES' });
-  await ctx.route(/googlesyndication\.com|doubleclick\.net|adservice\.google|googleads|fundingchoicesmessages/, r => r.abort());   // AdSense: un robot nunca carga anuncios (serían impresiones no válidas)
+  await ctx.route(/googlesyndication\.com|doubleclick\.net|adservice\.google|googleads|fundingchoicesmessages/, r => r.fulfill({ status: 200, contentType: 'application/javascript', body: '' }));   // AdSense: un robot nunca carga anuncios (serían impresiones no válidas). Con respuesta vacía y no «abort»: abortar dejaba un error «Failed to load resource» en cada página (19/11/2026)
   const page = await ctx.newPage();
   const errores = [];
   page.on('pageerror', e => { if (!RUIDO.test(String(e))) errores.push(String(e.message || e).slice(0, 200)); });

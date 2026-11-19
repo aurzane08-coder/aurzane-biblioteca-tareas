@@ -128,6 +128,9 @@ LECCIONES_JS = [
     (r"Access to font at .*blocked by CORS|No 'Access-Control-Allow-Origin' header",
      'Las fuentes propias viven en aurzane.com/fuentes/ y los subdominios (mind, live, nexus...) las piden desde otro origen. La CDN de SiteGround guardó copias de las fuentes de antes de poner la cabecera que lo permite.',
      'aurzane.com/public_html/fuentes/.htaccess ya pone «Access-Control-Allow-Origin: *» (desde el 17/11/2026). Si vuelve a salir: comprobar la cabecera con curl -I -H "Origin: https://mind.aurzane.com" a la fuente y vaciar la caché (acción vaciar_cache, que también purga la CDN). Si la cabecera ya está, el aviso es de una copia vieja y se resuelve solo; no hace falta tocar las páginas. Las fuentes no rompen nada: si fallan, la página usa la letra del sistema.'),
+    (r'Failed to load resource: net::ERR_(FAILED|ABORTED|BLOCKED_BY_CLIENT)',
+     'Un archivo se cortó antes de llegar. El 19/11/2026 fue el propio navegador de pruebas: bloqueaba los anuncios de AdSense cortando la descarga (para no generar impresiones falsas) y eso dejaba este aviso en todas las páginas, aunque funcionaban.',
+     'Las pruebas ya responden a los anuncios con un archivo vacío en vez de cortarlos. Si vuelve a salir: abrir la página con «Diagnóstico de páginas» para ver QUÉ archivo falla (sale en las líneas RED). Si es de Google (anuncios, analítica) o la página hace su función, no es un fallo; si es un archivo nuestro, revisar que exista en el servidor.'),
     (r'No aparecen las preguntas del test|No aparece la guía del ejercicio|El portal carga vacío o sin botones',
      'Casi siempre es la verificación anti-robots de SiteGround: el navegador de pruebas la pasa, pero la página se recarga y se mira antes de que el JavaScript pinte las preguntas, la guía o el formulario.',
      'Las pruebas ahora repiten cada página que falla, con más espera tras la verificación (ai/pruebas.js), y solo avisan si falla dos veces. Si aun así falla, abrir la página con el flujo «Diagnóstico de páginas» (ai/diag/urls.txt): muestra cuántas preguntas hay y todos los errores de consola y de red.'),
@@ -1452,6 +1455,8 @@ def fuentes_con_cabecera():
 for r_ in pruebas.get('resultados', []):
     if r_['ok'] is False:
         errs = [e_ for e_ in r_.get('errores', []) if not re.search(r'Access to font at .*CORS', e_)]
+        if errs and all(re.search(r'Failed to load resource: net::ERR_(FAILED|ABORTED|BLOCKED_BY_CLIENT)', e_) for e_ in errs) and re.search(r'^(Carga bien|Respondí|Cambié|Hice|La guía)', r_['detalle']):
+            continue   # la función va bien; solo un archivo cortado (lección del 19/11/2026)
         solo_fuentes = 'blocked by CORS' in r_['detalle'] and not errs and ' · ' in r_['detalle'] and not re.search(r'No aparecen|no salió|vacío|mal \(|devuelve|No se pudo', r_['detalle'])
         if solo_fuentes and fuentes_con_cabecera(): continue   # la función va bien; solo eran fuentes de una copia vieja ya corregida
         lc = leccion_js(r_['detalle'])

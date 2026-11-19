@@ -237,6 +237,23 @@ TIENDA_S = {'ansiedad': 'Emociones, ansiedad y estrés', 'estres': 'Emociones, a
 ORDEN_S = list(dict.fromkeys(TIENDA_S.values()))
 
 lista = sorted(cat.values(), key=lambda x: (x.get('tendencia_fecha', ''), x['fecha']), reverse=True)
+# Portadas que ya no cargan (lección del AI Manager, 19/11/2026: «portada rota: El hombre en busca de sentido»):
+# se prueba la portada guardada; si falla, la de Open Library por ISBN y luego la de Google Books por ISBN; si ninguna, sin portada
+def portada_viva(u):
+    try:
+        rq = urllib.request.Request(u, method='HEAD', headers={'User-Agent': 'AURZANE-tienda/1.0'})
+        with urllib.request.urlopen(rq, timeout=15) as r: return r.status == 200 and int(r.headers.get('Content-Length') or 1000) > 500
+    except Exception: return False
+for x in lista:
+    if not x.get('portada') or portada_viva(x['portada']): continue
+    otras = []
+    if x.get('isbn'): otras += [f'https://covers.openlibrary.org/b/isbn/{x["isbn"]}-M.jpg?default=false']
+    if x.get('isbn'):
+        st_, b_ = get('https://www.googleapis.com/books/v1/volumes?q=isbn:' + x['isbn'])
+        try: otras += [json.loads(b_)['items'][0]['volumeInfo']['imageLinks']['thumbnail'].replace('http://', 'https://').replace('&edge=curl', '')]
+        except Exception: pass
+    nueva = next((o for o in otras if portada_viva(o)), '')
+    print('portada rota:', x['titulo'], '->', nueva or 'sin portada'); x['portada'] = nueva
 json.dump(lista, open(os.path.join(D, 'catalogo.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
 json.dump(sorted(descartes), open(os.path.join(D, 'descartes.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
 hace35 = (datetime.date.today() - datetime.timedelta(days=35)).isoformat()
