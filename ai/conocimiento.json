@@ -229,7 +229,7 @@
   "motivo": "El test completó el flujo correctamente y obtuvo resultado, pero falló por recurso de red temporal.",
   "explicacion": "El error net::ERR_FAILED suele ocurrir por un bloqueo temporal de red o caché de SiteGround al cargar un recurso secundario. Como el test funcionó y dio resultado, se puede relanzar el marketing o vaciar caché si persiste.",
   "ok": 0,
-  "fallo": 0,
+  "fallo": 1,
   "fecha": "2026-11-19",
   "ejemplo": "Prueba fallida en https://live.aurzane.com/test-de-bienestar/: Respondí 5 preguntas: resultado 40 sobre 100 (Bienestar bajo) · 1 error(es) de JavaScript: Failed to load resource: net::ERR_FAILED (fall"
  },
@@ -238,7 +238,7 @@
   "motivo": "Error de carga de recurso en prueba de cambio de dato debido a caché o protección de SiteGround.",
   "explicacion": "El error net::ERR_FAILED suele estar relacionado con la verificación anti-robots de SiteGround o con recursos bloqueados temporalmente durante la prueba automatizada. Al tratarse de un fallo puntual de red en el navegador de pruebas y no de un error de código interno, relanzar las publicaciones y acciones de marketing asegura la sincronización. Si persiste, se puede vaciar la caché desde el panel de SiteGround.",
   "ok": 0,
-  "fallo": 0,
+  "fallo": 1,
   "fecha": "2026-11-19",
   "ejemplo": "Prueba fallida en https://live.aurzane.com/calculadora-edad/: Cambié un dato: 26 → 26 · 1 error(es) de JavaScript: Failed to load resource: net::ERR_FAILED (falló dos veces)"
  },
@@ -247,8 +247,26 @@
   "motivo": "Error de carga en red al interactuar con el test, probablemente por caché o verificación de SiteGround.",
   "explicacion": "El navegador de pruebas falló al cargar un recurso durante la interacción. Al ser un error de red puntual tras responder preguntas, el reintento de la automatización suele completarlo con éxito. Si persiste, comprueba la caché de SiteGround o el script del test.",
   "ok": 0,
-  "fallo": 0,
+  "fallo": 1,
   "fecha": "2026-11-19",
   "ejemplo": "Prueba fallida en https://live.aurzane.com/test-de-habitos/: Respondí 7 preguntas: resultado 5 sobre 10 (Estilo de vida intermedio) · 1 error(es) de JavaScript: Failed to load resource: net::ERR_FAILE"
+ },
+ "prueba_fallida|prueba fallida en # cambié un dato: #,# → #,# · # error(es) de javascript: failed to load resource: net::err_failed (falló dos veces)": {
+  "receta": "reintentar_flujo",
+  "motivo": "Falso positivo por carga asíncrona tras cambio de valor en la calculadora.",
+  "explicacion": "El error de red suele deberse a un recurso externo que tardó en responder al cambiar el valor rápidamente. Al reintentar el flujo, la caché de SiteGround ya estará caliente y la prueba superará la validación sin errores.",
+  "ok": 0,
+  "fallo": 0,
+  "fecha": "2026-11-19",
+  "ejemplo": "Prueba fallida en https://live.aurzane.com/calculadora-imc/: Cambié un dato: 24,2 → 16,7 · 1 error(es) de JavaScript: Failed to load resource: net::ERR_FAILED (falló dos veces)"
+ },
+ "prueba_fallida|prueba fallida en # carga bien (# campos) · error de javascript: failed to load resource: net::err_failed (falló dos veces)": {
+  "receta": "avisar",
+  "motivo": "Error de red net::ERR_FAILED al cargar recursos externos en la calculadora de interés compuesto.",
+  "explicacion": "El navegador de pruebas experimentó un fallo al cargar un recurso crítico (probablemente un script o fuente externa desde aurzane.com). Como la página carga bien en estructura pero los recursos fallaron de forma intermitente, se requiere aviso para supervisión manual de la CDN o caché de SiteGround.",
+  "ok": 0,
+  "fallo": 0,
+  "fecha": "2026-11-19",
+  "ejemplo": "Prueba fallida en https://build.aurzane.com/calculadora-interes-compuesto/: Carga bien (10 campos) · error de JavaScript: Failed to load resource: net::ERR_FAILED (falló dos veces)"
  }
 }

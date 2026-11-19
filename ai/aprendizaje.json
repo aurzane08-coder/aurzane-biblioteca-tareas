@@ -188,7 +188,7 @@
   0
  ],
  "estudio:en": [
-  22,
+  25,
   29
  ],
  "ed:Frontiers in dental medicine": [
@@ -196,7 +196,7 @@
   1
  ],
  "tipo:estudio": [
-  49,
+  52,
   33
  ],
  "ed:Stress biology": [
@@ -486,5 +486,17 @@
  "ed:Openventio Publishers": [
   0,
   61
+ ],
+ "ed:Frontiers in pediatrics": [
+  1,
+  0
+ ],
+ "ed:Frontiers in endocrinology": [
+  1,
+  0
+ ],
+ "ed:Cogent mental health": [
+  1,
+  0
  ]
 }
