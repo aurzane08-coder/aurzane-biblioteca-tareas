@@ -19,6 +19,64 @@
   "porque": "Es ideal para los amantes de los relatos fascinantes del pasado que buscan comprender mejor los grandes enigmas y personajes de nuestra civilización. Aporta una lectura amena y rigurosa que entrelaza curiosidades históricas con un profundo análisis cultural."
  },
  {
+  "id": "los-secretos-de-la-mente-millonaria-t-harv-eker",
+  "titulo": "Los secretos de la mente millonaria",
+  "autor": "T. Harv Eker",
+  "temas": [
+   "finanzas",
+   "habitos"
+  ],
+  "origen": "tendencia",
+  "fecha": "2026-11-19",
+  "isbn": "9788478086085",
+  "portada": "https://covers.openlibrary.org/b/id/8078200-M.jpg?default=false",
+  "anio": "2013",
+  "editorial": "Sirio",
+  "idioma": "spa",
+  "resumen": "",
+  "tendencia": "Noviembre marca el inicio de la planificación financiera y de propósitos para el nuevo año.",
+  "tendencia_fecha": "2026-11-19",
+  "porque": "Este libro es para quienes desean cambiar su relación con el dinero y revisar sus creencias financieras inconscientes. Aporta herramientas prácticas para identificar y modificar los patrones mentales que condicionan el éxito económico."
+ },
+ {
+  "id": "invisible-eloy-moreno",
+  "titulo": "Invisible",
+  "autor": "Eloy Moreno",
+  "temas": [
+   "novela"
+  ],
+  "origen": "tendencia",
+  "fecha": "2026-11-09",
+  "isbn": "9788418050428",
+  "portada": "https://covers.openlibrary.org/b/id/11171586-M.jpg",
+  "anio": "2020",
+  "editorial": "Nube de Tinta",
+  "idioma": "spa",
+  "resumen": "",
+  "tendencia": "Una lectura emotiva y muy recomendada en colegios y hogares coincidiendo con el otoño.",
+  "tendencia_fecha": "2026-11-19",
+  "porque": "Es para lectores interesados en historias emotivas sobre el acoso escolar y la empatía social. Aporta una mirada cercana sobre el dolor de la invisibilidad en las aulas y la necesidad de mirar a los demás."
+ },
+ {
+  "id": "reina-roja-juan-gomez-jurado",
+  "titulo": "Reina roja",
+  "autor": "Juan Gómez-Jurado",
+  "temas": [
+   "novela"
+  ],
+  "origen": "semilla",
+  "fecha": "2026-11-09",
+  "isbn": "9788466667937",
+  "portada": "https://covers.openlibrary.org/b/id/9256100-M.jpg?default=false",
+  "anio": "2018",
+  "editorial": "B (Ediciones B)",
+  "idioma": "spa",
+  "resumen": "",
+  "porque": "Es para los aficionados a los thrillers vertiginosos que buscan un ritmo ágil y personajes llenos de contrastes en Madrid. Aporta una investigación criminal adictiva protagonizada por una mente brillante y un policía muy peculiar.",
+  "tendencia": "El fenómeno de suspense perfecto para regalar o leer durante los días lluviosos de noviembre.",
+  "tendencia_fecha": "2026-11-19"
+ },
+ {
   "id": "el-laberinto-de-los-espiritus-carlos-ruiz-zafon",
   "titulo": "El laberinto de los espíritus",
   "autor": "Carlos Ruiz Zafón",
@@ -329,25 +387,6 @@
   "tendencia": "Ideal para conectar con la concentración y el rendimiento mental inspirado en la temporada de baloncesto y deporte de élite.",
   "tendencia_fecha": "2026-11-09",
   "porque": "Es para quienes practican tenis o cualquier otra disciplina y desean superar sus propios bloqueos mentales. Aporta herramientas prácticas para mejorar la concentración y dejar de interferir en el propio rendimiento natural."
- },
- {
-  "id": "invisible-eloy-moreno",
-  "titulo": "Invisible",
-  "autor": "Eloy Moreno",
-  "temas": [
-   "novela"
-  ],
-  "origen": "tendencia",
-  "fecha": "2026-11-09",
-  "isbn": "9788418050428",
-  "portada": "https://covers.openlibrary.org/b/id/11171586-M.jpg",
-  "anio": "2020",
-  "editorial": "Nube de Tinta",
-  "idioma": "spa",
-  "resumen": "",
-  "tendencia": "Una novela muy buscada en otoño sobre la empatía y la visibilidad social en entornos cotidianos y escolares.",
-  "tendencia_fecha": "2026-11-09",
-  "porque": "Es para lectores interesados en historias emotivas sobre el acoso escolar y la empatía social. Aporta una mirada cercana sobre el dolor de la invisibilidad en las aulas y la necesidad de mirar a los demás."
  },
  {
   "id": "mentalidad-mamba-kobe-bryant",
@@ -1490,23 +1529,6 @@
   "idioma": "",
   "resumen": "",
   "porque": "Atrae a quienes disfrutan de las novelas históricas monumentales repletas de intrigas, pasiones y luchas de poder en la Edad Media. Aporta un relato fascinante sobre la construcción de una catedral y el destino entrelazado de sus protagonistas."
- },
- {
-  "id": "reina-roja-juan-gomez-jurado",
-  "titulo": "Reina roja",
-  "autor": "Juan Gómez-Jurado",
-  "temas": [
-   "novela"
-  ],
-  "origen": "semilla",
-  "fecha": "2026-11-09",
-  "isbn": "9788466667937",
-  "portada": "https://covers.openlibrary.org/b/id/9256100-M.jpg?default=false",
-  "anio": "2018",
-  "editorial": "B (Ediciones B)",
-  "idioma": "spa",
-  "resumen": "",
-  "porque": "Es para los aficionados a los thrillers vertiginosos que buscan un ritmo ágil y personajes llenos de contrastes en Madrid. Aporta una investigación criminal adictiva protagonizada por una mente brillante y un policía muy peculiar."
  },
  {
   "id": "don-quijote-de-la-mancha-miguel-de-cervantes",
