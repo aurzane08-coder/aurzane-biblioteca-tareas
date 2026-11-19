@@ -170,7 +170,9 @@ if log:
     for k in list(c):
         r_ = ruta_srv(k[1])
         if r_ and mt.get(r_) and mt[r_] > ultimo[k]:
-            errores['corregidos'].append({'mensaje': k[0], 'archivo': k[1], 'pagina': k[2], 'veces': c[k], 'cambiado': mt[r_]}); del c[k]
+            if mt[r_] >= (AHORA - datetime.timedelta(hours=24)).strftime('%Y-%m-%d %H:%M:%S'):   # 19/11/2026: lo resuelto se ve 24 h y luego sale del panel
+                errores['corregidos'].append({'mensaje': k[0], 'archivo': k[1], 'pagina': k[2], 'veces': c[k], 'cambiado': mt[r_]})
+            del c[k]
     errores['top'] = [{'mensaje': m, 'archivo': s, 'pagina': p, 'veces': n, 'leccion': leccion_js(m)} for (m, s, p), n in c.most_common(10)]
     for (m, s, p), n in c.most_common(3):
         if n >= 5: aviso('medio', f'Error repetido {n} veces en {p}: {m[:120]}', 'js_error', json.dumps([m[:300], s, p]))
@@ -1452,6 +1454,7 @@ def fuentes_con_cabecera():
             CORS_OK = st_ == 200 and (hd_.get('access-control-allow-origin') or '') in ('*', 'https://mind.aurzane.com')
         except Exception: CORS_OK = False
     return CORS_OK
+FALLOS_P = []
 for r_ in pruebas.get('resultados', []):
     if r_['ok'] is False:
         errs = [e_ for e_ in r_.get('errores', []) if not re.search(r'Access to font at .*CORS', e_)]
@@ -1459,6 +1462,17 @@ for r_ in pruebas.get('resultados', []):
             continue   # la función va bien; solo un archivo cortado (lección del 19/11/2026)
         solo_fuentes = 'blocked by CORS' in r_['detalle'] and not errs and ' · ' in r_['detalle'] and not re.search(r'No aparecen|no salió|vacío|mal \(|devuelve|No se pudo', r_['detalle'])
         if solo_fuentes and fuentes_con_cabecera(): continue   # la función va bien; solo eran fuentes de una copia vieja ya corregida
+        FALLOS_P.append((r_, errs))
+# Lección del 19/11/2026: el mismo error en muchas páginas a la vez no son muchos problemas, es UNO común (un archivo
+# compartido, la red o la propia prueba). Se agrupa en un solo aviso en vez de 39 iguales.
+_grupos = collections.defaultdict(list)
+for r_, errs in FALLOS_P: _grupos[re.sub(r'https?://\S+', 'URL', errs[0])[:160] if errs else ('sin_error:' + r_['url'])].append(r_)
+for clave_g, lst in _grupos.items():
+    if not clave_g.startswith('sin_error:') and len(lst) >= 4:
+        lc = leccion_js(clave_g)
+        aviso('mal', f'El mismo fallo en {len(lst)} páginas a la vez (por ejemplo {lst[0]["url"]} y {lst[1]["url"]}): {clave_g}. Cuando falla todo a la vez casi siempre es algo común (un archivo compartido, la red o la propia prueba), no cada página.' + (f' Causa probable: {lc["causa"]} Arreglo: {lc["arreglo"]}' if lc else ''), 'prueba_fallida', 'grupo:' + hashlib.md5(clave_g.encode()).hexdigest()[:8])
+        continue
+    for r_ in lst:
         lc = leccion_js(r_['detalle'])
         aviso('mal' if r_['tipo'] in ('test', 'portal', 'calculadora') else 'medio', f'Prueba fallida en {r_["url"]}: {r_["detalle"]}' + (f' (Causa probable: {lc["causa"]} Arreglo: {lc["arreglo"]})' if lc else ''), 'prueba_fallida', r_['url'])
 servicios = []
@@ -1716,14 +1730,15 @@ ESTADO['solicitudes_hechas'] = sorted(hechas_sol)[-500:]
 if GEM and gem_estado == 'sin clave':
     gemini('Responde solo: ok', 10)
 print('::notice title=AI::Gemini: ' + (gem_estado if GEM else 'sin clave'))
-reparaciones_inf = {'conocimiento': [dict(v, firma=k.split('|', 1)[1][:120]) for k, v in list(CONOC.items())[-40:]], 'log': REP[:80], 'aprendizaje': {k: v for k, v in APR.items()}, 'nombres': NOMBRES, 'gemini': gem_estado if GEM else 'sin clave',
+reparaciones_inf = {'conocimiento': [dict(v, firma=k.split('|', 1)[1][:120]) for k, v in list(CONOC.items())[-40:]], 'log': [e_ for e_ in REP if e_.get('fecha', '') >= (AHORA - datetime.timedelta(hours=24)).isoformat()[:16] or e_.get('clave') in claves_ahora][:80], 'log_total': len(REP), 'aprendizaje': {k: v for k, v in APR.items()}, 'nombres': NOMBRES, 'gemini': gem_estado if GEM else 'sin clave',
                     'pendientes_solicitud': sum(1 for x in SOL if x.get('id') not in hechas_sol)}
 
 if CAPTCHA['n']: print('::notice title=AI::SiteGround pidió verificación anti-robots ' + str(CAPTCHA['n']) + ' veces; comprobado desde el servidor (' + str(CAPTCHA['servidor_ok']) + ' bien).')
 # ---------- 10. Resumen ----------
 nivel = 'mal' if any(p['nivel'] == 'mal' for p in problemas) else ('medio' if problemas else 'ok')
 lineas = [f'Revisé {len(HOSTS)} sitios, {len(CLAVE)} páginas clave, {len(autos)} automatizaciones y las publicaciones en redes.',
-          'Todo funciona bien.' if nivel == 'ok' else f'Hay {len(problemas)} avisos: ' + '; '.join(p['texto'].rstrip('.') for p in problemas[:4]) + ('…' if len(problemas) > 4 else '.'),
+          # 19/11/2026: un resumen corto (antes pegaba el texto entero de los 4 primeros avisos)
+          'Todo funciona bien.' if nivel == 'ok' else (f'Hay {len(problemas)} aviso' + ('s' if len(problemas) != 1 else '') + '. Lo más urgente: ' + (lambda p: (p['texto'][:150].rsplit(' ', 1)[0] + '…') if len(p['texto']) > 150 else p['texto'])(sorted(problemas, key=lambda p: {'mal': 0, 'medio': 1}.get(p['nivel'], 2))[0])),
           f'Redes: {mk["ok_24h"]} publicaciones en 24 h' + (f' y {mk["fallos_24h"]} fallos.' if mk['fallos_24h'] else ', sin fallos.'),
           f'Errores de visitantes: {errores["total_24h"]} en 24 h.' if log else 'Errores de visitantes: el registro empieza a contar desde ahora.',
           (f'Arreglé sola {len(acciones)} cosas.' if acciones else 'No hizo falta arreglar nada.'),

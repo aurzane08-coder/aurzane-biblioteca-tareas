@@ -152,12 +152,17 @@ SCRIPT = r'''<script>
   var INF = null, PAN = null;
   async function token(){ var sb = window.__aurzaneSb; return sb ? (await sb.auth.getSession()).data.session?.access_token : ''; }
   async function datos(){
+    /* 19/11/2026: las tres consultas van a la vez (antes, una detrás de otra: unos 5 s) y lo último que se vio se pinta al momento */
     var tk = await token(); if(!tk) return;
-    try{ INF = ((await (await fetch('/ai/api.php', { cache:'no-store', headers:{ Authorization:'Bearer ' + tk } })).json()).informe) || INF; }catch(e){}
-    try{ var q = await window.__aurzaneSb.from('reportes').select('id', { count:'exact', head:true }).eq('estado', 'nuevo'); if(q.count != null){ var rb = $('repBadge'); if(rb){ rb.textContent = q.count || ''; rb.style.display = q.count ? 'inline-block' : 'none'; } } }catch(e){}
-    try{ var r = await (await fetch('https://aurzane.com/panel/datos.php', { method:'POST', headers:{ 'Content-Type':'application/json' }, body: JSON.stringify({ token: tk }) })).json(); if(!r.error) PAN = r; }catch(e){}
+    var f1 = fetch('/ai/api.php', { cache:'no-store', headers:{ Authorization:'Bearer ' + tk } }).then(function(r){ return r.json(); }).then(function(j){ INF = (j && j.informe) || INF; }).catch(function(){});
+    var f2 = window.__aurzaneSb.from('reportes').select('id', { count:'exact', head:true }).eq('estado', 'nuevo').then(function(q){ if(q.count != null){ var rb = $('repBadge'); if(rb){ rb.textContent = q.count || ''; rb.style.display = q.count ? 'inline-block' : 'none'; } } }).catch(function(){});
+    var f3 = fetch('https://aurzane.com/panel/datos.php', { method:'POST', headers:{ 'Content-Type':'application/json' }, body: JSON.stringify({ token: tk }) }).then(function(r){ return r.json(); }).then(function(r){ if(!r.error) PAN = r; }).catch(function(){});
+    f1.then(pintar); f3.then(pintar);
+    await Promise.all([f1, f2, f3]);
+    try { localStorage.setItem('azInicioCache', JSON.stringify({ t: Date.now(), INF: INF, PAN: PAN })); } catch(e) {}
     pintar();
   }
+  try { var cch = JSON.parse(localStorage.getItem('azInicioCache') || 'null'); if(cch && Date.now() - cch.t < 864e5){ INF = cch.INF; PAN = cch.PAN; setTimeout(function(){ try { pintar(); } catch(e) {} }, 0); } } catch(e) {}
   var kpiOVP = function(){ return Array.prototype.map.call(document.querySelectorAll('#kpiRow .kpi-card'), function(d){ return [((d.querySelector('.k-lbl') || {}).textContent || '').trim(), parseInt(((d.querySelector('.k-num') || {}).textContent || '').replace(/\D/g, ''), 10) || 0]; }).filter(function(x){ return x[0]; }); };
   function pintar(){
     if(!$('inTareas')) return;
