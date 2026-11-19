@@ -1,0 +1,79 @@
+
+/* =====================================================================================================
+   AURZANE v4 · «Hybrid Premium Editorial» (guía de dirección de arte del 19/11/2026)
+   Marfil para leer, verde profundo para la marca, la navegación, el pie y las herramientas;
+   champán solo en acentos y datos clave. Instrument Serif en titulares, Manrope en interfaz y texto.
+   Los colores escritos en cada página se convierten con diseno/paleta-v4.js (misma luminosidad, nuevo tono);
+   esta hoja pone las letras, los tokens comunes y las piezas compartidas (barra, pie, buscador, botones).
+   ===================================================================================================== */
+
+/* ---------- Letras (licencia OFL, servidas desde aurzane.com/fuentes/) ---------- */
+@font-face{font-family:'Instrument Serif';font-style:normal;font-weight:400;font-display:swap;src:url(https://aurzane.com/fuentes/instrument-serif-latin-400-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Instrument Serif';font-style:normal;font-weight:400;font-display:swap;src:url(https://aurzane.com/fuentes/instrument-serif-latin-ext-400-normal.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Instrument Serif';font-style:italic;font-weight:400;font-display:swap;src:url(https://aurzane.com/fuentes/instrument-serif-latin-400-italic.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Instrument Serif';font-style:italic;font-weight:400;font-display:swap;src:url(https://aurzane.com/fuentes/instrument-serif-latin-ext-400-italic.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Manrope';font-style:normal;font-weight:200 800;font-display:swap;src:url(https://aurzane.com/fuentes/manrope-latin-wght-normal.woff2) format('woff2-variations'),url(https://aurzane.com/fuentes/manrope-latin-wght-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Manrope';font-style:normal;font-weight:200 800;font-display:swap;src:url(https://aurzane.com/fuentes/manrope-latin-ext-wght-normal.woff2) format('woff2-variations'),url(https://aurzane.com/fuentes/manrope-latin-ext-wght-normal.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+/* Compatibilidad: las ~9.000 páginas piden «Bodoni Moda» e «Instrument Sans»; con estas caras reciben ya las letras nuevas,
+   sin tocar cada archivo. Esta hoja se lee después de las de cada página, así que estas caras son las que se usan. */
+@font-face{font-family:'Bodoni Moda';font-style:normal;font-weight:100 900;font-display:swap;src:url(https://aurzane.com/fuentes/instrument-serif-latin-400-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Bodoni Moda';font-style:normal;font-weight:100 900;font-display:swap;src:url(https://aurzane.com/fuentes/instrument-serif-latin-ext-400-normal.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Bodoni Moda';font-style:italic;font-weight:100 900;font-display:swap;src:url(https://aurzane.com/fuentes/instrument-serif-latin-400-italic.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Bodoni Moda';font-style:italic;font-weight:100 900;font-display:swap;src:url(https://aurzane.com/fuentes/instrument-serif-latin-ext-400-italic.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Instrument Sans';font-style:normal;font-weight:100 900;font-display:swap;src:url(https://aurzane.com/fuentes/manrope-latin-wght-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Instrument Sans';font-style:normal;font-weight:100 900;font-display:swap;src:url(https://aurzane.com/fuentes/manrope-latin-ext-wght-normal.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Instrument Sans';font-style:italic;font-weight:100 900;font-display:swap;src:url(https://aurzane.com/fuentes/manrope-latin-wght-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+
+/* ---------- Tokens de la guía ---------- */
+:root{
+  --v-forest:#183D32;--v-deep:#12251F;--v-deep-2:#1B352C;--v-ivory:#F6F5F0;--v-white:#FFFFFF;--v-charcoal:#252724;
+  --v-mineral:#85867F;--v-mineral-txt:#5E605A;--v-champ:#C7B99B;--v-champ-txt:#6E5E3A;--v-sage:#DCE5DF;--v-sand:#E9E4DB;
+  --v-line:rgba(37,39,36,.12);--v-line-2:rgba(37,39,36,.2);--v-line-osc:rgba(242,239,230,.12);
+  --v-serif:'Instrument Serif','Bodoni Moda',Georgia,serif;--v-sans:'Manrope','Instrument Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --v-r:14px;--v-r-s:10px;--v-r-l:22px;--v-sombra:0 1px 2px rgba(18,37,31,.05),0 10px 30px -18px rgba(18,37,31,.28);
+  /* la barra y el pie comunes */
+  --az-barra:#12251F;--az-barra-2:#1D3A31;--az-barra-txt:#F2EFE6;--az-barra-dim:#BCC4BD;--az-linea:rgba(242,239,230,.12);
+  --az-fuente:var(--v-sans);--az-foco:#C7B99B;--az-portada:#8C7A52;--az-portada-c:#D8CBAE;--az-radio:14px;
+  --az-sombra:0 24px 60px -24px rgba(8,20,16,.55);
+}
+html{font-synthesis-weight:none;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility}
+::selection{background:#DCE5DF;color:#12251F}
+html[data-tema="oscuro"] ::selection{background:#2B5848;color:#F2EFE6}
+/* titulares: serif de alto contraste sin espaciado de letras forzado (la serif nueva ya respira sola) */
+:where(h1,h2){letter-spacing:-.012em}
+h1,h2{font-kerning:normal}
+
+/* ---------- Barra común ---------- */
+.az-logo{font:400 23px/1 var(--v-serif)!important;letter-spacing:.06em!important;color:#F6F5F0!important;border-right-color:rgba(242,239,230,.14)!important}
+.az-logo b{color:inherit!important;font-weight:400!important}
+.az-mundos a{font-weight:600;letter-spacing:.06em}
+.az-mundos a[aria-current]{background:rgba(242,239,230,.08)!important;box-shadow:inset 0 -2px 0 var(--v-champ)!important}
+.az-buscar{background:rgba(242,239,230,.07)!important;border-color:rgba(242,239,230,.16)!important}
+.az-buscar kbd{background:rgba(242,239,230,.08)!important;color:#D6DBD4!important;border-color:rgba(242,239,230,.18)!important}
+.az-cab-2{background:#F6F5F0!important;color:#252724!important;border-bottom:1px solid var(--v-line)!important}
+html[data-tema="oscuro"] .az-cab-2{background:#162B24!important;color:#ECEAE2!important;border-color:var(--v-line-osc)!important}
+.az-cab-2 a[aria-current="page"]{background:#DCE5DF!important;color:#12251F!important;opacity:1}
+html[data-tema="oscuro"] .az-cab-2 a[aria-current="page"]{background:#21493D!important;color:#F2EFE6!important}
+.az-subnav{background:#EFEDE6!important;border-color:var(--v-line)!important}
+
+/* ---------- Buscador global (Ctrl+K) ---------- */
+.az-paleta{background:rgba(10,24,19,.55)!important}
+.az-paleta-caja{background:#FFFFFF!important;color:#252724!important;border:1px solid var(--v-line);border-radius:18px!important}
+html[data-tema="oscuro"] .az-paleta-caja{background:#162B24!important;color:#ECEAE2!important}
+.az-paleta-lista [role="option"][aria-selected="true"]{background:#EEF2EE!important}
+html[data-tema="oscuro"] .az-paleta-lista [role="option"][aria-selected="true"]{background:#21493D!important}
+
+/* ---------- Pie común (verde profundo) ---------- */
+.az-pie{background:#12251F!important;color:#C9D0C9!important}
+.az-pie .az-logo{font-size:26px!important}
+.az-pie .az-pie-t{color:#C7B99B!important;letter-spacing:.08em}
+.az-pie p{color:#C9D0C9!important}
+.az-pie small{color:#9FA9A1!important}
+.az-pie-legal{border-top-color:rgba(242,239,230,.1)!important}
+
+/* ---------- Guardados y foco ---------- */
+.az-gd{background:#FFFFFF!important;color:#252724!important}
+html[data-tema="oscuro"] .az-gd{background:#162B24!important;color:#ECEAE2!important}
+.az-gd-cab h2{font:400 1.6rem/1.15 var(--v-serif)!important}
+:where(a,button,input,select,textarea,summary,[tabindex]):focus-visible{outline-color:var(--v-forest)}
+html[data-tema="oscuro"] :where(a,button,input,select,textarea,summary,[tabindex]):focus-visible{outline-color:var(--v-champ)}

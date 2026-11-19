@@ -6,7 +6,7 @@ const [lista, salida] = process.argv.slice(2); fs.mkdirSync(salida, { recursive:
 const URLS = fs.readFileSync(lista, 'utf8').split('\n').map(s => s.trim()).filter(s => s && !s.startsWith('#'));
 const TEMAS = (process.env.TEMAS || 'claro oscuro').split(/\s+/), VISTAS = (process.env.VISTAS || 'escritorio movil').split(/\s+/), ALTO = +(process.env.ALTO || 5200);
 const VP = { escritorio: { width: 1440, height: 900 }, movil: { width: 390, height: 844, isMobile: true, hasTouch: true, deviceScaleFactor: 1 } };
-const BORR = path.join(__dirname, 'borrador');
+const BORR = path.join(__dirname, 'borrador'); const V4 = process.env.V4 === '1'; const PAL = require('./paleta-v4.js');
 const nombre = u => u.replace(/^https?:\/\//, '').replace(/[^a-z0-9]+/gi, '_').replace(/_+$/, '').slice(0, 90);
 (async () => {
   const b = await chromium.launch(); const informe = [];
@@ -17,10 +17,19 @@ const nombre = u => u.replace(/^https?:\/\//, '').replace(/[^a-z0-9]+/gi, '_').r
     await ctx.route(/^https:\/\/([a-z]+\.)?aurzane\.com\//, async r => {
       const x = new URL(r.request().url()); let f = path.join(BORR, x.hostname, decodeURIComponent(x.pathname));
       if (f.endsWith('/')) f += 'index.html';
-      if (r.request().resourceType() !== 'document' || fs.existsSync(f)) { if (fs.existsSync(f) && fs.statSync(f).isFile()) {
-        const ext = path.extname(f).slice(1); const tipo = { html: 'text/html; charset=utf-8', js: 'application/javascript', css: 'text/css', json: 'application/json', svg: 'image/svg+xml' }[ext] || 'application/octet-stream';
-        return r.fulfill({ status: 200, contentType: tipo, body: fs.readFileSync(f) }); } }
-      return r.continue();
+      const ext = path.extname(f).slice(1) || (r.request().resourceType() === 'document' ? 'html' : '');
+      const TIPO = { html: 'text/html; charset=utf-8', js: 'application/javascript', css: 'text/css', json: 'application/json', svg: 'image/svg+xml', woff2: 'font/woff2' };
+      const texto = ['html', 'js', 'css'].includes(ext) || r.request().resourceType() === 'document';
+      let cuerpo = null, tipo = TIPO[ext] || 'application/octet-stream', estado = 200, cab = {};
+      if (fs.existsSync(f) && fs.statSync(f).isFile()) cuerpo = fs.readFileSync(f);
+      else if (V4 && texto) { try { const res = await r.fetch(); estado = res.status(); cab = res.headers(); cuerpo = await res.body(); tipo = cab['content-type'] || tipo; } catch (e) { return r.continue(); } }
+      if (cuerpo === null) return r.continue();
+      if (V4 && texto && estado < 300) {
+        let t = cuerpo.toString('utf8'); t = PAL.transformar(t).out;
+        if (x.pathname === '/aurzane-ds.css') t += '\n' + fs.readFileSync(path.join(__dirname, 'v4.css'), 'utf8');
+        cuerpo = Buffer.from(t, 'utf8');
+      }
+      return r.fulfill({ status: estado, contentType: tipo, body: cuerpo, headers: { 'access-control-allow-origin': '*' } });
     });
     const p = await ctx.newPage(); const err = [];
     p.on('pageerror', e => err.push('JS ' + (e.message || e).toString().slice(0, 160)));

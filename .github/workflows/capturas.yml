@@ -6,8 +6,11 @@ on:
     inputs:
       temas: {description: 'claro oscuro', default: 'claro oscuro'}
       vistas: {description: 'escritorio movil', default: 'escritorio movil'}
+      v4: {description: '1 = vista previa del diseño v4 sin publicarlo', default: '1'}
+      rama: {description: 'rama de salida', default: 'capturas'}
+      lista: {description: 'archivo con las URL', default: 'diseno/urls.txt'}
   push:
-    paths: ['diseno/urls.txt', 'diseno/borrador/**', 'diseno/capturas.js']
+    paths: ['diseno/urls.txt', 'diseno/borrador/**', 'diseno/capturas.js', 'diseno/v4.css', 'diseno/paleta-v4.js']
 permissions:
   contents: write
 concurrency: {group: capturas, cancel-in-progress: true}
@@ -20,9 +23,9 @@ jobs:
       - name: Capturar
         run: |
           mkdir -p /tmp/pw && W=$PWD && cd /tmp/pw && npm init -y >/dev/null && npm i --silent playwright@1.48.2 >/dev/null 2>&1 && npx playwright install --with-deps chromium >/dev/null 2>&1
-          cd $W && TEMAS="${{ github.event.inputs.temas || 'claro oscuro' }}" VISTAS="${{ github.event.inputs.vistas || 'escritorio movil' }}" NODE_PATH=/tmp/pw/node_modules node diseno/capturas.js diseno/urls.txt /tmp/cap
+          cd $W && V4="${{ github.event.inputs.v4 || '1' }}" TEMAS="${{ github.event.inputs.temas || 'claro oscuro' }}" VISTAS="${{ github.event.inputs.vistas || 'escritorio movil' }}" NODE_PATH=/tmp/pw/node_modules node diseno/capturas.js "${{ github.event.inputs.lista || 'diseno/urls.txt' }}" /tmp/cap
       - name: Publicar en la rama capturas
         run: |
-          cd /tmp/cap && git init -q -b capturas && git config user.name aurzane-bot && git config user.email bot@aurzane.com
+          cd /tmp/cap && git init -q -b "${{ github.event.inputs.rama || 'capturas' }}" && git config user.name aurzane-bot && git config user.email bot@aurzane.com
           echo "${{ github.sha }}" > origen.txt && git add -A && git commit -qm "capturas ${{ github.sha }}"
-          git push -qf "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" capturas
+          git push -qf "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" "HEAD:${{ github.event.inputs.rama || 'capturas' }}"
