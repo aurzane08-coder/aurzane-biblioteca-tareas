@@ -13,7 +13,7 @@
  ],
  "prueba_fallida|vaciar_cache": [
   66,
-  15
+  18
  ],
  "red_manual|reintentar_flujo": [
   0,
@@ -25,7 +25,7 @@
  ],
  "prueba_fallida|reintentar_flujo": [
   10,
-  11
+  13
  ],
  "tienda|vaciar_cache": [
   1,
@@ -45,6 +45,6 @@
  ],
  "prueba_fallida|relanzar_marketing": [
   0,
-  2
+  3
  ]
 }
