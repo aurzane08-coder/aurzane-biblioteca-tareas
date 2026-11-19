@@ -40,7 +40,10 @@
   /* ---------- 1) artículos ---------- */
   function tarjeta(a, estilo) {
     var url = 'https://aurzane.com/articulos/' + encodeURIComponent(a.slug) + '/';
-    if (estilo === 'indice') return '<a class="tema-card" href="' + url + '">' + (a.imagen ? '<img src="' + E(a.imagen) + '" alt="" loading="lazy">' : '') +
+    /* 19/11/2026 (rediseño editorial): la «imagen» de los artículos de la IA es la primera página escaneada del estudio; en la
+       tarjeta no aporta y rompía el ritmo de la cuadrícula, así que la tarjeta va solo con texto (la imagen sigue en el artículo) */
+    var img = a.imagen && !/\/biblioteca\/recientes\//.test(a.imagen) ? a.imagen : '';
+    if (estilo === 'indice') return '<a class="tema-card' + (img ? '' : ' sin-img') + '" href="' + url + '">' + (img ? '<img src="' + E(img) + '" alt="" loading="lazy">' : '') +
       '<div class="tema-card-body"><span class="cat">' + E(NOMBRE[a.mundo]) + ' · ' + E(a.categoria || 'Divulgación') + '</span><h3>' + E(a.titulo) + '</h3><p>' + E(a.resumen) + '</p></div></a>';
     return '<a href="' + url + '" style="display:block;padding:16px 18px;border-radius:14px;border:1px solid rgba(127,127,127,.25);color:inherit;text-decoration:none;background:rgba(127,127,127,.05)">' +
       '<span style="display:block;font-size:.8rem;opacity:.7">' + E(a.categoria || 'Divulgación') + ' · ' + E(a.fecha) + '</span>' +
@@ -162,7 +165,14 @@
       '.az-dest img{width:100%;height:100%;object-fit:cover;display:block}.az-dest div{padding:30px 32px;display:flex;flex-direction:column;justify-content:center}' +
       '.az-dest small{font-weight:700;letter-spacing:.06em;font-size:.75rem;opacity:.85}.az-dest h2{font:700 clamp(1.4rem,2.6vw,2rem)/1.2 "Bodoni Moda",Georgia,serif;margin:8px 0 10px;color:#fff}.az-dest p{margin:0;opacity:.85;line-height:1.5}' +
       '.az-mas{display:block;margin:14px 0 30px;cursor:pointer;border-radius:99px;padding:11px 20px;border:1px solid rgba(127,127,127,.4);background:transparent;color:inherit;font:600 .9rem inherit}' +
-      '.az-oculta{display:none!important}@media(max-width:760px){.az-dest{grid-template-columns:1fr}.az-dest img{height:200px}}';
+      '.az-oculta{display:none!important}@media(max-width:760px){.az-dest{grid-template-columns:1fr}.az-dest img{height:200px}}' +
+      /* rediseño editorial: tarjetas que no se estiran, imagen con proporción fija, resumen de 3 líneas y tarjetas de texto más ligeras */
+      '.tema-grid{align-items:start;gap:18px}.tema-card{transition:border-color .2s}.tema-card:hover{border-color:var(--c,rgba(201,162,75,.5))}' +
+      '.tema-card img{display:block;width:100%;aspect-ratio:16/9;height:auto;object-fit:cover}' +
+      '.tema-card-body{padding:18px 20px 20px}.tema-card-body .cat{font-size:.72rem;letter-spacing:.06em}' +
+      '.tema-card-body h3{font-family:"Bodoni Moda",Georgia,serif;font-size:1.12rem;line-height:1.3;margin:8px 0 8px}' +
+      '.tema-card-body p{margin:0;line-height:1.55;font-size:.9rem;opacity:.85;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}' +
+      '.tema-card.sin-img{background:transparent;border-style:solid}.tema-card.sin-img .tema-card-body{padding:22px 22px 24px}';
     d.head.appendChild(css);
     var grids = Array.prototype.slice.call(d.querySelectorAll('.tema-grid'));
     function mundoDe(g) { var t = g.previousElementSibling; while (t && !t.classList.contains('mundo-titulo')) t = t.previousElementSibling; return t ? t.id : ''; }
