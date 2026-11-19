@@ -19573,6 +19573,106 @@
    "alta": "2026-11-19"
   },
   {
+   "id": "lectura-los-secretos-de-la-mente-millonaria-t-harv-eker",
+   "tipo": "lectura",
+   "mundo": "aurzane",
+   "origen": "tienda",
+   "url": "https://aurzane.com/libros/los-secretos-de-la-mente-millonaria-t-harv-eker/",
+   "titulo": "Los secretos de la mente millonaria",
+   "autor": "T. Harv Eker",
+   "ganchos": [
+    "Libro recomendado: Los secretos de la mente millonaria",
+    "Los secretos de la mente millonaria, de T. Harv Eker",
+    "¿Qué leer este mes? Los secretos de la mente millonaria"
+   ],
+   "texto": "Este libro es para quienes desean cambiar su relación con el dinero y revisar sus creencias financieras inconscientes.",
+   "hashtags": [
+    "LibrosRecomendados",
+    "QueLeer",
+    "Lectura",
+    "Libros"
+   ],
+   "aviso": "Contiene enlace de afiliado.",
+   "img": null,
+   "emoji": "📚",
+   "alta": "2026-11-19"
+  },
+  {
+   "id": "lectura-cuentos-de-la-alhambra-washington-irving",
+   "tipo": "lectura",
+   "mundo": "aurzane",
+   "origen": "tienda",
+   "url": "https://aurzane.com/libros/cuentos-de-la-alhambra-washington-irving/",
+   "titulo": "Cuentos de la Alhambra",
+   "autor": "Washington Irving",
+   "ganchos": [
+    "Libro recomendado: Cuentos de la Alhambra",
+    "Cuentos de la Alhambra, de Washington Irving",
+    "¿Qué leer este mes? Cuentos de la Alhambra"
+   ],
+   "texto": "Una lectura evocadora y cultural muy ligada al imaginario andaluz y al arte de El Barrio.",
+   "hashtags": [
+    "LibrosRecomendados",
+    "QueLeer",
+    "Lectura",
+    "Libros"
+   ],
+   "aviso": "Contiene enlace de afiliado.",
+   "img": null,
+   "emoji": "📚",
+   "alta": "2026-11-19"
+  },
+  {
+   "id": "lectura-invisible-eloy-moreno",
+   "tipo": "lectura",
+   "mundo": "aurzane",
+   "origen": "tienda",
+   "url": "https://aurzane.com/libros/invisible-eloy-moreno/",
+   "titulo": "Invisible",
+   "autor": "Eloy Moreno",
+   "ganchos": [
+    "Libro recomendado: Invisible",
+    "Invisible, de Eloy Moreno",
+    "¿Qué leer este mes? Invisible"
+   ],
+   "texto": "Es para lectores interesados en historias emotivas sobre el acoso escolar y la empatía social. Aporta una mirada cercana sobre el dolor de la invisibilidad en las aulas y la necesidad de mirar a los demás.",
+   "hashtags": [
+    "LibrosRecomendados",
+    "QueLeer",
+    "Lectura",
+    "Libros"
+   ],
+   "aviso": "Contiene enlace de afiliado.",
+   "img": null,
+   "emoji": "📚",
+   "alta": "2026-11-09"
+  },
+  {
+   "id": "lectura-reina-roja-juan-gomez-jurado",
+   "tipo": "lectura",
+   "mundo": "aurzane",
+   "origen": "tienda",
+   "url": "https://aurzane.com/libros/reina-roja-juan-gomez-jurado/",
+   "titulo": "Reina roja",
+   "autor": "Juan Gómez-Jurado",
+   "ganchos": [
+    "Libro recomendado: Reina roja",
+    "Reina roja, de Juan Gómez-Jurado",
+    "¿Qué leer este mes? Reina roja"
+   ],
+   "texto": "Es para los aficionados a los thrillers vertiginosos que buscan un ritmo ágil y personajes llenos de contrastes en Madrid. Aporta una investigación criminal adictiva protagonizada por una mente brillante y un policía muy peculiar.",
+   "hashtags": [
+    "LibrosRecomendados",
+    "QueLeer",
+    "Lectura",
+    "Libros"
+   ],
+   "aviso": "Contiene enlace de afiliado.",
+   "img": null,
+   "emoji": "📚",
+   "alta": "2026-11-09"
+  },
+  {
    "id": "lectura-el-laberinto-de-los-espiritus-carlos-ruiz-zafon",
    "tipo": "lectura",
    "mundo": "aurzane",
@@ -19936,31 +20036,6 @@
     "¿Qué leer este mes? El juego interior del tenis"
    ],
    "texto": "Es para quienes practican tenis o cualquier otra disciplina y desean superar sus propios bloqueos mentales. Aporta herramientas prácticas para mejorar la concentración y dejar de interferir en el propio rendimiento natural.",
-   "hashtags": [
-    "LibrosRecomendados",
-    "QueLeer",
-    "Lectura",
-    "Libros"
-   ],
-   "aviso": "Contiene enlace de afiliado.",
-   "img": null,
-   "emoji": "📚",
-   "alta": "2026-11-09"
-  },
-  {
-   "id": "lectura-invisible-eloy-moreno",
-   "tipo": "lectura",
-   "mundo": "aurzane",
-   "origen": "tienda",
-   "url": "https://aurzane.com/libros/invisible-eloy-moreno/",
-   "titulo": "Invisible",
-   "autor": "Eloy Moreno",
-   "ganchos": [
-    "Libro recomendado: Invisible",
-    "Invisible, de Eloy Moreno",
-    "¿Qué leer este mes? Invisible"
-   ],
-   "texto": "Es para lectores interesados en historias emotivas sobre el acoso escolar y la empatía social. Aporta una mirada cercana sobre el dolor de la invisibilidad en las aulas y la necesidad de mirar a los demás.",
    "hashtags": [
     "LibrosRecomendados",
     "QueLeer",
@@ -21461,31 +21536,6 @@
     "¿Qué leer este mes? Los pilares de la Tierra"
    ],
    "texto": "Atrae a quienes disfrutan de las novelas históricas monumentales repletas de intrigas, pasiones y luchas de poder en la Edad Media.",
-   "hashtags": [
-    "LibrosRecomendados",
-    "QueLeer",
-    "Lectura",
-    "Libros"
-   ],
-   "aviso": "Contiene enlace de afiliado.",
-   "img": null,
-   "emoji": "📚",
-   "alta": "2026-11-09"
-  },
-  {
-   "id": "lectura-reina-roja-juan-gomez-jurado",
-   "tipo": "lectura",
-   "mundo": "aurzane",
-   "origen": "tienda",
-   "url": "https://aurzane.com/libros/reina-roja-juan-gomez-jurado/",
-   "titulo": "Reina roja",
-   "autor": "Juan Gómez-Jurado",
-   "ganchos": [
-    "Libro recomendado: Reina roja",
-    "Reina roja, de Juan Gómez-Jurado",
-    "¿Qué leer este mes? Reina roja"
-   ],
-   "texto": "Es para los aficionados a los thrillers vertiginosos que buscan un ritmo ágil y personajes llenos de contrastes en Madrid. Aporta una investigación criminal adictiva protagonizada por una mente brillante y un policía muy peculiar.",
    "hashtags": [
     "LibrosRecomendados",
     "QueLeer",
