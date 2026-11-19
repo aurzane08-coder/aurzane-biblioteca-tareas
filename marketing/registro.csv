@@ -666,3 +666,8 @@
 2026-11-18,4,facebook,frase-a1999f3e,ok,4176944859127763
 2026-11-18,4,youtube,frase-5f3e176c,ok,https://youtu.be/8H72O8y6glk
 2026-11-18,4,telegram,frase-43c7f531,ok,119
+2026-11-19,1,telegram,curso-metod,error,400 {"ok":false "error_code":400 "description":"Bad Request: IMAGE_PROCESS_FAILED"}
+2026-11-19,1,bluesky,calc-pau,ok,at://did:plc:6ovoiudj7dkxgrzd2zkyn77y/app.bsky.feed.post/3n2noyuhlqb27
+2026-11-19,1,mastodon,calc-calorias,error,422 {"error":"Validation failed: File content type is invalid  File is invalid"}
+2026-11-19,1,instagram,calc-sueldo,ok,17993965913859812
+2026-11-19,1,facebook,test-sueno,ok,28999029139757684
