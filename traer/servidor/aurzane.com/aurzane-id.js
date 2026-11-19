@@ -121,9 +121,23 @@
   function crearClienteAurzaneID(supabaseUrl, supabaseAnonKey) {
     if (global.__aurzaneIdClient) return global.__aurzaneIdClient;
     if (!global.supabase || !global.supabase.createClient) {
-      throw new Error(
-        "aurzane-id.js necesita que supabase-js ya esté cargado antes (ver comentario de uso arriba)."
-      );
+      // aurzane-errores-js: sin supabase-js (bloqueador o red) la página no se rompe; funciona como «sin sesión»
+      console.warn("aurzane-id.js: supabase-js no está cargado; la página sigue sin sesión.");
+      const sinRed = { message: "No se pudo conectar con AURZANE ID. Recarga la página.", code: "sin_conexion" };
+      const vacio = () => Promise.resolve({ data: null, error: sinRed });
+      const cadena = new Proxy(function () {}, { get: (t, k) => k === "then" ? (ok, ko) => vacio().then(ok, ko) : () => cadena, apply: () => cadena });
+      return {
+        auth: {
+          getSession: () => Promise.resolve({ data: { session: null }, error: null }),
+          getUser: () => Promise.resolve({ data: { user: null }, error: null }),
+          onAuthStateChange: () => ({ data: { subscription: { unsubscribe() {} } } }),
+          signOut: () => Promise.resolve({ error: null }),
+          signInWithPassword: vacio, signUp: vacio, signInWithOtp: vacio, signInWithOAuth: vacio,
+          resetPasswordForEmail: vacio, updateUser: vacio, refreshSession: vacio,
+        },
+        from: () => cadena, rpc: vacio, storage: { from: () => cadena }, functions: { invoke: vacio },
+        channel: () => ({ on() { return this; }, subscribe() { return this; } }), removeChannel() {},
+      };
     }
     const cliente = global.supabase.createClient(supabaseUrl, supabaseAnonKey, {
       auth: {
