@@ -8,6 +8,7 @@ on:
   workflow_run:   # tras cada despliegue, para que las páginas nuevas entren el mismo día
     workflows: ['Desplegar archivos a SiteGround', 'Cursos y cifras reales', 'Universidades publicar portal', 'Versiones de archivos comunes']
     types: [completed]
+concurrency: parche-fuentes   # 19/11/2026: dos ejecuciones a la vez se pisaban el archivo temporal
 jobs:
   p:
     runs-on: ubuntu-latest

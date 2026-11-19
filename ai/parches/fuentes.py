@@ -91,7 +91,7 @@ def main():
                 t = precarga(t, VDS)
                 if 'fonts.googleapis.com' not in t:
                     if t != t0:   # solo cambia una etiqueta de precarga: sin copia (serían miles de copias en cada cambio de versión)
-                        tmp = p + '.tmp-fuentes'; open(tmp, 'w', encoding='utf-8').write(t); os.replace(tmp, p); pre += 1
+                        tmp = p + '.tmp-fuentes-' + str(os.getpid()); open(tmp, 'w', encoding='utf-8').write(t); os.replace(tmp, p); pre += 1
                     continue
                 t = re.sub(r'<noscript>\s*(<link\b[^>]*fonts\.googleapis\.com[^>]*>)\s*</noscript>', lambda m: '' if not (familias(re.search(r'href=["\'](https://fonts[^"\']+)', m.group(1)).group(1)) - NUESTRAS) else m.group(0), t)
                 hecho = [False]
@@ -110,7 +110,7 @@ def main():
                     n = PRECON.sub('', n)
                 rel = os.path.relpath(p, raiz); dst = os.path.join(copia, rel)
                 os.makedirs(os.path.dirname(dst), exist_ok=True); shutil.copy2(p, dst)
-                tmp = p + '.tmp-fuentes'; open(tmp, 'w', encoding='utf-8').write(n); os.replace(tmp, p); total += 1
+                tmp = p + '.tmp-fuentes-' + str(os.getpid()); open(tmp, 'w', encoding='utf-8').write(n); os.replace(tmp, p); total += 1
     print(f'::notice::Fuentes propias: {total} páginas cambiadas; {dejadas} usan otras familias y siguen con Google Fonts; hoja común precargada (v{VDS}) en {pre} páginas más')
 
 
