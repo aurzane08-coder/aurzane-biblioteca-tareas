@@ -241,7 +241,7 @@
   var h = location.hostname, p = location.pathname;
   if (!(/^(mind|live|learn|nexus|build)\.aurzane\.com$/.test(h) || (h === 'aurzane.com' && /^\/(articulos(\/[^/]*)?\/?(index\.html)?|research(\.html)?\/?)$/.test(p))) || d.querySelector('script[data-azcont]')) return;
   var s = d.createElement('script');
-  s.src = 'https://aurzane.com/aurzane-contenido.js?v=hf670cdee'; s.defer = true; s.setAttribute('data-azcont', '1');
+  s.src = 'https://aurzane.com/aurzane-contenido.js?v=hd6981db4'; s.defer = true; s.setAttribute('data-azcont', '1');
   (d.head || d.documentElement).appendChild(s);
 })(document);
 
