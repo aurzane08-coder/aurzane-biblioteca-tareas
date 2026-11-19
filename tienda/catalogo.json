@@ -1,5 +1,24 @@
 [
  {
+  "id": "historias-de-la-historia-corrado-augias",
+  "titulo": "Historias de la historia",
+  "autor": "Corrado Augias",
+  "temas": [
+   "ensayo"
+  ],
+  "origen": "tendencia",
+  "fecha": "2026-11-19",
+  "isbn": "9788498925753",
+  "portada": "https://covers.openlibrary.org/b/id/13819935-M.jpg?default=false",
+  "anio": "2013",
+  "editorial": "",
+  "idioma": "spa",
+  "resumen": "",
+  "tendencia": "Aprovecha la gran curiosidad por este autor divulgativo.",
+  "tendencia_fecha": "2026-11-19",
+  "porque": "Es ideal para los amantes de los relatos fascinantes del pasado que buscan comprender mejor los grandes enigmas y personajes de nuestra civilización. Aporta una lectura amena y rigurosa que entrelaza curiosidades históricas con un profundo análisis cultural."
+ },
+ {
   "id": "el-laberinto-de-los-espiritus-carlos-ruiz-zafon",
   "titulo": "El laberinto de los espíritus",
   "autor": "Carlos Ruiz Zafón",
