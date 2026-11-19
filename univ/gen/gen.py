@@ -263,8 +263,9 @@ def bloque_scorecard(u):
     if all(v is not None for v in sat): filas.append(('SAT de los admitidos', f'{fmt(int(sat[0] + sat[1]))} a {fmt(int(sat[2] + sat[3]))}', 'La mitad de los admitidos saca una nota en este rango (lectura y matemáticas, sobre 1.600).'))
     if d.get('act_25') is not None and d.get('act_75') is not None: filas.append(('ACT de los admitidos', f'{int(d["act_25"])} a {int(d["act_75"])}', 'La mitad de los admitidos está en este rango (sobre 36).'))
     if d.get('matricula_fuera') is not None:
-        filas.append(('Matrícula al año', _USD(d['matricula_fuera']) + (f' ({_USD(d["matricula_estado"])} para residentes del estado)' if d.get('matricula_estado') and d.get('matricula_estado') != d.get('matricula_fuera') else ''),
-                      'Precio oficial de un curso (matrícula y tasas) para quien no reside en el estado; es el que suelen pagar los estudiantes internacionales.'))
+        filas.append(('Matrícula al año', _USD(d['matricula_fuera']),
+                      'Precio oficial de un curso (matrícula y tasas) para quien no reside en el estado; es el que suelen pagar los estudiantes internacionales.' +
+                      (f' Para residentes del estado: {_USD(d["matricula_estado"])}.' if d.get('matricula_estado') and d.get('matricula_estado') != d.get('matricula_fuera') else '')))
     if neto is not None: filas.append(('Precio neto medio al año', _USD(neto), 'Lo que paga de media un estudiante de primer curso con ayuda federal, contando alojamiento y comida y restando becas.'))
     if d.get('beca_pell') is not None: filas.append(('Con beca Pell', _PCT(d['beca_pell']), 'Estudiantes de grado que reciben la beca federal Pell.'))
     if d.get('permanencia') is not None: filas.append(('Siguen tras el primer año', _PCT(d['permanencia']), 'Estudiantes de primer curso a tiempo completo que continúan al año siguiente.'))
