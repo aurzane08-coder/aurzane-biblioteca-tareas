@@ -11,7 +11,7 @@ CSS = r'''
   .paper{border:0;border-bottom:1px solid var(--border);border-radius:0;padding:26px 2px 24px;margin:0;background:none;}
   .paper:hover{border-color:var(--border);}
   .paper-meta{font-family:'Instrument Sans',sans-serif;font-size:.74rem;letter-spacing:.01em;color:var(--text-dim);gap:6px 10px;margin-bottom:10px;}
-  .paper-meta .pm-sep{opacity:.5}
+  .paper-meta .pm-sep{opacity:.5;margin:0 7px}
   .badge-oa{font-size:.7rem;color:var(--accent-text);border:1px solid var(--line-accent);border-radius:999px;padding:1px 9px;}
   .badge-fuente{border:0;padding:0;border-radius:0;}
   .paper h3{font-family:'Bodoni Moda',serif;font-size:1.2rem;font-weight:600;line-height:1.32;letter-spacing:-.005em;margin:0 0 8px;max-width:62ch;}
