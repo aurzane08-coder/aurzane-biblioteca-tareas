@@ -1149,8 +1149,21 @@ try:
     ev = {e['eventAction']: e['eventDate'] for e in json.loads(b).get('events', [])} if st == 200 else {}
     if ev.get('expiration'):
         fin = datetime.datetime.fromisoformat(ev['expiration'].replace('Z', '+00:00')); dominio = {'caduca': fin.date().isoformat(), 'dias': (fin - AHORA).days}
-        if dominio['dias'] < 30: aviso('mal' if dominio['dias'] < 10 else 'medio', f'El dominio aurzane.com caduca en {dominio["dias"]} días. Renuévalo.')
+        reg = next((x[3] for e in json.loads(b).get('entities', []) if 'registrar' in e.get('roles', []) for x in (e.get('vcardArray') or [None, []])[1] if x[0] == 'fn'), 'el registrador')
+        dominio['registrador'] = reg
+        # 19/11/2026: aviso con 60 y 15 días de margen (antes, 30 y 10)
+        if dominio['dias'] <= 60: aviso('mal' if dominio['dias'] <= 15 else 'medio', f'El dominio aurzane.com caduca el {dominio["caduca"]} (en {dominio["dias"]} días). Renuévalo en {reg} o comprueba que la renovación automática está activa.', 'vencimiento', 'dominio')
 except Exception as e: print('rdap', e)
+# Vencimientos que no se pueden consultar solos (hosting...): ai/vencimientos.json, con aviso a 60 y 15 días
+vencimientos = []
+_vf = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'vencimientos.json')
+for v_ in (json.load(open(_vf, encoding='utf-8')).get('servicios', []) if os.path.exists(_vf) else []):
+    try:
+        dd = (datetime.date.fromisoformat(v_['caduca']) - AHORA.date()).days
+        vencimientos.append(dict(v_, dias=dd))
+        if dd <= 60: aviso('mal' if dd <= 15 else 'medio', f'{v_["que"]} caduca el {v_["caduca"]} (en {dd} días). Renuévalo en {v_["donde"]}: {v_.get("precio", "")}. Antes de renovar, compara precios con otros hostings.', 'vencimiento', v_['que'])
+    except Exception as e: print('vencimiento', e)
+if dominio.get('caduca'): vencimientos.append({'que': 'Dominio aurzane.com (' + dominio.get('registrador', '') + ')', 'caduca': dominio['caduca'], 'dias': dominio['dias']})
 seguridad = []
 CABS = [('strict-transport-security', 'Obliga a usar HTTPS (HSTS)'), ('x-content-type-options', 'Evita que el navegador adivine tipos de archivo'), ('referrer-policy', 'Controla qué datos de origen se comparten'), ('x-frame-options', 'Impide que otras webs incrusten la tuya')]
 for h in HOSTS[:6]:
@@ -1719,7 +1732,7 @@ guardar('estado.json', ESTADO)
 informe = {'fecha': AHORA.isoformat(), 'estado': nivel, 'resumen': '\n'.join(lineas), 'resumen_fuente': 'automático', 'problemas': problemas, 'acciones': acciones,
            'sitios': sitios, 'paginas': paginas, 'errores': errores, 'automatizaciones': autos, 'enlaces': enlaces, 'marketing': mk, 'novedades': nov[:30], 'pagespeed': ps,
            'cola': len(pend), 'aprobados_total': len(aprob), 'publicados': [{k: x.get(k) for k in ('id', 'tipo', 'titulo', 'portada', 'publicado', 'paginas', 'lic', 'pdf_local')} for x in aprob[:40]],
-           'autodescartes': autodesc[:60], 'citas_aprobadas': len(citas_ok), 'contenido_viejo': viejos, 'pruebas': pruebas, 'servicios': servicios, 'reparaciones': reparaciones_inf, 'conexiones': {'huerfanas': conexiones['huerfanas'][:80], 'n_huerfanas': len(conexiones['huerfanas']), 'fuera_sitemap': conexiones['fuera_sitemap'][:80], 'n_fuera': len(conexiones['fuera_sitemap']), 'redirecciones': conexiones['redirecciones'][-40:]}, 'dominio': dominio, 'seguridad': seguridad, 'seo': seo, 'historial': hist[-120:], 'diario': DIARIO}
+           'autodescartes': autodesc[:60], 'citas_aprobadas': len(citas_ok), 'contenido_viejo': viejos, 'pruebas': pruebas, 'servicios': servicios, 'reparaciones': reparaciones_inf, 'conexiones': {'huerfanas': conexiones['huerfanas'][:80], 'n_huerfanas': len(conexiones['huerfanas']), 'fuera_sitemap': conexiones['fuera_sitemap'][:80], 'n_fuera': len(conexiones['fuera_sitemap']), 'redirecciones': conexiones['redirecciones'][-40:]}, 'dominio': dominio, 'vencimientos': sorted(vencimientos, key=lambda x: x['dias']), 'seguridad': seguridad, 'seo': seo, 'historial': hist[-120:], 'diario': DIARIO}
 json.dump(informe, open(OUT + '/informe.json', 'w', encoding='utf-8'), ensure_ascii=False)
 
 # ---------- 11. Aviso por Telegram (cuando Adrián escribe /aurzane al bot por privado) ----------

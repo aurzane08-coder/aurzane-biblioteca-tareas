@@ -1,0 +1,6 @@
+{
+ "_info": "Pagos que caducan y que no se pueden consultar solos. La IA avisa con 60 y con 15 días de margen. El dominio se mira solo en el registro público (RDAP). Al renovar, cambia aquí la fecha.",
+ "servicios": [
+  {"que": "Hosting de SiteGround (plan StartUp)", "caduca": "2027-05-31", "donde": "my.siteground.com, Facturación, Renovaciones", "precio": "215,88 $ al año sin IVA (17,99 $ al mes)"}
+ ]
+}
