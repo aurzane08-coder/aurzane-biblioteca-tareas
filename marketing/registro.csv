@@ -673,3 +673,5 @@
 2026-11-19,1,facebook,test-sueno,ok,28999029139757684
 2026-11-19,1,telegram,curso-metod,error,400 {"ok":false "error_code":400 "description":"Bad Request: IMAGE_PROCESS_FAILED"}
 2026-11-19,1,mastodon,calc-calorias,error,422 {"error":"Validation failed: File content type is invalid  File is invalid"}
+2026-11-19,1,telegram,curso-metod,ok,120
+2026-11-19,1,mastodon,calc-calorias,ok,https://mastodon.social/@auzane/117642648390381402
