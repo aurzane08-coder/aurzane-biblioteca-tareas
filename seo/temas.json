@@ -970,5 +970,84 @@
   "pais_nombre": "Perú",
   "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al 113, opción 5 (Perú). ",
   "fecha": "2026-11-19"
+ },
+ {
+  "consulta": "el cerebro emocional",
+  "titulo": "El cerebro emocional: cómo las emociones influyen en tus decisiones",
+  "mundo": "mind",
+  "test": "ansiedad",
+  "fecha": "2026-11-20"
+ },
+ {
+  "consulta": "connecticut universidades",
+  "titulo": "Universidades en Connecticut: guía de opciones y oferta académica",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "fecha": "2026-11-20"
+ },
+ {
+  "consulta": "escocia universidades",
+  "titulo": "Estudiar en Escocia: guía completa de universidades y carreras",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "fecha": "2026-11-20"
+ },
+ {
+  "consulta": "estudio de ingeniería en la comunidad de madrid",
+  "titulo": "Estudiar ingeniería en la Comunidad de Madrid: guía de carreras",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "fecha": "2026-11-20"
+ },
+ {
+  "consulta": "carreras universitarias en medellin antioquia",
+  "titulo": "Carreras universitarias en Medellín y Antioquia: guía de oferta",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "fecha": "2026-11-20"
+ },
+ {
+  "consulta": "cuantas universidades hay en concepcion",
+  "titulo": "Universidades en Concepción: Guía completa de educación superior en Chile",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "oferta": "universidades",
+  "pais": "CHL",
+  "pais_nombre": "Chile",
+  "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al *4141 (Chile, gratis, 24 horas). ",
+  "fecha": "2026-11-20"
+ },
+ {
+  "consulta": "cuantas universidades hay en temuco",
+  "titulo": "Universidades en Temuco: Oferta académica y opciones para estudiar en Chile",
+  "mundo": "nexus",
+  "test": "autoeficacia",
+  "oferta": "universidades",
+  "pais": "CHL",
+  "pais_nombre": "Chile",
+  "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al *4141 (Chile, gratis, 24 horas). ",
+  "fecha": "2026-11-20"
+ },
+ {
+  "consulta": "el proceso de convertirse en persona carl rogers",
+  "titulo": "El proceso de convertirse en persona: Guía para venezolanos",
+  "mundo": "mind",
+  "test": "autoestima",
+  "oferta": "libros",
+  "pais": "VEN",
+  "pais_nombre": "Venezuela",
+  "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al número de emergencias del país. ",
+  "fecha": "2026-11-20"
+ },
+ {
+  "consulta": "el camino de las lagrimas",
+  "titulo": "El camino de las lágrimas: Cómo superar el duelo en Venezuela",
+  "mundo": "live",
+  "test": "resiliencia",
+  "oferta": "libros",
+  "pais": "VEN",
+  "pais_nombre": "Venezuela",
+  "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al número de emergencias del país. ",
+  "fecha": "2026-11-20"
  }
 ]
