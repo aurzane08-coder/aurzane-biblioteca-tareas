@@ -1,6 +1,17 @@
 [
  {
   "fecha": "2026-11-20",
+  "id": "ia-boat-387-excuses-and-pointing-the-blame",
+  "tipo": "libro",
+  "titulo": "BOAT 387 EXCUSES AND POINTING THE BLAME",
+  "url": "https://archive.org/details/boat-387-excuses-and-pointing-the-blame",
+  "motivo": "La IA le dio 2/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/boat-387-excuses-and-pointing-the-blame/BOAT%20387%20EXCUSES%20AND%20POINTING%20T"
+  ]
+ },
+ {
+  "fecha": "2026-11-20",
   "id": "ia-the-atlantis-codex-english-deluxe-final",
   "tipo": "libro",
   "titulo": "The Atlantis Codex English Deluxe Final",
@@ -2965,14 +2976,6 @@
   "tipo": "cita",
   "titulo": "Vuestro trabajo demuestra que el aprendizaje universitario puede ser, al mismo tiempo, riguroso, humano y transformador.",
   "url": "https://aurzane.com/biblioteca/libro/aprender-desde-narrativas-resiliencia-educacion-emocional.html",
-  "motivo": "Gemini le dio 6/10: no tiene fuerza suficiente para redes"
- },
- {
-  "fecha": "2026-11-03",
-  "id": "cita-9c967e919c",
-  "tipo": "cita",
-  "titulo": "Algunas de las personas que tienden a reprimir sus emociones lo hacen por no sentirse valoradas o aceptadas tal y como son.",
-  "url": "https://aurzane.com/biblioteca/libro/resiliencia-educacion-emocional-duelo-formacion-futuros.html",
   "motivo": "Gemini le dio 6/10: no tiene fuerza suficiente para redes"
  }
 ]
