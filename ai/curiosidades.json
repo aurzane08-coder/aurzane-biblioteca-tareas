@@ -1,5 +1,30 @@
 [
  {
+  "id": "cur-de809b98c9",
+  "tipo": "curiosidad",
+  "titulo": "¿Sabías que la ansiedad puede nacer en tu cuerpo?",
+  "dato": "La inflamación corporal y el sistema nervioso están muy conectados con la ansiedad.",
+  "resumen": "La inflamación corporal y el sistema nervioso están muy conectados con la ansiedad. Un estudio señala que la inflamación sistémica puede llegar al sistema nervioso central. Esto genera una inestabilidad que se relaciona con problemas como la ansiedad.",
+  "fuente": "Frontiers in endocrinology",
+  "hashtags": [
+   "psicologia",
+   "ansiedad",
+   "divulgacion",
+   "aurzane"
+  ],
+  "fuente_id": "pmc-PMC13755697",
+  "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13755697/",
+  "portada": "https://aurzane.com/biblioteca/recientes/portadas/pmc-PMC13755697.jpg",
+  "tema": "curiosidad",
+  "idioma": "es",
+  "autores": "Frontiers in endocrinology",
+  "motivo": "Guion escrito por Gemini a partir de un estudio que aprobaste. Revisa que el dato sea correcto antes de aprobar.",
+  "verificada": "2026-11-20",
+  "fecha": "2026-11-20",
+  "auto": true,
+  "verificacion": "La relación bidireccional entre la inflamación sistémica y la neuroinflamación asociada a la ansiedad está respaldada por la neuroinmunología."
+ },
+ {
   "id": "cur-30002c490b",
   "tipo": "curiosidad",
   "titulo": "¿Qué desgasta más a los universitarios hoy en día?",

@@ -1,6 +1,17 @@
 [
  {
   "fecha": "2026-11-20",
+  "id": "ia-the-atlantis-codex-english-deluxe-final",
+  "tipo": "libro",
+  "titulo": "The Atlantis Codex English Deluxe Final",
+  "url": "https://archive.org/details/the-atlantis-codex-english-deluxe-final",
+  "motivo": "La IA le dio 2/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/the-atlantis-codex-english-deluxe-final/The_Atlantis_Codex_English_Deluxe_Final.p"
+  ]
+ },
+ {
+  "fecha": "2026-11-20",
   "id": "ia-el-claustro-de-las-siete-virtudes",
   "tipo": "libro",
   "titulo": "EL CLAUSTRO DE LAS SIETE VIRTUDES",
@@ -2963,13 +2974,5 @@
   "titulo": "Algunas de las personas que tienden a reprimir sus emociones lo hacen por no sentirse valoradas o aceptadas tal y como son.",
   "url": "https://aurzane.com/biblioteca/libro/resiliencia-educacion-emocional-duelo-formacion-futuros.html",
   "motivo": "Gemini le dio 6/10: no tiene fuerza suficiente para redes"
- },
- {
-  "fecha": "2026-11-03",
-  "id": "cita-ddb32b1f3d",
-  "tipo": "cita",
-  "titulo": "Generalmente, en los talleres sobre crecimiento personal, el trabajo sobre nuestro pasado es una parte fundamental para iniciar un proceso de autoconocimiento.",
-  "url": "https://aurzane.com/biblioteca/libro/resiliencia-educacion-emocional-duelo-formacion-futuros.html",
-  "motivo": "Gemini le dio 5/10: no tiene fuerza suficiente para redes"
  }
 ]
