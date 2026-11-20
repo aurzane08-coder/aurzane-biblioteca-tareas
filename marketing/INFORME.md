@@ -4,13 +4,13 @@ Actualizado: 2026-11-20. Clics de personas (sin bots ni vistas previas) que entr
 
 | Red | Publicaciones | Clics |
 |---|---|---|
-| telegram | 82 | 4 |
-| bluesky | 54 | 284 |
-| mastodon | 54 | 187 |
-| instagram | 59 | 0 |
-| facebook | 59 | 126 |
+| telegram | 85 | 4 |
+| bluesky | 56 | 294 |
+| mastodon | 56 | 191 |
+| instagram | 62 | 0 |
+| facebook | 62 | 133 |
 | threads | 0 | 0 |
-| pinterest | 36 | 1 |
+| pinterest | 37 | 1 |
 
 ## Productos con más clics
 
@@ -23,15 +23,16 @@ Actualizado: 2026-11-20. Clics de personas (sin bots ni vistas previas) que entr
 | test-personalidad | 12 |
 | test-habitos | 12 |
 | calc-hipoteca | 12 |
+| calc-calorias | 11 |
 | curso-neuro | 10 |
-| calc-calorias | 10 |
+| test-autoestima | 9 |
 | nc-ingenieria-en-tecnologias-industriales | 9 |
 | ovp | 9 |
 | crea-l05-08 | 9 |
+| calc-reforma | 9 |
 | frase-fe3fa4a3 | 9 |
 | calc-pau | 9 |
 | frase-1d292112 | 9 |
-| test-autoestima | 8 |
 | nc-sociologia | 8 |
 | crea-l05-02 | 8 |
 | calc-embarazo | 8 |
@@ -40,4 +41,3 @@ Actualizado: 2026-11-20. Clics de personas (sin bots ni vistas previas) que entr
 | test-satisfaccion | 8 |
 | frase-8e70072e | 8 |
 | frase-5b980a2a | 8 |
-| frase-6d32afc7 | 8 |
