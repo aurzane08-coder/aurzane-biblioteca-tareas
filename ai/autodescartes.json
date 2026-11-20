@@ -34,6 +34,17 @@
  },
  {
   "fecha": "2026-11-20",
+  "id": "oa-W7235937684",
+  "tipo": "libro",
+  "titulo": "AIJUVI 1.0 Aprende inglés jugando videojuegos: Un modelo didáctico innovador en tecnología educativa",
+  "url": "https://doi.org/10.52501/cc.465",
+  "motivo": "La IA le dio 1/10: no encaja en la biblioteca",
+  "probados": [
+   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13764040.1/PMC13764040.1.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-20",
   "id": "ia-vacuum-fluctuations-spacetime-curvature-and-game-faceted-deterrence-kdp",
   "tipo": "libro",
   "titulo": "Vacuum Fluctuations Spacetime Curvature And Game Faceted Deterrence KDP",
@@ -3010,15 +3021,6 @@
   "tipo": "libro",
   "titulo": "THE ARCHITECTURE OF THE HUMAN MIND [2026]",
   "url": "https://archive.org/details/the-architecture-of-the-human-mind",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": []
- },
- {
-  "fecha": "2026-11-04",
-  "id": "ia-the-architecture-of-the-human-mind_202611",
-  "tipo": "libro",
-  "titulo": "THE ARCHITECTURE OF THE HUMAN MIND",
-  "url": "https://archive.org/details/the-architecture-of-the-human-mind_202611",
   "motivo": "No tiene un PDF libre que se pueda descargar",
   "probados": []
  }
