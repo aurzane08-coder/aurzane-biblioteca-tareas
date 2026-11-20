@@ -1,6 +1,17 @@
 [
  {
   "fecha": "2026-11-20",
+  "id": "ia-sombras-en-el-papel-y-luz-en-el-celuloide-otto-crut",
+  "tipo": "libro",
+  "titulo": "Sombras en el papel y luz en el celuloide",
+  "url": "https://archive.org/details/sombras-en-el-papel-y-luz-en-el-celuloide-otto-crut",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 11 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/sombras-en-el-papel-y-luz-en-el-celuloide-otto-crut/Sombras_en_el_Papel_y_Luz_en_"
+  ]
+ },
+ {
+  "fecha": "2026-11-20",
   "id": "pmc-PMC13760335",
   "tipo": "estudio",
   "titulo": "Postoperative opioid-induced respiratory depression monitoring in the context of supplemental oxygen: current limitations and emerging machine-learning approach",
@@ -3014,14 +3025,5 @@
   "titulo": "La modernidad, en cambio, corresponde a un proceso cultural que comprende el respeto por los derechos humanos, una vida democrática y el fin del patriarcado.",
   "url": "https://aurzane.com/biblioteca/libro/dificil-ser-hombre-nuevas-masculinidades-latinoamericanas.html",
   "motivo": "Gemini le dio 3/10: no tiene fuerza suficiente para redes"
- },
- {
-  "fecha": "2026-11-04",
-  "id": "ia-the-architecture-of-the-human-mind",
-  "tipo": "libro",
-  "titulo": "THE ARCHITECTURE OF THE HUMAN MIND [2026]",
-  "url": "https://archive.org/details/the-architecture-of-the-human-mind",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": []
  }
 ]
