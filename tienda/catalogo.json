@@ -1,5 +1,61 @@
 [
  {
+  "id": "balada-de-pajaros-cantores-y-serpientes-suzanne-collins",
+  "titulo": "Balada de pájaros cantores y serpientes",
+  "autor": "Suzanne Collins",
+  "temas": [
+   "novela"
+  ],
+  "origen": "tendencia",
+  "fecha": "2026-11-20",
+  "isbn": "9788413144887",
+  "portada": "https://covers.openlibrary.org/b/id/14421833-M.jpg?default=false",
+  "anio": "2020",
+  "editorial": "",
+  "idioma": "spa",
+  "resumen": "",
+  "tendencia": "Conecta directamente con el furor actual por el regreso de la saga a la gran pantalla.",
+  "tendencia_fecha": "2026-11-20"
+ },
+ {
+  "id": "la-chica-de-nieve-javier-castillo",
+  "titulo": "La chica de nieve",
+  "autor": "Javier Castillo",
+  "temas": [
+   "novela"
+  ],
+  "origen": "tendencia",
+  "fecha": "2026-11-20",
+  "isbn": "9788466371285",
+  "portada": "https://covers.openlibrary.org/b/id/11953764-M.jpg?default=false",
+  "anio": "2021",
+  "editorial": "Penguin Random House Grupo Editorial (USA) LLC",
+  "idioma": "spa",
+  "resumen": "",
+  "tendencia": "Satisface la alta demanda de thrillers adictivos de misterio y desapariciones.",
+  "tendencia_fecha": "2026-11-20",
+  "porque": "Este libro es para los amantes de los thrillers intensos y los misterios familiares que giran en torno a desapariciones sin resolver. Aporta un ritmo vertiginoso y lleno de giros donde cada secreto del pasado sale a la luz."
+ },
+ {
+  "id": "un-cuento-perfecto-elisabet-benavent",
+  "titulo": "Un cuento perfecto",
+  "autor": "Elísabet Benavent",
+  "temas": [
+   "novela"
+  ],
+  "origen": "tendencia",
+  "fecha": "2026-11-20",
+  "isbn": "9788491291916",
+  "portada": "https://covers.openlibrary.org/b/id/10095339-M.jpg?default=false",
+  "anio": "2020",
+  "editorial": "Suma de Letras",
+  "idioma": "spa",
+  "resumen": "",
+  "tendencia": "Atrapa a los lectores que buscan historias sentimentales ligeras y entretenidas para las tardes de otoño.",
+  "tendencia_fecha": "2026-11-20",
+  "porque": "Este libro es para quienes buscan una novela romántica cercana que reflexione sobre las expectativas afectivas y la presión social por el éxito. Aporta una mirada fresca y emotiva sobre el amor propio y las segundas oportunidades."
+ },
+ {
   "id": "historias-de-la-historia-corrado-augias",
   "titulo": "Historias de la historia",
   "autor": "Corrado Augias",
@@ -54,7 +110,8 @@
   "idioma": "spa",
   "resumen": "",
   "tendencia": "Una lectura evocadora y cultural muy ligada al imaginario andaluz y al arte de El Barrio.",
-  "tendencia_fecha": "2026-11-19"
+  "tendencia_fecha": "2026-11-19",
+  "porque": "Este libro es para quienes disfrutan de los mitos y las leyendas enmarcados en un entorno histórico tan fascinante como la fortaleza nazarí. Aporta un viaje evocador y lleno de romanticismo a través de los misterios y la magia del palacio granadino."
  },
  {
   "id": "invisible-eloy-moreno",
