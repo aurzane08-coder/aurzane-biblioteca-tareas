@@ -1,6 +1,116 @@
 [
  {
   "fecha": "2026-11-20",
+  "id": "pmc-PMC13771100",
+  "tipo": "estudio",
+  "titulo": "Research trends and thematic evolution in uric acid and depression: a bibliometric analysis from 2000 to 2025",
+  "url": "https://europepmc.org/article/PMC/PMC13771100",
+  "motivo": "La IA le dio 5/10: no encaja en la biblioteca",
+  "probados": [
+   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13759840.1/PMC13759840.1.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-20",
+  "id": "pmc-PMC13763885",
+  "tipo": "estudio",
+  "titulo": "Dextromethorphan-Bupropion-Esketamine Triadic Pharmacology: Molecular Targets, Enzymatic Interactions, and Risk-Benefit Assessment of a Three-Agent Combination ",
+  "url": "https://europepmc.org/article/PMC/PMC13763885",
+  "motivo": "La IA le dio 5/10: no encaja en la biblioteca",
+  "probados": [
+   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13759840.1/PMC13759840.1.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-20",
+  "id": "pmc-PMC13763637",
+  "tipo": "estudio",
+  "titulo": "Compartment-Specific Amino Acid Dysregulation in Depression: Integrating Non-Targeted Metabolomics with Brain Barrier Biology",
+  "url": "https://europepmc.org/article/PMC/PMC13763637",
+  "motivo": "La IA le dio 6/10: no encaja en la biblioteca",
+  "probados": [
+   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13759840.1/PMC13759840.1.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-20",
+  "id": "pmc-PMC13764608",
+  "tipo": "estudio",
+  "titulo": "The Multidimensional Pathogenesis of Susceptibility to Depression in Sjögren's Syndrome: An Integrated Approach from Immune-Inflammatory to Psychosocial Factors",
+  "url": "https://europepmc.org/article/PMC/PMC13764608",
+  "motivo": "La IA le dio 6/10: no encaja en la biblioteca",
+  "probados": [
+   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13759840.1/PMC13759840.1.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-20",
+  "id": "pmc-PMC13761500",
+  "tipo": "estudio",
+  "titulo": "Phytoliths as Structural, Physiological Integrators of Multifunctional Defense and Climate Resilience in Grasses",
+  "url": "https://europepmc.org/article/PMC/PMC13761500",
+  "motivo": "La IA le dio 1/10: no encaja en la biblioteca",
+  "probados": [
+   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13759840.1/PMC13759840.1.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-20",
+  "id": "pmc-PMC13766135",
+  "tipo": "estudio",
+  "titulo": "Cannabinol for Sleep and Insomnia: A Critical Narrative Review and an Olive-Derived Polyphenol Combination Hypothesis",
+  "url": "https://europepmc.org/article/PMC/PMC13766135",
+  "motivo": "La IA le dio 6/10: no encaja en la biblioteca",
+  "probados": [
+   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13759840.1/PMC13759840.1.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-20",
+  "id": "pmc-PMC13769279",
+  "tipo": "estudio",
+  "titulo": "Resilience-A Concept Toward an Actionable Clinical Approach to Aging",
+  "url": "https://europepmc.org/article/PMC/PMC13769279",
+  "motivo": "La IA le dio 4/10: no encaja en la biblioteca",
+  "probados": [
+   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13759840.1/PMC13759840.1.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-20",
+  "id": "pmc-PMC13761042",
+  "tipo": "estudio",
+  "titulo": "Written exposure therapy for post-traumatic stress disorder in individuals with emergent psychosis: a case series",
+  "url": "https://europepmc.org/article/PMC/PMC13761042",
+  "motivo": "La IA le dio 5/10: no encaja en la biblioteca",
+  "probados": [
+   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13766658.1/PMC13766658.1.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-20",
+  "id": "pmc-PMC13772362",
+  "tipo": "estudio",
+  "titulo": "Prevalence of temporomandibular disorder symptoms, anxiety and depression in military police officers",
+  "url": "https://europepmc.org/article/PMC/PMC13772362",
+  "motivo": "La IA le dio 3/10: no encaja en la biblioteca",
+  "probados": [
+   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13770452.1/PMC13770452.1.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-20",
+  "id": "ia-sapcraa-cr-2024-1-05",
+  "tipo": "libro",
+  "titulo": "After Brentano, beyond Husserl: critical realism and the ontological status of the intentional object in theoretical psychology",
+  "url": "https://archive.org/details/sapcraa-cr-2024-1-05",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 17 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/sapcraa-cr-2024-1-05/CR-2024-1-05_Shala_84-100.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-20",
   "id": "ia-boat-387-excuses-and-pointing-the-blame",
   "tipo": "libro",
   "titulo": "BOAT 387 EXCUSES AND POINTING THE BLAME",
@@ -2897,85 +3007,5 @@
   "titulo": "A través de la radio se puede pensar también la educación y la ciudadanía; asumiéndola crítica y propositivamente.",
   "url": "https://aurzane.com/biblioteca/libro/comunicacion-conflictos-cambio-social.html",
   "motivo": "Gemini le dio 4/10: no tiene fuerza suficiente para redes"
- },
- {
-  "fecha": "2026-11-03",
-  "id": "cita-c6b074a478",
-  "tipo": "cita",
-  "titulo": "En un tercer aspecto, se destaca el esfuerzo para abordar temáticas cruciales para la construcción de una cultura de paz: las emociones y el reconocimiento.",
-  "url": "https://aurzane.com/biblioteca/libro/comunicacion-conflictos-cambio-social.html",
-  "motivo": "Gemini le dio 4/10: no tiene fuerza suficiente para redes"
- },
- {
-  "fecha": "2026-11-03",
-  "id": "cita-c252a07521",
-  "tipo": "cita",
-  "titulo": "Logicamente, a mídia tem uma grande capacidade de mobilização social, participa do processo educativo, na cidadania, nas conquistas de liberdade, paz e justiça ",
-  "url": "https://aurzane.com/biblioteca/libro/comunicacion-conflictos-cambio-social.html",
-  "motivo": "Gemini le dio 4/10: no tiene fuerza suficiente para redes"
- },
- {
-  "fecha": "2026-11-03",
-  "id": "cita-aa57d8aa52",
-  "tipo": "cita",
-  "titulo": "Son los involucrados en un conflicto los que conocen perfectamente las condiciones que están en juego, sus propios intereses, intuyen la estrategia del otro, et",
-  "url": "https://aurzane.com/biblioteca/libro/comunicacion-conflictos-cambio-social.html",
-  "motivo": "Gemini le dio 3/10: no tiene fuerza suficiente para redes"
- },
- {
-  "fecha": "2026-11-03",
-  "id": "cita-8fb0767ace",
-  "tipo": "cita",
-  "titulo": "Los resultados indican que las chicas presentan significativamente más estrés y más malestar que los chicos, junto con más emociones de tristeza y miedo.",
-  "url": "https://aurzane.com/biblioteca/libro/organizaciones-emocionalmente-inteligentes-experiencias-eval.html",
-  "motivo": "Gemini le dio 2/10: no tiene fuerza suficiente para redes"
- },
- {
-  "fecha": "2026-11-03",
-  "id": "cita-979f5e753f",
-  "tipo": "cita",
-  "titulo": "Es decir, resulta difícil ser capaces de predecir el bienestar subjetivo futuro de los adolescentes, conociendo únicamente la inteligencia emocional del present",
-  "url": "https://aurzane.com/biblioteca/libro/organizaciones-emocionalmente-inteligentes-experiencias-eval.html",
-  "motivo": "Gemini le dio 4/10: no tiene fuerza suficiente para redes"
- },
- {
-  "fecha": "2026-11-03",
-  "id": "cita-f06b107d47",
-  "tipo": "cita",
-  "titulo": "Un ejemplo de ello es la confusión de la emoción miedo con las emociones felicidad, tristeza o sorpresa.",
-  "url": "https://aurzane.com/biblioteca/libro/organizaciones-emocionalmente-inteligentes-experiencias-eval.html",
-  "motivo": "Gemini le dio 3/10: no tiene fuerza suficiente para redes"
- },
- {
-  "fecha": "2026-11-03",
-  "id": "cita-cf657b7238",
-  "tipo": "cita",
-  "titulo": "Mis dedos se han deslizado sobre las teclas suavemente y me ha invadido una sensación de calma muy agradable.",
-  "url": "https://aurzane.com/biblioteca/libro/aprender-desde-narrativas-resiliencia-educacion-emocional.html",
-  "motivo": "Gemini le dio 7/10: no tiene fuerza suficiente para redes"
- },
- {
-  "fecha": "2026-11-03",
-  "id": "cita-20058f932a",
-  "tipo": "cita",
-  "titulo": "Únicamente, me apetece estar todo el día en la cama, pasar el máximo tiempo durmiendo y no sentir dolor.",
-  "url": "https://aurzane.com/biblioteca/libro/aprender-desde-narrativas-resiliencia-educacion-emocional.html",
-  "motivo": "Gemini le dio 6/10: no tiene fuerza suficiente para redes"
- },
- {
-  "fecha": "2026-11-03",
-  "id": "cita-ff24009150",
-  "tipo": "cita",
-  "titulo": "Se evidencian la tristeza, el miedo, la ira, la alegría y la esperanza en distintos momentos narrativos, mostrando su función adaptativa.",
-  "url": "https://aurzane.com/biblioteca/libro/aprender-desde-narrativas-resiliencia-educacion-emocional.html",
-  "motivo": "Gemini le dio 3/10: no tiene fuerza suficiente para redes"
- },
- {
-  "fecha": "2026-11-03",
-  "id": "cita-fc9385aef2",
-  "tipo": "cita",
-  "titulo": "Vuestro trabajo demuestra que el aprendizaje universitario puede ser, al mismo tiempo, riguroso, humano y transformador.",
-  "url": "https://aurzane.com/biblioteca/libro/aprender-desde-narrativas-resiliencia-educacion-emocional.html",
-  "motivo": "Gemini le dio 6/10: no tiene fuerza suficiente para redes"
  }
 ]

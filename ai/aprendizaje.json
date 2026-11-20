@@ -1,7 +1,7 @@
 {
  "ed:Revista brasileira de enfermagem": [
   12,
-  15
+  16
  ],
  "ed:Open respiratory archives": [
   0,
@@ -9,7 +9,7 @@
  ],
  "ed:European journal of psychotraumatology": [
   11,
-  30
+  31
  ],
  "ed:Revista medica del Instituto Mexicano del Seguro Social": [
   0,
@@ -37,7 +37,7 @@
  ],
  "ed:Frontiers in psychiatry": [
   7,
-  8
+  9
  ],
  "ed:Advances in rheumatology (London, England)": [
   0,
@@ -121,7 +121,7 @@
  ],
  "ed:Internet Archive": [
   24,
-  134
+  135
  ],
  "ed:": [
   51,
@@ -188,7 +188,7 @@
   0
  ],
  "estudio:en": [
-  25,
+  28,
   29
  ],
  "ed:Frontiers in dental medicine": [
@@ -196,7 +196,7 @@
   1
  ],
  "tipo:estudio": [
-  52,
+  55,
   33
  ],
  "ed:Stress biology": [
@@ -432,7 +432,7 @@
   1
  ],
  "ed:Journal of medical Internet research": [
-  1,
+  2,
   0
  ],
  "ed:Journal of multidisciplinary healthcare": [
@@ -510,5 +510,29 @@
  "ed:Frontiers in neurology": [
   0,
   1
+ ],
+ "ed:Frontiers in cardiovascular medicine": [
+  1,
+  0
+ ],
+ "ed:Aging cell": [
+  0,
+  1
+ ],
+ "ed:Nutrients": [
+  0,
+  1
+ ],
+ "ed:Biology": [
+  0,
+  1
+ ],
+ "ed:International journal of molecular sciences": [
+  0,
+  3
+ ],
+ "ed:The Indian journal of medical research": [
+  1,
+  0
  ]
 }
