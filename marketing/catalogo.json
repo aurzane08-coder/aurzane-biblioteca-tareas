@@ -1,5 +1,5 @@
 {
- "generado": "2026-11-19",
+ "generado": "2026-11-20",
  "productos": [
   {
    "id": "test-personalidad",
@@ -54539,6 +54539,33 @@
    "emoji": "",
    "foto_q": "green leaves sunlight",
    "alta": "2026-11-19"
+  },
+  {
+   "id": "cur-30002c490b",
+   "tipo": "curiosidad",
+   "mundo": "mind",
+   "origen": "curiosidades",
+   "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13757844/",
+   "titulo": "¿Qué desgasta más a los universitarios hoy en día?",
+   "ganchos": [
+    "¿Qué desgasta más a los universitarios hoy en día?",
+    "¿Qué desgasta más a los universitarios hoy en día? 🧠",
+    "Una revisión de 38 estudios destaca que el estrés digital y el aislamiento social son fact"
+   ],
+   "texto": "Una revisión de 38 estudios destaca que el estrés digital y el aislamiento social son factores clave del burnout universitario. Junto con la presión académica y económica, estos elementos disparan la ansiedad. Por suerte, enfoques como la terapia cognitivo-conductual, el mindfulness y el apoyo entre compañeros han demostrado ser eficaces para reforzar la resiliencia.\n\nFuente: Cogent mental health",
+   "hashtags": [
+    "psicologia",
+    "universidad",
+    "estres",
+    "burnout",
+    "Psicología",
+    "Curiosidades"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "🧠",
+   "dato": "Una revisión de 38 estudios destaca que el estrés digital y el aislamiento social son factores clave del burnout universitario.",
+   "alta": "2026-11-20"
   },
   {
    "id": "cur-48928c7418",
