@@ -44,11 +44,11 @@
   2
  ],
  "ed:Brain and behavior": [
-  0,
+  1,
   2
  ],
  "ed:Frontiers in psychology": [
-  1,
+  2,
   9
  ],
  "ed:Frontiers in sleep": [
@@ -57,7 +57,7 @@
  ],
  "ed:Frontiers in medicine": [
   0,
-  2
+  3
  ],
  "ed:Actas espanolas de psiquiatria": [
   0,
@@ -68,7 +68,7 @@
   2
  ],
  "ed:Frontiers in public health": [
-  3,
+  4,
   6
  ],
  "ed:Frontiers in sports and active living": [
@@ -104,7 +104,7 @@
   3
  ],
  "ed:Journal of clinical medicine": [
-  0,
+  1,
   5
  ],
  "ed:Frontiers in global women's health": [
@@ -121,7 +121,7 @@
  ],
  "ed:Internet Archive": [
   24,
-  135
+  139
  ],
  "ed:": [
   51,
@@ -188,7 +188,7 @@
   0
  ],
  "estudio:en": [
-  28,
+  35,
   29
  ],
  "ed:Frontiers in dental medicine": [
@@ -196,7 +196,7 @@
   1
  ],
  "tipo:estudio": [
-  55,
+  62,
   33
  ],
  "ed:Stress biology": [
@@ -532,6 +532,26 @@
   3
  ],
  "ed:The Indian journal of medical research": [
+  1,
+  0
+ ],
+ "ed:Journal of experimental botany": [
+  0,
+  1
+ ],
+ "ed:International journal of women's health": [
+  1,
+  0
+ ],
+ "ed:Neoplasia (New York, N.Y.)": [
+  0,
+  1
+ ],
+ "ed:International journal of general medicine": [
+  1,
+  0
+ ],
+ "ed:FASEB journal : official publication of the Federation of American Societies for Experimental Biology": [
   1,
   0
  ]

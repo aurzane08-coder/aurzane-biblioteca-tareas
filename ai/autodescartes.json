@@ -1,6 +1,83 @@
 [
  {
   "fecha": "2026-11-20",
+  "id": "pmc-PMC13760335",
+  "tipo": "estudio",
+  "titulo": "Postoperative opioid-induced respiratory depression monitoring in the context of supplemental oxygen: current limitations and emerging machine-learning approach",
+  "url": "https://europepmc.org/article/PMC/PMC13760335",
+  "motivo": "La IA le dio 2/10: no encaja en la biblioteca",
+  "probados": [
+   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13768738.1/PMC13768738.1.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-20",
+  "id": "pmc-PMC13769020",
+  "tipo": "estudio",
+  "titulo": "ISR addiction: Co-opting a stress sentinel to fuel tumor resilience and therapy resistance",
+  "url": "https://europepmc.org/article/PMC/PMC13769020",
+  "motivo": "La IA le dio 2/10: no encaja en la biblioteca",
+  "probados": [
+   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13770370.1/PMC13770370.1.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-20",
+  "id": "pmc-PMC13774879",
+  "tipo": "estudio",
+  "titulo": "Reframing pathogenesis-related proteins: from plant immune drivers to stress resilience integration nodes",
+  "url": "https://europepmc.org/article/PMC/PMC13774879",
+  "motivo": "La IA le dio 1/10: no encaja en la biblioteca",
+  "probados": [
+   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13764040.1/PMC13764040.1.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-20",
+  "id": "ia-vacuum-fluctuations-spacetime-curvature-and-game-faceted-deterrence-kdp",
+  "tipo": "libro",
+  "titulo": "Vacuum Fluctuations Spacetime Curvature And Game Faceted Deterrence KDP",
+  "url": "https://archive.org/details/vacuum-fluctuations-spacetime-curvature-and-game-faceted-deterrence-kdp",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 3 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/vacuum-fluctuations-spacetime-curvature-and-game-faceted-deterrence-kdp/Vacuum_Fl"
+  ]
+ },
+ {
+  "fecha": "2026-11-20",
+  "id": "ia-the-vampire-matrix-comprehensive-treatise-on-singularity-mechanics-system-theo",
+  "tipo": "libro",
+  "titulo": "The Vampire Matrix Comprehensive Treatise On Singularity Mechanics System Theory by Dr. Shane Amour Fulton CNA,MD",
+  "url": "https://archive.org/details/the-vampire-matrix-comprehensive-treatise-on-singularity-mechanics-system-theo",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 5 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/the-vampire-matrix-comprehensive-treatise-on-singularity-mechanics-system-theo/Th"
+  ]
+ },
+ {
+  "fecha": "2026-11-20",
+  "id": "ia-el-vinculo-elegido-y-el-sentido-del-amor",
+  "tipo": "libro",
+  "titulo": "El vínculo elegido y el sentido del amor",
+  "url": "https://archive.org/details/el-vinculo-elegido-y-el-sentido-del-amor",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 7 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/el-vinculo-elegido-y-el-sentido-del-amor/El%20vinculo%20elegido%20y%20el%20sentid"
+  ]
+ },
+ {
+  "fecha": "2026-11-20",
+  "id": "ia-el-imperio-de-la-publicidad_202611",
+  "tipo": "libro",
+  "titulo": "El imperio de la publicidad",
+  "url": "https://archive.org/details/el-imperio-de-la-publicidad_202611",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 8 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/el-imperio-de-la-publicidad_202611/El%20imperio%20de%20la%20publicidad.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-20",
   "id": "pmc-PMC13771100",
   "tipo": "estudio",
   "titulo": "Research trends and thematic evolution in uric acid and depression: a bibliometric analysis from 2000 to 2025",
@@ -2944,68 +3021,5 @@
   "url": "https://archive.org/details/the-architecture-of-the-human-mind_202611",
   "motivo": "No tiene un PDF libre que se pueda descargar",
   "probados": []
- },
- {
-  "fecha": "2026-11-04",
-  "id": "ia-the-architecture-of-the-human-mind-1",
-  "tipo": "libro",
-  "titulo": "THE ARCHITECTURE OF THE HUMAN MIND [2027]",
-  "url": "https://archive.org/details/the-architecture-of-the-human-mind-1",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": []
- },
- {
-  "fecha": "2026-11-04",
-  "id": "ia-the-architecture-of-the-human-mind-",
-  "tipo": "libro",
-  "titulo": "THE ARCHITECTURE OF THE HUMAN MIND",
-  "url": "https://archive.org/details/the-architecture-of-the-human-mind-",
-  "motivo": "Dice ser un libro pero el PDF solo tiene 24 páginas (es un capítulo, artículo o resumen)",
-  "probados": [
-   "200 application/pdf https://archive.org/download/the-architecture-of-the-human-mind-/THE_ARCHITECTURE_OF_THE_HUMAN_MIND_repaired.p"
-  ]
- },
- {
-  "fecha": "2026-11-03",
-  "id": "cita-ac2cd3d043",
-  "tipo": "cita",
-  "titulo": "Hay tantas cosas que simplemente son, más allá de nuestro control y nuestros deseos; aunque uno se esfuerza por darles sentido, por explicarlas y comprenderlas.",
-  "url": "https://aurzane.com/biblioteca/libro/tiempo-elegir-sin-miedo-memorias-astrobiologa.html",
-  "motivo": "Gemini le dio 7/10: no tiene fuerza suficiente para redes"
- },
- {
-  "fecha": "2026-11-03",
-  "id": "cita-236ecb93f2",
-  "tipo": "cita",
-  "titulo": "Hay que situar el centro de interés en el grado de satisfacción de necesidades y de bienestar realmente alcanzado por sus diferentes integrantes.",
-  "url": "https://aurzane.com/biblioteca/libro/manual-prevencion-violencia-genero.html",
-  "motivo": "Gemini le dio 4/10: no tiene fuerza suficiente para redes"
- },
- {
-  "fecha": "2026-11-03",
-  "id": "cita-a660d808d1",
-  "tipo": "cita",
-  "titulo": "A veces le venían pensamientos a los que invitaba a estar y que después se iban, para recibir a otros, miedos, enfados, alegrías.",
-  "url": "https://aurzane.com/biblioteca/libro/dificultades-aprendizaje-educacion-infantil.html",
-  "motivo": "Gemini le dio 5/10: no tiene fuerza suficiente para redes"
- },
- {
-  "fecha": "2026-11-03",
-  "id": "ia-little-me-big-dreams",
-  "tipo": "libro",
-  "titulo": "Little Me, Big Dreams: A Childhood Story",
-  "url": "https://archive.org/details/little-me-big-dreams",
-  "motivo": "Dice ser un libro pero el PDF solo tiene 16 páginas (es un capítulo, artículo o resumen)",
-  "probados": [
-   "200 application/pdf https://archive.org/download/little-me-big-dreams/Little-Me-Big-Dreams.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-03",
-  "id": "cita-27c26f9451",
-  "tipo": "cita",
-  "titulo": "A través de la radio se puede pensar también la educación y la ciudadanía; asumiéndola crítica y propositivamente.",
-  "url": "https://aurzane.com/biblioteca/libro/comunicacion-conflictos-cambio-social.html",
-  "motivo": "Gemini le dio 4/10: no tiene fuerza suficiente para redes"
  }
 ]
