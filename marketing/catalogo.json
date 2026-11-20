@@ -19548,6 +19548,81 @@
    "alta": "2026-10-26"
   },
   {
+   "id": "lectura-balada-de-pajaros-cantores-y-serpientes-suzanne-collins",
+   "tipo": "lectura",
+   "mundo": "aurzane",
+   "origen": "tienda",
+   "url": "https://aurzane.com/libros/balada-de-pajaros-cantores-y-serpientes-suzanne-collins/",
+   "titulo": "Balada de pájaros cantores y serpientes",
+   "autor": "Suzanne Collins",
+   "ganchos": [
+    "Libro recomendado: Balada de pájaros cantores y serpientes",
+    "Balada de pájaros cantores y serpientes, de Suzanne Collins",
+    "¿Qué leer este mes? Balada de pájaros cantores y serpientes"
+   ],
+   "texto": "Conecta directamente con el furor actual por el regreso de la saga a la gran pantalla.",
+   "hashtags": [
+    "LibrosRecomendados",
+    "QueLeer",
+    "Lectura",
+    "Libros"
+   ],
+   "aviso": "Contiene enlace de afiliado.",
+   "img": null,
+   "emoji": "📚",
+   "alta": "2026-11-20"
+  },
+  {
+   "id": "lectura-la-chica-de-nieve-javier-castillo",
+   "tipo": "lectura",
+   "mundo": "aurzane",
+   "origen": "tienda",
+   "url": "https://aurzane.com/libros/la-chica-de-nieve-javier-castillo/",
+   "titulo": "La chica de nieve",
+   "autor": "Javier Castillo",
+   "ganchos": [
+    "Libro recomendado: La chica de nieve",
+    "La chica de nieve, de Javier Castillo",
+    "¿Qué leer este mes? La chica de nieve"
+   ],
+   "texto": "Este libro es para los amantes de los thrillers intensos y los misterios familiares que giran en torno a desapariciones sin resolver. Aporta un ritmo vertiginoso y lleno de giros donde cada secreto del pasado sale a la luz.",
+   "hashtags": [
+    "LibrosRecomendados",
+    "QueLeer",
+    "Lectura",
+    "Libros"
+   ],
+   "aviso": "Contiene enlace de afiliado.",
+   "img": null,
+   "emoji": "📚",
+   "alta": "2026-11-20"
+  },
+  {
+   "id": "lectura-un-cuento-perfecto-elisabet-benavent",
+   "tipo": "lectura",
+   "mundo": "aurzane",
+   "origen": "tienda",
+   "url": "https://aurzane.com/libros/un-cuento-perfecto-elisabet-benavent/",
+   "titulo": "Un cuento perfecto",
+   "autor": "Elísabet Benavent",
+   "ganchos": [
+    "Libro recomendado: Un cuento perfecto",
+    "Un cuento perfecto, de Elísabet Benavent",
+    "¿Qué leer este mes? Un cuento perfecto"
+   ],
+   "texto": "Este libro es para quienes buscan una novela romántica cercana que reflexione sobre las expectativas afectivas y la presión social por el éxito. Aporta una mirada fresca y emotiva sobre el amor propio y las segundas oportunidades.",
+   "hashtags": [
+    "LibrosRecomendados",
+    "QueLeer",
+    "Lectura",
+    "Libros"
+   ],
+   "aviso": "Contiene enlace de afiliado.",
+   "img": null,
+   "emoji": "📚",
+   "alta": "2026-11-20"
+  },
+  {
    "id": "lectura-historias-de-la-historia-corrado-augias",
    "tipo": "lectura",
    "mundo": "aurzane",
@@ -19610,7 +19685,7 @@
     "Cuentos de la Alhambra, de Washington Irving",
     "¿Qué leer este mes? Cuentos de la Alhambra"
    ],
-   "texto": "Una lectura evocadora y cultural muy ligada al imaginario andaluz y al arte de El Barrio.",
+   "texto": "Este libro es para quienes disfrutan de los mitos y las leyendas enmarcados en un entorno histórico tan fascinante como la fortaleza nazarí.",
    "hashtags": [
     "LibrosRecomendados",
     "QueLeer",

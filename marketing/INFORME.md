@@ -4,13 +4,13 @@ Actualizado: 2026-11-20. Clics de personas (sin bots ni vistas previas) que entr
 
 | Red | Publicaciones | Clics |
 |---|---|---|
-| telegram | 85 | 4 |
-| bluesky | 56 | 294 |
-| mastodon | 56 | 191 |
-| instagram | 62 | 0 |
-| facebook | 62 | 133 |
+| telegram | 86 | 4 |
+| bluesky | 57 | 299 |
+| mastodon | 57 | 198 |
+| instagram | 63 | 0 |
+| facebook | 63 | 134 |
 | threads | 0 | 0 |
-| pinterest | 37 | 1 |
+| pinterest | 38 | 1 |
 
 ## Productos con más clics
 
@@ -25,6 +25,7 @@ Actualizado: 2026-11-20. Clics de personas (sin bots ni vistas previas) que entr
 | calc-hipoteca | 12 |
 | calc-calorias | 11 |
 | curso-neuro | 10 |
+| calc-embarazo | 10 |
 | test-autoestima | 9 |
 | nc-ingenieria-en-tecnologias-industriales | 9 |
 | ovp | 9 |
@@ -35,7 +36,6 @@ Actualizado: 2026-11-20. Clics de personas (sin bots ni vistas previas) que entr
 | frase-1d292112 | 9 |
 | nc-sociologia | 8 |
 | crea-l05-02 | 8 |
-| calc-embarazo | 8 |
 | frase-3adec0ca | 8 |
 | nc-educacion-infantil | 8 |
 | test-satisfaccion | 8 |
