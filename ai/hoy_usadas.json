@@ -11,7 +11,8 @@
   "fw-2e0c75c597",
   "cita-3adec0ca95",
   "fw-6d7b3852a2",
-  "fw-ce64b5dcbe"
+  "fw-ce64b5dcbe",
+  "fw-aacd892cfb"
  ],
  "dias": {
   "2026-11-08": {
@@ -354,6 +355,35 @@
    "musica": {
     "url": "https://aurzane.com/marketing/musica/1187638.mp3",
     "credito": "«Come Home», Marc Reeves (Jamendo), CC BY"
+   }
+  },
+  "2026-11-20": {
+   "fecha": "2026-11-20",
+   "frase": {
+    "texto": "Quien tiene paciencia, obtendrá lo que desea.",
+    "autor": "Benjamin Franklin",
+    "obra": "",
+    "url": "https://aurzane.com/frases/#fw-aacd892cfb",
+    "fuente": "Proverbia.net"
+   },
+   "curiosidad": {
+    "titulo": "¿Sobrecarga laboral en sanidad?",
+    "texto": "Las exigencias excesivas en el trabajo sanitario aumentan significativamente el agotamiento y las conductas de retirada. Una revisión sistemática y metaanálisis analizó cómo la sobrecarga laboral y mental afecta al personal sanitario. Los resultados muestran una conexión clara entre estas demandas, el agotamiento profesional y las conductas de distanciamiento del puesto.",
+    "fuente": "Healthcare, 2024",
+    "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13704590/"
+   },
+   "ejercicio": {
+    "titulo": "Respiración alterna (nadi shodhana) guiada",
+    "url": "https://mind.aurzane.com/ejercicios/respiracion-alterna/"
+   },
+   "test": {
+    "titulo": "Test de bienestar emocional WHO-5 gratis",
+    "url": "https://live.aurzane.com/test-de-bienestar/"
+   },
+   "mas_frases": true,
+   "musica": {
+    "url": "https://aurzane.com/marketing/musica/2037702.mp3",
+    "credito": "«Nostalgia Drive (Lofi Hip-hop)», Moonwalk (Jamendo), CC BY"
    }
   }
  }

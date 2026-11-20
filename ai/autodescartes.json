@@ -1,5 +1,16 @@
 [
  {
+  "fecha": "2026-11-20",
+  "id": "ia-el-claustro-de-las-siete-virtudes",
+  "tipo": "libro",
+  "titulo": "EL CLAUSTRO DE LAS SIETE VIRTUDES",
+  "url": "https://archive.org/details/el-claustro-de-las-siete-virtudes",
+  "motivo": "La IA le dio 2/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/el-claustro-de-las-siete-virtudes/EL%20CLAUSTRO%20DE%20LAS%20SIETE%20VIRTUDES.pdf"
+  ]
+ },
+ {
   "fecha": "2026-11-19",
   "id": "ia-boat-386-creatures-of-hypocrisy",
   "tipo": "libro",
@@ -2960,13 +2971,5 @@
   "titulo": "Generalmente, en los talleres sobre crecimiento personal, el trabajo sobre nuestro pasado es una parte fundamental para iniciar un proceso de autoconocimiento.",
   "url": "https://aurzane.com/biblioteca/libro/resiliencia-educacion-emocional-duelo-formacion-futuros.html",
   "motivo": "Gemini le dio 5/10: no tiene fuerza suficiente para redes"
- },
- {
-  "fecha": "2026-11-03",
-  "id": "cita-a2788e4aa3",
-  "tipo": "cita",
-  "titulo": "Para comprender mejor en qué consiste la educación emocional necesitamos conocer qué son las emociones.",
-  "url": "https://aurzane.com/biblioteca/libro/resiliencia-educacion-emocional-duelo-formacion-futuros.html",
-  "motivo": "Gemini le dio 3/10: no tiene fuerza suficiente para redes"
  }
 ]
