@@ -1930,5 +1930,17 @@
   "publicados": 115,
   "pruebas_ok": 56,
   "pruebas_total": 57
+ },
+ {
+  "fecha": "2026-11-21T08:42",
+  "estado": "medio",
+  "avisos": 1,
+  "arreglos": 1,
+  "errores_24h": 2,
+  "redes_ok_24h": 30,
+  "cola": 0,
+  "publicados": 115,
+  "pruebas_ok": 57,
+  "pruebas_total": 57
  }
 ]
