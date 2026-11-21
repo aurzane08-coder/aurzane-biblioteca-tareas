@@ -4,13 +4,13 @@ Actualizado: 2026-11-21. Clics de personas (sin bots ni vistas previas) que entr
 
 | Red | Publicaciones | Clics |
 |---|---|---|
-| telegram | 87 | 4 |
-| bluesky | 57 | 300 |
-| mastodon | 57 | 204 |
-| instagram | 64 | 0 |
-| facebook | 64 | 134 |
+| telegram | 90 | 4 |
+| bluesky | 59 | 307 |
+| mastodon | 59 | 212 |
+| instagram | 67 | 0 |
+| facebook | 67 | 135 |
 | threads | 0 | 0 |
-| pinterest | 38 | 1 |
+| pinterest | 39 | 1 |
 
 ## Productos con más clics
 
@@ -18,15 +18,16 @@ Actualizado: 2026-11-21. Clics de personas (sin bots ni vistas previas) que entr
 |---|---|
 | test-ansiedad | 16 |
 | test-tdah | 15 |
+| test-sueno | 13 |
 | calc-sueldo | 12 |
-| test-sueno | 12 |
 | test-personalidad | 12 |
 | test-habitos | 12 |
+| calc-calorias | 12 |
 | calc-hipoteca | 12 |
-| calc-calorias | 11 |
+| test-autoestima | 10 |
 | curso-neuro | 10 |
 | calc-embarazo | 10 |
-| test-autoestima | 9 |
+| curso-metod | 9 |
 | nc-ingenieria-en-tecnologias-industriales | 9 |
 | ovp | 9 |
 | crea-l05-08 | 9 |
@@ -40,4 +41,3 @@ Actualizado: 2026-11-21. Clics de personas (sin bots ni vistas previas) que entr
 | nc-educacion-infantil | 8 |
 | test-satisfaccion | 8 |
 | frase-8e70072e | 8 |
-| frase-5b980a2a | 8 |
