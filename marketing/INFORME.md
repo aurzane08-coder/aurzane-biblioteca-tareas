@@ -6,7 +6,7 @@ Actualizado: 2026-11-21. Clics de personas (sin bots ni vistas previas) que entr
 |---|---|---|
 | telegram | 90 | 4 |
 | bluesky | 59 | 307 |
-| mastodon | 59 | 212 |
+| mastodon | 59 | 217 |
 | instagram | 67 | 0 |
 | facebook | 67 | 135 |
 | threads | 0 | 0 |
