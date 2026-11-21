@@ -37,7 +37,7 @@
  ],
  "ed:Frontiers in psychiatry": [
   7,
-  9
+  10
  ],
  "ed:Advances in rheumatology (London, England)": [
   0,
@@ -68,7 +68,7 @@
   2
  ],
  "ed:Frontiers in public health": [
-  4,
+  6,
   6
  ],
  "ed:Frontiers in sports and active living": [
@@ -125,7 +125,7 @@
  ],
  "ed:": [
   51,
-  34
+  35
  ],
  "ed:undefined": [
   0,
@@ -188,7 +188,7 @@
   0
  ],
  "estudio:en": [
-  35,
+  37,
   29
  ],
  "ed:Frontiers in dental medicine": [
@@ -196,7 +196,7 @@
   1
  ],
  "tipo:estudio": [
-  62,
+  64,
   33
  ],
  "ed:Stress biology": [
@@ -413,7 +413,7 @@
  ],
  "ed:Frontiers in immunology": [
   1,
-  1
+  2
  ],
  "ed:Integrative psychological & behavioral science": [
   1,
@@ -560,6 +560,10 @@
   1
  ],
  "ed:JMIR mHealth and uHealth": [
+  0,
+  1
+ ],
+ "ed:Frontiers in oncology": [
   0,
   1
  ]

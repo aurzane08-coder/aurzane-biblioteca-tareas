@@ -1954,5 +1954,17 @@
   "publicados": 115,
   "pruebas_ok": 57,
   "pruebas_total": 57
+ },
+ {
+  "fecha": "2026-11-21T14:42",
+  "estado": "medio",
+  "avisos": 1,
+  "arreglos": 3,
+  "errores_24h": 2,
+  "redes_ok_24h": 45,
+  "cola": 0,
+  "publicados": 117,
+  "pruebas_ok": 57,
+  "pruebas_total": 57
  }
 ]
