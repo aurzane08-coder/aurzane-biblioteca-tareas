@@ -302,5 +302,53 @@
    }
   ],
   "fecha": "2026-11-20"
+ },
+ "https://nexus.aurzane.com/universidades/estados-unidos/crowder-college/": {
+  "titulo": "Guía de orientación vocacional para Crowder College",
+  "parrafos": [
+   "Crowder College es una institución pública de tipo community college situada en Neosho, Misuri, que ofrece en su catálogo un total de 41 carreras técnicas y tecnológicas superiores. Estas opciones abarcan diversas áreas de conocimiento como administración, salud, agricultura, informática y tecnologías industriales, permitiendo a los estudiantes obtener títulos de dos años con la posibilidad posterior de transferirse a una universidad de cuatro años.",
+   "El proceso de acceso a la educación superior en Estados Unidos se gestiona de manera independiente por cada institución y suele valorar el expediente académico de la escuela secundaria, ensayos, cartas de recomendación y actividades extracurriculares. En el caso de los estudiantes internacionales, es un requisito indispensable tramitar un visado de estudiante y demostrar el dominio del idioma inglés mediante las pruebas correspondientes.",
+   "Para elegir la carrera adecuada es fundamental reflexionar sobre los intereses personales, las habilidades profesionales y las metas a largo plazo, sin basar la decisión únicamente en las expectativas salariales. Asimismo, se aconseja revisar detalladamente las opciones de ayuda financiera, los costos totales de asistencia y las becas institucionales disponibles para estudiantes extranjeros, ya que las ayudas federales suelen estar reservadas para ciudadanos y residentes estadounidenses.",
+   "La vida estudiantil en una localidad como Neosho ofrece el entorno típico de un campus en un community college estadounidense, enfocado en una comunidad cercana y accesible. Estudiar aquí permite a los alumnos adaptarse al sistema educativo norteamericano mientras completan sus primeros años de educación superior en un ambiente propicio para el aprendizaje y el desarrollo personal."
+  ],
+  "faq": [
+   {
+    "p": "Qué es un community college en Estados Unidos",
+    "r": "Es una institución de educación superior que imparte programas de dos años orientados a títulos técnicos, tecnológicos o a la posterior transferencia a una universidad."
+   },
+   {
+    "p": "Cómo pueden los estudiantes internacionales solicitar becas",
+    "r": "Dado que las ayudas federales son solo para ciudadanos y residentes, es necesario consultar directamente con la universidad las opciones específicas de becas para alumnos extranjeros."
+   },
+   {
+    "p": "Qué tipo de carreras se pueden estudiar en Crowder College",
+    "r": "La institución cuenta con un catálogo de 41 carreras que incluyen áreas como administración, tecnologías de la información, salud, agricultura y oficios técnicos."
+   }
+  ],
+  "fecha": "2026-11-21"
+ },
+ "https://nexus.aurzane.com/universidades/estados-unidos/desales-university/": {
+  "titulo": "Guía de orientación para DeSales University en AURZANE",
+  "parrafos": [
+   "DeSales University es una institución de carácter privado ubicada en Center Valley, Pensilvania, que ofrece una sólida propuesta académica dentro del sistema de educación superior de Estados Unidos. En su ficha oficial de AURZANE se pueden encontrar hasta 39 opciones de grado que abarcan áreas tan diversas como administración de empresas, ciencias, artes, humanidades y salud, permitiendo a los futuros estudiantes explorar una amplia variedad de caminos profesionales según sus intereses y metas personales.",
+   "El proceso de acceso a las universidades en Estados Unidos se gestiona de manera independiente por cada institución y suele requerir la evaluación integral del expediente académico de la escuela secundaria, ensayos personales, cartas de recomendación y la participación en actividades extracurriculares. Aunque históricamente se han empleado exámenes estandarizados como el SAT o el ACT, muchas instituciones han adaptado sus normativas para hacerlos opcionales, y es común que los aspirantes utilicen plataformas centralizadas como Common App para enviar sus solicitudes.",
+   "Para elegir la carrera adecuada en DeSales University, es fundamental que reflexiones sobre tus fortalezas, pasiones y el impacto que deseas lograr en el futuro, investigando a fondo los planes de estudio disponibles en la plataforma de AURZANE. Asimismo, dado que los requisitos específicos de admisión, los costes de matrícula y las opciones de ayuda financiera pueden variar con el tiempo, resulta indispensable consultar siempre los canales oficiales de la universidad para verificar la información más actualizada antes de postularte.",
+   "La vida estudiantil en Center Valley ofrece el entorno característico de un campus universitario privado en Estados Unidos, donde los alumnos pueden integrarse en la comunidad a través de actividades académicas, culturales y deportivas. Vivir en esta zona permite a los estudiantes concentrarse en su formación superior en un ambiente propicio para el desarrollo personal, combinando la experiencia dentro del campus con las oportunidades que ofrece el estado de Pensilvania para su transición al mundo laboral."
+  ],
+  "faq": [
+   {
+    "p": "¿Qué tipo de institución es DeSales University?",
+    "r": "DeSales University es una universidad privada situada en Center Valley, Pensilvania. En la plataforma de AURZANE cuenta con un catálogo de 39 carreras de grado en diversas áreas de conocimiento."
+   },
+   {
+    "p": "¿Qué se necesita para ser admitido en una universidad en Estados Unidos?",
+    "r": "El proceso de admisión suele evaluar el expediente académico de la secundaria, ensayos, cartas de recomendación y actividades extracurriculares. Muchas solicitudes se gestionan a través de plataformas comunes como Common App y los requisitos varían en cada institución."
+   },
+   {
+    "p": "¿Cómo puedo consultar los costes y becas para estudiantes internacionales?",
+    "r": "Dado que las ayudas federales de Estados Unidos están destinadas a ciudadanos y residentes, los estudiantes internacionales deben consultar directamente con la universidad sobre los programas de becas específicos y el coste total estimado del curso."
+   }
+  ],
+  "fecha": "2026-11-21"
  }
 }
