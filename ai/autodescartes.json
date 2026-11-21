@@ -1,5 +1,16 @@
 [
  {
+  "fecha": "2026-11-21",
+  "id": "ia-shape-and-choice-inevitability-companions-3",
+  "tipo": "libro",
+  "titulo": "Shape and Choice: Everyday Geometry, Calm Presence, and the Science of a Choosing Mind",
+  "url": "https://archive.org/details/shape-and-choice-inevitability-companions-3",
+  "motivo": "La IA le dio 3/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/shape-and-choice-inevitability-companions-3/Shape-and-Choice.pdf"
+  ]
+ },
+ {
   "fecha": "2026-11-20",
   "id": "ia-sombras-en-el-papel-y-luz-en-el-celuloide-otto-crut",
   "tipo": "libro",
@@ -3017,13 +3028,5 @@
   "titulo": "Los pensamientos promueven el crecimiento emocional, intelectual y personal para hacer posible la regulación de las emociones en las situaciones de la vida.",
   "url": "https://aurzane.com/biblioteca/libro/curriculo-aprendizaje-socioemocional-case.html",
   "motivo": "Gemini le dio 2/10: no tiene fuerza suficiente para redes"
- },
- {
-  "fecha": "2026-11-04",
-  "id": "cita-4f538cd514",
-  "tipo": "cita",
-  "titulo": "La modernidad, en cambio, corresponde a un proceso cultural que comprende el respeto por los derechos humanos, una vida democrática y el fin del patriarcado.",
-  "url": "https://aurzane.com/biblioteca/libro/dificil-ser-hombre-nuevas-masculinidades-latinoamericanas.html",
-  "motivo": "Gemini le dio 3/10: no tiene fuerza suficiente para redes"
  }
 ]

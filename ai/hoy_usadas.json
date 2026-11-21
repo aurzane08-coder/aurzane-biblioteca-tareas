@@ -12,7 +12,8 @@
   "cita-3adec0ca95",
   "fw-6d7b3852a2",
   "fw-ce64b5dcbe",
-  "fw-aacd892cfb"
+  "fw-aacd892cfb",
+  "fw-469a9bf497"
  ],
  "dias": {
   "2026-11-08": {
@@ -385,6 +386,32 @@
     "url": "https://aurzane.com/marketing/musica/2037702.mp3",
     "credito": "«Nostalgia Drive (Lofi Hip-hop)», Moonwalk (Jamendo), CC BY"
    }
+  },
+  "2026-11-21": {
+   "fecha": "2026-11-21",
+   "frase": {
+    "texto": "En la naturaleza las cosas están mucho más separadas que las almas.",
+    "autor": "Georg Simmel",
+    "obra": "",
+    "url": "https://aurzane.com/frases/#fw-469a9bf497",
+    "fuente": "Proverbia.net"
+   },
+   "curiosidad": {
+    "titulo": "¿Sabías que la depresión y el corazón están conectados?",
+    "texto": "La depresión y un tipo común de insuficiencia cardíaca comparten una raíz inflamatoria común. Un estudio reciente muestra que la depresión y los problemas del corazón están vinculados por mecanismos biológicos compartidos. La inflamación juega un papel clave en ambas condiciones y en sus procesos relacionados.",
+    "fuente": "Depression and Anxiety",
+    "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13695868/"
+   },
+   "ejercicio": {
+    "titulo": "Técnica STOP de mindfulness guiada (1 minuto)",
+    "url": "https://mind.aurzane.com/ejercicios/tecnica-stop/"
+   },
+   "test": {
+    "titulo": "Test de ansiedad GAD-7 gratis y online",
+    "url": "https://mind.aurzane.com/test-de-ansiedad/"
+   },
+   "mas_frases": true,
+   "musica": null
   }
  }
 }

@@ -1,5 +1,43 @@
 [
  {
+  "id": "cur-0e0265b57a",
+  "tipo": "curiosidad",
+  "titulo": "¿Los animales reducen la ansiedad en el dentista?",
+  "dato": "Una revisión científica analiza la terapia asistida con animales para calmar la ansiedad dental basándose en ensayos clínicos.",
+  "resumen": "Una revisión científica analiza la terapia asistida con animales para calmar la ansiedad dental basándose en ensayos clínicos. Un estudio científico ha evaluado rigurosamente si la presencia de animales ayuda a los pacientes a relajarse durante las visitas al dentista. Analizando datos de varios ensayos clínicos, la investigación busca entender mejor el impacto de esta terapia en la práctica dental.",
+  "fuente": "Frontiers in Psychology",
+  "hashtags": [
+   "psicologia",
+   "ansiedad",
+   "ciencia",
+   "curiosidades"
+  ],
+  "fuente_id": "pmc-PMC13771274",
+  "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13771274/",
+  "fecha": "2026-11-21",
+  "auto": true,
+  "verificacion": "La afirmación describe fielmente una revisión científica basada en ensayos clínicos publicada en Frontiers in Psychology, sin caer en exageraciones."
+ },
+ {
+  "id": "cur-49fb4a0d02",
+  "tipo": "curiosidad",
+  "titulo": "¿Cuántos estudiantes sanitarios sufren ansiedad?",
+  "dato": "Una revisión analizó la ansiedad en estudiantes de medicina, odontología y enfermería en los Balcanes.",
+  "resumen": "Una revisión analizó la ansiedad en estudiantes de medicina, odontología y enfermería en los Balcanes. La investigación muestra que la ansiedad es un problema muy frecuente en las carreras sanitarias de esta región. El estudio recopiló datos de varios países balcánicos para conocer la magnitud real de esta situación.",
+  "fuente": "Journal of Clinical Medicine",
+  "hashtags": [
+   "psicologia",
+   "estudiantes",
+   "saludmental",
+   "aurzane"
+  ],
+  "fuente_id": "pmc-PMC13764040",
+  "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13764040/",
+  "fecha": "2026-11-21",
+  "auto": true,
+  "verificacion": "El texto describe de forma precisa y sin exageraciones los hallazgos de una revisión sistemática publicada en el Journal of Clinical Medicine."
+ },
+ {
   "id": "cur-de809b98c9",
   "tipo": "curiosidad",
   "titulo": "¿Sabías que la ansiedad puede nacer en tu cuerpo?",
