@@ -94,5 +94,13 @@
   "facebook": 0,
   "instagram": 2,
   "youtube": 9
+ },
+ "2026-11-21": {
+  "telegram": 7,
+  "bluesky": 2,
+  "mastodon": null,
+  "facebook": 0,
+  "instagram": 2,
+  "youtube": 9
  }
 }
