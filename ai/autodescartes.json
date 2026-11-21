@@ -1,6 +1,17 @@
 [
  {
   "fecha": "2026-11-21",
+  "id": "pmc-PMC13780396",
+  "tipo": "estudio",
+  "titulo": "New Insights and Effectiveness of Digital Interventions for Health Anxiety: Systematic Review and Meta-Analysis",
+  "url": "https://europepmc.org/article/PMC/PMC13780396",
+  "motivo": "El PDF solo tiene 2 páginas",
+  "probados": [
+   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13780396.1/mhealth-v14-e91108-s003.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-21",
   "id": "ia-shape-and-choice-inevitability-companions-3",
   "tipo": "libro",
   "titulo": "Shape and Choice: Everyday Geometry, Calm Presence, and the Science of a Choosing Mind",
@@ -3020,13 +3031,5 @@
   "probados": [
    "HTTP Error 403: Forbidden https://oro.open.ac.uk/112552/10/Polyphony%20Final%20with%20DOI.pdf"
   ]
- },
- {
-  "fecha": "2026-11-04",
-  "id": "cita-2060a8d04d",
-  "tipo": "cita",
-  "titulo": "Los pensamientos promueven el crecimiento emocional, intelectual y personal para hacer posible la regulación de las emociones en las situaciones de la vida.",
-  "url": "https://aurzane.com/biblioteca/libro/curriculo-aprendizaje-socioemocional-case.html",
-  "motivo": "Gemini le dio 2/10: no tiene fuerza suficiente para redes"
  }
 ]
