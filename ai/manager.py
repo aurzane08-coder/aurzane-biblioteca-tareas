@@ -285,6 +285,15 @@ def pagina_novedades():
         grupos[n['fecha']].append(n)
     cuenta = {}
     bloques = ''
+    FT = [(r'ansiedad|anxiety|p[áa]nico|worry', '1505142468610-359e7d316be0'), (r'estr[ée]s|stress|burnout', '1541199249251-f713e6145474'), (r'depresi|depress|[áa]nimo|mood', '1529665253569-6d01c0eaf7b6'),
+          (r'sue[ñn]o|insomn|sleep', '1541781774459-bb2af2f05b55'), (r'h[áa]bito|aliment|nutri|ejercicio|exercise|diet', '1490645935967-10de6ba17061'), (r'autoestima|personalidad|personality|self', '1517841905240-472988babdf9'),
+          (r'pareja|relaci|famil|amistad|couple|family', '1544027993-37dbfe43562a'), (r'soledad|lonel|isolat', '1512438248247-f0f2a5a8b7f0'), (r'duelo|p[ée]rdida|muerte|grief|resilien|trauma', '1466692476868-aef1dfb1e735'),
+          (r'bienestar|felicidad|mindful|well-?being|calma', '1506126613408-eca07ce68773'), (r'carrera|universidad|vocaci|universit|career', '1541339907198-e08756dedf3f'),
+          (r'aprend|estudi|educa|learn|student|school|tdah|adhd', '1434030216411-0b793f4b4173'), (r'hipoteca|vivienda|dinero|inter[ée]s|ahorro|finan', '1579621970563-ebec7560ff3e'), (r'cerebro|brain|neuro', '1559757175-5700dde675bc')]
+    FK = {'libro': '1532012197267-da84d127e765', 'estudio': '1481627834876-b7833e8f5570', 'test': '1517841905240-472988babdf9', 'herramienta': '1579621970563-ebec7560ff3e'}
+    def foto_nv(t, k, m):
+        t = (t or '').lower(); i = next((f for r, f in FT if re.search(r, t)), None) or FK.get(k) or {'mind': '1559757175-5700dde675bc', 'nexus': '1541339907198-e08756dedf3f', 'live': '1454496522488-7a8e488e8606', 'learn': '1481627834876-b7833e8f5570', 'build': '1461360370896-922624d12aa1'}.get(m, '1481627834876-b7833e8f5570')
+        return f'https://images.unsplash.com/photo-{i}?w=480&h=300&q=70&fit=crop&auto=format'
     for f in orden:
         tarjetas = ''
         for n in grupos[f]:
@@ -292,7 +301,9 @@ def pagina_novedades():
             tit = html.escape(n.get('titulo_completo') or tit)
             if n.get('titulo_completo'): tit = html.escape(re.sub(r'^(Estudio reciente|Artículo|Libro abierto):\s*', '', n['titulo_completo']))
             m = MUNDO(n['url'])
-            foto = (f'<span class="nv-img"><img src="{html.escape(n["img"])}" alt="" loading="lazy" width="480" height="300"></span>' if n.get('img') else '')
+            # sin imagen propia todavía: foto real de Unsplash según el tema (nunca una imagen creada); la propia la sustituye cuando llega
+            img_n = n.get('img') or foto_nv(n.get('titulo_completo') or tit, k, m)
+            foto = f'<span class="nv-img"><img src="{html.escape(img_n)}" alt="" loading="lazy" width="480" height="300"></span>'
             res = f'<span class="nv-res">{html.escape(n["desc"][:170])}</span>' if n.get('desc') else ''
             tarjetas += (f'<li data-tipo="{k}"><a class="nv-c{"" if foto else " sin-foto"}" href="{html.escape(n["url"])}" style="--c:var(--m-{m})">{foto}'
                          f'<span class="nv-t"><span class="nv-tag"><i></i>{etiqueta} · {"AURZANE" if m == "aurzane" else m.upper()}</span><b>{tit}</b>{res}</span></a></li>')
