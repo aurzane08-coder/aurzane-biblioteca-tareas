@@ -1,0 +1,61 @@
+name: Archivos pesados a Internet Archive
+# Libera espacio en SiteGround: sube a archive.org los PDF de la biblioteca con licencia libre y el marketing antiguo,
+# comprueba que archive.org los sirve enteros y solo entonces los quita del servidor. La web no cambia: el .htaccess
+# redirige a archive.org cada archivo que ya no está en el servidor. Detalle en archivos/internet_archive.py.
+# Necesita los secretos IA_ACCESS e IA_SECRET (claves S3 de la cuenta de archive.org de Adrián); sin ellos no hace nada.
+on:
+  schedule:
+    - cron: '23 */3 * * *'
+  push:
+    paths: ['archivos/internet_archive.py', '.github/workflows/archivos-internet-archive.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency: { group: archivos-ia, cancel-in-progress: false }
+jobs:
+  mudar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 170
+    env:
+      IA_ACCESS: ${{ secrets.IA_ACCESS }}
+      IA_SECRET: ${{ secrets.IA_SECRET }}
+      SG_KEY: ${{ secrets.SG_KEY }}
+      SG_HOST: ${{ secrets.SG_HOST }}
+      SG_USER: ${{ secrets.SG_USER }}
+      SG_PORT: ${{ secrets.SG_PORT }}
+      SG_PASS: ${{ secrets.SG_PASS }}
+    steps:
+      - name: Comprobar las claves de archive.org
+        run: |
+          if [ -z "$IA_ACCESS" ] || [ -z "$IA_SECRET" ]; then echo "::notice title=Internet Archive::Aún no están los secretos IA_ACCESS e IA_SECRET. No se hace nada."; echo SIN=1 >> $GITHUB_ENV; fi
+      - uses: actions/checkout@v4
+        if: env.SIN != '1'
+      - name: Preparar
+        if: env.SIN != '1'
+        run: |
+          pip install -q internetarchive==5.4.0
+          mkdir -p ~/.ssh && printf '%s\n' "$SG_KEY" | tr -d '\r' > ~/.ssh/id && chmod 600 ~/.ssh/id
+          if [ -n "$SG_PASS" ]; then ssh-keygen -p -P "$SG_PASS" -N "" -f ~/.ssh/id >/dev/null; fi
+          echo "S=ssh -i $HOME/.ssh/id -p ${SG_PORT:-18765} -o StrictHostKeyChecking=accept-new -o ServerAliveInterval=30 $SG_USER@$SG_HOST" >> $GITHUB_ENV
+      - name: Redirección a archive.org en el .htaccess (antes de quitar nada)
+        if: env.SIN != '1'
+        run: |
+          $S 'cd ~/www/aurzane.com/public_html && grep -q "AURZANE archivos en Internet Archive" .htaccess || { cp .htaccess .htaccess.antes-ia; { printf "%s\n" "# AURZANE archivos en Internet Archive (22/11/2026): lo que ya no está en el servidor se sirve desde archive.org" "<IfModule mod_rewrite.c>" "RewriteEngine On" "RewriteCond %{REQUEST_FILENAME} !-f" "RewriteRule ^biblioteca/pdf/([A-Za-z0-9._-]+)\.pdf$ https://archive.org/download/aurzane-bib-\$1/\$1.pdf [R=302,L]" "RewriteCond %{REQUEST_FILENAME} !-f" "RewriteRule ^marketing/(video|musica)/([A-Za-z0-9._-]+)$ https://archive.org/download/aurzane-marketing-\$1/\$2 [R=302,L]" "</IfModule>" ""; cat .htaccess.antes-ia; } > .htaccess; mkdir -p ../../eliminar/htaccess && mv .htaccess.antes-ia ../../eliminar/htaccess/aurzane.com-antes-ia; }; head -9 .htaccess'
+      - name: Subir y comprobar
+        if: env.SIN != '1'
+        run: |
+          $S 'cd ~/www/aurzane.com/public_html && find biblioteca/pdf marketing/video marketing/musica -type f -printf "%p\t%s\t%Ts\n" 2>/dev/null' | awk -F'\t' -v now=$(date +%s) '{printf "%s\t%s\t%d\n",$1,$2,(now-$3)/86400}' > lista.tsv
+          $S 'cat ~/www/aurzane.com/public_html/biblioteca/catalogo.js' > catalogo.js
+          $S 'cat ~/www/.ia-archivos.tsv 2>/dev/null' > manifiesto.tsv || true
+          echo "Archivos candidatos en el servidor: $(wc -l < lista.tsv)"
+          python3 archivos/internet_archive.py lista.tsv catalogo.js manifiesto.tsv
+          $S 'cat > ~/www/.ia-archivos.tsv' < manifiesto.tsv
+      - name: Quitar del servidor lo que archive.org ya sirve
+        if: env.SIN != '1'
+        run: |
+          if [ -s quitar.txt ]; then
+            $S 'cd ~/www/aurzane.com/public_html && while IFS= read -r f; do case "$f" in biblioteca/pdf/*|marketing/video/*|marketing/musica/*) rm -f -- "$f";; esac; done; du -sh ~/www' < quitar.txt
+            # comprobación en vivo: el primer archivo quitado se sigue abriendo desde la web (vía archive.org)
+            f=$(head -1 quitar.txt); c=$(curl -sIL -o /dev/null -w '%{http_code}' "https://aurzane.com/$f"); echo "https://aurzane.com/$f → $c"
+            echo "::notice title=Espacio::Quitados $(wc -l < quitar.txt) archivos del servidor (se sirven desde archive.org)"
+          fi
