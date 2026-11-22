@@ -113,7 +113,10 @@ html.az-ds .az-herr>p{font-size:1.02rem;margin-bottom:22px!important}
 html.az-ds .az-herr-g{gap:16px!important;grid-template-columns:repeat(auto-fill,minmax(232px,1fr))!important}
 html.az-ds .az-herr a{background:#FFFFFF!important;color:#252724!important;border:1px solid rgba(37,39,36,.12)!important;box-shadow:none!important;padding:20px!important;min-height:0!important;display:flex!important;flex-direction:column;gap:6px;overflow:hidden}
 html.az-ds .az-herr a:hover{border-color:#183D32!important;transform:translateY(-2px)}
-html.az-ds .az-herr a img{margin:-20px -20px 10px!important;width:calc(100% + 40px)!important;max-width:none!important;aspect-ratio:16/10;object-fit:cover;border-radius:0!important;opacity:1!important}
+/* la foto que pone aurzane-estilo.js (a.az-cf > .az-cf-img) pasa a ser la cabecera de la tarjeta, en el flujo: nunca tapa el texto */
+html.az-ds .az-herr a.az-cf{padding-top:0!important}
+html.az-ds .az-herr a.az-cf .az-cf-img{position:relative!important;display:block;height:150px!important;margin:0 -20px 12px!important;left:auto!important;right:auto!important;top:auto!important}
+html.az-ds .az-herr a.az-cf .az-cf-img::after{display:none}
 html.az-ds .az-herr a b{font:400 1.45rem/1.15 var(--v-serif)!important;color:#12251F!important;margin:2px 0 2px!important}
 html.az-ds .az-herr a span{opacity:1!important;color:#5E605A!important;font-size:.93rem!important;line-height:1.5}
 html.az-ds .az-herr a i{background:#DCE5DF!important;color:#183D32!important;margin-top:auto!important;align-self:flex-start;font-weight:600!important}
@@ -138,16 +141,17 @@ html.az-pm .filter-bar{max-width:1280px!important}
 html.az-v4-navy:not([data-tema="oscuro"]){
   --navy:#F6F5F0;--navy-2:#FFFFFF;--navy-3:#EFEDE6;--navy-4:#E4E1D8;
   --navy-950:#F6F5F0;--navy-900:#FFFFFF;--navy-800:#EFEDE6;--navy-700:#E4E1D8;
-  --gold:#183D32;--gold-light:#183D32;--gold-rgb:24,61,50;--bronze:#183D32;
+  --gold:#183D32;--gold-light:#183D32;--gold-l:#2B5848;--gold-rgb:24,61,50;--bronze:#183D32;
   --silver:#252724;--silver-dim:#5E605A;--bone:#12251F;--vanilla:#12251F;--white:#12251F;
   --ink:#252724;--ink-2:#45473F;--ink-3:#5E605A;
   --line:rgba(37,39,36,.12);--line-strong:rgba(24,61,50,.35);--border:rgba(37,39,36,.12);
-  --mind:#6A55C2;--nexus:#3E63B8;--live:#B2563A;--learn:#2F7A6A;--build:#946233}
+  --mind:#6A55C2;--nexus:#3E63B8;--live:#B2563A;--learn:#2F7A6A;--build:#946233;
+  --accent:#183D32;--accent-2:#2B5848}
 html.az-v4-navy:not([data-tema="oscuro"]) body{background:#F6F5F0!important;color:#252724}
 /* los momentos de marca siguen en verde profundo con texto claro (cabeceras con foto, franjas, pie) */
 html.az-v4-navy:not([data-tema="oscuro"]) :is(.hero-wrap,.trust-strip,.az-pie){
   --navy:#12251F;--navy-2:#183D32;--navy-3:#1D4538;--navy-4:#24503F;
-  --gold:#C7B99B;--gold-light:#D9CDB2;--gold-rgb:199,185,155;--bronze:#C7B99B;
+  --gold:#C7B99B;--gold-light:#D9CDB2;--gold-l:#D9CDB2;--gold-rgb:199,185,155;--bronze:#C7B99B;
   --silver:#DDE2DC;--silver-dim:#AEB8B0;--bone:#F6F5F0;--vanilla:#F6F5F0;--white:#FFFFFF;
   --ink:#F6F5F0;--ink-2:#DDE2DC;--ink-3:#AEB8B0;
   --line:rgba(242,239,230,.14);--line-strong:rgba(199,185,155,.4);--border:rgba(242,239,230,.14);color:#DDE2DC}
@@ -205,3 +209,60 @@ html.az-v4-navy .mundo-card b{color:#F6F5F0!important}
 html.az-v4-navy .mundo-card small{color:#DDE2DC!important;font-size:.82rem!important}
 /* Biblioteca: estanterías más anchas en pantallas grandes */
 html:has(link[href*="biblioteca.css"]) .wrap{max-width:1280px!important}
+
+/* =====================================================================================================
+   Tests, calculadoras y herramientas (cabecera --n1/--n2/--n3 por mundo): cabecera verde profunda en todos los mundos,
+   acentos champán; el color del mundo queda en su punto de la barra. (:root:root gana a la :root de cada página)
+   ===================================================================================================== */
+:root:root{--n1:#12251F;--n2:#183D32;--n3:#2B5848;--cian:#D9CDB2;--violeta:#C7B99B;--acc-rgb:24,61,50;--acento-texto:#183D32}
+html[data-tema="oscuro"]:root{--acento-texto:#D9CDB2}
+.hero h1 span{background:none!important;-webkit-background-clip:initial!important;background-clip:initial!important;color:#D9CDB2!important;font-style:italic}
+.btn-luz,.movil-barra a{background:#C7B99B!important;color:#12251F!important}
+.btn-luz:hover{background:#D9CDB2!important}
+
+/* etiquetas diminutas (0,68 rem) a un tamaño legible */
+.cat{font-size:.76rem!important}.art-eyebrow{font-size:.8rem!important}
+/* páginas sencillas (legales, contacto, recomendados) en oscuro: sus grises fijos pasan a gris claro legible */
+html.az-v4-bg[data-tema="oscuro"] :is(.firma,.a,.aviso,.nota,.sub){color:#B9C2BB!important}
+html.az-v4-bg[data-tema="oscuro"] :is(.firma,.a,.aviso,.nota,.sub) a,html.az-v4-bg[data-tema="oscuro"] main a:not([class]){color:#D9CDB2}
+/* Biblioteca: barra de búsqueda y departamentos en marfil (en oscuro sigue verde), chips legibles */
+html.az-v4-navy:not([data-tema="oscuro"]) .cabecera{background:rgba(246,245,240,.97)!important;border-bottom-color:rgba(37,39,36,.12)!important}
+html.az-v4-navy:not([data-tema="oscuro"]) .buscador input{background:#FFFFFF!important}
+html.az-v4-navy .depto{font-size:.86rem!important;font-weight:600}
+html.az-v4-navy .depto[aria-current],html.az-v4-navy .depto.activo,html.az-v4-navy .depto[aria-pressed="true"]{border-bottom-color:#183D32!important;color:#12251F!important}
+html[data-tema="oscuro"].az-v4-navy .depto[aria-current],html[data-tema="oscuro"].az-v4-navy .depto.activo{border-bottom-color:#C7B99B!important;color:#F6F5F0!important}
+html.az-v4-navy .chip{font-size:.74rem!important;padding:3px 10px!important}
+html.az-v4-navy:not([data-tema="oscuro"]) .chip.leer{border-color:#183D32!important;color:#183D32!important;background:#EAEFEA}
+html.az-v4-navy:not([data-tema="oscuro"]) .chip.nuevo{color:#F6F5F0!important}
+html.az-v4-navy:not([data-tema="oscuro"]) :is(a.chip,.az-bib-tipo){color:#183D32!important;background:#EAEFEA!important;border-color:rgba(24,61,50,.25)!important}
+html[data-tema="oscuro"].az-v4-navy :is(a.chip,.az-bib-tipo){color:#ECEAE2!important;background:#1D4538!important;border-color:rgba(242,239,230,.18)!important}
+/* Artículos (índice): buscador fijo en marfil (en oscuro, verde), botones de mundo legibles, tarjetas blancas con filete */
+html:not([data-tema="oscuro"]) #azIdx{background:rgba(246,245,240,.97)!important;border-bottom-color:rgba(37,39,36,.12)!important}
+html[data-tema="oscuro"] #azIdx{background:rgba(18,37,31,.97)!important}
+#azIdx input{background:#FFFFFF!important;color:#252724!important;border-color:rgba(37,39,36,.2)!important}
+html[data-tema="oscuro"] #azIdx input{background:#183D32!important;color:#ECEAE2!important;border-color:rgba(242,239,230,.2)!important}
+#azIdx button{border-color:rgba(37,39,36,.2)!important}
+#azIdx button[aria-pressed="true"]{background:#183D32!important;border-color:#183D32!important;color:#F6F5F0!important}
+html[data-tema="oscuro"] #azIdx button[aria-pressed="true"]{background:#C7B99B!important;border-color:#C7B99B!important;color:#12251F!important}
+html.az-v4-navy:not([data-tema="oscuro"]) .tema-card{background:#FFFFFF!important;border:1px solid rgba(37,39,36,.12)!important;border-top:3px solid #C7B99B!important;border-radius:14px!important;overflow:hidden}
+html.az-v4-navy .tema-card:hover{border-color:#183D32!important}
+.tema-card-body h3{font-family:var(--v-serif)!important;font-weight:400!important;font-size:1.32rem!important;line-height:1.22!important}
+.az-dest h2{font-family:var(--v-serif)!important;font-weight:400!important}
+html.az-v4-navy .mundo-titulo{font-family:var(--v-serif)!important;font-weight:400!important;font-size:2rem!important;border-bottom:1px solid rgba(37,39,36,.12);padding-bottom:10px}
+html[data-tema="oscuro"].az-v4-navy .mundo-titulo{border-bottom-color:rgba(242,239,230,.14)}
+
+/* Etiquetas, chips y botones de interfaz: siempre en Manrope (la serif es solo para titulares) y a un tamaño legible */
+:is(.cat-badge,.f-chip,.tag,.eyebrow,.badge,.kicker,.pill,.etq){font-family:var(--v-sans)!important;font-style:normal!important}
+.f-chip{font-size:.86rem!important;font-weight:600!important;padding:8px 16px!important;border-color:rgba(37,39,36,.18)!important}
+html[data-tema="oscuro"] .f-chip{border-color:rgba(242,239,230,.2)!important}
+.f-chip.active{background:#183D32!important;border-color:#183D32!important;color:#F6F5F0!important}
+html[data-tema="oscuro"] .f-chip.active{background:#C7B99B!important;border-color:#C7B99B!important;color:#12251F!important}
+.cat-badge{font-size:.72rem!important;font-weight:700!important;letter-spacing:.08em!important;background:#EAEFEA!important;color:#183D32!important;border-color:transparent!important;border-radius:999px!important}
+html[data-tema="oscuro"] .cat-badge{background:#21493D!important;color:#E9E4DB!important}
+.tag{font-size:.8rem!important}
+/* Promoción del test de personalidad: verde profundo con la foto real del test a la derecha, botón champán */
+.pz-promo{background:linear-gradient(90deg,#12251F 42%,rgba(18,37,31,.72) 68%,rgba(18,37,31,.25)),url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=1200&q=70&auto=format&fit=crop') right 30%/cover no-repeat #12251F!important;border:0!important;box-shadow:none!important}
+.pz-promo::before{display:none!important}
+.pz-promo-txt b{font-family:var(--v-serif)!important;font-weight:400!important;font-size:1.7rem!important;color:#F6F5F0}
+.pz-promo-txt span{color:#DDE2DC!important}
+.pz-promo-cta{background:#C7B99B!important;color:#12251F!important;border-radius:999px!important}

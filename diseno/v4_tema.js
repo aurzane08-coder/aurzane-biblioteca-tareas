@@ -21,3 +21,21 @@
   if (w.MutationObserver) new MutationObserver(function () { var n = w.AurzaneTema.actual(); if (n !== leer()) guardar(n); })
     .observe(html, { attributes: true, attributeFilter: ['data-tema'] });
 })(document, window);
+
+/* v4: en las guías de tests y calculadoras se mostraba la imagen de redes (og.jpg, un cartel generado) como si fuera una foto.
+   Se sustituye por la foto real de la propia página (Unsplash, la misma de su cabecera); si no hay foto real, el cartel se quita. */
+(function (d) {
+  function cambiar() {
+    var figs = d.querySelectorAll('figure img[src$="/og.jpg"],figure img[src$="/og.png"],figure img[src$="/og.webp"]');
+    if (!figs.length) return;
+    var ref = d.querySelector('.hero img[src*="images.unsplash.com"],main img[src*="images.unsplash.com"],img[src*="images.unsplash.com"]');
+    Array.prototype.forEach.call(figs, function (im) {
+      var f = im.closest('figure'); if (!f) return;
+      if (!ref) { f.parentNode.removeChild(f); return; }
+      im.removeAttribute('srcset'); im.src = ref.src.replace(/([?&])w=\d+/, '$1w=1400'); im.alt = '';
+      var c = f.querySelector('figcaption'); if (c) c.parentNode.removeChild(c);
+      f.classList.add('az-v4-foto');
+    });
+  }
+  if (d.readyState === 'loading') d.addEventListener('DOMContentLoaded', function () { setTimeout(cambiar, 700); }); else setTimeout(cambiar, 700);
+})(document);

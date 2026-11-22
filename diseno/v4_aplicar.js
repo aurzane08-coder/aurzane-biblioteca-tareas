@@ -9,8 +9,41 @@ const iL = process.argv.indexOf('--lista'), lista = iL > 0 ? process.argv[iL + 1
 const V4CSS = fs.readFileSync(path.join(__dirname, 'v4.css'), 'utf8');
 const TEMA = fs.readFileSync(path.join(__dirname, 'v4_tema.js'), 'utf8');
 const BOTON = "    // v4: todas las páginas tienen claro y oscuro; si la página no trae su propio botón, se crea uno con el tema común\n    if (!tema && window.AurzaneTema) { tema = d.createElement('button'); tema.type = 'button'; tema.id = 'btnTema';\n      tema.addEventListener('click', function () { window.AurzaneTema.alternar(); }); }\n";
+// Foto real (Unsplash, las mismas que ya usa AURZANE en tests y portada) para los artículos que no traen imagen propia,
+// elegida por el tema del artículo; si no encaja ninguno, la foto de su mundo.
+const FOTO_V4 = "    /* FOTO_V4 (rediseño v4, 22/11/2026): sin imagen propia, foto real según el tema; nunca una imagen creada */\n" +
+  "    if (!img) { var tx = ((a.categoria || '') + ' ' + (a.titulo || '')).toLowerCase(), F = [[/ansiedad|p[áa]nico|preocupa/, '1505142468610-359e7d316be0'], [/estr[ée]s|burnout|agotamiento/, '1541199249251-f713e6145474'], [/depresi|[áa]nimo|triste/, '1529665253569-6d01c0eaf7b6'], [/sue[ñn]o|insomnio|dormir|descans/, '1541781774459-bb2af2f05b55'], [/h[áa]bito|aliment|nutric|ejercicio|deporte/, '1490645935967-10de6ba17061'], [/autoestima|identidad|personalidad/, '1517841905240-472988babdf9'], [/pareja|relaci|amistad|famil|v[íi]nculo|cuidado/, '1544027993-37dbfe43562a'], [/soledad|aislamiento/, '1512438248247-f0f2a5a8b7f0'], [/duelo|p[ée]rdida|muerte|resilien|trauma/, '1466692476868-aef1dfb1e735'], [/bienestar|felicidad|satisfacc|prop[óo]sito|mindful|calma/, '1506126613408-eca07ce68773'], [/carrera|vocaci|universidad|oferta|acceso|elegir/, '1541339907198-e08756dedf3f'], [/aprend|estudi|memoria|metacog|educa|ense[ñn]|tdah|atenci/, '1434030216411-0b793f4b4173'], [/curso|formaci|certific/, '1522202176988-66273c2fd55f'], [/hipoteca|vivienda|dinero|ahorro|inmobil|finanz|sueldo|inver/, '1579621970563-ebec7560ff3e'], [/libro|lectura|biblioteca/, '1532012197267-da84d127e765']], M = { mind: '1559757175-5700dde675bc', nexus: '1541339907198-e08756dedf3f', live: '1454496522488-7a8e488e8606', learn: '1481627834876-b7833e8f5570', build: '1461360370896-922624d12aa1' }, id = '';\n" +
+  "      for (var q = 0; q < F.length && !id; q++) if (F[q][0].test(tx)) id = F[q][1];\n" +
+  "      img = 'https://images.unsplash.com/photo-' + (id || M[a.mundo] || M.mind) + '?w=800&h=450&q=70&fit=crop&auto=format'; }\n";
 const MARCA_I = '/* ==== AURZANE v4 (diseno/v4.css) ==== */', MARCA_F = '/* ==== fin AURZANE v4 ==== */';
 const NO = /(^|\/)(eliminar|copias?|node_modules|\.git|vendor|wp-[a-z]+)(\/|$)/;
+function aplicar(rel, t) {   // rel = <dominio>/<ruta>
+  let o;
+  if (/(^|\/)aurzane-ds\.css$/.test(rel)) {   // la hoja común lleva v4.css al final (sin convertir), entre marcas para poder actualizarla
+    const i = t.indexOf(MARCA_I); o = P.transformar(i >= 0 ? t.slice(0, i).replace(/\s+$/, '') : t).out;
+    o += '\n\n' + MARCA_I + '\n' + V4CSS.trim() + '\n' + MARCA_F + '\n';
+  } else o = P.transformar(t).out;
+  // Imágenes de Unsplash siempre con formato automático: el servidor de Unsplash entrega AVIF a quien lo admite (y WebP/JPG al resto)
+  o = o.replace(/(https:\/\/images\.unsplash\.com\/photo-[\w-]+)(\?[^"'\s)<>]*)?/g, (m, base, q) => {
+    q = (q || '?').replace(/&amp;/g, '&'); if (/[?&]auto=format/.test(q) || /[?&]fm=/.test(q)) return m;
+    return base + (q === '?' ? '?auto=format' : q + (q.endsWith('?') || q.endsWith('&') ? '' : '&') + 'auto=format');
+  });
+  if (/^aurzane\.com\/aurzane-paleta\.js$/.test(rel) && o.indexOf('Tema único para todo AURZANE') < 0) {   // tema común, antes que la paleta
+    const k = o.indexOf("(function (w, d) {\n  'use strict';\n  if (w.AurzanePaleta) return;");
+    if (k >= 0) o = o.slice(0, k) + TEMA + '\n' + o.slice(k); else console.error('AVISO: no encontré dónde poner el tema en aurzane-paleta.js');
+  }
+  if (/^aurzane\.com\/aurzane-ds\.js$/.test(rel) && o.indexOf('v4: todas las páginas tienen claro y oscuro') < 0) {   // botón «Tema» en todas las páginas
+    const a = "    var tema = d.getElementById('btnTema') || d.getElementById('btnTemaMi');\n";
+    if (o.indexOf(a) >= 0) o = o.replace(a, a + BOTON); else console.error('AVISO: no encontré el botón de tema en aurzane-ds.js');
+  }
+  if (/^aurzane\.com\/aurzane-contenido\.js$/.test(rel) && o.indexOf('FOTO_V4') < 0) {   // tarjetas de artículos: siempre con foto real
+    const a = "    var img = a.imagen && !/\\/biblioteca\\/recientes\\//.test(a.imagen) ? a.imagen : '';\n";
+    if (o.indexOf(a) >= 0) o = o.replace(a, a + FOTO_V4); else console.error('AVISO: no encontré las tarjetas de artículos en aurzane-contenido.js');
+  }
+  return o;
+}
+module.exports = { aplicar };
+if (require.main !== module) return;
 const cambiados = []; let vistos = 0;
 (function recorrer(d) {
   for (const e of fs.readdirSync(d, { withFileTypes: true })) {
@@ -20,19 +53,7 @@ const cambiados = []; let vistos = 0;
     if (!/\.(html?|css|js)$/i.test(e.name) || /\.min\.js$/.test(e.name)) continue;
     const st = fs.statSync(f); if (st.size > 3e6) continue;
     vistos++;
-    const t = fs.readFileSync(f, 'utf8'); let o;
-    if (/(^|\/)aurzane-ds\.css$/.test(rel)) {   // la hoja común lleva v4.css al final (sin convertir), entre marcas para poder actualizarla
-      const i = t.indexOf(MARCA_I); o = P.transformar(i >= 0 ? t.slice(0, i).replace(/\s+$/, '') : t).out;
-      o += '\n\n' + MARCA_I + '\n' + V4CSS.trim() + '\n' + MARCA_F + '\n';
-    } else o = P.transformar(t).out;
-    if (/^aurzane\.com\/aurzane-paleta\.js$/.test(rel) && o.indexOf('Tema único para todo AURZANE') < 0) {   // tema común, antes que la paleta
-      const k = o.indexOf("(function (w, d) {\n  'use strict';\n  if (w.AurzanePaleta) return;");
-      if (k >= 0) o = o.slice(0, k) + TEMA + '\n' + o.slice(k); else console.error('AVISO: no encontré dónde poner el tema en aurzane-paleta.js');
-    }
-    if (/^aurzane\.com\/aurzane-ds\.js$/.test(rel) && o.indexOf('v4: todas las páginas tienen claro y oscuro') < 0) {   // botón «Tema» en todas las páginas
-      const a = "    var tema = d.getElementById('btnTema') || d.getElementById('btnTemaMi');\n";
-      if (o.indexOf(a) >= 0) o = o.replace(a, a + BOTON); else console.error('AVISO: no encontré el botón de tema en aurzane-ds.js');
-    }
+    const t = fs.readFileSync(f, 'utf8'); const o = aplicar(rel, t);
     if (o !== t) { fs.writeFileSync(f, o); cambiados.push(rel); }
   }
 })(raiz);

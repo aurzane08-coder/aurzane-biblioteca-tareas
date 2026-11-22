@@ -7,7 +7,7 @@ const URLS = fs.readFileSync(lista, 'utf8').split('\n').map(s => s.trim()).filte
 const TEMAS = (process.env.TEMAS || 'claro oscuro').split(/\s+/), VISTAS = (process.env.VISTAS || 'escritorio movil').split(/\s+/), ALTO = +(process.env.ALTO || 5200);
 // ojo: Playwright solo aplica el tamaño dentro de «viewport»; fuera de él se ignora y todo sale a 1280 px
 const VP = { escritorio: { viewport: { width: 1440, height: 900 } }, movil: { viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true, deviceScaleFactor: 1 } };
-const BORR = path.join(__dirname, 'borrador'); const LOCAL = process.env.LOCAL ? path.resolve(process.env.LOCAL) : null; /* LOCAL=traer/servidor: sin red */ const V4 = process.env.V4 === '1'; const PAL = require('./paleta-v4.js');
+const BORR = path.join(__dirname, 'borrador'); const LOCAL = process.env.LOCAL ? path.resolve(process.env.LOCAL) : null; /* LOCAL=traer/servidor: sin red */ const V4 = process.env.V4 === '1'; const PAL = require('./paleta-v4.js'), V4A = require('./v4_aplicar.js');
 const nombre = u => u.replace(/^https?:\/\//, '').replace(/[^a-z0-9]+/gi, '_').replace(/_+$/, '').slice(0, 90);
 (async () => {
   const b = await chromium.launch(); const informe = [];
@@ -28,8 +28,7 @@ const nombre = u => u.replace(/^https?:\/\//, '').replace(/[^a-z0-9]+/gi, '_').r
       else if (V4 && texto) { try { const res = await r.fetch(); estado = res.status(); cab = res.headers(); cuerpo = await res.body(); tipo = cab['content-type'] || tipo; } catch (e) { return r.continue(); } }
       if (cuerpo === null) return r.continue();
       if (V4 && texto && estado < 300) {
-        let t = cuerpo.toString('utf8'); t = PAL.transformar(t).out;
-        if (x.pathname === '/aurzane-ds.css') t += '\n' + fs.readFileSync(path.join(__dirname, 'v4.css'), 'utf8');
+        let t = cuerpo.toString('utf8'); t = V4A.aplicar(x.hostname + decodeURIComponent(x.pathname), t);   // lo mismo que hará el despliegue v4
         cuerpo = Buffer.from(t, 'utf8');
       }
       return r.fulfill({ status: estado, contentType: tipo, body: cuerpo, headers: { 'access-control-allow-origin': '*' } });
@@ -72,7 +71,23 @@ const nombre = u => u.replace(/^https?:\/\//, '').replace(/[^a-z0-9]+/gi, '_').r
           const grande = parseFloat(cs.fontSize) >= 24 || (parseFloat(cs.fontSize) >= 18.6 && +cs.fontWeight >= 700);
           if (ratio < (grande ? 3 : 4.5)) bajos.push(ratio.toFixed(2) + ' ' + e.tagName.toLowerCase() + (e.className && typeof e.className == 'string' ? '.' + e.className.split(' ')[0] : '') + ': ' + e.textContent.trim().slice(0, 50));
         }
+        // Solapes: textos visibles cuyas cajas se pisan (sin ser uno padre del otro). Solo en el primer tramo de la página.
+        const cajas = [...document.querySelectorAll('h1,h2,h3,h4,p,li,a,button,label,figcaption,blockquote,small,b,strong,span')].filter(e => {
+          if (![...e.childNodes].some(n => n.nodeType === 3 && /\p{L}{2,}/u.test(n.textContent))) return false;
+          const r = e.getBoundingClientRect(), cs = getComputedStyle(e);
+          return r.width > 4 && r.height > 4 && r.top < 6000 && cs.visibility !== 'hidden' && +cs.opacity > 0 && cs.position !== 'fixed';
+        }).slice(0, 900).map(e => [e, e.getBoundingClientRect()]);
+        const solapes = [];
+        for (let i = 0; i < cajas.length && solapes.length < 12; i++) for (let j = i + 1; j < cajas.length; j++) {
+          const [a, ra] = cajas[i], [b, rb] = cajas[j]; if (a.contains(b) || b.contains(a)) continue;
+          const x = Math.min(ra.right, rb.right) - Math.max(ra.left, rb.left), y = Math.min(ra.bottom, rb.bottom) - Math.max(ra.top, rb.top);
+          if (x > 6 && y > 6 && x * y > 0.25 * Math.min(ra.width * ra.height, rb.width * rb.height)) { solapes.push(a.textContent.trim().slice(0, 30) + ' ⟷ ' + b.textContent.trim().slice(0, 30)); break; }
+        }
+        // Ancho útil: el bloque de contenido más ancho (sin contar cabecera, pie ni fondos a sangre) frente al ancho de la ventana
+        let util = 0; for (const e of document.querySelectorAll('main *, body > section *, body > div *')) { if (e.closest('.az-cab,.az-pie,footer,header')) continue;
+          const r = e.getBoundingClientRect(); if (r.width >= W - 2 || r.height < 40) continue; if ([...e.children].length < 2) continue; util = Math.max(util, r.width); }
         return { alto: document.body.scrollHeight, ancho: document.documentElement.scrollWidth, W, fuera, rotas, imgs: document.images.length,
+          solapes, anchoUtil: Math.round(util), anchoUtilPct: Math.round(100 * util / W),
           tema: document.documentElement.getAttribute('data-tema') || 'claro', fondo: getComputedStyle(document.body).backgroundColor,
           contraste: { revisados, bajos: bajos.length, ej: bajos.slice(0, 15), sobreImagen: sobreImg.length, ejImg: sobreImg.slice(0, 8) } }; });
       // la ventana NO se estira al alto de la página: con 100vh/5vh el diseño se deformaría (falsos huecos enormes)
