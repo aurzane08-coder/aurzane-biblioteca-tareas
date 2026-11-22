@@ -179,3 +179,17 @@
   }
   if (d.readyState === 'loading') d.addEventListener('DOMContentLoaded', poner); else poner();
 })(document);
+/* Tarjetas de ejercicios y herramientas sin foto (a.scard): foto real del banco según el ejercicio, arriba de la tarjeta */
+(function (d) {
+  function poner() {
+    if (!window.AurzaneBanco) return;
+    [].forEach.call(d.querySelectorAll('a.scard:not(.az-cf):not([data-v4f])'), function (a) {
+      var t = (a.textContent || '') + ' ' + (a.getAttribute('data-obj') || '') + ' meditación calma';
+      var u = window.AurzaneBanco.foto('mind', t, 640); if (!u) return;
+      var im = d.createElement('img'); im.className = 'v4-foto'; im.src = u; im.alt = ''; im.loading = 'lazy'; im.width = 640; im.height = 400;
+      a.insertBefore(im, a.firstChild); a.setAttribute('data-v4f', '1');
+    });
+  }
+  function iniciar() { if (d.querySelector('a.scard') && window.AurzaneBanco) window.AurzaneBanco.listo(poner); }
+  if (d.readyState === 'loading') d.addEventListener('DOMContentLoaded', iniciar); else iniciar();
+})(document);
