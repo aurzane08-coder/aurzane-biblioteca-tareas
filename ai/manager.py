@@ -1433,9 +1433,10 @@ try:
             m, t = TEMA_FOTO.get(tema, ('general', 'frases'))
             lista = (banco_.get(m) or {}).get(t) or (banco_.get('general') or {}).get('frases') or []
             n = int(hashlib.md5(str(semilla).encode()).hexdigest(), 16)
-            lista = [x for x in lista if 'p' in x]
+            lista = [x for x in lista if 'p' in x or 'r' in x]
             if lista:   # catálogo de Pexels: se sirve desde su CDN en AVIF, sin ocupar espacio en SiteGround
                 w = 1600 if ancho > 800 else 640; x = lista[n % len(lista)]
+                if 'r' in x: return f'{x["r"]}?w={w}&h={round(w * .625)}&fit=crop&q=70&auto=format'
                 return f'https://images.pexels.com/photos/{x["p"]}/pexels-photo-{x["p"]}.jpeg?auto=compress&cs=tinysrgb&w={w}&h={round(w * .625)}&fit=crop'
             return f'https://images.unsplash.com/photo-{RESERVA[n % len(RESERVA)]}?w={ancho}&q=70&fit=crop&auto=format'
         def nom_t(t): return t.replace('-', ' ').capitalize().replace('Caracter', 'Carácter').replace('Educacion', 'Educación').replace('Sabiduria', 'Sabiduría').replace('Alegria', 'Alegría').replace('Exito', 'Éxito')

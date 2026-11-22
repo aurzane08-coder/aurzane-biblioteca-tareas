@@ -45,11 +45,12 @@ def foto_banco(texto, mundo='general', ancho=640, mundo_tema=None):
     idx, t = _banco(), str(texto or '')
     m, tema = mundo_tema or next(((mm, tt) for r, mm, tt in CLAVES if re.search(r, t, re.I)), (None, None))
     lista = (idx.get(m) or {}).get(tema) if m else None
-    if not lista or not any('p' in x for x in lista):
+    if not lista or not any('p' in x or 'r' in x for x in lista):
         lista = [x for v in (idx.get(mundo) or idx.get('general') or {}).values() for x in v]
     n = int(hashlib.md5((t + mundo).encode()).hexdigest(), 16)
-    lista = [x for x in (lista or []) if 'p' in x]
+    lista = [x for x in (lista or []) if 'p' in x or 'r' in x]
     if lista:
         w = 1600 if ancho > 800 else 640; x = lista[n % len(lista)]
+        if 'r' in x: return f'{x["r"]}?w={w}&h={round(w * .625)}&fit=crop&q=70&auto=format'
         return f'https://images.pexels.com/photos/{x["p"]}/pexels-photo-{x["p"]}.jpeg?auto=compress&cs=tinysrgb&w={w}&h={round(w * .625)}&fit=crop'
     return f'https://images.unsplash.com/photo-{RESERVA.get(m or mundo, RESERVA["general"])}?w={ancho}&q=70&fit=crop&auto=format'
