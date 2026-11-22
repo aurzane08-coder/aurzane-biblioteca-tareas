@@ -48,6 +48,10 @@ html[data-tema="oscuro"] .az-cab-2{background:#162B24!important;color:#ECEAE2!im
 .az-cab-2 a[aria-current="page"]{background:#DCE5DF!important;color:#12251F!important;opacity:1}
 html[data-tema="oscuro"] .az-cab-2 a[aria-current="page"]{background:#21493D!important;color:#F2EFE6!important}
 .az-subnav{background:#EFEDE6!important;border-color:var(--v-line)!important}
+.az-subnav{color:#252724}
+html[data-tema="oscuro"] .az-subnav{background:#162B24!important;color:#ECEAE2!important;border-color:var(--v-line-osc)!important}
+.az-subnav a[aria-current]{background:#DCE5DF!important;color:#12251F!important}
+html[data-tema="oscuro"] .az-subnav a[aria-current]{background:#21493D!important;color:#F2EFE6!important}
 
 /* ---------- Buscador global (Ctrl+K) ---------- */
 .az-paleta{background:rgba(10,24,19,.55)!important}
@@ -143,7 +147,7 @@ html.az-v4-navy:not([data-tema="oscuro"]){
   --navy-950:#F6F5F0;--navy-900:#FFFFFF;--navy-800:#EFEDE6;--navy-700:#E4E1D8;
   --gold:#183D32;--gold-light:#183D32;--gold-l:#2B5848;--gold-rgb:24,61,50;--bronze:#183D32;
   --silver:#252724;--silver-dim:#5E605A;--bone:#12251F;--vanilla:#12251F;--white:#12251F;
-  --ink:#252724;--ink-2:#45473F;--ink-3:#5E605A;
+  --ink:#252724;--ink-2:#45473F;--ink-3:#5E605A;--dim:#5E605A;--txt:#252724;--muted:#5E605A;
   --line:rgba(37,39,36,.12);--line-strong:rgba(24,61,50,.35);--border:rgba(37,39,36,.12);
   --mind:#6A55C2;--nexus:#3E63B8;--live:#B2563A;--learn:#2F7A6A;--build:#946233;
   --accent:#183D32;--accent-2:#2B5848}
@@ -153,7 +157,7 @@ html.az-v4-navy:not([data-tema="oscuro"]) :is(.hero-wrap,.trust-strip,.az-pie){
   --navy:#12251F;--navy-2:#183D32;--navy-3:#1D4538;--navy-4:#24503F;
   --gold:#C7B99B;--gold-light:#D9CDB2;--gold-l:#D9CDB2;--gold-rgb:199,185,155;--bronze:#C7B99B;
   --silver:#DDE2DC;--silver-dim:#AEB8B0;--bone:#F6F5F0;--vanilla:#F6F5F0;--white:#FFFFFF;
-  --ink:#F6F5F0;--ink-2:#DDE2DC;--ink-3:#AEB8B0;
+  --ink:#F6F5F0;--ink-2:#DDE2DC;--ink-3:#AEB8B0;--dim:#C9D0C9;--txt:#F6F5F0;--muted:#C9D0C9;
   --line:rgba(242,239,230,.14);--line-strong:rgba(199,185,155,.4);--border:rgba(242,239,230,.14);color:#DDE2DC}
 html.az-v4-navy:not([data-tema="oscuro"]) .hero-wrap{background:#12251F}
 
@@ -216,9 +220,9 @@ html:has(link[href*="biblioteca.css"]) .wrap{max-width:1280px!important}
    ===================================================================================================== */
 :root:root{--n1:#12251F;--n2:#183D32;--n3:#2B5848;--cian:#D9CDB2;--violeta:#C7B99B;--acc-rgb:24,61,50;--acento-texto:#183D32}
 html[data-tema="oscuro"]:root{--acento-texto:#D9CDB2}
-.hero h1 span{background:none!important;-webkit-background-clip:initial!important;background-clip:initial!important;color:#D9CDB2!important;font-style:italic}
-.btn-luz,.movil-barra a{background:#C7B99B!important;color:#12251F!important}
-.btn-luz:hover{background:#D9CDB2!important}
+html.az-v4-herr section.hero h1 span,html.az-v4-navy header.hero h1 span{background:none!important;-webkit-background-clip:initial!important;background-clip:initial!important;color:#D9CDB2!important;font-style:italic}
+html.az-v4-herr :is(.btn-luz,.movil-barra a){background:#C7B99B!important;color:#12251F!important}
+html.az-v4-herr .btn-luz:hover{background:#D9CDB2!important}
 
 /* etiquetas diminutas (0,68 rem) a un tamaño legible */
 .cat{font-size:.76rem!important}.art-eyebrow{font-size:.8rem!important}
@@ -321,3 +325,20 @@ html.az-v4-osc:not([data-tema="oscuro"]){--bg:#F6F5F0;--sup:#FFFFFF;--txt:#25272
   --ok:#2D6A4F;--mid:#8A6D2E;--high:#A33D2D;--text:#252724;--text-dim:#5E605A;--surface:#FFFFFF;--border:rgba(37,39,36,.12)}
 html.az-v4-osc:not([data-tema="oscuro"]) body{background:#F6F5F0!important;color:#252724}
 html.az-v4-osc:not([data-tema="oscuro"]) header.top{background:#F6F5F0}
+html[data-tema="oscuro"] .cw-world{color:#ECEAE2!important;background:rgba(242,239,230,.1)!important}
+/* Tienda de libros en claro: el libro de la semana sigue en verde profundo (texto claro); la selección del mes en banda salvia */
+html.az-v4-osc:not([data-tema="oscuro"]) .estrella{background:linear-gradient(160deg,#183D32,#12251F)!important;--txt:#F6F5F0;--sua:#DDE2DC;--oro:#C7B99B;--lin:rgba(242,239,230,.14);color:#F6F5F0}
+html.az-v4-osc:not([data-tema="oscuro"]) .estrella small{color:#D9CDB2!important}
+html.az-v4-osc:not([data-tema="oscuro"]) .destacada{background:#EAEFEA!important;border:1px solid rgba(24,61,50,.1)}
+html.az-v4-osc:not([data-tema="oscuro"]) .tend{color:#7A5F2A!important}
+html.az-v4-osc:not([data-tema="oscuro"]) .ver{color:#F6F5F0!important}
+html.az-v4-osc:not([data-tema="oscuro"]) .estrella .ver{color:#12251F!important}
+html.az-v4-osc:not([data-tema="oscuro"]) .seg button[aria-pressed="true"]{color:#F6F5F0!important}
+html.az-v4-osc:not([data-tema="oscuro"]) .por{background:#EFEDE6!important}
+html.az-v4-osc:not([data-tema="oscuro"]) .chips::-webkit-scrollbar-thumb{background:#C9CFC9}
+.estrella b{font-family:var(--v-serif)!important;font-weight:400!important;font-size:1.6rem!important}
+/* NEXUS: el panel «Empieza por aquí» conserva su texto oscuro aunque la cabecera ponga los párrafos en claro */
+html.az-ds-nexus.az-pm main > .hero .az-empieza p{color:#5E605A!important}
+html[data-tema="oscuro"].az-ds-nexus.az-pm main > .hero .az-empieza p{color:#B9C2BB!important}
+.research-stat .rs-label{font-family:var(--v-sans)!important;font-size:.82rem!important}
+.research-stat .rs-num{font-family:var(--v-serif)!important;font-size:2.4rem!important}

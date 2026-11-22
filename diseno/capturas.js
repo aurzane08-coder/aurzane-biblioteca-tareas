@@ -56,7 +56,7 @@ const nombre = u => u.replace(/^https?:\/\//, '').replace(/[^a-z0-9]+/gi, '_').r
         for (const e of document.querySelectorAll('body *')) {
           if (revisados > 2500) break;
           const tx = [...e.childNodes].some(n => n.nodeType === 3 && /\p{L}{2,}|\d/u.test(n.textContent)); if (!tx) continue;   // los emojis solos no cuentan
-          const r = e.getBoundingClientRect(); if (!r.width || !r.height) continue;
+          const r = e.getBoundingClientRect(); if (r.width < 3 || r.height < 3) continue;   // ocultos para lectores de pantalla (1 px)
           const cs = getComputedStyle(e); if (cs.visibility === 'hidden' || +cs.opacity === 0) continue;
           revisados++;
           let col = rgb(cs.color); if (!col) continue; let fondo = null, img = false, capas = [];
@@ -75,7 +75,9 @@ const nombre = u => u.replace(/^https?:\/\//, '').replace(/[^a-z0-9]+/gi, '_').r
         const cajas = [...document.querySelectorAll('h1,h2,h3,h4,p,li,a,button,label,figcaption,blockquote,small,b,strong,span')].filter(e => {
           if (![...e.childNodes].some(n => n.nodeType === 3 && /\p{L}{2,}/u.test(n.textContent))) return false;
           const r = e.getBoundingClientRect(), cs = getComputedStyle(e);
-          return r.width > 4 && r.height > 4 && r.top < 6000 && cs.visibility !== 'hidden' && +cs.opacity > 0 && cs.position !== 'fixed';
+          if (e.closest('[class*="sr-only"],.sr,.vh,.visually-hidden')) return false;
+          for (let x = e; x; x = x.parentElement) { const p = getComputedStyle(x).position; if (p === 'fixed' || p === 'sticky') return false; }   // ventanas flotantes y barras fijas: no son solapes del diseño
+          return r.width > 4 && r.height > 4 && r.top < 6000 && cs.visibility !== 'hidden' && +cs.opacity > 0;
         }).filter(e => !e.closest('details:not([open]) > :not(summary)') && (!e.checkVisibility || e.checkVisibility({ checkOpacity: true, checkVisibilityCSS: true })))
           .slice(0, 900).map(e => {   // caja visible de verdad: recortada por los padres con overflow oculto
             let r = e.getBoundingClientRect(); let L = r.left, T = r.top, R = r.right, B = r.bottom;

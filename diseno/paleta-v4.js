@@ -82,6 +82,10 @@ function transformar(txt) {
       : /body\s*\{[^}]*background(-color)?\s*:\s*var\(--bg[,)]/.test(out4) ? (bgOscuro ? 'az-v4-osc' : 'az-v4-bg') : '';
     if (fam) { n++; out4 = out4.replace(/<html([^>]*)>/i, (m, at) => /class="/.test(at) ? '<html' + at.replace(/class="/, 'class="' + fam + ' ') + '>' : '<html' + at + ' class="' + fam + '">'); }
   }
+  // páginas de herramienta (tests y calculadoras) con cabecera oscura --n1/--n2/--n3: marca az-v4-herr
+  if (/<html[\s>]/i.test(out4) && /--n1\s*:/.test(out4) && !/az-v4-herr/.test(out4)) {
+    n++; out4 = out4.replace(/<html([^>]*)>/i, (m, at) => /class="/.test(at) ? '<html' + at.replace(/class="/, 'class="az-v4-herr ') + '>' : '<html' + at + ' class="az-v4-herr">');
+  }
   return { out: out4, n };
 }
 module.exports = { transformar, convertir, hexA, aHex, aOk };

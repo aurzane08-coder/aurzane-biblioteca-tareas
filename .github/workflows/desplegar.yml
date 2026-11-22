@@ -28,6 +28,8 @@ jobs:
       - name: Subir
         run: |
           [ -d publicar ] || { echo "Nada que publicar"; exit 0; }
+          # rediseño v4: lo que se publica ya sale con la paleta, las letras y el tema nuevos (si el v4 está activo)
+          if [ -f diseno/v4.activo ]; then node diseno/v4_aplicar.js publicar; fi
           mkdir -p ~/.ssh && printf '%s\n' "$SG_KEY" | tr -d '\r' > ~/.ssh/id && chmod 600 ~/.ssh/id
           if [ -n "$SG_PASS" ]; then ssh-keygen -p -P "$SG_PASS" -N "" -f ~/.ssh/id >/dev/null; fi
           SSH="ssh -i $HOME/.ssh/id -p ${SG_PORT:-18765} -o StrictHostKeyChecking=accept-new"
