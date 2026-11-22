@@ -1,6 +1,28 @@
 [
  {
   "fecha": "2026-11-22",
+  "id": "ia-human-behaviour-decoded",
+  "tipo": "libro",
+  "titulo": "Human Behaviour Decoded",
+  "url": "https://archive.org/details/human-behaviour-decoded",
+  "motivo": "La IA le dio 6/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/human-behaviour-decoded/Human%20Behaviour%20Decoded.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-22",
+  "id": "oa-W7203936374",
+  "tipo": "libro",
+  "titulo": "Tecnologías Emergentes y Transformación Digital: Metaverso, Gamificación, Bases de Datos y Entornos Virtuales de Aprendizaje.",
+  "url": "https://doi.org/10.64325/jy4jsk38",
+  "motivo": "La IA le dio 2/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/human-behaviour-decoded/Human%20Behaviour%20Decoded.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-22",
   "id": "oa-W7154203791",
   "tipo": "libro",
   "titulo": "¿Qué funciona en Educación Primaria? Métodos efectivos de enseñanza",
@@ -3021,21 +3043,5 @@
   "titulo": "Quien tenga sano criterio no puede fomentar la mala cultura, ni hará falsa vía para acercarse á la verdad, con objeto exclusivo de aprender y ensenar al ignoran",
   "url": "https://aurzane.com/biblioteca/libro/ensenanza-aprendizaje-conferencias-dadas-casa-pueblo.html",
   "motivo": "Gemini le dio 5/10: no tiene fuerza suficiente para redes"
- },
- {
-  "fecha": "2026-11-06",
-  "id": "cita-9cbe8fca0f",
-  "tipo": "cita",
-  "titulo": "Ante todo hay que probar la libertad del indivi duo como ser organizado, y luego inquirir qué libertad puede tener un ciudadano en su colectividad nacional.",
-  "url": "https://aurzane.com/biblioteca/libro/ensenanza-aprendizaje-conferencias-dadas-casa-pueblo.html",
-  "motivo": "Gemini le dio 3/10: no tiene fuerza suficiente para redes"
- },
- {
-  "fecha": "2026-11-06",
-  "id": "cita-2529c7a2b6",
-  "tipo": "cita",
-  "titulo": "Tengamos plena seguridad de que la civilización está basada en la salud y el bienestar obtenidos ensenándonos mutuamente, y aprendiendo á vivir sin enfermar.",
-  "url": "https://aurzane.com/biblioteca/libro/ensenanza-aprendizaje-conferencias-dadas-casa-pueblo.html",
-  "motivo": "Gemini le dio 6/10: no tiene fuerza suficiente para redes"
  }
 ]
