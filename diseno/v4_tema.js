@@ -83,8 +83,11 @@
   function fotoCab() {
     if (d.documentElement.classList.contains('az-v4-herofoto')) return;
     var og = d.querySelector('meta[property="og:image"]'), u = og && og.content;
-    if (!u || /og-portada|logo|portadas?\//i.test(u)) return;
-    var cab = d.querySelector('main > .hero, section.hero, header.hero, .u-hero, .hero-wrap, .world-header, main > header:first-child'); if (!cab) return;
+    var cab = d.querySelector('main > .hero, section.hero, header.hero, .u-hero, .hero-wrap, .world-header, main > header:first-child, body > div.h'); if (!cab) return;
+    if (!u || /og-portada|logo|portadas?\//i.test(u)) {   // sin foto propia: una del catálogo según el título de la página
+      if (window.AurzaneBanco && !cab.__v4b) { cab.__v4b = 1; window.AurzaneBanco.listo(function () { var f = window.AurzaneBanco.foto('general', d.title, 1600); if (f) { var m = d.querySelector('meta[property="og:image"]'); cab.style.setProperty('--v4-foto', 'url("' + f + '")'); cab.setAttribute('data-v4-foto', '1'); d.documentElement.classList.add('az-v4-cabfoto'); } }); }
+      return;
+    }
     var cs = getComputedStyle(cab); if (/url\(/.test(cs.backgroundImage)) return;
     var cols = ((cs.backgroundColor + ' ' + cs.backgroundImage).match(/rgba?\([^)]+\)/g) || []).map(function (x) { return x.replace(/rgba?\(|\)/g, '').split(/[ ,\/]+/).map(Number); })
       .filter(function (c) { return c.length < 4 || c[3] >= .5; });

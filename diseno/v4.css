@@ -573,3 +573,15 @@ html[data-tema="oscuro"] body:has(.intenciones) .reco-et{color:#D9CDB2!important
 @media(max-width:700px){body:has(.intenciones) main::before{height:470px}}
 body:has(.intenciones) main>.buscar input{background:#FFFFFF!important;border-color:transparent!important}
 body:has(.intenciones) main>.intenciones{margin-top:44px!important}
+/* Páginas informativas y legales (contacto, privacidad, sobre AURZANE…): cabecera con foto y, en pantallas anchas, el texto en su
+   columna de lectura con una columna lateral de imagen que acompaña (antes un 53 % del ancho y el resto vacío) */
+body:has(> div.h) > div.h{border-bottom:1px solid rgba(199,185,155,.4)}
+body:has(> div.h) > div.h .w,body:has(> div.h) > main.w{max-width:1280px!important;padding-left:24px!important;padding-right:24px!important}
+body:has(> div.h) > div.h h1{font:400 clamp(2.4rem,4.6vw,3.6rem)/1.05 var(--v-serif)!important}
+@media(min-width:1100px){
+  body:has(> div.h) > main.w{display:grid;grid-template-columns:minmax(0,760px) minmax(300px,1fr);column-gap:64px;align-items:start}
+  body:has(> div.h) > main.w>*{grid-column:1}
+  body:has(> div.h) > main.w::after{content:"";grid-column:2;grid-row:1/span 60;position:sticky;top:90px;margin-top:28px;height:min(560px,70vh);border-radius:20px;border-top:3px solid #C7B99B;
+    background:linear-gradient(180deg,rgba(18,37,31,0) 50%,rgba(18,37,31,.55)),url("https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=900&q=70&auto=format&fit=crop") center/cover no-repeat #183D32}
+}
+body:has(> div.h) > main h2,body:has(> div.h) > main h3{font-family:var(--v-serif)!important;font-weight:400!important;font-size:1.6rem}
