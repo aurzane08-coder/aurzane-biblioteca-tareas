@@ -233,6 +233,15 @@ try:
             aviso('mal', f'{red}: todas las publicaciones de las últimas 24 h han fallado.' + (f' {causa}' if causa else f' Último error: {v.get("ultimo_error", "")[:120]}'), 'red_manual' if causa and 'a mano' in causa or 'volver a conectar' in causa else 'red_fallos', red)
 except Exception as e: print('marketing', e)
 
+def ficha_meta(b):
+    """Imagen, resumen y título completo de una página (etiquetas og:), tal cual los publica la propia página."""
+    t = b.decode('utf-8', 'replace') if isinstance(b, (bytes, bytearray)) else (b or '')
+    def og(p):
+        m = re.search(r'<meta[^>]+(?:property|name)=["\']' + p + r'["\'][^>]+content=["\']([^"\']*)', t) or re.search(r'<meta[^>]+content=["\']([^"\']*)["\'][^>]+(?:property|name)=["\']' + p + r'["\']', t)
+        return html.unescape(m.group(1)).strip() if m else ''
+    img = og('og:image')
+    return {'img': img if img.startswith('https://') else '', 'desc': og('og:description') or og('description'), 'titulo_completo': og('og:title').split(' | ')[0]}
+
 # ---------- 8. Novedades: páginas nuevas del sitemap, anunciadas solas ----------
 urls_prev = set(leer('urls.json', []))
 st, b, _, _ = get('https://aurzane.com/sitemap.xml')
@@ -243,26 +252,105 @@ if urls and urls_prev:
         s2, b2, _, _ = get(u)
         m = re.search(r'<title>([^<]+)</title>', b2.decode('utf-8', 'replace'))
         t = html.unescape(m.group(1)).split(' | ')[0].strip() if m else u
-        nov.insert(0, {'fecha': HOY, 'url': u, 'titulo': t})
+        nov.insert(0, dict({'fecha': HOY, 'url': u, 'titulo': t}, **ficha_meta(b2)))
 if urls: guardar('urls.json', sorted(set(urls)))
+# 22/11/2026 (rediseño v4): cada novedad guarda su imagen, resumen y título completo (og:*) para mostrarse como tarjeta.
+# Las antiguas se completan poco a poco (12 por ejecución) sin inventar nada: si la página no tiene imagen, la tarjeta va sin foto.
+for n in [x for x in nov if 'img' not in x][:12]:
+    try:
+        s2, b2, _, _ = get(n['url'])
+        if s2 == 200: n.update(ficha_meta(b2))
+        else: n['img'] = ''
+    except Exception: n['img'] = ''
 nov = nov[:120]; guardar('novedades.json', nov)
 def pagina_novedades():
-    MUNDO = lambda u: (urllib.parse.urlparse(u).hostname.split('.')[0].upper() if urllib.parse.urlparse(u).hostname != 'aurzane.com' else 'AURZANE')
-    items = ''.join(f'<li><span class="f">{datetime.date.fromisoformat(n["fecha"]).strftime("%d/%m/%Y")}</span><span class="m">{MUNDO(n["url"])}</span><a href="{html.escape(n["url"])}">{html.escape(n["titulo"])}</a></li>' for n in nov[:80])
-    vacio = '' if nov else '<p>Muy pronto verás aquí todo lo nuevo de AURZANE.</p>'
-    pag = f'''<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    MUNDO = lambda u: (urllib.parse.urlparse(u).hostname.split('.')[0] if urllib.parse.urlparse(u).hostname != 'aurzane.com' else 'aurzane')
+    TIPOS = [('Estudio reciente', 'estudio', 'Estudios'), ('Artículo', 'articulo', 'Artículos'), ('Libro abierto', 'libro', 'Libros')]
+    def tipo(n):
+        t = n.get('titulo', '')
+        for pre, k, _ in TIPOS:
+            if t.startswith(pre + ':'): return k, pre, t[len(pre) + 1:].strip()
+        if re.search(r'/(test-|teste-|en/|pt/)', n['url']) or re.search(r'\btest\b|\bteste\b', t, re.I): return 'test', 'Test', t
+        if re.search(r'calculadora|/calculadora-', n['url'] + t, re.I): return 'herramienta', 'Herramienta', t
+        return 'pagina', 'Página', t
+    def dia(f):
+        d = datetime.date.fromisoformat(f); hoy = datetime.date.fromisoformat(HOY)
+        if d == hoy: return 'Hoy'
+        if d == hoy - datetime.timedelta(days=1): return 'Ayer'
+        M = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre']
+        return f'{d.day} de {M[d.month - 1]}'
+    grupos, orden = {}, []
+    for n in nov[:90]:
+        if n['fecha'] not in grupos: grupos[n['fecha']] = []; orden.append(n['fecha'])
+        grupos[n['fecha']].append(n)
+    cuenta = {}
+    bloques = ''
+    for f in orden:
+        tarjetas = ''
+        for n in grupos[f]:
+            k, etiqueta, tit = tipo(n); cuenta[k] = cuenta.get(k, 0) + 1
+            tit = html.escape(n.get('titulo_completo') or tit)
+            if n.get('titulo_completo'): tit = html.escape(re.sub(r'^(Estudio reciente|Artículo|Libro abierto):\s*', '', n['titulo_completo']))
+            m = MUNDO(n['url'])
+            foto = (f'<span class="nv-img"><img src="{html.escape(n["img"])}" alt="" loading="lazy" width="480" height="300"></span>' if n.get('img') else '')
+            res = f'<span class="nv-res">{html.escape(n["desc"][:170])}</span>' if n.get('desc') else ''
+            tarjetas += (f'<li data-tipo="{k}"><a class="nv-c{"" if foto else " sin-foto"}" href="{html.escape(n["url"])}" style="--c:var(--m-{m})">{foto}'
+                         f'<span class="nv-t"><span class="nv-tag"><i></i>{etiqueta} · {"AURZANE" if m == "aurzane" else m.upper()}</span><b>{tit}</b>{res}</span></a></li>')
+        bloques += f'<section class="nv-dia"><h2><time datetime="{f}">{dia(f)}</time><span>{len(grupos[f])} {"novedad" if len(grupos[f]) == 1 else "novedades"}</span></h2><ul class="nv-g">{tarjetas}</ul></section>'
+    chips = '<button type="button" class="on" data-f="">Todo</button>' + ''.join(f'<button type="button" data-f="{k}">{nom}</button>' for k, nom in [('estudio','Estudios'),('articulo','Artículos'),('libro','Libros'),('test','Tests'),('herramienta','Herramientas'),('pagina','Páginas')] if cuenta.get(k))
+    vacio = '' if nov else '<p class="nv-vacio">Muy pronto verás aquí todo lo nuevo de AURZANE.</p>'
+    pag = f"""<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://aurzane.com/aurzane-paleta.js"></script>
 <title>Novedades de AURZANE: tests, herramientas y contenidos nuevos</title>
 <meta name="description" content="Todo lo nuevo de AURZANE: tests, calculadoras, ejercicios guiados, cursos, libros y artículos, actualizado automáticamente.">
 <link rel="canonical" href="https://aurzane.com/novedades/"><link rel="alternate" type="application/rss+xml" title="Novedades de AURZANE" href="https://aurzane.com/novedades/feed.xml">
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@600;700&family=Instrument+Sans:wght@400;600&display=swap" rel="stylesheet">
-<style>body{{margin:0;background:var(--bg,#F6F0E8);color:var(--text,#2E2620);font:16px/1.6 "Instrument Sans",system-ui,sans-serif}}
-.h{{background:#0F1530;color:#F5F3EE;padding:46px 20px 40px}}.w{{max-width:860px;margin:0 auto}}h1{{font:700 2.3rem "Bodoni Moda",serif;margin:8px 0}}.h a{{color:#EACF92}}
-ul{{list-style:none;padding:0;margin:28px 0}}li{{display:grid;grid-template-columns:100px 80px 1fr;gap:10px;padding:12px 0;border-bottom:1px solid rgba(95,80,68,.16);align-items:baseline}}
-.f{{color:#6E6257;font-size:.88rem}}.m{{font-size:.75rem;font-weight:700;letter-spacing:.06em;color:#5F5044}}li a{{color:inherit;font-weight:600;text-decoration:none}}li a:hover{{text-decoration:underline}}
-@media(max-width:600px){{li{{grid-template-columns:1fr}}}}</style></head><body>
-<div class="h"><div class="w"><a href="https://aurzane.com/">AURZANE</a><h1>Novedades</h1><p>Todo lo nuevo del ecosistema, en cuanto se publica. <a href="/novedades/feed.xml">Suscríbete por RSS</a> · <a href="/mapa/">Mapa del sitio</a>.</p></div></div>
-<main class="w" style="padding:0 20px">{vacio}<ul>{items}</ul></main></body></html>'''
+<style>
+:root{{--bg:#F6F5F0;--sup:#FFFFFF;--tinta:#252724;--tinta-2:#5E605A;--linea:rgba(37,39,36,.12);--verde:#183D32;--hondo:#12251F;--champ:#C7B99B;--salvia:#EAEFEA;
+ --m-aurzane:#8C7A52;--m-mind:#6A55C2;--m-nexus:#3E63B8;--m-live:#B2563A;--m-learn:#2F7A6A;--m-build:#946233;--m-ovp:#6A55C2;
+ --serif:"Instrument Serif","Bodoni Moda",Georgia,serif;--sans:"Manrope","Instrument Sans",system-ui,sans-serif}}
+html[data-tema="oscuro"]{{--bg:#12251F;--sup:#183D32;--tinta:#ECEAE2;--tinta-2:#B9C2BB;--linea:rgba(242,239,230,.14);--salvia:#183D32;
+ --m-aurzane:#D9CDB2;--m-mind:#B7A8F2;--m-nexus:#9DB8F0;--m-live:#F0A889;--m-learn:#86D1BB;--m-build:#E0BA8E;--m-ovp:#B7A8F2}}
+*{{box-sizing:border-box}}body{{margin:0;background:var(--bg);color:var(--tinta);font:16px/1.6 var(--sans);-webkit-font-smoothing:antialiased}}
+.w{{max-width:1240px;margin:0 auto;padding:0 24px}}
+.nv-cab{{padding:52px 0 26px;border-bottom:1px solid var(--linea)}}
+.nv-migas{{font-size:.88rem;color:var(--tinta-2)}}.nv-migas a{{color:inherit}}
+.nv-cab h1{{font:400 clamp(2.6rem,5vw,3.8rem)/1.02 var(--serif);margin:10px 0 0}}
+.nv-cab h1::after{{content:"";display:block;width:64px;height:2px;margin-top:16px;background:linear-gradient(90deg,var(--verde) 0 62%,var(--champ) 62% 100%)}}
+html[data-tema="oscuro"] .nv-cab h1::after{{background:linear-gradient(90deg,var(--champ) 0 62%,#5E8A78 62% 100%)}}
+.nv-cab p{{color:var(--tinta-2);max-width:60ch;margin:16px 0 0}}.nv-cab p a{{color:var(--tinta);font-weight:600}}
+.nv-filtros{{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 0}}
+.nv-filtros button{{font:600 .9rem var(--sans);color:var(--tinta);background:var(--sup);border:1px solid var(--linea);border-radius:999px;padding:8px 16px;min-height:40px;cursor:pointer}}
+.nv-filtros button.on{{background:var(--verde);border-color:var(--verde);color:#F6F5F0}}
+html[data-tema="oscuro"] .nv-filtros button.on{{background:var(--champ);border-color:var(--champ);color:#12251F}}
+.nv-dia{{padding:34px 0 6px}}
+.nv-dia h2{{display:flex;align-items:baseline;gap:14px;font:400 1.9rem/1.1 var(--serif);margin:0 0 18px;padding-bottom:12px;border-bottom:1px solid var(--linea)}}
+.nv-dia h2 span{{font:500 .9rem var(--sans);color:var(--tinta-2)}}
+.nv-g{{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}}
+.nv-c{{display:flex;flex-direction:column;height:100%;background:var(--sup);border:1px solid var(--linea);border-top:3px solid var(--c);border-radius:14px;overflow:hidden;color:inherit;text-decoration:none;transition:border-color .2s}}
+.nv-c:hover{{border-color:var(--c)}}.nv-c:hover b{{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}}
+.nv-img{{display:block;aspect-ratio:16/9;background:var(--salvia);overflow:hidden}}.nv-img img{{width:100%;height:100%;object-fit:cover;display:block}}
+.nv-t{{display:flex;flex-direction:column;gap:8px;padding:16px 18px 18px}}
+.nv-tag{{display:flex;align-items:center;gap:7px;font:700 .74rem var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--tinta-2)}}
+.nv-tag i{{width:8px;height:8px;border-radius:50%;background:var(--c)}}
+.nv-c b{{font:400 1.32rem/1.22 var(--serif);color:var(--tinta)}}
+.nv-res{{font-size:.92rem;line-height:1.5;color:var(--tinta-2);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}}
+.nv-c.sin-foto{{background:linear-gradient(180deg,var(--salvia),var(--sup) 70%)}}
+.nv-vacio{{padding:40px 0;color:var(--tinta-2)}}
+.nv-oculto{{display:none!important}}
+@media (max-width:980px){{.nv-g{{grid-template-columns:repeat(2,minmax(0,1fr))}}}}
+@media (max-width:600px){{.w{{padding:0 16px}}.nv-cab{{padding-top:34px}}.nv-g{{grid-template-columns:1fr;gap:12px}}.nv-c{{flex-direction:row}}.nv-img{{flex:none;width:34%;aspect-ratio:auto}}.nv-t{{padding:12px 14px}}.nv-c b{{font-size:1.12rem}}.nv-res{{-webkit-line-clamp:2}}}}
+@media (prefers-reduced-motion:reduce){{.nv-c{{transition:none}}}}
+</style></head><body>
+<main class="w" id="contenido">
+<header class="nv-cab"><p class="nv-migas"><a href="https://aurzane.com/">AURZANE</a> / Novedades</p><h1>Novedades</h1>
+<p>Todo lo nuevo del ecosistema, en cuanto se publica: estudios, artículos, libros abiertos, tests y herramientas. <a href="/novedades/feed.xml">Suscríbete por RSS</a> · <a href="/mapa/">Mapa del sitio</a></p>
+<div class="nv-filtros" role="group" aria-label="Filtrar por tipo">{chips}</div></header>
+{vacio}{bloques}
+</main>
+<script>(function(){{var b=document.querySelectorAll('.nv-filtros button');b.forEach(function(x){{x.addEventListener('click',function(){{b.forEach(function(y){{y.classList.toggle('on',y===x);y.setAttribute('aria-pressed',y===x)}});var f=x.getAttribute('data-f');
+document.querySelectorAll('.nv-g li').forEach(function(li){{li.classList.toggle('nv-oculto',!!f&&li.getAttribute('data-tipo')!==f)}});
+document.querySelectorAll('.nv-dia').forEach(function(s){{s.classList.toggle('nv-oculto',!s.querySelector('li:not(.nv-oculto)'))}})}})}})}})();</script>
+</body></html>"""
     open(OUT + '/novedades/index.html', 'w', encoding='utf-8').write(pag)
     rss = ''.join(f'<item><title>{html.escape(n["titulo"])}</title><link>{html.escape(n["url"])}</link><guid>{html.escape(n["url"])}</guid><pubDate>{datetime.datetime.fromisoformat(n["fecha"]).strftime("%a, %d %b %Y 08:00:00 +0000")}</pubDate></item>' for n in nov[:40])
     open(OUT + '/novedades/feed.xml', 'w', encoding='utf-8').write(f'<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"><channel><title>Novedades de AURZANE</title><link>https://aurzane.com/novedades/</link><description>Lo nuevo de AURZANE</description><language>es</language>{rss}</channel></rss>')
@@ -1072,24 +1160,38 @@ T = lambda t: re.sub(r'&lt;(/?)(i|em|b|strong|sup|sub)&gt;', r'<\1\2>', E(t or '
 SIN_ETQ = lambda t: re.sub(r'</?(i|em|b|strong|sup|sub)>', '', t or '')
 LIC_TXT = {'cc-by': 'CC BY', 'cc-by-sa': 'CC BY-SA', 'cc-by-nd': 'CC BY-ND', 'cc-by-nc': 'CC BY-NC', 'cc-by-nc-sa': 'CC BY-NC-SA', 'cc-by-nc-nd': 'CC BY-NC-ND', 'cc0': 'CC0'}
 LIC_URL = lambda l: 'https://creativecommons.org/publicdomain/zero/1.0/deed.es' if l == 'cc0' else f'https://creativecommons.org/licenses/{l[3:]}/4.0/deed.es'
-CSS = ('body{margin:0;background:var(--bg,#F6F0E8);color:var(--text,#2E2620);font:16px/1.6 "Instrument Sans",system-ui,sans-serif}'
-       '.h{background:#0F1530;color:#F5F3EE;padding:46px 20px 40px}.w{max-width:960px;margin:0 auto}h1{font:700 clamp(1.7rem,4vw,2.3rem)/1.15 "Bodoni Moda",serif;margin:8px 0}.h a{color:#EACF92}'
-       'main{padding:24px 20px 60px}.rt h2,.ficha h1{overflow-wrap:anywhere}.rt{display:grid;grid-template-columns:120px minmax(0,1fr);gap:20px;padding:22px 0;border-bottom:1px solid rgba(95,80,68,.16)}'
-       '.rp{width:120px;max-width:100%;box-sizing:border-box;aspect-ratio:2/3;border-radius:6px;overflow:hidden;background:linear-gradient(160deg,#1C2550,#3B2F6B);position:relative;box-shadow:0 8px 22px -10px rgba(0,0,0,.4);display:block}'
-       '.rp img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}.rp span{position:absolute;inset:12px;color:#F5F3EE;font:600 .8rem/1.3 "Bodoni Moda",serif}.rp img+span{display:none}'
-       '.k{font-size:.8rem;color:#6E6257}.i{margin-left:8px;padding:1px 8px;border-radius:99px;background:rgba(95,80,68,.1)}h2{font:700 1.2rem/1.3 "Bodoni Moda",serif;margin:4px 0}h2 a{color:inherit;text-decoration:none}.a{margin:0;color:#5F5044;font-size:.92rem}'
-       '.r{font-size:.92rem;margin:8px 0}.b a{color:inherit;font-weight:600;margin-right:14px}.lee{display:inline-block;background:#0F1530;color:#F5F3EE!important;padding:9px 18px;border-radius:99px;text-decoration:none}'
-       '.ficha{display:grid;grid-template-columns:200px minmax(0,1fr);gap:28px;align-items:start}.ficha .rp{width:200px}.cred{font-size:.84rem;background:rgba(95,80,68,.07);border-radius:10px;padding:12px 14px;margin:14px 0}'
-       '#lector{margin-top:28px;background:#2A2E3A;border-radius:14px;padding:12px;position:relative}#lector .bar{display:flex;gap:8px;align-items:center;flex-wrap:wrap;color:#E8E6F0;font-size:.88rem;padding:4px 4px 12px}'
-       '#lector button,#lector .bar a{background:#454B5E;color:#fff;border:0;border-radius:8px;padding:7px 12px;font:600 .85rem sans-serif;cursor:pointer;text-decoration:none}#lector .pg{flex:1}'
-       '#hojas{height:min(80vh,1100px);overflow:auto;border-radius:8px;background:#3A3F4E}#hojas canvas{display:block;margin:0 auto 10px;background:#fff;box-shadow:0 4px 14px rgba(0,0,0,.35);max-width:100%;height:auto}'
-       '#lector:fullscreen #hojas{height:calc(100vh - 70px)}.ext{color:#E8E6F0;padding:30px;text-align:center}.ext a{color:#EACF92}'
-       '@media(max-width:640px){.rt{grid-template-columns:80px minmax(0,1fr);gap:14px}.rp{width:80px}.ficha{grid-template-columns:1fr}.ficha .rp{width:150px}}')
+# 22/11/2026 (rediseño v4): marfil para leer, verde profundo en la cabecera con foto, tarjetas con filete champán; claro por defecto y oscuro opcional
+CSS = (':root{--bg:#F6F5F0;--sup:#FFFFFF;--tinta:#252724;--tinta-2:#5E605A;--linea:rgba(37,39,36,.12);--verde:#183D32;--hondo:#12251F;--champ:#C7B99B;--salvia:#EAEFEA;'
+       '--serif:"Instrument Serif","Bodoni Moda",Georgia,serif;--sans:"Manrope","Instrument Sans",system-ui,sans-serif}'
+       'html[data-tema="oscuro"]{--bg:#12251F;--sup:#183D32;--tinta:#ECEAE2;--tinta-2:#B9C2BB;--linea:rgba(242,239,230,.14);--salvia:#1D4538}'
+       '*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tinta);font:16px/1.6 var(--sans);-webkit-font-smoothing:antialiased}'
+       '.h{color:#F6F5F0;padding:56px 24px 48px;background:linear-gradient(90deg,rgba(18,37,31,.95),rgba(18,37,31,.8) 55%,rgba(18,37,31,.4)),url("https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=1800&q=70&auto=format&fit=crop") center/cover no-repeat #12251F}'
+       '.w{max-width:1240px;margin:0 auto}h1{font:400 clamp(2.2rem,4.6vw,3.4rem)/1.05 var(--serif);margin:10px 0 0}.h h1::after{content:"";display:block;width:64px;height:2px;margin-top:16px;background:linear-gradient(90deg,#C7B99B 0 62%,#5E8A78 62% 100%)}'
+       '.h p{color:#DDE2DC;max-width:62ch;margin:16px 0 0}.h a{color:#F6F5F0}'
+       'main{padding:30px 24px 64px}.rt h2,.ficha h1{overflow-wrap:anywhere}'
+       'main.w:has(> .rt){display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;align-items:start}'
+       '.rt{display:grid;grid-template-columns:112px minmax(0,1fr);gap:20px;padding:20px;background:var(--sup);border:1px solid var(--linea);border-left:3px solid var(--champ);border-radius:14px}'
+       '.rt:nth-child(4n+2),.rt:nth-child(4n+3){border-left-color:var(--verde)}html[data-tema="oscuro"] .rt:nth-child(4n+2),html[data-tema="oscuro"] .rt:nth-child(4n+3){border-left-color:#5E8A78}'
+       '.rp{width:112px;max-width:100%;aspect-ratio:2/3;border-radius:6px;overflow:hidden;background:linear-gradient(160deg,#183D32,#12251F);position:relative;box-shadow:0 8px 22px -12px rgba(18,37,31,.45);display:block;border:1px solid var(--linea)}'
+       '.rp img{width:100%;height:100%;object-fit:cover;object-position:top;display:block;background:#fff}.rp span{position:absolute;inset:12px;color:#F6F5F0;font:400 .9rem/1.25 var(--serif)}.rp img+span{display:none}'
+       '.k{font-size:.8rem;color:var(--tinta-2);font-weight:600}.i{margin-left:8px;padding:1px 9px;border-radius:99px;background:var(--salvia);color:var(--verde)}html[data-tema="oscuro"] .i{color:#ECEAE2}'
+       'h2{font:400 1.4rem/1.22 var(--serif);margin:6px 0 4px}h2 a{color:inherit;text-decoration:none}h2 a:hover{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}'
+       '.a{margin:0;color:var(--tinta-2);font-size:.9rem}.r{font-size:.92rem;margin:10px 0;color:var(--tinta);display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}'
+       '.b{margin:12px 0 0}.b a{color:inherit;font-weight:600;margin-right:14px}.lee{display:inline-block;background:var(--verde);color:#F6F5F0!important;padding:9px 18px;border-radius:99px;text-decoration:none}'
+       'html[data-tema="oscuro"] .lee{background:var(--champ);color:#12251F!important}'
+       '.ficha{display:grid;grid-template-columns:220px minmax(0,1fr);gap:32px;align-items:start}.ficha .rp{width:220px}.ficha p{max-width:72ch}'
+       '.cred{font-size:.86rem;background:var(--salvia);border-left:3px solid var(--verde);border-radius:10px;padding:12px 14px;margin:14px 0}'
+       '#lector{margin-top:28px;background:#183D32;border-radius:14px;padding:12px;position:relative}#lector .bar{display:flex;gap:8px;align-items:center;flex-wrap:wrap;color:#ECEAE2;font-size:.88rem;padding:4px 4px 12px}'
+       '#lector button,#lector .bar a{background:#24503F;color:#fff;border:0;border-radius:8px;padding:7px 12px;font:600 .85rem var(--sans);cursor:pointer;text-decoration:none}#lector .pg{flex:1}'
+       '#hojas{height:min(80vh,1100px);overflow:auto;border-radius:8px;background:#12251F}#hojas canvas{display:block;margin:0 auto 10px;background:#fff;box-shadow:0 4px 14px rgba(0,0,0,.35);max-width:100%;height:auto}'
+       '#lector:fullscreen #hojas{height:calc(100vh - 70px)}.ext{color:#ECEAE2;padding:30px;text-align:center}.ext a{color:#D9CDB2}'
+       '@media(max-width:980px){main.w:has(> .rt){grid-template-columns:1fr}}'
+       '@media(max-width:640px){.h{padding:40px 16px 36px}main{padding:22px 16px 48px}.rt{grid-template-columns:84px minmax(0,1fr);gap:14px;padding:14px}.rp{width:84px}.ficha{grid-template-columns:1fr}.ficha .rp{width:160px}}')
 CAB = lambda titulo, desc, canon, img: ('<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">'
     '<script src="https://aurzane.com/aurzane-paleta.js"></script>'
     f'<title>{E(titulo)}</title><meta name="description" content="{E(desc[:158])}"><link rel="canonical" href="{canon}">'
     f'<meta property="og:title" content="{E(titulo)}"><meta property="og:description" content="{E(desc[:200])}"><meta property="og:url" content="{canon}">' + (f'<meta property="og:image" content="{E(img)}">' if img else '') +
-    '<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@600;700&family=Instrument+Sans:wght@400;600&display=swap" rel="stylesheet">'
+    ''
     f'<style>{CSS}</style></head><body>')
 def portada_html(p): return (f'<img src="{E(p["portada"])}" alt="Portada de {E(SIN_ETQ(p["titulo"])[:80])}" loading="lazy" onerror="this.remove()">' if p.get('portada') else '') + f'<span>{E(SIN_ETQ(p["titulo"])[:70])}</span>'
 def datos(p): return ', '.join(str(v) for v in (p.get('autores'), p.get('anio'), p.get('editorial')) if v)
@@ -1265,12 +1367,20 @@ guardar('mapa_titulos.json', tit_cache)
 open(OUT + '/mapa/index.html', 'w', encoding='utf-8').write(
     '<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><script src="https://aurzane.com/aurzane-paleta.js"></script>'
     '<title>Mapa de AURZANE: todas las páginas</title><meta name="description" content="Todas las páginas de AURZANE en un solo lugar: tests, calculadoras, ejercicios, universidades, cursos y biblioteca.">'
-    '<link rel="canonical" href="https://aurzane.com/mapa/"><link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@600;700&family=Instrument+Sans:wght@400;600&display=swap" rel="stylesheet">'
-    '<style>body{margin:0;background:var(--bg,#F6F0E8);color:var(--text,#2E2620);font:16px/1.6 "Instrument Sans",system-ui,sans-serif}.h{background:#0F1530;color:#F5F3EE;padding:40px 20px}.h a{color:#EACF92}'
-    '.w{max-width:1000px;margin:0 auto}h1{font:700 2.1rem "Bodoni Moda",serif;margin:6px 0}main{padding:10px 20px 60px;columns:2 300px;column-gap:40px}section{break-inside:avoid;margin:18px 0}'
-    'h2{font:700 1.3rem "Bodoni Moda",serif;color:#2E2620;margin:0 0 4px}h3{font:600 .95rem "Instrument Sans",sans-serif;color:#5F5044;margin:14px 0 4px}ul{list-style:none;padding:0;margin:0}li a{color:inherit;text-decoration:none;display:block;padding:4px 0;border-bottom:1px solid rgba(95,80,68,.12)}li a:hover{text-decoration:underline}</style></head><body>'
-    '<div class="h"><div class="w"><a href="https://aurzane.com/">AURZANE</a><h1>Mapa del sitio</h1><p>Todas las páginas del ecosistema. <a href="https://aurzane.com/novedades/">Ver novedades</a> · <a href="https://aurzane.com/biblioteca/">Biblioteca</a></p></div></div>'
-    f'<main class="w">{mapa_html}</main></body></html>')
+    '<link rel="canonical" href="https://aurzane.com/mapa/">'
+    # 22/11/2026 (rediseño v4): marfil, títulos en serif con filete, cada mundo en su tarjeta con su punto de color; claro y oscuro
+    '<style>:root{--bg:#F6F5F0;--sup:#FFFFFF;--tinta:#252724;--tinta-2:#5E605A;--linea:rgba(37,39,36,.12);--verde:#183D32;--champ:#C7B99B;--serif:"Instrument Serif","Bodoni Moda",Georgia,serif;--sans:"Manrope","Instrument Sans",system-ui,sans-serif}'
+    'html[data-tema="oscuro"]{--bg:#12251F;--sup:#183D32;--tinta:#ECEAE2;--tinta-2:#B9C2BB;--linea:rgba(242,239,230,.14)}'
+    '*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tinta);font:16px/1.6 var(--sans)}.w{max-width:1240px;margin:0 auto;padding:0 24px}'
+    '.cab{color:#F6F5F0;background:linear-gradient(90deg,rgba(18,37,31,.95),rgba(18,37,31,.8) 50%,rgba(18,37,31,.35)),url(https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=1800&q=70&auto=format&fit=crop) center/cover no-repeat #12251F}.cab{border-bottom:1px solid rgba(199,185,155,.4)}.cab>.w{padding-top:60px;padding-bottom:52px}main.w{padding-top:30px;padding-bottom:64px}.cab .mig{color:#DDE2DC!important}.cab p{color:#DDE2DC!important}.cab a,.cab p a{color:#F6F5F0!important}.cab h1::after{background:linear-gradient(90deg,#C7B99B 0 62%,#5E8A78 62% 100%)!important}.cab .mig{font-size:.88rem;color:var(--tinta-2);margin:0}.cab a{color:inherit}'
+    'h1{font:400 clamp(2.6rem,5vw,3.8rem)/1.02 var(--serif);margin:10px 0 0}h1::after{content:"";display:block;width:64px;height:2px;margin-top:16px;background:linear-gradient(90deg,var(--verde) 0 62%,var(--champ) 62% 100%)}'
+    '.cab p{color:var(--tinta-2);margin:16px 0 0}.cab p a{color:var(--tinta);font-weight:600}'
+    'main{padding:30px 24px 64px;columns:3 330px;column-gap:18px}section{break-inside:avoid;margin:0 0 18px;background:var(--sup);border:1px solid var(--linea);border-top:3px solid var(--champ);border-radius:14px;padding:20px 22px}'
+    'h2{font:400 1.7rem/1.1 var(--serif);margin:0 0 6px}h3{font:700 .78rem var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--tinta-2);margin:16px 0 4px}'
+    'ul{list-style:none;padding:0;margin:0}li a{color:inherit;text-decoration:none;display:block;padding:6px 0;border-bottom:1px solid var(--linea);font-size:.95rem}li:last-child a{border-bottom:0}section li a{text-decoration:none!important}section li a:hover{text-decoration:underline!important;text-underline-offset:3px}'
+    '@media(max-width:600px){.w{padding:0 16px}main{padding:22px 16px 48px}}</style></head><body>'
+    '<header class="cab"><div class="w"><p class="mig"><a href="https://aurzane.com/">AURZANE</a> / Mapa del sitio</p><h1>Mapa del sitio</h1><p>Todas las páginas del ecosistema, por mundo y por tipo. <a href="https://aurzane.com/novedades/">Ver novedades</a> · <a href="https://aurzane.com/biblioteca/">Biblioteca</a></p></div></header>'
+    f'<main class="w" id="contenido">{mapa_html}</main></body></html>')
 # «Hoy en AURZANE»: frase, curiosidad, ejercicio, test y música tranquila del día para la portada (aurzane.com/hoy/hoy.json)
 try:
     os.makedirs(OUT + '/hoy', exist_ok=True)
@@ -1289,19 +1399,47 @@ try:
         lista_ = ''.join(f'<figure id="{E(f["id"])}" data-tema="{E(f["tema"])}"><blockquote>{E(f["texto"])}</blockquote><figcaption><strong>{E(f["autor"])}</strong>'
                          + (f' ({E(f["vida"])})' if f.get('vida') else '') + (f'. {E(f["descripcion"])}' if f.get('descripcion') else '')
                          + f' <span class="f">Vía <a href="{E(f["url_fuente"])}" rel="nofollow noopener">{E(f["fuente"])}</a> · {E(f["publicada"])}</span></figcaption></figure>' for f in pub)
+        # 22/11/2026 (rediseño v4): cabecera con foto bajo velo verde, frases en tarjetas a dos o tres columnas, filtro por tema
+        CSS_FR = ('''
+:root{--bg:#F6F5F0;--sup:#FFFFFF;--tinta:#252724;--tinta-2:#5E605A;--linea:rgba(37,39,36,.12);--verde:#183D32;--hondo:#12251F;--champ:#C7B99B;--salvia:#EAEFEA;
+ --serif:"Instrument Serif","Bodoni Moda",Georgia,serif;--sans:"Manrope","Instrument Sans",system-ui,sans-serif}
+html[data-tema="oscuro"]{--bg:#12251F;--sup:#183D32;--tinta:#ECEAE2;--tinta-2:#B9C2BB;--linea:rgba(242,239,230,.14);--salvia:#1D4538}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tinta);font:16px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+.w{max-width:1240px;margin:0 auto;padding:0 24px}
+.fr-cab{position:relative;color:#F6F5F0;background:linear-gradient(90deg,rgba(18,37,31,.95),rgba(18,37,31,.78) 50%,rgba(18,37,31,.35)),url("https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?w=1800&q=70&auto=format&fit=crop") center/cover no-repeat #12251F}
+.fr-cab .w{padding-top:64px;padding-bottom:56px}
+.fr-cab p.mig{font-size:.88rem;color:#DDE2DC;margin:0}.fr-cab a{color:#F6F5F0}
+.fr-cab h1{font:400 clamp(2.8rem,5.6vw,4.4rem)/1 var(--serif);margin:12px 0 0}
+.fr-cab h1::after{content:"";display:block;width:64px;height:2px;margin-top:18px;background:linear-gradient(90deg,#C7B99B 0 62%,#5E8A78 62% 100%)}
+.fr-cab p.lema{max-width:56ch;color:#DDE2DC;margin:18px 0 0;font-size:1.05rem}
+.fr-cab .n{margin-top:22px;font-size:.92rem;color:#C9D0C9}.fr-cab .n b{font:400 1.7rem var(--serif);color:#F6F5F0;margin-right:6px}
+.t{display:flex;flex-wrap:wrap;gap:8px;padding:26px 0 8px;border-bottom:1px solid var(--linea)}
+.t button{min-height:40px;border:1px solid var(--linea);background:var(--sup);color:var(--tinta);border-radius:999px;padding:0 16px;font:600 .9rem var(--sans);cursor:pointer}
+.t button[aria-pressed=true]{background:var(--verde);border-color:var(--verde);color:#F6F5F0}
+html[data-tema="oscuro"] .t button[aria-pressed=true]{background:var(--champ);border-color:var(--champ);color:#12251F}
+.fr-l{columns:3 320px;column-gap:18px;padding:26px 0 10px}
+figure{break-inside:avoid;margin:0 0 18px;padding:24px 24px 20px;background:var(--sup);border:1px solid var(--linea);border-left:3px solid var(--champ);border-radius:14px}
+figure:nth-child(3n+2){border-left-color:var(--verde)}figure:nth-child(5n+3){background:var(--salvia)}
+html[data-tema="oscuro"] figure:nth-child(3n+2){border-left-color:#5E8A78}
+blockquote{margin:0;font:400 1.5rem/1.3 var(--serif);color:var(--tinta)}
+blockquote::before{content:"«";color:var(--champ)}blockquote::after{content:"»";color:var(--champ)}
+figcaption{margin-top:14px;color:var(--tinta-2);font-size:.93rem}figcaption strong{color:var(--tinta)}
+.f{display:block;font-size:.8rem;margin-top:4px}figcaption a{color:inherit}
+.pie{font-size:.88rem;color:var(--tinta-2);padding:10px 0 60px}.pie a{color:var(--tinta);font-weight:600}
+@media (max-width:600px){.w{padding:0 16px}.fr-cab .w{padding-top:44px;padding-bottom:40px}blockquote{font-size:1.32rem}figure{padding:20px 18px 16px}}
+''')
         open(OUT + '/frases/index.html', 'w', encoding='utf-8').write(
             '<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><script src="https://aurzane.com/aurzane-paleta.js"></script>'
             f'<title>Frases célebres para pensar y sentirte mejor | AURZANE</title><meta name="description" content="{len(pub)} frases célebres de autores clásicos sobre la vida, la esperanza, la calma y la superación. Cada día, frases nuevas seleccionadas por AURZANE.">'
-            '<link rel="canonical" href="https://aurzane.com/frases/"><meta property="og:image" content="https://aurzane.com/og-portada.jpg"><link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@500;700&family=Instrument+Sans:wght@400;600&display=swap" rel="stylesheet">'
-            '<style>body{margin:0;background:var(--bg,#F6F0E8);color:var(--text,#2E2620);font:16px/1.6 "Instrument Sans",system-ui,sans-serif}.h{background:#0F1530;color:#F5F3EE;padding:40px 20px}.h a{color:#EACF92}'
-            '.w{max-width:860px;margin:0 auto}h1{font:700 2.1rem "Bodoni Moda",serif;margin:6px 0}main{padding:10px 20px 60px}.t{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0}'
-            '.t button{min-height:40px;border:1px solid rgba(95,80,68,.3);background:transparent;color:inherit;border-radius:99px;padding:0 14px;font:inherit;cursor:pointer}.t button[aria-pressed=true]{background:#0F1530;color:#fff}'
-            'figure{margin:0;padding:22px 0;border-bottom:1px solid rgba(95,80,68,.15)}blockquote{margin:0;font:500 1.35rem/1.35 "Bodoni Moda",serif}figcaption{margin-top:8px;color:#6b6153;font-size:.93rem}.f{display:block;font-size:.8rem}figcaption a{color:inherit}</style></head><body>'
-            '<div class="h"><div class="w"><a href="https://aurzane.com/">AURZANE</a><h1>Frases célebres</h1><p>Palabras de autores clásicos para pensar, consolarte o tomar impulso. Cada día añadimos frases nuevas. '
-            '<a href="https://aurzane.com/#hoy">Ver la frase de hoy</a> · <a href="https://aurzane.com/biblioteca/">Biblioteca</a></p></div></div><main class="w">'
+            '<link rel="canonical" href="https://aurzane.com/frases/"><meta property="og:image" content="https://aurzane.com/og-portada.jpg">'
+            f'<style>{CSS_FR}</style></head><body>'
+            '<header class="fr-cab"><div class="w"><p class="mig"><a href="https://aurzane.com/">AURZANE</a> / Frases</p><h1>Frases célebres</h1>'
+            '<p class="lema">Palabras de autores clásicos para pensar, consolarte o tomar impulso. Cada día añadimos frases nuevas. '
+            '<a href="https://aurzane.com/#hoy">Ver la frase de hoy</a> · <a href="https://aurzane.com/biblioteca/">Biblioteca</a></p>'
+            f'<p class="n"><b>{len(pub)}</b>frases de {len(set(f["autor"] for f in pub))} autores</p></div></header><main class="w" id="contenido">'
             '<div class="t" role="group" aria-label="Filtrar por tema"><button type="button" aria-pressed="true" data-t="">Todas</button>'
             + ''.join(f'<button type="button" aria-pressed="false" data-t="{E(t)}">{E(t.replace("-", " ").capitalize())}</button>' for t, _ in temas_.most_common(14)) + '</div>'
-            + lista_ + '<p style="font-size:.85rem;color:#6b6153;margin-top:24px">Solo publicamos frases de autores en dominio público y refranes tradicionales, con su autor y la fuente donde las encontramos. ¿Te gustan? <a href="https://ko-fi.com/adriansan7" target="_blank" rel="noopener">Invítanos a un café en Ko-fi</a>.</p></main>'
+            + '<div class="fr-l">' + lista_ + '</div><p class="pie">Solo publicamos frases de autores en dominio público y refranes tradicionales, con su autor y la fuente donde las encontramos. ¿Te gustan? <a href="https://ko-fi.com/adriansan7" target="_blank" rel="noopener">Invítanos a un café en Ko-fi</a>.</p></main>'
             '<script>document.querySelectorAll(".t button").forEach(function(b){b.onclick=function(){var t=b.dataset.t;document.querySelectorAll(".t button").forEach(function(x){x.setAttribute("aria-pressed",x===b)});'
             'document.querySelectorAll("figure").forEach(function(f){f.hidden=t&&f.dataset.tema!==t})}})</script></body></html>')
     if usadas.get('dias', {}).get(HOY):
@@ -1348,18 +1486,42 @@ try:
     if arts:
         os.makedirs(OUT + '/articulos-recientes', exist_ok=True)
         url_a = lambda a: f'https://{a["mundo"]}.aurzane.com/articulo.html?mundo={a["mundo"]}&slug={urllib.parse.quote(a["slug"])}'
-        lis_a = ''.join(f'<article><p class="k">{E(a["mundo"].upper())}{" · " + E(a["categoria"]) if a.get("categoria") else ""} · {E((a.get("publicado_at") or "")[:10])}</p>'
-                        f'<h2><a href="{E(url_a(a))}">{E(a["titulo"])}</a></h2><p>{E(a.get("resumen") or "")}</p></article>' for a in arts)
+        # 22/11/2026 (rediseño v4): tarjetas con foto real según el tema (Unsplash, formato automático = AVIF), filete del color de su mundo
+        FOTOS_T = [(r'ansiedad|p[áa]nico|preocupa', '1505142468610-359e7d316be0'), (r'estr[ée]s|burnout|agotamiento', '1541199249251-f713e6145474'), (r'depresi|[áa]nimo|triste', '1529665253569-6d01c0eaf7b6'),
+                   (r'sue[ñn]o|insomnio|dormir|descans', '1541781774459-bb2af2f05b55'), (r'h[áa]bito|aliment|nutric|ejercicio|deporte', '1490645935967-10de6ba17061'), (r'autoestima|identidad|personalidad', '1517841905240-472988babdf9'),
+                   (r'pareja|relaci|amistad|famil|v[íi]nculo|cuidado', '1544027993-37dbfe43562a'), (r'soledad|aislamiento', '1512438248247-f0f2a5a8b7f0'), (r'duelo|p[ée]rdida|muerte|resilien|trauma', '1466692476868-aef1dfb1e735'),
+                   (r'bienestar|felicidad|satisfacc|prop[óo]sito|mindful|calma', '1506126613408-eca07ce68773'), (r'carrera|vocaci|universidad|oferta|acceso|elegir', '1541339907198-e08756dedf3f'),
+                   (r'aprend|estudi|memoria|metacog|educa|ense[ñn]|tdah|atenci', '1434030216411-0b793f4b4173'), (r'curso|formaci|certific', '1522202176988-66273c2fd55f'),
+                   (r'hipoteca|vivienda|dinero|ahorro|inmobil|finanz|sueldo|inver', '1579621970563-ebec7560ff3e'), (r'libro|lectura|biblioteca', '1532012197267-da84d127e765')]
+        FOTOS_M = {'mind': '1559757175-5700dde675bc', 'nexus': '1541339907198-e08756dedf3f', 'live': '1454496522488-7a8e488e8606', 'learn': '1481627834876-b7833e8f5570', 'build': '1461360370896-922624d12aa1'}
+        def foto_a(a):
+            tx = ((a.get('categoria') or '') + ' ' + (a.get('titulo') or '')).lower()
+            i = next((f for r, f in FOTOS_T if re.search(r, tx)), FOTOS_M.get(a.get('mundo'), FOTOS_M['mind']))
+            return f'https://images.unsplash.com/photo-{i}?w=720&h=405&q=70&fit=crop&auto=format'
+        COL_M = {'mind': '#6A55C2', 'nexus': '#3E63B8', 'live': '#B2563A', 'learn': '#2F7A6A', 'build': '#946233'}
+        lis_a = ''.join(f'<li><a class="ar" href="{E(url_a(a))}" style="--c:{COL_M.get(a["mundo"], "#C7B99B")}"><span class="ar-img"><img src="{foto_a(a)}" alt="" loading="lazy" width="720" height="405"></span>'
+                        f'<span class="ar-t"><span class="k"><i></i>{E(a["mundo"].upper())}{" · " + E(a["categoria"]) if a.get("categoria") else ""} · {E((a.get("publicado_at") or "")[:10])}</span>'
+                        f'<b>{E(a["titulo"])}</b><span class="r">{E(a.get("resumen") or "")}</span></span></a></li>' for a in arts)
         open(OUT + '/articulos-recientes/index.html', 'w', encoding='utf-8').write(
             '<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><script src="https://aurzane.com/aurzane-paleta.js"></script>'
             f'<title>Artículos recientes de psicología y bienestar | AURZANE</title><meta name="description" content="Artículos de divulgación de psicología, bienestar y aprendizaje basados en estudios científicos en acceso abierto.">'
-            '<link rel="canonical" href="https://aurzane.com/articulos/recientes/"><meta property="og:image" content="https://aurzane.com/og-portada.jpg"><link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@600;700&family=Instrument+Sans:wght@400;600&display=swap" rel="stylesheet">'
-            '<style>body{margin:0;background:var(--bg,#F6F0E8);color:var(--text,#2E2620);font:16px/1.6 "Instrument Sans",system-ui,sans-serif}.h{background:#0F1530;color:#F5F3EE;padding:40px 20px}.h a{color:#EACF92}'
-            '.w{max-width:860px;margin:0 auto}h1{font:700 2.1rem "Bodoni Moda",serif;margin:6px 0}main{padding:10px 20px 60px}article{padding:20px 0;border-bottom:1px solid rgba(95,80,68,.15)}'
-            'h2{font:700 1.3rem/1.3 "Bodoni Moda",serif;margin:2px 0 6px}h2 a{color:inherit;text-decoration:none}h2 a:hover{text-decoration:underline}.k{margin:0;font-size:.8rem;color:#6b6153}article p{margin:0}</style></head><body>'
-            '<div class="h"><div class="w"><a href="https://aurzane.com/">AURZANE</a><h1>Artículos recientes</h1><p>Psicología, bienestar y aprendizaje explicados con claridad y con su fuente. '
-            '<a href="https://aurzane.com/articulos/">Todos los artículos</a> · <a href="https://aurzane.com/novedades/">Novedades</a> · <a href="https://aurzane.com/frases/">Frases</a> · <a href="https://aurzane.com/biblioteca/">Biblioteca</a></p></div></div>'
-            f'<main class="w">{lis_a}</main></body></html>')
+            '<link rel="canonical" href="https://aurzane.com/articulos/recientes/"><meta property="og:image" content="https://aurzane.com/og-portada.jpg">'
+            '<style>:root{--bg:#F6F5F0;--sup:#FFFFFF;--tinta:#252724;--tinta-2:#5E605A;--linea:rgba(37,39,36,.12);--verde:#183D32;--champ:#C7B99B;--salvia:#EAEFEA;--serif:"Instrument Serif","Bodoni Moda",Georgia,serif;--sans:"Manrope","Instrument Sans",system-ui,sans-serif}'
+            'html[data-tema="oscuro"]{--bg:#12251F;--sup:#183D32;--tinta:#ECEAE2;--tinta-2:#B9C2BB;--linea:rgba(242,239,230,.14);--salvia:#1D4538}'
+            '*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tinta);font:16px/1.6 var(--sans)}.w{max-width:1240px;margin:0 auto;padding:0 24px}'
+            '.cab{color:#F6F5F0;background:linear-gradient(90deg,rgba(18,37,31,.95),rgba(18,37,31,.8) 50%,rgba(18,37,31,.35)),url(https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=1800&q=70&auto=format&fit=crop) center/cover no-repeat #12251F}.cab{border-bottom:1px solid rgba(199,185,155,.4)}.cab>.w{padding-top:60px;padding-bottom:52px}main.w{padding-top:30px;padding-bottom:64px}.cab .mig{color:#DDE2DC!important}.cab p{color:#DDE2DC!important}.cab a,.cab p a{color:#F6F5F0!important}.cab h1::after{background:linear-gradient(90deg,#C7B99B 0 62%,#5E8A78 62% 100%)!important}.cab .mig{font-size:.88rem;color:var(--tinta-2);margin:0}.cab a{color:inherit}.cab p a{color:var(--tinta);font-weight:600}'
+            'h1{font:400 clamp(2.6rem,5vw,3.8rem)/1.02 var(--serif);margin:10px 0 0}h1::after{content:"";display:block;width:64px;height:2px;margin-top:16px;background:linear-gradient(90deg,var(--verde) 0 62%,var(--champ) 62% 100%)}'
+            '.cab p{color:var(--tinta-2);margin:16px 0 0;max-width:64ch}'
+            'main ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}'
+            '.ar{display:flex;flex-direction:column;height:100%;background:var(--sup);border:1px solid var(--linea);border-top:3px solid var(--c);border-radius:14px;overflow:hidden;color:inherit;text-decoration:none}'
+            '.ar:hover{border-color:var(--c)}.ar:hover b{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}'
+            '.ar-img{display:block;aspect-ratio:16/9;background:var(--salvia)}.ar-img img{width:100%;height:100%;object-fit:cover;display:block}'
+            '.ar-t{display:flex;flex-direction:column;gap:8px;padding:16px 18px 20px}.k{display:flex;align-items:center;gap:7px;font:700 .74rem var(--sans);letter-spacing:.06em;text-transform:uppercase;color:var(--tinta-2)}.k i{width:8px;height:8px;border-radius:50%;background:var(--c)}'
+            '.ar b{font:400 1.36rem/1.22 var(--serif)}.r{font-size:.92rem;color:var(--tinta-2);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}'
+            '@media(max-width:980px){main ul{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:600px){.w{padding:0 16px}main ul{grid-template-columns:1fr}}</style></head><body>'
+            '<header class="cab"><div class="w"><p class="mig"><a href="https://aurzane.com/">AURZANE</a> / <a href="https://aurzane.com/articulos/">Artículos</a> / Recientes</p><h1>Artículos recientes</h1><p>Psicología, bienestar y aprendizaje explicados con claridad y con su fuente. '
+            '<a href="https://aurzane.com/articulos/">Todos los artículos</a> · <a href="https://aurzane.com/novedades/">Novedades</a> · <a href="https://aurzane.com/frases/">Frases</a> · <a href="https://aurzane.com/biblioteca/">Biblioteca</a></p></div></header>'
+            f'<main class="w" id="contenido"><ul>{lis_a}</ul></main></body></html>')
         conexiones['fuera_sitemap'] = sorted(set(conexiones['fuera_sitemap']) | {url_a(a) for a in arts} | {'https://aurzane.com/articulos/recientes/'} | ({'https://aurzane.com/frases/'} if os.path.exists(OUT + '/frases/index.html') else set()))
 except Exception as e:
     print('::notice title=AI::índice de artículos no generado', str(e)[:120])
