@@ -58,15 +58,14 @@ for mundo, temas in TEMAS.items():
         vistos = {f"{x['origen']}-{x['id']}" for x in lista}
         falta = min(MAX - len(lista), NUEVAS)
         if falta <= 0: continue
-        cand = []
+        pe, px = [], []
         for pag in (1, 2):
-            try: cand += pexels(q, pag)
+            try: pe += pexels(q, pag)
             except Exception as e: print('pexels', q, e)
-            try: cand += pixabay(q, pag)
+            try: px += pixabay(q, pag)
             except Exception as e: print('pixabay', q, e)
-            if len([c for c in cand if f"{c['origen']}-{c['id']}" not in vistos]) >= falta * 2: break
-        # alternar Pexels y Pixabay para variar estilos
-        cand.sort(key=lambda c: (cand.index(c) % 40, c['origen']))
+            if len([c for c in pe + px if f"{c['origen']}-{c['id']}" not in vistos]) >= falta * 2: break
+        cand = [c for par in zip(pe, px) for c in par] + pe[len(px):] + px[len(pe):]   # alterna Pexels y Pixabay para variar estilos
         hechas = 0
         for c in cand:
             if hechas >= falta: break
