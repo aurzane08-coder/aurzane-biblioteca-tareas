@@ -5,7 +5,8 @@ const { chromium } = require('playwright'); const fs = require('fs'), path = req
 const [lista, salida] = process.argv.slice(2); fs.mkdirSync(salida, { recursive: true });
 const URLS = fs.readFileSync(lista, 'utf8').split('\n').map(s => s.trim()).filter(s => s && !s.startsWith('#'));
 const TEMAS = (process.env.TEMAS || 'claro oscuro').split(/\s+/), VISTAS = (process.env.VISTAS || 'escritorio movil').split(/\s+/), ALTO = +(process.env.ALTO || 5200);
-const VP = { escritorio: { width: 1440, height: 900 }, movil: { width: 390, height: 844, isMobile: true, hasTouch: true, deviceScaleFactor: 1 } };
+// ojo: Playwright solo aplica el tamaño dentro de «viewport»; fuera de él se ignora y todo sale a 1280 px
+const VP = { escritorio: { viewport: { width: 1440, height: 900 } }, movil: { viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true, deviceScaleFactor: 1 } };
 const BORR = path.join(__dirname, 'borrador'); const LOCAL = process.env.LOCAL ? path.resolve(process.env.LOCAL) : null; /* LOCAL=traer/servidor: sin red */ const V4 = process.env.V4 === '1'; const PAL = require('./paleta-v4.js');
 const nombre = u => u.replace(/^https?:\/\//, '').replace(/[^a-z0-9]+/gi, '_').replace(/_+$/, '').slice(0, 90);
 (async () => {
@@ -50,7 +51,7 @@ const nombre = u => u.replace(/^https?:\/\//, '').replace(/[^a-z0-9]+/gi, '_').r
         return { alto: document.body.scrollHeight, ancho: document.documentElement.scrollWidth, W, fuera, rotas, imgs: document.images.length }; });
       // la ventana NO se estira al alto de la página: con 100vh/5vh el diseño se deformaría (falsos huecos enormes)
       const H = Math.min(m.alto, ALTO);
-      await p.screenshot({ path: path.join(salida, id + '.jpg'), type: 'jpeg', quality: 62, fullPage: true, clip: { x: 0, y: 0, width: VP[v].width, height: H } });
+      await p.screenshot({ path: path.join(salida, id + '.jpg'), type: 'jpeg', quality: 62, fullPage: true, clip: { x: 0, y: 0, width: VP[v].viewport.width, height: H } });
       informe.push({ id, u, v, t, ...m, err: err.slice(0, 8) });
     } catch (e) { informe.push({ id, u, v, t, fallo: e.message.split('\n')[0] }); }
     await ctx.close();

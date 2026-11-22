@@ -56,7 +56,14 @@ function transformar(txt) {
     const c = convertir(+r, +g, +b); if (!c) return m; n++;
     return (m.startsWith('rgba') ? 'rgba(' : 'rgb(') + c.join(',') + (resto || '') + ')';
   });
-  return { out, n };
+  // Letras v4: los mismos nombres de familia que ya usan las páginas, pero con los archivos nuevos (Instrument Serif y Manrope).
+  // Se cambia la URL del archivo, no el nombre, así no hay que tocar ningún selector y la caché vieja no interfiere.
+  const LETRAS = { 'bodoni-moda-latin-opsz-normal': 'instrument-serif-latin-400-normal', 'bodoni-moda-latin-ext-opsz-normal': 'instrument-serif-latin-ext-400-normal',
+    'bodoni-moda-latin-opsz-italic': 'instrument-serif-latin-400-italic', 'bodoni-moda-latin-ext-opsz-italic': 'instrument-serif-latin-ext-400-italic',
+    'instrument-sans-latin-wght-normal': 'manrope-latin-wght-normal', 'instrument-sans-latin-ext-wght-normal': 'manrope-latin-ext-wght-normal',
+    'instrument-sans-latin-wght-italic': 'manrope-latin-wght-normal', 'instrument-sans-latin-ext-wght-italic': 'manrope-latin-ext-wght-normal' };
+  const out2 = out.replace(/fuentes\/(bodoni-moda|instrument-sans)-latin(-ext)?-(opsz|wght)-(normal|italic)\.woff2/g, m => { const k = m.slice(8, -6); n++; return 'fuentes/' + (LETRAS[k] || k) + '.woff2'; });
+  return { out: out2, n };
 }
 module.exports = { transformar, convertir, hexA, aHex, aOk };
 if (require.main === module) {   // prueba: node paleta-v4.js #0B1030 #C9A24B ...
