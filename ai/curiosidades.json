@@ -1,5 +1,62 @@
 [
  {
+  "id": "cur-c1b859b4a3",
+  "tipo": "curiosidad",
+  "titulo": "¿Sabías que dormir duplica tu capacidad de resolver problemas?",
+  "dato": "Durante el sueño profundo, el cerebro reorganiza los recuerdos para ayudarte a encontrar soluciones que despierto no veías.",
+  "resumen": "Durante el sueño profundo, el cerebro reorganiza los recuerdos para ayudarte a encontrar soluciones que despierto no veías. El cerebro procesa la información del día y detecta patrones ocultos. En un experimento de la Universidad de Lübeck, los participantes que durmieron tuvieron más del doble de éxito descubriendo una regla matemática oculta frente a quienes se quedaron despiertos.",
+  "fuente": "Wagner et al., 2004",
+  "hashtags": [
+   "psicologia",
+   "cerebro",
+   "sueño",
+   "aurzane"
+  ],
+  "fuente_id": "tema-326-0",
+  "url": "https://mind.aurzane.com/",
+  "fecha": "2026-11-22",
+  "auto": true,
+  "verificacion": "El dato está respaldado por la literatura científica citada (Wagner et al., 2004) y se presenta sin exageraciones pseudocientíficas."
+ },
+ {
+  "id": "cur-285887a756",
+  "tipo": "curiosidad",
+  "titulo": "¿Funcionan los psicólogos de inteligencia artificial?",
+  "dato": "Una gran revisión científica demuestra que los chats de terapia cognitivo-conductual reducen la ansiedad.",
+  "resumen": "Una gran revisión científica demuestra que los chats de terapia cognitivo-conductual reducen la ansiedad. Analizando múltiples estudios, se ha visto que estas herramientas digitales logran disminuir los síntomas de ansiedad y depresión. Aunque no sustituyen a un profesional, muestran un potencial muy interesante como apoyo.",
+  "fuente": "Frontiers in Public Health",
+  "hashtags": [
+   "psicologia",
+   "ia",
+   "saludmental",
+   "aurzane"
+  ],
+  "fuente_id": "pmc-PMC13787119",
+  "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13787119/",
+  "fecha": "2026-11-22",
+  "auto": true,
+  "verificacion": "La afirmación está respaldada por revisiones sistemáticas en revistas científicas y se presenta de forma matizada y sin exageraciones."
+ },
+ {
+  "id": "cur-d6eb09d2f2",
+  "tipo": "curiosidad",
+  "titulo": "¿Sabías que una pandemia altera cómo entiendes tu propia identidad?",
+  "dato": "Una revisión muestra que las pandemias desafían la noción de identidad, la percepción de la verdad y el razonamiento moral al tomar decisiones.",
+  "resumen": "Una revisión muestra que las pandemias desafían la noción de identidad, la percepción de la verdad y el razonamiento moral al tomar decisiones. El contagio no solo afecta a los sistemas sanitarios, sino que transforma la experiencia corporal y los marcos éticos individuales. Ante crisis de este tipo, se modifican los valores y las formas de razonar con las que interpretamos la enfermedad.",
+  "fuente": "Frontiers in public health",
+  "hashtags": [
+   "psicologia",
+   "conducta",
+   "pandemia",
+   "aurzane"
+  ],
+  "fuente_id": "pmc-PMC13777642",
+  "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13777642/",
+  "fecha": "2026-11-22",
+  "auto": true,
+  "verificacion": "La afirmación está respaldada por literatura científica sobre el impacto psicosocial de las pandemias en la cognición y los valores."
+ },
+ {
   "id": "cur-87f9735597",
   "tipo": "curiosidad",
   "titulo": "¿Los animales calman el miedo al dentista?",

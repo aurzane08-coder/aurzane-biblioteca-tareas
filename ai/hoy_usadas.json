@@ -13,7 +13,8 @@
   "fw-6d7b3852a2",
   "fw-ce64b5dcbe",
   "fw-aacd892cfb",
-  "fw-469a9bf497"
+  "fw-469a9bf497",
+  "cita-6184ed6ca8"
  ],
  "dias": {
   "2026-11-08": {
@@ -414,6 +415,35 @@
    "musica": {
     "url": "https://aurzane.com/marketing/musica/785434.mp3",
     "credito": "«Quand je serai grand - INSTRUMENTAL VERSION », Löhstana David (Jamendo), CC BY"
+   }
+  },
+  "2026-11-22": {
+   "fecha": "2026-11-22",
+   "frase": {
+    "texto": "Ten calma, soporta el hecho, y búscale solución de la manera más práctica.",
+    "autor": "Benito Pérez Galdós",
+    "obra": "Realidad",
+    "url": "https://aurzane.com/biblioteca/libro/realidad-galdos.html",
+    "fuente": ""
+   },
+   "curiosidad": {
+    "titulo": "¿Por qué tu ansiedad te engaña en el peor momento?",
+    "texto": "Tu cerebro confunde estrés con peligro real por un sesgo evolutivo. Según la Asociación Americana de Psicología, la amígdala activa la respuesta de lucha o huida ante amenazas abstractas igual que ante depredadores físicos. Esto genera síntomas intensos aunque no corras peligro real.",
+    "fuente": "APA, 2020",
+    "url": "https://mind.aurzane.com/"
+   },
+   "ejercicio": {
+    "titulo": "Respiración 4-7-8 guiada para dormir y calmar la ansiedad",
+    "url": "https://mind.aurzane.com/ejercicios/respiracion-4-7-8/"
+   },
+   "test": {
+    "titulo": "Test de soledad gratis",
+    "url": "https://mind.aurzane.com/test-de-soledad/"
+   },
+   "mas_frases": true,
+   "musica": {
+    "url": "https://aurzane.com/marketing/musica/875005.mp3",
+    "credito": "«look up», This Public Life (Jamendo), CC BY-SA"
    }
   }
  }
