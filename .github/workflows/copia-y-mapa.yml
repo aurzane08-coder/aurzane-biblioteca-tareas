@@ -1,13 +1,13 @@
 name: Copia de seguridad y mapa del sitio
-# Antes de grandes cambios: guarda una copia comprimida de cada sitio en www/copias/<fecha>/ (en el servidor, no se borra)
-# y escribe un inventario de páginas en auditoria/mapa.txt para la auditoría.
+# Inventario de páginas en auditoria/mapa.txt. La copia completa en www/copias/ queda desactivada por defecto (22/11/2026): llenaba SiteGround.
+# Las copias van fuera del servidor (repositorio privado aurzane: «Copia de seguridad semanal»).
 on:
   workflow_dispatch:
     inputs:
       copia:
         description: 'Hacer copia completa (si/no)'
         required: false
-        default: 'si'
+        default: 'no'
 permissions:
   contents: write
 jobs:
