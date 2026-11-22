@@ -5,7 +5,7 @@ on:
   push:
     paths: ['banco/banco.py', '.github/workflows/banco-imagenes.yml']
   schedule:
-    - cron: '37 3 * * 1'
+    - cron: '37 */2 * * *'   # cada 2 horas hasta llenar el catálogo (Unsplash demo: 50 peticiones por hora)
   workflow_dispatch:
     inputs:
       max: {description: 'Fotos por tema como máximo', default: '80'}

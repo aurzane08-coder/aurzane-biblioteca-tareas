@@ -36,15 +36,19 @@ def pedir(u, auth=None):
     r = urllib.request.Request(u, headers={'User-Agent': 'AURZANE catalogo de imagenes', 'Authorization': auth or PK})
     return json.loads(urllib.request.urlopen(r, timeout=60).read())
 
+PET_U = int(os.environ.get('PETICIONES_UNSPLASH', '45'))   # la app «demo» de Unsplash admite 50 por hora
 usados = {x.get('p') or x.get('r') for ts in idx.values() for l in ts.values() for x in l}   # una foto no se repite entre temas
 total = 0
 for mundo, temas in TEMAS.items():
     for tema, q in temas.items():
         lista = idx.setdefault(mundo, {}).setdefault(tema, [])
         pag = 1
-        while len(lista) < MAX and pag <= 4:
+        while PK and len(lista) < MAX and pag <= 4:
             try: d = pedir('https://api.pexels.com/v1/search?' + urllib.parse.urlencode({'query': q, 'orientation': 'landscape', 'per_page': 80, 'page': pag, 'size': 'medium'}))
-            except Exception as e: print('pexels', q, e); break
+            except Exception as e:
+                print('pexels', q, e)
+                if '401' in str(e): PK = ''   # clave no válida: no insistir en esta ejecución
+                break
             fotos = d.get('photos', [])
             for p in fotos:
                 if len(lista) >= MAX: break
@@ -55,7 +59,8 @@ for mundo, temas in TEMAS.items():
             pag += 1; time.sleep(0.4)
         # Unsplash (si hay clave UNSPLASH_ACCESS_KEY): más variedad; sus normas piden enlazar sus fotos desde su CDN, como hacemos
         pag = 1
-        while UK and len(lista) < MAX and pag <= 3:
+        while UK and PET_U > 0 and len(lista) < MAX and pag <= 3:
+            PET_U -= 1
             try: d = pedir('https://api.unsplash.com/search/photos?' + urllib.parse.urlencode({'query': q, 'orientation': 'landscape', 'per_page': 30, 'page': pag, 'content_filter': 'high'}), 'Client-ID ' + UK)
             except Exception as e: print('unsplash', q, e); break
             for p in d.get('results', []):
