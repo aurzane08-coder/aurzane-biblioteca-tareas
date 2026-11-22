@@ -582,7 +582,7 @@ body:has(> div.h) > div.h h1{font:400 clamp(2.4rem,4.6vw,3.6rem)/1.05 var(--v-se
   body:has(> div.h):not(:has(.ficha,.rt)) > main.w{display:grid;grid-template-columns:minmax(0,760px) minmax(300px,1fr);column-gap:64px;align-items:start}
   body:has(> div.h):not(:has(.ficha,.rt)) > main.w>*{grid-column:1}
   body:has(> div.h):not(:has(.ficha,.rt)) > main.w::after{content:"";grid-column:2;grid-row:1/span 60;position:sticky;top:90px;margin-top:28px;height:min(560px,70vh);border-radius:20px;border-top:3px solid #C7B99B;
-    background:linear-gradient(180deg,rgba(18,37,31,0) 50%,rgba(18,37,31,.55)),url("https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=900&q=70&auto=format&fit=crop") center/cover no-repeat #183D32}
+    background:linear-gradient(180deg,rgba(18,37,31,0) 50%,rgba(18,37,31,.55)),var(--v4-info-foto,url("https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=900&q=70&auto=format&fit=crop")) center/cover no-repeat #183D32}
 }
 body:has(> div.h) > main h2,body:has(> div.h) > main h3{font-family:var(--v-serif)!important;font-weight:400!important;font-size:1.6rem}
 
@@ -640,3 +640,5 @@ html.az-v4 .tarjetas:has(> .panel .tabla){grid-template-columns:repeat(2,minmax(
 @media (max-width:700px){html.az-v4 .tarjetas:has(> .panel .tabla){grid-template-columns:1fr!important}}
 /* Tests en inglés y portugués: cinco por fila en pantallas anchas (diez tests, dos filas completas) */
 @media (min-width:1280px){html.az-v4 .tx-indice .tx-rejilla{grid-template-columns:repeat(5,minmax(0,1fr))!important}}
+/* Fichas de universidad: la columna de datos acompaña al bajar por la lista de grados */
+@media (min-width:901px) and (min-height:960px){html.az-v4 .ficha > aside{position:sticky;top:84px;align-self:start}}

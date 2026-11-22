@@ -225,3 +225,14 @@
   }
   if (d.readyState === 'loading') d.addEventListener('DOMContentLoaded', function () { poner(0); }); else poner(0);
 })(document);
+/* Páginas informativas y legales: cada una con su propia foto en la columna lateral (del catálogo, según el título) */
+(function (d) {
+  function poner() {
+    var m = d.querySelector('body > div.h ~ main.w'); if (!m || d.querySelector('.ficha, .rt') || !window.AurzaneBanco) return;
+    window.AurzaneBanco.listo(function () {
+      var t = (d.querySelector('body > div.h h1') || {}).textContent || d.title;
+      var f = window.AurzaneBanco.foto('general', t + ' ' + location.pathname, 900); if (f) m.style.setProperty('--v4-info-foto', 'url("' + f + '")');
+    });
+  }
+  if (d.readyState === 'loading') d.addEventListener('DOMContentLoaded', poner); else poner();
+})(document);
