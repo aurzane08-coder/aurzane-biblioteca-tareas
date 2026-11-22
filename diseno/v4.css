@@ -469,3 +469,18 @@ html[data-tema="oscuro"] body:has(#worldFilters) .paper .abstract::after{backgro
 body:has(#worldFilters) .hero-wrap::before{opacity:1!important;background-image:var(--v4-rh-foto,url('https://images.unsplash.com/photo-1481627834876-b7833e8f5570?q=70&w=2000&auto=format&fit=crop'))!important;background-position:center 40%!important}
 body:has(#worldFilters) .hero-wrap::after{background:linear-gradient(90deg,rgba(18,37,31,.93) 0%,rgba(18,37,31,.8) 45%,rgba(18,37,31,.45) 100%)!important}
 @media(max-width:760px){body:has(#worldFilters) .hero-wrap::after{background:linear-gradient(180deg,rgba(18,37,31,.8),rgba(18,37,31,.94) 70%)!important}}
+/* Biblioteca de libros: portada con foto ancha de biblioteca bajo velo verde (v4.2), el abanico de portadas encima */
+body:has(#abanico) .banner{position:relative;isolation:isolate;color:#F6F5F0;padding-top:72px!important;padding-bottom:56px!important}
+body:has(#abanico) .banner::before{content:"";position:absolute;top:0;bottom:0;left:calc(50% - 50vw);right:calc(50% - 50vw);z-index:-1;border-bottom:1px solid rgba(199,185,155,.4);
+  background:linear-gradient(90deg,rgba(18,37,31,.96) 0%,rgba(18,37,31,.86) 45%,rgba(18,37,31,.5) 100%),url("https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=2000&q=70&auto=format&fit=crop") center/cover no-repeat #12251F}
+body:has(#abanico) .banner h1{color:#F6F5F0!important}
+body:has(#abanico) .banner .lead{color:#DDE2DC!important}
+body:has(#abanico) .banner .cifras-peq{color:#C9D0C9!important}
+body:has(#abanico) .banner .btn:not(.sec){background:#D9CDB2!important;color:#12251F!important}
+body:has(#abanico) .banner .btn.sec{color:#F6F5F0!important;border-color:rgba(246,245,240,.5)!important;background:transparent!important}
+body:has(#abanico) .banner .tipos a,body:has(#abanico) .banner .tipos button{color:#F6F5F0!important;border-color:rgba(246,245,240,.35)!important;background:rgba(18,37,31,.4)!important}
+@media(max-width:760px){body:has(#abanico) .banner::before{background:linear-gradient(180deg,rgba(18,37,31,.82),rgba(18,37,31,.95)),url("https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=1000&q=70&auto=format&fit=crop") center/cover no-repeat #12251F}}
+/* Biblioteca: la barra del buscador se funde con la portada verde (sin franja clara entre el menú y la foto) */
+html.az-v4-navy body:has(#abanico) .cabecera{background:#12251F!important;border-bottom:0!important}
+body:has(#abanico) .cabecera .busca input{background:#FFFFFF!important;color:#252724!important;border-color:transparent!important}
+body:has(#abanico) .cabecera .busca button{background:#D9CDB2!important;color:#12251F!important}
