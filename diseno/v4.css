@@ -558,3 +558,18 @@ html[data-tema="oscuro"].az-ds .tipo-tag{background:#2B5848!important;color:#F6F
 html[data-tema="oscuro"].az-ds .cat-badge{background:#C7B99B!important;color:#12251F!important}
 html.az-ds .f-main .tipo-tag,html.az-ds .f-main .cat-badge,html.az-ds .f-main-tags>*{background:rgba(246,245,240,.94)!important;color:#12251F!important}
 html.az-ds .f-chip{font-family:var(--v-sans)!important;font-style:normal!important;font-weight:600!important}
+/* LEARN · catálogo de cursos: franja con foto ancha detrás del título, ancho de 1280 y etiquetas legibles */
+body:has(.intenciones) .w{max-width:1280px!important;padding:0 24px!important}
+body:has(.intenciones) main{position:relative;isolation:isolate;padding-top:64px}
+body:has(.intenciones) main::before{content:"";position:absolute;top:0;left:calc(50% - 50vw);right:calc(50% - 50vw);height:440px;z-index:-1;border-bottom:1px solid rgba(199,185,155,.4);
+  background:linear-gradient(90deg,rgba(18,37,31,.95) 0%,rgba(18,37,31,.84) 46%,rgba(18,37,31,.45) 100%),url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=2000&q=70&auto=format&fit=crop") center/cover no-repeat #12251F}
+body:has(.intenciones) main>h1{color:#F6F5F0!important;font-family:var(--v-serif)!important;font-weight:400!important}
+body:has(.intenciones) main>.lead{color:#DDE2DC!important;max-width:60ch}
+body:has(.intenciones) main>.buscar{margin-top:44px}
+body:has(.intenciones) .chip.oro{background:#183D32!important;color:#F6F5F0!important}
+html[data-tema="oscuro"] body:has(.intenciones) .chip.oro{background:#C7B99B!important;color:#12251F!important}
+body:has(.intenciones) .reco-et{color:#5B4A26!important}
+html[data-tema="oscuro"] body:has(.intenciones) .reco-et{color:#D9CDB2!important}
+@media(max-width:700px){body:has(.intenciones) main::before{height:470px}}
+body:has(.intenciones) main>.buscar input{background:#FFFFFF!important;border-color:transparent!important}
+body:has(.intenciones) main>.intenciones{margin-top:44px!important}
