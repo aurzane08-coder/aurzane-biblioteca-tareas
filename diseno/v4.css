@@ -512,3 +512,27 @@ html.az-ds-mind .siguiente.g-lista>a.scard:first-child b{font-size:2rem!importan
 /* cabeceras con letra de sistema en negrita (ejercicios y otras páginas antiguas): la serif de la marca */
 html.az-v4 .hero h1{font-family:var(--v-serif)!important;font-weight:400!important}
 html.az-ds-mind body:has(.g-lista) .wrap{max-width:1280px!important;padding-left:24px!important;padding-right:24px!important}
+/* OVP (v4.2): portada con foto ancha de estudiantes bajo velo verde, instrumentos con foto y «Para quién es» con imagen */
+html.az-ds-ovp.az-ds.az-pm body section.hero.hero{position:relative;background:linear-gradient(90deg,rgba(18,37,31,.95) 0%,rgba(18,37,31,.84) 46%,rgba(18,37,31,.45) 100%),url("https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=2000&q=70&auto=format&fit=crop") center/cover no-repeat #12251F!important;color:#F6F5F0!important;border-bottom:1px solid rgba(199,185,155,.4)}
+html.az-ds-ovp section.hero::before,html.az-ds-ovp section.hero::after{display:none!important}
+html.az-ds-ovp section.hero .hero-in{max-width:1280px!important;margin:0 auto!important;padding:72px 24px 72px!important}
+html.az-ds-ovp section.hero h1{color:#F6F5F0!important;max-width:22ch}
+html.az-ds-ovp section.hero h1 span{color:#D9CDB2!important}
+html.az-ds-ovp section.hero p,html.az-ds-ovp section.hero .hero-note{color:#DDE2DC!important;max-width:56ch}
+html.az-ds-ovp section.hero .eyebrow{color:#D9CDB2!important;font:600 .8rem var(--v-sans)!important;font-style:normal!important;letter-spacing:.1em!important}
+html.az-ds-ovp section.hero .btn-primary{background:#D9CDB2!important;color:#12251F!important}
+html.az-ds-ovp section.hero .btn-ghost{color:#F6F5F0!important;border-color:rgba(246,245,240,.5)!important;background:transparent!important}
+@media(max-width:760px){html.az-ds-ovp.az-ds.az-pm body section.hero.hero{background:linear-gradient(180deg,rgba(18,37,31,.82),rgba(18,37,31,.95)),url("https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1000&q=70&auto=format&fit=crop") center/cover no-repeat #12251F!important}html.az-ds-ovp section.hero .hero-in{padding:56px 16px 48px!important}}
+html.az-ds-ovp .section{max-width:1280px!important;padding-left:24px!important;padding-right:24px!important}
+html.az-ds-ovp .instrumentos-grid{gap:16px!important;border:0!important;background:none!important}
+html.az-ds-ovp .instrumento{padding:0 22px 22px!important;overflow:hidden;border-radius:16px!important;border:1px solid rgba(37,39,36,.12)!important;border-top:3px solid #C7B99B!important;background:#FFFFFF!important}
+html.az-ds-ovp .instrumento img.v4-foto{display:block;width:calc(100% + 44px);max-width:none;margin:0 -22px 16px;aspect-ratio:16/9;object-fit:cover;background:#183D32}
+html[data-tema="oscuro"].az-ds-ovp .instrumento{background:#183D32!important;border-color:rgba(242,239,230,.14)!important}
+html.az-ds-ovp .como-funciona-nota{display:grid!important;grid-template-columns:minmax(0,1fr) 380px;gap:32px;align-items:center;overflow:hidden}
+html.az-ds-ovp .como-funciona-nota::after{content:"";grid-column:2;grid-row:1/span 9;align-self:stretch;min-height:220px;border-radius:14px;background:url("https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=900&q=70&auto=format&fit=crop") center/cover no-repeat #183D32}
+@media(max-width:860px){html.az-ds-ovp .como-funciona-nota{grid-template-columns:1fr}html.az-ds-ovp .como-funciona-nota::after{grid-column:1;grid-row:auto}}
+html.az-ds-ovp.az-ds.az-pm body section.hero.hero{max-width:none!important;width:auto!important;margin:0!important;border-radius:0!important;min-height:0!important}
+html.az-ds-ovp body{font-family:var(--v-sans)!important}
+html.az-ds-ovp .h1,html.az-ds-ovp .h2,html.az-ds-ovp h2,html.az-ds-ovp h3,html.az-ds-ovp h4,html.az-ds-ovp .i-sigla{font-family:var(--v-serif)!important;font-weight:400!important}
+html.az-ds-ovp .i-sigla{font-size:1.45rem!important;color:#12251F}
+html[data-tema="oscuro"].az-ds-ovp .i-sigla{color:#F6F5F0}

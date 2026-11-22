@@ -193,3 +193,17 @@
   function iniciar() { if (d.querySelector('a.scard') && window.AurzaneBanco) window.AurzaneBanco.listo(poner); }
   if (d.readyState === 'loading') d.addEventListener('DOMContentLoaded', iniciar); else iniciar();
 })(document);
+/* OVP: cada instrumento con una foto real del banco (orientación, estudiantes, estudio) */
+(function (d) {
+  if (!/(^|\.)ovp\.aurzane\.com$/.test(location.hostname)) return;
+  var T = ['orientación vocacional carrera', 'estudiantes universidad', 'autoestima confianza', 'estudiar hábitos aula', 'concentración atención memoria', 'graduación carrera universidad'];
+  function poner() {
+    [].forEach.call(d.querySelectorAll('.instrumento:not([data-v4f])'), function (el, i) {
+      var u = window.AurzaneBanco && window.AurzaneBanco.foto('nexus', T[i % T.length] + ' ' + el.textContent.slice(0, 80), 640); if (!u) return;
+      var im = d.createElement('img'); im.className = 'v4-foto'; im.src = u; im.alt = ''; im.loading = 'lazy'; im.width = 640; im.height = 360;
+      el.insertBefore(im, el.firstChild); el.setAttribute('data-v4f', '1');
+    });
+  }
+  function iniciar() { if (window.AurzaneBanco) window.AurzaneBanco.listo(poner); }
+  if (d.readyState === 'loading') d.addEventListener('DOMContentLoaded', iniciar); else iniciar();
+})(document);
