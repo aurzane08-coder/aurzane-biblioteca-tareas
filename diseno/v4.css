@@ -625,3 +625,18 @@ html.az-v4[data-tema="oscuro"] .stats-resumen .stat-tile{background:#162B24!impo
 html.az-v4[data-tema="oscuro"] .stats-resumen .stat-ic{background:#C7B99B!important;color:#10231D!important}
 html.az-v4[data-tema="oscuro"] .stats-resumen .stat-v{color:#F2EFE6!important}
 html.az-v4[data-tema="oscuro"] .stats-resumen .stat-k{color:#B9C2BB!important}
+/* «¿Y ahora qué?» al final de calculadoras y tests: todas las tarjetas en una fila, sin huérfanas */
+@media (min-width:700px){html.az-v4 .siguiente{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))!important}}
+/* Calculadoras de BUILD/LIVE: sin hueco bajo un formulario corto, campo de municipio a todo el ancho y tablas a todo el ancho */
+@media (min-width:901px){
+  html.az-v4 .app.v4-app-foto{align-items:stretch!important}
+  html.az-v4 .app.v4-app-foto > .panel:not(.res){display:flex;flex-direction:column}
+  html.az-v4 .app.v4-app-foto > .panel:not(.res)::after{content:"";flex:1 1 0;min-height:0;margin-top:18px;border-radius:14px;border-top:3px solid #C7B99B;background:linear-gradient(180deg,rgba(15,42,34,0) 55%,rgba(15,42,34,.35)),var(--v4-app-foto) center/cover no-repeat,#12251F}
+  html.az-v4 .app.v4-app-foto > .res{align-self:start}
+}
+html.az-v4 .campo input[list]{width:100%!important;font:500 1.05rem var(--v-sans)!important;padding:13px 14px!important;border-radius:12px!important;border:1.5px solid rgba(24,61,50,.18)!important;background:#FBFAF6!important;color:#252724!important;min-height:50px}
+html.az-v4[data-tema="oscuro"] .campo input[list]{background:#10231D!important;color:#F2EFE6!important;border-color:#2B4A3F!important}
+html.az-v4 .tarjetas:has(> .panel .tabla){grid-template-columns:repeat(2,minmax(0,1fr))!important}
+@media (max-width:700px){html.az-v4 .tarjetas:has(> .panel .tabla){grid-template-columns:1fr!important}}
+/* Tests en inglés y portugués: cinco por fila en pantallas anchas (diez tests, dos filas completas) */
+@media (min-width:1280px){html.az-v4 .tx-indice .tx-rejilla{grid-template-columns:repeat(5,minmax(0,1fr))!important}}

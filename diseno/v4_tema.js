@@ -83,9 +83,9 @@
   function fotoCab() {
     if (d.documentElement.classList.contains('az-v4-herofoto')) return;
     var og = d.querySelector('meta[property="og:image"]'), u = og && og.content;
-    var cab = d.querySelector('main > .hero, section.hero, header.hero, .u-hero, .hero-wrap, .world-header, main > header:first-child, body > div.h'); if (!cab) return;
+    var cab = d.querySelector('main > .hero, section.hero, header.hero, .u-hero, .hero-wrap, .world-header, main > header:first-child, body > div.h, .tx-hero'); if (!cab) return;
     if (!u || /og-portada|logo|portadas?\//i.test(u)) {   // sin foto propia: una del catálogo según el título de la página
-      if (window.AurzaneBanco && !cab.__v4b) { cab.__v4b = 1; window.AurzaneBanco.listo(function () { var f = window.AurzaneBanco.foto('general', d.title, 1600); if (f) { var m = d.querySelector('meta[property="og:image"]'); cab.style.setProperty('--v4-foto', 'url("' + f + '")'); cab.setAttribute('data-v4-foto', '1'); d.documentElement.classList.add('az-v4-cabfoto'); } }); }
+      if (window.AurzaneBanco && !cab.__v4b) { cab.__v4b = 1; window.AurzaneBanco.listo(function () { var f = window.AurzaneBanco.foto((d.documentElement.className.match(/az-ds-(mind|nexus|live|learn|build|ovp)/) || [0, 'general'])[1], d.title, 1600); if (f) { var m = d.querySelector('meta[property="og:image"]'); cab.style.setProperty('--v4-foto', 'url("' + f + '")'); cab.setAttribute('data-v4-foto', '1'); d.documentElement.classList.add('az-v4-cabfoto'); } }); }
       return;
     }
     var cs = getComputedStyle(cab); if (/url\(/.test(cs.backgroundImage)) return;
@@ -189,8 +189,9 @@
   function poner() {
     if (!window.AurzaneBanco) return;
     [].forEach.call(d.querySelectorAll('a.scard:not(.az-cf):not([data-v4f])'), function (a) {
-      var t = (a.textContent || '') + ' ' + (a.getAttribute('data-obj') || '') + ' meditación calma';
-      var u = window.AurzaneBanco.foto('mind', t, 640); if (!u) return;
+      var cm = (d.documentElement.className.match(/az-ds-(mind|nexus|live|learn|build|ovp)/) || [])[1] || 'general';   // el mundo de la página decide el banco
+      var t = (a.textContent || '') + ' ' + (a.getAttribute('data-obj') || '') + (cm === 'mind' ? ' meditación calma' : '');
+      var u = window.AurzaneBanco.foto(cm, t, 640); if (!u) return;
       var im = d.createElement('img'); im.className = 'v4-foto'; im.src = u; im.alt = ''; im.loading = 'lazy'; im.width = 640; im.height = 400;
       a.insertBefore(im, a.firstChild); a.setAttribute('data-v4f', '1');
     });
@@ -211,4 +212,16 @@
   }
   function iniciar() { if (window.AurzaneBanco) window.AurzaneBanco.listo(poner); }
   if (d.readyState === 'loading') d.addEventListener('DOMContentLoaded', iniciar); else iniciar();
+})(document);
+/* Calculadoras: el panel del formulario se estira hasta el del resultado y rellena el hueco con la foto de la portada */
+(function (d) {
+  function poner(n) {
+    var app = d.querySelector('.app'), hv = d.querySelector('[data-v4-foto]');
+    var f = hv && (hv.style.getPropertyValue('--v4-foto') || getComputedStyle(hv).getPropertyValue('--v4-foto'));
+    var fo = app && app.querySelector(':scope > .panel:not(.res)'), re = app && app.querySelector(':scope > .res');
+    if (app && f && f.trim() && fo && re) {   // solo si al formulario le sobra hueco frente al resultado
+      if (re.offsetHeight - fo.offsetHeight > 140) { app.style.setProperty('--v4-app-foto', f.trim()); app.classList.add('v4-app-foto'); return; } }
+    if (n < 20) setTimeout(function () { poner(n + 1); }, 300);
+  }
+  if (d.readyState === 'loading') d.addEventListener('DOMContentLoaded', function () { poner(0); }); else poner(0);
 })(document);
