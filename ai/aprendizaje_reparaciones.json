@@ -1,6 +1,6 @@
 {
  "enlaces_rotos|relanzar_enlaces": [
-  3,
+  4,
   3
  ],
  "automatizacion|reintentar_flujo": [
@@ -46,5 +46,9 @@
  "prueba_fallida|relanzar_marketing": [
   0,
   3
+ ],
+ "prueba_fallida|observar": [
+  1,
+  0
  ]
 }
