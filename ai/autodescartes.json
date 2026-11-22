@@ -1,5 +1,27 @@
 [
  {
+  "fecha": "2026-11-22",
+  "id": "pmc-PMC13761057",
+  "tipo": "estudio",
+  "titulo": "Depression burden and differential treatment effects in PTSD and substance use disorder comorbidity: findings from <i>Project Harmony</i>",
+  "url": "https://europepmc.org/article/PMC/PMC13761057",
+  "motivo": "La IA le dio 2/10: no encaja en la biblioteca",
+  "probados": [
+   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13761057.1/PMC13761057.1.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-22",
+  "id": "pmc-PMC13772567",
+  "tipo": "estudio",
+  "titulo": "A meta-analysis on the prevalence of parents' complicated grief and post-traumatic stress disorder following perinatal loss in East and Southeast Asia",
+  "url": "https://europepmc.org/article/PMC/PMC13772567",
+  "motivo": "La IA le dio 2/10: no encaja en la biblioteca",
+  "probados": [
+   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13761057.1/PMC13761057.1.pdf"
+  ]
+ },
+ {
   "fecha": "2026-11-21",
   "id": "pmc-PMC13782237",
   "tipo": "estudio",
@@ -3013,25 +3035,5 @@
   "url": "https://archive.org/details/mia_20261105_202611",
   "motivo": "No tiene un PDF libre que se pueda descargar",
   "probados": []
- },
- {
-  "fecha": "2026-11-06",
-  "id": "oa-W7225098793",
-  "tipo": "libro",
-  "titulo": "The Orthopaedic Ergonomics Playbook: A Visual Guide to Musculoskeletal Injury Prevention and Surgeon Longevity in Orthopaedic Surgery",
-  "url": "https://doi.org/10.7302/dspace/30936",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": []
- },
- {
-  "fecha": "2026-11-05",
-  "id": "oa-W7203507838",
-  "tipo": "libro",
-  "titulo": "Ontología del rompecabezas: La constitución fragmentaria del sujeto y la transmutación del sufrimiento",
-  "url": "https://philarchive.org/rec/MARODR-2",
-  "motivo": "Dice ser un libro pero el PDF solo tiene 16 páginas (es un capítulo, artículo o resumen)",
-  "probados": [
-   "200 application/octet-st https://zenodo.org/records/21864310/files/Ontolog%C3%ADa%20del%20rompecabezas%20La%20constituci%C3%B3n%20fragm"
-  ]
  }
 ]

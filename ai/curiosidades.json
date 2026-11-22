@@ -1,5 +1,30 @@
 [
  {
+  "id": "cur-7aaf6dee79",
+  "tipo": "curiosidad",
+  "titulo": "¿Sabías que tu cara controla lo que sientes?",
+  "dato": "Según la hipótesis del feedback facial de Strack, Martin y Stepper de 1988, sonreír puede hacerte sentir un poco más feliz.",
+  "resumen": "Según la hipótesis del feedback facial de Strack, Martin y Stepper de 1988, sonreír puede hacerte sentir un poco más feliz. Los músculos de la cara envían señales al cerebro que modulan la intensidad de la emoción. Aunque no crea la emoción de la nada, la expresión física influye en cómo la procesamos.",
+  "fuente": "Strack, Martin y Stepper, 1988",
+  "hashtags": [
+   "psicologia",
+   "emociones",
+   "curiosidades",
+   "aurzane"
+  ],
+  "fuente_id": "tema-326-1",
+  "url": "https://mind.aurzane.com/",
+  "portada": "",
+  "tema": "curiosidad",
+  "idioma": "es",
+  "autores": "Strack, Martin y Stepper, 1988",
+  "motivo": "Guion escrito por Gemini a partir de un tema de psicología. Revisa que el dato sea correcto antes de aprobar.",
+  "verificada": "2026-11-22",
+  "fecha": "2026-11-22",
+  "auto": true,
+  "verificacion": "El texto explica con precisión el estudio original y modera adecuadamente la afirmación sin caer en exageraciones."
+ },
+ {
   "id": "cur-c1b859b4a3",
   "tipo": "curiosidad",
   "titulo": "¿Sabías que dormir duplica tu capacidad de resolver problemas?",

@@ -2014,5 +2014,17 @@
   "publicados": 117,
   "pruebas_ok": 57,
   "pruebas_total": 57
+ },
+ {
+  "fecha": "2026-11-22T05:46",
+  "estado": "mal",
+  "avisos": 2,
+  "arreglos": 2,
+  "errores_24h": 0,
+  "redes_ok_24h": 26,
+  "cola": 0,
+  "publicados": 117,
+  "pruebas_ok": 48,
+  "pruebas_total": 57
  }
 ]
