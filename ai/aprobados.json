@@ -1,5 +1,33 @@
 [
  {
+  "id": "oa-W7134041508",
+  "tipo": "libro",
+  "titulo": "Manual de detección y actuación ante la explotación sexual infantil y adolescente",
+  "url": "https://doi.org/10.36006/09784-1",
+  "autores": "Beatriz Benavente, Noemí Pereda",
+  "anio": 2026,
+  "editorial": "",
+  "doi": "10.36006/09784-1",
+  "pdf": "https://octaedro.com/?sdm_process_download=1&download_id=93268",
+  "pdfs": [
+   "https://octaedro.com/?sdm_process_download=1&download_id=93268"
+  ],
+  "landings": [
+   "https://doi.org/10.36006/09784-1"
+  ],
+  "lic": "cc-by-nc",
+  "idioma": "es",
+  "tema": "Child Abuse and Trauma",
+  "resumen": "La explotación sexual infantil y adolescente (ESIA) representa una de las formas más graves y menos visibles de violencia sexual. A pesar de su impacto persistente en la salud física, mental y emocional de millones de niños, niñas y adolescentes en todo el mundo, continúa siendo un fenómeno frecuentemente silenciado, rodeado de mitos y connotaciones erróneas que dificultan su detección y abordaje. El Manual de detección y actuación ante la explotación sexual infantil y adolescente ofrece una mirada rigurosa, actualizada y profundamente humana sobre esta problemática, proporcionando a profesionales, investigadores y estudiantes una herramienta esencial para comprenderla e intervenir de manera eficaz y respetuosa con los derechos de las víctimas. El manual aborda las distintas fases del proceso de intervención: desde la identificación de indicadores de riesgo y los instrumentos de detecció",
+  "motivo": "Libro de psicología en acceso abierto con licencia CC-BY-NC, de una editorial académica.",
+  "pdf_origen": "https://octaedro.com/?sdm_process_download=1&download_id=93268",
+  "paginas": 128,
+  "portada": "https://aurzane.com/biblioteca/recientes/portadas/oa-W7134041508.jpg",
+  "publicado": "2026-11-22",
+  "nota": 8,
+  "auto": true
+ },
+ {
   "id": "pmc-PMC13777642",
   "tipo": "estudio",
   "titulo": "Understanding health behaviors and resilience during pandemics: a systematic review of ethical, cognitive, and existential dimensions",

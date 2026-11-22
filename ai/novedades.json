@@ -1,63 +1,104 @@
 [
  {
+  "fecha": "2026-11-22",
+  "url": "https://aurzane.com/biblioteca/recientes/oa-W7134041508/",
+  "titulo": "Libro abierto: Manual de detección y actuación ante la explotación sexual infantil y adolescente"
+ },
+ {
   "fecha": "2026-11-21",
   "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13777642/",
-  "titulo": "Estudio reciente: Understanding health behaviors and resilience during pandemics: a systematic review of ethical, cognitive, and"
+  "titulo": "Estudio reciente: Understanding health behaviors and resilience during pandemics: a systematic review of ethical, cognitive, and",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/pmc-PMC13777642.jpg",
+  "desc": "Purpose Pandemic events such as HIV/AIDS and COVID-19 destabilize not only public health systems but also the philosophical and ethical frameworks through which individuals interpret illness. Health b",
+  "titulo_completo": "Understanding health behaviors and resilience during pandemics: a systematic review of eth"
  },
  {
   "fecha": "2026-11-21",
   "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13787119/",
-  "titulo": "Estudio reciente: The effectiveness of AI-based cognitive behavioral therapy chatbots for anxiety and depression symptoms: a sys"
+  "titulo": "Estudio reciente: The effectiveness of AI-based cognitive behavioral therapy chatbots for anxiety and depression symptoms: a sys",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/pmc-PMC13787119.jpg",
+  "desc": "The effectiveness of AI-based cognitive behavioral therapy chatbots for anxiety and depression symptoms: a systematic review and meta-analysis. Yuan D, Dong P, Zheng X y otros, Frontiers in public hea",
+  "titulo_completo": "The effectiveness of AI-based cognitive behavioral therapy chatbots for anxiety and depres"
  },
  {
   "fecha": "2026-11-20",
   "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13764040/",
-  "titulo": "Estudio reciente: Prevalence of Anxiety Among Medical, Dental, and Nursing Students in Selected Balkan Countries: A Systematic R"
+  "titulo": "Estudio reciente: Prevalence of Anxiety Among Medical, Dental, and Nursing Students in Selected Balkan Countries: A Systematic R",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/pmc-PMC13764040.jpg",
+  "desc": "Background:  Anxiety is common among health science students, but the Balkan region is underrepresented in student mental health research and no regional synthesis exists. This systematic review and m",
+  "titulo_completo": "Prevalence of Anxiety Among Medical, Dental, and Nursing Students in Selected Balkan Count"
  },
  {
   "fecha": "2026-11-20",
   "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13771274/",
-  "titulo": "Estudio reciente: Efficacy of animal-assisted therapy for the relief of dental anxiety: quantitative synthesis of clinical rando"
+  "titulo": "Estudio reciente: Efficacy of animal-assisted therapy for the relief of dental anxiety: quantitative synthesis of clinical rando",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/pmc-PMC13771274.jpg",
+  "desc": "The aim of this systematic review was to comprehensively evaluate the efficacy of animal-assisted therapy (AAT) for alleviating dental anxiety based on clinical randomized controlled trials (RCTs), an",
+  "titulo_completo": "Efficacy of animal-assisted therapy for the relief of dental anxiety: quantitative synthes"
  },
  {
   "fecha": "2026-11-20",
   "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13768738/",
-  "titulo": "Estudio reciente: Global Prevalence of Clinically Significant Insomnia Among Cancer Patients: A Systematic Review and Meta-Analy"
+  "titulo": "Estudio reciente: Global Prevalence of Clinically Significant Insomnia Among Cancer Patients: A Systematic Review and Meta-Analy",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/pmc-PMC13768738.jpg",
+  "desc": "Background Clinically significant insomnia is associated with multiple adverse health outcomes in cancer patients. This study aimed to examine the global prevalence of clinically significant insomnia",
+  "titulo_completo": "Global Prevalence of Clinically Significant Insomnia Among Cancer Patients: A Systematic R"
  },
  {
   "fecha": "2026-11-20",
   "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13772180/",
-  "titulo": "Estudio reciente: Eco-anxiety as a public health imperative: from individual resilience to culturally informed holistic engageme"
+  "titulo": "Estudio reciente: Eco-anxiety as a public health imperative: from individual resilience to culturally informed holistic engageme",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/pmc-PMC13772180.jpg",
+  "desc": "Eco-anxiety has increasingly drawn public health attention. Although often conceptualized as an individual psychological burden, eco-anxiety may also serve as a catalyst for collective action. However",
+  "titulo_completo": "Eco-anxiety as a public health imperative: from individual resilience to culturally inform"
  },
  {
   "fecha": "2026-11-20",
   "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13763141/",
-  "titulo": "Estudio reciente: Inflammaging and Cellular Senescence in Postmenopausal Depression: Linking Estrogen Deficiency, Immune Dysregu"
+  "titulo": "Estudio reciente: Inflammaging and Cellular Senescence in Postmenopausal Depression: Linking Estrogen Deficiency, Immune Dysregu",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/pmc-PMC13763141.jpg",
+  "desc": "Postmenopausal depression is clinically heterogeneous and cannot be explained by estrogen deficiency alone. We propose a conceptual, testable neuroimmune-aging model in which endocrine decline may int",
+  "titulo_completo": "Inflammaging and Cellular Senescence in Postmenopausal Depression: Linking Estrogen Defici"
  },
  {
   "fecha": "2026-11-20",
   "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13770471/",
-  "titulo": "Estudio reciente: Neuroimaging of Anxiety in Mild Cognitive Impairment: Integrating Structural, Functional, Molecular, and Netwo"
+  "titulo": "Estudio reciente: Neuroimaging of Anxiety in Mild Cognitive Impairment: Integrating Structural, Functional, Molecular, and Netwo",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/pmc-PMC13770471.jpg",
+  "desc": "This narrative review summarizes neuroimaging evidence on the neurobiological correlates of anxiety symptoms in mild cognitive impairment (MCI) across the Alzheimer's disease continuum. A literature s",
+  "titulo_completo": "Neuroimaging of Anxiety in Mild Cognitive Impairment: Integrating Structural, Functional, "
  },
  {
   "fecha": "2026-11-20",
   "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13770370/",
-  "titulo": "Estudio reciente: A Global Overview of Interventions to Enhance Resilience Among Families with Pregnant Women: A Scoping Review"
+  "titulo": "Estudio reciente: A Global Overview of Interventions to Enhance Resilience Among Families with Pregnant Women: A Scoping Review",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/pmc-PMC13770370.jpg",
+  "desc": "Background Pregnancy affects the entire family system, yet resilience-oriented perinatal interventions may target either maternal capacities or family processes. The extent to which existing intervent",
+  "titulo_completo": "A Global Overview of Interventions to Enhance Resilience Among Families with Pregnant Wome"
  },
  {
   "fecha": "2026-11-20",
   "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13770452/",
-  "titulo": "Estudio reciente: Social isolation and loneliness among older persons in India: A qualitative evidence synthesis"
+  "titulo": "Estudio reciente: Social isolation and loneliness among older persons in India: A qualitative evidence synthesis",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/pmc-PMC13770452.jpg",
+  "desc": "Background and objectives There is a high prevalence of social isolation and loneliness among older persons in India. This review was conducted to explore the phenomenon of social isolation and loneli",
+  "titulo_completo": "Social isolation and loneliness among older persons in India: A qualitative evidence synth"
  },
  {
   "fecha": "2026-11-20",
   "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13759840/",
-  "titulo": "Estudio reciente: Effects of mindfulness-based interventions on negative emotions in patients with hypertension: a systematic re"
+  "titulo": "Estudio reciente: Effects of mindfulness-based interventions on negative emotions in patients with hypertension: a systematic re",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/pmc-PMC13759840.jpg",
+  "desc": "Background Psychological distress is common in hypertension and may impair disease management. Mindfulness-based interventions have been proposed to improve emotional and health-related outcomes, but",
+  "titulo_completo": "Effects of mindfulness-based interventions on negative emotions in patients with hypertens"
  },
  {
   "fecha": "2026-11-20",
   "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13766658/",
-  "titulo": "Estudio reciente: Efficacy of Digital Health Interventions for Insomnia: Systematic Review and Meta-Analysis of Randomized Contr"
+  "titulo": "Estudio reciente: Efficacy of Digital Health Interventions for Insomnia: Systematic Review and Meta-Analysis of Randomized Contr",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/pmc-PMC13766658.jpg",
+  "desc": "Background Insomnia is common, and treatments are limited by tolerability and access. Digital health interventions (DHIs) are increasingly used for sleep management, but evidence comparing multiple ou",
+  "titulo_completo": "Efficacy of Digital Health Interventions for Insomnia: Systematic Review and Meta-Analysis"
  },
  {
   "fecha": "2026-11-19",
@@ -593,10 +634,5 @@
   "fecha": "2026-11-08",
   "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13481040/",
   "titulo": "Estudio reciente: Low back pain, occupational stress, and physical fitness in intensive care nursing professionals"
- },
- {
-  "fecha": "2026-11-08",
-  "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13427018/",
-  "titulo": "Estudio reciente: Interventions to Promote Positive Mental Health in Family Caregivers: a Systematic Review"
  }
 ]
