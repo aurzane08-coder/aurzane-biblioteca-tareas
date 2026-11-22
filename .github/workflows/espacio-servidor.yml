@@ -1,11 +1,15 @@
 name: Espacio del servidor (informe)
 # Solo lee: mide qué ocupa la cuenta de SiteGround para decidir qué mover fuera. No borra ni mueve nada.
+# Vigilancia semanal (22/11/2026): si la cuenta pasa de 8 GB abre un aviso (issue) en GitHub, que llega por correo.
 on:
+  schedule:
+    - cron: '7 6 * * 1'
   workflow_dispatch:
   push:
     paths: ['.github/workflows/espacio-servidor.yml']
 permissions:
   contents: read
+  issues: write
 jobs:
   medir:
     runs-on: ubuntu-latest
@@ -17,6 +21,17 @@ jobs:
       SG_PORT: ${{ secrets.SG_PORT }}
       SG_PASS: ${{ secrets.SG_PASS }}
     steps:
+      - name: Vigilar el límite
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p ~/.ssh && printf '%s\n' "$SG_KEY" | tr -d '\r' > ~/.ssh/id && chmod 600 ~/.ssh/id
+          if [ -n "$SG_PASS" ]; then ssh-keygen -p -P "$SG_PASS" -N "" -f ~/.ssh/id >/dev/null; fi
+          K=$(ssh -i $HOME/.ssh/id -p ${SG_PORT:-18765} -o StrictHostKeyChecking=accept-new $SG_USER@$SG_HOST 'du -sk ~ | cut -f1'); M=$((K/1024))
+          echo "La cuenta usa $M MB"
+          if [ "$M" -gt 8192 ]; then
+            gh issue create -R "$GITHUB_REPOSITORY" --title "SiteGround casi lleno: $M MB" --body "La cuenta de SiteGround usa $M MB (aviso a partir de 8 GB). Revisa el informe del flujo «Espacio del servidor» para ver qué ha crecido." || true
+          fi
       - name: Medir
         run: |
           mkdir -p ~/.ssh && printf '%s\n' "$SG_KEY" | tr -d '\r' > ~/.ssh/id && chmod 600 ~/.ssh/id

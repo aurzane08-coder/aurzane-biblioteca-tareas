@@ -38,6 +38,7 @@ if os.path.exists(manif):
 def ident(ruta):
     b = os.path.basename(ruta); n = re.sub(r'\.[^.]+$', '', b)
     if ruta.startswith('biblioteca/pdf/'): return 'aurzane-bib-' + n
+    if ruta.startswith('biblioteca/recientes/pdf/'): return 'aurzane-rec-' + n
     m = re.match(r'marketing/(video|musica)/', ruta)
     return f'aurzane-marketing-{m.group(1)}' if m else None
 
@@ -77,6 +78,10 @@ for ruta, tam, dias in filas:
         md.update({'title': l.get('titulo', ''), 'creator': l.get('autores') or 'AURZANE', 'date': str(l.get('anio') or ''),
                    'publisher': l.get('editorial', ''), 'source': l.get('url', ''), 'licenseurl': lic_url(l.get('licencia'), l.get('licencia_url')),
                    'rights': l.get('licencia', ''), 'subject': 'psicología; AURZANE biblioteca', 'description': (l.get('resumen') or '') + ' Copia de la Biblioteca AURZANE (aurzane.com/biblioteca).'})
+    elif ruta.startswith('biblioteca/recientes/pdf/'):
+        # «Libros abiertos y estudios recientes»: solo se alojan en AURZANE los que tienen licencia libre que lo permite
+        md.update({'title': 'AURZANE · ' + os.path.basename(ruta), 'subject': 'psicología; acceso abierto; AURZANE biblioteca',
+                   'description': 'Obra en acceso abierto con licencia libre, alojada por la Biblioteca AURZANE (aurzane.com/biblioteca/recientes).'})
     else:
         if int(dias) < DIAS_MARKETING: continue
         tipo = 'video' if '/video/' in ruta else 'musica'
