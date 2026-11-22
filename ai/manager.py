@@ -1168,6 +1168,11 @@ nov = nov[:120]; guardar('novedades.json', nov); pagina_novedades()
 E = html.escape
 # 19/11/2026: títulos con cursivas de la fuente (<i>Verschickungskinder</i>): se muestran como cursiva, no como etiqueta escrita
 T = lambda t: re.sub(r'&lt;(/?)(i|em|b|strong|sup|sub)&gt;', r'<\1\2>', E(t or ''))
+def CORTA(t, n=880):   # los resúmenes se guardan cortados a 900 caracteres: se cierran en una frase o palabra completa
+    t = (t or '').strip()
+    if len(t) < n: return t
+    c = t[:n]; f = c.rfind('. ')
+    return c[:f + 1] if f > n * .5 else c[:c.rfind(' ')].rstrip(',;:') + '…'
 SIN_ETQ = lambda t: re.sub(r'</?(i|em|b|strong|sup|sub)>', '', t or '')
 LIC_TXT = {'cc-by': 'CC BY', 'cc-by-sa': 'CC BY-SA', 'cc-by-nd': 'CC BY-ND', 'cc-by-nc': 'CC BY-NC', 'cc-by-nc-sa': 'CC BY-NC-SA', 'cc-by-nc-nd': 'CC BY-NC-ND', 'cc0': 'CC0'}
 LIC_URL = lambda l: 'https://creativecommons.org/publicdomain/zero/1.0/deed.es' if l == 'cc0' else f'https://creativecommons.org/licenses/{l[3:]}/4.0/deed.es'
@@ -1193,12 +1198,17 @@ CSS = (':root{--bg:#F6F5F0;--sup:#FFFFFF;--tinta:#252724;--tinta-2:#5E605A;--lin
        'html[data-tema="oscuro"] .lee{background:var(--champ);color:#12251F!important}'
        '.ficha{display:grid;grid-template-columns:220px minmax(0,1fr);gap:32px;align-items:start}.ficha .rp{width:220px}.ficha p{max-width:72ch}'
        '.cred{font-size:.86rem;background:var(--salvia);border-left:3px solid var(--verde);border-radius:10px;padding:12px 14px;margin:14px 0}'
+       '.fh .ficha{grid-template-columns:200px minmax(0,1fr);gap:40px;align-items:end}.fh .ficha .rp{width:200px;box-shadow:0 22px 44px -16px rgba(0,0,0,.6);border-color:rgba(242,239,230,.25)}'
+       '.fh .miga{display:inline-block;font-size:.85rem;color:#D9CDB2;margin-bottom:14px}.fh .k{color:#D9CDB2}.fh .a{color:#DDE2DC;margin-top:12px}.fh h1{max-width:24ch}.fh .lee{background:var(--champ);color:#12251F!important}'
+       '.fcuerpo{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:56px;align-items:start}.fcuerpo h2{font-size:1.7rem;margin:0 0 10px}.r2{font-size:1.03rem;line-height:1.75;max-width:72ch;margin:0}'
+       '.fcuerpo .cred{margin:0;padding:20px 22px;border-left:0;border-top:3px solid var(--champ);border-radius:14px;position:sticky;top:90px;line-height:1.6}.fcuerpo .cred b{font:400 1.25rem var(--serif)}'
+       '.fcuerpo .cred a{color:var(--verde);font-weight:600}html[data-tema="oscuro"] .fcuerpo .cred a{color:#D9CDB2}'
        '#lector{margin-top:28px;background:#183D32;border-radius:14px;padding:12px;position:relative}#lector .bar{display:flex;gap:8px;align-items:center;flex-wrap:wrap;color:#ECEAE2;font-size:.88rem;padding:4px 4px 12px}'
        '#lector button,#lector .bar a{background:#24503F;color:#fff;border:0;border-radius:8px;padding:7px 12px;font:600 .85rem var(--sans);cursor:pointer;text-decoration:none}#lector .pg{flex:1}'
        '#hojas{height:min(80vh,1100px);overflow:auto;border-radius:8px;background:#12251F}#hojas canvas{display:block;margin:0 auto 10px;background:#fff;box-shadow:0 4px 14px rgba(0,0,0,.35);max-width:100%;height:auto}'
-       '#lector:fullscreen #hojas{height:calc(100vh - 70px)}.ext{color:#ECEAE2;padding:30px;text-align:center}.ext a{color:#D9CDB2}'
+       '#lector:fullscreen #hojas{height:calc(100vh - 70px)}.ext{color:#ECEAE2;padding:30px;text-align:center}.ext a{color:#D9CDB2}.ext .lee{background:var(--champ);color:#12251F!important;margin-top:4px}'
        '@media(max-width:980px){main.w:has(> .rt){grid-template-columns:1fr}}'
-       '@media(max-width:640px){.h{padding:40px 16px 36px}main{padding:22px 16px 48px}.rt{grid-template-columns:auto minmax(0,1fr);gap:14px;padding:14px}.rp,.rp.foto{width:84px}.ficha{grid-template-columns:1fr}.ficha .rp{width:160px}}')
+       '@media(max-width:640px){.h{padding:40px 16px 36px}main{padding:22px 16px 48px}.rt{grid-template-columns:auto minmax(0,1fr);gap:14px;padding:14px}.rp,.rp.foto{width:84px}.ficha,.fh .ficha,.fcuerpo{grid-template-columns:1fr;gap:22px}.ficha .rp,.fh .ficha .rp{width:150px}.fcuerpo .cred{position:static}}')
 CAB = lambda titulo, desc, canon, img: ('<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">'
     '<script src="https://aurzane.com/aurzane-paleta.js"></script>'
     f'<title>{E(titulo)}</title><meta name="description" content="{E(desc[:158])}"><link rel="canonical" href="{canon}">'
@@ -1253,12 +1263,12 @@ def pagina_recientes():
                          'datePublished': str(p.get('anio') or ''), 'publisher': p.get('editorial') or None, 'license': LIC_URL(lic) if lic.startswith('cc') else None, 'isAccessibleForFree': True, 'image': p.get('portada') or None, 'url': f'https://aurzane.com/biblioteca/recientes/{p["id"]}/'}, ensure_ascii=False)
         open(d + '/index.html', 'w', encoding='utf-8').write(CAB(f'{SIN_ETQ(p["titulo"])[:90]} | Leer gratis en AURZANE', desc, f'https://aurzane.com/biblioteca/recientes/{p["id"]}/', p.get('portada', '')) +
             f'<script type="application/ld+json">{ld}</script>'
-            f'<div class="h"><div class="w"><a href="/biblioteca/recientes/">Libros abiertos y estudios recientes</a></div></div><main class="w"><div class="ficha"><div class="rp">{portada_html(p)}</div><div>'
+            f'<div class="h fh"><div class="w ficha"><div class="rp">{portada_html(p)}</div><div><a class="miga" href="/biblioteca/recientes/">Libros abiertos y estudios recientes</a>'
             f'<div class="k">{"Libro abierto" if p["tipo"] == "libro" else "Estudio reciente"} · {E(lt)}' + (f' · {p["paginas"]} páginas' if p.get('paginas') else '') + ('' if p.get('idioma') == 'es' else '<span class="i">En inglés</span>') + '</div>'
-            f'<h1 style="color:inherit">{T(p["titulo"])}</h1><p class="a">{E(datos(p))}</p>' + (f'<p class="r">{E(p["resumen"])}</p>' if p.get('resumen') else '') +
-            f'<div class="cred">Obra de {E(p.get("autores") or "sus autores")}' + (f', publicada por {E(p["editorial"])}' if p.get('editorial') else '') + f' con licencia <a href="{LIC_URL(lic)}" target="_blank" rel="noopener license">{E(lt)}</a>. '
-            f'AURZANE la ofrece sin modificaciones. <a href="{E(p["url"])}" target="_blank" rel="noopener">Ficha original</a>.</div>'
-            f'<p class="b"><a class="lee" href="#lector">Empezar a leer</a></p></div></div>{lector}</main></body></html>')
+            f'<h1 style="color:inherit">{T(p["titulo"])}</h1><p class="a">{E(datos(p))}</p><p class="b"><a class="lee" href="#lector">Empezar a leer</a></p></div></div></div>'
+            f'<main class="w"><div class="fcuerpo"><div>' + (f'<h2>De qué trata</h2><p class="r2">{E(CORTA(p["resumen"]))}</p>' if p.get('resumen') else f'<h2>De qué trata</h2><p class="r2">{E(desc)}</p>') + '</div>'
+            f'<aside class="cred"><b>Licencia y autoría</b><br>Obra de {E(p.get("autores") or "sus autores")}' + (f', publicada por {E(p["editorial"])}' if p.get('editorial') else '') + f' con licencia <a href="{LIC_URL(lic)}" target="_blank" rel="noopener license">{E(lt)}</a>. '
+            f'AURZANE la ofrece sin modificaciones. <a href="{E(p["url"])}" target="_blank" rel="noopener">Ficha original</a>.</aside></div>{lector}</main></body></html>')
 pagina_recientes()
 
 # ---------- 13. IndexNow: avisa a Bing, Yandex y otros buscadores de las páginas nuevas (gratis) ----------
