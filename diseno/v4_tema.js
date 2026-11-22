@@ -95,11 +95,12 @@
   }
   if (d.readyState === 'complete') setTimeout(fotoCab, 300); else window.addEventListener('load', function () { setTimeout(fotoCab, 300); });
 })(document);
-/* Banco de imágenes propio (aurzane.com/img/banco, AVIF en nuestro servidor): elige una foto real según el mundo y el tema del texto.
+/* Catálogo de imágenes (índice banco/banco.json en GitHub, servido por jsDelivr; las fotos salen del CDN de Pexels en AVIF, sin ocupar
+   espacio en SiteGround): elige una foto real según el mundo y el tema del texto, distinta para cada texto.
    AurzaneBanco.foto(mundo, texto, ancho) devuelve la URL (o null si el índice aún no cargó); AurzaneBanco.listo(fn) avisa al cargar. */
 (function (w, d) {
   if (w.AurzaneBanco) return;
-  var idx = null, cola = [], BASE = 'https://aurzane.com/img/banco/';
+  var idx = null, cola = [], INDICE = 'https://cdn.jsdelivr.net/gh/aurzane08-coder/aurzane-biblioteca-tareas@main/banco/banco.json';
   var CLAVES = [
     [/ansiedad|anxi|p[áa]nico|panic|worry|preocupa/i, 'mind', 'ansiedad'], [/depres|tristeza|sadness|mood|[áa]nimo/i, 'mind', 'tristeza'],
     [/estr[ée]s|stress|burnout|agotamiento/i, 'mind', 'estres'], [/cerebr|brain|neuro|cognit/i, 'mind', 'cerebro'],
@@ -136,12 +137,12 @@
       Object.keys(mm).forEach(function (k) { lista = lista.concat(mm[k]); });
     }
     if (!lista.length) return null;
-    var x = lista[h(t + mundo) % lista.length];
-    return BASE + x.f + '-' + ((ancho || 640) > 800 ? '1600' : '640') + '.avif';
+    var x = lista[h(t + mundo) % lista.length], w = (ancho || 640) > 800 ? 1600 : 640;
+    return 'https://images.pexels.com/photos/' + x.p + '/pexels-photo-' + x.p + '.jpeg?auto=compress&cs=tinysrgb&w=' + w + '&h=' + Math.round(w * .625) + '&fit=crop';
   }
   w.AurzaneBanco = { foto: foto, listo: function (f) { if (idx) f(); else cola.push(f); } };
   try {
-    fetch(BASE + 'banco.json', { cache: 'force-cache' }).then(function (r) { return r.ok ? r.json() : null; })
+    fetch(INDICE).then(function (r) { return r.ok ? r.json() : null; })
       .then(function (j) { if (!j) return; idx = j; cola.splice(0).forEach(function (f) { try { f(); } catch (e) {} }); }).catch(function () {});
   } catch (e) {}
 })(window, document);

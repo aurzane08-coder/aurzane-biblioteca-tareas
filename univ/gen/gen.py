@@ -307,7 +307,7 @@ ANCHOS_WM = (120, 250, 330, 500, 960, 1280, 1920)   # tamaños estándar de Wiki
 # Espejo propio (22/11/2026, pedido de Adrián): las fotos de Commons se guardan en nuestro servidor en AVIF
 # (flujo «Universidades: fotos en nuestro servidor», univ/espejo.py); las que ya están se sirven desde allí.
 ESPEJO = cargar_json('espejo.json') or {}
-def commons(f, ancho=500, local=True):
+def commons(f, ancho=500, local=False):   # local=True usaría las copias en SiteGround (desactivado el 22/11/2026)
     if local and f and f in ESPEJO:
         return f'https://nexus.aurzane.com/universidades/img/{ESPEJO[f]}-{330 if ancho <= 330 else 960}.avif'
     ancho = min((a for a in ANCHOS_WM if a >= ancho), default=1920)

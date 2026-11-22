@@ -1,11 +1,8 @@
 name: Universidades - fotos en nuestro servidor (AVIF)
 # Copia a nexus.aurzane.com/universidades/img/ las fotos de Commons del catálogo, en AVIF, por lotes hasta tenerlas todas.
 # Después regenera y publica las páginas para que usen las copias propias (flujo «Universidades: publicar»).
+# DESACTIVADO (22/11/2026): Adrián prefiere no guardar fotos en SiteGround (se llenaba). Las fotos se sirven desde Wikimedia.
 on:
-  push:
-    paths: ['univ/espejo.py', '.github/workflows/univ-espejo.yml']
-  schedule:
-    - cron: '11 */2 * * *'
   workflow_dispatch:
 permissions:
   contents: write
