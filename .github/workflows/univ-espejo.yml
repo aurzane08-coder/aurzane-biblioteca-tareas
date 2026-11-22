@@ -1,0 +1,45 @@
+name: Universidades - fotos en nuestro servidor (AVIF)
+# Copia a nexus.aurzane.com/universidades/img/ las fotos de Commons del catálogo, en AVIF, por lotes hasta tenerlas todas.
+# Después regenera y publica las páginas para que usen las copias propias (flujo «Universidades: publicar»).
+on:
+  push:
+    paths: ['univ/espejo.py', '.github/workflows/univ-espejo.yml']
+  schedule:
+    - cron: '11 */2 * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency: { group: univ-espejo, cancel-in-progress: false }
+jobs:
+  espejo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    env:
+      SG_KEY: ${{ secrets.SG_KEY }}
+      SG_HOST: ${{ secrets.SG_HOST }}
+      SG_USER: ${{ secrets.SG_USER }}
+      SG_PORT: ${{ secrets.SG_PORT }}
+      SG_PASS: ${{ secrets.SG_PASS }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Preparar
+        run: |
+          pip install -q "pillow>=11.3"
+          mkdir -p ~/.ssh && printf '%s\n' "$SG_KEY" | tr -d '\r' > ~/.ssh/id && chmod 600 ~/.ssh/id
+          if [ -n "$SG_PASS" ]; then ssh-keygen -p -P "$SG_PASS" -N "" -f ~/.ssh/id >/dev/null; fi
+          echo "S=ssh -i $HOME/.ssh/id -p ${SG_PORT:-18765} -o StrictHostKeyChecking=accept-new $SG_USER@$SG_HOST" >> $GITHUB_ENV
+          K=$(ssh -i $HOME/.ssh/id -p ${SG_PORT:-18765} -o StrictHostKeyChecking=accept-new $SG_USER@$SG_HOST 'du -sk ~/www | cut -f1'); echo "La cuenta usa $((K/1024)) MB"
+          if [ "$K" -gt 8900000 ]; then echo "::warning title=Universidades::Servidor casi lleno ($((K/1024)) MB); espero a que se libere espacio."; echo LLENO=1 >> $GITHUB_ENV; fi
+      - name: Descargar y convertir un lote
+        if: env.LLENO != '1'
+        run: python3 univ/espejo.py salida 700
+      - name: Subir al servidor y guardar el índice
+        if: env.LLENO != '1'
+        run: |
+          if ls salida/*.avif >/dev/null 2>&1; then
+            printf '%s\n' '<IfModule mod_headers.c>' '<FilesMatch "\.avif$">' 'Header set Cache-Control "public, max-age=31536000, immutable"' '</FilesMatch>' '</IfModule>' 'AddType image/avif .avif' > salida/.htaccess
+            ( cd salida && tar cf - . ) | $S 'mkdir -p ~/www/nexus.aurzane.com/public_html/universidades/img && cd ~/www/nexus.aurzane.com/public_html/universidades/img && tar xf - --no-same-owner && ls | wc -l'
+          fi
+          git config user.name "aurzane-bot"; git config user.email "bot@aurzane.com"
+          git add univ/data/espejo.json univ/data/espejo-fallos.json
+          git diff --cached --quiet || { git commit -qm "universidades: fotos en nuestro servidor (lote)"; for i in 1 2 3; do git pull -q --rebase -X theirs && git push -q && break; sleep 5; done; }

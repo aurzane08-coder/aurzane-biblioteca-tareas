@@ -304,7 +304,12 @@ def _dom(w):
 ANCHOS_WM = (120, 250, 330, 500, 960, 1280, 1920)   # tamaños estándar de Wikimedia: salen de su caché (17/11/2026, auditoría final)
 
 
-def commons(f, ancho=500):
+# Espejo propio (22/11/2026, pedido de Adrián): las fotos de Commons se guardan en nuestro servidor en AVIF
+# (flujo «Universidades: fotos en nuestro servidor», univ/espejo.py); las que ya están se sirven desde allí.
+ESPEJO = cargar_json('espejo.json') or {}
+def commons(f, ancho=500, local=True):
+    if local and f and f in ESPEJO:
+        return f'https://nexus.aurzane.com/universidades/img/{ESPEJO[f]}-{330 if ancho <= 330 else 960}.avif'
     ancho = min((a for a in ANCHOS_WM if a >= ancho), default=1920)
     return 'https://commons.wikimedia.org/wiki/Special:FilePath/' + urllib.parse.quote(f.replace(' ', '_')) + f'?width={ancho}' if f else ''
 IMG_DOM, IMG_NOM = collections.defaultdict(dict), collections.defaultdict(dict)
@@ -780,7 +785,7 @@ def pagina_ciudad(p, c, us):
             {'@type': 'ListItem', 'position': 3, 'name': c, 'item': canon}]}]}
     fc = IMG.get('c', {}).get(iso, {}).get(_n(c))
     hf, cred = hero_foto(fc, 'Foto de ' + c)
-    h = cabeza(tit, desc, canon, og_img=commons(fc, 1280) if fc else None, jsonld=jsonld) + topbar('espana' if p == 'España' else 'paises') + f'''
+    h = cabeza(tit, desc, canon, og_img=commons(fc, 1280, local=False) if fc else None, jsonld=jsonld) + topbar('espana' if p == 'España' else 'paises') + f'''
 <main><section class="hero{' con-foto' if hf else ''}" style="padding-bottom:40px"{hf}><div class="wrap">{migas(("Universidades", BASE), (p, f"{BASE}{PSLUG[p]}/"), (c, ""))}
 <h1>{bandera(iso, "g")} Universidades en <em>{e(c)}</em></h1><p class="lead">{e(lead)}</p>{cred}</div></section>
 {panel_listado(p, us, ciudad_fija=c)}
@@ -886,7 +891,7 @@ def ficha(u, vecinas):
     bloque_sc = bloque_scorecard(u) if p == 'Estados Unidos' else ''
     fina = not n and not u.get('descripcion') and not (u.get('foto_archivo') or u.get('foto_ciudad')) and not bloque_sc
     if fina: FINAS.append(url)
-    h = cabeza(tit, desc_meta, url, og_img=commons(u.get('foto_archivo') or u.get('foto_ciudad'), 1280) if (u.get('foto_archivo') or u.get('foto_ciudad')) else None, jsonld=jl, robots='noindex,follow' if fina else None, precarga=commons(u.get('foto_archivo') or u.get('foto_ciudad'), 960) or None) + topbar('espana' if es_es else 'paises') + f'''
+    h = cabeza(tit, desc_meta, url, og_img=commons(u.get('foto_archivo') or u.get('foto_ciudad'), 1280, local=False) if (u.get('foto_archivo') or u.get('foto_ciudad')) else None, jsonld=jl, robots='noindex,follow' if fina else None, precarga=commons(u.get('foto_archivo') or u.get('foto_ciudad'), 960) or None) + topbar('espana' if es_es else 'paises') + f'''
 <main><section class="hero ficha-h{' con-foto' if hf else ''}"{hf}><div class="wrap">{migas(("Universidades", BASE), (p, f"{BASE}{ps}/"), *([(u["ciudad"], f"{BASE}{ps}/ciudad/{slug(u['ciudad'])}/")] if u["ciudad"] and vecinas and p != "Estados Unidos" else []), (u["nombre"], ""))}
 <div class="fila" style="margin-top:16px"><span class="mono" aria-hidden="true">{e(u["extra"].get("acronimo") or iniciales(u["nombre"]))[:5]}</span><div><h1 style="margin:0">{e(u["nombre"])}</h1></div></div>
 <ul class="meta">{''.join(meta)}</ul>{f'<p class="lead" style="margin-top:14px">{e(u["descripcion"])}</p>' if u["descripcion"] else ''}
