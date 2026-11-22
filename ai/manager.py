@@ -1406,53 +1406,143 @@ try:
     for f in pub: f['url'] = 'https://aurzane.com/frases/#' + f['id']
     os.makedirs(OUT + '/frases', exist_ok=True)
     if pub:
-        temas_ = collections.Counter(f['tema'] for f in pub)
-        lista_ = ''.join(f'<figure id="{E(f["id"])}" data-tema="{E(f["tema"])}"><blockquote>{E(f["texto"])}</blockquote><figcaption><strong>{E(f["autor"])}</strong>'
-                         + (f' ({E(f["vida"])})' if f.get('vida') else '') + (f'. {E(f["descripcion"])}' if f.get('descripcion') else '')
-                         + f' <span class="f">Vía <a href="{E(f["url_fuente"])}" rel="nofollow noopener">{E(f["fuente"])}</a> · {E(f["publicada"])}</span></figcaption></figure>' for f in pub)
-        # 22/11/2026 (rediseño v4): cabecera con foto bajo velo verde, frases en tarjetas a dos o tres columnas, filtro por tema
+        # 22/11/2026 (rediseño v4.2, revisión de Adrián): cabecera con foto y la frase destacada, temas con foto para navegar,
+        # buscador y filtros por tema y por autor, y cada frase como un rectángulo largo con su foto (banco de imágenes propio, AVIF).
+        temas_ = collections.Counter(f['tema'] for f in pub if f['tema'] != 'frase del día')
+        autores_ = collections.Counter(f['autor'] for f in pub)
+        try: banco_ = json.load(open(os.path.join('..', 'banco', 'banco.json'), encoding='utf-8'))
+        except Exception: banco_ = {}
+        TEMA_FOTO = {'paciencia': ('general', 'calma'), 'esperanza': ('general', 'cielo'), 'libertad': ('general', 'montana'), 'dolor': ('mind', 'tristeza'),
+                     'caracter': ('mind', 'autoestima'), 'bondad': ('mind', 'familia'), 'alegria': ('mind', 'emociones'), 'naturaleza': ('general', 'naturaleza'),
+                     'perseverancia': ('live', 'correr'), 'tolerancia': ('mind', 'pareja'), 'soledad': ('mind', 'soledad'), 'amistad': ('mind', 'adolescentes'),
+                     'valor': ('general', 'montana'), 'sabiduria': ('learn', 'libros'), 'felicidad': ('general', 'mar'), 'pensamiento': ('mind', 'cerebro'),
+                     'vida': ('general', 'paisaje'), 'tiempo': ('general', 'cielo'), 'optimismo': ('general', 'frases'), 'educacion': ('learn', 'aula'),
+                     'confianza': ('mind', 'autoestima'), 'verdad': ('learn', 'lectura'), 'adversidad': ('general', 'mar'), 'gratitud': ('mind', 'familia'),
+                     'miedo': ('mind', 'ansiedad'), 'conocimiento': ('learn', 'libros'), 'trabajo': ('build', 'trabajo'), 'amor': ('mind', 'pareja'),
+                     'exito': ('nexus', 'graduacion'), 'humildad': ('general', 'naturaleza'), 'tristeza': ('mind', 'tristeza'), 'voluntad': ('live', 'deporte'),
+                     'fracaso': ('mind', 'estres'), 'esfuerzo': ('live', 'correr'), 'mente': ('mind', 'cerebro')}
+        RESERVA = ['1466692476868-aef1dfb1e735', '1506126613408-eca07ce68773', '1454496522488-7a8e488e8606', '1481627834876-b7833e8f5570', '1505142468610-359e7d316be0']
+        def foto_fr(tema, semilla, ancho=640):
+            m, t = TEMA_FOTO.get(tema, ('general', 'frases'))
+            lista = (banco_.get(m) or {}).get(t) or (banco_.get('general') or {}).get('frases') or []
+            n = int(hashlib.md5(str(semilla).encode()).hexdigest(), 16)
+            if lista: return f'https://aurzane.com/img/banco/{lista[n % len(lista)]["f"]}-{"1600" if ancho > 800 else "640"}.avif'
+            return f'https://images.unsplash.com/photo-{RESERVA[n % len(RESERVA)]}?w={ancho}&q=70&fit=crop&auto=format'
+        def nom_t(t): return t.replace('-', ' ').capitalize().replace('Caracter', 'Carácter').replace('Educacion', 'Educación').replace('Sabiduria', 'Sabiduría').replace('Alegria', 'Alegría').replace('Exito', 'Éxito')
+        dest = max(pub[:30], key=lambda f: (f.get('nota', 0), -len(f['texto']))) if pub else None
+        lista_ = ''.join(
+            f'<article class="fr" id="{E(f["id"])}" data-tema="{E(f["tema"])}" data-autor="{E(f["autor"])}">'
+            f'<a class="fr-img" href="#{E(f["id"])}" tabindex="-1" aria-hidden="true"><img src="{E(foto_fr(f["tema"], f["id"]))}" alt="" loading="lazy" width="640" height="400"></a>'
+            f'<div class="fr-c"><p class="fr-tema"><button type="button" data-ir-t="{E(f["tema"])}">{E(nom_t(f["tema"]))}</button></p>'
+            f'<blockquote>{E(f["texto"])}</blockquote>'
+            f'<p class="fr-autor"><button type="button" data-ir-a="{E(f["autor"])}">{E(f["autor"])}</button>' + (f' <span>({E(f["vida"])})</span>' if f.get('vida') else '')
+            + (f'<span class="fr-desc">{E(f["descripcion"])}</span>' if f.get('descripcion') else '') + '</p>'
+            f'<p class="fr-pie"><span>Vía <a href="{E(f["url_fuente"])}" rel="nofollow noopener">{E(f["fuente"])}</a></span>'
+            '<button type="button" class="fr-copiar">Copiar frase</button></p></div></article>' for f in pub)
+        tiles_ = ''.join(f'<button type="button" class="tile" data-ir-t="{E(t)}"><img src="{E(foto_fr(t, "tema-" + t))}" alt="" loading="lazy" width="640" height="400"><span><b>{E(nom_t(t))}</b><small>{n} frases</small></span></button>'
+                         for t, n in temas_.most_common(8))
         CSS_FR = ('''
 :root{--bg:#F6F5F0;--sup:#FFFFFF;--tinta:#252724;--tinta-2:#5E605A;--linea:rgba(37,39,36,.12);--verde:#183D32;--hondo:#12251F;--champ:#C7B99B;--salvia:#EAEFEA;
  --serif:"Instrument Serif","Bodoni Moda",Georgia,serif;--sans:"Manrope","Instrument Sans",system-ui,sans-serif}
 html[data-tema="oscuro"]{--bg:#12251F;--sup:#183D32;--tinta:#ECEAE2;--tinta-2:#B9C2BB;--linea:rgba(242,239,230,.14);--salvia:#1D4538}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tinta);font:16px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
-.w{max-width:1240px;margin:0 auto;padding:0 24px}
-.fr-cab{position:relative;color:#F6F5F0;background:linear-gradient(90deg,rgba(18,37,31,.95),rgba(18,37,31,.78) 50%,rgba(18,37,31,.35)),url("https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?w=1800&q=70&auto=format&fit=crop") center/cover no-repeat #12251F}
-.fr-cab .w{padding-top:64px;padding-bottom:56px}
+button{font:inherit;color:inherit}
+.w{max-width:1280px;margin:0 auto;padding:0 24px}
+.fr-cab{color:#F6F5F0;background:linear-gradient(90deg,rgba(18,37,31,.96),rgba(18,37,31,.82) 48%,rgba(18,37,31,.4)),url("FOTO_CAB") center/cover no-repeat #12251F;border-bottom:1px solid rgba(199,185,155,.4)}
+.fr-cab .w{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:48px;align-items:end;padding-top:64px;padding-bottom:60px}
 .fr-cab p.mig{font-size:.88rem;color:#DDE2DC;margin:0}.fr-cab a{color:#F6F5F0}
-.fr-cab h1{font:400 clamp(2.8rem,5.6vw,4.4rem)/1 var(--serif);margin:12px 0 0}
+.fr-cab h1{font:400 clamp(2.8rem,5.6vw,4.6rem)/1 var(--serif);margin:12px 0 0}
 .fr-cab h1::after{content:"";display:block;width:64px;height:2px;margin-top:18px;background:linear-gradient(90deg,#C7B99B 0 62%,#5E8A78 62% 100%)}
-.fr-cab p.lema{max-width:56ch;color:#DDE2DC;margin:18px 0 0;font-size:1.05rem}
+.fr-cab p.lema{max-width:52ch;color:#DDE2DC;margin:18px 0 0;font-size:1.05rem}
 .fr-cab .n{margin-top:22px;font-size:.92rem;color:#C9D0C9}.fr-cab .n b{font:400 1.7rem var(--serif);color:#F6F5F0;margin-right:6px}
-.t{display:flex;flex-wrap:wrap;gap:8px;padding:26px 0 8px;border-bottom:1px solid var(--linea)}
-.t button{min-height:40px;border:1px solid var(--linea);background:var(--sup);color:var(--tinta);border-radius:999px;padding:0 16px;font:600 .9rem var(--sans);cursor:pointer}
-.t button[aria-pressed=true]{background:var(--verde);border-color:var(--verde);color:#F6F5F0}
-html[data-tema="oscuro"] .t button[aria-pressed=true]{background:var(--champ);border-color:var(--champ);color:#12251F}
-.fr-l{columns:3 320px;column-gap:18px;padding:26px 0 10px}
-figure{break-inside:avoid;margin:0 0 18px;padding:24px 24px 20px;background:var(--sup);border:1px solid var(--linea);border-left:3px solid var(--champ);border-radius:14px}
-figure:nth-child(3n+2){border-left-color:var(--verde)}figure:nth-child(5n+3){background:var(--salvia)}
-html[data-tema="oscuro"] figure:nth-child(3n+2){border-left-color:#5E8A78}
-blockquote{margin:0;font:400 1.5rem/1.3 var(--serif);color:var(--tinta)}
-blockquote::before{content:"«";color:var(--champ)}blockquote::after{content:"»";color:var(--champ)}
-figcaption{margin-top:14px;color:var(--tinta-2);font-size:.93rem}figcaption strong{color:var(--tinta)}
-.f{display:block;font-size:.8rem;margin-top:4px}figcaption a{color:inherit}
-.pie{font-size:.88rem;color:var(--tinta-2);padding:10px 0 60px}.pie a{color:var(--tinta);font-weight:600}
-@media (max-width:600px){.w{padding:0 16px}.fr-cab .w{padding-top:44px;padding-bottom:40px}blockquote{font-size:1.32rem}figure{padding:20px 18px 16px}}
-''')
+.dest{background:rgba(18,37,31,.62);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border:1px solid rgba(217,205,178,.35);border-radius:18px;padding:28px 30px}
+.dest small{font-weight:600;color:#D9CDB2;letter-spacing:.04em}
+.dest blockquote{margin:10px 0 0;font:400 clamp(1.5rem,2.4vw,2rem)/1.25 var(--serif);color:#F6F5F0}
+.dest p{margin:14px 0 0;color:#DDE2DC}
+.tiles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;padding:34px 0 8px}
+.tile{position:relative;aspect-ratio:16/10;border:0;border-radius:16px;overflow:hidden;padding:0;cursor:pointer;background:#183D32;text-align:left}
+.tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.tile:hover img{transform:scale(1.05)}
+.tile::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(18,37,31,0) 30%,rgba(18,37,31,.9))}
+.tile span{position:absolute;left:16px;right:16px;bottom:12px;z-index:1;display:flex;flex-direction:column;color:#F6F5F0}
+.tile b{font:400 1.5rem/1.1 var(--serif)}.tile small{color:#DDE2DC;font-size:.84rem}
+.barra{position:sticky;top:0;z-index:5;display:flex;flex-wrap:wrap;gap:12px 18px;align-items:center;margin-top:26px;padding:14px 18px;background:var(--sup);border:1px solid var(--linea);border-top:3px solid var(--champ);border-radius:16px;box-shadow:0 10px 26px rgba(18,37,31,.07)}
+.barra input,.barra select{min-height:44px;border:1px solid var(--linea);border-radius:12px;background:var(--bg);color:var(--tinta);padding:0 14px;font:500 .95rem var(--sans)}
+.barra input{flex:1 1 260px}.barra select{flex:0 1 220px}
+.barra .cuenta{margin-left:auto;color:var(--tinta-2);font-size:.9rem}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:16px 0 4px;scrollbar-width:thin}
+.chips button{flex:0 0 auto;min-height:38px;border:1px solid var(--linea);background:var(--sup);border-radius:999px;padding:0 14px;font:600 .86rem var(--sans);cursor:pointer}
+.chips button[aria-pressed=true]{background:var(--verde);border-color:var(--verde);color:#F6F5F0}
+html[data-tema="oscuro"] .chips button[aria-pressed=true]{background:var(--champ);border-color:var(--champ);color:#12251F}
+.lista{display:flex;flex-direction:column;gap:16px;padding:18px 0 10px}
+.fr{display:grid;grid-template-columns:320px minmax(0,1fr);background:var(--sup);border:1px solid var(--linea);border-radius:18px;overflow:hidden}
+.fr:nth-child(even){grid-template-columns:minmax(0,1fr) 320px}.fr:nth-child(even) .fr-img{order:2}
+.fr-img{display:block;min-height:220px;background:#183D32}.fr-img img{width:100%;height:100%;object-fit:cover;display:block}
+.fr-c{padding:26px 32px 22px;display:flex;flex-direction:column;border-left:3px solid var(--champ)}
+.fr:nth-child(even) .fr-c{border-left:0;border-right:3px solid #5E8A78}
+.fr-tema{margin:0}.fr-tema button,.fr-autor button{border:0;background:none;padding:0;cursor:pointer}
+.fr-tema button{font:600 .8rem var(--sans);color:var(--tinta-2);letter-spacing:.04em}
+.fr blockquote{margin:8px 0 0;font:400 clamp(1.45rem,2.2vw,1.95rem)/1.28 var(--serif);color:var(--tinta);max-width:62ch}
+.fr blockquote::before{content:"«";color:var(--champ)}.fr blockquote::after{content:"»";color:var(--champ)}
+.fr-autor{margin:14px 0 0;color:var(--tinta-2)}.fr-autor button{font-weight:700;color:var(--tinta);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+.fr-desc{display:block;font-size:.9rem}
+.fr-pie{margin:auto 0 0;padding-top:14px;display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:.82rem;color:var(--tinta-2)}
+.fr-pie a{color:inherit}.fr-copiar{border:1px solid var(--linea);background:transparent;border-radius:999px;min-height:36px;padding:0 14px;font:600 .82rem var(--sans);cursor:pointer}
+.mas{display:block;margin:10px auto 0;min-height:46px;padding:0 26px;border-radius:999px;border:0;background:var(--verde);color:#F6F5F0;font:700 .95rem var(--sans);cursor:pointer}
+html[data-tema="oscuro"] .mas{background:var(--champ);color:#12251F}
+.autores{padding:40px 0 10px}.autores h2,.temas-t{font:400 clamp(1.7rem,3vw,2.3rem)/1.1 var(--serif);margin:0}
+.autores h2::after,.temas-t::after{content:"";display:block;width:56px;height:2px;margin-top:12px;background:linear-gradient(90deg,#C7B99B 0 62%,#5E8A78 62% 100%)}
+.autores div{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.autores button{border:1px solid var(--linea);background:var(--sup);border-radius:999px;min-height:38px;padding:0 14px;cursor:pointer;font-weight:600}
+.autores small{color:var(--tinta-2);font-weight:500;margin-left:4px}
+.temas-t{margin-top:40px}
+.pie{font-size:.88rem;color:var(--tinta-2);padding:20px 0 60px}.pie a{color:var(--tinta);font-weight:600}
+.vacio{padding:40px;text-align:center;color:var(--tinta-2)}
+@media (max-width:980px){.fr-cab .w{grid-template-columns:1fr}.tiles{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:720px){.w{padding:0 16px}.fr-cab .w{padding-top:44px;padding-bottom:40px;gap:28px}
+ .fr,.fr:nth-child(even){grid-template-columns:1fr}.fr:nth-child(even) .fr-img{order:0}.fr-img{min-height:0;aspect-ratio:16/8}
+ .fr-c,.fr:nth-child(even) .fr-c{border:0;border-top:3px solid var(--champ);padding:20px 18px 16px}
+ .barra{position:static}.barra .cuenta{margin-left:0;width:100%}.barra select{flex:1 1 140px}}
+''').replace('FOTO_CAB', foto_fr('optimismo', 'cabecera-frases', 1800))
+        JS_FR = ('''<script>(function(){var L=[].slice.call(document.querySelectorAll(".fr")),q=document.getElementById("frQ"),sa=document.getElementById("frA"),cu=document.getElementById("frN"),mas=document.getElementById("frMas"),
+ est={t:"",a:"",q:"",n:24};function norm(s){return(s||"").toLowerCase().normalize("NFD").replace(/[\\u0300-\\u036f]/g,"")}
+ function pintar(){var v=0,qq=norm(est.q);L.forEach(function(f){var ok=(!est.t||f.dataset.tema===est.t)&&(!est.a||f.dataset.autor===est.a)&&(!qq||norm(f.textContent).indexOf(qq)>=0);
+  if(ok)v++;f.hidden=!ok||v>est.n});cu.textContent=v+(v===1?" frase":" frases");mas.hidden=v<=est.n;
+  document.getElementById("frVacio").hidden=v>0;[].forEach.call(document.querySelectorAll(".chips button"),function(b){b.setAttribute("aria-pressed",b.dataset.t===est.t)});sa.value=est.a;
+  try{history.replaceState(null,"",location.pathname+(est.t?"?tema="+encodeURIComponent(est.t):est.a?"?autor="+encodeURIComponent(est.a):""))}catch(e){}}
+ function ir(o){est.t=o.t||"";est.a=o.a||"";est.n=24;pintar();document.getElementById("frBarra").scrollIntoView({behavior:"smooth",block:"start"})}
+ document.addEventListener("click",function(e){var b=e.target.closest("[data-ir-t],[data-ir-a],.chips button,.fr-copiar");if(!b)return;
+  if(b.classList.contains("fr-copiar")){var f=b.closest(".fr");var t="«"+f.querySelector("blockquote").textContent+"» "+f.dataset.autor;try{navigator.clipboard.writeText(t).then(function(){b.textContent="Copiada"})}catch(x){}return}
+  if(b.dataset.irA)return ir({a:b.dataset.irA});ir({t:b.dataset.irT!==undefined?b.dataset.irT:b.dataset.t})});
+ q.addEventListener("input",function(){est.q=q.value;est.n=24;pintar()});sa.addEventListener("change",function(){est.a=sa.value;est.t="";est.n=24;pintar()});
+ mas.addEventListener("click",function(){est.n+=24;pintar()});
+ var u=new URLSearchParams(location.search);est.t=u.get("tema")||"";est.a=u.get("autor")||"";
+ if(location.hash){var h=document.getElementById(location.hash.slice(1));if(h&&h.classList.contains("fr")){est.n=L.length}}pintar();})();</script>''')
         open(OUT + '/frases/index.html', 'w', encoding='utf-8').write(
             '<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><script src="https://aurzane.com/aurzane-paleta.js"></script>'
-            f'<title>Frases célebres para pensar y sentirte mejor | AURZANE</title><meta name="description" content="{len(pub)} frases célebres de autores clásicos sobre la vida, la esperanza, la calma y la superación. Cada día, frases nuevas seleccionadas por AURZANE.">'
-            '<link rel="canonical" href="https://aurzane.com/frases/"><meta property="og:image" content="https://aurzane.com/og-portada.jpg">'
+            f'<title>Frases célebres para pensar y sentirte mejor | AURZANE</title><meta name="description" content="Frases célebres de {len(autores_)} autores clásicos sobre la vida, la esperanza, la calma y el carácter, con su autor y su fuente. Busca por tema o por autor.">'
+            '<link rel="canonical" href="https://aurzane.com/frases/">'
+            f'<meta property="og:image" content="{E(foto_fr("optimismo", "cabecera-frases", 1800))}">'
             f'<style>{CSS_FR}</style></head><body>'
-            '<header class="fr-cab"><div class="w"><p class="mig"><a href="https://aurzane.com/">AURZANE</a> / Frases</p><h1>Frases célebres</h1>'
+            '<header class="fr-cab"><div class="w"><div><p class="mig"><a href="https://aurzane.com/">AURZANE</a> / Frases</p><h1>Frases célebres</h1>'
             '<p class="lema">Palabras de autores clásicos para pensar, consolarte o tomar impulso. Cada día añadimos frases nuevas. '
             '<a href="https://aurzane.com/#hoy">Ver la frase de hoy</a> · <a href="https://aurzane.com/biblioteca/">Biblioteca</a></p>'
-            f'<p class="n"><b>{len(pub)}</b>frases de {len(set(f["autor"] for f in pub))} autores</p></div></header><main class="w" id="contenido">'
-            '<div class="t" role="group" aria-label="Filtrar por tema"><button type="button" aria-pressed="true" data-t="">Todas</button>'
-            + ''.join(f'<button type="button" aria-pressed="false" data-t="{E(t)}">{E(t.replace("-", " ").capitalize())}</button>' for t, _ in temas_.most_common(14)) + '</div>'
-            + '<div class="fr-l">' + lista_ + '</div><p class="pie">Solo publicamos frases de autores en dominio público y refranes tradicionales, con su autor y la fuente donde las encontramos. ¿Te gustan? <a href="https://ko-fi.com/adriansan7" target="_blank" rel="noopener">Invítanos a un café en Ko-fi</a>.</p></main>'
-            '<script>document.querySelectorAll(".t button").forEach(function(b){b.onclick=function(){var t=b.dataset.t;document.querySelectorAll(".t button").forEach(function(x){x.setAttribute("aria-pressed",x===b)});'
-            'document.querySelectorAll("figure").forEach(function(f){f.hidden=t&&f.dataset.tema!==t})}})</script></body></html>')
+            f'<p class="n"><b>{len(pub)}</b>frases de {len(autores_)} autores</p></div>'
+            + (f'<aside class="dest" aria-label="Frase destacada"><small>Frase destacada</small><blockquote>«{E(dest["texto"])}»</blockquote><p>{E(dest["autor"])}</p></aside>' if dest else '')
+            + '</div></header><main class="w" id="contenido">'
+            '<h2 class="temas-t">Explora por tema</h2><div class="tiles">' + tiles_ + '</div>'
+            '<div class="barra" id="frBarra"><label class="sr" for="frQ" style="position:absolute;left:-9999px">Buscar</label><input id="frQ" type="search" placeholder="Busca una palabra o un autor" autocomplete="off">'
+            '<label for="frA" style="position:absolute;left:-9999px">Autor</label><select id="frA"><option value="">Todos los autores</option>'
+            + ''.join(f'<option value="{E(a)}">{E(a)} ({n})</option>' for a, n in sorted(autores_.items(), key=lambda x: x[0].lower()))
+            + '</select><span class="cuenta" id="frN"></span></div>'
+            '<div class="chips" role="group" aria-label="Filtrar por tema"><button type="button" aria-pressed="true" data-t="">Todas</button>'
+            + ''.join(f'<button type="button" aria-pressed="false" data-t="{E(t)}">{E(nom_t(t))} · {n}</button>' for t, n in temas_.most_common()) + '</div>'
+            + '<div class="lista">' + lista_ + '</div><p class="vacio" id="frVacio" hidden>No hay frases con ese filtro. Prueba con otra palabra o elige «Todas».</p>'
+            '<button type="button" class="mas" id="frMas">Ver más frases</button>'
+            '<section class="autores"><h2>Autores con más frases</h2><div>'
+            + ''.join(f'<button type="button" data-ir-a="{E(a)}">{E(a)}<small>{n}</small></button>' for a, n in autores_.most_common(24)) + '</div></section>'
+            '<p class="pie">Solo publicamos frases de autores en dominio público y refranes tradicionales, con su autor y la fuente donde las encontramos. Las fotos son reales, de nuestro banco de imágenes (Pexels y Pixabay).</p></main>'
+            + JS_FR + '</body></html>')
     if usadas.get('dias', {}).get(HOY):
         hoy = usadas['dias'][HOY]
     else:
