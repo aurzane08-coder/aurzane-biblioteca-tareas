@@ -1129,5 +1129,27 @@
   "pais_nombre": "Nicaragua",
   "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al número de emergencias del país. ",
   "fecha": "2026-11-21"
+ },
+ {
+  "consulta": "universidades en guatemala",
+  "titulo": "Guía completa de universidades en Guatemala y cómo elegir carrera",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "oferta": "universidades",
+  "pais": "GTM",
+  "pais_nombre": "Guatemala",
+  "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al número de emergencias del país. ",
+  "fecha": "2026-11-22"
+ },
+ {
+  "consulta": "cuantas universidades publicas hay en guatemala",
+  "titulo": "Universidades públicas y privadas en Guatemala: diferencias clave",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "oferta": "universidades",
+  "pais": "GTM",
+  "pais_nombre": "Guatemala",
+  "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al número de emergencias del país. ",
+  "fecha": "2026-11-22"
  }
 ]
