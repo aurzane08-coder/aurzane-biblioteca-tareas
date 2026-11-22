@@ -1,16 +1,16 @@
 # Informe de marketing
 
-Actualizado: 2026-11-21. Clics de personas (sin bots ni vistas previas) que entraron por los enlaces de las publicaciones.
+Actualizado: 2026-11-22. Clics de personas (sin bots ni vistas previas) que entraron por los enlaces de las publicaciones.
 
 | Red | Publicaciones | Clics |
 |---|---|---|
-| telegram | 90 | 4 |
-| bluesky | 59 | 307 |
-| mastodon | 59 | 217 |
-| instagram | 67 | 0 |
-| facebook | 67 | 135 |
+| telegram | 91 | 4 |
+| bluesky | 60 | 310 |
+| mastodon | 60 | 221 |
+| instagram | 68 | 0 |
+| facebook | 68 | 135 |
 | threads | 0 | 0 |
-| pinterest | 39 | 1 |
+| pinterest | 40 | 1 |
 
 ## Productos con más clics
 
