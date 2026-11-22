@@ -1,6 +1,6 @@
 name: Catálogo de imágenes (Pexels, sin ocupar espacio en el servidor)
-# Mantiene banco/banco.json: miles de fotos reales de Pexels ordenadas por mundo y tema. Solo el índice vive en GitHub
-# (la web lo lee por jsDelivr); las fotos se sirven desde el CDN de Pexels en AVIF. Nada se guarda en SiteGround.
+# Mantiene banco/banco.json: miles de fotos reales (Unsplash y Pexels) ordenadas por mundo y tema. Las fotos se sirven desde
+# sus CDN en AVIF; en SiteGround solo va el índice (aurzane.com/catalogo/imagenes.json, unos cientos de KB).
 on:
   push:
     paths: ['banco/banco.py', '.github/workflows/banco-imagenes.yml']
@@ -31,4 +31,18 @@ jobs:
           git config user.name "aurzane-bot"; git config user.email "bot@aurzane.com"
           git add banco/banco.json
           git diff --cached --quiet || { git commit -qm "catálogo de imágenes: índice actualizado"; for i in 1 2 3; do git pull -q --rebase -X theirs && git push -q && break; sleep 5; done; }
-          curl -s "https://purge.jsdelivr.net/gh/${GITHUB_REPOSITORY}@main/banco/banco.json" | head -c 300; echo
+      - name: Publicar el índice en la web
+        env:
+          SG_KEY: ${{ secrets.SG_KEY }}
+          SG_HOST: ${{ secrets.SG_HOST }}
+          SG_USER: ${{ secrets.SG_USER }}
+          SG_PORT: ${{ secrets.SG_PORT }}
+          SG_PASS: ${{ secrets.SG_PASS }}
+        run: |
+          mkdir -p ~/.ssh && printf '%s\n' "$SG_KEY" | tr -d '\r' > ~/.ssh/id && chmod 600 ~/.ssh/id
+          if [ -n "$SG_PASS" ]; then ssh-keygen -p -P "$SG_PASS" -N "" -f ~/.ssh/id >/dev/null; fi
+          S="ssh -i $HOME/.ssh/id -p ${SG_PORT:-18765} -o StrictHostKeyChecking=accept-new $SG_USER@$SG_HOST"
+          printf '%s\n' '<IfModule mod_headers.c>' 'Header set Access-Control-Allow-Origin "*"' 'Header set Cache-Control "public, max-age=1800"' '</IfModule>' > htaccess-catalogo
+          $S 'mkdir -p ~/www/aurzane.com/public_html/catalogo && cat > ~/www/aurzane.com/public_html/catalogo/.htaccess' < htaccess-catalogo
+          $S 'cat > ~/www/aurzane.com/public_html/catalogo/imagenes.json.n && mv ~/www/aurzane.com/public_html/catalogo/imagenes.json.n ~/www/aurzane.com/public_html/catalogo/imagenes.json' < banco/banco.json
+          echo "Índice en la web: $(curl -s -o /dev/null -w '%{http_code}' https://aurzane.com/catalogo/imagenes.json)"

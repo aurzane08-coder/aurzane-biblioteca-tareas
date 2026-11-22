@@ -95,12 +95,12 @@
   }
   if (d.readyState === 'complete') setTimeout(fotoCab, 300); else window.addEventListener('load', function () { setTimeout(fotoCab, 300); });
 })(document);
-/* Catálogo de imágenes (índice banco/banco.json en GitHub, servido por jsDelivr; las fotos salen del CDN de Pexels en AVIF, sin ocupar
-   espacio en SiteGround): elige una foto real según el mundo y el tema del texto, distinta para cada texto.
+/* Catálogo de imágenes (índice aurzane.com/catalogo/imagenes.json, unos cientos de KB; las fotos salen de los CDN de Unsplash y Pexels
+   en AVIF, sin ocupar espacio en SiteGround): elige una foto real según el mundo y el tema del texto, distinta para cada texto.
    AurzaneBanco.foto(mundo, texto, ancho) devuelve la URL (o null si el índice aún no cargó); AurzaneBanco.listo(fn) avisa al cargar. */
 (function (w, d) {
   if (w.AurzaneBanco) return;
-  var idx = null, cola = [], INDICE = 'https://cdn.jsdelivr.net/gh/aurzane08-coder/aurzane-biblioteca-tareas@main/banco/banco.json';
+  var idx = null, cola = [], INDICE = 'https://aurzane.com/catalogo/imagenes.json';
   var CLAVES = [
     [/ansiedad|anxi|p[áa]nico|panic|worry|preocupa/i, 'mind', 'ansiedad'], [/depres|tristeza|sadness|mood|[áa]nimo/i, 'mind', 'tristeza'],
     [/estr[ée]s|stress|burnout|agotamiento/i, 'mind', 'estres'], [/cerebr|brain|neuro|cognit/i, 'mind', 'cerebro'],
