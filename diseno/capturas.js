@@ -59,15 +59,17 @@ const nombre = u => u.replace(/^https?:\/\//, '').replace(/[^a-z0-9]+/gi, '_').r
           const r = e.getBoundingClientRect(); if (r.width < 3 || r.height < 3) continue;   // ocultos para lectores de pantalla (1 px)
           const cs = getComputedStyle(e); if (cs.visibility === 'hidden' || +cs.opacity === 0) continue;
           revisados++;
-          let col = rgb(cs.color); if (!col) continue; let fondo = null, img = false, capas = [];
+          let col = rgb(cs.color); if (!col) continue; let fondo = null, img = false, capas = [], grad = null;
           for (let x = e; x; x = x.parentElement) { const s = getComputedStyle(x);
-            if (s.backgroundImage && s.backgroundImage !== 'none') { img = true; break; }
+            if (s.backgroundImage && s.backgroundImage !== 'none') { if (/url\(/.test(s.backgroundImage) || grad) { img = true; break; }
+              grad = (s.backgroundImage.match(/rgba?\([^)]+\)/g) || []).map(rgb); }   // degradado sin foto: se mide cada color del degradado sobre su fondo
             if (x.tagName === 'IMG' || x.querySelector(':scope > img, :scope > picture')) { }
             const b = rgb(s.backgroundColor); if (b && b[3] > 0) { capas.push(b); if (b[3] >= .99) { fondo = b; break; } } }
           if (img) { sobreImg.push(e.tagName.toLowerCase() + ': ' + e.textContent.trim().slice(0, 40)); continue; }
           fondo = fondo || [255, 255, 255, 1]; for (let i = capas.length - 2; i >= 0; i--) fondo = mezcla(capas[i], fondo);
           if (col[3] < 1) col = mezcla(col, fondo);
-          const L1 = lum(col), L2 = lum(fondo), ratio = (Math.max(L1, L2) + .05) / (Math.min(L1, L2) + .05);
+          const rat = f => { const L1 = lum(col), L2 = lum(f); return (Math.max(L1, L2) + .05) / (Math.min(L1, L2) + .05); };
+          const ratio = Math.min(rat(fondo), ...(grad || []).map(g => rat(mezcla(g, fondo))));
           const grande = parseFloat(cs.fontSize) >= 24 || (parseFloat(cs.fontSize) >= 18.6 && +cs.fontWeight >= 700);
           if (ratio < (grande ? 3 : 4.5)) bajos.push(ratio.toFixed(2) + ' ' + e.tagName.toLowerCase() + (e.className && typeof e.className == 'string' ? '.' + e.className.split(' ')[0] : '') + ': ' + e.textContent.trim().slice(0, 50));
         }

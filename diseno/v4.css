@@ -80,13 +80,13 @@ html[data-tema="oscuro"] :where(a,button,input,select,textarea,summary,[tabindex
    Cabecera con foto a todo el ancho bajo un velo verde profundo, texto blanco; tarjetas editoriales blancas;
    el color de cada mundo queda solo en su punto y en detalles pequeños.
    ===================================================================================================== */
-html.az-ds .world-header{max-width:none!important;margin:0!important;border-radius:0!important;padding:clamp(56px,9vh,104px) max(24px,calc((100vw - 1280px)/2)) clamp(48px,8vh,88px)!important;color:#F6F5F0}
+html.az-ds .world-header{background-color:#12251F!important;max-width:none!important;margin:0!important;border-radius:0!important;padding:clamp(56px,9vh,104px) max(24px,calc((100vw - 1280px)/2)) clamp(48px,8vh,88px)!important;color:#F6F5F0}
 html.az-ds .world-header::after{display:none!important}
-html.az-ds-mind.az-pm .world-header{background:linear-gradient(90deg,rgba(18,37,31,.94) 0%,rgba(18,37,31,.82) 42%,rgba(18,37,31,.25) 100%),url('https://images.unsplash.com/photo-1559757175-5700dde675bc?w=1800&q=70&auto=format&fit=crop') right center/cover no-repeat!important}
-html.az-ds-nexus.az-pm .world-header{background:linear-gradient(90deg,rgba(18,37,31,.94) 0%,rgba(18,37,31,.82) 42%,rgba(18,37,31,.25) 100%),url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=1800&q=70&auto=format&fit=crop') right center/cover no-repeat!important}
-html.az-ds-live.az-pm .world-header{background:linear-gradient(90deg,rgba(18,37,31,.94) 0%,rgba(18,37,31,.82) 42%,rgba(18,37,31,.25) 100%),url('https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=1800&q=70&auto=format&fit=crop') right center/cover no-repeat!important}
-html.az-ds-learn.az-pm .world-header{background:linear-gradient(90deg,rgba(18,37,31,.94) 0%,rgba(18,37,31,.82) 42%,rgba(18,37,31,.25) 100%),url('https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=1800&q=70&auto=format&fit=crop') right center/cover no-repeat!important}
-html.az-ds-build.az-pm .world-header{background:linear-gradient(90deg,rgba(18,37,31,.94) 0%,rgba(18,37,31,.82) 42%,rgba(18,37,31,.25) 100%),url('https://images.unsplash.com/photo-1461360370896-922624d12aa1?w=1800&q=70&auto=format&fit=crop') right center/cover no-repeat!important}
+html.az-ds-mind .world-header,html.az-ds-mind.az-pm .world-header{background:linear-gradient(90deg,rgba(18,37,31,.94) 0%,rgba(18,37,31,.82) 42%,rgba(18,37,31,.25) 100%),url('https://images.unsplash.com/photo-1559757175-5700dde675bc?w=1800&q=70&auto=format&fit=crop') right center/cover no-repeat #12251F!important}
+html.az-ds-nexus .world-header,html.az-ds-nexus.az-pm .world-header{background:linear-gradient(90deg,rgba(18,37,31,.94) 0%,rgba(18,37,31,.82) 42%,rgba(18,37,31,.25) 100%),url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=1800&q=70&auto=format&fit=crop') right center/cover no-repeat #12251F!important}
+html.az-ds-live .world-header,html.az-ds-live.az-pm .world-header{background:linear-gradient(90deg,rgba(18,37,31,.94) 0%,rgba(18,37,31,.82) 42%,rgba(18,37,31,.25) 100%),url('https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=1800&q=70&auto=format&fit=crop') right center/cover no-repeat #12251F!important}
+html.az-ds-learn .world-header,html.az-ds-learn.az-pm .world-header{background:linear-gradient(90deg,rgba(18,37,31,.94) 0%,rgba(18,37,31,.82) 42%,rgba(18,37,31,.25) 100%),url('https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=1800&q=70&auto=format&fit=crop') right center/cover no-repeat #12251F!important}
+html.az-ds-build .world-header,html.az-ds-build.az-pm .world-header{background:linear-gradient(90deg,rgba(18,37,31,.94) 0%,rgba(18,37,31,.82) 42%,rgba(18,37,31,.25) 100%),url('https://images.unsplash.com/photo-1461360370896-922624d12aa1?w=1800&q=70&auto=format&fit=crop') right center/cover no-repeat #12251F!important}
 html.az-ds .world-header-in{max-width:720px!important}
 html.az-ds .world-header h1{color:#F6F5F0!important;font-size:clamp(2.6rem,5.4vw,4.4rem)!important;line-height:1.02!important;font-weight:400!important;margin:14px 0 18px!important}
 html.az-ds .world-header h1 span{color:#D9CDB2!important;font-style:italic}
@@ -98,12 +98,12 @@ html.az-ds .world-header .az-foto-credito{color:#C9D0C9}
 @media (max-width:760px){
   html.az-ds .world-header{padding:44px 20px 36px!important}
   html.az-ds .world-header::before{display:none!important}
-  html.az-ds-mind.az-pm .world-header,html.az-ds-nexus.az-pm .world-header,html.az-ds-live.az-pm .world-header,html.az-ds-learn.az-pm .world-header,html.az-ds-build.az-pm .world-header{background-position:70% center!important}
-  html.az-ds-mind.az-pm .world-header{background:linear-gradient(0deg,rgba(18,37,31,.95) 30%,rgba(18,37,31,.55)),url('https://images.unsplash.com/photo-1559757175-5700dde675bc?w=900&q=70&auto=format&fit=crop') center/cover no-repeat!important}
-  html.az-ds-nexus.az-pm .world-header{background:linear-gradient(0deg,rgba(18,37,31,.95) 30%,rgba(18,37,31,.55)),url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=900&q=70&auto=format&fit=crop') center/cover no-repeat!important}
-  html.az-ds-live.az-pm .world-header{background:linear-gradient(0deg,rgba(18,37,31,.95) 30%,rgba(18,37,31,.55)),url('https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=900&q=70&auto=format&fit=crop') center/cover no-repeat!important}
-  html.az-ds-learn.az-pm .world-header{background:linear-gradient(0deg,rgba(18,37,31,.95) 30%,rgba(18,37,31,.55)),url('https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=900&q=70&auto=format&fit=crop') center/cover no-repeat!important}
-  html.az-ds-build.az-pm .world-header{background:linear-gradient(0deg,rgba(18,37,31,.95) 30%,rgba(18,37,31,.55)),url('https://images.unsplash.com/photo-1461360370896-922624d12aa1?w=900&q=70&auto=format&fit=crop') center/cover no-repeat!important}
+  html.az-ds .world-header,html.az-ds.az-pm .world-header{background-position:70% center!important}
+  html.az-ds-mind .world-header,html.az-ds-mind.az-pm .world-header{background:linear-gradient(0deg,rgba(18,37,31,.95) 30%,rgba(18,37,31,.55)),url('https://images.unsplash.com/photo-1559757175-5700dde675bc?w=900&q=70&auto=format&fit=crop') center/cover no-repeat #12251F!important}
+  html.az-ds-nexus .world-header,html.az-ds-nexus.az-pm .world-header{background:linear-gradient(0deg,rgba(18,37,31,.95) 30%,rgba(18,37,31,.55)),url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=900&q=70&auto=format&fit=crop') center/cover no-repeat #12251F!important}
+  html.az-ds-live .world-header,html.az-ds-live.az-pm .world-header{background:linear-gradient(0deg,rgba(18,37,31,.95) 30%,rgba(18,37,31,.55)),url('https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=900&q=70&auto=format&fit=crop') center/cover no-repeat #12251F!important}
+  html.az-ds-learn .world-header,html.az-ds-learn.az-pm .world-header{background:linear-gradient(0deg,rgba(18,37,31,.95) 30%,rgba(18,37,31,.55)),url('https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=900&q=70&auto=format&fit=crop') center/cover no-repeat #12251F!important}
+  html.az-ds-build .world-header,html.az-ds-build.az-pm .world-header{background:linear-gradient(0deg,rgba(18,37,31,.95) 30%,rgba(18,37,31,.55)),url('https://images.unsplash.com/photo-1461360370896-922624d12aa1?w=900&q=70&auto=format&fit=crop') center/cover no-repeat #12251F!important}
 }
 /* franja de confianza: verde profundo, títulos en serif legible */
 html.az-ds .trust-strip{background:#183D32!important;padding:34px max(24px,calc((100vw - 1280px)/2))!important}
@@ -342,3 +342,9 @@ html.az-ds-nexus.az-pm main > .hero .az-empieza p{color:#5E605A!important}
 html[data-tema="oscuro"].az-ds-nexus.az-pm main > .hero .az-empieza p{color:#B9C2BB!important}
 .research-stat .rs-label{font-family:var(--v-sans)!important;font-size:.82rem!important}
 .research-stat .rs-num{font-family:var(--v-serif)!important;font-size:2.4rem!important}
+
+/* chips activos: verde de marca (el color de cada mundo queda para acentos pequeños) */
+html.az-v4 .filter-bar button.active,html.az-v4 .filter-bar .activo,html.az-v4 .chip.active,html.az-v4 .f-chip.active{background:#183D32!important;border-color:#183D32!important;color:#F6F5F0!important}
+html.az-v4[data-tema="oscuro"] .filter-bar button.active,html.az-v4[data-tema="oscuro"] .filter-bar .activo,html.az-v4[data-tema="oscuro"] .chip.active,html.az-v4[data-tema="oscuro"] .f-chip.active{background:#C7B99B!important;border-color:#C7B99B!important;color:#12251F!important}
+html.az-v4 .f-chip.divider{width:1px!important;padding:0!important;border:0!important;border-radius:0!important;background:rgba(37,39,36,.18)!important}
+html.az-v4[data-tema="oscuro"] .f-chip.divider{background:rgba(242,239,230,.2)!important}

@@ -24,6 +24,7 @@ https://ovp.aurzane.com/
 # más plantillas
 https://aurzane.com/contacto.html
 https://aurzane.com/mapa/
+https://aurzane.com/articulos/recientes/
 https://mind.aurzane.com/en/anxiety-test-gad-7/
 https://mind.aurzane.com/ejercicios/escaneo-corporal/
 https://live.aurzane.com/calculadora-imc/

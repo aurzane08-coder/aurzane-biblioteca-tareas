@@ -1,5 +1,5 @@
 diff --git a/ai/manager.py b/ai/manager.py
-index 0710d43..3128730 100644
+index 0710d43..7b17df8 100644
 --- a/ai/manager.py
 +++ b/ai/manager.py
 @@ -233,6 +233,15 @@ try:
@@ -205,14 +205,14 @@ index 0710d43..3128730 100644
 +    '<style>:root{--bg:#F6F5F0;--sup:#FFFFFF;--tinta:#252724;--tinta-2:#5E605A;--linea:rgba(37,39,36,.12);--verde:#183D32;--champ:#C7B99B;--serif:"Instrument Serif","Bodoni Moda",Georgia,serif;--sans:"Manrope","Instrument Sans",system-ui,sans-serif}'
 +    'html[data-tema="oscuro"]{--bg:#12251F;--sup:#183D32;--tinta:#ECEAE2;--tinta-2:#B9C2BB;--linea:rgba(242,239,230,.14)}'
 +    '*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tinta);font:16px/1.6 var(--sans)}.w{max-width:1240px;margin:0 auto;padding:0 24px}'
-+    '.cab{padding:52px 0 26px;border-bottom:1px solid var(--linea)}.cab .mig{font-size:.88rem;color:var(--tinta-2);margin:0}.cab a{color:inherit}'
++    '.cab{color:#F6F5F0;background:linear-gradient(90deg,rgba(18,37,31,.95),rgba(18,37,31,.8) 50%,rgba(18,37,31,.35)),url(https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=1800&q=70&auto=format&fit=crop) center/cover no-repeat #12251F}.cab{border-bottom:1px solid rgba(199,185,155,.4)}.cab>.w{padding-top:60px;padding-bottom:52px}main.w{padding-top:30px;padding-bottom:64px}.cab .mig{color:#DDE2DC!important}.cab p{color:#DDE2DC!important}.cab a,.cab p a{color:#F6F5F0!important}.cab h1::after{background:linear-gradient(90deg,#C7B99B 0 62%,#5E8A78 62% 100%)!important}.cab .mig{font-size:.88rem;color:var(--tinta-2);margin:0}.cab a{color:inherit}'
 +    'h1{font:400 clamp(2.6rem,5vw,3.8rem)/1.02 var(--serif);margin:10px 0 0}h1::after{content:"";display:block;width:64px;height:2px;margin-top:16px;background:linear-gradient(90deg,var(--verde) 0 62%,var(--champ) 62% 100%)}'
 +    '.cab p{color:var(--tinta-2);margin:16px 0 0}.cab p a{color:var(--tinta);font-weight:600}'
 +    'main{padding:30px 24px 64px;columns:3 330px;column-gap:18px}section{break-inside:avoid;margin:0 0 18px;background:var(--sup);border:1px solid var(--linea);border-top:3px solid var(--champ);border-radius:14px;padding:20px 22px}'
 +    'h2{font:400 1.7rem/1.1 var(--serif);margin:0 0 6px}h3{font:700 .78rem var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--tinta-2);margin:16px 0 4px}'
-+    'ul{list-style:none;padding:0;margin:0}li a{color:inherit;text-decoration:none;display:block;padding:6px 0;border-bottom:1px solid var(--linea);font-size:.95rem}li:last-child a{border-bottom:0}li a:hover{text-decoration:underline;text-underline-offset:3px}'
++    'ul{list-style:none;padding:0;margin:0}li a{color:inherit;text-decoration:none;display:block;padding:6px 0;border-bottom:1px solid var(--linea);font-size:.95rem}li:last-child a{border-bottom:0}section li a{text-decoration:none!important}section li a:hover{text-decoration:underline!important;text-underline-offset:3px}'
 +    '@media(max-width:600px){.w{padding:0 16px}main{padding:22px 16px 48px}}</style></head><body>'
-+    '<header class="cab w"><p class="mig"><a href="https://aurzane.com/">AURZANE</a> / Mapa del sitio</p><h1>Mapa del sitio</h1><p>Todas las páginas del ecosistema, por mundo y por tipo. <a href="https://aurzane.com/novedades/">Ver novedades</a> · <a href="https://aurzane.com/biblioteca/">Biblioteca</a></p></header>'
++    '<header class="cab"><div class="w"><p class="mig"><a href="https://aurzane.com/">AURZANE</a> / Mapa del sitio</p><h1>Mapa del sitio</h1><p>Todas las páginas del ecosistema, por mundo y por tipo. <a href="https://aurzane.com/novedades/">Ver novedades</a> · <a href="https://aurzane.com/biblioteca/">Biblioteca</a></p></div></header>'
 +    f'<main class="w" id="contenido">{mapa_html}</main></body></html>')
  # «Hoy en AURZANE»: frase, curiosidad, ejercicio, test y música tranquila del día para la portada (aurzane.com/hoy/hoy.json)
  try:
@@ -309,18 +309,18 @@ index 0710d43..3128730 100644
 +            '<style>:root{--bg:#F6F5F0;--sup:#FFFFFF;--tinta:#252724;--tinta-2:#5E605A;--linea:rgba(37,39,36,.12);--verde:#183D32;--champ:#C7B99B;--salvia:#EAEFEA;--serif:"Instrument Serif","Bodoni Moda",Georgia,serif;--sans:"Manrope","Instrument Sans",system-ui,sans-serif}'
 +            'html[data-tema="oscuro"]{--bg:#12251F;--sup:#183D32;--tinta:#ECEAE2;--tinta-2:#B9C2BB;--linea:rgba(242,239,230,.14);--salvia:#1D4538}'
 +            '*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tinta);font:16px/1.6 var(--sans)}.w{max-width:1240px;margin:0 auto;padding:0 24px}'
-+            '.cab{padding:52px 0 26px;border-bottom:1px solid var(--linea)}.cab .mig{font-size:.88rem;color:var(--tinta-2);margin:0}.cab a{color:inherit}.cab p a{color:var(--tinta);font-weight:600}'
++            '.cab{color:#F6F5F0;background:linear-gradient(90deg,rgba(18,37,31,.95),rgba(18,37,31,.8) 50%,rgba(18,37,31,.35)),url(https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=1800&q=70&auto=format&fit=crop) center/cover no-repeat #12251F}.cab{border-bottom:1px solid rgba(199,185,155,.4)}.cab>.w{padding-top:60px;padding-bottom:52px}main.w{padding-top:30px;padding-bottom:64px}.cab .mig{color:#DDE2DC!important}.cab p{color:#DDE2DC!important}.cab a,.cab p a{color:#F6F5F0!important}.cab h1::after{background:linear-gradient(90deg,#C7B99B 0 62%,#5E8A78 62% 100%)!important}.cab .mig{font-size:.88rem;color:var(--tinta-2);margin:0}.cab a{color:inherit}.cab p a{color:var(--tinta);font-weight:600}'
 +            'h1{font:400 clamp(2.6rem,5vw,3.8rem)/1.02 var(--serif);margin:10px 0 0}h1::after{content:"";display:block;width:64px;height:2px;margin-top:16px;background:linear-gradient(90deg,var(--verde) 0 62%,var(--champ) 62% 100%)}'
 +            '.cab p{color:var(--tinta-2);margin:16px 0 0;max-width:64ch}'
-+            'main ul{list-style:none;margin:0;padding:30px 0 64px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}'
++            'main ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}'
 +            '.ar{display:flex;flex-direction:column;height:100%;background:var(--sup);border:1px solid var(--linea);border-top:3px solid var(--c);border-radius:14px;overflow:hidden;color:inherit;text-decoration:none}'
 +            '.ar:hover{border-color:var(--c)}.ar:hover b{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}'
 +            '.ar-img{display:block;aspect-ratio:16/9;background:var(--salvia)}.ar-img img{width:100%;height:100%;object-fit:cover;display:block}'
 +            '.ar-t{display:flex;flex-direction:column;gap:8px;padding:16px 18px 20px}.k{display:flex;align-items:center;gap:7px;font:700 .74rem var(--sans);letter-spacing:.06em;text-transform:uppercase;color:var(--tinta-2)}.k i{width:8px;height:8px;border-radius:50%;background:var(--c)}'
 +            '.ar b{font:400 1.36rem/1.22 var(--serif)}.r{font-size:.92rem;color:var(--tinta-2);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}'
 +            '@media(max-width:980px){main ul{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:600px){.w{padding:0 16px}main ul{grid-template-columns:1fr}}</style></head><body>'
-+            '<header class="cab w"><p class="mig"><a href="https://aurzane.com/">AURZANE</a> / <a href="https://aurzane.com/articulos/">Artículos</a> / Recientes</p><h1>Artículos recientes</h1><p>Psicología, bienestar y aprendizaje explicados con claridad y con su fuente. '
-+            '<a href="https://aurzane.com/articulos/">Todos los artículos</a> · <a href="https://aurzane.com/novedades/">Novedades</a> · <a href="https://aurzane.com/frases/">Frases</a> · <a href="https://aurzane.com/biblioteca/">Biblioteca</a></p></header>'
++            '<header class="cab"><div class="w"><p class="mig"><a href="https://aurzane.com/">AURZANE</a> / <a href="https://aurzane.com/articulos/">Artículos</a> / Recientes</p><h1>Artículos recientes</h1><p>Psicología, bienestar y aprendizaje explicados con claridad y con su fuente. '
++            '<a href="https://aurzane.com/articulos/">Todos los artículos</a> · <a href="https://aurzane.com/novedades/">Novedades</a> · <a href="https://aurzane.com/frases/">Frases</a> · <a href="https://aurzane.com/biblioteca/">Biblioteca</a></p></div></header>'
 +            f'<main class="w" id="contenido"><ul>{lis_a}</ul></main></body></html>')
          conexiones['fuera_sitemap'] = sorted(set(conexiones['fuera_sitemap']) | {url_a(a) for a in arts} | {'https://aurzane.com/articulos/recientes/'} | ({'https://aurzane.com/frases/'} if os.path.exists(OUT + '/frases/index.html') else set()))
  except Exception as e:
