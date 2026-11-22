@@ -4,7 +4,7 @@ de Pexels, que las entrega en AVIF al navegador que lo admite (comprobado: image
 Fotos reales de Pexels (su licencia y sus normas de la API permiten enlazarlas desde su CDN; se guarda el autor y se acredita a Pexels).
 Nunca imágenes creadas por Claude. Cada ejecución completa hasta MAX fotos por tema; para crecer, subir MAX.
 Uso: PEXELS_API_KEY=… python3 banco/banco.py banco/banco.json"""
-import os, sys, json, time, urllib.request, urllib.parse
+import os, re, sys, json, time, urllib.request, urllib.parse
 
 TEMAS = {
   'mind': {'ansiedad': 'anxious person', 'tristeza': 'sad person window', 'estres': 'stressed work desk', 'cerebro': 'brain neuroscience',
@@ -37,6 +37,10 @@ def pedir(u, auth=None):
     return json.loads(urllib.request.urlopen(r, timeout=60).read())
 
 PET_U = int(os.environ.get('PETICIONES_UNSPLASH', '45'))   # la app «demo» de Unsplash admite 50 por hora
+# fotos que no encajan en una web de salud y aprendizaje: carteles y protestas (pueden llevar palabrotas), armas, alcohol, tabaco, política
+VETO = re.compile(r'\b(rally|protest|demonstrat|placard|signs?\b|banner|poster|graffiti|weapon|guns?\b|rifle|sword|knife|blood|cigar|smok|alcohol|beer|wine|whisk|drunk|nude|bikini|lingerie|kiss|tattoo|politic|flag|police|military|soldier|text|words?\b|quote|newspaper|halloween|skull|coffin|grave)', re.I)
+for _m in idx.values():
+    for _t in _m: _m[_t] = [x for x in _m[_t] if not VETO.search(x.get('t', ''))]
 usados = {x.get('p') or x.get('r') for ts in idx.values() for l in ts.values() for x in l}   # una foto no se repite entre temas
 total = 0
 for mundo, temas in TEMAS.items():
@@ -52,7 +56,7 @@ for mundo, temas in TEMAS.items():
             fotos = d.get('photos', [])
             for p in fotos:
                 if len(lista) >= MAX: break
-                if p['id'] in usados or p.get('width', 0) < 1200: continue
+                if p['id'] in usados or p.get('width', 0) < 1200 or VETO.search(p.get('alt') or ''): continue
                 lista.append({'p': p['id'], 'a': p.get('photographer', ''), 'c': p.get('avg_color', ''), 't': (p.get('alt') or '')[:90]})
                 usados.add(p['id']); total += 1
             if not d.get('next_page'): break
@@ -66,7 +70,7 @@ for mundo, temas in TEMAS.items():
             for p in d.get('results', []):
                 r = (p.get('urls') or {}).get('raw', '').split('?')[0]
                 if len(lista) >= MAX: break
-                if not r or r in usados: continue
+                if not r or r in usados or VETO.search(p.get('alt_description') or ''): continue
                 lista.append({'r': r, 'a': (p.get('user') or {}).get('name', ''), 'c': p.get('color', ''), 't': (p.get('alt_description') or '')[:90]})
                 usados.add(r); total += 1
             pag += 1; time.sleep(1)

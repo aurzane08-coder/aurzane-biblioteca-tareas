@@ -129,6 +129,7 @@
     [/architect|arquitect|urban|ciudad|city/i, 'build', 'arquitectura'], [/construct|obra|reforma/i, 'build', 'obra'],
     [/energ|solar|climat|emisi|emission/i, 'build', 'energia'], [/trabaj|work|employ|labor|empleo/i, 'build', 'trabajo']
   ];
+  var VISTAS = {}, VETO = /\b(rally|protest|demonstrat|placard|signs?\b|banner|poster|graffiti|weapon|guns?\b|sword|knife|blood|cigar|smok|alcohol|beer|wine|drunk|politic|flag|police|military|text|words?\b|quote|newspaper|skull)/i;
   function h(s) { var x = 2166136261; s = String(s || ''); for (var i = 0; i < s.length; i++) { x ^= s.charCodeAt(i); x = Math.imul(x, 16777619); } return x >>> 0; }
   function foto(mundo, texto, ancho) {
     if (!idx) return null;
@@ -140,7 +141,9 @@
       Object.keys(mm).forEach(function (k) { lista = lista.concat(mm[k]); });
     }
     if (!lista.length) return null;
-    var x = lista[h(t + mundo) % lista.length], w = (ancho || 640) > 800 ? 1600 : 640;
+    var i0 = h(t + mundo) % lista.length, k = 0, x = lista[i0], w = (ancho || 640) > 800 ? 1600 : 640;
+    while (k < lista.length && (VISTAS[x.r || x.p] || VETO.test(x.t || '')) && (VISTAS[x.r || x.p] !== t)) { k++; x = lista[(i0 + k) % lista.length]; }   // no repetir foto en la misma página
+    VISTAS[x.r || x.p] = t;
     if (x.r) return x.r + '?w=' + w + '&h=' + Math.round(w * .625) + '&fit=crop&q=70&auto=format';
     return 'https://images.pexels.com/photos/' + x.p + '/pexels-photo-' + x.p + '.jpeg?auto=compress&cs=tinysrgb&w=' + w + '&h=' + Math.round(w * .625) + '&fit=crop';
   }
