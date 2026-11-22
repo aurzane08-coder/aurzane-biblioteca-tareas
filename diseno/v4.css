@@ -551,3 +551,10 @@ html.az-ds .research-band .research-stat{background:transparent!important;border
 html.az-ds .research-band .research-stat:last-child{border-right:0!important}
 html.az-ds .research-band .research-stat *{color:#DDE2DC!important}
 html.az-ds .research-band .research-stat :first-child{font-family:var(--v-serif)!important;color:#F6F5F0!important}
+/* Etiquetas de tipo y categoría en las tarjetas de artículos de cada mundo: píldoras legibles (antes barras pálidas casi invisibles) */
+html.az-ds .tipo-tag,html.az-ds .cat-badge{display:inline-block!important;width:auto!important;max-width:100%;padding:3px 10px!important;border-radius:999px!important;font:700 .7rem/1.4 var(--v-sans)!important;font-style:normal!important;letter-spacing:.06em!important;text-transform:uppercase;background:#EAEFEA!important;color:#183D32!important;border:0!important}
+html.az-ds .cat-badge{text-transform:none;letter-spacing:0!important;background:#F2EDE1!important;color:#5B4A26!important}
+html[data-tema="oscuro"].az-ds .tipo-tag{background:#2B5848!important;color:#F6F5F0!important}
+html[data-tema="oscuro"].az-ds .cat-badge{background:#C7B99B!important;color:#12251F!important}
+html.az-ds .f-main .tipo-tag,html.az-ds .f-main .cat-badge,html.az-ds .f-main-tags>*{background:rgba(246,245,240,.94)!important;color:#12251F!important}
+html.az-ds .f-chip{font-family:var(--v-sans)!important;font-style:normal!important;font-weight:600!important}
