@@ -1,0 +1,35 @@
+name: Espacio del servidor (informe)
+# Solo lee: mide qué ocupa la cuenta de SiteGround para decidir qué mover fuera. No borra ni mueve nada.
+on:
+  workflow_dispatch:
+  push:
+    paths: ['.github/workflows/espacio-servidor.yml']
+permissions:
+  contents: read
+jobs:
+  medir:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      SG_KEY: ${{ secrets.SG_KEY }}
+      SG_HOST: ${{ secrets.SG_HOST }}
+      SG_USER: ${{ secrets.SG_USER }}
+      SG_PORT: ${{ secrets.SG_PORT }}
+      SG_PASS: ${{ secrets.SG_PASS }}
+    steps:
+      - name: Medir
+        run: |
+          mkdir -p ~/.ssh && printf '%s\n' "$SG_KEY" | tr -d '\r' > ~/.ssh/id && chmod 600 ~/.ssh/id
+          if [ -n "$SG_PASS" ]; then ssh-keygen -p -P "$SG_PASS" -N "" -f ~/.ssh/id >/dev/null; fi
+          SSH="ssh -i $HOME/.ssh/id -p ${SG_PORT:-18765} -o StrictHostKeyChecking=accept-new $SG_USER@$SG_HOST"
+          $SSH 'set +e; cd ~; echo "== cuota"; (quota -s 2>/dev/null || true); df -h ~ 2>/dev/null | tail -1
+            echo "== total de la cuenta"; du -sh ~ 2>/dev/null
+            echo "== primer nivel"; du -sh ~/* ~/.[!.]* 2>/dev/null | sort -rh | head -25
+            echo "== www primer nivel"; du -sh ~/www/* ~/www/.[!.]* 2>/dev/null | sort -rh | head -30
+            for h in aurzane.com mind.aurzane.com nexus.aurzane.com live.aurzane.com learn.aurzane.com build.aurzane.com ovp.aurzane.com; do echo "== $h (lo más grande)"; du -sh ~/www/$h/public_html/* ~/www/$h/public_html/.[!.]* 2>/dev/null | sort -rh | head -12; done
+            echo "== carpetas eliminar / copias / publicado / backups en toda la cuenta"; find ~ -maxdepth 5 -type d \( -iname "eliminar*" -o -iname "copias*" -o -iname "backup*" -o -iname "publicado*" -o -iname "*-bak" -o -iname "old" \) -prune -print 2>/dev/null | while read d; do du -sh "$d" 2>/dev/null; done | sort -rh | head -40
+            echo "== ficheros más grandes (>20 MB)"; find ~ -type f -size +20M -printf "%s\t%TY-%Tm-%Td\t%p\n" 2>/dev/null | sort -rn | head -40 | awk -F"\t" "{printf \"%7.0f MB  %s  %s\n\", \$1/1048576, \$2, \$3}"
+            echo "== por tipo (todo www)"; find ~/www -type f 2>/dev/null | sed -E "s/.*\.([A-Za-z0-9]{1,5})$/\1/;t;s/.*/(sin)/" | sort | uniq -c | sort -rn | head -15
+            echo "== tamaño por tipo"; for e in jpg jpeg png webp avif pdf mp3 mp4 zip gz tar sql json html js css log; do s=$(find ~/www -type f -iname "*.$e" -printf "%s\n" 2>/dev/null | awk "{t+=\$1} END{printf \"%.0f\", t/1048576}"); echo "$e: ${s} MB"; done
+            echo "== correo y registros"; du -sh ~/mail ~/logs ~/tmp ~/.cache ~/.npm ~/.trash 2>/dev/null
+            echo "== inodos (número de ficheros)"; find ~ -xdev 2>/dev/null | wc -l'
