@@ -1,0 +1,61 @@
+name: Banco de imágenes (fotos reales en AVIF, por mundo)
+# Descarga fotos reales de Pexels y Pixabay a nuestro servidor (aurzane.com/img/banco/<mundo>/<tema>/) en AVIF y mantiene su índice
+# banco.json (también en el repositorio, banco/banco.json, para los generadores). Crece cada semana hasta MAX fotos por tema.
+# No sube nada si la cuenta de SiteGround pasa de 8,5 GB (antes hay que liberar espacio).
+on:
+  push:
+    paths: ['banco/banco.py', '.github/workflows/banco-imagenes.yml']
+  schedule:
+    - cron: '37 3 * * 1'
+  workflow_dispatch:
+    inputs:
+      max: {description: 'Fotos por tema como máximo', default: '24'}
+permissions:
+  contents: write
+concurrency: { group: banco-imagenes, cancel-in-progress: false }
+jobs:
+  banco:
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    env:
+      PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+      PIXABAY_KEY: ${{ secrets.PIXABAY_KEY }}
+      SG_KEY: ${{ secrets.SG_KEY }}
+      SG_HOST: ${{ secrets.SG_HOST }}
+      SG_USER: ${{ secrets.SG_USER }}
+      SG_PORT: ${{ secrets.SG_PORT }}
+      SG_PASS: ${{ secrets.SG_PASS }}
+      MAX: ${{ github.event.inputs.max || '24' }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Preparar
+        run: |
+          pip install -q "pillow>=11.3"
+          python3 -c "from PIL import features; assert features.check('avif'), 'Pillow sin AVIF'"
+          mkdir -p ~/.ssh && printf '%s\n' "$SG_KEY" | tr -d '\r' > ~/.ssh/id && chmod 600 ~/.ssh/id
+          if [ -n "$SG_PASS" ]; then ssh-keygen -p -P "$SG_PASS" -N "" -f ~/.ssh/id >/dev/null; fi
+          echo "S=ssh -i $HOME/.ssh/id -p ${SG_PORT:-18765} -o StrictHostKeyChecking=accept-new $SG_USER@$SG_HOST" >> $GITHUB_ENV
+      - name: Comprobar espacio
+        run: |
+          K=$($S 'du -sk ~/www | cut -f1'); echo "La cuenta usa $((K/1024)) MB"
+          if [ "$K" -gt 8900000 ]; then echo "::warning title=Banco de imágenes::El servidor está casi lleno ($((K/1024)) MB). No subo fotos hasta liberar espacio."; echo LLENO=1 >> $GITHUB_ENV; fi
+      - name: Descargar y convertir
+        if: env.LLENO != '1'
+        run: |
+          $S 'cat ~/www/aurzane.com/public_html/img/banco/banco.json 2>/dev/null' > previo.json || true
+          [ -s previo.json ] || cp banco/banco.json previo.json 2>/dev/null || echo '{}' > previo.json
+          python3 banco/banco.py previo.json salida
+          du -sh salida
+      - name: Subir al servidor
+        if: env.LLENO != '1'
+        run: |
+          printf '%s\n' '# Banco de imágenes AURZANE: se puede leer desde los cinco mundos y se guarda en caché un año' '<IfModule mod_headers.c>' 'Header set Access-Control-Allow-Origin "*"' '<FilesMatch "\.avif$">' 'Header set Cache-Control "public, max-age=31536000, immutable"' '</FilesMatch>' '<FilesMatch "\.json$">' 'Header set Cache-Control "public, max-age=3600"' '</FilesMatch>' '</IfModule>' 'AddType image/avif .avif' > salida/img/banco/.htaccess
+          ( cd salida && tar cf - img ) | $S 'mkdir -p ~/www/aurzane.com/public_html && cd ~/www/aurzane.com/public_html && tar xf - --no-same-owner && du -sh img/banco'
+          c=$(curl -s -o /dev/null -w '%{http_code}' https://aurzane.com/img/banco/banco.json); echo "banco.json en la web: $c"
+      - name: Guardar el índice en el repositorio
+        if: env.LLENO != '1'
+        run: |
+          cp salida/img/banco/banco.json banco/banco.json
+          git config user.name "aurzane-bot"; git config user.email "bot@aurzane.com"
+          git add banco/banco.json
+          git diff --cached --quiet || { git commit -qm "banco de imágenes: índice actualizado"; for i in 1 2 3; do git pull -q --rebase -X theirs && git push -q && break; sleep 5; done; }
