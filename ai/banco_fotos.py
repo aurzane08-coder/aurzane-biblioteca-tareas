@@ -1,4 +1,4 @@
-"""Fotos del banco de imágenes propio (aurzane.com/img/banco, AVIF en nuestro servidor) para las páginas que genera Python.
+"""Fotos del catálogo de imágenes (índice banco/banco.json; las fotos salen del CDN de Pexels en AVIF, sin ocupar SiteGround).
 Misma lógica que AurzaneBanco.foto() en diseno/v4_tema.js: tema por palabras clave del texto, foto fija para el mismo texto."""
 import os, re, json, hashlib
 
@@ -45,8 +45,11 @@ def foto_banco(texto, mundo='general', ancho=640, mundo_tema=None):
     idx, t = _banco(), str(texto or '')
     m, tema = mundo_tema or next(((mm, tt) for r, mm, tt in CLAVES if re.search(r, t, re.I)), (None, None))
     lista = (idx.get(m) or {}).get(tema) if m else None
-    if not lista:
+    if not lista or not any('p' in x for x in lista):
         lista = [x for v in (idx.get(mundo) or idx.get('general') or {}).values() for x in v]
     n = int(hashlib.md5((t + mundo).encode()).hexdigest(), 16)
-    if lista: return f'https://aurzane.com/img/banco/{lista[n % len(lista)]["f"]}-{"1600" if ancho > 800 else "640"}.avif'
+    lista = [x for x in (lista or []) if 'p' in x]
+    if lista:
+        w = 1600 if ancho > 800 else 640; x = lista[n % len(lista)]
+        return f'https://images.pexels.com/photos/{x["p"]}/pexels-photo-{x["p"]}.jpeg?auto=compress&cs=tinysrgb&w={w}&h={round(w * .625)}&fit=crop'
     return f'https://images.unsplash.com/photo-{RESERVA.get(m or mundo, RESERVA["general"])}?w={ancho}&q=70&fit=crop&auto=format'

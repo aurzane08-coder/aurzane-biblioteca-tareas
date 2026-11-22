@@ -1433,7 +1433,10 @@ try:
             m, t = TEMA_FOTO.get(tema, ('general', 'frases'))
             lista = (banco_.get(m) or {}).get(t) or (banco_.get('general') or {}).get('frases') or []
             n = int(hashlib.md5(str(semilla).encode()).hexdigest(), 16)
-            if lista: return f'https://aurzane.com/img/banco/{lista[n % len(lista)]["f"]}-{"1600" if ancho > 800 else "640"}.avif'
+            lista = [x for x in lista if 'p' in x]
+            if lista:   # catálogo de Pexels: se sirve desde su CDN en AVIF, sin ocupar espacio en SiteGround
+                w = 1600 if ancho > 800 else 640; x = lista[n % len(lista)]
+                return f'https://images.pexels.com/photos/{x["p"]}/pexels-photo-{x["p"]}.jpeg?auto=compress&cs=tinysrgb&w={w}&h={round(w * .625)}&fit=crop'
             return f'https://images.unsplash.com/photo-{RESERVA[n % len(RESERVA)]}?w={ancho}&q=70&fit=crop&auto=format'
         def nom_t(t): return t.replace('-', ' ').capitalize().replace('Caracter', 'Carácter').replace('Educacion', 'Educación').replace('Sabiduria', 'Sabiduría').replace('Alegria', 'Alegría').replace('Exito', 'Éxito')
         dest = max(pub[:30], key=lambda f: (f.get('nota', 0), -len(f['texto']))) if pub else None
@@ -1548,7 +1551,7 @@ html[data-tema="oscuro"] .mas{background:var(--champ);color:#12251F}
             '<button type="button" class="mas" id="frMas">Ver más frases</button>'
             '<section class="autores"><h2>Autores con más frases</h2><div>'
             + ''.join(f'<button type="button" data-ir-a="{E(a)}">{E(a)}<small>{n}</small></button>' for a, n in autores_.most_common(24)) + '</div></section>'
-            '<p class="pie">Solo publicamos frases de autores en dominio público y refranes tradicionales, con su autor y la fuente donde las encontramos. Las fotos son reales, de nuestro banco de imágenes (Pexels y Pixabay).</p></main>'
+            '<p class="pie">Solo publicamos frases de autores en dominio público y refranes tradicionales, con su autor y la fuente donde las encontramos. Fotos reales de <a href="https://www.pexels.com/es-es/" rel="noopener">Pexels</a>.</p></main>'
             + JS_FR + '</body></html>')
     if usadas.get('dias', {}).get(HOY):
         hoy = usadas['dias'][HOY]
