@@ -49,7 +49,8 @@ const nombre = u => u.replace(/^https?:\/\//, '').replace(/[^a-z0-9]+/gi, '_').r
         const rotas = [...document.images].filter(i => i.complete && i.naturalWidth === 0 && i.getBoundingClientRect().width > 0).map(i => i.src.slice(0, 100)).slice(0, 5);
         // Contraste real de cada texto visible con su fondo (WCAG): se sube por los padres hasta un fondo opaco.
         // Si por medio hay una foto o un degradado, se marca como «sobre imagen» para revisarlo a ojo en la captura.
-        const rgb = c => { const m = c.match(/rgba?\(([^)]+)\)/); if (!m) return null; const v = m[1].split(/[ ,\/]+/).filter(Boolean).map(Number); return [v[0], v[1], v[2], v.length > 3 ? v[3] : 1]; };
+        const rgb = c => { const k = c.match(/color\(srgb ([^)]+)\)/); if (k) { const v = k[1].split(/[ \/]+/).filter(Boolean).map(Number); return [v[0] * 255, v[1] * 255, v[2] * 255, v.length > 3 ? v[3] : 1]; }   // color-mix() devuelve color(srgb r g b) en 0-1
+          const m = c.match(/rgba?\(([^)]+)\)/); if (!m) return null; const v = m[1].split(/[ ,\/]+/).filter(Boolean).map(Number); return [v[0], v[1], v[2], v.length > 3 ? v[3] : 1]; };
         const lum = ([r, g, b]) => { const f = x => (x /= 255) <= .03928 ? x / 12.92 : ((x + .055) / 1.055) ** 2.4; return .2126 * f(r) + .7152 * f(g) + .0722 * f(b); };
         const mezcla = (a, b) => [0, 1, 2].map(i => a[i] * a[3] + b[i] * (1 - a[3])).concat(1);
         const bajos = [], sobreImg = []; let revisados = 0;
@@ -62,7 +63,7 @@ const nombre = u => u.replace(/^https?:\/\//, '').replace(/[^a-z0-9]+/gi, '_').r
           let col = rgb(cs.color); if (!col) continue; let fondo = null, img = false, capas = [], grad = null;
           for (let x = e; x; x = x.parentElement) { const s = getComputedStyle(x);
             if (s.backgroundImage && s.backgroundImage !== 'none') { if (/url\(/.test(s.backgroundImage) || grad) { img = true; break; }
-              grad = (s.backgroundImage.match(/rgba?\([^)]+\)/g) || []).map(rgb).filter(g => g[3] >= .35); if (!grad.length) grad = null; }   // los tramos casi transparentes de un velo no cuentan   // degradado sin foto: se mide cada color del degradado sobre su fondo
+              grad = (s.backgroundImage.match(/rgba?\([^)]+\)|color\(srgb [^)]+\)/g) || []).map(rgb).filter(g => g[3] >= .35); if (!grad.length) grad = null; }   // los tramos casi transparentes de un velo no cuentan   // degradado sin foto: se mide cada color del degradado sobre su fondo
             if (x.tagName === 'IMG' || x.querySelector(':scope > img, :scope > picture')) { }
             const b = rgb(s.backgroundColor); if (b && b[3] > 0) { capas.push(b); if (b[3] >= .99) { fondo = b; break; } } }
           if (img) { sobreImg.push(e.tagName.toLowerCase() + ': ' + e.textContent.trim().slice(0, 40)); continue; }
