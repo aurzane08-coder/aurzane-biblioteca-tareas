@@ -1,55 +1,11 @@
 [
  {
   "fecha": "2026-11-22",
-  "id": "ia-aurzane-bib-conflictos-violencias-emociones-ambito-educativo",
-  "tipo": "libro",
-  "titulo": "Conflictos, violencias y emociones en el ámbito educativo",
-  "url": "https://archive.org/details/aurzane-bib-conflictos-violencias-emociones-ambito-educativo",
-  "motivo": "La IA le dio 4/10: no encaja en la biblioteca",
-  "probados": [
-   "200 application/pdf https://archive.org/download/aurzane-bib-comunicacion-no-verbal-relacion-medico-paciente/comunicacion-no-verba"
-  ]
- },
- {
-  "fecha": "2026-11-22",
-  "id": "ia-aurzane-bib-historias-vida-educacion-sujeto-dialogo-experiencia",
-  "tipo": "libro",
-  "titulo": "Historias de vida en educación: sujeto, diálogo, experiencia",
-  "url": "https://archive.org/details/aurzane-bib-historias-vida-educacion-sujeto-dialogo-experiencia",
-  "motivo": "La IA le dio 3/10: no encaja en la biblioteca",
-  "probados": [
-   "200 application/pdf https://archive.org/download/aurzane-bib-comunicacion-no-verbal-relacion-medico-paciente/comunicacion-no-verba"
-  ]
- },
- {
-  "fecha": "2026-11-22",
-  "id": "ia-aurzane-bib-abuso-influencia-comunicacion-publica-letra-pequena",
-  "tipo": "libro",
-  "titulo": "Abuso de influencia en la comunicación pública: letra pequeña y otros engaños",
-  "url": "https://archive.org/details/aurzane-bib-abuso-influencia-comunicacion-publica-letra-pequena",
-  "motivo": "La IA le dio 3/10: no encaja en la biblioteca",
-  "probados": [
-   "200 application/pdf https://archive.org/download/aurzane-bib-comunicacion-no-verbal-relacion-medico-paciente/comunicacion-no-verba"
-  ]
- },
- {
-  "fecha": "2026-11-22",
-  "id": "ia-aurzane-bib-relatos-personales-como-objetos-frontera-contextos",
-  "tipo": "libro",
-  "titulo": "Relatos personales como objetos de frontera en contextos educativos",
-  "url": "https://archive.org/details/aurzane-bib-relatos-personales-como-objetos-frontera-contextos",
-  "motivo": "La IA le dio 5/10: no encaja en la biblioteca",
-  "probados": [
-   "200 application/pdf https://archive.org/download/aurzane-bib-crecer-cielo-abierto-salud-colectiva-psicosocial/crecer-cielo-abierto"
-  ]
- },
- {
-  "fecha": "2026-11-22",
   "id": "ia-aurzane-bib-aprendizaje-cultura-desarrollo-aproximacion-interdisciplinar",
   "tipo": "libro",
   "titulo": "Aprendizaje, cultura y desarrollo : una aproximación interdisciplinaria",
   "url": "https://archive.org/details/aurzane-bib-aprendizaje-cultura-desarrollo-aproximacion-interdisciplinar",
-  "motivo": "La IA le dio 5/10: no encaja en la biblioteca",
+  "motivo": "La IA le dio 3/10: no encaja en la biblioteca",
   "probados": [
    "200 application/pdf https://archive.org/download/aurzane-bib-psicologas-pioneras-historias-ciencia-feminismo-compromiso/psicologas"
   ]
@@ -60,7 +16,7 @@
   "tipo": "libro",
   "titulo": "Psicometría, febrero 2023",
   "url": "https://archive.org/details/aurzane-bib-psicometria-febrero-2023",
-  "motivo": "La IA le dio 2/10: no encaja en la biblioteca",
+  "motivo": "La IA le dio 4/10: no encaja en la biblioteca",
   "probados": [
    "200 application/pdf https://archive.org/download/aurzane-bib-organizaciones-siglo-xxi/organizaciones-siglo-xxi.pdf"
   ]
@@ -73,7 +29,7 @@
   "url": "https://archive.org/details/aurzane-bib-educacion-inclusiva-calidad-ideas-estrategias-seguir",
   "motivo": "La IA le dio 4/10: no encaja en la biblioteca",
   "probados": [
-   "200 application/pdf https://archive.org/download/aurzane-bib-gestion-carrera-profesional/gestion-carrera-profesional.pdf"
+   "200 application/pdf https://archive.org/download/aurzane-bib-envejecimiento-actividad-fisica/envejecimiento-actividad-fisica.pdf"
   ]
  },
  {
@@ -82,9 +38,9 @@
   "tipo": "libro",
   "titulo": "Memorias en movimiento: testimonios corporales sobre el diagnóstico del \"trastorno bipolar\"",
   "url": "https://archive.org/details/aurzane-bib-memorias-movimiento-testimonios-corporales-sobre-diagnostico",
-  "motivo": "La IA le dio 6/10: no encaja en la biblioteca",
+  "motivo": "La IA le dio 5/10: no encaja en la biblioteca",
   "probados": [
-   "200 application/pdf https://archive.org/download/aurzane-bib-gestion-carrera-profesional/gestion-carrera-profesional.pdf"
+   "200 application/pdf https://archive.org/download/aurzane-bib-envejecimiento-actividad-fisica/envejecimiento-actividad-fisica.pdf"
   ]
  },
  {
@@ -93,20 +49,20 @@
   "tipo": "libro",
   "titulo": "Retórica y educación. La expresión oral y su aprendizaje",
   "url": "https://archive.org/details/aurzane-bib-retorica-educacion-expresion-oral-su-aprendizaje",
-  "motivo": "La IA le dio 4/10: no encaja en la biblioteca",
+  "motivo": "La IA le dio 3/10: no encaja en la biblioteca",
   "probados": [
-   "200 application/pdf https://archive.org/download/aurzane-bib-gestion-carrera-profesional/gestion-carrera-profesional.pdf"
+   "200 application/pdf https://archive.org/download/aurzane-bib-envejecimiento-actividad-fisica/envejecimiento-actividad-fisica.pdf"
   ]
  },
  {
   "fecha": "2026-11-22",
-  "id": "ia-aurzane-bib-intervenciones-recomendadas-salud-mental-apoyo-psicosocial",
+  "id": "ia-aurzane-bib-psicologia-desarrollo-infancia-septiembre-2021",
   "tipo": "libro",
-  "titulo": "Intervenciones recomendadas en salud mental y apoyo psicosocial durante la pandemia de COVID-19, junio de 2020",
-  "url": "https://archive.org/details/aurzane-bib-intervenciones-recomendadas-salud-mental-apoyo-psicosocial",
-  "motivo": "Dice ser un libro pero el PDF solo tiene 17 páginas (es un capítulo, artículo o resumen)",
+  "titulo": "Psicología del desarrollo: infancia, septiembre 2021",
+  "url": "https://archive.org/details/aurzane-bib-psicologia-desarrollo-infancia-septiembre-2021",
+  "motivo": "La IA le dio 4/10: no encaja en la biblioteca",
   "probados": [
-   "200 application/pdf https://archive.org/download/aurzane-bib-intervenciones-recomendadas-salud-mental-apoyo-psicosocial/intervenci"
+   "200 application/pdf https://archive.org/download/aurzane-bib-psicologia-e-internet/psicologia-e-internet.pdf"
   ]
  },
  {
@@ -140,6 +96,61 @@
   "motivo": "Dice ser un libro pero el PDF solo tiene 28 páginas (es un capítulo, artículo o resumen)",
   "probados": [
    "200 application/pdf https://archive.org/download/aurzane-bib-metodo-definitivo-tener-hijos-lectores-consejos/metodo-definitivo-ten"
+  ]
+ },
+ {
+  "fecha": "2026-11-22",
+  "id": "ia-aurzane-bib-prevencion-violencia-genero-parejas-adolescentes-desde",
+  "tipo": "libro",
+  "titulo": "Prevención de la violencia de género en parejas adolescentes desde la parentalidad positiva",
+  "url": "https://archive.org/details/aurzane-bib-prevencion-violencia-genero-parejas-adolescentes-desde",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 36 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-prevencion-violencia-genero-parejas-adolescentes-desde/prevencion-vio"
+  ]
+ },
+ {
+  "fecha": "2026-11-22",
+  "id": "ia-aurzane-bib-teoria-socio-historica-aprendizaje-educacion",
+  "tipo": "libro",
+  "titulo": "Teoría socio-histórica, aprendizaje y educación",
+  "url": "https://archive.org/details/aurzane-bib-teoria-socio-historica-aprendizaje-educacion",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 15 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-teoria-socio-historica-aprendizaje-educacion/teoria-socio-historica-a"
+  ]
+ },
+ {
+  "fecha": "2026-11-22",
+  "id": "ia-aurzane-bib-fundamentos-terapia-sistemica-breve-septiembre-2020",
+  "tipo": "libro",
+  "titulo": "Fundamentos de la terapia sistémica breve, septiembre 2020",
+  "url": "https://archive.org/details/aurzane-bib-fundamentos-terapia-sistemica-breve-septiembre-2020",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 44 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-fundamentos-terapia-sistemica-breve-septiembre-2020/fundamentos-terap"
+  ]
+ },
+ {
+  "fecha": "2026-11-22",
+  "id": "ia-aurzane-bib-psicologia-auditiva",
+  "tipo": "libro",
+  "titulo": "Psicología Auditiva",
+  "url": "https://archive.org/details/aurzane-bib-psicologia-auditiva",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 11 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-psicologia-auditiva/psicologia-auditiva.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-22",
+  "id": "ia-aurzane-bib-narrativas-trayectorias-educativas-identitarias",
+  "tipo": "libro",
+  "titulo": "Narrativas de trayectorias educativas identitarias",
+  "url": "https://archive.org/details/aurzane-bib-narrativas-trayectorias-educativas-identitarias",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 44 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-narrativas-trayectorias-educativas-identitarias/narrativas-trayectori"
   ]
  },
  {
@@ -3067,16 +3078,5 @@
   "url": "https://library.oapen.org/handle/20.500.12657/117635",
   "motivo": "No tiene un PDF libre que se pueda descargar",
   "probados": []
- },
- {
-  "fecha": "2026-11-07",
-  "id": "oa-W7213909026",
-  "tipo": "libro",
-  "titulo": "Caring for Music",
-  "url": "https://doi.org/10.4324/9781003685708",
-  "motivo": "Dice ser un libro pero el PDF solo tiene 25 páginas (es un capítulo, artículo o resumen)",
-  "probados": [
-   "200 application/pdf https://api.taylorfrancis.com/content/books/mono/download?identifierName=doi&identifierValue=10.4324/978100368"
-  ]
  }
 ]

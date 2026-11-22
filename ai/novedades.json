@@ -1,31 +1,6 @@
 [
  {
   "fecha": "2026-11-22",
-  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-gestion-carrera-profesional/",
-  "titulo": "Libro abierto: Cómo orientar la gestión de la carrera profesional"
- },
- {
-  "fecha": "2026-11-22",
-  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-comunicacion-no-verbal-relacion-medico-paciente/",
-  "titulo": "Libro abierto: La comunicación no verbal en la relación médico-paciente"
- },
- {
-  "fecha": "2026-11-22",
-  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-procesos-interoceptivos-propioceptivos-autistas-adultos/",
-  "titulo": "Libro abierto: Procesos interoceptivos y propioceptivos en autistas adultos"
- },
- {
-  "fecha": "2026-11-22",
-  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-crecer-cielo-abierto-salud-colectiva-psicosocial/",
-  "titulo": "Libro abierto: Crecer a cielo abierto: salud colectiva y psicosocial de infantes, escolares y adolescentes de familias recicl"
- },
- {
-  "fecha": "2026-11-22",
-  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-salud-mental-es-cosa-ninos-ninas/",
-  "titulo": "Libro abierto: La salud mental es cosa de niños, niñas y adolescentes. Barómetro de Opinión de la Infancia y Adolescencia 202"
- },
- {
-  "fecha": "2026-11-22",
   "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-psicologas-pioneras-historias-ciencia-feminismo-compromiso/",
   "titulo": "Libro abierto: Psicólogas pioneras. Historias de ciencia, feminismo y compromiso social"
  },
@@ -33,6 +8,26 @@
   "fecha": "2026-11-22",
   "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-organizaciones-siglo-xxi/",
   "titulo": "Libro abierto: Las organizaciones en el siglo XXI. Un enfoque psicosocial y político"
+ },
+ {
+  "fecha": "2026-11-22",
+  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-envejecimiento-actividad-fisica/",
+  "titulo": "Libro abierto: Envejecimiento, actividad física y desarrollo emocional"
+ },
+ {
+  "fecha": "2026-11-22",
+  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-psicologia-e-internet/",
+  "titulo": "Libro abierto: Psicología e internet"
+ },
+ {
+  "fecha": "2026-11-22",
+  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-comportamiento-colectivo/",
+  "titulo": "Libro abierto: Psicología del comportamiento colectivo"
+ },
+ {
+  "fecha": "2026-11-22",
+  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-terapia-interpersonal-grupal-depresion/",
+  "titulo": "Libro abierto: Terapia interpersonal grupal para la depresión"
  },
  {
   "fecha": "2026-11-22",
@@ -598,5 +593,10 @@
   "fecha": "2026-11-08",
   "url": "https://aurzane.com/biblioteca/recientes/ia-the-problem-is-other-people/",
   "titulo": "Libro abierto: THE PROBLEM IS OTHER PEOPLE: Essays on Solitude, Society, Consciousness, and the Human Condition"
+ },
+ {
+  "fecha": "2026-11-08",
+  "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13384364/",
+  "titulo": "Estudio reciente: Validation of the Edinburgh Postnatal Depression Scale to assess maternal prenatal depression symptoms in Braz"
  }
 ]
