@@ -74,8 +74,12 @@ function transformar(txt) {
   //   az-v4-navy: página que solo existía en oscuro (fondo var(--navy)) → v4.css le da su versión clara por defecto.
   //   az-v4-bg:   página que solo existía en claro (fondo var(--bg)) → v4.css le da su versión oscura.
   let out4 = out3;
-  if (/<html[\s>]/i.test(out4) && !/data-tema=\\?["']?oscuro|data-tema="claro"/.test(out4) && !/class="[^"]*az-v4-(navy|bg)/.test(out4)) {
-    const fam = (/body\s*\{[^}]*background(-color)?\s*:\s*var\(--navy\)/.test(out4) || /href="[^"]*biblioteca\.css/.test(out4)) ? 'az-v4-navy' : /body\s*\{[^}]*background(-color)?\s*:\s*var\(--bg[,)]/.test(out4) ? 'az-v4-bg' : '';
+  if (/<html[\s>]/i.test(out4) && !/data-tema=\\?["']?oscuro|data-tema="claro"/.test(out4) && !/class="[^"]*az-v4-(navy|bg|osc)/.test(out4)) {
+    // si la página pinta el fondo con var(--bg) pero su --bg es oscuro, en realidad es una página solo-oscura (como /libros/)
+    const bgRaiz = (out4.match(/:root\s*\{[^}]*--bg\s*:\s*(#[0-9a-fA-F]{6})/) || [])[1];
+    const bgOscuro = bgRaiz ? aOk(...hexA(bgRaiz))[0] < 0.45 : false;
+    const fam = (/body\s*\{[^}]*background(-color)?\s*:\s*var\(--navy\)/.test(out4) || /href="[^"]*biblioteca\.css/.test(out4)) ? 'az-v4-navy'
+      : /body\s*\{[^}]*background(-color)?\s*:\s*var\(--bg[,)]/.test(out4) ? (bgOscuro ? 'az-v4-osc' : 'az-v4-bg') : '';
     if (fam) { n++; out4 = out4.replace(/<html([^>]*)>/i, (m, at) => /class="/.test(at) ? '<html' + at.replace(/class="/, 'class="' + fam + ' ') + '>' : '<html' + at + ' class="' + fam + '">'); }
   }
   return { out: out4, n };

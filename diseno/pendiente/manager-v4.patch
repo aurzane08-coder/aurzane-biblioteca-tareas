@@ -1,5 +1,5 @@
 diff --git a/ai/manager.py b/ai/manager.py
-index 0710d43..21466b4 100644
+index 0710d43..3128730 100644
 --- a/ai/manager.py
 +++ b/ai/manager.py
 @@ -233,6 +233,15 @@ try:
@@ -190,16 +190,34 @@ index 0710d43..21466b4 100644
      f'<style>{CSS}</style></head><body>')
  def portada_html(p): return (f'<img src="{E(p["portada"])}" alt="Portada de {E(SIN_ETQ(p["titulo"])[:80])}" loading="lazy" onerror="this.remove()">' if p.get('portada') else '') + f'<span>{E(SIN_ETQ(p["titulo"])[:70])}</span>'
  def datos(p): return ', '.join(str(v) for v in (p.get('autores'), p.get('anio'), p.get('editorial')) if v)
-@@ -1265,7 +1367,7 @@ guardar('mapa_titulos.json', tit_cache)
+@@ -1265,12 +1367,20 @@ guardar('mapa_titulos.json', tit_cache)
  open(OUT + '/mapa/index.html', 'w', encoding='utf-8').write(
      '<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><script src="https://aurzane.com/aurzane-paleta.js"></script>'
      '<title>Mapa de AURZANE: todas las páginas</title><meta name="description" content="Todas las páginas de AURZANE en un solo lugar: tests, calculadoras, ejercicios, universidades, cursos y biblioteca.">'
 -    '<link rel="canonical" href="https://aurzane.com/mapa/"><link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@600;700&family=Instrument+Sans:wght@400;600&display=swap" rel="stylesheet">'
+-    '<style>body{margin:0;background:var(--bg,#F6F0E8);color:var(--text,#2E2620);font:16px/1.6 "Instrument Sans",system-ui,sans-serif}.h{background:#0F1530;color:#F5F3EE;padding:40px 20px}.h a{color:#EACF92}'
+-    '.w{max-width:1000px;margin:0 auto}h1{font:700 2.1rem "Bodoni Moda",serif;margin:6px 0}main{padding:10px 20px 60px;columns:2 300px;column-gap:40px}section{break-inside:avoid;margin:18px 0}'
+-    'h2{font:700 1.3rem "Bodoni Moda",serif;color:#2E2620;margin:0 0 4px}h3{font:600 .95rem "Instrument Sans",sans-serif;color:#5F5044;margin:14px 0 4px}ul{list-style:none;padding:0;margin:0}li a{color:inherit;text-decoration:none;display:block;padding:4px 0;border-bottom:1px solid rgba(95,80,68,.12)}li a:hover{text-decoration:underline}</style></head><body>'
+-    '<div class="h"><div class="w"><a href="https://aurzane.com/">AURZANE</a><h1>Mapa del sitio</h1><p>Todas las páginas del ecosistema. <a href="https://aurzane.com/novedades/">Ver novedades</a> · <a href="https://aurzane.com/biblioteca/">Biblioteca</a></p></div></div>'
+-    f'<main class="w">{mapa_html}</main></body></html>')
 +    '<link rel="canonical" href="https://aurzane.com/mapa/">'
-     '<style>body{margin:0;background:var(--bg,#F6F0E8);color:var(--text,#2E2620);font:16px/1.6 "Instrument Sans",system-ui,sans-serif}.h{background:#0F1530;color:#F5F3EE;padding:40px 20px}.h a{color:#EACF92}'
-     '.w{max-width:1000px;margin:0 auto}h1{font:700 2.1rem "Bodoni Moda",serif;margin:6px 0}main{padding:10px 20px 60px;columns:2 300px;column-gap:40px}section{break-inside:avoid;margin:18px 0}'
-     'h2{font:700 1.3rem "Bodoni Moda",serif;color:#2E2620;margin:0 0 4px}h3{font:600 .95rem "Instrument Sans",sans-serif;color:#5F5044;margin:14px 0 4px}ul{list-style:none;padding:0;margin:0}li a{color:inherit;text-decoration:none;display:block;padding:4px 0;border-bottom:1px solid rgba(95,80,68,.12)}li a:hover{text-decoration:underline}</style></head><body>'
-@@ -1289,19 +1391,47 @@ try:
++    # 22/11/2026 (rediseño v4): marfil, títulos en serif con filete, cada mundo en su tarjeta con su punto de color; claro y oscuro
++    '<style>:root{--bg:#F6F5F0;--sup:#FFFFFF;--tinta:#252724;--tinta-2:#5E605A;--linea:rgba(37,39,36,.12);--verde:#183D32;--champ:#C7B99B;--serif:"Instrument Serif","Bodoni Moda",Georgia,serif;--sans:"Manrope","Instrument Sans",system-ui,sans-serif}'
++    'html[data-tema="oscuro"]{--bg:#12251F;--sup:#183D32;--tinta:#ECEAE2;--tinta-2:#B9C2BB;--linea:rgba(242,239,230,.14)}'
++    '*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tinta);font:16px/1.6 var(--sans)}.w{max-width:1240px;margin:0 auto;padding:0 24px}'
++    '.cab{padding:52px 0 26px;border-bottom:1px solid var(--linea)}.cab .mig{font-size:.88rem;color:var(--tinta-2);margin:0}.cab a{color:inherit}'
++    'h1{font:400 clamp(2.6rem,5vw,3.8rem)/1.02 var(--serif);margin:10px 0 0}h1::after{content:"";display:block;width:64px;height:2px;margin-top:16px;background:linear-gradient(90deg,var(--verde) 0 62%,var(--champ) 62% 100%)}'
++    '.cab p{color:var(--tinta-2);margin:16px 0 0}.cab p a{color:var(--tinta);font-weight:600}'
++    'main{padding:30px 24px 64px;columns:3 330px;column-gap:18px}section{break-inside:avoid;margin:0 0 18px;background:var(--sup);border:1px solid var(--linea);border-top:3px solid var(--champ);border-radius:14px;padding:20px 22px}'
++    'h2{font:400 1.7rem/1.1 var(--serif);margin:0 0 6px}h3{font:700 .78rem var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--tinta-2);margin:16px 0 4px}'
++    'ul{list-style:none;padding:0;margin:0}li a{color:inherit;text-decoration:none;display:block;padding:6px 0;border-bottom:1px solid var(--linea);font-size:.95rem}li:last-child a{border-bottom:0}li a:hover{text-decoration:underline;text-underline-offset:3px}'
++    '@media(max-width:600px){.w{padding:0 16px}main{padding:22px 16px 48px}}</style></head><body>'
++    '<header class="cab w"><p class="mig"><a href="https://aurzane.com/">AURZANE</a> / Mapa del sitio</p><h1>Mapa del sitio</h1><p>Todas las páginas del ecosistema, por mundo y por tipo. <a href="https://aurzane.com/novedades/">Ver novedades</a> · <a href="https://aurzane.com/biblioteca/">Biblioteca</a></p></header>'
++    f'<main class="w" id="contenido">{mapa_html}</main></body></html>')
+ # «Hoy en AURZANE»: frase, curiosidad, ejercicio, test y música tranquila del día para la portada (aurzane.com/hoy/hoy.json)
+ try:
+     os.makedirs(OUT + '/hoy', exist_ok=True)
+@@ -1289,19 +1399,47 @@ try:
          lista_ = ''.join(f'<figure id="{E(f["id"])}" data-tema="{E(f["tema"])}"><blockquote>{E(f["texto"])}</blockquote><figcaption><strong>{E(f["autor"])}</strong>'
                           + (f' ({E(f["vida"])})' if f.get('vida') else '') + (f'. {E(f["descripcion"])}' if f.get('descripcion') else '')
                           + f' <span class="f">Vía <a href="{E(f["url_fuente"])}" rel="nofollow noopener">{E(f["fuente"])}</a> · {E(f["publicada"])}</span></figcaption></figure>' for f in pub)
@@ -255,12 +273,55 @@ index 0710d43..21466b4 100644
              '<script>document.querySelectorAll(".t button").forEach(function(b){b.onclick=function(){var t=b.dataset.t;document.querySelectorAll(".t button").forEach(function(x){x.setAttribute("aria-pressed",x===b)});'
              'document.querySelectorAll("figure").forEach(function(f){f.hidden=t&&f.dataset.tema!==t})}})</script></body></html>')
      if usadas.get('dias', {}).get(HOY):
-@@ -1353,7 +1483,7 @@ try:
+@@ -1348,18 +1486,42 @@ try:
+     if arts:
+         os.makedirs(OUT + '/articulos-recientes', exist_ok=True)
+         url_a = lambda a: f'https://{a["mundo"]}.aurzane.com/articulo.html?mundo={a["mundo"]}&slug={urllib.parse.quote(a["slug"])}'
+-        lis_a = ''.join(f'<article><p class="k">{E(a["mundo"].upper())}{" · " + E(a["categoria"]) if a.get("categoria") else ""} · {E((a.get("publicado_at") or "")[:10])}</p>'
+-                        f'<h2><a href="{E(url_a(a))}">{E(a["titulo"])}</a></h2><p>{E(a.get("resumen") or "")}</p></article>' for a in arts)
++        # 22/11/2026 (rediseño v4): tarjetas con foto real según el tema (Unsplash, formato automático = AVIF), filete del color de su mundo
++        FOTOS_T = [(r'ansiedad|p[áa]nico|preocupa', '1505142468610-359e7d316be0'), (r'estr[ée]s|burnout|agotamiento', '1541199249251-f713e6145474'), (r'depresi|[áa]nimo|triste', '1529665253569-6d01c0eaf7b6'),
++                   (r'sue[ñn]o|insomnio|dormir|descans', '1541781774459-bb2af2f05b55'), (r'h[áa]bito|aliment|nutric|ejercicio|deporte', '1490645935967-10de6ba17061'), (r'autoestima|identidad|personalidad', '1517841905240-472988babdf9'),
++                   (r'pareja|relaci|amistad|famil|v[íi]nculo|cuidado', '1544027993-37dbfe43562a'), (r'soledad|aislamiento', '1512438248247-f0f2a5a8b7f0'), (r'duelo|p[ée]rdida|muerte|resilien|trauma', '1466692476868-aef1dfb1e735'),
++                   (r'bienestar|felicidad|satisfacc|prop[óo]sito|mindful|calma', '1506126613408-eca07ce68773'), (r'carrera|vocaci|universidad|oferta|acceso|elegir', '1541339907198-e08756dedf3f'),
++                   (r'aprend|estudi|memoria|metacog|educa|ense[ñn]|tdah|atenci', '1434030216411-0b793f4b4173'), (r'curso|formaci|certific', '1522202176988-66273c2fd55f'),
++                   (r'hipoteca|vivienda|dinero|ahorro|inmobil|finanz|sueldo|inver', '1579621970563-ebec7560ff3e'), (r'libro|lectura|biblioteca', '1532012197267-da84d127e765')]
++        FOTOS_M = {'mind': '1559757175-5700dde675bc', 'nexus': '1541339907198-e08756dedf3f', 'live': '1454496522488-7a8e488e8606', 'learn': '1481627834876-b7833e8f5570', 'build': '1461360370896-922624d12aa1'}
++        def foto_a(a):
++            tx = ((a.get('categoria') or '') + ' ' + (a.get('titulo') or '')).lower()
++            i = next((f for r, f in FOTOS_T if re.search(r, tx)), FOTOS_M.get(a.get('mundo'), FOTOS_M['mind']))
++            return f'https://images.unsplash.com/photo-{i}?w=720&h=405&q=70&fit=crop&auto=format'
++        COL_M = {'mind': '#6A55C2', 'nexus': '#3E63B8', 'live': '#B2563A', 'learn': '#2F7A6A', 'build': '#946233'}
++        lis_a = ''.join(f'<li><a class="ar" href="{E(url_a(a))}" style="--c:{COL_M.get(a["mundo"], "#C7B99B")}"><span class="ar-img"><img src="{foto_a(a)}" alt="" loading="lazy" width="720" height="405"></span>'
++                        f'<span class="ar-t"><span class="k"><i></i>{E(a["mundo"].upper())}{" · " + E(a["categoria"]) if a.get("categoria") else ""} · {E((a.get("publicado_at") or "")[:10])}</span>'
++                        f'<b>{E(a["titulo"])}</b><span class="r">{E(a.get("resumen") or "")}</span></span></a></li>' for a in arts)
          open(OUT + '/articulos-recientes/index.html', 'w', encoding='utf-8').write(
              '<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><script src="https://aurzane.com/aurzane-paleta.js"></script>'
              f'<title>Artículos recientes de psicología y bienestar | AURZANE</title><meta name="description" content="Artículos de divulgación de psicología, bienestar y aprendizaje basados en estudios científicos en acceso abierto.">'
 -            '<link rel="canonical" href="https://aurzane.com/articulos/recientes/"><meta property="og:image" content="https://aurzane.com/og-portada.jpg"><link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@600;700&family=Instrument+Sans:wght@400;600&display=swap" rel="stylesheet">'
+-            '<style>body{margin:0;background:var(--bg,#F6F0E8);color:var(--text,#2E2620);font:16px/1.6 "Instrument Sans",system-ui,sans-serif}.h{background:#0F1530;color:#F5F3EE;padding:40px 20px}.h a{color:#EACF92}'
+-            '.w{max-width:860px;margin:0 auto}h1{font:700 2.1rem "Bodoni Moda",serif;margin:6px 0}main{padding:10px 20px 60px}article{padding:20px 0;border-bottom:1px solid rgba(95,80,68,.15)}'
+-            'h2{font:700 1.3rem/1.3 "Bodoni Moda",serif;margin:2px 0 6px}h2 a{color:inherit;text-decoration:none}h2 a:hover{text-decoration:underline}.k{margin:0;font-size:.8rem;color:#6b6153}article p{margin:0}</style></head><body>'
+-            '<div class="h"><div class="w"><a href="https://aurzane.com/">AURZANE</a><h1>Artículos recientes</h1><p>Psicología, bienestar y aprendizaje explicados con claridad y con su fuente. '
+-            '<a href="https://aurzane.com/articulos/">Todos los artículos</a> · <a href="https://aurzane.com/novedades/">Novedades</a> · <a href="https://aurzane.com/frases/">Frases</a> · <a href="https://aurzane.com/biblioteca/">Biblioteca</a></p></div></div>'
+-            f'<main class="w">{lis_a}</main></body></html>')
 +            '<link rel="canonical" href="https://aurzane.com/articulos/recientes/"><meta property="og:image" content="https://aurzane.com/og-portada.jpg">'
-             '<style>body{margin:0;background:var(--bg,#F6F0E8);color:var(--text,#2E2620);font:16px/1.6 "Instrument Sans",system-ui,sans-serif}.h{background:#0F1530;color:#F5F3EE;padding:40px 20px}.h a{color:#EACF92}'
-             '.w{max-width:860px;margin:0 auto}h1{font:700 2.1rem "Bodoni Moda",serif;margin:6px 0}main{padding:10px 20px 60px}article{padding:20px 0;border-bottom:1px solid rgba(95,80,68,.15)}'
-             'h2{font:700 1.3rem/1.3 "Bodoni Moda",serif;margin:2px 0 6px}h2 a{color:inherit;text-decoration:none}h2 a:hover{text-decoration:underline}.k{margin:0;font-size:.8rem;color:#6b6153}article p{margin:0}</style></head><body>'
++            '<style>:root{--bg:#F6F5F0;--sup:#FFFFFF;--tinta:#252724;--tinta-2:#5E605A;--linea:rgba(37,39,36,.12);--verde:#183D32;--champ:#C7B99B;--salvia:#EAEFEA;--serif:"Instrument Serif","Bodoni Moda",Georgia,serif;--sans:"Manrope","Instrument Sans",system-ui,sans-serif}'
++            'html[data-tema="oscuro"]{--bg:#12251F;--sup:#183D32;--tinta:#ECEAE2;--tinta-2:#B9C2BB;--linea:rgba(242,239,230,.14);--salvia:#1D4538}'
++            '*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tinta);font:16px/1.6 var(--sans)}.w{max-width:1240px;margin:0 auto;padding:0 24px}'
++            '.cab{padding:52px 0 26px;border-bottom:1px solid var(--linea)}.cab .mig{font-size:.88rem;color:var(--tinta-2);margin:0}.cab a{color:inherit}.cab p a{color:var(--tinta);font-weight:600}'
++            'h1{font:400 clamp(2.6rem,5vw,3.8rem)/1.02 var(--serif);margin:10px 0 0}h1::after{content:"";display:block;width:64px;height:2px;margin-top:16px;background:linear-gradient(90deg,var(--verde) 0 62%,var(--champ) 62% 100%)}'
++            '.cab p{color:var(--tinta-2);margin:16px 0 0;max-width:64ch}'
++            'main ul{list-style:none;margin:0;padding:30px 0 64px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}'
++            '.ar{display:flex;flex-direction:column;height:100%;background:var(--sup);border:1px solid var(--linea);border-top:3px solid var(--c);border-radius:14px;overflow:hidden;color:inherit;text-decoration:none}'
++            '.ar:hover{border-color:var(--c)}.ar:hover b{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}'
++            '.ar-img{display:block;aspect-ratio:16/9;background:var(--salvia)}.ar-img img{width:100%;height:100%;object-fit:cover;display:block}'
++            '.ar-t{display:flex;flex-direction:column;gap:8px;padding:16px 18px 20px}.k{display:flex;align-items:center;gap:7px;font:700 .74rem var(--sans);letter-spacing:.06em;text-transform:uppercase;color:var(--tinta-2)}.k i{width:8px;height:8px;border-radius:50%;background:var(--c)}'
++            '.ar b{font:400 1.36rem/1.22 var(--serif)}.r{font-size:.92rem;color:var(--tinta-2);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}'
++            '@media(max-width:980px){main ul{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:600px){.w{padding:0 16px}main ul{grid-template-columns:1fr}}</style></head><body>'
++            '<header class="cab w"><p class="mig"><a href="https://aurzane.com/">AURZANE</a> / <a href="https://aurzane.com/articulos/">Artículos</a> / Recientes</p><h1>Artículos recientes</h1><p>Psicología, bienestar y aprendizaje explicados con claridad y con su fuente. '
++            '<a href="https://aurzane.com/articulos/">Todos los artículos</a> · <a href="https://aurzane.com/novedades/">Novedades</a> · <a href="https://aurzane.com/frases/">Frases</a> · <a href="https://aurzane.com/biblioteca/">Biblioteca</a></p></header>'
++            f'<main class="w" id="contenido"><ul>{lis_a}</ul></main></body></html>')
+         conexiones['fuera_sitemap'] = sorted(set(conexiones['fuera_sitemap']) | {url_a(a) for a in arts} | {'https://aurzane.com/articulos/recientes/'} | ({'https://aurzane.com/frases/'} if os.path.exists(OUT + '/frases/index.html') else set()))
+ except Exception as e:
+     print('::notice title=AI::índice de artículos no generado', str(e)[:120])

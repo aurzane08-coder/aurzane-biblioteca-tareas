@@ -266,3 +266,58 @@ html[data-tema="oscuro"] .cat-badge{background:#21493D!important;color:#E9E4DB!i
 .pz-promo-txt b{font-family:var(--v-serif)!important;font-weight:400!important;font-size:1.7rem!important;color:#F6F5F0}
 .pz-promo-txt span{color:#DDE2DC!important}
 .pz-promo-cta{background:#C7B99B!important;color:#12251F!important;border-radius:999px!important}
+/* Tarjetas de herramientas con degradado propio (scard, universidades): tarjeta editorial blanca con foto arriba si la tiene */
+a.scard{background:#FFFFFF!important;color:#252724!important;border:1px solid rgba(37,39,36,.12)!important;border-top:3px solid #C7B99B!important;box-shadow:none!important;overflow:hidden}
+a.scard:hover{border-color:#183D32!important}
+a.scard b{font-family:var(--v-serif)!important;font-weight:400!important;font-size:1.35rem!important;color:#12251F!important}
+a.scard span:not(.e):not(.az-cf-img){color:#5E605A!important;opacity:1!important}
+a.scard.az-cf{padding-top:0!important}
+a.scard.az-cf .az-cf-img{position:relative!important;display:block;height:140px!important;margin:0 -20px 12px!important;left:auto!important;right:auto!important;top:auto!important}
+a.scard.az-cf .az-cf-img::after{display:none}
+html[data-tema="oscuro"] a.scard{background:#183D32!important;color:#ECEAE2!important;border-color:rgba(242,239,230,.14)!important;border-top-color:#C7B99B!important}
+html[data-tema="oscuro"] a.scard b{color:#F6F5F0!important}
+html[data-tema="oscuro"] a.scard span:not(.e):not(.az-cf-img){color:#C9D0C9!important}
+/* NEXUS usa main > .hero como cabecera de mundo: misma cabecera verde con foto */
+html.az-ds-nexus.az-pm main > .hero{max-width:none!important;margin:0!important;border-radius:0!important;color:#F6F5F0;padding:clamp(56px,9vh,104px) max(24px,calc((100vw - 1280px)/2)) clamp(48px,8vh,88px)!important;
+  background:linear-gradient(90deg,rgba(18,37,31,.94) 0%,rgba(18,37,31,.82) 42%,rgba(18,37,31,.25) 100%),url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=1800&q=70&auto=format&fit=crop') right center/cover no-repeat!important}
+html.az-ds-nexus.az-pm main > .hero :is(h1,p,.stats,.stats *){color:#F6F5F0!important}
+html.az-ds-nexus.az-pm main > .hero p{color:#DDE2DC!important}
+html.az-ds-nexus.az-pm main > .hero .eyebrow{color:#D9CDB2!important;font:600 .8rem/1.3 var(--v-sans)!important;letter-spacing:.14em!important}
+html.az-ds-nexus.az-pm main > .hero h1{font-weight:400!important;font-size:clamp(2.6rem,5.4vw,4.4rem)!important;line-height:1.02!important}
+html.az-ds-nexus.az-pm main > .hero h1 :is(span,em){color:#D9CDB2!important;font-style:italic}
+html.az-ds-nexus.az-pm main > .hero .az-empieza{color:#252724!important;background:#FFFFFF!important}
+html[data-tema="oscuro"].az-ds-nexus.az-pm main > .hero .az-empieza{color:#ECEAE2!important;background:#183D32!important}
+/* NEXUS: temas con foto de la misma proporción (sin tarjetas desiguales ni huecos) */
+#categoriasGrid{align-items:start}
+#categoriasGrid .tile img{width:100%!important;height:auto!important;aspect-ratio:16/10;object-fit:cover}
+.tile .tile-foot{font-family:var(--v-sans)!important;font-size:.82rem!important;font-weight:600}
+.tile h3,.tile-featured h3{font-family:var(--v-serif)!important;font-weight:400!important}
+.tile h3{font-size:1.3rem!important}.tile-featured h3{font-size:1.7rem!important}
+/* Guías recientes de cada mundo: sin huecos en la cuadrícula (las tarjetas pequeñas suben a rellenar) */
+.editorial-grid{grid-auto-flow:row dense!important;align-items:start}
+.e-card{border-radius:14px!important;border-top:3px solid #C7B99B!important}
+.e-card .e-img{height:190px!important}
+.e-card h3{font-family:var(--v-serif)!important;font-weight:400!important;font-size:1.3rem!important;line-height:1.22!important}
+/* Research Hub: barra superior clara en tema claro, buscador blanco sobre la cabecera verde, chips legibles */
+html.az-v4-navy:not([data-tema="oscuro"]) .topbar{background:rgba(246,245,240,.95)!important;border-bottom-color:rgba(37,39,36,.12)!important}
+html.az-v4-navy .hero-wrap .search-box{background:#FFFFFF!important;border-color:transparent!important;box-shadow:0 18px 40px -22px rgba(0,0,0,.55)}
+html.az-v4-navy .hero-wrap .search-box input{color:#252724!important}
+html.az-v4-navy .hero-wrap .search-box input::placeholder{color:#5E605A!important}
+html.az-v4-navy .hero-wrap .search-box svg{color:#183D32!important}
+html.az-v4-navy .hero-wrap .chip{color:#F6F5F0!important;border-color:rgba(242,239,230,.3)!important;background:rgba(242,239,230,.06)!important}
+html.az-v4-navy .hero-wrap .chip small,html.az-v4-navy .hero-wrap .lbl{color:#C9D0C9!important}
+html.az-v4-navy .chip small{font-size:.76rem!important}
+html.az-v4-navy:not([data-tema="oscuro"]) .layout .chip small{color:#5E605A!important}
+/* Biblioteca: portadas tipográficas (libros sin portada) con título claro sobre su color; chip «Ficha» legible */
+.portada.tipo .pt-tit{color:#F6F5F0!important;font-family:var(--v-serif)!important;font-weight:400!important;font-size:1.12rem!important;border-bottom-color:rgba(199,185,155,.55)!important}
+.portada.tipo .pt-aut{color:#D9CDB2!important;font-size:.78rem!important}
+html.az-v4-navy:not([data-tema="oscuro"]) .chip.ficha{color:#45473F!important;border-color:rgba(37,39,36,.25)!important;opacity:1!important}
+
+/* =====================================================================================================
+   Páginas que solo existían en oscuro con variables --bg/--sup/--txt (tienda de libros, tests en inglés y portugués…):
+   en claro por defecto; en oscuro quedan como estaban, ya en verde profundo
+   ===================================================================================================== */
+html.az-v4-osc:not([data-tema="oscuro"]){--bg:#F6F5F0;--sup:#FFFFFF;--txt:#252724;--sua:#5E605A;--oro:#183D32;--verde:#2D6A4F;--lin:rgba(37,39,36,.12);
+  --ok:#2D6A4F;--mid:#8A6D2E;--high:#A33D2D;--text:#252724;--text-dim:#5E605A;--surface:#FFFFFF;--border:rgba(37,39,36,.12)}
+html.az-v4-osc:not([data-tema="oscuro"]) body{background:#F6F5F0!important;color:#252724}
+html.az-v4-osc:not([data-tema="oscuro"]) header.top{background:#F6F5F0}

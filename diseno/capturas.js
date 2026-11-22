@@ -76,7 +76,13 @@ const nombre = u => u.replace(/^https?:\/\//, '').replace(/[^a-z0-9]+/gi, '_').r
           if (![...e.childNodes].some(n => n.nodeType === 3 && /\p{L}{2,}/u.test(n.textContent))) return false;
           const r = e.getBoundingClientRect(), cs = getComputedStyle(e);
           return r.width > 4 && r.height > 4 && r.top < 6000 && cs.visibility !== 'hidden' && +cs.opacity > 0 && cs.position !== 'fixed';
-        }).slice(0, 900).map(e => [e, e.getBoundingClientRect()]);
+        }).filter(e => !e.closest('details:not([open]) > :not(summary)') && (!e.checkVisibility || e.checkVisibility({ checkOpacity: true, checkVisibilityCSS: true })))
+          .slice(0, 900).map(e => {   // caja visible de verdad: recortada por los padres con overflow oculto
+            let r = e.getBoundingClientRect(); let L = r.left, T = r.top, R = r.right, B = r.bottom;
+            for (let x = e.parentElement; x && x !== document.body; x = x.parentElement) { const s = getComputedStyle(x);
+              if (s.overflowX !== 'visible' || s.overflowY !== 'visible' || s.clipPath !== 'none') { const q = x.getBoundingClientRect(); L = Math.max(L, q.left); T = Math.max(T, q.top); R = Math.min(R, q.right); B = Math.min(B, q.bottom); } }
+            return [e, { left: L, top: T, right: R, bottom: B, width: Math.max(0, R - L), height: Math.max(0, B - T) }];
+          }).filter(([e, r]) => r.width > 4 && r.height > 4);
         const solapes = [];
         for (let i = 0; i < cajas.length && solapes.length < 12; i++) for (let j = i + 1; j < cajas.length; j++) {
           const [a, ra] = cajas[i], [b, rb] = cajas[j]; if (a.contains(b) || b.contains(a)) continue;
