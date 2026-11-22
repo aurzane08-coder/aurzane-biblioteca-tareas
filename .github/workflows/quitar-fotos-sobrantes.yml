@@ -1,0 +1,29 @@
+name: Quitar del servidor las fotos que ya no se usan (una vez)
+# Autorizado por Adrián (22/11/2026): las fotos se sirven ahora desde Pexels, Unsplash y Wikimedia, sin ocupar SiteGround.
+# Comprueba antes que ninguna página publicada las use; si alguna las usa, no borra nada.
+on:
+  push:
+    paths: ['.github/workflows/quitar-fotos-sobrantes.yml']
+permissions:
+  contents: read
+jobs:
+  quitar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      SG_KEY: ${{ secrets.SG_KEY }}
+      SG_HOST: ${{ secrets.SG_HOST }}
+      SG_USER: ${{ secrets.SG_USER }}
+      SG_PORT: ${{ secrets.SG_PORT }}
+      SG_PASS: ${{ secrets.SG_PASS }}
+    steps:
+      - name: Comprobar y quitar
+        run: |
+          mkdir -p ~/.ssh && printf '%s\n' "$SG_KEY" | tr -d '\r' > ~/.ssh/id && chmod 600 ~/.ssh/id
+          if [ -n "$SG_PASS" ]; then ssh-keygen -p -P "$SG_PASS" -N "" -f ~/.ssh/id >/dev/null; fi
+          S="ssh -i $HOME/.ssh/id -p ${SG_PORT:-18765} -o StrictHostKeyChecking=accept-new $SG_USER@$SG_HOST"
+          $S 'cd ~/www; du -sh aurzane.com/public_html/img/banco nexus.aurzane.com/public_html/universidades/img 2>/dev/null
+            n=$(grep -rlE "img/banco/|universidades/img/" --include=*.html --include=*.js --include=*.css */public_html 2>/dev/null | grep -v "/img/" | head -5)
+            if [ -n "$n" ]; then echo "Siguen usándose en:"; echo "$n"; echo "No borro nada."; exit 1; fi
+            rm -rf aurzane.com/public_html/img/banco nexus.aurzane.com/public_html/universidades/img
+            echo "Quitadas. La cuenta usa ahora:"; du -sh ~/www'
