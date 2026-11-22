@@ -144,7 +144,7 @@
   0
  ],
  "tipo:libro": [
-  54,
+  61,
   9
  ],
  "Gambling Behavior and Treatments": [
@@ -312,7 +312,7 @@
   0
  ],
  "archive:psicologia": [
-  24,
+  31,
   0
  ],
  "ed:The Open University": [
@@ -570,5 +570,77 @@
  "Child Abuse and Trauma": [
   1,
   0
+ ],
+ "ed:GRAÓ": [
+  0,
+  1
+ ],
+ "ed:Asociación The Conversation España": [
+  0,
+  1
+ ],
+ "ed:Fundación Jaume Bofill": [
+  0,
+  1
+ ],
+ "ed:Pontificia Universidad Católica del Perú. Instituto de Desarrollo Humano de América Latina": [
+  0,
+  1
+ ],
+ "ed:Editorial Universidad de Sevilla": [
+  0,
+  1
+ ],
+ "ed:OPS": [
+  0,
+  1
+ ],
+ "ed:Editorial UOC": [
+  3,
+  2
+ ],
+ "ed:Universidad Andina Simón Bolívar, Sede Ecuador; Corporación Editora Nacional": [
+  0,
+  1
+ ],
+ "ed:Ediciones Universidad de Salamanca": [
+  0,
+  1
+ ],
+ "ed:Universitat Oberta de Catalunya (UOC)": [
+  0,
+  1
+ ],
+ "ed:Publicacions de la Universitat de València": [
+  1,
+  0
+ ],
+ "ed:Pontificia Universidad Católica del Perú. Fondo Editorial": [
+  0,
+  1
+ ],
+ "ed:UNICEF España": [
+  1,
+  0
+ ],
+ "ed:Quito, EC: Universidad Andina Simón Bolívar, Sede Ecuador / Fundación Alianza en el Desarrollo / MISEREOR / Institutos de Estudios Ecologistas del Tercer Mundo": [
+  1,
+  0
+ ],
+ "ed:Universitat de Barcelona. IDP & Ediciones Octaedro": [
+  0,
+  1
+ ],
+ "ed:Quito, EC: Universidad Andina Simón Bolívar, Sede Ecuador": [
+  1,
+  0
+ ],
+ "ed:Red Universitaria de Investigación Innovación Educativa (REUNI+D)": [
+  0,
+  1
+ ],
+ "ed:Nosótrica Ediciones": [
+  0,
+  1
  ]
 }

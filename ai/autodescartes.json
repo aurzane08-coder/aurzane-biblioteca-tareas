@@ -1,6 +1,171 @@
 [
  {
   "fecha": "2026-11-22",
+  "id": "ia-aurzane-bib-conflictos-violencias-emociones-ambito-educativo",
+  "tipo": "libro",
+  "titulo": "Conflictos, violencias y emociones en el ámbito educativo",
+  "url": "https://archive.org/details/aurzane-bib-conflictos-violencias-emociones-ambito-educativo",
+  "motivo": "La IA le dio 4/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-comunicacion-no-verbal-relacion-medico-paciente/comunicacion-no-verba"
+  ]
+ },
+ {
+  "fecha": "2026-11-22",
+  "id": "ia-aurzane-bib-historias-vida-educacion-sujeto-dialogo-experiencia",
+  "tipo": "libro",
+  "titulo": "Historias de vida en educación: sujeto, diálogo, experiencia",
+  "url": "https://archive.org/details/aurzane-bib-historias-vida-educacion-sujeto-dialogo-experiencia",
+  "motivo": "La IA le dio 3/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-comunicacion-no-verbal-relacion-medico-paciente/comunicacion-no-verba"
+  ]
+ },
+ {
+  "fecha": "2026-11-22",
+  "id": "ia-aurzane-bib-abuso-influencia-comunicacion-publica-letra-pequena",
+  "tipo": "libro",
+  "titulo": "Abuso de influencia en la comunicación pública: letra pequeña y otros engaños",
+  "url": "https://archive.org/details/aurzane-bib-abuso-influencia-comunicacion-publica-letra-pequena",
+  "motivo": "La IA le dio 3/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-comunicacion-no-verbal-relacion-medico-paciente/comunicacion-no-verba"
+  ]
+ },
+ {
+  "fecha": "2026-11-22",
+  "id": "ia-aurzane-bib-relatos-personales-como-objetos-frontera-contextos",
+  "tipo": "libro",
+  "titulo": "Relatos personales como objetos de frontera en contextos educativos",
+  "url": "https://archive.org/details/aurzane-bib-relatos-personales-como-objetos-frontera-contextos",
+  "motivo": "La IA le dio 5/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-crecer-cielo-abierto-salud-colectiva-psicosocial/crecer-cielo-abierto"
+  ]
+ },
+ {
+  "fecha": "2026-11-22",
+  "id": "ia-aurzane-bib-aprendizaje-cultura-desarrollo-aproximacion-interdisciplinar",
+  "tipo": "libro",
+  "titulo": "Aprendizaje, cultura y desarrollo : una aproximación interdisciplinaria",
+  "url": "https://archive.org/details/aurzane-bib-aprendizaje-cultura-desarrollo-aproximacion-interdisciplinar",
+  "motivo": "La IA le dio 5/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-psicologas-pioneras-historias-ciencia-feminismo-compromiso/psicologas"
+  ]
+ },
+ {
+  "fecha": "2026-11-22",
+  "id": "ia-aurzane-bib-psicometria-febrero-2023",
+  "tipo": "libro",
+  "titulo": "Psicometría, febrero 2023",
+  "url": "https://archive.org/details/aurzane-bib-psicometria-febrero-2023",
+  "motivo": "La IA le dio 2/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-organizaciones-siglo-xxi/organizaciones-siglo-xxi.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-22",
+  "id": "ia-aurzane-bib-educacion-inclusiva-calidad-ideas-estrategias-seguir",
+  "tipo": "libro",
+  "titulo": "Una educación inclusiva y de calidad: ideas y estrategias para seguir avanzando",
+  "url": "https://archive.org/details/aurzane-bib-educacion-inclusiva-calidad-ideas-estrategias-seguir",
+  "motivo": "La IA le dio 4/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-gestion-carrera-profesional/gestion-carrera-profesional.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-22",
+  "id": "ia-aurzane-bib-memorias-movimiento-testimonios-corporales-sobre-diagnostico",
+  "tipo": "libro",
+  "titulo": "Memorias en movimiento: testimonios corporales sobre el diagnóstico del \"trastorno bipolar\"",
+  "url": "https://archive.org/details/aurzane-bib-memorias-movimiento-testimonios-corporales-sobre-diagnostico",
+  "motivo": "La IA le dio 6/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-gestion-carrera-profesional/gestion-carrera-profesional.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-22",
+  "id": "ia-aurzane-bib-retorica-educacion-expresion-oral-su-aprendizaje",
+  "tipo": "libro",
+  "titulo": "Retórica y educación. La expresión oral y su aprendizaje",
+  "url": "https://archive.org/details/aurzane-bib-retorica-educacion-expresion-oral-su-aprendizaje",
+  "motivo": "La IA le dio 4/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-gestion-carrera-profesional/gestion-carrera-profesional.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-22",
+  "id": "ia-aurzane-bib-intervenciones-recomendadas-salud-mental-apoyo-psicosocial",
+  "tipo": "libro",
+  "titulo": "Intervenciones recomendadas en salud mental y apoyo psicosocial durante la pandemia de COVID-19, junio de 2020",
+  "url": "https://archive.org/details/aurzane-bib-intervenciones-recomendadas-salud-mental-apoyo-psicosocial",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 17 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-intervenciones-recomendadas-salud-mental-apoyo-psicosocial/intervenci"
+  ]
+ },
+ {
+  "fecha": "2026-11-22",
+  "id": "ia-aurzane-bib-intervencion-familiar-durante-adolescencia",
+  "tipo": "libro",
+  "titulo": "La intervención familiar durante la adolescencia",
+  "url": "https://archive.org/details/aurzane-bib-intervencion-familiar-durante-adolescencia",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 38 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-intervencion-familiar-durante-adolescencia/intervencion-familiar-dura"
+  ]
+ },
+ {
+  "fecha": "2026-11-22",
+  "id": "ia-aurzane-bib-verguenza-humillacion-aislamiento-social-como-privacion",
+  "tipo": "libro",
+  "titulo": "Vergüenza, Humillación y Aislamiento Social como Privación del Bienestar",
+  "url": "https://archive.org/details/aurzane-bib-verguenza-humillacion-aislamiento-social-como-privacion",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 13 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-verguenza-humillacion-aislamiento-social-como-privacion/verguenza-hum"
+  ]
+ },
+ {
+  "fecha": "2026-11-22",
+  "id": "ia-aurzane-bib-metodo-definitivo-tener-hijos-lectores-consejos",
+  "tipo": "libro",
+  "titulo": "El método definitivo para tener hijos lectores: consejos y recetas milagrosas que garantizan el éxito escolar",
+  "url": "https://archive.org/details/aurzane-bib-metodo-definitivo-tener-hijos-lectores-consejos",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 28 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-metodo-definitivo-tener-hijos-lectores-consejos/metodo-definitivo-ten"
+  ]
+ },
+ {
+  "fecha": "2026-11-22",
+  "id": "ia-aurzane-bib-bumeran-violencia-adicciones",
+  "tipo": "libro",
+  "titulo": "El bumerán de la violencia y las adicciones",
+  "url": "https://archive.org/details/aurzane-bib-bumeran-violencia-adicciones",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 4 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-bumeran-violencia-adicciones/bumeran-violencia-adicciones.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-22",
+  "id": "ia-aurzane-bib-autoaprendizaje-como-desarrollo-personal",
+  "tipo": "libro",
+  "titulo": "EL AUTOAPRENDIZAJE COMO DESARROLLO PERSONAL",
+  "url": "https://archive.org/details/aurzane-bib-autoaprendizaje-como-desarrollo-personal",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 19 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-autoaprendizaje-como-desarrollo-personal/autoaprendizaje-como-desarro"
+  ]
+ },
+ {
+  "fecha": "2026-11-22",
   "id": "ia-human-behaviour-decoded",
   "tipo": "libro",
   "titulo": "Human Behaviour Decoded",
@@ -2913,135 +3078,5 @@
   "probados": [
    "200 application/pdf https://api.taylorfrancis.com/content/books/mono/download?identifierName=doi&identifierValue=10.4324/978100368"
   ]
- },
- {
-  "fecha": "2026-11-07",
-  "id": "oa-W7221799758",
-  "tipo": "libro",
-  "titulo": "Flourishing Self Help",
-  "url": "https://doi.org/10.20473/aup.1683",
-  "motivo": "Dice ser un libro pero el PDF solo tiene 26 páginas (es un capítulo, artículo o resumen)",
-  "probados": [
-   "200 application/pdf https://omp.unair.ac.id/aup/catalog/download/1683/1329/9919"
-  ]
- },
- {
-  "fecha": "2026-11-07",
-  "id": "oa-W7214090800",
-  "tipo": "libro",
-  "titulo": "Bullying and the Developing Brain",
-  "url": "https://doi.org/10.4324/9781003771777",
-  "motivo": "Dice ser un libro pero el PDF solo tiene 36 páginas (es un capítulo, artículo o resumen)",
-  "probados": [
-   "200 application/pdf https://api.taylorfrancis.com/content/books/mono/download?identifierName=doi&identifierValue=10.4324/978100377"
-  ]
- },
- {
-  "fecha": "2026-11-07",
-  "id": "oa-W7131391325",
-  "tipo": "libro",
-  "titulo": "Contra el olvido: Recuperando la memoria de varones adultos mayores homosexuales de Aguascalientes",
-  "url": "https://doi.org/10.33064/uaa/978-607-2638-84-6",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": [
-   "<urlopen error timed out> https://libros.uaa.mx/uaa/catalog/download/368/339/3150"
-  ]
- },
- {
-  "fecha": "2026-11-07",
-  "id": "oa-W7131674165",
-  "tipo": "libro",
-  "titulo": "Programa de gamificación para mejorar el pensamiento crítico de los estudiantes de básica media en una institución educativa",
-  "url": "https://doi.org/10.59764/ceo.143",
-  "motivo": "el título indica actas, resúmenes o material que no es un libro",
-  "probados": []
- },
- {
-  "fecha": "2026-11-06",
-  "id": "cita-349116fe3c",
-  "tipo": "cita",
-  "titulo": "¿No es bastante recompensa para los pequeños dolores que en una vida tan breve podemos experimentar?",
-  "url": "https://aurzane.com/biblioteca/libro/marta-y-maria.html",
-  "motivo": "Gemini le dio 6/10: no tiene fuerza suficiente para redes"
- },
- {
-  "fecha": "2026-11-06",
-  "id": "cita-c49a79133a",
-  "tipo": "cita",
-  "titulo": "No sólo desconocieron siempre la verdadera caridad, sino que ni por el forro conocían la delicadeza.",
-  "url": "https://aurzane.com/biblioteca/libro/misericordia.html",
-  "motivo": "Gemini le dio 5/10: no tiene fuerza suficiente para redes"
- },
- {
-  "fecha": "2026-11-06",
-  "id": "cita-0f05ae6dae",
-  "tipo": "cita",
-  "titulo": "Su teoría de que el abismo del alma se colma con riquezas, poder y amor, era para mí el más mezquino de los dislates.",
-  "url": "https://aurzane.com/biblioteca/libro/la-sirena-negra.html",
-  "motivo": "Gemini le dio 7/10: no tiene fuerza suficiente para redes"
- },
- {
-  "fecha": "2026-11-06",
-  "id": "cita-5eb18c884a",
-  "tipo": "cita",
-  "titulo": "Estaba dormida, y tenía la calma, el dulce e insensible respirar que hace sagrado el sueño de los niños.",
-  "url": "https://aurzane.com/biblioteca/libro/los-pazos-de-ulloa.html",
-  "motivo": "Gemini le dio 7/10: no tiene fuerza suficiente para redes"
- },
- {
-  "fecha": "2026-11-06",
-  "id": "cita-46d9bfac1a",
-  "tipo": "cita",
-  "titulo": "Verdad es que el llamado realismo, cosa puramente externa, aparencial, cortical y anecdótica, se refiere al arte literario y no al poético o creativo.",
-  "url": "https://aurzane.com/biblioteca/libro/tres-novelas-ejemplares-unamuno.html",
-  "motivo": "Gemini le dio 2/10: no tiene fuerza suficiente para redes"
- },
- {
-  "fecha": "2026-11-06",
-  "id": "cita-cbabc1f9bc",
-  "tipo": "cita",
-  "titulo": "Todos estos sucesos cotidianos, insignificantes; todas estas dulces conversaciones con que matamos el tiempo y alargamos la vida, ¿qué son sino dulcísimo aburri",
-  "url": "https://aurzane.com/biblioteca/libro/niebla.html",
-  "motivo": "Gemini le dio 7/10: no tiene fuerza suficiente para redes"
- },
- {
-  "fecha": "2026-11-06",
-  "id": "cita-8886b9ce4a",
-  "tipo": "cita",
-  "titulo": "Nunca creí que en el destino de las personas influyera tanto cosa tan insignificante como es una pierna, una triste pierna, que solo sirve para andar.",
-  "url": "https://aurzane.com/biblioteca/libro/tristana.html",
-  "motivo": "Gemini le dio 6/10: no tiene fuerza suficiente para redes"
- },
- {
-  "fecha": "2026-11-06",
-  "id": "cita-539ba0d2bc",
-  "tipo": "cita",
-  "titulo": "Tristana empeoró tanto, que nada pudo su fuerza de voluntad contra el dolor intensísimo, acompañado de fiebre, vómitos y malestar general.",
-  "url": "https://aurzane.com/biblioteca/libro/tristana.html",
-  "motivo": "Gemini le dio 2/10: no tiene fuerza suficiente para redes"
- },
- {
-  "fecha": "2026-11-06",
-  "id": "cita-b7be22d4a7",
-  "tipo": "cita",
-  "titulo": "Todos son igualmente responsables del abandono, de la soledad y de la ignorancia en que has vivido.",
-  "url": "https://aurzane.com/biblioteca/libro/marianela.html",
-  "motivo": "Gemini le dio 7/10: no tiene fuerza suficiente para redes"
- },
- {
-  "fecha": "2026-11-06",
-  "id": "cita-2ca682ce62",
-  "tipo": "cita",
-  "titulo": "Sin que nadie le instigara era él ya muy capaz de pensar groseramente de clérigos y mujeres.",
-  "url": "https://aurzane.com/biblioteca/libro/la-regenta.html",
-  "motivo": "Gemini le dio 1/10: no tiene fuerza suficiente para redes"
- },
- {
-  "fecha": "2026-11-06",
-  "id": "cita-82a260604d",
-  "tipo": "cita",
-  "titulo": "Quien tenga sano criterio no puede fomentar la mala cultura, ni hará falsa vía para acercarse á la verdad, con objeto exclusivo de aprender y ensenar al ignoran",
-  "url": "https://aurzane.com/biblioteca/libro/ensenanza-aprendizaje-conferencias-dadas-casa-pueblo.html",
-  "motivo": "Gemini le dio 5/10: no tiene fuerza suficiente para redes"
  }
 ]
