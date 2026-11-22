@@ -22,14 +22,10 @@ jobs:
           mkdir -p ~/.ssh && printf '%s\n' "$SG_KEY" | tr -d '\r' > ~/.ssh/id && chmod 600 ~/.ssh/id
           if [ -n "$SG_PASS" ]; then ssh-keygen -p -P "$SG_PASS" -N "" -f ~/.ssh/id >/dev/null; fi
           SSH="ssh -i $HOME/.ssh/id -p ${SG_PORT:-18765} -o StrictHostKeyChecking=accept-new $SG_USER@$SG_HOST"
-          $SSH 'set +e; cd ~; echo "== cuota"; (quota -s 2>/dev/null || true); df -h ~ 2>/dev/null | tail -1
-            echo "== total de la cuenta"; du -sh ~ 2>/dev/null
-            echo "== primer nivel"; du -sh ~/* ~/.[!.]* 2>/dev/null | sort -rh | head -25
-            echo "== www primer nivel"; du -sh ~/www/* ~/www/.[!.]* 2>/dev/null | sort -rh | head -30
-            for h in aurzane.com mind.aurzane.com nexus.aurzane.com live.aurzane.com learn.aurzane.com build.aurzane.com ovp.aurzane.com; do echo "== $h (lo más grande)"; du -sh ~/www/$h/public_html/* ~/www/$h/public_html/.[!.]* 2>/dev/null | sort -rh | head -12; done
-            echo "== carpetas eliminar / copias / publicado / backups en toda la cuenta"; find ~ -maxdepth 5 -type d \( -iname "eliminar*" -o -iname "copias*" -o -iname "backup*" -o -iname "publicado*" -o -iname "*-bak" -o -iname "old" \) -prune -print 2>/dev/null | while read d; do du -sh "$d" 2>/dev/null; done | sort -rh | head -40
-            echo "== ficheros más grandes (>20 MB)"; find ~ -type f -size +20M -printf "%s\t%TY-%Tm-%Td\t%p\n" 2>/dev/null | sort -rn | head -40 | awk -F"\t" "{printf \"%7.0f MB  %s  %s\n\", \$1/1048576, \$2, \$3}"
-            echo "== por tipo (todo www)"; find ~/www -type f 2>/dev/null | sed -E "s/.*\.([A-Za-z0-9]{1,5})$/\1/;t;s/.*/(sin)/" | sort | uniq -c | sort -rn | head -15
-            echo "== tamaño por tipo"; for e in jpg jpeg png webp avif pdf mp3 mp4 zip gz tar sql json html js css log; do s=$(find ~/www -type f -iname "*.$e" -printf "%s\n" 2>/dev/null | awk "{t+=\$1} END{printf \"%.0f\", t/1048576}"); echo "$e: ${s} MB"; done
-            echo "== correo y registros"; du -sh ~/mail ~/logs ~/tmp ~/.cache ~/.npm ~/.trash 2>/dev/null
-            echo "== inodos (número de ficheros)"; find ~ -xdev 2>/dev/null | wc -l'
+          $SSH 'set +e; cd ~/www
+            echo "== copias: ficheros"; ls -la --time-style=+%F copias | head -5; find copias -type f -printf "%TY-%Tm-%Td %s %p\n" | sort | awk "{printf \"%s %6.0f MB %s\n\",\$1,\$2/1048576,\$3}" | tail -60; echo "n: $(find copias -type f | wc -l)"
+            echo "== copias por mes"; find copias -type f -printf "%TY-%Tm %s\n" | awk "{t[\$1]+=\$2} END{for(k in t) printf \"%s %7.0f MB\n\",k,t[k]/1048576}" | sort
+            echo "== quién escribe copias"; grep -rl "copias/" ~/herramientas 2>/dev/null | head; crontab -l 2>/dev/null | head -20
+            echo "== marketing"; du -sh aurzane.com/public_html/marketing/* 2>/dev/null | sort -rh | head -20; find aurzane.com/public_html/marketing -type f -printf "%TY-%Tm\n" | sort | uniq -c
+            echo "== biblioteca"; du -sh aurzane.com/public_html/biblioteca/* 2>/dev/null | sort -rh | head -10; find aurzane.com/public_html/biblioteca -name "*.pdf" | wc -l
+            echo "== restauracion y copias-supabase"; ls -la ~/restauracion-2026-11-19-1409 | head; ls ~/copias-supabase | tail -5; ls ~/copias-supabase | wc -l'
