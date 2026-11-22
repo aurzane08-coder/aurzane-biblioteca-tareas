@@ -536,3 +536,12 @@ html.az-ds-ovp body{font-family:var(--v-sans)!important}
 html.az-ds-ovp .h1,html.az-ds-ovp .h2,html.az-ds-ovp h2,html.az-ds-ovp h3,html.az-ds-ovp h4,html.az-ds-ovp .i-sigla{font-family:var(--v-serif)!important;font-weight:400!important}
 html.az-ds-ovp .i-sigla{font-size:1.45rem!important;color:#12251F}
 html[data-tema="oscuro"].az-ds-ovp .i-sigla{color:#F6F5F0}
+/* Biblioteca: la fila de departamentos va dentro de la barra verde: texto claro, subrayado champán al elegir */
+body:has(#abanico) .cabecera .deptos{border-top-color:rgba(242,239,230,.14)!important}
+body:has(#abanico) .cabecera .depto{color:#DDE2DC!important;font-size:.84rem!important}
+body:has(#abanico) .cabecera .depto:hover,body:has(#abanico) .cabecera .depto[aria-expanded="true"],body:has(#abanico) .cabecera .depto[aria-current]{color:#FFFFFF!important;border-bottom-color:#D9CDB2!important}
+/* OVP oscuro: texto de los instrumentos legible */
+html[data-tema="oscuro"].az-ds-ovp .instrumento p{color:#C9D0C9!important}
+/* Artículos: el antetítulo del lateral se lee */
+main.article .related h3,main.article .related .related-title{color:#5E605A!important;font:600 .78rem var(--v-sans)!important;letter-spacing:.1em!important}
+html[data-tema="oscuro"] main.article .related h3{color:#B9C2BB!important}
