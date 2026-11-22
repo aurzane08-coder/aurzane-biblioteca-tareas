@@ -484,3 +484,19 @@ body:has(#abanico) .banner .tipos a,body:has(#abanico) .banner .tipos button{col
 html.az-v4-navy body:has(#abanico) .cabecera{background:#12251F!important;border-bottom:0!important}
 body:has(#abanico) .cabecera .busca input{background:#FFFFFF!important;color:#252724!important;border-color:transparent!important}
 body:has(#abanico) .cabecera .busca button{background:#D9CDB2!important;color:#12251F!important}
+/* Artículos (lectura): foto ancha arriba a todo el ancho del contenido, texto en columna cómoda y una columna lateral
+   con «También puedes explorar» que acompaña al leer (v4.2: antes una sola columna estrecha con márgenes vacíos) */
+@media(min-width:1100px){
+  main.article.wrap{max-width:1280px!important;padding:28px 24px 80px!important;display:grid!important;grid-template-columns:minmax(0,740px) minmax(280px,1fr);column-gap:64px;align-items:start}
+  main.article.wrap>*{grid-column:1}
+  main.article.wrap>.art-hero{grid-column:1/-1;grid-row:1;aspect-ratio:16/5!important;border-radius:20px!important;margin-bottom:36px!important}
+  main.article.wrap>.related{grid-column:2;grid-row:2/span 30;position:sticky;top:84px;margin:0!important;padding:22px!important;border-radius:18px;background:var(--v-sup,#FFFFFF);border:1px solid rgba(37,39,36,.12);border-top:3px solid #C7B99B}
+  main.article.wrap>.related .related-grid{grid-template-columns:1fr!important;gap:12px!important}
+}
+html[data-tema="oscuro"] main.article.wrap>.related{background:#183D32;border-color:rgba(242,239,230,.14)}
+/* «Ponlo a prueba»: verde de marca con foto (antes un degradado morado) */
+aside.az-cta-test{background:linear-gradient(90deg,rgba(18,37,31,.96),rgba(18,37,31,.82) 60%,rgba(18,37,31,.55)),url("https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1200&q=70&auto=format&fit=crop") center/cover no-repeat #12251F!important;border:1px solid rgba(217,205,178,.35)}
+aside.az-cta-test a{background:#D9CDB2!important;color:#12251F!important}
+@media(min-width:1100px){body:has(main.article.wrap) .breadcrumb.wrap{max-width:1280px!important;padding:0 24px!important}}
+main.article .art-eyebrow{font:600 .78rem var(--v-sans)!important;font-style:normal!important;letter-spacing:.1em!important;color:#5E605A!important}
+html[data-tema="oscuro"] main.article .art-eyebrow{color:#B9C2BB!important}
