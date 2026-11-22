@@ -1,6 +1,17 @@
 [
  {
   "fecha": "2026-11-22",
+  "id": "oa-W7154203791",
+  "tipo": "libro",
+  "titulo": "¿Qué funciona en Educación Primaria? Métodos efectivos de enseñanza",
+  "url": "https://doi.org/10.36006/09747-1",
+  "motivo": "La IA le dio 3/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://octaedro.com/?sdm_process_download=1&download_id=93268"
+  ]
+ },
+ {
+  "fecha": "2026-11-22",
   "id": "pmc-PMC13761057",
   "tipo": "estudio",
   "titulo": "Depression burden and differential treatment effects in PTSD and substance use disorder comorbidity: findings from <i>Project Harmony</i>",
@@ -3026,14 +3037,5 @@
   "titulo": "Tengamos plena seguridad de que la civilización está basada en la salud y el bienestar obtenidos ensenándonos mutuamente, y aprendiendo á vivir sin enfermar.",
   "url": "https://aurzane.com/biblioteca/libro/ensenanza-aprendizaje-conferencias-dadas-casa-pueblo.html",
   "motivo": "Gemini le dio 6/10: no tiene fuerza suficiente para redes"
- },
- {
-  "fecha": "2026-11-06",
-  "id": "ia-mia_20261105_202611",
-  "tipo": "libro",
-  "titulo": "Media induced tism",
-  "url": "https://archive.org/details/mia_20261105_202611",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": []
  }
 ]
