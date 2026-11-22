@@ -62,14 +62,13 @@ const nombre = u => u.replace(/^https?:\/\//, '').replace(/[^a-z0-9]+/gi, '_').r
           let col = rgb(cs.color); if (!col) continue; let fondo = null, img = false, capas = [], grad = null;
           for (let x = e; x; x = x.parentElement) { const s = getComputedStyle(x);
             if (s.backgroundImage && s.backgroundImage !== 'none') { if (/url\(/.test(s.backgroundImage) || grad) { img = true; break; }
-              grad = (s.backgroundImage.match(/rgba?\([^)]+\)/g) || []).map(rgb); }   // degradado sin foto: se mide cada color del degradado sobre su fondo
+              grad = (s.backgroundImage.match(/rgba?\([^)]+\)/g) || []).map(rgb).filter(g => g[3] >= .35); if (!grad.length) grad = null; }   // los tramos casi transparentes de un velo no cuentan   // degradado sin foto: se mide cada color del degradado sobre su fondo
             if (x.tagName === 'IMG' || x.querySelector(':scope > img, :scope > picture')) { }
             const b = rgb(s.backgroundColor); if (b && b[3] > 0) { capas.push(b); if (b[3] >= .99) { fondo = b; break; } } }
           if (img) { sobreImg.push(e.tagName.toLowerCase() + ': ' + e.textContent.trim().slice(0, 40)); continue; }
           fondo = fondo || [255, 255, 255, 1]; for (let i = capas.length - 2; i >= 0; i--) fondo = mezcla(capas[i], fondo);
-          if (col[3] < 1) col = mezcla(col, fondo);
-          const rat = f => { const L1 = lum(col), L2 = lum(f); return (Math.max(L1, L2) + .05) / (Math.min(L1, L2) + .05); };
-          const ratio = Math.min(rat(fondo), ...(grad || []).map(g => rat(mezcla(g, fondo))));
+          const rat = f => { const c = col[3] < 1 ? mezcla(col, f) : col, L1 = lum(c), L2 = lum(f); return (Math.max(L1, L2) + .05) / (Math.min(L1, L2) + .05); };
+          const ratio = grad ? Math.min(...grad.map(g => rat(mezcla(g, fondo)))) : rat(fondo);   // sobre un degradado cuenta su color más desfavorable
           const grande = parseFloat(cs.fontSize) >= 24 || (parseFloat(cs.fontSize) >= 18.6 && +cs.fontWeight >= 700);
           if (ratio < (grande ? 3 : 4.5)) bajos.push(ratio.toFixed(2) + ' ' + e.tagName.toLowerCase() + (e.className && typeof e.className == 'string' ? '.' + e.className.split(' ')[0] : '') + ': ' + e.textContent.trim().slice(0, 50));
         }

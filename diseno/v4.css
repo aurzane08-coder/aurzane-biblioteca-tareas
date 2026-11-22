@@ -80,7 +80,7 @@ html[data-tema="oscuro"] :where(a,button,input,select,textarea,summary,[tabindex
    Cabecera con foto a todo el ancho bajo un velo verde profundo, texto blanco; tarjetas editoriales blancas;
    el color de cada mundo queda solo en su punto y en detalles pequeños.
    ===================================================================================================== */
-html.az-ds .world-header{background-color:#12251F!important;max-width:none!important;margin:0!important;border-radius:0!important;padding:clamp(56px,9vh,104px) max(24px,calc((100vw - 1280px)/2)) clamp(48px,8vh,88px)!important;color:#F6F5F0}
+html.az-ds .world-header{background-color:#12251F!important;max-width:none!important;margin:0!important;border-radius:0!important;padding:clamp(56px,9vh,104px) max(24px,calc((100vw - 1232px)/2)) clamp(48px,8vh,88px)!important;color:#F6F5F0}
 html.az-ds .world-header::after{display:none!important}
 html.az-ds-mind .world-header,html.az-ds-mind.az-pm .world-header{background:linear-gradient(90deg,rgba(18,37,31,.94) 0%,rgba(18,37,31,.82) 42%,rgba(18,37,31,.25) 100%),url('https://images.unsplash.com/photo-1559757175-5700dde675bc?w=1800&q=70&auto=format&fit=crop') right center/cover no-repeat #12251F!important}
 html.az-ds-nexus .world-header,html.az-ds-nexus.az-pm .world-header{background:linear-gradient(90deg,rgba(18,37,31,.94) 0%,rgba(18,37,31,.82) 42%,rgba(18,37,31,.25) 100%),url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=1800&q=70&auto=format&fit=crop') right center/cover no-repeat #12251F!important}
@@ -348,3 +348,63 @@ html.az-v4 .filter-bar button.active,html.az-v4 .filter-bar .activo,html.az-v4 .
 html.az-v4[data-tema="oscuro"] .filter-bar button.active,html.az-v4[data-tema="oscuro"] .filter-bar .activo,html.az-v4[data-tema="oscuro"] .chip.active,html.az-v4[data-tema="oscuro"] .f-chip.active{background:#C7B99B!important;border-color:#C7B99B!important;color:#12251F!important}
 html.az-v4 .f-chip.divider{width:1px!important;padding:0!important;border:0!important;border-radius:0!important;background:rgba(37,39,36,.18)!important}
 html.az-v4[data-tema="oscuro"] .f-chip.divider{background:rgba(242,239,230,.2)!important}
+/* Research Hub: «Mi lista» flota sobre la foto de cabecera en vez de ocupar una franja vacía */
+html.az-v4.az-ds body>div.topbar{position:relative!important;top:auto!important;height:0!important;min-height:0!important;padding:0!important;margin:0!important;border:0!important;background:none!important;box-shadow:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;z-index:6;overflow:visible!important}
+html.az-v4.az-ds body>div.topbar>nav{position:absolute;top:18px;right:max(20px,calc((100vw - 1280px)/2));margin:0!important}
+html.az-v4.az-ds body>div.topbar .btn-lista{color:#F6F5F0!important;border-color:rgba(246,245,240,.4)!important;background:rgba(18,37,31,.55)!important;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+html.az-v4.az-ds body>div.topbar .btn-lista:hover{border-color:#D9CDB2!important;color:#D9CDB2!important}
+html.az-v4.az-ds body>div.topbar .btn-lista .n{background:#D9CDB2!important;color:#12251F!important}
+/* Research Hub: cifras de las búsquedas populares legibles sobre la píldora blanca */
+html.az-v4:not([data-tema="oscuro"]) .sugerencias .chip small{color:#5E605A!important;opacity:1!important}
+/* NEXUS universidades: iniciales del escudo en verde profundo (sobre champán no se leían) */
+html.az-ds-nexus span.mono{background:linear-gradient(135deg,#2B5848,#12251F)!important;color:#F6F5F0!important}
+html.az-ds-nexus span.mono:has(img){background:#fff!important}
+/* portadas de mundo: el contenido usa el mismo ancho que las calculadoras (antes se quedaba en ~1030 px con márgenes enormes) */
+html.az-ds .wrap:has(#contentArea){max-width:1280px!important;padding-left:24px!important;padding-right:24px!important}
+html.az-ds section.az-herr{max-width:1280px!important;padding-left:24px!important;padding-right:24px!important}
+html.az-ds .topics-strip{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))!important}
+/* pastilla de estado en la cabecera con foto: legible y en sans */
+html.az-ds .world-header .status-pill{font:500 .84rem/1.3 var(--v-sans)!important;font-style:normal!important;color:#DDE2DC!important;background:rgba(246,245,240,.08)!important;border:1px solid rgba(217,205,178,.45)!important;padding:7px 14px!important;letter-spacing:0!important}
+/* antetítulos de sección (Rigor, Contenido destacado…): sans, legibles */
+html.az-ds .sh-eyebrow{font:600 .78rem/1.3 var(--v-sans)!important;font-style:normal!important;letter-spacing:.12em!important;color:#5E605A!important}
+html.az-ds[data-tema="oscuro"] .sh-eyebrow{color:#B9C2BB!important}
+/* «Artículos recientes» de cada mundo: tres columnas de tarjetas con foto y filete champán */
+#azArt{max-width:1280px!important;padding:56px 24px!important}
+#azArt>div{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:18px!important}
+@media(max-width:980px){#azArt>div{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+@media(max-width:600px){#azArt{padding:40px 16px!important}#azArt>div{grid-template-columns:1fr!important}}
+a.az-art-c{display:flex;flex-direction:column;overflow:hidden;border-radius:14px;border:1px solid rgba(37,39,36,.12);border-top:3px solid #C7B99B;background:#FFFFFF;color:#252724;text-decoration:none}
+a.az-art-c img{display:block;width:100%;aspect-ratio:16/9;height:auto;object-fit:cover;background:#EAEFEA}
+a.az-art-c .az-art-t{display:block;padding:14px 18px 18px}
+a.az-art-c .az-art-t>span{display:block;font-size:.8rem;color:#5E605A;opacity:1!important}
+a.az-art-c strong{font:400 1.3rem/1.22 var(--v-serif)!important;margin:6px 0!important}
+a.az-art-c .az-art-t>span:last-child{font-size:.9rem;color:#5E605A;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+a.az-art-c:hover strong{text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+html[data-tema="oscuro"] a.az-art-c{background:#183D32;border-color:rgba(242,239,230,.14);color:#ECEAE2}
+html[data-tema="oscuro"] a.az-art-c .az-art-t>span{color:#B9C2BB}
+/* NEXUS y demás: sin franja de marfil entre la cabecera con foto y la banda verde de confianza */
+html.az-ds .world-header+.trust-strip,html.az-ds main>.hero+.trust-strip{margin-top:0!important}
+/* tarjetas de herramientas y tests: seis columnas en pantallas anchas para no dejar filas cojas */
+html.az-ds .az-herr-g{grid-template-columns:repeat(auto-fill,minmax(190px,1fr))!important}
+/* cifras bajo el título de la cabecera (NEXUS y otros): sans legible, número en serif */
+html.az-ds main>.hero .stats,html.az-ds .world-header .stats{font:500 .9rem/1.4 var(--v-sans)!important;font-style:normal!important;color:#DDE2DC!important;gap:10px 26px!important}
+html.az-ds main>.hero .stats b,html.az-ds .world-header .stats b{font:400 1.45rem/1 var(--v-serif)!important;color:#F6F5F0!important;margin-right:4px}
+html.az-ds .cursos-section,html.az-ds .accesos-section{max-width:1280px!important;padding-left:24px!important;padding-right:24px!important}
+/* El librero de AURZANE: panel verde con foto de libros bajo velo (antes un degradado morado casi transparente sobre marfil) */
+.az-lib{background:linear-gradient(120deg,rgba(18,37,31,.96),rgba(18,37,31,.86) 55%,rgba(18,37,31,.6)),url('https://images.unsplash.com/photo-1532012197267-da84d127e765?w=1400&q=70&auto=format&fit=crop') center/cover no-repeat #12251F!important;border:1px solid rgba(217,205,178,.3)!important;color:#F6F5F0!important}
+.az-lib h2{font:400 1.7rem/1.15 var(--v-serif)!important;color:#F6F5F0!important}
+.az-lib .s{color:#DDE2DC!important;opacity:1!important}
+.az-lib .ch button{border-color:rgba(217,205,178,.45)!important;color:#F6F5F0!important;font:600 .84rem var(--v-sans)!important}
+.az-lib .ch button:hover{background:rgba(217,205,178,.15)!important}
+.az-lib .bt{background:#D9CDB2!important;color:#12251F!important}
+.az-lib .fallo,.az-lib small{color:#C9D0C9!important;opacity:1!important}
+/* tests y calculadoras: foto grande de la herramienta bajo velo verde (pedido de Adrián: como las portadas de la guía visual) */
+html.az-v4-herofoto section.hero,html.az-v4-herofoto .hero[data-v4-foto]{background:linear-gradient(90deg,rgba(18,37,31,.95) 0%,rgba(18,37,31,.84) 42%,rgba(18,37,31,.42) 100%),var(--v4-foto) center/cover no-repeat #12251F!important}
+html.az-v4-herofoto .az-portada .ilu{display:none!important}
+html.az-v4-herofoto .az-portada{background:rgba(18,37,31,.72)!important;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-color:rgba(217,205,178,.35)!important}
+@media(max-width:760px){html.az-v4-herofoto section.hero,html.az-v4-herofoto .hero[data-v4-foto]{background:linear-gradient(180deg,rgba(18,37,31,.78) 0%,rgba(18,37,31,.93) 55%,#12251F 100%),var(--v4-foto) center top/cover no-repeat #12251F!important}}
+html.az-v4-cabfoto [data-v4-foto]{background:linear-gradient(90deg,rgba(18,37,31,.95) 0%,rgba(18,37,31,.85) 45%,rgba(18,37,31,.5) 100%),var(--v4-foto) center/cover no-repeat #12251F!important}
+@media(max-width:760px){html.az-v4-cabfoto [data-v4-foto]{background:linear-gradient(180deg,rgba(18,37,31,.8),rgba(18,37,31,.94) 60%,#12251F),var(--v4-foto) center top/cover no-repeat #12251F!important}}
+/* guías largas dentro de tests y calculadoras: líneas de lectura cómodas (~70 caracteres) */
+section.az-guia>p,section.az-guia>h2,section.az-guia>h3,section.az-guia>ul,section.az-guia>ol,section.az-guia>blockquote,section.az-guia>table{max-width:760px}
+section.az-guia>figure,section.az-guia>img{max-width:760px}

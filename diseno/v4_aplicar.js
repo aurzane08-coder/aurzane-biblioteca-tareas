@@ -40,6 +40,29 @@ function aplicar(rel, t) {   // rel = <dominio>/<ruta>
     const a = "    var img = a.imagen && !/\\/biblioteca\\/recientes\\//.test(a.imagen) ? a.imagen : '';\n";
     if (o.indexOf(a) >= 0) o = o.replace(a, a + FOTO_V4); else console.error('AVISO: no encontré las tarjetas de artículos en aurzane-contenido.js');
   }
+  if (/^aurzane\.com\/aurzane-estilo\.js$/.test(rel) && o.indexOf("'alquiler-por-municipio'") < 0) {   // la tarjeta del alquiler por municipio también lleva foto
+    // sin fotos repetidas en la misma fila: reforma con una cocina en obra y alquiler por municipio con un salón (Unsplash, gratuitas)
+    const a = "'calculadora-sueno': 'dormir' };", b = "viaje: '", c = "'calculadora-reforma': 'casa'";
+    if (o.indexOf(a) >= 0 && o.indexOf(b) >= 0 && o.indexOf(c) >= 0) o = o.replace(a, "'calculadora-sueno': 'dormir', 'alquiler-por-municipio': 'salon' };").replace(b, "obra: '1618832515490-e181c4794a45', salon: '1554995207-c18c203602cb', " + b).replace(c, "'calculadora-reforma': 'obra'");
+    else console.error('AVISO: no encontré las fotos de tarjetas en aurzane-estilo.js');
+  }
+  if (/^aurzane\.com\/aurzane-contenido\.js$/.test(rel) && o.indexOf('az-art-c') < 0) {   // «Artículos recientes» de cada mundo: tarjeta con foto (antes solo texto)
+    const a = `return '<a href="' + url + '" style="display:block;padding:16px 18px;border-radius:14px;border:1px solid rgba(127,127,127,.25);color:inherit;text-decoration:none;background:rgba(127,127,127,.05)">' +`;
+    const b = `E(a.resumen) + '</span></a>';\n  }`;
+    if (o.indexOf(a) >= 0 && o.indexOf(b) >= 0) o = o.replace(a, `return '<a class="az-art-c" href="' + url + '">' + (img ? '<img src="' + E(img) + '" alt="" loading="lazy" width="800" height="450">' : '') + '<span class="az-art-t">' +`).replace(b, `E(a.resumen) + '</span></span></a>';\n  }`);
+    else console.error('AVISO: no encontré la tarjeta de artículos recientes en aurzane-contenido.js');
+  }
+  if (/^aurzane\.com\/aurzane-estilo\.js$/.test(rel) && o.indexOf('az-video-dia-caido') < 0) {   // vídeo del día retirado de YouTube: sin miniatura gris, la sección no se muestra
+    const a = `'/hqdefault.jpg" alt="" loading="lazy">`;
+    if (o.indexOf(a) >= 0) o = o.replace(a, `'/hqdefault.jpg" alt="" loading="lazy" data-v4="az-video-dia-caido" onload="if(this.naturalWidth<=120){var s=this.closest(\\'section\\');if(s)s.remove()}" onerror="var s=this.closest(\\'section\\');if(s)s.remove()">`);
+    else console.error('AVISO: no encontré la miniatura del vídeo del día en aurzane-estilo.js');
+  }
+  if (/^aurzane\.com\/aurzane-estilo\.js$/.test(rel) && o.indexOf('az-v4-herofoto') < 0) {   // tests y calculadoras: cabecera con la foto grande de cada herramienta (no un fondo verde liso)
+    const a = "    if (!/^(test-de-|calculadora-)/.test(slug) || slug === 'test-de-personalidad' || d.querySelector('.az-portada')) return;";
+    const b = "    if (/^(test-de-|calculadora-)|^alquiler-por-municipio$/.test(slug)) { var hv = d.querySelector('section.hero') || d.querySelector('.hero');\n" +
+      "      if (hv && !hv.hasAttribute('data-v4-foto')) { hv.setAttribute('data-v4-foto', '1'); hv.style.setProperty('--v4-foto', foto(TEMA[slug] || (slug === 'test-de-personalidad' ? 'espejo' : 'grafica'), 1800)); html.classList.add('az-v4-herofoto'); } }\n";
+    if (o.indexOf(a) >= 0) o = o.replace(a, b + a); else console.error('AVISO: no encontré la portada de tests y calculadoras en aurzane-estilo.js');
+  }
   return o;
 }
 module.exports = { aplicar };
