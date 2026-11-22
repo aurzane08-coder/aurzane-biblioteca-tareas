@@ -13,7 +13,7 @@ const nombre = u => u.replace(/^https?:\/\//, '').replace(/[^a-z0-9]+/gi, '_').r
   const b = await chromium.launch(); const informe = [];
   for (const u of URLS) for (const v of VISTAS) for (const t of TEMAS) {
     const ctx = await b.newContext({ locale: 'es-ES', colorScheme: t === 'oscuro' ? 'dark' : 'light', ...VP[v] });
-    await ctx.addInitScript(t => { try { localStorage.setItem('aurzane-tema', t === 'oscuro' ? 'oscuro' : 'claro'); } catch (e) {} }, t);
+    await ctx.addInitScript(t => { try { document.cookie = 'az_tema=' + t + ';path=/'; localStorage.setItem('aurzane-tema', t); } catch (e) {} }, t);   // la cookie común del tema (v4)
     await ctx.route(/googlesyndication\.com|doubleclick\.net|adservice\.google|googleads|fundingchoicesmessages/, r => r.fulfill({ status: 200, contentType: 'application/javascript', body: '' }));
     await ctx.route(/^https:\/\/([a-z]+\.)?aurzane\.com\//, async r => {
       const x = new URL(r.request().url()); let f = path.join(BORR, x.hostname, decodeURIComponent(x.pathname));

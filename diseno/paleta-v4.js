@@ -37,8 +37,8 @@ function convertir(r, g, b) {
   else if (H >= 215 && H <= 320 && L < 0.43 && C >= 0.012) { const L2 = L < 0.3 ? 0.21 + Math.max(0, L - 0.14) * 0.6 : L; n = [L2, Math.min(C * 0.5, 0.03 + 0.1 * Math.max(0, L2 - 0.24)), VERDE]; }             // azul noche, índigo y violeta oscuros: verde profundo
   else if (H >= 215 && H <= 320 && C >= 0.012 && C < 0.07) n = [L, Math.min(C * 0.3, 0.014), L > 0.8 ? VERDE : NEUTRO]; // grises azulados y lilas suaves: salvia y mineral
   else if (H >= 68 && H <= 102 && C >= 0.07) n = [L > 0.62 && L < 0.79 ? 0.79 : L, L > 0.82 ? 0.035 : 0.045, CHAMPAN];                         // dorados y ámbar: champán
-  else if (H >= 45 && H <= 105 && L > 0.86 && C >= 0.009 && C < 0.07) n = [L, Math.min(C * 0.45, 0.011), MARFIL];   // cremas y beige: marfil y arena
-  else if (H >= 25 && H <= 105 && L < 0.62 && C >= 0.009 && C < 0.06) n = [L, Math.min(C * 0.3, 0.008), 130];      // marrones (moca, tinta cálida): carbón
+  else if (H >= 45 && H <= 105 && L > 0.86 && C >= 0.0115 && C < 0.07 && Math.abs(H - CHAMPAN) > 3) n = [L, Math.min(C * 0.45, 0.0105), MARFIL];   // cremas y beige: marfil y arena
+  else if (H >= 25 && H <= 105 && L < 0.62 && C >= 0.009 && C < 0.06 && Math.abs(H - CHAMPAN) > 3) n = [L, Math.min(C * 0.3, 0.008), 130];      // marrones (moca, tinta cálida): carbón
   if (!n) return null;
   const g2 = cerca(...n) || deOk(...n);
   return (g2[0] === r && g2[1] === g && g2[2] === b) ? null : g2;
@@ -63,7 +63,22 @@ function transformar(txt) {
     'instrument-sans-latin-wght-normal': 'manrope-latin-wght-normal', 'instrument-sans-latin-ext-wght-normal': 'manrope-latin-ext-wght-normal',
     'instrument-sans-latin-wght-italic': 'manrope-latin-wght-normal', 'instrument-sans-latin-ext-wght-italic': 'manrope-latin-ext-wght-normal' };
   const out2 = out.replace(/fuentes\/(bodoni-moda|instrument-sans)-latin(-ext)?-(opsz|wght)-(normal|italic)\.woff2/g, m => { const k = m.slice(8, -6); n++; return 'fuentes/' + (LETRAS[k] || k) + '.woff2'; });
-  return { out: out2, n };
+  // Tema único: claro por defecto en todo el sitio; oscuro solo si se elige (data-tema="oscuro", ver aurzane-paleta.js).
+  // 1) lo que dependía del tema del sistema operativo deja de aplicarse (consulta que nunca se cumple, válida en CSS y en matchMedia);
+  // 2) las páginas que usaban data-theme="dark|light" pasan al atributo común data-tema.
+  const out3 = out2
+    .replace(/\(\s*prefers-color-scheme\s*:\s*dark\s*\)/g, () => { n++; return '(max-width:0px) and (min-width:1px)'; })
+    .replace(/\[data-theme=(["']?)dark\1\]/g, () => { n++; return '[data-tema="oscuro"]'; })
+    .replace(/:not\(\[data-theme=(["']?)light\1\]\)/g, () => { n++; return ':not([data-tema="claro"])'; });
+  // Familia de la plantilla, marcada en <html> para que v4.css le dé el tema que le falta (sin parpadeo, ya en el HTML):
+  //   az-v4-navy: página que solo existía en oscuro (fondo var(--navy)) → v4.css le da su versión clara por defecto.
+  //   az-v4-bg:   página que solo existía en claro (fondo var(--bg)) → v4.css le da su versión oscura.
+  let out4 = out3;
+  if (/<html[\s>]/i.test(out4) && !/data-tema=\\?["']?oscuro|data-tema="claro"/.test(out4) && !/class="[^"]*az-v4-(navy|bg)/.test(out4)) {
+    const fam = /body\s*\{[^}]*background(-color)?\s*:\s*var\(--navy\)/.test(out4) ? 'az-v4-navy' : /body\s*\{[^}]*background(-color)?\s*:\s*var\(--bg[,)]/.test(out4) ? 'az-v4-bg' : '';
+    if (fam) { n++; out4 = out4.replace(/<html([^>]*)>/i, (m, at) => /class="/.test(at) ? '<html' + at.replace(/class="/, 'class="' + fam + ' ') + '>' : '<html' + at + ' class="' + fam + '">'); }
+  }
+  return { out: out4, n };
 }
 module.exports = { transformar, convertir, hexA, aHex, aOk };
 if (require.main === module) {   // prueba: node paleta-v4.js #0B1030 #C9A24B ...

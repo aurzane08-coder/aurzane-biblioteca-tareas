@@ -70,3 +70,106 @@ html[data-tema="oscuro"] .az-gd{background:#162B24!important;color:#ECEAE2!impor
 .az-gd-cab h2{font:400 1.6rem/1.15 var(--v-serif)!important}
 :where(a,button,input,select,textarea,summary,[tabindex]):focus-visible{outline-color:var(--v-forest)}
 html[data-tema="oscuro"] :where(a,button,input,select,textarea,summary,[tabindex]):focus-visible{outline-color:var(--v-champ)}
+
+/* =====================================================================================================
+   Portadas de los cinco mundos (MIND, NEXUS, LIVE, LEARN, BUILD comparten plantilla)
+   Cabecera con foto a todo el ancho bajo un velo verde profundo, texto blanco; tarjetas editoriales blancas;
+   el color de cada mundo queda solo en su punto y en detalles pequeños.
+   ===================================================================================================== */
+html.az-ds .world-header{max-width:none!important;margin:0!important;border-radius:0!important;padding:clamp(56px,9vh,104px) max(24px,calc((100vw - 1280px)/2)) clamp(48px,8vh,88px)!important;color:#F6F5F0}
+html.az-ds .world-header::after{display:none!important}
+html.az-ds-mind.az-pm .world-header{background:linear-gradient(90deg,rgba(18,37,31,.94) 0%,rgba(18,37,31,.82) 42%,rgba(18,37,31,.25) 100%),url('https://images.unsplash.com/photo-1559757175-5700dde675bc?w=1800&q=70&auto=format&fit=crop') right center/cover no-repeat!important}
+html.az-ds-nexus.az-pm .world-header{background:linear-gradient(90deg,rgba(18,37,31,.94) 0%,rgba(18,37,31,.82) 42%,rgba(18,37,31,.25) 100%),url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=1800&q=70&auto=format&fit=crop') right center/cover no-repeat!important}
+html.az-ds-live.az-pm .world-header{background:linear-gradient(90deg,rgba(18,37,31,.94) 0%,rgba(18,37,31,.82) 42%,rgba(18,37,31,.25) 100%),url('https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=1800&q=70&auto=format&fit=crop') right center/cover no-repeat!important}
+html.az-ds-learn.az-pm .world-header{background:linear-gradient(90deg,rgba(18,37,31,.94) 0%,rgba(18,37,31,.82) 42%,rgba(18,37,31,.25) 100%),url('https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=1800&q=70&auto=format&fit=crop') right center/cover no-repeat!important}
+html.az-ds-build.az-pm .world-header{background:linear-gradient(90deg,rgba(18,37,31,.94) 0%,rgba(18,37,31,.82) 42%,rgba(18,37,31,.25) 100%),url('https://images.unsplash.com/photo-1461360370896-922624d12aa1?w=1800&q=70&auto=format&fit=crop') right center/cover no-repeat!important}
+html.az-ds .world-header-in{max-width:720px!important}
+html.az-ds .world-header h1{color:#F6F5F0!important;font-size:clamp(2.6rem,5.4vw,4.4rem)!important;line-height:1.02!important;font-weight:400!important;margin:14px 0 18px!important}
+html.az-ds .world-header h1 span{color:#D9CDB2!important;font-style:italic}
+html.az-ds .world-header p{color:#DDE2DC!important;font-size:1.08rem!important;line-height:1.65}
+html.az-ds .world-header .eyebrow{color:#D9CDB2!important;font:600 .8rem/1.3 var(--v-sans)!important;letter-spacing:.14em!important;font-style:normal!important}
+html.az-ds .world-header .wm{color:#C9D0C9!important;font:500 .85rem/1.4 var(--v-sans)!important}
+html.az-ds .world-header .wm b{color:#F6F5F0!important;font:400 1.6rem/1.1 var(--v-serif)!important}
+html.az-ds .world-header .az-foto-credito{color:#C9D0C9}
+@media (max-width:760px){
+  html.az-ds .world-header{padding:44px 20px 36px!important}
+  html.az-ds .world-header::before{display:none!important}
+  html.az-ds-mind.az-pm .world-header,html.az-ds-nexus.az-pm .world-header,html.az-ds-live.az-pm .world-header,html.az-ds-learn.az-pm .world-header,html.az-ds-build.az-pm .world-header{background-position:70% center!important}
+  html.az-ds-mind.az-pm .world-header{background:linear-gradient(0deg,rgba(18,37,31,.95) 30%,rgba(18,37,31,.55)),url('https://images.unsplash.com/photo-1559757175-5700dde675bc?w=900&q=70&auto=format&fit=crop') center/cover no-repeat!important}
+  html.az-ds-nexus.az-pm .world-header{background:linear-gradient(0deg,rgba(18,37,31,.95) 30%,rgba(18,37,31,.55)),url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=900&q=70&auto=format&fit=crop') center/cover no-repeat!important}
+  html.az-ds-live.az-pm .world-header{background:linear-gradient(0deg,rgba(18,37,31,.95) 30%,rgba(18,37,31,.55)),url('https://images.unsplash.com/photo-1454496522488-7a8e488e8606?w=900&q=70&auto=format&fit=crop') center/cover no-repeat!important}
+  html.az-ds-learn.az-pm .world-header{background:linear-gradient(0deg,rgba(18,37,31,.95) 30%,rgba(18,37,31,.55)),url('https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=900&q=70&auto=format&fit=crop') center/cover no-repeat!important}
+  html.az-ds-build.az-pm .world-header{background:linear-gradient(0deg,rgba(18,37,31,.95) 30%,rgba(18,37,31,.55)),url('https://images.unsplash.com/photo-1461360370896-922624d12aa1?w=900&q=70&auto=format&fit=crop') center/cover no-repeat!important}
+}
+/* franja de confianza: verde profundo, títulos en serif legible */
+html.az-ds .trust-strip{background:#183D32!important;padding:34px max(24px,calc((100vw - 1280px)/2))!important}
+html.az-ds .trust-strip-in{max-width:none!important}
+html.az-ds .trust-item h4{font:400 1.25rem/1.2 var(--v-serif)!important;color:#F6F5F0!important;margin-bottom:6px!important}
+html.az-ds .trust-item p{font-size:.92rem!important;color:#C9D0C9!important}
+/* bloques de herramientas y tests (az-herr): tarjeta blanca con borde fino, no degradados de color */
+html.az-ds .az-herr{max-width:1280px!important;padding:0 24px!important;margin:56px auto!important}
+html.az-ds .az-herr h2{font:400 clamp(2rem,3.4vw,2.7rem)/1.1 var(--v-serif)!important;color:var(--text)!important}
+html.az-ds .az-herr>p{font-size:1.02rem;margin-bottom:22px!important}
+html.az-ds .az-herr-g{gap:16px!important;grid-template-columns:repeat(auto-fill,minmax(232px,1fr))!important}
+html.az-ds .az-herr a{background:#FFFFFF!important;color:#252724!important;border:1px solid rgba(37,39,36,.12)!important;box-shadow:none!important;padding:20px!important;min-height:0!important;display:flex!important;flex-direction:column;gap:6px;overflow:hidden}
+html.az-ds .az-herr a:hover{border-color:#183D32!important;transform:translateY(-2px)}
+html.az-ds .az-herr a img{margin:-20px -20px 10px!important;width:calc(100% + 40px)!important;max-width:none!important;aspect-ratio:16/10;object-fit:cover;border-radius:0!important;opacity:1!important}
+html.az-ds .az-herr a b{font:400 1.45rem/1.15 var(--v-serif)!important;color:#12251F!important;margin:2px 0 2px!important}
+html.az-ds .az-herr a span{opacity:1!important;color:#5E605A!important;font-size:.93rem!important;line-height:1.5}
+html.az-ds .az-herr a i{background:#DCE5DF!important;color:#183D32!important;margin-top:auto!important;align-self:flex-start;font-weight:600!important}
+html.az-ds .az-herr a br{display:none}
+html[data-tema="oscuro"].az-ds .az-herr a{background:#183D32!important;color:#ECEAE2!important;border-color:rgba(242,239,230,.12)!important}
+html[data-tema="oscuro"].az-ds .az-herr a b{color:#F6F5F0!important}
+html[data-tema="oscuro"].az-ds .az-herr a span{color:#C9D0C9!important}
+html[data-tema="oscuro"].az-ds .az-herr a i{background:#21493D!important;color:#E9E4DB!important}
+/* temas con foto: etiqueta legible (antes 0,72 rem) */
+html.az-ds .topic-tile{height:150px!important;border-radius:14px!important}
+html.az-ds .topic-tile img{opacity:1!important}
+html.az-ds .topic-tile-label{background:linear-gradient(0deg,rgba(18,37,31,.9),rgba(18,37,31,0) 70%)!important;padding:14px!important}
+html.az-ds .topic-tile-label span{font:600 .95rem/1.25 var(--v-sans)!important;color:#F6F5F0!important}
+/* anchos: el contenido de los mundos llega a 1280 px en pantallas grandes */
+html.az-ds .filter-bar,html.az-ds main>section,html.az-ds .trust-strip-in{max-width:1280px}
+
+/* =====================================================================================================
+   Páginas que solo existían en oscuro (fondo var(--navy): Research Hub, Artículos, Temas, Colegios…)
+   En v4 empiezan en CLARO como todo el sitio: sus variables se reasignan a marfil y carbón.
+   En oscuro (si la persona lo elige) se quedan como estaban, ya en verde profundo.
+   ===================================================================================================== */
+html.az-v4-navy:not([data-tema="oscuro"]){
+  --navy:#F6F5F0;--navy-2:#FFFFFF;--navy-3:#EFEDE6;--navy-4:#E4E1D8;
+  --navy-950:#F6F5F0;--navy-900:#FFFFFF;--navy-800:#EFEDE6;--navy-700:#E4E1D8;
+  --gold:#183D32;--gold-light:#183D32;--gold-rgb:24,61,50;--bronze:#183D32;
+  --silver:#252724;--silver-dim:#5E605A;--bone:#12251F;--vanilla:#12251F;--white:#12251F;
+  --line:rgba(37,39,36,.12);--line-strong:rgba(24,61,50,.35);--border:rgba(37,39,36,.12);
+  --mind:#6A55C2;--nexus:#3E63B8;--live:#B2563A;--learn:#2F7A6A;--build:#946233}
+html.az-v4-navy:not([data-tema="oscuro"]) body{background:#F6F5F0!important;color:#252724}
+/* los momentos de marca siguen en verde profundo con texto claro (cabeceras con foto, franjas, pie) */
+html.az-v4-navy:not([data-tema="oscuro"]) :is(.hero-wrap,.trust-strip,.az-pie){
+  --navy:#12251F;--navy-2:#183D32;--navy-3:#1D4538;--navy-4:#24503F;
+  --gold:#C7B99B;--gold-light:#D9CDB2;--gold-rgb:199,185,155;--bronze:#C7B99B;
+  --silver:#DDE2DC;--silver-dim:#AEB8B0;--bone:#F6F5F0;--vanilla:#F6F5F0;--white:#FFFFFF;
+  --line:rgba(242,239,230,.14);--line-strong:rgba(199,185,155,.4);--border:rgba(242,239,230,.14);color:#DDE2DC}
+html.az-v4-navy:not([data-tema="oscuro"]) .hero-wrap{background:#12251F}
+
+/* ---------- Research Hub ---------- */
+html.az-v4-navy body:has(> .hero-wrap .search-box) .hero-wrap::after{background:linear-gradient(180deg,rgba(18,37,31,.55) 0%,rgba(18,37,31,.88) 70%,#12251F 100%)!important}
+html.az-v4-navy body:has(> .hero-wrap .search-box) .hero h1{font-weight:400!important;font-size:clamp(2.4rem,4.6vw,3.6rem)!important}
+html.az-v4-navy body:has(> .hero-wrap .search-box) .layout{max-width:1320px!important;grid-template-columns:280px minmax(0,1fr)!important;gap:40px!important}
+html.az-v4-navy body:has(> .hero-wrap .search-box) .mundos{max-width:1320px!important}
+@media (min-width:901px){html.az-v4-navy body:has(> .hero-wrap .search-box) .panel{position:sticky!important;top:76px;max-height:calc(100vh - 96px);overflow:auto;border-radius:16px!important}}
+html.az-v4-navy:not([data-tema="oscuro"]) body:has(> .hero-wrap .search-box) .panel{background:#FFFFFF!important;border:1px solid rgba(37,39,36,.12)!important}
+html.az-v4-navy:not([data-tema="oscuro"]) body:has(> .hero-wrap .search-box) .paper{background:#FFFFFF!important}
+html.az-v4-navy body:has(> .hero-wrap .search-box) .paper{border-radius:16px!important}
+html.az-v4-navy body:has(> .hero-wrap .search-box) .paper h3{font-family:var(--v-serif)!important;font-weight:400!important;font-size:1.42rem!important;line-height:1.22!important}
+html.az-v4-navy body:has(> .hero-wrap .search-box) .paper::after{opacity:1}
+html.az-v4-navy:not([data-tema="oscuro"]) body:has(> .hero-wrap .search-box) .layout .chip.active{background:#183D32!important;color:#F6F5F0!important;border-color:#183D32!important}
+html.az-v4-navy body:has(> .hero-wrap .search-box) .mundo-card span b{font-family:var(--v-serif)!important;font-weight:400!important;font-size:1.35rem!important}
+
+/* =====================================================================================================
+   Páginas que solo existían en claro (fondo var(--bg)): ahora tienen también su versión oscura
+   ===================================================================================================== */
+html.az-v4-bg[data-tema="oscuro"]{
+  --bg:#12251F;--vanilla:#12251F;--surface:#183D32;--surface-2:#1D4538;--surface-3:#24503F;
+  --text:#ECEAE2;--ink:#ECEAE2;--paper-ink:#ECEAE2;--text-dim:#B9C2BB;--muted:#B9C2BB;
+  --border:rgba(242,239,230,.14);--line:rgba(242,239,230,.14);--accent-text:#D9CDB2;color-scheme:dark}
+html.az-v4-bg[data-tema="oscuro"] body{background:#12251F!important;color:#ECEAE2}
