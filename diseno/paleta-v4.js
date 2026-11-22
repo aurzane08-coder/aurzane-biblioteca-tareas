@@ -75,7 +75,7 @@ function transformar(txt) {
   //   az-v4-bg:   página que solo existía en claro (fondo var(--bg)) → v4.css le da su versión oscura.
   let out4 = out3;
   if (/<html[\s>]/i.test(out4) && !/data-tema=\\?["']?oscuro|data-tema="claro"/.test(out4) && !/class="[^"]*az-v4-(navy|bg)/.test(out4)) {
-    const fam = /body\s*\{[^}]*background(-color)?\s*:\s*var\(--navy\)/.test(out4) ? 'az-v4-navy' : /body\s*\{[^}]*background(-color)?\s*:\s*var\(--bg[,)]/.test(out4) ? 'az-v4-bg' : '';
+    const fam = (/body\s*\{[^}]*background(-color)?\s*:\s*var\(--navy\)/.test(out4) || /href="[^"]*biblioteca\.css/.test(out4)) ? 'az-v4-navy' : /body\s*\{[^}]*background(-color)?\s*:\s*var\(--bg[,)]/.test(out4) ? 'az-v4-bg' : '';
     if (fam) { n++; out4 = out4.replace(/<html([^>]*)>/i, (m, at) => /class="/.test(at) ? '<html' + at.replace(/class="/, 'class="' + fam + ' ') + '>' : '<html' + at + ' class="' + fam + '">'); }
   }
   return { out: out4, n };

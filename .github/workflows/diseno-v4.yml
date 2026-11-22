@@ -1,0 +1,60 @@
+name: Diseño v4 en todo el sitio
+# Aplica el rediseño v4 (diseno/v4_aplicar.js) a TODOS los archivos de texto del servidor: colores, letras, tema claro por defecto
+# con oscuro opcional, y la hoja común v4.css. Solo sube lo que cambia; lo anterior queda en www/<dominio>/eliminar/v4-FECHA/.
+# Se lanza a mano la primera vez (modo: probar = solo cuenta, aplicar = sube). Después, si existe diseno/v4.activo,
+# se repite tras cada despliegue y cada día, para que lo que generen otros procesos también quede en v4 (es idempotente).
+on:
+  workflow_dispatch:
+    inputs:
+      modo: {description: 'probar o aplicar', default: 'probar'}
+  workflow_run:
+    workflows: ['Desplegar archivos a SiteGround', 'Admin (Patrocinios, Ingresos, Inicio y diseño)']
+    types: [completed]
+  schedule:
+    - cron: '41 */6 * * *'
+concurrency: diseno-v4
+jobs:
+  v4:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      SG_KEY: ${{ secrets.SG_KEY }}
+      SG_HOST: ${{ secrets.SG_HOST }}
+      SG_USER: ${{ secrets.SG_USER }}
+      SG_PORT: ${{ secrets.SG_PORT }}
+      SG_PASS: ${{ secrets.SG_PASS }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: ¿Toca?
+        id: t
+        run: |
+          M="${{ github.event.inputs.modo }}"
+          if [ -z "$M" ]; then if [ -f diseno/v4.activo ]; then M=aplicar; else M=nada; fi; fi
+          echo "modo=$M" >> $GITHUB_OUTPUT; echo "Modo: $M"
+      - name: Bajar, convertir y subir
+        if: steps.t.outputs.modo != 'nada'
+        run: |
+          mkdir -p ~/.ssh && printf '%s\n' "$SG_KEY" | tr -d '\r' > ~/.ssh/id && chmod 600 ~/.ssh/id
+          if [ -n "$SG_PASS" ]; then ssh-keygen -p -P "$SG_PASS" -N "" -f ~/.ssh/id >/dev/null; fi
+          SSH="ssh -i $HOME/.ssh/id -p ${SG_PORT:-18765} -o StrictHostKeyChecking=accept-new"
+          FECHA=$(date +%Y%m%d-%H%M); mkdir -p /tmp/sv
+          DOMS=$($SSH $SG_USER@$SG_HOST 'cd www && for d in *; do case "$d" in aurzane.com|*.aurzane.com) [ -d "$d/public_html" ] && echo "$d";; esac; done')
+          echo "Dominios: $DOMS"
+          for d in $DOMS; do
+            mkdir -p /tmp/sv/$d
+            rsync -rlz --prune-empty-dirs --include='*/' --include='*.html' --include='*.htm' --include='*.css' --include='*.js' \
+              --exclude='eliminar/' --exclude='copias/' --exclude='*' -e "$SSH" "$SG_USER@$SG_HOST:www/$d/public_html/" "/tmp/sv/$d/"
+          done
+          # letras nuevas (OFL) junto a las que ya hay
+          mkdir -p /tmp/sv/aurzane.com/fuentes && cp diseno/borrador/aurzane.com/fuentes/*.woff2 /tmp/sv/aurzane.com/fuentes/
+          node diseno/v4_aplicar.js /tmp/sv --lista /tmp/cambiados.txt
+          echo "Cambiados: $(wc -l < /tmp/cambiados.txt)"; head -40 /tmp/cambiados.txt
+          if [ "${{ steps.t.outputs.modo }}" != "aplicar" ]; then echo "Modo prueba: no se sube nada."; exit 0; fi
+          for d in $DOMS; do
+            grep "^$d/" /tmp/cambiados.txt | sed "s#^$d/##" > /tmp/l-$d.txt || true
+            [ "$d" = aurzane.com ] && (cd /tmp/sv/aurzane.com && ls fuentes/instrument-serif-*.woff2 fuentes/manrope-*.woff2) >> /tmp/l-$d.txt
+            [ -s /tmp/l-$d.txt ] || continue
+            echo "== $d: $(wc -l < /tmp/l-$d.txt) archivos"
+            rsync -rlz --files-from=/tmp/l-$d.txt --backup --backup-dir="../eliminar/v4-$FECHA" -e "$SSH" "/tmp/sv/$d/" "$SG_USER@$SG_HOST:www/$d/public_html/"
+            $SSH "$SG_USER@$SG_HOST" "site-tools-client domain-all update id=$d flush_cache=1 | tr '\n' ' '; echo" || true
+          done

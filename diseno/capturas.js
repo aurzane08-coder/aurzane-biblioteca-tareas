@@ -48,7 +48,33 @@ const nombre = u => u.replace(/^https?:\/\//, '').replace(/[^a-z0-9]+/gi, '_').r
       const m = await p.evaluate(() => { const W = document.documentElement.clientWidth;
         const fuera = [...document.querySelectorAll('body *')].filter(e => { const r = e.getBoundingClientRect(); return r.width && r.right > W + 2 && getComputedStyle(e).position !== 'fixed'; }).slice(0, 5).map(e => e.tagName.toLowerCase() + (e.className && typeof e.className == 'string' ? '.' + e.className.split(' ')[0] : ''));
         const rotas = [...document.images].filter(i => i.complete && i.naturalWidth === 0 && i.getBoundingClientRect().width > 0).map(i => i.src.slice(0, 100)).slice(0, 5);
-        return { alto: document.body.scrollHeight, ancho: document.documentElement.scrollWidth, W, fuera, rotas, imgs: document.images.length }; });
+        // Contraste real de cada texto visible con su fondo (WCAG): se sube por los padres hasta un fondo opaco.
+        // Si por medio hay una foto o un degradado, se marca como «sobre imagen» para revisarlo a ojo en la captura.
+        const rgb = c => { const m = c.match(/rgba?\(([^)]+)\)/); if (!m) return null; const v = m[1].split(/[ ,\/]+/).filter(Boolean).map(Number); return [v[0], v[1], v[2], v.length > 3 ? v[3] : 1]; };
+        const lum = ([r, g, b]) => { const f = x => (x /= 255) <= .03928 ? x / 12.92 : ((x + .055) / 1.055) ** 2.4; return .2126 * f(r) + .7152 * f(g) + .0722 * f(b); };
+        const mezcla = (a, b) => [0, 1, 2].map(i => a[i] * a[3] + b[i] * (1 - a[3])).concat(1);
+        const bajos = [], sobreImg = []; let revisados = 0;
+        for (const e of document.querySelectorAll('body *')) {
+          if (revisados > 2500) break;
+          const tx = [...e.childNodes].some(n => n.nodeType === 3 && /\p{L}{2,}|\d/u.test(n.textContent)); if (!tx) continue;   // los emojis solos no cuentan
+          const r = e.getBoundingClientRect(); if (!r.width || !r.height) continue;
+          const cs = getComputedStyle(e); if (cs.visibility === 'hidden' || +cs.opacity === 0) continue;
+          revisados++;
+          let col = rgb(cs.color); if (!col) continue; let fondo = null, img = false, capas = [];
+          for (let x = e; x; x = x.parentElement) { const s = getComputedStyle(x);
+            if (s.backgroundImage && s.backgroundImage !== 'none') { img = true; break; }
+            if (x.tagName === 'IMG' || x.querySelector(':scope > img, :scope > picture')) { }
+            const b = rgb(s.backgroundColor); if (b && b[3] > 0) { capas.push(b); if (b[3] >= .99) { fondo = b; break; } } }
+          if (img) { sobreImg.push(e.tagName.toLowerCase() + ': ' + e.textContent.trim().slice(0, 40)); continue; }
+          fondo = fondo || [255, 255, 255, 1]; for (let i = capas.length - 2; i >= 0; i--) fondo = mezcla(capas[i], fondo);
+          if (col[3] < 1) col = mezcla(col, fondo);
+          const L1 = lum(col), L2 = lum(fondo), ratio = (Math.max(L1, L2) + .05) / (Math.min(L1, L2) + .05);
+          const grande = parseFloat(cs.fontSize) >= 24 || (parseFloat(cs.fontSize) >= 18.6 && +cs.fontWeight >= 700);
+          if (ratio < (grande ? 3 : 4.5)) bajos.push(ratio.toFixed(2) + ' ' + e.tagName.toLowerCase() + (e.className && typeof e.className == 'string' ? '.' + e.className.split(' ')[0] : '') + ': ' + e.textContent.trim().slice(0, 50));
+        }
+        return { alto: document.body.scrollHeight, ancho: document.documentElement.scrollWidth, W, fuera, rotas, imgs: document.images.length,
+          tema: document.documentElement.getAttribute('data-tema') || 'claro', fondo: getComputedStyle(document.body).backgroundColor,
+          contraste: { revisados, bajos: bajos.length, ej: bajos.slice(0, 15), sobreImagen: sobreImg.length, ejImg: sobreImg.slice(0, 8) } }; });
       // la ventana NO se estira al alto de la página: con 100vh/5vh el diseño se deformaría (falsos huecos enormes)
       const H = Math.min(m.alto, ALTO);
       await p.screenshot({ path: path.join(salida, id + '.jpg'), type: 'jpeg', quality: 62, fullPage: true, clip: { x: 0, y: 0, width: VP[v].viewport.width, height: H } });

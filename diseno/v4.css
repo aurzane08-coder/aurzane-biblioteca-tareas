@@ -128,7 +128,7 @@ html.az-ds .topic-tile img{opacity:1!important}
 html.az-ds .topic-tile-label{background:linear-gradient(0deg,rgba(18,37,31,.9),rgba(18,37,31,0) 70%)!important;padding:14px!important}
 html.az-ds .topic-tile-label span{font:600 .95rem/1.25 var(--v-sans)!important;color:#F6F5F0!important}
 /* anchos: el contenido de los mundos llega a 1280 px en pantallas grandes */
-html.az-ds .filter-bar,html.az-ds main>section,html.az-ds .trust-strip-in{max-width:1280px}
+html.az-pm .filter-bar{max-width:1280px!important}
 
 /* =====================================================================================================
    Páginas que solo existían en oscuro (fondo var(--navy): Research Hub, Artículos, Temas, Colegios…)
@@ -140,6 +140,7 @@ html.az-v4-navy:not([data-tema="oscuro"]){
   --navy-950:#F6F5F0;--navy-900:#FFFFFF;--navy-800:#EFEDE6;--navy-700:#E4E1D8;
   --gold:#183D32;--gold-light:#183D32;--gold-rgb:24,61,50;--bronze:#183D32;
   --silver:#252724;--silver-dim:#5E605A;--bone:#12251F;--vanilla:#12251F;--white:#12251F;
+  --ink:#252724;--ink-2:#45473F;--ink-3:#5E605A;
   --line:rgba(37,39,36,.12);--line-strong:rgba(24,61,50,.35);--border:rgba(37,39,36,.12);
   --mind:#6A55C2;--nexus:#3E63B8;--live:#B2563A;--learn:#2F7A6A;--build:#946233}
 html.az-v4-navy:not([data-tema="oscuro"]) body{background:#F6F5F0!important;color:#252724}
@@ -148,6 +149,7 @@ html.az-v4-navy:not([data-tema="oscuro"]) :is(.hero-wrap,.trust-strip,.az-pie){
   --navy:#12251F;--navy-2:#183D32;--navy-3:#1D4538;--navy-4:#24503F;
   --gold:#C7B99B;--gold-light:#D9CDB2;--gold-rgb:199,185,155;--bronze:#C7B99B;
   --silver:#DDE2DC;--silver-dim:#AEB8B0;--bone:#F6F5F0;--vanilla:#F6F5F0;--white:#FFFFFF;
+  --ink:#F6F5F0;--ink-2:#DDE2DC;--ink-3:#AEB8B0;
   --line:rgba(242,239,230,.14);--line-strong:rgba(199,185,155,.4);--border:rgba(242,239,230,.14);color:#DDE2DC}
 html.az-v4-navy:not([data-tema="oscuro"]) .hero-wrap{background:#12251F}
 
@@ -173,3 +175,33 @@ html.az-v4-bg[data-tema="oscuro"]{
   --text:#ECEAE2;--ink:#ECEAE2;--paper-ink:#ECEAE2;--text-dim:#B9C2BB;--muted:#B9C2BB;
   --border:rgba(242,239,230,.14);--line:rgba(242,239,230,.14);--accent-text:#D9CDB2;color-scheme:dark}
 html.az-v4-bg[data-tema="oscuro"] body{background:#12251F!important;color:#ECEAE2}
+
+/* Panel «Empieza por aquí» dentro de la cabecera de mundo: su propio texto oscuro sobre tarjeta clara (la cabecera es verde) */
+html.az-ds .world-header .az-empieza{color:#252724!important;background:#FFFFFF!important;border-color:rgba(37,39,36,.12)!important}
+html.az-ds .world-header .az-empieza p{color:#5E605A!important}
+html[data-tema="oscuro"].az-ds .world-header .az-empieza{color:#ECEAE2!important;background:#183D32!important;border-color:rgba(242,239,230,.14)!important}
+html[data-tema="oscuro"].az-ds .world-header .az-empieza p{color:#B9C2BB!important}
+/* Research Hub: «Acceso abierto» legible en claro */
+html.az-v4-navy:not([data-tema="oscuro"]) .badge-oa{color:#2D6A4F!important;border-color:rgba(45,106,79,.35)!important;background:#EEF4EF}
+
+/* =====================================================================================================
+   Acentos: el blanco nunca va solo (guía v4). Filete bajo los títulos de sección (verde + champán),
+   franja del color de cada mundo en sus tarjetas y bandas salvia o arena que alternan con el marfil.
+   ===================================================================================================== */
+:is(.p-cab,.v4m-cab,.p-intenciones,.az-herr,.mundos,.section-head,.sec-head) > h2::after{content:"";display:block;width:64px;height:2px;margin-top:14px;
+  background:linear-gradient(90deg,#183D32 0 62%,#C7B99B 62% 100%)}
+html[data-tema="oscuro"] :is(.p-cab,.v4m-cab,.p-intenciones,.az-herr,.mundos,.section-head,.sec-head) > h2::after{background:linear-gradient(90deg,#C7B99B 0 62%,#5E8A78 62% 100%)}
+.p-cab[style*="center"] h2::after,.mundos[style*="center"] h2::after{margin-left:auto;margin-right:auto}
+/* tarjetas: franja de su mundo */
+.t-card{border-left:3px solid var(--c)!important}
+.v4m-c{border-top:3px solid var(--c)!important}
+/* bandas que alternan: salvia muy suave en claro, verde bosque en oscuro */
+html:not([data-tema="oscuro"]) .p-suave{background:#EAEFEA!important;border-top:1px solid rgba(24,61,50,.08);border-bottom:1px solid rgba(24,61,50,.08)}
+html[data-tema="oscuro"] .p-suave{background:#183D32!important}
+/* Research Hub: tarjetas de mundo con foto, texto siempre claro sobre el velo verde (también en tema claro) */
+html.az-v4-navy .mundo-card::after{background:linear-gradient(180deg,rgba(18,37,31,0) 25%,rgba(18,37,31,.92) 100%)!important}
+html.az-v4-navy .mundo-card img{opacity:1!important}
+html.az-v4-navy .mundo-card b{color:#F6F5F0!important}
+html.az-v4-navy .mundo-card small{color:#DDE2DC!important;font-size:.82rem!important}
+/* Biblioteca: estanterías más anchas en pantallas grandes */
+html:has(link[href*="biblioteca.css"]) .wrap{max-width:1280px!important}
