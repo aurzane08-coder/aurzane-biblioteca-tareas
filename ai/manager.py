@@ -1484,7 +1484,7 @@ html[data-tema="oscuro"] .chips button[aria-pressed=true]{background:var(--champ
 .lista{display:flex;flex-direction:column;gap:16px;padding:18px 0 10px}
 .fr{display:grid;grid-template-columns:320px minmax(0,1fr);background:var(--sup);border:1px solid var(--linea);border-radius:18px;overflow:hidden}
 .fr:nth-child(even){grid-template-columns:minmax(0,1fr) 320px}.fr:nth-child(even) .fr-img{order:2}
-.fr-img{display:block;min-height:220px;background:#183D32}.fr-img img{width:100%;height:100%;object-fit:cover;display:block}
+.fr-img{display:block;position:relative;min-height:200px;background:#183D32}.fr-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
 .fr-c{padding:26px 32px 22px;display:flex;flex-direction:column;border-left:3px solid var(--champ)}
 .fr:nth-child(even) .fr-c{border-left:0;border-right:3px solid #5E8A78}
 .fr-tema{margin:0}.fr-tema button,.fr-autor button{border:0;background:none;padding:0;cursor:pointer}
@@ -1507,7 +1507,7 @@ html[data-tema="oscuro"] .mas{background:var(--champ);color:#12251F}
 .vacio{padding:40px;text-align:center;color:var(--tinta-2)}
 @media (max-width:980px){.fr-cab .w{grid-template-columns:1fr}.tiles{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:720px){.w{padding:0 16px}.fr-cab .w{padding-top:44px;padding-bottom:40px;gap:28px}
- .fr,.fr:nth-child(even){grid-template-columns:1fr}.fr:nth-child(even) .fr-img{order:0}.fr-img{min-height:0;aspect-ratio:16/8}
+ .fr,.fr:nth-child(even){grid-template-columns:1fr}.fr:nth-child(even) .fr-img{order:0}.fr-img{min-height:0;aspect-ratio:16/8}.fr-img img{position:absolute}
  .fr-c,.fr:nth-child(even) .fr-c{border:0;border-top:3px solid var(--champ);padding:20px 18px 16px}
  .barra{position:static}.barra .cuenta{margin-left:0;width:100%}.barra select{flex:1 1 140px}}
 ''').replace('FOTO_CAB', foto_fr('optimismo', 'cabecera-frases', 1800))
