@@ -1492,13 +1492,13 @@
     "threads": "calc-sueldo"
    },
    "2": {
-    "telegram": "auto-aurzane-com-novedades",
-    "bluesky": "auto-aurzane-com-mapa",
-    "mastodon": "biblio-mind",
-    "instagram": "biblio-nexus",
-    "facebook": "biblio-learn",
-    "threads": "biblio-live",
-    "pinterest": "biblio-build"
+    "telegram": "biblio-mind",
+    "bluesky": "biblio-live",
+    "mastodon": "biblio-nexus",
+    "instagram": "biblio-build",
+    "facebook": "articulos",
+    "threads": "notas-corte",
+    "pinterest": "biblioteca"
    },
    "3": {
     "telegram": "frase-a1999f3e",

@@ -54647,6 +54647,114 @@
    "alta": "2026-11-20"
   },
   {
+   "id": "cur-7aaf6dee79",
+   "tipo": "curiosidad",
+   "mundo": "mind",
+   "origen": "curiosidades",
+   "url": "https://mind.aurzane.com/",
+   "titulo": "¿Sabías que tu cara controla lo que sientes?",
+   "ganchos": [
+    "¿Sabías que tu cara controla lo que sientes?",
+    "¿Sabías que tu cara controla lo que sientes? 🧠",
+    "Según la hipótesis del feedback facial de Strack, Martin y Stepper de 1988, sonreír puede "
+   ],
+   "texto": "Según la hipótesis del feedback facial de Strack, Martin y Stepper de 1988, sonreír puede hacerte sentir un poco más feliz. Los músculos de la cara envían señales al cerebro que modulan la intensidad de la emoción. Aunque no crea la emoción de la nada, la expresión física influye en cómo la procesamos.\n\nFuente: Strack, Martin y Stepper, 1988",
+   "hashtags": [
+    "psicologia",
+    "emociones",
+    "curiosidades",
+    "aurzane",
+    "Psicología",
+    "Curiosidades"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "🧠",
+   "dato": "Según la hipótesis del feedback facial de Strack, Martin y Stepper de 1988, sonreír puede hacerte sentir un poco más feliz.",
+   "alta": "2026-11-22"
+  },
+  {
+   "id": "cur-c1b859b4a3",
+   "tipo": "curiosidad",
+   "mundo": "mind",
+   "origen": "curiosidades",
+   "url": "https://mind.aurzane.com/",
+   "titulo": "¿Sabías que dormir duplica tu capacidad de resolver problemas?",
+   "ganchos": [
+    "¿Sabías que dormir duplica tu capacidad de resolver problemas?",
+    "¿Sabías que dormir duplica tu capacidad de resolver problemas? 🧠",
+    "Durante el sueño profundo, el cerebro reorganiza los recuerdos para ayudarte a encontrar s"
+   ],
+   "texto": "Durante el sueño profundo, el cerebro reorganiza los recuerdos para ayudarte a encontrar soluciones que despierto no veías. El cerebro procesa la información del día y detecta patrones ocultos. En un experimento de la Universidad de Lübeck, los participantes que durmieron tuvieron más del doble de éxito descubriendo una regla matemática oculta frente a quienes se quedaron despiertos.\n\nFuente: Wagner et al., 2004",
+   "hashtags": [
+    "psicologia",
+    "cerebro",
+    "sueño",
+    "aurzane",
+    "Psicología",
+    "Curiosidades"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "🧠",
+   "dato": "Durante el sueño profundo, el cerebro reorganiza los recuerdos para ayudarte a encontrar soluciones que despierto no veías.",
+   "alta": "2026-11-22"
+  },
+  {
+   "id": "cur-285887a756",
+   "tipo": "curiosidad",
+   "mundo": "mind",
+   "origen": "curiosidades",
+   "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13787119/",
+   "titulo": "¿Funcionan los psicólogos de inteligencia artificial?",
+   "ganchos": [
+    "¿Funcionan los psicólogos de inteligencia artificial?",
+    "¿Funcionan los psicólogos de inteligencia artificial? 🧠",
+    "Una gran revisión científica demuestra que los chats de terapia cognitivo-conductual reduc"
+   ],
+   "texto": "Una gran revisión científica demuestra que los chats de terapia cognitivo-conductual reducen la ansiedad. Analizando múltiples estudios, se ha visto que estas herramientas digitales logran disminuir los síntomas de ansiedad y depresión. Aunque no sustituyen a un profesional, muestran un potencial muy interesante como apoyo.\n\nFuente: Frontiers in Public Health",
+   "hashtags": [
+    "psicologia",
+    "ia",
+    "saludmental",
+    "aurzane",
+    "Psicología",
+    "Curiosidades"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "🧠",
+   "dato": "Una gran revisión científica demuestra que los chats de terapia cognitivo-conductual reducen la ansiedad.",
+   "alta": "2026-11-22"
+  },
+  {
+   "id": "cur-d6eb09d2f2",
+   "tipo": "curiosidad",
+   "mundo": "mind",
+   "origen": "curiosidades",
+   "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13777642/",
+   "titulo": "¿Sabías que una pandemia altera cómo entiendes tu propia identidad?",
+   "ganchos": [
+    "¿Sabías que una pandemia altera cómo entiendes tu propia identidad?",
+    "¿Sabías que una pandemia altera cómo entiendes tu propia identidad? 🧠",
+    "Una revisión muestra que las pandemias desafían la noción de identidad, la percepción de l"
+   ],
+   "texto": "Una revisión muestra que las pandemias desafían la noción de identidad, la percepción de la verdad y el razonamiento moral al tomar decisiones. El contagio no solo afecta a los sistemas sanitarios, sino que transforma la experiencia corporal y los marcos éticos individuales. Ante crisis de este tipo, se modifican los valores y las formas de razonar con las que interpretamos la enfermedad.\n\nFuente: Frontiers in public health",
+   "hashtags": [
+    "psicologia",
+    "conducta",
+    "pandemia",
+    "aurzane",
+    "Psicología",
+    "Curiosidades"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "🧠",
+   "dato": "Una revisión muestra que las pandemias desafían la noción de identidad, la percepción de la verdad y el razonamiento moral al tomar decisiones.",
+   "alta": "2026-11-22"
+  },
+  {
    "id": "cur-87f9735597",
    "tipo": "curiosidad",
    "mundo": "mind",
@@ -55698,48 +55806,6 @@
    "emoji": "🧠",
    "dato": "La depresión y un tipo común de insuficiencia cardíaca comparten una raíz inflamatoria común.",
    "alta": "2026-11-03"
-  },
-  {
-   "id": "auto-aurzane-com-novedades",
-   "tipo": "seccion",
-   "mundo": "aurzane",
-   "origen": "sitemap",
-   "url": "https://aurzane.com/novedades/",
-   "titulo": "Novedades de AURZANE: tests, herramientas y contenidos nuevos",
-   "ganchos": [
-    "Novedades de AURZANE: tests, herramientas y contenidos nuevos",
-    "Novedades de AURZANE: tests, herramientas y contenidos nuevos",
-    "Novedades de AURZANE: tests, herramientas y contenidos nuevos"
-   ],
-   "texto": "Todo lo nuevo de AURZANE: tests, calculadoras, ejercicios guiados, cursos, libros y artículos, actualizado automáticamente.",
-   "hashtags": [
-    "AURZANE"
-   ],
-   "aviso": "",
-   "img": null,
-   "emoji": "✨",
-   "alta": "2026-11-18"
-  },
-  {
-   "id": "auto-aurzane-com-mapa",
-   "tipo": "seccion",
-   "mundo": "aurzane",
-   "origen": "sitemap",
-   "url": "https://aurzane.com/mapa/",
-   "titulo": "Mapa de AURZANE: todas las páginas",
-   "ganchos": [
-    "Mapa de AURZANE: todas las páginas",
-    "Mapa de AURZANE: todas las páginas",
-    "Mapa de AURZANE: todas las páginas"
-   ],
-   "texto": "Todas las páginas de AURZANE en un solo lugar: tests, calculadoras, ejercicios, universidades, cursos y biblioteca.",
-   "hashtags": [
-    "AURZANE"
-   ],
-   "aviso": "",
-   "img": null,
-   "emoji": "✨",
-   "alta": "2026-11-18"
   }
  ]
 }

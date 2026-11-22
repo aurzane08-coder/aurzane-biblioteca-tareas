@@ -4,13 +4,13 @@ Actualizado: 2026-11-22. Clics de personas (sin bots ni vistas previas) que entr
 
 | Red | Publicaciones | Clics |
 |---|---|---|
-| telegram | 91 | 4 |
-| bluesky | 60 | 310 |
-| mastodon | 60 | 221 |
-| instagram | 68 | 0 |
-| facebook | 68 | 135 |
+| telegram | 94 | 4 |
+| bluesky | 62 | 315 |
+| mastodon | 62 | 228 |
+| instagram | 71 | 0 |
+| facebook | 71 | 135 |
 | threads | 0 | 0 |
-| pinterest | 40 | 1 |
+| pinterest | 41 | 1 |
 
 ## Productos con más clics
 
@@ -18,10 +18,11 @@ Actualizado: 2026-11-22. Clics de personas (sin bots ni vistas previas) que entr
 |---|---|
 | test-ansiedad | 16 |
 | test-tdah | 15 |
-| test-sueno | 13 |
-| calc-sueldo | 12 |
+| calc-sueldo | 14 |
+| test-sueno | 14 |
 | test-personalidad | 12 |
 | test-habitos | 12 |
+| frase-fe3fa4a3 | 12 |
 | calc-calorias | 12 |
 | calc-hipoteca | 12 |
 | test-autoestima | 10 |
@@ -32,7 +33,6 @@ Actualizado: 2026-11-22. Clics de personas (sin bots ni vistas previas) que entr
 | ovp | 9 |
 | crea-l05-08 | 9 |
 | calc-reforma | 9 |
-| frase-fe3fa4a3 | 9 |
 | calc-pau | 9 |
 | frase-1d292112 | 9 |
 | nc-sociologia | 8 |
