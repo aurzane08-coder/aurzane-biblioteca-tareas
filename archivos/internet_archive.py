@@ -11,7 +11,7 @@ import os, re, sys, json, time, subprocess, urllib.request
 import internetarchive as ia
 
 ACC, SEC = os.environ['IA_ACCESS'], os.environ['IA_SECRET']
-LOTE = int(os.environ.get('LOTE', '120'))            # archivos que se suben por ejecución
+LOTE = int(os.environ.get('LOTE', '35'))            # archivos que se suben por ejecución
 DIAS_MARKETING = int(os.environ.get('DIAS_MARKETING', '21'))
 lista, catalogo, manif = sys.argv[1:4]
 
@@ -90,6 +90,7 @@ for ruta, tam, dias in filas:
         r = ia.upload(i, {os.path.basename(ruta): local}, metadata=md, access_key=ACC, secret_key=SEC, retries=5, retries_sleep=20, verbose=False, checksum=True)
         if all(getattr(x, 'status_code', 200) in (200, None) for x in r):
             hecho[ruta] = [ruta, 'subido', i, tam]; subidos += 1; print('subido', ruta, '→', i)
+            open(manif, 'w', encoding='utf-8').write(''.join('\t'.join(v) + '\n' for v in hecho.values()))   # se guarda tras cada archivo
     except Exception as e:
         print('fallo al subir', ruta, e)
     finally:

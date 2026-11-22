@@ -5,7 +5,7 @@ name: Archivos pesados a Internet Archive
 # Necesita los secretos IA_ACCESS e IA_SECRET (claves S3 de la cuenta de archive.org de Adrián); sin ellos no hace nada.
 on:
   schedule:
-    - cron: '23 */3 * * *'
+    - cron: '23 * * * *'
   push:
     paths: ['archivos/internet_archive.py', '.github/workflows/archivos-internet-archive.yml']
   workflow_dispatch:
@@ -15,7 +15,7 @@ concurrency: { group: archivos-ia, cancel-in-progress: false }
 jobs:
   mudar:
     runs-on: ubuntu-latest
-    timeout-minutes: 170
+    timeout-minutes: 75
     env:
       IA_ACCESS: ${{ secrets.IA_ACCESS }}
       IA_SECRET: ${{ secrets.IA_SECRET }}
