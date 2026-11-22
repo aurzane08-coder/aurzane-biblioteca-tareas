@@ -619,7 +619,7 @@ html.az-v4 .stats-resumen{margin-top:20px!important}
 html.az-v4 .stats-resumen .stat-tile{--v:#1F4A3D!important;background:#FBFAF6!important;border:1px solid rgba(24,61,50,.12)!important;border-top:3px solid #C7B99B!important;box-shadow:0 10px 26px -18px rgba(15,42,34,.35)!important}
 html.az-v4 .stats-resumen .stat-tile:nth-child(2n){--v:#2B5848!important}
 html.az-v4 .stats-resumen .stat-ic{box-shadow:none!important}
-html.az-v4 .stats-resumen .stat-v{color:#183D32!important;font-family:var(--v-serif)!important;font-weight:400!important;font-size:1.35rem!important}
+html.az-v4 .stats-resumen .stat-v{color:#183D32!important;font-family:var(--v-sans)!important;font-weight:700!important;font-size:1.05rem!important}
 html.az-v4 .stats-resumen .stat-k{color:#5E605A!important;letter-spacing:.02em}
 html.az-v4[data-tema="oscuro"] .stats-resumen .stat-tile{background:#162B24!important;border-color:#2B4A3F!important;border-top-color:#C7B99B!important}
 html.az-v4[data-tema="oscuro"] .stats-resumen .stat-ic{background:#C7B99B!important;color:#10231D!important}
@@ -642,3 +642,4 @@ html.az-v4 .tarjetas:has(> .panel .tabla){grid-template-columns:repeat(2,minmax(
 @media (min-width:1280px){html.az-v4 .tx-indice .tx-rejilla{grid-template-columns:repeat(5,minmax(0,1fr))!important}}
 /* Fichas de universidad: la columna de datos acompaña al bajar por la lista de grados */
 @media (min-width:901px) and (min-height:960px){html.az-v4 .ficha > aside{position:sticky;top:84px;align-self:start}}
+@media (max-width:900px){html.az-v4 #vistaInvitado .invitado-grid > :last-child{order:-1}}   /* en móvil, el acceso va primero */
