@@ -418,3 +418,54 @@ html.az-ds[data-tema="oscuro"] .e-foot{color:#B9C2BB!important}
 html.az-v4.az-ds body>div.topbar .btn-lista{background:rgba(18,37,31,.82)!important}
 /* OVP en oscuro: antetítulo legible */
 html[data-tema="oscuro"].az-ds-ovp .eyebrow{color:#D9CDB2!important}
+
+/* ===== Research Hub v4.2 (22/11, revisión de Adrián): mundos con fotos anchas, filtros en barra que usa todo el ancho,
+   resultados en dos columnas con foto grande por paper, y en el móvil filtros en hoja inferior ordenada ===== */
+body:has(#worldFilters) .mundos{max-width:1280px!important;padding:56px 24px 0!important}
+body:has(#worldFilters) .mundos h2{font:400 clamp(1.9rem,3vw,2.5rem)/1.1 var(--v-serif)!important}
+body:has(#worldFilters) .mundos-grid{grid-template-columns:repeat(5,minmax(0,1fr))!important;gap:16px!important}
+body:has(#worldFilters) .mundo-card{aspect-ratio:4/5!important;min-height:300px;border-radius:18px!important;overflow:hidden;position:relative}
+body:has(#worldFilters) .mundo-card img{opacity:1!important}
+body:has(#worldFilters) .mundo-card::after{background:linear-gradient(180deg,rgba(18,37,31,0) 35%,rgba(18,37,31,.92) 100%)!important}
+body:has(#worldFilters) .mundo-card b{font:400 1.6rem/1.1 var(--v-serif)!important;color:#F6F5F0!important}
+body:has(#worldFilters) .mundo-card small,body:has(#worldFilters) .mundo-card .cuenta{color:#DDE2DC!important;font-size:.84rem!important}
+@media(max-width:900px){body:has(#worldFilters) .mundos-grid{grid-template-columns:repeat(5,minmax(200px,1fr))!important;overflow-x:auto}body:has(#worldFilters) .mundo-card{min-height:260px}}
+@media(min-width:901px){
+  body:has(#worldFilters) .layout{max-width:1280px!important;padding:40px 24px 80px!important;grid-template-columns:1fr!important;gap:22px!important}
+  /* barra de filtros: una fila con todo a la vista */
+  body:has(#worldFilters) .panel{position:sticky!important;top:64px!important;z-index:20;max-height:none!important;overflow:visible!important;display:flex!important;flex-wrap:wrap;align-items:flex-end;gap:14px 28px;padding:16px 22px!important;border-radius:16px!important;border-top:3px solid #C7B99B!important;box-shadow:0 10px 30px rgba(18,37,31,.08)}
+  body:has(#worldFilters) .panel-cab{flex:0 0 auto;margin:0!important;padding:0!important;border:0!important;display:flex;align-items:center;gap:12px;align-self:center}
+  body:has(#worldFilters) .panel-cab h2{font:400 1.35rem var(--v-serif)!important;margin:0!important}
+  body:has(#worldFilters) .panel .grupo{margin:0!important;padding:0!important;border:0!important;display:flex;flex-direction:column;gap:6px}
+  body:has(#worldFilters) .panel .grupo-tit{font:600 .72rem var(--v-sans)!important;letter-spacing:.1em!important}
+  body:has(#worldFilters) .panel .chips{flex-wrap:nowrap!important}
+  body:has(#worldFilters) .panel .rango .campo{width:100px}
+  body:has(#worldFilters) .panel #autorInput{width:220px}
+  body:has(#worldFilters) .panel .nota{display:none!important}
+  body:has(#worldFilters) .panel-pie{display:none!important}
+  /* resultados en dos columnas, cada paper con su foto grande arriba */
+  body:has(#worldFilters) #list{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:20px!important}
+  body:has(#worldFilters) #list>.paper{padding:0 22px 20px!important;overflow:hidden;display:flex;flex-direction:column}
+  body:has(#worldFilters) #list>.paper::before{content:''!important;display:block!important;position:static!important;width:auto!important;height:auto!important;margin:0 -22px 16px!important;aspect-ratio:5/2;border-radius:0!important;opacity:1!important;background:var(--img) center/cover no-repeat #183D32!important}
+  body:has(#worldFilters) #list>.paper::after{display:none!important}
+  body:has(#worldFilters) .paper .paper-meta,body:has(#worldFilters) .paper h3{padding-right:0!important}
+  body:has(#worldFilters) .paper .abstract::after{background:linear-gradient(transparent,var(--v-card,#FFFFFF))!important}
+  body:has(#worldFilters) .paper .paper-foot{margin-top:auto!important;padding-top:14px}
+  body:has(#worldFilters) #list.compacta{grid-template-columns:1fr!important}
+  body:has(#worldFilters) #list.compacta>.paper::before{display:none}
+}
+@media(min-width:1500px){body:has(#worldFilters) #list{grid-template-columns:repeat(3,minmax(0,1fr))!important}}
+/* móvil y tableta: la hoja de filtros, ordenada en bloques con separación */
+@media(max-width:900px){
+  body:has(#worldFilters) .panel{border-top:3px solid #C7B99B!important}
+  body:has(#worldFilters) .panel .grupo{padding:14px 0!important;border-bottom:1px solid rgba(37,39,36,.1)}
+  body:has(#worldFilters) #list>.paper{padding:0 16px 16px!important;overflow:hidden}
+  body:has(#worldFilters) #list>.paper::before{content:''!important;display:block!important;position:static!important;width:auto!important;height:auto!important;margin:0 -16px 14px!important;aspect-ratio:16/8;border-radius:0!important;opacity:1!important;background:var(--img) center/cover no-repeat #183D32!important}
+  body:has(#worldFilters) #list>.paper::after{display:none!important}
+}
+html[data-tema="oscuro"] body:has(#worldFilters) .panel .grupo{border-color:rgba(242,239,230,.12)}
+html[data-tema="oscuro"] body:has(#worldFilters) .paper .abstract::after{background:linear-gradient(transparent,var(--navy-2))!important}
+/* Research Hub: la foto de la cabecera se ve de verdad (antes al 22 %), y cambia según el mundo elegido */
+body:has(#worldFilters) .hero-wrap::before{opacity:1!important;background-image:var(--v4-rh-foto,url('https://images.unsplash.com/photo-1481627834876-b7833e8f5570?q=70&w=2000&auto=format&fit=crop'))!important;background-position:center 40%!important}
+body:has(#worldFilters) .hero-wrap::after{background:linear-gradient(90deg,rgba(18,37,31,.93) 0%,rgba(18,37,31,.8) 45%,rgba(18,37,31,.45) 100%)!important}
+@media(max-width:760px){body:has(#worldFilters) .hero-wrap::after{background:linear-gradient(180deg,rgba(18,37,31,.8),rgba(18,37,31,.94) 70%)!important}}

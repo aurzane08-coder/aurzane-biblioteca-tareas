@@ -95,3 +95,87 @@
   }
   if (d.readyState === 'complete') setTimeout(fotoCab, 300); else window.addEventListener('load', function () { setTimeout(fotoCab, 300); });
 })(document);
+/* Banco de imágenes propio (aurzane.com/img/banco, AVIF en nuestro servidor): elige una foto real según el mundo y el tema del texto.
+   AurzaneBanco.foto(mundo, texto, ancho) devuelve la URL (o null si el índice aún no cargó); AurzaneBanco.listo(fn) avisa al cargar. */
+(function (w, d) {
+  if (w.AurzaneBanco) return;
+  var idx = null, cola = [], BASE = 'https://aurzane.com/img/banco/';
+  var CLAVES = [
+    [/ansiedad|anxi|p[áa]nico|panic|worry|preocupa/i, 'mind', 'ansiedad'], [/depres|tristeza|sadness|mood|[áa]nimo/i, 'mind', 'tristeza'],
+    [/estr[ée]s|stress|burnout|agotamiento/i, 'mind', 'estres'], [/cerebr|brain|neuro|cognit/i, 'mind', 'cerebro'],
+    [/terapia|therap|counsel|psicoterap/i, 'mind', 'terapia'], [/mindful|medita|atenci[óo]n plena/i, 'mind', 'meditacion'],
+    [/sue[ñn]o|sleep|insomn|dormir/i, 'mind', 'sueno'], [/pareja|couple|marital|romantic|amor/i, 'mind', 'pareja'],
+    [/famil|parent|padres|madre|padre|crianza/i, 'mind', 'familia'], [/ni[ñn]|child|infan|kid|beb[ée]/i, 'mind', 'infancia'],
+    [/adolesc|teen|youth|j[óo]ven/i, 'mind', 'adolescentes'], [/older|elder|aging|envejec|mayores|dementia|demencia|alzheimer/i, 'mind', 'mayores'],
+    [/emoci|emotion|feeling|sentimiento/i, 'mind', 'emociones'], [/autoestima|self-esteem|self-efficacy|autoeficacia|confianza/i, 'mind', 'autoestima'],
+    [/soledad|loneli|isolat|aislamiento/i, 'mind', 'soledad'],
+    [/universi|higher education|college|campus|facultad/i, 'nexus', 'campus'], [/estudiante|student|alumn/i, 'nexus', 'estudiantes'],
+    [/graduat|career|carrera|employab|vocaci/i, 'nexus', 'graduacion'], [/teach|docen|profesor|lecture|ense[ñn]/i, 'nexus', 'clase'],
+    [/laborator|experiment/i, 'nexus', 'laboratorio'], [/artificial|machine learning|software|algorit|digital|comput|tecnolog|internet/i, 'nexus', 'tecnologia'],
+    [/research|investigaci|scien|cienc/i, 'nexus', 'investigacion'],
+    [/diet|nutri|food|aliment|obes|comida/i, 'live', 'alimentacion'], [/exercis|ejercicio|physical activity|actividad f[íi]sica|running|correr|fitness/i, 'live', 'correr'],
+    [/yoga/i, 'live', 'yoga'], [/water|hidrat|agua/i, 'live', 'agua'], [/pregnan|embaraz|maternal|birth|parto/i, 'live', 'embarazo'],
+    [/clinic|patient|paciente|hospital|medical|m[ée]dic|salud|health/i, 'live', 'medico'], [/sport|deport|athlet|atleta/i, 'live', 'deporte'],
+    [/lectura|reading|literacy|libro|book/i, 'learn', 'lectura'], [/aprend|learning|study|estudi/i, 'learn', 'estudiar'],
+    [/aula|classroom|school|escuela|colegio/i, 'learn', 'aula'], [/online|e-learning|mooc|virtual/i, 'learn', 'online'],
+    [/idioma|language|bilingu|lengua/i, 'learn', 'idiomas'], [/memoria|memory/i, 'learn', 'memoria'], [/escritura|writing|escribir/i, 'learn', 'escritura'],
+    [/atenci[óo]n|attention|focus|concentr|tdah|adhd/i, 'learn', 'concentracion'],
+    [/hipoteca|mortgage/i, 'build', 'llaves'], [/alquiler|rent/i, 'build', 'pisos'], [/vivienda|housing|home|house|hogar/i, 'build', 'vivienda'],
+    [/ahorro|saving|pensi[óo]n|retire|jubil/i, 'build', 'jubilacion'], [/financ|money|dinero|income|ingreso|econom|sueldo|salario/i, 'build', 'dinero'],
+    [/architect|arquitect|urban|ciudad|city/i, 'build', 'arquitectura'], [/construct|obra|reforma/i, 'build', 'obra'],
+    [/energ|solar|climat|emisi|emission/i, 'build', 'energia'], [/trabaj|work|employ|labor|empleo/i, 'build', 'trabajo']
+  ];
+  function h(s) { var x = 2166136261; s = String(s || ''); for (var i = 0; i < s.length; i++) { x ^= s.charCodeAt(i); x = Math.imul(x, 16777619); } return x >>> 0; }
+  function foto(mundo, texto, ancho) {
+    if (!idx) return null;
+    var t = String(texto || ''), m = null, tema = null;
+    for (var i = 0; i < CLAVES.length; i++) if (CLAVES[i][0].test(t)) { m = CLAVES[i][1]; tema = CLAVES[i][2]; break; }
+    var lista = m && idx[m] && idx[m][tema];
+    if (!lista || !lista.length) {   // sin tema reconocible: cualquier foto del mundo (o general), siempre la misma para el mismo texto
+      var mm = idx[mundo] || idx.general || {}; lista = [];
+      Object.keys(mm).forEach(function (k) { lista = lista.concat(mm[k]); });
+    }
+    if (!lista.length) return null;
+    var x = lista[h(t + mundo) % lista.length];
+    return BASE + x.f + '-' + ((ancho || 640) > 800 ? '1600' : '640') + '.avif';
+  }
+  w.AurzaneBanco = { foto: foto, listo: function (f) { if (idx) f(); else cola.push(f); } };
+  try {
+    fetch(BASE + 'banco.json', { cache: 'force-cache' }).then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (j) { if (!j) return; idx = j; cola.splice(0).forEach(function (f) { try { f(); } catch (e) {} }); }).catch(function () {});
+  } catch (e) {}
+})(window, document);
+/* Research Hub: cada paper lleva una foto del banco acorde a su tema (antes la misma miniatura para todo un mundo) */
+(function (d) {
+  function fotos() {
+    var l = d.getElementById('list'); if (!l || !window.AurzaneBanco) return;
+    var M = { mind: 1, nexus: 1, live: 1, learn: 1, build: 1 };
+    [].forEach.call(l.querySelectorAll('.paper:not([data-v4f])'), function (p) {
+      var mu = ((p.getAttribute('style') || '').match(/--(mind|nexus|live|learn|build)\)/) || [])[1] || 'general';
+      var t = ((p.querySelector('h3') || {}).textContent || '') + ' ' + ((p.querySelector('.abstract') || {}).textContent || '').slice(0, 300);
+      var u = window.AurzaneBanco.foto(M[mu] ? mu : 'general', t, 640); if (!u) return;
+      p.style.setProperty('--img', 'url("' + u + '")'); p.setAttribute('data-v4f', '1');
+    });
+  }
+  function iniciar() {
+    var l = d.getElementById('list'); if (!l) return;
+    window.AurzaneBanco && window.AurzaneBanco.listo(fotos);
+    try { new MutationObserver(function () { fotos(); }).observe(l, { childList: true }); } catch (e) {}
+  }
+  if (d.readyState === 'loading') d.addEventListener('DOMContentLoaded', iniciar); else iniciar();
+})(document);
+/* Research Hub con ?mundo=: es la biblioteca de ese mundo (las bibliotecas de cada mundo redirigen aquí). Título y foto del mundo. */
+(function (d) {
+  if (!/\/research\.html$/.test(location.pathname)) return;
+  var m = (new URLSearchParams(location.search).get('mundo') || '').toLowerCase();
+  var N = { mind: 'MIND', nexus: 'NEXUS', live: 'LIVE', learn: 'LEARN', build: 'BUILD' };
+  var F = { mind: '1559757175-5700dde675bc', nexus: '1541339907198-e08756dedf3f', live: '1454496522488-7a8e488e8606', learn: '1481627834876-b7833e8f5570', build: '1461360370896-922624d12aa1' };
+  if (!N[m]) return;
+  function poner() {
+    var h = d.querySelector('.hero-wrap'); if (h) h.style.setProperty('--v4-rh-foto', 'url("https://images.unsplash.com/photo-' + F[m] + '?q=70&w=2000&auto=format&fit=crop")');
+    var t = d.querySelector('.hero-wrap h1'); if (t && !t.hasAttribute('data-v4')) { t.setAttribute('data-v4', '1'); t.innerHTML = 'Biblioteca científica de <span>' + N[m] + '</span>'; }
+    var pp = d.querySelector('.hero-wrap .hero p'); if (pp && !pp.hasAttribute('data-v4')) { pp.setAttribute('data-v4', '1'); pp.textContent = 'Los papers de acceso abierto de ' + N[m] + ': título, resumen oficial y enlace directo a la fuente. Puedes buscar también en los otros cuatro mundos.'; }
+    if (!/Biblioteca de /.test(d.title)) d.title = 'Biblioteca científica de ' + N[m] + ' | AURZANE';
+  }
+  if (d.readyState === 'loading') d.addEventListener('DOMContentLoaded', poner); else poner();
+})(document);

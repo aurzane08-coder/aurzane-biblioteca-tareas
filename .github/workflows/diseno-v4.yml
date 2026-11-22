@@ -50,6 +50,10 @@ jobs:
           node diseno/v4_aplicar.js /tmp/sv --lista /tmp/cambiados.txt
           echo "Cambiados: $(wc -l < /tmp/cambiados.txt)"; head -40 /tmp/cambiados.txt
           if [ "${{ steps.t.outputs.modo }}" != "aplicar" ]; then echo "Modo prueba: no se sube nada."; exit 0; fi
+          # bibliotecas de cada mundo → Research Hub con ese mundo elegido (una sola biblioteca bien hecha, pedido de Adrián 22/11)
+          for m in mind nexus live learn build; do
+            $SSH "$SG_USER@$SG_HOST" "cd www/$m.aurzane.com/public_html && grep -q 'AURZANE v4 biblioteca' .htaccess 2>/dev/null || { mkdir -p ../../eliminar/htaccess; cp .htaccess ../../eliminar/htaccess/$m-antes-v4-biblioteca 2>/dev/null; { printf '%s\n' '# AURZANE v4 biblioteca: la biblioteca del mundo es el Research Hub con el mundo elegido' 'RewriteEngine On' 'RewriteRule ^$m-biblioteca\.html$ https://aurzane.com/research.html?mundo=$m [R=301,L]' ''; cat .htaccess 2>/dev/null; } > .htaccess.n && mv .htaccess.n .htaccess; }" || true
+          done
           for d in $DOMS; do
             grep "^$d/" /tmp/cambiados.txt | sed "s#^$d/##" > /tmp/l-$d.txt || true
             [ "$d" = aurzane.com ] && (cd /tmp/sv/aurzane.com && ls fuentes/instrument-serif-*.woff2 fuentes/manrope-*.woff2) >> /tmp/l-$d.txt
