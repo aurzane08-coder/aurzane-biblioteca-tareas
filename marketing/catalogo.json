@@ -55806,6 +55806,48 @@
    "emoji": "🧠",
    "dato": "La depresión y un tipo común de insuficiencia cardíaca comparten una raíz inflamatoria común.",
    "alta": "2026-11-03"
+  },
+  {
+   "id": "auto-aurzane-com-novedades",
+   "tipo": "seccion",
+   "mundo": "aurzane",
+   "origen": "sitemap",
+   "url": "https://aurzane.com/novedades/",
+   "titulo": "Novedades de AURZANE: tests, herramientas y contenidos nuevos",
+   "ganchos": [
+    "Novedades de AURZANE: tests, herramientas y contenidos nuevos",
+    "Novedades de AURZANE: tests, herramientas y contenidos nuevos",
+    "Novedades de AURZANE: tests, herramientas y contenidos nuevos"
+   ],
+   "texto": "Todo lo nuevo de AURZANE: tests, calculadoras, ejercicios guiados, cursos, libros y artículos, actualizado automáticamente.",
+   "hashtags": [
+    "AURZANE"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "✨",
+   "alta": "2026-11-22"
+  },
+  {
+   "id": "auto-aurzane-com-mapa",
+   "tipo": "seccion",
+   "mundo": "aurzane",
+   "origen": "sitemap",
+   "url": "https://aurzane.com/mapa/",
+   "titulo": "Mapa de AURZANE: todas las páginas",
+   "ganchos": [
+    "Mapa de AURZANE: todas las páginas",
+    "Mapa de AURZANE: todas las páginas",
+    "Mapa de AURZANE: todas las páginas"
+   ],
+   "texto": "Todas las páginas de AURZANE en un solo lugar: tests, calculadoras, ejercicios, universidades, cursos y biblioteca.",
+   "hashtags": [
+    "AURZANE"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "✨",
+   "alta": "2026-11-22"
   }
  ]
 }

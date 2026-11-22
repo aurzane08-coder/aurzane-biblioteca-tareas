@@ -4,13 +4,13 @@ Actualizado: 2026-11-22. Clics de personas (sin bots ni vistas previas) que entr
 
 | Red | Publicaciones | Clics |
 |---|---|---|
-| telegram | 94 | 4 |
-| bluesky | 62 | 315 |
-| mastodon | 62 | 228 |
-| instagram | 71 | 0 |
-| facebook | 71 | 135 |
+| telegram | 95 | 4 |
+| bluesky | 63 | 317 |
+| mastodon | 63 | 232 |
+| instagram | 72 | 0 |
+| facebook | 72 | 137 |
 | threads | 0 | 0 |
-| pinterest | 41 | 1 |
+| pinterest | 42 | 1 |
 
 ## Productos con más clics
 
