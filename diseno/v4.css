@@ -408,3 +408,13 @@ html.az-v4-cabfoto [data-v4-foto]{background:linear-gradient(90deg,rgba(18,37,31
 /* guías largas dentro de tests y calculadoras: líneas de lectura cómodas (~70 caracteres) */
 section.az-guia>p,section.az-guia>h2,section.az-guia>h3,section.az-guia>ul,section.az-guia>ol,section.az-guia>blockquote,section.az-guia>table{max-width:760px}
 section.az-guia>figure,section.az-guia>img{max-width:760px}
+/* artículo destacado de cada mundo: velo verde más denso bajo el texto (sobre fotos claras no se leía) */
+html.az-ds .f-main-overlay{background:linear-gradient(0deg,rgba(18,37,31,.97) 0%,rgba(18,37,31,.9) 45%,rgba(18,37,31,.35) 80%,rgba(18,37,31,.05) 100%)!important}
+html.az-ds .f-main-overlay p{color:#DDE2DC!important}
+html.az-ds .f-main-meta{font:500 .78rem var(--v-sans)!important;color:#C9D0C9!important}
+html.az-ds .e-foot{font-family:var(--v-sans)!important;font-size:.78rem!important;color:#5E605A!important}
+html.az-ds[data-tema="oscuro"] .e-foot{color:#B9C2BB!important}
+/* Research Hub: «Mi lista» sobre la foto, con fondo más firme */
+html.az-v4.az-ds body>div.topbar .btn-lista{background:rgba(18,37,31,.82)!important}
+/* OVP en oscuro: antetítulo legible */
+html[data-tema="oscuro"].az-ds-ovp .eyebrow{color:#D9CDB2!important}

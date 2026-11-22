@@ -43,7 +43,7 @@ function aplicar(rel, t) {   // rel = <dominio>/<ruta>
   if (/^aurzane\.com\/aurzane-estilo\.js$/.test(rel) && o.indexOf("'alquiler-por-municipio'") < 0) {   // la tarjeta del alquiler por municipio también lleva foto
     // sin fotos repetidas en la misma fila: reforma con una cocina en obra y alquiler por municipio con un salón (Unsplash, gratuitas)
     const a = "'calculadora-sueno': 'dormir' };", b = "viaje: '", c = "'calculadora-reforma': 'casa'";
-    if (o.indexOf(a) >= 0 && o.indexOf(b) >= 0 && o.indexOf(c) >= 0) o = o.replace(a, "'calculadora-sueno': 'dormir', 'alquiler-por-municipio': 'salon' };").replace(b, "obra: '1618832515490-e181c4794a45', salon: '1554995207-c18c203602cb', " + b).replace(c, "'calculadora-reforma': 'obra'");
+    if (o.indexOf(a) >= 0 && o.indexOf(b) >= 0 && o.indexOf(c) >= 0) o = o.replace(a, "'calculadora-sueno': 'dormir', 'alquiler-por-municipio': 'salon', 'ejercicios': 'bienestar' };").replace(b, "obra: '1618832515490-e181c4794a45', salon: '1554995207-c18c203602cb', " + b).replace(c, "'calculadora-reforma': 'obra'");
     else console.error('AVISO: no encontré las fotos de tarjetas en aurzane-estilo.js');
   }
   if (/^aurzane\.com\/aurzane-contenido\.js$/.test(rel) && o.indexOf('az-art-c') < 0) {   // «Artículos recientes» de cada mundo: tarjeta con foto (antes solo texto)
