@@ -602,10 +602,10 @@ html.az-v4 body > .marco > #app .panel h1{font-family:var(--v-serif)!important;f
 @media (min-width:901px){
   html.az-v4 body > .marco > #app:has(> .panel){display:grid;grid-template-columns:1.1fr 1fr;gap:28px;align-items:stretch}
   html.az-v4 body > .marco > #app:has(> .panel)::before{content:"";min-height:460px;border-radius:20px;border-top:3px solid #C7B99B;
-    background:linear-gradient(180deg,rgba(15,42,34,.05) 40%,rgba(15,42,34,.6)),url("https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1200&q=70&auto=format&fit=crop") center/cover no-repeat,#12251F}
+    background:linear-gradient(180deg,rgba(15,42,34,.05) 40%,rgba(15,42,34,.6)),url("https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1200&q=70&auto=format&fit=crop") center/cover no-repeat,#12251F}
 }
 @media (max-width:900px){html.az-v4 body > .marco:has(> #app){padding:20px 16px 56px}html.az-v4 body > .marco > #app .panel{padding:24px}
-  html.az-v4 body > .marco > #app:has(> .panel)::before{content:"";display:block;height:180px;border-radius:16px;margin-bottom:16px;background:url("https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=900&q=70&auto=format&fit=crop") center/cover no-repeat,#12251F}}
+  html.az-v4 body > .marco > #app:has(> .panel)::before{content:"";display:block;height:180px;border-radius:16px;margin-bottom:16px;background:url("https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=900&q=70&auto=format&fit=crop") center/cover no-repeat,#12251F}}
 /* Aviso de fallo: si la página no tenía pie propio queda suelto al final del pie común; se centra con el resto */
 html.az-v4 .az-pie > .az-fallo{display:block!important;width:fit-content;margin:0 auto!important;padding:0 16px 22px!important;color:#C9C3B4!important;font-size:13px!important}
 /* Números de paso en las calculadoras: círculo verde sólido, sin el tramo champán que apagaba el número */
@@ -643,3 +643,4 @@ html.az-v4 .tarjetas:has(> .panel .tabla){grid-template-columns:repeat(2,minmax(
 /* Fichas de universidad: la columna de datos acompaña al bajar por la lista de grados */
 @media (min-width:901px) and (min-height:960px){html.az-v4 .ficha > aside{position:sticky;top:84px;align-self:start}}
 @media (max-width:900px){html.az-v4 #vistaInvitado .invitado-grid > :last-child{order:-1}}   /* en móvil, el acceso va primero */
+html.az-v4 .rasgos5 .r5{background:color-mix(in srgb,var(--c) 80%,#0F2A22)!important;color:#fff!important}   /* rasgos: texto blanco legible en todos los colores */
