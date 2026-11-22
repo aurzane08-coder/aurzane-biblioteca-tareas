@@ -1,0 +1,57 @@
+name: Imágenes para redes con fotos reales
+# Sustituye los banners generados de og:image (og.jpg, og-*.jpg, og/*.jpg) por fotos reales de Unsplash según el tema de cada página.
+# El banner anterior se mueve a www/eliminar/og-FECHA/ (nunca se borra). Cada día comprueba que ningún generador haya vuelto a poner un banner.
+on:
+  push:
+    paths: ['diseno/og_fotos.py', '.github/workflows/imagenes-redes.yml']
+  schedule:
+    - cron: '43 4 * * *'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency: { group: imagenes-redes, cancel-in-progress: false }
+jobs:
+  og:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      SG_KEY: ${{ secrets.SG_KEY }}
+      SG_HOST: ${{ secrets.SG_HOST }}
+      SG_USER: ${{ secrets.SG_USER }}
+      SG_PORT: ${{ secrets.SG_PORT }}
+      SG_PASS: ${{ secrets.SG_PASS }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Cambiar banners por fotos
+        run: |
+          mkdir -p ~/.ssh && printf '%s\n' "$SG_KEY" | tr -d '\r' > ~/.ssh/id && chmod 600 ~/.ssh/id
+          if [ -n "$SG_PASS" ]; then ssh-keygen -p -P "$SG_PASS" -N "" -f ~/.ssh/id >/dev/null; fi
+          SSH="ssh -i $HOME/.ssh/id -p ${SG_PORT:-18765} -o StrictHostKeyChecking=accept-new $SG_USER@$SG_HOST"
+          $SSH 'cd www && for h in aurzane.com mind.aurzane.com nexus.aurzane.com live.aurzane.com learn.aurzane.com build.aurzane.com ovp.aurzane.com; do
+              find $h/public_html \( -path "*/eliminar/*" -o -path "*/node_modules/*" -o -path "*/biblioteca/portadas/*" \) -prune -o -type f \( -iname "og.jpg" -o -iname "og-*.jpg" -o -iname "og.png" -o -path "*/og/*.jpg" \) -print; done | xargs -r -d "\n" md5sum' > lista.txt
+          $SSH 'cat www/.og-fotos.txt 2>/dev/null' > manifiesto.txt || true
+          echo "Imágenes para redes en el servidor: $(wc -l < lista.txt)"
+          mkdir -p nuevas && python3 diseno/og_fotos.py lista.txt manifiesto.txt nuevas
+          if [ -s nuevas/cambiados.txt ]; then
+            F=$(date +%Y%m%d-%H%M)
+            cut -f2 nuevas/cambiados.txt > rutas.txt
+            # copia del banner anterior en eliminar/ (nunca se borra) y subida de la foto con el mismo nombre
+            $SSH "cd www && mkdir -p eliminar/og-$F && tar cf - -T - 2>/dev/null | tar xf - -C eliminar/og-$F" < rutas.txt
+            ( cd nuevas && tar cf - -T ../rutas.txt ) | $SSH 'cd www && tar xf - --no-same-owner'
+            # el .avif de al lado se rehace solo (imagenes-avif.yml) porque la foto es más nueva; mientras, se aparta el antiguo
+            $SSH 'cd www && while IFS= read -r f; do [ -e "$f.avif" ] && mkdir -p "eliminar/og-avif/$(dirname "$f")" && mv "$f.avif" "eliminar/og-avif/$f.avif"; done' < rutas.txt
+            # manifiesto: la última línea de cada ruta gana, así las recién cambiadas sustituyen a las antiguas
+            python3 - <<'PY'
+          m={}
+          for f in ('manifiesto.txt','nuevas/cambiados.txt'):
+              try:
+                  for l in open(f):
+                      p=l.rstrip('\n').split('\t')
+                      if len(p)==2: m[p[1]]=p[0]
+              except FileNotFoundError: pass
+          open('manif2.txt','w').write(''.join(f'{v}\t{k}\n' for k,v in m.items()))
+          PY
+            $SSH 'cat > www/.og-fotos.txt' < manif2.txt
+            for h in aurzane.com mind.aurzane.com live.aurzane.com learn.aurzane.com nexus.aurzane.com build.aurzane.com ovp.aurzane.com; do $SSH "site-tools-client domain-all update id=$h flush_cache=1 >/dev/null 2>&1" || true; done
+            echo "Fotos puestas: $(wc -l < nuevas/cambiados.txt). Banners anteriores en www/eliminar/og-$F/"
+          else echo "Todas las imágenes para redes ya son fotos reales."; fi

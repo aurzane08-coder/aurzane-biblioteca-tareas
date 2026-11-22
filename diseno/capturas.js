@@ -108,4 +108,12 @@ const nombre = u => u.replace(/^https?:\/\//, '').replace(/[^a-z0-9]+/gi, '_').r
     await ctx.close();
   }
   fs.writeFileSync(path.join(salida, 'informe.json'), JSON.stringify(informe, null, 1)); await b.close();
+  // Galería para revisar en el navegador (GitHub muestra este README en la rama de capturas): cada página en sus cuatro vistas y lo que se detectó
+  const pags = [...new Set(informe.map(x => x.u))]; const fecha = new Date().toLocaleString('es-ES', { timeZone: 'Europe/Madrid' });
+  let md = `# AURZANE · revisión del rediseño\n\nCapturas reales con el diseño nuevo aplicado (aún sin publicar). Se actualizan solas con cada cambio. Última: ${fecha}.\n\nCada página: ordenador (claro y oscuro) y móvil (claro y oscuro). Debajo, lo que la comprobación automática encontró.\n\n`;
+  md += pags.map((u, i) => `${i + 1}. [${u.replace(/^https:\/\//, '')}](#p${i + 1})`).join('\n') + '\n\n';
+  pags.forEach((u, i) => { const xs = informe.filter(x => x.u === u); const img = (v, t, w) => { const x = xs.find(y => y.v === v && y.t === t); return x && !x.fallo ? `<img src="${x.id}.jpg" width="${w}" alt="${v} ${t}">` : ''; };
+    const avisos = xs.flatMap(x => x.fallo ? [`${x.v} ${x.t}: no cargó`] : [...(x.contraste.bajos ? [`${x.v} ${x.t}: ${x.contraste.bajos} textos con poco contraste (${x.contraste.ej.slice(0, 3).join('; ')})`] : []), ...(x.solapes.length ? [`${x.v} ${x.t}: se pisan ${x.solapes.slice(0, 2).join('; ')}`] : []), ...(x.fuera.length ? [`${x.v} ${x.t}: se sale del ancho (${x.fuera.slice(0, 3).join(', ')})`] : []), ...(x.rotas.length ? [`${x.v} ${x.t}: ${x.rotas.length} imágenes rotas`] : [])]);
+    md += `<a id="p${i + 1}"></a>\n\n## ${i + 1}. ${u.replace(/^https:\/\//, '')}\n\n[Abrir la página actual](${u})\n\n${img('escritorio', 'claro', '49%')} ${img('escritorio', 'oscuro', '49%')}\n\n${img('movil', 'claro', '24%')} ${img('movil', 'oscuro', '24%')}\n\n` + (avisos.length ? avisos.map(a => '- ' + a).join('\n') : '- Sin avisos automáticos') + '\n\n---\n\n'; });
+  fs.writeFileSync(path.join(salida, 'README.md'), md);
 })();
