@@ -545,3 +545,9 @@ html[data-tema="oscuro"].az-ds-ovp .instrumento p{color:#C9D0C9!important}
 /* Artículos: el antetítulo del lateral se lee */
 main.article .related h3,main.article .related .related-title{color:#5E605A!important;font:600 .78rem var(--v-sans)!important;letter-spacing:.1em!important}
 html[data-tema="oscuro"] main.article .related h3{color:#B9C2BB!important}
+/* «Investigación y fuentes» en cada mundo: banda verde con foto de biblioteca y cifras en serif clara (antes cuatro cajas blancas) */
+html.az-ds .research-band{background:linear-gradient(90deg,rgba(18,37,31,.94),rgba(18,37,31,.86)),url("https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=1800&q=70&auto=format&fit=crop") center/cover no-repeat #12251F!important;border:0!important;border-radius:18px!important;overflow:hidden;gap:0!important}
+html.az-ds .research-band .research-stat{background:transparent!important;border-right:1px solid rgba(242,239,230,.14)!important;color:#F6F5F0!important}
+html.az-ds .research-band .research-stat:last-child{border-right:0!important}
+html.az-ds .research-band .research-stat *{color:#DDE2DC!important}
+html.az-ds .research-band .research-stat :first-child{font-family:var(--v-serif)!important;color:#F6F5F0!important}
