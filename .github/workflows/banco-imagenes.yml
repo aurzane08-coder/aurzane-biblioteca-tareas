@@ -18,11 +18,14 @@ jobs:
     timeout-minutes: 30
     env:
       PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+      UNSPLASH_ACCESS_KEY: ${{ secrets.UNSPLASH_ACCESS_KEY }}
       MAX: ${{ github.event.inputs.max || '80' }}
     steps:
       - uses: actions/checkout@v4
       - name: Completar el catálogo
-        run: python3 banco/banco.py banco/banco.json
+        run: |
+          python3 banco/banco.py banco/banco.json | tee salida.txt
+          if grep -q "HTTP Error 401" salida.txt; then echo "::warning title=Catálogo de imágenes::Una clave de fotos no es válida (Pexels o Unsplash). Hay que renovarla en GitHub > Settings > Secrets."; fi
       - name: Guardar el índice
         run: |
           git config user.name "aurzane-bot"; git config user.email "bot@aurzane.com"

@@ -27,15 +27,16 @@ TEMAS = {
 }
 MAX = int(os.environ.get('MAX', '80'))
 PK = os.environ.get('PEXELS_API_KEY', '')
+UK = os.environ.get('UNSPLASH_ACCESS_KEY', '')
 ruta = sys.argv[1]
 viejo = json.load(open(ruta)) if os.path.exists(ruta) else {}
-idx = {m: {t: [x for x in l if 'p' in x] for t, l in ts.items()} for m, ts in viejo.items()} if viejo else {}   # el formato v1 (fotos en SiteGround) se descarta
+idx = {m: {t: [x for x in l if 'p' in x or 'r' in x] for t, l in ts.items()} for m, ts in viejo.items()} if viejo else {}   # el formato v1 (fotos en SiteGround) se descarta
 
-def pedir(u):
-    r = urllib.request.Request(u, headers={'User-Agent': 'AURZANE catalogo de imagenes', 'Authorization': PK})
+def pedir(u, auth=None):
+    r = urllib.request.Request(u, headers={'User-Agent': 'AURZANE catalogo de imagenes', 'Authorization': auth or PK})
     return json.loads(urllib.request.urlopen(r, timeout=60).read())
 
-usados = {x['p'] for ts in idx.values() for l in ts.values() for x in l}   # una foto no se repite entre temas
+usados = {x.get('p') or x.get('r') for ts in idx.values() for l in ts.values() for x in l}   # una foto no se repite entre temas
 total = 0
 for mundo, temas in TEMAS.items():
     for tema, q in temas.items():
@@ -52,6 +53,18 @@ for mundo, temas in TEMAS.items():
                 usados.add(p['id']); total += 1
             if not d.get('next_page'): break
             pag += 1; time.sleep(0.4)
+        # Unsplash (si hay clave UNSPLASH_ACCESS_KEY): más variedad; sus normas piden enlazar sus fotos desde su CDN, como hacemos
+        pag = 1
+        while UK and len(lista) < MAX and pag <= 3:
+            try: d = pedir('https://api.unsplash.com/search/photos?' + urllib.parse.urlencode({'query': q, 'orientation': 'landscape', 'per_page': 30, 'page': pag, 'content_filter': 'high'}), 'Client-ID ' + UK)
+            except Exception as e: print('unsplash', q, e); break
+            for p in d.get('results', []):
+                r = (p.get('urls') or {}).get('raw', '').split('?')[0]
+                if len(lista) >= MAX: break
+                if not r or r in usados: continue
+                lista.append({'r': r, 'a': (p.get('user') or {}).get('name', ''), 'c': p.get('color', ''), 't': (p.get('alt_description') or '')[:90]})
+                usados.add(r); total += 1
+            pag += 1; time.sleep(1)
         print(f'{mundo}/{tema}: {len(lista)}')
 json.dump(idx, open(ruta, 'w'), ensure_ascii=False, separators=(',', ':'))
 print('Fotos nuevas:', total, '· en el catálogo:', sum(len(l) for ts in idx.values() for l in ts.values()))

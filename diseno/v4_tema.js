@@ -138,6 +138,7 @@
     }
     if (!lista.length) return null;
     var x = lista[h(t + mundo) % lista.length], w = (ancho || 640) > 800 ? 1600 : 640;
+    if (x.r) return x.r + '?w=' + w + '&h=' + Math.round(w * .625) + '&fit=crop&q=70&auto=format';
     return 'https://images.pexels.com/photos/' + x.p + '/pexels-photo-' + x.p + '.jpeg?auto=compress&cs=tinysrgb&w=' + w + '&h=' + Math.round(w * .625) + '&fit=crop';
   }
   w.AurzaneBanco = { foto: foto, listo: function (f) { if (idx) f(); else cola.push(f); } };
