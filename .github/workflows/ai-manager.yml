@@ -19,6 +19,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   manager:
+    if: github.ref == 'refs/heads/main'   # solo la rama principal publica (una rama de pruebas nunca toca la web)
     runs-on: ubuntu-latest
     timeout-minutes: 40
     env:
