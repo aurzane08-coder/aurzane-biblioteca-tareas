@@ -1181,8 +1181,9 @@ CSS = (':root{--bg:#F6F5F0;--sup:#FFFFFF;--tinta:#252724;--tinta-2:#5E605A;--lin
        '.h p{color:#DDE2DC;max-width:62ch;margin:16px 0 0}.h a{color:#F6F5F0}'
        'main{padding:30px 24px 64px}.rt h2,.ficha h1{overflow-wrap:anywhere}'
        'main.w:has(> .rt){display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;align-items:start}'
-       '.rt{display:grid;grid-template-columns:112px minmax(0,1fr);gap:20px;padding:20px;background:var(--sup);border:1px solid var(--linea);border-left:3px solid var(--champ);border-radius:14px}'
+       '.rt{display:grid;grid-template-columns:auto minmax(0,1fr);gap:20px;padding:20px;background:var(--sup);border:1px solid var(--linea);border-left:3px solid var(--champ);border-radius:14px}'
        '.rt:nth-child(4n+2),.rt:nth-child(4n+3){border-left-color:var(--verde)}html[data-tema="oscuro"] .rt:nth-child(4n+2),html[data-tema="oscuro"] .rt:nth-child(4n+3){border-left-color:#5E8A78}'
+       '.rp.foto{width:150px;aspect-ratio:4/5;border-radius:12px}.rp.foto span{display:none}'
        '.rp{width:112px;max-width:100%;aspect-ratio:2/3;border-radius:6px;overflow:hidden;background:linear-gradient(160deg,#183D32,#12251F);position:relative;box-shadow:0 8px 22px -12px rgba(18,37,31,.45);display:block;border:1px solid var(--linea)}'
        '.rp img{width:100%;height:100%;object-fit:cover;object-position:top;display:block;background:#fff}.rp span{position:absolute;inset:12px;color:#F6F5F0;font:400 .9rem/1.25 var(--serif)}.rp img+span{display:none}'
        '.k{font-size:.8rem;color:var(--tinta-2);font-weight:600}.i{margin-left:8px;padding:1px 9px;border-radius:99px;background:var(--salvia);color:var(--verde)}html[data-tema="oscuro"] .i{color:#ECEAE2}'
@@ -1197,13 +1198,19 @@ CSS = (':root{--bg:#F6F5F0;--sup:#FFFFFF;--tinta:#252724;--tinta-2:#5E605A;--lin
        '#hojas{height:min(80vh,1100px);overflow:auto;border-radius:8px;background:#12251F}#hojas canvas{display:block;margin:0 auto 10px;background:#fff;box-shadow:0 4px 14px rgba(0,0,0,.35);max-width:100%;height:auto}'
        '#lector:fullscreen #hojas{height:calc(100vh - 70px)}.ext{color:#ECEAE2;padding:30px;text-align:center}.ext a{color:#D9CDB2}'
        '@media(max-width:980px){main.w:has(> .rt){grid-template-columns:1fr}}'
-       '@media(max-width:640px){.h{padding:40px 16px 36px}main{padding:22px 16px 48px}.rt{grid-template-columns:84px minmax(0,1fr);gap:14px;padding:14px}.rp{width:84px}.ficha{grid-template-columns:1fr}.ficha .rp{width:160px}}')
+       '@media(max-width:640px){.h{padding:40px 16px 36px}main{padding:22px 16px 48px}.rt{grid-template-columns:auto minmax(0,1fr);gap:14px;padding:14px}.rp,.rp.foto{width:84px}.ficha{grid-template-columns:1fr}.ficha .rp{width:160px}}')
 CAB = lambda titulo, desc, canon, img: ('<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">'
     '<script src="https://aurzane.com/aurzane-paleta.js"></script>'
     f'<title>{E(titulo)}</title><meta name="description" content="{E(desc[:158])}"><link rel="canonical" href="{canon}">'
     f'<meta property="og:title" content="{E(titulo)}"><meta property="og:description" content="{E(desc[:200])}"><meta property="og:url" content="{canon}">' + (f'<meta property="og:image" content="{E(img)}">' if img else '') +
     ''
     f'<style>{CSS}</style></head><body>')
+def img_rt(p):   # v4.2: los libros llevan su portada; los estudios, una foto real del banco según su tema (la primera página de un paper no luce)
+    if p.get('tipo') == 'libro': return portada_html(p)
+    try:
+        import sys as _s; _s.path.insert(0, os.path.dirname(os.path.abspath(__file__))); from banco_fotos import foto_banco
+    except Exception: return portada_html(p)
+    return f'<img src="{E(foto_banco(p.get("titulo", "") + " " + (p.get("resumen") or "")[:200], "mind"))}" alt="" loading="lazy"><span>{E(SIN_ETQ(p["titulo"])[:70])}</span>'
 def portada_html(p): return (f'<img src="{E(p["portada"])}" alt="Portada de {E(SIN_ETQ(p["titulo"])[:80])}" loading="lazy" onerror="this.remove()">' if p.get('portada') else '') + f'<span>{E(SIN_ETQ(p["titulo"])[:70])}</span>'
 def datos(p): return ', '.join(str(v) for v in (p.get('autores'), p.get('anio'), p.get('editorial')) if v)
 def pagina_recientes():
@@ -1211,7 +1218,7 @@ def pagina_recientes():
         idi = '' if p.get('idioma') == 'es' else '<span class="i">En inglés</span>'
         res = f'<p class="r">{E(p["resumen"][:420])}{"…" if len(p["resumen"]) > 420 else ""}</p>' if p.get('resumen') else ''
         f = f'/biblioteca/recientes/{p["id"]}/'
-        return (f'<article class="rt"><a class="rp" href="{f}">{portada_html(p)}</a><div>'
+        return (f'<article class="rt"><a class="rp{"" if p.get("tipo") == "libro" else " foto"}" href="{f}">{img_rt(p)}</a><div>'
                 f'<div class="k">{"Libro abierto" if p["tipo"] == "libro" else "Estudio reciente"} · {LIC_TXT.get(p.get("lic"), p.get("lic", "").upper())}' + (f' · {p["paginas"]} páginas' if p.get('paginas') else '') + f'{idi}</div>'
                 f'<h2><a href="{f}">{T(p["titulo"])}</a></h2><p class="a">{E(datos(p))}</p>{res}<p class="b"><a class="lee" href="{f}">Leer en AURZANE</a></p></div></article>')
     cuerpo = ''.join(tarjeta(p) for p in aprob[:200]) or '<p>Muy pronto verás aquí libros abiertos y estudios recientes seleccionados.</p>'
