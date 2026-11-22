@@ -43,8 +43,10 @@ for _m in idx.values():
     for _t in _m: _m[_t] = [x for x in _m[_t] if not VETO.search(x.get('t', ''))]
 usados = {x.get('p') or x.get('r') for ts in idx.values() for l in ts.values() for x in l}   # una foto no se repite entre temas
 total = 0
-for mundo, temas in TEMAS.items():
-    for tema, q in temas.items():
+# primero los temas más vacíos: así cada mundo tiene fotos cuanto antes aunque el límite por hora corte la ejecución
+ORDEN = sorted(((m, t, q) for m, ts in TEMAS.items() for t, q in ts.items()), key=lambda x: len(idx.get(x[0], {}).get(x[1], [])))
+for mundo, tema, q in ORDEN:
+    if True:
         lista = idx.setdefault(mundo, {}).setdefault(tema, [])
         pag = 1
         while PK and len(lista) < MAX and pag <= 4:
@@ -62,11 +64,14 @@ for mundo, temas in TEMAS.items():
             if not d.get('next_page'): break
             pag += 1; time.sleep(0.4)
         # Unsplash (si hay clave UNSPLASH_ACCESS_KEY): más variedad; sus normas piden enlazar sus fotos desde su CDN, como hacemos
-        pag = 1
-        while UK and PET_U > 0 and len(lista) < MAX and pag <= 3:
+        pag = 1 + sum(1 for x in lista if 'r' in x) // 30; fin = pag + 1   # sigue por la página donde se quedó; dos páginas por tema y ejecución
+        while UK and PET_U > 0 and len(lista) < MAX and pag <= fin:
             PET_U -= 1
             try: d = pedir('https://api.unsplash.com/search/photos?' + urllib.parse.urlencode({'query': q, 'orientation': 'landscape', 'per_page': 30, 'page': pag, 'content_filter': 'high'}), 'Client-ID ' + UK)
-            except Exception as e: print('unsplash', q, e); break
+            except Exception as e:
+                print('unsplash', q, e)
+                if '403' in str(e) or '429' in str(e): PET_U = 0   # límite de la hora agotado
+                break
             for p in d.get('results', []):
                 r = (p.get('urls') or {}).get('raw', '').split('?')[0]
                 if len(lista) >= MAX: break

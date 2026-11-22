@@ -10,7 +10,7 @@ on:
       rama: {description: 'rama de salida', default: 'capturas'}
       lista: {description: 'archivo con las URL', default: 'diseno/urls.txt'}
   push:
-    paths: ['diseno/urls.txt', 'diseno/borrador/**', 'diseno/capturas.js', 'diseno/v4.css', 'diseno/paleta-v4.js']
+    paths: ['diseno/urls.txt', 'diseno/borrador/**', 'diseno/capturas.js', 'diseno/v4.css', 'diseno/v4_tema.js', 'diseno/v4_aplicar.js', 'diseno/paleta-v4.js']
 permissions:
   contents: write
 concurrency: {group: capturas, cancel-in-progress: true}
