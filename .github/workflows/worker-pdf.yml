@@ -23,6 +23,14 @@ jobs:
         if: steps.s.outputs.ok == 'si'
         working-directory: archivos/worker
         run: |
+          # la cuenta se toma del propio token (si el secreto CLOUDFLARE_ACCOUNT_ID tuviera otro valor, Cloudflare responde 7003)
+          ACC=$(curl -s -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" "https://api.cloudflare.com/client/v4/accounts" | jq -r '.result[0].id // empty')
+          if [ -n "$ACC" ]; then export CLOUDFLARE_ACCOUNT_ID="$ACC"; echo "Cuenta tomada del token"; else echo "::warning::No pude leer la cuenta con el token; uso el secreto"; fi
+          # subdominio workers.dev: en una cuenta nueva hay que crearlo una vez
+          SUB=$(curl -s -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" "https://api.cloudflare.com/client/v4/accounts/$CLOUDFLARE_ACCOUNT_ID/workers/subdomain" | jq -r '.result.subdomain // empty')
+          if [ -z "$SUB" ]; then
+            curl -s -X PUT -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" -H "Content-Type: application/json" --data '{"subdomain":"aurzane"}' "https://api.cloudflare.com/client/v4/accounts/$CLOUDFLARE_ACCOUNT_ID/workers/subdomain" | jq -c '{success, errors}'
+          else echo "Subdominio workers.dev: $SUB"; fi
           npx --yes wrangler@3 deploy 2>&1 | tee salida.txt
           U=$(grep -o 'https://[a-z0-9.-]*workers.dev' salida.txt | head -1)
           echo "Dirección: $U"
