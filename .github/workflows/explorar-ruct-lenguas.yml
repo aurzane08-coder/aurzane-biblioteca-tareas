@@ -1,0 +1,23 @@
+name: Explorar RUCT lenguas (uso único)
+on:
+  push:
+    paths: ['.github/workflows/explorar-ruct-lenguas.yml']
+  workflow_dispatch:
+jobs:
+  x:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          python3 - <<'PY'
+          import sys, re
+          sys.path.insert(0, 'univ')
+          import ruct
+          p = ruct.get(ruct.B + 'estudio.action?codigoCiclo=SC&codigoTipo=G&CodigoEstudio=2503908&actual=estudios')
+          t = ruct.limpio(p)
+          for m in re.finditer(r'[Ll]engua|[Ii]dioma|Ingl', t): print('E', t[max(0, m.start()-200):m.start()+300]); print('---')
+          print('LINKS', sorted(set(re.findall(r'href="([^"]*\.action[^"]*)"', p)))[:60])
+          for l in sorted(set(re.findall(r'href="((?:estudiocentro|centroestudio|detalle)[^"]*)"', p)))[:3]:
+              q = ruct.limpio(ruct.get(ruct.B + l.replace('&amp;', '&')))
+              for m in re.finditer(r'[Ll]engua|[Ii]dioma', q): print('C', q[max(0, m.start()-200):m.start()+300]); print('---')
+          PY
