@@ -5932,5 +5932,17 @@
   "recogida": "2026-11-20",
   "ok": true,
   "publicada": "2026-11-20"
+ },
+ {
+  "id": "fw-16b14de84b",
+  "texto": "Estar preparados para la guerra es uno de los medios más eficaces para conservar la paz.",
+  "autor": "George Washington",
+  "vida": "1732-1799",
+  "descripcion": "Primer presidente de los Estados Unidos.",
+  "tema": "guerra",
+  "fuente": "Proverbia.net",
+  "url_fuente": "https://proverbia.net/frase-del-dia",
+  "recogida": "2026-11-23",
+  "ok": true
  }
 ]
