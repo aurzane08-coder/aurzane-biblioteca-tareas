@@ -1,10 +1,16 @@
 name: Compactar carpetas eliminar
-# Ahorra espacio y número de archivos en SiteGround sin perder nada (23/11/2026): cada subcarpeta de www/*/eliminar/ con más de
-# 6 horas se guarda en un solo archivo comprimido eliminar/comprimido/<nombre>.tar.gz. Solo después de comprobar que el
-# comprimido contiene exactamente los mismos archivos se quitan los sueltos. Para recuperar algo: tar -xzf <archivo>.tar.gz
+# Una sola papelera para toda la web (pedido de Adrián, 23/11/2026): www/eliminar/ en SiteGround.
+# 1. Lo que cualquier proceso deja en la carpeta eliminar de un mundo (www/<dominio>/eliminar/...) se mueve a www/eliminar/<dominio>/.
+# 2. Cada carpeta con más de 6 horas se guarda en un solo archivo comprimido www/eliminar/comprimido/<dominio>-<nombre>.tar.gz.
+#    Solo después de comprobar que el comprimido tiene exactamente los mismos archivos se quitan los sueltos.
+#    Para recuperar algo: tar -xzf <archivo>.tar.gz
+# Corre cada 3 horas y después de los procesos que más copias dejan.
 on:
   schedule:
-    - cron: '37 3 * * *'
+    - cron: '37 */3 * * *'
+  workflow_run:
+    workflows: ['Desplegar archivos a SiteGround', 'Diseño v4 en todo el sitio', 'Universidades publicar portal', 'Imágenes para redes con fotos reales']
+    types: [completed]
   workflow_dispatch:
   push:
     paths: ['.github/workflows/compactar-eliminar.yml']
@@ -22,7 +28,7 @@ jobs:
       SG_PORT: ${{ secrets.SG_PORT }}
       SG_PASS: ${{ secrets.SG_PASS }}
     steps:
-      - name: Compactar
+      - name: Juntar y compactar
         run: |
           mkdir -p ~/.ssh && printf '%s\n' "$SG_KEY" | tr -d '\r' > ~/.ssh/id && chmod 600 ~/.ssh/id
           if [ -n "$SG_PASS" ]; then ssh-keygen -p -P "$SG_PASS" -N "" -f ~/.ssh/id >/dev/null; fi
@@ -30,22 +36,37 @@ jobs:
           $SSH 'bash -s' <<'FIN'
           set -u
           cd ~/www/
-          echo "Antes: $(du -sh ~/ | cut -f1), $(find ~/ -xdev -type f | wc -l) archivos"
-          for e in */eliminar eliminar; do
-            [ -d "$e" ] || continue
-            mkdir -p "$e/comprimido"
-            find "$e" -mindepth 1 -maxdepth 1 -type d ! -name comprimido -mmin +360 | sort | while read -r d; do
-              n=$(basename "$d"); dest="$e/comprimido/$n.tar.gz"
-              [ -e "$dest" ] && dest="$e/comprimido/$n-$(date +%Y%m%d%H%M).tar.gz"
-              antes=$(find "$d" -type f | wc -l)
-              [ "$antes" -eq 0 ] && { rmdir "$d" 2>/dev/null; continue; }
-              if tar -czf "$dest" -C "$e" "$n" && despues=$(tar -tzf "$dest" | grep -vc '/$') && [ "$despues" -eq "$antes" ]; then
-                rm -rf -- "$d"
-                echo "  $d: $antes archivos → $(du -h "$dest" | cut -f1) en $dest"
-              else
-                echo "::warning::No se pudo comprobar $dest ($antes archivos): se dejan los sueltos"; rm -f -- "$dest"
+          P=eliminar; mkdir -p "$P/comprimido"
+          echo "Antes: $(du -sh ~/ 2>/dev/null | cut -f1)"
+          # 1. todo a la papelera única
+          for e in */eliminar; do
+            dom=${e%/eliminar}; [ "$dom" = eliminar ] && continue
+            for x in "$e"/* "$e"/.[!.]*; do
+              [ -e "$x" ] || continue
+              n=$(basename "$x")
+              if [ "$n" = comprimido ]; then
+                for t in "$x"/*; do [ -e "$t" ] && mv -n -- "$t" "$P/comprimido/$dom-$(basename "$t")"; done; rmdir "$x" 2>/dev/null; continue
               fi
+              mkdir -p "$P/$dom"; dest="$P/$dom/$n"; [ -e "$dest" ] && dest="$dest-$(date +%Y%m%d%H%M%S)"
+              mv -- "$x" "$dest" && echo "  $x → $dest"
             done
           done
-          echo "Después: $(du -sh ~/ | cut -f1), $(find ~/ -xdev -type f | wc -l) archivos"
+          # 2. comprimir lo que tiene más de 6 horas
+          comp() {  # $1 carpeta padre, $2 nombre, $3 prefijo del comprimido
+            local d="$1/$2" dest="$P/comprimido/$3$2.tar.gz" antes despues
+            [ -e "$dest" ] && dest="$P/comprimido/$3$2-$(date +%Y%m%d%H%M%S).tar.gz"
+            antes=$(find "$d" -type f | wc -l)
+            [ "$antes" -eq 0 ] && { find "$d" -type d -empty -delete 2>/dev/null; return; }
+            if tar -czf "$dest" -C "$1" "$2" && despues=$(tar -tzf "$dest" | grep -vc '/$') && [ "$despues" -eq "$antes" ]; then
+              rm -rf -- "$d"; echo "  $d: $antes archivos → $(du -h "$dest" | cut -f1)"
+            else
+              echo "::warning::No se pudo comprobar $dest ($antes archivos): se dejan los sueltos"; rm -f -- "$dest"
+            fi
+          }
+          for dom in $(find "$P" -mindepth 1 -maxdepth 1 -type d ! -name comprimido -name '*.*' -printf '%f\n'); do   # carpetas de cada dominio
+            find "$P/$dom" -mindepth 1 -maxdepth 1 -mmin +360 -printf '%f\n' | while read -r n; do comp "$P/$dom" "$n" "$dom-"; done
+            rmdir "$P/$dom" 2>/dev/null
+          done
+          find "$P" -mindepth 1 -maxdepth 1 -type d ! -name comprimido ! -name '*.*' -mmin +360 -printf '%f\n' | while read -r n; do comp "$P" "$n" ""; done
+          echo "Papelera: $(du -sh "$P" | cut -f1), $(find "$P" -type f | wc -l) archivos · después: $(du -sh ~/ 2>/dev/null | cut -f1)"
           FIN
