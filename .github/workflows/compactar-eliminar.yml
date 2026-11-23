@@ -1,6 +1,6 @@
 name: Compactar carpetas eliminar
 # Ahorra espacio y número de archivos en SiteGround sin perder nada (23/11/2026): cada subcarpeta de www/*/eliminar/ con más de
-# 2 días se guarda en un solo archivo comprimido eliminar/comprimido/<nombre>.tar.gz. Solo después de comprobar que el
+# 6 horas se guarda en un solo archivo comprimido eliminar/comprimido/<nombre>.tar.gz. Solo después de comprobar que el
 # comprimido contiene exactamente los mismos archivos se quitan los sueltos. Para recuperar algo: tar -xzf <archivo>.tar.gz
 on:
   schedule:
@@ -34,7 +34,7 @@ jobs:
           for e in */eliminar eliminar; do
             [ -d "$e" ] || continue
             mkdir -p "$e/comprimido"
-            find "$e" -mindepth 1 -maxdepth 1 -type d ! -name comprimido -mmin +2880 | sort | while read -r d; do
+            find "$e" -mindepth 1 -maxdepth 1 -type d ! -name comprimido -mmin +360 | sort | while read -r d; do
               n=$(basename "$d"); dest="$e/comprimido/$n.tar.gz"
               [ -e "$dest" ] && dest="$e/comprimido/$n-$(date +%Y%m%d%H%M).tar.gz"
               antes=$(find "$d" -type f | wc -l)
