@@ -303,7 +303,9 @@
     return;
   }
   function irEn() { var u = alt('en'); if (!u) return false; poner('aurzane-idioma', 'en'); quitarGT(); location.href = u; return true; }
-  if (cookie('aurzane-idioma') === 'en' && alt('en')) { quitarGT(); location.replace(alt('en')); return; }
+  // los enlaces hreflang van después de este script en la cabecera: se mira cuando ya está leída
+  function revisar() { if (cookie('aurzane-idioma') === 'en' && alt('en')) { quitarGT(); location.replace(alt('en')); } }
+  if (d.readyState === 'loading') d.addEventListener('DOMContentLoaded', revisar); else revisar();
   d.addEventListener('click', function (e) {
     var b = e.target.closest && e.target.closest('.azi-pop [data-l="en"], .azi-aviso .si');
     if (!b) return;
