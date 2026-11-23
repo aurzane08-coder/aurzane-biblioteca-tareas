@@ -349,3 +349,19 @@ table.tnc td.num{color:var(--text-dim);width:32px}
 .sc-datos dd{text-align:left;margin-top:2px}
 .sc-datos dd b{display:block;font-size:1.15rem}
 .sc-datos dd small{display:block;font-weight:400;color:var(--text-dim);font-size:.78rem;line-height:1.4;margin-top:4px}
+
+/* ---- Study in Spain (versión en inglés, univ/gen/en.py) ---- */
+.en-hero{padding:clamp(56px,9vh,96px) 0 clamp(44px,7vh,72px);background:linear-gradient(90deg,rgba(18,37,31,.94),rgba(18,37,31,.78) 50%,rgba(18,37,31,.35)),url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=1800&q=70&auto=format&fit=crop') center/cover no-repeat,#12251F;color:#F6F5F0}
+.en-hero h1,.en-hero .lead,.en-hero .eyebrow{color:#F6F5F0}
+.en-hero .eyebrow{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:#D9CDB2;margin:0 0 10px}
+.en-guias{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin:0 0 36px}
+.en-guia{display:flex;flex-direction:column;gap:6px;padding:22px;border-radius:16px;background:#183D32;color:#F2EFE6;text-decoration:none;border-top:3px solid #C7B99B}
+.en-guia b{font-size:1.25rem}.en-guia span{color:#DDE2DC;font-size:.95rem;line-height:1.5}.en-guia:hover{background:#1F4A3D}
+.en-h2{margin:0 0 16px}
+.en-filtro{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin:0 0 22px;padding:16px 18px;border-radius:14px;background:#183D32}
+.en-filtro input,.en-filtro select{min-height:44px;border-radius:10px;border:0;padding:8px 12px;font:inherit;background:#FFFFFF;color:#252724}
+.en-filtro input{min-width:260px}
+.en-filtro p{margin:0 0 0 auto;color:#F2EFE6}
+.en-guia-txt article h2{margin-top:28px}.en-guia-txt article h2:first-child{margin-top:0}
+.en-guia-txt article li{margin:6px 0;line-height:1.6}
+.carreras li small[lang="es"]{display:block;opacity:.75}

@@ -8,7 +8,7 @@ on:
     inputs:
       modo: {description: 'probar o aplicar', default: 'probar'}
   workflow_run:
-    workflows: ['Desplegar archivos a SiteGround', 'Admin (Patrocinios, Ingresos, Inicio y diseño)']
+    workflows: ['Desplegar archivos a SiteGround', 'Admin (Patrocinios, Ingresos, Inicio y diseño)', 'Universidades publicar portal']
     types: [completed]
   schedule:
     - cron: '41 */6 * * *'

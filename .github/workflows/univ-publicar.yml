@@ -52,6 +52,14 @@ jobs:
           else echo "::notice::Sin lista de patrocinios del servidor"; fi
       - name: Generar portal
         run: python3 -u univ/gen/gen.py univ/data salida/universidades
+      - name: Traducir al inglés los grados nuevos (Study in Spain)
+        env: { GEMINI_API_KEY: '${{ secrets.GEMINI_API_KEY }}' }
+        run: |
+          antes=$(md5sum univ/data/grados_en.json 2>/dev/null | cut -c1-32)
+          python3 -u univ/traducir_grados.py || true
+          despues=$(md5sum univ/data/grados_en.json 2>/dev/null | cut -c1-32)
+          # si hay traducciones nuevas, se regenera para que ya salgan en esta publicación
+          if [ "$antes" != "$despues" ]; then python3 -u univ/gen/gen.py univ/data salida/universidades; fi
       - name: Lista de archivos y retirados
         run: |
           (cd salida/universidades && find . -type f | sort) > univ/manifiesto-nuevo.txt
@@ -67,6 +75,11 @@ jobs:
           DEST="www/nexus.aurzane.com/public_html"
           rsync -az --checksum -e "$SSH" salida/universidades/ "$SG_USER@$SG_HOST:$DEST/universidades/"
           rsync -az -e "$SSH" salida/sitemap-universidades.xml "$SG_USER@$SG_HOST:$DEST/sitemap-universidades.xml"
+          # versión en inglés «Study in Spain» (univ/gen/en.py): nexus.aurzane.com/en/
+          if [ -d salida/en ]; then
+            rsync -az --checksum -e "$SSH" salida/en/ "$SG_USER@$SG_HOST:$DEST/en/"
+            rsync -az -e "$SSH" salida/sitemap-en.xml "$SG_USER@$SG_HOST:$DEST/sitemap-en.xml"
+          fi
           # lo que ya no existe no se borra: se mueve a la carpeta eliminar (fuera de la web)
           if [ -s retirados.txt ]; then
             FECHA=$(date +%Y%m%d)

@@ -442,6 +442,14 @@ def acortar(t, m=60):
 CIUDAD_PAISES = collections.defaultdict(set)
 
 
+ES_CON_EN = set()   # fichas de España que tienen versión en inglés (univ/gen/en.py): se enlazan con hreflang
+def _alt_en(canon):
+    m = re.match(re.escape(SITIO + BASE) + r'espana/([^/]+)/$', canon)
+    en = (f'{SITIO}/en/universities/{m.group(1)}/' if m and m.group(1) in ES_CON_EN else (f'{SITIO}/en/universities/' if canon == SITIO + BASE + 'espana/' else ''))
+    return (f'<link rel="alternate" hreflang="es" href="{e(canon)}"><link rel="alternate" hreflang="en" href="{e(en)}"><link rel="alternate" hreflang="x-default" href="{e(canon)}">') if en else ''
+ES_CON_EN.update(u['slug'] for u in por_pais.get('España', []) if u['n'])
+
+
 def cabeza(titulo_pag, desc, canon, og_img=None, jsonld=None, robots=None, precarga=None):
     _o = GSC_T.get(canon) or {}
     titulo_pag = _o.get('titulo') or titulo_pag; desc = _o.get('desc') or desc
@@ -457,6 +465,7 @@ def cabeza(titulo_pag, desc, canon, og_img=None, jsonld=None, robots=None, preca
 {f'<link rel="preload" as="image" href="{e(precarga)}" fetchpriority="high">' if precarga else ''}
 <meta name="description" content="{e(desc)}">
 <link rel="canonical" href="{e(canon)}">
+{_alt_en(canon)}
 {f'<meta name="robots" content="{robots}">' if robots else ''}
 <meta property="og:title" content="{e(titulo_pag)}">
 <meta property="og:description" content="{e(desc)}">
@@ -895,7 +904,7 @@ def ficha(u, vecinas):
 <main><section class="hero ficha-h{' con-foto' if hf else ''}"{hf}><div class="wrap">{migas(("Universidades", BASE), (p, f"{BASE}{ps}/"), *([(u["ciudad"], f"{BASE}{ps}/ciudad/{slug(u['ciudad'])}/")] if u["ciudad"] and vecinas and p != "Estados Unidos" else []), (u["nombre"], ""))}
 <div class="fila" style="margin-top:16px"><span class="mono" aria-hidden="true">{e(u["extra"].get("acronimo") or iniciales(u["nombre"]))[:5]}</span><div><h1 style="margin:0">{e(u["nombre"])}</h1></div></div>
 <ul class="meta">{''.join(meta)}</ul>{f'<p class="lead" style="margin-top:14px">{e(u["descripcion"])}</p>' if u["descripcion"] else ''}
-<div class="acc">{f'<a class="btn btn-luz" href="{e(u["web"])}" target="_blank" rel="noopener nofollow">Web oficial ↗</a>' if u["web"] else ''}<button type="button" class="btn btn-claro" data-guardar data-id="{ps}/{u["slug"]}" data-n="{e(u["nombre"])}" data-url="{BASE}{ps}/{u["slug"]}/" aria-pressed="false">☆ Guardar</button>{'<a class="btn btn-claro" href="#carreras">Ver ' + palabra + '</a>' if n else ''}<a class="btn btn-claro" href="{BASE}comparar/?u={ps}/{u["slug"]}">Comparar con otra</a></div>
+<div class="acc">{f'<a class="btn btn-luz" href="{e(u["web"])}" target="_blank" rel="noopener nofollow">Web oficial ↗</a>' if u["web"] else ''}<button type="button" class="btn btn-claro" data-guardar data-id="{ps}/{u["slug"]}" data-n="{e(u["nombre"])}" data-url="{BASE}{ps}/{u["slug"]}/" aria-pressed="false">☆ Guardar</button>{'<a class="btn btn-claro" href="#carreras">Ver ' + palabra + '</a>' if n else ''}<a class="btn btn-claro" href="{BASE}comparar/?u={ps}/{u["slug"]}">Comparar con otra</a>{f'<a class="btn btn-claro" href="/en/universities/{u["slug"]}/" hreflang="en" lang="en">English</a>' if es_es and u["slug"] in ES_CON_EN else ''}</div>
 {cred}</div></section>
 <div class="wrap"><div class="ficha"><div>{bloque_sc}{bloque_c}{bloque_ia(url) or bloque_auto(u, orden_g, grupos)}</div>
 <aside><section class="card"><h2>Datos</h2>{datos_html}</section>{cta}{cerca}</aside></div>
@@ -1185,4 +1194,7 @@ acerca()
 sitemap()
 print('fichas casi vacías fuera de Google:', len(FINAS))
 htaccess()
+sys.path.insert(0, AQUI)
+import en as _en   # versión en inglés «Study in Spain» (nexus.aurzane.com/en/)
+_en.generar(globals())
 print(f'OK {TOTAL_U} universidades, {TOTAL_C} carreras, {len(ORDEN_P)} países, {len(URLS)} URLs')
