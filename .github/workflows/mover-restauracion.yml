@@ -1,5 +1,5 @@
 name: Mover restauracion a la papelera
-# Uso único (23/11/2026, autorizado por Adrián): muestra qué hay en ~/restauracion-2026-11-19-1409 y lo pasa a www/eliminar/,
+# Revisado: no se mueve (kit de recuperación). Uso único (23/11/2026, autorizado por Adrián): muestra qué hay en ~/restauracion-2026-11-19-1409 y lo pasa a www/eliminar/,
 # donde se comprime y se borra solo a los 30 días. Si dentro hay algo que no sea una copia de la web, no se mueve.
 on:
   push:
@@ -24,6 +24,8 @@ jobs:
           $SSH 'bash -s' <<'FIN'
           R=~/restauracion-2026-11-19-1409
           [ -d "$R" ] || { echo "No existe"; exit 0; }
+          echo "== LEEME"; cat "$R/LEEME.txt"; echo; echo "== privado (solo nombres)"; tar -tzf "$R/privado.tar.gz" | head -20
+          echo "== copias diarias de Supabase"; ls ~/copias-supabase | tail -4
           echo "== contenido"; ls -la --time-style=+%F_%T "$R" | head -30
           echo "== subcarpetas"; du -sh "$R"/* 2>/dev/null | sort -rh | head -15
           echo "== tipos"; find "$R" -type f | sed 's/.*\.//' | sort | uniq -c | sort -rn | head -10
