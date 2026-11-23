@@ -1,5 +1,27 @@
 [
  {
+  "id": "ia-aurzane-bib-conducta-e-inmunidad",
+  "tipo": "libro",
+  "titulo": "Conducta e inmunidad",
+  "autores": "Vidal Gómez, José",
+  "anio": 2012,
+  "editorial": "Internet Archive",
+  "url": "https://archive.org/details/aurzane-bib-conducta-e-inmunidad",
+  "ia": "aurzane-bib-conducta-e-inmunidad",
+  "pdf": "",
+  "lic": "cc-by-nc-nd",
+  "idioma": "es",
+  "tema": "archive:psicologia",
+  "resumen": "Este libro está concebido como libro de texto para una asignatura llamada Conducta e inmunidad, pero también serviría como texto para una introducción a la Psicoinmunología. Este libro describe la relación del sistema inmune con el estrés, las diferencias individuales en conducta, la depresión, la esquizofrenia, y diversas formas de intervención psicológica. Copia de la Biblioteca AURZANE (aurzane.com/biblioteca).",
+  "motivo": "Libro de psicología con licencia CC-BY-NC-ND conservado en Internet Archive.",
+  "pdf_origen": "https://archive.org/download/aurzane-bib-conducta-e-inmunidad/conducta-e-inmunidad.pdf",
+  "paginas": 60,
+  "portada": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-conducta-e-inmunidad.jpg",
+  "publicado": "2026-11-23",
+  "nota": 9,
+  "auto": true
+ },
+ {
   "id": "ia-aurzane-bib-diversidad-respuesta-psicopedagogica-grados-educacion-infant",
   "tipo": "libro",
   "titulo": "Diversidad y respuesta psicopedagógica: grados de Educación Infantil y Primaria",

@@ -1,6 +1,17 @@
 [
  {
   "fecha": "2026-11-23",
+  "id": "ia-aurzane-bib-abordaje-clinico-adicciones-sin-sustancia",
+  "tipo": "libro",
+  "titulo": "Abordaje clínico de las adicciones sin sustancia",
+  "url": "https://archive.org/details/aurzane-bib-abordaje-clinico-adicciones-sin-sustancia",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 39 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-abordaje-clinico-adicciones-sin-sustancia/abordaje-clinico-adicciones"
+  ]
+ },
+ {
+  "fecha": "2026-11-23",
   "id": "ia-aurzane-bib-rompiendo-barreras-propuesta-atencion-integral-discapacidade",
   "tipo": "libro",
   "titulo": "Rompiendo barreras. Propuesta de atención integral a las discapacidades",
@@ -3151,14 +3162,6 @@
   "tipo": "cita",
   "titulo": "¿Acaso no te amo con toda mi alma; acaso no sabes leer en mis ojos lo que hay dentro de mi corazón?",
   "url": "https://aurzane.com/biblioteca/libro/azul-dario.html",
-  "motivo": "Gemini le dio 7/10: no tiene fuerza suficiente para redes"
- },
- {
-  "fecha": "2026-11-08",
-  "id": "cita-acb89e5c5d",
-  "tipo": "cita",
-  "titulo": "Verdadera reveladora del alma de su país, apareció entonces para la generalidad como una más; para muy pocos, como la única.",
-  "url": "https://aurzane.com/biblioteca/libro/en-las-orillas-del-sar.html",
   "motivo": "Gemini le dio 7/10: no tiene fuerza suficiente para redes"
  }
 ]

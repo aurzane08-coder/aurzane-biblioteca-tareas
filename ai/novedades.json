@@ -1,6 +1,11 @@
 [
  {
   "fecha": "2026-11-23",
+  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-conducta-e-inmunidad/",
+  "titulo": "Libro abierto: Conducta e inmunidad"
+ },
+ {
+  "fecha": "2026-11-23",
   "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-diversidad-respuesta-psicopedagogica-grados-educacion-infant/",
   "titulo": "Libro abierto: Diversidad y respuesta psicopedagógica: grados de Educación Infantil y Primaria"
  },
@@ -593,10 +598,5 @@
   "fecha": "2026-11-09",
   "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13736734/",
   "titulo": "Estudio reciente: Systematic review and meta-analysis on the efficacy and safety of combining repetitive transcranial magnetic s"
- },
- {
-  "fecha": "2026-11-09",
-  "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13735106/",
-  "titulo": "Estudio reciente: Family resilience for older patients requiring long-term care: a concept analysis"
  }
 ]
