@@ -1599,9 +1599,12 @@ img{max-width:100%;display:block;}
       const empezada = startedTestKeys.has(first.test_key);
       title = info ? `${empezada ? 'Sigue con' : 'Ahora toca'} ${info.nombre}` : 'Sigue con tus evaluaciones';
       body = (info ? `${info.proposito} Unos ${formatoMinutos(info.tiempoMin)}, y puedes pararla y seguir otro día.` : '') +
-        (completados.length > 0 ? ' Tu informe ya está disponible y se completa con cada evaluación.' : '');
+        (completados.length > 0
+          ? ' Tu informe ya está disponible con lo que llevas y se completa con cada evaluación. No tienes que hacerlas todas: si prefieres no hacer alguna, quítala en «Evaluaciones» y tu informe queda cerrado con las que terminaste.'
+          : ' Con una sola evaluación terminada ya tienes tu informe. Si eliges de más, puedes quitar las que no quieras en «Evaluaciones».');
       actions = `<button class="btn btn-primary" onclick="irAlTest('${info ? info.url : '#'}')">${empezada ? 'Continuar' : 'Comenzar'} ${info ? escapeHtml(info.nombre) : ''}</button>` +
-        (completados.length > 0 ? `<button class="btn btn-ghost" onclick="goToPage('informe')">Ver mi informe</button>` : '');
+        (completados.length > 0 ? `<button class="btn btn-ghost" onclick="goToPage('informe')">Ver mi informe</button>` : '') +
+        `<button class="btn btn-ghost" onclick="goToPage('tests')">Quitar o añadir evaluaciones</button>`;
     } else {
       title = 'Tu informe está listo';
       body = `Terminaste ${completados.length === 1 ? 'tu evaluación' : 'tus ' + completados.length + ' evaluaciones'}. Léelo, descárgalo y mira dónde estudiar las carreras que encajan contigo.`;
@@ -1903,7 +1906,7 @@ img{max-width:100%;display:block;}
           <div class="rs-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
           <div class="rs-body">
             <h4>Todavía no hay informe</h4>
-            <p>${activos.length === 0 ? 'Elige tus evaluaciones en «Mi Proceso». Con la primera que completes, tu informe aparece aquí.' : 'Tu informe aparece aquí apenas completes tu primera evaluación.'}</p>
+            <p>${activos.length === 0 ? 'Elige tus evaluaciones en «Mi Proceso». Con la primera que completes, tu informe aparece aquí.' : 'Tu informe aparece aquí apenas completes tu primera evaluación: no hace falta terminarlas todas. Las que no quieras hacer puedes quitarlas en «Evaluaciones».'}</p>
           </div>
         </div>
       `;
@@ -1916,7 +1919,7 @@ img{max-width:100%;display:block;}
       <div class="report-state ready">
         <div class="rs-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/></svg></div>
         <div class="rs-body"><h4>Tu informe está listo</h4>
-          <p>Incluye ${nombres.length === 1 ? 'tu evaluación' : 'tus ' + nombres.length + ' evaluaciones'}: ${escapeHtml(nombres.join(', '))}.${pendNombres.length ? ' Se actualizará cuando completes ' + escapeHtml(pendNombres.join(', ')) + '.' : ''}</p></div>
+          <p>Incluye ${nombres.length === 1 ? 'tu evaluación' : 'tus ' + nombres.length + ' evaluaciones'}: ${escapeHtml(nombres.join(', '))}.${pendNombres.length ? ' Se actualizará cuando completes ' + escapeHtml(pendNombres.join(', ')) + '. No es obligatorio hacerlas todas: si prefieres no hacer alguna, <a href="#" onclick="goToPage(\'tests\');return false;">quítala en «Evaluaciones»</a> y tu informe queda cerrado con las que terminaste.' : ''}</p></div>
         <div class="descargas-informe">
           <button class="btn btn-primary btn-sm" id="descargarPdfBtn">${ICONO_PDF} Descargar PDF</button>
           <button class="btn btn-secondary btn-sm" id="descargarWordBtn">${ICONO_PDF} Descargar Word</button>
