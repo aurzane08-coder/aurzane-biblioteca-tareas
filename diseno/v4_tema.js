@@ -84,15 +84,17 @@
     if (d.documentElement.classList.contains('az-v4-herofoto')) return;
     var og = d.querySelector('meta[property="og:image"]'), u = og && og.content;
     var cab = d.querySelector('main > .hero, section.hero, header.hero, .u-hero, .hero-wrap, .world-header, main > header:first-child, body > div.h, .tx-hero'); if (!cab) return;
+    var cs = getComputedStyle(cab); if (/url\(/.test(cs.backgroundImage)) return;
+    var cols = ((cs.backgroundColor + ' ' + cs.backgroundImage).match(/rgba?\([^)]+\)|color\(srgb [^)]+\)/g) || []).map(function (x) {
+        var k = /^color/.test(x), v = x.replace(/rgba?\(|color\(srgb |\)/g, '').split(/[ ,\/]+/).filter(Boolean).map(Number);
+        return k ? [v[0] * 255, v[1] * 255, v[2] * 255, v.length > 3 ? v[3] : 1] : v; })
+      .filter(function (c) { return c.length < 4 || c[3] >= .5; });
+    var c = cols[0]; if (!c) return;
+    if (.2126 * c[0] + .7152 * c[1] + .0722 * c[2] > 90) return;   // solo cabeceras oscuras: el texto claro sigue legible (también con foto del catálogo)
     if (!u || /og-portada|logo|portadas?\//i.test(u)) {   // sin foto propia: una del catálogo según el título de la página
       if (window.AurzaneBanco && !cab.__v4b) { cab.__v4b = 1; window.AurzaneBanco.listo(function () { var f = window.AurzaneBanco.foto((d.documentElement.className.match(/az-ds-(mind|nexus|live|learn|build|ovp)/) || [0, 'general'])[1], d.title, 1600); if (f) { var m = d.querySelector('meta[property="og:image"]'); cab.style.setProperty('--v4-foto', 'url("' + f + '")'); cab.setAttribute('data-v4-foto', '1'); d.documentElement.classList.add('az-v4-cabfoto'); } }); }
       return;
     }
-    var cs = getComputedStyle(cab); if (/url\(/.test(cs.backgroundImage)) return;
-    var cols = ((cs.backgroundColor + ' ' + cs.backgroundImage).match(/rgba?\([^)]+\)/g) || []).map(function (x) { return x.replace(/rgba?\(|\)/g, '').split(/[ ,\/]+/).map(Number); })
-      .filter(function (c) { return c.length < 4 || c[3] >= .5; });
-    var c = cols[0]; if (!c) return;
-    if (.2126 * c[0] + .7152 * c[1] + .0722 * c[2] > 90) return;   // solo cabeceras oscuras: el texto claro sigue legible
     cab.style.setProperty('--v4-foto', 'url("' + u.replace(/"/g, '%22') + '")'); cab.setAttribute('data-v4-foto', '1');
     d.documentElement.classList.add('az-v4-cabfoto');
   }
@@ -138,7 +140,7 @@
     var lista = m && idx[m] && idx[m][tema];
     if (!lista || !lista.length) {   // sin tema reconocible: cualquier foto del mundo (o general), siempre la misma para el mismo texto
       var mm = idx[mundo] || idx.general || {}; lista = [];
-      Object.keys(mm).forEach(function (k) { lista = lista.concat(mm[k]); });
+      Object.keys(mm).forEach(function (k) { if (k !== 'textura') lista = lista.concat(mm[k]); });   // las texturas lisas no sirven de foto principal
     }
     if (!lista.length) return null;
     var i0 = h(t + mundo) % lista.length, k = 0, x = lista[i0], w = (ancho || 640) > 800 ? 1600 : 640;
@@ -238,4 +240,25 @@
     });
   }
   if (d.readyState === 'loading') d.addEventListener('DOMContentLoaded', poner); else poner();
+})(document);
+/* Tarjetas con la misma foto repetida en una página (artículos que comparten imagen, etc.): la repetida se cambia por otra del catálogo según su texto */
+(function (d) {
+  function base(u) { return String(u || '').split('?')[0]; }
+  function quitar() {
+    if (!window.AurzaneBanco) return;
+    window.AurzaneBanco.listo(function () {
+      var vistas = {}, cm = (d.documentElement.className.match(/az-ds-(mind|nexus|live|learn|build|ovp)/) || [0, 'general'])[1];
+      [].forEach.call(d.querySelectorAll('main img, .wrap img, section img'), function (im) {
+        var b = base(im.currentSrc || im.src); if (!b || /logo|portada|cover|avatar|icon/i.test(b + ' ' + im.className)) return;
+        var card = im.closest('a, article, li'); if (!card || im.closest('.libro, .portada, .rp, .book')) return;
+        var r = im.getBoundingClientRect(); if (r.width && r.width < 120) return;
+        if (!vistas[b]) { vistas[b] = 1; return; }
+        var m = (card.getAttribute('href') || '').match(/(mind|nexus|live|learn|build)\.aurzane|mundo=(mind|nexus|live|learn|build)/);
+        var u = window.AurzaneBanco.foto(m ? (m[1] || m[2]) : cm, (card.textContent || '').slice(0, 220), 640);
+        if (u && !vistas[base(u)]) { vistas[base(u)] = 1; im.removeAttribute('srcset'); im.src = u; }
+      });
+    });
+  }
+  function ir() { quitar(); setTimeout(quitar, 2500); }   // también tras cargar las tarjetas que llegan por JS
+  if (d.readyState === 'loading') d.addEventListener('DOMContentLoaded', ir); else ir();
 })(document);

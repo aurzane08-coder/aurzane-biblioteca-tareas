@@ -644,3 +644,4 @@ html.az-v4 .tarjetas:has(> .panel .tabla){grid-template-columns:repeat(2,minmax(
 @media (min-width:901px) and (min-height:960px){html.az-v4 .ficha > aside{position:sticky;top:84px;align-self:start}}
 @media (max-width:900px){html.az-v4 #vistaInvitado .invitado-grid > :last-child{order:-1}}   /* en móvil, el acceso va primero */
 html.az-v4 .rasgos5 .r5{background:color-mix(in srgb,var(--c) 60%,#0F2A22)!important;color:#fff!important}   /* rasgos: texto blanco legible en todos los colores */
+html.az-v4 .rasgos5 .r5.claro{background:color-mix(in srgb,var(--c) 42%,#0F2A22)!important}   /* el rasgo de color claro necesita más fondo oscuro */
