@@ -174,6 +174,12 @@ def relacionados(slug, hechos):
     return f'\n  <div class="related">\n    <h3>Keep reading</h3>\n    <div class="related-grid">{tarjetas}</div>\n  </div>'
 
 
+def miga_tema(t, cat):
+    """En las migas, el tema del artículo (enlaza a la página del tema en español) con su nombre en inglés."""
+    if not cat: return t
+    return re.sub(r'(<nav class="breadcrumb wrap">[\s\S]*?<a href="https://aurzane\.com/temas/[^"]*">)[^<]*(</a>)', lambda m: m.group(1) + html.escape(cat) + m.group(2), t, count=1)
+
+
 def pagina_en(t_es, slug, main_en, hechos):
     t = t_es
     for es, en in FIJOS: t = t.replace(es, en)
@@ -183,6 +189,7 @@ def pagina_en(t_es, slug, main_en, hechos):
     rel = relacionados(slug, hechos)
     main_en = re.sub(r'(\n\s*<a class="back-hub")', lambda m: rel + m.group(1), main_en, count=1) if rel and 'class="back-hub"' in main_en else main_en + rel
     t = re.sub(r'(<main class="article wrap">)[\s\S]*?(</main>)', lambda m: m.group(1) + main_en + m.group(2), t, count=1)
+    t = miga_tema(t, cat)
     # migas: el título corto
     t = re.sub(r'(<span class="current">)[^<]*(</span>)', lambda m: m.group(1) + html.escape(tit[:60] + ('…' if len(tit) > 60 else '')) + m.group(2), t, count=1)
     # cabecera: idioma, título, descripción, redes, canónica, idiomas y datos estructurados
@@ -290,6 +297,7 @@ for slug in pendientes_rel:
     sin = re.sub(r'\n  <div class="related">[\s\S]*?</div>\n  </div>', '', t_en, count=1)
     rel = relacionados(slug, hechos)
     n_en = re.sub(r'(\n\s*<a class="back-hub")', lambda m: rel + m.group(1), sin, count=1) if rel and 'class="back-hub"' in sin else sin.replace('</main>', rel + '</main>', 1)
+    n_en = miga_tema(n_en, hechos.get(slug, {}).get('categoria', ''))
     if n_en != t_en and escribir(f'{WEB}/en/articles/{slug}/index.html', n_en): cambios = True
 if hechos and plantilla and (cambios or remoto(f'test -f {WEB}/en/articles/index.html && echo SI').strip() != 'SI'):
     # en cada artículo, las tarjetas «Keep reading» con los demás ya traducidos
