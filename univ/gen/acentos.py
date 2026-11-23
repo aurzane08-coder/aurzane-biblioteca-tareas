@@ -37,13 +37,24 @@ Ciencias Administración Contaduría Economía Finanzas Mercadeo Psicología Enf
     ACENTOS[unicodedata.normalize('NFD', _w.lower()).encode('ascii', 'ignore').decode()] = _w
 
 
-def acentuar(t):
-    if not t or any(c in t for c in 'áéíóúÁÉÍÓÚñ'):
+SUFIJOS = [(r'cion$', 'ción'), (r'sion$', 'sión'), (r'logia$', 'logía'), (r'grafia$', 'grafía'), (r'metria$', 'metría'), (r'nomia$', 'nomía'),
+           (r'sofia$', 'sofía'), (r'terapia$', 'terapia'), (r'iatria$', 'iatría'), (r'patia$', 'patía')]
+
+
+def acentuar(t, forzar=False):
+    """Pone las tildes que faltan. Sin forzar no toca textos que ya traen alguna tilde (Ecuador); con forzar (datos oficiales de
+    Chile y Colombia, que mezclan palabras con y sin tilde) revisa cada palabra y aplica además terminaciones seguras (-ción, -sión, -logía…)."""
+    if not t or (not forzar and any(c in t for c in 'áéíóúÁÉÍÓÚñ')):
         return t
     def r(m):
         w = m.group(0); k = w.lower()
         if k in ACENTOS and len(k) > 3:
             a = ACENTOS[k]
             return a[0].upper() + a[1:] if w[0].isupper() else a.lower()
+        if forzar and len(k) > 4:
+            for pat, fin in SUFIJOS:
+                if re.search(pat, k):
+                    a = re.sub(pat, fin, k)
+                    return (a[0].upper() + a[1:]) if w[0].isupper() else a
         return w
-    return re.sub(r'[A-Za-z]+', r, t)
+    return re.sub(r'(?<![A-Za-zÁÉÍÓÚáéíóúÑñÜü])[A-Za-z]+(?![A-Za-zÁÉÍÓÚáéíóúÑñÜü])', r, t)

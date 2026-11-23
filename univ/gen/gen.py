@@ -217,6 +217,52 @@ if PRIN:
                      'tipo_ies': 'Universidad', 'web': p.get('web_final') or p['web'], 'logo': '', 'ciudad': p['ciudad'], 'region': '', 'nivel': 'basico', 'carreras': [],
                      'fuente': 'principales', 'descripcion': '', 'destacada': False, 'extra': {}})
 
+# --- datos abiertos oficiales por país (univ/oficiales/importar.py → univ/data/oficial_<iso>.json, 23/11/2026)
+# Completan las fichas que ya existen (misma dirección: se conserva el nombre y el id) con la oferta oficial vigente y añaden las que faltan.
+OFICIAL = {}
+for _f in sorted(os.listdir(DATOS)):
+    if not re.match(r'^oficial_[a-z]{2}\.json$', _f): continue
+    _o = cargar_json(_f)
+    if not _o or not _o.get('instituciones'): continue
+    _p = _o['pais']; OFICIAL[_p] = _o
+    _vie = [u for u in UNIS if u['pais'] == _p]
+    _por_dom = {_dom(u['web']): u for u in _vie if u['web'] and _dom(u['web'])}
+    _por_nom = {_nrm(re.sub(r'\(.*?\)', '', u['nombre'])): u for u in _vie}
+    _usadas, _n_nuevas, _n_casan = set(), 0, 0
+
+    def _pareja(x):
+        u = _por_dom.get(_dom(x['web'])) if x.get('web') else None
+        k = _nrm(re.sub(r'\(.*?\)', '', x['nombre']))
+        u = u or _por_nom.get(k)
+        if not u and len(k) > 14:   # «Universidad de Playa Ancha» ↔ «Universidad de Playa Ancha de Ciencias de la Educación»
+            c = [v for kk, v in _por_nom.items() if len(kk) > 14 and (kk.startswith(k + ' ') or k.startswith(kk + ' '))]
+            u = c[0] if len(c) == 1 else None
+        return u if u and u['id'] not in _usadas else None
+    for x in _o['instituciones']:
+        cs = [{'n': c['n'], 'area': c.get('area', ''), 'grupo': c.get('grupo') or 'Grado', 'campo': '', 'mod': c.get('mod') or [], 'sedes': c.get('sedes') or [],
+               'cred': c.get('cred', ''), 'prof': '', 'titulo': c.get('titulo', '')} for c in x['carreras']]
+        u = _pareja(x)
+        if u:
+            _usadas.add(u['id']); _n_casan += 1
+            if cs: u['carreras'], u['nivel'] = cs, 'programas'
+            u['web'] = u['web'] or x.get('web', '')
+            u['ciudad'] = u['ciudad'] or x.get('ciudad', ''); u['region'] = u['region'] or x.get('region', '')
+            for k2, v2 in (x.get('extra') or {}).items():
+                if v2 and not u['extra'].get(k2): u['extra'][k2] = v2
+        else:
+            _n_nuevas += 1
+            u = {'id': f'ofi-{_f[8:10]}-{x["cod"]}', 'pais': _p, 'nombre': x['nombre'], 'tipo_raw': x['tipo'], 'tipo_ies': x['tipo_ies'], 'web': x.get('web', ''), 'logo': '',
+                 'ciudad': x.get('ciudad', ''), 'region': x.get('region', ''), 'nivel': 'programas' if cs else 'basico', 'carreras': cs, 'descripcion': '', 'destacada': False,
+                 'extra': dict(x.get('extra') or {})}
+            UNIS.append(u)
+        u['fuente'] = _o['fuente']; u['extra']['fuente_url'] = _o.get('fuente_url', ''); u['extra']['fuente_fecha'] = _o.get('fecha', '')
+        if _o.get('nota'): u['extra']['fuente_nota'] = _o['nota']
+    print(f'Oficiales {_p}: {_n_casan} fichas completadas · {_n_nuevas} nuevas · {sum(len(x["carreras"]) for x in _o["instituciones"])} carreras')
+
+ORDEN_NIVEL = ['Pregrado universitario', 'Profesional con licenciatura', 'Profesional', 'Licenciatura', 'Bachillerato y plan común', 'Técnico de nivel superior',
+               'Tecnológico', 'Técnico profesional', 'Especialización', 'Especialización médico-quirúrgica', 'Especialidad médica u odontológica', 'Magíster',
+               'Maestría', 'Doctorado', 'Otros']
+
 # --- slugs únicos por país
 por_pais = collections.defaultdict(list)
 for u in UNIS:
@@ -805,6 +851,7 @@ def ficha(u, vecinas):
     for c in sorted(u['carreras'], key=lambda c: c['n'].lower()):
         grupos.setdefault(c['grupo'] or 'Otras', []).append(c)
     orden_g = sorted(grupos, key=lambda g: (-len(grupos[g]), g))
+    if all(g in ORDEN_NIVEL for g in grupos): orden_g = sorted(grupos, key=ORDEN_NIVEL.index)   # datos oficiales: de pregrado a doctorado
     chips = ''
     if len(orden_g) > 1:
         chips = '<div class="chips" role="group" aria-label="Filtrar por grupo"><button type="button" class="chip" aria-pressed="true" data-area="">Todas</button>' + ''.join(
@@ -816,6 +863,7 @@ def ficha(u, vecinas):
             det = []
             if c.get('campo'): det.append(c['campo'])
             elif c.get('area') and c['area'] != g: det.append(c['area'])
+            if c.get('titulo'): det.append('Título: ' + c['titulo'])
             der = []
             if c.get('cred'): der.append(f'{c["cred"]} ECTS' if es_es else c['cred'])
             if c.get('mod'): der.append(' · '.join(c['mod']))
@@ -830,6 +878,11 @@ def ficha(u, vecinas):
 {"<p class='aviso'>Esta universidad publica sus áreas y facultades. Consulta su oferta completa de carreras en su web oficial.</p>" if u["nivel"] == "areas" else ""}</section>'''
     else:
         bloque_c = f'<section class="card" id="carreras"><h2>Carreras</h2><p class="aviso">Todavía no tenemos el listado de carreras de esta institución. Puedes consultar su oferta completa en su {"<a href=" + e(u["web"]) + " target=_blank rel=noopener>web oficial</a>" if u["web"] else "web oficial"}.</p></section>'
+    if u['extra'].get('fuente_url') and n:   # datos abiertos oficiales: se cita la fuente y la fecha de la descarga
+        _ff = u['extra'].get('fuente_fecha', '')
+        _ff = f'{int(_ff[8:10])}/{int(_ff[5:7])}/{_ff[:4]}' if re.match(r'^\d{4}-\d\d-\d\d$', _ff) else ''
+        bloque_c = bloque_c.replace('</section>', f'<p class="sub fuente-of">Fuente: <a href="{e(u["extra"]["fuente_url"])}" target="_blank" rel="noopener">{e(u["fuente"])}</a>'
+                                    f'{", consultada el " + _ff if _ff else ""}. {e(u["extra"].get("fuente_nota", ""))}</p></section>', 1)
     dato = [('País', f'{bandera(iso)} {e(p)}'), ('Ciudad', e(u['ciudad'] or '-'))]
     if u['region']: dato.append(('Comunidad autónoma' if es_es else 'Región', e(u['region'])))
     dato.append(('Tipo', e(u['tipo_txt'] or '-')))
@@ -837,6 +890,7 @@ def ficha(u, vecinas):
     if u['extra'].get('acronimo'): dato.append(('Siglas', e(u['extra']['acronimo'])))
     if u['extra'].get('anio'): dato.append(('Creada en', e(u['extra']['anio'])))
     if u['extra'].get('en_linea'): dato.append(('Modalidad', 'En línea'))
+    if u['extra'].get('acreditacion'): dato.append(('Acreditación', e(u['extra']['acreditacion'])))
     rk = rank_de(u)
     if rk: dato.append(('Ranking mundial', f'<a href="{BASE}acerca/#ranking" title="Posición por citas científicas en OpenAlex">n.º {fmt(rk[0])} del mundo · n.º {fmt(rk[1])} en {e(p)}</a>'))
     if u['web']:

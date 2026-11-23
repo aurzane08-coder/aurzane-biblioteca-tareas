@@ -67,16 +67,23 @@ IES_CO = {'Universidad': 'Universidad', 'Institución Universitaria/Escuela Tecn
 
 
 def cap(t):
-    """«INGENIERO AMBIENTAL» → «Ingeniero Ambiental» (mayúsculas de la fuente), respetando partículas y siglas cortas."""
+    """«INGENIERO AMBIENTAL» → «Ingeniero Ambiental» (mayúsculas de la fuente), respetando partículas, números romanos y «(a)»."""
     t = limpio(t)
-    if not t.isupper(): return t
-    menores = {'de', 'del', 'la', 'las', 'los', 'y', 'e', 'en', 'o', 'u', 'a', 'el', 'para', 'con', 'por', 'al'}
-    pal = []
-    for i, w in enumerate(t.lower().split()):
-        if i and w in menores: pal.append(w)
-        elif re.fullmatch(r'\(?[ivx]+\)?', w) and len(w) <= 4: pal.append(w.upper())
-        else: pal.append(w[:1].upper() + w[1:])
-    return re.sub(r'\((o|a|as|os)\)', lambda m: '(' + m.group(1).lower() + ')', ' '.join(pal), flags=re.I)
+    letras = [c for c in t if c.isalpha()]
+    if not letras or sum(c.isupper() for c in letras) < 0.8 * len(letras): return arreglar(t)
+    menores = {'de', 'del', 'la', 'las', 'los', 'y', 'e', 'en', 'o', 'u', 'a', 'el', 'para', 'con', 'por', 'al', 'as', 'os'}
+    n = [0]
+    def r(m):
+        w = m.group(0); i = n[0]; n[0] += 1
+        if re.fullmatch(r'[ivx]{1,4}', w) and w not in ('vi',) or w in ('uc', 'tic', 'ii'): return w.upper()
+        if i and w in menores: return w
+        return w[:1].upper() + w[1:]
+    return arreglar(re.sub(r'[a-záéíóúñü]+', r, t.lower()))
+
+
+def arreglar(t):
+    """Erratas frecuentes de las fuentes."""
+    return re.sub(r'\bMa(e)?gister\b', 'Magíster', t)
 
 
 def colombia():
@@ -112,6 +119,7 @@ def colombia():
         if not tit or tit.upper() in ('NA', 'N/A', 'SIN DATO'): continue
         grupo = NIVEL_CO.get(p.get('nombrenivelformacion'), limpio(p.get('nombrenivelformacion')) or 'Otros')
         sede = limpio(p.get('nombremunicipioprograma')).replace('Bogotá, D.C.', 'Bogotá').replace('Bogotá D.C.', 'Bogotá')
+        if re.match(r'(?i)no (especifica|aplica|informa)|sin dato', sede): sede = ''
         mod = limpio(p.get('nombremetodologia'))
         cred = p.get('cantidadcreditos') or ''
         per, tper = p.get('cantidadperiodos') or '', (p.get('nombreperiodicidad') or '').lower()
@@ -159,6 +167,7 @@ def chile():
     for f in filas:
         if not f or not v(f, 'Nombre IES'): continue
         if not str(v(f, 'Vigencia') or '').startswith('Vigente con estudiantes nuevos'): continue
+        if v(f, 'Nivel Carrera') in ('Diplomado (desde un semestre)', 'Postítulo'): continue   # formación continua: no son carreras
         n_f += 1
         cod = str(v(f, 'Código IES'))
         u = inst.get(cod)
@@ -197,11 +206,11 @@ def chile():
         for x in u['carreras']:
             a, d = sorted(set(x.pop('_a'))), sorted(set(x.pop('_d')))
             partes = []
-            if d: partes.append(f'{d[0]} semestres' if len(d) == 1 else f'{d[0]}-{d[-1]} semestres')
+            if d: partes.append((f'{d[0]} semestre' + ('s' if d[0] > 1 else '')) if len(d) == 1 else f'{d[0]}-{d[-1]} semestres')
             if a: partes.append(f'arancel {anio}: ' + ('$' + f'{a[0]:,}'.replace(',', '.') if len(a) == 1 else 'desde $' + f'{a[0]:,}'.replace(',', '.')) + ' al año')
             if x.pop('acreditada'): partes.append('acreditada')
             x['cred'] = ' · '.join(partes)
-            if not x['titulo'] or nrm(x['titulo']) == nrm(x['n']): x.pop('titulo')
+            if not x['titulo'] or nrm(x['titulo']) == nrm(x['n']) or 'no otorga' in nrm(x['titulo']): x.pop('titulo')
         lista.append(u)
     log(f'  {n_f} filas vigentes con estudiantes nuevos')
     guardar('cl', {'pais': 'Chile', 'fuente': f'SIES, Subsecretaría de Educación Superior de Chile (oferta académica {anio})', 'fuente_url': 'https://www.mifuturo.cl/bases-de-datos-de-oferta-academica/',
@@ -209,7 +218,10 @@ def chile():
 
 
 sys.path.insert(0, os.path.join(AQUI, '..', 'gen'))
-from acentos import acentuar  # noqa: E402  (mismo diccionario de acentos que usa gen.py)
+from acentos import acentuar as _acentuar  # noqa: E402
+
+
+def acentuar(t): return _acentuar(t, forzar=True)   # mismo diccionario que gen.py, palabra a palabra
 
 if __name__ == '__main__':
     paises = sys.argv[1:] or ['co', 'cl']
