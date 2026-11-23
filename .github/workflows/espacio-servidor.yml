@@ -27,7 +27,7 @@ jobs:
         run: |
           mkdir -p ~/.ssh && printf '%s\n' "$SG_KEY" | tr -d '\r' > ~/.ssh/id && chmod 600 ~/.ssh/id
           if [ -n "$SG_PASS" ]; then ssh-keygen -p -P "$SG_PASS" -N "" -f ~/.ssh/id >/dev/null; fi
-          K=$(ssh -i $HOME/.ssh/id -p ${SG_PORT:-18765} -o StrictHostKeyChecking=accept-new $SG_USER@$SG_HOST 'du -sk ~ | cut -f1'); M=$((K/1024))
+          K=$(ssh -i $HOME/.ssh/id -p ${SG_PORT:-18765} -o StrictHostKeyChecking=accept-new $SG_USER@$SG_HOST 'du -sk ~/ | cut -f1'); M=$((K/1024))
           echo "La cuenta usa $M MB"
           if [ "$M" -gt 8192 ]; then
             gh issue create -R "$GITHUB_REPOSITORY" --title "SiteGround casi lleno: $M MB" --body "La cuenta de SiteGround usa $M MB (aviso a partir de 8 GB). Revisa el informe del flujo «Espacio del servidor» para ver qué ha crecido." || true
@@ -43,9 +43,10 @@ jobs:
             echo "== quién escribe copias"; grep -rl "copias/" ~/herramientas 2>/dev/null | head; crontab -l 2>/dev/null | head -20
             echo "== marketing"; du -sh aurzane.com/public_html/marketing/* 2>/dev/null | sort -rh | head -20; find aurzane.com/public_html/marketing -type f -printf "%TY-%Tm\n" | sort | uniq -c
             echo "== biblioteca"; du -sh aurzane.com/public_html/biblioteca/* 2>/dev/null | sort -rh | head -10; find aurzane.com/public_html/biblioteca -name "*.pdf" | wc -l
-            echo "== total y archivos (SiteGround limita también el número de archivos)"; du -sh ~ 2>/dev/null; echo "archivos: $(find ~ -xdev 2>/dev/null | wc -l)"
+            echo "== total y archivos (SiteGround limita también el número de archivos)"; du -sh ~/ 2>/dev/null; echo "archivos: $(find ~/ -xdev 2>/dev/null | wc -l)"
             echo "== por carpeta de la cuenta"; du -sh ~/* ~/.[!.]* 2>/dev/null | sort -rh | head -15
             echo "== por sitio"; for d in */; do printf "%s " "$d"; du -sh "$d" 2>/dev/null | cut -f1; printf "   archivos: %s\\n" "$(find "$d" -type f 2>/dev/null | wc -l)"; done
-            echo "== carpetas eliminar"; find ~ -maxdepth 4 -type d -name eliminar 2>/dev/null | while read e; do echo "$(du -sh "$e" | cut -f1) $(find "$e" -type f | wc -l) archivos  $e"; done
+            echo "== carpetas eliminar"; find ~/ -maxdepth 4 -type d -name eliminar 2>/dev/null | while read e; do echo "$(du -sh "$e" | cut -f1) $(find "$e" -type f | wc -l) archivos  $e"; done
+            echo "== dentro de cada sitio (nivel 1 y 2)"; for d in aurzane.com nexus.aurzane.com; do du -sh $d/* 2>/dev/null | sort -rh | head -8; du -sh $d/public_html/* 2>/dev/null | sort -rh | head -12; done
             echo "== lo más grande de nexus"; du -sh nexus.aurzane.com/public_html/* 2>/dev/null | sort -rh | head -12
             echo "== restauracion y copias-supabase"; ls -la ~/restauracion-2026-11-19-1409 | head; ls ~/copias-supabase | tail -5; ls ~/copias-supabase | wc -l'
