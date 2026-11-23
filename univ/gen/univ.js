@@ -299,6 +299,7 @@
         }
       });
       var v = $('#carrVacio'); if (v) v.hidden = total > 0;
+      FC.classList.toggle('buscando', !!nq);
     }
     var inp = $('.carr-busca', FC);
     if (inp) inp.addEventListener('input', function () { q = inp.value; aplicar(); });

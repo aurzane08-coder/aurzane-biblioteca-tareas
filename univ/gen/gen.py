@@ -903,7 +903,7 @@ def ficha(u, vecinas):
         det = []
         if nivel_det and c.get('grupo') and c['grupo'] not in ('Grado', 'Pregrado universitario', 'Universitario (grado)'): det.append(c['grupo'])
         if c.get('campo'): det.append(c['campo'])
-        elif c.get('area') and c['area'] != c.get('grupo'): det.append(c['area'])
+        elif c.get('area') and c['area'] != c.get('grupo') and _nrm(c['area']) != _nrm(c['n']): det.append(c['area'])
         if c.get('titulo'): det.append('Título: ' + c['titulo'])
         der = []
         if c.get('cred'): der.append(f'{c["cred"]} ECTS' if es_es else c['cred'])
@@ -930,7 +930,7 @@ def ficha(u, vecinas):
         abrir = tot <= 15 or len(g) == 1
         secc = ''.join(f'<details class="grupo" data-area="{e(a)}"{" open" if abrir else ""}><summary><span>{e(a)}</span><span>{len(g[a])}</span></summary>'
                        f'<ul class="carreras">{"".join(fila_c(c, varios) for c in g[a])}</ul></details>' for a in orden_a)
-        lis += f'<div class="nivel" data-nivel="{k}"{" hidden" if i else ""}>{"<p class=sub style=margin:0 0 10px>Ordenadas por ámbito de conocimiento. Abre un ámbito para ver sus " + ("posgrados" if k == "posgrados" else palabra) + ".</p>" if not abrir else ""}{secc}</div>'
+        lis += f'<div class="nivel" data-nivel="{k}"{" hidden" if i else ""}><h3 class="nivel-tit">{"Carreras" if k == "carreras" else "Posgrados"}</h3>{"<p class=\"sub\" style=\"margin:0 0 10px\">Ordenadas por ámbito de conocimiento. Abre un ámbito para ver sus " + ("posgrados" if k == "posgrados" else palabra) + ".</p>" if not abrir else ""}{secc}</div>'
     grupos = niveles.get('carreras') or (next(iter(niveles.values())) if niveles else {})   # para el texto automático (áreas con más oferta)
     orden_g = [a for a in sorted(grupos, key=lambda a: -len(grupos[a])) if a != 'Otras áreas']
     if n:

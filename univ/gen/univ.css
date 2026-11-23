@@ -376,3 +376,6 @@ details.grupo[open]>summary span:last-child::after{transform:rotate(-135deg);mar
 details.grupo[open]>summary{border-bottom:1px solid var(--border)}
 details.grupo .carreras{border:0;border-radius:0;margin:0}
 details.grupo>summary:focus-visible{outline:2px solid var(--accent-text);outline-offset:-2px}
+.nivel-tit{display:none;font-size:.9rem;margin:14px 0 8px}
+#carreras.buscando .nivel-tit{display:block}
+#carreras.buscando .nivel>p.sub{display:none}

@@ -85,6 +85,7 @@ jobs:
             FECHA=$(date +%Y%m%d)
             sed 's#^\./##' retirados.txt | $SSH "$SG_USER@$SG_HOST" "cd www/nexus.aurzane.com && while read f; do [ -f public_html/universidades/\$f ] && mkdir -p \"eliminar/universidades-$FECHA/\$(dirname \$f)\" && mv \"public_html/universidades/\$f\" \"eliminar/universidades-$FECHA/\$f\"; done; true"
           fi
+          $SSH "$SG_USER@$SG_HOST" "site-tools-client domain-all update id=nexus.aurzane.com flush_cache=1 >/dev/null 2>&1" || true   # que los cambios se vean al momento
           cp univ/manifiesto-nuevo.txt univ/manifiesto.txt
       - name: Guardar portal como artefacto
         if: env.SG_KEY == ''
