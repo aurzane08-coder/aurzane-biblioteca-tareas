@@ -650,3 +650,7 @@ html.az-v4 .rasgos5 .r5.claro{background:color-mix(in srgb,var(--c) 42%,#0F2A22)
 @media (min-width:1400px){html.az-v4 #categoriasGrid:has(> :nth-child(5):last-child),html.az-v4 #categoriasGrid:has(> :nth-child(10):last-child){grid-template-columns:repeat(5,minmax(0,1fr))!important}}
 /* Las bandas a todo el ancho (100vw) incluyen la barra de desplazamiento y empujaban la página 8 px hacia el lado: sin scroll horizontal */
 html.az-v4 body{overflow-x:clip}
+/* Lector de la biblioteca: barra de páginas en verde con texto y botones claros (antes, texto oscuro sobre casi negro) */
+html.az-v4 #lector .barra{background:#183D32!important;border-bottom:1px solid rgba(199,185,155,.35)}
+html.az-v4 #lector .barra,html.az-v4 #lector .barra span,html.az-v4 #lector .barra button,html.az-v4 #lector .barra a{color:#F2EFE6!important}
+html.az-v4 #lector .barra button{border:1px solid rgba(242,239,230,.35)!important;background:transparent!important;border-radius:999px}
