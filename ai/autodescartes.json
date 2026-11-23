@@ -1,6 +1,39 @@
 [
  {
   "fecha": "2026-11-23",
+  "id": "ia-aurzane-bib-encontrar-nuestros-hijos-testimonio-madre",
+  "tipo": "libro",
+  "titulo": "Encontrar a nuestros hijos : testimonio de una madre",
+  "url": "https://archive.org/details/aurzane-bib-encontrar-nuestros-hijos-testimonio-madre",
+  "motivo": "La IA le dio 3/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-psicologia-deporte-adaptado/psicologia-deporte-adaptado.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-23",
+  "id": "ia-aurzane-bib-envejecer-derechos-participacion-social-adultos-mayores",
+  "tipo": "libro",
+  "titulo": "Envejecer con derechos: la participación social de los adultos mayores",
+  "url": "https://archive.org/details/aurzane-bib-envejecer-derechos-participacion-social-adultos-mayores",
+  "motivo": "La IA le dio 4/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-psicologia-deporte-adaptado/psicologia-deporte-adaptado.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-23",
+  "id": "ia-aurzane-bib-historias-que-importan-propuesta-intervencion-acerca",
+  "tipo": "libro",
+  "titulo": "Historias que importan: una propuesta de intervención acerca de los conflictos psicológicos en la búsqueda de asilo",
+  "url": "https://archive.org/details/aurzane-bib-historias-que-importan-propuesta-intervencion-acerca",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 36 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-historias-que-importan-propuesta-intervencion-acerca/historias-que-im"
+  ]
+ },
+ {
+  "fecha": "2026-11-23",
   "id": "ia-aurzane-bib-abordaje-clinico-adicciones-sin-sustancia",
   "tipo": "libro",
   "titulo": "Abordaje clínico de las adicciones sin sustancia",
@@ -3139,29 +3172,5 @@
   "titulo": "Hay hombres muy embusteros, muy picarones; pero no es creible que lo sea el que ha dado pruebas tan repetidas de perseverancia y amor.",
   "url": "https://aurzane.com/biblioteca/libro/el-si-de-las-ninas.html",
   "motivo": "Gemini le dio 4/10: no tiene fuerza suficiente para redes"
- },
- {
-  "fecha": "2026-11-08",
-  "id": "cita-3abfc103d1",
-  "tipo": "cita",
-  "titulo": "Su madre de usted no es capaz de querer una injusticia, y sabe muy bien que á nadie se le hace dichoso por fuerza.",
-  "url": "https://aurzane.com/biblioteca/libro/el-si-de-las-ninas.html",
-  "motivo": "Gemini le dio 2/10: no tiene fuerza suficiente para redes"
- },
- {
-  "fecha": "2026-11-08",
-  "id": "cita-412ab5b992",
-  "tipo": "cita",
-  "titulo": "Era una estatua antigua como un alma que se asomaba a los ojos, ojos angelicales, todos ternura, todos cielo azul, todos enigma.",
-  "url": "https://aurzane.com/biblioteca/libro/azul-dario.html",
-  "motivo": "Gemini le dio 5/10: no tiene fuerza suficiente para redes"
- },
- {
-  "fecha": "2026-11-08",
-  "id": "cita-8a9d3bed4c",
-  "tipo": "cita",
-  "titulo": "¿Acaso no te amo con toda mi alma; acaso no sabes leer en mis ojos lo que hay dentro de mi corazón?",
-  "url": "https://aurzane.com/biblioteca/libro/azul-dario.html",
-  "motivo": "Gemini le dio 7/10: no tiene fuerza suficiente para redes"
  }
 ]

@@ -1,63 +1,109 @@
 [
  {
   "fecha": "2026-11-23",
+  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-psicologia-deporte-adaptado/",
+  "titulo": "Libro abierto: Psicología aplicada al deporte adaptado"
+ },
+ {
+  "fecha": "2026-11-23",
+  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-proceso-emocional-tras-diagnostico-vih/",
+  "titulo": "Libro abierto: El proceso emocional tras el diagnóstico por VIH"
+ },
+ {
+  "fecha": "2026-11-23",
   "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-conducta-e-inmunidad/",
-  "titulo": "Libro abierto: Conducta e inmunidad"
+  "titulo": "Libro abierto: Conducta e inmunidad",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-conducta-e-inmunidad.jpg",
+  "desc": "Este libro está concebido como libro de texto para una asignatura llamada Conducta e inmunidad, pero también serviría como texto para una introducción a la Psicoinmunología. Este libro describe la rel",
+  "titulo_completo": "Conducta e inmunidad"
  },
  {
   "fecha": "2026-11-23",
   "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-diversidad-respuesta-psicopedagogica-grados-educacion-infant/",
-  "titulo": "Libro abierto: Diversidad y respuesta psicopedagógica: grados de Educación Infantil y Primaria"
+  "titulo": "Libro abierto: Diversidad y respuesta psicopedagógica: grados de Educación Infantil y Primaria",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-diversidad-respuesta-psicopedagogica-grados-educacion-infant.jpg",
+  "desc": "Los contenidos desarrollados en este documento abordan con amplitud y profundidad las principales realidades que afectan al alumnado con necesidades específicas de apoyo educativo. Se destacan por est",
+  "titulo_completo": "Diversidad y respuesta psicopedagógica: grados de Educación Infantil y Primaria"
  },
  {
   "fecha": "2026-11-23",
   "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-deficits-atencion-trastornos-conducta-febrero-2021/",
-  "titulo": "Libro abierto: Déficits de atención y trastornos de conducta, febrero 2021"
+  "titulo": "Libro abierto: Déficits de atención y trastornos de conducta, febrero 2021",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-deficits-atencion-trastornos-conducta-febrero-2021.jpg",
+  "desc": "Recurs d’aprenentatge de la Universitat Oberta de Catalunya. | Recurso de aprendizaje de la Universitat Oberta de Catalunya. | Learning resource of the Universitat Oberta de Catalunya. Copia de la Bib",
+  "titulo_completo": "Déficits de atención y trastornos de conducta, febrero 2021"
  },
  {
   "fecha": "2026-11-23",
   "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-inteligencia-emocional-febrero-2019/",
-  "titulo": "Libro abierto: Inteligencia emocional, febrero 2019"
+  "titulo": "Libro abierto: Inteligencia emocional, febrero 2019",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-inteligencia-emocional-febrero-2019.jpg",
+  "desc": "Recurs d'aprenentatge de la Universitat Oberta de Catalunya. Material publicat amb llicència Creative Commons passats 6 semestres des de la data de publicació. | Recurso de aprendizaje de la Universit",
+  "titulo_completo": "Inteligencia emocional, febrero 2019"
  },
  {
   "fecha": "2026-11-23",
   "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-psicologia-atencion-memoria-septiembre-2019/",
-  "titulo": "Libro abierto: Psicología de la atención y de la memoria, septiembre 2019"
+  "titulo": "Libro abierto: Psicología de la atención y de la memoria, septiembre 2019",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-psicologia-atencion-memoria-septiembre-2019.jpg",
+  "desc": "Recurs d’aprenentatge de la Universitat Oberta de Catalunya. | Recurso de aprendizaje de la Universitat Oberta de Catalunya. | Learning resource of the Universitat Oberta de Catalunya. Copia de la Bib",
+  "titulo_completo": "Psicología de la atención y de la memoria, septiembre 2019"
  },
  {
   "fecha": "2026-11-23",
   "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-accion-socioeducativa-salud-mental-febrero-2023/",
-  "titulo": "Libro abierto: Acción socioeducativa y salud mental, febrero 2023"
+  "titulo": "Libro abierto: Acción socioeducativa y salud mental, febrero 2023",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-accion-socioeducativa-salud-mental-febrero-2023.jpg",
+  "desc": "Recurs d'aprenentatge de la Universitat Oberta de Catalunya. | Recurso de aprendizaje de la Universitat Oberta de Catalunya. | Learning material of the Universitat Oberta de Catalunya. Copia de la Bib",
+  "titulo_completo": "Acción socioeducativa y salud mental, febrero 2023"
  },
  {
   "fecha": "2026-11-23",
   "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-trastornos-aprendizaje-lectura-febrero-2020/",
-  "titulo": "Libro abierto: Trastornos de aprendizaje de la lectura, febrero 2020"
+  "titulo": "Libro abierto: Trastornos de aprendizaje de la lectura, febrero 2020",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-trastornos-aprendizaje-lectura-febrero-2020.jpg",
+  "desc": "Recurs d’aprenentatge de la Universitat Oberta de Catalunya. | Recurso de aprendizaje de la Universitat Oberta de Catalunya. | Learning resource of the Universitat Oberta de Catalunya. Copia de la Bib",
+  "titulo_completo": "Trastornos de aprendizaje de la lectura, febrero 2020"
  },
  {
   "fecha": "2026-11-23",
   "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-cognicion-social-lenguaje-intersubjetividad-evolucion-especi/",
-  "titulo": "Libro abierto: Cognición social y lenguaje : la intersubjetividad en la evolución de la especie y en el desarrollo del niño"
+  "titulo": "Libro abierto: Cognición social y lenguaje : la intersubjetividad en la evolución de la especie y en el desarrollo del niño",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-cognicion-social-lenguaje-intersubjetividad-evolucion-especi.jpg",
+  "desc": "Este libro, editado por Pablo Quintanilla, Carla Mantilla y Paola Cépeda, es el resultado de un ingente número de horas de estudio y discusión realizado por los integrantes del Grupo Interdisciplinari",
+  "titulo_completo": "Cognición social y lenguaje : la intersubjetividad en la evolución de la especie y en el d"
  },
  {
   "fecha": "2026-11-23",
   "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-vision-binocular-psicoanalisis-filosofia/",
-  "titulo": "Libro abierto: Una visión binocular : psicoanálisis y filosofía"
+  "titulo": "Libro abierto: Una visión binocular : psicoanálisis y filosofía",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-vision-binocular-psicoanalisis-filosofia.jpg",
+  "desc": "En 1962, Wilfred Bion introdujo el concepto de visión binocular en el psicoanálisis con el fin de describir un estado mental de percepción ampliada: la capacidad para transitar de lo consciente a lo i",
+  "titulo_completo": "Una visión binocular : psicoanálisis y filosofía"
  },
  {
   "fecha": "2026-11-23",
   "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-psicologia-salud-calidad-vida-septiembre-2014/",
-  "titulo": "Libro abierto: Psicología de la salud y de la calidad de vida, septiembre 2014"
+  "titulo": "Libro abierto: Psicología de la salud y de la calidad de vida, septiembre 2014",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-psicologia-salud-calidad-vida-septiembre-2014.jpg",
+  "desc": "Recurs d'aprenentatge de la Universitat Oberta de Catalunya. | Recurso de aprendizaje de la \"Universitat Oberta de Catalunya\". | Learning material of the \"Universitat Oberta de Catalunya\". Copia de la",
+  "titulo_completo": "Psicología de la salud y de la calidad de vida, septiembre 2014"
  },
  {
   "fecha": "2026-11-23",
   "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-psicologo-crisis-de-la-vida/",
-  "titulo": "Libro abierto: El psicólogo ante las crisis de la vida"
+  "titulo": "Libro abierto: El psicólogo ante las crisis de la vida",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-psicologo-crisis-de-la-vida.jpg",
+  "desc": "Separaciones, pérdidas, enfermedad, cambios de etapa: cómo afrontamos las crisis vitales y cómo puede acompañarlas un profesional. Copia de la Biblioteca AURZANE (aurzane.com/biblioteca).",
+  "titulo_completo": "El psicólogo ante las crisis de la vida"
  },
  {
   "fecha": "2026-11-23",
   "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-error-o-fraude-enganos-equivocaciones-investigacion/",
-  "titulo": "Libro abierto: ¿Error o fraude? : engaños y equivocaciones en la investigación psicobiológica infantil"
+  "titulo": "Libro abierto: ¿Error o fraude? : engaños y equivocaciones en la investigación psicobiológica infantil",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-error-o-fraude-enganos-equivocaciones-investigacion.jpg",
+  "desc": "Este texto constituye una valiosa herramienta para la formación de los psicólogos, pues promueve el juicio crítico y la capacidad reflexiva, fundamentales para tomar las mejores decisiones durante su",
+  "titulo_completo": "¿Error o fraude? : engaños y equivocaciones en la investigación psicobiológica infantil"
  },
  {
   "fecha": "2026-11-23",
@@ -588,15 +634,5 @@
   "fecha": "2026-11-09",
   "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13729381/",
   "titulo": "Estudio reciente: The application of transcranial magnetic stimulation in treatment-resistant depression: insights from omics"
- },
- {
-  "fecha": "2026-11-09",
-  "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13740991/",
-  "titulo": "Estudio reciente: From single pathways to holistic networks: unraveling the multimechanistic actions of acupuncture in depressio"
- },
- {
-  "fecha": "2026-11-09",
-  "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13736734/",
-  "titulo": "Estudio reciente: Systematic review and meta-analysis on the efficacy and safety of combining repetitive transcranial magnetic s"
  }
 ]
