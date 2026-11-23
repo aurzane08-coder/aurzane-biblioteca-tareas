@@ -45,12 +45,16 @@ def ident(ruta):
 def url_ia(i, ruta): return f'https://archive.org/download/{i}/{os.path.basename(ruta)}'
 
 def comprobar(i, ruta, tam):
-    """archive.org sirve el archivo entero y con CORS (el lector de PDF de la web lo necesita)."""
+    """archive.org sirve el archivo entero y con CORS (el lector de PDF de la web lo necesita).
+    Se pide solo el primer byte con GET: archive.org no siempre manda las cabeceras CORS a una petición HEAD."""
     try:
-        r = urllib.request.Request(url_ia(i, ruta), method='HEAD', headers={'Origin': 'https://aurzane.com', 'User-Agent': 'AURZANE'})
+        r = urllib.request.Request(url_ia(i, ruta), headers={'Origin': 'https://aurzane.com', 'User-Agent': 'AURZANE', 'Range': 'bytes=0-0'})
         with urllib.request.urlopen(r, timeout=60) as x:
-            ok_tam = str(x.headers.get('Content-Length')) == str(tam)
+            total = (x.headers.get('Content-Range') or '').rpartition('/')[2] or x.headers.get('Content-Length')
+            ok_tam = str(total) == str(tam)
             cors = x.headers.get('Access-Control-Allow-Origin') in ('*', 'https://aurzane.com')
+            if not cors and not getattr(comprobar, 'visto', 0):
+                comprobar.visto = 1; print('  cabeceras de archive.org (sin CORS):', dict(x.headers))
             return ok_tam, cors
     except Exception as e:
         print('  aún no disponible:', ruta, e); return False, False
