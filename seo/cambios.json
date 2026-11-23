@@ -1713,5 +1713,192 @@
    "aurora university programs"
   ],
   "via": "univ"
+ },
+ {
+  "fecha": "2026-11-23",
+  "url": "https://nexus.aurzane.com/universidades/estados-unidos/ohio-state-university-main-campus/",
+  "antes": {
+   "titulo": "Ohio State University-Main Campus: admisión 61 %, costes",
+   "desc": "Ohio State University-Main Campus (Columbus, Ohio): tasa de admisión del 61 %, precio neto medio de 17.269 $ al año, 133 carreras. Datos oficiales y cómo estudiar allí siendo de fuera.",
+   "clics": 0,
+   "impresiones": 91,
+   "ctr": 0.0,
+   "posicion": 6.1
+  },
+  "despues": {
+   "titulo": "Ohio State University: admisión, costes y carreras",
+   "desc": "Consulta la tasa de admisión del 61 por ciento, costes, precio neto y carreras de Ohio State University en Columbus. Datos oficiales y acceso."
+  },
+  "motivo": "Se ajusta al límite de caracteres, integra las intenciones de búsqueda de los usuarios y elimina la ambigüedad con la marca para priorizar la información directa.",
+  "consultas": [
+   "ouz",
+   "ohio stater",
+   "ohio state üniversitesi",
+   "ohio su"
+  ],
+  "via": "univ"
+ },
+ {
+  "fecha": "2026-11-23",
+  "url": "https://nexus.aurzane.com/universidades/estados-unidos/holy-family-university/",
+  "antes": {
+   "titulo": "Holy Family University: admisión 71 %, costes y becas",
+   "desc": "Holy Family University (Philadelphia, Pensilvania): tasa de admisión del 71 %, precio neto medio de 12.882 $ al año, 38 carreras. Datos oficiales y cómo estudiar allí siendo de fuera.",
+   "clics": 0,
+   "impresiones": 86,
+   "ctr": 0.0,
+   "posicion": 6.0
+  },
+  "despues": {
+   "titulo": "Holy Family University: admisión, costes y carreras",
+   "desc": "Consulta la tasa de admisión, el precio medio y las carreras de Holy Family University en Estados Unidos. Toda la información oficial."
+  },
+  "motivo": "Se ajusta al limite de caracteres, incluye las palabras clave principales y elimina el porcentaje exacto para mejorar el CTR.",
+  "consultas": [
+   "hfu",
+   "holly university",
+   "holy family university",
+   "holy family university degrees",
+   "holy family university majors"
+  ],
+  "via": "univ"
+ },
+ {
+  "fecha": "2026-11-23",
+  "url": "https://nexus.aurzane.com/universidades/estados-unidos/wabash-college/",
+  "antes": {
+   "titulo": "Wabash College: admisión 63 %, costes y becas",
+   "desc": "Wabash College (Crawfordsville, Indiana): tasa de admisión del 63 %, precio neto medio de 23.532 $ al año, 25 carreras. Datos oficiales y cómo estudiar allí siendo de fuera.",
+   "clics": 0,
+   "impresiones": 120,
+   "ctr": 0.0,
+   "posicion": 8.5
+  },
+  "despues": {
+   "titulo": "Wabash College: admisión, costes y becas | AURZANE",
+   "desc": "Descubre todo sobre Wabash College en Indiana: tasa de admisión del 63 por ciento, costes, becas y carreras oficiales para estudiar allí."
+  },
+  "motivo": "Se ajusta al límite de caracteres, incluye la marca y responde directamente a la intención informativa de la búsqueda de marca pura.",
+  "consultas": [
+   "wabash college",
+   "wabash edu"
+  ],
+  "via": "univ"
+ },
+ {
+  "fecha": "2026-11-23",
+  "url": "https://nexus.aurzane.com/universidades/estados-unidos/depaul-university/",
+  "antes": {
+   "titulo": "DePaul University: admisión 76 %, costes y becas",
+   "desc": "DePaul University (Chicago, Illinois): tasa de admisión del 76 %, precio neto medio de 27.308 $ al año, 73 carreras. Datos oficiales y cómo estudiar allí siendo de fuera.",
+   "clics": 0,
+   "impresiones": 130,
+   "ctr": 0.0,
+   "posicion": 9.2
+  },
+  "despues": {
+   "titulo": "DePaul University: admisión, costes y carreras | AURZANE",
+   "desc": "Guía de DePaul University en Chicago: tasa de admisión del 76 por ciento, precios, becas y carreras oficiales para estudiantes internacionales."
+  },
+  "motivo": "Se optimiza el titulo incluyendo terminos clave como carreras y la marca dentro del limite de caracteres, y se redacta una descripcion atractiva que incluye datos reales de la pagina para mejorar el C",
+  "consultas": [
+   "depaul university",
+   "dpu university usa",
+   "depaul chicago",
+   "depaul college",
+   "depaul university chicago"
+  ],
+  "via": "univ"
+ },
+ {
+  "fecha": "2026-11-23",
+  "url": "https://nexus.aurzane.com/universidades/estados-unidos/midway-university/",
+  "antes": {
+   "titulo": "Midway University: admisión 95 %, costes y becas",
+   "desc": "Midway University (Midway, Kentucky): tasa de admisión del 95 %, precio neto medio de 29.981 $ al año, 24 carreras. Datos oficiales y cómo estudiar allí siendo de fuera.",
+   "clics": 0,
+   "impresiones": 103,
+   "ctr": 0.0,
+   "posicion": 8.1
+  },
+  "despues": {
+   "titulo": "Midway University: admisión, costes y carreras",
+   "desc": "Conoce Midway University en Kentucky: tasa de admisión del 95 por ciento, costes, becas y catálogo de 24 carreras para estudiar allí."
+  },
+  "motivo": "El nuevo título es conciso, incluye la marca y se ajusta al límite, mientras que la descripción integra las búsquedas reales sin prometer contenido inexistente.",
+  "consultas": [
+   "midway university",
+   "midway u",
+   "midway university course catalog"
+  ],
+  "via": "univ"
+ },
+ {
+  "fecha": "2026-11-23",
+  "url": "https://nexus.aurzane.com/universidades/estados-unidos/niagara-university/",
+  "antes": {
+   "titulo": "Niagara University: admisión 87 %, costes y becas",
+   "desc": "Niagara University (Niagara University, Nueva York): tasa de admisión del 87 %, precio neto medio de 17.246 $ al año, 41 carreras. Datos oficiales y cómo estudiar allí siendo de fuera.",
+   "clics": 0,
+   "impresiones": 62,
+   "ctr": 0.0,
+   "posicion": 5.9
+  },
+  "despues": {
+   "titulo": "Niagara University: admisión, costes y carreras",
+   "desc": "Conoce los datos clave de Niagara University en Nueva York: tasa de admisión del 87 por ciento, costes, becas y titulaciones oficiales."
+  },
+  "motivo": "Se ajusta a la intencion de busqueda transaccional/informativa de la marca, optimiza el espacio y cumple todas las restricciones de estilo y longitud.",
+  "consultas": [
+   "niagara university"
+  ],
+  "via": "univ"
+ },
+ {
+  "fecha": "2026-11-23",
+  "url": "https://nexus.aurzane.com/universidades/estados-unidos/carolina-university/",
+  "antes": {
+   "titulo": "Carolina University: admisión 40 %, costes y becas",
+   "desc": "Carolina University (Winston-Salem, Carolina del Norte): tasa de admisión del 40 %, precio neto medio de 12.351 $ al año, 23 carreras. Datos oficiales y cómo estudiar allí siendo de fuera.",
+   "clics": 0,
+   "impresiones": 189,
+   "ctr": 0.0,
+   "posicion": 15.5
+  },
+  "despues": {
+   "titulo": "Carolina University: admisión, costes y becas | AURZANE",
+   "desc": "Descubre Carolina University en Winston-Salem: tasa de admisión del 40 por ciento, precios, carreras y cómo estudiar desde España."
+  },
+  "motivo": "Se ajusta estrictamente al límite de caracteres, integra la marca y responde con precisión a la intención de búsqueda principal sobre admisión y costes.",
+  "consultas": [
+   "carolina university",
+   "universidad carolina",
+   "universidad carolina del norte",
+   "estudios superiores carolina del norte",
+   "universidades en carolina de norte"
+  ],
+  "via": "univ"
+ },
+ {
+  "fecha": "2026-11-23",
+  "url": "https://nexus.aurzane.com/universidades/estados-unidos/howard-college/",
+  "antes": {
+   "titulo": "Howard College: n.º 17.558 del mundo y 32 carreras",
+   "desc": "Howard College (Big Spring, Texas, Estados Unidos): 32 carreras, tipo pública, ciudad y web oficial.",
+   "clics": 0,
+   "impresiones": 159,
+   "ctr": 0.0,
+   "posicion": 14.3
+  },
+  "despues": {
+   "titulo": "Howard College: carreras y información | AURZANE",
+   "desc": "Conoce Howard College en Texas: descubre sus 32 carreras disponibles, el tipo de universidad pública, ubicación y su web oficial."
+  },
+  "motivo": "Se ajusta estrictamente a los límites de caracteres, incluye la marca, usa tildes correctas y responde a la intención de búsqueda exacta sin inventar contenido.",
+  "consultas": [
+   "howard college",
+   "howard payne university majors"
+  ],
+  "via": "univ"
  }
 ]

@@ -1151,5 +1151,49 @@
   "pais_nombre": "Guatemala",
   "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al número de emergencias del país. ",
   "fecha": "2026-11-22"
+ },
+ {
+  "consulta": "universidades en uruguay",
+  "titulo": "Guía completa de universidades en Uruguay: públicas y privadas",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "oferta": "universidades",
+  "pais": "URY",
+  "pais_nombre": "Uruguay",
+  "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al número de emergencias del país. ",
+  "fecha": "2026-11-23"
+ },
+ {
+  "consulta": "cuantas universidades hay en uruguay",
+  "titulo": "Sistema universitario en Uruguay: carreras y opciones de estudio",
+  "mundo": "learn",
+  "test": "autoeficacia",
+  "oferta": "test",
+  "pais": "URY",
+  "pais_nombre": "Uruguay",
+  "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al número de emergencias del país. ",
+  "fecha": "2026-11-23"
+ },
+ {
+  "consulta": "universidad",
+  "titulo": "Cómo elegir carrera universitaria en Paraguay: Guía definitiva",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "oferta": "universidades",
+  "pais": "PRY",
+  "pais_nombre": "Paraguay",
+  "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al número de emergencias del país. ",
+  "fecha": "2026-11-23"
+ },
+ {
+  "consulta": "ansiedad",
+  "titulo": "Manejo del estrés y la ansiedad ante exámenes en Paraguay",
+  "mundo": "mind",
+  "test": "ansiedad",
+  "oferta": "libros",
+  "pais": "PRY",
+  "pais_nombre": "Paraguay",
+  "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al número de emergencias del país. ",
+  "fecha": "2026-11-23"
  }
 ]
