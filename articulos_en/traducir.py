@@ -66,9 +66,12 @@ def ia(prompt, maxt=6000, temp=0.2):
             st, b = http(f'https://generativelanguage.googleapis.com/v1beta/models/{m}:generateContent', cab, cuerpo, 120)
             if st == 200:
                 try:
-                    txt = ''.join(x.get('text', '') for x in json.loads(b)['candidates'][0]['content'].get('parts', [])).strip()
+                    c = json.loads(b)['candidates'][0]
+                    txt = ''.join(x.get('text', '') for x in c['content'].get('parts', []) if not x.get('thought')).strip()
                     if txt: return txt
-                except Exception: pass
+                    print(f'  {m}: respuesta vacía ({c.get("finishReason")})')
+                except Exception as e: print(f'  {m}: respuesta no legible', str(e)[:80])
+            else: print(f'  {m}: error {st}', b[:160].decode('utf-8', 'ignore').replace(chr(10), ' '))
             FALLOS['n'] += 1
             if st in (429, 503): time.sleep(4)
     tk = os.environ.get('GITHUB_TOKEN', '').strip()
@@ -78,6 +81,7 @@ def ia(prompt, maxt=6000, temp=0.2):
         if st == 200:
             try: return json.loads(b)['choices'][0]['message']['content'].strip()
             except Exception: pass
+        print(f'  {m}: error {st}', b[:160].decode('utf-8', 'ignore').replace(chr(10), ' '))
     return ''
 
 
@@ -118,11 +122,12 @@ def traducir_main(main):
              'stay as they are, followed by "(Spain)" if it is not already said. Keep every HTML tag and attribute exactly as it is, in the same order; '
              'do not translate URLs or attribute values. Reply with the translated HTML only, no comments and no code fences.\n\n' + main)
     for _ in range(2):
-        r = sin_valla(ia(pedir, 12000))
+        r = sin_valla(ia(pedir, 24000))
         if not r: return ''
         r = r.replace(' — ', ', ').replace('—', ', ').replace(' – ', ', ')
         if ETQ.findall(r) == ETQ.findall(main) and HREF.findall(r) == HREF.findall(main): return r
-        print('  la traducción cambió la estructura del HTML; reintento')
+        a, b = ETQ.findall(main), ETQ.findall(r)
+        print(f'  la traducción cambió la estructura del HTML ({len(a)} etiquetas en el original, {len(b)} en la traducción); reintento')
     return ''
 
 
@@ -130,7 +135,7 @@ def nota(es, en):
     r = ia('You review translations for AURZANE. Score from 1 to 10 this English version against the Spanish original: same facts, numbers and caveats, '
            'nothing added or missing, natural English for a general reader, no leftover Spanish (except names of Spanish places, institutions or phone numbers). '
            'Reply ONLY with JSON: {"score": <1-10>, "reason": "<one sentence>"}\n\nSPANISH:\n' + re.sub(r'<[^>]+>', ' ', es)[:9000] +
-           '\n\nENGLISH:\n' + re.sub(r'<[^>]+>', ' ', en)[:9000], 400, 0)
+           '\n\nENGLISH:\n' + re.sub(r'<[^>]+>', ' ', en)[:9000], 4000, 0)
     m = re.search(r'\{[\s\S]*\}', r)
     try: j = json.loads(m.group(0)) if m else {}
     except Exception: j = {}
