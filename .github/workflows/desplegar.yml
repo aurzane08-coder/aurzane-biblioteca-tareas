@@ -28,13 +28,15 @@ jobs:
       - name: Subir
         run: |
           [ -d publicar ] || { echo "Nada que publicar"; exit 0; }
-          # rediseño v4: lo que se publica ya sale con la paleta, las letras y el tema nuevos (si el v4 está activo)
-          if [ -f diseno/v4.activo ]; then node diseno/v4_aplicar.js publicar; fi
+          # copia exacta de lo que hay en el repositorio (para archivar) y copia de trabajo (la que se sube).
+          # El rediseño v4 se aplica solo a la copia de trabajo: el repositorio queda intacto y el archivo no choca (23/11/2026).
+          rm -rf /tmp/subido /tmp/web && cp -r publicar /tmp/subido && cp -r publicar /tmp/web
+          if [ -f diseno/v4.activo ]; then node diseno/v4_aplicar.js /tmp/web; fi
           mkdir -p ~/.ssh && printf '%s\n' "$SG_KEY" | tr -d '\r' > ~/.ssh/id && chmod 600 ~/.ssh/id
           if [ -n "$SG_PASS" ]; then ssh-keygen -p -P "$SG_PASS" -N "" -f ~/.ssh/id >/dev/null; fi
           SSH="ssh -i $HOME/.ssh/id -p ${SG_PORT:-18765} -o StrictHostKeyChecking=accept-new"
           FECHA=$(date +%Y%m%d-%H%M)
-          for d in publicar/*/; do
+          for d in /tmp/web/*/; do
             dom=$(basename "$d")
             case "$dom" in aurzane.com|*.aurzane.com) ;; *) echo "Dominio no permitido: $dom"; continue;; esac
             echo "== $dom"
@@ -50,15 +52,17 @@ jobs:
           # Solo se archiva lo que de verdad se subió: si mientras tanto alguien dejó una versión nueva de un archivo
           # en publicar/, esa se queda para el siguiente despliegue (antes se archivaba sin subirse).
           git config user.name "aurzane-bot"; git config user.email "bot@aurzane.com"
-          rm -rf /tmp/subido && cp -r publicar /tmp/subido
-          for i in 1 2 3 4 5; do
-            git fetch -q origin main && git checkout -q -B archivo origin/main
+          [ -d /tmp/subido ] || exit 0
+          for i in 1 2 3 4 5 6; do
+            git fetch -q origin main && git checkout -q -f -B archivo origin/main && git clean -qfd publicar publicado 2>/dev/null
             mkdir -p "publicado/$FECHA" && cp -r /tmp/subido/. "publicado/$FECHA/"
             (cd /tmp/subido && find . -type f) | while read -r f; do
               if [ -f "publicar/$f" ] && cmp -s "/tmp/subido/$f" "publicar/$f"; then git rm -q -f "publicar/$f"; fi   # -f: el despliegue retoca algunos archivos antes de subirlos; lo subido es justo esta copia
             done
             git add "publicado/$FECHA"
             git commit -qm "despliegue $FECHA publicado" || exit 0
-            git push -q origin archivo:main && break
-            sleep 7
+            git push -q origin archivo:main && exit 0
+            sleep $((i * 5))
           done
+          # la web ya está subida: si el repositorio sigue ocupado se avisa sin marcar fallo; el siguiente despliegue lo archiva
+          echo "::warning::No se pudo archivar en el repositorio (muchos cambios a la vez). La web sí está actualizada."
