@@ -339,3 +339,27 @@
   }, true);
 })(window, document);
 
+
+/* Panel de administración (23/11/2026): no tiene la cabecera común, así que no había dónde cambiar entre claro y oscuro.
+   Se añade un botón «Tema» en su barra superior (.az-top), junto a «Ver la web». Usa el mismo tema que el resto de la web. */
+(function (d, w) {
+  function poner() {
+    var barra = d.querySelector('.az-top');
+    if (!barra || d.getElementById('azTopTema') || !w.AurzaneTema) return;
+    var b = d.createElement('button'); b.type = 'button'; b.id = 'azTopTema';
+    function rotulo() { var osc = w.AurzaneTema.actual() === 'oscuro'; b.textContent = osc ? '☀ Modo claro' : '☾ Modo oscuro'; b.title = osc ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'; }
+    b.addEventListener('click', function () { w.AurzaneTema.alternar(); rotulo(); });
+    rotulo();
+    var ver = barra.querySelector('a[href="https://aurzane.com/"]');
+    if (ver) barra.insertBefore(b, ver); else barra.appendChild(b);
+  }
+  function ir() {
+    poner();
+    if (w.MutationObserver && !d.getElementById('azTopTema')) {
+      var o = new MutationObserver(function () { poner(); if (d.getElementById('azTopTema')) o.disconnect(); });
+      o.observe(d.body || d.documentElement, { childList: true, subtree: true });
+      setTimeout(function () { o.disconnect(); }, 20000);
+    }
+  }
+  if (d.readyState === 'loading') d.addEventListener('DOMContentLoaded', ir); else ir();
+})(document, window);
