@@ -78,6 +78,8 @@ def visitas():
         'top_30_dias': paginas.most_common(25),
         'top_7_dias': paginas7.most_common(15),
     }
+    # lista larga para elegir qué traducir o mejorar (solo direcciones y recuentos, sin datos de visitantes): se ve en el registro de la acción
+    for u, n in paginas.most_common(400): print('TOP30\t%d\t%s' % (n, u))
 
 # ---------------------------------------------------------------- boletín
 def boletin():
