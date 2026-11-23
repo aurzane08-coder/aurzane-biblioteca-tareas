@@ -135,8 +135,8 @@ def pagina(es_slug):
     s = re.sub(r'<script type="application/ld\+json">(.*?)</script>', ld, s, flags=re.S)
     # enlaces internos
     for es_s, en_s in SLUG.items():
-        s = s.replace(f'href="/ejercicios/{es_s}/"', f'href="/en/exercises/{en_s}/"').replace(f'href="https://mind.aurzane.com/ejercicios/{es_s}/"', f'href="{BASE}{en_s}/"')
-    s = s.replace('href="/ejercicios/"', 'href="/en/exercises/"').replace('href="https://mind.aurzane.com/ejercicios/"', f'href="{BASE}"')
+        s = s.replace(f'href="/ejercicios/{es_s}/"', f'href="/en/exercises/{en_s}/"').replace(f'<a href="https://mind.aurzane.com/ejercicios/{es_s}/"', f'<a href="{BASE}{en_s}/"').replace(f'class="scard" style', 'class="scard" style')
+    s = s.replace('href="/ejercicios/"', 'href="/en/exercises/"').replace('<a href="https://mind.aurzane.com/ejercicios/"', f'<a href="{BASE}"')
     for a, b in TEST_EN.items():
         s = s.replace(f'href="{a}"', f'href="{b}"')
     s = s.replace('<a href="https://mind.aurzane.com/">MIND</a><span>/</span>', '<a href="https://mind.aurzane.com/en/">MIND</a><span>/</span>')
