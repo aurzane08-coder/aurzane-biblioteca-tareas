@@ -1062,4 +1062,20 @@ html.az-v4 body:has(#worldFilters) .panel .interruptor input:checked + .pista{ba
 html.az-v4[data-tema="oscuro"] body:has(#worldFilters) .panel{background:#183D32!important}
 /* Study in Spain: el antetítulo de la portada en champán (el v4 lo dejaba azul y apagado) */
 html.az-v4 .en-hero .eyebrow{color:#D9CDB2!important}
+
+/* =====================================================================================================
+   Panel de administración en claro (23/11/2026): mismos colores que el resto del sitio
+   (marfil de fondo, tarjetas blancas, verde profundo y champán). Antes solo tenía versión oscura.
+   ===================================================================================================== */
+html.az-v4-navy:not([data-tema="oscuro"]){--ok:#3F6B2F;--err:#A63D3D;--warn:#6E5E3A;--ai-info:#3E63B8}
+html.az-v4:not([data-tema="oscuro"]) .azp{--bg:#F6F5F0;--sup:#FFFFFF;--sup2:#EFEDE6;--txt:#252724;--sua:#5E605A;--oro:#183D32;--oro2:#6E5E3A;
+  --lin:rgba(37,39,36,.12);--ok:#2D6A4F;--mal:#A63D3D;--s1:#3E63B8;--s2:#B79E6A;color:#252724}
+html.az-v4:not([data-tema="oscuro"]) .azp :is(h1,h2,h3,b,strong,td){color:#252724}
+html.az-v4:not([data-tema="oscuro"]) .azp .aviso{color:#6E5E3A}
+html.az-v4:not([data-tema="oscuro"]) :is(.btn-danger-full,.btn-mini.az-peligro,.btn-ghost.az-peligro){color:#A63D3D!important;border-color:rgba(166,61,61,.4)!important}
+html.az-v4:not([data-tema="oscuro"]) :is(.btn-danger-full,.btn-mini.az-peligro,.btn-ghost.az-peligro):hover{background:rgba(166,61,61,.08)!important;color:#8A2F2F!important}
+html.az-v4:not([data-tema="oscuro"]) .baja{color:#A63D3D!important}
+html.az-v4:not([data-tema="oscuro"]) .sube{color:#2D6A4F!important}
+/* el selector de paletas antiguas ya no cambia nada en v4: se oculta */
+html.az-v4 :is(.azp-btn,.azp-pop){display:none!important}
 /* ==== fin AURZANE v4 ==== */
