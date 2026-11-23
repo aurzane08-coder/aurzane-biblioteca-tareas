@@ -1,6 +1,138 @@
 [
  {
   "fecha": "2026-11-23",
+  "id": "ia-aurzane-bib-rompiendo-barreras-propuesta-atencion-integral-discapacidade",
+  "tipo": "libro",
+  "titulo": "Rompiendo barreras. Propuesta de atención integral a las discapacidades",
+  "url": "https://archive.org/details/aurzane-bib-rompiendo-barreras-propuesta-atencion-integral-discapacidade",
+  "motivo": "La IA le dio 6/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-vision-binocular-psicoanalisis-filosofia/vision-binocular-psicoanalis"
+  ]
+ },
+ {
+  "fecha": "2026-11-23",
+  "id": "ia-aurzane-bib-barometro-opinion-infancia-manual-su-uso",
+  "tipo": "libro",
+  "titulo": "Barómetro de opinión de la infancia. Manual para su uso",
+  "url": "https://archive.org/details/aurzane-bib-barometro-opinion-infancia-manual-su-uso",
+  "motivo": "La IA le dio 3/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-psicologo-crisis-de-la-vida/psicologo-crisis-de-la-vida.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-23",
+  "id": "ia-aurzane-bib-politicas-intersectoriales-abordaje-integral-salud-mental",
+  "tipo": "libro",
+  "titulo": "Políticas intersectoriales para el abordaje integral en salud mental: La complejidad de la acción conjunta",
+  "url": "https://archive.org/details/aurzane-bib-politicas-intersectoriales-abordaje-integral-salud-mental",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 19 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-politicas-intersectoriales-abordaje-integral-salud-mental/politicas-i"
+  ]
+ },
+ {
+  "fecha": "2026-11-23",
+  "id": "ia-aurzane-bib-autogestion-emocional",
+  "tipo": "libro",
+  "titulo": "Autogestión emocional",
+  "url": "https://archive.org/details/aurzane-bib-autogestion-emocional",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 24 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-autogestion-emocional/autogestion-emocional.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-23",
+  "id": "ia-aurzane-bib-decalogo-profesorado-claves-ayudar-tus-estudiantes",
+  "tipo": "libro",
+  "titulo": "Decálogo para el profesorado. Claves para ayudar a tus estudiantes en la gestión de sus niveles de estrés académico",
+  "url": "https://archive.org/details/aurzane-bib-decalogo-profesorado-claves-ayudar-tus-estudiantes",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 6 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-decalogo-profesorado-claves-ayudar-tus-estudiantes/decalogo-profesora"
+  ]
+ },
+ {
+  "fecha": "2026-11-23",
+  "id": "ia-aurzane-bib-duelo-ficcion-seleccion-textos",
+  "tipo": "libro",
+  "titulo": "El Duelo En La Ficción. Seleccion Textos",
+  "url": "https://archive.org/details/aurzane-bib-duelo-ficcion-seleccion-textos",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 7 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-duelo-ficcion-seleccion-textos/duelo-ficcion-seleccion-textos.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-23",
+  "id": "ia-aurzane-bib-mapas-mentales-septiembre-2016",
+  "tipo": "libro",
+  "titulo": "Mapas mentales, septiembre 2016",
+  "url": "https://archive.org/details/aurzane-bib-mapas-mentales-septiembre-2016",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 25 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-mapas-mentales-septiembre-2016/mapas-mentales-septiembre-2016.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-23",
+  "id": "ia-aurzane-bib-proyecto-i-nueva-agenda-sobre-vejez",
+  "tipo": "libro",
+  "titulo": "Proyecto I: una nueva agenda sobre la vejez y el envejecimiento activo. Una mirada multidimensional. Intervenciones desde el campo de la educación",
+  "url": "https://archive.org/details/aurzane-bib-proyecto-i-nueva-agenda-sobre-vejez",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 11 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-proyecto-i-nueva-agenda-sobre-vejez/proyecto-i-nueva-agenda-sobre-vej"
+  ]
+ },
+ {
+  "fecha": "2026-11-23",
+  "id": "ia-aurzane-bib-analisis-sistematico-dificultades-aprendizaje",
+  "tipo": "libro",
+  "titulo": "Análisis Sistemático de las Dificultades de Aprendizaje",
+  "url": "https://archive.org/details/aurzane-bib-analisis-sistematico-dificultades-aprendizaje",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 10 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-analisis-sistematico-dificultades-aprendizaje/analisis-sistematico-di"
+  ]
+ },
+ {
+  "fecha": "2026-11-23",
+  "id": "ia-aurzane-bib-psicologia-arte",
+  "tipo": "libro",
+  "titulo": "Psicología del Arte",
+  "url": "https://archive.org/details/aurzane-bib-psicologia-arte",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 15 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-psicologia-arte/psicologia-arte.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-23",
+  "id": "ia-aurzane-bib-directrices-salud-mental-adolescentes",
+  "tipo": "libro",
+  "titulo": "Directrices sobre las intervenciones de promoción y prevención en materia de salud mental para adolescentes",
+  "url": "https://archive.org/details/aurzane-bib-directrices-salud-mental-adolescentes",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 14 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-directrices-salud-mental-adolescentes/directrices-salud-mental-adoles"
+  ]
+ },
+ {
+  "fecha": "2026-11-23",
+  "id": "ia-aurzane-bib-estrategias-acompanamiento-tutorial-desarrollo-emociones-con",
+  "tipo": "libro",
+  "titulo": "Estrategias de acompañamiento tutorial para el desarrollo de las emociones en el contexto de las prácticas de formación del profesorado",
+  "url": "https://archive.org/details/aurzane-bib-estrategias-acompanamiento-tutorial-desarrollo-emociones-con",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 15 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-estrategias-acompanamiento-tutorial-desarrollo-emociones-con/estrateg"
+  ]
+ },
+ {
+  "fecha": "2026-11-23",
   "id": "ia-aurzane-bib-pedagogias-sensibles-sabores-saberes-cuerpo-educacion",
   "tipo": "libro",
   "titulo": "Pedagogías sensibles: Sabores y saberes del cuerpo y la educación",
@@ -3028,110 +3160,5 @@
   "titulo": "Verdadera reveladora del alma de su país, apareció entonces para la generalidad como una más; para muy pocos, como la única.",
   "url": "https://aurzane.com/biblioteca/libro/en-las-orillas-del-sar.html",
   "motivo": "Gemini le dio 7/10: no tiene fuerza suficiente para redes"
- },
- {
-  "fecha": "2026-11-08",
-  "id": "cita-c7433fb3f3",
-  "tipo": "cita",
-  "titulo": "¡Volví a encontrar solamente al miserable esclavo, apretando contra la tierra un corazón abrasado de amor, celos y desesperación!",
-  "url": "https://aurzane.com/biblioteca/libro/sab.html",
-  "motivo": "Gemini le dio 3/10: no tiene fuerza suficiente para redes"
- },
- {
-  "fecha": "2026-11-08",
-  "id": "cita-0cb3d4a05d",
-  "tipo": "cita",
-  "titulo": "Su discurso fue todo amor, todo esperanza, todo verdad.",
-  "url": "https://aurzane.com/biblioteca/libro/amistad-funesta.html",
-  "motivo": "Gemini le dio 3/10: no tiene fuerza suficiente para redes"
- },
- {
-  "fecha": "2026-11-08",
-  "id": "cita-f733d88a61",
-  "tipo": "cita",
-  "titulo": "El pensamiento, nadie puede negarlo, es una forma de la energía, si bien no presenta identidad con ninguna de las otras.",
-  "url": "https://aurzane.com/biblioteca/libro/las-fuerzas-extranas.html",
-  "motivo": "Gemini le dio 4/10: no tiene fuerza suficiente para redes"
- },
- {
-  "fecha": "2026-11-08",
-  "id": "oa-W7222577669",
-  "tipo": "libro",
-  "titulo": "Early Years Talk: Toolkit for Families",
-  "url": "https://pure.hud.ac.uk/en/publications/05bb99a0-3aad-4f5b-9a3b-f9f977dfcf45",
-  "motivo": "Dice ser un libro pero el PDF solo tiene 22 páginas (es un capítulo, artículo o resumen)",
-  "probados": [
-   "HTTP Error 403: Forbidden https://pure.hud.ac.uk/files/145274400/Family_Toolkit_Online_Version.pdf",
-   "HTTP Error 403: Forbidden https://pure.hud.ac.uk/files/145274398/Family_Toolkit_Activity_Pages_Printable_A3.pdf",
-   "200 application/pdf https://www.hud.ac.uk/media/policydocuments/Data-Protection-Policy.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-08",
-  "id": "oa-W7221825766",
-  "tipo": "libro",
-  "titulo": "Communication and Presence in Higher Education",
-  "url": "https://doi.org/10.56365/mhf0r164",
-  "motivo": "Dice ser un libro pero el PDF solo tiene 19 páginas (es un capítulo, artículo o resumen)",
-  "probados": [
-   "200 application/pdf https://press.scientia.international/press/en/catalog/download/19/10/71?inline=1"
-  ]
- },
- {
-  "fecha": "2026-11-08",
-  "id": "art-687f96d66e",
-  "tipo": "articulo",
-  "titulo": "Depresión e insuficiencia cardiaca: el vínculo inflamatorio",
-  "url": "https://live.aurzane.com/articulo.html?mundo=live&slug=depresion-e-insuficiencia-cardiaca-inflamacion",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": []
- },
- {
-  "fecha": "2026-11-08",
-  "id": "cita-2af1009745",
-  "tipo": "cita",
-  "titulo": "Los más negros pensamientos caían sobre su alma, como se abate sobre un cadáver famélica bandada de grajos y a picotazos le destrozan y le comen.",
-  "url": "https://aurzane.com/biblioteca/libro/juanita-la-larga.html",
-  "motivo": "Gemini le dio 3/10: no tiene fuerza suficiente para redes"
- },
- {
-  "fecha": "2026-11-08",
-  "id": "cita-de95e88911",
-  "tipo": "cita",
-  "titulo": "El haber sido feliz en amores es y ha sido siempre para el hombre el medio más eficaz de seducción.",
-  "url": "https://aurzane.com/biblioteca/libro/dona-luz.html",
-  "motivo": "Gemini le dio 7/10: no tiene fuerza suficiente para redes"
- },
- {
-  "fecha": "2026-11-08",
-  "id": "cita-91bd1caec7",
-  "tipo": "cita",
-  "titulo": "El sosiego del campo, obrando como un calmante sobre su excitado organismo, había logrado darle confianza en sí mismo y aplomo.",
-  "url": "https://aurzane.com/biblioteca/libro/el-idilio-de-un-enfermo.html",
-  "motivo": "Gemini le dio 3/10: no tiene fuerza suficiente para redes"
- },
- {
-  "fecha": "2026-11-08",
-  "id": "cita-d293fa0cd7",
-  "tipo": "cita",
-  "titulo": "Clodio aflojó la mosca, lisonjeado con la esperanza de adquirir por la mitad de su valor un nido tan cuco, donde acabar su vida solterona.",
-  "url": "https://aurzane.com/biblioteca/libro/el-cisne-de-vilamorta.html",
-  "motivo": "Gemini le dio 1/10: no tiene fuerza suficiente para redes"
- },
- {
-  "fecha": "2026-11-08",
-  "id": "cita-4987324217",
-  "tipo": "cita",
-  "titulo": "Con la calma que reina, los pinos se estarán casi quietos y casi mudos.",
-  "url": "https://aurzane.com/biblioteca/libro/el-cisne-de-vilamorta.html",
-  "motivo": "Gemini le dio 4/10: no tiene fuerza suficiente para redes"
- },
- {
-  "fecha": "2026-11-08",
-  "id": "cita-bfe882d898",
-  "tipo": "cita",
-  "titulo": "Después corrieron las lágrimas, vinieron los besos delirantes, pero calmantes y dulces, y el cariño tomó forma resignada.",
-  "url": "https://aurzane.com/biblioteca/libro/el-cisne-de-vilamorta.html",
-  "motivo": "Gemini le dio 3/10: no tiene fuerza suficiente para redes"
  }
 ]

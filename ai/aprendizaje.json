@@ -120,8 +120,8 @@
   12
  ],
  "ed:Internet Archive": [
-  24,
-  141
+  25,
+  145
  ],
  "ed:": [
   52,
@@ -144,7 +144,7 @@
   0
  ],
  "tipo:libro": [
-  81,
+  91,
   9
  ],
  "Gambling Behavior and Treatments": [
@@ -312,7 +312,7 @@
   0
  ],
  "archive:psicologia": [
-  51,
+  61,
   0
  ],
  "ed:The Open University": [
@@ -585,15 +585,15 @@
  ],
  "ed:Universidad de Buenos Aires. Facultad de Filosofía y Letras. Departamento de Artes": [
   0,
-  1
+  2
  ],
  "ed:Universitat Oberta de Catalunya (UOC)": [
-  0,
-  3
+  5,
+  4
  ],
  "ed:Universidad de Buenos Aires. Facultad de Filosofía y Letras. Departamento de Ciencias de la Educación": [
   0,
-  1
+  3
  ],
  "ed:Universitat de Lleida. Universitat de Barcelona. Fundación \"la Caixa\"": [
   0,
@@ -616,12 +616,12 @@
   2
  ],
  "ed:Editorial UOC": [
-  10,
+  11,
   2
  ],
  "ed:Universidad Andina Simón Bolívar, Sede Ecuador; Corporación Editora Nacional": [
   0,
-  1
+  2
  ],
  "ed:Ediciones Universidad de Salamanca": [
   0,
@@ -632,7 +632,7 @@
   0
  ],
  "ed:Pontificia Universidad Católica del Perú. Fondo Editorial": [
-  1,
+  3,
   3
  ],
  "ed:Fondo Editorial Universidad Católica Luis Amigó": [
@@ -708,7 +708,7 @@
   1
  ],
  "ed:Universitat Oberta de Catalunya": [
-  0,
+  1,
   1
  ],
  "ed:Universidad de Salamanca (España). Instituto Universitario de Integración en la Comunidad": [
@@ -742,5 +742,17 @@
  "ed:Asociación de Psicopatología y Psicoanálisis de Sevilla": [
   1,
   0
+ ],
+ "ed:Asire Educación": [
+  0,
+  1
+ ],
+ "ed:OMS": [
+  0,
+  1
+ ],
+ "ed:UNICEF Comité Español": [
+  0,
+  1
  ]
 }
