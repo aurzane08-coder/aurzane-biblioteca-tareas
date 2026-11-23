@@ -654,3 +654,31 @@ html.az-v4 body{overflow-x:clip}
 html.az-v4 #lector .barra{background:#183D32!important;border-bottom:1px solid rgba(199,185,155,.35)}
 html.az-v4 #lector .barra,html.az-v4 #lector .barra span,html.az-v4 #lector .barra button,html.az-v4 #lector .barra a{color:#F2EFE6!important}
 html.az-v4 #lector .barra button{border:1px solid rgba(242,239,230,.35)!important;background:transparent!important;border-radius:999px}
+
+/* Research Hub (revisión 23/11): los filtros ya no se quedan pegados al bajar, y campos, enlaces y botones con contraste en claro y en oscuro */
+html.az-v4 body:has(#worldFilters) .panel{position:static!important;top:auto!important;background:#FBFAF6!important;border:1px solid rgba(24,61,50,.12)!important;border-top:3px solid #C7B99B!important;box-shadow:0 12px 30px -22px rgba(15,42,34,.4)!important}
+@media(min-width:901px){html.az-v4 body:has(#worldFilters) .panel{align-items:center!important;gap:16px 32px!important;padding:18px 26px!important}
+  html.az-v4 body:has(#worldFilters) .panel .grupo{justify-content:center}}
+html.az-v4 body:has(#worldFilters) .panel-cab h2{color:#183D32!important}
+html.az-v4 body:has(#worldFilters) .panel .grupo-tit{color:#5E605A!important}
+html.az-v4 body:has(#worldFilters) .campo{background:#FFFFFF!important;color:#252724!important;border:1.5px solid rgba(24,61,50,.22)!important;border-radius:10px!important;min-height:40px;padding:8px 12px!important;font:500 .92rem var(--v-sans)!important}
+html.az-v4 body:has(#worldFilters) .campo::placeholder{color:#7A7C74!important}
+html.az-v4 body:has(#worldFilters) select.campo option{background:#FFFFFF;color:#252724}
+html.az-v4 body:has(#worldFilters) .link-btn,html.az-v4 body:has(#worldFilters) .toggle-abs,html.az-v4 body:has(#worldFilters) .ver-autores{color:#1F4A3D!important;font-weight:600!important;text-decoration:underline;text-underline-offset:3px}
+html.az-v4 body:has(#worldFilters) .accion.prim{background:#183D32!important;color:#F2EFE6!important;border-color:#183D32!important}
+html.az-v4 body:has(#worldFilters) .accion.prim:hover{background:#1F4A3D!important}
+html.az-v4 body:has(#worldFilters) .interruptor{color:#252724!important}
+html.az-v4 body:has(#worldFilters) .interruptor .pista{background:#C9C3B4!important;border:0!important}
+html.az-v4 body:has(#worldFilters) .interruptor input:checked + .pista{background:#1F4A3D!important}
+html.az-v4 body:has(#worldFilters) .interruptor .pista::after{background:#FFFFFF!important}
+html.az-v4 body:has(#worldFilters) .orden,html.az-v4 body:has(#worldFilters) .orden span{color:#252724!important}
+html.az-v4[data-tema="oscuro"] body:has(#worldFilters) .panel{background:#162B24!important;border-color:#2B4A3F!important;border-top-color:#C7B99B!important}
+html.az-v4[data-tema="oscuro"] body:has(#worldFilters) .panel-cab h2,html.az-v4[data-tema="oscuro"] body:has(#worldFilters) .interruptor,html.az-v4[data-tema="oscuro"] body:has(#worldFilters) .orden,html.az-v4[data-tema="oscuro"] body:has(#worldFilters) .orden span{color:#F2EFE6!important}
+html.az-v4[data-tema="oscuro"] body:has(#worldFilters) .panel .grupo-tit{color:#B9C2BB!important}
+html.az-v4[data-tema="oscuro"] body:has(#worldFilters) .campo{background:#10231D!important;color:#F2EFE6!important;border-color:#2B4A3F!important}
+html.az-v4[data-tema="oscuro"] body:has(#worldFilters) .campo::placeholder{color:#9AA59E!important}
+html.az-v4[data-tema="oscuro"] body:has(#worldFilters) select.campo option{background:#10231D;color:#F2EFE6}
+html.az-v4[data-tema="oscuro"] body:has(#worldFilters) .link-btn,html.az-v4[data-tema="oscuro"] body:has(#worldFilters) .toggle-abs,html.az-v4[data-tema="oscuro"] body:has(#worldFilters) .ver-autores{color:#D9CDB2!important}
+html.az-v4[data-tema="oscuro"] body:has(#worldFilters) .accion.prim{background:#C7B99B!important;color:#10231D!important;border-color:#C7B99B!important}
+html.az-v4[data-tema="oscuro"] body:has(#worldFilters) .interruptor .pista{background:#3A5A4E!important}
+html.az-v4[data-tema="oscuro"] body:has(#worldFilters) .interruptor input:checked + .pista{background:#C7B99B!important}
