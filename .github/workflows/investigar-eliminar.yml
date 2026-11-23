@@ -1,0 +1,32 @@
+name: Investigar quién vacía eliminar
+# Solo lee (23/11/2026): busca en el servidor qué tarea borra las carpetas eliminar/.
+on:
+  workflow_dispatch:
+  push:
+    paths: ['.github/workflows/investigar-eliminar.yml']
+permissions:
+  contents: read
+jobs:
+  leer:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      SG_KEY: ${{ secrets.SG_KEY }}
+      SG_HOST: ${{ secrets.SG_HOST }}
+      SG_USER: ${{ secrets.SG_USER }}
+      SG_PORT: ${{ secrets.SG_PORT }}
+      SG_PASS: ${{ secrets.SG_PASS }}
+    steps:
+      - run: |
+          mkdir -p ~/.ssh && printf '%s\n' "$SG_KEY" | tr -d '\r' > ~/.ssh/id && chmod 600 ~/.ssh/id
+          if [ -n "$SG_PASS" ]; then ssh-keygen -p -P "$SG_PASS" -N "" -f ~/.ssh/id >/dev/null; fi
+          SSH="ssh -i $HOME/.ssh/id -p ${SG_PORT:-18765} -o StrictHostKeyChecking=accept-new $SG_USER@$SG_HOST"
+          $SSH 'bash -s' <<'FIN'
+          echo "== crontab"; crontab -l 2>&1 | head -30
+          echo "== cron de Site Tools"; site-tools-client cron list 2>&1 | head -40
+          echo "== herramientas"; ls -la ~/herramientas | head -40
+          echo "== scripts que mencionan eliminar"; grep -rIl "eliminar" ~/herramientas ~/www/*/public_html/*.php 2>/dev/null | head -20
+          for f in $(grep -rIl "eliminar" ~/herramientas 2>/dev/null | head -10); do echo "--- $f"; grep -n "eliminar" "$f" | head -8; done
+          echo "== eliminar ahora"; for e in ~/www/*/eliminar ~/www/eliminar; do echo "$e: $(find $e -type f | wc -l) archivos"; ls -la --time-style=+%F_%T $e | head -8; done
+          echo "== registros recientes"; ls -la --time-style=+%F_%T ~/www/*/logs 2>/dev/null | tail -10; tail -5 ~/php_errorlog 2>/dev/null
+          FIN
