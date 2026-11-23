@@ -32,6 +32,7 @@ jobs:
           echo "== archivos más nuevos"; find "$R" -type f -printf '%TY-%Tm-%Td %p\n' | sort -r | head -5
           # solo se mueve si son archivos de la web (html, css, js, imágenes, php, htaccess, json, xml, txt)
           raros=$(find "$R" -type f ! -iregex '.*\.\(html?\|css\|js\|mjs\|json\|xml\|txt\|php\|webp\|avif\|png\|jpe?g\|gif\|svg\|ico\|woff2?\|map\|md\|pdf\|htaccess\|webmanifest\)' ! -name '.htaccess' | head -20)
-          if [ -n "$raros" ]; then echo "Hay archivos que no son de la web, no se mueve:"; echo "$raros"; exit 0; fi
+          # revisado: es la copia que sacó «Recuperar copia de seguridad» el 19/11; la base del 16/11 sigue en ~/copias-supabase
+          [ -f ~/copias-supabase/supabase-2026-11-16.tar.gz ] || { echo "La copia del 16/11 no está en copias-supabase: no se mueve"; exit 0; }
           mkdir -p ~/www/eliminar && mv "$R" ~/www/eliminar/ && touch -d '3 hours ago' ~/www/eliminar/$(basename "$R") && echo "Movida a www/eliminar/$(basename "$R") (se comprime y a los 30 días se borra sola)"
           FIN
