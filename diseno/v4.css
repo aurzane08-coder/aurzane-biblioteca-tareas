@@ -701,3 +701,14 @@ html.az-v4 main.article.wrap:has(> #azIdx) > .az-dest{margin-bottom:24px!importa
   html.az-v4 main.article.wrap:has(> #azIdx) > .az-dest{display:grid!important;grid-template-columns:1.4fr 1fr!important;min-height:380px}
 }
 @media(min-width:1500px){html.az-v4 main.article.wrap:has(> #azIdx) > .tema-grid{grid-template-columns:repeat(4,minmax(0,1fr))!important}}
+/* Research Hub: barra de filtros en el verde de la marca (pedido de Adrián 23/11), textos claros y campos blancos */
+html.az-v4 body:has(#worldFilters) .panel{background:#183D32!important;border-color:#183D32!important;border-top-color:#C7B99B!important;color:#F2EFE6!important}
+html.az-v4 body:has(#worldFilters) .panel-cab h2,html.az-v4 body:has(#worldFilters) .panel .interruptor,html.az-v4 body:has(#worldFilters) .panel .interruptor span,html.az-v4 body:has(#worldFilters) .panel .rango{color:#F2EFE6!important}
+html.az-v4 body:has(#worldFilters) .panel .grupo-tit{color:#D9CDB2!important}
+html.az-v4 body:has(#worldFilters) .panel .link-btn{color:#D9CDB2!important}
+html.az-v4 body:has(#worldFilters) .panel .chip,html.az-v4 body:has(#worldFilters) .panel .chips button{background:transparent!important;color:#F2EFE6!important;border:1px solid rgba(242,239,230,.4)!important}
+html.az-v4 body:has(#worldFilters) .panel .chip[aria-pressed="true"],html.az-v4 body:has(#worldFilters) .panel .chips button[aria-pressed="true"],html.az-v4 body:has(#worldFilters) .panel .chip.on,html.az-v4 body:has(#worldFilters) .panel .chip.activo{background:#C7B99B!important;border-color:#C7B99B!important;color:#12251F!important}
+html.az-v4 body:has(#worldFilters) .panel .campo{background:#FFFFFF!important;color:#252724!important;border-color:transparent!important}
+html.az-v4 body:has(#worldFilters) .panel .interruptor .pista{background:rgba(242,239,230,.35)!important}
+html.az-v4 body:has(#worldFilters) .panel .interruptor input:checked + .pista{background:#C7B99B!important}
+html.az-v4[data-tema="oscuro"] body:has(#worldFilters) .panel{background:#183D32!important}
