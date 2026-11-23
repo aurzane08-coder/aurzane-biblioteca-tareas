@@ -6,7 +6,7 @@ on:
     - cron: '11 6 * * *'
   workflow_dispatch:
   workflow_run:   # tras cada despliegue, para que las páginas nuevas entren el mismo día
-    workflows: ['Desplegar archivos a SiteGround', 'Cursos y cifras reales']
+    workflows: ['Desplegar archivos a SiteGround', 'Cursos y cifras reales', 'Diseño v4 en todo el sitio']
     types: [completed]
 jobs:
   p:
