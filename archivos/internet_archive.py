@@ -11,7 +11,7 @@ import os, re, sys, json, time, subprocess, urllib.request
 import internetarchive as ia
 
 ACC, SEC = os.environ['IA_ACCESS'], os.environ['IA_SECRET']
-LOTE = int(os.environ.get('LOTE', '35'))            # archivos que se suben por ejecución
+LOTE = int(os.environ.get('LOTE', '20'))            # archivos por ejecución (archive.org frena si se crean demasiados seguidos)
 DIAS_MARKETING = int(os.environ.get('DIAS_MARKETING', '21'))
 lista, catalogo, manif = sys.argv[1:4]
 
