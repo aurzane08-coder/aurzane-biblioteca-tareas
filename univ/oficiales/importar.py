@@ -84,7 +84,8 @@ def cap(t):
 
 
 def arreglar(t):
-    """Erratas frecuentes de las fuentes."""
+    """Erratas frecuentes de las fuentes y siglas societarias («S.a.» → «S.A.»)."""
+    t = re.sub(r'(?<![A-Za-zÁÉÍÓÚáéíóú])(?:[A-Za-z]\.){2,}[A-Za-z]?\.?', lambda m: m.group(0).upper(), t)
     return re.sub(r'\bMa(e)?gister\b', 'Magíster', t)
 
 

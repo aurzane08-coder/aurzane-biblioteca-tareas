@@ -938,7 +938,10 @@ def ficha(u, vecinas):
 {chips}{lis}<p id="carrVacio" class="sub" hidden>No hay {palabra} con esa búsqueda.</p>
 {"<p class='aviso'>Esta universidad publica sus áreas y facultades. Consulta su oferta completa de carreras en su web oficial.</p>" if u["nivel"] == "areas" else ""}</section>'''
     else:
-        bloque_c = f'<section class="card" id="carreras"><h2>Carreras</h2><p class="aviso">Todavía no tenemos el listado de carreras de esta institución. Puedes consultar su oferta completa en su {"<a href=" + e(u["web"]) + " target=_blank rel=noopener>web oficial</a>" if u["web"] else "web oficial"}.</p></section>'
+        if (u['extra'].get('acreditacion') or '').startswith('Licencia denegada'):
+            bloque_c = f'<section class="card" id="carreras"><h2>Carreras</h2><p class="aviso"><b>Sin licencia para funcionar.</b> {e(u["extra"]["acreditacion"])}. Si estudias aquí, consulta a SUNEDU las opciones de traslado.</p></section>'
+        else:
+            bloque_c = f'<section class="card" id="carreras"><h2>Carreras</h2><p class="aviso">Todavía no tenemos el listado de carreras de esta institución. Puedes consultar su oferta completa en su {"<a href=" + e(u["web"]) + " target=_blank rel=noopener>web oficial</a>" if u["web"] else "web oficial"}.</p></section>'
     if u['extra'].get('fuente_url') and n:   # datos abiertos oficiales: se cita la fuente y la fecha de la descarga
         _ff = u['extra'].get('fuente_fecha', '')
         _ff = f'{int(_ff[8:10])}/{int(_ff[5:7])}/{_ff[:4]}' if re.match(r'^\d{4}-\d\d-\d\d$', _ff) else ''
