@@ -688,7 +688,7 @@ def portada():
 </div></section>
 
 <section class="bloque" style="max-width:800px"><h2 class="t">Preguntas frecuentes</h2>
-<details class="faq"><summary>¿De dónde salen los datos?</summary><p>España viene del Registro de Universidades, Centros y Títulos (RUCT) del Ministerio de Ciencia, Innovación y Universidades. Ecuador, del registro oficial de la SENESCYT. Estados Unidos, del College Scorecard del Departamento de Educación. El resto, de las fuentes oficiales de cada país y de las webs de cada universidad. Más detalles en <a href="{BASE}acerca/">fuentes y método</a>.</p></details>
+<details class="faq"><summary>¿De dónde salen los datos?</summary><p>España viene del Registro de Universidades, Centros y Títulos (RUCT) del Ministerio de Ciencia, Innovación y Universidades. Ecuador, del registro oficial de la SENESCYT. Estados Unidos, del College Scorecard del Departamento de Educación. Colombia, del SNIES del Ministerio de Educación Nacional. Chile, de la oferta académica del SIES (Mineduc). El resto, de las fuentes oficiales de cada país y de las webs de cada universidad. Más detalles en <a href="{BASE}acerca/">fuentes y método</a>.</p></details>
 <details class="faq"><summary>¿Por qué algunas universidades no tienen carreras?</summary><p>En algunos países solo publicamos las universidades principales o sus áreas y facultades. En esos casos te enlazamos a su web oficial, donde está su oferta completa.</p></details>
 <details class="faq"><summary>¿Puedo comparar universidades?</summary><p>Sí. Usa el <a href="{BASE}comparar/">comparador</a> para ver hasta tres lado a lado, con las carreras que tienen en común y su nota de corte en España. También puedes pulsar ☆ para guardarlas en <a href="{BASE}mi-lista/">Mi lista</a>.</p></details>
 <details class="faq"><summary>He visto un dato que no es correcto</summary><p>Pulsa «Reportar un error» en la ficha de la universidad, o el botón ⚑ que tienes en cualquier página, y lo revisamos. Cada ficha indica su fuente.</p></details>
@@ -790,6 +790,7 @@ def fuente_pais(p):
     if p == 'España': return 'Fuente: Registro de Universidades, Centros y Títulos (RUCT), Ministerio de Ciencia, Innovación y Universidades. Solo grados oficiales vigentes. Actualizado: ' + HOY.strftime('%d/%m/%Y') + '.'
     if p == 'Ecuador': return 'Fuente: registro oficial de carreras vigentes de la SENESCYT. Los nombres de las carreras aparecen tal como figuran en el registro.'
     if p == 'Estados Unidos': return 'Fuente: College Scorecard, Departamento de Educación de EE. UU. Los nombres de los programas aparecen en inglés, como en la fuente oficial.'
+    if p in OFICIAL: return f'Fuente: {OFICIAL[p]["fuente"]}. {OFICIAL[p].get("nota", "")} Se actualiza cada mes.'
     if nivel_pais(p) == 'basico': return 'Selección de las universidades principales del país. Consulta la web oficial de cada una para ver su oferta completa.'
     return 'Fuentes oficiales del país y webs de cada institución. En algunas universidades mostramos áreas o facultades en lugar del listado completo de carreras.'
 
@@ -1167,6 +1168,8 @@ def acerca():
 <section class="card"><h2>Fuentes</h2>
 <p><b>España:</b> Registro de Universidades, Centros y Títulos (RUCT) del Ministerio de Ciencia, Innovación y Universidades. Incluimos los grados oficiales vigentes (publicados en el BOE o autorizados por la comunidad autónoma), con su rama, su campo de estudio, sus créditos y los municipios donde se imparten.</p>
 <p><b>Ecuador:</b> registro oficial de instituciones y carreras vigentes de la SENESCYT.</p>
+<p><b>Colombia:</b> SNIES del Ministerio de Educación Nacional (datos abiertos en datos.gov.co): instituciones activas y programas activos. En esa base el nombre del programa no viene bien, así que cada programa se muestra con el título oficial que otorga.</p>
+<p><b>Chile:</b> base de oferta académica del SIES (Subsecretaría de Educación Superior, mifuturo.cl): carreras y programas vigentes con admisión de estudiantes nuevos, con duración, arancel anual y acreditación.</p>
 <p><b>Estados Unidos:</b> College Scorecard del Departamento de Educación.</p>
 <p><b>Resto de países:</b> fuentes oficiales de cada país y webs de las propias instituciones. En los países añadidos más recientemente publicamos solo sus universidades principales, con su web oficial comprobada.</p>
 <p>Actualizado el {HOY.strftime('%d/%m/%Y')}. ¿Ves un error? Escríbenos a <a href="mailto:hola@aurzane.com">hola@aurzane.com</a>.</p></section>
