@@ -93,6 +93,33 @@ def detalle2():
     print('\n===== Chile cabecera'); [print(i, c) for i, c in enumerate(next(ws.iter_rows(values_only=True)))]
 
 
+def detalle3():
+    for u in ['https://www.datosabiertos.gob.pe/api/3/action/package_show?id=sunedu-programas-acad%C3%A9micos',
+              'https://datosabiertos.gob.pe/dataset/sunedu-programas-acad%C3%A9micos',
+              'https://www.datosabiertos.gob.pe/api/3/action/package_show?id=sunedu-licenciamiento-institucional']:
+        t, ct = get(u, 600000)
+        print('\n=====', u, ct); print(t[:300])
+        for h in sorted(set(re.findall(r'https?://[^"\'\s<>]+\.(?:csv|xlsx?|zip)(?:\?[^"\'\s<>]*)?', t))): print('   ', h)
+    for q in ['fq=organization:spu&rows=40', 'q=oferta%20academica&rows=20', 'q=titulos%20universitarios&rows=20', 'q=instituciones%20universitarias&rows=20']:
+        t, _ = get('https://datos.gob.ar/api/3/action/package_search?' + q)
+        print('\n===== AR', q)
+        try:
+            for p in json.loads(t)['result']['results']:
+                print('-', p.get('name'), '|', p.get('title'), '|', p.get('metadata_modified', '')[:10])
+                for r in p.get('resources', [])[:8]: print('     ·', r.get('format'), r.get('name'), r.get('url'))
+        except Exception as e: print('ERROR', e, t[:300])
+    for a in (2025, 2024, 2023):
+        u = f'https://download.inep.gov.br/microdados/microdados_censo_da_educacao_superior_{a}.zip'
+        try:
+            r = urllib.request.urlopen(urllib.request.Request(u, headers=UA, method='HEAD'), timeout=60)
+            print('\n===== BR', u, r.status, r.headers.get('Content-Length'))
+        except Exception as e: print('\n===== BR', u, e)
+    t, _ = get('https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados/censo-da-educacao-superior', 1500000)
+    print('\n===== BR página'); [print('   ', h) for h in sorted(set(re.findall(r'https?://[^"\'\s<>]+\.zip', t)))[:20]]
+
+
+if len(sys.argv) > 1 and sys.argv[1] == 'detalle3':
+    detalle3(); sys.exit(0)
 if len(sys.argv) > 1 and sys.argv[1] == 'detalle2':
     detalle2(); sys.exit(0)
 if len(sys.argv) > 1 and sys.argv[1] == 'detalle':
