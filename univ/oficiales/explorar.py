@@ -75,6 +75,26 @@ def detalle():
     for k, c in cnt.items(): print(k, c.most_common(15))
 
 
+def detalle2():
+    import io, openpyxl
+    for q in ["$where=nombreestadoprograma='Activo' AND nombrenivelformacion='Universitaria'&$limit=4&$offset=1000",
+              "$select=nombreprograma,count(*)&$group=nombreprograma&$order=count(*) DESC&$limit=25"]:
+        t, _ = get('https://www.datos.gov.co/resource/upr9-nkiz.json?' + q.replace(' ', '%20').replace("'", '%27'))
+        print('\n===== Colombia', q, '\n', t[:5000])
+    for i in ('2p93-tnnf', 'fvbn-24bf'):
+        t, _ = get(f'https://www.datos.gov.co/api/views/{i}.json')
+        try:
+            m = json.loads(t); print('\n=====', i, m.get('name'), '|', m.get('attribution'), '| actualizado', m.get('rowsUpdatedAt'), '\n', [c.get('fieldName') for c in m.get('columns', [])])
+        except Exception: print(i, t[:300])
+        t, _ = get(f'https://www.datos.gov.co/resource/{i}.json?$limit=2'); print(t[:2500])
+        t, _ = get(f'https://www.datos.gov.co/resource/{i}.json?$select=count(*)'); print(t[:200])
+    b = urllib.request.urlopen(urllib.request.Request('https://www.mifuturo.cl/wp-content/uploads/2026/06/Oferta_Academica_2026_SIES_05_06_2026_WEB_E.xlsx', headers=UA), timeout=120).read()
+    ws = openpyxl.load_workbook(io.BytesIO(b), read_only=True).worksheets[0]
+    print('\n===== Chile cabecera'); [print(i, c) for i, c in enumerate(next(ws.iter_rows(values_only=True)))]
+
+
+if len(sys.argv) > 1 and sys.argv[1] == 'detalle2':
+    detalle2(); sys.exit(0)
 if len(sys.argv) > 1 and sys.argv[1] == 'detalle':
     detalle(); sys.exit(0)
 
