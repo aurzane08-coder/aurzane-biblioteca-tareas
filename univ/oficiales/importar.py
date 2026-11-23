@@ -7,7 +7,9 @@ Cada país se guarda en univ/data/oficial_<iso>.json con el mismo formato; univ/
             En el conjunto de programas la columna del nombre trae el departamento, así que cada programa se muestra con el
             título oficial que otorga («Abogado», «Ingeniero Ambiental») y su núcleo básico de conocimiento.
   Chile     SIES, Subsecretaría de Educación Superior (mifuturo.cl): base de oferta académica del año, con duración, arancel y vacantes.
-Uso: python3 univ/oficiales/importar.py [co cl]"""
+  Perú      SUNEDU (datosabiertos.gob.pe): licenciamiento institucional y programas autorizados por local.
+  Brasil    INEP, Censo da Educação Superior (microdatos): instituciones y cursos de graduación en actividad.
+Uso: python3 univ/oficiales/importar.py [co cl pe br]"""
 import io, os, re, sys, json, time, datetime, collections, unicodedata, urllib.request, urllib.parse
 
 AQUI = os.path.dirname(os.path.abspath(__file__))
@@ -218,6 +220,128 @@ def chile():
                    'fecha': datetime.date.today().isoformat(), 'nota': f'Oferta vigente con admisión de estudiantes nuevos en {anio}; aranceles en pesos chilenos.', 'instituciones': lista})
 
 
+
+# ------------------------------------------------------------------------------------------------ Perú
+NIVEL_PE = {'CARRERA PROFESIONAL': 'Pregrado universitario', 'MAESTRÍA': 'Maestría', 'DOCTORADO': 'Doctorado', 'SEGUNDA ESPECIALIDAD': 'Segunda especialidad'}
+
+
+def csv_pe(u):
+    import csv
+    b = get(u, binario=True)
+    for enc in ('utf-8-sig', 'latin-1'):
+        try: t = b.decode(enc); break
+        except Exception: pass
+    return list(csv.DictReader(io.StringIO(t), delimiter='|'))
+
+
+def peru():
+    log('Perú: SUNEDU (datosabiertos.gob.pe)')
+    base = 'https://www.datosabiertos.gob.pe/api/3/action/package_show?id='
+    def recurso(pk, pat):
+        r = json.loads(get(base + pk))['result'][0]['resources']
+        return next(x['url'] for x in r if x.get('format', '').lower() == 'csv' and re.search(pat, x.get('name', ''), re.I))
+    lic = csv_pe(recurso('sunedu-licenciamiento-institucional', 'licenciamiento'))
+    prog = csv_pe(recurso('sunedu-programas-acad%C3%A9micos', 'programas'))
+    corte = (prog[0].get('FECHA_CORTE') or lic[0].get('FECHA_CORTE') or '') if prog else ''
+    log(f'  {len(lic)} universidades en el registro de licenciamiento · {len(prog)} programas por local · corte {corte}')
+    inst = collections.OrderedDict()
+    for r in lic:
+        cod = limpio(r.get('CODIGO_ENTIDAD')); est = limpio(r.get('ESTADO_LICENCIAMIENTO')).upper()
+        if not cod: continue
+        extra = {'cod': cod}
+        if 'OTORGADA' in est:
+            fin = limpio(r.get('FECHA_FIN_LICENCIAMIENTO'))
+            extra['acreditacion'] = f'Licenciada por SUNEDU ({limpio(r.get("PERIODO_LICENCIAMIENTO"))} años' + (f', hasta {int(fin[6:8])}/{int(fin[4:6])}/{fin[:4]})' if re.match(r'^\d{8}$', fin) else ')')
+        elif 'DENEGADA' in est:
+            extra['acreditacion'] = 'Licencia denegada por SUNEDU: no puede admitir nuevos estudiantes y está en proceso de cese'
+        else:
+            extra['acreditacion'] = 'Sin licencia de SUNEDU'
+        inst[cod] = {'cod': cod, 'nombre': acentuar(cap(r.get('NOMBRE'))), 'tipo': 'pública' if 'PÚBLIC' in limpio(r.get('TIPO_GESTION')).upper() else 'privada',
+                     'tipo_ies': 'Universidad' if 'UNIVERSIDAD' in limpio(r.get('NOMBRE')).upper() else 'Escuela de posgrado' if 'POSGRADO' in limpio(r.get('NOMBRE')).upper() else 'Institución universitaria',
+                     'ciudad': acentuar(cap(r.get('PROVINCIA'))), 'region': acentuar(cap(r.get('DEPARTAMENTO'))), 'web': '', 'extra': extra, 'carreras': [], '_v': {}}
+    for p in prog:
+        u = inst.get(limpio(p.get('CODIGO_ENTIDAD')))
+        if not u: continue
+        nom = acentuar(cap(p.get('DENOMINACION_PROGRAMA')))
+        if not nom: continue
+        grupo = NIVEL_PE.get(limpio(p.get('NIVEL_ACADEMICO')).upper(), cap(p.get('NIVEL_ACADEMICO')) or 'Otros')
+        sede = acentuar(cap(p.get('PROVINCIA_LOCAL') or p.get('PROVINCIA_FILIAL')))
+        clave = (nrm(nom), grupo)
+        x = u['_v'].get(clave)
+        if x:
+            if sede and sede not in x['sedes']: x['sedes'].append(sede)
+            continue
+        area = limpio(p.get('NOMBRE_CLASE_PROGRAMA_N2'))
+        x = {'n': nom, 'grupo': grupo, 'area': '' if area.upper() == 'NINGUNO' else acentuar(cap(area)), 'mod': [], 'sedes': [sede] if sede else [], 'cred': ''}
+        u['_v'][clave] = x; u['carreras'].append(x)
+    for u in inst.values(): u.pop('_v')
+    fc = f'{int(corte[6:8])}/{int(corte[4:6])}/{corte[:4]}' if re.match(r'^\d{8}$', corte) else ''
+    guardar('pe', {'pais': 'Perú', 'fuente': 'SUNEDU, Superintendencia Nacional de Educación Superior Universitaria del Perú', 'fuente_url': 'https://www.datosabiertos.gob.pe/dataset/sunedu-programas-acad%C3%A9micos',
+                   'fecha': datetime.date.today().isoformat(), 'nota': 'Programas autorizados de las universidades licenciadas' + (f' (datos al {fc})' if fc else '') + '; también figuran las universidades con licencia denegada.',
+                   'instituciones': list(inst.values())})
+
+
+# ------------------------------------------------------------------------------------------------ Brasil
+GRAU_BR = {'1': 'Bacharelado', '2': 'Licenciatura', '3': 'Tecnólogo', '4': 'Bacharelado e licenciatura'}
+ORG_BR = {'1': 'Universidade', '2': 'Centro universitário', '3': 'Faculdade', '4': 'Instituto federal', '5': 'Centro federal de educação tecnológica'}
+
+
+def brasil():
+    import zipfile, csv, subprocess, tempfile
+    log('Brasil: Censo da Educação Superior (INEP)')
+    # el servidor del INEP no envía el certificado intermedio: se completa la cadena con el de GlobalSign (sin desactivar la verificación)
+    d = tempfile.mkdtemp()
+    subprocess.run(f'curl -sS http://secure.globalsign.com/cacert/rnpicpedugr46ovtlsca2025.crt -o {d}/i.der && openssl x509 -inform DER -in {d}/i.der -out {d}/i.pem && '
+                   f'cat /etc/ssl/certs/ca-certificates.crt {d}/i.pem > {d}/ca.pem', shell=True, check=True)
+    zp, anio = None, ''
+    for a in range(datetime.date.today().year - 1, datetime.date.today().year - 4, -1):
+        for intento in range(4):
+            r = subprocess.run(['curl', '-sSfL', '--retry', '3', '--cacert', f'{d}/ca.pem', '--max-time', '900', '-o', f'{d}/m.zip',
+                                f'https://download.inep.gov.br/microdados/microdados_censo_da_educacao_superior_{a}.zip'], capture_output=True, text=True)
+            if r.returncode == 0 and zipfile.is_zipfile(f'{d}/m.zip'): zp, anio = f'{d}/m.zip', str(a); break
+            log('  ', a, 'intento', intento + 1, r.stderr.strip()[:150]); time.sleep(10)
+        if zp: break
+    if not zp: raise RuntimeError('INEP no responde')
+    z = zipfile.ZipFile(zp)
+    nombres = z.namelist(); log('  censo', anio, '·', [n for n in nombres if n.lower().endswith('.csv')])
+    def tabla(pat):
+        n = next(x for x in nombres if re.search(pat, x, re.I) and x.lower().endswith('.csv'))
+        return csv.DictReader(io.TextIOWrapper(z.open(n), encoding='latin-1'), delimiter=';')
+    inst = collections.OrderedDict()
+    for r in tabla(r'_IES_\d{4}\.csv$|IES_\d{4}'):
+        cod = r.get('CO_IES'); nom = limpio(r.get('NO_IES'))
+        if not cod or not nom: continue
+        cat = r.get('TP_CATEGORIA_ADMINISTRATIVA') or ''
+        inst[cod] = {'cod': cod, 'nombre': cap(nom), 'tipo': 'pública' if cat in ('1', '2', '3', '7') else 'privada',
+                     'tipo_ies': ORG_BR.get(r.get('TP_ORGANIZACAO_ACADEMICA') or '', 'Instituição de ensino superior'),
+                     'ciudad': cap(r.get('NO_MUNICIPIO_IES') or ''), 'region': limpio(r.get('SG_UF_IES') or r.get('NO_UF_IES') or ''), 'web': '',
+                     'extra': {'cod': cod, 'acronimo': limpio(r.get('SG_IES'))}, 'carreras': [], '_v': {}}
+    n_c = 0
+    for r in tabla(r'CADASTRO_CURSOS'):
+        u = inst.get(r.get('CO_IES'))
+        if not u or r.get('TP_SITUACAO', '1') not in ('1', ''): continue   # 1 = em atividade
+        n_c += 1
+        nom = cap(r.get('NO_CURSO') or '')
+        if not nom: continue
+        grupo = GRAU_BR.get(r.get('TP_GRAU_ACADEMICO') or '', 'Graduação')
+        sede = cap(r.get('NO_MUNICIPIO') or '')
+        mod = 'A distancia' if r.get('TP_MODALIDADE_ENSINO') == '2' else 'Presencial'
+        clave = (nrm(nom), grupo)
+        x = u['_v'].get(clave)
+        if x:
+            if sede and sede not in x['sedes'] and len(x['sedes']) < 30: x['sedes'].append(sede)
+            if mod not in x['mod']: x['mod'].append(mod)
+            continue
+        x = {'n': nom, 'grupo': grupo, 'area': limpio(r.get('NO_CINE_AREA_GERAL') or ''), 'mod': [mod], 'sedes': [sede] if sede else [], 'cred': ''}
+        u['_v'][clave] = x; u['carreras'].append(x)
+    lista = []
+    for u in inst.values():
+        u.pop('_v')
+        if u['carreras']: lista.append(u)
+    log(f'  {n_c} cursos en actividad')
+    guardar('br', {'pais': 'Brasil', 'fuente': f'INEP, Censo da Educação Superior {anio} (Ministério da Educação do Brasil)', 'fuente_url': 'https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados/censo-da-educacao-superior',
+                   'fecha': datetime.date.today().isoformat(), 'nota': f'Cursos de graduación en actividad en el censo {anio}; los nombres aparecen en portugués, como en la fuente oficial.', 'instituciones': lista})
+
 sys.path.insert(0, os.path.join(AQUI, '..', 'gen'))
 from acentos import acentuar as _acentuar  # noqa: E402
 
@@ -225,8 +349,8 @@ from acentos import acentuar as _acentuar  # noqa: E402
 def acentuar(t): return _acentuar(t, forzar=True)   # mismo diccionario que gen.py, palabra a palabra
 
 if __name__ == '__main__':
-    paises = sys.argv[1:] or ['co', 'cl']
-    for iso, f in (('co', colombia), ('cl', chile)):
+    paises = sys.argv[1:] or ['co', 'cl', 'pe', 'br']
+    for iso, f in (('co', colombia), ('cl', chile), ('pe', peru), ('br', brasil)):
         if iso not in paises: continue
         try: f()
         except Exception as e: log(f'::warning::{iso}: no se pudo importar: {e}')

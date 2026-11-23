@@ -261,8 +261,8 @@ for _f in sorted(os.listdir(DATOS)):
         if _o.get('nota'): u['extra']['fuente_nota'] = _o['nota']
     print(f'Oficiales {_p}: {_n_casan} fichas completadas · {_n_nuevas} nuevas · {sum(len(x["carreras"]) for x in _o["instituciones"])} carreras')
 
-ORDEN_NIVEL = ['Pregrado universitario', 'Profesional con licenciatura', 'Profesional', 'Licenciatura', 'Bachillerato y plan común', 'Técnico de nivel superior',
-               'Tecnológico', 'Técnico profesional', 'Especialización', 'Especialización médico-quirúrgica', 'Especialidad médica u odontológica', 'Magíster',
+ORDEN_NIVEL = ['Pregrado universitario', 'Bacharelado', 'Bacharelado e licenciatura', 'Profesional con licenciatura', 'Profesional', 'Licenciatura', 'Tecnólogo', 'Graduação', 'Bachillerato y plan común', 'Técnico de nivel superior',
+               'Tecnológico', 'Técnico profesional', 'Especialización', 'Especialización médico-quirúrgica', 'Especialidad médica u odontológica', 'Segunda especialidad', 'Magíster',
                'Maestría', 'Doctorado', 'Otros']
 
 # Posgrados (maestría, doctorado, especialización…) se cuentan aparte de las carreras: «318 carreras» confundía (pedido de Adrián, 23/11/2026)
@@ -708,7 +708,7 @@ def portada():
 </div></section>
 
 <section class="bloque" style="max-width:800px"><h2 class="t">Preguntas frecuentes</h2>
-<details class="faq"><summary>¿De dónde salen los datos?</summary><p>España viene del Registro de Universidades, Centros y Títulos (RUCT) del Ministerio de Ciencia, Innovación y Universidades. Ecuador, del registro oficial de la SENESCYT. Estados Unidos, del College Scorecard del Departamento de Educación. Colombia, del SNIES del Ministerio de Educación Nacional. Chile, de la oferta académica del SIES (Mineduc). El resto, de las fuentes oficiales de cada país y de las webs de cada universidad. Más detalles en <a href="{BASE}acerca/">fuentes y método</a>.</p></details>
+<details class="faq"><summary>¿De dónde salen los datos?</summary><p>España viene del Registro de Universidades, Centros y Títulos (RUCT) del Ministerio de Ciencia, Innovación y Universidades. Ecuador, del registro oficial de la SENESCYT. Estados Unidos, del College Scorecard del Departamento de Educación. Colombia, del SNIES del Ministerio de Educación Nacional. Chile, de la oferta académica del SIES (Mineduc). Perú, de SUNEDU. Brasil, del Censo da Educação Superior del INEP. El resto, de las fuentes oficiales de cada país y de las webs de cada universidad. Más detalles en <a href="{BASE}acerca/">fuentes y método</a>.</p></details>
 <details class="faq"><summary>¿Por qué algunas universidades no tienen carreras?</summary><p>En algunos países solo publicamos las universidades principales o sus áreas y facultades. En esos casos te enlazamos a su web oficial, donde está su oferta completa.</p></details>
 <details class="faq"><summary>¿Puedo comparar universidades?</summary><p>Sí. Usa el <a href="{BASE}comparar/">comparador</a> para ver hasta tres lado a lado, con las carreras que tienen en común y su nota de corte en España. También puedes pulsar ☆ para guardarlas en <a href="{BASE}mi-lista/">Mi lista</a>.</p></details>
 <details class="faq"><summary>He visto un dato que no es correcto</summary><p>Pulsa «Reportar un error» en la ficha de la universidad, o el botón ⚑ que tienes en cualquier página, y lo revisamos. Cada ficha indica su fuente.</p></details>
@@ -1189,6 +1189,8 @@ def acerca():
 <p><b>España:</b> Registro de Universidades, Centros y Títulos (RUCT) del Ministerio de Ciencia, Innovación y Universidades. Incluimos los grados oficiales vigentes (publicados en el BOE o autorizados por la comunidad autónoma), con su rama, su campo de estudio, sus créditos y los municipios donde se imparten.</p>
 <p><b>Ecuador:</b> registro oficial de instituciones y carreras vigentes de la SENESCYT.</p>
 <p><b>Colombia:</b> SNIES del Ministerio de Educación Nacional (datos abiertos en datos.gov.co): instituciones activas y programas activos. En esa base el nombre del programa no viene bien, así que cada programa se muestra con el título oficial que otorga.</p>
+<p><b>Perú:</b> SUNEDU (datos abiertos): universidades con su estado de licenciamiento y programas autorizados por sede.</p>
+<p><b>Brasil:</b> INEP, Censo da Educação Superior: instituciones y cursos de graduación en actividad, con los nombres en portugués.</p>
 <p><b>Chile:</b> base de oferta académica del SIES (Subsecretaría de Educación Superior, mifuturo.cl): carreras y programas vigentes con admisión de estudiantes nuevos, con duración, arancel anual y acreditación.</p>
 <p><b>Estados Unidos:</b> College Scorecard del Departamento de Educación.</p>
 <p><b>Resto de países:</b> fuentes oficiales de cada país y webs de las propias instituciones. En los países añadidos más recientemente publicamos solo sus universidades principales, con su web oficial comprobada.</p>
