@@ -62,7 +62,9 @@ jobs:
                 awk "/^# AURZANE archivos en Internet Archive/{f=1} f&&/^<\/IfModule>/{f=0;next} !f" .htaccess | grep -v "^# fin AURZANE archivos en Internet Archive" > .htaccess.sin
                 cat /tmp/aurzane-bloque-ia.txt .htaccess.sin > .htaccess.n && mv .htaccess.n .htaccess && rm -f .htaccess.sin
               fi; head -12 .htaccess'
-          c=$(curl -s -o /dev/null -w '%{http_code}' https://aurzane.com/); echo "Portada tras el cambio: $c"; [ "$c" = 200 ] || { echo "::error::La portada no responde 200 tras tocar el .htaccess"; exit 1; }
+          # se reintenta: SiteGround a veces responde mal un instante a las peticiones desde GitHub
+          for i in 1 2 3 4 5; do c=$(curl -s -o /dev/null -w '%{http_code}' -A 'Mozilla/5.0 AURZANE-comprobacion' https://aurzane.com/); echo "Portada tras el cambio: $c"; [ "$c" = 200 ] && break; sleep 15; done
+          [ "$c" = 200 ] || { echo "::error::La portada no responde 200 tras tocar el .htaccess"; exit 1; }
       - name: Subir y comprobar
         if: env.SIN != '1'
         run: |
