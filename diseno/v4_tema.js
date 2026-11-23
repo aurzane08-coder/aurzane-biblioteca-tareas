@@ -271,7 +271,13 @@
   var T = { 'Buscar en AURZANE': 'Search AURZANE', 'Guardados': 'Saved', 'Tema': 'Theme', 'Mi AURZANE': 'My AURZANE', 'Entrar': 'Sign in', 'Saltar al contenido': 'Skip to content',
             'Cerrar': 'Close', 'Buscar': 'Search', 'Menú': 'Menu' };
   function pasar() {
-    var sub = d.querySelector('nav.az-subnav'); if (sub && d.querySelector('header.topbar')) sub.style.display = 'none';
+    var sub = d.querySelector('nav.az-subnav');
+    var nav = d.querySelector('header.az-cab .az-cab-in > nav:not(.az-mundos)');
+    if (sub && nav && !nav.getAttribute('data-en')) {   // los enlaces en inglés de la página ocupan el menú del mundo: una sola fila
+      var ul = d.createElement('ul');
+      [].forEach.call(sub.querySelectorAll('a'), function (a) { var li = d.createElement('li'), b = a.cloneNode(true); b.className = ''; if (location.pathname.indexOf(a.getAttribute('href')) === 0 && a.getAttribute('href') !== '/en/') b.setAttribute('aria-current', 'page'); li.appendChild(b); ul.appendChild(li); });
+      nav.innerHTML = ''; nav.appendChild(ul); nav.setAttribute('data-en', '1'); nav.setAttribute('aria-label', 'Study in Spain'); sub.style.display = 'none';
+    }
     [].forEach.call(d.querySelectorAll('header.az-cab *, a.az-saltar'), function (el) {
       [].forEach.call(el.childNodes, function (n) { if (n.nodeType === 3) { var k = n.nodeValue.trim(); if (T[k]) n.nodeValue = n.nodeValue.replace(k, T[k]); } });
       ['aria-label', 'title', 'placeholder'].forEach(function (a) { var v = el.getAttribute && el.getAttribute(a); if (v && T[v.trim()]) el.setAttribute(a, T[v.trim()]); });
