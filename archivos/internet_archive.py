@@ -61,6 +61,7 @@ def comprobar(i, ruta, tam):
 
 nuevos, para_quitar, sin_cors = [], [], 0
 filas = [l.rstrip('\n').split('\t') for l in open(lista, encoding='utf-8') if l.strip()]   # ruta, tamaño, días de antigüedad
+filas.sort(key=lambda f: -int(f[1] or 0))   # los más pesados primero: liberan antes el servidor (23/11/2026)
 # 1) lo ya subido: ¿se puede quitar del servidor?
 for ruta, tam, dias in filas:
     h = hecho.get(ruta)
@@ -110,3 +111,4 @@ for ruta, tam, dias in filas:
 open(manif, 'w', encoding='utf-8').write(''.join('\t'.join(v) + '\n' for v in hecho.values()))
 open('quitar.txt', 'w').write(''.join(r + '\n' for r in para_quitar))
 print(f'Subidos ahora: {subidos}. Listos para quitar del servidor: {len(para_quitar)}. Sin CORS (se quedan): {sin_cors}.')
+open('subidos.txt', 'w').write(str(subidos))   # si se subió algo, el flujo se relanza solo (GitHub se salta muchas ejecuciones por horario)

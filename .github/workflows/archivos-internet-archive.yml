@@ -11,6 +11,7 @@ on:
   workflow_dispatch:
 permissions:
   contents: read
+  actions: write
 concurrency: { group: archivos-ia, cancel-in-progress: false }
 jobs:
   mudar:
@@ -80,3 +81,11 @@ jobs:
             f=$(head -1 quitar.txt); c=$(curl -sIL -o /dev/null -w '%{http_code}' "https://aurzane.com/$f"); echo "https://aurzane.com/$f → $c"
             echo "::notice title=Espacio::Quitados $(wc -l < quitar.txt) archivos del servidor (se sirven desde archive.org)"
           fi
+      - name: Seguir con el siguiente lote
+        if: env.SIN != '1'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # se relanza mientras haya algo que subir (lo que se sube en una pasada se quita del servidor en la siguiente)
+          n=$(cat subidos.txt 2>/dev/null || echo 0); q=$(wc -l < quitar.txt 2>/dev/null || echo 0)
+          if [ "$n" -gt 0 ] || [ "$q" -gt 0 ]; then gh workflow run archivos-internet-archive.yml --ref main -R "$GITHUB_REPOSITORY" && echo "Siguiente lote lanzado"; else echo "Nada pendiente"; fi

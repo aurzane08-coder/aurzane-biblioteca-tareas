@@ -60,6 +60,11 @@ jobs:
             [ "$d" = aurzane.com ] && (cd /tmp/sv/aurzane.com && ls fuentes/instrument-serif-*.woff2 fuentes/manrope-*.woff2) >> /tmp/l-$d.txt
             [ -s /tmp/l-$d.txt ] || continue
             echo "== $d: $(wc -l < /tmp/l-$d.txt) archivos"
-            rsync -rlz --files-from=/tmp/l-$d.txt --backup --backup-dir="../eliminar/v4-$FECHA" -e "$SSH" "/tmp/sv/$d/" "$SG_USER@$SG_HOST:www/$d/public_html/"
+            # las páginas que se generan solas desde el repositorio (universidades y su versión en inglés) no necesitan copia:
+            # guardarlas llenó nexus/eliminar con 2 GB y 90.000 archivos (23/11/2026). El resto sí se guarda antes de cambiarlo.
+            grep -E '^(universidades|en)/' /tmp/l-$d.txt > /tmp/g-$d.txt || true
+            grep -vE '^(universidades|en)/' /tmp/l-$d.txt > /tmp/r-$d.txt || true
+            [ -s /tmp/r-$d.txt ] && rsync -rlz --files-from=/tmp/r-$d.txt --backup --backup-dir="../eliminar/v4-$FECHA" -e "$SSH" "/tmp/sv/$d/" "$SG_USER@$SG_HOST:www/$d/public_html/"
+            [ -s /tmp/g-$d.txt ] && rsync -rlz --files-from=/tmp/g-$d.txt -e "$SSH" "/tmp/sv/$d/" "$SG_USER@$SG_HOST:www/$d/public_html/"
             $SSH "$SG_USER@$SG_HOST" "site-tools-client domain-all update id=$d flush_cache=1 | tr '\n' ' '; echo" || true
           done

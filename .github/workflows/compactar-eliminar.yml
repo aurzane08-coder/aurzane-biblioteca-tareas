@@ -1,0 +1,51 @@
+name: Compactar carpetas eliminar
+# Ahorra espacio y número de archivos en SiteGround sin perder nada (23/11/2026): cada subcarpeta de www/*/eliminar/ con más de
+# 2 días se guarda en un solo archivo comprimido eliminar/comprimido/<nombre>.tar.gz. Solo después de comprobar que el
+# comprimido contiene exactamente los mismos archivos se quitan los sueltos. Para recuperar algo: tar -xzf <archivo>.tar.gz
+on:
+  schedule:
+    - cron: '37 3 * * *'
+  workflow_dispatch:
+  push:
+    paths: ['.github/workflows/compactar-eliminar.yml']
+permissions:
+  contents: read
+concurrency: compactar-eliminar
+jobs:
+  compactar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      SG_KEY: ${{ secrets.SG_KEY }}
+      SG_HOST: ${{ secrets.SG_HOST }}
+      SG_USER: ${{ secrets.SG_USER }}
+      SG_PORT: ${{ secrets.SG_PORT }}
+      SG_PASS: ${{ secrets.SG_PASS }}
+    steps:
+      - name: Compactar
+        run: |
+          mkdir -p ~/.ssh && printf '%s\n' "$SG_KEY" | tr -d '\r' > ~/.ssh/id && chmod 600 ~/.ssh/id
+          if [ -n "$SG_PASS" ]; then ssh-keygen -p -P "$SG_PASS" -N "" -f ~/.ssh/id >/dev/null; fi
+          SSH="ssh -i $HOME/.ssh/id -p ${SG_PORT:-18765} -o StrictHostKeyChecking=accept-new -o ServerAliveInterval=30 $SG_USER@$SG_HOST"
+          $SSH 'bash -s' <<'FIN'
+          set -u
+          cd ~/www/
+          echo "Antes: $(du -sh ~/ | cut -f1), $(find ~/ -xdev -type f | wc -l) archivos"
+          for e in */eliminar eliminar; do
+            [ -d "$e" ] || continue
+            mkdir -p "$e/comprimido"
+            find "$e" -mindepth 1 -maxdepth 1 -type d ! -name comprimido -mmin +2880 | sort | while read -r d; do
+              n=$(basename "$d"); dest="$e/comprimido/$n.tar.gz"
+              [ -e "$dest" ] && dest="$e/comprimido/$n-$(date +%Y%m%d%H%M).tar.gz"
+              antes=$(find "$d" -type f | wc -l)
+              [ "$antes" -eq 0 ] && { rmdir "$d" 2>/dev/null; continue; }
+              if tar -czf "$dest" -C "$e" "$n" && despues=$(tar -tzf "$dest" | grep -vc '/$') && [ "$despues" -eq "$antes" ]; then
+                rm -rf -- "$d"
+                echo "  $d: $antes archivos → $(du -h "$dest" | cut -f1) en $dest"
+              else
+                echo "::warning::No se pudo comprobar $dest ($antes archivos): se dejan los sueltos"; rm -f -- "$dest"
+              fi
+            done
+          done
+          echo "Después: $(du -sh ~/ | cut -f1), $(find ~/ -xdev -type f | wc -l) archivos"
+          FIN
