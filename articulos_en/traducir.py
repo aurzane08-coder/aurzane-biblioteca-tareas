@@ -10,12 +10,12 @@ No se traduce todo: solo la selección de articulos_en/lista.txt (temas con lect
   5. Rehace la portada aurzane.com/en/articles/.
 Si la página española cambia, su versión inglesa se vuelve a generar sola (se guarda una huella en estado.json).
 Nunca borra nada: antes de cambiar un archivo del servidor guarda una copia en www/aurzane.com/eliminar/articulos-en-FECHA/.
-Entradas: SSH, SG_DEST, GEMINI_API_KEY, GITHUB_TOKEN. MAX = artículos nuevos por ejecución (6 por defecto)."""
+Entradas: SSH, SG_DEST, GEMINI_API_KEY, GITHUB_TOKEN. MAX = artículos nuevos por ejecución (3 por defecto)."""
 import os, re, json, html, hashlib, subprocess, time, datetime, urllib.request, urllib.error
 
 R = os.path.dirname(os.path.abspath(__file__))
 SSH = os.environ.get('SSH', ''); DEST = os.environ.get('SG_DEST', '')
-MAX = int(os.environ.get('MAX') or 6)
+MAX = int(os.environ.get('MAX') or 3)   # pocos al día: el cupo gratuito de Gemini lo comparte con la IA de AURZANE
 HOY = datetime.date.today().isoformat()
 WEB = 'www/aurzane.com/public_html'
 EST_F = os.path.join(R, 'estado.json')
@@ -79,8 +79,11 @@ def ia(prompt, maxt=6000, temp=0.2):
         st, b = http('https://models.github.ai/inference/chat/completions', {'Content-Type': 'application/json', 'Authorization': 'Bearer ' + tk},
                      json.dumps({'model': m, 'messages': [{'role': 'user', 'content': prompt}], 'temperature': temp, 'max_tokens': min(maxt, 8000)}).encode(), 150)
         if st == 200:
-            try: return json.loads(b)['choices'][0]['message']['content'].strip()
-            except Exception: pass
+            try:
+                c = json.loads(b)['choices'][0]
+                if (c['message'].get('content') or '').strip(): return c['message']['content'].strip()
+                print(f'  {m}: respuesta vacía ({c.get("finish_reason")})'); continue
+            except Exception as e: print(f'  {m}: respuesta no legible', repr(b[:300]), str(e)[:80]); continue
         print(f'  {m}: error {st}', b[:160].decode('utf-8', 'ignore').replace(chr(10), ' '))
     return ''
 

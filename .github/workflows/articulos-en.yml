@@ -8,7 +8,7 @@ on:
     paths: ['articulos_en/lista.txt', 'articulos_en/traducir.py', '.github/workflows/articulos-en.yml']
   workflow_dispatch:
     inputs:
-      max: {description: 'Artículos nuevos como máximo en esta pasada', default: '6'}
+      max: {description: 'Artículos nuevos como máximo en esta pasada', default: '3'}
 permissions:
   contents: write
   models: read
