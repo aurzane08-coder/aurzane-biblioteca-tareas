@@ -4,29 +4,29 @@ Actualizado: 2026-11-23. Clics de personas (sin bots ni vistas previas) que entr
 
 | Red | Publicaciones | Clics |
 |---|---|---|
-| telegram | 96 | 4 |
-| bluesky | 63 | 323 |
-| mastodon | 63 | 239 |
-| instagram | 73 | 0 |
-| facebook | 73 | 137 |
+| telegram | 99 | 4 |
+| bluesky | 65 | 329 |
+| mastodon | 65 | 246 |
+| instagram | 76 | 0 |
+| facebook | 76 | 140 |
 | threads | 0 | 0 |
-| pinterest | 42 | 1 |
+| pinterest | 43 | 1 |
 
 ## Productos con más clics
 
 | Producto | Clics |
 |---|---|
+| test-tdah | 16 |
 | test-ansiedad | 16 |
-| test-tdah | 15 |
 | calc-sueldo | 14 |
 | test-sueno | 14 |
+| curso-neuro | 12 |
 | test-personalidad | 12 |
 | test-habitos | 12 |
 | frase-fe3fa4a3 | 12 |
 | calc-calorias | 12 |
 | calc-hipoteca | 12 |
 | test-autoestima | 10 |
-| curso-neuro | 10 |
 | calc-embarazo | 10 |
 | curso-metod | 9 |
 | nc-ingenieria-en-tecnologias-industriales | 9 |
@@ -34,10 +34,10 @@ Actualizado: 2026-11-23. Clics de personas (sin bots ni vistas previas) que entr
 | crea-l05-08 | 9 |
 | calc-reforma | 9 |
 | calc-pau | 9 |
+| frase-8e70072e | 9 |
 | frase-1d292112 | 9 |
+| frase-b424a195 | 8 |
 | nc-sociologia | 8 |
 | crea-l05-02 | 8 |
 | frase-3adec0ca | 8 |
 | nc-educacion-infantil | 8 |
-| test-satisfaccion | 8 |
-| frase-8e70072e | 8 |
