@@ -4,4 +4,4 @@ co: 300 instituciones · 11372 carreras y programas vigentes → oficial_co.json
 Chile: SIES (mifuturo.cl)
   base 2026 https://www.mifuturo.cl/wp-content/uploads/2026/06/Oferta_Academica_2026_SIES_05_06_2026_WEB_E.xlsx
   12408 filas vigentes con estudiantes nuevos
-::warning::cl: la fuente devuelve muchas menos carreras que la última vez (5664); se mantiene el archivo anterior
+cl: 120 instituciones · 5664 carreras y programas vigentes → oficial_cl.json
