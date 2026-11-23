@@ -269,21 +269,27 @@
 (function (d) {
   if (!/^en\b/i.test(d.documentElement.lang || '')) return;
   var T = { 'Buscar en AURZANE': 'Search AURZANE', 'Guardados': 'Saved', 'Tema': 'Theme', 'Mi AURZANE': 'My AURZANE', 'Entrar': 'Sign in', 'Saltar al contenido': 'Skip to content',
-            'Cerrar': 'Close', 'Buscar': 'Search', 'Menú': 'Menu' };
+            'Cerrar': 'Close', 'Buscar': 'Search', 'Menú': 'Menu', 'Guardar': 'Save', 'Guardado': 'Saved', 'Guardar esta página': 'Save this page',
+            'Quitar de guardados': 'Remove from saved', 'Opciones: idioma, colores y reportar un problema': 'Options: language, colours and report a problem' };
   function pasar() {
     var sub = d.querySelector('nav.az-subnav');
     var nav = d.querySelector('header.az-cab .az-cab-in > nav:not(.az-mundos)');
     if (sub && nav && !nav.getAttribute('data-en')) {   // los enlaces en inglés de la página ocupan el menú del mundo: una sola fila
       var ul = d.createElement('ul');
       [].forEach.call(sub.querySelectorAll('a'), function (a) { var li = d.createElement('li'), b = a.cloneNode(true); b.className = ''; if (location.pathname.indexOf(a.getAttribute('href')) === 0 && a.getAttribute('href') !== '/en/') b.setAttribute('aria-current', 'page'); li.appendChild(b); ul.appendChild(li); });
-      nav.innerHTML = ''; nav.appendChild(ul); nav.setAttribute('data-en', '1'); nav.setAttribute('aria-label', 'Study in Spain'); sub.style.display = 'none';
+      nav.innerHTML = ''; nav.appendChild(ul); nav.setAttribute('data-en', '1'); nav.setAttribute('aria-label', /nexus\./.test(location.hostname) ? 'Study in Spain' : 'AURZANE in English'); sub.style.display = 'none';
     }
     [].forEach.call(d.querySelectorAll('header.az-cab *, a.az-saltar'), function (el) {
       [].forEach.call(el.childNodes, function (n) { if (n.nodeType === 3) { var k = n.nodeValue.trim(); if (T[k]) n.nodeValue = n.nodeValue.replace(k, T[k]); } });
       ['aria-label', 'title', 'placeholder'].forEach(function (a) { var v = el.getAttribute && el.getAttribute(a); if (v && T[v.trim()]) el.setAttribute(a, T[v.trim()]); });
     });
   }
-  function ir() { pasar(); setTimeout(pasar, 800); setTimeout(pasar, 2500); }
+  var obs = null, cola = 0;
+  function ir() {
+    pasar(); setTimeout(pasar, 800); setTimeout(pasar, 2500);
+    var cab = d.querySelector('header.az-cab');   // botones que cambian de texto después (Guardar ↔ Guardado) se vuelven a traducir
+    if (cab && !obs && window.MutationObserver) { obs = new MutationObserver(function () { clearTimeout(cola); cola = setTimeout(pasar, 60); }); obs.observe(cab, { subtree: true, childList: true, characterData: true }); }
+  }
   if (d.readyState === 'loading') d.addEventListener('DOMContentLoaded', ir); else ir();
 })(document);
 /* Idioma con versión real (23/11/2026): si la página tiene su versión en inglés (hreflang), elegir English en el selector 🌐 o en el
