@@ -1,0 +1,18 @@
+{
+ "universidades": {
+  "huella": {
+   "filas": "6411",
+   "ultimo_id": "fff04d01-7f2f-4d13-a859-45c18316018f",
+   "ultima_fecha": "2026-11-09T19:22:58.311201+00:00"
+  },
+  "fecha": "2026-11-23"
+ },
+ "carreras": {
+  "huella": {
+   "filas": "118215",
+   "ultimo_id": "ffff1a20-0172-483f-824c-7ef2779b1b49",
+   "ultima_fecha": "2026-11-09T19:22:58.311201+00:00"
+  },
+  "fecha": "2026-11-23"
+ }
+}
