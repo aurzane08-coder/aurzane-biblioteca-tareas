@@ -55,7 +55,7 @@ jobs:
             git fetch -q origin main && git checkout -q -B archivo origin/main
             mkdir -p "publicado/$FECHA" && cp -r /tmp/subido/. "publicado/$FECHA/"
             (cd /tmp/subido && find . -type f) | while read -r f; do
-              if [ -f "publicar/$f" ] && cmp -s "/tmp/subido/$f" "publicar/$f"; then git rm -q "publicar/$f"; fi
+              if [ -f "publicar/$f" ] && cmp -s "/tmp/subido/$f" "publicar/$f"; then git rm -q -f "publicar/$f"; fi   # -f: el despliegue retoca algunos archivos antes de subirlos; lo subido es justo esta copia
             done
             git add "publicado/$FECHA"
             git commit -qm "despliegue $FECHA publicado" || exit 0
