@@ -3,5 +3,17 @@ Colombia: SNIES en datos.gov.co
 co: 300 instituciones · 11372 carreras y programas vigentes → oficial_co.json
 Chile: SIES (mifuturo.cl)
   base 2026 https://www.mifuturo.cl/wp-content/uploads/2026/06/Oferta_Academica_2026_SIES_05_06_2026_WEB_E.xlsx
+  reintento 1 https://www.mifuturo.cl/wp-content/uploads/2026/06/Oferta_Academica_2026_SIES_05_06_2026_WEB_E.xlsx IncompleteRead(8437928 bytes read, 18777 more expected)
   12408 filas vigentes con estudiantes nuevos
 cl: 120 instituciones · 5664 carreras y programas vigentes → oficial_cl.json
+Perú: SUNEDU (datosabiertos.gob.pe)
+  143 universidades en el registro de licenciamiento · 8065 programas por local · corte 20240828
+pe: 143 instituciones · 5617 carreras y programas vigentes → oficial_pe.json
+Brasil: Censo da Educação Superior (INEP)
+   2025 intento 1 curl: (35) Recv failure: Connection reset by peer
+   2025 intento 2 curl: (22) The requested URL returned error: 404
+   2025 intento 3 curl: (22) The requested URL returned error: 404
+   2025 intento 4 curl: (22) The requested URL returned error: 404
+  censo 2024 · ['microdados_censo_da_educacao_superior_2024/dados/MICRODADOS_CADASTRO_CURSOS_2024.CSV', 'microdados_censo_da_educacao_superior_2024/dados/MICRODADOS_ED_SUP_IES_2024.CSV']
+  720349 cursos en actividad
+br: 2561 instituciones · 35121 carreras y programas vigentes → oficial_br.json
