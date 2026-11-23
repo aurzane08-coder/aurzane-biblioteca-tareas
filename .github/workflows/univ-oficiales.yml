@@ -5,6 +5,7 @@ on:
   workflow_dispatch:
     inputs:
       modo: {description: 'explorar o importar', default: 'importar'}
+      arg: {description: 'argumento del explorador', default: ''}
   schedule:
     - cron: '17 4 3 * *'
 concurrency: univ-oficiales
@@ -19,7 +20,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Explorar
         if: github.event.inputs.modo == 'explorar'
-        run: python3 univ/oficiales/explorar.py
+        run: pip install -q openpyxl && python3 univ/oficiales/explorar.py ${{ github.event.inputs.arg }}
       - name: Importar
         if: github.event.inputs.modo != 'explorar'
         run: |

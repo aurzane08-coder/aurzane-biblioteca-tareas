@@ -48,22 +48,54 @@ def enlaces(titulo, url, pat):
         if re.search(pat, h, re.I): print('  ', h)
 
 
-# Colombia: SNIES (Ministerio de Educación) en datos.gov.co
-socrata('www.datos.gov.co', 'upr9-nkiz')
-socrata('www.datos.gov.co', 'n5yy-8nav')
-# Chile: SIES / Mi Futuro (Mineduc)
-enlaces('Chile Mi Futuro bases de datos', 'https://www.mifuturo.cl/bases-de-datos-de-oferta-academica/', r'\.(xlsx?|csv|zip|rar)|oferta')
-enlaces('Chile Mi Futuro buscador', 'https://www.mifuturo.cl/bases-de-datos/', r'\.(xlsx?|csv|zip|rar)')
-ckan('https://datos.gob.cl', 'oferta academica educacion superior')
-# Perú: SUNEDU / Minedu
-ckan('https://www.datosabiertos.gob.pe', 'sunedu universidades')
-ckan('https://www.datosabiertos.gob.pe', 'programas de estudio universidades licenciadas')
-# Argentina: Ministerio de Capital Humano (SIU / Departamento de Información Universitaria)
-ckan('https://datos.gob.ar', 'oferta academica universitaria')
-ckan('https://datos.gob.ar', 'instituciones universitarias')
-# México: SEP / ANUIES
-ckan('https://www.datos.gob.mx', 'instituciones de educacion superior')
-ckan('https://www.datos.gob.mx', 'anuies programas licenciatura')
-# Brasil: e-MEC (Ministério da Educação)
-ckan('https://dados.gov.br/dados', 'e-mec cursos instituicoes')
-enlaces('Brasil dados abertos MEC', 'https://dadosabertos.mec.gov.br/indicadores-sobre-ensino-superior', r'\.(csv|zip|xlsx?)')
+
+
+def detalle():
+    """Segunda vuelta: columnas del Excel de Chile y reparto de estados y niveles en Colombia."""
+    import io, openpyxl, collections
+    t, _ = get('https://www.datos.gov.co/resource/upr9-nkiz.json?$select=nombreestadoprograma,nombrenivelacademico,nombrenivelformacion,count(*)&$group=nombreestadoprograma,nombrenivelacademico,nombrenivelformacion&$limit=200')
+    print('\n===== Colombia reparto\n', t[:4000])
+    t, _ = get('https://www.datos.gov.co/resource/n5yy-8nav.json?$select=car_cter_acad_mico,principal_seccional,estado,count(*)&$group=car_cter_acad_mico,principal_seccional,estado&$limit=100')
+    print('\n===== Colombia IES reparto\n', t[:3000])
+    b = urllib.request.urlopen(urllib.request.Request('https://www.mifuturo.cl/wp-content/uploads/2026/06/Oferta_Academica_2026_SIES_05_06_2026_WEB_E.xlsx', headers=UA), timeout=120).read()
+    wb = openpyxl.load_workbook(io.BytesIO(b), read_only=True)
+    for ws in wb.worksheets:
+        print('\n===== Chile hoja', ws.title, ws.max_row, ws.max_column)
+        filas = list(ws.iter_rows(max_row=8, values_only=True))
+        for f in filas: print(f)
+    ws = wb.worksheets[0]; rows = ws.iter_rows(values_only=True); cab = None
+    for f in rows:
+        if f and sum(1 for x in f if x) > 10: cab = [str(x) for x in f]; break
+    cnt = {k: collections.Counter() for k in cab if re.search(r'tipo|nivel|vigencia|estado|modalidad|jornada|regi|clasif|area|carrera gen', k, re.I)}
+    n = 0
+    for f in rows:
+        n += 1
+        for k in cnt: cnt[k][f[cab.index(k)]] += 1
+    print('\n===== Chile filas:', n)
+    for k, c in cnt.items(): print(k, c.most_common(15))
+
+
+if len(sys.argv) > 1 and sys.argv[1] == 'detalle':
+    detalle(); sys.exit(0)
+
+
+if __name__ == "__main__" and len(sys.argv) == 1:
+    # Colombia: SNIES (Ministerio de Educación) en datos.gov.co
+    socrata('www.datos.gov.co', 'upr9-nkiz')
+    socrata('www.datos.gov.co', 'n5yy-8nav')
+    # Chile: SIES / Mi Futuro (Mineduc)
+    enlaces('Chile Mi Futuro bases de datos', 'https://www.mifuturo.cl/bases-de-datos-de-oferta-academica/', r'\.(xlsx?|csv|zip|rar)|oferta')
+    enlaces('Chile Mi Futuro buscador', 'https://www.mifuturo.cl/bases-de-datos/', r'\.(xlsx?|csv|zip|rar)')
+    ckan('https://datos.gob.cl', 'oferta academica educacion superior')
+    # Perú: SUNEDU / Minedu
+    ckan('https://www.datosabiertos.gob.pe', 'sunedu universidades')
+    ckan('https://www.datosabiertos.gob.pe', 'programas de estudio universidades licenciadas')
+    # Argentina: Ministerio de Capital Humano (SIU / Departamento de Información Universitaria)
+    ckan('https://datos.gob.ar', 'oferta academica universitaria')
+    ckan('https://datos.gob.ar', 'instituciones universitarias')
+    # México: SEP / ANUIES
+    ckan('https://www.datos.gob.mx', 'instituciones de educacion superior')
+    ckan('https://www.datos.gob.mx', 'anuies programas licenciatura')
+    # Brasil: e-MEC (Ministério da Educação)
+    ckan('https://dados.gov.br/dados', 'e-mec cursos instituicoes')
+    enlaces('Brasil dados abertos MEC', 'https://dadosabertos.mec.gov.br/indicadores-sobre-ensino-superior', r'\.(csv|zip|xlsx?)')
