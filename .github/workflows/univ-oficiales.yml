@@ -1,0 +1,38 @@
+name: Universidades fuentes oficiales
+# Amplía el catálogo de NEXUS con datos abiertos oficiales de cada país (23/11/2026). modo: explorar (solo muestra la estructura
+# de las fuentes) o importar (descarga, guarda univ/data/oficial_<país>.json y lanza la publicación del portal). Cada mes, importar.
+on:
+  workflow_dispatch:
+    inputs:
+      modo: {description: 'explorar o importar', default: 'importar'}
+  schedule:
+    - cron: '17 4 3 * *'
+concurrency: univ-oficiales
+permissions:
+  contents: write
+  actions: write
+jobs:
+  oficiales:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - name: Explorar
+        if: github.event.inputs.modo == 'explorar'
+        run: python3 univ/oficiales/explorar.py
+      - name: Importar
+        if: github.event.inputs.modo != 'explorar'
+        run: |
+          pip install -q openpyxl
+          python3 univ/oficiales/importar.py
+      - name: Guardar y publicar
+        if: github.event.inputs.modo != 'explorar'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name "AURZANE bot"; git config user.email "bot@aurzane.com"
+          git add univ/data/oficial_*.json univ/data/oficiales.log 2>/dev/null || true
+          if git diff --cached --quiet; then echo "Sin cambios"; exit 0; fi
+          git commit -qm "univ: datos oficiales actualizados"
+          for i in 1 2 3; do git pull -q --rebase -X theirs && git push -q && break; sleep 5; done
+          gh workflow run univ-publicar.yml --ref main || true
