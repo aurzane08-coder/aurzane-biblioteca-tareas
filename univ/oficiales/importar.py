@@ -130,7 +130,7 @@ def colombia():
             if sede and sede not in x['sedes']: x['sedes'].append(sede)
             if mod and mod not in x['mod']: x['mod'].append(mod)
             continue
-        x = {'n': tit, 'grupo': grupo, 'area': limpio(p.get('nombrenbc')), 'mod': [mod] if mod else [], 'sedes': [sede] if sede else [],
+        x = {'n': tit, 'grupo': grupo, 'area': arreglar(limpio(p.get('nombrenbc'))), 'mod': [mod] if mod else [], 'sedes': [sede] if sede else [],
              'cred': ' · '.join(v for v in [f'{cred} créditos' if cred.isdigit() else '', dur] if v)}
         u['_v'][clave] = x; u['carreras'].append(x)
     if sin: log('  programas de instituciones que no están en el registro de instituciones:', sum(sin.values()), sin.most_common(5))
@@ -185,7 +185,8 @@ def chile():
         clave = (nrm(nom), grupo)
         mod = limpio(v(f, 'Modalidad')); jor = limpio(v(f, 'Jornada'))
         modj = mod if mod != 'Presencial' or not jor else f'{mod} {jor.lower()}'
-        aran = v(f, 'Arancel Anual'); aran = int(aran) if isinstance(aran, (int, float)) and aran > 0 else 0
+        aran = v(f, 'Arancel Anual')   # solo importes en pesos; la fuente marca con «Formato Valor» los que vienen en otra unidad
+        aran = int(aran) if isinstance(aran, (int, float)) and aran >= 50000 and 'Pesos' in str(v(f, 'Formato Valor') or '') else 0
         dur = v(f, 'Duración Total'); dur = int(dur) if isinstance(dur, (int, float)) and dur > 0 else 0
         x = u['_v'].get(clave)
         if x:
@@ -195,7 +196,7 @@ def chile():
             if dur: x['_d'].append(dur)
             continue
         acred = str(v(f, 'Acreditación Carrera o Programa') or '') == 'Acreditada'
-        x = {'n': nom, 'grupo': grupo, 'area': limpio(v(f, 'Área Carrera Genérica')), 'mod': [modj] if modj else [], 'sedes': [comuna] if comuna else [],
+        x = {'n': nom, 'grupo': grupo, 'area': arreglar(limpio(v(f, 'Área Carrera Genérica'))), 'mod': [modj] if modj else [], 'sedes': [comuna] if comuna else [],
              'titulo': acentuar(cap(limpio(v(f, 'Nombre Título')))), 'acreditada': acred, '_a': [aran] if aran else [], '_d': [dur] if dur else []}
         u['_v'][clave] = x; u['carreras'].append(x)
     lista = []
@@ -210,7 +211,7 @@ def chile():
             if a: partes.append(f'arancel {anio}: ' + ('$' + f'{a[0]:,}'.replace(',', '.') if len(a) == 1 else 'desde $' + f'{a[0]:,}'.replace(',', '.')) + ' al año')
             if x.pop('acreditada'): partes.append('acreditada')
             x['cred'] = ' · '.join(partes)
-            if not x['titulo'] or nrm(x['titulo']) == nrm(x['n']) or 'no otorga' in nrm(x['titulo']): x.pop('titulo')
+            if not x['titulo'] or nrm(x['titulo']) == nrm(x['n']) or re.search(r'no otorga|sin informacion|^titulo$', nrm(x['titulo'])): x.pop('titulo')
         lista.append(u)
     log(f'  {n_f} filas vigentes con estudiantes nuevos')
     guardar('cl', {'pais': 'Chile', 'fuente': f'SIES, Subsecretaría de Educación Superior de Chile (oferta académica {anio})', 'fuente_url': 'https://www.mifuturo.cl/bases-de-datos-de-oferta-academica/',

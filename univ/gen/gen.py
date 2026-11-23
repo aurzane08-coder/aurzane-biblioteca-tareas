@@ -265,6 +265,21 @@ ORDEN_NIVEL = ['Pregrado universitario', 'Profesional con licenciatura', 'Profes
                'Tecnológico', 'Técnico profesional', 'Especialización', 'Especialización médico-quirúrgica', 'Especialidad médica u odontológica', 'Magíster',
                'Maestría', 'Doctorado', 'Otros']
 
+# Posgrados (maestría, doctorado, especialización…) se cuentan aparte de las carreras: «318 carreras» confundía (pedido de Adrián, 23/11/2026)
+ES_POS = re.compile(r'(?i)maestr|mag[ií]ster|m[aá]ster|doctor|especiali|posgrado|postgrado|post[ií]tulo')
+
+
+def oferta(u, corto=False):
+    """«61 carreras y 257 posgrados», «74 grados», «5 carreras». Lo que se ofrece en ESA universidad."""
+    n, np_ = u['n'], u.get('n_pos', 0)
+    ng = n - np_
+    pal = 'grado' if u['pais'] == 'España' else ('área' if u.get('nivel') == 'areas' else 'carrera')
+    def c(k, w): return f'{fmt(k)} {w}{"s" if k != 1 else ""}' if not corto else f'{fmt(k)} {w}{"s" if k != 1 else ""}'
+    if not np_: return c(n, pal)
+    if not ng: return c(np_, 'posgrado')
+    return f'{c(ng, pal)} y {c(np_, "posgrado")}'
+
+
 # --- slugs únicos por país
 por_pais = collections.defaultdict(list)
 for u in UNIS:
@@ -273,6 +288,7 @@ for u in UNIS:
     u['tipo'] = TIPO_GRUPO.get(u['tipo_raw'], u['tipo_raw'].capitalize())
     u['tipo_txt'] = TIPO_TXT.get(u['tipo_raw'], u['tipo_raw'].capitalize())
     u['n'] = len(u['carreras'])
+    u['n_pos'] = sum(1 for c in u['carreras'] if ES_POS.search(c.get('grupo') or ''))
     por_pais[u['pais']].append(u)
 for u in UNIS:
     if u['web'] and not re.match(r'^https?://[^\s<>]+$', u['web']):
@@ -380,7 +396,9 @@ for p, us in por_pais.items():
 PSLUG = {p: slug(p) for p in PAISES}
 ORDEN_P = sorted(por_pais, key=lambda p: (-len(por_pais[p]), p))
 TOTAL_U = len(UNIS)
-TOTAL_C = sum(u['n'] for u in UNIS)
+TOTAL_C = sum(u['n'] for u in UNIS)   # opciones de estudio: cada carrera o posgrado en cada universidad cuenta una vez
+OPC_TXT = 'opciones de estudio'
+OPC_EXPL = 'Una opción de estudio es una carrera o un posgrado en una universidad concreta: Psicología en 300 universidades cuenta como 300 opciones.'
 
 
 def nivel_pais(p):
@@ -425,7 +443,7 @@ def bloque_auto(u, orden_g, grupos):
     tipo_g = (re.sub(r'a$', 'o', tipo) if masc and tipo in ('pública', 'privada', 'cofinanciada') else tipo)
     intro = f'{u["nombre"]} es {"un" if masc else "una"} {ies}' + (f' {tipo_g}' if tipo_g and tipo_g != '-' else '') + f' con sede en {lugar}.'
     if n:
-        intro += (f' En el catálogo de AURZANE {"figura 1 " + palabra[:-1] + (" suyo" if palabra == "grados" else " suya") if n == 1 else "figuran " + fmt(n) + " " + palabra + (" suyos" if palabra == "grados" else " suyas")}'
+        intro += (f' En el catálogo de AURZANE figura{"n" if n > 1 else ""} {oferta(u)} de esta institución'
                   + ((f', sobre todo en las áreas de {", ".join(top[:-1])} y {top[-1]}' if len(top) > 1 else f', en el área de {top[0]}') if top else '') + '.')
         intro += f' Puedes buscar dentro de la lista por nombre o filtrar por área para ver todas las opciones.'
     else:
@@ -435,7 +453,7 @@ def bloque_auto(u, orden_g, grupos):
     acc = ''.join(f'<p>{e(x)}</p>' for x in _acceso(p))
     faq = [(f'¿{u["nombre"]} es pública o privada?', f'Según los datos oficiales que recogemos, es una institución {tipo}.' if tipo and tipo != '-' else 'No consta en nuestros datos; consúltalo en su web oficial.'),
            (f'¿Dónde está {u["nombre"]}?', f'Su sede está en {lugar}.' + (' También ofrece estudios en línea.' if u['extra'].get('en_linea') else '')),
-           (f'¿Qué se puede estudiar en {u["nombre"]}?', (f'En nuestro catálogo tiene {fmt(n)} {palabra if n > 1 else palabra[:-1]}' + (f', con más oferta en {", ".join(top)}' if top and n > 1 else '') + '. La lista completa está más arriba.') if n else 'Consulta su oferta completa en su web oficial.'),
+           (f'¿Qué se puede estudiar en {u["nombre"]}?', (f'En nuestro catálogo tiene {oferta(u)}' + (f', con más oferta en {", ".join(top)}' if top and n > 1 else '') + '. La lista completa está más arriba.') if n else 'Consulta su oferta completa en su web oficial.'),
            (f'¿Cómo se entra a la universidad en {p}?', _acceso(p)[0])]
     faq_h = ''.join(f'<details><summary>{e(q)}</summary><p>{e(r)}</p></details>' for q, r in faq)
     return (f'<section class="card guia-auto"><h2>Sobre {e(u["nombre"])}</h2><p>{e(intro)}</p>'
@@ -599,7 +617,7 @@ def tarjeta(u):
     url = f'{BASE}{p}/{u["slug"]}/'
     tipo = f'<span class="etq {"pub" if u["tipo"] == "Pública" else "priv"}">{e(u["tipo"])}</span>' if u['tipo'] else ''
     lugar = ', '.join(x for x in [u['ciudad'], u['region']] if x) or u['pais']
-    cnt = f'<b>{fmt(u["n"])}</b> {"áreas" if u["nivel"] == "areas" else ("grados" if u["pais"] == "España" else "carreras")}' if u['n'] else 'Carreras en su web'
+    cnt = re.sub(r'^([\d.]+)', r'<b>\1</b>', oferta(u)) if u['n'] else 'Carreras en su web'
     foto = f'<div class="uc-foto"><img src="{e(u["foto"])}" alt="" loading="lazy" onerror="this.parentNode.classList.add(\'sin\');this.remove()"><span>{e(iniciales(u["nombre"]))}</span></div>' if u.get('foto') else f'<div class="uc-foto sin"><span>{e(iniciales(u["nombre"]))}</span></div>'
     if patro(u): tipo = '<span class="etq patro">Patrocinado</span>' + tipo
     return (f'<article class="uc{" uc-patro" if patro(u) else ""}">{foto}<div class="top"><span class="mono" aria-hidden="true">{e(iniciales(u["nombre"]))}</span><div style="min-width:0;flex:1"><h3><a href="{url}">{e(u["nombre"])}</a></h3>'
@@ -640,7 +658,7 @@ def panel_listado(p, us, ciudad_fija='', titulo_res=''):
 
 # ---------------------------------------------------------------- portada
 def portada():
-    desc = f'Buscador de universidades gratis: {fmt(TOTAL_U)} universidades e institutos de {len(ORDEN_P)} países y {fmt(TOTAL_C)} carreras. España completa con todos sus grados oficiales.'
+    desc = f'Buscador de universidades gratis: {fmt(TOTAL_U)} universidades e institutos de {len(ORDEN_P)} países y {fmt(TOTAL_C)} {OPC_TXT} entre carreras y posgrados. España completa con todos sus grados oficiales.'
     jl = {'@context': 'https://schema.org', '@type': 'WebSite', 'name': 'Universidades AURZANE NEXUS', 'url': SITIO + BASE,
           'potentialAction': {'@type': 'SearchAction', 'target': SITIO + BASE + '?q={search_term_string}', 'query-input': 'required name=search_term_string'}}
     atajos = ''.join(f'<a href="{BASE}{PSLUG[p]}/">{bandera(PAISES[p][0])}{e(p)}</a>' for p in ['España', 'Ecuador', 'México', 'Colombia', 'Argentina', 'Perú', 'Chile', 'Estados Unidos'] if p in por_pais)
@@ -659,11 +677,11 @@ def portada():
 <section class="hero" style="padding-bottom:56px"><div class="wrap">
 <p class="migas"><a href="https://nexus.aurzane.com/">NEXUS</a><span>/</span>Universidades</p>
 <h1>Encuentra tu <em>universidad</em> y tu carrera</h1>
-<p class="lead">{fmt(TOTAL_U)} universidades e institutos de {len(ORDEN_P)} países, con {fmt(TOTAL_C)} carreras. España completa con todos sus grados oficiales, Ecuador con todas sus carreras y las universidades principales de toda Latinoamérica.</p>
+<p class="lead">{fmt(TOTAL_U)} universidades e institutos de {len(ORDEN_P)} países, y {fmt(TOTAL_C)} {OPC_TXT} (carreras y posgrados de cada una). España completa con todos sus grados oficiales, Ecuador con todas sus carreras y las universidades principales de toda Latinoamérica.</p>
 <div class="busca"><label for="qGlobal" class="vh">Buscar universidad</label><svg class="lupa" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
 <input type="search" id="qGlobal" data-buscador placeholder="Busca una universidad o una ciudad: Salamanca, Cuenca, UNAM…" autocomplete="off" role="combobox" aria-expanded="false" aria-controls="sugs" aria-autocomplete="list"><div class="sugs" id="sugs" role="listbox" hidden></div></div>
 <div class="atajos">{atajos}</div>
-<ul class="stats"><li><b>{fmt(TOTAL_U)}</b><span>instituciones</span></li><li><b>{fmt(TOTAL_C)}</b><span>carreras</span></li><li><b>{len(ORDEN_P)}</b><span>países</span></li><li><b>{fmt(len(es))}</b><span>universidades en España</span></li></ul>
+<ul class="stats"><li><b>{fmt(TOTAL_U)}</b><span>instituciones</span></li><li title="{OPC_EXPL}"><b>{fmt(TOTAL_C)}</b><span>{OPC_TXT}</span></li><li><b>{len(ORDEN_P)}</b><span>países</span></li><li><b>{fmt(len(es))}</b><span>universidades en España</span></li></ul><p class="sub" style="margin-top:10px;font-size:.9rem">{OPC_EXPL}</p>
 </div></section>
 
 <div class="wrap">
@@ -734,7 +752,7 @@ def pagina_pais(p):
         lead = f'Las {len(us)} universidades principales de {p}' + (f', como {", ".join(nombres[:-1])} y {nombres[-1]}' if len(nombres) > 1 else '') + '. Consulta su ciudad, si son públicas o privadas y su web oficial para estudiar en ' + p + '.'
     else:
         tit = next(t for t in (f'Universidades en {p}: ranking, carreras y cómo estudiar allí', f'Universidades en {p}: ranking y carreras', f'Universidades en {p}') if len(t) <= 60 or t == f'Universidades en {p}')
-        lead = f'{fmt(len(us))} universidades e institutos de educación superior en {p}' + (f', con {fmt(nc)} carreras.' if nivel == 'programas' else '.') + ' Filtra por ciudad, tipo y área.'
+        lead = f'{fmt(len(us))} universidades e institutos de educación superior en {p}' + (f', con {fmt(nc)} {OPC_TXT} entre carreras y posgrados.' if nivel == 'programas' else '.') + ' Filtra por ciudad, tipo y área.'
     jl = {'@context': 'https://schema.org', '@type': 'ItemList', 'name': f'Universidades de {p}', 'numberOfItems': len(us),
           'itemListElement': [{'@type': 'ListItem', 'position': i + 1, 'url': f'{SITIO}{BASE}{PSLUG[p]}/{u["slug"]}/', 'name': u['nombre']} for i, u in enumerate(sorted(us, key=lambda x: -x['n'])[:50])]}
     top_c = [c for c, n in ciudades.most_common(12) if n >= 2]
@@ -750,7 +768,7 @@ def pagina_pais(p):
 <main><section class="hero" style="padding-bottom:40px"><div class="wrap">{migas(("NEXUS", "https://nexus.aurzane.com/"), ("Universidades", BASE), (p, ""))}
 <h1>{bandera(iso, "g")} Universidades {"de" if p in ("España",) else "en"} <em>{e(p)}</em></h1>
 <p class="lead">{e(lead)}</p>
-<ul class="stats"><li><b>{fmt(len(us))}</b><span>instituciones</span></li>{f"<li><b>{fmt(nc)}</b><span>{'grados' if p == 'España' else 'carreras'}</span></li>" if nc else ""}<li><b>{fmt(npub)}</b><span>públicas</span></li><li><b>{fmt(len(us) - npub)}</b><span>privadas</span></li></ul>
+<ul class="stats"><li><b>{fmt(len(us))}</b><span>instituciones</span></li>{f"<li title='{OPC_EXPL}'><b>{fmt(nc)}</b><span>{'grados' if p == 'España' else OPC_TXT}</span></li>" if nc else ""}<li><b>{fmt(npub)}</b><span>públicas</span></li><li><b>{fmt(len(us) - npub)}</b><span>privadas</span></li></ul>
 {f'<div class="acc">{pau}</div>' if pau else ''}
 </div></section>
 {panel_listado(p, us)}
@@ -809,12 +827,12 @@ def pagina_ciudad(p, c, us):
     if npub: partes.append(f'{npub} pública' + ('s' if npub > 1 else ''))
     if npriv: partes.append(f'{npriv} privada' + ('s' if npriv > 1 else ''))
     reparto = ' y '.join(partes)
-    palabra = 'grados' if p == 'España' else 'carreras'
+    palabra = 'grados' if p == 'España' else OPC_TXT
     cn = f'{c}, {p}' if len(CIUDAD_PAISES.get(c, ())) > 1 else c   # ciudades con el mismo nombre en varios países (La Paz)
-    tit = f'Universidades en {cn}: {N} opciones' + (f' y {fmt(nc)} {palabra}' if nc else ', públicas y privadas') + ' (2026)'
+    tit = f'Universidades en {cn}: {N} {"instituciones" if N != 1 else "institución"}' + (f' y {fmt(nc)} {palabra}' if nc else ', públicas y privadas') + ' (2026)'
     desc = f'¿Cuántas universidades hay en {c}? Hay {N} ({reparto}): {lista}.' + (f' Compara sus {fmt(nc)} {palabra}, modalidades y web oficial.' if nc else ' Compara tipo, ubicación y web oficial.')
     lead = f'En {c} hay {N} universidades e institutos de educación superior ({reparto})' + (f', con {fmt(nc)} {palabra} en total.' if nc else '.') + ' Filtra por tipo o área y entra en cada una para ver su oferta y su web oficial.'
-    respuesta = f'En {c} ({p}) hay {N} instituciones de educación superior: {reparto}. ' + ('Las que más ' + palabra + ' ofrecen son ' + ', '.join(f'{u["nombre"]} ({fmt(u["n"])})' for u in us[:3] if u['n']) + '.' if nc else 'Entre ellas están ' + ', '.join(u['nombre'] for u in us[:3]) + '.')
+    respuesta = f'En {c} ({p}) hay {N} instituciones de educación superior: {reparto}. ' + ('Las que más oferta tienen son ' + ', '.join(f'{u["nombre"]} ({oferta(u)})' for u in us[:3] if u['n']) + '.' if nc else 'Entre ellas están ' + ', '.join(u['nombre'] for u in us[:3]) + '.')
     canon = f'{SITIO}{BASE}{PSLUG[p]}/ciudad/{slug(c)}/'
     jsonld = {'@context': 'https://schema.org', '@graph': [
         {'@type': 'FAQPage', 'mainEntity': [{'@type': 'Question', 'name': f'¿Cuántas universidades hay en {c}?', 'acceptedAnswer': {'@type': 'Answer', 'text': respuesta}}]},
@@ -876,7 +894,7 @@ def ficha(u, vecinas):
             items += f'<li><span>{e(c["n"])}{prof}{"<small>" + e(" · ".join(det)) + "</small>" if det else ""}</span>{"<small>" + e(" · ".join(der)) + "</small>" if der else ""}</li>'
         lis += f'<div class="grupo" data-area="{e(g)}"><h3><span>{e(g)}</span><span>{len(grupos[g])}</span></h3><ul class="carreras">{items}</ul></div>'
     if n:
-        bloque_c = f'''<section class="card" id="carreras"><div class="carr-cab"><h2>{fmt(n)} {palabra}</h2>{"<input type=search class=carr-busca placeholder='Buscar en sus " + palabra + "' aria-label='Buscar carrera'>" if n > 8 else ""}</div>
+        bloque_c = f'''<section class="card" id="carreras"><div class="carr-cab"><h2>{oferta(u)}</h2>{"<input type=search class=carr-busca placeholder='Buscar en sus " + palabra + "' aria-label='Buscar carrera'>" if n > 8 else ""}</div>
 {chips}{lis}<p id="carrVacio" class="sub" hidden>No hay {palabra} con esa búsqueda.</p>
 {"<p class='aviso'>Esta universidad publica sus áreas y facultades. Consulta su oferta completa de carreras en su web oficial.</p>" if u["nivel"] == "areas" else ""}</section>'''
     else:
@@ -903,7 +921,7 @@ def ficha(u, vecinas):
     cerca = ''
     if vecinas:
         cerca = f'<section class="card"><h2>Otras en {e(u["ciudad"] or p)}</h2><ul class="cercanas">' + ''.join(
-            f'<li><a href="{BASE}{ps}/{v["slug"]}/">{e(v["nombre"])}</a><small>{e(v["tipo"])}{" · " + fmt(v["n"]) + (" grados" if es_es else " carreras") if v["n"] else ""}</small></li>' for v in vecinas[:6]) + '</ul>' + (
+            f'<li><a href="{BASE}{ps}/{v["slug"]}/">{e(v["nombre"])}</a><small>{e(v["tipo"])}{" · " + oferta(v) if v["n"] else ""}</small></li>' for v in vecinas[:6]) + '</ul>' + (
             f'<p style="margin:10px 0 0"><a href="{BASE}{ps}/ciudad/{slug(u["ciudad"])}/">Ver todas en {e(u["ciudad"])} →</a></p>' if u['ciudad'] and len(vecinas) >= 1 and p != 'Estados Unidos' else '') + '</section>'
     cta = ('<section class="cta"><b>¿Te llega la nota?</b><p>Calcula tu nota de admisión de la PAU sobre 14 y compárala con la nota de corte.</p><a class="btn btn-luz" href="/calculadora-nota-pau/">Calcular mi nota</a></section>' if es_es else
            '<section class="cta"><b>¿No sabes qué estudiar?</b><p>Haz el test vocacional gratis y descubre las carreras que encajan contigo.</p><a class="btn btn-luz" href="https://ovp.aurzane.com/">Hacer el test vocacional</a></section>')
@@ -912,7 +930,7 @@ def ficha(u, vecinas):
         cta = (f'<section class="cta cta-patro"><span class="etq patro">Patrocinado</span><b>{e(pt.get("texto") or "Admisiones abiertas")}</b>'
                f'<p>Información oficial de admisión de {e(u["nombre"])}.</p><a class="btn btn-luz" href="{e(utm(pt["url"], "ficha"))}" target="_blank" rel="sponsored noopener">Ver admisión ↗</a></section>') + cta
     destaca = '' if pt else f'<p class="destaca"><a href="{BASE}anunciate/?u={ps}/{u["slug"]}">¿Trabajas en {e(u["nombre"])}? Destácala ante estudiantes que buscan carrera</a></p>'
-    desc_meta = f'{u["nombre"]} ({lugar}, {p}): ' + (f'sus {fmt(n)} {palabra}, ' if n else '') + f'tipo {u["tipo_txt"].lower() or "-"}, ciudad y web oficial.'
+    desc_meta = f'{u["nombre"]} ({lugar}, {p}): ' + (f'{oferta(u)}, ' if n else '') + f'tipo {u["tipo_txt"].lower() or "-"}, ciudad y web oficial.'
     jl = {'@context': 'https://schema.org', '@type': 'CollegeOrUniversity', 'name': u['nombre'], 'url': u['web'] or url,
           'address': {'@type': 'PostalAddress', 'addressLocality': u['ciudad'] or None, 'addressRegion': u['region'] or None, 'addressCountry': iso.upper()},
           'sameAs': [u['web']] if u['web'] else None}
@@ -922,11 +940,11 @@ def ficha(u, vecinas):
     jl['address'] = {k: v for k, v in jl['address'].items() if v}
     meta = [f'<li>📍 {e(lugar)}</li>', f'<li>{"🏛️" if u["tipo"] == "Pública" else "🏢"} {e(u["tipo_txt"] or "-")}</li>', f'<li>🎓 {e(u["tipo_ies"])}</li>']
     if u['extra'].get('anio'): meta.append(f'<li>📜 Creada en {e(u["extra"]["anio"])}</li>')
-    if n: meta.append(f'<li>📚 {fmt(n)} {palabra}</li>')
-    tit = f'{u["nombre"]}: ' + (f'{fmt(n)} {palabra}' if n else 'carreras, ciudad y web') + f' | Universidades de {p}'
+    if n: meta.append(f'<li>📚 {oferta(u)}</li>')
+    tit = f'{u["nombre"]}: ' + (oferta(u) if n else 'carreras, ciudad y web') + f' | Universidades de {p}'
     rk_u = rank_de(u)
     if rk_u and not es_es:   # lo que diferencia la ficha de la web oficial: su puesto en el ranking mundial (auditoría final, punto 45)
-        tit = next((t for t in (f'{u["nombre"]}: n.º {fmt(rk_u[0])} del mundo y {fmt(n)} {palabra}' if n else '', f'{u["nombre"]}: n.º {fmt(rk_u[0])} del mundo, ranking y carreras',
+        tit = next((t for t in (f'{u["nombre"]}: n.º {fmt(rk_u[0])} del mundo y {oferta(u)}' if n else '', f'{u["nombre"]}: n.º {fmt(rk_u[0])} del mundo, ranking y carreras',
                                  f'{u["nombre"]}: n.º {fmt(rk_u[0])} del mundo') if t and len(t) <= 65), tit)
     _sc = SC.get(u['id']) if p == 'Estados Unidos' else None
     if _sc:   # 19/11/2026: título y descripción con lo que busca un estudiante (admisión y coste reales)
@@ -1117,7 +1135,7 @@ def anunciate():
     n_pais = len(ORDEN_P); n_rank = sum(1 for u in UNIS if rank_de(u))
     activas = len(PATRO)
     desc = f'Destaca tu universidad en AURZANE NEXUS ante estudiantes que comparan {fmt(TOTAL_U)} universidades de {n_pais} países: etiqueta Patrocinado, primeras posiciones y enlace a admisión.'
-    cifras = [(fmt(TOTAL_U), 'universidades e institutos con ficha propia'), (fmt(TOTAL_C), 'carreras y grados en el catálogo'), (str(n_pais), 'países'), (fmt(n_rank), 'fichas con ranking mundial')]
+    cifras = [(fmt(TOTAL_U), 'universidades e institutos con ficha propia'), (fmt(TOTAL_C), 'opciones de estudio (carreras y posgrados en cada universidad)'), (str(n_pais), 'países'), (fmt(n_rank), 'fichas con ranking mundial')]
     precio_html = ''
     if PRECIO.get('mes'):
         precio_html = (f'<section class="card" id="precio"><h2>Precio</h2><div class="precios"><div class="precio"><b>{PRECIO["mes"]} €</b><span>al mes por universidad</span></div>'

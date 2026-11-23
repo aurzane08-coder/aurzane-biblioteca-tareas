@@ -33,7 +33,7 @@ Católica Pontificia Señora Bolivariana Javeriana Antártica Atacameña Amazon�
 Fusagasugá Tuluá Envigado Itagüí Sogamoso Duitama Chiquinquirá Tumaco Quibdó Riohacha Valledupar Sincelejo Caquetá Guaviare Vaupés Guainía Boyacá Córdoba
 Nariño Quindío Chocó Atlántico Bolívar Antioquia Pacífico Caribe Andina Andino Colombiano Colombiana Cooperativa Corporación Fundación Institución Escuela
 Tecnológicos Politécnico Politécnica Agustiniana Adventista Pedagógica Militar Policía Educación Superior Técnica Técnico Profesional Artes Música
-Informáticos Informáticas Telemáticos Electrónicas Mecánicos Técnicas Químicas Físicas Médicos Clínicos Ciencias Administración Contaduría Economía Finanzas Mercadeo Psicología Enfermería Odontología Optometría Fonoaudiología Bacteriología Instrumentación""".split():
+Pediátrica Pediátrico Genética Genético Estratégica Estratégico Didáctica Didáctico Geotécnica Oncológica Oncológico Psicoanalítica Psicosomática Diagnóstica Geomática Estéticas Éticas Ética Práctica Prácticas Práctico Área Áreas Través Astrofísica Desafíos Extracorpórea Neurocirugía Anatomía Patológica Plástica Plásticas Hispánicas Hispánica Dietética Arqueólogo Arqueóloga Intérprete Químico Bioquímico Cientista Político Política Músico Electrofisiología Cardíaca Cardíaco Ortopédica Hidrológico Agrícolas Económicas Teórica Teórico Histórica Histórico Crítica Crítico Gráfico Informáticos Informáticas Telemáticos Electrónicas Mecánicos Técnicas Químicas Físicas Médicos Clínicos Ciencias Administración Contaduría Economía Finanzas Mercadeo Psicología Enfermería Odontología Optometría Fonoaudiología Bacteriología Instrumentación""".split():
     ACENTOS[unicodedata.normalize('NFD', _w.lower()).encode('ascii', 'ignore').decode()] = _w
 
 
