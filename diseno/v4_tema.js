@@ -15,6 +15,9 @@
   try { w.localStorage.setItem('aurzane-tema', t); } catch (e) {}
   if (t === 'oscuro') html.setAttribute('data-tema', 'oscuro'); else html.removeAttribute('data-tema');
   html.classList.add('az-v4');
+  // v4 tiene una sola identidad (verde y champán): las paletas del diseño anterior que alguien eligiera (grafito, púrpura…) ya no se aplican
+  function paleta() { var c = html.className, n = c.replace(/\bpaleta-(?!dorado\b)[a-z]+\b/g, '').replace(/\s+/g, ' ').trim(); if (!/\bpaleta-dorado\b/.test(n)) n += ' paleta-dorado'; if (n !== c) html.className = n; }
+  paleta(); if (w.MutationObserver) new MutationObserver(paleta).observe(html, { attributes: true, attributeFilter: ['class'] });
   w.AurzaneTema = { actual: function () { return html.getAttribute('data-tema') === 'oscuro' ? 'oscuro' : 'claro'; },
     poner: function (n) { if (n === 'oscuro') html.setAttribute('data-tema', 'oscuro'); else html.removeAttribute('data-tema'); },
     alternar: function () { this.poner(this.actual() === 'oscuro' ? 'claro' : 'oscuro'); } };
