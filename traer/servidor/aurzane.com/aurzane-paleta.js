@@ -312,6 +312,16 @@
   var T = { 'Buscar en AURZANE': 'Search AURZANE', 'Guardados': 'Saved', 'Tema': 'Theme', 'Mi AURZANE': 'My AURZANE', 'Entrar': 'Sign in', 'Saltar al contenido': 'Skip to content',
             'Cerrar': 'Close', 'Buscar': 'Search', 'Menú': 'Menu', 'Guardar': 'Save', 'Guardado': 'Saved', 'Guardar esta página': 'Save this page',
             'Quitar de guardados': 'Remove from saved', 'Opciones: idioma, colores y reportar un problema': 'Options: language, colours and report a problem' };
+  // pie común (23/11/2026): también en inglés
+  var P = { 'Psicología, aprendizaje y bienestar con base científica. Tests, cursos y herramientas gratis, creados y revisados por un psicólogo clínico.':
+              'Science-based psychology, learning and wellbeing. Free tests, courses and tools, created and reviewed by a clinical psychologist.',
+            'Mundos': 'Worlds', 'Mente y tests': 'Mind and tests', 'Universidades y carreras': 'Universities and degrees', 'Salud y día a día': 'Health and everyday life',
+            'Cursos': 'Courses', 'Dinero, ingresos y vivienda': 'Money, income and housing', 'Orientación vocacional': 'Career guidance', 'Conocimiento': 'Knowledge',
+            'Biblioteca de libros': 'Book library', 'Libros recomendados': 'Recommended books', 'Artículos': 'Articles (Spanish)', 'Frases': 'Quotes (Spanish)',
+            'Mi AURZANE': 'My AURZANE', 'Sobre AURZANE': 'About AURZANE', 'Política editorial': 'Editorial policy', 'Contacto': 'Contact', 'Mapa del sitio': 'Site map',
+            'Apoya AURZANE': 'Support AURZANE', 'Privacidad': 'Privacy', 'Condiciones de uso': 'Terms of use', 'Aviso legal': 'Legal notice',
+            '¿Algo no funciona en esta página?': 'Something not working on this page?', 'Avísanos': 'Let us know', '¿Algo no funciona en esta página? Avísanos': 'Something not working on this page? Let us know' };
+  var PS = [['Contenido orientativo: no sustituye la valoración de un profesional.', 'Guidance only: it does not replace an assessment by a professional.']];
   function pasar() {
     var sub = d.querySelector('nav.az-subnav');
     var nav = d.querySelector('header.az-cab .az-cab-in > nav:not(.az-mundos)');
@@ -320,6 +330,10 @@
       [].forEach.call(sub.querySelectorAll('a'), function (a) { var li = d.createElement('li'), b = a.cloneNode(true); b.className = ''; if (location.pathname.indexOf(a.getAttribute('href')) === 0 && a.getAttribute('href') !== '/en/') b.setAttribute('aria-current', 'page'); li.appendChild(b); ul.appendChild(li); });
       nav.innerHTML = ''; nav.appendChild(ul); nav.setAttribute('data-en', '1'); nav.setAttribute('aria-label', /nexus\./.test(location.hostname) ? 'Study in Spain' : 'AURZANE in English'); sub.style.display = 'none';
     }
+    [].forEach.call(d.querySelectorAll('.az-pie *'), function (el) {
+      [].forEach.call(el.childNodes, function (n) { if (n.nodeType !== 3) return; var k = n.nodeValue.trim(); if (P[k]) n.nodeValue = n.nodeValue.replace(k, P[k]);
+        else PS.forEach(function (x) { if (n.nodeValue.indexOf(x[0]) >= 0) n.nodeValue = n.nodeValue.replace(x[0], x[1]); }); });
+    });
     [].forEach.call(d.querySelectorAll('header.az-cab *, a.az-saltar'), function (el) {
       [].forEach.call(el.childNodes, function (n) { if (n.nodeType === 3) { var k = n.nodeValue.trim(); if (T[k]) n.nodeValue = n.nodeValue.replace(k, T[k]); } });
       ['aria-label', 'title', 'placeholder'].forEach(function (a) { var v = el.getAttribute && el.getAttribute(a); if (v && T[v.trim()]) el.setAttribute(a, T[v.trim()]); });
