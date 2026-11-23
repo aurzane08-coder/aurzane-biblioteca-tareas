@@ -1,0 +1,35 @@
+name: Mover restauracion a la papelera
+# Uso único (23/11/2026, autorizado por Adrián): muestra qué hay en ~/restauracion-2026-11-19-1409 y lo pasa a www/eliminar/,
+# donde se comprime y se borra solo a los 30 días. Si dentro hay algo que no sea una copia de la web, no se mueve.
+on:
+  push:
+    paths: ['.github/workflows/mover-restauracion.yml']
+permissions:
+  contents: read
+jobs:
+  mover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      SG_KEY: ${{ secrets.SG_KEY }}
+      SG_HOST: ${{ secrets.SG_HOST }}
+      SG_USER: ${{ secrets.SG_USER }}
+      SG_PORT: ${{ secrets.SG_PORT }}
+      SG_PASS: ${{ secrets.SG_PASS }}
+    steps:
+      - run: |
+          mkdir -p ~/.ssh && printf '%s\n' "$SG_KEY" | tr -d '\r' > ~/.ssh/id && chmod 600 ~/.ssh/id
+          if [ -n "$SG_PASS" ]; then ssh-keygen -p -P "$SG_PASS" -N "" -f ~/.ssh/id >/dev/null; fi
+          SSH="ssh -i $HOME/.ssh/id -p ${SG_PORT:-18765} -o StrictHostKeyChecking=accept-new $SG_USER@$SG_HOST"
+          $SSH 'bash -s' <<'FIN'
+          R=~/restauracion-2026-11-19-1409
+          [ -d "$R" ] || { echo "No existe"; exit 0; }
+          echo "== contenido"; ls -la --time-style=+%F_%T "$R" | head -30
+          echo "== subcarpetas"; du -sh "$R"/* 2>/dev/null | sort -rh | head -15
+          echo "== tipos"; find "$R" -type f | sed 's/.*\.//' | sort | uniq -c | sort -rn | head -10
+          echo "== archivos más nuevos"; find "$R" -type f -printf '%TY-%Tm-%Td %p\n' | sort -r | head -5
+          # solo se mueve si son archivos de la web (html, css, js, imágenes, php, htaccess, json, xml, txt)
+          raros=$(find "$R" -type f ! -iregex '.*\.\(html?\|css\|js\|mjs\|json\|xml\|txt\|php\|webp\|avif\|png\|jpe?g\|gif\|svg\|ico\|woff2?\|map\|md\|pdf\|htaccess\|webmanifest\)' ! -name '.htaccess' | head -20)
+          if [ -n "$raros" ]; then echo "Hay archivos que no son de la web, no se mueve:"; echo "$raros"; exit 0; fi
+          mkdir -p ~/www/eliminar && mv "$R" ~/www/eliminar/ && touch -d '3 hours ago' ~/www/eliminar/$(basename "$R") && echo "Movida a www/eliminar/$(basename "$R") (se comprime y a los 30 días se borra sola)"
+          FIN
