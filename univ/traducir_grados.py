@@ -50,7 +50,8 @@ Fundamentos de la Arquitectura → Fundamentals of Architecture'''
 PROMPT = '''You translate official names of Spanish university bachelor's degrees into British English for an international student audience.
 Rules:
 - Use the standard English name used by Spanish universities on their English websites, not a word-for-word rendering.
-- "Grado en X" and "Graduado o Graduada en X" become "Bachelor's Degree in X". "Doble Grado en X y Y" becomes "Double Bachelor's Degree in X and Y".
+- The names come without the word "Grado": translate only the subject (for example "Administración y Dirección de Empresas" becomes "Business Administration and Management"). Never add "Bachelor's Degree in" or "Bachelor in".
+- If the name already contains an official English version after a slash or a dash, use that English version without the "Bachelor in" prefix.
 - Keep proper names, place names and institution names as they are (for example "Universidad de Salamanca", "Canarias" stays "Canary Islands" only when it is a region).
 - Keep words like "mención", "itinerario" or bilingual markers translated naturally ("with a specialisation in", "bilingual").
 - Use sentence-style title case like the examples, British spelling (specialisation, programme, labour).
@@ -89,8 +90,7 @@ def valida(es, en):
     en = en.strip()
     if not (4 <= len(en) <= max(140, int(len(es) * 1.8))): return False
     if re.search(r'\b(Grado|Graduado|Doble|Ingeniería|Ciencias|Educación|Administración|Estudios|del|de la|y)\b', en): return False   # restos en español
-    if re.match(r'^(Grado|Graduado|Graduada)\b', es) and not en.startswith("Bachelor's Degree in "): return False
-    if re.match(r'^(Doble Grado|Programa Conjunto|Programa de Doble)', es) and not en.startswith("Double Bachelor's Degree in "): return False
+    if re.match(r'^bachelor', en, re.I): return False   # solo la materia, como el resto de nombres
     return True
 
 
