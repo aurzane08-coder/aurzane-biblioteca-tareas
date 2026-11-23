@@ -730,3 +730,4 @@ html.az-v4:not([data-tema="oscuro"]) .baja{color:#A63D3D!important}
 html.az-v4:not([data-tema="oscuro"]) .sube{color:#2D6A4F!important}
 /* el selector de paletas antiguas ya no cambia nada en v4: se oculta */
 html.az-v4 :is(.azp-btn,.azp-pop){display:none!important}
+html.az-v4:not([data-tema="oscuro"]) #page-ai{--ai-ok:#2D6A4F;--ai-warn:#8C7A52;--ai-bad:#A63D3D;--ai-info:#3E63B8}
