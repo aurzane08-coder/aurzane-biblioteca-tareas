@@ -117,7 +117,7 @@
  ],
  "ed:PhilPapers (PhilPapers Foundation)": [
   0,
-  12
+  13
  ],
  "ed:Internet Archive": [
   26,
@@ -125,7 +125,7 @@
  ],
  "ed:": [
   52,
-  37
+  38
  ],
  "ed:undefined": [
   0,
@@ -133,7 +133,7 @@
  ],
  "ed:Liverpool John Moores University": [
   0,
-  1
+  2
  ],
  "Psychology Research and Bibliometrics": [
   2,
@@ -144,7 +144,7 @@
   0
  ],
  "tipo:libro": [
-  95,
+  96,
   9
  ],
  "Gambling Behavior and Treatments": [
@@ -312,7 +312,7 @@
   0
  ],
  "archive:psicologia": [
-  65,
+  66,
   0
  ],
  "ed:The Open University": [
@@ -616,7 +616,7 @@
   2
  ],
  "ed:Editorial UOC": [
-  13,
+  14,
   2
  ],
  "ed:Universidad Andina Simón Bolívar, Sede Ecuador; Corporación Editora Nacional": [
@@ -758,5 +758,17 @@
  "ed:Universidad de Antioquia, Facultad de Ciencias Sociales y Humanas, Grupo de Investigación Psyconex": [
   0,
   2
+ ],
+ "ed:Institut de Ciències de l’Educació. Universitat de Barcelona": [
+  0,
+  1
+ ],
+ "ed:Eduardo José Cuestas": [
+  0,
+  1
+ ],
+ "ed:Universidad de Burgos eBooks": [
+  0,
+  1
  ]
 }

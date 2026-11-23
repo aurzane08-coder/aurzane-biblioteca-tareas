@@ -1,6 +1,70 @@
 [
  {
   "fecha": "2026-11-23",
+  "id": "oa-W7237084136",
+  "tipo": "libro",
+  "titulo": "EDUCAR: Estrategias Docentes para una Educación Libre de Acoso",
+  "url": "https://doi.org/10.36443/9791387585532",
+  "motivo": "La IA le dio 4/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-psicologia-del-pensamiento/psicologia-del-pensamiento.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-23",
+  "id": "ia-aurzane-bib-yo-como-diferente-libro-toda-familia",
+  "tipo": "libro",
+  "titulo": "Yo como diferente: un libro para toda la familia",
+  "url": "https://archive.org/details/aurzane-bib-yo-como-diferente-libro-toda-familia",
+  "motivo": "La IA le dio 3/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-psicologia-del-pensamiento/psicologia-del-pensamiento.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-23",
+  "id": "ia-aurzane-bib-escuelas-aulas-creativas-reflexiones-experiencias",
+  "tipo": "libro",
+  "titulo": "Escuelas y aulas creativas. Reflexiones y experiencias",
+  "url": "https://archive.org/details/aurzane-bib-escuelas-aulas-creativas-reflexiones-experiencias",
+  "motivo": "La IA le dio 4/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-psicologia-del-pensamiento/psicologia-del-pensamiento.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-23",
+  "id": "oa-W7232787353",
+  "tipo": "libro",
+  "titulo": "The Afterlife Detection and Verification System: A Technological Blueprint for Determining Whether Consciousness Survives Death",
+  "url": "https://philarchive.org/rec/OHNTAD-2",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 14 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/octet-st https://zenodo.org/records/24209877/files/The%20Afterlife%20Detection%20and%20Verification%20System:%20A%20Tec"
+  ]
+ },
+ {
+  "fecha": "2026-11-23",
+  "id": "oa-W7225547357",
+  "tipo": "libro",
+  "titulo": "Self-harm injuries across Cheshire and Merseyside: April 2019 to March 2026",
+  "url": "https://researchonline.ljmu.ac.uk/id/eprint/29805/",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 41 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://researchonline.ljmu.ac.uk/id/eprint/29805/7/Self-harm%20injuries%20across%20Cheshire%20and%20Merseysid"
+  ]
+ },
+ {
+  "fecha": "2026-11-23",
+  "id": "oa-W7221821260",
+  "tipo": "libro",
+  "titulo": "Proceedings of the International Scientific Conference \"Modern Research Across Sciences and Humanities\"",
+  "url": "https://doi.org/10.64076/ap261005",
+  "motivo": "el título indica actas, resúmenes o material que no es un libro",
+  "probados": []
+ },
+ {
+  "fecha": "2026-11-23",
   "id": "ia-the-accusation-of-madness_202611",
   "tipo": "libro",
   "titulo": "The Accusation Of Madness: Projection, Power, and the Adversary Through a Middle Way",
@@ -3139,53 +3203,5 @@
   "titulo": "Según esta perspectiva, casi todo lo que hacen los humanos está motivado por la búsqueda de una recompensa.",
   "url": "https://aurzane.com/biblioteca/recientes/oa-W7167058661/",
   "motivo": "Gemini le dio 3/10: no tiene fuerza suficiente para redes"
- },
- {
-  "fecha": "2026-11-08",
-  "id": "cita-4bffdc5d3c",
-  "tipo": "cita",
-  "titulo": "La tristeza de aquellos cantos alternados desgarraba el alma.",
-  "url": "https://aurzane.com/biblioteca/recientes/ia-ariane_20261030/",
-  "motivo": "Gemini le dio 6/10: no tiene fuerza suficiente para redes"
- },
- {
-  "fecha": "2026-11-08",
-  "id": "cita-fa0d9d2147",
-  "tipo": "cita",
-  "titulo": "Es al mismo tiempo quien garantiza la vida, pero también quien puede quemarla y matarla.",
-  "url": "https://aurzane.com/biblioteca/recientes/ia-cartas-viaje-olvidado-janonex-2026/",
-  "motivo": "Gemini le dio 5/10: no tiene fuerza suficiente para redes"
- },
- {
-  "fecha": "2026-11-08",
-  "id": "cita-5d53a0cd86",
-  "tipo": "cita",
-  "titulo": "Para algunos filósofos, el alma constituía la esencia inmortal del ser humano; para otros, representaba la fuente del pensamiento, la razón o la sensibilidad.",
-  "url": "https://aurzane.com/biblioteca/recientes/ia-libro-de-javier-sanchez/",
-  "motivo": "Gemini le dio 3/10: no tiene fuerza suficiente para redes"
- },
- {
-  "fecha": "2026-11-08",
-  "id": "cita-1792db8f66",
-  "tipo": "cita",
-  "titulo": "En la actualidad, diversas teorías del desarrollo humano y de la personalidad reconocen precisamente el carácter cambiante de la conducta y de los procesos psic",
-  "url": "https://aurzane.com/biblioteca/recientes/ia-libro-de-javier-sanchez/",
-  "motivo": "Gemini le dio 2/10: no tiene fuerza suficiente para redes"
- },
- {
-  "fecha": "2026-11-08",
-  "id": "cita-89b543ae3b",
-  "tipo": "cita",
-  "titulo": "Según su propuesta, aprender no significa incorporar conocimientos completamente nuevos, sino recordar aquello que el alma ya conocía antes de unirse al cuerpo.",
-  "url": "https://aurzane.com/biblioteca/recientes/ia-libro-de-javier-sanchez/",
-  "motivo": "Gemini le dio 6/10: no tiene fuerza suficiente para redes"
- },
- {
-  "fecha": "2026-11-08",
-  "id": "cita-ab01be929e",
-  "tipo": "cita",
-  "titulo": "¡Qué carga tan insufrible es el ambiente vital, para el mezquino mortal que nace en signo terrible!",
-  "url": "https://aurzane.com/biblioteca/libro/don-alvaro-fuerza-del-sino.html",
-  "motivo": "Gemini le dio 7/10: no tiene fuerza suficiente para redes"
  }
 ]

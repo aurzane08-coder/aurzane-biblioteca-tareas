@@ -1,8 +1,16 @@
 [
  {
   "fecha": "2026-11-23",
+  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-psicologia-del-pensamiento/",
+  "titulo": "Libro abierto: Psicología del pensamiento"
+ },
+ {
+  "fecha": "2026-11-23",
   "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-conducta-suicida-manual-prevencion-personas-mayores/",
-  "titulo": "Libro abierto: Conducta suicida. Manual de prevención en personas mayores que viven en residencias"
+  "titulo": "Libro abierto: Conducta suicida. Manual de prevención en personas mayores que viven en residencias",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-conducta-suicida-manual-prevencion-personas-mayores.jpg",
+  "desc": "La conducta suicida en las personas mayores constituye un importante problema de salud pública que requiere estrategias específicas de prevención, detección y actuación. Esta necesidad adquiere especi",
+  "titulo_completo": "Conducta suicida. Manual de prevención en personas mayores que viven en residencias"
  },
  {
   "fecha": "2026-11-23",
@@ -295,57 +303,90 @@
  {
   "fecha": "2026-11-22",
   "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-envejecimiento-actividad-fisica/",
-  "titulo": "Libro abierto: Envejecimiento, actividad física y desarrollo emocional"
+  "titulo": "Libro abierto: Envejecimiento, actividad física y desarrollo emocional",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-envejecimiento-actividad-fisica.jpg",
+  "desc": "Cómo envejecer bien: la relación entre actividad física, emociones, cognición y calidad de vida en las personas mayores. Copia de la Biblioteca AURZANE (aurzane.com/biblioteca).",
+  "titulo_completo": "Envejecimiento, actividad física y desarrollo emocional"
  },
  {
   "fecha": "2026-11-22",
   "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-psicologia-e-internet/",
-  "titulo": "Libro abierto: Psicología e internet"
+  "titulo": "Libro abierto: Psicología e internet",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-psicologia-e-internet.jpg",
+  "desc": "Identidad, relaciones y comunidades en internet: cómo cambia nuestra forma de ser y relacionarnos en los entornos digitales. Copia de la Biblioteca AURZANE (aurzane.com/biblioteca).",
+  "titulo_completo": "Psicología e internet"
  },
  {
   "fecha": "2026-11-22",
   "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-comportamiento-colectivo/",
-  "titulo": "Libro abierto: Psicología del comportamiento colectivo"
+  "titulo": "Libro abierto: Psicología del comportamiento colectivo",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-comportamiento-colectivo.jpg",
+  "desc": "Multitudes, rumores, modas y movimientos sociales: cómo y por qué actuamos de forma distinta cuando estamos en grupo. Copia de la Biblioteca AURZANE (aurzane.com/biblioteca).",
+  "titulo_completo": "Psicología del comportamiento colectivo"
  },
  {
   "fecha": "2026-11-22",
   "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-terapia-interpersonal-grupal-depresion/",
-  "titulo": "Libro abierto: Terapia interpersonal grupal para la depresión"
+  "titulo": "Libro abierto: Terapia interpersonal grupal para la depresión",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-terapia-interpersonal-grupal-depresion.jpg",
+  "desc": "La depresión es una afección importante. Es la principal causa de discapacidad en todo el mundo y puede ser causa de suicidio. En este manual se presenta una versión modificada de la terapia interpers",
+  "titulo_completo": "Terapia interpersonal grupal para la depresión"
  },
  {
   "fecha": "2026-11-22",
   "url": "https://aurzane.com/biblioteca/recientes/oa-W7134041508/",
-  "titulo": "Libro abierto: Manual de detección y actuación ante la explotación sexual infantil y adolescente"
+  "titulo": "Libro abierto: Manual de detección y actuación ante la explotación sexual infantil y adolescente",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/oa-W7134041508.jpg",
+  "desc": "La explotación sexual infantil y adolescente (ESIA) representa una de las formas más graves y menos visibles de violencia sexual. A pesar de su impacto persistente en la salud física, mental y emocion",
+  "titulo_completo": "Manual de detección y actuación ante la explotación sexual infantil y adolescente"
  },
  {
   "fecha": "2026-11-21",
   "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13777642/",
-  "titulo": "Estudio reciente: Understanding health behaviors and resilience during pandemics: a systematic review of ethical, cognitive, and"
+  "titulo": "Estudio reciente: Understanding health behaviors and resilience during pandemics: a systematic review of ethical, cognitive, and",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/pmc-PMC13777642.jpg",
+  "desc": "Purpose Pandemic events such as HIV/AIDS and COVID-19 destabilize not only public health systems but also the philosophical and ethical frameworks through which individuals interpret illness. Health b",
+  "titulo_completo": "Understanding health behaviors and resilience during pandemics: a systematic review of eth"
  },
  {
   "fecha": "2026-11-21",
   "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13787119/",
-  "titulo": "Estudio reciente: The effectiveness of AI-based cognitive behavioral therapy chatbots for anxiety and depression symptoms: a sys"
+  "titulo": "Estudio reciente: The effectiveness of AI-based cognitive behavioral therapy chatbots for anxiety and depression symptoms: a sys",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/pmc-PMC13787119.jpg",
+  "desc": "The effectiveness of AI-based cognitive behavioral therapy chatbots for anxiety and depression symptoms: a systematic review and meta-analysis. Yuan D, Dong P, Zheng X y otros, Frontiers in public hea",
+  "titulo_completo": "The effectiveness of AI-based cognitive behavioral therapy chatbots for anxiety and depres"
  },
  {
   "fecha": "2026-11-20",
   "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13764040/",
-  "titulo": "Estudio reciente: Prevalence of Anxiety Among Medical, Dental, and Nursing Students in Selected Balkan Countries: A Systematic R"
+  "titulo": "Estudio reciente: Prevalence of Anxiety Among Medical, Dental, and Nursing Students in Selected Balkan Countries: A Systematic R",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/pmc-PMC13764040.jpg",
+  "desc": "Background:  Anxiety is common among health science students, but the Balkan region is underrepresented in student mental health research and no regional synthesis exists. This systematic review and m",
+  "titulo_completo": "Prevalence of Anxiety Among Medical, Dental, and Nursing Students in Selected Balkan Count"
  },
  {
   "fecha": "2026-11-20",
   "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13771274/",
-  "titulo": "Estudio reciente: Efficacy of animal-assisted therapy for the relief of dental anxiety: quantitative synthesis of clinical rando"
+  "titulo": "Estudio reciente: Efficacy of animal-assisted therapy for the relief of dental anxiety: quantitative synthesis of clinical rando",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/pmc-PMC13771274.jpg",
+  "desc": "The aim of this systematic review was to comprehensively evaluate the efficacy of animal-assisted therapy (AAT) for alleviating dental anxiety based on clinical randomized controlled trials (RCTs), an",
+  "titulo_completo": "Efficacy of animal-assisted therapy for the relief of dental anxiety: quantitative synthes"
  },
  {
   "fecha": "2026-11-20",
   "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13768738/",
-  "titulo": "Estudio reciente: Global Prevalence of Clinically Significant Insomnia Among Cancer Patients: A Systematic Review and Meta-Analy"
+  "titulo": "Estudio reciente: Global Prevalence of Clinically Significant Insomnia Among Cancer Patients: A Systematic Review and Meta-Analy",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/pmc-PMC13768738.jpg",
+  "desc": "Background Clinically significant insomnia is associated with multiple adverse health outcomes in cancer patients. This study aimed to examine the global prevalence of clinically significant insomnia",
+  "titulo_completo": "Global Prevalence of Clinically Significant Insomnia Among Cancer Patients: A Systematic R"
  },
  {
   "fecha": "2026-11-20",
   "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13772180/",
-  "titulo": "Estudio reciente: Eco-anxiety as a public health imperative: from individual resilience to culturally informed holistic engageme"
+  "titulo": "Estudio reciente: Eco-anxiety as a public health imperative: from individual resilience to culturally informed holistic engageme",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/pmc-PMC13772180.jpg",
+  "desc": "Eco-anxiety has increasingly drawn public health attention. Although often conceptualized as an individual psychological burden, eco-anxiety may also serve as a catalyst for collective action. However",
+  "titulo_completo": "Eco-anxiety as a public health imperative: from individual resilience to culturally inform"
  },
  {
   "fecha": "2026-11-20",
@@ -701,10 +742,5 @@
   "fecha": "2026-11-09",
   "url": "https://mind.aurzane.com/en/wellbeing-test-who-5/",
   "titulo": "Wellbeing test (WHO-5): free online questionnaire"
- },
- {
-  "fecha": "2026-11-09",
-  "url": "https://mind.aurzane.com/en/stress-test-dass-21/",
-  "titulo": "Stress test (DASS-21 stress scale): free online questionnaire"
  }
 ]

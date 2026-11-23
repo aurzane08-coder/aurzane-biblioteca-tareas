@@ -1,5 +1,27 @@
 [
  {
+  "id": "ia-aurzane-bib-psicologia-del-pensamiento",
+  "tipo": "libro",
+  "titulo": "Psicología del pensamiento",
+  "autores": "Fernando Gabucio Cerezo, Josep Maria Domingo Curto, Fanny Lichtenstein Tiviroli y otros",
+  "anio": 2011,
+  "editorial": "Editorial UOC",
+  "url": "https://archive.org/details/aurzane-bib-psicologia-del-pensamiento",
+  "ia": "aurzane-bib-psicologia-del-pensamiento",
+  "pdf": "",
+  "lic": "cc-by-nc-nd",
+  "idioma": "es",
+  "tema": "archive:psicologia",
+  "resumen": "Cómo razonamos, decidimos y resolvemos problemas, y por qué nos equivocamos. Incluye heurísticas, sesgos, razonamiento deductivo e inductivo y creatividad. Copia de la Biblioteca AURZANE (aurzane.com/biblioteca).",
+  "motivo": "Libro de psicología con licencia CC-BY-NC-ND conservado en Internet Archive.",
+  "pdf_origen": "https://archive.org/download/aurzane-bib-psicologia-del-pensamiento/psicologia-del-pensamiento.pdf",
+  "paginas": 340,
+  "portada": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-psicologia-del-pensamiento.jpg",
+  "publicado": "2026-11-23",
+  "nota": 9,
+  "auto": true
+ },
+ {
   "id": "ia-aurzane-bib-conducta-suicida-manual-prevencion-personas-mayores",
   "tipo": "libro",
   "titulo": "Conducta suicida. Manual de prevención en personas mayores que viven en residencias",
