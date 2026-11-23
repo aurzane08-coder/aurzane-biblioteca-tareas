@@ -375,7 +375,7 @@ def indice():
           '<div class="w tx-cuerpo"><div class="tx-rejilla">')
     h += (f'<a class="tx-test" href="{BASE}personality-test-big-five/"><img src="https://mind.aurzane.com/test-de-personalidad/og/test-de-personalidad.jpg" alt="" loading="lazy" width="520" height="280"><div><b>Big Five personality test</b><span>20, 50 or 120 questions · IPIP</span></div></a>')
     h += ''.join(f'<a class="tx-test" href="{BASE}{t["slug"]}/"><img src="{FOTO_T(t, 520)}" alt="" loading="lazy" width="520" height="280"><div><b>{E(t["name"])}</b><span>{len(t["items"])} questions · {E(t["scale"])}</span></div></a>' for t in TESTS)
-    h += '</div><p class="small">Breathing and relaxation exercises are available in Spanish at <a href="https://mind.aurzane.com/ejercicios/" hreflang="es">mind.aurzane.com/ejercicios</a>.</p></div></main>' + FOOT
+    h += '</div><p class="small">Also in English: <a href="https://mind.aurzane.com/en/exercises/">13 guided breathing, relaxation and mindfulness exercises</a> with voice and a timer.</p></div></main>' + FOOT
     return h
 
 
