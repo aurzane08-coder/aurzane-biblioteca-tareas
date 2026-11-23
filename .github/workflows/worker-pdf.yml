@@ -41,7 +41,11 @@ jobs:
         run: |
           U=$(cat archivos/worker/url.txt)
           [ -n "$U" ] || { echo "::error::No se obtuvo la dirección del Worker"; exit 1; }
-          code=$(curl -s -o /dev/null -w '%{http_code}' -H 'Origin: https://aurzane.com' "$U/bib/paquete-tecnico-safer-mundo-libre-danos.pdf" -r 0-0)
+          code=000
+          for i in $(seq 1 20); do   # un subdominio workers.dev recién creado tarda unos minutos en tener certificado
+            code=$(curl -s -o /dev/null -w '%{http_code}' -H 'Origin: https://aurzane.com' "$U/bib/paquete-tecnico-safer-mundo-libre-danos.pdf" -r 0-0 || true)
+            [ "$code" = 206 ] || [ "$code" = 200 ] && break; echo "Intento $i: $code"; sleep 30
+          done
           echo "Prueba con un PDF mudado: HTTP $code"
           mkdir -p publicar/aurzane.com/biblioteca
           echo "{\"url\": \"$U\"}" > publicar/aurzane.com/biblioteca/pdf-proxy.json
