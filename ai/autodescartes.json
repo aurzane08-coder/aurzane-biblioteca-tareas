@@ -1,6 +1,138 @@
 [
  {
   "fecha": "2026-11-23",
+  "id": "ia-aurzane-bib-pedagogias-sensibles-sabores-saberes-cuerpo-educacion",
+  "tipo": "libro",
+  "titulo": "Pedagogías sensibles: Sabores y saberes del cuerpo y la educación",
+  "url": "https://archive.org/details/aurzane-bib-pedagogias-sensibles-sabores-saberes-cuerpo-educacion",
+  "motivo": "La IA le dio 5/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-abuso-explotacion-sexual-adolescentes-violencia-sexual/abuso-explotac"
+  ]
+ },
+ {
+  "fecha": "2026-11-23",
+  "id": "ia-aurzane-bib-nada-nosotros-sin-nosotros-discapacidades-educacion",
+  "tipo": "libro",
+  "titulo": "Nada para nosotros sin nosotros: discapacidades y educación superior; un análisis crítico",
+  "url": "https://archive.org/details/aurzane-bib-nada-nosotros-sin-nosotros-discapacidades-educacion",
+  "motivo": "La IA le dio 6/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-informe-mundial-sobre-salud-mental-transformar/informe-mundial-sobre-"
+  ]
+ },
+ {
+  "fecha": "2026-11-23",
+  "id": "ia-aurzane-bib-jasp-estadistica",
+  "tipo": "libro",
+  "titulo": "Análisis estadístico con JASP: una guía para estudiantes",
+  "url": "https://archive.org/details/aurzane-bib-jasp-estadistica",
+  "motivo": "La IA le dio 4/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-informe-mundial-sobre-salud-mental-transformar/informe-mundial-sobre-"
+  ]
+ },
+ {
+  "fecha": "2026-11-23",
+  "id": "ia-aurzane-bib-conversaciones-libres-ninos-metodo-clinico-piagetiano",
+  "tipo": "libro",
+  "titulo": "Conversaciones libres con los niños : el método clínico piagetiano. Relación entre teoría y método",
+  "url": "https://archive.org/details/aurzane-bib-conversaciones-libres-ninos-metodo-clinico-piagetiano",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 28 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-conversaciones-libres-ninos-metodo-clinico-piagetiano/conversaciones-"
+  ]
+ },
+ {
+  "fecha": "2026-11-23",
+  "id": "ia-aurzane-bib-gran-felicidad-no-pensar-nada-william",
+  "tipo": "libro",
+  "titulo": "La gran felicidad de no pensar en nada. William James y el retorno a la experiencia",
+  "url": "https://archive.org/details/aurzane-bib-gran-felicidad-no-pensar-nada-william",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 14 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-gran-felicidad-no-pensar-nada-william/gran-felicidad-no-pensar-nada-w"
+  ]
+ },
+ {
+  "fecha": "2026-11-23",
+  "id": "ia-aurzane-bib-diversidad-educativa-desarrollo-socioemocional-inteligencia-",
+  "tipo": "libro",
+  "titulo": "La diversidad educativa en el desarrollo socioemocional: inteligencia emocional y altas capacidades",
+  "url": "https://archive.org/details/aurzane-bib-diversidad-educativa-desarrollo-socioemocional-inteligencia-",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 30 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-diversidad-educativa-desarrollo-socioemocional-inteligencia-/diversid"
+  ]
+ },
+ {
+  "fecha": "2026-11-23",
+  "id": "ia-aurzane-bib-escala-kidslife-down-evaluacion-calidad-vida",
+  "tipo": "libro",
+  "titulo": "Escala KidsLife-Down: evaluación de la calidad de vida de niños y adolescentes con síndrome de Down",
+  "url": "https://archive.org/details/aurzane-bib-escala-kidslife-down-evaluacion-calidad-vida",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 41 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-escala-kidslife-down-evaluacion-calidad-vida/escala-kidslife-down-eva"
+  ]
+ },
+ {
+  "fecha": "2026-11-23",
+  "id": "ia-aurzane-bib-psicologia-social-trabajo-relaciones-laborales-septiembre",
+  "tipo": "libro",
+  "titulo": "Psicología social del trabajo y las relaciones laborales, septiembre 2014",
+  "url": "https://archive.org/details/aurzane-bib-psicologia-social-trabajo-relaciones-laborales-septiembre",
+  "motivo": "No tiene un PDF libre que se pueda descargar",
+  "probados": [
+   "HTTP Error 403: Forbidden https://archive.org/download/aurzane-bib-psicologia-social-trabajo-relaciones-laborales-septiembre/psicologia-"
+  ]
+ },
+ {
+  "fecha": "2026-11-23",
+  "id": "ia-aurzane-bib-valor-humanizar-palabra-lenguaje-etica-cuidados",
+  "tipo": "libro",
+  "titulo": "El valor de humanizar la palabra: lenguaje, ética y cuidados en contextos médico-sanitarios",
+  "url": "https://archive.org/details/aurzane-bib-valor-humanizar-palabra-lenguaje-etica-cuidados",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 21 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-valor-humanizar-palabra-lenguaje-etica-cuidados/valor-humanizar-palab"
+  ]
+ },
+ {
+  "fecha": "2026-11-23",
+  "id": "ia-aurzane-bib-salud-mental-psicologia",
+  "tipo": "libro",
+  "titulo": "Salud mental y psicología",
+  "url": "https://archive.org/details/aurzane-bib-salud-mental-psicologia",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 27 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-salud-mental-psicologia/salud-mental-psicologia.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-23",
+  "id": "ia-aurzane-bib-estereotipos-sobre-envejecimiento-muestra-universitaria-cien",
+  "tipo": "libro",
+  "titulo": "Estereotipos sobre el envejecimiento en una muestra universitaria de Ciencias de la Salud",
+  "url": "https://archive.org/details/aurzane-bib-estereotipos-sobre-envejecimiento-muestra-universitaria-cien",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 16 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-estereotipos-sobre-envejecimiento-muestra-universitaria-cien/estereot"
+  ]
+ },
+ {
+  "fecha": "2026-11-23",
+  "id": "ia-aurzane-bib-prevencion-suicidio-recurso-profesionales-medios-comunicacio",
+  "tipo": "libro",
+  "titulo": "Prevención del suicidio: un recurso para profesionales de los medios de comunicación. Actualización del 2023",
+  "url": "https://archive.org/details/aurzane-bib-prevencion-suicidio-recurso-profesionales-medios-comunicacio",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 39 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-prevencion-suicidio-recurso-profesionales-medios-comunicacio/prevenci"
+  ]
+ },
+ {
+  "fecha": "2026-11-23",
   "id": "ia-aurzane-bib-conflictos-violencias-emociones-ambito-educativo",
   "tipo": "libro",
   "titulo": "Conflictos, violencias y emociones en el ámbito educativo",
@@ -3001,101 +3133,5 @@
   "titulo": "Después corrieron las lágrimas, vinieron los besos delirantes, pero calmantes y dulces, y el cariño tomó forma resignada.",
   "url": "https://aurzane.com/biblioteca/libro/el-cisne-de-vilamorta.html",
   "motivo": "Gemini le dio 3/10: no tiene fuerza suficiente para redes"
- },
- {
-  "fecha": "2026-11-08",
-  "id": "cita-310153a555",
-  "tipo": "cita",
-  "titulo": "Lo demás era un delirio, una convulsión, una crisis pasajera, sufrida en horas que el alma amante no quiere solitarias.",
-  "url": "https://aurzane.com/biblioteca/libro/el-cisne-de-vilamorta.html",
-  "motivo": "Gemini le dio 6/10: no tiene fuerza suficiente para redes"
- },
- {
-  "fecha": "2026-11-08",
-  "id": "cita-07436d1614",
-  "tipo": "cita",
-  "titulo": "Eres fuerte, eres docta, y, sin embargo, no desconoces la virtud del donaire, por la cual se esparce el alma.",
-  "url": "https://aurzane.com/biblioteca/libro/dulce-dueno.html",
-  "motivo": "Gemini le dio 7/10: no tiene fuerza suficiente para redes"
- },
- {
-  "fecha": "2026-11-08",
-  "id": "cita-58ff6b7227",
-  "tipo": "cita",
-  "titulo": "Á fuer de legítima apasionada, dolorida aún por el desamor, siempre fiaba en los ardides de su corazón, en el contagio de su ternura.",
-  "url": "https://aurzane.com/biblioteca/libro/la-quimera.html",
-  "motivo": "Gemini le dio 2/10: no tiene fuerza suficiente para redes"
- },
- {
-  "fecha": "2026-11-08",
-  "id": "cita-3ae0f1c29b",
-  "tipo": "cita",
-  "titulo": "¡Infeliz, qué más quisieras tú que poder vender el alma!",
-  "url": "https://aurzane.com/biblioteca/libro/doctor-sutilis.html",
-  "motivo": "Gemini le dio 3/10: no tiene fuerza suficiente para redes"
- },
- {
-  "fecha": "2026-11-08",
-  "id": "cita-691654458c",
-  "tipo": "cita",
-  "titulo": "Sí, sí, disparatado era todo aquel pensar; pero, ¡cómo llenaba el alma!",
-  "url": "https://aurzane.com/biblioteca/libro/su-unico-hijo.html",
-  "motivo": "Gemini le dio 7/10: no tiene fuerza suficiente para redes"
- },
- {
-  "fecha": "2026-11-08",
-  "id": "cita-93e52671f0",
-  "tipo": "cita",
-  "titulo": "Sí, son ataques, estallidos de amor, de amor lancinante, accesos que le sobrecogen en cualquier parte, con la amorosa imagen chorreando vida.",
-  "url": "https://aurzane.com/biblioteca/libro/amor-y-pedagogia.html",
-  "motivo": "Gemini le dio 5/10: no tiene fuerza suficiente para redes"
- },
- {
-  "fecha": "2026-11-08",
-  "id": "cita-590e117963",
-  "tipo": "cita",
-  "titulo": "Todo cuanto del mundo conocía, de un orden distinto radicalmente, parecíale una pesada broma del destino.",
-  "url": "https://aurzane.com/biblioteca/libro/halma.html",
-  "motivo": "Gemini le dio 6/10: no tiene fuerza suficiente para redes"
- },
- {
-  "fecha": "2026-11-08",
-  "id": "cita-c0bb88316b",
-  "tipo": "cita",
-  "titulo": "Una faja encarnada parecía separar el lugareño del hidalgo, o más bien empalmar las dos mitades.",
-  "url": "https://aurzane.com/biblioteca/libro/halma.html",
-  "motivo": "Gemini le dio 2/10: no tiene fuerza suficiente para redes"
- },
- {
-  "fecha": "2026-11-08",
-  "id": "cita-135e5a8d3d",
-  "tipo": "cita",
-  "titulo": "Dispón bien tu alma para que otra vez no vuelvas a verte en tales apreturas.",
-  "url": "https://aurzane.com/biblioteca/libro/nazarin.html",
-  "motivo": "Gemini le dio 3/10: no tiene fuerza suficiente para redes"
- },
- {
-  "fecha": "2026-11-08",
-  "id": "cita-afb2ad7d71",
-  "tipo": "cita",
-  "titulo": "¡Oh! hija mía, este gozo de olvidar la calumnia y perdonar á los calumniadores, no es permitido sino al alma del cristiano.",
-  "url": "https://aurzane.com/biblioteca/libro/gloria-galdos.html",
-  "motivo": "Gemini le dio 3/10: no tiene fuerza suficiente para redes"
- },
- {
-  "fecha": "2026-11-08",
-  "id": "cita-29705d21d8",
-  "tipo": "cita",
-  "titulo": "Rompiendo absolutamente con el mundo, nada puedes temer, y la absoluta disconformidad en ideas que hay entre tí y tu esposo, te da la completa libertad interior",
-  "url": "https://aurzane.com/biblioteca/libro/la-familia-de-leon-roch.html",
-  "motivo": "Gemini le dio 4/10: no tiene fuerza suficiente para redes"
- },
- {
-  "fecha": "2026-11-08",
-  "id": "cita-ff4b65e4b2",
-  "tipo": "cita",
-  "titulo": "Era absolutamente indispensable quitar de en medio la voraz langosta de prestamistas, que en poco tiempo habrían devorado todo.",
-  "url": "https://aurzane.com/biblioteca/libro/lo-prohibido.html",
-  "motivo": "Gemini le dio 2/10: no tiene fuerza suficiente para redes"
  }
 ]

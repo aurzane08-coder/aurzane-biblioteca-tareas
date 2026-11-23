@@ -1,5 +1,30 @@
 [
  {
+  "id": "cur-de4f194c92",
+  "tipo": "curiosidad",
+  "titulo": "¿Cuántas personas con cáncer sufren insomnio?",
+  "dato": "Una revisión global reciente muestra que el insomnio clínicamente significativo afecta a un porcentaje muy elevado de pacientes con cáncer.",
+  "resumen": "Una revisión global reciente muestra que el insomnio clínicamente significativo afecta a un porcentaje muy elevado de pacientes con cáncer. Un reciente metaanálisis publicado en la revista Brain and Behavior ha analizado la presencia de este problema a nivel mundial. Los datos reflejan que las dificultades graves para dormir son una realidad muy común durante el proceso oncológico.",
+  "fuente": "Brain and Behavior",
+  "hashtags": [
+   "psicologia",
+   "salud",
+   "aurzane",
+   "divulgacion"
+  ],
+  "fuente_id": "pmc-PMC13768738",
+  "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13768738/",
+  "portada": "https://aurzane.com/biblioteca/recientes/portadas/pmc-PMC13768738.jpg",
+  "tema": "curiosidad",
+  "idioma": "es",
+  "autores": "Brain and Behavior",
+  "motivo": "Guion escrito por Gemini a partir de un estudio que aprobaste. Revisa que el dato sea correcto antes de aprobar.",
+  "verificada": "2026-11-23",
+  "fecha": "2026-11-23",
+  "auto": true,
+  "verificacion": "El texto es correcto y prudente al evitar porcentajes exactos exagerados, respaldándose en un metaanálisis real."
+ },
+ {
   "id": "cur-7aaf6dee79",
   "tipo": "curiosidad",
   "titulo": "¿Sabías que tu cara controla lo que sientes?",

@@ -144,7 +144,7 @@
   0
  ],
  "tipo:libro": [
-  71,
+  81,
   9
  ],
  "Gambling Behavior and Treatments": [
@@ -312,7 +312,7 @@
   0
  ],
  "archive:psicologia": [
-  41,
+  51,
   0
  ],
  "ed:The Open University": [
@@ -612,11 +612,11 @@
   1
  ],
  "ed:OPS": [
-  2,
-  1
+  3,
+  2
  ],
  "ed:Editorial UOC": [
-  7,
+  10,
   2
  ],
  "ed:Universidad Andina Simón Bolívar, Sede Ecuador; Corporación Editora Nacional": [
@@ -632,8 +632,8 @@
   0
  ],
  "ed:Pontificia Universidad Católica del Perú. Fondo Editorial": [
-  0,
-  1
+  1,
+  3
  ],
  "ed:Fondo Editorial Universidad Católica Luis Amigó": [
   0,
@@ -684,7 +684,7 @@
   1
  ],
  "ed:Quito, EC: Universidad Andina Simón Bolívar, Sede Ecuador": [
-  1,
+  2,
   0
  ],
  "ed:Red Universitaria de Investigación Innovación Educativa (REUNI+D)": [
@@ -694,5 +694,53 @@
  "ed:Nosótrica Ediciones": [
   0,
   1
+ ],
+ "ed:Ministerio de Derechos Sociales, Consumo y Agenda 2030": [
+  0,
+  1
+ ],
+ "ed:Universidad de Antioquia, Grupo de Investigación Psyconex de la Facultad de Ciencias Sociales y Humanas": [
+  0,
+  1
+ ],
+ "ed:Universitat de València": [
+  0,
+  1
+ ],
+ "ed:Universitat Oberta de Catalunya": [
+  0,
+  1
+ ],
+ "ed:Universidad de Salamanca (España). Instituto Universitario de Integración en la Comunidad": [
+  0,
+  1
+ ],
+ "ed:Dykinson": [
+  0,
+  1
+ ],
+ "ed:UOC": [
+  1,
+  1
+ ],
+ "ed:Quito, EC: INÉDITA, Programa Nacional de Financiamiento para Investigación / Universidad Andina Simón Bolívar, Sede Ecuador": [
+  0,
+  1
+ ],
+ "ed:Instituto Aragonés de los Servicios Sociales, Gobierno de Aragón": [
+  1,
+  0
+ ],
+ "ed:Edicions de la Universitat de Barcelona": [
+  0,
+  1
+ ],
+ "ed:Egregius": [
+  1,
+  0
+ ],
+ "ed:Asociación de Psicopatología y Psicoanálisis de Sevilla": [
+  1,
+  0
  ]
 }
