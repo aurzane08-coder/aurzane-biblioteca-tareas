@@ -144,7 +144,7 @@
   0
  ],
  "tipo:libro": [
-  60,
+  71,
   9
  ],
  "Gambling Behavior and Treatments": [
@@ -312,7 +312,7 @@
   0
  ],
  "archive:psicologia": [
-  30,
+  41,
   0
  ],
  "ed:The Open University": [
@@ -577,7 +577,7 @@
  ],
  "ed:Asociación The Conversation España": [
   0,
-  1
+  2
  ],
  "ed:Investiguem": [
   0,
@@ -612,12 +612,12 @@
   1
  ],
  "ed:OPS": [
-  1,
-  0
+  2,
+  1
  ],
  "ed:Editorial UOC": [
-  4,
-  1
+  7,
+  2
  ],
  "ed:Universidad Andina Simón Bolívar, Sede Ecuador; Corporación Editora Nacional": [
   0,
@@ -632,6 +632,66 @@
   0
  ],
  "ed:Pontificia Universidad Católica del Perú. Fondo Editorial": [
+  0,
+  1
+ ],
+ "ed:Fondo Editorial Universidad Católica Luis Amigó": [
+  0,
+  1
+ ],
+ "ed:Pontificia Universidad Católica del Perú. Instituto de Democracia y Derechos Humanos": [
+  0,
+  1
+ ],
+ "ed:Toluca, MX: Universidad Autónoma del Estado de México": [
+  0,
+  1
+ ],
+ "ed:Publicacions de la Universitat Jaume I": [
+  0,
+  1
+ ],
+ "ed:Agua Clara": [
+  1,
+  0
+ ],
+ "ed:Ministerio del Interior, Secretaría General Técnica": [
+  1,
+  0
+ ],
+ "ed:Thémata": [
+  0,
+  1
+ ],
+ "ed:Udelar. FP": [
+  1,
+  0
+ ],
+ "ed:Aula Magna. McGraw Hill": [
+  1,
+  0
+ ],
+ "ed:UNICEF España": [
+  1,
+  0
+ ],
+ "ed:Quito, EC: Universidad Andina Simón Bolívar, Sede Ecuador / Fundación Alianza en el Desarrollo / MISEREOR / Institutos de Estudios Ecologistas del Tercer Mundo": [
+  1,
+  0
+ ],
+ "ed:Universitat de Barcelona. IDP & Ediciones Octaedro": [
+  0,
+  1
+ ],
+ "ed:Quito, EC: Universidad Andina Simón Bolívar, Sede Ecuador": [
+  1,
+  0
+ ],
+ "ed:Red Universitaria de Investigación Innovación Educativa (REUNI+D)": [
+  0,
+  1
+ ],
+ "ed:Nosótrica Ediciones": [
   0,
   1
  ]

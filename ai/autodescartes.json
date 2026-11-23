@@ -1,5 +1,124 @@
 [
  {
+  "fecha": "2026-11-23",
+  "id": "ia-aurzane-bib-conflictos-violencias-emociones-ambito-educativo",
+  "tipo": "libro",
+  "titulo": "Conflictos, violencias y emociones en el ámbito educativo",
+  "url": "https://archive.org/details/aurzane-bib-conflictos-violencias-emociones-ambito-educativo",
+  "motivo": "La IA le dio 6/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-procesos-interoceptivos-propioceptivos-autistas-adultos/procesos-inte"
+  ]
+ },
+ {
+  "fecha": "2026-11-23",
+  "id": "ia-aurzane-bib-historias-vida-educacion-sujeto-dialogo-experiencia",
+  "tipo": "libro",
+  "titulo": "Historias de vida en educación: sujeto, diálogo, experiencia",
+  "url": "https://archive.org/details/aurzane-bib-historias-vida-educacion-sujeto-dialogo-experiencia",
+  "motivo": "La IA le dio 3/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-procesos-interoceptivos-propioceptivos-autistas-adultos/procesos-inte"
+  ]
+ },
+ {
+  "fecha": "2026-11-23",
+  "id": "ia-aurzane-bib-relatos-personales-como-objetos-frontera-contextos",
+  "tipo": "libro",
+  "titulo": "Relatos personales como objetos de frontera en contextos educativos",
+  "url": "https://archive.org/details/aurzane-bib-relatos-personales-como-objetos-frontera-contextos",
+  "motivo": "La IA le dio 4/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-crecer-cielo-abierto-salud-colectiva-psicosocial/crecer-cielo-abierto"
+  ]
+ },
+ {
+  "fecha": "2026-11-23",
+  "id": "ia-aurzane-bib-locura-realidad-lectura-psicoantropologica-quijote",
+  "tipo": "libro",
+  "titulo": "Locura y realidad. Lectura psicoantropológica del Quijote",
+  "url": "https://archive.org/details/aurzane-bib-locura-realidad-lectura-psicoantropologica-quijote",
+  "motivo": "La IA le dio 6/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-estudio-comparativo-drogodependencia-medio-penitenciario-per/estudio-"
+  ]
+ },
+ {
+  "fecha": "2026-11-23",
+  "id": "ia-aurzane-bib-dificultades-aprendizaje-educacion-infantil",
+  "tipo": "libro",
+  "titulo": "Dificultades de aprendizaje en la Educación Infantil",
+  "url": "https://archive.org/details/aurzane-bib-dificultades-aprendizaje-educacion-infantil",
+  "motivo": "La IA le dio 5/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-marco-competencias-resultados-salud-bienestar-adolescencia/marco-comp"
+  ]
+ },
+ {
+  "fecha": "2026-11-23",
+  "id": "ia-aurzane-bib-abuso-influencia-comunicacion-publica-letra-pequena",
+  "tipo": "libro",
+  "titulo": "Abuso de influencia en la comunicación pública: letra pequeña y otros engaños",
+  "url": "https://archive.org/details/aurzane-bib-abuso-influencia-comunicacion-publica-letra-pequena",
+  "motivo": "La IA le dio 4/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-comunicacion-no-verbal-relacion-medico-paciente/comunicacion-no-verba"
+  ]
+ },
+ {
+  "fecha": "2026-11-23",
+  "id": "ia-aurzane-bib-poder-terapeutico-centrarse-soluciones-no-problemas",
+  "tipo": "libro",
+  "titulo": "El poder terapéutico de centrarse en las soluciones y no en los problemas",
+  "url": "https://archive.org/details/aurzane-bib-poder-terapeutico-centrarse-soluciones-no-problemas",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 3 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-poder-terapeutico-centrarse-soluciones-no-problemas/poder-terapeutico"
+  ]
+ },
+ {
+  "fecha": "2026-11-23",
+  "id": "ia-aurzane-bib-victimizacion-secundaria-efectos-psicosociales-legales-perso",
+  "tipo": "libro",
+  "titulo": "Victimización secundaria: efectos psicosociales y legales en personas que presentan procesos judiciales prolongados",
+  "url": "https://archive.org/details/aurzane-bib-victimizacion-secundaria-efectos-psicosociales-legales-perso",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 26 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-victimizacion-secundaria-efectos-psicosociales-legales-perso/victimiz"
+  ]
+ },
+ {
+  "fecha": "2026-11-23",
+  "id": "ia-aurzane-bib-mirada-impactos-psicosociales-personas-refugiadas-migrantes",
+  "tipo": "libro",
+  "titulo": "Una mirada a los impactos psicosociales en personas refugiadas y migrantes venezolanas alojadas en albergues en Lima (Perú). Diagnóstico rápido.",
+  "url": "https://archive.org/details/aurzane-bib-mirada-impactos-psicosociales-personas-refugiadas-migrantes",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 48 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-mirada-impactos-psicosociales-personas-refugiadas-migrantes/mirada-im"
+  ]
+ },
+ {
+  "fecha": "2026-11-23",
+  "id": "ia-aurzane-bib-familias-tejedoras-futuro-propuesta-investigacion-intervenci",
+  "tipo": "libro",
+  "titulo": "Familias tejedoras de futuro : propuesta de investigación-intervención en contextos de posconflicto y paz",
+  "url": "https://archive.org/details/aurzane-bib-familias-tejedoras-futuro-propuesta-investigacion-intervenci",
+  "motivo": "No tiene un PDF libre que se pueda descargar",
+  "probados": []
+ },
+ {
+  "fecha": "2026-11-23",
+  "id": "ia-aurzane-bib-intervenciones-recomendadas-salud-mental-apoyo-psicosocial",
+  "tipo": "libro",
+  "titulo": "Intervenciones recomendadas en salud mental y apoyo psicosocial durante la pandemia de COVID-19, junio de 2020",
+  "url": "https://archive.org/details/aurzane-bib-intervenciones-recomendadas-salud-mental-apoyo-psicosocial",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 17 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-intervenciones-recomendadas-salud-mental-apoyo-psicosocial/intervenci"
+  ]
+ },
+ {
   "fecha": "2026-11-22",
   "id": "ia-aurzane-bib-aprendizaje-cultura-desarrollo-aproximacion-interdisciplinar",
   "tipo": "libro",
@@ -2978,105 +3097,5 @@
   "titulo": "Era absolutamente indispensable quitar de en medio la voraz langosta de prestamistas, que en poco tiempo habrían devorado todo.",
   "url": "https://aurzane.com/biblioteca/libro/lo-prohibido.html",
   "motivo": "Gemini le dio 2/10: no tiene fuerza suficiente para redes"
- },
- {
-  "fecha": "2026-11-08",
-  "id": "cita-66bb3839ee",
-  "tipo": "cita",
-  "titulo": "¡El conocimiento! ahí tienes la vida, la verdadera vida, amigo vientecillo.",
-  "url": "https://aurzane.com/biblioteca/libro/torquemada-en-la-hoguera.html",
-  "motivo": "Gemini le dio 5/10: no tiene fuerza suficiente para redes"
- },
- {
-  "fecha": "2026-11-08",
-  "id": "cita-b2aea059a0",
-  "tipo": "cita",
-  "titulo": "El instinto de desarrollo le impulsaba incesantemente a los ejercicios corporales, y a ensayar y aprender actos de trabajosa energía.",
-  "url": "https://aurzane.com/biblioteca/libro/la-de-bringas.html",
-  "motivo": "Gemini le dio 3/10: no tiene fuerza suficiente para redes"
- },
- {
-  "fecha": "2026-11-08",
-  "id": "cita-35f9a3b11d",
-  "tipo": "cita",
-  "titulo": "Juan presentía que su corazón y su pensamiento buscaban vida más fuerte, más llena, más poética, más ideal.",
-  "url": "https://aurzane.com/biblioteca/libro/el-senor-y-lo-demas-son-cuentos.html",
-  "motivo": "Gemini le dio 2/10: no tiene fuerza suficiente para redes"
- },
- {
-  "fecha": "2026-11-08",
-  "id": "ia-httpsssarpublishers.comssarjahss",
-  "tipo": "libro",
-  "titulo": "EFFECT OF MENTAL IMAGERY AND SELF-TALK TRAINING ON THE ATTENTIONAL READINESS OF ATHLETES IN THE UNIVERSITY OF PORT HARCOURT",
-  "url": "https://archive.org/details/httpsssarpublishers.comssarjahss",
-  "motivo": "Dice ser un libro pero el PDF solo tiene 7 páginas (es un capítulo, artículo o resumen)",
-  "probados": [
-   "200 application/pdf https://archive.org/download/httpsssarpublishers.comssarjahss/189-2024-SSARJAHSS.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-07",
-  "id": "oa-W7225192117",
-  "tipo": "libro",
-  "titulo": "Bouncing Forward",
-  "url": "https://doi.org/10.1515/9783111698915",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": []
- },
- {
-  "fecha": "2026-11-07",
-  "id": "oa-W7211937226",
-  "tipo": "libro",
-  "titulo": "Relatives of People with Disabilities",
-  "url": "https://directory.doabooks.org/handle/20.500.12854/183336",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": []
- },
- {
-  "fecha": "2026-11-07",
-  "id": "ia-musica-conciencia-y-autorregulacion-khem-qai",
-  "tipo": "libro",
-  "titulo": "Musica, Conciencia Y Autorregulacion KHEM & QAI",
-  "url": "https://archive.org/details/musica-conciencia-y-autorregulacion-khem-qai",
-  "motivo": "Dice ser un libro pero el PDF solo tiene 4 páginas (es un capítulo, artículo o resumen)",
-  "probados": [
-   "200 application/pdf https://archive.org/download/musica-conciencia-y-autorregulacion-khem-qai/Musica%2C%20Conciencia%20y%20Autorre"
-  ]
- },
- {
-  "fecha": "2026-11-07",
-  "id": "oa-W7213301067",
-  "tipo": "libro",
-  "titulo": "Quality of Life Across the Adult Lifespan [Working Title]",
-  "url": "https://doi.org/10.5772/intechopen.1014434",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": []
- },
- {
-  "fecha": "2026-11-07",
-  "id": "oa-W7214164410",
-  "tipo": "libro",
-  "titulo": "Social Norms - Foundations, Dynamics, and Contemporary Transformations [Working Title]",
-  "url": "https://doi.org/10.5772/intechopen.1013905",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": []
- },
- {
-  "fecha": "2026-11-07",
-  "id": "oa-W7214939298",
-  "tipo": "libro",
-  "titulo": "Global Perspectives on Child Abuse and Neglect - Research, Policy, and Practice [Working Title]",
-  "url": "https://doi.org/10.5772/intechopen.1016537",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": []
- },
- {
-  "fecha": "2026-11-07",
-  "id": "oa-W7211896839",
-  "tipo": "libro",
-  "titulo": "The Paradox of International Sign",
-  "url": "https://library.oapen.org/handle/20.500.12657/117635",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": []
  }
 ]

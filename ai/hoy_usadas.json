@@ -14,7 +14,8 @@
   "fw-ce64b5dcbe",
   "fw-aacd892cfb",
   "fw-469a9bf497",
-  "cita-6184ed6ca8"
+  "cita-6184ed6ca8",
+  "fw-90c0c1c785"
  ],
  "dias": {
   "2026-11-08": {
@@ -444,6 +445,35 @@
    "musica": {
     "url": "https://aurzane.com/marketing/musica/875005.mp3",
     "credito": "«look up», This Public Life (Jamendo), CC BY-SA"
+   }
+  },
+  "2026-11-23": {
+   "fecha": "2026-11-23",
+   "frase": {
+    "texto": "No quiero pensar porque no quiero que el dolor del corazón se una al dolor del pensamiento.",
+    "autor": "Emilio Castelar",
+    "obra": "",
+    "url": "https://aurzane.com/frases/#fw-90c0c1c785",
+    "fuente": "Proverbia.net"
+   },
+   "curiosidad": {
+    "titulo": "¿Por qué tu ansiedad te engaña en el peor momento?",
+    "texto": "Tu cerebro confunde estrés con peligro real por un sesgo evolutivo. Según la Asociación Americana de Psicología, la amígdala activa la respuesta de lucha o huida ante amenazas abstractas igual que ante depredadores físicos. Esto genera síntomas intensos aunque no corras peligro real.",
+    "fuente": "APA, 2020",
+    "url": "https://mind.aurzane.com/"
+   },
+   "ejercicio": {
+    "titulo": "Coherencia cardiaca guiada",
+    "url": "https://mind.aurzane.com/ejercicios/coherencia-cardiaca/"
+   },
+   "test": {
+    "titulo": "Test de bienestar emocional WHO-5 gratis",
+    "url": "https://live.aurzane.com/test-de-bienestar/"
+   },
+   "mas_frases": true,
+   "musica": {
+    "url": "https://aurzane.com/marketing/musica/1241085.mp3",
+    "credito": "«Inner parts», The Dream Pop Project (Jamendo), CC BY"
    }
   }
  }
