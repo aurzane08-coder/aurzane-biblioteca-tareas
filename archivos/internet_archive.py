@@ -66,8 +66,9 @@ for ruta, tam, dias in filas:
     h = hecho.get(ruta)
     if h and h[1] == 'subido':
         ok, cors = comprobar(h[2], ruta, tam)
-        if ok and (cors or ruta.startswith('marketing/')): para_quitar.append(ruta); h[1] = 'movido'
-        elif ok and not cors: sin_cors += 1
+        # archive.org no manda CORS: los lectores de la web (biblioteca/leer.js y las fichas de recientes) usan entonces el lector de archive.org
+        if ok: para_quitar.append(ruta); h[1] = 'movido'
+        if ok and not cors: sin_cors += 1
 open('quitar.txt', 'w').write(''.join(r + '\n' for r in para_quitar))   # se escribe ya, por si la subida se alarga
 print(f'Comprobados: listos para quitar del servidor {len(para_quitar)}, sin CORS {sin_cors}.', flush=True)
 # 2) subir un lote nuevo, con tiempo tasado para que siempre quede margen para quitar lo comprobado
