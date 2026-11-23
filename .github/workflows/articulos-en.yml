@@ -3,7 +3,7 @@ name: Artículos en inglés
 # y los vuelve a generar si cambia su versión española. Cada día y al cambiar la lista o el programa.
 on:
   schedule:
-    - cron: '17 4 * * *'
+    - cron: '17 9 * * *'   # después de que se renueve el cupo diario gratuito de Gemini (08:00 UTC)
   push:
     paths: ['articulos_en/lista.txt', 'articulos_en/traducir.py', '.github/workflows/articulos-en.yml']
   workflow_dispatch:
