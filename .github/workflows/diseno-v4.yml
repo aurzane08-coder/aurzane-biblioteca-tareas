@@ -38,7 +38,8 @@ jobs:
           if [ -n "$SG_PASS" ]; then ssh-keygen -p -P "$SG_PASS" -N "" -f ~/.ssh/id >/dev/null; fi
           SSH="ssh -i $HOME/.ssh/id -p ${SG_PORT:-18765} -o StrictHostKeyChecking=accept-new"
           FECHA=$(date +%Y%m%d-%H%M); mkdir -p /tmp/sv
-          DOMS=$($SSH $SG_USER@$SG_HOST 'cd www && for d in *; do case "$d" in aurzane.com|*.aurzane.com) [ -d "$d/public_html" ] && echo "$d";; esac; done')
+          # los seis sitios, uno a uno (el listado con comodín solo devolvía aurzane.com)
+          DOMS=$($SSH $SG_USER@$SG_HOST 'for d in aurzane.com mind.aurzane.com nexus.aurzane.com live.aurzane.com learn.aurzane.com build.aurzane.com ovp.aurzane.com; do [ -d ~/www/$d/public_html ] && echo $d; done; ls -la ~/www | head -30 >&2')
           echo "Dominios: $DOMS"
           for d in $DOMS; do
             mkdir -p /tmp/sv/$d
