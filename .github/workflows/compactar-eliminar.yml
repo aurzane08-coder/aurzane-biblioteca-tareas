@@ -1,7 +1,7 @@
 name: Compactar carpetas eliminar
 # Una sola papelera para toda la web (pedido de Adrián, 23/11/2026): www/eliminar/ en SiteGround.
 # 1. Lo que cualquier proceso deja en la carpeta eliminar de un mundo (www/<dominio>/eliminar/...) se mueve a www/eliminar/<dominio>/.
-# 2. Cada carpeta con más de 6 horas se guarda en un solo archivo comprimido www/eliminar/comprimido/<dominio>-<nombre>.tar.gz.
+# 2. Cada carpeta con más de 2 horas se guarda en un solo archivo comprimido www/eliminar/comprimido/<dominio>-<nombre>.tar.gz.
 #    Solo después de comprobar que el comprimido tiene exactamente los mismos archivos se quitan los sueltos.
 #    Para recuperar algo: tar -xzf <archivo>.tar.gz
 # 3. Los comprimidos con más de 30 días se borran solos (autorizado por Adrián el 23/11/2026). Fuera de www/eliminar/ no se borra nada.
@@ -65,11 +65,12 @@ jobs:
             fi
           }
           for dom in $(find "$P" -mindepth 1 -maxdepth 1 -type d ! -name comprimido -name '*.*' -printf '%f\n'); do   # carpetas de cada dominio
-            find "$P/$dom" -mindepth 1 -maxdepth 1 -mmin +360 -printf '%f\n' | while read -r n; do comp "$P/$dom" "$n" "$dom-"; done
+            find "$P/$dom" -mindepth 1 -maxdepth 1 -mmin +120 -printf '%f\n' | while read -r n; do comp "$P/$dom" "$n" "$dom-"; done
             rmdir "$P/$dom" 2>/dev/null
           done
-          find "$P" -mindepth 1 -maxdepth 1 -type d ! -name comprimido ! -name '*.*' -mmin +360 -printf '%f\n' | while read -r n; do comp "$P" "$n" ""; done
+          find "$P" -mindepth 1 -maxdepth 1 -type d ! -name comprimido ! -name '*.*' -mmin +120 -printf '%f\n' | while read -r n; do comp "$P" "$n" ""; done
           # 3. limpieza: comprimidos de más de 30 días
           find "$P/comprimido" -maxdepth 1 -type f -name '*.tar.gz' -mtime +30 -print -delete | sed 's/^/  borrado (más de 30 días): /'
+          echo "Lo que más ocupa en la papelera:"; du -sh "$P"/*/* "$P"/* 2>/dev/null | sort -rh | head -8 | sed 's/^/  /'
           echo "Papelera: $(du -sh "$P" | cut -f1), $(find "$P" -type f | wc -l) archivos · después: $(du -sh ~/ 2>/dev/null | cut -f1)"
           FIN
