@@ -246,6 +246,8 @@ for _f in sorted(os.listdir(DATOS)):
             _usadas.add(u['id']); _n_casan += 1
             if cs: u['carreras'], u['nivel'] = cs, 'programas'
             u['web'] = u['web'] or x.get('web', '')
+            if x.get('tipo'): u['tipo_raw'] = x['tipo']   # el registro oficial manda sobre el dato antiguo (p. ej. la Católica es privada)
+            if x.get('tipo_ies'): u['tipo_ies'] = x['tipo_ies']
             u['ciudad'] = u['ciudad'] or x.get('ciudad', ''); u['region'] = u['region'] or x.get('region', '')
             for k2, v2 in (x.get('extra') or {}).items():
                 if v2 and not u['extra'].get(k2): u['extra'][k2] = v2
