@@ -47,18 +47,24 @@
     try { d.cookie = CK + '=' + t + ';path=/;max-age=31536000;SameSite=Lax' + (/aurzane\.com$/.test(location.hostname) ? ';domain=.aurzane.com' : ''); } catch (e) {}
     try { w.localStorage.setItem('aurzane-tema', t); } catch (e) {}
   }
-  var t = leer();
-  try { w.localStorage.setItem('aurzane-tema', t); } catch (e) {}
+  // paneles internos (administración, colegios, OVP): se diseñaron en oscuro y en claro el texto no se leía (23/11/2026).
+  // Van siempre en oscuro, sin cambiar la elección de tema del resto de la web.
+  var panel = /^\/(admin[^/]*\.html|colegio\.html|panel\/|colegios\/)/.test(location.pathname);
+  var t = panel ? 'oscuro' : leer();
+  if (!panel) try { w.localStorage.setItem('aurzane-tema', t); } catch (e) {}
   if (t === 'oscuro') html.setAttribute('data-tema', 'oscuro'); else html.removeAttribute('data-tema');
   html.classList.add('az-v4');
   // v4 tiene una sola identidad (verde y champán): las paletas del diseño anterior que alguien eligiera (grafito, púrpura…) ya no se aplican
   function paleta() { var c = html.className, n = c.replace(/\bpaleta-(?!dorado\b)[a-z]+\b/g, '').replace(/\s+/g, ' ').trim(); if (!/\bpaleta-dorado\b/.test(n)) n += ' paleta-dorado'; if (n !== c) html.className = n; }
   paleta(); if (w.MutationObserver) new MutationObserver(paleta).observe(html, { attributes: true, attributeFilter: ['class'] });
   w.AurzaneTema = { actual: function () { return html.getAttribute('data-tema') === 'oscuro' ? 'oscuro' : 'claro'; },
-    poner: function (n) { if (n === 'oscuro') html.setAttribute('data-tema', 'oscuro'); else html.removeAttribute('data-tema'); },
+    poner: function (n) { if (n === 'oscuro' || panel) html.setAttribute('data-tema', 'oscuro'); else html.removeAttribute('data-tema'); },
     alternar: function () { this.poner(this.actual() === 'oscuro' ? 'claro' : 'oscuro'); } };
-  if (w.MutationObserver) new MutationObserver(function () { var n = w.AurzaneTema.actual(); if (n !== leer()) guardar(n); })
-    .observe(html, { attributes: true, attributeFilter: ['data-tema'] });
+  if (w.MutationObserver) new MutationObserver(function () {
+    if (panel) { if (html.getAttribute('data-tema') !== 'oscuro') html.setAttribute('data-tema', 'oscuro'); html.classList.remove('az-claro'); return; }
+    var n = w.AurzaneTema.actual(); if (n !== leer()) guardar(n); })
+    .observe(html, { attributes: true, attributeFilter: ['data-tema', 'class'] });
+  if (panel) html.classList.remove('az-claro');
 })(document, window);
 
 /* v4: en las guías de tests y calculadoras se mostraba la imagen de redes (og.jpg, un cartel generado) como si fuera una foto.
