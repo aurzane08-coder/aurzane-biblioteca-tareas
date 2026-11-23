@@ -269,6 +269,37 @@ ORDEN_NIVEL = ['Pregrado universitario', 'Bacharelado', 'Bacharelado e licenciat
 ES_POS = re.compile(r'(?i)maestr|mag[ií]ster|m[aá]ster|doctor|especiali|posgrado|postgrado|post[ií]tulo')
 
 
+# Ámbitos de conocimiento (familias de la CINE-F de la UNESCO) para ordenar la oferta de cada universidad (pedido de Adrián, 23/11/2026).
+# Se clasifica primero por el área que da la fuente oficial y, si no hay, por el nombre (sirve en español, inglés y portugués).
+AMBITOS = [
+    ('Empresa, economía y derecho', r'ingenieria comercial|ingenieria en administracion|comercio exterior|ingenieria en gestion financiera|ingenieria economica'),
+    ('Ingeniería, industria y construcción', r'ingenieria electronica|ingeniero electronico|ingeniera electronica'),
+    ('Agro, veterinaria y medio natural', r'veterinar|agronom|\bagric|agropec|agroind|forest|zootec|pesca|pesquer|acuicult|aquacult|fisher|animal science|horticult|silvicul|agrar|enolog|zootecn|agroneg'),
+    ('Salud y bienestar', r'pediatr|gastroent|cardiol|neurol|oncol|urolog|dermat|oftalm|psiquiatr|ginecol|traumatol|ortodon|endodon|estomatol|periodon|implantol|reumatol|nefrol|hematol|neumol|geriatr|odontopediatr|medic|enferm|nurs|odont|dent|farmac|pharm|fisioter|physio|kinesi|nutri|dietet|psicolog|psycholog|obstetr|matron|radiolog|optomet|fonoaud|logoped|terapia|therap|salud|health|saude|clinic|bacteriol|laboratorio clinico|biomedic|podolog|anestes|cirug|surg|enfermagem|fonoaudiol|gerontol|cuidado|bem estar|bienestar'),
+    ('Educación', r'educac|educat|pedagog|docencia|teaching|\bmaestro|profesor|ensino|parvul|magisterio|licenciatura en educ|didact'),
+    ('Informática y telecomunicaciones', r'data analytic|data processing|informat|comput|software|ingenieria de sistemas|ingenieria en sistemas|sistemas de informacion|telecomunic|telecom|ciberseg|cyber|ciencia de datos|data science|redes y|telematic|tecnologias de la informacion|information technology|programac|videojuego|video game|inteligencia artificial|artificial intelligence|desarrollo web|web development|analista programador|\btic\b|\bti\b'),
+    ('Artes y humanidades', r'histor|rhetoric|writing|bibl|pastoral|ministry|ministries|missio|classical|ancient|medieval|renaissance|archeolog|escritura|redaccion|disen|design|\barte|\barts?\b|artes|music|musica|danza|danca|dance|teatro|theat|\bcine|film|fotograf|photog|histori|filosof|philosoph|letras|literat|lingu|idioma|language|traduc|translat|teolog|theolog|relig|humanid|humanit|filolog|ingles|english|portugues|patrimon|arqueolog|archaeol|animacion|animation|moda|fashion|actuacion|interpretacion musical|conservacion y restauracion|bellas artes|fine arts|estetica y|letras'),
+    ('Ingeniería, industria y construcción', r'vehicle|repair|hvac|heating|refriger|carpent|quality control|weld|machin|ingenier|engineer|engenhar|arquitect|architect|arquitet|construc|ingenieria civil|obras civiles|mecanic|mechanic|electric|electron|industrial|minas|mining|minera|petrol|manufact|automotr|aeronaut|naval|topograf|geomens|mecatron|metal|textil|alimentos|food|quimica industrial|procesos|producao|produccion industrial|edificacion|urbanis|soldadur|maquinaria|energia|energy|eletric'),
+    ('Ciencias naturales y matemáticas', r'conservation|natural resources|plant scien|sustainab|cognitive|science technolog|biolog|quimic|chemis|\bfisica|physic|matemat|\bmath|estadist|statist|geolog|geofis|astro|ciencias naturales|natural science|ciencias basicas|ambiental|environment|ecolog|biotec|bioquim|biochem|oceanog|marin|geocien|meteorolog|ciencias biologicas|ciencias exatas|bioinform|actuar'),
+    ('Empresa, economía y derecho', r'admin|real estate|insurance|business|empresa|negoc|contab|account|contad|contador|finanz|financ|econom|marketing|mercad|comerci|commerce|derecho|\blaw\b|legal|direito|jurid|abogad|gestion|management|gestao|logistic|auditor|recursos humanos|human resources|tributar|seguros|banca|banking|emprend|entrepren|secretari|relaciones laborales'),
+    ('Ciencias sociales y comunicación', r'anthropolog|ethnic|gender|genero|area studies|international|internacional|globaliz|cartograph|urban|public policy|politicas publicas|behavioral|community|comunitar|peace|paz y|intercultural|multicultural|diversity|periodis|journal|jornal|comunicac|communic|sociolog|antropolog|\bpolitic|ciencia politica|relaciones internacionales|international relations|trabajo social|social work|servicio social|servico social|geograf|bibliotec|library|archiv|publicid|advertis|propaganda|audiovisual|criminolog|criminal|economia social|estudios sociales|social science|ciencias sociales|ciencias sociais|desarrollo social|demograf|psicopedag|relaciones publicas|public relations|cooperacion|desarrollo local|estudios internacionales'),
+    ('Servicios: turismo, deporte y seguridad', r'fire protection|parks|recreation|leisure|family and consumer|turism|tourism|hotel|hospitality|gastronom|culinar|cocina|chef|deport|sport|actividad fisica|educacion fisica|esporte|seguridad|security|policia|policial|militar|bomber|transporte|aviacion|aviation|piloto|estetica|cosmet|belleza|servic|eventos|prevencion de riesgos|seguranca'),
+]
+AMBITOS_RE = [(n, re.compile(r)) for n, r in AMBITOS]
+AMB_GENERICO = re.compile(r'technolog|technician|tecnolog|mantenimiento|maintenance|tecnico en|tecnico superior')   # solo si nada más encaja
+ORDEN_AMB = list(dict.fromkeys(n for n, _ in AMBITOS)) + ['Otras áreas']
+
+
+def ambito(c):
+    for t in (c['n'], c.get('area') or '', c.get('campo') or ''):   # primero el nombre; el área de la fuente decide si el nombre no basta
+        t = _nrm(t)
+        if not t: continue
+        for n, rx in AMBITOS_RE:
+            if rx.search(t): return n
+    if AMB_GENERICO.search(_nrm(c['n'] + ' ' + (c.get('area') or ''))): return 'Ingeniería, industria y construcción'
+    return 'Otras áreas'
+
+
 def oferta(u, corto=False):
     """«61 carreras y 257 posgrados», «74 grados», «5 carreras». Lo que se ofrece en ESA universidad."""
     n, np_ = u['n'], u.get('n_pos', 0)
@@ -867,32 +898,41 @@ def ficha(u, vecinas):
     n = u['n']
     es_es = p == 'España'
     palabra = 'grados' if es_es else ('áreas y facultades' if u['nivel'] == 'areas' else 'carreras')
-    # carreras agrupadas
-    grupos = collections.OrderedDict()
+    # carreras por nivel (carreras / posgrados) y, dentro, por ámbito de conocimiento en secciones plegables (23/11/2026)
+    def fila_c(c, nivel_det):
+        det = []
+        if nivel_det and c.get('grupo') and c['grupo'] not in ('Grado', 'Pregrado universitario', 'Universitario (grado)'): det.append(c['grupo'])
+        if c.get('campo'): det.append(c['campo'])
+        elif c.get('area') and c['area'] != c.get('grupo'): det.append(c['area'])
+        if c.get('titulo'): det.append('Título: ' + c['titulo'])
+        der = []
+        if c.get('cred'): der.append(f'{c["cred"]} ECTS' if es_es else c['cred'])
+        if c.get('mod'): der.append(' · '.join(c['mod']))
+        if c.get('sedes') and (len(c['sedes']) > 1 or (c['sedes'][0] != u['ciudad'])): der.append(', '.join(c['sedes'][:4]) + ('…' if len(c['sedes']) > 4 else ''))
+        prof = f'<em class="prof">Habilita para: {e(c["prof"])}</em>' if c.get('prof') else ''
+        if c.get('nota'): der.insert(0, f'Nota de corte {fmt_nota(c["nota"])}')
+        return f'<li><span>{e(c["n"])}{prof}{"<small>" + e(" · ".join(det)) + "</small>" if det else ""}</span>{"<small>" + e(" · ".join(der)) + "</small>" if der else ""}</li>'
+    niveles = collections.OrderedDict()
     for c in sorted(u['carreras'], key=lambda c: c['n'].lower()):
-        grupos.setdefault(c['grupo'] or 'Otras', []).append(c)
-    orden_g = sorted(grupos, key=lambda g: (-len(grupos[g]), g))
-    if all(g in ORDEN_NIVEL for g in grupos): orden_g = sorted(grupos, key=ORDEN_NIVEL.index)   # datos oficiales: de pregrado a doctorado
-    chips = ''
-    if len(orden_g) > 1:
-        chips = '<div class="chips" role="group" aria-label="Filtrar por grupo"><button type="button" class="chip" aria-pressed="true" data-area="">Todas</button>' + ''.join(
-            f'<button type="button" class="chip" aria-pressed="false" data-area="{e(g)}">{e(g)} ({len(grupos[g])})</button>' for g in orden_g) + '</div>'
-    lis = ''
-    for g in orden_g:
-        items = ''
-        for c in grupos[g]:
-            det = []
-            if c.get('campo'): det.append(c['campo'])
-            elif c.get('area') and c['area'] != g: det.append(c['area'])
-            if c.get('titulo'): det.append('Título: ' + c['titulo'])
-            der = []
-            if c.get('cred'): der.append(f'{c["cred"]} ECTS' if es_es else c['cred'])
-            if c.get('mod'): der.append(' · '.join(c['mod']))
-            if c.get('sedes') and (len(c['sedes']) > 1 or (c['sedes'][0] != u['ciudad'])): der.append(', '.join(c['sedes'][:4]) + ('…' if len(c['sedes']) > 4 else ''))
-            prof = f'<em class="prof">Habilita para: {e(c["prof"])}</em>' if c.get('prof') else ''
-            if c.get('nota'): der.insert(0, f'Nota de corte {fmt_nota(c["nota"])}')
-            items += f'<li><span>{e(c["n"])}{prof}{"<small>" + e(" · ".join(det)) + "</small>" if det else ""}</span>{"<small>" + e(" · ".join(der)) + "</small>" if der else ""}</li>'
-        lis += f'<div class="grupo" data-area="{e(g)}"><h3><span>{e(g)}</span><span>{len(grupos[g])}</span></h3><ul class="carreras">{items}</ul></div>'
+        nv = 'posgrados' if ES_POS.search(c.get('grupo') or '') else 'carreras'
+        amb = (c.get('grupo') or 'Otras') if es_es else ambito(c)   # España: las cinco ramas oficiales del RUCT
+        niveles.setdefault(nv, collections.OrderedDict()).setdefault(amb, []).append(c)
+    if 'carreras' in niveles and 'posgrados' in niveles: niveles.move_to_end('posgrados')
+    chips, lis = '', ''
+    if len(niveles) > 1:
+        chips = '<div class="chips" role="group" aria-label="Carreras o posgrados">' + ''.join(
+            f'<button type="button" class="chip" aria-pressed="{"true" if i == 0 else "false"}" data-nivel="{k}">{"Carreras" if k == "carreras" else "Posgrados"} ({fmt(sum(len(v) for v in g.values()))})</button>'
+            for i, (k, g) in enumerate(niveles.items())) + '</div>'
+    for i, (k, g) in enumerate(niveles.items()):
+        tot = sum(len(v) for v in g.values())
+        varios = len({c.get('grupo') for v in g.values() for c in v}) > 1
+        orden_a = sorted(g, key=lambda a: (-len(g[a]), a)) if es_es else sorted(g, key=lambda a: (a == 'Otras áreas', -len(g[a]), a))
+        abrir = tot <= 15 or len(g) == 1
+        secc = ''.join(f'<details class="grupo" data-area="{e(a)}"{" open" if abrir else ""}><summary><span>{e(a)}</span><span>{len(g[a])}</span></summary>'
+                       f'<ul class="carreras">{"".join(fila_c(c, varios) for c in g[a])}</ul></details>' for a in orden_a)
+        lis += f'<div class="nivel" data-nivel="{k}"{" hidden" if i else ""}>{"<p class=sub style=margin:0 0 10px>Ordenadas por ámbito de conocimiento. Abre un ámbito para ver sus " + ("posgrados" if k == "posgrados" else palabra) + ".</p>" if not abrir else ""}{secc}</div>'
+    grupos = niveles.get('carreras') or (next(iter(niveles.values())) if niveles else {})   # para el texto automático (áreas con más oferta)
+    orden_g = [a for a in sorted(grupos, key=lambda a: -len(grupos[a])) if a != 'Otras áreas']
     if n:
         bloque_c = f'''<section class="card" id="carreras"><div class="carr-cab"><h2>{oferta(u)}</h2>{"<input type=search class=carr-busca placeholder='Buscar en sus " + palabra + "' aria-label='Buscar carrera'>" if n > 8 else ""}</div>
 {chips}{lis}<p id="carrVacio" class="sub" hidden>No hay {palabra} con esa búsqueda.</p>

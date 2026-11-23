@@ -282,8 +282,10 @@
   var FC = $('#carreras');
   if (FC) (function () {
     var q = '', area = '';
+    var nivel = '';
     function aplicar() {
       var nq = norm(q), total = 0;
+      $$('.nivel', FC).forEach(function (nv) { nv.hidden = !nq && !!nivel && nv.getAttribute('data-nivel') !== nivel; });
       $$('.grupo', FC).forEach(function (g) {
         var vis = 0, okArea = !area || g.getAttribute('data-area') === area;
         $$('li', g).forEach(function (li) {
@@ -291,15 +293,20 @@
           li.hidden = !ok; if (ok) vis++;
         });
         g.hidden = !vis; total += vis;
+        if (g.tagName === 'DETAILS') {   // al buscar se abren los ámbitos con resultados; al borrar la búsqueda vuelven como estaban
+          if (g.dataset.ab === undefined) g.dataset.ab = g.open ? '1' : '';
+          g.open = nq ? vis > 0 : !!g.dataset.ab;
+        }
       });
       var v = $('#carrVacio'); if (v) v.hidden = total > 0;
     }
     var inp = $('.carr-busca', FC);
     if (inp) inp.addEventListener('input', function () { q = inp.value; aplicar(); });
+    var c0 = $('.chip[data-nivel]', FC); if (c0) nivel = c0.getAttribute('data-nivel');
     FC.addEventListener('click', function (e) {
       var c = e.target.closest('.chip');
       if (!c) return;
-      area = c.getAttribute('data-area') || '';
+      if (c.hasAttribute('data-nivel')) nivel = c.getAttribute('data-nivel'); else area = c.getAttribute('data-area') || '';
       $$('.chip', FC).forEach(function (x) { x.setAttribute('aria-pressed', String(x === c)); });
       aplicar();
     });
