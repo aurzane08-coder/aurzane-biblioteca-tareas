@@ -27,7 +27,7 @@
       '<p style="margin:0 0 12px;font-size:.86rem;opacity:.75">Respuestas orientativas, no sustituyen a un profesional. Tu pregunta y tu resultado (sin datos personales) se envían a Google Gemini para generar la respuesta; no se guardan.</p>' +
       '<div id="azSug" style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px">' + SUG[x.tipo].map(function (s) { return '<button type="button" style="border:1px solid rgba(127,127,127,.35);background:transparent;color:inherit;border-radius:99px;padding:7px 12px;font:inherit;font-size:.85rem;cursor:pointer">' + E(s) + '</button>'; }).join('') + '</div>' +
       '<form id="azForm" style="display:flex;gap:8px;flex-wrap:wrap"><input id="azPreg" maxlength="400" placeholder="Escribe tu pregunta" style="flex:1;min-width:200px;padding:11px 12px;border-radius:12px;border:1px solid rgba(127,127,127,.35);background:transparent;color:inherit;font:inherit;font-size:16px">' +
-      '<button style="border:0;border-radius:99px;padding:11px 18px;font:inherit;font-weight:700;cursor:pointer;background:var(--acento,#0F1530);color:var(--sobre-acento,#fff)">Preguntar</button></form>' +
+      '<button style="border:0;border-radius:99px;padding:11px 18px;font:inherit;font-weight:700;cursor:pointer;background:var(--acento,#12251F);color:var(--sobre-acento,#fff)">Preguntar</button></form>' +
       '<div id="azResp" aria-live="polite" style="margin-top:12px;line-height:1.6"></div>';
     x.sitio.parentNode.insertBefore(c, x.sitio.nextSibling);
     var resp = d.getElementById('azResp');

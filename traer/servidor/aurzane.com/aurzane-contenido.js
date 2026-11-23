@@ -43,11 +43,15 @@
     /* 19/11/2026 (rediseño editorial): la «imagen» de los artículos de la IA es la primera página escaneada del estudio; en la
        tarjeta no aporta y rompía el ritmo de la cuadrícula, así que la tarjeta va solo con texto (la imagen sigue en el artículo) */
     var img = a.imagen && !/\/biblioteca\/recientes\//.test(a.imagen) ? a.imagen : '';
+    /* FOTO_V4 (rediseño v4, 22/11/2026): sin imagen propia, foto real según el tema; nunca una imagen creada */
+    if (!img) { var tx = ((a.categoria || '') + ' ' + (a.titulo || '')).toLowerCase(), F = [[/ansiedad|p[áa]nico|preocupa/, '1505142468610-359e7d316be0'], [/estr[ée]s|burnout|agotamiento/, '1541199249251-f713e6145474'], [/depresi|[áa]nimo|triste/, '1529665253569-6d01c0eaf7b6'], [/sue[ñn]o|insomnio|dormir|descans/, '1541781774459-bb2af2f05b55'], [/h[áa]bito|aliment|nutric|ejercicio|deporte/, '1490645935967-10de6ba17061'], [/autoestima|identidad|personalidad/, '1517841905240-472988babdf9'], [/pareja|relaci|amistad|famil|v[íi]nculo|cuidado/, '1544027993-37dbfe43562a'], [/soledad|aislamiento/, '1512438248247-f0f2a5a8b7f0'], [/duelo|p[ée]rdida|muerte|resilien|trauma/, '1466692476868-aef1dfb1e735'], [/bienestar|felicidad|satisfacc|prop[óo]sito|mindful|calma/, '1506126613408-eca07ce68773'], [/carrera|vocaci|universidad|oferta|acceso|elegir/, '1541339907198-e08756dedf3f'], [/aprend|estudi|memoria|metacog|educa|ense[ñn]|tdah|atenci/, '1434030216411-0b793f4b4173'], [/curso|formaci|certific/, '1522202176988-66273c2fd55f'], [/hipoteca|vivienda|dinero|ahorro|inmobil|finanz|sueldo|inver/, '1579621970563-ebec7560ff3e'], [/libro|lectura|biblioteca/, '1532012197267-da84d127e765']], M = { mind: '1559757175-5700dde675bc', nexus: '1541339907198-e08756dedf3f', live: '1454496522488-7a8e488e8606', learn: '1481627834876-b7833e8f5570', build: '1461360370896-922624d12aa1' }, id = '';
+      for (var q = 0; q < F.length && !id; q++) if (F[q][0].test(tx)) id = F[q][1];
+      img = 'https://images.unsplash.com/photo-' + (id || M[a.mundo] || M.mind) + '?w=800&h=450&q=70&fit=crop&auto=format'; }
     if (estilo === 'indice') return '<a class="tema-card' + (img ? '' : ' sin-img') + '" href="' + url + '">' + (img ? '<img src="' + E(img) + '" alt="" loading="lazy">' : '') +
       '<div class="tema-card-body"><span class="cat">' + E(NOMBRE[a.mundo]) + ' · ' + E(a.categoria || 'Divulgación') + '</span><h3>' + E(a.titulo) + '</h3><p>' + E(a.resumen) + '</p></div></a>';
-    return '<a href="' + url + '" style="display:block;padding:16px 18px;border-radius:14px;border:1px solid rgba(127,127,127,.25);color:inherit;text-decoration:none;background:rgba(127,127,127,.05)">' +
+    return '<a class="az-art-c" href="' + url + '">' + (img ? '<img src="' + E(img) + '" alt="" loading="lazy" width="800" height="450">' : '') + '<span class="az-art-t">' +
       '<span style="display:block;font-size:.8rem;opacity:.7">' + E(a.categoria || 'Divulgación') + ' · ' + E(a.fecha) + '</span>' +
-      '<strong style="display:block;font-size:1.05rem;line-height:1.3;margin:4px 0">' + E(a.titulo) + '</strong><span style="display:block;font-size:.9rem;opacity:.8;line-height:1.45">' + E(a.resumen) + '</span></a>';
+      '<strong style="display:block;font-size:1.05rem;line-height:1.3;margin:4px 0">' + E(a.titulo) + '</strong><span style="display:block;font-size:.9rem;opacity:.8;line-height:1.45">' + E(a.resumen) + '</span></span></a>';
   }
   function articulos(lista) {
     if (!lista || !lista.length) return;
@@ -134,10 +138,10 @@
     }
     var es = /^Calculadora/.test(t[2]);
     var c = d.createElement('aside'); c.className = 'az-cta-test';
-    c.style.cssText = 'margin:34px 0;padding:22px 24px;border-radius:18px;background:linear-gradient(150deg,#2a1f63,#5B43B8);color:#fff';
+    c.style.cssText = 'margin:34px 0;padding:22px 24px;border-radius:18px;background:linear-gradient(150deg,#1B352D,#5B43B8);color:#fff';
     c.innerHTML = '<p style="margin:0 0 4px;font-size:.8rem;font-weight:700;letter-spacing:.05em;opacity:.8">PONLO A PRUEBA</p><p style="margin:0 0 14px;font-size:1.15rem;font-weight:600;line-height:1.35;color:#fff">' +
       (es ? 'Haz tus números con la ' + E(t[2]) + ': gratis y al momento.' : 'Haz el ' + E(t[2]) + ': gratis, anónimo y con tu resultado explicado al momento.') + '</p>' +
-      '<a href="' + t[1] + '" style="display:inline-block;background:#FFD9A0;color:#1b1440;font-weight:700;text-decoration:none;padding:11px 20px;border-radius:99px">' + (es ? 'Abrir la calculadora' : 'Hacer el test') + '</a>';
+      '<a href="' + t[1] + '" style="display:inline-block;background:#EADEC6;color:#132A23;font-weight:700;text-decoration:none;padding:11px 20px;border-radius:99px">' + (es ? 'Abrir la calculadora' : 'Hacer el test') + '</a>';
     if (antes && antes.parentNode) antes.parentNode.insertBefore(c, antes); else dentro.appendChild(c);
   }
   function articulosConTest() {
@@ -157,17 +161,17 @@
     var hero = d.querySelector('.tema-hero'); if (!hero) return;
     var COL = { mind: '#5B43B8', nexus: '#2F5FA8', live: '#B4542C', learn: '#2F7A55', build: '#8A5A32' };
     var css = d.createElement('style');
-    css.textContent = '#azIdx{position:sticky;top:0;z-index:20;padding:14px 0;margin:6px 0 10px;background:var(--bg,#0b0e1d);border-bottom:1px solid rgba(127,127,127,.2)}' +
+    css.textContent = '#azIdx{position:sticky;top:0;z-index:20;padding:14px 0;margin:6px 0 10px;background:var(--bg,#151F1B);border-bottom:1px solid rgba(127,127,127,.2)}' +
       '#azIdx input{width:100%;max-width:520px;box-sizing:border-box;padding:12px 16px;border-radius:99px;border:1px solid rgba(127,127,127,.35);background:rgba(127,127,127,.08);color:inherit;font:inherit}' +
       '#azIdx .ch{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}#azIdx button{cursor:pointer;border-radius:99px;padding:7px 14px;border:1px solid rgba(127,127,127,.35);background:transparent;color:inherit;font:600 .85rem/1 inherit}' +
-      '#azIdx button[aria-pressed="true"]{background:var(--c,#C9A24B);border-color:var(--c,#C9A24B);color:#fff}' +
-      '.az-dest{display:grid;grid-template-columns:1.3fr 1fr;border-radius:22px;overflow:hidden;margin:18px 0 34px;text-decoration:none;color:#fff;background:#151a36;min-height:300px}' +
+      '#azIdx button[aria-pressed="true"]{background:var(--c,#C7B99B);border-color:var(--c,#C7B99B);color:#fff}' +
+      '.az-dest{display:grid;grid-template-columns:1.3fr 1fr;border-radius:22px;overflow:hidden;margin:18px 0 34px;text-decoration:none;color:#fff;background:#172923;min-height:300px}' +
       '.az-dest img{width:100%;height:100%;object-fit:cover;display:block}.az-dest div{padding:30px 32px;display:flex;flex-direction:column;justify-content:center}' +
       '.az-dest small{font-weight:700;letter-spacing:.06em;font-size:.75rem;opacity:.85}.az-dest h2{font:700 clamp(1.4rem,2.6vw,2rem)/1.2 "Bodoni Moda",Georgia,serif;margin:8px 0 10px;color:#fff}.az-dest p{margin:0;opacity:.85;line-height:1.5}' +
       '.az-mas{display:block;margin:14px 0 30px;cursor:pointer;border-radius:99px;padding:11px 20px;border:1px solid rgba(127,127,127,.4);background:transparent;color:inherit;font:600 .9rem inherit}' +
       '.az-oculta{display:none!important}@media(max-width:760px){.az-dest{grid-template-columns:1fr}.az-dest img{height:200px}}' +
       /* rediseño editorial: tarjetas que no se estiran, imagen con proporción fija, resumen de 3 líneas y tarjetas de texto más ligeras */
-      '.tema-grid{align-items:start;gap:18px}.tema-card{transition:border-color .2s}.tema-card:hover{border-color:var(--c,rgba(201,162,75,.5))}' +
+      '.tema-grid{align-items:start;gap:18px}.tema-card{transition:border-color .2s}.tema-card:hover{border-color:var(--c,rgba(199,185,155,.5))}' +
       '.tema-card img{display:block;width:100%;aspect-ratio:16/9;height:auto;object-fit:cover}' +
       '.tema-card-body{padding:18px 20px 20px}.tema-card-body .cat{font-size:.72rem;letter-spacing:.06em}' +
       '.tema-card-body h3{font-family:"Bodoni Moda",Georgia,serif;font-size:1.12rem;line-height:1.3;margin:8px 0 8px}' +
@@ -256,14 +260,14 @@
       pref.forEach(function (t) { todos.forEach(function (x) { if (l.length < 3 && x.img && x.temas.indexOf('novela') < 0 && x.temas.indexOf(t) >= 0 && l.indexOf(x) < 0) l.push(x); }); });
       if (l.length < 2) return;
       var c = d.createElement('aside'); c.className = 'az-libros'; c.setAttribute('data-nosnippet', '');
-      c.style.cssText = 'margin:34px auto;max-width:1120px;padding:22px 24px;border-radius:20px;background:#141a33;color:#f3efe6;border:1px solid rgba(255,255,255,.1)';
+      c.style.cssText = 'margin:34px auto;max-width:1120px;padding:22px 24px;border-radius:20px;background:#182823;color:#f3efe6;border:1px solid rgba(255,255,255,.1)';
       c.innerHTML = '<p style="margin:0 0 4px;font:700 1.25rem/1.25 \'Bodoni Moda\',Georgia,serif;color:#f3efe6">Libros para seguir profundizando</p>' +
         '<p style="margin:0 0 16px;font-size:.88rem;opacity:.75">Elegidos por AURZANE sobre este tema.</p>' +
         '<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:16px">' + l.map(function (x) {
           return '<a href="' + E(x.u) + '" target="_blank" rel="sponsored nofollow noopener" style="display:flex;gap:12px;align-items:flex-start;text-decoration:none;color:inherit">' +
             '<img src="' + E(x.img) + '" alt="Portada de ' + E(x.t) + '" loading="lazy" width="64" height="96" style="width:64px;height:96px;object-fit:cover;border-radius:6px;flex:none;box-shadow:0 10px 20px -10px #000">' +
             '<span><b style="display:block;font-size:.92rem;line-height:1.3">' + E(x.t) + '</b><span style="display:block;font-size:.8rem;opacity:.7;margin:2px 0 6px">' + E(x.a) + '</span>' +
-            '<span style="display:inline-block;font-size:.75rem;font-weight:700;color:#1b1440;background:#E2BF6A;border-radius:99px;padding:3px 10px">Ver en Amazon</span></span></a>';
+            '<span style="display:inline-block;font-size:.75rem;font-weight:700;color:#132A23;background:#D1C2A3;border-radius:99px;padding:3px 10px">Ver en Amazon</span></span></a>';
         }).join('') + '</div>' +
         '<p style="margin:16px 0 0;font-size:.78rem;opacity:.6">Enlaces de afiliado de Amazon: si compras, AURZANE recibe una pequeña comisión sin coste para ti. <a href="https://aurzane.com/libros/" style="color:inherit">Ver toda la tienda de libros</a></p>';
       if (antes && antes.parentNode) antes.parentNode.insertBefore(c, antes); else dentro.appendChild(c);

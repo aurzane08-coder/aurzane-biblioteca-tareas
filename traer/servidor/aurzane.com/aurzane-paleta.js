@@ -34,18 +34,286 @@
   });
 })(document, window);
 
+/* Tema único para todo AURZANE (rediseño v4, 22/11/2026)
+   - Todas las páginas empiezan en CLARO. Solo se ven en oscuro si la persona lo elige con «Tema».
+   - La elección se guarda en una cookie de .aurzane.com (az_tema), así vale en aurzane.com y en todos los mundos.
+   - No se sigue el tema del sistema operativo: el sitio se ve igual para todos hasta que alguien lo cambia.
+   - Las páginas antiguas leen localStorage('aurzane-tema'); se sincroniza ANTES de que lo lean, y cualquier cambio de
+     data-tema que haga su botón se copia a la cookie. */
+(function (d, w) {
+  var html = d.documentElement, CK = 'az_tema';
+  function leer() { var m = d.cookie.match(/(?:^|;\s*)az_tema=(claro|oscuro)/); return m ? m[1] : 'claro'; }
+  function guardar(t) {
+    try { d.cookie = CK + '=' + t + ';path=/;max-age=31536000;SameSite=Lax' + (/aurzane\.com$/.test(location.hostname) ? ';domain=.aurzane.com' : ''); } catch (e) {}
+    try { w.localStorage.setItem('aurzane-tema', t); } catch (e) {}
+  }
+  var t = leer();
+  try { w.localStorage.setItem('aurzane-tema', t); } catch (e) {}
+  if (t === 'oscuro') html.setAttribute('data-tema', 'oscuro'); else html.removeAttribute('data-tema');
+  html.classList.add('az-v4');
+  // v4 tiene una sola identidad (verde y champán): las paletas del diseño anterior que alguien eligiera (grafito, púrpura…) ya no se aplican
+  function paleta() { var c = html.className, n = c.replace(/\bpaleta-(?!dorado\b)[a-z]+\b/g, '').replace(/\s+/g, ' ').trim(); if (!/\bpaleta-dorado\b/.test(n)) n += ' paleta-dorado'; if (n !== c) html.className = n; }
+  paleta(); if (w.MutationObserver) new MutationObserver(paleta).observe(html, { attributes: true, attributeFilter: ['class'] });
+  w.AurzaneTema = { actual: function () { return html.getAttribute('data-tema') === 'oscuro' ? 'oscuro' : 'claro'; },
+    poner: function (n) { if (n === 'oscuro') html.setAttribute('data-tema', 'oscuro'); else html.removeAttribute('data-tema'); },
+    alternar: function () { this.poner(this.actual() === 'oscuro' ? 'claro' : 'oscuro'); } };
+  if (w.MutationObserver) new MutationObserver(function () { var n = w.AurzaneTema.actual(); if (n !== leer()) guardar(n); })
+    .observe(html, { attributes: true, attributeFilter: ['data-tema'] });
+})(document, window);
+
+/* v4: en las guías de tests y calculadoras se mostraba la imagen de redes (og.jpg, un cartel generado) como si fuera una foto.
+   Se sustituye por la foto real de la propia página (Unsplash, la misma de su cabecera); si no hay foto real, el cartel se quita. */
+(function (d) {
+  function cambiar() {
+    var figs = d.querySelectorAll('figure img[src$="/og.jpg"],figure img[src$="/og.png"],figure img[src$="/og.webp"]');
+    if (!figs.length) return;
+    var ref = d.querySelector('.hero img[src*="images.unsplash.com"],main img[src*="images.unsplash.com"],img[src*="images.unsplash.com"]');
+    Array.prototype.forEach.call(figs, function (im) {
+      var f = im.closest('figure'); if (!f) return;
+      if (!ref) { f.parentNode.removeChild(f); return; }
+      im.removeAttribute('srcset'); im.src = ref.src.replace(/([?&])w=\d+/, '$1w=1400'); im.alt = '';
+      var c = f.querySelector('figcaption'); if (c) c.parentNode.removeChild(c);
+      f.classList.add('az-v4-foto');
+    });
+  }
+  if (d.readyState === 'loading') d.addEventListener('DOMContentLoaded', function () { setTimeout(cambiar, 700); }); else setTimeout(cambiar, 700);
+})(document);
+/* Cifras aproximadas (22/11/2026, pedido de Adrián): los conteos del catálogo se muestran redondeados hacia abajo,
+   1.580 artículos → «1.000+ artículos», 748 libros → «700+ libros». Menos de 100 se deja exacto. Solo toca números seguidos
+   de lo que se cuenta (artículos, libros, papers, universidades…); nunca puntuaciones, precios, fechas, notas ni porcentajes.
+   Las cifras salen de los datos reales y se rellenan solas: esto solo cambia cómo se muestran, también las que llegan después. */
+(function (d) {
+  var COSAS = '(?:art[íi]culos|libros|papers|estudios|universidades|instituciones|institutos|centros|carreras|grados|titulaciones|frases|autores|fichas|t[íi]tulos|gu[íi]as|lecciones|preguntas|p[áa]ginas|recursos|referencias|fuentes|articles|books|universities|studies)';
+  var EN_TEXTO = new RegExp('(^|[^\\d.,+\\-])(\\d{1,3}(?:\\.\\d{3})+|\\d{3,})(?![\\d.,%+€$])(\\s+(?:[a-záéíóúñ]+\\s+){0,2}' + COSAS + '\\b)', 'gi');
+  var SOLO = /^\s*(\d{1,3}(?:\.\d{3})+|\d{3,})\s*$/, LUEGO = new RegExp('^\\s*(?:[a-záéíóúñ]+\\s+){0,2}' + COSAS + '\\b', 'i');
+  var NO = 'script,style,textarea,input,select,code,pre,[contenteditable],.no-aprox,.az-no-aprox';
+  function aprox(t) {
+    var n = parseInt(String(t).replace(/\./g, ''), 10); if (!(n >= 100) || n >= 1e9) return null;
+    var p = n < 1000 ? 100 : 1000, r = Math.floor(n / p) * p;
+    return String(r).replace(/\B(?=(\d{3})+(?!\d))/g, '.') + '+';
+  }
+  function siguiente(nodo) {   // texto que viene justo después (etiqueta de la cifra), subiendo dos niveles como mucho
+    for (var x = nodo, k = 0; x && k < 3; x = x.parentNode, k++) {
+      for (var s = x.nextSibling; s; s = s.nextSibling) { var t = s.textContent; if (t && t.trim()) return t; }
+    }
+    return '';
+  }
+  function pasar(raiz) {
+    if (!raiz || !d.body) return;
+    var w = d.createTreeWalker(raiz, NodeFilter.SHOW_TEXT, null), nodos = [], n;
+    while ((n = w.nextNode())) nodos.push(n);
+    nodos.forEach(function (t) {
+      var p = t.parentElement; if (!p || p.closest(NO)) return;
+      var v = t.nodeValue; if (!v || !/\d{3}/.test(v.replace(/\./g, ''))) return;
+      var m = v.match(SOLO);
+      if (m) { if (LUEGO.test(siguiente(t))) { var a = aprox(m[1]); if (a) t.nodeValue = v.replace(m[1], a); } return; }
+      var nv = v.replace(EN_TEXTO, function (todo, pre, num, resto) { var a = aprox(num); return a ? pre + a + resto : todo; });
+      if (nv !== v) t.nodeValue = nv;
+    });
+  }
+  var cola = null;
+  function luego() { if (cola) return; cola = setTimeout(function () { cola = null; pasar(d.body); }, 250); }
+  function iniciar() { pasar(d.body); try { new MutationObserver(luego).observe(d.body, { childList: true, subtree: true, characterData: true }); } catch (e) {} }
+  if (d.readyState === 'loading') d.addEventListener('DOMContentLoaded', iniciar); else iniciar();
+})(document);
+/* Cabeceras oscuras sin foto (universidades, OVP, páginas sueltas): llevan la foto real de la página (su og:image, que ya son
+   fotos reales) bajo el velo verde, como en la guía visual. Si la página no tiene foto propia, se queda como está. */
+(function (d) {
+  function fotoCab() {
+    if (d.documentElement.classList.contains('az-v4-herofoto')) return;
+    var og = d.querySelector('meta[property="og:image"]'), u = og && og.content;
+    var cab = d.querySelector('main > .hero, section.hero, header.hero, .u-hero, .hero-wrap, .world-header, main > header:first-child, body > div.h, .tx-hero'); if (!cab) return;
+    var cs = getComputedStyle(cab); if (/url\(/.test(cs.backgroundImage)) return;
+    var cols = ((cs.backgroundColor + ' ' + cs.backgroundImage).match(/rgba?\([^)]+\)|color\(srgb [^)]+\)/g) || []).map(function (x) {
+        var k = /^color/.test(x), v = x.replace(/rgba?\(|color\(srgb |\)/g, '').split(/[ ,\/]+/).filter(Boolean).map(Number);
+        return k ? [v[0] * 255, v[1] * 255, v[2] * 255, v.length > 3 ? v[3] : 1] : v; })
+      .filter(function (c) { return c.length < 4 || c[3] >= .5; });
+    var c = cols[0]; if (!c) return;
+    if (.2126 * c[0] + .7152 * c[1] + .0722 * c[2] > 90) return;   // solo cabeceras oscuras: el texto claro sigue legible (también con foto del catálogo)
+    if (!u || /og-portada|logo|portadas?\//i.test(u)) {   // sin foto propia: una del catálogo según el título de la página
+      if (window.AurzaneBanco && !cab.__v4b) { cab.__v4b = 1; window.AurzaneBanco.listo(function () { var f = window.AurzaneBanco.foto((d.documentElement.className.match(/az-ds-(mind|nexus|live|learn|build|ovp)/) || [0, 'general'])[1], d.title, 1600); if (f) { var m = d.querySelector('meta[property="og:image"]'); cab.style.setProperty('--v4-foto', 'url("' + f + '")'); cab.setAttribute('data-v4-foto', '1'); d.documentElement.classList.add('az-v4-cabfoto'); } }); }
+      return;
+    }
+    cab.style.setProperty('--v4-foto', 'url("' + u.replace(/"/g, '%22') + '")'); cab.setAttribute('data-v4-foto', '1');
+    d.documentElement.classList.add('az-v4-cabfoto');
+  }
+  if (d.readyState === 'complete') setTimeout(fotoCab, 300); else window.addEventListener('load', function () { setTimeout(fotoCab, 300); });
+})(document);
+/* Catálogo de imágenes (índice aurzane.com/catalogo/imagenes.json, unos cientos de KB; las fotos salen de los CDN de Unsplash y Pexels
+   en AVIF, sin ocupar espacio en SiteGround): elige una foto real según el mundo y el tema del texto, distinta para cada texto.
+   AurzaneBanco.foto(mundo, texto, ancho) devuelve la URL (o null si el índice aún no cargó); AurzaneBanco.listo(fn) avisa al cargar. */
+(function (w, d) {
+  if (w.AurzaneBanco) return;
+  var idx = null, cola = [], INDICE = 'https://aurzane.com/catalogo/imagenes.json';
+  var CLAVES = [
+    [/ansiedad|anxi|p[áa]nico|panic|worry|preocupa/i, 'mind', 'ansiedad'], [/depres|tristeza|sadness|mood|[áa]nimo/i, 'mind', 'tristeza'],
+    [/estr[ée]s|stress|burnout|agotamiento/i, 'mind', 'estres'], [/cerebr|brain|neuro|cognit/i, 'mind', 'cerebro'],
+    [/terapia|therap|counsel|psicoterap/i, 'mind', 'terapia'], [/mindful|medita|atenci[óo]n plena/i, 'mind', 'meditacion'],
+    [/sue[ñn]o|sleep|insomn|dormir/i, 'mind', 'sueno'], [/pareja|couple|marital|romantic|amor/i, 'mind', 'pareja'],
+    [/famil|parent|padres|madre|padre|crianza/i, 'mind', 'familia'], [/ni[ñn]|child|infan|kid|beb[ée]/i, 'mind', 'infancia'],
+    [/adolesc|teen|youth|j[óo]ven/i, 'mind', 'adolescentes'], [/older|elder|aging|envejec|mayores|dementia|demencia|alzheimer/i, 'mind', 'mayores'],
+    [/emoci|emotion|feeling|sentimiento/i, 'mind', 'emociones'], [/autoestima|self-esteem|self-efficacy|autoeficacia|confianza/i, 'mind', 'autoestima'],
+    [/soledad|loneli|isolat|aislamiento/i, 'mind', 'soledad'],
+    [/universi|higher education|college|campus|facultad/i, 'nexus', 'campus'], [/estudiante|student|alumn/i, 'nexus', 'estudiantes'],
+    [/graduat|career|carrera|employab|vocaci/i, 'nexus', 'graduacion'], [/teach|docen|profesor|lecture|ense[ñn]/i, 'nexus', 'clase'],
+    [/laborator|experiment/i, 'nexus', 'laboratorio'], [/artificial|machine learning|software|algorit|digital|comput|tecnolog|internet/i, 'nexus', 'tecnologia'],
+    [/research|investigaci|scien|cienc/i, 'nexus', 'investigacion'],
+    [/diet|nutri|food|aliment|obes|comida/i, 'live', 'alimentacion'], [/exercis|ejercicio|physical activity|actividad f[íi]sica|running|correr|fitness/i, 'live', 'correr'],
+    [/yoga/i, 'live', 'yoga'], [/water|hidrat|agua/i, 'live', 'agua'], [/pregnan|embaraz|maternal|birth|parto/i, 'live', 'embarazo'],
+    [/clinic|patient|paciente|hospital|medical|m[ée]dic|salud|health/i, 'live', 'medico'], [/sport|deport|athlet|atleta/i, 'live', 'deporte'],
+    [/lectura|reading|literacy|libro|book/i, 'learn', 'lectura'], [/aprend|learning|study|estudi/i, 'learn', 'estudiar'],
+    [/aula|classroom|school|escuela|colegio/i, 'learn', 'aula'], [/online|e-learning|mooc|virtual/i, 'learn', 'online'],
+    [/idioma|language|bilingu|lengua/i, 'learn', 'idiomas'], [/memoria|memory/i, 'learn', 'memoria'], [/escritura|writing|escribir/i, 'learn', 'escritura'],
+    [/atenci[óo]n|attention|focus|concentr|tdah|adhd/i, 'learn', 'concentracion'],
+    [/hipoteca|mortgage/i, 'build', 'llaves'], [/alquiler|rent/i, 'build', 'pisos'], [/vivienda|housing|home|house|hogar/i, 'build', 'vivienda'],
+    [/ahorro|saving|pensi[óo]n|retire|jubil/i, 'build', 'jubilacion'], [/financ|money|dinero|income|ingreso|econom|sueldo|salario/i, 'build', 'dinero'],
+    [/architect|arquitect|urban|ciudad|city/i, 'build', 'arquitectura'], [/construct|obra|reforma/i, 'build', 'obra'],
+    [/energ|solar|climat|emisi|emission/i, 'build', 'energia'], [/trabaj|work|employ|labor|empleo/i, 'build', 'trabajo']
+  ];
+  var VISTAS = {}, VETO = /\b(rally|protest|demonstrat|placard|signs?\b|banner|poster|graffiti|weapon|guns?\b|sword|knife|blood|cigar|smok|alcohol|beer|wine|drunk|politic|flag|police|military|text|words?\b|quote|newspaper|skull)/i;
+  function h(s) { var x = 2166136261; s = String(s || ''); for (var i = 0; i < s.length; i++) { x ^= s.charCodeAt(i); x = Math.imul(x, 16777619); } return x >>> 0; }
+  function foto(mundo, texto, ancho) {
+    if (!idx) return null;
+    var t = String(texto || ''), m = null, tema = null;
+    for (var i = 0; i < CLAVES.length; i++) if (CLAVES[i][0].test(t)) { m = CLAVES[i][1]; tema = CLAVES[i][2]; break; }
+    var lista = m && idx[m] && idx[m][tema];
+    if (!lista || !lista.length) {   // sin tema reconocible: cualquier foto del mundo (o general), siempre la misma para el mismo texto
+      var mm = idx[mundo] || idx.general || {}; lista = [];
+      Object.keys(mm).forEach(function (k) { if (k !== 'textura') lista = lista.concat(mm[k]); });   // las texturas lisas no sirven de foto principal
+    }
+    if (!lista.length) return null;
+    var i0 = h(t + mundo) % lista.length, k = 0, x = lista[i0], w = (ancho || 640) > 800 ? 1600 : 640;
+    while (k < lista.length && (VISTAS[x.r || x.p] || VETO.test(x.t || '')) && (VISTAS[x.r || x.p] !== t)) { k++; x = lista[(i0 + k) % lista.length]; }   // no repetir foto en la misma página
+    VISTAS[x.r || x.p] = t;
+    if (x.r) return x.r + '?w=' + w + '&h=' + Math.round(w * .625) + '&fit=crop&q=70&auto=format';
+    return 'https://images.pexels.com/photos/' + x.p + '/pexels-photo-' + x.p + '.jpeg?auto=compress&cs=tinysrgb&w=' + w + '&h=' + Math.round(w * .625) + '&fit=crop';
+  }
+  w.AurzaneBanco = { foto: foto, listo: function (f) { if (idx) f(); else cola.push(f); } };
+  try {
+    fetch(INDICE).then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (j) { if (!j) return; idx = j; cola.splice(0).forEach(function (f) { try { f(); } catch (e) {} }); }).catch(function () {});
+  } catch (e) {}
+})(window, document);
+/* Research Hub: cada paper lleva una foto del banco acorde a su tema (antes la misma miniatura para todo un mundo) */
+(function (d) {
+  function fotos() {
+    var l = d.getElementById('list'); if (!l || !window.AurzaneBanco) return;
+    var M = { mind: 1, nexus: 1, live: 1, learn: 1, build: 1 };
+    [].forEach.call(l.querySelectorAll('.paper:not([data-v4f])'), function (p) {
+      var mu = ((p.getAttribute('style') || '').match(/--(mind|nexus|live|learn|build)\)/) || [])[1] || 'general';
+      var t = ((p.querySelector('h3') || {}).textContent || '') + ' ' + ((p.querySelector('.abstract') || {}).textContent || '').slice(0, 300);
+      var u = window.AurzaneBanco.foto(M[mu] ? mu : 'general', t, 640); if (!u) return;
+      p.style.setProperty('--img', 'url("' + u + '")'); p.setAttribute('data-v4f', '1');
+    });
+  }
+  function iniciar() {
+    var l = d.getElementById('list'); if (!l) return;
+    window.AurzaneBanco && window.AurzaneBanco.listo(fotos);
+    try { new MutationObserver(function () { fotos(); }).observe(l, { childList: true }); } catch (e) {}
+  }
+  if (d.readyState === 'loading') d.addEventListener('DOMContentLoaded', iniciar); else iniciar();
+})(document);
+/* Research Hub con ?mundo=: es la biblioteca de ese mundo (las bibliotecas de cada mundo redirigen aquí). Título y foto del mundo. */
+(function (d) {
+  if (!/\/research\.html$/.test(location.pathname)) return;
+  var m = (new URLSearchParams(location.search).get('mundo') || '').toLowerCase();
+  var N = { mind: 'MIND', nexus: 'NEXUS', live: 'LIVE', learn: 'LEARN', build: 'BUILD' };
+  var F = { mind: '1559757175-5700dde675bc', nexus: '1541339907198-e08756dedf3f', live: '1454496522488-7a8e488e8606', learn: '1481627834876-b7833e8f5570', build: '1461360370896-922624d12aa1' };
+  if (!N[m]) return;
+  function poner() {
+    var h = d.querySelector('.hero-wrap'); if (h) h.style.setProperty('--v4-rh-foto', 'url("https://images.unsplash.com/photo-' + F[m] + '?q=70&w=2000&auto=format&fit=crop")');
+    var t = d.querySelector('.hero-wrap h1'); if (t && !t.hasAttribute('data-v4')) { t.setAttribute('data-v4', '1'); t.innerHTML = 'Biblioteca científica de <span>' + N[m] + '</span>'; }
+    var pp = d.querySelector('.hero-wrap .hero p'); if (pp && !pp.hasAttribute('data-v4')) { pp.setAttribute('data-v4', '1'); pp.textContent = 'Los papers de acceso abierto de ' + N[m] + ': título, resumen oficial y enlace directo a la fuente. Puedes buscar también en los otros cuatro mundos.'; }
+    if (!/Biblioteca de /.test(d.title)) d.title = 'Biblioteca científica de ' + N[m] + ' | AURZANE';
+  }
+  if (d.readyState === 'loading') d.addEventListener('DOMContentLoaded', poner); else poner();
+})(document);
+/* Tarjetas de ejercicios y herramientas sin foto (a.scard): foto real del banco según el ejercicio, arriba de la tarjeta */
+(function (d) {
+  function poner() {
+    if (!window.AurzaneBanco) return;
+    [].forEach.call(d.querySelectorAll('a.scard:not(.az-cf):not([data-v4f])'), function (a) {
+      var cm = (d.documentElement.className.match(/az-ds-(mind|nexus|live|learn|build|ovp)/) || [])[1] || 'general';   // el mundo de la página decide el banco
+      var t = (a.textContent || '') + ' ' + (a.getAttribute('data-obj') || '') + (cm === 'mind' ? ' meditación calma' : '');
+      var u = window.AurzaneBanco.foto(cm, t, 640); if (!u) return;
+      var im = d.createElement('img'); im.className = 'v4-foto'; im.src = u; im.alt = ''; im.loading = 'lazy'; im.width = 640; im.height = 400;
+      a.insertBefore(im, a.firstChild); a.setAttribute('data-v4f', '1');
+    });
+  }
+  function iniciar() { if (d.querySelector('a.scard') && window.AurzaneBanco) window.AurzaneBanco.listo(poner); }
+  if (d.readyState === 'loading') d.addEventListener('DOMContentLoaded', iniciar); else iniciar();
+})(document);
+/* OVP: cada instrumento con una foto real del banco (orientación, estudiantes, estudio) */
+(function (d) {
+  if (!/(^|\.)ovp\.aurzane\.com$/.test(location.hostname)) return;
+  var T = ['orientación vocacional carrera', 'estudiantes universidad', 'autoestima confianza', 'estudiar hábitos aula', 'concentración atención memoria', 'graduación carrera universidad'];
+  function poner() {
+    [].forEach.call(d.querySelectorAll('.instrumento:not([data-v4f])'), function (el, i) {
+      var u = window.AurzaneBanco && window.AurzaneBanco.foto('nexus', T[i % T.length] + ' ' + el.textContent.slice(0, 80), 640); if (!u) return;
+      var im = d.createElement('img'); im.className = 'v4-foto'; im.src = u; im.alt = ''; im.loading = 'lazy'; im.width = 640; im.height = 360;
+      el.insertBefore(im, el.firstChild); el.setAttribute('data-v4f', '1');
+    });
+  }
+  function iniciar() { if (window.AurzaneBanco) window.AurzaneBanco.listo(poner); }
+  if (d.readyState === 'loading') d.addEventListener('DOMContentLoaded', iniciar); else iniciar();
+})(document);
+/* Calculadoras: el panel del formulario se estira hasta el del resultado y rellena el hueco con la foto de la portada */
+(function (d) {
+  function poner(n) {
+    var app = d.querySelector('.app'), hv = d.querySelector('[data-v4-foto]');
+    var f = hv && (hv.style.getPropertyValue('--v4-foto') || getComputedStyle(hv).getPropertyValue('--v4-foto'));
+    var fo = app && app.querySelector(':scope > .panel:not(.res)'), re = app && app.querySelector(':scope > .res');
+    if (app && f && f.trim() && fo && re) {   // solo si al formulario le sobra hueco frente al resultado
+      if (re.offsetHeight - fo.offsetHeight > 140) { app.style.setProperty('--v4-app-foto', f.trim()); app.classList.add('v4-app-foto'); return; } }
+    if (n < 20) setTimeout(function () { poner(n + 1); }, 300);
+  }
+  if (d.readyState === 'loading') d.addEventListener('DOMContentLoaded', function () { poner(0); }); else poner(0);
+})(document);
+/* Páginas informativas y legales: cada una con su propia foto en la columna lateral (del catálogo, según el título) */
+(function (d) {
+  function poner() {
+    var m = d.querySelector('body > div.h ~ main.w'); if (!m || d.querySelector('.ficha, .rt') || !window.AurzaneBanco) return;
+    window.AurzaneBanco.listo(function () {
+      var t = (d.querySelector('body > div.h h1') || {}).textContent || d.title;
+      var f = window.AurzaneBanco.foto('general', t + ' ' + location.pathname, 900); if (f) m.style.setProperty('--v4-info-foto', 'url("' + f + '")');
+    });
+  }
+  if (d.readyState === 'loading') d.addEventListener('DOMContentLoaded', poner); else poner();
+})(document);
+/* Tarjetas con la misma foto repetida en una página (artículos que comparten imagen, etc.): la repetida se cambia por otra del catálogo según su texto */
+(function (d) {
+  function base(u) { return String(u || '').split('?')[0]; }
+  function quitar() {
+    if (!window.AurzaneBanco) return;
+    window.AurzaneBanco.listo(function () {
+      var vistas = {}, cm = (d.documentElement.className.match(/az-ds-(mind|nexus|live|learn|build|ovp)/) || [0, 'general'])[1];
+      [].forEach.call(d.querySelectorAll('main img, .wrap img, section img'), function (im) {
+        var b = base(im.currentSrc || im.src); if (!b || /logo|portada|cover|avatar|icon/i.test(b + ' ' + im.className)) return;
+        var card = im.closest('a, article, li'); if (!card || im.closest('.libro, .portada, .rp, .book')) return;
+        var r = im.getBoundingClientRect(); if (r.width && r.width < 120) return;
+        if (!vistas[b]) { vistas[b] = 1; return; }
+        var m = (card.getAttribute('href') || '').match(/(mind|nexus|live|learn|build)\.aurzane|mundo=(mind|nexus|live|learn|build)/);
+        var u = window.AurzaneBanco.foto(m ? (m[1] || m[2]) : cm, (card.textContent || '').slice(0, 220), 640);
+        if (u && !vistas[base(u)]) { vistas[base(u)] = 1; im.removeAttribute('srcset'); im.src = u; }
+      });
+    });
+  }
+  function ir() { quitar(); setTimeout(quitar, 2500); }   // también tras cargar las tarjetas que llegan por JS
+  if (d.readyState === 'loading') d.addEventListener('DOMContentLoaded', ir); else ir();
+})(document);
+
 (function (w, d) {
   'use strict';
   if (w.AurzanePaleta) return;
   var PALETAS = {
-    moca:      { nombre: 'Moca', n950: '#352C25', n900: '#43382F', n800: '#5F5044', n700: '#6E5E50', gold: '#E2AE55', goldLight: '#F2C98A', goldDeep: '#5F5044',
-                 muestra: 'linear-gradient(135deg,#5F5044 0 58%,#1F7A70 58% 100%)', nuevo: true },
-    dorado:    { nombre: 'Dorado clásico', n950: '#080B17', n900: '#0F1530', n800: '#151C3D', n700: '#1E2650', gold: '#C9A24B', goldLight: '#EACF92', goldDeep: '#8A6A28' },
-    aurora:    { nombre: 'Aurora', n950: '#0D0820', n900: '#150D33', n800: '#1F1347', n700: '#2A1660', gold: '#FF8F70', goldLight: '#FFC38A', goldDeep: '#C2456E',
-                 grad: 'linear-gradient(90deg,#FFB347,#FF7A9C,#A35BE0)' },
+    moca:      { nombre: 'Moca', n950: '#2D2F2C', n900: '#393B38', n800: '#525450', n700: '#60625E', gold: '#C7B99B', goldLight: '#DBCFB7', goldDeep: '#525450',
+                 muestra: 'linear-gradient(135deg,#525450 0 58%,#1F7A70 58% 100%)', nuevo: true },
+    dorado:    { nombre: 'Dorado clásico', n950: '#141C19', n900: '#12251F', n800: '#152C24', n700: '#19332B', gold: '#C7B99B', goldLight: '#DDD1B9', goldDeep: '#7C6E52' },
+    aurora:    { nombre: 'Aurora', n950: '#0E1F19', n900: '#12251F', n800: '#142C24', n700: '#19322A', gold: '#FF8F70', goldLight: '#FFC38A', goldDeep: '#C2456E',
+                 grad: 'linear-gradient(90deg,#CFC3AB,#FF7A9C,#A35BE0)' },
     esmeralda: { nombre: 'Esmeralda',      n950: '#071510', n900: '#0D1F19', n800: '#132B22', n700: '#1B3A2E', gold: '#4BA97C', goldLight: '#8FE0BB', goldDeep: '#1F6B4A' },
-    purpura:   { nombre: 'Púrpura real',   n950: '#0E0A1A', n900: '#171029', n800: '#211640', n700: '#2E1E58', gold: '#9A7DD1', goldLight: '#C9B4EE', goldDeep: '#5B3F94' },
-    grafito:   { nombre: 'Grafito plata',  n950: '#0A0A0C', n900: '#131316', n800: '#1B1B20', n700: '#26262C', gold: '#B8BEC7', goldLight: '#E4E7EB', goldDeep: '#6B7078' },
+    purpura:   { nombre: 'Púrpura real',   n950: '#131E1A', n900: '#12251F', n800: '#142C24', n700: '#1A342B', gold: '#9A7DD1', goldLight: '#C9B4EE', goldDeep: '#5B3F94' },
+    grafito:   { nombre: 'Grafito plata',  n950: '#0A0B09', n900: '#131411', n800: '#1B1C18', n700: '#252724', gold: '#BDBEBB', goldLight: '#E9E4DB', goldDeep: '#6F706D' },
     cobre:     { nombre: 'Cobre rosa',     n950: '#150B0C', n900: '#211215', n800: '#2E181C', n700: '#3D2126', gold: '#C97D6B', goldLight: '#E8AE9F', goldDeep: '#7A4436' }
   };
   var CLAVE = 'aurzane-paleta';
@@ -102,38 +370,38 @@
 
   // Estilos extra: botones con degradado en Aurora y el selector flotante.
   var css = [
-    'html.paleta-aurora .btn-gold,html.paleta-aurora .btn.btn-gold,html.paleta-aurora .btn-primary,html.paleta-aurora .btn.btn-primary{background:linear-gradient(90deg,#FFB347,#FF7A9C)!important;color:#1B0B2E!important;border-color:transparent!important}',
-    '.azp-btn{position:fixed;left:16px;bottom:16px;z-index:9990;width:46px;height:46px;border-radius:50%;border:0;padding:0;cursor:pointer;background:conic-gradient(#FFB347,#FF7A9C,#A35BE0,#5B7CFA,#2FB37F,#E3B23C,#FFB347);box-shadow:0 10px 24px -8px rgba(0,0,0,.5);display:grid;place-items:center;transition:transform .15s}',
-    '.azp-btn:hover{transform:scale(1.07)} .azp-btn span{width:36px;height:36px;border-radius:50%;background:#150D33;display:grid;place-items:center;font-size:18px;line-height:1}',
-    '.azp-btn:focus-visible,.azp-sw:focus-visible{outline:3px solid #FFB347;outline-offset:3px}',
-    '.azp-pop{position:fixed;left:16px;bottom:72px;z-index:9991;width:248px;background:#150D33;color:#F5F3EE;border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:14px;box-shadow:0 20px 50px -15px rgba(0,0,0,.6);font:500 14px/1.4 "Instrument Sans",system-ui,sans-serif}',
+    'html.paleta-aurora .btn-gold,html.paleta-aurora .btn.btn-gold,html.paleta-aurora .btn-primary,html.paleta-aurora .btn.btn-primary{background:linear-gradient(90deg,#CFC3AB,#FF7A9C)!important;color:#12251F!important;border-color:transparent!important}',
+    '.azp-btn{position:fixed;left:16px;bottom:16px;z-index:9990;width:46px;height:46px;border-radius:50%;border:0;padding:0;cursor:pointer;background:conic-gradient(#CFC3AB,#FF7A9C,#A35BE0,#5B7CFA,#2FB37F,#C7B99B,#CFC3AB);box-shadow:0 10px 24px -8px rgba(0,0,0,.5);display:grid;place-items:center;transition:transform .15s}',
+    '.azp-btn:hover{transform:scale(1.07)} .azp-btn span{width:36px;height:36px;border-radius:50%;background:#12251F;display:grid;place-items:center;font-size:18px;line-height:1}',
+    '.azp-btn:focus-visible,.azp-sw:focus-visible{outline:3px solid #CFC3AB;outline-offset:3px}',
+    '.azp-pop{position:fixed;left:16px;bottom:72px;z-index:9991;width:248px;background:#12251F;color:#F5F3EE;border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:14px;box-shadow:0 20px 50px -15px rgba(0,0,0,.6);font:500 14px/1.4 "Instrument Sans",system-ui,sans-serif}',
     '.azp-pop[hidden]{display:none!important} .azp-pop b{display:block;font-size:14px;margin:0 0 10px} .azp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}',
     '.azp-sw{display:flex;flex-direction:column;align-items:center;gap:5px;background:none;border:1px solid transparent;border-radius:12px;padding:8px 4px;color:inherit;font:inherit;font-size:11.5px;cursor:pointer}',
     '.azp-sw i{width:30px;height:30px;border-radius:50%;box-shadow:0 0 0 1px rgba(255,255,255,.18)} .azp-sw.activo{border-color:rgba(255,255,255,.45);background:rgba(255,255,255,.06)}',
-    '.azp-sw small{font-size:9.5px;font-weight:700;color:#1B0B2E;background:linear-gradient(90deg,#FFB347,#FF7A9C);border-radius:99px;padding:0 6px}',
-    '.paleta-swatch[data-clave="aurora"]{background:linear-gradient(135deg,#FFB347,#FF7A9C,#A35BE0)!important}',
-    '.paleta-swatch[data-clave="moca"]{background:linear-gradient(135deg,#5F5044 0 58%,#1F7A70 58% 100%)!important}',
+    '.azp-sw small{font-size:9.5px;font-weight:700;color:#12251F;background:linear-gradient(90deg,#CFC3AB,#FF7A9C);border-radius:99px;padding:0 6px}',
+    '.paleta-swatch[data-clave="aurora"]{background:linear-gradient(135deg,#CFC3AB,#FF7A9C,#A35BE0)!important}',
+    '.paleta-swatch[data-clave="moca"]{background:linear-gradient(135deg,#525450 0 58%,#1F7A70 58% 100%)!important}',
     '@media print{.azp-btn,.azp-pop{display:none!important}}'
   ].join('\n');
 
   // El blanco no se queda solo: en modo claro con la paleta por defecto (o con Moca), los fondos y textos
-  // se combinan con el tono moca #5F5044. Con las demás paletas y en modo oscuro todo queda como siempre.
+  // se combinan con el tono moca #525450. Con las demás paletas y en modo oscuro todo queda como siempre.
   // Solo en páginas claras (clase az-claro, que se decide al cargar); el test de personalidad conserva sus colores.
   var cssBase = [
-    'html.az-claro:is(.paleta-dorado,.paleta-moca):not([data-tema="oscuro"]){--vanilla:#F6F0E8;--bg:#F6F0E8;--surface:#FFFCF8;--surface-2:#EEE5DA;--surface-3:#E6DBCE;--text:#2E2620;--paper-ink:#2E2620;--ink:#2E2620;--text-dim:#6E6257;--border:rgba(95,80,68,.18);--line:rgba(95,80,68,.16)}',
+    'html.az-claro:is(.paleta-dorado,.paleta-moca):not([data-tema="oscuro"]){--vanilla:#F2F1ED;--bg:#F2F1ED;--surface:#FFFCF8;--surface-2:#E9E4DB;--surface-3:#DFDDD6;--text:#252724;--paper-ink:#252724;--ink:#252724;--text-dim:#636561;--border:rgba(82,84,80,.18);--line:rgba(82,84,80,.16)}',
     'html[class*="paleta-"]:not(.paleta-dorado){--n1:var(--navy-900);--n2:var(--navy-700);--n3:var(--gold-deep);--cian:var(--gold-light);--violeta:var(--gold)}',
-    'html.az-claro:is(.paleta-dorado,.paleta-moca):not([data-tema="oscuro"]){--accent-text:#5F5044}',
+    'html.az-claro:is(.paleta-dorado,.paleta-moca):not([data-tema="oscuro"]){--accent-text:#525450}',
     'html.paleta-moca:not([data-tema="oscuro"]) :is(.btn-gold,.btn.btn-gold,.btn-primary,.btn.btn-primary,.btn-luz,.cta-final){background:#1F7A70!important;color:#fff!important;border-color:transparent!important;box-shadow:0 10px 24px -12px rgba(31,122,112,.65)}',
     'html.paleta-moca:not([data-tema="oscuro"]) :is(.btn-gold,.btn-primary,.btn-luz,.cta-final):hover{background:#17655C!important}',
     // Un solo color de acción por pantalla: el botón principal va relleno y los secundarios, en contorno del mismo color (jerarquía clara, efecto de aislamiento).
-    'html.az-claro:is(.paleta-dorado,.paleta-moca):not([data-tema="oscuro"]) .btn-osc{background:transparent!important;color:var(--acento-texto,#5F5044)!important;border:2px solid currentColor!important;box-shadow:none!important}',
+    'html.az-claro:is(.paleta-dorado,.paleta-moca):not([data-tema="oscuro"]) .btn-osc{background:transparent!important;color:var(--acento-texto,#525450)!important;border:2px solid currentColor!important;box-shadow:none!important}',
     'html.paleta-moca:not([data-tema="oscuro"]) .btn-osc{background:transparent!important;color:#1F7A70!important;border:2px solid #1F7A70!important;box-shadow:none!important}',
     'html.paleta-moca:not([data-tema="oscuro"]) .btn-osc:hover{background:rgba(31,122,112,.08)!important}',
     // Botones de acción: tamaño táctil mínimo de 44 px, respuesta al pasar el ratón y foco visible para teclado (en todas las paletas, sin cambiar sus colores).
     ':is(.btn-gold,.btn-primary,.btn-luz,.cta-final){min-height:44px;transition:transform .15s ease,box-shadow .15s ease,background-color .15s ease}',
     ':is(.btn-gold,.btn-primary,.btn-luz,.cta-final):hover{transform:translateY(-1px)}',
     ':is(.btn-gold,.btn-primary,.btn-luz,.btn-osc,.cta-final,.btn-ghost,.btn-linea):focus-visible{outline:3px solid #1F7A70;outline-offset:3px}',
-    'html[data-tema="oscuro"] :is(.btn-gold,.btn-primary,.btn-luz,.btn-osc,.cta-final,.btn-ghost,.btn-linea):focus-visible{outline-color:#F2C98A}',
+    'html[data-tema="oscuro"] :is(.btn-gold,.btn-primary,.btn-luz,.btn-osc,.cta-final,.btn-ghost,.btn-linea):focus-visible{outline-color:#DBCFB7}',
     '@media (prefers-reduced-motion:reduce){:is(.btn-gold,.btn-primary,.btn-luz,.cta-final){transition:none}:is(.btn-gold,.btn-primary,.btn-luz,.cta-final):hover{transform:none}}'
   ].join('\n');
   try { var stB = d.createElement('style'); stB.id = 'azp-base'; stB.textContent = cssBase; (d.head || html).appendChild(stB); } catch (e) {}
@@ -156,7 +424,7 @@
     html.classList.toggle('az-claro', claro);
   }
 
-  function muestra(k) { return PALETAS[k].muestra || (PALETAS[k].grad ? 'linear-gradient(135deg,#FFB347,#FF7A9C,#A35BE0)' : PALETAS[k].gold); }
+  function muestra(k) { return PALETAS[k].muestra || (PALETAS[k].grad ? 'linear-gradient(135deg,#CFC3AB,#FF7A9C,#A35BE0)' : PALETAS[k].gold); }
 
   function montarUI() {
     detectarClaro();
@@ -208,7 +476,7 @@
 (function (d) {
   if (window.AurzaneReportar || d.querySelector('script[data-azr]')) return;
   var s = d.createElement('script');
-  s.src = 'https://aurzane.com/aurzane-reportes.js?v=h9886cd38'; s.defer = true; s.setAttribute('data-azr', '1');
+  s.src = 'https://aurzane.com/aurzane-reportes.js?v=h76845e41'; s.defer = true; s.setAttribute('data-azr', '1');
   (d.head || d.documentElement).appendChild(s);
 })(document);
 
@@ -216,7 +484,7 @@
 (function (d) {
   if (window.AurzaneIdiomas || d.querySelector('script[data-azi]')) return;
   var s = d.createElement('script');
-  s.src = 'https://aurzane.com/aurzane-idiomas.js?v=hf9e24fdb'; s.defer = true; s.setAttribute('data-azi', '1');
+  s.src = 'https://aurzane.com/aurzane-idiomas.js?v=h709aab54'; s.defer = true; s.setAttribute('data-azi', '1');
   (d.head || d.documentElement).appendChild(s);
 })(document);
 
@@ -224,7 +492,7 @@
 (function (d) {
   if (!/^(mind|live)\.aurzane\.com$/.test(location.hostname) || d.querySelector('script[data-azasis]')) return;
   var s = d.createElement('script');
-  s.src = 'https://aurzane.com/aurzane-asistente.js?v=hf1ab529d'; s.defer = true; s.setAttribute('data-azasis', '1');
+  s.src = 'https://aurzane.com/aurzane-asistente.js?v=h7558509f'; s.defer = true; s.setAttribute('data-azasis', '1');
   (d.head || d.documentElement).appendChild(s);
 })(document);
 
@@ -232,7 +500,7 @@
 (function (d) {
   if (!/^(mind|live)\.aurzane\.com$/.test(location.hostname) || !/\/test-de-/.test(location.pathname) || d.querySelector('script[data-azruta]')) return;
   var s = d.createElement('script');
-  s.src = 'https://aurzane.com/aurzane-ruta.js?v=hb54794d9'; s.defer = true; s.setAttribute('data-azruta', '1');
+  s.src = 'https://aurzane.com/aurzane-ruta.js?v=h363bee0a'; s.defer = true; s.setAttribute('data-azruta', '1');
   (d.head || d.documentElement).appendChild(s);
 })(document);
 
@@ -241,7 +509,7 @@
   var h = location.hostname, p = location.pathname;
   if (!(/^(mind|live|learn|nexus|build)\.aurzane\.com$/.test(h) || (h === 'aurzane.com' && /^\/(articulos(\/[^/]*)?\/?(index\.html)?|research(\.html)?\/?)$/.test(p))) || d.querySelector('script[data-azcont]')) return;
   var s = d.createElement('script');
-  s.src = 'https://aurzane.com/aurzane-contenido.js?v=hd6981db4'; s.defer = true; s.setAttribute('data-azcont', '1');
+  s.src = 'https://aurzane.com/aurzane-contenido.js?v=hbe5867d8'; s.defer = true; s.setAttribute('data-azcont', '1');
   (d.head || d.documentElement).appendChild(s);
 })(document);
 
@@ -264,8 +532,8 @@
   if (d.getElementById('azDockCss')) return;
   var st = d.createElement('style'); st.id = 'azDockCss';
   st.textContent =
-    '.az-dock{position:fixed;left:14px;bottom:14px;z-index:9995;width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.28);background:rgba(21,13,51,.86);color:#F5F3EE;font:700 18px/1 system-ui,sans-serif;cursor:pointer;display:grid;place-items:center;box-shadow:0 8px 20px -8px rgba(0,0,0,.55);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}' +
-    '.az-dock:focus-visible{outline:2px solid #E2AE55;outline-offset:2px}' +
+    '.az-dock{position:fixed;left:14px;bottom:14px;z-index:9995;width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.28);background:rgba(18,37,31,.86);color:#F5F3EE;font:700 18px/1 system-ui,sans-serif;cursor:pointer;display:grid;place-items:center;box-shadow:0 8px 20px -8px rgba(0,0,0,.55);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}' +
+    '.az-dock:focus-visible{outline:2px solid #C7B99B;outline-offset:2px}' +
     'html:not(.az-dock-abierto) .azp-btn,html:not(.az-dock-abierto) .azi-btn,html:not(.az-dock-abierto) .azr-btn,html:not(.az-dock-abierto) .azr-tip{opacity:0!important;pointer-events:none!important;transform:translateY(10px) scale(.85)!important}' +
     '.azp-btn,.azi-btn,.azr-btn{transition:opacity .18s,transform .18s!important;width:40px!important;height:40px!important;left:14px!important}' +
     '.azp-btn{bottom:62px!important}.azr-btn{bottom:110px!important}.azi-btn{bottom:158px!important}' +
@@ -287,7 +555,7 @@
 (function (d) {
   if (window.AurzaneEstilo || d.querySelector('script[data-azest]')) return;
   /* diferido: escrito en la cabecera retrasaba la primera pintura (PageSpeed, 16/11/2026) */
-  var src = 'https://aurzane.com/aurzane-estilo.js?v=h8b59418f';
+  var src = 'https://aurzane.com/aurzane-estilo.js?v=h5de5daa9';
   var s = d.createElement('script');
   s.src = src; s.defer = true; s.setAttribute('data-azest', '1');
   (d.head || d.documentElement).appendChild(s);
@@ -335,10 +603,10 @@
   if (d.querySelector('link[data-azds]') || !/(^|\.)aurzane\.com$/.test(location.hostname)) return;
   /* la hoja común se escribe en el documento mientras se lee la cabecera: así se aplica antes de pintar y la página
      no cambia de aspecto ni salta cuando llega (16/11/2026); si la página ya está leída, se añade como antes */
-  var css = 'https://aurzane.com/aurzane-ds.css?v=h56c1d85d';
+  var css = 'https://aurzane.com/aurzane-ds.css?v=h632b82e3';
   if (d.readyState === 'loading' && d.currentScript && d.currentScript.parentNode === d.head) d.write('<link rel="stylesheet" href="' + css + '" data-azds="1">');
   else { var l = d.createElement('link'); l.rel = 'stylesheet'; l.href = css; l.setAttribute('data-azds', '1'); (d.head || d.documentElement).appendChild(l); }
-  var s = d.createElement('script'); s.src = 'https://aurzane.com/aurzane-ds.js?v=hbdf28122'; s.defer = true; s.setAttribute('data-azds', '1');
+  var s = d.createElement('script'); s.src = 'https://aurzane.com/aurzane-ds.js?v=hf2bf9f82'; s.defer = true; s.setAttribute('data-azds', '1');
   (d.head || d.documentElement).appendChild(s);
 })(document);
 

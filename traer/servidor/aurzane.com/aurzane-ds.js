@@ -97,6 +97,9 @@
     if (d.querySelector('.az-cab')) return;
     if (/^\/cursos\.html$/.test(ruta) && mundo === 'learn') return;   /* el aula del curso tiene su propia barra de trabajo */
     var tema = d.getElementById('btnTema') || d.getElementById('btnTemaMi');
+    // v4: todas las páginas tienen claro y oscuro; si la página no trae su propio botón, se crea uno con el tema común
+    if (!tema && window.AurzaneTema) { tema = d.createElement('button'); tema.type = 'button'; tema.id = 'btnTema';
+      tema.addEventListener('click', function () { window.AurzaneTema.alternar(); }); }
     var guard = d.getElementById('savedCount');
     var subnav = ocultarViejas();
     var L = LOCAL[mundo], nombre = sesion();

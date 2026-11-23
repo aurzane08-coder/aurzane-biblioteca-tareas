@@ -8,7 +8,7 @@
 (function(global){
   'use strict';
 
-  var AURZANE_RESPALDO = { id: null, nombre_marca: 'AURZANE', subtitulo: 'MIND · Orientación Vocacional-Profesional', color_acento: '#C9A24B', activo: true };
+  var AURZANE_RESPALDO = { id: null, nombre_marca: 'AURZANE', subtitulo: 'MIND · Orientación Vocacional-Profesional', color_acento: '#C7B99B', activo: true };
   var FIRMA_RESPALDO = { id: null, nombre: 'Psi. Cl. Adrian Sánchez Samaniego', titulo: 'Psicólogo Clínico', registro: 'Registro SENESCYT N.º 1033-2023-2618464', es_predeterminado: true };
 
   var cache = null;

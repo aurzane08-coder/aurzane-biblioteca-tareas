@@ -5,13 +5,13 @@
   var host = location.hostname, m = (host.match(/^(mind|live|nexus|learn|build|ovp)\.aurzane\.com$/) || [])[1] || (host === 'aurzane.com' ? 'portada' : '');
   if (!m) return;
   var C = {
-    mind:  ['#5B43B8', '#3B2A7E', 'rgba(91,67,184,.08)'],
+    mind:  ['#5B43B8', '#24443A', 'rgba(91,67,184,.08)'],
     live:  ['#B4542C', '#7D3519', 'rgba(180,84,44,.08)'],
-    nexus: ['#2F5FA8', '#1D3E73', 'rgba(47,95,168,.08)'],
+    nexus: ['#2F5FA8', '#26473C', 'rgba(47,95,168,.08)'],
     learn: ['#2F7A55', '#1C5338', 'rgba(47,122,85,.08)'],
     build: ['#8A5A32', '#5E3B1F', 'rgba(138,90,50,.08)'],
-    ovp:   ['#5B43B8', '#3B2A7E', 'rgba(91,67,184,.08)'],
-    portada: ['#B08A3A', '#7A5E22', 'rgba(176,138,58,.08)']
+    ovp:   ['#5B43B8', '#24443A', 'rgba(91,67,184,.08)'],
+    portada: ['#C7B99B', '#6F6145', 'rgba(199,185,155,.08)']
   }[m];
   var html = d.documentElement; html.classList.add('az-m-' + m);
 
@@ -43,12 +43,12 @@
     '.filter-bar button.active,.filter-bar .activo,.chip.active{background:var(--mundo)!important;color:#fff!important;border-color:var(--mundo)!important}' +
     'a:focus-visible,button:focus-visible{outline:2px solid var(--mundo);outline-offset:2px}' +
     /* panel «Empieza por aquí» a la derecha de la cabecera */
-    '.az-empieza{position:absolute;right:max(28px,calc((100% - 1200px)/2));top:50%;transform:translateY(-50%);width:340px;z-index:2;background:var(--surface,#fffdf9);border:1px solid rgba(60,45,30,.12);border-radius:18px;padding:18px 18px 10px;box-shadow:0 24px 50px -30px rgba(30,20,10,.45);text-align:left}' +
-    'html[data-tema="oscuro"] .az-empieza{background:#151a33;border-color:rgba(255,255,255,.12)}' +
+    '.az-empieza{position:absolute;right:max(28px,calc((100% - 1200px)/2));top:50%;transform:translateY(-50%);width:340px;z-index:2;background:var(--surface,#fffdf9);border:1px solid rgba(47,49,45,.12);border-radius:18px;padding:18px 18px 10px;box-shadow:0 24px 50px -30px rgba(21,23,20,.45);text-align:left}' +
+    'html[data-tema="oscuro"] .az-empieza{background:#182923;border-color:rgba(255,255,255,.12)}' +
     '@media(min-width:1100px){.world-header:has(> .az-empieza){min-height:380px}}' +   /* el panel no se corta arriba (auditoría 16/11/2026) */
     '.az-empieza h2{font:600 1.05rem/1.3 "Instrument Sans",system-ui,sans-serif;margin:0 0 4px;color:inherit}' +
     '.az-empieza p{margin:0 0 10px;font-size:.86rem}' +
-    '.az-empieza a{display:flex;gap:12px;align-items:center;padding:11px 8px;border-top:1px solid rgba(60,45,30,.1);text-decoration:none;color:inherit;border-radius:10px}' +
+    '.az-empieza a{display:flex;gap:12px;align-items:center;padding:11px 8px;border-top:1px solid rgba(47,49,45,.1);text-decoration:none;color:inherit;border-radius:10px}' +
     '.az-empieza a:hover{background:var(--mundo-suave)}' +
     '.az-empieza a .ic{flex:none;width:38px;height:38px;border-radius:11px;display:grid;place-items:center;font-size:1.15rem;background:var(--mundo-suave);border:1px solid var(--mundo-suave)}' +
     '.az-empieza a b{display:block;font-weight:600;font-size:.95rem;line-height:1.25}.az-empieza a small{display:block;font-size:.8rem;opacity:.7;line-height:1.3}' +
@@ -56,9 +56,9 @@
     '@media(min-width:1100px){html.az-con-panel main>.hero .hero-in{text-align:left!important}html.az-con-panel main>.hero .hero-in>*{margin-left:0!important;justify-content:flex-start!important}' +
     'html.az-con-panel .world-header::before,html.az-con-panel main>.hero::before{opacity:.18}}' +
     '@media(max-width:1099px){.az-empieza{display:none}.world-header::before,main>.hero::before{opacity:.12!important}}' +
-    '.az-portada{position:absolute;top:44px;right:16px;width:330px;border-radius:24px;overflow:hidden;color:#fff;background:linear-gradient(165deg,rgba(28,22,60,.72),rgba(12,10,30,.82));background:linear-gradient(165deg,color-mix(in srgb,var(--mundo-osc) 60%,rgba(10,8,24,.7)),rgba(10,8,24,.85));border:1px solid rgba(255,255,255,.16);box-shadow:0 30px 60px -30px rgba(0,0,0,.65);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);z-index:2}' +
+    '.az-portada{position:absolute;top:44px;right:16px;width:330px;border-radius:24px;overflow:hidden;color:#fff;background:linear-gradient(165deg,rgba(19,42,35,.72),rgba(17,30,26,.82));background:linear-gradient(165deg,color-mix(in srgb,var(--mundo-osc) 60%,rgba(17,28,24,.7)),rgba(17,28,24,.85));border:1px solid rgba(255,255,255,.16);box-shadow:0 30px 60px -30px rgba(0,0,0,.65);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);z-index:2}' +
     '.az-portada .ilu{height:200px;background-repeat:no-repeat;background-position:center;background-size:88% auto,100% 100%;border-bottom:1px solid rgba(255,255,255,.1)}' +
-    '.az-portada .dat{padding:16px 20px 18px}.az-portada .esc{display:inline-block;font-size:.76rem;font-weight:700;letter-spacing:.03em;background:rgba(255,217,160,.16);color:#FFD9A0;border-radius:99px;padding:3px 10px;margin-bottom:10px}' +
+    '.az-portada .dat{padding:16px 20px 18px}.az-portada .esc{display:inline-block;font-size:.76rem;font-weight:700;letter-spacing:.03em;background:rgba(234,222,198,.16);color:#EADEC6;border-radius:99px;padding:3px 10px;margin-bottom:10px}' +
     '.az-portada b{display:block;font-size:.95rem;margin-bottom:2px}.az-portada p{margin:0 0 12px;font-size:.9rem;line-height:1.45;opacity:.85}' +
     '.az-portada ul{display:flex;gap:8px;list-style:none;margin:0;padding:0}.az-portada li{flex:1;text-align:center;font-size:.72rem;opacity:.85;background:rgba(255,255,255,.07);border-radius:12px;padding:8px 4px}' +
     '.az-portada li i{display:block;font-style:normal;font-family:"Bodoni Moda",Georgia,serif;font-size:1.15rem;font-weight:700;opacity:1;color:#fff}' +
@@ -69,18 +69,18 @@
     '.az-explorar{padding:56px 20px;background:var(--mundo-suave)}.az-explorar .in{max-width:1120px;margin:0 auto}' +
     '.az-explorar h2{font:700 clamp(1.5rem,3vw,2rem)/1.2 "Bodoni Moda",Georgia,serif;margin:0 0 6px}.az-explorar>.in>p{margin:0 0 20px;opacity:.75}' +
     '.az-explorar .g{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}' +
-    '.az-explorar .c{display:flex;flex-direction:column;border-radius:18px;overflow:hidden;text-decoration:none;color:#fff;background:#2a2350;box-shadow:0 18px 36px -24px rgba(0,0,0,.6);transition:transform .2s}' +
-    '.az-explorar .c:hover{transform:translateY(-3px)}.az-explorar .az-c-mind{background:linear-gradient(160deg,#5B43B8,#2a1f63)}.az-explorar .az-c-live{background:linear-gradient(160deg,#B4542C,#5a2610)}' +
+    '.az-explorar .c{display:flex;flex-direction:column;border-radius:18px;overflow:hidden;text-decoration:none;color:#fff;background:#1A342B;box-shadow:0 18px 36px -24px rgba(0,0,0,.6);transition:transform .2s}' +
+    '.az-explorar .c:hover{transform:translateY(-3px)}.az-explorar .az-c-mind{background:linear-gradient(160deg,#5B43B8,#1B352D)}.az-explorar .az-c-live{background:linear-gradient(160deg,#B4542C,#5a2610)}' +
     '.az-explorar .i{height:120px;background-repeat:no-repeat;background-position:center;background-size:78% auto;border-bottom:1px solid rgba(255,255,255,.12)}' +
     '.az-explorar .t{padding:14px 16px 16px}.az-explorar small{display:block;font-size:.72rem;font-weight:700;letter-spacing:.06em;opacity:.7}.az-explorar b{display:block;font-size:1.05rem;margin:2px 0 4px}' +
     '.az-explorar em{display:block;font-style:normal;font-size:.86rem;line-height:1.4;opacity:.82}' +
     '@media (prefers-reduced-motion:reduce){.az-explorar .c{transition:none}}' +
-    '.az-boletin{background:#0f1530;color:#f3efe6;padding:44px 20px}.az-boletin .in{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:1.1fr 1fr;gap:28px;align-items:center}' +
+    '.az-boletin{background:#12251F;color:#f3efe6;padding:44px 20px}.az-boletin .in{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:1.1fr 1fr;gap:28px;align-items:center}' +
     '.az-boletin h2{font:700 clamp(1.35rem,2.6vw,1.8rem)/1.2 "Bodoni Moda",Georgia,serif;margin:0 0 8px;color:#f3efe6}.az-boletin p{margin:0;opacity:.8}' +
     '.az-boletin form{display:grid;grid-template-columns:1fr auto;gap:10px}.az-boletin input[type=email]{padding:13px 16px;border-radius:99px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.06);color:#fff;font:inherit;min-width:0}' +
-    '.az-boletin button{padding:13px 22px;border:0;border-radius:99px;background:#E2BF6A;color:#1b1440;font:700 1rem inherit;cursor:pointer}' +
+    '.az-boletin button{padding:13px 22px;border:0;border-radius:99px;background:#D1C2A3;color:#132A23;font:700 1rem inherit;cursor:pointer}' +
     'nav.breadcrumb.wrap{padding-left:32px;padding-right:32px}@media(max-width:640px){nav.breadcrumb.wrap{padding-left:20px;padding-right:20px}}' +
-    '.az-boletin label{grid-column:1/-1;font-size:.84rem;opacity:.8;gap:.35em;align-items:center;flex-wrap:wrap}.az-boletin label a{color:#E2BF6A}.az-boletin .trampa{position:absolute;left:-9999px}' +
+    '.az-boletin label{grid-column:1/-1;font-size:.84rem;opacity:.8;gap:.35em;align-items:center;flex-wrap:wrap}.az-boletin label a{color:#D1C2A3}.az-boletin .trampa{position:absolute;left:-9999px}' +
     '@media(max-width:760px){.az-boletin .in{grid-template-columns:1fr}.az-boletin form{grid-template-columns:1fr}}' +
     '.az-bol-pop{position:fixed;right:16px;bottom:16px;z-index:9995;width:min(380px,calc(100vw - 32px));padding:18px 18px 16px!important;border-radius:18px;box-shadow:0 24px 60px -20px rgba(0,0,0,.7)}' +
     '.az-bol-pop form,.az-bol-res form{grid-template-columns:1fr!important}.az-bol-pop .cerrar{position:absolute;top:6px;right:10px;background:none;border:0;color:#fff;font-size:1.5rem;cursor:pointer;opacity:.7}' +
@@ -134,21 +134,21 @@
 
   /* ---------- portada ilustrada de cada test y calculadora: imagen principal + qué mide + datos clave ---------- */
   var ILU = {
-    olas: '<circle cx="160" cy="105" r="62" fill="#fff" fill-opacity=".07"/><circle cx="160" cy="105" r="40" fill="#fff" fill-opacity=".08"/><circle cx="160" cy="105" r="16" fill="#FFD9A0" stroke="none"/><path d="M0 70c40-30 80 30 120 0s80 30 120 0 60-25 80-10" opacity=".35"/><path d="M0 150c40-20 80 20 120 0s80 20 120 0 60-15 80-6" opacity=".55"/><path d="M0 182c40-10 80 10 120 0s80 10 120 0 60-8 80-3" opacity=".8"/><path d="M0 206h320" opacity=".9"/>',
-    nube: '<circle cx="190" cy="92" r="44" fill="#FFD9A0" stroke="none"/><path d="M190 22v14M240 42l-10 10M260 92h-14M140 42l10 10" stroke="#FFD9A0"/><path d="M70 170c-22 0-34-26-14-40 2-26 34-34 48-16 14-24 56-18 58 12 24 0 32 34 8 44z" fill="#2a2350" fill-opacity=".85"/><path d="M60 196h200M100 210h120" opacity=".4"/>',
-    espejo: '<ellipse cx="160" cy="105" rx="58" ry="80" fill="#fff" fill-opacity=".07"/><ellipse cx="160" cy="105" rx="46" ry="66" opacity=".6"/><circle cx="160" cy="88" r="16" fill="#FFD9A0" stroke="none"/><path d="M134 140c6-20 46-20 52 0" stroke="#FFD9A0"/><path d="M60 50l6 12 12 6-12 6-6 12-6-12-12-6 12-6zM262 140l4 8 8 4-8 4-4 8-4-8-8-4 8-4z" fill="#fff" fill-opacity=".8" stroke="none"/>',
-    corazon: '<path d="M160 178s-70-40-70-88c0-26 20-42 40-42 14 0 24 8 30 18 6-10 16-18 30-18 20 0 40 16 40 42 0 48-70 88-70 88z" fill="#FFD9A0" fill-opacity=".9" stroke="none"/><path d="M40 200c30-60 60-70 90-60M280 200c-30-60-60-70-90-60" opacity=".7"/><circle cx="160" cy="105" r="96" opacity=".18"/>',
-    montana: '<path d="M10 200l90-120 50 60 40-40 120 100z" fill="#fff" fill-opacity=".08"/><path d="M10 200l90-120 50 60 40-40 120 100" /><path d="M190 100V52" /><path d="M190 52h34l-8 9 8 9h-34" fill="#FFD9A0" stroke="#FFD9A0"/><path d="M40 200c30-30 60-20 80-50s50-40 70-50" stroke-dasharray="4 7" opacity=".7"/>',
-    vela: '<rect x="138" y="100" width="44" height="96" rx="6" fill="#fff" fill-opacity=".12"/><path d="M160 100v-10"/><path d="M160 90c-16-14-10-34 0-48 10 14 16 34 0 48z" fill="#FFD9A0" stroke="none"/><circle cx="160" cy="70" r="46" opacity=".2"/><path d="M110 196h100" opacity=".6"/><path d="M60 150c10-20 0-40-10-50M262 150c-10-20 0-40 10-50" opacity=".35"/>',
-    espiral: '<path d="M90 110c0-22 18-40 40-40s36 16 36 34-14 30-30 30-26-12-26-24 8-20 18-20 16 6 16 14" opacity=".75"/><path d="M166 104c30 0 40 36 154 36" stroke="#FFD9A0" stroke-width="3"/><circle cx="300" cy="140" r="6" fill="#FFD9A0" stroke="none"/><path d="M20 190h280" opacity=".3"/>',
-    brote: '<path d="M30 196h260" /><path d="M120 196l20-16 14 10 18-14" opacity=".5"/><path d="M160 196v-70" stroke="#FFD9A0" stroke-width="3"/><path d="M160 150c-30 0-46-20-46-40 26 0 46 14 46 40zM160 132c26-2 44-22 42-46-24 2-42 20-42 46z" fill="#FFD9A0" fill-opacity=".85" stroke="none"/><circle cx="250" cy="56" r="20" fill="#fff" fill-opacity=".2"/>',
-    sol: '<circle cx="160" cy="140" r="56" fill="#FFD9A0" stroke="none"/><path d="M160 60V40M218 84l14-14M102 84 88 70M240 140h20M60 140h20" stroke="#FFD9A0"/><path d="M0 170c60-30 120-30 160 0s100 30 160 0v50H0z" fill="#2a2350" fill-opacity=".9" stroke="none"/><path d="M0 170c60-30 120-30 160 0s100 30 160 0" />',
-    puntos: '<circle cx="70" cy="110" r="12" fill="#FFD9A0" stroke="none"/><g fill="#fff" fill-opacity=".85" stroke="none"><circle cx="220" cy="80" r="10"/><circle cx="252" cy="104" r="10"/><circle cx="214" cy="126" r="10"/><circle cx="246" cy="148" r="10"/></g><path d="M86 110c40-10 80-20 120-26" stroke-dasharray="5 8" opacity=".8"/><circle cx="70" cy="110" r="34" opacity=".25"/>',
-    foco: '<circle cx="160" cy="110" r="80" opacity=".25"/><circle cx="160" cy="110" r="54" opacity=".45"/><circle cx="160" cy="110" r="28" opacity=".7"/><circle cx="160" cy="110" r="9" fill="#FFD9A0" stroke="none"/><g fill="#fff" stroke="none" fill-opacity=".8"><circle cx="40" cy="40" r="4"/><circle cx="290" cy="60" r="4"/><circle cx="270" cy="190" r="4"/><circle cx="50" cy="180" r="4"/></g><path d="M48 46l60 34M282 64l-62 26M262 184l-56-40M58 174l56-36" stroke-dasharray="3 6" opacity=".6"/>',
-    luna: '<path d="M196 50a62 62 0 1 0 50 98 52 52 0 1 1-50-98z" fill="#FFD9A0" stroke="none"/><g fill="#fff" stroke="none"><circle cx="70" cy="60" r="3"/><circle cx="110" cy="30" r="2"/><circle cx="270" cy="40" r="2.5"/><circle cx="60" cy="150" r="2"/><circle cx="290" cy="170" r="3"/></g><path d="M86 110h18l-18 18h18M120 86h12l-12 12h12" opacity=".7"/>',
-    habitos: '<g opacity=".9"><rect x="50" y="50" width="56" height="56" rx="14" fill="#FFD9A0" fill-opacity=".9" stroke="none"/><rect x="132" y="50" width="56" height="56" rx="14" fill="#fff" fill-opacity=".14"/><rect x="214" y="50" width="56" height="56" rx="14" fill="#FFD9A0" fill-opacity=".9" stroke="none"/><rect x="50" y="128" width="56" height="56" rx="14" fill="#fff" fill-opacity=".14"/><rect x="132" y="128" width="56" height="56" rx="14" fill="#FFD9A0" fill-opacity=".9" stroke="none"/><rect x="214" y="128" width="56" height="56" rx="14" fill="#fff" fill-opacity=".14"/></g><path d="M64 78l10 10 20-20M228 78l10 10 20-20M146 156l10 10 20-20" stroke="#2a2350" stroke-width="4"/>',
-    grafica: '<path d="M30 196h270M30 196V30" opacity=".5"/><g fill="#fff" fill-opacity=".14" stroke="none"><rect x="54" y="140" width="34" height="56" rx="6"/><rect x="104" y="116" width="34" height="80" rx="6"/><rect x="154" y="96" width="34" height="100" rx="6"/><rect x="204" y="70" width="34" height="126" rx="6"/></g><path d="M60 140l52-30 50-18 52-34 50-22" stroke="#FFD9A0" stroke-width="3"/><circle cx="264" cy="36" r="7" fill="#FFD9A0" stroke="none"/>',
-    casa: '<g opacity=".25"><path d="M20 60h280M20 110h280M20 160h280M70 20v190M140 20v190M210 20v190M280 20v190"/></g><path d="M90 196V112l70-54 70 54v84z" fill="#fff" fill-opacity=".1"/><path d="M76 120l84-66 84 66" stroke="#FFD9A0" stroke-width="3"/><path d="M140 196v-48h40v48"/><path d="M40 196h240"/>'
+    olas: '<circle cx="160" cy="105" r="62" fill="#fff" fill-opacity=".07"/><circle cx="160" cy="105" r="40" fill="#fff" fill-opacity=".08"/><circle cx="160" cy="105" r="16" fill="#EADEC6" stroke="none"/><path d="M0 70c40-30 80 30 120 0s80 30 120 0 60-25 80-10" opacity=".35"/><path d="M0 150c40-20 80 20 120 0s80 20 120 0 60-15 80-6" opacity=".55"/><path d="M0 182c40-10 80 10 120 0s80 10 120 0 60-8 80-3" opacity=".8"/><path d="M0 206h320" opacity=".9"/>',
+    nube: '<circle cx="190" cy="92" r="44" fill="#EADEC6" stroke="none"/><path d="M190 22v14M240 42l-10 10M260 92h-14M140 42l10 10" stroke="#EADEC6"/><path d="M70 170c-22 0-34-26-14-40 2-26 34-34 48-16 14-24 56-18 58 12 24 0 32 34 8 44z" fill="#1A342B" fill-opacity=".85"/><path d="M60 196h200M100 210h120" opacity=".4"/>',
+    espejo: '<ellipse cx="160" cy="105" rx="58" ry="80" fill="#fff" fill-opacity=".07"/><ellipse cx="160" cy="105" rx="46" ry="66" opacity=".6"/><circle cx="160" cy="88" r="16" fill="#EADEC6" stroke="none"/><path d="M134 140c6-20 46-20 52 0" stroke="#EADEC6"/><path d="M60 50l6 12 12 6-12 6-6 12-6-12-12-6 12-6zM262 140l4 8 8 4-8 4-4 8-4-8-8-4 8-4z" fill="#fff" fill-opacity=".8" stroke="none"/>',
+    corazon: '<path d="M160 178s-70-40-70-88c0-26 20-42 40-42 14 0 24 8 30 18 6-10 16-18 30-18 20 0 40 16 40 42 0 48-70 88-70 88z" fill="#EADEC6" fill-opacity=".9" stroke="none"/><path d="M40 200c30-60 60-70 90-60M280 200c-30-60-60-70-90-60" opacity=".7"/><circle cx="160" cy="105" r="96" opacity=".18"/>',
+    montana: '<path d="M10 200l90-120 50 60 40-40 120 100z" fill="#fff" fill-opacity=".08"/><path d="M10 200l90-120 50 60 40-40 120 100" /><path d="M190 100V52" /><path d="M190 52h34l-8 9 8 9h-34" fill="#EADEC6" stroke="#EADEC6"/><path d="M40 200c30-30 60-20 80-50s50-40 70-50" stroke-dasharray="4 7" opacity=".7"/>',
+    vela: '<rect x="138" y="100" width="44" height="96" rx="6" fill="#fff" fill-opacity=".12"/><path d="M160 100v-10"/><path d="M160 90c-16-14-10-34 0-48 10 14 16 34 0 48z" fill="#EADEC6" stroke="none"/><circle cx="160" cy="70" r="46" opacity=".2"/><path d="M110 196h100" opacity=".6"/><path d="M60 150c10-20 0-40-10-50M262 150c-10-20 0-40 10-50" opacity=".35"/>',
+    espiral: '<path d="M90 110c0-22 18-40 40-40s36 16 36 34-14 30-30 30-26-12-26-24 8-20 18-20 16 6 16 14" opacity=".75"/><path d="M166 104c30 0 40 36 154 36" stroke="#EADEC6" stroke-width="3"/><circle cx="300" cy="140" r="6" fill="#EADEC6" stroke="none"/><path d="M20 190h280" opacity=".3"/>',
+    brote: '<path d="M30 196h260" /><path d="M120 196l20-16 14 10 18-14" opacity=".5"/><path d="M160 196v-70" stroke="#EADEC6" stroke-width="3"/><path d="M160 150c-30 0-46-20-46-40 26 0 46 14 46 40zM160 132c26-2 44-22 42-46-24 2-42 20-42 46z" fill="#EADEC6" fill-opacity=".85" stroke="none"/><circle cx="250" cy="56" r="20" fill="#fff" fill-opacity=".2"/>',
+    sol: '<circle cx="160" cy="140" r="56" fill="#EADEC6" stroke="none"/><path d="M160 60V40M218 84l14-14M102 84 88 70M240 140h20M60 140h20" stroke="#EADEC6"/><path d="M0 170c60-30 120-30 160 0s100 30 160 0v50H0z" fill="#1A342B" fill-opacity=".9" stroke="none"/><path d="M0 170c60-30 120-30 160 0s100 30 160 0" />',
+    puntos: '<circle cx="70" cy="110" r="12" fill="#EADEC6" stroke="none"/><g fill="#fff" fill-opacity=".85" stroke="none"><circle cx="220" cy="80" r="10"/><circle cx="252" cy="104" r="10"/><circle cx="214" cy="126" r="10"/><circle cx="246" cy="148" r="10"/></g><path d="M86 110c40-10 80-20 120-26" stroke-dasharray="5 8" opacity=".8"/><circle cx="70" cy="110" r="34" opacity=".25"/>',
+    foco: '<circle cx="160" cy="110" r="80" opacity=".25"/><circle cx="160" cy="110" r="54" opacity=".45"/><circle cx="160" cy="110" r="28" opacity=".7"/><circle cx="160" cy="110" r="9" fill="#EADEC6" stroke="none"/><g fill="#fff" stroke="none" fill-opacity=".8"><circle cx="40" cy="40" r="4"/><circle cx="290" cy="60" r="4"/><circle cx="270" cy="190" r="4"/><circle cx="50" cy="180" r="4"/></g><path d="M48 46l60 34M282 64l-62 26M262 184l-56-40M58 174l56-36" stroke-dasharray="3 6" opacity=".6"/>',
+    luna: '<path d="M196 50a62 62 0 1 0 50 98 52 52 0 1 1-50-98z" fill="#EADEC6" stroke="none"/><g fill="#fff" stroke="none"><circle cx="70" cy="60" r="3"/><circle cx="110" cy="30" r="2"/><circle cx="270" cy="40" r="2.5"/><circle cx="60" cy="150" r="2"/><circle cx="290" cy="170" r="3"/></g><path d="M86 110h18l-18 18h18M120 86h12l-12 12h12" opacity=".7"/>',
+    habitos: '<g opacity=".9"><rect x="50" y="50" width="56" height="56" rx="14" fill="#EADEC6" fill-opacity=".9" stroke="none"/><rect x="132" y="50" width="56" height="56" rx="14" fill="#fff" fill-opacity=".14"/><rect x="214" y="50" width="56" height="56" rx="14" fill="#EADEC6" fill-opacity=".9" stroke="none"/><rect x="50" y="128" width="56" height="56" rx="14" fill="#fff" fill-opacity=".14"/><rect x="132" y="128" width="56" height="56" rx="14" fill="#EADEC6" fill-opacity=".9" stroke="none"/><rect x="214" y="128" width="56" height="56" rx="14" fill="#fff" fill-opacity=".14"/></g><path d="M64 78l10 10 20-20M228 78l10 10 20-20M146 156l10 10 20-20" stroke="#1A342B" stroke-width="4"/>',
+    grafica: '<path d="M30 196h270M30 196V30" opacity=".5"/><g fill="#fff" fill-opacity=".14" stroke="none"><rect x="54" y="140" width="34" height="56" rx="6"/><rect x="104" y="116" width="34" height="80" rx="6"/><rect x="154" y="96" width="34" height="100" rx="6"/><rect x="204" y="70" width="34" height="126" rx="6"/></g><path d="M60 140l52-30 50-18 52-34 50-22" stroke="#EADEC6" stroke-width="3"/><circle cx="264" cy="36" r="7" fill="#EADEC6" stroke="none"/>',
+    casa: '<g opacity=".25"><path d="M20 60h280M20 110h280M20 160h280M70 20v190M140 20v190M210 20v190M280 20v190"/></g><path d="M90 196V112l70-54 70 54v84z" fill="#fff" fill-opacity=".1"/><path d="M76 120l84-66 84 66" stroke="#EADEC6" stroke-width="3"/><path d="M140 196v-48h40v48"/><path d="M40 196h240"/>'
   };
 
   /* Fotos reales (Unsplash, licencia libre) para cada test y calculadora: sustituyen a los dibujos propios */
@@ -159,15 +159,15 @@
     agua: '1548839140-29a749e1cf4d', comida: '1512621776951-a57141f2eefd', ejercicio: '1571019613454-1cb2f99b2d8b', embarazo: '1493894473891-10fc1e5dbd22',
     tarta: '1464349095431-e9a21285b5f3', calendario: '1506784983877-45594efa4cbe', graficos: '1434626881859-194d67b2b86f', estudio: '1427504494785-3a9ca7044f45', impuestos: '1554224154-26032ffc0d07',
     chalet: '1570129477492-45c003edd2be', pisos: '1460317442991-0ec209397118', curriculum: '1586281380349-632531db7ed4', hucha: '1559526324-4b87b5e36e44',
-    playa: '1473186578172-c141e6798cf4', manos: '1505751172876-fa1923c5c528', pesas: '1517836357463-d25dfeac3438', dormir: '1520206183501-b80df61043c2', viaje: '1603792835233-f4f7c2497d4f' };
+    playa: '1473186578172-c141e6798cf4', manos: '1505751172876-fa1923c5c528', pesas: '1517836357463-d25dfeac3438', dormir: '1520206183501-b80df61043c2', obra: '1618832515490-e181c4794a45', salon: '1554995207-c18c203602cb', viaje: '1603792835233-f4f7c2497d4f' };
   function foto(clave, ancho) { return 'url("https://images.unsplash.com/photo-' + (FOTO[clave] || FOTO.grafica) + '?w=' + (ancho || 640) + '&q=70&auto=format&fit=crop")'; }
   var TEMA = { 'test-de-ansiedad': 'olas', 'test-de-depresion': 'nube', 'test-de-autoestima': 'espejo', 'test-de-autocompasion': 'corazon', 'test-de-autoeficacia': 'montana',
     'test-de-burnout': 'vela', 'test-de-estres': 'espiral', 'test-de-resiliencia': 'brote', 'test-de-satisfaccion-con-la-vida': 'sol', 'test-de-soledad': 'puntos',
-    'test-de-tdah': 'foco', 'test-de-bienestar': 'bienestar', 'test-de-habitos': 'habitos', 'test-de-sueno': 'luna', 'calculadora-hipoteca': 'casa', 'calculadora-reforma': 'casa', 'calculadora-interes-compuesto': 'ahorro', 'calculadora-sueldo-neto': 'impuestos',
+    'test-de-tdah': 'foco', 'test-de-bienestar': 'bienestar', 'test-de-habitos': 'habitos', 'test-de-sueno': 'luna', 'calculadora-hipoteca': 'casa', 'calculadora-reforma': 'obra', 'calculadora-interes-compuesto': 'ahorro', 'calculadora-sueldo-neto': 'impuestos',
     'calculadora-agua': 'agua', 'calculadora-calorias': 'comida', 'calculadora-imc': 'ejercicio', 'calculadora-embarazo': 'embarazo', 'calculadora-edad': 'tarta',
     'calculadora-dias-entre-fechas': 'calendario', 'calculadora-porcentajes': 'graficos', 'calculadora-nota-pau': 'estudio',
     'calculadora-gastos-compra-vivienda': 'chalet', 'calculadora-rentabilidad-alquiler': 'pisos', 'calculadora-finiquito': 'curriculum', 'calculadora-ahorro': 'hucha',
-    'calculadora-jubilacion': 'playa', 'calculadora-ovulacion': 'manos', 'calculadora-peso-ideal': 'pesas', 'calculadora-sueno': 'dormir' };
+    'calculadora-jubilacion': 'playa', 'calculadora-ovulacion': 'manos', 'calculadora-peso-ideal': 'pesas', 'calculadora-sueno': 'dormir', 'alquiler-por-municipio': 'salon', 'ejercicios': 'bienestar' };
   var MIDE = { 'test-de-ansiedad': 'Cuánta ansiedad y preocupación has sentido en las dos últimas semanas.', 'test-de-depresion': 'Cómo ha estado tu estado de ánimo en las dos últimas semanas.',
     'test-de-autoestima': 'Cómo te valoras a ti mismo en general.', 'test-de-autocompasion': 'Cómo te tratas cuando algo sale mal o te sientes mal.',
     'test-de-autoeficacia': 'Cuánto confías en tu capacidad para afrontar retos y problemas.', 'test-de-burnout': 'El agotamiento físico y mental que te dejan el trabajo o los estudios.',
@@ -177,6 +177,8 @@
     'test-de-habitos': 'Tu estilo de vida: alimentación, actividad física, descanso y más.', 'test-de-sueno': 'Cuánto y cómo duermes, y qué te puede estar quitando descanso.' };
   function portada() {
     var slug = location.pathname.split('/').filter(Boolean)[0] || '';
+    if (/^(test-de-|calculadora-)|^alquiler-por-municipio$/.test(slug)) { var hv = d.querySelector('section.hero') || d.querySelector('.hero');
+      if (hv && !hv.hasAttribute('data-v4-foto')) { hv.setAttribute('data-v4-foto', '1'); hv.style.setProperty('--v4-foto', foto(TEMA[slug] || (slug === 'test-de-personalidad' ? 'espejo' : 'grafica'), 1800)); html.classList.add('az-v4-herofoto'); } }
     if (!/^(test-de-|calculadora-)/.test(slug) || slug === 'test-de-personalidad' || d.querySelector('.az-portada')) return;
     if (w.innerWidth < 700) return;   /* en el móvil la ficha empujaba la calculadora fuera de la pantalla y movía la página al cargar (CLS) */
     var wrap = d.querySelector('.hero > .wrap'), pre = wrap && wrap.querySelector('.pre');
@@ -316,9 +318,9 @@
         var ref = d.querySelector('section[data-guia]') || d.querySelector('aside.firma') || d.querySelector('footer'); if (!ref || d.querySelector('.az-curso-rel')) return;
         var w = ref.closest('.wrap') || ref;
         var box = d.createElement('div'); box.className = 'wrap az-curso-rel';
-        box.innerHTML = '<a href="https://learn.aurzane.com/curso/' + c[1] + '/?utm_source=' + c[4].split('.')[0] + '&amp;utm_medium=test" style="display:flex;gap:18px;align-items:center;text-decoration:none;color:inherit;border:1px solid #c9a24b;border-radius:16px;padding:18px 20px;margin:28px 0;background:rgba(201,162,75,.07)">' +
+        box.innerHTML = '<a href="https://learn.aurzane.com/curso/' + c[1] + '/?utm_source=' + c[4].split('.')[0] + '&amp;utm_medium=test" style="display:flex;gap:18px;align-items:center;text-decoration:none;color:inherit;border:1px solid #C7B99B;border-radius:16px;padding:18px 20px;margin:28px 0;background:rgba(199,185,155,.07)">' +
           '<img src="' + img + '" alt="" width="160" height="90" loading="lazy" style="width:160px;height:auto;border-radius:10px;flex:none">' +
-          '<span><strong style="display:block;font-size:1.08rem;margin-bottom:4px">' + c[2] + '</strong><span style="opacity:.85">' + c[3] + '</span><span class="az-cr-ver" style="display:block;margin-top:8px;font-weight:600;color:#7E6020">Ver el curso</span></span></a>';
+          '<span><strong style="display:block;font-size:1.08rem;margin-bottom:4px">' + c[2] + '</strong><span style="opacity:.85">' + c[3] + '</span><span class="az-cr-ver" style="display:block;margin-top:8px;font-weight:600;color:#716448">Ver el curso</span></span></a>';
         w.parentNode.insertBefore(box, w);
       };
       if (!c[5]) { pintar('https://learn.aurzane.com/cursos/portada-ansiedad.webp'); return; }
@@ -442,12 +444,12 @@
       var c = d.createElement('aside'); c.className = 'az-socio'; c.setAttribute('data-nosnippet', '');
       /* tarjeta con foto real (Unsplash) del tema de la oferta (17/11/2026): más clara y atractiva que un banner, sin cargar publicidad de terceros */
       var fk = SOCIO_FOTO[cual] || 'grafica', href = (x[6] ? A[id].u.replace(/([?&]ued=)[^&]*/, '$1' + encodeURIComponent(x[6])) : A[id].u).replace(/"/g, '&quot;');
-      c.style.cssText = 'max-width:1120px;margin:30px auto;border-radius:18px;background:#141a33;color:#f3efe6;border:1px solid rgba(255,255,255,.12);overflow:hidden;display:flex;flex-wrap:wrap';
-      c.innerHTML = '<a href="' + href + '" target="_blank" rel="sponsored nofollow noopener" tabindex="-1" aria-hidden="true" style="flex:1 1 260px;min-height:170px;max-height:260px;display:block;background:#1d2547">' +
+      c.style.cssText = 'max-width:1120px;margin:30px auto;border-radius:18px;background:#182823;color:#f3efe6;border:1px solid rgba(255,255,255,.12);overflow:hidden;display:flex;flex-wrap:wrap';
+      c.innerHTML = '<a href="' + href + '" target="_blank" rel="sponsored nofollow noopener" tabindex="-1" aria-hidden="true" style="flex:1 1 260px;min-height:170px;max-height:260px;display:block;background:#1B312A">' +
         '<img src="https://images.unsplash.com/photo-' + (FOTO[fk] || FOTO.grafica) + '?w=720&q=60&auto=format&fit=crop" alt="" loading="lazy" decoding="async" width="720" height="480" style="width:100%;height:100%;object-fit:cover;display:block"></a>' +
         '<div style="flex:2 1 320px;padding:22px 24px"><p style="margin:0 0 6px;font-size:.72rem;letter-spacing:.02em;opacity:.6"><a href="https://aurzane.com/aviso-legal.html" style="color:inherit">Publicidad</a> · ' + A[id].n + '</p>' +
         '<p style="margin:0 0 6px;font:700 1.25rem/1.3 \'Bodoni Moda\',Georgia,serif">' + x[2] + '</p><p style="margin:0 0 16px;opacity:.82">' + x[3] + '</p>' +
-        '<a href="' + href + '" target="_blank" rel="sponsored nofollow noopener" style="display:inline-flex;align-items:center;min-height:44px;background:#E2BF6A;color:#1b1440;font-weight:700;text-decoration:none;padding:10px 22px;border-radius:99px">' + x[4] + ' ' + A[id].n + ' ↗</a>' +
+        '<a href="' + href + '" target="_blank" rel="sponsored nofollow noopener" style="display:inline-flex;align-items:center;min-height:44px;background:#D1C2A3;color:#132A23;font-weight:700;text-decoration:none;padding:10px 22px;border-radius:99px">' + x[4] + ' ' + A[id].n + ' ↗</a>' +
         '</div>';
       pie.parentNode.insertBefore(c, pie);
       /* SaludOnNet (18/11/2026): al ver el resultado, la consulta sube justo debajo, que es cuando más ayuda; si no hay resultado, se queda abajo */
@@ -470,7 +472,7 @@
     var hecho = false;
     function ck(n) { var m = d.cookie.match(new RegExp('(?:^|; )' + n.replace(/\./g, '\\.') + '=([^;]*)')); return m ? decodeURIComponent(m[1]) : null; }
     function ponCk(n, v) { d.cookie = n + '=' + encodeURIComponent(v) + '; domain=.aurzane.com; path=/; max-age=' + 60 * 864e2 + '; secure; samesite=lax'; }
-    function aviso(html) { var a = d.querySelector('.az-mi-aviso') || d.createElement('p'); a.className = 'az-mi-aviso'; a.style.cssText = 'margin:14px 0;padding:12px 16px;border-radius:12px;background:rgba(201,162,75,.12);border:1px solid rgba(201,162,75,.35);font-size:.93rem'; a.innerHTML = html; acc.parentNode.insertBefore(a, acc.nextSibling); }
+    function aviso(html) { var a = d.querySelector('.az-mi-aviso') || d.createElement('p'); a.className = 'az-mi-aviso'; a.style.cssText = 'margin:14px 0;padding:12px 16px;border-radius:12px;background:rgba(199,185,155,.12);border:1px solid rgba(199,185,155,.35);font-size:.93rem'; a.innerHTML = html; acc.parentNode.insertBefore(a, acc.nextSibling); }
     function cargar(src, fn) { var s = d.createElement('script'); s.src = src; s.onload = fn; d.head.appendChild(s); }
     function sesion(fn) {
       if (!ck('aurzane-id-auth') && !ck('aurzane-id-auth.0')) return fn(null);
@@ -509,7 +511,7 @@
         '.az-video-dia .rep b{position:absolute;inset:0;margin:auto;width:68px;height:68px;border-radius:50%;background:rgba(0,0,0,.6);display:grid;place-items:center;color:#fff;font-size:26px}' +
         '.az-video-dia iframe{width:100%;height:100%;border:0}.az-video-dia h2{margin:0 0 8px;font-family:"Bodoni Moda",Georgia,serif}.az-video-dia p{margin:0 0 12px;line-height:1.6}' +
         '@media(max-width:700px){.az-video-dia .in{grid-template-columns:1fr}.az-video-dia .rep{max-width:300px;margin:0 auto}}</style>' +
-        '<div class="in"><div class="rep" role="button" tabindex="0" aria-label="Reproducir el vídeo del día"><img src="https://i.ytimg.com/vi/' + v.id + '/hqdefault.jpg" alt="" loading="lazy"><b>▶</b></div>' +
+        '<div class="in"><div class="rep" role="button" tabindex="0" aria-label="Reproducir el vídeo del día"><img src="https://i.ytimg.com/vi/' + v.id + '/hqdefault.jpg" alt="" loading="lazy" data-v4="az-video-dia-caido" onload="if(this.naturalWidth<=120){var s=this.closest(\'section\');if(s)s.remove()}" onerror="var s=this.closest(\'section\');if(s)s.remove()"><b>▶</b></div>' +
         '<div><h2 id="azVidT">Vídeo del día</h2><p>' + String(v.t).replace(/[&<>"]/g, function (x) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[x]; }) + '</p>' +
         '<p style="opacity:.75;font-size:.92rem">Cada día, un vídeo corto distinto de AURZANE sobre psicología, bienestar y hábitos.</p>' +
         '<p><a href="https://www.youtube.com/@AURZANE?sub_confirmation=1" target="_blank" rel="noopener">Suscríbete en YouTube</a></p></div></div>';
