@@ -23,6 +23,8 @@ jobs:
         run: pip install -q openpyxl && python3 univ/oficiales/explorar.py ${{ github.event.inputs.arg }}
       - name: Importar
         if: github.event.inputs.modo != 'explorar'
+        env:
+          FORZAR: ${{ github.event.inputs.arg == 'forzar' && '1' || '' }}
         run: |
           pip install -q openpyxl
           python3 univ/oficiales/importar.py

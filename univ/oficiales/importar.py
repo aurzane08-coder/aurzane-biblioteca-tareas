@@ -44,7 +44,7 @@ def guardar(iso, d):
     p = os.path.join(DATOS, f'oficial_{iso}.json')
     viejo = json.load(open(p, encoding='utf-8')) if os.path.exists(p) else None
     n_i, n_c = len(d['instituciones']), sum(len(x['carreras']) for x in d['instituciones'])
-    if viejo and n_c < 0.6 * sum(len(x['carreras']) for x in viejo['instituciones']):
+    if viejo and not os.environ.get('FORZAR') and n_c < 0.6 * sum(len(x['carreras']) for x in viejo['instituciones']):
         log(f'::warning::{iso}: la fuente devuelve muchas menos carreras que la última vez ({n_c}); se mantiene el archivo anterior'); return
     json.dump(d, open(p, 'w', encoding='utf-8'), ensure_ascii=False, separators=(',', ':'))
     log(f'{iso}: {n_i} instituciones · {n_c} carreras y programas vigentes → {os.path.basename(p)}')
