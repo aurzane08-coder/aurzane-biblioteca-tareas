@@ -291,9 +291,10 @@ def pagina_novedades():
           (r'bienestar|felicidad|mindful|well-?being|calma', '1506126613408-eca07ce68773'), (r'carrera|universidad|vocaci|universit|career', '1541339907198-e08756dedf3f'),
           (r'aprend|estudi|educa|learn|student|school|tdah|adhd', '1434030216411-0b793f4b4173'), (r'hipoteca|vivienda|dinero|inter[ée]s|ahorro|finan', '1579621970563-ebec7560ff3e'), (r'cerebro|brain|neuro', '1559757175-5700dde675bc')]
     FK = {'libro': '1532012197267-da84d127e765', 'estudio': '1481627834876-b7833e8f5570', 'test': '1517841905240-472988babdf9', 'herramienta': '1579621970563-ebec7560ff3e'}
-    def foto_nv(t, k, m):
-        t = (t or '').lower(); i = next((f for r, f in FT if re.search(r, t)), None) or FK.get(k) or {'mind': '1559757175-5700dde675bc', 'nexus': '1541339907198-e08756dedf3f', 'live': '1454496522488-7a8e488e8606', 'learn': '1481627834876-b7833e8f5570', 'build': '1461360370896-922624d12aa1'}.get(m, '1481627834876-b7833e8f5570')
-        return f'https://images.unsplash.com/photo-{i}?w=480&h=300&q=70&fit=crop&auto=format'
+    import sys as _s; _s.path.insert(0, os.path.dirname(os.path.abspath(__file__))); from banco_fotos import foto_banco, nueva_pagina
+    nueva_pagina()
+    def foto_nv(t, k, m):   # foto del catálogo según el tema, sin repetir en la página
+        return foto_banco((t or '') + ' ' + (k or ''), m if m in ('mind', 'nexus', 'live', 'learn', 'build') else 'general', 480)
     for f in orden:
         tarjetas = ''
         for n in grupos[f]:
@@ -323,7 +324,9 @@ html[data-tema="oscuro"]{{--bg:#12251F;--sup:#183D32;--tinta:#ECEAE2;--tinta-2:#
  --m-aurzane:#D9CDB2;--m-mind:#B7A8F2;--m-nexus:#9DB8F0;--m-live:#F0A889;--m-learn:#86D1BB;--m-build:#E0BA8E;--m-ovp:#B7A8F2}}
 *{{box-sizing:border-box}}body{{margin:0;background:var(--bg);color:var(--tinta);font:16px/1.6 var(--sans);-webkit-font-smoothing:antialiased}}
 .w{{max-width:1240px;margin:0 auto;padding:0 24px}}
-.nv-cab{{padding:52px 0 26px;border-bottom:1px solid var(--linea)}}
+.nv-cab{{margin:0 calc(50% - 50vw);padding:60px calc(50vw - 50% + 24px) 40px;color:#F6F5F0;border-bottom:1px solid rgba(199,185,155,.4);background:linear-gradient(90deg,rgba(18,37,31,.95),rgba(18,37,31,.82) 50%,rgba(18,37,31,.4)),url(https://images.unsplash.com/photo-1506784983877-45594efa4cbe?w=1800&q=70&auto=format&fit=crop) center/cover no-repeat #12251F}}
+.nv-cab .nv-migas,.nv-cab p{{color:#DDE2DC!important}}.nv-cab a,.nv-cab p a{{color:#F6F5F0!important}}.nv-cab h1::after{{background:linear-gradient(90deg,#C7B99B 0 62%,#5E8A78 62% 100%)!important}}
+body{{overflow-x:hidden}}
 .nv-migas{{font-size:.88rem;color:var(--tinta-2)}}.nv-migas a{{color:inherit}}
 .nv-cab h1{{font:400 clamp(2.6rem,5vw,3.8rem)/1.02 var(--serif);margin:10px 0 0}}
 .nv-cab h1::after{{content:"";display:block;width:64px;height:2px;margin-top:16px;background:linear-gradient(90deg,var(--verde) 0 62%,var(--champ) 62% 100%)}}
@@ -1441,13 +1444,18 @@ try:
                      'exito': ('nexus', 'graduacion'), 'humildad': ('general', 'naturaleza'), 'tristeza': ('mind', 'tristeza'), 'voluntad': ('live', 'deporte'),
                      'fracaso': ('mind', 'estres'), 'esfuerzo': ('live', 'correr'), 'mente': ('mind', 'cerebro')}
         RESERVA = ['1466692476868-aef1dfb1e735', '1506126613408-eca07ce68773', '1454496522488-7a8e488e8606', '1481627834876-b7833e8f5570', '1505142468610-359e7d316be0']
+        USADAS_FR = set()
         def foto_fr(tema, semilla, ancho=640):
             m, t = TEMA_FOTO.get(tema, ('general', 'frases'))
             lista = (banco_.get(m) or {}).get(t) or (banco_.get('general') or {}).get('frases') or []
             n = int(hashlib.md5(str(semilla).encode()).hexdigest(), 16)
             lista = [x for x in lista if 'p' in x or 'r' in x]
             if lista:   # catálogo de Pexels: se sirve desde su CDN en AVIF, sin ocupar espacio en SiteGround
-                w = 1600 if ancho > 800 else 640; x = lista[n % len(lista)]
+                w = 1600 if ancho > 800 else 640
+                for k in range(len(lista)):   # no repetir foto mientras el tema tenga fotos sin usar
+                    x = lista[(n + k) % len(lista)]
+                    if (x.get('r') or x.get('p')) not in USADAS_FR: break
+                USADAS_FR.add(x.get('r') or x.get('p'))
                 if 'r' in x: return f'{x["r"]}?w={w}&h={round(w * .625)}&fit=crop&q=70&auto=format'
                 return f'https://images.pexels.com/photos/{x["p"]}/pexels-photo-{x["p"]}.jpeg?auto=compress&cs=tinysrgb&w={w}&h={round(w * .625)}&fit=crop'
             return f'https://images.unsplash.com/photo-{RESERVA[n % len(RESERVA)]}?w={ancho}&q=70&fit=crop&auto=format'
@@ -1618,10 +1626,10 @@ try:
                    (r'aprend|estudi|memoria|metacog|educa|ense[ñn]|tdah|atenci', '1434030216411-0b793f4b4173'), (r'curso|formaci|certific', '1522202176988-66273c2fd55f'),
                    (r'hipoteca|vivienda|dinero|ahorro|inmobil|finanz|sueldo|inver', '1579621970563-ebec7560ff3e'), (r'libro|lectura|biblioteca', '1532012197267-da84d127e765')]
         FOTOS_M = {'mind': '1559757175-5700dde675bc', 'nexus': '1541339907198-e08756dedf3f', 'live': '1454496522488-7a8e488e8606', 'learn': '1481627834876-b7833e8f5570', 'build': '1461360370896-922624d12aa1'}
-        def foto_a(a):
-            tx = ((a.get('categoria') or '') + ' ' + (a.get('titulo') or '')).lower()
-            i = next((f for r, f in FOTOS_T if re.search(r, tx)), FOTOS_M.get(a.get('mundo'), FOTOS_M['mind']))
-            return f'https://images.unsplash.com/photo-{i}?w=720&h=405&q=70&fit=crop&auto=format'
+        import sys as _s; _s.path.insert(0, os.path.dirname(os.path.abspath(__file__))); from banco_fotos import foto_banco, nueva_pagina
+        nueva_pagina()
+        def foto_a(a):   # foto del catálogo según el tema, sin repetir en la página
+            return foto_banco((a.get('categoria') or '') + ' ' + (a.get('titulo') or '') + ' ' + (a.get('resumen') or '')[:160], a.get('mundo') or 'general', 720)
         COL_M = {'mind': '#6A55C2', 'nexus': '#3E63B8', 'live': '#B2563A', 'learn': '#2F7A6A', 'build': '#946233'}
         lis_a = ''.join(f'<li><a class="ar" href="{E(url_a(a))}" style="--c:{COL_M.get(a["mundo"], "#C7B99B")}"><span class="ar-img"><img src="{foto_a(a)}" alt="" loading="lazy" width="720" height="405"></span>'
                         f'<span class="ar-t"><span class="k"><i></i>{E(a["mundo"].upper())}{" · " + E(a["categoria"]) if a.get("categoria") else ""} · {E((a.get("publicado_at") or "")[:10])}</span>'

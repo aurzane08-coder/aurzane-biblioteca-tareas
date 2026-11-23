@@ -30,6 +30,10 @@ CLAVES = [
 RESERVA = {'mind': '1559757175-5700dde675bc', 'nexus': '1541339907198-e08756dedf3f', 'live': '1454496522488-7a8e488e8606',
            'learn': '1481627834876-b7833e8f5570', 'build': '1461360370896-922624d12aa1', 'general': '1506126613408-eca07ce68773'}
 _idx = None
+_usadas = set()   # fotos ya puestas en la página que se está generando (no repetir)
+VETO = re.compile(r'\b(rally|protest|demonstrat|placard|signs?\b|banner|poster|graffiti|weapon|guns?\b|sword|knife|blood|cigar|smok|alcohol|beer|wine|drunk|politic|flag|police|military|text|words?\b|quote|newspaper|skull)', re.I)
+
+def nueva_pagina(): _usadas.clear()
 
 def _banco():
     global _idx
@@ -50,7 +54,11 @@ def foto_banco(texto, mundo='general', ancho=640, mundo_tema=None):
     n = int(hashlib.md5((t + mundo).encode()).hexdigest(), 16)
     lista = [x for x in (lista or []) if 'p' in x or 'r' in x]
     if lista:
-        w = 1600 if ancho > 800 else 640; x = lista[n % len(lista)]
+        w = 1600 if ancho > 800 else 640
+        for k in range(len(lista)):
+            x = lista[(n + k) % len(lista)]; c = x.get('r') or x.get('p')
+            if c not in _usadas and not VETO.search(x.get('t', '')): break
+        _usadas.add(x.get('r') or x.get('p'))
         if 'r' in x: return f'{x["r"]}?w={w}&h={round(w * .625)}&fit=crop&q=70&auto=format'
         return f'https://images.pexels.com/photos/{x["p"]}/pexels-photo-{x["p"]}.jpeg?auto=compress&cs=tinysrgb&w={w}&h={round(w * .625)}&fit=crop'
     return f'https://images.unsplash.com/photo-{RESERVA.get(m or mundo, RESERVA["general"])}?w={ancho}&q=70&fit=crop&auto=format'
