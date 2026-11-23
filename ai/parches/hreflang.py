@@ -20,7 +20,7 @@ def local(url):
     return f if os.path.isfile(f) else ''
 
 
-for dom in sorted(os.listdir(BASE)):
+for dom in ['mind.aurzane.com']:   # NEXUS enlaza sus idiomas desde univ/gen (gen.py y en.py)
     for idioma, codigo in LANG.items():
         for f in glob.glob(os.path.join(BASE, dom, 'public_html', idioma, '**', 'index.html'), recursive=True):
             try: t = open(f, encoding='utf-8', errors='ignore').read(20000)
