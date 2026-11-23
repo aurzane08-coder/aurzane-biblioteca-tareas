@@ -1432,7 +1432,7 @@ try:
         # buscador y filtros por tema y por autor, y cada frase como un rectángulo largo con su foto (banco de imágenes propio, AVIF).
         temas_ = collections.Counter(f['tema'] for f in pub if f['tema'] != 'frase del día')
         autores_ = collections.Counter(f['autor'] for f in pub)
-        try: banco_ = json.load(open(os.path.join('..', 'banco', 'banco.json'), encoding='utf-8'))
+        try: banco_ = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'banco', 'banco.json'), encoding='utf-8'))   # ruta fija: el gestor no siempre corre desde ai/
         except Exception: banco_ = {}
         TEMA_FOTO = {'paciencia': ('general', 'calma'), 'esperanza': ('general', 'cielo'), 'libertad': ('general', 'montana'), 'dolor': ('mind', 'tristeza'),
                      'caracter': ('mind', 'autoestima'), 'bondad': ('mind', 'familia'), 'alegria': ('mind', 'emociones'), 'naturaleza': ('general', 'naturaleza'),
