@@ -37,7 +37,7 @@
  ],
  "ed:Frontiers in psychiatry": [
   7,
-  10
+  11
  ],
  "ed:Advances in rheumatology (London, England)": [
   0,
@@ -120,8 +120,8 @@
   13
  ],
  "ed:Internet Archive": [
-  26,
-  150
+  27,
+  151
  ],
  "ed:": [
   52,
@@ -144,7 +144,7 @@
   0
  ],
  "tipo:libro": [
-  96,
+  111,
   9
  ],
  "Gambling Behavior and Treatments": [
@@ -312,7 +312,7 @@
   0
  ],
  "archive:psicologia": [
-  66,
+  81,
   0
  ],
  "ed:The Open University": [
@@ -577,7 +577,7 @@
  ],
  "ed:Asociación The Conversation España": [
   0,
-  2
+  3
  ],
  "ed:Investiguem": [
   0,
@@ -593,7 +593,7 @@
  ],
  "ed:Universidad de Buenos Aires. Facultad de Filosofía y Letras. Departamento de Ciencias de la Educación": [
   0,
-  3
+  4
  ],
  "ed:Universitat de Lleida. Universitat de Barcelona. Fundación \"la Caixa\"": [
   0,
@@ -616,7 +616,7 @@
   2
  ],
  "ed:Editorial UOC": [
-  14,
+  18,
   2
  ],
  "ed:Universidad Andina Simón Bolívar, Sede Ecuador; Corporación Editora Nacional": [
@@ -633,7 +633,7 @@
  ],
  "ed:Pontificia Universidad Católica del Perú. Fondo Editorial": [
   3,
-  3
+  4
  ],
  "ed:Fondo Editorial Universidad Católica Luis Amigó": [
   0,
@@ -648,7 +648,7 @@
   1
  ],
  "ed:Publicacions de la Universitat Jaume I": [
-  0,
+  1,
   2
  ],
  "ed:Agua Clara": [
@@ -708,19 +708,19 @@
   1
  ],
  "ed:Universitat Oberta de Catalunya": [
-  1,
+  2,
   1
  ],
  "ed:Universidad de Salamanca (España). Instituto Universitario de Integración en la Comunidad": [
-  0,
+  2,
   1
  ],
  "ed:Dykinson": [
-  0,
-  1
+  1,
+  2
  ],
  "ed:UOC": [
-  1,
+  2,
   1
  ],
  "ed:Quito, EC: INÉDITA, Programa Nacional de Financiamiento para Investigación / Universidad Andina Simón Bolívar, Sede Ecuador": [
@@ -768,6 +768,30 @@
   1
  ],
  "ed:Universidad de Burgos eBooks": [
+  0,
+  1
+ ],
+ "ed:CEAPA": [
+  0,
+  1
+ ],
+ "ed:Edulp (Libros de Cátedra)": [
+  1,
+  0
+ ],
+ "ed:Universidad de Buenos Aires. Editorial de la Facultad de Filosofía y Letras.": [
+  1,
+  0
+ ],
+ "ed:Universidad Nacional de Córdoba. Facultad de Psicología. Consejo Nacional de Investigaciones Científicas y Técnicas. Instituto de Investigaciones Psicológicas": [
+  1,
+  0
+ ],
+ "ed:Beatriz de Suabia": [
+  1,
+  0
+ ],
+ "ed:El autor": [
   0,
   1
  ]

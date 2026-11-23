@@ -1,6 +1,94 @@
 [
  {
   "fecha": "2026-11-23",
+  "id": "pmc-PMC13785279",
+  "tipo": "estudio",
+  "titulo": "Comparative efficacy of different digital technologies in adults with insomnia: a systematic review and network meta-analysis of randomized controlled trials",
+  "url": "https://europepmc.org/article/PMC/PMC13785279",
+  "motivo": "La IA le dio 3/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-desarrollo-aprendizaje-adolescencia-master-formacion-profeso/desarrol"
+  ]
+ },
+ {
+  "fecha": "2026-11-23",
+  "id": "ia-aurzane-bib-manual-contenidos-actividades-2015-catedra-integral",
+  "tipo": "libro",
+  "titulo": "Manual de contenidos y actividades 2015: Cátedra Integral Niños y Adolescentes “A”",
+  "url": "https://archive.org/details/aurzane-bib-manual-contenidos-actividades-2015-catedra-integral",
+  "motivo": "La IA le dio 1/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-trastorno-espectro-autista-conocimientos-esenciales-educacio/trastorn"
+  ]
+ },
+ {
+  "fecha": "2026-11-23",
+  "id": "ia-aurzane-bib-pensamiento-multilateral-desarrolle-su-creatividad-mejore",
+  "tipo": "libro",
+  "titulo": "Pensamiento multilateral: Desarrolle su creatividad y mejore la toma de decisiones",
+  "url": "https://archive.org/details/aurzane-bib-pensamiento-multilateral-desarrolle-su-creatividad-mejore",
+  "motivo": "La IA le dio 5/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-emocion/emocion.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-23",
+  "id": "ia-aurzane-bib-doctor-su-propio-pueblo-historia-vida",
+  "tipo": "libro",
+  "titulo": "Doctor en su propio pueblo : Historia de vida de un intelectual asháninka",
+  "url": "https://archive.org/details/aurzane-bib-doctor-su-propio-pueblo-historia-vida",
+  "motivo": "La IA le dio 2/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-bases-biologicas-aprendizaje/bases-biologicas-aprendizaje.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-23",
+  "id": "ia-aurzane-bib-participando-construccion-escuela-inclusiva-5-preguntas",
+  "tipo": "libro",
+  "titulo": "Participando en la construcción de una escuela inclusiva. 5 preguntas y respuestas para las familias",
+  "url": "https://archive.org/details/aurzane-bib-participando-construccion-escuela-inclusiva-5-preguntas",
+  "motivo": "La IA le dio 4/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-formulacion-tratamiento-psicologico/formulacion-tratamiento-psicologi"
+  ]
+ },
+ {
+  "fecha": "2026-11-23",
+  "id": "ia-aurzane-bib-analisis-institucional-escuela-grupos-aprendizaje",
+  "tipo": "libro",
+  "titulo": "Análisis institucional de la escuela (y de los grupos de aprendizaje)",
+  "url": "https://archive.org/details/aurzane-bib-analisis-institucional-escuela-grupos-aprendizaje",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 27 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-analisis-institucional-escuela-grupos-aprendizaje/analisis-institucio"
+  ]
+ },
+ {
+  "fecha": "2026-11-23",
+  "id": "ia-aurzane-bib-vivimos-sociedad-que-promueve-enfermedades-mentales",
+  "tipo": "libro",
+  "titulo": "¿Vivimos en una sociedad que promueve las enfermedades mentales o es que somos más conscientes de ellas?",
+  "url": "https://archive.org/details/aurzane-bib-vivimos-sociedad-que-promueve-enfermedades-mentales",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 8 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-vivimos-sociedad-que-promueve-enfermedades-mentales/vivimos-sociedad-"
+  ]
+ },
+ {
+  "fecha": "2026-11-23",
+  "id": "ia-aurzane-bib-revision-sistematica-prevencion-ciberbullying-educacion-prim",
+  "tipo": "libro",
+  "titulo": "Revisión sistemática de la prevención del ciberbullying en Educación Primaria",
+  "url": "https://archive.org/details/aurzane-bib-revision-sistematica-prevencion-ciberbullying-educacion-prim",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 34 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-revision-sistematica-prevencion-ciberbullying-educacion-prim/revision"
+  ]
+ },
+ {
+  "fecha": "2026-11-23",
   "id": "oa-W7237084136",
   "tipo": "libro",
   "titulo": "EDUCAR: Estrategias Docentes para una Educación Libre de Acoso",
@@ -3118,90 +3206,5 @@
   "probados": [
    "200 application/pdf https://api.taylorfrancis.com/content/books/mono/download?identifierName=doi&identifierValue=10.4324/978100379"
   ]
- },
- {
-  "fecha": "2026-11-08",
-  "id": "ia-el-parentesco-cosmico",
-  "tipo": "libro",
-  "titulo": "El parentesco cósmico: una ética basada en el ahimsa",
-  "url": "https://archive.org/details/el-parentesco-cosmico",
-  "motivo": "La IA le dio 5/10: no encaja en la biblioteca",
-  "probados": [
-   "200 application/pdf https://api.taylorfrancis.com/content/books/mono/download?identifierName=doi&identifierValue=10.4324/978100379"
-  ]
- },
- {
-  "fecha": "2026-11-08",
-  "id": "oa-W7220980014",
-  "tipo": "libro",
-  "titulo": "Ergonomics in Robotics: Advances and Innovations",
-  "url": "https://doi.org/10.1007/978-3-032-19374-2",
-  "motivo": "La IA le dio 3/10: no encaja en la biblioteca",
-  "probados": [
-   "200 application/pdf https://link.springer.com/content/pdf/10.1007/978-3-662-74450-5.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-08",
-  "id": "oa-W7160546937",
-  "tipo": "libro",
-  "titulo": "Hacia un modelo institucional de mentoría",
-  "url": "https://hdl.handle.net/10662/43944",
-  "motivo": "La IA le dio 2/10: no encaja en la biblioteca",
-  "probados": [
-   "200 application/pdf https://books.omeditorial.com/index.php/inicio/catalog/download/8/7/28"
-  ]
- },
- {
-  "fecha": "2026-11-08",
-  "id": "oa-W7149429299",
-  "tipo": "libro",
-  "titulo": "Mujeres y su impacto en la ciencia y tecnología latinoamericana",
-  "url": "https://www.highrateco.com/publicaciones/mujeres-y-su-impacto",
-  "motivo": "La IA le dio 5/10: no encaja en la biblioteca",
-  "probados": [
-   "200 application/pdf https://books.omeditorial.com/index.php/inicio/catalog/download/8/7/28"
-  ]
- },
- {
-  "fecha": "2026-11-08",
-  "id": "oa-W7215991963",
-  "tipo": "libro",
-  "titulo": "Fortalecimiento y liderazgo de la mujer en las Ciencias Agropecuarias",
-  "url": "https://doi.org/10.61728/ae26002453",
-  "motivo": "La IA le dio 3/10: no encaja en la biblioteca",
-  "probados": [
-   "200 application/pdf https://plagcis.org/book/index.php/editorial/catalog/download/44/121/192"
-  ]
- },
- {
-  "fecha": "2026-11-08",
-  "id": "ia-los-ruidos-del-ser-15-24-x-22-86-cm-6-x-9-tapa-blanda",
-  "tipo": "libro",
-  "titulo": "LOS RUIDOS DEL SER - Gretam Del Só",
-  "url": "https://archive.org/details/los-ruidos-del-ser-15-24-x-22-86-cm-6-x-9-tapa-blanda",
-  "motivo": "La IA le dio 4/10: no encaja en la biblioteca",
-  "probados": [
-   "200 application/pdf https://plagcis.org/book/index.php/editorial/catalog/download/44/121/192"
-  ]
- },
- {
-  "fecha": "2026-11-08",
-  "id": "oa-W7214640051",
-  "tipo": "libro",
-  "titulo": "Tópicos selectos sobre juventudes universitarias, bienestar y convivencia en la educación superior",
-  "url": "https://doi.org/10.61728/ae26001302",
-  "motivo": "La IA le dio 6/10: no encaja en la biblioteca",
-  "probados": [
-   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13435862.1/PMC13435862.1.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-08",
-  "id": "cita-d9344062cb",
-  "tipo": "cita",
-  "titulo": "Según esta perspectiva, casi todo lo que hacen los humanos está motivado por la búsqueda de una recompensa.",
-  "url": "https://aurzane.com/biblioteca/recientes/oa-W7167058661/",
-  "motivo": "Gemini le dio 3/10: no tiene fuerza suficiente para redes"
  }
 ]

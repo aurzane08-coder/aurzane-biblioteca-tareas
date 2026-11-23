@@ -1,8 +1,86 @@
 [
  {
   "fecha": "2026-11-23",
+  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-desarrollo-aprendizaje-adolescencia-master-formacion-profeso/",
+  "titulo": "Libro abierto: Desarrollo y aprendizaje en la adolescencia: máster formación del profesorado"
+ },
+ {
+  "fecha": "2026-11-23",
+  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-trastorno-espectro-autista-conocimientos-esenciales-educacio/",
+  "titulo": "Libro abierto: Trastorno del Espectro Autista. Conocimientos esenciales para educación, psicología y psicopedagogía"
+ },
+ {
+  "fecha": "2026-11-23",
+  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-tecnologias-aplicadas-alumnado-tea-guia-practica/",
+  "titulo": "Libro abierto: Tecnologías aplicadas al alumnado con TEA: Guía Práctica para el aprendizaje, la comunicación y la autonomía"
+ },
+ {
+  "fecha": "2026-11-23",
+  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-escala-kidslife-evaluacion-calidad-vida-ninos/",
+  "titulo": "Libro abierto: Escala KidsLife: evaluación de la calidad de vida de niños y adolescentes con discapacidad intelectual"
+ },
+ {
+  "fecha": "2026-11-23",
+  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-escala-sis-c-evaluacion-necesidades-apoyo/",
+  "titulo": "Libro abierto: Escala SIS-C de Evaluación de las Necesidades de Apoyo para niños y adolescentes con discapacidades intelectua"
+ },
+ {
+  "fecha": "2026-11-23",
+  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-emocion/",
+  "titulo": "Libro abierto: Motivación y emoción. Módulo 2: Emoción"
+ },
+ {
+  "fecha": "2026-11-23",
+  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-ciberviolencia-redes-sociales-experiencia-practicas-poblacio/",
+  "titulo": "Libro abierto: Ciberviolencia en las redes sociales: Experiencia y prácticas en la población juvenil"
+ },
+ {
+  "fecha": "2026-11-23",
+  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-psicologia-conflicto-litigacion-septiembre-2014/",
+  "titulo": "Libro abierto: Psicología del conflicto y la litigación, septiembre 2014"
+ },
+ {
+  "fecha": "2026-11-23",
+  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-salud-mental-pandemia-politicas-publicas-sobre/",
+  "titulo": "Libro abierto: Salud Mental, Pandemia y Políticas Públicas. Sobre la propuesta de este libro colectivo"
+ },
+ {
+  "fecha": "2026-11-23",
+  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-bases-biologicas-aprendizaje/",
+  "titulo": "Libro abierto: Las bases biológicas del aprendizaje"
+ },
+ {
+  "fecha": "2026-11-23",
+  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-aspectos-biologicos-complejidad-humana/",
+  "titulo": "Libro abierto: Aspectos biológicos de la complejidad humana"
+ },
+ {
+  "fecha": "2026-11-23",
+  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-formulacion-tratamiento-psicologico/",
+  "titulo": "Libro abierto: Formulación y tratamiento psicológico en el siglo XXI"
+ },
+ {
+  "fecha": "2026-11-23",
+  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-dificultades-aprendizaje/",
+  "titulo": "Libro abierto: Dificultades de aprendizaje de los contenidos curriculares"
+ },
+ {
+  "fecha": "2026-11-23",
+  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-manual-practico-patologia-lenguaje-evaluacion-e/",
+  "titulo": "Libro abierto: Manual práctico de patología del lenguaje. Evaluación e intervención en adultos y niños"
+ },
+ {
+  "fecha": "2026-11-23",
+  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-memoria-de-los-testigos/",
+  "titulo": "Libro abierto: La memoria de los testigos"
+ },
+ {
+  "fecha": "2026-11-23",
   "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-psicologia-del-pensamiento/",
-  "titulo": "Libro abierto: Psicología del pensamiento"
+  "titulo": "Libro abierto: Psicología del pensamiento",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-psicologia-del-pensamiento.jpg",
+  "desc": "Cómo razonamos, decidimos y resolvemos problemas, y por qué nos equivocamos. Incluye heurísticas, sesgos, razonamiento deductivo e inductivo y creatividad. Copia de la Biblioteca AURZANE (aurzane.com/",
+  "titulo_completo": "Psicología del pensamiento"
  },
  {
   "fecha": "2026-11-23",
@@ -391,57 +469,90 @@
  {
   "fecha": "2026-11-20",
   "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13763141/",
-  "titulo": "Estudio reciente: Inflammaging and Cellular Senescence in Postmenopausal Depression: Linking Estrogen Deficiency, Immune Dysregu"
+  "titulo": "Estudio reciente: Inflammaging and Cellular Senescence in Postmenopausal Depression: Linking Estrogen Deficiency, Immune Dysregu",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/pmc-PMC13763141.jpg",
+  "desc": "Postmenopausal depression is clinically heterogeneous and cannot be explained by estrogen deficiency alone. We propose a conceptual, testable neuroimmune-aging model in which endocrine decline may int",
+  "titulo_completo": "Inflammaging and Cellular Senescence in Postmenopausal Depression: Linking Estrogen Defici"
  },
  {
   "fecha": "2026-11-20",
   "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13770471/",
-  "titulo": "Estudio reciente: Neuroimaging of Anxiety in Mild Cognitive Impairment: Integrating Structural, Functional, Molecular, and Netwo"
+  "titulo": "Estudio reciente: Neuroimaging of Anxiety in Mild Cognitive Impairment: Integrating Structural, Functional, Molecular, and Netwo",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/pmc-PMC13770471.jpg",
+  "desc": "This narrative review summarizes neuroimaging evidence on the neurobiological correlates of anxiety symptoms in mild cognitive impairment (MCI) across the Alzheimer's disease continuum. A literature s",
+  "titulo_completo": "Neuroimaging of Anxiety in Mild Cognitive Impairment: Integrating Structural, Functional, "
  },
  {
   "fecha": "2026-11-20",
   "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13770370/",
-  "titulo": "Estudio reciente: A Global Overview of Interventions to Enhance Resilience Among Families with Pregnant Women: A Scoping Review"
+  "titulo": "Estudio reciente: A Global Overview of Interventions to Enhance Resilience Among Families with Pregnant Women: A Scoping Review",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/pmc-PMC13770370.jpg",
+  "desc": "Background Pregnancy affects the entire family system, yet resilience-oriented perinatal interventions may target either maternal capacities or family processes. The extent to which existing intervent",
+  "titulo_completo": "A Global Overview of Interventions to Enhance Resilience Among Families with Pregnant Wome"
  },
  {
   "fecha": "2026-11-20",
   "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13770452/",
-  "titulo": "Estudio reciente: Social isolation and loneliness among older persons in India: A qualitative evidence synthesis"
+  "titulo": "Estudio reciente: Social isolation and loneliness among older persons in India: A qualitative evidence synthesis",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/pmc-PMC13770452.jpg",
+  "desc": "Background and objectives There is a high prevalence of social isolation and loneliness among older persons in India. This review was conducted to explore the phenomenon of social isolation and loneli",
+  "titulo_completo": "Social isolation and loneliness among older persons in India: A qualitative evidence synth"
  },
  {
   "fecha": "2026-11-20",
   "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13759840/",
-  "titulo": "Estudio reciente: Effects of mindfulness-based interventions on negative emotions in patients with hypertension: a systematic re"
+  "titulo": "Estudio reciente: Effects of mindfulness-based interventions on negative emotions in patients with hypertension: a systematic re",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/pmc-PMC13759840.jpg",
+  "desc": "Background Psychological distress is common in hypertension and may impair disease management. Mindfulness-based interventions have been proposed to improve emotional and health-related outcomes, but",
+  "titulo_completo": "Effects of mindfulness-based interventions on negative emotions in patients with hypertens"
  },
  {
   "fecha": "2026-11-20",
   "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13766658/",
-  "titulo": "Estudio reciente: Efficacy of Digital Health Interventions for Insomnia: Systematic Review and Meta-Analysis of Randomized Contr"
+  "titulo": "Estudio reciente: Efficacy of Digital Health Interventions for Insomnia: Systematic Review and Meta-Analysis of Randomized Contr",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/pmc-PMC13766658.jpg",
+  "desc": "Background Insomnia is common, and treatments are limited by tolerability and access. Digital health interventions (DHIs) are increasingly used for sleep management, but evidence comparing multiple ou",
+  "titulo_completo": "Efficacy of Digital Health Interventions for Insomnia: Systematic Review and Meta-Analysis"
  },
  {
   "fecha": "2026-11-19",
   "url": "https://aurzane.com/biblioteca/recientes/oa-W7215130536/",
-  "titulo": "Libro abierto: Innovación educativa mediante el Método Van Dijk en contextos inclusivos"
+  "titulo": "Libro abierto: Innovación educativa mediante el Método Van Dijk en contextos inclusivos",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/oa-W7215130536.jpg",
+  "desc": "Innovación educativa mediante el Método Van Dijk en contextos inclusivos aborda los fundamentos, estrategias y posibilidades de aplicación de este enfoque educativo en estudiantes con sordoceguera, mu",
+  "titulo_completo": "Innovación educativa mediante el Método Van Dijk en contextos inclusivos"
  },
  {
   "fecha": "2026-11-19",
   "url": "https://aurzane.com/biblioteca/recientes/oa-W7220851852/",
-  "titulo": "Libro abierto: Making the Shift from Student to Learner: Reigniting Your Curiosity and Inquiry"
+  "titulo": "Libro abierto: Making the Shift from Student to Learner: Reigniting Your Curiosity and Inquiry",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/oa-W7220851852.jpg",
+  "desc": "University can feel like a checklist: attend class, complete assignments, earn grades, move on. But what if learning could be more than a requirement—what if it became a source of purpose, possibility",
+  "titulo_completo": "Making the Shift from Student to Learner: Reigniting Your Curiosity and Inquiry"
  },
  {
   "fecha": "2026-11-19",
   "url": "https://aurzane.com/biblioteca/recientes/oa-W7214443598/",
-  "titulo": "Libro abierto: Desarrollo de competencias a lo largo de la escolaridad"
+  "titulo": "Libro abierto: Desarrollo de competencias a lo largo de la escolaridad",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/oa-W7214443598.jpg",
+  "desc": "La presente obra analiza el desarrollo progresivo de competencias a lo largo de la escolaridad, desde la primera infancia hasta el Bachillerato, considerando las capacidades que permiten a los estudia",
+  "titulo_completo": "Desarrollo de competencias a lo largo de la escolaridad"
  },
  {
   "fecha": "2026-11-19",
   "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13757844/",
-  "titulo": "Estudio reciente: Interventions for anxiety, burnout, and resilience in university students: a systematic review with implicatio"
+  "titulo": "Estudio reciente: Interventions for anxiety, burnout, and resilience in university students: a systematic review with implicatio",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/pmc-PMC13757844.jpg",
+  "desc": "This systematic review examines anxiety and burnout among students in higher education, with a focus on mental health nursing interventions within multidisciplinary university mental health and studen",
+  "titulo_completo": "Interventions for anxiety, burnout, and resilience in university students: a systematic re"
  },
  {
   "fecha": "2026-11-19",
   "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13755697/",
-  "titulo": "Estudio reciente: Metainflammation and autonomic instability in the genesis of anxiety"
+  "titulo": "Estudio reciente: Metainflammation and autonomic instability in the genesis of anxiety",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/pmc-PMC13755697.jpg",
+  "desc": "Anxiety is a complex condition that encompasses a range of mental disorders. It can manifest as a core symptom in various neurotic disorders, including anticipatory anxiety, pervasive anxiety, panic a",
+  "titulo_completo": "Metainflammation and autonomic instability in the genesis of anxiety"
  },
  {
   "fecha": "2026-11-19",
@@ -667,80 +778,5 @@
   "fecha": "2026-11-10",
   "url": "https://aurzane.com/articulos/cerebro-aprende-mejor-cuando-descansas/",
   "titulo": "Artículo: Por qué tu cerebro aprende mejor cuando descansas"
- },
- {
-  "fecha": "2026-11-09",
-  "url": "https://aurzane.com/articulos/estres-laboral-academico-argentina-act/",
-  "titulo": "Artículo: Estrés laboral y académico: guía práctica con ACT"
- },
- {
-  "fecha": "2026-11-09",
-  "url": "https://aurzane.com/privacidad.html",
-  "titulo": "Aviso de Privacidad: AURZANE"
- },
- {
-  "fecha": "2026-11-09",
-  "url": "https://aurzane.com/aviso-legal.html",
-  "titulo": "Aviso legal de AURZANE"
- },
- {
-  "fecha": "2026-11-09",
-  "url": "https://aurzane.com/condiciones.html",
-  "titulo": "Condiciones de uso · AURZANE"
- },
- {
-  "fecha": "2026-11-09",
-  "url": "https://aurzane.com/sobre-aurzane.html",
-  "titulo": "Sobre AURZANE: quiénes somos y cómo trabajamos"
- },
- {
-  "fecha": "2026-11-09",
-  "url": "https://aurzane.com/politica-editorial.html",
-  "titulo": "Política editorial de AURZANE"
- },
- {
-  "fecha": "2026-11-09",
-  "url": "https://aurzane.com/contacto.html",
-  "titulo": "Contacto"
- },
- {
-  "fecha": "2026-11-09",
-  "url": "https://aurzane.com/articulos/influencia-medios-comunicacion-familia/",
-  "titulo": "Artículo: Pantallas y vínculos: cómo los medios influyen en la familia"
- },
- {
-  "fecha": "2026-11-09",
-  "url": "https://mind.aurzane.com/pt/teste-de-bem-estar-who-5/",
-  "titulo": "Teste de bem-estar (WHO-5): questionário grátis online"
- },
- {
-  "fecha": "2026-11-09",
-  "url": "https://mind.aurzane.com/pt/teste-de-depressao-phq-9/",
-  "titulo": "Teste de depressão (PHQ-9): questionário grátis online"
- },
- {
-  "fecha": "2026-11-09",
-  "url": "https://mind.aurzane.com/pt/teste-de-ansiedade-gad-7/",
-  "titulo": "Teste de ansiedade (GAD-7): questionário grátis online"
- },
- {
-  "fecha": "2026-11-09",
-  "url": "https://mind.aurzane.com/pt/",
-  "titulo": "Testes psicológicos grátis em português"
- },
- {
-  "fecha": "2026-11-09",
-  "url": "https://mind.aurzane.com/en/self-compassion-test-scs-sf/",
-  "titulo": "Self-compassion test (Neff, short form): free online questionnaire"
- },
- {
-  "fecha": "2026-11-09",
-  "url": "https://mind.aurzane.com/en/burnout-test-cbi/",
-  "titulo": "Work burnout test (Copenhagen Burnout Inventory): free online questionnaire"
- },
- {
-  "fecha": "2026-11-09",
-  "url": "https://mind.aurzane.com/en/wellbeing-test-who-5/",
-  "titulo": "Wellbeing test (WHO-5): free online questionnaire"
  }
 ]
