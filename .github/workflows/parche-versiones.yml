@@ -24,3 +24,8 @@ jobs:
           if [ -n "$SG_PASS" ]; then ssh-keygen -p -P "$SG_PASS" -N "" -f ~/.ssh/id >/dev/null; fi
           SSH="ssh -i $HOME/.ssh/id -p ${SG_PORT:-18765} -o StrictHostKeyChecking=accept-new $SG_USER@$SG_HOST"
           $SSH 'python3 - www' < ai/parches/versiones.py
+          # vaciar la caché del servidor para que aurzane-paleta.js con las versiones nuevas llegue ya (si no, sirve la copia anterior)
+          for d in aurzane.com mind.aurzane.com nexus.aurzane.com live.aurzane.com learn.aurzane.com build.aurzane.com ovp.aurzane.com; do
+            $SSH "site-tools-client domain-all update id=$d flush_cache=1 >/dev/null 2>&1" || true
+          done
+          echo "Caché vaciada"
