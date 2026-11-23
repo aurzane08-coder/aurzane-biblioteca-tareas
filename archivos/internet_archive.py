@@ -68,10 +68,12 @@ for ruta, tam, dias in filas:
         ok, cors = comprobar(h[2], ruta, tam)
         if ok and (cors or ruta.startswith('marketing/')): para_quitar.append(ruta); h[1] = 'movido'
         elif ok and not cors: sin_cors += 1
-# 2) subir un lote nuevo
-subidos = 0
+open('quitar.txt', 'w').write(''.join(r + '\n' for r in para_quitar))   # se escribe ya, por si la subida se alarga
+print(f'Comprobados: listos para quitar del servidor {len(para_quitar)}, sin CORS {sin_cors}.', flush=True)
+# 2) subir un lote nuevo, con tiempo tasado para que siempre quede margen para quitar lo comprobado
+subidos, T0 = 0, time.time()
 for ruta, tam, dias in filas:
-    if subidos >= LOTE: break
+    if subidos >= LOTE or time.time() - T0 > 40 * 60: break
     if ruta in hecho: continue
     i = ident(ruta)
     if not i or not re.fullmatch(r'[A-Za-z0-9._-]{1,100}', i): continue
