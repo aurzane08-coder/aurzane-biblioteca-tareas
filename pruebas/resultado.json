@@ -1,25 +1,24 @@
 {
- "fecha": "2026-11-22T14:47:49.226Z",
- "fallos": [],
- "avisos": [],
+ "fecha": "2026-11-23T18:36:36.357Z",
+ "fallos": [
+  "Mapa https://aurzane.com/sitemap-paginas.xml · 202 false",
+  "Mapa https://nexus.aurzane.com/sitemap-universidades.xml · 202 false",
+  "Mapa https://aurzane.com/robots.txt · 202 false",
+  "AVIF servido · text/html"
+ ],
+ "avisos": [
+  "Desafío anti-robots de SiteGround en https://aurzane.com/",
+  "Desafío anti-robots de SiteGround en https://mind.aurzane.com/",
+  "Desafío anti-robots de SiteGround en https://nexus.aurzane.com/",
+  "Desafío anti-robots de SiteGround en https://live.aurzane.com/",
+  "Desafío anti-robots de SiteGround en https://learn.aurzane.com/",
+  "Desafío anti-robots de SiteGround en https://build.aurzane.com/",
+  "Desafío anti-robots de SiteGround en https://ovp.aurzane.com/",
+  "Desafío anti-robots de SiteGround en https://aurzane.com/biblioteca/",
+  "Desafío anti-robots de SiteGround en https://mind.aurzane.com/test-de-ansiedad/"
+ ],
  "bien": [
-  "Portada https://aurzane.com/ · 200",
-  "Portada https://mind.aurzane.com/ · 200",
-  "Portada https://nexus.aurzane.com/ · 200",
-  "Portada https://live.aurzane.com/ · 200",
-  "Portada https://learn.aurzane.com/ · 200",
-  "Portada https://build.aurzane.com/ · 200",
-  "Portada https://ovp.aurzane.com/ · 200",
-  "Portada https://aurzane.com/biblioteca/ · 200",
-  "Test: resultado · 7 preguntas",
-  "Test: botón «Ver resultado» lleva al resultado",
-  "Test: aparece la IA de resultados",
-  "Test: la IA responde · 200 ok",
   "404 propia · 404",
-  "Mapa https://aurzane.com/sitemap-paginas.xml · 200 true",
-  "Mapa https://nexus.aurzane.com/sitemap-universidades.xml · 200 true",
-  "Mapa https://mind.aurzane.com/sitemap-paginas.xml · 200 true",
-  "Mapa https://aurzane.com/robots.txt · 200 true",
-  "AVIF servido · image/avif"
+  "Mapa https://mind.aurzane.com/sitemap-paginas.xml · 200 true"
  ]
 }
