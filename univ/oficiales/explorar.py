@@ -99,7 +99,17 @@ def detalle3():
               'https://www.datosabiertos.gob.pe/api/3/action/package_show?id=sunedu-licenciamiento-institucional']:
         t, ct = get(u, 600000)
         print('\n=====', u, ct); print(t[:300])
+        try:
+            for r in json.loads(t)['result'][0].get('resources', []):
+                print('  RECURSO', r.get('format'), '|', r.get('name'), '|', r.get('url'), '|', r.get('last_modified') or r.get('created'))
+            print('  NOTAS', (json.loads(t)['result'][0].get('notes') or '')[:400])
+        except Exception as e: print('  sin recursos', e)
         for h in sorted(set(re.findall(r'https?://[^"\'\s<>]+\.(?:csv|xlsx?|zip)(?:\?[^"\'\s<>]*)?', t))): print('   ', h)
+    import subprocess
+    for u in ('https://download.inep.gov.br/microdados/microdados_censo_da_educacao_superior_2024.zip',):
+        print('\n===== BR curl', subprocess.run(['curl', '-sSI', '--max-time', '60', u], capture_output=True, text=True).stdout[:600])
+        print(subprocess.run('echo | openssl s_client -connect download.inep.gov.br:443 -servername download.inep.gov.br 2>/dev/null | openssl x509 -noout -text | grep -A2 "Authority Information"', shell=True, capture_output=True, text=True).stdout)
+    return
     for q in ['fq=organization:spu&rows=40', 'q=oferta%20academica&rows=20', 'q=titulos%20universitarios&rows=20', 'q=instituciones%20universitarias&rows=20']:
         t, _ = get('https://datos.gob.ar/api/3/action/package_search?' + q)
         print('\n===== AR', q)
