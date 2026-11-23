@@ -28,9 +28,9 @@ function aplicar(rel, t) {   // rel = <dominio>/<ruta>
     q = (q || '?').replace(/&amp;/g, '&'); if (/[?&]auto=format/.test(q) || /[?&]fm=/.test(q)) return m;
     return base + (q === '?' ? '?auto=format' : q + (q.endsWith('?') || q.endsWith('&') ? '' : '&') + 'auto=format');
   });
-  if (/^aurzane\.com\/aurzane-paleta\.js$/.test(rel) && o.indexOf('Tema único para todo AURZANE') < 0) {   // tema común, antes que la paleta
-    const k = o.indexOf("(function (w, d) {\n  'use strict';\n  if (w.AurzanePaleta) return;");
-    if (k >= 0) o = o.slice(0, k) + TEMA + '\n' + o.slice(k); else console.error('AVISO: no encontré dónde poner el tema en aurzane-paleta.js');
+  if (/^aurzane\.com\/aurzane-paleta\.js$/.test(rel)) {   // tema común, antes que la paleta; se reemplaza entero en cada pasada para que llegue la última versión de v4_tema.js
+    const k = o.indexOf("(function (w, d) {\n  'use strict';\n  if (w.AurzanePaleta) return;"), s0 = o.indexOf('/* Tema único para todo AURZANE');
+    if (k >= 0) o = o.slice(0, s0 >= 0 && s0 < k ? s0 : k) + TEMA + '\n' + o.slice(k); else console.error('AVISO: no encontré dónde poner el tema en aurzane-paleta.js');
   }
   if (/^aurzane\.com\/aurzane-ds\.js$/.test(rel) && o.indexOf('v4: todas las páginas tienen claro y oscuro') < 0) {   // botón «Tema» en todas las páginas
     const a = "    var tema = d.getElementById('btnTema') || d.getElementById('btnTemaMi');\n";
