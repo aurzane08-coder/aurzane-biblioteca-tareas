@@ -52,7 +52,12 @@ const ok = (n, c, det = '') => (c ? bien : fallos).push(n + (det ? ' · ' + det 
       }
       await p.waitForSelector('#azAsis', { timeout: 6000 }).catch(() => {});
       ok('Test: aparece la IA de resultados', !!(await p.$('#azAsis')));
-      const ia = await p.evaluate(async () => { try { const r = await fetch('/ai/asistente.php', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ test: 'Test de ansiedad GAD-7', resultado: '6 puntos, nivel: leve', pregunta: '¿Qué significa mi resultado?' }) }); const j = await r.json(); return r.status + ' ' + (j.respuesta ? 'ok' : (j.error || 'sin respuesta')); } catch (e) { return 'error ' + e.message; } });
+      let ia = '';
+      for (let i = 0; i < 3; i++) {   // la IA gratuita a veces responde 503 «muy solicitado» un rato: se reintenta antes de dar fallo
+        if (i) await p.waitForTimeout(30000);
+        ia = await p.evaluate(async () => { try { const r = await fetch('/ai/asistente.php', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ test: 'Test de ansiedad GAD-7', resultado: '6 puntos, nivel: leve', pregunta: '¿Qué significa mi resultado?' }) }); const j = await r.json(); return r.status + ' ' + (j.respuesta ? 'ok' : (j.error || 'sin respuesta')); } catch (e) { return 'error ' + e.message; } });
+        if (/ ok$/.test(ia) || !/^503/.test(ia)) break;
+      }
       ok('Test: la IA responde', / ok$/.test(ia), ia);
     } catch (e) { ok('Test de ansiedad', false, e.message.slice(0, 120)); }
     if (!(r0 && r0.status() === 202)) { if (errs.length) ok('Test: sin errores de JavaScript', false, errs.join(' | ')); await p.close(); }
