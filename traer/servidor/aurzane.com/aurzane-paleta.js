@@ -603,7 +603,7 @@
   if (d.querySelector('link[data-azds]') || !/(^|\.)aurzane\.com$/.test(location.hostname)) return;
   /* la hoja común se escribe en el documento mientras se lee la cabecera: así se aplica antes de pintar y la página
      no cambia de aspecto ni salta cuando llega (16/11/2026); si la página ya está leída, se añade como antes */
-  var css = 'https://aurzane.com/aurzane-ds.css?v=h632b82e3';
+  var css = 'https://aurzane.com/aurzane-ds.css?v=h7050af74';
   if (d.readyState === 'loading' && d.currentScript && d.currentScript.parentNode === d.head) d.write('<link rel="stylesheet" href="' + css + '" data-azds="1">');
   else { var l = d.createElement('link'); l.rel = 'stylesheet'; l.href = css; l.setAttribute('data-azds', '1'); (d.head || d.documentElement).appendChild(l); }
   var s = d.createElement('script'); s.src = 'https://aurzane.com/aurzane-ds.js?v=hf2bf9f82'; s.defer = true; s.setAttribute('data-azds', '1');
