@@ -648,3 +648,5 @@ html.az-v4 .rasgos5 .r5.claro{background:color-mix(in srgb,var(--c) 42%,#0F2A22)
 /* «Explora por tema» de las portadas de mundo: rejilla que se reparte sola (7 temas = 4 + 3, sin huérfana suelta) */
 @media (min-width:901px){html.az-v4 #categoriasGrid{grid-template-columns:repeat(4,minmax(0,1fr))!important}}
 @media (min-width:1400px){html.az-v4 #categoriasGrid:has(> :nth-child(5):last-child),html.az-v4 #categoriasGrid:has(> :nth-child(10):last-child){grid-template-columns:repeat(5,minmax(0,1fr))!important}}
+/* Las bandas a todo el ancho (100vw) incluyen la barra de desplazamiento y empujaban la página 8 px hacia el lado: sin scroll horizontal */
+html.az-v4 body{overflow-x:clip}
