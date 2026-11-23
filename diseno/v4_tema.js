@@ -86,7 +86,7 @@
   function fotoCab() {
     if (d.documentElement.classList.contains('az-v4-herofoto')) return;
     var og = d.querySelector('meta[property="og:image"]'), u = og && og.content;
-    var cab = d.querySelector('main > .hero, section.hero, header.hero, .u-hero, .hero-wrap, .world-header, main > header:first-child, body > div.h, .tx-hero'); if (!cab) return;
+    var cab = d.querySelector('main > .hero, section.hero, header.hero, .u-hero, .hero-wrap, .world-header, main > header:first-child, body > div.h, .tx-hero, main > .tema-hero'); if (!cab) return;
     var cs = getComputedStyle(cab); if (/url\(/.test(cs.backgroundImage)) return;
     var cols = ((cs.backgroundColor + ' ' + cs.backgroundImage).match(/rgba?\([^)]+\)|color\(srgb [^)]+\)/g) || []).map(function (x) {
         var k = /^color/.test(x), v = x.replace(/rgba?\(|color\(srgb |\)/g, '').split(/[ ,\/]+/).filter(Boolean).map(Number);
