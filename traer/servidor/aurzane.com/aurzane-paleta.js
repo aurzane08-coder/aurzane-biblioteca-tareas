@@ -122,7 +122,7 @@
   function fotoCab() {
     if (d.documentElement.classList.contains('az-v4-herofoto')) return;
     var og = d.querySelector('meta[property="og:image"]'), u = og && og.content;
-    var cab = d.querySelector('main > .hero, section.hero, header.hero, .u-hero, .hero-wrap, .world-header, main > header:first-child, body > div.h, .tx-hero'); if (!cab) return;
+    var cab = d.querySelector('main > .hero, section.hero, header.hero, .u-hero, .hero-wrap, .world-header, main > header:first-child, body > div.h, .tx-hero, main > .tema-hero'); if (!cab) return;
     var cs = getComputedStyle(cab); if (/url\(/.test(cs.backgroundImage)) return;
     var cols = ((cs.backgroundColor + ' ' + cs.backgroundImage).match(/rgba?\([^)]+\)|color\(srgb [^)]+\)/g) || []).map(function (x) {
         var k = /^color/.test(x), v = x.replace(/rgba?\(|color\(srgb |\)/g, '').split(/[ ,\/]+/).filter(Boolean).map(Number);
@@ -603,7 +603,7 @@
   if (d.querySelector('link[data-azds]') || !/(^|\.)aurzane\.com$/.test(location.hostname)) return;
   /* la hoja común se escribe en el documento mientras se lee la cabecera: así se aplica antes de pintar y la página
      no cambia de aspecto ni salta cuando llega (16/11/2026); si la página ya está leída, se añade como antes */
-  var css = 'https://aurzane.com/aurzane-ds.css?v=h5a948ccb';
+  var css = 'https://aurzane.com/aurzane-ds.css?v=hda5487b0';
   if (d.readyState === 'loading' && d.currentScript && d.currentScript.parentNode === d.head) d.write('<link rel="stylesheet" href="' + css + '" data-azds="1">');
   else { var l = d.createElement('link'); l.rel = 'stylesheet'; l.href = css; l.setAttribute('data-azds', '1'); (d.head || d.documentElement).appendChild(l); }
   var s = d.createElement('script'); s.src = 'https://aurzane.com/aurzane-ds.js?v=hf2bf9f82'; s.defer = true; s.setAttribute('data-azds', '1');

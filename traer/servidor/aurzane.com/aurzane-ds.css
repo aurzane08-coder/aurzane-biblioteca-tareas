@@ -1002,4 +1002,51 @@ html.az-v4 body{overflow-x:clip}
 html.az-v4 #lector .barra{background:#183D32!important;border-bottom:1px solid rgba(199,185,155,.35)}
 html.az-v4 #lector .barra,html.az-v4 #lector .barra span,html.az-v4 #lector .barra button,html.az-v4 #lector .barra a{color:#F2EFE6!important}
 html.az-v4 #lector .barra button{border:1px solid rgba(242,239,230,.35)!important;background:transparent!important;border-radius:999px}
+
+/* Research Hub (revisión 23/11): los filtros ya no se quedan pegados al bajar, y campos, enlaces y botones con contraste en claro y en oscuro */
+html.az-v4 body:has(#worldFilters) .panel{position:static!important;top:auto!important;background:#FBFAF6!important;border:1px solid rgba(24,61,50,.12)!important;border-top:3px solid #C7B99B!important;box-shadow:0 12px 30px -22px rgba(15,42,34,.4)!important}
+@media(min-width:901px){html.az-v4 body:has(#worldFilters) .panel{align-items:center!important;gap:16px 32px!important;padding:18px 26px!important}
+  html.az-v4 body:has(#worldFilters) .panel .grupo{justify-content:center}}
+html.az-v4 body:has(#worldFilters) .panel-cab h2{color:#183D32!important}
+html.az-v4 body:has(#worldFilters) .panel .grupo-tit{color:#5E605A!important}
+html.az-v4 body:has(#worldFilters) .campo{background:#FFFFFF!important;color:#252724!important;border:1.5px solid rgba(24,61,50,.22)!important;border-radius:10px!important;min-height:40px;padding:8px 12px!important;font:500 .92rem var(--v-sans)!important}
+html.az-v4 body:has(#worldFilters) .campo::placeholder{color:#7A7C74!important}
+html.az-v4 body:has(#worldFilters) select.campo option{background:#FFFFFF;color:#252724}
+html.az-v4 body:has(#worldFilters) .link-btn,html.az-v4 body:has(#worldFilters) .toggle-abs,html.az-v4 body:has(#worldFilters) .ver-autores{color:#1F4A3D!important;font-weight:600!important;text-decoration:underline;text-underline-offset:3px}
+html.az-v4 body:has(#worldFilters) .accion.prim{background:#183D32!important;color:#F2EFE6!important;border-color:#183D32!important}
+html.az-v4 body:has(#worldFilters) .accion.prim:hover{background:#1F4A3D!important}
+html.az-v4 body:has(#worldFilters) .interruptor{color:#252724!important}
+html.az-v4 body:has(#worldFilters) .interruptor .pista{background:#C9C3B4!important;border:0!important}
+html.az-v4 body:has(#worldFilters) .interruptor input:checked + .pista{background:#1F4A3D!important}
+html.az-v4 body:has(#worldFilters) .interruptor .pista::after{background:#FFFFFF!important}
+html.az-v4 body:has(#worldFilters) .orden,html.az-v4 body:has(#worldFilters) .orden span{color:#252724!important}
+html.az-v4[data-tema="oscuro"] body:has(#worldFilters) .panel{background:#162B24!important;border-color:#2B4A3F!important;border-top-color:#C7B99B!important}
+html.az-v4[data-tema="oscuro"] body:has(#worldFilters) .panel-cab h2,html.az-v4[data-tema="oscuro"] body:has(#worldFilters) .interruptor,html.az-v4[data-tema="oscuro"] body:has(#worldFilters) .orden,html.az-v4[data-tema="oscuro"] body:has(#worldFilters) .orden span{color:#F2EFE6!important}
+html.az-v4[data-tema="oscuro"] body:has(#worldFilters) .panel .grupo-tit{color:#B9C2BB!important}
+html.az-v4[data-tema="oscuro"] body:has(#worldFilters) .campo{background:#10231D!important;color:#F2EFE6!important;border-color:#2B4A3F!important}
+html.az-v4[data-tema="oscuro"] body:has(#worldFilters) .campo::placeholder{color:#9AA59E!important}
+html.az-v4[data-tema="oscuro"] body:has(#worldFilters) select.campo option{background:#10231D;color:#F2EFE6}
+html.az-v4[data-tema="oscuro"] body:has(#worldFilters) .link-btn,html.az-v4[data-tema="oscuro"] body:has(#worldFilters) .toggle-abs,html.az-v4[data-tema="oscuro"] body:has(#worldFilters) .ver-autores{color:#D9CDB2!important}
+html.az-v4[data-tema="oscuro"] body:has(#worldFilters) .accion.prim{background:#C7B99B!important;color:#10231D!important;border-color:#C7B99B!important}
+html.az-v4[data-tema="oscuro"] body:has(#worldFilters) .interruptor .pista{background:#3A5A4E!important}
+html.az-v4[data-tema="oscuro"] body:has(#worldFilters) .interruptor input:checked + .pista{background:#C7B99B!important}
+
+/* Índice de artículos (revisión 23/11): a todo el ancho, con portada de foto, buscador sin quedarse pegado y tarjetas en tres columnas */
+html.az-v4 main.article.wrap:has(> #azIdx){display:block!important;max-width:1280px!important;padding-top:0!important}
+html.az-v4 main.article.wrap:has(> #azIdx) > *{max-width:none!important}
+html.az-v4 main.article.wrap:has(> #azIdx) > .tema-hero{margin:0 calc(50% - 50vw) 0!important;padding:clamp(56px,9vh,96px) max(24px,calc((100vw - 1232px)/2)) 40px!important;background:linear-gradient(90deg,rgba(18,37,31,.95) 0%,rgba(18,37,31,.82) 45%,rgba(18,37,31,.35) 100%),var(--v4-foto,url('https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=1800&q=70&auto=format&fit=crop')) center/cover no-repeat,#12251F!important;color:#F2EFE6!important;border:0!important}
+html.az-v4 main.article.wrap:has(> #azIdx) > .tema-hero > *{max-width:720px}
+html.az-v4 main.article.wrap:has(> #azIdx) > .tema-hero h1{color:#F6F5F0!important;font-size:clamp(2.6rem,5vw,4.2rem)!important}
+html.az-v4 main.article.wrap:has(> #azIdx) > .tema-hero p,html.az-v4 main.article.wrap:has(> #azIdx) > .tema-hero span,html.az-v4 main.article.wrap:has(> #azIdx) > .tema-hero div{color:#DDE2DC!important}
+html.az-v4 main.article.wrap:has(> #azIdx) > .tema-hero a{color:#F6F5F0!important}
+html.az-v4 main.article.wrap:has(> #azIdx) > #azIdx{position:static!important;margin:0 calc(50% - 50vw) 40px!important;padding:18px max(24px,calc((100vw - 1232px)/2))!important;background:#183D32!important;border:0!important;border-bottom:3px solid #C7B99B!important;display:flex;flex-wrap:wrap;gap:12px 18px;align-items:center}
+html.az-v4 main.article.wrap:has(> #azIdx) > #azIdx input{max-width:460px;min-height:46px}
+html.az-v4 main.article.wrap:has(> #azIdx) > #azIdx button{background:transparent!important;color:#F2EFE6!important;border-color:rgba(242,239,230,.4)!important}
+html.az-v4 main.article.wrap:has(> #azIdx) > #azIdx button[aria-pressed="true"]{background:#C7B99B!important;border-color:#C7B99B!important;color:#12251F!important}
+html.az-v4 main.article.wrap:has(> #azIdx) > .az-dest{margin-bottom:24px!important}
+@media(min-width:1000px){
+  html.az-v4 main.article.wrap:has(> #azIdx) > .tema-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:22px!important}
+  html.az-v4 main.article.wrap:has(> #azIdx) > .az-dest{display:grid!important;grid-template-columns:1.4fr 1fr!important;min-height:380px}
+}
+@media(min-width:1500px){html.az-v4 main.article.wrap:has(> #azIdx) > .tema-grid{grid-template-columns:repeat(4,minmax(0,1fr))!important}}
 /* ==== fin AURZANE v4 ==== */
