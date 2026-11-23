@@ -23,7 +23,7 @@ def local(url):
 for dom in ['mind.aurzane.com']:   # NEXUS enlaza sus idiomas desde univ/gen (gen.py y en.py)
     for idioma, codigo in LANG.items():
         for f in glob.glob(os.path.join(BASE, dom, 'public_html', idioma, '**', 'index.html'), recursive=True):
-            try: t = open(f, encoding='utf-8', errors='ignore').read(20000)
+            try: t = open(f, encoding='utf-8', errors='ignore').read()
             except Exception: continue
             es = re.search(r'<link[^>]+hreflang="es"[^>]+href="([^"]+)"', t)
             yo = re.search(r'<link[^>]+rel="canonical"[^>]+href="([^"]+)"', t)
