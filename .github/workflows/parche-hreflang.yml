@@ -1,0 +1,29 @@
+name: Enlaces de idioma entre versiones
+# Cada página española enlaza con su versión en inglés o portugués (ai/parches/hreflang.py). Tras cada despliegue y cada día.
+on:
+  push:
+    paths: ['ai/parches/hreflang.py']
+  schedule:
+    - cron: '23 7 * * *'
+  workflow_dispatch:
+  workflow_run:
+    workflows: ['Desplegar archivos a SiteGround']
+    types: [completed]
+concurrency: parche-hreflang
+jobs:
+  p:
+    runs-on: ubuntu-latest
+    env:
+      SG_KEY: ${{ secrets.SG_KEY }}
+      SG_HOST: ${{ secrets.SG_HOST }}
+      SG_USER: ${{ secrets.SG_USER }}
+      SG_PORT: ${{ secrets.SG_PORT }}
+      SG_PASS: ${{ secrets.SG_PASS }}
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          mkdir -p ~/.ssh && printf '%s\n' "$SG_KEY" | tr -d '\r' > ~/.ssh/id && chmod 600 ~/.ssh/id
+          if [ -n "$SG_PASS" ]; then ssh-keygen -p -P "$SG_PASS" -N "" -f ~/.ssh/id >/dev/null; fi
+          SSH="ssh -i $HOME/.ssh/id -p ${SG_PORT:-18765} -o StrictHostKeyChecking=accept-new $SG_USER@$SG_HOST"
+          $SSH 'python3 - www' < ai/parches/hreflang.py
+          $SSH "site-tools-client domain-all update id=mind.aurzane.com flush_cache=1 >/dev/null 2>&1" || true
