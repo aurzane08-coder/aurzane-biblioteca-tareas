@@ -1,0 +1,21 @@
+# Artículos que se publican también en inglés (aurzane.com/en/articles/<slug>/), por orden de prioridad.
+# Criterio: temas con mucha búsqueda en inglés (aprendizaje, hábitos, carrera, psicología positiva) y sin depender de leyes o servicios de España.
+# Para añadir uno, escribe su slug (lo que va después de aurzane.com/articulos/) en una línea nueva: se traduce solo en la siguiente pasada.
+metodos-de-estudio-que-de-verdad-funcionan
+cuanto-tiempo-toma-formar-un-habito
+practica-deliberada-cuanto-explica-la-experticia
+mentalidad-de-crecimiento-que-dice-la-evidencia
+procrastinacion-productividad-estudiantil
+como-aprendemos-estrategias-metacognitivas
+clase-magistral-vs-aprendizaje-activo-metaanalisis
+aprendizaje-en-linea-vs-presencial
+gamificacion-y-aprendizaje
+sistemas-tutores-inteligentes-metaanalisis
+motivacion-autonoma-persistencia-aprendizaje-metaanalisis
+elegir-carrera-tipos-de-indecision
+orientacion-vocacional-que-tan-efectiva-es
+personalidad-responsabilidad-rendimiento-academico
+naturaleza-asombro-bienestar-subjetivo
+proposito-vida-mecanismos-cognitivos-afectivos
+regla-70-20-10-evidencia-real
+teleterapia-vs-presencial
