@@ -66,7 +66,7 @@ SCRIPT = r'''<style id="azIngresos">
     ['amazonus', 'Amazon Afiliados EE. UU.', 'Los mismos enlaces, para quien entra desde Estados Unidos', 'Transferencia si la admite para España; si no, tarjeta regalo', 'Unos 60 días; requiere el formulario fiscal W-8BEN', 'https://affiliate-program.amazon.com/home/reports'],
     ['awin', 'Awin', 'SaludOnNet, Casa del Libro, Fnac, Naturitas, Myprotein, Decathlon y más socios junto a cada herramienta', 'Transferencia en euros', 'Dos veces al mes, desde unos 20 €, cuando la tienda ha pagado a Awin', 'https://ui.awin.com/'],
     ['udemy', 'Impact (Udemy)', 'Cursos de pago de Udemy al final de cada curso de LEARN', 'Transferencia o PayPal', 'Mensual, desde el mínimo que elijas', 'https://app.impact.com/'],
-    ['paypal', 'PayPal (en Stripe)', 'Pagar con PayPal en la página de pago de Stripe', 'Al saldo de Stripe', 'Falta una cuenta de PayPal Business registrada en España', ''],
+    ['paypal', 'PayPal (en Stripe)', 'Pagar con PayPal en la página de pago de Stripe', 'Al saldo de Stripe', 'Activar en Stripe y pedir los pagos recurrentes', 'https://dashboard.stripe.com/settings/payment_methods'],
     ['youtube', 'YouTube', 'Programa de socios del canal AURZANE', 'Por tu misma cuenta de AdSense', 'Desde 1.000 suscriptores y 4.000 horas vistas (o 10 millones de vistas de Shorts)', 'https://studio.youtube.com/'],
     ['tiktok', 'TikTok', 'Creator Rewards (vídeos de más de 1 minuto)', 'Banco o PayPal', 'Desde 10.000 seguidores y 100.000 vistas en 30 días', 'https://www.tiktok.com/tiktokstudio']
   ];
@@ -80,7 +80,9 @@ SCRIPT = r'''<style id="azIngresos">
     ['paypal-es', 'PayPal Business registrada en España', 'Para añadir PayPal a los pagos de Stripe', 'https://www.paypal.com/es/business'],
     ['gestor', 'Hablar con el gestor del IVA y la declaración', 'Antes de que los ingresos sean regulares', '']
   ];
-  var HECHO = {}; try { HECHO = JSON.parse(localStorage.getItem('azIngresosHecho') || '{}'); } catch(e) {}
+  // hechos según Adrián (23/11/2026): W-8BEN, gestor e IVA, PayPal Business, bancos de Awin e Impact
+  var HECHO = { 'w8-amazonus': 1, 'gestor': 1, 'paypal-es': 1, 'banco-awin': 1, 'banco-impact': 1 };
+  try { Object.assign(HECHO, JSON.parse(localStorage.getItem('azIngresosHecho') || '{}')); } catch(e) {}
   var PAN = null, PT = null;
   async function token(){ var sb = window.__aurzaneSb; return sb ? (await sb.auth.getSession()).data.session?.access_token : ''; }
   async function cargar(){
@@ -100,7 +102,7 @@ SCRIPT = r'''<style id="azIngresos">
     if(k === 'udemy') return '<span class="status-pill paid">Aceptado</span><small>' + N(clicsDe(/udemy/i)) + ' clics hacia Udemy en 30 días</small>';
     if(k === 'kofi') return '<span class="status-pill paid">Activo</span>';
     if(k === 'adsense') return '<span class="status-pill pending">En revisión</span><small>Anuncios automáticos ya puestos</small>';
-    if(k === 'paypal') return '<span class="status-pill pending">Pendiente</span>';
+    if(k === 'paypal') return '<span class="status-pill pending">Falta activarlo</span><small>Cuenta Business lista: actívalo en Stripe, Métodos de pago, PayPal</small>';
     if(k === 'youtube' || k === 'tiktok'){ var r = (((PAN || {}).seguidores || {}).redes || []).filter(function(x){ return String(x[0]).toLowerCase().indexOf(k) === 0; })[0]; return '<span class="status-pill pending">Creciendo</span>' + (r && r[1] != null ? '<small>' + N(r[1]) + ' seguidores</small>' : ''); }
     return '';
   }
