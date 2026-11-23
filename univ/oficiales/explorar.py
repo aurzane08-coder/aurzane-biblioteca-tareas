@@ -128,6 +128,32 @@ def detalle3():
     print('\n===== BR página'); [print('   ', h) for h in sorted(set(re.findall(r'https?://[^"\'\s<>]+\.zip', t)))[:20]]
 
 
+def detalle4():
+    import subprocess, csv, io, collections
+    for u in ('https://www.datosabiertos.gob.pe/sites/default/files/Programas%20de%20Universidades_9.csv',
+              'https://www.datosabiertos.gob.pe/sites/default/files/Licenciamiento%20Institucional_18.csv'):
+        b = urllib.request.urlopen(urllib.request.Request(u, headers=UA), timeout=120).read()
+        for enc in ('utf-8-sig', 'latin-1'):
+            try: t = b.decode(enc); break
+            except Exception: pass
+        sep = '|' if t[:500].count('|') > t[:500].count(',') else (';' if t[:500].count(';') > t[:500].count(',') else ',')
+        filas = list(csv.reader(io.StringIO(t), delimiter=sep))
+        print('\n===== PE', u, enc, repr(sep), len(filas)); [print('  ', f) for f in filas[:4]]
+        cab = filas[0]
+        for i, k in enumerate(cab):
+            c = collections.Counter(f[i] for f in filas[1:] if len(f) > i)
+            if len(c) < 40: print('   ', k, c.most_common(12))
+    r = subprocess.run('''set -e
+      curl -sS http://secure.globalsign.com/cacert/rnpicpedugr46ovtlsca2025.crt -o /tmp/int.der
+      openssl x509 -inform DER -in /tmp/int.der -out /tmp/int.pem
+      cat /etc/ssl/certs/ca-certificates.crt /tmp/int.pem > /tmp/ca.pem
+      for a in 2024 2023; do echo "== $a"; curl -sSI --cacert /tmp/ca.pem --max-time 60 https://download.inep.gov.br/microdados/microdados_censo_da_educacao_superior_$a.zip | head -8; done
+    ''', shell=True, capture_output=True, text=True)
+    print('\n===== BR', r.stdout[:2000], r.stderr[:800])
+
+
+if len(sys.argv) > 1 and sys.argv[1] == 'detalle4':
+    detalle4(); sys.exit(0)
 if len(sys.argv) > 1 and sys.argv[1] == 'detalle3':
     detalle3(); sys.exit(0)
 if len(sys.argv) > 1 and sys.argv[1] == 'detalle2':
