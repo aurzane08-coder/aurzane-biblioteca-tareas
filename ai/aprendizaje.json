@@ -144,7 +144,7 @@
   0
  ],
  "tipo:libro": [
-  111,
+  123,
   9
  ],
  "Gambling Behavior and Treatments": [
@@ -312,7 +312,7 @@
   0
  ],
  "archive:psicologia": [
-  81,
+  93,
   0
  ],
  "ed:The Open University": [
@@ -588,7 +588,7 @@
   2
  ],
  "ed:Universitat Oberta de Catalunya (UOC)": [
-  5,
+  6,
   4
  ],
  "ed:Universidad de Buenos Aires. Facultad de Filosofía y Letras. Departamento de Ciencias de la Educación": [
@@ -612,11 +612,11 @@
   1
  ],
  "ed:OPS": [
-  3,
-  2
+  5,
+  3
  ],
  "ed:Editorial UOC": [
-  18,
+  19,
   2
  ],
  "ed:Universidad Andina Simón Bolívar, Sede Ecuador; Corporación Editora Nacional": [
@@ -685,7 +685,7 @@
  ],
  "ed:Quito, EC: Universidad Andina Simón Bolívar, Sede Ecuador": [
   2,
-  1
+  2
  ],
  "ed:Red Universitaria de Investigación Innovación Educativa (REUNI+D)": [
   0,
@@ -708,19 +708,19 @@
   1
  ],
  "ed:Universitat Oberta de Catalunya": [
-  2,
+  4,
   1
  ],
  "ed:Universidad de Salamanca (España). Instituto Universitario de Integración en la Comunidad": [
   2,
-  1
+  2
  ],
  "ed:Dykinson": [
   1,
   2
  ],
  "ed:UOC": [
-  2,
+  3,
   1
  ],
  "ed:Quito, EC: INÉDITA, Programa Nacional de Financiamiento para Investigación / Universidad Andina Simón Bolívar, Sede Ecuador": [
@@ -792,6 +792,50 @@
   0
  ],
  "ed:El autor": [
+  0,
+  1
+ ],
+ "ed:Universitat de Barcelona. Facultat d'Informació i Mitjans Àudiovisuals. Facultat d'Educació": [
+  0,
+  1
+ ],
+ "ed:Universitat Jaume I": [
+  0,
+  1
+ ],
+ "ed:Universidad Nacional de Córdoba. Facultad de Odontología": [
+  0,
+  2
+ ],
+ "ed:Ministerio de Sanidad, Política Social e Igualdad": [
+  1,
+  0
+ ],
+ "ed:Grupo Comunidad de Habilidades y Aprendizaje con Tecnología [CHAT] de la Facultad de Estudios Superiores Iztacala de la Universidad Nacional Autónoma de México": [
+  1,
+  0
+ ],
+ "ed:Instituto de Democracia y Derechos Humanos de la Pontificia Universidad Católica del Perú (IDEHPUCP)": [
+  1,
+  0
+ ],
+ "ed:Junta de Andalucía. Consejería de Igualdad, Salud y Políticas Sociales y Consejería de Educación, Cultura y Deporte": [
+  1,
+  0
+ ],
+ "ed:CP Editores": [
+  1,
+  0
+ ],
+ "ed:Universidad de la Rioja": [
+  0,
+  1
+ ],
+ "ed:Consejo Nacional Investigaciones Científicas Técnicas - CONICET": [
+  0,
+  1
+ ],
+ "ed:Editorial Universidad de Antioquia y Parque Explora": [
   0,
   1
  ]

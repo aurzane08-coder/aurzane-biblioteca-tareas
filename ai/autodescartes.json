@@ -1,6 +1,114 @@
 [
  {
   "fecha": "2026-11-23",
+  "id": "ia-aurzane-bib-viaje-iniciatico-ensayos-autobiografia-inconclusa",
+  "tipo": "libro",
+  "titulo": "El viaje iniciático. Ensayos para una autobiografía inconclusa",
+  "url": "https://archive.org/details/aurzane-bib-viaje-iniciatico-ensayos-autobiografia-inconclusa",
+  "motivo": "La IA le dio 2/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-innovacion-tradiciones-psicologia-trabajo-organizaciones-ibe/innovaci"
+  ]
+ },
+ {
+  "fecha": "2026-11-23",
+  "id": "ia-aurzane-bib-alimentacion-nutricion-adolescencia-contenidos-actividades-p",
+  "tipo": "libro",
+  "titulo": "Alimentación y nutrición en la adolescencia: contenidos y actividades para la promoción de entornos escolares saludables",
+  "url": "https://archive.org/details/aurzane-bib-alimentacion-nutricion-adolescencia-contenidos-actividades-p",
+  "motivo": "La IA le dio 5/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-innovacion-tradiciones-psicologia-trabajo-organizaciones-ibe/innovaci"
+  ]
+ },
+ {
+  "fecha": "2026-11-23",
+  "id": "ia-aurzane-bib-ensenar-pensar-sobre-valores-sociales",
+  "tipo": "libro",
+  "titulo": "Enseñar a pensar sobre valores sociales",
+  "url": "https://archive.org/details/aurzane-bib-ensenar-pensar-sobre-valores-sociales",
+  "motivo": "La IA le dio 5/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-innovacion-tradiciones-psicologia-trabajo-organizaciones-ibe/innovaci"
+  ]
+ },
+ {
+  "fecha": "2026-11-23",
+  "id": "ia-aurzane-bib-guia-teorico-practica-catedra-integral-ninos",
+  "tipo": "libro",
+  "titulo": "Guía teórico-práctica de la cátedra integral niños y adolescentes \"A\" - Área Ortodoncia",
+  "url": "https://archive.org/details/aurzane-bib-guia-teorico-practica-catedra-integral-ninos",
+  "motivo": "La IA le dio 1/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-innovacion-tradiciones-psicologia-trabajo-organizaciones-ibe/innovaci"
+  ]
+ },
+ {
+  "fecha": "2026-11-23",
+  "id": "ia-aurzane-bib-metodologia-aprendizaje-material-teorico-practico",
+  "tipo": "libro",
+  "titulo": "Metodologia del Aprendizaje. Material teórico práctico",
+  "url": "https://archive.org/details/aurzane-bib-metodologia-aprendizaje-material-teorico-practico",
+  "motivo": "La IA le dio 3/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-bases-psicosociales-criminologia-septiembre-2019/bases-psicosociales-"
+  ]
+ },
+ {
+  "fecha": "2026-11-23",
+  "id": "ia-aurzane-bib-comunicacion-conflictos-cambio-social",
+  "tipo": "libro",
+  "titulo": "Comunicación, conflictos y cambio social",
+  "url": "https://archive.org/details/aurzane-bib-comunicacion-conflictos-cambio-social",
+  "motivo": "La IA le dio 4/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-psicologia-comunitaria-bienestar-social-septiembre-2014/psicologia-co"
+  ]
+ },
+ {
+  "fecha": "2026-11-23",
+  "id": "ia-aurzane-bib-espacio-europeo-educacion-superior-estandares-e",
+  "tipo": "libro",
+  "titulo": "Espacio Europeo de Educación Superior: estándares e indicadores de buenas prácticas para la atención a estudiantes universitarios con discapacidad",
+  "url": "https://archive.org/details/aurzane-bib-espacio-europeo-educacion-superior-estandares-e",
+  "motivo": "La IA le dio 3/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-psicologia-comunitaria-bienestar-social-septiembre-2014/psicologia-co"
+  ]
+ },
+ {
+  "fecha": "2026-11-23",
+  "id": "ia-aurzane-bib-trude-sojka-resiliencia-traves-artes",
+  "tipo": "libro",
+  "titulo": "Trude Sojka: resiliencia a través de las artes",
+  "url": "https://archive.org/details/aurzane-bib-trude-sojka-resiliencia-traves-artes",
+  "motivo": "La IA le dio 4/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-psicologia-comunitaria-bienestar-social-septiembre-2014/psicologia-co"
+  ]
+ },
+ {
+  "fecha": "2026-11-23",
+  "id": "ia-aurzane-bib-equidad-materia-salud-personas-discapacidad-guia",
+  "tipo": "libro",
+  "titulo": "Equidad en materia de salud para las personas con discapacidad: Guía de Acción",
+  "url": "https://archive.org/details/aurzane-bib-equidad-materia-salud-personas-discapacidad-guia",
+  "motivo": "No tiene un PDF libre que se pueda descargar",
+  "probados": []
+ },
+ {
+  "fecha": "2026-11-23",
+  "id": "ia-aurzane-bib-adolescencia-medios-sexualidades-reimaginar-educacion-afecti",
+  "tipo": "libro",
+  "titulo": "Adolescencia, Medios y Sexualidades: Reimaginar la Educación Afectivo-Sexual con el Proyecto TRANSGELIT. Libro Blanco.",
+  "url": "https://archive.org/details/aurzane-bib-adolescencia-medios-sexualidades-reimaginar-educacion-afecti",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 24 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-adolescencia-medios-sexualidades-reimaginar-educacion-afecti/adolesce"
+  ]
+ },
+ {
+  "fecha": "2026-11-23",
   "id": "pmc-PMC13785279",
   "tipo": "estudio",
   "titulo": "Comparative efficacy of different digital technologies in adults with insomnia: a systematic review and network meta-analysis of randomized controlled trials",
@@ -3095,116 +3203,6 @@
   "motivo": "La IA le dio 3/10: no encaja en la biblioteca",
   "probados": [
    "200 application/pdf https://archive.org/download/lo-que-queda_202610-rangel/LO%20QUE%20QUEDA.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-08",
-  "id": "ia-La-Cola-del-diablo_202610",
-  "tipo": "libro",
-  "titulo": "LA COLA DEL DIABLO",
-  "url": "https://archive.org/details/La-Cola-del-diablo_202610",
-  "motivo": "La IA le dio 3/10: no encaja en la biblioteca",
-  "probados": [
-   "HTTP Error 500: Internal Server Error https://archive.org/download/conceptos-sobre-el-amor/Conceptos_sobre_el_amor.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-08",
-  "id": "ia-crimen-y-cartilago",
-  "tipo": "libro",
-  "titulo": "Crímen Y Cartílago",
-  "url": "https://archive.org/details/crimen-y-cartilago",
-  "motivo": "La IA le dio 4/10: no encaja en la biblioteca",
-  "probados": [
-   "HTTP Error 500: Internal Server Error https://archive.org/download/conceptos-sobre-el-amor/Conceptos_sobre_el_amor.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-08",
-  "id": "ia-manual-del-guia-bufon_202611",
-  "tipo": "libro",
-  "titulo": "Manual Del Guía Bufón",
-  "url": "https://archive.org/details/manual-del-guia-bufon_202611",
-  "motivo": "La IA le dio 5/10: no encaja en la biblioteca",
-  "probados": [
-   "HTTP Error 500: Internal Server Error https://archive.org/download/conceptos-sobre-el-amor/Conceptos_sobre_el_amor.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-08",
-  "id": "ia-lluvia-de-mayo",
-  "tipo": "libro",
-  "titulo": "Lluvia De Mayo",
-  "url": "https://archive.org/details/lluvia-de-mayo",
-  "motivo": "La IA le dio 3/10: no encaja en la biblioteca",
-  "probados": [
-   "HTTP Error 500: Internal Server Error https://archive.org/download/conceptos-sobre-el-amor/Conceptos_sobre_el_amor.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-08",
-  "id": "ia-guia-tecnica-herramientas-2026",
-  "tipo": "libro",
-  "titulo": "GUIA TECNICA HERRAMIENTAS 2026",
-  "url": "https://archive.org/details/guia-tecnica-herramientas-2026",
-  "motivo": "La IA le dio 5/10: no encaja en la biblioteca",
-  "probados": [
-   "HTTP Error 500: Internal Server Error https://archive.org/download/conceptos-sobre-el-amor/Conceptos_sobre_el_amor.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-08",
-  "id": "ia-jenny_202604",
-  "tipo": "libro",
-  "titulo": "Jenny",
-  "url": "https://archive.org/details/jenny_202604",
-  "motivo": "La IA le dio 4/10: no encaja en la biblioteca",
-  "probados": [
-   "HTTP Error 500: Internal Server Error https://archive.org/download/conceptos-sobre-el-amor/Conceptos_sobre_el_amor.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-08",
-  "id": "ia-estudios-psicoemocionales-ebook",
-  "tipo": "libro",
-  "titulo": "Estudios Psicoemocionales Ebook",
-  "url": "https://archive.org/details/estudios-psicoemocionales-ebook",
-  "motivo": "La IA le dio 6/10: no encaja en la biblioteca",
-  "probados": [
-   "HTTP Error 500: Internal Server Error https://archive.org/download/conceptos-sobre-el-amor/Conceptos_sobre_el_amor.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-08",
-  "id": "ia-conceptos-sobre-el-amor",
-  "tipo": "libro",
-  "titulo": "Conceptos sobre el amor en sus distintas formas y dimensiones a través de las culturas",
-  "url": "https://archive.org/details/conceptos-sobre-el-amor",
-  "motivo": "Al publicarla no tiene un PDF libre que se pueda descargar",
-  "probados": [
-   "HTTP Error 500: Internal Server Error https://archive.org/download/conceptos-sobre-el-amor/Conceptos_sobre_el_amor.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-08",
-  "id": "ia-vectores-de-desvio-teoria-de-la-interferencia-adaptativa-2.1",
-  "tipo": "libro",
-  "titulo": "Vectores de Desvío — Teoría de la Interferencia Adaptativa",
-  "url": "https://archive.org/details/vectores-de-desvio-teoria-de-la-interferencia-adaptativa-2.1",
-  "motivo": "La IA le dio 4/10: no encaja en la biblioteca",
-  "probados": [
-   "200 application/pdf https://api.taylorfrancis.com/content/books/mono/download?identifierName=doi&identifierValue=10.4324/978100379"
-  ]
- },
- {
-  "fecha": "2026-11-08",
-  "id": "ia-5-manual-de-aprendizaje-acuerdo-praxico",
-  "tipo": "libro",
-  "titulo": "5 Manual De Aprendizaje Acuerdo Praxico",
-  "url": "https://archive.org/details/5-manual-de-aprendizaje-acuerdo-praxico",
-  "motivo": "La IA le dio 6/10: no encaja en la biblioteca",
-  "probados": [
-   "200 application/pdf https://api.taylorfrancis.com/content/books/mono/download?identifierName=doi&identifierValue=10.4324/978100379"
   ]
  }
 ]
