@@ -113,8 +113,8 @@ def pagina(es_slug):
     # cabecera: idioma, canónica, enlaces de idioma
     s = s.replace('<html lang="es">', '<html lang="en">', 1)
     s = s.replace('<meta name="viewport" content="width=device-width, initial-scale=1.0">', '<meta name="viewport" content="width=device-width, initial-scale=1.0">\n<meta name="aurzane-idiomas" content="no">', 1)
-    s = re.sub(r'<link rel="canonical" href="[^"]+">', f'<link rel="canonical" href="{url}">\n<link rel="alternate" hreflang="en" href="{url}"><link rel="alternate" hreflang="es" href="{url_es}"><link rel="alternate" hreflang="x-default" href="{url_es}">', s, count=1)
     s = re.sub(r'<link rel="alternate" hreflang="[^"]+" href="https://mind\.aurzane\.com/ejercicios/[^"]*">', '', s)
+    s = re.sub(r'<link rel="canonical" href="[^"]+">', f'<link rel="canonical" href="{url}">\n<link rel="alternate" hreflang="en" href="{url}"><link rel="alternate" hreflang="es" href="{url_es}"><link rel="alternate" hreflang="x-default" href="{url_es}">', s, count=1)
     s = re.sub(r'(<meta property="og:url" content=")[^"]+', r'\g<1>' + url, s, count=1)
     s = s.replace('content="es_ES"', 'content="en_GB"')
     # datos estructurados
