@@ -712,3 +712,5 @@ html.az-v4 body:has(#worldFilters) .panel .campo{background:#FFFFFF!important;co
 html.az-v4 body:has(#worldFilters) .panel .interruptor .pista{background:rgba(242,239,230,.35)!important}
 html.az-v4 body:has(#worldFilters) .panel .interruptor input:checked + .pista{background:#C7B99B!important}
 html.az-v4[data-tema="oscuro"] body:has(#worldFilters) .panel{background:#183D32!important}
+/* Study in Spain: el antetítulo de la portada en champán (el v4 lo dejaba azul y apagado) */
+html.az-v4 .en-hero .eyebrow{color:#D9CDB2!important}

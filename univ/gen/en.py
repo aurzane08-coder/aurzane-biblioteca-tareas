@@ -47,7 +47,8 @@ def _cargar(p, defecto):
 def generar(G):
     """G = globals() de gen.py."""
     DATOS, SALIDA, HOY, V = G['DATOS'], G['SALIDA'], G['HOY'], G['V']
-    BASE = G['BASE']; fmt = G['fmt']; fmt_nota = G['fmt_nota']; commons = G['commons']; iniciales = G['iniciales']; slug = G['slug']
+    BASE = G['BASE']; fmt = lambda n: f'{n:,}'   # en inglés, miles con coma
+    fmt_nota = G['fmt_nota']; commons = G['commons']; iniciales = G['iniciales']; slug = G['slug']
     rank_de = G['rank_de']; NC_CURSO = G.get('NC_CURSO') or ''
     us = [u for u in G['por_pais'].get('España', []) if u['n']]
     if not us:
