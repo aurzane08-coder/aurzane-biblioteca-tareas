@@ -2238,5 +2238,33 @@
   "autor": "Pexels",
   "url": "https://www.pexels.com/photo/5239561/",
   "src": "https://images.pexels.com/photos/5239561/pexels-photo-5239561.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "frase-205773d7": {
+  "pid": "8771167",
+  "q": "wildflowers field",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/8771167/",
+  "src": "https://images.pexels.com/photos/8771167/pexels-photo-8771167.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "frase-c7410680": {
+  "pid": "7090176",
+  "q": "quiet beach sunrise",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/7090176/",
+  "src": "https://images.pexels.com/photos/7090176/pexels-photo-7090176.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "promo-chequeo": {
+  "pid": "28426413",
+  "q": "doctor consultation clinic",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/28426413/",
+  "src": "https://images.pexels.com/photos/28426413/pexels-photo-28426413.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
+ },
+ "promo-estres": {
+  "pid": "39588399",
+  "q": "stressed woman laptop",
+  "autor": "Pexels",
+  "url": "https://www.pexels.com/photo/39588399/",
+  "src": "https://images.pexels.com/photos/39588399/pexels-photo-39588399.jpeg?auto=compress&cs=tinysrgb&w=1080&h=1350&fit=crop"
  }
 }
