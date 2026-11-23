@@ -81,6 +81,7 @@ def generar(G):
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="aurzane-idiomas" content="no">
 <script src="https://aurzane.com/aurzane-paleta.js"></script>
 <title>{E(titulo)}</title>
 {f'<link rel="preload" as="image" href="{E(precarga)}" fetchpriority="high">' if precarga else ''}

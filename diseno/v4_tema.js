@@ -286,3 +286,29 @@
   function ir() { pasar(); setTimeout(pasar, 800); setTimeout(pasar, 2500); }
   if (d.readyState === 'loading') d.addEventListener('DOMContentLoaded', ir); else ir();
 })(document);
+/* Idioma con versión real (23/11/2026): si la página tiene su versión en inglés (hreflang), elegir English en el selector 🌐 o en el
+   aviso automático lleva a esa página escrita en inglés en lugar de traducirla con Google. Quien ya eligió inglés va directo a ella.
+   En las páginas en inglés, volver a «Español» deja guardado el español para no rebotar. */
+(function (w, d) {
+  function cookie(n) { var m = d.cookie.match(new RegExp('(?:^|; )' + n + '=([^;]*)')); return m ? decodeURIComponent(m[1]) : null; }
+  function poner(n, v) { var b = n + '=' + v + '; path=/; max-age=' + (365 * 86400) + '; samesite=lax'; d.cookie = b; if (/aurzane\.com$/.test(location.hostname)) d.cookie = b + '; domain=.aurzane.com'; }
+  function quitarGT() { var x = 'googtrans=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT'; d.cookie = x; d.cookie = x + '; domain=.aurzane.com'; d.cookie = x + '; domain=' + location.hostname; }
+  var en = /^en\b/i.test(d.documentElement.lang || '');
+  function alt(l) { var x = d.querySelector('link[rel="alternate"][hreflang="' + l + '"]'); return x && x.href !== location.href ? x.href : ''; }
+  if (en) {
+    d.addEventListener('click', function (e) {
+      var a = e.target.closest && e.target.closest('a[hreflang="es"]');
+      if (a) { poner('aurzane-idioma', 'es'); quitarGT(); }
+    }, true);
+    return;
+  }
+  function irEn() { var u = alt('en'); if (!u) return false; poner('aurzane-idioma', 'en'); quitarGT(); location.href = u; return true; }
+  if (cookie('aurzane-idioma') === 'en' && alt('en')) { quitarGT(); location.replace(alt('en')); return; }
+  d.addEventListener('click', function (e) {
+    var b = e.target.closest && e.target.closest('.azi-pop [data-l="en"], .azi-aviso .si');
+    if (!b) return;
+    if (b.matches('.azi-aviso .si') && !/into English\?/.test(b.parentNode.textContent)) return;   // el aviso propone inglés
+    if (irEn()) { e.preventDefault(); e.stopImmediatePropagation(); }
+  }, true);
+})(window, document);
+
