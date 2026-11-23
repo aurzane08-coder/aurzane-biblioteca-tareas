@@ -1,6 +1,61 @@
 [
  {
   "fecha": "2026-11-23",
+  "id": "ia-the-accusation-of-madness_202611",
+  "tipo": "libro",
+  "titulo": "The Accusation Of Madness: Projection, Power, and the Adversary Through a Middle Way",
+  "url": "https://archive.org/details/the-accusation-of-madness_202611",
+  "motivo": "La IA le dio 4/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-conducta-suicida-manual-prevencion-personas-mayores/conducta-suicida-"
+  ]
+ },
+ {
+  "fecha": "2026-11-23",
+  "id": "ia-aurzane-bib-manual-prevencion-violencia-genero",
+  "tipo": "libro",
+  "titulo": "Manual para la prevención de la violencia de género",
+  "url": "https://archive.org/details/aurzane-bib-manual-prevencion-violencia-genero",
+  "motivo": "La IA le dio 6/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/the-accusation-of-madness_202611/The%20Accusation%20of%20Madness.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-23",
+  "id": "ia-aurzane-bib-debates-sobre-psicopatologia-estructuras-clinicas-vol",
+  "tipo": "libro",
+  "titulo": "Debates sobre psicopatología y estructuras clínicas. Vol. 1",
+  "url": "https://archive.org/details/aurzane-bib-debates-sobre-psicopatologia-estructuras-clinicas-vol",
+  "motivo": "La IA le dio 2/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/the-accusation-of-madness_202611/The%20Accusation%20of%20Madness.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-23",
+  "id": "ia-aurzane-bib-debates-sobre-psicopatologia-estructuras-clinicas-vol-2",
+  "tipo": "libro",
+  "titulo": "Debates sobre psicopatología y estructuras clínicas. Vol. 2",
+  "url": "https://archive.org/details/aurzane-bib-debates-sobre-psicopatologia-estructuras-clinicas-vol-2",
+  "motivo": "La IA le dio 2/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/the-accusation-of-madness_202611/The%20Accusation%20of%20Madness.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-23",
+  "id": "ia-aurzane-bib-estigma-autoestigma-sesgos-clinicos-proceso-evaluacion",
+  "tipo": "libro",
+  "titulo": "Estigma, autoestigma y sesgos clínicos en el proceso de evaluación psicológica",
+  "url": "https://archive.org/details/aurzane-bib-estigma-autoestigma-sesgos-clinicos-proceso-evaluacion",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 13 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-estigma-autoestigma-sesgos-clinicos-proceso-evaluacion/estigma-autoes"
+  ]
+ },
+ {
+  "fecha": "2026-11-23",
   "id": "ia-aurzane-bib-encontrar-nuestros-hijos-testimonio-madre",
   "tipo": "libro",
   "titulo": "Encontrar a nuestros hijos : testimonio de una madre",
@@ -3132,45 +3187,5 @@
   "titulo": "¡Qué carga tan insufrible es el ambiente vital, para el mezquino mortal que nace en signo terrible!",
   "url": "https://aurzane.com/biblioteca/libro/don-alvaro-fuerza-del-sino.html",
   "motivo": "Gemini le dio 7/10: no tiene fuerza suficiente para redes"
- },
- {
-  "fecha": "2026-11-08",
-  "id": "cita-07b12f08e0",
-  "tipo": "cita",
-  "titulo": "De este santo monasterio desde que el término piso, más tranquila tengo el alma, con más libertad respiro.",
-  "url": "https://aurzane.com/biblioteca/libro/don-alvaro-fuerza-del-sino.html",
-  "motivo": "Gemini le dio 6/10: no tiene fuerza suficiente para redes"
- },
- {
-  "fecha": "2026-11-08",
-  "id": "cita-2ba2e46110",
-  "tipo": "cita",
-  "titulo": "Es verdad que es todo un hombre, muy duro con el ganado, y muy echado adelante.",
-  "url": "https://aurzane.com/biblioteca/libro/don-alvaro-fuerza-del-sino.html",
-  "motivo": "Gemini le dio 2/10: no tiene fuerza suficiente para redes"
- },
- {
-  "fecha": "2026-11-08",
-  "id": "cita-d31264006c",
-  "tipo": "cita",
-  "titulo": "Una niña bien educada, hija de buenos padres, no puede menos de conducirse en todas ocasiones como es conveniente y debido.",
-  "url": "https://aurzane.com/biblioteca/libro/el-si-de-las-ninas.html",
-  "motivo": "Gemini le dio 2/10: no tiene fuerza suficiente para redes"
- },
- {
-  "fecha": "2026-11-08",
-  "id": "cita-db5c88440f",
-  "tipo": "cita",
-  "titulo": "Amor ha unido nuestras almas en estrechos nudos, y solo el brazo de la muerte bastará á dividirlas.",
-  "url": "https://aurzane.com/biblioteca/libro/el-si-de-las-ninas.html",
-  "motivo": "Gemini le dio 7/10: no tiene fuerza suficiente para redes"
- },
- {
-  "fecha": "2026-11-08",
-  "id": "cita-e074c6c2f7",
-  "tipo": "cita",
-  "titulo": "Hay hombres muy embusteros, muy picarones; pero no es creible que lo sea el que ha dado pruebas tan repetidas de perseverancia y amor.",
-  "url": "https://aurzane.com/biblioteca/libro/el-si-de-las-ninas.html",
-  "motivo": "Gemini le dio 4/10: no tiene fuerza suficiente para redes"
  }
 ]

@@ -1,5 +1,27 @@
 [
  {
+  "id": "ia-aurzane-bib-conducta-suicida-manual-prevencion-personas-mayores",
+  "tipo": "libro",
+  "titulo": "Conducta suicida. Manual de prevención en personas mayores que viven en residencias",
+  "autores": "Sales Galán, Alicia; Redondo Flores, Rita; Pinazo Clapés, Carolina; Checa Esquiva, Irene",
+  "anio": 2026,
+  "editorial": "Universitat de València",
+  "url": "https://archive.org/details/aurzane-bib-conducta-suicida-manual-prevencion-personas-mayores",
+  "ia": "aurzane-bib-conducta-suicida-manual-prevencion-personas-mayores",
+  "pdf": "",
+  "lic": "cc-by-nc-nd",
+  "idioma": "es",
+  "tema": "archive:psicologia",
+  "resumen": "La conducta suicida en las personas mayores constituye un importante problema de salud pública que requiere estrategias específicas de prevención, detección y actuación. Esta necesidad adquiere especial relevancia en el ámbito residencial, donde confluyen factores psicológicos, sociales, funcionales y de salud, y donde los equipos profesionales desempeñan un papel fundamental en la identificación y el acompañamiento de las personas en situación de vulnerabilidad. Este manual ofrece un marco integral y específicamente desarrollado para abordar la conducta suicida en personas mayores que viven e Copia de la Biblioteca AURZANE (aurzane.com/biblioteca).",
+  "motivo": "Libro de psicología con licencia CC-BY-NC-ND conservado en Internet Archive.",
+  "pdf_origen": "https://archive.org/download/aurzane-bib-conducta-suicida-manual-prevencion-personas-mayores/conducta-suicida-manual-prevencion-personas-mayores.pdf",
+  "paginas": 175,
+  "portada": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-conducta-suicida-manual-prevencion-personas-mayores.jpg",
+  "publicado": "2026-11-23",
+  "nota": 10,
+  "auto": true
+ },
+ {
   "id": "ia-aurzane-bib-psicologia-deporte-adaptado",
   "tipo": "libro",
   "titulo": "Psicología aplicada al deporte adaptado",

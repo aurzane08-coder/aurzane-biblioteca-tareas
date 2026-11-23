@@ -121,7 +121,7 @@
  ],
  "ed:Internet Archive": [
   26,
-  148
+  150
  ],
  "ed:": [
   52,
@@ -144,7 +144,7 @@
   0
  ],
  "tipo:libro": [
-  94,
+  95,
   9
  ],
  "Gambling Behavior and Treatments": [
@@ -312,7 +312,7 @@
   0
  ],
  "archive:psicologia": [
-  64,
+  65,
   0
  ],
  "ed:The Open University": [
@@ -649,7 +649,7 @@
  ],
  "ed:Publicacions de la Universitat Jaume I": [
   0,
-  1
+  2
  ],
  "ed:Agua Clara": [
   1,
@@ -704,7 +704,7 @@
   1
  ],
  "ed:Universitat de València": [
-  0,
+  1,
   1
  ],
  "ed:Universitat Oberta de Catalunya": [
@@ -754,5 +754,9 @@
  "ed:UNICEF Comité Español": [
   0,
   1
+ ],
+ "ed:Universidad de Antioquia, Facultad de Ciencias Sociales y Humanas, Grupo de Investigación Psyconex": [
+  0,
+  2
  ]
 }
