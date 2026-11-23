@@ -45,8 +45,7 @@ jobs:
             echo "== biblioteca"; du -sh aurzane.com/public_html/biblioteca/* 2>/dev/null | sort -rh | head -10; find aurzane.com/public_html/biblioteca -name "*.pdf" | wc -l
             echo "== total y archivos (SiteGround limita también el número de archivos)"; du -sh ~ 2>/dev/null; echo "archivos: $(find ~ -xdev 2>/dev/null | wc -l)"
             echo "== por carpeta de la cuenta"; du -sh ~/* ~/.[!.]* 2>/dev/null | sort -rh | head -15
-            echo "== por sitio"; for d in */; do printf "%s " "$d"; du -sh "$d" 2>/dev/null | cut -f1; printf "   archivos: %s
-" "$(find "$d" -type f 2>/dev/null | wc -l)"; done
+            echo "== por sitio"; for d in */; do printf "%s " "$d"; du -sh "$d" 2>/dev/null | cut -f1; printf "   archivos: %s\\n" "$(find "$d" -type f 2>/dev/null | wc -l)"; done
             echo "== carpetas eliminar"; find ~ -maxdepth 4 -type d -name eliminar 2>/dev/null | while read e; do echo "$(du -sh "$e" | cut -f1) $(find "$e" -type f | wc -l) archivos  $e"; done
             echo "== lo más grande de nexus"; du -sh nexus.aurzane.com/public_html/* 2>/dev/null | sort -rh | head -12
             echo "== restauracion y copias-supabase"; ls -la ~/restauracion-2026-11-19-1409 | head; ls ~/copias-supabase | tail -5; ls ~/copias-supabase | wc -l'
