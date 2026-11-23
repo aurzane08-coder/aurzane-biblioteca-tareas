@@ -13,9 +13,13 @@ jobs:
           import sys, re
           sys.path.insert(0, 'univ')
           import ruct
-          for act in ('menu.solicitud.basicos', 'menu.solicitud.centros', 'menu.solicitud.basicos.centros'):
+          for act in ('menu.solicitud.universidades', 'menu.solicitud.planificacion.descripcion', 'menu.solicitud.accesoAdmision.requisitos', 'menu.solicitud.creditos'):
               p = ruct.get(ruct.B + 'solicitud/detalles.action?cod=25039082024010901&sit=A&actual=' + act)
               t = ruct.limpio(p)
               print('ACT', act, len(t), 'MENU', sorted(set(re.findall(r'actual=(menu[^"&]*)', p)))[:30])
-              for m in re.finditer(r'[Ll]engua|[Ii]dioma', t): print('E', t[max(0, m.start()-150):m.start()+250])
+              for m in re.finditer(r'[Ll]engua|[Ii]dioma|[Ii]ngl', t): print('E', t[max(0, m.start()-150):m.start()+250])
+              print('TXT', t[:1500])
+              for l in sorted(set(re.findall(r'href="([^"]*(?:centro|Centro)[^"]*)"', p)))[:4]:
+                  q = ruct.limpio(ruct.get(ruct.B + 'solicitud/' + l.replace('&amp;', '&').split('solicitud/')[-1]))
+                  for m in re.finditer(r'[Ll]engua|[Ii]dioma', q): print('C', l[:80], q[max(0, m.start()-150):m.start()+300])
           PY
