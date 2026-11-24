@@ -425,3 +425,12 @@ details.grupo>summary:focus-visible{outline:2px solid var(--accent-text);outline
 .esim-tag{font-size:.75rem;letter-spacing:.06em;opacity:.7}
 .esim-cod{display:inline-block;background:rgba(37,211,102,.12);border:1px dashed rgba(37,211,102,.6);border-radius:10px;padding:6px 12px}
 @media (max-width:760px){.esim{grid-template-columns:1fr}.esim-txt{padding:20px}}
+/* Vivir y estudiar en [ciudad], 24/11/2026 */
+.vivir-en .datos{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:16px 0}
+.vivir-en .datos dt{grid-row:1;font-size:.8rem;color:var(--text-dim)}
+.vivir-en .datos dd{text-align:left}
+.vivir-en .datos{grid-auto-flow:column;grid-template-rows:auto auto}
+.vivir-en .datos dt,.vivir-en .datos dd{background:var(--surface-2,rgba(0,0,0,.03));padding:10px 14px;margin:0}
+.vivir-en .datos dt{border-radius:12px 12px 0 0;padding-bottom:2px}.vivir-en .datos dd{border-radius:0 0 12px 12px;padding-top:2px;font-size:1.05rem;margin-top:-12px}
+.vivir-en p{max-width:75ch;line-height:1.65}
+@media (max-width:640px){.vivir-en .datos{grid-auto-flow:row;grid-template-rows:none;grid-template-columns:1fr}.vivir-en .datos dt{grid-row:auto}}

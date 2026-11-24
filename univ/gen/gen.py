@@ -113,7 +113,9 @@ UNIS = []
 RANK = cargar_json('ranking.json') or {'dom': {}, 'nom': {}}
 # patrocinios (17/11/2026, etapa 4, tarea 46): solo los vigentes hoy; caducan solos
 PRECIO = (cargar_json('patrocinios.json') or {}).get('precio') or {}
-PINFO = cargar_json('paises_info.json') or {}   # idiomas, moneda y capital (univ/paises_info.py)
+PINFO = cargar_json('paises_info.json') or {}
+CIU = cargar_json('ciudades_info.json') or {}   # «Vivir en [ciudad]»: Wikidata, Wikipedia y Banco Mundial (univ/ciudades.py)
+PAG_CIU = []   # idiomas, moneda y capital (univ/paises_info.py)
 PATRO = {x['id']: x for x in ((cargar_json('patrocinios.json') or {}).get('lista') or [])
          if x.get('id') and x.get('url', '').startswith('https://') and str(x.get('desde', '')) <= datetime.date.today().isoformat() <= str(x.get('hasta', '9999'))}
 
@@ -886,8 +888,43 @@ def fuente_pais(p):
     return 'Fuentes oficiales del país y webs de cada institución. En algunas universidades mostramos áreas o facultades en lugar del listado completo de carreras.'
 
 
+def _pob(n):
+    if n >= 1_000_000: return f'{n / 1_000_000:.1f}'.replace('.', ',').replace(',0', '') + ' millones de habitantes'
+    return ('más de ' + fmt(n // 1000 * 1000) if n >= 1000 else fmt(n)) + ' habitantes'
+
+
+def vivir_en(p, c, iso):
+    """Vivir en [ciudad]: datos abiertos con su fuente (24/11/2026). Sin datos, no sale nada."""
+    x = (CIU.get(iso.lower()) or {}).get(_n(c)) or {}
+    pre = CIU.get('_precios') or {}
+    filas = []
+    if x.get('pop'): filas.append(('Población', _pob(x['pop'])))
+    if x.get('alt') is not None and x.get('q'): filas.append(('Altitud', f'{fmt(x["alt"])} m sobre el nivel del mar'))
+    coste = ''
+    if iso.lower() != 'es' and pre.get(iso.lower()) and pre.get('es'):
+        v, anio = pre[iso.lower()]; r = v / pre['es'][0]; d = round((r - 1) * 100)
+        en_p = {'Reino Unido': 'el Reino Unido', 'Países Bajos': 'los Países Bajos', 'Emiratos Árabes Unidos': 'los Emiratos Árabes Unidos', 'Estados Unidos': 'Estados Unidos'}.get(p, p)
+        if abs(d) < 5: coste = f'Según el Banco Mundial ({anio}), los precios en {en_p} son, de media, parecidos a los de España.'
+        else: coste = f'Según el Banco Mundial ({anio}), los precios en {en_p} son, de media, un {abs(d)} % {"más altos" if d > 0 else "más bajos"} que en España.'
+        coste += ' Es una media del país: en las ciudades grandes el alquiler suele costar más.'
+    if not (filas or x.get('txt_es') or coste): return ''
+    txt = f'<p>{e(x["txt_es"])}</p>' if x.get('txt_es') else ''
+    mapa = (f'<a class="btn btn-luz" href="https://www.openstreetmap.org/?mlat={x["lat"]}&amp;mlon={x["lon"]}#map=12/{x["lat"]}/{x["lon"]}" target="_blank" rel="noopener">Ver {e(c)} en el mapa</a>'
+            if x.get('lat') else '')
+    leer = ' · '.join(f'<a href="https://{l}.wikipedia.org/wiki/{urllib.parse.quote(x["wiki_" + l].replace(" ", "_"))}" hreflang="{l}" lang="{l}" target="_blank" rel="noopener">{n}</a>'
+                      for l, n in (('es', 'Español'), ('en', 'English'), ('pt', 'Português'), ('fr', 'Français')) if x.get('wiki_' + l))
+    datos_h = '<dl class="datos">' + ''.join(f'<dt>{e(a)}</dt><dd>{e(b)}</dd>' for a, b in filas) + '</dl>' if filas else ''
+    fuente = ('Fuentes: ' + ', '.join(z for z in ('Wikidata' if x.get('q') else '', 'Wikipedia (CC BY-SA)' if x.get('txt_es') else '', 'Banco Mundial' if coste else '') if z) + '.')
+    return (f'<section class="card vivir-en" style="margin-top:28px"><h2>Vivir y estudiar en {e(c)}</h2>{txt}{datos_h}'
+            + (f'<h3>Coste de vida</h3><p>{e(coste)}</p>' if coste else '')
+            + (f'<p class="pasos">{mapa}</p>' if mapa else '')
+            + (f'<p class="sub">Leer más sobre {e(c)}: {leer}</p>' if leer else '')
+            + f'<p class="sub">{fuente}</p></section>')
+
+
 def pagina_ciudad(p, c, us):
     iso = PAISES[p][0]
+    PAG_CIU.append([iso.lower(), c])
     us = sorted(us, key=lambda u: -(u['n'] or 0))
     N, nc = len(us), sum(u['n'] or 0 for u in us)
     npub = sum(1 for u in us if u['tipo'] == 'Pública'); npriv = N - npub
@@ -919,7 +956,7 @@ def pagina_ciudad(p, c, us):
 <main><section class="hero{' con-foto' if hf else ''}" style="padding-bottom:40px"{hf}><div class="wrap">{migas(("Universidades", BASE), (p, f"{BASE}{PSLUG[p]}/"), (c, ""))}
 <h1>{bandera(iso, "g")} Universidades en <em>{e(c)}</em></h1><p class="lead">{e(lead)}</p>{cred}</div></section>
 {panel_listado(p, us, ciudad_fija=c)}
-<div class="wrap"><section class="card" style="margin-top:28px"><h2>¿Cuántas universidades hay en {e(c)}?</h2><p>{e(respuesta)}</p></section>
+<div class="wrap"><section class="card" style="margin-top:28px"><h2>¿Cuántas universidades hay en {e(c)}?</h2><p>{e(respuesta)}</p></section>{vivir_en(p, c, iso)}
 <p class="fuente">{fuente_pais(p)}</p></div></main>''' + pie()
     escribir(f'{PSLUG[p]}/ciudad/{slug(c)}/index.html', h)
     URLS.append((f'{SITIO}{BASE}{PSLUG[p]}/ciudad/{slug(c)}/', '0.6'))
@@ -1384,3 +1421,4 @@ sys.path.insert(0, AQUI)
 import en as _en   # versión en inglés «Study in Spain» (nexus.aurzane.com/en/)
 _en.generar(globals())
 print(f'OK {TOTAL_U} universidades, {TOTAL_C} carreras, {len(ORDEN_P)} países, {len(URLS)} URLs')
+json.dump(PAG_CIU, open(os.path.join(DATOS, 'ciudades_paginas.json'), 'w', encoding='utf-8'), ensure_ascii=False)   # para univ/ciudades.py

@@ -10,7 +10,7 @@ Nada inventado: los datos salen de los mismos registros oficiales que la versió
 Los nombres de los grados se muestran con su traducción (univ/data/grados_en.json, la rellena univ/traducir_grados.py con la IA
 y un glosario fijo) y siempre con el nombre oficial en español, que es el que vale para la preinscripción.
 Lo que aún no tiene traducción se guarda en univ/data/grados_en_pendientes.json para la siguiente pasada."""
-import os, re, json, html, collections
+import os, re, json, html, collections, urllib.parse
 
 EN_BASE = '/en/'
 SITIO = 'https://nexus.aurzane.com'
@@ -455,6 +455,47 @@ def generar(G):
 <h2>Scholarships</h2>
 <p>Universities and regional governments offer scholarships and fee reductions, some of them open to international students. Ask the international office of the university you choose.</p>''',
          [F_PRECIOS, F_IPREM, F_VISA])
+
+    # ------------------------------------------------------------------ ciudades (24/11/2026): «Study in [city]» con datos abiertos
+    CIU = (G.get('CIU') or {}).get('es') or {}; IMG = G.get('IMG') or {}; _n = G['_n']; hero_foto = G['hero_foto']
+    por_c = {}
+    for u in us:
+        if u['ciudad']: por_c.setdefault(u['ciudad'], []).append(u)
+    hechas = []
+    for c, lista in sorted(por_c.items(), key=lambda kv: -len(kv[1])):
+        if len(lista) < 2: continue
+        x = CIU.get(_n(c)) or {}
+        cs = slug(c); canon = f'{SITIO}{EN_BASE}cities/{cs}/'; ce = ciudad_en(c)
+        lista = sorted(lista, key=lambda u: -u['n'])
+        npub = sum(1 for u in lista if u['tipo'] == 'Pública'); ng = sum(u['n'] for u in lista)
+        hf, cred = hero_foto(IMG.get('c', {}).get('ES', {}).get(_n(c)) or IMG.get('c', {}).get('es', {}).get(_n(c)), 'Photo of ' + ce)
+        filas = []
+        if x.get('pop'): filas.append(('Population', (f"{x['pop'] / 1_000_000:.1f} million" if x['pop'] >= 1_000_000 else 'over ' + fmt(x['pop'] // 1000 * 1000)) + ' inhabitants'))
+        if x.get('alt') is not None and x.get('q'): filas.append(('Altitude', f"{fmt(x['alt'])} m above sea level"))
+        filas.append(('Universities', f'{len(lista)} ({npub} public, {len(lista) - npub} private)'))
+        filas.append(("Bachelor's degrees", sobre(ng)))
+        dl = '<dl class="datos">' + ''.join(f'<dt>{E(a)}</dt><dd>{E(b)}</dd>' for a, b in filas) + '</dl>'
+        leer = ' · '.join(f'<a href="https://{l}.wikipedia.org/wiki/{urllib.parse.quote(x["wiki_" + l].replace(" ", "_"))}" hreflang="{l}" lang="{l}" target="_blank" rel="noopener">{n}</a>'
+                          for l, n in (('en', 'English'), ('es', 'Español'), ('pt', 'Português'), ('fr', 'Français')) if x.get('wiki_' + l))
+        mapa = (f'<a class="btn btn-luz" href="https://www.openstreetmap.org/?mlat={x["lat"]}&amp;mlon={x["lon"]}#map=12/{x["lat"]}/{x["lon"]}" target="_blank" rel="noopener">See {E(ce)} on the map</a>' if x.get('lat') else '')
+        desc = f'{len(lista)} universities in {ce}, Spain, with {sobre(ng)} official bachelor\'s degrees: compare public and private universities, fees and cut-off marks.'
+        es_url = f'{SITIO}{BASE}espana/ciudad/{cs}/'
+        hh = cabeza(f'Study in {ce}: {len(lista)} universities and {sobre(ng)} degrees (2026)', desc, canon, es_url) + topbar('', es_url) + f'''
+<main><section class="hero{' con-foto' if hf else ''}"{hf}><div class="wrap">{migas(("Study in Spain", EN_BASE), ("Universities", EN_BASE + "universities/"), (ce, ""))}
+<h1>Study in <em>{E(ce)}</em></h1><p class="lead">{E(desc)}</p>{cred}</div></section>
+<div class="wrap" style="padding-top:28px"><section class="card vivir-en"><h2>Living and studying in {E(ce)}</h2>{('<p>' + E(x['txt_en']) + '</p>') if x.get('txt_en') else ''}{dl}
+{('<p class="pasos">' + mapa + '</p>') if mapa else ''}{('<p class="sub">Read more about ' + E(ce) + ': ' + leer + '</p>') if leer else ''}
+<p class="sub">Sources: official registry of Spanish universities (RUCT){', Wikidata' if x.get('q') else ''}{', Wikipedia (CC BY-SA)' if x.get('txt_en') else ''}.</p></section>
+<h2 style="margin-top:30px">Universities in {E(ce)}</h2><div class="grid-u">{''.join(tarjeta(u) for u in lista)}</div>
+<section class="cta" style="margin-top:24px"><b>Moving to Spain to study?</b><p>Read how admission works, the student visa and what it costs to live here.</p><a class="btn btn-luz" href="{EN_BASE}guides/apply-to-a-spanish-university/">How to apply</a> <a class="btn btn-claro" href="{EN_BASE}guides/cost-of-studying-in-spain/">Costs</a></section>
+</div></main>''' + pie()
+        esc(f'cities/{cs}/index.html', hh); URLS.append(canon); hechas.append((ce, cs, len(lista)))
+    if hechas:
+        idx = cabeza('Study in Spain by city: universities in each Spanish city', 'Where to study in Spain: every Spanish city with two or more universities, with their degrees and key facts.', f'{SITIO}{EN_BASE}cities/') + topbar() + f'''
+<main><section class="hero"><div class="wrap">{migas(("Study in Spain", EN_BASE), ("Cities", ""))}<h1>Study in Spain <em>by city</em></h1><p class="lead">Every Spanish city with two or more universities, with key facts and the universities you can choose.</p></div></section>
+<div class="wrap" style="padding-top:28px"><div class="paises">{''.join(f'<a class="pais" href="{EN_BASE}cities/{cs}/"><span><b>{E(ce)}</b><small>{n} universities</small></span></a>' for ce, cs, n in hechas)}</div></div></main>''' + pie()
+        esc('cities/index.html', idx); URLS.append(f'{SITIO}{EN_BASE}cities/')
+    print(f'EN: {len(hechas)} páginas de ciudad')
 
     # sitemap propio (también lo recoge el mapa diario del dominio)
     x = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + ''.join(
