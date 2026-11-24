@@ -5,24 +5,16 @@ on:
     paths: ['.github/workflows/probar-ia.yml']
 permissions:
   contents: read
-  models: read
 jobs:
   probar:
     runs-on: ubuntu-latest
     steps:
-      - name: Variantes
+      - name: Gemma y Gemini con la misma clave
         env:
-          T: ${{ secrets.GITHUB_TOKEN }}
+          K: ${{ secrets.GEMINI_API_KEY }}
         run: |
-          B='{"model":"openai/gpt-4.1-mini","messages":[{"role":"user","content":"Di hola en una palabra"}],"max_tokens":20}'
-          echo "== 1 sin Accept"; curl -s -i -m 60 https://models.github.ai/inference/chat/completions -H "Authorization: Bearer $T" -H "Content-Type: application/json" -d "$B" | head -c 900; echo
-          echo "== 2 con Accept json"; curl -s -i -m 60 https://models.github.ai/inference/chat/completions -H "Authorization: Bearer $T" -H "Content-Type: application/json" -H "Accept: application/json" -d "$B" | head -c 900; echo
-          echo "== 3 con Accept github + version"; curl -s -i -m 60 https://models.github.ai/inference/chat/completions -H "Authorization: Bearer $T" -H "Content-Type: application/json" -H "Accept: application/vnd.github+json" -H "X-GitHub-Api-Version: 2022-11-28" -d "$B" | head -c 900; echo
-          echo "== 4 python urllib (como el código)"; python3 - <<'P'
-          import urllib.request, json, os
-          r = urllib.request.Request('https://models.github.ai/inference/chat/completions', data=json.dumps({"model":"openai/gpt-4.1-mini","messages":[{"role":"user","content":"hola"}],"max_tokens":20}).encode(), headers={'Content-Type':'application/json','Authorization':'Bearer '+os.environ['T']}, method='POST')
-          try:
-              with urllib.request.urlopen(r, timeout=60) as x: print(x.status, dict(x.headers), x.read()[:400])
-          except Exception as e: print('err', e, getattr(e,'read',lambda:b'')()[:300])
-          P
-          echo "== 5 catálogo"; curl -s -m 30 https://models.github.ai/catalog/models -H "Authorization: Bearer $T" | head -c 400
+          for m in gemma-3-27b-it gemma-3-12b-it gemini-flash-latest gemini-flash-lite-latest gemini-2.5-flash-lite; do
+            echo "== $m texto"; curl -s -m 90 -w " HTTP %{http_code}" "https://generativelanguage.googleapis.com/v1beta/models/$m:generateContent" -H "x-goog-api-key: $K" -H 'Content-Type: application/json' -d '{"contents":[{"parts":[{"text":"Responde solo con JSON {\"saludo\": \"hola\"}"}]}],"generationConfig":{"temperature":0.2}}' | tr -d '\n' | head -c 300; echo
+            echo "== $m json"; curl -s -m 90 -w " HTTP %{http_code}" "https://generativelanguage.googleapis.com/v1beta/models/$m:generateContent" -H "x-goog-api-key: $K" -H 'Content-Type: application/json' -d '{"contents":[{"parts":[{"text":"Devuelve {\"saludo\": \"hola\"}"}]}],"generationConfig":{"responseMimeType":"application/json"}}' | tr -d '\n' | head -c 200; echo
+          done
+          echo "== modelos gemma disponibles"; curl -s "https://generativelanguage.googleapis.com/v1beta/models?pageSize=200" -H "x-goog-api-key: $K" | grep -o '"name": "models/gem[^"]*"' | tr '\n' ' '
