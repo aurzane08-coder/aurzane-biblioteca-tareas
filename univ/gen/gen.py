@@ -58,8 +58,8 @@ def fmt(n):
     return f'{n:,}'.replace(',', '.')
 
 
-def _abajo(n):   # redondeo hacia abajo para cifras grandes del catálogo (24/11/2026): 9.364 → 9.000, 640 → 600
-    return n if n < 100 else (n // 100 * 100 if n < 1000 else n // 1000 * 1000)
+def _abajo(n):   # redondeo hacia abajo para cifras grandes del catálogo (24/11/2026): 9.364 → 9.000, 164 → 160
+    return n if n < 100 else (n // 10 * 10 if n < 1000 else n // 1000 * 1000)
 
 
 def aprox(n):   # para cifras destacadas: «9.000+»
