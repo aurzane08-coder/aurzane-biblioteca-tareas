@@ -144,7 +144,7 @@
   0
  ],
  "tipo:libro": [
-  152,
+  165,
   9
  ],
  "Gambling Behavior and Treatments": [
@@ -312,7 +312,7 @@
   0
  ],
  "archive:psicologia": [
-  122,
+  135,
   0
  ],
  "ed:The Open University": [
@@ -616,8 +616,8 @@
   5
  ],
  "ed:Editorial UOC": [
-  28,
-  4
+  30,
+  5
  ],
  "ed:Universidad Andina Simón Bolívar, Sede Ecuador; Corporación Editora Nacional": [
   0,
@@ -648,7 +648,7 @@
   1
  ],
  "ed:Publicacions de la Universitat Jaume I": [
-  2,
+  3,
   2
  ],
  "ed:Agua Clara": [
@@ -685,7 +685,7 @@
  ],
  "ed:Quito, EC: Universidad Andina Simón Bolívar, Sede Ecuador": [
   3,
-  2
+  4
  ],
  "ed:Red Universitaria de Investigación Innovación Educativa (REUNI+D)": [
   0,
@@ -704,11 +704,11 @@
   1
  ],
  "ed:Universitat de València": [
-  1,
-  1
+  2,
+  2
  ],
  "ed:Universitat Oberta de Catalunya": [
-  5,
+  6,
   2
  ],
  "ed:Universidad de Salamanca (España). Instituto Universitario de Integración en la Comunidad": [
@@ -733,7 +733,7 @@
  ],
  "ed:Edicions de la Universitat de Barcelona": [
   1,
-  2
+  3
  ],
  "ed:Egregius": [
   1,
@@ -748,7 +748,7 @@
   1
  ],
  "ed:OMS": [
-  0,
+  3,
   1
  ],
  "ed:UNICEF Comité Español": [
@@ -776,7 +776,7 @@
   1
  ],
  "ed:Edulp (Libros de Cátedra)": [
-  2,
+  3,
   0
  ],
  "ed:Universidad de Buenos Aires. Editorial de la Facultad de Filosofía y Letras.": [
@@ -908,7 +908,7 @@
   1
  ],
  "ed:Universidad de Antioquia, Facultad de Educación": [
-  1,
+  2,
   0
  ],
  "ed:Universidad de Antioquia, Instituto Universitario de Educación Física y Deporte": [
@@ -942,5 +942,33 @@
  "ed:Facultad de Lenguas. Universidad Nacional de Córdoba": [
   0,
   1
+ ],
+ "ed:Universidad de Buenos Aires. Facultad de Filosofía y Letras. Departamento de Edición": [
+  0,
+  1
+ ],
+ "ed:Universidad de Buenos Aires. Facultad de Filosofía y Letras. Departamento de Letras": [
+  0,
+  1
+ ],
+ "ed:Iris-Copy": [
+  0,
+  1
+ ],
+ "ed:Junta de Andalucía, Consejería de Salud": [
+  1,
+  0
+ ],
+ "ed:Junta de Andalucía. Consejería de Salud": [
+  1,
+  0
+ ],
+ "ed:Universitat de Barcelona. IDP/ICE & Ediciones Octaedro": [
+  0,
+  1
+ ],
+ "ed:Pontificia Universidad Católica del Perú, Instituto Riva-Agüero": [
+  1,
+  0
  ]
 }

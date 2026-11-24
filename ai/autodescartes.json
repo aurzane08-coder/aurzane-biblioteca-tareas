@@ -1,6 +1,105 @@
 [
  {
   "fecha": "2026-11-24",
+  "id": "ia-aurzane-bib-educacion-revisitada-ensayos-hermeneutica-pedagogica",
+  "tipo": "libro",
+  "titulo": "La educación revisitada: ensayos de hermenéutica pedagógica",
+  "url": "https://archive.org/details/aurzane-bib-educacion-revisitada-ensayos-hermeneutica-pedagogica",
+  "motivo": "La IA le dio 4/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-locura-musas-estudio-fenomenologico-sobre-imaginacion/locura-musas-es"
+  ]
+ },
+ {
+  "fecha": "2026-11-24",
+  "id": "ia-aurzane-bib-docencia-universitaria-clave-neuroeducativa-viejos-problemas",
+  "tipo": "libro",
+  "titulo": "La docencia universitaria en clave neuroeducativa : viejos problemas, nuevos retos: oportunidades para el cambio",
+  "url": "https://archive.org/details/aurzane-bib-docencia-universitaria-clave-neuroeducativa-viejos-problemas",
+  "motivo": "La IA le dio 6/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-salud-laboral-consecuencias-estres-laboral-estrategias/salud-laboral-"
+  ]
+ },
+ {
+  "fecha": "2026-11-24",
+  "id": "ia-aurzane-bib-analisis-desarrollo-competencias-grado-psicologia-capacidad",
+  "tipo": "libro",
+  "titulo": "Análisis y desarrollo de competencias en el Grado en Psicología: Capacidad de describir y medir variables psicológicas",
+  "url": "https://archive.org/details/aurzane-bib-analisis-desarrollo-competencias-grado-psicologia-capacidad",
+  "motivo": "La IA le dio 6/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-promocion-parentalidad-positiva-durante-preparacion-nacimien/promocio"
+  ]
+ },
+ {
+  "fecha": "2026-11-24",
+  "id": "ia-aurzane-bib-caracteristicas-evolucion-chicos-chicas-familias-colaborador",
+  "tipo": "libro",
+  "titulo": "Características y evolución de chicos y chicas con familias colaboradoras y relaciones y contactos con sus familias de origen: Informe descriptivo, comparativo ",
+  "url": "https://archive.org/details/aurzane-bib-caracteristicas-evolucion-chicos-chicas-familias-colaborador",
+  "motivo": "La IA le dio 4/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-practicas-ps1034-evaluacion-e-intervencion-clinica/practicas-ps1034-e"
+  ]
+ },
+ {
+  "fecha": "2026-11-24",
+  "id": "ia-aurzane-bib-desvelando-realidades-estudio-autismo-ciudad-coca",
+  "tipo": "libro",
+  "titulo": "Desvelando realidades: estudio del autismo en la ciudad de El Coca",
+  "url": "https://archive.org/details/aurzane-bib-desvelando-realidades-estudio-autismo-ciudad-coca",
+  "motivo": "La IA le dio 6/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-practicas-ps1034-evaluacion-e-intervencion-clinica/practicas-ps1034-e"
+  ]
+ },
+ {
+  "fecha": "2026-11-24",
+  "id": "ia-aurzane-bib-hijos-e-hijas-victimas-femicidio-aportes",
+  "tipo": "libro",
+  "titulo": "Hijos e hijas de víctimas de femicidio: aportes para una política pública de protección",
+  "url": "https://archive.org/details/aurzane-bib-hijos-e-hijas-victimas-femicidio-aportes",
+  "motivo": "La IA le dio 4/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-practicas-ps1034-evaluacion-e-intervencion-clinica/practicas-ps1034-e"
+  ]
+ },
+ {
+  "fecha": "2026-11-24",
+  "id": "ia-aurzane-bib-educacion-inclusiva-desde-gestos-menores-escenas",
+  "tipo": "libro",
+  "titulo": "La educación inclusiva desde los gestos menores. Escenas escolares",
+  "url": "https://archive.org/details/aurzane-bib-educacion-inclusiva-desde-gestos-menores-escenas",
+  "motivo": "La IA le dio 5/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-ser-adolescente-transicion-o-destino/ser-adolescente-transicion-o-des"
+  ]
+ },
+ {
+  "fecha": "2026-11-24",
+  "id": "ia-aurzane-bib-perspectiva-cognitiva-estudio-desarrollo-escritura-sus",
+  "tipo": "libro",
+  "titulo": "Perspectiva cognitiva del estudio del desarrollo de la escritura y sus alteraciones",
+  "url": "https://archive.org/details/aurzane-bib-perspectiva-cognitiva-estudio-desarrollo-escritura-sus",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 10 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-perspectiva-cognitiva-estudio-desarrollo-escritura-sus/perspectiva-co"
+  ]
+ },
+ {
+  "fecha": "2026-11-24",
+  "id": "ia-aurzane-bib-infancia-control-social-derechos-humanos",
+  "tipo": "libro",
+  "titulo": "Infancia, control social y derechos humanos",
+  "url": "https://archive.org/details/aurzane-bib-infancia-control-social-derechos-humanos",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 9 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-infancia-control-social-derechos-humanos/infancia-control-social-dere"
+  ]
+ },
+ {
+  "fecha": "2026-11-24",
   "id": "ia-aurzane-bib-situacion-poblacion-adulta-mayor-peru-camino",
   "tipo": "libro",
   "titulo": "La situación de la población adulta mayor en el Perú: camino a una nueva política",
@@ -3117,88 +3216,5 @@
   "url": "https://europepmc.org/article/PMC/PMC13724216",
   "motivo": "La IA le dio 3/10: no encaja en la biblioteca",
   "probados": []
- },
- {
-  "fecha": "2026-11-08",
-  "id": "pmc-PMC13720669",
-  "tipo": "estudio",
-  "titulo": "Dose-Dependent Effect of Crocin on Depressive and Anxiety Symptom Scores: A GRADE-Assessed Systematic Review and Meta-Analysis of Randomized Controlled Trials",
-  "url": "https://europepmc.org/article/PMC/PMC13720669",
-  "motivo": "La IA le dio 3/10: no encaja en la biblioteca",
-  "probados": []
- },
- {
-  "fecha": "2026-11-08",
-  "id": "pmc-PMC13459309",
-  "tipo": "estudio",
-  "titulo": "Complex PTSD symptom trajectories in trauma-exposed adolescents: a five-year longitudinal study",
-  "url": "https://europepmc.org/article/PMC/PMC13459309",
-  "motivo": "La IA le dio 3/10: no encaja en la biblioteca",
-  "probados": []
- },
- {
-  "fecha": "2026-11-08",
-  "id": "pmc-PMC13403460",
-  "tipo": "estudio",
-  "titulo": "Therapeutic intensification in post-traumatic stress disorder worldwide: where do we stand?",
-  "url": "https://europepmc.org/article/PMC/PMC13403460",
-  "motivo": "La IA le dio 3/10: no encaja en la biblioteca",
-  "probados": []
- },
- {
-  "fecha": "2026-11-08",
-  "id": "pmc-PMC13371486",
-  "tipo": "estudio",
-  "titulo": "Latent classes of adverse childhood experiences and their associations with impulsivity and mental health among adults in Saudi Arabia",
-  "url": "https://europepmc.org/article/PMC/PMC13371486",
-  "motivo": "La IA le dio 3/10: no encaja en la biblioteca",
-  "probados": []
- },
- {
-  "fecha": "2026-11-08",
-  "id": "pmc-PMC13577245",
-  "tipo": "estudio",
-  "titulo": "Post-traumatic stress disorder and adverse pregnancy and birth outcomes: a population-based study",
-  "url": "https://europepmc.org/article/PMC/PMC13577245",
-  "motivo": "La IA le dio 3/10: no encaja en la biblioteca",
-  "probados": []
- },
- {
-  "fecha": "2026-11-08",
-  "id": "pmc-PMC13403575",
-  "tipo": "estudio",
-  "titulo": "Key factors associated with the development of childbirth-related acute and posttraumatic stress symptoms: a prospective cohort study on the role of pain-relate",
-  "url": "https://europepmc.org/article/PMC/PMC13403575",
-  "motivo": "La IA le dio 3/10: no encaja en la biblioteca",
-  "probados": []
- },
- {
-  "fecha": "2026-11-08",
-  "id": "pmc-PMC13577267",
-  "tipo": "estudio",
-  "titulo": "Eye-tracking and cognitive patterns in post-traumatic stress disorder: a scoping review",
-  "url": "https://europepmc.org/article/PMC/PMC13577267",
-  "motivo": "La IA le dio 3/10: no encaja en la biblioteca",
-  "probados": []
- },
- {
-  "fecha": "2026-11-08",
-  "id": "pmc-PMC13644457",
-  "tipo": "estudio",
-  "titulo": "Eye Movement Desensitisation and Reprocessing (EMDR) for ICU-related psychological distress among adult intensive care survivors: a scoping review Desensibiliza",
-  "url": "https://europepmc.org/article/PMC/PMC13644457",
-  "motivo": "La IA le dio 3/10: no encaja en la biblioteca",
-  "probados": []
- },
- {
-  "fecha": "2026-11-08",
-  "id": "pmc-PMC13686495",
-  "tipo": "estudio",
-  "titulo": "Occupational health risks from climate-related and infectious-disease stressors: A scoping review of worker safety and resilience",
-  "url": "https://europepmc.org/article/PMC/PMC13686495",
-  "motivo": "La IA le dio 6/10: no encaja en la biblioteca",
-  "probados": [
-   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13693427.1/PMC13693427.1.pdf"
-  ]
  }
 ]
