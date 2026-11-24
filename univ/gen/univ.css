@@ -434,3 +434,4 @@ details.grupo>summary:focus-visible{outline:2px solid var(--accent-text);outline
 .vivir-en .datos dt{border-radius:12px 12px 0 0;padding-bottom:2px}.vivir-en .datos dd{border-radius:0 0 12px 12px;padding-top:2px;font-size:1.05rem;margin-top:-12px}
 .vivir-en p{max-width:75ch;line-height:1.65}
 @media (max-width:640px){.vivir-en .datos{grid-auto-flow:row;grid-template-rows:none;grid-template-columns:1fr}.vivir-en .datos dt{grid-row:auto}}
+.hero.con-foto{background-color:#0b1030}   /* si la foto no carga, el texto sigue leyéndose */

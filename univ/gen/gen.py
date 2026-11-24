@@ -953,7 +953,7 @@ def pagina_ciudad(p, c, us):
     fc = IMG.get('c', {}).get(iso, {}).get(_n(c))
     hf, cred = hero_foto(fc, 'Foto de ' + c)
     h = cabeza(tit, desc, canon, og_img=commons(fc, 1280, local=False) if fc else None, jsonld=jsonld) + topbar('espana' if p == 'España' else 'paises') + f'''
-<main><section class="hero{' con-foto' if hf else ''}" style="padding-bottom:40px"{hf}><div class="wrap">{migas(("Universidades", BASE), (p, f"{BASE}{PSLUG[p]}/"), (c, ""))}
+<main><section class="hero{' con-foto' if hf else ''}"{hf.replace(' style="', ' style="padding-bottom:40px;') if hf else ' style="padding-bottom:40px"'}><div class="wrap">{migas(("Universidades", BASE), (p, f"{BASE}{PSLUG[p]}/"), (c, ""))}
 <h1>{bandera(iso, "g")} Universidades en <em>{e(c)}</em></h1><p class="lead">{e(lead)}</p>{cred}</div></section>
 {panel_listado(p, us, ciudad_fija=c)}
 <div class="wrap"><section class="card" style="margin-top:28px"><h2>¿Cuántas universidades hay en {e(c)}?</h2><p>{e(respuesta)}</p></section>{vivir_en(p, c, iso)}
