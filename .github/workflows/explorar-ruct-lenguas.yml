@@ -14,12 +14,6 @@ jobs:
           sys.path.insert(0, 'univ')
           import ruct
           p = ruct.get(ruct.B + 'solicitud/universidades?actual=menu.solicitud.universidades&cod=25039082024010901')
-          hs = sorted(set(x.replace('&amp;', '&') for x in re.findall(r'href="([^"#]+)"', p)))
-          print('HREFS', [h for h in hs if 'ruct' in h or 'action' in h or 'centro' in h.lower()])
-          print('ONCLICK', re.findall(r'onclick="([^"]{0,200})"', p)[:10])
-          for l in hs:
-              if 'centro' in l.lower():
-                  u = l if l.startswith('http') else ('https://www.educacion.gob.es' + l if l.startswith('/') else ruct.B + 'solicitud/' + l)
-                  q = ruct.limpio(ruct.get(u))
-                  print('PAG', l[:120], len(q), q[q.find('Volver'):q.find('Volver') + 1500])
+          k = p.find('28051906')
+          print('RAW', re.sub(r'\s+', ' ', p[k-200:k+1800]))
           PY
