@@ -11,6 +11,8 @@ Cada país se guarda en univ/data/oficial_<iso>.json con el mismo formato; univ/
   Brasil    INEP, Censo da Educação Superior (microdatos): instituciones y cursos de graduación en actividad.
   Argentina Dirección Nacional de Gestión Universitaria (Ministerio de Capital Humano): base de títulos universitarios oficiales con
             validez nacional (SIPES, sipes.siu.edu.ar), por institución: título, carrera, modalidad y nivel (24/11/2026).
+  México    ANUIES, Anuario Estadístico de la Población Escolar en Educación Superior (anuario.anuies.mx), con datos de la SEP
+            (formato 911): cada programa en cada escuela o campus, con municipio, estado, sostenimiento, nivel y modalidad (24/11/2026).
 Uso: python3 univ/oficiales/importar.py [co cl pe br]"""
 import io, os, re, sys, json, time, datetime, collections, unicodedata, urllib.request, urllib.parse
 
@@ -419,6 +421,68 @@ def argentina():
                    'instituciones': salida})
 
 
+# ------------------------------------------------------------------------------------------------ México
+NIVEL_MX = {'LICENCIATURA UNIVERSITARIA Y TECNOLÓGICA': 'Licenciatura', 'LICENCIATURA EN EDUCACIÓN NORMAL': 'Licenciatura en educación normal',
+            'TÉCNICO SUPERIOR': 'Técnico superior universitario', 'ESPECIALIDAD': 'Especialización', 'MAESTRÍA': 'Maestría', 'DOCTORADO': 'Doctorado'}
+MOD_MX = {'ESCOLARIZADA': 'Presencial', 'NO ESCOLARIZADA': 'A distancia', 'MIXTA': 'Mixta'}
+
+
+def mexico():
+    log('México: ANUIES, Anuario Estadístico de la Población Escolar en Educación Superior')
+    U = 'https://anuario.anuies.mx/'
+    def consulta(ciclo, pag, tam):
+        d = [('action', 'consulta'), ('ciclo', ciclo), ('vars[]', 'MATRÍCULA'), ('desagSexo', '0'), ('desagDiscapacidad', '0'), ('desagEdad', '0'), ('desagHLI', '0'),
+             ('desagProcedencia', '0'), ('niProcedencia[]', ''), ('includeEnts', '1'), ('entMode', 'all'), ('includeMuns', '1'), ('munMode', 'all'),
+             ('includeSos', '1'), ('sosVals', '["PARTICULAR","PÚBLICO"]'), ('includeAnuies', '0'), ('includeSub', '0'), ('subMode', 'all'),
+             ('includeInstitucion', '1'), ('includeEscuela', '1'), ('includeNivel', '1'), ('includeModalidad', '1'), ('includePrograma', '1'),
+             ('includeStem', '0'), ('includeCampoAmplio', '1'), ('includeCampoEspecifico', '0'), ('includeCampoDetallado', '0'), ('includeCampoUnitario', '0'),
+             ('pageSize', str(tam)), ('page', str(pag)), ('maxRows', str(tam))]
+        for i in range(5):
+            try:
+                req = urllib.request.Request(U, data=urllib.parse.urlencode(d).encode(), headers=dict(UA, **{'Content-Type': 'application/x-www-form-urlencoded'}))
+                j = json.loads(urllib.request.urlopen(req, timeout=240).read().decode('utf-8-sig'))
+                if not j.get('ok'): raise RuntimeError(j.get('error') or 'respuesta sin datos')
+                return j
+            except Exception as e: log('  reintento', i + 1, e); time.sleep(10 * (i + 1))
+        raise RuntimeError('ANUIES no responde')
+    pagina = urllib.request.urlopen(urllib.request.Request(U, headers=UA), timeout=120).read().decode('utf-8', 'replace')
+    ciclo = (re.findall(r'<option[^>]*value="(\d{4}-\d{4})"', pagina) or ['2025-2026'])[0]
+    filas, pag = [], 1
+    while True:
+        j = consulta(ciclo, pag, 5000)
+        filas += j.get('rows') or []
+        if not (j.get('meta') or {}).get('hasMore') or pag > 60: break
+        pag += 1
+    log(f'  ciclo {ciclo}: {len(filas)} programas por escuela o campus')
+    inst = collections.OrderedDict()
+    for r in filas:
+        nom_i = limpio(r.get('NOMBRE_INSTITUCION')); car = limpio(r.get('CARRERA'))
+        if not nom_i or not car: continue
+        mun = acentuar(cap(r.get('MUNICIPIO_CORREGIDO') or '')); ent = acentuar(cap(r.get('ENTIDAD') or ''))
+        u = inst.get(nom_i)
+        if not u:
+            u = inst[nom_i] = {'cod': re.sub(r'[^a-z0-9]+', '-', nrm(nom_i))[:60], 'nombre': acentuar(cap(nom_i)),
+                               'tipo': 'pública' if 'PÚBLIC' in limpio(r.get('SOSTENIMIENTO')).upper() else 'privada',
+                               'tipo_ies': 'Universidad' if 'UNIVERSIDAD' in nom_i.upper() else 'Instituto tecnológico' if 'TECNOL' in nom_i.upper() else 'Escuela normal' if 'NORMAL' in nom_i.upper() else 'Institución de educación superior',
+                               'ciudad': '', 'region': '', 'web': '', 'extra': {}, 'carreras': [], '_v': {}, '_m': collections.Counter()}
+        u['_m'][(mun, ent)] += int(r.get('MAT_TOTAL') or 0) + 1
+        grupo = NIVEL_MX.get(limpio(r.get('NIVEL')).upper(), cap(r.get('NIVEL')) or 'Otros')
+        nom = acentuar(cap(car)); clave = (nrm(nom), grupo)
+        mod = MOD_MX.get(limpio(r.get('MODALIDAD')).upper(), cap(r.get('MODALIDAD')))
+        x = u['_v'].get(clave)
+        if not x:
+            x = {'n': nom, 'grupo': grupo, 'area': acentuar(cap(r.get('CAMPO_AMPLIO') or '')), 'mod': [], 'sedes': [], 'cred': ''}
+            u['_v'][clave] = x; u['carreras'].append(x)
+        if mod and mod not in x['mod']: x['mod'].append(mod)
+        if mun and mun not in x['sedes']: x['sedes'].append(mun)
+    for u in inst.values():
+        (u['ciudad'], u['region']), _ = u['_m'].most_common(1)[0] if u['_m'] else (('', ''), 0)
+        u.pop('_v'); u.pop('_m')
+    guardar('mx', {'pais': 'México', 'fuente': 'ANUIES, Anuario Estadístico de la Población Escolar en Educación Superior (datos de la SEP)',
+                   'fuente_url': 'https://anuario.anuies.mx/', 'fecha': datetime.date.today().isoformat(),
+                   'nota': f'Programas con estudiantes inscritos en el ciclo {ciclo}, por escuela o campus.', 'instituciones': list(inst.values())})
+
+
 sys.path.insert(0, os.path.join(AQUI, '..', 'gen'))
 from acentos import acentuar as _acentuar  # noqa: E402
 
@@ -426,8 +490,8 @@ from acentos import acentuar as _acentuar  # noqa: E402
 def acentuar(t): return _acentuar(t, forzar=True)   # mismo diccionario que gen.py, palabra a palabra
 
 if __name__ == '__main__':
-    paises = sys.argv[1:] or ['co', 'cl', 'pe', 'br', 'ar']
-    for iso, f in (('co', colombia), ('cl', chile), ('pe', peru), ('br', brasil), ('ar', argentina)):
+    paises = sys.argv[1:] or ['co', 'cl', 'pe', 'br', 'ar', 'mx']
+    for iso, f in (('co', colombia), ('cl', chile), ('pe', peru), ('br', brasil), ('ar', argentina), ('mx', mexico)):
         if iso not in paises: continue
         try: f()
         except Exception as e: log(f'::warning::{iso}: no se pudo importar: {e}')
