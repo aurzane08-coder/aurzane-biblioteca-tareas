@@ -403,8 +403,11 @@ def argentina():
             titulo, carrera, modal, nivel = f[1], f[2], f[4], f[5]
             if not (carrera and carrera.strip() and carrera != '\xa0'): carrera = car_de.get((base_t(titulo), nivel), '')
             nom = carrera if carrera else titulo
-            nom = acentuar(cap(nom))
+            nom = acentuar(cap(re.sub(r'\s*-\s*modalidad a distancia\s*-?\s*$', '', nom, flags=re.I)))
             grupo = {'Grado': 'Grado', 'Pregrado': 'Pregrado universitario'}.get(nivel)
+            # título intermedio (técnico o analista) de una carrera de grado: se muestra con el nombre de su propio título
+            if grupo == 'Pregrado universitario' and carrera and nrm(base_t(titulo)) != nrm(base_t(carrera)):
+                nom = acentuar(cap(re.sub(r'\s*-\s*modalidad a distancia\s*-?\s*$', '', re.sub(r'/(a|as|es)\b', '', titulo, flags=re.I), flags=re.I)))
             if not grupo:
                 tt = titulo.upper()
                 grupo = 'Doctorado' if tt.startswith('DOCTOR') else 'Maestría' if tt.startswith(('MAGISTER', 'MAGÍSTER', 'MAESTR')) else 'Especialización' if tt.startswith('ESPECIALISTA') else 'Posgrado'
