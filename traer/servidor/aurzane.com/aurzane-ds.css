@@ -1124,5 +1124,5 @@ html.az-ds-ovp .ovp-plan{overflow:hidden}
 html.az-ds-ovp .ovp-plan>img.v4-foto{display:block;width:calc(100% + 56px);max-width:none;margin:-36px -28px 22px;height:190px;object-fit:cover;background:#183D32}
 .og-r{overflow:hidden}
 .og-r>img.v4-foto{display:block;width:calc(100% + 36px);max-width:none;margin:-18px -18px 14px;aspect-ratio:16/8;object-fit:cover;background:#183D32}
-html.az-ds-ovp .cta-final.v4-cta{background:linear-gradient(90deg,rgba(18,37,31,.94),rgba(18,37,31,.78)),var(--v4-portada) center/cover no-repeat #12251F!important}
+html.az-ds-ovp .v4-cta{background:linear-gradient(90deg,rgba(18,37,31,.94),rgba(18,37,31,.78)),var(--v4-portada) center/cover no-repeat #12251F!important}
 /* ==== fin AURZANE v4 ==== */
