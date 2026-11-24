@@ -1,5 +1,102 @@
 [
  {
+  "id": "herr-pep-marti-perarnau",
+  "titulo": "Herr Pep",
+  "autor": "Martí Perarnau",
+  "temas": [
+   "productividad",
+   "ensayo"
+  ],
+  "origen": "tendencia",
+  "fecha": "2026-11-24",
+  "isbn": "9788415242635",
+  "portada": "https://covers.openlibrary.org/b/id/7314560-M.jpg?default=false",
+  "anio": "2014",
+  "editorial": "Córner",
+  "idioma": "",
+  "resumen": "",
+  "tendencia": "Ideal para los aficionados al fútbol de alto rendimiento en plena temporada de la Youth League.",
+  "tendencia_fecha": "2026-11-24",
+  "porque": "Este libro es perfecto para los amantes del fútbol que desean comprender de verdad cómo trabaja un entrenador de élite en el día a día. Ofrece un acceso íntimo a la metodología de Pep Guardiola durante su etapa en el Bayern de Múnich, detallando su búsqueda constante de la excelencia táctica."
+ },
+ {
+  "id": "limonov-emmanuel-carrere",
+  "titulo": "Limónov",
+  "autor": "Emmanuel Carrère",
+  "temas": [
+   "novela"
+  ],
+  "origen": "tendencia",
+  "fecha": "2026-11-24",
+  "isbn": "9788433978554",
+  "portada": "https://covers.openlibrary.org/b/id/10342072-M.jpg?default=false",
+  "anio": "2011",
+  "editorial": "Farrar, Straus & Giroux",
+  "idioma": "spa",
+  "resumen": "",
+  "tendencia": "Una fascinante biografía novelada para comprender el enigma político y cultural de la Rusia contemporánea.",
+  "tendencia_fecha": "2026-11-24",
+  "porque": "Es una lectura ideal para quienes disfrutan de las biografías apasionantes y desean adentrarse en la vertiginosa historia de la Europa del siglo XX. Nos descubre la trayectoria real de Eduard Limónov, un personaje fascinante y contradictorio que fue poeta, vagabundo, soldado y político."
+ },
+ {
+  "id": "en-el-reino-del-hielo-hampton-sides",
+  "titulo": "En el reino del hielo",
+  "autor": "Hampton Sides",
+  "temas": [
+   "ciencia",
+   "ensayo"
+  ],
+  "origen": "tendencia",
+  "fecha": "2026-11-24",
+  "isbn": "9788494740817",
+  "portada": "https://covers.openlibrary.org/b/id/7350620-M.jpg?default=false",
+  "anio": "2014",
+  "editorial": "",
+  "idioma": "",
+  "resumen": "",
+  "tendencia": "Una apasionante crónica de exploración polar perfecta para adentrarse en la lectura durante el mes de noviembre.",
+  "tendencia_fecha": "2026-11-24",
+  "porque": "Resulta idóneo para fascinados por las grandes expediciones históricas y las narrativas de supervivencia extrema en la naturaleza. Narra la épica e impactante peripecia del buque USS Jeannette en su intento por alcanzar el Polo Norte atravesando el hielo ártico."
+ },
+ {
+  "id": "las-gratitudes-delphine-de-vigan",
+  "titulo": "Las gratitudes",
+  "autor": "Delphine de Vigan",
+  "temas": [
+   "novela"
+  ],
+  "origen": "tendencia",
+  "fecha": "2026-11-24",
+  "isbn": "9788429779172",
+  "portada": "https://covers.openlibrary.org/b/id/10590214-M.jpg?default=false",
+  "anio": "2019",
+  "editorial": "",
+  "idioma": "spa",
+  "resumen": "",
+  "tendencia": "Una conmovedora novela sobre la memoria y las pérdidas, muy afín a la atmósfera de recuerdo de Todos los Santos.",
+  "tendencia_fecha": "2026-11-24",
+  "porque": "Está pensado para lectores sensibles que valoran las historias sobre la vejez, la empatía y la importancia de dar las gracias a tiempo. Nos regala un relato tierno y profundo sobre una mujer que pierde el habla y la ayuda que recibe para reparar deudas emocionales del pasado."
+ },
+ {
+  "id": "la-casa-de-bernarda-alba-federico-garcia-lorca",
+  "titulo": "La casa de Bernarda Alba",
+  "autor": "Federico García Lorca",
+  "temas": [
+   "novela"
+  ],
+  "origen": "tendencia",
+  "fecha": "2026-11-24",
+  "isbn": "9788420486765",
+  "portada": "https://covers.openlibrary.org/b/id/7323388-M.jpg?default=false",
+  "anio": "1991",
+  "editorial": "Independently published",
+  "idioma": "spa",
+  "resumen": "",
+  "tendencia": "Un clásico del teatro imprescindible, de actualidad por las reconocidas interpretaciones dramáticas de actrices como Blanca Portillo.",
+  "tendencia_fecha": "2026-11-24",
+  "porque": "Es imprescindible para cualquier apasionado del teatro y de las grandes obras de la literatura española. Muestra con tremenda maestría el sofocante luto impuesto a unas hermanas y la lucha desgarradora entre la libertad individual y la represión social."
+ },
+ {
   "id": "balada-de-pajaros-cantores-y-serpientes-suzanne-collins",
   "titulo": "Balada de pájaros cantores y serpientes",
   "autor": "Suzanne Collins",
@@ -620,6 +717,24 @@
   "tendencia": "Un clásico infaltable para regalar y disfrutar en los hogares conforme se acerca el invierno.",
   "tendencia_fecha": "2026-11-09",
   "porque": "Este libro es para cualquier persona que quiera disfrutar de la cocina casera y tradicional con recetas accesibles y explicadas con cercanía. Aporta el estilo inconfundible de Karlos Arguiñano para hacer fáciles platos sabrosos del día a día."
+ },
+ {
+  "id": "dormir-nick-littlehales",
+  "titulo": "Dormir",
+  "autor": "Nick Littlehales",
+  "temas": [
+   "sueno",
+   "bienestar"
+  ],
+  "origen": "crecer",
+  "fecha": "2026-11-24",
+  "isbn": "9786070741821",
+  "portada": "https://covers.openlibrary.org/b/id/14460026-M.jpg?default=false",
+  "anio": "2017",
+  "editorial": "Editorial Planeta Mexicana",
+  "idioma": "spa",
+  "resumen": "",
+  "porque": "Está dirigido a personas que buscan optimizar su descanso nocturno y mejorar su energía diaria mediante cambios prácticos y realistas. Enseña un método basado en ciclos de sueño de noventa minutos para reparar el cuerpo y adaptar el ritmo biológico a la vida moderna."
  },
  {
   "id": "el-hombre-en-busca-de-sentido-viktor-e-frankl",
