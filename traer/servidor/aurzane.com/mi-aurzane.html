@@ -85,6 +85,17 @@ main{padding:0 0 90px}
 .btn-ghost{background:transparent;color:var(--text);border:1px solid var(--border)}
 .btn-ghost:hover{border-color:var(--gold);color:var(--accent-text)}
 .btn-chico{padding:7px 14px;font-size:.8rem}
+.bol-check{display:flex;gap:9px;align-items:flex-start;font-size:.86rem;color:var(--text-dim);cursor:pointer;line-height:1.45}
+.bol-check input{margin-top:3px;width:16px;height:16px;flex:none;accent-color:var(--gold,#D1C2A3)}
+.bol-oferta{display:grid;grid-template-columns:minmax(180px,34%) 1fr;margin:22px 0 6px;border:1px solid var(--border);border-radius:20px;overflow:hidden;background:var(--surface,var(--card))}
+.bol-oferta[hidden]{display:none}
+.bol-foto{background-size:cover;background-position:center;min-height:190px}
+.bol-txt{padding:22px 26px}
+.bol-txt h2{margin:0 0 6px;font-family:var(--serif,"Bodoni Moda",serif);font-size:1.45rem;line-height:1.2}
+.bol-txt p{margin:0 0 14px;color:var(--text-dim);font-size:.94rem;line-height:1.55;max-width:58ch}
+.bol-acc{display:flex;flex-wrap:wrap;gap:10px}
+.bol-estado{display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+@media (max-width:640px){.bol-oferta{grid-template-columns:1fr}.bol-foto{min-height:150px}.bol-txt{padding:18px 18px 20px}}
 form{display:flex;flex-direction:column;gap:13px}
 label{font-size:.8rem;color:var(--text-dim);display:block;margin-bottom:5px}
 input[type=email],input[type=password],input[type=text],select{
@@ -520,6 +531,7 @@ body{background:
                 <label for="signupPass">Contraseña</label>
                 <input type="password" id="signupPass" required minlength="6" autocomplete="new-password">
               </div>
+              <label class="bol-check" for="signupBoletin"><input type="checkbox" id="signupBoletin"> <span>Quiero recibir el boletín semanal de AURZANE (puedo darme de baja cuando quiera)</span></label>
               <button class="btn btn-gold" type="submit">Crear mi cuenta</button>
             </form>
 
@@ -591,6 +603,16 @@ body{background:
         <div class="stat-tile"><span class="stat-ic" style="background:rgba(var(--a-nexus-rgb),.16);color:var(--a-nexus)"><svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.8"/><circle cx="12" cy="12" r="1.2" fill="currentColor" stroke="none"/></svg></span><div class="stat-info"><span class="stat-k">Proceso OVP</span><span class="stat-v" id="statProceso">—</span></div></div>
         <div class="stat-tile"><span class="stat-ic" style="background:rgba(var(--a-learn-rgb),.16);color:var(--a-learn)"><svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 9.5 12 5l9.5 4.5L12 14z"/><path d="M6.5 11.6v4.4c0 1.4 2.5 2.5 5.5 2.5s5.5-1.1 5.5-2.5v-4.4"/></svg></span><div class="stat-info"><span class="stat-k">Mis cursos</span><span class="stat-v" id="statCurso">—</span></div></div>
       </div>
+
+      <section class="bol-oferta" id="boletinOferta" hidden aria-labelledby="tBoletin">
+        <div class="bol-foto" style="background-image:url('https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&amp;w=900&amp;auto=format&amp;fit=crop')" aria-hidden="true"></div>
+        <div class="bol-txt">
+          <h2 id="tBoletin">El boletín semanal, en tu correo</h2>
+          <p>Un correo corto cada semana: el libro recomendado, el artículo nuevo y un test gratis. Sin publicidad de terceros y con baja en un clic.</p>
+          <div class="bol-acc"><button class="btn btn-gold" type="button" id="btnBoletinOferta">Suscribirme con mi cuenta</button><button class="btn btn-ghost" type="button" id="btnBoletinNo">Ahora no</button></div>
+          <p class="msg" id="msgBoletinOferta" role="status"></p>
+        </div>
+      </section>
 
       <section class="dash-sec" id="secCursos" aria-labelledby="tCursos">
         <div class="dash-sec-head"><h2 id="tCursos">Mis cursos</h2><span style="display:flex;gap:16px;flex-wrap:wrap"><a href="https://learn.aurzane.com/aula/">Mi aula: progreso, horas y certificados</a><a href="https://learn.aurzane.com/#cursos">Ver todos los cursos</a></span></div>
@@ -729,7 +751,7 @@ body{background:
           </div>
         </div>
 
-        <div class="card cuenta-card acc-learn" id="cardPreferencias" data-categoria="Preferencias" data-texto="preferencias tema claro oscuro paleta color acento apariencia">
+        <div class="card cuenta-card acc-learn" id="cardPreferencias" data-categoria="Preferencias" data-texto="preferencias tema claro oscuro paleta color acento apariencia boletin newsletter correo semanal suscripcion">
           <div class="card-cover" style="--tint:var(--a-learn);--tint-rgb:var(--a-learn-rgb);background-image:url('https://images.unsplash.com/photo-1600832331197-ad575931911b?q=80&amp;w=600&amp;auto=format&amp;fit=crop')">
             <span class="card-cover-badge"><svg class="icn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5a8.5 8.5 0 100 17c1 0 1.7-.8 1.7-1.7 0-.5-.2-.9-.5-1.2-.3-.3-.5-.7-.5-1.2 0-.9.8-1.7 1.7-1.7h1.9a3.4 3.4 0 003.4-3.4C19.7 6.9 16.3 3.5 12 3.5z"/><circle cx="7.6" cy="11.2" r="1" fill="currentColor" stroke="none"/><circle cx="9.8" cy="7.6" r="1" fill="currentColor" stroke="none"/><circle cx="14.3" cy="7.6" r="1" fill="currentColor" stroke="none"/></svg></span>
           </div>
@@ -742,6 +764,10 @@ body{background:
                 Claro / oscuro
               </button>
             </div>
+            <div class="dato"><span class="k">Boletín semanal</span>
+              <span class="bol-estado"><span id="boletinEstado">—</span> <button class="btn btn-ghost btn-chico" type="button" id="btnBoletinPref" hidden>Suscribirme</button></span>
+            </div>
+            <p class="msg" id="msgBoletinPref" role="status" style="margin-top:8px"></p>
             <div style="margin-top:10px">
               <span class="k" style="font-size:.84rem;color:var(--text-dim)">Paleta de acento</span>
               <div class="paleta-swatches" id="paletaSwatches"></div>
@@ -958,6 +984,7 @@ async function cargarPanel(session) {
   if (statMundoEl) statMundoEl.textContent = MUNDO_LABEL_STAT[(perfil && perfil.mundo_favorito) || ""] || "Sin elegir";
 
   cargarProcesoOVP(session);
+  boletinCuenta(session);
   cargarCursos(session);
   cargarPersonalidad(session);
   iniciarNavLateral();
@@ -1163,6 +1190,57 @@ sbId.auth.onAuthStateChange((evento, session) => {
   else mostrarInvitado();
 });
 
+// ---- Boletín semanal ligado a la cuenta (24/11/2026). aurzane.com/boletin/cuenta.php comprueba la sesión con
+//      Supabase y solo cambia el correo de esta cuenta. Si al crear la cuenta se marcó la casilla, se suscribe
+//      sola la primera vez que entra con el correo ya confirmado (y se anota para no repetirlo si luego se da de baja).
+let boletinSesion = null;
+async function boletinLlamar(accion) {
+  const { data: { session } } = await sbId.auth.getSession();
+  if (!session) return { ok: false, msg: "Tu sesión ha caducado. Vuelve a iniciar sesión." };
+  try {
+    const r = await fetch("/boletin/cuenta.php", { method: "POST", body: new URLSearchParams({ token: session.access_token, accion }) });
+    return await r.json();
+  } catch (e) { return { ok: false, msg: "No se pudo conectar ahora mismo. Inténtalo en unos minutos." }; }
+}
+function boletinPintar(suscrito) {
+  const meta = (boletinSesion && boletinSesion.user.user_metadata) || {};
+  document.getElementById("boletinEstado").textContent = suscrito ? "Activo" : "No suscrito";
+  const b = document.getElementById("btnBoletinPref");
+  b.hidden = false; b.textContent = suscrito ? "Darme de baja" : "Suscribirme"; b.dataset.accion = suscrito ? "baja" : "alta";
+  if (!document.getElementById("msgBoletinOferta").classList.contains("ok")) document.getElementById("boletinOferta").hidden = suscrito || !!meta.boletin_oculto;
+}
+async function boletinCuenta(session) {
+  boletinSesion = session;
+  const r = await boletinLlamar("estado");
+  if (!r.ok) { document.getElementById("boletinEstado").textContent = "No disponible ahora"; return; }
+  const meta = session.user.user_metadata || {};
+  if (meta.boletin === true && !meta.boletin_alta && !r.suscrito && r.verificado) {
+    const a = await boletinLlamar("alta");
+    if (a.ok) { sbId.auth.updateUser({ data: { boletin_alta: true } }); return boletinPintar(true); }
+  }
+  boletinPintar(r.suscrito);
+}
+async function boletinCambiar(accion, msgId, boton) {
+  const m = document.getElementById(msgId);
+  boton.disabled = true; m.className = "msg"; m.textContent = "";
+  const r = await boletinLlamar(accion);
+  boton.disabled = false;
+  m.className = "msg " + (r.ok ? "ok" : "error"); m.textContent = r.msg || "";
+  if (r.ok) { if (accion === "alta") sbId.auth.updateUser({ data: { boletin_alta: true } }); boletinPintar(r.suscrito); }
+}
+document.getElementById("btnBoletinPref").addEventListener("click", (e) => boletinCambiar(e.currentTarget.dataset.accion, "msgBoletinPref", e.currentTarget));
+document.getElementById("btnBoletinOferta").addEventListener("click", async (e) => {
+  await boletinCambiar("alta", "msgBoletinOferta", e.currentTarget);
+  if (document.getElementById("msgBoletinOferta").classList.contains("ok")) {
+    document.getElementById("boletinOferta").hidden = false;
+    document.querySelector("#boletinOferta .bol-acc").hidden = true;
+  }
+});
+document.getElementById("btnBoletinNo").addEventListener("click", () => {
+  document.getElementById("boletinOferta").hidden = true;
+  sbId.auth.updateUser({ data: { boletin_oculto: true } });
+});
+
 document.getElementById("formLogin").addEventListener("submit", async (e) => {
   e.preventDefault();
   ocultarMsg();
@@ -1192,7 +1270,7 @@ document.getElementById("formSignup").addEventListener("submit", async (e) => {
   const { error } = await sbId.auth.signUp({
     email,
     password,
-    options: { data: { nombre } },
+    options: { data: { nombre, boletin: document.getElementById("signupBoletin").checked } },
   });
   if (error) {
     mostrarMsg("No se pudo crear la cuenta: " + error.message, "error");
