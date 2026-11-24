@@ -16,7 +16,7 @@ jobs:
               except Exception as e: return 0, str(e)
           import http.cookiejar, urllib.parse
           cj = http.cookiejar.CookieJar(); op = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(cj)); op.addheaders = [('User-Agent', 'Mozilla/5.0')]
-          B = 'http://sipes.siu.edu.ar'
+          B = 'https://sipes.siu.edu.ar'
           t = op.open(B + '/buscar_titulos_form.php', timeout=40).read().decode('latin-1')
           act = re.search(r"action='([^']+)'", t).group(1)
           ocultos = dict(re.findall(r"<input name='([^']+)' id='[^']*' type='hidden' value='([^']*)'", t))
@@ -27,7 +27,7 @@ jobs:
           inst = re.findall(r"<option[^>]*value='([^']*)'[^>]*>([^<]*Buenos Aires[^<]*)", t)[:3]
           print('INST', inst)
           if inst:
-              d = dict(ocultos); d['ef_form_2822_filtro_buscadorcod_institucion'] = inst[0][0]; d['ef_form_2822_filtro_buscadorcod_modalidad'] = 'nopar'; d['ef_form_2822_filtro_buscadorcod_nivel'] = 'nopar'
+              d = dict(ocultos); d['ef_form_2822_filtro_buscadorcod_institucion'] = inst[0][0]; d['ef_form_2822_filtro_buscadorcod_modalidad'] = 'nopar'; d['ef_form_2822_filtro_buscadorcod_nivel'] = 'G'
               for ev in ('filtrar', 'buscar'):
                   d['form_2822_filtro_buscador'] = ev
                   r = op.open(B + act, urllib.parse.urlencode(d).encode(), timeout=60).read().decode('latin-1')
