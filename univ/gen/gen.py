@@ -1078,7 +1078,7 @@ def notas_de_corte():
         por_amb[ambito({'n': x[0].replace('Doble grado: ', '')})].append(x)
     def nc_card(n, k, c, mx, mn):
         n = doble_corto(n)
-        rango = (f'de {fmt_nota(mn)} a {fmt_nota(mx)}' if mn > 5 else f'sin nota mínima en alguna, hasta {fmt_nota(mx)}') if mx != mn else (fmt_nota(mx) if mx > 5 else 'sin nota mínima')
+        rango = f'de {fmt_nota(mn)} a {fmt_nota(mx)}' if mx != mn else (fmt_nota(mx) if mx > 5 else 'sin nota mínima')
         return (f'<li data-n="{e(slug(n))}"><a href="{BASE}notas-de-corte/{k}/"><b>{e(n)}</b><span class="nc-c">{c} universidades</span>'
                 f'<span class="nc-r">{rango}</span><span class="nc-barra" style="--a:{(mn - 5) / 9 * 100:.0f}%;--b:{(mx - 5) / 9 * 100:.0f}%"></span></a></li>')
     top = ''.join(f'<section class="nc-amb" data-foto="{e(FOTO_AMB.get(a_, "universidad campus"))} {e(a_)}"><h2>{e(a_)}<small>{len(por_amb[a_])} grados</small></h2>'
@@ -1176,7 +1176,7 @@ var nt=D.t.map(n),f=function(x){{return x.toLocaleString('es-ES',{{maximumFracti
 function pintar(){{var nota=parseFloat(String($('qNota').value).replace(',','.'))||0,cc=$('qCc').value,q=n($('qTxt').value.trim());
 var si=[],casi=[],grados={{}};D.d.forEach(function(r){{if(cc&&D.c[r[2]]!==cc)return;if(q&&nt[r[0]].indexOf(q)<0)return;if(r[3]<=nota){{si.push(r);grados[r[0]]=1;}}else if(r[3]-nota<=0.5)casi.push(r);}});
 $('qRes').innerHTML='Con un <b>'+f(nota)+'</b> habrías entrado en <b>'+si.length.toLocaleString('es-ES')+'</b> '+(si.length===1?'opción':'opciones')+' ('+Object.keys(grados).length.toLocaleString('es-ES')+(Object.keys(grados).length===1?' grado':' grados distintos')+')'+(cc?' en '+cc:'')+'. Te faltó poco en '+casi.length.toLocaleString('es-ES')+'.';
-var l=(tab==='si'?si:casi.slice().reverse()),h='';l.slice(0,lim).forEach(function(r){{var us=D.us[r[1]],un=us?'<a href="{BASE}espana/'+us+'/">'+D.u[r[1]]+'</a>':D.u[r[1]];h+='<tr><td><b>'+D.t[r[0]]+'</b></td><td>'+un+'<small>'+(D.l[r[4]]?D.l[r[4]]+' · ':'')+D.c[r[2]]+'</small></td><td class="nota">'+f(r[3])+'</td></tr>';}});
+var l=(tab==='si'?si:casi.slice().reverse()),h='';l.slice(0,lim).forEach(function(r){{var us=D.us[r[1]],un=us?'<a href="{BASE}espana/'+us+'/">'+D.u[r[1]]+'</a>':D.u[r[1]];h+='<tr><td><b>'+D.t[r[0]]+'</b></td><td>'+un+'<small>'+(D.l[r[4]]?D.l[r[4]]+(D.l[r[4]].indexOf(D.c[r[2]].split(' ')[0])<0?' · '+D.c[r[2]]:''):D.c[r[2]])+'</small></td><td class="nota">'+f(r[3])+'</td></tr>';}});
 $('qTabla').innerHTML=h||'<tr><td colspan="3">No hay resultados con estos filtros.</td></tr>';$('qMas').hidden=l.length<=lim;}}
 ['qNota','qCc','qTxt'].forEach(function(i){{$(i).addEventListener('input',function(){{lim=150;pintar();}});}});
 $('qTab').addEventListener('click',function(e){{var b=e.target.closest('button');if(!b)return;tab=b.getAttribute('data-v');lim=150;$('qTab').querySelectorAll('button').forEach(function(x){{x.setAttribute('aria-pressed',x===b);}});pintar();}});
