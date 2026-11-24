@@ -13,13 +13,13 @@ jobs:
           import sys, re
           sys.path.insert(0, 'univ')
           import ruct
-          p = ruct.get(ruct.B + 'solicitud/detalles.action?cod=25039082024010901&sit=A&actual=menu.solicitud.basicos')
-          hs = sorted(set(x.replace('&amp;', '&') for x in re.findall(r'href="([^"#]+)"', p) if 'solicitud' in x or '.action' in x))
-          print('HREFS', hs)
+          p = ruct.get(ruct.B + 'solicitud/universidades?actual=menu.solicitud.universidades&cod=25039082024010901')
+          hs = sorted(set(x.replace('&amp;', '&') for x in re.findall(r'href="([^"#]+)"', p)))
+          print('HREFS', [h for h in hs if 'ruct' in h or 'action' in h or 'centro' in h.lower()])
+          print('ONCLICK', re.findall(r'onclick="([^"]{0,200})"', p)[:10])
           for l in hs:
-              if 'centro' in l.lower() or 'basicos' in l.lower() or 'universidad' in l.lower():
+              if 'centro' in l.lower():
                   u = l if l.startswith('http') else ('https://www.educacion.gob.es' + l if l.startswith('/') else ruct.B + 'solicitud/' + l)
                   q = ruct.limpio(ruct.get(u))
-                  print('PAG', l[:90], len(q), q[q.find('Volver'):q.find('Volver') + 900])
-                  for m in re.finditer(r'[Ll]engua|[Ii]dioma', q): print('E', q[max(0, m.start()-150):m.start()+300])
+                  print('PAG', l[:120], len(q), q[q.find('Volver'):q.find('Volver') + 1500])
           PY
