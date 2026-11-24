@@ -1685,6 +1685,57 @@
     "tiktok": "frase-f9d8094e",
     "youtube": "frase-1be4bc18"
    }
+  },
+  "2026-12-07": {
+   "1": {
+    "telegram": "calc-pau",
+    "bluesky": "curso-metod",
+    "mastodon": "test-depresion",
+    "instagram": "test-satisfaccion",
+    "facebook": "calc-embarazo",
+    "threads": "test-autoestima"
+   },
+   "2": {
+    "telegram": "crea-l06-02",
+    "bluesky": "crea-l05-03",
+    "mastodon": "crea-l05-08",
+    "instagram": "crea-l05-02",
+    "facebook": "crea-l06-05",
+    "threads": "crea-l05-04",
+    "pinterest": "crea-l07-03"
+   },
+   "3": {
+    "telegram": "frase-3f1684b5",
+    "bluesky": "frase-205773d7",
+    "mastodon": "frase-8cdc6f8b",
+    "instagram": "frase-b545a5f4",
+    "facebook": "frase-9cea837d",
+    "threads": "frase-273f5d33",
+    "pinterest": "frase-c7410680"
+   },
+   "4": {
+    "instagram": "cur-f25e9c5a6c",
+    "facebook": "frase-9cea837d",
+    "youtube": "frase-ff6fe1ad",
+    "telegram": "frase-3f1684b5"
+   },
+   "5": {
+    "instagram": "frase-c7410680",
+    "facebook": "frase-40854f37",
+    "youtube": "frase-18676cef",
+    "telegram": "frase-205773d7"
+   },
+   "6": {
+    "youtube": "frase-24f75839"
+   },
+   "7": {
+    "tiktok": "frase-c531b040",
+    "youtube": "cur-b2dd49b335"
+   },
+   "9": {
+    "tiktok": "frase-f64507f8",
+    "youtube": "frase-a3a474fa"
+   }
   }
  },
  "historial": {
@@ -3604,6 +3655,10 @@
    [
     "2026-11-24",
     "frase-5b980a2a"
+   ],
+   [
+    "2026-11-24",
+    "frase-5681e992"
    ]
   ],
   "telegram-video": [
