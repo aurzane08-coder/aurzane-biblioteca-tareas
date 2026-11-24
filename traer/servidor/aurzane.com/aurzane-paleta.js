@@ -451,6 +451,33 @@
   if (d.readyState === 'loading') d.addEventListener('DOMContentLoaded', iniciar); else iniciar();
 })(document, window);
 
+/* OVP (24/11/2026): fotos reales también en las tarjetas y bloques de la portada pública y de la guía:
+   pasos de «Cómo funciona», la tarjeta del proceso completo, las tres rutas y el cierre final. */
+(function (d, w) {
+  if (!/(^|\.)ovp\.aurzane\.com$/.test(location.hostname)) return;
+  var PASOS = ['estudiante online', 'estudiar aula', 'concentración atención memoria', 'graduación carrera universidad'];
+  var RUTAS = ['estudiantes universidad', 'adolescentes jóvenes', 'laboratorio investigacion'];
+  function foto(t, ancho) { return w.AurzaneBanco.foto('nexus', t, ancho || 640); }
+  function img(el, t, ancho) {
+    if (el.hasAttribute('data-v4f')) return;
+    var u = foto(t + ' ' + (el.textContent || '').slice(0, 60), ancho); if (!u) return;
+    var im = d.createElement('img'); im.className = 'v4-foto'; im.src = u; im.alt = ''; im.loading = 'lazy'; im.width = 640; im.height = 400;
+    el.insertBefore(im, el.firstChild); el.setAttribute('data-v4f', '1');
+  }
+  function poner() {
+    [].forEach.call(d.querySelectorAll('.paso'), function (el, i) { img(el, PASOS[i % PASOS.length]); });
+    [].forEach.call(d.querySelectorAll('.ovp-plan'), function (el) { img(el, 'orientación vocacional estudiantes', 1600); });
+    [].forEach.call(d.querySelectorAll('.og-r'), function (el, i) { img(el, RUTAS[i % RUTAS.length]); });
+    var cta = d.querySelector('.cta-final');
+    if (cta && !cta.classList.contains('v4-cta')) { var u = foto('graduación carrera universidad final', 1600); if (u) { cta.style.setProperty('--v4-portada', 'url("' + u + '")'); cta.classList.add('v4-cta'); } }
+  }
+  function iniciar() {
+    if (!w.AurzaneBanco || !d.querySelector('.paso, .ovp-plan, .og-r, .cta-final')) return;
+    w.AurzaneBanco.listo(function () { poner(); if (w.MutationObserver) { var o = new MutationObserver(poner); o.observe(d.body, { childList: true, subtree: true }); setTimeout(function () { o.disconnect(); }, 30000); } });
+  }
+  if (d.readyState === 'loading') d.addEventListener('DOMContentLoaded', iniciar); else iniciar();
+})(document, window);
+
 (function (w, d) {
   'use strict';
   if (w.AurzanePaleta) return;
@@ -752,7 +779,7 @@
   if (d.querySelector('link[data-azds]') || !/(^|\.)aurzane\.com$/.test(location.hostname)) return;
   /* la hoja común se escribe en el documento mientras se lee la cabecera: así se aplica antes de pintar y la página
      no cambia de aspecto ni salta cuando llega (16/11/2026); si la página ya está leída, se añade como antes */
-  var css = 'https://aurzane.com/aurzane-ds.css?v=hb9d2764a';
+  var css = 'https://aurzane.com/aurzane-ds.css?v=h8208d405';
   if (d.readyState === 'loading' && d.currentScript && d.currentScript.parentNode === d.head) d.write('<link rel="stylesheet" href="' + css + '" data-azds="1">');
   else { var l = d.createElement('link'); l.rel = 'stylesheet'; l.href = css; l.setAttribute('data-azds', '1'); (d.head || d.documentElement).appendChild(l); }
   var s = d.createElement('script'); s.src = 'https://aurzane.com/aurzane-ds.js?v=hf2bf9f82'; s.defer = true; s.setAttribute('data-azds', '1');
