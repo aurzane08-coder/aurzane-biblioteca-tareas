@@ -51,7 +51,10 @@ jobs:
             R=$($SSH "$SG_USER@$SG_HOST" "cd www/aurzane.com/public_html/boletin && php secuencia.php")
             echo "::notice title=Bienvenida::$R"
           elif [ -n "$FECHA" ]; then
-            echo "::notice title=Boletín::muestra compuesta para $FECHA (sin enviar): descárgala en los artefactos"
+            cp /tmp/boletin/boletin.html boletin/muestra.html; cp /tmp/boletin/envio.json boletin/muestra.json
+            git config user.name "AURZANE bot"; git config user.email "bot@aurzane.com"
+            git add boletin/muestra.html boletin/muestra.json && git commit -qm "boletín: muestra para $FECHA (sin enviar)" && for i in 1 2 3; do git pull -q --rebase && git push -q && break; done || true
+            echo "::notice title=Boletín::muestra compuesta para $FECHA (sin enviar): boletin/muestra.html"
           elif [ "${{ github.event_name }}" = "schedule" ] || [ "${{ inputs.enviar }}" = "1" ]; then
             R=$($SSH "$SG_USER@$SG_HOST" "cd www/aurzane.com/public_html/boletin && php enviar.php")
             echo "::notice title=Boletín::$R"
