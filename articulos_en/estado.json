@@ -38,5 +38,29 @@
   "huella": "157af37a3838c6fa",
   "fecha": "2026-11-24",
   "nota": 10
+ },
+ "como-aprendemos-estrategias-metacognitivas": {
+  "titulo": "Learning how to learn: why teaching metacognitive strategies improves performance (with caveats)",
+  "resumen": "A meta-analysis found that training students in learning strategies and metacognition improves academic performance with a moderate effect, but this effect is larger when delivered by a researcher than when implemented by a regular teacher in the everyday classroom.",
+  "categoria": "Learning",
+  "huella": "f907b61c0916f9a6",
+  "fecha": "2026-11-24",
+  "nota": 10
+ },
+ "clase-magistral-vs-aprendizaje-activo-metaanalisis": {
+  "titulo": "The traditional lecture loses out: the meta-analysis of 225 studies comparing passive lecturing with active participation",
+  "resumen": "A meta-analysis of 225 studies in science, technology, engineering, and mathematics found that students in traditional lecture classes are 1.5 times more likely to fail than those taught using active learning methods, and score worse on exams on average.",
+  "categoria": "Effective teaching",
+  "huella": "6b3d374c35d20870",
+  "fecha": "2026-11-24",
+  "nota": 10
+ },
+ "aprendizaje-en-linea-vs-presencial": {
+  "titulo": "Online learning: the key is not the screen, it is how it is used",
+  "resumen": "A meta-analysis of 45 studies found that purely online learning did not outperform face to face learning, but blended learning did, clearly and consistently.",
+  "categoria": "Education",
+  "huella": "465fd15b1c510fc9",
+  "fecha": "2026-11-24",
+  "nota": 10
  }
 }
