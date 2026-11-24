@@ -13,6 +13,16 @@ import json, gzip, re, os, sys, html, unicodedata, collections, shutil, datetime
 
 DATOS, SALIDA = sys.argv[1], sys.argv[2]
 AQUI = os.path.dirname(os.path.abspath(__file__))
+
+
+def _fuentes_propias():
+    # las letras de AURZANE servidas desde aurzane.com/fuentes/ (24/11/2026). Antes las páginas salían con Google Fonts y el
+    # parche diario las reescribía todas tras cada publicación, guardando 14.000 copias en la papelera cada vez.
+    src = open(os.path.join(AQUI, '..', '..', 'ai', 'parches', 'fuentes.py'), encoding='utf-8').read()
+    ns = {}; exec(src[src.index("U = 'https"):src.index('ENLACE = ')], ns); return ns['NUEVO']
+
+
+FUENTES = _fuentes_propias()
 HOY = datetime.date.today()
 import hashlib
 V = hashlib.md5(open(os.path.join(AQUI, 'univ.css'), 'rb').read() + open(os.path.join(AQUI, 'univ.js'), 'rb').read()).hexdigest()[:10]
@@ -570,9 +580,7 @@ def cabeza(titulo_pag, desc, canon, og_img=None, jsonld=None, robots=None, preca
 <meta name="theme-color" content="#0b1030">
 <script>(function(){{try{{if(localStorage.getItem('aurzane-tema')==='oscuro')document.documentElement.setAttribute('data-tema','oscuro');}}catch(e){{}}}})();</script>
 {f'<script type="application/ld+json">{json.dumps(jsonld, ensure_ascii=False)}</script>' if jsonld else ''}
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@500;700&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+{FUENTES}
 <link rel="stylesheet" href="{BASE}assets/univ.css?v={V}">
 <meta name="google-adsense-account" content="{ADS}">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={ADS}" crossorigin="anonymous"></script>

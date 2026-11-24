@@ -49,6 +49,9 @@ def generar(G):
     """G = globals() de gen.py."""
     DATOS, SALIDA, HOY, V = G['DATOS'], G['SALIDA'], G['HOY'], G['V']
     BASE = G['BASE']; fmt = lambda n: f'{n:,}'   # en inglés, miles con coma
+    _ab = lambda n: n if n < 100 else (n // 10 * 10 if n < 1000 else n // 1000 * 1000)   # cifras redondeadas hacia abajo
+    mas_ = lambda n: fmt(n) if _ab(n) == n else fmt(_ab(n)) + '+'
+    sobre = lambda n: fmt(n) if _ab(n) == n else 'over ' + fmt(_ab(n))
     fmt_nota = G['fmt_nota']; commons = G['commons']; iniciales = G['iniciales']; slug = G['slug']
     rank_de = G['rank_de']; NC_CURSO = G.get('NC_CURSO') or ''
     us = [u for u in G['por_pais'].get('España', []) if u['n']]
@@ -105,8 +108,7 @@ def generar(G):
 <meta property="og:locale" content="en_GB">
 <meta name="twitter:card" content="summary_large_image">
 {f'<script type="application/ld+json">{json.dumps(jsonld, ensure_ascii=False)}</script>' if jsonld else ''}
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+{G['FUENTES']}
 <link rel="stylesheet" href="{BASE}assets/univ.css?v={V}">
 <meta name="google-adsense-account" content="{G['ADS']}">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={G['ADS']}" crossorigin="anonymous"></script>
@@ -328,8 +330,8 @@ def generar(G):
         aviso_cob = ('' if mirados >= total_c * 0.97 else
                      f'<p class="ie-nota">We are checking the official records degree by degree: so far {fmt(mirados)} of {fmt(total_c)}. This list grows automatically as the check advances.</p>')
         canon_ie = SITIO + EN_BASE + 'degrees-taught-in-english/'
-        tit_ie = f"Bachelor's degrees taught in English in Spain ({len(filas_en)} official degrees)"
-        desc_ie = (f'{len(filas_en)} official bachelor\'s degrees at {n_unis} Spanish universities are taught fully or partly in English, according to the government registry (RUCT). '
+        tit_ie = f"Bachelor's degrees taught in English in Spain ({sobre(len(filas_en))} official degrees)"
+        desc_ie = (f'{sobre(len(filas_en)).capitalize()} official bachelor\'s degrees at {n_unis} Spanish universities are taught fully or partly in English, according to the government registry (RUCT). '
                    'Search by subject, region and university, with cut-off marks and fees.')
         jl_ie = {'@context': 'https://schema.org', '@type': 'ItemList', 'name': tit_ie, 'url': canon_ie, 'numberOfItems': len(filas_en)}
         faq_ie = [('What does "English and Spanish" mean?', 'The university declares in its official degree report that the degree is taught in English and in Spanish (or in another regional language). Usually that means some groups or some subjects are in English. Check on the university website which part you can take entirely in English.'),
@@ -340,8 +342,8 @@ def generar(G):
 <main><section class="hero en-hero ie-hero"><div class="wrap">{migas(("Study in Spain", EN_BASE), ("Degrees taught in English", ""))}
 <p class="eyebrow">Official data · Spanish government registry</p>
 <h1>Bachelor's degrees taught in English in Spain</h1>
-<p class="lead">{fmt(len(filas_en))} official bachelor's degrees at {n_unis} Spanish universities are taught fully or partly in English. Filter them by subject, region, language and type of university.</p>
-<ul class="stats"><li><b>{fmt(len(filas_en))}</b><span>degrees with English</span></li><li><b>{fmt(n_en_solo)}</b><span>fully in English</span></li><li><b>{n_unis}</b><span>universities</span></li></ul>
+<p class="lead">{sobre(len(filas_en)).capitalize()} official bachelor's degrees at {sobre(n_unis)} Spanish universities are taught fully or partly in English. Filter them by subject, region, language and type of university.</p>
+<ul class="stats"><li><b>{mas_(len(filas_en))}</b><span>degrees with English</span></li><li><b>{mas_(n_en_solo)}</b><span>fully in English</span></li><li><b>{mas_(n_unis)}</b><span>universities</span></li></ul>
 </div></section>
 <div class="wrap" style="padding-top:28px">{aviso_cob}{filtro_ie}{secciones}<p id="ieNada" class="ie-nota" hidden>No degree matches these filters. Try another region or remove the search words.</p>
 <section class="card guia-auto" style="margin-top:36px"><h2>Before you choose</h2>
