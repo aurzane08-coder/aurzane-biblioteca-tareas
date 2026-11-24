@@ -432,7 +432,7 @@
     [].forEach.call(d.querySelectorAll('.paso'), function (el, i) { img(el, PASOS[i % PASOS.length]); });
     [].forEach.call(d.querySelectorAll('.ovp-plan'), function (el) { img(el, 'orientación vocacional estudiantes', 1600); });
     [].forEach.call(d.querySelectorAll('.og-r'), function (el, i) { img(el, RUTAS[i % RUTAS.length]); });
-    var cta = d.querySelector('.cta-final');
+    var cta = d.querySelector('.cta-final .cta-card') || d.querySelector('.cta-final');
     if (cta && !cta.classList.contains('v4-cta')) { var u = foto('graduación carrera universidad final', 1600); if (u) { cta.style.setProperty('--v4-portada', 'url("' + u + '")'); cta.classList.add('v4-cta'); } }
   }
   function iniciar() {
