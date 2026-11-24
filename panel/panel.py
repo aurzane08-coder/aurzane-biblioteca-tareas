@@ -92,6 +92,8 @@ def boletin():
             if k == 'suscritos':   # altas por mes, sin guardar ningún correo
                 fechas = [str((v if isinstance(v, dict) else {}).get('fecha') or (v if isinstance(v, dict) else {}).get('alta') or '')[:7] for v in (j.values() if isinstance(j, dict) else j)]
                 out['altas_por_mes'] = sorted(collections.Counter(f for f in fechas if f).items())[-12:]
+                orig = [str((v if isinstance(v, dict) else {}).get('origen') or '') for v in (j.values() if isinstance(j, dict) else j)]
+                out['por_origen'] = dict(collections.Counter('Mi AURZANE' if o == 'mi-aurzane' else 'Tras un test' if o.startswith('resultado:') else 'Web' for o in orig))
         except Exception as e: out[k] = None; print('boletin', k, e)
     P['boletin'] = out
 
