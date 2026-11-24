@@ -9,6 +9,8 @@ Cada país se guarda en univ/data/oficial_<iso>.json con el mismo formato; univ/
   Chile     SIES, Subsecretaría de Educación Superior (mifuturo.cl): base de oferta académica del año, con duración, arancel y vacantes.
   Perú      SUNEDU (datosabiertos.gob.pe): licenciamiento institucional y programas autorizados por local.
   Brasil    INEP, Censo da Educação Superior (microdatos): instituciones y cursos de graduación en actividad.
+  Argentina Dirección Nacional de Gestión Universitaria (Ministerio de Capital Humano): base de títulos universitarios oficiales con
+            validez nacional (SIPES, sipes.siu.edu.ar), por institución: título, carrera, modalidad y nivel (24/11/2026).
 Uso: python3 univ/oficiales/importar.py [co cl pe br]"""
 import io, os, re, sys, json, time, datetime, collections, unicodedata, urllib.request, urllib.parse
 
@@ -343,6 +345,80 @@ def brasil():
     guardar('br', {'pais': 'Brasil', 'fuente': f'INEP, Censo da Educação Superior {anio} (Ministério da Educação do Brasil)', 'fuente_url': 'https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados/censo-da-educacao-superior',
                    'fecha': datetime.date.today().isoformat(), 'nota': f'Cursos de graduación en actividad en el censo {anio}; los nombres aparecen en portugués, como en la fuente oficial.', 'instituciones': lista})
 
+# ------------------------------------------------------------------------------------------------ Argentina
+# El buscador oficial de títulos (SIU-Toba) no tiene descarga: se consulta institución por institución y página a página,
+# con una sesión propia, igual que haría una persona. Un título puede figurar varias veces (resoluciones antiguas y nuevas):
+# se cuenta una vez por carrera, nivel y modalidad.
+NIVEL_AR = {'G': 'Grado', 'E': 'Pregrado universitario', 'P': 'Posgrado'}
+
+
+def argentina():
+    import http.cookiejar, html as _h
+    log('Argentina: base de títulos oficiales (DNGU, sipes.siu.edu.ar)')
+    cj = http.cookiejar.CookieJar(); op = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(cj)); op.addheaders = list(UA.items())
+    B = 'https://sipes.siu.edu.ar'
+    def abrir(url, datos=None):
+        for i in range(5):
+            try: return op.open(url, urllib.parse.urlencode(datos).encode() if datos else None, timeout=90).read().decode('latin-1')
+            except Exception as e: log('  reintento', i + 1, e); time.sleep(5 * (i + 1))
+        raise RuntimeError('SIPES no responde')
+    def estado(t):
+        return re.search(r"action='([^']+)'", t).group(1).replace('&amp;', '&'), dict(re.findall(r"<input name='([^']+)' id='[^']*' type='hidden' value='([^']*)'", t))
+    def filas(t):
+        out = []
+        for f in re.findall(r'<tr[^>]*>([\s\S]*?)</tr>', t):
+            c = [_h.unescape(limpio(re.sub(r'<[^>]+>', ' ', x))) for x in re.findall(r'<td[^>]*>([\s\S]*?)</td>', f)]
+            if len(c) >= 6 and c[0] != 'Institución' and c[5] in ('Grado', 'Pregrado', 'Posgrado'): out.append(c)
+        return out
+    t = abrir(B + '/buscar_titulos_form.php')
+    sel = re.search(r"<select name='ef_form_2822_filtro_buscadorcod_institucion'[^>]*>([\s\S]*?)</select>", t).group(1)
+    insts = [(v, _h.unescape(n).strip()) for v, n in re.findall(r"<option[^>]*value='([^']*)'[^>]*>([^<]*)", sel) if v != 'nopar']
+    log(f'  {len(insts)} instituciones universitarias')
+    salida = []
+    for cod, nombre in insts:
+        act, oc = estado(t)
+        d = dict(oc, form_2822_filtro_buscador='filtrar', ef_form_2822_filtro_buscadorcod_institucion=cod,
+                 ef_form_2822_filtro_buscadorcod_modalidad='nopar', ef_form_2822_filtro_buscadorcod_nivel='nopar')
+        t = abrir(B + act, d)
+        todas, vistas, pag = [], set(), 1
+        while True:
+            fs = filas(t)
+            nuevas = [f for f in fs if tuple(f) not in vistas]
+            if not nuevas: break
+            for f in nuevas: vistas.add(tuple(f))
+            todas += nuevas
+            if not re.search(r'P[áa&aacute;]+gina Siguiente|Página Siguiente', t) or pag > 400: break
+            pag += 1
+            act, oc = estado(t)
+            t = abrir(B + act, dict(oc, cuadro_2823_cuadro_buscador='cambiar_pagina', cuadro_2823_cuadro_buscador__pagina_actual=str(pag)))
+        carreras, idx = [], {}
+        for f in todas:
+            titulo, carrera, modal, nivel = f[1], f[2], f[4], f[5]
+            nom = carrera if carrera and carrera != '\xa0' and carrera.strip() else titulo
+            nom = acentuar(cap(nom))
+            grupo = {'Grado': 'Grado', 'Pregrado': 'Pregrado universitario'}.get(nivel)
+            if not grupo:
+                tt = titulo.upper()
+                grupo = 'Doctorado' if tt.startswith('DOCTOR') else 'Maestría' if tt.startswith(('MAGISTER', 'MAGÍSTER', 'MAESTR')) else 'Especialización' if tt.startswith('ESPECIALISTA') else 'Posgrado'
+            mod = {'A DISTANCIA': ['A distancia'], 'PRESENCIAL': ['Presencial'], 'PRESENCIAL Y A DISTANCIA': ['Presencial', 'A distancia']}.get(modal.upper(), [])
+            clave = (nrm(nom), grupo)
+            if clave in idx:
+                for m in mod:
+                    if m not in idx[clave]['mod']: idx[clave]['mod'].append(m)
+                continue
+            x = {'n': nom, 'grupo': grupo, 'area': '', 'mod': mod, 'sedes': [], 'cred': '', 'titulo': acentuar(cap(titulo))}
+            idx[clave] = x; carreras.append(x)
+        nl = nombre.lower()
+        tipo_ies = 'Universidad' if nl.startswith('universidad') or ' universidad' in nl else 'Instituto universitario' if nl.startswith('instituto universitario') else 'Institución universitaria'
+        tipo = 'pública' if re.search(r'\b(Nacional|Provincial)\b', nombre) else ''   # las nacionales y provinciales son públicas; el resto, sin dato en la fuente
+        salida.append({'cod': cod, 'nombre': nombre, 'tipo': tipo, 'tipo_ies': tipo_ies, 'ciudad': '', 'region': '', 'web': '', 'extra': {'cod': cod}, 'carreras': carreras})
+        log(f'  {nombre}: {len(carreras)} carreras y títulos ({len(todas)} registros)')
+    guardar('ar', {'pais': 'Argentina', 'fuente': 'Dirección Nacional de Gestión Universitaria, Ministerio de Capital Humano de Argentina',
+                   'fuente_url': 'https://sipes.siu.edu.ar/buscar_titulos.php', 'fecha': datetime.date.today().isoformat(),
+                   'nota': 'Títulos universitarios oficiales con validez nacional (grado, pregrado y posgrado), según la base pública de títulos del Ministerio.',
+                   'instituciones': salida})
+
+
 sys.path.insert(0, os.path.join(AQUI, '..', 'gen'))
 from acentos import acentuar as _acentuar  # noqa: E402
 
@@ -350,8 +426,8 @@ from acentos import acentuar as _acentuar  # noqa: E402
 def acentuar(t): return _acentuar(t, forzar=True)   # mismo diccionario que gen.py, palabra a palabra
 
 if __name__ == '__main__':
-    paises = sys.argv[1:] or ['co', 'cl', 'pe', 'br']
-    for iso, f in (('co', colombia), ('cl', chile), ('pe', peru), ('br', brasil)):
+    paises = sys.argv[1:] or ['co', 'cl', 'pe', 'br', 'ar']
+    for iso, f in (('co', colombia), ('cl', chile), ('pe', peru), ('br', brasil), ('ar', argentina)):
         if iso not in paises: continue
         try: f()
         except Exception as e: log(f'::warning::{iso}: no se pudo importar: {e}')

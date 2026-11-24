@@ -15,7 +15,7 @@ permissions:
 jobs:
   oficiales:
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    timeout-minutes: 180
     steps:
       - uses: actions/checkout@v4
       - name: Explorar
@@ -27,7 +27,7 @@ jobs:
           FORZAR: ${{ github.event.inputs.arg == 'forzar' && '1' || '' }}
         run: |
           pip install -q openpyxl
-          python3 univ/oficiales/importar.py
+          python3 univ/oficiales/importar.py ${{ github.event.inputs.arg != 'forzar' && github.event.inputs.arg || '' }}
       - name: Guardar y publicar
         if: github.event.inputs.modo != 'explorar'
         env:
