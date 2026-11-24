@@ -90,4 +90,4 @@ jobs:
         run: |
           # se relanza mientras haya algo que subir (lo que se sube en una pasada se quita del servidor en la siguiente)
           n=$(cat subidos.txt 2>/dev/null || echo 0); q=$(wc -l < quitar.txt 2>/dev/null || echo 0)
-          if [ "$n" -gt 0 ] || [ "$q" -gt 0 ]; then gh workflow run archivos-internet-archive.yml --ref main -R "$GITHUB_REPOSITORY" && echo "Siguiente lote lanzado"; else echo "Nada pendiente"; fi
+          if [ ! -f frenado.txt ] && { [ "$n" -gt 0 ] || [ "$q" -gt 0 ]; }; then gh workflow run archivos-internet-archive.yml --ref main -R "$GITHUB_REPOSITORY" && echo "Siguiente lote lanzado"; else echo "Nada pendiente"; fi

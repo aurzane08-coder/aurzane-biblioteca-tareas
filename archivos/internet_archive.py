@@ -11,7 +11,7 @@ import os, re, sys, json, time, subprocess, urllib.request
 import internetarchive as ia
 
 ACC, SEC = os.environ['IA_ACCESS'], os.environ['IA_SECRET']
-LOTE = int(os.environ.get('LOTE', '20'))            # archivos por ejecución (archive.org frena si se crean demasiados seguidos)
+LOTE = int(os.environ.get('LOTE', '10'))            # archivos por ejecución (archive.org frena si se crean demasiados seguidos)
 DIAS_MARKETING = int(os.environ.get('DIAS_MARKETING', '21'))
 lista, catalogo, manif = sys.argv[1:4]
 
@@ -106,8 +106,14 @@ for ruta, tam, dias in filas:
             open(manif, 'w', encoding='utf-8').write(''.join('\t'.join(v) + '\n' for v in hecho.values()))   # se guarda tras cada archivo
     except Exception as e:
         print('fallo al subir', ruta, e)
+        if 'reduce your request rate' in str(e) or 'appears to be spam' in str(e):
+            # archive.org pide ir más despacio (24/11/2026): se para aquí y no se relanza; sigue en la próxima hora
+            print('::warning::archive.org pide ir más despacio: se sigue en la próxima ejecución'); open('frenado.txt', 'w').write('1')
+            if os.path.exists(local): os.remove(local)
+            break
     finally:
         if os.path.exists(local): os.remove(local)
+    time.sleep(45)   # una subida cada minuto, más o menos: así archive.org no lo toma por spam
 open(manif, 'w', encoding='utf-8').write(''.join('\t'.join(v) + '\n' for v in hecho.values()))
 open('quitar.txt', 'w').write(''.join(r + '\n' for r in para_quitar))
 print(f'Subidos ahora: {subidos}. Listos para quitar del servidor: {len(para_quitar)}. Sin CORS (se quedan): {sin_cors}.')
