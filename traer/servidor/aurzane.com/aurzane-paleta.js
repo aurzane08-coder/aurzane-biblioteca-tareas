@@ -405,7 +405,7 @@
 (function (d, w) {
   if (!/(^|\.)ovp\.aurzane\.com$/.test(location.hostname)) return;
   var PORTADA = 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=2000&q=70&auto=format&fit=crop';
-  var TEMA = { chaside: 'orientación vocacional carrera', holland: 'graduación carrera universidad', af5: 'autoestima confianza',
+  var TEMA = { chaside: 'orientación vocacional carrera', holland: 'estudiantes universidad', af5: 'adolescentes jóvenes',
                'hábitos': 'estudiar hábitos aula', apt: 'concentración atención memoria' };
   var SECC = { 'page-tests': 'estudiante universidad estudiando', 'page-informe': 'lectura libro estudiar', 'page-estudiar': 'universidad campus facultad', 'page-cuenta': 'estudiante aula colegio' };
   function tema(txt) { txt = (txt || '').toLowerCase(); for (var k in TEMA) if (txt.indexOf(k) >= 0) return TEMA[k]; return 'orientación vocacional estudiantes'; }
@@ -737,7 +737,7 @@
   if (d.querySelector('link[data-azds]') || !/(^|\.)aurzane\.com$/.test(location.hostname)) return;
   /* la hoja común se escribe en el documento mientras se lee la cabecera: así se aplica antes de pintar y la página
      no cambia de aspecto ni salta cuando llega (16/11/2026); si la página ya está leída, se añade como antes */
-  var css = 'https://aurzane.com/aurzane-ds.css?v=hc0e5b1da';
+  var css = 'https://aurzane.com/aurzane-ds.css?v=hc2a8d2db';
   if (d.readyState === 'loading' && d.currentScript && d.currentScript.parentNode === d.head) d.write('<link rel="stylesheet" href="' + css + '" data-azds="1">');
   else { var l = d.createElement('link'); l.rel = 'stylesheet'; l.href = css; l.setAttribute('data-azds', '1'); (d.head || d.documentElement).appendChild(l); }
   var s = d.createElement('script'); s.src = 'https://aurzane.com/aurzane-ds.js?v=hf2bf9f82'; s.defer = true; s.setAttribute('data-azds', '1');
