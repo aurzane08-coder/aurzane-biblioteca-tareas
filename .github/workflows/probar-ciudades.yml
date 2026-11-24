@@ -13,3 +13,4 @@ jobs:
           mkdir -p /tmp/d && python3 -c "import json;json.dump([['es','Madrid'],['es','Salamanca'],['mx','Guadalajara'],['mx','Álvaro Obregón'],['gb','Londres'],['ar','Córdoba']],open('/tmp/d/ciudades_paginas.json','w'))"
           time MAX_CIUDADES=10 python3 -u univ/ciudades.py /tmp/d
           python3 -c "import json;d=json.load(open('/tmp/d/ciudades_info.json'));print(d.get('_precios',{}).get('es'), d.get('_precios',{}).get('gb'));[print(i,k,{a:(str(b)[:60]) for a,b in v.items()}) for i,c in d.items() if i!='_precios' for k,v in c.items()]"
+# r2
