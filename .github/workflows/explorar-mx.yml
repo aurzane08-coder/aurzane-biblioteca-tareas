@@ -1,0 +1,19 @@
+name: Explorar ANUIES (uso único)
+on:
+  push:
+    paths: ['.github/workflows/explorar-mx.yml']
+jobs:
+  x:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          python3 - <<'PY'
+          import urllib.request, re
+          t = urllib.request.urlopen(urllib.request.Request('https://anuario.anuies.mx/', headers={'User-Agent': 'Mozilla/5.0'}), timeout=60).read().decode('utf-8', 'replace')
+          print('LEN', len(t))
+          for pat in ['fetch(', 'FormData', 'append(', 'method:', "action", 'nivel', 'programa']:
+              for m in list(re.finditer(re.escape(pat), t))[:4]:
+                  print('==', pat, re.sub(r'\s+', ' ', t[max(0, m.start()-300):m.start()+500]))
+          print('NAMES', sorted(set(re.findall(r'name="([^"]+)"', t)))[:80])
+          print('IDS', sorted(set(re.findall(r'id="([^"]+)"', t)))[:120])
+          PY
