@@ -144,7 +144,7 @@
   0
  ],
  "tipo:libro": [
-  165,
+  175,
   9
  ],
  "Gambling Behavior and Treatments": [
@@ -312,7 +312,7 @@
   0
  ],
  "archive:psicologia": [
-  135,
+  145,
   0
  ],
  "ed:The Open University": [
@@ -588,8 +588,8 @@
   2
  ],
  "ed:Universitat Oberta de Catalunya (UOC)": [
-  7,
-  4
+  8,
+  6
  ],
  "ed:Universidad de Buenos Aires. Facultad de Filosofía y Letras. Departamento de Ciencias de la Educación": [
   0,
@@ -612,12 +612,12 @@
   1
  ],
  "ed:OPS": [
-  8,
+  9,
   5
  ],
  "ed:Editorial UOC": [
-  30,
-  5
+  32,
+  6
  ],
  "ed:Universidad Andina Simón Bolívar, Sede Ecuador; Corporación Editora Nacional": [
   0,
@@ -712,8 +712,8 @@
   2
  ],
  "ed:Universidad de Salamanca (España). Instituto Universitario de Integración en la Comunidad": [
-  3,
-  2
+  5,
+  3
  ],
  "ed:Dykinson": [
   1,
@@ -721,7 +721,7 @@
  ],
  "ed:UOC": [
   4,
-  1
+  2
  ],
  "ed:Quito, EC: INÉDITA, Programa Nacional de Financiamiento para Investigación / Universidad Andina Simón Bolívar, Sede Ecuador": [
   0,
@@ -748,7 +748,7 @@
   1
  ],
  "ed:OMS": [
-  3,
+  4,
   1
  ],
  "ed:UNICEF Comité Español": [
@@ -776,7 +776,7 @@
   1
  ],
  "ed:Edulp (Libros de Cátedra)": [
-  3,
+  4,
   0
  ],
  "ed:Universidad de Buenos Aires. Editorial de la Facultad de Filosofía y Letras.": [
@@ -812,7 +812,7 @@
   0
  ],
  "ed:Grupo Comunidad de Habilidades y Aprendizaje con Tecnología [CHAT] de la Facultad de Estudios Superiores Iztacala de la Universidad Nacional Autónoma de México": [
-  1,
+  2,
   0
  ],
  "ed:Instituto de Democracia y Derechos Humanos de la Pontificia Universidad Católica del Perú (IDEHPUCP)": [
@@ -909,7 +909,7 @@
  ],
  "ed:Universidad de Antioquia, Facultad de Educación": [
   2,
-  0
+  1
  ],
  "ed:Universidad de Antioquia, Instituto Universitario de Educación Física y Deporte": [
   0,
@@ -956,7 +956,7 @@
   1
  ],
  "ed:Junta de Andalucía, Consejería de Salud": [
-  1,
+  2,
   0
  ],
  "ed:Junta de Andalucía. Consejería de Salud": [
@@ -970,5 +970,29 @@
  "ed:Pontificia Universidad Católica del Perú, Instituto Riva-Agüero": [
   1,
   0
+ ],
+ "ed:Mercedes I.": [
+  0,
+  1
+ ],
+ "ed:Proyecto Gutenberg": [
+  0,
+  1
+ ],
+ "ed:Publicacions de la Universitat Jaume I. Servei de Comunicació i Publicacions": [
+  0,
+  1
+ ],
+ "ed:UAM Ediciones": [
+  0,
+  1
+ ],
+ "ed:Centro de Estudios e Investigaciones Sobre Cultura y Sociedad (CIECS), CONICET-UNC.": [
+  0,
+  1
+ ],
+ "ed:Zacatecas, MX: Taberna Libraria": [
+  0,
+  1
  ]
 }

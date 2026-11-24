@@ -1,6 +1,139 @@
 [
  {
   "fecha": "2026-11-24",
+  "id": "ia-aurzane-bib-incomodidad-profesion-docente-estudio-profesores-zacatecas",
+  "tipo": "libro",
+  "titulo": "La incomodidad en la profesión docente: un estudio con profesores de Zacatecas (México) y Cuenca (Ecuador)",
+  "url": "https://archive.org/details/aurzane-bib-incomodidad-profesion-docente-estudio-profesores-zacatecas",
+  "motivo": "La IA le dio 5/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-aplicacion-paradigma-calidad-vida-intervencion-personas/aplicacion-pa"
+  ]
+ },
+ {
+  "fecha": "2026-11-24",
+  "id": "ia-aurzane-bib-sensibilidades-juego-miradas-multiples-desde-estudios",
+  "tipo": "libro",
+  "titulo": "Sensibilidades en Juego: miradas múltiples desde los estudios sociales de los cuerpos y las emociones.",
+  "url": "https://archive.org/details/aurzane-bib-sensibilidades-juego-miradas-multiples-desde-estudios",
+  "motivo": "La IA le dio 6/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-aplicacion-paradigma-calidad-vida-intervencion-personas/aplicacion-pa"
+  ]
+ },
+ {
+  "fecha": "2026-11-24",
+  "id": "ia-aurzane-bib-celebrando-diversidad-recurso-que-enriquece-educacion",
+  "tipo": "libro",
+  "titulo": "Celebrando la diversidad: Un recurso que enriquece la educación superior. Orientaciones para el profesorado universitario",
+  "url": "https://archive.org/details/aurzane-bib-celebrando-diversidad-recurso-que-enriquece-educacion",
+  "motivo": "La IA le dio 4/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-envejecimiento-demencias-febrero-2021/envejecimiento-demencias-febrer"
+  ]
+ },
+ {
+  "fecha": "2026-11-24",
+  "id": "ia-aurzane-bib-aprender-desde-narrativas-resiliencia-educacion-emocional",
+  "tipo": "libro",
+  "titulo": "Aprender desde las narrativas. Resiliencia, educación emocional y bienestar en la formación docente",
+  "url": "https://archive.org/details/aurzane-bib-aprender-desde-narrativas-resiliencia-educacion-emocional",
+  "motivo": "La IA le dio 5/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-envejecimiento-demencias-febrero-2021/envejecimiento-demencias-febrer"
+  ]
+ },
+ {
+  "fecha": "2026-11-24",
+  "id": "ia-aurzane-bib-moral-social",
+  "tipo": "libro",
+  "titulo": "Moral social",
+  "url": "https://archive.org/details/aurzane-bib-moral-social",
+  "motivo": "La IA le dio 2/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-envejecimiento-demencias-febrero-2021/envejecimiento-demencias-febrer"
+  ]
+ },
+ {
+  "fecha": "2026-11-24",
+  "id": "ia-aurzane-bib-atencion-infancia-adolescencia-riesgo-febrero-2019",
+  "tipo": "libro",
+  "titulo": "Atención a la infancia y a la adolescencia en riesgo, febrero 2019",
+  "url": "https://archive.org/details/aurzane-bib-atencion-infancia-adolescencia-riesgo-febrero-2019",
+  "motivo": "La IA le dio 3/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-envejecimiento-demencias-febrero-2021/envejecimiento-demencias-febrer"
+  ]
+ },
+ {
+  "fecha": "2026-11-24",
+  "id": "ia-aurzane-bib-sociedad-familia-educacion-febrero-2018",
+  "tipo": "libro",
+  "titulo": "Sociedad, familia y educación, febrero 2018",
+  "url": "https://archive.org/details/aurzane-bib-sociedad-familia-educacion-febrero-2018",
+  "motivo": "La IA le dio 3/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-manejo-emociones-adolescencia/manejo-emociones-adolescencia.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-24",
+  "id": "ia-aurzane-bib-aprendizaje-cooperativo",
+  "tipo": "libro",
+  "titulo": "El aprendizaje cooperativo",
+  "url": "https://archive.org/details/aurzane-bib-aprendizaje-cooperativo",
+  "motivo": "La IA le dio 6/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-incomodidad-profesion-docente-estudio-profesores-zacatecas/incomodida",
+   "202 text/html https://aurzane.com/biblioteca/recientes/pdf/ia-aurzane-bib-practicas-ps1034-evaluacion-e-intervencion-clinica"
+  ]
+ },
+ {
+  "fecha": "2026-11-24",
+  "id": "ia-aurzane-bib-escala-kidslife-tea-evaluacion-calidad-vida",
+  "tipo": "libro",
+  "titulo": "Escala KidsLife-TEA: Evaluación de la calidad de vida de niños y adolescentes con trastorno del espectro del autismo y discapacidad intelectual",
+  "url": "https://archive.org/details/aurzane-bib-escala-kidslife-tea-evaluacion-calidad-vida",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 40 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-escala-kidslife-tea-evaluacion-calidad-vida/escala-kidslife-tea-evalu"
+  ]
+ },
+ {
+  "fecha": "2026-11-24",
+  "id": "ia-aurzane-bib-recursos-intervencion-aprendizaje-escritura",
+  "tipo": "libro",
+  "titulo": "Recursos de intervención en el aprendizaje de la escritura",
+  "url": "https://archive.org/details/aurzane-bib-recursos-intervencion-aprendizaje-escritura",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 20 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-recursos-intervencion-aprendizaje-escritura/recursos-intervencion-apr"
+  ]
+ },
+ {
+  "fecha": "2026-11-24",
+  "id": "ia-aurzane-bib-mapas-mentales",
+  "tipo": "libro",
+  "titulo": "Los mapas mentales",
+  "url": "https://archive.org/details/aurzane-bib-mapas-mentales",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 25 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-mapas-mentales/mapas-mentales.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-24",
+  "id": "ia-aurzane-bib-educacion-competencia-socioemocional-institucion-escolar-tra",
+  "tipo": "libro",
+  "titulo": "La educación de la competencia socioemocional en la institución escolar a través del pensamiento crítico reflexivo y el aprendizaje cooperativo",
+  "url": "https://archive.org/details/aurzane-bib-educacion-competencia-socioemocional-institucion-escolar-tra",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 19 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-educacion-competencia-socioemocional-institucion-escolar-tra/educacio"
+  ]
+ },
+ {
+  "fecha": "2026-11-24",
   "id": "ia-aurzane-bib-educacion-revisitada-ensayos-hermeneutica-pedagogica",
   "tipo": "libro",
   "titulo": "La educación revisitada: ensayos de hermenéutica pedagógica",
@@ -3100,121 +3233,5 @@
   "probados": [
    "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13738223.1/PMC13738223.1.pdf"
   ]
- },
- {
-  "fecha": "2026-11-09",
-  "id": "pmc-PMC13731281",
-  "tipo": "estudio",
-  "titulo": "Programming plant resilience with CRISPR/dCas9 epigenome editing: from proof of concept to crop deployment",
-  "url": "https://europepmc.org/article/PMC/PMC13731281",
-  "motivo": "La IA le dio 1/10: no encaja en la biblioteca",
-  "probados": [
-   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13740361.1/PMC13740361.1.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-09",
-  "id": "pmc-PMC13733228",
-  "tipo": "estudio",
-  "titulo": "Engineering the plant holobiont for enhanced abiotic stress resilience: current insights and future directions",
-  "url": "https://europepmc.org/article/PMC/PMC13733228",
-  "motivo": "La IA le dio 1/10: no encaja en la biblioteca",
-  "probados": [
-   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13740361.1/PMC13740361.1.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-09",
-  "id": "pmc-PMC13741095",
-  "tipo": "estudio",
-  "titulo": "Efficacy and safety of commercial Chinese polyherbal preparations combined with biomedicine for elderly patients with primary insomnia: a systematic review and ",
-  "url": "https://europepmc.org/article/PMC/PMC13741095",
-  "motivo": "La IA le dio 3/10: no encaja en la biblioteca",
-  "probados": [
-   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13735106.1/PMC13735106.1.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-09",
-  "id": "pmc-PMC13738637",
-  "tipo": "estudio",
-  "titulo": "Dental Anxiety in Periodontal Patients attending a University Clinic in northeastern Mexico",
-  "url": "https://europepmc.org/article/PMC/PMC13738637",
-  "motivo": "La IA le dio 3/10: no encaja en la biblioteca",
-  "probados": [
-   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13735106.1/PMC13735106.1.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-08",
-  "id": "pmc-PMC13724535",
-  "tipo": "estudio",
-  "titulo": "Mental health interventions for adolescents with depression and anxiety in low- and middle-income countries: a systematic review of the evidence",
-  "url": "https://europepmc.org/article/PMC/PMC13724535",
-  "motivo": "La IA le dio 3/10: no encaja en la biblioteca",
-  "probados": []
- },
- {
-  "fecha": "2026-11-08",
-  "id": "pmc-PMC13725443",
-  "tipo": "estudio",
-  "titulo": "Repetitive negative thinking as a transdiagnostic bridge between childhood trauma and depression: Integrating emotion regulation flexibility, stress sensitizati",
-  "url": "https://europepmc.org/article/PMC/PMC13725443",
-  "motivo": "La IA le dio 3/10: no encaja en la biblioteca",
-  "probados": []
- },
- {
-  "fecha": "2026-11-08",
-  "id": "pmc-PMC13705641",
-  "tipo": "estudio",
-  "titulo": "Immersive Virtual Reality for Pain and Anxiety Reduction During Transrectal Ultrasound-Guided Prostate Biopsy: A Systematic Review and Meta-Analysis of Randomiz",
-  "url": "https://europepmc.org/article/PMC/PMC13705641",
-  "motivo": "La IA le dio 3/10: no encaja en la biblioteca",
-  "probados": []
- },
- {
-  "fecha": "2026-11-08",
-  "id": "pmc-PMC13725209",
-  "tipo": "estudio",
-  "titulo": "Choosing depression treatment in type 2 diabetes: integrating psychiatric efficacy, metabolic effects, and cardiovascular risk. A narrative review",
-  "url": "https://europepmc.org/article/PMC/PMC13725209",
-  "motivo": "La IA le dio 3/10: no encaja en la biblioteca",
-  "probados": []
- },
- {
-  "fecha": "2026-11-08",
-  "id": "pmc-PMC13726093",
-  "tipo": "estudio",
-  "titulo": "Rhythmic dance interventions and dance/movement therapy for depression and anxiety: a structured narrative review of clinical evidence, candidate mechanisms, an",
-  "url": "https://europepmc.org/article/PMC/PMC13726093",
-  "motivo": "La IA le dio 3/10: no encaja en la biblioteca",
-  "probados": []
- },
- {
-  "fecha": "2026-11-08",
-  "id": "pmc-PMC13719302",
-  "tipo": "estudio",
-  "titulo": "Remote supervised exercise- and physical activity-based rehabilitation for post-stroke depression, anxiety, and quality of life: a systematic review, evidence m",
-  "url": "https://europepmc.org/article/PMC/PMC13719302",
-  "motivo": "La IA le dio 3/10: no encaja en la biblioteca",
-  "probados": []
- },
- {
-  "fecha": "2026-11-08",
-  "id": "pmc-PMC13725227",
-  "tipo": "estudio",
-  "titulo": "The Gut-Brain Homeostatic Continuum in Alzheimer's disease: a systems framework for physiological resilience and disease progression",
-  "url": "https://europepmc.org/article/PMC/PMC13725227",
-  "motivo": "La IA le dio 3/10: no encaja en la biblioteca",
-  "probados": []
- },
- {
-  "fecha": "2026-11-08",
-  "id": "pmc-PMC13724216",
-  "tipo": "estudio",
-  "titulo": "Effectiveness of Traditional Chinese Fitness Methods on Depressive Symptoms and Glycaemic Control in Patients With Type 2 Diabetes and Comorbid Depression: A Sy",
-  "url": "https://europepmc.org/article/PMC/PMC13724216",
-  "motivo": "La IA le dio 3/10: no encaja en la biblioteca",
-  "probados": []
  }
 ]

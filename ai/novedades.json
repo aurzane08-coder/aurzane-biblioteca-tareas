@@ -1,63 +1,149 @@
 [
  {
   "fecha": "2026-11-24",
+  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-aplicacion-paradigma-calidad-vida-intervencion-personas/",
+  "titulo": "Libro abierto: Aplicación del paradigma de calidad de vida a la intervención con personas con discapacidad desde una perspect"
+ },
+ {
+  "fecha": "2026-11-24",
+  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-escala-autoddis-evaluacion-autodeterminacion-jovenes-adultos/",
+  "titulo": "Libro abierto: Escala AUTODDIS: Evaluación de la autodeterminación de jóvenes y adultos con discapacidad intelectual. Manual "
+ },
+ {
+  "fecha": "2026-11-24",
+  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-servicios-salud-mental-momentos-crisis-promover/",
+  "titulo": "Libro abierto: Servicios de salud mental en momentos de crisis: promover los enfoques centrados en las personas y basados en "
+ },
+ {
+  "fecha": "2026-11-24",
+  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-envejecimiento-demencias-febrero-2021/",
+  "titulo": "Libro abierto: Envejecimiento y demencias, febrero 2021"
+ },
+ {
+  "fecha": "2026-11-24",
+  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-manejo-emociones-adolescencia/",
+  "titulo": "Libro abierto: Habilidades para el manejo de emociones en la adolescencia temprana"
+ },
+ {
+  "fecha": "2026-11-24",
+  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-intervencion-breve-basada-psicologia-positiva-potenciar/",
+  "titulo": "Libro abierto: Intervención breve basada en psicología positiva para potenciar la resiliencia ante la adversidad. Guía para e"
+ },
+ {
+  "fecha": "2026-11-24",
+  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-instrumentos-evaluacion-salud-mental-desarrollo-positivo/",
+  "titulo": "Libro abierto: Instrumentos para la evaluación de la salud mental y el desarrollo positivo adolescente y los activos que lo p"
+ },
+ {
+  "fecha": "2026-11-24",
+  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-aportes-psicopatologia/",
+  "titulo": "Libro abierto: Aportes interdisciplinarios en Psicopatología"
+ },
+ {
+  "fecha": "2026-11-24",
+  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-desinserciones-lazo-social-practica-orientada-singularidad/",
+  "titulo": "Libro abierto: Desinserciones y lazo social: una práctica orientada por la singularidad"
+ },
+ {
+  "fecha": "2026-11-24",
+  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-evaluacion-clinica-adultos/",
+  "titulo": "Libro abierto: Evaluación en psicología clínica de adultos"
+ },
+ {
+  "fecha": "2026-11-24",
   "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-cuidadores-demencia/",
-  "titulo": "Libro abierto: Manual para el entrenamiento y apoyo de cuidadores de personas con demencia (iSupport)"
+  "titulo": "Libro abierto: Manual para el entrenamiento y apoyo de cuidadores de personas con demencia (iSupport)",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-cuidadores-demencia.jpg",
+  "desc": "Programa de la OMS para cuidadores familiares: entender la demencia, manejar el estrés del cuidado y cuidarse a uno mismo. Copia de la Biblioteca AURZANE (aurzane.com/biblioteca).",
+  "titulo_completo": "Manual para el entrenamiento y apoyo de cuidadores de personas con demencia (iSupport)"
  },
  {
   "fecha": "2026-11-24",
   "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-en-tiempos-de-estres/",
-  "titulo": "Libro abierto: En tiempos de estrés, haz lo que importa: una guía ilustrada"
+  "titulo": "Libro abierto: En tiempos de estrés, haz lo que importa: una guía ilustrada",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-en-tiempos-de-estres.jpg",
+  "desc": "Guía ilustrada de la OMS con técnicas sencillas, basadas en la terapia de aceptación y compromiso, para manejar el estrés en pocos minutos al día. Copia de la Biblioteca AURZANE (aurzane.com/bibliotec",
+  "titulo_completo": "En tiempos de estrés, haz lo que importa: una guía ilustrada"
  },
  {
   "fecha": "2026-11-24",
   "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-practicas-recuperacion-salud-mental/",
-  "titulo": "Libro abierto: Prácticas de recuperación para la salud mental y el bienestar"
+  "titulo": "Libro abierto: Prácticas de recuperación para la salud mental y el bienestar",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-practicas-recuperacion-salud-mental.jpg",
+  "desc": "Módulo de la iniciativa QualityRights de la OMS sobre el enfoque de recuperación: esperanza, autonomía y proyectos de vida en salud mental. Copia de la Biblioteca AURZANE (aurzane.com/biblioteca).",
+  "titulo_completo": "Prácticas de recuperación para la salud mental y el bienestar"
  },
  {
   "fecha": "2026-11-24",
   "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-locura-musas-estudio-fenomenologico-sobre-imaginacion/",
-  "titulo": "Libro abierto: La locura de las Musas: estudio fenomenológico sobre la imaginación y la creación artística de los pacientes c"
+  "titulo": "Libro abierto: La locura de las Musas: estudio fenomenológico sobre la imaginación y la creación artística de los pacientes c",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-locura-musas-estudio-fenomenologico-sobre-imaginacion.jpg",
+  "desc": "El 11 de diciembre de 1942, Séraphine Louis moría olvidada en el hospital psiquiátrico de Villers-sur-Erquery, en Francia, a causa de la hambruna provocada por la ocupación alemana, y era enterrada en",
+  "titulo_completo": "La locura de las Musas: estudio fenomenológico sobre la imaginación y la creación artístic"
  },
  {
   "fecha": "2026-11-24",
   "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-salud-laboral-consecuencias-estres-laboral-estrategias/",
-  "titulo": "Libro abierto: Salud Laboral-Consecuencias del estrés laboral y estrategias de Intervención"
+  "titulo": "Libro abierto: Salud Laboral-Consecuencias del estrés laboral y estrategias de Intervención",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-salud-laboral-consecuencias-estres-laboral-estrategias.jpg",
+  "desc": "Diapositivas asignatura \"Evaluación e intervención psicológica en contextos específicos, Salud Laboral\" del Máster en Psicología General Sanitaria. Estas diapositivas abordan las consecuencias del est",
+  "titulo_completo": "Salud Laboral-Consecuencias del estrés laboral y estrategias de Intervención"
  },
  {
   "fecha": "2026-11-24",
   "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-promocion-parentalidad-positiva-durante-preparacion-nacimien/",
-  "titulo": "Libro abierto: Promoción de la parentalidad positiva durante la preparación al nacimiento y la crianza"
+  "titulo": "Libro abierto: Promoción de la parentalidad positiva durante la preparación al nacimiento y la crianza",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-promocion-parentalidad-positiva-durante-preparacion-nacimien.jpg",
+  "desc": "Copia de la Biblioteca AURZANE (aurzane.com/biblioteca).",
+  "titulo_completo": "Promoción de la parentalidad positiva durante la preparación al nacimiento y la crianza"
  },
  {
   "fecha": "2026-11-24",
   "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-activos-desarrollo-positivo-salud-mental-adolescencia/",
-  "titulo": "Libro abierto: Activos para el desarrollo positivo y la salud mental en la adolescencia"
+  "titulo": "Libro abierto: Activos para el desarrollo positivo y la salud mental en la adolescencia",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-activos-desarrollo-positivo-salud-mental-adolescencia.jpg",
+  "desc": "Copia de la Biblioteca AURZANE (aurzane.com/biblioteca).",
+  "titulo_completo": "Activos para el desarrollo positivo y la salud mental en la adolescencia"
  },
  {
   "fecha": "2026-11-24",
   "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-practicas-ps1034-evaluacion-e-intervencion-clinica/",
-  "titulo": "Libro abierto: Prácticas de PS1034: Evaluación e Intervención Clínica"
+  "titulo": "Libro abierto: Prácticas de PS1034: Evaluación e Intervención Clínica",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-practicas-ps1034-evaluacion-e-intervencion-clinica.jpg",
+  "desc": "Departament de Psicologia Bàsica, Clínica i Psicobiologia . Codi assignatura: PS1034 Copia de la Biblioteca AURZANE (aurzane.com/biblioteca).",
+  "titulo_completo": "Prácticas de PS1034: Evaluación e Intervención Clínica"
  },
  {
   "fecha": "2026-11-24",
   "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-ensenanza-habilidades-comunicativas-infancia/",
-  "titulo": "Libro abierto: Enseñanza de las habilidades comunicativas en la infancia"
+  "titulo": "Libro abierto: Enseñanza de las habilidades comunicativas en la infancia",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-ensenanza-habilidades-comunicativas-infancia.jpg",
+  "desc": "Copia de la Biblioteca AURZANE (aurzane.com/biblioteca).",
+  "titulo_completo": "Enseñanza de las habilidades comunicativas en la infancia"
  },
  {
   "fecha": "2026-11-24",
   "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-prediccion-prevencion-tratamiento-conducta-delictiva-septiem/",
-  "titulo": "Libro abierto: Predicción, prevención y tratamiento de la conducta delictiva, septiembre 2013"
+  "titulo": "Libro abierto: Predicción, prevención y tratamiento de la conducta delictiva, septiembre 2013",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-prediccion-prevencion-tratamiento-conducta-delictiva-septiem.jpg",
+  "desc": "Recurs d'aprenentatge de la Universitat Oberta de Catalunya. | Recurso de aprendizaje de la \"Universitat Oberta de Catalunya\". | Learning resource of the \"Universitat Oberta de Catalunya\". Copia de la",
+  "titulo_completo": "Predicción, prevención y tratamiento de la conducta delictiva, septiembre 2013"
  },
  {
   "fecha": "2026-11-24",
   "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-sindromes-clinicos/",
-  "titulo": "Libro abierto: Síndromes clínicos 2.0"
+  "titulo": "Libro abierto: Síndromes clínicos 2.0",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-sindromes-clinicos.jpg",
+  "desc": "Descripción clara de los grandes síndromes clínicos que se ven en la consulta, pensada para estudiantes de las ciencias de la salud. Copia de la Biblioteca AURZANE (aurzane.com/biblioteca).",
+  "titulo_completo": "Síndromes clínicos 2.0"
  },
  {
   "fecha": "2026-11-24",
   "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-ser-adolescente-transicion-o-destino/",
-  "titulo": "Libro abierto: Ser adolescente. ¿Transición o destino?"
+  "titulo": "Libro abierto: Ser adolescente. ¿Transición o destino?",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-ser-adolescente-transicion-o-destino.jpg",
+  "desc": "Antes de que la pandemia a causa de la COVID-19 apareciera en nuestras vidas, los adolescentes contemporáneos ya parecían vivir en un escenario postapocalíptico en el que ellos representan la nueva no",
+  "titulo_completo": "Ser adolescente. ¿Transición o destino?"
  },
  {
   "fecha": "2026-11-24",
@@ -839,85 +925,5 @@
   "img": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-comportamiento-colectivo.jpg",
   "desc": "Multitudes, rumores, modas y movimientos sociales: cómo y por qué actuamos de forma distinta cuando estamos en grupo. Copia de la Biblioteca AURZANE (aurzane.com/biblioteca).",
   "titulo_completo": "Psicología del comportamiento colectivo"
- },
- {
-  "fecha": "2026-11-22",
-  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-terapia-interpersonal-grupal-depresion/",
-  "titulo": "Libro abierto: Terapia interpersonal grupal para la depresión",
-  "img": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-terapia-interpersonal-grupal-depresion.jpg",
-  "desc": "La depresión es una afección importante. Es la principal causa de discapacidad en todo el mundo y puede ser causa de suicidio. En este manual se presenta una versión modificada de la terapia interpers",
-  "titulo_completo": "Terapia interpersonal grupal para la depresión"
- },
- {
-  "fecha": "2026-11-22",
-  "url": "https://aurzane.com/biblioteca/recientes/oa-W7134041508/",
-  "titulo": "Libro abierto: Manual de detección y actuación ante la explotación sexual infantil y adolescente",
-  "img": "https://aurzane.com/biblioteca/recientes/portadas/oa-W7134041508.jpg",
-  "desc": "La explotación sexual infantil y adolescente (ESIA) representa una de las formas más graves y menos visibles de violencia sexual. A pesar de su impacto persistente en la salud física, mental y emocion",
-  "titulo_completo": "Manual de detección y actuación ante la explotación sexual infantil y adolescente"
- },
- {
-  "fecha": "2026-11-21",
-  "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13777642/",
-  "titulo": "Estudio reciente: Understanding health behaviors and resilience during pandemics: a systematic review of ethical, cognitive, and",
-  "img": "https://aurzane.com/biblioteca/recientes/portadas/pmc-PMC13777642.jpg",
-  "desc": "Purpose Pandemic events such as HIV/AIDS and COVID-19 destabilize not only public health systems but also the philosophical and ethical frameworks through which individuals interpret illness. Health b",
-  "titulo_completo": "Understanding health behaviors and resilience during pandemics: a systematic review of eth"
- },
- {
-  "fecha": "2026-11-21",
-  "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13787119/",
-  "titulo": "Estudio reciente: The effectiveness of AI-based cognitive behavioral therapy chatbots for anxiety and depression symptoms: a sys",
-  "img": "https://aurzane.com/biblioteca/recientes/portadas/pmc-PMC13787119.jpg",
-  "desc": "The effectiveness of AI-based cognitive behavioral therapy chatbots for anxiety and depression symptoms: a systematic review and meta-analysis. Yuan D, Dong P, Zheng X y otros, Frontiers in public hea",
-  "titulo_completo": "The effectiveness of AI-based cognitive behavioral therapy chatbots for anxiety and depres"
- },
- {
-  "fecha": "2026-11-20",
-  "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13764040/",
-  "titulo": "Estudio reciente: Prevalence of Anxiety Among Medical, Dental, and Nursing Students in Selected Balkan Countries: A Systematic R",
-  "img": "https://aurzane.com/biblioteca/recientes/portadas/pmc-PMC13764040.jpg",
-  "desc": "Background:  Anxiety is common among health science students, but the Balkan region is underrepresented in student mental health research and no regional synthesis exists. This systematic review and m",
-  "titulo_completo": "Prevalence of Anxiety Among Medical, Dental, and Nursing Students in Selected Balkan Count"
- },
- {
-  "fecha": "2026-11-20",
-  "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13771274/",
-  "titulo": "Estudio reciente: Efficacy of animal-assisted therapy for the relief of dental anxiety: quantitative synthesis of clinical rando",
-  "img": "https://aurzane.com/biblioteca/recientes/portadas/pmc-PMC13771274.jpg",
-  "desc": "The aim of this systematic review was to comprehensively evaluate the efficacy of animal-assisted therapy (AAT) for alleviating dental anxiety based on clinical randomized controlled trials (RCTs), an",
-  "titulo_completo": "Efficacy of animal-assisted therapy for the relief of dental anxiety: quantitative synthes"
- },
- {
-  "fecha": "2026-11-20",
-  "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13768738/",
-  "titulo": "Estudio reciente: Global Prevalence of Clinically Significant Insomnia Among Cancer Patients: A Systematic Review and Meta-Analy",
-  "img": "https://aurzane.com/biblioteca/recientes/portadas/pmc-PMC13768738.jpg",
-  "desc": "Background Clinically significant insomnia is associated with multiple adverse health outcomes in cancer patients. This study aimed to examine the global prevalence of clinically significant insomnia",
-  "titulo_completo": "Global Prevalence of Clinically Significant Insomnia Among Cancer Patients: A Systematic R"
- },
- {
-  "fecha": "2026-11-20",
-  "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13772180/",
-  "titulo": "Estudio reciente: Eco-anxiety as a public health imperative: from individual resilience to culturally informed holistic engageme",
-  "img": "https://aurzane.com/biblioteca/recientes/portadas/pmc-PMC13772180.jpg",
-  "desc": "Eco-anxiety has increasingly drawn public health attention. Although often conceptualized as an individual psychological burden, eco-anxiety may also serve as a catalyst for collective action. However",
-  "titulo_completo": "Eco-anxiety as a public health imperative: from individual resilience to culturally inform"
- },
- {
-  "fecha": "2026-11-20",
-  "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13763141/",
-  "titulo": "Estudio reciente: Inflammaging and Cellular Senescence in Postmenopausal Depression: Linking Estrogen Deficiency, Immune Dysregu",
-  "img": "https://aurzane.com/biblioteca/recientes/portadas/pmc-PMC13763141.jpg",
-  "desc": "Postmenopausal depression is clinically heterogeneous and cannot be explained by estrogen deficiency alone. We propose a conceptual, testable neuroimmune-aging model in which endocrine decline may int",
-  "titulo_completo": "Inflammaging and Cellular Senescence in Postmenopausal Depression: Linking Estrogen Defici"
- },
- {
-  "fecha": "2026-11-20",
-  "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13770471/",
-  "titulo": "Estudio reciente: Neuroimaging of Anxiety in Mild Cognitive Impairment: Integrating Structural, Functional, Molecular, and Netwo",
-  "img": "https://aurzane.com/biblioteca/recientes/portadas/pmc-PMC13770471.jpg",
-  "desc": "This narrative review summarizes neuroimaging evidence on the neurobiological correlates of anxiety symptoms in mild cognitive impairment (MCI) across the Alzheimer's disease continuum. A literature s",
-  "titulo_completo": "Neuroimaging of Anxiety in Mild Cognitive Impairment: Integrating Structural, Functional, "
  }
 ]
