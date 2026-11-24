@@ -15,7 +15,8 @@
   "fw-aacd892cfb",
   "fw-469a9bf497",
   "cita-6184ed6ca8",
-  "fw-90c0c1c785"
+  "fw-90c0c1c785",
+  "fw-6dfea7077f"
  ],
  "dias": {
   "2026-11-08": {
@@ -474,6 +475,35 @@
    "musica": {
     "url": "https://aurzane.com/marketing/musica/1241085.mp3",
     "credito": "«Inner parts», The Dream Pop Project (Jamendo), CC BY"
+   }
+  },
+  "2026-11-24": {
+   "fecha": "2026-11-24",
+   "frase": {
+    "texto": "Soy gran creyente en la suerte, y he descubierto que mientras más duro trabajo, más suerte tengo.",
+    "autor": "Stephen Leacock",
+    "obra": "",
+    "url": "https://aurzane.com/frases/#fw-6dfea7077f",
+    "fuente": "Proverbia.net"
+   },
+   "curiosidad": {
+    "titulo": "¿Por qué crees que todo el mundo te mira?",
+    "texto": "El efecto foco nos hace sobreestimar cuánto notan los demás nuestros fallos. Thomas Gilovich demostró en 2000 que creemos ser el centro de atención mucho más de lo que ocurre en realidad. Los demás están demasiado ocupados pensando en sí mismos como para fijarse en nuestros pequeños detalles.",
+    "fuente": "Gilovich et al., 2000",
+    "url": "https://mind.aurzane.com/"
+   },
+   "ejercicio": {
+    "titulo": "Respiración diafragmática o abdominal guiada",
+    "url": "https://mind.aurzane.com/ejercicios/respiracion-diafragmatica/"
+   },
+   "test": {
+    "titulo": "Test de burnout gratis",
+    "url": "https://mind.aurzane.com/test-de-burnout/"
+   },
+   "mas_frases": true,
+   "musica": {
+    "url": "https://aurzane.com/marketing/musica/2323198.mp3",
+    "credito": "«Ghost in Cobalt», Ta pote un peu cheloue (Jamendo), CC BY"
    }
   }
  }

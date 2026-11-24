@@ -121,7 +121,7 @@
  ],
  "ed:Internet Archive": [
   27,
-  151
+  152
  ],
  "ed:": [
   52,
@@ -144,7 +144,7 @@
   0
  ],
  "tipo:libro": [
-  123,
+  132,
   9
  ],
  "Gambling Behavior and Treatments": [
@@ -312,7 +312,7 @@
   0
  ],
  "archive:psicologia": [
-  93,
+  102,
   0
  ],
  "ed:The Open University": [
@@ -593,7 +593,7 @@
  ],
  "ed:Universidad de Buenos Aires. Facultad de Filosofía y Letras. Departamento de Ciencias de la Educación": [
   0,
-  4
+  5
  ],
  "ed:Universitat de Lleida. Universitat de Barcelona. Fundación \"la Caixa\"": [
   0,
@@ -613,10 +613,10 @@
  ],
  "ed:OPS": [
   5,
-  3
+  4
  ],
  "ed:Editorial UOC": [
-  19,
+  21,
   2
  ],
  "ed:Universidad Andina Simón Bolívar, Sede Ecuador; Corporación Editora Nacional": [
@@ -624,7 +624,7 @@
   2
  ],
  "ed:Ediciones Universidad de Salamanca": [
-  0,
+  1,
   1
  ],
  "ed:Publicacions de la Universitat de València": [
@@ -633,7 +633,7 @@
  ],
  "ed:Pontificia Universidad Católica del Perú. Fondo Editorial": [
   3,
-  4
+  5
  ],
  "ed:Fondo Editorial Universidad Católica Luis Amigó": [
   0,
@@ -648,7 +648,7 @@
   1
  ],
  "ed:Publicacions de la Universitat Jaume I": [
-  1,
+  2,
   2
  ],
  "ed:Agua Clara": [
@@ -708,7 +708,7 @@
   1
  ],
  "ed:Universitat Oberta de Catalunya": [
-  4,
+  5,
   1
  ],
  "ed:Universidad de Salamanca (España). Instituto Universitario de Integración en la Comunidad": [
@@ -737,7 +737,7 @@
  ],
  "ed:Egregius": [
   1,
-  0
+  1
  ],
  "ed:Asociación de Psicopatología y Psicoanálisis de Sevilla": [
   1,
@@ -776,7 +776,7 @@
   1
  ],
  "ed:Edulp (Libros de Cátedra)": [
-  1,
+  2,
   0
  ],
  "ed:Universidad de Buenos Aires. Editorial de la Facultad de Filosofía y Letras.": [
@@ -836,6 +836,46 @@
   1
  ],
  "ed:Editorial Universidad de Antioquia y Parque Explora": [
+  0,
+  1
+ ],
+ "ed:Octaedro": [
+  1,
+  1
+ ],
+ "ed:Programa Niñez y Juventud. Secretaría de Extensión Universitaria. Universidad Nacional de Córdoba": [
+  0,
+  1
+ ],
+ "ed:Universidad Católica de Valencia": [
+  0,
+  1
+ ],
+ "ed:Instituto de Mayores y Servicios Sociales. Imserso": [
+  0,
+  1
+ ],
+ "ed:Editorial Universitas": [
+  0,
+  1
+ ],
+ "ed:Andrés Rossetti y Natalia Monasterolo (Editores), Solana Yoma (coordinadora) - Centro de Investigaciones Jurídicas y Sociales (UNC); Instituto de Investigaciones y Formación en Administración Pública (UNC); Observatorio de Salud Mental y Derechos Humanos (UNC) y Editorial Espartaco.": [
+  0,
+  1
+ ],
+ "ed:Ediciones Octaedro & Universitat de Barcelona. IDP/ICE": [
+  1,
+  0
+ ],
+ "ed:Centro de Investigación, Capacitación y Asesoría Jurídica": [
+  1,
+  0
+ ],
+ "ed:Ediciones del Boulevard": [
+  0,
+  1
+ ],
+ "ed:E-book": [
   0,
   1
  ]

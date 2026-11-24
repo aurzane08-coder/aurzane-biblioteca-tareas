@@ -1,5 +1,148 @@
 [
  {
+  "fecha": "2026-11-24",
+  "id": "ia-aurzane-bib-sombra-migrante-abordaje-psicosocial-familias-migrantes",
+  "tipo": "libro",
+  "titulo": "A la sombra del migrante. Un abordaje psicosocial a las familias de migrantes en el lugar de origen",
+  "url": "https://archive.org/details/aurzane-bib-sombra-migrante-abordaje-psicosocial-familias-migrantes",
+  "motivo": "La IA le dio 6/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-avanza-joven-estudio-diagnostico-propuesta-intervencion/avanza-joven-"
+  ]
+ },
+ {
+  "fecha": "2026-11-24",
+  "id": "ia-aurzane-bib-dando-cuenta-estudios-sobre-testimonio-violencia",
+  "tipo": "libro",
+  "titulo": "Dando cuenta : estudios sobre el testimonio de la violencia política en el Perú (1980-2000)",
+  "url": "https://archive.org/details/aurzane-bib-dando-cuenta-estudios-sobre-testimonio-violencia",
+  "motivo": "La IA le dio 4/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-resiliencia-educacion-emocional-duelo-formacion-futuros/resiliencia-e"
+  ]
+ },
+ {
+  "fecha": "2026-11-24",
+  "id": "ia-aurzane-bib-trabajo-subjetividad-indagaciones-clinicas",
+  "tipo": "libro",
+  "titulo": "Trabajo y subjetividad: indagaciones clínicas",
+  "url": "https://archive.org/details/aurzane-bib-trabajo-subjetividad-indagaciones-clinicas",
+  "motivo": "La IA le dio 6/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-privaciones-libertad-razones-salud-mental-latinoamerica/privaciones-l"
+  ]
+ },
+ {
+  "fecha": "2026-11-24",
+  "id": "ia-aurzane-bib-nuevos-tiempos-familias-familias-nuevos-tiempos",
+  "tipo": "libro",
+  "titulo": "Nuevos tiempos para las familias, familias para los nuevos tiempos. De las sociedades tradicionales a las sociedades burguesas: perspectivas comparadas entre Ar",
+  "url": "https://archive.org/details/aurzane-bib-nuevos-tiempos-familias-familias-nuevos-tiempos",
+  "motivo": "La IA le dio 4/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-privaciones-libertad-razones-salud-mental-latinoamerica/privaciones-l"
+  ]
+ },
+ {
+  "fecha": "2026-11-24",
+  "id": "ia-aurzane-bib-salud-mental-derecho-derechos-sociales-e",
+  "tipo": "libro",
+  "titulo": "Salud mental y derecho. Derechos Sociales e Intersectorialidad.",
+  "url": "https://archive.org/details/aurzane-bib-salud-mental-derecho-derechos-sociales-e",
+  "motivo": "La IA le dio 6/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-introduccion-obra-freud/introduccion-obra-freud.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-24",
+  "id": "ia-aurzane-bib-pedagogia-sentidos-epistemologia-afectividad-transformacion-",
+  "tipo": "libro",
+  "titulo": "PEDAGOGÍA CON SENTIDOS. EPISTEMOLOGÍA, AFECTIVIDAD Y TRANSFORMACIÓN DEL APRENDIZAJE",
+  "url": "https://archive.org/details/aurzane-bib-pedagogia-sentidos-epistemologia-afectividad-transformacion-",
+  "motivo": "La IA le dio 6/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-introduccion-obra-freud/introduccion-obra-freud.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-24",
+  "id": "ia-aurzane-bib-violencia-realidad-digital-presencia-difusion-redes",
+  "tipo": "libro",
+  "titulo": "La violencia en la realidad digital. Presencia y difusión en las redes sociales y dispositivos móviles",
+  "url": "https://archive.org/details/aurzane-bib-violencia-realidad-digital-presencia-difusion-redes",
+  "motivo": "La IA le dio 6/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-introduccion-obra-freud/introduccion-obra-freud.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-24",
+  "id": "ia-aurzane-bib-educacion-discapacidades-educacion-especial",
+  "tipo": "libro",
+  "titulo": "Educación y discapacidades. Educación especial",
+  "url": "https://archive.org/details/aurzane-bib-educacion-discapacidades-educacion-especial",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 23 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-educacion-discapacidades-educacion-especial/educacion-discapacidades-"
+  ]
+ },
+ {
+  "fecha": "2026-11-24",
+  "id": "ia-aurzane-bib-guia-orientacion-intervencion-musicoterapia-personas-demenci",
+  "tipo": "libro",
+  "titulo": "Guía de orientación para la intervención de musicoterapia en personas con demencia",
+  "url": "https://archive.org/details/aurzane-bib-guia-orientacion-intervencion-musicoterapia-personas-demenci",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 27 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-guia-orientacion-intervencion-musicoterapia-personas-demenci/guia-ori"
+  ]
+ },
+ {
+  "fecha": "2026-11-24",
+  "id": "ia-aurzane-bib-esto-va-respeto-guia-lenguaje-anticapacitista",
+  "tipo": "libro",
+  "titulo": "Esto va de respeto: Guía de lenguaje anticapacitista para contextos educativos",
+  "url": "https://archive.org/details/aurzane-bib-esto-va-respeto-guia-lenguaje-anticapacitista",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 21 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-esto-va-respeto-guia-lenguaje-anticapacitista/esto-va-respeto-guia-le"
+  ]
+ },
+ {
+  "fecha": "2026-11-24",
+  "id": "ia-aurzane-bib-construyamos-alegrias-version-covid-19",
+  "tipo": "libro",
+  "titulo": "Construyamos alegrías : versión COVID-19",
+  "url": "https://archive.org/details/aurzane-bib-construyamos-alegrias-version-covid-19",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 41 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-construyamos-alegrias-version-covid-19/construyamos-alegrias-version-"
+  ]
+ },
+ {
+  "fecha": "2026-11-24",
+  "id": "ia-aurzane-bib-impacto-musica-desarrollo-cognitivo-neuronal-explorando",
+  "tipo": "libro",
+  "titulo": "Impacto de la música en el desarrollo cognitivo y neuronal: explorando beneficios y desafíos",
+  "url": "https://archive.org/details/aurzane-bib-impacto-musica-desarrollo-cognitivo-neuronal-explorando",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 17 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-impacto-musica-desarrollo-cognitivo-neuronal-explorando/impacto-music"
+  ]
+ },
+ {
+  "fecha": "2026-11-24",
+  "id": "ia-aurzane-bib-atlas-salud-mental-americas-2020",
+  "tipo": "libro",
+  "titulo": "Atlas de salud mental de las Américas 2020",
+  "url": "https://archive.org/details/aurzane-bib-atlas-salud-mental-americas-2020",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 43 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-atlas-salud-mental-americas-2020/atlas-salud-mental-americas-2020.pdf"
+  ]
+ },
+ {
   "fecha": "2026-11-23",
   "id": "ia-aurzane-bib-viaje-iniciatico-ensayos-autobiografia-inconclusa",
   "tipo": "libro",
@@ -3059,150 +3202,6 @@
   "motivo": "La IA le dio 1/10: no encaja en la biblioteca",
   "probados": [
    "200 application/pdf https://archive.org/download/9786287548923/9786287548923.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-08",
-  "id": "ia-luz-detra-s-de-la-ventana",
-  "tipo": "libro",
-  "titulo": "LUZ DETRÁS S DE LA VENTANA",
-  "url": "https://archive.org/details/luz-detra-s-de-la-ventana",
-  "motivo": "La IA le dio 1/10: no encaja en la biblioteca",
-  "probados": [
-   "200 application/pdf https://archive.org/download/9786287548923/9786287548923.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-08",
-  "id": "ia-El-Monstruo-de-Liverpool",
-  "tipo": "libro",
-  "titulo": "EL MONSTRUO DE LIVERPOOL",
-  "url": "https://archive.org/details/El-Monstruo-de-Liverpool",
-  "motivo": "La IA le dio 1/10: no encaja en la biblioteca",
-  "probados": [
-   "200 application/pdf https://archive.org/download/9786287548923/9786287548923.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-08",
-  "id": "ia-Mohandas-Karamchand-gandhi_202606",
-  "tipo": "libro",
-  "titulo": "MOHANDAS KARAMCHAND GANDHI",
-  "url": "https://archive.org/details/Mohandas-Karamchand-gandhi_202606",
-  "motivo": "La IA le dio 2/10: no encaja en la biblioteca",
-  "probados": [
-   "200 application/pdf https://archive.org/download/9786287548923/9786287548923.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-08",
-  "id": "ia-investigacion-eficacia-signo-visual",
-  "tipo": "libro",
-  "titulo": "Investigacion Eficacia Signo Visual",
-  "url": "https://archive.org/details/investigacion-eficacia-signo-visual",
-  "motivo": "La IA le dio 2/10: no encaja en la biblioteca",
-  "probados": [
-   "200 application/pdf https://archive.org/download/9786287548923/9786287548923.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-08",
-  "id": "ia-codigos-visuales-autonomia-del-nivel-perceptivo",
-  "tipo": "libro",
-  "titulo": "Códigos Visuales ( Autonomía Del Nivel Perceptivo)",
-  "url": "https://archive.org/details/codigos-visuales-autonomia-del-nivel-perceptivo",
-  "motivo": "La IA le dio 2/10: no encaja en la biblioteca",
-  "probados": [
-   "200 application/pdf https://archive.org/download/9786287548923/9786287548923.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-08",
-  "id": "ia-un-universo-viviente",
-  "tipo": "libro",
-  "titulo": "Un Universo Viviente",
-  "url": "https://archive.org/details/un-universo-viviente",
-  "motivo": "La IA le dio 6/10: no encaja en la biblioteca",
-  "probados": [
-   "200 application/pdf https://archive.org/download/9786287548923/9786287548923.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-08",
-  "id": "ia-el-hombre-creo-a-dios-al-septimo-dia",
-  "tipo": "libro",
-  "titulo": "El Hombre Creó A Dios Al Séptimo Día",
-  "url": "https://archive.org/details/el-hombre-creo-a-dios-al-septimo-dia",
-  "motivo": "La IA le dio 1/10: no encaja en la biblioteca",
-  "probados": [
-   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13629795.1/PMC13629795.1.pdf",
-   "200 application/pdf https://aurzane.com/biblioteca/recientes/pdf/oa-W7155195927.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-08",
-  "id": "ia-cuba_20260914",
-  "tipo": "libro",
-  "titulo": "CUBA",
-  "url": "https://archive.org/details/cuba_20260914",
-  "motivo": "La IA le dio 1/10: no encaja en la biblioteca",
-  "probados": [
-   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13629795.1/PMC13629795.1.pdf",
-   "200 application/pdf https://aurzane.com/biblioteca/recientes/pdf/oa-W7155195927.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-08",
-  "id": "ia-el-caso-del-exa-men-extraviado_202610",
-  "tipo": "libro",
-  "titulo": "EL CASO DEL EXÁ MEN EXTRAVIADO",
-  "url": "https://archive.org/details/el-caso-del-exa-men-extraviado_202610",
-  "motivo": "La IA le dio 2/10: no encaja en la biblioteca",
-  "probados": [
-   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13629795.1/PMC13629795.1.pdf",
-   "200 application/pdf https://aurzane.com/biblioteca/recientes/pdf/oa-W7155195927.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-08",
-  "id": "ia-La-Tesis-fantasma_202610",
-  "tipo": "libro",
-  "titulo": "LA TESIS FANTASMA",
-  "url": "https://archive.org/details/La-Tesis-fantasma_202610",
-  "motivo": "La IA le dio 2/10: no encaja en la biblioteca",
-  "probados": [
-   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13629795.1/PMC13629795.1.pdf",
-   "200 application/pdf https://aurzane.com/biblioteca/recientes/pdf/oa-W7155195927.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-08",
-  "id": "cita-f685f077ef",
-  "tipo": "cita",
-  "titulo": "En ocasiones, el testigo se identifica emocionalmente con el sufrimiento del otro, reduciendo su tolerancia a la agresión.",
-  "url": "https://aurzane.com/biblioteca/recientes/oa-W7155195927/",
-  "motivo": "Gemini le dio 4/10: no tiene fuerza suficiente para redes"
- },
- {
-  "fecha": "2026-11-08",
-  "id": "ia-los-secretos-del-club-del-debate-rangel_202610",
-  "tipo": "libro",
-  "titulo": "LOS SECRETOS DEL CLUB DEL DEBATE",
-  "url": "https://archive.org/details/los-secretos-del-club-del-debate-rangel_202610",
-  "motivo": "La IA le dio 6/10: no encaja en la biblioteca",
-  "probados": [
-   "200 application/pdf https://archive.org/download/el-laboratorio-de-las-mentiras/EL%20LABORATORIO%20DE%20LAS%20MENTIRAS.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-08",
-  "id": "ia-justicia-o-venganza_202610",
-  "tipo": "libro",
-  "titulo": "JUSTICIA O VENGANZA",
-  "url": "https://archive.org/details/justicia-o-venganza_202610",
-  "motivo": "La IA le dio 3/10: no encaja en la biblioteca",
-  "probados": [
-   "200 application/pdf https://archive.org/download/lo-que-queda_202610-rangel/LO%20QUE%20QUEDA.pdf"
   ]
  }
 ]
