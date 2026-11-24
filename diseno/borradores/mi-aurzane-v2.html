@@ -448,18 +448,19 @@ body:has(#vistaPanel:not(.panel-hide)){background:var(--bg)!important;background
 #vistaPanel .dash-sec-head h2{font-family:'Bodoni Moda',Georgia,serif;font-size:1.6rem;font-weight:600}
 #vistaPanel .dash-sec-head a{color:var(--m-forest)}
 /* cursos: tarjetas con foto arriba, en rejilla */
-#vistaPanel .cc-lista{grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+#vistaPanel .cc-lista{grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
 #vistaPanel .curso-card{grid-template-columns:1fr;border:1px solid var(--border)!important;border-image:none!important;border-radius:var(--m-r);box-shadow:0 14px 34px -26px rgba(18,37,31,.5)}
-#vistaPanel .cc-media img{min-height:0;aspect-ratio:16/9;height:auto}
+#vistaPanel .cc-media{aspect-ratio:16/9;overflow:hidden}#vistaPanel .cc-media img{min-height:0;width:100%;height:100%;object-fit:cover}
 #vistaPanel .cc-datos li{background:var(--surface-2)!important;border-radius:12px}
 #vistaPanel .cc-datos li b{color:var(--m-forest)!important;font-size:1.25rem}
 #vistaPanel .curso-card .btn,#vistaPanel #ccContinuar{background:var(--m-forest)!important;border-color:var(--m-forest)!important;color:#F6F5F0!important}
 #vistaPanel .curso-card .btn-ghost,#vistaPanel .curso-card .btn+.btn{background:transparent!important;color:var(--text)!important;border-color:var(--border)!important}
 #vistaPanel[data-vista=inicio] .cc-lista>:nth-child(n+3){display:none}
-#vistaPanel .az-ver-todo{display:none;margin:14px 0 0;font-weight:600}
+#vistaPanel .az-ver-todo{display:none;margin:16px 0 0;font-weight:600;color:var(--m-forest);text-decoration:none;border:1px solid var(--border);border-radius:999px;padding:9px 18px}#vistaPanel .az-ver-todo:hover{background:var(--surface-2)}
+#vistaPanel .mundos-mini-grid{grid-template-columns:repeat(auto-fit,minmax(130px,1fr))!important}
 #vistaPanel[data-vista=inicio] .az-ver-todo{display:inline-block}
 /* tarjetas de la cuenta: una sola paleta, foto arriba */
-#vistaPanel .grid-cuenta{grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px;padding-bottom:10px;margin-top:20px}
+#vistaPanel .grid-cuenta{grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;padding-bottom:10px;margin-top:20px}
 #vistaPanel .cuenta-card[id]{--v:var(--m-forest);background:var(--surface)!important;border:1px solid var(--border)!important;border-radius:var(--m-r);box-shadow:0 14px 34px -26px rgba(18,37,31,.5)}
 #vistaPanel .cuenta-card[id]::before{display:none}
 #vistaPanel .cuenta-card[id] .card-cover{height:150px}
