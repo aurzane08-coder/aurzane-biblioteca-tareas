@@ -144,7 +144,7 @@
   0
  ],
  "tipo:libro": [
-  175,
+  185,
   9
  ],
  "Gambling Behavior and Treatments": [
@@ -312,7 +312,7 @@
   0
  ],
  "archive:psicologia": [
-  145,
+  155,
   0
  ],
  "ed:The Open University": [
@@ -589,7 +589,7 @@
  ],
  "ed:Universitat Oberta de Catalunya (UOC)": [
   8,
-  6
+  8
  ],
  "ed:Universidad de Buenos Aires. Facultad de Filosofía y Letras. Departamento de Ciencias de la Educación": [
   0,
@@ -612,12 +612,12 @@
   1
  ],
  "ed:OPS": [
-  9,
+  10,
   5
  ],
  "ed:Editorial UOC": [
-  32,
-  6
+  37,
+  8
  ],
  "ed:Universidad Andina Simón Bolívar, Sede Ecuador; Corporación Editora Nacional": [
   0,
@@ -684,8 +684,8 @@
   1
  ],
  "ed:Quito, EC: Universidad Andina Simón Bolívar, Sede Ecuador": [
-  3,
-  4
+  4,
+  6
  ],
  "ed:Red Universitaria de Investigación Innovación Educativa (REUNI+D)": [
   0,
@@ -717,7 +717,7 @@
  ],
  "ed:Dykinson": [
   1,
-  4
+  5
  ],
  "ed:UOC": [
   4,
@@ -733,7 +733,7 @@
  ],
  "ed:Edicions de la Universitat de Barcelona": [
   1,
-  3
+  4
  ],
  "ed:Egregius": [
   1,
@@ -800,7 +800,7 @@
   1
  ],
  "ed:Universitat Jaume I": [
-  0,
+  1,
   1
  ],
  "ed:Universidad Nacional de Córdoba. Facultad de Odontología": [
@@ -994,5 +994,29 @@
  "ed:Zacatecas, MX: Taberna Libraria": [
   0,
   1
+ ],
+ "ed:Asociación didáctica Andalucía": [
+  0,
+  1
+ ],
+ "ed:Universidad de Cantabria": [
+  0,
+  1
+ ],
+ "ed:Quito: Universidad Andina Simón Bolívar, Sede Ecuador. Área de Salud; Clínica Ambiental; UDAPT; Centrale Sanitaire Suisse Romande": [
+  0,
+  1
+ ],
+ "ed:IIPSI - Instituto de Investigaciones Psicológicas (UNC - Conicet)": [
+  1,
+  0
+ ],
+ "ed:Pontificia Universidad Católica del Perú. Departamento de Ciencias Sociales": [
+  0,
+  1
+ ],
+ "ed:Junta de Andalucía. Consejería para la Igualdad y Bienestar Social": [
+  1,
+  0
  ]
 }

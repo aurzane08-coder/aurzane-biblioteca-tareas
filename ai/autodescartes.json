@@ -1,6 +1,138 @@
 [
  {
   "fecha": "2026-11-24",
+  "id": "ia-aurzane-bib-aprendizaje-invisible-hacia-nueva-ecologia-educacion",
+  "tipo": "libro",
+  "titulo": "Aprendizaje invisible: hacia una nueva ecología de la educación",
+  "url": "https://archive.org/details/aurzane-bib-aprendizaje-invisible-hacia-nueva-ecologia-educacion",
+  "motivo": "La IA le dio 4/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-autismo-ecuador-mirada-desde-neurodiversidad/autismo-ecuador-mirada-d"
+  ]
+ },
+ {
+  "fecha": "2026-11-24",
+  "id": "ia-aurzane-bib-engagement-laboral-docente-su-incidencia-estudiante",
+  "tipo": "libro",
+  "titulo": "El engagement laboral del docente y su incidencia en el estudiante: un estudio de caso",
+  "url": "https://archive.org/details/aurzane-bib-engagement-laboral-docente-su-incidencia-estudiante",
+  "motivo": "La IA le dio 5/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-autismo-ecuador-mirada-desde-neurodiversidad/autismo-ecuador-mirada-d"
+  ]
+ },
+ {
+  "fecha": "2026-11-24",
+  "id": "ia-aurzane-bib-representacion-lo-diferente-autismo-narativa-mediatica",
+  "tipo": "libro",
+  "titulo": "La representación de lo diferente: el autismo en la narativa mediática",
+  "url": "https://archive.org/details/aurzane-bib-representacion-lo-diferente-autismo-narativa-mediatica",
+  "motivo": "La IA le dio 5/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-autismo-ecuador-mirada-desde-neurodiversidad/autismo-ecuador-mirada-d"
+  ]
+ },
+ {
+  "fecha": "2026-11-24",
+  "id": "ia-aurzane-bib-como-eliges-tu-profesion-motivaciones-factores",
+  "tipo": "libro",
+  "titulo": "¿ ... y como eliges tu profesión? : motivaciones y factores que influyen en la elección de una carrera profesional en estudiantes de Estudios Generales Letras y",
+  "url": "https://archive.org/details/aurzane-bib-como-eliges-tu-profesion-motivaciones-factores",
+  "motivo": "La IA le dio 6/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-deontologia-etica-legislacion-profesional-psicologia/deontologia-etic"
+  ]
+ },
+ {
+  "fecha": "2026-11-24",
+  "id": "ia-aurzane-bib-tiempos-petroleo-salud-psicosocial-ninos-ninas",
+  "tipo": "libro",
+  "titulo": "En tiempos de petróleo: salud psicosocial en niños, niñas y adolescentes de las comunidades en las que operó Texaco",
+  "url": "https://archive.org/details/aurzane-bib-tiempos-petroleo-salud-psicosocial-ninos-ninas",
+  "motivo": "La IA le dio 6/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-normas-mundiales-mejorar-calidad-servicios-salud/normas-mundiales-mej"
+  ]
+ },
+ {
+  "fecha": "2026-11-24",
+  "id": "ia-aurzane-bib-atencion-precoz-crianza-trabajo-familias-febrero",
+  "tipo": "libro",
+  "titulo": "Atención precoz, crianza y trabajo con familias, febrero 2020",
+  "url": "https://archive.org/details/aurzane-bib-atencion-precoz-crianza-trabajo-familias-febrero",
+  "motivo": "La IA le dio 4/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-normas-mundiales-mejorar-calidad-servicios-salud/normas-mundiales-mej"
+  ]
+ },
+ {
+  "fecha": "2026-11-24",
+  "id": "ia-aurzane-bib-terapias-cine-50-peliculas-basicas-torno",
+  "tipo": "libro",
+  "titulo": "Terapias de cine. 50 películas básicas en torno a la medicina",
+  "url": "https://archive.org/details/aurzane-bib-terapias-cine-50-peliculas-basicas-torno",
+  "motivo": "La IA le dio 3/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-dificultades-lenguaje-trastornos-desarrollo-vol-iii/dificultades-leng"
+  ]
+ },
+ {
+  "fecha": "2026-11-24",
+  "id": "ia-aurzane-bib-economia-mercados-conducta",
+  "tipo": "libro",
+  "titulo": "Economía, mercados y conducta",
+  "url": "https://archive.org/details/aurzane-bib-economia-mercados-conducta",
+  "motivo": "La IA le dio 2/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-psicometria-esp/psicometria-esp.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-24",
+  "id": "ia-aurzane-bib-ciberacoso-comportamiento-suicida-poblacion-adolescente-revi",
+  "tipo": "libro",
+  "titulo": "Ciberacoso y comportamiento suicida en la población adolescente: una revisión bibliográfica",
+  "url": "https://archive.org/details/aurzane-bib-ciberacoso-comportamiento-suicida-poblacion-adolescente-revi",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 38 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-ciberacoso-comportamiento-suicida-poblacion-adolescente-revi/ciberaco"
+  ]
+ },
+ {
+  "fecha": "2026-11-24",
+  "id": "ia-aurzane-bib-herramientas-recursos-digitales-como-apoyo-familias",
+  "tipo": "libro",
+  "titulo": "Herramientas y recursos digitales como apoyo a las familias del alumnado con TEA",
+  "url": "https://archive.org/details/aurzane-bib-herramientas-recursos-digitales-como-apoyo-familias",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 19 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-herramientas-recursos-digitales-como-apoyo-familias/herramientas-recu"
+  ]
+ },
+ {
+  "fecha": "2026-11-24",
+  "id": "ia-aurzane-bib-actividad-fisica-su-relacion-acoso-escolar",
+  "tipo": "libro",
+  "titulo": "La actividad física y su relación con el acoso escolar",
+  "url": "https://archive.org/details/aurzane-bib-actividad-fisica-su-relacion-acoso-escolar",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 12 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-actividad-fisica-su-relacion-acoso-escolar/actividad-fisica-su-relaci"
+  ]
+ },
+ {
+  "fecha": "2026-11-24",
+  "id": "ia-aurzane-bib-promocion-salud-infancia-adolescencia-febrero-2020",
+  "tipo": "libro",
+  "titulo": "Promoción de la salud en la infancia y la adolescencia, febrero 2020",
+  "url": "https://archive.org/details/aurzane-bib-promocion-salud-infancia-adolescencia-febrero-2020",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 44 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-promocion-salud-infancia-adolescencia-febrero-2020/promocion-salud-in"
+  ]
+ },
+ {
+  "fecha": "2026-11-24",
   "id": "ia-aurzane-bib-incomodidad-profesion-docente-estudio-profesores-zacatecas",
   "tipo": "libro",
   "titulo": "La incomodidad en la profesión docente: un estudio con profesores de Zacatecas (México) y Cuenca (Ecuador)",
@@ -3106,132 +3238,6 @@
   "motivo": "La IA le dio 5/10: no encaja en la biblioteca",
   "probados": [
    "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13750918.1/PMC13750918.1.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-12",
-  "id": "pmc-PMC13508530",
-  "tipo": "estudio",
-  "titulo": "Distinguishing prolonged grief and mental well-being after homicidal loss: a longitudinal factor analytic study in the context of a criminal trial",
-  "url": "https://europepmc.org/article/PMC/PMC13508530",
-  "motivo": "La IA le dio 2/10: no encaja en la biblioteca",
-  "probados": [
-   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13508530.1/PMC13508530.1.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-11",
-  "id": "ia-la-casa-de-los-siete-pecados-capitales_202611",
-  "tipo": "libro",
-  "titulo": "LA CASA DE LOS SIETE PECADOS CAPITALES",
-  "url": "https://archive.org/details/la-casa-de-los-siete-pecados-capitales_202611",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": []
- },
- {
-  "fecha": "2026-11-11",
-  "id": "ia-Tetrodotoxina-para-el-corazo-n",
-  "tipo": "libro",
-  "titulo": "TETRODOTOXINA PARA EL CORAZÓ N",
-  "url": "https://archive.org/details/Tetrodotoxina-para-el-corazo-n",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": []
- },
- {
-  "fecha": "2026-11-11",
-  "id": "ia-Me-los-Contaron-de-noche_202611",
-  "tipo": "libro",
-  "titulo": "ME LOS CONTARON DE NOCHE",
-  "url": "https://archive.org/details/Me-los-Contaron-de-noche_202611",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": []
- },
- {
-  "fecha": "2026-11-11",
-  "id": "ia-Knismolagnia",
-  "tipo": "libro",
-  "titulo": "Knismolagnia",
-  "url": "https://archive.org/details/Knismolagnia",
-  "motivo": "Dice ser un libro pero el PDF solo tiene 2 páginas (es un capítulo, artículo o resumen)",
-  "probados": [
-   "200 application/pdf https://archive.org/download/Knismolagnia/Knismolagnia.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-11",
-  "id": "ia-Capnolagnia",
-  "tipo": "libro",
-  "titulo": "Capnolagnia",
-  "url": "https://archive.org/details/Capnolagnia",
-  "motivo": "Dice ser un libro pero el PDF solo tiene 3 páginas (es un capítulo, artículo o resumen)",
-  "probados": [
-   "200 application/pdf https://archive.org/download/Capnolagnia/Capnolagnia.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-11",
-  "id": "pmc-PMC13600278",
-  "tipo": "estudio",
-  "titulo": "Does exposure to potentially traumatic events moderate the longitudinal relationship between mental health and problematic media use? Moderated multiple mediati",
-  "url": "https://europepmc.org/article/PMC/PMC13600278",
-  "motivo": "La IA le dio 4/10: no encaja en la biblioteca",
-  "probados": [
-   "200 application/pdf https://archive.org/download/learn-all-about-life-a-comprehensive-education-in-life_202611/Learn_All_About_Lif"
-  ]
- },
- {
-  "fecha": "2026-11-11",
-  "id": "ia-stepanenko-guide-25-saas-pricing-en",
-  "tipo": "libro",
-  "titulo": "SaaS Pricing: The Psychology of Price and Monetization: How not to underprice, how not to lose customers, and how to find the optimal price point",
-  "url": "https://archive.org/details/stepanenko-guide-25-saas-pricing-en",
-  "motivo": "Dice ser un libro pero el PDF solo tiene 12 páginas (es un capítulo, artículo o resumen)",
-  "probados": [
-   "200 application/pdf https://archive.org/download/stepanenko-guide-25-saas-pricing-en/25-saas-pricing.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-10",
-  "id": "ia-command-responsibility-beyond-hierarchy-sergio-pommier-gallo-ph-d",
-  "tipo": "libro",
-  "titulo": "Command Responsibility Beyond Hierarchy: Organizational Knowledge, Effective Control, and the Evidentiary Reconstruction of Superior Omission in International C",
-  "url": "https://archive.org/details/command-responsibility-beyond-hierarchy-sergio-pommier-gallo-ph-d",
-  "motivo": "Dice ser un libro pero el PDF solo tiene 30 páginas (es un capítulo, artículo o resumen)",
-  "probados": [
-   "200 application/pdf https://archive.org/download/command-responsibility-beyond-hierarchy-sergio-pommier-gallo-ph-d/Command%20Respo"
-  ]
- },
- {
-  "fecha": "2026-11-09",
-  "id": "ia-5.-barrism-making-sense-of-how-we-make-sense",
-  "tipo": "libro",
-  "titulo": "5. BARRISM Making Sense Of How We Make Sense",
-  "url": "https://archive.org/details/5.-barrism-making-sense-of-how-we-make-sense",
-  "motivo": "La IA le dio 4/10: no encaja en la biblioteca",
-  "probados": [
-   "200 application/pdf https://archive.org/download/5.-barrism-making-sense-of-how-we-make-sense/5.%20BARRISM%20Making%20Sense%20of%2"
-  ]
- },
- {
-  "fecha": "2026-11-09",
-  "id": "pmc-PMC13736625",
-  "tipo": "estudio",
-  "titulo": "Managing generative-AI health information resilience: human resource capabilities and multilevel public health governance",
-  "url": "https://europepmc.org/article/PMC/PMC13736625",
-  "motivo": "La IA le dio 3/10: no encaja en la biblioteca",
-  "probados": [
-   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13729381.1/PMC13729381.1.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-09",
-  "id": "pmc-PMC13736238",
-  "tipo": "estudio",
-  "titulo": "Functional resilience strategies for environmental destabilization of antagonistic yeast metabolite-mediated postharvest biocontrol management",
-  "url": "https://europepmc.org/article/PMC/PMC13736238",
-  "motivo": "La IA le dio 1/10: no encaja en la biblioteca",
-  "probados": [
-   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13738223.1/PMC13738223.1.pdf"
   ]
  }
 ]
