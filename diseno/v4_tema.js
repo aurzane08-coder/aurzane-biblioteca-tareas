@@ -363,3 +363,39 @@
   }
   if (d.readyState === 'loading') d.addEventListener('DOMContentLoaded', ir); else ir();
 })(document, window);
+
+/* Portal de OVP (24/11/2026): portada ancha con foto, foto en cada evaluación y franja de foto en la cabecera de cada sección.
+   Fotos reales del banco de AURZANE; la portada usa la misma foto de estudiantes que la portada pública de OVP. */
+(function (d, w) {
+  if (!/(^|\.)ovp\.aurzane\.com$/.test(location.hostname)) return;
+  var PORTADA = 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=2000&q=70&auto=format&fit=crop';
+  var TEMA = { chaside: 'orientación vocacional carrera', holland: 'graduación carrera universidad', af5: 'autoestima confianza',
+               'hábitos': 'estudiar hábitos aula', apt: 'concentración atención memoria' };
+  var SECC = { 'page-tests': 'estudiante universidad estudiando', 'page-informe': 'lectura libro estudiar', 'page-estudiar': 'universidad campus facultad', 'page-cuenta': 'estudiante aula colegio' };
+  function tema(txt) { txt = (txt || '').toLowerCase(); for (var k in TEMA) if (txt.indexOf(k) >= 0) return TEMA[k]; return 'orientación vocacional estudiantes'; }
+  function foto(t, ancho) { return w.AurzaneBanco ? w.AurzaneBanco.foto('nexus', t, ancho || 640) : null; }
+  function img(el, u, ancho, alto) {
+    var im = d.createElement('img'); im.className = 'v4-foto'; im.src = u; im.alt = ''; im.loading = 'lazy'; im.width = ancho; im.height = alto;
+    el.insertBefore(im, el.firstChild); el.setAttribute('data-v4f', '1');
+  }
+  function poner() {
+    var hero = d.querySelector('#page-resumen .ov-hero');
+    if (hero && !hero.classList.contains('v4-portada')) { hero.style.setProperty('--v4-portada', 'url("' + PORTADA + '")'); hero.classList.add('v4-portada'); }
+    [].forEach.call(d.querySelectorAll('.test-card:not([data-v4f])'), function (c) {
+      var u = foto(tema((c.querySelector('h3') || c).textContent) + ' ' + (c.querySelector('h3') || c).textContent); if (u) img(c, u, 640, 320);
+    });
+    [].forEach.call(d.querySelectorAll('#evalsProgressList .ov-tile:not(.ov-add):not([data-v4f])'), function (c) {
+      var n = (c.querySelector('.ov-tile-n') || c).textContent; var u = foto(tema(n) + ' ' + n); if (u) img(c, u, 640, 360);
+    });
+    Object.keys(SECC).forEach(function (id) {
+      var h = d.querySelector('#' + id + '>.page-head');
+      if (h && !h.classList.contains('v4-franja')) { var u = foto(SECC[id], 1600); if (u) { h.style.setProperty('--v4-portada', 'url("' + u + '")'); h.classList.add('v4-franja'); } }
+    });
+  }
+  function iniciar() {
+    if (!d.getElementById('page-resumen')) return;   // solo el portal del cliente
+    var ir = function () { poner(); if (w.MutationObserver) new MutationObserver(poner).observe(d.getElementById('shell') || d.body, { childList: true, subtree: true }); };
+    if (w.AurzaneBanco) w.AurzaneBanco.listo(ir); else ir();
+  }
+  if (d.readyState === 'loading') d.addEventListener('DOMContentLoaded', iniciar); else iniciar();
+})(document, window);

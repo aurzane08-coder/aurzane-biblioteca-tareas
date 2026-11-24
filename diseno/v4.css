@@ -734,3 +734,33 @@ html.az-v4:not([data-tema="oscuro"]) #page-ai{--ai-ok:#2D6A4F;--ai-warn:#8C7A52;
 html.az-v4:not([data-tema="oscuro"]) .ai-m{background:#F6F5F0!important;border-color:rgba(37,39,36,.12)!important}
 /* Ingresos: las barras de clics iban pegadas al borde de su tarjeta */
 .ig-barras{padding:6px 18px 14px}
+
+/* =====================================================================================================
+   Portal de OVP con fotos (24/11/2026): portada ancha con foto real bajo velo verde, foto en cada evaluación
+   y franja de foto en la cabecera de cada sección. Las fotos las pone v4_tema.js desde el banco de fotos reales.
+   ===================================================================================================== */
+#page-resumen .ov-hero.v4-portada{position:relative;overflow:hidden;min-height:300px;padding:48px 44px!important;border:0!important;border-radius:20px;
+  background:linear-gradient(90deg,rgba(18,37,31,.96) 0%,rgba(18,37,31,.86) 48%,rgba(18,37,31,.42) 100%),var(--v4-portada) center/cover no-repeat #12251F!important;color:#F6F5F0}
+#page-resumen .ov-hero.v4-portada .ov-hola{color:#D9CDB2!important}
+#page-resumen .ov-hero.v4-portada .ov-titulo{color:#F6F5F0!important;font-size:clamp(1.8rem,3.4vw,2.6rem)}
+#page-resumen .ov-hero.v4-portada .ov-texto{color:#DDE2DC!important}
+#page-resumen .ov-hero.v4-portada .btn-primary{background:#D9CDB2!important;color:#12251F!important;border-color:#D9CDB2!important}
+#page-resumen .ov-hero.v4-portada .btn-ghost{color:#F6F5F0!important;border-color:rgba(246,245,240,.5)!important;background:rgba(18,37,31,.25)!important}
+#page-resumen .ov-hero.v4-portada .ov-anillo{background:rgba(246,245,240,.94);border-radius:18px;padding:18px 20px;color:#252724}
+#page-resumen .ov-hero.v4-portada .ov-anillo p{color:#3d403b!important}
+#page-resumen .ov-hero.v4-portada .ov-anillo b{color:#183D32!important}
+@media(max-width:760px){#page-resumen .ov-hero.v4-portada{padding:30px 20px!important;min-height:0;
+  background:linear-gradient(180deg,rgba(18,37,31,.82),rgba(18,37,31,.96)),var(--v4-portada) center/cover no-repeat #12251F!important}}
+/* foto arriba de cada evaluación (página Evaluaciones) y de cada mosaico de Inicio */
+.test-card[data-v4f]{padding-top:0!important;overflow:hidden}
+.test-card img.v4-foto{display:block;width:calc(100% + 2 * var(--sp-6,24px));max-width:none;margin:0 calc(-1 * var(--sp-6,24px)) 16px;aspect-ratio:16/8;object-fit:cover;background:#183D32}
+.ov-tile[data-v4f]{overflow:hidden;padding:0 16px 16px!important}
+.ov-tile img.v4-foto{display:block;width:calc(100% + 32px);max-width:none;margin:0 -16px 10px;aspect-ratio:16/9;object-fit:cover;background:#183D32}
+@media(max-width:760px){.ov-tile[data-v4f]{padding:0 12px 12px!important}.ov-tile img.v4-foto{width:calc(100% + 24px);margin:0 -12px 8px}}
+.ov-tile.hecha img.v4-foto{filter:saturate(.55)}
+/* cabecera de cada sección con franja de foto */
+.page>.page-head.v4-franja{position:relative;overflow:hidden;border-radius:18px;padding:34px 32px;min-height:150px;align-items:flex-end;
+  background:linear-gradient(90deg,rgba(18,37,31,.94),rgba(18,37,31,.7) 60%,rgba(18,37,31,.35)),var(--v4-portada) center/cover no-repeat #12251F}
+.page>.page-head.v4-franja h2{color:#F6F5F0!important}
+.page>.page-head.v4-franja p{color:#DDE2DC!important;max-width:60ch}
+@media(max-width:760px){.page>.page-head.v4-franja{padding:24px 18px;min-height:120px}}
