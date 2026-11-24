@@ -110,5 +110,117 @@
     "No, se presenta en formato de novela con personajes ficcionados y situaciones cotidianas, lo que facilita una lectura ágil y accesible para lectores de muy diversas edades sin perder el trasfondo pedagógico."
    ]
   ]
+ },
+ "ref-cerebro-emocional.html": {
+  "titulo": "El cerebro emocional",
+  "fecha": "2026-11-24",
+  "trata": "Joseph LeDoux examina en esta obra de referencia las bases neurobiológicas de las emociones, tomando el miedo como modelo principal de investigación. El autor explica cómo el cerebro procesa las amenazas mediante circuitos neurológicos evolutivamente conservados, destacando el papel central de la amígdala. A lo largo del texto, se diferencia entre las respuestas emocionales automáticas e inconscientes y la experiencia consciente del sentimiento. LeDoux demuestra que el sistema emocional opera de forma relativamente independiente del pensamiento racional, desmontando visiones cognitivistas tradicionales y ofreciendo un mapa preciso sobre cómo la memoria implícita condiciona nuestras reacciones ante el peligro.",
+  "ideas": [
+   "La amígdala actúa como el centro neurálgico del procesamiento del miedo, activando respuestas de supervivencia antes de que la corteza cerebral perciba conscientemente la amenaza.",
+   "Existen dos vías cerebrales para procesar la información emocional: una rápida e imprecisa a través del tálamo y otra más lenta y detallada a través de la corteza.",
+   "Las emociones automáticas y los sentimientos conscientes son fenómenos distintos, siendo los últimos el resultado de la atención prestada al procesamiento emocional.",
+   "Las memorias emocionales implícitas son duraderas y difíciles de borrar, lo que explica por qué los miedos fóbicos o traumáticos persisten en el tiempo.",
+   "El cerebro no posee un único sistema emocional unificado, sino múltiples circuitos especializados en funciones de supervivencia específicas."
+  ],
+  "para": "Esta obra está dirigida a estudiantes y profesionales de la psicología, las neurociencias y la salud mental que deseen comprender los fundamentos biológicos del afecto. Resulta igualmente útil para lectores curiosos que busquen una divulgación rigurosa sobre cómo se generan el miedo y la ansiedad en el cerebro.",
+  "psico": "Desde la psicología basada en la evidencia, el trabajo de LeDoux proporciona un sustento neurobiológico fundamental para las terapias cognitivo-conductuales y de exposición. Comprender la vía rápida atávica del miedo valida la intervención sobre las respuestas fisiológicas y la reestructuración posterior. Aunque el enfoque del libro es eminentemente neurobiológico y puede reducir la complejidad sociocultural de la emoción, su distinción entre memoria implícita y explícita es clave para abordar trastornos como el estrés postraumático o las fobias, ofreciendo un marco teórico sólido que une el laboratorio con la práctica clínica.",
+  "faq": [
+   [
+    "¿Qué diferencia hay entre la vía rápida y la vía lenta del miedo?",
+    "La vía rápida conecta directamente el tálamo con la amígdala, permitiendo una reacción de defensa inmediata e inconsciente. La vía lenta pasa primero por la corteza cerebral, lo que analiza la amenaza con mayor detalle y permite regular o corregir la respuesta emocional inicial."
+   ],
+   [
+    "¿Por qué es tan difícil borrar las memorias del miedo según LeDoux?",
+    "Las memorias emocionales implícitas grabadas en la amígdala no se eliminan fácilmente; lo que el aprendizaje terapéutico logra es crear nuevos recuerdos explícitos y conexiones corticales que inhiben la respuesta de la amígdala, aunque el rastro original permanezca latente."
+   ],
+   [
+    "¿Cuál es la diferencia entre una emoción y un sentimiento?",
+    "Para LeDoux, la emoción es la respuesta biológica y conductual automática frente a un estímulo significativo, mientras que el sentimiento es la toma de conciencia subjetiva de esa respuesta emocional cuando la mente la procesa a nivel cortical."
+   ]
+  ]
+ },
+ "ref-delirio.html": {
+  "titulo": "Delirio",
+  "fecha": "2026-11-24",
+  "trata": "Delirio narra la historia de Aguilar, un hombre de clase media que, al regresar de un breve viaje de negocios, encuentra a su esposa Agustina inmersa en un brote psicótico desgarrador en la habitación de un hotel. Desesperado por comprender qué ha desencadenado semejante quiebra mental, Aguilar emprende una investigación personal que lo lleva a desentrañar los secretos más oscuros de la familia acomodada de su mujer. A través de múltiples voces narrativas, la obra entrelaza el colapso psíquico individual con la decadencia moral, el narcotráfico y la violencia estructural de la sociedad colombiana de finales del siglo XX.",
+  "ideas": [
+   "La descompensación psicótica no siempre ocurre de forma aislada, sino que suele ser la manifestación de un trauma acumulado y silenciado durante años.",
+   "El papel del cuidador ante un brote desestructurante exige una combinación de empatía, contención emocional y búsqueda activa de respuestas.",
+   "Las dinámicas de ocultamiento y los tabúes familiares actúan como factores estresores que erosionan gravemente la estabilidad emocional de sus miembros.",
+   "Existe un paralelismo directo entre la fragmentación mental del individuo y el caos o la violencia del entorno social que lo rodea.",
+   "El proceso de comprensión del dolor ajeno requiere reconstruir la narrativa vital del paciente más allá de los síntomas visibles."
+  ],
+  "para": "Esta guía está dirigida a estudiantes y profesionales de la salud mental, así como a lectores interesados en comprender la vivencia del brote psicótico desde la perspectiva del entorno cercano. Es especialmente útil para quienes deseen reflexionar sobre la sobrecarga del cuidador y la influencia de los secretos familiares en la estabilidad psicológica.",
+  "psico": "Desde la psicología clínica basada en la evidencia, la novela ilustra con precisión el modelo bio-psico-social de la psicosis. La quiebra de Agustina no se presenta como un fenómeno meramente biológico, sino como el resultado de una vulnerabilidad previa activada por estresores ambientales, secuelas de trauma infantil y secretos sistémicos. La obra enfatiza la importancia de la psicoeducación familiar y la contención del cuidador, aunque pone de manifiesto la tentación habitual de buscar un único desencadenante en lugar de abordar la complejidad multifactorial del trastorno mental grave.",
+  "faq": [
+   [
+    "¿Cómo abordar el acompañamiento a un familiar durante un brote psicótico?",
+    "Lo prioritario es garantizar la seguridad física, mantener la calma y buscar atención médica especializada de urgencia. Evita confrontar directamente las alucinaciones o delirios, validando la vivencia emocional del paciente sin reforzar los contenidos irrestrictamente irreales."
+   ],
+   [
+    "¿Qué impacto tienen los secretos familiares en la salud mental según la obra?",
+    "Los secretos y los tabúes generan dinámicas de comunicación disfuncionales que aumentan el estrés crónico. La falta de validación de la realidad distorsiona el sentido de la identidad de la persona, actuando como un factor de vulnerabilidad psicológica ante eventos estresantes."
+   ],
+   [
+    "¿Es realista la retratación del delirio en la novela de Laura Restrepo?",
+    "Sí, refleja fielmente la desorganización del pensamiento y la pérdida del juicio de realidad características de la psicosis aguda. Además, acierta al mostrar la desorientación y angustia que experimenta el entorno afectivo inmediato al intentar otorgar sentido a la crisis."
+   ]
+  ]
+ },
+ "ref-universo-emociones.html": {
+  "titulo": "Universo de emociones",
+  "fecha": "2026-11-24",
+  "trata": "Esta obra ofrece una representación gráfica y didáctica del mapa afectivo humano, estructurando 307 emociones en diferentes galaxias, constelaciones y cometas según sus afinidades y polaridades. A través de una cuidada integración entre la psicología emocional y el diseño visual, el libro explica la función y la intensidad de cada estado emocional. Su objetivo principal es facilitar la alfabetización emocional, permitiendo al lector nombrar con precisión lo que siente y comprender la interconexión entre emociones primarias, secundarias y complejas. Es una herramienta accesible para explorar cómo se organizan los afectos y cómo influyen en el comportamiento cotidiano.",
+  "ideas": [
+   "Las emociones se organizan en familias o galaxias según su polaridad, intensidad y función adaptativa.",
+   "Nombrar las emociones con precisión es el primer paso indispensable para desarrollar la inteligencia emocional.",
+   "No existen emociones buenas o malas, sino estados afectivos con diferente valencia y nivel de agrado.",
+   "El diseño visual y la metáfora espacial facilitan la comprensión intuitiva de la complejidad del mundo afectivo.",
+   "La conciencia emocional permite autorregular las reacciones y mejorar las relaciones interpersonales."
+  ],
+  "para": "Está dirigido a educadores, profesionales de la psicología y la pedagogía, así como a cualquier persona interesada en comprender sus propios sentimientos. Es un recurso idóneo para trabajar la educación emocional en aulas, consultas terapéuticas o entornos familiares de manera muy intuitiva y visual.",
+  "psico": "Desde la psicología basada en la evidencia, este trabajo destaca por su valor didáctico en el marco de la alfabetización emocional y la terapia cognitivo-conductual. Aunque la metáfora de las galaxias es una clasificación divulgativa y no un modelo neurobiológico estricto, resulta extraordinariamente útil para ampliar el vocabulario emocional de los pacientes. Mejorar la granularidad emocional, es decir, la capacidad de diferenciar estados afectivos específicos, se asocia empíricamente con una mayor capacidad de autorregulación y menor malestar psicológico, convirtiendo a este mapa visual en un excelente recurso psicoeducativo complementario.",
+  "faq": [
+   [
+    "¿Es un libro puramente teórico o una guía práctica?",
+    "Es principalmente una herramienta psicoeducativa y de consulta visual. Combina explicaciones concisas sobre cada emoción con representaciones gráficas que ayudan a identificar y clasificar lo que sentimos en el día a día."
+   ],
+   [
+    "¿Sirve para utilizarlo con niños o adolescentes?",
+    "Sí, resulta muy útil en el contexto educativo e infantil. Al convertir conceptos abstractos en un mapa visual lleno de color y relaciones metafóricas, facilita enormemente que los más jóvenes reconozcan sus estados emocionales."
+   ],
+   [
+    "¿Qué diferencia a este libro de otros manuales de inteligencia emocional?",
+    "Su gran elemento diferenciador es la integrativa metáfora astronómica plasmada en mapas visuales, la cual permite analizar de un vistazo las conexiones, distancias y matices entre más de 300 emociones distintas."
+   ]
+  ]
+ },
+ "ref-tu-cerebro-musica.html": {
+  "titulo": "Tu cerebro y la música",
+  "fecha": "2026-11-24",
+  "trata": "Tu cerebro y la música explora la profunda conexión entre el procesamiento auditivo, la neurociencia cognitiva y la experiencia musical. Daniel Levitin combina su trayectoria como productor musical y neurocientífico para explicar cómo el encéfalo interpreta elementos como el tono, el ritmo, el timbre y la armonía. A lo largo de la obra, se detalla la forma en que la música activa estructuras cerebrales vinculadas a la memoria, la emoción y el sistema de recompensa. El autor analiza tanto el desarrollo evolutivo de nuestra capacidad musical como los mecanismos neurobiológicos que hacen que una canción nos conmueva, evoque recuerdos olvidados o modifique nuestro estado de ánimo.",
+  "ideas": [
+   "La percepción musical involucra redes cerebrales complejas que conectan la audición con la emoción, el movimiento y la memoria.",
+   "La preferencia por ciertos estilos musicales se consolida principalmente durante la adolescencia a través de procesos neurobiológicos y sociales.",
+   "El cerebro utiliza esquemas y expectativas para anticipar patrones musicales, generando placer cuando estas expectativas se confirman o se rompen sutilmente.",
+   "La capacidad humana para procesar e interpretar la música precede a la aparición del lenguaje articulado en la historia evolutiva.",
+   "El entrenamiento musical modifica físicamente la estructura cerebral, fortaleciendo conexiones entre hemisferios y mejorando la plasticidad neuronal."
+  ],
+  "para": "Este libro está dirigido a estudiantes de psicología, neurocientíficos, músicos y cualquier persona curiosa por entender el impacto de la música en la mente. Es perfecto para quienes buscan una divulgación rigurosa sobre cómo el cerebro procesa el arte y las emociones sin necesidad de tener amplios conocimientos previos en neurobiología.",
+  "psico": "Desde la psicología basada en la evidencia, la obra destaca por fundamentar de forma rigurosa la neuroanatomía del procesamiento musical, alejándose de especulaciones pseudocientíficas sobre la musicoterapia. Aunque la neuroimagen ha avanzado significativamente desde su publicación, la tesis principal sigue siendo válida: la música no es un mero adorno evolutivo, sino una herramienta fundamental para la regulación emocional y la cohesión social. No obstante, desde la clínica, conviene recordar que la respuesta emocional a la música es altamente idiosincrásica y depende enormemente del contexto biográfico e individual de cada paciente.",
+  "faq": [
+   [
+    "¿Por qué ciertas canciones provocan una fuerte respuesta emocional o escalofríos?",
+    "La música activa el sistema dopaminérgico de recompensa cerebral. Al anticipar o experimentar cambios inesperados en la estructura de una canción, el cerebro libera dopamina, lo que genera sensaciones placenteras intensas y respuestas fisiológicas como el erizamiento cutáneo o el aumento del ritmo cardíaco."
+   ],
+   [
+    "¿Es necesario tener conocimientos musicales para comprender el libro?",
+    "No es necesario. Aunque el autor emplea conceptos de teoría musical como el timbre o el tono, los explica de forma accesible y los ilustra con ejemplos de la cultura popular contemporánea para que cualquier lector pueda comprender la base neurocientífica sin dificultades."
+   ],
+   [
+    "¿Qué aporta este libro a la psicología clínica actual?",
+    "Aporta una base neurobiológica sólida para comprender cómo los estímulos auditivos influyen en la memoria autobiográfica y en la regulación del afecto, ofreciendo a los profesionales valiosas intuiciones sobre la aplicación de la música en procesos de rehabilitación cognitiva y apoyo emocional."
+   ]
+  ]
  }
 }
