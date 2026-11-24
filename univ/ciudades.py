@@ -53,7 +53,7 @@ else: print('::warning::Banco Mundial sin datos suficientes; se mantiene el dato
 
 
 def vigente(x):
-    try: return (HOY - datetime.date.fromisoformat(x.get('fecha', '2000-01-01'))).days < 120
+    try: return (HOY - datetime.date.fromisoformat(x.get('fecha', '2000-01-01'))).days < (120 if x.get('q') else 7)   # sin encontrar: se reintenta a la semana
     except Exception: return False
 
 
@@ -119,7 +119,7 @@ def resumen(lengua, titulo):
 pend = {}
 for iso, nombre in paginas:
     x = info.get(iso, {}).get(norm(nombre))
-    if not (x and vigente(x) and (x.get('q') or x.get('fecha') != '2026-11-24')): pend.setdefault(iso, []).append(nombre)
+    if not (x and vigente(x) and (x.get('q') or x.get('fecha') != '2026-11-24')): pend.setdefault(iso, []).append(nombre)   # (hoy se repiten las vacías del primer intento fallido)
 n = 0
 for iso, nombres in pend.items():
     pais = info.setdefault(iso, {})
