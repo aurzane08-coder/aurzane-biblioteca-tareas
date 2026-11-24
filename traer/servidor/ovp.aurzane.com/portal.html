@@ -1136,6 +1136,7 @@ img{max-width:100%;display:block;}
     const aElegir = key === 'plan';
     if(aElegir || !document.getElementById('page-'+key)) key = aElegir ? 'tests' : 'resumen';
     if(key === 'estudiar') pintarEstudiar();
+    if(key === 'informe' && document.getElementById('descargarPdfBtn')) marcarInforme('visto');   // solo cuando de verdad abre «Mi informe» y ya hay informe
     document.querySelectorAll('.nav-item').forEach(i=>i.classList.toggle('active', i.dataset.page===key));
     document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active', p.id === 'page-'+key));
     const bcCur = document.getElementById('bcCurrent');
@@ -1893,6 +1894,11 @@ img{max-width:100%;display:block;}
 
   const ICONO_PDF = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/><path d="M12 12v6M9 15l3 3 3-3"/></svg>';
 
+  var informeVistoMarcado = false;
+  function marcarInforme(tipo){
+    if(tipo === 'visto'){ if(informeVistoMarcado) return; informeVistoMarcado = true; }
+    try { sb.rpc('ovp_marcar_informe', { p_tipo: tipo }).then(({ error }) => { if(error) console.warn('ovp_marcar_informe:', error.message); }); } catch(e){}
+  }
   function renderInformePage(cliente){
     const { activos, pendientes, completados } = getEvalStats(cliente);
     const wrap = document.getElementById('reportStateWrap');
@@ -1933,6 +1939,9 @@ img{max-width:100%;display:block;}
       </div>
     `;
     OVPExport.conectarBotones(document.getElementById('descargarPdfBtn'), document.getElementById('descargarWordBtn'));
+    // Registro de uso (24/11/2026): cuándo abrió su informe y cuántas veces lo descargó. Solo fecha y número, en su propia ficha.
+    document.getElementById('descargarPdfBtn').addEventListener('click', ()=>marcarInforme('pdf'));
+    document.getElementById('descargarWordBtn').addEventListener('click', ()=>marcarInforme('word'));
 
     const clave = incluidos.join(',') + '|' + (cliente.membrete_id || '') + '|' + (cliente.profesional_id || '');
     informeRenderizado = clave;
