@@ -6,6 +6,8 @@ on:
   push:
     paths: ['univ/idiomas.py', '.github/workflows/univ-idiomas.yml']
   workflow_dispatch:
+    inputs:
+      minutos: {description: 'Minutos de trabajo', default: '300'}
 permissions:
   contents: write
   actions: write
@@ -18,7 +20,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - id: run
-        env: {MINUTOS: '300'}
+        env: {MINUTOS: "${{ github.event.inputs.minutos || '300' }}"}
         run: python3 -u univ/idiomas.py
       - name: Guardar
         if: always()
