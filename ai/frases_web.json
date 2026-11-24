@@ -5945,5 +5945,17 @@
   "recogida": "2026-11-23",
   "ok": true,
   "publicada": "2026-11-23"
+ },
+ {
+  "id": "fw-6b1b1fad29",
+  "texto": "Donde hay niños, existe la Edad de Oro.",
+  "autor": "Novalis",
+  "vida": "1772-1801",
+  "descripcion": "Friedrich von Hardenberg. Poeta y filósofo alemán.",
+  "tema": "infancia",
+  "fuente": "Proverbia.net",
+  "url_fuente": "https://proverbia.net/frase-del-dia",
+  "recogida": "2026-11-24",
+  "ok": true
  }
 ]
