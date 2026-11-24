@@ -15,21 +15,14 @@ jobs:
           mkdir -p /tmp/s && cd /tmp/s
           curl -sL -o plantillas.zip https://creatives.goaffpro.com/7193881/qaovalaa-simbye-social-templates.zip
           ls -la; unzip -o -q plantillas.zip -d plantillas; find plantillas -type f | head -60
+          pip install -q pillow
           python3 - <<'P'
-          import os, glob
+          import os
           from PIL import Image
-          fs = [f for f in glob.glob('/tmp/s/plantillas/**/*', recursive=True) if f.lower().endswith(('.png', '.jpg', '.jpeg', '.webp'))]
-          for f in fs:
-              try: im = Image.open(f); print(im.size, f)
-              except Exception as e: print('x', f, e)
-          os.makedirs(os.environ['GITHUB_WORKSPACE'] + '/univ/gen/simbye', exist_ok=True)
-          n = 0
-          for f in sorted(fs):
-              im = Image.open(f).convert('RGB'); w, h = im.size
-              tipo = 'cuadrado' if abs(w - h) < 20 else 'horizontal' if w > h * 1.5 else None
-              if not tipo: continue
-              n += 1; im.thumbnail((900, 900)); im.save(f"{os.environ['GITHUB_WORKSPACE']}/univ/gen/simbye/{tipo}-{n}.webp", 'WEBP', quality=78)
-          print('guardadas', n)
+          d = os.environ['GITHUB_WORKSPACE'] + '/univ/gen/simbye'; os.makedirs(d, exist_ok=True)
+          for f, n in [('simbye-social-pass_1200x628_en.png', 'horizontal-pass'), ('simbye-social-bigtype_1200x628_en.png', 'horizontal-big'),
+                       ('simbye-social-pass_1080x1080_en.png', 'cuadrado-pass'), ('simbye-social-bigtype_1080x1080_en.png', 'cuadrado-big')]:
+              im = Image.open('/tmp/s/plantillas/' + f).convert('RGB'); im.thumbnail((900, 900)); im.save(f'{d}/{n}.webp', 'WEBP', quality=80); print(n, im.size, os.path.getsize(f'{d}/{n}.webp'))
           P
           cd $GITHUB_WORKSPACE; ls -la univ/gen/simbye
           git config user.name "AURZANE bot"; git config user.email "bot@aurzane.com"
