@@ -889,7 +889,9 @@ def fuente_pais(p):
 
 
 def _pob(n):
-    if n >= 1_000_000: return f'{n / 1_000_000:.1f}'.replace('.', ',').replace(',0', '') + ' millones de habitantes'
+    if n >= 1_000_000:
+        m = f'{n / 1_000_000:.1f}'.replace('.', ',').replace(',0', '')
+        return m + (' millón de habitantes' if m == '1' else ' millones de habitantes')
     return ('más de ' + fmt(n // 1000 * 1000) if n >= 1000 else fmt(n)) + ' habitantes'
 
 

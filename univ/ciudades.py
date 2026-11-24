@@ -53,7 +53,7 @@ else: print('::warning::Banco Mundial sin datos suficientes; se mantiene el dato
 
 
 def vigente(x):
-    try: return (HOY - datetime.date.fromisoformat(x.get('fecha', '2000-01-01'))).days < (120 if x.get('q') else 7)   # sin encontrar: se reintenta a la semana
+    try: return (HOY - datetime.date.fromisoformat(x.get('fecha', '2000-01-01'))).days < (120 if x.get('q') else 7) and x.get('v') == 2   # v2: población buena (la preferida o la más reciente)   # sin encontrar: se reintenta a la semana
     except Exception: return False
 
 
@@ -119,7 +119,7 @@ def resumen(lengua, titulo):
 pend = {}
 for iso, nombre in paginas:
     x = info.get(iso, {}).get(norm(nombre))
-    if not (x and vigente(x) and (x.get('q') or x.get('fecha') != '2026-11-24')): pend.setdefault(iso, []).append(nombre)   # (hoy se repiten las vacías del primer intento fallido)
+    if not (x and vigente(x)): pend.setdefault(iso, []).append(nombre)
 n = 0
 for iso, nombres in pend.items():
     pais = info.setdefault(iso, {})
@@ -130,7 +130,7 @@ for iso, nombres in pend.items():
             x = hall.get(norm(nombre)) or {}
             if x:
                 x['txt_es'] = resumen('es', x.get('wiki_es')); x['txt_en'] = resumen('en', x.get('wiki_en'))
-            x['fecha'] = str(HOY); pais[norm(nombre)] = x; n += 1
+            x['fecha'] = str(HOY); x['v'] = 2; pais[norm(nombre)] = x; n += 1
         json.dump(info, open(F, 'w', encoding='utf-8'), ensure_ascii=False, separators=(',', ':')); print(f'  {iso}: {n} ciudades', flush=True)
         time.sleep(1)
 json.dump(info, open(F, 'w', encoding='utf-8'), ensure_ascii=False, separators=(',', ':'))
