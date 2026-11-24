@@ -637,6 +637,7 @@
 ./argentina/universidad-san-pablo-t/index.html
 ./argentina/universidad-tecnologica-nacional/index.html
 ./argentina/universidad-torcuato-di-tella/index.html
+./assets/simbye-horizontal.webp
 ./assets/univ.css
 ./assets/univ.js
 ./australia/adelaide-university/index.html
