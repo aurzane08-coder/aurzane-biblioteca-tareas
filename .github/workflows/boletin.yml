@@ -4,6 +4,7 @@ on:
   schedule:
     - cron: '17 8 * * 0'
     - cron: '41 9 * * *'   # correos de bienvenida (secuencia.php), cada día
+    - cron: '23 9-20 * * 0'   # domingo: siguientes tandas del boletín hasta llegar a todos
   push:
     paths: ['boletin/web/**', '.github/workflows/boletin.yml']
   workflow_dispatch:
@@ -32,8 +33,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Componer
+        if: github.event.schedule != '23 9-20 * * 0'
         run: python3 boletin/componer.py
       - name: Muestra del boletín (para revisarla)
+        if: github.event.schedule != '23 9-20 * * 0'
         uses: actions/upload-artifact@v4
         with:
           name: boletin
@@ -46,10 +49,13 @@ jobs:
           SSH="ssh -i $HOME/.ssh/id -p ${SG_PORT:-18765} -o StrictHostKeyChecking=accept-new"
           $SSH "$SG_USER@$SG_HOST" "mkdir -p www/aurzane.com/public_html/boletin www/aurzane.com/privado-boletin && chmod 700 www/aurzane.com/privado-boletin"
           rsync -rlz --checksum -e "$SSH" boletin/web/ "$SG_USER@$SG_HOST:www/aurzane.com/public_html/boletin/"
-          if [ -z "$FECHA" ]; then rsync -z -e "$SSH" /tmp/boletin/boletin.html /tmp/boletin/asunto.txt "$SG_USER@$SG_HOST:www/aurzane.com/privado-boletin/"; fi
+          if [ "${{ github.event.schedule }}" = "17 8 * * 0" ] || [ "${{ inputs.enviar }}" = "1" ]; then rsync -z -e "$SSH" /tmp/boletin/boletin.html /tmp/boletin/asunto.txt "$SG_USER@$SG_HOST:www/aurzane.com/privado-boletin/"; fi
           if [ "${{ github.event.schedule }}" = "41 9 * * *" ]; then
             R=$($SSH "$SG_USER@$SG_HOST" "cd www/aurzane.com/public_html/boletin && php secuencia.php")
             echo "::notice title=Bienvenida::$R"
+          elif [ "${{ github.event.schedule }}" = "23 9-20 * * 0" ]; then
+            R=$($SSH "$SG_USER@$SG_HOST" "cd www/aurzane.com/public_html/boletin && php enviar.php")
+            echo "::notice title=Boletín (tanda)::$R"
           elif [ -n "$FECHA" ]; then
             cp /tmp/boletin/boletin.html boletin/muestra.html; cp /tmp/boletin/envio.json boletin/muestra.json
             git config user.name "AURZANE bot"; git config user.email "bot@aurzane.com"
