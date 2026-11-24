@@ -767,3 +767,4 @@ html.az-v4:not([data-tema="oscuro"]) .ai-m{background:#F6F5F0!important;border-c
 /* portal de OVP más ancho: la portada y las tarjetas aprovechan la pantalla */
 html.az-ds-ovp .shell .main-inner{max-width:1280px!important}
 @media(min-width:1100px){#page-resumen .ov-hero.v4-portada{min-height:340px;padding:56px 56px!important}}
+.ov-tile[data-v4f] .ov-est{background:rgba(246,245,240,.96)!important;color:#183D32!important;padding:3px 10px!important;border-radius:99px!important;box-shadow:0 1px 4px rgba(0,0,0,.18)}

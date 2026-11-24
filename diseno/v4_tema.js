@@ -369,7 +369,7 @@
 (function (d, w) {
   if (!/(^|\.)ovp\.aurzane\.com$/.test(location.hostname)) return;
   var PORTADA = 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=2000&q=70&auto=format&fit=crop';
-  var TEMA = { chaside: 'orientación vocacional carrera', holland: 'graduación carrera universidad', af5: 'autoestima confianza',
+  var TEMA = { chaside: 'orientación vocacional carrera', holland: 'estudiantes universidad', af5: 'adolescentes jóvenes',
                'hábitos': 'estudiar hábitos aula', apt: 'concentración atención memoria' };
   var SECC = { 'page-tests': 'estudiante universidad estudiando', 'page-informe': 'lectura libro estudiar', 'page-estudiar': 'universidad campus facultad', 'page-cuenta': 'estudiante aula colegio' };
   function tema(txt) { txt = (txt || '').toLowerCase(); for (var k in TEMA) if (txt.indexOf(k) >= 0) return TEMA[k]; return 'orientación vocacional estudiantes'; }
