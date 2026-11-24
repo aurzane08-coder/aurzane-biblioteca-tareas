@@ -13,7 +13,8 @@ jobs:
           import sys, re
           sys.path.insert(0, 'univ')
           import ruct
-          p = ruct.get(ruct.B + 'solicitud/universidades?actual=menu.solicitud.universidades&cod=25039082024010901')
-          k = p.find('28051906')
+          ruct.get(ruct.B + 'solicitud/detalles.action?cod=25039082024010901&sit=A&actual=menu.solicitud.basicos')
+          p = ruct.get('https://www.educacion.gob.es/ruct/solicitud/universidades?actual=menu.solicitud.universidades&cod=25039082024010901')
+          k = p.find('28051906'); print('LEN', len(p), k)
           print('RAW', re.sub(r'\s+', ' ', p[k-200:k+1800]))
           PY
