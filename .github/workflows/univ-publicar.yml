@@ -34,7 +34,7 @@ jobs:
       - name: Datos básicos de cada país (REST Countries)
         run: python3 -u univ/paises_info.py univ/data || true
       - name: Vivir en cada ciudad (Wikidata, Wikipedia y Banco Mundial)
-        run: MAX_CIUDADES=400 timeout 1200 python3 -u univ/ciudades.py univ/data || true
+        run: MAX_CIUDADES=1500 timeout 1500 python3 -u univ/ciudades.py univ/data || true
       - name: Patrocinios aprobados (servidor) y avisos de fin
         if: env.SG_KEY != ''
         run: |
