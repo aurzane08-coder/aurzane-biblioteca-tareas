@@ -13,7 +13,7 @@ jobs:
         env:
           K: ${{ secrets.GEMINI_API_KEY }}
         run: |
-          for m in gemma-3-27b-it gemma-3-12b-it gemini-flash-latest gemini-flash-lite-latest gemini-2.5-flash-lite; do
+          for m in gemma-4-31b-it gemma-4-26b-a4b-it gemini-3.5-flash-lite gemini-3.1-flash-lite gemini-3.5-flash; do
             echo "== $m texto"; curl -s -m 90 -w " HTTP %{http_code}" "https://generativelanguage.googleapis.com/v1beta/models/$m:generateContent" -H "x-goog-api-key: $K" -H 'Content-Type: application/json' -d '{"contents":[{"parts":[{"text":"Responde solo con JSON {\"saludo\": \"hola\"}"}]}],"generationConfig":{"temperature":0.2}}' | tr -d '\n' | head -c 300; echo
             echo "== $m json"; curl -s -m 90 -w " HTTP %{http_code}" "https://generativelanguage.googleapis.com/v1beta/models/$m:generateContent" -H "x-goog-api-key: $K" -H 'Content-Type: application/json' -d '{"contents":[{"parts":[{"text":"Devuelve {\"saludo\": \"hola\"}"}]}],"generationConfig":{"responseMimeType":"application/json"}}' | tr -d '\n' | head -c 200; echo
           done
