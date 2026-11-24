@@ -678,7 +678,7 @@ def gemini_base(prompt, maxt=700, temp=0.3):
 def ia_respaldo(prompt, maxt=700, temp=0.3):
     """Respaldo (24/11/2026): GitHub Models dejó de responder; ahora otros modelos de Gemini con la misma clave, cada uno con su cupo."""
     if GEM_INFO.get('resp_fallos', 0) >= 2: return ''
-    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import sys; sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
     from ia_respaldo import generar
     txt = generar(prompt, temp=temp, maxt=max(maxt * 3, 2048), rondas=1, t=90)
     if txt: GEM_INFO.update(estado='ok (respaldo)'); return txt

@@ -66,7 +66,11 @@ def ia(prompt):
                       {'contents': [{'parts': [{'text': prompt}]}], 'generationConfig': {'temperature': .3, 'responseMimeType': 'application/json'}}, {'apikey': ''}, 120)
             return json.loads(''.join(p.get('text', '') for p in r['candidates'][0]['content']['parts']))
         except Exception as e: print('gemini', m, str(e)[:90])
-    return None
+    import sys; sys.path.insert(0, os.path.join(R, 'ai'))
+    from ia_respaldo import generar   # respaldo común: otros modelos de Gemini con la misma clave
+    t = generar(prompt, json_mode=True, rondas=2)
+    try: return json.loads(t) if t else None
+    except Exception: return None
 
 
 # ------------------------------------------------------------------ material fijo (verificado en el servidor)
