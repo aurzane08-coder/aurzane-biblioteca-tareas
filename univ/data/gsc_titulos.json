@@ -290,5 +290,37 @@
  "https://nexus.aurzane.com/universidades/estados-unidos/howard-college/": {
   "titulo": "Howard College: carreras y información | AURZANE",
   "desc": "Conoce Howard College en Texas: descubre sus 32 carreras disponibles, el tipo de universidad pública, ubicación y su web oficial."
+ },
+ "https://nexus.aurzane.com/universidades/estados-unidos/brescia-university/": {
+  "titulo": "Brescia University: admisión, costes y carreras",
+  "desc": "Conoce Brescia University en Kentucky: tasa de admisión del 35 %, costes, carreras y datos clave para estudiar desde Espana."
+ },
+ "https://nexus.aurzane.com/universidades/estados-unidos/mercy-university/": {
+  "titulo": "Mercy University: admisiones, costes y carreras | AURZANE",
+  "desc": "Consulta la tasa de admisión del 86 %, precios, becas y carreras de Mercy University en Nueva York. Toda la información oficial para estudiantes."
+ },
+ "https://nexus.aurzane.com/universidades/estados-unidos/cleary-university/": {
+  "titulo": "Cleary University: admisión, costes y carreras",
+  "desc": "Conoce los datos oficiales de Cleary University en Estados Unidos: tasa de admisión del 68 por ciento, costes, becas y titulaciones disponibles."
+ },
+ "https://nexus.aurzane.com/universidades/estados-unidos/wheeling-university/": {
+  "titulo": "Wheeling University: admisión, costes y becas",
+  "desc": "Descubre Wheeling University en Virginia Occidental: tasa de admisión del 63 por ciento, costes, becas y datos clave para estudiar allí."
+ },
+ "https://nexus.aurzane.com/universidades/estados-unidos/milligan-university/": {
+  "titulo": "Milligan University: admisión, costes y carreras",
+  "desc": "Conoce Milligan University en Tennessee: tasa de admisión del 72 %, precios, becas y carreras disponibles para estudiantes internacionales."
+ },
+ "https://nexus.aurzane.com/universidades/estados-unidos/walden-university/": {
+  "titulo": "Walden University: carreras, costes y admisión",
+  "desc": "Descubre Walden University en Minnesota: precios, grados y cómo estudiar desde España. Toda la información oficial sobre admisiones y becas."
+ },
+ "https://nexus.aurzane.com/universidades/australia/swinburne-university-of-technology/": {
+  "titulo": "Swinburne University Sydney y Melbourne | Aurzane",
+  "desc": "Información oficial sobre Swinburne University of Technology en Australia. Conoce su campus en Melbourne y Sydney, tipo de universidad y web."
+ },
+ "https://nexus.aurzane.com/universidades/ecuador/ciudad/portoviejo/": {
+  "titulo": "Universidades en Portoviejo: 5 centros y carreras",
+  "desc": "Conoce las 5 universidades de Portoviejo, públicas y privadas. Compara modalidades, oferta académica y accede a la web oficial de cada centro."
  }
 }

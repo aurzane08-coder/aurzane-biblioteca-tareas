@@ -1,12 +1,12 @@
 {
- "fecha": "2026-11-23",
+ "fecha": "2026-11-24",
  "conectado": true,
  "periodo": [
-  "2026-10-24",
-  "2026-11-20"
+  "2026-10-25",
+  "2026-11-21"
  ],
- "clics": 51,
- "impresiones": 70479,
+ "clics": 52,
+ "impresiones": 77115,
  "consultas": [
   [
    "umich",
@@ -17,85 +17,127 @@
   [
    "ecpi university",
    0,
-   1458,
-   9.3
+   1623,
+   8.7
   ],
   [
    "university of richmond",
    0,
-   1009,
+   1046,
    8.2
   ],
   [
    "bushnell university",
    0,
-   784,
-   7.7
+   963,
+   7.2
   ],
   [
    "transylvania university",
    0,
-   678,
-   9.0
-  ],
-  [
-   "berkeley",
-   0,
-   654,
-   9.8
-  ],
-  [
-   "bethesda university",
-   0,
-   641,
-   11.4
+   877,
+   8.7
   ],
   [
    "desales university",
    0,
-   639,
-   3.3
+   811,
+   3.2
   ],
   [
    "caldwell university",
    0,
-   632,
-   8.3
+   801,
+   7.9
+  ],
+  [
+   "berkeley",
+   0,
+   776,
+   10.0
+  ],
+  [
+   "bethesda university",
+   0,
+   724,
+   10.7
   ],
   [
    "middlebury college",
    0,
-   500,
-   8.7
+   653,
+   8.5
   ],
   [
    "towson university",
    0,
-   451,
-   6.7
+   552,
+   6.6
   ],
   [
    "viterbo university",
    0,
-   419,
-   9.8
-  ],
-  [
-   "crowder college",
-   0,
-   413,
-   12.4
-  ],
-  [
-   "nihon university",
-   0,
-   397,
-   14.2
+   507,
+   9.1
   ],
   [
    "nazareth university",
    0,
-   393,
+   485,
+   6.3
+  ],
+  [
+   "bentley university",
+   0,
+   476,
+   7.2
+  ],
+  [
+   "macalester college",
+   0,
+   470,
+   6.9
+  ],
+  [
+   "crowder college",
+   0,
+   450,
+   12.0
+  ],
+  [
+   "naropa university",
+   0,
+   427,
+   10.6
+  ],
+  [
+   "lander university",
+   0,
+   425,
+   4.9
+  ],
+  [
+   "fisk university",
+   0,
+   407,
+   7.8
+  ],
+  [
+   "shaw university",
+   0,
+   402,
+   5.7
+  ],
+  [
+   "nihon university",
+   0,
+   398,
+   14.1
+  ],
+  [
+   "tiffin university",
+   0,
+   386,
    6.3
   ],
   [
@@ -105,22 +147,22 @@
    13.1
   ],
   [
-   "bentley university",
+   "hood college",
    0,
-   376,
-   7.8
+   369,
+   8.6
   ],
   [
-   "macalester college",
+   "cunef university",
    0,
-   374,
-   6.8
+   358,
+   6.7
   ],
   [
-   "lander university",
+   "chabot college",
    0,
-   342,
-   5.0
+   354,
+   9.3
   ],
   [
    "texas a",
@@ -129,72 +171,30 @@
    11.7
   ],
   [
-   "shaw university",
+   "millsaps college",
    0,
-   324,
-   5.9
-  ],
-  [
-   "fisk university",
-   0,
-   319,
-   7.8
-  ],
-  [
-   "naropa university",
-   0,
-   314,
-   12.2
-  ],
-  [
-   "tiffin university",
-   0,
-   312,
-   6.1
-  ],
-  [
-   "hood college",
-   0,
-   311,
-   8.8
-  ],
-  [
-   "chabot college",
-   0,
-   293,
-   9.9
+   337,
+   7.1
   ],
   [
    "berry college",
    0,
-   280,
-   11.0
+   320,
+   10.3
   ],
   [
-   "cunef university",
+   "rhodes college",
    0,
-   270,
-   6.6
-  ],
-  [
-   "millsaps college",
-   0,
-   269,
-   7.5
-  ],
-  [
-   "volar sobre el pantano",
-   1,
-   266,
-   10.1
+   299,
+   6.5
   ]
  ],
  "paginas": [
   [
    "https://aurzane.com/biblioteca/leer.html?libro=ref-recuerda-que-vas-a-morir",
    3,
-   164,
-   6.6
+   169,
+   6.7
   ],
   [
    "https://nexus.aurzane.com/universidades/mexico/universidad-michoacana-de-san-nicolas-de-hidalgo-umsnh/",
@@ -205,8 +205,8 @@
   [
    "https://aurzane.com/biblioteca/libro/tormento.html",
    3,
-   48,
-   7.3
+   51,
+   7.2
   ],
   [
    "https://aurzane.com/biblioteca/libro/ref-tareas-duelo.html",
@@ -217,7 +217,7 @@
   [
    "https://nexus.aurzane.com/universidades/ecuador/ciudad/manta/",
    2,
-   165,
+   170,
    6.5
   ],
   [
@@ -229,62 +229,68 @@
   [
    "https://aurzane.com/biblioteca/libro/la-de-bringas.html",
    2,
-   20,
-   7.0
+   24,
+   6.8
   ],
   [
    "https://aurzane.com/biblioteca/libro/ref-tu-cerebro-musica.html",
    2,
-   4,
-   11.5
+   5,
+   11.0
   ],
   [
    "https://nexus.aurzane.com/universidades/estados-unidos/ecpi-university/",
    0,
-   1542,
-   10.3
+   1710,
+   9.8
   ],
   [
    "https://aurzane.com/biblioteca/libro/ref-volar-sobre-pantano.html",
    1,
-   316,
-   10.9
-  ],
-  [
-   "https://nexus.aurzane.com/universidades/italia/ciudad/roma/",
-   1,
-   224,
-   30.9
+   328,
+   10.8
   ],
   [
    "https://nexus.aurzane.com/universidades/estados-unidos/princeton-university/",
    1,
-   222,
-   40.9
+   239,
+   41.1
+  ],
+  [
+   "https://nexus.aurzane.com/universidades/italia/ciudad/roma/",
+   1,
+   230,
+   30.9
   ],
   [
    "https://nexus.aurzane.com/universidades/estados-unidos/ensign-college/",
    1,
-   180,
-   4.6
+   222,
+   4.8
   ],
   [
    "https://nexus.aurzane.com/universidades/notas-de-corte/derecho/",
    1,
-   121,
-   18.5
+   127,
+   19.5
   ],
   [
    "https://nexus.aurzane.com/universidades/estados-unidos/new-york-university/",
    1,
-   121,
-   29.5
+   126,
+   30.2
   ],
   [
    "https://aurzane.com/biblioteca/libro/ref-cerebro-emocional.html",
    1,
-   108,
-   9.8
+   112,
+   9.7
+  ],
+  [
+   "https://nexus.aurzane.com/universidades/estados-unidos/university-of-richmond/",
+   0,
+   1074,
+   8.4
   ],
   [
    "https://aurzane.com/biblioteca/libro/romancero-gitano.html",
@@ -299,6 +305,12 @@
    12.1
   ],
   [
+   "https://aurzane.com/biblioteca/libro/ref-grito-desesperado.html",
+   1,
+   62,
+   7.8
+  ],
+  [
    "https://aurzane.com/biblioteca/libro/ref-cerebro-mito-yo.html",
    1,
    55,
@@ -311,16 +323,16 @@
    16.8
   ],
   [
-   "https://aurzane.com/biblioteca/libro/ref-grito-desesperado.html",
-   1,
-   52,
-   7.7
-  ],
-  [
    "https://aurzane.com/biblioteca/libro/ref-creacion-yo.html",
    1,
-   49,
-   7.1
+   53,
+   7.2
+  ],
+  [
+   "https://nexus.aurzane.com/universidades/brasil/universidade-federal-do-parana-ufpr/",
+   1,
+   44,
+   43.1
   ],
   [
    "https://aurzane.com/biblioteca/libro/ref-paradoja-chimpance.html",
@@ -329,22 +341,16 @@
    9.5
   ],
   [
-   "https://nexus.aurzane.com/universidades/estados-unidos/university-of-richmond/",
-   0,
-   1037,
-   8.5
+   "https://nexus.aurzane.com/universidades/ecuador/instituto-superior-tecnologico-itca/",
+   1,
+   38,
+   10.0
   ],
   [
    "https://aurzane.com/biblioteca/leer.html?libro=ref-superar-adversidad",
    1,
-   34,
-   8.0
-  ],
-  [
-   "https://nexus.aurzane.com/universidades/ecuador/instituto-superior-tecnologico-itca/",
-   1,
    32,
-   10.2
+   8.1
   ],
   [
    "https://aurzane.com/biblioteca/libro/ref-delirio.html",
@@ -363,194 +369,188 @@
    1,
    19,
    13.5
-  ],
-  [
-   "https://aurzane.com/biblioteca/libro/ref-nuestra-mente-nos-engana.html",
-   1,
-   18,
-   8.9
   ]
  ],
  "paises": [
   [
    "ESP",
-   184,
-   23703,
-   28.8
-  ],
-  [
-   "MEX",
-   93,
-   12576,
-   19.5
+   185,
+   24531,
+   29.0
   ],
   [
    "BRA",
    3,
-   11740,
-   21.8
+   13035,
+   20.9
+  ],
+  [
+   "MEX",
+   95,
+   13025,
+   19.5
   ],
   [
    "USA",
    23,
-   8950,
-   21.2
+   9295,
+   21.1
   ],
   [
    "ECU",
-   67,
-   7813,
-   13.1
-  ],
-  [
-   "COL",
-   53,
-   5457,
-   22.4
+   72,
+   8098,
+   13.0
   ],
   [
    "ARG",
    49,
-   5457,
-   21.0
+   5627,
+   20.9
+  ],
+  [
+   "COL",
+   54,
+   5593,
+   22.4
   ],
   [
    "PER",
-   52,
-   3880,
-   12.8
+   54,
+   4122,
+   12.7
   ],
   [
    "CHL",
-   28,
-   3001,
+   29,
+   3140,
    21.9
   ],
   [
    "VEN",
-   15,
-   2011,
+   17,
+   2057,
    20.2
+  ],
+  [
+   "RUS",
+   2,
+   1172,
+   25.6
   ],
   [
    "BOL",
    17,
-   1081,
+   1142,
    13.1
   ],
   [
    "DEU",
    1,
-   1071,
-   24.0
-  ],
-  [
-   "RUS",
-   2,
-   1034,
-   28.1
+   1119,
+   24.1
   ],
   [
    "BGD",
    0,
-   846,
-   19.5
+   1005,
+   17.3
   ],
   [
    "BEL",
    1,
-   793,
+   797,
    7.2
-  ],
-  [
-   "UKR",
-   1,
-   621,
-   16.5
-  ],
-  [
-   "GBR",
-   3,
-   618,
-   21.4
-  ],
-  [
-   "DOM",
-   11,
-   611,
-   10.7
-  ],
-  [
-   "GTM",
-   10,
-   593,
-   18.9
   ],
   [
    "MAR",
    1,
-   547,
-   8.9
+   775,
+   8.2
+  ],
+  [
+   "DOM",
+   11,
+   734,
+   10.9
+  ],
+  [
+   "GBR",
+   3,
+   662,
+   20.9
+  ],
+  [
+   "UKR",
+   1,
+   650,
+   16.2
+  ],
+  [
+   "GTM",
+   11,
+   621,
+   18.5
   ],
   [
    "PRY",
    8,
-   525,
-   13.9
+   574,
+   13.5
   ],
   [
    "URY",
    5,
-   498,
-   12.7
+   513,
+   12.8
   ],
   [
    "CAN",
    2,
-   481,
-   19.4
-  ],
-  [
-   "NLD",
-   2,
-   460,
-   26.7
-  ],
-  [
-   "CRI",
-   6,
-   449,
-   17.1
+   498,
+   19.3
   ],
   [
    "PAN",
    4,
-   443,
-   15.6
+   481,
+   15.3
+  ],
+  [
+   "NLD",
+   2,
+   474,
+   27.1
+  ],
+  [
+   "CRI",
+   6,
+   473,
+   17.0
   ],
   [
    "SLV",
    2,
-   406,
-   20.4
+   426,
+   19.8
   ],
   [
    "HND",
    4,
-   308,
-   17.0
+   329,
+   16.4
   ],
   [
    "TUR",
    1,
-   269,
-   16.9
+   286,
+   16.8
   ],
   [
-   "PRI",
-   2,
-   196,
-   17.2
+   "BGR",
+   0,
+   252,
+   7.2
   ]
  ],
  "paises_trabajados": [
@@ -618,6 +618,70 @@
  "fichas_ampliadas": 14,
  "cambios_titulos": [
   [
+   "2026-11-24",
+   "https://nexus.aurzane.com/universidades/ecuador/ciudad/portoviejo/",
+   "Universidades en Portoviejo: 5 centros y más (2026)",
+   "Universidades en Portoviejo: 5 centros y carreras",
+   null,
+   0.0
+  ],
+  [
+   "2026-11-24",
+   "https://nexus.aurzane.com/universidades/australia/swinburne-university-of-technology/",
+   "Swinburne University of Technology: n.º 662 del mundo",
+   "Swinburne University Sydney y Melbourne | Aurzane",
+   null,
+   0.0
+  ],
+  [
+   "2026-11-24",
+   "https://nexus.aurzane.com/universidades/estados-unidos/walden-university/",
+   "Walden University: admisión, costes y becas",
+   "Walden University: carreras, costes y admisión",
+   null,
+   0.0
+  ],
+  [
+   "2026-11-24",
+   "https://nexus.aurzane.com/universidades/estados-unidos/milligan-university/",
+   "Milligan University: admisión 72 %, costes y becas",
+   "Milligan University: admisión, costes y carreras",
+   null,
+   0.0
+  ],
+  [
+   "2026-11-24",
+   "https://nexus.aurzane.com/universidades/estados-unidos/wheeling-university/",
+   "Wheeling University: admisión 63 %, costes y becas",
+   "Wheeling University: admisión, costes y becas",
+   null,
+   0.0
+  ],
+  [
+   "2026-11-24",
+   "https://nexus.aurzane.com/universidades/estados-unidos/cleary-university/",
+   "Cleary University: admisión 68 %, costes y becas",
+   "Cleary University: admisión, costes y carreras",
+   null,
+   0.0
+  ],
+  [
+   "2026-11-24",
+   "https://nexus.aurzane.com/universidades/estados-unidos/mercy-university/",
+   "Mercy University: admisión 86 %, costes y becas",
+   "Mercy University: admisiones, costes y carreras | AURZANE",
+   null,
+   0.0
+  ],
+  [
+   "2026-11-24",
+   "https://nexus.aurzane.com/universidades/estados-unidos/brescia-university/",
+   "Brescia University: admisión 35 %, costes y becas",
+   "Brescia University: admisión, costes y carreras",
+   null,
+   0.0
+  ],
+  [
    "2026-11-23",
    "https://nexus.aurzane.com/universidades/estados-unidos/howard-college/",
    "Howard College: n.º 17.558 del mundo y 32 carreras",
@@ -670,70 +734,6 @@
    "https://nexus.aurzane.com/universidades/estados-unidos/holy-family-university/",
    "Holy Family University: admisión 71 %, costes y becas",
    "Holy Family University: admisión, costes y carreras",
-   null,
-   0.0
-  ],
-  [
-   "2026-11-23",
-   "https://nexus.aurzane.com/universidades/estados-unidos/ohio-state-university-main-campus/",
-   "Ohio State University-Main Campus: admisión 61 %, costes",
-   "Ohio State University: admisión, costes y carreras",
-   null,
-   0.0
-  ],
-  [
-   "2026-11-22",
-   "https://nexus.aurzane.com/universidades/estados-unidos/aurora-university/",
-   "Aurora University: admisión 81 %, costes y becas",
-   "Aurora University: admisión, costes y carreras | AURZANE",
-   null,
-   0.0
-  ],
-  [
-   "2026-11-22",
-   "https://nexus.aurzane.com/universidades/estados-unidos/emerson-college/",
-   "Emerson College: admisión 51 %, costes y becas",
-   "Emerson College: admisiones, costes y carreras | Aurzane",
-   null,
-   0.0
-  ],
-  [
-   "2026-11-22",
-   "https://nexus.aurzane.com/universidades/estados-unidos/concord-university/",
-   "Concord University: admisión 93 %, costes y becas",
-   "Concord University: admisión, costes y becas",
-   null,
-   0.0
-  ],
-  [
-   "2026-11-22",
-   "https://nexus.aurzane.com/universidades/estados-unidos/davidson-college/",
-   "Davidson College: admisión 13 %, costes y becas",
-   "Davidson College: admisión, costes y carreras | AURZANE",
-   null,
-   0.0
-  ],
-  [
-   "2026-11-22",
-   "https://nexus.aurzane.com/universidades/estados-unidos/furman-university/",
-   "Furman University: admisión 43 %, costes y becas",
-   "Furman University: admisión, costes y becas | AURZANE",
-   null,
-   0.0
-  ],
-  [
-   "2026-11-22",
-   "https://nexus.aurzane.com/universidades/estados-unidos/spelman-college/",
-   "Spelman College: admisión 25 %, costes y becas",
-   "Spelman College: carreras, admisión y costes",
-   null,
-   0.0
-  ],
-  [
-   "2026-11-22",
-   "https://nexus.aurzane.com/universidades/estados-unidos/college-of-alameda/",
-   "College of Alameda: admisión, costes y becas",
-   "Almeda University y College of Alameda | Aurzane",
    null,
    0.0
   ]
