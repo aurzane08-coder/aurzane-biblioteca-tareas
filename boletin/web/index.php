@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $p[$tk] = ['email' => $email, 't' => time(), 'origen' => substr((string)($_POST['origen'] ?? ''), 0, 120)];
     guardar($fp, $p);
     correo($email, 'Confirma tu suscripción al boletín de AURZANE',
-        "<div style='font:16px/1.6 system-ui,sans-serif;max-width:520px'><p>Hola:</p><p>Para recibir cada semana el libro recomendado, el artículo nuevo y un test gratis de AURZANE, confirma tu correo:</p>"
+        "<div style='font:16px/1.6 system-ui,sans-serif;max-width:520px'><p>Hola:</p><p>Para recibir cada domingo el boletín de AURZANE (un reto con test y ejercicio guiado, un dato de la ciencia, el libro de la semana y una lección gratis), confirma tu correo:</p>"
         . "<p><a href='{$url}?confirmar=$tk' style='display:inline-block;background:#E2BF6A;color:#1b1440;padding:12px 22px;border-radius:99px;font-weight:700;text-decoration:none'>Confirmar suscripción</a></p>"
         . "<p style='color:#777;font-size:13px'>Si no lo has pedido tú, ignora este mensaje y no recibirás nada.</p></div>");
     pagina('Revisa tu correo', 'Te hemos enviado un enlace para confirmar. Si no lo ves en unos minutos, mira en la carpeta de spam o promociones.');
@@ -49,9 +49,9 @@ if (isset($_GET['confirmar'])) {
     $s = leer($fs); $e = $p[$tk]['email'];
     $s[$e] = ['alta' => date('c'), 'baja' => bin2hex(random_bytes(16)), 'origen' => $p[$tk]['origen'] ?? ''];
     unset($p[$tk]); guardar($fp, $p); guardar($fs, $s);
-    pagina('¡Bienvenida, bienvenido!', 'Ya estás suscrito. Cada semana te llegará el libro recomendado, el artículo nuevo y un test gratis. Puedes darte de baja cuando quieras desde cualquier correo.');
+    pagina('¡Bienvenida, bienvenido!', 'Ya estás suscrito. Cada domingo te llegará un reto con test y ejercicio guiado, un dato de la ciencia, el libro de la semana y una lección gratis. Puedes darte de baja cuando quieras desde cualquier correo.');
 }
-pagina('Boletín semanal de AURZANE', "Cada semana, un correo corto con el libro recomendado, el artículo nuevo y un test gratis. Sin publicidad de terceros.<form method='post' action='$url' style='margin-top:22px;display:grid;gap:10px'>"
+pagina('Boletín semanal de AURZANE', "Cada domingo, un correo con un reto (test y ejercicio guiado), un dato de la ciencia, el libro de la semana y una lección de un curso gratis. Sin publicidad de terceros.<form method='post' action='$url' style='margin-top:22px;display:grid;gap:10px'>"
     . "<input type='email' name='email' required placeholder='tu@correo.com' style='padding:13px 16px;border-radius:12px;border:1px solid #333;font:inherit'>"
     . "<input type='text' name='web' tabindex='-1' autocomplete='off' style='position:absolute;left:-9999px' aria-hidden='true'>"
     . "<label style='font-size:14px;color:#b9b3a6'><input type='checkbox' name='acepto' value='1' required> Acepto recibir el boletín y la <a style='color:#E2BF6A' href='/privacidad.html'>política de privacidad</a>.</label>"

@@ -13,7 +13,7 @@ $u = fn($url, $c) => $url . (strpos($url, '?') === false ? '?' : '&') . "utm_sou
 $b = fn($url, $t, $c) => "<p><a href='" . $u($url, $c) . "' style='display:inline-block;background:#E2BF6A;color:#1b1440;padding:12px 22px;border-radius:99px;font-weight:700;text-decoration:none'>$t</a></p>";
 $PASOS = [
   [0, 'Bienvenida a AURZANE: empieza por aquí',
-   "<p>Gracias por confirmar. Cada domingo te llegará el boletín con el libro recomendado, el artículo nuevo y un test gratis.</p><p>Para empezar, un test corto y validado que muchos lectores hacen primero: mide tu nivel de estrés en 3 minutos, gratis y sin registro.</p>"
+   "<p>Gracias por confirmar. Cada domingo te llegará el boletín: un reto con test y ejercicio guiado, un dato de la ciencia, el libro de la semana y una lección gratis.</p><p>Para empezar, un test corto y validado que muchos lectores hacen primero: mide tu nivel de estrés en 3 minutos, gratis y sin registro.</p>"
    . $b('https://mind.aurzane.com/test-de-estres/', 'Hacer el test de estrés', 'd0') . "<p>Es orientativo: no sustituye una valoración profesional.</p>"],
   [3, 'Un curso gratis con certificado para ti',
    "<p>En AURZANE LEARN tienes cursos breves, gratis y con certificado al aprobar: dormir mejor, autoestima, neurociencia y más. Se hacen a tu ritmo, desde el móvil.</p>"

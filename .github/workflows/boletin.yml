@@ -11,8 +11,11 @@ on:
       enviar:
         description: 'Enviar el boletín ahora (1)'
         default: ''
+      fecha:
+        description: 'Muestra: componer como si fuera esta fecha (AAAA-MM-DD), sin enviar'
+        default: ''
 permissions:
-  contents: read
+  contents: write
 concurrency: boletin
 jobs:
   b:
@@ -24,10 +27,18 @@ jobs:
       SG_USER: ${{ secrets.SG_USER }}
       SG_PORT: ${{ secrets.SG_PORT }}
       SG_PASS: ${{ secrets.SG_PASS }}
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      FECHA: ${{ inputs.fecha }}
     steps:
       - uses: actions/checkout@v4
       - name: Componer
         run: python3 boletin/componer.py
+      - name: Muestra del boletín (para revisarla)
+        uses: actions/upload-artifact@v4
+        with:
+          name: boletin
+          path: /tmp/boletin/
+          retention-days: 7
       - name: Subir y enviar
         run: |
           mkdir -p ~/.ssh && printf '%s\n' "$SG_KEY" | tr -d '\r' > ~/.ssh/id && chmod 600 ~/.ssh/id
@@ -35,13 +46,19 @@ jobs:
           SSH="ssh -i $HOME/.ssh/id -p ${SG_PORT:-18765} -o StrictHostKeyChecking=accept-new"
           $SSH "$SG_USER@$SG_HOST" "mkdir -p www/aurzane.com/public_html/boletin www/aurzane.com/privado-boletin && chmod 700 www/aurzane.com/privado-boletin"
           rsync -rlz --checksum -e "$SSH" boletin/web/ "$SG_USER@$SG_HOST:www/aurzane.com/public_html/boletin/"
-          rsync -z -e "$SSH" /tmp/boletin/boletin.html /tmp/boletin/asunto.txt "$SG_USER@$SG_HOST:www/aurzane.com/privado-boletin/"
+          if [ -z "$FECHA" ]; then rsync -z -e "$SSH" /tmp/boletin/boletin.html /tmp/boletin/asunto.txt "$SG_USER@$SG_HOST:www/aurzane.com/privado-boletin/"; fi
           if [ "${{ github.event.schedule }}" = "41 9 * * *" ]; then
             R=$($SSH "$SG_USER@$SG_HOST" "cd www/aurzane.com/public_html/boletin && php secuencia.php")
             echo "::notice title=Bienvenida::$R"
+          elif [ -n "$FECHA" ]; then
+            echo "::notice title=Boletín::muestra compuesta para $FECHA (sin enviar): descárgala en los artefactos"
           elif [ "${{ github.event_name }}" = "schedule" ] || [ "${{ inputs.enviar }}" = "1" ]; then
             R=$($SSH "$SG_USER@$SG_HOST" "cd www/aurzane.com/public_html/boletin && php enviar.php")
             echo "::notice title=Boletín::$R"
+            # lo enviado queda anotado para no repetirlo
+            python3 -c "import json;f='boletin/historial.json';h=json.load(open(f)) if __import__('os').path.exists(f) else {'envios':[]};h['envios'].append(json.load(open('/tmp/boletin/envio.json')));json.dump(h,open(f,'w'),ensure_ascii=False,indent=1)"
+            git config user.name "AURZANE bot"; git config user.email "bot@aurzane.com"
+            git add boletin/historial.json && git commit -qm "boletín: enviado $(date +%F)" && for i in 1 2 3; do git pull -q --rebase && git push -q && break; done || true
           else
             N=$($SSH "$SG_USER@$SG_HOST" "php -r 'echo count(json_decode(@file_get_contents(\"www/aurzane.com/privado-boletin/suscritos.json\"),true)?:[]);'" || echo 0)
             echo "::notice title=Boletín::página de alta actualizada; suscritos: $N"
