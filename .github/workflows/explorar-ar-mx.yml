@@ -14,11 +14,23 @@ jobs:
                   r = urllib.request.urlopen(urllib.request.Request(u, data=data, headers={'User-Agent': 'Mozilla/5.0'}), timeout=40)
                   return r.status, r.read().decode('utf-8', 'replace')
               except Exception as e: return 0, str(e)
-          st, t = g('http://sipes.siu.edu.ar/buscar_titulos_form.php')
-          print('FORM', st, len(t))
-          print('FORMS', re.findall(r'<form[^>]*>', t))
-          print('CAMPOS', re.findall(r'<(?:select|input|textarea)[^>]*>', t)[:40])
-          sel = re.findall(r'<select[^>]*name="([^"]+)"[^>]*>([\s\S]*?)</select>', t)
-          for n, opts in sel: o = re.findall(r'<option[^>]*value="([^"]*)"[^>]*>([^<]*)', opts); print('SELECT', n, len(o), o[:8])
-          print('JS', re.findall(r'(?:url|ajax|\.php)[^;\n]{0,160}', t)[:20])
+          import http.cookiejar, urllib.parse
+          cj = http.cookiejar.CookieJar(); op = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(cj)); op.addheaders = [('User-Agent', 'Mozilla/5.0')]
+          B = 'http://sipes.siu.edu.ar'
+          t = op.open(B + '/buscar_titulos_form.php', timeout=40).read().decode('latin-1')
+          act = re.search(r"action='([^']+)'", t).group(1)
+          ocultos = dict(re.findall(r"<input name='([^']+)' id='[^']*' type='hidden' value='([^']*)'", t))
+          sel = re.findall(r"<select name='([^']+)'[^>]*>([\s\S]*?)</select>", t)
+          for n, opts in sel: o = re.findall(r"<option[^>]*value='([^']*)'[^>]*>([^<]*)", opts); print('SELECT', n, len(o), o[:6])
+          print('OCULTOS', ocultos)
+          print('EVENTOS', sorted(set(re.findall(r"set_evento\(new evento_ei\('([^']+)'", t)))[:20], re.findall(r"(filtrar|buscar)[^\n]{0,80}", t)[:6])
+          inst = re.findall(r"<option[^>]*value='([^']*)'[^>]*>([^<]*Buenos Aires[^<]*)", t)[:3]
+          print('INST', inst)
+          if inst:
+              d = dict(ocultos); d['ef_form_2822_filtro_buscadorcod_institucion'] = inst[0][0]; d['ef_form_2822_filtro_buscadorcod_modalidad'] = 'nopar'; d['ef_form_2822_filtro_buscadorcod_nivel'] = 'nopar'
+              for ev in ('filtrar', 'buscar'):
+                  d['form_2822_filtro_buscador'] = ev
+                  r = op.open(B + act, urllib.parse.urlencode(d).encode(), timeout=60).read().decode('latin-1')
+                  txt = re.sub(r'\s+', ' ', re.sub(r'<script[\s\S]*?</script>|<[^>]+>', ' ', r))
+                  print('POST', ev, len(r), txt[txt.find('Buscador'):txt.find('Buscador') + 2500])
           PY
