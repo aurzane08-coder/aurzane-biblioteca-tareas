@@ -1,6 +1,25 @@
 [
  {
   "fecha": "2026-11-24",
+  "id": "cita-a7bdb1183b",
+  "tipo": "cita",
+  "titulo": "Todo ideal es, instintivamente, extremoso; debe serlo á sabiendas, si es menester, pues pronto se rebaja al refractarse en la mediocridad de los más.",
+  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-hombre-mediocre-ensayo-psicologia-moral/",
+  "motivo": "Gemini le dio 7/10: no tiene fuerza suficiente para redes"
+ },
+ {
+  "fecha": "2026-11-24",
+  "id": "ia-relatos-en-sombra",
+  "tipo": "libro",
+  "titulo": "Relatos En Sombra",
+  "url": "https://archive.org/details/relatos-en-sombra",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 33 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/relatos-en-sombra/Relatos%20en%20sombra.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-24",
   "id": "ia-aurzane-bib-intervencion-educativa-inclusion-social-equipos-atencion",
   "tipo": "libro",
   "titulo": "Intervención Educativa para la Inclusión Social: Los Equipos de Atención a la Infancia y a la Adolescencia (EAIA)",
@@ -3219,28 +3238,6 @@
   "motivo": "La IA le dio 2/10: no encaja en la biblioteca",
   "probados": [
    "200 application/pdf https://archive.org/download/the-astro-testament-astroboy-zm/The_Astro_Testament_Astroboy_ZM.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-14",
-  "id": "ia-the-astro-testament-astroboy-zm",
-  "tipo": "libro",
-  "titulo": "The Astro Testament Astroboy ZM",
-  "url": "https://archive.org/details/the-astro-testament-astroboy-zm",
-  "motivo": "Dice ser un libro pero el PDF solo tiene 27 páginas (es un capítulo, artículo o resumen)",
-  "probados": [
-   "200 application/pdf https://archive.org/download/the-astro-testament-astroboy-zm/The_Astro_Testament_Astroboy_ZM.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-13",
-  "id": "ia-turbo-suslik-2.1-english-engineers-edition",
-  "tipo": "libro",
-  "titulo": "Turbo Suslik 2.1 English Engineers Edition",
-  "url": "https://archive.org/details/turbo-suslik-2.1-english-engineers-edition",
-  "motivo": "La IA le dio 2/10: no encaja en la biblioteca",
-  "probados": [
-   "200 application/pdf https://archive.org/download/turbo-suslik-2.1-english-engineers-edition/Turbo-Suslik-2.1-English-engineers-edi"
   ]
  }
 ]
