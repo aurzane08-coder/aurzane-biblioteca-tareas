@@ -394,9 +394,15 @@ def argentina():
             act, oc = estado(t)
             t = abrir(B + act, dict(oc, cuadro_2823_cuadro_buscador='cambiar_pagina', cuadro_2823_cuadro_buscador__pagina_actual=str(pag)))
         carreras, idx = [], {}
+        # el mismo título aparece a veces sin carrera (resoluciones antiguas): se le pone la carrera con la que figura en otra fila
+        base_t = lambda x: re.sub(r'/(A|AS|ES)\b', '', x.upper()).strip()
+        car_de = {}
+        for f in todas:
+            if f[2] and f[2].strip() and f[2] != '\xa0': car_de.setdefault((base_t(f[1]), f[5]), f[2])
         for f in todas:
             titulo, carrera, modal, nivel = f[1], f[2], f[4], f[5]
-            nom = carrera if carrera and carrera != '\xa0' and carrera.strip() else titulo
+            if not (carrera and carrera.strip() and carrera != '\xa0'): carrera = car_de.get((base_t(titulo), nivel), '')
+            nom = carrera if carrera else titulo
             nom = acentuar(cap(nom))
             grupo = {'Grado': 'Grado', 'Pregrado': 'Pregrado universitario'}.get(nivel)
             if not grupo:
