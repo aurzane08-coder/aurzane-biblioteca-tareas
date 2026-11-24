@@ -400,3 +400,21 @@ details.grupo>summary:focus-visible{outline:2px solid var(--accent-text);outline
 .nc-grid li a:hover b{text-decoration:underline!important}
 /* «Antes de elegir universidad»: las 4 herramientas en una fila en pantallas anchas (antes quedaba una sola abajo) */
 .tres{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+/* Study in Spain: grados en inglés (24/11/2026) */
+.ie-hero .stats{margin-top:22px}
+.ie-hero .stats b{color:#F6F5F0}.ie-hero .stats span{color:#DDE2DC}
+.ie-filtro{grid-template-columns:minmax(0,2fr) repeat(3,minmax(0,1fr)) auto}
+.ie-nota{color:var(--text-dim);font-size:.92rem;margin:0 0 16px}
+.ie-rama{margin:30px 0 0;background:var(--surface);border:1px solid var(--border);border-radius:var(--radio);overflow:hidden}
+.ie-rama>img.v4-foto{display:block;width:100%;height:150px;object-fit:cover;background:#183D32}
+.ie-rama h2{font-size:1.35rem;margin:20px 22px 4px;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.ie-rama h2 small{font:500 .85rem var(--sans);color:var(--text-dim)}
+.ie-grid{list-style:none;margin:0;padding:12px 22px 22px;display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px}
+.ie-grid li{display:flex;flex-direction:column;gap:4px;padding:14px 16px;border:1px solid var(--border);border-radius:12px;background:var(--surface-2,transparent)}
+.ie-grid li b{line-height:1.3}.ie-grid li small{color:var(--text-dim);font-size:.8rem}
+.ie-uni{font-weight:600;font-size:.9rem;color:var(--accent-text)}
+.ie-meta{font-size:.8rem;color:var(--text-dim)}
+.ie-badge{align-self:flex-start;font-size:.72rem;font-weight:700;padding:3px 9px;border-radius:99px;background:#183D32;color:#F6F5F0;margin-bottom:4px}
+.ie-badge.mixto{background:#D9CDB2;color:#12251F}
+@media(max-width:900px){.ie-filtro{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.ie-filtro{grid-template-columns:1fr}.ie-rama h2{margin:16px 16px 4px}.ie-grid{padding:10px 16px 16px}}

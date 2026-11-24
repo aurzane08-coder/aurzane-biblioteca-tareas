@@ -50,7 +50,8 @@ def slug(s):
 
 
 def e(s):
-    return html.escape(str(s if s is not None else ''), quote=True)
+    # \x92: apóstrofo de Windows mal leído en algunos nombres oficiales (24/11/2026)
+    return html.escape(str(s if s is not None else '').replace('\x92', '’'), quote=True)
 
 
 def fmt(n):

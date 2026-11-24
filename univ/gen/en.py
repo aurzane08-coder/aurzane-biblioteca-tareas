@@ -36,7 +36,8 @@ F_IPREM = ('https://www.ocu.org/dinero/trabajo-paro/noticias/smi-iprem', 'OCU, I
 F_UNEDASISS = ('https://unedasiss.uned.es/', 'UNEDasiss (UNED), accreditation for students from foreign education systems')
 F_HOMOL = ('https://educacionfpydeportes.gob.es/en/dam/jcr:7862606d-5908-4d9e-b147-ec65ac682deb/ayuda-solicitud-hom.pdf', 'Ministry of Education, Vocational Training and Sports, guide to the homologation application')
 
-E = lambda s: html.escape(str(s or ''), quote=True)
+# \x92 es el apóstrofo de Windows mal leído en algunos nombres oficiales («Bachelor\x92s»): se muestra como ’
+E = lambda s: html.escape(str(s or '').replace('\x92', '’'), quote=True)
 
 
 def _cargar(p, defecto):
@@ -54,6 +55,14 @@ def generar(G):
     if not us:
         print('EN: sin universidades españolas con grados; no se genera'); return
     TRAD = _cargar(os.path.join(DATOS, 'grados_en.json'), {})
+    # Idioma de cada grado según su memoria en el RUCT (univ/idiomas.py). «en» = solo en inglés; «mixto» = inglés y otra lengua.
+    IDI = _cargar(os.path.join(DATOS, 'idiomas_grados.json'), {})
+    def idioma(c):
+        ls = set()
+        for k in c.get('cods') or []:
+            ls |= set((IDI.get(k) or {}).get('idiomas') or [])
+        if 'INGLÉS' not in ls: return ''
+        return 'en' if ls == {'INGLÉS'} else 'mixto'
     pendientes = set()
     RAIZ = os.path.normpath(os.path.join(SALIDA, '..', 'en'))
     URLS = []
@@ -114,6 +123,7 @@ def generar(G):
 <nav class="topnav" id="topnav" aria-label="Study in Spain">
 {a(EN_BASE, 'Study in Spain', 'inicio')}
 {a(EN_BASE + 'universities/', 'Universities', 'unis')}
+{a(EN_BASE + 'degrees-taught-in-english/', 'Degrees in English', 'ingles')}
 {a(EN_BASE + 'guides/apply-to-a-spanish-university/', 'How to apply', 'apply')}
 {a(EN_BASE + 'guides/student-visa-spain/', 'Student visa', 'visa')}
 {a(EN_BASE + 'guides/cost-of-studying-in-spain/', 'Costs', 'costs')}
@@ -172,6 +182,8 @@ def generar(G):
                 der = []
                 if c.get('nota'): der.append(f'Cut-off mark {fmt_nota(c["nota"]).replace(",", ".")} / 14')
                 if c.get('cred'): der.append(f'{c["cred"]} ECTS')
+                li_ = idioma(c)
+                if li_: der.insert(0, 'Taught in English' if li_ == 'en' else 'Taught partly in English')
                 if c.get('mod'): der.append('Online' if c['mod'] == ['En línea'] else ' · '.join(c['mod']))
                 if c.get('sedes') and (len(c['sedes']) > 1 or c['sedes'][0] != u['ciudad']): der.append(', '.join(ciudad_en(s) for s in c['sedes'][:4]) + ('…' if len(c['sedes']) > 4 else ''))
                 nombre = (f'{E(en)}<small lang="es">Official name: {E(c["n"])}</small>' if en else f'<span lang="es">{E(c["n"])}</span><small>Official name in Spanish (English translation coming soon)</small>')
@@ -193,7 +205,10 @@ def generar(G):
         if u['extra'].get('en_linea'): intro += ' It teaches online, so you can study without moving to its city.'
         top = [RAMA_EN.get(g, g) for g in orden_g if g in RAMA_EN and g not in ('Grado', 'Otras')][:3]
         if len(top) > 1: intro += f' Most of its degrees are in {", ".join(top[:-1])} and {top[-1]}.'
-        intl = (f'<section class="card" id="international"><h2>Studying at {E(u["nombre"])} as an international student</h2>'
+        n_en = sum(1 for c in u['carreras'] if idioma(c))
+        intl_en = (f'<p><b>Degrees in English:</b> according to the official registry, {fmt(n_en)} of its degrees {"is" if n_en == 1 else "are"} taught fully or partly in English. '
+                   f'They are marked in the list above. <a href="{EN_BASE}degrees-taught-in-english/">See all degrees taught in English in Spain →</a></p>') if n_en else ''
+        intl = (f'<section class="card" id="international"><h2>Studying at {E(u["nombre"])} as an international student</h2>' + intl_en +
                 '<p><b>From an EU country, or with the International or European Baccalaureate:</b> you can apply with your own school-leaving qualification. '
                 'You first get an accreditation from UNEDasiss, the service run by the Spanish open university (UNED), which converts your grade to the Spanish scale. '
                 'You can raise your admission grade up to 14 points with the specific competence tests (PCE).</p>'
@@ -271,6 +286,74 @@ def generar(G):
     esc('universities/index.html', lista_h)
     URLS.append(SITIO + EN_BASE + 'universities/')
 
+    # ------------------------------------------------------------------ grados que se imparten en inglés (24/11/2026)
+    filas_en = []
+    for u in us:
+        for c in u['carreras']:
+            li_ = idioma(c)
+            if li_: filas_en.append((u, c, li_))
+    mirados = sum(1 for u in us for c in u['carreras'] if any(k in IDI for k in (c.get('cods') or [])))
+    total_c = sum(len(u['carreras']) for u in us)
+    if filas_en:
+        FOTO_RAMA = {'Ciencias Sociales y Jurídicas': 'empresa trabajo dinero', 'Ingeniería y Arquitectura': 'arquitectura obra', 'Ciencias de la Salud': 'medico salud',
+                     'Ciencias': 'laboratorio investigacion', 'Artes y Humanidades': 'lectura libro', 'Grado': 'estudiantes universidad', 'Otras': 'campus universidad'}
+        por_rama = collections.OrderedDict()
+        for u, c, li_ in sorted(filas_en, key=lambda x: ((tr(x[1]['n']) or x[1]['n']).lower(), x[0]['nombre'])):
+            por_rama.setdefault(c['grupo'] or 'Otras', []).append((u, c, li_))
+        n_en_solo = sum(1 for x in filas_en if x[2] == 'en'); n_unis = len({x[0]['slug'] for x in filas_en})
+        def tarjeta_en(u, c, li_):
+            en = tr(c['n'])
+            nombre = f'<b>{E(en)}</b><small lang="es">{E(c["n"])}</small>' if en else f'<b lang="es">{E(c["n"])}</b>'
+            extra = []
+            if c.get('nota'): extra.append(f'Cut-off {fmt_nota(c["nota"]).replace(",", ".")} / 14')
+            if c.get('cred'): extra.append(f'{c["cred"]} ECTS')
+            if c.get('mod') == ['En línea']: extra.append('Online')
+            return (f'<li data-q="{E(((en or "") + " " + c["n"] + " " + u["nombre"] + " " + u["ciudad"]).lower())}" data-region="{E(region_en(u["region"]))}" data-li="{li_}" data-tipo="{tipo_en(u)}">'
+                    f'<span class="ie-badge {li_}">{"Fully in English" if li_ == "en" else "English and Spanish"}</span>{nombre}'
+                    f'<a class="ie-uni" href="{EN_BASE}universities/{u["slug"]}/">{E(u["nombre"])}</a>'
+                    f'<span class="ie-meta">{E(lugar_en(u))} · {"Public" if u["tipo"] == "Pública" else "Private"}{" · " + E(" · ".join(extra)) if extra else ""}</span></li>')
+        secciones = ''.join(f'<section class="ie-rama" data-foto="{E(FOTO_RAMA.get(g, "estudiantes universidad"))} {E(g)}"><h2>{E(RAMA_EN.get(g, g))}<small>{len(v)} degree{"s" if len(v) != 1 else ""}</small></h2>'
+                            f'<ul class="ie-grid">{"".join(tarjeta_en(*x) for x in v)}</ul></section>' for g, v in sorted(por_rama.items(), key=lambda kv: -len(kv[1])))
+        regs = sorted({region_en(x[0]['region']) for x in filas_en if x[0]['region']})
+        filtro_ie = (f'<div class="en-filtro ie-filtro"><label><span class="vh">Search</span><input type="search" id="ieQ" placeholder="Degree, university or city" autocomplete="off"></label>'
+                     f'<label><span class="vh">Region</span><select id="ieR"><option value="">All regions</option>{"".join(f"<option>{E(r)}</option>" for r in regs)}</select></label>'
+                     '<label><span class="vh">Language</span><select id="ieL"><option value="">Fully or partly in English</option><option value="en">Fully in English</option><option value="mixto">English and Spanish</option></select></label>'
+                     '<label><span class="vh">Type</span><select id="ieT"><option value="">Public and private</option><option value="public">Public</option><option value="private">Private</option></select></label>'
+                     f'<p id="ieN" aria-live="polite"><b>{len(filas_en)}</b> degrees</p></div>')
+        js_ie = ('<script>(function(){var q=document.getElementById("ieQ"),r=document.getElementById("ieR"),l=document.getElementById("ieL"),t=document.getElementById("ieT"),n=document.getElementById("ieN");'
+                 'function f(){var a=(q.value||"").toLowerCase().trim(),k=0;document.querySelectorAll(".ie-grid li").forEach(function(c){'
+                 'var ok=(!a||c.dataset.q.indexOf(a)>=0)&&(!r.value||c.dataset.region===r.value)&&(!l.value||c.dataset.li===l.value)&&(!t.value||c.dataset.tipo===t.value);c.hidden=!ok;if(ok)k++;});'
+                 'document.querySelectorAll(".ie-rama").forEach(function(s){s.hidden=!s.querySelector("li:not([hidden])");});'
+                 'n.innerHTML="<b>"+k+"</b> degree"+(k===1?"":"s");document.getElementById("ieNada").hidden=k>0;}[q,r,l,t].forEach(function(x){x.addEventListener("input",f);x.addEventListener("change",f);});})();</script>')
+        aviso_cob = ('' if mirados >= total_c * 0.97 else
+                     f'<p class="ie-nota">We are checking the official records degree by degree: so far {fmt(mirados)} of {fmt(total_c)}. This list grows automatically as the check advances.</p>')
+        canon_ie = SITIO + EN_BASE + 'degrees-taught-in-english/'
+        tit_ie = f"Bachelor's degrees taught in English in Spain ({len(filas_en)} official degrees)"
+        desc_ie = (f'{len(filas_en)} official bachelor\'s degrees at {n_unis} Spanish universities are taught fully or partly in English, according to the government registry (RUCT). '
+                   'Search by subject, region and university, with cut-off marks and fees.')
+        jl_ie = {'@context': 'https://schema.org', '@type': 'ItemList', 'name': tit_ie, 'url': canon_ie, 'numberOfItems': len(filas_en)}
+        faq_ie = [('What does "English and Spanish" mean?', 'The university declares in its official degree report that the degree is taught in English and in Spanish (or in another regional language). Usually that means some groups or some subjects are in English. Check on the university website which part you can take entirely in English.'),
+                  ('Do I need to speak Spanish for a degree taught in English?', 'Not for the classes taught in English, but the university may ask for Spanish for the parts that are not, and you will need it for daily life. Each university sets its own language requirements, often a B2 level in the language of instruction.'),
+                  ('Is the admission process the same?', 'Yes. Degrees taught in English are official Spanish degrees and you apply through the same route: UNEDasiss accreditation and, if you studied outside the EU, homologation. Some private universities run their own admission process as well.'),
+                  ('Where does this list come from?', 'From the Registry of Universities, Centres and Degrees (RUCT) of the Spanish Ministry of Science, Innovation and Universities. For every degree we read the languages that each teaching centre declares in the official report. The list is checked again automatically every few months.')]
+        ie_h = cabeza(tit_ie, desc_ie, canon_ie, jsonld=jl_ie) + topbar('ingles') + f"""
+<main><section class="hero en-hero ie-hero"><div class="wrap">{migas(("Study in Spain", EN_BASE), ("Degrees taught in English", ""))}
+<p class="eyebrow">Official data · Spanish government registry</p>
+<h1>Bachelor's degrees taught in English in Spain</h1>
+<p class="lead">{fmt(len(filas_en))} official bachelor's degrees at {n_unis} Spanish universities are taught fully or partly in English. Filter them by subject, region, language and type of university.</p>
+<ul class="stats"><li><b>{fmt(len(filas_en))}</b><span>degrees with English</span></li><li><b>{fmt(n_en_solo)}</b><span>fully in English</span></li><li><b>{n_unis}</b><span>universities</span></li></ul>
+</div></section>
+<div class="wrap" style="padding-top:28px">{aviso_cob}{filtro_ie}{secciones}<p id="ieNada" class="ie-nota" hidden>No degree matches these filters. Try another region or remove the search words.</p>
+<section class="card guia-auto" style="margin-top:36px"><h2>Before you choose</h2>
+<p>"Fully in English" means every teaching centre of that degree declares English as its only language of instruction. "English and Spanish" means the degree is taught in English and in another language, so check which groups or subjects you can take in English.</p>
+<p>You apply to these degrees in the same way as to any Spanish degree. <a href="{EN_BASE}guides/apply-to-a-spanish-university/">Read how to apply →</a></p>
+<h3>Frequently asked questions</h3>{"".join(f"<details><summary>{E(q_)}</summary><p>{E(r_)}</p></details>" for q_, r_ in faq_ie)}</section>
+{fuentes([("https://www.educacion.gob.es/ruct/home", "Registry of Universities, Centres and Degrees (RUCT), Spanish Ministry of Science, Innovation and Universities")])}
+</div></main>{js_ie}""" + pie()
+        esc('degrees-taught-in-english/index.html', ie_h)
+        URLS.append(canon_ie)
+        print(f'EN: {len(filas_en)} grados en inglés en {n_unis} universidades (mirados {mirados} de {total_c})')
+
     destacadas = sorted(us, key=lambda x: (-(1 if rank_de(x) else 0), (rank_de(x) or [10 ** 9])[0], -x['n']))[:6]
     guia_cards = ''.join(f'<a class="en-guia" href="{EN_BASE}guides/{s}/"><b>{t}</b><span>{d}</span></a>' for s, t, d in (
         ('apply-to-a-spanish-university', 'How to apply', 'UNEDasiss, homologation, the 14-point grade and the language you need.'),
@@ -285,7 +368,7 @@ def generar(G):
 <p class="lead">Spain has {len(us)} universities with {fmt(n_grados)} official bachelor's degrees. Public universities charge from about €720 a year, and you can apply from anywhere in the world. Here is how it works, step by step, with official sources.</p>
 <div class="acc"><a class="btn btn-luz" href="{EN_BASE}universities/">Browse the universities</a><a class="btn btn-claro" href="{EN_BASE}guides/apply-to-a-spanish-university/">How to apply</a></div></div></section>
 <div class="wrap" style="padding-top:32px">
-<section class="en-guias">{guia_cards}</section>
+<section class="en-guias">{(f'<a class="en-guia" href="{EN_BASE}degrees-taught-in-english/"><b>Degrees in English</b><span>{fmt(len(filas_en))} official degrees taught fully or partly in English, by subject and region.</span></a>' if filas_en else '')}{guia_cards}</section>
 <h2 class="en-h2">Top universities by research</h2>
 <div class="grid-u">{"".join(tarjeta(u) for u in destacadas)}</div>
 <p style="margin:18px 0 40px"><a class="btn btn-osc" href="{EN_BASE}universities/">See all {len(us)} universities</a></p>
