@@ -1,0 +1,32 @@
+name: Universidades idiomas de los grados
+# En qué idioma se imparte cada grado oficial de España (RUCT). Reanudable: se relanza sola hasta terminar.
+on:
+  schedule:
+    - cron: '41 2 * * 0'
+  push:
+    paths: ['univ/idiomas.py', '.github/workflows/univ-idiomas.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: write
+concurrency: univ-idiomas
+jobs:
+  idiomas:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    steps:
+      - uses: actions/checkout@v4
+      - id: run
+        env: {MINUTOS: '300'}
+        run: python3 -u univ/idiomas.py
+      - name: Guardar
+        if: always()
+        run: |
+          git config user.name "aurzane-bot"; git config user.email "bot@aurzane.com"
+          git add univ/data/idiomas_grados.json; git commit -qm "universidades: idiomas de los grados" || exit 0
+          for i in 1 2 3 4 5; do git pull -q --rebase -X theirs && git push -q && break; sleep 7; done
+      - name: Seguir si quedan
+        if: steps.run.outputs.quedan != '0' && steps.run.outputs.quedan != ''
+        env: {GH_TOKEN: '${{ github.token }}'}
+        run: gh workflow run univ-idiomas.yml --ref main
