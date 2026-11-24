@@ -322,5 +322,37 @@
  "https://nexus.aurzane.com/universidades/ecuador/ciudad/portoviejo/": {
   "titulo": "Universidades en Portoviejo: 5 centros y carreras",
   "desc": "Conoce las 5 universidades de Portoviejo, públicas y privadas. Compara modalidades, oferta académica y accede a la web oficial de cada centro."
+ },
+ "https://nexus.aurzane.com/universidades/estados-unidos/university-of-california-berkeley/": {
+  "titulo": "Universidad de Berkeley: carreras, admisión y costes",
+  "desc": "Descubre cómo entrar en la universidad de Berkeley: tasa de admisión, precios, carreras oficiales y requisitos para estudiantes de fuera."
+ },
+ "https://nexus.aurzane.com/universidades/estados-unidos/rockhurst-university/": {
+  "titulo": "Rockhurst University: admisión y carreras | AURZANE",
+  "desc": "Descubre cómo estudiar en Rockhurst University: requisitos de admisión, precio medio, carreras disponibles y becas para estudiantes internacionales."
+ },
+ "https://nexus.aurzane.com/universidades/estados-unidos/wiley-university/": {
+  "titulo": "Wiley University: carreras, precio y admisión | AURZANE",
+  "desc": "Consulta la oferta académica de Wiley University en Texas, sus costes, requisitos de admisión y becas para estudiantes extranjeros."
+ },
+ "https://nexus.aurzane.com/universidades/estados-unidos/greensboro-college/": {
+  "titulo": "Greensboro College: admisión, carreras y costes | AURZANE",
+  "desc": "Descubre cómo estudiar en Greensboro College: requisitos de admisión, 27 carreras disponibles, costes medios y opciones de becas para extranjeros."
+ },
+ "https://nexus.aurzane.com/universidades/estados-unidos/hamline-university/": {
+  "titulo": "Hamline University: admisión, School of Business y costes",
+  "desc": "Descubre Hamline University en Saint Paul: requisitos de admisión, su School of Business, costes reales y carreras para estudiantes internacionales."
+ },
+ "https://nexus.aurzane.com/universidades/estados-unidos/bluefield-state-university/": {
+  "titulo": "Bluefield State University: másteres, carreras y precios",
+  "desc": "Descubre la oferta académica, másteres, requisitos de admisión y costes de Bluefield State University para estudiar en Estados Unidos."
+ },
+ "https://nexus.aurzane.com/universidades/reino-unido/university-of-wales-trinity-saint-david/": {
+  "titulo": "University of Wales Trinity Saint David (UWTSD) | AURZANE",
+  "desc": "Conoce todos los datos de UWTSD (University of Wales Trinity Saint David): su ubicación en Gales, tipo de universidad, ranking y enlace oficial."
+ },
+ "https://nexus.aurzane.com/universidades/estados-unidos/millersville-university-of-pennsylvania/": {
+  "titulo": "Millersville University: carreras y admisión | AURZANE",
+  "desc": "Descubre las carreras de Millersville University en EE. UU., su tasa de admisión, costes anuales y requisitos para alumnos internacionales."
  }
 }

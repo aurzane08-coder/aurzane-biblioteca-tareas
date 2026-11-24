@@ -555,6 +555,36 @@
  ],
  "paises_trabajados": [
   [
+   "2026-11-24",
+   "Costa Rica",
+   "Los dones de la imperfección: Claves de autoaceptación"
+  ],
+  [
+   "2026-11-24",
+   "Costa Rica",
+   "Guía de universidades en Costa Rica: Cómo elegir carrera"
+  ],
+  [
+   "2026-11-24",
+   "Panamá",
+   "Cómo estudiar en universidades de EE. UU. desde Panamá"
+  ],
+  [
+   "2026-11-24",
+   "Panamá",
+   "Universidades en Panamá: oferta académica y examen de ingreso"
+  ],
+  [
+   "2026-11-24",
+   "República Dominicana",
+   "Cómo saber qué carrera estudiar en República Dominicana"
+  ],
+  [
+   "2026-11-24",
+   "República Dominicana",
+   "Cómo estudiar en universidades de EEUU desde República Dominicana"
+  ],
+  [
    "2026-11-23",
    "Paraguay",
    "Manejo del estrés y la ansiedad ante exámenes en Paraguay"
@@ -583,40 +613,74 @@
    "2026-11-22",
    "Guatemala",
    "Guía completa de universidades en Guatemala y cómo elegir carrera"
-  ],
-  [
-   "2026-11-21",
-   "Nicaragua",
-   "Inteligencia emocional y gestión del estrés en estudiantes de Nicaragua"
-  ],
-  [
-   "2026-11-21",
-   "Nicaragua",
-   "Cómo elegir carrera universitaria en Nicaragua: Guía y test vocacional"
-  ],
-  [
-   "2026-11-21",
-   "Bolivia",
-   "Acceso a universidades públicas en Bolivia: Cómo prepararse"
-  ],
-  [
-   "2026-11-21",
-   "Bolivia",
-   "Universidades en Santa Cruz: Guía completa para elegir carrera"
-  ],
-  [
-   "2026-11-21",
-   "España",
-   "Estudiar en Holanda: Guía de universidades y grados para españoles"
-  ],
-  [
-   "2026-11-21",
-   "España",
-   "Cómo superar el perfeccionismo y ganar autocompasión en España"
   ]
  ],
- "fichas_ampliadas": 14,
+ "fichas_ampliadas": 17,
  "cambios_titulos": [
+  [
+   "2026-11-24",
+   "https://nexus.aurzane.com/universidades/estados-unidos/millersville-university-of-pennsylvania/",
+   "Millersville University of Pennsylvania: admisión, costes",
+   "Millersville University: carreras y admisión | AURZANE",
+   null,
+   0.0
+  ],
+  [
+   "2026-11-24",
+   "https://nexus.aurzane.com/universidades/reino-unido/university-of-wales-trinity-saint-david/",
+   "University of Wales Trinity Saint David: n.º 5.809 del mundo",
+   "University of Wales Trinity Saint David (UWTSD) | AURZANE",
+   null,
+   0.0
+  ],
+  [
+   "2026-11-24",
+   "https://nexus.aurzane.com/universidades/estados-unidos/bluefield-state-university/",
+   "Bluefield State University: admisión 97 %, costes y becas",
+   "Bluefield State University: másteres, carreras y precios",
+   null,
+   0.0
+  ],
+  [
+   "2026-11-24",
+   "https://nexus.aurzane.com/universidades/estados-unidos/hamline-university/",
+   "Hamline University: admisión 88 %, costes y becas",
+   "Hamline University: admisión, School of Business y costes",
+   null,
+   0.0
+  ],
+  [
+   "2026-11-24",
+   "https://nexus.aurzane.com/universidades/estados-unidos/greensboro-college/",
+   "Greensboro College: admisión 70 %, costes y becas",
+   "Greensboro College: admisión, carreras y costes | AURZANE",
+   null,
+   0.0
+  ],
+  [
+   "2026-11-24",
+   "https://nexus.aurzane.com/universidades/estados-unidos/wiley-university/",
+   "Wiley University: admisión, costes y becas",
+   "Wiley University: carreras, precio y admisión | AURZANE",
+   null,
+   0.0
+  ],
+  [
+   "2026-11-24",
+   "https://nexus.aurzane.com/universidades/estados-unidos/rockhurst-university/",
+   "Rockhurst University: admisión 70 %, costes y becas",
+   "Rockhurst University: admisión y carreras | AURZANE",
+   null,
+   0.0
+  ],
+  [
+   "2026-11-24",
+   "https://nexus.aurzane.com/universidades/estados-unidos/university-of-california-berkeley/",
+   "University of California-Berkeley: admisión 11 %, costes",
+   "Universidad de Berkeley: carreras, admisión y costes",
+   null,
+   0.0
+  ],
   [
    "2026-11-24",
    "https://nexus.aurzane.com/universidades/ecuador/ciudad/portoviejo/",
@@ -672,122 +736,58 @@
    "Mercy University: admisiones, costes y carreras | AURZANE",
    null,
    0.0
-  ],
-  [
-   "2026-11-24",
-   "https://nexus.aurzane.com/universidades/estados-unidos/brescia-university/",
-   "Brescia University: admisión 35 %, costes y becas",
-   "Brescia University: admisión, costes y carreras",
-   null,
-   0.0
-  ],
-  [
-   "2026-11-23",
-   "https://nexus.aurzane.com/universidades/estados-unidos/howard-college/",
-   "Howard College: n.º 17.558 del mundo y 32 carreras",
-   "Howard College: carreras y información | AURZANE",
-   null,
-   0.0
-  ],
-  [
-   "2026-11-23",
-   "https://nexus.aurzane.com/universidades/estados-unidos/carolina-university/",
-   "Carolina University: admisión 40 %, costes y becas",
-   "Carolina University: admisión, costes y becas | AURZANE",
-   null,
-   0.0
-  ],
-  [
-   "2026-11-23",
-   "https://nexus.aurzane.com/universidades/estados-unidos/niagara-university/",
-   "Niagara University: admisión 87 %, costes y becas",
-   "Niagara University: admisión, costes y carreras",
-   null,
-   0.0
-  ],
-  [
-   "2026-11-23",
-   "https://nexus.aurzane.com/universidades/estados-unidos/midway-university/",
-   "Midway University: admisión 95 %, costes y becas",
-   "Midway University: admisión, costes y carreras",
-   null,
-   0.0
-  ],
-  [
-   "2026-11-23",
-   "https://nexus.aurzane.com/universidades/estados-unidos/depaul-university/",
-   "DePaul University: admisión 76 %, costes y becas",
-   "DePaul University: admisión, costes y carreras | AURZANE",
-   null,
-   0.0
-  ],
-  [
-   "2026-11-23",
-   "https://nexus.aurzane.com/universidades/estados-unidos/wabash-college/",
-   "Wabash College: admisión 63 %, costes y becas",
-   "Wabash College: admisión, costes y becas | AURZANE",
-   null,
-   0.0
-  ],
-  [
-   "2026-11-23",
-   "https://nexus.aurzane.com/universidades/estados-unidos/holy-family-university/",
-   "Holy Family University: admisión 71 %, costes y becas",
-   "Holy Family University: admisión, costes y carreras",
-   null,
-   0.0
   ]
  ],
  "temas_nuevos": [
   [
-   "2026-11-23",
-   "ansiedad",
-   "Manejo del estrés y la ansiedad ante exámenes en Paraguay"
+   "2026-11-24",
+   "los dones de la imperfeccion",
+   "Los dones de la imperfección: Claves de autoaceptación"
   ],
   [
-   "2026-11-23",
-   "universidad",
-   "Cómo elegir carrera universitaria en Paraguay: Guía definitiva"
+   "2026-11-24",
+   "universidades en costa rica",
+   "Guía de universidades en Costa Rica: Cómo elegir carrera"
   ],
   [
-   "2026-11-23",
-   "cuantas universidades hay en uruguay",
-   "Sistema universitario en Uruguay: carreras y opciones de estudio"
+   "2026-11-24",
+   "estudiar en estados unidos desde panama",
+   "Cómo estudiar en universidades de EE. UU. desde Panamá"
   ],
   [
-   "2026-11-23",
-   "universidades en uruguay",
-   "Guía completa de universidades en Uruguay: públicas y privadas"
+   "2026-11-24",
+   "cuantas universidades hay en panama",
+   "Universidades en Panamá: oferta académica y examen de ingreso"
   ],
   [
-   "2026-11-22",
-   "cuantas universidades publicas hay en guatemala",
-   "Universidades públicas y privadas en Guatemala: diferencias clave"
+   "2026-11-24",
+   "como saber que carrera estudiar republica dominicana",
+   "Cómo saber qué carrera estudiar en República Dominicana"
   ],
   [
-   "2026-11-22",
-   "universidades en guatemala",
-   "Guía completa de universidades en Guatemala y cómo elegir carrera"
+   "2026-11-24",
+   "estudiar en estados unidos desde republica dominicana",
+   "Cómo estudiar en universidades de EEUU desde República Dominicana"
   ],
   [
-   "2026-11-21",
-   "cerebro emocional libro",
-   "Inteligencia emocional y gestión del estrés en estudiantes de Nicaragua"
+   "2026-11-24",
+   "carreras universitarias",
+   "Guía para elegir tu carrera universitaria según tu vocación"
   ],
   [
-   "2026-11-21",
-   "carreras de universidad",
-   "Cómo elegir carrera universitaria en Nicaragua: Guía y test vocacional"
+   "2026-11-24",
+   "estudiar en maastricht",
+   "Estudiar en Maastricht: universidades, requisitos y vida académica"
   ],
   [
-   "2026-11-21",
-   "universidades publicas de bolivia",
-   "Acceso a universidades públicas en Bolivia: Cómo prepararse"
+   "2026-11-24",
+   "doble grado en derecho y criminología nota de corte",
+   "Doble grado en Derecho y Criminología: notas de corte y salidas"
   ],
   [
-   "2026-11-21",
-   "cuantas universidades hay en santa cruz",
-   "Universidades en Santa Cruz: Guía completa para elegir carrera"
+   "2026-11-24",
+   "universidades en roma",
+   "Guía para estudiar en universidades de Roma: oferta y admisiones"
   ]
  ]
 }

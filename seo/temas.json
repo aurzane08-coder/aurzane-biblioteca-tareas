@@ -1195,5 +1195,106 @@
   "pais_nombre": "Paraguay",
   "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al número de emergencias del país. ",
   "fecha": "2026-11-23"
+ },
+ {
+  "consulta": "estudiar en stanford",
+  "titulo": "Cómo estudiar en Stanford: requisitos, admisiones y becas",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "fecha": "2026-11-24"
+ },
+ {
+  "consulta": "universidades en roma",
+  "titulo": "Guía para estudiar en universidades de Roma: oferta y admisiones",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "fecha": "2026-11-24"
+ },
+ {
+  "consulta": "doble grado en derecho y criminología nota de corte",
+  "titulo": "Doble grado en Derecho y Criminología: notas de corte y salidas",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "fecha": "2026-11-24"
+ },
+ {
+  "consulta": "estudiar en maastricht",
+  "titulo": "Estudiar en Maastricht: universidades, requisitos y vida académica",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "fecha": "2026-11-24"
+ },
+ {
+  "consulta": "carreras universitarias",
+  "titulo": "Guía para elegir tu carrera universitaria según tu vocación",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "fecha": "2026-11-24"
+ },
+ {
+  "consulta": "estudiar en estados unidos desde republica dominicana",
+  "titulo": "Cómo estudiar en universidades de EEUU desde República Dominicana",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "oferta": "universidades",
+  "pais": "DOM",
+  "pais_nombre": "República Dominicana",
+  "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al número de emergencias del país. ",
+  "fecha": "2026-11-24"
+ },
+ {
+  "consulta": "como saber que carrera estudiar republica dominicana",
+  "titulo": "Cómo saber qué carrera estudiar en República Dominicana",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "oferta": "test",
+  "pais": "DOM",
+  "pais_nombre": "República Dominicana",
+  "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al número de emergencias del país. ",
+  "fecha": "2026-11-24"
+ },
+ {
+  "consulta": "cuantas universidades hay en panama",
+  "titulo": "Universidades en Panamá: oferta académica y examen de ingreso",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "oferta": "universidades",
+  "pais": "PAN",
+  "pais_nombre": "Panamá",
+  "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al número de emergencias del país. ",
+  "fecha": "2026-11-24"
+ },
+ {
+  "consulta": "estudiar en estados unidos desde panama",
+  "titulo": "Cómo estudiar en universidades de EE. UU. desde Panamá",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "oferta": "universidades",
+  "pais": "PAN",
+  "pais_nombre": "Panamá",
+  "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al número de emergencias del país. ",
+  "fecha": "2026-11-24"
+ },
+ {
+  "consulta": "universidades en costa rica",
+  "titulo": "Guía de universidades en Costa Rica: Cómo elegir carrera",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "oferta": "universidades",
+  "pais": "CRI",
+  "pais_nombre": "Costa Rica",
+  "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al número de emergencias del país. ",
+  "fecha": "2026-11-24"
+ },
+ {
+  "consulta": "los dones de la imperfeccion",
+  "titulo": "Los dones de la imperfección: Claves de autoaceptación",
+  "mundo": "mind",
+  "test": "autoestima",
+  "oferta": "libros",
+  "pais": "CRI",
+  "pais_nombre": "Costa Rica",
+  "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al número de emergencias del país. ",
+  "fecha": "2026-11-24"
  }
 ]
