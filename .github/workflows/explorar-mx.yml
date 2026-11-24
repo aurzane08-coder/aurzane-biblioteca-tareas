@@ -10,10 +10,9 @@ jobs:
           python3 - <<'PY'
           import urllib.request, re
           t = urllib.request.urlopen(urllib.request.Request('https://anuario.anuies.mx/', headers={'User-Agent': 'Mozilla/5.0'}), timeout=60).read().decode('utf-8', 'replace')
-          print('LEN', len(t))
-          for pat in ['fetch(', 'FormData', 'append(', 'method:', "action", 'nivel', 'programa']:
-              for m in list(re.finditer(re.escape(pat), t))[:4]:
-                  print('==', pat, re.sub(r'\s+', ' ', t[max(0, m.start()-300):m.start()+500]))
-          print('NAMES', sorted(set(re.findall(r'name="([^"]+)"', t)))[:80])
-          print('IDS', sorted(set(re.findall(r'id="([^"]+)"', t)))[:120])
+          print('ACCIONES', sorted(set(re.findall(r"append\(\s*'action'\s*,\s*'([^']+)'", t))))
+          for m in list(re.finditer(r"'consulta|\"consulta|action', *'(consultar|datos|query|buscar)", t))[:3]:
+              print('== C', re.sub(r'\s+', ' ', t[max(0, m.start()-200):m.start()+2500]))
+          k = t.find('function buildFormData') if 'function buildFormData' in t else t.find('__anuiesSnapshot =')
+          print('== B', re.sub(r'\s+', ' ', t[k:k+4000]))
           PY
