@@ -418,3 +418,10 @@ details.grupo>summary:focus-visible{outline:2px solid var(--accent-text);outline
 .ie-badge.mixto{background:#D9CDB2;color:#12251F}
 @media(max-width:900px){.ie-filtro{grid-template-columns:1fr 1fr}}
 @media(max-width:600px){.ie-filtro{grid-template-columns:1fr}.ie-rama h2{margin:16px 16px 4px}.ie-grid{padding:10px 16px 16px}}
+/* eSIM de viaje (Simbye) en las páginas de país, 24/11/2026 */
+.esim{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:0;padding:0;overflow:hidden;margin-top:24px}
+.esim-img{display:block;background:#101412}.esim-img img{display:block;width:100%;height:100%;object-fit:cover}
+.esim-txt{padding:26px 28px}.esim-txt h2{margin:6px 0 10px;font-size:1.35rem;line-height:1.25}.esim-txt p{margin:0 0 12px;line-height:1.6}
+.esim-tag{font-size:.75rem;letter-spacing:.06em;opacity:.7}
+.esim-cod{display:inline-block;background:rgba(37,211,102,.12);border:1px dashed rgba(37,211,102,.6);border-radius:10px;padding:6px 12px}
+@media (max-width:760px){.esim{grid-template-columns:1fr}.esim-txt{padding:20px}}

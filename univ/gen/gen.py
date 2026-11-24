@@ -855,7 +855,26 @@ def estudiar_en(p, us):
             f'</ol><p class="sub">Ranking abierto por citas científicas (OpenAlex). <a href="{BASE}acerca/#ranking">Cómo se calcula</a>.</p>')
     pasos = (f'<p class="pasos"><a class="btn btn-luz" href="https://ovp.aurzane.com/">Haz el test vocacional gratis</a> '
              f'<a class="btn btn-claro" href="{BASE}comparar/">Compara universidades</a></p>')
-    return f'<section class="card estudiar-en" style="margin-top:24px"><h2>Estudiar en {e(p)}: lo esencial</h2>{datos_h}{top}{pasos}</section>'
+    return f'<section class="card estudiar-en" style="margin-top:24px"><h2>Estudiar en {e(p)}: lo esencial</h2>{datos_h}{top}{pasos}</section>' + esim(p)
+
+
+# eSIM de viaje de Simbye (Awin 107814, código propio AURZANE15, 24/11/2026): para quien se va a estudiar fuera.
+SIMBYE_ES = {'gb': 'uk-data-esim', 'de': 'esim-germany', 'fr': 'esim-france', 'it': 'esim-italy', 'ca': 'esim-canada', 'au': 'esim-australia', 'us': 'usa-data-esim'}
+
+
+def esim(p):
+    iso = PAISES[p][0].lower()
+    destino = f'https://simbye.com/es/products/{SIMBYE_ES[iso]}' if iso in SIMBYE_ES else 'https://simbye.com/es'
+    url = 'https://www.awin1.com/cread.php?' + urllib.parse.urlencode({'awinmid': 107814, 'awinaffid': 3149553, 'clickref': 'nexus-' + PSLUG[p], 'ued': destino})
+    con_art = {'Reino Unido': 'el Reino Unido', 'Países Bajos': 'los Países Bajos', 'Emiratos Árabes Unidos': 'los Emiratos Árabes Unidos'}.get(p, p)
+    a_p = ('al ' + con_art[3:]) if con_art.startswith('el ') else ('a ' + con_art)
+    return (f'<aside class="card esim" aria-label="Recomendado"><a class="esim-img" href="{e(url)}" rel="sponsored noopener" target="_blank">'
+            f'<img src="{BASE}assets/simbye-horizontal.webp" width="900" height="471" loading="lazy" alt="eSIM de viaje Simbye"></a>'
+            f'<div class="esim-txt"><small class="esim-tag">Recomendado</small><h2>Llega {e(a_p)} con internet desde el primer minuto</h2>'
+            f'<p>Con una eSIM de Simbye tienes datos móviles al aterrizar, sin buscar tarjetas en el aeropuerto ni pagar roaming. Se activa desde el móvil y sirve en más de 190 países.</p>'
+            f'<p class="esim-cod">Código <b>AURZANE15</b>: 15&nbsp;% de descuento</p>'
+            f'<a class="btn btn-luz" href="{e(url)}" rel="sponsored noopener" target="_blank">Ver la eSIM para {e(con_art)}</a></div></aside>')
+
 
 
 def fuente_pais(p):
@@ -1334,6 +1353,7 @@ if os.path.exists(SALIDA):
 os.makedirs(os.path.join(SALIDA, 'assets'))
 shutil.copy(os.path.join(AQUI, 'univ.css'), os.path.join(SALIDA, 'assets/univ.css'))
 shutil.copy(os.path.join(AQUI, 'univ.js'), os.path.join(SALIDA, 'assets/univ.js'))
+shutil.copy(os.path.join(AQUI, 'simbye', 'horizontal-big.webp'), os.path.join(SALIDA, 'assets/simbye-horizontal.webp'))
 if os.path.exists(os.path.join(AQUI, 'og.jpg')):
     shutil.copy(os.path.join(AQUI, 'og.jpg'), os.path.join(SALIDA, 'og.jpg'))
 datos()
