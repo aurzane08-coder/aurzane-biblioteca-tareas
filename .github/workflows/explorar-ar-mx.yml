@@ -1,0 +1,27 @@
+name: Explorar fuentes Argentina y México (uso único)
+on:
+  push:
+    paths: ['.github/workflows/explorar-ar-mx.yml']
+jobs:
+  x:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          python3 - <<'PY'
+          import urllib.request, re, json
+          def g(u, data=None):
+              try:
+                  r = urllib.request.urlopen(urllib.request.Request(u, data=data, headers={'User-Agent': 'Mozilla/5.0'}), timeout=40)
+                  return r.status, r.read().decode('utf-8', 'replace')
+              except Exception as e: return 0, str(e)
+          st, t = g('http://sipes.siu.edu.ar/buscar_titulos.php')
+          print('SIPES', st, len(t)); print(re.sub(r'\s+', ' ', re.sub(r'<script[\s\S]*?</script>|<style[\s\S]*?</style>', '', t))[:3000])
+          print('FORMS', re.findall(r'<form[^>]*>', t), re.findall(r'<(?:select|input)[^>]*name="([^"]+)"', t)[:30])
+          st, t = g('https://api.datamexico.org/tesseract/cubes')
+          print('DMX cubes', st, len(t))
+          try:
+              cs = [c['name'] for c in json.loads(t).get('cubes', [])]; print([c for c in cs if 'anuies' in c.lower() or 'educ' in c.lower()])
+          except Exception as e: print(t[:500])
+          st, t = g('https://api.datamexico.org/tesseract/cubes/anuies_enrollment')
+          print('DMX anuies', st, t[:3000])
+          PY
