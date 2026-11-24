@@ -23,6 +23,7 @@
 
 <!--az-precarga--><link rel="modulepreload" href="/core/services/membretes-f7-7-r2.js"><link rel="modulepreload" href="/core/services/universities-f7-8.js"><link rel="modulepreload" href="/core/admin/service-f7-8.js"><link rel="modulepreload" href="/core/index-f7-8.js"><link rel="modulepreload" href="/core/services/service-contract.js"><link rel="modulepreload" href="/core/services/result.js"><link rel="modulepreload" href="/core/config/defaults.js?v=f7.4-fix2"><link rel="modulepreload" href="/core/data/supabase.js?v=f7.5-cache2"><link rel="modulepreload" href="/core/config/index.js?v=f7.4-fix2"><link rel="modulepreload" href="/core/identity/contract.js"><link rel="modulepreload" href="/core/identity/adapter.js"><link rel="modulepreload" href="/core/permissions/contract.js"><link rel="modulepreload" href="/core/admin/contract-f7-7-r1.js"><link rel="modulepreload" href="/core/admin/context-f7-7-r1.js"><link rel="modulepreload" href="/core/admin/navigation.js"><link rel="modulepreload" href="/core/events/envelope.js"><link rel="modulepreload" href="/core/events/dispatcher.js"><link rel="modulepreload" href="/core/events/rules.js"><link rel="modulepreload" href="/core/events/conditions.js"><link rel="modulepreload" href="/core/events/actions.js"><link rel="modulepreload" href="/core/events/engine.js"><link rel="modulepreload" href="/core/events/execution-store.js"><link rel="modulepreload" href="/core/services/content-f7-6-r2.js"><link rel="modulepreload" href="/core/services/clients-f7-7-r2.js"><link rel="modulepreload" href="/core/services/configuration.js?v=f7.4-fix1"><link rel="modulepreload" href="/core/services/feature-flags.js"><link rel="modulepreload" href="/core/services/library.js"><link rel="modulepreload" href="/core/components/loading.js"><link rel="modulepreload" href="/core/data/contract.js?v=f7.5-cache2"><link rel="modulepreload" href="/core/data/adapter.js?v=f7.5-cache2"><link rel="modulepreload" href="/core/data/supabase.js"><link rel="modulepreload" href="/core/data/contract.js"><!--/az-precarga-->
 
+
 <meta name="robots" content="noindex,nofollow">
 <script>
   // Observabilidad de errores frontend (Fase 8-9 P1, ver observabilidad_errores_setup.sql).
@@ -341,7 +342,7 @@ body .page-head{margin:26px 0 28px}
 body .page-head h2{font-size:2rem;line-height:1.15;margin-bottom:8px}
 body .page-head p{font-size:.92rem;max-width:80ch;line-height:1.55}
 /* barra superior */
-.az-top{position:sticky;top:0;z-index:40;display:flex;align-items:center;gap:12px;padding:14px 0;margin:0 -2px;background:linear-gradient(var(--navy) 70%,rgba(20,28,25,0));backdrop-filter:blur(6px)}
+.az-top{position:sticky;top:0;z-index:40;display:flex;align-items:center;gap:12px;padding:14px 0;margin:0 -2px;background:linear-gradient(var(--navy) 70%,rgba(8,11,23,0));backdrop-filter:blur(6px)}
 .az-migas{flex:1;min-width:0;font-size:.82rem;color:var(--silver-dim);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .az-migas b{color:var(--bone);font-weight:600}
 .az-top button,.az-top a{display:inline-flex;align-items:center;gap:6px;height:36px;padding:0 13px;border:1px solid var(--line);border-radius:10px;background:var(--navy-2);color:var(--silver);font:inherit;font-size:.8rem;cursor:pointer;white-space:nowrap}
@@ -398,7 +399,7 @@ body .nav-item.active{box-shadow:inset 3px 0 0 var(--gold)}
   body .main{padding:0 16px 48px}
   .az-menu{display:inline-flex!important}
   .az-top .az-ocultable{display:none}
-  .az-velo{position:fixed;inset:0;background:rgba(20,26,24,.55);z-index:99;display:none}
+  .az-velo{position:fixed;inset:0;background:rgba(4,6,14,.55);z-index:99;display:none}
   body.az-menu-abierto .az-velo{display:block}
   body .page-head h2{font-size:1.6rem}
 }
@@ -3260,6 +3261,7 @@ body .nav-item.active{box-shadow:inset 3px 0 0 var(--gold)}
 
 
 
+
 <script>
 /* Patrocinios (admin_patrocinios, 18/11/2026) y lecciones de los errores de la IA */
 (function(){
@@ -3347,7 +3349,7 @@ body .nav-item.active{box-shadow:inset 3px 0 0 var(--gold)}
     + '.in-kpis{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden}.in-k{background:var(--navy-2);padding:16px 18px}.in-k b{display:block;font-family:"Bodoni Moda",serif;font-size:1.5rem}.in-k span{font-size:.76rem;color:var(--silver-dim)}.in-k i{font-style:normal;font-size:.72rem;margin-left:6px}.in-k i.sube{color:var(--ok)}.in-k i.baja{color:#e08a8a}'
     + '.in-accesos{display:flex;flex-wrap:wrap;gap:8px}.in-accesos a{padding:8px 14px;border:1px solid var(--line);border-radius:99px;font-size:.84rem;color:var(--silver)}.in-accesos a:hover{border-color:var(--gold);color:var(--gold-light)}'
     + '.nav-grupo.plegable{cursor:pointer;user-select:none}.nav-grupo.plegable:after{content:" ▾"}.nav-grupo.plegado:after{content:" ▸"}'
-    + '#azBusca{position:fixed;inset:0;background:rgba(19,26,24,.6);display:none;align-items:flex-start;justify-content:center;padding-top:12vh;z-index:9999}#azBusca.ver{display:flex}#azBusca div{width:min(520px,92vw);background:var(--navy-2);border:1px solid var(--line-strong);border-radius:16px;overflow:hidden}#azBusca input{width:100%;padding:16px 18px;background:transparent;border:0;border-bottom:1px solid var(--line);color:var(--bone);font:inherit;font-size:16px;outline:none}#azBusca ul{list-style:none;margin:0;padding:6px;max-height:50vh;overflow:auto}#azBusca li{padding:10px 12px;border-radius:10px;cursor:pointer;font-size:.9rem}#azBusca li.sel,#azBusca li:hover{background:rgba(199,185,155,.12)}#azBusca li small{color:var(--silver-dim);margin-left:8px}'
+    + '#azBusca{position:fixed;inset:0;background:rgba(5,6,15,.6);display:none;align-items:flex-start;justify-content:center;padding-top:12vh;z-index:9999}#azBusca.ver{display:flex}#azBusca div{width:min(520px,92vw);background:var(--navy-2);border:1px solid var(--line-strong);border-radius:16px;overflow:hidden}#azBusca input{width:100%;padding:16px 18px;background:transparent;border:0;border-bottom:1px solid var(--line);color:var(--bone);font:inherit;font-size:16px;outline:none}#azBusca ul{list-style:none;margin:0;padding:6px;max-height:50vh;overflow:auto}#azBusca li{padding:10px 12px;border-radius:10px;cursor:pointer;font-size:.9rem}#azBusca li.sel,#azBusca li:hover{background:rgba(201,162,75,.12)}#azBusca li small{color:var(--silver-dim);margin-left:8px}'
     + '.az-atajo{margin:0 12px 10px;padding:8px 12px;border:1px solid var(--line);border-radius:10px;font-size:.78rem;color:var(--silver-dim);cursor:pointer;background:transparent;text-align:left}@media(max-width:800px){.az-atajo{display:none}}';
   document.head.appendChild(st);
   var lab = document.querySelector('.nav-item[data-page="resumen"] .nav-label'); if(lab) lab.textContent = 'Inicio';
@@ -3395,7 +3397,7 @@ body .nav-item.active{box-shadow:inset 3px 0 0 var(--gold)}
 
   // --- Inicio: veredicto, tareas, cifras con tendencia y gráficas (SVG propio, sin librerías)
   var css2 = document.createElement('style');
-  css2.textContent = '.in-hero{display:flex;gap:22px;align-items:center;padding:22px 24px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(135deg,var(--navy-2),var(--navy-3,#152C24))}'
+  css2.textContent = '.in-hero{display:flex;gap:22px;align-items:center;padding:22px 24px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(135deg,var(--navy-2),var(--navy-3,#151C3D))}'
     + '.in-ring{position:relative;width:96px;height:96px;flex:none}.in-ring svg{width:96px;height:96px;transform:rotate(-90deg)}.in-ring-bg{fill:none;stroke:var(--line);stroke-width:10}.in-ring-fg{fill:none;stroke:var(--ok);stroke-width:10;stroke-linecap:round;stroke-dasharray:314;stroke-dashoffset:314;transition:stroke-dashoffset .8s}'
     + '.in-ring>div{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}.in-ring b{font-family:"Bodoni Moda",serif;font-size:1.7rem;line-height:1}.in-ring span{font-size:.66rem;color:var(--silver-dim)}'
     + '.in-veredicto h3{font-family:"Bodoni Moda",serif;font-size:1.45rem;margin:0 0 6px;font-weight:600}.in-veredicto p{margin:0;color:var(--silver);font-size:.88rem;line-height:1.5;max-width:70ch}'
@@ -3405,7 +3407,7 @@ body .nav-item.active{box-shadow:inset 3px 0 0 var(--gold)}
     + '.in-bar{display:grid;grid-template-columns:minmax(80px,38%) 1fr auto;gap:10px;align-items:center;font-size:.8rem;margin:7px 0}.in-bar span:first-child{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--silver)}.in-bar .t{height:8px;border-radius:5px;background:var(--line);overflow:hidden;display:flex}.in-bar .t i{display:block;height:100%}.in-bar b{font-variant-numeric:tabular-nums;font-weight:600;min-width:36px;text-align:right}'
     + '.in-vacio{color:var(--silver-dim);font-size:.84rem}'
     + '@media(max-width:1100px){.in-rej{grid-template-columns:1fr 1fr}}@media(max-width:800px){.in-rej{grid-template-columns:1fr}.in-ancha{grid-column:auto}.in-hero{flex-direction:column;align-items:flex-start}}'
-    + 'table td,table th{font-variant-numeric:tabular-nums}tbody tr:hover td{background:rgba(199,185,155,.04)}button:focus-visible,a:focus-visible,.nav-item:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid var(--gold);outline-offset:2px}';
+    + 'table td,table th{font-variant-numeric:tabular-nums}tbody tr:hover td{background:rgba(201,162,75,.04)}button:focus-visible,a:focus-visible,.nav-item:focus-visible,select:focus-visible,input:focus-visible{outline:2px solid var(--gold);outline-offset:2px}';
   document.head.appendChild(css2);
   var ORO = 'var(--gold)', PLATA = 'var(--silver)', OK = 'var(--ok)', MAL = '#e08a8a';
   var tarea = function(n, txt, sub, k){ return '<button class="in-t' + (n ? '' : ' ok') + '" data-in="' + k + '"><b>' + (n ? N(n) : '✓') + '</b><span>' + txt + (sub ? '<small>' + sub + '</small>' : '') + '</span></button>'; };

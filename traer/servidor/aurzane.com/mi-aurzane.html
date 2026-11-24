@@ -399,6 +399,91 @@ body{background:
 </style>
 <meta name="google-adsense-account" content="ca-pub-8763758728010451">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8763758728010451" crossorigin="anonymous"></script>
+<style id="az-mi-v2">
+/* ============================================================
+   Mi AURZANE v2 (24/11/2026): escritorio personal por secciones.
+   Paleta del sitio (bosque, marfil, arena, champán), Bodoni Moda + Instrument Sans,
+   fotos reales en la portada y en cada tarjeta. Cada opción del menú abre su sección
+   en lugar de una página larga; el buscador vuelve a mostrar todo.
+   ============================================================ */
+#vistaPanel{--m-forest:#183D32;--m-deep:#12251F;--m-champ:#C7B99B;--m-champ-2:#E2D6BC;--m-sage:#DCE5DF;--m-ink:var(--text);--m-r:20px}
+body:has(#vistaPanel:not(.panel-hide)){background:var(--bg)!important;background-image:none!important}
+#vistaPanel .dash{grid-template-columns:264px minmax(0,1fr);gap:30px;max-width:1360px;padding:28px 24px 56px}
+/* lateral */
+#vistaPanel .dash-side{top:88px;border-radius:var(--m-r);padding:0;overflow:hidden;gap:0;box-shadow:0 18px 40px -28px rgba(18,37,31,.45)}
+#vistaPanel .ds-perfil{padding:26px 18px 18px;background:linear-gradient(180deg,var(--m-deep),var(--m-forest));color:#F6F5F0;border:0;gap:6px}
+#vistaPanel .ds-perfil strong{color:#F6F5F0;font-size:1.2rem}
+#vistaPanel .ds-email{color:rgba(246,245,240,.72)}
+#vistaPanel .ds-perfil .chip{background:rgba(246,245,240,.1);border-color:rgba(246,245,240,.2);color:#F6F5F0}
+#vistaPanel .ds-avatar,#vistaPanel .avatar{background:linear-gradient(135deg,var(--m-champ-2),var(--m-champ))!important;color:var(--m-deep)!important;font-family:'Bodoni Moda',Georgia,serif;box-shadow:0 0 0 4px rgba(246,245,240,.12)!important}
+#vistaPanel .ds-nav{padding:12px 10px;gap:2px}
+#vistaPanel .ds-nav a{padding:10px 12px;border-radius:12px;font-size:.93rem;color:var(--text-dim);position:relative}
+#vistaPanel .ds-nav a .icn{color:var(--text-dim)!important}
+#vistaPanel .ds-nav a:hover{background:var(--surface-2)}
+#vistaPanel .ds-nav a.activo{background:color-mix(in srgb,var(--m-forest) 10%,var(--surface));color:var(--text);box-shadow:inset 3px 0 0 var(--m-champ);font-weight:600}
+#vistaPanel .ds-nav a.activo .icn{color:var(--m-forest)!important}
+#vistaPanel .ds-salir{margin:0 10px 12px;border-radius:12px;border-top:1px solid var(--border)}
+/* portada */
+#vistaPanel .dash-main .cuenta-hero-panel{border-radius:24px;min-height:230px;display:flex;align-items:flex-end;background:var(--m-deep);box-shadow:0 24px 50px -30px rgba(18,37,31,.6)}
+#vistaPanel .dash-main .cuenta-hero-panel .hero-texture{background:url('https://images.unsplash.com/photo-1457369804613-52c61a468e7d?w=1600&q=70&auto=format&fit=crop') center 40%/cover!important;opacity:1}
+#vistaPanel .dash-main .cuenta-hero-panel .hero-texture::after{content:'';position:absolute;inset:0;background:linear-gradient(100deg,rgba(18,37,31,.94) 0%,rgba(18,37,31,.78) 45%,rgba(18,37,31,.25) 100%)!important}
+#vistaPanel .dash-main .cuenta-hero .hero-in{padding:38px 40px 34px;width:100%;align-items:flex-end}
+#vistaPanel .cuenta-hero-panel .saludo{color:var(--m-champ-2);font-size:.95rem;font-weight:500;letter-spacing:.01em}
+#vistaPanel .cuenta-hero-panel .perfil-nombre{font-family:'Bodoni Moda',Georgia,serif;font-size:clamp(2rem,4vw,3rem);font-weight:600;line-height:1.05;margin:4px 0 6px}
+#vistaPanel .cuenta-hero-panel .perfil-email{color:rgba(246,245,240,.75)}
+#vistaPanel .cuenta-hero-panel .cuenta-buscador input{background:rgba(246,245,240,.12);border:1px solid rgba(246,245,240,.28);border-radius:999px;color:#fff;min-width:260px;backdrop-filter:blur(6px)}
+#vistaPanel[data-vista]:not([data-vista=inicio]):not([data-vista=buscar]) .cuenta-hero-panel{min-height:0}
+#vistaPanel[data-vista]:not([data-vista=inicio]):not([data-vista=buscar]) .cuenta-hero .hero-in{padding:24px 32px}
+#vistaPanel[data-vista]:not([data-vista=inicio]):not([data-vista=buscar]) .cuenta-hero-panel .perfil-nombre{font-size:1.7rem}
+#vistaPanel[data-vista]:not([data-vista=inicio]):not([data-vista=buscar]) .cuenta-hero-panel .chip-row{display:none}
+/* cifras */
+#vistaPanel .stats-resumen{gap:12px;margin:22px 0 6px;grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}
+#vistaPanel .stats-resumen .stat-tile{background:var(--surface)!important;border:1px solid var(--border)!important;border-radius:16px;padding:16px 18px;box-shadow:none;--v:var(--m-forest)}
+#vistaPanel .stats-resumen .stat-ic{background:color-mix(in srgb,var(--m-forest) 10%,var(--surface))!important;color:var(--m-forest)!important;box-shadow:none!important;border-radius:12px}
+#vistaPanel .stats-resumen .stat-k{font-size:.74rem;letter-spacing:.02em;text-transform:none;color:var(--text-dim)}
+#vistaPanel .stats-resumen .stat-v{font-family:'Bodoni Moda',Georgia,serif;font-size:1.35rem;color:var(--text)!important;line-height:1.15}
+/* títulos de sección */
+#vistaPanel .dash-sec{margin:34px 0 10px}
+#vistaPanel .dash-sec-head{border-bottom:1px solid var(--border);padding-bottom:10px;margin-bottom:18px}
+#vistaPanel .dash-sec-head h2{font-family:'Bodoni Moda',Georgia,serif;font-size:1.6rem;font-weight:600}
+#vistaPanel .dash-sec-head a{color:var(--m-forest)}
+/* cursos: tarjetas con foto arriba, en rejilla */
+#vistaPanel .cc-lista{grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+#vistaPanel .curso-card{grid-template-columns:1fr;border:1px solid var(--border)!important;border-image:none!important;border-radius:var(--m-r);box-shadow:0 14px 34px -26px rgba(18,37,31,.5)}
+#vistaPanel .cc-media{aspect-ratio:16/9;overflow:hidden}#vistaPanel .cc-media img{min-height:0;width:100%;height:100%;object-fit:cover}
+#vistaPanel .cc-datos li{background:var(--surface-2)!important;border-radius:12px}
+#vistaPanel .cc-datos li b{color:var(--m-forest)!important;font-size:1.25rem}
+#vistaPanel .curso-card .btn,#vistaPanel #ccContinuar{background:var(--m-forest)!important;border-color:var(--m-forest)!important;color:#F6F5F0!important}
+#vistaPanel .curso-card .btn-ghost,#vistaPanel .curso-card .btn+.btn{background:transparent!important;color:var(--text)!important;border-color:var(--border)!important}
+#vistaPanel[data-vista=inicio] .cc-lista>:nth-child(n+3){display:none}
+#vistaPanel .az-ver-todo{display:none;margin:16px 0 0;font-weight:600;color:var(--m-forest);text-decoration:none;border:1px solid var(--border);border-radius:999px;padding:9px 18px}#vistaPanel .az-ver-todo:hover{background:var(--surface-2)}
+#vistaPanel .mundos-mini-grid{grid-template-columns:repeat(auto-fit,minmax(130px,1fr))!important}
+#vistaPanel[data-vista=inicio] .az-ver-todo{display:inline-block}
+/* tarjetas de la cuenta: una sola paleta, foto arriba */
+#vistaPanel .grid-cuenta{grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;padding-bottom:10px;margin-top:20px}
+#vistaPanel .cuenta-card[id]{--v:var(--m-forest);background:var(--surface)!important;border:1px solid var(--border)!important;border-radius:var(--m-r);box-shadow:0 14px 34px -26px rgba(18,37,31,.5)}
+#vistaPanel .cuenta-card[id]::before{display:none}
+#vistaPanel .cuenta-card[id] .card-cover{height:150px}
+#vistaPanel .cuenta-card[id] .card-cover::after{background:linear-gradient(180deg,rgba(18,37,31,.05) 30%,rgba(18,37,31,.55) 100%)!important}
+#vistaPanel .cuenta-card[id] .card-cover-badge{background:var(--surface)!important;color:var(--m-forest)!important;box-shadow:0 8px 18px -10px rgba(0,0,0,.4)!important}
+#vistaPanel .cuenta-card[id] h3{font-family:'Bodoni Moda',Georgia,serif;color:var(--text)!important;font-size:1.3rem}
+#vistaPanel .cuenta-card[id] .btn-chico,#vistaPanel .cuenta-card[id] .btn-gold,#vistaPanel .cuenta-card[id] .btn:not(.btn-ghost){background:var(--m-forest)!important;border-color:var(--m-forest)!important;color:#F6F5F0!important}
+#vistaPanel .cuenta-chips{display:none}
+#vistaPanel #cardMisTests{padding:24px 26px}#vistaPanel #cardMisTests h3,#vistaPanel #cardMisTests h2{font-family:'Bodoni Moda',Georgia,serif}
+/* una sola tarjeta (secciones sueltas): ancho completo y foto más alta */
+#vistaPanel[data-vista]:not([data-vista=inicio]):not([data-vista=buscar]) .grid-cuenta{grid-template-columns:1fr}
+#vistaPanel[data-vista]:not([data-vista=inicio]):not([data-vista=buscar]) .cuenta-card[id] .card-cover{height:220px}
+/* boletín y evolución con el mismo lenguaje */
+#vistaPanel .bol-oferta{border-radius:var(--m-r);box-shadow:0 14px 34px -26px rgba(18,37,31,.5)}
+#vistaPanel .bol-txt h2{font-family:'Bodoni Moda',Georgia,serif}
+#vistaPanel #azEvolucion{border-radius:var(--m-r)}
+/* secciones: solo se ve la elegida */
+#vistaPanel[data-vista]:not([data-vista=buscar]) [data-en]:not(.az-v-on){display:none!important}
+#vistaPanel .az-vacia{display:none}
+@media (max-width:1000px){#vistaPanel .dash{grid-template-columns:1fr;padding:18px 14px 40px}#vistaPanel .dash-side{position:sticky;top:64px;z-index:5;border-radius:16px}#vistaPanel .ds-perfil{display:none}#vistaPanel .ds-nav{flex-direction:row;overflow-x:auto;padding:8px;scrollbar-width:none}#vistaPanel .ds-nav a{white-space:nowrap;padding:8px 12px}#vistaPanel .ds-salir{display:none}}
+@media (max-width:640px){#vistaPanel .dash-main .cuenta-hero .hero-in{padding:26px 22px}#vistaPanel .cuenta-hero-panel .cuenta-buscador input{min-width:0;width:100%}#vistaPanel .cuenta-buscador{width:100%}#vistaPanel .cc-lista,#vistaPanel .grid-cuenta{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:no-preference){#vistaPanel [data-en].az-v-on{animation:azAparece .28s ease-out}@keyframes azAparece{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}}
+</style>
 </head>
 <body>
 <header class="top">
@@ -608,7 +693,7 @@ body{background:
         <div class="bol-foto" style="background-image:url('https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&amp;w=900&amp;auto=format&amp;fit=crop')" aria-hidden="true"></div>
         <div class="bol-txt">
           <h2 id="tBoletin">El boletín semanal, en tu correo</h2>
-          <p>Un correo corto cada semana: el libro recomendado, el artículo nuevo y un test gratis. Sin publicidad de terceros y con baja en un clic.</p>
+          <p>Cada domingo: un reto con test y ejercicio guiado, un dato de la ciencia, el libro de la semana y una lección de un curso gratis. Sin publicidad de terceros y con baja en un clic.</p>
           <div class="bol-acc"><button class="btn btn-gold" type="button" id="btnBoletinOferta">Suscribirme con mi cuenta</button><button class="btn btn-ghost" type="button" id="btnBoletinNo">Ahora no</button></div>
           <p class="msg" id="msgBoletinOferta" role="status"></p>
         </div>
@@ -1143,11 +1228,54 @@ async function cargarPersonalidad(session) {
   }
 }
 
-// navegación lateral: marca la sección visible
+// ---- Mi AURZANE v2 (24/11/2026): cada opción del menú abre su sección ----
+//      Inicio: resumen, boletín, evolución, tus dos últimos cursos y tus mundos. El resto, una sección cada vez.
+//      Lo que otros scripts añadan después (evolución, mis tests...) se coloca solo. La dirección (#cursos...) se recuerda.
 function iniciarNavLateral() {
+  const panel = document.getElementById("vistaPanel");
+  const wrap = panel.querySelector(".dash-main > .wrap");
   const links = [...document.querySelectorAll(".ds-nav a[data-nav]")];
-  links.forEach((a) => a.addEventListener("click", () => { links.forEach((x) => x.classList.toggle("activo", x === a)); }));
-  if (links[0]) links[0].classList.add("activo");
+  const DESTINO = { "#vistaPanel": "inicio", "#secCursos": "cursos", "#personalidad": "personalidad", "#cardProcesoOVP": "orientacion",
+    "#cardMundos": "mundos", "#cardHerramientas": "herramientas", "#cardPerfil": "perfil", "#cardSeguridad": "seguridad",
+    "#cardPreferencias": "preferencias", "#cardAyuda": "ayuda" };
+  const EN = { statsResumen: "inicio", comoVoySig: "inicio", azEvolucion: "inicio", boletinOferta: "inicio", secCursos: "inicio cursos",
+    personalidad: "personalidad", cardMisTests: "personalidad", cardPerfil: "perfil", cardMundos: "inicio mundos",
+    cardProcesoOVP: "orientacion", cardHerramientas: "herramientas", cardSeguridad: "seguridad", cardPreferencias: "preferencias", cardAyuda: "ayuda" };
+  function marcar(el) {
+    if (!el || el.dataset.en || el.id === "gridCuenta" || el.id === "cuentaSinResultados" || el.id === "cuentaChips") return;
+    const clave = el.id || (el.classList.contains("stats-resumen") ? "statsResumen" : "");
+    el.dataset.en = EN[clave] || "inicio";
+  }
+  function todos() {
+    [...wrap.children].forEach(marcar);
+    document.querySelectorAll("#gridCuenta > .cuenta-card").forEach(marcar);
+  }
+  let vista = "inicio";
+  function poner(v, desplazar) {
+    vista = v; panel.dataset.vista = v;
+    document.querySelectorAll("#vistaPanel [data-en]").forEach((el) => el.classList.toggle("az-v-on", el.dataset.en.split(" ").includes(v)));
+    links.forEach((a) => { const on = DESTINO[a.getAttribute("href")] === v; a.classList.toggle("activo", on); if (on) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current"); });
+    try { history.replaceState(null, "", v === "inicio" ? location.pathname + location.search : "#" + v); } catch (e) {}
+    if (desplazar) { const top = panel.getBoundingClientRect().top + window.scrollY - 70; if (window.scrollY > top) window.scrollTo({ top, behavior: "smooth" }); }
+  }
+  todos();
+  // enlace «ver todos» bajo los cursos del inicio
+  const sec = document.getElementById("secCursos");
+  if (sec && !sec.querySelector(".az-ver-todo")) {
+    const a = document.createElement("a"); a.href = "#cursos"; a.className = "az-ver-todo"; a.textContent = "Ver todos tus cursos";
+    a.addEventListener("click", (ev) => { ev.preventDefault(); poner("cursos", true); }); sec.appendChild(a);
+  }
+  links.forEach((a) => a.addEventListener("click", (ev) => { const v = DESTINO[a.getAttribute("href")]; if (!v) return; ev.preventDefault(); poner(v, true); }));
+  // otros scripts añaden secciones más tarde: se colocan solas en su sitio
+  new MutationObserver(() => { todos(); if (panel.dataset.vista !== "buscar") poner(vista); })
+    .observe(wrap, { childList: true, subtree: false });
+  const grid = document.getElementById("gridCuenta");
+  if (grid) new MutationObserver(() => { todos(); if (panel.dataset.vista !== "buscar") poner(vista); }).observe(grid, { childList: true });
+  // el buscador enseña todo mientras se escribe
+  const bus = document.getElementById("buscadorCuenta");
+  if (bus) bus.addEventListener("input", () => { if (bus.value.trim()) panel.dataset.vista = "buscar"; else poner(vista); });
+  const h = (location.hash || "").slice(1);
+  poner(Object.values(DESTINO).includes(h) ? h : "inicio", false);
 }
 
 function mostrarInvitado() {
