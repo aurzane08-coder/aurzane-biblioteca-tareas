@@ -700,7 +700,7 @@ def portada():
     for cn in CONTINENTES:
         ps = [p for p in ORDEN_P if PAISES[p][1] == cn]
         if not ps: continue
-        cont += f'<div class="continente"><h3>{cn}</h3><div class="paises">' + ''.join(
+        cont += f'<div class="continente" data-foto="campus universidad estudiantes {e(cn)}"><h3>{cn}</h3><div class="paises">' + ''.join(
             f'<a class="pais" href="{BASE}{PSLUG[p]}/">{bandera(PAISES[p][0], "g")}<span><b>{e(p)}</b><small>{fmt(len(por_pais[p]))} instituciones{" · " + fmt(sum(u["n"] for u in por_pais[p])) + " carreras" if nivel_pais(p) == "programas" else ""}</small></span><i class="nivel {nivel_pais(p)}" title="{NIVEL_LBL[nivel_pais(p)]}"></i></a>'
             for p in ps) + '</div></div>'
     h = cabeza('Buscador de universidades y carreras gratis | AURZANE NEXUS', desc, SITIO + BASE, jsonld=jl) + topbar('inicio') + f'''
@@ -1067,7 +1067,23 @@ def notas_de_corte():
         escribir(f'notas-de-corte/{k}/index.html', h)
         URLS.append((canon, '0.8'))
     idx.sort(key=lambda x: (-x[2], x[0]))
-    top = ''.join(f'<li data-n="{e(slug(n))}"><a href="{BASE}notas-de-corte/{k}/">{e(n)}</a><small>{c} universidades · de {fmt_nota(mn)} a {fmt_nota(mx)}</small></li>' for n, k, c, mx, mn in idx)
+    # 24/11/2026: agrupado por ámbitos de conocimiento, con una foto real por ámbito (la pone v4_tema.js con data-foto),
+    # y el 5 explicado: significa que entró cualquiera que aprobara el acceso, no que la carrera sea fácil.
+    FOTO_AMB = {'Salud y bienestar': 'medico salud hospital', 'Educación': 'aula escuela colegio', 'Ingeniería, industria y construcción': 'obra construccion arquitectura',
+                'Informática y telecomunicaciones': 'tecnologia software digital', 'Empresa, economía y derecho': 'dinero empresa trabajo', 'Ciencias naturales y matemáticas': 'laboratorio investigacion ciencia',
+                'Ciencias sociales y comunicación': 'estudiantes universidad', 'Artes y humanidades': 'lectura libro', 'Agro, veterinaria y medio natural': 'naturaleza bosque',
+                'Servicios: turismo, deporte y seguridad': 'deporte correr', 'Otras áreas': 'campus universidad'}
+    por_amb = collections.defaultdict(list)
+    for x in idx:
+        por_amb[ambito({'n': x[0].replace('Doble grado: ', '')})].append(x)
+    def nc_card(n, k, c, mx, mn):
+        n = doble_corto(n)
+        rango = (f'de {fmt_nota(mn)} a {fmt_nota(mx)}' if mn > 5 else f'sin nota mínima en alguna, hasta {fmt_nota(mx)}') if mx != mn else (fmt_nota(mx) if mx > 5 else 'sin nota mínima')
+        return (f'<li data-n="{e(slug(n))}"><a href="{BASE}notas-de-corte/{k}/"><b>{e(n)}</b><span class="nc-c">{c} universidades</span>'
+                f'<span class="nc-r">{rango}</span><span class="nc-barra" style="--a:{(mn - 5) / 9 * 100:.0f}%;--b:{(mx - 5) / 9 * 100:.0f}%"></span></a></li>')
+    top = ''.join(f'<section class="nc-amb" data-foto="{e(FOTO_AMB.get(a_, "universidad campus"))} {e(a_)}"><h2>{e(a_)}<small>{len(por_amb[a_])} grados</small></h2>'
+                  f'<ul class="nc-grid">{"".join(nc_card(*x) for x in por_amb[a_])}</ul></section>'
+                  for a_ in sorted(por_amb, key=lambda a_: (a_ == 'Otras áreas', -sum(x[2] for x in por_amb[a_]))))
     tit = f'Notas de corte {NC_CURSO} de todas las carreras en España'
     desc = f'Consulta las notas de corte oficiales del curso {NC_CURSO} de {len(idx)} grados en las universidades públicas de España: Medicina, Psicología, Enfermería, Derecho y más. Busca tu carrera y compara.'
     h = cabeza(tit, desc, f'{SITIO}{BASE}notas-de-corte/') + topbar('espana') + f"""
@@ -1075,29 +1091,53 @@ def notas_de_corte():
 <h1>Notas de corte <em>{NC_CURSO}</em></h1><p class="lead">{e(desc)}</p>
 <div class="busca" style="max-width:560px"><input type="search" id="ncBusca" placeholder="Busca una carrera: psicología, medicina, enfermería…" aria-label="Buscar carrera"></div>
 <div class="acc" style="margin-top:14px"><a class="btn btn-luz" href="{BASE}que-puedo-estudiar/">🎯 ¿Qué puedo estudiar con mi nota?</a><a class="btn btn-claro" href="/calculadora-nota-pau/">🧮 Calcula tu nota sobre 14</a></div></div></section>
-<div class="wrap"><section class="card" style="margin-top:24px"><ul class="nc-lista" id="ncLista">{top}</ul></section>
+<div class="wrap"><p class="nc-ayuda">Cada carrera muestra en cuántas universidades públicas se puede estudiar y entre qué notas de admisión (sobre 14) se entró. La barra va de 5 a 14. Un 5 significa que entró cualquiera que aprobara el acceso: quedaron plazas libres.</p>
+<div id="ncLista">{top}</div><p id="ncNada" class="nc-ayuda" hidden>No hay ninguna carrera con ese nombre. Prueba con una palabra más corta, por ejemplo «ingeniería».</p>
 <p class="fuente">Fuente: QEDU, Ministerio de Ciencia, Innovación y Universidades. Actualización automática semanal.</p></div></main>
-<script>(function(){{var i=document.getElementById('ncBusca'),l=document.querySelectorAll('#ncLista li');var n=function(t){{return t.normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-');}};i.addEventListener('input',function(){{var q=n(i.value);l.forEach(function(x){{x.hidden=q&&x.getAttribute('data-n').indexOf(q)<0;}});}});}})();</script>""" + pie()
+<script>(function(){{var i=document.getElementById('ncBusca'),l=document.querySelectorAll('#ncLista li'),g=document.querySelectorAll('#ncLista .nc-amb');
+var n=function(t){{return t.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-');}};
+i.addEventListener('input',function(){{var q=n(i.value),hay=0;l.forEach(function(x){{var v=!q||x.getAttribute('data-n').indexOf(q)>=0;x.hidden=!v;if(v)hay++;}});
+g.forEach(function(s){{s.hidden=!s.querySelector('li:not([hidden])');}});document.getElementById('ncNada').hidden=hay>0;}});}})();</script>""" + pie()
     escribir('notas-de-corte/index.html', h)
     URLS.append((f'{SITIO}{BASE}notas-de-corte/', '0.9'))
     print('Notas de corte:', len(idx), 'páginas de carrera')
+
+
+def doble_corto(n):
+    """Solo para mostrar: «Doble grado: PCEO Grado en Derecho / Grado en Economía» → «Doble grado: Derecho + Economía» (la dirección no cambia)."""
+    if not n.startswith('Doble grado:'): return n
+    r = re.sub(r'\bPCEO\s*', '', n[len('Doble grado:'):]).strip()
+    r = re.sub(r'\s*/\s*(Grado|Graduado/a|Graduada?o?)\s+en\s+', ' + ', r)
+    r = re.sub(r'^(Grado|Graduado/a)\s+en\s+', '', r)
+    r = re.sub(r'\s*/\s*', ' + ', r)
+    return 'Doble grado: ' + r
 
 
 def que_puedo_estudiar():
     """Buscador inverso: con tu nota de admisión, qué grados y universidades públicas te habrían admitido el último curso."""
     filas = [f for f in NC['filas'] if f.get('nota')]
     if not filas: return
-    tit_l, uni_l, cc_l, ix = [], [], [], {}
+    tit_l, uni_l, cc_l, lu_l, ix = [], [], [], [], {}
     def idx(lista, v, k):
         if (k, v) not in ix: ix[(k, v)] = len(lista); lista.append(v)
         return ix[(k, v)]
-    datos = []
+    # 24/11/2026: cada fila dice también el centro y la provincia (la misma carrera en dos campus parecía repetida)
+    # y enlaza a la ficha de la universidad; las filas idénticas se cuentan una vez.
+    u_cod = {u['extra'].get('cod'): u for u in por_pais.get('España', []) if u['extra'].get('cod')}
+    uslug = []
+    datos, vistos = [], set()
     for f in filas:
         nombre = limpiar_titulo(f['titulo'])
         if f.get('nivel') == 'GRADOD': nombre = 'Doble grado: ' + nombre
-        datos.append([idx(tit_l, nombre, 't'), idx(uni_l, f['universidad'], 'u'), idx(cc_l, f.get('ccaa') or '', 'c'), round(f['nota'], 3)])
+        lugar = ' · '.join(x for x in ((f.get('centro') or '') + (' (adscrito)' if f.get('tipo_centro') == 'Adscrito' else ''), f.get('provincia') or '') if x)
+        clave = (nombre, f['universidad'], lugar, round(f['nota'], 3))
+        if clave in vistos: continue
+        vistos.add(clave)
+        ui = idx(uni_l, f['universidad'], 'u')
+        if ui == len(uslug): uslug.append((u_cod.get(f.get('cod_univ')) or {}).get('slug', ''))
+        datos.append([idx(tit_l, doble_corto(nombre), 't'), ui, idx(cc_l, f.get('ccaa') or '', 'c'), round(f['nota'], 3), idx(lu_l, lugar, 'l')])
     datos.sort(key=lambda x: -x[3])
-    js_datos = json.dumps({'t': tit_l, 'u': uni_l, 'c': cc_l, 'd': datos}, ensure_ascii=False, separators=(',', ':'))
+    js_datos = json.dumps({'t': tit_l, 'u': uni_l, 'us': uslug, 'c': cc_l, 'l': lu_l, 'd': datos}, ensure_ascii=False, separators=(',', ':'))
     opc = ''.join(f'<option>{e(c)}</option>' for c in sorted(c for c in cc_l if c))
     tit = f'¿Qué carrera puedo estudiar con mi nota? Buscador {NC_CURSO}'
     desc = f'Pon tu nota de admisión sobre 14 y descubre en qué grados y universidades públicas de España habrías entrado con las notas de corte oficiales del curso {NC_CURSO}. Filtra por comunidad autónoma y carrera.'
@@ -1136,7 +1176,7 @@ var nt=D.t.map(n),f=function(x){{return x.toLocaleString('es-ES',{{maximumFracti
 function pintar(){{var nota=parseFloat(String($('qNota').value).replace(',','.'))||0,cc=$('qCc').value,q=n($('qTxt').value.trim());
 var si=[],casi=[],grados={{}};D.d.forEach(function(r){{if(cc&&D.c[r[2]]!==cc)return;if(q&&nt[r[0]].indexOf(q)<0)return;if(r[3]<=nota){{si.push(r);grados[r[0]]=1;}}else if(r[3]-nota<=0.5)casi.push(r);}});
 $('qRes').innerHTML='Con un <b>'+f(nota)+'</b> habrías entrado en <b>'+si.length.toLocaleString('es-ES')+'</b> '+(si.length===1?'opción':'opciones')+' ('+Object.keys(grados).length.toLocaleString('es-ES')+(Object.keys(grados).length===1?' grado':' grados distintos')+')'+(cc?' en '+cc:'')+'. Te faltó poco en '+casi.length.toLocaleString('es-ES')+'.';
-var l=(tab==='si'?si:casi.slice().reverse()),h='';l.slice(0,lim).forEach(function(r){{h+='<tr><td><b>'+D.t[r[0]]+'</b></td><td>'+D.u[r[1]]+'<small>'+D.c[r[2]]+'</small></td><td class="nota">'+f(r[3])+'</td></tr>';}});
+var l=(tab==='si'?si:casi.slice().reverse()),h='';l.slice(0,lim).forEach(function(r){{var us=D.us[r[1]],un=us?'<a href="{BASE}espana/'+us+'/">'+D.u[r[1]]+'</a>':D.u[r[1]];h+='<tr><td><b>'+D.t[r[0]]+'</b></td><td>'+un+'<small>'+(D.l[r[4]]?D.l[r[4]]+' · ':'')+D.c[r[2]]+'</small></td><td class="nota">'+f(r[3])+'</td></tr>';}});
 $('qTabla').innerHTML=h||'<tr><td colspan="3">No hay resultados con estos filtros.</td></tr>';$('qMas').hidden=l.length<=lim;}}
 ['qNota','qCc','qTxt'].forEach(function(i){{$(i).addEventListener('input',function(){{lim=150;pintar();}});}});
 $('qTab').addEventListener('click',function(e){{var b=e.target.closest('button');if(!b)return;tab=b.getAttribute('data-v');lim=150;$('qTab').querySelectorAll('button').forEach(function(x){{x.setAttribute('aria-pressed',x===b);}});pintar();}});

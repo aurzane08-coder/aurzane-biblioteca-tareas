@@ -399,3 +399,18 @@
   }
   if (d.readyState === 'loading') d.addEventListener('DOMContentLoaded', iniciar); else iniciar();
 })(document, window);
+
+/* Fotos a petición (24/11/2026): cualquier bloque con data-foto="tema" recibe arriba una foto real del banco según ese tema.
+   Así las páginas generadas (NEXUS, OVP…) solo dicen qué tema quieren y el banco elige la foto, sin repetirla en la página. */
+(function (d, w) {
+  function poner() {
+    [].forEach.call(d.querySelectorAll('[data-foto]:not([data-v4f])'), function (el) {
+      var m = (d.documentElement.className.match(/az-ds-(mind|nexus|live|learn|build|ovp)/) || [])[1] || 'nexus';
+      var u = w.AurzaneBanco.foto(m === 'ovp' ? 'nexus' : m, el.getAttribute('data-foto'), el.offsetWidth > 700 ? 1600 : 640); if (!u) return;
+      var im = d.createElement('img'); im.className = 'v4-foto'; im.src = u; im.alt = ''; im.loading = 'lazy'; im.width = 1600; im.height = 400;
+      el.insertBefore(im, el.firstChild); el.setAttribute('data-v4f', '1');
+    });
+  }
+  function iniciar() { if (d.querySelector('[data-foto]') && w.AurzaneBanco) w.AurzaneBanco.listo(poner); }
+  if (d.readyState === 'loading') d.addEventListener('DOMContentLoaded', iniciar); else iniciar();
+})(document, window);
