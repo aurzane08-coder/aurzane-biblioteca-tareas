@@ -13,7 +13,7 @@ on:
     - cron: '17 15 * * *'  # segunda pasada: los patrocinios aprobados por la mañana salen el mismo día
   workflow_dispatch:
   push:
-    paths: ['univ/gen/**', 'univ/data/imagenes.json', 'univ/data/ranking.json', 'univ/data/patrocinios.json']
+    paths: ['univ/gen/**', 'univ/data/idiomas_grados.json', 'univ/data/imagenes.json', 'univ/data/ranking.json', 'univ/data/patrocinios.json']
 permissions:
   contents: write
 concurrency: univ-publicar
