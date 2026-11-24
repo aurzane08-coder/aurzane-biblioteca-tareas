@@ -12,6 +12,7 @@ Si la página española cambia, su versión inglesa se vuelve a generar sola (se
 Nunca borra nada: antes de cambiar un archivo del servidor guarda una copia en www/aurzane.com/eliminar/articulos-en-FECHA/.
 Entradas: SSH, SG_DEST, GEMINI_API_KEY, GITHUB_TOKEN. MAX = artículos nuevos por ejecución (3 por defecto)."""
 import os, re, json, html, hashlib, subprocess, time, datetime, urllib.request, urllib.error
+import sys as _s, os as _o; _s.path.insert(0, _o.path.join(_o.path.dirname(_o.path.abspath(__file__)), '..', 'ai')); from ia_respaldo import generar as _respaldo   # IA de respaldo común
 
 R = os.path.dirname(os.path.abspath(__file__))
 SSH = os.environ.get('SSH', ''); DEST = os.environ.get('SG_DEST', '')
@@ -74,18 +75,7 @@ def ia(prompt, maxt=6000, temp=0.2):
             else: print(f'  {m}: error {st}', b[:160].decode('utf-8', 'ignore').replace(chr(10), ' '))
             FALLOS['n'] += 1
             if st in (429, 503): time.sleep(4)
-    tk = os.environ.get('GITHUB_TOKEN', '').strip()
-    for m in ('openai/gpt-4.1-mini', 'openai/gpt-4o-mini') if tk else ():
-        st, b = http('https://models.github.ai/inference/chat/completions', {'Content-Type': 'application/json', 'Authorization': 'Bearer ' + tk},
-                     json.dumps({'model': m, 'messages': [{'role': 'user', 'content': prompt}], 'temperature': temp, 'max_tokens': min(maxt, 8000)}).encode(), 150)
-        if st == 200:
-            try:
-                c = json.loads(b)['choices'][0]
-                if (c['message'].get('content') or '').strip(): return c['message']['content'].strip()
-                print(f'  {m}: respuesta vacía ({c.get("finish_reason")})'); continue
-            except Exception as e: print(f'  {m}: respuesta no legible', repr(b[:300]), str(e)[:80]); continue
-        print(f'  {m}: error {st}', b[:160].decode('utf-8', 'ignore').replace(chr(10), ' '))
-    return ''
+    return _respaldo(prompt, temp=temp, maxt=maxt)
 
 
 def sin_valla(t):

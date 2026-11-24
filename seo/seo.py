@@ -15,6 +15,7 @@ Cada día:
 Entradas: SSH, SG_DEST, GEMINI_API_KEY (y GITHUB_TOKEN como respaldo de IA).
 """
 import json, os, re, subprocess, datetime, urllib.request, urllib.parse, collections, html
+import sys as _s, os as _o; _s.path.insert(0, _o.path.join(_o.path.dirname(_o.path.abspath(__file__)), '..', 'ai')); from ia_respaldo import generar as _respaldo   # IA de respaldo común
 
 R = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 D = os.path.join(R, 'seo')
@@ -81,14 +82,9 @@ def ia(prompt):
                       {'contents': [{'parts': [{'text': prompt}]}], 'generationConfig': {'temperature': .4, 'responseMimeType': 'application/json'}})
             return json.loads(''.join(p.get('text', '') for p in r['candidates'][0]['content']['parts']))
         except Exception as e: print('gemini', m, str(e)[:120])
-    g = os.environ.get('GITHUB_TOKEN', '').strip()
-    if g:
-        try:
-            r = pedir('https://models.github.ai/inference/chat/completions', {'model': 'openai/gpt-4.1-mini', 'messages': [{'role': 'user', 'content': prompt + '\nResponde solo JSON.'}]},
-                      {'Authorization': 'Bearer ' + g})
-            t = r['choices'][0]['message']['content']; return json.loads(t[t.index('{') if '{' in t else t.index('['):].rstrip('`\n '))
-        except Exception as e: print('github models', str(e)[:120])
-    return None
+    t = _respaldo(prompt, json_mode=True)
+    try: return json.loads(t[min([i for i in (t.find('{'), t.find('[')) if i >= 0]):]) if t else None
+    except Exception as e: print('respaldo IA', str(e)[:90]); return None
 
 
 # ---------------------------------------------------------------- acceso

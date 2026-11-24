@@ -13,6 +13,7 @@ Registro: clips/hechos.json (qué clip salió, dónde y con qué enlace) para de
 Secretos: GEMINI_API_KEY, CLIPS_YT_CLIENT_ID, CLIPS_YT_CLIENT_SECRET, CLIPS_YT_REFRESH_TOKEN (canal Clips-All),
           TIKTOK_CLIENT_KEY, TIKTOK_CLIENT_SECRET, CLIPS_TIKTOK_REFRESH_TOKEN (cuenta de clips; opcional)."""
 import json, os, re, subprocess, time, hashlib, urllib.request, urllib.parse, datetime
+import sys as _s, os as _o; _s.path.insert(0, _o.path.join(_o.path.dirname(_o.path.abspath(__file__)), '..', 'ai')); from ia_respaldo import generar as _respaldo   # IA de respaldo común
 
 D = os.path.dirname(os.path.abspath(__file__))
 E = lambda k: os.environ.get(k, '').strip()
@@ -41,14 +42,8 @@ def gemini(prompt):
             t = ''.join(x.get('text', '') for x in r['candidates'][0]['content']['parts'])
             if t.strip(): return t
         except Exception as e: print('gemini', m, str(e)[:120]); time.sleep(5)
-    for m in ('openai/gpt-4.1-mini', 'openai/gpt-4o-mini'):   # respaldo gratuito: modelos de GitHub con el token del flujo
-        try:
-            r = pedir('https://models.github.ai/inference/chat/completions', crudo=json.dumps({'model': m, 'messages': [{'role': 'user', 'content': prompt}], 'temperature': 0.4, 'max_tokens': 4000}).encode(),
-                      cab={'Content-Type': 'application/json', 'Authorization': 'Bearer ' + E('GITHUB_TOKEN')}, t=120)
-            t = r['choices'][0]['message']['content']
-            if t.strip(): print('IA de respaldo:', m); return t
-        except Exception as e: print('respaldo', m, str(e)[:120])
-    return ''
+    os.environ.setdefault('GEMINI_API_KEY', E('GEMINI_API_KEY') or '')
+    return _respaldo(prompt, temp=0.4)
 
 def transcribir(video):
     from faster_whisper import WhisperModel

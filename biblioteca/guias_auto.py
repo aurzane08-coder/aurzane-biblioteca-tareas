@@ -8,6 +8,7 @@ empezando por las que más aparecen en Google (seo/resumen.json), con la IA y co
 Las guías se guardan en biblioteca/guias_auto.json y se vuelven a poner solas si un despliegue rehace la página.
 Copia previa de cada página en www/aurzane.com/eliminar/guias-FECHA/. Entradas: GEMINI_API_KEY, GITHUB_TOKEN, SSH, SG_DEST."""
 import json, os, re, sys, html, time, subprocess, datetime, urllib.request, urllib.error
+import sys as _s, os as _o; _s.path.insert(0, _o.path.join(_o.path.dirname(_o.path.abspath(__file__)), '..', 'ai')); from ia_respaldo import generar as _respaldo   # IA de respaldo común
 R = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 F = os.path.join(R, 'biblioteca', 'guias_auto.json')
 SSH = os.environ.get('SSH', ''); DEST = os.environ.get('SG_DEST', '')
@@ -40,16 +41,9 @@ def ia(prompt):
                  {'contents': [{'parts': [{'text': prompt}]}], 'generationConfig': {'temperature': 0.3, 'responseMimeType': 'application/json'}}, {'Content-Type': 'application/json'})
         try: return json.loads(j['candidates'][0]['content']['parts'][0]['text'])
         except Exception: pass
-    tk = os.environ.get('GITHUB_TOKEN', '')
-    for m in ('openai/gpt-4.1', 'openai/gpt-4.1-mini'):
-        if not tk: break
-        j = post('https://models.github.ai/inference/chat/completions', {'model': m, 'messages': [{'role': 'user', 'content': prompt}], 'temperature': 0.3},
-                 {'Content-Type': 'application/json', 'Authorization': 'Bearer ' + tk})
-        try:
-            t = j['choices'][0]['message']['content']
-            return json.loads(t[t.index('{'):t.rindex('}') + 1])
-        except Exception: pass
-    return None
+    t = _respaldo(prompt, json_mode=True)
+    try: return json.loads(t[min([i for i in (t.find('{'), t.find('[')) if i >= 0]):]) if t else None
+    except Exception as e: print('respaldo IA', str(e)[:90]); return None
 
 
 def bloque(titulo, g):

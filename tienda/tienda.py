@@ -9,6 +9,7 @@ Cada semana:
 No se copia nada de Amazon (sus normas de afiliados lo prohíben): los enlaces son búsquedas por ISBN con la etiqueta.
 """
 import json, os, re, sys, time, html, datetime, unicodedata, urllib.request, urllib.parse
+import sys as _s, os as _o; _s.path.insert(0, _o.path.join(_o.path.dirname(_o.path.abspath(__file__)), '..', 'ai')); from ia_respaldo import generar as _respaldo   # IA de respaldo común
 import xml.etree.ElementTree as ET
 
 D = os.path.dirname(os.path.abspath(__file__))
@@ -123,15 +124,7 @@ def ia(prompt):
         if st == 200:
             try: return json.loads(b)['candidates'][0]['content']['parts'][0]['text']
             except Exception: pass
-    tk = os.environ.get('GITHUB_TOKEN', '')
-    for m in ('openai/gpt-4.1-mini', 'openai/gpt-4o-mini'):
-        if not tk: break
-        st, b = get('https://models.github.ai/inference/chat/completions', json.dumps({'model': m, 'messages': [{'role': 'user', 'content': prompt}], 'temperature': 0.4}).encode(),
-                    {'Content-Type': 'application/json', 'Authorization': 'Bearer ' + tk}, 90)
-        if st == 200:
-            try: return json.loads(b)['choices'][0]['message']['content']
-            except Exception: pass
-    return ''
+    return _respaldo(prompt, json_mode=True, temp=0.4)
 
 
 def leer(n, d):

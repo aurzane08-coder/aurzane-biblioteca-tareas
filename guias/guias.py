@@ -11,6 +11,7 @@ Este script añade a cada una una guía original de 900 a 1.300 palabras escrita
 Entradas: SSH, SG_DEST, GEMINI_API_KEY, GITHUB_TOKEN.
 """
 import json, os, re, subprocess, datetime, html, urllib.request
+import sys as _s, os as _o; _s.path.insert(0, _o.path.join(_o.path.dirname(_o.path.abspath(__file__)), '..', 'ai')); from ia_respaldo import generar as _respaldo   # IA de respaldo común
 
 R = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 D = os.path.join(R, 'guias', 'textos'); os.makedirs(D, exist_ok=True)
@@ -39,15 +40,9 @@ def ia(prompt):
                       {'contents': [{'parts': [{'text': prompt}]}], 'generationConfig': {'temperature': .5, 'maxOutputTokens': 6000, 'responseMimeType': 'application/json'}}, {})
             return json.loads(''.join(p.get('text', '') for p in r['candidates'][0]['content']['parts']))
         except Exception as e: print('gemini', m, str(e)[:100])
-    g = os.environ.get('GITHUB_TOKEN', '').strip()
-    for m in ['openai/gpt-4.1', 'openai/gpt-4.1-mini']:
-        if not g: break
-        try:
-            r = pedir('https://models.github.ai/inference/chat/completions', {'model': m, 'response_format': {'type': 'json_object'},
-                      'messages': [{'role': 'user', 'content': prompt}]}, {'Authorization': 'Bearer ' + g})
-            return json.loads(r['choices'][0]['message']['content'])
-        except Exception as e: print('github', m, str(e)[:100])
-    return None
+    t = _respaldo(prompt, json_mode=True)
+    try: return json.loads(t[min([i for i in (t.find('{'), t.find('[')) if i >= 0]):]) if t else None
+    except Exception as e: print('respaldo IA', str(e)[:90]); return None
 
 
 def texto_visible(s):

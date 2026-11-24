@@ -676,19 +676,13 @@ def gemini_base(prompt, maxt=700, temp=0.3):
         if st in (429, 503): time.sleep(3)
     return ia_respaldo(prompt, maxt, temp)
 def ia_respaldo(prompt, maxt=700, temp=0.3):
-    """Si Gemini agotó su cupo gratuito, usa los modelos gratuitos de GitHub (con el token del propio flujo)."""
-    tk = os.environ.get('GITHUB_TOKEN', '').strip()
-    if not tk or GEM_INFO.get('resp_fallos', 0) >= 4: return ''
-    for modelo in ('openai/gpt-4.1-mini', 'openai/gpt-4o-mini', 'meta/Llama-4-Scout-17B-16E-Instruct'):
-        st, b, _, _ = get('https://models.github.ai/inference/chat/completions', {'Content-Type': 'application/json', 'Authorization': 'Bearer ' + tk},
-                          datos=json.dumps({'model': modelo, 'messages': [{'role': 'user', 'content': prompt}], 'temperature': temp, 'max_tokens': max(maxt * 2, 1024)}).encode(), metodo='POST', t=90)
-        if st == 200:
-            try:
-                txt = json.loads(b)['choices'][0]['message']['content'].strip()
-                if txt: GEM_INFO.update(estado='ok (respaldo GitHub)', modelo=modelo); return txt
-            except Exception: pass
-        GEM_INFO['resp_fallos'] = GEM_INFO.get('resp_fallos', 0) + 1
-        if GEM_INFO['resp_fallos'] >= 4: break
+    """Respaldo (24/11/2026): GitHub Models dejó de responder; ahora otros modelos de Gemini con la misma clave, cada uno con su cupo."""
+    if GEM_INFO.get('resp_fallos', 0) >= 2: return ''
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    from ia_respaldo import generar
+    txt = generar(prompt, temp=temp, maxt=max(maxt * 3, 2048), rondas=1, t=90)
+    if txt: GEM_INFO.update(estado='ok (respaldo)'); return txt
+    GEM_INFO['resp_fallos'] = GEM_INFO.get('resp_fallos', 0) + 1
     return ''
 def gemini_rapido(prompt): return gemini_base(prompt, 300, 0)
 def es_espanol(t):
