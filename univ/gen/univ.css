@@ -398,3 +398,5 @@ details.grupo>summary:focus-visible{outline:2px solid var(--accent-text);outline
 @media(max-width:600px){.continente>img.v4-foto{height:90px}}
 .nc-grid li a,.nc-grid li a *{text-decoration:none!important}
 .nc-grid li a:hover b{text-decoration:underline!important}
+/* «Antes de elegir universidad»: las 4 herramientas en una fila en pantallas anchas (antes quedaba una sola abajo) */
+.tres{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
