@@ -1,6 +1,149 @@
 [
  {
   "fecha": "2026-11-24",
+  "id": "ia-aurzane-bib-situacion-poblacion-adulta-mayor-peru-camino",
+  "tipo": "libro",
+  "titulo": "La situación de la población adulta mayor en el Perú: camino a una nueva política",
+  "url": "https://archive.org/details/aurzane-bib-situacion-poblacion-adulta-mayor-peru-camino",
+  "motivo": "La IA le dio 6/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-introduccion-linguistica-clinica-aproximaciones-trastornos-c/introduc"
+  ]
+ },
+ {
+  "fecha": "2026-11-24",
+  "id": "ia-aurzane-bib-no-estoy-viajando-callado-historia-vida",
+  "tipo": "libro",
+  "titulo": "No estoy viajando callado : historia de vida de un maestro bora",
+  "url": "https://archive.org/details/aurzane-bib-no-estoy-viajando-callado-historia-vida",
+  "motivo": "La IA le dio 4/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-introduccion-linguistica-clinica-aproximaciones-trastornos-c/introduc"
+  ]
+ },
+ {
+  "fecha": "2026-11-24",
+  "id": "ia-aurzane-bib-traductologia-neurocognicion-como-se-organiza-sistema",
+  "tipo": "libro",
+  "titulo": "Traductología y neurocognición : cómo se organiza el sistema lingüístico del traductor",
+  "url": "https://archive.org/details/aurzane-bib-traductologia-neurocognicion-como-se-organiza-sistema",
+  "motivo": "La IA le dio 3/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-fundamentos-psicologia-salud/fundamentos-psicologia-salud.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-24",
+  "id": "ia-aurzane-bib-patio-ciudad-transformar-espacios-entornos-inclusivos",
+  "tipo": "libro",
+  "titulo": "Del patio a la ciudad: transformar los espacios en entornos inclusivos y de bienestar",
+  "url": "https://archive.org/details/aurzane-bib-patio-ciudad-transformar-espacios-entornos-inclusivos",
+  "motivo": "La IA le dio 5/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-fundamentos-psicologia-salud/fundamentos-psicologia-salud.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-24",
+  "id": "ia-aurzane-bib-dolor-cronico-consecuencias-salud-mujeres",
+  "tipo": "libro",
+  "titulo": "Dolor crónico: consecuencias en la salud de las mujeres",
+  "url": "https://archive.org/details/aurzane-bib-dolor-cronico-consecuencias-salud-mujeres",
+  "motivo": "La IA le dio 6/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-fundamentos-psicologia-salud/fundamentos-psicologia-salud.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-24",
+  "id": "ia-aurzane-bib-tela-arana-violencias-contra-infancia-lucha",
+  "tipo": "libro",
+  "titulo": "En la tela de araña. Las violencias contra la infancia y la lucha de las madres protectoras.",
+  "url": "https://archive.org/details/aurzane-bib-tela-arana-violencias-contra-infancia-lucha",
+  "motivo": "La IA le dio 6/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-fundamentos-psicologia-salud/fundamentos-psicologia-salud.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-24",
+  "id": "ia-aurzane-bib-proyecto-apego-sobre-evaluacion-promocion-competencias",
+  "tipo": "libro",
+  "titulo": "Proyecto Apego sobre evaluación y promoción de competencias parentales en el sistema sanitario público andaluz. Parte 2",
+  "url": "https://archive.org/details/aurzane-bib-proyecto-apego-sobre-evaluacion-promocion-competencias",
+  "motivo": "La IA le dio 5/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-fundamentos-psicologia-salud/fundamentos-psicologia-salud.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-24",
+  "id": "ia-aurzane-bib-decada-envejecimiento-saludable-informe-referencia",
+  "tipo": "libro",
+  "titulo": "Década del Envejecimiento Saludable: Informe de referencia",
+  "url": "https://archive.org/details/aurzane-bib-decada-envejecimiento-saludable-informe-referencia",
+  "motivo": "La IA le dio 6/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-enfrentar-problemas-plus-ep-grupal-ayuda/enfrentar-problemas-plus-ep-"
+  ]
+ },
+ {
+  "fecha": "2026-11-24",
+  "id": "ia-aurzane-bib-recetas-liderazgo",
+  "tipo": "libro",
+  "titulo": "Recetas de Liderazgo",
+  "url": "https://archive.org/details/aurzane-bib-recetas-liderazgo",
+  "motivo": "La IA le dio 4/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-deficits-atencion-transtornos-conducta/deficits-atencion-transtornos-"
+  ]
+ },
+ {
+  "fecha": "2026-11-24",
+  "id": "ia-aurzane-bib-pisa-2015-rendimiento-su-relacion-sentimiento",
+  "tipo": "libro",
+  "titulo": "PISA 2015: rendimiento y su relación con el sentimiento de pertenencia, motivación y ansiedad en estudiantes de alto rendimiento",
+  "url": "https://archive.org/details/aurzane-bib-pisa-2015-rendimiento-su-relacion-sentimiento",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 28 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-pisa-2015-rendimiento-su-relacion-sentimiento/pisa-2015-rendimiento-s"
+  ]
+ },
+ {
+  "fecha": "2026-11-24",
+  "id": "ia-aurzane-bib-neurodidactica-metodologia-docente-binomio-inclusion",
+  "tipo": "libro",
+  "titulo": "LA NEURODIDÁCTICA Y LA METODOLOGÍA DOCENTE: UN BINOMIO PARA LA INCLUSIÓN",
+  "url": "https://archive.org/details/aurzane-bib-neurodidactica-metodologia-docente-binomio-inclusion",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 19 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-neurodidactica-metodologia-docente-binomio-inclusion/neurodidactica-m"
+  ]
+ },
+ {
+  "fecha": "2026-11-24",
+  "id": "ia-aurzane-bib-duelos-migratorios-estres-aculturativo-ninez-adolescencia",
+  "tipo": "libro",
+  "titulo": "Duelos migratorios y estrés aculturativo en la niñez y la adolescencia migrante. Un estudio etnográfico en Oaxaca, México",
+  "url": "https://archive.org/details/aurzane-bib-duelos-migratorios-estres-aculturativo-ninez-adolescencia",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 40 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-duelos-migratorios-estres-aculturativo-ninez-adolescencia/duelos-migr"
+  ]
+ },
+ {
+  "fecha": "2026-11-24",
+  "id": "ia-aurzane-bib-vivir-sin-recaidas",
+  "tipo": "libro",
+  "titulo": "Vivir sin recaídas",
+  "url": "https://archive.org/details/aurzane-bib-vivir-sin-recaidas",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 43 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-vivir-sin-recaidas/vivir-sin-recaidas.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-24",
   "id": "cur-b7b494f1ef",
   "tipo": "curiosidad",
   "titulo": "¿Por qué duele más el ánimo tras la menopausia?",
@@ -3056,149 +3199,6 @@
   "motivo": "La IA le dio 6/10: no encaja en la biblioteca",
   "probados": [
    "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13693427.1/PMC13693427.1.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-08",
-  "id": "ia-fantasy-giants",
-  "tipo": "libro",
-  "titulo": "Fantasy Giants",
-  "url": "https://archive.org/details/fantasy-giants",
-  "motivo": "La IA le dio 6/10: no encaja en la biblioteca",
-  "probados": [
-   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13686194.1/ZEPT_A_2735202_SM8460.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-08",
-  "id": "ia-the-kitties-guide-for-dummies-maxim-fedorov-sergey-fedorov-eng-1",
-  "tipo": "libro",
-  "titulo": "The Kitties' Guide for Dummies",
-  "url": "https://archive.org/details/the-kitties-guide-for-dummies-maxim-fedorov-sergey-fedorov-eng-1",
-  "motivo": "La IA le dio 2/10: no encaja en la biblioteca",
-  "probados": [
-   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13686194.1/ZEPT_A_2735202_SM8460.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-08",
-  "id": "ia-boat-354-the-death-of-the-unquestioned-self",
-  "tipo": "libro",
-  "titulo": "BOAT 354 THE DEATH OF THE UNQUESTIONED SELF",
-  "url": "https://archive.org/details/boat-354-the-death-of-the-unquestioned-self",
-  "motivo": "La IA le dio 3/10: no encaja en la biblioteca",
-  "probados": [
-   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13686194.1/ZEPT_A_2735202_SM8460.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-08",
-  "id": "ia-approachesto-understanding-contemporary-islam-20260712-231045-0000_202610",
-  "tipo": "libro",
-  "titulo": "Approaches+to+ Understanding+ Contemporary+ Islam 20260712 231045 0000",
-  "url": "https://archive.org/details/approachesto-understanding-contemporary-islam-20260712-231045-0000_202610",
-  "motivo": "La IA le dio 5/10: no encaja en la biblioteca",
-  "probados": [
-   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13686194.1/ZEPT_A_2735202_SM8460.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-08",
-  "id": "ia-my-beloved-friend-dear-zul-there-are-things-about-you-that-i-have-never-qu-20261",
-  "tipo": "libro",
-  "titulo": "My Beloved Friend Dear Zul, There Are Things About You That I Have Never Qu 20261017 134537 0000",
-  "url": "https://archive.org/details/my-beloved-friend-dear-zul-there-are-things-about-you-that-i-have-never-qu-20261017-134537-0000",
-  "motivo": "La IA le dio 6/10: no encaja en la biblioteca",
-  "probados": [
-   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13686194.1/ZEPT_A_2735202_SM8460.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-08",
-  "id": "ia-boat-373-chasing-money",
-  "tipo": "libro",
-  "titulo": "BOAT 373 CHASING MONEY",
-  "url": "https://archive.org/details/boat-373-chasing-money",
-  "motivo": "La IA le dio 2/10: no encaja en la biblioteca",
-  "probados": [
-   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13686194.1/ZEPT_A_2735202_SM8460.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-08",
-  "id": "ia-the-aesthetic-pleasure-of-deviation_202611",
-  "tipo": "libro",
-  "titulo": "The Aesthetic Pleasure Of Deviation",
-  "url": "https://archive.org/details/the-aesthetic-pleasure-of-deviation_202611",
-  "motivo": "La IA le dio 6/10: no encaja en la biblioteca",
-  "probados": [
-   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13686194.1/ZEPT_A_2735202_SM8460.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-08",
-  "id": "ia-against-satanism-13-the-mind-virus",
-  "tipo": "libro",
-  "titulo": "Against Satanism 13 The Mind Virus",
-  "url": "https://archive.org/details/against-satanism-13-the-mind-virus",
-  "motivo": "La IA le dio 1/10: no encaja en la biblioteca",
-  "probados": [
-   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13686194.1/ZEPT_A_2735202_SM8460.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-08",
-  "id": "ia-surviving-2050-doi-260918-update",
-  "tipo": "libro",
-  "titulo": "Surviving 2050 ( DOI 260918) Update",
-  "url": "https://archive.org/details/surviving-2050-doi-260918-update",
-  "motivo": "La IA le dio 3/10: no encaja en la biblioteca",
-  "probados": [
-   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13686194.1/ZEPT_A_2735202_SM8460.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-08",
-  "id": "ia-ijpsc-journal_v1_i1",
-  "tipo": "libro",
-  "titulo": "IJPSC Journal",
-  "url": "https://archive.org/details/ijpsc-journal_v1_i1",
-  "motivo": "La IA le dio 5/10: no encaja en la biblioteca",
-  "probados": [
-   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13686194.1/ZEPT_A_2735202_SM8460.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-08",
-  "id": "pmc-PMC13403638",
-  "tipo": "estudio",
-  "titulo": "Tereza de Jesus Sena: reformer of psychiatric and mental health nursing education and practice",
-  "url": "https://europepmc.org/article/PMC/PMC13403638",
-  "motivo": "La IA le dio 5/10: no encaja en la biblioteca",
-  "probados": [
-   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13403642.1/PMC13403642.1.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-08",
-  "id": "pmc-PMC13427022",
-  "tipo": "estudio",
-  "titulo": "Anxiety in mothers of children with COVID-19 based on the State-Trait Anxiety Inventory",
-  "url": "https://europepmc.org/article/PMC/PMC13427022",
-  "motivo": "La IA le dio 6/10: no encaja en la biblioteca",
-  "probados": [
-   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13427021.1/PMC13427021.1.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-08",
-  "id": "pmc-PMC13668738",
-  "tipo": "estudio",
-  "titulo": "Music as a tool for personal and social resilience: a three-level conceptual model",
-  "url": "https://europepmc.org/article/PMC/PMC13668738",
-  "motivo": "La IA le dio 6/10: no encaja en la biblioteca",
-  "probados": [
-   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13724535.1/PMC13724535.1.pdf"
   ]
  }
 ]

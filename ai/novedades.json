@@ -1,58 +1,136 @@
 [
  {
   "fecha": "2026-11-24",
+  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-introduccion-linguistica-clinica-aproximaciones-trastornos-c/",
+  "titulo": "Libro abierto: Introducción a la lingüística clínica : aproximaciones a los trastornos de la comunicación"
+ },
+ {
+  "fecha": "2026-11-24",
+  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-critica-cultural-psicologia-teoria-apego-ecuador/",
+  "titulo": "Libro abierto: Crítica cultural y psicología: la teoría del apego en Ecuador"
+ },
+ {
+  "fecha": "2026-11-24",
+  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-fundamentos-psicologia-salud/",
+  "titulo": "Libro abierto: Fundamentos de Psicología de la Salud"
+ },
+ {
+  "fecha": "2026-11-24",
+  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-motivacion-emocion-septiembre-2019/",
+  "titulo": "Libro abierto: Motivación y emoción, septiembre 2019"
+ },
+ {
+  "fecha": "2026-11-24",
+  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-enfrentar-problemas-plus-ep-grupal-ayuda/",
+  "titulo": "Libro abierto: Enfrentar problemas plus (EP+ grupal): ayuda psicológica grupal para personas adultas con problemas de angusti"
+ },
+ {
+  "fecha": "2026-11-24",
+  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-intervencion-bio-psico-social-adicciones/",
+  "titulo": "Libro abierto: Intervención bio-psico-social en adicciones"
+ },
+ {
+  "fecha": "2026-11-24",
+  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-deficits-atencion-transtornos-conducta/",
+  "titulo": "Libro abierto: Déficits de atención y transtornos de conducta"
+ },
+ {
+  "fecha": "2026-11-24",
+  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-orientacion-tutoria-escolar-familias-teoria-practica/",
+  "titulo": "Libro abierto: La orientación y la tutoría escolar con familias: teoría y práctica"
+ },
+ {
+  "fecha": "2026-11-24",
+  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-soltar-amarras-introduccion-salud-mental-colectiva/",
+  "titulo": "Libro abierto: Soltar amarras. Una introducción a la salud mental colectiva"
+ },
+ {
+  "fecha": "2026-11-24",
   "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-prevencion-integral-ciberacoso-otros-riesgos-violencias/",
-  "titulo": "Libro abierto: Prevención integral del ciberacoso y otros riesgos y violencias online"
+  "titulo": "Libro abierto: Prevención integral del ciberacoso y otros riesgos y violencias online",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-prevencion-integral-ciberacoso-otros-riesgos-violencias.jpg",
+  "desc": "Este eBook aborda cómo reconocer los principales riesgos y violencias online, poniendo especial énfasis en prevenir ciberacoso o ciberbullying . Al mismo tiempo, recoge muchas orientaciones para fomen",
+  "titulo_completo": "Prevención integral del ciberacoso y otros riesgos y violencias online"
  },
  {
   "fecha": "2026-11-24",
   "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-bioetica-maternidad-humanizacion-comunicacion-entorno-sanita/",
-  "titulo": "Libro abierto: Bioética de la maternidad: humanización, comunicación y entorno sanitario"
+  "titulo": "Libro abierto: Bioética de la maternidad: humanización, comunicación y entorno sanitario",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-bioetica-maternidad-humanizacion-comunicacion-entorno-sanita.jpg",
+  "desc": "El nacimiento de los hijos constituye un momento fundamental en la vida de las mujeres y de las familias, que afecta a toda la sociedad. Desde la segunda mitad del siglo XX, los cuidados durante el pa",
+  "titulo_completo": "Bioética de la maternidad: humanización, comunicación y entorno sanitario"
  },
  {
   "fecha": "2026-11-24",
   "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-caracteristicas-dificultades-aprendizaje-ninos-8-11/",
-  "titulo": "Libro abierto: Características de las dificultades de aprendizaje en niños de 8 a 11 años de Medellín - Colombia"
+  "titulo": "Libro abierto: Características de las dificultades de aprendizaje en niños de 8 a 11 años de Medellín - Colombia",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-caracteristicas-dificultades-aprendizaje-ninos-8-11.jpg",
+  "desc": "RESUMEN: Con base en la polémica centrada en la definición, conceptualización e identificación de las Dificultades de Aprendizaje (DA) en el contexto escolar así como la falta de información referente",
+  "titulo_completo": "Características de las dificultades de aprendizaje en niños de 8 a 11 años de Medellín - C"
  },
  {
   "fecha": "2026-11-24",
   "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-escala-cavidace-evaluacion-calidad-vida-personas/",
-  "titulo": "Libro abierto: Escala CAVIDACE: evaluación de la calidad de vida de personas con daño cerebral. Autoinforme"
+  "titulo": "Libro abierto: Escala CAVIDACE: evaluación de la calidad de vida de personas con daño cerebral. Autoinforme",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-escala-cavidace-evaluacion-calidad-vida-personas.jpg",
+  "desc": "[ES]La mejora de la calidad de vida de las personas es una meta y un principio de actuación en todos los entornos profesionales que trabajan con personas, pero los esfuerzos de mejora del bienestar pe",
+  "titulo_completo": "Escala CAVIDACE: evaluación de la calidad de vida de personas con daño cerebral. Autoinfor"
  },
  {
   "fecha": "2026-11-24",
   "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-directrices-oms-sobre-intervenciones-autocuidado-salud/",
-  "titulo": "Libro abierto: Directrices de la OMS sobre intervenciones de autocuidado para la salud y el bienestar"
+  "titulo": "Libro abierto: Directrices de la OMS sobre intervenciones de autocuidado para la salud y el bienestar",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-directrices-oms-sobre-intervenciones-autocuidado-salud.jpg",
+  "desc": "Las personas han practicado el autocuidado durante milenios, y los métodos diagnósticos, medicamentos e intervenciones nuevos, incluidas las tecnologías digitales, están cambiando la forma en que se p",
+  "titulo_completo": "Directrices de la OMS sobre intervenciones de autocuidado para la salud y el bienestar"
  },
  {
   "fecha": "2026-11-24",
   "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-autoayuda-plus-aayuda-curso-grupal-manejo/",
-  "titulo": "Libro abierto: Autoayuda Plus (AAyuda+). Curso grupal de manejo del estrés para personas adultas. Versión genérica de ensayo "
+  "titulo": "Libro abierto: Autoayuda Plus (AAyuda+). Curso grupal de manejo del estrés para personas adultas. Versión genérica de ensayo ",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-autoayuda-plus-aayuda-curso-grupal-manejo.jpg",
+  "desc": "El curso grupal Autoayuda Plus (AAyuda+) es una herramienta para reducir el malestar psicológico en personas adultas y prevenir la aparición de trastornos mentales. Es adecuado para todos los entornos",
+  "titulo_completo": "Autoayuda Plus (AAyuda+). Curso grupal de manejo del estrés para personas adultas. Versión"
  },
  {
   "fecha": "2026-11-24",
   "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-introduccion-psicologia-cientifica/",
-  "titulo": "Libro abierto: Introducción a la psicología científica"
+  "titulo": "Libro abierto: Introducción a la psicología científica",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-introduccion-psicologia-cientifica.jpg",
+  "desc": "Punto de partida para entender qué estudia la psicología, cómo nació como ciencia y en qué se diferencia del sentido común. Recorre sus escuelas y su método. Copia de la Biblioteca AURZANE (aurzane.co",
+  "titulo_completo": "Introducción a la psicología científica"
  },
  {
   "fecha": "2026-11-24",
   "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-base-iceberg-fundamentacion-psicobiologica-factores-riesgo/",
-  "titulo": "Libro abierto: La base del iceberg. Fundamentación psicobiológica de los factores de riesgo del trastorno de conducta adictiv"
+  "titulo": "Libro abierto: La base del iceberg. Fundamentación psicobiológica de los factores de riesgo del trastorno de conducta adictiv",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-base-iceberg-fundamentacion-psicobiologica-factores-riesgo.jpg",
+  "desc": "Este manual nace de la voluntad de mejorar la visión social respecto al trastorno de conducta adictiva para que se lo considere como una enfermedad, de modo que la persona que la sufre se libere, no d",
+  "titulo_completo": "La base del iceberg. Fundamentación psicobiológica de los factores de riesgo del trastorno"
  },
  {
   "fecha": "2026-11-24",
   "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-psicopatologia/",
-  "titulo": "Libro abierto: Psicopatología"
+  "titulo": "Libro abierto: Psicopatología",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-psicopatologia.jpg",
+  "desc": "Manual de referencia sobre los principales trastornos mentales: cómo se describen, se clasifican y se diagnostican. Copia de la Biblioteca AURZANE (aurzane.com/biblioteca).",
+  "titulo_completo": "Psicopatología"
  },
  {
   "fecha": "2026-11-24",
   "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-sociedad-digital-razon-emocion/",
-  "titulo": "Libro abierto: Sociedad digital. Razón y emoción"
+  "titulo": "Libro abierto: Sociedad digital. Razón y emoción",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-sociedad-digital-razon-emocion.jpg",
+  "desc": "Cómo la tecnología digital moldea emociones, decisiones y convivencia, y qué competencias necesitamos para no perder el juicio propio. Copia de la Biblioteca AURZANE (aurzane.com/biblioteca).",
+  "titulo_completo": "Sociedad digital. Razón y emoción"
  },
  {
   "fecha": "2026-11-24",
   "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-psicologia-economica-consumidor/",
-  "titulo": "Libro abierto: Psicología económica y del comportamiento del consumidor"
+  "titulo": "Libro abierto: Psicología económica y del comportamiento del consumidor",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-psicologia-economica-consumidor.jpg",
+  "desc": "Por qué compramos lo que compramos y cómo decidimos sobre el dinero: sesgos, emociones, publicidad y hábitos de consumo. Copia de la Biblioteca AURZANE (aurzane.com/biblioteca).",
+  "titulo_completo": "Psicología económica y del comportamiento del consumidor"
  },
  {
   "fecha": "2026-11-24",
@@ -825,7 +903,10 @@
  {
   "fecha": "2026-11-19",
   "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13755206/",
-  "titulo": "Estudio reciente: Prevalence of depression in childhood-onset systemic lupus erythematosus: a systematic review and meta-analysi"
+  "titulo": "Estudio reciente: Prevalence of depression in childhood-onset systemic lupus erythematosus: a systematic review and meta-analysi",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/pmc-PMC13755206.jpg",
+  "desc": "Objective Childhood-onset systemic lupus erythematosus (cSLE) is frequently associated with psychological symptoms, particularly depression. However, there remains a lack of quantitative evidence rega",
+  "titulo_completo": "Prevalence of depression in childhood-onset systemic lupus erythematosus: a systematic rev"
  },
  {
   "fecha": "2026-11-18",
@@ -841,50 +922,5 @@
   "fecha": "2026-11-17",
   "url": "https://aurzane.com/articulos/como-calcular-hipoteca-pagar-sin-ahogarte/",
   "titulo": "Artículo: Cómo calcular cuánta hipoteca puedes pagar sin ahogarte"
- },
- {
-  "fecha": "2026-11-17",
-  "url": "https://aurzane.com/articulos/insomnio-en-adolescentes-causas-consecuencias-y-como-ayudarlos/",
-  "titulo": "Artículo: Insomnio en adolescentes: causas, guías y cómo ayudarles"
- },
- {
-  "fecha": "2026-11-17",
-  "url": "https://aurzane.com/articulos/resiliencia-familiar-cuidado-mayores/",
-  "titulo": "Artículo: Resiliencia familiar en el cuidado de personas mayores"
- },
- {
-  "fecha": "2026-11-16",
-  "url": "https://live.aurzane.com/calculadora-interes-compuesto/",
-  "titulo": "Calculadora de interés compuesto con aportaciones mensuales"
- },
- {
-  "fecha": "2026-11-16",
-  "url": "https://aurzane.com/articulos/universidad-de-amsterdam-oferta-y-acceso/",
-  "titulo": "Artículo: Universidad de Ámsterdam: Oferta y acceso"
- },
- {
-  "fecha": "2026-11-16",
-  "url": "https://aurzane.com/articulos/mejores-libros-kristin-neff-autocompasion/",
-  "titulo": "Artículo: Los mejores libros de Kristin Neff sobre autocompasión"
- },
- {
-  "fecha": "2026-11-16",
-  "url": "https://aurzane.com/articulos/universidades-privadas-paraguay-guia-carrera/",
-  "titulo": "Artículo: Universidades privadas en Paraguay: guía vocacional"
- },
- {
-  "fecha": "2026-11-16",
-  "url": "https://aurzane.com/articulos/nuevas-vias-depresion-adolescente-ciencia-combinacion/",
-  "titulo": "Artículo: Nuevas vías en la depresión adolescente: ciencia y combinación"
- },
- {
-  "fecha": "2026-11-15",
-  "url": "https://aurzane.com/biblioteca/recientes/oa-W7226034015/",
-  "titulo": "Libro abierto: Análisis criminológico del suicidio"
- },
- {
-  "fecha": "2026-11-15",
-  "url": "https://aurzane.com/articulos/ansiedad-por-el-estatus-en-paraguay/",
-  "titulo": "Artículo: Ansiedad por el estatus en Paraguay: claves psicológicas"
  }
 ]

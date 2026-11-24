@@ -144,7 +144,7 @@
   0
  ],
  "tipo:libro": [
-  143,
+  152,
   9
  ],
  "Gambling Behavior and Treatments": [
@@ -312,7 +312,7 @@
   0
  ],
  "archive:psicologia": [
-  113,
+  122,
   0
  ],
  "ed:The Open University": [
@@ -588,7 +588,7 @@
   2
  ],
  "ed:Universitat Oberta de Catalunya (UOC)": [
-  6,
+  7,
   4
  ],
  "ed:Universidad de Buenos Aires. Facultad de Filosofía y Letras. Departamento de Ciencias de la Educación": [
@@ -612,12 +612,12 @@
   1
  ],
  "ed:OPS": [
-  7,
-  4
+  8,
+  5
  ],
  "ed:Editorial UOC": [
-  25,
-  3
+  28,
+  4
  ],
  "ed:Universidad Andina Simón Bolívar, Sede Ecuador; Corporación Editora Nacional": [
   0,
@@ -632,8 +632,8 @@
   0
  ],
  "ed:Pontificia Universidad Católica del Perú. Fondo Editorial": [
-  3,
-  5
+  4,
+  6
  ],
  "ed:Fondo Editorial Universidad Católica Luis Amigó": [
   0,
@@ -641,7 +641,7 @@
  ],
  "ed:Pontificia Universidad Católica del Perú. Instituto de Democracia y Derechos Humanos": [
   0,
-  1
+  2
  ],
  "ed:Toluca, MX: Universidad Autónoma del Estado de México": [
   0,
@@ -668,7 +668,7 @@
   0
  ],
  "ed:Aula Magna. McGraw Hill": [
-  1,
+  2,
   0
  ],
  "ed:UNICEF España": [
@@ -684,7 +684,7 @@
   1
  ],
  "ed:Quito, EC: Universidad Andina Simón Bolívar, Sede Ecuador": [
-  2,
+  3,
   2
  ],
  "ed:Red Universitaria de Investigación Innovación Educativa (REUNI+D)": [
@@ -717,7 +717,7 @@
  ],
  "ed:Dykinson": [
   1,
-  2
+  4
  ],
  "ed:UOC": [
   4,
@@ -841,7 +841,7 @@
  ],
  "ed:Octaedro": [
   1,
-  1
+  2
  ],
  "ed:Programa Niñez y Juventud. Secretaría de Extensión Universitaria. Universidad Nacional de Córdoba": [
   0,
@@ -912,6 +912,34 @@
   0
  ],
  "ed:Universidad de Antioquia, Instituto Universitario de Educación Física y Deporte": [
+  0,
+  1
+ ],
+ "ed:Edulp": [
+  0,
+  1
+ ],
+ "ed:Universidad Nacional Autónoma de México": [
+  0,
+  1
+ ],
+ "ed:Noelia Flores": [
+  1,
+  0
+ ],
+ "ed:Junta de Andalucía. Consejería de Igualdad, Salud y Políticas Sociales": [
+  0,
+  1
+ ],
+ "ed:La Laboratoria": [
+  0,
+  1
+ ],
+ "ed:Instituto Andaluz de la mujer. Conserjería de Igualdad, Políticas Sociales y Conciliación. Junta de Andalucía": [
+  0,
+  1
+ ],
+ "ed:Facultad de Lenguas. Universidad Nacional de Córdoba": [
   0,
   1
  ]

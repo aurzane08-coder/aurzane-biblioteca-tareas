@@ -2254,5 +2254,17 @@
   "publicados": 207,
   "pruebas_ok": 57,
   "pruebas_total": 57
+ },
+ {
+  "fecha": "2026-11-24T07:13",
+  "estado": "ok",
+  "avisos": 0,
+  "arreglos": 2,
+  "errores_24h": 6,
+  "redes_ok_24h": 30,
+  "cola": 0,
+  "publicados": 216,
+  "pruebas_ok": 57,
+  "pruebas_total": 57
  }
 ]
