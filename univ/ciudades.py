@@ -84,9 +84,13 @@ def buscar_lote(iso, nombres):
                 for c in cl.get(p, []):
                     dv = c.get('mainsnak', {}).get('datavalue', {}).get('value')
                     if dv is not None and c.get('rank') != 'deprecated': return dv
-            pop = val('P1082')
-            try: pop = int(float(pop['amount'])) if pop else 0
-            except Exception: pop = 0
+            pop = 0   # la cifra de población preferida o, si no, la más reciente (por su fecha)
+            cs = [c for c in cl.get('P1082', []) if c.get('rank') != 'deprecated' and c.get('mainsnak', {}).get('datavalue')]
+            if cs:
+                fecha = lambda c: ((c.get('qualifiers') or {}).get('P585') or [{}])[0].get('datavalue', {}).get('value', {}).get('time', '')
+                c = sorted(cs, key=lambda c: (c.get('rank') == 'preferred', fecha(c)))[-1]
+                try: pop = int(float(c['mainsnak']['datavalue']['value']['amount']))
+                except Exception: pop = 0
             if not pop: continue   # sin población: no es una ciudad (o no sirve)
             out = {'q': q, 'pop': pop}
             alt = val('P2044')
