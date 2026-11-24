@@ -151,7 +151,7 @@ try:
                f'Título: {x["titulo"]}\nAño: {x["anio"]}\nResumen: {x["abstract"][:3500]}')
         if r and float(r.get('nota') or 0) >= 8 and 120 < len(r.get('texto') or '') < 700 and '—' not in r['texto']:
             enl = f'https://doi.org/{x["doi"]}' if x.get('doi') else x.get('url_articulo')
-            dato = {'titulo': r['titulo'], 'texto': r['texto'], 'fuente': f'{(x.get("autores") or "").split(",")[0]} y otros, {x["anio"]}', 'url': enl, 'boton': 'Leer el estudio completo'}
+            dato = {'titulo': r['titulo'], 'texto': r['texto'], 'fuente': (lambda au: (au[0] + (' y otros' if len(au) > 1 else '') + ', ' if au else '') + str(x['anio']))([a.strip() for a in re.split(r'[;,]', x.get('autores') or '') if a.strip()]), 'url': enl, 'boton': 'Leer el estudio completo'}
             USADO['estudio'] = x['id']; break
 except Exception as e: print('estudio', str(e)[:120])
 if not dato:
