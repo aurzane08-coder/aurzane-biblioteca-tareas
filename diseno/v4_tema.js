@@ -509,8 +509,12 @@
   w.dataLayer.push({ 'gtm.start': Date.now(), event: 'gtm.js' });
   var s = d.createElement('script'); s.async = true; s.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-TKTFZ28N';
   (d.head || d.documentElement).appendChild(s);
+  // Google Analytics 4 directo (propiedad AURZANE, G-F51LXC431Q): mide aunque el contenedor de GTM esté vacío
+  var g = d.createElement('script'); g.async = true; g.src = 'https://www.googletagmanager.com/gtag/js?id=G-F51LXC431Q';
+  (d.head || d.documentElement).appendChild(g);
+  gtag('js', new Date()); gtag('config', 'G-F51LXC431Q');
   // eventos útiles
-  var ev = function (n, x) { try { w.dataLayer.push(Object.assign({ event: n }, x || {})); } catch (e) {} };
+  var ev = function (n, x) { try { w.dataLayer.push(Object.assign({ event: n }, x || {})); gtag('event', n, x || {}); } catch (e) {} };
   d.addEventListener('click', function (e) {
     var a = e.target.closest && e.target.closest('a[href]'); if (!a) return;
     var u = a.href;
