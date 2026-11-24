@@ -1,48 +1,130 @@
 [
  {
   "fecha": "2026-11-24",
+  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-prevencion-integral-ciberacoso-otros-riesgos-violencias/",
+  "titulo": "Libro abierto: Prevención integral del ciberacoso y otros riesgos y violencias online"
+ },
+ {
+  "fecha": "2026-11-24",
+  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-bioetica-maternidad-humanizacion-comunicacion-entorno-sanita/",
+  "titulo": "Libro abierto: Bioética de la maternidad: humanización, comunicación y entorno sanitario"
+ },
+ {
+  "fecha": "2026-11-24",
+  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-caracteristicas-dificultades-aprendizaje-ninos-8-11/",
+  "titulo": "Libro abierto: Características de las dificultades de aprendizaje en niños de 8 a 11 años de Medellín - Colombia"
+ },
+ {
+  "fecha": "2026-11-24",
+  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-escala-cavidace-evaluacion-calidad-vida-personas/",
+  "titulo": "Libro abierto: Escala CAVIDACE: evaluación de la calidad de vida de personas con daño cerebral. Autoinforme"
+ },
+ {
+  "fecha": "2026-11-24",
+  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-directrices-oms-sobre-intervenciones-autocuidado-salud/",
+  "titulo": "Libro abierto: Directrices de la OMS sobre intervenciones de autocuidado para la salud y el bienestar"
+ },
+ {
+  "fecha": "2026-11-24",
+  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-autoayuda-plus-aayuda-curso-grupal-manejo/",
+  "titulo": "Libro abierto: Autoayuda Plus (AAyuda+). Curso grupal de manejo del estrés para personas adultas. Versión genérica de ensayo "
+ },
+ {
+  "fecha": "2026-11-24",
+  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-introduccion-psicologia-cientifica/",
+  "titulo": "Libro abierto: Introducción a la psicología científica"
+ },
+ {
+  "fecha": "2026-11-24",
+  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-base-iceberg-fundamentacion-psicobiologica-factores-riesgo/",
+  "titulo": "Libro abierto: La base del iceberg. Fundamentación psicobiológica de los factores de riesgo del trastorno de conducta adictiv"
+ },
+ {
+  "fecha": "2026-11-24",
+  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-psicopatologia/",
+  "titulo": "Libro abierto: Psicopatología"
+ },
+ {
+  "fecha": "2026-11-24",
+  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-sociedad-digital-razon-emocion/",
+  "titulo": "Libro abierto: Sociedad digital. Razón y emoción"
+ },
+ {
+  "fecha": "2026-11-24",
+  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-psicologia-economica-consumidor/",
+  "titulo": "Libro abierto: Psicología económica y del comportamiento del consumidor"
+ },
+ {
+  "fecha": "2026-11-24",
   "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-avanza-joven-estudio-diagnostico-propuesta-intervencion/",
-  "titulo": "Libro abierto: Avanza joven: estudio, diagnóstico y propuesta de intervención socioeducativa en casos de violencia filioparen"
+  "titulo": "Libro abierto: Avanza joven: estudio, diagnóstico y propuesta de intervención socioeducativa en casos de violencia filioparen",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-avanza-joven-estudio-diagnostico-propuesta-intervencion.jpg",
+  "desc": "[ES]El fenómeno de la violencia filioparental no es un asunto simple de tratar, tanto en fase de estudio y diagnóstico como cuando hablamos de necesidades de intervención social y educativa, básicamen",
+  "titulo_completo": "Avanza joven: estudio, diagnóstico y propuesta de intervención socioeducativa en casos de "
  },
  {
   "fecha": "2026-11-24",
   "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-resiliencia-educacion-emocional-duelo-formacion-futuros/",
-  "titulo": "Libro abierto: Resiliencia, educación emocional y duelo. Formación para futuros docentes"
+  "titulo": "Libro abierto: Resiliencia, educación emocional y duelo. Formación para futuros docentes",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-resiliencia-educacion-emocional-duelo-formacion-futuros.jpg",
+  "desc": "Departament de Pedagogia i Didàctica de les Ciències Socials, la Llengua i la Literatura. Codi de l’assignatura: MP1812 Copia de la Biblioteca AURZANE (aurzane.com/biblioteca).",
+  "titulo_completo": "Resiliencia, educación emocional y duelo. Formación para futuros docentes"
  },
  {
   "fecha": "2026-11-24",
   "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-prevencion-acoso-ciberacoso-traves-clases-educacion/",
-  "titulo": "Libro abierto: La prevención del acoso y ciberacoso a través de las clases de Educación Física"
+  "titulo": "Libro abierto: La prevención del acoso y ciberacoso a través de las clases de Educación Física",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-prevencion-acoso-ciberacoso-traves-clases-educacion.jpg",
+  "desc": "Copia de la Biblioteca AURZANE (aurzane.com/biblioteca).",
+  "titulo_completo": "La prevención del acoso y ciberacoso a través de las clases de Educación Física"
  },
  {
   "fecha": "2026-11-24",
   "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-privaciones-libertad-razones-salud-mental-latinoamerica/",
-  "titulo": "Libro abierto: Privaciones de libertad por razones de salud mental en Latinoamérica"
+  "titulo": "Libro abierto: Privaciones de libertad por razones de salud mental en Latinoamérica",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-privaciones-libertad-razones-salud-mental-latinoamerica.jpg",
+  "desc": "El libro \"Privaciones de libertad por razones de salud mental en Latinoamérica\" aborda el tema de las privaciones de libertad en personas con discapacidad mental a lo largo de seis países de América L",
+  "titulo_completo": "Privaciones de libertad por razones de salud mental en Latinoamérica"
  },
  {
   "fecha": "2026-11-24",
   "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-agora-neuroeducacion-neuroeducacion-explicada-aplicada/",
-  "titulo": "Libro abierto: El ágora de la neuroeducación: La neuroeducación explicada y aplicada"
+  "titulo": "Libro abierto: El ágora de la neuroeducación: La neuroeducación explicada y aplicada",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-agora-neuroeducacion-neuroeducacion-explicada-aplicada.jpg",
+  "desc": "Este libro nace con la voluntad de ofrecer una perspectiva que nos acerque a conocer y reflexionar sobre la neurociencia y cómo está emergiendo en el ámbito educativo. Somos conscientes del momento de",
+  "titulo_completo": "El ágora de la neuroeducación: La neuroeducación explicada y aplicada"
  },
  {
   "fecha": "2026-11-24",
   "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-introduccion-obra-freud/",
-  "titulo": "Libro abierto: Introducción a la obra de S. Freud"
+  "titulo": "Libro abierto: Introducción a la obra de S. Freud",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-introduccion-obra-freud.jpg",
+  "desc": "Lectura guiada de los conceptos centrales del psicoanálisis freudiano, pensada como material de cátedra para estudiantes de psicología. Copia de la Biblioteca AURZANE (aurzane.com/biblioteca).",
+  "titulo_completo": "Introducción a la obra de S. Freud"
  },
  {
   "fecha": "2026-11-24",
   "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-psicopedagogia-lengua-oral-lengua-escrita-septiembre/",
-  "titulo": "Libro abierto: Psicopedagogía de la lengua oral y de la lengua escrita, septiembre 2014"
+  "titulo": "Libro abierto: Psicopedagogía de la lengua oral y de la lengua escrita, septiembre 2014",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-psicopedagogia-lengua-oral-lengua-escrita-septiembre.jpg",
+  "desc": "Recurs d'aprenentatge de la Universitat Oberta de Catalunya. | Recurso de aprendizaje de la Universitat Oberta de Catalunya. | Learning material of the Universitat Oberta de Catalunya. Copia de la Bib",
+  "titulo_completo": "Psicopedagogía de la lengua oral y de la lengua escrita, septiembre 2014"
  },
  {
   "fecha": "2026-11-24",
   "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-deficits-atencion-trastornos-conducta/",
-  "titulo": "Libro abierto: Déficits de atención y trastornos de conducta"
+  "titulo": "Libro abierto: Déficits de atención y trastornos de conducta",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-deficits-atencion-trastornos-conducta.jpg",
+  "desc": "TDAH y problemas de conducta en la infancia y la adolescencia: evaluación, comprensión y estrategias de intervención en casa y en la escuela. Copia de la Biblioteca AURZANE (aurzane.com/biblioteca).",
+  "titulo_completo": "Déficits de atención y trastornos de conducta"
  },
  {
   "fecha": "2026-11-24",
   "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-psicoterapias-humanistas/",
-  "titulo": "Libro abierto: Psicoterapias humanistas. Una mirada actual"
+  "titulo": "Libro abierto: Psicoterapias humanistas. Una mirada actual",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-psicoterapias-humanistas.jpg",
+  "desc": "La terapia centrada en la persona, la Gestalt y otros enfoques humanistas: de dónde vienen y cómo se aplican hoy. Copia de la Biblioteca AURZANE (aurzane.com/biblioteca).",
+  "titulo_completo": "Psicoterapias humanistas. Una mirada actual"
  },
  {
   "fecha": "2026-11-23",
@@ -239,17 +321,26 @@
  {
   "fecha": "2026-11-23",
   "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-dificultades-aprendizaje/",
-  "titulo": "Libro abierto: Dificultades de aprendizaje de los contenidos curriculares"
+  "titulo": "Libro abierto: Dificultades de aprendizaje de los contenidos curriculares",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-dificultades-aprendizaje.jpg",
+  "desc": "Dificultades en lectura, escritura y matemáticas: cómo se detectan y qué ayudas funcionan en el aula. Copia de la Biblioteca AURZANE (aurzane.com/biblioteca).",
+  "titulo_completo": "Dificultades de aprendizaje de los contenidos curriculares"
  },
  {
   "fecha": "2026-11-23",
   "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-manual-practico-patologia-lenguaje-evaluacion-e/",
-  "titulo": "Libro abierto: Manual práctico de patología del lenguaje. Evaluación e intervención en adultos y niños"
+  "titulo": "Libro abierto: Manual práctico de patología del lenguaje. Evaluación e intervención en adultos y niños",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-manual-practico-patologia-lenguaje-evaluacion-e.jpg",
+  "desc": "El lenguaje es un aspecto esencial para el desarrollo humano. Este libro es un manual de utilidad clínica tanto para la actualización de aquellos profesionales que se dedican a la patología del lengua",
+  "titulo_completo": "Manual práctico de patología del lenguaje. Evaluación e intervención en adultos y niños"
  },
  {
   "fecha": "2026-11-23",
   "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-memoria-de-los-testigos/",
-  "titulo": "Libro abierto: La memoria de los testigos"
+  "titulo": "Libro abierto: La memoria de los testigos",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-memoria-de-los-testigos.jpg",
+  "desc": "Por qué recordamos mal aunque estemos seguros: cómo se forma, se distorsiona y se recupera la memoria, explicado a partir de la psicología del testimonio. Copia de la Biblioteca AURZANE (aurzane.com/b",
+  "titulo_completo": "La memoria de los testigos"
  },
  {
   "fecha": "2026-11-23",
@@ -795,60 +886,5 @@
   "fecha": "2026-11-15",
   "url": "https://aurzane.com/articulos/ansiedad-por-el-estatus-en-paraguay/",
   "titulo": "Artículo: Ansiedad por el estatus en Paraguay: claves psicológicas"
- },
- {
-  "fecha": "2026-11-15",
-  "url": "https://aurzane.com/articulos/elegir-carrera-en-guatemala-guia-vocacional/",
-  "titulo": "Artículo: Elegir carrera en Guatemala: guía para tu futuro universitario"
- },
- {
-  "fecha": "2026-11-15",
-  "url": "https://aurzane.com/articulos/universidades-en-panama-guia-elegir-carrera/",
-  "titulo": "Artículo: Elegir carrera en Panamá: guía para tu futuro universitario"
- },
- {
-  "fecha": "2026-11-15",
-  "url": "https://aurzane.com/articulos/como-la-acupuntura-ayuda-en-la-depdepression-leve-moderada/",
-  "titulo": "Artículo: Cómo la acupuntura ayuda en la depresión leve y moderada"
- },
- {
-  "fecha": "2026-11-14",
-  "url": "https://aurzane.com/articulos/memento-mori-aceptacion-muerte-mejora-vida/",
-  "titulo": "Artículo: Memento Mori: cómo aceptar la muerte mejora tu vida"
- },
- {
-  "fecha": "2026-11-14",
-  "url": "https://aurzane.com/articulos/amarse-con-los-ojos-abiertos-claves-pareja/",
-  "titulo": "Artículo: Amarse con los ojos abiertos: claves de pareja"
- },
- {
-  "fecha": "2026-11-14",
-  "url": "https://aurzane.com/articulos/limites-sanos-pareja-sin-culpa/",
-  "titulo": "Artículo: Límites sanos en pareja sin culpa: guía psicológica"
- },
- {
-  "fecha": "2026-11-14",
-  "url": "https://aurzane.com/articulos/musica-ansiedad-aguda-examenes-pruebas/",
-  "titulo": "Artículo: Música contra la ansiedad aguda ante exámenes y pruebas"
- },
- {
-  "fecha": "2026-11-13",
-  "url": "https://aurzane.com/articulos/universidades-santo-domingo-guia-carrera-rd/",
-  "titulo": "Artículo: Elegir carrera en Santo Domingo: guía y vocación"
- },
- {
-  "fecha": "2026-11-13",
-  "url": "https://aurzane.com/articulos/universidades-en-el-salvador-orientacion/",
-  "titulo": "Artículo: Guía de universidades en El Salvador y opciones de estudio"
- },
- {
-  "fecha": "2026-11-13",
-  "url": "https://aurzane.com/articulos/proceso-convertirse-en-persona-desarrollo/",
-  "titulo": "Artículo: El proceso de convertirse en persona: clave para tu desarrollo"
- },
- {
-  "fecha": "2026-11-13",
-  "url": "https://aurzane.com/articulos/interfaces-cerebro-ordenador-ansiedad-ciencia/",
-  "titulo": "Artículo: Interfaces cerebro-ordenador y ansiedad: nuevas vías científicas"
  }
 ]

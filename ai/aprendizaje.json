@@ -120,7 +120,7 @@
   13
  ],
  "ed:Internet Archive": [
-  27,
+  28,
   152
  ],
  "ed:": [
@@ -144,7 +144,7 @@
   0
  ],
  "tipo:libro": [
-  132,
+  143,
   9
  ],
  "Gambling Behavior and Treatments": [
@@ -312,7 +312,7 @@
   0
  ],
  "archive:psicologia": [
-  102,
+  113,
   0
  ],
  "ed:The Open University": [
@@ -612,12 +612,12 @@
   1
  ],
  "ed:OPS": [
-  5,
+  7,
   4
  ],
  "ed:Editorial UOC": [
-  21,
-  2
+  25,
+  3
  ],
  "ed:Universidad Andina Simón Bolívar, Sede Ecuador; Corporación Editora Nacional": [
   0,
@@ -709,10 +709,10 @@
  ],
  "ed:Universitat Oberta de Catalunya": [
   5,
-  1
+  2
  ],
  "ed:Universidad de Salamanca (España). Instituto Universitario de Integración en la Comunidad": [
-  2,
+  3,
   2
  ],
  "ed:Dykinson": [
@@ -720,7 +720,7 @@
   2
  ],
  "ed:UOC": [
-  3,
+  4,
   1
  ],
  "ed:Quito, EC: INÉDITA, Programa Nacional de Financiamiento para Investigación / Universidad Andina Simón Bolívar, Sede Ecuador": [
@@ -732,8 +732,8 @@
   0
  ],
  "ed:Edicions de la Universitat de Barcelona": [
-  0,
-  1
+  1,
+  2
  ],
  "ed:Egregius": [
   1,
@@ -876,6 +876,42 @@
   1
  ],
  "ed:E-book": [
+  0,
+  1
+ ],
+ "ed:Universidad de Buenos Aires. Facultad de Filosofía y Letras.Departamento de Ciencias de la Educación": [
+  0,
+  1
+ ],
+ "ed:Clínica Ambiental": [
+  0,
+  1
+ ],
+ "ed:Oficina de Conocimiento Abierto": [
+  0,
+  1
+ ],
+ "ed:Universidad de Antioquia": [
+  0,
+  1
+ ],
+ "ed:Centrum PUCP": [
+  0,
+  1
+ ],
+ "ed:Universidad de Almería": [
+  0,
+  1
+ ],
+ "ed:Universidad Católica de Cuenca (Ecuador)": [
+  0,
+  1
+ ],
+ "ed:Universidad de Antioquia, Facultad de Educación": [
+  1,
+  0
+ ],
+ "ed:Universidad de Antioquia, Instituto Universitario de Educación Física y Deporte": [
   0,
   1
  ]
