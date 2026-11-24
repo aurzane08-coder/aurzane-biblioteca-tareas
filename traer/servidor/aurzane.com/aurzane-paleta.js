@@ -436,6 +436,21 @@
   if (d.readyState === 'loading') d.addEventListener('DOMContentLoaded', iniciar); else iniciar();
 })(document, window);
 
+/* Fotos a petición (24/11/2026): cualquier bloque con data-foto="tema" recibe arriba una foto real del banco según ese tema.
+   Así las páginas generadas (NEXUS, OVP…) solo dicen qué tema quieren y el banco elige la foto, sin repetirla en la página. */
+(function (d, w) {
+  function poner() {
+    [].forEach.call(d.querySelectorAll('[data-foto]:not([data-v4f])'), function (el) {
+      var m = (d.documentElement.className.match(/az-ds-(mind|nexus|live|learn|build|ovp)/) || [])[1] || 'nexus';
+      var u = w.AurzaneBanco.foto(m === 'ovp' ? 'nexus' : m, el.getAttribute('data-foto'), el.offsetWidth > 700 ? 1600 : 640); if (!u) return;
+      var im = d.createElement('img'); im.className = 'v4-foto'; im.src = u; im.alt = ''; im.loading = 'lazy'; im.width = 1600; im.height = 400;
+      el.insertBefore(im, el.firstChild); el.setAttribute('data-v4f', '1');
+    });
+  }
+  function iniciar() { if (d.querySelector('[data-foto]') && w.AurzaneBanco) w.AurzaneBanco.listo(poner); }
+  if (d.readyState === 'loading') d.addEventListener('DOMContentLoaded', iniciar); else iniciar();
+})(document, window);
+
 (function (w, d) {
   'use strict';
   if (w.AurzanePaleta) return;
@@ -737,7 +752,7 @@
   if (d.querySelector('link[data-azds]') || !/(^|\.)aurzane\.com$/.test(location.hostname)) return;
   /* la hoja común se escribe en el documento mientras se lee la cabecera: así se aplica antes de pintar y la página
      no cambia de aspecto ni salta cuando llega (16/11/2026); si la página ya está leída, se añade como antes */
-  var css = 'https://aurzane.com/aurzane-ds.css?v=h9683141b';
+  var css = 'https://aurzane.com/aurzane-ds.css?v=hb9d2764a';
   if (d.readyState === 'loading' && d.currentScript && d.currentScript.parentNode === d.head) d.write('<link rel="stylesheet" href="' + css + '" data-azds="1">');
   else { var l = d.createElement('link'); l.rel = 'stylesheet'; l.href = css; l.setAttribute('data-azds', '1'); (d.head || d.documentElement).appendChild(l); }
   var s = d.createElement('script'); s.src = 'https://aurzane.com/aurzane-ds.js?v=hf2bf9f82'; s.defer = true; s.setAttribute('data-azds', '1');
