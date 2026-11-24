@@ -16,5 +16,8 @@ jobs:
           ruct.get(ruct.B + 'solicitud/detalles.action?cod=25039082024010901&sit=A&actual=menu.solicitud.basicos')
           p = ruct.get('https://www.educacion.gob.es/ruct/solicitud/universidades?actual=menu.solicitud.universidades&cod=25039082024010901')
           k = p.find('28051906'); print('LEN', len(p), k)
-          print('RAW', re.sub(r'\s+', ' ', p[k-200:k+1800]))
+          for c in ('28051906', '40005195'):
+              q = ruct.get('https://www.educacion.gob.es/ruct/solicitud/datosCentro!consulta.action?codUniversidad=057&codCentro=' + c + '&actual=menu.solicitud.datosCentro')
+              t = ruct.limpio(q)
+              print('CEN', c, t[t.find('Volver'):t.find('Volver') + 1500])
           PY
