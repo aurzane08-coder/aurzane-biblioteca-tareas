@@ -32,5 +32,9 @@ jobs:
                   d['form_2822_filtro_buscador'] = ev
                   r = op.open(B + act, urllib.parse.urlencode(d).encode(), timeout=60).read().decode('latin-1')
                   txt = re.sub(r'\s+', ' ', re.sub(r'<script[\s\S]*?</script>|<[^>]+>', ' ', r))
-                  print('POST', ev, len(r), txt[txt.find('Buscador'):txt.find('Buscador') + 2500])
+                  filas = re.findall(r'<tr[^>]*>([\s\S]*?)</tr>', r)
+                  celdas = [[re.sub(r'\s+', ' ', re.sub(r'<[^>]+>', ' ', c)).strip() for c in re.findall(r'<td[^>]*>([\s\S]*?)</td>', f)] for f in filas]
+                  celdas = [c for c in celdas if len(c) >= 3]
+                  print('POST', ev, len(r), len(celdas)); [print('  FILA', c[:8]) for c in celdas[:12]]
+                  print('  PAGINAS', re.findall(r'(?:P&aacute;gina|Página)[^<]{0,60}', r)[:3], re.findall(r'cuadro_2823[^"\']{0,60}pagina[^"\']{0,40}', r)[:3])
           PY
