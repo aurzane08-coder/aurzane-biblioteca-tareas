@@ -281,7 +281,7 @@ def generar(G):
     lista_h = cabeza(f'Universities in Spain: {len(us)} public and private universities', f'All {len(us)} Spanish universities with official bachelor\'s degrees, in English: degrees, cut-off marks, fees and how to apply from abroad.',
                      SITIO + EN_BASE + 'universities/', SITIO + BASE + 'espana/') + topbar('unis') + f'''
 <main><section class="hero"><div class="wrap">{migas(("Study in Spain", EN_BASE), ("Universities", ""))}
-<h1>Universities in Spain</h1><p class="lead">{len(us)} universities, {n_pub} of them public, with {fmt(n_grados)} official bachelor's degrees between them. Every degree comes from the Spanish government's official registry.</p></div></section>
+<h1>Universities in Spain</h1><p class="lead">{len(us)} universities, {n_pub} of them public, with {('over ' + fmt(n_grados // 1000 * 1000)) if n_grados >= 1000 and n_grados % 1000 else fmt(n_grados)} official bachelor's degrees between them. Every degree comes from the Spanish government's official registry.</p></div></section>
 <div class="wrap" style="padding-top:28px">{filtro}{grid}</div></main>{js}''' + pie()
     esc('universities/index.html', lista_h)
     URLS.append(SITIO + EN_BASE + 'universities/')

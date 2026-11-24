@@ -58,6 +58,18 @@ def fmt(n):
     return f'{n:,}'.replace(',', '.')
 
 
+def _abajo(n):   # redondeo hacia abajo para cifras grandes del catálogo (24/11/2026): 9.364 → 9.000, 640 → 600
+    return n if n < 100 else (n // 100 * 100 if n < 1000 else n // 1000 * 1000)
+
+
+def aprox(n):   # para cifras destacadas: «9.000+»
+    return fmt(n) if _abajo(n) == n else fmt(_abajo(n)) + '+'
+
+
+def mas(n):   # para frases: «más de 9.000»
+    return fmt(n) if _abajo(n) == n else 'más de ' + fmt(_abajo(n))
+
+
 # acentos (Ecuador, Chile, Colombia): univ/gen/acentos.py
 from acentos import ACENTOS, acentuar  # noqa: E402
 
@@ -690,7 +702,7 @@ def panel_listado(p, us, ciudad_fija='', titulo_res=''):
 
 # ---------------------------------------------------------------- portada
 def portada():
-    desc = f'Buscador de universidades gratis: {fmt(TOTAL_U)} universidades e institutos de {len(ORDEN_P)} países y {fmt(TOTAL_C)} {OPC_TXT} entre carreras y posgrados. España completa con todos sus grados oficiales.'
+    desc = f'Buscador de universidades gratis: {mas(TOTAL_U)} universidades e institutos de {len(ORDEN_P)} países y {mas(TOTAL_C)} {OPC_TXT} entre carreras y posgrados. España completa con todos sus grados oficiales.'
     jl = {'@context': 'https://schema.org', '@type': 'WebSite', 'name': 'Universidades AURZANE NEXUS', 'url': SITIO + BASE,
           'potentialAction': {'@type': 'SearchAction', 'target': SITIO + BASE + '?q={search_term_string}', 'query-input': 'required name=search_term_string'}}
     atajos = ''.join(f'<a href="{BASE}{PSLUG[p]}/">{bandera(PAISES[p][0])}{e(p)}</a>' for p in ['España', 'Ecuador', 'México', 'Colombia', 'Argentina', 'Perú', 'Chile', 'Estados Unidos'] if p in por_pais)
@@ -709,11 +721,11 @@ def portada():
 <section class="hero" style="padding-bottom:56px"><div class="wrap">
 <p class="migas"><a href="https://nexus.aurzane.com/">NEXUS</a><span>/</span>Universidades</p>
 <h1>Encuentra tu <em>universidad</em> y tu carrera</h1>
-<p class="lead">{fmt(TOTAL_U)} universidades e institutos de {len(ORDEN_P)} países, y {fmt(TOTAL_C)} {OPC_TXT} (carreras y posgrados de cada una). España completa con todos sus grados oficiales, Ecuador con todas sus carreras y las universidades principales de toda Latinoamérica.</p>
+<p class="lead">{mas(TOTAL_U).capitalize()} universidades e institutos de {len(ORDEN_P)} países, y {mas(TOTAL_C)} {OPC_TXT} (carreras y posgrados de cada una). España completa con todos sus grados oficiales, Ecuador con todas sus carreras y las universidades principales de toda Latinoamérica.</p>
 <div class="busca"><label for="qGlobal" class="vh">Buscar universidad</label><svg class="lupa" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
 <input type="search" id="qGlobal" data-buscador placeholder="Busca una universidad o una ciudad: Salamanca, Cuenca, UNAM…" autocomplete="off" role="combobox" aria-expanded="false" aria-controls="sugs" aria-autocomplete="list"><div class="sugs" id="sugs" role="listbox" hidden></div></div>
 <div class="atajos">{atajos}</div>
-<ul class="stats"><li><b>{fmt(TOTAL_U)}</b><span>instituciones</span></li><li title="{OPC_EXPL}"><b>{fmt(TOTAL_C)}</b><span>{OPC_TXT}</span></li><li><b>{len(ORDEN_P)}</b><span>países</span></li><li><b>{fmt(len(es))}</b><span>universidades en España</span></li></ul><p class="sub" style="margin-top:10px;font-size:.9rem">{OPC_EXPL}</p>
+<ul class="stats"><li><b>{aprox(TOTAL_U)}</b><span>instituciones</span></li><li title="{OPC_EXPL}"><b>{aprox(TOTAL_C)}</b><span>{OPC_TXT}</span></li><li><b>{len(ORDEN_P)}</b><span>países</span></li><li><b>{fmt(len(es))}</b><span>universidades en España</span></li></ul><p class="sub" style="margin-top:10px;font-size:.9rem">{OPC_EXPL}</p>
 </div></section>
 
 <div class="wrap">
@@ -761,7 +773,7 @@ def paises():
             f'<a class="pais" href="{BASE}{PSLUG[p]}/">{bandera(PAISES[p][0], "g")}<span><b>{e(p)}</b><small>{fmt(len(por_pais[p]))} instituciones · {NIVEL_LBL[nivel_pais(p)].lower()}</small></span><i class="nivel {nivel_pais(p)}"></i></a>' for p in ps) + '</div></div>'
     h = cabeza(f'Universidades por país: {len(ORDEN_P)} países | AURZANE NEXUS', f'Universidades de {len(ORDEN_P)} países organizadas por continente: España, Latinoamérica, Europa, Estados Unidos, Asia y más.', SITIO + BASE + 'paises/') + topbar('paises') + f'''
 <main><section class="hero" style="padding-bottom:40px"><div class="wrap">{migas(("NEXUS", "https://nexus.aurzane.com/"), ("Universidades", BASE), ("Países", ""))}
-<h1>Universidades por <em>país</em></h1><p class="lead">{len(ORDEN_P)} países y {fmt(TOTAL_U)} instituciones.</p></div></section>
+<h1>Universidades por <em>país</em></h1><p class="lead">{len(ORDEN_P)} países y {mas(TOTAL_U)} instituciones.</p></div></section>
 <div class="wrap"><section class="bloque"><p class="leyenda"><span><i class="nivel programas"></i>Con todas sus carreras</span><span><i class="nivel areas"></i>Con áreas y facultades</span><span><i class="nivel basico"></i>Universidades principales</span></p>{filas}</section></div></main>''' + pie()
     escribir('paises/index.html', h)
     URLS.append((SITIO + BASE + 'paises/', '0.7'))
@@ -776,15 +788,15 @@ def pagina_pais(p):
     ciudades = collections.Counter(u['ciudad'] for u in us if u['ciudad'])
     nivel = nivel_pais(p)
     if p == 'España':
-        tit = f'Universidades de España: las {len(us)} universidades y sus {fmt(nc)} grados | AURZANE NEXUS'
-        lead = f'Las {len(us)} universidades del sistema universitario español con sus {fmt(nc)} grados oficiales vigentes, según el Registro de Universidades, Centros y Títulos (RUCT). Filtra por comunidad autónoma, rama, ciudad o tipo.'
+        tit = f'Universidades de España: las {len(us)} universidades y {mas(nc)} grados | AURZANE NEXUS'
+        lead = f'Las {len(us)} universidades del sistema universitario español con {mas(nc)} grados oficiales vigentes, según el Registro de Universidades, Centros y Títulos (RUCT). Filtra por comunidad autónoma, rama, ciudad o tipo.'
     elif nivel == 'basico':
         nombres = [u['nombre'] for u in us[:3]]
         tit = next(t for t in (f'Universidades en {p}: ranking y cómo estudiar allí (2026)', f'Universidades en {p}: ranking y cómo estudiar allí', f'Universidades en {p}: las {len(us)} principales (2026)', f'Universidades en {p}') if len(t) <= 60 or t == f'Universidades en {p}')
         lead = f'Las {len(us)} universidades principales de {p}' + (f', como {", ".join(nombres[:-1])} y {nombres[-1]}' if len(nombres) > 1 else '') + '. Consulta su ciudad, si son públicas o privadas y su web oficial para estudiar en ' + p + '.'
     else:
         tit = next(t for t in (f'Universidades en {p}: ranking, carreras y cómo estudiar allí', f'Universidades en {p}: ranking y carreras', f'Universidades en {p}') if len(t) <= 60 or t == f'Universidades en {p}')
-        lead = f'{fmt(len(us))} universidades e institutos de educación superior en {p}' + (f', con {fmt(nc)} {OPC_TXT} entre carreras y posgrados.' if nivel == 'programas' else '.') + ' Filtra por ciudad, tipo y área.'
+        lead = f'{mas(len(us))[:1].upper() + mas(len(us))[1:]} universidades e institutos de educación superior en {p}' + (f', con {mas(nc)} {OPC_TXT} entre carreras y posgrados.' if nivel == 'programas' else '.') + ' Filtra por ciudad, tipo y área.'
     jl = {'@context': 'https://schema.org', '@type': 'ItemList', 'name': f'Universidades de {p}', 'numberOfItems': len(us),
           'itemListElement': [{'@type': 'ListItem', 'position': i + 1, 'url': f'{SITIO}{BASE}{PSLUG[p]}/{u["slug"]}/', 'name': u['nombre']} for i, u in enumerate(sorted(us, key=lambda x: -x['n'])[:50])]}
     top_c = [c for c, n in ciudades.most_common(12) if n >= 2]
@@ -800,7 +812,7 @@ def pagina_pais(p):
 <main><section class="hero" style="padding-bottom:40px"><div class="wrap">{migas(("NEXUS", "https://nexus.aurzane.com/"), ("Universidades", BASE), (p, ""))}
 <h1>{bandera(iso, "g")} Universidades {"de" if p in ("España",) else "en"} <em>{e(p)}</em></h1>
 <p class="lead">{e(lead)}</p>
-<ul class="stats"><li><b>{fmt(len(us))}</b><span>instituciones</span></li>{f"<li title='{OPC_EXPL}'><b>{fmt(nc)}</b><span>{'grados' if p == 'España' else OPC_TXT}</span></li>" if nc else ""}<li><b>{fmt(npub)}</b><span>públicas</span></li><li><b>{fmt(len(us) - npub)}</b><span>privadas</span></li></ul>
+<ul class="stats"><li><b>{aprox(len(us))}</b><span>instituciones</span></li>{f"<li title='{OPC_EXPL}'><b>{aprox(nc)}</b><span>{'grados' if p == 'España' else OPC_TXT}</span></li>" if nc else ""}<li><b>{fmt(npub)}</b><span>públicas</span></li><li><b>{fmt(len(us) - npub)}</b><span>privadas</span></li></ul>
 {f'<div class="acc">{pau}</div>' if pau else ''}
 </div></section>
 {panel_listado(p, us)}
@@ -861,9 +873,9 @@ def pagina_ciudad(p, c, us):
     reparto = ' y '.join(partes)
     palabra = 'grados' if p == 'España' else OPC_TXT
     cn = f'{c}, {p}' if len(CIUDAD_PAISES.get(c, ())) > 1 else c   # ciudades con el mismo nombre en varios países (La Paz)
-    tit = f'Universidades en {cn}: {N} {"instituciones" if N != 1 else "institución"}' + (f' y {fmt(nc)} {palabra}' if nc else ', públicas y privadas') + ' (2026)'
-    desc = f'¿Cuántas universidades hay en {c}? Hay {N} ({reparto}): {lista}.' + (f' Compara sus {fmt(nc)} {palabra}, modalidades y web oficial.' if nc else ' Compara tipo, ubicación y web oficial.')
-    lead = f'En {c} hay {N} universidades e institutos de educación superior ({reparto})' + (f', con {fmt(nc)} {palabra} en total.' if nc else '.') + ' Filtra por tipo o área y entra en cada una para ver su oferta y su web oficial.'
+    tit = f'Universidades en {cn}: {N} {"instituciones" if N != 1 else "institución"}' + (f' y {mas(nc)} {palabra}' if nc else ', públicas y privadas') + ' (2026)'
+    desc = f'¿Cuántas universidades hay en {c}? Hay {N} ({reparto}): {lista}.' + (f' Compara {mas(nc)} {palabra}, modalidades y web oficial.' if nc else ' Compara tipo, ubicación y web oficial.')
+    lead = f'En {c} hay {N} universidades e institutos de educación superior ({reparto})' + (f', con {mas(nc)} {palabra} en total.' if nc else '.') + ' Filtra por tipo o área y entra en cada una para ver su oferta y su web oficial.'
     respuesta = f'En {c} ({p}) hay {N} instituciones de educación superior: {reparto}. ' + ('Las que más oferta tienen son ' + ', '.join(f'{u["nombre"]} ({oferta(u)})' for u in us[:3] if u['n']) + '.' if nc else 'Entre ellas están ' + ', '.join(u['nombre'] for u in us[:3]) + '.')
     canon = f'{SITIO}{BASE}{PSLUG[p]}/ciudad/{slug(c)}/'
     jsonld = {'@context': 'https://schema.org', '@graph': [
@@ -1218,15 +1230,15 @@ def anunciate():
     formulario de contacto de aurzane.com (mismo buzón y mismo registro privado); no hay pagos en la web."""
     n_pais = len(ORDEN_P); n_rank = sum(1 for u in UNIS if rank_de(u))
     activas = len(PATRO)
-    desc = f'Destaca tu universidad en AURZANE NEXUS ante estudiantes que comparan {fmt(TOTAL_U)} universidades de {n_pais} países: etiqueta Patrocinado, primeras posiciones y enlace a admisión.'
-    cifras = [(fmt(TOTAL_U), 'universidades e institutos con ficha propia'), (fmt(TOTAL_C), 'opciones de estudio (carreras y posgrados en cada universidad)'), (str(n_pais), 'países'), (fmt(n_rank), 'fichas con ranking mundial')]
+    desc = f'Destaca tu universidad en AURZANE NEXUS ante estudiantes que comparan {mas(TOTAL_U)} universidades de {n_pais} países: etiqueta Patrocinado, primeras posiciones y enlace a admisión.'
+    cifras = [(aprox(TOTAL_U), 'universidades e institutos con ficha propia'), (aprox(TOTAL_C), 'opciones de estudio (carreras y posgrados en cada universidad)'), (str(n_pais), 'países'), (fmt(n_rank), 'fichas con ranking mundial')]
     precio_html = ''
     if PRECIO.get('mes'):
         precio_html = (f'<section class="card" id="precio"><h2>Precio</h2><div class="precios"><div class="precio"><b>{PRECIO["mes"]} €</b><span>al mes por universidad</span></div>'
                        + (f'<div class="precio"><b>{PRECIO["anio"]} €</b><span>al año: {12 * PRECIO["mes"] - PRECIO["anio"]} € menos que pagando mes a mes</span></div>' if PRECIO.get('anio') else '') + '</div>'
                        + (f'<p><b>Los primeros {PRECIO["prueba_dias"]} días son gratis</b> y sin compromiso: si no te convence, no pagas nada y tu ficha vuelve a ser normal sola.</p>' if PRECIO.get('prueba_dias') else '')
                        + '<p class="sub" style="margin:8px 0 0">IVA no incluido. Pagas en línea con tarjeta, Google Pay, Apple Pay, Link, Revolut Pay, adeudo SEPA o transferencia, y recibes la factura al momento. Sin permanencia: la cancelas cuando quieras. Otros portales de estudios cobran entre 100 y 130 € al mes por un solo programa destacado.</p></section>')
-    h = cabeza(f'Destaca tu universidad entre {fmt(TOTAL_U)} de {n_pais} países | AURZANE NEXUS', desc, SITIO + BASE + 'anunciate/') + topbar() + f'''
+    h = cabeza(f'Destaca tu universidad entre {mas(TOTAL_U)} universidades de {n_pais} países | AURZANE NEXUS', desc, SITIO + BASE + 'anunciate/') + topbar() + f'''
 <main><section class="hero" style="padding-bottom:36px"><div class="wrap">{migas(("Universidades", BASE), ("Destaca tu universidad", ""))}<h1>Destaca tu <em>universidad</em></h1><p class="lead">Llega a quien está eligiendo carrera justo cuando compara universidades. Tu ficha sale primero en su país y su ciudad, con la etiqueta «Patrocinado» y un botón directo a tu página de admisión.</p></div></section>
 <div class="wrap" style="max-width:900px;margin-top:30px">
 <section class="card"><h2>El catálogo hoy</h2><dl class="datos cifras-anun">{''.join(f'<div><dt>{t}</dt><dd><b>{n}</b></dd></div>' for n, t in cifras)}</dl><p class="sub" style="margin:10px 0 0">Datos de hoy, {HOY.strftime('%d/%m/%Y')}: se recalculan solos en cada publicación.</p></section>
