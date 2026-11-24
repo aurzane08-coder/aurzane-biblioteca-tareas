@@ -32,17 +32,24 @@ def norm(t):
 info = json.load(open(F, encoding='utf-8')) if os.path.exists(F) else {}
 paginas = json.load(open(LISTA, encoding='utf-8')) if os.path.exists(LISTA) else []
 
-# 1. nivel de precios por país (Banco Mundial), una vez por pasada
-w = get('https://api.worldbank.org/v2/country/all/indicator/PA.NUS.PPPC.RF?format=json&per_page=20000&date=2018:2025', 120)
-if not (w and len(w) > 1 and w[1]): print('::warning::Banco Mundial no respondió; se mantiene el dato anterior')
-if w and len(w) > 1 and w[1]:
-    pre = {}
-    for x in sorted(w[1], key=lambda x: x.get('date') or ''):
-        if x.get('value'): pre[x['countryiso3code']] = [round(x['value'], 3), x['date']]
-    paises = get('https://api.worldbank.org/v2/country?format=json&per_page=400', 60)
-    iso3 = {c['id']: c['iso2Code'].lower() for c in (paises[1] if paises and len(paises) > 1 else [])}
-    info['_precios'] = {iso3[k]: v for k, v in pre.items() if k in iso3}
-    print('precios:', len(info['_precios']), 'países; España', info['_precios'].get('es'))
+# 1. nivel de precios por país (Banco Mundial): factor de conversión PPA / tipo de cambio oficial, último año con los dos datos
+def serie(ind):
+    w = get(f'https://api.worldbank.org/v2/country/all/indicator/{ind}?format=json&per_page=20000&date=2018:2025', 120)
+    out = {}
+    for x in sorted((w[1] if w and len(w) > 1 and w[1] else []), key=lambda x: x.get('date') or ''):
+        if x.get('value'): out.setdefault(x['countryiso3code'], {})[x['date']] = x['value']
+    return out
+
+
+ppa, cambio = serie('PA.NUS.PPP'), serie('PA.NUS.FCRF')
+paises = get('https://api.worldbank.org/v2/country?format=json&per_page=400', 60)
+iso3 = {c['id']: c['iso2Code'].lower() for c in (paises[1] if paises and len(paises) > 1 else [])}
+pre = {}
+for k, a in ppa.items():
+    anios = sorted(set(a) & set(cambio.get(k, {})))
+    if anios and k in iso3: y = anios[-1]; pre[iso3[k]] = [round(a[y] / cambio[k][y], 3), y]
+if len(pre) > 100: info['_precios'] = pre; print('precios:', len(pre), 'países; España', pre.get('es'))
+else: print('::warning::Banco Mundial sin datos suficientes; se mantiene el dato anterior')
 
 
 def vigente(x):
@@ -50,31 +57,50 @@ def vigente(x):
     except Exception: return False
 
 
+PAIS_Q = {}
+
+
 def buscar_lote(iso, nombres):
-    """Varias ciudades de un país en una sola consulta a Wikidata (por su nombre en español, inglés o el propio)."""
-    vals = ' '.join(f'"{n.replace(chr(92), "").replace(chr(34), "")}"@{l}' for n in nombres for l in ('es', 'en', 'mul'))
-    sp = f'''SELECT ?c ?n ?pop ?alt ?coord ?es ?en ?pt ?fr WHERE {{
-  VALUES ?n {{ {vals} }} ?pais wdt:P297 "{iso.upper()}". ?c rdfs:label ?n; wdt:P17 ?pais; wdt:P1082 ?pop.
-  OPTIONAL {{ ?c wdt:P2044 ?alt }} OPTIONAL {{ ?c wdt:P625 ?coord }}
-  OPTIONAL {{ ?es schema:about ?c; schema:isPartOf <https://es.wikipedia.org/> }} OPTIONAL {{ ?en schema:about ?c; schema:isPartOf <https://en.wikipedia.org/> }}
-  OPTIONAL {{ ?pt schema:about ?c; schema:isPartOf <https://pt.wikipedia.org/> }} OPTIONAL {{ ?fr schema:about ?c; schema:isPartOf <https://fr.wikipedia.org/> }} }}'''
-    r = get('https://query.wikidata.org/sparql?' + urllib.parse.urlencode({'query': sp, 'format': 'json'}), 90)
-    mejor = {}
+    """1) Qué elementos de Wikidata del país se llaman así (consulta ligera); 2) sus datos con la API de entidades (rápida)."""
+    if iso not in PAIS_Q:
+        r = get('https://query.wikidata.org/sparql?' + urllib.parse.urlencode({'query': f'SELECT ?p WHERE {{ ?p wdt:P297 "{iso.upper()}" }} LIMIT 1', 'format': 'json'}), 60)
+        b = (r or {}).get('results', {}).get('bindings') or []
+        PAIS_Q[iso] = b[0]['p']['value'].rsplit('/', 1)[-1] if b else ''
+    if not PAIS_Q[iso]: return {}
+    vals = ' '.join(f'"{n.replace(chr(92), "").replace(chr(34), "")}"@{l}' for n in nombres for l in ('es', 'en'))
+    sp = f'SELECT ?c ?n WHERE {{ VALUES ?n {{ {vals} }} ?c rdfs:label ?n. ?c wdt:P17 wd:{PAIS_Q[iso]}. }}'
+    r = get('https://query.wikidata.org/sparql?' + urllib.parse.urlencode({'query': sp, 'format': 'json'}), 60)
+    cand = {}
     for b in (r or {}).get('results', {}).get('bindings') or []:
-        v = lambda k: (b.get(k) or {}).get('value')
-        k = norm(v('n'))
-        try: pop = int(float(v('pop') or 0))
-        except Exception: pop = 0
-        if k in mejor and mejor[k]['pop'] >= pop: continue
-        out = {'q': v('c').rsplit('/', 1)[-1], 'pop': pop}
-        if v('alt'):
-            try: out['alt'] = round(float(v('alt')))
+        cand.setdefault(b['c']['value'].rsplit('/', 1)[-1], set()).add(norm(b['n']['value']))
+    if not cand: return {}
+    mejor, ids = {}, list(cand)
+    for a in range(0, len(ids), 50):
+        e = get('https://www.wikidata.org/w/api.php?' + urllib.parse.urlencode({'action': 'wbgetentities', 'ids': '|'.join(ids[a:a + 50]), 'props': 'claims|sitelinks',
+                                                                                 'sitefilter': 'eswiki|enwiki|ptwiki|frwiki', 'format': 'json'}), 60) or {}
+        for q, ent in (e.get('entities') or {}).items():
+            cl = ent.get('claims') or {}
+            def val(p):
+                for c in cl.get(p, []):
+                    dv = c.get('mainsnak', {}).get('datavalue', {}).get('value')
+                    if dv is not None and c.get('rank') != 'deprecated': return dv
+            pop = val('P1082')
+            try: pop = int(float(pop['amount'])) if pop else 0
+            except Exception: pop = 0
+            if not pop: continue   # sin población: no es una ciudad (o no sirve)
+            out = {'q': q, 'pop': pop}
+            alt = val('P2044')
+            try: out['alt'] = round(float(alt['amount'])) if alt else None
             except Exception: pass
-        m = re.match(r'Point\(([-\d.]+) ([-\d.]+)\)', v('coord') or '')
-        if m: out['lon'], out['lat'] = round(float(m.group(1)), 4), round(float(m.group(2)), 4)
-        for l in ('es', 'en', 'pt', 'fr'):
-            if v(l): out['wiki_' + l] = urllib.parse.unquote(v(l).rsplit('/wiki/', 1)[-1])
-        mejor[k] = out
+            if out.get('alt') is None: out.pop('alt', None)
+            co = val('P625')
+            if co: out['lat'], out['lon'] = round(co['latitude'], 4), round(co['longitude'], 4)
+            for l in ('es', 'en', 'pt', 'fr'):
+                t = (ent.get('sitelinks') or {}).get(l + 'wiki', {}).get('title')
+                if t: out['wiki_' + l] = t
+            for k in cand.get(q, ()):
+                if k not in mejor or mejor[k]['pop'] < pop: mejor[k] = out
+        time.sleep(0.5)
     return mejor
 
 
@@ -89,7 +115,7 @@ def resumen(lengua, titulo):
 pend = {}
 for iso, nombre in paginas:
     x = info.get(iso, {}).get(norm(nombre))
-    if not (x and vigente(x)): pend.setdefault(iso, []).append(nombre)
+    if not (x and vigente(x) and (x.get('q') or x.get('fecha') != '2026-11-24')): pend.setdefault(iso, []).append(nombre)
 n = 0
 for iso, nombres in pend.items():
     pais = info.setdefault(iso, {})

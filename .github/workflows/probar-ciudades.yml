@@ -10,17 +10,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: |
-          time curl -s -m 120 -o wb.json -w "WB %{http_code} %{size_download}\n" -A "AURZANE-NEXUS/1.0 (hola@aurzane.com)" "https://api.worldbank.org/v2/country/all/indicator/PA.NUS.PPPC.RF?format=json&per_page=20000&date=2018:2025"; head -c 300 wb.json; echo
-          python3 - <<'P'
-          import sys, time, json
-          sys.argv = ['x', 'univ/data']
-          src = open('univ/ciudades.py').read()
-          pre = src[:src.index('info = json.load')]
-          exec(pre)
-          i = src.index('def buscar_lote'); j = src.index('def resumen(')
-          exec(src[i:j])
-          for iso, ns in [('es', ['Madrid', 'Barcelona', 'Salamanca']), ('mx', ['Guadalajara', 'Álvaro Obregón', 'Monterrey'])]:
-              t = time.time(); r = buscar_lote(iso, ns); print(iso, round(time.time() - t, 1), 's', json.dumps(r, ensure_ascii=False)[:300])
-          import urllib.parse
-          t=time.time(); r = get('https://query.wikidata.org/sparql?' + urllib.parse.urlencode({'query': 'SELECT ?c WHERE { ?c rdfs:label "Madrid"@es } LIMIT 3', 'format': 'json'}), 60); print('simple', round(time.time()-t,1), str(r)[:200])
-          P
+          mkdir -p /tmp/d && python3 -c "import json;json.dump([['es','Madrid'],['es','Salamanca'],['mx','Guadalajara'],['mx','Álvaro Obregón'],['gb','Londres'],['ar','Córdoba']],open('/tmp/d/ciudades_paginas.json','w'))"
+          time MAX_CIUDADES=10 python3 -u univ/ciudades.py /tmp/d
+          python3 -c "import json;d=json.load(open('/tmp/d/ciudades_info.json'));print(d.get('_precios',{}).get('es'), d.get('_precios',{}).get('gb'));[print(i,k,{a:(str(b)[:60]) for a,b in v.items()}) for i,c in d.items() if i!='_precios' for k,v in c.items()]"
