@@ -441,3 +441,53 @@
   }
   if (d.readyState === 'loading') d.addEventListener('DOMContentLoaded', iniciar); else iniciar();
 })(document, window);
+
+/* MIND (24/11/2026): «Enviármelo por correo» al terminar un test. Solo se manda qué test es, la puntuación y el correo;
+   el texto del correo lo pone el servidor (aurzane.com/boletin/resultado.php) a partir de la página oficial del test.
+   La casilla del boletín va desmarcada y, si se marca, pide confirmación desde el propio correo. */
+(function (d, w) {
+  if (!/(^|\.)mind\.aurzane\.com$/.test(location.hostname)) return;
+  var m = location.pathname.match(/^\/(test-de-[a-z-]+)\/?$/); if (!m) return;
+  var slug = m[1];
+  function iniciar() {
+    var acc = d.getElementById('accRes');
+    if (!acc || !w.CFG || !w.CFG.niveles || d.getElementById('azCorreoBtn')) return;
+    var st = d.createElement('style');
+    st.textContent = '.az-correo{margin:14px 0 0;padding:18px 20px;border:1px solid var(--border,rgba(0,0,0,.12));border-radius:16px;background:var(--surface,rgba(0,0,0,.03))}' +
+      '.az-correo h3{margin:0 0 4px;font-size:1.05rem}.az-correo p{margin:0 0 12px;font-size:.92rem;opacity:.85}' +
+      '.az-correo form{display:flex;flex-wrap:wrap;gap:10px;align-items:center}' +
+      '.az-correo input[type=email]{flex:1 1 240px;min-width:0;padding:12px 16px;border-radius:99px;border:1px solid var(--border,rgba(0,0,0,.2));font:inherit;background:var(--bg,#fff);color:var(--text,inherit)}' +
+      '.az-correo label.az-c-bol{flex:1 1 100%;display:flex;gap:8px;align-items:flex-start;font-size:.88rem;cursor:pointer}' +
+      '.az-correo label.az-c-bol input{margin-top:3px}.az-correo .az-c-msg{flex:1 1 100%;margin:4px 0 0;font-size:.92rem;font-weight:600}' +
+      '.az-correo .az-c-msg.ok{color:#2f7a52}.az-correo .az-c-msg.no{color:#b3412e}.az-correo small{display:block;margin-top:10px;font-size:.8rem;opacity:.7}' +
+      '@media print{.az-correo,#azCorreoBtn{display:none!important}}';
+    d.head.appendChild(st);
+    var b = d.createElement('button'); b.type = 'button'; b.id = 'azCorreoBtn'; b.className = 'btn btn-linea'; b.textContent = '✉️ Enviármelo por correo';
+    acc.appendChild(b);
+    var caja = d.createElement('div'); caja.className = 'az-correo'; caja.hidden = true;
+    caja.innerHTML = '<h3>Recibe tu resultado por correo</h3><p>Te llega tu puntuación, qué significa y los consejos, para verlo con calma o enseñárselo a un profesional.</p>' +
+      '<form novalidate><input type="email" name="email" required autocomplete="email" placeholder="tu@correo.com" aria-label="Tu correo">' +
+      '<input type="text" name="web" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">' +
+      '<button class="btn btn-osc" type="submit">Enviar</button>' +
+      '<label class="az-c-bol"><input type="checkbox" name="boletin" value="1"> Quiero recibir también el boletín semanal de AURZANE (puedo darme de baja cuando quiera)</label>' +
+      '<div class="az-c-msg" role="status" aria-live="polite"></div></form>' +
+      '<small>No guardamos tus respuestas ni tu resultado: solo te lo enviamos. Tu correo no se usa para nada más salvo que marques el boletín.</small>';
+    acc.parentNode.insertBefore(caja, acc.nextSibling);
+    b.addEventListener('click', function () { caja.hidden = !caja.hidden; if (!caja.hidden) caja.querySelector('input[type=email]').focus(); });
+    var f = caja.querySelector('form'), msg = caja.querySelector('.az-c-msg'), env = f.querySelector('button');
+    f.addEventListener('submit', function (ev) {
+      ev.preventDefault();
+      var em = f.email.value.trim();
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(em)) { msg.className = 'az-c-msg no'; msg.textContent = 'Escribe un correo válido.'; return; }
+      if (!w.__res) { msg.className = 'az-c-msg no'; msg.textContent = 'Primero calcula tu resultado.'; return; }
+      var datos = new URLSearchParams({ test: slug, puntos: String(w.__res.valor), email: em, web: f.web.value });
+      if (f.boletin.checked) datos.append('boletin', '1');
+      env.disabled = true; msg.className = 'az-c-msg'; msg.textContent = 'Enviando…';
+      fetch('https://aurzane.com/boletin/resultado.php', { method: 'POST', body: datos }).then(function (r) { return r.json(); }).then(function (j) {
+        msg.className = 'az-c-msg ' + (j.ok ? 'ok' : 'no'); msg.textContent = j.msg; env.disabled = false;
+        if (j.ok) { f.email.value = ''; f.boletin.checked = false; }
+      }).catch(function () { msg.className = 'az-c-msg no'; msg.textContent = 'No se pudo enviar ahora mismo. Inténtalo en unos minutos.'; env.disabled = false; });
+    });
+  }
+  if (d.readyState === 'loading') d.addEventListener('DOMContentLoaded', iniciar); else iniciar();
+})(document, window);
