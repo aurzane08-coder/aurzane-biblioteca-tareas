@@ -491,3 +491,32 @@
   }
   if (d.readyState === 'loading') d.addEventListener('DOMContentLoaded', iniciar); else iniciar();
 })(document, window);
+
+/* Google Tag Manager GTM-TKTFZ28N (24/11/2026, pedido de Adrián). Con modo de consentimiento: en el Espacio Económico Europeo,
+   Reino Unido y Suiza todo empieza denegado hasta que la persona acepta en el aviso de cookies de Google (el mismo de AdSense).
+   No se carga en las páginas con datos personales o sensibles: admin, Mi AURZANE, el portal y los informes de OVP y el aula de LEARN.
+   Además avisa a GTM de lo que importa medir: test terminado, alta en el boletín y clics en enlaces de libros, cursos y patrocinadores. */
+(function (d, w, l) {
+  var h = l.hostname, p = l.pathname;
+  if (/\/(admin|mi-aurzane)(\.html)?/.test(p) || (/^ovp\./.test(h) && p !== '/' && !/^\/(index\.html)?$/.test(p)) || (/^learn\./.test(h) && /^\/(aula|curso\/[^/]+\/leccion)/.test(p))) return;
+  if (w.__azGtm) return; w.__azGtm = 1;
+  w.dataLayer = w.dataLayer || [];
+  function gtag() { w.dataLayer.push(arguments); }
+  w.gtag = w.gtag || gtag;
+  gtag('consent', 'default', { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'denied', wait_for_update: 500,
+    region: ['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IS','IE','IT','LV','LI','LT','LU','MT','NL','NO','PL','PT','RO','SK','SI','ES','SE','GB','CH'] });
+  gtag('consent', 'default', { ad_storage: 'granted', ad_user_data: 'granted', ad_personalization: 'granted', analytics_storage: 'granted' });
+  w.dataLayer.push({ 'gtm.start': Date.now(), event: 'gtm.js' });
+  var s = d.createElement('script'); s.async = true; s.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-TKTFZ28N';
+  (d.head || d.documentElement).appendChild(s);
+  // eventos útiles
+  var ev = function (n, x) { try { w.dataLayer.push(Object.assign({ event: n }, x || {})); } catch (e) {} };
+  d.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href]'); if (!a) return;
+    var u = a.href;
+    if (/awin1\.com|amazon\.|amzn\.to|simbye\.com|udemy\.com|coursera\.org|domestika|impact\.com|\/ir\//.test(u)) ev('clic_afiliado', { destino: u.replace(/^https?:\/\//, '').split(/[/?]/)[0], pagina: p });
+  }, true);
+  var visto = false;
+  setInterval(function () { if (!visto && w.__res) { visto = true; ev('test_terminado', { test: p.replace(/\//g, '') || h }); } }, 1500);
+  d.addEventListener('submit', function (e) { var f = e.target; if (f && /boletin|suscrib/i.test((f.action || '') + ' ' + (f.id || '') + ' ' + (f.className || ''))) ev('alta_boletin', { pagina: p }); }, true);
+})(document, window, location);
