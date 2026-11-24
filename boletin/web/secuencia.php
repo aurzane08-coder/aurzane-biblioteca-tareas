@@ -4,6 +4,7 @@
 // día 0 bienvenida y test, día 3 curso gratis con certificado, día 7 test vocacional, día 14 herramientas gratis.
 // El paso enviado se guarda en privado-boletin/secuencia.json; quien se da de baja deja de recibirlos. Sin publicidad de terceros.
 if (php_sapi_name() !== 'cli') { http_response_code(404); exit; }
+if (date('w') === '0') { echo "domingo: no se envía bienvenida el día del boletín (máximo un correo al día)\n"; exit; }
 $dir = dirname(__DIR__, 2) . '/privado-boletin';
 $fs = "$dir/suscritos.json"; $fq = "$dir/secuencia.json";
 $s = is_file($fs) ? (json_decode((string)file_get_contents($fs), true) ?: []) : [];

@@ -215,6 +215,23 @@ if libro:
               f'<p style="margin:0;font:13px/1.5 Arial,sans-serif;color:{GRIS}">De <i>{E(cita["libro"])}</i>, gratis en la biblioteca de AURZANE. '
               f'<a href="{E(u(cita["url"], "cita"))}" style="color:{VERDE};font-weight:700">Leerlo gratis</a></p></div>')
     partes.append(bloque(etiqueta('Libro de la semana') + c))
+# Navidad y Reyes (del 22 de noviembre al 5 de enero): tres libros para regalar, distintos cada semana
+if (HOY.month == 11 and HOY.day >= 22) or HOY.month == 12 or (HOY.month == 1 and HOY.day <= 5):
+    ya = {i for env in HIST['envios'] for i in str(env.get('ids', {}).get('regalo', '')).split('|') if i}
+    pool = [x for x in libros if libro is None or x['id'] != libro['id']]
+    reg = ([x for x in pool if x['id'] not in ya] + [x for x in pool if x['id'] in ya])[:3]
+    if reg:
+        USADO['regalo'] = '|'.join(x['id'] for x in reg)
+        celdas = ''.join(
+            f'<td width="33%" style="vertical-align:top;padding:0 6px;text-align:center"><a href="{E(u("https://aurzane.com/libros/" + x["id"] + "/", "regalo"))}" style="text-decoration:none;color:{TINTA}">'
+            f'<img src="{E(x["portada"])}" width="120" alt="Portada de {E(x["titulo"])}" style="display:block;margin:0 auto 10px;width:120px;max-width:100%;height:auto;border-radius:6px;box-shadow:0 4px 14px rgba(0,0,0,.18)">'
+            f'<span style="display:block;font:700 15px/1.3 Georgia,serif">{E(x["titulo"])}</span><span style="display:block;margin-top:3px;font:13px Arial,sans-serif;color:{GRIS}">{E(x["autor"])}</span></a></td>'
+            for x in reg)
+        fiesta = 'Reyes' if HOY.month == 1 or (HOY.month == 12 and HOY.day > 25) else 'Navidad'
+        partes.append(bloque(etiqueta(f'Para regalar en {fiesta}') + f'<h2 style="{H2}">Tres libros que sientan bien</h2>'
+                             f'<p style="{P}">Si buscas un regalo que dure más que el papel de envolver, aquí tienes tres ideas. En cada ficha verás de qué trata y dónde comprarlo.</p>'
+                             f'<table role="presentation" width="100%"><tr>{celdas}</tr></table>'
+                             f'<p style="margin:16px 0 0;text-align:center">' + boton('Ver más libros para regalar', 'https://aurzane.com/libros/', 'regalo-mas', True) + '</p>', '#fbf7ea'))
 if leccion:
     cu = leccion['curso']; urlc = f'https://learn.aurzane.com/curso/{cu["slug"]}/'
     partes.append(bloque(etiqueta('Píldora de un curso gratis') + img(foto('learn', 'estudiar' if 'psicolog' in cu['titulo'].lower() else 'lectura'), '') +
