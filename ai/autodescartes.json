@@ -1,6 +1,116 @@
 [
  {
   "fecha": "2026-11-24",
+  "id": "ia-aurzane-bib-intervencion-educativa-inclusion-social-equipos-atencion",
+  "tipo": "libro",
+  "titulo": "Intervención Educativa para la Inclusión Social: Los Equipos de Atención a la Infancia y a la Adolescencia (EAIA)",
+  "url": "https://archive.org/details/aurzane-bib-intervencion-educativa-inclusion-social-equipos-atencion",
+  "motivo": "La IA le dio 2/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-palabra-freud/palabra-freud.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-24",
+  "id": "ia-aurzane-bib-comprender-abordaje-filosofico-relacion-entre-mente",
+  "tipo": "libro",
+  "titulo": "Comprender : un abordaje filosófico de la relación entre mente y lenguaje",
+  "url": "https://archive.org/details/aurzane-bib-comprender-abordaje-filosofico-relacion-entre-mente",
+  "motivo": "La IA le dio 6/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-palabra-freud/palabra-freud.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-24",
+  "id": "ia-aurzane-bib-escala-depresion-geriatrica-gds-yesavage",
+  "tipo": "libro",
+  "titulo": "Escala de Depresión Geriátrica GDS de Yesavage",
+  "url": "https://archive.org/details/aurzane-bib-escala-depresion-geriatrica-gds-yesavage",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 6 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-escala-depresion-geriatrica-gds-yesavage/escala-depresion-geriatrica-"
+  ]
+ },
+ {
+  "fecha": "2026-11-24",
+  "id": "ia-aurzane-bib-tejer-como-alternativa-expresion-artistica-terapeutica",
+  "tipo": "libro",
+  "titulo": "El tejer como una alternativa de expresión artística y terapéutica, para usuarios del Cpi2 del Hospital Mental de Antioquia",
+  "url": "https://archive.org/details/aurzane-bib-tejer-como-alternativa-expresion-artistica-terapeutica",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 40 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-tejer-como-alternativa-expresion-artistica-terapeutica/tejer-como-alt"
+  ]
+ },
+ {
+  "fecha": "2026-11-24",
+  "id": "ia-aurzane-bib-videojuegos-problema-distraccion-o-oportunidad-aprender",
+  "tipo": "libro",
+  "titulo": "Los videojuegos: ¿un problema de distracción o una oportunidad para aprender?",
+  "url": "https://archive.org/details/aurzane-bib-videojuegos-problema-distraccion-o-oportunidad-aprender",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 20 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-videojuegos-problema-distraccion-o-oportunidad-aprender/videojuegos-p"
+  ]
+ },
+ {
+  "fecha": "2026-11-24",
+  "id": "ia-aurzane-bib-atencion-personas-malestar-emocional",
+  "tipo": "libro",
+  "titulo": "ATENCION A LAS PERSONAS CON MALESTAR EMOCIONAL",
+  "url": "https://archive.org/details/aurzane-bib-atencion-personas-malestar-emocional",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 46 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-atencion-personas-malestar-emocional/atencion-personas-malestar-emoci"
+  ]
+ },
+ {
+  "fecha": "2026-11-24",
+  "id": "ia-aurzane-bib-diagnostico-orientaciones-intervencion-educativa-dificultade",
+  "tipo": "libro",
+  "titulo": "Diágnóstico y orientaciones para la intervención educativa en las dificultades del cálculo: marco teórico. Unidad 5 [Recurso Educativo]",
+  "url": "https://archive.org/details/aurzane-bib-diagnostico-orientaciones-intervencion-educativa-dificultade",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 24 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-diagnostico-orientaciones-intervencion-educativa-dificultade/diagnost"
+  ]
+ },
+ {
+  "fecha": "2026-11-24",
+  "id": "ia-aurzane-bib-hablemos-autocuidado-digital",
+  "tipo": "libro",
+  "titulo": "Hablemos de Autocuidado Digital",
+  "url": "https://archive.org/details/aurzane-bib-hablemos-autocuidado-digital",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 2 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-hablemos-autocuidado-digital/hablemos-autocuidado-digital.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-24",
+  "id": "oa-W7238857479",
+  "tipo": "libro",
+  "titulo": "\"This is life changing stuff\": An impact evaluation of LifeLab",
+  "url": "https://eprints.soton.ac.uk/id/eprint/516850/1/Digital_This_is_life_changing_stuff_an_impact_evaluation_of_LifeLab.pdf",
+  "motivo": "No tiene un PDF libre que se pueda descargar",
+  "probados": [
+   "HTTP Error 403: Forbidden https://eprints.soton.ac.uk/id/eprint/516850/1/Digital_This_is_life_changing_stuff_an_impact_evaluation_of_Lif"
+  ]
+ },
+ {
+  "fecha": "2026-11-24",
+  "id": "oa-W7237368848",
+  "tipo": "libro",
+  "titulo": "La pasión del vacío: malestar y subjetividad en la civilización contemporánea",
+  "url": "https://hdl.handle.net/20.500.14468/34007",
+  "motivo": "No tiene un PDF libre que se pueda descargar",
+  "probados": [
+   "200 text/html; charset=u https://e-spacio.uned.es/bitstreams/85983a61-6b0c-40f6-aca8-3913da3cdd14/download"
+  ]
+ },
+ {
+  "fecha": "2026-11-24",
   "id": "ia-aurzane-bib-aprendizaje-invisible-hacia-nueva-ecologia-educacion",
   "tipo": "libro",
   "titulo": "Aprendizaje invisible: hacia una nueva ecología de la educación",
@@ -3131,113 +3241,6 @@
   "motivo": "La IA le dio 2/10: no encaja en la biblioteca",
   "probados": [
    "200 application/pdf https://archive.org/download/turbo-suslik-2.1-english-engineers-edition/Turbo-Suslik-2.1-English-engineers-edi"
-  ]
- },
- {
-  "fecha": "2026-11-13",
-  "id": "ia-turbo-suslik-2.0-english",
-  "tipo": "libro",
-  "titulo": "Turbo Suslik 2.0 English",
-  "url": "https://archive.org/details/turbo-suslik-2.0-english",
-  "motivo": "La IA le dio 2/10: no encaja en la biblioteca",
-  "probados": [
-   "200 application/pdf https://archive.org/download/turbo-suslik-2.1-english-engineers-edition/Turbo-Suslik-2.1-English-engineers-edi"
-  ]
- },
- {
-  "fecha": "2026-11-12",
-  "id": "oa-W7225783079",
-  "tipo": "libro",
-  "titulo": "Cultures of Aging in a Globalized World: Approaches from Transnational American Studies",
-  "url": "https://doi.org/10.14361/9783839478448",
-  "motivo": "La IA le dio 3/10: no encaja en la biblioteca",
-  "probados": [
-   "HTTP Error 404: Not Found https://monografias.uma.es/index.php/mumaed/catalog/download/293/417/3520",
-   "200 application/pdf https://monografias.uma.es/index.php/mumaed/catalog/download/293/417/3692"
-  ]
- },
- {
-  "fecha": "2026-11-12",
-  "id": "oa-W7207689090",
-  "tipo": "libro",
-  "titulo": "Antes del número: Cómo Nace el Pensamiento Matemático en la Infancia",
-  "url": "https://doi.org/10.70577/eprexq35/acacfesa.editorial",
-  "motivo": "La IA le dio 2/10: no encaja en la biblioteca",
-  "probados": [
-   "200 application/pdf https://www.transcript-verlag.de/media/pdf/01/eb/98/oa9783839478448.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-12",
-  "id": "oa-W7159579643",
-  "tipo": "libro",
-  "titulo": "¿Qué le pasa a mi sangre? Libro familiar para entender, acompañar y cuidar el cuerpo",
-  "url": "https://directory.doabooks.org/handle/20.500.12854/176468",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": []
- },
- {
-  "fecha": "2026-11-12",
-  "id": "oa-W7225078136",
-  "tipo": "libro",
-  "titulo": "How anti-trans media undermines human rights and equality for everyone",
-  "url": "https://research.birmingham.ac.uk/en/publications/c7deeec0-658a-4a0b-87f8-b3eb612cd9a9",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": []
- },
- {
-  "fecha": "2026-11-12",
-  "id": "pmc-PMC13747811",
-  "tipo": "estudio",
-  "titulo": "Institutional partnerships enable long-term use of Earth observations in water security and resilience",
-  "url": "https://europepmc.org/article/PMC/PMC13747811",
-  "motivo": "La IA le dio 2/10: no encaja en la biblioteca",
-  "probados": [
-   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13753846.1/PMC13753846.1.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-12",
-  "id": "pmc-PMC13745348",
-  "tipo": "estudio",
-  "titulo": "Integrating mental health into fracture liaison services: an attribution-first policy approach to depression, concerns about falling and pathway loss",
-  "url": "https://europepmc.org/article/PMC/PMC13745348",
-  "motivo": "La IA le dio 6/10: no encaja en la biblioteca",
-  "probados": [
-   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13748345.1/PMC13748345.1.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-12",
-  "id": "pmc-PMC13746154",
-  "tipo": "estudio",
-  "titulo": "Hyperhomocysteinemia and Klotho in kidney-to-brain signaling: a metabolic stress-resilience framework for neurovascular dysfunction",
-  "url": "https://europepmc.org/article/PMC/PMC13746154",
-  "motivo": "La IA le dio 4/10: no encaja en la biblioteca",
-  "probados": [
-   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13748345.1/PMC13748345.1.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-12",
-  "id": "pmc-PMC13743815",
-  "tipo": "estudio",
-  "titulo": "Predictive Analytics and Workflow Automation to Reduce Administrative Burden and Clinician Burnout in United States Clinical Settings: A Systematic Review",
-  "url": "https://europepmc.org/article/PMC/PMC13743815",
-  "motivo": "La IA le dio 3/10: no encaja en la biblioteca",
-  "probados": [
-   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13750918.1/PMC13750918.1.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-12",
-  "id": "pmc-PMC13746877",
-  "tipo": "estudio",
-  "titulo": "Targeting the microglia-synapse interface in depression: molecular mechanisms and pharmacological perspectives from traditional Chinese medicine",
-  "url": "https://europepmc.org/article/PMC/PMC13746877",
-  "motivo": "La IA le dio 5/10: no encaja en la biblioteca",
-  "probados": [
-   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13750918.1/PMC13750918.1.pdf"
   ]
  }
 ]

@@ -120,8 +120,8 @@
   13
  ],
  "ed:Internet Archive": [
-  28,
-  152
+  31,
+  160
  ],
  "ed:": [
   52,
@@ -144,7 +144,7 @@
   0
  ],
  "tipo:libro": [
-  185,
+  193,
   9
  ],
  "Gambling Behavior and Treatments": [
@@ -312,7 +312,7 @@
   0
  ],
  "archive:psicologia": [
-  155,
+  163,
   0
  ],
  "ed:The Open University": [
@@ -648,7 +648,7 @@
   1
  ],
  "ed:Publicacions de la Universitat Jaume I": [
-  3,
+  4,
   2
  ],
  "ed:Agua Clara": [
@@ -660,7 +660,7 @@
   0
  ],
  "ed:Thémata": [
-  0,
+  1,
   1
  ],
  "ed:Udelar. FP": [
@@ -708,7 +708,7 @@
   2
  ],
  "ed:Universitat Oberta de Catalunya": [
-  6,
+  7,
   2
  ],
  "ed:Universidad de Salamanca (España). Instituto Universitario de Integración en la Comunidad": [
@@ -976,7 +976,7 @@
   1
  ],
  "ed:Proyecto Gutenberg": [
-  0,
+  1,
   1
  ],
  "ed:Publicacions de la Universitat Jaume I. Servei de Comunicació i Publicacions": [
@@ -1016,6 +1016,18 @@
   1
  ],
  "ed:Junta de Andalucía. Consejería para la Igualdad y Bienestar Social": [
+  1,
+  0
+ ],
+ "ed:UNED repository": [
+  0,
+  1
+ ],
+ "ed:University of Southampton": [
+  0,
+  1
+ ],
+ "ed:Editorial Universidad de Antioquia": [
   1,
   0
  ]
