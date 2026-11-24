@@ -846,3 +846,7 @@
 2026-11-24,2,pinterest,promo-nexus,feed,
 2026-11-24,9,tiktok,frase-dc19a22e,ok,v_inbox_file~v2.7711853656034986005 (borrador en la bandeja de TikTok: la app aún no está auditada; publícalo desde la app)
 2026-11-24,9,youtube,frase-7a74639d,ok,https://youtu.be/tszGeVxhxaE
+2026-11-24,4,instagram,frase-5f349021,ok,18111586307192541
+2026-11-24,4,facebook,calc-embarazo,ok,2361709594628452
+2026-11-24,4,youtube,frase-ebed20dc,ok,https://youtu.be/AudAJT2Fqlw
+2026-11-24,4,telegram,frase-30698848,error,<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)>
