@@ -1,31 +1,31 @@
 # Informe de marketing
 
-Actualizado: 2026-11-24. Clics de personas (sin bots ni vistas previas) que entraron por los enlaces de las publicaciones.
+Actualizado: 2026-11-25. Clics de personas (sin bots ni vistas previas) que entraron por los enlaces de las publicaciones.
 
 | Red | Publicaciones | Clics |
 |---|---|---|
 | telegram | 105 | 4 |
-| bluesky | 69 | 354 |
-| mastodon | 69 | 270 |
-| instagram | 82 | 0 |
-| facebook | 82 | 144 |
+| bluesky | 69 | 358 |
+| mastodon | 69 | 283 |
+| instagram | 83 | 0 |
+| facebook | 83 | 144 |
 | threads | 0 | 0 |
-| pinterest | 46 | 1 |
+| pinterest | 46 | 2 |
 
 ## Productos con más clics
 
 | Producto | Clics |
 |---|---|
-| calc-sueldo | 17 |
-| test-sueno | 17 |
+| calc-sueldo | 18 |
+| test-sueno | 18 |
 | test-ansiedad | 17 |
 | test-tdah | 16 |
 | curso-neuro | 13 |
+| test-personalidad | 13 |
 | frase-fe3fa4a3 | 13 |
-| test-personalidad | 12 |
+| calc-hipoteca | 13 |
 | test-habitos | 12 |
 | calc-calorias | 12 |
-| calc-hipoteca | 12 |
 | calc-pau | 11 |
 | frase-5b980a2a | 11 |
 | test-autoestima | 10 |

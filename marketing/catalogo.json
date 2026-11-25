@@ -1,5 +1,5 @@
 {
- "generado": "2026-11-24",
+ "generado": "2026-11-25",
  "productos": [
   {
    "id": "test-personalidad",
@@ -37807,6 +37807,37 @@
    "alta": "2026-11-17"
   },
   {
+   "id": "frase-0eade6af",
+   "tipo": "frase",
+   "mundo": "aurzane",
+   "origen": "citas",
+   "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-hombre-mediocre-ensayo-psicologia-moral/",
+   "titulo": "La fuerza de las creencias está en no ser puramente racionales; pensamos con el corazón y con la cabeza.",
+   "autor": "Ingenieros, José, 1877-1925, El Hombre Mediocre: Ensayo de psicologia y moral",
+   "libro": "El Hombre Mediocre: Ensayo de psicologia y moral",
+   "ganchos": [
+    "La fuerza de las creencias está en no ser puramente racionales; pensamos con el corazón y con la cabeza.",
+    "La fuerza de las creencias está en no ser puramente racionales; pensamos con el corazón y con la cabeza.",
+    "La fuerza de las creencias está en no ser puramente racionales; pensamos con el corazón y con la cabeza."
+   ],
+   "texto": "La fuerza de las creencias está en no ser puramente racionales; pensamos con el corazón y con la cabeza.",
+   "hashtags": [
+    "FrasesDeLibros",
+    "Lectura",
+    "LibrosGratis",
+    "Psicología",
+    "Motivación",
+    "Bienestar",
+    "CrecimientoPersonal",
+    "Frases"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "",
+   "foto_q": "quiet beach sunrise",
+   "alta": "2026-11-25"
+  },
+  {
    "id": "frase-66374b06",
    "tipo": "frase",
    "mundo": "aurzane",
@@ -54948,6 +54979,60 @@
    "emoji": "",
    "foto_q": "misty lake morning",
    "alta": "2026-11-24"
+  },
+  {
+   "id": "cur-040a0fcc85",
+   "tipo": "curiosidad",
+   "mundo": "mind",
+   "origen": "curiosidades",
+   "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13770471/",
+   "titulo": "¿Por qué la ansiedad cambia el cerebro?",
+   "ganchos": [
+    "¿Por qué la ansiedad cambia el cerebro?",
+    "¿Por qué la ansiedad cambia el cerebro? 🧠",
+    "En el deterioro cognitivo leve, la ansiedad se asocia con pérdida de volumen en zonas cere"
+   ],
+   "texto": "En el deterioro cognitivo leve, la ansiedad se asocia con pérdida de volumen en zonas cerebrales clave y alteración de redes neuronales. Estudios recientes de neuroimagen muestran que la ansiedad en estas fases se relaciona con cambios estructurales en el lóbulo temporal y alteraciones funcionales. Esto refleja cómo los síntomas psicológicos tienen una base biológica medible en el cerebro.\n\nFuente: International Journal of General Medicine",
+   "hashtags": [
+    "aurzane",
+    "psicologia",
+    "neurociencia",
+    "saludmental",
+    "Psicología",
+    "Curiosidades"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "🧠",
+   "dato": "En el deterioro cognitivo leve, la ansiedad se asocia con pérdida de volumen en zonas cerebrales clave y alteración de redes neuronales.",
+   "alta": "2026-11-25"
+  },
+  {
+   "id": "cur-e6d78da8e3",
+   "tipo": "curiosidad",
+   "mundo": "mind",
+   "origen": "curiosidades",
+   "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13763141/",
+   "titulo": "¿Por qué duele más el ánimo tras la menopausia?",
+   "ganchos": [
+    "¿Por qué duele más el ánimo tras la menopausia?",
+    "¿Por qué duele más el ánimo tras la menopausia? 🧠",
+    "La depresión tras la menopausia no se debe solo a los estrógenos, sino a una inflamación c"
+   ],
+   "texto": "La depresión tras la menopausia no se debe solo a los estrógenos, sino a una inflamación celular oculta. Un estudio apunta a que la bajada de esta hormona altera el sistema inmune. Esto genera un envejecimiento celular que afecta a las señales cerebrales, vinculando la edad con el estado de ánimo.\n\nFuente: FASEB Journal",
+   "hashtags": [
+    "psicologia",
+    "menopausia",
+    "neurociencia",
+    "aurzane",
+    "Psicología",
+    "Curiosidades"
+   ],
+   "aviso": "",
+   "img": null,
+   "emoji": "🧠",
+   "dato": "La depresión tras la menopausia no se debe solo a los estrógenos, sino a una inflamación celular oculta.",
+   "alta": "2026-11-25"
   },
   {
    "id": "cur-6381dfb86a",
