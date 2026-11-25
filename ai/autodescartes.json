@@ -1,5 +1,27 @@
 [
  {
+  "fecha": "2026-11-25",
+  "id": "ia-el-sonido-de-lo-que-nadie-oyo_202611",
+  "tipo": "libro",
+  "titulo": "EL SONIDO DE LO QUE NADIE OYÓ",
+  "url": "https://archive.org/details/el-sonido-de-lo-que-nadie-oyo_202611",
+  "motivo": "La IA le dio 1/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/el-sonido-de-lo-que-nadie-oyo_202611/EL%20SONIDO%20DE%20LO%20QUE%20NADIE%20OY%C3%"
+  ]
+ },
+ {
+  "fecha": "2026-11-25",
+  "id": "ia-Gonzalo-y-la-voz-del-corazo-n_202611",
+  "tipo": "libro",
+  "titulo": "GONZALO Y LA VOZ DEL CORAZÓ N",
+  "url": "https://archive.org/details/Gonzalo-y-la-voz-del-corazo-n_202611",
+  "motivo": "La IA le dio 1/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/el-sonido-de-lo-que-nadie-oyo_202611/EL%20SONIDO%20DE%20LO%20QUE%20NADIE%20OY%C3%"
+  ]
+ },
+ {
   "fecha": "2026-11-24",
   "id": "cita-a7bdb1183b",
   "tipo": "cita",
@@ -3216,28 +3238,6 @@
   "motivo": "Dice ser un libro pero el PDF solo tiene 6 páginas (es un capítulo, artículo o resumen)",
   "probados": [
    "200 application/pdf https://archive.org/download/unconsummated-excitation-and-feminine-neurosis/Unconsummated%20Excitation%20and%2"
-  ]
- },
- {
-  "fecha": "2026-11-16",
-  "id": "ia-information-flow-network-model-paper-withname_202611",
-  "tipo": "libro",
-  "titulo": "Information Flow Network Model Paper Withname",
-  "url": "https://archive.org/details/information-flow-network-model-paper-withname_202611",
-  "motivo": "Dice ser un libro pero el PDF solo tiene 21 páginas (es un capítulo, artículo o resumen)",
-  "probados": [
-   "200 application/pdf https://archive.org/download/information-flow-network-model-paper-withname_202611/Great_Web_of_Everything_for_"
-  ]
- },
- {
-  "fecha": "2026-11-14",
-  "id": "ia-eidetic-afterlife-articles_20261114",
-  "tipo": "libro",
-  "titulo": "The Eidetic Afterlife Hypothesis: Historical Archive",
-  "url": "https://archive.org/details/eidetic-afterlife-articles_20261114",
-  "motivo": "La IA le dio 2/10: no encaja en la biblioteca",
-  "probados": [
-   "200 application/pdf https://archive.org/download/the-astro-testament-astroboy-zm/The_Astro_Testament_Astroboy_ZM.pdf"
   ]
  }
 ]

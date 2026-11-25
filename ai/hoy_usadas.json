@@ -16,7 +16,8 @@
   "fw-469a9bf497",
   "cita-6184ed6ca8",
   "fw-90c0c1c785",
-  "fw-6dfea7077f"
+  "fw-6dfea7077f",
+  "fw-eb236fa978"
  ],
  "dias": {
   "2026-11-08": {
@@ -504,6 +505,35 @@
    "musica": {
     "url": "https://aurzane.com/marketing/musica/2323198.mp3",
     "credito": "«Ghost in Cobalt», Ta pote un peu cheloue (Jamendo), CC BY"
+   }
+  },
+  "2026-11-25": {
+   "fecha": "2026-11-25",
+   "frase": {
+    "texto": "Pueblos libres, recordad esta máxima: Podemos adquirir la libertad, pero nunca se recupera una vez que se pierde.",
+    "autor": "Jean Jacques Rousseau",
+    "obra": "",
+    "url": "https://aurzane.com/frases/#fw-eb236fa978",
+    "fuente": "Proverbia.net"
+   },
+   "curiosidad": {
+    "titulo": "¿Sabías que dormir duplica tu capacidad de resolver problemas?",
+    "texto": "Durante el sueño profundo, el cerebro reorganiza los recuerdos para ayudarte a encontrar soluciones que despierto no veías. El cerebro procesa la información del día y detecta patrones ocultos. En un experimento de la Universidad de Lübeck, los participantes que durmieron tuvieron más del doble de éxito descubriendo una regla matemática oculta frente a quienes se quedaron despiertos.",
+    "fuente": "Wagner et al., 2004",
+    "url": "https://mind.aurzane.com/"
+   },
+   "ejercicio": {
+    "titulo": "Meditación guiada de 5 minutos",
+    "url": "https://mind.aurzane.com/ejercicios/atencion-a-la-respiracion/"
+   },
+   "test": {
+    "titulo": "Test de resiliencia gratis (Brief Resilience Scale)",
+    "url": "https://mind.aurzane.com/test-de-resiliencia/"
+   },
+   "mas_frases": true,
+   "musica": {
+    "url": "https://aurzane.com/marketing/musica/2305147.mp3",
+    "credito": "«MKHLSDRV — Dream on», MKHLSDRV (Jamendo), CC BY-SA"
    }
   }
  }
