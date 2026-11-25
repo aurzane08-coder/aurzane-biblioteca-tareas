@@ -1,5 +1,102 @@
 [
  {
+  "id": "el-collar-del-neandertal-juan-luis-arsuaga",
+  "titulo": "El collar del neandertal",
+  "autor": "Juan Luis Arsuaga",
+  "temas": [
+   "ciencia",
+   "ensayo"
+  ],
+  "origen": "tendencia",
+  "fecha": "2026-11-25",
+  "isbn": "9788466403818",
+  "portada": "https://covers.openlibrary.org/b/id/13476513-M.jpg?default=false",
+  "anio": "2003",
+  "editorial": "Columna CAT",
+  "idioma": "spa",
+  "resumen": "",
+  "tendencia": "Un viaje apasionante por el origen de la humanidad perfecto para responder al interés por la arqueología.",
+  "tendencia_fecha": "2026-11-25",
+  "porque": "Este libro es ideal para los apasionados de la prehistoria que desean comprender el origen y la conducta de nuestros antepasados. Con la cercanía de Juan Luis Arsuaga, la obra aporta una visión clara y rigurosa sobre la vida y el enigma de los neandertales."
+ },
+ {
+  "id": "la-ciencia-de-la-larga-vida-valentin-fuster-y-josep-corbella",
+  "titulo": "La ciencia de la larga vida",
+  "autor": "Valentín Fuster y Josep Corbella",
+  "temas": [
+   "bienestar"
+  ],
+  "origen": "tendencia",
+  "fecha": "2026-11-25",
+  "isbn": "9788408162612",
+  "portada": "https://covers.openlibrary.org/b/id/13682098-M.jpg?default=false",
+  "anio": "2016",
+  "editorial": "",
+  "idioma": "",
+  "resumen": "",
+  "tendencia": "Una guía clave para cuidar la salud física y mental en la etapa de la tercera edad.",
+  "tendencia_fecha": "2026-11-25",
+  "porque": "Está pensado para cualquier persona que busque cuidar su salud y llegar a la vejez con pleno bienestar. Valentín Fuster y Josep Corbella ofrecen pautas sencillas y fundamentadas para adoptar hábitos de vida muy saludables."
+ },
+ {
+  "id": "la-vida-secreta-de-los-arboles-peter-wohlleben",
+  "titulo": "La vida secreta de los árboles",
+  "autor": "Peter Wohlleben",
+  "temas": [
+   "ciencia",
+   "ensayo"
+  ],
+  "origen": "tendencia",
+  "fecha": "2026-11-25",
+  "isbn": "9788491110835",
+  "portada": "https://covers.openlibrary.org/b/id/8064205-M.jpg?default=false",
+  "anio": "2015",
+  "editorial": "",
+  "idioma": "spa",
+  "resumen": "",
+  "tendencia": "Ideal para los amantes de la naturaleza y los paisajes otoñales inspirados en programas del medio rural.",
+  "tendencia_fecha": "2026-11-25",
+  "porque": "Es una lectura entrañable para quienes aman la naturaleza y sienten curiosidad por lo que ocurre en el bosque. Peter Wohlleben descubre cómo los árboles se comunican, se ayudan entre sí y conviven en un ecosistema lleno de vida."
+ },
+ {
+  "id": "la-villa-de-las-telas-anne-jacobs",
+  "titulo": "La villa de las telas",
+  "autor": "Anne Jacobs",
+  "temas": [
+   "novela"
+  ],
+  "origen": "tendencia",
+  "fecha": "2026-11-25",
+  "isbn": "9788466362610",
+  "portada": "https://covers.openlibrary.org/b/id/8132796-M.jpg?default=false",
+  "anio": "2018",
+  "editorial": "DEBOLSILLO",
+  "idioma": "spa",
+  "resumen": "",
+  "tendencia": "Una ambiciosa saga familiar y de época que cautivará a los fans de los dramas televisivos.",
+  "tendencia_fecha": "2026-11-25",
+  "porque": "Resulta perfecto para los amantes de las sagas familiares de época llenas de secretos, romance y transformaciones sociales. La novela traslada al lector a la Alemania de principios del siglo XX a través de la historia de una joven en una gran mansión."
+ },
+ {
+  "id": "lejos-de-luisiana-luz-gabas",
+  "titulo": "Lejos de Luisiana",
+  "autor": "Luz Gabás",
+  "temas": [
+   "novela"
+  ],
+  "origen": "tendencia",
+  "fecha": "2026-11-25",
+  "isbn": "9788408265603",
+  "portada": "https://covers.openlibrary.org/b/id/13174229-M.jpg?default=false",
+  "anio": "2022",
+  "editorial": "Editorial Planeta",
+  "idioma": "spa",
+  "resumen": "",
+  "tendencia": "Una gran novela histórica y romántica idónea para regalar en las próximas fechas festivas.",
+  "tendencia_fecha": "2026-11-25",
+  "porque": "Es una obra idónea para los lectores que disfrutan con las grandes novelas históricas de amor, lealtad y aventura. Luz Gabás ofrece un emotivo recorrido por la Norteamérica del siglo XVIII en medio de conflictos y alianzas entre culturas."
+ },
+ {
   "id": "herr-pep-marti-perarnau",
   "titulo": "Herr Pep",
   "autor": "Martí Perarnau",
@@ -717,6 +814,95 @@
   "tendencia": "Un clásico infaltable para regalar y disfrutar en los hogares conforme se acerca el invierno.",
   "tendencia_fecha": "2026-11-09",
   "porque": "Este libro es para cualquier persona que quiera disfrutar de la cocina casera y tradicional con recetas accesibles y explicadas con cercanía. Aporta el estilo inconfundible de Karlos Arguiñano para hacer fáciles platos sabrosos del día a día."
+ },
+ {
+  "id": "organizate-con-eficacia-david-allen",
+  "titulo": "Organízate con eficacia",
+  "autor": "David Allen",
+  "temas": [
+   "productividad"
+  ],
+  "origen": "crecer",
+  "fecha": "2026-11-25",
+  "isbn": "9788492921300",
+  "portada": "https://covers.openlibrary.org/b/id/13636648-M.jpg?default=false",
+  "anio": "2016",
+  "editorial": "Ediciones Urano S. A.",
+  "idioma": "spa",
+  "resumen": "",
+  "porque": "Esta guía se dirige a quienes necesitan organizar su día a día y reducir el estrés acumulado por las tareas pendientes. David Allen proporciona un método práctico para estructurar el trabajo, priorizar objetivos y mantener la mente despejada."
+ },
+ {
+  "id": "reinventarse-mario-alonso-puig",
+  "titulo": "Reinventarse",
+  "autor": "Mario Alonso Puig",
+  "temas": [
+   "resiliencia",
+   "bienestar"
+  ],
+  "origen": "crecer",
+  "fecha": "2026-11-25",
+  "isbn": "9788415880547",
+  "portada": "https://covers.openlibrary.org/b/id/13939033-M.jpg?default=false",
+  "anio": "2013",
+  "editorial": "Plataforma Editorial",
+  "idioma": "spa",
+  "resumen": "",
+  "porque": "Está enfocado a personas que atraviesan momentos de cambio y desean transformar su forma de afrontar las dificultades. El doctor Mario Alonso Puig aporta reflexiones y herramientas para gestionar el miedo, desbloquear el potencial personal y ganar confianza."
+ },
+ {
+  "id": "aprender-de-la-perdida-robert-a-neimeyer",
+  "titulo": "Aprender de la pérdida",
+  "autor": "Robert A. Neimeyer",
+  "temas": [
+   "duelo",
+   "resiliencia"
+  ],
+  "origen": "crecer",
+  "fecha": "2026-11-25",
+  "isbn": "9788449320163",
+  "portada": "https://covers.openlibrary.org/b/id/8618864-M.jpg?default=false",
+  "anio": "2007",
+  "editorial": "Paidós",
+  "idioma": "spa",
+  "resumen": "",
+  "porque": "Es un texto de gran valor para quienes afrontan la muerte de un ser querido o acompañan a otros en su proceso de duelo. Robert A. Neimeyer brinda un enfoque sereno y reconfortante para reconstruir el sentido de la vida tras una pérdida profunda."
+ },
+ {
+  "id": "la-ciencia-del-buen-dormir-javier-albares",
+  "titulo": "La ciencia del buen dormir",
+  "autor": "Javier Albares",
+  "temas": [
+   "sueno",
+   "bienestar"
+  ],
+  "origen": "crecer",
+  "fecha": "2026-11-25",
+  "isbn": "9788411001557",
+  "portada": "https://covers.openlibrary.org/b/id/13537587-M.jpg?default=false",
+  "anio": "2023",
+  "editorial": "Ediciones Península",
+  "idioma": "",
+  "resumen": "",
+  "porque": "Se dirige a quienes sufren de insomnio o simplemente anhelan mejorar la calidad de su descanso nocturno. El doctor Javier Albares aporta pautas claras sobre higiene del sueño para favorecer la recuperación física y emocional."
+ },
+ {
+  "id": "duermete-nino-eduard-estivill",
+  "titulo": "Duérmete, niño",
+  "autor": "Eduard Estivill",
+  "temas": [
+   "sueno",
+   "crianza"
+  ],
+  "origen": "crecer",
+  "fecha": "2026-11-25",
+  "isbn": "9789877251678",
+  "portada": "https://covers.openlibrary.org/b/id/12333327-M.jpg?default=false",
+  "anio": "2014",
+  "editorial": "Debolsillo",
+  "idioma": "",
+  "resumen": "",
+  "porque": "Es una guía orientada a padres y madres que buscan pautas estructuradas para enseñar a sus hijos pequeños a conciliar el sueño. Eduard Estivill ofrece un método práctico con hábitos claros para consolidar el descanso de toda la familia."
  },
  {
   "id": "dormir-nick-littlehales",
