@@ -1,12 +1,12 @@
 {
- "fecha": "2026-11-24",
+ "fecha": "2026-11-25",
  "conectado": true,
  "periodo": [
-  "2026-10-25",
-  "2026-11-21"
+  "2026-10-26",
+  "2026-11-22"
  ],
  "clics": 52,
- "impresiones": 77115,
+ "impresiones": 83950,
  "consultas": [
   [
    "umich",
@@ -17,128 +17,152 @@
   [
    "ecpi university",
    0,
-   1623,
-   8.7
-  ],
-  [
-   "university of richmond",
-   0,
-   1046,
-   8.2
+   1767,
+   8.3
   ],
   [
    "bushnell university",
    0,
-   963,
-   7.2
+   1144,
+   6.9
   ],
   [
    "transylvania university",
    0,
-   877,
-   8.7
+   1090,
+   8.4
+  ],
+  [
+   "university of richmond",
+   0,
+   1077,
+   8.1
   ],
   [
    "desales university",
    0,
-   811,
-   3.2
+   977,
+   3.1
   ],
   [
    "caldwell university",
    0,
-   801,
-   7.9
+   954,
+   7.6
   ],
   [
    "berkeley",
    0,
-   776,
+   915,
    10.0
   ],
   [
    "bethesda university",
    0,
-   724,
-   10.7
+   807,
+   10.1
   ],
   [
    "middlebury college",
    0,
-   653,
-   8.5
+   791,
+   8.3
   ],
   [
    "towson university",
    0,
-   552,
-   6.6
-  ],
-  [
-   "viterbo university",
-   0,
-   507,
-   9.1
-  ],
-  [
-   "nazareth university",
-   0,
-   485,
-   6.3
+   642,
+   6.5
   ],
   [
    "bentley university",
    0,
-   476,
-   7.2
+   597,
+   6.9
+  ],
+  [
+   "nazareth university",
+   0,
+   579,
+   6.3
+  ],
+  [
+   "viterbo university",
+   0,
+   575,
+   8.8
   ],
   [
    "macalester college",
    0,
-   470,
+   571,
    6.9
-  ],
-  [
-   "crowder college",
-   0,
-   450,
-   12.0
   ],
   [
    "naropa university",
    0,
-   427,
-   10.6
+   549,
+   9.7
   ],
   [
    "lander university",
    0,
-   425,
-   4.9
+   516,
+   4.8
   ],
   [
    "fisk university",
    0,
-   407,
+   503,
    7.8
+  ],
+  [
+   "crowder college",
+   0,
+   482,
+   11.7
   ],
   [
    "shaw university",
    0,
-   402,
-   5.7
-  ],
-  [
-   "nihon university",
-   0,
-   398,
-   14.1
+   473,
+   5.6
   ],
   [
    "tiffin university",
    0,
-   386,
-   6.3
+   460,
+   6.4
+  ],
+  [
+   "hood college",
+   0,
+   458,
+   8.3
+  ],
+  [
+   "cunef university",
+   0,
+   440,
+   6.7
+  ],
+  [
+   "chabot college",
+   0,
+   408,
+   9.2
+  ],
+  [
+   "millsaps college",
+   0,
+   401,
+   6.9
+  ],
+  [
+   "nihon university",
+   0,
+   399,
+   14.1
   ],
   [
    "kilgore college",
@@ -147,53 +171,29 @@
    13.1
   ],
   [
-   "hood college",
-   0,
-   369,
-   8.6
-  ],
-  [
-   "cunef university",
-   0,
-   358,
-   6.7
-  ],
-  [
-   "chabot college",
-   0,
-   354,
-   9.3
-  ],
-  [
-   "texas a",
-   0,
-   341,
-   11.7
-  ],
-  [
-   "millsaps college",
-   0,
-   337,
-   7.1
-  ],
-  [
-   "berry college",
-   0,
-   320,
-   10.3
-  ],
-  [
    "rhodes college",
    0,
-   299,
-   6.5
+   360,
+   6.3
+  ],
+  [
+   "emmanuel university",
+   0,
+   357,
+   6.2
+  ],
+  [
+   "rockhurst university",
+   0,
+   357,
+   7.9
   ]
  ],
  "paginas": [
   [
    "https://aurzane.com/biblioteca/leer.html?libro=ref-recuerda-que-vas-a-morir",
    3,
-   169,
+   165,
    6.7
   ],
   [
@@ -205,7 +205,7 @@
   [
    "https://aurzane.com/biblioteca/libro/tormento.html",
    3,
-   51,
+   52,
    7.2
   ],
   [
@@ -217,8 +217,8 @@
   [
    "https://nexus.aurzane.com/universidades/ecuador/ciudad/manta/",
    2,
-   170,
-   6.5
+   185,
+   6.4
   ],
   [
    "https://aurzane.com/biblioteca/libro/ref-proceso-convertirse-persona.html",
@@ -235,325 +235,355 @@
   [
    "https://aurzane.com/biblioteca/libro/ref-tu-cerebro-musica.html",
    2,
-   5,
-   11.0
+   7,
+   10.6
   ],
   [
    "https://nexus.aurzane.com/universidades/estados-unidos/ecpi-university/",
    0,
-   1710,
-   9.8
+   1858,
+   9.3
   ],
   [
    "https://aurzane.com/biblioteca/libro/ref-volar-sobre-pantano.html",
    1,
-   328,
+   342,
    10.8
-  ],
-  [
-   "https://nexus.aurzane.com/universidades/estados-unidos/princeton-university/",
-   1,
-   239,
-   41.1
-  ],
-  [
-   "https://nexus.aurzane.com/universidades/italia/ciudad/roma/",
-   1,
-   230,
-   30.9
   ],
   [
    "https://nexus.aurzane.com/universidades/estados-unidos/ensign-college/",
    1,
-   222,
+   265,
    4.8
   ],
   [
-   "https://nexus.aurzane.com/universidades/notas-de-corte/derecho/",
+   "https://nexus.aurzane.com/universidades/estados-unidos/princeton-university/",
    1,
-   127,
-   19.5
+   259,
+   41.4
+  ],
+  [
+   "https://nexus.aurzane.com/universidades/italia/ciudad/roma/",
+   1,
+   237,
+   30.6
+  ],
+  [
+   "https://nexus.aurzane.com/universidades/estados-unidos/bushnell-university/",
+   0,
+   1144,
+   6.9
   ],
   [
    "https://nexus.aurzane.com/universidades/estados-unidos/new-york-university/",
    1,
-   126,
-   30.2
+   135,
+   29.9
+  ],
+  [
+   "https://nexus.aurzane.com/universidades/notas-de-corte/derecho/",
+   1,
+   132,
+   21.4
+  ],
+  [
+   "https://nexus.aurzane.com/universidades/estados-unidos/university-of-california-berkeley/",
+   0,
+   1130,
+   18.3
   ],
   [
    "https://aurzane.com/biblioteca/libro/ref-cerebro-emocional.html",
    1,
-   112,
-   9.7
+   113,
+   9.8
   ],
   [
    "https://nexus.aurzane.com/universidades/estados-unidos/university-of-richmond/",
    0,
-   1074,
+   1107,
    8.4
+  ],
+  [
+   "https://nexus.aurzane.com/universidades/estados-unidos/transylvania-university/",
+   0,
+   1092,
+   8.4
+  ],
+  [
+   "https://aurzane.com/biblioteca/libro/ref-grito-desesperado.html",
+   1,
+   73,
+   7.9
   ],
   [
    "https://aurzane.com/biblioteca/libro/romancero-gitano.html",
    1,
-   68,
+   70,
    9.4
   ],
   [
    "https://aurzane.com/biblioteca/libro/ref-don-terapia.html",
    1,
-   66,
+   67,
    12.1
-  ],
-  [
-   "https://aurzane.com/biblioteca/libro/ref-grito-desesperado.html",
-   1,
-   62,
-   7.8
   ],
   [
    "https://aurzane.com/biblioteca/libro/ref-cerebro-mito-yo.html",
    1,
-   55,
+   58,
    9.8
-  ],
-  [
-   "https://nexus.aurzane.com/universidades/estados-unidos/hamilton-college/",
-   1,
-   55,
-   16.8
   ],
   [
    "https://aurzane.com/biblioteca/libro/ref-creacion-yo.html",
    1,
-   53,
-   7.2
+   58,
+   7.3
+  ],
+  [
+   "https://nexus.aurzane.com/universidades/estados-unidos/hamilton-college/",
+   1,
+   57,
+   16.6
   ],
   [
    "https://nexus.aurzane.com/universidades/brasil/universidade-federal-do-parana-ufpr/",
    1,
-   44,
-   43.1
+   45,
+   42.4
   ],
   [
    "https://aurzane.com/biblioteca/libro/ref-paradoja-chimpance.html",
    1,
-   39,
-   9.5
+   43,
+   9.3
   ],
   [
    "https://nexus.aurzane.com/universidades/ecuador/instituto-superior-tecnologico-itca/",
    1,
-   38,
-   10.0
-  ],
-  [
-   "https://aurzane.com/biblioteca/leer.html?libro=ref-superar-adversidad",
-   1,
-   32,
-   8.1
-  ],
-  [
-   "https://aurzane.com/biblioteca/libro/ref-delirio.html",
-   1,
-   30,
-   7.1
+   39,
+   10.1
   ],
   [
    "https://aurzane.com/biblioteca/libro/marianela.html",
    1,
-   29,
-   15.2
-  ],
-  [
-   "https://aurzane.com/biblioteca/libro/ref-universo-emociones.html",
-   1,
-   19,
-   13.5
+   36,
+   14.2
   ]
  ],
  "paises": [
   [
    "ESP",
-   185,
-   24531,
+   187,
+   25416,
    29.0
   ],
   [
    "BRA",
    3,
-   13035,
-   20.9
+   14428,
+   20.1
   ],
   [
    "MEX",
-   95,
-   13025,
-   19.5
+   97,
+   13410,
+   19.6
   ],
   [
    "USA",
-   23,
-   9295,
-   21.1
+   24,
+   9772,
+   21.2
   ],
   [
    "ECU",
    72,
-   8098,
-   13.0
+   8422,
+   13.3
   ],
   [
    "ARG",
    49,
-   5627,
+   5783,
    20.9
   ],
   [
    "COL",
-   54,
-   5593,
+   55,
+   5764,
    22.4
   ],
   [
    "PER",
-   54,
-   4122,
-   12.7
+   58,
+   4411,
+   12.4
   ],
   [
    "CHL",
-   29,
-   3140,
+   32,
+   3317,
    21.9
   ],
   [
    "VEN",
    17,
-   2057,
-   20.2
+   2122,
+   20.0
   ],
   [
    "RUS",
    2,
-   1172,
-   25.6
+   1326,
+   23.9
   ],
   [
    "BOL",
-   17,
-   1142,
-   13.1
+   18,
+   1225,
+   13.2
   ],
   [
    "DEU",
    1,
-   1119,
-   24.1
+   1164,
+   24.6
   ],
   [
    "BGD",
    0,
-   1005,
-   17.3
-  ],
-  [
-   "BEL",
-   1,
-   797,
-   7.2
+   1159,
+   15.9
   ],
   [
    "MAR",
    1,
-   775,
-   8.2
+   964,
+   7.8
   ],
   [
    "DOM",
-   11,
-   734,
-   10.9
+   12,
+   820,
+   10.8
+  ],
+  [
+   "BEL",
+   1,
+   799,
+   7.2
   ],
   [
    "GBR",
    3,
-   662,
-   20.9
+   700,
+   20.7
   ],
   [
    "UKR",
    1,
-   650,
-   16.2
+   676,
+   15.8
   ],
   [
    "GTM",
    11,
-   621,
-   18.5
+   643,
+   18.3
   ],
   [
    "PRY",
    8,
-   574,
+   615,
    13.5
+  ],
+  [
+   "PAN",
+   4,
+   551,
+   15.3
   ],
   [
    "URY",
    5,
-   513,
+   539,
    12.8
   ],
   [
    "CAN",
    2,
-   498,
-   19.3
-  ],
-  [
-   "PAN",
-   4,
-   481,
-   15.3
+   517,
+   19.7
   ],
   [
    "NLD",
    2,
-   474,
-   27.1
+   502,
+   27.2
   ],
   [
    "CRI",
    6,
-   473,
-   17.0
+   490,
+   16.7
   ],
   [
    "SLV",
    2,
-   426,
+   443,
    19.8
   ],
   [
    "HND",
-   4,
-   329,
-   16.4
-  ],
-  [
-   "TUR",
-   1,
-   286,
-   16.8
+   5,
+   348,
+   16.0
   ],
   [
    "BGR",
    0,
-   252,
-   7.2
+   311,
+   7.1
+  ],
+  [
+   "TUR",
+   1,
+   303,
+   16.6
   ]
  ],
  "paises_trabajados": [
+  [
+   "2026-11-25",
+   "El Salvador",
+   "Ansiedad por el estatus en El Salvador: cómo superar la presión social"
+  ],
+  [
+   "2026-11-25",
+   "El Salvador",
+   "Universidades privadas en El Salvador: guía para elegir carrera"
+  ],
+  [
+   "2026-11-25",
+   "Ecuador",
+   "Estudiar en Riobamba: Oferta de universidades y opciones para tu futuro"
+  ],
+  [
+   "2026-11-25",
+   "Ecuador",
+   "Universidades en Manta: Guía de carreras y oferta académica en Ecuador"
+  ],
+  [
+   "2026-11-25",
+   "México",
+   "Licenciaturas en Monterrey: cómo elegir carrera y opciones universitarias"
+  ],
+  [
+   "2026-11-25",
+   "México",
+   "Universidades en Puebla: guía completa de opciones y oferta académica"
+  ],
   [
    "2026-11-24",
    "Costa Rica",
@@ -583,40 +613,74 @@
    "2026-11-24",
    "República Dominicana",
    "Cómo estudiar en universidades de EEUU desde República Dominicana"
-  ],
-  [
-   "2026-11-23",
-   "Paraguay",
-   "Manejo del estrés y la ansiedad ante exámenes en Paraguay"
-  ],
-  [
-   "2026-11-23",
-   "Paraguay",
-   "Cómo elegir carrera universitaria en Paraguay: Guía definitiva"
-  ],
-  [
-   "2026-11-23",
-   "Uruguay",
-   "Sistema universitario en Uruguay: carreras y opciones de estudio"
-  ],
-  [
-   "2026-11-23",
-   "Uruguay",
-   "Guía completa de universidades en Uruguay: públicas y privadas"
-  ],
-  [
-   "2026-11-22",
-   "Guatemala",
-   "Universidades públicas y privadas en Guatemala: diferencias clave"
-  ],
-  [
-   "2026-11-22",
-   "Guatemala",
-   "Guía completa de universidades en Guatemala y cómo elegir carrera"
   ]
  ],
- "fichas_ampliadas": 17,
+ "fichas_ampliadas": 21,
  "cambios_titulos": [
+  [
+   "2026-11-25",
+   "https://nexus.aurzane.com/universidades/estados-unidos/trinity-college/",
+   "Trinity College: admisión 29 %, costes y becas",
+   "Trinity College (EE. UU.): carreras, admisión y costes",
+   null,
+   0.0
+  ],
+  [
+   "2026-11-25",
+   "https://nexus.aurzane.com/universidades/estados-unidos/south-college/",
+   "South College: n.º 10.480 del mundo y 25 carreras",
+   "South College: carreras y web oficial | Aurzane",
+   null,
+   0.0
+  ],
+  [
+   "2026-11-25",
+   "https://nexus.aurzane.com/universidades/estados-unidos/thomas-college/",
+   "Thomas College: admisión 96 %, costes y becas",
+   "Thomas College: admisión, carreras y costes | AURZANE",
+   null,
+   0.0
+  ],
+  [
+   "2026-11-25",
+   "https://nexus.aurzane.com/universidades/estados-unidos/chapman-university/",
+   "Chapman University: admisión 65 %, costes y becas",
+   "Chapman University: carreras, admisión y costes | AURZANE",
+   null,
+   0.0
+  ],
+  [
+   "2026-11-25",
+   "https://nexus.aurzane.com/universidades/estados-unidos/davenport-university/",
+   "Davenport University: admisión 98 %, costes y becas",
+   "Davenport University: admisión, costes y becas",
+   null,
+   0.0
+  ],
+  [
+   "2026-11-25",
+   "https://nexus.aurzane.com/universidades/estados-unidos/capital-university/",
+   "Capital University: admisión 70 %, costes y becas",
+   "Capital University: carreras, admisión y costes | AURZANE",
+   null,
+   0.0
+  ],
+  [
+   "2026-11-25",
+   "https://nexus.aurzane.com/universidades/estados-unidos/tusculum-university/",
+   "Tusculum University: admisión 72 %, costes y becas",
+   "Tusculum University: admisiones, costes y carreras",
+   null,
+   0.0
+  ],
+  [
+   "2026-11-25",
+   "https://nexus.aurzane.com/universidades/espana/cunef-universidad/",
+   "CUNEF Universidad: 10 grados | Universidades de España",
+   "CUNEF Universidad: grados, precios y salidas | AURZANE",
+   null,
+   0.0
+  ],
   [
    "2026-11-24",
    "https://nexus.aurzane.com/universidades/estados-unidos/millersville-university-of-pennsylvania/",
@@ -672,122 +736,58 @@
    "Rockhurst University: admisión y carreras | AURZANE",
    null,
    0.0
-  ],
-  [
-   "2026-11-24",
-   "https://nexus.aurzane.com/universidades/estados-unidos/university-of-california-berkeley/",
-   "University of California-Berkeley: admisión 11 %, costes",
-   "Universidad de Berkeley: carreras, admisión y costes",
-   null,
-   0.0
-  ],
-  [
-   "2026-11-24",
-   "https://nexus.aurzane.com/universidades/ecuador/ciudad/portoviejo/",
-   "Universidades en Portoviejo: 5 centros y más (2026)",
-   "Universidades en Portoviejo: 5 centros y carreras",
-   null,
-   0.0
-  ],
-  [
-   "2026-11-24",
-   "https://nexus.aurzane.com/universidades/australia/swinburne-university-of-technology/",
-   "Swinburne University of Technology: n.º 662 del mundo",
-   "Swinburne University Sydney y Melbourne | Aurzane",
-   null,
-   0.0
-  ],
-  [
-   "2026-11-24",
-   "https://nexus.aurzane.com/universidades/estados-unidos/walden-university/",
-   "Walden University: admisión, costes y becas",
-   "Walden University: carreras, costes y admisión",
-   null,
-   0.0
-  ],
-  [
-   "2026-11-24",
-   "https://nexus.aurzane.com/universidades/estados-unidos/milligan-university/",
-   "Milligan University: admisión 72 %, costes y becas",
-   "Milligan University: admisión, costes y carreras",
-   null,
-   0.0
-  ],
-  [
-   "2026-11-24",
-   "https://nexus.aurzane.com/universidades/estados-unidos/wheeling-university/",
-   "Wheeling University: admisión 63 %, costes y becas",
-   "Wheeling University: admisión, costes y becas",
-   null,
-   0.0
-  ],
-  [
-   "2026-11-24",
-   "https://nexus.aurzane.com/universidades/estados-unidos/cleary-university/",
-   "Cleary University: admisión 68 %, costes y becas",
-   "Cleary University: admisión, costes y carreras",
-   null,
-   0.0
-  ],
-  [
-   "2026-11-24",
-   "https://nexus.aurzane.com/universidades/estados-unidos/mercy-university/",
-   "Mercy University: admisión 86 %, costes y becas",
-   "Mercy University: admisiones, costes y carreras | AURZANE",
-   null,
-   0.0
   ]
  ],
  "temas_nuevos": [
   [
-   "2026-11-24",
-   "los dones de la imperfeccion",
-   "Los dones de la imperfección: Claves de autoaceptación"
+   "2026-11-25",
+   "ansiedad por el estatus",
+   "Ansiedad por el estatus en El Salvador: cómo superar la presión social"
   ],
   [
-   "2026-11-24",
-   "universidades en costa rica",
-   "Guía de universidades en Costa Rica: Cómo elegir carrera"
+   "2026-11-25",
+   "universidades privadas el salvador",
+   "Universidades privadas en El Salvador: guía para elegir carrera"
   ],
   [
-   "2026-11-24",
-   "estudiar en estados unidos desde panama",
-   "Cómo estudiar en universidades de EE. UU. desde Panamá"
+   "2026-11-25",
+   "universidades en riobamba",
+   "Estudiar en Riobamba: Oferta de universidades y opciones para tu futuro"
   ],
   [
-   "2026-11-24",
-   "cuantas universidades hay en panama",
-   "Universidades en Panamá: oferta académica y examen de ingreso"
+   "2026-11-25",
+   "universidades en manta",
+   "Universidades en Manta: Guía de carreras y oferta académica en Ecuador"
   ],
   [
-   "2026-11-24",
-   "como saber que carrera estudiar republica dominicana",
-   "Cómo saber qué carrera estudiar en República Dominicana"
+   "2026-11-25",
+   "licenciaturas en monterrey",
+   "Licenciaturas en Monterrey: cómo elegir carrera y opciones universitarias"
   ],
   [
-   "2026-11-24",
-   "estudiar en estados unidos desde republica dominicana",
-   "Cómo estudiar en universidades de EEUU desde República Dominicana"
+   "2026-11-25",
+   "universidades en puebla",
+   "Universidades en Puebla: guía completa de opciones y oferta académica"
   ],
   [
-   "2026-11-24",
-   "carreras universitarias",
-   "Guía para elegir tu carrera universitaria según tu vocación"
+   "2026-11-25",
+   "fashion institute of technology",
+   "Estudiar en el Fashion Institute of Technology (FIT): carreras"
   ],
   [
-   "2026-11-24",
-   "estudiar en maastricht",
-   "Estudiar en Maastricht: universidades, requisitos y vida académica"
+   "2026-11-25",
+   "cuantas universidades hay en colombia",
+   "¿Cuántas universidades hay en Colombia? Panorama educativo"
   ],
   [
-   "2026-11-24",
-   "doble grado en derecho y criminología nota de corte",
-   "Doble grado en Derecho y Criminología: notas de corte y salidas"
+   "2026-11-25",
+   "catalogo carreras universidad autonoma",
+   "Catálogo de carreras de la Universidad Autónoma: guía completa"
   ],
   [
-   "2026-11-24",
-   "universidades en roma",
-   "Guía para estudiar en universidades de Roma: oferta y admisiones"
+   "2026-11-25",
+   "eth zurich",
+   "Estudiar en la ETH Zúrich: oferta académica y admisión"
   ]
  ]
 }
