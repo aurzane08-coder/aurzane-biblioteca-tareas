@@ -120,12 +120,12 @@
   13
  ],
  "ed:Internet Archive": [
-  31,
+  32,
   164
  ],
  "ed:": [
-  52,
-  38
+  54,
+  39
  ],
  "ed:undefined": [
   0,
@@ -144,7 +144,7 @@
   0
  ],
  "tipo:libro": [
-  195,
+  200,
   9
  ],
  "Gambling Behavior and Treatments": [
@@ -312,7 +312,7 @@
   0
  ],
  "archive:psicologia": [
-  165,
+  168,
   0
  ],
  "ed:The Open University": [
@@ -577,7 +577,7 @@
  ],
  "ed:Asociación The Conversation España": [
   0,
-  5
+  6
  ],
  "ed:Investiguem": [
   0,
@@ -616,7 +616,7 @@
   5
  ],
  "ed:Editorial UOC": [
-  37,
+  38,
   8
  ],
  "ed:Universidad Andina Simón Bolívar, Sede Ecuador; Corporación Editora Nacional": [
@@ -1034,5 +1034,37 @@
  "ed:Andrés Rossetti y Natalia Monasterolo (compiladores) - Centro de Investigaciones Jurídicas y Sociales, Instituto de Investigaciones y Formación en Administración Pública (UNC) y Editorial Espartaco": [
   1,
   0
+ ],
+ "ed:Espiral, Educación y Tecnología": [
+  0,
+  1
+ ],
+ "ed:Fondo Editorial FCSH": [
+  1,
+  0
+ ],
+ "ed:Buenos Aires: Editorial de la Facultad de Filosofía y Letras, Universidad de Buenos Aires.": [
+  0,
+  1
+ ],
+ "ed:NeuroUsal": [
+  0,
+  1
+ ],
+ "Social Robot Interaction and HRI": [
+  1,
+  0
+ ],
+ "Personality Traits and Psychology": [
+  1,
+  0
+ ],
+ "ed:Frontiers in microbiology": [
+  0,
+  1
+ ],
+ "ed:The European respiratory journal": [
+  0,
+  1
  ]
 }

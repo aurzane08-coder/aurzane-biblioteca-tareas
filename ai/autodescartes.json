@@ -1,6 +1,83 @@
 [
  {
   "fecha": "2026-11-25",
+  "id": "pmc-PMC13792100",
+  "tipo": "estudio",
+  "titulo": "Solving an enigma: the BMP-9/10 axis as a key regulator of pulmonary vascular resilience",
+  "url": "https://europepmc.org/article/PMC/PMC13792100",
+  "motivo": "La IA le dio 1/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-identificacion-e-intervencion-altas-capacidades-aula/identificacion-e"
+  ]
+ },
+ {
+  "fecha": "2026-11-25",
+  "id": "pmc-PMC13791205",
+  "tipo": "estudio",
+  "titulo": "Genomic resilience of aquatic microbes in Sangam: insights from the Mahakumbh event",
+  "url": "https://europepmc.org/article/PMC/PMC13791205",
+  "motivo": "La IA le dio 1/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-identificacion-e-intervencion-altas-capacidades-aula/identificacion-e"
+  ]
+ },
+ {
+  "fecha": "2026-11-25",
+  "id": "oa-W7238815598",
+  "tipo": "libro",
+  "titulo": "Estrategias didácticas del juego de palabras en estudiantes del nivel elemental de una institución educativa",
+  "url": "https://doi.org/10.59764/ceo.182",
+  "motivo": "La IA le dio 6/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-padres-ninos-psicoterapia-inclusion-parental-psicoterapia/padres-nino"
+  ]
+ },
+ {
+  "fecha": "2026-11-25",
+  "id": "ia-aurzane-bib-videojuegos-comerciales-realidad-virtual-inmersiva-neurorreh",
+  "tipo": "libro",
+  "titulo": "Videojuegos comerciales de realidad virtual inmersiva en neurorrehabilitación",
+  "url": "https://archive.org/details/aurzane-bib-videojuegos-comerciales-realidad-virtual-inmersiva-neurorreh",
+  "motivo": "La IA le dio 2/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-padres-ninos-psicoterapia-inclusion-parental-psicoterapia/padres-nino"
+  ]
+ },
+ {
+  "fecha": "2026-11-25",
+  "id": "ia-aurzane-bib-miradas-hacia-educacion-inclusiva-ii-jornada",
+  "tipo": "libro",
+  "titulo": "Miradas hacia la educación inclusiva: II Jornada de Educación y Psicopedagogía",
+  "url": "https://archive.org/details/aurzane-bib-miradas-hacia-educacion-inclusiva-ii-jornada",
+  "motivo": "La IA le dio 2/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-padres-ninos-psicoterapia-inclusion-parental-psicoterapia/padres-nino"
+  ]
+ },
+ {
+  "fecha": "2026-11-25",
+  "id": "ia-aurzane-bib-confinamiento-salud-mental-mayores-que-hemos",
+  "tipo": "libro",
+  "titulo": "Confinamiento y salud mental de los mayores: ¿qué hemos aprendido de la pandemia de covid‑19?",
+  "url": "https://archive.org/details/aurzane-bib-confinamiento-salud-mental-mayores-que-hemos",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 5 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-confinamiento-salud-mental-mayores-que-hemos/confinamiento-salud-ment"
+  ]
+ },
+ {
+  "fecha": "2026-11-25",
+  "id": "ia-aurzane-bib-e-mociones-sin-emocion-no-hay",
+  "tipo": "libro",
+  "titulo": "E-mociones. Sin emoción no hay educación",
+  "url": "https://archive.org/details/aurzane-bib-e-mociones-sin-emocion-no-hay",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 16 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-e-mociones-sin-emocion-no-hay/e-mociones-sin-emocion-no-hay.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-25",
   "id": "ia-aurzane-bib-debates-sobre-psicopatologia-estructuras-clinicas-conexiones",
   "tipo": "libro",
   "titulo": "Debates sobre psicopatología, estructuras clínicas y conexiones. Vol. 4",
@@ -3180,69 +3257,6 @@
   "tipo": "articulo",
   "titulo": "El proceso de convertirse en persona: la visión de Carl Rogers",
   "url": "https://mind.aurzane.com/articulo.html?mundo=mind&slug=proceso-convertirse-en-persona-carl-rogers",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": []
- },
- {
-  "fecha": "2026-11-16",
-  "id": "art-6fbc6d16f8",
-  "tipo": "articulo",
-  "titulo": "Nuevas perspectivas en la depresión resistente al tratamiento",
-  "url": "https://mind.aurzane.com/articulo.html?mundo=mind&slug=perspectivas-depresion-resistente-tratamiento",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": []
- },
- {
-  "fecha": "2026-11-16",
-  "id": "art-ed9e11ceb4",
-  "tipo": "articulo",
-  "titulo": "Cómo superar el duelo y la pérdida: guía psicológica",
-  "url": "https://mind.aurzane.com/articulo.html?mundo=mind&slug=como-superar-el-duelo-y-la-perdida-guia-psicologica",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": []
- },
- {
-  "fecha": "2026-11-16",
-  "id": "art-a9eeecfc18",
-  "tipo": "articulo",
-  "titulo": "Interfaces cerebro-ordenador y ansiedad: nuevas vías científicas",
-  "url": "https://mind.aurzane.com/articulo.html?mundo=mind&slug=interfaces-cerebro-ordenador-ansiedad-ciencia",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": []
- },
- {
-  "fecha": "2026-11-16",
-  "id": "art-a8f793d377",
-  "tipo": "articulo",
-  "titulo": "El proceso de convertirse en persona: clave para tu desarrollo",
-  "url": "https://mind.aurzane.com/articulo.html?mundo=mind&slug=proceso-convertirse-en-persona-desarrollo",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": []
- },
- {
-  "fecha": "2026-11-16",
-  "id": "art-2d0c9b8e78",
-  "tipo": "articulo",
-  "titulo": "Música contra la ansiedad aguda ante exámenes y pruebas",
-  "url": "https://mind.aurzane.com/articulo.html?mundo=mind&slug=musica-ansiedad-aguda-examenes-pruebas",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": []
- },
- {
-  "fecha": "2026-11-16",
-  "id": "art-6e9c891018",
-  "tipo": "articulo",
-  "titulo": "Memento Mori: cómo aceptar la muerte mejora tu vida",
-  "url": "https://mind.aurzane.com/articulo.html?mundo=mind&slug=memento-mori-aceptacion-muerte-mejora-vida",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": []
- },
- {
-  "fecha": "2026-11-16",
-  "id": "art-23ed748c94",
-  "tipo": "articulo",
-  "titulo": "Cómo la acupuntura ayuda en la depresión leve y moderada",
-  "url": "https://mind.aurzane.com/articulo.html?mundo=mind&slug=como-la-acupuntura-ayuda-en-la-depdepression-leve-moderada",
   "motivo": "No tiene un PDF libre que se pueda descargar",
   "probados": []
  }
