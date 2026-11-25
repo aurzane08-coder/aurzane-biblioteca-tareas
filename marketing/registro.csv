@@ -866,3 +866,11 @@
 2026-11-25,3,facebook,frase-b424a195,ok,1012637877934626
 2026-11-25,3,pinterest,frase-43c7f531,feed,
 2026-11-25,6,youtube,frase-75dad1f3,ok,https://youtu.be/OGSxVVGogXM
+2026-11-25,7,tiktok,frase-199fbbe3,error,500 null
+2026-11-25,7,youtube,cur-ef11af2090,ok,https://youtu.be/U8X1FkKLPFI
+2026-11-25,2,telegram,promo-ovp,error,400 {"ok":false "error_code":400 "description":"Bad Request: IMAGE_PROCESS_FAILED"}
+2026-11-25,2,bluesky,promo-biblioteca,ok,at://did:plc:6ovoiudj7dkxgrzd2zkyn77y/app.bsky.feed.post/3n35t7ves4422
+2026-11-25,2,mastodon,promo-build,error,422 {"error":"Validation failed: File content type is invalid  File is invalid"}
+2026-11-25,2,instagram,promo-colegios,ok,17914642788482521
+2026-11-25,2,facebook,promo-nexus,ok,2652686971824474
+2026-11-25,2,pinterest,promo-learn,feed,
