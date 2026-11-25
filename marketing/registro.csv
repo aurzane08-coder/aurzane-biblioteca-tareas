@@ -850,3 +850,8 @@
 2026-11-24,4,facebook,calc-embarazo,ok,2361709594628452
 2026-11-24,4,youtube,frase-ebed20dc,ok,https://youtu.be/AudAJT2Fqlw
 2026-11-24,4,telegram,frase-30698848,error,<urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1081)>
+2026-11-25,1,telegram,test-autocompasion,ok,156
+2026-11-25,1,bluesky,test-ansiedad,ok,at://did:plc:6ovoiudj7dkxgrzd2zkyn77y/app.bsky.feed.post/3n34ruxy2lw25
+2026-11-25,1,mastodon,test-personalidad,ok,https://mastodon.social/@auzane/117676232729404678
+2026-11-25,1,instagram,test-sueno,ok,18456296743132658
+2026-11-25,1,facebook,calc-calorias,ok,2311084259746257
