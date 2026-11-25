@@ -1,6 +1,51 @@
 [
  {
   "fecha": "2026-11-25",
+  "id": "ia-basil_202611",
+  "tipo": "libro",
+  "titulo": "Basil",
+  "url": "https://archive.org/details/basil_202611",
+  "motivo": "La IA le dio 1/10: no encaja en la biblioteca",
+  "probados": [
+   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13793827.1/PMC13793827.1.pdf",
+   "200 application/pdf https://aurzane.com/biblioteca/recientes/pdf/oa-W7238803431.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-25",
+  "id": "ia-relatos-en-sombra_202611",
+  "tipo": "libro",
+  "titulo": "Relatos En Sombra",
+  "url": "https://archive.org/details/relatos-en-sombra_202611",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 35 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/relatos-en-sombra_202611/Relatos%20en%20sombra.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-25",
+  "id": "ia-sombras-en-el-papel-y-luz-en-el-celuloide",
+  "tipo": "libro",
+  "titulo": "Sombras en el papel y luz en el celuloide",
+  "url": "https://archive.org/details/sombras-en-el-papel-y-luz-en-el-celuloide",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 12 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/sombras-en-el-papel-y-luz-en-el-celuloide/Sombras%20en%20el%20papel%20y%20luz%20e"
+  ]
+ },
+ {
+  "fecha": "2026-11-25",
+  "id": "ia-el-vinculo-elegido-y-el-sentido-del-amor_202611",
+  "tipo": "libro",
+  "titulo": "El vinculo elegido y el sentido del amor",
+  "url": "https://archive.org/details/el-vinculo-elegido-y-el-sentido-del-amor_202611",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 8 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/el-vinculo-elegido-y-el-sentido-del-amor_202611/El%20vinculo%20elegido%20y%20el%2"
+  ]
+ },
+ {
+  "fecha": "2026-11-25",
   "id": "pmc-PMC13792100",
   "tipo": "estudio",
   "titulo": "Solving an enigma: the BMP-9/10 axis as a key regulator of pulmonary vascular resilience",
@@ -3221,42 +3266,6 @@
   "tipo": "articulo",
   "titulo": "El impacto psicológico de los actos racistas",
   "url": "https://mind.aurzane.com/articulo.html?mundo=mind&slug=impacto-psicologico-actos-racistas",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": []
- },
- {
-  "fecha": "2026-11-16",
-  "id": "art-21ca7a3207",
-  "tipo": "articulo",
-  "titulo": "Pantallas y vínculos: cómo los medios influyen en la familia",
-  "url": "https://mind.aurzane.com/articulo.html?mundo=mind&slug=influencia-medios-comunicacion-familia",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": []
- },
- {
-  "fecha": "2026-11-16",
-  "id": "art-83007ebe39",
-  "tipo": "articulo",
-  "titulo": "Estrés laboral y académico: guía práctica con ACT",
-  "url": "https://mind.aurzane.com/articulo.html?mundo=mind&slug=estres-laboral-academico-argentina-act",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": []
- },
- {
-  "fecha": "2026-11-16",
-  "id": "art-cdcf9701a5",
-  "tipo": "articulo",
-  "titulo": "Nuevas vías en la depresión adolescente: ciencia y combinación",
-  "url": "https://mind.aurzane.com/articulo.html?mundo=mind&slug=estimulacion-magnetica-depresion-adolescente",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": []
- },
- {
-  "fecha": "2026-11-16",
-  "id": "art-ca08567cde",
-  "tipo": "articulo",
-  "titulo": "El proceso de convertirse en persona: la visión de Carl Rogers",
-  "url": "https://mind.aurzane.com/articulo.html?mundo=mind&slug=proceso-convertirse-en-persona-carl-rogers",
   "motivo": "No tiene un PDF libre que se pueda descargar",
   "probados": []
  }
