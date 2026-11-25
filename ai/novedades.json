@@ -1,5 +1,15 @@
 [
  {
+  "fecha": "2026-11-25",
+  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-salud-mental-derecho-reflexiones-torno-nuevo/",
+  "titulo": "Libro abierto: Salud mental y derecho. Reflexiones en torno a un nuevo paradigma."
+ },
+ {
+  "fecha": "2026-11-25",
+  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-directrices-oms-manejo-problemas-salud-fisica/",
+  "titulo": "Libro abierto: Directrices de la OMS para el manejo de los problemas de salud física en adultos con trastornos mentales grave"
+ },
+ {
   "fecha": "2026-11-24",
   "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-elegi-mi-vida-mirada-feminista-sobre/",
   "titulo": "Libro abierto: Elegí mi vida : una mirada feminista sobre salud mental y experiencias de embarazos no deseados/abortos volunt",
@@ -942,21 +952,5 @@
   "img": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-informe-mundial-sobre-salud-mental-transformar.jpg",
   "desc": "La salud mental es de vital importancia para todas las personas, en todas partes. En todo el mundo, las necesidades en materia de salud mental son muchas, pero la respuesta es insuficiente e inadecuad",
   "titulo_completo": "Informe mundial sobre la salud mental: Transformar la salud mental para todos"
- },
- {
-  "fecha": "2026-11-23",
-  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-masculinidades-violencia-genero/",
-  "titulo": "Libro abierto: Masculinidades y violencia de género",
-  "img": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-masculinidades-violencia-genero.jpg",
-  "desc": "La violencia contra las mujeres ha sido ampliamente investigada en el país; no obstante, contar con un análisis específico del acoso y la violencia sexual desde la perspectiva de las masculinidades es",
-  "titulo_completo": "Masculinidades y violencia de género"
- },
- {
-  "fecha": "2026-11-23",
-  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-diversidad-familiar/",
-  "titulo": "Libro abierto: Diversidad familiar. Una perspectiva antropológica",
-  "img": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-diversidad-familiar.jpg",
-  "desc": "Las muchas formas de hacer familia hoy: monoparentales, reconstituidas, adoptivas y otras, y lo que implican para la crianza. Copia de la Biblioteca AURZANE (aurzane.com/biblioteca).",
-  "titulo_completo": "Diversidad familiar. Una perspectiva antropológica"
  }
 ]

@@ -1,6 +1,50 @@
 [
  {
   "fecha": "2026-11-25",
+  "id": "ia-aurzane-bib-debates-sobre-psicopatologia-estructuras-clinicas-conexiones",
+  "tipo": "libro",
+  "titulo": "Debates sobre psicopatología, estructuras clínicas y conexiones. Vol. 4",
+  "url": "https://archive.org/details/aurzane-bib-debates-sobre-psicopatologia-estructuras-clinicas-conexiones",
+  "motivo": "La IA le dio 6/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-salud-mental-derecho-reflexiones-torno-nuevo/salud-mental-derecho-ref"
+  ]
+ },
+ {
+  "fecha": "2026-11-25",
+  "id": "ia-aurzane-bib-sintesis-integradora-personalidad-sus-trastornos-sintesis",
+  "tipo": "libro",
+  "titulo": "Síntesis Integradora de la Personalidad y sus Trastornos: Síntesis integradora de las dimensiones básicas [2023]",
+  "url": "https://archive.org/details/aurzane-bib-sintesis-integradora-personalidad-sus-trastornos-sintesis",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 46 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-sintesis-integradora-personalidad-sus-trastornos-sintesis/sintesis-in"
+  ]
+ },
+ {
+  "fecha": "2026-11-25",
+  "id": "ia-aurzane-bib-cuando-es-necesario-ayudar-ninos-socializar",
+  "tipo": "libro",
+  "titulo": "¿Cuándo es necesario ayudar a los niños a socializar?",
+  "url": "https://archive.org/details/aurzane-bib-cuando-es-necesario-ayudar-ninos-socializar",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 5 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-cuando-es-necesario-ayudar-ninos-socializar/cuando-es-necesario-ayuda"
+  ]
+ },
+ {
+  "fecha": "2026-11-25",
+  "id": "ia-aurzane-bib-estamos-prestando-demasiada-atencion-o-demasiado",
+  "tipo": "libro",
+  "titulo": "¿Estamos prestando demasiada atención o demasiado poca atención a nuestros hijos?",
+  "url": "https://archive.org/details/aurzane-bib-estamos-prestando-demasiada-atencion-o-demasiado",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 8 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-estamos-prestando-demasiada-atencion-o-demasiado/estamos-prestando-de"
+  ]
+ },
+ {
+  "fecha": "2026-11-25",
   "id": "ia-el-sonido-de-lo-que-nadie-oyo_202611",
   "tipo": "libro",
   "titulo": "EL SONIDO DE LO QUE NADIE OYÓ",
@@ -3201,43 +3245,5 @@
   "url": "https://mind.aurzane.com/articulo.html?mundo=mind&slug=como-la-acupuntura-ayuda-en-la-depdepression-leve-moderada",
   "motivo": "No tiene un PDF libre que se pueda descargar",
   "probados": []
- },
- {
-  "fecha": "2026-11-16",
-  "id": "art-4d6cbf1151",
-  "tipo": "articulo",
-  "titulo": "Ansiedad por el estatus en Paraguay: claves psicológicas",
-  "url": "https://mind.aurzane.com/articulo.html?mundo=mind&slug=ansiedad-por-el-estatus-en-paraguay",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": []
- },
- {
-  "fecha": "2026-11-16",
-  "id": "art-6b9a763301",
-  "tipo": "articulo",
-  "titulo": "Nuevas vías en la depresión adolescente: ciencia y combinación",
-  "url": "https://mind.aurzane.com/articulo.html?mundo=mind&slug=nuevas-vias-depresion-adolescente-ciencia-combinacion",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": []
- },
- {
-  "fecha": "2026-11-16",
-  "id": "art-261cebc4f1",
-  "tipo": "articulo",
-  "titulo": "Los mejores libros de Kristin Neff sobre autocompasión",
-  "url": "https://mind.aurzane.com/articulo.html?mundo=mind&slug=mejores-libros-kristin-neff-autocompasion",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": []
- },
- {
-  "fecha": "2026-11-16",
-  "id": "ia-unconsummated-excitation-and-feminine-neurosis",
-  "tipo": "libro",
-  "titulo": "Unconsummated Excitation And Feminine Neurosis",
-  "url": "https://archive.org/details/unconsummated-excitation-and-feminine-neurosis",
-  "motivo": "Dice ser un libro pero el PDF solo tiene 6 páginas (es un capítulo, artículo o resumen)",
-  "probados": [
-   "200 application/pdf https://archive.org/download/unconsummated-excitation-and-feminine-neurosis/Unconsummated%20Excitation%20and%2"
-  ]
  }
 ]

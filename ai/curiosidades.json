@@ -1,5 +1,30 @@
 [
  {
+  "id": "cur-f7d77002eb",
+  "tipo": "curiosidad",
+  "titulo": "¿Por qué releer los apuntes no es la mejor forma de aprender?",
+  "dato": "Intentar recordar la información sin mirar la fuente consolida la memoria mucho mejor que volver a leer el texto.",
+  "resumen": "Intentar recordar la información sin mirar la fuente consolida la memoria mucho mejor que volver a leer el texto. Se conoce como efecto de la recuperación. Al esforzarse por recordar, el cerebro fortalece las conexiones neuronales asociadas. Releer genera la ilusión de haber aprendido, pero evaluar lo que recuerdas fija el conocimiento a largo plazo.",
+  "fuente": "Roediger y Karpicke, 2006",
+  "hashtags": [
+   "psicologia",
+   "aprendizaje",
+   "estudio",
+   "aurzane"
+  ],
+  "fuente_id": "tema-329-0",
+  "url": "https://mind.aurzane.com/",
+  "portada": "",
+  "tema": "curiosidad",
+  "idioma": "es",
+  "autores": "Roediger y Karpicke, 2006",
+  "motivo": "Guion escrito por Gemini a partir de un tema de psicología. Revisa que el dato sea correcto antes de aprobar.",
+  "verificada": "2026-11-25",
+  "fecha": "2026-11-25",
+  "auto": true,
+  "verificacion": "Describe con precisión el efecto de recuperación (testing effect) respaldado por la literatura científica citada."
+ },
+ {
   "id": "cur-040a0fcc85",
   "tipo": "curiosidad",
   "titulo": "¿Por qué la ansiedad cambia el cerebro?",
