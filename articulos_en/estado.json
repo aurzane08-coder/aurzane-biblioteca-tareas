@@ -62,5 +62,29 @@
   "huella": "465fd15b1c510fc9",
   "fecha": "2026-11-24",
   "nota": 10
+ },
+ "gamificacion-y-aprendizaje": {
+  "titulo": "Points, badges, and levels: how much do they really improve learning",
+  "resumen": "A meta-analysis of 30 studies involving more than 3,000 students found a small to moderate improvement in learning thanks to gamification, although the effect varies greatly depending on which game mechanic is used.",
+  "categoria": "Education",
+  "huella": "1c339e175394a616",
+  "fecha": "2026-11-25",
+  "nota": 10
+ },
+ "sistemas-tutores-inteligentes-metaanalisis": {
+  "titulo": "Do artificial intelligence tutors work? The meta-analysis of 107 studies comparing them with teachers, books and human tutoring",
+  "resumen": "A meta-analysis of 107 comparisons with over 14,000 participants found that intelligent tutoring systems outperform traditional lecture-based teaching and textbooks, matching, without surpassing, one-on-one tutoring with a human being.",
+  "categoria": "Educational technology",
+  "huella": "1327060d40162e3d",
+  "fecha": "2026-11-25",
+  "nota": 10
+ },
+ "motivacion-autonoma-persistencia-aprendizaje-metaanalisis": {
+  "titulo": "What predicts whether someone sticks with a course: the meta-analysis of 344 studies and 223,000 people on motivation",
+  "resumen": "The largest meta-analysis conducted to date on self-determination theory found that intrinsic motivation and the personal value someone places on what they learn predict persistence and engagement far more than motivation driven by external pressure or rewards.",
+  "categoria": "Motivation in adults",
+  "huella": "75b1c651f413a72e",
+  "fecha": "2026-11-25",
+  "nota": 10
  }
 }
