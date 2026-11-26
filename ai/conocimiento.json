@@ -340,5 +340,14 @@
   "fallo": 5,
   "fecha": "2026-11-19",
   "ejemplo": "Prueba fallida en https://mind.aurzane.com/ejercicios/atencion-a-la-respiracion/: La guía del ejercicio carga · 1 error(es) de JavaScript: Failed to load resource: net::ERR_FAILED (falló dos veces)"
+ },
+ "automatizacion|la automatización «cifras al día» falla y el reintento no lo arregló.": {
+  "receta": "avisar",
+  "motivo": "Falló la clave SSH en GitHub Actions al conectar con SiteGround.",
+  "explicacion": "El error ocurre porque el secreto SG_KEY en GitHub Actions está corrupto o mal formado, impidiendo la autenticación SSH para desplegar Cifras al día. Para solucionarlo a mano, genera un nuevo par de claves SSH, añade la clave pública en SiteGround y actualiza el secreto SG_KEY en el repositorio de GitHub con la nueva clave privada.",
+  "ok": 0,
+  "fallo": 0,
+  "fecha": "2026-11-26",
+  "ejemplo": "La automatización «Cifras al día» falla y el reintento no lo arregló."
  }
 }
