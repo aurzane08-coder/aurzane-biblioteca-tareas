@@ -1,5 +1,62 @@
 [
  {
+  "id": "la-libreria-del-senor-livingstone-monica-gutierrez",
+  "titulo": "La librería del señor Livingstone",
+  "autor": "Mónica Gutiérrez",
+  "temas": [
+   "novela"
+  ],
+  "origen": "tendencia",
+  "fecha": "2026-11-26",
+  "isbn": "9788466668569",
+  "portada": "https://covers.openlibrary.org/b/id/10523684-M.jpg?default=false",
+  "anio": "2020",
+  "editorial": "B (Ediciones B)",
+  "idioma": "",
+  "resumen": "",
+  "tendencia": "Una novela acogedora ideal para los primeros días de frío y lluvia.",
+  "tendencia_fecha": "2026-11-26",
+  "porque": "Este libro es para quienes disfrutan de las novelas acogedoras sobre nuevos comienzos y librerías con encanto. Aporta una lectura entrañable y optimista centrada en el valor de las pequeñas cosas."
+ },
+ {
+  "id": "elantris-brandon-sanderson",
+  "titulo": "Elantris",
+  "autor": "Brandon Sanderson",
+  "temas": [
+   "novela"
+  ],
+  "origen": "tendencia",
+  "fecha": "2026-11-26",
+  "isbn": "9788490705834",
+  "portada": "https://covers.openlibrary.org/b/id/14658083-M.jpg?default=false",
+  "anio": "2005",
+  "editorial": "Orion Publishing Group, Limited",
+  "idioma": "spa",
+  "resumen": "",
+  "tendencia": "Fantasía épica muy demandada para maratones de lectura en casa.",
+  "tendencia_fecha": "2026-11-26",
+  "porque": "Este libro es para los amantes de la fantasía épica que buscan un sistema de magia original y una trama política compleja. Aporta una historia de misterio y superación ambientada en una ciudad maldita."
+ },
+ {
+  "id": "dime-quien-soy-julia-navarro",
+  "titulo": "Dime quién soy",
+  "autor": "Julia Navarro",
+  "temas": [
+   "novela"
+  ],
+  "origen": "tendencia",
+  "fecha": "2026-11-26",
+  "isbn": "9788401337550",
+  "portada": "https://covers.openlibrary.org/b/id/6310425-M.jpg?default=false",
+  "anio": "2013",
+  "editorial": "Debolsillo",
+  "idioma": "spa",
+  "resumen": "",
+  "tendencia": "Una gran novela histórica para sumergirse en lectura de largo aliento.",
+  "tendencia_fecha": "2026-11-26",
+  "porque": "Este libro es para lectores apasionados por las grandes sagas históricas y los viajes por el siglo XX. Aporta un recorrido profundo por la memoria, la política y la identidad a través de una vida fascinante."
+ },
+ {
   "id": "el-collar-del-neandertal-juan-luis-arsuaga",
   "titulo": "El collar del neandertal",
   "autor": "Juan Luis Arsuaga",
