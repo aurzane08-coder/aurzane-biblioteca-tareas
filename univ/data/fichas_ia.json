@@ -539,5 +539,33 @@
    }
   ],
   "fecha": "2026-11-25"
+ },
+ "https://nexus.aurzane.com/universidades/espana/cunef-universidad/": {
+  "titulo": "Guía vocacional AURZANE para CUNEF Universidad",
+  "parrafos": [
+   "Bienvenidos a la guía de orientación vocacional de AURZANE para CUNEF Universidad, una institución de carácter privado ubicada en Madrid, Comunidad de Madrid, y creada en 2019. En nuestro catálogo figuran 10 grados oficiales, con una oferta destacada en áreas como Ciencias Sociales y Jurídicas, Ingeniería y Arquitectura, y Ciencias, todos ellos diseñados bajo el estándar europeo de 240 créditos ECTS repartidos habitualmente en cuatro años.",
+   "Para acceder a estos estudios universitarios en España, los futuros estudiantes deben contar con el título de Bachillerato o de Técnico Superior de FP y superar la prueba de acceso a la universidad, conocida como PAU. La nota de admisión se calcula sobre 14 puntos combinando el expediente académico y las calificaciones de las fases de la prueba, cuyos criterios específicos de ponderación deben consultarse directamente en la institución.",
+   "A la hora de elegir carrera con el apoyo de AURZANE, es fundamental ir más allá del nombre de la universidad o de la ciudad. Recomendamos analizar detenidamente los planes de estudio, las opciones de prácticas profesionales, la modalidad de impartición y las salidas laborales de cada titulación, utilizando herramientas como test vocacionales si todavía tienes dudas sobre tus intereses y aptitudes personales.",
+   "Estudiar en Madrid ofrece una vibrante vida universitaria en una de las capitales más dinámicas de Europa, combinando una amplia oferta cultural, redes de transporte accesibles y múltiples oportunidades de networking. Te sugerimos visitar la web oficial de CUNEF Universidad para verificar los detalles actualizados sobre procesos de admisión, requisitos específicos y jornadas de puertas abiertas."
+  ],
+  "faq": [
+   {
+    "p": "¿CUNEF Universidad es pública o privada?",
+    "r": "Según los datos oficiales de nuestro catálogo en AURZANE, CUNEF Universidad es una institución de carácter privado con sede en Madrid."
+   },
+   {
+    "p": "¿Qué se puede estudiar en CUNEF Universidad?",
+    "r": "En nuestra plataforma figuran 10 grados oficiales centrados principalmente en áreas como Ciencias Sociales y Jurídicas, Ingeniería y Arquitectura, y Ciencias."
+   },
+   {
+    "p": "¿Cómo se entra a la universidad en España?",
+    "r": "El acceso general requiere el título de Bachillerato o Técnico Superior de FP junto con la superación de la prueba de acceso a la universidad, la PAU."
+   },
+   {
+    "p": "¿Cuánto cuesta estudiar en CUNEF Universidad?",
+    "r": "Los precios exactos y tasas de matriculación no figuran en nuestros datos generales, por lo que es necesario consultar directamente la web oficial de la institución."
+   }
+  ],
+  "fecha": "2026-11-26"
  }
 }

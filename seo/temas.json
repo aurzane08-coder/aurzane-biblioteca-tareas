@@ -1397,5 +1397,92 @@
   "pais_nombre": "El Salvador",
   "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al número de emergencias del país. ",
   "fecha": "2026-11-25"
+ },
+ {
+  "consulta": "carreras tecnologicas en quito",
+  "titulo": "Carreras tecnológicas en Quito: oferta académica y alta demanda",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "fecha": "2026-11-26"
+ },
+ {
+  "consulta": "doble grado en derecho y economía nota de corte",
+  "titulo": "Doble grado en Derecho y Economía: notas de corte y plan de estudios",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "fecha": "2026-11-26"
+ },
+ {
+  "consulta": "el juego interior del tenis",
+  "titulo": "El juego interior del tenis: psicología y concentración en el deporte",
+  "mundo": "mind",
+  "test": "resiliencia",
+  "fecha": "2026-11-26"
+ },
+ {
+  "consulta": "community colleges chicago",
+  "titulo": "Community Colleges en EE. UU.: Guía para hispanohablantes",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "oferta": "universidades",
+  "pais": "USA",
+  "pais_nombre": "Estados Unidos (hispanohablantes)",
+  "crisis": "Si el tema toca malestar intenso, añade que se puede llamar o escribir al 988 (Estados Unidos, también en español). ",
+  "fecha": "2026-11-26"
+ },
+ {
+  "consulta": "carreras tecnicas",
+  "titulo": "Carreras técnicas con alta demanda laboral en Estados Unidos",
+  "mundo": "build",
+  "test": "autoeficacia",
+  "oferta": "test",
+  "pais": "USA",
+  "pais_nombre": "Estados Unidos (hispanohablantes)",
+  "crisis": "Si el tema toca malestar intenso, añade que se puede llamar o escribir al 988 (Estados Unidos, también en español). ",
+  "fecha": "2026-11-26"
+ },
+ {
+  "consulta": "test vocacional argentina",
+  "titulo": "Test vocacional en Argentina: ¿cómo elegir carrera universitaria?",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "oferta": "universidades",
+  "pais": "ARG",
+  "pais_nombre": "Argentina",
+  "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al 135 (Argentina, Centro de Asistencia al Suicida). ",
+  "fecha": "2026-11-26"
+ },
+ {
+  "consulta": "como estudiar y trabajar en argentina",
+  "titulo": "Cómo organizar el tiempo para estudiar y trabajar en Argentina",
+  "mundo": "learn",
+  "test": " burnout",
+  "oferta": "libros",
+  "pais": "ARG",
+  "pais_nombre": "Argentina",
+  "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al 135 (Argentina, Centro de Asistencia al Suicida). ",
+  "fecha": "2026-11-26"
+ },
+ {
+  "consulta": "lista de carreras universitarias",
+  "titulo": "Lista de carreras universitarias en Puerto Rico y cómo elegirlas",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "oferta": "universidades",
+  "pais": "PRI",
+  "pais_nombre": "Puerto Rico",
+  "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al número de emergencias del país. ",
+  "fecha": "2026-11-26"
+ },
+ {
+  "consulta": "ama y no sufras walter riso resumen",
+  "titulo": "Ama y no sufras de Walter Riso: claves y reflexiones clave",
+  "mundo": "mind",
+  "test": "autoestima",
+  "oferta": "libros",
+  "pais": "PRI",
+  "pais_nombre": "Puerto Rico",
+  "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al número de emergencias del país. ",
+  "fecha": "2026-11-26"
  }
 ]
