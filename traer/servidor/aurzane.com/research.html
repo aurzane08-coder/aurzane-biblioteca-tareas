@@ -709,12 +709,12 @@ async function cargar(append){
   pintarActivos(); progreso(true);
   if(!append){
     pagina = 0; mostrados = 0; $('emptyState').style.display = 'none';
-    if($('list').children.length) $('list').classList.add('Cargando…'); else $('list').innerHTML = esqueletos(4);
+    if($('list').children.length) $('list').classList.add('cargando'); else $('list').innerHTML = esqueletos(4);
   }
   try{
     const r = await pedir(pagina);
     if(mi !== peticion) return;                       // llegó una búsqueda más nueva
-    $('list').classList.remove('Cargando…');
+    $('list').classList.remove('cargando');
     if(!append && !r.rows.length){ total = 0; contar(); vacio(); return; }
     if(append) $('list').insertAdjacentHTML('beforeend', r.rows.map(tarjeta).join('')); else $('list').innerHTML = r.rows.map(tarjeta).join('');
     pagina++; mostrados += r.rows.length; total = r.total;
@@ -726,7 +726,7 @@ async function cargar(append){
     $('fin').style.display = acabado && mostrados > PAGE_SIZE ? 'block' : 'none';
   }catch(e){
     if(mi !== peticion) return;
-    console.error(e); $('list').classList.remove('Cargando…');
+    console.error(e); $('list').classList.remove('cargando');
     if(append || $('list').querySelector('.paper')){
       $('avisoError').innerHTML = 'No se pudieron cargar los resultados. Revisa tu conexión. <button type="button" class="btn-sec" data-accion="reintentar">Reintentar</button>';
       $('avisoError').style.display = 'block'; $('avisoError').dataset.append = append ? '1' : '';
