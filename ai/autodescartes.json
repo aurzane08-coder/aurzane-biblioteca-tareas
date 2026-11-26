@@ -1,6 +1,17 @@
 [
  {
   "fecha": "2026-11-26",
+  "id": "pmc-PMC13797482",
+  "tipo": "estudio",
+  "titulo": "Proteomic Signatures of Vulnerability Across Late-Life Depression, Frailty, and Neurodegeneration",
+  "url": "https://europepmc.org/article/PMC/PMC13797482",
+  "motivo": "La IA le dio 2/10: no encaja en la biblioteca",
+  "probados": [
+   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13797482.1/PMC13797482.1.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-26",
   "id": "pmc-PMC13796326",
   "tipo": "estudio",
   "titulo": "Efficacy of mindfulness-based interventions and biofeedback for migraine management: a systematic review and meta-analysis of randomized controlled trials",
@@ -3260,17 +3271,6 @@
   "motivo": "No tiene un PDF libre que se pueda descargar",
   "probados": [
    "200 application/pdf https://archive.org/download/psychology-and-cognitive-sciences-10.17140-pcsoj-3-e005/10.17140_pcsoj-3-e005.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-18",
-  "id": "ia-psychology-and-cognitive-sciences-10.17140-pcsoj-3-118",
-  "tipo": "libro",
-  "titulo": "Memory in Autism: A Case of Remembering Versus Knowing",
-  "url": "https://archive.org/details/psychology-and-cognitive-sciences-10.17140-pcsoj-3-118",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": [
-   "200 application/pdf https://archive.org/download/psychology-and-cognitive-sciences-10.17140-pcsoj-3-118/10.17140_pcsoj-3-118.pdf"
   ]
  }
 ]
