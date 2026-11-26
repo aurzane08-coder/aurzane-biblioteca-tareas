@@ -120,8 +120,8 @@
   13
  ],
  "ed:Internet Archive": [
-  33,
-  171
+  34,
+  172
  ],
  "ed:": [
   54,
@@ -144,7 +144,7 @@
   0
  ],
  "tipo:libro": [
-  204,
+  208,
   9
  ],
  "Gambling Behavior and Treatments": [
@@ -312,7 +312,7 @@
   0
  ],
  "archive:psicologia": [
-  172,
+  176,
   0
  ],
  "ed:The Open University": [
@@ -588,7 +588,7 @@
   2
  ],
  "ed:Universitat Oberta de Catalunya (UOC)": [
-  8,
+  9,
   8
  ],
  "ed:Universidad de Buenos Aires. Facultad de Filosofía y Letras. Departamento de Ciencias de la Educación": [
@@ -616,7 +616,7 @@
   5
  ],
  "ed:Editorial UOC": [
-  38,
+  40,
   10
  ],
  "ed:Universidad Andina Simón Bolívar, Sede Ecuador; Corporación Editora Nacional": [
@@ -633,7 +633,7 @@
  ],
  "ed:Pontificia Universidad Católica del Perú. Fondo Editorial": [
   4,
-  6
+  7
  ],
  "ed:Fondo Editorial Universidad Católica Luis Amigó": [
   0,
@@ -1029,7 +1029,7 @@
  ],
  "ed:Editorial Universidad de Antioquia": [
   1,
-  0
+  1
  ],
  "ed:Andrés Rossetti y Natalia Monasterolo (compiladores) - Centro de Investigaciones Jurídicas y Sociales, Instituto de Investigaciones y Formación en Administración Pública (UNC) y Editorial Espartaco": [
   1,
@@ -1078,5 +1078,9 @@
  "ed:Ministerio de Sanidad, Servicios Sociales e Igualdad": [
   1,
   0
+ ],
+ "ed:Saarbrucken: Editorial Académica Española": [
+  0,
+  1
  ]
 }

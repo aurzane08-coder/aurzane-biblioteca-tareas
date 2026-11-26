@@ -1,6 +1,48 @@
 [
  {
   "fecha": "2026-11-26",
+  "id": "ia-aurzane-bib-dificil-ser-hombre-nuevas-masculinidades-latinoamericanas",
+  "tipo": "libro",
+  "titulo": "Difícil ser hombre : Nuevas masculinidades latinoamericanas",
+  "url": "https://archive.org/details/aurzane-bib-dificil-ser-hombre-nuevas-masculinidades-latinoamericanas",
+  "motivo": "La IA le dio 6/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-trastorno-especifico-lenguaje-diagnostico-e-intervencion/trastorno-es"
+  ]
+ },
+ {
+  "fecha": "2026-11-26",
+  "id": "ia-aurzane-bib-emociones-politicas-ninos-ninas",
+  "tipo": "libro",
+  "titulo": "Emociones políticas en niños y niñas",
+  "url": "https://archive.org/details/aurzane-bib-emociones-politicas-ninos-ninas",
+  "motivo": "La IA le dio 4/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-trastorno-especifico-lenguaje-diagnostico-e-intervencion/trastorno-es"
+  ]
+ },
+ {
+  "fecha": "2026-11-26",
+  "id": "ia-aurzane-bib-intervencion-educativa-inclusion-social-infancia-riesgo",
+  "tipo": "libro",
+  "titulo": "Intervención Educativa para la Inclusión Social: Infancia en riesgo y maltrato infantil",
+  "url": "https://archive.org/details/aurzane-bib-intervencion-educativa-inclusion-social-infancia-riesgo",
+  "motivo": "No tiene un PDF libre que se pueda descargar",
+  "probados": []
+ },
+ {
+  "fecha": "2026-11-26",
+  "id": "ia-aurzane-bib-ctcps-mac-bateria-estudio-condiciones-trabajo",
+  "tipo": "libro",
+  "titulo": "CTCPS-MAC: Batería para el estudio de las condiciones de trabajo de carácter psicosocial",
+  "url": "https://archive.org/details/aurzane-bib-ctcps-mac-bateria-estudio-condiciones-trabajo",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 13 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-ctcps-mac-bateria-estudio-condiciones-trabajo/ctcps-mac-bateria-estud"
+  ]
+ },
+ {
+  "fecha": "2026-11-26",
   "id": "ia-the-blueprints-of-the-house-en",
   "tipo": "libro",
   "titulo": "The Blueprints of the House: The Map to Reclaim the Keys to Your Mind",
@@ -3229,50 +3271,6 @@
   "motivo": "No tiene un PDF libre que se pueda descargar",
   "probados": [
    "200 application/pdf https://archive.org/download/psychology-and-cognitive-sciences-10.17140-pcsoj-3-e004/10.17140_pcsoj-3-e004.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-18",
-  "id": "ia-psychology-and-cognitive-sciences-10.17140-pcsoj-2-114",
-  "tipo": "libro",
-  "titulo": "Evolutionary Roots of the Sex Difference in the Prevalence of Severe Anti-social Behavior: A Literature Review",
-  "url": "https://archive.org/details/psychology-and-cognitive-sciences-10.17140-pcsoj-2-114",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": [
-   "200 application/pdf https://archive.org/download/psychology-and-cognitive-sciences-10.17140-pcsoj-2-114/10.17140_pcsoj-2-114.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-18",
-  "id": "ia-psychology-and-cognitive-sciences-10.17140-pcsoj-2-115",
-  "tipo": "libro",
-  "titulo": "Mindfulness, Sustained Attention and Post-traumatic Stress in Tsunami Survivors",
-  "url": "https://archive.org/details/psychology-and-cognitive-sciences-10.17140-pcsoj-2-115",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": [
-   "200 application/pdf https://archive.org/download/psychology-and-cognitive-sciences-10.17140-pcsoj-2-115/10.17140_pcsoj-2-115.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-18",
-  "id": "ia-psychology-and-cognitive-sciences-10.17140-pcsoj-2-116",
-  "tipo": "libro",
-  "titulo": "Psychology and Family Caregiving",
-  "url": "https://archive.org/details/psychology-and-cognitive-sciences-10.17140-pcsoj-2-116",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": [
-   "200 application/pdf https://archive.org/download/psychology-and-cognitive-sciences-10.17140-pcsoj-2-116/10.17140_pcsoj-2-116.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-18",
-  "id": "ia-psychology-and-cognitive-sciences-10.17140-pcsoj-2-117",
-  "tipo": "libro",
-  "titulo": "Relationship between Trauma due to Winter Storm Alexa, Post-traumatic Stress Disorder and Other Mental Health Problems of Palestinian Children in Gaza Strip",
-  "url": "https://archive.org/details/psychology-and-cognitive-sciences-10.17140-pcsoj-2-117",
-  "motivo": "Dice ser un libro pero el PDF solo tiene 7 páginas (es un capítulo, artículo o resumen)",
-  "probados": [
-   "200 application/pdf https://archive.org/download/psychology-and-cognitive-sciences-10.17140-pcsoj-2-117/10.17140_pcsoj-2-117.pdf"
   ]
  }
 ]

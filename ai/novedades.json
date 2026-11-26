@@ -1,6 +1,26 @@
 [
  {
   "fecha": "2026-11-26",
+  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-cuaderno-casos-psicologia-educacion-grado-psicologia/",
+  "titulo": "Libro abierto: Cuaderno de casos: Psicología de la Educación, grado en Psicología, Universidad Autónoma de Madrid"
+ },
+ {
+  "fecha": "2026-11-26",
+  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-psicologia-nutricion-aplicadas-deporte-febrero-2018/",
+  "titulo": "Libro abierto: Psicología y nutrición aplicadas al deporte, febrero 2018"
+ },
+ {
+  "fecha": "2026-11-26",
+  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-trastorno-especifico-lenguaje-diagnostico-e-intervencion/",
+  "titulo": "Libro abierto: El trastorno específico del lenguaje: diagnóstico e intervención"
+ },
+ {
+  "fecha": "2026-11-26",
+  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-psicofarmacologia-terapias-psicologicas-tratamiento-combinad/",
+  "titulo": "Libro abierto: Psicofarmacología, terapias psicológicas y tratamiento combinados (II). Eficacia comparada en los trastornos m"
+ },
+ {
+  "fecha": "2026-11-26",
   "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-estadistica-inferencial-psicologia-problemas-resueltos-ejerc/",
   "titulo": "Libro abierto: Estadística Inferencial para Psicología: Problemas resueltos y ejercicios de práctica",
   "img": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-estadistica-inferencial-psicologia-problemas-resueltos-ejerc.jpg",
@@ -926,37 +946,5 @@
   "img": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-conducta-e-inmunidad.jpg",
   "desc": "Este libro está concebido como libro de texto para una asignatura llamada Conducta e inmunidad, pero también serviría como texto para una introducción a la Psicoinmunología. Este libro describe la rel",
   "titulo_completo": "Conducta e inmunidad"
- },
- {
-  "fecha": "2026-11-23",
-  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-diversidad-respuesta-psicopedagogica-grados-educacion-infant/",
-  "titulo": "Libro abierto: Diversidad y respuesta psicopedagógica: grados de Educación Infantil y Primaria",
-  "img": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-diversidad-respuesta-psicopedagogica-grados-educacion-infant.jpg",
-  "desc": "Los contenidos desarrollados en este documento abordan con amplitud y profundidad las principales realidades que afectan al alumnado con necesidades específicas de apoyo educativo. Se destacan por est",
-  "titulo_completo": "Diversidad y respuesta psicopedagógica: grados de Educación Infantil y Primaria"
- },
- {
-  "fecha": "2026-11-23",
-  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-deficits-atencion-trastornos-conducta-febrero-2021/",
-  "titulo": "Libro abierto: Déficits de atención y trastornos de conducta, febrero 2021",
-  "img": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-deficits-atencion-trastornos-conducta-febrero-2021.jpg",
-  "desc": "Recurs d’aprenentatge de la Universitat Oberta de Catalunya. | Recurso de aprendizaje de la Universitat Oberta de Catalunya. | Learning resource of the Universitat Oberta de Catalunya. Copia de la Bib",
-  "titulo_completo": "Déficits de atención y trastornos de conducta, febrero 2021"
- },
- {
-  "fecha": "2026-11-23",
-  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-inteligencia-emocional-febrero-2019/",
-  "titulo": "Libro abierto: Inteligencia emocional, febrero 2019",
-  "img": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-inteligencia-emocional-febrero-2019.jpg",
-  "desc": "Recurs d'aprenentatge de la Universitat Oberta de Catalunya. Material publicat amb llicència Creative Commons passats 6 semestres des de la data de publicació. | Recurso de aprendizaje de la Universit",
-  "titulo_completo": "Inteligencia emocional, febrero 2019"
- },
- {
-  "fecha": "2026-11-23",
-  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-psicologia-atencion-memoria-septiembre-2019/",
-  "titulo": "Libro abierto: Psicología de la atención y de la memoria, septiembre 2019",
-  "img": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-psicologia-atencion-memoria-septiembre-2019.jpg",
-  "desc": "Recurs d’aprenentatge de la Universitat Oberta de Catalunya. | Recurso de aprendizaje de la Universitat Oberta de Catalunya. | Learning resource of the Universitat Oberta de Catalunya. Copia de la Bib",
-  "titulo_completo": "Psicología de la atención y de la memoria, septiembre 2019"
  }
 ]
