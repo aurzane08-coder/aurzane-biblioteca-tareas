@@ -86,5 +86,29 @@
   "huella": "75b1c651f413a72e",
   "fecha": "2026-11-25",
   "nota": 10
+ },
+ "elegir-carrera-tipos-de-indecision": {
+  "titulo": "Not all career indecision is the same: The map that distinguishes its three real causes",
+  "resumen": "Classic research in vocational psychology identified three distinct types of difficulty in choosing a career, which are lack of readiness, lack of information and inconsistent information, that remain the foundation of the most widely used guidance questionnaires today.",
+  "categoria": "Career Choice",
+  "huella": "caaeca8278d08356",
+  "fecha": "2026-11-26",
+  "nota": 10
+ },
+ "orientacion-vocacional-que-tan-efectiva-es": {
+  "titulo": "Does career guidance actually work? What the largest meta-analysis says",
+  "resumen": "A meta-analysis bringing together decades of studies found that career guidance interventions do help, showing a moderate effect, but the format matters: one-on-one counseling yields better results than a group talk or simply handing out information.",
+  "categoria": "Career guidance",
+  "huella": "5897dd590d16bd63",
+  "fecha": "2026-11-26",
+  "nota": 10
+ },
+ "personalidad-responsabilidad-rendimiento-academico": {
+  "titulo": "The personality trait that predicts academic performance almost as well as intelligence",
+  "resumen": "A meta analysis involving dozens of studies found that Conscientiousness, one of the Big Five personality traits, predicts academic performance with a strength comparable to cognitive ability.",
+  "categoria": "Personality",
+  "huella": "8b825bdb4512ca1d",
+  "fecha": "2026-11-26",
+  "nota": 10
  }
 }
