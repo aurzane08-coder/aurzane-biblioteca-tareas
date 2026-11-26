@@ -17,7 +17,8 @@
   "cita-6184ed6ca8",
   "fw-90c0c1c785",
   "fw-6dfea7077f",
-  "fw-eb236fa978"
+  "fw-eb236fa978",
+  "fw-f8a012095e"
  ],
  "dias": {
   "2026-11-08": {
@@ -534,6 +535,35 @@
    "musica": {
     "url": "https://aurzane.com/marketing/musica/2305147.mp3",
     "credito": "«MKHLSDRV — Dream on», MKHLSDRV (Jamendo), CC BY-SA"
+   }
+  },
+  "2026-11-26": {
+   "fecha": "2026-11-26",
+   "frase": {
+    "texto": "No anticipéis las tribulaciones ni temáis lo que seguramente no os puede suceder. Vivid siempre en un ambiente de optimismo.",
+    "autor": "Benjamin Franklin",
+    "obra": "",
+    "url": "https://aurzane.com/frases/#fw-f8a012095e",
+    "fuente": "Proverbia.net"
+   },
+   "curiosidad": {
+    "titulo": "¿Sabías que el estrés encoge tu cerebro?",
+    "texto": "El estrés crónico reduce el volumen de la corteza prefrontal y agranda la amígdala. Investigaciones en neurociencia muestran que la exposición prolongada al cortisol altera físicamente zonas cerebrales clave. Esto afecta directamente a nuestra memoria, aprendizaje y control emocional.",
+    "fuente": "McEwen, 2007",
+    "url": "https://mind.aurzane.com/"
+   },
+   "ejercicio": {
+    "titulo": "Pausa de autocompasión guiada de Kristin Neff",
+    "url": "https://mind.aurzane.com/ejercicios/pausa-de-autocompasion/"
+   },
+   "test": {
+    "titulo": "Test de resiliencia gratis (Brief Resilience Scale)",
+    "url": "https://mind.aurzane.com/test-de-resiliencia/"
+   },
+   "mas_frases": true,
+   "musica": {
+    "url": "https://aurzane.com/marketing/musica/1241085.mp3",
+    "credito": "«Inner parts», The Dream Pop Project (Jamendo), CC BY"
    }
   }
  }

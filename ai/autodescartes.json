@@ -1,5 +1,71 @@
 [
  {
+  "fecha": "2026-11-26",
+  "id": "ia-the-blueprints-of-the-house-en",
+  "tipo": "libro",
+  "titulo": "The Blueprints of the House: The Map to Reclaim the Keys to Your Mind",
+  "url": "https://archive.org/details/the-blueprints-of-the-house-en",
+  "motivo": "La IA le dio 2/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-estadistica-inferencial-psicologia-problemas-resueltos-ejerc/estadist"
+  ]
+ },
+ {
+  "fecha": "2026-11-26",
+  "id": "ia-los-planos-de-la-casa-es",
+  "tipo": "libro",
+  "titulo": "Los Planos de la Casa: El Mapa para recuperar las Llaves de tu Mente",
+  "url": "https://archive.org/details/los-planos-de-la-casa-es",
+  "motivo": "La IA le dio 2/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-adolescentes-espanoles-estilos-vida-salud-ajuste/adolescentes-espanol"
+  ]
+ },
+ {
+  "fecha": "2026-11-26",
+  "id": "ia-aurzane-bib-cooperacion-como-condicion-social-aprendizaje",
+  "tipo": "libro",
+  "titulo": "Cooperación como condición social de aprendizaje",
+  "url": "https://archive.org/details/aurzane-bib-cooperacion-como-condicion-social-aprendizaje",
+  "motivo": "La IA le dio 6/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/instrumental-bonding-hypothesis/Instrumental_Bonding_Hypothesis.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-26",
+  "id": "ia-aurzane-bib-familias-educacion-social-encuentro-necesario",
+  "tipo": "libro",
+  "titulo": "Familias y educación social: un encuentro necesario",
+  "url": "https://archive.org/details/aurzane-bib-familias-educacion-social-encuentro-necesario",
+  "motivo": "La IA le dio 6/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/instrumental-bonding-hypothesis/Instrumental_Bonding_Hypothesis.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-26",
+  "id": "ia-instrumental-bonding-hypothesis",
+  "tipo": "libro",
+  "titulo": "Instrumental Bonding Hypothesis",
+  "url": "https://archive.org/details/instrumental-bonding-hypothesis",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 3 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/instrumental-bonding-hypothesis/Instrumental_Bonding_Hypothesis.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-26",
+  "id": "ia-aurzane-bib-cuidarme-cuidarnos-cuidar-tierra-propuesta-didactica",
+  "tipo": "libro",
+  "titulo": "Cuidarme, cuidarnos, cuidar la Tierra. Propuesta didáctica para 5º y 6º de Educación primaria y 1º y 2º de ESO",
+  "url": "https://archive.org/details/aurzane-bib-cuidarme-cuidarnos-cuidar-tierra-propuesta-didactica",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 35 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-cuidarme-cuidarnos-cuidar-tierra-propuesta-didactica/cuidarme-cuidarn"
+  ]
+ },
+ {
   "fecha": "2026-11-25",
   "id": "ia-basil_202611",
   "tipo": "libro",
@@ -3208,65 +3274,5 @@
   "probados": [
    "200 application/pdf https://archive.org/download/psychology-and-cognitive-sciences-10.17140-pcsoj-2-117/10.17140_pcsoj-2-117.pdf"
   ]
- },
- {
-  "fecha": "2026-11-18",
-  "id": "ia-psychology-and-cognitive-sciences-10.17140-pcsoj-2-110",
-  "tipo": "libro",
-  "titulo": "Expected Agreement Coefficient for Norm-Referenced Tests With Classical Test Theory",
-  "url": "https://archive.org/details/psychology-and-cognitive-sciences-10.17140-pcsoj-2-110",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": [
-   "200 application/pdf https://archive.org/download/psychology-and-cognitive-sciences-10.17140-pcsoj-2-110/10.17140_pcsoj-2-110.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-18",
-  "id": "ia-psychology-and-cognitive-sciences-10.17140-pcsoj-2-111",
-  "tipo": "libro",
-  "titulo": "Accessibility of Chronic Pain Treatment for Individuals Injured in a Motor Vehicle Accident",
-  "url": "https://archive.org/details/psychology-and-cognitive-sciences-10.17140-pcsoj-2-111",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": [
-   "200 application/pdf https://archive.org/download/psychology-and-cognitive-sciences-10.17140-pcsoj-2-111/10.17140_pcsoj-2-111.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-18",
-  "id": "ia-psychology-and-cognitive-sciences-10.17140-pcsoj.2025.v11.i01.pp30-30.2202",
-  "tipo": "libro",
-  "titulo": "Anger Over the 2019 Coronavirus Disease",
-  "url": "https://archive.org/details/psychology-and-cognitive-sciences-10.17140-pcsoj.2025.v11.i01.pp30-30.2202",
-  "motivo": "Dice ser un libro pero el PDF solo tiene 1 páginas (es un capítulo, artículo o resumen)",
-  "probados": [
-   "200 application/pdf https://archive.org/download/psychology-and-cognitive-sciences-10.17140-pcsoj.2025.v11.i01.pp30-30.2202/10.171"
-  ]
- },
- {
-  "fecha": "2026-11-16",
-  "id": "art-7894bb0ee7",
-  "tipo": "articulo",
-  "titulo": "El impacto invisible del desplazamiento forzado en la salud mental",
-  "url": "https://mind.aurzane.com/articulo.html?mundo=mind&slug=impacto-invisible-desplazamiento-forzado-salud-mental",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": []
- },
- {
-  "fecha": "2026-11-16",
-  "id": "art-7e8b704bfe",
-  "tipo": "articulo",
-  "titulo": "Cómo calmar la ansiedad en el momento con ciencia",
-  "url": "https://mind.aurzane.com/articulo.html?mundo=mind&slug=como-calmar-la-ansiedad-en-el-momento",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": []
- },
- {
-  "fecha": "2026-11-16",
-  "id": "art-7697ae41bf",
-  "tipo": "articulo",
-  "titulo": "El impacto psicológico de los actos racistas",
-  "url": "https://mind.aurzane.com/articulo.html?mundo=mind&slug=impacto-psicologico-actos-racistas",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": []
  }
 ]

@@ -120,8 +120,8 @@
   13
  ],
  "ed:Internet Archive": [
-  32,
-  168
+  33,
+  171
  ],
  "ed:": [
   54,
@@ -144,7 +144,7 @@
   0
  ],
  "tipo:libro": [
-  200,
+  204,
   9
  ],
  "Gambling Behavior and Treatments": [
@@ -312,7 +312,7 @@
   0
  ],
  "archive:psicologia": [
-  168,
+  172,
   0
  ],
  "ed:The Open University": [
@@ -617,7 +617,7 @@
  ],
  "ed:Editorial UOC": [
   38,
-  8
+  10
  ],
  "ed:Universidad Andina Simón Bolívar, Sede Ecuador; Corporación Editora Nacional": [
   0,
@@ -800,7 +800,7 @@
   1
  ],
  "ed:Universitat Jaume I": [
-  1,
+  2,
   1
  ],
  "ed:Universidad Nacional de Córdoba. Facultad de Odontología": [
@@ -1066,5 +1066,17 @@
  "ed:The European respiratory journal": [
   0,
   1
+ ],
+ "ed:Universitat de Barcelona. Institut de Desenvolupament Professional-ICE": [
+  0,
+  1
+ ],
+ "ed:Universidad de Sevilla": [
+  1,
+  0
+ ],
+ "ed:Ministerio de Sanidad, Servicios Sociales e Igualdad": [
+  1,
+  0
  ]
 }

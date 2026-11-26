@@ -1,18 +1,47 @@
 [
  {
+  "fecha": "2026-11-26",
+  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-estadistica-inferencial-psicologia-problemas-resueltos-ejerc/",
+  "titulo": "Libro abierto: Estadística Inferencial para Psicología: Problemas resueltos y ejercicios de práctica"
+ },
+ {
+  "fecha": "2026-11-26",
+  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-adolescentes-espanoles-estilos-vida-salud-ajuste/",
+  "titulo": "Libro abierto: Los adolescentes españoles: estilos de vida, salud, ajuste psicológico y relaciones en sus contextos de desarr"
+ },
+ {
+  "fecha": "2026-11-26",
+  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-cuidarnos-ante-adversidad-salud-mental-resiliencia/",
+  "titulo": "Libro abierto: Cuidarnos ante la adversidad: salud mental y resiliencia en contextos diversos"
+ },
+ {
+  "fecha": "2026-11-26",
+  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-gestion-emocional-aula/",
+  "titulo": "Libro abierto: Gestión emocional en el aula"
+ },
+ {
   "fecha": "2026-11-25",
   "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13793827/",
-  "titulo": "Estudio reciente: Music performance anxiety in higher music education: the influence of environment, appraisal, and self-regulat"
+  "titulo": "Estudio reciente: Music performance anxiety in higher music education: the influence of environment, appraisal, and self-regulat",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/pmc-PMC13793827.jpg",
+  "desc": "Music performance anxiety in higher music education: the influence of environment, appraisal, and self-regulation. Hu T, Zeng Y, Frontiers in psychology. Gratis y en acceso abierto.",
+  "titulo_completo": "Music performance anxiety in higher music education: the influence of environment, apprais"
  },
  {
   "fecha": "2026-11-25",
   "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13793073/",
-  "titulo": "Estudio reciente: Occupational burnout and professional efficacy in physical education: a multilevel meta-analysis of the job de"
+  "titulo": "Estudio reciente: Occupational burnout and professional efficacy in physical education: a multilevel meta-analysis of the job de",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/pmc-PMC13793073.jpg",
+  "desc": "This study aims to update, synthesize, and provide meta-analytical evidence of the associations between specific Job Demands-Resources (JD-R) dimensions and psychological outcomes (burnout and profess",
+  "titulo_completo": "Occupational burnout and professional efficacy in physical education: a multilevel meta-an"
  },
  {
   "fecha": "2026-11-25",
   "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13793872/",
-  "titulo": "Estudio reciente: Virtual reality exposure therapy for anxiety and trauma-related disorders: clinical evidence, behavioral sensi"
+  "titulo": "Estudio reciente: Virtual reality exposure therapy for anxiety and trauma-related disorders: clinical evidence, behavioral sensi",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/pmc-PMC13793872.jpg",
+  "desc": "Virtual reality exposure therapy for anxiety and trauma-related disorders: clinical evidence, behavioral sensing, and implementation priorities. Devaraj G, Srinivasan K, Frontiers in digital health. G",
+  "titulo_completo": "Virtual reality exposure therapy for anxiety and trauma-related disorders: clinical eviden"
  },
  {
   "fecha": "2026-11-25",
@@ -917,37 +946,5 @@
   "img": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-psicologia-atencion-memoria-septiembre-2019.jpg",
   "desc": "Recurs d’aprenentatge de la Universitat Oberta de Catalunya. | Recurso de aprendizaje de la Universitat Oberta de Catalunya. | Learning resource of the Universitat Oberta de Catalunya. Copia de la Bib",
   "titulo_completo": "Psicología de la atención y de la memoria, septiembre 2019"
- },
- {
-  "fecha": "2026-11-23",
-  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-accion-socioeducativa-salud-mental-febrero-2023/",
-  "titulo": "Libro abierto: Acción socioeducativa y salud mental, febrero 2023",
-  "img": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-accion-socioeducativa-salud-mental-febrero-2023.jpg",
-  "desc": "Recurs d'aprenentatge de la Universitat Oberta de Catalunya. | Recurso de aprendizaje de la Universitat Oberta de Catalunya. | Learning material of the Universitat Oberta de Catalunya. Copia de la Bib",
-  "titulo_completo": "Acción socioeducativa y salud mental, febrero 2023"
- },
- {
-  "fecha": "2026-11-23",
-  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-trastornos-aprendizaje-lectura-febrero-2020/",
-  "titulo": "Libro abierto: Trastornos de aprendizaje de la lectura, febrero 2020",
-  "img": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-trastornos-aprendizaje-lectura-febrero-2020.jpg",
-  "desc": "Recurs d’aprenentatge de la Universitat Oberta de Catalunya. | Recurso de aprendizaje de la Universitat Oberta de Catalunya. | Learning resource of the Universitat Oberta de Catalunya. Copia de la Bib",
-  "titulo_completo": "Trastornos de aprendizaje de la lectura, febrero 2020"
- },
- {
-  "fecha": "2026-11-23",
-  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-cognicion-social-lenguaje-intersubjetividad-evolucion-especi/",
-  "titulo": "Libro abierto: Cognición social y lenguaje : la intersubjetividad en la evolución de la especie y en el desarrollo del niño",
-  "img": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-cognicion-social-lenguaje-intersubjetividad-evolucion-especi.jpg",
-  "desc": "Este libro, editado por Pablo Quintanilla, Carla Mantilla y Paola Cépeda, es el resultado de un ingente número de horas de estudio y discusión realizado por los integrantes del Grupo Interdisciplinari",
-  "titulo_completo": "Cognición social y lenguaje : la intersubjetividad en la evolución de la especie y en el d"
- },
- {
-  "fecha": "2026-11-23",
-  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-vision-binocular-psicoanalisis-filosofia/",
-  "titulo": "Libro abierto: Una visión binocular : psicoanálisis y filosofía",
-  "img": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-vision-binocular-psicoanalisis-filosofia.jpg",
-  "desc": "En 1962, Wilfred Bion introdujo el concepto de visión binocular en el psicoanálisis con el fin de describir un estado mental de percepción ampliada: la capacidad para transitar de lo consciente a lo i",
-  "titulo_completo": "Una visión binocular : psicoanálisis y filosofía"
  }
 ]

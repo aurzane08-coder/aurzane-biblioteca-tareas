@@ -1,5 +1,43 @@
 [
  {
+  "id": "cur-91508d7d29",
+  "tipo": "curiosidad",
+  "titulo": "¿Por qué se queman los profes de educación física?",
+  "dato": "Un metaanálisis revela cómo las exigencias laborales y los recursos afectan al agotamiento en docentes de educación física.",
+  "resumen": "Un metaanálisis revela cómo las exigencias laborales y los recursos afectan al agotamiento en docentes de educación física. Un estudio reciente analizó a más de 4300 participantes para entender la relación entre las demandas del trabajo y la eficacia profesional. La investigación muestra cómo estos factores impactan directamente en el desgaste psicológico dentro de la docencia.",
+  "fuente": "Frontiers in psychology",
+  "hashtags": [
+   "psicologia",
+   "educacionfisica",
+   "divulgacion",
+   "aurzane"
+  ],
+  "fuente_id": "pmc-PMC13793073",
+  "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13793073/",
+  "fecha": "2026-11-26",
+  "auto": true,
+  "verificacion": "El texto es riguroso, se basa en evidencia de metaanálisis y evita sensacionalismos."
+ },
+ {
+  "id": "cur-32f0d3e1f7",
+  "tipo": "curiosidad",
+  "titulo": "¿Por qué tocas peor ante público?",
+  "dato": "La ansiedad escénica en músicos depende de cómo evalúan el entorno y su autorregulación.",
+  "resumen": "La ansiedad escénica en músicos depende de cómo evalúan el entorno y su autorregulación. Un estudio en Frontiers in Psychology muestra que el estrés al actuar no solo surge del ambiente. Depende de cómo interpretamos la situación y de nuestras propias herramientas de control emocional.",
+  "fuente": "Frontiers in Psychology",
+  "hashtags": [
+   "psicologia",
+   "musica",
+   "ansiedad",
+   "aurzane"
+  ],
+  "fuente_id": "pmc-PMC13793827",
+  "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13793827/",
+  "fecha": "2026-11-26",
+  "auto": true,
+  "verificacion": "La explicación alinea rigurosamente la teoría cognitivo-transaccional del estrés con la evidencia empírica en psicología musical."
+ },
+ {
   "id": "cur-f7d77002eb",
   "tipo": "curiosidad",
   "titulo": "¿Por qué releer los apuntes no es la mejor forma de aprender?",
