@@ -1,6 +1,17 @@
 [
  {
   "fecha": "2026-11-26",
+  "id": "ia-human-behaviour-decoded_20261126",
+  "tipo": "libro",
+  "titulo": "Human Behaviour Decoded",
+  "url": "https://archive.org/details/human-behaviour-decoded_20261126",
+  "motivo": "La IA le dio 2/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/human-behaviour-decoded_20261126/Human-Behaviour-Decoded.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-26",
   "id": "ia-aurzane-bib-dificil-ser-hombre-nuevas-masculinidades-latinoamericanas",
   "tipo": "libro",
   "titulo": "Difícil ser hombre : Nuevas masculinidades latinoamericanas",
@@ -3260,17 +3271,6 @@
   "motivo": "No tiene un PDF libre que se pueda descargar",
   "probados": [
    "200 application/pdf https://archive.org/download/psychology-and-cognitive-sciences-10.17140-pcsoj-3-121/10.17140_pcsoj-3-121.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-18",
-  "id": "ia-psychology-and-cognitive-sciences-10.17140-pcsoj-3-e004",
-  "tipo": "libro",
-  "titulo": "Who are Better at Evaluating Faculty Teaching Peers or Students?",
-  "url": "https://archive.org/details/psychology-and-cognitive-sciences-10.17140-pcsoj-3-e004",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": [
-   "200 application/pdf https://archive.org/download/psychology-and-cognitive-sciences-10.17140-pcsoj-3-e004/10.17140_pcsoj-3-e004.pdf"
   ]
  }
 ]
