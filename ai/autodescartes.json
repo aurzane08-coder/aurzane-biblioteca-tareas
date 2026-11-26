@@ -1,6 +1,39 @@
 [
  {
   "fecha": "2026-11-26",
+  "id": "pmc-PMC13796326",
+  "tipo": "estudio",
+  "titulo": "Efficacy of mindfulness-based interventions and biofeedback for migraine management: a systematic review and meta-analysis of randomized controlled trials",
+  "url": "https://europepmc.org/article/PMC/PMC13796326",
+  "motivo": "La IA le dio 4/10: no encaja en la biblioteca",
+  "probados": [
+   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13796326.1/PMC13796326.1.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-26",
+  "id": "pmc-PMC13797463",
+  "tipo": "estudio",
+  "titulo": "Beyond Pills: Moving Towards the Use of Virtual Bikes and Virtual Reality Headsets to Treat Depression in Elderly People with Cognitive Impairments in Care Home",
+  "url": "https://europepmc.org/article/PMC/PMC13797463",
+  "motivo": "La IA le dio 3/10: no encaja en la biblioteca",
+  "probados": [
+   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13796326.1/PMC13796326.1.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-26",
+  "id": "pmc-PMC13807094",
+  "tipo": "estudio",
+  "titulo": "Excitation-Inhibition Imbalance as a Framework for the rTMS Mechanism of Action in Depression",
+  "url": "https://europepmc.org/article/PMC/PMC13807094",
+  "motivo": "La IA le dio 2/10: no encaja en la biblioteca",
+  "probados": [
+   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13796326.1/PMC13796326.1.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-26",
   "id": "ia-human-behaviour-decoded_20261126",
   "tipo": "libro",
   "titulo": "Human Behaviour Decoded",
@@ -3238,39 +3271,6 @@
   "motivo": "No tiene un PDF libre que se pueda descargar",
   "probados": [
    "200 application/pdf https://archive.org/download/psychology-and-cognitive-sciences-10.17140-pcsoj-3-118/10.17140_pcsoj-3-118.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-18",
-  "id": "ia-psychology-and-cognitive-sciences-10.17140-pcsoj-3-119",
-  "tipo": "libro",
-  "titulo": "Development and Testing a Volunteer Screening Tool for Assessing Community Health Volunteersʼ Motives at Recruitment and Placement in Western Kenya",
-  "url": "https://archive.org/details/psychology-and-cognitive-sciences-10.17140-pcsoj-3-119",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": [
-   "200 application/pdf https://archive.org/download/psychology-and-cognitive-sciences-10.17140-pcsoj-3-119/10.17140_pcsoj-3-119.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-18",
-  "id": "ia-psychology-and-cognitive-sciences-10.17140-pcsoj-3-120",
-  "tipo": "libro",
-  "titulo": "The Effect of Mild Dehydration Induced by Heat and Exercise on Cognitive Function",
-  "url": "https://archive.org/details/psychology-and-cognitive-sciences-10.17140-pcsoj-3-120",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": [
-   "200 application/pdf https://archive.org/download/psychology-and-cognitive-sciences-10.17140-pcsoj-3-120/10.17140_pcsoj-3-120.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-18",
-  "id": "ia-psychology-and-cognitive-sciences-10.17140-pcsoj-3-121",
-  "tipo": "libro",
-  "titulo": "A Psychophysical Approach to Test: “The Bignetti Model”",
-  "url": "https://archive.org/details/psychology-and-cognitive-sciences-10.17140-pcsoj-3-121",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": [
-   "200 application/pdf https://archive.org/download/psychology-and-cognitive-sciences-10.17140-pcsoj-3-121/10.17140_pcsoj-3-121.pdf"
   ]
  }
 ]
