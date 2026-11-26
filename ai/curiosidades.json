@@ -1,5 +1,30 @@
 [
  {
+  "id": "cur-d19709071f",
+  "tipo": "curiosidad",
+  "titulo": "¿Crees que todo el mundo se fija en tus fallos?",
+  "dato": "Se llama efecto foco: sobreestimamos cuánto nos miran. En un estudio, solo el 23% notó una camiseta vergonzosa frente al 50% estimado.",
+  "resumen": "Se llama efecto foco: sobreestimamos cuánto nos miran. En un estudio, solo el 23% notó una camiseta vergonzosa frente al 50% estimado. Ocurre porque somos el centro de nuestra propia experiencia y asumimos que los demás nos prestan esa misma atención. En realidad, la gente está demasiado ocupada pensando en sí misma como para notar tus pequeños despistes.",
+  "fuente": "Gilovich, Medvec y Savitsky (2000)",
+  "hashtags": [
+   "psicologia",
+   "efectofoco",
+   "sesgoscognitivos",
+   "aurzane"
+  ],
+  "fuente_id": "tema-330-0",
+  "url": "https://mind.aurzane.com/",
+  "portada": "",
+  "tema": "curiosidad",
+  "idioma": "es",
+  "autores": "Gilovich, Medvec y Savitsky (2000)",
+  "motivo": "Guion escrito por Gemini a partir de un tema de psicología. Revisa que el dato sea correcto antes de aprobar.",
+  "verificada": "2026-11-26",
+  "fecha": "2026-11-26",
+  "auto": true,
+  "verificacion": "El concepto, los datos del estudio clásico y la explicación psicológica son totalmente precisos y libres de exageración."
+ },
+ {
   "id": "cur-91508d7d29",
   "tipo": "curiosidad",
   "titulo": "¿Por qué se queman los profes de educación física?",
