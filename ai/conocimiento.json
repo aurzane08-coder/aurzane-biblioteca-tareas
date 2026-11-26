@@ -349,5 +349,14 @@
   "fallo": 0,
   "fecha": "2026-11-26",
   "ejemplo": "La automatización «Cifras al día» falla y el reintento no lo arregló."
+ },
+ "automatizacion|la automatización «archivos pesados a internet archive» falla y el reintento no lo arregló.": {
+  "receta": "avisar",
+  "motivo": "El fallo en la automatización de Internet Archive tras un reintento requiere intervención manual.",
+  "explicacion": "La redirección previa en el .htaccess hacia archive.org está bloqueando o corrompiendo la subida de archivos pesados desde GitHub Actions. La causa probable es un conflicto en las reglas de reescritura o credenciales de la API de Internet Archive vencidas. Para arreglarlo a mano, revisa los logs en GitHub Actions, comprueba que las credenciales de Internet Archive sean válidas en los secretos del repositorio y ajusta las reglas del archivo .htaccess en SiteGround para permitir el tráfico de la automatización.",
+  "ok": 0,
+  "fallo": 0,
+  "fecha": "2026-11-26",
+  "ejemplo": "La automatización «Archivos pesados a Internet Archive» falla y el reintento no lo arregló."
  }
 }
