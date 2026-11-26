@@ -1,6 +1,17 @@
 [
  {
   "fecha": "2026-11-26",
+  "id": "ia-full-universal",
+  "tipo": "libro",
+  "titulo": "FULL UNIVERSAL: The Cliché Collector's Notebook: Popular Clichés and Original Lines, Graded by Their Keeper",
+  "url": "https://archive.org/details/full-universal",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 49 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/full-universal/FULL_UNIVERSAL.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-26",
   "id": "pmc-PMC13797482",
   "tipo": "estudio",
   "titulo": "Proteomic Signatures of Vulnerability Across Late-Life Depression, Frailty, and Neurodegeneration",
@@ -3261,16 +3272,5 @@
   "url": "https://archive.org/details/psychology-and-cognitive-sciences-10.17140-pcsoj-3-125",
   "motivo": "No tiene un PDF libre que se pueda descargar",
   "probados": []
- },
- {
-  "fecha": "2026-11-18",
-  "id": "ia-psychology-and-cognitive-sciences-10.17140-pcsoj-3-e005",
-  "tipo": "libro",
-  "titulo": "Expanding the Realms of Consciousness",
-  "url": "https://archive.org/details/psychology-and-cognitive-sciences-10.17140-pcsoj-3-e005",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": [
-   "200 application/pdf https://archive.org/download/psychology-and-cognitive-sciences-10.17140-pcsoj-3-e005/10.17140_pcsoj-3-e005.pdf"
-  ]
  }
 ]
