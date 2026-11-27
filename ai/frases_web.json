@@ -5958,5 +5958,17 @@
   "recogida": "2026-11-24",
   "ok": true,
   "publicada": "2026-11-24"
+ },
+ {
+  "id": "fw-065c8094c3",
+  "texto": "Es preferible el bien de muchos a la opulencia de pocos.",
+  "autor": "José Martí",
+  "vida": "1853-1895",
+  "descripcion": "Político y escritor cubano.",
+  "tema": "igualdad",
+  "fuente": "Proverbia.net",
+  "url_fuente": "https://proverbia.net/frase-del-dia",
+  "recogida": "2026-11-27",
+  "ok": true
  }
 ]
