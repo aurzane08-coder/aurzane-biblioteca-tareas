@@ -873,6 +873,24 @@
   "porque": "Este libro es para cualquier persona que quiera disfrutar de la cocina casera y tradicional con recetas accesibles y explicadas con cercanía. Aporta el estilo inconfundible de Karlos Arguiñano para hacer fáciles platos sabrosos del día a día."
  },
  {
+  "id": "el-elemento-lou-aronica",
+  "titulo": "El elemento",
+  "autor": "Lou Aronica",
+  "temas": [
+   "vocacional",
+   "autoestima"
+  ],
+  "origen": "crecer",
+  "fecha": "2026-11-27",
+  "isbn": "9788415431213",
+  "portada": "https://covers.openlibrary.org/b/id/14038647-M.jpg?default=false",
+  "anio": "2012",
+  "editorial": "CONECTA",
+  "idioma": "",
+  "resumen": "",
+  "porque": "Este libro es ideal para quienes buscan conectar con su auténtica vocación y creatividad interior. Aporta una guía inspiradora basada en historias reales para descubrir aquello que nos apasiona y nos hace sentir plenos."
+ },
+ {
   "id": "organizate-con-eficacia-david-allen",
   "titulo": "Organízate con eficacia",
   "autor": "David Allen",
