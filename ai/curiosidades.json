@@ -1,5 +1,30 @@
 [
  {
+  "id": "cur-d2a35612f7",
+  "tipo": "curiosidad",
+  "titulo": "¿Por qué te enfadas más cuando no has dormido?",
+  "dato": "Pasar una noche sin dormir aumenta la reactividad de la amígdala cerebral un 60 % ante estímulos negativos.",
+  "resumen": "Pasar una noche sin dormir aumenta la reactividad de la amígdala cerebral un 60 % ante estímulos negativos. Sin el descanso adecuado, la corteza prefrontal pierde control sobre la amígdala. Como consecuencia, el cerebro pierde su freno regulador y reacciona de forma mucho más intensa y visceral ante el estrés.",
+  "fuente": "Yoo et al., 2007",
+  "hashtags": [
+   "psicologia",
+   "cerebro",
+   "sueño",
+   "neurociencia"
+  ],
+  "fuente_id": "tema-331-0",
+  "url": "https://mind.aurzane.com/",
+  "portada": "",
+  "tema": "curiosidad",
+  "idioma": "es",
+  "autores": "Yoo et al., 2007",
+  "motivo": "Guion escrito por Gemini a partir de un tema de psicología. Revisa que el dato sea correcto antes de aprobar.",
+  "verificada": "2026-11-27",
+  "fecha": "2026-11-27",
+  "auto": true,
+  "verificacion": "La afirmación está respaldada directamente por el estudio neuroimagen de Yoo et al. (2007) sobre privación de sueño y reactividad amigdalina."
+ },
+ {
   "id": "cur-c26a647ab0",
   "tipo": "curiosidad",
   "titulo": "¿El embarazo afecta a toda la familia?",
