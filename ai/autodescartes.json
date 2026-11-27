@@ -1,6 +1,50 @@
 [
  {
   "fecha": "2026-11-27",
+  "id": "oa-W7221047192",
+  "tipo": "libro",
+  "titulo": "Statistics in Psychological Science",
+  "url": "https://doi.org/10.25885/4d0d-q036",
+  "motivo": "La IA le dio 2/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-cognicion-neurociencia-aprendizaje-adolescente-educacion-sup/cognicio"
+  ]
+ },
+ {
+  "fecha": "2026-11-27",
+  "id": "ia-aurzane-bib-aprendizaje-cooperativo-2",
+  "tipo": "libro",
+  "titulo": "Aprendizaje cooperativo",
+  "url": "https://archive.org/details/aurzane-bib-aprendizaje-cooperativo-2",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 29 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-aprendizaje-cooperativo-2/aprendizaje-cooperativo-2.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-27",
+  "id": "ia-aurzane-bib-cual-salud-mental-hablamos-tiempos-covid",
+  "tipo": "libro",
+  "titulo": "¿De cuál salud mental hablamos en tiempos del Covid-19 y cómo promoverla?",
+  "url": "https://archive.org/details/aurzane-bib-cual-salud-mental-hablamos-tiempos-covid",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 16 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-cual-salud-mental-hablamos-tiempos-covid/cual-salud-mental-hablamos-t"
+  ]
+ },
+ {
+  "fecha": "2026-11-27",
+  "id": "ia-aurzane-bib-escala-calidad-vida-familiar-manual-aplicacion",
+  "tipo": "libro",
+  "titulo": "Escala de calidad de vida familiar: manual de aplicación",
+  "url": "https://archive.org/details/aurzane-bib-escala-calidad-vida-familiar-manual-aplicacion",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 49 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-escala-calidad-vida-familiar-manual-aplicacion/escala-calidad-vida-fa"
+  ]
+ },
+ {
+  "fecha": "2026-11-27",
   "id": "ia-aurzane-bib-desarrollo-positivo-adolescente-activos-que-lo",
   "tipo": "libro",
   "titulo": "Desarrollo positivo adolescente y los activos que lo promueven: Un estudio en centros docentes andaluces",
@@ -3231,48 +3275,6 @@
   "motivo": "No tiene un PDF libre que se pueda descargar",
   "probados": [
    "200 application/pdf https://archive.org/download/psychology-and-cognitive-sciences-10.17140-pcsoj-3-128/10.17140_pcsoj-3-128.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-18",
-  "id": "ia-psychology-and-cognitive-sciences-10.17140-pcsoj-3-e006",
-  "tipo": "libro",
-  "titulo": "Moral Reasoning in Driving Behavior",
-  "url": "https://archive.org/details/psychology-and-cognitive-sciences-10.17140-pcsoj-3-e006",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": [
-   "200 application/pdf https://archive.org/download/psychology-and-cognitive-sciences-10.17140-pcsoj-3-e006/10.17140_pcsoj-3-e006.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-18",
-  "id": "ia-psychology-and-cognitive-sciences-10.17140-pcsoj-3-e007",
-  "tipo": "libro",
-  "titulo": "Developmental Interpersonal Neurobiology, Attachment Style and Mindsight",
-  "url": "https://archive.org/details/psychology-and-cognitive-sciences-10.17140-pcsoj-3-e007",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": []
- },
- {
-  "fecha": "2026-11-18",
-  "id": "ia-psychology-and-cognitive-sciences-10.17140-pcsoj-3-122",
-  "tipo": "libro",
-  "titulo": "Coping With Trauma Among Children in South of Gaza Strip",
-  "url": "https://archive.org/details/psychology-and-cognitive-sciences-10.17140-pcsoj-3-122",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": [
-   "200 application/pdf https://archive.org/download/psychology-and-cognitive-sciences-10.17140-pcsoj-3-122/10.17140_pcsoj-3-122.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-18",
-  "id": "ia-psychology-and-cognitive-sciences-10.17140-pcsoj-3-123",
-  "tipo": "libro",
-  "titulo": "Binary and Ternary Analogy by Children: Testing the Role of Insufficiently Developed Working Memory Capacity (WMC) Executive Functions",
-  "url": "https://archive.org/details/psychology-and-cognitive-sciences-10.17140-pcsoj-3-123",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": [
-   "200 application/pdf https://archive.org/download/psychology-and-cognitive-sciences-10.17140-pcsoj-3-123/10.17140_pcsoj-3-123.pdf"
   ]
  }
 ]

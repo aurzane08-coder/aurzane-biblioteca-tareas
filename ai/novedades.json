@@ -1,6 +1,31 @@
 [
  {
   "fecha": "2026-11-27",
+  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-agentes-cambio-educacion-emocional-educadoras-tecnicos/",
+  "titulo": "Libro abierto: Los agentes del cambio: la educación emocional para educadoras y técnicos en educación parvularia"
+ },
+ {
+  "fecha": "2026-11-27",
+  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-cognicion-neurociencia-aprendizaje-adolescente-educacion-sup/",
+  "titulo": "Libro abierto: Cognición, neurociencia y aprendizaje : el adolescente en la educación superior"
+ },
+ {
+  "fecha": "2026-11-27",
+  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-familias-riesgo-que-reciben-intervenciones-preservacion/",
+  "titulo": "Libro abierto: Familias en riesgo que reciben intervenciones de preservación familiar: Perfil psicosocial de una muestra de l"
+ },
+ {
+  "fecha": "2026-11-27",
+  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-relaciones-sanas-guia-dirigida-familias-prevencion/",
+  "titulo": "Libro abierto: Relaciones sanas: Guía dirigida a familias para la prevención de la violencia en las relaciones de pareja jove"
+ },
+ {
+  "fecha": "2026-11-27",
+  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-adolescentes-siglo-xxi/",
+  "titulo": "Libro abierto: Los adolescentes en el siglo XXI. Un enfoque psicosocial"
+ },
+ {
+  "fecha": "2026-11-27",
   "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-salud-mental-colectiva-1-participacion-inclusion/",
   "titulo": "Libro abierto: Salud mental y colectiva 1: Participación, inclusión y ciudadanía, septiembre 2015",
   "img": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-salud-mental-colectiva-1-participacion-inclusion.jpg",
@@ -918,45 +943,5 @@
   "img": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-dificultades-aprendizaje.jpg",
   "desc": "Dificultades en lectura, escritura y matemáticas: cómo se detectan y qué ayudas funcionan en el aula. Copia de la Biblioteca AURZANE (aurzane.com/biblioteca).",
   "titulo_completo": "Dificultades de aprendizaje de los contenidos curriculares"
- },
- {
-  "fecha": "2026-11-23",
-  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-manual-practico-patologia-lenguaje-evaluacion-e/",
-  "titulo": "Libro abierto: Manual práctico de patología del lenguaje. Evaluación e intervención en adultos y niños",
-  "img": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-manual-practico-patologia-lenguaje-evaluacion-e.jpg",
-  "desc": "El lenguaje es un aspecto esencial para el desarrollo humano. Este libro es un manual de utilidad clínica tanto para la actualización de aquellos profesionales que se dedican a la patología del lengua",
-  "titulo_completo": "Manual práctico de patología del lenguaje. Evaluación e intervención en adultos y niños"
- },
- {
-  "fecha": "2026-11-23",
-  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-memoria-de-los-testigos/",
-  "titulo": "Libro abierto: La memoria de los testigos",
-  "img": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-memoria-de-los-testigos.jpg",
-  "desc": "Por qué recordamos mal aunque estemos seguros: cómo se forma, se distorsiona y se recupera la memoria, explicado a partir de la psicología del testimonio. Copia de la Biblioteca AURZANE (aurzane.com/b",
-  "titulo_completo": "La memoria de los testigos"
- },
- {
-  "fecha": "2026-11-23",
-  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-psicologia-del-pensamiento/",
-  "titulo": "Libro abierto: Psicología del pensamiento",
-  "img": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-psicologia-del-pensamiento.jpg",
-  "desc": "Cómo razonamos, decidimos y resolvemos problemas, y por qué nos equivocamos. Incluye heurísticas, sesgos, razonamiento deductivo e inductivo y creatividad. Copia de la Biblioteca AURZANE (aurzane.com/",
-  "titulo_completo": "Psicología del pensamiento"
- },
- {
-  "fecha": "2026-11-23",
-  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-conducta-suicida-manual-prevencion-personas-mayores/",
-  "titulo": "Libro abierto: Conducta suicida. Manual de prevención en personas mayores que viven en residencias",
-  "img": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-conducta-suicida-manual-prevencion-personas-mayores.jpg",
-  "desc": "La conducta suicida en las personas mayores constituye un importante problema de salud pública que requiere estrategias específicas de prevención, detección y actuación. Esta necesidad adquiere especi",
-  "titulo_completo": "Conducta suicida. Manual de prevención en personas mayores que viven en residencias"
- },
- {
-  "fecha": "2026-11-23",
-  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-psicologia-deporte-adaptado/",
-  "titulo": "Libro abierto: Psicología aplicada al deporte adaptado",
-  "img": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-psicologia-deporte-adaptado.jpg",
-  "desc": "Preparación psicológica, motivación y rendimiento en el deporte, con especial atención a deportistas con discapacidad. Copia de la Biblioteca AURZANE (aurzane.com/biblioteca).",
-  "titulo_completo": "Psicología aplicada al deporte adaptado"
  }
 ]

@@ -120,7 +120,7 @@
   13
  ],
  "ed:Internet Archive": [
-  34,
+  35,
   174
  ],
  "ed:": [
@@ -144,7 +144,7 @@
   0
  ],
  "tipo:libro": [
-  210,
+  215,
   9
  ],
  "Gambling Behavior and Treatments": [
@@ -312,7 +312,7 @@
   0
  ],
  "archive:psicologia": [
-  178,
+  183,
   0
  ],
  "ed:The Open University": [
@@ -616,7 +616,7 @@
   6
  ],
  "ed:Editorial UOC": [
-  40,
+  41,
   10
  ],
  "ed:Universidad Andina Simón Bolívar, Sede Ecuador; Corporación Editora Nacional": [
@@ -632,7 +632,7 @@
   0
  ],
  "ed:Pontificia Universidad Católica del Perú. Fondo Editorial": [
-  4,
+  5,
   7
  ],
  "ed:Fondo Editorial Universidad Católica Luis Amigó": [
@@ -713,11 +713,11 @@
  ],
  "ed:Universidad de Salamanca (España). Instituto Universitario de Integración en la Comunidad": [
   5,
-  3
+  4
  ],
  "ed:Dykinson": [
   1,
-  5
+  6
  ],
  "ed:UOC": [
   4,
@@ -1092,6 +1092,22 @@
   1
  ],
  "ed:Proteomes": [
+  0,
+  1
+ ],
+ "ed:Universidad de Antioquia. Fondo Editorial FSCH": [
+  0,
+  1
+ ],
+ "ed:Universidad Autónoma de Chile": [
+  1,
+  0
+ ],
+ "ed:Diputación de Huelva, Servicio de Publicaciones": [
+  1,
+  0
+ ],
+ "ed:James Madison University": [
   0,
   1
  ]
