@@ -1,6 +1,116 @@
 [
  {
   "fecha": "2026-11-27",
+  "id": "pmc-PMC13805667",
+  "tipo": "estudio",
+  "titulo": "Mindfulness Interventions and Psychological Well-Being in Women Experiencing Infertility: An Integrative Review",
+  "url": "https://europepmc.org/article/PMC/PMC13805667",
+  "motivo": "La IA le dio 4/10: no encaja en la biblioteca",
+  "probados": [
+   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13805667.1/PMC13805667.1.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-27",
+  "id": "ia-psychology-and-cognitive-sciences-10.17140-pcsoj-2-e003",
+  "tipo": "libro",
+  "titulo": "Teaching Statistics: Am I the Lone Dinosaur?",
+  "url": "https://archive.org/details/psychology-and-cognitive-sciences-10.17140-pcsoj-2-e003",
+  "motivo": "No tiene un PDF libre que se pueda descargar",
+  "probados": [
+   "200 application/pdf https://archive.org/download/psychology-and-cognitive-sciences-10.17140-pcsoj-2-e003/10.17140_pcsoj-2-e003.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-27",
+  "id": "ia-psychology-and-cognitive-sciences-10.17140-pcsoj-1-105",
+  "tipo": "libro",
+  "titulo": "An Integrated Model of Emotions, Attitudes, and Intentions Associated with Undergoing Autism Genetic Testing",
+  "url": "https://archive.org/details/psychology-and-cognitive-sciences-10.17140-pcsoj-1-105",
+  "motivo": "No tiene un PDF libre que se pueda descargar",
+  "probados": [
+   "200 application/pdf https://archive.org/download/psychology-and-cognitive-sciences-10.17140-pcsoj-1-105/10.17140_pcsoj-1-105.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-27",
+  "id": "ia-psychology-and-cognitive-sciences-10.17140-pcsoj-1-106",
+  "tipo": "libro",
+  "titulo": "Evidence-Based Social Work Interventions to Improve Client Attendance in Rural Mental Health: An Overview of Literature",
+  "url": "https://archive.org/details/psychology-and-cognitive-sciences-10.17140-pcsoj-1-106",
+  "motivo": "No tiene un PDF libre que se pueda descargar",
+  "probados": [
+   "200 application/pdf https://archive.org/download/psychology-and-cognitive-sciences-10.17140-pcsoj-1-106/10.17140_pcsoj-1-106.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-27",
+  "id": "ia-psychology-and-cognitive-sciences-10.17140-pcsoj-1-108",
+  "tipo": "libro",
+  "titulo": "How to Develop a Fair and Valid Comprehensive Faculty Evaluation System",
+  "url": "https://archive.org/details/psychology-and-cognitive-sciences-10.17140-pcsoj-1-108",
+  "motivo": "No tiene un PDF libre que se pueda descargar",
+  "probados": [
+   "200 application/pdf https://archive.org/download/psychology-and-cognitive-sciences-10.17140-pcsoj-1-108/10.17140_pcsoj-1-108.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-27",
+  "id": "ia-psychology-and-cognitive-sciences-10.17140-pcsoj-1-e002",
+  "tipo": "libro",
+  "titulo": "The Evolution of Psychology",
+  "url": "https://archive.org/details/psychology-and-cognitive-sciences-10.17140-pcsoj-1-e002",
+  "motivo": "No tiene un PDF libre que se pueda descargar",
+  "probados": [
+   "200 application/pdf https://archive.org/download/psychology-and-cognitive-sciences-10.17140-pcsoj-1-e002/10.17140_pcsoj-1-e002.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-27",
+  "id": "ia-psychology-and-cognitive-sciences-10.17140-pcsoj-1-101",
+  "tipo": "libro",
+  "titulo": "Induced Boredom Constrains Mindfulness: An Online Demonstration",
+  "url": "https://archive.org/details/psychology-and-cognitive-sciences-10.17140-pcsoj-1-101",
+  "motivo": "No tiene un PDF libre que se pueda descargar",
+  "probados": [
+   "200 application/pdf https://archive.org/download/psychology-and-cognitive-sciences-10.17140-pcsoj-1-101/10.17140_pcsoj-1-101.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-27",
+  "id": "ia-psychology-and-cognitive-sciences-10.17140-pcsoj-1-103",
+  "tipo": "libro",
+  "titulo": "From Brain to Mind: A Plain Route from Neurobiology to Psychology",
+  "url": "https://archive.org/details/psychology-and-cognitive-sciences-10.17140-pcsoj-1-103",
+  "motivo": "No tiene un PDF libre que se pueda descargar",
+  "probados": [
+   "200 application/pdf https://archive.org/download/psychology-and-cognitive-sciences-10.17140-pcsoj-1-103/10.17140_pcsoj-1-103.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-27",
+  "id": "ia-psychology-and-cognitive-sciences-10.17140-pcsoj-1-104",
+  "tipo": "libro",
+  "titulo": "COMPCOR: A Computer Program for Comparing Correlations Using Confidence Intervals",
+  "url": "https://archive.org/details/psychology-and-cognitive-sciences-10.17140-pcsoj-1-104",
+  "motivo": "No tiene un PDF libre que se pueda descargar",
+  "probados": [
+   "200 application/pdf https://archive.org/download/psychology-and-cognitive-sciences-10.17140-pcsoj-1-104/10.17140_pcsoj-1-104.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-27",
+  "id": "ia-psychology-and-cognitive-sciences-10.17140-pcsoj-1-e001",
+  "tipo": "libro",
+  "titulo": "Advancing Science, Clinical Care and Education: Shall we Update Engel’s Biopsychosocial Model to a Bio-Psycho-Socio-Cultural Model?",
+  "url": "https://archive.org/details/psychology-and-cognitive-sciences-10.17140-pcsoj-1-e001",
+  "motivo": "No tiene un PDF libre que se pueda descargar",
+  "probados": [
+   "200 application/pdf https://archive.org/download/psychology-and-cognitive-sciences-10.17140-pcsoj-1-e001/10.17140_pcsoj-1-e001.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-27",
   "id": "pmc-PMC13804866",
   "tipo": "estudio",
   "titulo": "From Rehydration to Resilience: Mechanisms of Drought Stress Memory in Wheat",
@@ -3165,116 +3275,6 @@
   "motivo": "No tiene un PDF libre que se pueda descargar",
   "probados": [
    "200 application/pdf https://archive.org/download/psychology-and-cognitive-sciences-10.17140-pcsoj-4-e011/10.17140_pcsoj-4-e011.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-18",
-  "id": "ia-psychology-and-cognitive-sciences-10.17140-pcsoj-3-129",
-  "tipo": "libro",
-  "titulo": "Virtual Acute Stress Reaction in a Treatment Team Following a Family Meeting of “Potentates”: Measures of Prevention",
-  "url": "https://archive.org/details/psychology-and-cognitive-sciences-10.17140-pcsoj-3-129",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": [
-   "200 application/pdf https://archive.org/download/psychology-and-cognitive-sciences-10.17140-pcsoj-3-129/10.17140_pcsoj-3-129.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-18",
-  "id": "ia-psychology-and-cognitive-sciences-10.17140-pcsoj-3-130",
-  "tipo": "libro",
-  "titulo": "How Social Status Influences “Affect Language” in Tweets",
-  "url": "https://archive.org/details/psychology-and-cognitive-sciences-10.17140-pcsoj-3-130",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": [
-   "200 application/pdf https://archive.org/download/psychology-and-cognitive-sciences-10.17140-pcsoj-3-130/10.17140_pcsoj-3-130.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-18",
-  "id": "ia-psychology-and-cognitive-sciences-10.17140-pcsoj-3-131",
-  "tipo": "libro",
-  "titulo": "The Effect of Mobile Telephone Electromagnetic Field on Human Brain Bioelectric Activity and Information Processing Speed",
-  "url": "https://archive.org/details/psychology-and-cognitive-sciences-10.17140-pcsoj-3-131",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": [
-   "200 application/pdf https://archive.org/download/psychology-and-cognitive-sciences-10.17140-pcsoj-3-131/10.17140_pcsoj-3-131.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-18",
-  "id": "ia-psychology-and-cognitive-sciences-10.17140-pcsoj-3-132",
-  "tipo": "libro",
-  "titulo": "Psychological Pleasure in Reading and Visual Cognition Under Colour Luminance: A Psycholinguistic Approach",
-  "url": "https://archive.org/details/psychology-and-cognitive-sciences-10.17140-pcsoj-3-132",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": [
-   "200 application/pdf https://archive.org/download/psychology-and-cognitive-sciences-10.17140-pcsoj-3-132/10.17140_pcsoj-3-132.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-18",
-  "id": "ia-psychology-and-cognitive-sciences-10.17140-pcsoj-3-134",
-  "tipo": "libro",
-  "titulo": "Volunteers Motives in Relation to their Task Preference in Health Service Delivery: A Case of West Kenya",
-  "url": "https://archive.org/details/psychology-and-cognitive-sciences-10.17140-pcsoj-3-134",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": [
-   "200 application/pdf https://archive.org/download/psychology-and-cognitive-sciences-10.17140-pcsoj-3-134/10.17140_pcsoj-3-134.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-18",
-  "id": "ia-psychology-and-cognitive-sciences-10.17140-pcsoj-3-133",
-  "tipo": "libro",
-  "titulo": "Which is Necessary for Cognition, “Free Will” or “Free Will Illusion”?",
-  "url": "https://archive.org/details/psychology-and-cognitive-sciences-10.17140-pcsoj-3-133",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": [
-   "200 application/pdf https://archive.org/download/psychology-and-cognitive-sciences-10.17140-pcsoj-3-133/10.17140_pcsoj-3-133.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-18",
-  "id": "ia-psychology-and-cognitive-sciences-10.17140-pcsoj-3-135",
-  "tipo": "libro",
-  "titulo": "Epistemic Curiosity, Conceptual Ambiguity and Cognitive Conflict: Do these Implicate Students Exploratory Behavior?",
-  "url": "https://archive.org/details/psychology-and-cognitive-sciences-10.17140-pcsoj-3-135",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": [
-   "200 application/pdf https://archive.org/download/psychology-and-cognitive-sciences-10.17140-pcsoj-3-135/10.17140_pcsoj-3-135.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-18",
-  "id": "ia-el-vinculo-elegido-y-el-sentido-del-amor-1",
-  "tipo": "libro",
-  "titulo": "El vinculo elegido y el sentido del amor",
-  "url": "https://archive.org/details/el-vinculo-elegido-y-el-sentido-del-amor-1",
-  "motivo": "Dice ser un libro pero el PDF solo tiene 7 páginas (es un capítulo, artículo o resumen)",
-  "probados": [
-   "200 application/pdf https://archive.org/download/el-vinculo-elegido-y-el-sentido-del-amor-1/El_vinculo_elegido_y_el_sentido_del_am"
-  ]
- },
- {
-  "fecha": "2026-11-18",
-  "id": "ia-psychology-and-cognitive-sciences-10.17140-pcsoj-3-e009",
-  "tipo": "libro",
-  "titulo": "Deprivation or Interest-Type Curiosity and Exploratory Behaviour in Humans: Are they Inherently Cognitive and Implicate Curiosity-Induced Teaching?",
-  "url": "https://archive.org/details/psychology-and-cognitive-sciences-10.17140-pcsoj-3-e009",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": [
-   "200 application/pdf https://archive.org/download/psychology-and-cognitive-sciences-10.17140-pcsoj-3-e009/10.17140_pcsoj-3-e009.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-18",
-  "id": "ia-psychology-and-cognitive-sciences-10.17140-pcsoj-3-136",
-  "tipo": "libro",
-  "titulo": "Anxiety and Depression among Pregnant Women in the Gaza Strip",
-  "url": "https://archive.org/details/psychology-and-cognitive-sciences-10.17140-pcsoj-3-136",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": [
-   "200 application/pdf https://archive.org/download/psychology-and-cognitive-sciences-10.17140-pcsoj-3-136/10.17140_pcsoj-3-136.pdf"
   ]
  }
 ]

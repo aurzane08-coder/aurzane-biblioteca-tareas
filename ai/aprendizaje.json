@@ -485,7 +485,7 @@
  ],
  "ed:Openventio Publishers": [
   0,
-  61
+  70
  ],
  "ed:Frontiers in pediatrics": [
   1,
@@ -1134,5 +1134,9 @@
  "ed:Biomedicines": [
   1,
   0
+ ],
+ "ed:Medicina (Kaunas, Lithuania)": [
+  0,
+  1
  ]
 }
