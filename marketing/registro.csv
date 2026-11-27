@@ -995,3 +995,10 @@
 2026-11-27,4,facebook,test-sueno,error,HTTP Error 404: Not Found
 2026-11-27,4,youtube,frase-30698848,ok,https://youtu.be/BDcrjh2o_UM
 2026-11-27,4,telegram,calc-sueldo,error,HTTP Error 404: Not Found
+2026-11-27,5,facebook,frase-72421f68,error,HTTP Error 404: Not Found
+2026-11-27,7,tiktok,frase-63ef9798,error,HTTP Error 404: Not Found
+2026-11-27,9,tiktok,frase-b41a2122,error,HTTP Error 404: Not Found
+2026-11-27,9,youtube,frase-04fb7522,error,HTTP Error 404: Not Found
+2026-11-27,4,instagram,calc-calorias,error,HTTP Error 404: Not Found
+2026-11-27,4,facebook,test-sueno,error,HTTP Error 404: Not Found
+2026-11-27,4,telegram,calc-sueldo,error,HTTP Error 404: Not Found
