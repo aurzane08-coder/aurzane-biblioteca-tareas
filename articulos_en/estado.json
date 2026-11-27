@@ -110,5 +110,29 @@
   "huella": "8b825bdb4512ca1d",
   "fecha": "2026-11-26",
   "nota": 10
+ },
+ "naturaleza-asombro-bienestar-subjetivo": {
+  "titulo": "Awe in nature, the ingredient that explains why going outside is good for you",
+  "resumen": "A study involving 301 students found that the positive effect of spending time in nature on well-being is largely explained by two factors: feeling connected to it, and experiencing awe at what you observe.",
+  "categoria": "Adventure",
+  "huella": "2198bf21abb42ce6",
+  "fecha": "2026-11-27",
+  "nota": 10
+ },
+ "proposito-vida-mecanismos-cognitivos-afectivos": {
+  "titulo": "What happens in the mind of someone with a clear purpose",
+  "resumen": "A review of 99 studies identified 33 distinct cognitive and emotional mechanisms linked to life purpose, showing that \"having a purpose\" is not a single ingredient but a network of mental processes.",
+  "categoria": "Purpose",
+  "huella": "5703afd47b0a817b",
+  "fecha": "2026-11-27",
+  "nota": 10
+ },
+ "regla-70-20-10-evidencia-real": {
+  "titulo": "The 70-20-10 rule: why the most cited learning model in business lacks the evidence attributed to it",
+  "resumen": "An analysis published in Human Resource Development Review thoroughly examined the origin of the popular rule that \"70% of learning occurs informally on the job\" and found that its empirical backing is much weaker than its widespread use in the corporate world suggests.",
+  "categoria": "Informal learning",
+  "huella": "aef3a422c81364e8",
+  "fecha": "2026-11-27",
+  "nota": 10
  }
 }
