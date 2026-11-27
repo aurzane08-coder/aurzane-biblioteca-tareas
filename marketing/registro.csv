@@ -913,3 +913,8 @@
 2026-11-26,4,facebook,frase-b2b82371,ok,1461886328845293
 2026-11-26,4,youtube,frase-62d0f7b0,ok,https://youtu.be/zhl5tbQeLpM
 2026-11-26,4,telegram,frase-1d3f1613,ok,166
+2026-11-27,1,telegram,calc-reforma,error,400 {"ok":false "error_code":400 "description":"Bad Request: IMAGE_PROCESS_FAILED"}
+2026-11-27,1,bluesky,test-habitos,ok,at://did:plc:6ovoiudj7dkxgrzd2zkyn77y/app.bsky.feed.post/3n3btu3rhhi23
+2026-11-27,1,mastodon,calc-embarazo,error,422 {"error":"Validation failed: File content type is invalid  File is invalid"}
+2026-11-27,1,instagram,calc-hipoteca,ok,18033732647701676
+2026-11-27,1,facebook,ovp,ok,1411384405395087_122112797355526868
