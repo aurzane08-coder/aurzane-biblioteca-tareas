@@ -918,3 +918,5 @@
 2026-11-27,1,mastodon,calc-embarazo,error,422 {"error":"Validation failed: File content type is invalid  File is invalid"}
 2026-11-27,1,instagram,calc-hipoteca,ok,18033732647701676
 2026-11-27,1,facebook,ovp,ok,1411384405395087_122112797355526868
+2026-11-27,1,telegram,calc-reforma,ok,168
+2026-11-27,1,mastodon,calc-embarazo,ok,https://mastodon.social/@auzane/117687866660031348
