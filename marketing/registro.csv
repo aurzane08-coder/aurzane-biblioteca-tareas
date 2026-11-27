@@ -927,3 +927,12 @@
 2026-11-27,5,facebook,frase-72421f68,error,HTTP Error 404: Not Found
 2026-11-27,5,youtube,frase-876aa3df,error,HTTP Error 404: Not Found
 2026-11-27,5,telegram,frase-b447890e,error,HTTP Error 404: Not Found
+2026-11-27,5,facebook,frase-72421f68,error,HTTP Error 404: Not Found
+2026-11-27,5,youtube,frase-876aa3df,error,HTTP Error 404: Not Found
+2026-11-27,5,telegram,frase-b447890e,error,HTTP Error 404: Not Found
+2026-11-27,3,telegram,frase-5f349021,ok,169
+2026-11-27,3,bluesky,frase-30698848,ok,at://did:plc:6ovoiudj7dkxgrzd2zkyn77y/app.bsky.feed.post/3n3cbcdtbss23
+2026-11-27,3,mastodon,frase-5b980a2a,ok,https://mastodon.social/@auzane/117688576676505924
+2026-11-27,3,instagram,frase-81d54602,error,400 {"error":{"message":"Only photo or video can be accepted as media type." "code":9004 "type":"OAuthException" "error_subcode":2207052 "is_transient
+2026-11-27,3,facebook,frase-23d99c1d,ok,1411384405395087_122112843657526868
+2026-11-27,3,pinterest,frase-b424a195,feed,
