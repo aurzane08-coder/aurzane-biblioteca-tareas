@@ -1,5 +1,43 @@
 [
  {
+  "id": "cur-c26a647ab0",
+  "tipo": "curiosidad",
+  "titulo": "¿El embarazo afecta a toda la familia?",
+  "dato": "Una revisión científica analiza cómo se apoya la resiliencia en familias durante la gestación.",
+  "resumen": "Una revisión científica analiza cómo se apoya la resiliencia en familias durante la gestación. El embarazo impacta en todo el sistema familiar. Por eso, algunas intervenciones psicológicas se centran tanto en las capacidades de la madre como en los procesos familiares conjuntos.",
+  "fuente": "International Journal of Women's Health",
+  "hashtags": [
+   "psicologia",
+   "embarazo",
+   "familia",
+   "aurzane"
+  ],
+  "fuente_id": "pmc-PMC13770370",
+  "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13770370/",
+  "fecha": "2026-11-27",
+  "auto": true,
+  "verificacion": "El dato refleja con precisión y sin exageraciones el enfoque sistémico de una revisión científica publicada en dicha revista."
+ },
+ {
+  "id": "cur-c570b0a604",
+  "tipo": "curiosidad",
+  "titulo": "¿Funciona la realidad virtual contra la ansiedad?",
+  "dato": "La terapia de exposición con realidad virtual ayuda a tratar trastornos de ansiedad y trauma.",
+  "resumen": "La terapia de exposición con realidad virtual ayuda a tratar trastornos de ansiedad y trauma. Este estudio analiza cómo la tecnología permite recrear situaciones temidas en un entorno controlado. Así, el cerebro puede procesar el miedo de forma gradual sin riesgos reales.",
+  "fuente": "Frontiers in Digital Health",
+  "hashtags": [
+   "psicologia",
+   "ansiedad",
+   "saludmental",
+   "aurzane"
+  ],
+  "fuente_id": "pmc-PMC13793872",
+  "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13793872/",
+  "fecha": "2026-11-27",
+  "auto": true,
+  "verificacion": "La afirmación está científicamente validada, es verificable y describe con precisión y sin exageraciones la Terapia de Exposición con Realidad Virtual (TERV)."
+ },
+ {
   "id": "cur-d19709071f",
   "tipo": "curiosidad",
   "titulo": "¿Crees que todo el mundo se fija en tus fallos?",

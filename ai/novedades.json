@@ -1,5 +1,15 @@
 [
  {
+  "fecha": "2026-11-27",
+  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-salud-mental-colectiva-1-participacion-inclusion/",
+  "titulo": "Libro abierto: Salud mental y colectiva 1: Participación, inclusión y ciudadanía, septiembre 2015"
+ },
+ {
+  "fecha": "2026-11-27",
+  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-guia-cuidado-democratico-colectivo-salud-mental/",
+  "titulo": "Libro abierto: Guía para un cuidado democrático y colectivo. Salud mental y redes de apoyo"
+ },
+ {
   "fecha": "2026-11-26",
   "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-cuaderno-casos-psicologia-educacion-grado-psicologia/",
   "titulo": "Libro abierto: Cuaderno de casos: Psicología de la Educación, grado en Psicología, Universidad Autónoma de Madrid",
@@ -942,21 +952,5 @@
   "img": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-psicologia-deporte-adaptado.jpg",
   "desc": "Preparación psicológica, motivación y rendimiento en el deporte, con especial atención a deportistas con discapacidad. Copia de la Biblioteca AURZANE (aurzane.com/biblioteca).",
   "titulo_completo": "Psicología aplicada al deporte adaptado"
- },
- {
-  "fecha": "2026-11-23",
-  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-proceso-emocional-tras-diagnostico-vih/",
-  "titulo": "Libro abierto: El proceso emocional tras el diagnóstico por VIH",
-  "img": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-proceso-emocional-tras-diagnostico-vih.jpg",
-  "desc": "El hilo conductor para cualquier persona que en la actualidad recibe el diagnóstico por VIH es el temor a la serofobia y el estigma y la discriminación que esta lleva asociados. La búsqueda de apoyo e",
-  "titulo_completo": "El proceso emocional tras el diagnóstico por VIH"
- },
- {
-  "fecha": "2026-11-23",
-  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-conducta-e-inmunidad/",
-  "titulo": "Libro abierto: Conducta e inmunidad",
-  "img": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-conducta-e-inmunidad.jpg",
-  "desc": "Este libro está concebido como libro de texto para una asignatura llamada Conducta e inmunidad, pero también serviría como texto para una introducción a la Psicoinmunología. Este libro describe la rel",
-  "titulo_completo": "Conducta e inmunidad"
  }
 ]

@@ -1,5 +1,27 @@
 [
  {
+  "fecha": "2026-11-27",
+  "id": "ia-aurzane-bib-desarrollo-positivo-adolescente-activos-que-lo",
+  "tipo": "libro",
+  "titulo": "Desarrollo positivo adolescente y los activos que lo promueven: Un estudio en centros docentes andaluces",
+  "url": "https://archive.org/details/aurzane-bib-desarrollo-positivo-adolescente-activos-que-lo",
+  "motivo": "La IA le dio 6/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-salud-mental-colectiva-1-participacion-inclusion/salud-mental-colecti"
+  ]
+ },
+ {
+  "fecha": "2026-11-27",
+  "id": "ia-aurzane-bib-escalas-mundiales-medicion-desarrollo-primera-infancia",
+  "tipo": "libro",
+  "titulo": "Escalas mundiales de medición del desarrollo en la primera infancia (GSED-SF) v. 1.0: Formulario corto de entrevista al cuidador. Guía de los ítems",
+  "url": "https://archive.org/details/aurzane-bib-escalas-mundiales-medicion-desarrollo-primera-infancia",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 34 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-escalas-mundiales-medicion-desarrollo-primera-infancia/escalas-mundia"
+  ]
+ },
+ {
   "fecha": "2026-11-26",
   "id": "ia-full-universal",
   "tipo": "libro",
@@ -3252,25 +3274,5 @@
   "probados": [
    "200 application/pdf https://archive.org/download/psychology-and-cognitive-sciences-10.17140-pcsoj-3-123/10.17140_pcsoj-3-123.pdf"
   ]
- },
- {
-  "fecha": "2026-11-18",
-  "id": "ia-psychology-and-cognitive-sciences-10.17140-pcsoj-3-124",
-  "tipo": "libro",
-  "titulo": "Quality of Life (QoL) and Depression Among Children With End Stage Renal Disease Attending Hemodialysis Units in Gaza Strip",
-  "url": "https://archive.org/details/psychology-and-cognitive-sciences-10.17140-pcsoj-3-124",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": [
-   "200 application/pdf https://archive.org/download/psychology-and-cognitive-sciences-10.17140-pcsoj-3-124/10.17140_pcsoj-3-124.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-18",
-  "id": "ia-psychology-and-cognitive-sciences-10.17140-pcsoj-3-125",
-  "tipo": "libro",
-  "titulo": "Stendhal Syndrome: A Psychological Response Among Tourists",
-  "url": "https://archive.org/details/psychology-and-cognitive-sciences-10.17140-pcsoj-3-125",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": []
  }
 ]

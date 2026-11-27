@@ -18,7 +18,8 @@
   "fw-90c0c1c785",
   "fw-6dfea7077f",
   "fw-eb236fa978",
-  "fw-f8a012095e"
+  "fw-f8a012095e",
+  "fw-c9f4921bbe"
  ],
  "dias": {
   "2026-11-08": {
@@ -564,6 +565,35 @@
    "musica": {
     "url": "https://aurzane.com/marketing/musica/1241085.mp3",
     "credito": "«Inner parts», The Dream Pop Project (Jamendo), CC BY"
+   }
+  },
+  "2026-11-27": {
+   "fecha": "2026-11-27",
+   "frase": {
+    "texto": "El dolor tiene un gran poder educativo; nos hace mejores, más misericordiosos, nos vuelve hacia nosotros mismos y nos persuade de que esta vida no es un juego, sino un deber.",
+    "autor": "Cesare Cantù",
+    "obra": "",
+    "url": "https://aurzane.com/frases/#fw-c9f4921bbe",
+    "fuente": "Proverbia.net"
+   },
+   "curiosidad": {
+    "titulo": "¿Cuántos estudiantes sanitarios tienen ansiedad?",
+    "texto": "Casi la mitad de los estudiantes de medicina, odontología y enfermería en los Balcanes sufre ansiedad. Una revisión científica reciente ha analizado la salud mental en esta región. Los resultados muestran que la presión de estas carreras afecta profundamente a quienes se forman en ciencias de la salud.",
+    "fuente": "Journal of Clinical Medicine",
+    "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13764040/"
+   },
+   "ejercicio": {
+    "titulo": "Visualización guiada del lugar seguro (5 min)",
+    "url": "https://mind.aurzane.com/ejercicios/lugar-seguro/"
+   },
+   "test": {
+    "titulo": "Test de satisfacción con la vida (felicidad) gratis",
+    "url": "https://mind.aurzane.com/test-de-satisfaccion-con-la-vida/"
+   },
+   "mas_frases": true,
+   "musica": {
+    "url": "https://aurzane.com/marketing/musica/489246.mp3",
+    "credito": "«Back 2 UR», Keffy Kay (Jamendo), CC BY"
    }
   }
  }
