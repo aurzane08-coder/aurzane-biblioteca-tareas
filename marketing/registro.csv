@@ -973,3 +973,5 @@
 2026-11-27,7,tiktok,frase-63ef9798,error,500 null
 2026-11-27,5,facebook,frase-72421f68,error,400 {"error":{"message":"Unable to fetch video file from URL." "type":"OAuthException" "code":389 "error_subcode":1363057 "is_transient":false "error_
 2026-11-27,7,tiktok,frase-63ef9798,error,500 null
+2026-11-27,5,facebook,frase-72421f68,error,HTTP Error 404: Not Found
+2026-11-27,7,tiktok,frase-63ef9798,error,HTTP Error 404: Not Found
