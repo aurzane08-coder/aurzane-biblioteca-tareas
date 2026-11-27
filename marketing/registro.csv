@@ -951,3 +951,15 @@
 2026-11-27,5,youtube,frase-876aa3df,error,HTTP Error 404: Not Found
 2026-11-27,5,telegram,frase-b447890e,error,HTTP Error 404: Not Found
 2026-11-27,6,youtube,frase-9b2daa33,error,HTTP Error 404: Not Found
+2026-11-27,5,facebook,frase-72421f68,error,400 {"error":{"message":"Unable to fetch video file from URL." "type":"OAuthException" "code":389 "error_subcode":1363057 "is_transient":false "error_
+2026-11-27,5,youtube,frase-876aa3df,ok,https://youtu.be/8s5TuAJ24Wk
+2026-11-27,5,telegram,frase-b447890e,ok,170
+2026-11-27,6,youtube,frase-9b2daa33,ok,https://youtu.be/lrYwdL7wp3Y
+2026-11-27,7,tiktok,frase-63ef9798,error,500 null
+2026-11-27,7,youtube,cur-cf0450f8c1,ok,https://youtu.be/LP7ihNQYAxs
+2026-11-27,2,telegram,promo-build,error,400 {"ok":false "error_code":400 "description":"Bad Request: IMAGE_PROCESS_FAILED"}
+2026-11-27,2,bluesky,promo-nexus,ok,at://did:plc:6ovoiudj7dkxgrzd2zkyn77y/app.bsky.feed.post/3n3cqzip26j25
+2026-11-27,2,mastodon,promo-colegios,error,422 {"error":"Validation failed: File content type is invalid  File is invalid"}
+2026-11-27,2,instagram,promo-aurzane,ok,17942514240403356
+2026-11-27,2,facebook,promo-live,ok,1816362856248368
+2026-11-27,2,pinterest,promo-ejercicios,feed,
