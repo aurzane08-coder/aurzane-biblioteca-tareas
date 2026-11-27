@@ -567,5 +567,57 @@
    }
   ],
   "fecha": "2026-11-26"
+ },
+ "https://nexus.aurzane.com/universidades/estados-unidos/naropa-university/": {
+  "titulo": "Guía para estudiar en Naropa University con AURZANE",
+  "parrafos": [
+   "Naropa University es una institución privada sin ánimo de lucro ubicada en Boulder, Colorado. En el catálogo de AURZANE figuran 12 carreras de grado en esta universidad, con una especial presencia de programas en Artes y humanidades (como Literatura Inglesa, Bellas Artes, Música o Estudios Religiosos) y Salud y bienestar (como Psicología y Terapias del Movimiento y Mente-Cuerpo), junto a opciones en Ciencias Naturales, Ciencias Sociales, Educación y Estudios Interdisciplinarios.",
+   "El proceso de admisión en las universidades de Estados Unidos es gestionado de forma independiente por cada centro. Para acceder, habitualmente se evalúa el expediente académico de la escuela secundaria (GPA), junto con ensayos personales, cartas de recomendación y actividades extracurriculares. Muchas universidades estadounidenses han hecho opcionales los exámenes estandarizados SAT o ACT, y los estudiantes internacionales deben acreditar su nivel de inglés y tramitar la visa correspondiente.",
+   "Para elegir tu carrera de manera adecuada es recomendable analizar el plan de estudios, las modalidades de aprendizaje y las salidas profesionales. Además, es esencial considerar la financiación: las becas federales de EE. UU. son para ciudadanos y residentes, por lo que los alumnos internacionales deben consultar directamente con Naropa University la existencia de becas propias para estudiantes internacionales y el coste total de la estancia.",
+   "La vida universitaria en Boulder, Colorado, ofrece una localización en un entorno donde predominan el contacto con la naturaleza y áreas académicas orientadas al bienestar y la interdisciplinariedad. Al ser una comunidad académica con un número reducido de estudiantes de grado, permite una experiencia universitaria focalizada en un entorno privado."
+  ],
+  "faq": [
+   {
+    "p": "¿Naropa University es una institución pública o privada?",
+    "r": "Naropa University es una universidad privada sin ánimo de lucro situada en Boulder, Colorado. Cuenta con una oferta de grado orientada a diversas áreas del conocimiento dentro del sistema universitario estadounidense."
+   },
+   {
+    "p": "¿Qué carreras de grado ofrece Naropa University?",
+    "r": "La institución imparte 12 carreras registradas en el catálogo de AURZANE. Su oferta abarca Artes y humanidades, Salud y bienestar, Ciencias naturales y matemáticas, Ciencias sociales y comunicación, Educación y Estudios interdisciplinarios."
+   },
+   {
+    "p": "¿Cómo funciona la ayuda financiera para estudiantes internacionales?",
+    "r": "Las ayudas del gobierno estadounidense, como la beca Pell o los préstamos federales, se destinan únicamente a ciudadanos y residentes. Los aspirantes internacionales deben contactar con la universidad para preguntar por sus becas para estudiantes internacionales y el coste total de asistencia."
+   },
+   {
+    "p": "¿Qué se necesita habitualmente para estudiar en Estados Unidos?",
+    "r": "Cada universidad establece sus criterios de admisión, valorando el expediente de secundaria, ensayos, cartas de recomendación y actividades. Además, los estudiantes internacionales requieren demostrar el dominio del idioma inglés y gestionar el visado de estudiante correspondiente."
+   }
+  ],
+  "fecha": "2026-11-27"
+ },
+ "https://nexus.aurzane.com/universidades/estados-unidos/fisk-university/": {
+  "titulo": "Guía de orientación vocacional para Fisk University en AURZANE",
+  "parrafos": [
+   "Fisk University es una institución privada sin ánimo de lucro ubicada en Nashville, Tennessee, que ofrece un total de 22 carreras en áreas como Artes y humanidades, Ciencias naturales y matemáticas, Ciencias sociales y comunicación, Educación, Empresa, economía y derecho, e Informática y telecomunicaciones. Es una opción interesante para estudiantes que buscan una formación superior especializada en un entorno universitario privado en Estados Unidos.",
+   "El acceso a la universidad en Estados Unidos se gestiona de manera independiente por cada institución y suele valorar el expediente académico de la escuela secundaria, ensayos, cartas de recomendación y actividades extracurriculares. En el caso de Fisk University, se registran métricas de admisiones y pruebas estandarizadas como el SAT y el ACT, aunque cada vez más universidades adaptan estos requisitos, recomendando siempre revisar los portales oficiales para conocer los detalles actualizados.",
+   "Para elegir la carrera ideal, es fundamental no fijarse únicamente en el nombre de la institución, sino comparar con detalle los planes de estudio, las opciones de prácticas profesionales y las salidas laborales de cada programa. AURZANE te ayuda a explorar las 22 opciones disponibles en esta universidad para que encuentres la alternativa que mejor se adapte a tus intereses profesionales y personales.",
+   "Estudiar en Nashville, Tennessee, permite a los estudiantes vivir una experiencia universitaria dinámica en una ciudad con una rica oferta cultural y musical en Estados Unidos. Los futuros alumnos internacionales deben tener en cuenta que las ayudas federales del país están destinadas a ciudadanos y residentes, por lo que es necesario consultar directamente con la universidad sobre becas específicas para estudiantes de fuera y los costes totales de asistencia."
+  ],
+  "faq": [
+   {
+    "p": "¿Qué carreras se pueden estudiar en Fisk University?",
+    "r": "En la ficha de AURZANE figuran 22 carreras organizadas en ámbitos como Artes y humanidades, Ciencias naturales y matemáticas, Ciencias sociales y comunicación, Educación, Empresa, Informática y Salud."
+   },
+   {
+    "p": "¿Cómo es el proceso de admisión en Fisk University?",
+    "r": "Cada universidad en Estados Unidos gestiona su propia admisión valorando el expediente académico, ensayos y cartas de recomendación. En Fisk University se consideran además datos de acceso como las puntuaciones de exámenes estandarizados."
+   },
+   {
+    "p": "¿Qué opciones tienen los estudiantes internacionales en esta universidad?",
+    "r": "Los estudiantes internacionales deben solicitar información directamente a la institución sobre las becas específicas para extranjeros y el coste total de asistencia, ya que las ayudas federales estadounidenses son solo para residentes."
+   }
+  ],
+  "fecha": "2026-11-27"
  }
 }

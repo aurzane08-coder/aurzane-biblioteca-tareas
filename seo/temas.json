@@ -1484,5 +1484,81 @@
   "pais_nombre": "Puerto Rico",
   "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al número de emergencias del país. ",
   "fecha": "2026-11-26"
+ },
+ {
+  "consulta": "carreras universitarias en samborondón",
+  "titulo": "Carreras universitarias en Samborondón: Guía de oferta académica",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "fecha": "2026-11-27"
+ },
+ {
+  "consulta": "calculadora de embarazo",
+  "titulo": "Calculadora de embarazo: Semanas y fecha probable de parto",
+  "mundo": "live",
+  "test": "",
+  "fecha": "2026-11-27"
+ },
+ {
+  "consulta": "calcular edad",
+  "titulo": "Cómo calcular la edad exacta en años, meses y días",
+  "mundo": "learn",
+  "test": "",
+  "fecha": "2026-11-27"
+ },
+ {
+  "consulta": "el cerebro y el mito del yo",
+  "titulo": "Cómo funciona el cerebro en el aprendizaje y la memoria",
+  "mundo": "learn",
+  "test": "autoeficacia",
+  "oferta": "libros",
+  "pais": "COL",
+  "pais_nombre": "Colombia",
+  "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al número de emergencias del país. ",
+  "fecha": "2026-11-27"
+ },
+ {
+  "consulta": "orientacion vocacional peru",
+  "titulo": "¿Qué carrera estudiar en Perú? Test de orientación vocacional",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "oferta": "universidades",
+  "pais": "PER",
+  "pais_nombre": "Perú",
+  "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al 113, opción 5 (Perú). ",
+  "fecha": "2026-11-27"
+ },
+ {
+  "consulta": "ansiedad examenes universidad",
+  "titulo": "Cómo superar la ansiedad por los exámenes de admisión en Perú",
+  "mundo": "mind",
+  "test": "ansiedad",
+  "oferta": "libros",
+  "pais": "PER",
+  "pais_nombre": "Perú",
+  "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al 113, opción 5 (Perú). ",
+  "fecha": "2026-11-27"
+ },
+ {
+  "consulta": "el camino de las lágrimas resumen",
+  "titulo": "El camino de las lágrimas de Jorge Bucay: Resumen y análisis",
+  "mundo": "mind",
+  "test": "resiliencia",
+  "oferta": "libros",
+  "pais": "CUB",
+  "pais_nombre": "Cuba",
+  "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al número de emergencias del país. ",
+  "fecha": "2026-11-27"
+ },
+ {
+  "consulta": "universidad de são paulo carreras",
+  "titulo": "Estudiar en la Universidad de São Paulo desde Cuba: Carreras y guía",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "oferta": "universidades",
+  "pais": "CUB",
+  "pais_nombre": "Cuba",
+  "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al número de emergencias del país. ",
+  "fecha": "2026-11-27"
  }
 ]
