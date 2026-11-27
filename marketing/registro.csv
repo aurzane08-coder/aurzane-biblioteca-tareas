@@ -936,3 +936,7 @@
 2026-11-27,3,instagram,frase-81d54602,error,400 {"error":{"message":"Only photo or video can be accepted as media type." "code":9004 "type":"OAuthException" "error_subcode":2207052 "is_transient
 2026-11-27,3,facebook,frase-23d99c1d,ok,1411384405395087_122112843657526868
 2026-11-27,3,pinterest,frase-b424a195,feed,
+2026-11-27,5,facebook,frase-72421f68,error,HTTP Error 404: Not Found
+2026-11-27,5,youtube,frase-876aa3df,error,HTTP Error 404: Not Found
+2026-11-27,5,telegram,frase-b447890e,error,HTTP Error 404: Not Found
+2026-11-27,3,instagram,frase-81d54602,ok,18225882001354201
