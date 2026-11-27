@@ -1,6 +1,28 @@
 [
  {
   "fecha": "2026-11-27",
+  "id": "pmc-PMC13804866",
+  "tipo": "estudio",
+  "titulo": "From Rehydration to Resilience: Mechanisms of Drought Stress Memory in Wheat",
+  "url": "https://europepmc.org/article/PMC/PMC13804866",
+  "motivo": "La IA le dio 1/10: no encaja en la biblioteca",
+  "probados": [
+   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13803823.1/PMC13803823.1.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-27",
+  "id": "pmc-PMC13807913",
+  "tipo": "estudio",
+  "titulo": "Endophytes as Next-Generation Plant Biostimulants: From Root-Associated Microbial Colonisation and Molecular Signalling to Stress Resilience and Field Applicati",
+  "url": "https://europepmc.org/article/PMC/PMC13807913",
+  "motivo": "La IA le dio 1/10: no encaja en la biblioteca",
+  "probados": [
+   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13799534.1/PMC13799534.1.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-27",
   "id": "oa-W7221047192",
   "tipo": "libro",
   "titulo": "Statistics in Psychological Science",
@@ -3253,28 +3275,6 @@
   "motivo": "No tiene un PDF libre que se pueda descargar",
   "probados": [
    "200 application/pdf https://archive.org/download/psychology-and-cognitive-sciences-10.17140-pcsoj-3-136/10.17140_pcsoj-3-136.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-18",
-  "id": "ia-psychology-and-cognitive-sciences-10.17140-pcsoj-3-e010",
-  "tipo": "libro",
-  "titulo": "Blast-Traumatic Brain Injury (TBI) with Post-traumatic Stress Disorder (PTSD): A Treatable Condition?",
-  "url": "https://archive.org/details/psychology-and-cognitive-sciences-10.17140-pcsoj-3-e010",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": [
-   "200 application/pdf https://archive.org/download/psychology-and-cognitive-sciences-10.17140-pcsoj-3-e010/10.17140_pcsoj-3-e010.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-18",
-  "id": "ia-psychology-and-cognitive-sciences-10.17140-pcsoj-3-128",
-  "tipo": "libro",
-  "titulo": "Technology and the Brain: Lessons from Patient Care, Social Media and the Internet",
-  "url": "https://archive.org/details/psychology-and-cognitive-sciences-10.17140-pcsoj-3-128",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": [
-   "200 application/pdf https://archive.org/download/psychology-and-cognitive-sciences-10.17140-pcsoj-3-128/10.17140_pcsoj-3-128.pdf"
   ]
  }
 ]

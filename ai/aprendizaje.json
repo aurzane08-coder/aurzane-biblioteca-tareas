@@ -92,7 +92,7 @@
   2
  ],
  "ed:Healthcare (Basel, Switzerland)": [
-  1,
+  2,
   1
  ],
  "ed:Neurobiology of sleep and circadian rhythms": [
@@ -104,7 +104,7 @@
   3
  ],
  "ed:Journal of clinical medicine": [
-  1,
+  3,
   5
  ],
  "ed:Frontiers in global women's health": [
@@ -188,7 +188,7 @@
   0
  ],
  "estudio:en": [
-  40,
+  50,
   29
  ],
  "ed:Frontiers in dental medicine": [
@@ -196,7 +196,7 @@
   1
  ],
  "tipo:estudio": [
-  67,
+  77,
   33
  ],
  "ed:Stress biology": [
@@ -392,7 +392,7 @@
   0
  ],
  "ed:PloS one": [
-  0,
+  1,
   1
  ],
  "ed:Endocrinology, diabetes & metabolism": [
@@ -528,8 +528,8 @@
   1
  ],
  "ed:International journal of molecular sciences": [
-  0,
-  3
+  1,
+  4
  ],
  "ed:The Indian journal of medical research": [
   1,
@@ -1110,5 +1110,29 @@
  "ed:James Madison University": [
   0,
   1
+ ],
+ "ed:Microorganisms": [
+  1,
+  0
+ ],
+ "ed:Metabolites": [
+  1,
+  0
+ ],
+ "ed:Behavioral sciences (Basel, Switzerland)": [
+  1,
+  0
+ ],
+ "ed:Plants (Basel, Switzerland)": [
+  0,
+  1
+ ],
+ "ed:Current issues in molecular biology": [
+  1,
+  0
+ ],
+ "ed:Biomedicines": [
+  1,
+  0
  ]
 }
