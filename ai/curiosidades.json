@@ -1,5 +1,30 @@
 [
  {
+  "id": "cur-0e83311d97",
+  "tipo": "curiosidad",
+  "titulo": "¿Te perderías a un gorila delante de tus ojos?",
+  "dato": "Cuando te concentras intensamente, tu cerebro es capaz de ignorar objetos evidentes justo delante de ti.",
+  "resumen": "Cuando te concentras intensamente, tu cerebro es capaz de ignorar objetos evidentes justo delante de ti. En un experimento clásico, los participantes debían contar pases de baloncesto. La mitad no notó a una persona disfrazada de gorila caminando entre los jugadores. Este fenómeno se conoce como ceguera por inatención.",
+  "fuente": "Simons y Chabris (1999)",
+  "hashtags": [
+   "psicologia",
+   "atencion",
+   "aurzane",
+   "curiosidades"
+  ],
+  "fuente_id": "tema-332-0",
+  "url": "https://mind.aurzane.com/",
+  "portada": "",
+  "tema": "curiosidad",
+  "idioma": "es",
+  "autores": "Simons y Chabris (1999)",
+  "motivo": "Guion escrito por Gemini a partir de un tema de psicología. Revisa que el dato sea correcto antes de aprobar.",
+  "verificada": "2026-11-28",
+  "fecha": "2026-11-28",
+  "auto": true,
+  "verificacion": "El texto describe con precisión el famoso experimento de ceguera por inatención de Simons y Chabris (1999) sin exageraciones."
+ },
+ {
   "id": "cur-200cb947c4",
   "tipo": "curiosidad",
   "titulo": "¿Estimular el cerebro con imanes contra la depresión gestacional?",

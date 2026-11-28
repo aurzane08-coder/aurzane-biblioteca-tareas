@@ -1,5 +1,27 @@
 [
  {
+  "id": "ia-aurzane-bib-vinculos-protectores-apego-padres-e-hijos",
+  "tipo": "libro",
+  "titulo": "Vínculos protectores : apego en padres e hijos en vulnerabilidad",
+  "autores": "Geenen, Greet; Corveleyn, Jozef; Traverso Koroleff, Pierina; Llanos Bustamante, Eduardo",
+  "anio": 2014,
+  "editorial": "Pontificia Universidad Católica del Perú. Fondo Editorial",
+  "url": "https://archive.org/details/aurzane-bib-vinculos-protectores-apego-padres-e-hijos",
+  "ia": "aurzane-bib-vinculos-protectores-apego-padres-e-hijos",
+  "pdf": "",
+  "lic": "cc-by-nc-nd",
+  "idioma": "es",
+  "tema": "archive:psicologia",
+  "resumen": "El libro consta de ocho capítulos, un glosario y ocho apéndices en los que se muestran casos y materiales de análisis útiles para la investigación. En los siete primeros capítulos se analizan los conceptos más importantes de la teoría del apego, se muestran ejemplos reales en los que se evidencia cómo se desarrolla el apego en condiciones de riesgo y se brindan recomendaciones para la implementación de políticas que ayuden a fomentar un apego seguro entre padres e hijos. El último capítulo es un trabajo realizado por Pierina Traverso Koroleff titulado “Los preludios del vínculo de apego en dos Copia de la Biblioteca AURZANE (aurzane.com/biblioteca).",
+  "motivo": "Libro de psicología con licencia CC-BY-NC-ND conservado en Internet Archive.",
+  "pdf_origen": "https://archive.org/download/aurzane-bib-vinculos-protectores-apego-padres-e-hijos/vinculos-protectores-apego-padres-e-hijos.pdf",
+  "paginas": 397,
+  "portada": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-vinculos-protectores-apego-padres-e-hijos.jpg",
+  "publicado": "2026-11-28",
+  "nota": 8,
+  "auto": true
+ },
+ {
   "id": "pmc-PMC13802085",
   "tipo": "estudio",
   "titulo": "Research Progress on Exercise Combined with Micronutrients Regulating Oxidative Stress in Depression",

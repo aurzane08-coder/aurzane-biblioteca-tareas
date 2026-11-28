@@ -1,6 +1,39 @@
 [
  {
   "fecha": "2026-11-28",
+  "id": "ia-aurzane-bib-desarrollo-positivo-adolescente-que-papel-tiene",
+  "tipo": "libro",
+  "titulo": "Desarrollo positivo adolescente: ¿qué papel tiene la inteligencia emocional, el estilo de afrontamiento y la asertividad en la prevención del consumo de cannabi",
+  "url": "https://archive.org/details/aurzane-bib-desarrollo-positivo-adolescente-que-papel-tiene",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 27 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-desarrollo-positivo-adolescente-que-papel-tiene/desarrollo-positivo-a"
+  ]
+ },
+ {
+  "fecha": "2026-11-28",
+  "id": "ia-aurzane-bib-que-papel-juega-autorregulacion-aprendizaje-comportamiento",
+  "tipo": "libro",
+  "titulo": "¿Qué papel juega la autorregulación en el aprendizaje y comportamiento del estudiante?",
+  "url": "https://archive.org/details/aurzane-bib-que-papel-juega-autorregulacion-aprendizaje-comportamiento",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 30 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-que-papel-juega-autorregulacion-aprendizaje-comportamiento/que-papel-"
+  ]
+ },
+ {
+  "fecha": "2026-11-28",
+  "id": "ia-aurzane-bib-estrategias-innovacion-apoyo-social-familias-voluntariado",
+  "tipo": "libro",
+  "titulo": "Estrategias de innovación para el apoyo social de las familias. Voluntariado, mentoría y e-parenting",
+  "url": "https://archive.org/details/aurzane-bib-estrategias-innovacion-apoyo-social-familias-voluntariado",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 33 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-estrategias-innovacion-apoyo-social-familias-voluntariado/estrategias"
+  ]
+ },
+ {
+  "fecha": "2026-11-28",
   "id": "pmc-PMC13757895",
   "tipo": "estudio",
   "titulo": "Functional impairment associated with post-traumatic stress symptoms in trauma-exposed children and adolescents: a qualitative study of everyday difficulties ac",
@@ -3242,39 +3275,6 @@
   "motivo": "No tiene un PDF libre que se pueda descargar",
   "probados": [
    "200 application/pdf https://archive.org/download/psychology-and-cognitive-sciences-10.17140-pcsoj-4-137/10.17140_pcsoj-4-137.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-18",
-  "id": "ia-psychology-and-cognitive-sciences-10.17140-pcsoj-4-138",
-  "tipo": "libro",
-  "titulo": "Relationship of Sustainable Behavior, World-Mindedness, National and Global Identities, Perceived Environmental Risk and Globalization Impact Among College Stud",
-  "url": "https://archive.org/details/psychology-and-cognitive-sciences-10.17140-pcsoj-4-138",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": [
-   "200 application/pdf https://archive.org/download/psychology-and-cognitive-sciences-10.17140-pcsoj-4-138/10.17140_pcsoj-4-138.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-18",
-  "id": "ia-psychology-and-cognitive-sciences-10.17140-pcsoj-4-139",
-  "tipo": "libro",
-  "titulo": "A Prospective Examination of Acceptance at a CBT-based Interdisciplinary Chronic Pain Management Program",
-  "url": "https://archive.org/details/psychology-and-cognitive-sciences-10.17140-pcsoj-4-139",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": [
-   "200 application/pdf https://archive.org/download/psychology-and-cognitive-sciences-10.17140-pcsoj-4-139/10.17140_pcsoj-4-139.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-18",
-  "id": "ia-psychology-and-cognitive-sciences-10.17140-pcsoj-4-140",
-  "tipo": "libro",
-  "titulo": "New Insights into “The Bignetti Model” from Classic and Quantum Mechanics Perspectives",
-  "url": "https://archive.org/details/psychology-and-cognitive-sciences-10.17140-pcsoj-4-140",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": [
-   "200 application/pdf https://archive.org/download/psychology-and-cognitive-sciences-10.17140-pcsoj-4-140/10.17140_pcsoj-4-140.pdf"
   ]
  }
 ]

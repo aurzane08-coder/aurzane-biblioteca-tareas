@@ -144,7 +144,7 @@
   0
  ],
  "tipo:libro": [
-  215,
+  216,
   9
  ],
  "Gambling Behavior and Treatments": [
@@ -312,7 +312,7 @@
   0
  ],
  "archive:psicologia": [
-  183,
+  184,
   0
  ],
  "ed:The Open University": [
@@ -632,7 +632,7 @@
   0
  ],
  "ed:Pontificia Universidad Católica del Perú. Fondo Editorial": [
-  5,
+  6,
   7
  ],
  "ed:Fondo Editorial Universidad Católica Luis Amigó": [
@@ -717,7 +717,7 @@
  ],
  "ed:Dykinson": [
   1,
-  6
+  8
  ],
  "ed:UOC": [
   4,
@@ -1136,6 +1136,10 @@
   0
  ],
  "ed:Medicina (Kaunas, Lithuania)": [
+  0,
+  1
+ ],
+ "ed:Fundació La Caixa": [
   0,
   1
  ]
