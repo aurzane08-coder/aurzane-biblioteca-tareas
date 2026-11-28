@@ -134,5 +134,13 @@
   "huella": "aef3a422c81364e8",
   "fecha": "2026-11-27",
   "nota": 10
+ },
+ "teleterapia-vs-presencial": {
+  "titulo": "Online therapy: does it work as well as in-person sessions?",
+  "resumen": "A review of 77 studies found that, in mental health care, video appointments match or exceed in-person care in clinical outcomes, though with a higher rate of missed appointments.",
+  "categoria": "Mental Health",
+  "huella": "559a7f061cf1d795",
+  "fecha": "2026-11-28",
+  "nota": 10
  }
 }
