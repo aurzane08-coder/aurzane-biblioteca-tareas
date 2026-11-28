@@ -1,8 +1,21 @@
 [
  {
   "fecha": "2026-11-28",
+  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-centro-que-cuida-guia-practica-cuidado/",
+  "titulo": "Libro abierto: Un centro que cuida : guía práctica de cuidado e inclusión en los centros educativos"
+ },
+ {
+  "fecha": "2026-11-28",
+  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-psicologia-juridica-septiembre-2014/",
+  "titulo": "Libro abierto: Psicología jurídica, septiembre 2014"
+ },
+ {
+  "fecha": "2026-11-28",
   "url": "https://aurzane.com/biblioteca/recientes/oa-W7240254004/",
-  "titulo": "Libro abierto: Los trastornos de la conducta alimentaria: presente y futuro. Un camino hacia la comprensión y superación"
+  "titulo": "Libro abierto: Los trastornos de la conducta alimentaria: presente y futuro. Un camino hacia la comprensión y superación",
+  "img": "https://aurzane.com/biblioteca/recientes/portadas/oa-W7240254004.jpg",
+  "desc": "El libro reúne una mirada amplia, interdisciplinar y profundamente humana sobre los trastornos de la conducta alimentaria, integrando perspectivas clínicas, familiares, comunitarias y preventivas. A t",
+  "titulo_completo": "Los trastornos de la conducta alimentaria: presente y futuro. Un camino hacia la comprensi"
  },
  {
   "fecha": "2026-11-28",
@@ -939,21 +952,5 @@
   "img": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-psicologia-comunitaria-bienestar-social-septiembre-2014.jpg",
   "desc": "Recurs d'aprenentatge de la Universitat Oberta de Catalunya. | Recurso de aprendizaje de la \"Universitat Oberta de Catalunya\". | Learning material of the \"Universitat Oberta de Catalunya\". Copia de la",
   "titulo_completo": "Psicología comunitaria y bienestar social, septiembre 2014"
- },
- {
-  "fecha": "2026-11-23",
-  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-desarrollo-ninos-paso-a-paso/",
-  "titulo": "Libro abierto: El desarrollo de los niños, paso a paso",
-  "img": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-desarrollo-ninos-paso-a-paso.jpg",
-  "desc": "Cómo crecen los niños de 0 a 12 años en lo emocional, social y cognitivo, etapa por etapa. Muy útil para familias y docentes. Copia de la Biblioteca AURZANE (aurzane.com/biblioteca).",
-  "titulo_completo": "El desarrollo de los niños, paso a paso"
- },
- {
-  "fecha": "2026-11-23",
-  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-desarrollo-aprendizaje-adolescencia-master-formacion-profeso/",
-  "titulo": "Libro abierto: Desarrollo y aprendizaje en la adolescencia: máster formación del profesorado",
-  "img": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-desarrollo-aprendizaje-adolescencia-master-formacion-profeso.jpg",
-  "desc": "La asignatura \"Desarrollo y aprendizaje en la adolescencia\" aborda contenidos fundamentales para comprender los procesos psicológicos y educativos que tienen lugar durante la etapa de la adolescencia,",
-  "titulo_completo": "Desarrollo y aprendizaje en la adolescencia: máster formación del profesorado"
  }
 ]

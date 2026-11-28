@@ -144,7 +144,7 @@
   0
  ],
  "tipo:libro": [
-  217,
+  219,
   9
  ],
  "Gambling Behavior and Treatments": [
@@ -312,7 +312,7 @@
   0
  ],
  "archive:psicologia": [
-  184,
+  186,
   0
  ],
  "ed:The Open University": [
@@ -617,7 +617,7 @@
  ],
  "ed:Editorial UOC": [
   41,
-  10
+  11
  ],
  "ed:Universidad Andina Simón Bolívar, Sede Ecuador; Corporación Editora Nacional": [
   0,
@@ -708,7 +708,7 @@
   2
  ],
  "ed:Universitat Oberta de Catalunya": [
-  8,
+  9,
   2
  ],
  "ed:Universidad de Salamanca (España). Instituto Universitario de Integración en la Comunidad": [
@@ -717,7 +717,7 @@
  ],
  "ed:Dykinson": [
   1,
-  8
+  9
  ],
  "ed:UOC": [
   4,
@@ -1029,7 +1029,7 @@
  ],
  "ed:Editorial Universidad de Antioquia": [
   1,
-  1
+  2
  ],
  "ed:Andrés Rossetti y Natalia Monasterolo (compiladores) - Centro de Investigaciones Jurídicas y Sociales, Instituto de Investigaciones y Formación en Administración Pública (UNC) y Editorial Espartaco": [
   1,
@@ -1068,7 +1068,7 @@
   1
  ],
  "ed:Universitat de Barcelona. Institut de Desenvolupament Professional-ICE": [
-  0,
+  1,
   1
  ],
  "ed:Universidad de Sevilla": [
@@ -1146,5 +1146,13 @@
  "Eating Disorders and Behaviors": [
   1,
   0
+ ],
+ "ed:Universidad de Antioquia, Facultad de Derecho y Ciencias Políticas": [
+  0,
+  1
+ ],
+ "ed:Editorial Jurídica del Ecuador (Quito, Ecuador)": [
+  0,
+  1
  ]
 }

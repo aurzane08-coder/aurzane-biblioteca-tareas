@@ -1,6 +1,61 @@
 [
  {
   "fecha": "2026-11-28",
+  "id": "ia-aurzane-bib-conductismo-cognitivismo-constructivismo-conectivismo-educac",
+  "tipo": "libro",
+  "titulo": "Del conductismo, cognitivismo y constructivismo al conectivismo para la educación",
+  "url": "https://archive.org/details/aurzane-bib-conductismo-cognitivismo-constructivismo-conectivismo-educac",
+  "motivo": "La IA le dio 5/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-psicologia-juridica-septiembre-2014/psicologia-juridica-septiembre-20"
+  ]
+ },
+ {
+  "fecha": "2026-11-28",
+  "id": "ia-aurzane-bib-aprender-a-comunicar",
+  "tipo": "libro",
+  "titulo": "Aprender a comunicar: cómo practicar la comprensión y la expresión en lengua española",
+  "url": "https://archive.org/details/aurzane-bib-aprender-a-comunicar",
+  "motivo": "La IA le dio 3/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-dinamica-familiar-adolescentes-trastornos-conducta-alimentar/dinamica"
+  ]
+ },
+ {
+  "fecha": "2026-11-28",
+  "id": "ia-aurzane-bib-dinamica-familiar-adolescentes-trastornos-conducta-alimentar",
+  "tipo": "libro",
+  "titulo": "Dinámica familiar en adolescentes con trastornos de la conducta alimentaria: una revisión bibliográfica",
+  "url": "https://archive.org/details/aurzane-bib-dinamica-familiar-adolescentes-trastornos-conducta-alimentar",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 34 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-dinamica-familiar-adolescentes-trastornos-conducta-alimentar/dinamica"
+  ]
+ },
+ {
+  "fecha": "2026-11-28",
+  "id": "ia-aurzane-bib-subjetividades-emociones-politicas-maestros-maestras",
+  "tipo": "libro",
+  "titulo": "Subjetividades y emociones políticas en maestros y maestras",
+  "url": "https://archive.org/details/aurzane-bib-subjetividades-emociones-politicas-maestros-maestras",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 45 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-subjetividades-emociones-politicas-maestros-maestras/subjetividades-e"
+  ]
+ },
+ {
+  "fecha": "2026-11-28",
+  "id": "ia-aurzane-bib-mediacion-familiar-marco-transformador",
+  "tipo": "libro",
+  "titulo": "La mediación familiar en un marco transformador",
+  "url": "https://archive.org/details/aurzane-bib-mediacion-familiar-marco-transformador",
+  "motivo": "Dice ser un libro pero el PDF solo tiene 20 páginas (es un capítulo, artículo o resumen)",
+  "probados": [
+   "200 application/pdf https://archive.org/download/aurzane-bib-mediacion-familiar-marco-transformador/mediacion-familiar-marco-trans"
+  ]
+ },
+ {
+  "fecha": "2026-11-28",
   "id": "ia-trilogia-del-tentador_202611",
   "tipo": "libro",
   "titulo": "Trilogía del Tentador",
@@ -3220,61 +3275,6 @@
   "motivo": "No tiene un PDF libre que se pueda descargar",
   "probados": [
    "200 application/pdf https://archive.org/download/psychology-and-cognitive-sciences-10.17140-pcsoj-5-143/10.17140_pcsoj-5-143.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-18",
-  "id": "ia-psychology-and-cognitive-sciences-10.17140-pcsoj-5-144",
-  "tipo": "libro",
-  "titulo": "Does Progress Bars’ Behavior Influence the User Experience in Human-Computer Interaction?",
-  "url": "https://archive.org/details/psychology-and-cognitive-sciences-10.17140-pcsoj-5-144",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": [
-   "200 application/pdf https://archive.org/download/psychology-and-cognitive-sciences-10.17140-pcsoj-5-144/10.17140_pcsoj-5-144.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-18",
-  "id": "ia-psychology-and-cognitive-sciences-10.17140-pcsoj-5-145",
-  "tipo": "libro",
-  "titulo": "Therapeutic Relationship of Telepsychiatry and Telebehavioral Health: Ideas from Research on Telepresence, Virtual Reality and Augmented Reality",
-  "url": "https://archive.org/details/psychology-and-cognitive-sciences-10.17140-pcsoj-5-145",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": [
-   "200 application/pdf https://archive.org/download/psychology-and-cognitive-sciences-10.17140-pcsoj-5-145/10.17140_pcsoj-5-145.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-18",
-  "id": "ia-psychology-and-cognitive-sciences-10.17140-pcsoj-5-146",
-  "tipo": "libro",
-  "titulo": "A Review of Barriers to Treating Domestic Violence for Middle Eastern Women Living in the United States",
-  "url": "https://archive.org/details/psychology-and-cognitive-sciences-10.17140-pcsoj-5-146",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": [
-   "200 application/pdf https://archive.org/download/psychology-and-cognitive-sciences-10.17140-pcsoj-5-146/10.17140_pcsoj-5-146.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-18",
-  "id": "ia-psychology-and-cognitive-sciences-10.17140-pcsoj-5-147",
-  "tipo": "libro",
-  "titulo": "Impact of Insomnia on Optimism: A Predictor Factor among Young Adults in Indian Context",
-  "url": "https://archive.org/details/psychology-and-cognitive-sciences-10.17140-pcsoj-5-147",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": [
-   "200 application/pdf https://archive.org/download/psychology-and-cognitive-sciences-10.17140-pcsoj-5-147/10.17140_pcsoj-5-147.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-18",
-  "id": "ia-psychology-and-cognitive-sciences-10.17140-pcsoj-4-141",
-  "tipo": "libro",
-  "titulo": "Human Behavior with Mobile Health: Smartphone/ Devices, Apps and Cognition",
-  "url": "https://archive.org/details/psychology-and-cognitive-sciences-10.17140-pcsoj-4-141",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": [
-   "200 application/pdf https://archive.org/download/psychology-and-cognitive-sciences-10.17140-pcsoj-4-141/10.17140_pcsoj-4-141.pdf"
   ]
  }
 ]
