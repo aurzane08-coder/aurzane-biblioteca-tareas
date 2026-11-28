@@ -1054,3 +1054,12 @@
 2026-11-28,6,youtube,frase-b0b292c5,ok,https://youtu.be/3Juo45qI_Is
 2026-11-28,7,tiktok,frase-6854ffd3,error,500 null
 2026-11-28,7,youtube,cur-c1c9d6339f,ok,https://youtu.be/95VbF2c5s4g
+2026-11-28,5,instagram,frase-20c1f59b,error,HTTP Error 404: Not Found
+2026-11-28,5,facebook,frase-5abb6442,error,HTTP Error 404: Not Found
+2026-11-28,7,tiktok,frase-6854ffd3,error,HTTP Error 404: Not Found
+2026-11-28,2,telegram,lectura-la-rueda-de-la-vida-elisabeth-kubler-ross,ok,176
+2026-11-28,2,bluesky,lectura-el-poder-del-ahora-eckhart-tolle,ok,at://did:plc:6ovoiudj7dkxgrzd2zkyn77y/app.bsky.feed.post/3n3fcqq4onc22
+2026-11-28,2,mastodon,lectura-el-error-de-descartes-antonio-damasio,ok,https://mastodon.social/@auzane/117695434147952329
+2026-11-28,2,instagram,lectura-el-elemento-sir-ken-robinson,ok,18131898211928340
+2026-11-28,2,facebook,lectura-el-elemento-ken-robinson,ok,1411384405395087_122113093593526868
+2026-11-28,2,pinterest,lectura-la-chica-del-tren-paula-hawkins,feed,
