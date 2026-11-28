@@ -1014,3 +1014,7 @@
 2026-11-28,1,mastodon,calc-reforma,ok,https://mastodon.social/@auzane/117693227565812344
 2026-11-28,1,instagram,test-autoestima,ok,18111219355957844
 2026-11-28,1,facebook,test-personalidad,ok,1843328370933454
+2026-11-28,5,instagram,frase-20c1f59b,error,HTTP Error 404: Not Found
+2026-11-28,5,facebook,frase-5abb6442,error,HTTP Error 404: Not Found
+2026-11-28,5,youtube,frase-402dc0c6,error,HTTP Error 404: Not Found
+2026-11-28,5,telegram,frase-0213af80,error,HTTP Error 404: Not Found
