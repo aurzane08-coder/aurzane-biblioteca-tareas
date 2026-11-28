@@ -1022,3 +1022,13 @@
 2026-11-28,5,facebook,frase-5abb6442,error,HTTP Error 404: Not Found
 2026-11-28,5,youtube,frase-402dc0c6,error,HTTP Error 404: Not Found
 2026-11-28,5,telegram,frase-0213af80,error,HTTP Error 404: Not Found
+2026-11-28,5,instagram,frase-20c1f59b,error,Instagram rechazó el vídeo: Error: Media upload has failed with error code 2207076
+2026-11-28,5,facebook,frase-5abb6442,error,400 {"error":{"message":"Unable to fetch video file from URL." "type":"OAuthException" "code":389 "error_subcode":1363057 "is_transient":false "error_
+2026-11-28,5,youtube,frase-402dc0c6,ok,https://youtu.be/O7pTXa9aMn0
+2026-11-28,5,telegram,frase-0213af80,ok,174
+2026-11-28,3,telegram,frase-6d32afc7,error,400 {"ok":false "error_code":400 "description":"Bad Request: IMAGE_PROCESS_FAILED"}
+2026-11-28,3,bluesky,frase-23d99c1d,ok,at://did:plc:6ovoiudj7dkxgrzd2zkyn77y/app.bsky.feed.post/3n3eppxkziv2m
+2026-11-28,3,mastodon,frase-fe3fa4a3,error,422 {"error":"Validation failed: File content type is invalid  File is invalid"}
+2026-11-28,3,instagram,frase-5f349021,ok,18107096870411800
+2026-11-28,3,facebook,frase-81d54602,ok,1411384405395087_122113040493526868
+2026-11-28,3,pinterest,frase-5b980a2a,feed,
