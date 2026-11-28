@@ -1049,3 +1049,8 @@
 2026-11-28,6,youtube,frase-b0b292c5,error,HTTP Error 404: Not Found
 2026-11-28,7,tiktok,frase-6854ffd3,error,HTTP Error 404: Not Found
 2026-11-28,7,youtube,cur-c1c9d6339f,error,HTTP Error 404: Not Found
+2026-11-28,5,instagram,frase-20c1f59b,error,Instagram rechazó el vídeo: Error: Media upload has failed with error code 2207076
+2026-11-28,5,facebook,frase-5abb6442,error,400 {"error":{"message":"Unable to fetch video file from URL." "type":"OAuthException" "code":389 "error_subcode":1363057 "is_transient":false "error_
+2026-11-28,6,youtube,frase-b0b292c5,ok,https://youtu.be/3Juo45qI_Is
+2026-11-28,7,tiktok,frase-6854ffd3,error,500 null
+2026-11-28,7,youtube,cur-c1c9d6339f,ok,https://youtu.be/95VbF2c5s4g
