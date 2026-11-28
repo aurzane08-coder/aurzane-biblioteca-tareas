@@ -1560,5 +1560,92 @@
   "pais_nombre": "Cuba",
   "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al número de emergencias del país. ",
   "fecha": "2026-11-27"
+ },
+ {
+  "consulta": "grado en ciencia de datos e inteligencia artificial nota de corte",
+  "titulo": "Notas de corte en Ciencia de Datos e Inteligencia Artificial",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "fecha": "2026-11-28"
+ },
+ {
+  "consulta": "dinamarca universidades",
+  "titulo": "Estudiar en Dinamarca: guía de universidades y oferta académica",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "fecha": "2026-11-28"
+ },
+ {
+  "consulta": "cuba universidad",
+  "titulo": "Sistema universitario en Cuba: carreras y acceso a la educación",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "fecha": "2026-11-28"
+ },
+ {
+  "consulta": "cuantas universidades hay en concepcion",
+  "titulo": "Universidades en Concepción: Guía completa y oferta académica en Chile",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "oferta": "universidades",
+  "pais": "CHL",
+  "pais_nombre": "Chile",
+  "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al *4141 (Chile, gratis, 24 horas). ",
+  "fecha": "2026-11-28"
+ },
+ {
+  "consulta": "carreras universitarias en chile",
+  "titulo": "Cómo elegir carrera universitaria en Chile: Opciones y guía vocacional",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "oferta": "test",
+  "pais": "CHL",
+  "pais_nombre": "Chile",
+  "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al *4141 (Chile, gratis, 24 horas). ",
+  "fecha": "2026-11-28"
+ },
+ {
+  "consulta": "como superar la ansiedad por la crisis y emigrar",
+  "titulo": "Ansiedad al emigrar desde Venezuela: cómo gestionar el duelo migratorio",
+  "mundo": "mind",
+  "test": "ansiedad",
+  "oferta": "test",
+  "pais": "VEN",
+  "pais_nombre": "Venezuela",
+  "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al número de emergencias del país. ",
+  "fecha": "2026-11-28"
+ },
+ {
+  "consulta": "cuáles son las mejores carreras universitarias con futuro en Venezuela",
+  "titulo": "Carreras con más futuro en Venezuela: guía de orientación vocacional",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "oferta": "universidades",
+  "pais": "VEN",
+  "pais_nombre": "Venezuela",
+  "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al número de emergencias del país. ",
+  "fecha": "2026-11-28"
+ },
+ {
+  "consulta": "orientacion vocacional",
+  "titulo": "Cómo elegir carrera en Honduras: guía y test vocacional",
+  "mundo": "nexus",
+  "test": "vocacional",
+  "oferta": "universidades",
+  "pais": "HND",
+  "pais_nombre": "Honduras",
+  "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al número de emergencias del país. ",
+  "fecha": "2026-11-28"
+ },
+ {
+  "consulta": "ansiedad examenes",
+  "titulo": "Cómo superar el estrés y la ansiedad ante exámenes en Honduras",
+  "mundo": "mind",
+  "test": "ansiedad",
+  "oferta": "libros",
+  "pais": "HND",
+  "pais_nombre": "Honduras",
+  "crisis": "Si el tema toca malestar intenso, añade que se puede llamar al número de emergencias del país. ",
+  "fecha": "2026-11-28"
  }
 ]
