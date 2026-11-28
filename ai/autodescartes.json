@@ -1,6 +1,17 @@
 [
  {
   "fecha": "2026-11-28",
+  "id": "ia-learn-trading-hisham-ramadan",
+  "tipo": "libro",
+  "titulo": "Learn Trading",
+  "url": "https://archive.org/details/learn-trading-hisham-ramadan",
+  "motivo": "La IA le dio 2/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://archive.org/download/learn-trading-hisham-ramadan/Learn%20Trading.pdf"
+  ]
+ },
+ {
+  "fecha": "2026-11-28",
   "id": "ia-aurzane-bib-conductismo-cognitivismo-constructivismo-conectivismo-educac",
   "tipo": "libro",
   "titulo": "Del conductismo, cognitivismo y constructivismo al conectivismo para la educación",
@@ -3264,17 +3275,6 @@
   "motivo": "No tiene un PDF libre que se pueda descargar",
   "probados": [
    "200 application/pdf https://archive.org/download/psychology-and-cognitive-sciences-10.17140-pcsoj-5-e012/10.17140_pcsoj-5-e012.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-18",
-  "id": "ia-psychology-and-cognitive-sciences-10.17140-pcsoj-5-143",
-  "tipo": "libro",
-  "titulo": "Nudge: Towards a Consensus View?",
-  "url": "https://archive.org/details/psychology-and-cognitive-sciences-10.17140-pcsoj-5-143",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": [
-   "200 application/pdf https://archive.org/download/psychology-and-cognitive-sciences-10.17140-pcsoj-5-143/10.17140_pcsoj-5-143.pdf"
   ]
  }
 ]
