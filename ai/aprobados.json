@@ -1,5 +1,33 @@
 [
  {
+  "id": "oa-W7240254004",
+  "tipo": "libro",
+  "titulo": "Los trastornos de la conducta alimentaria: presente y futuro. Un camino hacia la comprensión y superación",
+  "url": "https://doi.org/10.36443/9791387585549",
+  "autores": "María Ángeles Martínez Martín, María Begoña Medina Gómez",
+  "anio": 2026,
+  "editorial": "Universidad de Burgos eBooks",
+  "doi": "10.36443/9791387585549",
+  "pdf": "https://libros.ubu.es/servpubu-acceso-abierto/catalog/download/112/119/135",
+  "pdfs": [
+   "https://libros.ubu.es/servpubu-acceso-abierto/catalog/download/112/119/135"
+  ],
+  "landings": [
+   "https://doi.org/10.36443/9791387585549"
+  ],
+  "lic": "cc-by-nc",
+  "idioma": "es",
+  "tema": "Eating Disorders and Behaviors",
+  "resumen": "El libro reúne una mirada amplia, interdisciplinar y profundamente humana sobre los trastornos de la conducta alimentaria, integrando perspectivas clínicas, familiares, comunitarias y preventivas. A través de trece capítulos, profesionales de distintos ámbitos exploran cómo los trastornos de la conducta alimentaria se manifiestan, se comprenden y se acompañan en diversos contextos vitales y sanitarios. Los cuatro primeros capítulos se centran en los modelos explicativos y clínicos que permiten entender estos trastornos desde una perspectiva científica y actualizada. La perspectiva transdiagnóstica se presenta como eje conceptual que amplía la comprensión más allá de los diagnósticos tradicionales, integrando procesos comunes como la rigidez cognitiva, la autoexigencia y las dificultades en la regulación emocional. A ello se suma un análisis del perfeccionismo como motor transdiagnóstico,",
+  "motivo": "Libro de psicología en acceso abierto con licencia CC-BY-NC, de Universidad de Burgos eBooks.",
+  "pdf_origen": "https://libros.ubu.es/servpubu-acceso-abierto/catalog/download/112/119/135",
+  "paginas": 264,
+  "portada": "https://aurzane.com/biblioteca/recientes/portadas/oa-W7240254004.jpg",
+  "publicado": "2026-11-28",
+  "nota": 10,
+  "auto": true
+ },
+ {
   "id": "ia-aurzane-bib-vinculos-protectores-apego-padres-e-hijos",
   "tipo": "libro",
   "titulo": "Vínculos protectores : apego en padres e hijos en vulnerabilidad",

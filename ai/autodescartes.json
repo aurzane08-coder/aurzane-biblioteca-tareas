@@ -1,6 +1,17 @@
 [
  {
   "fecha": "2026-11-28",
+  "id": "ia-trilogia-del-tentador_202611",
+  "tipo": "libro",
+  "titulo": "Trilogía del Tentador",
+  "url": "https://archive.org/details/trilogia-del-tentador_202611",
+  "motivo": "La IA le dio 2/10: no encaja en la biblioteca",
+  "probados": [
+   "200 application/pdf https://libros.ubu.es/servpubu-acceso-abierto/catalog/download/112/119/135"
+  ]
+ },
+ {
+  "fecha": "2026-11-28",
   "id": "ia-aurzane-bib-desarrollo-positivo-adolescente-que-papel-tiene",
   "tipo": "libro",
   "titulo": "Desarrollo positivo adolescente: ¿qué papel tiene la inteligencia emocional, el estilo de afrontamiento y la asertividad en la prevención del consumo de cannabi",
@@ -3264,17 +3275,6 @@
   "motivo": "No tiene un PDF libre que se pueda descargar",
   "probados": [
    "200 application/pdf https://archive.org/download/psychology-and-cognitive-sciences-10.17140-pcsoj-4-141/10.17140_pcsoj-4-141.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-18",
-  "id": "ia-psychology-and-cognitive-sciences-10.17140-pcsoj-4-137",
-  "tipo": "libro",
-  "titulo": "Stress of Siege of Gaza and Locus of Control in Palestinian Children in the Gaza Strip",
-  "url": "https://archive.org/details/psychology-and-cognitive-sciences-10.17140-pcsoj-4-137",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": [
-   "200 application/pdf https://archive.org/download/psychology-and-cognitive-sciences-10.17140-pcsoj-4-137/10.17140_pcsoj-4-137.pdf"
   ]
  }
 ]

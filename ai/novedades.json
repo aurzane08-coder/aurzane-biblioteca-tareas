@@ -1,6 +1,11 @@
 [
  {
   "fecha": "2026-11-28",
+  "url": "https://aurzane.com/biblioteca/recientes/oa-W7240254004/",
+  "titulo": "Libro abierto: Los trastornos de la conducta alimentaria: presente y futuro. Un camino hacia la comprensión y superación"
+ },
+ {
+  "fecha": "2026-11-28",
   "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-vinculos-protectores-apego-padres-e-hijos/",
   "titulo": "Libro abierto: Vínculos protectores : apego en padres e hijos en vulnerabilidad",
   "img": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-vinculos-protectores-apego-padres-e-hijos.jpg",
@@ -950,13 +955,5 @@
   "img": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-desarrollo-aprendizaje-adolescencia-master-formacion-profeso.jpg",
   "desc": "La asignatura \"Desarrollo y aprendizaje en la adolescencia\" aborda contenidos fundamentales para comprender los procesos psicológicos y educativos que tienen lugar durante la etapa de la adolescencia,",
   "titulo_completo": "Desarrollo y aprendizaje en la adolescencia: máster formación del profesorado"
- },
- {
-  "fecha": "2026-11-23",
-  "url": "https://aurzane.com/biblioteca/recientes/ia-aurzane-bib-trastorno-espectro-autista-conocimientos-esenciales-educacio/",
-  "titulo": "Libro abierto: Trastorno del Espectro Autista. Conocimientos esenciales para educación, psicología y psicopedagogía",
-  "img": "https://aurzane.com/biblioteca/recientes/portadas/ia-aurzane-bib-trastorno-espectro-autista-conocimientos-esenciales-educacio.jpg",
-  "desc": "Copia de la Biblioteca AURZANE (aurzane.com/biblioteca).",
-  "titulo_completo": "Trastorno del Espectro Autista. Conocimientos esenciales para educación, psicología y psic"
  }
 ]
