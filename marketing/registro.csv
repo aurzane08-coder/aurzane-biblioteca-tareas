@@ -1036,3 +1036,5 @@
 2026-11-28,5,facebook,frase-5abb6442,error,HTTP Error 404: Not Found
 2026-11-28,3,telegram,frase-6d32afc7,ok,175
 2026-11-28,3,mastodon,frase-fe3fa4a3,ok,https://mastodon.social/@auzane/117694330615378338
+2026-11-28,5,instagram,frase-20c1f59b,error,Instagram rechazó el vídeo: Error: Media upload has failed with error code 2207076
+2026-11-28,5,facebook,frase-5abb6442,error,400 {"error":{"message":"Unable to fetch video file from URL." "type":"OAuthException" "code":389 "error_subcode":1363057 "is_transient":false "error_
