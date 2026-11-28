@@ -358,5 +358,14 @@
   "fallo": 0,
   "fecha": "2026-11-26",
   "ejemplo": "La automatización «Archivos pesados a Internet Archive» falla y el reintento no lo arregló."
+ },
+ "red_fallos|tiktok: todas las publicaciones de las últimas # h han fallado. último error: http error #: not found": {
+  "receta": "avisar",
+  "motivo": "El error de TikTok indica una limitación de la API para cuentas no auditadas o cambios en los endpoints que causan el 404.",
+  "explicacion": "La app en TikTok Developers no está auditada (error 'unaudited_client_can_only_post_to_private_accounts') y la API cambió los endpoints (HTTP 404). Los reintentos automáticos no funcionan. Debes ir al panel de TikTok Developers, solicitar la auditoría de la aplicación para publicar en cuentas públicas, revisar la URL actual del endpoint de la API en el script de GitHub Actions y actualizar el token de acceso si ha expirado.",
+  "ok": 0,
+  "fallo": 0,
+  "fecha": "2026-11-28",
+  "ejemplo": "tiktok: todas las publicaciones de las últimas 24 h han fallado. Último error: HTTP Error 404: Not Found"
  }
 }
