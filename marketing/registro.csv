@@ -1032,3 +1032,7 @@
 2026-11-28,3,instagram,frase-5f349021,ok,18107096870411800
 2026-11-28,3,facebook,frase-81d54602,ok,1411384405395087_122113040493526868
 2026-11-28,3,pinterest,frase-5b980a2a,feed,
+2026-11-28,5,instagram,frase-20c1f59b,error,HTTP Error 404: Not Found
+2026-11-28,5,facebook,frase-5abb6442,error,HTTP Error 404: Not Found
+2026-11-28,3,telegram,frase-6d32afc7,ok,175
+2026-11-28,3,mastodon,frase-fe3fa4a3,ok,https://mastodon.social/@auzane/117694330615378338
