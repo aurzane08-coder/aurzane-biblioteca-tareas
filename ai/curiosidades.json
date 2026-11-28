@@ -1,5 +1,43 @@
 [
  {
+  "id": "cur-200cb947c4",
+  "tipo": "curiosidad",
+  "titulo": "¿Estimular el cerebro con imanes contra la depresión gestacional?",
+  "dato": "Una revisión científica analizó 98 embarazos tratados con estimulación magnética transcraneal para la depresión.",
+  "resumen": "Una revisión científica analizó 98 embarazos tratados con estimulación magnética transcraneal para la depresión. Este método no invasivo utiliza campos magnéticos para modular la actividad cerebral. Es una opción para tratar la depresión durante el embarazo sin recurrir a la medicación y evitar la exposición fetal.",
+  "fuente": "Journal of Clinical Medicine",
+  "hashtags": [
+   "psicologia",
+   "saludmental",
+   "embarazo",
+   "divulgacion"
+  ],
+  "fuente_id": "pmc-PMC13803823",
+  "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13803823/",
+  "fecha": "2026-11-28",
+  "auto": true,
+  "verificacion": "La afirmación describe con precisión un estudio real sobre estimulación magnética transcraneal y depresión gestacional sin exagerar sus conclusiones."
+ },
+ {
+  "id": "cur-d66ded1345",
+  "tipo": "curiosidad",
+  "titulo": "¿Influye el deporte en la depresión?",
+  "dato": "El ejercicio y los micronutrientes modulan el estrés oxidativo y la inflamación cerebral.",
+  "resumen": "El ejercicio y los micronutrientes modulan el estrés oxidativo y la inflamación cerebral. Una revisión científica analiza cómo la actividad física y minerales como el zinc o el magnesio actúan sobre vías moleculares relacionadas con la depresión. Aunque los mecanismos exactos siguen estudiándose en modelos experimentales, abren nuevas vías en la investigación neurobiológica.",
+  "fuente": "International Journal of Molecular Sciences",
+  "hashtags": [
+   "psicologia",
+   "neurociencia",
+   "saludmental",
+   "aurzane"
+  ],
+  "fuente_id": "pmc-PMC13802085",
+  "url": "https://aurzane.com/biblioteca/recientes/pmc-PMC13802085/",
+  "fecha": "2026-11-28",
+  "auto": true,
+  "verificacion": "La afirmación está respaldada por la literatura neurobiológica actual sin caer en exageraciones milagrosas."
+ },
+ {
   "id": "cur-d2a35612f7",
   "tipo": "curiosidad",
   "titulo": "¿Por qué te enfadas más cuando no has dormido?",

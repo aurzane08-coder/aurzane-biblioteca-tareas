@@ -1,5 +1,16 @@
 [
  {
+  "fecha": "2026-11-28",
+  "id": "pmc-PMC13757895",
+  "tipo": "estudio",
+  "titulo": "Functional impairment associated with post-traumatic stress symptoms in trauma-exposed children and adolescents: a qualitative study of everyday difficulties ac",
+  "url": "https://europepmc.org/article/PMC/PMC13757895",
+  "motivo": "La IA le dio 2/10: no encaja en la biblioteca",
+  "probados": [
+   "200 binary/octet-stream https://pmc-oa-opendata.s3.amazonaws.com/PMC13757895.1/PMC13757895.1.pdf"
+  ]
+ },
+ {
   "fecha": "2026-11-27",
   "id": "pmc-PMC13805667",
   "tipo": "estudio",
@@ -3264,17 +3275,6 @@
   "motivo": "No tiene un PDF libre que se pueda descargar",
   "probados": [
    "200 application/pdf https://archive.org/download/psychology-and-cognitive-sciences-10.17140-pcsoj-4-140/10.17140_pcsoj-4-140.pdf"
-  ]
- },
- {
-  "fecha": "2026-11-18",
-  "id": "ia-psychology-and-cognitive-sciences-10.17140-pcsoj-4-e011",
-  "tipo": "libro",
-  "titulo": "A Call to Promote Soft Skills in Software Engineering",
-  "url": "https://archive.org/details/psychology-and-cognitive-sciences-10.17140-pcsoj-4-e011",
-  "motivo": "No tiene un PDF libre que se pueda descargar",
-  "probados": [
-   "200 application/pdf https://archive.org/download/psychology-and-cognitive-sciences-10.17140-pcsoj-4-e011/10.17140_pcsoj-4-e011.pdf"
   ]
  }
 ]
